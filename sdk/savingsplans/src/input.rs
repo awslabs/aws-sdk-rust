@@ -9,7 +9,7 @@ pub mod create_savings_plan_input {
         pub(crate) savings_plan_offering_id: std::option::Option<std::string::String>,
         pub(crate) commitment: std::option::Option<std::string::String>,
         pub(crate) upfront_payment_amount: std::option::Option<std::string::String>,
-        pub(crate) purchase_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) purchase_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -21,6 +21,7 @@ pub mod create_savings_plan_input {
             self.savings_plan_offering_id = Some(input.into());
             self
         }
+        /// <p>The ID of the offering.</p>
         pub fn set_savings_plan_offering_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -34,6 +35,8 @@ pub mod create_savings_plan_input {
             self.commitment = Some(input.into());
             self
         }
+        /// <p>The hourly commitment, in USD. This is a value between 0.001 and 1 million. You cannot specify more
+        /// than three digits after the decimal point.</p>
         pub fn set_commitment(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.commitment = input;
             self
@@ -44,6 +47,8 @@ pub mod create_savings_plan_input {
             self.upfront_payment_amount = Some(input.into());
             self
         }
+        /// <p>The up-front payment amount. This is a whole number between 50 and 99 percent of the total value of the Savings Plan.
+        /// This parameter is supported only if the payment option is <code>Partial Upfront</code>.</p>
         pub fn set_upfront_payment_amount(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -52,13 +57,14 @@ pub mod create_savings_plan_input {
             self
         }
         /// <p>The time at which to purchase the Savings Plan, in UTC format (YYYY-MM-DDTHH:MM:SSZ).</p>
-        pub fn purchase_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn purchase_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.purchase_time = Some(input);
             self
         }
+        /// <p>The time at which to purchase the Savings Plan, in UTC format (YYYY-MM-DDTHH:MM:SSZ).</p>
         pub fn set_purchase_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.purchase_time = input;
             self
@@ -68,10 +74,16 @@ pub mod create_savings_plan_input {
             self.client_token = Some(input.into());
             self
         }
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>One or more tags.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -82,6 +94,7 @@ pub mod create_savings_plan_input {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>One or more tags.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -96,7 +109,7 @@ pub mod create_savings_plan_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateSavingsPlanInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateSavingsPlanInput {
                 savings_plan_offering_id: self.savings_plan_offering_id,
@@ -120,16 +133,16 @@ impl CreateSavingsPlanInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateSavingsPlan,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateSavingsPlanInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/CreateSavingsPlan").expect("formatting should succeed");
             Ok(())
         }
@@ -137,7 +150,7 @@ impl CreateSavingsPlanInput {
         fn update_http_builder(
             input: &crate::input::CreateSavingsPlanInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -146,10 +159,10 @@ impl CreateSavingsPlanInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateSavingsPlanInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -159,17 +172,17 @@ impl CreateSavingsPlanInput {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_savings_plan(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -192,15 +205,15 @@ impl CreateSavingsPlanInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateSavingsPlan::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateSavingsPlan",
             "savingsplans",
         ));
@@ -209,10 +222,10 @@ impl CreateSavingsPlanInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -240,6 +253,7 @@ pub mod delete_queued_savings_plan_input {
             self.savings_plan_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Savings Plan.</p>
         pub fn set_savings_plan_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -252,7 +266,7 @@ pub mod delete_queued_savings_plan_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteQueuedSavingsPlanInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteQueuedSavingsPlanInput {
                 savings_plan_id: self.savings_plan_id,
@@ -272,16 +286,16 @@ impl DeleteQueuedSavingsPlanInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteQueuedSavingsPlan,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteQueuedSavingsPlanInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/DeleteQueuedSavingsPlan").expect("formatting should succeed");
             Ok(())
         }
@@ -289,7 +303,7 @@ impl DeleteQueuedSavingsPlanInput {
         fn update_http_builder(
             input: &crate::input::DeleteQueuedSavingsPlanInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -298,27 +312,29 @@ impl DeleteQueuedSavingsPlanInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteQueuedSavingsPlanInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_queued_savings_plan(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -341,15 +357,15 @@ impl DeleteQueuedSavingsPlanInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteQueuedSavingsPlan::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteQueuedSavingsPlan",
             "savingsplans",
         ));
@@ -358,10 +374,10 @@ impl DeleteQueuedSavingsPlanInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -392,6 +408,7 @@ pub mod describe_savings_plan_rates_input {
             self.savings_plan_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Savings Plan.</p>
         pub fn set_savings_plan_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -399,12 +416,18 @@ pub mod describe_savings_plan_rates_input {
             self.savings_plan_id = input;
             self
         }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>The filters.</p>
         pub fn filters(mut self, input: impl Into<crate::model::SavingsPlanRateFilter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input.into());
             self.filters = Some(v);
             self
         }
+        /// <p>The filters.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SavingsPlanRateFilter>>,
@@ -417,6 +440,7 @@ pub mod describe_savings_plan_rates_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token for the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -427,6 +451,8 @@ pub mod describe_savings_plan_rates_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another
+        /// call with the returned token value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -436,7 +462,7 @@ pub mod describe_savings_plan_rates_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeSavingsPlanRatesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeSavingsPlanRatesInput {
                 savings_plan_id: self.savings_plan_id,
@@ -459,16 +485,16 @@ impl DescribeSavingsPlanRatesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeSavingsPlanRates,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeSavingsPlanRatesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/DescribeSavingsPlanRates").expect("formatting should succeed");
             Ok(())
         }
@@ -476,7 +502,7 @@ impl DescribeSavingsPlanRatesInput {
         fn update_http_builder(
             input: &crate::input::DescribeSavingsPlanRatesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -485,27 +511,29 @@ impl DescribeSavingsPlanRatesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeSavingsPlanRatesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_savings_plan_rates(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -528,15 +556,15 @@ impl DescribeSavingsPlanRatesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeSavingsPlanRates::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeSavingsPlanRates",
             "savingsplans",
         ));
@@ -545,10 +573,10 @@ impl DescribeSavingsPlanRatesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -576,12 +604,18 @@ pub mod describe_savings_plans_input {
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::SavingsPlanFilter>>,
     }
     impl Builder {
+        /// Appends an item to `savings_plan_arns`.
+        ///
+        /// To override the contents of this collection use [`set_savings_plan_arns`](Self::set_savings_plan_arns).
+        ///
+        /// <p>The Amazon Resource Names (ARN) of the Savings Plans.</p>
         pub fn savings_plan_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.savings_plan_arns.unwrap_or_default();
             v.push(input.into());
             self.savings_plan_arns = Some(v);
             self
         }
+        /// <p>The Amazon Resource Names (ARN) of the Savings Plans.</p>
         pub fn set_savings_plan_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -589,12 +623,18 @@ pub mod describe_savings_plans_input {
             self.savings_plan_arns = input;
             self
         }
+        /// Appends an item to `savings_plan_ids`.
+        ///
+        /// To override the contents of this collection use [`set_savings_plan_ids`](Self::set_savings_plan_ids).
+        ///
+        /// <p>The IDs of the Savings Plans.</p>
         pub fn savings_plan_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.savings_plan_ids.unwrap_or_default();
             v.push(input.into());
             self.savings_plan_ids = Some(v);
             self
         }
+        /// <p>The IDs of the Savings Plans.</p>
         pub fn set_savings_plan_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -607,6 +647,7 @@ pub mod describe_savings_plans_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token for the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -617,16 +658,24 @@ pub mod describe_savings_plans_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another
+        /// call with the returned token value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
+        /// Appends an item to `states`.
+        ///
+        /// To override the contents of this collection use [`set_states`](Self::set_states).
+        ///
+        /// <p>The states.</p>
         pub fn states(mut self, input: impl Into<crate::model::SavingsPlanState>) -> Self {
             let mut v = self.states.unwrap_or_default();
             v.push(input.into());
             self.states = Some(v);
             self
         }
+        /// <p>The states.</p>
         pub fn set_states(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SavingsPlanState>>,
@@ -634,12 +683,18 @@ pub mod describe_savings_plans_input {
             self.states = input;
             self
         }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>The filters.</p>
         pub fn filters(mut self, input: impl Into<crate::model::SavingsPlanFilter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input.into());
             self.filters = Some(v);
             self
         }
+        /// <p>The filters.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SavingsPlanFilter>>,
@@ -652,7 +707,7 @@ pub mod describe_savings_plans_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeSavingsPlansInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeSavingsPlansInput {
                 savings_plan_arns: self.savings_plan_arns,
@@ -676,16 +731,16 @@ impl DescribeSavingsPlansInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeSavingsPlans,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeSavingsPlansInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/DescribeSavingsPlans").expect("formatting should succeed");
             Ok(())
         }
@@ -693,7 +748,7 @@ impl DescribeSavingsPlansInput {
         fn update_http_builder(
             input: &crate::input::DescribeSavingsPlansInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -702,27 +757,27 @@ impl DescribeSavingsPlansInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeSavingsPlansInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_savings_plans(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -745,15 +800,15 @@ impl DescribeSavingsPlansInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeSavingsPlans::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeSavingsPlans",
             "savingsplans",
         ));
@@ -762,10 +817,10 @@ impl DescribeSavingsPlansInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -803,12 +858,18 @@ pub mod describe_savings_plans_offering_rates_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
+        /// Appends an item to `savings_plan_offering_ids`.
+        ///
+        /// To override the contents of this collection use [`set_savings_plan_offering_ids`](Self::set_savings_plan_offering_ids).
+        ///
+        /// <p>The IDs of the offerings.</p>
         pub fn savings_plan_offering_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.savings_plan_offering_ids.unwrap_or_default();
             v.push(input.into());
             self.savings_plan_offering_ids = Some(v);
             self
         }
+        /// <p>The IDs of the offerings.</p>
         pub fn set_savings_plan_offering_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -816,6 +877,11 @@ pub mod describe_savings_plans_offering_rates_input {
             self.savings_plan_offering_ids = input;
             self
         }
+        /// Appends an item to `savings_plan_payment_options`.
+        ///
+        /// To override the contents of this collection use [`set_savings_plan_payment_options`](Self::set_savings_plan_payment_options).
+        ///
+        /// <p>The payment options.</p>
         pub fn savings_plan_payment_options(
             mut self,
             input: impl Into<crate::model::SavingsPlanPaymentOption>,
@@ -825,6 +891,7 @@ pub mod describe_savings_plans_offering_rates_input {
             self.savings_plan_payment_options = Some(v);
             self
         }
+        /// <p>The payment options.</p>
         pub fn set_savings_plan_payment_options(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SavingsPlanPaymentOption>>,
@@ -832,6 +899,11 @@ pub mod describe_savings_plans_offering_rates_input {
             self.savings_plan_payment_options = input;
             self
         }
+        /// Appends an item to `savings_plan_types`.
+        ///
+        /// To override the contents of this collection use [`set_savings_plan_types`](Self::set_savings_plan_types).
+        ///
+        /// <p>The plan types.</p>
         pub fn savings_plan_types(
             mut self,
             input: impl Into<crate::model::SavingsPlanType>,
@@ -841,6 +913,7 @@ pub mod describe_savings_plans_offering_rates_input {
             self.savings_plan_types = Some(v);
             self
         }
+        /// <p>The plan types.</p>
         pub fn set_savings_plan_types(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SavingsPlanType>>,
@@ -848,12 +921,18 @@ pub mod describe_savings_plans_offering_rates_input {
             self.savings_plan_types = input;
             self
         }
+        /// Appends an item to `products`.
+        ///
+        /// To override the contents of this collection use [`set_products`](Self::set_products).
+        ///
+        /// <p>The AWS products.</p>
         pub fn products(mut self, input: impl Into<crate::model::SavingsPlanProductType>) -> Self {
             let mut v = self.products.unwrap_or_default();
             v.push(input.into());
             self.products = Some(v);
             self
         }
+        /// <p>The AWS products.</p>
         pub fn set_products(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SavingsPlanProductType>>,
@@ -861,6 +940,11 @@ pub mod describe_savings_plans_offering_rates_input {
             self.products = input;
             self
         }
+        /// Appends an item to `service_codes`.
+        ///
+        /// To override the contents of this collection use [`set_service_codes`](Self::set_service_codes).
+        ///
+        /// <p>The services.</p>
         pub fn service_codes(
             mut self,
             input: impl Into<crate::model::SavingsPlanRateServiceCode>,
@@ -870,6 +954,7 @@ pub mod describe_savings_plans_offering_rates_input {
             self.service_codes = Some(v);
             self
         }
+        /// <p>The services.</p>
         pub fn set_service_codes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SavingsPlanRateServiceCode>>,
@@ -877,12 +962,18 @@ pub mod describe_savings_plans_offering_rates_input {
             self.service_codes = input;
             self
         }
+        /// Appends an item to `usage_types`.
+        ///
+        /// To override the contents of this collection use [`set_usage_types`](Self::set_usage_types).
+        ///
+        /// <p>The usage details of the line item in the billing report.</p>
         pub fn usage_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.usage_types.unwrap_or_default();
             v.push(input.into());
             self.usage_types = Some(v);
             self
         }
+        /// <p>The usage details of the line item in the billing report.</p>
         pub fn set_usage_types(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -890,12 +981,18 @@ pub mod describe_savings_plans_offering_rates_input {
             self.usage_types = input;
             self
         }
+        /// Appends an item to `operations`.
+        ///
+        /// To override the contents of this collection use [`set_operations`](Self::set_operations).
+        ///
+        /// <p>The specific AWS operation for the line item in the billing report.</p>
         pub fn operations(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.operations.unwrap_or_default();
             v.push(input.into());
             self.operations = Some(v);
             self
         }
+        /// <p>The specific AWS operation for the line item in the billing report.</p>
         pub fn set_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -903,6 +1000,11 @@ pub mod describe_savings_plans_offering_rates_input {
             self.operations = input;
             self
         }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>The filters.</p>
         pub fn filters(
             mut self,
             input: impl Into<crate::model::SavingsPlanOfferingRateFilterElement>,
@@ -912,6 +1014,7 @@ pub mod describe_savings_plans_offering_rates_input {
             self.filters = Some(v);
             self
         }
+        /// <p>The filters.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<
@@ -926,6 +1029,7 @@ pub mod describe_savings_plans_offering_rates_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token for the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -936,6 +1040,8 @@ pub mod describe_savings_plans_offering_rates_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another
+        /// call with the returned token value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -945,7 +1051,7 @@ pub mod describe_savings_plans_offering_rates_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeSavingsPlansOfferingRatesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeSavingsPlansOfferingRatesInput {
                 savings_plan_offering_ids: self.savings_plan_offering_ids,
@@ -974,16 +1080,16 @@ impl DescribeSavingsPlansOfferingRatesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeSavingsPlansOfferingRates,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeSavingsPlansOfferingRatesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/DescribeSavingsPlansOfferingRates")
                 .expect("formatting should succeed");
             Ok(())
@@ -992,7 +1098,7 @@ impl DescribeSavingsPlansOfferingRatesInput {
         fn update_http_builder(
             input: &crate::input::DescribeSavingsPlansOfferingRatesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1001,25 +1107,25 @@ impl DescribeSavingsPlansOfferingRatesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeSavingsPlansOfferingRatesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_savings_plans_offering_rates(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_savings_plans_offering_rates(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1042,15 +1148,15 @@ impl DescribeSavingsPlansOfferingRatesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeSavingsPlansOfferingRates::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeSavingsPlansOfferingRates",
             "savingsplans",
         ));
@@ -1059,10 +1165,10 @@ impl DescribeSavingsPlansOfferingRatesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1099,12 +1205,18 @@ pub mod describe_savings_plans_offerings_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
+        /// Appends an item to `offering_ids`.
+        ///
+        /// To override the contents of this collection use [`set_offering_ids`](Self::set_offering_ids).
+        ///
+        /// <p>The IDs of the offerings.</p>
         pub fn offering_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.offering_ids.unwrap_or_default();
             v.push(input.into());
             self.offering_ids = Some(v);
             self
         }
+        /// <p>The IDs of the offerings.</p>
         pub fn set_offering_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1112,6 +1224,11 @@ pub mod describe_savings_plans_offerings_input {
             self.offering_ids = input;
             self
         }
+        /// Appends an item to `payment_options`.
+        ///
+        /// To override the contents of this collection use [`set_payment_options`](Self::set_payment_options).
+        ///
+        /// <p>The payment options.</p>
         pub fn payment_options(
             mut self,
             input: impl Into<crate::model::SavingsPlanPaymentOption>,
@@ -1121,6 +1238,7 @@ pub mod describe_savings_plans_offerings_input {
             self.payment_options = Some(v);
             self
         }
+        /// <p>The payment options.</p>
         pub fn set_payment_options(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SavingsPlanPaymentOption>>,
@@ -1133,6 +1251,7 @@ pub mod describe_savings_plans_offerings_input {
             self.product_type = Some(input);
             self
         }
+        /// <p>The product type.</p>
         pub fn set_product_type(
             mut self,
             input: std::option::Option<crate::model::SavingsPlanProductType>,
@@ -1140,12 +1259,18 @@ pub mod describe_savings_plans_offerings_input {
             self.product_type = input;
             self
         }
+        /// Appends an item to `plan_types`.
+        ///
+        /// To override the contents of this collection use [`set_plan_types`](Self::set_plan_types).
+        ///
+        /// <p>The plan type.</p>
         pub fn plan_types(mut self, input: impl Into<crate::model::SavingsPlanType>) -> Self {
             let mut v = self.plan_types.unwrap_or_default();
             v.push(input.into());
             self.plan_types = Some(v);
             self
         }
+        /// <p>The plan type.</p>
         pub fn set_plan_types(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SavingsPlanType>>,
@@ -1153,22 +1278,34 @@ pub mod describe_savings_plans_offerings_input {
             self.plan_types = input;
             self
         }
+        /// Appends an item to `durations`.
+        ///
+        /// To override the contents of this collection use [`set_durations`](Self::set_durations).
+        ///
+        /// <p>The durations, in seconds.</p>
         pub fn durations(mut self, input: impl Into<i64>) -> Self {
             let mut v = self.durations.unwrap_or_default();
             v.push(input.into());
             self.durations = Some(v);
             self
         }
+        /// <p>The durations, in seconds.</p>
         pub fn set_durations(mut self, input: std::option::Option<std::vec::Vec<i64>>) -> Self {
             self.durations = input;
             self
         }
+        /// Appends an item to `currencies`.
+        ///
+        /// To override the contents of this collection use [`set_currencies`](Self::set_currencies).
+        ///
+        /// <p>The currencies.</p>
         pub fn currencies(mut self, input: impl Into<crate::model::CurrencyCode>) -> Self {
             let mut v = self.currencies.unwrap_or_default();
             v.push(input.into());
             self.currencies = Some(v);
             self
         }
+        /// <p>The currencies.</p>
         pub fn set_currencies(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CurrencyCode>>,
@@ -1176,12 +1313,18 @@ pub mod describe_savings_plans_offerings_input {
             self.currencies = input;
             self
         }
+        /// Appends an item to `descriptions`.
+        ///
+        /// To override the contents of this collection use [`set_descriptions`](Self::set_descriptions).
+        ///
+        /// <p>The descriptions.</p>
         pub fn descriptions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.descriptions.unwrap_or_default();
             v.push(input.into());
             self.descriptions = Some(v);
             self
         }
+        /// <p>The descriptions.</p>
         pub fn set_descriptions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1189,12 +1332,18 @@ pub mod describe_savings_plans_offerings_input {
             self.descriptions = input;
             self
         }
+        /// Appends an item to `service_codes`.
+        ///
+        /// To override the contents of this collection use [`set_service_codes`](Self::set_service_codes).
+        ///
+        /// <p>The services.</p>
         pub fn service_codes(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.service_codes.unwrap_or_default();
             v.push(input.into());
             self.service_codes = Some(v);
             self
         }
+        /// <p>The services.</p>
         pub fn set_service_codes(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1202,12 +1351,18 @@ pub mod describe_savings_plans_offerings_input {
             self.service_codes = input;
             self
         }
+        /// Appends an item to `usage_types`.
+        ///
+        /// To override the contents of this collection use [`set_usage_types`](Self::set_usage_types).
+        ///
+        /// <p>The usage details of the line item in the billing report.</p>
         pub fn usage_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.usage_types.unwrap_or_default();
             v.push(input.into());
             self.usage_types = Some(v);
             self
         }
+        /// <p>The usage details of the line item in the billing report.</p>
         pub fn set_usage_types(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1215,12 +1370,18 @@ pub mod describe_savings_plans_offerings_input {
             self.usage_types = input;
             self
         }
+        /// Appends an item to `operations`.
+        ///
+        /// To override the contents of this collection use [`set_operations`](Self::set_operations).
+        ///
+        /// <p>The specific AWS operation for the line item in the billing report.</p>
         pub fn operations(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.operations.unwrap_or_default();
             v.push(input.into());
             self.operations = Some(v);
             self
         }
+        /// <p>The specific AWS operation for the line item in the billing report.</p>
         pub fn set_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1228,6 +1389,11 @@ pub mod describe_savings_plans_offerings_input {
             self.operations = input;
             self
         }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>The filters.</p>
         pub fn filters(
             mut self,
             input: impl Into<crate::model::SavingsPlanOfferingFilterElement>,
@@ -1237,6 +1403,7 @@ pub mod describe_savings_plans_offerings_input {
             self.filters = Some(v);
             self
         }
+        /// <p>The filters.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<
@@ -1251,6 +1418,7 @@ pub mod describe_savings_plans_offerings_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token for the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1261,6 +1429,8 @@ pub mod describe_savings_plans_offerings_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another
+        /// call with the returned token value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1270,7 +1440,7 @@ pub mod describe_savings_plans_offerings_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeSavingsPlansOfferingsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeSavingsPlansOfferingsInput {
                 offering_ids: self.offering_ids,
@@ -1302,16 +1472,16 @@ impl DescribeSavingsPlansOfferingsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeSavingsPlansOfferings,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeSavingsPlansOfferingsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/DescribeSavingsPlansOfferings").expect("formatting should succeed");
             Ok(())
         }
@@ -1319,7 +1489,7 @@ impl DescribeSavingsPlansOfferingsInput {
         fn update_http_builder(
             input: &crate::input::DescribeSavingsPlansOfferingsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1328,25 +1498,25 @@ impl DescribeSavingsPlansOfferingsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeSavingsPlansOfferingsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_savings_plans_offerings(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_savings_plans_offerings(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1369,15 +1539,15 @@ impl DescribeSavingsPlansOfferingsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeSavingsPlansOfferings::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeSavingsPlansOfferings",
             "savingsplans",
         ));
@@ -1386,10 +1556,10 @@ impl DescribeSavingsPlansOfferingsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1417,6 +1587,7 @@ pub mod list_tags_for_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -1426,7 +1597,7 @@ pub mod list_tags_for_resource_input {
             self,
         ) -> std::result::Result<
             crate::input::ListTagsForResourceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListTagsForResourceInput {
                 resource_arn: self.resource_arn,
@@ -1445,16 +1616,16 @@ impl ListTagsForResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListTagsForResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/ListTagsForResource").expect("formatting should succeed");
             Ok(())
         }
@@ -1462,7 +1633,7 @@ impl ListTagsForResourceInput {
         fn update_http_builder(
             input: &crate::input::ListTagsForResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1471,27 +1642,27 @@ impl ListTagsForResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListTagsForResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1514,15 +1685,15 @@ impl ListTagsForResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListTagsForResource::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListTagsForResource",
             "savingsplans",
         ));
@@ -1531,10 +1702,10 @@ impl ListTagsForResourceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1565,10 +1736,16 @@ pub mod tag_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>One or more tags. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1579,6 +1756,7 @@ pub mod tag_resource_input {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>One or more tags. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1591,8 +1769,10 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::TagResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::TagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::TagResourceInput {
                 resource_arn: self.resource_arn,
                 tags: self.tags,
@@ -1611,16 +1791,16 @@ impl TagResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::TagResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/TagResource").expect("formatting should succeed");
             Ok(())
         }
@@ -1628,7 +1808,7 @@ impl TagResourceInput {
         fn update_http_builder(
             input: &crate::input::TagResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1637,24 +1817,26 @@ impl TagResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::TagResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1677,25 +1859,27 @@ impl TagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::TagResource::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "TagResource",
-                    "savingsplans",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::TagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "TagResource",
+            "savingsplans",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1724,16 +1908,23 @@ pub mod untag_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Appends an item to `tag_keys`.
+        ///
+        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
+        ///
+        /// <p>The tag keys.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
+        /// <p>The tag keys.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1744,8 +1935,10 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UntagResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UntagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UntagResourceInput {
                 resource_arn: self.resource_arn,
                 tag_keys: self.tag_keys,
@@ -1764,16 +1957,16 @@ impl UntagResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UntagResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/UntagResource").expect("formatting should succeed");
             Ok(())
         }
@@ -1781,7 +1974,7 @@ impl UntagResourceInput {
         fn update_http_builder(
             input: &crate::input::UntagResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1790,24 +1983,26 @@ impl UntagResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UntagResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1830,25 +2025,27 @@ impl UntagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UntagResource::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UntagResource",
-                    "savingsplans",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UntagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UntagResource",
+            "savingsplans",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1862,6 +2059,7 @@ impl UntagResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
@@ -1879,6 +2077,7 @@ impl std::fmt::Debug for UntagResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
@@ -1897,6 +2096,7 @@ impl std::fmt::Debug for TagResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
@@ -1911,6 +2111,7 @@ impl std::fmt::Debug for ListTagsForResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSavingsPlansOfferingsInput {
@@ -1962,6 +2163,7 @@ impl std::fmt::Debug for DescribeSavingsPlansOfferingsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSavingsPlansOfferingRatesInput {
@@ -2009,6 +2211,7 @@ impl std::fmt::Debug for DescribeSavingsPlansOfferingRatesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSavingsPlansInput {
@@ -2039,6 +2242,7 @@ impl std::fmt::Debug for DescribeSavingsPlansInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSavingsPlanRatesInput {
@@ -2063,6 +2267,7 @@ impl std::fmt::Debug for DescribeSavingsPlanRatesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteQueuedSavingsPlanInput {
@@ -2077,6 +2282,7 @@ impl std::fmt::Debug for DeleteQueuedSavingsPlanInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSavingsPlanInput {
@@ -2089,7 +2295,7 @@ pub struct CreateSavingsPlanInput {
     /// This parameter is supported only if the payment option is <code>Partial Upfront</code>.</p>
     pub upfront_payment_amount: std::option::Option<std::string::String>,
     /// <p>The time at which to purchase the Savings Plan, in UTC format (YYYY-MM-DDTHH:MM:SSZ).</p>
-    pub purchase_time: std::option::Option<smithy_types::Instant>,
+    pub purchase_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>One or more tags.</p>

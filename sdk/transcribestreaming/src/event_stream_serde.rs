@@ -8,27 +8,29 @@ impl AudioStreamMarshaller {
         AudioStreamMarshaller
     }
 }
-impl smithy_eventstream::frame::MarshallMessage for AudioStreamMarshaller {
+impl aws_smithy_eventstream::frame::MarshallMessage for AudioStreamMarshaller {
     type Input = crate::model::AudioStream;
     fn marshall(
         &self,
         input: Self::Input,
-    ) -> std::result::Result<smithy_eventstream::frame::Message, smithy_eventstream::error::Error>
-    {
+    ) -> std::result::Result<
+        aws_smithy_eventstream::frame::Message,
+        aws_smithy_eventstream::error::Error,
+    > {
         let mut headers = Vec::new();
-        headers.push(smithy_eventstream::frame::Header::new(
+        headers.push(aws_smithy_eventstream::frame::Header::new(
             ":message-type",
-            smithy_eventstream::frame::HeaderValue::String("event".into()),
+            aws_smithy_eventstream::frame::HeaderValue::String("event".into()),
         ));
         let payload = match input {
             Self::Input::AudioEvent(inner) => {
-                headers.push(smithy_eventstream::frame::Header::new(
+                headers.push(aws_smithy_eventstream::frame::Header::new(
                     ":event-type",
-                    smithy_eventstream::frame::HeaderValue::String("AudioEvent".into()),
+                    aws_smithy_eventstream::frame::HeaderValue::String("AudioEvent".into()),
                 ));
-                headers.push(smithy_eventstream::frame::Header::new(
+                headers.push(aws_smithy_eventstream::frame::Header::new(
                     ":content-type",
-                    smithy_eventstream::frame::HeaderValue::String(
+                    aws_smithy_eventstream::frame::HeaderValue::String(
                         "application/octet-stream".into(),
                     ),
                 ));
@@ -39,7 +41,7 @@ impl smithy_eventstream::frame::MarshallMessage for AudioStreamMarshaller {
                 }
             }
         };
-        Ok(smithy_eventstream::frame::Message::new_from_parts(
+        Ok(aws_smithy_eventstream::frame::Message::new_from_parts(
             headers, payload,
         ))
     }
@@ -54,35 +56,36 @@ impl MedicalTranscriptResultStreamUnmarshaller {
         MedicalTranscriptResultStreamUnmarshaller
     }
 }
-impl smithy_eventstream::frame::UnmarshallMessage for MedicalTranscriptResultStreamUnmarshaller {
+impl aws_smithy_eventstream::frame::UnmarshallMessage
+    for MedicalTranscriptResultStreamUnmarshaller
+{
     type Output = crate::model::MedicalTranscriptResultStream;
     type Error = crate::error::StartMedicalStreamTranscriptionError;
     fn unmarshall(
         &self,
-        message: &smithy_eventstream::frame::Message,
+        message: &aws_smithy_eventstream::frame::Message,
     ) -> std::result::Result<
-        smithy_eventstream::frame::UnmarshalledMessage<Self::Output, Self::Error>,
-        smithy_eventstream::error::Error,
+        aws_smithy_eventstream::frame::UnmarshalledMessage<Self::Output, Self::Error>,
+        aws_smithy_eventstream::error::Error,
     > {
-        let response_headers = smithy_eventstream::smithy::parse_response_headers(&message)?;
+        let response_headers = aws_smithy_eventstream::smithy::parse_response_headers(&message)?;
         match response_headers.message_type.as_str() {
             "event" => match response_headers.smithy_type.as_str() {
                 "TranscriptEvent" => {
                     let parsed =
                             crate::json_deser::deser_structure_crate_model_medical_transcript_event_payload(&message.payload()[..])
                                             .map_err(|err| {
-                                                smithy_eventstream::error::Error::Unmarshalling(format!("failed to unmarshall TranscriptEvent: {}", err))
+                                                aws_smithy_eventstream::error::Error::Unmarshalling(format!("failed to unmarshall TranscriptEvent: {}", err))
                                             })?
                         ;
-                    Ok(smithy_eventstream::frame::UnmarshalledMessage::Event(
+                    Ok(aws_smithy_eventstream::frame::UnmarshalledMessage::Event(
                         crate::model::MedicalTranscriptResultStream::TranscriptEvent(parsed),
                     ))
                 }
                 smithy_type => {
-                    return Err(smithy_eventstream::error::Error::Unmarshalling(format!(
-                        "unrecognized :event-type: {}",
-                        smithy_type
-                    )));
+                    return Err(aws_smithy_eventstream::error::Error::Unmarshalling(
+                        format!("unrecognized :event-type: {}", smithy_type),
+                    ));
                 }
             },
             "exception" => {
@@ -90,7 +93,7 @@ impl smithy_eventstream::frame::UnmarshallMessage for MedicalTranscriptResultStr
                     match crate::json_deser::parse_event_stream_generic_error(message.payload()) {
                         Ok(generic) => generic,
                         Err(err) => {
-                            return Ok(smithy_eventstream::frame::UnmarshalledMessage::Error(
+                            return Ok(aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
                                 crate::error::StartMedicalStreamTranscriptionError::unhandled(err),
                             ))
                         }
@@ -98,11 +101,11 @@ impl smithy_eventstream::frame::UnmarshallMessage for MedicalTranscriptResultStr
                 match response_headers.smithy_type.as_str() {
                     "BadRequestException" => {
                         let mut builder = crate::error::BadRequestException::builder();
-                        builder = crate::json_deser::deser_structure_crate_error_bad_request_exceptionjson_err(&message.payload()[..], builder)
+                        builder = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(&message.payload()[..], builder)
                                                             .map_err(|err| {
-                                                                smithy_eventstream::error::Error::Unmarshalling(format!("failed to unmarshall BadRequestException: {}", err))
+                                                                aws_smithy_eventstream::error::Error::Unmarshalling(format!("failed to unmarshall BadRequestException: {}", err))
                                                             })?;
-                        return Ok(smithy_eventstream::frame::UnmarshalledMessage::Error(
+                        return Ok(aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
                                                             crate::error::StartMedicalStreamTranscriptionError::new(
                                                                 crate::error::StartMedicalStreamTranscriptionErrorKind::BadRequestException(builder.build()),
                                                                 generic,
@@ -111,11 +114,11 @@ impl smithy_eventstream::frame::UnmarshallMessage for MedicalTranscriptResultStr
                     }
                     "LimitExceededException" => {
                         let mut builder = crate::error::LimitExceededException::builder();
-                        builder = crate::json_deser::deser_structure_crate_error_limit_exceeded_exceptionjson_err(&message.payload()[..], builder)
+                        builder = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(&message.payload()[..], builder)
                                                             .map_err(|err| {
-                                                                smithy_eventstream::error::Error::Unmarshalling(format!("failed to unmarshall LimitExceededException: {}", err))
+                                                                aws_smithy_eventstream::error::Error::Unmarshalling(format!("failed to unmarshall LimitExceededException: {}", err))
                                                             })?;
-                        return Ok(smithy_eventstream::frame::UnmarshalledMessage::Error(
+                        return Ok(aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
                                                             crate::error::StartMedicalStreamTranscriptionError::new(
                                                                 crate::error::StartMedicalStreamTranscriptionErrorKind::LimitExceededException(builder.build()),
                                                                 generic,
@@ -124,11 +127,11 @@ impl smithy_eventstream::frame::UnmarshallMessage for MedicalTranscriptResultStr
                     }
                     "InternalFailureException" => {
                         let mut builder = crate::error::InternalFailureException::builder();
-                        builder = crate::json_deser::deser_structure_crate_error_internal_failure_exceptionjson_err(&message.payload()[..], builder)
+                        builder = crate::json_deser::deser_structure_crate_error_internal_failure_exception_json_err(&message.payload()[..], builder)
                                                             .map_err(|err| {
-                                                                smithy_eventstream::error::Error::Unmarshalling(format!("failed to unmarshall InternalFailureException: {}", err))
+                                                                aws_smithy_eventstream::error::Error::Unmarshalling(format!("failed to unmarshall InternalFailureException: {}", err))
                                                             })?;
-                        return Ok(smithy_eventstream::frame::UnmarshalledMessage::Error(
+                        return Ok(aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
                                                             crate::error::StartMedicalStreamTranscriptionError::new(
                                                                 crate::error::StartMedicalStreamTranscriptionErrorKind::InternalFailureException(builder.build()),
                                                                 generic,
@@ -137,11 +140,11 @@ impl smithy_eventstream::frame::UnmarshallMessage for MedicalTranscriptResultStr
                     }
                     "ConflictException" => {
                         let mut builder = crate::error::ConflictException::builder();
-                        builder = crate::json_deser::deser_structure_crate_error_conflict_exceptionjson_err(&message.payload()[..], builder)
+                        builder = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(&message.payload()[..], builder)
                                                             .map_err(|err| {
-                                                                smithy_eventstream::error::Error::Unmarshalling(format!("failed to unmarshall ConflictException: {}", err))
+                                                                aws_smithy_eventstream::error::Error::Unmarshalling(format!("failed to unmarshall ConflictException: {}", err))
                                                             })?;
-                        return Ok(smithy_eventstream::frame::UnmarshalledMessage::Error(
+                        return Ok(aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
                                                             crate::error::StartMedicalStreamTranscriptionError::new(
                                                                 crate::error::StartMedicalStreamTranscriptionErrorKind::ConflictException(builder.build()),
                                                                 generic,
@@ -150,11 +153,11 @@ impl smithy_eventstream::frame::UnmarshallMessage for MedicalTranscriptResultStr
                     }
                     "ServiceUnavailableException" => {
                         let mut builder = crate::error::ServiceUnavailableException::builder();
-                        builder = crate::json_deser::deser_structure_crate_error_service_unavailable_exceptionjson_err(&message.payload()[..], builder)
+                        builder = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(&message.payload()[..], builder)
                                                             .map_err(|err| {
-                                                                smithy_eventstream::error::Error::Unmarshalling(format!("failed to unmarshall ServiceUnavailableException: {}", err))
+                                                                aws_smithy_eventstream::error::Error::Unmarshalling(format!("failed to unmarshall ServiceUnavailableException: {}", err))
                                                             })?;
-                        return Ok(smithy_eventstream::frame::UnmarshalledMessage::Error(
+                        return Ok(aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
                                                             crate::error::StartMedicalStreamTranscriptionError::new(
                                                                 crate::error::StartMedicalStreamTranscriptionErrorKind::ServiceUnavailableException(builder.build()),
                                                                 generic,
@@ -163,15 +166,14 @@ impl smithy_eventstream::frame::UnmarshallMessage for MedicalTranscriptResultStr
                     }
                     _ => {}
                 }
-                Ok(smithy_eventstream::frame::UnmarshalledMessage::Error(
+                Ok(aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
                     crate::error::StartMedicalStreamTranscriptionError::generic(generic),
                 ))
             }
             value => {
-                return Err(smithy_eventstream::error::Error::Unmarshalling(format!(
-                    "unrecognized :message-type: {}",
-                    value
-                )));
+                return Err(aws_smithy_eventstream::error::Error::Unmarshalling(
+                    format!("unrecognized :message-type: {}", value),
+                ));
             }
         }
     }
@@ -186,17 +188,17 @@ impl TranscriptResultStreamUnmarshaller {
         TranscriptResultStreamUnmarshaller
     }
 }
-impl smithy_eventstream::frame::UnmarshallMessage for TranscriptResultStreamUnmarshaller {
+impl aws_smithy_eventstream::frame::UnmarshallMessage for TranscriptResultStreamUnmarshaller {
     type Output = crate::model::TranscriptResultStream;
     type Error = crate::error::StartStreamTranscriptionError;
     fn unmarshall(
         &self,
-        message: &smithy_eventstream::frame::Message,
+        message: &aws_smithy_eventstream::frame::Message,
     ) -> std::result::Result<
-        smithy_eventstream::frame::UnmarshalledMessage<Self::Output, Self::Error>,
-        smithy_eventstream::error::Error,
+        aws_smithy_eventstream::frame::UnmarshalledMessage<Self::Output, Self::Error>,
+        aws_smithy_eventstream::error::Error,
     > {
-        let response_headers = smithy_eventstream::smithy::parse_response_headers(&message)?;
+        let response_headers = aws_smithy_eventstream::smithy::parse_response_headers(&message)?;
         match response_headers.message_type.as_str() {
             "event" => {
                 match response_headers.smithy_type.as_str() {
@@ -204,18 +206,17 @@ impl smithy_eventstream::frame::UnmarshallMessage for TranscriptResultStreamUnma
                         let parsed =
                             crate::json_deser::deser_structure_crate_model_transcript_event_payload(&message.payload()[..])
                                             .map_err(|err| {
-                                                smithy_eventstream::error::Error::Unmarshalling(format!("failed to unmarshall TranscriptEvent: {}", err))
+                                                aws_smithy_eventstream::error::Error::Unmarshalling(format!("failed to unmarshall TranscriptEvent: {}", err))
                                             })?
                         ;
-                        Ok(smithy_eventstream::frame::UnmarshalledMessage::Event(
+                        Ok(aws_smithy_eventstream::frame::UnmarshalledMessage::Event(
                             crate::model::TranscriptResultStream::TranscriptEvent(parsed),
                         ))
                     }
                     smithy_type => {
-                        return Err(smithy_eventstream::error::Error::Unmarshalling(format!(
-                            "unrecognized :event-type: {}",
-                            smithy_type
-                        )));
+                        return Err(aws_smithy_eventstream::error::Error::Unmarshalling(
+                            format!("unrecognized :event-type: {}", smithy_type),
+                        ));
                     }
                 }
             }
@@ -224,7 +225,7 @@ impl smithy_eventstream::frame::UnmarshallMessage for TranscriptResultStreamUnma
                     match crate::json_deser::parse_event_stream_generic_error(message.payload()) {
                         Ok(generic) => generic,
                         Err(err) => {
-                            return Ok(smithy_eventstream::frame::UnmarshalledMessage::Error(
+                            return Ok(aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
                                 crate::error::StartStreamTranscriptionError::unhandled(err),
                             ))
                         }
@@ -232,11 +233,11 @@ impl smithy_eventstream::frame::UnmarshallMessage for TranscriptResultStreamUnma
                 match response_headers.smithy_type.as_str() {
                     "BadRequestException" => {
                         let mut builder = crate::error::BadRequestException::builder();
-                        builder = crate::json_deser::deser_structure_crate_error_bad_request_exceptionjson_err(&message.payload()[..], builder)
+                        builder = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(&message.payload()[..], builder)
                                                             .map_err(|err| {
-                                                                smithy_eventstream::error::Error::Unmarshalling(format!("failed to unmarshall BadRequestException: {}", err))
+                                                                aws_smithy_eventstream::error::Error::Unmarshalling(format!("failed to unmarshall BadRequestException: {}", err))
                                                             })?;
-                        return Ok(smithy_eventstream::frame::UnmarshalledMessage::Error(
+                        return Ok(aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
                                                             crate::error::StartStreamTranscriptionError::new(
                                                                 crate::error::StartStreamTranscriptionErrorKind::BadRequestException(builder.build()),
                                                                 generic,
@@ -245,11 +246,11 @@ impl smithy_eventstream::frame::UnmarshallMessage for TranscriptResultStreamUnma
                     }
                     "LimitExceededException" => {
                         let mut builder = crate::error::LimitExceededException::builder();
-                        builder = crate::json_deser::deser_structure_crate_error_limit_exceeded_exceptionjson_err(&message.payload()[..], builder)
+                        builder = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(&message.payload()[..], builder)
                                                             .map_err(|err| {
-                                                                smithy_eventstream::error::Error::Unmarshalling(format!("failed to unmarshall LimitExceededException: {}", err))
+                                                                aws_smithy_eventstream::error::Error::Unmarshalling(format!("failed to unmarshall LimitExceededException: {}", err))
                                                             })?;
-                        return Ok(smithy_eventstream::frame::UnmarshalledMessage::Error(
+                        return Ok(aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
                                                             crate::error::StartStreamTranscriptionError::new(
                                                                 crate::error::StartStreamTranscriptionErrorKind::LimitExceededException(builder.build()),
                                                                 generic,
@@ -258,11 +259,11 @@ impl smithy_eventstream::frame::UnmarshallMessage for TranscriptResultStreamUnma
                     }
                     "InternalFailureException" => {
                         let mut builder = crate::error::InternalFailureException::builder();
-                        builder = crate::json_deser::deser_structure_crate_error_internal_failure_exceptionjson_err(&message.payload()[..], builder)
+                        builder = crate::json_deser::deser_structure_crate_error_internal_failure_exception_json_err(&message.payload()[..], builder)
                                                             .map_err(|err| {
-                                                                smithy_eventstream::error::Error::Unmarshalling(format!("failed to unmarshall InternalFailureException: {}", err))
+                                                                aws_smithy_eventstream::error::Error::Unmarshalling(format!("failed to unmarshall InternalFailureException: {}", err))
                                                             })?;
-                        return Ok(smithy_eventstream::frame::UnmarshalledMessage::Error(
+                        return Ok(aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
                                                             crate::error::StartStreamTranscriptionError::new(
                                                                 crate::error::StartStreamTranscriptionErrorKind::InternalFailureException(builder.build()),
                                                                 generic,
@@ -271,11 +272,11 @@ impl smithy_eventstream::frame::UnmarshallMessage for TranscriptResultStreamUnma
                     }
                     "ConflictException" => {
                         let mut builder = crate::error::ConflictException::builder();
-                        builder = crate::json_deser::deser_structure_crate_error_conflict_exceptionjson_err(&message.payload()[..], builder)
+                        builder = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(&message.payload()[..], builder)
                                                             .map_err(|err| {
-                                                                smithy_eventstream::error::Error::Unmarshalling(format!("failed to unmarshall ConflictException: {}", err))
+                                                                aws_smithy_eventstream::error::Error::Unmarshalling(format!("failed to unmarshall ConflictException: {}", err))
                                                             })?;
-                        return Ok(smithy_eventstream::frame::UnmarshalledMessage::Error(
+                        return Ok(aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
                             crate::error::StartStreamTranscriptionError::new(
                                 crate::error::StartStreamTranscriptionErrorKind::ConflictException(
                                     builder.build(),
@@ -286,11 +287,11 @@ impl smithy_eventstream::frame::UnmarshallMessage for TranscriptResultStreamUnma
                     }
                     "ServiceUnavailableException" => {
                         let mut builder = crate::error::ServiceUnavailableException::builder();
-                        builder = crate::json_deser::deser_structure_crate_error_service_unavailable_exceptionjson_err(&message.payload()[..], builder)
+                        builder = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(&message.payload()[..], builder)
                                                             .map_err(|err| {
-                                                                smithy_eventstream::error::Error::Unmarshalling(format!("failed to unmarshall ServiceUnavailableException: {}", err))
+                                                                aws_smithy_eventstream::error::Error::Unmarshalling(format!("failed to unmarshall ServiceUnavailableException: {}", err))
                                                             })?;
-                        return Ok(smithy_eventstream::frame::UnmarshalledMessage::Error(
+                        return Ok(aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
                                                             crate::error::StartStreamTranscriptionError::new(
                                                                 crate::error::StartStreamTranscriptionErrorKind::ServiceUnavailableException(builder.build()),
                                                                 generic,
@@ -299,15 +300,14 @@ impl smithy_eventstream::frame::UnmarshallMessage for TranscriptResultStreamUnma
                     }
                     _ => {}
                 }
-                Ok(smithy_eventstream::frame::UnmarshalledMessage::Error(
+                Ok(aws_smithy_eventstream::frame::UnmarshalledMessage::Error(
                     crate::error::StartStreamTranscriptionError::generic(generic),
                 ))
             }
             value => {
-                return Err(smithy_eventstream::error::Error::Unmarshalling(format!(
-                    "unrecognized :message-type: {}",
-                    value
-                )));
+                return Err(aws_smithy_eventstream::error::Error::Unmarshalling(
+                    format!("unrecognized :message-type: {}", value),
+                ));
             }
         }
     }

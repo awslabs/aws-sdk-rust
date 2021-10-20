@@ -32,6 +32,7 @@ pub mod update_traffic_policy_instance_output {
             self.traffic_policy_instance = Some(input);
             self
         }
+        /// <p>A complex type that contains settings for the updated traffic policy instance.</p>
         pub fn set_traffic_policy_instance(
             mut self,
             input: std::option::Option<crate::model::TrafficPolicyInstance>,
@@ -82,6 +83,7 @@ pub mod update_traffic_policy_comment_output {
             self.traffic_policy = Some(input);
             self
         }
+        /// <p>A complex type that contains settings for the specified traffic policy.</p>
         pub fn set_traffic_policy(
             mut self,
             input: std::option::Option<crate::model::TrafficPolicy>,
@@ -132,6 +134,7 @@ pub mod update_hosted_zone_comment_output {
             self.hosted_zone = Some(input);
             self
         }
+        /// <p>A complex type that contains the response to the <code>UpdateHostedZoneComment</code> request.</p>
         pub fn set_hosted_zone(
             mut self,
             input: std::option::Option<crate::model::HostedZone>,
@@ -182,6 +185,7 @@ pub mod update_health_check_output {
             self.health_check = Some(input);
             self
         }
+        /// <p>A complex type that contains the response to an <code>UpdateHealthCheck</code> request.</p>
         pub fn set_health_check(
             mut self,
             input: std::option::Option<crate::model::HealthCheck>,
@@ -255,6 +259,7 @@ pub mod test_dns_answer_output {
             self.nameserver = Some(input.into());
             self
         }
+        /// <p>The Amazon Route 53 name server used to respond to the request.</p>
         pub fn set_nameserver(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.nameserver = input;
             self
@@ -264,6 +269,7 @@ pub mod test_dns_answer_output {
             self.record_name = Some(input.into());
             self
         }
+        /// <p>The name of the resource record set that you submitted a request for.</p>
         pub fn set_record_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.record_name = input;
             self
@@ -273,16 +279,23 @@ pub mod test_dns_answer_output {
             self.record_type = Some(input);
             self
         }
+        /// <p>The type of the resource record set that you submitted a request for.</p>
         pub fn set_record_type(mut self, input: std::option::Option<crate::model::RrType>) -> Self {
             self.record_type = input;
             self
         }
+        /// Appends an item to `record_data`.
+        ///
+        /// To override the contents of this collection use [`set_record_data`](Self::set_record_data).
+        ///
+        /// <p>A list that contains values that Amazon Route 53 returned for this resource record set.</p>
         pub fn record_data(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.record_data.unwrap_or_default();
             v.push(input.into());
             self.record_data = Some(v);
             self
         }
+        /// <p>A list that contains values that Amazon Route 53 returned for this resource record set.</p>
         pub fn set_record_data(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -298,6 +311,10 @@ pub mod test_dns_answer_output {
             self.response_code = Some(input.into());
             self
         }
+        /// <p>A code that indicates whether the request is valid or not. The most common response code is <code>NOERROR</code>, meaning that
+        /// the request is valid. If the response is not valid, Amazon Route 53 returns a response code that describes the error.
+        /// For a list of possible response codes, see
+        /// <a href="http://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-6">DNS RCODES</a> on the IANA website. </p>
         pub fn set_response_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -310,6 +327,7 @@ pub mod test_dns_answer_output {
             self.protocol = Some(input.into());
             self
         }
+        /// <p>The protocol that Amazon Route 53 used to respond to the request, either <code>UDP</code> or <code>TCP</code>. </p>
         pub fn set_protocol(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.protocol = input;
             self
@@ -372,6 +390,7 @@ pub mod list_vpc_association_authorizations_output {
             self.hosted_zone_id = Some(input.into());
             self
         }
+        /// <p>The ID of the hosted zone that you can associate the listed VPCs with.</p>
         pub fn set_hosted_zone_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -386,16 +405,25 @@ pub mod list_vpc_association_authorizations_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>When the response includes a <code>NextToken</code> element, there are more VPCs that can be associated
+        /// with the specified hosted zone. To get the next page of VPCs, submit another <code>ListVPCAssociationAuthorizations</code> request,
+        /// and include the value of the <code>NextToken</code> element from the response in the <code>nexttoken</code> request parameter.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
+        /// Appends an item to `vp_cs`.
+        ///
+        /// To override the contents of this collection use [`set_vp_cs`](Self::set_vp_cs).
+        ///
+        /// <p>The list of VPCs that are authorized to be associated with the specified hosted zone.</p>
         pub fn vp_cs(mut self, input: impl Into<crate::model::Vpc>) -> Self {
             let mut v = self.vp_cs.unwrap_or_default();
             v.push(input.into());
             self.vp_cs = Some(v);
             self
         }
+        /// <p>The list of VPCs that are authorized to be associated with the specified hosted zone.</p>
         pub fn set_vp_cs(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Vpc>>,
@@ -466,12 +494,20 @@ pub mod list_traffic_policy_versions_output {
         pub(crate) max_items: std::option::Option<i32>,
     }
     impl Builder {
+        /// Appends an item to `traffic_policies`.
+        ///
+        /// To override the contents of this collection use [`set_traffic_policies`](Self::set_traffic_policies).
+        ///
+        /// <p>A list that contains one <code>TrafficPolicy</code> element for each traffic policy
+        /// version that is associated with the specified traffic policy.</p>
         pub fn traffic_policies(mut self, input: impl Into<crate::model::TrafficPolicy>) -> Self {
             let mut v = self.traffic_policies.unwrap_or_default();
             v.push(input.into());
             self.traffic_policies = Some(v);
             self
         }
+        /// <p>A list that contains one <code>TrafficPolicy</code> element for each traffic policy
+        /// version that is associated with the specified traffic policy.</p>
         pub fn set_traffic_policies(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TrafficPolicy>>,
@@ -486,6 +522,9 @@ pub mod list_traffic_policy_versions_output {
             self.is_truncated = Some(input);
             self
         }
+        /// <p>A flag that indicates whether there are more traffic policies to be listed. If the response was truncated, you can get the next group of
+        /// traffic policies by submitting another <code>ListTrafficPolicyVersions</code> request and specifying the value of <code>NextMarker</code>
+        /// in the <code>marker</code> parameter.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.is_truncated = input;
             self
@@ -501,6 +540,10 @@ pub mod list_traffic_policy_versions_output {
             self.traffic_policy_version_marker = Some(input.into());
             self
         }
+        /// <p>If <code>IsTruncated</code> is <code>true</code>, the value of <code>TrafficPolicyVersionMarker</code> identifies the first traffic policy
+        /// that Amazon Route 53 will return if you submit another request. Call <code>ListTrafficPolicyVersions</code> again and specify the value of
+        /// <code>TrafficPolicyVersionMarker</code> in the <code>TrafficPolicyVersionMarker</code> request parameter.</p>
+        /// <p>This element is present only if <code>IsTruncated</code> is <code>true</code>.</p>
         pub fn set_traffic_policy_version_marker(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -514,6 +557,8 @@ pub mod list_traffic_policy_versions_output {
             self.max_items = Some(input);
             self
         }
+        /// <p>The value that you specified for the <code>maxitems</code> parameter in the <code>ListTrafficPolicyVersions</code> request that produced
+        /// the current response.</p>
         pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
             self.max_items = input;
             self
@@ -593,6 +638,11 @@ pub mod list_traffic_policy_instances_by_policy_output {
         pub(crate) max_items: std::option::Option<i32>,
     }
     impl Builder {
+        /// Appends an item to `traffic_policy_instances`.
+        ///
+        /// To override the contents of this collection use [`set_traffic_policy_instances`](Self::set_traffic_policy_instances).
+        ///
+        /// <p>A list that contains one <code>TrafficPolicyInstance</code> element for each traffic policy instance that matches the elements in the request.</p>
         pub fn traffic_policy_instances(
             mut self,
             input: impl Into<crate::model::TrafficPolicyInstance>,
@@ -602,6 +652,7 @@ pub mod list_traffic_policy_instances_by_policy_output {
             self.traffic_policy_instances = Some(v);
             self
         }
+        /// <p>A list that contains one <code>TrafficPolicyInstance</code> element for each traffic policy instance that matches the elements in the request.</p>
         pub fn set_traffic_policy_instances(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TrafficPolicyInstance>>,
@@ -615,6 +666,8 @@ pub mod list_traffic_policy_instances_by_policy_output {
             self.hosted_zone_id_marker = Some(input.into());
             self
         }
+        /// <p>If <code>IsTruncated</code> is <code>true</code>, <code>HostedZoneIdMarker</code> is the ID of the hosted zone of the first
+        /// traffic policy instance in the next group of traffic policy instances.</p>
         pub fn set_hosted_zone_id_marker(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -631,6 +684,8 @@ pub mod list_traffic_policy_instances_by_policy_output {
             self.traffic_policy_instance_name_marker = Some(input.into());
             self
         }
+        /// <p>If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceNameMarker</code> is the name of the first traffic policy instance
+        /// in the next group of <code>MaxItems</code> traffic policy instances.</p>
         pub fn set_traffic_policy_instance_name_marker(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -644,6 +699,8 @@ pub mod list_traffic_policy_instances_by_policy_output {
             self.traffic_policy_instance_type_marker = Some(input);
             self
         }
+        /// <p>If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceTypeMarker</code> is the DNS type of the resource record sets
+        /// that are associated with the first traffic policy instance in the next group of <code>MaxItems</code> traffic policy instances.</p>
         pub fn set_traffic_policy_instance_type_marker(
             mut self,
             input: std::option::Option<crate::model::RrType>,
@@ -658,6 +715,9 @@ pub mod list_traffic_policy_instances_by_policy_output {
             self.is_truncated = Some(input);
             self
         }
+        /// <p>A flag that indicates whether there are more traffic policy instances to be listed. If the response was truncated, you can get the next group of
+        /// traffic policy instances by calling <code>ListTrafficPolicyInstancesByPolicy</code> again and specifying the values of the <code>HostedZoneIdMarker</code>,
+        /// <code>TrafficPolicyInstanceNameMarker</code>, and <code>TrafficPolicyInstanceTypeMarker</code> elements in the corresponding request parameters.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.is_truncated = input;
             self
@@ -668,6 +728,8 @@ pub mod list_traffic_policy_instances_by_policy_output {
             self.max_items = Some(input);
             self
         }
+        /// <p>The value that you specified for the <code>MaxItems</code> parameter in the call to <code>ListTrafficPolicyInstancesByPolicy</code> that produced
+        /// the current response.</p>
         pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
             self.max_items = input;
             self
@@ -745,6 +807,11 @@ pub mod list_traffic_policy_instances_by_hosted_zone_output {
         pub(crate) max_items: std::option::Option<i32>,
     }
     impl Builder {
+        /// Appends an item to `traffic_policy_instances`.
+        ///
+        /// To override the contents of this collection use [`set_traffic_policy_instances`](Self::set_traffic_policy_instances).
+        ///
+        /// <p>A list that contains one <code>TrafficPolicyInstance</code> element for each traffic policy instance that matches the elements in the request. </p>
         pub fn traffic_policy_instances(
             mut self,
             input: impl Into<crate::model::TrafficPolicyInstance>,
@@ -754,6 +821,7 @@ pub mod list_traffic_policy_instances_by_hosted_zone_output {
             self.traffic_policy_instances = Some(v);
             self
         }
+        /// <p>A list that contains one <code>TrafficPolicyInstance</code> element for each traffic policy instance that matches the elements in the request. </p>
         pub fn set_traffic_policy_instances(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TrafficPolicyInstance>>,
@@ -770,6 +838,8 @@ pub mod list_traffic_policy_instances_by_hosted_zone_output {
             self.traffic_policy_instance_name_marker = Some(input.into());
             self
         }
+        /// <p>If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceNameMarker</code> is the name of the first traffic policy
+        /// instance in the next group of traffic policy instances.</p>
         pub fn set_traffic_policy_instance_name_marker(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -783,6 +853,8 @@ pub mod list_traffic_policy_instances_by_hosted_zone_output {
             self.traffic_policy_instance_type_marker = Some(input);
             self
         }
+        /// <p>If <code>IsTruncated</code> is true, <code>TrafficPolicyInstanceTypeMarker</code> is the DNS type of the resource record sets that are
+        /// associated with the first traffic policy instance in the next group of traffic policy instances.</p>
         pub fn set_traffic_policy_instance_type_marker(
             mut self,
             input: std::option::Option<crate::model::RrType>,
@@ -798,6 +870,10 @@ pub mod list_traffic_policy_instances_by_hosted_zone_output {
             self.is_truncated = Some(input);
             self
         }
+        /// <p>A flag that indicates whether there are more traffic policy instances to be listed. If the response was truncated, you can get the
+        /// next group of traffic policy instances by submitting another <code>ListTrafficPolicyInstancesByHostedZone</code> request and specifying
+        /// the values of <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>, and <code>TrafficPolicyInstanceTypeMarker</code>
+        /// in the corresponding request parameters.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.is_truncated = input;
             self
@@ -808,6 +884,8 @@ pub mod list_traffic_policy_instances_by_hosted_zone_output {
             self.max_items = Some(input);
             self
         }
+        /// <p>The value that you specified for the <code>MaxItems</code> parameter in the <code>ListTrafficPolicyInstancesByHostedZone</code> request
+        /// that produced the current response.</p>
         pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
             self.max_items = input;
             self
@@ -891,6 +969,12 @@ pub mod list_traffic_policy_instances_output {
         pub(crate) max_items: std::option::Option<i32>,
     }
     impl Builder {
+        /// Appends an item to `traffic_policy_instances`.
+        ///
+        /// To override the contents of this collection use [`set_traffic_policy_instances`](Self::set_traffic_policy_instances).
+        ///
+        /// <p>A list that contains one <code>TrafficPolicyInstance</code> element for each traffic policy instance that matches the elements
+        /// in the request.</p>
         pub fn traffic_policy_instances(
             mut self,
             input: impl Into<crate::model::TrafficPolicyInstance>,
@@ -900,6 +984,8 @@ pub mod list_traffic_policy_instances_output {
             self.traffic_policy_instances = Some(v);
             self
         }
+        /// <p>A list that contains one <code>TrafficPolicyInstance</code> element for each traffic policy instance that matches the elements
+        /// in the request.</p>
         pub fn set_traffic_policy_instances(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TrafficPolicyInstance>>,
@@ -913,6 +999,8 @@ pub mod list_traffic_policy_instances_output {
             self.hosted_zone_id_marker = Some(input.into());
             self
         }
+        /// <p>If <code>IsTruncated</code> is <code>true</code>, <code>HostedZoneIdMarker</code> is the ID of the hosted zone of the first
+        /// traffic policy instance that Route 53 will return if you submit another <code>ListTrafficPolicyInstances</code> request. </p>
         pub fn set_hosted_zone_id_marker(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -929,6 +1017,8 @@ pub mod list_traffic_policy_instances_output {
             self.traffic_policy_instance_name_marker = Some(input.into());
             self
         }
+        /// <p>If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceNameMarker</code> is the name of the first traffic policy
+        /// instance that Route 53 will return if you submit another <code>ListTrafficPolicyInstances</code> request. </p>
         pub fn set_traffic_policy_instance_name_marker(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -942,6 +1032,8 @@ pub mod list_traffic_policy_instances_output {
             self.traffic_policy_instance_type_marker = Some(input);
             self
         }
+        /// <p>If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceTypeMarker</code> is the DNS type of the resource record sets
+        /// that are associated with the first traffic policy instance that Amazon Route 53 will return if you submit another <code>ListTrafficPolicyInstances</code> request. </p>
         pub fn set_traffic_policy_instance_type_marker(
             mut self,
             input: std::option::Option<crate::model::RrType>,
@@ -957,6 +1049,10 @@ pub mod list_traffic_policy_instances_output {
             self.is_truncated = Some(input);
             self
         }
+        /// <p>A flag that indicates whether there are more traffic policy instances to be listed. If the response was truncated, you can get more
+        /// traffic policy instances by calling <code>ListTrafficPolicyInstances</code> again and specifying the values of the
+        /// <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>, and <code>TrafficPolicyInstanceTypeMarker</code>
+        /// in the corresponding request parameters.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.is_truncated = input;
             self
@@ -967,6 +1063,8 @@ pub mod list_traffic_policy_instances_output {
             self.max_items = Some(input);
             self
         }
+        /// <p>The value that you specified for the <code>MaxItems</code> parameter in the call to <code>ListTrafficPolicyInstances</code>
+        /// that produced the current response.</p>
         pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
             self.max_items = input;
             self
@@ -1032,6 +1130,11 @@ pub mod list_traffic_policies_output {
         pub(crate) max_items: std::option::Option<i32>,
     }
     impl Builder {
+        /// Appends an item to `traffic_policy_summaries`.
+        ///
+        /// To override the contents of this collection use [`set_traffic_policy_summaries`](Self::set_traffic_policy_summaries).
+        ///
+        /// <p>A list that contains one <code>TrafficPolicySummary</code> element for each traffic policy that was created by the current Amazon Web Services account.</p>
         pub fn traffic_policy_summaries(
             mut self,
             input: impl Into<crate::model::TrafficPolicySummary>,
@@ -1041,6 +1144,7 @@ pub mod list_traffic_policies_output {
             self.traffic_policy_summaries = Some(v);
             self
         }
+        /// <p>A list that contains one <code>TrafficPolicySummary</code> element for each traffic policy that was created by the current Amazon Web Services account.</p>
         pub fn set_traffic_policy_summaries(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TrafficPolicySummary>>,
@@ -1055,6 +1159,9 @@ pub mod list_traffic_policies_output {
             self.is_truncated = Some(input);
             self
         }
+        /// <p>A flag that indicates whether there are more traffic policies to be listed. If the response was truncated, you can get the next group of
+        /// traffic policies by submitting another <code>ListTrafficPolicies</code> request and specifying the value of <code>TrafficPolicyIdMarker</code>
+        /// in the <code>TrafficPolicyIdMarker</code> request parameter.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.is_truncated = input;
             self
@@ -1065,6 +1172,8 @@ pub mod list_traffic_policies_output {
             self.traffic_policy_id_marker = Some(input.into());
             self
         }
+        /// <p>If the value of <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyIdMarker</code> is the ID of the first traffic policy
+        /// in the next group of <code>MaxItems</code> traffic policies.</p>
         pub fn set_traffic_policy_id_marker(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1078,6 +1187,8 @@ pub mod list_traffic_policies_output {
             self.max_items = Some(input);
             self
         }
+        /// <p>The value that you specified for the <code>MaxItems</code> parameter in the <code>ListTrafficPolicies</code> request that produced
+        /// the current response.</p>
         pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
             self.max_items = input;
             self
@@ -1124,12 +1235,18 @@ pub mod list_tags_for_resources_output {
             std::option::Option<std::vec::Vec<crate::model::ResourceTagSet>>,
     }
     impl Builder {
+        /// Appends an item to `resource_tag_sets`.
+        ///
+        /// To override the contents of this collection use [`set_resource_tag_sets`](Self::set_resource_tag_sets).
+        ///
+        /// <p>A list of <code>ResourceTagSet</code>s containing tags associated with the specified resources.</p>
         pub fn resource_tag_sets(mut self, input: impl Into<crate::model::ResourceTagSet>) -> Self {
             let mut v = self.resource_tag_sets.unwrap_or_default();
             v.push(input.into());
             self.resource_tag_sets = Some(v);
             self
         }
+        /// <p>A list of <code>ResourceTagSet</code>s containing tags associated with the specified resources.</p>
         pub fn set_resource_tag_sets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourceTagSet>>,
@@ -1180,6 +1297,7 @@ pub mod list_tags_for_resource_output {
             self.resource_tag_set = Some(input);
             self
         }
+        /// <p>A <code>ResourceTagSet</code> containing tags associated with the specified resource.</p>
         pub fn set_resource_tag_set(
             mut self,
             input: std::option::Option<crate::model::ResourceTagSet>,
@@ -1246,12 +1364,20 @@ pub mod list_reusable_delegation_sets_output {
         pub(crate) max_items: std::option::Option<i32>,
     }
     impl Builder {
+        /// Appends an item to `delegation_sets`.
+        ///
+        /// To override the contents of this collection use [`set_delegation_sets`](Self::set_delegation_sets).
+        ///
+        /// <p>A complex type that contains one <code>DelegationSet</code> element for each reusable delegation set that was created
+        /// by the current Amazon Web Services account.</p>
         pub fn delegation_sets(mut self, input: impl Into<crate::model::DelegationSet>) -> Self {
             let mut v = self.delegation_sets.unwrap_or_default();
             v.push(input.into());
             self.delegation_sets = Some(v);
             self
         }
+        /// <p>A complex type that contains one <code>DelegationSet</code> element for each reusable delegation set that was created
+        /// by the current Amazon Web Services account.</p>
         pub fn set_delegation_sets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DelegationSet>>,
@@ -1265,6 +1391,8 @@ pub mod list_reusable_delegation_sets_output {
             self.marker = Some(input.into());
             self
         }
+        /// <p>For the second and subsequent calls to <code>ListReusableDelegationSets</code>, <code>Marker</code> is the value that you specified
+        /// for the <code>marker</code> parameter in the request that produced the current response.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -1274,6 +1402,7 @@ pub mod list_reusable_delegation_sets_output {
             self.is_truncated = Some(input);
             self
         }
+        /// <p>A flag that indicates whether there are more reusable delegation sets to be listed.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.is_truncated = input;
             self
@@ -1285,6 +1414,9 @@ pub mod list_reusable_delegation_sets_output {
             self.next_marker = Some(input.into());
             self
         }
+        /// <p>If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextMarker</code> identifies the next reusable delegation set
+        /// that Amazon Route 53 will return if you submit another <code>ListReusableDelegationSets</code> request and specify the value of <code>NextMarker</code>
+        /// in the <code>marker</code> parameter.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
@@ -1295,6 +1427,8 @@ pub mod list_reusable_delegation_sets_output {
             self.max_items = Some(input);
             self
         }
+        /// <p>The value that you specified for the <code>maxitems</code> parameter in the call to <code>ListReusableDelegationSets</code> that
+        /// produced the current response.</p>
         pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
             self.max_items = input;
             self
@@ -1370,6 +1504,11 @@ pub mod list_resource_record_sets_output {
         pub(crate) max_items: std::option::Option<i32>,
     }
     impl Builder {
+        /// Appends an item to `resource_record_sets`.
+        ///
+        /// To override the contents of this collection use [`set_resource_record_sets`](Self::set_resource_record_sets).
+        ///
+        /// <p>Information about multiple resource record sets.</p>
         pub fn resource_record_sets(
             mut self,
             input: impl Into<crate::model::ResourceRecordSet>,
@@ -1379,6 +1518,7 @@ pub mod list_resource_record_sets_output {
             self.resource_record_sets = Some(v);
             self
         }
+        /// <p>Information about multiple resource record sets.</p>
         pub fn set_resource_record_sets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourceRecordSet>>,
@@ -1392,6 +1532,8 @@ pub mod list_resource_record_sets_output {
             self.is_truncated = Some(input);
             self
         }
+        /// <p>A flag that indicates whether more resource record sets remain to be listed. If your results were truncated, you can make a
+        /// follow-up pagination request by using the <code>NextRecordName</code> element.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.is_truncated = input;
             self
@@ -1402,6 +1544,8 @@ pub mod list_resource_record_sets_output {
             self.next_record_name = Some(input.into());
             self
         }
+        /// <p>If the results were truncated, the name of the next record in the list.</p>
+        /// <p>This element is present only if <code>IsTruncated</code> is true. </p>
         pub fn set_next_record_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1415,6 +1559,8 @@ pub mod list_resource_record_sets_output {
             self.next_record_type = Some(input);
             self
         }
+        /// <p>If the results were truncated, the type of the next record in the list.</p>
+        /// <p>This element is present only if <code>IsTruncated</code> is true. </p>
         pub fn set_next_record_type(
             mut self,
             input: std::option::Option<crate::model::RrType>,
@@ -1432,6 +1578,12 @@ pub mod list_resource_record_sets_output {
             self.next_record_identifier = Some(input.into());
             self
         }
+        /// <p>
+        /// <i>Resource record sets that have a routing policy other than simple:</i> If results were truncated for a given
+        /// DNS name and type, the value of <code>SetIdentifier</code> for the next resource record set that has the current DNS name and type.</p>
+        /// <p>For information about routing policies, see
+        /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html">Choosing a Routing Policy</a>
+        /// in the <i>Amazon Route 53 Developer Guide</i>.</p>
         pub fn set_next_record_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1444,6 +1596,7 @@ pub mod list_resource_record_sets_output {
             self.max_items = Some(input);
             self
         }
+        /// <p>The maximum number of records you requested.</p>
         pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
             self.max_items = input;
             self
@@ -1468,6 +1621,7 @@ impl ListResourceRecordSetsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListQueryLoggingConfigsOutput {
@@ -1502,6 +1656,13 @@ pub mod list_query_logging_configs_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `query_logging_configs`.
+        ///
+        /// To override the contents of this collection use [`set_query_logging_configs`](Self::set_query_logging_configs).
+        ///
+        /// <p>An array that contains one
+        /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_QueryLoggingConfig.html">QueryLoggingConfig</a> element
+        /// for each configuration for DNS query logging that is associated with the current Amazon Web Services account.</p>
         pub fn query_logging_configs(
             mut self,
             input: impl Into<crate::model::QueryLoggingConfig>,
@@ -1511,6 +1672,9 @@ pub mod list_query_logging_configs_output {
             self.query_logging_configs = Some(v);
             self
         }
+        /// <p>An array that contains one
+        /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_QueryLoggingConfig.html">QueryLoggingConfig</a> element
+        /// for each configuration for DNS query logging that is associated with the current Amazon Web Services account.</p>
         pub fn set_query_logging_configs(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::QueryLoggingConfig>>,
@@ -1528,6 +1692,12 @@ pub mod list_query_logging_configs_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If a response includes the last of the query logging configurations that are associated with the current Amazon Web Services account,
+        /// <code>NextToken</code> doesn't appear in the response.</p>
+        /// <p>If a response doesn't include the last of the configurations, you can get more configurations by submitting another
+        /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListQueryLoggingConfigs.html">ListQueryLoggingConfigs</a>
+        /// request. Get the value of <code>NextToken</code> that Amazon Route 53 returned in the previous response and include it in
+        /// <code>NextToken</code> in the next request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1548,6 +1718,7 @@ impl ListQueryLoggingConfigsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListHostedZonesByVpcOutput {
@@ -1580,6 +1751,12 @@ pub mod list_hosted_zones_by_vpc_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `hosted_zone_summaries`.
+        ///
+        /// To override the contents of this collection use [`set_hosted_zone_summaries`](Self::set_hosted_zone_summaries).
+        ///
+        /// <p>A list that contains one <code>HostedZoneSummary</code> element for each hosted zone that the specified Amazon VPC is associated with.
+        /// Each <code>HostedZoneSummary</code> element contains the hosted zone name and ID, and information about who owns the hosted zone.</p>
         pub fn hosted_zone_summaries(
             mut self,
             input: impl Into<crate::model::HostedZoneSummary>,
@@ -1589,6 +1766,8 @@ pub mod list_hosted_zones_by_vpc_output {
             self.hosted_zone_summaries = Some(v);
             self
         }
+        /// <p>A list that contains one <code>HostedZoneSummary</code> element for each hosted zone that the specified Amazon VPC is associated with.
+        /// Each <code>HostedZoneSummary</code> element contains the hosted zone name and ID, and information about who owns the hosted zone.</p>
         pub fn set_hosted_zone_summaries(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::HostedZoneSummary>>,
@@ -1601,6 +1780,7 @@ pub mod list_hosted_zones_by_vpc_output {
             self.max_items = Some(input);
             self
         }
+        /// <p>The value that you specified for <code>MaxItems</code> in the most recent <code>ListHostedZonesByVPC</code> request.</p>
         pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
             self.max_items = input;
             self
@@ -1610,6 +1790,7 @@ pub mod list_hosted_zones_by_vpc_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The value that you will use for <code>NextToken</code> in the next <code>ListHostedZonesByVPC</code> request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1688,12 +1869,18 @@ pub mod list_hosted_zones_by_name_output {
         pub(crate) max_items: std::option::Option<i32>,
     }
     impl Builder {
+        /// Appends an item to `hosted_zones`.
+        ///
+        /// To override the contents of this collection use [`set_hosted_zones`](Self::set_hosted_zones).
+        ///
+        /// <p>A complex type that contains general information about the hosted zone.</p>
         pub fn hosted_zones(mut self, input: impl Into<crate::model::HostedZone>) -> Self {
             let mut v = self.hosted_zones.unwrap_or_default();
             v.push(input.into());
             self.hosted_zones = Some(v);
             self
         }
+        /// <p>A complex type that contains general information about the hosted zone.</p>
         pub fn set_hosted_zones(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::HostedZone>>,
@@ -1707,6 +1894,8 @@ pub mod list_hosted_zones_by_name_output {
             self.dns_name = Some(input.into());
             self
         }
+        /// <p>For the second and subsequent calls to <code>ListHostedZonesByName</code>, <code>DNSName</code> is the value that you specified for the
+        /// <code>dnsname</code> parameter in the request that produced the current response.</p>
         pub fn set_dns_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.dns_name = input;
             self
@@ -1716,6 +1905,7 @@ pub mod list_hosted_zones_by_name_output {
             self.hosted_zone_id = Some(input.into());
             self
         }
+        /// <p>The ID that Amazon Route 53 assigned to the hosted zone when you created it.</p>
         pub fn set_hosted_zone_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1730,6 +1920,9 @@ pub mod list_hosted_zones_by_name_output {
             self.is_truncated = Some(input);
             self
         }
+        /// <p>A flag that indicates whether there are more hosted zones to be listed. If the response was truncated, you can get the next group of
+        /// <code>maxitems</code> hosted zones by calling <code>ListHostedZonesByName</code> again and specifying the values of <code>NextDNSName</code> and
+        /// <code>NextHostedZoneId</code> elements in the <code>dnsname</code> and <code>hostedzoneid</code> parameters.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.is_truncated = input;
             self
@@ -1742,6 +1935,10 @@ pub mod list_hosted_zones_by_name_output {
             self.next_dns_name = Some(input.into());
             self
         }
+        /// <p>If <code>IsTruncated</code> is true, the value of <code>NextDNSName</code> is the name of the first hosted zone in the next group of
+        /// <code>maxitems</code> hosted zones. Call <code>ListHostedZonesByName</code> again and specify the value of <code>NextDNSName</code>
+        /// and <code>NextHostedZoneId</code> in the <code>dnsname</code> and <code>hostedzoneid</code> parameters, respectively.</p>
+        /// <p>This element is present only if <code>IsTruncated</code> is <code>true</code>.</p>
         pub fn set_next_dns_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1757,6 +1954,10 @@ pub mod list_hosted_zones_by_name_output {
             self.next_hosted_zone_id = Some(input.into());
             self
         }
+        /// <p>If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextHostedZoneId</code> identifies the first hosted zone in the
+        /// next group of <code>maxitems</code> hosted zones. Call <code>ListHostedZonesByName</code> again and specify the value of <code>NextDNSName</code>
+        /// and <code>NextHostedZoneId</code> in the <code>dnsname</code> and <code>hostedzoneid</code> parameters, respectively.</p>
+        /// <p>This element is present only if <code>IsTruncated</code> is <code>true</code>.</p>
         pub fn set_next_hosted_zone_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1770,6 +1971,8 @@ pub mod list_hosted_zones_by_name_output {
             self.max_items = Some(input);
             self
         }
+        /// <p>The value that you specified for the <code>maxitems</code> parameter in the call to <code>ListHostedZonesByName</code> that produced the
+        /// current response.</p>
         pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
             self.max_items = input;
             self
@@ -1795,6 +1998,7 @@ impl ListHostedZonesByNameOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListHostedZonesOutput {
@@ -1840,12 +2044,18 @@ pub mod list_hosted_zones_output {
         pub(crate) max_items: std::option::Option<i32>,
     }
     impl Builder {
+        /// Appends an item to `hosted_zones`.
+        ///
+        /// To override the contents of this collection use [`set_hosted_zones`](Self::set_hosted_zones).
+        ///
+        /// <p>A complex type that contains general information about the hosted zone.</p>
         pub fn hosted_zones(mut self, input: impl Into<crate::model::HostedZone>) -> Self {
             let mut v = self.hosted_zones.unwrap_or_default();
             v.push(input.into());
             self.hosted_zones = Some(v);
             self
         }
+        /// <p>A complex type that contains general information about the hosted zone.</p>
         pub fn set_hosted_zones(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::HostedZone>>,
@@ -1859,6 +2069,8 @@ pub mod list_hosted_zones_output {
             self.marker = Some(input.into());
             self
         }
+        /// <p>For the second and subsequent calls to <code>ListHostedZones</code>, <code>Marker</code> is the value that you specified for the
+        /// <code>marker</code> parameter in the request that produced the current response.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -1870,6 +2082,9 @@ pub mod list_hosted_zones_output {
             self.is_truncated = Some(input);
             self
         }
+        /// <p>A flag indicating whether there are more hosted zones to be listed. If the response was truncated, you can get more hosted zones
+        /// by submitting another <code>ListHostedZones</code> request and specifying the value of <code>NextMarker</code> in the
+        /// <code>marker</code> parameter.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.is_truncated = input;
             self
@@ -1882,6 +2097,10 @@ pub mod list_hosted_zones_output {
             self.next_marker = Some(input.into());
             self
         }
+        /// <p>If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextMarker</code> identifies the first hosted zone in the next group
+        /// of hosted zones. Submit another <code>ListHostedZones</code> request, and specify the value of <code>NextMarker</code> from the response in the
+        /// <code>marker</code> parameter.</p>
+        /// <p>This element is present only if <code>IsTruncated</code> is <code>true</code>.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
@@ -1892,6 +2111,8 @@ pub mod list_hosted_zones_output {
             self.max_items = Some(input);
             self
         }
+        /// <p>The value that you specified for the <code>maxitems</code> parameter in the call to <code>ListHostedZones</code> that
+        /// produced the current response.</p>
         pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
             self.max_items = input;
             self
@@ -1961,12 +2182,20 @@ pub mod list_health_checks_output {
         pub(crate) max_items: std::option::Option<i32>,
     }
     impl Builder {
+        /// Appends an item to `health_checks`.
+        ///
+        /// To override the contents of this collection use [`set_health_checks`](Self::set_health_checks).
+        ///
+        /// <p>A complex type that contains one <code>HealthCheck</code> element for each health check that is associated with the current
+        /// Amazon Web Services account.</p>
         pub fn health_checks(mut self, input: impl Into<crate::model::HealthCheck>) -> Self {
             let mut v = self.health_checks.unwrap_or_default();
             v.push(input.into());
             self.health_checks = Some(v);
             self
         }
+        /// <p>A complex type that contains one <code>HealthCheck</code> element for each health check that is associated with the current
+        /// Amazon Web Services account.</p>
         pub fn set_health_checks(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::HealthCheck>>,
@@ -1980,6 +2209,8 @@ pub mod list_health_checks_output {
             self.marker = Some(input.into());
             self
         }
+        /// <p>For the second and subsequent calls to <code>ListHealthChecks</code>, <code>Marker</code> is the value that you specified for the
+        /// <code>marker</code> parameter in the previous request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -1991,6 +2222,9 @@ pub mod list_health_checks_output {
             self.is_truncated = Some(input);
             self
         }
+        /// <p>A flag that indicates whether there are more health checks to be listed. If the response was truncated, you can get the next group of
+        /// health checks by submitting another <code>ListHealthChecks</code> request and specifying the value of <code>NextMarker</code> in the
+        /// <code>marker</code> parameter.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.is_truncated = input;
             self
@@ -2002,6 +2236,9 @@ pub mod list_health_checks_output {
             self.next_marker = Some(input.into());
             self
         }
+        /// <p>If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextMarker</code> identifies the first health check that Amazon Route 53
+        /// returns if you submit another <code>ListHealthChecks</code> request and specify the value of <code>NextMarker</code> in
+        /// the <code>marker</code> parameter.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
@@ -2012,6 +2249,8 @@ pub mod list_health_checks_output {
             self.max_items = Some(input);
             self
         }
+        /// <p>The value that you specified for the <code>maxitems</code> parameter in the call to <code>ListHealthChecks</code> that produced the
+        /// current response.</p>
         pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
             self.max_items = input;
             self
@@ -2086,6 +2325,11 @@ pub mod list_geo_locations_output {
         pub(crate) max_items: std::option::Option<i32>,
     }
     impl Builder {
+        /// Appends an item to `geo_location_details_list`.
+        ///
+        /// To override the contents of this collection use [`set_geo_location_details_list`](Self::set_geo_location_details_list).
+        ///
+        /// <p>A complex type that contains one <code>GeoLocationDetails</code> element for each location that Amazon Route 53 supports for geolocation.</p>
         pub fn geo_location_details_list(
             mut self,
             input: impl Into<crate::model::GeoLocationDetails>,
@@ -2095,6 +2339,7 @@ pub mod list_geo_locations_output {
             self.geo_location_details_list = Some(v);
             self
         }
+        /// <p>A complex type that contains one <code>GeoLocationDetails</code> element for each location that Amazon Route 53 supports for geolocation.</p>
         pub fn set_geo_location_details_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GeoLocationDetails>>,
@@ -2110,6 +2355,10 @@ pub mod list_geo_locations_output {
             self.is_truncated = Some(input);
             self
         }
+        /// <p>A value that indicates whether more locations remain to be listed after the last location in this response. If so, the value of
+        /// <code>IsTruncated</code> is <code>true</code>. To get more values, submit another request and include the values of <code>NextContinentCode</code>,
+        /// <code>NextCountryCode</code>, and <code>NextSubdivisionCode</code> in the <code>startcontinentcode</code>, <code>startcountrycode</code>, and
+        /// <code>startsubdivisioncode</code>, as applicable.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.is_truncated = input;
             self
@@ -2120,6 +2369,8 @@ pub mod list_geo_locations_output {
             self.next_continent_code = Some(input.into());
             self
         }
+        /// <p>If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more locations. Enter the value of
+        /// <code>NextContinentCode</code> in the <code>startcontinentcode</code> parameter in another <code>ListGeoLocations</code> request.</p>
         pub fn set_next_continent_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2133,6 +2384,8 @@ pub mod list_geo_locations_output {
             self.next_country_code = Some(input.into());
             self
         }
+        /// <p>If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more locations. Enter the value of
+        /// <code>NextCountryCode</code> in the <code>startcountrycode</code> parameter in another <code>ListGeoLocations</code> request.</p>
         pub fn set_next_country_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2146,6 +2399,8 @@ pub mod list_geo_locations_output {
             self.next_subdivision_code = Some(input.into());
             self
         }
+        /// <p>If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more locations. Enter the value of
+        /// <code>NextSubdivisionCode</code> in the <code>startsubdivisioncode</code> parameter in another <code>ListGeoLocations</code> request.</p>
         pub fn set_next_subdivision_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2158,6 +2413,7 @@ pub mod list_geo_locations_output {
             self.max_items = Some(input);
             self
         }
+        /// <p>The value that you specified for <code>MaxItems</code> in the request.</p>
         pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
             self.max_items = input;
             self
@@ -2213,6 +2469,7 @@ pub mod get_traffic_policy_instance_count_output {
             self.traffic_policy_instance_count = Some(input);
             self
         }
+        /// <p>The number of traffic policy instances that are associated with the current Amazon Web Services account.</p>
         pub fn set_traffic_policy_instance_count(
             mut self,
             input: std::option::Option<i32>,
@@ -2267,6 +2524,7 @@ pub mod get_traffic_policy_instance_output {
             self.traffic_policy_instance = Some(input);
             self
         }
+        /// <p>A complex type that contains settings for the traffic policy instance.</p>
         pub fn set_traffic_policy_instance(
             mut self,
             input: std::option::Option<crate::model::TrafficPolicyInstance>,
@@ -2317,6 +2575,7 @@ pub mod get_traffic_policy_output {
             self.traffic_policy = Some(input);
             self
         }
+        /// <p>A complex type that contains settings for the specified traffic policy.</p>
         pub fn set_traffic_policy(
             mut self,
             input: std::option::Option<crate::model::TrafficPolicy>,
@@ -2371,6 +2630,7 @@ pub mod get_reusable_delegation_set_limit_output {
             self.limit = Some(input);
             self
         }
+        /// <p>The current setting for the limit on hosted zones that you can associate with the specified reusable delegation set.</p>
         pub fn set_limit(
             mut self,
             input: std::option::Option<crate::model::ReusableDelegationSetLimit>,
@@ -2383,6 +2643,7 @@ pub mod get_reusable_delegation_set_limit_output {
             self.count = Some(input);
             self
         }
+        /// <p>The current number of hosted zones that you can associate with the specified reusable delegation set.</p>
         pub fn set_count(mut self, input: std::option::Option<i64>) -> Self {
             self.count = input;
             self
@@ -2431,6 +2692,7 @@ pub mod get_reusable_delegation_set_output {
             self.delegation_set = Some(input);
             self
         }
+        /// <p>A complex type that contains information about the reusable delegation set.</p>
         pub fn set_delegation_set(
             mut self,
             input: std::option::Option<crate::model::DelegationSet>,
@@ -2453,6 +2715,7 @@ impl GetReusableDelegationSetOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetQueryLoggingConfigOutput {
@@ -2482,6 +2745,8 @@ pub mod get_query_logging_config_output {
             self.query_logging_config = Some(input);
             self
         }
+        /// <p>A complex type that contains information about the query logging configuration that you specified in a
+        /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetQueryLoggingConfig.html">GetQueryLoggingConfig</a> request.</p>
         pub fn set_query_logging_config(
             mut self,
             input: std::option::Option<crate::model::QueryLoggingConfig>,
@@ -2542,6 +2807,9 @@ pub mod get_hosted_zone_limit_output {
             self.limit = Some(input);
             self
         }
+        /// <p>The current setting for the specified limit. For example, if you specified <code>MAX_RRSETS_BY_ZONE</code> for the value of
+        /// <code>Type</code> in the request, the value of <code>Limit</code> is the maximum number of records that you can create
+        /// in the specified hosted zone.</p>
         pub fn set_limit(
             mut self,
             input: std::option::Option<crate::model::HostedZoneLimit>,
@@ -2556,6 +2824,9 @@ pub mod get_hosted_zone_limit_output {
             self.count = Some(input);
             self
         }
+        /// <p>The current number of entities that you have created of the specified type. For example, if you specified
+        /// <code>MAX_RRSETS_BY_ZONE</code> for the value of <code>Type</code> in the request, the value of <code>Count</code>
+        /// is the current number of records that you have created in the specified hosted zone.</p>
         pub fn set_count(mut self, input: std::option::Option<i64>) -> Self {
             self.count = input;
             self
@@ -2604,6 +2875,7 @@ pub mod get_hosted_zone_count_output {
             self.hosted_zone_count = Some(input);
             self
         }
+        /// <p>The total number of public and private hosted zones that are associated with the current Amazon Web Services account.</p>
         pub fn set_hosted_zone_count(mut self, input: std::option::Option<i64>) -> Self {
             self.hosted_zone_count = input;
             self
@@ -2659,6 +2931,7 @@ pub mod get_hosted_zone_output {
             self.hosted_zone = Some(input);
             self
         }
+        /// <p>A complex type that contains general information about the specified hosted zone.</p>
         pub fn set_hosted_zone(
             mut self,
             input: std::option::Option<crate::model::HostedZone>,
@@ -2671,6 +2944,7 @@ pub mod get_hosted_zone_output {
             self.delegation_set = Some(input);
             self
         }
+        /// <p>A complex type that lists the Amazon Route 53 name servers for the specified hosted zone.</p>
         pub fn set_delegation_set(
             mut self,
             input: std::option::Option<crate::model::DelegationSet>,
@@ -2678,12 +2952,18 @@ pub mod get_hosted_zone_output {
             self.delegation_set = input;
             self
         }
+        /// Appends an item to `vp_cs`.
+        ///
+        /// To override the contents of this collection use [`set_vp_cs`](Self::set_vp_cs).
+        ///
+        /// <p>A complex type that contains information about the VPCs that are associated with the specified hosted zone.</p>
         pub fn vp_cs(mut self, input: impl Into<crate::model::Vpc>) -> Self {
             let mut v = self.vp_cs.unwrap_or_default();
             v.push(input.into());
             self.vp_cs = Some(v);
             self
         }
+        /// <p>A complex type that contains information about the VPCs that are associated with the specified hosted zone.</p>
         pub fn set_vp_cs(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Vpc>>,
@@ -2735,6 +3015,12 @@ pub mod get_health_check_status_output {
             std::option::Option<std::vec::Vec<crate::model::HealthCheckObservation>>,
     }
     impl Builder {
+        /// Appends an item to `health_check_observations`.
+        ///
+        /// To override the contents of this collection use [`set_health_check_observations`](Self::set_health_check_observations).
+        ///
+        /// <p>A list that contains one <code>HealthCheckObservation</code> element for each Amazon Route 53 health checker that is reporting a status
+        /// about the health check endpoint.</p>
         pub fn health_check_observations(
             mut self,
             input: impl Into<crate::model::HealthCheckObservation>,
@@ -2744,6 +3030,8 @@ pub mod get_health_check_status_output {
             self.health_check_observations = Some(v);
             self
         }
+        /// <p>A list that contains one <code>HealthCheckObservation</code> element for each Amazon Route 53 health checker that is reporting a status
+        /// about the health check endpoint.</p>
         pub fn set_health_check_observations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::HealthCheckObservation>>,
@@ -2791,6 +3079,11 @@ pub mod get_health_check_last_failure_reason_output {
             std::option::Option<std::vec::Vec<crate::model::HealthCheckObservation>>,
     }
     impl Builder {
+        /// Appends an item to `health_check_observations`.
+        ///
+        /// To override the contents of this collection use [`set_health_check_observations`](Self::set_health_check_observations).
+        ///
+        /// <p>A list that contains one <code>Observation</code> element for each Amazon Route 53 health checker that is reporting a last failure reason. </p>
         pub fn health_check_observations(
             mut self,
             input: impl Into<crate::model::HealthCheckObservation>,
@@ -2800,6 +3093,7 @@ pub mod get_health_check_last_failure_reason_output {
             self.health_check_observations = Some(v);
             self
         }
+        /// <p>A list that contains one <code>Observation</code> element for each Amazon Route 53 health checker that is reporting a last failure reason. </p>
         pub fn set_health_check_observations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::HealthCheckObservation>>,
@@ -2850,6 +3144,7 @@ pub mod get_health_check_count_output {
             self.health_check_count = Some(input);
             self
         }
+        /// <p>The number of health checks associated with the current Amazon Web Services account.</p>
         pub fn set_health_check_count(mut self, input: std::option::Option<i64>) -> Self {
             self.health_check_count = input;
             self
@@ -2899,6 +3194,8 @@ pub mod get_health_check_output {
             self.health_check = Some(input);
             self
         }
+        /// <p>A complex type that contains information about one health check that is associated with
+        /// the current Amazon Web Services account.</p>
         pub fn set_health_check(
             mut self,
             input: std::option::Option<crate::model::HealthCheck>,
@@ -2949,6 +3246,7 @@ pub mod get_geo_location_output {
             self.geo_location_details = Some(input);
             self
         }
+        /// <p>A complex type that contains the codes and full continent, country, and subdivision names for the specified geolocation code.</p>
         pub fn set_geo_location_details(
             mut self,
             input: std::option::Option<crate::model::GeoLocationDetails>,
@@ -2971,6 +3269,7 @@ impl GetGeoLocationOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDnssecOutput {
@@ -3003,6 +3302,7 @@ pub mod get_dnssec_output {
             self.status = Some(input);
             self
         }
+        /// <p>A string repesenting the status of DNSSEC.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::DnssecStatus>,
@@ -3010,12 +3310,18 @@ pub mod get_dnssec_output {
             self.status = input;
             self
         }
+        /// Appends an item to `key_signing_keys`.
+        ///
+        /// To override the contents of this collection use [`set_key_signing_keys`](Self::set_key_signing_keys).
+        ///
+        /// <p>The key-signing keys (KSKs) in your account.</p>
         pub fn key_signing_keys(mut self, input: impl Into<crate::model::KeySigningKey>) -> Self {
             let mut v = self.key_signing_keys.unwrap_or_default();
             v.push(input.into());
             self.key_signing_keys = Some(v);
             self
         }
+        /// <p>The key-signing keys (KSKs) in your account.</p>
         pub fn set_key_signing_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::KeySigningKey>>,
@@ -3063,12 +3369,20 @@ pub mod get_checker_ip_ranges_output {
         pub(crate) checker_ip_ranges: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `checker_ip_ranges`.
+        ///
+        /// To override the contents of this collection use [`set_checker_ip_ranges`](Self::set_checker_ip_ranges).
+        ///
+        /// <p>A complex type that contains sorted list of IP ranges in CIDR format for Amazon Route 53 health
+        /// checkers.</p>
         pub fn checker_ip_ranges(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.checker_ip_ranges.unwrap_or_default();
             v.push(input.into());
             self.checker_ip_ranges = Some(v);
             self
         }
+        /// <p>A complex type that contains sorted list of IP ranges in CIDR format for Amazon Route 53 health
+        /// checkers.</p>
         pub fn set_checker_ip_ranges(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3119,6 +3433,7 @@ pub mod get_change_output {
             self.change_info = Some(input);
             self
         }
+        /// <p>A complex type that contains information about the specified change batch.</p>
         pub fn set_change_info(
             mut self,
             input: std::option::Option<crate::model::ChangeInfo>,
@@ -3179,6 +3494,9 @@ pub mod get_account_limit_output {
             self.limit = Some(input);
             self
         }
+        /// <p>The current setting for the specified limit. For example, if you specified <code>MAX_HEALTH_CHECKS_BY_OWNER</code> for the value of
+        /// <code>Type</code> in the request, the value of <code>Limit</code> is the maximum number of health checks that you can create
+        /// using the current account.</p>
         pub fn set_limit(mut self, input: std::option::Option<crate::model::AccountLimit>) -> Self {
             self.limit = input;
             self
@@ -3190,6 +3508,9 @@ pub mod get_account_limit_output {
             self.count = Some(input);
             self
         }
+        /// <p>The current number of entities that you have created of the specified type. For example, if you specified
+        /// <code>MAX_HEALTH_CHECKS_BY_OWNER</code> for the value of <code>Type</code> in the request, the value of <code>Count</code>
+        /// is the current number of health checks that you have created using the current account.</p>
         pub fn set_count(mut self, input: std::option::Option<i64>) -> Self {
             self.count = input;
             self
@@ -3210,6 +3531,7 @@ impl GetAccountLimitOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableHostedZoneDnssecOutput {
@@ -3239,6 +3561,8 @@ pub mod enable_hosted_zone_dnssec_output {
             self.change_info = Some(input);
             self
         }
+        /// <p>A complex type that describes change information about changes made to your hosted
+        /// zone.</p>
         pub fn set_change_info(
             mut self,
             input: std::option::Option<crate::model::ChangeInfo>,
@@ -3289,6 +3613,7 @@ pub mod disassociate_vpc_from_hosted_zone_output {
             self.change_info = Some(input);
             self
         }
+        /// <p>A complex type that describes the changes made to the specified private hosted zone.</p>
         pub fn set_change_info(
             mut self,
             input: std::option::Option<crate::model::ChangeInfo>,
@@ -3311,6 +3636,7 @@ impl DisassociateVpcFromHostedZoneOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableHostedZoneDnssecOutput {
@@ -3340,6 +3666,8 @@ pub mod disable_hosted_zone_dnssec_output {
             self.change_info = Some(input);
             self
         }
+        /// <p>A complex type that describes change information about changes made to your hosted
+        /// zone.</p>
         pub fn set_change_info(
             mut self,
             input: std::option::Option<crate::model::ChangeInfo>,
@@ -3482,6 +3810,7 @@ impl DeleteReusableDelegationSetOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteQueryLoggingConfigOutput {}
@@ -3511,6 +3840,7 @@ impl DeleteQueryLoggingConfigOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteKeySigningKeyOutput {
@@ -3540,6 +3870,8 @@ pub mod delete_key_signing_key_output {
             self.change_info = Some(input);
             self
         }
+        /// <p>A complex type that describes change information about changes made to your hosted
+        /// zone.</p>
         pub fn set_change_info(
             mut self,
             input: std::option::Option<crate::model::ChangeInfo>,
@@ -3590,6 +3922,7 @@ pub mod delete_hosted_zone_output {
             self.change_info = Some(input);
             self
         }
+        /// <p>A complex type that contains the ID, the status, and the date and time of a request to delete a hosted zone.</p>
         pub fn set_change_info(
             mut self,
             input: std::option::Option<crate::model::ChangeInfo>,
@@ -3642,6 +3975,7 @@ impl DeleteHealthCheckOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeactivateKeySigningKeyOutput {
@@ -3671,6 +4005,8 @@ pub mod deactivate_key_signing_key_output {
             self.change_info = Some(input);
             self
         }
+        /// <p>A complex type that describes change information about changes made to your hosted
+        /// zone.</p>
         pub fn set_change_info(
             mut self,
             input: std::option::Option<crate::model::ChangeInfo>,
@@ -3725,6 +4061,7 @@ pub mod create_vpc_association_authorization_output {
             self.hosted_zone_id = Some(input.into());
             self
         }
+        /// <p>The ID of the hosted zone that you authorized associating a VPC with.</p>
         pub fn set_hosted_zone_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3737,6 +4074,7 @@ pub mod create_vpc_association_authorization_output {
             self.vpc = Some(input);
             self
         }
+        /// <p>The VPC that you authorized associating with a hosted zone.</p>
         pub fn set_vpc(mut self, input: std::option::Option<crate::model::Vpc>) -> Self {
             self.vpc = input;
             self
@@ -3789,6 +4127,7 @@ pub mod create_traffic_policy_version_output {
             self.traffic_policy = Some(input);
             self
         }
+        /// <p>A complex type that contains settings for the new version of the traffic policy.</p>
         pub fn set_traffic_policy(
             mut self,
             input: std::option::Option<crate::model::TrafficPolicy>,
@@ -3801,6 +4140,7 @@ pub mod create_traffic_policy_version_output {
             self.location = Some(input.into());
             self
         }
+        /// <p>A unique URL that represents a new traffic policy version.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -3857,6 +4197,7 @@ pub mod create_traffic_policy_instance_output {
             self.traffic_policy_instance = Some(input);
             self
         }
+        /// <p>A complex type that contains settings for the new traffic policy instance.</p>
         pub fn set_traffic_policy_instance(
             mut self,
             input: std::option::Option<crate::model::TrafficPolicyInstance>,
@@ -3869,6 +4210,7 @@ pub mod create_traffic_policy_instance_output {
             self.location = Some(input.into());
             self
         }
+        /// <p>A unique URL that represents a new traffic policy instance.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -3921,6 +4263,7 @@ pub mod create_traffic_policy_output {
             self.traffic_policy = Some(input);
             self
         }
+        /// <p>A complex type that contains settings for the new traffic policy.</p>
         pub fn set_traffic_policy(
             mut self,
             input: std::option::Option<crate::model::TrafficPolicy>,
@@ -3933,6 +4276,7 @@ pub mod create_traffic_policy_output {
             self.location = Some(input.into());
             self
         }
+        /// <p>A unique URL that represents a new traffic policy.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -3953,6 +4297,7 @@ impl CreateTrafficPolicyOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateReusableDelegationSetOutput {
@@ -3984,6 +4329,7 @@ pub mod create_reusable_delegation_set_output {
             self.delegation_set = Some(input);
             self
         }
+        /// <p>A complex type that contains name server information.</p>
         pub fn set_delegation_set(
             mut self,
             input: std::option::Option<crate::model::DelegationSet>,
@@ -3996,6 +4342,7 @@ pub mod create_reusable_delegation_set_output {
             self.location = Some(input.into());
             self
         }
+        /// <p>The unique URL representing the new reusable delegation set.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -4016,6 +4363,7 @@ impl CreateReusableDelegationSetOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateQueryLoggingConfigOutput {
@@ -4049,6 +4397,8 @@ pub mod create_query_logging_config_output {
             self.query_logging_config = Some(input);
             self
         }
+        /// <p>A complex type that contains the ID for a query logging configuration, the ID of the hosted zone that you want to
+        /// log queries for, and the ARN for the log group that you want Amazon Route 53 to send query logs to.</p>
         pub fn set_query_logging_config(
             mut self,
             input: std::option::Option<crate::model::QueryLoggingConfig>,
@@ -4061,6 +4411,7 @@ pub mod create_query_logging_config_output {
             self.location = Some(input.into());
             self
         }
+        /// <p>The unique URL representing the new query logging configuration.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -4081,6 +4432,7 @@ impl CreateQueryLoggingConfigOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateKeySigningKeyOutput {
@@ -4118,6 +4470,8 @@ pub mod create_key_signing_key_output {
             self.change_info = Some(input);
             self
         }
+        /// <p>A complex type that describes change information about changes made to your hosted
+        /// zone.</p>
         pub fn set_change_info(
             mut self,
             input: std::option::Option<crate::model::ChangeInfo>,
@@ -4130,6 +4484,7 @@ pub mod create_key_signing_key_output {
             self.key_signing_key = Some(input);
             self
         }
+        /// <p>The key-signing key (KSK) that the request creates.</p>
         pub fn set_key_signing_key(
             mut self,
             input: std::option::Option<crate::model::KeySigningKey>,
@@ -4142,6 +4497,7 @@ pub mod create_key_signing_key_output {
             self.location = Some(input.into());
             self
         }
+        /// <p>The unique URL representing the new key-signing key (KSK).</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -4207,6 +4563,7 @@ pub mod create_hosted_zone_output {
             self.hosted_zone = Some(input);
             self
         }
+        /// <p>A complex type that contains general information about the hosted zone.</p>
         pub fn set_hosted_zone(
             mut self,
             input: std::option::Option<crate::model::HostedZone>,
@@ -4219,6 +4576,7 @@ pub mod create_hosted_zone_output {
             self.change_info = Some(input);
             self
         }
+        /// <p>A complex type that contains information about the <code>CreateHostedZone</code> request.</p>
         pub fn set_change_info(
             mut self,
             input: std::option::Option<crate::model::ChangeInfo>,
@@ -4231,6 +4589,7 @@ pub mod create_hosted_zone_output {
             self.delegation_set = Some(input);
             self
         }
+        /// <p>A complex type that describes the name servers for this hosted zone.</p>
         pub fn set_delegation_set(
             mut self,
             input: std::option::Option<crate::model::DelegationSet>,
@@ -4243,6 +4602,7 @@ pub mod create_hosted_zone_output {
             self.vpc = Some(input);
             self
         }
+        /// <p>A complex type that contains information about an Amazon VPC that you associated with this hosted zone.</p>
         pub fn set_vpc(mut self, input: std::option::Option<crate::model::Vpc>) -> Self {
             self.vpc = input;
             self
@@ -4252,6 +4612,7 @@ pub mod create_hosted_zone_output {
             self.location = Some(input.into());
             self
         }
+        /// <p>The unique URL representing the new hosted zone.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -4307,6 +4668,7 @@ pub mod create_health_check_output {
             self.health_check = Some(input);
             self
         }
+        /// <p>A complex type that contains identifying information about the health check.</p>
         pub fn set_health_check(
             mut self,
             input: std::option::Option<crate::model::HealthCheck>,
@@ -4319,6 +4681,7 @@ pub mod create_health_check_output {
             self.location = Some(input.into());
             self
         }
+        /// <p>The unique URL representing the new health check.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -4403,6 +4766,10 @@ pub mod change_resource_record_sets_output {
             self.change_info = Some(input);
             self
         }
+        /// <p>A complex type that contains information about changes made to your hosted zone.</p>
+        /// <p>This element contains an ID that you use when performing a
+        /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetChange.html">GetChange</a>
+        /// action to get detailed information about the change.</p>
         pub fn set_change_info(
             mut self,
             input: std::option::Option<crate::model::ChangeInfo>,
@@ -4453,6 +4820,7 @@ pub mod associate_vpc_with_hosted_zone_output {
             self.change_info = Some(input);
             self
         }
+        /// <p>A complex type that describes the changes made to your hosted zone.</p>
         pub fn set_change_info(
             mut self,
             input: std::option::Option<crate::model::ChangeInfo>,
@@ -4475,6 +4843,7 @@ impl AssociateVpcWithHostedZoneOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActivateKeySigningKeyOutput {
@@ -4504,6 +4873,8 @@ pub mod activate_key_signing_key_output {
             self.change_info = Some(input);
             self
         }
+        /// <p>A complex type that describes change information about changes made to your hosted
+        /// zone.</p>
         pub fn set_change_info(
             mut self,
             input: std::option::Option<crate::model::ChangeInfo>,

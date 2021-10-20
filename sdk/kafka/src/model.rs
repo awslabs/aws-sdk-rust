@@ -31,6 +31,7 @@ pub mod encryption_info {
             self.encryption_at_rest = Some(input);
             self
         }
+        /// <p>The data-volume encryption details.</p>
         pub fn set_encryption_at_rest(
             mut self,
             input: std::option::Option<crate::model::EncryptionAtRest>,
@@ -43,6 +44,7 @@ pub mod encryption_info {
             self.encryption_in_transit = Some(input);
             self
         }
+        /// <p>The details for encryption in transit.</p>
         pub fn set_encryption_in_transit(
             mut self,
             input: std::option::Option<crate::model::EncryptionInTransit>,
@@ -113,6 +115,14 @@ pub mod encryption_in_transit {
             self.client_broker = Some(input);
             self
         }
+        /// <p>Indicates the encryption setting for data in transit between clients and brokers. The following are the possible values.</p>
+        /// <p>
+        /// TLS means that client-broker communication is enabled with TLS only.</p>
+        /// <p>
+        /// TLS_PLAINTEXT means that client-broker communication is enabled for both TLS-encrypted, as well as plaintext data.</p>
+        /// <p>
+        /// PLAINTEXT means that client-broker communication is enabled in plaintext only.</p>
+        /// <p>The default value is TLS_PLAINTEXT.</p>
         pub fn set_client_broker(
             mut self,
             input: std::option::Option<crate::model::ClientBroker>,
@@ -126,6 +136,8 @@ pub mod encryption_in_transit {
             self.in_cluster = Some(input);
             self
         }
+        /// <p>When set to true, it indicates that data communication among the broker nodes of the cluster is encrypted. When set to false, the communication happens in plaintext.</p>
+        /// <p>The default value is true.</p>
         pub fn set_in_cluster(mut self, input: std::option::Option<bool>) -> Self {
             self.in_cluster = input;
             self
@@ -158,8 +170,11 @@ impl EncryptionInTransit {
     std::hash::Hash,
 )]
 pub enum ClientBroker {
+    #[allow(missing_docs)] // documentation missing in model
     Plaintext,
+    #[allow(missing_docs)] // documentation missing in model
     Tls,
+    #[allow(missing_docs)] // documentation missing in model
     TlsPlaintext,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -182,6 +197,7 @@ impl std::str::FromStr for ClientBroker {
     }
 }
 impl ClientBroker {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ClientBroker::Plaintext => "PLAINTEXT",
@@ -190,6 +206,7 @@ impl ClientBroker {
             ClientBroker::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["PLAINTEXT", "TLS", "TLS_PLAINTEXT"]
     }
@@ -228,6 +245,7 @@ pub mod encryption_at_rest {
             self.data_volume_kms_key_id = Some(input.into());
             self
         }
+        /// <p>The ARN of the AWS KMS key for encrypting data at rest. If you don't specify a KMS key, MSK creates one for you and uses it.</p>
         pub fn set_data_volume_kms_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -286,6 +304,7 @@ pub mod client_authentication {
             self.sasl = Some(input);
             self
         }
+        /// <p>Details for ClientAuthentication using SASL.</p>
         pub fn set_sasl(mut self, input: std::option::Option<crate::model::Sasl>) -> Self {
             self.sasl = input;
             self
@@ -295,6 +314,7 @@ pub mod client_authentication {
             self.tls = Some(input);
             self
         }
+        /// <p>Details for ClientAuthentication using TLS.</p>
         pub fn set_tls(mut self, input: std::option::Option<crate::model::Tls>) -> Self {
             self.tls = input;
             self
@@ -304,6 +324,7 @@ pub mod client_authentication {
             self.unauthenticated = Some(input);
             self
         }
+        /// <p>Contains information about unauthenticated traffic to the cluster.</p>
         pub fn set_unauthenticated(
             mut self,
             input: std::option::Option<crate::model::Unauthenticated>,
@@ -328,6 +349,7 @@ impl ClientAuthentication {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Unauthenticated {
@@ -355,6 +377,7 @@ pub mod unauthenticated {
             self.enabled = Some(input);
             self
         }
+        /// <p>Specifies whether you want to enable or disable unauthenticated traffic to your cluster.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -405,6 +428,11 @@ pub mod tls {
         pub(crate) enabled: std::option::Option<bool>,
     }
     impl Builder {
+        /// Appends an item to `certificate_authority_arn_list`.
+        ///
+        /// To override the contents of this collection use [`set_certificate_authority_arn_list`](Self::set_certificate_authority_arn_list).
+        ///
+        /// <p>List of ACM Certificate Authority ARNs.</p>
         pub fn certificate_authority_arn_list(
             mut self,
             input: impl Into<std::string::String>,
@@ -414,6 +442,7 @@ pub mod tls {
             self.certificate_authority_arn_list = Some(v);
             self
         }
+        /// <p>List of ACM Certificate Authority ARNs.</p>
         pub fn set_certificate_authority_arn_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -426,6 +455,7 @@ pub mod tls {
             self.enabled = Some(input);
             self
         }
+        /// <p>Specifies whether you want to enable or disable TLS authentication.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -478,6 +508,7 @@ pub mod sasl {
             self.scram = Some(input);
             self
         }
+        /// <p>Details for SASL/SCRAM client authentication.</p>
         pub fn set_scram(mut self, input: std::option::Option<crate::model::Scram>) -> Self {
             self.scram = input;
             self
@@ -487,6 +518,7 @@ pub mod sasl {
             self.iam = Some(input);
             self
         }
+        /// <p>Indicates whether IAM access control is enabled.</p>
         pub fn set_iam(mut self, input: std::option::Option<crate::model::Iam>) -> Self {
             self.iam = input;
             self
@@ -535,6 +567,7 @@ pub mod iam {
             self.enabled = Some(input);
             self
         }
+        /// <p>Indicates whether IAM access control is enabled.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -582,6 +615,7 @@ pub mod scram {
             self.enabled = Some(input);
             self
         }
+        /// <p>SASL/SCRAM authentication is enabled or not.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -601,9 +635,11 @@ impl Scram {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoggingInfo {
+    #[allow(missing_docs)] // documentation missing in model
     pub broker_logs: std::option::Option<crate::model::BrokerLogs>,
 }
 impl std::fmt::Debug for LoggingInfo {
@@ -622,10 +658,12 @@ pub mod logging_info {
         pub(crate) broker_logs: std::option::Option<crate::model::BrokerLogs>,
     }
     impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
         pub fn broker_logs(mut self, input: crate::model::BrokerLogs) -> Self {
             self.broker_logs = Some(input);
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
         pub fn set_broker_logs(
             mut self,
             input: std::option::Option<crate::model::BrokerLogs>,
@@ -648,11 +686,15 @@ impl LoggingInfo {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BrokerLogs {
+    #[allow(missing_docs)] // documentation missing in model
     pub cloud_watch_logs: std::option::Option<crate::model::CloudWatchLogs>,
+    #[allow(missing_docs)] // documentation missing in model
     pub firehose: std::option::Option<crate::model::Firehose>,
+    #[allow(missing_docs)] // documentation missing in model
     pub s3: std::option::Option<crate::model::S3>,
 }
 impl std::fmt::Debug for BrokerLogs {
@@ -675,10 +717,12 @@ pub mod broker_logs {
         pub(crate) s3: std::option::Option<crate::model::S3>,
     }
     impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
         pub fn cloud_watch_logs(mut self, input: crate::model::CloudWatchLogs) -> Self {
             self.cloud_watch_logs = Some(input);
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
         pub fn set_cloud_watch_logs(
             mut self,
             input: std::option::Option<crate::model::CloudWatchLogs>,
@@ -686,18 +730,22 @@ pub mod broker_logs {
             self.cloud_watch_logs = input;
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
         pub fn firehose(mut self, input: crate::model::Firehose) -> Self {
             self.firehose = Some(input);
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
         pub fn set_firehose(mut self, input: std::option::Option<crate::model::Firehose>) -> Self {
             self.firehose = input;
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
         pub fn s3(mut self, input: crate::model::S3) -> Self {
             self.s3 = Some(input);
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
         pub fn set_s3(mut self, input: std::option::Option<crate::model::S3>) -> Self {
             self.s3 = input;
             self
@@ -719,11 +767,15 @@ impl BrokerLogs {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3 {
+    #[allow(missing_docs)] // documentation missing in model
     pub bucket: std::option::Option<std::string::String>,
+    #[allow(missing_docs)] // documentation missing in model
     pub enabled: bool,
+    #[allow(missing_docs)] // documentation missing in model
     pub prefix: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for S3 {
@@ -746,26 +798,32 @@ pub mod s3 {
         pub(crate) prefix: std::option::Option<std::string::String>,
     }
     impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket = Some(input.into());
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
         pub fn enabled(mut self, input: bool) -> Self {
             self.enabled = Some(input);
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
         pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.prefix = Some(input.into());
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
         pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.prefix = input;
             self
@@ -787,10 +845,13 @@ impl S3 {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Firehose {
+    #[allow(missing_docs)] // documentation missing in model
     pub delivery_stream: std::option::Option<std::string::String>,
+    #[allow(missing_docs)] // documentation missing in model
     pub enabled: bool,
 }
 impl std::fmt::Debug for Firehose {
@@ -811,10 +872,12 @@ pub mod firehose {
         pub(crate) enabled: std::option::Option<bool>,
     }
     impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
         pub fn delivery_stream(mut self, input: impl Into<std::string::String>) -> Self {
             self.delivery_stream = Some(input.into());
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
         pub fn set_delivery_stream(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -822,10 +885,12 @@ pub mod firehose {
             self.delivery_stream = input;
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
         pub fn enabled(mut self, input: bool) -> Self {
             self.enabled = Some(input);
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -846,10 +911,13 @@ impl Firehose {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudWatchLogs {
+    #[allow(missing_docs)] // documentation missing in model
     pub enabled: bool,
+    #[allow(missing_docs)] // documentation missing in model
     pub log_group: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CloudWatchLogs {
@@ -870,18 +938,22 @@ pub mod cloud_watch_logs {
         pub(crate) log_group: std::option::Option<std::string::String>,
     }
     impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
         pub fn enabled(mut self, input: bool) -> Self {
             self.enabled = Some(input);
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
         pub fn log_group(mut self, input: impl Into<std::string::String>) -> Self {
             self.log_group = Some(input.into());
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
         pub fn set_log_group(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.log_group = input;
             self
@@ -930,6 +1002,7 @@ pub mod open_monitoring_info {
             self.prometheus = Some(input);
             self
         }
+        /// <p>Prometheus settings.</p>
         pub fn set_prometheus(
             mut self,
             input: std::option::Option<crate::model::PrometheusInfo>,
@@ -984,6 +1057,7 @@ pub mod prometheus_info {
             self.jmx_exporter = Some(input);
             self
         }
+        /// <p>Indicates whether you want to enable or disable the JMX Exporter.</p>
         pub fn set_jmx_exporter(
             mut self,
             input: std::option::Option<crate::model::JmxExporterInfo>,
@@ -996,6 +1070,7 @@ pub mod prometheus_info {
             self.node_exporter = Some(input);
             self
         }
+        /// <p>Indicates whether you want to enable or disable the Node Exporter.</p>
         pub fn set_node_exporter(
             mut self,
             input: std::option::Option<crate::model::NodeExporterInfo>,
@@ -1047,6 +1122,7 @@ pub mod node_exporter_info {
             self.enabled_in_broker = Some(input);
             self
         }
+        /// <p>Indicates whether you want to enable or disable the Node Exporter.</p>
         pub fn set_enabled_in_broker(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled_in_broker = input;
             self
@@ -1094,6 +1170,7 @@ pub mod jmx_exporter_info {
             self.enabled_in_broker = Some(input);
             self
         }
+        /// <p>Indicates whether you want to enable or disable the JMX Exporter.</p>
         pub fn set_enabled_in_broker(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled_in_broker = input;
             self
@@ -1125,9 +1202,13 @@ impl JmxExporterInfo {
     std::hash::Hash,
 )]
 pub enum EnhancedMonitoring {
+    #[allow(missing_docs)] // documentation missing in model
     Default,
+    #[allow(missing_docs)] // documentation missing in model
     PerBroker,
+    #[allow(missing_docs)] // documentation missing in model
     PerTopicPerBroker,
+    #[allow(missing_docs)] // documentation missing in model
     PerTopicPerPartition,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1151,6 +1232,7 @@ impl std::str::FromStr for EnhancedMonitoring {
     }
 }
 impl EnhancedMonitoring {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EnhancedMonitoring::Default => "DEFAULT",
@@ -1160,6 +1242,7 @@ impl EnhancedMonitoring {
             EnhancedMonitoring::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "DEFAULT",
@@ -1180,7 +1263,7 @@ impl AsRef<str> for EnhancedMonitoring {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConfigurationRevision {
     /// <p>The time when the configuration revision was created.</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The description of the configuration revision.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The revision number.</p>
@@ -1201,19 +1284,20 @@ pub mod configuration_revision {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) revision: std::option::Option<i64>,
     }
     impl Builder {
         /// <p>The time when the configuration revision was created.</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>The time when the configuration revision was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -1223,6 +1307,7 @@ pub mod configuration_revision {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the configuration revision.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -1232,6 +1317,7 @@ pub mod configuration_revision {
             self.revision = Some(input);
             self
         }
+        /// <p>The revision number.</p>
         pub fn set_revision(mut self, input: std::option::Option<i64>) -> Self {
             self.revision = input;
             self
@@ -1285,6 +1371,7 @@ pub mod configuration_info {
             self.arn = Some(input.into());
             self
         }
+        /// <p>ARN of the configuration to use.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -1294,6 +1381,7 @@ pub mod configuration_info {
             self.revision = Some(input);
             self
         }
+        /// <p>The revision of the configuration to use.</p>
         pub fn set_revision(mut self, input: std::option::Option<i64>) -> Self {
             self.revision = input;
             self
@@ -1346,6 +1434,7 @@ pub mod broker_ebs_volume_info {
             self.kafka_broker_node_id = Some(input.into());
             self
         }
+        /// <p>The ID of the broker to update.</p>
         pub fn set_kafka_broker_node_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1358,6 +1447,7 @@ pub mod broker_ebs_volume_info {
             self.volume_size_gb = Some(input);
             self
         }
+        /// <p>Size of the EBS volume to update.</p>
         pub fn set_volume_size_gb(mut self, input: std::option::Option<i32>) -> Self {
             self.volume_size_gb = input;
             self
@@ -1426,6 +1516,7 @@ pub mod node_info {
             self.added_to_cluster_time = Some(input.into());
             self
         }
+        /// <p>The start time.</p>
         pub fn set_added_to_cluster_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1438,6 +1529,7 @@ pub mod node_info {
             self.broker_node_info = Some(input);
             self
         }
+        /// <p>The broker node info.</p>
         pub fn set_broker_node_info(
             mut self,
             input: std::option::Option<crate::model::BrokerNodeInfo>,
@@ -1450,6 +1542,7 @@ pub mod node_info {
             self.instance_type = Some(input.into());
             self
         }
+        /// <p>The instance type.</p>
         pub fn set_instance_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1462,6 +1555,7 @@ pub mod node_info {
             self.node_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the node.</p>
         pub fn set_node_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.node_arn = input;
             self
@@ -1471,6 +1565,7 @@ pub mod node_info {
             self.node_type = Some(input);
             self
         }
+        /// <p>The node type.</p>
         pub fn set_node_type(mut self, input: std::option::Option<crate::model::NodeType>) -> Self {
             self.node_type = input;
             self
@@ -1480,6 +1575,7 @@ pub mod node_info {
             self.zookeeper_node_info = Some(input);
             self
         }
+        /// <p>The ZookeeperNodeInfo.</p>
         pub fn set_zookeeper_node_info(
             mut self,
             input: std::option::Option<crate::model::ZookeeperNodeInfo>,
@@ -1551,6 +1647,7 @@ pub mod zookeeper_node_info {
             self.attached_eni_id = Some(input.into());
             self
         }
+        /// <p>The attached elastic network interface of the broker.</p>
         pub fn set_attached_eni_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1563,6 +1660,7 @@ pub mod zookeeper_node_info {
             self.client_vpc_ip_address = Some(input.into());
             self
         }
+        /// <p>The virtual private cloud (VPC) IP address of the client.</p>
         pub fn set_client_vpc_ip_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1570,12 +1668,18 @@ pub mod zookeeper_node_info {
             self.client_vpc_ip_address = input;
             self
         }
+        /// Appends an item to `endpoints`.
+        ///
+        /// To override the contents of this collection use [`set_endpoints`](Self::set_endpoints).
+        ///
+        /// <p>Endpoints for accessing the ZooKeeper.</p>
         pub fn endpoints(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.endpoints.unwrap_or_default();
             v.push(input.into());
             self.endpoints = Some(v);
             self
         }
+        /// <p>Endpoints for accessing the ZooKeeper.</p>
         pub fn set_endpoints(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1588,6 +1692,7 @@ pub mod zookeeper_node_info {
             self.zookeeper_id = Some(input);
             self
         }
+        /// <p>The role-specific ID for Zookeeper.</p>
         pub fn set_zookeeper_id(mut self, input: std::option::Option<f64>) -> Self {
             self.zookeeper_id = input;
             self
@@ -1597,6 +1702,7 @@ pub mod zookeeper_node_info {
             self.zookeeper_version = Some(input.into());
             self
         }
+        /// <p>The version of Zookeeper.</p>
         pub fn set_zookeeper_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1635,6 +1741,7 @@ impl ZookeeperNodeInfo {
     std::hash::Hash,
 )]
 pub enum NodeType {
+    #[allow(missing_docs)] // documentation missing in model
     Broker,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1655,12 +1762,14 @@ impl std::str::FromStr for NodeType {
     }
 }
 impl NodeType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             NodeType::Broker => "BROKER",
             NodeType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["BROKER"]
     }
@@ -1723,6 +1832,7 @@ pub mod broker_node_info {
             self.attached_eni_id = Some(input.into());
             self
         }
+        /// <p>The attached elastic network interface of the broker.</p>
         pub fn set_attached_eni_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1735,6 +1845,7 @@ pub mod broker_node_info {
             self.broker_id = Some(input);
             self
         }
+        /// <p>The ID of the broker.</p>
         pub fn set_broker_id(mut self, input: std::option::Option<f64>) -> Self {
             self.broker_id = input;
             self
@@ -1744,6 +1855,7 @@ pub mod broker_node_info {
             self.client_subnet = Some(input.into());
             self
         }
+        /// <p>The client subnet to which this broker node belongs.</p>
         pub fn set_client_subnet(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1756,6 +1868,7 @@ pub mod broker_node_info {
             self.client_vpc_ip_address = Some(input.into());
             self
         }
+        /// <p>The virtual private cloud (VPC) of the client.</p>
         pub fn set_client_vpc_ip_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1771,6 +1884,7 @@ pub mod broker_node_info {
             self.current_broker_software_info = Some(input);
             self
         }
+        /// <p>Information about the version of software currently deployed on the Kafka brokers in the cluster.</p>
         pub fn set_current_broker_software_info(
             mut self,
             input: std::option::Option<crate::model::BrokerSoftwareInfo>,
@@ -1778,12 +1892,18 @@ pub mod broker_node_info {
             self.current_broker_software_info = input;
             self
         }
+        /// Appends an item to `endpoints`.
+        ///
+        /// To override the contents of this collection use [`set_endpoints`](Self::set_endpoints).
+        ///
+        /// <p>Endpoints for accessing the broker.</p>
         pub fn endpoints(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.endpoints.unwrap_or_default();
             v.push(input.into());
             self.endpoints = Some(v);
             self
         }
+        /// <p>Endpoints for accessing the broker.</p>
         pub fn set_endpoints(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1847,6 +1967,7 @@ pub mod broker_software_info {
             self.configuration_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the configuration used for the cluster. This field isn't visible in this preview release.</p>
         pub fn set_configuration_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1859,6 +1980,7 @@ pub mod broker_software_info {
             self.configuration_revision = Some(input);
             self
         }
+        /// <p>The revision of the configuration to use. This field isn't visible in this preview release.</p>
         pub fn set_configuration_revision(mut self, input: std::option::Option<i64>) -> Self {
             self.configuration_revision = input;
             self
@@ -1868,6 +1990,7 @@ pub mod broker_software_info {
             self.kafka_version = Some(input.into());
             self
         }
+        /// <p>The version of Apache Kafka.</p>
         pub fn set_kafka_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1892,10 +2015,13 @@ impl BrokerSoftwareInfo {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KafkaVersion {
+    #[allow(missing_docs)] // documentation missing in model
     pub version: std::option::Option<std::string::String>,
+    #[allow(missing_docs)] // documentation missing in model
     pub status: std::option::Option<crate::model::KafkaVersionStatus>,
 }
 impl std::fmt::Debug for KafkaVersion {
@@ -1916,18 +2042,22 @@ pub mod kafka_version {
         pub(crate) status: std::option::Option<crate::model::KafkaVersionStatus>,
     }
     impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
             self.version = Some(input.into());
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
         pub fn status(mut self, input: crate::model::KafkaVersionStatus) -> Self {
             self.status = Some(input);
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::KafkaVersionStatus>,
@@ -1951,6 +2081,7 @@ impl KafkaVersion {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1962,7 +2093,9 @@ impl KafkaVersion {
     std::hash::Hash,
 )]
 pub enum KafkaVersionStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     Deprecated,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1984,6 +2117,7 @@ impl std::str::FromStr for KafkaVersionStatus {
     }
 }
 impl KafkaVersionStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             KafkaVersionStatus::Active => "ACTIVE",
@@ -1991,6 +2125,7 @@ impl KafkaVersionStatus {
             KafkaVersionStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ACTIVE", "DEPRECATED"]
     }
@@ -2008,7 +2143,7 @@ pub struct Configuration {
     /// <p>The Amazon Resource Name (ARN) of the configuration.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The time when the configuration was created.</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The description of the configuration.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>An array of the versions of Apache Kafka with which you can use this MSK configuration. You can use this configuration for an MSK cluster only if the Apache Kafka version specified for the cluster appears in this array.</p>
@@ -2040,7 +2175,7 @@ pub mod configuration {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) kafka_versions: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) latest_revision: std::option::Option<crate::model::ConfigurationRevision>,
@@ -2053,18 +2188,20 @@ pub mod configuration {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the configuration.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
         /// <p>The time when the configuration was created.</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>The time when the configuration was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -2074,16 +2211,23 @@ pub mod configuration {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the configuration.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Appends an item to `kafka_versions`.
+        ///
+        /// To override the contents of this collection use [`set_kafka_versions`](Self::set_kafka_versions).
+        ///
+        /// <p>An array of the versions of Apache Kafka with which you can use this MSK configuration. You can use this configuration for an MSK cluster only if the Apache Kafka version specified for the cluster appears in this array.</p>
         pub fn kafka_versions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.kafka_versions.unwrap_or_default();
             v.push(input.into());
             self.kafka_versions = Some(v);
             self
         }
+        /// <p>An array of the versions of Apache Kafka with which you can use this MSK configuration. You can use this configuration for an MSK cluster only if the Apache Kafka version specified for the cluster appears in this array.</p>
         pub fn set_kafka_versions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2096,6 +2240,7 @@ pub mod configuration {
             self.latest_revision = Some(input);
             self
         }
+        /// <p>Latest revision of the configuration.</p>
         pub fn set_latest_revision(
             mut self,
             input: std::option::Option<crate::model::ConfigurationRevision>,
@@ -2108,6 +2253,7 @@ pub mod configuration {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the configuration.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2117,6 +2263,7 @@ pub mod configuration {
             self.state = Some(input);
             self
         }
+        /// <p>The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED. </p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::ConfigurationState>,
@@ -2157,8 +2304,11 @@ impl Configuration {
     std::hash::Hash,
 )]
 pub enum ConfigurationState {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteFailed,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2181,6 +2331,7 @@ impl std::str::FromStr for ConfigurationState {
     }
 }
 impl ConfigurationState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ConfigurationState::Active => "ACTIVE",
@@ -2189,6 +2340,7 @@ impl ConfigurationState {
             ConfigurationState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ACTIVE", "DELETE_FAILED", "DELETING"]
     }
@@ -2214,7 +2366,7 @@ pub struct ClusterInfo {
     /// <p>The name of the cluster.</p>
     pub cluster_name: std::option::Option<std::string::String>,
     /// <p>The time when the cluster was created.</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Information about the version of software currently deployed on the Kafka brokers in the cluster.</p>
     pub current_broker_software_info: std::option::Option<crate::model::BrokerSoftwareInfo>,
     /// <p>The current version of the MSK cluster.</p>
@@ -2225,11 +2377,13 @@ pub struct ClusterInfo {
     pub enhanced_monitoring: std::option::Option<crate::model::EnhancedMonitoring>,
     /// <p>Settings for open monitoring using Prometheus.</p>
     pub open_monitoring: std::option::Option<crate::model::OpenMonitoring>,
+    #[allow(missing_docs)] // documentation missing in model
     pub logging_info: std::option::Option<crate::model::LoggingInfo>,
     /// <p>The number of broker nodes in the cluster.</p>
     pub number_of_broker_nodes: i32,
     /// <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, HEALING, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>
     pub state: std::option::Option<crate::model::ClusterState>,
+    #[allow(missing_docs)] // documentation missing in model
     pub state_info: std::option::Option<crate::model::StateInfo>,
     /// <p>Tags attached to the cluster.</p>
     pub tags:
@@ -2280,7 +2434,7 @@ pub mod cluster_info {
         pub(crate) client_authentication: std::option::Option<crate::model::ClientAuthentication>,
         pub(crate) cluster_arn: std::option::Option<std::string::String>,
         pub(crate) cluster_name: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) current_broker_software_info:
             std::option::Option<crate::model::BrokerSoftwareInfo>,
         pub(crate) current_version: std::option::Option<std::string::String>,
@@ -2303,6 +2457,7 @@ pub mod cluster_info {
             self.active_operation_arn = Some(input.into());
             self
         }
+        /// <p>Arn of active cluster operation.</p>
         pub fn set_active_operation_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2315,6 +2470,7 @@ pub mod cluster_info {
             self.broker_node_group_info = Some(input);
             self
         }
+        /// <p>Information about the broker nodes.</p>
         pub fn set_broker_node_group_info(
             mut self,
             input: std::option::Option<crate::model::BrokerNodeGroupInfo>,
@@ -2327,6 +2483,7 @@ pub mod cluster_info {
             self.client_authentication = Some(input);
             self
         }
+        /// <p>Includes all client authentication information.</p>
         pub fn set_client_authentication(
             mut self,
             input: std::option::Option<crate::model::ClientAuthentication>,
@@ -2339,6 +2496,7 @@ pub mod cluster_info {
             self.cluster_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) that uniquely identifies the cluster.</p>
         pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster_arn = input;
             self
@@ -2348,18 +2506,20 @@ pub mod cluster_info {
             self.cluster_name = Some(input.into());
             self
         }
+        /// <p>The name of the cluster.</p>
         pub fn set_cluster_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster_name = input;
             self
         }
         /// <p>The time when the cluster was created.</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>The time when the cluster was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -2372,6 +2532,7 @@ pub mod cluster_info {
             self.current_broker_software_info = Some(input);
             self
         }
+        /// <p>Information about the version of software currently deployed on the Kafka brokers in the cluster.</p>
         pub fn set_current_broker_software_info(
             mut self,
             input: std::option::Option<crate::model::BrokerSoftwareInfo>,
@@ -2384,6 +2545,7 @@ pub mod cluster_info {
             self.current_version = Some(input.into());
             self
         }
+        /// <p>The current version of the MSK cluster.</p>
         pub fn set_current_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2396,6 +2558,7 @@ pub mod cluster_info {
             self.encryption_info = Some(input);
             self
         }
+        /// <p>Includes all encryption-related information.</p>
         pub fn set_encryption_info(
             mut self,
             input: std::option::Option<crate::model::EncryptionInfo>,
@@ -2408,6 +2571,7 @@ pub mod cluster_info {
             self.enhanced_monitoring = Some(input);
             self
         }
+        /// <p>Specifies which metrics are gathered for the MSK cluster. This property has the following possible values: DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION. For a list of the metrics associated with each of these levels of monitoring, see <a href="https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html">Monitoring</a>.</p>
         pub fn set_enhanced_monitoring(
             mut self,
             input: std::option::Option<crate::model::EnhancedMonitoring>,
@@ -2420,6 +2584,7 @@ pub mod cluster_info {
             self.open_monitoring = Some(input);
             self
         }
+        /// <p>Settings for open monitoring using Prometheus.</p>
         pub fn set_open_monitoring(
             mut self,
             input: std::option::Option<crate::model::OpenMonitoring>,
@@ -2427,10 +2592,12 @@ pub mod cluster_info {
             self.open_monitoring = input;
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
         pub fn logging_info(mut self, input: crate::model::LoggingInfo) -> Self {
             self.logging_info = Some(input);
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
         pub fn set_logging_info(
             mut self,
             input: std::option::Option<crate::model::LoggingInfo>,
@@ -2443,6 +2610,7 @@ pub mod cluster_info {
             self.number_of_broker_nodes = Some(input);
             self
         }
+        /// <p>The number of broker nodes in the cluster.</p>
         pub fn set_number_of_broker_nodes(mut self, input: std::option::Option<i32>) -> Self {
             self.number_of_broker_nodes = input;
             self
@@ -2452,14 +2620,17 @@ pub mod cluster_info {
             self.state = Some(input);
             self
         }
+        /// <p>The state of the cluster. The possible states are ACTIVE, CREATING, DELETING, FAILED, HEALING, MAINTENANCE, REBOOTING_BROKER, and UPDATING.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::ClusterState>) -> Self {
             self.state = input;
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
         pub fn state_info(mut self, input: crate::model::StateInfo) -> Self {
             self.state_info = Some(input);
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
         pub fn set_state_info(
             mut self,
             input: std::option::Option<crate::model::StateInfo>,
@@ -2467,6 +2638,11 @@ pub mod cluster_info {
             self.state_info = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Tags attached to the cluster.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2477,6 +2653,7 @@ pub mod cluster_info {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>Tags attached to the cluster.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2491,6 +2668,7 @@ pub mod cluster_info {
             self.zookeeper_connect_string = Some(input.into());
             self
         }
+        /// <p>The connection string to use to connect to the Apache ZooKeeper cluster.</p>
         pub fn set_zookeeper_connect_string(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2506,6 +2684,7 @@ pub mod cluster_info {
             self.zookeeper_connect_string_tls = Some(input.into());
             self
         }
+        /// <p>The connection string to use to connect to zookeeper cluster on Tls port.</p>
         pub fn set_zookeeper_connect_string_tls(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2545,10 +2724,13 @@ impl ClusterInfo {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StateInfo {
+    #[allow(missing_docs)] // documentation missing in model
     pub code: std::option::Option<std::string::String>,
+    #[allow(missing_docs)] // documentation missing in model
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for StateInfo {
@@ -2569,18 +2751,22 @@ pub mod state_info {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
         pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
             self.code = Some(input.into());
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
         pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.code = input;
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -2613,13 +2799,21 @@ impl StateInfo {
     std::hash::Hash,
 )]
 pub enum ClusterState {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     Creating,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Healing,
+    #[allow(missing_docs)] // documentation missing in model
     Maintenance,
+    #[allow(missing_docs)] // documentation missing in model
     RebootingBroker,
+    #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2647,6 +2841,7 @@ impl std::str::FromStr for ClusterState {
     }
 }
 impl ClusterState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ClusterState::Active => "ACTIVE",
@@ -2660,6 +2855,7 @@ impl ClusterState {
             ClusterState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
@@ -2707,6 +2903,7 @@ pub mod open_monitoring {
             self.prometheus = Some(input);
             self
         }
+        /// <p>Prometheus settings.</p>
         pub fn set_prometheus(
             mut self,
             input: std::option::Option<crate::model::Prometheus>,
@@ -2761,6 +2958,7 @@ pub mod prometheus {
             self.jmx_exporter = Some(input);
             self
         }
+        /// <p>Indicates whether you want to enable or disable the JMX Exporter.</p>
         pub fn set_jmx_exporter(
             mut self,
             input: std::option::Option<crate::model::JmxExporter>,
@@ -2773,6 +2971,7 @@ pub mod prometheus {
             self.node_exporter = Some(input);
             self
         }
+        /// <p>Indicates whether you want to enable or disable the Node Exporter.</p>
         pub fn set_node_exporter(
             mut self,
             input: std::option::Option<crate::model::NodeExporter>,
@@ -2824,6 +3023,7 @@ pub mod node_exporter {
             self.enabled_in_broker = Some(input);
             self
         }
+        /// <p>Indicates whether you want to enable or disable the Node Exporter.</p>
         pub fn set_enabled_in_broker(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled_in_broker = input;
             self
@@ -2871,6 +3071,7 @@ pub mod jmx_exporter {
             self.enabled_in_broker = Some(input);
             self
         }
+        /// <p>Indicates whether you want to enable or disable the JMX Exporter.</p>
         pub fn set_enabled_in_broker(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled_in_broker = input;
             self
@@ -2937,6 +3138,8 @@ pub mod broker_node_group_info {
             self.broker_az_distribution = Some(input);
             self
         }
+        /// <p>The distribution of broker nodes across Availability Zones. This is an optional parameter. If you don't specify it, Amazon MSK gives it the value DEFAULT. You can also explicitly set this parameter to the value DEFAULT. No other values are currently allowed.</p>
+        /// <p>Amazon MSK distributes the broker nodes evenly across the Availability Zones that correspond to the subnets you provide when you create the cluster.</p>
         pub fn set_broker_az_distribution(
             mut self,
             input: std::option::Option<crate::model::BrokerAzDistribution>,
@@ -2944,12 +3147,18 @@ pub mod broker_node_group_info {
             self.broker_az_distribution = input;
             self
         }
+        /// Appends an item to `client_subnets`.
+        ///
+        /// To override the contents of this collection use [`set_client_subnets`](Self::set_client_subnets).
+        ///
+        /// <p>The list of subnets to connect to in the client virtual private cloud (VPC). AWS creates elastic network interfaces inside these subnets. Client applications use elastic network interfaces to produce and consume data. Client subnets can't be in Availability Zone us-east-1e.</p>
         pub fn client_subnets(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.client_subnets.unwrap_or_default();
             v.push(input.into());
             self.client_subnets = Some(v);
             self
         }
+        /// <p>The list of subnets to connect to in the client virtual private cloud (VPC). AWS creates elastic network interfaces inside these subnets. Client applications use elastic network interfaces to produce and consume data. Client subnets can't be in Availability Zone us-east-1e.</p>
         pub fn set_client_subnets(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2963,6 +3172,8 @@ pub mod broker_node_group_info {
             self.instance_type = Some(input.into());
             self
         }
+        /// <p>The type of Amazon EC2 instances to use for Kafka brokers. The following instance types are allowed: kafka.m5.large, kafka.m5.xlarge, kafka.m5.2xlarge,
+        /// kafka.m5.4xlarge, kafka.m5.12xlarge, and kafka.m5.24xlarge.</p>
         pub fn set_instance_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2970,12 +3181,18 @@ pub mod broker_node_group_info {
             self.instance_type = input;
             self
         }
+        /// Appends an item to `security_groups`.
+        ///
+        /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
+        ///
+        /// <p>The AWS security groups to associate with the elastic network interfaces in order to specify who can connect to and communicate with the Amazon MSK cluster. If you don't specify a security group, Amazon MSK uses the default security group associated with the VPC.</p>
         pub fn security_groups(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_groups.unwrap_or_default();
             v.push(input.into());
             self.security_groups = Some(v);
             self
         }
+        /// <p>The AWS security groups to associate with the elastic network interfaces in order to specify who can connect to and communicate with the Amazon MSK cluster. If you don't specify a security group, Amazon MSK uses the default security group associated with the VPC.</p>
         pub fn set_security_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2988,6 +3205,7 @@ pub mod broker_node_group_info {
             self.storage_info = Some(input);
             self
         }
+        /// <p>Contains information about storage volumes attached to MSK broker nodes.</p>
         pub fn set_storage_info(
             mut self,
             input: std::option::Option<crate::model::StorageInfo>,
@@ -3042,6 +3260,7 @@ pub mod storage_info {
             self.ebs_storage_info = Some(input);
             self
         }
+        /// <p>EBS volume information.</p>
         pub fn set_ebs_storage_info(
             mut self,
             input: std::option::Option<crate::model::EbsStorageInfo>,
@@ -3092,6 +3311,7 @@ pub mod ebs_storage_info {
             self.volume_size = Some(input);
             self
         }
+        /// <p>The size in GiB of the EBS volume for the data drive on each broker node.</p>
         pub fn set_volume_size(mut self, input: std::option::Option<i32>) -> Self {
             self.volume_size = input;
             self
@@ -3124,6 +3344,7 @@ impl EbsStorageInfo {
     std::hash::Hash,
 )]
 pub enum BrokerAzDistribution {
+    #[allow(missing_docs)] // documentation missing in model
     Default,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3144,12 +3365,14 @@ impl std::str::FromStr for BrokerAzDistribution {
     }
 }
 impl BrokerAzDistribution {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             BrokerAzDistribution::Default => "DEFAULT",
             BrokerAzDistribution::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DEFAULT"]
     }
@@ -3169,9 +3392,9 @@ pub struct ClusterOperationInfo {
     /// <p>ARN of the cluster.</p>
     pub cluster_arn: std::option::Option<std::string::String>,
     /// <p>The time that the operation was created.</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time at which the operation finished.</p>
-    pub end_time: std::option::Option<smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Describes the error if the operation fails.</p>
     pub error_info: std::option::Option<crate::model::ErrorInfo>,
     /// <p>ARN of the cluster operation.</p>
@@ -3212,8 +3435,8 @@ pub mod cluster_operation_info {
     pub struct Builder {
         pub(crate) client_request_id: std::option::Option<std::string::String>,
         pub(crate) cluster_arn: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) error_info: std::option::Option<crate::model::ErrorInfo>,
         pub(crate) operation_arn: std::option::Option<std::string::String>,
         pub(crate) operation_state: std::option::Option<std::string::String>,
@@ -3229,6 +3452,7 @@ pub mod cluster_operation_info {
             self.client_request_id = Some(input.into());
             self
         }
+        /// <p>The ID of the API request that triggered this operation.</p>
         pub fn set_client_request_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3241,28 +3465,34 @@ pub mod cluster_operation_info {
             self.cluster_arn = Some(input.into());
             self
         }
+        /// <p>ARN of the cluster.</p>
         pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster_arn = input;
             self
         }
         /// <p>The time that the operation was created.</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>The time that the operation was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>The time at which the operation finished.</p>
-        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time at which the operation finished.</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.end_time = input;
             self
         }
@@ -3271,6 +3501,7 @@ pub mod cluster_operation_info {
             self.error_info = Some(input);
             self
         }
+        /// <p>Describes the error if the operation fails.</p>
         pub fn set_error_info(
             mut self,
             input: std::option::Option<crate::model::ErrorInfo>,
@@ -3283,6 +3514,7 @@ pub mod cluster_operation_info {
             self.operation_arn = Some(input.into());
             self
         }
+        /// <p>ARN of the cluster operation.</p>
         pub fn set_operation_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3295,6 +3527,7 @@ pub mod cluster_operation_info {
             self.operation_state = Some(input.into());
             self
         }
+        /// <p>State of the cluster operation.</p>
         pub fn set_operation_state(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3302,6 +3535,11 @@ pub mod cluster_operation_info {
             self.operation_state = input;
             self
         }
+        /// Appends an item to `operation_steps`.
+        ///
+        /// To override the contents of this collection use [`set_operation_steps`](Self::set_operation_steps).
+        ///
+        /// <p>Steps completed during the operation.</p>
         pub fn operation_steps(
             mut self,
             input: impl Into<crate::model::ClusterOperationStep>,
@@ -3311,6 +3549,7 @@ pub mod cluster_operation_info {
             self.operation_steps = Some(v);
             self
         }
+        /// <p>Steps completed during the operation.</p>
         pub fn set_operation_steps(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ClusterOperationStep>>,
@@ -3323,6 +3562,7 @@ pub mod cluster_operation_info {
             self.operation_type = Some(input.into());
             self
         }
+        /// <p>Type of the cluster operation.</p>
         pub fn set_operation_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3335,6 +3575,7 @@ pub mod cluster_operation_info {
             self.source_cluster_info = Some(input);
             self
         }
+        /// <p>Information about cluster attributes before a cluster is updated.</p>
         pub fn set_source_cluster_info(
             mut self,
             input: std::option::Option<crate::model::MutableClusterInfo>,
@@ -3347,6 +3588,7 @@ pub mod cluster_operation_info {
             self.target_cluster_info = Some(input);
             self
         }
+        /// <p>Information about cluster attributes after a cluster is updated.</p>
         pub fn set_target_cluster_info(
             mut self,
             input: std::option::Option<crate::model::MutableClusterInfo>,
@@ -3440,6 +3682,11 @@ pub mod mutable_cluster_info {
         pub(crate) encryption_info: std::option::Option<crate::model::EncryptionInfo>,
     }
     impl Builder {
+        /// Appends an item to `broker_ebs_volume_info`.
+        ///
+        /// To override the contents of this collection use [`set_broker_ebs_volume_info`](Self::set_broker_ebs_volume_info).
+        ///
+        /// <p>Specifies the size of the EBS volume and the ID of the associated broker.</p>
         pub fn broker_ebs_volume_info(
             mut self,
             input: impl Into<crate::model::BrokerEbsVolumeInfo>,
@@ -3449,6 +3696,7 @@ pub mod mutable_cluster_info {
             self.broker_ebs_volume_info = Some(v);
             self
         }
+        /// <p>Specifies the size of the EBS volume and the ID of the associated broker.</p>
         pub fn set_broker_ebs_volume_info(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BrokerEbsVolumeInfo>>,
@@ -3461,6 +3709,7 @@ pub mod mutable_cluster_info {
             self.configuration_info = Some(input);
             self
         }
+        /// <p>Information about the changes in the configuration of the brokers.</p>
         pub fn set_configuration_info(
             mut self,
             input: std::option::Option<crate::model::ConfigurationInfo>,
@@ -3473,6 +3722,7 @@ pub mod mutable_cluster_info {
             self.number_of_broker_nodes = Some(input);
             self
         }
+        /// <p>The number of broker nodes in the cluster.</p>
         pub fn set_number_of_broker_nodes(mut self, input: std::option::Option<i32>) -> Self {
             self.number_of_broker_nodes = input;
             self
@@ -3482,6 +3732,7 @@ pub mod mutable_cluster_info {
             self.enhanced_monitoring = Some(input);
             self
         }
+        /// <p>Specifies which Apache Kafka metrics Amazon MSK gathers and sends to Amazon CloudWatch for this cluster.</p>
         pub fn set_enhanced_monitoring(
             mut self,
             input: std::option::Option<crate::model::EnhancedMonitoring>,
@@ -3494,6 +3745,7 @@ pub mod mutable_cluster_info {
             self.open_monitoring = Some(input);
             self
         }
+        /// <p>The settings for open monitoring.</p>
         pub fn set_open_monitoring(
             mut self,
             input: std::option::Option<crate::model::OpenMonitoring>,
@@ -3506,6 +3758,7 @@ pub mod mutable_cluster_info {
             self.kafka_version = Some(input.into());
             self
         }
+        /// <p>The Kafka version.</p>
         pub fn set_kafka_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3518,6 +3771,7 @@ pub mod mutable_cluster_info {
             self.logging_info = Some(input);
             self
         }
+        /// <p>You can configure your MSK cluster to send broker logs to different destination types. This is a container for the configuration details related to broker logs.</p>
         pub fn set_logging_info(
             mut self,
             input: std::option::Option<crate::model::LoggingInfo>,
@@ -3530,6 +3784,7 @@ pub mod mutable_cluster_info {
             self.instance_type = Some(input.into());
             self
         }
+        /// <p>Information about the Amazon MSK broker type.</p>
         pub fn set_instance_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3542,6 +3797,7 @@ pub mod mutable_cluster_info {
             self.client_authentication = Some(input);
             self
         }
+        /// <p>Includes all client authentication information.</p>
         pub fn set_client_authentication(
             mut self,
             input: std::option::Option<crate::model::ClientAuthentication>,
@@ -3554,6 +3810,7 @@ pub mod mutable_cluster_info {
             self.encryption_info = Some(input);
             self
         }
+        /// <p>Includes all encryption-related information.</p>
         pub fn set_encryption_info(
             mut self,
             input: std::option::Option<crate::model::EncryptionInfo>,
@@ -3617,6 +3874,7 @@ pub mod cluster_operation_step {
             self.step_info = Some(input);
             self
         }
+        /// <p>Information about the step and its status.</p>
         pub fn set_step_info(
             mut self,
             input: std::option::Option<crate::model::ClusterOperationStepInfo>,
@@ -3629,6 +3887,7 @@ pub mod cluster_operation_step {
             self.step_name = Some(input.into());
             self
         }
+        /// <p>The name of the step.</p>
         pub fn set_step_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.step_name = input;
             self
@@ -3677,6 +3936,7 @@ pub mod cluster_operation_step_info {
             self.step_status = Some(input.into());
             self
         }
+        /// <p>The steps current status.</p>
         pub fn set_step_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.step_status = input;
             self
@@ -3728,6 +3988,7 @@ pub mod error_info {
             self.error_code = Some(input.into());
             self
         }
+        /// <p>A number describing the error programmatically.</p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_code = input;
             self
@@ -3737,6 +3998,7 @@ pub mod error_info {
             self.error_string = Some(input.into());
             self
         }
+        /// <p>An optional field to provide more details about the error.</p>
         pub fn set_error_string(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_string = input;
             self
@@ -3789,6 +4051,7 @@ pub mod compatible_kafka_version {
             self.source_version = Some(input.into());
             self
         }
+        /// <p>A Kafka version.</p>
         pub fn set_source_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3796,12 +4059,18 @@ pub mod compatible_kafka_version {
             self.source_version = input;
             self
         }
+        /// Appends an item to `target_versions`.
+        ///
+        /// To override the contents of this collection use [`set_target_versions`](Self::set_target_versions).
+        ///
+        /// <p>A list of Kafka versions.</p>
         pub fn target_versions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.target_versions.unwrap_or_default();
             v.push(input.into());
             self.target_versions = Some(v);
             self
         }
+        /// <p>A list of Kafka versions.</p>
         pub fn set_target_versions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3861,6 +4130,7 @@ pub mod unprocessed_scram_secret {
             self.error_code = Some(input.into());
             self
         }
+        /// <p>Error code for associate/disassociate failure.</p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_code = input;
             self
@@ -3870,6 +4140,7 @@ pub mod unprocessed_scram_secret {
             self.error_message = Some(input.into());
             self
         }
+        /// <p>Error message for associate/disassociate failure.</p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3882,6 +4153,7 @@ pub mod unprocessed_scram_secret {
             self.secret_arn = Some(input.into());
             self
         }
+        /// <p>AWS Secrets Manager secret ARN.</p>
         pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_arn = input;
             self

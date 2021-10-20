@@ -59,6 +59,7 @@ impl UpdateNotificationOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateBudgetActionOutput {
@@ -102,6 +103,7 @@ pub mod update_budget_action_output {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The account ID of the user. It should be a 12-digit number.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -111,6 +113,7 @@ pub mod update_budget_action_output {
             self.budget_name = Some(input.into());
             self
         }
+        /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
         pub fn set_budget_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.budget_name = input;
             self
@@ -122,6 +125,9 @@ pub mod update_budget_action_output {
             self.old_action = Some(input);
             self
         }
+        /// <p>
+        /// The previous action resource information.
+        /// </p>
         pub fn set_old_action(mut self, input: std::option::Option<crate::model::Action>) -> Self {
             self.old_action = input;
             self
@@ -133,6 +139,9 @@ pub mod update_budget_action_output {
             self.new_action = Some(input);
             self
         }
+        /// <p>
+        /// The updated action resource information.
+        /// </p>
         pub fn set_new_action(mut self, input: std::option::Option<crate::model::Action>) -> Self {
             self.new_action = input;
             self
@@ -185,6 +194,7 @@ impl UpdateBudgetOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExecuteBudgetActionOutput {
@@ -228,6 +238,7 @@ pub mod execute_budget_action_output {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The account ID of the user. It should be a 12-digit number.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -237,6 +248,7 @@ pub mod execute_budget_action_output {
             self.budget_name = Some(input.into());
             self
         }
+        /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
         pub fn set_budget_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.budget_name = input;
             self
@@ -248,6 +260,9 @@ pub mod execute_budget_action_output {
             self.action_id = Some(input.into());
             self
         }
+        /// <p>
+        /// A system-generated universally unique identifier (UUID) for the action.
+        /// </p>
         pub fn set_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.action_id = input;
             self
@@ -259,6 +274,9 @@ pub mod execute_budget_action_output {
             self.execution_type = Some(input);
             self
         }
+        /// <p>
+        /// The type of execution.
+        /// </p>
         pub fn set_execution_type(
             mut self,
             input: std::option::Option<crate::model::ExecutionType>,
@@ -311,12 +329,18 @@ pub mod describe_subscribers_for_notification_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `subscribers`.
+        ///
+        /// To override the contents of this collection use [`set_subscribers`](Self::set_subscribers).
+        ///
+        /// <p>A list of subscribers that are associated with a notification.</p>
         pub fn subscribers(mut self, input: impl Into<crate::model::Subscriber>) -> Self {
             let mut v = self.subscribers.unwrap_or_default();
             v.push(input.into());
             self.subscribers = Some(v);
             self
         }
+        /// <p>A list of subscribers that are associated with a notification.</p>
         pub fn set_subscribers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Subscriber>>,
@@ -329,6 +353,7 @@ pub mod describe_subscribers_for_notification_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The pagination token in the service response that indicates the next set of results that you can retrieve.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -376,12 +401,18 @@ pub mod describe_notifications_for_budget_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `notifications`.
+        ///
+        /// To override the contents of this collection use [`set_notifications`](Self::set_notifications).
+        ///
+        /// <p>A list of notifications that are associated with a budget.</p>
         pub fn notifications(mut self, input: impl Into<crate::model::Notification>) -> Self {
             let mut v = self.notifications.unwrap_or_default();
             v.push(input.into());
             self.notifications = Some(v);
             self
         }
+        /// <p>A list of notifications that are associated with a budget.</p>
         pub fn set_notifications(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Notification>>,
@@ -394,6 +425,7 @@ pub mod describe_notifications_for_budget_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The pagination token in the service response that indicates the next set of results that you can retrieve.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -441,12 +473,18 @@ pub mod describe_budgets_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `budgets`.
+        ///
+        /// To override the contents of this collection use [`set_budgets`](Self::set_budgets).
+        ///
+        /// <p>A list of budgets.</p>
         pub fn budgets(mut self, input: impl Into<crate::model::Budget>) -> Self {
             let mut v = self.budgets.unwrap_or_default();
             v.push(input.into());
             self.budgets = Some(v);
             self
         }
+        /// <p>A list of budgets.</p>
         pub fn set_budgets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Budget>>,
@@ -459,6 +497,7 @@ pub mod describe_budgets_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The pagination token in the service response that indicates the next set of results that you can retrieve.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -479,6 +518,7 @@ impl DescribeBudgetsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBudgetPerformanceHistoryOutput {
@@ -519,6 +559,8 @@ pub mod describe_budget_performance_history_output {
             self.budget_performance_history = Some(input);
             self
         }
+        /// <p>The history of how often the budget has gone into an <code>ALARM</code> state.</p>
+        /// <p>For <code>DAILY</code> budgets, the history saves the state of the budget for the last 60 days. For <code>MONTHLY</code> budgets, the history saves the state of the budget for the current month plus the last 12 months. For <code>QUARTERLY</code> budgets, the history saves the state of the budget for the last four quarters.</p>
         pub fn set_budget_performance_history(
             mut self,
             input: std::option::Option<crate::model::BudgetPerformanceHistory>,
@@ -531,6 +573,7 @@ pub mod describe_budget_performance_history_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p> A generic string.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -551,6 +594,7 @@ impl DescribeBudgetPerformanceHistoryOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBudgetActionsForBudgetOutput {
@@ -579,12 +623,22 @@ pub mod describe_budget_actions_for_budget_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `actions`.
+        ///
+        /// To override the contents of this collection use [`set_actions`](Self::set_actions).
+        ///
+        /// <p>
+        /// A list of the budget action resources information.
+        /// </p>
         pub fn actions(mut self, input: impl Into<crate::model::Action>) -> Self {
             let mut v = self.actions.unwrap_or_default();
             v.push(input.into());
             self.actions = Some(v);
             self
         }
+        /// <p>
+        /// A list of the budget action resources information.
+        /// </p>
         pub fn set_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Action>>,
@@ -597,6 +651,7 @@ pub mod describe_budget_actions_for_budget_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p> A generic string.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -617,6 +672,7 @@ impl DescribeBudgetActionsForBudgetOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBudgetActionsForAccountOutput {
@@ -645,12 +701,22 @@ pub mod describe_budget_actions_for_account_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `actions`.
+        ///
+        /// To override the contents of this collection use [`set_actions`](Self::set_actions).
+        ///
+        /// <p>
+        /// A list of the budget action resources information.
+        /// </p>
         pub fn actions(mut self, input: impl Into<crate::model::Action>) -> Self {
             let mut v = self.actions.unwrap_or_default();
             v.push(input.into());
             self.actions = Some(v);
             self
         }
+        /// <p>
+        /// A list of the budget action resources information.
+        /// </p>
         pub fn set_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Action>>,
@@ -663,6 +729,7 @@ pub mod describe_budget_actions_for_account_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p> A generic string.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -683,6 +750,7 @@ impl DescribeBudgetActionsForAccountOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBudgetActionHistoriesOutput {
@@ -712,12 +780,22 @@ pub mod describe_budget_action_histories_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `action_histories`.
+        ///
+        /// To override the contents of this collection use [`set_action_histories`](Self::set_action_histories).
+        ///
+        /// <p>
+        /// The historical record of the budget action resource.
+        /// </p>
         pub fn action_histories(mut self, input: impl Into<crate::model::ActionHistory>) -> Self {
             let mut v = self.action_histories.unwrap_or_default();
             v.push(input.into());
             self.action_histories = Some(v);
             self
         }
+        /// <p>
+        /// The historical record of the budget action resource.
+        /// </p>
         pub fn set_action_histories(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ActionHistory>>,
@@ -730,6 +808,7 @@ pub mod describe_budget_action_histories_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p> A generic string.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -750,6 +829,7 @@ impl DescribeBudgetActionHistoriesOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBudgetActionOutput {
@@ -787,6 +867,7 @@ pub mod describe_budget_action_output {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The account ID of the user. It should be a 12-digit number.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -796,6 +877,7 @@ pub mod describe_budget_action_output {
             self.budget_name = Some(input.into());
             self
         }
+        /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
         pub fn set_budget_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.budget_name = input;
             self
@@ -807,6 +889,9 @@ pub mod describe_budget_action_output {
             self.action = Some(input);
             self
         }
+        /// <p>
+        /// A budget action resource.
+        /// </p>
         pub fn set_action(mut self, input: std::option::Option<crate::model::Action>) -> Self {
             self.action = input;
             self
@@ -856,6 +941,7 @@ pub mod describe_budget_output {
             self.budget = Some(input);
             self
         }
+        /// <p>The description of the budget.</p>
         pub fn set_budget(mut self, input: std::option::Option<crate::model::Budget>) -> Self {
             self.budget = input;
             self
@@ -935,6 +1021,7 @@ impl DeleteNotificationOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBudgetActionOutput {
@@ -972,6 +1059,7 @@ pub mod delete_budget_action_output {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The account ID of the user. It should be a 12-digit number.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -981,6 +1069,7 @@ pub mod delete_budget_action_output {
             self.budget_name = Some(input.into());
             self
         }
+        /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
         pub fn set_budget_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.budget_name = input;
             self
@@ -992,6 +1081,9 @@ pub mod delete_budget_action_output {
             self.action = Some(input);
             self
         }
+        /// <p>
+        /// A budget action resource.
+        /// </p>
         pub fn set_action(mut self, input: std::option::Option<crate::model::Action>) -> Self {
             self.action = input;
             self
@@ -1103,6 +1195,7 @@ impl CreateNotificationOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBudgetActionOutput {
@@ -1140,6 +1233,7 @@ pub mod create_budget_action_output {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The account ID of the user. It should be a 12-digit number.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -1149,6 +1243,7 @@ pub mod create_budget_action_output {
             self.budget_name = Some(input.into());
             self
         }
+        /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
         pub fn set_budget_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.budget_name = input;
             self
@@ -1160,6 +1255,9 @@ pub mod create_budget_action_output {
             self.action_id = Some(input.into());
             self
         }
+        /// <p>
+        /// A system-generated universally unique identifier (UUID) for the action.
+        /// </p>
         pub fn set_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.action_id = input;
             self

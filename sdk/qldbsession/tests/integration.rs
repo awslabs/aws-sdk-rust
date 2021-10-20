@@ -6,13 +6,13 @@
 use aws_http::user_agent::AwsUserAgent;
 use aws_hyper::Client;
 use aws_sdk_qldbsession as qldbsession;
+use aws_smithy_client::test_connection::TestConnection;
+use aws_smithy_http::body::SdkBody;
 use http::Uri;
 use qldbsession::model::StartSessionRequest;
 use qldbsession::operation::SendCommand;
 use qldbsession::Credentials;
 use qldbsession::{Config, Region};
-use smithy_client::test_connection::TestConnection;
-use smithy_http::body::SdkBody;
 use std::time::{Duration, UNIX_EPOCH};
 
 // TODO: having the full HTTP requests right in the code is a bit gross, consider something

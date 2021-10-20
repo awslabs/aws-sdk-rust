@@ -19,6 +19,11 @@ pub mod add_tags_to_resource_input {
             self.resource_name = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the resource to which the tags are to be added,
+        /// for example <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>
+        /// or <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.
+        /// ElastiCache resources are <i>cluster</i> and <i>snapshot</i>.</p>
+        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Service Namespaces</a>.</p>
         pub fn set_resource_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -26,12 +31,20 @@ pub mod add_tags_to_resource_input {
             self.resource_name = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of tags to be added to this resource. A tag is a key-value pair.
+        /// A tag key must be accompanied by a tag value, although null is accepted.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>A list of tags to be added to this resource. A tag is a key-value pair.
+        /// A tag key must be accompanied by a tag value, although null is accepted.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -44,7 +57,7 @@ pub mod add_tags_to_resource_input {
             self,
         ) -> std::result::Result<
             crate::input::AddTagsToResourceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::AddTagsToResourceInput {
                 resource_name: self.resource_name,
@@ -64,16 +77,16 @@ impl AddTagsToResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AddTagsToResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AddTagsToResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -81,7 +94,7 @@ impl AddTagsToResourceInput {
         fn update_http_builder(
             input: &crate::input::AddTagsToResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -90,25 +103,27 @@ impl AddTagsToResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AddTagsToResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_add_tags_to_resource(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -131,15 +146,15 @@ impl AddTagsToResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::AddTagsToResource::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "AddTagsToResource",
             "elasticache",
         ));
@@ -148,10 +163,10 @@ impl AddTagsToResourceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -181,6 +196,7 @@ pub mod authorize_cache_security_group_ingress_input {
             self.cache_security_group_name = Some(input.into());
             self
         }
+        /// <p>The cache security group that allows network ingress.</p>
         pub fn set_cache_security_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -193,6 +209,7 @@ pub mod authorize_cache_security_group_ingress_input {
             self.ec2_security_group_name = Some(input.into());
             self
         }
+        /// <p>The Amazon EC2 security group to be authorized for ingress to the cache security group.</p>
         pub fn set_ec2_security_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -210,6 +227,9 @@ pub mod authorize_cache_security_group_ingress_input {
             self.ec2_security_group_owner_id = Some(input.into());
             self
         }
+        /// <p>The Amazon account number of the Amazon EC2 security group owner.
+        /// Note that this is not the same thing as an Amazon access key ID -
+        /// you must provide a valid Amazon account number for this parameter.</p>
         pub fn set_ec2_security_group_owner_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -222,7 +242,7 @@ pub mod authorize_cache_security_group_ingress_input {
             self,
         ) -> std::result::Result<
             crate::input::AuthorizeCacheSecurityGroupIngressInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::AuthorizeCacheSecurityGroupIngressInput {
                 cache_security_group_name: self.cache_security_group_name,
@@ -244,16 +264,16 @@ impl AuthorizeCacheSecurityGroupIngressInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AuthorizeCacheSecurityGroupIngress,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AuthorizeCacheSecurityGroupIngressInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -261,7 +281,7 @@ impl AuthorizeCacheSecurityGroupIngressInput {
         fn update_http_builder(
             input: &crate::input::AuthorizeCacheSecurityGroupIngressInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -270,25 +290,25 @@ impl AuthorizeCacheSecurityGroupIngressInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AuthorizeCacheSecurityGroupIngressInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_authorize_cache_security_group_ingress(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_authorize_cache_security_group_ingress(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -311,15 +331,15 @@ impl AuthorizeCacheSecurityGroupIngressInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::AuthorizeCacheSecurityGroupIngress::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "AuthorizeCacheSecurityGroupIngress",
             "elasticache",
         ));
@@ -328,10 +348,10 @@ impl AuthorizeCacheSecurityGroupIngressInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -356,12 +376,18 @@ pub mod batch_apply_update_action_input {
         pub(crate) service_update_name: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `replication_group_ids`.
+        ///
+        /// To override the contents of this collection use [`set_replication_group_ids`](Self::set_replication_group_ids).
+        ///
+        /// <p>The replication group IDs</p>
         pub fn replication_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.replication_group_ids.unwrap_or_default();
             v.push(input.into());
             self.replication_group_ids = Some(v);
             self
         }
+        /// <p>The replication group IDs</p>
         pub fn set_replication_group_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -369,12 +395,18 @@ pub mod batch_apply_update_action_input {
             self.replication_group_ids = input;
             self
         }
+        /// Appends an item to `cache_cluster_ids`.
+        ///
+        /// To override the contents of this collection use [`set_cache_cluster_ids`](Self::set_cache_cluster_ids).
+        ///
+        /// <p>The cache cluster IDs</p>
         pub fn cache_cluster_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.cache_cluster_ids.unwrap_or_default();
             v.push(input.into());
             self.cache_cluster_ids = Some(v);
             self
         }
+        /// <p>The cache cluster IDs</p>
         pub fn set_cache_cluster_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -387,6 +419,7 @@ pub mod batch_apply_update_action_input {
             self.service_update_name = Some(input.into());
             self
         }
+        /// <p>The unique ID of the service update</p>
         pub fn set_service_update_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -399,7 +432,7 @@ pub mod batch_apply_update_action_input {
             self,
         ) -> std::result::Result<
             crate::input::BatchApplyUpdateActionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::BatchApplyUpdateActionInput {
                 replication_group_ids: self.replication_group_ids,
@@ -420,16 +453,16 @@ impl BatchApplyUpdateActionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::BatchApplyUpdateAction,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::BatchApplyUpdateActionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -437,7 +470,7 @@ impl BatchApplyUpdateActionInput {
         fn update_http_builder(
             input: &crate::input::BatchApplyUpdateActionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -446,27 +479,29 @@ impl BatchApplyUpdateActionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::BatchApplyUpdateActionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_batch_apply_update_action(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -489,15 +524,15 @@ impl BatchApplyUpdateActionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::BatchApplyUpdateAction::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "BatchApplyUpdateAction",
             "elasticache",
         ));
@@ -506,10 +541,10 @@ impl BatchApplyUpdateActionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -534,12 +569,18 @@ pub mod batch_stop_update_action_input {
         pub(crate) service_update_name: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `replication_group_ids`.
+        ///
+        /// To override the contents of this collection use [`set_replication_group_ids`](Self::set_replication_group_ids).
+        ///
+        /// <p>The replication group IDs</p>
         pub fn replication_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.replication_group_ids.unwrap_or_default();
             v.push(input.into());
             self.replication_group_ids = Some(v);
             self
         }
+        /// <p>The replication group IDs</p>
         pub fn set_replication_group_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -547,12 +588,18 @@ pub mod batch_stop_update_action_input {
             self.replication_group_ids = input;
             self
         }
+        /// Appends an item to `cache_cluster_ids`.
+        ///
+        /// To override the contents of this collection use [`set_cache_cluster_ids`](Self::set_cache_cluster_ids).
+        ///
+        /// <p>The cache cluster IDs</p>
         pub fn cache_cluster_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.cache_cluster_ids.unwrap_or_default();
             v.push(input.into());
             self.cache_cluster_ids = Some(v);
             self
         }
+        /// <p>The cache cluster IDs</p>
         pub fn set_cache_cluster_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -565,6 +612,7 @@ pub mod batch_stop_update_action_input {
             self.service_update_name = Some(input.into());
             self
         }
+        /// <p>The unique ID of the service update</p>
         pub fn set_service_update_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -577,7 +625,7 @@ pub mod batch_stop_update_action_input {
             self,
         ) -> std::result::Result<
             crate::input::BatchStopUpdateActionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::BatchStopUpdateActionInput {
                 replication_group_ids: self.replication_group_ids,
@@ -598,16 +646,16 @@ impl BatchStopUpdateActionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::BatchStopUpdateAction,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::BatchStopUpdateActionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -615,7 +663,7 @@ impl BatchStopUpdateActionInput {
         fn update_http_builder(
             input: &crate::input::BatchStopUpdateActionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -624,27 +672,29 @@ impl BatchStopUpdateActionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::BatchStopUpdateActionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_batch_stop_update_action(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -667,15 +717,15 @@ impl BatchStopUpdateActionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::BatchStopUpdateAction::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "BatchStopUpdateAction",
             "elasticache",
         ));
@@ -684,10 +734,10 @@ impl BatchStopUpdateActionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -716,6 +766,7 @@ pub mod complete_migration_input {
             self.replication_group_id = Some(input.into());
             self
         }
+        /// <p>The ID of the replication group to which data is being migrated.</p>
         pub fn set_replication_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -728,6 +779,7 @@ pub mod complete_migration_input {
             self.force = Some(input);
             self
         }
+        /// <p>Forces the migration to stop without ensuring that data is in sync. It is recommended to use this option only to abort the migration and not recommended when application wants to continue migration to ElastiCache.</p>
         pub fn set_force(mut self, input: std::option::Option<bool>) -> Self {
             self.force = input;
             self
@@ -737,7 +789,7 @@ pub mod complete_migration_input {
             self,
         ) -> std::result::Result<
             crate::input::CompleteMigrationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CompleteMigrationInput {
                 replication_group_id: self.replication_group_id,
@@ -757,16 +809,16 @@ impl CompleteMigrationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CompleteMigration,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CompleteMigrationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -774,7 +826,7 @@ impl CompleteMigrationInput {
         fn update_http_builder(
             input: &crate::input::CompleteMigrationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -783,27 +835,27 @@ impl CompleteMigrationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CompleteMigrationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_complete_migration(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -826,15 +878,15 @@ impl CompleteMigrationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CompleteMigration::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CompleteMigration",
             "elasticache",
         ));
@@ -843,10 +895,10 @@ impl CompleteMigrationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -878,6 +930,7 @@ pub mod copy_snapshot_input {
             self.source_snapshot_name = Some(input.into());
             self
         }
+        /// <p>The name of an existing snapshot from which to make a copy.</p>
         pub fn set_source_snapshot_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -892,6 +945,9 @@ pub mod copy_snapshot_input {
             self.target_snapshot_name = Some(input.into());
             self
         }
+        /// <p>A name for the snapshot copy.
+        /// ElastiCache does not permit overwriting a snapshot, therefore
+        /// this name must be unique within its context - ElastiCache or an Amazon S3 bucket if exporting.</p>
         pub fn set_target_snapshot_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -904,11 +960,19 @@ pub mod copy_snapshot_input {
         /// <p>When using this parameter to export a snapshot,
         /// be sure Amazon ElastiCache has the needed permissions to this S3 bucket.
         /// For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access">Step 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the <i>Amazon ElastiCache User Guide</i>.</p>
+        ///
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html">Exporting a Snapshot</a> in the <i>Amazon ElastiCache User Guide</i>.</p>
         pub fn target_bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.target_bucket = Some(input.into());
             self
         }
+        /// <p>The Amazon S3 bucket to which the snapshot is exported.
+        /// This parameter is used only when exporting a snapshot for external access.</p>
+        /// <p>When using this parameter to export a snapshot,
+        /// be sure Amazon ElastiCache has the needed permissions to this S3 bucket.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access">Step 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the <i>Amazon ElastiCache User Guide</i>.</p>
+        ///
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html">Exporting a Snapshot</a> in the <i>Amazon ElastiCache User Guide</i>.</p>
         pub fn set_target_bucket(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -921,16 +985,23 @@ pub mod copy_snapshot_input {
             self.kms_key_id = Some(input.into());
             self
         }
+        /// <p>The ID of the KMS key used to encrypt the target snapshot.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -941,8 +1012,10 @@ pub mod copy_snapshot_input {
         /// Consumes the builder and constructs a [`CopySnapshotInput`](crate::input::CopySnapshotInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CopySnapshotInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CopySnapshotInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CopySnapshotInput {
                 source_snapshot_name: self.source_snapshot_name,
                 target_snapshot_name: self.target_snapshot_name,
@@ -964,16 +1037,16 @@ impl CopySnapshotInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CopySnapshot,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CopySnapshotInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -981,7 +1054,7 @@ impl CopySnapshotInput {
         fn update_http_builder(
             input: &crate::input::CopySnapshotInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -990,26 +1063,26 @@ impl CopySnapshotInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CopySnapshotInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_copy_snapshot(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1032,25 +1105,27 @@ impl CopySnapshotInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CopySnapshot::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "CopySnapshot",
-                    "elasticache",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CopySnapshot::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CopySnapshot",
+            "elasticache",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1121,6 +1196,21 @@ pub mod create_cache_cluster_input {
             self.cache_cluster_id = Some(input.into());
             self
         }
+        /// <p>The node group (shard) identifier. This parameter is stored as a lowercase string.</p>        
+        /// <p>
+        /// <b>Constraints:</b>
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>A name must contain from 1 to 50 alphanumeric characters or hyphens.</p>
+        /// </li>
+        /// <li>
+        /// <p>The first character must be a letter.</p>
+        /// </li>
+        /// <li>
+        /// <p>A name cannot end with a hyphen or contain two consecutive hyphens.</p>
+        /// </li>
+        /// </ul>
         pub fn set_cache_cluster_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1137,6 +1227,11 @@ pub mod create_cache_cluster_input {
             self.replication_group_id = Some(input.into());
             self
         }
+        /// <p>The ID of the replication group to which this cluster should belong. If this parameter is specified, the cluster is added to the specified replication group as a read replica; otherwise, the cluster is a standalone primary that is not part of any replication group.</p>
+        /// <p>If the specified replication group is Multi-AZ enabled and the Availability Zone is not specified, the cluster is created in Availability Zones that provide the best spread of read replicas across Availability Zones.</p>
+        /// <note>
+        /// <p>This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.</p>
+        /// </note>
         pub fn set_replication_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1153,6 +1248,11 @@ pub mod create_cache_cluster_input {
             self.az_mode = Some(input);
             self
         }
+        /// <p>Specifies whether the nodes in this Memcached cluster are created in a single Availability Zone or
+        /// created across multiple Availability Zones in the cluster's region.</p>
+        /// <p>This parameter is only supported for Memcached clusters.</p>
+        /// <p>If the <code>AZMode</code> and <code>PreferredAvailabilityZones</code> are not specified,
+        /// ElastiCache assumes <code>single-az</code> mode.</p>
         pub fn set_az_mode(mut self, input: std::option::Option<crate::model::AzMode>) -> Self {
             self.az_mode = input;
             self
@@ -1168,6 +1268,10 @@ pub mod create_cache_cluster_input {
             self.preferred_availability_zone = Some(input.into());
             self
         }
+        /// <p>The EC2 Availability Zone in which the cluster is created.</p>
+        /// <p>All nodes belonging to this cluster are placed in the preferred Availability Zone.
+        /// If you want to create your nodes across multiple Availability Zones, use <code>PreferredAvailabilityZones</code>.</p>
+        /// <p>Default: System chosen Availability Zone.</p>
         pub fn set_preferred_availability_zone(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1175,6 +1279,19 @@ pub mod create_cache_cluster_input {
             self.preferred_availability_zone = input;
             self
         }
+        /// Appends an item to `preferred_availability_zones`.
+        ///
+        /// To override the contents of this collection use [`set_preferred_availability_zones`](Self::set_preferred_availability_zones).
+        ///
+        /// <p>A list of the Availability Zones in which cache nodes are created. The order of the zones in the list is not important.</p>
+        /// <p>This option is only supported on Memcached.</p>
+        /// <note>
+        /// <p>If you are creating your cluster in an Amazon VPC (recommended) you can only locate nodes in Availability Zones that are associated with the subnets in the selected subnet group.</p>
+        /// <p>The number of Availability Zones listed must equal the value of <code>NumCacheNodes</code>.</p>
+        /// </note>
+        /// <p>If you want all the nodes in the same Availability Zone, use <code>PreferredAvailabilityZone</code> instead, or
+        /// repeat the Availability Zone multiple times in the list.</p>
+        /// <p>Default: System chosen Availability Zones.</p>
         pub fn preferred_availability_zones(
             mut self,
             input: impl Into<std::string::String>,
@@ -1184,6 +1301,15 @@ pub mod create_cache_cluster_input {
             self.preferred_availability_zones = Some(v);
             self
         }
+        /// <p>A list of the Availability Zones in which cache nodes are created. The order of the zones in the list is not important.</p>
+        /// <p>This option is only supported on Memcached.</p>
+        /// <note>
+        /// <p>If you are creating your cluster in an Amazon VPC (recommended) you can only locate nodes in Availability Zones that are associated with the subnets in the selected subnet group.</p>
+        /// <p>The number of Availability Zones listed must equal the value of <code>NumCacheNodes</code>.</p>
+        /// </note>
+        /// <p>If you want all the nodes in the same Availability Zone, use <code>PreferredAvailabilityZone</code> instead, or
+        /// repeat the Availability Zone multiple times in the list.</p>
+        /// <p>Default: System chosen Availability Zones.</p>
         pub fn set_preferred_availability_zones(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1200,6 +1326,11 @@ pub mod create_cache_cluster_input {
             self.num_cache_nodes = Some(input);
             self
         }
+        /// <p>The initial number of cache nodes that the cluster has.</p>
+        /// <p>For clusters running Redis, this value must be 1.
+        /// For clusters running Memcached, this value must be between 1 and 40.</p>
+        /// <p>If you need more than 40 nodes for your Memcached cluster,
+        /// please fill out the ElastiCache Limit Increase Request form at <a href="http://aws.amazon.com/contact-us/elasticache-node-limit-request/">http://aws.amazon.com/contact-us/elasticache-node-limit-request/</a>.</p>
         pub fn set_num_cache_nodes(mut self, input: std::option::Option<i32>) -> Self {
             self.num_cache_nodes = input;
             self
@@ -1214,6 +1345,7 @@ pub mod create_cache_cluster_input {
         /// <ul>
         /// <li>
         /// <p>Current generation: </p>
+        ///
         /// <p>
         /// <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
         /// <p>  
@@ -1224,11 +1356,17 @@ pub mod create_cache_cluster_input {
         /// <code>cache.m6g.8xlarge</code>,
         /// <code>cache.m6g.12xlarge</code>,
         /// <code>cache.m6g.16xlarge</code>
+        ///
+        ///
+        ///
         /// </p>  
+        ///
         /// <note>
         /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>
         /// </p>
         /// </note>
+        ///
+        ///
         /// <p>
         /// <b>M5 node types:</b>
         /// <code>cache.m5.large</code>,
@@ -1237,7 +1375,11 @@ pub mod create_cache_cluster_input {
         /// <code>cache.m5.4xlarge</code>,
         /// <code>cache.m5.12xlarge</code>,
         /// <code>cache.m5.24xlarge</code>
+        ///
+        ///
         /// </p>  
+        ///
+        ///
         /// <p>
         /// <b>M4 node types:</b>
         /// <code>cache.m4.large</code>,
@@ -1252,12 +1394,18 @@ pub mod create_cache_cluster_input {
         /// <code>cache.t3.small</code>,
         /// <code>cache.t3.medium</code>
         /// </p>
+        ///
+        ///
         /// <p>
         /// <b>T2 node types:</b>
         /// <code>cache.t2.micro</code>,
         /// <code>cache.t2.small</code>,
         /// <code>cache.t2.medium</code>
         /// </p>
+        ///
+        ///
+        ///
+        ///
         /// </li>
         /// <li>
         /// <p>Previous generation: (not recommended)</p>
@@ -1265,6 +1413,7 @@ pub mod create_cache_cluster_input {
         /// <b>T1 node types:</b>
         /// <code>cache.t1.micro</code>
         /// </p>
+        ///
         /// <p>
         /// <b>M1 node types:</b>
         /// <code>cache.m1.small</code>,
@@ -1272,6 +1421,7 @@ pub mod create_cache_cluster_input {
         /// <code>cache.m1.large</code>,
         /// <code>cache.m1.xlarge</code>
         /// </p>
+        ///
         /// <p>
         /// <b>M3 node types:</b>
         /// <code>cache.m3.medium</code>,
@@ -1279,11 +1429,13 @@ pub mod create_cache_cluster_input {
         /// <code>cache.m3.xlarge</code>,
         /// <code>cache.m3.2xlarge</code>
         /// </p>
+        ///
         /// </li>
         /// </ul>
         /// </li>
         /// <li>
         /// <p>Compute optimized:</p>
+        ///
         /// <ul>
         /// <li>
         /// <p>Previous generation: (not recommended)</p>
@@ -1301,6 +1453,10 @@ pub mod create_cache_cluster_input {
         /// <p>Current generation: </p>
         /// <p>
         /// <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
+        ///
+        ///
+        ///
+        ///
         /// <p>  
         /// <code>cache.r6g.large</code>,
         /// <code>cache.r6g.xlarge</code>,
@@ -1309,6 +1465,12 @@ pub mod create_cache_cluster_input {
         /// <code>cache.r6g.8xlarge</code>,
         /// <code>cache.r6g.12xlarge</code>,
         /// <code>cache.r6g.16xlarge</code>
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
         /// </p>  
         /// <note>
         /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>
@@ -1323,6 +1485,7 @@ pub mod create_cache_cluster_input {
         /// <code>cache.r5.12xlarge</code>,
         /// <code>cache.r5.24xlarge</code>
         /// </p>
+        ///
         /// <p>
         /// <b>R4 node types:</b>
         /// <code>cache.r4.large</code>,
@@ -1332,6 +1495,17 @@ pub mod create_cache_cluster_input {
         /// <code>cache.r4.8xlarge</code>,
         /// <code>cache.r4.16xlarge</code>
         /// </p>
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
         /// </li>
         /// <li>
         /// <p>Previous generation: (not recommended)</p>
@@ -1341,6 +1515,7 @@ pub mod create_cache_cluster_input {
         /// <code>cache.m2.2xlarge</code>,
         /// <code>cache.m2.4xlarge</code>
         /// </p>
+        ///
         /// <p>
         /// <b>R3 node types:</b>
         /// <code>cache.r3.large</code>,
@@ -1349,10 +1524,12 @@ pub mod create_cache_cluster_input {
         /// <code>cache.r3.4xlarge</code>,
         /// <code>cache.r3.8xlarge</code>
         /// </p>
+        ///
         /// </li>
         /// </ul>
         /// </li>
         /// </ul>
+        ///
         /// <p>
         /// <b>Additional node type info</b>
         /// </p>
@@ -1375,6 +1552,219 @@ pub mod create_cache_cluster_input {
             self.cache_node_type = Some(input.into());
             self
         }
+        /// <p>The compute and memory capacity of the nodes in the node group (shard).</p>
+        /// <p>The following node types are supported by ElastiCache.
+        /// Generally speaking, the current generation types provide more memory and computational power
+        /// at lower cost when compared to their equivalent previous generation counterparts.</p>
+        /// <ul>
+        /// <li>
+        /// <p>General purpose:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Current generation: </p>
+        ///
+        /// <p>
+        /// <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
+        /// <p>  
+        /// <code>cache.m6g.large</code>,
+        /// <code>cache.m6g.xlarge</code>,
+        /// <code>cache.m6g.2xlarge</code>,
+        /// <code>cache.m6g.4xlarge</code>,
+        /// <code>cache.m6g.8xlarge</code>,
+        /// <code>cache.m6g.12xlarge</code>,
+        /// <code>cache.m6g.16xlarge</code>
+        ///
+        ///
+        ///
+        /// </p>  
+        ///
+        /// <note>
+        /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>
+        /// </p>
+        /// </note>
+        ///
+        ///
+        /// <p>
+        /// <b>M5 node types:</b>
+        /// <code>cache.m5.large</code>,
+        /// <code>cache.m5.xlarge</code>,
+        /// <code>cache.m5.2xlarge</code>,
+        /// <code>cache.m5.4xlarge</code>,
+        /// <code>cache.m5.12xlarge</code>,
+        /// <code>cache.m5.24xlarge</code>
+        ///
+        ///
+        /// </p>  
+        ///
+        ///
+        /// <p>
+        /// <b>M4 node types:</b>
+        /// <code>cache.m4.large</code>,
+        /// <code>cache.m4.xlarge</code>,
+        /// <code>cache.m4.2xlarge</code>,
+        /// <code>cache.m4.4xlarge</code>,
+        /// <code>cache.m4.10xlarge</code>
+        /// </p>
+        /// <p>
+        /// <b>T3 node types:</b>
+        /// <code>cache.t3.micro</code>,
+        /// <code>cache.t3.small</code>,
+        /// <code>cache.t3.medium</code>
+        /// </p>
+        ///
+        ///
+        /// <p>
+        /// <b>T2 node types:</b>
+        /// <code>cache.t2.micro</code>,
+        /// <code>cache.t2.small</code>,
+        /// <code>cache.t2.medium</code>
+        /// </p>
+        ///
+        ///
+        ///
+        ///
+        /// </li>
+        /// <li>
+        /// <p>Previous generation: (not recommended)</p>
+        /// <p>
+        /// <b>T1 node types:</b>
+        /// <code>cache.t1.micro</code>
+        /// </p>
+        ///
+        /// <p>
+        /// <b>M1 node types:</b>
+        /// <code>cache.m1.small</code>,
+        /// <code>cache.m1.medium</code>,
+        /// <code>cache.m1.large</code>,
+        /// <code>cache.m1.xlarge</code>
+        /// </p>
+        ///
+        /// <p>
+        /// <b>M3 node types:</b>
+        /// <code>cache.m3.medium</code>,
+        /// <code>cache.m3.large</code>,
+        /// <code>cache.m3.xlarge</code>,
+        /// <code>cache.m3.2xlarge</code>
+        /// </p>
+        ///
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>Compute optimized:</p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>Previous generation: (not recommended)</p>
+        /// <p>
+        /// <b>C1 node types:</b>
+        /// <code>cache.c1.xlarge</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>Memory optimized:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Current generation: </p>
+        /// <p>
+        /// <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
+        ///
+        ///
+        ///
+        ///
+        /// <p>  
+        /// <code>cache.r6g.large</code>,
+        /// <code>cache.r6g.xlarge</code>,
+        /// <code>cache.r6g.2xlarge</code>,
+        /// <code>cache.r6g.4xlarge</code>,
+        /// <code>cache.r6g.8xlarge</code>,
+        /// <code>cache.r6g.12xlarge</code>,
+        /// <code>cache.r6g.16xlarge</code>
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        /// </p>  
+        /// <note>
+        /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>
+        /// </p>
+        /// </note>
+        /// <p>
+        /// <b>R5 node types:</b>
+        /// <code>cache.r5.large</code>,
+        /// <code>cache.r5.xlarge</code>,
+        /// <code>cache.r5.2xlarge</code>,
+        /// <code>cache.r5.4xlarge</code>,
+        /// <code>cache.r5.12xlarge</code>,
+        /// <code>cache.r5.24xlarge</code>
+        /// </p>
+        ///
+        /// <p>
+        /// <b>R4 node types:</b>
+        /// <code>cache.r4.large</code>,
+        /// <code>cache.r4.xlarge</code>,
+        /// <code>cache.r4.2xlarge</code>,
+        /// <code>cache.r4.4xlarge</code>,
+        /// <code>cache.r4.8xlarge</code>,
+        /// <code>cache.r4.16xlarge</code>
+        /// </p>
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        /// </li>
+        /// <li>
+        /// <p>Previous generation: (not recommended)</p>
+        /// <p>
+        /// <b>M2 node types:</b>            
+        /// <code>cache.m2.xlarge</code>,
+        /// <code>cache.m2.2xlarge</code>,
+        /// <code>cache.m2.4xlarge</code>
+        /// </p>
+        ///
+        /// <p>
+        /// <b>R3 node types:</b>
+        /// <code>cache.r3.large</code>,
+        /// <code>cache.r3.xlarge</code>,
+        /// <code>cache.r3.2xlarge</code>,  
+        /// <code>cache.r3.4xlarge</code>,
+        /// <code>cache.r3.8xlarge</code>
+        /// </p>
+        ///
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>
+        /// <b>Additional node type info</b>
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>All current generation instance types are created in Amazon VPC by default.</p>
+        /// </li>
+        /// <li>
+        /// <p>Redis append-only files (AOF) are not supported for T1 or T2 instances.</p>
+        /// </li>
+        /// <li>
+        /// <p>Redis Multi-AZ with automatic failover is not supported on T1 instances.</p>
+        /// </li>
+        /// <li>
+        /// <p>Redis configuration variables <code>appendonly</code> and
+        /// <code>appendfsync</code> are not supported on Redis version 2.8.22 and later.</p>
+        /// </li>
+        /// </ul>
         pub fn set_cache_node_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1389,12 +1779,16 @@ pub mod create_cache_cluster_input {
             self.engine = Some(input.into());
             self
         }
+        /// <p>The name of the cache engine to be used for this cluster.</p>
+        /// <p>Valid values for this parameter are: <code>memcached</code> | <code>redis</code>
+        /// </p>
         pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.engine = input;
             self
         }
         /// <p>The version number of the cache engine to be used for this cluster.
         /// To view the supported cache engine versions, use the DescribeCacheEngineVersions operation.</p>
+        ///
         /// <p>
         /// <b>Important:</b> You can upgrade to a newer engine version (see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version.
         /// If you want to use an earlier engine version,
@@ -1403,6 +1797,13 @@ pub mod create_cache_cluster_input {
             self.engine_version = Some(input.into());
             self
         }
+        /// <p>The version number of the cache engine to be used for this cluster.
+        /// To view the supported cache engine versions, use the DescribeCacheEngineVersions operation.</p>
+        ///
+        /// <p>
+        /// <b>Important:</b> You can upgrade to a newer engine version (see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version.
+        /// If you want to use an earlier engine version,
+        /// you must delete the existing cluster or replication group and create it anew with the earlier engine version. </p>
         pub fn set_engine_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1417,6 +1818,9 @@ pub mod create_cache_cluster_input {
             self.cache_parameter_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the parameter group to associate with this cluster.
+        /// If this argument is omitted, the default parameter group for the specified engine is used.
+        /// You cannot use any parameter group which has <code>cluster-enabled='yes'</code> when creating a cluster.</p>
         pub fn set_cache_parameter_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1435,6 +1839,13 @@ pub mod create_cache_cluster_input {
             self.cache_subnet_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the subnet group to be used for the cluster.</p>
+        /// <p>Use this parameter only when you are creating a cluster in an Amazon Virtual Private Cloud (Amazon VPC).</p>
+        /// <important>
+        /// <p>If you're going to launch your cluster in an Amazon VPC,
+        /// you need to create a subnet group before you start creating a cluster.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SubnetGroups.html">Subnets and Subnet Groups</a>.</p>
+        /// </important>
         pub fn set_cache_subnet_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1442,12 +1853,20 @@ pub mod create_cache_cluster_input {
             self.cache_subnet_group_name = input;
             self
         }
+        /// Appends an item to `cache_security_group_names`.
+        ///
+        /// To override the contents of this collection use [`set_cache_security_group_names`](Self::set_cache_security_group_names).
+        ///
+        /// <p>A list of security group names to associate with this cluster.</p>
+        /// <p>Use this parameter only when you are creating a cluster outside of an Amazon Virtual Private Cloud (Amazon VPC).</p>
         pub fn cache_security_group_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.cache_security_group_names.unwrap_or_default();
             v.push(input.into());
             self.cache_security_group_names = Some(v);
             self
         }
+        /// <p>A list of security group names to associate with this cluster.</p>
+        /// <p>Use this parameter only when you are creating a cluster outside of an Amazon Virtual Private Cloud (Amazon VPC).</p>
         pub fn set_cache_security_group_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1455,12 +1874,20 @@ pub mod create_cache_cluster_input {
             self.cache_security_group_names = input;
             self
         }
+        /// Appends an item to `security_group_ids`.
+        ///
+        /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
+        ///
+        /// <p>One or more VPC security groups associated with the cluster.</p>
+        /// <p>Use this parameter only when you are creating a cluster in an Amazon Virtual Private Cloud (Amazon VPC).</p>
         pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_ids.unwrap_or_default();
             v.push(input.into());
             self.security_group_ids = Some(v);
             self
         }
+        /// <p>One or more VPC security groups associated with the cluster.</p>
+        /// <p>Use this parameter only when you are creating a cluster in an Amazon Virtual Private Cloud (Amazon VPC).</p>
         pub fn set_security_group_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1468,12 +1895,18 @@ pub mod create_cache_cluster_input {
             self.security_group_ids = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of tags to be added to this resource.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>A list of tags to be added to this resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1481,12 +1914,34 @@ pub mod create_cache_cluster_input {
             self.tags = input;
             self
         }
+        /// Appends an item to `snapshot_arns`.
+        ///
+        /// To override the contents of this collection use [`set_snapshot_arns`](Self::set_snapshot_arns).
+        ///
+        /// <p>A single-element string list containing an Amazon Resource Name (ARN) that uniquely identifies
+        /// a Redis RDB snapshot file stored in Amazon S3.
+        /// The snapshot file is used to populate the node group (shard).
+        /// The Amazon S3 object name in the ARN cannot contain any commas.</p>
+        /// <note>
+        /// <p>This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.</p>
+        /// </note>
+        /// <p>Example of an Amazon S3 ARN: <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code>
+        /// </p>
         pub fn snapshot_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.snapshot_arns.unwrap_or_default();
             v.push(input.into());
             self.snapshot_arns = Some(v);
             self
         }
+        /// <p>A single-element string list containing an Amazon Resource Name (ARN) that uniquely identifies
+        /// a Redis RDB snapshot file stored in Amazon S3.
+        /// The snapshot file is used to populate the node group (shard).
+        /// The Amazon S3 object name in the ARN cannot contain any commas.</p>
+        /// <note>
+        /// <p>This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.</p>
+        /// </note>
+        /// <p>Example of an Amazon S3 ARN: <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code>
+        /// </p>
         pub fn set_snapshot_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1503,6 +1958,11 @@ pub mod create_cache_cluster_input {
             self.snapshot_name = Some(input.into());
             self
         }
+        /// <p>The name of a Redis snapshot from which to restore data into the new node group (shard).
+        /// The snapshot status changes to <code>restoring</code> while the new node group (shard) is being created.</p>
+        /// <note>
+        /// <p>This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.</p>
+        /// </note>
         pub fn set_snapshot_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1522,6 +1982,11 @@ pub mod create_cache_cluster_input {
             self.preferred_maintenance_window = Some(input.into());
             self
         }
+        /// <p>Specifies the weekly time range during which maintenance
+        /// on the cluster is performed. It is specified as a range in
+        /// the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum
+        /// maintenance window is a 60 minute period.
+        /// Valid values for <code>ddd</code> are:</p>
         pub fn set_preferred_maintenance_window(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1534,6 +1999,7 @@ pub mod create_cache_cluster_input {
             self.port = Some(input);
             self
         }
+        /// <p>The port number on which each of the cache nodes  accepts connections.</p>
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
             self.port = input;
             self
@@ -1547,6 +2013,11 @@ pub mod create_cache_cluster_input {
             self.notification_topic_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic
+        /// to which notifications are sent.</p>
+        /// <note>
+        /// <p>The Amazon SNS topic owner must be the same as the cluster owner.</p>
+        /// </note>
         pub fn set_notification_topic_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1559,6 +2030,7 @@ pub mod create_cache_cluster_input {
             self.auto_minor_version_upgrade = Some(input);
             self
         }
+        /// <p>This parameter is currently disabled.</p>
         pub fn set_auto_minor_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
             self.auto_minor_version_upgrade = input;
             self
@@ -1574,6 +2046,13 @@ pub mod create_cache_cluster_input {
             self.snapshot_retention_limit = Some(input);
             self
         }
+        /// <p>The number of days for which ElastiCache retains automatic snapshots before deleting them.
+        /// For example, if you set <code>SnapshotRetentionLimit</code> to 5,
+        /// a snapshot taken today is retained for 5 days before being deleted.</p>
+        /// <note>
+        /// <p>This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.</p>
+        /// </note>
+        /// <p>Default: 0 (i.e., automatic backups are disabled for this cache cluster).</p>
         pub fn set_snapshot_retention_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.snapshot_retention_limit = input;
             self
@@ -1589,6 +2068,13 @@ pub mod create_cache_cluster_input {
             self.snapshot_window = Some(input.into());
             self
         }
+        /// <p>The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your node group (shard).</p>
+        /// <p>Example: <code>05:00-09:00</code>
+        /// </p>
+        /// <p>If you do not specify this parameter, ElastiCache  automatically chooses an appropriate time range.</p>
+        /// <note>
+        /// <p>This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.</p>
+        /// </note>
         pub fn set_snapshot_window(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1617,6 +2103,23 @@ pub mod create_cache_cluster_input {
             self.auth_token = Some(input.into());
             self
         }
+        /// <p>
+        /// <b>Reserved parameter.</b>  
+        /// The password used to access a password protected server.</p>
+        /// <p>Password constraints:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Must be only printable ASCII characters.</p>
+        /// </li>
+        /// <li>
+        /// <p>Must be at least 16 characters and no more than 128
+        /// characters in length.</p>
+        /// </li>
+        /// <li>
+        /// <p>The only permitted printable special characters are !, &, #, $, ^, <, >, and -. Other printable special characters cannot be used in the AUTH token.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at http://redis.io/commands/AUTH.</p>
         pub fn set_auth_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.auth_token = input;
             self
@@ -1626,6 +2129,7 @@ pub mod create_cache_cluster_input {
             self.outpost_mode = Some(input);
             self
         }
+        /// <p>Specifies whether the nodes in the cluster are created in a single outpost or across multiple outposts.</p>
         pub fn set_outpost_mode(
             mut self,
             input: std::option::Option<crate::model::OutpostMode>,
@@ -1638,6 +2142,7 @@ pub mod create_cache_cluster_input {
             self.preferred_outpost_arn = Some(input.into());
             self
         }
+        /// <p>The outpost ARN in which the cache cluster is created.</p>
         pub fn set_preferred_outpost_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1645,12 +2150,18 @@ pub mod create_cache_cluster_input {
             self.preferred_outpost_arn = input;
             self
         }
+        /// Appends an item to `preferred_outpost_arns`.
+        ///
+        /// To override the contents of this collection use [`set_preferred_outpost_arns`](Self::set_preferred_outpost_arns).
+        ///
+        /// <p>The outpost ARNs in which the cache cluster is created.</p>
         pub fn preferred_outpost_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.preferred_outpost_arns.unwrap_or_default();
             v.push(input.into());
             self.preferred_outpost_arns = Some(v);
             self
         }
+        /// <p>The outpost ARNs in which the cache cluster is created.</p>
         pub fn set_preferred_outpost_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1658,6 +2169,11 @@ pub mod create_cache_cluster_input {
             self.preferred_outpost_arns = input;
             self
         }
+        /// Appends an item to `log_delivery_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_log_delivery_configurations`](Self::set_log_delivery_configurations).
+        ///
+        /// <p>Specifies the destination, format and type of the logs. </p>
         pub fn log_delivery_configurations(
             mut self,
             input: impl Into<crate::model::LogDeliveryConfigurationRequest>,
@@ -1667,6 +2183,7 @@ pub mod create_cache_cluster_input {
             self.log_delivery_configurations = Some(v);
             self
         }
+        /// <p>Specifies the destination, format and type of the logs. </p>
         pub fn set_log_delivery_configurations(
             mut self,
             input: std::option::Option<
@@ -1681,7 +2198,7 @@ pub mod create_cache_cluster_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateCacheClusterInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateCacheClusterInput {
                 cache_cluster_id: self.cache_cluster_id,
@@ -1726,16 +2243,16 @@ impl CreateCacheClusterInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateCacheCluster,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateCacheClusterInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1743,7 +2260,7 @@ impl CreateCacheClusterInput {
         fn update_http_builder(
             input: &crate::input::CreateCacheClusterInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1752,25 +2269,27 @@ impl CreateCacheClusterInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateCacheClusterInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_cache_cluster(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1793,15 +2312,15 @@ impl CreateCacheClusterInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateCacheCluster::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateCacheCluster",
             "elasticache",
         ));
@@ -1810,10 +2329,10 @@ impl CreateCacheClusterInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1844,6 +2363,7 @@ pub mod create_cache_parameter_group_input {
             self.cache_parameter_group_name = Some(input.into());
             self
         }
+        /// <p>A user-specified name for the cache parameter group.</p>
         pub fn set_cache_parameter_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1870,6 +2390,18 @@ pub mod create_cache_parameter_group_input {
             self.cache_parameter_group_family = Some(input.into());
             self
         }
+        /// <p>The name of the cache parameter group family that the cache parameter group can be used with.</p>
+        /// <p>Valid values are:
+        /// <code>memcached1.4</code> |
+        /// <code>memcached1.5</code> |
+        /// <code>memcached1.6</code> |
+        /// <code>redis2.6</code> |
+        /// <code>redis2.8</code> |
+        /// <code>redis3.2</code> |
+        /// <code>redis4.0</code> |
+        /// <code>redis5.0</code> |
+        /// <code>redis6.x</code> |
+        /// </p>
         pub fn set_cache_parameter_group_family(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1882,16 +2414,23 @@ pub mod create_cache_parameter_group_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>A user-specified description for the cache parameter group.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1904,7 +2443,7 @@ pub mod create_cache_parameter_group_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateCacheParameterGroupInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateCacheParameterGroupInput {
                 cache_parameter_group_name: self.cache_parameter_group_name,
@@ -1927,16 +2466,16 @@ impl CreateCacheParameterGroupInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateCacheParameterGroup,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateCacheParameterGroupInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1944,7 +2483,7 @@ impl CreateCacheParameterGroupInput {
         fn update_http_builder(
             input: &crate::input::CreateCacheParameterGroupInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1953,27 +2492,29 @@ impl CreateCacheParameterGroupInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateCacheParameterGroupInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_cache_parameter_group(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1996,15 +2537,15 @@ impl CreateCacheParameterGroupInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateCacheParameterGroup::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateCacheParameterGroup",
             "elasticache",
         ));
@@ -2013,10 +2554,10 @@ impl CreateCacheParameterGroupInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2049,6 +2590,10 @@ pub mod create_cache_security_group_input {
             self.cache_security_group_name = Some(input.into());
             self
         }
+        /// <p>A name for the cache security group. This value is stored as a lowercase string.</p>
+        /// <p>Constraints: Must contain no more than 255 alphanumeric characters. Cannot be the word "Default".</p>
+        /// <p>Example: <code>mysecuritygroup</code>
+        /// </p>
         pub fn set_cache_security_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2061,16 +2606,23 @@ pub mod create_cache_security_group_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description for the cache security group.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2083,7 +2635,7 @@ pub mod create_cache_security_group_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateCacheSecurityGroupInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateCacheSecurityGroupInput {
                 cache_security_group_name: self.cache_security_group_name,
@@ -2105,16 +2657,16 @@ impl CreateCacheSecurityGroupInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateCacheSecurityGroup,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateCacheSecurityGroupInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2122,7 +2674,7 @@ impl CreateCacheSecurityGroupInput {
         fn update_http_builder(
             input: &crate::input::CreateCacheSecurityGroupInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2131,27 +2683,29 @@ impl CreateCacheSecurityGroupInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateCacheSecurityGroupInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_cache_security_group(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2174,15 +2728,15 @@ impl CreateCacheSecurityGroupInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateCacheSecurityGroup::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateCacheSecurityGroup",
             "elasticache",
         ));
@@ -2191,10 +2745,10 @@ impl CreateCacheSecurityGroupInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2228,6 +2782,10 @@ pub mod create_cache_subnet_group_input {
             self.cache_subnet_group_name = Some(input.into());
             self
         }
+        /// <p>A name for the cache subnet group. This value is stored as a lowercase string.</p>
+        /// <p>Constraints: Must contain no more than 255 alphanumeric characters or hyphens.</p>
+        /// <p>Example: <code>mysubnetgroup</code>
+        /// </p>
         pub fn set_cache_subnet_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2243,6 +2801,7 @@ pub mod create_cache_subnet_group_input {
             self.cache_subnet_group_description = Some(input.into());
             self
         }
+        /// <p>A description for the cache subnet group.</p>
         pub fn set_cache_subnet_group_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2250,12 +2809,18 @@ pub mod create_cache_subnet_group_input {
             self.cache_subnet_group_description = input;
             self
         }
+        /// Appends an item to `subnet_ids`.
+        ///
+        /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
+        ///
+        /// <p>A list of VPC subnet IDs for the cache subnet group.</p>
         pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnet_ids.unwrap_or_default();
             v.push(input.into());
             self.subnet_ids = Some(v);
             self
         }
+        /// <p>A list of VPC subnet IDs for the cache subnet group.</p>
         pub fn set_subnet_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2263,12 +2828,18 @@ pub mod create_cache_subnet_group_input {
             self.subnet_ids = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2281,7 +2852,7 @@ pub mod create_cache_subnet_group_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateCacheSubnetGroupInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateCacheSubnetGroupInput {
                 cache_subnet_group_name: self.cache_subnet_group_name,
@@ -2303,16 +2874,16 @@ impl CreateCacheSubnetGroupInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateCacheSubnetGroup,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateCacheSubnetGroupInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2320,7 +2891,7 @@ impl CreateCacheSubnetGroupInput {
         fn update_http_builder(
             input: &crate::input::CreateCacheSubnetGroupInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2329,27 +2900,29 @@ impl CreateCacheSubnetGroupInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateCacheSubnetGroupInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_cache_subnet_group(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2372,15 +2945,15 @@ impl CreateCacheSubnetGroupInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateCacheSubnetGroup::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateCacheSubnetGroup",
             "elasticache",
         ));
@@ -2389,10 +2962,10 @@ impl CreateCacheSubnetGroupInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2427,6 +3000,9 @@ pub mod create_global_replication_group_input {
             self.global_replication_group_id_suffix = Some(input.into());
             self
         }
+        /// <p>The suffix name of a Global datastore. Amazon ElastiCache automatically applies a prefix
+        /// to the Global datastore ID when it is created. Each Amazon Region has its own prefix. For instance, a Global datastore ID created in the US-West-1 region will begin with "dsdfu" along with the suffix name you provide. The suffix, combined with the auto-generated prefix, guarantees uniqueness of the Global datastore name across multiple regions.  </p>
+        /// <p>For a full list of Amazon Regions and their respective Global datastore iD prefixes, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Redis-Global-Datastores-CLI.html">Using the Amazon CLI with Global datastores </a>.</p>
         pub fn set_global_replication_group_id_suffix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2442,6 +3018,7 @@ pub mod create_global_replication_group_input {
             self.global_replication_group_description = Some(input.into());
             self
         }
+        /// <p>Provides details of the Global datastore</p>
         pub fn set_global_replication_group_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2457,6 +3034,7 @@ pub mod create_global_replication_group_input {
             self.primary_replication_group_id = Some(input.into());
             self
         }
+        /// <p>The name of the primary cluster that accepts writes and will replicate updates to the secondary cluster.</p>
         pub fn set_primary_replication_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2469,7 +3047,7 @@ pub mod create_global_replication_group_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateGlobalReplicationGroupInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateGlobalReplicationGroupInput {
                 global_replication_group_id_suffix: self.global_replication_group_id_suffix,
@@ -2491,16 +3069,16 @@ impl CreateGlobalReplicationGroupInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateGlobalReplicationGroup,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateGlobalReplicationGroupInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2508,7 +3086,7 @@ impl CreateGlobalReplicationGroupInput {
         fn update_http_builder(
             input: &crate::input::CreateGlobalReplicationGroupInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2517,25 +3095,25 @@ impl CreateGlobalReplicationGroupInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateGlobalReplicationGroupInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_global_replication_group(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_global_replication_group(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2558,15 +3136,15 @@ impl CreateGlobalReplicationGroupInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateGlobalReplicationGroup::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateGlobalReplicationGroup",
             "elasticache",
         ));
@@ -2575,10 +3153,10 @@ impl CreateGlobalReplicationGroupInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2638,6 +3216,7 @@ pub mod create_replication_group_input {
     }
     impl Builder {
         /// <p>The replication group identifier. This parameter is stored as a lowercase string.</p>
+        ///
         /// <p>Constraints:</p>
         /// <ul>
         /// <li>
@@ -2654,6 +3233,20 @@ pub mod create_replication_group_input {
             self.replication_group_id = Some(input.into());
             self
         }
+        /// <p>The replication group identifier. This parameter is stored as a lowercase string.</p>
+        ///
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li>
+        /// <p>A name must contain from 1 to 40 alphanumeric characters or hyphens.</p>
+        /// </li>
+        /// <li>
+        /// <p>The first character must be a letter.</p>
+        /// </li>
+        /// <li>
+        /// <p>A name cannot end with a hyphen or contain two consecutive hyphens.</p>
+        /// </li>
+        /// </ul>
         pub fn set_replication_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2669,6 +3262,7 @@ pub mod create_replication_group_input {
             self.replication_group_description = Some(input.into());
             self
         }
+        /// <p>A user-created description for the replication group.</p>
         pub fn set_replication_group_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2684,6 +3278,7 @@ pub mod create_replication_group_input {
             self.global_replication_group_id = Some(input.into());
             self
         }
+        /// <p>The name of the Global datastore</p>
         pub fn set_global_replication_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2700,6 +3295,11 @@ pub mod create_replication_group_input {
             self.primary_cluster_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the cluster that serves as the primary for this replication
+        /// group. This cluster must already exist and have a status of <code>available</code>.</p>
+        /// <p>This parameter is not required if <code>NumCacheClusters</code>,
+        /// <code>NumNodeGroups</code>, or
+        /// <code>ReplicasPerNodeGroup</code> is specified.</p>
         pub fn set_primary_cluster_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2708,13 +3308,21 @@ pub mod create_replication_group_input {
             self
         }
         /// <p>Specifies whether a read-only replica is automatically promoted to read/write primary if the existing primary fails.</p>
+        ///
         /// <p>
         /// <code>AutomaticFailoverEnabled</code> must be enabled for Redis (cluster mode enabled) replication groups.</p>
+        ///
         /// <p>Default: false</p>
         pub fn automatic_failover_enabled(mut self, input: bool) -> Self {
             self.automatic_failover_enabled = Some(input);
             self
         }
+        /// <p>Specifies whether a read-only replica is automatically promoted to read/write primary if the existing primary fails.</p>
+        ///
+        /// <p>
+        /// <code>AutomaticFailoverEnabled</code> must be enabled for Redis (cluster mode enabled) replication groups.</p>
+        ///
+        /// <p>Default: false</p>
         pub fn set_automatic_failover_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.automatic_failover_enabled = input;
             self
@@ -2724,6 +3332,7 @@ pub mod create_replication_group_input {
             self.multi_az_enabled = Some(input);
             self
         }
+        /// <p>A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime: Multi-AZ</a>.</p>
         pub fn set_multi_az_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.multi_az_enabled = input;
             self
@@ -2739,10 +3348,32 @@ pub mod create_replication_group_input {
             self.num_cache_clusters = Some(input);
             self
         }
+        /// <p>The number of clusters this replication group initially has.</p>
+        /// <p>This parameter is not used if there is more than one node group (shard).  
+        /// You should use <code>ReplicasPerNodeGroup</code> instead.</p>
+        /// <p>If <code>AutomaticFailoverEnabled</code> is <code>true</code>, the value of this parameter must be at least 2.
+        /// If <code>AutomaticFailoverEnabled</code> is <code>false</code> you can omit this parameter (it will default to 1), or you
+        /// can explicitly set it to a value between 2 and 6.</p>
+        /// <p>The maximum permitted value for <code>NumCacheClusters</code> is 6 (1 primary plus 5 replicas).</p>
         pub fn set_num_cache_clusters(mut self, input: std::option::Option<i32>) -> Self {
             self.num_cache_clusters = input;
             self
         }
+        /// Appends an item to `preferred_cache_cluster_a_zs`.
+        ///
+        /// To override the contents of this collection use [`set_preferred_cache_cluster_a_zs`](Self::set_preferred_cache_cluster_a_zs).
+        ///
+        /// <p>A list of EC2 Availability Zones in which the replication group's clusters are created.
+        /// The order of the Availability Zones in the list is the order in which clusters are allocated.
+        /// The primary cluster is created in the first AZ in the list.</p>
+        /// <p>This parameter is not used if there is more than one node group (shard).  
+        /// You should use <code>NodeGroupConfiguration</code> instead.</p>
+        /// <note>
+        /// <p>If you are creating your replication group in an Amazon VPC (recommended),
+        /// you can only locate clusters in Availability Zones associated with the subnets in the selected subnet group.</p>
+        /// <p>The number of Availability Zones listed must equal the value of <code>NumCacheClusters</code>.</p>
+        /// </note>
+        /// <p>Default: system chosen Availability Zones.</p>
         pub fn preferred_cache_cluster_a_zs(
             mut self,
             input: impl Into<std::string::String>,
@@ -2752,6 +3383,17 @@ pub mod create_replication_group_input {
             self.preferred_cache_cluster_a_zs = Some(v);
             self
         }
+        /// <p>A list of EC2 Availability Zones in which the replication group's clusters are created.
+        /// The order of the Availability Zones in the list is the order in which clusters are allocated.
+        /// The primary cluster is created in the first AZ in the list.</p>
+        /// <p>This parameter is not used if there is more than one node group (shard).  
+        /// You should use <code>NodeGroupConfiguration</code> instead.</p>
+        /// <note>
+        /// <p>If you are creating your replication group in an Amazon VPC (recommended),
+        /// you can only locate clusters in Availability Zones associated with the subnets in the selected subnet group.</p>
+        /// <p>The number of Availability Zones listed must equal the value of <code>NumCacheClusters</code>.</p>
+        /// </note>
+        /// <p>Default: system chosen Availability Zones.</p>
         pub fn set_preferred_cache_cluster_a_zs(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2766,6 +3408,9 @@ pub mod create_replication_group_input {
             self.num_node_groups = Some(input);
             self
         }
+        /// <p>An optional parameter that specifies the number of node groups (shards) for this Redis (cluster mode enabled) replication group.
+        /// For Redis (cluster mode disabled) either omit this parameter or set it to 1.</p>
+        /// <p>Default: 1</p>
         pub fn set_num_node_groups(mut self, input: std::option::Option<i32>) -> Self {
             self.num_node_groups = input;
             self
@@ -2776,10 +3421,26 @@ pub mod create_replication_group_input {
             self.replicas_per_node_group = Some(input);
             self
         }
+        /// <p>An optional parameter that specifies the number of replica nodes in each node group (shard).
+        /// Valid values are 0 to 5.</p>
         pub fn set_replicas_per_node_group(mut self, input: std::option::Option<i32>) -> Self {
             self.replicas_per_node_group = input;
             self
         }
+        /// Appends an item to `node_group_configuration`.
+        ///
+        /// To override the contents of this collection use [`set_node_group_configuration`](Self::set_node_group_configuration).
+        ///
+        /// <p>A list of node group (shard) configuration options.
+        /// Each node group (shard) configuration has the following members:
+        /// <code>PrimaryAvailabilityZone</code>,
+        /// <code>ReplicaAvailabilityZones</code>,
+        /// <code>ReplicaCount</code>, and
+        /// <code>Slots</code>.</p>
+        /// <p>If you're creating a Redis (cluster mode disabled) or a Redis (cluster mode enabled) replication group, you can use this parameter to
+        /// individually configure each node group (shard), or you can omit this parameter. However, it is required when seeding a
+        /// Redis (cluster mode enabled) cluster from a S3 rdb file. You must configure each node group (shard) using this parameter
+        /// because you must specify the slots for each node group.</p>
         pub fn node_group_configuration(
             mut self,
             input: impl Into<crate::model::NodeGroupConfiguration>,
@@ -2789,6 +3450,16 @@ pub mod create_replication_group_input {
             self.node_group_configuration = Some(v);
             self
         }
+        /// <p>A list of node group (shard) configuration options.
+        /// Each node group (shard) configuration has the following members:
+        /// <code>PrimaryAvailabilityZone</code>,
+        /// <code>ReplicaAvailabilityZones</code>,
+        /// <code>ReplicaCount</code>, and
+        /// <code>Slots</code>.</p>
+        /// <p>If you're creating a Redis (cluster mode disabled) or a Redis (cluster mode enabled) replication group, you can use this parameter to
+        /// individually configure each node group (shard), or you can omit this parameter. However, it is required when seeding a
+        /// Redis (cluster mode enabled) cluster from a S3 rdb file. You must configure each node group (shard) using this parameter
+        /// because you must specify the slots for each node group.</p>
         pub fn set_node_group_configuration(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::NodeGroupConfiguration>>,
@@ -2806,6 +3477,7 @@ pub mod create_replication_group_input {
         /// <ul>
         /// <li>
         /// <p>Current generation: </p>
+        ///
         /// <p>
         /// <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
         /// <p>  
@@ -2816,11 +3488,17 @@ pub mod create_replication_group_input {
         /// <code>cache.m6g.8xlarge</code>,
         /// <code>cache.m6g.12xlarge</code>,
         /// <code>cache.m6g.16xlarge</code>
+        ///
+        ///
+        ///
         /// </p>  
+        ///
         /// <note>
         /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>
         /// </p>
         /// </note>
+        ///
+        ///
         /// <p>
         /// <b>M5 node types:</b>
         /// <code>cache.m5.large</code>,
@@ -2829,7 +3507,11 @@ pub mod create_replication_group_input {
         /// <code>cache.m5.4xlarge</code>,
         /// <code>cache.m5.12xlarge</code>,
         /// <code>cache.m5.24xlarge</code>
+        ///
+        ///
         /// </p>  
+        ///
+        ///
         /// <p>
         /// <b>M4 node types:</b>
         /// <code>cache.m4.large</code>,
@@ -2844,12 +3526,18 @@ pub mod create_replication_group_input {
         /// <code>cache.t3.small</code>,
         /// <code>cache.t3.medium</code>
         /// </p>
+        ///
+        ///
         /// <p>
         /// <b>T2 node types:</b>
         /// <code>cache.t2.micro</code>,
         /// <code>cache.t2.small</code>,
         /// <code>cache.t2.medium</code>
         /// </p>
+        ///
+        ///
+        ///
+        ///
         /// </li>
         /// <li>
         /// <p>Previous generation: (not recommended)</p>
@@ -2857,6 +3545,7 @@ pub mod create_replication_group_input {
         /// <b>T1 node types:</b>
         /// <code>cache.t1.micro</code>
         /// </p>
+        ///
         /// <p>
         /// <b>M1 node types:</b>
         /// <code>cache.m1.small</code>,
@@ -2864,6 +3553,7 @@ pub mod create_replication_group_input {
         /// <code>cache.m1.large</code>,
         /// <code>cache.m1.xlarge</code>
         /// </p>
+        ///
         /// <p>
         /// <b>M3 node types:</b>
         /// <code>cache.m3.medium</code>,
@@ -2871,11 +3561,13 @@ pub mod create_replication_group_input {
         /// <code>cache.m3.xlarge</code>,
         /// <code>cache.m3.2xlarge</code>
         /// </p>
+        ///
         /// </li>
         /// </ul>
         /// </li>
         /// <li>
         /// <p>Compute optimized:</p>
+        ///
         /// <ul>
         /// <li>
         /// <p>Previous generation: (not recommended)</p>
@@ -2893,6 +3585,10 @@ pub mod create_replication_group_input {
         /// <p>Current generation: </p>
         /// <p>
         /// <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
+        ///
+        ///
+        ///
+        ///
         /// <p>  
         /// <code>cache.r6g.large</code>,
         /// <code>cache.r6g.xlarge</code>,
@@ -2901,6 +3597,12 @@ pub mod create_replication_group_input {
         /// <code>cache.r6g.8xlarge</code>,
         /// <code>cache.r6g.12xlarge</code>,
         /// <code>cache.r6g.16xlarge</code>
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
         /// </p>  
         /// <note>
         /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>
@@ -2915,6 +3617,7 @@ pub mod create_replication_group_input {
         /// <code>cache.r5.12xlarge</code>,
         /// <code>cache.r5.24xlarge</code>
         /// </p>
+        ///
         /// <p>
         /// <b>R4 node types:</b>
         /// <code>cache.r4.large</code>,
@@ -2924,6 +3627,17 @@ pub mod create_replication_group_input {
         /// <code>cache.r4.8xlarge</code>,
         /// <code>cache.r4.16xlarge</code>
         /// </p>
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
         /// </li>
         /// <li>
         /// <p>Previous generation: (not recommended)</p>
@@ -2933,6 +3647,7 @@ pub mod create_replication_group_input {
         /// <code>cache.m2.2xlarge</code>,
         /// <code>cache.m2.4xlarge</code>
         /// </p>
+        ///
         /// <p>
         /// <b>R3 node types:</b>
         /// <code>cache.r3.large</code>,
@@ -2941,10 +3656,12 @@ pub mod create_replication_group_input {
         /// <code>cache.r3.4xlarge</code>,
         /// <code>cache.r3.8xlarge</code>
         /// </p>
+        ///
         /// </li>
         /// </ul>
         /// </li>
         /// </ul>
+        ///
         /// <p>
         /// <b>Additional node type info</b>
         /// </p>
@@ -2967,6 +3684,219 @@ pub mod create_replication_group_input {
             self.cache_node_type = Some(input.into());
             self
         }
+        /// <p>The compute and memory capacity of the nodes in the node group (shard).</p>        
+        /// <p>The following node types are supported by ElastiCache.
+        /// Generally speaking, the current generation types provide more memory and computational power
+        /// at lower cost when compared to their equivalent previous generation counterparts.</p>
+        /// <ul>
+        /// <li>
+        /// <p>General purpose:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Current generation: </p>
+        ///
+        /// <p>
+        /// <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
+        /// <p>  
+        /// <code>cache.m6g.large</code>,
+        /// <code>cache.m6g.xlarge</code>,
+        /// <code>cache.m6g.2xlarge</code>,
+        /// <code>cache.m6g.4xlarge</code>,
+        /// <code>cache.m6g.8xlarge</code>,
+        /// <code>cache.m6g.12xlarge</code>,
+        /// <code>cache.m6g.16xlarge</code>
+        ///
+        ///
+        ///
+        /// </p>  
+        ///
+        /// <note>
+        /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>
+        /// </p>
+        /// </note>
+        ///
+        ///
+        /// <p>
+        /// <b>M5 node types:</b>
+        /// <code>cache.m5.large</code>,
+        /// <code>cache.m5.xlarge</code>,
+        /// <code>cache.m5.2xlarge</code>,
+        /// <code>cache.m5.4xlarge</code>,
+        /// <code>cache.m5.12xlarge</code>,
+        /// <code>cache.m5.24xlarge</code>
+        ///
+        ///
+        /// </p>  
+        ///
+        ///
+        /// <p>
+        /// <b>M4 node types:</b>
+        /// <code>cache.m4.large</code>,
+        /// <code>cache.m4.xlarge</code>,
+        /// <code>cache.m4.2xlarge</code>,
+        /// <code>cache.m4.4xlarge</code>,
+        /// <code>cache.m4.10xlarge</code>
+        /// </p>
+        /// <p>
+        /// <b>T3 node types:</b>
+        /// <code>cache.t3.micro</code>,
+        /// <code>cache.t3.small</code>,
+        /// <code>cache.t3.medium</code>
+        /// </p>
+        ///
+        ///
+        /// <p>
+        /// <b>T2 node types:</b>
+        /// <code>cache.t2.micro</code>,
+        /// <code>cache.t2.small</code>,
+        /// <code>cache.t2.medium</code>
+        /// </p>
+        ///
+        ///
+        ///
+        ///
+        /// </li>
+        /// <li>
+        /// <p>Previous generation: (not recommended)</p>
+        /// <p>
+        /// <b>T1 node types:</b>
+        /// <code>cache.t1.micro</code>
+        /// </p>
+        ///
+        /// <p>
+        /// <b>M1 node types:</b>
+        /// <code>cache.m1.small</code>,
+        /// <code>cache.m1.medium</code>,
+        /// <code>cache.m1.large</code>,
+        /// <code>cache.m1.xlarge</code>
+        /// </p>
+        ///
+        /// <p>
+        /// <b>M3 node types:</b>
+        /// <code>cache.m3.medium</code>,
+        /// <code>cache.m3.large</code>,
+        /// <code>cache.m3.xlarge</code>,
+        /// <code>cache.m3.2xlarge</code>
+        /// </p>
+        ///
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>Compute optimized:</p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>Previous generation: (not recommended)</p>
+        /// <p>
+        /// <b>C1 node types:</b>
+        /// <code>cache.c1.xlarge</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>Memory optimized:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Current generation: </p>
+        /// <p>
+        /// <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
+        ///
+        ///
+        ///
+        ///
+        /// <p>  
+        /// <code>cache.r6g.large</code>,
+        /// <code>cache.r6g.xlarge</code>,
+        /// <code>cache.r6g.2xlarge</code>,
+        /// <code>cache.r6g.4xlarge</code>,
+        /// <code>cache.r6g.8xlarge</code>,
+        /// <code>cache.r6g.12xlarge</code>,
+        /// <code>cache.r6g.16xlarge</code>
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        /// </p>  
+        /// <note>
+        /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>
+        /// </p>
+        /// </note>
+        /// <p>
+        /// <b>R5 node types:</b>
+        /// <code>cache.r5.large</code>,
+        /// <code>cache.r5.xlarge</code>,
+        /// <code>cache.r5.2xlarge</code>,
+        /// <code>cache.r5.4xlarge</code>,
+        /// <code>cache.r5.12xlarge</code>,
+        /// <code>cache.r5.24xlarge</code>
+        /// </p>
+        ///
+        /// <p>
+        /// <b>R4 node types:</b>
+        /// <code>cache.r4.large</code>,
+        /// <code>cache.r4.xlarge</code>,
+        /// <code>cache.r4.2xlarge</code>,
+        /// <code>cache.r4.4xlarge</code>,
+        /// <code>cache.r4.8xlarge</code>,
+        /// <code>cache.r4.16xlarge</code>
+        /// </p>
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        /// </li>
+        /// <li>
+        /// <p>Previous generation: (not recommended)</p>
+        /// <p>
+        /// <b>M2 node types:</b>            
+        /// <code>cache.m2.xlarge</code>,
+        /// <code>cache.m2.2xlarge</code>,
+        /// <code>cache.m2.4xlarge</code>
+        /// </p>
+        ///
+        /// <p>
+        /// <b>R3 node types:</b>
+        /// <code>cache.r3.large</code>,
+        /// <code>cache.r3.xlarge</code>,
+        /// <code>cache.r3.2xlarge</code>,  
+        /// <code>cache.r3.4xlarge</code>,
+        /// <code>cache.r3.8xlarge</code>
+        /// </p>
+        ///
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>
+        /// <b>Additional node type info</b>
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>All current generation instance types are created in Amazon VPC by default.</p>
+        /// </li>
+        /// <li>
+        /// <p>Redis append-only files (AOF) are not supported for T1 or T2 instances.</p>
+        /// </li>
+        /// <li>
+        /// <p>Redis Multi-AZ with automatic failover is not supported on T1 instances.</p>
+        /// </li>
+        /// <li>
+        /// <p>Redis configuration variables <code>appendonly</code> and
+        /// <code>appendfsync</code> are not supported on Redis version 2.8.22 and later.</p>
+        /// </li>
+        /// </ul>
         pub fn set_cache_node_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2979,12 +3909,14 @@ pub mod create_replication_group_input {
             self.engine = Some(input.into());
             self
         }
+        /// <p>The name of the cache engine to be used for the clusters in this replication group. Must be Redis.</p>
         pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.engine = input;
             self
         }
         /// <p>The version number of the cache engine to be used for the clusters in this replication group.
         /// To view the supported cache engine versions, use the <code>DescribeCacheEngineVersions</code> operation.</p>
+        ///
         /// <p>
         /// <b>Important:</b> You can upgrade to a newer engine version (see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting a Cache Engine and Version</a>) in the <i>ElastiCache User Guide</i>,
         /// but you cannot downgrade to an earlier engine version.
@@ -2995,6 +3927,15 @@ pub mod create_replication_group_input {
             self.engine_version = Some(input.into());
             self
         }
+        /// <p>The version number of the cache engine to be used for the clusters in this replication group.
+        /// To view the supported cache engine versions, use the <code>DescribeCacheEngineVersions</code> operation.</p>
+        ///
+        /// <p>
+        /// <b>Important:</b> You can upgrade to a newer engine version (see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting a Cache Engine and Version</a>) in the <i>ElastiCache User Guide</i>,
+        /// but you cannot downgrade to an earlier engine version.
+        /// If you want to use an earlier engine version,
+        /// you must delete the existing cluster or replication group and
+        /// create it anew with the earlier engine version. </p>
         pub fn set_engine_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3005,6 +3946,7 @@ pub mod create_replication_group_input {
         /// <p>The name of the parameter group to associate with this replication group.
         /// If this argument is omitted, the default cache parameter group for the specified engine is
         /// used.</p>
+        ///
         /// <p>If you are running Redis version 3.2.4 or later, only one node group (shard), and want to use a default parameter group,
         /// we recommend that you specify the parameter group by name. </p>
         /// <ul>
@@ -3019,6 +3961,20 @@ pub mod create_replication_group_input {
             self.cache_parameter_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the parameter group to associate with this replication group.
+        /// If this argument is omitted, the default cache parameter group for the specified engine is
+        /// used.</p>
+        ///
+        /// <p>If you are running Redis version 3.2.4 or later, only one node group (shard), and want to use a default parameter group,
+        /// we recommend that you specify the parameter group by name. </p>
+        /// <ul>
+        /// <li>
+        /// <p>To create a Redis (cluster mode disabled) replication group, use <code>CacheParameterGroupName=default.redis3.2</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>To create a Redis (cluster mode enabled) replication group, use <code>CacheParameterGroupName=default.redis3.2.cluster.on</code>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_cache_parameter_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3036,6 +3992,12 @@ pub mod create_replication_group_input {
             self.cache_subnet_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the cache subnet group to be used for the replication group.</p>
+        /// <important>
+        /// <p>If you're going to launch your cluster in an Amazon VPC,
+        /// you need to create a subnet group before you start creating a cluster.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SubnetGroups.html">Subnets and Subnet Groups</a>.</p>
+        /// </important>
         pub fn set_cache_subnet_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3043,12 +4005,18 @@ pub mod create_replication_group_input {
             self.cache_subnet_group_name = input;
             self
         }
+        /// Appends an item to `cache_security_group_names`.
+        ///
+        /// To override the contents of this collection use [`set_cache_security_group_names`](Self::set_cache_security_group_names).
+        ///
+        /// <p>A list of cache security group names to associate with this replication group.</p>
         pub fn cache_security_group_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.cache_security_group_names.unwrap_or_default();
             v.push(input.into());
             self.cache_security_group_names = Some(v);
             self
         }
+        /// <p>A list of cache security group names to associate with this replication group.</p>
         pub fn set_cache_security_group_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3056,12 +4024,20 @@ pub mod create_replication_group_input {
             self.cache_security_group_names = input;
             self
         }
+        /// Appends an item to `security_group_ids`.
+        ///
+        /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
+        ///
+        /// <p>One or more Amazon VPC security groups associated with this replication group.</p>
+        /// <p>Use this parameter only when you are creating a replication group in an Amazon Virtual Private Cloud (Amazon VPC).</p>
         pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_ids.unwrap_or_default();
             v.push(input.into());
             self.security_group_ids = Some(v);
             self
         }
+        /// <p>One or more Amazon VPC security groups associated with this replication group.</p>
+        /// <p>Use this parameter only when you are creating a replication group in an Amazon Virtual Private Cloud (Amazon VPC).</p>
         pub fn set_security_group_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3069,12 +4045,22 @@ pub mod create_replication_group_input {
             self.security_group_ids = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of tags to be added to this resource.
+        /// Tags are comma-separated key,value pairs (e.g. Key=<code>myKey</code>, Value=<code>myKeyValue</code>. You can include multiple tags as shown following:
+        /// Key=<code>myKey</code>, Value=<code>myKeyValue</code> Key=<code>mySecondKey</code>, Value=<code>mySecondKeyValue</code>. Tags on replication groups will be replicated to all nodes.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>A list of tags to be added to this resource.
+        /// Tags are comma-separated key,value pairs (e.g. Key=<code>myKey</code>, Value=<code>myKeyValue</code>. You can include multiple tags as shown following:
+        /// Key=<code>myKey</code>, Value=<code>myKeyValue</code> Key=<code>mySecondKey</code>, Value=<code>mySecondKeyValue</code>. Tags on replication groups will be replicated to all nodes.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -3082,12 +4068,36 @@ pub mod create_replication_group_input {
             self.tags = input;
             self
         }
+        /// Appends an item to `snapshot_arns`.
+        ///
+        /// To override the contents of this collection use [`set_snapshot_arns`](Self::set_snapshot_arns).
+        ///
+        /// <p>A list of Amazon Resource Names (ARN) that uniquely identify
+        /// the Redis RDB snapshot files stored in Amazon S3.
+        /// The snapshot files are used to populate the new replication group.
+        /// The Amazon S3 object name in the ARN cannot contain any commas.
+        /// The new replication group will have the number of node groups (console: shards)
+        /// specified by the parameter <i>NumNodeGroups</i> or the number of
+        /// node groups configured by <i>NodeGroupConfiguration</i> regardless
+        /// of the number of ARNs specified here.</p>
+        /// <p>Example of an Amazon S3 ARN: <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code>
+        /// </p>
         pub fn snapshot_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.snapshot_arns.unwrap_or_default();
             v.push(input.into());
             self.snapshot_arns = Some(v);
             self
         }
+        /// <p>A list of Amazon Resource Names (ARN) that uniquely identify
+        /// the Redis RDB snapshot files stored in Amazon S3.
+        /// The snapshot files are used to populate the new replication group.
+        /// The Amazon S3 object name in the ARN cannot contain any commas.
+        /// The new replication group will have the number of node groups (console: shards)
+        /// specified by the parameter <i>NumNodeGroups</i> or the number of
+        /// node groups configured by <i>NodeGroupConfiguration</i> regardless
+        /// of the number of ARNs specified here.</p>
+        /// <p>Example of an Amazon S3 ARN: <code>arn:aws:s3:::my_bucket/snapshot1.rdb</code>
+        /// </p>
         pub fn set_snapshot_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3101,6 +4111,8 @@ pub mod create_replication_group_input {
             self.snapshot_name = Some(input.into());
             self
         }
+        /// <p>The name of a snapshot from which to restore data into the new replication group.
+        /// The snapshot status changes to <code>restoring</code> while the new replication group is being created.</p>
         pub fn set_snapshot_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3113,6 +4125,7 @@ pub mod create_replication_group_input {
         /// the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum
         /// maintenance window is a 60 minute period.
         /// Valid values for <code>ddd</code> are:</p>
+        ///
         /// <p>Specifies the weekly time range during which maintenance
         /// on the cluster is performed. It is specified as a range in
         /// the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum
@@ -3164,6 +4177,56 @@ pub mod create_replication_group_input {
             self.preferred_maintenance_window = Some(input.into());
             self
         }
+        /// <p>Specifies the weekly time range during which maintenance
+        /// on the cluster is performed. It is specified as a range in
+        /// the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum
+        /// maintenance window is a 60 minute period.
+        /// Valid values for <code>ddd</code> are:</p>
+        ///
+        /// <p>Specifies the weekly time range during which maintenance
+        /// on the cluster is performed. It is specified as a range in
+        /// the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum
+        /// maintenance window is a 60 minute period.</p>
+        /// <p>Valid values for <code>ddd</code> are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>sun</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>mon</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>tue</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>wed</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>thu</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>fri</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>sat</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>Example: <code>sun:23:00-mon:01:30</code>
+        /// </p>
         pub fn set_preferred_maintenance_window(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3176,6 +4239,7 @@ pub mod create_replication_group_input {
             self.port = Some(input);
             self
         }
+        /// <p>The port number on which each member of the replication group accepts connections.</p>
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
             self.port = input;
             self
@@ -3189,6 +4253,11 @@ pub mod create_replication_group_input {
             self.notification_topic_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS)
+        /// topic to which notifications are sent.</p>
+        /// <note>
+        /// <p>The Amazon SNS topic owner must be the same as the cluster owner.</p>
+        /// </note>
         pub fn set_notification_topic_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3201,6 +4270,7 @@ pub mod create_replication_group_input {
             self.auto_minor_version_upgrade = Some(input);
             self
         }
+        /// <p>This parameter is currently disabled.</p>
         pub fn set_auto_minor_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
             self.auto_minor_version_upgrade = input;
             self
@@ -3213,6 +4283,10 @@ pub mod create_replication_group_input {
             self.snapshot_retention_limit = Some(input);
             self
         }
+        /// <p>The number of days for which ElastiCache retains automatic snapshots before deleting them.
+        /// For example, if you set <code>SnapshotRetentionLimit</code> to 5,
+        /// a snapshot that was taken today is retained for 5 days before being deleted.</p>
+        /// <p>Default: 0 (i.e., automatic backups are disabled for this cluster).</p>
         pub fn set_snapshot_retention_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.snapshot_retention_limit = input;
             self
@@ -3225,6 +4299,10 @@ pub mod create_replication_group_input {
             self.snapshot_window = Some(input.into());
             self
         }
+        /// <p>The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot of your node group (shard).</p>
+        /// <p>Example: <code>05:00-09:00</code>
+        /// </p>
+        /// <p>If you do not specify this parameter, ElastiCache  automatically chooses an appropriate time range.</p>
         pub fn set_snapshot_window(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3260,6 +4338,30 @@ pub mod create_replication_group_input {
             self.auth_token = Some(input.into());
             self
         }
+        /// <p>
+        /// <b>Reserved parameter.</b>  
+        /// The password used to access a password protected server.</p>
+        /// <p>
+        /// <code>AuthToken</code> can be specified only on replication groups where <code>TransitEncryptionEnabled</code> is
+        /// <code>true</code>.</p>
+        /// <important>
+        /// <p>For HIPAA compliance, you must specify <code>TransitEncryptionEnabled</code> as <code>true</code>,
+        /// an <code>AuthToken</code>, and a <code>CacheSubnetGroup</code>.</p>
+        /// </important>
+        /// <p>Password constraints:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Must be only printable ASCII characters.</p>
+        /// </li>
+        /// <li>
+        /// <p>Must be at least 16 characters and no more than 128
+        /// characters in length.</p>
+        /// </li>
+        /// <li>
+        /// <p>The only permitted printable special characters are !, &, #, $, ^, <, >, and -. Other printable special characters cannot be used in the AUTH token.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information, see <a href="http://redis.io/commands/AUTH">AUTH password</a> at http://redis.io/commands/AUTH.</p>
         pub fn set_auth_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.auth_token = input;
             self
@@ -3287,6 +4389,25 @@ pub mod create_replication_group_input {
             self.transit_encryption_enabled = Some(input);
             self
         }
+        /// <p>A flag that enables in-transit encryption when set to <code>true</code>.</p>
+        /// <p>You cannot modify the value of <code>TransitEncryptionEnabled</code>
+        /// after the cluster is created. To enable in-transit encryption on a cluster
+        /// you must set <code>TransitEncryptionEnabled</code> to <code>true</code>
+        /// when you create a cluster.</p>
+        /// <p>This parameter is valid only if the <code>Engine</code> parameter is <code>redis</code>,
+        /// the <code>EngineVersion</code> parameter is <code>3.2.6</code>, <code>4.x</code> or later,
+        /// and the cluster is being created in an Amazon VPC.</p>
+        /// <p>If you enable in-transit encryption, you must also specify a value for
+        /// <code>CacheSubnetGroup</code>.</p>
+        /// <p>
+        /// <b>Required:</b>
+        /// Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
+        /// <p>Default: <code>false</code>
+        /// </p>
+        /// <important>
+        /// <p>For HIPAA compliance, you must specify <code>TransitEncryptionEnabled</code> as <code>true</code>,
+        /// an <code>AuthToken</code>, and a <code>CacheSubnetGroup</code>.</p>
+        /// </important>
         pub fn set_transit_encryption_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.transit_encryption_enabled = input;
             self
@@ -3305,6 +4426,16 @@ pub mod create_replication_group_input {
             self.at_rest_encryption_enabled = Some(input);
             self
         }
+        /// <p>A flag that enables encryption at rest when set to <code>true</code>.</p>
+        /// <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the replication
+        /// group is created.
+        /// To enable encryption at rest on a replication group you must set <code>AtRestEncryptionEnabled</code> to
+        /// <code>true</code> when you create the replication group. </p>
+        /// <p>
+        /// <b>Required:</b>
+        /// Only available when creating a replication group in an Amazon VPC using redis version <code>3.2.6</code>, <code>4.x</code> or later.</p>
+        /// <p>Default: <code>false</code>
+        /// </p>
         pub fn set_at_rest_encryption_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.at_rest_encryption_enabled = input;
             self
@@ -3314,16 +4445,23 @@ pub mod create_replication_group_input {
             self.kms_key_id = Some(input.into());
             self
         }
+        /// <p>The ID of the KMS key used to encrypt the disk in the cluster.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
         }
+        /// Appends an item to `user_group_ids`.
+        ///
+        /// To override the contents of this collection use [`set_user_group_ids`](Self::set_user_group_ids).
+        ///
+        /// <p>The user group to associate with the replication group.</p>
         pub fn user_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.user_group_ids.unwrap_or_default();
             v.push(input.into());
             self.user_group_ids = Some(v);
             self
         }
+        /// <p>The user group to associate with the replication group.</p>
         pub fn set_user_group_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3331,6 +4469,11 @@ pub mod create_replication_group_input {
             self.user_group_ids = input;
             self
         }
+        /// Appends an item to `log_delivery_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_log_delivery_configurations`](Self::set_log_delivery_configurations).
+        ///
+        /// <p>Specifies the destination, format and type of the logs.</p>
         pub fn log_delivery_configurations(
             mut self,
             input: impl Into<crate::model::LogDeliveryConfigurationRequest>,
@@ -3340,6 +4483,7 @@ pub mod create_replication_group_input {
             self.log_delivery_configurations = Some(v);
             self
         }
+        /// <p>Specifies the destination, format and type of the logs.</p>
         pub fn set_log_delivery_configurations(
             mut self,
             input: std::option::Option<
@@ -3354,7 +4498,7 @@ pub mod create_replication_group_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateReplicationGroupInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateReplicationGroupInput {
                 replication_group_id: self.replication_group_id,
@@ -3405,16 +4549,16 @@ impl CreateReplicationGroupInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateReplicationGroup,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateReplicationGroupInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3422,7 +4566,7 @@ impl CreateReplicationGroupInput {
         fn update_http_builder(
             input: &crate::input::CreateReplicationGroupInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3431,27 +4575,29 @@ impl CreateReplicationGroupInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateReplicationGroupInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_replication_group(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3474,15 +4620,15 @@ impl CreateReplicationGroupInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateReplicationGroup::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateReplicationGroup",
             "elasticache",
         ));
@@ -3491,10 +4637,10 @@ impl CreateReplicationGroupInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3526,6 +4672,7 @@ pub mod create_snapshot_input {
             self.replication_group_id = Some(input.into());
             self
         }
+        /// <p>The identifier of an existing replication group. The snapshot is created from this replication group.</p>
         pub fn set_replication_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3538,6 +4685,7 @@ pub mod create_snapshot_input {
             self.cache_cluster_id = Some(input.into());
             self
         }
+        /// <p>The identifier of an existing cluster. The snapshot is created from this cluster.</p>
         pub fn set_cache_cluster_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3550,6 +4698,7 @@ pub mod create_snapshot_input {
             self.snapshot_name = Some(input.into());
             self
         }
+        /// <p>A name for the snapshot being created.</p>
         pub fn set_snapshot_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3562,16 +4711,23 @@ pub mod create_snapshot_input {
             self.kms_key_id = Some(input.into());
             self
         }
+        /// <p>The ID of the KMS key used to encrypt the snapshot.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -3584,7 +4740,7 @@ pub mod create_snapshot_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateSnapshotInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateSnapshotInput {
                 replication_group_id: self.replication_group_id,
@@ -3607,16 +4763,16 @@ impl CreateSnapshotInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateSnapshot,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateSnapshotInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3624,7 +4780,7 @@ impl CreateSnapshotInput {
         fn update_http_builder(
             input: &crate::input::CreateSnapshotInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3633,24 +4789,26 @@ impl CreateSnapshotInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateSnapshotInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_snapshot(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3673,15 +4831,15 @@ impl CreateSnapshotInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateSnapshot::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateSnapshot",
             "elasticache",
         ));
@@ -3690,10 +4848,10 @@ impl CreateSnapshotInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3727,6 +4885,7 @@ pub mod create_user_input {
             self.user_id = Some(input.into());
             self
         }
+        /// <p>The ID of the user.</p>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_id = input;
             self
@@ -3736,6 +4895,7 @@ pub mod create_user_input {
             self.user_name = Some(input.into());
             self
         }
+        /// <p>The username of the user.</p>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_name = input;
             self
@@ -3745,16 +4905,23 @@ pub mod create_user_input {
             self.engine = Some(input.into());
             self
         }
+        /// <p>The current supported value is Redis. </p>
         pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.engine = input;
             self
         }
+        /// Appends an item to `passwords`.
+        ///
+        /// To override the contents of this collection use [`set_passwords`](Self::set_passwords).
+        ///
+        /// <p>Passwords used for this user. You can create up to two passwords for each user.</p>
         pub fn passwords(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.passwords.unwrap_or_default();
             v.push(input.into());
             self.passwords = Some(v);
             self
         }
+        /// <p>Passwords used for this user. You can create up to two passwords for each user.</p>
         pub fn set_passwords(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3767,6 +4934,7 @@ pub mod create_user_input {
             self.access_string = Some(input.into());
             self
         }
+        /// <p>Access permissions string used for this user.</p>
         pub fn set_access_string(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3779,16 +4947,23 @@ pub mod create_user_input {
             self.no_password_required = Some(input);
             self
         }
+        /// <p>Indicates a password is not required for this user.</p>
         pub fn set_no_password_required(mut self, input: std::option::Option<bool>) -> Self {
             self.no_password_required = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -3799,8 +4974,10 @@ pub mod create_user_input {
         /// Consumes the builder and constructs a [`CreateUserInput`](crate::input::CreateUserInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreateUserInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateUserInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateUserInput {
                 user_id: self.user_id,
                 user_name: self.user_name,
@@ -3824,16 +5001,16 @@ impl CreateUserInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateUser,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateUserInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3841,7 +5018,7 @@ impl CreateUserInput {
         fn update_http_builder(
             input: &crate::input::CreateUserInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3850,24 +5027,26 @@ impl CreateUserInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateUserInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_user(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3890,25 +5069,27 @@ impl CreateUserInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreateUser::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "CreateUser",
-                    "elasticache",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateUser::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateUser",
+            "elasticache",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3939,6 +5120,7 @@ pub mod create_user_group_input {
             self.user_group_id = Some(input.into());
             self
         }
+        /// <p>The ID of the user group.</p>
         pub fn set_user_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3951,16 +5133,23 @@ pub mod create_user_group_input {
             self.engine = Some(input.into());
             self
         }
+        /// <p>The current supported value is Redis. </p>
         pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.engine = input;
             self
         }
+        /// Appends an item to `user_ids`.
+        ///
+        /// To override the contents of this collection use [`set_user_ids`](Self::set_user_ids).
+        ///
+        /// <p>The list of user IDs that belong to the user group.</p>
         pub fn user_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.user_ids.unwrap_or_default();
             v.push(input.into());
             self.user_ids = Some(v);
             self
         }
+        /// <p>The list of user IDs that belong to the user group.</p>
         pub fn set_user_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3968,12 +5157,18 @@ pub mod create_user_group_input {
             self.user_ids = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -3986,7 +5181,7 @@ pub mod create_user_group_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateUserGroupInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateUserGroupInput {
                 user_group_id: self.user_group_id,
@@ -4008,16 +5203,16 @@ impl CreateUserGroupInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateUserGroup,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateUserGroupInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4025,7 +5220,7 @@ impl CreateUserGroupInput {
         fn update_http_builder(
             input: &crate::input::CreateUserGroupInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4034,27 +5229,27 @@ impl CreateUserGroupInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateUserGroupInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_user_group(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4077,15 +5272,15 @@ impl CreateUserGroupInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateUserGroup::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateUserGroup",
             "elasticache",
         ));
@@ -4094,10 +5289,10 @@ impl CreateUserGroupInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4134,6 +5329,7 @@ pub mod decrease_node_groups_in_global_replication_group_input {
             self.global_replication_group_id = Some(input.into());
             self
         }
+        /// <p>The name of the Global datastore</p>
         pub fn set_global_replication_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4146,10 +5342,18 @@ pub mod decrease_node_groups_in_global_replication_group_input {
             self.node_group_count = Some(input);
             self
         }
+        /// <p>The number of node groups (shards) that results from the modification of the shard configuration</p>
         pub fn set_node_group_count(mut self, input: std::option::Option<i32>) -> Self {
             self.node_group_count = input;
             self
         }
+        /// Appends an item to `global_node_groups_to_remove`.
+        ///
+        /// To override the contents of this collection use [`set_global_node_groups_to_remove`](Self::set_global_node_groups_to_remove).
+        ///
+        /// <p>If the value of NodeGroupCount is less than the current number of node groups (shards), then either NodeGroupsToRemove or NodeGroupsToRetain is required. GlobalNodeGroupsToRemove is a list of NodeGroupIds to remove from the cluster.
+        ///
+        /// ElastiCache for Redis will attempt to remove all node groups listed by GlobalNodeGroupsToRemove from the cluster. </p>
         pub fn global_node_groups_to_remove(
             mut self,
             input: impl Into<std::string::String>,
@@ -4159,6 +5363,9 @@ pub mod decrease_node_groups_in_global_replication_group_input {
             self.global_node_groups_to_remove = Some(v);
             self
         }
+        /// <p>If the value of NodeGroupCount is less than the current number of node groups (shards), then either NodeGroupsToRemove or NodeGroupsToRetain is required. GlobalNodeGroupsToRemove is a list of NodeGroupIds to remove from the cluster.
+        ///
+        /// ElastiCache for Redis will attempt to remove all node groups listed by GlobalNodeGroupsToRemove from the cluster. </p>
         pub fn set_global_node_groups_to_remove(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4166,6 +5373,14 @@ pub mod decrease_node_groups_in_global_replication_group_input {
             self.global_node_groups_to_remove = input;
             self
         }
+        /// Appends an item to `global_node_groups_to_retain`.
+        ///
+        /// To override the contents of this collection use [`set_global_node_groups_to_retain`](Self::set_global_node_groups_to_retain).
+        ///
+        /// <p>If the value of NodeGroupCount is less than the current number of node groups (shards), then either NodeGroupsToRemove or NodeGroupsToRetain is required. GlobalNodeGroupsToRetain is a list of NodeGroupIds to retain from the cluster. ElastiCache for Redis will attempt to retain all node groups listed by GlobalNodeGroupsToRetain from the cluster.
+        ///
+        ///
+        /// </p>
         pub fn global_node_groups_to_retain(
             mut self,
             input: impl Into<std::string::String>,
@@ -4175,6 +5390,10 @@ pub mod decrease_node_groups_in_global_replication_group_input {
             self.global_node_groups_to_retain = Some(v);
             self
         }
+        /// <p>If the value of NodeGroupCount is less than the current number of node groups (shards), then either NodeGroupsToRemove or NodeGroupsToRetain is required. GlobalNodeGroupsToRetain is a list of NodeGroupIds to retain from the cluster. ElastiCache for Redis will attempt to retain all node groups listed by GlobalNodeGroupsToRetain from the cluster.
+        ///
+        ///
+        /// </p>
         pub fn set_global_node_groups_to_retain(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4187,6 +5406,7 @@ pub mod decrease_node_groups_in_global_replication_group_input {
             self.apply_immediately = Some(input);
             self
         }
+        /// <p>Indicates that the shard reconfiguration process begins immediately. At present, the only permitted value for this parameter is true. </p>
         pub fn set_apply_immediately(mut self, input: std::option::Option<bool>) -> Self {
             self.apply_immediately = input;
             self
@@ -4196,7 +5416,7 @@ pub mod decrease_node_groups_in_global_replication_group_input {
             self,
         ) -> std::result::Result<
             crate::input::DecreaseNodeGroupsInGlobalReplicationGroupInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(
                 crate::input::DecreaseNodeGroupsInGlobalReplicationGroupInput {
@@ -4223,16 +5443,16 @@ impl DecreaseNodeGroupsInGlobalReplicationGroupInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DecreaseNodeGroupsInGlobalReplicationGroup,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DecreaseNodeGroupsInGlobalReplicationGroupInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4240,7 +5460,7 @@ impl DecreaseNodeGroupsInGlobalReplicationGroupInput {
         fn update_http_builder(
             input: &crate::input::DecreaseNodeGroupsInGlobalReplicationGroupInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4249,25 +5469,25 @@ impl DecreaseNodeGroupsInGlobalReplicationGroupInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DecreaseNodeGroupsInGlobalReplicationGroupInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_decrease_node_groups_in_global_replication_group(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_decrease_node_groups_in_global_replication_group(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4290,15 +5510,15 @@ impl DecreaseNodeGroupsInGlobalReplicationGroupInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DecreaseNodeGroupsInGlobalReplicationGroup::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DecreaseNodeGroupsInGlobalReplicationGroup",
             "elasticache",
         ));
@@ -4307,10 +5527,10 @@ impl DecreaseNodeGroupsInGlobalReplicationGroupInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4344,6 +5564,7 @@ pub mod decrease_replica_count_input {
             self.replication_group_id = Some(input.into());
             self
         }
+        /// <p>The id of the replication group from which you want to remove replica nodes.</p>
         pub fn set_replication_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4376,10 +5597,38 @@ pub mod decrease_replica_count_input {
             self.new_replica_count = Some(input);
             self
         }
+        /// <p>The number of read replica nodes you want at the completion of this operation.
+        /// For Redis (cluster mode disabled) replication groups, this is the number of replica nodes in the
+        /// replication group. For Redis (cluster mode enabled) replication groups, this is the number of
+        /// replica nodes in each of the replication group's node groups.</p>
+        /// <p>The minimum number of replicas in a shard or replication group is:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Redis (cluster mode disabled)</p>
+        /// <ul>
+        /// <li>
+        /// <p>If Multi-AZ is enabled: 1</p>
+        /// </li>
+        /// <li>
+        /// <p>If Multi-AZ is not enabled: 0</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>Redis (cluster mode enabled): 0 (though you will not be able to failover to a replica if your primary node fails)</p>
+        /// </li>
+        /// </ul>
         pub fn set_new_replica_count(mut self, input: std::option::Option<i32>) -> Self {
             self.new_replica_count = input;
             self
         }
+        /// Appends an item to `replica_configuration`.
+        ///
+        /// To override the contents of this collection use [`set_replica_configuration`](Self::set_replica_configuration).
+        ///
+        /// <p>A list of <code>ConfigureShard</code> objects that can be used to configure each shard
+        /// in a Redis (cluster mode enabled) replication group. The <code>ConfigureShard</code> has three members:
+        /// <code>NewReplicaCount</code>, <code>NodeGroupId</code>, and <code>PreferredAvailabilityZones</code>.</p>
         pub fn replica_configuration(
             mut self,
             input: impl Into<crate::model::ConfigureShard>,
@@ -4389,6 +5638,9 @@ pub mod decrease_replica_count_input {
             self.replica_configuration = Some(v);
             self
         }
+        /// <p>A list of <code>ConfigureShard</code> objects that can be used to configure each shard
+        /// in a Redis (cluster mode enabled) replication group. The <code>ConfigureShard</code> has three members:
+        /// <code>NewReplicaCount</code>, <code>NodeGroupId</code>, and <code>PreferredAvailabilityZones</code>.</p>
         pub fn set_replica_configuration(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ConfigureShard>>,
@@ -4396,12 +5648,18 @@ pub mod decrease_replica_count_input {
             self.replica_configuration = input;
             self
         }
+        /// Appends an item to `replicas_to_remove`.
+        ///
+        /// To override the contents of this collection use [`set_replicas_to_remove`](Self::set_replicas_to_remove).
+        ///
+        /// <p>A list of the node ids to remove from the replication group or node group (shard).</p>
         pub fn replicas_to_remove(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.replicas_to_remove.unwrap_or_default();
             v.push(input.into());
             self.replicas_to_remove = Some(v);
             self
         }
+        /// <p>A list of the node ids to remove from the replication group or node group (shard).</p>
         pub fn set_replicas_to_remove(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4410,11 +5668,15 @@ pub mod decrease_replica_count_input {
             self
         }
         /// <p>If <code>True</code>, the number of replica nodes is decreased immediately.
+        ///
         /// <code>ApplyImmediately=False</code> is not currently supported.</p>
         pub fn apply_immediately(mut self, input: bool) -> Self {
             self.apply_immediately = Some(input);
             self
         }
+        /// <p>If <code>True</code>, the number of replica nodes is decreased immediately.
+        ///
+        /// <code>ApplyImmediately=False</code> is not currently supported.</p>
         pub fn set_apply_immediately(mut self, input: std::option::Option<bool>) -> Self {
             self.apply_immediately = input;
             self
@@ -4424,7 +5686,7 @@ pub mod decrease_replica_count_input {
             self,
         ) -> std::result::Result<
             crate::input::DecreaseReplicaCountInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DecreaseReplicaCountInput {
                 replication_group_id: self.replication_group_id,
@@ -4447,16 +5709,16 @@ impl DecreaseReplicaCountInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DecreaseReplicaCount,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DecreaseReplicaCountInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4464,7 +5726,7 @@ impl DecreaseReplicaCountInput {
         fn update_http_builder(
             input: &crate::input::DecreaseReplicaCountInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4473,27 +5735,27 @@ impl DecreaseReplicaCountInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DecreaseReplicaCountInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_decrease_replica_count(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4516,15 +5778,15 @@ impl DecreaseReplicaCountInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DecreaseReplicaCount::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DecreaseReplicaCount",
             "elasticache",
         ));
@@ -4533,10 +5795,10 @@ impl DecreaseReplicaCountInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4565,6 +5827,7 @@ pub mod delete_cache_cluster_input {
             self.cache_cluster_id = Some(input.into());
             self
         }
+        /// <p>The cluster identifier for the cluster to be deleted. This parameter is not case sensitive.</p>
         pub fn set_cache_cluster_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4578,6 +5841,8 @@ pub mod delete_cache_cluster_input {
             self.final_snapshot_identifier = Some(input.into());
             self
         }
+        /// <p>The user-supplied name of a final cluster snapshot. This is the unique name that identifies the snapshot.
+        /// ElastiCache creates the snapshot, and then deletes the cluster immediately afterward.</p>
         pub fn set_final_snapshot_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4590,7 +5855,7 @@ pub mod delete_cache_cluster_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteCacheClusterInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteCacheClusterInput {
                 cache_cluster_id: self.cache_cluster_id,
@@ -4610,16 +5875,16 @@ impl DeleteCacheClusterInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteCacheCluster,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteCacheClusterInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4627,7 +5892,7 @@ impl DeleteCacheClusterInput {
         fn update_http_builder(
             input: &crate::input::DeleteCacheClusterInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4636,25 +5901,27 @@ impl DeleteCacheClusterInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteCacheClusterInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_cache_cluster(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4677,15 +5944,15 @@ impl DeleteCacheClusterInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteCacheCluster::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteCacheCluster",
             "elasticache",
         ));
@@ -4694,10 +5961,10 @@ impl DeleteCacheClusterInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4728,6 +5995,10 @@ pub mod delete_cache_parameter_group_input {
             self.cache_parameter_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the cache parameter group to delete.</p>
+        /// <note>
+        /// <p>The specified cache security group must not be associated with any clusters.</p>
+        /// </note>
         pub fn set_cache_parameter_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4740,7 +6011,7 @@ pub mod delete_cache_parameter_group_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteCacheParameterGroupInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteCacheParameterGroupInput {
                 cache_parameter_group_name: self.cache_parameter_group_name,
@@ -4760,16 +6031,16 @@ impl DeleteCacheParameterGroupInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteCacheParameterGroup,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteCacheParameterGroupInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4777,7 +6048,7 @@ impl DeleteCacheParameterGroupInput {
         fn update_http_builder(
             input: &crate::input::DeleteCacheParameterGroupInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4786,27 +6057,29 @@ impl DeleteCacheParameterGroupInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteCacheParameterGroupInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_cache_parameter_group(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4829,15 +6102,15 @@ impl DeleteCacheParameterGroupInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteCacheParameterGroup::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteCacheParameterGroup",
             "elasticache",
         ));
@@ -4846,10 +6119,10 @@ impl DeleteCacheParameterGroupInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4880,6 +6153,10 @@ pub mod delete_cache_security_group_input {
             self.cache_security_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the cache security group to delete.</p>
+        /// <note>
+        /// <p>You cannot delete the default security group.</p>
+        /// </note>
         pub fn set_cache_security_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4892,7 +6169,7 @@ pub mod delete_cache_security_group_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteCacheSecurityGroupInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteCacheSecurityGroupInput {
                 cache_security_group_name: self.cache_security_group_name,
@@ -4912,16 +6189,16 @@ impl DeleteCacheSecurityGroupInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteCacheSecurityGroup,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteCacheSecurityGroupInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4929,7 +6206,7 @@ impl DeleteCacheSecurityGroupInput {
         fn update_http_builder(
             input: &crate::input::DeleteCacheSecurityGroupInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4938,27 +6215,29 @@ impl DeleteCacheSecurityGroupInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteCacheSecurityGroupInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_cache_security_group(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4981,15 +6260,15 @@ impl DeleteCacheSecurityGroupInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteCacheSecurityGroup::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteCacheSecurityGroup",
             "elasticache",
         ));
@@ -4998,10 +6277,10 @@ impl DeleteCacheSecurityGroupInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5030,6 +6309,8 @@ pub mod delete_cache_subnet_group_input {
             self.cache_subnet_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the cache subnet group to delete.</p>
+        /// <p>Constraints: Must contain no more than 255 alphanumeric characters or hyphens.</p>
         pub fn set_cache_subnet_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5042,7 +6323,7 @@ pub mod delete_cache_subnet_group_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteCacheSubnetGroupInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteCacheSubnetGroupInput {
                 cache_subnet_group_name: self.cache_subnet_group_name,
@@ -5061,16 +6342,16 @@ impl DeleteCacheSubnetGroupInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteCacheSubnetGroup,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteCacheSubnetGroupInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5078,7 +6359,7 @@ impl DeleteCacheSubnetGroupInput {
         fn update_http_builder(
             input: &crate::input::DeleteCacheSubnetGroupInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5087,27 +6368,29 @@ impl DeleteCacheSubnetGroupInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteCacheSubnetGroupInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_cache_subnet_group(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5130,15 +6413,15 @@ impl DeleteCacheSubnetGroupInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteCacheSubnetGroup::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteCacheSubnetGroup",
             "elasticache",
         ));
@@ -5147,10 +6430,10 @@ impl DeleteCacheSubnetGroupInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5182,6 +6465,7 @@ pub mod delete_global_replication_group_input {
             self.global_replication_group_id = Some(input.into());
             self
         }
+        /// <p>The name of the Global datastore</p>
         pub fn set_global_replication_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5194,6 +6478,7 @@ pub mod delete_global_replication_group_input {
             self.retain_primary_replication_group = Some(input);
             self
         }
+        /// <p>The primary replication group is retained as a standalone replication group. </p>
         pub fn set_retain_primary_replication_group(
             mut self,
             input: std::option::Option<bool>,
@@ -5206,7 +6491,7 @@ pub mod delete_global_replication_group_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteGlobalReplicationGroupInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteGlobalReplicationGroupInput {
                 global_replication_group_id: self.global_replication_group_id,
@@ -5229,16 +6514,16 @@ impl DeleteGlobalReplicationGroupInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteGlobalReplicationGroup,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteGlobalReplicationGroupInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5246,7 +6531,7 @@ impl DeleteGlobalReplicationGroupInput {
         fn update_http_builder(
             input: &crate::input::DeleteGlobalReplicationGroupInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5255,25 +6540,25 @@ impl DeleteGlobalReplicationGroupInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteGlobalReplicationGroupInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_global_replication_group(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_global_replication_group(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5296,15 +6581,15 @@ impl DeleteGlobalReplicationGroupInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteGlobalReplicationGroup::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteGlobalReplicationGroup",
             "elasticache",
         ));
@@ -5313,10 +6598,10 @@ impl DeleteGlobalReplicationGroupInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5346,6 +6631,7 @@ pub mod delete_replication_group_input {
             self.replication_group_id = Some(input.into());
             self
         }
+        /// <p>The identifier for the cluster to be deleted. This parameter is not case sensitive.</p>
         pub fn set_replication_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5359,6 +6645,8 @@ pub mod delete_replication_group_input {
             self.retain_primary_cluster = Some(input);
             self
         }
+        /// <p>If set to <code>true</code>, all of the read replicas are deleted,
+        /// but the primary node is retained.</p>
         pub fn set_retain_primary_cluster(mut self, input: std::option::Option<bool>) -> Self {
             self.retain_primary_cluster = input;
             self
@@ -5371,6 +6659,10 @@ pub mod delete_replication_group_input {
             self.final_snapshot_identifier = Some(input.into());
             self
         }
+        /// <p>The name of a final node group (shard) snapshot.
+        /// ElastiCache creates the snapshot from the primary node in the cluster,
+        /// rather than one of the replicas; this is to ensure that it captures the freshest data.
+        /// After the final snapshot is taken, the replication group is immediately deleted.</p>
         pub fn set_final_snapshot_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5383,7 +6675,7 @@ pub mod delete_replication_group_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteReplicationGroupInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteReplicationGroupInput {
                 replication_group_id: self.replication_group_id,
@@ -5404,16 +6696,16 @@ impl DeleteReplicationGroupInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteReplicationGroup,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteReplicationGroupInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5421,7 +6713,7 @@ impl DeleteReplicationGroupInput {
         fn update_http_builder(
             input: &crate::input::DeleteReplicationGroupInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5430,27 +6722,29 @@ impl DeleteReplicationGroupInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteReplicationGroupInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_replication_group(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5473,15 +6767,15 @@ impl DeleteReplicationGroupInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteReplicationGroup::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteReplicationGroup",
             "elasticache",
         ));
@@ -5490,10 +6784,10 @@ impl DeleteReplicationGroupInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5521,6 +6815,7 @@ pub mod delete_snapshot_input {
             self.snapshot_name = Some(input.into());
             self
         }
+        /// <p>The name of the snapshot to be deleted.</p>
         pub fn set_snapshot_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5533,7 +6828,7 @@ pub mod delete_snapshot_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteSnapshotInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteSnapshotInput {
                 snapshot_name: self.snapshot_name,
@@ -5552,16 +6847,16 @@ impl DeleteSnapshotInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteSnapshot,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteSnapshotInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5569,7 +6864,7 @@ impl DeleteSnapshotInput {
         fn update_http_builder(
             input: &crate::input::DeleteSnapshotInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5578,24 +6873,26 @@ impl DeleteSnapshotInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteSnapshotInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_delete_snapshot(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5618,15 +6915,15 @@ impl DeleteSnapshotInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteSnapshot::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteSnapshot",
             "elasticache",
         ));
@@ -5635,10 +6932,10 @@ impl DeleteSnapshotInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5666,6 +6963,7 @@ pub mod delete_user_input {
             self.user_id = Some(input.into());
             self
         }
+        /// <p>The ID of the user.</p>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_id = input;
             self
@@ -5673,8 +6971,10 @@ pub mod delete_user_input {
         /// Consumes the builder and constructs a [`DeleteUserInput`](crate::input::DeleteUserInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeleteUserInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteUserInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteUserInput {
                 user_id: self.user_id,
             })
@@ -5692,16 +6992,16 @@ impl DeleteUserInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteUser,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteUserInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5709,7 +7009,7 @@ impl DeleteUserInput {
         fn update_http_builder(
             input: &crate::input::DeleteUserInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5718,24 +7018,26 @@ impl DeleteUserInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteUserInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_delete_user(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5758,25 +7060,27 @@ impl DeleteUserInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeleteUser::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DeleteUser",
-                    "elasticache",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteUser::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteUser",
+            "elasticache",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5804,6 +7108,7 @@ pub mod delete_user_group_input {
             self.user_group_id = Some(input.into());
             self
         }
+        /// <p>The ID of the user group.</p>
         pub fn set_user_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5816,7 +7121,7 @@ pub mod delete_user_group_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteUserGroupInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteUserGroupInput {
                 user_group_id: self.user_group_id,
@@ -5835,16 +7140,16 @@ impl DeleteUserGroupInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteUserGroup,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteUserGroupInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5852,7 +7157,7 @@ impl DeleteUserGroupInput {
         fn update_http_builder(
             input: &crate::input::DeleteUserGroupInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5861,27 +7166,27 @@ impl DeleteUserGroupInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteUserGroupInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_user_group(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5904,15 +7209,15 @@ impl DeleteUserGroupInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteUserGroup::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteUserGroup",
             "elasticache",
         ));
@@ -5921,10 +7226,10 @@ impl DeleteUserGroupInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5957,6 +7262,8 @@ pub mod describe_cache_clusters_input {
             self.cache_cluster_id = Some(input.into());
             self
         }
+        /// <p>The user-supplied cluster identifier. If this parameter is specified, only information
+        /// about that specific cluster is returned. This parameter isn't case sensitive.</p>
         pub fn set_cache_cluster_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5967,12 +7274,19 @@ pub mod describe_cache_clusters_input {
         /// <p>The maximum number of records to include in the response. If more records exist than the
         /// specified <code>MaxRecords</code> value, a marker is included in the response so that
         /// the remaining results can be retrieved.</p>
+        ///
         /// <p>Default: 100</p>
         /// <p>Constraints: minimum 20; maximum 100.</p>
         pub fn max_records(mut self, input: i32) -> Self {
             self.max_records = Some(input);
             self
         }
+        /// <p>The maximum number of records to include in the response. If more records exist than the
+        /// specified <code>MaxRecords</code> value, a marker is included in the response so that
+        /// the remaining results can be retrieved.</p>
+        ///
+        /// <p>Default: 100</p>
+        /// <p>Constraints: minimum 20; maximum 100.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.max_records = input;
             self
@@ -5985,6 +7299,10 @@ pub mod describe_cache_clusters_input {
             self.marker = Some(input.into());
             self
         }
+        /// <p>An optional marker returned from a prior request.
+        /// Use this marker for pagination of results from this operation. If this
+        /// parameter is specified, the response includes only records beyond the marker, up to the
+        /// value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -5995,6 +7313,8 @@ pub mod describe_cache_clusters_input {
             self.show_cache_node_info = Some(input);
             self
         }
+        /// <p>An optional flag that can be included in the <code>DescribeCacheCluster</code> request
+        /// to retrieve information about the individual cache nodes.</p>
         pub fn set_show_cache_node_info(mut self, input: std::option::Option<bool>) -> Self {
             self.show_cache_node_info = input;
             self
@@ -6006,6 +7326,9 @@ pub mod describe_cache_clusters_input {
             self.show_cache_clusters_not_in_replication_groups = Some(input);
             self
         }
+        /// <p>An optional flag that can be included in the <code>DescribeCacheCluster</code> request
+        /// to show only nodes (API/CLI: clusters) that are not members of a replication group.
+        /// In practice, this mean Memcached and single node Redis clusters.</p>
         pub fn set_show_cache_clusters_not_in_replication_groups(
             mut self,
             input: std::option::Option<bool>,
@@ -6018,7 +7341,7 @@ pub mod describe_cache_clusters_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeCacheClustersInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeCacheClustersInput {
                 cache_cluster_id: self.cache_cluster_id,
@@ -6042,16 +7365,16 @@ impl DescribeCacheClustersInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeCacheClusters,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeCacheClustersInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6059,7 +7382,7 @@ impl DescribeCacheClustersInput {
         fn update_http_builder(
             input: &crate::input::DescribeCacheClustersInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6068,27 +7391,29 @@ impl DescribeCacheClustersInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeCacheClustersInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_cache_clusters(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6111,15 +7436,15 @@ impl DescribeCacheClustersInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeCacheClusters::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeCacheClusters",
             "elasticache",
         ));
@@ -6128,10 +7453,10 @@ impl DescribeCacheClustersInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6165,6 +7490,8 @@ pub mod describe_cache_engine_versions_input {
             self.engine = Some(input.into());
             self
         }
+        /// <p>The cache engine to return. Valid values: <code>memcached</code> | <code>redis</code>
+        /// </p>
         pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.engine = input;
             self
@@ -6176,6 +7503,9 @@ pub mod describe_cache_engine_versions_input {
             self.engine_version = Some(input.into());
             self
         }
+        /// <p>The cache engine version to return.</p>
+        /// <p>Example: <code>1.4.14</code>
+        /// </p>
         pub fn set_engine_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6214,6 +7544,30 @@ pub mod describe_cache_engine_versions_input {
             self.cache_parameter_group_family = Some(input.into());
             self
         }
+        /// <p>The name of a specific cache parameter group family to return details for.</p>
+        /// <p>Valid values are:
+        /// <code>memcached1.4</code> |
+        /// <code>memcached1.5</code> |
+        /// <code>memcached1.6</code> |
+        /// <code>redis2.6</code> |
+        /// <code>redis2.8</code> |
+        /// <code>redis3.2</code> |
+        /// <code>redis4.0</code> |
+        /// <code>redis5.0</code> |
+        /// <code>redis6.x</code> |
+        /// </p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Must be 1 to 255 alphanumeric characters</p>
+        /// </li>
+        /// <li>
+        /// <p>First character must be a letter</p>
+        /// </li>
+        /// <li>
+        /// <p>Cannot end with a hyphen or contain two consecutive hyphens</p>
+        /// </li>
+        /// </ul>
         pub fn set_cache_parameter_group_family(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6224,12 +7578,19 @@ pub mod describe_cache_engine_versions_input {
         /// <p>The maximum number of records to include in the response. If more records exist than the
         /// specified <code>MaxRecords</code> value, a marker is included in the response so that
         /// the remaining results can be retrieved.</p>
+        ///
         /// <p>Default: 100</p>
         /// <p>Constraints: minimum 20; maximum 100.</p>
         pub fn max_records(mut self, input: i32) -> Self {
             self.max_records = Some(input);
             self
         }
+        /// <p>The maximum number of records to include in the response. If more records exist than the
+        /// specified <code>MaxRecords</code> value, a marker is included in the response so that
+        /// the remaining results can be retrieved.</p>
+        ///
+        /// <p>Default: 100</p>
+        /// <p>Constraints: minimum 20; maximum 100.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.max_records = input;
             self
@@ -6241,6 +7602,9 @@ pub mod describe_cache_engine_versions_input {
             self.marker = Some(input.into());
             self
         }
+        /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation.
+        /// If this parameter is specified, the response includes only records beyond the marker, up to the
+        /// value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -6251,6 +7615,8 @@ pub mod describe_cache_engine_versions_input {
             self.default_only = Some(input);
             self
         }
+        /// <p>If <code>true</code>, specifies that only the default version of the specified engine or engine
+        /// and major version combination is to be returned.</p>
         pub fn set_default_only(mut self, input: std::option::Option<bool>) -> Self {
             self.default_only = input;
             self
@@ -6260,7 +7626,7 @@ pub mod describe_cache_engine_versions_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeCacheEngineVersionsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeCacheEngineVersionsInput {
                 engine: self.engine,
@@ -6285,16 +7651,16 @@ impl DescribeCacheEngineVersionsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeCacheEngineVersions,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeCacheEngineVersionsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6302,7 +7668,7 @@ impl DescribeCacheEngineVersionsInput {
         fn update_http_builder(
             input: &crate::input::DescribeCacheEngineVersionsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6311,25 +7677,25 @@ impl DescribeCacheEngineVersionsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeCacheEngineVersionsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_cache_engine_versions(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_cache_engine_versions(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6352,15 +7718,15 @@ impl DescribeCacheEngineVersionsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeCacheEngineVersions::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeCacheEngineVersions",
             "elasticache",
         ));
@@ -6369,10 +7735,10 @@ impl DescribeCacheEngineVersionsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6402,6 +7768,7 @@ pub mod describe_cache_parameter_groups_input {
             self.cache_parameter_group_name = Some(input.into());
             self
         }
+        /// <p>The name of a specific cache parameter group to return details for.</p>
         pub fn set_cache_parameter_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6412,12 +7779,19 @@ pub mod describe_cache_parameter_groups_input {
         /// <p>The maximum number of records to include in the response. If more records exist than the
         /// specified <code>MaxRecords</code> value, a marker is included in the response so that
         /// the remaining results can be retrieved.</p>
+        ///
         /// <p>Default: 100</p>
         /// <p>Constraints: minimum 20; maximum 100.</p>
         pub fn max_records(mut self, input: i32) -> Self {
             self.max_records = Some(input);
             self
         }
+        /// <p>The maximum number of records to include in the response. If more records exist than the
+        /// specified <code>MaxRecords</code> value, a marker is included in the response so that
+        /// the remaining results can be retrieved.</p>
+        ///
+        /// <p>Default: 100</p>
+        /// <p>Constraints: minimum 20; maximum 100.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.max_records = input;
             self
@@ -6429,6 +7803,9 @@ pub mod describe_cache_parameter_groups_input {
             self.marker = Some(input.into());
             self
         }
+        /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation.
+        /// If this parameter is specified, the response includes only records beyond the marker, up to the
+        /// value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -6438,7 +7815,7 @@ pub mod describe_cache_parameter_groups_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeCacheParameterGroupsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeCacheParameterGroupsInput {
                 cache_parameter_group_name: self.cache_parameter_group_name,
@@ -6460,16 +7837,16 @@ impl DescribeCacheParameterGroupsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeCacheParameterGroups,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeCacheParameterGroupsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6477,7 +7854,7 @@ impl DescribeCacheParameterGroupsInput {
         fn update_http_builder(
             input: &crate::input::DescribeCacheParameterGroupsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6486,25 +7863,25 @@ impl DescribeCacheParameterGroupsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeCacheParameterGroupsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_cache_parameter_groups(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_cache_parameter_groups(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6527,15 +7904,15 @@ impl DescribeCacheParameterGroupsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeCacheParameterGroups::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeCacheParameterGroups",
             "elasticache",
         ));
@@ -6544,10 +7921,10 @@ impl DescribeCacheParameterGroupsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6578,6 +7955,7 @@ pub mod describe_cache_parameters_input {
             self.cache_parameter_group_name = Some(input.into());
             self
         }
+        /// <p>The name of a specific cache parameter group to return details for.</p>
         pub fn set_cache_parameter_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6592,6 +7970,9 @@ pub mod describe_cache_parameters_input {
             self.source = Some(input.into());
             self
         }
+        /// <p>The parameter types to return.</p>
+        /// <p>Valid values: <code>user</code> | <code>system</code> | <code>engine-default</code>
+        /// </p>
         pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source = input;
             self
@@ -6599,12 +7980,19 @@ pub mod describe_cache_parameters_input {
         /// <p>The maximum number of records to include in the response. If more records exist than the
         /// specified <code>MaxRecords</code> value, a marker is included in the response so that
         /// the remaining results can be retrieved.</p>
+        ///
         /// <p>Default: 100</p>
         /// <p>Constraints: minimum 20; maximum 100.</p>
         pub fn max_records(mut self, input: i32) -> Self {
             self.max_records = Some(input);
             self
         }
+        /// <p>The maximum number of records to include in the response. If more records exist than the
+        /// specified <code>MaxRecords</code> value, a marker is included in the response so that
+        /// the remaining results can be retrieved.</p>
+        ///
+        /// <p>Default: 100</p>
+        /// <p>Constraints: minimum 20; maximum 100.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.max_records = input;
             self
@@ -6617,6 +8005,10 @@ pub mod describe_cache_parameters_input {
             self.marker = Some(input.into());
             self
         }
+        /// <p>An optional marker returned from a prior request.
+        /// Use this marker for pagination of results from this operation.
+        /// If this parameter is specified, the response includes only records beyond the marker, up to the
+        /// value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -6626,7 +8018,7 @@ pub mod describe_cache_parameters_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeCacheParametersInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeCacheParametersInput {
                 cache_parameter_group_name: self.cache_parameter_group_name,
@@ -6649,16 +8041,16 @@ impl DescribeCacheParametersInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeCacheParameters,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeCacheParametersInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6666,7 +8058,7 @@ impl DescribeCacheParametersInput {
         fn update_http_builder(
             input: &crate::input::DescribeCacheParametersInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6675,27 +8067,29 @@ impl DescribeCacheParametersInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeCacheParametersInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_cache_parameters(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6718,15 +8112,15 @@ impl DescribeCacheParametersInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeCacheParameters::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeCacheParameters",
             "elasticache",
         ));
@@ -6735,10 +8129,10 @@ impl DescribeCacheParametersInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6768,6 +8162,7 @@ pub mod describe_cache_security_groups_input {
             self.cache_security_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the cache security group to return details for.</p>
         pub fn set_cache_security_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6778,12 +8173,19 @@ pub mod describe_cache_security_groups_input {
         /// <p>The maximum number of records to include in the response. If more records exist than the
         /// specified <code>MaxRecords</code> value, a marker is included in the response so that
         /// the remaining results can be retrieved.</p>
+        ///
         /// <p>Default: 100</p>
         /// <p>Constraints: minimum 20; maximum 100.</p>
         pub fn max_records(mut self, input: i32) -> Self {
             self.max_records = Some(input);
             self
         }
+        /// <p>The maximum number of records to include in the response. If more records exist than the
+        /// specified <code>MaxRecords</code> value, a marker is included in the response so that
+        /// the remaining results can be retrieved.</p>
+        ///
+        /// <p>Default: 100</p>
+        /// <p>Constraints: minimum 20; maximum 100.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.max_records = input;
             self
@@ -6795,6 +8197,9 @@ pub mod describe_cache_security_groups_input {
             self.marker = Some(input.into());
             self
         }
+        /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this
+        /// parameter is specified, the response includes only records beyond the marker, up to the
+        /// value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -6804,7 +8209,7 @@ pub mod describe_cache_security_groups_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeCacheSecurityGroupsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeCacheSecurityGroupsInput {
                 cache_security_group_name: self.cache_security_group_name,
@@ -6826,16 +8231,16 @@ impl DescribeCacheSecurityGroupsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeCacheSecurityGroups,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeCacheSecurityGroupsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6843,7 +8248,7 @@ impl DescribeCacheSecurityGroupsInput {
         fn update_http_builder(
             input: &crate::input::DescribeCacheSecurityGroupsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6852,25 +8257,25 @@ impl DescribeCacheSecurityGroupsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeCacheSecurityGroupsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_cache_security_groups(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_cache_security_groups(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6893,15 +8298,15 @@ impl DescribeCacheSecurityGroupsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeCacheSecurityGroups::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeCacheSecurityGroups",
             "elasticache",
         ));
@@ -6910,10 +8315,10 @@ impl DescribeCacheSecurityGroupsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6943,6 +8348,7 @@ pub mod describe_cache_subnet_groups_input {
             self.cache_subnet_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the cache subnet group to return details for.</p>
         pub fn set_cache_subnet_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6953,12 +8359,19 @@ pub mod describe_cache_subnet_groups_input {
         /// <p>The maximum number of records to include in the response. If more records exist than the
         /// specified <code>MaxRecords</code> value, a marker is included in the response so that
         /// the remaining results can be retrieved.</p>
+        ///
         /// <p>Default: 100</p>
         /// <p>Constraints: minimum 20; maximum 100.</p>
         pub fn max_records(mut self, input: i32) -> Self {
             self.max_records = Some(input);
             self
         }
+        /// <p>The maximum number of records to include in the response. If more records exist than the
+        /// specified <code>MaxRecords</code> value, a marker is included in the response so that
+        /// the remaining results can be retrieved.</p>
+        ///
+        /// <p>Default: 100</p>
+        /// <p>Constraints: minimum 20; maximum 100.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.max_records = input;
             self
@@ -6971,6 +8384,10 @@ pub mod describe_cache_subnet_groups_input {
             self.marker = Some(input.into());
             self
         }
+        /// <p>An optional marker returned from a prior request.
+        /// Use this marker for pagination of results from this operation.
+        /// If this parameter is specified, the response includes only records beyond the marker, up to the
+        /// value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -6980,7 +8397,7 @@ pub mod describe_cache_subnet_groups_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeCacheSubnetGroupsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeCacheSubnetGroupsInput {
                 cache_subnet_group_name: self.cache_subnet_group_name,
@@ -7002,16 +8419,16 @@ impl DescribeCacheSubnetGroupsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeCacheSubnetGroups,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeCacheSubnetGroupsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7019,7 +8436,7 @@ impl DescribeCacheSubnetGroupsInput {
         fn update_http_builder(
             input: &crate::input::DescribeCacheSubnetGroupsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7028,27 +8445,29 @@ impl DescribeCacheSubnetGroupsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeCacheSubnetGroupsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_cache_subnet_groups(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7071,15 +8490,15 @@ impl DescribeCacheSubnetGroupsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeCacheSubnetGroups::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeCacheSubnetGroups",
             "elasticache",
         ));
@@ -7088,10 +8507,10 @@ impl DescribeCacheSubnetGroupsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7135,6 +8554,18 @@ pub mod describe_engine_default_parameters_input {
             self.cache_parameter_group_family = Some(input.into());
             self
         }
+        /// <p>The name of the cache parameter group family.</p>
+        /// <p>Valid values are:
+        /// <code>memcached1.4</code> |
+        /// <code>memcached1.5</code> |
+        /// <code>memcached1.6</code> |
+        /// <code>redis2.6</code> |
+        /// <code>redis2.8</code> |
+        /// <code>redis3.2</code> |
+        /// <code>redis4.0</code> |
+        /// <code>redis5.0</code> |
+        /// <code>redis6.x</code> |
+        /// </p>
         pub fn set_cache_parameter_group_family(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7145,12 +8576,19 @@ pub mod describe_engine_default_parameters_input {
         /// <p>The maximum number of records to include in the response. If more records exist than the
         /// specified <code>MaxRecords</code> value, a marker is included in the response so that
         /// the remaining results can be retrieved.</p>
+        ///
         /// <p>Default: 100</p>
         /// <p>Constraints: minimum 20; maximum 100.</p>
         pub fn max_records(mut self, input: i32) -> Self {
             self.max_records = Some(input);
             self
         }
+        /// <p>The maximum number of records to include in the response. If more records exist than the
+        /// specified <code>MaxRecords</code> value, a marker is included in the response so that
+        /// the remaining results can be retrieved.</p>
+        ///
+        /// <p>Default: 100</p>
+        /// <p>Constraints: minimum 20; maximum 100.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.max_records = input;
             self
@@ -7162,6 +8600,9 @@ pub mod describe_engine_default_parameters_input {
             self.marker = Some(input.into());
             self
         }
+        /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this
+        /// parameter is specified, the response includes only records beyond the marker, up to the
+        /// value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -7171,7 +8612,7 @@ pub mod describe_engine_default_parameters_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeEngineDefaultParametersInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeEngineDefaultParametersInput {
                 cache_parameter_group_family: self.cache_parameter_group_family,
@@ -7193,16 +8634,16 @@ impl DescribeEngineDefaultParametersInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeEngineDefaultParameters,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeEngineDefaultParametersInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7210,7 +8651,7 @@ impl DescribeEngineDefaultParametersInput {
         fn update_http_builder(
             input: &crate::input::DescribeEngineDefaultParametersInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7219,25 +8660,25 @@ impl DescribeEngineDefaultParametersInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeEngineDefaultParametersInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_engine_default_parameters(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_engine_default_parameters(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7260,15 +8701,15 @@ impl DescribeEngineDefaultParametersInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeEngineDefaultParameters::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeEngineDefaultParameters",
             "elasticache",
         ));
@@ -7277,10 +8718,10 @@ impl DescribeEngineDefaultParametersInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7302,8 +8743,8 @@ pub mod describe_events_input {
     pub struct Builder {
         pub(crate) source_identifier: std::option::Option<std::string::String>,
         pub(crate) source_type: std::option::Option<crate::model::SourceType>,
-        pub(crate) start_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) duration: std::option::Option<i32>,
         pub(crate) max_records: std::option::Option<i32>,
         pub(crate) marker: std::option::Option<std::string::String>,
@@ -7315,6 +8756,8 @@ pub mod describe_events_input {
             self.source_identifier = Some(input.into());
             self
         }
+        /// <p>The identifier of the event source for which events are returned.
+        /// If not specified, all sources are included in the response.</p>
         pub fn set_source_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7328,6 +8771,8 @@ pub mod describe_events_input {
             self.source_type = Some(input);
             self
         }
+        /// <p>The event source to retrieve events for.
+        /// If no value is specified, all events are returned.</p>
         pub fn set_source_type(
             mut self,
             input: std::option::Option<crate::model::SourceType>,
@@ -7338,22 +8783,34 @@ pub mod describe_events_input {
         /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format.</p>
         /// <p>
         /// <b>Example:</b> 2017-03-30T07:03:49.555Z</p>
-        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format.</p>
+        /// <p>
+        /// <b>Example:</b> 2017-03-30T07:03:49.555Z</p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format.</p>
         /// <p>
         /// <b>Example:</b> 2017-03-30T07:03:49.555Z</p>
-        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format.</p>
+        /// <p>
+        /// <b>Example:</b> 2017-03-30T07:03:49.555Z</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.end_time = input;
             self
         }
@@ -7362,6 +8819,7 @@ pub mod describe_events_input {
             self.duration = Some(input);
             self
         }
+        /// <p>The number of minutes worth of events to retrieve.</p>
         pub fn set_duration(mut self, input: std::option::Option<i32>) -> Self {
             self.duration = input;
             self
@@ -7369,12 +8827,19 @@ pub mod describe_events_input {
         /// <p>The maximum number of records to include in the response. If more records exist than the
         /// specified <code>MaxRecords</code> value, a marker is included in the response so that
         /// the remaining results can be retrieved.</p>
+        ///
         /// <p>Default: 100</p>
         /// <p>Constraints: minimum 20; maximum 100.</p>
         pub fn max_records(mut self, input: i32) -> Self {
             self.max_records = Some(input);
             self
         }
+        /// <p>The maximum number of records to include in the response. If more records exist than the
+        /// specified <code>MaxRecords</code> value, a marker is included in the response so that
+        /// the remaining results can be retrieved.</p>
+        ///
+        /// <p>Default: 100</p>
+        /// <p>Constraints: minimum 20; maximum 100.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.max_records = input;
             self
@@ -7387,6 +8852,10 @@ pub mod describe_events_input {
             self.marker = Some(input.into());
             self
         }
+        /// <p>An optional marker returned from a prior request.
+        /// Use this marker for pagination of results from this operation.
+        /// If this parameter is specified, the response includes only records beyond the marker,
+        /// up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -7396,7 +8865,7 @@ pub mod describe_events_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeEventsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeEventsInput {
                 source_identifier: self.source_identifier,
@@ -7421,16 +8890,16 @@ impl DescribeEventsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeEvents,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeEventsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7438,7 +8907,7 @@ impl DescribeEventsInput {
         fn update_http_builder(
             input: &crate::input::DescribeEventsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7447,24 +8916,26 @@ impl DescribeEventsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeEventsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_describe_events(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7487,15 +8958,15 @@ impl DescribeEventsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeEvents::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeEvents",
             "elasticache",
         ));
@@ -7504,10 +8975,10 @@ impl DescribeEventsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7541,6 +9012,7 @@ pub mod describe_global_replication_groups_input {
             self.global_replication_group_id = Some(input.into());
             self
         }
+        /// <p>The name of the Global datastore</p>
         pub fn set_global_replication_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7553,6 +9025,7 @@ pub mod describe_global_replication_groups_input {
             self.max_records = Some(input);
             self
         }
+        /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxRecords value, a marker is included in the response so that the remaining results can be retrieved. </p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.max_records = input;
             self
@@ -7562,6 +9035,7 @@ pub mod describe_global_replication_groups_input {
             self.marker = Some(input.into());
             self
         }
+        /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -7571,6 +9045,7 @@ pub mod describe_global_replication_groups_input {
             self.show_member_info = Some(input);
             self
         }
+        /// <p>Returns the list of members that comprise the Global datastore.</p>
         pub fn set_show_member_info(mut self, input: std::option::Option<bool>) -> Self {
             self.show_member_info = input;
             self
@@ -7580,7 +9055,7 @@ pub mod describe_global_replication_groups_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeGlobalReplicationGroupsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeGlobalReplicationGroupsInput {
                 global_replication_group_id: self.global_replication_group_id,
@@ -7603,16 +9078,16 @@ impl DescribeGlobalReplicationGroupsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeGlobalReplicationGroups,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeGlobalReplicationGroupsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7620,7 +9095,7 @@ impl DescribeGlobalReplicationGroupsInput {
         fn update_http_builder(
             input: &crate::input::DescribeGlobalReplicationGroupsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7629,25 +9104,25 @@ impl DescribeGlobalReplicationGroupsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeGlobalReplicationGroupsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_global_replication_groups(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_global_replication_groups(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7670,15 +9145,15 @@ impl DescribeGlobalReplicationGroupsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeGlobalReplicationGroups::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeGlobalReplicationGroups",
             "elasticache",
         ));
@@ -7687,10 +9162,10 @@ impl DescribeGlobalReplicationGroupsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7721,6 +9196,8 @@ pub mod describe_replication_groups_input {
             self.replication_group_id = Some(input.into());
             self
         }
+        /// <p>The identifier for the replication group to be described. This parameter is not case sensitive.</p>
+        /// <p>If you do not specify this parameter, information about all replication groups is returned.</p>
         pub fn set_replication_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7731,12 +9208,19 @@ pub mod describe_replication_groups_input {
         /// <p>The maximum number of records to include in the response. If more records exist than the
         /// specified <code>MaxRecords</code> value, a marker is included in the response so that
         /// the remaining results can be retrieved.</p>
+        ///
         /// <p>Default: 100</p>
         /// <p>Constraints: minimum 20; maximum 100.</p>
         pub fn max_records(mut self, input: i32) -> Self {
             self.max_records = Some(input);
             self
         }
+        /// <p>The maximum number of records to include in the response. If more records exist than the
+        /// specified <code>MaxRecords</code> value, a marker is included in the response so that
+        /// the remaining results can be retrieved.</p>
+        ///
+        /// <p>Default: 100</p>
+        /// <p>Constraints: minimum 20; maximum 100.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.max_records = input;
             self
@@ -7748,6 +9232,9 @@ pub mod describe_replication_groups_input {
             self.marker = Some(input.into());
             self
         }
+        /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this
+        /// parameter is specified, the response includes only records beyond the marker, up to the
+        /// value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -7757,7 +9244,7 @@ pub mod describe_replication_groups_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeReplicationGroupsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeReplicationGroupsInput {
                 replication_group_id: self.replication_group_id,
@@ -7779,16 +9266,16 @@ impl DescribeReplicationGroupsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeReplicationGroups,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeReplicationGroupsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7796,7 +9283,7 @@ impl DescribeReplicationGroupsInput {
         fn update_http_builder(
             input: &crate::input::DescribeReplicationGroupsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7805,27 +9292,29 @@ impl DescribeReplicationGroupsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeReplicationGroupsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_replication_groups(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7848,15 +9337,15 @@ impl DescribeReplicationGroupsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeReplicationGroups::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeReplicationGroups",
             "elasticache",
         ));
@@ -7865,10 +9354,10 @@ impl DescribeReplicationGroupsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7904,6 +9393,8 @@ pub mod describe_reserved_cache_nodes_input {
             self.reserved_cache_node_id = Some(input.into());
             self
         }
+        /// <p>The reserved cache node identifier filter value.
+        /// Use this parameter to show only the reservation that matches the specified reservation ID.</p>
         pub fn set_reserved_cache_node_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7920,6 +9411,8 @@ pub mod describe_reserved_cache_nodes_input {
             self.reserved_cache_nodes_offering_id = Some(input.into());
             self
         }
+        /// <p>The offering identifier filter value.
+        /// Use this parameter to show only purchased reservations matching the specified offering identifier.</p>
         pub fn set_reserved_cache_nodes_offering_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7929,6 +9422,7 @@ pub mod describe_reserved_cache_nodes_input {
         }
         /// <p>The cache node type filter value.
         /// Use this parameter to show only those reservations matching the specified cache node type.</p>
+        ///
         /// <p>The following node types are supported by ElastiCache.
         /// Generally speaking, the current generation types provide more memory and computational power
         /// at lower cost when compared to their equivalent previous generation counterparts.</p>
@@ -7938,6 +9432,7 @@ pub mod describe_reserved_cache_nodes_input {
         /// <ul>
         /// <li>
         /// <p>Current generation: </p>
+        ///
         /// <p>
         /// <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
         /// <p>  
@@ -7948,11 +9443,17 @@ pub mod describe_reserved_cache_nodes_input {
         /// <code>cache.m6g.8xlarge</code>,
         /// <code>cache.m6g.12xlarge</code>,
         /// <code>cache.m6g.16xlarge</code>
+        ///
+        ///
+        ///
         /// </p>  
+        ///
         /// <note>
         /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>
         /// </p>
         /// </note>
+        ///
+        ///
         /// <p>
         /// <b>M5 node types:</b>
         /// <code>cache.m5.large</code>,
@@ -7961,7 +9462,11 @@ pub mod describe_reserved_cache_nodes_input {
         /// <code>cache.m5.4xlarge</code>,
         /// <code>cache.m5.12xlarge</code>,
         /// <code>cache.m5.24xlarge</code>
+        ///
+        ///
         /// </p>  
+        ///
+        ///
         /// <p>
         /// <b>M4 node types:</b>
         /// <code>cache.m4.large</code>,
@@ -7976,12 +9481,18 @@ pub mod describe_reserved_cache_nodes_input {
         /// <code>cache.t3.small</code>,
         /// <code>cache.t3.medium</code>
         /// </p>
+        ///
+        ///
         /// <p>
         /// <b>T2 node types:</b>
         /// <code>cache.t2.micro</code>,
         /// <code>cache.t2.small</code>,
         /// <code>cache.t2.medium</code>
         /// </p>
+        ///
+        ///
+        ///
+        ///
         /// </li>
         /// <li>
         /// <p>Previous generation: (not recommended)</p>
@@ -7989,6 +9500,7 @@ pub mod describe_reserved_cache_nodes_input {
         /// <b>T1 node types:</b>
         /// <code>cache.t1.micro</code>
         /// </p>
+        ///
         /// <p>
         /// <b>M1 node types:</b>
         /// <code>cache.m1.small</code>,
@@ -7996,6 +9508,7 @@ pub mod describe_reserved_cache_nodes_input {
         /// <code>cache.m1.large</code>,
         /// <code>cache.m1.xlarge</code>
         /// </p>
+        ///
         /// <p>
         /// <b>M3 node types:</b>
         /// <code>cache.m3.medium</code>,
@@ -8003,11 +9516,13 @@ pub mod describe_reserved_cache_nodes_input {
         /// <code>cache.m3.xlarge</code>,
         /// <code>cache.m3.2xlarge</code>
         /// </p>
+        ///
         /// </li>
         /// </ul>
         /// </li>
         /// <li>
         /// <p>Compute optimized:</p>
+        ///
         /// <ul>
         /// <li>
         /// <p>Previous generation: (not recommended)</p>
@@ -8025,6 +9540,10 @@ pub mod describe_reserved_cache_nodes_input {
         /// <p>Current generation: </p>
         /// <p>
         /// <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
+        ///
+        ///
+        ///
+        ///
         /// <p>  
         /// <code>cache.r6g.large</code>,
         /// <code>cache.r6g.xlarge</code>,
@@ -8033,6 +9552,12 @@ pub mod describe_reserved_cache_nodes_input {
         /// <code>cache.r6g.8xlarge</code>,
         /// <code>cache.r6g.12xlarge</code>,
         /// <code>cache.r6g.16xlarge</code>
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
         /// </p>  
         /// <note>
         /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>
@@ -8047,6 +9572,7 @@ pub mod describe_reserved_cache_nodes_input {
         /// <code>cache.r5.12xlarge</code>,
         /// <code>cache.r5.24xlarge</code>
         /// </p>
+        ///
         /// <p>
         /// <b>R4 node types:</b>
         /// <code>cache.r4.large</code>,
@@ -8056,6 +9582,17 @@ pub mod describe_reserved_cache_nodes_input {
         /// <code>cache.r4.8xlarge</code>,
         /// <code>cache.r4.16xlarge</code>
         /// </p>
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
         /// </li>
         /// <li>
         /// <p>Previous generation: (not recommended)</p>
@@ -8065,6 +9602,7 @@ pub mod describe_reserved_cache_nodes_input {
         /// <code>cache.m2.2xlarge</code>,
         /// <code>cache.m2.4xlarge</code>
         /// </p>
+        ///
         /// <p>
         /// <b>R3 node types:</b>
         /// <code>cache.r3.large</code>,
@@ -8073,10 +9611,12 @@ pub mod describe_reserved_cache_nodes_input {
         /// <code>cache.r3.4xlarge</code>,
         /// <code>cache.r3.8xlarge</code>
         /// </p>
+        ///
         /// </li>
         /// </ul>
         /// </li>
         /// </ul>
+        ///
         /// <p>
         /// <b>Additional node type info</b>
         /// </p>
@@ -8099,6 +9639,221 @@ pub mod describe_reserved_cache_nodes_input {
             self.cache_node_type = Some(input.into());
             self
         }
+        /// <p>The cache node type filter value.
+        /// Use this parameter to show only those reservations matching the specified cache node type.</p>
+        ///
+        /// <p>The following node types are supported by ElastiCache.
+        /// Generally speaking, the current generation types provide more memory and computational power
+        /// at lower cost when compared to their equivalent previous generation counterparts.</p>
+        /// <ul>
+        /// <li>
+        /// <p>General purpose:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Current generation: </p>
+        ///
+        /// <p>
+        /// <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
+        /// <p>  
+        /// <code>cache.m6g.large</code>,
+        /// <code>cache.m6g.xlarge</code>,
+        /// <code>cache.m6g.2xlarge</code>,
+        /// <code>cache.m6g.4xlarge</code>,
+        /// <code>cache.m6g.8xlarge</code>,
+        /// <code>cache.m6g.12xlarge</code>,
+        /// <code>cache.m6g.16xlarge</code>
+        ///
+        ///
+        ///
+        /// </p>  
+        ///
+        /// <note>
+        /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>
+        /// </p>
+        /// </note>
+        ///
+        ///
+        /// <p>
+        /// <b>M5 node types:</b>
+        /// <code>cache.m5.large</code>,
+        /// <code>cache.m5.xlarge</code>,
+        /// <code>cache.m5.2xlarge</code>,
+        /// <code>cache.m5.4xlarge</code>,
+        /// <code>cache.m5.12xlarge</code>,
+        /// <code>cache.m5.24xlarge</code>
+        ///
+        ///
+        /// </p>  
+        ///
+        ///
+        /// <p>
+        /// <b>M4 node types:</b>
+        /// <code>cache.m4.large</code>,
+        /// <code>cache.m4.xlarge</code>,
+        /// <code>cache.m4.2xlarge</code>,
+        /// <code>cache.m4.4xlarge</code>,
+        /// <code>cache.m4.10xlarge</code>
+        /// </p>
+        /// <p>
+        /// <b>T3 node types:</b>
+        /// <code>cache.t3.micro</code>,
+        /// <code>cache.t3.small</code>,
+        /// <code>cache.t3.medium</code>
+        /// </p>
+        ///
+        ///
+        /// <p>
+        /// <b>T2 node types:</b>
+        /// <code>cache.t2.micro</code>,
+        /// <code>cache.t2.small</code>,
+        /// <code>cache.t2.medium</code>
+        /// </p>
+        ///
+        ///
+        ///
+        ///
+        /// </li>
+        /// <li>
+        /// <p>Previous generation: (not recommended)</p>
+        /// <p>
+        /// <b>T1 node types:</b>
+        /// <code>cache.t1.micro</code>
+        /// </p>
+        ///
+        /// <p>
+        /// <b>M1 node types:</b>
+        /// <code>cache.m1.small</code>,
+        /// <code>cache.m1.medium</code>,
+        /// <code>cache.m1.large</code>,
+        /// <code>cache.m1.xlarge</code>
+        /// </p>
+        ///
+        /// <p>
+        /// <b>M3 node types:</b>
+        /// <code>cache.m3.medium</code>,
+        /// <code>cache.m3.large</code>,
+        /// <code>cache.m3.xlarge</code>,
+        /// <code>cache.m3.2xlarge</code>
+        /// </p>
+        ///
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>Compute optimized:</p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>Previous generation: (not recommended)</p>
+        /// <p>
+        /// <b>C1 node types:</b>
+        /// <code>cache.c1.xlarge</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>Memory optimized:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Current generation: </p>
+        /// <p>
+        /// <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
+        ///
+        ///
+        ///
+        ///
+        /// <p>  
+        /// <code>cache.r6g.large</code>,
+        /// <code>cache.r6g.xlarge</code>,
+        /// <code>cache.r6g.2xlarge</code>,
+        /// <code>cache.r6g.4xlarge</code>,
+        /// <code>cache.r6g.8xlarge</code>,
+        /// <code>cache.r6g.12xlarge</code>,
+        /// <code>cache.r6g.16xlarge</code>
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        /// </p>  
+        /// <note>
+        /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>
+        /// </p>
+        /// </note>
+        /// <p>
+        /// <b>R5 node types:</b>
+        /// <code>cache.r5.large</code>,
+        /// <code>cache.r5.xlarge</code>,
+        /// <code>cache.r5.2xlarge</code>,
+        /// <code>cache.r5.4xlarge</code>,
+        /// <code>cache.r5.12xlarge</code>,
+        /// <code>cache.r5.24xlarge</code>
+        /// </p>
+        ///
+        /// <p>
+        /// <b>R4 node types:</b>
+        /// <code>cache.r4.large</code>,
+        /// <code>cache.r4.xlarge</code>,
+        /// <code>cache.r4.2xlarge</code>,
+        /// <code>cache.r4.4xlarge</code>,
+        /// <code>cache.r4.8xlarge</code>,
+        /// <code>cache.r4.16xlarge</code>
+        /// </p>
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        /// </li>
+        /// <li>
+        /// <p>Previous generation: (not recommended)</p>
+        /// <p>
+        /// <b>M2 node types:</b>            
+        /// <code>cache.m2.xlarge</code>,
+        /// <code>cache.m2.2xlarge</code>,
+        /// <code>cache.m2.4xlarge</code>
+        /// </p>
+        ///
+        /// <p>
+        /// <b>R3 node types:</b>
+        /// <code>cache.r3.large</code>,
+        /// <code>cache.r3.xlarge</code>,
+        /// <code>cache.r3.2xlarge</code>,  
+        /// <code>cache.r3.4xlarge</code>,
+        /// <code>cache.r3.8xlarge</code>
+        /// </p>
+        ///
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>
+        /// <b>Additional node type info</b>
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>All current generation instance types are created in Amazon VPC by default.</p>
+        /// </li>
+        /// <li>
+        /// <p>Redis append-only files (AOF) are not supported for T1 or T2 instances.</p>
+        /// </li>
+        /// <li>
+        /// <p>Redis Multi-AZ with automatic failover is not supported on T1 instances.</p>
+        /// </li>
+        /// <li>
+        /// <p>Redis configuration variables <code>appendonly</code> and
+        /// <code>appendfsync</code> are not supported on Redis version 2.8.22 and later.</p>
+        /// </li>
+        /// </ul>
         pub fn set_cache_node_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8114,6 +9869,10 @@ pub mod describe_reserved_cache_nodes_input {
             self.duration = Some(input.into());
             self
         }
+        /// <p>The duration filter value, specified in years or seconds.
+        /// Use this parameter to show only reservations for this duration.</p>
+        /// <p>Valid Values: <code>1 | 3 | 31536000 | 94608000</code>
+        /// </p>
         pub fn set_duration(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.duration = input;
             self
@@ -8123,6 +9882,7 @@ pub mod describe_reserved_cache_nodes_input {
             self.product_description = Some(input.into());
             self
         }
+        /// <p>The product description filter value. Use this parameter to show only those reservations matching the specified product description.</p>
         pub fn set_product_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8138,6 +9898,10 @@ pub mod describe_reserved_cache_nodes_input {
             self.offering_type = Some(input.into());
             self
         }
+        /// <p>The offering type filter value.
+        /// Use this parameter to show only the available offerings matching the specified offering type.</p>
+        /// <p>Valid values: <code>"Light Utilization"|"Medium Utilization"|"Heavy Utilization"|"All Upfront"|"Partial Upfront"| "No Upfront"</code>
+        /// </p>
         pub fn set_offering_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8148,12 +9912,19 @@ pub mod describe_reserved_cache_nodes_input {
         /// <p>The maximum number of records to include in the response. If more records exist than the
         /// specified <code>MaxRecords</code> value, a marker is included in the response so that
         /// the remaining results can be retrieved.</p>
+        ///
         /// <p>Default: 100</p>
         /// <p>Constraints: minimum 20; maximum 100.</p>
         pub fn max_records(mut self, input: i32) -> Self {
             self.max_records = Some(input);
             self
         }
+        /// <p>The maximum number of records to include in the response. If more records exist than the
+        /// specified <code>MaxRecords</code> value, a marker is included in the response so that
+        /// the remaining results can be retrieved.</p>
+        ///
+        /// <p>Default: 100</p>
+        /// <p>Constraints: minimum 20; maximum 100.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.max_records = input;
             self
@@ -8166,6 +9937,10 @@ pub mod describe_reserved_cache_nodes_input {
             self.marker = Some(input.into());
             self
         }
+        /// <p>An optional marker returned from a prior request.
+        /// Use this marker for pagination of results from this operation.
+        /// If this parameter is specified, the response includes only records beyond the marker,
+        /// up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -8175,7 +9950,7 @@ pub mod describe_reserved_cache_nodes_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeReservedCacheNodesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeReservedCacheNodesInput {
                 reserved_cache_node_id: self.reserved_cache_node_id,
@@ -8202,16 +9977,16 @@ impl DescribeReservedCacheNodesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeReservedCacheNodes,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeReservedCacheNodesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8219,7 +9994,7 @@ impl DescribeReservedCacheNodesInput {
         fn update_http_builder(
             input: &crate::input::DescribeReservedCacheNodesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8228,25 +10003,25 @@ impl DescribeReservedCacheNodesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeReservedCacheNodesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_reserved_cache_nodes(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_reserved_cache_nodes(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8269,15 +10044,15 @@ impl DescribeReservedCacheNodesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeReservedCacheNodes::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeReservedCacheNodes",
             "elasticache",
         ));
@@ -8286,10 +10061,10 @@ impl DescribeReservedCacheNodesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8329,6 +10104,10 @@ pub mod describe_reserved_cache_nodes_offerings_input {
             self.reserved_cache_nodes_offering_id = Some(input.into());
             self
         }
+        /// <p>The offering identifier filter value.
+        /// Use this parameter to show only the available offering that matches the specified reservation identifier.</p>
+        /// <p>Example: <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code>
+        /// </p>
         pub fn set_reserved_cache_nodes_offering_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8338,6 +10117,7 @@ pub mod describe_reserved_cache_nodes_offerings_input {
         }
         /// <p>The cache node type filter value.
         /// Use this parameter to show only the available offerings matching the specified cache node type.</p>
+        ///
         /// <p>The following node types are supported by ElastiCache.
         /// Generally speaking, the current generation types provide more memory and computational power
         /// at lower cost when compared to their equivalent previous generation counterparts.</p>
@@ -8347,6 +10127,7 @@ pub mod describe_reserved_cache_nodes_offerings_input {
         /// <ul>
         /// <li>
         /// <p>Current generation: </p>
+        ///
         /// <p>
         /// <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
         /// <p>  
@@ -8357,11 +10138,17 @@ pub mod describe_reserved_cache_nodes_offerings_input {
         /// <code>cache.m6g.8xlarge</code>,
         /// <code>cache.m6g.12xlarge</code>,
         /// <code>cache.m6g.16xlarge</code>
+        ///
+        ///
+        ///
         /// </p>  
+        ///
         /// <note>
         /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>
         /// </p>
         /// </note>
+        ///
+        ///
         /// <p>
         /// <b>M5 node types:</b>
         /// <code>cache.m5.large</code>,
@@ -8370,7 +10157,11 @@ pub mod describe_reserved_cache_nodes_offerings_input {
         /// <code>cache.m5.4xlarge</code>,
         /// <code>cache.m5.12xlarge</code>,
         /// <code>cache.m5.24xlarge</code>
+        ///
+        ///
         /// </p>  
+        ///
+        ///
         /// <p>
         /// <b>M4 node types:</b>
         /// <code>cache.m4.large</code>,
@@ -8385,12 +10176,18 @@ pub mod describe_reserved_cache_nodes_offerings_input {
         /// <code>cache.t3.small</code>,
         /// <code>cache.t3.medium</code>
         /// </p>
+        ///
+        ///
         /// <p>
         /// <b>T2 node types:</b>
         /// <code>cache.t2.micro</code>,
         /// <code>cache.t2.small</code>,
         /// <code>cache.t2.medium</code>
         /// </p>
+        ///
+        ///
+        ///
+        ///
         /// </li>
         /// <li>
         /// <p>Previous generation: (not recommended)</p>
@@ -8398,6 +10195,7 @@ pub mod describe_reserved_cache_nodes_offerings_input {
         /// <b>T1 node types:</b>
         /// <code>cache.t1.micro</code>
         /// </p>
+        ///
         /// <p>
         /// <b>M1 node types:</b>
         /// <code>cache.m1.small</code>,
@@ -8405,6 +10203,7 @@ pub mod describe_reserved_cache_nodes_offerings_input {
         /// <code>cache.m1.large</code>,
         /// <code>cache.m1.xlarge</code>
         /// </p>
+        ///
         /// <p>
         /// <b>M3 node types:</b>
         /// <code>cache.m3.medium</code>,
@@ -8412,11 +10211,13 @@ pub mod describe_reserved_cache_nodes_offerings_input {
         /// <code>cache.m3.xlarge</code>,
         /// <code>cache.m3.2xlarge</code>
         /// </p>
+        ///
         /// </li>
         /// </ul>
         /// </li>
         /// <li>
         /// <p>Compute optimized:</p>
+        ///
         /// <ul>
         /// <li>
         /// <p>Previous generation: (not recommended)</p>
@@ -8434,6 +10235,10 @@ pub mod describe_reserved_cache_nodes_offerings_input {
         /// <p>Current generation: </p>
         /// <p>
         /// <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
+        ///
+        ///
+        ///
+        ///
         /// <p>  
         /// <code>cache.r6g.large</code>,
         /// <code>cache.r6g.xlarge</code>,
@@ -8442,6 +10247,12 @@ pub mod describe_reserved_cache_nodes_offerings_input {
         /// <code>cache.r6g.8xlarge</code>,
         /// <code>cache.r6g.12xlarge</code>,
         /// <code>cache.r6g.16xlarge</code>
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
         /// </p>  
         /// <note>
         /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>
@@ -8456,6 +10267,7 @@ pub mod describe_reserved_cache_nodes_offerings_input {
         /// <code>cache.r5.12xlarge</code>,
         /// <code>cache.r5.24xlarge</code>
         /// </p>
+        ///
         /// <p>
         /// <b>R4 node types:</b>
         /// <code>cache.r4.large</code>,
@@ -8465,6 +10277,17 @@ pub mod describe_reserved_cache_nodes_offerings_input {
         /// <code>cache.r4.8xlarge</code>,
         /// <code>cache.r4.16xlarge</code>
         /// </p>
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
         /// </li>
         /// <li>
         /// <p>Previous generation: (not recommended)</p>
@@ -8474,6 +10297,7 @@ pub mod describe_reserved_cache_nodes_offerings_input {
         /// <code>cache.m2.2xlarge</code>,
         /// <code>cache.m2.4xlarge</code>
         /// </p>
+        ///
         /// <p>
         /// <b>R3 node types:</b>
         /// <code>cache.r3.large</code>,
@@ -8482,10 +10306,12 @@ pub mod describe_reserved_cache_nodes_offerings_input {
         /// <code>cache.r3.4xlarge</code>,
         /// <code>cache.r3.8xlarge</code>
         /// </p>
+        ///
         /// </li>
         /// </ul>
         /// </li>
         /// </ul>
+        ///
         /// <p>
         /// <b>Additional node type info</b>
         /// </p>
@@ -8508,6 +10334,221 @@ pub mod describe_reserved_cache_nodes_offerings_input {
             self.cache_node_type = Some(input.into());
             self
         }
+        /// <p>The cache node type filter value.
+        /// Use this parameter to show only the available offerings matching the specified cache node type.</p>
+        ///
+        /// <p>The following node types are supported by ElastiCache.
+        /// Generally speaking, the current generation types provide more memory and computational power
+        /// at lower cost when compared to their equivalent previous generation counterparts.</p>
+        /// <ul>
+        /// <li>
+        /// <p>General purpose:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Current generation: </p>
+        ///
+        /// <p>
+        /// <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
+        /// <p>  
+        /// <code>cache.m6g.large</code>,
+        /// <code>cache.m6g.xlarge</code>,
+        /// <code>cache.m6g.2xlarge</code>,
+        /// <code>cache.m6g.4xlarge</code>,
+        /// <code>cache.m6g.8xlarge</code>,
+        /// <code>cache.m6g.12xlarge</code>,
+        /// <code>cache.m6g.16xlarge</code>
+        ///
+        ///
+        ///
+        /// </p>  
+        ///
+        /// <note>
+        /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>
+        /// </p>
+        /// </note>
+        ///
+        ///
+        /// <p>
+        /// <b>M5 node types:</b>
+        /// <code>cache.m5.large</code>,
+        /// <code>cache.m5.xlarge</code>,
+        /// <code>cache.m5.2xlarge</code>,
+        /// <code>cache.m5.4xlarge</code>,
+        /// <code>cache.m5.12xlarge</code>,
+        /// <code>cache.m5.24xlarge</code>
+        ///
+        ///
+        /// </p>  
+        ///
+        ///
+        /// <p>
+        /// <b>M4 node types:</b>
+        /// <code>cache.m4.large</code>,
+        /// <code>cache.m4.xlarge</code>,
+        /// <code>cache.m4.2xlarge</code>,
+        /// <code>cache.m4.4xlarge</code>,
+        /// <code>cache.m4.10xlarge</code>
+        /// </p>
+        /// <p>
+        /// <b>T3 node types:</b>
+        /// <code>cache.t3.micro</code>,
+        /// <code>cache.t3.small</code>,
+        /// <code>cache.t3.medium</code>
+        /// </p>
+        ///
+        ///
+        /// <p>
+        /// <b>T2 node types:</b>
+        /// <code>cache.t2.micro</code>,
+        /// <code>cache.t2.small</code>,
+        /// <code>cache.t2.medium</code>
+        /// </p>
+        ///
+        ///
+        ///
+        ///
+        /// </li>
+        /// <li>
+        /// <p>Previous generation: (not recommended)</p>
+        /// <p>
+        /// <b>T1 node types:</b>
+        /// <code>cache.t1.micro</code>
+        /// </p>
+        ///
+        /// <p>
+        /// <b>M1 node types:</b>
+        /// <code>cache.m1.small</code>,
+        /// <code>cache.m1.medium</code>,
+        /// <code>cache.m1.large</code>,
+        /// <code>cache.m1.xlarge</code>
+        /// </p>
+        ///
+        /// <p>
+        /// <b>M3 node types:</b>
+        /// <code>cache.m3.medium</code>,
+        /// <code>cache.m3.large</code>,
+        /// <code>cache.m3.xlarge</code>,
+        /// <code>cache.m3.2xlarge</code>
+        /// </p>
+        ///
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>Compute optimized:</p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>Previous generation: (not recommended)</p>
+        /// <p>
+        /// <b>C1 node types:</b>
+        /// <code>cache.c1.xlarge</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>Memory optimized:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Current generation: </p>
+        /// <p>
+        /// <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
+        ///
+        ///
+        ///
+        ///
+        /// <p>  
+        /// <code>cache.r6g.large</code>,
+        /// <code>cache.r6g.xlarge</code>,
+        /// <code>cache.r6g.2xlarge</code>,
+        /// <code>cache.r6g.4xlarge</code>,
+        /// <code>cache.r6g.8xlarge</code>,
+        /// <code>cache.r6g.12xlarge</code>,
+        /// <code>cache.r6g.16xlarge</code>
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        /// </p>  
+        /// <note>
+        /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>
+        /// </p>
+        /// </note>
+        /// <p>
+        /// <b>R5 node types:</b>
+        /// <code>cache.r5.large</code>,
+        /// <code>cache.r5.xlarge</code>,
+        /// <code>cache.r5.2xlarge</code>,
+        /// <code>cache.r5.4xlarge</code>,
+        /// <code>cache.r5.12xlarge</code>,
+        /// <code>cache.r5.24xlarge</code>
+        /// </p>
+        ///
+        /// <p>
+        /// <b>R4 node types:</b>
+        /// <code>cache.r4.large</code>,
+        /// <code>cache.r4.xlarge</code>,
+        /// <code>cache.r4.2xlarge</code>,
+        /// <code>cache.r4.4xlarge</code>,
+        /// <code>cache.r4.8xlarge</code>,
+        /// <code>cache.r4.16xlarge</code>
+        /// </p>
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        ///
+        /// </li>
+        /// <li>
+        /// <p>Previous generation: (not recommended)</p>
+        /// <p>
+        /// <b>M2 node types:</b>            
+        /// <code>cache.m2.xlarge</code>,
+        /// <code>cache.m2.2xlarge</code>,
+        /// <code>cache.m2.4xlarge</code>
+        /// </p>
+        ///
+        /// <p>
+        /// <b>R3 node types:</b>
+        /// <code>cache.r3.large</code>,
+        /// <code>cache.r3.xlarge</code>,
+        /// <code>cache.r3.2xlarge</code>,  
+        /// <code>cache.r3.4xlarge</code>,
+        /// <code>cache.r3.8xlarge</code>
+        /// </p>
+        ///
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>
+        /// <b>Additional node type info</b>
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>All current generation instance types are created in Amazon VPC by default.</p>
+        /// </li>
+        /// <li>
+        /// <p>Redis append-only files (AOF) are not supported for T1 or T2 instances.</p>
+        /// </li>
+        /// <li>
+        /// <p>Redis Multi-AZ with automatic failover is not supported on T1 instances.</p>
+        /// </li>
+        /// <li>
+        /// <p>Redis configuration variables <code>appendonly</code> and
+        /// <code>appendfsync</code> are not supported on Redis version 2.8.22 and later.</p>
+        /// </li>
+        /// </ul>
         pub fn set_cache_node_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8523,6 +10564,10 @@ pub mod describe_reserved_cache_nodes_offerings_input {
             self.duration = Some(input.into());
             self
         }
+        /// <p>Duration filter value, specified in years or seconds.
+        /// Use this parameter to show only reservations for a given duration.</p>
+        /// <p>Valid Values: <code>1 | 3 | 31536000 | 94608000</code>
+        /// </p>
         pub fn set_duration(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.duration = input;
             self
@@ -8533,6 +10578,8 @@ pub mod describe_reserved_cache_nodes_offerings_input {
             self.product_description = Some(input.into());
             self
         }
+        /// <p>The product description filter value.
+        /// Use this parameter to show only the available offerings matching the specified product description.</p>
         pub fn set_product_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8548,6 +10595,10 @@ pub mod describe_reserved_cache_nodes_offerings_input {
             self.offering_type = Some(input.into());
             self
         }
+        /// <p>The offering type filter value.
+        /// Use this parameter to show only the available offerings matching the specified offering type.</p>
+        /// <p>Valid Values: <code>"Light Utilization"|"Medium Utilization"|"Heavy Utilization" |"All Upfront"|"Partial Upfront"| "No Upfront"</code>
+        /// </p>
         pub fn set_offering_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8558,12 +10609,19 @@ pub mod describe_reserved_cache_nodes_offerings_input {
         /// <p>The maximum number of records to include in the response. If more records exist than the
         /// specified <code>MaxRecords</code> value, a marker is included in the response so that
         /// the remaining results can be retrieved.</p>
+        ///
         /// <p>Default: 100</p>
         /// <p>Constraints: minimum 20; maximum 100.</p>
         pub fn max_records(mut self, input: i32) -> Self {
             self.max_records = Some(input);
             self
         }
+        /// <p>The maximum number of records to include in the response. If more records exist than the
+        /// specified <code>MaxRecords</code> value, a marker is included in the response so that
+        /// the remaining results can be retrieved.</p>
+        ///
+        /// <p>Default: 100</p>
+        /// <p>Constraints: minimum 20; maximum 100.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.max_records = input;
             self
@@ -8576,6 +10634,10 @@ pub mod describe_reserved_cache_nodes_offerings_input {
             self.marker = Some(input.into());
             self
         }
+        /// <p>An optional marker returned from a prior request.
+        /// Use this marker for pagination of results from this operation.
+        /// If this parameter is specified, the response includes only records beyond the marker,
+        /// up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -8585,7 +10647,7 @@ pub mod describe_reserved_cache_nodes_offerings_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeReservedCacheNodesOfferingsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeReservedCacheNodesOfferingsInput {
                 reserved_cache_nodes_offering_id: self.reserved_cache_nodes_offering_id,
@@ -8612,16 +10674,16 @@ impl DescribeReservedCacheNodesOfferingsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeReservedCacheNodesOfferings,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeReservedCacheNodesOfferingsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8629,7 +10691,7 @@ impl DescribeReservedCacheNodesOfferingsInput {
         fn update_http_builder(
             input: &crate::input::DescribeReservedCacheNodesOfferingsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8638,25 +10700,25 @@ impl DescribeReservedCacheNodesOfferingsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeReservedCacheNodesOfferingsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_reserved_cache_nodes_offerings(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_reserved_cache_nodes_offerings(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8679,15 +10741,15 @@ impl DescribeReservedCacheNodesOfferingsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeReservedCacheNodesOfferings::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeReservedCacheNodesOfferings",
             "elasticache",
         ));
@@ -8696,10 +10758,10 @@ impl DescribeReservedCacheNodesOfferingsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8731,6 +10793,7 @@ pub mod describe_service_updates_input {
             self.service_update_name = Some(input.into());
             self
         }
+        /// <p>The unique ID of the service update</p>
         pub fn set_service_update_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8738,6 +10801,11 @@ pub mod describe_service_updates_input {
             self.service_update_name = input;
             self
         }
+        /// Appends an item to `service_update_status`.
+        ///
+        /// To override the contents of this collection use [`set_service_update_status`](Self::set_service_update_status).
+        ///
+        /// <p>The status of the service update</p>
         pub fn service_update_status(
             mut self,
             input: impl Into<crate::model::ServiceUpdateStatus>,
@@ -8747,6 +10815,7 @@ pub mod describe_service_updates_input {
             self.service_update_status = Some(v);
             self
         }
+        /// <p>The status of the service update</p>
         pub fn set_service_update_status(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ServiceUpdateStatus>>,
@@ -8759,6 +10828,7 @@ pub mod describe_service_updates_input {
             self.max_records = Some(input);
             self
         }
+        /// <p>The maximum number of records to include in the response</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.max_records = input;
             self
@@ -8771,6 +10841,10 @@ pub mod describe_service_updates_input {
             self.marker = Some(input.into());
             self
         }
+        /// <p>An optional marker returned from a prior request.
+        /// Use this marker for pagination of results from this operation. If this
+        /// parameter is specified, the response includes only records beyond the marker, up to the
+        /// value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -8780,7 +10854,7 @@ pub mod describe_service_updates_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeServiceUpdatesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeServiceUpdatesInput {
                 service_update_name: self.service_update_name,
@@ -8802,16 +10876,16 @@ impl DescribeServiceUpdatesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeServiceUpdates,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeServiceUpdatesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8819,7 +10893,7 @@ impl DescribeServiceUpdatesInput {
         fn update_http_builder(
             input: &crate::input::DescribeServiceUpdatesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8828,27 +10902,29 @@ impl DescribeServiceUpdatesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeServiceUpdatesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_service_updates(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8871,15 +10947,15 @@ impl DescribeServiceUpdatesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeServiceUpdates::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeServiceUpdates",
             "elasticache",
         ));
@@ -8888,10 +10964,10 @@ impl DescribeServiceUpdatesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8926,6 +11002,8 @@ pub mod describe_snapshots_input {
             self.replication_group_id = Some(input.into());
             self
         }
+        /// <p>A user-supplied replication group identifier.
+        /// If this parameter is specified, only snapshots associated with that specific replication group are described.</p>
         pub fn set_replication_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8939,6 +11017,8 @@ pub mod describe_snapshots_input {
             self.cache_cluster_id = Some(input.into());
             self
         }
+        /// <p>A user-supplied cluster identifier.
+        /// If this parameter is specified, only snapshots associated with that specific cluster are described.</p>
         pub fn set_cache_cluster_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8952,6 +11032,8 @@ pub mod describe_snapshots_input {
             self.snapshot_name = Some(input.into());
             self
         }
+        /// <p>A user-supplied name of the snapshot.
+        /// If this parameter is specified, only this snapshot are described.</p>
         pub fn set_snapshot_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8966,6 +11048,9 @@ pub mod describe_snapshots_input {
             self.snapshot_source = Some(input.into());
             self
         }
+        /// <p>If set to <code>system</code>, the output shows snapshots that were automatically created by ElastiCache.
+        /// If set to <code>user</code> the output shows snapshots that were manually created.
+        /// If omitted, the output shows both automatically and manually created snapshots.</p>
         pub fn set_snapshot_source(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8981,6 +11066,10 @@ pub mod describe_snapshots_input {
             self.marker = Some(input.into());
             self
         }
+        /// <p>An optional marker returned from a prior request.
+        /// Use this marker for pagination of results from this operation.
+        /// If this parameter is specified, the response includes only records beyond the marker,
+        /// up to the value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -8994,6 +11083,11 @@ pub mod describe_snapshots_input {
             self.max_records = Some(input);
             self
         }
+        /// <p>The maximum number of records to include in the response. If more records exist than the
+        /// specified <code>MaxRecords</code> value, a marker is included in the response so that
+        /// the remaining results can be retrieved.</p>
+        /// <p>Default: 50</p>
+        /// <p>Constraints: minimum 20; maximum 50.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.max_records = input;
             self
@@ -9003,6 +11097,7 @@ pub mod describe_snapshots_input {
             self.show_node_group_config = Some(input);
             self
         }
+        /// <p>A Boolean value which if true, the node group (shard) configuration is included in the snapshot description.</p>
         pub fn set_show_node_group_config(mut self, input: std::option::Option<bool>) -> Self {
             self.show_node_group_config = input;
             self
@@ -9012,7 +11107,7 @@ pub mod describe_snapshots_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeSnapshotsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeSnapshotsInput {
                 replication_group_id: self.replication_group_id,
@@ -9037,16 +11132,16 @@ impl DescribeSnapshotsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeSnapshots,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeSnapshotsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -9054,7 +11149,7 @@ impl DescribeSnapshotsInput {
         fn update_http_builder(
             input: &crate::input::DescribeSnapshotsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9063,27 +11158,27 @@ impl DescribeSnapshotsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeSnapshotsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_snapshots(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9106,15 +11201,15 @@ impl DescribeSnapshotsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeSnapshots::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeSnapshots",
             "elasticache",
         ));
@@ -9123,10 +11218,10 @@ impl DescribeSnapshotsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9165,6 +11260,7 @@ pub mod describe_update_actions_input {
             self.service_update_name = Some(input.into());
             self
         }
+        /// <p>The unique ID of the service update</p>
         pub fn set_service_update_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9172,12 +11268,18 @@ pub mod describe_update_actions_input {
             self.service_update_name = input;
             self
         }
+        /// Appends an item to `replication_group_ids`.
+        ///
+        /// To override the contents of this collection use [`set_replication_group_ids`](Self::set_replication_group_ids).
+        ///
+        /// <p>The replication group IDs</p>
         pub fn replication_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.replication_group_ids.unwrap_or_default();
             v.push(input.into());
             self.replication_group_ids = Some(v);
             self
         }
+        /// <p>The replication group IDs</p>
         pub fn set_replication_group_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9185,12 +11287,18 @@ pub mod describe_update_actions_input {
             self.replication_group_ids = input;
             self
         }
+        /// Appends an item to `cache_cluster_ids`.
+        ///
+        /// To override the contents of this collection use [`set_cache_cluster_ids`](Self::set_cache_cluster_ids).
+        ///
+        /// <p>The cache cluster IDs</p>
         pub fn cache_cluster_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.cache_cluster_ids.unwrap_or_default();
             v.push(input.into());
             self.cache_cluster_ids = Some(v);
             self
         }
+        /// <p>The cache cluster IDs</p>
         pub fn set_cache_cluster_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9203,10 +11311,16 @@ pub mod describe_update_actions_input {
             self.engine = Some(input.into());
             self
         }
+        /// <p>The Elasticache engine to which the update applies. Either Redis or Memcached </p>
         pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.engine = input;
             self
         }
+        /// Appends an item to `service_update_status`.
+        ///
+        /// To override the contents of this collection use [`set_service_update_status`](Self::set_service_update_status).
+        ///
+        /// <p>The status of the service update</p>
         pub fn service_update_status(
             mut self,
             input: impl Into<crate::model::ServiceUpdateStatus>,
@@ -9216,6 +11330,7 @@ pub mod describe_update_actions_input {
             self.service_update_status = Some(v);
             self
         }
+        /// <p>The status of the service update</p>
         pub fn set_service_update_status(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ServiceUpdateStatus>>,
@@ -9228,6 +11343,7 @@ pub mod describe_update_actions_input {
             self.service_update_time_range = Some(input);
             self
         }
+        /// <p>The range of time specified to search for service updates that are in available status</p>
         pub fn set_service_update_time_range(
             mut self,
             input: std::option::Option<crate::model::TimeRangeFilter>,
@@ -9235,6 +11351,11 @@ pub mod describe_update_actions_input {
             self.service_update_time_range = input;
             self
         }
+        /// Appends an item to `update_action_status`.
+        ///
+        /// To override the contents of this collection use [`set_update_action_status`](Self::set_update_action_status).
+        ///
+        /// <p>The status of the update action.</p>
         pub fn update_action_status(
             mut self,
             input: impl Into<crate::model::UpdateActionStatus>,
@@ -9244,6 +11365,7 @@ pub mod describe_update_actions_input {
             self.update_action_status = Some(v);
             self
         }
+        /// <p>The status of the update action.</p>
         pub fn set_update_action_status(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UpdateActionStatus>>,
@@ -9256,6 +11378,7 @@ pub mod describe_update_actions_input {
             self.show_node_level_update_status = Some(input);
             self
         }
+        /// <p>Dictates whether to include node level update status in the response </p>
         pub fn set_show_node_level_update_status(
             mut self,
             input: std::option::Option<bool>,
@@ -9268,6 +11391,7 @@ pub mod describe_update_actions_input {
             self.max_records = Some(input);
             self
         }
+        /// <p>The maximum number of records to include in the response</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.max_records = input;
             self
@@ -9280,6 +11404,10 @@ pub mod describe_update_actions_input {
             self.marker = Some(input.into());
             self
         }
+        /// <p>An optional marker returned from a prior request.
+        /// Use this marker for pagination of results from this operation. If this
+        /// parameter is specified, the response includes only records beyond the marker, up to the
+        /// value specified by <code>MaxRecords</code>.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -9289,7 +11417,7 @@ pub mod describe_update_actions_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeUpdateActionsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeUpdateActionsInput {
                 service_update_name: self.service_update_name,
@@ -9317,16 +11445,16 @@ impl DescribeUpdateActionsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeUpdateActions,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeUpdateActionsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -9334,7 +11462,7 @@ impl DescribeUpdateActionsInput {
         fn update_http_builder(
             input: &crate::input::DescribeUpdateActionsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9343,27 +11471,29 @@ impl DescribeUpdateActionsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeUpdateActionsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_update_actions(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9386,15 +11516,15 @@ impl DescribeUpdateActionsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeUpdateActions::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeUpdateActions",
             "elasticache",
         ));
@@ -9403,10 +11533,10 @@ impl DescribeUpdateActionsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9436,6 +11566,7 @@ pub mod describe_user_groups_input {
             self.user_group_id = Some(input.into());
             self
         }
+        /// <p>The ID of the user group.</p>
         pub fn set_user_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9448,6 +11579,7 @@ pub mod describe_user_groups_input {
             self.max_records = Some(input);
             self
         }
+        /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxRecords value, a marker is included in the response so that the remaining results can be retrieved. </p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.max_records = input;
             self
@@ -9457,6 +11589,7 @@ pub mod describe_user_groups_input {
             self.marker = Some(input.into());
             self
         }
+        /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords. ></p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -9466,7 +11599,7 @@ pub mod describe_user_groups_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeUserGroupsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeUserGroupsInput {
                 user_group_id: self.user_group_id,
@@ -9487,16 +11620,16 @@ impl DescribeUserGroupsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeUserGroups,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeUserGroupsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -9504,7 +11637,7 @@ impl DescribeUserGroupsInput {
         fn update_http_builder(
             input: &crate::input::DescribeUserGroupsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9513,25 +11646,27 @@ impl DescribeUserGroupsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeUserGroupsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_user_groups(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9554,15 +11689,15 @@ impl DescribeUserGroupsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeUserGroups::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeUserGroups",
             "elasticache",
         ));
@@ -9571,10 +11706,10 @@ impl DescribeUserGroupsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9606,6 +11741,7 @@ pub mod describe_users_input {
             self.engine = Some(input.into());
             self
         }
+        /// <p>The Redis engine. </p>
         pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.engine = input;
             self
@@ -9615,16 +11751,23 @@ pub mod describe_users_input {
             self.user_id = Some(input.into());
             self
         }
+        /// <p>The ID of the user.</p>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_id = input;
             self
         }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>Filter to determine the list of User IDs to return.</p>
         pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input.into());
             self.filters = Some(v);
             self
         }
+        /// <p>Filter to determine the list of User IDs to return.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -9637,6 +11780,7 @@ pub mod describe_users_input {
             self.max_records = Some(input);
             self
         }
+        /// <p>The maximum number of records to include in the response. If more records exist than the specified MaxRecords value, a marker is included in the response so that the remaining results can be retrieved. </p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.max_records = input;
             self
@@ -9646,6 +11790,7 @@ pub mod describe_users_input {
             self.marker = Some(input.into());
             self
         }
+        /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords. ></p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -9653,8 +11798,10 @@ pub mod describe_users_input {
         /// Consumes the builder and constructs a [`DescribeUsersInput`](crate::input::DescribeUsersInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DescribeUsersInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeUsersInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeUsersInput {
                 engine: self.engine,
                 user_id: self.user_id,
@@ -9676,16 +11823,16 @@ impl DescribeUsersInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeUsers,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeUsersInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -9693,7 +11840,7 @@ impl DescribeUsersInput {
         fn update_http_builder(
             input: &crate::input::DescribeUsersInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9702,24 +11849,26 @@ impl DescribeUsersInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeUsersInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_describe_users(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9742,25 +11891,27 @@ impl DescribeUsersInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DescribeUsers::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DescribeUsers",
-                    "elasticache",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeUsers::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeUsers",
+            "elasticache",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9793,6 +11944,7 @@ pub mod disassociate_global_replication_group_input {
             self.global_replication_group_id = Some(input.into());
             self
         }
+        /// <p>The name of the Global datastore</p>
         pub fn set_global_replication_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9805,6 +11957,7 @@ pub mod disassociate_global_replication_group_input {
             self.replication_group_id = Some(input.into());
             self
         }
+        /// <p>The name of the secondary cluster you wish to remove from the Global datastore</p>
         pub fn set_replication_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9817,6 +11970,7 @@ pub mod disassociate_global_replication_group_input {
             self.replication_group_region = Some(input.into());
             self
         }
+        /// <p>The Amazon region of secondary cluster you wish to remove from the Global datastore</p>
         pub fn set_replication_group_region(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9829,7 +11983,7 @@ pub mod disassociate_global_replication_group_input {
             self,
         ) -> std::result::Result<
             crate::input::DisassociateGlobalReplicationGroupInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DisassociateGlobalReplicationGroupInput {
                 global_replication_group_id: self.global_replication_group_id,
@@ -9851,16 +12005,16 @@ impl DisassociateGlobalReplicationGroupInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DisassociateGlobalReplicationGroup,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DisassociateGlobalReplicationGroupInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -9868,7 +12022,7 @@ impl DisassociateGlobalReplicationGroupInput {
         fn update_http_builder(
             input: &crate::input::DisassociateGlobalReplicationGroupInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9877,25 +12031,25 @@ impl DisassociateGlobalReplicationGroupInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DisassociateGlobalReplicationGroupInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_disassociate_global_replication_group(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_disassociate_global_replication_group(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9918,15 +12072,15 @@ impl DisassociateGlobalReplicationGroupInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DisassociateGlobalReplicationGroup::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DisassociateGlobalReplicationGroup",
             "elasticache",
         ));
@@ -9935,10 +12089,10 @@ impl DisassociateGlobalReplicationGroupInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9971,6 +12125,7 @@ pub mod failover_global_replication_group_input {
             self.global_replication_group_id = Some(input.into());
             self
         }
+        /// <p>The name of the Global datastore</p>
         pub fn set_global_replication_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9983,6 +12138,7 @@ pub mod failover_global_replication_group_input {
             self.primary_region = Some(input.into());
             self
         }
+        /// <p>The Amazon region of the primary cluster of the Global datastore</p>
         pub fn set_primary_region(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9998,6 +12154,7 @@ pub mod failover_global_replication_group_input {
             self.primary_replication_group_id = Some(input.into());
             self
         }
+        /// <p>The name of the primary replication group</p>
         pub fn set_primary_replication_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10010,7 +12167,7 @@ pub mod failover_global_replication_group_input {
             self,
         ) -> std::result::Result<
             crate::input::FailoverGlobalReplicationGroupInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::FailoverGlobalReplicationGroupInput {
                 global_replication_group_id: self.global_replication_group_id,
@@ -10032,16 +12189,16 @@ impl FailoverGlobalReplicationGroupInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::FailoverGlobalReplicationGroup,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::FailoverGlobalReplicationGroupInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -10049,7 +12206,7 @@ impl FailoverGlobalReplicationGroupInput {
         fn update_http_builder(
             input: &crate::input::FailoverGlobalReplicationGroupInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10058,25 +12215,25 @@ impl FailoverGlobalReplicationGroupInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::FailoverGlobalReplicationGroupInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_failover_global_replication_group(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_failover_global_replication_group(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -10099,15 +12256,15 @@ impl FailoverGlobalReplicationGroupInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::FailoverGlobalReplicationGroup::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "FailoverGlobalReplicationGroup",
             "elasticache",
         ));
@@ -10116,10 +12273,10 @@ impl FailoverGlobalReplicationGroupInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10154,6 +12311,7 @@ pub mod increase_node_groups_in_global_replication_group_input {
             self.global_replication_group_id = Some(input.into());
             self
         }
+        /// <p>The name of the Global datastore</p>
         pub fn set_global_replication_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10166,10 +12324,16 @@ pub mod increase_node_groups_in_global_replication_group_input {
             self.node_group_count = Some(input);
             self
         }
+        /// <p>The number of node groups you wish to add</p>
         pub fn set_node_group_count(mut self, input: std::option::Option<i32>) -> Self {
             self.node_group_count = input;
             self
         }
+        /// Appends an item to `regional_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_regional_configurations`](Self::set_regional_configurations).
+        ///
+        /// <p>Describes the replication group IDs, the Amazon regions where they are stored and the shard configuration for each that comprise the Global datastore</p>
         pub fn regional_configurations(
             mut self,
             input: impl Into<crate::model::RegionalConfiguration>,
@@ -10179,6 +12343,7 @@ pub mod increase_node_groups_in_global_replication_group_input {
             self.regional_configurations = Some(v);
             self
         }
+        /// <p>Describes the replication group IDs, the Amazon regions where they are stored and the shard configuration for each that comprise the Global datastore</p>
         pub fn set_regional_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RegionalConfiguration>>,
@@ -10191,6 +12356,7 @@ pub mod increase_node_groups_in_global_replication_group_input {
             self.apply_immediately = Some(input);
             self
         }
+        /// <p>Indicates that the process begins immediately. At present, the only permitted value for this parameter is true.</p>
         pub fn set_apply_immediately(mut self, input: std::option::Option<bool>) -> Self {
             self.apply_immediately = input;
             self
@@ -10200,7 +12366,7 @@ pub mod increase_node_groups_in_global_replication_group_input {
             self,
         ) -> std::result::Result<
             crate::input::IncreaseNodeGroupsInGlobalReplicationGroupInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(
                 crate::input::IncreaseNodeGroupsInGlobalReplicationGroupInput {
@@ -10226,16 +12392,16 @@ impl IncreaseNodeGroupsInGlobalReplicationGroupInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::IncreaseNodeGroupsInGlobalReplicationGroup,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::IncreaseNodeGroupsInGlobalReplicationGroupInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -10243,7 +12409,7 @@ impl IncreaseNodeGroupsInGlobalReplicationGroupInput {
         fn update_http_builder(
             input: &crate::input::IncreaseNodeGroupsInGlobalReplicationGroupInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10252,25 +12418,25 @@ impl IncreaseNodeGroupsInGlobalReplicationGroupInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::IncreaseNodeGroupsInGlobalReplicationGroupInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_increase_node_groups_in_global_replication_group(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_increase_node_groups_in_global_replication_group(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -10293,15 +12459,15 @@ impl IncreaseNodeGroupsInGlobalReplicationGroupInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::IncreaseNodeGroupsInGlobalReplicationGroup::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "IncreaseNodeGroupsInGlobalReplicationGroup",
             "elasticache",
         ));
@@ -10310,10 +12476,10 @@ impl IncreaseNodeGroupsInGlobalReplicationGroupInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10346,6 +12512,7 @@ pub mod increase_replica_count_input {
             self.replication_group_id = Some(input.into());
             self
         }
+        /// <p>The id of the replication group to which you want to add replica nodes.</p>
         pub fn set_replication_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10361,10 +12528,21 @@ pub mod increase_replica_count_input {
             self.new_replica_count = Some(input);
             self
         }
+        /// <p>The number of read replica nodes you want at the completion of this operation.
+        /// For Redis (cluster mode disabled) replication groups, this is the number of replica nodes in the
+        /// replication group. For Redis (cluster mode enabled) replication groups, this is the number of
+        /// replica nodes in each of the replication group's node groups.</p>
         pub fn set_new_replica_count(mut self, input: std::option::Option<i32>) -> Self {
             self.new_replica_count = input;
             self
         }
+        /// Appends an item to `replica_configuration`.
+        ///
+        /// To override the contents of this collection use [`set_replica_configuration`](Self::set_replica_configuration).
+        ///
+        /// <p>A list of <code>ConfigureShard</code> objects that can be used to configure each shard
+        /// in a Redis (cluster mode enabled) replication group. The <code>ConfigureShard</code> has three members:
+        /// <code>NewReplicaCount</code>, <code>NodeGroupId</code>, and <code>PreferredAvailabilityZones</code>.</p>
         pub fn replica_configuration(
             mut self,
             input: impl Into<crate::model::ConfigureShard>,
@@ -10374,6 +12552,9 @@ pub mod increase_replica_count_input {
             self.replica_configuration = Some(v);
             self
         }
+        /// <p>A list of <code>ConfigureShard</code> objects that can be used to configure each shard
+        /// in a Redis (cluster mode enabled) replication group. The <code>ConfigureShard</code> has three members:
+        /// <code>NewReplicaCount</code>, <code>NodeGroupId</code>, and <code>PreferredAvailabilityZones</code>.</p>
         pub fn set_replica_configuration(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ConfigureShard>>,
@@ -10382,11 +12563,15 @@ pub mod increase_replica_count_input {
             self
         }
         /// <p>If <code>True</code>, the number of replica nodes is increased immediately.
+        ///
         /// <code>ApplyImmediately=False</code> is not currently supported.</p>
         pub fn apply_immediately(mut self, input: bool) -> Self {
             self.apply_immediately = Some(input);
             self
         }
+        /// <p>If <code>True</code>, the number of replica nodes is increased immediately.
+        ///
+        /// <code>ApplyImmediately=False</code> is not currently supported.</p>
         pub fn set_apply_immediately(mut self, input: std::option::Option<bool>) -> Self {
             self.apply_immediately = input;
             self
@@ -10396,7 +12581,7 @@ pub mod increase_replica_count_input {
             self,
         ) -> std::result::Result<
             crate::input::IncreaseReplicaCountInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::IncreaseReplicaCountInput {
                 replication_group_id: self.replication_group_id,
@@ -10418,16 +12603,16 @@ impl IncreaseReplicaCountInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::IncreaseReplicaCount,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::IncreaseReplicaCountInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -10435,7 +12620,7 @@ impl IncreaseReplicaCountInput {
         fn update_http_builder(
             input: &crate::input::IncreaseReplicaCountInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10444,27 +12629,27 @@ impl IncreaseReplicaCountInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::IncreaseReplicaCountInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_increase_replica_count(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -10487,15 +12672,15 @@ impl IncreaseReplicaCountInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::IncreaseReplicaCount::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "IncreaseReplicaCount",
             "elasticache",
         ));
@@ -10504,10 +12689,10 @@ impl IncreaseReplicaCountInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10533,6 +12718,7 @@ pub mod list_allowed_node_type_modifications_input {
     impl Builder {
         /// <p>The name of the cluster you want to scale up to a larger node instanced type.
         /// ElastiCache uses the cluster id to identify the current node type of this cluster and from that to create a list of node types you can scale up to.</p>
+        ///
         /// <important>
         /// <p>You must provide a value for either the <code>CacheClusterId</code> or the
         /// <code>ReplicationGroupId</code>.</p>
@@ -10541,6 +12727,13 @@ pub mod list_allowed_node_type_modifications_input {
             self.cache_cluster_id = Some(input.into());
             self
         }
+        /// <p>The name of the cluster you want to scale up to a larger node instanced type.
+        /// ElastiCache uses the cluster id to identify the current node type of this cluster and from that to create a list of node types you can scale up to.</p>
+        ///
+        /// <important>
+        /// <p>You must provide a value for either the <code>CacheClusterId</code> or the
+        /// <code>ReplicationGroupId</code>.</p>
+        /// </important>
         pub fn set_cache_cluster_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10551,6 +12744,7 @@ pub mod list_allowed_node_type_modifications_input {
         /// <p>The name of the replication group want to scale up to a larger node type.
         /// ElastiCache uses the replication group id to identify the current node type being used by
         /// this replication group, and from that to create a list of node types you can scale up to.</p>
+        ///
         /// <important>
         /// <p>You must provide a value for either the <code>CacheClusterId</code> or the
         /// <code>ReplicationGroupId</code>.</p>
@@ -10559,6 +12753,14 @@ pub mod list_allowed_node_type_modifications_input {
             self.replication_group_id = Some(input.into());
             self
         }
+        /// <p>The name of the replication group want to scale up to a larger node type.
+        /// ElastiCache uses the replication group id to identify the current node type being used by
+        /// this replication group, and from that to create a list of node types you can scale up to.</p>
+        ///
+        /// <important>
+        /// <p>You must provide a value for either the <code>CacheClusterId</code> or the
+        /// <code>ReplicationGroupId</code>.</p>
+        /// </important>
         pub fn set_replication_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10571,7 +12773,7 @@ pub mod list_allowed_node_type_modifications_input {
             self,
         ) -> std::result::Result<
             crate::input::ListAllowedNodeTypeModificationsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListAllowedNodeTypeModificationsInput {
                 cache_cluster_id: self.cache_cluster_id,
@@ -10592,16 +12794,16 @@ impl ListAllowedNodeTypeModificationsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListAllowedNodeTypeModifications,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListAllowedNodeTypeModificationsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -10609,7 +12811,7 @@ impl ListAllowedNodeTypeModificationsInput {
         fn update_http_builder(
             input: &crate::input::ListAllowedNodeTypeModificationsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10618,25 +12820,25 @@ impl ListAllowedNodeTypeModificationsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListAllowedNodeTypeModificationsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_allowed_node_type_modifications(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_allowed_node_type_modifications(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -10659,15 +12861,15 @@ impl ListAllowedNodeTypeModificationsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListAllowedNodeTypeModifications::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListAllowedNodeTypeModifications",
             "elasticache",
         ));
@@ -10676,10 +12878,10 @@ impl ListAllowedNodeTypeModificationsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10710,6 +12912,10 @@ pub mod list_tags_for_resource_input {
             self.resource_name = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the resource for which you want the list of tags,
+        /// for example <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>
+        /// or <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.</p>
+        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
         pub fn set_resource_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10722,7 +12928,7 @@ pub mod list_tags_for_resource_input {
             self,
         ) -> std::result::Result<
             crate::input::ListTagsForResourceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListTagsForResourceInput {
                 resource_name: self.resource_name,
@@ -10741,16 +12947,16 @@ impl ListTagsForResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListTagsForResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -10758,7 +12964,7 @@ impl ListTagsForResourceInput {
         fn update_http_builder(
             input: &crate::input::ListTagsForResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10767,27 +12973,27 @@ impl ListTagsForResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListTagsForResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -10810,15 +13016,15 @@ impl ListTagsForResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListTagsForResource::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListTagsForResource",
             "elasticache",
         ));
@@ -10827,10 +13033,10 @@ impl ListTagsForResourceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10881,6 +13087,7 @@ pub mod modify_cache_cluster_input {
             self.cache_cluster_id = Some(input.into());
             self
         }
+        /// <p>The cluster identifier. This value is stored as a lowercase string.</p>
         pub fn set_cache_cluster_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10898,6 +13105,7 @@ pub mod modify_cache_cluster_input {
         /// use the <code>CacheNodeIdsToRemove</code> parameter to provide the IDs of the specific cache nodes to remove.</p>
         /// <p>For clusters running Redis, this value must be 1.
         /// For clusters running Memcached, this value must be between 1 and 40.</p>
+        ///
         /// <note>
         /// <p>Adding or removing Memcached cache nodes can be applied immediately or as a pending operation (see <code>ApplyImmediately</code>).</p>
         /// <p>A pending operation to modify the number of cache nodes in a cluster during its maintenance window,
@@ -10918,16 +13126,61 @@ pub mod modify_cache_cluster_input {
             self.num_cache_nodes = Some(input);
             self
         }
+        /// <p>The number of cache nodes that the cluster should have.
+        /// If the value for <code>NumCacheNodes</code> is greater than the sum of the number of current cache nodes and
+        /// the number of cache nodes pending creation (which may be zero), more nodes are added.
+        /// If the value is less than the number of existing cache nodes,  nodes are removed.
+        /// If the value is equal to the number of current cache nodes,
+        /// any pending add or remove requests are canceled.</p>
+        /// <p>If you are removing cache nodes, you must
+        /// use the <code>CacheNodeIdsToRemove</code> parameter to provide the IDs of the specific cache nodes to remove.</p>
+        /// <p>For clusters running Redis, this value must be 1.
+        /// For clusters running Memcached, this value must be between 1 and 40.</p>
+        ///
+        /// <note>
+        /// <p>Adding or removing Memcached cache nodes can be applied immediately or as a pending operation (see <code>ApplyImmediately</code>).</p>
+        /// <p>A pending operation to modify the number of cache nodes in a cluster during its maintenance window,
+        /// whether by adding or removing nodes in accordance with the scale out architecture, is not queued.
+        /// The customer's latest request to add or remove nodes to the cluster overrides any previous pending operations to modify the
+        /// number of cache nodes in the cluster.
+        /// For example, a request to remove 2 nodes would override a previous pending operation to remove 3 nodes.
+        /// Similarly, a request to add 2 nodes would override a previous pending operation to remove 3 nodes and vice versa.
+        /// As Memcached cache nodes may now be provisioned in different Availability Zones with flexible cache node placement,
+        /// a request to add nodes does not automatically override a previous pending operation to add nodes.
+        /// The customer can modify the previous pending operation to add more nodes or explicitly cancel the pending request and
+        /// retry the new request.
+        /// To cancel pending operations to modify the number of cache nodes in a cluster,
+        /// use the <code>ModifyCacheCluster</code> request and
+        /// set <code>NumCacheNodes</code> equal to the number of cache nodes currently in the cluster.</p>
+        /// </note>
         pub fn set_num_cache_nodes(mut self, input: std::option::Option<i32>) -> Self {
             self.num_cache_nodes = input;
             self
         }
+        /// Appends an item to `cache_node_ids_to_remove`.
+        ///
+        /// To override the contents of this collection use [`set_cache_node_ids_to_remove`](Self::set_cache_node_ids_to_remove).
+        ///
+        /// <p>A list of cache node IDs to be removed. A node ID is a numeric identifier (0001, 0002,
+        /// etc.). This parameter is only valid when <code>NumCacheNodes</code> is less than the existing number
+        /// of cache nodes. The number of cache node IDs supplied in this parameter must match the
+        /// difference between the existing number of cache nodes in the cluster or pending cache nodes, whichever is
+        /// greater, and the value of <code>NumCacheNodes</code> in the request.</p>
+        /// <p>For example: If you have 3 active cache nodes, 7 pending cache nodes, and the number of cache nodes in this
+        /// <code>ModifyCacheCluster</code> call is 5, you must list 2 (7 - 5) cache node IDs to remove.</p>
         pub fn cache_node_ids_to_remove(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.cache_node_ids_to_remove.unwrap_or_default();
             v.push(input.into());
             self.cache_node_ids_to_remove = Some(v);
             self
         }
+        /// <p>A list of cache node IDs to be removed. A node ID is a numeric identifier (0001, 0002,
+        /// etc.). This parameter is only valid when <code>NumCacheNodes</code> is less than the existing number
+        /// of cache nodes. The number of cache node IDs supplied in this parameter must match the
+        /// difference between the existing number of cache nodes in the cluster or pending cache nodes, whichever is
+        /// greater, and the value of <code>NumCacheNodes</code> in the request.</p>
+        /// <p>For example: If you have 3 active cache nodes, 7 pending cache nodes, and the number of cache nodes in this
+        /// <code>ModifyCacheCluster</code> call is 5, you must list 2 (7 - 5) cache node IDs to remove.</p>
         pub fn set_cache_node_ids_to_remove(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -10949,16 +13202,242 @@ pub mod modify_cache_cluster_input {
             self.az_mode = Some(input);
             self
         }
+        /// <p>Specifies whether the new nodes in this Memcached cluster are all created in a
+        /// single Availability Zone or created across multiple Availability Zones.</p>
+        /// <p>Valid values: <code>single-az</code> | <code>cross-az</code>.</p>
+        /// <p>This option is only supported for Memcached clusters.</p>
+        /// <note>
+        /// <p>You cannot specify <code>single-az</code> if the Memcached cluster already has cache nodes in different Availability Zones.            
+        /// If <code>cross-az</code> is specified, existing Memcached nodes remain in their current Availability Zone.</p>
+        /// <p>Only newly created nodes are located in different Availability Zones.
+        /// </p>
+        /// </note>
         pub fn set_az_mode(mut self, input: std::option::Option<crate::model::AzMode>) -> Self {
             self.az_mode = input;
             self
         }
+        /// Appends an item to `new_availability_zones`.
+        ///
+        /// To override the contents of this collection use [`set_new_availability_zones`](Self::set_new_availability_zones).
+        ///
+        /// <note>
+        /// <p>This option is only supported on Memcached clusters.</p>
+        /// </note>
+        /// <p>The list of Availability Zones where the new Memcached cache nodes are created.</p>  
+        /// <p>This parameter is only valid when <code>NumCacheNodes</code> in the request is greater
+        /// than the sum of the number of active cache nodes and the number of cache nodes pending creation (which may be zero).
+        /// The number of Availability Zones supplied in this list must match the cache nodes being added in this request.</p>
+        ///
+        /// <p>Scenarios:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>Scenario 1:</b> You have 3 active nodes and wish to add 2 nodes.
+        /// Specify <code>NumCacheNodes=5</code> (3 + 2) and optionally specify two Availability Zones
+        /// for the two new nodes.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>Scenario 2:</b> You have 3 active nodes and 2 nodes pending creation
+        /// (from the scenario 1 call) and want to add 1 more node.
+        /// Specify <code>NumCacheNodes=6</code> ((3 + 2) + 1) and
+        /// optionally specify an Availability Zone for the new node.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>Scenario 3:</b> You want to cancel all pending operations.
+        /// Specify <code>NumCacheNodes=3</code> to cancel all pending operations.</p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>The Availability Zone placement of nodes pending creation cannot be modified. If you wish to cancel any nodes pending creation,
+        /// add 0 nodes by setting <code>NumCacheNodes</code> to the number of current nodes.</p>
+        /// <p>If <code>cross-az</code> is specified, existing Memcached nodes remain in their current Availability Zone.
+        /// Only newly created nodes can be located in different Availability Zones.
+        /// For guidance on how to move existing Memcached nodes to different Availability Zones, see the
+        /// <b>Availability Zone Considerations</b> section of <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNodes.SupportedTypes.html">Cache Node Considerations for Memcached</a>.</p>
+        ///
+        /// <p>
+        /// <b>Impact of new add/remove requests upon pending requests</b>
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>Scenario-1</p>
+        /// <ul>
+        /// <li>
+        /// <p>Pending Action: Delete</p>
+        /// </li>
+        /// <li>
+        /// <p>New Request: Delete</p>
+        /// </li>
+        /// <li>
+        /// <p>Result: The new delete, pending or immediate, replaces the pending delete.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>Scenario-2</p>
+        /// <ul>
+        /// <li>
+        /// <p>Pending Action: Delete</p>
+        /// </li>
+        /// <li>
+        /// <p>New Request: Create</p>
+        /// </li>
+        /// <li>
+        /// <p>Result: The new create, pending or immediate, replaces the pending delete.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>Scenario-3</p>
+        /// <ul>
+        /// <li>
+        /// <p>Pending Action: Create</p>
+        /// </li>
+        /// <li>
+        /// <p>New Request: Delete</p>
+        /// </li>
+        /// <li>
+        /// <p>Result: The new delete, pending or immediate, replaces the pending create.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>Scenario-4</p>
+        /// <ul>
+        /// <li>
+        /// <p>Pending Action: Create</p>
+        /// </li>
+        /// <li>
+        /// <p>New Request: Create</p>
+        /// </li>
+        /// <li>
+        /// <p>Result: The new create is added to the pending create.</p>
+        /// <important>
+        /// <p>
+        /// <b>Important:</b>
+        /// If the new create request is <b>Apply Immediately - Yes</b>,
+        /// all creates are performed immediately.
+        /// If the new create request is <b>Apply Immediately - No</b>,
+        /// all creates are pending.</p>
+        /// </important>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// </ul>
         pub fn new_availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.new_availability_zones.unwrap_or_default();
             v.push(input.into());
             self.new_availability_zones = Some(v);
             self
         }
+        /// <note>
+        /// <p>This option is only supported on Memcached clusters.</p>
+        /// </note>
+        /// <p>The list of Availability Zones where the new Memcached cache nodes are created.</p>  
+        /// <p>This parameter is only valid when <code>NumCacheNodes</code> in the request is greater
+        /// than the sum of the number of active cache nodes and the number of cache nodes pending creation (which may be zero).
+        /// The number of Availability Zones supplied in this list must match the cache nodes being added in this request.</p>
+        ///
+        /// <p>Scenarios:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>Scenario 1:</b> You have 3 active nodes and wish to add 2 nodes.
+        /// Specify <code>NumCacheNodes=5</code> (3 + 2) and optionally specify two Availability Zones
+        /// for the two new nodes.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>Scenario 2:</b> You have 3 active nodes and 2 nodes pending creation
+        /// (from the scenario 1 call) and want to add 1 more node.
+        /// Specify <code>NumCacheNodes=6</code> ((3 + 2) + 1) and
+        /// optionally specify an Availability Zone for the new node.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>Scenario 3:</b> You want to cancel all pending operations.
+        /// Specify <code>NumCacheNodes=3</code> to cancel all pending operations.</p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>The Availability Zone placement of nodes pending creation cannot be modified. If you wish to cancel any nodes pending creation,
+        /// add 0 nodes by setting <code>NumCacheNodes</code> to the number of current nodes.</p>
+        /// <p>If <code>cross-az</code> is specified, existing Memcached nodes remain in their current Availability Zone.
+        /// Only newly created nodes can be located in different Availability Zones.
+        /// For guidance on how to move existing Memcached nodes to different Availability Zones, see the
+        /// <b>Availability Zone Considerations</b> section of <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNodes.SupportedTypes.html">Cache Node Considerations for Memcached</a>.</p>
+        ///
+        /// <p>
+        /// <b>Impact of new add/remove requests upon pending requests</b>
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>Scenario-1</p>
+        /// <ul>
+        /// <li>
+        /// <p>Pending Action: Delete</p>
+        /// </li>
+        /// <li>
+        /// <p>New Request: Delete</p>
+        /// </li>
+        /// <li>
+        /// <p>Result: The new delete, pending or immediate, replaces the pending delete.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>Scenario-2</p>
+        /// <ul>
+        /// <li>
+        /// <p>Pending Action: Delete</p>
+        /// </li>
+        /// <li>
+        /// <p>New Request: Create</p>
+        /// </li>
+        /// <li>
+        /// <p>Result: The new create, pending or immediate, replaces the pending delete.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>Scenario-3</p>
+        /// <ul>
+        /// <li>
+        /// <p>Pending Action: Create</p>
+        /// </li>
+        /// <li>
+        /// <p>New Request: Delete</p>
+        /// </li>
+        /// <li>
+        /// <p>Result: The new delete, pending or immediate, replaces the pending create.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>Scenario-4</p>
+        /// <ul>
+        /// <li>
+        /// <p>Pending Action: Create</p>
+        /// </li>
+        /// <li>
+        /// <p>New Request: Create</p>
+        /// </li>
+        /// <li>
+        /// <p>Result: The new create is added to the pending create.</p>
+        /// <important>
+        /// <p>
+        /// <b>Important:</b>
+        /// If the new create request is <b>Apply Immediately - Yes</b>,
+        /// all creates are performed immediately.
+        /// If the new create request is <b>Apply Immediately - No</b>,
+        /// all creates are pending.</p>
+        /// </important>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// </ul>
         pub fn set_new_availability_zones(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -10966,12 +13445,24 @@ pub mod modify_cache_cluster_input {
             self.new_availability_zones = input;
             self
         }
+        /// Appends an item to `cache_security_group_names`.
+        ///
+        /// To override the contents of this collection use [`set_cache_security_group_names`](Self::set_cache_security_group_names).
+        ///
+        /// <p>A list of cache security group names to authorize on this cluster.
+        /// This change is asynchronously applied as soon as possible.</p>
+        /// <p>You can use this parameter only with clusters that are created outside of an Amazon Virtual Private Cloud (Amazon VPC).</p>
+        /// <p>Constraints: Must contain no more than 255 alphanumeric characters. Must not be "Default".</p>
         pub fn cache_security_group_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.cache_security_group_names.unwrap_or_default();
             v.push(input.into());
             self.cache_security_group_names = Some(v);
             self
         }
+        /// <p>A list of cache security group names to authorize on this cluster.
+        /// This change is asynchronously applied as soon as possible.</p>
+        /// <p>You can use this parameter only with clusters that are created outside of an Amazon Virtual Private Cloud (Amazon VPC).</p>
+        /// <p>Constraints: Must contain no more than 255 alphanumeric characters. Must not be "Default".</p>
         pub fn set_cache_security_group_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -10979,12 +13470,20 @@ pub mod modify_cache_cluster_input {
             self.cache_security_group_names = input;
             self
         }
+        /// Appends an item to `security_group_ids`.
+        ///
+        /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
+        ///
+        /// <p>Specifies the VPC Security Groups associated with the cluster.</p>
+        /// <p>This parameter can be used only with clusters that are created in an Amazon Virtual Private Cloud (Amazon VPC).</p>
         pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_ids.unwrap_or_default();
             v.push(input.into());
             self.security_group_ids = Some(v);
             self
         }
+        /// <p>Specifies the VPC Security Groups associated with the cluster.</p>
+        /// <p>This parameter can be used only with clusters that are created in an Amazon Virtual Private Cloud (Amazon VPC).</p>
         pub fn set_security_group_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -11043,6 +13542,50 @@ pub mod modify_cache_cluster_input {
             self.preferred_maintenance_window = Some(input.into());
             self
         }
+        /// <p>Specifies the weekly time range during which maintenance
+        /// on the cluster is performed. It is specified as a range in
+        /// the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum
+        /// maintenance window is a 60 minute period.</p>
+        /// <p>Valid values for <code>ddd</code> are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>sun</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>mon</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>tue</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>wed</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>thu</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>fri</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>sat</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>Example: <code>sun:23:00-mon:01:30</code>
+        /// </p>
         pub fn set_preferred_maintenance_window(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11058,6 +13601,10 @@ pub mod modify_cache_cluster_input {
             self.notification_topic_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications are sent.</p>
+        /// <note>
+        /// <p>The Amazon SNS topic owner must be same as the cluster owner.</p>
+        /// </note>
         pub fn set_notification_topic_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11072,6 +13619,9 @@ pub mod modify_cache_cluster_input {
             self.cache_parameter_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the cache parameter group to apply to this cluster. This change is
+        /// asynchronously applied as soon as possible for parameters when the
+        /// <code>ApplyImmediately</code> parameter is specified as <code>true</code> for this request.</p>
         pub fn set_cache_parameter_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11087,6 +13637,10 @@ pub mod modify_cache_cluster_input {
             self.notification_topic_status = Some(input.into());
             self
         }
+        /// <p>The status of the Amazon SNS notification topic. Notifications are sent only if the
+        /// status is <code>active</code>.</p>
+        /// <p>Valid values: <code>active</code> | <code>inactive</code>
+        /// </p>
         pub fn set_notification_topic_status(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11111,11 +13665,25 @@ pub mod modify_cache_cluster_input {
             self.apply_immediately = Some(input);
             self
         }
+        /// <p>If <code>true</code>, this parameter causes the modifications in this request and any
+        /// pending modifications to be applied, asynchronously and as soon as possible, regardless
+        /// of the <code>PreferredMaintenanceWindow</code> setting for the cluster.</p>
+        /// <p>If <code>false</code>, changes to the cluster are applied on the next
+        /// maintenance reboot, or the next failure reboot, whichever occurs first.</p>
+        /// <important>
+        /// <p>If you perform a <code>ModifyCacheCluster</code> before a pending modification is applied,
+        /// the pending modification is replaced by the newer modification.</p>
+        /// </important>
+        /// <p>Valid values: <code>true</code> | <code>false</code>
+        /// </p>
+        /// <p>Default: <code>false</code>
+        /// </p>
         pub fn set_apply_immediately(mut self, input: std::option::Option<bool>) -> Self {
             self.apply_immediately = input;
             self
         }
         /// <p>The upgraded version of the cache engine to be run on the cache nodes.</p>
+        ///
         /// <p>
         /// <b>Important:</b> You can upgrade to a newer engine version
         /// (see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version.
@@ -11125,6 +13693,13 @@ pub mod modify_cache_cluster_input {
             self.engine_version = Some(input.into());
             self
         }
+        /// <p>The upgraded version of the cache engine to be run on the cache nodes.</p>
+        ///
+        /// <p>
+        /// <b>Important:</b> You can upgrade to a newer engine version
+        /// (see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version.
+        /// If you want to use an earlier engine version,
+        /// you must delete the existing cluster and create it anew with the earlier engine version. </p>
         pub fn set_engine_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11137,6 +13712,7 @@ pub mod modify_cache_cluster_input {
             self.auto_minor_version_upgrade = Some(input);
             self
         }
+        /// <p>This parameter is currently disabled.</p>
         pub fn set_auto_minor_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
             self.auto_minor_version_upgrade = input;
             self
@@ -11151,6 +13727,12 @@ pub mod modify_cache_cluster_input {
             self.snapshot_retention_limit = Some(input);
             self
         }
+        /// <p>The number of days for which ElastiCache retains automatic cluster snapshots before
+        /// deleting them. For example, if you set <code>SnapshotRetentionLimit</code> to 5,  a
+        /// snapshot that was taken today is retained for 5 days before being deleted.</p>
+        /// <note>
+        /// <p>If the value of <code>SnapshotRetentionLimit</code> is set to zero (0), backups are turned off.</p>
+        /// </note>
         pub fn set_snapshot_retention_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.snapshot_retention_limit = input;
             self
@@ -11161,6 +13743,8 @@ pub mod modify_cache_cluster_input {
             self.snapshot_window = Some(input.into());
             self
         }
+        /// <p>The daily time range (in UTC) during which ElastiCache  begins taking a daily snapshot of
+        /// your cluster. </p>
         pub fn set_snapshot_window(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11173,6 +13757,7 @@ pub mod modify_cache_cluster_input {
             self.cache_node_type = Some(input.into());
             self
         }
+        /// <p>A valid cache node type that you want to scale this cluster up to.</p>
         pub fn set_cache_node_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11194,11 +13779,28 @@ pub mod modify_cache_cluster_input {
         /// </li>
         /// </ul>
         /// <p>     
+        ///
         /// For more information, see AUTH password at <a href="http://redis.io/commands/AUTH">AUTH</a>.</p>
         pub fn auth_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.auth_token = Some(input.into());
             self
         }
+        /// <p>Reserved parameter. The password used to access a password protected server. This parameter must be specified with the <code>auth-token-update</code> parameter.
+        /// Password constraints:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Must be only printable ASCII characters</p>
+        /// </li>
+        /// <li>
+        /// <p>Must be at least 16 characters and no more than 128 characters in length</p>
+        /// </li>
+        /// <li>
+        /// <p>Cannot contain any of the following characters: '/', '"', or '@', '%'</p>
+        /// </li>
+        /// </ul>
+        /// <p>     
+        ///
+        /// For more information, see AUTH password at <a href="http://redis.io/commands/AUTH">AUTH</a>.</p>
         pub fn set_auth_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.auth_token = input;
             self
@@ -11223,6 +13825,19 @@ pub mod modify_cache_cluster_input {
             self.auth_token_update_strategy = Some(input);
             self
         }
+        /// <p>Specifies the strategy to use to update the AUTH token. This parameter must be specified with the <code>auth-token</code> parameter.
+        /// Possible values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Rotate</p>
+        /// </li>
+        /// <li>
+        /// <p>Set</p>
+        /// </li>
+        /// </ul>
+        /// <p>
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with Redis AUTH</a>
+        /// </p>
         pub fn set_auth_token_update_strategy(
             mut self,
             input: std::option::Option<crate::model::AuthTokenUpdateStrategyType>,
@@ -11230,6 +13845,11 @@ pub mod modify_cache_cluster_input {
             self.auth_token_update_strategy = input;
             self
         }
+        /// Appends an item to `log_delivery_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_log_delivery_configurations`](Self::set_log_delivery_configurations).
+        ///
+        /// <p>Specifies the destination, format and type of the logs.</p>
         pub fn log_delivery_configurations(
             mut self,
             input: impl Into<crate::model::LogDeliveryConfigurationRequest>,
@@ -11239,6 +13859,7 @@ pub mod modify_cache_cluster_input {
             self.log_delivery_configurations = Some(v);
             self
         }
+        /// <p>Specifies the destination, format and type of the logs.</p>
         pub fn set_log_delivery_configurations(
             mut self,
             input: std::option::Option<
@@ -11253,7 +13874,7 @@ pub mod modify_cache_cluster_input {
             self,
         ) -> std::result::Result<
             crate::input::ModifyCacheClusterInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ModifyCacheClusterInput {
                 cache_cluster_id: self.cache_cluster_id,
@@ -11291,16 +13912,16 @@ impl ModifyCacheClusterInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ModifyCacheCluster,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ModifyCacheClusterInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -11308,7 +13929,7 @@ impl ModifyCacheClusterInput {
         fn update_http_builder(
             input: &crate::input::ModifyCacheClusterInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -11317,25 +13938,27 @@ impl ModifyCacheClusterInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ModifyCacheClusterInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_modify_cache_cluster(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -11358,15 +13981,15 @@ impl ModifyCacheClusterInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ModifyCacheCluster::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ModifyCacheCluster",
             "elasticache",
         ));
@@ -11375,10 +13998,10 @@ impl ModifyCacheClusterInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -11408,6 +14031,7 @@ pub mod modify_cache_parameter_group_input {
             self.cache_parameter_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the cache parameter group to modify.</p>
         pub fn set_cache_parameter_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11415,6 +14039,11 @@ pub mod modify_cache_parameter_group_input {
             self.cache_parameter_group_name = input;
             self
         }
+        /// Appends an item to `parameter_name_values`.
+        ///
+        /// To override the contents of this collection use [`set_parameter_name_values`](Self::set_parameter_name_values).
+        ///
+        /// <p>An array of parameter names and values for the parameter update. You must supply at least one parameter name and value; subsequent arguments are optional. A maximum of 20 parameters may be modified per request.</p>
         pub fn parameter_name_values(
             mut self,
             input: impl Into<crate::model::ParameterNameValue>,
@@ -11424,6 +14053,7 @@ pub mod modify_cache_parameter_group_input {
             self.parameter_name_values = Some(v);
             self
         }
+        /// <p>An array of parameter names and values for the parameter update. You must supply at least one parameter name and value; subsequent arguments are optional. A maximum of 20 parameters may be modified per request.</p>
         pub fn set_parameter_name_values(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ParameterNameValue>>,
@@ -11436,7 +14066,7 @@ pub mod modify_cache_parameter_group_input {
             self,
         ) -> std::result::Result<
             crate::input::ModifyCacheParameterGroupInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ModifyCacheParameterGroupInput {
                 cache_parameter_group_name: self.cache_parameter_group_name,
@@ -11457,16 +14087,16 @@ impl ModifyCacheParameterGroupInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ModifyCacheParameterGroup,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ModifyCacheParameterGroupInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -11474,7 +14104,7 @@ impl ModifyCacheParameterGroupInput {
         fn update_http_builder(
             input: &crate::input::ModifyCacheParameterGroupInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -11483,27 +14113,29 @@ impl ModifyCacheParameterGroupInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ModifyCacheParameterGroupInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_modify_cache_parameter_group(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -11526,15 +14158,15 @@ impl ModifyCacheParameterGroupInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ModifyCacheParameterGroup::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ModifyCacheParameterGroup",
             "elasticache",
         ));
@@ -11543,10 +14175,10 @@ impl ModifyCacheParameterGroupInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -11579,6 +14211,10 @@ pub mod modify_cache_subnet_group_input {
             self.cache_subnet_group_name = Some(input.into());
             self
         }
+        /// <p>The name for the cache subnet group. This value is stored as a lowercase string.</p>
+        /// <p>Constraints: Must contain no more than 255 alphanumeric characters or hyphens.</p>
+        /// <p>Example: <code>mysubnetgroup</code>
+        /// </p>
         pub fn set_cache_subnet_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11594,6 +14230,7 @@ pub mod modify_cache_subnet_group_input {
             self.cache_subnet_group_description = Some(input.into());
             self
         }
+        /// <p>A description of the cache subnet group.</p>
         pub fn set_cache_subnet_group_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11601,12 +14238,18 @@ pub mod modify_cache_subnet_group_input {
             self.cache_subnet_group_description = input;
             self
         }
+        /// Appends an item to `subnet_ids`.
+        ///
+        /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
+        ///
+        /// <p>The EC2 subnet IDs for the cache subnet group.</p>
         pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnet_ids.unwrap_or_default();
             v.push(input.into());
             self.subnet_ids = Some(v);
             self
         }
+        /// <p>The EC2 subnet IDs for the cache subnet group.</p>
         pub fn set_subnet_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -11619,7 +14262,7 @@ pub mod modify_cache_subnet_group_input {
             self,
         ) -> std::result::Result<
             crate::input::ModifyCacheSubnetGroupInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ModifyCacheSubnetGroupInput {
                 cache_subnet_group_name: self.cache_subnet_group_name,
@@ -11640,16 +14283,16 @@ impl ModifyCacheSubnetGroupInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ModifyCacheSubnetGroup,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ModifyCacheSubnetGroupInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -11657,7 +14300,7 @@ impl ModifyCacheSubnetGroupInput {
         fn update_http_builder(
             input: &crate::input::ModifyCacheSubnetGroupInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -11666,27 +14309,29 @@ impl ModifyCacheSubnetGroupInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ModifyCacheSubnetGroupInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_modify_cache_subnet_group(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -11709,15 +14354,15 @@ impl ModifyCacheSubnetGroupInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ModifyCacheSubnetGroup::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ModifyCacheSubnetGroup",
             "elasticache",
         ));
@@ -11726,10 +14371,10 @@ impl ModifyCacheSubnetGroupInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -11766,6 +14411,7 @@ pub mod modify_global_replication_group_input {
             self.global_replication_group_id = Some(input.into());
             self
         }
+        /// <p>The name of the Global datastore</p>
         pub fn set_global_replication_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11780,6 +14426,9 @@ pub mod modify_global_replication_group_input {
             self.apply_immediately = Some(input);
             self
         }
+        /// <p>This parameter causes the modifications in this request and any pending modifications to be applied, asynchronously and as soon as possible. Modifications to Global
+        /// Replication Groups cannot be requested to be applied in PreferredMaintenceWindow.
+        /// </p>
         pub fn set_apply_immediately(mut self, input: std::option::Option<bool>) -> Self {
             self.apply_immediately = input;
             self
@@ -11789,6 +14438,7 @@ pub mod modify_global_replication_group_input {
             self.cache_node_type = Some(input.into());
             self
         }
+        /// <p>A valid cache node type that you want to scale this Global datastore to.</p>
         pub fn set_cache_node_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11801,6 +14451,7 @@ pub mod modify_global_replication_group_input {
             self.engine_version = Some(input.into());
             self
         }
+        /// <p>The upgraded version of the cache engine to be run on the clusters in the Global datastore. </p>
         pub fn set_engine_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11813,6 +14464,7 @@ pub mod modify_global_replication_group_input {
             self.cache_parameter_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the cache parameter group to use with the Global datastore. It must be compatible with the major engine version used by the Global datastore.</p>
         pub fn set_cache_parameter_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11828,6 +14480,7 @@ pub mod modify_global_replication_group_input {
             self.global_replication_group_description = Some(input.into());
             self
         }
+        /// <p>A description of the Global datastore</p>
         pub fn set_global_replication_group_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11840,6 +14493,7 @@ pub mod modify_global_replication_group_input {
             self.automatic_failover_enabled = Some(input);
             self
         }
+        /// <p>Determines whether a read replica is automatically promoted to read/write primary if the existing primary encounters a failure. </p>
         pub fn set_automatic_failover_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.automatic_failover_enabled = input;
             self
@@ -11849,7 +14503,7 @@ pub mod modify_global_replication_group_input {
             self,
         ) -> std::result::Result<
             crate::input::ModifyGlobalReplicationGroupInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ModifyGlobalReplicationGroupInput {
                 global_replication_group_id: self.global_replication_group_id,
@@ -11875,16 +14529,16 @@ impl ModifyGlobalReplicationGroupInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ModifyGlobalReplicationGroup,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ModifyGlobalReplicationGroupInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -11892,7 +14546,7 @@ impl ModifyGlobalReplicationGroupInput {
         fn update_http_builder(
             input: &crate::input::ModifyGlobalReplicationGroupInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -11901,25 +14555,25 @@ impl ModifyGlobalReplicationGroupInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ModifyGlobalReplicationGroupInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_modify_global_replication_group(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_modify_global_replication_group(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -11942,15 +14596,15 @@ impl ModifyGlobalReplicationGroupInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ModifyGlobalReplicationGroup::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ModifyGlobalReplicationGroup",
             "elasticache",
         ));
@@ -11959,10 +14613,10 @@ impl ModifyGlobalReplicationGroupInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -12018,6 +14672,7 @@ pub mod modify_replication_group_input {
             self.replication_group_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the replication group to modify.</p>
         pub fn set_replication_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12033,6 +14688,7 @@ pub mod modify_replication_group_input {
             self.replication_group_description = Some(input.into());
             self
         }
+        /// <p>A description for the replication group. Maximum length is 255 characters.</p>
         pub fn set_replication_group_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12047,6 +14703,9 @@ pub mod modify_replication_group_input {
             self.primary_cluster_id = Some(input.into());
             self
         }
+        /// <p>For replication groups with a single primary,
+        /// if this parameter is specified, ElastiCache promotes the specified cluster in the specified replication group to the primary role.
+        /// The nodes of all other clusters in the replication group are read replicas.</p>
         pub fn set_primary_cluster_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12060,6 +14719,8 @@ pub mod modify_replication_group_input {
             self.snapshotting_cluster_id = Some(input.into());
             self
         }
+        /// <p>The cluster ID that is used as the daily snapshot source for the replication group.
+        /// This parameter cannot be set for Redis (cluster mode enabled) replication groups.</p>
         pub fn set_snapshotting_cluster_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12074,6 +14735,9 @@ pub mod modify_replication_group_input {
             self.automatic_failover_enabled = Some(input);
             self
         }
+        /// <p>Determines whether a read replica is automatically promoted to read/write primary if the existing primary encounters a failure.</p>
+        /// <p>Valid values: <code>true</code> | <code>false</code>
+        /// </p>
         pub fn set_automatic_failover_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.automatic_failover_enabled = input;
             self
@@ -12083,6 +14747,7 @@ pub mod modify_replication_group_input {
             self.multi_az_enabled = Some(input);
             self
         }
+        /// <p>A flag to indicate MultiAZ is enabled.</p>
         pub fn set_multi_az_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.multi_az_enabled = input;
             self
@@ -12092,6 +14757,7 @@ pub mod modify_replication_group_input {
             self.node_group_id = Some(input.into());
             self
         }
+        /// <p>Deprecated. This parameter is not used.</p>
         pub fn set_node_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12099,12 +14765,22 @@ pub mod modify_replication_group_input {
             self.node_group_id = input;
             self
         }
+        /// Appends an item to `cache_security_group_names`.
+        ///
+        /// To override the contents of this collection use [`set_cache_security_group_names`](Self::set_cache_security_group_names).
+        ///
+        /// <p>A list of cache security group names to authorize for the clusters in this replication group. This change is asynchronously applied as soon as possible.</p>
+        /// <p>This parameter can be used only with replication group containing clusters running outside of an Amazon Virtual Private Cloud (Amazon VPC).</p>
+        /// <p>Constraints: Must contain no more than 255 alphanumeric characters. Must not be <code>Default</code>.</p>
         pub fn cache_security_group_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.cache_security_group_names.unwrap_or_default();
             v.push(input.into());
             self.cache_security_group_names = Some(v);
             self
         }
+        /// <p>A list of cache security group names to authorize for the clusters in this replication group. This change is asynchronously applied as soon as possible.</p>
+        /// <p>This parameter can be used only with replication group containing clusters running outside of an Amazon Virtual Private Cloud (Amazon VPC).</p>
+        /// <p>Constraints: Must contain no more than 255 alphanumeric characters. Must not be <code>Default</code>.</p>
         pub fn set_cache_security_group_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -12112,12 +14788,22 @@ pub mod modify_replication_group_input {
             self.cache_security_group_names = input;
             self
         }
+        /// Appends an item to `security_group_ids`.
+        ///
+        /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
+        ///
+        /// <p>Specifies the VPC Security Groups associated with the clusters in the replication group.</p>
+        /// <p>This parameter can be used only with replication group containing clusters running in
+        /// an Amazon Virtual Private Cloud (Amazon VPC).</p>
         pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_ids.unwrap_or_default();
             v.push(input.into());
             self.security_group_ids = Some(v);
             self
         }
+        /// <p>Specifies the VPC Security Groups associated with the clusters in the replication group.</p>
+        /// <p>This parameter can be used only with replication group containing clusters running in
+        /// an Amazon Virtual Private Cloud (Amazon VPC).</p>
         pub fn set_security_group_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -12176,6 +14862,50 @@ pub mod modify_replication_group_input {
             self.preferred_maintenance_window = Some(input.into());
             self
         }
+        /// <p>Specifies the weekly time range during which maintenance
+        /// on the cluster is performed. It is specified as a range in
+        /// the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum
+        /// maintenance window is a 60 minute period.</p>
+        /// <p>Valid values for <code>ddd</code> are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>sun</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>mon</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>tue</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>wed</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>thu</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>fri</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>sat</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>Example: <code>sun:23:00-mon:01:30</code>
+        /// </p>
         pub fn set_preferred_maintenance_window(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12191,6 +14921,10 @@ pub mod modify_replication_group_input {
             self.notification_topic_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications are sent.</p>
+        /// <note>
+        /// <p>The Amazon SNS topic owner must be same as the replication group owner. </p>
+        /// </note>
         pub fn set_notification_topic_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12205,6 +14939,9 @@ pub mod modify_replication_group_input {
             self.cache_parameter_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the cache parameter group to apply to all of the clusters in this replication group.
+        /// This change is asynchronously applied as soon as possible for parameters when the
+        /// <code>ApplyImmediately</code> parameter is specified as <code>true</code> for this request.</p>
         pub fn set_cache_parameter_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12220,6 +14957,10 @@ pub mod modify_replication_group_input {
             self.notification_topic_status = Some(input.into());
             self
         }
+        /// <p>The status of the Amazon SNS notification topic for the replication group.
+        /// Notifications are sent only if the status is <code>active</code>.</p>
+        /// <p>Valid values: <code>active</code> | <code>inactive</code>
+        /// </p>
         pub fn set_notification_topic_status(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12240,11 +14981,21 @@ pub mod modify_replication_group_input {
             self.apply_immediately = Some(input);
             self
         }
+        /// <p>If <code>true</code>, this parameter causes the modifications in this request and any
+        /// pending modifications to be applied, asynchronously and as soon as possible, regardless
+        /// of the <code>PreferredMaintenanceWindow</code> setting for the replication group.</p>
+        /// <p>If <code>false</code>, changes to the nodes in the replication group are applied on
+        /// the next maintenance reboot, or the next failure reboot, whichever occurs first.</p>
+        /// <p>Valid values: <code>true</code> | <code>false</code>
+        /// </p>
+        /// <p>Default: <code>false</code>
+        /// </p>
         pub fn set_apply_immediately(mut self, input: std::option::Option<bool>) -> Self {
             self.apply_immediately = input;
             self
         }
         /// <p>The upgraded version of the cache engine to be run on the clusters in the replication group.</p>
+        ///
         /// <p>
         /// <b>Important:</b> You can upgrade to a newer engine version (see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version.
         /// If you want to use an earlier engine version,
@@ -12253,6 +15004,12 @@ pub mod modify_replication_group_input {
             self.engine_version = Some(input.into());
             self
         }
+        /// <p>The upgraded version of the cache engine to be run on the clusters in the replication group.</p>
+        ///
+        /// <p>
+        /// <b>Important:</b> You can upgrade to a newer engine version (see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version.
+        /// If you want to use an earlier engine version,
+        /// you must delete the existing replication group and create it anew with the earlier engine version. </p>
         pub fn set_engine_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12265,6 +15022,7 @@ pub mod modify_replication_group_input {
             self.auto_minor_version_upgrade = Some(input);
             self
         }
+        /// <p>This parameter is currently disabled.</p>
         pub fn set_auto_minor_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
             self.auto_minor_version_upgrade = input;
             self
@@ -12279,6 +15037,12 @@ pub mod modify_replication_group_input {
             self.snapshot_retention_limit = Some(input);
             self
         }
+        /// <p>The number of days for which ElastiCache retains automatic node group (shard) snapshots before
+        /// deleting them. For example, if you set <code>SnapshotRetentionLimit</code> to 5, a
+        /// snapshot that was taken today is retained for 5 days before being deleted.</p>
+        /// <p>
+        /// <b>Important</b> If the value of SnapshotRetentionLimit is set to zero (0),
+        /// backups are turned off.</p>
         pub fn set_snapshot_retention_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.snapshot_retention_limit = input;
             self
@@ -12292,6 +15056,11 @@ pub mod modify_replication_group_input {
             self.snapshot_window = Some(input.into());
             self
         }
+        /// <p>The daily time range (in UTC) during which ElastiCache  begins taking a daily snapshot of
+        /// the node group (shard) specified by <code>SnapshottingClusterId</code>.</p>
+        /// <p>Example: <code>05:00-09:00</code>
+        /// </p>
+        /// <p>If you do not specify this parameter, ElastiCache  automatically chooses an appropriate time range.</p>
         pub fn set_snapshot_window(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12304,6 +15073,7 @@ pub mod modify_replication_group_input {
             self.cache_node_type = Some(input.into());
             self
         }
+        /// <p>A valid cache node type that you want to scale this replication group to.</p>
         pub fn set_cache_node_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12326,11 +15096,29 @@ pub mod modify_replication_group_input {
         /// </li>
         /// </ul>
         /// <p>     
+        ///
         /// For more information, see AUTH password at <a href="http://redis.io/commands/AUTH">AUTH</a>.</p>
         pub fn auth_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.auth_token = Some(input.into());
             self
         }
+        /// <p>Reserved parameter. The password used to access a password protected server. This parameter must be specified with the <code>auth-token-update-strategy </code>
+        /// parameter.
+        /// Password constraints:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Must be only printable ASCII characters</p>
+        /// </li>
+        /// <li>
+        /// <p>Must be at least 16 characters and no more than 128 characters in length</p>
+        /// </li>
+        /// <li>
+        /// <p>Cannot contain any of the following characters: '/', '"', or '@', '%'</p>
+        /// </li>
+        /// </ul>
+        /// <p>     
+        ///
+        /// For more information, see AUTH password at <a href="http://redis.io/commands/AUTH">AUTH</a>.</p>
         pub fn set_auth_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.auth_token = input;
             self
@@ -12355,6 +15143,19 @@ pub mod modify_replication_group_input {
             self.auth_token_update_strategy = Some(input);
             self
         }
+        /// <p>Specifies the strategy to use to update the AUTH token. This parameter must be specified with the <code>auth-token</code> parameter.
+        /// Possible values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Rotate</p>
+        /// </li>
+        /// <li>
+        /// <p>Set</p>
+        /// </li>
+        /// </ul>
+        /// <p>
+        /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with Redis AUTH</a>
+        /// </p>
         pub fn set_auth_token_update_strategy(
             mut self,
             input: std::option::Option<crate::model::AuthTokenUpdateStrategyType>,
@@ -12362,12 +15163,18 @@ pub mod modify_replication_group_input {
             self.auth_token_update_strategy = input;
             self
         }
+        /// Appends an item to `user_group_ids_to_add`.
+        ///
+        /// To override the contents of this collection use [`set_user_group_ids_to_add`](Self::set_user_group_ids_to_add).
+        ///
+        /// <p>The ID of the user group you are associating with the replication group.</p>
         pub fn user_group_ids_to_add(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.user_group_ids_to_add.unwrap_or_default();
             v.push(input.into());
             self.user_group_ids_to_add = Some(v);
             self
         }
+        /// <p>The ID of the user group you are associating with the replication group.</p>
         pub fn set_user_group_ids_to_add(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -12375,12 +15182,18 @@ pub mod modify_replication_group_input {
             self.user_group_ids_to_add = input;
             self
         }
+        /// Appends an item to `user_group_ids_to_remove`.
+        ///
+        /// To override the contents of this collection use [`set_user_group_ids_to_remove`](Self::set_user_group_ids_to_remove).
+        ///
+        /// <p>The ID of the user group to disassociate from the replication group, meaning the users in the group no longer can access the replication group.</p>
         pub fn user_group_ids_to_remove(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.user_group_ids_to_remove.unwrap_or_default();
             v.push(input.into());
             self.user_group_ids_to_remove = Some(v);
             self
         }
+        /// <p>The ID of the user group to disassociate from the replication group, meaning the users in the group no longer can access the replication group.</p>
         pub fn set_user_group_ids_to_remove(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -12393,10 +15206,16 @@ pub mod modify_replication_group_input {
             self.remove_user_groups = Some(input);
             self
         }
+        /// <p>Removes the user group associated with this replication group.</p>
         pub fn set_remove_user_groups(mut self, input: std::option::Option<bool>) -> Self {
             self.remove_user_groups = input;
             self
         }
+        /// Appends an item to `log_delivery_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_log_delivery_configurations`](Self::set_log_delivery_configurations).
+        ///
+        /// <p>Specifies the destination, format and type of the logs.</p>
         pub fn log_delivery_configurations(
             mut self,
             input: impl Into<crate::model::LogDeliveryConfigurationRequest>,
@@ -12406,6 +15225,7 @@ pub mod modify_replication_group_input {
             self.log_delivery_configurations = Some(v);
             self
         }
+        /// <p>Specifies the destination, format and type of the logs.</p>
         pub fn set_log_delivery_configurations(
             mut self,
             input: std::option::Option<
@@ -12420,7 +15240,7 @@ pub mod modify_replication_group_input {
             self,
         ) -> std::result::Result<
             crate::input::ModifyReplicationGroupInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ModifyReplicationGroupInput {
                 replication_group_id: self.replication_group_id,
@@ -12463,16 +15283,16 @@ impl ModifyReplicationGroupInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ModifyReplicationGroup,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ModifyReplicationGroupInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -12480,7 +15300,7 @@ impl ModifyReplicationGroupInput {
         fn update_http_builder(
             input: &crate::input::ModifyReplicationGroupInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -12489,27 +15309,29 @@ impl ModifyReplicationGroupInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ModifyReplicationGroupInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_modify_replication_group(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -12532,15 +15354,15 @@ impl ModifyReplicationGroupInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ModifyReplicationGroup::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ModifyReplicationGroup",
             "elasticache",
         ));
@@ -12549,10 +15371,10 @@ impl ModifyReplicationGroupInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -12587,6 +15409,8 @@ pub mod modify_replication_group_shard_configuration_input {
             self.replication_group_id = Some(input.into());
             self
         }
+        /// <p>The name of the Redis (cluster mode enabled) cluster (replication group)
+        /// on which the shards are to be configured.</p>
         pub fn set_replication_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12600,6 +15424,8 @@ pub mod modify_replication_group_shard_configuration_input {
             self.node_group_count = Some(input);
             self
         }
+        /// <p>The number of node groups (shards) that results from the modification of the
+        /// shard configuration.</p>
         pub fn set_node_group_count(mut self, input: std::option::Option<i32>) -> Self {
             self.node_group_count = input;
             self
@@ -12611,10 +15437,24 @@ pub mod modify_replication_group_shard_configuration_input {
             self.apply_immediately = Some(input);
             self
         }
+        /// <p>Indicates that the shard reconfiguration process begins immediately.
+        /// At present, the only permitted value for this parameter is <code>true</code>.</p>
+        /// <p>Value: true</p>
         pub fn set_apply_immediately(mut self, input: std::option::Option<bool>) -> Self {
             self.apply_immediately = input;
             self
         }
+        /// Appends an item to `resharding_configuration`.
+        ///
+        /// To override the contents of this collection use [`set_resharding_configuration`](Self::set_resharding_configuration).
+        ///
+        /// <p>Specifies the preferred availability zones for each node group in the cluster.
+        /// If the value of <code>NodeGroupCount</code> is greater than the current number
+        /// of node groups (shards), you can use this parameter to specify the preferred
+        /// availability zones of the cluster's shards.
+        /// If you omit this parameter ElastiCache selects availability zones for you.</p>
+        /// <p>You can specify this parameter only if the value of <code>NodeGroupCount</code>
+        /// is greater than the current number of node groups (shards).</p>
         pub fn resharding_configuration(
             mut self,
             input: impl Into<crate::model::ReshardingConfiguration>,
@@ -12624,6 +15464,13 @@ pub mod modify_replication_group_shard_configuration_input {
             self.resharding_configuration = Some(v);
             self
         }
+        /// <p>Specifies the preferred availability zones for each node group in the cluster.
+        /// If the value of <code>NodeGroupCount</code> is greater than the current number
+        /// of node groups (shards), you can use this parameter to specify the preferred
+        /// availability zones of the cluster's shards.
+        /// If you omit this parameter ElastiCache selects availability zones for you.</p>
+        /// <p>You can specify this parameter only if the value of <code>NodeGroupCount</code>
+        /// is greater than the current number of node groups (shards).</p>
         pub fn set_resharding_configuration(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ReshardingConfiguration>>,
@@ -12631,12 +15478,30 @@ pub mod modify_replication_group_shard_configuration_input {
             self.resharding_configuration = input;
             self
         }
+        /// Appends an item to `node_groups_to_remove`.
+        ///
+        /// To override the contents of this collection use [`set_node_groups_to_remove`](Self::set_node_groups_to_remove).
+        ///
+        /// <p>If the value of <code>NodeGroupCount</code> is less than the
+        /// current number of node groups (shards), then either <code>NodeGroupsToRemove</code> or
+        /// <code>NodeGroupsToRetain</code> is required.
+        /// <code>NodeGroupsToRemove</code> is a list of <code>NodeGroupId</code>s to remove
+        /// from the cluster.</p>
+        /// <p>ElastiCache for Redis will attempt to remove all node groups listed by <code>NodeGroupsToRemove</code>
+        /// from the cluster.</p>
         pub fn node_groups_to_remove(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.node_groups_to_remove.unwrap_or_default();
             v.push(input.into());
             self.node_groups_to_remove = Some(v);
             self
         }
+        /// <p>If the value of <code>NodeGroupCount</code> is less than the
+        /// current number of node groups (shards), then either <code>NodeGroupsToRemove</code> or
+        /// <code>NodeGroupsToRetain</code> is required.
+        /// <code>NodeGroupsToRemove</code> is a list of <code>NodeGroupId</code>s to remove
+        /// from the cluster.</p>
+        /// <p>ElastiCache for Redis will attempt to remove all node groups listed by <code>NodeGroupsToRemove</code>
+        /// from the cluster.</p>
         pub fn set_node_groups_to_remove(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -12644,12 +15509,30 @@ pub mod modify_replication_group_shard_configuration_input {
             self.node_groups_to_remove = input;
             self
         }
+        /// Appends an item to `node_groups_to_retain`.
+        ///
+        /// To override the contents of this collection use [`set_node_groups_to_retain`](Self::set_node_groups_to_retain).
+        ///
+        /// <p>If the value of <code>NodeGroupCount</code> is less than the
+        /// current number of node groups (shards), then either <code>NodeGroupsToRemove</code> or
+        /// <code>NodeGroupsToRetain</code> is required.
+        /// <code>NodeGroupsToRetain</code> is a list of <code>NodeGroupId</code>s to retain
+        /// in the cluster.</p>
+        /// <p>ElastiCache for Redis will attempt to remove all node groups except those listed by <code>NodeGroupsToRetain</code>
+        /// from the cluster.</p>
         pub fn node_groups_to_retain(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.node_groups_to_retain.unwrap_or_default();
             v.push(input.into());
             self.node_groups_to_retain = Some(v);
             self
         }
+        /// <p>If the value of <code>NodeGroupCount</code> is less than the
+        /// current number of node groups (shards), then either <code>NodeGroupsToRemove</code> or
+        /// <code>NodeGroupsToRetain</code> is required.
+        /// <code>NodeGroupsToRetain</code> is a list of <code>NodeGroupId</code>s to retain
+        /// in the cluster.</p>
+        /// <p>ElastiCache for Redis will attempt to remove all node groups except those listed by <code>NodeGroupsToRetain</code>
+        /// from the cluster.</p>
         pub fn set_node_groups_to_retain(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -12662,7 +15545,7 @@ pub mod modify_replication_group_shard_configuration_input {
             self,
         ) -> std::result::Result<
             crate::input::ModifyReplicationGroupShardConfigurationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(
                 crate::input::ModifyReplicationGroupShardConfigurationInput {
@@ -12690,16 +15573,16 @@ impl ModifyReplicationGroupShardConfigurationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ModifyReplicationGroupShardConfiguration,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ModifyReplicationGroupShardConfigurationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -12707,7 +15590,7 @@ impl ModifyReplicationGroupShardConfigurationInput {
         fn update_http_builder(
             input: &crate::input::ModifyReplicationGroupShardConfigurationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -12716,25 +15599,25 @@ impl ModifyReplicationGroupShardConfigurationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ModifyReplicationGroupShardConfigurationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_modify_replication_group_shard_configuration(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_modify_replication_group_shard_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -12757,15 +15640,15 @@ impl ModifyReplicationGroupShardConfigurationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ModifyReplicationGroupShardConfiguration::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ModifyReplicationGroupShardConfiguration",
             "elasticache",
         ));
@@ -12774,10 +15657,10 @@ impl ModifyReplicationGroupShardConfigurationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -12809,6 +15692,7 @@ pub mod modify_user_input {
             self.user_id = Some(input.into());
             self
         }
+        /// <p>The ID of the user.</p>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_id = input;
             self
@@ -12818,6 +15702,7 @@ pub mod modify_user_input {
             self.access_string = Some(input.into());
             self
         }
+        /// <p>Access permissions string used for this user.</p>
         pub fn set_access_string(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12830,6 +15715,7 @@ pub mod modify_user_input {
             self.append_access_string = Some(input.into());
             self
         }
+        /// <p>Adds additional user permissions to the access string.</p>
         pub fn set_append_access_string(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12837,12 +15723,18 @@ pub mod modify_user_input {
             self.append_access_string = input;
             self
         }
+        /// Appends an item to `passwords`.
+        ///
+        /// To override the contents of this collection use [`set_passwords`](Self::set_passwords).
+        ///
+        /// <p>The passwords belonging to the user. You are allowed up to two.</p>
         pub fn passwords(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.passwords.unwrap_or_default();
             v.push(input.into());
             self.passwords = Some(v);
             self
         }
+        /// <p>The passwords belonging to the user. You are allowed up to two.</p>
         pub fn set_passwords(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -12855,6 +15747,7 @@ pub mod modify_user_input {
             self.no_password_required = Some(input);
             self
         }
+        /// <p>Indicates no password is required for the user.</p>
         pub fn set_no_password_required(mut self, input: std::option::Option<bool>) -> Self {
             self.no_password_required = input;
             self
@@ -12862,8 +15755,10 @@ pub mod modify_user_input {
         /// Consumes the builder and constructs a [`ModifyUserInput`](crate::input::ModifyUserInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ModifyUserInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ModifyUserInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ModifyUserInput {
                 user_id: self.user_id,
                 access_string: self.access_string,
@@ -12885,16 +15780,16 @@ impl ModifyUserInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ModifyUser,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ModifyUserInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -12902,7 +15797,7 @@ impl ModifyUserInput {
         fn update_http_builder(
             input: &crate::input::ModifyUserInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -12911,24 +15806,26 @@ impl ModifyUserInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ModifyUserInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_modify_user(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -12951,25 +15848,27 @@ impl ModifyUserInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ModifyUser::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ModifyUser",
-                    "elasticache",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ModifyUser::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ModifyUser",
+            "elasticache",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -12999,6 +15898,7 @@ pub mod modify_user_group_input {
             self.user_group_id = Some(input.into());
             self
         }
+        /// <p>The ID of the user group.</p>
         pub fn set_user_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13006,12 +15906,18 @@ pub mod modify_user_group_input {
             self.user_group_id = input;
             self
         }
+        /// Appends an item to `user_ids_to_add`.
+        ///
+        /// To override the contents of this collection use [`set_user_ids_to_add`](Self::set_user_ids_to_add).
+        ///
+        /// <p>The list of user IDs to add to the user group.</p>
         pub fn user_ids_to_add(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.user_ids_to_add.unwrap_or_default();
             v.push(input.into());
             self.user_ids_to_add = Some(v);
             self
         }
+        /// <p>The list of user IDs to add to the user group.</p>
         pub fn set_user_ids_to_add(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13019,12 +15925,18 @@ pub mod modify_user_group_input {
             self.user_ids_to_add = input;
             self
         }
+        /// Appends an item to `user_ids_to_remove`.
+        ///
+        /// To override the contents of this collection use [`set_user_ids_to_remove`](Self::set_user_ids_to_remove).
+        ///
+        /// <p>The list of user IDs to remove from the user group.</p>
         pub fn user_ids_to_remove(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.user_ids_to_remove.unwrap_or_default();
             v.push(input.into());
             self.user_ids_to_remove = Some(v);
             self
         }
+        /// <p>The list of user IDs to remove from the user group.</p>
         pub fn set_user_ids_to_remove(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13037,7 +15949,7 @@ pub mod modify_user_group_input {
             self,
         ) -> std::result::Result<
             crate::input::ModifyUserGroupInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ModifyUserGroupInput {
                 user_group_id: self.user_group_id,
@@ -13058,16 +15970,16 @@ impl ModifyUserGroupInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ModifyUserGroup,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ModifyUserGroupInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -13075,7 +15987,7 @@ impl ModifyUserGroupInput {
         fn update_http_builder(
             input: &crate::input::ModifyUserGroupInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -13084,27 +15996,27 @@ impl ModifyUserGroupInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ModifyUserGroupInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_modify_user_group(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -13127,15 +16039,15 @@ impl ModifyUserGroupInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ModifyUserGroup::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ModifyUserGroup",
             "elasticache",
         ));
@@ -13144,10 +16056,10 @@ impl ModifyUserGroupInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -13183,6 +16095,9 @@ pub mod purchase_reserved_cache_nodes_offering_input {
             self.reserved_cache_nodes_offering_id = Some(input.into());
             self
         }
+        /// <p>The ID of the reserved cache node offering to purchase.</p>
+        /// <p>Example: <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code>
+        /// </p>
         pub fn set_reserved_cache_nodes_offering_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13201,6 +16116,13 @@ pub mod purchase_reserved_cache_nodes_offering_input {
             self.reserved_cache_node_id = Some(input.into());
             self
         }
+        /// <p>A customer-specified identifier to track this reservation.</p>
+        /// <note>
+        /// <p>The Reserved Cache Node ID is an unique customer-specified identifier to track this reservation.
+        /// If this parameter is not specified,
+        /// ElastiCache automatically generates an identifier for the reservation.</p>
+        /// </note>
+        /// <p>Example: myreservationID</p>
         pub fn set_reserved_cache_node_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13215,16 +16137,25 @@ pub mod purchase_reserved_cache_nodes_offering_input {
             self.cache_node_count = Some(input);
             self
         }
+        /// <p>The number of cache node instances to reserve.</p>
+        /// <p>Default: <code>1</code>
+        /// </p>
         pub fn set_cache_node_count(mut self, input: std::option::Option<i32>) -> Self {
             self.cache_node_count = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -13237,7 +16168,7 @@ pub mod purchase_reserved_cache_nodes_offering_input {
             self,
         ) -> std::result::Result<
             crate::input::PurchaseReservedCacheNodesOfferingInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PurchaseReservedCacheNodesOfferingInput {
                 reserved_cache_nodes_offering_id: self.reserved_cache_nodes_offering_id,
@@ -13260,16 +16191,16 @@ impl PurchaseReservedCacheNodesOfferingInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::PurchaseReservedCacheNodesOffering,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::PurchaseReservedCacheNodesOfferingInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -13277,7 +16208,7 @@ impl PurchaseReservedCacheNodesOfferingInput {
         fn update_http_builder(
             input: &crate::input::PurchaseReservedCacheNodesOfferingInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -13286,25 +16217,25 @@ impl PurchaseReservedCacheNodesOfferingInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::PurchaseReservedCacheNodesOfferingInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_purchase_reserved_cache_nodes_offering(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_purchase_reserved_cache_nodes_offering(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -13327,15 +16258,15 @@ impl PurchaseReservedCacheNodesOfferingInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::PurchaseReservedCacheNodesOffering::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "PurchaseReservedCacheNodesOffering",
             "elasticache",
         ));
@@ -13344,10 +16275,10 @@ impl PurchaseReservedCacheNodesOfferingInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -13379,6 +16310,7 @@ pub mod rebalance_slots_in_global_replication_group_input {
             self.global_replication_group_id = Some(input.into());
             self
         }
+        /// <p>The name of the Global datastore</p>
         pub fn set_global_replication_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13391,6 +16323,7 @@ pub mod rebalance_slots_in_global_replication_group_input {
             self.apply_immediately = Some(input);
             self
         }
+        /// <p>If <code>True</code>, redistribution is applied immediately.</p>
         pub fn set_apply_immediately(mut self, input: std::option::Option<bool>) -> Self {
             self.apply_immediately = input;
             self
@@ -13400,7 +16333,7 @@ pub mod rebalance_slots_in_global_replication_group_input {
             self,
         ) -> std::result::Result<
             crate::input::RebalanceSlotsInGlobalReplicationGroupInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::RebalanceSlotsInGlobalReplicationGroupInput {
                 global_replication_group_id: self.global_replication_group_id,
@@ -13422,16 +16355,16 @@ impl RebalanceSlotsInGlobalReplicationGroupInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RebalanceSlotsInGlobalReplicationGroup,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RebalanceSlotsInGlobalReplicationGroupInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -13439,7 +16372,7 @@ impl RebalanceSlotsInGlobalReplicationGroupInput {
         fn update_http_builder(
             input: &crate::input::RebalanceSlotsInGlobalReplicationGroupInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -13448,25 +16381,25 @@ impl RebalanceSlotsInGlobalReplicationGroupInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RebalanceSlotsInGlobalReplicationGroupInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_rebalance_slots_in_global_replication_group(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_rebalance_slots_in_global_replication_group(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -13489,15 +16422,15 @@ impl RebalanceSlotsInGlobalReplicationGroupInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::RebalanceSlotsInGlobalReplicationGroup::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "RebalanceSlotsInGlobalReplicationGroup",
             "elasticache",
         ));
@@ -13506,10 +16439,10 @@ impl RebalanceSlotsInGlobalReplicationGroupInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -13539,6 +16472,7 @@ pub mod reboot_cache_cluster_input {
             self.cache_cluster_id = Some(input.into());
             self
         }
+        /// <p>The cluster identifier. This parameter is stored as a lowercase string.</p>
         pub fn set_cache_cluster_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13546,12 +16480,18 @@ pub mod reboot_cache_cluster_input {
             self.cache_cluster_id = input;
             self
         }
+        /// Appends an item to `cache_node_ids_to_reboot`.
+        ///
+        /// To override the contents of this collection use [`set_cache_node_ids_to_reboot`](Self::set_cache_node_ids_to_reboot).
+        ///
+        /// <p>A list of cache node IDs to reboot. A node ID is a numeric identifier (0001, 0002, etc.). To reboot an entire cluster, specify all of the cache node IDs.</p>
         pub fn cache_node_ids_to_reboot(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.cache_node_ids_to_reboot.unwrap_or_default();
             v.push(input.into());
             self.cache_node_ids_to_reboot = Some(v);
             self
         }
+        /// <p>A list of cache node IDs to reboot. A node ID is a numeric identifier (0001, 0002, etc.). To reboot an entire cluster, specify all of the cache node IDs.</p>
         pub fn set_cache_node_ids_to_reboot(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13564,7 +16504,7 @@ pub mod reboot_cache_cluster_input {
             self,
         ) -> std::result::Result<
             crate::input::RebootCacheClusterInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::RebootCacheClusterInput {
                 cache_cluster_id: self.cache_cluster_id,
@@ -13584,16 +16524,16 @@ impl RebootCacheClusterInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RebootCacheCluster,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RebootCacheClusterInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -13601,7 +16541,7 @@ impl RebootCacheClusterInput {
         fn update_http_builder(
             input: &crate::input::RebootCacheClusterInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -13610,25 +16550,27 @@ impl RebootCacheClusterInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RebootCacheClusterInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_reboot_cache_cluster(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -13651,15 +16593,15 @@ impl RebootCacheClusterInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::RebootCacheCluster::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "RebootCacheCluster",
             "elasticache",
         ));
@@ -13668,10 +16610,10 @@ impl RebootCacheClusterInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -13703,6 +16645,10 @@ pub mod remove_tags_from_resource_input {
             self.resource_name = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the resource from which you want the tags removed,
+        /// for example <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>
+        /// or <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.</p>
+        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Service Namespaces</a>.</p>
         pub fn set_resource_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13710,12 +16656,18 @@ pub mod remove_tags_from_resource_input {
             self.resource_name = input;
             self
         }
+        /// Appends an item to `tag_keys`.
+        ///
+        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
+        ///
+        /// <p>A list of <code>TagKeys</code> identifying the tags you want removed from the named resource.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
+        /// <p>A list of <code>TagKeys</code> identifying the tags you want removed from the named resource.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13728,7 +16680,7 @@ pub mod remove_tags_from_resource_input {
             self,
         ) -> std::result::Result<
             crate::input::RemoveTagsFromResourceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::RemoveTagsFromResourceInput {
                 resource_name: self.resource_name,
@@ -13748,16 +16700,16 @@ impl RemoveTagsFromResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RemoveTagsFromResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RemoveTagsFromResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -13765,7 +16717,7 @@ impl RemoveTagsFromResourceInput {
         fn update_http_builder(
             input: &crate::input::RemoveTagsFromResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -13774,27 +16726,29 @@ impl RemoveTagsFromResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RemoveTagsFromResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_remove_tags_from_resource(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -13817,15 +16771,15 @@ impl RemoveTagsFromResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::RemoveTagsFromResource::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "RemoveTagsFromResource",
             "elasticache",
         ));
@@ -13834,10 +16788,10 @@ impl RemoveTagsFromResourceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -13868,6 +16822,7 @@ pub mod reset_cache_parameter_group_input {
             self.cache_parameter_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the cache parameter group to reset.</p>
         pub fn set_cache_parameter_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13885,10 +16840,25 @@ pub mod reset_cache_parameter_group_input {
             self.reset_all_parameters = Some(input);
             self
         }
+        /// <p>If <code>true</code>,
+        /// all parameters in the cache parameter group are reset to their default values.
+        /// If <code>false</code>, only the parameters listed by <code>ParameterNameValues</code>
+        /// are reset to their default values.</p>
+        /// <p>Valid values: <code>true</code> | <code>false</code>
+        /// </p>
         pub fn set_reset_all_parameters(mut self, input: std::option::Option<bool>) -> Self {
             self.reset_all_parameters = input;
             self
         }
+        /// Appends an item to `parameter_name_values`.
+        ///
+        /// To override the contents of this collection use [`set_parameter_name_values`](Self::set_parameter_name_values).
+        ///
+        /// <p>An array of parameter names to reset to their default values.
+        /// If <code>ResetAllParameters</code> is <code>true</code>,
+        /// do not use <code>ParameterNameValues</code>.
+        /// If <code>ResetAllParameters</code> is <code>false</code>,
+        /// you must specify the name of at least one parameter to reset.</p>
         pub fn parameter_name_values(
             mut self,
             input: impl Into<crate::model::ParameterNameValue>,
@@ -13898,6 +16868,11 @@ pub mod reset_cache_parameter_group_input {
             self.parameter_name_values = Some(v);
             self
         }
+        /// <p>An array of parameter names to reset to their default values.
+        /// If <code>ResetAllParameters</code> is <code>true</code>,
+        /// do not use <code>ParameterNameValues</code>.
+        /// If <code>ResetAllParameters</code> is <code>false</code>,
+        /// you must specify the name of at least one parameter to reset.</p>
         pub fn set_parameter_name_values(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ParameterNameValue>>,
@@ -13910,7 +16885,7 @@ pub mod reset_cache_parameter_group_input {
             self,
         ) -> std::result::Result<
             crate::input::ResetCacheParameterGroupInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ResetCacheParameterGroupInput {
                 cache_parameter_group_name: self.cache_parameter_group_name,
@@ -13932,16 +16907,16 @@ impl ResetCacheParameterGroupInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ResetCacheParameterGroup,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ResetCacheParameterGroupInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -13949,7 +16924,7 @@ impl ResetCacheParameterGroupInput {
         fn update_http_builder(
             input: &crate::input::ResetCacheParameterGroupInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -13958,27 +16933,29 @@ impl ResetCacheParameterGroupInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ResetCacheParameterGroupInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_reset_cache_parameter_group(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -14001,15 +16978,15 @@ impl ResetCacheParameterGroupInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ResetCacheParameterGroup::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ResetCacheParameterGroup",
             "elasticache",
         ));
@@ -14018,10 +16995,10 @@ impl ResetCacheParameterGroupInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -14051,6 +17028,7 @@ pub mod revoke_cache_security_group_ingress_input {
             self.cache_security_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the cache security group to revoke ingress from.</p>
         pub fn set_cache_security_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14063,6 +17041,7 @@ pub mod revoke_cache_security_group_ingress_input {
             self.ec2_security_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the Amazon EC2 security group to revoke access from.</p>
         pub fn set_ec2_security_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14080,6 +17059,9 @@ pub mod revoke_cache_security_group_ingress_input {
             self.ec2_security_group_owner_id = Some(input.into());
             self
         }
+        /// <p>The Amazon account number of the Amazon EC2 security group owner.
+        /// Note that this is not the same thing as an Amazon access key ID - you must provide
+        /// a valid Amazon account number for this parameter.</p>
         pub fn set_ec2_security_group_owner_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14092,7 +17074,7 @@ pub mod revoke_cache_security_group_ingress_input {
             self,
         ) -> std::result::Result<
             crate::input::RevokeCacheSecurityGroupIngressInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::RevokeCacheSecurityGroupIngressInput {
                 cache_security_group_name: self.cache_security_group_name,
@@ -14114,16 +17096,16 @@ impl RevokeCacheSecurityGroupIngressInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RevokeCacheSecurityGroupIngress,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RevokeCacheSecurityGroupIngressInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -14131,7 +17113,7 @@ impl RevokeCacheSecurityGroupIngressInput {
         fn update_http_builder(
             input: &crate::input::RevokeCacheSecurityGroupIngressInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -14140,25 +17122,25 @@ impl RevokeCacheSecurityGroupIngressInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RevokeCacheSecurityGroupIngressInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_revoke_cache_security_group_ingress(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_revoke_cache_security_group_ingress(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -14181,15 +17163,15 @@ impl RevokeCacheSecurityGroupIngressInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::RevokeCacheSecurityGroupIngress::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "RevokeCacheSecurityGroupIngress",
             "elasticache",
         ));
@@ -14198,10 +17180,10 @@ impl RevokeCacheSecurityGroupIngressInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -14231,6 +17213,7 @@ pub mod start_migration_input {
             self.replication_group_id = Some(input.into());
             self
         }
+        /// <p>The ID of the replication group to which data should be migrated.</p>
         pub fn set_replication_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14238,6 +17221,11 @@ pub mod start_migration_input {
             self.replication_group_id = input;
             self
         }
+        /// Appends an item to `customer_node_endpoint_list`.
+        ///
+        /// To override the contents of this collection use [`set_customer_node_endpoint_list`](Self::set_customer_node_endpoint_list).
+        ///
+        /// <p>List of endpoints from which data should be migrated. For Redis (cluster mode disabled), list should have only one element.</p>
         pub fn customer_node_endpoint_list(
             mut self,
             input: impl Into<crate::model::CustomerNodeEndpoint>,
@@ -14247,6 +17235,7 @@ pub mod start_migration_input {
             self.customer_node_endpoint_list = Some(v);
             self
         }
+        /// <p>List of endpoints from which data should be migrated. For Redis (cluster mode disabled), list should have only one element.</p>
         pub fn set_customer_node_endpoint_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CustomerNodeEndpoint>>,
@@ -14259,7 +17248,7 @@ pub mod start_migration_input {
             self,
         ) -> std::result::Result<
             crate::input::StartMigrationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::StartMigrationInput {
                 replication_group_id: self.replication_group_id,
@@ -14279,16 +17268,16 @@ impl StartMigrationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::StartMigration,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::StartMigrationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -14296,7 +17285,7 @@ impl StartMigrationInput {
         fn update_http_builder(
             input: &crate::input::StartMigrationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -14305,24 +17294,26 @@ impl StartMigrationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::StartMigrationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_start_migration(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -14345,15 +17336,15 @@ impl StartMigrationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::StartMigration::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "StartMigration",
             "elasticache",
         ));
@@ -14362,10 +17353,10 @@ impl StartMigrationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -14395,6 +17386,8 @@ pub mod test_failover_input {
             self.replication_group_id = Some(input.into());
             self
         }
+        /// <p>The name of the replication group (console: cluster) whose automatic failover is being
+        /// tested by this operation.</p>
         pub fn set_replication_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14409,6 +17402,9 @@ pub mod test_failover_input {
             self.node_group_id = Some(input.into());
             self
         }
+        /// <p>The name of the node group (called shard in the console) in this replication group on
+        /// which automatic failover is to be tested.
+        /// You may test automatic failover on up to 5 node groups in any rolling 24-hour period.</p>
         pub fn set_node_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14419,8 +17415,10 @@ pub mod test_failover_input {
         /// Consumes the builder and constructs a [`TestFailoverInput`](crate::input::TestFailoverInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::TestFailoverInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::TestFailoverInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::TestFailoverInput {
                 replication_group_id: self.replication_group_id,
                 node_group_id: self.node_group_id,
@@ -14439,16 +17437,16 @@ impl TestFailoverInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::TestFailover,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::TestFailoverInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -14456,7 +17454,7 @@ impl TestFailoverInput {
         fn update_http_builder(
             input: &crate::input::TestFailoverInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -14465,26 +17463,26 @@ impl TestFailoverInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::TestFailoverInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_test_failover(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -14507,25 +17505,27 @@ impl TestFailoverInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::TestFailover::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "TestFailover",
-                    "elasticache",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::TestFailover::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "TestFailover",
+            "elasticache",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -14539,6 +17539,7 @@ impl TestFailoverInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestFailoverInput {
@@ -14559,6 +17560,7 @@ impl std::fmt::Debug for TestFailoverInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartMigrationInput {
@@ -14678,6 +17680,7 @@ impl std::fmt::Debug for RebootCacheClusterInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RebalanceSlotsInGlobalReplicationGroupInput {
@@ -14735,6 +17738,7 @@ impl std::fmt::Debug for PurchaseReservedCacheNodesOfferingInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyUserGroupInput {
@@ -14755,6 +17759,7 @@ impl std::fmt::Debug for ModifyUserGroupInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyUserInput {
@@ -14935,6 +17940,7 @@ pub struct ModifyReplicationGroupInput {
     /// </p>
     pub apply_immediately: bool,
     /// <p>The upgraded version of the cache engine to be run on the clusters in the replication group.</p>
+    ///
     /// <p>
     /// <b>Important:</b> You can upgrade to a newer engine version (see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version.
     /// If you want to use an earlier engine version,
@@ -14972,6 +17978,7 @@ pub struct ModifyReplicationGroupInput {
     /// </li>
     /// </ul>
     /// <p>     
+    ///
     /// For more information, see AUTH password at <a href="http://redis.io/commands/AUTH">AUTH</a>.</p>
     pub auth_token: std::option::Option<std::string::String>,
     /// <p>Specifies the strategy to use to update the AUTH token. This parameter must be specified with the <code>auth-token</code> parameter.
@@ -15054,6 +18061,7 @@ impl std::fmt::Debug for ModifyReplicationGroupInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyGlobalReplicationGroupInput {
@@ -15164,6 +18172,7 @@ pub struct ModifyCacheClusterInput {
     /// use the <code>CacheNodeIdsToRemove</code> parameter to provide the IDs of the specific cache nodes to remove.</p>
     /// <p>For clusters running Redis, this value must be 1.
     /// For clusters running Memcached, this value must be between 1 and 40.</p>
+    ///
     /// <note>
     /// <p>Adding or removing Memcached cache nodes can be applied immediately or as a pending operation (see <code>ApplyImmediately</code>).</p>
     /// <p>A pending operation to modify the number of cache nodes in a cluster during its maintenance window,
@@ -15207,6 +18216,7 @@ pub struct ModifyCacheClusterInput {
     /// <p>This parameter is only valid when <code>NumCacheNodes</code> in the request is greater
     /// than the sum of the number of active cache nodes and the number of cache nodes pending creation (which may be zero).
     /// The number of Availability Zones supplied in this list must match the cache nodes being added in this request.</p>
+    ///
     /// <p>Scenarios:</p>
     /// <ul>
     /// <li>
@@ -15228,12 +18238,14 @@ pub struct ModifyCacheClusterInput {
     /// Specify <code>NumCacheNodes=3</code> to cancel all pending operations.</p>
     /// </li>
     /// </ul>
+    ///
     /// <p>The Availability Zone placement of nodes pending creation cannot be modified. If you wish to cancel any nodes pending creation,
     /// add 0 nodes by setting <code>NumCacheNodes</code> to the number of current nodes.</p>
     /// <p>If <code>cross-az</code> is specified, existing Memcached nodes remain in their current Availability Zone.
     /// Only newly created nodes can be located in different Availability Zones.
     /// For guidance on how to move existing Memcached nodes to different Availability Zones, see the
     /// <b>Availability Zone Considerations</b> section of <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNodes.SupportedTypes.html">Cache Node Considerations for Memcached</a>.</p>
+    ///
     /// <p>
     /// <b>Impact of new add/remove requests upon pending requests</b>
     /// </p>
@@ -15386,6 +18398,7 @@ pub struct ModifyCacheClusterInput {
     /// </p>
     pub apply_immediately: bool,
     /// <p>The upgraded version of the cache engine to be run on the cache nodes.</p>
+    ///
     /// <p>
     /// <b>Important:</b> You can upgrade to a newer engine version
     /// (see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version.
@@ -15420,6 +18433,7 @@ pub struct ModifyCacheClusterInput {
     /// </li>
     /// </ul>
     /// <p>     
+    ///
     /// For more information, see AUTH password at <a href="http://redis.io/commands/AUTH">AUTH</a>.</p>
     pub auth_token: std::option::Option<std::string::String>,
     /// <p>Specifies the strategy to use to update the AUTH token. This parameter must be specified with the <code>auth-token</code> parameter.
@@ -15509,6 +18523,7 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 pub struct ListAllowedNodeTypeModificationsInput {
     /// <p>The name of the cluster you want to scale up to a larger node instanced type.
     /// ElastiCache uses the cluster id to identify the current node type of this cluster and from that to create a list of node types you can scale up to.</p>
+    ///
     /// <important>
     /// <p>You must provide a value for either the <code>CacheClusterId</code> or the
     /// <code>ReplicationGroupId</code>.</p>
@@ -15517,6 +18532,7 @@ pub struct ListAllowedNodeTypeModificationsInput {
     /// <p>The name of the replication group want to scale up to a larger node type.
     /// ElastiCache uses the replication group id to identify the current node type being used by
     /// this replication group, and from that to create a list of node types you can scale up to.</p>
+    ///
     /// <important>
     /// <p>You must provide a value for either the <code>CacheClusterId</code> or the
     /// <code>ReplicationGroupId</code>.</p>
@@ -15532,6 +18548,7 @@ impl std::fmt::Debug for ListAllowedNodeTypeModificationsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IncreaseReplicaCountInput {
@@ -15547,6 +18564,7 @@ pub struct IncreaseReplicaCountInput {
     /// <code>NewReplicaCount</code>, <code>NodeGroupId</code>, and <code>PreferredAvailabilityZones</code>.</p>
     pub replica_configuration: std::option::Option<std::vec::Vec<crate::model::ConfigureShard>>,
     /// <p>If <code>True</code>, the number of replica nodes is increased immediately.
+    ///
     /// <code>ApplyImmediately=False</code> is not currently supported.</p>
     pub apply_immediately: bool,
 }
@@ -15561,6 +18579,7 @@ impl std::fmt::Debug for IncreaseReplicaCountInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IncreaseNodeGroupsInGlobalReplicationGroupInput {
@@ -15588,6 +18607,7 @@ impl std::fmt::Debug for IncreaseNodeGroupsInGlobalReplicationGroupInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FailoverGlobalReplicationGroupInput {
@@ -15614,6 +18634,7 @@ impl std::fmt::Debug for FailoverGlobalReplicationGroupInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateGlobalReplicationGroupInput {
@@ -15637,6 +18658,7 @@ impl std::fmt::Debug for DisassociateGlobalReplicationGroupInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeUsersInput {
@@ -15663,6 +18685,7 @@ impl std::fmt::Debug for DescribeUsersInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeUserGroupsInput {
@@ -15683,6 +18706,7 @@ impl std::fmt::Debug for DescribeUserGroupsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeUpdateActionsInput {
@@ -15776,6 +18800,7 @@ impl std::fmt::Debug for DescribeSnapshotsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeServiceUpdatesInput {
@@ -15814,6 +18839,7 @@ pub struct DescribeReservedCacheNodesOfferingsInput {
     pub reserved_cache_nodes_offering_id: std::option::Option<std::string::String>,
     /// <p>The cache node type filter value.
     /// Use this parameter to show only the available offerings matching the specified cache node type.</p>
+    ///
     /// <p>The following node types are supported by ElastiCache.
     /// Generally speaking, the current generation types provide more memory and computational power
     /// at lower cost when compared to their equivalent previous generation counterparts.</p>
@@ -15823,6 +18849,7 @@ pub struct DescribeReservedCacheNodesOfferingsInput {
     /// <ul>
     /// <li>
     /// <p>Current generation: </p>
+    ///
     /// <p>
     /// <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
     /// <p>  
@@ -15833,11 +18860,17 @@ pub struct DescribeReservedCacheNodesOfferingsInput {
     /// <code>cache.m6g.8xlarge</code>,
     /// <code>cache.m6g.12xlarge</code>,
     /// <code>cache.m6g.16xlarge</code>
+    ///
+    ///
+    ///
     /// </p>  
+    ///
     /// <note>
     /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>
     /// </p>
     /// </note>
+    ///
+    ///
     /// <p>
     /// <b>M5 node types:</b>
     /// <code>cache.m5.large</code>,
@@ -15846,7 +18879,11 @@ pub struct DescribeReservedCacheNodesOfferingsInput {
     /// <code>cache.m5.4xlarge</code>,
     /// <code>cache.m5.12xlarge</code>,
     /// <code>cache.m5.24xlarge</code>
+    ///
+    ///
     /// </p>  
+    ///
+    ///
     /// <p>
     /// <b>M4 node types:</b>
     /// <code>cache.m4.large</code>,
@@ -15861,12 +18898,18 @@ pub struct DescribeReservedCacheNodesOfferingsInput {
     /// <code>cache.t3.small</code>,
     /// <code>cache.t3.medium</code>
     /// </p>
+    ///
+    ///
     /// <p>
     /// <b>T2 node types:</b>
     /// <code>cache.t2.micro</code>,
     /// <code>cache.t2.small</code>,
     /// <code>cache.t2.medium</code>
     /// </p>
+    ///
+    ///
+    ///
+    ///
     /// </li>
     /// <li>
     /// <p>Previous generation: (not recommended)</p>
@@ -15874,6 +18917,7 @@ pub struct DescribeReservedCacheNodesOfferingsInput {
     /// <b>T1 node types:</b>
     /// <code>cache.t1.micro</code>
     /// </p>
+    ///
     /// <p>
     /// <b>M1 node types:</b>
     /// <code>cache.m1.small</code>,
@@ -15881,6 +18925,7 @@ pub struct DescribeReservedCacheNodesOfferingsInput {
     /// <code>cache.m1.large</code>,
     /// <code>cache.m1.xlarge</code>
     /// </p>
+    ///
     /// <p>
     /// <b>M3 node types:</b>
     /// <code>cache.m3.medium</code>,
@@ -15888,11 +18933,13 @@ pub struct DescribeReservedCacheNodesOfferingsInput {
     /// <code>cache.m3.xlarge</code>,
     /// <code>cache.m3.2xlarge</code>
     /// </p>
+    ///
     /// </li>
     /// </ul>
     /// </li>
     /// <li>
     /// <p>Compute optimized:</p>
+    ///
     /// <ul>
     /// <li>
     /// <p>Previous generation: (not recommended)</p>
@@ -15910,6 +18957,10 @@ pub struct DescribeReservedCacheNodesOfferingsInput {
     /// <p>Current generation: </p>
     /// <p>
     /// <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
+    ///
+    ///
+    ///
+    ///
     /// <p>  
     /// <code>cache.r6g.large</code>,
     /// <code>cache.r6g.xlarge</code>,
@@ -15918,6 +18969,12 @@ pub struct DescribeReservedCacheNodesOfferingsInput {
     /// <code>cache.r6g.8xlarge</code>,
     /// <code>cache.r6g.12xlarge</code>,
     /// <code>cache.r6g.16xlarge</code>
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
     /// </p>  
     /// <note>
     /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>
@@ -15932,6 +18989,7 @@ pub struct DescribeReservedCacheNodesOfferingsInput {
     /// <code>cache.r5.12xlarge</code>,
     /// <code>cache.r5.24xlarge</code>
     /// </p>
+    ///
     /// <p>
     /// <b>R4 node types:</b>
     /// <code>cache.r4.large</code>,
@@ -15941,6 +18999,17 @@ pub struct DescribeReservedCacheNodesOfferingsInput {
     /// <code>cache.r4.8xlarge</code>,
     /// <code>cache.r4.16xlarge</code>
     /// </p>
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
     /// </li>
     /// <li>
     /// <p>Previous generation: (not recommended)</p>
@@ -15950,6 +19019,7 @@ pub struct DescribeReservedCacheNodesOfferingsInput {
     /// <code>cache.m2.2xlarge</code>,
     /// <code>cache.m2.4xlarge</code>
     /// </p>
+    ///
     /// <p>
     /// <b>R3 node types:</b>
     /// <code>cache.r3.large</code>,
@@ -15958,10 +19028,12 @@ pub struct DescribeReservedCacheNodesOfferingsInput {
     /// <code>cache.r3.4xlarge</code>,
     /// <code>cache.r3.8xlarge</code>
     /// </p>
+    ///
     /// </li>
     /// </ul>
     /// </li>
     /// </ul>
+    ///
     /// <p>
     /// <b>Additional node type info</b>
     /// </p>
@@ -15997,6 +19069,7 @@ pub struct DescribeReservedCacheNodesOfferingsInput {
     /// <p>The maximum number of records to include in the response. If more records exist than the
     /// specified <code>MaxRecords</code> value, a marker is included in the response so that
     /// the remaining results can be retrieved.</p>
+    ///
     /// <p>Default: 100</p>
     /// <p>Constraints: minimum 20; maximum 100.</p>
     pub max_records: std::option::Option<i32>,
@@ -16035,6 +19108,7 @@ pub struct DescribeReservedCacheNodesInput {
     pub reserved_cache_nodes_offering_id: std::option::Option<std::string::String>,
     /// <p>The cache node type filter value.
     /// Use this parameter to show only those reservations matching the specified cache node type.</p>
+    ///
     /// <p>The following node types are supported by ElastiCache.
     /// Generally speaking, the current generation types provide more memory and computational power
     /// at lower cost when compared to their equivalent previous generation counterparts.</p>
@@ -16044,6 +19118,7 @@ pub struct DescribeReservedCacheNodesInput {
     /// <ul>
     /// <li>
     /// <p>Current generation: </p>
+    ///
     /// <p>
     /// <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
     /// <p>  
@@ -16054,11 +19129,17 @@ pub struct DescribeReservedCacheNodesInput {
     /// <code>cache.m6g.8xlarge</code>,
     /// <code>cache.m6g.12xlarge</code>,
     /// <code>cache.m6g.16xlarge</code>
+    ///
+    ///
+    ///
     /// </p>  
+    ///
     /// <note>
     /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>
     /// </p>
     /// </note>
+    ///
+    ///
     /// <p>
     /// <b>M5 node types:</b>
     /// <code>cache.m5.large</code>,
@@ -16067,7 +19148,11 @@ pub struct DescribeReservedCacheNodesInput {
     /// <code>cache.m5.4xlarge</code>,
     /// <code>cache.m5.12xlarge</code>,
     /// <code>cache.m5.24xlarge</code>
+    ///
+    ///
     /// </p>  
+    ///
+    ///
     /// <p>
     /// <b>M4 node types:</b>
     /// <code>cache.m4.large</code>,
@@ -16082,12 +19167,18 @@ pub struct DescribeReservedCacheNodesInput {
     /// <code>cache.t3.small</code>,
     /// <code>cache.t3.medium</code>
     /// </p>
+    ///
+    ///
     /// <p>
     /// <b>T2 node types:</b>
     /// <code>cache.t2.micro</code>,
     /// <code>cache.t2.small</code>,
     /// <code>cache.t2.medium</code>
     /// </p>
+    ///
+    ///
+    ///
+    ///
     /// </li>
     /// <li>
     /// <p>Previous generation: (not recommended)</p>
@@ -16095,6 +19186,7 @@ pub struct DescribeReservedCacheNodesInput {
     /// <b>T1 node types:</b>
     /// <code>cache.t1.micro</code>
     /// </p>
+    ///
     /// <p>
     /// <b>M1 node types:</b>
     /// <code>cache.m1.small</code>,
@@ -16102,6 +19194,7 @@ pub struct DescribeReservedCacheNodesInput {
     /// <code>cache.m1.large</code>,
     /// <code>cache.m1.xlarge</code>
     /// </p>
+    ///
     /// <p>
     /// <b>M3 node types:</b>
     /// <code>cache.m3.medium</code>,
@@ -16109,11 +19202,13 @@ pub struct DescribeReservedCacheNodesInput {
     /// <code>cache.m3.xlarge</code>,
     /// <code>cache.m3.2xlarge</code>
     /// </p>
+    ///
     /// </li>
     /// </ul>
     /// </li>
     /// <li>
     /// <p>Compute optimized:</p>
+    ///
     /// <ul>
     /// <li>
     /// <p>Previous generation: (not recommended)</p>
@@ -16131,6 +19226,10 @@ pub struct DescribeReservedCacheNodesInput {
     /// <p>Current generation: </p>
     /// <p>
     /// <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
+    ///
+    ///
+    ///
+    ///
     /// <p>  
     /// <code>cache.r6g.large</code>,
     /// <code>cache.r6g.xlarge</code>,
@@ -16139,6 +19238,12 @@ pub struct DescribeReservedCacheNodesInput {
     /// <code>cache.r6g.8xlarge</code>,
     /// <code>cache.r6g.12xlarge</code>,
     /// <code>cache.r6g.16xlarge</code>
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
     /// </p>  
     /// <note>
     /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>
@@ -16153,6 +19258,7 @@ pub struct DescribeReservedCacheNodesInput {
     /// <code>cache.r5.12xlarge</code>,
     /// <code>cache.r5.24xlarge</code>
     /// </p>
+    ///
     /// <p>
     /// <b>R4 node types:</b>
     /// <code>cache.r4.large</code>,
@@ -16162,6 +19268,17 @@ pub struct DescribeReservedCacheNodesInput {
     /// <code>cache.r4.8xlarge</code>,
     /// <code>cache.r4.16xlarge</code>
     /// </p>
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
     /// </li>
     /// <li>
     /// <p>Previous generation: (not recommended)</p>
@@ -16171,6 +19288,7 @@ pub struct DescribeReservedCacheNodesInput {
     /// <code>cache.m2.2xlarge</code>,
     /// <code>cache.m2.4xlarge</code>
     /// </p>
+    ///
     /// <p>
     /// <b>R3 node types:</b>
     /// <code>cache.r3.large</code>,
@@ -16179,10 +19297,12 @@ pub struct DescribeReservedCacheNodesInput {
     /// <code>cache.r3.4xlarge</code>,
     /// <code>cache.r3.8xlarge</code>
     /// </p>
+    ///
     /// </li>
     /// </ul>
     /// </li>
     /// </ul>
+    ///
     /// <p>
     /// <b>Additional node type info</b>
     /// </p>
@@ -16217,6 +19337,7 @@ pub struct DescribeReservedCacheNodesInput {
     /// <p>The maximum number of records to include in the response. If more records exist than the
     /// specified <code>MaxRecords</code> value, a marker is included in the response so that
     /// the remaining results can be retrieved.</p>
+    ///
     /// <p>Default: 100</p>
     /// <p>Constraints: minimum 20; maximum 100.</p>
     pub max_records: std::option::Option<i32>,
@@ -16254,6 +19375,7 @@ pub struct DescribeReplicationGroupsInput {
     /// <p>The maximum number of records to include in the response. If more records exist than the
     /// specified <code>MaxRecords</code> value, a marker is included in the response so that
     /// the remaining results can be retrieved.</p>
+    ///
     /// <p>Default: 100</p>
     /// <p>Constraints: minimum 20; maximum 100.</p>
     pub max_records: std::option::Option<i32>,
@@ -16272,6 +19394,7 @@ impl std::fmt::Debug for DescribeReplicationGroupsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeGlobalReplicationGroupsInput {
@@ -16311,16 +19434,17 @@ pub struct DescribeEventsInput {
     /// <p>The beginning of the time interval to retrieve events for, specified in ISO 8601 format.</p>
     /// <p>
     /// <b>Example:</b> 2017-03-30T07:03:49.555Z</p>
-    pub start_time: std::option::Option<smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The end of the time interval for which to retrieve events, specified in ISO 8601 format.</p>
     /// <p>
     /// <b>Example:</b> 2017-03-30T07:03:49.555Z</p>
-    pub end_time: std::option::Option<smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The number of minutes worth of events to retrieve.</p>
     pub duration: std::option::Option<i32>,
     /// <p>The maximum number of records to include in the response. If more records exist than the
     /// specified <code>MaxRecords</code> value, a marker is included in the response so that
     /// the remaining results can be retrieved.</p>
+    ///
     /// <p>Default: 100</p>
     /// <p>Constraints: minimum 20; maximum 100.</p>
     pub max_records: std::option::Option<i32>,
@@ -16364,6 +19488,7 @@ pub struct DescribeEngineDefaultParametersInput {
     /// <p>The maximum number of records to include in the response. If more records exist than the
     /// specified <code>MaxRecords</code> value, a marker is included in the response so that
     /// the remaining results can be retrieved.</p>
+    ///
     /// <p>Default: 100</p>
     /// <p>Constraints: minimum 20; maximum 100.</p>
     pub max_records: std::option::Option<i32>,
@@ -16394,6 +19519,7 @@ pub struct DescribeCacheSubnetGroupsInput {
     /// <p>The maximum number of records to include in the response. If more records exist than the
     /// specified <code>MaxRecords</code> value, a marker is included in the response so that
     /// the remaining results can be retrieved.</p>
+    ///
     /// <p>Default: 100</p>
     /// <p>Constraints: minimum 20; maximum 100.</p>
     pub max_records: std::option::Option<i32>,
@@ -16422,6 +19548,7 @@ pub struct DescribeCacheSecurityGroupsInput {
     /// <p>The maximum number of records to include in the response. If more records exist than the
     /// specified <code>MaxRecords</code> value, a marker is included in the response so that
     /// the remaining results can be retrieved.</p>
+    ///
     /// <p>Default: 100</p>
     /// <p>Constraints: minimum 20; maximum 100.</p>
     pub max_records: std::option::Option<i32>,
@@ -16453,6 +19580,7 @@ pub struct DescribeCacheParametersInput {
     /// <p>The maximum number of records to include in the response. If more records exist than the
     /// specified <code>MaxRecords</code> value, a marker is included in the response so that
     /// the remaining results can be retrieved.</p>
+    ///
     /// <p>Default: 100</p>
     /// <p>Constraints: minimum 20; maximum 100.</p>
     pub max_records: std::option::Option<i32>,
@@ -16485,6 +19613,7 @@ pub struct DescribeCacheParameterGroupsInput {
     /// <p>The maximum number of records to include in the response. If more records exist than the
     /// specified <code>MaxRecords</code> value, a marker is included in the response so that
     /// the remaining results can be retrieved.</p>
+    ///
     /// <p>Default: 100</p>
     /// <p>Constraints: minimum 20; maximum 100.</p>
     pub max_records: std::option::Option<i32>,
@@ -16545,6 +19674,7 @@ pub struct DescribeCacheEngineVersionsInput {
     /// <p>The maximum number of records to include in the response. If more records exist than the
     /// specified <code>MaxRecords</code> value, a marker is included in the response so that
     /// the remaining results can be retrieved.</p>
+    ///
     /// <p>Default: 100</p>
     /// <p>Constraints: minimum 20; maximum 100.</p>
     pub max_records: std::option::Option<i32>,
@@ -16582,6 +19712,7 @@ pub struct DescribeCacheClustersInput {
     /// <p>The maximum number of records to include in the response. If more records exist than the
     /// specified <code>MaxRecords</code> value, a marker is included in the response so that
     /// the remaining results can be retrieved.</p>
+    ///
     /// <p>Default: 100</p>
     /// <p>Constraints: minimum 20; maximum 100.</p>
     pub max_records: std::option::Option<i32>,
@@ -16613,6 +19744,7 @@ impl std::fmt::Debug for DescribeCacheClustersInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteUserGroupInput {
@@ -16627,6 +19759,7 @@ impl std::fmt::Debug for DeleteUserGroupInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteUserInput {
@@ -16681,6 +19814,7 @@ impl std::fmt::Debug for DeleteReplicationGroupInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteGlobalReplicationGroupInput {
@@ -16778,6 +19912,7 @@ impl std::fmt::Debug for DeleteCacheClusterInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DecreaseReplicaCountInput {
@@ -16812,6 +19947,7 @@ pub struct DecreaseReplicaCountInput {
     /// <p>A list of the node ids to remove from the replication group or node group (shard).</p>
     pub replicas_to_remove: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>If <code>True</code>, the number of replica nodes is decreased immediately.
+    ///
     /// <code>ApplyImmediately=False</code> is not currently supported.</p>
     pub apply_immediately: bool,
 }
@@ -16827,6 +19963,7 @@ impl std::fmt::Debug for DecreaseReplicaCountInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DecreaseNodeGroupsInGlobalReplicationGroupInput {
@@ -16835,9 +19972,12 @@ pub struct DecreaseNodeGroupsInGlobalReplicationGroupInput {
     /// <p>The number of node groups (shards) that results from the modification of the shard configuration</p>
     pub node_group_count: i32,
     /// <p>If the value of NodeGroupCount is less than the current number of node groups (shards), then either NodeGroupsToRemove or NodeGroupsToRetain is required. GlobalNodeGroupsToRemove is a list of NodeGroupIds to remove from the cluster.
+    ///
     /// ElastiCache for Redis will attempt to remove all node groups listed by GlobalNodeGroupsToRemove from the cluster. </p>
     pub global_node_groups_to_remove: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>If the value of NodeGroupCount is less than the current number of node groups (shards), then either NodeGroupsToRemove or NodeGroupsToRetain is required. GlobalNodeGroupsToRetain is a list of NodeGroupIds to retain from the cluster. ElastiCache for Redis will attempt to retain all node groups listed by GlobalNodeGroupsToRetain from the cluster.
+    ///
+    ///
     /// </p>
     pub global_node_groups_to_retain: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Indicates that the shard reconfiguration process begins immediately. At present, the only permitted value for this parameter is true. </p>
@@ -16864,6 +20004,7 @@ impl std::fmt::Debug for DecreaseNodeGroupsInGlobalReplicationGroupInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateUserGroupInput {
@@ -16887,6 +20028,7 @@ impl std::fmt::Debug for CreateUserGroupInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateUserInput {
@@ -16951,6 +20093,7 @@ impl std::fmt::Debug for CreateSnapshotInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateReplicationGroupInput {
     /// <p>The replication group identifier. This parameter is stored as a lowercase string.</p>
+    ///
     /// <p>Constraints:</p>
     /// <ul>
     /// <li>
@@ -16975,8 +20118,10 @@ pub struct CreateReplicationGroupInput {
     /// <code>ReplicasPerNodeGroup</code> is specified.</p>
     pub primary_cluster_id: std::option::Option<std::string::String>,
     /// <p>Specifies whether a read-only replica is automatically promoted to read/write primary if the existing primary fails.</p>
+    ///
     /// <p>
     /// <code>AutomaticFailoverEnabled</code> must be enabled for Redis (cluster mode enabled) replication groups.</p>
+    ///
     /// <p>Default: false</p>
     pub automatic_failover_enabled: std::option::Option<bool>,
     /// <p>A flag indicating if you have Multi-AZ enabled to enhance fault tolerance. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html">Minimizing Downtime: Multi-AZ</a>.</p>
@@ -17030,6 +20175,7 @@ pub struct CreateReplicationGroupInput {
     /// <ul>
     /// <li>
     /// <p>Current generation: </p>
+    ///
     /// <p>
     /// <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
     /// <p>  
@@ -17040,11 +20186,17 @@ pub struct CreateReplicationGroupInput {
     /// <code>cache.m6g.8xlarge</code>,
     /// <code>cache.m6g.12xlarge</code>,
     /// <code>cache.m6g.16xlarge</code>
+    ///
+    ///
+    ///
     /// </p>  
+    ///
     /// <note>
     /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>
     /// </p>
     /// </note>
+    ///
+    ///
     /// <p>
     /// <b>M5 node types:</b>
     /// <code>cache.m5.large</code>,
@@ -17053,7 +20205,11 @@ pub struct CreateReplicationGroupInput {
     /// <code>cache.m5.4xlarge</code>,
     /// <code>cache.m5.12xlarge</code>,
     /// <code>cache.m5.24xlarge</code>
+    ///
+    ///
     /// </p>  
+    ///
+    ///
     /// <p>
     /// <b>M4 node types:</b>
     /// <code>cache.m4.large</code>,
@@ -17068,12 +20224,18 @@ pub struct CreateReplicationGroupInput {
     /// <code>cache.t3.small</code>,
     /// <code>cache.t3.medium</code>
     /// </p>
+    ///
+    ///
     /// <p>
     /// <b>T2 node types:</b>
     /// <code>cache.t2.micro</code>,
     /// <code>cache.t2.small</code>,
     /// <code>cache.t2.medium</code>
     /// </p>
+    ///
+    ///
+    ///
+    ///
     /// </li>
     /// <li>
     /// <p>Previous generation: (not recommended)</p>
@@ -17081,6 +20243,7 @@ pub struct CreateReplicationGroupInput {
     /// <b>T1 node types:</b>
     /// <code>cache.t1.micro</code>
     /// </p>
+    ///
     /// <p>
     /// <b>M1 node types:</b>
     /// <code>cache.m1.small</code>,
@@ -17088,6 +20251,7 @@ pub struct CreateReplicationGroupInput {
     /// <code>cache.m1.large</code>,
     /// <code>cache.m1.xlarge</code>
     /// </p>
+    ///
     /// <p>
     /// <b>M3 node types:</b>
     /// <code>cache.m3.medium</code>,
@@ -17095,11 +20259,13 @@ pub struct CreateReplicationGroupInput {
     /// <code>cache.m3.xlarge</code>,
     /// <code>cache.m3.2xlarge</code>
     /// </p>
+    ///
     /// </li>
     /// </ul>
     /// </li>
     /// <li>
     /// <p>Compute optimized:</p>
+    ///
     /// <ul>
     /// <li>
     /// <p>Previous generation: (not recommended)</p>
@@ -17117,6 +20283,10 @@ pub struct CreateReplicationGroupInput {
     /// <p>Current generation: </p>
     /// <p>
     /// <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
+    ///
+    ///
+    ///
+    ///
     /// <p>  
     /// <code>cache.r6g.large</code>,
     /// <code>cache.r6g.xlarge</code>,
@@ -17125,6 +20295,12 @@ pub struct CreateReplicationGroupInput {
     /// <code>cache.r6g.8xlarge</code>,
     /// <code>cache.r6g.12xlarge</code>,
     /// <code>cache.r6g.16xlarge</code>
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
     /// </p>  
     /// <note>
     /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>
@@ -17139,6 +20315,7 @@ pub struct CreateReplicationGroupInput {
     /// <code>cache.r5.12xlarge</code>,
     /// <code>cache.r5.24xlarge</code>
     /// </p>
+    ///
     /// <p>
     /// <b>R4 node types:</b>
     /// <code>cache.r4.large</code>,
@@ -17148,6 +20325,17 @@ pub struct CreateReplicationGroupInput {
     /// <code>cache.r4.8xlarge</code>,
     /// <code>cache.r4.16xlarge</code>
     /// </p>
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
     /// </li>
     /// <li>
     /// <p>Previous generation: (not recommended)</p>
@@ -17157,6 +20345,7 @@ pub struct CreateReplicationGroupInput {
     /// <code>cache.m2.2xlarge</code>,
     /// <code>cache.m2.4xlarge</code>
     /// </p>
+    ///
     /// <p>
     /// <b>R3 node types:</b>
     /// <code>cache.r3.large</code>,
@@ -17165,10 +20354,12 @@ pub struct CreateReplicationGroupInput {
     /// <code>cache.r3.4xlarge</code>,
     /// <code>cache.r3.8xlarge</code>
     /// </p>
+    ///
     /// </li>
     /// </ul>
     /// </li>
     /// </ul>
+    ///
     /// <p>
     /// <b>Additional node type info</b>
     /// </p>
@@ -17192,6 +20383,7 @@ pub struct CreateReplicationGroupInput {
     pub engine: std::option::Option<std::string::String>,
     /// <p>The version number of the cache engine to be used for the clusters in this replication group.
     /// To view the supported cache engine versions, use the <code>DescribeCacheEngineVersions</code> operation.</p>
+    ///
     /// <p>
     /// <b>Important:</b> You can upgrade to a newer engine version (see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting a Cache Engine and Version</a>) in the <i>ElastiCache User Guide</i>,
     /// but you cannot downgrade to an earlier engine version.
@@ -17202,6 +20394,7 @@ pub struct CreateReplicationGroupInput {
     /// <p>The name of the parameter group to associate with this replication group.
     /// If this argument is omitted, the default cache parameter group for the specified engine is
     /// used.</p>
+    ///
     /// <p>If you are running Redis version 3.2.4 or later, only one node group (shard), and want to use a default parameter group,
     /// we recommend that you specify the parameter group by name. </p>
     /// <ul>
@@ -17248,6 +20441,7 @@ pub struct CreateReplicationGroupInput {
     /// the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum
     /// maintenance window is a 60 minute period.
     /// Valid values for <code>ddd</code> are:</p>
+    ///
     /// <p>Specifies the weekly time range during which maintenance
     /// on the cluster is performed. It is specified as a range in
     /// the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum
@@ -17450,6 +20644,7 @@ impl std::fmt::Debug for CreateReplicationGroupInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGlobalReplicationGroupInput {
@@ -17639,6 +20834,7 @@ pub struct CreateCacheClusterInput {
     /// <ul>
     /// <li>
     /// <p>Current generation: </p>
+    ///
     /// <p>
     /// <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
     /// <p>  
@@ -17649,11 +20845,17 @@ pub struct CreateCacheClusterInput {
     /// <code>cache.m6g.8xlarge</code>,
     /// <code>cache.m6g.12xlarge</code>,
     /// <code>cache.m6g.16xlarge</code>
+    ///
+    ///
+    ///
     /// </p>  
+    ///
     /// <note>
     /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>
     /// </p>
     /// </note>
+    ///
+    ///
     /// <p>
     /// <b>M5 node types:</b>
     /// <code>cache.m5.large</code>,
@@ -17662,7 +20864,11 @@ pub struct CreateCacheClusterInput {
     /// <code>cache.m5.4xlarge</code>,
     /// <code>cache.m5.12xlarge</code>,
     /// <code>cache.m5.24xlarge</code>
+    ///
+    ///
     /// </p>  
+    ///
+    ///
     /// <p>
     /// <b>M4 node types:</b>
     /// <code>cache.m4.large</code>,
@@ -17677,12 +20883,18 @@ pub struct CreateCacheClusterInput {
     /// <code>cache.t3.small</code>,
     /// <code>cache.t3.medium</code>
     /// </p>
+    ///
+    ///
     /// <p>
     /// <b>T2 node types:</b>
     /// <code>cache.t2.micro</code>,
     /// <code>cache.t2.small</code>,
     /// <code>cache.t2.medium</code>
     /// </p>
+    ///
+    ///
+    ///
+    ///
     /// </li>
     /// <li>
     /// <p>Previous generation: (not recommended)</p>
@@ -17690,6 +20902,7 @@ pub struct CreateCacheClusterInput {
     /// <b>T1 node types:</b>
     /// <code>cache.t1.micro</code>
     /// </p>
+    ///
     /// <p>
     /// <b>M1 node types:</b>
     /// <code>cache.m1.small</code>,
@@ -17697,6 +20910,7 @@ pub struct CreateCacheClusterInput {
     /// <code>cache.m1.large</code>,
     /// <code>cache.m1.xlarge</code>
     /// </p>
+    ///
     /// <p>
     /// <b>M3 node types:</b>
     /// <code>cache.m3.medium</code>,
@@ -17704,11 +20918,13 @@ pub struct CreateCacheClusterInput {
     /// <code>cache.m3.xlarge</code>,
     /// <code>cache.m3.2xlarge</code>
     /// </p>
+    ///
     /// </li>
     /// </ul>
     /// </li>
     /// <li>
     /// <p>Compute optimized:</p>
+    ///
     /// <ul>
     /// <li>
     /// <p>Previous generation: (not recommended)</p>
@@ -17726,6 +20942,10 @@ pub struct CreateCacheClusterInput {
     /// <p>Current generation: </p>
     /// <p>
     /// <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for Memcached engine version 1.5.16 onward).</p>
+    ///
+    ///
+    ///
+    ///
     /// <p>  
     /// <code>cache.r6g.large</code>,
     /// <code>cache.r6g.xlarge</code>,
@@ -17734,6 +20954,12 @@ pub struct CreateCacheClusterInput {
     /// <code>cache.r6g.8xlarge</code>,
     /// <code>cache.r6g.12xlarge</code>,
     /// <code>cache.r6g.16xlarge</code>
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
     /// </p>  
     /// <note>
     /// <p>For region availability, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheNodes.SupportedTypes.html#CacheNodes.SupportedTypesByRegion">Supported Node Types</a>
@@ -17748,6 +20974,7 @@ pub struct CreateCacheClusterInput {
     /// <code>cache.r5.12xlarge</code>,
     /// <code>cache.r5.24xlarge</code>
     /// </p>
+    ///
     /// <p>
     /// <b>R4 node types:</b>
     /// <code>cache.r4.large</code>,
@@ -17757,6 +20984,17 @@ pub struct CreateCacheClusterInput {
     /// <code>cache.r4.8xlarge</code>,
     /// <code>cache.r4.16xlarge</code>
     /// </p>
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
+    ///
     /// </li>
     /// <li>
     /// <p>Previous generation: (not recommended)</p>
@@ -17766,6 +21004,7 @@ pub struct CreateCacheClusterInput {
     /// <code>cache.m2.2xlarge</code>,
     /// <code>cache.m2.4xlarge</code>
     /// </p>
+    ///
     /// <p>
     /// <b>R3 node types:</b>
     /// <code>cache.r3.large</code>,
@@ -17774,10 +21013,12 @@ pub struct CreateCacheClusterInput {
     /// <code>cache.r3.4xlarge</code>,
     /// <code>cache.r3.8xlarge</code>
     /// </p>
+    ///
     /// </li>
     /// </ul>
     /// </li>
     /// </ul>
+    ///
     /// <p>
     /// <b>Additional node type info</b>
     /// </p>
@@ -17803,6 +21044,7 @@ pub struct CreateCacheClusterInput {
     pub engine: std::option::Option<std::string::String>,
     /// <p>The version number of the cache engine to be used for this cluster.
     /// To view the supported cache engine versions, use the DescribeCacheEngineVersions operation.</p>
+    ///
     /// <p>
     /// <b>Important:</b> You can upgrade to a newer engine version (see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SelectEngine.html#VersionManagement">Selecting a Cache Engine and Version</a>), but you cannot downgrade to an earlier engine version.
     /// If you want to use an earlier engine version,
@@ -17974,6 +21216,7 @@ pub struct CopySnapshotInput {
     /// <p>When using this parameter to export a snapshot,
     /// be sure Amazon ElastiCache has the needed permissions to this S3 bucket.
     /// For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html#backups-exporting-grant-access">Step 2: Grant ElastiCache Access to Your Amazon S3 Bucket</a> in the <i>Amazon ElastiCache User Guide</i>.</p>
+    ///
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html">Exporting a Snapshot</a> in the <i>Amazon ElastiCache User Guide</i>.</p>
     pub target_bucket: std::option::Option<std::string::String>,
     /// <p>The ID of the KMS key used to encrypt the target snapshot.</p>
@@ -17993,6 +21236,7 @@ impl std::fmt::Debug for CopySnapshotInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CompleteMigrationInput {
@@ -18010,6 +21254,7 @@ impl std::fmt::Debug for CompleteMigrationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchStopUpdateActionInput {
@@ -18030,6 +21275,7 @@ impl std::fmt::Debug for BatchStopUpdateActionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchApplyUpdateActionInput {

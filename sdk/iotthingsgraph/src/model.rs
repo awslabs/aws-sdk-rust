@@ -31,6 +31,7 @@ pub mod definition_document {
             self.language = Some(input);
             self
         }
+        /// <p>The language used to define the entity. <code>GRAPHQL</code> is the only valid value.</p>
         pub fn set_language(
             mut self,
             input: std::option::Option<crate::model::DefinitionLanguage>,
@@ -43,6 +44,7 @@ pub mod definition_document {
             self.text = Some(input.into());
             self
         }
+        /// <p>The GraphQL text that defines the entity.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.text = input;
             self
@@ -63,6 +65,7 @@ impl DefinitionDocument {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -74,6 +77,7 @@ impl DefinitionDocument {
     std::hash::Hash,
 )]
 pub enum DefinitionLanguage {
+    #[allow(missing_docs)] // documentation missing in model
     Graphql,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -94,12 +98,14 @@ impl std::str::FromStr for DefinitionLanguage {
     }
 }
 impl DefinitionLanguage {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DefinitionLanguage::Graphql => "GRAPHQL",
             DefinitionLanguage::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["GRAPHQL"]
     }
@@ -121,7 +127,7 @@ pub struct SystemTemplateSummary {
     /// <p>The revision number of the system.</p>
     pub revision_number: std::option::Option<i64>,
     /// <p>The date when the system was created.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for SystemTemplateSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -142,7 +148,7 @@ pub mod system_template_summary {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) revision_number: std::option::Option<i64>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The ID of the system.</p>
@@ -150,6 +156,7 @@ pub mod system_template_summary {
             self.id = Some(input.into());
             self
         }
+        /// <p>The ID of the system.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -159,6 +166,7 @@ pub mod system_template_summary {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the system.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -168,16 +176,21 @@ pub mod system_template_summary {
             self.revision_number = Some(input);
             self
         }
+        /// <p>The revision number of the system.</p>
         pub fn set_revision_number(mut self, input: std::option::Option<i64>) -> Self {
             self.revision_number = input;
             self
         }
         /// <p>The date when the system was created.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date when the system was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
@@ -210,7 +223,7 @@ pub struct FlowTemplateSummary {
     /// <p>The revision number of the workflow.</p>
     pub revision_number: std::option::Option<i64>,
     /// <p>The date when the workflow was created.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for FlowTemplateSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -231,7 +244,7 @@ pub mod flow_template_summary {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) revision_number: std::option::Option<i64>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The ID of the workflow.</p>
@@ -239,6 +252,7 @@ pub mod flow_template_summary {
             self.id = Some(input.into());
             self
         }
+        /// <p>The ID of the workflow.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -248,6 +262,7 @@ pub mod flow_template_summary {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the workflow.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -257,16 +272,21 @@ pub mod flow_template_summary {
             self.revision_number = Some(input);
             self
         }
+        /// <p>The revision number of the workflow.</p>
         pub fn set_revision_number(mut self, input: std::option::Option<i64>) -> Self {
             self.revision_number = input;
             self
         }
         /// <p>The date when the workflow was created.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date when the workflow was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
@@ -303,10 +323,11 @@ pub struct SystemInstanceSummary {
     /// <p>The ID of the Greengrass group where the system instance is deployed.</p>
     pub greengrass_group_name: std::option::Option<std::string::String>,
     /// <p>The date when the system instance was created.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>
+    ///
     /// The date and time when the system instance was last updated.</p>
-    pub updated_at: std::option::Option<smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The ID of the Greengrass group where the system instance is deployed.</p>
     pub greengrass_group_id: std::option::Option<std::string::String>,
     /// <p>The version of the Greengrass group where the system instance is deployed.</p>
@@ -341,8 +362,8 @@ pub mod system_instance_summary {
         pub(crate) status: std::option::Option<crate::model::SystemInstanceDeploymentStatus>,
         pub(crate) target: std::option::Option<crate::model::DeploymentTarget>,
         pub(crate) greengrass_group_name: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
-        pub(crate) updated_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) greengrass_group_id: std::option::Option<std::string::String>,
         pub(crate) greengrass_group_version_id: std::option::Option<std::string::String>,
     }
@@ -352,6 +373,7 @@ pub mod system_instance_summary {
             self.id = Some(input.into());
             self
         }
+        /// <p>The ID of the system instance.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -361,6 +383,7 @@ pub mod system_instance_summary {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the system instance.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -370,6 +393,7 @@ pub mod system_instance_summary {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the system instance.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::SystemInstanceDeploymentStatus>,
@@ -382,6 +406,7 @@ pub mod system_instance_summary {
             self.target = Some(input);
             self
         }
+        /// <p>The target of the system instance.</p>
         pub fn set_target(
             mut self,
             input: std::option::Option<crate::model::DeploymentTarget>,
@@ -394,6 +419,7 @@ pub mod system_instance_summary {
             self.greengrass_group_name = Some(input.into());
             self
         }
+        /// <p>The ID of the Greengrass group where the system instance is deployed.</p>
         pub fn set_greengrass_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -402,21 +428,32 @@ pub mod system_instance_summary {
             self
         }
         /// <p>The date when the system instance was created.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date when the system instance was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>
+        ///
         /// The date and time when the system instance was last updated.</p>
-        pub fn updated_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.updated_at = Some(input);
             self
         }
-        pub fn set_updated_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>
+        ///
+        /// The date and time when the system instance was last updated.</p>
+        pub fn set_updated_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.updated_at = input;
             self
         }
@@ -425,6 +462,7 @@ pub mod system_instance_summary {
             self.greengrass_group_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Greengrass group where the system instance is deployed.</p>
         pub fn set_greengrass_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -440,6 +478,7 @@ pub mod system_instance_summary {
             self.greengrass_group_version_id = Some(input.into());
             self
         }
+        /// <p>The version of the Greengrass group where the system instance is deployed.</p>
         pub fn set_greengrass_group_version_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -470,6 +509,7 @@ impl SystemInstanceSummary {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -481,7 +521,9 @@ impl SystemInstanceSummary {
     std::hash::Hash,
 )]
 pub enum DeploymentTarget {
+    #[allow(missing_docs)] // documentation missing in model
     Cloud,
+    #[allow(missing_docs)] // documentation missing in model
     Greengrass,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -503,6 +545,7 @@ impl std::str::FromStr for DeploymentTarget {
     }
 }
 impl DeploymentTarget {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DeploymentTarget::Cloud => "CLOUD",
@@ -510,6 +553,7 @@ impl DeploymentTarget {
             DeploymentTarget::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CLOUD", "GREENGRASS"]
     }
@@ -520,6 +564,7 @@ impl AsRef<str> for DeploymentTarget {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -531,13 +576,21 @@ impl AsRef<str> for DeploymentTarget {
     std::hash::Hash,
 )]
 pub enum SystemInstanceDeploymentStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Bootstrap,
+    #[allow(missing_docs)] // documentation missing in model
     DeletedInTarget,
+    #[allow(missing_docs)] // documentation missing in model
     DeployedInTarget,
+    #[allow(missing_docs)] // documentation missing in model
     DeployInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     NotDeployed,
+    #[allow(missing_docs)] // documentation missing in model
     PendingDelete,
+    #[allow(missing_docs)] // documentation missing in model
     UndeployInProgress,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -565,6 +618,7 @@ impl std::str::FromStr for SystemInstanceDeploymentStatus {
     }
 }
 impl SystemInstanceDeploymentStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SystemInstanceDeploymentStatus::Bootstrap => "BOOTSTRAP",
@@ -578,6 +632,7 @@ impl SystemInstanceDeploymentStatus {
             SystemInstanceDeploymentStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "BOOTSTRAP",
@@ -629,6 +684,7 @@ pub mod tag {
             self.key = Some(input.into());
             self
         }
+        /// <p>The required name of the tag. The string value can be from 1 to 128 Unicode characters in length.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -638,6 +694,7 @@ pub mod tag {
             self.value = Some(input.into());
             self
         }
+        /// <p>The optional value of the tag. The string value can be from 1 to 256 Unicode characters in length.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -690,6 +747,7 @@ pub mod thing {
             self.thing_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the thing.</p>
         pub fn set_thing_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.thing_arn = input;
             self
@@ -699,6 +757,7 @@ pub mod thing {
             self.thing_name = Some(input.into());
             self
         }
+        /// <p>The name of the thing.</p>
         pub fn set_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.thing_name = input;
             self
@@ -751,6 +810,7 @@ pub mod system_template_filter {
             self.name = Some(input);
             self
         }
+        /// <p>The name of the system search filter field.</p>
         pub fn set_name(
             mut self,
             input: std::option::Option<crate::model::SystemTemplateFilterName>,
@@ -758,12 +818,18 @@ pub mod system_template_filter {
             self.name = input;
             self
         }
+        /// Appends an item to `value`.
+        ///
+        /// To override the contents of this collection use [`set_value`](Self::set_value).
+        ///
+        /// <p>An array of string values for the search filter field. Multiple values function as AND criteria in the search.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.value.unwrap_or_default();
             v.push(input.into());
             self.value = Some(v);
             self
         }
+        /// <p>An array of string values for the search filter field. Multiple values function as AND criteria in the search.</p>
         pub fn set_value(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -787,6 +853,7 @@ impl SystemTemplateFilter {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -798,6 +865,7 @@ impl SystemTemplateFilter {
     std::hash::Hash,
 )]
 pub enum SystemTemplateFilterName {
+    #[allow(missing_docs)] // documentation missing in model
     FlowTemplateId,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -818,12 +886,14 @@ impl std::str::FromStr for SystemTemplateFilterName {
     }
 }
 impl SystemTemplateFilterName {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SystemTemplateFilterName::FlowTemplateId => "FLOW_TEMPLATE_ID",
             SystemTemplateFilterName::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FLOW_TEMPLATE_ID"]
     }
@@ -868,6 +938,7 @@ pub mod system_instance_filter {
             self.name = Some(input);
             self
         }
+        /// <p>The name of the search filter field.</p>
         pub fn set_name(
             mut self,
             input: std::option::Option<crate::model::SystemInstanceFilterName>,
@@ -875,12 +946,18 @@ pub mod system_instance_filter {
             self.name = input;
             self
         }
+        /// Appends an item to `value`.
+        ///
+        /// To override the contents of this collection use [`set_value`](Self::set_value).
+        ///
+        /// <p>An array of string values for the search filter field. Multiple values function as AND criteria in the search. </p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.value.unwrap_or_default();
             v.push(input.into());
             self.value = Some(v);
             self
         }
+        /// <p>An array of string values for the search filter field. Multiple values function as AND criteria in the search. </p>
         pub fn set_value(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -904,6 +981,7 @@ impl SystemInstanceFilter {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -915,8 +993,11 @@ impl SystemInstanceFilter {
     std::hash::Hash,
 )]
 pub enum SystemInstanceFilterName {
+    #[allow(missing_docs)] // documentation missing in model
     GreengrassGroupName,
+    #[allow(missing_docs)] // documentation missing in model
     Status,
+    #[allow(missing_docs)] // documentation missing in model
     SystemTemplateId,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -939,6 +1020,7 @@ impl std::str::FromStr for SystemInstanceFilterName {
     }
 }
 impl SystemInstanceFilterName {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SystemInstanceFilterName::GreengrassGroupName => "GREENGRASS_GROUP_NAME",
@@ -947,6 +1029,7 @@ impl SystemInstanceFilterName {
             SystemInstanceFilterName::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["GREENGRASS_GROUP_NAME", "STATUS", "SYSTEM_TEMPLATE_ID"]
     }
@@ -989,6 +1072,7 @@ pub mod flow_template_filter {
             self.name = Some(input);
             self
         }
+        /// <p>The name of the search filter field.</p>
         pub fn set_name(
             mut self,
             input: std::option::Option<crate::model::FlowTemplateFilterName>,
@@ -996,12 +1080,18 @@ pub mod flow_template_filter {
             self.name = input;
             self
         }
+        /// Appends an item to `value`.
+        ///
+        /// To override the contents of this collection use [`set_value`](Self::set_value).
+        ///
+        /// <p>An array of string values for the search filter field. Multiple values function as AND criteria in the search.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.value.unwrap_or_default();
             v.push(input.into());
             self.value = Some(v);
             self
         }
+        /// <p>An array of string values for the search filter field. Multiple values function as AND criteria in the search.</p>
         pub fn set_value(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1025,6 +1115,7 @@ impl FlowTemplateFilter {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1036,6 +1127,7 @@ impl FlowTemplateFilter {
     std::hash::Hash,
 )]
 pub enum FlowTemplateFilterName {
+    #[allow(missing_docs)] // documentation missing in model
     DeviceModelId,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1056,12 +1148,14 @@ impl std::str::FromStr for FlowTemplateFilterName {
     }
 }
 impl FlowTemplateFilterName {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FlowTemplateFilterName::DeviceModelId => "DEVICE_MODEL_ID",
             FlowTemplateFilterName::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DEVICE_MODEL_ID"]
     }
@@ -1085,9 +1179,9 @@ pub struct FlowExecutionSummary {
     /// <p>The ID of the flow.</p>
     pub flow_template_id: std::option::Option<std::string::String>,
     /// <p>The date and time when the flow execution summary was created.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time when the flow execution summary was last updated.</p>
-    pub updated_at: std::option::Option<smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for FlowExecutionSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1111,8 +1205,8 @@ pub mod flow_execution_summary {
         pub(crate) status: std::option::Option<crate::model::FlowExecutionStatus>,
         pub(crate) system_instance_id: std::option::Option<std::string::String>,
         pub(crate) flow_template_id: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
-        pub(crate) updated_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The ID of the flow execution.</p>
@@ -1120,6 +1214,7 @@ pub mod flow_execution_summary {
             self.flow_execution_id = Some(input.into());
             self
         }
+        /// <p>The ID of the flow execution.</p>
         pub fn set_flow_execution_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1132,6 +1227,7 @@ pub mod flow_execution_summary {
             self.status = Some(input);
             self
         }
+        /// <p>The current status of the flow execution.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::FlowExecutionStatus>,
@@ -1144,6 +1240,7 @@ pub mod flow_execution_summary {
             self.system_instance_id = Some(input.into());
             self
         }
+        /// <p>The ID of the system instance that contains the flow.</p>
         pub fn set_system_instance_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1156,6 +1253,7 @@ pub mod flow_execution_summary {
             self.flow_template_id = Some(input.into());
             self
         }
+        /// <p>The ID of the flow.</p>
         pub fn set_flow_template_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1164,20 +1262,28 @@ pub mod flow_execution_summary {
             self
         }
         /// <p>The date and time when the flow execution summary was created.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date and time when the flow execution summary was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The date and time when the flow execution summary was last updated.</p>
-        pub fn updated_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.updated_at = Some(input);
             self
         }
-        pub fn set_updated_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date and time when the flow execution summary was last updated.</p>
+        pub fn set_updated_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.updated_at = input;
             self
         }
@@ -1201,6 +1307,7 @@ impl FlowExecutionSummary {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1212,9 +1319,13 @@ impl FlowExecutionSummary {
     std::hash::Hash,
 )]
 pub enum FlowExecutionStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Aborted,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Running,
+    #[allow(missing_docs)] // documentation missing in model
     Succeeded,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1238,6 +1349,7 @@ impl std::str::FromStr for FlowExecutionStatus {
     }
 }
 impl FlowExecutionStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FlowExecutionStatus::Aborted => "ABORTED",
@@ -1247,6 +1359,7 @@ impl FlowExecutionStatus {
             FlowExecutionStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ABORTED", "FAILED", "RUNNING", "SUCCEEDED"]
     }
@@ -1268,7 +1381,7 @@ pub struct EntityDescription {
     /// <p>The entity type.</p>
     pub r#type: std::option::Option<crate::model::EntityType>,
     /// <p>The time at which the entity was created.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The definition document of the entity.</p>
     pub definition: std::option::Option<crate::model::DefinitionDocument>,
 }
@@ -1292,7 +1405,7 @@ pub mod entity_description {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::EntityType>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) definition: std::option::Option<crate::model::DefinitionDocument>,
     }
     impl Builder {
@@ -1301,6 +1414,7 @@ pub mod entity_description {
             self.id = Some(input.into());
             self
         }
+        /// <p>The entity ID.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -1310,6 +1424,7 @@ pub mod entity_description {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The entity ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -1319,16 +1434,21 @@ pub mod entity_description {
             self.r#type = Some(input);
             self
         }
+        /// <p>The entity type.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::EntityType>) -> Self {
             self.r#type = input;
             self
         }
         /// <p>The time at which the entity was created.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time at which the entity was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
@@ -1337,6 +1457,7 @@ pub mod entity_description {
             self.definition = Some(input);
             self
         }
+        /// <p>The definition document of the entity.</p>
         pub fn set_definition(
             mut self,
             input: std::option::Option<crate::model::DefinitionDocument>,
@@ -1363,6 +1484,7 @@ impl EntityDescription {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1374,15 +1496,25 @@ impl EntityDescription {
     std::hash::Hash,
 )]
 pub enum EntityType {
+    #[allow(missing_docs)] // documentation missing in model
     Action,
+    #[allow(missing_docs)] // documentation missing in model
     Capability,
+    #[allow(missing_docs)] // documentation missing in model
     Device,
+    #[allow(missing_docs)] // documentation missing in model
     DeviceModel,
+    #[allow(missing_docs)] // documentation missing in model
     Enum,
+    #[allow(missing_docs)] // documentation missing in model
     Event,
+    #[allow(missing_docs)] // documentation missing in model
     Mapping,
+    #[allow(missing_docs)] // documentation missing in model
     Property,
+    #[allow(missing_docs)] // documentation missing in model
     Service,
+    #[allow(missing_docs)] // documentation missing in model
     State,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1412,6 +1544,7 @@ impl std::str::FromStr for EntityType {
     }
 }
 impl EntityType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EntityType::Action => "ACTION",
@@ -1427,6 +1560,7 @@ impl EntityType {
             EntityType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ACTION",
@@ -1484,6 +1618,8 @@ pub mod entity_filter {
             self.name = Some(input);
             self
         }
+        /// <p>The name of the entity search filter field. <code>REFERENCED_ENTITY_ID</code> filters on entities that are used by the entity in the result set. For example,
+        /// you can filter on the ID of a property that is used in a state.</p>
         pub fn set_name(
             mut self,
             input: std::option::Option<crate::model::EntityFilterName>,
@@ -1491,12 +1627,18 @@ pub mod entity_filter {
             self.name = input;
             self
         }
+        /// Appends an item to `value`.
+        ///
+        /// To override the contents of this collection use [`set_value`](Self::set_value).
+        ///
+        /// <p>An array of string values for the search filter field. Multiple values function as AND criteria in the search.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.value.unwrap_or_default();
             v.push(input.into());
             self.value = Some(v);
             self
         }
+        /// <p>An array of string values for the search filter field. Multiple values function as AND criteria in the search.</p>
         pub fn set_value(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1520,6 +1662,7 @@ impl EntityFilter {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1531,9 +1674,13 @@ impl EntityFilter {
     std::hash::Hash,
 )]
 pub enum EntityFilterName {
+    #[allow(missing_docs)] // documentation missing in model
     Name,
+    #[allow(missing_docs)] // documentation missing in model
     Namespace,
+    #[allow(missing_docs)] // documentation missing in model
     ReferencedEntityId,
+    #[allow(missing_docs)] // documentation missing in model
     SemanticTypePath,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1557,6 +1704,7 @@ impl std::str::FromStr for EntityFilterName {
     }
 }
 impl EntityFilterName {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EntityFilterName::Name => "NAME",
@@ -1566,6 +1714,7 @@ impl EntityFilterName {
             EntityFilterName::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "NAME",
@@ -1590,7 +1739,7 @@ pub struct FlowExecutionMessage {
     /// <p>The type of flow event .</p>
     pub event_type: std::option::Option<crate::model::FlowExecutionEventType>,
     /// <p>The date and time when the message was last updated.</p>
-    pub timestamp: std::option::Option<smithy_types::Instant>,
+    pub timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A string containing information about the flow event.</p>
     pub payload: std::option::Option<std::string::String>,
 }
@@ -1612,7 +1761,7 @@ pub mod flow_execution_message {
     pub struct Builder {
         pub(crate) message_id: std::option::Option<std::string::String>,
         pub(crate) event_type: std::option::Option<crate::model::FlowExecutionEventType>,
-        pub(crate) timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) timestamp: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) payload: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1621,6 +1770,7 @@ pub mod flow_execution_message {
             self.message_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier of the message.</p>
         pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message_id = input;
             self
@@ -1630,6 +1780,7 @@ pub mod flow_execution_message {
             self.event_type = Some(input);
             self
         }
+        /// <p>The type of flow event .</p>
         pub fn set_event_type(
             mut self,
             input: std::option::Option<crate::model::FlowExecutionEventType>,
@@ -1638,11 +1789,15 @@ pub mod flow_execution_message {
             self
         }
         /// <p>The date and time when the message was last updated.</p>
-        pub fn timestamp(mut self, input: smithy_types::Instant) -> Self {
+        pub fn timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
             self.timestamp = Some(input);
             self
         }
-        pub fn set_timestamp(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date and time when the message was last updated.</p>
+        pub fn set_timestamp(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.timestamp = input;
             self
         }
@@ -1651,6 +1806,7 @@ pub mod flow_execution_message {
             self.payload = Some(input.into());
             self
         }
+        /// <p>A string containing information about the flow event.</p>
         pub fn set_payload(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.payload = input;
             self
@@ -1673,6 +1829,7 @@ impl FlowExecutionMessage {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1684,22 +1841,39 @@ impl FlowExecutionMessage {
     std::hash::Hash,
 )]
 pub enum FlowExecutionEventType {
+    #[allow(missing_docs)] // documentation missing in model
     AcknowledgeTaskMessage,
+    #[allow(missing_docs)] // documentation missing in model
     ActivityFailed,
+    #[allow(missing_docs)] // documentation missing in model
     ActivityScheduled,
+    #[allow(missing_docs)] // documentation missing in model
     ActivityStarted,
+    #[allow(missing_docs)] // documentation missing in model
     ActivitySucceeded,
+    #[allow(missing_docs)] // documentation missing in model
     ExecutionAborted,
+    #[allow(missing_docs)] // documentation missing in model
     ExecutionFailed,
+    #[allow(missing_docs)] // documentation missing in model
     ExecutionStarted,
+    #[allow(missing_docs)] // documentation missing in model
     ExecutionSucceeded,
+    #[allow(missing_docs)] // documentation missing in model
     ScheduleNextReadyStepsTask,
+    #[allow(missing_docs)] // documentation missing in model
     StartFlowExecutionTask,
+    #[allow(missing_docs)] // documentation missing in model
     StepFailed,
+    #[allow(missing_docs)] // documentation missing in model
     StepStarted,
+    #[allow(missing_docs)] // documentation missing in model
     StepSucceeded,
+    #[allow(missing_docs)] // documentation missing in model
     ThingActionTask,
+    #[allow(missing_docs)] // documentation missing in model
     ThingActionTaskFailed,
+    #[allow(missing_docs)] // documentation missing in model
     ThingActionTaskSucceeded,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1736,6 +1910,7 @@ impl std::str::FromStr for FlowExecutionEventType {
     }
 }
 impl FlowExecutionEventType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FlowExecutionEventType::AcknowledgeTaskMessage => "ACKNOWLEDGE_TASK_MESSAGE",
@@ -1758,6 +1933,7 @@ impl FlowExecutionEventType {
             FlowExecutionEventType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ACKNOWLEDGE_TASK_MESSAGE",
@@ -1786,6 +1962,7 @@ impl AsRef<str> for FlowExecutionEventType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1797,8 +1974,11 @@ impl AsRef<str> for FlowExecutionEventType {
     std::hash::Hash,
 )]
 pub enum UploadStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     InProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Succeeded,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1821,6 +2001,7 @@ impl std::str::FromStr for UploadStatus {
     }
 }
 impl UploadStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             UploadStatus::Failed => "FAILED",
@@ -1829,6 +2010,7 @@ impl UploadStatus {
             UploadStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FAILED", "IN_PROGRESS", "SUCCEEDED"]
     }
@@ -1878,6 +2060,7 @@ pub mod system_template_description {
             self.summary = Some(input);
             self
         }
+        /// <p>An object that contains summary information about a system.</p>
         pub fn set_summary(
             mut self,
             input: std::option::Option<crate::model::SystemTemplateSummary>,
@@ -1890,6 +2073,7 @@ pub mod system_template_description {
             self.definition = Some(input);
             self
         }
+        /// <p>The definition document of a system.</p>
         pub fn set_definition(
             mut self,
             input: std::option::Option<crate::model::DefinitionDocument>,
@@ -1902,6 +2086,7 @@ pub mod system_template_description {
             self.validated_namespace_version = Some(input);
             self
         }
+        /// <p>The namespace version against which the system was validated. Use this value in your system instance.</p>
         pub fn set_validated_namespace_version(mut self, input: std::option::Option<i64>) -> Self {
             self.validated_namespace_version = input;
             self
@@ -1985,6 +2170,7 @@ pub mod system_instance_description {
             self.summary = Some(input);
             self
         }
+        /// <p>An object that contains summary information about a system instance.</p>
         pub fn set_summary(
             mut self,
             input: std::option::Option<crate::model::SystemInstanceSummary>,
@@ -1997,6 +2183,7 @@ pub mod system_instance_description {
             self.definition = Some(input);
             self
         }
+        /// <p>A document that defines an entity. </p>
         pub fn set_definition(
             mut self,
             input: std::option::Option<crate::model::DefinitionDocument>,
@@ -2009,6 +2196,7 @@ pub mod system_instance_description {
             self.s3_bucket_name = Some(input.into());
             self
         }
+        /// <p>The Amazon Simple Storage Service bucket where information about a system instance is stored.</p>
         pub fn set_s3_bucket_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2021,6 +2209,7 @@ pub mod system_instance_description {
             self.metrics_configuration = Some(input);
             self
         }
+        /// <p>An object that specifies whether cloud metrics are collected in a deployment and, if so, what role is used to collect metrics.</p>
         pub fn set_metrics_configuration(
             mut self,
             input: std::option::Option<crate::model::MetricsConfiguration>,
@@ -2033,10 +2222,16 @@ pub mod system_instance_description {
             self.validated_namespace_version = Some(input);
             self
         }
+        /// <p>The version of the user's namespace against which the system instance was validated.</p>
         pub fn set_validated_namespace_version(mut self, input: std::option::Option<i64>) -> Self {
             self.validated_namespace_version = input;
             self
         }
+        /// Appends an item to `validated_dependency_revisions`.
+        ///
+        /// To override the contents of this collection use [`set_validated_dependency_revisions`](Self::set_validated_dependency_revisions).
+        ///
+        /// <p>A list of objects that contain all of the IDs and revision numbers of workflows and systems that are used in a system instance.</p>
         pub fn validated_dependency_revisions(
             mut self,
             input: impl Into<crate::model::DependencyRevision>,
@@ -2046,6 +2241,7 @@ pub mod system_instance_description {
             self.validated_dependency_revisions = Some(v);
             self
         }
+        /// <p>A list of objects that contain all of the IDs and revision numbers of workflows and systems that are used in a system instance.</p>
         pub fn set_validated_dependency_revisions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DependencyRevision>>,
@@ -2060,6 +2256,9 @@ pub mod system_instance_description {
             self.flow_actions_role_arn = Some(input.into());
             self
         }
+        /// <p>The AWS Identity and Access Management (IAM) role that AWS IoT Things Graph assumes during flow execution in a
+        /// cloud deployment. This role must have read and write permissionss to AWS Lambda and AWS IoT and to any other
+        /// AWS services that the flow uses.</p>
         pub fn set_flow_actions_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2120,6 +2319,7 @@ pub mod dependency_revision {
             self.id = Some(input.into());
             self
         }
+        /// <p>The ID of the workflow or system.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -2129,6 +2329,7 @@ pub mod dependency_revision {
             self.revision_number = Some(input);
             self
         }
+        /// <p>The revision number of the workflow or system.</p>
         pub fn set_revision_number(mut self, input: std::option::Option<i64>) -> Self {
             self.revision_number = input;
             self
@@ -2181,6 +2382,7 @@ pub mod metrics_configuration {
             self.cloud_metric_enabled = Some(input);
             self
         }
+        /// <p>A Boolean that specifies whether cloud metrics are collected.</p>
         pub fn set_cloud_metric_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.cloud_metric_enabled = input;
             self
@@ -2190,6 +2392,7 @@ pub mod metrics_configuration {
             self.metric_rule_role_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the role that is used to collect cloud metrics.</p>
         pub fn set_metric_rule_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2213,6 +2416,7 @@ impl MetricsConfiguration {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2224,6 +2428,7 @@ impl MetricsConfiguration {
     std::hash::Hash,
 )]
 pub enum NamespaceDeletionStatusErrorCodes {
+    #[allow(missing_docs)] // documentation missing in model
     ValidationFailed,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2244,12 +2449,14 @@ impl std::str::FromStr for NamespaceDeletionStatusErrorCodes {
     }
 }
 impl NamespaceDeletionStatusErrorCodes {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             NamespaceDeletionStatusErrorCodes::ValidationFailed => "VALIDATION_FAILED",
             NamespaceDeletionStatusErrorCodes::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["VALIDATION_FAILED"]
     }
@@ -2260,6 +2467,7 @@ impl AsRef<str> for NamespaceDeletionStatusErrorCodes {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2271,8 +2479,11 @@ impl AsRef<str> for NamespaceDeletionStatusErrorCodes {
     std::hash::Hash,
 )]
 pub enum NamespaceDeletionStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     InProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Succeeded,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2295,6 +2506,7 @@ impl std::str::FromStr for NamespaceDeletionStatus {
     }
 }
 impl NamespaceDeletionStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             NamespaceDeletionStatus::Failed => "FAILED",
@@ -2303,6 +2515,7 @@ impl NamespaceDeletionStatus {
             NamespaceDeletionStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FAILED", "IN_PROGRESS", "SUCCEEDED"]
     }
@@ -2352,6 +2565,7 @@ pub mod flow_template_description {
             self.summary = Some(input);
             self
         }
+        /// <p>An object that contains summary information about a workflow.</p>
         pub fn set_summary(
             mut self,
             input: std::option::Option<crate::model::FlowTemplateSummary>,
@@ -2364,6 +2578,7 @@ pub mod flow_template_description {
             self.definition = Some(input);
             self
         }
+        /// <p>A workflow's definition document.</p>
         pub fn set_definition(
             mut self,
             input: std::option::Option<crate::model::DefinitionDocument>,
@@ -2376,6 +2591,7 @@ pub mod flow_template_description {
             self.validated_namespace_version = Some(input);
             self
         }
+        /// <p>The version of the user's namespace against which the workflow was validated. Use this value in your system instance.</p>
         pub fn set_validated_namespace_version(mut self, input: std::option::Option<i64>) -> Self {
             self.validated_namespace_version = input;
             self

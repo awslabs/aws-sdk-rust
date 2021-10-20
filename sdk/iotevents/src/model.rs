@@ -10,9 +10,9 @@ pub struct InputConfiguration {
     /// <p>The ARN of the input.</p>
     pub input_arn: std::option::Option<std::string::String>,
     /// <p>The time the input was created.</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The last time the input was updated.</p>
-    pub last_update_time: std::option::Option<smithy_types::Instant>,
+    pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The status of the input.</p>
     pub status: std::option::Option<crate::model::InputStatus>,
 }
@@ -37,8 +37,8 @@ pub mod input_configuration {
         pub(crate) input_name: std::option::Option<std::string::String>,
         pub(crate) input_description: std::option::Option<std::string::String>,
         pub(crate) input_arn: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_update_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_update_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) status: std::option::Option<crate::model::InputStatus>,
     }
     impl Builder {
@@ -47,6 +47,7 @@ pub mod input_configuration {
             self.input_name = Some(input.into());
             self
         }
+        /// <p>The name of the input.</p>
         pub fn set_input_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.input_name = input;
             self
@@ -56,6 +57,7 @@ pub mod input_configuration {
             self.input_description = Some(input.into());
             self
         }
+        /// <p>A brief description of the input.</p>
         pub fn set_input_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -68,30 +70,33 @@ pub mod input_configuration {
             self.input_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the input.</p>
         pub fn set_input_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.input_arn = input;
             self
         }
         /// <p>The time the input was created.</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>The time the input was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>The last time the input was updated.</p>
-        pub fn last_update_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_update_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_update_time = Some(input);
             self
         }
+        /// <p>The last time the input was updated.</p>
         pub fn set_last_update_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_update_time = input;
             self
@@ -101,6 +106,7 @@ pub mod input_configuration {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the input.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::InputStatus>) -> Self {
             self.status = input;
             self
@@ -125,6 +131,7 @@ impl InputConfiguration {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -136,9 +143,13 @@ impl InputConfiguration {
     std::hash::Hash,
 )]
 pub enum InputStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     Creating,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
+    #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -162,6 +173,7 @@ impl std::str::FromStr for InputStatus {
     }
 }
 impl InputStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             InputStatus::Active => "ACTIVE",
@@ -171,6 +183,7 @@ impl InputStatus {
             InputStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ACTIVE", "CREATING", "DELETING", "UPDATING"]
     }
@@ -208,12 +221,26 @@ pub mod input_definition {
         pub(crate) attributes: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
     }
     impl Builder {
+        /// Appends an item to `attributes`.
+        ///
+        /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
+        ///
+        /// <p>The attributes from the JSON payload that are made available by the input. Inputs are
+        /// derived from messages sent to the AWS IoT Events system using <code>BatchPutMessage</code>. Each such
+        /// message contains a JSON payload, and those attributes (and their paired values) specified here
+        /// are available for use in the <code>condition</code> expressions used by detectors that monitor
+        /// this input. </p>
         pub fn attributes(mut self, input: impl Into<crate::model::Attribute>) -> Self {
             let mut v = self.attributes.unwrap_or_default();
             v.push(input.into());
             self.attributes = Some(v);
             self
         }
+        /// <p>The attributes from the JSON payload that are made available by the input. Inputs are
+        /// derived from messages sent to the AWS IoT Events system using <code>BatchPutMessage</code>. Each such
+        /// message contains a JSON payload, and those attributes (and their paired values) specified here
+        /// are available for use in the <code>condition</code> expressions used by detectors that monitor
+        /// this input. </p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Attribute>>,
@@ -279,6 +306,13 @@ pub mod attribute {
             self.json_path = Some(input.into());
             self
         }
+        /// <p>An expression that specifies an attribute-value pair in a JSON structure. Use this to
+        /// specify an attribute from the JSON payload that is made available by the input. Inputs are
+        /// derived from messages sent to AWS IoT Events (<code>BatchPutMessage</code>). Each such message contains
+        /// a JSON payload. The attribute (and its paired value) specified here are available for use in
+        /// the <code>condition</code> expressions used by detectors. </p>
+        /// <p>Syntax: <code><field-name>.<field-name>...</code>
+        /// </p>
         pub fn set_json_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.json_path = input;
             self
@@ -313,9 +347,9 @@ pub struct DetectorModelConfiguration {
     /// <p>The ARN of the role that grants permission to AWS IoT Events to perform its operations.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The time the detector model was created.</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time the detector model was last updated.</p>
-    pub last_update_time: std::option::Option<smithy_types::Instant>,
+    pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The status of the detector model.</p>
     pub status: std::option::Option<crate::model::DetectorModelVersionStatus>,
     /// <p>The value used to identify a detector instance. When a device or system sends input, a new
@@ -360,8 +394,8 @@ pub mod detector_model_configuration {
         pub(crate) detector_model_description: std::option::Option<std::string::String>,
         pub(crate) detector_model_arn: std::option::Option<std::string::String>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_update_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_update_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) status: std::option::Option<crate::model::DetectorModelVersionStatus>,
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) evaluation_method: std::option::Option<crate::model::EvaluationMethod>,
@@ -372,6 +406,7 @@ pub mod detector_model_configuration {
             self.detector_model_name = Some(input.into());
             self
         }
+        /// <p>The name of the detector model.</p>
         pub fn set_detector_model_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -384,6 +419,7 @@ pub mod detector_model_configuration {
             self.detector_model_version = Some(input.into());
             self
         }
+        /// <p>The version of the detector model.</p>
         pub fn set_detector_model_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -396,6 +432,7 @@ pub mod detector_model_configuration {
             self.detector_model_description = Some(input.into());
             self
         }
+        /// <p>A brief description of the detector model.</p>
         pub fn set_detector_model_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -408,6 +445,7 @@ pub mod detector_model_configuration {
             self.detector_model_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the detector model.</p>
         pub fn set_detector_model_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -420,30 +458,33 @@ pub mod detector_model_configuration {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the role that grants permission to AWS IoT Events to perform its operations.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
         }
         /// <p>The time the detector model was created.</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>The time the detector model was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>The time the detector model was last updated.</p>
-        pub fn last_update_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_update_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_update_time = Some(input);
             self
         }
+        /// <p>The time the detector model was last updated.</p>
         pub fn set_last_update_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_update_time = input;
             self
@@ -453,6 +494,7 @@ pub mod detector_model_configuration {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the detector model.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::DetectorModelVersionStatus>,
@@ -471,6 +513,13 @@ pub mod detector_model_configuration {
             self.key = Some(input.into());
             self
         }
+        /// <p>The value used to identify a detector instance. When a device or system sends input, a new
+        /// detector instance with a unique key value is created. AWS IoT Events can continue to route input to its
+        /// corresponding detector instance based on this identifying information. </p>
+        /// <p>This parameter uses a JSON-path expression to select the attribute-value pair in the
+        /// message payload that is used for identification. To route the message to the correct detector
+        /// instance, the device must send a message payload that contains the same
+        /// attribute-value.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -481,6 +530,8 @@ pub mod detector_model_configuration {
             self.evaluation_method = Some(input);
             self
         }
+        /// <p>Information about the order in which events are evaluated and how actions are executed.
+        /// </p>
         pub fn set_evaluation_method(
             mut self,
             input: std::option::Option<crate::model::EvaluationMethod>,
@@ -512,6 +563,7 @@ impl DetectorModelConfiguration {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -523,7 +575,9 @@ impl DetectorModelConfiguration {
     std::hash::Hash,
 )]
 pub enum EvaluationMethod {
+    #[allow(missing_docs)] // documentation missing in model
     Batch,
+    #[allow(missing_docs)] // documentation missing in model
     Serial,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -545,6 +599,7 @@ impl std::str::FromStr for EvaluationMethod {
     }
 }
 impl EvaluationMethod {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EvaluationMethod::Batch => "BATCH",
@@ -552,6 +607,7 @@ impl EvaluationMethod {
             EvaluationMethod::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["BATCH", "SERIAL"]
     }
@@ -562,6 +618,7 @@ impl AsRef<str> for EvaluationMethod {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -573,12 +630,19 @@ impl AsRef<str> for EvaluationMethod {
     std::hash::Hash,
 )]
 pub enum DetectorModelVersionStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Activating,
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     Deprecated,
+    #[allow(missing_docs)] // documentation missing in model
     Draft,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Inactive,
+    #[allow(missing_docs)] // documentation missing in model
     Paused,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -605,6 +669,7 @@ impl std::str::FromStr for DetectorModelVersionStatus {
     }
 }
 impl DetectorModelVersionStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DetectorModelVersionStatus::Activating => "ACTIVATING",
@@ -617,6 +682,7 @@ impl DetectorModelVersionStatus {
             DetectorModelVersionStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ACTIVATING",
@@ -662,12 +728,18 @@ pub mod detector_model_definition {
         pub(crate) initial_state_name: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `states`.
+        ///
+        /// To override the contents of this collection use [`set_states`](Self::set_states).
+        ///
+        /// <p>Information about the states of the detector.</p>
         pub fn states(mut self, input: impl Into<crate::model::State>) -> Self {
             let mut v = self.states.unwrap_or_default();
             v.push(input.into());
             self.states = Some(v);
             self
         }
+        /// <p>Information about the states of the detector.</p>
         pub fn set_states(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::State>>,
@@ -680,6 +752,7 @@ pub mod detector_model_definition {
             self.initial_state_name = Some(input.into());
             self
         }
+        /// <p>The state that is entered at the creation of each detector (instance).</p>
         pub fn set_initial_state_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -746,6 +819,7 @@ pub mod state {
             self.state_name = Some(input.into());
             self
         }
+        /// <p>The name of the state.</p>
         pub fn set_state_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.state_name = input;
             self
@@ -756,6 +830,8 @@ pub mod state {
             self.on_input = Some(input);
             self
         }
+        /// <p>When an input is received and the <code>condition</code> is TRUE, perform the specified
+        /// <code>actions</code>.</p>
         pub fn set_on_input(
             mut self,
             input: std::option::Option<crate::model::OnInputLifecycle>,
@@ -769,6 +845,8 @@ pub mod state {
             self.on_enter = Some(input);
             self
         }
+        /// <p>When entering this state, perform these <code>actions</code> if the <code>condition</code>
+        /// is TRUE.</p>
         pub fn set_on_enter(
             mut self,
             input: std::option::Option<crate::model::OnEnterLifecycle>,
@@ -782,6 +860,8 @@ pub mod state {
             self.on_exit = Some(input);
             self
         }
+        /// <p>When exiting this state, perform these <code>actions</code> if the specified
+        /// <code>condition</code> is <code>TRUE</code>.</p>
         pub fn set_on_exit(
             mut self,
             input: std::option::Option<crate::model::OnExitLifecycle>,
@@ -832,12 +912,20 @@ pub mod on_exit_lifecycle {
         pub(crate) events: std::option::Option<std::vec::Vec<crate::model::Event>>,
     }
     impl Builder {
+        /// Appends an item to `events`.
+        ///
+        /// To override the contents of this collection use [`set_events`](Self::set_events).
+        ///
+        /// <p>Specifies the <code>actions</code> that are performed when the state is exited and the
+        /// <code>condition</code> is <code>TRUE</code>.</p>
         pub fn events(mut self, input: impl Into<crate::model::Event>) -> Self {
             let mut v = self.events.unwrap_or_default();
             v.push(input.into());
             self.events = Some(v);
             self
         }
+        /// <p>Specifies the <code>actions</code> that are performed when the state is exited and the
+        /// <code>condition</code> is <code>TRUE</code>.</p>
         pub fn set_events(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Event>>,
@@ -899,6 +987,7 @@ pub mod event {
             self.event_name = Some(input.into());
             self
         }
+        /// <p>The name of the event.</p>
         pub fn set_event_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.event_name = input;
             self
@@ -910,16 +999,25 @@ pub mod event {
             self.condition = Some(input.into());
             self
         }
+        /// <p>Optional. The Boolean expression that, when TRUE, causes the <code>actions</code> to be
+        /// performed. If not present, the actions are performed (=TRUE). If the expression result is not
+        /// a Boolean value, the actions are not performed (=FALSE).</p>
         pub fn set_condition(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.condition = input;
             self
         }
+        /// Appends an item to `actions`.
+        ///
+        /// To override the contents of this collection use [`set_actions`](Self::set_actions).
+        ///
+        /// <p>The actions to be performed.</p>
         pub fn actions(mut self, input: impl Into<crate::model::Action>) -> Self {
             let mut v = self.actions.unwrap_or_default();
             v.push(input.into());
             self.actions = Some(v);
             self
         }
+        /// <p>The actions to be performed.</p>
         pub fn set_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Action>>,
@@ -1035,6 +1133,7 @@ pub mod action {
             self.set_variable = Some(input);
             self
         }
+        /// <p>Sets a variable to a specified value.</p>
         pub fn set_set_variable(
             mut self,
             input: std::option::Option<crate::model::SetVariableAction>,
@@ -1047,6 +1146,7 @@ pub mod action {
             self.sns = Some(input);
             self
         }
+        /// <p>Sends an Amazon SNS message.</p>
         pub fn set_sns(
             mut self,
             input: std::option::Option<crate::model::SnsTopicPublishAction>,
@@ -1059,6 +1159,7 @@ pub mod action {
             self.iot_topic_publish = Some(input);
             self
         }
+        /// <p>Publishes an MQTT message with the given topic to the AWS IoT message broker.</p>
         pub fn set_iot_topic_publish(
             mut self,
             input: std::option::Option<crate::model::IotTopicPublishAction>,
@@ -1071,6 +1172,7 @@ pub mod action {
             self.set_timer = Some(input);
             self
         }
+        /// <p>Information needed to set the timer.</p>
         pub fn set_set_timer(
             mut self,
             input: std::option::Option<crate::model::SetTimerAction>,
@@ -1083,6 +1185,7 @@ pub mod action {
             self.clear_timer = Some(input);
             self
         }
+        /// <p>Information needed to clear the timer.</p>
         pub fn set_clear_timer(
             mut self,
             input: std::option::Option<crate::model::ClearTimerAction>,
@@ -1095,6 +1198,7 @@ pub mod action {
             self.reset_timer = Some(input);
             self
         }
+        /// <p>Information needed to reset the timer.</p>
         pub fn set_reset_timer(
             mut self,
             input: std::option::Option<crate::model::ResetTimerAction>,
@@ -1108,6 +1212,8 @@ pub mod action {
             self.lambda = Some(input);
             self
         }
+        /// <p>Calls a Lambda function, passing in information about the detector model instance and the
+        /// event that triggered the action.</p>
         pub fn set_lambda(
             mut self,
             input: std::option::Option<crate::model::LambdaAction>,
@@ -1121,6 +1227,8 @@ pub mod action {
             self.iot_events = Some(input);
             self
         }
+        /// <p>Sends AWS IoT Events input, which passes information about the detector model instance and the
+        /// event that triggered the action.</p>
         pub fn set_iot_events(
             mut self,
             input: std::option::Option<crate::model::IotEventsAction>,
@@ -1134,6 +1242,8 @@ pub mod action {
             self.sqs = Some(input);
             self
         }
+        /// <p>Sends information about the detector model instance and the event that triggered the
+        /// action to an Amazon SQS queue.</p>
         pub fn set_sqs(mut self, input: std::option::Option<crate::model::SqsAction>) -> Self {
             self.sqs = input;
             self
@@ -1144,6 +1254,8 @@ pub mod action {
             self.firehose = Some(input);
             self
         }
+        /// <p>Sends information about the detector model instance and the event that triggered the
+        /// action to an Amazon Kinesis Data Firehose delivery stream.</p>
         pub fn set_firehose(
             mut self,
             input: std::option::Option<crate::model::FirehoseAction>,
@@ -1161,6 +1273,12 @@ pub mod action {
             self.dynamo_db = Some(input);
             self
         }
+        /// <p>Writes to the DynamoDB table that you created. The default action payload contains all
+        /// attribute-value pairs that have the information about the detector model instance and the
+        /// event that triggered the action. You can customize the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. One column of the
+        /// DynamoDB table receives all attribute-value pairs in the payload that you specify. For more
+        /// information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-event-actions.html">Actions</a> in
+        /// <i>AWS IoT Events Developer Guide</i>.</p>
         pub fn set_dynamo_db(
             mut self,
             input: std::option::Option<crate::model::DynamoDbAction>,
@@ -1178,6 +1296,12 @@ pub mod action {
             self.dynamo_d_bv2 = Some(input);
             self
         }
+        /// <p>Writes to the DynamoDB table that you created. The default action payload contains all
+        /// attribute-value pairs that have the information about the detector model instance and the
+        /// event that triggered the action. You can customize the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. A separate column of
+        /// the DynamoDB table receives one attribute-value pair in the payload that you specify. For more
+        /// information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-event-actions.html">Actions</a> in
+        /// <i>AWS IoT Events Developer Guide</i>.</p>
         pub fn set_dynamo_d_bv2(
             mut self,
             input: std::option::Option<crate::model::DynamoDBv2Action>,
@@ -1191,6 +1315,8 @@ pub mod action {
             self.iot_site_wise = Some(input);
             self
         }
+        /// <p>Sends information about the detector model instance and the event that triggered the
+        /// action to an asset property in AWS IoT SiteWise .</p>
         pub fn set_iot_site_wise(
             mut self,
             input: std::option::Option<crate::model::IotSiteWiseAction>,
@@ -1307,6 +1433,8 @@ pub mod iot_site_wise_action {
             self.entry_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for this entry. You can use the entry ID to track which data entry
+        /// causes an error in case of failure. The default is a new unique identifier.</p>
         pub fn set_entry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.entry_id = input;
             self
@@ -1316,6 +1444,7 @@ pub mod iot_site_wise_action {
             self.asset_id = Some(input.into());
             self
         }
+        /// <p>The ID of the asset that has the specified property.</p>
         pub fn set_asset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.asset_id = input;
             self
@@ -1325,6 +1454,7 @@ pub mod iot_site_wise_action {
             self.property_id = Some(input.into());
             self
         }
+        /// <p>The ID of the asset property.</p>
         pub fn set_property_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.property_id = input;
             self
@@ -1334,6 +1464,7 @@ pub mod iot_site_wise_action {
             self.property_alias = Some(input.into());
             self
         }
+        /// <p>The alias of the asset property.</p>
         pub fn set_property_alias(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1347,6 +1478,8 @@ pub mod iot_site_wise_action {
             self.property_value = Some(input);
             self
         }
+        /// <p>The value to send to the asset property. This value contains timestamp, quality, and value
+        /// (TQV) information. </p>
         pub fn set_property_value(
             mut self,
             input: std::option::Option<crate::model::AssetPropertyValue>,
@@ -1431,6 +1564,7 @@ pub mod asset_property_value {
             self.value = Some(input);
             self
         }
+        /// <p>The value to send to an asset property.</p>
         pub fn set_value(
             mut self,
             input: std::option::Option<crate::model::AssetPropertyVariant>,
@@ -1444,6 +1578,8 @@ pub mod asset_property_value {
             self.timestamp = Some(input);
             self
         }
+        /// <p>The timestamp associated with the asset property value. The default is the current event
+        /// time.</p>
         pub fn set_timestamp(
             mut self,
             input: std::option::Option<crate::model::AssetPropertyTimestamp>,
@@ -1457,6 +1593,8 @@ pub mod asset_property_value {
             self.quality = Some(input.into());
             self
         }
+        /// <p>The quality of the asset property value. The value must be <code>'GOOD'</code>,
+        /// <code>'BAD'</code>, or <code>'UNCERTAIN'</code>.</p>
         pub fn set_quality(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.quality = input;
             self
@@ -1543,6 +1681,8 @@ pub mod asset_property_timestamp {
             self.time_in_seconds = Some(input.into());
             self
         }
+        /// <p>The timestamp, in seconds, in the Unix epoch format. The valid range is between
+        /// 1-31556889864403199.</p>
         pub fn set_time_in_seconds(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1556,6 +1696,8 @@ pub mod asset_property_timestamp {
             self.offset_in_nanos = Some(input.into());
             self
         }
+        /// <p>The nanosecond offset converted from <code>timeInSeconds</code>. The valid range is
+        /// between 0-999999999.</p>
         pub fn set_offset_in_nanos(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1659,6 +1801,8 @@ pub mod asset_property_variant {
             self.string_value = Some(input.into());
             self
         }
+        /// <p>The asset property value is a string. You must use an expression, and the evaluated result
+        /// should be a string.</p>
         pub fn set_string_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.string_value = input;
             self
@@ -1669,6 +1813,8 @@ pub mod asset_property_variant {
             self.integer_value = Some(input.into());
             self
         }
+        /// <p>The asset property value is an integer. You must use an expression, and the evaluated
+        /// result should be an integer.</p>
         pub fn set_integer_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1682,6 +1828,8 @@ pub mod asset_property_variant {
             self.double_value = Some(input.into());
             self
         }
+        /// <p>The asset property value is a double. You must use an expression, and the evaluated result
+        /// should be a double.</p>
         pub fn set_double_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.double_value = input;
             self
@@ -1693,6 +1841,9 @@ pub mod asset_property_variant {
             self.boolean_value = Some(input.into());
             self
         }
+        /// <p>The asset property value is a Boolean value that must be <code>'TRUE'</code> or
+        /// <code>'FALSE'</code>. You must use an expression, and the evaluated result should be a
+        /// Boolean value.</p>
         pub fn set_boolean_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1800,6 +1951,7 @@ pub mod dynamo_d_bv2_action {
             self.table_name = Some(input.into());
             self
         }
+        /// <p>The name of the DynamoDB table.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.table_name = input;
             self
@@ -1813,6 +1965,11 @@ pub mod dynamo_d_bv2_action {
             self.payload = Some(input);
             self
         }
+        /// <p>Information needed to configure the payload.</p>
+        /// <p>By default, AWS IoT Events generates a standard payload in JSON for any action. This action payload
+        /// contains all attribute-value pairs that have the information about the detector model instance
+        /// and the event triggered the action. To configure the action payload, you can use
+        /// <code>contentExpression</code>.</p>
         pub fn set_payload(mut self, input: std::option::Option<crate::model::Payload>) -> Self {
             self.payload = input;
             self
@@ -1878,6 +2035,11 @@ pub mod payload {
             self.content_expression = Some(input.into());
             self
         }
+        /// <p>The content of the payload. You can use a string expression that includes quoted strings
+        /// (<code>'<string>'</code>), variables (<code>$variable.<variable-name></code>),
+        /// input values (<code>$input.<input-name>.<path-to-datum></code>), string
+        /// concatenations, and quoted strings that contain <code>${}</code> as the content. The
+        /// recommended maximum size of a content expression is 1 KB.</p>
         pub fn set_content_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1891,6 +2053,8 @@ pub mod payload {
             self.r#type = Some(input);
             self
         }
+        /// <p>The value of the payload type can be either <code>STRING</code> or
+        /// <code>JSON</code>.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::PayloadType>) -> Self {
             self.r#type = input;
             self
@@ -1911,6 +2075,7 @@ impl Payload {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1922,7 +2087,9 @@ impl Payload {
     std::hash::Hash,
 )]
 pub enum PayloadType {
+    #[allow(missing_docs)] // documentation missing in model
     Json,
+    #[allow(missing_docs)] // documentation missing in model
     String,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1944,6 +2111,7 @@ impl std::str::FromStr for PayloadType {
     }
 }
 impl PayloadType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PayloadType::Json => "JSON",
@@ -1951,6 +2119,7 @@ impl PayloadType {
             PayloadType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["JSON", "STRING"]
     }
@@ -2141,6 +2310,20 @@ pub mod dynamo_db_action {
             self.hash_key_type = Some(input.into());
             self
         }
+        /// <p>The data type for the hash key (also called the partition key). You can specify the
+        /// following values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>'STRING'</code> - The hash key is a string.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>'NUMBER'</code> - The hash key is a number.</p>
+        /// </li>
+        /// </ul>
+        /// <p>If you don't specify <code>hashKeyType</code>, the default value is
+        /// <code>'STRING'</code>.</p>
         pub fn set_hash_key_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2154,6 +2337,8 @@ pub mod dynamo_db_action {
             self.hash_key_field = Some(input.into());
             self
         }
+        /// <p>The name of the hash key (also called the partition key). The <code>hashKeyField</code>
+        /// value must match the partition key of the target DynamoDB table.</p>
         pub fn set_hash_key_field(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2166,6 +2351,7 @@ pub mod dynamo_db_action {
             self.hash_key_value = Some(input.into());
             self
         }
+        /// <p>The value of the hash key (also called the partition key).</p>
         pub fn set_hash_key_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2191,6 +2377,20 @@ pub mod dynamo_db_action {
             self.range_key_type = Some(input.into());
             self
         }
+        /// <p>The data type for the range key (also called the sort key), You can specify the following
+        /// values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>'STRING'</code> - The range key is a string.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>'NUMBER'</code> - The range key is number.</p>
+        /// </li>
+        /// </ul>
+        /// <p>If you don't specify <code>rangeKeyField</code>, the default value is
+        /// <code>'STRING'</code>.</p>
         pub fn set_range_key_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2204,6 +2404,8 @@ pub mod dynamo_db_action {
             self.range_key_field = Some(input.into());
             self
         }
+        /// <p>The name of the range key (also called the sort key). The <code>rangeKeyField</code> value
+        /// must match the sort key of the target DynamoDB table. </p>
         pub fn set_range_key_field(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2216,6 +2418,7 @@ pub mod dynamo_db_action {
             self.range_key_value = Some(input.into());
             self
         }
+        /// <p>The value of the range key (also called the sort key).</p>
         pub fn set_range_key_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2250,6 +2453,29 @@ pub mod dynamo_db_action {
             self.operation = Some(input.into());
             self
         }
+        /// <p>The type of operation to perform. You can specify the following values: </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>'INSERT'</code> - Insert data as a new item into the DynamoDB table. This item uses
+        /// the specified hash key as a partition key. If you specified a range key, the item uses the
+        /// range key as a sort key.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>'UPDATE'</code> - Update an existing item of the DynamoDB table with new data. This
+        /// item's partition key must match the specified hash key. If you specified a range key, the
+        /// range key must match the item's sort key.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>'DELETE'</code> - Delete an existing item of the DynamoDB table. This item's
+        /// partition key must match the specified hash key. If you specified a range key, the range
+        /// key must match the item's sort key.</p>
+        /// </li>
+        /// </ul>
+        /// <p>If you don't specify this parameter, AWS IoT Events triggers the <code>'INSERT'</code>
+        /// operation.</p>
         pub fn set_operation(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.operation = input;
             self
@@ -2261,6 +2487,9 @@ pub mod dynamo_db_action {
             self.payload_field = Some(input.into());
             self
         }
+        /// <p>The name of the DynamoDB column that receives the action payload.</p>
+        /// <p>If you don't specify this parameter, the name of the DynamoDB column is
+        /// <code>payload</code>.</p>
         pub fn set_payload_field(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2274,6 +2503,8 @@ pub mod dynamo_db_action {
             self.table_name = Some(input.into());
             self
         }
+        /// <p>The name of the DynamoDB table. The <code>tableName</code> value must match the table name of
+        /// the target DynamoDB table. </p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.table_name = input;
             self
@@ -2287,6 +2518,11 @@ pub mod dynamo_db_action {
             self.payload = Some(input);
             self
         }
+        /// <p>Information needed to configure the payload.</p>
+        /// <p>By default, AWS IoT Events generates a standard payload in JSON for any action. This action payload
+        /// contains all attribute-value pairs that have the information about the detector model instance
+        /// and the event triggered the action. To configure the action payload, you can use
+        /// <code>contentExpression</code>.</p>
         pub fn set_payload(mut self, input: std::option::Option<crate::model::Payload>) -> Self {
             self.payload = input;
             self
@@ -2355,6 +2591,7 @@ pub mod firehose_action {
             self.delivery_stream_name = Some(input.into());
             self
         }
+        /// <p>The name of the Kinesis Data Firehose delivery stream where the data is written.</p>
         pub fn set_delivery_stream_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2369,6 +2606,9 @@ pub mod firehose_action {
             self.separator = Some(input.into());
             self
         }
+        /// <p>A character separator that is used to separate records written to the Kinesis Data
+        /// Firehose delivery stream. Valid values are: '\n' (newline), '\t' (tab), '\r\n' (Windows
+        /// newline), ',' (comma).</p>
         pub fn set_separator(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.separator = input;
             self
@@ -2379,6 +2619,8 @@ pub mod firehose_action {
             self.payload = Some(input);
             self
         }
+        /// <p>You can configure the action payload when you send a message to an Amazon Kinesis Data Firehose delivery
+        /// stream.</p>
         pub fn set_payload(mut self, input: std::option::Option<crate::model::Payload>) -> Self {
             self.payload = input;
             self
@@ -2439,6 +2681,7 @@ pub mod sqs_action {
             self.queue_url = Some(input.into());
             self
         }
+        /// <p>The URL of the SQS queue where the data is written.</p>
         pub fn set_queue_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.queue_url = input;
             self
@@ -2449,6 +2692,8 @@ pub mod sqs_action {
             self.use_base64 = Some(input);
             self
         }
+        /// <p>Set this to TRUE if you want the data to be base-64 encoded before it is written to the
+        /// queue. Otherwise, set this to FALSE.</p>
         pub fn set_use_base64(mut self, input: std::option::Option<bool>) -> Self {
             self.use_base64 = input;
             self
@@ -2459,6 +2704,8 @@ pub mod sqs_action {
             self.payload = Some(input);
             self
         }
+        /// <p>You can configure the action payload when you send a message to an Amazon SQS
+        /// queue.</p>
         pub fn set_payload(mut self, input: std::option::Option<crate::model::Payload>) -> Self {
             self.payload = input;
             self
@@ -2513,6 +2760,7 @@ pub mod iot_events_action {
             self.input_name = Some(input.into());
             self
         }
+        /// <p>The name of the AWS IoT Events input where the data is sent.</p>
         pub fn set_input_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.input_name = input;
             self
@@ -2522,6 +2770,7 @@ pub mod iot_events_action {
             self.payload = Some(input);
             self
         }
+        /// <p>You can configure the action payload when you send a message to an AWS IoT Events input.</p>
         pub fn set_payload(mut self, input: std::option::Option<crate::model::Payload>) -> Self {
             self.payload = input;
             self
@@ -2575,6 +2824,7 @@ pub mod lambda_action {
             self.function_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the Lambda function that is executed.</p>
         pub fn set_function_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.function_arn = input;
             self
@@ -2584,6 +2834,7 @@ pub mod lambda_action {
             self.payload = Some(input);
             self
         }
+        /// <p>You can configure the action payload when you send a message to a Lambda function.</p>
         pub fn set_payload(mut self, input: std::option::Option<crate::model::Payload>) -> Self {
             self.payload = input;
             self
@@ -2634,6 +2885,7 @@ pub mod reset_timer_action {
             self.timer_name = Some(input.into());
             self
         }
+        /// <p>The name of the timer to reset.</p>
         pub fn set_timer_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.timer_name = input;
             self
@@ -2681,6 +2933,7 @@ pub mod clear_timer_action {
             self.timer_name = Some(input.into());
             self
         }
+        /// <p>The name of the timer to clear.</p>
         pub fn set_timer_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.timer_name = input;
             self
@@ -2741,6 +2994,7 @@ pub mod set_timer_action {
             self.timer_name = Some(input.into());
             self
         }
+        /// <p>The name of the timer.</p>
         pub fn set_timer_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.timer_name = input;
             self
@@ -2751,6 +3005,8 @@ pub mod set_timer_action {
             self.seconds = Some(input);
             self
         }
+        /// <p>The number of seconds until the timer expires. The minimum value is 60 seconds to ensure
+        /// accuracy. The maximum value is 31622400 seconds. </p>
         pub fn set_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.seconds = input;
             self
@@ -2764,6 +3020,11 @@ pub mod set_timer_action {
             self.duration_expression = Some(input.into());
             self
         }
+        /// <p>The duration of the timer, in seconds. You can use a string expression that includes
+        /// numbers, variables (<code>$variable.<variable-name></code>), and input values
+        /// (<code>$input.<input-name>.<path-to-datum></code>) as the duration. The range of
+        /// the duration is 1-31622400 seconds. To ensure accuracy, the minimum duration is 60 seconds.
+        /// The evaluated result of the duration is rounded down to the nearest whole number. </p>
         pub fn set_duration_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2825,6 +3086,9 @@ pub mod iot_topic_publish_action {
             self.mqtt_topic = Some(input.into());
             self
         }
+        /// <p>The MQTT topic of the message. You can use a string expression that includes variables
+        /// (<code>$variable.<variable-name></code>) and input values
+        /// (<code>$input.<input-name>.<path-to-datum></code>) as the topic string.</p>
         pub fn set_mqtt_topic(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mqtt_topic = input;
             self
@@ -2835,6 +3099,8 @@ pub mod iot_topic_publish_action {
             self.payload = Some(input);
             self
         }
+        /// <p>You can configure the action payload when you publish a message to an AWS IoT Core
+        /// topic.</p>
         pub fn set_payload(mut self, input: std::option::Option<crate::model::Payload>) -> Self {
             self.payload = input;
             self
@@ -2888,6 +3154,7 @@ pub mod sns_topic_publish_action {
             self.target_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the Amazon SNS target where the message is sent.</p>
         pub fn set_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.target_arn = input;
             self
@@ -2898,6 +3165,8 @@ pub mod sns_topic_publish_action {
             self.payload = Some(input);
             self
         }
+        /// <p>You can configure the action payload when you send a message as an Amazon SNS push
+        /// notification.</p>
         pub fn set_payload(mut self, input: std::option::Option<crate::model::Payload>) -> Self {
             self.payload = input;
             self
@@ -2950,6 +3219,7 @@ pub mod set_variable_action {
             self.variable_name = Some(input.into());
             self
         }
+        /// <p>The name of the variable.</p>
         pub fn set_variable_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2962,6 +3232,7 @@ pub mod set_variable_action {
             self.value = Some(input.into());
             self
         }
+        /// <p>The new value of the variable.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -3007,12 +3278,20 @@ pub mod on_enter_lifecycle {
         pub(crate) events: std::option::Option<std::vec::Vec<crate::model::Event>>,
     }
     impl Builder {
+        /// Appends an item to `events`.
+        ///
+        /// To override the contents of this collection use [`set_events`](Self::set_events).
+        ///
+        /// <p>Specifies the actions that are performed when the state is entered and the
+        /// <code>condition</code> is <code>TRUE</code>.</p>
         pub fn events(mut self, input: impl Into<crate::model::Event>) -> Self {
             let mut v = self.events.unwrap_or_default();
             v.push(input.into());
             self.events = Some(v);
             self
         }
+        /// <p>Specifies the actions that are performed when the state is entered and the
+        /// <code>condition</code> is <code>TRUE</code>.</p>
         pub fn set_events(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Event>>,
@@ -3064,12 +3343,18 @@ pub mod on_input_lifecycle {
             std::option::Option<std::vec::Vec<crate::model::TransitionEvent>>,
     }
     impl Builder {
+        /// Appends an item to `events`.
+        ///
+        /// To override the contents of this collection use [`set_events`](Self::set_events).
+        ///
+        /// <p>Specifies the actions performed when the <code>condition</code> evaluates to TRUE.</p>
         pub fn events(mut self, input: impl Into<crate::model::Event>) -> Self {
             let mut v = self.events.unwrap_or_default();
             v.push(input.into());
             self.events = Some(v);
             self
         }
+        /// <p>Specifies the actions performed when the <code>condition</code> evaluates to TRUE.</p>
         pub fn set_events(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Event>>,
@@ -3077,6 +3362,12 @@ pub mod on_input_lifecycle {
             self.events = input;
             self
         }
+        /// Appends an item to `transition_events`.
+        ///
+        /// To override the contents of this collection use [`set_transition_events`](Self::set_transition_events).
+        ///
+        /// <p>Specifies the actions performed, and the next state entered, when a <code>condition</code>
+        /// evaluates to TRUE.</p>
         pub fn transition_events(
             mut self,
             input: impl Into<crate::model::TransitionEvent>,
@@ -3086,6 +3377,8 @@ pub mod on_input_lifecycle {
             self.transition_events = Some(v);
             self
         }
+        /// <p>Specifies the actions performed, and the next state entered, when a <code>condition</code>
+        /// evaluates to TRUE.</p>
         pub fn set_transition_events(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TransitionEvent>>,
@@ -3151,6 +3444,7 @@ pub mod transition_event {
             self.event_name = Some(input.into());
             self
         }
+        /// <p>The name of the transition event.</p>
         pub fn set_event_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.event_name = input;
             self
@@ -3161,16 +3455,24 @@ pub mod transition_event {
             self.condition = Some(input.into());
             self
         }
+        /// <p>Required. A Boolean expression that when TRUE causes the actions to be performed and the
+        /// <code>nextState</code> to be entered.</p>
         pub fn set_condition(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.condition = input;
             self
         }
+        /// Appends an item to `actions`.
+        ///
+        /// To override the contents of this collection use [`set_actions`](Self::set_actions).
+        ///
+        /// <p>The actions to be performed.</p>
         pub fn actions(mut self, input: impl Into<crate::model::Action>) -> Self {
             let mut v = self.actions.unwrap_or_default();
             v.push(input.into());
             self.actions = Some(v);
             self
         }
+        /// <p>The actions to be performed.</p>
         pub fn set_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Action>>,
@@ -3183,6 +3485,7 @@ pub mod transition_event {
             self.next_state = Some(input.into());
             self
         }
+        /// <p>The next state to enter.</p>
         pub fn set_next_state(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_state = input;
             self
@@ -3205,6 +3508,7 @@ impl TransitionEvent {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3216,9 +3520,13 @@ impl TransitionEvent {
     std::hash::Hash,
 )]
 pub enum AlarmModelVersionStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Activating,
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Inactive,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3242,6 +3550,7 @@ impl std::str::FromStr for AlarmModelVersionStatus {
     }
 }
 impl AlarmModelVersionStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AlarmModelVersionStatus::Activating => "ACTIVATING",
@@ -3251,6 +3560,7 @@ impl AlarmModelVersionStatus {
             AlarmModelVersionStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ACTIVATING", "ACTIVE", "FAILED", "INACTIVE"]
     }
@@ -3303,6 +3613,8 @@ pub mod alarm_capabilities {
             self.initialization_configuration = Some(input);
             self
         }
+        /// <p>Specifies the default alarm state.
+        /// The configuration applies to all alarms that were created based on this alarm model.</p>
         pub fn set_initialization_configuration(
             mut self,
             input: std::option::Option<crate::model::InitializationConfiguration>,
@@ -3315,6 +3627,7 @@ pub mod alarm_capabilities {
             self.acknowledge_flow = Some(input);
             self
         }
+        /// <p>Specifies whether to get notified for alarm state changes.</p>
         pub fn set_acknowledge_flow(
             mut self,
             input: std::option::Option<crate::model::AcknowledgeFlow>,
@@ -3374,6 +3687,11 @@ pub mod acknowledge_flow {
             self.enabled = Some(input);
             self
         }
+        /// <p>The value must be <code>TRUE</code> or <code>FALSE</code>. If <code>TRUE</code>, you
+        /// receive a notification when the alarm state changes. You must choose to acknowledge the
+        /// notification before the alarm state can return to <code>NORMAL</code>. If <code>FALSE</code>,
+        /// you won't receive notifications. The alarm automatically changes to the <code>NORMAL</code>
+        /// state when the input property value returns to the specified range.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -3429,6 +3747,9 @@ pub mod initialization_configuration {
             self.disabled_on_initialization = Some(input);
             self
         }
+        /// <p>The value must be <code>TRUE</code> or <code>FALSE</code>. If <code>FALSE</code>, all
+        /// alarm instances created based on the alarm model are activated. The default value is
+        /// <code>TRUE</code>.</p>
         pub fn set_disabled_on_initialization(mut self, input: std::option::Option<bool>) -> Self {
             self.disabled_on_initialization = input;
             self
@@ -3472,12 +3793,20 @@ pub mod alarm_event_actions {
         pub(crate) alarm_actions: std::option::Option<std::vec::Vec<crate::model::AlarmAction>>,
     }
     impl Builder {
+        /// Appends an item to `alarm_actions`.
+        ///
+        /// To override the contents of this collection use [`set_alarm_actions`](Self::set_alarm_actions).
+        ///
+        /// <p>Specifies one or more supported actions to receive notifications when the alarm state
+        /// changes.</p>
         pub fn alarm_actions(mut self, input: impl Into<crate::model::AlarmAction>) -> Self {
             let mut v = self.alarm_actions.unwrap_or_default();
             v.push(input.into());
             self.alarm_actions = Some(v);
             self
         }
+        /// <p>Specifies one or more supported actions to receive notifications when the alarm state
+        /// changes.</p>
         pub fn set_alarm_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AlarmAction>>,
@@ -3692,6 +4021,7 @@ pub mod alarm_action {
             self.sns = Some(input);
             self
         }
+        /// <p>Information required to publish the Amazon SNS message.</p>
         pub fn set_sns(
             mut self,
             input: std::option::Option<crate::model::SnsTopicPublishAction>,
@@ -3704,6 +4034,7 @@ pub mod alarm_action {
             self.iot_topic_publish = Some(input);
             self
         }
+        /// <p>Information required to publish the MQTT message through the AWS IoT message broker.</p>
         pub fn set_iot_topic_publish(
             mut self,
             input: std::option::Option<crate::model::IotTopicPublishAction>,
@@ -3717,6 +4048,8 @@ pub mod alarm_action {
             self.lambda = Some(input);
             self
         }
+        /// <p>Calls a Lambda function, passing in information about the detector model instance and the
+        /// event that triggered the action.</p>
         pub fn set_lambda(
             mut self,
             input: std::option::Option<crate::model::LambdaAction>,
@@ -3730,6 +4063,8 @@ pub mod alarm_action {
             self.iot_events = Some(input);
             self
         }
+        /// <p>Sends an AWS IoT Events input, passing in information about the detector model instance and the
+        /// event that triggered the action.</p>
         pub fn set_iot_events(
             mut self,
             input: std::option::Option<crate::model::IotEventsAction>,
@@ -3743,6 +4078,8 @@ pub mod alarm_action {
             self.sqs = Some(input);
             self
         }
+        /// <p>Sends information about the detector model instance and the event that triggered the
+        /// action to an Amazon SQS queue.</p>
         pub fn set_sqs(mut self, input: std::option::Option<crate::model::SqsAction>) -> Self {
             self.sqs = input;
             self
@@ -3753,6 +4090,8 @@ pub mod alarm_action {
             self.firehose = Some(input);
             self
         }
+        /// <p>Sends information about the detector model instance and the event that triggered the
+        /// action to an Amazon Kinesis Data Firehose delivery stream.</p>
         pub fn set_firehose(
             mut self,
             input: std::option::Option<crate::model::FirehoseAction>,
@@ -3811,6 +4150,53 @@ pub mod alarm_action {
             self.dynamo_db = Some(input);
             self
         }
+        /// <p>Defines an action to write to the Amazon DynamoDB table that you created. The standard action
+        /// payload contains all the information about the detector model instance and the event that
+        /// triggered the action. You can customize the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. One column of the
+        /// DynamoDB table receives all attribute-value pairs in the payload that you specify.</p>
+        /// <p>You must use expressions for all parameters in <code>DynamoDBAction</code>. The expressions
+        /// accept literals, operators, functions, references, and substitution templates.</p>
+        /// <p class="title">
+        /// <b>Examples</b>
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>For literal values, the expressions must contain single quotes. For example, the value
+        /// for the <code>hashKeyType</code> parameter can be <code>'STRING'</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>For references, you must specify either variables or input values. For example, the
+        /// value for the <code>hashKeyField</code> parameter can be
+        /// <code>$input.GreenhouseInput.name</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>For a substitution template, you must use <code>${}</code>, and the template must be
+        /// in single quotes. A substitution template can also contain a combination of literals,
+        /// operators, functions, references, and substitution templates.</p>
+        /// <p>In the following example, the value for the <code>hashKeyValue</code> parameter uses a
+        /// substitution template. </p>
+        /// <p>
+        /// <code>'${$input.GreenhouseInput.temperature * 6 / 5 + 32} in Fahrenheit'</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>For a string concatenation, you must use <code>+</code>. A string concatenation can
+        /// also contain a combination of literals, operators, functions, references, and substitution
+        /// templates.</p>
+        /// <p>In the following example, the value for the <code>tableName</code> parameter uses a
+        /// string concatenation. </p>
+        /// <p>
+        /// <code>'GreenhouseTemperatureTable ' + $input.GreenhouseInput.date</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information,
+        /// see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html">Expressions</a>
+        /// in the <i>AWS IoT Events Developer Guide</i>.</p>
+        /// <p>If the defined payload type is a string, <code>DynamoDBAction</code> writes non-JSON data to
+        /// the DynamoDB table as binary data. The DynamoDB console displays the data as Base64-encoded text.
+        /// The value for the <code>payloadField</code> parameter is
+        /// <code><payload-field>_raw</code>.</p>
         pub fn set_dynamo_db(
             mut self,
             input: std::option::Option<crate::model::DynamoDbAction>,
@@ -3869,6 +4255,53 @@ pub mod alarm_action {
             self.dynamo_d_bv2 = Some(input);
             self
         }
+        /// <p>Defines an action to write to the Amazon DynamoDB table that you created. The default action
+        /// payload contains all the information about the detector model instance and the event that
+        /// triggered the action. You can customize the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. A separate column of
+        /// the DynamoDB table receives one attribute-value pair in the payload that you specify.</p>
+        /// <p>You must use expressions for all parameters in <code>DynamoDBv2Action</code>. The expressions
+        /// accept literals, operators, functions, references, and substitution templates.</p>
+        /// <p class="title">
+        /// <b>Examples</b>
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>For literal values, the expressions must contain single quotes. For example, the value
+        /// for the <code>tableName</code> parameter can be
+        /// <code>'GreenhouseTemperatureTable'</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>For references, you must specify either variables or input values. For example, the
+        /// value for the <code>tableName</code> parameter can be
+        /// <code>$variable.ddbtableName</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>For a substitution template, you must use <code>${}</code>, and the template must be
+        /// in single quotes. A substitution template can also contain a combination of literals,
+        /// operators, functions, references, and substitution templates.</p>
+        /// <p>In the following example, the value for the <code>contentExpression</code> parameter
+        /// in <code>Payload</code> uses a substitution template. </p>
+        /// <p>
+        /// <code>'{\"sensorID\": \"${$input.GreenhouseInput.sensor_id}\", \"temperature\":
+        /// \"${$input.GreenhouseInput.temperature * 9 / 5 + 32}\"}'</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>For a string concatenation, you must use <code>+</code>. A string concatenation can
+        /// also contain a combination of literals, operators, functions, references, and substitution
+        /// templates.</p>
+        /// <p>In the following example, the value for the <code>tableName</code> parameter uses a
+        /// string concatenation. </p>
+        /// <p>
+        /// <code>'GreenhouseTemperatureTable ' + $input.GreenhouseInput.date</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information,
+        /// see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html">Expressions</a>
+        /// in the <i>AWS IoT Events Developer Guide</i>.</p>
+        /// <p>The value for the <code>type</code> parameter in <code>Payload</code> must be
+        /// <code>JSON</code>.</p>
         pub fn set_dynamo_d_bv2(
             mut self,
             input: std::option::Option<crate::model::DynamoDBv2Action>,
@@ -3916,6 +4349,42 @@ pub mod alarm_action {
             self.iot_site_wise = Some(input);
             self
         }
+        /// <p>Sends information about the detector model instance and the event that triggered the
+        /// action to a specified asset property in AWS IoT SiteWise.</p>
+        /// <p>You must use expressions for all parameters in <code>IotSiteWiseAction</code>. The
+        /// expressions accept literals, operators, functions, references, and substitutions
+        /// templates.</p>
+        /// <p class="title">
+        /// <b>Examples</b>
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>For literal values, the expressions must contain single quotes. For example, the value
+        /// for the <code>propertyAlias</code> parameter can be
+        /// <code>'/company/windfarm/3/turbine/7/temperature'</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>For references, you must specify either variables or input values. For example, the
+        /// value for the <code>assetId</code> parameter can be
+        /// <code>$input.TurbineInput.assetId1</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>For a substitution template, you must use <code>${}</code>, and the template must be
+        /// in single quotes. A substitution template can also contain a combination of literals,
+        /// operators, functions, references, and substitution templates.</p>
+        /// <p>In the following example, the value for the <code>propertyAlias</code> parameter uses
+        /// a substitution template. </p>
+        /// <p>
+        /// <code>'company/windfarm/${$input.TemperatureInput.sensorData.windfarmID}/turbine/
+        /// ${$input.TemperatureInput.sensorData.turbineID}/temperature'</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>You must specify either <code>propertyAlias</code> or both <code>assetId</code> and
+        /// <code>propertyId</code> to identify the target asset property in AWS IoT SiteWise.</p>
+        /// <p>For more information,
+        /// see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html">Expressions</a>
+        /// in the <i>AWS IoT Events Developer Guide</i>.</p>
         pub fn set_iot_site_wise(
             mut self,
             input: std::option::Option<crate::model::IotSiteWiseAction>,
@@ -3971,6 +4440,12 @@ pub mod alarm_notification {
             std::option::Option<std::vec::Vec<crate::model::NotificationAction>>,
     }
     impl Builder {
+        /// Appends an item to `notification_actions`.
+        ///
+        /// To override the contents of this collection use [`set_notification_actions`](Self::set_notification_actions).
+        ///
+        /// <p>Contains the notification settings of an alarm model.
+        /// The settings apply to all alarms that were created based on this alarm model.</p>
         pub fn notification_actions(
             mut self,
             input: impl Into<crate::model::NotificationAction>,
@@ -3980,6 +4455,8 @@ pub mod alarm_notification {
             self.notification_actions = Some(v);
             self
         }
+        /// <p>Contains the notification settings of an alarm model.
+        /// The settings apply to all alarms that were created based on this alarm model.</p>
         pub fn set_notification_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::NotificationAction>>,
@@ -4043,6 +4520,8 @@ pub mod notification_action {
             self.action = Some(input);
             self
         }
+        /// <p>Specifies an AWS Lambda function to manage alarm notifications.
+        /// You can create one or use the <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">AWS Lambda function provided by AWS IoT Events</a>.</p>
         pub fn set_action(
             mut self,
             input: std::option::Option<crate::model::NotificationTargetActions>,
@@ -4050,6 +4529,11 @@ pub mod notification_action {
             self.action = input;
             self
         }
+        /// Appends an item to `sms_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_sms_configurations`](Self::set_sms_configurations).
+        ///
+        /// <p>Contains the configuration information of SMS notifications.</p>
         pub fn sms_configurations(
             mut self,
             input: impl Into<crate::model::SmsConfiguration>,
@@ -4059,6 +4543,7 @@ pub mod notification_action {
             self.sms_configurations = Some(v);
             self
         }
+        /// <p>Contains the configuration information of SMS notifications.</p>
         pub fn set_sms_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SmsConfiguration>>,
@@ -4066,6 +4551,11 @@ pub mod notification_action {
             self.sms_configurations = input;
             self
         }
+        /// Appends an item to `email_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_email_configurations`](Self::set_email_configurations).
+        ///
+        /// <p>Contains the configuration information of email notifications.</p>
         pub fn email_configurations(
             mut self,
             input: impl Into<crate::model::EmailConfiguration>,
@@ -4075,6 +4565,7 @@ pub mod notification_action {
             self.email_configurations = Some(v);
             self
         }
+        /// <p>Contains the configuration information of email notifications.</p>
         pub fn set_email_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EmailConfiguration>>,
@@ -4146,6 +4637,11 @@ pub mod email_configuration {
             self.from = Some(input.into());
             self
         }
+        /// <p>The email address that sends emails.</p>
+        /// <important>
+        /// <p>If you use the AWS IoT Events managed AWS Lambda function to manage your emails, you must <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify
+        /// the email address that sends emails in Amazon SES</a>.</p>
+        /// </important>
         pub fn set_from(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.from = input;
             self
@@ -4155,6 +4651,7 @@ pub mod email_configuration {
             self.content = Some(input);
             self
         }
+        /// <p>Contains the subject and message of an email.</p>
         pub fn set_content(
             mut self,
             input: std::option::Option<crate::model::EmailContent>,
@@ -4170,6 +4667,10 @@ pub mod email_configuration {
             self.recipients = Some(input);
             self
         }
+        /// <p>Contains the information of one or more recipients who receive the emails.</p>
+        /// <important>
+        /// <p>You must <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/addusers.html">add the users that receive emails to your AWS SSO store</a>.</p>
+        /// </important>
         pub fn set_recipients(
             mut self,
             input: std::option::Option<crate::model::EmailRecipients>,
@@ -4220,12 +4721,18 @@ pub mod email_recipients {
         pub(crate) to: std::option::Option<std::vec::Vec<crate::model::RecipientDetail>>,
     }
     impl Builder {
+        /// Appends an item to `to`.
+        ///
+        /// To override the contents of this collection use [`set_to`](Self::set_to).
+        ///
+        /// <p>Specifies one or more recipients who receive the email.</p>
         pub fn to(mut self, input: impl Into<crate::model::RecipientDetail>) -> Self {
             let mut v = self.to.unwrap_or_default();
             v.push(input.into());
             self.to = Some(v);
             self
         }
+        /// <p>Specifies one or more recipients who receive the email.</p>
         pub fn set_to(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RecipientDetail>>,
@@ -4274,6 +4781,7 @@ pub mod recipient_detail {
             self.sso_identity = Some(input);
             self
         }
+        /// <p>The AWS Single Sign-On (AWS SSO) authentication information.</p>
         pub fn set_sso_identity(
             mut self,
             input: std::option::Option<crate::model::SsoIdentity>,
@@ -4330,6 +4838,7 @@ pub mod sso_identity {
             self.identity_store_id = Some(input.into());
             self
         }
+        /// <p>The ID of the AWS SSO identity store.</p>
         pub fn set_identity_store_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4342,6 +4851,7 @@ pub mod sso_identity {
             self.user_id = Some(input.into());
             self
         }
+        /// <p>The user ID.</p>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_id = input;
             self
@@ -4394,6 +4904,7 @@ pub mod email_content {
             self.subject = Some(input.into());
             self
         }
+        /// <p>The subject of the email.</p>
         pub fn set_subject(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.subject = input;
             self
@@ -4403,6 +4914,7 @@ pub mod email_content {
             self.additional_message = Some(input.into());
             self
         }
+        /// <p>The message that you want to send. The message can be up to 200 characters.</p>
         pub fn set_additional_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4465,6 +4977,7 @@ pub mod sms_configuration {
             self.sender_id = Some(input.into());
             self
         }
+        /// <p>The sender ID.</p>
         pub fn set_sender_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.sender_id = input;
             self
@@ -4474,6 +4987,7 @@ pub mod sms_configuration {
             self.additional_message = Some(input.into());
             self
         }
+        /// <p>The message that you want to send. The message can be up to 200 characters.</p>
         pub fn set_additional_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4481,12 +4995,24 @@ pub mod sms_configuration {
             self.additional_message = input;
             self
         }
+        /// Appends an item to `recipients`.
+        ///
+        /// To override the contents of this collection use [`set_recipients`](Self::set_recipients).
+        ///
+        /// <p>Specifies one or more recipients who receive the message.</p>
+        /// <important>
+        /// <p>You must <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/addusers.html">add the users that receive SMS messages to your AWS SSO store</a>.</p>
+        /// </important>
         pub fn recipients(mut self, input: impl Into<crate::model::RecipientDetail>) -> Self {
             let mut v = self.recipients.unwrap_or_default();
             v.push(input.into());
             self.recipients = Some(v);
             self
         }
+        /// <p>Specifies one or more recipients who receive the message.</p>
+        /// <important>
+        /// <p>You must <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/addusers.html">add the users that receive SMS messages to your AWS SSO store</a>.</p>
+        /// </important>
         pub fn set_recipients(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RecipientDetail>>,
@@ -4542,6 +5068,8 @@ pub mod notification_target_actions {
             self.lambda_action = Some(input);
             self
         }
+        /// <p>Calls a Lambda function, passing in information about the detector model instance and the
+        /// event that triggered the action.</p>
         pub fn set_lambda_action(
             mut self,
             input: std::option::Option<crate::model::LambdaAction>,
@@ -4592,6 +5120,7 @@ pub mod alarm_rule {
             self.simple_rule = Some(input);
             self
         }
+        /// <p>A rule that compares an input property value to a threshold value with a comparison operator.</p>
         pub fn set_simple_rule(
             mut self,
             input: std::option::Option<crate::model::SimpleRule>,
@@ -4653,6 +5182,8 @@ pub mod simple_rule {
             self.input_property = Some(input.into());
             self
         }
+        /// <p>The value on the left side of the comparison operator. You can specify an AWS IoT Events input
+        /// attribute as an input property.</p>
         pub fn set_input_property(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4665,6 +5196,7 @@ pub mod simple_rule {
             self.comparison_operator = Some(input);
             self
         }
+        /// <p>The comparison operator.</p>
         pub fn set_comparison_operator(
             mut self,
             input: std::option::Option<crate::model::ComparisonOperator>,
@@ -4678,6 +5210,8 @@ pub mod simple_rule {
             self.threshold = Some(input.into());
             self
         }
+        /// <p>The value on the right side of the comparison operator. You can enter a number or specify
+        /// an AWS IoT Events input attribute.</p>
         pub fn set_threshold(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.threshold = input;
             self
@@ -4699,6 +5233,7 @@ impl SimpleRule {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4710,11 +5245,17 @@ impl SimpleRule {
     std::hash::Hash,
 )]
 pub enum ComparisonOperator {
+    #[allow(missing_docs)] // documentation missing in model
     Equal,
+    #[allow(missing_docs)] // documentation missing in model
     Greater,
+    #[allow(missing_docs)] // documentation missing in model
     GreaterOrEqual,
+    #[allow(missing_docs)] // documentation missing in model
     Less,
+    #[allow(missing_docs)] // documentation missing in model
     LessOrEqual,
+    #[allow(missing_docs)] // documentation missing in model
     NotEqual,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4740,6 +5281,7 @@ impl std::str::FromStr for ComparisonOperator {
     }
 }
 impl ComparisonOperator {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ComparisonOperator::Equal => "EQUAL",
@@ -4751,6 +5293,7 @@ impl ComparisonOperator {
             ComparisonOperator::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "EQUAL",
@@ -4800,6 +5343,7 @@ pub mod tag {
             self.key = Some(input.into());
             self
         }
+        /// <p>The tag's key.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -4809,6 +5353,7 @@ pub mod tag {
             self.value = Some(input.into());
             self
         }
+        /// <p>The tag's value.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -4872,6 +5417,7 @@ pub mod logging_options {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the role that grants permission to AWS IoT Events to perform logging.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -4881,6 +5427,7 @@ pub mod logging_options {
             self.level = Some(input);
             self
         }
+        /// <p>The logging level.</p>
         pub fn set_level(mut self, input: std::option::Option<crate::model::LoggingLevel>) -> Self {
             self.level = input;
             self
@@ -4890,10 +5437,17 @@ pub mod logging_options {
             self.enabled = Some(input);
             self
         }
+        /// <p>If TRUE, logging is enabled for AWS IoT Events.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
         }
+        /// Appends an item to `detector_debug_options`.
+        ///
+        /// To override the contents of this collection use [`set_detector_debug_options`](Self::set_detector_debug_options).
+        ///
+        /// <p>Information that identifies those detector models and their detectors (instances) for
+        /// which the logging level is given.</p>
         pub fn detector_debug_options(
             mut self,
             input: impl Into<crate::model::DetectorDebugOption>,
@@ -4903,6 +5457,8 @@ pub mod logging_options {
             self.detector_debug_options = Some(v);
             self
         }
+        /// <p>Information that identifies those detector models and their detectors (instances) for
+        /// which the logging level is given.</p>
         pub fn set_detector_debug_options(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DetectorDebugOption>>,
@@ -4962,6 +5518,7 @@ pub mod detector_debug_option {
             self.detector_model_name = Some(input.into());
             self
         }
+        /// <p>The name of the detector model.</p>
         pub fn set_detector_model_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4975,6 +5532,8 @@ pub mod detector_debug_option {
             self.key_value = Some(input.into());
             self
         }
+        /// <p>The value of the input attribute key used to create the detector (the instance of the
+        /// detector model).</p>
         pub fn set_key_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_value = input;
             self
@@ -4995,6 +5554,7 @@ impl DetectorDebugOption {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5006,8 +5566,11 @@ impl DetectorDebugOption {
     std::hash::Hash,
 )]
 pub enum LoggingLevel {
+    #[allow(missing_docs)] // documentation missing in model
     Debug,
+    #[allow(missing_docs)] // documentation missing in model
     Error,
+    #[allow(missing_docs)] // documentation missing in model
     Info,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5030,6 +5593,7 @@ impl std::str::FromStr for LoggingLevel {
     }
 }
 impl LoggingLevel {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LoggingLevel::Debug => "DEBUG",
@@ -5038,6 +5602,7 @@ impl LoggingLevel {
             LoggingLevel::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DEBUG", "ERROR", "INFO"]
     }
@@ -5059,9 +5624,9 @@ pub struct InputSummary {
     /// <p>The ARN of the input.</p>
     pub input_arn: std::option::Option<std::string::String>,
     /// <p>The time the input was created.</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The last time the input was updated.</p>
-    pub last_update_time: std::option::Option<smithy_types::Instant>,
+    pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The status of the input.</p>
     pub status: std::option::Option<crate::model::InputStatus>,
 }
@@ -5086,8 +5651,8 @@ pub mod input_summary {
         pub(crate) input_name: std::option::Option<std::string::String>,
         pub(crate) input_description: std::option::Option<std::string::String>,
         pub(crate) input_arn: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_update_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_update_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) status: std::option::Option<crate::model::InputStatus>,
     }
     impl Builder {
@@ -5096,6 +5661,7 @@ pub mod input_summary {
             self.input_name = Some(input.into());
             self
         }
+        /// <p>The name of the input.</p>
         pub fn set_input_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.input_name = input;
             self
@@ -5105,6 +5671,7 @@ pub mod input_summary {
             self.input_description = Some(input.into());
             self
         }
+        /// <p>A brief description of the input.</p>
         pub fn set_input_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5117,30 +5684,33 @@ pub mod input_summary {
             self.input_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the input.</p>
         pub fn set_input_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.input_arn = input;
             self
         }
         /// <p>The time the input was created.</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>The time the input was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>The last time the input was updated.</p>
-        pub fn last_update_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_update_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_update_time = Some(input);
             self
         }
+        /// <p>The last time the input was updated.</p>
         pub fn set_last_update_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_update_time = input;
             self
@@ -5150,6 +5720,7 @@ pub mod input_summary {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the input.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::InputStatus>) -> Self {
             self.status = input;
             self
@@ -5214,6 +5785,9 @@ pub mod routed_resource {
             self.name = Some(input.into());
             self
         }
+        /// <p>
+        /// The name of the routed resource.  
+        /// </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -5225,6 +5799,9 @@ pub mod routed_resource {
             self.arn = Some(input.into());
             self
         }
+        /// <p>
+        /// The ARN of the routed resource. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+        /// </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -5297,6 +5874,9 @@ pub mod input_identifier {
             self.iot_events_input_identifier = Some(input);
             self
         }
+        /// <p>
+        /// The identifier of the input routed to AWS IoT Events.
+        /// </p>
         pub fn set_iot_events_input_identifier(
             mut self,
             input: std::option::Option<crate::model::IotEventsInputIdentifier>,
@@ -5314,6 +5894,9 @@ pub mod input_identifier {
             self.iot_site_wise_input_identifier = Some(input);
             self
         }
+        /// <p>
+        /// The identifer of the input routed from AWS IoT SiteWise.
+        /// </p>
         pub fn set_iot_site_wise_input_identifier(
             mut self,
             input: std::option::Option<crate::model::IotSiteWiseInputIdentifier>,
@@ -5379,6 +5962,9 @@ pub mod iot_site_wise_input_identifier {
             self.iot_site_wise_asset_model_property_identifier = Some(input);
             self
         }
+        /// <p>
+        /// The identifier of the AWS IoT SiteWise asset model property.
+        /// </p>
         pub fn set_iot_site_wise_asset_model_property_identifier(
             mut self,
             input: std::option::Option<crate::model::IotSiteWiseAssetModelPropertyIdentifier>,
@@ -5442,6 +6028,9 @@ pub mod iot_site_wise_asset_model_property_identifier {
             self.asset_model_id = Some(input.into());
             self
         }
+        /// <p>
+        /// The ID of the AWS IoT SiteWise asset model.
+        /// </p>
         pub fn set_asset_model_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5456,6 +6045,9 @@ pub mod iot_site_wise_asset_model_property_identifier {
             self.property_id = Some(input.into());
             self
         }
+        /// <p>
+        /// The ID of the AWS IoT SiteWise asset property.
+        /// </p>
         pub fn set_property_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.property_id = input;
             self
@@ -5510,6 +6102,9 @@ pub mod iot_events_input_identifier {
             self.input_name = Some(input.into());
             self
         }
+        /// <p>
+        /// The name of the input routed to AWS IoT Events.
+        /// </p>
         pub fn set_input_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.input_name = input;
             self
@@ -5542,9 +6137,9 @@ pub struct DetectorModelVersionSummary {
     /// <p>The ARN of the role that grants the detector model permission to perform its tasks.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The time the detector model version was created.</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The last time the detector model version was updated.</p>
-    pub last_update_time: std::option::Option<smithy_types::Instant>,
+    pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The status of the detector model version.</p>
     pub status: std::option::Option<crate::model::DetectorModelVersionStatus>,
     /// <p>Information about the order in which events are evaluated and how actions are executed.
@@ -5575,8 +6170,8 @@ pub mod detector_model_version_summary {
         pub(crate) detector_model_version: std::option::Option<std::string::String>,
         pub(crate) detector_model_arn: std::option::Option<std::string::String>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_update_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_update_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) status: std::option::Option<crate::model::DetectorModelVersionStatus>,
         pub(crate) evaluation_method: std::option::Option<crate::model::EvaluationMethod>,
     }
@@ -5586,6 +6181,7 @@ pub mod detector_model_version_summary {
             self.detector_model_name = Some(input.into());
             self
         }
+        /// <p>The name of the detector model.</p>
         pub fn set_detector_model_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5598,6 +6194,7 @@ pub mod detector_model_version_summary {
             self.detector_model_version = Some(input.into());
             self
         }
+        /// <p>The ID of the detector model version.</p>
         pub fn set_detector_model_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5610,6 +6207,7 @@ pub mod detector_model_version_summary {
             self.detector_model_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the detector model version.</p>
         pub fn set_detector_model_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5622,30 +6220,33 @@ pub mod detector_model_version_summary {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the role that grants the detector model permission to perform its tasks.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
         }
         /// <p>The time the detector model version was created.</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>The time the detector model version was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>The last time the detector model version was updated.</p>
-        pub fn last_update_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_update_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_update_time = Some(input);
             self
         }
+        /// <p>The last time the detector model version was updated.</p>
         pub fn set_last_update_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_update_time = input;
             self
@@ -5655,6 +6256,7 @@ pub mod detector_model_version_summary {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the detector model version.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::DetectorModelVersionStatus>,
@@ -5668,6 +6270,8 @@ pub mod detector_model_version_summary {
             self.evaluation_method = Some(input);
             self
         }
+        /// <p>Information about the order in which events are evaluated and how actions are executed.
+        /// </p>
         pub fn set_evaluation_method(
             mut self,
             input: std::option::Option<crate::model::EvaluationMethod>,
@@ -5706,7 +6310,7 @@ pub struct DetectorModelSummary {
     /// <p>A brief description of the detector model.</p>
     pub detector_model_description: std::option::Option<std::string::String>,
     /// <p>The time the detector model was created.</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for DetectorModelSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5728,7 +6332,7 @@ pub mod detector_model_summary {
     pub struct Builder {
         pub(crate) detector_model_name: std::option::Option<std::string::String>,
         pub(crate) detector_model_description: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The name of the detector model.</p>
@@ -5736,6 +6340,7 @@ pub mod detector_model_summary {
             self.detector_model_name = Some(input.into());
             self
         }
+        /// <p>The name of the detector model.</p>
         pub fn set_detector_model_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5748,6 +6353,7 @@ pub mod detector_model_summary {
             self.detector_model_description = Some(input.into());
             self
         }
+        /// <p>A brief description of the detector model.</p>
         pub fn set_detector_model_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5756,13 +6362,14 @@ pub mod detector_model_summary {
             self
         }
         /// <p>The time the detector model was created.</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>The time the detector model was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -5797,9 +6404,9 @@ pub struct AlarmModelVersionSummary {
     /// <p>The ARN of the IAM role that allows the alarm to perform actions and access AWS resources. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The time the alarm model was created, in the Unix epoch format.</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time the alarm model was last updated, in the Unix epoch format.</p>
-    pub last_update_time: std::option::Option<smithy_types::Instant>,
+    pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The status of the alarm model. The status can be one of the following values:</p>
     /// <ul>
     /// <li>
@@ -5852,8 +6459,8 @@ pub mod alarm_model_version_summary {
         pub(crate) alarm_model_arn: std::option::Option<std::string::String>,
         pub(crate) alarm_model_version: std::option::Option<std::string::String>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_update_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_update_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) status: std::option::Option<crate::model::AlarmModelVersionStatus>,
         pub(crate) status_message: std::option::Option<std::string::String>,
     }
@@ -5863,6 +6470,7 @@ pub mod alarm_model_version_summary {
             self.alarm_model_name = Some(input.into());
             self
         }
+        /// <p>The name of the alarm model.</p>
         pub fn set_alarm_model_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5875,6 +6483,7 @@ pub mod alarm_model_version_summary {
             self.alarm_model_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the alarm model. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_alarm_model_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5887,6 +6496,7 @@ pub mod alarm_model_version_summary {
             self.alarm_model_version = Some(input.into());
             self
         }
+        /// <p>The version of the alarm model.</p>
         pub fn set_alarm_model_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5899,30 +6509,33 @@ pub mod alarm_model_version_summary {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the IAM role that allows the alarm to perform actions and access AWS resources. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
         }
         /// <p>The time the alarm model was created, in the Unix epoch format.</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>The time the alarm model was created, in the Unix epoch format.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>The time the alarm model was last updated, in the Unix epoch format.</p>
-        pub fn last_update_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_update_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_update_time = Some(input);
             self
         }
+        /// <p>The time the alarm model was last updated, in the Unix epoch format.</p>
         pub fn set_last_update_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_update_time = input;
             self
@@ -5953,6 +6566,28 @@ pub mod alarm_model_version_summary {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the alarm model. The status can be one of the following values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ACTIVE</code> - The alarm model is active and it's ready to evaluate data.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ACTIVATING</code> - AWS IoT Events is activating your alarm model.
+        /// Activating an alarm model can take up to a few minutes.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>INACTIVE</code> - The alarm model is inactive, so it isn't ready to evaluate data.
+        /// Check your alarm model information and update the alarm model.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FAILED</code> - You couldn't create or update the alarm model. Check your alarm model information
+        /// and try again.</p>
+        /// </li>
+        /// </ul>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::AlarmModelVersionStatus>,
@@ -5967,6 +6602,9 @@ pub mod alarm_model_version_summary {
             self.status_message = Some(input.into());
             self
         }
+        /// <p>
+        /// Contains information about the status of the alarm model version.
+        /// </p>
         pub fn set_status_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6001,7 +6639,7 @@ impl AlarmModelVersionSummary {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AlarmModelSummary {
     /// <p>The time the alarm model was created, in the Unix epoch format.</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The description of the alarm model.</p>
     pub alarm_model_description: std::option::Option<std::string::String>,
     /// <p>The name of the alarm model.</p>
@@ -6022,19 +6660,20 @@ pub mod alarm_model_summary {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) alarm_model_description: std::option::Option<std::string::String>,
         pub(crate) alarm_model_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The time the alarm model was created, in the Unix epoch format.</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>The time the alarm model was created, in the Unix epoch format.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -6044,6 +6683,7 @@ pub mod alarm_model_summary {
             self.alarm_model_description = Some(input.into());
             self
         }
+        /// <p>The description of the alarm model.</p>
         pub fn set_alarm_model_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6056,6 +6696,7 @@ pub mod alarm_model_summary {
             self.alarm_model_name = Some(input.into());
             self
         }
+        /// <p>The name of the alarm model.</p>
         pub fn set_alarm_model_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6224,6 +6865,48 @@ pub mod analysis_result {
             self.r#type = Some(input.into());
             self
         }
+        /// <p>The type of the analysis result. Analyses fall into the following types based on the
+        /// validators used to generate the analysis result:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>supported-actions</code> - You must specify AWS IoT Events supported actions that work
+        /// with other AWS services in a supported AWS Region.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>service-limits</code> - Resources or API operations can't exceed service
+        /// quotas (also known as limits). Update your detector model or request a quota
+        /// increase.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>structure</code> - The detector model must follow a structure that AWS IoT Events
+        /// supports. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>expression-syntax</code> - Your expression must follow the required
+        /// syntax.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>data-type</code> - Data types referenced in the detector model must be
+        /// compatible.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>referenced-data</code> - You must define the data referenced in your detector
+        /// model before you can use the data.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>referenced-resource</code> - Resources that the detector model uses must be
+        /// available.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-analyze-api.html">Running detector model
+        /// analyses</a> in the <i>AWS IoT Events Developer Guide</i>.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
@@ -6253,6 +6936,27 @@ pub mod analysis_result {
             self.level = Some(input);
             self
         }
+        /// <p>The severity level of the analysis result. Based on the severity level, analysis results
+        /// fall into three general categories:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>INFO</code> - An information result tells you about a significant field in your
+        /// detector model. This type of result usually doesn't require immediate action.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>WARNING</code> - A warning result draws special attention to fields that might cause issues for your detector model.
+        /// We recommend that you review warnings and take necessary actions
+        /// before you use your detector model in production environments. Otherwise, the detector
+        /// model might not work as expected.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ERROR</code> - An error result notifies you about a problem found in your
+        /// detector model. You must fix all errors before you can publish your detector model.</p>
+        /// </li>
+        /// </ul>
         pub fn set_level(
             mut self,
             input: std::option::Option<crate::model::AnalysisResultLevel>,
@@ -6265,16 +6969,25 @@ pub mod analysis_result {
             self.message = Some(input.into());
             self
         }
+        /// <p>Contains additional information about the analysis result.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
         }
+        /// Appends an item to `locations`.
+        ///
+        /// To override the contents of this collection use [`set_locations`](Self::set_locations).
+        ///
+        /// <p>Contains one or more locations that you can use to locate the fields in your detector
+        /// model that the analysis result references.</p>
         pub fn locations(mut self, input: impl Into<crate::model::AnalysisResultLocation>) -> Self {
             let mut v = self.locations.unwrap_or_default();
             v.push(input.into());
             self.locations = Some(v);
             self
         }
+        /// <p>Contains one or more locations that you can use to locate the fields in your detector
+        /// model that the analysis result references.</p>
         pub fn set_locations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AnalysisResultLocation>>,
@@ -6331,6 +7044,8 @@ pub mod analysis_result_location {
             self.path = Some(input.into());
             self
         }
+        /// <p>A <a href="https://github.com/json-path/JsonPath">JsonPath</a> expression that
+        /// identifies the error field in your detector model.</p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.path = input;
             self
@@ -6348,6 +7063,7 @@ impl AnalysisResultLocation {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -6359,8 +7075,11 @@ impl AnalysisResultLocation {
     std::hash::Hash,
 )]
 pub enum AnalysisResultLevel {
+    #[allow(missing_docs)] // documentation missing in model
     Error,
+    #[allow(missing_docs)] // documentation missing in model
     Info,
+    #[allow(missing_docs)] // documentation missing in model
     Warning,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -6383,6 +7102,7 @@ impl std::str::FromStr for AnalysisResultLevel {
     }
 }
 impl AnalysisResultLevel {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AnalysisResultLevel::Error => "ERROR",
@@ -6391,6 +7111,7 @@ impl AnalysisResultLevel {
             AnalysisResultLevel::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ERROR", "INFO", "WARNING"]
     }
@@ -6433,6 +7154,7 @@ pub mod input {
             self.input_configuration = Some(input);
             self
         }
+        /// <p>Information about the configuration of an input.</p>
         pub fn set_input_configuration(
             mut self,
             input: std::option::Option<crate::model::InputConfiguration>,
@@ -6445,6 +7167,7 @@ pub mod input {
             self.input_definition = Some(input);
             self
         }
+        /// <p>The definition of the input.</p>
         pub fn set_input_definition(
             mut self,
             input: std::option::Option<crate::model::InputDefinition>,
@@ -6468,6 +7191,7 @@ impl Input {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -6479,8 +7203,11 @@ impl Input {
     std::hash::Hash,
 )]
 pub enum AnalysisStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Complete,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Running,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -6503,6 +7230,7 @@ impl std::str::FromStr for AnalysisStatus {
     }
 }
 impl AnalysisStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AnalysisStatus::Complete => "COMPLETE",
@@ -6511,6 +7239,7 @@ impl AnalysisStatus {
             AnalysisStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["COMPLETE", "FAILED", "RUNNING"]
     }
@@ -6561,6 +7290,7 @@ pub mod detector_model {
             self.detector_model_definition = Some(input);
             self
         }
+        /// <p>Information that defines how a detector operates.</p>
         pub fn set_detector_model_definition(
             mut self,
             input: std::option::Option<crate::model::DetectorModelDefinition>,
@@ -6576,6 +7306,7 @@ pub mod detector_model {
             self.detector_model_configuration = Some(input);
             self
         }
+        /// <p>Information about how the detector is configured.</p>
         pub fn set_detector_model_configuration(
             mut self,
             input: std::option::Option<crate::model::DetectorModelConfiguration>,

@@ -17,6 +17,7 @@ pub mod accept_inbound_cross_cluster_search_connection_input {
             self.cross_cluster_search_connection_id = Some(input.into());
             self
         }
+        /// <p>The id of the inbound connection that you want to accept.</p>
         pub fn set_cross_cluster_search_connection_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -29,7 +30,7 @@ pub mod accept_inbound_cross_cluster_search_connection_input {
             self,
         ) -> std::result::Result<
             crate::input::AcceptInboundCrossClusterSearchConnectionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(
                 crate::input::AcceptInboundCrossClusterSearchConnectionInput {
@@ -52,27 +53,28 @@ impl AcceptInboundCrossClusterSearchConnectionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AcceptInboundCrossClusterSearchConnection,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AcceptInboundCrossClusterSearchConnectionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_1 = &_input.cross_cluster_search_connection_id;
             let input_1 =
                 input_1
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "cross_cluster_search_connection_id",
                         details: "cannot be empty or unset",
                     })?;
-            let cross_cluster_search_connection_id = smithy_http::label::fmt_string(input_1, false);
+            let cross_cluster_search_connection_id =
+                aws_smithy_http::label::fmt_string(input_1, false);
             if cross_cluster_search_connection_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "cross_cluster_search_connection_id",
                     details: "cannot be empty or unset",
                 });
@@ -89,7 +91,7 @@ impl AcceptInboundCrossClusterSearchConnectionInput {
         fn update_http_builder(
             input: &crate::input::AcceptInboundCrossClusterSearchConnectionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -98,23 +100,23 @@ impl AcceptInboundCrossClusterSearchConnectionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AcceptInboundCrossClusterSearchConnectionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -137,15 +139,15 @@ impl AcceptInboundCrossClusterSearchConnectionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::AcceptInboundCrossClusterSearchConnection::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "AcceptInboundCrossClusterSearchConnection",
             "elasticsearchservice",
         ));
@@ -154,10 +156,10 @@ impl AcceptInboundCrossClusterSearchConnectionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -187,16 +189,23 @@ pub mod add_tags_input {
             self.arn = Some(input.into());
             self
         }
+        /// <p> Specify the <code>ARN</code> for which you want to add the tags.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
+        /// Appends an item to `tag_list`.
+        ///
+        /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
+        ///
+        /// <p> List of <code>Tag</code> that need to be added for the Elasticsearch domain. </p>
         pub fn tag_list(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
             v.push(input.into());
             self.tag_list = Some(v);
             self
         }
+        /// <p> List of <code>Tag</code> that need to be added for the Elasticsearch domain. </p>
         pub fn set_tag_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -207,7 +216,7 @@ pub mod add_tags_input {
         /// Consumes the builder and constructs a [`AddTagsInput`](crate::input::AddTagsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::AddTagsInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::AddTagsInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::AddTagsInput {
                 arn: self.arn,
@@ -227,13 +236,16 @@ impl AddTagsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<crate::operation::AddTags, aws_http::AwsErrorRetryPolicy>,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::Operation<
+            crate::operation::AddTags,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AddTagsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/2015-01-01/tags").expect("formatting should succeed");
             Ok(())
         }
@@ -241,7 +253,7 @@ impl AddTagsInput {
         fn update_http_builder(
             input: &crate::input::AddTagsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -250,24 +262,26 @@ impl AddTagsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AddTagsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_add_tags(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -290,24 +304,25 @@ impl AddTagsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(request, crate::operation::AddTags::new())
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "AddTags",
-                "elasticsearchservice",
-            ));
+        let op =
+            aws_smithy_http::operation::Operation::new(request, crate::operation::AddTags::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "AddTags",
+                    "elasticsearchservice",
+                ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -336,6 +351,7 @@ pub mod associate_package_input {
             self.package_id = Some(input.into());
             self
         }
+        /// <p>Internal ID of the package that you want to associate with a domain. Use <code>DescribePackages</code> to find this value.</p>
         pub fn set_package_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.package_id = input;
             self
@@ -345,6 +361,7 @@ pub mod associate_package_input {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>Name of the domain that you want to associate the package with.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -354,7 +371,7 @@ pub mod associate_package_input {
             self,
         ) -> std::result::Result<
             crate::input::AssociatePackageInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::AssociatePackageInput {
                 package_id: self.package_id,
@@ -374,27 +391,27 @@ impl AssociatePackageInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AssociatePackage,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AssociatePackageInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_2 = &_input.package_id;
             let input_2 =
                 input_2
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "package_id",
                         details: "cannot be empty or unset",
                     })?;
-            let package_id = smithy_http::label::fmt_string(input_2, false);
+            let package_id = aws_smithy_http::label::fmt_string(input_2, false);
             if package_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "package_id",
                     details: "cannot be empty or unset",
                 });
@@ -403,13 +420,13 @@ impl AssociatePackageInput {
             let input_3 =
                 input_3
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
                         details: "cannot be empty or unset",
                     })?;
-            let domain_name = smithy_http::label::fmt_string(input_3, false);
+            let domain_name = aws_smithy_http::label::fmt_string(input_3, false);
             if domain_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "domain_name",
                     details: "cannot be empty or unset",
                 });
@@ -427,7 +444,7 @@ impl AssociatePackageInput {
         fn update_http_builder(
             input: &crate::input::AssociatePackageInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -436,23 +453,23 @@ impl AssociatePackageInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AssociatePackageInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -475,15 +492,15 @@ impl AssociatePackageInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::AssociatePackage::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "AssociatePackage",
             "elasticsearchservice",
         ));
@@ -492,10 +509,10 @@ impl AssociatePackageInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -523,6 +540,7 @@ pub mod cancel_elasticsearch_service_software_update_input {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The name of the domain that you want to stop the latest service software update on.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -532,7 +550,7 @@ pub mod cancel_elasticsearch_service_software_update_input {
             self,
         ) -> std::result::Result<
             crate::input::CancelElasticsearchServiceSoftwareUpdateInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(
                 crate::input::CancelElasticsearchServiceSoftwareUpdateInput {
@@ -555,16 +573,16 @@ impl CancelElasticsearchServiceSoftwareUpdateInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CancelElasticsearchServiceSoftwareUpdate,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CancelElasticsearchServiceSoftwareUpdateInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/2015-01-01/es/serviceSoftwareUpdate/cancel")
                 .expect("formatting should succeed");
             Ok(())
@@ -573,7 +591,7 @@ impl CancelElasticsearchServiceSoftwareUpdateInput {
         fn update_http_builder(
             input: &crate::input::CancelElasticsearchServiceSoftwareUpdateInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -582,25 +600,25 @@ impl CancelElasticsearchServiceSoftwareUpdateInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CancelElasticsearchServiceSoftwareUpdateInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_cancel_elasticsearch_service_software_update(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_cancel_elasticsearch_service_software_update(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -623,15 +641,15 @@ impl CancelElasticsearchServiceSoftwareUpdateInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CancelElasticsearchServiceSoftwareUpdate::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CancelElasticsearchServiceSoftwareUpdate",
             "elasticsearchservice",
         ));
@@ -640,10 +658,10 @@ impl CancelElasticsearchServiceSoftwareUpdateInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -695,6 +713,7 @@ pub mod create_elasticsearch_domain_input {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The name of the Elasticsearch domain that you are creating. Domain names are unique across the domains owned by an account within an AWS region. Domain names must start with a lowercase letter and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -705,6 +724,8 @@ pub mod create_elasticsearch_domain_input {
             self.elasticsearch_version = Some(input.into());
             self
         }
+        /// <p>String of format X.Y to specify version for the Elasticsearch domain eg. "1.5" or "2.3". For more information,
+        /// see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomains" target="_blank">Creating Elasticsearch Domains</a> in the <i>Amazon Elasticsearch Service Developer Guide</i>.</p>
         pub fn set_elasticsearch_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -720,6 +741,7 @@ pub mod create_elasticsearch_domain_input {
             self.elasticsearch_cluster_config = Some(input);
             self
         }
+        /// <p>Configuration options for an Elasticsearch domain. Specifies the instance type and number of instances in the domain cluster. </p>
         pub fn set_elasticsearch_cluster_config(
             mut self,
             input: std::option::Option<crate::model::ElasticsearchClusterConfig>,
@@ -732,6 +754,7 @@ pub mod create_elasticsearch_domain_input {
             self.ebs_options = Some(input);
             self
         }
+        /// <p>Options to enable, disable and specify the type and size of EBS storage volumes. </p>
         pub fn set_ebs_options(
             mut self,
             input: std::option::Option<crate::model::EbsOptions>,
@@ -744,6 +767,7 @@ pub mod create_elasticsearch_domain_input {
             self.access_policies = Some(input.into());
             self
         }
+        /// <p> IAM access policy as a JSON-formatted string.</p>
         pub fn set_access_policies(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -756,6 +780,7 @@ pub mod create_elasticsearch_domain_input {
             self.snapshot_options = Some(input);
             self
         }
+        /// <p>Option to set time, in UTC format, of the daily automated snapshot. Default value is 0 hours. </p>
         pub fn set_snapshot_options(
             mut self,
             input: std::option::Option<crate::model::SnapshotOptions>,
@@ -768,6 +793,7 @@ pub mod create_elasticsearch_domain_input {
             self.vpc_options = Some(input);
             self
         }
+        /// <p>Options to specify the subnets and security groups for VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html#es-creating-vpc" target="_blank">Creating a VPC</a> in <i>VPC Endpoints for Amazon Elasticsearch Service Domains</i></p>
         pub fn set_vpc_options(
             mut self,
             input: std::option::Option<crate::model::VpcOptions>,
@@ -780,6 +806,7 @@ pub mod create_elasticsearch_domain_input {
             self.cognito_options = Some(input);
             self
         }
+        /// <p>Options to specify the Cognito user and identity pools for Kibana authentication. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-cognito-auth.html" target="_blank">Amazon Cognito Authentication for Kibana</a>.</p>
         pub fn set_cognito_options(
             mut self,
             input: std::option::Option<crate::model::CognitoOptions>,
@@ -795,6 +822,7 @@ pub mod create_elasticsearch_domain_input {
             self.encryption_at_rest_options = Some(input);
             self
         }
+        /// <p>Specifies the Encryption At Rest Options.</p>
         pub fn set_encryption_at_rest_options(
             mut self,
             input: std::option::Option<crate::model::EncryptionAtRestOptions>,
@@ -810,6 +838,7 @@ pub mod create_elasticsearch_domain_input {
             self.node_to_node_encryption_options = Some(input);
             self
         }
+        /// <p>Specifies the NodeToNodeEncryptionOptions.</p>
         pub fn set_node_to_node_encryption_options(
             mut self,
             input: std::option::Option<crate::model::NodeToNodeEncryptionOptions>,
@@ -817,6 +846,12 @@ pub mod create_elasticsearch_domain_input {
             self.node_to_node_encryption_options = input;
             self
         }
+        /// Adds a key-value pair to `advanced_options`.
+        ///
+        /// To override the contents of this collection use [`set_advanced_options`](Self::set_advanced_options).
+        ///
+        /// <p> Option to allow references to indices in an HTTP request body.  Must be <code>false</code> when configuring access to individual sub-resources.  By default, the value is <code>true</code>.
+        /// See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</p>
         pub fn advanced_options(
             mut self,
             k: impl Into<std::string::String>,
@@ -827,6 +862,8 @@ pub mod create_elasticsearch_domain_input {
             self.advanced_options = Some(hash_map);
             self
         }
+        /// <p> Option to allow references to indices in an HTTP request body.  Must be <code>false</code> when configuring access to individual sub-resources.  By default, the value is <code>true</code>.
+        /// See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</p>
         pub fn set_advanced_options(
             mut self,
             input: std::option::Option<
@@ -836,6 +873,11 @@ pub mod create_elasticsearch_domain_input {
             self.advanced_options = input;
             self
         }
+        /// Adds a key-value pair to `log_publishing_options`.
+        ///
+        /// To override the contents of this collection use [`set_log_publishing_options`](Self::set_log_publishing_options).
+        ///
+        /// <p>Map of <code>LogType</code> and <code>LogPublishingOption</code>, each containing options to publish a given type of Elasticsearch log.</p>
         pub fn log_publishing_options(
             mut self,
             k: impl Into<crate::model::LogType>,
@@ -846,6 +888,7 @@ pub mod create_elasticsearch_domain_input {
             self.log_publishing_options = Some(hash_map);
             self
         }
+        /// <p>Map of <code>LogType</code> and <code>LogPublishingOption</code>, each containing options to publish a given type of Elasticsearch log.</p>
         pub fn set_log_publishing_options(
             mut self,
             input: std::option::Option<
@@ -863,6 +906,7 @@ pub mod create_elasticsearch_domain_input {
             self.domain_endpoint_options = Some(input);
             self
         }
+        /// <p>Options to specify configuration that will be applied to the domain endpoint.</p>
         pub fn set_domain_endpoint_options(
             mut self,
             input: std::option::Option<crate::model::DomainEndpointOptions>,
@@ -878,6 +922,7 @@ pub mod create_elasticsearch_domain_input {
             self.advanced_security_options = Some(input);
             self
         }
+        /// <p>Specifies advanced security options.</p>
         pub fn set_advanced_security_options(
             mut self,
             input: std::option::Option<crate::model::AdvancedSecurityOptionsInput>,
@@ -890,6 +935,7 @@ pub mod create_elasticsearch_domain_input {
             self.auto_tune_options = Some(input);
             self
         }
+        /// <p>Specifies Auto-Tune options.</p>
         pub fn set_auto_tune_options(
             mut self,
             input: std::option::Option<crate::model::AutoTuneOptionsInput>,
@@ -897,12 +943,18 @@ pub mod create_elasticsearch_domain_input {
             self.auto_tune_options = input;
             self
         }
+        /// Appends an item to `tag_list`.
+        ///
+        /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
+        ///
+        /// <p>A list of <code>Tag</code> added during domain creation.</p>
         pub fn tag_list(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
             v.push(input.into());
             self.tag_list = Some(v);
             self
         }
+        /// <p>A list of <code>Tag</code> added during domain creation.</p>
         pub fn set_tag_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -915,7 +967,7 @@ pub mod create_elasticsearch_domain_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateElasticsearchDomainInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateElasticsearchDomainInput {
                 domain_name: self.domain_name,
@@ -950,16 +1002,16 @@ impl CreateElasticsearchDomainInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateElasticsearchDomain,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateElasticsearchDomainInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/2015-01-01/es/domain").expect("formatting should succeed");
             Ok(())
         }
@@ -967,7 +1019,7 @@ impl CreateElasticsearchDomainInput {
         fn update_http_builder(
             input: &crate::input::CreateElasticsearchDomainInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -976,27 +1028,29 @@ impl CreateElasticsearchDomainInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateElasticsearchDomainInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_elasticsearch_domain(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1019,15 +1073,15 @@ impl CreateElasticsearchDomainInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateElasticsearchDomain::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateElasticsearchDomain",
             "elasticsearchservice",
         ));
@@ -1036,10 +1090,10 @@ impl CreateElasticsearchDomainInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1069,6 +1123,7 @@ pub mod create_outbound_cross_cluster_search_connection_input {
             self.source_domain_info = Some(input);
             self
         }
+        /// <p>Specifies the <code><a>DomainInformation</a></code> for the source Elasticsearch domain.</p>
         pub fn set_source_domain_info(
             mut self,
             input: std::option::Option<crate::model::DomainInformation>,
@@ -1081,6 +1136,7 @@ pub mod create_outbound_cross_cluster_search_connection_input {
             self.destination_domain_info = Some(input);
             self
         }
+        /// <p>Specifies the <code><a>DomainInformation</a></code> for the destination Elasticsearch domain.</p>
         pub fn set_destination_domain_info(
             mut self,
             input: std::option::Option<crate::model::DomainInformation>,
@@ -1093,6 +1149,7 @@ pub mod create_outbound_cross_cluster_search_connection_input {
             self.connection_alias = Some(input.into());
             self
         }
+        /// <p>Specifies the connection alias that will be used by the customer for this connection.</p>
         pub fn set_connection_alias(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1105,7 +1162,7 @@ pub mod create_outbound_cross_cluster_search_connection_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateOutboundCrossClusterSearchConnectionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(
                 crate::input::CreateOutboundCrossClusterSearchConnectionInput {
@@ -1130,16 +1187,16 @@ impl CreateOutboundCrossClusterSearchConnectionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateOutboundCrossClusterSearchConnection,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateOutboundCrossClusterSearchConnectionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/2015-01-01/es/ccs/outboundConnection")
                 .expect("formatting should succeed");
             Ok(())
@@ -1148,7 +1205,7 @@ impl CreateOutboundCrossClusterSearchConnectionInput {
         fn update_http_builder(
             input: &crate::input::CreateOutboundCrossClusterSearchConnectionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1157,25 +1214,25 @@ impl CreateOutboundCrossClusterSearchConnectionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateOutboundCrossClusterSearchConnectionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_outbound_cross_cluster_search_connection(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_outbound_cross_cluster_search_connection(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1198,15 +1255,15 @@ impl CreateOutboundCrossClusterSearchConnectionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateOutboundCrossClusterSearchConnection::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateOutboundCrossClusterSearchConnection",
             "elasticsearchservice",
         ));
@@ -1215,10 +1272,10 @@ impl CreateOutboundCrossClusterSearchConnectionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1250,6 +1307,7 @@ pub mod create_package_input {
             self.package_name = Some(input.into());
             self
         }
+        /// <p>Unique identifier for the package.</p>
         pub fn set_package_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.package_name = input;
             self
@@ -1259,6 +1317,7 @@ pub mod create_package_input {
             self.package_type = Some(input);
             self
         }
+        /// <p>Type of package. Currently supports only TXT-DICTIONARY.</p>
         pub fn set_package_type(
             mut self,
             input: std::option::Option<crate::model::PackageType>,
@@ -1271,6 +1330,7 @@ pub mod create_package_input {
             self.package_description = Some(input.into());
             self
         }
+        /// <p>Description of the package.</p>
         pub fn set_package_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1283,6 +1343,7 @@ pub mod create_package_input {
             self.package_source = Some(input);
             self
         }
+        /// <p>The customer S3 location <code>PackageSource</code> for importing the package.</p>
         pub fn set_package_source(
             mut self,
             input: std::option::Option<crate::model::PackageSource>,
@@ -1293,8 +1354,10 @@ pub mod create_package_input {
         /// Consumes the builder and constructs a [`CreatePackageInput`](crate::input::CreatePackageInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreatePackageInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreatePackageInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreatePackageInput {
                 package_name: self.package_name,
                 package_type: self.package_type,
@@ -1315,16 +1378,16 @@ impl CreatePackageInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreatePackage,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreatePackageInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/2015-01-01/packages").expect("formatting should succeed");
             Ok(())
         }
@@ -1332,7 +1395,7 @@ impl CreatePackageInput {
         fn update_http_builder(
             input: &crate::input::CreatePackageInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1341,24 +1404,26 @@ impl CreatePackageInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreatePackageInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_package(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1381,25 +1446,27 @@ impl CreatePackageInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreatePackage::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "CreatePackage",
-                    "elasticsearchservice",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreatePackage::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreatePackage",
+            "elasticsearchservice",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1427,6 +1494,7 @@ pub mod delete_elasticsearch_domain_input {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The name of the Elasticsearch domain that you want to permanently delete.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -1436,7 +1504,7 @@ pub mod delete_elasticsearch_domain_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteElasticsearchDomainInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteElasticsearchDomainInput {
                 domain_name: self.domain_name,
@@ -1456,27 +1524,27 @@ impl DeleteElasticsearchDomainInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteElasticsearchDomain,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteElasticsearchDomainInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_4 = &_input.domain_name;
             let input_4 =
                 input_4
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
                         details: "cannot be empty or unset",
                     })?;
-            let domain_name = smithy_http::label::fmt_string(input_4, false);
+            let domain_name = aws_smithy_http::label::fmt_string(input_4, false);
             if domain_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "domain_name",
                     details: "cannot be empty or unset",
                 });
@@ -1493,7 +1561,7 @@ impl DeleteElasticsearchDomainInput {
         fn update_http_builder(
             input: &crate::input::DeleteElasticsearchDomainInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1502,23 +1570,23 @@ impl DeleteElasticsearchDomainInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteElasticsearchDomainInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1541,15 +1609,15 @@ impl DeleteElasticsearchDomainInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteElasticsearchDomain::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteElasticsearchDomain",
             "elasticsearchservice",
         ));
@@ -1558,10 +1626,10 @@ impl DeleteElasticsearchDomainInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1587,7 +1655,7 @@ pub mod delete_elasticsearch_service_role_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteElasticsearchServiceRoleInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteElasticsearchServiceRoleInput {})
         }
@@ -1605,16 +1673,16 @@ impl DeleteElasticsearchServiceRoleInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteElasticsearchServiceRole,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteElasticsearchServiceRoleInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/2015-01-01/es/role").expect("formatting should succeed");
             Ok(())
         }
@@ -1622,7 +1690,7 @@ impl DeleteElasticsearchServiceRoleInput {
         fn update_http_builder(
             input: &crate::input::DeleteElasticsearchServiceRoleInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1631,23 +1699,23 @@ impl DeleteElasticsearchServiceRoleInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteElasticsearchServiceRoleInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1670,15 +1738,15 @@ impl DeleteElasticsearchServiceRoleInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteElasticsearchServiceRole::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteElasticsearchServiceRole",
             "elasticsearchservice",
         ));
@@ -1687,10 +1755,10 @@ impl DeleteElasticsearchServiceRoleInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1721,6 +1789,7 @@ pub mod delete_inbound_cross_cluster_search_connection_input {
             self.cross_cluster_search_connection_id = Some(input.into());
             self
         }
+        /// <p>The id of the inbound connection that you want to permanently delete.</p>
         pub fn set_cross_cluster_search_connection_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1733,7 +1802,7 @@ pub mod delete_inbound_cross_cluster_search_connection_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteInboundCrossClusterSearchConnectionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(
                 crate::input::DeleteInboundCrossClusterSearchConnectionInput {
@@ -1756,27 +1825,28 @@ impl DeleteInboundCrossClusterSearchConnectionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteInboundCrossClusterSearchConnection,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteInboundCrossClusterSearchConnectionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_5 = &_input.cross_cluster_search_connection_id;
             let input_5 =
                 input_5
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "cross_cluster_search_connection_id",
                         details: "cannot be empty or unset",
                     })?;
-            let cross_cluster_search_connection_id = smithy_http::label::fmt_string(input_5, false);
+            let cross_cluster_search_connection_id =
+                aws_smithy_http::label::fmt_string(input_5, false);
             if cross_cluster_search_connection_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "cross_cluster_search_connection_id",
                     details: "cannot be empty or unset",
                 });
@@ -1793,7 +1863,7 @@ impl DeleteInboundCrossClusterSearchConnectionInput {
         fn update_http_builder(
             input: &crate::input::DeleteInboundCrossClusterSearchConnectionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1802,23 +1872,23 @@ impl DeleteInboundCrossClusterSearchConnectionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteInboundCrossClusterSearchConnectionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1841,15 +1911,15 @@ impl DeleteInboundCrossClusterSearchConnectionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteInboundCrossClusterSearchConnection::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteInboundCrossClusterSearchConnection",
             "elasticsearchservice",
         ));
@@ -1858,10 +1928,10 @@ impl DeleteInboundCrossClusterSearchConnectionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1893,6 +1963,7 @@ pub mod delete_outbound_cross_cluster_search_connection_input {
             self.cross_cluster_search_connection_id = Some(input.into());
             self
         }
+        /// <p>The id of the outbound connection that you want to permanently delete.</p>
         pub fn set_cross_cluster_search_connection_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1905,7 +1976,7 @@ pub mod delete_outbound_cross_cluster_search_connection_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteOutboundCrossClusterSearchConnectionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(
                 crate::input::DeleteOutboundCrossClusterSearchConnectionInput {
@@ -1928,27 +1999,28 @@ impl DeleteOutboundCrossClusterSearchConnectionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteOutboundCrossClusterSearchConnection,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteOutboundCrossClusterSearchConnectionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_6 = &_input.cross_cluster_search_connection_id;
             let input_6 =
                 input_6
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "cross_cluster_search_connection_id",
                         details: "cannot be empty or unset",
                     })?;
-            let cross_cluster_search_connection_id = smithy_http::label::fmt_string(input_6, false);
+            let cross_cluster_search_connection_id =
+                aws_smithy_http::label::fmt_string(input_6, false);
             if cross_cluster_search_connection_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "cross_cluster_search_connection_id",
                     details: "cannot be empty or unset",
                 });
@@ -1965,7 +2037,7 @@ impl DeleteOutboundCrossClusterSearchConnectionInput {
         fn update_http_builder(
             input: &crate::input::DeleteOutboundCrossClusterSearchConnectionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1974,23 +2046,23 @@ impl DeleteOutboundCrossClusterSearchConnectionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteOutboundCrossClusterSearchConnectionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2013,15 +2085,15 @@ impl DeleteOutboundCrossClusterSearchConnectionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteOutboundCrossClusterSearchConnection::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteOutboundCrossClusterSearchConnection",
             "elasticsearchservice",
         ));
@@ -2030,10 +2102,10 @@ impl DeleteOutboundCrossClusterSearchConnectionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2062,6 +2134,7 @@ pub mod delete_package_input {
             self.package_id = Some(input.into());
             self
         }
+        /// <p>Internal ID of the package that you want to delete. Use <code>DescribePackages</code> to find this value.</p>
         pub fn set_package_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.package_id = input;
             self
@@ -2069,8 +2142,10 @@ pub mod delete_package_input {
         /// Consumes the builder and constructs a [`DeletePackageInput`](crate::input::DeletePackageInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeletePackageInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeletePackageInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeletePackageInput {
                 package_id: self.package_id,
             })
@@ -2088,27 +2163,27 @@ impl DeletePackageInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeletePackage,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeletePackageInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_7 = &_input.package_id;
             let input_7 =
                 input_7
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "package_id",
                         details: "cannot be empty or unset",
                     })?;
-            let package_id = smithy_http::label::fmt_string(input_7, false);
+            let package_id = aws_smithy_http::label::fmt_string(input_7, false);
             if package_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "package_id",
                     details: "cannot be empty or unset",
                 });
@@ -2125,7 +2200,7 @@ impl DeletePackageInput {
         fn update_http_builder(
             input: &crate::input::DeletePackageInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2134,23 +2209,23 @@ impl DeletePackageInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeletePackageInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2173,25 +2248,27 @@ impl DeletePackageInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeletePackage::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DeletePackage",
-                    "elasticsearchservice",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeletePackage::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeletePackage",
+            "elasticsearchservice",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2221,6 +2298,7 @@ pub mod describe_domain_auto_tunes_input {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>Specifies the domain name for which you want Auto-Tune action details.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -2230,6 +2308,7 @@ pub mod describe_domain_auto_tunes_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -2239,6 +2318,7 @@ pub mod describe_domain_auto_tunes_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>NextToken is sent in case the earlier API call results contain the NextToken. It is used for pagination.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2248,7 +2328,7 @@ pub mod describe_domain_auto_tunes_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeDomainAutoTunesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeDomainAutoTunesInput {
                 domain_name: self.domain_name,
@@ -2270,27 +2350,27 @@ impl DescribeDomainAutoTunesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeDomainAutoTunes,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeDomainAutoTunesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_8 = &_input.domain_name;
             let input_8 =
                 input_8
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
                         details: "cannot be empty or unset",
                     })?;
-            let domain_name = smithy_http::label::fmt_string(input_8, false);
+            let domain_name = aws_smithy_http::label::fmt_string(input_8, false);
             if domain_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "domain_name",
                     details: "cannot be empty or unset",
                 });
@@ -2307,7 +2387,7 @@ impl DescribeDomainAutoTunesInput {
         fn update_http_builder(
             input: &crate::input::DescribeDomainAutoTunesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2316,27 +2396,29 @@ impl DescribeDomainAutoTunesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeDomainAutoTunesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_domain_auto_tunes(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2359,15 +2441,15 @@ impl DescribeDomainAutoTunesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeDomainAutoTunes::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeDomainAutoTunes",
             "elasticsearchservice",
         ));
@@ -2376,10 +2458,10 @@ impl DescribeDomainAutoTunesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2407,6 +2489,7 @@ pub mod describe_elasticsearch_domain_input {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The name of the Elasticsearch domain for which you want information.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -2416,7 +2499,7 @@ pub mod describe_elasticsearch_domain_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeElasticsearchDomainInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeElasticsearchDomainInput {
                 domain_name: self.domain_name,
@@ -2436,27 +2519,27 @@ impl DescribeElasticsearchDomainInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeElasticsearchDomain,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeElasticsearchDomainInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_9 = &_input.domain_name;
             let input_9 =
                 input_9
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
                         details: "cannot be empty or unset",
                     })?;
-            let domain_name = smithy_http::label::fmt_string(input_9, false);
+            let domain_name = aws_smithy_http::label::fmt_string(input_9, false);
             if domain_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "domain_name",
                     details: "cannot be empty or unset",
                 });
@@ -2473,7 +2556,7 @@ impl DescribeElasticsearchDomainInput {
         fn update_http_builder(
             input: &crate::input::DescribeElasticsearchDomainInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2482,23 +2565,23 @@ impl DescribeElasticsearchDomainInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeElasticsearchDomainInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2521,15 +2604,15 @@ impl DescribeElasticsearchDomainInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeElasticsearchDomain::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeElasticsearchDomain",
             "elasticsearchservice",
         ));
@@ -2538,10 +2621,10 @@ impl DescribeElasticsearchDomainInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2569,6 +2652,7 @@ pub mod describe_elasticsearch_domain_config_input {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The Elasticsearch domain that you want to get information about.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -2578,7 +2662,7 @@ pub mod describe_elasticsearch_domain_config_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeElasticsearchDomainConfigInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeElasticsearchDomainConfigInput {
                 domain_name: self.domain_name,
@@ -2598,27 +2682,27 @@ impl DescribeElasticsearchDomainConfigInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeElasticsearchDomainConfig,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeElasticsearchDomainConfigInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_10 = &_input.domain_name;
             let input_10 =
                 input_10
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
                         details: "cannot be empty or unset",
                     })?;
-            let domain_name = smithy_http::label::fmt_string(input_10, false);
+            let domain_name = aws_smithy_http::label::fmt_string(input_10, false);
             if domain_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "domain_name",
                     details: "cannot be empty or unset",
                 });
@@ -2635,7 +2719,7 @@ impl DescribeElasticsearchDomainConfigInput {
         fn update_http_builder(
             input: &crate::input::DescribeElasticsearchDomainConfigInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2644,23 +2728,23 @@ impl DescribeElasticsearchDomainConfigInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeElasticsearchDomainConfigInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2683,15 +2767,15 @@ impl DescribeElasticsearchDomainConfigInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeElasticsearchDomainConfig::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeElasticsearchDomainConfig",
             "elasticsearchservice",
         ));
@@ -2700,10 +2784,10 @@ impl DescribeElasticsearchDomainConfigInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2726,12 +2810,18 @@ pub mod describe_elasticsearch_domains_input {
         pub(crate) domain_names: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `domain_names`.
+        ///
+        /// To override the contents of this collection use [`set_domain_names`](Self::set_domain_names).
+        ///
+        /// <p>The Elasticsearch domains for which you want information.</p>
         pub fn domain_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.domain_names.unwrap_or_default();
             v.push(input.into());
             self.domain_names = Some(v);
             self
         }
+        /// <p>The Elasticsearch domains for which you want information.</p>
         pub fn set_domain_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2744,7 +2834,7 @@ pub mod describe_elasticsearch_domains_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeElasticsearchDomainsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeElasticsearchDomainsInput {
                 domain_names: self.domain_names,
@@ -2764,16 +2854,16 @@ impl DescribeElasticsearchDomainsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeElasticsearchDomains,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeElasticsearchDomainsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/2015-01-01/es/domain-info").expect("formatting should succeed");
             Ok(())
         }
@@ -2781,7 +2871,7 @@ impl DescribeElasticsearchDomainsInput {
         fn update_http_builder(
             input: &crate::input::DescribeElasticsearchDomainsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2790,25 +2880,25 @@ impl DescribeElasticsearchDomainsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeElasticsearchDomainsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_elasticsearch_domains(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_elasticsearch_domains(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2831,15 +2921,15 @@ impl DescribeElasticsearchDomainsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeElasticsearchDomains::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeElasticsearchDomains",
             "elasticsearchservice",
         ));
@@ -2848,10 +2938,10 @@ impl DescribeElasticsearchDomainsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2889,6 +2979,15 @@ pub mod describe_elasticsearch_instance_type_limits_input {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>
+        /// DomainName represents the name of the Domain that we are trying to
+        /// modify. This should be present only if we are
+        /// querying for Elasticsearch
+        /// <code>
+        /// <a>Limits</a>
+        /// </code>
+        /// for existing domain.
+        /// </p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -2904,6 +3003,13 @@ pub mod describe_elasticsearch_instance_type_limits_input {
             self.instance_type = Some(input);
             self
         }
+        /// <p>
+        /// The instance type for an Elasticsearch cluster for which Elasticsearch
+        /// <code>
+        /// <a>Limits</a>
+        /// </code>
+        /// are needed.
+        /// </p>
         pub fn set_instance_type(
             mut self,
             input: std::option::Option<crate::model::EsPartitionInstanceType>,
@@ -2922,6 +3028,13 @@ pub mod describe_elasticsearch_instance_type_limits_input {
             self.elasticsearch_version = Some(input.into());
             self
         }
+        /// <p>
+        /// Version of Elasticsearch for which
+        /// <code>
+        /// <a>Limits</a>
+        /// </code>
+        /// are needed.
+        /// </p>
         pub fn set_elasticsearch_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2934,7 +3047,7 @@ pub mod describe_elasticsearch_instance_type_limits_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeElasticsearchInstanceTypeLimitsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeElasticsearchInstanceTypeLimitsInput {
                 domain_name: self.domain_name,
@@ -2957,27 +3070,27 @@ impl DescribeElasticsearchInstanceTypeLimitsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeElasticsearchInstanceTypeLimits,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeElasticsearchInstanceTypeLimitsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_11 = &_input.elasticsearch_version;
             let input_11 =
                 input_11
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "elasticsearch_version",
                         details: "cannot be empty or unset",
                     })?;
-            let elasticsearch_version = smithy_http::label::fmt_string(input_11, false);
+            let elasticsearch_version = aws_smithy_http::label::fmt_string(input_11, false);
             if elasticsearch_version.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "elasticsearch_version",
                     details: "cannot be empty or unset",
                 });
@@ -2986,13 +3099,13 @@ impl DescribeElasticsearchInstanceTypeLimitsInput {
             let input_12 =
                 input_12
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "instance_type",
                         details: "cannot be empty or unset",
                     })?;
-            let instance_type = smithy_http::label::fmt_string(input_12, false);
+            let instance_type = aws_smithy_http::label::fmt_string(input_12, false);
             if instance_type.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "instance_type",
                     details: "cannot be empty or unset",
                 });
@@ -3010,16 +3123,16 @@ impl DescribeElasticsearchInstanceTypeLimitsInput {
             _input: &crate::input::DescribeElasticsearchInstanceTypeLimitsInput,
             mut output: &mut String,
         ) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_13) = &_input.domain_name {
-                query.push_kv("domainName", &smithy_http::query::fmt_string(&inner_13));
+                query.push_kv("domainName", &aws_smithy_http::query::fmt_string(&inner_13));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::DescribeElasticsearchInstanceTypeLimitsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3029,23 +3142,23 @@ impl DescribeElasticsearchInstanceTypeLimitsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeElasticsearchInstanceTypeLimitsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3068,15 +3181,15 @@ impl DescribeElasticsearchInstanceTypeLimitsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeElasticsearchInstanceTypeLimits::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeElasticsearchInstanceTypeLimits",
             "elasticsearchservice",
         ));
@@ -3085,10 +3198,10 @@ impl DescribeElasticsearchInstanceTypeLimitsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3113,12 +3226,38 @@ pub mod describe_inbound_cross_cluster_search_connections_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>
+        /// A list of filters used to match properties for inbound cross-cluster search connection.
+        /// Available <code><a>Filter</a></code> names for this operation are:
+        /// <ul>
+        /// <li>cross-cluster-search-connection-id</li>
+        /// <li>source-domain-info.domain-name</li>
+        /// <li>source-domain-info.owner-id</li>
+        /// <li>source-domain-info.region</li>
+        /// <li>destination-domain-info.domain-name</li>
+        /// </ul>
+        /// </p>
         pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input.into());
             self.filters = Some(v);
             self
         }
+        /// <p>
+        /// A list of filters used to match properties for inbound cross-cluster search connection.
+        /// Available <code><a>Filter</a></code> names for this operation are:
+        /// <ul>
+        /// <li>cross-cluster-search-connection-id</li>
+        /// <li>source-domain-info.domain-name</li>
+        /// <li>source-domain-info.owner-id</li>
+        /// <li>source-domain-info.region</li>
+        /// <li>destination-domain-info.domain-name</li>
+        /// </ul>
+        /// </p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -3131,6 +3270,7 @@ pub mod describe_inbound_cross_cluster_search_connections_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3140,6 +3280,7 @@ pub mod describe_inbound_cross_cluster_search_connections_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p> NextToken is sent in case the earlier API call results contain the NextToken. It is used for pagination.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3149,7 +3290,7 @@ pub mod describe_inbound_cross_cluster_search_connections_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeInboundCrossClusterSearchConnectionsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(
                 crate::input::DescribeInboundCrossClusterSearchConnectionsInput {
@@ -3174,16 +3315,16 @@ impl DescribeInboundCrossClusterSearchConnectionsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeInboundCrossClusterSearchConnections,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeInboundCrossClusterSearchConnectionsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/2015-01-01/es/ccs/inboundConnection/search")
                 .expect("formatting should succeed");
             Ok(())
@@ -3192,7 +3333,7 @@ impl DescribeInboundCrossClusterSearchConnectionsInput {
         fn update_http_builder(
             input: &crate::input::DescribeInboundCrossClusterSearchConnectionsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3201,25 +3342,25 @@ impl DescribeInboundCrossClusterSearchConnectionsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeInboundCrossClusterSearchConnectionsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_inbound_cross_cluster_search_connections(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_inbound_cross_cluster_search_connections(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3242,15 +3383,15 @@ impl DescribeInboundCrossClusterSearchConnectionsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeInboundCrossClusterSearchConnections::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeInboundCrossClusterSearchConnections",
             "elasticsearchservice",
         ));
@@ -3259,10 +3400,10 @@ impl DescribeInboundCrossClusterSearchConnectionsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3288,12 +3429,38 @@ pub mod describe_outbound_cross_cluster_search_connections_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>
+        /// A list of filters used to match properties for outbound cross-cluster search connection.
+        /// Available <code><a>Filter</a></code> names for this operation are:
+        /// <ul>
+        /// <li>cross-cluster-search-connection-id</li>
+        /// <li>destination-domain-info.domain-name</li>
+        /// <li>destination-domain-info.owner-id</li>
+        /// <li>destination-domain-info.region</li>
+        /// <li>source-domain-info.domain-name</li>
+        /// </ul>
+        /// </p>
         pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input.into());
             self.filters = Some(v);
             self
         }
+        /// <p>
+        /// A list of filters used to match properties for outbound cross-cluster search connection.
+        /// Available <code><a>Filter</a></code> names for this operation are:
+        /// <ul>
+        /// <li>cross-cluster-search-connection-id</li>
+        /// <li>destination-domain-info.domain-name</li>
+        /// <li>destination-domain-info.owner-id</li>
+        /// <li>destination-domain-info.region</li>
+        /// <li>source-domain-info.domain-name</li>
+        /// </ul>
+        /// </p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -3306,6 +3473,7 @@ pub mod describe_outbound_cross_cluster_search_connections_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3315,6 +3483,7 @@ pub mod describe_outbound_cross_cluster_search_connections_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p> NextToken is sent in case the earlier API call results contain the NextToken. It is used for pagination.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3324,7 +3493,7 @@ pub mod describe_outbound_cross_cluster_search_connections_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeOutboundCrossClusterSearchConnectionsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(
                 crate::input::DescribeOutboundCrossClusterSearchConnectionsInput {
@@ -3349,16 +3518,16 @@ impl DescribeOutboundCrossClusterSearchConnectionsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeOutboundCrossClusterSearchConnections,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeOutboundCrossClusterSearchConnectionsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/2015-01-01/es/ccs/outboundConnection/search")
                 .expect("formatting should succeed");
             Ok(())
@@ -3367,7 +3536,7 @@ impl DescribeOutboundCrossClusterSearchConnectionsInput {
         fn update_http_builder(
             input: &crate::input::DescribeOutboundCrossClusterSearchConnectionsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3376,25 +3545,25 @@ impl DescribeOutboundCrossClusterSearchConnectionsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeOutboundCrossClusterSearchConnectionsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_outbound_cross_cluster_search_connections(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_outbound_cross_cluster_search_connections(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3417,15 +3586,15 @@ impl DescribeOutboundCrossClusterSearchConnectionsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeOutboundCrossClusterSearchConnections::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeOutboundCrossClusterSearchConnections",
             "elasticsearchservice",
         ));
@@ -3434,10 +3603,10 @@ impl DescribeOutboundCrossClusterSearchConnectionsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3464,12 +3633,18 @@ pub mod describe_packages_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>Only returns packages that match the <code>DescribePackagesFilterList</code> values.</p>
         pub fn filters(mut self, input: impl Into<crate::model::DescribePackagesFilter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input.into());
             self.filters = Some(v);
             self
         }
+        /// <p>Only returns packages that match the <code>DescribePackagesFilterList</code> values.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DescribePackagesFilter>>,
@@ -3482,6 +3657,7 @@ pub mod describe_packages_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>Limits results to a maximum number of packages.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3491,6 +3667,7 @@ pub mod describe_packages_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided, returns results for the next page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3500,7 +3677,7 @@ pub mod describe_packages_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribePackagesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribePackagesInput {
                 filters: self.filters,
@@ -3521,16 +3698,16 @@ impl DescribePackagesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribePackages,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribePackagesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/2015-01-01/packages/describe").expect("formatting should succeed");
             Ok(())
         }
@@ -3538,7 +3715,7 @@ impl DescribePackagesInput {
         fn update_http_builder(
             input: &crate::input::DescribePackagesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3547,27 +3724,27 @@ impl DescribePackagesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribePackagesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_packages(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3590,15 +3767,15 @@ impl DescribePackagesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribePackages::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribePackages",
             "elasticsearchservice",
         ));
@@ -3607,10 +3784,10 @@ impl DescribePackagesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3644,6 +3821,7 @@ pub mod describe_reserved_elasticsearch_instance_offerings_input {
             self.reserved_elasticsearch_instance_offering_id = Some(input.into());
             self
         }
+        /// <p>The offering identifier filter value. Use this parameter to show only the available offering that matches the specified reservation identifier.</p>
         pub fn set_reserved_elasticsearch_instance_offering_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3656,6 +3834,7 @@ pub mod describe_reserved_elasticsearch_instance_offerings_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3666,6 +3845,8 @@ pub mod describe_reserved_elasticsearch_instance_offerings_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>NextToken should be sent in case if earlier API call produced result
+        /// containing NextToken. It is used for pagination.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3675,7 +3856,7 @@ pub mod describe_reserved_elasticsearch_instance_offerings_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeReservedElasticsearchInstanceOfferingsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(
                 crate::input::DescribeReservedElasticsearchInstanceOfferingsInput {
@@ -3701,16 +3882,16 @@ impl DescribeReservedElasticsearchInstanceOfferingsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeReservedElasticsearchInstanceOfferings,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeReservedElasticsearchInstanceOfferingsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/2015-01-01/es/reservedInstanceOfferings")
                 .expect("formatting should succeed");
             Ok(())
@@ -3719,25 +3900,25 @@ impl DescribeReservedElasticsearchInstanceOfferingsInput {
             _input: &crate::input::DescribeReservedElasticsearchInstanceOfferingsInput,
             mut output: &mut String,
         ) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_14) = &_input.reserved_elasticsearch_instance_offering_id {
-                query.push_kv("offeringId", &smithy_http::query::fmt_string(&inner_14));
+                query.push_kv("offeringId", &aws_smithy_http::query::fmt_string(&inner_14));
             }
             if _input.max_results != 0 {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
             if let Some(inner_15) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_15));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_15));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::DescribeReservedElasticsearchInstanceOfferingsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3747,23 +3928,23 @@ impl DescribeReservedElasticsearchInstanceOfferingsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeReservedElasticsearchInstanceOfferingsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3786,15 +3967,15 @@ impl DescribeReservedElasticsearchInstanceOfferingsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeReservedElasticsearchInstanceOfferings::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeReservedElasticsearchInstanceOfferings",
             "elasticsearchservice",
         ));
@@ -3803,10 +3984,10 @@ impl DescribeReservedElasticsearchInstanceOfferingsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3840,6 +4021,7 @@ pub mod describe_reserved_elasticsearch_instances_input {
             self.reserved_elasticsearch_instance_id = Some(input.into());
             self
         }
+        /// <p>The reserved instance identifier filter value. Use this parameter to show only the reservation that matches the specified reserved Elasticsearch instance ID.</p>
         pub fn set_reserved_elasticsearch_instance_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3852,6 +4034,7 @@ pub mod describe_reserved_elasticsearch_instances_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3862,6 +4045,8 @@ pub mod describe_reserved_elasticsearch_instances_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>NextToken should be sent in case if earlier API call produced result
+        /// containing NextToken. It is used for pagination.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3871,7 +4056,7 @@ pub mod describe_reserved_elasticsearch_instances_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeReservedElasticsearchInstancesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeReservedElasticsearchInstancesInput {
                 reserved_elasticsearch_instance_id: self.reserved_elasticsearch_instance_id,
@@ -3894,16 +4079,16 @@ impl DescribeReservedElasticsearchInstancesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeReservedElasticsearchInstances,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeReservedElasticsearchInstancesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/2015-01-01/es/reservedInstances").expect("formatting should succeed");
             Ok(())
         }
@@ -3911,25 +4096,28 @@ impl DescribeReservedElasticsearchInstancesInput {
             _input: &crate::input::DescribeReservedElasticsearchInstancesInput,
             mut output: &mut String,
         ) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_16) = &_input.reserved_elasticsearch_instance_id {
-                query.push_kv("reservationId", &smithy_http::query::fmt_string(&inner_16));
+                query.push_kv(
+                    "reservationId",
+                    &aws_smithy_http::query::fmt_string(&inner_16),
+                );
             }
             if _input.max_results != 0 {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
             if let Some(inner_17) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_17));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_17));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::DescribeReservedElasticsearchInstancesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3939,23 +4127,23 @@ impl DescribeReservedElasticsearchInstancesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeReservedElasticsearchInstancesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3978,15 +4166,15 @@ impl DescribeReservedElasticsearchInstancesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeReservedElasticsearchInstances::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeReservedElasticsearchInstances",
             "elasticsearchservice",
         ));
@@ -3995,10 +4183,10 @@ impl DescribeReservedElasticsearchInstancesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4027,6 +4215,7 @@ pub mod dissociate_package_input {
             self.package_id = Some(input.into());
             self
         }
+        /// <p>Internal ID of the package that you want to associate with a domain. Use <code>DescribePackages</code> to find this value.</p>
         pub fn set_package_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.package_id = input;
             self
@@ -4036,6 +4225,7 @@ pub mod dissociate_package_input {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>Name of the domain that you want to associate the package with.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -4045,7 +4235,7 @@ pub mod dissociate_package_input {
             self,
         ) -> std::result::Result<
             crate::input::DissociatePackageInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DissociatePackageInput {
                 package_id: self.package_id,
@@ -4065,27 +4255,27 @@ impl DissociatePackageInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DissociatePackage,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DissociatePackageInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_18 = &_input.package_id;
             let input_18 =
                 input_18
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "package_id",
                         details: "cannot be empty or unset",
                     })?;
-            let package_id = smithy_http::label::fmt_string(input_18, false);
+            let package_id = aws_smithy_http::label::fmt_string(input_18, false);
             if package_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "package_id",
                     details: "cannot be empty or unset",
                 });
@@ -4094,13 +4284,13 @@ impl DissociatePackageInput {
             let input_19 =
                 input_19
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
                         details: "cannot be empty or unset",
                     })?;
-            let domain_name = smithy_http::label::fmt_string(input_19, false);
+            let domain_name = aws_smithy_http::label::fmt_string(input_19, false);
             if domain_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "domain_name",
                     details: "cannot be empty or unset",
                 });
@@ -4118,7 +4308,7 @@ impl DissociatePackageInput {
         fn update_http_builder(
             input: &crate::input::DissociatePackageInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4127,23 +4317,23 @@ impl DissociatePackageInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DissociatePackageInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4166,15 +4356,15 @@ impl DissociatePackageInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DissociatePackage::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DissociatePackage",
             "elasticsearchservice",
         ));
@@ -4183,10 +4373,10 @@ impl DissociatePackageInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4214,6 +4404,7 @@ pub mod get_compatible_elasticsearch_versions_input {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -4223,7 +4414,7 @@ pub mod get_compatible_elasticsearch_versions_input {
             self,
         ) -> std::result::Result<
             crate::input::GetCompatibleElasticsearchVersionsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetCompatibleElasticsearchVersionsInput {
                 domain_name: self.domain_name,
@@ -4243,16 +4434,16 @@ impl GetCompatibleElasticsearchVersionsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetCompatibleElasticsearchVersions,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetCompatibleElasticsearchVersionsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/2015-01-01/es/compatibleVersions").expect("formatting should succeed");
             Ok(())
         }
@@ -4260,16 +4451,16 @@ impl GetCompatibleElasticsearchVersionsInput {
             _input: &crate::input::GetCompatibleElasticsearchVersionsInput,
             mut output: &mut String,
         ) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_20) = &_input.domain_name {
-                query.push_kv("domainName", &smithy_http::query::fmt_string(&inner_20));
+                query.push_kv("domainName", &aws_smithy_http::query::fmt_string(&inner_20));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::GetCompatibleElasticsearchVersionsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4279,23 +4470,23 @@ impl GetCompatibleElasticsearchVersionsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetCompatibleElasticsearchVersionsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4318,15 +4509,15 @@ impl GetCompatibleElasticsearchVersionsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetCompatibleElasticsearchVersions::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetCompatibleElasticsearchVersions",
             "elasticsearchservice",
         ));
@@ -4335,10 +4526,10 @@ impl GetCompatibleElasticsearchVersionsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4368,6 +4559,7 @@ pub mod get_package_version_history_input {
             self.package_id = Some(input.into());
             self
         }
+        /// <p>Returns an audit history of versions of the package.</p>
         pub fn set_package_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.package_id = input;
             self
@@ -4377,6 +4569,7 @@ pub mod get_package_version_history_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>Limits results to a maximum number of versions.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -4386,6 +4579,7 @@ pub mod get_package_version_history_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided, returns results for the next page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4395,7 +4589,7 @@ pub mod get_package_version_history_input {
             self,
         ) -> std::result::Result<
             crate::input::GetPackageVersionHistoryInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetPackageVersionHistoryInput {
                 package_id: self.package_id,
@@ -4417,27 +4611,27 @@ impl GetPackageVersionHistoryInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetPackageVersionHistory,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetPackageVersionHistoryInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_21 = &_input.package_id;
             let input_21 =
                 input_21
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "package_id",
                         details: "cannot be empty or unset",
                     })?;
-            let package_id = smithy_http::label::fmt_string(input_21, false);
+            let package_id = aws_smithy_http::label::fmt_string(input_21, false);
             if package_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "package_id",
                     details: "cannot be empty or unset",
                 });
@@ -4454,22 +4648,22 @@ impl GetPackageVersionHistoryInput {
             _input: &crate::input::GetPackageVersionHistoryInput,
             mut output: &mut String,
         ) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if _input.max_results != 0 {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
             if let Some(inner_22) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_22));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_22));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::GetPackageVersionHistoryInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4479,23 +4673,23 @@ impl GetPackageVersionHistoryInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetPackageVersionHistoryInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4518,15 +4712,15 @@ impl GetPackageVersionHistoryInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetPackageVersionHistory::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetPackageVersionHistory",
             "elasticsearchservice",
         ));
@@ -4535,10 +4729,10 @@ impl GetPackageVersionHistoryInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4568,6 +4762,7 @@ pub mod get_upgrade_history_input {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -4579,6 +4774,9 @@ pub mod get_upgrade_history_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>
+        /// Set this value to limit the number of results returned.
+        /// </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -4591,6 +4789,10 @@ pub mod get_upgrade_history_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>
+        /// Paginated APIs accepts NextToken input to returns next page results and provides
+        /// a NextToken output in the response which can be used by the client to retrieve more results.
+        /// </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4600,7 +4802,7 @@ pub mod get_upgrade_history_input {
             self,
         ) -> std::result::Result<
             crate::input::GetUpgradeHistoryInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetUpgradeHistoryInput {
                 domain_name: self.domain_name,
@@ -4621,27 +4823,27 @@ impl GetUpgradeHistoryInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetUpgradeHistory,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetUpgradeHistoryInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_23 = &_input.domain_name;
             let input_23 =
                 input_23
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
                         details: "cannot be empty or unset",
                     })?;
-            let domain_name = smithy_http::label::fmt_string(input_23, false);
+            let domain_name = aws_smithy_http::label::fmt_string(input_23, false);
             if domain_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "domain_name",
                     details: "cannot be empty or unset",
                 });
@@ -4655,22 +4857,22 @@ impl GetUpgradeHistoryInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::GetUpgradeHistoryInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if _input.max_results != 0 {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
             if let Some(inner_24) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_24));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_24));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::GetUpgradeHistoryInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4680,23 +4882,23 @@ impl GetUpgradeHistoryInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetUpgradeHistoryInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4719,15 +4921,15 @@ impl GetUpgradeHistoryInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetUpgradeHistory::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetUpgradeHistory",
             "elasticsearchservice",
         ));
@@ -4736,10 +4938,10 @@ impl GetUpgradeHistoryInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4767,6 +4969,7 @@ pub mod get_upgrade_status_input {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -4776,7 +4979,7 @@ pub mod get_upgrade_status_input {
             self,
         ) -> std::result::Result<
             crate::input::GetUpgradeStatusInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetUpgradeStatusInput {
                 domain_name: self.domain_name,
@@ -4795,27 +4998,27 @@ impl GetUpgradeStatusInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetUpgradeStatus,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetUpgradeStatusInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_25 = &_input.domain_name;
             let input_25 =
                 input_25
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
                         details: "cannot be empty or unset",
                     })?;
-            let domain_name = smithy_http::label::fmt_string(input_25, false);
+            let domain_name = aws_smithy_http::label::fmt_string(input_25, false);
             if domain_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "domain_name",
                     details: "cannot be empty or unset",
                 });
@@ -4832,7 +5035,7 @@ impl GetUpgradeStatusInput {
         fn update_http_builder(
             input: &crate::input::GetUpgradeStatusInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4841,23 +5044,23 @@ impl GetUpgradeStatusInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetUpgradeStatusInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4880,15 +5083,15 @@ impl GetUpgradeStatusInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetUpgradeStatus::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetUpgradeStatus",
             "elasticsearchservice",
         ));
@@ -4897,10 +5100,10 @@ impl GetUpgradeStatusInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4928,6 +5131,7 @@ pub mod list_domain_names_input {
             self.engine_type = Some(input);
             self
         }
+        /// <p> Optional parameter to filter the output by domain engine type. Acceptable values are 'Elasticsearch' and 'OpenSearch'. </p>
         pub fn set_engine_type(
             mut self,
             input: std::option::Option<crate::model::EngineType>,
@@ -4940,7 +5144,7 @@ pub mod list_domain_names_input {
             self,
         ) -> std::result::Result<
             crate::input::ListDomainNamesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListDomainNamesInput {
                 engine_type: self.engine_type,
@@ -4959,30 +5163,30 @@ impl ListDomainNamesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListDomainNames,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListDomainNamesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/2015-01-01/domain").expect("formatting should succeed");
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListDomainNamesInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_26) = &_input.engine_type {
-                query.push_kv("engineType", &smithy_http::query::fmt_string(&inner_26));
+                query.push_kv("engineType", &aws_smithy_http::query::fmt_string(&inner_26));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::ListDomainNamesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4992,23 +5196,23 @@ impl ListDomainNamesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListDomainNamesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5031,15 +5235,15 @@ impl ListDomainNamesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListDomainNames::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListDomainNames",
             "elasticsearchservice",
         ));
@@ -5048,10 +5252,10 @@ impl ListDomainNamesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5081,6 +5285,7 @@ pub mod list_domains_for_package_input {
             self.package_id = Some(input.into());
             self
         }
+        /// <p>The package for which to list domains.</p>
         pub fn set_package_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.package_id = input;
             self
@@ -5090,6 +5295,7 @@ pub mod list_domains_for_package_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>Limits results to a maximum number of domains.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -5099,6 +5305,7 @@ pub mod list_domains_for_package_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided, returns results for the next page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5108,7 +5315,7 @@ pub mod list_domains_for_package_input {
             self,
         ) -> std::result::Result<
             crate::input::ListDomainsForPackageInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListDomainsForPackageInput {
                 package_id: self.package_id,
@@ -5129,27 +5336,27 @@ impl ListDomainsForPackageInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListDomainsForPackage,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListDomainsForPackageInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_27 = &_input.package_id;
             let input_27 =
                 input_27
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "package_id",
                         details: "cannot be empty or unset",
                     })?;
-            let package_id = smithy_http::label::fmt_string(input_27, false);
+            let package_id = aws_smithy_http::label::fmt_string(input_27, false);
             if package_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "package_id",
                     details: "cannot be empty or unset",
                 });
@@ -5163,22 +5370,22 @@ impl ListDomainsForPackageInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListDomainsForPackageInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if _input.max_results != 0 {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
             if let Some(inner_28) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_28));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_28));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::ListDomainsForPackageInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5188,23 +5395,23 @@ impl ListDomainsForPackageInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListDomainsForPackageInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5227,15 +5434,15 @@ impl ListDomainsForPackageInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListDomainsForPackage::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListDomainsForPackage",
             "elasticsearchservice",
         ));
@@ -5244,10 +5451,10 @@ impl ListDomainsForPackageInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5280,6 +5487,9 @@ pub mod list_elasticsearch_instance_types_input {
             self.elasticsearch_version = Some(input.into());
             self
         }
+        /// <p>Version of Elasticsearch for which list of supported elasticsearch
+        /// instance types are needed.
+        /// </p>
         pub fn set_elasticsearch_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5294,6 +5504,9 @@ pub mod list_elasticsearch_instance_types_input {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>DomainName represents the name of the Domain that we are trying to modify. This should be present only if we are
+        /// querying for list of available Elasticsearch instance types when modifying existing domain.
+        /// </p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -5306,6 +5519,10 @@ pub mod list_elasticsearch_instance_types_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>
+        /// Set this value to limit the number of results returned.
+        /// Value provided must be greater than 30 else it wont be honored.
+        /// </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -5317,6 +5534,9 @@ pub mod list_elasticsearch_instance_types_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>NextToken should be sent in case if earlier API call produced result
+        /// containing NextToken. It is used for pagination.
+        /// </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5326,7 +5546,7 @@ pub mod list_elasticsearch_instance_types_input {
             self,
         ) -> std::result::Result<
             crate::input::ListElasticsearchInstanceTypesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListElasticsearchInstanceTypesInput {
                 elasticsearch_version: self.elasticsearch_version,
@@ -5349,27 +5569,27 @@ impl ListElasticsearchInstanceTypesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListElasticsearchInstanceTypes,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListElasticsearchInstanceTypesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_29 = &_input.elasticsearch_version;
             let input_29 =
                 input_29
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "elasticsearch_version",
                         details: "cannot be empty or unset",
                     })?;
-            let elasticsearch_version = smithy_http::label::fmt_string(input_29, false);
+            let elasticsearch_version = aws_smithy_http::label::fmt_string(input_29, false);
             if elasticsearch_version.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "elasticsearch_version",
                     details: "cannot be empty or unset",
                 });
@@ -5386,25 +5606,25 @@ impl ListElasticsearchInstanceTypesInput {
             _input: &crate::input::ListElasticsearchInstanceTypesInput,
             mut output: &mut String,
         ) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_30) = &_input.domain_name {
-                query.push_kv("domainName", &smithy_http::query::fmt_string(&inner_30));
+                query.push_kv("domainName", &aws_smithy_http::query::fmt_string(&inner_30));
             }
             if _input.max_results != 0 {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
             if let Some(inner_31) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_31));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_31));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::ListElasticsearchInstanceTypesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5414,23 +5634,23 @@ impl ListElasticsearchInstanceTypesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListElasticsearchInstanceTypesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5453,15 +5673,15 @@ impl ListElasticsearchInstanceTypesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListElasticsearchInstanceTypes::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListElasticsearchInstanceTypes",
             "elasticsearchservice",
         ));
@@ -5470,10 +5690,10 @@ impl ListElasticsearchInstanceTypesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5505,6 +5725,10 @@ pub mod list_elasticsearch_versions_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>
+        /// Set this value to limit the number of results returned.
+        /// Value provided must be greater than 10 else it wont be honored.
+        /// </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -5517,6 +5741,10 @@ pub mod list_elasticsearch_versions_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>
+        /// Paginated APIs accepts NextToken input to returns next page results and provides
+        /// a NextToken output in the response which can be used by the client to retrieve more results.
+        /// </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5526,7 +5754,7 @@ pub mod list_elasticsearch_versions_input {
             self,
         ) -> std::result::Result<
             crate::input::ListElasticsearchVersionsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListElasticsearchVersionsInput {
                 max_results: self.max_results.unwrap_or_default(),
@@ -5547,16 +5775,16 @@ impl ListElasticsearchVersionsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListElasticsearchVersions,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListElasticsearchVersionsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/2015-01-01/es/versions").expect("formatting should succeed");
             Ok(())
         }
@@ -5564,22 +5792,22 @@ impl ListElasticsearchVersionsInput {
             _input: &crate::input::ListElasticsearchVersionsInput,
             mut output: &mut String,
         ) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if _input.max_results != 0 {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
             if let Some(inner_32) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_32));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_32));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::ListElasticsearchVersionsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5589,23 +5817,23 @@ impl ListElasticsearchVersionsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListElasticsearchVersionsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5628,15 +5856,15 @@ impl ListElasticsearchVersionsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListElasticsearchVersions::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListElasticsearchVersions",
             "elasticsearchservice",
         ));
@@ -5645,10 +5873,10 @@ impl ListElasticsearchVersionsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5678,6 +5906,7 @@ pub mod list_packages_for_domain_input {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The name of the domain for which you want to list associated packages.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -5687,6 +5916,7 @@ pub mod list_packages_for_domain_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>Limits results to a maximum number of packages.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -5696,6 +5926,7 @@ pub mod list_packages_for_domain_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided, returns results for the next page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5705,7 +5936,7 @@ pub mod list_packages_for_domain_input {
             self,
         ) -> std::result::Result<
             crate::input::ListPackagesForDomainInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListPackagesForDomainInput {
                 domain_name: self.domain_name,
@@ -5726,27 +5957,27 @@ impl ListPackagesForDomainInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListPackagesForDomain,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListPackagesForDomainInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_33 = &_input.domain_name;
             let input_33 =
                 input_33
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
                         details: "cannot be empty or unset",
                     })?;
-            let domain_name = smithy_http::label::fmt_string(input_33, false);
+            let domain_name = aws_smithy_http::label::fmt_string(input_33, false);
             if domain_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "domain_name",
                     details: "cannot be empty or unset",
                 });
@@ -5760,22 +5991,22 @@ impl ListPackagesForDomainInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListPackagesForDomainInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if _input.max_results != 0 {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(_input.max_results).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(_input.max_results).encode(),
                 );
             }
             if let Some(inner_34) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_34));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_34));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::ListPackagesForDomainInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5785,23 +6016,23 @@ impl ListPackagesForDomainInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListPackagesForDomainInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5824,15 +6055,15 @@ impl ListPackagesForDomainInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListPackagesForDomain::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListPackagesForDomain",
             "elasticsearchservice",
         ));
@@ -5841,10 +6072,10 @@ impl ListPackagesForDomainInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5872,6 +6103,7 @@ pub mod list_tags_input {
             self.arn = Some(input.into());
             self
         }
+        /// <p> Specify the <code>ARN</code> for the Elasticsearch domain to which the tags are attached that you want to view.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -5879,7 +6111,7 @@ pub mod list_tags_input {
         /// Consumes the builder and constructs a [`ListTagsInput`](crate::input::ListTagsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListTagsInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::ListTagsInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::ListTagsInput { arn: self.arn })
         }
@@ -5896,30 +6128,30 @@ impl ListTagsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListTags,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListTagsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/2015-01-01/tags").expect("formatting should succeed");
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListTagsInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_35) = &_input.arn {
-                query.push_kv("arn", &smithy_http::query::fmt_string(&inner_35));
+                query.push_kv("arn", &aws_smithy_http::query::fmt_string(&inner_35));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::ListTagsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5929,23 +6161,23 @@ impl ListTagsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListTagsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5968,24 +6200,25 @@ impl ListTagsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(request, crate::operation::ListTags::new())
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "ListTags",
-                "elasticsearchservice",
-            ));
+        let op =
+            aws_smithy_http::operation::Operation::new(request, crate::operation::ListTags::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "ListTags",
+                    "elasticsearchservice",
+                ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6019,6 +6252,7 @@ pub mod purchase_reserved_elasticsearch_instance_offering_input {
             self.reserved_elasticsearch_instance_offering_id = Some(input.into());
             self
         }
+        /// <p>The ID of the reserved Elasticsearch instance offering to purchase.</p>
         pub fn set_reserved_elasticsearch_instance_offering_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6031,6 +6265,7 @@ pub mod purchase_reserved_elasticsearch_instance_offering_input {
             self.reservation_name = Some(input.into());
             self
         }
+        /// <p>A customer-specified identifier to track this reservation.</p>
         pub fn set_reservation_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6043,6 +6278,7 @@ pub mod purchase_reserved_elasticsearch_instance_offering_input {
             self.instance_count = Some(input);
             self
         }
+        /// <p>The number of Elasticsearch instances to reserve.</p>
         pub fn set_instance_count(mut self, input: std::option::Option<i32>) -> Self {
             self.instance_count = input;
             self
@@ -6052,7 +6288,7 @@ pub mod purchase_reserved_elasticsearch_instance_offering_input {
             self,
         ) -> std::result::Result<
             crate::input::PurchaseReservedElasticsearchInstanceOfferingInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(
                 crate::input::PurchaseReservedElasticsearchInstanceOfferingInput {
@@ -6078,16 +6314,16 @@ impl PurchaseReservedElasticsearchInstanceOfferingInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::PurchaseReservedElasticsearchInstanceOffering,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::PurchaseReservedElasticsearchInstanceOfferingInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/2015-01-01/es/purchaseReservedInstanceOffering")
                 .expect("formatting should succeed");
             Ok(())
@@ -6096,7 +6332,7 @@ impl PurchaseReservedElasticsearchInstanceOfferingInput {
         fn update_http_builder(
             input: &crate::input::PurchaseReservedElasticsearchInstanceOfferingInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6105,25 +6341,25 @@ impl PurchaseReservedElasticsearchInstanceOfferingInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::PurchaseReservedElasticsearchInstanceOfferingInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_purchase_reserved_elasticsearch_instance_offering(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_purchase_reserved_elasticsearch_instance_offering(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6146,15 +6382,15 @@ impl PurchaseReservedElasticsearchInstanceOfferingInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::PurchaseReservedElasticsearchInstanceOffering::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "PurchaseReservedElasticsearchInstanceOffering",
             "elasticsearchservice",
         ));
@@ -6163,10 +6399,10 @@ impl PurchaseReservedElasticsearchInstanceOfferingInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6198,6 +6434,7 @@ pub mod reject_inbound_cross_cluster_search_connection_input {
             self.cross_cluster_search_connection_id = Some(input.into());
             self
         }
+        /// <p>The id of the inbound connection that you want to reject.</p>
         pub fn set_cross_cluster_search_connection_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6210,7 +6447,7 @@ pub mod reject_inbound_cross_cluster_search_connection_input {
             self,
         ) -> std::result::Result<
             crate::input::RejectInboundCrossClusterSearchConnectionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(
                 crate::input::RejectInboundCrossClusterSearchConnectionInput {
@@ -6233,28 +6470,28 @@ impl RejectInboundCrossClusterSearchConnectionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RejectInboundCrossClusterSearchConnection,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RejectInboundCrossClusterSearchConnectionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_36 = &_input.cross_cluster_search_connection_id;
             let input_36 =
                 input_36
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "cross_cluster_search_connection_id",
                         details: "cannot be empty or unset",
                     })?;
             let cross_cluster_search_connection_id =
-                smithy_http::label::fmt_string(input_36, false);
+                aws_smithy_http::label::fmt_string(input_36, false);
             if cross_cluster_search_connection_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "cross_cluster_search_connection_id",
                     details: "cannot be empty or unset",
                 });
@@ -6271,7 +6508,7 @@ impl RejectInboundCrossClusterSearchConnectionInput {
         fn update_http_builder(
             input: &crate::input::RejectInboundCrossClusterSearchConnectionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6280,23 +6517,23 @@ impl RejectInboundCrossClusterSearchConnectionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RejectInboundCrossClusterSearchConnectionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6319,15 +6556,15 @@ impl RejectInboundCrossClusterSearchConnectionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::RejectInboundCrossClusterSearchConnection::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "RejectInboundCrossClusterSearchConnection",
             "elasticsearchservice",
         ));
@@ -6336,10 +6573,10 @@ impl RejectInboundCrossClusterSearchConnectionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6369,16 +6606,23 @@ pub mod remove_tags_input {
             self.arn = Some(input.into());
             self
         }
+        /// <p>Specifies the <code>ARN</code> for the Elasticsearch domain from which you want to delete the specified tags.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
+        /// Appends an item to `tag_keys`.
+        ///
+        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
+        ///
+        /// <p>Specifies the <code>TagKey</code> list which you want to remove from the Elasticsearch domain.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
+        /// <p>Specifies the <code>TagKey</code> list which you want to remove from the Elasticsearch domain.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6389,8 +6633,10 @@ pub mod remove_tags_input {
         /// Consumes the builder and constructs a [`RemoveTagsInput`](crate::input::RemoveTagsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::RemoveTagsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::RemoveTagsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::RemoveTagsInput {
                 arn: self.arn,
                 tag_keys: self.tag_keys,
@@ -6409,16 +6655,16 @@ impl RemoveTagsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RemoveTags,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RemoveTagsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/2015-01-01/tags-removal").expect("formatting should succeed");
             Ok(())
         }
@@ -6426,7 +6672,7 @@ impl RemoveTagsInput {
         fn update_http_builder(
             input: &crate::input::RemoveTagsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6435,24 +6681,26 @@ impl RemoveTagsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RemoveTagsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_remove_tags(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6475,25 +6723,27 @@ impl RemoveTagsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::RemoveTags::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "RemoveTags",
-                    "elasticsearchservice",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::RemoveTags::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "RemoveTags",
+            "elasticsearchservice",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6521,6 +6771,7 @@ pub mod start_elasticsearch_service_software_update_input {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The name of the domain that you want to update to the latest service software.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -6530,7 +6781,7 @@ pub mod start_elasticsearch_service_software_update_input {
             self,
         ) -> std::result::Result<
             crate::input::StartElasticsearchServiceSoftwareUpdateInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::StartElasticsearchServiceSoftwareUpdateInput {
                 domain_name: self.domain_name,
@@ -6551,16 +6802,16 @@ impl StartElasticsearchServiceSoftwareUpdateInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::StartElasticsearchServiceSoftwareUpdate,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::StartElasticsearchServiceSoftwareUpdateInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/2015-01-01/es/serviceSoftwareUpdate/start")
                 .expect("formatting should succeed");
             Ok(())
@@ -6569,7 +6820,7 @@ impl StartElasticsearchServiceSoftwareUpdateInput {
         fn update_http_builder(
             input: &crate::input::StartElasticsearchServiceSoftwareUpdateInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6578,25 +6829,25 @@ impl StartElasticsearchServiceSoftwareUpdateInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::StartElasticsearchServiceSoftwareUpdateInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_start_elasticsearch_service_software_update(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_start_elasticsearch_service_software_update(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6619,15 +6870,15 @@ impl StartElasticsearchServiceSoftwareUpdateInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::StartElasticsearchServiceSoftwareUpdate::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "StartElasticsearchServiceSoftwareUpdate",
             "elasticsearchservice",
         ));
@@ -6636,10 +6887,10 @@ impl StartElasticsearchServiceSoftwareUpdateInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6689,6 +6940,7 @@ pub mod update_elasticsearch_domain_config_input {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The name of the Elasticsearch domain that you are updating. </p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -6701,6 +6953,7 @@ pub mod update_elasticsearch_domain_config_input {
             self.elasticsearch_cluster_config = Some(input);
             self
         }
+        /// <p>The type and number of instances to instantiate for the domain cluster.</p>
         pub fn set_elasticsearch_cluster_config(
             mut self,
             input: std::option::Option<crate::model::ElasticsearchClusterConfig>,
@@ -6713,6 +6966,7 @@ pub mod update_elasticsearch_domain_config_input {
             self.ebs_options = Some(input);
             self
         }
+        /// <p>Specify the type and size of the EBS volume that you want to use. </p>
         pub fn set_ebs_options(
             mut self,
             input: std::option::Option<crate::model::EbsOptions>,
@@ -6725,6 +6979,7 @@ pub mod update_elasticsearch_domain_config_input {
             self.snapshot_options = Some(input);
             self
         }
+        /// <p>Option to set the time, in UTC format, for the daily automated snapshot. Default value is <code>0</code> hours. </p>
         pub fn set_snapshot_options(
             mut self,
             input: std::option::Option<crate::model::SnapshotOptions>,
@@ -6737,6 +6992,7 @@ pub mod update_elasticsearch_domain_config_input {
             self.vpc_options = Some(input);
             self
         }
+        /// <p>Options to specify the subnets and security groups for VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html#es-creating-vpc" target="_blank">Creating a VPC</a> in <i>VPC Endpoints for Amazon Elasticsearch Service Domains</i></p>
         pub fn set_vpc_options(
             mut self,
             input: std::option::Option<crate::model::VpcOptions>,
@@ -6749,6 +7005,7 @@ pub mod update_elasticsearch_domain_config_input {
             self.cognito_options = Some(input);
             self
         }
+        /// <p>Options to specify the Cognito user and identity pools for Kibana authentication. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-cognito-auth.html" target="_blank">Amazon Cognito Authentication for Kibana</a>.</p>
         pub fn set_cognito_options(
             mut self,
             input: std::option::Option<crate::model::CognitoOptions>,
@@ -6756,6 +7013,12 @@ pub mod update_elasticsearch_domain_config_input {
             self.cognito_options = input;
             self
         }
+        /// Adds a key-value pair to `advanced_options`.
+        ///
+        /// To override the contents of this collection use [`set_advanced_options`](Self::set_advanced_options).
+        ///
+        /// <p>Modifies the advanced option to allow references to indices in an HTTP request body.  Must be <code>false</code> when configuring access to individual sub-resources.  By default, the value is <code>true</code>.
+        /// See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</p>
         pub fn advanced_options(
             mut self,
             k: impl Into<std::string::String>,
@@ -6766,6 +7029,8 @@ pub mod update_elasticsearch_domain_config_input {
             self.advanced_options = Some(hash_map);
             self
         }
+        /// <p>Modifies the advanced option to allow references to indices in an HTTP request body.  Must be <code>false</code> when configuring access to individual sub-resources.  By default, the value is <code>true</code>.
+        /// See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</p>
         pub fn set_advanced_options(
             mut self,
             input: std::option::Option<
@@ -6780,6 +7045,7 @@ pub mod update_elasticsearch_domain_config_input {
             self.access_policies = Some(input.into());
             self
         }
+        /// <p>IAM access policy as a JSON-formatted string.</p>
         pub fn set_access_policies(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6787,6 +7053,11 @@ pub mod update_elasticsearch_domain_config_input {
             self.access_policies = input;
             self
         }
+        /// Adds a key-value pair to `log_publishing_options`.
+        ///
+        /// To override the contents of this collection use [`set_log_publishing_options`](Self::set_log_publishing_options).
+        ///
+        /// <p>Map of <code>LogType</code> and <code>LogPublishingOption</code>, each containing options to publish a given type of Elasticsearch log.</p>
         pub fn log_publishing_options(
             mut self,
             k: impl Into<crate::model::LogType>,
@@ -6797,6 +7068,7 @@ pub mod update_elasticsearch_domain_config_input {
             self.log_publishing_options = Some(hash_map);
             self
         }
+        /// <p>Map of <code>LogType</code> and <code>LogPublishingOption</code>, each containing options to publish a given type of Elasticsearch log.</p>
         pub fn set_log_publishing_options(
             mut self,
             input: std::option::Option<
@@ -6814,6 +7086,7 @@ pub mod update_elasticsearch_domain_config_input {
             self.domain_endpoint_options = Some(input);
             self
         }
+        /// <p>Options to specify configuration that will be applied to the domain endpoint.</p>
         pub fn set_domain_endpoint_options(
             mut self,
             input: std::option::Option<crate::model::DomainEndpointOptions>,
@@ -6829,6 +7102,7 @@ pub mod update_elasticsearch_domain_config_input {
             self.advanced_security_options = Some(input);
             self
         }
+        /// <p>Specifies advanced security options.</p>
         pub fn set_advanced_security_options(
             mut self,
             input: std::option::Option<crate::model::AdvancedSecurityOptionsInput>,
@@ -6844,6 +7118,7 @@ pub mod update_elasticsearch_domain_config_input {
             self.node_to_node_encryption_options = Some(input);
             self
         }
+        /// <p>Specifies the NodeToNodeEncryptionOptions.</p>
         pub fn set_node_to_node_encryption_options(
             mut self,
             input: std::option::Option<crate::model::NodeToNodeEncryptionOptions>,
@@ -6859,6 +7134,7 @@ pub mod update_elasticsearch_domain_config_input {
             self.encryption_at_rest_options = Some(input);
             self
         }
+        /// <p>Specifies the Encryption At Rest Options.</p>
         pub fn set_encryption_at_rest_options(
             mut self,
             input: std::option::Option<crate::model::EncryptionAtRestOptions>,
@@ -6871,6 +7147,7 @@ pub mod update_elasticsearch_domain_config_input {
             self.auto_tune_options = Some(input);
             self
         }
+        /// <p>Specifies Auto-Tune options.</p>
         pub fn set_auto_tune_options(
             mut self,
             input: std::option::Option<crate::model::AutoTuneOptions>,
@@ -6883,7 +7160,7 @@ pub mod update_elasticsearch_domain_config_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateElasticsearchDomainConfigInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateElasticsearchDomainConfigInput {
                 domain_name: self.domain_name,
@@ -6916,27 +7193,27 @@ impl UpdateElasticsearchDomainConfigInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateElasticsearchDomainConfig,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateElasticsearchDomainConfigInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_37 = &_input.domain_name;
             let input_37 =
                 input_37
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
                         details: "cannot be empty or unset",
                     })?;
-            let domain_name = smithy_http::label::fmt_string(input_37, false);
+            let domain_name = aws_smithy_http::label::fmt_string(input_37, false);
             if domain_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "domain_name",
                     details: "cannot be empty or unset",
                 });
@@ -6953,7 +7230,7 @@ impl UpdateElasticsearchDomainConfigInput {
         fn update_http_builder(
             input: &crate::input::UpdateElasticsearchDomainConfigInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6962,25 +7239,25 @@ impl UpdateElasticsearchDomainConfigInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateElasticsearchDomainConfigInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_elasticsearch_domain_config(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_elasticsearch_domain_config(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7003,15 +7280,15 @@ impl UpdateElasticsearchDomainConfigInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateElasticsearchDomainConfig::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateElasticsearchDomainConfig",
             "elasticsearchservice",
         ));
@@ -7020,10 +7297,10 @@ impl UpdateElasticsearchDomainConfigInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7054,6 +7331,7 @@ pub mod update_package_input {
             self.package_id = Some(input.into());
             self
         }
+        /// <p>Unique identifier for the package.</p>
         pub fn set_package_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.package_id = input;
             self
@@ -7063,6 +7341,7 @@ pub mod update_package_input {
             self.package_source = Some(input);
             self
         }
+        /// <p>The S3 location for importing the package specified as <code>S3BucketName</code> and <code>S3Key</code></p>
         pub fn set_package_source(
             mut self,
             input: std::option::Option<crate::model::PackageSource>,
@@ -7075,6 +7354,7 @@ pub mod update_package_input {
             self.package_description = Some(input.into());
             self
         }
+        /// <p>New description of the package.</p>
         pub fn set_package_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7087,6 +7367,7 @@ pub mod update_package_input {
             self.commit_message = Some(input.into());
             self
         }
+        /// <p>An info message for the new version which will be shown as part of <code>GetPackageVersionHistoryResponse</code>.</p>
         pub fn set_commit_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7097,8 +7378,10 @@ pub mod update_package_input {
         /// Consumes the builder and constructs a [`UpdatePackageInput`](crate::input::UpdatePackageInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UpdatePackageInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdatePackageInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdatePackageInput {
                 package_id: self.package_id,
                 package_source: self.package_source,
@@ -7119,16 +7402,16 @@ impl UpdatePackageInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdatePackage,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdatePackageInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/2015-01-01/packages/update").expect("formatting should succeed");
             Ok(())
         }
@@ -7136,7 +7419,7 @@ impl UpdatePackageInput {
         fn update_http_builder(
             input: &crate::input::UpdatePackageInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7145,24 +7428,26 @@ impl UpdatePackageInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdatePackageInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_update_package(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7185,25 +7470,27 @@ impl UpdatePackageInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UpdatePackage::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UpdatePackage",
-                    "elasticsearchservice",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdatePackage::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdatePackage",
+            "elasticsearchservice",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7233,6 +7520,7 @@ pub mod upgrade_elasticsearch_domain_input {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -7242,6 +7530,7 @@ pub mod upgrade_elasticsearch_domain_input {
             self.target_version = Some(input.into());
             self
         }
+        /// <p>The version of Elasticsearch that you intend to upgrade the domain to.</p>
         pub fn set_target_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7257,6 +7546,10 @@ pub mod upgrade_elasticsearch_domain_input {
             self.perform_check_only = Some(input);
             self
         }
+        /// <p>
+        /// This flag, when set to True, indicates that an Upgrade Eligibility Check needs to be performed.
+        /// This will not actually perform the Upgrade.
+        /// </p>
         pub fn set_perform_check_only(mut self, input: std::option::Option<bool>) -> Self {
             self.perform_check_only = input;
             self
@@ -7266,7 +7559,7 @@ pub mod upgrade_elasticsearch_domain_input {
             self,
         ) -> std::result::Result<
             crate::input::UpgradeElasticsearchDomainInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpgradeElasticsearchDomainInput {
                 domain_name: self.domain_name,
@@ -7288,16 +7581,16 @@ impl UpgradeElasticsearchDomainInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpgradeElasticsearchDomain,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpgradeElasticsearchDomainInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/2015-01-01/es/upgradeDomain").expect("formatting should succeed");
             Ok(())
         }
@@ -7305,7 +7598,7 @@ impl UpgradeElasticsearchDomainInput {
         fn update_http_builder(
             input: &crate::input::UpgradeElasticsearchDomainInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7314,27 +7607,29 @@ impl UpgradeElasticsearchDomainInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpgradeElasticsearchDomainInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_upgrade_elasticsearch_domain(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7357,15 +7652,15 @@ impl UpgradeElasticsearchDomainInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpgradeElasticsearchDomain::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpgradeElasticsearchDomain",
             "elasticsearchservice",
         ));
@@ -7374,10 +7669,10 @@ impl UpgradeElasticsearchDomainInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8197,6 +8492,7 @@ impl std::fmt::Debug for DeleteInboundCrossClusterSearchConnectionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteElasticsearchServiceRoleInput {}
@@ -8273,6 +8569,7 @@ impl std::fmt::Debug for CreateOutboundCrossClusterSearchConnectionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateElasticsearchDomainInput {

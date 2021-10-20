@@ -15,7 +15,7 @@ pub mod start_medical_stream_transcription_input {
         pub(crate) show_speaker_label: std::option::Option<bool>,
         pub(crate) session_id: std::option::Option<std::string::String>,
         pub(crate) audio_stream: std::option::Option<
-            smithy_http::event_stream::EventStreamInput<crate::model::AudioStream>,
+            aws_smithy_http::event_stream::EventStreamInput<crate::model::AudioStream>,
         >,
         pub(crate) enable_channel_identification: std::option::Option<bool>,
         pub(crate) number_of_channels: std::option::Option<i32>,
@@ -29,6 +29,8 @@ pub mod start_medical_stream_transcription_input {
             self.language_code = Some(input);
             self
         }
+        /// <p> Indicates the source language used in the input audio stream. For Amazon Transcribe Medical, this is US
+        /// English (en-US). </p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,
@@ -41,6 +43,7 @@ pub mod start_medical_stream_transcription_input {
             self.media_sample_rate_hertz = Some(input);
             self
         }
+        /// <p>The sample rate of the input audio in Hertz.</p>
         pub fn set_media_sample_rate_hertz(mut self, input: std::option::Option<i32>) -> Self {
             self.media_sample_rate_hertz = input;
             self
@@ -50,6 +53,7 @@ pub mod start_medical_stream_transcription_input {
             self.media_encoding = Some(input);
             self
         }
+        /// <p>The encoding used for the input audio.</p>
         pub fn set_media_encoding(
             mut self,
             input: std::option::Option<crate::model::MediaEncoding>,
@@ -63,6 +67,8 @@ pub mod start_medical_stream_transcription_input {
             self.vocabulary_name = Some(input.into());
             self
         }
+        /// <p>The name of the medical custom vocabulary to use when processing the real-time
+        /// stream.</p>
         pub fn set_vocabulary_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -75,6 +81,7 @@ pub mod start_medical_stream_transcription_input {
             self.specialty = Some(input);
             self
         }
+        /// <p>The medical specialty of the clinician or provider.</p>
         pub fn set_specialty(
             mut self,
             input: std::option::Option<crate::model::Specialty>,
@@ -89,6 +96,9 @@ pub mod start_medical_stream_transcription_input {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of input audio. Choose <code>DICTATION</code> for a provider dictating
+        /// patient notes. Choose <code>CONVERSATION</code> for a dialogue between a patient and one
+        /// or more medical professionanls.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::Type>) -> Self {
             self.r#type = input;
             self
@@ -99,6 +109,8 @@ pub mod start_medical_stream_transcription_input {
             self.show_speaker_label = Some(input);
             self
         }
+        /// <p>When <code>true</code>, enables speaker identification in your real-time
+        /// stream.</p>
         pub fn set_show_speaker_label(mut self, input: std::option::Option<bool>) -> Self {
             self.show_speaker_label = input;
             self
@@ -109,6 +121,8 @@ pub mod start_medical_stream_transcription_input {
             self.session_id = Some(input.into());
             self
         }
+        /// <p> Optional. An identifier for the transcription session. If you don't provide a session
+        /// ID, Amazon Transcribe generates one for you and returns it in the response. </p>
         pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.session_id = input;
             self
@@ -116,15 +130,16 @@ pub mod start_medical_stream_transcription_input {
         /// <p>Represents the audio stream from your application to Amazon Transcribe.</p>
         pub fn audio_stream(
             mut self,
-            input: smithy_http::event_stream::EventStreamInput<crate::model::AudioStream>,
+            input: aws_smithy_http::event_stream::EventStreamInput<crate::model::AudioStream>,
         ) -> Self {
             self.audio_stream = Some(input);
             self
         }
+        /// <p>Represents the audio stream from your application to Amazon Transcribe.</p>
         pub fn set_audio_stream(
             mut self,
             input: std::option::Option<
-                smithy_http::event_stream::EventStreamInput<crate::model::AudioStream>,
+                aws_smithy_http::event_stream::EventStreamInput<crate::model::AudioStream>,
             >,
         ) -> Self {
             self.audio_stream = input;
@@ -141,6 +156,13 @@ pub mod start_medical_stream_transcription_input {
             self.enable_channel_identification = Some(input);
             self
         }
+        /// <p>When <code>true</code>, instructs Amazon Transcribe Medical to process each audio channel separately and
+        /// then merge the transcription output of each channel into a single transcription.</p>
+        /// <p>Amazon Transcribe Medical also produces a transcription of each item. An item includes the start time,
+        /// end time, and any alternative transcriptions.</p>
+        /// <p>You can't set both <code>ShowSpeakerLabel</code> and
+        /// <code>EnableChannelIdentification</code> in the same request. If you set both, your
+        /// request returns a <code>BadRequestException</code>.</p>
         pub fn set_enable_channel_identification(
             mut self,
             input: std::option::Option<bool>,
@@ -153,6 +175,7 @@ pub mod start_medical_stream_transcription_input {
             self.number_of_channels = Some(input);
             self
         }
+        /// <p>The number of channels that are in your audio stream.</p>
         pub fn set_number_of_channels(mut self, input: std::option::Option<i32>) -> Self {
             self.number_of_channels = input;
             self
@@ -166,6 +189,8 @@ pub mod start_medical_stream_transcription_input {
             self.content_identification_type = Some(input);
             self
         }
+        /// <p>Set this field to <code>PHI</code> to identify personal health information in the
+        /// transcription output.</p>
         pub fn set_content_identification_type(
             mut self,
             input: std::option::Option<crate::model::MedicalContentIdentificationType>,
@@ -178,7 +203,7 @@ pub mod start_medical_stream_transcription_input {
             self,
         ) -> std::result::Result<
             crate::input::StartMedicalStreamTranscriptionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(
                 crate::input::StartMedicalStreamTranscriptionInput {
@@ -201,7 +226,7 @@ pub mod start_medical_stream_transcription_input {
                     ,
                     audio_stream: self.audio_stream
                         .ok_or(
-                            smithy_http::operation::BuildError::MissingField { field: "audio_stream", details: "audio_stream was not specified but it is required when building StartMedicalStreamTranscriptionInput"}
+                            aws_smithy_http::operation::BuildError::MissingField { field: "audio_stream", details: "audio_stream was not specified but it is required when building StartMedicalStreamTranscriptionInput"}
                         )?
                     ,
                     enable_channel_identification: self.enable_channel_identification
@@ -228,23 +253,23 @@ impl StartMedicalStreamTranscriptionInput {
         self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::StartMedicalStreamTranscription,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::StartMedicalStreamTranscriptionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/medical-stream-transcription").expect("formatting should succeed");
             Ok(())
         }
         fn add_headers(
             _input: &crate::input::StartMedicalStreamTranscriptionInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_1) = &_input.language_code {
                 let formatted_2 = AsRef::<str>::as_ref(inner_1);
@@ -252,7 +277,7 @@ impl StartMedicalStreamTranscriptionInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_2;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "language_code",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -263,13 +288,13 @@ impl StartMedicalStreamTranscriptionInput {
                 }
             }
             if let Some(inner_3) = &_input.media_sample_rate_hertz {
-                let mut encoder = smithy_types::primitive::Encoder::from(*inner_3);
+                let mut encoder = aws_smithy_types::primitive::Encoder::from(*inner_3);
                 let formatted_4 = encoder.encode();
                 if !formatted_4.is_empty() {
                     use std::convert::TryFrom;
                     let header_value = formatted_4;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "media_sample_rate_hertz",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -285,7 +310,7 @@ impl StartMedicalStreamTranscriptionInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_6;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "media_encoding",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -301,7 +326,7 @@ impl StartMedicalStreamTranscriptionInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_8;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "vocabulary_name",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -317,7 +342,7 @@ impl StartMedicalStreamTranscriptionInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_10;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "specialty",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -333,7 +358,7 @@ impl StartMedicalStreamTranscriptionInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_12;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "r#type",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -344,13 +369,14 @@ impl StartMedicalStreamTranscriptionInput {
                 }
             }
             if _input.show_speaker_label {
-                let mut encoder = smithy_types::primitive::Encoder::from(_input.show_speaker_label);
+                let mut encoder =
+                    aws_smithy_types::primitive::Encoder::from(_input.show_speaker_label);
                 let formatted_13 = encoder.encode();
                 if !formatted_13.is_empty() {
                     use std::convert::TryFrom;
                     let header_value = formatted_13;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "show_speaker_label",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -366,7 +392,7 @@ impl StartMedicalStreamTranscriptionInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_15;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "session_id",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -377,14 +403,15 @@ impl StartMedicalStreamTranscriptionInput {
                 }
             }
             if _input.enable_channel_identification {
-                let mut encoder =
-                    smithy_types::primitive::Encoder::from(_input.enable_channel_identification);
+                let mut encoder = aws_smithy_types::primitive::Encoder::from(
+                    _input.enable_channel_identification,
+                );
                 let formatted_16 = encoder.encode();
                 if !formatted_16.is_empty() {
                     use std::convert::TryFrom;
                     let header_value = formatted_16;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "enable_channel_identification",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -398,13 +425,13 @@ impl StartMedicalStreamTranscriptionInput {
                 }
             }
             if let Some(inner_17) = &_input.number_of_channels {
-                let mut encoder = smithy_types::primitive::Encoder::from(*inner_17);
+                let mut encoder = aws_smithy_types::primitive::Encoder::from(*inner_17);
                 let formatted_18 = encoder.encode();
                 if !formatted_18.is_empty() {
                     use std::convert::TryFrom;
                     let header_value = formatted_18;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "number_of_channels",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -420,7 +447,7 @@ impl StartMedicalStreamTranscriptionInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_20;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "content_identification_type",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -439,7 +466,7 @@ impl StartMedicalStreamTranscriptionInput {
         fn update_http_builder(
             input: &crate::input::StartMedicalStreamTranscriptionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -449,32 +476,32 @@ impl StartMedicalStreamTranscriptionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::StartMedicalStreamTranscriptionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = {
             let marshaller = crate::event_stream_serde::AudioStreamMarshaller::new();
             let signer = _config.new_event_stream_signer(properties.clone());
-            let adapter: smithy_http::event_stream::MessageStreamAdapter<
+            let adapter: aws_smithy_http::event_stream::MessageStreamAdapter<
                 _,
                 crate::error::StartMedicalStreamTranscriptionError,
             > = self.audio_stream.into_body_stream(marshaller, signer);
-            let body: smithy_http::body::SdkBody = hyper::Body::wrap_stream(adapter).into();
+            let body: aws_smithy_http::body::SdkBody = hyper::Body::wrap_stream(adapter).into();
             body
         };
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -500,15 +527,15 @@ impl StartMedicalStreamTranscriptionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::StartMedicalStreamTranscription::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "StartMedicalStreamTranscription",
             "transcribestreaming",
         ));
@@ -517,10 +544,10 @@ impl StartMedicalStreamTranscriptionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -546,7 +573,7 @@ pub mod start_stream_transcription_input {
         pub(crate) vocabulary_name: std::option::Option<std::string::String>,
         pub(crate) session_id: std::option::Option<std::string::String>,
         pub(crate) audio_stream: std::option::Option<
-            smithy_http::event_stream::EventStreamInput<crate::model::AudioStream>,
+            aws_smithy_http::event_stream::EventStreamInput<crate::model::AudioStream>,
         >,
         pub(crate) vocabulary_filter_name: std::option::Option<std::string::String>,
         pub(crate) vocabulary_filter_method:
@@ -568,6 +595,7 @@ pub mod start_stream_transcription_input {
             self.language_code = Some(input);
             self
         }
+        /// <p>Indicates the source language used in the input audio stream.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,
@@ -581,6 +609,8 @@ pub mod start_stream_transcription_input {
             self.media_sample_rate_hertz = Some(input);
             self
         }
+        /// <p>The sample rate, in Hertz, of the input audio. We suggest that you use 8,000 Hz for low
+        /// quality audio and 16,000 Hz for high quality audio.</p>
         pub fn set_media_sample_rate_hertz(mut self, input: std::option::Option<i32>) -> Self {
             self.media_sample_rate_hertz = input;
             self
@@ -590,6 +620,7 @@ pub mod start_stream_transcription_input {
             self.media_encoding = Some(input);
             self
         }
+        /// <p>The encoding used for the input audio.</p>
         pub fn set_media_encoding(
             mut self,
             input: std::option::Option<crate::model::MediaEncoding>,
@@ -602,6 +633,7 @@ pub mod start_stream_transcription_input {
             self.vocabulary_name = Some(input.into());
             self
         }
+        /// <p>The name of the vocabulary to use when processing the transcription job.</p>
         pub fn set_vocabulary_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -616,6 +648,9 @@ pub mod start_stream_transcription_input {
             self.session_id = Some(input.into());
             self
         }
+        /// <p>A identifier for the transcription session. Use this parameter when you want to retry a
+        /// session. If you don't provide a session ID, Amazon Transcribe will generate one for you and return it in
+        /// the response.</p>
         pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.session_id = input;
             self
@@ -624,15 +659,17 @@ pub mod start_stream_transcription_input {
         /// frame.</p>
         pub fn audio_stream(
             mut self,
-            input: smithy_http::event_stream::EventStreamInput<crate::model::AudioStream>,
+            input: aws_smithy_http::event_stream::EventStreamInput<crate::model::AudioStream>,
         ) -> Self {
             self.audio_stream = Some(input);
             self
         }
+        /// <p>PCM-encoded stream of audio blobs. The audio stream is encoded as an HTTP/2 data
+        /// frame.</p>
         pub fn set_audio_stream(
             mut self,
             input: std::option::Option<
-                smithy_http::event_stream::EventStreamInput<crate::model::AudioStream>,
+                aws_smithy_http::event_stream::EventStreamInput<crate::model::AudioStream>,
             >,
         ) -> Self {
             self.audio_stream = input;
@@ -644,6 +681,8 @@ pub mod start_stream_transcription_input {
             self.vocabulary_filter_name = Some(input.into());
             self
         }
+        /// <p>The name of the vocabulary filter you've created that is unique to your account.
+        /// Provide the name in this field to successfully use it in a stream.</p>
         pub fn set_vocabulary_filter_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -664,6 +703,12 @@ pub mod start_stream_transcription_input {
             self.vocabulary_filter_method = Some(input);
             self
         }
+        /// <p>The manner in which you use your vocabulary filter to filter words in your transcript.
+        /// <code>Remove</code> removes filtered words from your transcription results.
+        /// <code>Mask</code> masks filtered words with a <code>***</code> in your transcription results.
+        /// <code>Tag</code> keeps the filtered words in your transcription results and tags them. The
+        /// tag appears as <code>VocabularyFilterMatch</code> equal to <code>True</code>
+        /// </p>
         pub fn set_vocabulary_filter_method(
             mut self,
             input: std::option::Option<crate::model::VocabularyFilterMethod>,
@@ -676,6 +721,7 @@ pub mod start_stream_transcription_input {
             self.show_speaker_label = Some(input);
             self
         }
+        /// <p>When <code>true</code>, enables speaker identification in your real-time stream.</p>
         pub fn set_show_speaker_label(mut self, input: std::option::Option<bool>) -> Self {
             self.show_speaker_label = input;
             self
@@ -691,6 +737,13 @@ pub mod start_stream_transcription_input {
             self.enable_channel_identification = Some(input);
             self
         }
+        /// <p>When <code>true</code>, instructs Amazon Transcribe to process each audio channel separately and then
+        /// merge the transcription output of each channel into a single transcription.</p>
+        /// <p>Amazon Transcribe also produces a transcription of each item. An item includes the start time, end
+        /// time, and any alternative transcriptions.</p>
+        /// <p>You can't set both <code>ShowSpeakerLabel</code> and
+        /// <code>EnableChannelIdentification</code> in the same request. If you set both, your request
+        /// returns a <code>BadRequestException</code>.</p>
         pub fn set_enable_channel_identification(
             mut self,
             input: std::option::Option<bool>,
@@ -703,6 +756,7 @@ pub mod start_stream_transcription_input {
             self.number_of_channels = Some(input);
             self
         }
+        /// <p>The number of channels that are in your audio stream.</p>
         pub fn set_number_of_channels(mut self, input: std::option::Option<i32>) -> Self {
             self.number_of_channels = input;
             self
@@ -715,6 +769,10 @@ pub mod start_stream_transcription_input {
             self.enable_partial_results_stabilization = Some(input);
             self
         }
+        /// <p>When <code>true</code>, instructs Amazon Transcribe to present transcription results that have the
+        /// partial results stabilized. Normally, any word or phrase from one partial result can change in
+        /// a subsequent partial result. With partial results stabilization enabled, only the last few
+        /// words of one partial result can change in another partial result.</p>
         pub fn set_enable_partial_results_stabilization(
             mut self,
             input: std::option::Option<bool>,
@@ -732,6 +790,9 @@ pub mod start_stream_transcription_input {
             self.partial_results_stability = Some(input);
             self
         }
+        /// <p>You can use this field to set the stability level of the transcription results. A higher
+        /// stability level means that the transcription results are less likely to change. Higher
+        /// stability levels can come with lower overall transcription accuracy.</p>
         pub fn set_partial_results_stability(
             mut self,
             input: std::option::Option<crate::model::PartialResultsStability>,
@@ -748,6 +809,8 @@ pub mod start_stream_transcription_input {
             self.content_identification_type = Some(input);
             self
         }
+        /// <p>Set this field to PII to identify personally identifiable information (PII) in the transcription output. Content identification is performed only upon complete transcription of the audio segments.</p>
+        /// <p>You can’t set both <code>ContentIdentificationType</code> and <code>ContentRedactionType</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p>
         pub fn set_content_identification_type(
             mut self,
             input: std::option::Option<crate::model::ContentIdentificationType>,
@@ -761,6 +824,8 @@ pub mod start_stream_transcription_input {
             self.content_redaction_type = Some(input);
             self
         }
+        /// <p>Set this field to PII to redact personally identifiable information (PII) in the transcription output. Content redaction is performed only upon complete transcription of the audio segments.</p>
+        /// <p>You can’t set both <code>ContentRedactionType</code> and <code>ContentIdentificationType</code> in the same request. If you set both, your request returns a <code>BadRequestException</code>.</p>
         pub fn set_content_redaction_type(
             mut self,
             input: std::option::Option<crate::model::ContentRedactionType>,
@@ -783,6 +848,17 @@ pub mod start_stream_transcription_input {
             self.pii_entity_types = Some(input.into());
             self
         }
+        /// <p>List the PII entity types you want to identify or redact. In order to specify entity types, you must have
+        /// either <code>ContentIdentificationType</code> or <code>ContentRedactionType</code> enabled.</p>
+        /// <p>
+        /// <code>PIIEntityTypes</code> must be comma-separated; the available values are:
+        /// <code>BANK_ACCOUNT_NUMBER</code>, <code>BANK_ROUTING</code>,
+        /// <code>CREDIT_DEBIT_NUMBER</code>, <code>CREDIT_DEBIT_CVV</code>,
+        /// <code>CREDIT_DEBIT_EXPIRY</code>, <code>PIN</code>, <code>EMAIL</code>,
+        /// <code>ADDRESS</code>, <code>NAME</code>, <code>PHONE</code>,
+        /// <code>SSN</code>, and <code>ALL</code>.</p>
+        /// <p>
+        /// <code>PiiEntityTypes</code> is an optional parameter with a default value of <code>ALL</code>.</p>
         pub fn set_pii_entity_types(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -795,7 +871,7 @@ pub mod start_stream_transcription_input {
             self,
         ) -> std::result::Result<
             crate::input::StartStreamTranscriptionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(
                 crate::input::StartStreamTranscriptionInput {
@@ -811,7 +887,7 @@ pub mod start_stream_transcription_input {
                     ,
                     audio_stream: self.audio_stream
                         .ok_or(
-                            smithy_http::operation::BuildError::MissingField { field: "audio_stream", details: "audio_stream was not specified but it is required when building StartStreamTranscriptionInput"}
+                            aws_smithy_http::operation::BuildError::MissingField { field: "audio_stream", details: "audio_stream was not specified but it is required when building StartStreamTranscriptionInput"}
                         )?
                     ,
                     vocabulary_filter_name: self.vocabulary_filter_name
@@ -854,23 +930,23 @@ impl StartStreamTranscriptionInput {
         self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::StartStreamTranscription,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::StartStreamTranscriptionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/stream-transcription").expect("formatting should succeed");
             Ok(())
         }
         fn add_headers(
             _input: &crate::input::StartStreamTranscriptionInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_21) = &_input.language_code {
                 let formatted_22 = AsRef::<str>::as_ref(inner_21);
@@ -878,7 +954,7 @@ impl StartStreamTranscriptionInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_22;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "language_code",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -889,13 +965,13 @@ impl StartStreamTranscriptionInput {
                 }
             }
             if let Some(inner_23) = &_input.media_sample_rate_hertz {
-                let mut encoder = smithy_types::primitive::Encoder::from(*inner_23);
+                let mut encoder = aws_smithy_types::primitive::Encoder::from(*inner_23);
                 let formatted_24 = encoder.encode();
                 if !formatted_24.is_empty() {
                     use std::convert::TryFrom;
                     let header_value = formatted_24;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "media_sample_rate_hertz",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -911,7 +987,7 @@ impl StartStreamTranscriptionInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_26;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "media_encoding",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -927,7 +1003,7 @@ impl StartStreamTranscriptionInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_28;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "vocabulary_name",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -943,7 +1019,7 @@ impl StartStreamTranscriptionInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_30;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "session_id",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -959,7 +1035,7 @@ impl StartStreamTranscriptionInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_32;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "vocabulary_filter_name",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -976,7 +1052,7 @@ impl StartStreamTranscriptionInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_34;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "vocabulary_filter_method",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -988,13 +1064,14 @@ impl StartStreamTranscriptionInput {
                 }
             }
             if _input.show_speaker_label {
-                let mut encoder = smithy_types::primitive::Encoder::from(_input.show_speaker_label);
+                let mut encoder =
+                    aws_smithy_types::primitive::Encoder::from(_input.show_speaker_label);
                 let formatted_35 = encoder.encode();
                 if !formatted_35.is_empty() {
                     use std::convert::TryFrom;
                     let header_value = formatted_35;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "show_speaker_label",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -1005,14 +1082,15 @@ impl StartStreamTranscriptionInput {
                 }
             }
             if _input.enable_channel_identification {
-                let mut encoder =
-                    smithy_types::primitive::Encoder::from(_input.enable_channel_identification);
+                let mut encoder = aws_smithy_types::primitive::Encoder::from(
+                    _input.enable_channel_identification,
+                );
                 let formatted_36 = encoder.encode();
                 if !formatted_36.is_empty() {
                     use std::convert::TryFrom;
                     let header_value = formatted_36;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "enable_channel_identification",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -1026,13 +1104,13 @@ impl StartStreamTranscriptionInput {
                 }
             }
             if let Some(inner_37) = &_input.number_of_channels {
-                let mut encoder = smithy_types::primitive::Encoder::from(*inner_37);
+                let mut encoder = aws_smithy_types::primitive::Encoder::from(*inner_37);
                 let formatted_38 = encoder.encode();
                 if !formatted_38.is_empty() {
                     use std::convert::TryFrom;
                     let header_value = formatted_38;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "number_of_channels",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -1043,7 +1121,7 @@ impl StartStreamTranscriptionInput {
                 }
             }
             if _input.enable_partial_results_stabilization {
-                let mut encoder = smithy_types::primitive::Encoder::from(
+                let mut encoder = aws_smithy_types::primitive::Encoder::from(
                     _input.enable_partial_results_stabilization,
                 );
                 let formatted_39 = encoder.encode();
@@ -1051,7 +1129,7 @@ impl StartStreamTranscriptionInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_39;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "enable_partial_results_stabilization",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -1070,7 +1148,7 @@ impl StartStreamTranscriptionInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_41;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "partial_results_stability",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -1087,7 +1165,7 @@ impl StartStreamTranscriptionInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_43;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "content_identification_type",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -1106,7 +1184,7 @@ impl StartStreamTranscriptionInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_45;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "content_redaction_type",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -1123,7 +1201,7 @@ impl StartStreamTranscriptionInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_47;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "pii_entity_types",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -1139,7 +1217,7 @@ impl StartStreamTranscriptionInput {
         fn update_http_builder(
             input: &crate::input::StartStreamTranscriptionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1149,32 +1227,32 @@ impl StartStreamTranscriptionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::StartStreamTranscriptionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = {
             let marshaller = crate::event_stream_serde::AudioStreamMarshaller::new();
             let signer = _config.new_event_stream_signer(properties.clone());
-            let adapter: smithy_http::event_stream::MessageStreamAdapter<
+            let adapter: aws_smithy_http::event_stream::MessageStreamAdapter<
                 _,
                 crate::error::StartStreamTranscriptionError,
             > = self.audio_stream.into_body_stream(marshaller, signer);
-            let body: smithy_http::body::SdkBody = hyper::Body::wrap_stream(adapter).into();
+            let body: aws_smithy_http::body::SdkBody = hyper::Body::wrap_stream(adapter).into();
             body
         };
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1200,15 +1278,15 @@ impl StartStreamTranscriptionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::StartStreamTranscription::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "StartStreamTranscription",
             "transcribestreaming",
         ));
@@ -1217,10 +1295,10 @@ impl StartStreamTranscriptionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1234,6 +1312,7 @@ impl StartStreamTranscriptionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 pub struct StartStreamTranscriptionInput {
     /// <p>Indicates the source language used in the input audio stream.</p>
@@ -1251,7 +1330,7 @@ pub struct StartStreamTranscriptionInput {
     pub session_id: std::option::Option<std::string::String>,
     /// <p>PCM-encoded stream of audio blobs. The audio stream is encoded as an HTTP/2 data
     /// frame.</p>
-    pub audio_stream: smithy_http::event_stream::EventStreamInput<crate::model::AudioStream>,
+    pub audio_stream: aws_smithy_http::event_stream::EventStreamInput<crate::model::AudioStream>,
     /// <p>The name of the vocabulary filter you've created that is unique to your account.
     /// Provide the name in this field to successfully use it in a stream.</p>
     pub vocabulary_filter_name: std::option::Option<std::string::String>,
@@ -1334,6 +1413,7 @@ impl std::fmt::Debug for StartStreamTranscriptionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 pub struct StartMedicalStreamTranscriptionInput {
     /// <p> Indicates the source language used in the input audio stream. For Amazon Transcribe Medical, this is US
@@ -1359,7 +1439,7 @@ pub struct StartMedicalStreamTranscriptionInput {
     /// ID, Amazon Transcribe generates one for you and returns it in the response. </p>
     pub session_id: std::option::Option<std::string::String>,
     /// <p>Represents the audio stream from your application to Amazon Transcribe.</p>
-    pub audio_stream: smithy_http::event_stream::EventStreamInput<crate::model::AudioStream>,
+    pub audio_stream: aws_smithy_http::event_stream::EventStreamInput<crate::model::AudioStream>,
     /// <p>When <code>true</code>, instructs Amazon Transcribe Medical to process each audio channel separately and
     /// then merge the transcription output of each channel into a single transcription.</p>
     /// <p>Amazon Transcribe Medical also produces a transcription of each item. An item includes the start time,

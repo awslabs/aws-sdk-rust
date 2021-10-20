@@ -121,9 +121,9 @@ impl Fs {
 
     /// Read the entire contents of a file
     ///
-    /// **Note**: This function is currently `async` primarily for forward compatibility. Currently,
+    /// _Note: This function is currently `async` primarily for forward compatibility. Currently,
     /// this function does not use Tokio (or any other runtime) to perform IO, the IO is performed
-    /// directly within the function.
+    /// directly within the function._
     pub async fn read_to_end(&self, path: impl AsRef<Path>) -> std::io::Result<Vec<u8>> {
         use fs::Inner;
         let path = path.as_ref();

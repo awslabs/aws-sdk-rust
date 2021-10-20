@@ -86,6 +86,8 @@ pub mod report_definition {
             self.report_name = Some(input.into());
             self
         }
+        /// <p>The name of the report that you want to create. The name must be unique,
+        /// is case sensitive, and can't include spaces. </p>
         pub fn set_report_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.report_name = input;
             self
@@ -95,6 +97,7 @@ pub mod report_definition {
             self.time_unit = Some(input);
             self
         }
+        /// <p>The length of time covered by the report. </p>
         pub fn set_time_unit(mut self, input: std::option::Option<crate::model::TimeUnit>) -> Self {
             self.time_unit = input;
             self
@@ -104,6 +107,7 @@ pub mod report_definition {
             self.format = Some(input);
             self
         }
+        /// <p>The format that AWS saves the report in.</p>
         pub fn set_format(
             mut self,
             input: std::option::Option<crate::model::ReportFormat>,
@@ -116,6 +120,7 @@ pub mod report_definition {
             self.compression = Some(input);
             self
         }
+        /// <p>The compression format that AWS uses for the report.</p>
         pub fn set_compression(
             mut self,
             input: std::option::Option<crate::model::CompressionFormat>,
@@ -123,6 +128,11 @@ pub mod report_definition {
             self.compression = input;
             self
         }
+        /// Appends an item to `additional_schema_elements`.
+        ///
+        /// To override the contents of this collection use [`set_additional_schema_elements`](Self::set_additional_schema_elements).
+        ///
+        /// <p>A list of strings that indicate additional content that Amazon Web Services includes in the report, such as individual resource IDs. </p>
         pub fn additional_schema_elements(
             mut self,
             input: impl Into<crate::model::SchemaElement>,
@@ -132,6 +142,7 @@ pub mod report_definition {
             self.additional_schema_elements = Some(v);
             self
         }
+        /// <p>A list of strings that indicate additional content that Amazon Web Services includes in the report, such as individual resource IDs. </p>
         pub fn set_additional_schema_elements(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SchemaElement>>,
@@ -144,6 +155,7 @@ pub mod report_definition {
             self.s3_bucket = Some(input.into());
             self
         }
+        /// <p>The S3 bucket where AWS delivers the report.</p>
         pub fn set_s3_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.s3_bucket = input;
             self
@@ -154,6 +166,8 @@ pub mod report_definition {
             self.s3_prefix = Some(input.into());
             self
         }
+        /// <p>The prefix that AWS adds to the report name when AWS delivers the report. Your prefix
+        /// can't include spaces.</p>
         pub fn set_s3_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.s3_prefix = input;
             self
@@ -163,6 +177,7 @@ pub mod report_definition {
             self.s3_region = Some(input);
             self
         }
+        /// <p>The region of the S3 bucket that AWS delivers the report into.</p>
         pub fn set_s3_region(
             mut self,
             input: std::option::Option<crate::model::AwsRegion>,
@@ -170,6 +185,11 @@ pub mod report_definition {
             self.s3_region = input;
             self
         }
+        /// Appends an item to `additional_artifacts`.
+        ///
+        /// To override the contents of this collection use [`set_additional_artifacts`](Self::set_additional_artifacts).
+        ///
+        /// <p>A list of manifests that you want Amazon Web Services to create for this report.</p>
         pub fn additional_artifacts(
             mut self,
             input: impl Into<crate::model::AdditionalArtifact>,
@@ -179,6 +199,7 @@ pub mod report_definition {
             self.additional_artifacts = Some(v);
             self
         }
+        /// <p>A list of manifests that you want Amazon Web Services to create for this report.</p>
         pub fn set_additional_artifacts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AdditionalArtifact>>,
@@ -192,6 +213,8 @@ pub mod report_definition {
             self.refresh_closed_reports = Some(input);
             self
         }
+        /// <p>Whether you want Amazon Web Services to update your reports after they have been finalized if Amazon Web Services detects charges related to
+        /// previous months. These charges can include refunds, credits, or support fees.</p>
         pub fn set_refresh_closed_reports(mut self, input: std::option::Option<bool>) -> Self {
             self.refresh_closed_reports = input;
             self
@@ -202,6 +225,8 @@ pub mod report_definition {
             self.report_versioning = Some(input);
             self
         }
+        /// <p>Whether you want Amazon Web Services to overwrite the previous version of each report or
+        /// to deliver the report in addition to the previous versions.</p>
         pub fn set_report_versioning(
             mut self,
             input: std::option::Option<crate::model::ReportVersioning>,
@@ -216,6 +241,9 @@ pub mod report_definition {
             self.billing_view_arn = Some(input.into());
             self
         }
+        /// <p>
+        /// The Amazon resource name of the billing view. You can get this value by using the billing view service public APIs.
+        /// </p>
         pub fn set_billing_view_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -249,6 +277,7 @@ impl ReportDefinition {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -260,7 +289,9 @@ impl ReportDefinition {
     std::hash::Hash,
 )]
 pub enum ReportVersioning {
+    #[allow(missing_docs)] // documentation missing in model
     CreateNewReport,
+    #[allow(missing_docs)] // documentation missing in model
     OverwriteReport,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -282,6 +313,7 @@ impl std::str::FromStr for ReportVersioning {
     }
 }
 impl ReportVersioning {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ReportVersioning::CreateNewReport => "CREATE_NEW_REPORT",
@@ -289,6 +321,7 @@ impl ReportVersioning {
             ReportVersioning::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CREATE_NEW_REPORT", "OVERWRITE_REPORT"]
     }
@@ -311,8 +344,11 @@ impl AsRef<str> for ReportVersioning {
     std::hash::Hash,
 )]
 pub enum AdditionalArtifact {
+    #[allow(missing_docs)] // documentation missing in model
     Athena,
+    #[allow(missing_docs)] // documentation missing in model
     Quicksight,
+    #[allow(missing_docs)] // documentation missing in model
     Redshift,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -335,6 +371,7 @@ impl std::str::FromStr for AdditionalArtifact {
     }
 }
 impl AdditionalArtifact {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AdditionalArtifact::Athena => "ATHENA",
@@ -343,6 +380,7 @@ impl AdditionalArtifact {
             AdditionalArtifact::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ATHENA", "QUICKSIGHT", "REDSHIFT"]
     }
@@ -365,28 +403,51 @@ impl AsRef<str> for AdditionalArtifact {
     std::hash::Hash,
 )]
 pub enum AwsRegion {
+    #[allow(missing_docs)] // documentation missing in model
     CapeTown,
+    #[allow(missing_docs)] // documentation missing in model
     HongKong,
+    #[allow(missing_docs)] // documentation missing in model
     Tokyo,
+    #[allow(missing_docs)] // documentation missing in model
     Seoul,
+    #[allow(missing_docs)] // documentation missing in model
     Osaka,
+    #[allow(missing_docs)] // documentation missing in model
     Mumbai,
+    #[allow(missing_docs)] // documentation missing in model
     Singapore,
+    #[allow(missing_docs)] // documentation missing in model
     Sydney,
+    #[allow(missing_docs)] // documentation missing in model
     CanadaCentral,
+    #[allow(missing_docs)] // documentation missing in model
     Beijing,
+    #[allow(missing_docs)] // documentation missing in model
     Ningxia,
+    #[allow(missing_docs)] // documentation missing in model
     Frankfurt,
+    #[allow(missing_docs)] // documentation missing in model
     Stockholm,
+    #[allow(missing_docs)] // documentation missing in model
     Milano,
+    #[allow(missing_docs)] // documentation missing in model
     Ireland,
+    #[allow(missing_docs)] // documentation missing in model
     London,
+    #[allow(missing_docs)] // documentation missing in model
     Paris,
+    #[allow(missing_docs)] // documentation missing in model
     Bahrain,
+    #[allow(missing_docs)] // documentation missing in model
     SaoPaulo,
+    #[allow(missing_docs)] // documentation missing in model
     UsStandard,
+    #[allow(missing_docs)] // documentation missing in model
     Ohio,
+    #[allow(missing_docs)] // documentation missing in model
     NorthernCalifornia,
+    #[allow(missing_docs)] // documentation missing in model
     Oregon,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -429,6 +490,7 @@ impl std::str::FromStr for AwsRegion {
     }
 }
 impl AwsRegion {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AwsRegion::CapeTown => "af-south-1",
@@ -457,6 +519,7 @@ impl AwsRegion {
             AwsRegion::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "af-south-1",
@@ -503,6 +566,7 @@ impl AsRef<str> for AwsRegion {
     std::hash::Hash,
 )]
 pub enum SchemaElement {
+    #[allow(missing_docs)] // documentation missing in model
     Resources,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -523,12 +587,14 @@ impl std::str::FromStr for SchemaElement {
     }
 }
 impl SchemaElement {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SchemaElement::Resources => "RESOURCES",
             SchemaElement::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["RESOURCES"]
     }
@@ -551,8 +617,11 @@ impl AsRef<str> for SchemaElement {
     std::hash::Hash,
 )]
 pub enum CompressionFormat {
+    #[allow(missing_docs)] // documentation missing in model
     Gzip,
+    #[allow(missing_docs)] // documentation missing in model
     Parquet,
+    #[allow(missing_docs)] // documentation missing in model
     Zip,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -575,6 +644,7 @@ impl std::str::FromStr for CompressionFormat {
     }
 }
 impl CompressionFormat {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CompressionFormat::Gzip => "GZIP",
@@ -583,6 +653,7 @@ impl CompressionFormat {
             CompressionFormat::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["GZIP", "Parquet", "ZIP"]
     }
@@ -605,7 +676,9 @@ impl AsRef<str> for CompressionFormat {
     std::hash::Hash,
 )]
 pub enum ReportFormat {
+    #[allow(missing_docs)] // documentation missing in model
     Parquet,
+    #[allow(missing_docs)] // documentation missing in model
     Csv,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -627,6 +700,7 @@ impl std::str::FromStr for ReportFormat {
     }
 }
 impl ReportFormat {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ReportFormat::Parquet => "Parquet",
@@ -634,6 +708,7 @@ impl ReportFormat {
             ReportFormat::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Parquet", "textORcsv"]
     }
@@ -656,8 +731,11 @@ impl AsRef<str> for ReportFormat {
     std::hash::Hash,
 )]
 pub enum TimeUnit {
+    #[allow(missing_docs)] // documentation missing in model
     Daily,
+    #[allow(missing_docs)] // documentation missing in model
     Hourly,
+    #[allow(missing_docs)] // documentation missing in model
     Monthly,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -680,6 +758,7 @@ impl std::str::FromStr for TimeUnit {
     }
 }
 impl TimeUnit {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TimeUnit::Daily => "DAILY",
@@ -688,6 +767,7 @@ impl TimeUnit {
             TimeUnit::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DAILY", "HOURLY", "MONTHLY"]
     }

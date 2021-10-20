@@ -19,6 +19,8 @@ pub mod create_backup_plan_input {
             self.backup_plan = Some(input);
             self
         }
+        /// <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code> and one or
+        /// more sets of <code>Rules</code>.</p>
         pub fn set_backup_plan(
             mut self,
             input: std::option::Option<crate::model::BackupPlanInput>,
@@ -26,6 +28,13 @@ pub mod create_backup_plan_input {
             self.backup_plan = input;
             self
         }
+        /// Adds a key-value pair to `backup_plan_tags`.
+        ///
+        /// To override the contents of this collection use [`set_backup_plan_tags`](Self::set_backup_plan_tags).
+        ///
+        /// <p>To help organize your resources, you can assign your own metadata to the resources that
+        /// you create. Each tag is a key-value pair. The specified tags are assigned to all backups
+        /// created with this plan.</p>
         pub fn backup_plan_tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -36,6 +45,9 @@ pub mod create_backup_plan_input {
             self.backup_plan_tags = Some(hash_map);
             self
         }
+        /// <p>To help organize your resources, you can assign your own metadata to the resources that
+        /// you create. Each tag is a key-value pair. The specified tags are assigned to all backups
+        /// created with this plan.</p>
         pub fn set_backup_plan_tags(
             mut self,
             input: std::option::Option<
@@ -52,6 +64,9 @@ pub mod create_backup_plan_input {
             self.creator_request_id = Some(input.into());
             self
         }
+        /// <p>Identifies the request and allows failed requests to be retried without the risk of
+        /// running the operation twice. If the request includes a <code>CreatorRequestId</code> that
+        /// matches an existing backup plan, that plan is returned. This parameter is optional.</p>
         pub fn set_creator_request_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -64,7 +79,7 @@ pub mod create_backup_plan_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateBackupPlanInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateBackupPlanInput {
                 backup_plan: self.backup_plan,
@@ -85,16 +100,16 @@ impl CreateBackupPlanInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateBackupPlan,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateBackupPlanInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/backup/plans").expect("formatting should succeed");
             Ok(())
         }
@@ -102,7 +117,7 @@ impl CreateBackupPlanInput {
         fn update_http_builder(
             input: &crate::input::CreateBackupPlanInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -111,27 +126,27 @@ impl CreateBackupPlanInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateBackupPlanInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_backup_plan(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -154,15 +169,15 @@ impl CreateBackupPlanInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateBackupPlan::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateBackupPlan",
             "backup",
         ));
@@ -171,10 +186,10 @@ impl CreateBackupPlanInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -205,6 +220,8 @@ pub mod create_backup_selection_input {
             self.backup_plan_id = Some(input.into());
             self
         }
+        /// <p>Uniquely identifies the backup plan to be associated with the selection of
+        /// resources.</p>
         pub fn set_backup_plan_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -217,6 +234,7 @@ pub mod create_backup_selection_input {
             self.backup_selection = Some(input);
             self
         }
+        /// <p>Specifies the body of a request to assign a set of resources to a backup plan.</p>
         pub fn set_backup_selection(
             mut self,
             input: std::option::Option<crate::model::BackupSelection>,
@@ -230,6 +248,8 @@ pub mod create_backup_selection_input {
             self.creator_request_id = Some(input.into());
             self
         }
+        /// <p>A unique string that identifies the request and allows failed requests to be retried
+        /// without the risk of running the operation twice.</p>
         pub fn set_creator_request_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -242,7 +262,7 @@ pub mod create_backup_selection_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateBackupSelectionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateBackupSelectionInput {
                 backup_plan_id: self.backup_plan_id,
@@ -263,27 +283,27 @@ impl CreateBackupSelectionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateBackupSelection,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateBackupSelectionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_1 = &_input.backup_plan_id;
             let input_1 =
                 input_1
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "backup_plan_id",
                         details: "cannot be empty or unset",
                     })?;
-            let backup_plan_id = smithy_http::label::fmt_string(input_1, false);
+            let backup_plan_id = aws_smithy_http::label::fmt_string(input_1, false);
             if backup_plan_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "backup_plan_id",
                     details: "cannot be empty or unset",
                 });
@@ -300,7 +320,7 @@ impl CreateBackupSelectionInput {
         fn update_http_builder(
             input: &crate::input::CreateBackupSelectionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -309,27 +329,29 @@ impl CreateBackupSelectionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateBackupSelectionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_backup_selection(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -352,15 +374,15 @@ impl CreateBackupSelectionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateBackupSelection::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateBackupSelection",
             "backup",
         ));
@@ -369,10 +391,10 @@ impl CreateBackupSelectionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -407,6 +429,9 @@ pub mod create_backup_vault_input {
             self.backup_vault_name = Some(input.into());
             self
         }
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
+        /// by names that are unique to the account used to create them and the Amazon Web Services
+        /// Region where they are created. They consist of letters, numbers, and hyphens.</p>
         pub fn set_backup_vault_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -414,6 +439,12 @@ pub mod create_backup_vault_input {
             self.backup_vault_name = input;
             self
         }
+        /// Adds a key-value pair to `backup_vault_tags`.
+        ///
+        /// To override the contents of this collection use [`set_backup_vault_tags`](Self::set_backup_vault_tags).
+        ///
+        /// <p>Metadata that you can assign to help organize the resources that you create. Each tag is
+        /// a key-value pair.</p>
         pub fn backup_vault_tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -424,6 +455,8 @@ pub mod create_backup_vault_input {
             self.backup_vault_tags = Some(hash_map);
             self
         }
+        /// <p>Metadata that you can assign to help organize the resources that you create. Each tag is
+        /// a key-value pair.</p>
         pub fn set_backup_vault_tags(
             mut self,
             input: std::option::Option<
@@ -439,6 +472,8 @@ pub mod create_backup_vault_input {
             self.encryption_key_arn = Some(input.into());
             self
         }
+        /// <p>The server-side encryption key that is used to protect your backups; for example,
+        /// <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
         pub fn set_encryption_key_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -452,6 +487,8 @@ pub mod create_backup_vault_input {
             self.creator_request_id = Some(input.into());
             self
         }
+        /// <p>A unique string that identifies the request and allows failed requests to be retried
+        /// without the risk of running the operation twice.</p>
         pub fn set_creator_request_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -464,7 +501,7 @@ pub mod create_backup_vault_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateBackupVaultInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateBackupVaultInput {
                 backup_vault_name: self.backup_vault_name,
@@ -486,27 +523,27 @@ impl CreateBackupVaultInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateBackupVault,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateBackupVaultInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_2 = &_input.backup_vault_name;
             let input_2 =
                 input_2
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "backup_vault_name",
                         details: "cannot be empty or unset",
                     })?;
-            let backup_vault_name = smithy_http::label::fmt_string(input_2, false);
+            let backup_vault_name = aws_smithy_http::label::fmt_string(input_2, false);
             if backup_vault_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "backup_vault_name",
                     details: "cannot be empty or unset",
                 });
@@ -523,7 +560,7 @@ impl CreateBackupVaultInput {
         fn update_http_builder(
             input: &crate::input::CreateBackupVaultInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -532,27 +569,27 @@ impl CreateBackupVaultInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateBackupVaultInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_backup_vault(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -575,15 +612,15 @@ impl CreateBackupVaultInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateBackupVault::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateBackupVault",
             "backup",
         ));
@@ -592,10 +629,10 @@ impl CreateBackupVaultInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -632,6 +669,9 @@ pub mod create_framework_input {
             self.framework_name = Some(input.into());
             self
         }
+        /// <p>The unique name of the framework. The name must be between 1 and 256 characters,
+        /// starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and
+        /// underscores (_).</p>
         pub fn set_framework_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -644,6 +684,7 @@ pub mod create_framework_input {
             self.framework_description = Some(input.into());
             self
         }
+        /// <p>An optional description of the framework with a maximum of 1,024 characters.</p>
         pub fn set_framework_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -651,6 +692,12 @@ pub mod create_framework_input {
             self.framework_description = input;
             self
         }
+        /// Appends an item to `framework_controls`.
+        ///
+        /// To override the contents of this collection use [`set_framework_controls`](Self::set_framework_controls).
+        ///
+        /// <p>A list of the controls that make up the framework. Each control in the list has a name,
+        /// input parameters, and scope.</p>
         pub fn framework_controls(
             mut self,
             input: impl Into<crate::model::FrameworkControl>,
@@ -660,6 +707,8 @@ pub mod create_framework_input {
             self.framework_controls = Some(v);
             self
         }
+        /// <p>A list of the controls that make up the framework. Each control in the list has a name,
+        /// input parameters, and scope.</p>
         pub fn set_framework_controls(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FrameworkControl>>,
@@ -674,6 +723,9 @@ pub mod create_framework_input {
             self.idempotency_token = Some(input.into());
             self
         }
+        /// <p>A customer-chosen string that you can use to distinguish between otherwise identical
+        /// calls to <code>CreateFrameworkInput</code>. Retrying a successful request with the same
+        /// idempotency token results in a success message with no action taken.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -681,6 +733,12 @@ pub mod create_framework_input {
             self.idempotency_token = input;
             self
         }
+        /// Adds a key-value pair to `framework_tags`.
+        ///
+        /// To override the contents of this collection use [`set_framework_tags`](Self::set_framework_tags).
+        ///
+        /// <p>Metadata that you can assign to help organize the frameworks that you create. Each tag
+        /// is a key-value pair.</p>
         pub fn framework_tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -691,6 +749,8 @@ pub mod create_framework_input {
             self.framework_tags = Some(hash_map);
             self
         }
+        /// <p>Metadata that you can assign to help organize the frameworks that you create. Each tag
+        /// is a key-value pair.</p>
         pub fn set_framework_tags(
             mut self,
             input: std::option::Option<
@@ -705,7 +765,7 @@ pub mod create_framework_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateFrameworkInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateFrameworkInput {
                 framework_name: self.framework_name,
@@ -728,16 +788,16 @@ impl CreateFrameworkInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateFramework,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateFrameworkInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/audit/frameworks").expect("formatting should succeed");
             Ok(())
         }
@@ -745,7 +805,7 @@ impl CreateFrameworkInput {
         fn update_http_builder(
             input: &crate::input::CreateFrameworkInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -754,10 +814,10 @@ impl CreateFrameworkInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateFrameworkInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -767,17 +827,17 @@ impl CreateFrameworkInput {
         if self.idempotency_token.is_none() {
             self.idempotency_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_framework(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -800,15 +860,15 @@ impl CreateFrameworkInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateFramework::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateFramework",
             "backup",
         ));
@@ -817,10 +877,10 @@ impl CreateFrameworkInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -858,6 +918,9 @@ pub mod create_report_plan_input {
             self.report_plan_name = Some(input.into());
             self
         }
+        /// <p>The unique name of the report plan. The name must be between 1 and 256 characters,
+        /// starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and
+        /// underscores (_).</p>
         pub fn set_report_plan_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -870,6 +933,7 @@ pub mod create_report_plan_input {
             self.report_plan_description = Some(input.into());
             self
         }
+        /// <p>An optional description of the report plan with a maximum of 1,024 characters.</p>
         pub fn set_report_plan_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -887,6 +951,9 @@ pub mod create_report_plan_input {
             self.report_delivery_channel = Some(input);
             self
         }
+        /// <p>A structure that contains information about where and how to deliver your reports,
+        /// specifically your Amazon S3 bucket name, S3 key prefix, and the formats of your
+        /// reports.</p>
         pub fn set_report_delivery_channel(
             mut self,
             input: std::option::Option<crate::model::ReportDeliveryChannel>,
@@ -907,6 +974,15 @@ pub mod create_report_plan_input {
             self.report_setting = Some(input);
             self
         }
+        /// <p>Identifies the report template for the report. Reports are built using a report
+        /// template. The report templates are:</p>
+        /// <p>
+        /// <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT |
+        /// COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
+        /// </p>
+        /// <p>If the report template is <code>RESOURCE_COMPLIANCE_REPORT</code> or
+        /// <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the report
+        /// coverage by Amazon Web Services Regions and frameworks.</p>
         pub fn set_report_setting(
             mut self,
             input: std::option::Option<crate::model::ReportSetting>,
@@ -914,6 +990,12 @@ pub mod create_report_plan_input {
             self.report_setting = input;
             self
         }
+        /// Adds a key-value pair to `report_plan_tags`.
+        ///
+        /// To override the contents of this collection use [`set_report_plan_tags`](Self::set_report_plan_tags).
+        ///
+        /// <p>Metadata that you can assign to help organize the report plans that you create. Each tag
+        /// is a key-value pair.</p>
         pub fn report_plan_tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -924,6 +1006,8 @@ pub mod create_report_plan_input {
             self.report_plan_tags = Some(hash_map);
             self
         }
+        /// <p>Metadata that you can assign to help organize the report plans that you create. Each tag
+        /// is a key-value pair.</p>
         pub fn set_report_plan_tags(
             mut self,
             input: std::option::Option<
@@ -940,6 +1024,9 @@ pub mod create_report_plan_input {
             self.idempotency_token = Some(input.into());
             self
         }
+        /// <p>A customer-chosen string that you can use to distinguish between otherwise identical
+        /// calls to <code>CreateReportPlanInput</code>. Retrying a successful request with the same
+        /// idempotency token results in a success message with no action taken.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -952,7 +1039,7 @@ pub mod create_report_plan_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateReportPlanInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateReportPlanInput {
                 report_plan_name: self.report_plan_name,
@@ -976,16 +1063,16 @@ impl CreateReportPlanInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateReportPlan,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateReportPlanInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/audit/report-plans").expect("formatting should succeed");
             Ok(())
         }
@@ -993,7 +1080,7 @@ impl CreateReportPlanInput {
         fn update_http_builder(
             input: &crate::input::CreateReportPlanInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1002,10 +1089,10 @@ impl CreateReportPlanInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateReportPlanInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -1015,17 +1102,17 @@ impl CreateReportPlanInput {
         if self.idempotency_token.is_none() {
             self.idempotency_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_report_plan(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1048,15 +1135,15 @@ impl CreateReportPlanInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateReportPlan::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateReportPlan",
             "backup",
         ));
@@ -1065,10 +1152,10 @@ impl CreateReportPlanInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1096,6 +1183,7 @@ pub mod delete_backup_plan_input {
             self.backup_plan_id = Some(input.into());
             self
         }
+        /// <p>Uniquely identifies a backup plan.</p>
         pub fn set_backup_plan_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1108,7 +1196,7 @@ pub mod delete_backup_plan_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteBackupPlanInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteBackupPlanInput {
                 backup_plan_id: self.backup_plan_id,
@@ -1127,27 +1215,27 @@ impl DeleteBackupPlanInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteBackupPlan,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteBackupPlanInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_3 = &_input.backup_plan_id;
             let input_3 =
                 input_3
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "backup_plan_id",
                         details: "cannot be empty or unset",
                     })?;
-            let backup_plan_id = smithy_http::label::fmt_string(input_3, false);
+            let backup_plan_id = aws_smithy_http::label::fmt_string(input_3, false);
             if backup_plan_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "backup_plan_id",
                     details: "cannot be empty or unset",
                 });
@@ -1164,7 +1252,7 @@ impl DeleteBackupPlanInput {
         fn update_http_builder(
             input: &crate::input::DeleteBackupPlanInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1173,23 +1261,23 @@ impl DeleteBackupPlanInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteBackupPlanInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1212,15 +1300,15 @@ impl DeleteBackupPlanInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteBackupPlan::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteBackupPlan",
             "backup",
         ));
@@ -1229,10 +1317,10 @@ impl DeleteBackupPlanInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1261,6 +1349,7 @@ pub mod delete_backup_selection_input {
             self.backup_plan_id = Some(input.into());
             self
         }
+        /// <p>Uniquely identifies a backup plan.</p>
         pub fn set_backup_plan_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1274,6 +1363,8 @@ pub mod delete_backup_selection_input {
             self.selection_id = Some(input.into());
             self
         }
+        /// <p>Uniquely identifies the body of a request to assign a set of resources to a backup
+        /// plan.</p>
         pub fn set_selection_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.selection_id = input;
             self
@@ -1283,7 +1374,7 @@ pub mod delete_backup_selection_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteBackupSelectionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteBackupSelectionInput {
                 backup_plan_id: self.backup_plan_id,
@@ -1303,27 +1394,27 @@ impl DeleteBackupSelectionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteBackupSelection,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteBackupSelectionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_4 = &_input.backup_plan_id;
             let input_4 =
                 input_4
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "backup_plan_id",
                         details: "cannot be empty or unset",
                     })?;
-            let backup_plan_id = smithy_http::label::fmt_string(input_4, false);
+            let backup_plan_id = aws_smithy_http::label::fmt_string(input_4, false);
             if backup_plan_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "backup_plan_id",
                     details: "cannot be empty or unset",
                 });
@@ -1332,13 +1423,13 @@ impl DeleteBackupSelectionInput {
             let input_5 =
                 input_5
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "selection_id",
                         details: "cannot be empty or unset",
                     })?;
-            let selection_id = smithy_http::label::fmt_string(input_5, false);
+            let selection_id = aws_smithy_http::label::fmt_string(input_5, false);
             if selection_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "selection_id",
                     details: "cannot be empty or unset",
                 });
@@ -1356,7 +1447,7 @@ impl DeleteBackupSelectionInput {
         fn update_http_builder(
             input: &crate::input::DeleteBackupSelectionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1365,23 +1456,23 @@ impl DeleteBackupSelectionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteBackupSelectionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1404,15 +1495,15 @@ impl DeleteBackupSelectionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteBackupSelection::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteBackupSelection",
             "backup",
         ));
@@ -1421,10 +1512,10 @@ impl DeleteBackupSelectionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1455,6 +1546,10 @@ pub mod delete_backup_vault_input {
             self.backup_vault_name = Some(input.into());
             self
         }
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
+        /// by names that are unique to the account used to create them and the Amazon Web Services
+        /// Region where they are created. They consist of lowercase letters, numbers, and
+        /// hyphens.</p>
         pub fn set_backup_vault_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1467,7 +1562,7 @@ pub mod delete_backup_vault_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteBackupVaultInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteBackupVaultInput {
                 backup_vault_name: self.backup_vault_name,
@@ -1486,27 +1581,27 @@ impl DeleteBackupVaultInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteBackupVault,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteBackupVaultInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_6 = &_input.backup_vault_name;
             let input_6 =
                 input_6
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "backup_vault_name",
                         details: "cannot be empty or unset",
                     })?;
-            let backup_vault_name = smithy_http::label::fmt_string(input_6, false);
+            let backup_vault_name = aws_smithy_http::label::fmt_string(input_6, false);
             if backup_vault_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "backup_vault_name",
                     details: "cannot be empty or unset",
                 });
@@ -1523,7 +1618,7 @@ impl DeleteBackupVaultInput {
         fn update_http_builder(
             input: &crate::input::DeleteBackupVaultInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1532,23 +1627,23 @@ impl DeleteBackupVaultInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteBackupVaultInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1571,15 +1666,15 @@ impl DeleteBackupVaultInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteBackupVault::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteBackupVault",
             "backup",
         ));
@@ -1588,10 +1683,10 @@ impl DeleteBackupVaultInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1622,6 +1717,10 @@ pub mod delete_backup_vault_access_policy_input {
             self.backup_vault_name = Some(input.into());
             self
         }
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
+        /// by names that are unique to the account used to create them and the Amazon Web Services
+        /// Region where they are created. They consist of lowercase letters, numbers, and
+        /// hyphens.</p>
         pub fn set_backup_vault_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1634,7 +1733,7 @@ pub mod delete_backup_vault_access_policy_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteBackupVaultAccessPolicyInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteBackupVaultAccessPolicyInput {
                 backup_vault_name: self.backup_vault_name,
@@ -1654,27 +1753,27 @@ impl DeleteBackupVaultAccessPolicyInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteBackupVaultAccessPolicy,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteBackupVaultAccessPolicyInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_7 = &_input.backup_vault_name;
             let input_7 =
                 input_7
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "backup_vault_name",
                         details: "cannot be empty or unset",
                     })?;
-            let backup_vault_name = smithy_http::label::fmt_string(input_7, false);
+            let backup_vault_name = aws_smithy_http::label::fmt_string(input_7, false);
             if backup_vault_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "backup_vault_name",
                     details: "cannot be empty or unset",
                 });
@@ -1691,7 +1790,7 @@ impl DeleteBackupVaultAccessPolicyInput {
         fn update_http_builder(
             input: &crate::input::DeleteBackupVaultAccessPolicyInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1700,23 +1799,23 @@ impl DeleteBackupVaultAccessPolicyInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteBackupVaultAccessPolicyInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1739,15 +1838,15 @@ impl DeleteBackupVaultAccessPolicyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteBackupVaultAccessPolicy::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteBackupVaultAccessPolicy",
             "backup",
         ));
@@ -1756,10 +1855,10 @@ impl DeleteBackupVaultAccessPolicyInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1787,6 +1886,7 @@ pub mod delete_backup_vault_lock_configuration_input {
             self.backup_vault_name = Some(input.into());
             self
         }
+        /// <p>The name of the backup vault from which to delete Backup Vault Lock.</p>
         pub fn set_backup_vault_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1799,7 +1899,7 @@ pub mod delete_backup_vault_lock_configuration_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteBackupVaultLockConfigurationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteBackupVaultLockConfigurationInput {
                 backup_vault_name: self.backup_vault_name,
@@ -1819,27 +1919,27 @@ impl DeleteBackupVaultLockConfigurationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteBackupVaultLockConfiguration,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteBackupVaultLockConfigurationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_8 = &_input.backup_vault_name;
             let input_8 =
                 input_8
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "backup_vault_name",
                         details: "cannot be empty or unset",
                     })?;
-            let backup_vault_name = smithy_http::label::fmt_string(input_8, false);
+            let backup_vault_name = aws_smithy_http::label::fmt_string(input_8, false);
             if backup_vault_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "backup_vault_name",
                     details: "cannot be empty or unset",
                 });
@@ -1856,7 +1956,7 @@ impl DeleteBackupVaultLockConfigurationInput {
         fn update_http_builder(
             input: &crate::input::DeleteBackupVaultLockConfigurationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1865,23 +1965,23 @@ impl DeleteBackupVaultLockConfigurationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteBackupVaultLockConfigurationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1904,15 +2004,15 @@ impl DeleteBackupVaultLockConfigurationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteBackupVaultLockConfiguration::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteBackupVaultLockConfiguration",
             "backup",
         ));
@@ -1921,10 +2021,10 @@ impl DeleteBackupVaultLockConfigurationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1954,6 +2054,9 @@ pub mod delete_backup_vault_notifications_input {
             self.backup_vault_name = Some(input.into());
             self
         }
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
+        /// by names that are unique to the account used to create them and the Region where they are
+        /// created. They consist of lowercase letters, numbers, and hyphens.</p>
         pub fn set_backup_vault_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1966,7 +2069,7 @@ pub mod delete_backup_vault_notifications_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteBackupVaultNotificationsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteBackupVaultNotificationsInput {
                 backup_vault_name: self.backup_vault_name,
@@ -1986,27 +2089,27 @@ impl DeleteBackupVaultNotificationsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteBackupVaultNotifications,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteBackupVaultNotificationsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_9 = &_input.backup_vault_name;
             let input_9 =
                 input_9
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "backup_vault_name",
                         details: "cannot be empty or unset",
                     })?;
-            let backup_vault_name = smithy_http::label::fmt_string(input_9, false);
+            let backup_vault_name = aws_smithy_http::label::fmt_string(input_9, false);
             if backup_vault_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "backup_vault_name",
                     details: "cannot be empty or unset",
                 });
@@ -2023,7 +2126,7 @@ impl DeleteBackupVaultNotificationsInput {
         fn update_http_builder(
             input: &crate::input::DeleteBackupVaultNotificationsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2032,23 +2135,23 @@ impl DeleteBackupVaultNotificationsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteBackupVaultNotificationsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2071,15 +2174,15 @@ impl DeleteBackupVaultNotificationsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteBackupVaultNotifications::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteBackupVaultNotifications",
             "backup",
         ));
@@ -2088,10 +2191,10 @@ impl DeleteBackupVaultNotificationsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2119,6 +2222,7 @@ pub mod delete_framework_input {
             self.framework_name = Some(input.into());
             self
         }
+        /// <p>The unique name of a framework.</p>
         pub fn set_framework_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2131,7 +2235,7 @@ pub mod delete_framework_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteFrameworkInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteFrameworkInput {
                 framework_name: self.framework_name,
@@ -2150,27 +2254,27 @@ impl DeleteFrameworkInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteFramework,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteFrameworkInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_10 = &_input.framework_name;
             let input_10 =
                 input_10
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "framework_name",
                         details: "cannot be empty or unset",
                     })?;
-            let framework_name = smithy_http::label::fmt_string(input_10, false);
+            let framework_name = aws_smithy_http::label::fmt_string(input_10, false);
             if framework_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "framework_name",
                     details: "cannot be empty or unset",
                 });
@@ -2187,7 +2291,7 @@ impl DeleteFrameworkInput {
         fn update_http_builder(
             input: &crate::input::DeleteFrameworkInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2196,23 +2300,23 @@ impl DeleteFrameworkInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteFrameworkInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2235,15 +2339,15 @@ impl DeleteFrameworkInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteFramework::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteFramework",
             "backup",
         ));
@@ -2252,10 +2356,10 @@ impl DeleteFrameworkInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2287,6 +2391,10 @@ pub mod delete_recovery_point_input {
             self.backup_vault_name = Some(input.into());
             self
         }
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
+        /// by names that are unique to the account used to create them and the Amazon Web Services
+        /// Region where they are created. They consist of lowercase letters, numbers, and
+        /// hyphens.</p>
         pub fn set_backup_vault_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2300,6 +2408,8 @@ pub mod delete_recovery_point_input {
             self.recovery_point_arn = Some(input.into());
             self
         }
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example,
+        /// <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
         pub fn set_recovery_point_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2312,7 +2422,7 @@ pub mod delete_recovery_point_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteRecoveryPointInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteRecoveryPointInput {
                 backup_vault_name: self.backup_vault_name,
@@ -2332,27 +2442,27 @@ impl DeleteRecoveryPointInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteRecoveryPoint,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteRecoveryPointInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_11 = &_input.backup_vault_name;
             let input_11 =
                 input_11
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "backup_vault_name",
                         details: "cannot be empty or unset",
                     })?;
-            let backup_vault_name = smithy_http::label::fmt_string(input_11, false);
+            let backup_vault_name = aws_smithy_http::label::fmt_string(input_11, false);
             if backup_vault_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "backup_vault_name",
                     details: "cannot be empty or unset",
                 });
@@ -2361,13 +2471,13 @@ impl DeleteRecoveryPointInput {
             let input_12 =
                 input_12
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "recovery_point_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let recovery_point_arn = smithy_http::label::fmt_string(input_12, false);
+            let recovery_point_arn = aws_smithy_http::label::fmt_string(input_12, false);
             if recovery_point_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "recovery_point_arn",
                     details: "cannot be empty or unset",
                 });
@@ -2385,7 +2495,7 @@ impl DeleteRecoveryPointInput {
         fn update_http_builder(
             input: &crate::input::DeleteRecoveryPointInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2394,23 +2504,23 @@ impl DeleteRecoveryPointInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteRecoveryPointInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2433,15 +2543,15 @@ impl DeleteRecoveryPointInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteRecoveryPoint::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteRecoveryPoint",
             "backup",
         ));
@@ -2450,10 +2560,10 @@ impl DeleteRecoveryPointInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2481,6 +2591,7 @@ pub mod delete_report_plan_input {
             self.report_plan_name = Some(input.into());
             self
         }
+        /// <p>The unique name of a report plan.</p>
         pub fn set_report_plan_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2493,7 +2604,7 @@ pub mod delete_report_plan_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteReportPlanInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteReportPlanInput {
                 report_plan_name: self.report_plan_name,
@@ -2512,27 +2623,27 @@ impl DeleteReportPlanInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteReportPlan,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteReportPlanInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_13 = &_input.report_plan_name;
             let input_13 =
                 input_13
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "report_plan_name",
                         details: "cannot be empty or unset",
                     })?;
-            let report_plan_name = smithy_http::label::fmt_string(input_13, false);
+            let report_plan_name = aws_smithy_http::label::fmt_string(input_13, false);
             if report_plan_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "report_plan_name",
                     details: "cannot be empty or unset",
                 });
@@ -2549,7 +2660,7 @@ impl DeleteReportPlanInput {
         fn update_http_builder(
             input: &crate::input::DeleteReportPlanInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2558,23 +2669,23 @@ impl DeleteReportPlanInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteReportPlanInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2597,15 +2708,15 @@ impl DeleteReportPlanInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteReportPlan::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteReportPlan",
             "backup",
         ));
@@ -2614,10 +2725,10 @@ impl DeleteReportPlanInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2645,6 +2756,7 @@ pub mod describe_backup_job_input {
             self.backup_job_id = Some(input.into());
             self
         }
+        /// <p>Uniquely identifies a request to Backup to back up a resource.</p>
         pub fn set_backup_job_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2657,7 +2769,7 @@ pub mod describe_backup_job_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeBackupJobInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeBackupJobInput {
                 backup_job_id: self.backup_job_id,
@@ -2676,27 +2788,27 @@ impl DescribeBackupJobInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeBackupJob,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeBackupJobInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_14 = &_input.backup_job_id;
             let input_14 =
                 input_14
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "backup_job_id",
                         details: "cannot be empty or unset",
                     })?;
-            let backup_job_id = smithy_http::label::fmt_string(input_14, false);
+            let backup_job_id = aws_smithy_http::label::fmt_string(input_14, false);
             if backup_job_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "backup_job_id",
                     details: "cannot be empty or unset",
                 });
@@ -2713,7 +2825,7 @@ impl DescribeBackupJobInput {
         fn update_http_builder(
             input: &crate::input::DescribeBackupJobInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2722,23 +2834,23 @@ impl DescribeBackupJobInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeBackupJobInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2761,15 +2873,15 @@ impl DescribeBackupJobInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeBackupJob::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeBackupJob",
             "backup",
         ));
@@ -2778,10 +2890,10 @@ impl DescribeBackupJobInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2812,6 +2924,10 @@ pub mod describe_backup_vault_input {
             self.backup_vault_name = Some(input.into());
             self
         }
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
+        /// by names that are unique to the account used to create them and the Amazon Web Services
+        /// Region where they are created. They consist of lowercase letters, numbers, and
+        /// hyphens.</p>
         pub fn set_backup_vault_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2824,7 +2940,7 @@ pub mod describe_backup_vault_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeBackupVaultInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeBackupVaultInput {
                 backup_vault_name: self.backup_vault_name,
@@ -2843,27 +2959,27 @@ impl DescribeBackupVaultInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeBackupVault,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeBackupVaultInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_15 = &_input.backup_vault_name;
             let input_15 =
                 input_15
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "backup_vault_name",
                         details: "cannot be empty or unset",
                     })?;
-            let backup_vault_name = smithy_http::label::fmt_string(input_15, false);
+            let backup_vault_name = aws_smithy_http::label::fmt_string(input_15, false);
             if backup_vault_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "backup_vault_name",
                     details: "cannot be empty or unset",
                 });
@@ -2880,7 +2996,7 @@ impl DescribeBackupVaultInput {
         fn update_http_builder(
             input: &crate::input::DescribeBackupVaultInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2889,23 +3005,23 @@ impl DescribeBackupVaultInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeBackupVaultInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2928,15 +3044,15 @@ impl DescribeBackupVaultInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeBackupVault::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeBackupVault",
             "backup",
         ));
@@ -2945,10 +3061,10 @@ impl DescribeBackupVaultInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2976,6 +3092,7 @@ pub mod describe_copy_job_input {
             self.copy_job_id = Some(input.into());
             self
         }
+        /// <p>Uniquely identifies a copy job.</p>
         pub fn set_copy_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.copy_job_id = input;
             self
@@ -2985,7 +3102,7 @@ pub mod describe_copy_job_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeCopyJobInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeCopyJobInput {
                 copy_job_id: self.copy_job_id,
@@ -3004,27 +3121,27 @@ impl DescribeCopyJobInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeCopyJob,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeCopyJobInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_16 = &_input.copy_job_id;
             let input_16 =
                 input_16
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "copy_job_id",
                         details: "cannot be empty or unset",
                     })?;
-            let copy_job_id = smithy_http::label::fmt_string(input_16, false);
+            let copy_job_id = aws_smithy_http::label::fmt_string(input_16, false);
             if copy_job_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "copy_job_id",
                     details: "cannot be empty or unset",
                 });
@@ -3037,7 +3154,7 @@ impl DescribeCopyJobInput {
         fn update_http_builder(
             input: &crate::input::DescribeCopyJobInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3046,23 +3163,23 @@ impl DescribeCopyJobInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeCopyJobInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3085,15 +3202,15 @@ impl DescribeCopyJobInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeCopyJob::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeCopyJob",
             "backup",
         ));
@@ -3102,10 +3219,10 @@ impl DescribeCopyJobInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3133,6 +3250,7 @@ pub mod describe_framework_input {
             self.framework_name = Some(input.into());
             self
         }
+        /// <p>The unique name of a framework.</p>
         pub fn set_framework_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3145,7 +3263,7 @@ pub mod describe_framework_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeFrameworkInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeFrameworkInput {
                 framework_name: self.framework_name,
@@ -3164,27 +3282,27 @@ impl DescribeFrameworkInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeFramework,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeFrameworkInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_17 = &_input.framework_name;
             let input_17 =
                 input_17
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "framework_name",
                         details: "cannot be empty or unset",
                     })?;
-            let framework_name = smithy_http::label::fmt_string(input_17, false);
+            let framework_name = aws_smithy_http::label::fmt_string(input_17, false);
             if framework_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "framework_name",
                     details: "cannot be empty or unset",
                 });
@@ -3201,7 +3319,7 @@ impl DescribeFrameworkInput {
         fn update_http_builder(
             input: &crate::input::DescribeFrameworkInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3210,23 +3328,23 @@ impl DescribeFrameworkInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeFrameworkInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3249,15 +3367,15 @@ impl DescribeFrameworkInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeFramework::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeFramework",
             "backup",
         ));
@@ -3266,10 +3384,10 @@ impl DescribeFrameworkInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3295,7 +3413,7 @@ pub mod describe_global_settings_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeGlobalSettingsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeGlobalSettingsInput {})
         }
@@ -3312,16 +3430,16 @@ impl DescribeGlobalSettingsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeGlobalSettings,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeGlobalSettingsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/global-settings").expect("formatting should succeed");
             Ok(())
         }
@@ -3329,7 +3447,7 @@ impl DescribeGlobalSettingsInput {
         fn update_http_builder(
             input: &crate::input::DescribeGlobalSettingsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3338,23 +3456,23 @@ impl DescribeGlobalSettingsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeGlobalSettingsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3377,15 +3495,15 @@ impl DescribeGlobalSettingsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeGlobalSettings::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeGlobalSettings",
             "backup",
         ));
@@ -3394,10 +3512,10 @@ impl DescribeGlobalSettingsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3426,6 +3544,8 @@ pub mod describe_protected_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN
+        /// depends on the resource type.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -3435,7 +3555,7 @@ pub mod describe_protected_resource_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeProtectedResourceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeProtectedResourceInput {
                 resource_arn: self.resource_arn,
@@ -3455,27 +3575,27 @@ impl DescribeProtectedResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeProtectedResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeProtectedResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_18 = &_input.resource_arn;
             let input_18 =
                 input_18
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = smithy_http::label::fmt_string(input_18, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_18, false);
             if resource_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 });
@@ -3492,7 +3612,7 @@ impl DescribeProtectedResourceInput {
         fn update_http_builder(
             input: &crate::input::DescribeProtectedResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3501,23 +3621,23 @@ impl DescribeProtectedResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeProtectedResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3540,15 +3660,15 @@ impl DescribeProtectedResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeProtectedResource::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeProtectedResource",
             "backup",
         ));
@@ -3557,10 +3677,10 @@ impl DescribeProtectedResourceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3592,6 +3712,10 @@ pub mod describe_recovery_point_input {
             self.backup_vault_name = Some(input.into());
             self
         }
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
+        /// by names that are unique to the account used to create them and the Amazon Web Services
+        /// Region where they are created. They consist of lowercase letters, numbers, and
+        /// hyphens.</p>
         pub fn set_backup_vault_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3605,6 +3729,8 @@ pub mod describe_recovery_point_input {
             self.recovery_point_arn = Some(input.into());
             self
         }
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example,
+        /// <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
         pub fn set_recovery_point_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3617,7 +3743,7 @@ pub mod describe_recovery_point_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeRecoveryPointInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeRecoveryPointInput {
                 backup_vault_name: self.backup_vault_name,
@@ -3637,27 +3763,27 @@ impl DescribeRecoveryPointInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeRecoveryPoint,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeRecoveryPointInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_19 = &_input.backup_vault_name;
             let input_19 =
                 input_19
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "backup_vault_name",
                         details: "cannot be empty or unset",
                     })?;
-            let backup_vault_name = smithy_http::label::fmt_string(input_19, false);
+            let backup_vault_name = aws_smithy_http::label::fmt_string(input_19, false);
             if backup_vault_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "backup_vault_name",
                     details: "cannot be empty or unset",
                 });
@@ -3666,13 +3792,13 @@ impl DescribeRecoveryPointInput {
             let input_20 =
                 input_20
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "recovery_point_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let recovery_point_arn = smithy_http::label::fmt_string(input_20, false);
+            let recovery_point_arn = aws_smithy_http::label::fmt_string(input_20, false);
             if recovery_point_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "recovery_point_arn",
                     details: "cannot be empty or unset",
                 });
@@ -3690,7 +3816,7 @@ impl DescribeRecoveryPointInput {
         fn update_http_builder(
             input: &crate::input::DescribeRecoveryPointInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3699,23 +3825,23 @@ impl DescribeRecoveryPointInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeRecoveryPointInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3738,15 +3864,15 @@ impl DescribeRecoveryPointInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeRecoveryPoint::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeRecoveryPoint",
             "backup",
         ));
@@ -3755,10 +3881,10 @@ impl DescribeRecoveryPointInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3784,7 +3910,7 @@ pub mod describe_region_settings_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeRegionSettingsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeRegionSettingsInput {})
         }
@@ -3801,16 +3927,16 @@ impl DescribeRegionSettingsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeRegionSettings,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeRegionSettingsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/account-settings").expect("formatting should succeed");
             Ok(())
         }
@@ -3818,7 +3944,7 @@ impl DescribeRegionSettingsInput {
         fn update_http_builder(
             input: &crate::input::DescribeRegionSettingsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3827,23 +3953,23 @@ impl DescribeRegionSettingsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeRegionSettingsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3866,15 +3992,15 @@ impl DescribeRegionSettingsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeRegionSettings::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeRegionSettings",
             "backup",
         ));
@@ -3883,10 +4009,10 @@ impl DescribeRegionSettingsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3915,6 +4041,8 @@ pub mod describe_report_job_input {
             self.report_job_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the report job. A unique, randomly generated, Unicode, UTF-8 encoded
+        /// string that is at most 1,024 bytes long. The report job ID cannot be edited.</p>
         pub fn set_report_job_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3927,7 +4055,7 @@ pub mod describe_report_job_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeReportJobInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeReportJobInput {
                 report_job_id: self.report_job_id,
@@ -3946,27 +4074,27 @@ impl DescribeReportJobInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeReportJob,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeReportJobInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_21 = &_input.report_job_id;
             let input_21 =
                 input_21
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "report_job_id",
                         details: "cannot be empty or unset",
                     })?;
-            let report_job_id = smithy_http::label::fmt_string(input_21, false);
+            let report_job_id = aws_smithy_http::label::fmt_string(input_21, false);
             if report_job_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "report_job_id",
                     details: "cannot be empty or unset",
                 });
@@ -3983,7 +4111,7 @@ impl DescribeReportJobInput {
         fn update_http_builder(
             input: &crate::input::DescribeReportJobInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3992,23 +4120,23 @@ impl DescribeReportJobInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeReportJobInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4031,15 +4159,15 @@ impl DescribeReportJobInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeReportJob::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeReportJob",
             "backup",
         ));
@@ -4048,10 +4176,10 @@ impl DescribeReportJobInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4079,6 +4207,7 @@ pub mod describe_report_plan_input {
             self.report_plan_name = Some(input.into());
             self
         }
+        /// <p>The unique name of a report plan.</p>
         pub fn set_report_plan_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4091,7 +4220,7 @@ pub mod describe_report_plan_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeReportPlanInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeReportPlanInput {
                 report_plan_name: self.report_plan_name,
@@ -4110,27 +4239,27 @@ impl DescribeReportPlanInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeReportPlan,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeReportPlanInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_22 = &_input.report_plan_name;
             let input_22 =
                 input_22
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "report_plan_name",
                         details: "cannot be empty or unset",
                     })?;
-            let report_plan_name = smithy_http::label::fmt_string(input_22, false);
+            let report_plan_name = aws_smithy_http::label::fmt_string(input_22, false);
             if report_plan_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "report_plan_name",
                     details: "cannot be empty or unset",
                 });
@@ -4147,7 +4276,7 @@ impl DescribeReportPlanInput {
         fn update_http_builder(
             input: &crate::input::DescribeReportPlanInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4156,23 +4285,23 @@ impl DescribeReportPlanInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeReportPlanInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4195,15 +4324,15 @@ impl DescribeReportPlanInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeReportPlan::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeReportPlan",
             "backup",
         ));
@@ -4212,10 +4341,10 @@ impl DescribeReportPlanInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4243,6 +4372,7 @@ pub mod describe_restore_job_input {
             self.restore_job_id = Some(input.into());
             self
         }
+        /// <p>Uniquely identifies the job that restores a recovery point.</p>
         pub fn set_restore_job_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4255,7 +4385,7 @@ pub mod describe_restore_job_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeRestoreJobInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeRestoreJobInput {
                 restore_job_id: self.restore_job_id,
@@ -4274,27 +4404,27 @@ impl DescribeRestoreJobInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeRestoreJob,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeRestoreJobInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_23 = &_input.restore_job_id;
             let input_23 =
                 input_23
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "restore_job_id",
                         details: "cannot be empty or unset",
                     })?;
-            let restore_job_id = smithy_http::label::fmt_string(input_23, false);
+            let restore_job_id = aws_smithy_http::label::fmt_string(input_23, false);
             if restore_job_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "restore_job_id",
                     details: "cannot be empty or unset",
                 });
@@ -4311,7 +4441,7 @@ impl DescribeRestoreJobInput {
         fn update_http_builder(
             input: &crate::input::DescribeRestoreJobInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4320,23 +4450,23 @@ impl DescribeRestoreJobInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeRestoreJobInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4359,15 +4489,15 @@ impl DescribeRestoreJobInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeRestoreJob::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeRestoreJob",
             "backup",
         ));
@@ -4376,10 +4506,10 @@ impl DescribeRestoreJobInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4408,6 +4538,7 @@ pub mod disassociate_recovery_point_input {
             self.backup_vault_name = Some(input.into());
             self
         }
+        /// <p>The unique name of an Backup vault.</p>
         pub fn set_backup_vault_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4421,6 +4552,8 @@ pub mod disassociate_recovery_point_input {
             self.recovery_point_arn = Some(input.into());
             self
         }
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies an Backup recovery
+        /// point.</p>
         pub fn set_recovery_point_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4433,7 +4566,7 @@ pub mod disassociate_recovery_point_input {
             self,
         ) -> std::result::Result<
             crate::input::DisassociateRecoveryPointInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DisassociateRecoveryPointInput {
                 backup_vault_name: self.backup_vault_name,
@@ -4454,27 +4587,27 @@ impl DisassociateRecoveryPointInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DisassociateRecoveryPoint,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DisassociateRecoveryPointInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_24 = &_input.backup_vault_name;
             let input_24 =
                 input_24
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "backup_vault_name",
                         details: "cannot be empty or unset",
                     })?;
-            let backup_vault_name = smithy_http::label::fmt_string(input_24, false);
+            let backup_vault_name = aws_smithy_http::label::fmt_string(input_24, false);
             if backup_vault_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "backup_vault_name",
                     details: "cannot be empty or unset",
                 });
@@ -4483,13 +4616,13 @@ impl DisassociateRecoveryPointInput {
             let input_25 =
                 input_25
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "recovery_point_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let recovery_point_arn = smithy_http::label::fmt_string(input_25, false);
+            let recovery_point_arn = aws_smithy_http::label::fmt_string(input_25, false);
             if recovery_point_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "recovery_point_arn",
                     details: "cannot be empty or unset",
                 });
@@ -4507,7 +4640,7 @@ impl DisassociateRecoveryPointInput {
         fn update_http_builder(
             input: &crate::input::DisassociateRecoveryPointInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4516,23 +4649,23 @@ impl DisassociateRecoveryPointInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DisassociateRecoveryPointInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4555,15 +4688,15 @@ impl DisassociateRecoveryPointInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DisassociateRecoveryPoint::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DisassociateRecoveryPoint",
             "backup",
         ));
@@ -4572,10 +4705,10 @@ impl DisassociateRecoveryPointInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4603,6 +4736,7 @@ pub mod export_backup_plan_template_input {
             self.backup_plan_id = Some(input.into());
             self
         }
+        /// <p>Uniquely identifies a backup plan.</p>
         pub fn set_backup_plan_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4615,7 +4749,7 @@ pub mod export_backup_plan_template_input {
             self,
         ) -> std::result::Result<
             crate::input::ExportBackupPlanTemplateInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ExportBackupPlanTemplateInput {
                 backup_plan_id: self.backup_plan_id,
@@ -4635,27 +4769,27 @@ impl ExportBackupPlanTemplateInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ExportBackupPlanTemplate,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ExportBackupPlanTemplateInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_26 = &_input.backup_plan_id;
             let input_26 =
                 input_26
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "backup_plan_id",
                         details: "cannot be empty or unset",
                     })?;
-            let backup_plan_id = smithy_http::label::fmt_string(input_26, false);
+            let backup_plan_id = aws_smithy_http::label::fmt_string(input_26, false);
             if backup_plan_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "backup_plan_id",
                     details: "cannot be empty or unset",
                 });
@@ -4672,7 +4806,7 @@ impl ExportBackupPlanTemplateInput {
         fn update_http_builder(
             input: &crate::input::ExportBackupPlanTemplateInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4681,23 +4815,23 @@ impl ExportBackupPlanTemplateInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ExportBackupPlanTemplateInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4720,15 +4854,15 @@ impl ExportBackupPlanTemplateInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ExportBackupPlanTemplate::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ExportBackupPlanTemplate",
             "backup",
         ));
@@ -4737,10 +4871,10 @@ impl ExportBackupPlanTemplateInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4769,6 +4903,7 @@ pub mod get_backup_plan_input {
             self.backup_plan_id = Some(input.into());
             self
         }
+        /// <p>Uniquely identifies a backup plan.</p>
         pub fn set_backup_plan_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4782,6 +4917,8 @@ pub mod get_backup_plan_input {
             self.version_id = Some(input.into());
             self
         }
+        /// <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes
+        /// long. Version IDs cannot be edited.</p>
         pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version_id = input;
             self
@@ -4789,8 +4926,10 @@ pub mod get_backup_plan_input {
         /// Consumes the builder and constructs a [`GetBackupPlanInput`](crate::input::GetBackupPlanInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetBackupPlanInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetBackupPlanInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetBackupPlanInput {
                 backup_plan_id: self.backup_plan_id,
                 version_id: self.version_id,
@@ -4809,27 +4948,27 @@ impl GetBackupPlanInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetBackupPlan,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetBackupPlanInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_27 = &_input.backup_plan_id;
             let input_27 =
                 input_27
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "backup_plan_id",
                         details: "cannot be empty or unset",
                     })?;
-            let backup_plan_id = smithy_http::label::fmt_string(input_27, false);
+            let backup_plan_id = aws_smithy_http::label::fmt_string(input_27, false);
             if backup_plan_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "backup_plan_id",
                     details: "cannot be empty or unset",
                 });
@@ -4843,16 +4982,16 @@ impl GetBackupPlanInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::GetBackupPlanInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_28) = &_input.version_id {
-                query.push_kv("versionId", &smithy_http::query::fmt_string(&inner_28));
+                query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_28));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::GetBackupPlanInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4862,23 +5001,23 @@ impl GetBackupPlanInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetBackupPlanInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4901,25 +5040,27 @@ impl GetBackupPlanInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::GetBackupPlan::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "GetBackupPlan",
-                    "backup",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetBackupPlan::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetBackupPlan",
+            "backup",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4947,6 +5088,7 @@ pub mod get_backup_plan_from_json_input {
             self.backup_plan_template_json = Some(input.into());
             self
         }
+        /// <p>A customer-supplied backup plan document in JSON format.</p>
         pub fn set_backup_plan_template_json(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4959,7 +5101,7 @@ pub mod get_backup_plan_from_json_input {
             self,
         ) -> std::result::Result<
             crate::input::GetBackupPlanFromJsonInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetBackupPlanFromJsonInput {
                 backup_plan_template_json: self.backup_plan_template_json,
@@ -4978,16 +5120,16 @@ impl GetBackupPlanFromJsonInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetBackupPlanFromJSON,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetBackupPlanFromJsonInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/backup/template/json/toPlan").expect("formatting should succeed");
             Ok(())
         }
@@ -4995,7 +5137,7 @@ impl GetBackupPlanFromJsonInput {
         fn update_http_builder(
             input: &crate::input::GetBackupPlanFromJsonInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5004,27 +5146,29 @@ impl GetBackupPlanFromJsonInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetBackupPlanFromJsonInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_backup_plan_from_json(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5047,15 +5191,15 @@ impl GetBackupPlanFromJsonInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetBackupPlanFromJSON::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetBackupPlanFromJSON",
             "backup",
         ));
@@ -5064,10 +5208,10 @@ impl GetBackupPlanFromJsonInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5095,6 +5239,7 @@ pub mod get_backup_plan_from_template_input {
             self.backup_plan_template_id = Some(input.into());
             self
         }
+        /// <p>Uniquely identifies a stored backup plan template.</p>
         pub fn set_backup_plan_template_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5107,7 +5252,7 @@ pub mod get_backup_plan_from_template_input {
             self,
         ) -> std::result::Result<
             crate::input::GetBackupPlanFromTemplateInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetBackupPlanFromTemplateInput {
                 backup_plan_template_id: self.backup_plan_template_id,
@@ -5127,27 +5272,27 @@ impl GetBackupPlanFromTemplateInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetBackupPlanFromTemplate,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetBackupPlanFromTemplateInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_29 = &_input.backup_plan_template_id;
             let input_29 =
                 input_29
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "backup_plan_template_id",
                         details: "cannot be empty or unset",
                     })?;
-            let backup_plan_template_id = smithy_http::label::fmt_string(input_29, false);
+            let backup_plan_template_id = aws_smithy_http::label::fmt_string(input_29, false);
             if backup_plan_template_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "backup_plan_template_id",
                     details: "cannot be empty or unset",
                 });
@@ -5164,7 +5309,7 @@ impl GetBackupPlanFromTemplateInput {
         fn update_http_builder(
             input: &crate::input::GetBackupPlanFromTemplateInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5173,23 +5318,23 @@ impl GetBackupPlanFromTemplateInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetBackupPlanFromTemplateInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5212,15 +5357,15 @@ impl GetBackupPlanFromTemplateInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetBackupPlanFromTemplate::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetBackupPlanFromTemplate",
             "backup",
         ));
@@ -5229,10 +5374,10 @@ impl GetBackupPlanFromTemplateInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5261,6 +5406,7 @@ pub mod get_backup_selection_input {
             self.backup_plan_id = Some(input.into());
             self
         }
+        /// <p>Uniquely identifies a backup plan.</p>
         pub fn set_backup_plan_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5274,6 +5420,8 @@ pub mod get_backup_selection_input {
             self.selection_id = Some(input.into());
             self
         }
+        /// <p>Uniquely identifies the body of a request to assign a set of resources to a backup
+        /// plan.</p>
         pub fn set_selection_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.selection_id = input;
             self
@@ -5283,7 +5431,7 @@ pub mod get_backup_selection_input {
             self,
         ) -> std::result::Result<
             crate::input::GetBackupSelectionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetBackupSelectionInput {
                 backup_plan_id: self.backup_plan_id,
@@ -5303,27 +5451,27 @@ impl GetBackupSelectionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetBackupSelection,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetBackupSelectionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_30 = &_input.backup_plan_id;
             let input_30 =
                 input_30
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "backup_plan_id",
                         details: "cannot be empty or unset",
                     })?;
-            let backup_plan_id = smithy_http::label::fmt_string(input_30, false);
+            let backup_plan_id = aws_smithy_http::label::fmt_string(input_30, false);
             if backup_plan_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "backup_plan_id",
                     details: "cannot be empty or unset",
                 });
@@ -5332,13 +5480,13 @@ impl GetBackupSelectionInput {
             let input_31 =
                 input_31
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "selection_id",
                         details: "cannot be empty or unset",
                     })?;
-            let selection_id = smithy_http::label::fmt_string(input_31, false);
+            let selection_id = aws_smithy_http::label::fmt_string(input_31, false);
             if selection_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "selection_id",
                     details: "cannot be empty or unset",
                 });
@@ -5356,7 +5504,7 @@ impl GetBackupSelectionInput {
         fn update_http_builder(
             input: &crate::input::GetBackupSelectionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5365,23 +5513,23 @@ impl GetBackupSelectionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetBackupSelectionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5404,15 +5552,15 @@ impl GetBackupSelectionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetBackupSelection::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetBackupSelection",
             "backup",
         ));
@@ -5421,10 +5569,10 @@ impl GetBackupSelectionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5455,6 +5603,10 @@ pub mod get_backup_vault_access_policy_input {
             self.backup_vault_name = Some(input.into());
             self
         }
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
+        /// by names that are unique to the account used to create them and the Amazon Web Services
+        /// Region where they are created. They consist of lowercase letters, numbers, and
+        /// hyphens.</p>
         pub fn set_backup_vault_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5467,7 +5619,7 @@ pub mod get_backup_vault_access_policy_input {
             self,
         ) -> std::result::Result<
             crate::input::GetBackupVaultAccessPolicyInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetBackupVaultAccessPolicyInput {
                 backup_vault_name: self.backup_vault_name,
@@ -5487,27 +5639,27 @@ impl GetBackupVaultAccessPolicyInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetBackupVaultAccessPolicy,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetBackupVaultAccessPolicyInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_32 = &_input.backup_vault_name;
             let input_32 =
                 input_32
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "backup_vault_name",
                         details: "cannot be empty or unset",
                     })?;
-            let backup_vault_name = smithy_http::label::fmt_string(input_32, false);
+            let backup_vault_name = aws_smithy_http::label::fmt_string(input_32, false);
             if backup_vault_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "backup_vault_name",
                     details: "cannot be empty or unset",
                 });
@@ -5524,7 +5676,7 @@ impl GetBackupVaultAccessPolicyInput {
         fn update_http_builder(
             input: &crate::input::GetBackupVaultAccessPolicyInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5533,23 +5685,23 @@ impl GetBackupVaultAccessPolicyInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetBackupVaultAccessPolicyInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5572,15 +5724,15 @@ impl GetBackupVaultAccessPolicyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetBackupVaultAccessPolicy::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetBackupVaultAccessPolicy",
             "backup",
         ));
@@ -5589,10 +5741,10 @@ impl GetBackupVaultAccessPolicyInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5623,6 +5775,10 @@ pub mod get_backup_vault_notifications_input {
             self.backup_vault_name = Some(input.into());
             self
         }
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
+        /// by names that are unique to the account used to create them and the Amazon Web Services
+        /// Region where they are created. They consist of lowercase letters, numbers, and
+        /// hyphens.</p>
         pub fn set_backup_vault_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5635,7 +5791,7 @@ pub mod get_backup_vault_notifications_input {
             self,
         ) -> std::result::Result<
             crate::input::GetBackupVaultNotificationsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetBackupVaultNotificationsInput {
                 backup_vault_name: self.backup_vault_name,
@@ -5655,27 +5811,27 @@ impl GetBackupVaultNotificationsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetBackupVaultNotifications,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetBackupVaultNotificationsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_33 = &_input.backup_vault_name;
             let input_33 =
                 input_33
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "backup_vault_name",
                         details: "cannot be empty or unset",
                     })?;
-            let backup_vault_name = smithy_http::label::fmt_string(input_33, false);
+            let backup_vault_name = aws_smithy_http::label::fmt_string(input_33, false);
             if backup_vault_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "backup_vault_name",
                     details: "cannot be empty or unset",
                 });
@@ -5692,7 +5848,7 @@ impl GetBackupVaultNotificationsInput {
         fn update_http_builder(
             input: &crate::input::GetBackupVaultNotificationsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5701,23 +5857,23 @@ impl GetBackupVaultNotificationsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetBackupVaultNotificationsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5740,15 +5896,15 @@ impl GetBackupVaultNotificationsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetBackupVaultNotifications::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetBackupVaultNotifications",
             "backup",
         ));
@@ -5757,10 +5913,10 @@ impl GetBackupVaultNotificationsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5792,6 +5948,10 @@ pub mod get_recovery_point_restore_metadata_input {
             self.backup_vault_name = Some(input.into());
             self
         }
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
+        /// by names that are unique to the account used to create them and the Amazon Web Services
+        /// Region where they are created. They consist of lowercase letters, numbers, and
+        /// hyphens.</p>
         pub fn set_backup_vault_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5805,6 +5965,8 @@ pub mod get_recovery_point_restore_metadata_input {
             self.recovery_point_arn = Some(input.into());
             self
         }
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example,
+        /// <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
         pub fn set_recovery_point_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5817,7 +5979,7 @@ pub mod get_recovery_point_restore_metadata_input {
             self,
         ) -> std::result::Result<
             crate::input::GetRecoveryPointRestoreMetadataInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetRecoveryPointRestoreMetadataInput {
                 backup_vault_name: self.backup_vault_name,
@@ -5838,27 +6000,27 @@ impl GetRecoveryPointRestoreMetadataInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetRecoveryPointRestoreMetadata,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetRecoveryPointRestoreMetadataInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_34 = &_input.backup_vault_name;
             let input_34 =
                 input_34
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "backup_vault_name",
                         details: "cannot be empty or unset",
                     })?;
-            let backup_vault_name = smithy_http::label::fmt_string(input_34, false);
+            let backup_vault_name = aws_smithy_http::label::fmt_string(input_34, false);
             if backup_vault_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "backup_vault_name",
                     details: "cannot be empty or unset",
                 });
@@ -5867,13 +6029,13 @@ impl GetRecoveryPointRestoreMetadataInput {
             let input_35 =
                 input_35
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "recovery_point_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let recovery_point_arn = smithy_http::label::fmt_string(input_35, false);
+            let recovery_point_arn = aws_smithy_http::label::fmt_string(input_35, false);
             if recovery_point_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "recovery_point_arn",
                     details: "cannot be empty or unset",
                 });
@@ -5885,7 +6047,7 @@ impl GetRecoveryPointRestoreMetadataInput {
         fn update_http_builder(
             input: &crate::input::GetRecoveryPointRestoreMetadataInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5894,23 +6056,23 @@ impl GetRecoveryPointRestoreMetadataInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetRecoveryPointRestoreMetadataInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5933,15 +6095,15 @@ impl GetRecoveryPointRestoreMetadataInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetRecoveryPointRestoreMetadata::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetRecoveryPointRestoreMetadata",
             "backup",
         ));
@@ -5950,10 +6112,10 @@ impl GetRecoveryPointRestoreMetadataInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5979,7 +6141,7 @@ pub mod get_supported_resource_types_input {
             self,
         ) -> std::result::Result<
             crate::input::GetSupportedResourceTypesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetSupportedResourceTypesInput {})
         }
@@ -5997,16 +6159,16 @@ impl GetSupportedResourceTypesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetSupportedResourceTypes,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetSupportedResourceTypesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/supported-resource-types").expect("formatting should succeed");
             Ok(())
         }
@@ -6014,7 +6176,7 @@ impl GetSupportedResourceTypesInput {
         fn update_http_builder(
             input: &crate::input::GetSupportedResourceTypesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6023,23 +6185,23 @@ impl GetSupportedResourceTypesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetSupportedResourceTypesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6062,15 +6224,15 @@ impl GetSupportedResourceTypesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetSupportedResourceTypes::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetSupportedResourceTypes",
             "backup",
         ));
@@ -6079,10 +6241,10 @@ impl GetSupportedResourceTypesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6107,8 +6269,8 @@ pub mod list_backup_jobs_input {
         pub(crate) by_resource_arn: std::option::Option<std::string::String>,
         pub(crate) by_state: std::option::Option<crate::model::BackupJobState>,
         pub(crate) by_backup_vault_name: std::option::Option<std::string::String>,
-        pub(crate) by_created_before: std::option::Option<smithy_types::Instant>,
-        pub(crate) by_created_after: std::option::Option<smithy_types::Instant>,
+        pub(crate) by_created_before: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) by_created_after: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) by_resource_type: std::option::Option<std::string::String>,
         pub(crate) by_account_id: std::option::Option<std::string::String>,
     }
@@ -6121,6 +6283,10 @@ pub mod list_backup_jobs_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The next item following a partial list of returned items. For example, if a request is
+        /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
+        /// to return more items in your list starting at the location pointed to by the next
+        /// token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6130,6 +6296,7 @@ pub mod list_backup_jobs_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of items to be returned.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -6140,6 +6307,8 @@ pub mod list_backup_jobs_input {
             self.by_resource_arn = Some(input.into());
             self
         }
+        /// <p>Returns only backup jobs that match the specified resource Amazon Resource Name
+        /// (ARN).</p>
         pub fn set_by_resource_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6152,6 +6321,7 @@ pub mod list_backup_jobs_input {
             self.by_state = Some(input);
             self
         }
+        /// <p>Returns only backup jobs that are in the specified state.</p>
         pub fn set_by_state(
             mut self,
             input: std::option::Option<crate::model::BackupJobState>,
@@ -6167,6 +6337,10 @@ pub mod list_backup_jobs_input {
             self.by_backup_vault_name = Some(input.into());
             self
         }
+        /// <p>Returns only backup jobs that will be stored in the specified backup vault. Backup
+        /// vaults are identified by names that are unique to the account used to create them and the
+        /// Amazon Web Services Region where they are created. They consist of lowercase letters,
+        /// numbers, and hyphens.</p>
         pub fn set_by_backup_vault_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6175,25 +6349,27 @@ pub mod list_backup_jobs_input {
             self
         }
         /// <p>Returns only backup jobs that were created before the specified date.</p>
-        pub fn by_created_before(mut self, input: smithy_types::Instant) -> Self {
+        pub fn by_created_before(mut self, input: aws_smithy_types::Instant) -> Self {
             self.by_created_before = Some(input);
             self
         }
+        /// <p>Returns only backup jobs that were created before the specified date.</p>
         pub fn set_by_created_before(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.by_created_before = input;
             self
         }
         /// <p>Returns only backup jobs that were created after the specified date.</p>
-        pub fn by_created_after(mut self, input: smithy_types::Instant) -> Self {
+        pub fn by_created_after(mut self, input: aws_smithy_types::Instant) -> Self {
             self.by_created_after = Some(input);
             self
         }
+        /// <p>Returns only backup jobs that were created after the specified date.</p>
         pub fn set_by_created_after(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.by_created_after = input;
             self
@@ -6233,6 +6409,37 @@ pub mod list_backup_jobs_input {
             self.by_resource_type = Some(input.into());
             self
         }
+        /// <p>Returns only backup jobs for the specified resources:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>DynamoDB</code> for Amazon DynamoDB</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>EBS</code> for Amazon Elastic Block Store</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>EC2</code> for Amazon Elastic Compute Cloud</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>EFS</code> for Amazon Elastic File System</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>RDS</code> for Amazon Relational Database Service</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Aurora</code> for Amazon Aurora</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Storage Gateway</code> for Storage Gateway</p>
+        /// </li>
+        /// </ul>
         pub fn set_by_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6248,6 +6455,10 @@ pub mod list_backup_jobs_input {
             self.by_account_id = Some(input.into());
             self
         }
+        /// <p>The account ID to list the jobs from. Returns only backup jobs associated with the
+        /// specified account ID.</p>
+        /// <p>If used from an Organizations management account, passing <code>*</code> returns
+        /// all jobs across the organization.</p>
         pub fn set_by_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6260,7 +6471,7 @@ pub mod list_backup_jobs_input {
             self,
         ) -> std::result::Result<
             crate::input::ListBackupJobsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListBackupJobsInput {
                 next_token: self.next_token,
@@ -6287,72 +6498,78 @@ impl ListBackupJobsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListBackupJobs,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListBackupJobsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/backup-jobs").expect("formatting should succeed");
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListBackupJobsInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_36) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_36));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_36));
             }
             if let Some(inner_37) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(*inner_37).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_37).encode(),
                 );
             }
             if let Some(inner_38) = &_input.by_resource_arn {
-                query.push_kv("resourceArn", &smithy_http::query::fmt_string(&inner_38));
+                query.push_kv(
+                    "resourceArn",
+                    &aws_smithy_http::query::fmt_string(&inner_38),
+                );
             }
             if let Some(inner_39) = &_input.by_state {
-                query.push_kv("state", &smithy_http::query::fmt_string(&inner_39));
+                query.push_kv("state", &aws_smithy_http::query::fmt_string(&inner_39));
             }
             if let Some(inner_40) = &_input.by_backup_vault_name {
                 query.push_kv(
                     "backupVaultName",
-                    &smithy_http::query::fmt_string(&inner_40),
+                    &aws_smithy_http::query::fmt_string(&inner_40),
                 );
             }
             if let Some(inner_41) = &_input.by_created_before {
                 query.push_kv(
                     "createdBefore",
-                    &smithy_http::query::fmt_timestamp(
+                    &aws_smithy_http::query::fmt_timestamp(
                         inner_41,
-                        smithy_types::instant::Format::DateTime,
+                        aws_smithy_types::instant::Format::DateTime,
                     ),
                 );
             }
             if let Some(inner_42) = &_input.by_created_after {
                 query.push_kv(
                     "createdAfter",
-                    &smithy_http::query::fmt_timestamp(
+                    &aws_smithy_http::query::fmt_timestamp(
                         inner_42,
-                        smithy_types::instant::Format::DateTime,
+                        aws_smithy_types::instant::Format::DateTime,
                     ),
                 );
             }
             if let Some(inner_43) = &_input.by_resource_type {
-                query.push_kv("resourceType", &smithy_http::query::fmt_string(&inner_43));
+                query.push_kv(
+                    "resourceType",
+                    &aws_smithy_http::query::fmt_string(&inner_43),
+                );
             }
             if let Some(inner_44) = &_input.by_account_id {
-                query.push_kv("accountId", &smithy_http::query::fmt_string(&inner_44));
+                query.push_kv("accountId", &aws_smithy_http::query::fmt_string(&inner_44));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::ListBackupJobsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6362,23 +6579,23 @@ impl ListBackupJobsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListBackupJobsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6401,15 +6618,15 @@ impl ListBackupJobsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListBackupJobs::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListBackupJobs",
             "backup",
         ));
@@ -6418,10 +6635,10 @@ impl ListBackupJobsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6454,6 +6671,10 @@ pub mod list_backup_plans_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The next item following a partial list of returned items. For example, if a request is
+        /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
+        /// to return more items in your list starting at the location pointed to by the next
+        /// token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6463,6 +6684,7 @@ pub mod list_backup_plans_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of items to be returned.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -6473,6 +6695,8 @@ pub mod list_backup_plans_input {
             self.include_deleted = Some(input);
             self
         }
+        /// <p>A Boolean value with a default value of <code>FALSE</code> that returns deleted backup
+        /// plans when set to <code>TRUE</code>.</p>
         pub fn set_include_deleted(mut self, input: std::option::Option<bool>) -> Self {
             self.include_deleted = input;
             self
@@ -6482,7 +6706,7 @@ pub mod list_backup_plans_input {
             self,
         ) -> std::result::Result<
             crate::input::ListBackupPlansInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListBackupPlansInput {
                 next_token: self.next_token,
@@ -6503,34 +6727,34 @@ impl ListBackupPlansInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListBackupPlans,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListBackupPlansInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/backup/plans").expect("formatting should succeed");
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListBackupPlansInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_45) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_45));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_45));
             }
             if let Some(inner_46) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(*inner_46).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_46).encode(),
                 );
             }
             if let Some(inner_47) = &_input.include_deleted {
                 query.push_kv(
                     "includeDeleted",
-                    &smithy_types::primitive::Encoder::from(*inner_47).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_47).encode(),
                 );
             }
         }
@@ -6538,7 +6762,7 @@ impl ListBackupPlansInput {
         fn update_http_builder(
             input: &crate::input::ListBackupPlansInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6548,23 +6772,23 @@ impl ListBackupPlansInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListBackupPlansInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6587,15 +6811,15 @@ impl ListBackupPlansInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListBackupPlans::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListBackupPlans",
             "backup",
         ));
@@ -6604,10 +6828,10 @@ impl ListBackupPlansInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6639,6 +6863,10 @@ pub mod list_backup_plan_templates_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The next item following a partial list of returned items. For example, if a request is
+        /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
+        /// to return more items in your list starting at the location pointed to by the next
+        /// token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6648,6 +6876,7 @@ pub mod list_backup_plan_templates_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of items to be returned.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -6657,7 +6886,7 @@ pub mod list_backup_plan_templates_input {
             self,
         ) -> std::result::Result<
             crate::input::ListBackupPlanTemplatesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListBackupPlanTemplatesInput {
                 next_token: self.next_token,
@@ -6678,28 +6907,28 @@ impl ListBackupPlanTemplatesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListBackupPlanTemplates,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListBackupPlanTemplatesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/backup/template/plans").expect("formatting should succeed");
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListBackupPlanTemplatesInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_48) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_48));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_48));
             }
             if let Some(inner_49) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(*inner_49).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_49).encode(),
                 );
             }
         }
@@ -6707,7 +6936,7 @@ impl ListBackupPlanTemplatesInput {
         fn update_http_builder(
             input: &crate::input::ListBackupPlanTemplatesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6717,23 +6946,23 @@ impl ListBackupPlanTemplatesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListBackupPlanTemplatesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6756,15 +6985,15 @@ impl ListBackupPlanTemplatesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListBackupPlanTemplates::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListBackupPlanTemplates",
             "backup",
         ));
@@ -6773,10 +7002,10 @@ impl ListBackupPlanTemplatesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6806,6 +7035,7 @@ pub mod list_backup_plan_versions_input {
             self.backup_plan_id = Some(input.into());
             self
         }
+        /// <p>Uniquely identifies a backup plan.</p>
         pub fn set_backup_plan_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6821,6 +7051,10 @@ pub mod list_backup_plan_versions_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The next item following a partial list of returned items. For example, if a request is
+        /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
+        /// to return more items in your list starting at the location pointed to by the next
+        /// token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6830,6 +7064,7 @@ pub mod list_backup_plan_versions_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of items to be returned.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -6839,7 +7074,7 @@ pub mod list_backup_plan_versions_input {
             self,
         ) -> std::result::Result<
             crate::input::ListBackupPlanVersionsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListBackupPlanVersionsInput {
                 backup_plan_id: self.backup_plan_id,
@@ -6860,27 +7095,27 @@ impl ListBackupPlanVersionsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListBackupPlanVersions,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListBackupPlanVersionsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_50 = &_input.backup_plan_id;
             let input_50 =
                 input_50
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "backup_plan_id",
                         details: "cannot be empty or unset",
                     })?;
-            let backup_plan_id = smithy_http::label::fmt_string(input_50, false);
+            let backup_plan_id = aws_smithy_http::label::fmt_string(input_50, false);
             if backup_plan_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "backup_plan_id",
                     details: "cannot be empty or unset",
                 });
@@ -6894,14 +7129,14 @@ impl ListBackupPlanVersionsInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListBackupPlanVersionsInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_51) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_51));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_51));
             }
             if let Some(inner_52) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(*inner_52).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_52).encode(),
                 );
             }
         }
@@ -6909,7 +7144,7 @@ impl ListBackupPlanVersionsInput {
         fn update_http_builder(
             input: &crate::input::ListBackupPlanVersionsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6919,23 +7154,23 @@ impl ListBackupPlanVersionsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListBackupPlanVersionsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6958,15 +7193,15 @@ impl ListBackupPlanVersionsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListBackupPlanVersions::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListBackupPlanVersions",
             "backup",
         ));
@@ -6975,10 +7210,10 @@ impl ListBackupPlanVersionsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7008,6 +7243,7 @@ pub mod list_backup_selections_input {
             self.backup_plan_id = Some(input.into());
             self
         }
+        /// <p>Uniquely identifies a backup plan.</p>
         pub fn set_backup_plan_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7023,6 +7259,10 @@ pub mod list_backup_selections_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The next item following a partial list of returned items. For example, if a request is
+        /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
+        /// to return more items in your list starting at the location pointed to by the next
+        /// token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7032,6 +7272,7 @@ pub mod list_backup_selections_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of items to be returned.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -7041,7 +7282,7 @@ pub mod list_backup_selections_input {
             self,
         ) -> std::result::Result<
             crate::input::ListBackupSelectionsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListBackupSelectionsInput {
                 backup_plan_id: self.backup_plan_id,
@@ -7062,27 +7303,27 @@ impl ListBackupSelectionsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListBackupSelections,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListBackupSelectionsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_53 = &_input.backup_plan_id;
             let input_53 =
                 input_53
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "backup_plan_id",
                         details: "cannot be empty or unset",
                     })?;
-            let backup_plan_id = smithy_http::label::fmt_string(input_53, false);
+            let backup_plan_id = aws_smithy_http::label::fmt_string(input_53, false);
             if backup_plan_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "backup_plan_id",
                     details: "cannot be empty or unset",
                 });
@@ -7096,14 +7337,14 @@ impl ListBackupSelectionsInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListBackupSelectionsInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_54) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_54));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_54));
             }
             if let Some(inner_55) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(*inner_55).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_55).encode(),
                 );
             }
         }
@@ -7111,7 +7352,7 @@ impl ListBackupSelectionsInput {
         fn update_http_builder(
             input: &crate::input::ListBackupSelectionsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7121,23 +7362,23 @@ impl ListBackupSelectionsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListBackupSelectionsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7160,15 +7401,15 @@ impl ListBackupSelectionsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListBackupSelections::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListBackupSelections",
             "backup",
         ));
@@ -7177,10 +7418,10 @@ impl ListBackupSelectionsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7212,6 +7453,10 @@ pub mod list_backup_vaults_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The next item following a partial list of returned items. For example, if a request is
+        /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
+        /// to return more items in your list starting at the location pointed to by the next
+        /// token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7221,6 +7466,7 @@ pub mod list_backup_vaults_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of items to be returned.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -7230,7 +7476,7 @@ pub mod list_backup_vaults_input {
             self,
         ) -> std::result::Result<
             crate::input::ListBackupVaultsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListBackupVaultsInput {
                 next_token: self.next_token,
@@ -7250,28 +7496,28 @@ impl ListBackupVaultsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListBackupVaults,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListBackupVaultsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/backup-vaults").expect("formatting should succeed");
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListBackupVaultsInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_56) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_56));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_56));
             }
             if let Some(inner_57) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(*inner_57).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_57).encode(),
                 );
             }
         }
@@ -7279,7 +7525,7 @@ impl ListBackupVaultsInput {
         fn update_http_builder(
             input: &crate::input::ListBackupVaultsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7289,23 +7535,23 @@ impl ListBackupVaultsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListBackupVaultsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7328,15 +7574,15 @@ impl ListBackupVaultsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListBackupVaults::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListBackupVaults",
             "backup",
         ));
@@ -7345,10 +7591,10 @@ impl ListBackupVaultsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7372,8 +7618,8 @@ pub mod list_copy_jobs_input {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) by_resource_arn: std::option::Option<std::string::String>,
         pub(crate) by_state: std::option::Option<crate::model::CopyJobState>,
-        pub(crate) by_created_before: std::option::Option<smithy_types::Instant>,
-        pub(crate) by_created_after: std::option::Option<smithy_types::Instant>,
+        pub(crate) by_created_before: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) by_created_after: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) by_resource_type: std::option::Option<std::string::String>,
         pub(crate) by_destination_vault_arn: std::option::Option<std::string::String>,
         pub(crate) by_account_id: std::option::Option<std::string::String>,
@@ -7386,6 +7632,9 @@ pub mod list_copy_jobs_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The next item following a partial list of returned items. For example, if a request is
+        /// made to return maxResults number of items, NextToken allows you to return more items in
+        /// your list starting at the location pointed to by the next token. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7395,6 +7644,7 @@ pub mod list_copy_jobs_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of items to be returned.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -7405,6 +7655,8 @@ pub mod list_copy_jobs_input {
             self.by_resource_arn = Some(input.into());
             self
         }
+        /// <p>Returns only copy jobs that match the specified resource Amazon Resource Name (ARN).
+        /// </p>
         pub fn set_by_resource_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7417,6 +7669,7 @@ pub mod list_copy_jobs_input {
             self.by_state = Some(input);
             self
         }
+        /// <p>Returns only copy jobs that are in the specified state.</p>
         pub fn set_by_state(
             mut self,
             input: std::option::Option<crate::model::CopyJobState>,
@@ -7425,25 +7678,27 @@ pub mod list_copy_jobs_input {
             self
         }
         /// <p>Returns only copy jobs that were created before the specified date.</p>
-        pub fn by_created_before(mut self, input: smithy_types::Instant) -> Self {
+        pub fn by_created_before(mut self, input: aws_smithy_types::Instant) -> Self {
             self.by_created_before = Some(input);
             self
         }
+        /// <p>Returns only copy jobs that were created before the specified date.</p>
         pub fn set_by_created_before(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.by_created_before = input;
             self
         }
         /// <p>Returns only copy jobs that were created after the specified date.</p>
-        pub fn by_created_after(mut self, input: smithy_types::Instant) -> Self {
+        pub fn by_created_after(mut self, input: aws_smithy_types::Instant) -> Self {
             self.by_created_after = Some(input);
             self
         }
+        /// <p>Returns only copy jobs that were created after the specified date.</p>
         pub fn set_by_created_after(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.by_created_after = input;
             self
@@ -7483,6 +7738,37 @@ pub mod list_copy_jobs_input {
             self.by_resource_type = Some(input.into());
             self
         }
+        /// <p>Returns only backup jobs for the specified resources:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>DynamoDB</code> for Amazon DynamoDB</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>EBS</code> for Amazon Elastic Block Store</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>EC2</code> for Amazon Elastic Compute Cloud</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>EFS</code> for Amazon Elastic File System</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>RDS</code> for Amazon Relational Database Service</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Aurora</code> for Amazon Aurora</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Storage Gateway</code> for Storage Gateway</p>
+        /// </li>
+        /// </ul>
         pub fn set_by_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7497,6 +7783,9 @@ pub mod list_copy_jobs_input {
             self.by_destination_vault_arn = Some(input.into());
             self
         }
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a source backup vault to copy
+        /// from; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.
+        /// </p>
         pub fn set_by_destination_vault_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7510,6 +7799,8 @@ pub mod list_copy_jobs_input {
             self.by_account_id = Some(input.into());
             self
         }
+        /// <p>The account ID to list the jobs from. Returns only copy jobs associated with the
+        /// specified account ID.</p>
         pub fn set_by_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7520,8 +7811,10 @@ pub mod list_copy_jobs_input {
         /// Consumes the builder and constructs a [`ListCopyJobsInput`](crate::input::ListCopyJobsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListCopyJobsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListCopyJobsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListCopyJobsInput {
                 next_token: self.next_token,
                 max_results: self.max_results,
@@ -7547,72 +7840,78 @@ impl ListCopyJobsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListCopyJobs,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListCopyJobsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/copy-jobs").expect("formatting should succeed");
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListCopyJobsInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_58) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_58));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_58));
             }
             if let Some(inner_59) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(*inner_59).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_59).encode(),
                 );
             }
             if let Some(inner_60) = &_input.by_resource_arn {
-                query.push_kv("resourceArn", &smithy_http::query::fmt_string(&inner_60));
+                query.push_kv(
+                    "resourceArn",
+                    &aws_smithy_http::query::fmt_string(&inner_60),
+                );
             }
             if let Some(inner_61) = &_input.by_state {
-                query.push_kv("state", &smithy_http::query::fmt_string(&inner_61));
+                query.push_kv("state", &aws_smithy_http::query::fmt_string(&inner_61));
             }
             if let Some(inner_62) = &_input.by_created_before {
                 query.push_kv(
                     "createdBefore",
-                    &smithy_http::query::fmt_timestamp(
+                    &aws_smithy_http::query::fmt_timestamp(
                         inner_62,
-                        smithy_types::instant::Format::DateTime,
+                        aws_smithy_types::instant::Format::DateTime,
                     ),
                 );
             }
             if let Some(inner_63) = &_input.by_created_after {
                 query.push_kv(
                     "createdAfter",
-                    &smithy_http::query::fmt_timestamp(
+                    &aws_smithy_http::query::fmt_timestamp(
                         inner_63,
-                        smithy_types::instant::Format::DateTime,
+                        aws_smithy_types::instant::Format::DateTime,
                     ),
                 );
             }
             if let Some(inner_64) = &_input.by_resource_type {
-                query.push_kv("resourceType", &smithy_http::query::fmt_string(&inner_64));
+                query.push_kv(
+                    "resourceType",
+                    &aws_smithy_http::query::fmt_string(&inner_64),
+                );
             }
             if let Some(inner_65) = &_input.by_destination_vault_arn {
                 query.push_kv(
                     "destinationVaultArn",
-                    &smithy_http::query::fmt_string(&inner_65),
+                    &aws_smithy_http::query::fmt_string(&inner_65),
                 );
             }
             if let Some(inner_66) = &_input.by_account_id {
-                query.push_kv("accountId", &smithy_http::query::fmt_string(&inner_66));
+                query.push_kv("accountId", &aws_smithy_http::query::fmt_string(&inner_66));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::ListCopyJobsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7622,23 +7921,23 @@ impl ListCopyJobsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListCopyJobsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7661,25 +7960,27 @@ impl ListCopyJobsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListCopyJobs::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ListCopyJobs",
-                    "backup",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListCopyJobs::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListCopyJobs",
+            "backup",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7709,6 +8010,8 @@ pub mod list_frameworks_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The number of desired results from 1 to 1000. Optional. If unspecified, the query will
+        /// return 1 MB of data.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -7719,6 +8022,8 @@ pub mod list_frameworks_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>An identifier that was returned from the previous call to this operation, which can be
+        /// used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7728,7 +8033,7 @@ pub mod list_frameworks_input {
             self,
         ) -> std::result::Result<
             crate::input::ListFrameworksInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListFrameworksInput {
                 max_results: self.max_results,
@@ -7748,36 +8053,36 @@ impl ListFrameworksInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListFrameworks,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListFrameworksInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/audit/frameworks").expect("formatting should succeed");
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListFrameworksInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_67) = &_input.max_results {
                 query.push_kv(
                     "MaxResults",
-                    &smithy_types::primitive::Encoder::from(*inner_67).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_67).encode(),
                 );
             }
             if let Some(inner_68) = &_input.next_token {
-                query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_68));
+                query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_68));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::ListFrameworksInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7787,23 +8092,23 @@ impl ListFrameworksInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListFrameworksInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7826,15 +8131,15 @@ impl ListFrameworksInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListFrameworks::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListFrameworks",
             "backup",
         ));
@@ -7843,10 +8148,10 @@ impl ListFrameworksInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7878,6 +8183,10 @@ pub mod list_protected_resources_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The next item following a partial list of returned items. For example, if a request is
+        /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
+        /// to return more items in your list starting at the location pointed to by the next
+        /// token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7887,6 +8196,7 @@ pub mod list_protected_resources_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of items to be returned.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -7896,7 +8206,7 @@ pub mod list_protected_resources_input {
             self,
         ) -> std::result::Result<
             crate::input::ListProtectedResourcesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListProtectedResourcesInput {
                 next_token: self.next_token,
@@ -7916,28 +8226,28 @@ impl ListProtectedResourcesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListProtectedResources,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListProtectedResourcesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/resources").expect("formatting should succeed");
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListProtectedResourcesInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_69) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_69));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_69));
             }
             if let Some(inner_70) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(*inner_70).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_70).encode(),
                 );
             }
         }
@@ -7945,7 +8255,7 @@ impl ListProtectedResourcesInput {
         fn update_http_builder(
             input: &crate::input::ListProtectedResourcesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7955,23 +8265,23 @@ impl ListProtectedResourcesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListProtectedResourcesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7994,15 +8304,15 @@ impl ListProtectedResourcesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListProtectedResources::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListProtectedResources",
             "backup",
         ));
@@ -8011,10 +8321,10 @@ impl ListProtectedResourcesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8040,8 +8350,8 @@ pub mod list_recovery_points_by_backup_vault_input {
         pub(crate) by_resource_arn: std::option::Option<std::string::String>,
         pub(crate) by_resource_type: std::option::Option<std::string::String>,
         pub(crate) by_backup_plan_id: std::option::Option<std::string::String>,
-        pub(crate) by_created_before: std::option::Option<smithy_types::Instant>,
-        pub(crate) by_created_after: std::option::Option<smithy_types::Instant>,
+        pub(crate) by_created_before: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) by_created_after: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The name of a logical container where backups are stored. Backup vaults are identified
@@ -8056,6 +8366,14 @@ pub mod list_recovery_points_by_backup_vault_input {
             self.backup_vault_name = Some(input.into());
             self
         }
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
+        /// by names that are unique to the account used to create them and the Amazon Web Services
+        /// Region where they are created. They consist of lowercase letters, numbers, and
+        /// hyphens.</p>
+        /// <note>
+        /// <p>Backup vault name might not be available when a supported service creates the
+        /// backup.</p>
+        /// </note>
         pub fn set_backup_vault_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8071,6 +8389,10 @@ pub mod list_recovery_points_by_backup_vault_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The next item following a partial list of returned items. For example, if a request is
+        /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
+        /// to return more items in your list starting at the location pointed to by the next
+        /// token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8080,6 +8402,7 @@ pub mod list_recovery_points_by_backup_vault_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of items to be returned.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -8090,6 +8413,8 @@ pub mod list_recovery_points_by_backup_vault_input {
             self.by_resource_arn = Some(input.into());
             self
         }
+        /// <p>Returns only recovery points that match the specified resource Amazon Resource Name
+        /// (ARN).</p>
         pub fn set_by_resource_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8102,6 +8427,7 @@ pub mod list_recovery_points_by_backup_vault_input {
             self.by_resource_type = Some(input.into());
             self
         }
+        /// <p>Returns only recovery points that match the specified resource type.</p>
         pub fn set_by_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8114,6 +8440,7 @@ pub mod list_recovery_points_by_backup_vault_input {
             self.by_backup_plan_id = Some(input.into());
             self
         }
+        /// <p>Returns only recovery points that match the specified backup plan ID.</p>
         pub fn set_by_backup_plan_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8122,25 +8449,27 @@ pub mod list_recovery_points_by_backup_vault_input {
             self
         }
         /// <p>Returns only recovery points that were created before the specified timestamp.</p>
-        pub fn by_created_before(mut self, input: smithy_types::Instant) -> Self {
+        pub fn by_created_before(mut self, input: aws_smithy_types::Instant) -> Self {
             self.by_created_before = Some(input);
             self
         }
+        /// <p>Returns only recovery points that were created before the specified timestamp.</p>
         pub fn set_by_created_before(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.by_created_before = input;
             self
         }
         /// <p>Returns only recovery points that were created after the specified timestamp.</p>
-        pub fn by_created_after(mut self, input: smithy_types::Instant) -> Self {
+        pub fn by_created_after(mut self, input: aws_smithy_types::Instant) -> Self {
             self.by_created_after = Some(input);
             self
         }
+        /// <p>Returns only recovery points that were created after the specified timestamp.</p>
         pub fn set_by_created_after(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.by_created_after = input;
             self
@@ -8150,7 +8479,7 @@ pub mod list_recovery_points_by_backup_vault_input {
             self,
         ) -> std::result::Result<
             crate::input::ListRecoveryPointsByBackupVaultInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListRecoveryPointsByBackupVaultInput {
                 backup_vault_name: self.backup_vault_name,
@@ -8177,27 +8506,27 @@ impl ListRecoveryPointsByBackupVaultInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListRecoveryPointsByBackupVault,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListRecoveryPointsByBackupVaultInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_71 = &_input.backup_vault_name;
             let input_71 =
                 input_71
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "backup_vault_name",
                         details: "cannot be empty or unset",
                     })?;
-            let backup_vault_name = smithy_http::label::fmt_string(input_71, false);
+            let backup_vault_name = aws_smithy_http::label::fmt_string(input_71, false);
             if backup_vault_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "backup_vault_name",
                     details: "cannot be empty or unset",
                 });
@@ -8214,40 +8543,49 @@ impl ListRecoveryPointsByBackupVaultInput {
             _input: &crate::input::ListRecoveryPointsByBackupVaultInput,
             mut output: &mut String,
         ) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_72) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_72));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_72));
             }
             if let Some(inner_73) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(*inner_73).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_73).encode(),
                 );
             }
             if let Some(inner_74) = &_input.by_resource_arn {
-                query.push_kv("resourceArn", &smithy_http::query::fmt_string(&inner_74));
+                query.push_kv(
+                    "resourceArn",
+                    &aws_smithy_http::query::fmt_string(&inner_74),
+                );
             }
             if let Some(inner_75) = &_input.by_resource_type {
-                query.push_kv("resourceType", &smithy_http::query::fmt_string(&inner_75));
+                query.push_kv(
+                    "resourceType",
+                    &aws_smithy_http::query::fmt_string(&inner_75),
+                );
             }
             if let Some(inner_76) = &_input.by_backup_plan_id {
-                query.push_kv("backupPlanId", &smithy_http::query::fmt_string(&inner_76));
+                query.push_kv(
+                    "backupPlanId",
+                    &aws_smithy_http::query::fmt_string(&inner_76),
+                );
             }
             if let Some(inner_77) = &_input.by_created_before {
                 query.push_kv(
                     "createdBefore",
-                    &smithy_http::query::fmt_timestamp(
+                    &aws_smithy_http::query::fmt_timestamp(
                         inner_77,
-                        smithy_types::instant::Format::DateTime,
+                        aws_smithy_types::instant::Format::DateTime,
                     ),
                 );
             }
             if let Some(inner_78) = &_input.by_created_after {
                 query.push_kv(
                     "createdAfter",
-                    &smithy_http::query::fmt_timestamp(
+                    &aws_smithy_http::query::fmt_timestamp(
                         inner_78,
-                        smithy_types::instant::Format::DateTime,
+                        aws_smithy_types::instant::Format::DateTime,
                     ),
                 );
             }
@@ -8256,7 +8594,7 @@ impl ListRecoveryPointsByBackupVaultInput {
         fn update_http_builder(
             input: &crate::input::ListRecoveryPointsByBackupVaultInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8266,23 +8604,23 @@ impl ListRecoveryPointsByBackupVaultInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListRecoveryPointsByBackupVaultInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8305,15 +8643,15 @@ impl ListRecoveryPointsByBackupVaultInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListRecoveryPointsByBackupVault::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListRecoveryPointsByBackupVault",
             "backup",
         ));
@@ -8322,10 +8660,10 @@ impl ListRecoveryPointsByBackupVaultInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8356,6 +8694,8 @@ pub mod list_recovery_points_by_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the
+        /// resource type.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -8368,6 +8708,10 @@ pub mod list_recovery_points_by_resource_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The next item following a partial list of returned items. For example, if a request is
+        /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
+        /// to return more items in your list starting at the location pointed to by the next
+        /// token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8380,6 +8724,10 @@ pub mod list_recovery_points_by_resource_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of items to be returned.</p>
+        /// <note>
+        /// <p>Amazon RDS requires a value of at least 20.</p>
+        /// </note>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -8389,7 +8737,7 @@ pub mod list_recovery_points_by_resource_input {
             self,
         ) -> std::result::Result<
             crate::input::ListRecoveryPointsByResourceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListRecoveryPointsByResourceInput {
                 resource_arn: self.resource_arn,
@@ -8411,27 +8759,27 @@ impl ListRecoveryPointsByResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListRecoveryPointsByResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListRecoveryPointsByResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_79 = &_input.resource_arn;
             let input_79 =
                 input_79
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = smithy_http::label::fmt_string(input_79, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_79, false);
             if resource_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 });
@@ -8448,14 +8796,14 @@ impl ListRecoveryPointsByResourceInput {
             _input: &crate::input::ListRecoveryPointsByResourceInput,
             mut output: &mut String,
         ) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_80) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_80));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_80));
             }
             if let Some(inner_81) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(*inner_81).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_81).encode(),
                 );
             }
         }
@@ -8463,7 +8811,7 @@ impl ListRecoveryPointsByResourceInput {
         fn update_http_builder(
             input: &crate::input::ListRecoveryPointsByResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8473,23 +8821,23 @@ impl ListRecoveryPointsByResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListRecoveryPointsByResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8512,15 +8860,15 @@ impl ListRecoveryPointsByResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListRecoveryPointsByResource::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListRecoveryPointsByResource",
             "backup",
         ));
@@ -8529,10 +8877,10 @@ impl ListRecoveryPointsByResourceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8553,8 +8901,8 @@ pub mod list_report_jobs_input {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) by_report_plan_name: std::option::Option<std::string::String>,
-        pub(crate) by_creation_before: std::option::Option<smithy_types::Instant>,
-        pub(crate) by_creation_after: std::option::Option<smithy_types::Instant>,
+        pub(crate) by_creation_before: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) by_creation_after: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) by_status: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -8565,6 +8913,7 @@ pub mod list_report_jobs_input {
             self.by_report_plan_name = Some(input.into());
             self
         }
+        /// <p>Returns only report jobs with the specified report plan name.</p>
         pub fn set_by_report_plan_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8575,13 +8924,16 @@ pub mod list_report_jobs_input {
         /// <p>Returns only report jobs that were created before the date and time specified in Unix
         /// format and Coordinated Universal Time (UTC). For example, the value 1516925490 represents
         /// Friday, January 26, 2018 12:11:30 AM.</p>
-        pub fn by_creation_before(mut self, input: smithy_types::Instant) -> Self {
+        pub fn by_creation_before(mut self, input: aws_smithy_types::Instant) -> Self {
             self.by_creation_before = Some(input);
             self
         }
+        /// <p>Returns only report jobs that were created before the date and time specified in Unix
+        /// format and Coordinated Universal Time (UTC). For example, the value 1516925490 represents
+        /// Friday, January 26, 2018 12:11:30 AM.</p>
         pub fn set_by_creation_before(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.by_creation_before = input;
             self
@@ -8589,13 +8941,16 @@ pub mod list_report_jobs_input {
         /// <p>Returns only report jobs that were created after the date and time specified in Unix
         /// format and Coordinated Universal Time (UTC). For example, the value 1516925490 represents
         /// Friday, January 26, 2018 12:11:30 AM.</p>
-        pub fn by_creation_after(mut self, input: smithy_types::Instant) -> Self {
+        pub fn by_creation_after(mut self, input: aws_smithy_types::Instant) -> Self {
             self.by_creation_after = Some(input);
             self
         }
+        /// <p>Returns only report jobs that were created after the date and time specified in Unix
+        /// format and Coordinated Universal Time (UTC). For example, the value 1516925490 represents
+        /// Friday, January 26, 2018 12:11:30 AM.</p>
         pub fn set_by_creation_after(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.by_creation_after = input;
             self
@@ -8608,6 +8963,10 @@ pub mod list_report_jobs_input {
             self.by_status = Some(input.into());
             self
         }
+        /// <p>Returns only report jobs that are in the specified status. The statuses are:</p>
+        /// <p>
+        /// <code>CREATED | RUNNING | COMPLETED | FAILED</code>
+        /// </p>
         pub fn set_by_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.by_status = input;
             self
@@ -8618,6 +8977,8 @@ pub mod list_report_jobs_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The number of desired results from 1 to 1000. Optional. If unspecified, the query will
+        /// return 1 MB of data.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -8628,6 +8989,8 @@ pub mod list_report_jobs_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>An identifier that was returned from the previous call to this operation, which can be
+        /// used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8637,7 +9000,7 @@ pub mod list_report_jobs_input {
             self,
         ) -> std::result::Result<
             crate::input::ListReportJobsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListReportJobsInput {
                 by_report_plan_name: self.by_report_plan_name,
@@ -8661,60 +9024,63 @@ impl ListReportJobsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListReportJobs,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListReportJobsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/audit/report-jobs").expect("formatting should succeed");
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListReportJobsInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_82) = &_input.by_report_plan_name {
-                query.push_kv("ReportPlanName", &smithy_http::query::fmt_string(&inner_82));
+                query.push_kv(
+                    "ReportPlanName",
+                    &aws_smithy_http::query::fmt_string(&inner_82),
+                );
             }
             if let Some(inner_83) = &_input.by_creation_before {
                 query.push_kv(
                     "CreationBefore",
-                    &smithy_http::query::fmt_timestamp(
+                    &aws_smithy_http::query::fmt_timestamp(
                         inner_83,
-                        smithy_types::instant::Format::DateTime,
+                        aws_smithy_types::instant::Format::DateTime,
                     ),
                 );
             }
             if let Some(inner_84) = &_input.by_creation_after {
                 query.push_kv(
                     "CreationAfter",
-                    &smithy_http::query::fmt_timestamp(
+                    &aws_smithy_http::query::fmt_timestamp(
                         inner_84,
-                        smithy_types::instant::Format::DateTime,
+                        aws_smithy_types::instant::Format::DateTime,
                     ),
                 );
             }
             if let Some(inner_85) = &_input.by_status {
-                query.push_kv("Status", &smithy_http::query::fmt_string(&inner_85));
+                query.push_kv("Status", &aws_smithy_http::query::fmt_string(&inner_85));
             }
             if let Some(inner_86) = &_input.max_results {
                 query.push_kv(
                     "MaxResults",
-                    &smithy_types::primitive::Encoder::from(*inner_86).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_86).encode(),
                 );
             }
             if let Some(inner_87) = &_input.next_token {
-                query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_87));
+                query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_87));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::ListReportJobsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8724,23 +9090,23 @@ impl ListReportJobsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListReportJobsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8763,15 +9129,15 @@ impl ListReportJobsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListReportJobs::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListReportJobs",
             "backup",
         ));
@@ -8780,10 +9146,10 @@ impl ListReportJobsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8813,6 +9179,8 @@ pub mod list_report_plans_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The number of desired results from 1 to 1000. Optional. If unspecified, the query will
+        /// return 1 MB of data.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -8823,6 +9191,8 @@ pub mod list_report_plans_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>An identifier that was returned from the previous call to this operation, which can be
+        /// used to return the next set of items in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8832,7 +9202,7 @@ pub mod list_report_plans_input {
             self,
         ) -> std::result::Result<
             crate::input::ListReportPlansInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListReportPlansInput {
                 max_results: self.max_results,
@@ -8852,36 +9222,36 @@ impl ListReportPlansInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListReportPlans,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListReportPlansInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/audit/report-plans").expect("formatting should succeed");
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListReportPlansInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_88) = &_input.max_results {
                 query.push_kv(
                     "MaxResults",
-                    &smithy_types::primitive::Encoder::from(*inner_88).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_88).encode(),
                 );
             }
             if let Some(inner_89) = &_input.next_token {
-                query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_89));
+                query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_89));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::ListReportPlansInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8891,23 +9261,23 @@ impl ListReportPlansInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListReportPlansInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8930,15 +9300,15 @@ impl ListReportPlansInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListReportPlans::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListReportPlans",
             "backup",
         ));
@@ -8947,10 +9317,10 @@ impl ListReportPlansInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8973,8 +9343,8 @@ pub mod list_restore_jobs_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) by_account_id: std::option::Option<std::string::String>,
-        pub(crate) by_created_before: std::option::Option<smithy_types::Instant>,
-        pub(crate) by_created_after: std::option::Option<smithy_types::Instant>,
+        pub(crate) by_created_before: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) by_created_after: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) by_status: std::option::Option<crate::model::RestoreJobStatus>,
     }
     impl Builder {
@@ -8986,6 +9356,10 @@ pub mod list_restore_jobs_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The next item following a partial list of returned items. For example, if a request is
+        /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
+        /// to return more items in your list starting at the location pointed to by the next
+        /// token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8995,6 +9369,7 @@ pub mod list_restore_jobs_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of items to be returned.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -9005,6 +9380,8 @@ pub mod list_restore_jobs_input {
             self.by_account_id = Some(input.into());
             self
         }
+        /// <p>The account ID to list the jobs from. Returns only restore jobs associated with the
+        /// specified account ID.</p>
         pub fn set_by_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9013,25 +9390,27 @@ pub mod list_restore_jobs_input {
             self
         }
         /// <p>Returns only restore jobs that were created before the specified date.</p>
-        pub fn by_created_before(mut self, input: smithy_types::Instant) -> Self {
+        pub fn by_created_before(mut self, input: aws_smithy_types::Instant) -> Self {
             self.by_created_before = Some(input);
             self
         }
+        /// <p>Returns only restore jobs that were created before the specified date.</p>
         pub fn set_by_created_before(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.by_created_before = input;
             self
         }
         /// <p>Returns only restore jobs that were created after the specified date.</p>
-        pub fn by_created_after(mut self, input: smithy_types::Instant) -> Self {
+        pub fn by_created_after(mut self, input: aws_smithy_types::Instant) -> Self {
             self.by_created_after = Some(input);
             self
         }
+        /// <p>Returns only restore jobs that were created after the specified date.</p>
         pub fn set_by_created_after(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.by_created_after = input;
             self
@@ -9041,6 +9420,7 @@ pub mod list_restore_jobs_input {
             self.by_status = Some(input);
             self
         }
+        /// <p>Returns only restore jobs associated with the specified job status.</p>
         pub fn set_by_status(
             mut self,
             input: std::option::Option<crate::model::RestoreJobStatus>,
@@ -9053,7 +9433,7 @@ pub mod list_restore_jobs_input {
             self,
         ) -> std::result::Result<
             crate::input::ListRestoreJobsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListRestoreJobsInput {
                 next_token: self.next_token,
@@ -9077,60 +9457,60 @@ impl ListRestoreJobsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListRestoreJobs,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListRestoreJobsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/restore-jobs").expect("formatting should succeed");
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListRestoreJobsInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_90) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_90));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_90));
             }
             if let Some(inner_91) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(*inner_91).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_91).encode(),
                 );
             }
             if let Some(inner_92) = &_input.by_account_id {
-                query.push_kv("accountId", &smithy_http::query::fmt_string(&inner_92));
+                query.push_kv("accountId", &aws_smithy_http::query::fmt_string(&inner_92));
             }
             if let Some(inner_93) = &_input.by_created_before {
                 query.push_kv(
                     "createdBefore",
-                    &smithy_http::query::fmt_timestamp(
+                    &aws_smithy_http::query::fmt_timestamp(
                         inner_93,
-                        smithy_types::instant::Format::DateTime,
+                        aws_smithy_types::instant::Format::DateTime,
                     ),
                 );
             }
             if let Some(inner_94) = &_input.by_created_after {
                 query.push_kv(
                     "createdAfter",
-                    &smithy_http::query::fmt_timestamp(
+                    &aws_smithy_http::query::fmt_timestamp(
                         inner_94,
-                        smithy_types::instant::Format::DateTime,
+                        aws_smithy_types::instant::Format::DateTime,
                     ),
                 );
             }
             if let Some(inner_95) = &_input.by_status {
-                query.push_kv("status", &smithy_http::query::fmt_string(&inner_95));
+                query.push_kv("status", &aws_smithy_http::query::fmt_string(&inner_95));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::ListRestoreJobsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9140,23 +9520,23 @@ impl ListRestoreJobsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListRestoreJobsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9179,15 +9559,15 @@ impl ListRestoreJobsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListRestoreJobs::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListRestoreJobs",
             "backup",
         ));
@@ -9196,10 +9576,10 @@ impl ListRestoreJobsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9231,6 +9611,9 @@ pub mod list_tags_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN
+        /// depends on the type of resource. Valid targets for <code>ListTags</code> are recovery
+        /// points, backup plans, and backup vaults.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -9243,6 +9626,10 @@ pub mod list_tags_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The next item following a partial list of returned items. For example, if a request is
+        /// made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you
+        /// to return more items in your list starting at the location pointed to by the next
+        /// token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -9252,6 +9639,7 @@ pub mod list_tags_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of items to be returned.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -9259,7 +9647,7 @@ pub mod list_tags_input {
         /// Consumes the builder and constructs a [`ListTagsInput`](crate::input::ListTagsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListTagsInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::ListTagsInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::ListTagsInput {
                 resource_arn: self.resource_arn,
@@ -9280,27 +9668,27 @@ impl ListTagsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListTags,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListTagsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_96 = &_input.resource_arn;
             let input_96 =
                 input_96
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = smithy_http::label::fmt_string(input_96, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_96, false);
             if resource_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 });
@@ -9310,14 +9698,14 @@ impl ListTagsInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListTagsInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_97) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_97));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_97));
             }
             if let Some(inner_98) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(*inner_98).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_98).encode(),
                 );
             }
         }
@@ -9325,7 +9713,7 @@ impl ListTagsInput {
         fn update_http_builder(
             input: &crate::input::ListTagsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9335,23 +9723,23 @@ impl ListTagsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListTagsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9374,21 +9762,24 @@ impl ListTagsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(request, crate::operation::ListTags::new())
-            .with_metadata(smithy_http::operation::Metadata::new("ListTags", "backup"));
+        let op =
+            aws_smithy_http::operation::Operation::new(request, crate::operation::ListTags::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "ListTags", "backup",
+                ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9420,6 +9811,10 @@ pub mod put_backup_vault_access_policy_input {
             self.backup_vault_name = Some(input.into());
             self
         }
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
+        /// by names that are unique to the account used to create them and the Amazon Web Services
+        /// Region where they are created. They consist of lowercase letters, numbers, and
+        /// hyphens.</p>
         pub fn set_backup_vault_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9432,6 +9827,7 @@ pub mod put_backup_vault_access_policy_input {
             self.policy = Some(input.into());
             self
         }
+        /// <p>The backup vault access policy document in JSON format.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy = input;
             self
@@ -9441,7 +9837,7 @@ pub mod put_backup_vault_access_policy_input {
             self,
         ) -> std::result::Result<
             crate::input::PutBackupVaultAccessPolicyInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutBackupVaultAccessPolicyInput {
                 backup_vault_name: self.backup_vault_name,
@@ -9462,27 +9858,27 @@ impl PutBackupVaultAccessPolicyInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::PutBackupVaultAccessPolicy,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::PutBackupVaultAccessPolicyInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_99 = &_input.backup_vault_name;
             let input_99 =
                 input_99
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "backup_vault_name",
                         details: "cannot be empty or unset",
                     })?;
-            let backup_vault_name = smithy_http::label::fmt_string(input_99, false);
+            let backup_vault_name = aws_smithy_http::label::fmt_string(input_99, false);
             if backup_vault_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "backup_vault_name",
                     details: "cannot be empty or unset",
                 });
@@ -9499,7 +9895,7 @@ impl PutBackupVaultAccessPolicyInput {
         fn update_http_builder(
             input: &crate::input::PutBackupVaultAccessPolicyInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9508,25 +9904,25 @@ impl PutBackupVaultAccessPolicyInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::PutBackupVaultAccessPolicyInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_backup_vault_access_policy(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_put_backup_vault_access_policy(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9549,15 +9945,15 @@ impl PutBackupVaultAccessPolicyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::PutBackupVaultAccessPolicy::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "PutBackupVaultAccessPolicy",
             "backup",
         ));
@@ -9566,10 +9962,10 @@ impl PutBackupVaultAccessPolicyInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9601,6 +9997,8 @@ pub mod put_backup_vault_lock_configuration_input {
             self.backup_vault_name = Some(input.into());
             self
         }
+        /// <p>The Backup Vault Lock configuration that specifies the name of the backup
+        /// vault it protects.</p>
         pub fn set_backup_vault_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9624,6 +10022,18 @@ pub mod put_backup_vault_lock_configuration_input {
             self.min_retention_days = Some(input);
             self
         }
+        /// <p>The Backup Vault Lock configuration that specifies the minimum retention
+        /// period that the vault retains its recovery points. This setting can be useful if, for
+        /// example, your organization's policies require you to retain certain data for at least seven
+        /// years (2555 days).</p>
+        /// <p>If this parameter is not specified, Vault Lock will not enforce a minimum retention
+        /// period.</p>
+        /// <p>If this parameter is specified, any backup or copy job to the vault must have a
+        /// lifecycle policy with a retention period equal to or longer than the minimum retention
+        /// period. If the job's retention period is shorter than that minimum retention period, then
+        /// the vault fails that backup or copy job, and you should either modify your lifecycle
+        /// settings or use a different vault. Recovery points already saved in the vault prior to
+        /// Vault Lock are not affected.</p>
         pub fn set_min_retention_days(mut self, input: std::option::Option<i64>) -> Self {
             self.min_retention_days = input;
             self
@@ -9645,6 +10055,19 @@ pub mod put_backup_vault_lock_configuration_input {
             self.max_retention_days = Some(input);
             self
         }
+        /// <p>The Backup Vault Lock configuration that specifies the maximum retention
+        /// period that the vault retains its recovery points. This setting can be useful if, for
+        /// example, your organization's policies require you to destroy certain data after retaining
+        /// it for four years (1460 days).</p>
+        /// <p>If this parameter is not included, Vault Lock does not enforce a maximum retention
+        /// period on the recovery points in the vault. If this parameter is included without a value,
+        /// Vault Lock will not enforce a maximum retention period.</p>
+        /// <p>If this parameter is specified, any backup or copy job to the vault must have a
+        /// lifecycle policy with a retention period equal to or shorter than the maximum retention
+        /// period. If the job's retention period is longer than that maximum retention period, then
+        /// the vault fails the backup or copy job, and you should either modify your lifecycle
+        /// settings or use a different vault. Recovery points already saved in the vault prior to
+        /// Vault Lock are not affected.</p>
         pub fn set_max_retention_days(mut self, input: std::option::Option<i64>) -> Self {
             self.max_retention_days = input;
             self
@@ -9666,6 +10089,19 @@ pub mod put_backup_vault_lock_configuration_input {
             self.changeable_for_days = Some(input);
             self
         }
+        /// <p>The Backup Vault Lock configuration that specifies the number of days before
+        /// the lock date. For example, setting <code>ChangeableForDays</code> to 30 on Jan. 1, 2022 at
+        /// 8pm UTC will set the lock date to Jan. 31, 2022 at 8pm UTC.</p>
+        /// <p>Backup enforces a 72-hour cooling-off period before Vault Lock takes effect
+        /// and becomes immutable. Therefore, you must set <code>ChangeableForDays</code> to 3 or
+        /// greater.</p>
+        /// <p>Before the lock date, you can delete Vault Lock from the vault using
+        /// <code>DeleteBackupVaultLockConfiguration</code> or change the Vault Lock configuration
+        /// using <code>PutBackupVaultLockConfiguration</code>. On and after the lock date, the Vault
+        /// Lock becomes immutable and cannot be changed or deleted.</p>
+        /// <p>If this parameter is not specified, you can delete Vault Lock from the vault using
+        /// <code>DeleteBackupVaultLockConfiguration</code> or change the Vault Lock configuration
+        /// using <code>PutBackupVaultLockConfiguration</code> at any time.</p>
         pub fn set_changeable_for_days(mut self, input: std::option::Option<i64>) -> Self {
             self.changeable_for_days = input;
             self
@@ -9675,7 +10111,7 @@ pub mod put_backup_vault_lock_configuration_input {
             self,
         ) -> std::result::Result<
             crate::input::PutBackupVaultLockConfigurationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutBackupVaultLockConfigurationInput {
                 backup_vault_name: self.backup_vault_name,
@@ -9698,27 +10134,27 @@ impl PutBackupVaultLockConfigurationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::PutBackupVaultLockConfiguration,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::PutBackupVaultLockConfigurationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_100 = &_input.backup_vault_name;
             let input_100 =
                 input_100
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "backup_vault_name",
                         details: "cannot be empty or unset",
                     })?;
-            let backup_vault_name = smithy_http::label::fmt_string(input_100, false);
+            let backup_vault_name = aws_smithy_http::label::fmt_string(input_100, false);
             if backup_vault_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "backup_vault_name",
                     details: "cannot be empty or unset",
                 });
@@ -9735,7 +10171,7 @@ impl PutBackupVaultLockConfigurationInput {
         fn update_http_builder(
             input: &crate::input::PutBackupVaultLockConfigurationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9744,25 +10180,25 @@ impl PutBackupVaultLockConfigurationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::PutBackupVaultLockConfigurationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_backup_vault_lock_configuration(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_put_backup_vault_lock_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9785,15 +10221,15 @@ impl PutBackupVaultLockConfigurationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::PutBackupVaultLockConfiguration::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "PutBackupVaultLockConfiguration",
             "backup",
         ));
@@ -9802,10 +10238,10 @@ impl PutBackupVaultLockConfigurationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9839,6 +10275,10 @@ pub mod put_backup_vault_notifications_input {
             self.backup_vault_name = Some(input.into());
             self
         }
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
+        /// by names that are unique to the account used to create them and the Amazon Web Services
+        /// Region where they are created. They consist of lowercase letters, numbers, and
+        /// hyphens.</p>
         pub fn set_backup_vault_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9852,6 +10292,8 @@ pub mod put_backup_vault_notifications_input {
             self.sns_topic_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) that specifies the topic for a backup vault’s events; for
+        /// example, <code>arn:aws:sns:us-west-2:111122223333:MyVaultTopic</code>.</p>
         pub fn set_sns_topic_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9859,6 +10301,26 @@ pub mod put_backup_vault_notifications_input {
             self.sns_topic_arn = input;
             self
         }
+        /// Appends an item to `backup_vault_events`.
+        ///
+        /// To override the contents of this collection use [`set_backup_vault_events`](Self::set_backup_vault_events).
+        ///
+        /// <p>An array of events that indicate the status of jobs to back up resources to the backup
+        /// vault.</p>
+        /// <note>
+        /// <p>The following events are supported:</p>
+        /// <p>
+        /// <code>BACKUP_JOB_STARTED</code>, <code>BACKUP_JOB_COMPLETED</code>,</p>
+        /// <p>
+        /// <code>COPY_JOB_STARTED</code>, <code>COPY_JOB_SUCCESSFUL</code>,
+        /// <code>COPY_JOB_FAILED</code>,</p>
+        /// <p>
+        /// <code>RESTORE_JOB_STARTED</code>, <code>RESTORE_JOB_COMPLETED</code>, and
+        /// <code>RECOVERY_POINT_MODIFIED</code>.</p>
+        /// <p>To find failed backup jobs, use <code>BACKUP_JOB_COMPLETED</code> and filter using
+        /// event metadata.</p>
+        /// <p>Other events in the following list are deprecated.</p>
+        /// </note>
         pub fn backup_vault_events(
             mut self,
             input: impl Into<crate::model::BackupVaultEvent>,
@@ -9868,6 +10330,22 @@ pub mod put_backup_vault_notifications_input {
             self.backup_vault_events = Some(v);
             self
         }
+        /// <p>An array of events that indicate the status of jobs to back up resources to the backup
+        /// vault.</p>
+        /// <note>
+        /// <p>The following events are supported:</p>
+        /// <p>
+        /// <code>BACKUP_JOB_STARTED</code>, <code>BACKUP_JOB_COMPLETED</code>,</p>
+        /// <p>
+        /// <code>COPY_JOB_STARTED</code>, <code>COPY_JOB_SUCCESSFUL</code>,
+        /// <code>COPY_JOB_FAILED</code>,</p>
+        /// <p>
+        /// <code>RESTORE_JOB_STARTED</code>, <code>RESTORE_JOB_COMPLETED</code>, and
+        /// <code>RECOVERY_POINT_MODIFIED</code>.</p>
+        /// <p>To find failed backup jobs, use <code>BACKUP_JOB_COMPLETED</code> and filter using
+        /// event metadata.</p>
+        /// <p>Other events in the following list are deprecated.</p>
+        /// </note>
         pub fn set_backup_vault_events(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BackupVaultEvent>>,
@@ -9880,7 +10358,7 @@ pub mod put_backup_vault_notifications_input {
             self,
         ) -> std::result::Result<
             crate::input::PutBackupVaultNotificationsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutBackupVaultNotificationsInput {
                 backup_vault_name: self.backup_vault_name,
@@ -9902,27 +10380,27 @@ impl PutBackupVaultNotificationsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::PutBackupVaultNotifications,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::PutBackupVaultNotificationsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_101 = &_input.backup_vault_name;
             let input_101 =
                 input_101
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "backup_vault_name",
                         details: "cannot be empty or unset",
                     })?;
-            let backup_vault_name = smithy_http::label::fmt_string(input_101, false);
+            let backup_vault_name = aws_smithy_http::label::fmt_string(input_101, false);
             if backup_vault_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "backup_vault_name",
                     details: "cannot be empty or unset",
                 });
@@ -9939,7 +10417,7 @@ impl PutBackupVaultNotificationsInput {
         fn update_http_builder(
             input: &crate::input::PutBackupVaultNotificationsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9948,25 +10426,25 @@ impl PutBackupVaultNotificationsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::PutBackupVaultNotificationsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_backup_vault_notifications(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_put_backup_vault_notifications(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9989,15 +10467,15 @@ impl PutBackupVaultNotificationsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::PutBackupVaultNotifications::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "PutBackupVaultNotifications",
             "backup",
         ));
@@ -10006,10 +10484,10 @@ impl PutBackupVaultNotificationsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10052,6 +10530,10 @@ pub mod start_backup_job_input {
             self.backup_vault_name = Some(input.into());
             self
         }
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
+        /// by names that are unique to the account used to create them and the Amazon Web Services
+        /// Region where they are created. They consist of lowercase letters, numbers, and
+        /// hyphens.</p>
         pub fn set_backup_vault_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10065,6 +10547,8 @@ pub mod start_backup_job_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN
+        /// depends on the resource type.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -10075,6 +10559,8 @@ pub mod start_backup_job_input {
             self.iam_role_arn = Some(input.into());
             self
         }
+        /// <p>Specifies the IAM role ARN used to create the target recovery point; for example,
+        /// <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
         pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.iam_role_arn = input;
             self
@@ -10086,6 +10572,9 @@ pub mod start_backup_job_input {
             self.idempotency_token = Some(input.into());
             self
         }
+        /// <p>A customer-chosen string that you can use to distinguish between otherwise identical
+        /// calls to <code>StartBackupJob</code>. Retrying a successful request with the same
+        /// idempotency token results in a success message with no action taken.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10099,6 +10588,8 @@ pub mod start_backup_job_input {
             self.start_window_minutes = Some(input);
             self
         }
+        /// <p>A value in minutes after a backup is scheduled before a job will be canceled if it
+        /// doesn't start successfully. This value is optional, and the default is 8 hours.</p>
         pub fn set_start_window_minutes(mut self, input: std::option::Option<i64>) -> Self {
             self.start_window_minutes = input;
             self
@@ -10111,6 +10602,10 @@ pub mod start_backup_job_input {
             self.complete_window_minutes = Some(input);
             self
         }
+        /// <p>A value in minutes during which a successfully started backup must complete, or else AWS
+        /// Backup will cancel the job. This value is optional. This value begins counting down from
+        /// when the backup was scheduled. It does not add additional time for
+        /// <code>StartWindowMinutes</code>, or if the backup started later than scheduled.</p>
         pub fn set_complete_window_minutes(mut self, input: std::option::Option<i64>) -> Self {
             self.complete_window_minutes = input;
             self
@@ -10127,6 +10622,14 @@ pub mod start_backup_job_input {
             self.lifecycle = Some(input);
             self
         }
+        /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when
+        /// it expires. Backup will transition and expire backups automatically according
+        /// to the lifecycle that you define. </p>
+        /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90
+        /// days. Therefore, the “expire after days” setting must be 90 days greater than the
+        /// “transition to cold after days” setting. The “transition to cold after days” setting cannot
+        /// be changed after a backup has been transitioned to cold. </p>
+        /// <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
         pub fn set_lifecycle(
             mut self,
             input: std::option::Option<crate::model::Lifecycle>,
@@ -10134,6 +10637,12 @@ pub mod start_backup_job_input {
             self.lifecycle = input;
             self
         }
+        /// Adds a key-value pair to `recovery_point_tags`.
+        ///
+        /// To override the contents of this collection use [`set_recovery_point_tags`](Self::set_recovery_point_tags).
+        ///
+        /// <p>To help organize your resources, you can assign your own metadata to the resources that
+        /// you create. Each tag is a key-value pair.</p>
         pub fn recovery_point_tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -10144,6 +10653,8 @@ pub mod start_backup_job_input {
             self.recovery_point_tags = Some(hash_map);
             self
         }
+        /// <p>To help organize your resources, you can assign your own metadata to the resources that
+        /// you create. Each tag is a key-value pair.</p>
         pub fn set_recovery_point_tags(
             mut self,
             input: std::option::Option<
@@ -10153,6 +10664,16 @@ pub mod start_backup_job_input {
             self.recovery_point_tags = input;
             self
         }
+        /// Adds a key-value pair to `backup_options`.
+        ///
+        /// To override the contents of this collection use [`set_backup_options`](Self::set_backup_options).
+        ///
+        /// <p>Specifies the backup option for a selected resource. This option is only available for
+        /// Windows Volume Shadow Copy Service (VSS) backup jobs.</p>
+        /// <p>Valid values: Set to <code>"WindowsVSS":"enabled"</code> to enable the
+        /// <code>WindowsVSS</code> backup option and create a Windows VSS backup. Set to
+        /// <code>"WindowsVSS""disabled"</code> to create a regular backup. The
+        /// <code>WindowsVSS</code> option is not enabled by default.</p>
         pub fn backup_options(
             mut self,
             k: impl Into<std::string::String>,
@@ -10163,6 +10684,12 @@ pub mod start_backup_job_input {
             self.backup_options = Some(hash_map);
             self
         }
+        /// <p>Specifies the backup option for a selected resource. This option is only available for
+        /// Windows Volume Shadow Copy Service (VSS) backup jobs.</p>
+        /// <p>Valid values: Set to <code>"WindowsVSS":"enabled"</code> to enable the
+        /// <code>WindowsVSS</code> backup option and create a Windows VSS backup. Set to
+        /// <code>"WindowsVSS""disabled"</code> to create a regular backup. The
+        /// <code>WindowsVSS</code> option is not enabled by default.</p>
         pub fn set_backup_options(
             mut self,
             input: std::option::Option<
@@ -10177,7 +10704,7 @@ pub mod start_backup_job_input {
             self,
         ) -> std::result::Result<
             crate::input::StartBackupJobInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::StartBackupJobInput {
                 backup_vault_name: self.backup_vault_name,
@@ -10204,16 +10731,16 @@ impl StartBackupJobInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::StartBackupJob,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::StartBackupJobInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/backup-jobs").expect("formatting should succeed");
             Ok(())
         }
@@ -10221,7 +10748,7 @@ impl StartBackupJobInput {
         fn update_http_builder(
             input: &crate::input::StartBackupJobInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10230,27 +10757,27 @@ impl StartBackupJobInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::StartBackupJobInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_backup_job(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -10273,15 +10800,15 @@ impl StartBackupJobInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::StartBackupJob::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "StartBackupJob",
             "backup",
         ));
@@ -10290,10 +10817,10 @@ impl StartBackupJobInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10328,6 +10855,9 @@ pub mod start_copy_job_input {
             self.recovery_point_arn = Some(input.into());
             self
         }
+        /// <p>An ARN that uniquely identifies a recovery point to use for the copy job; for example,
+        /// arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45.
+        /// </p>
         pub fn set_recovery_point_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10342,6 +10872,9 @@ pub mod start_copy_job_input {
             self.source_backup_vault_name = Some(input.into());
             self
         }
+        /// <p>The name of a logical source container where backups are stored. Backup vaults are
+        /// identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers,
+        /// and hyphens.</p>
         pub fn set_source_backup_vault_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10359,6 +10892,9 @@ pub mod start_copy_job_input {
             self.destination_backup_vault_arn = Some(input.into());
             self
         }
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a destination backup vault to
+        /// copy to; for example,
+        /// <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
         pub fn set_destination_backup_vault_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10372,6 +10908,8 @@ pub mod start_copy_job_input {
             self.iam_role_arn = Some(input.into());
             self
         }
+        /// <p>Specifies the IAM role ARN used to copy the target recovery point; for example,
+        /// <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
         pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.iam_role_arn = input;
             self
@@ -10383,6 +10921,9 @@ pub mod start_copy_job_input {
             self.idempotency_token = Some(input.into());
             self
         }
+        /// <p>A customer-chosen string that you can use to distinguish between otherwise identical
+        /// calls to <code>StartCopyJob</code>. Retrying a successful request with the same idempotency
+        /// token results in a success message with no action taken.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10401,6 +10942,13 @@ pub mod start_copy_job_input {
             self.lifecycle = Some(input);
             self
         }
+        /// <p>Contains an array of <code>Transition</code> objects specifying how long in days before
+        /// a recovery point transitions to cold storage or is deleted.</p>
+        /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90
+        /// days. Therefore, on the console, the “expire after days” setting must be 90 days greater
+        /// than the “transition to cold after days” setting. The “transition to cold after days”
+        /// setting cannot be changed after a backup has been transitioned to cold.</p>
+        /// <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
         pub fn set_lifecycle(
             mut self,
             input: std::option::Option<crate::model::Lifecycle>,
@@ -10411,8 +10959,10 @@ pub mod start_copy_job_input {
         /// Consumes the builder and constructs a [`StartCopyJobInput`](crate::input::StartCopyJobInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::StartCopyJobInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::StartCopyJobInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::StartCopyJobInput {
                 recovery_point_arn: self.recovery_point_arn,
                 source_backup_vault_name: self.source_backup_vault_name,
@@ -10435,16 +10985,16 @@ impl StartCopyJobInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::StartCopyJob,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::StartCopyJobInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/copy-jobs").expect("formatting should succeed");
             Ok(())
         }
@@ -10452,7 +11002,7 @@ impl StartCopyJobInput {
         fn update_http_builder(
             input: &crate::input::StartCopyJobInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10461,24 +11011,26 @@ impl StartCopyJobInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::StartCopyJobInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_start_copy_job(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -10501,25 +11053,27 @@ impl StartCopyJobInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::StartCopyJob::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "StartCopyJob",
-                    "backup",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::StartCopyJob::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "StartCopyJob",
+            "backup",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10548,6 +11102,7 @@ pub mod start_report_job_input {
             self.report_plan_name = Some(input.into());
             self
         }
+        /// <p>The unique name of a report plan.</p>
         pub fn set_report_plan_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10562,6 +11117,9 @@ pub mod start_report_job_input {
             self.idempotency_token = Some(input.into());
             self
         }
+        /// <p>A customer-chosen string that you can use to distinguish between otherwise identical
+        /// calls to <code>StartReportJobInput</code>. Retrying a successful request with the same
+        /// idempotency token results in a success message with no action taken.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10574,7 +11132,7 @@ pub mod start_report_job_input {
             self,
         ) -> std::result::Result<
             crate::input::StartReportJobInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::StartReportJobInput {
                 report_plan_name: self.report_plan_name,
@@ -10594,27 +11152,27 @@ impl StartReportJobInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::StartReportJob,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::StartReportJobInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_102 = &_input.report_plan_name;
             let input_102 =
                 input_102
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "report_plan_name",
                         details: "cannot be empty or unset",
                     })?;
-            let report_plan_name = smithy_http::label::fmt_string(input_102, false);
+            let report_plan_name = aws_smithy_http::label::fmt_string(input_102, false);
             if report_plan_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "report_plan_name",
                     details: "cannot be empty or unset",
                 });
@@ -10631,7 +11189,7 @@ impl StartReportJobInput {
         fn update_http_builder(
             input: &crate::input::StartReportJobInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10640,10 +11198,10 @@ impl StartReportJobInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::StartReportJobInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -10653,17 +11211,17 @@ impl StartReportJobInput {
         if self.idempotency_token.is_none() {
             self.idempotency_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_report_job(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -10686,15 +11244,15 @@ impl StartReportJobInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::StartReportJob::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "StartReportJob",
             "backup",
         ));
@@ -10703,10 +11261,10 @@ impl StartReportJobInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10741,6 +11299,8 @@ pub mod start_restore_job_input {
             self.recovery_point_arn = Some(input.into());
             self
         }
+        /// <p>An ARN that uniquely identifies a recovery point; for example,
+        /// <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
         pub fn set_recovery_point_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10748,6 +11308,59 @@ pub mod start_restore_job_input {
             self.recovery_point_arn = input;
             self
         }
+        /// Adds a key-value pair to `metadata`.
+        ///
+        /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
+        ///
+        /// <p>A set of metadata key-value pairs. Contains information, such as a resource name,
+        /// required to restore a recovery point.</p>
+        /// <p> You can get configuration metadata about a resource at the time it was backed up by
+        /// calling <code>GetRecoveryPointRestoreMetadata</code>. However, values in addition to those
+        /// provided by <code>GetRecoveryPointRestoreMetadata</code> might be required to restore a
+        /// resource. For example, you might need to provide a new resource name if the original
+        /// already exists.</p>
+        /// <p>You need to specify specific metadata to restore an Amazon Elastic File System (Amazon EFS) instance:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>file-system-id</code>: The ID of the Amazon EFS file system that is
+        /// backed up by Backup. Returned in
+        /// <code>GetRecoveryPointRestoreMetadata</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Encrypted</code>: A Boolean value that, if true, specifies that the file
+        /// system is encrypted. If <code>KmsKeyId</code> is specified, <code>Encrypted</code>
+        /// must be set to <code>true</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>KmsKeyId</code>: Specifies the Amazon Web Services KMS key that is used to
+        /// encrypt the restored file system. You can specify a key from another Amazon Web Services account provided that key it is properly shared with your account via Amazon Web Services KMS.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PerformanceMode</code>: Specifies the throughput mode of the file
+        /// system.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CreationToken</code>: A user-supplied value that ensures the uniqueness
+        /// (idempotency) of the request.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>newFileSystem</code>: A Boolean value that, if true, specifies that the
+        /// recovery point is restored to a new Amazon EFS file system.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ItemsToRestore</code>: An array of one to five strings where each string is
+        /// a file path. Use <code>ItemsToRestore</code> to restore specific files or directories
+        /// rather than the entire file system. This parameter is optional. For example,
+        /// <code>"itemsToRestore":"[\"/my.test\"]"</code>.</p>
+        /// </li>
+        /// </ul>
         pub fn metadata(
             mut self,
             k: impl Into<std::string::String>,
@@ -10758,6 +11371,55 @@ pub mod start_restore_job_input {
             self.metadata = Some(hash_map);
             self
         }
+        /// <p>A set of metadata key-value pairs. Contains information, such as a resource name,
+        /// required to restore a recovery point.</p>
+        /// <p> You can get configuration metadata about a resource at the time it was backed up by
+        /// calling <code>GetRecoveryPointRestoreMetadata</code>. However, values in addition to those
+        /// provided by <code>GetRecoveryPointRestoreMetadata</code> might be required to restore a
+        /// resource. For example, you might need to provide a new resource name if the original
+        /// already exists.</p>
+        /// <p>You need to specify specific metadata to restore an Amazon Elastic File System (Amazon EFS) instance:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>file-system-id</code>: The ID of the Amazon EFS file system that is
+        /// backed up by Backup. Returned in
+        /// <code>GetRecoveryPointRestoreMetadata</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Encrypted</code>: A Boolean value that, if true, specifies that the file
+        /// system is encrypted. If <code>KmsKeyId</code> is specified, <code>Encrypted</code>
+        /// must be set to <code>true</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>KmsKeyId</code>: Specifies the Amazon Web Services KMS key that is used to
+        /// encrypt the restored file system. You can specify a key from another Amazon Web Services account provided that key it is properly shared with your account via Amazon Web Services KMS.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PerformanceMode</code>: Specifies the throughput mode of the file
+        /// system.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CreationToken</code>: A user-supplied value that ensures the uniqueness
+        /// (idempotency) of the request.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>newFileSystem</code>: A Boolean value that, if true, specifies that the
+        /// recovery point is restored to a new Amazon EFS file system.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ItemsToRestore</code>: An array of one to five strings where each string is
+        /// a file path. Use <code>ItemsToRestore</code> to restore specific files or directories
+        /// rather than the entire file system. This parameter is optional. For example,
+        /// <code>"itemsToRestore":"[\"/my.test\"]"</code>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_metadata(
             mut self,
             input: std::option::Option<
@@ -10774,6 +11436,9 @@ pub mod start_restore_job_input {
             self.iam_role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the IAM role that Backup uses to create
+        /// the target recovery point; for example,
+        /// <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
         pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.iam_role_arn = input;
             self
@@ -10785,6 +11450,9 @@ pub mod start_restore_job_input {
             self.idempotency_token = Some(input.into());
             self
         }
+        /// <p>A customer-chosen string that you can use to distinguish between otherwise identical
+        /// calls to <code>StartRestoreJob</code>. Retrying a successful request with the same
+        /// idempotency token results in a success message with no action taken.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10827,6 +11495,37 @@ pub mod start_restore_job_input {
             self.resource_type = Some(input.into());
             self
         }
+        /// <p>Starts a job to restore a recovery point for one of the following resources:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>DynamoDB</code> for Amazon DynamoDB</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>EBS</code> for Amazon Elastic Block Store</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>EC2</code> for Amazon Elastic Compute Cloud</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>EFS</code> for Amazon Elastic File System</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>RDS</code> for Amazon Relational Database Service</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Aurora</code> for Amazon Aurora</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Storage Gateway</code> for Storage Gateway</p>
+        /// </li>
+        /// </ul>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10839,7 +11538,7 @@ pub mod start_restore_job_input {
             self,
         ) -> std::result::Result<
             crate::input::StartRestoreJobInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::StartRestoreJobInput {
                 recovery_point_arn: self.recovery_point_arn,
@@ -10862,16 +11561,16 @@ impl StartRestoreJobInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::StartRestoreJob,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::StartRestoreJobInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/restore-jobs").expect("formatting should succeed");
             Ok(())
         }
@@ -10879,7 +11578,7 @@ impl StartRestoreJobInput {
         fn update_http_builder(
             input: &crate::input::StartRestoreJobInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10888,27 +11587,27 @@ impl StartRestoreJobInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::StartRestoreJobInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_restore_job(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -10931,15 +11630,15 @@ impl StartRestoreJobInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::StartRestoreJob::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "StartRestoreJob",
             "backup",
         ));
@@ -10948,10 +11647,10 @@ impl StartRestoreJobInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10979,6 +11678,7 @@ pub mod stop_backup_job_input {
             self.backup_job_id = Some(input.into());
             self
         }
+        /// <p>Uniquely identifies a request to Backup to back up a resource.</p>
         pub fn set_backup_job_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10989,8 +11689,10 @@ pub mod stop_backup_job_input {
         /// Consumes the builder and constructs a [`StopBackupJobInput`](crate::input::StopBackupJobInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::StopBackupJobInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::StopBackupJobInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::StopBackupJobInput {
                 backup_job_id: self.backup_job_id,
             })
@@ -11008,27 +11710,27 @@ impl StopBackupJobInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::StopBackupJob,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::StopBackupJobInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_103 = &_input.backup_job_id;
             let input_103 =
                 input_103
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "backup_job_id",
                         details: "cannot be empty or unset",
                     })?;
-            let backup_job_id = smithy_http::label::fmt_string(input_103, false);
+            let backup_job_id = aws_smithy_http::label::fmt_string(input_103, false);
             if backup_job_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "backup_job_id",
                     details: "cannot be empty or unset",
                 });
@@ -11045,7 +11747,7 @@ impl StopBackupJobInput {
         fn update_http_builder(
             input: &crate::input::StopBackupJobInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -11054,23 +11756,23 @@ impl StopBackupJobInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::StopBackupJobInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -11093,25 +11795,27 @@ impl StopBackupJobInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::StopBackupJob::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "StopBackupJob",
-                    "backup",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::StopBackupJob::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "StopBackupJob",
+            "backup",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -11143,10 +11847,18 @@ pub mod tag_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the type of
+        /// the tagged resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Key-value pairs that are used to help organize your resources. You can assign your own
+        /// metadata to the resources you create.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -11157,6 +11869,8 @@ pub mod tag_resource_input {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>Key-value pairs that are used to help organize your resources. You can assign your own
+        /// metadata to the resources you create.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -11169,8 +11883,10 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::TagResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::TagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::TagResourceInput {
                 resource_arn: self.resource_arn,
                 tags: self.tags,
@@ -11189,27 +11905,27 @@ impl TagResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::TagResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_104 = &_input.resource_arn;
             let input_104 =
                 input_104
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = smithy_http::label::fmt_string(input_104, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_104, false);
             if resource_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 });
@@ -11222,7 +11938,7 @@ impl TagResourceInput {
         fn update_http_builder(
             input: &crate::input::TagResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -11231,24 +11947,26 @@ impl TagResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::TagResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -11271,25 +11989,27 @@ impl TagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::TagResource::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "TagResource",
-                    "backup",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::TagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "TagResource",
+            "backup",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -11319,16 +12039,24 @@ pub mod untag_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the type of
+        /// the tagged resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Appends an item to `tag_key_list`.
+        ///
+        /// To override the contents of this collection use [`set_tag_key_list`](Self::set_tag_key_list).
+        ///
+        /// <p>A list of keys to identify which key-value tags to remove from a resource.</p>
         pub fn tag_key_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_key_list.unwrap_or_default();
             v.push(input.into());
             self.tag_key_list = Some(v);
             self
         }
+        /// <p>A list of keys to identify which key-value tags to remove from a resource.</p>
         pub fn set_tag_key_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -11339,8 +12067,10 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UntagResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UntagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UntagResourceInput {
                 resource_arn: self.resource_arn,
                 tag_key_list: self.tag_key_list,
@@ -11359,27 +12089,27 @@ impl UntagResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UntagResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_105 = &_input.resource_arn;
             let input_105 =
                 input_105
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = smithy_http::label::fmt_string(input_105, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_105, false);
             if resource_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 });
@@ -11392,7 +12122,7 @@ impl UntagResourceInput {
         fn update_http_builder(
             input: &crate::input::UntagResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -11401,24 +12131,26 @@ impl UntagResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UntagResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -11441,25 +12173,27 @@ impl UntagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UntagResource::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UntagResource",
-                    "backup",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UntagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UntagResource",
+            "backup",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -11488,6 +12222,7 @@ pub mod update_backup_plan_input {
             self.backup_plan_id = Some(input.into());
             self
         }
+        /// <p>Uniquely identifies a backup plan.</p>
         pub fn set_backup_plan_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11501,6 +12236,8 @@ pub mod update_backup_plan_input {
             self.backup_plan = Some(input);
             self
         }
+        /// <p>Specifies the body of a backup plan. Includes a <code>BackupPlanName</code> and one or
+        /// more sets of <code>Rules</code>.</p>
         pub fn set_backup_plan(
             mut self,
             input: std::option::Option<crate::model::BackupPlanInput>,
@@ -11513,7 +12250,7 @@ pub mod update_backup_plan_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateBackupPlanInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateBackupPlanInput {
                 backup_plan_id: self.backup_plan_id,
@@ -11533,27 +12270,27 @@ impl UpdateBackupPlanInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateBackupPlan,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateBackupPlanInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_106 = &_input.backup_plan_id;
             let input_106 =
                 input_106
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "backup_plan_id",
                         details: "cannot be empty or unset",
                     })?;
-            let backup_plan_id = smithy_http::label::fmt_string(input_106, false);
+            let backup_plan_id = aws_smithy_http::label::fmt_string(input_106, false);
             if backup_plan_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "backup_plan_id",
                     details: "cannot be empty or unset",
                 });
@@ -11570,7 +12307,7 @@ impl UpdateBackupPlanInput {
         fn update_http_builder(
             input: &crate::input::UpdateBackupPlanInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -11579,27 +12316,27 @@ impl UpdateBackupPlanInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateBackupPlanInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_backup_plan(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -11622,15 +12359,15 @@ impl UpdateBackupPlanInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateBackupPlan::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateBackupPlan",
             "backup",
         ));
@@ -11639,10 +12376,10 @@ impl UpdateBackupPlanInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -11675,6 +12412,8 @@ pub mod update_framework_input {
             self.framework_name = Some(input.into());
             self
         }
+        /// <p>The unique name of a framework. This name is between 1 and 256 characters, starting with
+        /// a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
         pub fn set_framework_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11687,6 +12426,7 @@ pub mod update_framework_input {
             self.framework_description = Some(input.into());
             self
         }
+        /// <p>An optional description of the framework with a maximum 1,024 characters.</p>
         pub fn set_framework_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11694,6 +12434,12 @@ pub mod update_framework_input {
             self.framework_description = input;
             self
         }
+        /// Appends an item to `framework_controls`.
+        ///
+        /// To override the contents of this collection use [`set_framework_controls`](Self::set_framework_controls).
+        ///
+        /// <p>A list of the controls that make up the framework. Each control in the list has a name,
+        /// input parameters, and scope.</p>
         pub fn framework_controls(
             mut self,
             input: impl Into<crate::model::FrameworkControl>,
@@ -11703,6 +12449,8 @@ pub mod update_framework_input {
             self.framework_controls = Some(v);
             self
         }
+        /// <p>A list of the controls that make up the framework. Each control in the list has a name,
+        /// input parameters, and scope.</p>
         pub fn set_framework_controls(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FrameworkControl>>,
@@ -11717,6 +12465,9 @@ pub mod update_framework_input {
             self.idempotency_token = Some(input.into());
             self
         }
+        /// <p>A customer-chosen string that you can use to distinguish between otherwise identical
+        /// calls to <code>UpdateFrameworkInput</code>. Retrying a successful request with the same
+        /// idempotency token results in a success message with no action taken.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11729,7 +12480,7 @@ pub mod update_framework_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateFrameworkInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateFrameworkInput {
                 framework_name: self.framework_name,
@@ -11751,27 +12502,27 @@ impl UpdateFrameworkInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateFramework,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateFrameworkInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_107 = &_input.framework_name;
             let input_107 =
                 input_107
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "framework_name",
                         details: "cannot be empty or unset",
                     })?;
-            let framework_name = smithy_http::label::fmt_string(input_107, false);
+            let framework_name = aws_smithy_http::label::fmt_string(input_107, false);
             if framework_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "framework_name",
                     details: "cannot be empty or unset",
                 });
@@ -11788,7 +12539,7 @@ impl UpdateFrameworkInput {
         fn update_http_builder(
             input: &crate::input::UpdateFrameworkInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -11797,10 +12548,10 @@ impl UpdateFrameworkInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateFrameworkInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -11810,17 +12561,17 @@ impl UpdateFrameworkInput {
         if self.idempotency_token.is_none() {
             self.idempotency_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_framework(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -11843,15 +12594,15 @@ impl UpdateFrameworkInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateFramework::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateFramework",
             "backup",
         ));
@@ -11860,10 +12611,10 @@ impl UpdateFrameworkInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -11888,6 +12639,13 @@ pub mod update_global_settings_input {
         >,
     }
     impl Builder {
+        /// Adds a key-value pair to `global_settings`.
+        ///
+        /// To override the contents of this collection use [`set_global_settings`](Self::set_global_settings).
+        ///
+        /// <p>A value for <code>isCrossAccountBackupEnabled</code> and a Region. Example:
+        /// <code>update-global-settings --global-settings isCrossAccountBackupEnabled=false
+        /// --region us-west-2</code>.</p>
         pub fn global_settings(
             mut self,
             k: impl Into<std::string::String>,
@@ -11898,6 +12656,9 @@ pub mod update_global_settings_input {
             self.global_settings = Some(hash_map);
             self
         }
+        /// <p>A value for <code>isCrossAccountBackupEnabled</code> and a Region. Example:
+        /// <code>update-global-settings --global-settings isCrossAccountBackupEnabled=false
+        /// --region us-west-2</code>.</p>
         pub fn set_global_settings(
             mut self,
             input: std::option::Option<
@@ -11912,7 +12673,7 @@ pub mod update_global_settings_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateGlobalSettingsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateGlobalSettingsInput {
                 global_settings: self.global_settings,
@@ -11931,16 +12692,16 @@ impl UpdateGlobalSettingsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateGlobalSettings,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateGlobalSettingsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/global-settings").expect("formatting should succeed");
             Ok(())
         }
@@ -11948,7 +12709,7 @@ impl UpdateGlobalSettingsInput {
         fn update_http_builder(
             input: &crate::input::UpdateGlobalSettingsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -11957,27 +12718,27 @@ impl UpdateGlobalSettingsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateGlobalSettingsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_global_settings(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -12000,15 +12761,15 @@ impl UpdateGlobalSettingsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateGlobalSettings::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateGlobalSettings",
             "backup",
         ));
@@ -12017,10 +12778,10 @@ impl UpdateGlobalSettingsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -12053,6 +12814,10 @@ pub mod update_recovery_point_lifecycle_input {
             self.backup_vault_name = Some(input.into());
             self
         }
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
+        /// by names that are unique to the account used to create them and the Amazon Web Services
+        /// Region where they are created. They consist of lowercase letters, numbers, and
+        /// hyphens.</p>
         pub fn set_backup_vault_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12066,6 +12831,8 @@ pub mod update_recovery_point_lifecycle_input {
             self.recovery_point_arn = Some(input.into());
             self
         }
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example,
+        /// <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
         pub fn set_recovery_point_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12084,6 +12851,13 @@ pub mod update_recovery_point_lifecycle_input {
             self.lifecycle = Some(input);
             self
         }
+        /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when
+        /// it expires. Backup transitions and expires backups automatically according to
+        /// the lifecycle that you define. </p>
+        /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90
+        /// days. Therefore, the “expire after days” setting must be 90 days greater than the
+        /// “transition to cold after days” setting. The “transition to cold after days” setting cannot
+        /// be changed after a backup has been transitioned to cold. </p>
         pub fn set_lifecycle(
             mut self,
             input: std::option::Option<crate::model::Lifecycle>,
@@ -12096,7 +12870,7 @@ pub mod update_recovery_point_lifecycle_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateRecoveryPointLifecycleInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateRecoveryPointLifecycleInput {
                 backup_vault_name: self.backup_vault_name,
@@ -12118,27 +12892,27 @@ impl UpdateRecoveryPointLifecycleInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateRecoveryPointLifecycle,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateRecoveryPointLifecycleInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_108 = &_input.backup_vault_name;
             let input_108 =
                 input_108
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "backup_vault_name",
                         details: "cannot be empty or unset",
                     })?;
-            let backup_vault_name = smithy_http::label::fmt_string(input_108, false);
+            let backup_vault_name = aws_smithy_http::label::fmt_string(input_108, false);
             if backup_vault_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "backup_vault_name",
                     details: "cannot be empty or unset",
                 });
@@ -12147,13 +12921,13 @@ impl UpdateRecoveryPointLifecycleInput {
             let input_109 =
                 input_109
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "recovery_point_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let recovery_point_arn = smithy_http::label::fmt_string(input_109, false);
+            let recovery_point_arn = aws_smithy_http::label::fmt_string(input_109, false);
             if recovery_point_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "recovery_point_arn",
                     details: "cannot be empty or unset",
                 });
@@ -12171,7 +12945,7 @@ impl UpdateRecoveryPointLifecycleInput {
         fn update_http_builder(
             input: &crate::input::UpdateRecoveryPointLifecycleInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -12180,25 +12954,25 @@ impl UpdateRecoveryPointLifecycleInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateRecoveryPointLifecycleInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_recovery_point_lifecycle(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_recovery_point_lifecycle(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -12221,15 +12995,15 @@ impl UpdateRecoveryPointLifecycleInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateRecoveryPointLifecycle::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateRecoveryPointLifecycle",
             "backup",
         ));
@@ -12238,10 +13012,10 @@ impl UpdateRecoveryPointLifecycleInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -12265,6 +13039,11 @@ pub mod update_region_settings_input {
             std::option::Option<std::collections::HashMap<std::string::String, bool>>,
     }
     impl Builder {
+        /// Adds a key-value pair to `resource_type_opt_in_preference`.
+        ///
+        /// To override the contents of this collection use [`set_resource_type_opt_in_preference`](Self::set_resource_type_opt_in_preference).
+        ///
+        /// <p>Updates the list of services along with the opt-in preferences for the Region.</p>
         pub fn resource_type_opt_in_preference(
             mut self,
             k: impl Into<std::string::String>,
@@ -12275,6 +13054,7 @@ pub mod update_region_settings_input {
             self.resource_type_opt_in_preference = Some(hash_map);
             self
         }
+        /// <p>Updates the list of services along with the opt-in preferences for the Region.</p>
         pub fn set_resource_type_opt_in_preference(
             mut self,
             input: std::option::Option<std::collections::HashMap<std::string::String, bool>>,
@@ -12287,7 +13067,7 @@ pub mod update_region_settings_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateRegionSettingsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateRegionSettingsInput {
                 resource_type_opt_in_preference: self.resource_type_opt_in_preference,
@@ -12306,16 +13086,16 @@ impl UpdateRegionSettingsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateRegionSettings,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateRegionSettingsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/account-settings").expect("formatting should succeed");
             Ok(())
         }
@@ -12323,7 +13103,7 @@ impl UpdateRegionSettingsInput {
         fn update_http_builder(
             input: &crate::input::UpdateRegionSettingsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -12332,27 +13112,27 @@ impl UpdateRegionSettingsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateRegionSettingsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_region_settings(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -12375,15 +13155,15 @@ impl UpdateRegionSettingsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateRegionSettings::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateRegionSettings",
             "backup",
         ));
@@ -12392,10 +13172,10 @@ impl UpdateRegionSettingsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -12430,6 +13210,9 @@ pub mod update_report_plan_input {
             self.report_plan_name = Some(input.into());
             self
         }
+        /// <p>The unique name of the report plan. This name is between 1 and 256 characters, starting
+        /// with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores
+        /// (_).</p>
         pub fn set_report_plan_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12442,6 +13225,7 @@ pub mod update_report_plan_input {
             self.report_plan_description = Some(input.into());
             self
         }
+        /// <p>An optional description of the report plan with a maximum 1,024 characters.</p>
         pub fn set_report_plan_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12458,6 +13242,8 @@ pub mod update_report_plan_input {
             self.report_delivery_channel = Some(input);
             self
         }
+        /// <p>A structure that contains information about where to deliver your reports, specifically
+        /// your Amazon S3 bucket name, S3 key prefix, and the formats of your reports.</p>
         pub fn set_report_delivery_channel(
             mut self,
             input: std::option::Option<crate::model::ReportDeliveryChannel>,
@@ -12478,6 +13264,15 @@ pub mod update_report_plan_input {
             self.report_setting = Some(input);
             self
         }
+        /// <p>Identifies the report template for the report. Reports are built using a report
+        /// template. The report templates are:</p>
+        /// <p>
+        /// <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT |
+        /// COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
+        /// </p>
+        /// <p>If the report template is <code>RESOURCE_COMPLIANCE_REPORT</code> or
+        /// <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the report
+        /// coverage by Amazon Web Services Regions and frameworks.</p>
         pub fn set_report_setting(
             mut self,
             input: std::option::Option<crate::model::ReportSetting>,
@@ -12492,6 +13287,9 @@ pub mod update_report_plan_input {
             self.idempotency_token = Some(input.into());
             self
         }
+        /// <p>A customer-chosen string that you can use to distinguish between otherwise identical
+        /// calls to <code>UpdateReportPlanInput</code>. Retrying a successful request with the same
+        /// idempotency token results in a success message with no action taken.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12504,7 +13302,7 @@ pub mod update_report_plan_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateReportPlanInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateReportPlanInput {
                 report_plan_name: self.report_plan_name,
@@ -12527,27 +13325,27 @@ impl UpdateReportPlanInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateReportPlan,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateReportPlanInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_110 = &_input.report_plan_name;
             let input_110 =
                 input_110
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "report_plan_name",
                         details: "cannot be empty or unset",
                     })?;
-            let report_plan_name = smithy_http::label::fmt_string(input_110, false);
+            let report_plan_name = aws_smithy_http::label::fmt_string(input_110, false);
             if report_plan_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "report_plan_name",
                     details: "cannot be empty or unset",
                 });
@@ -12564,7 +13362,7 @@ impl UpdateReportPlanInput {
         fn update_http_builder(
             input: &crate::input::UpdateReportPlanInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -12573,10 +13371,10 @@ impl UpdateReportPlanInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateReportPlanInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -12586,17 +13384,17 @@ impl UpdateReportPlanInput {
         if self.idempotency_token.is_none() {
             self.idempotency_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_report_plan(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -12619,15 +13417,15 @@ impl UpdateReportPlanInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateReportPlan::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateReportPlan",
             "backup",
         ));
@@ -12636,10 +13434,10 @@ impl UpdateReportPlanInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -12653,6 +13451,7 @@ impl UpdateReportPlanInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateReportPlanInput {
@@ -12692,6 +13491,7 @@ impl std::fmt::Debug for UpdateReportPlanInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRegionSettingsInput {
@@ -12710,6 +13510,7 @@ impl std::fmt::Debug for UpdateRegionSettingsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRecoveryPointLifecycleInput {
@@ -12740,6 +13541,7 @@ impl std::fmt::Debug for UpdateRecoveryPointLifecycleInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGlobalSettingsInput {
@@ -12757,6 +13559,7 @@ impl std::fmt::Debug for UpdateGlobalSettingsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFrameworkInput {
@@ -12784,6 +13587,7 @@ impl std::fmt::Debug for UpdateFrameworkInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateBackupPlanInput {
@@ -12802,6 +13606,7 @@ impl std::fmt::Debug for UpdateBackupPlanInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
@@ -12820,6 +13625,7 @@ impl std::fmt::Debug for UntagResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
@@ -12840,6 +13646,7 @@ impl std::fmt::Debug for TagResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopBackupJobInput {
@@ -12854,6 +13661,7 @@ impl std::fmt::Debug for StopBackupJobInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartRestoreJobInput {
@@ -12964,6 +13772,7 @@ impl std::fmt::Debug for StartRestoreJobInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartReportJobInput {
@@ -12983,6 +13792,7 @@ impl std::fmt::Debug for StartReportJobInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartCopyJobInput {
@@ -13030,6 +13840,7 @@ impl std::fmt::Debug for StartCopyJobInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartBackupJobInput {
@@ -13094,6 +13905,7 @@ impl std::fmt::Debug for StartBackupJobInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutBackupVaultNotificationsInput {
@@ -13133,6 +13945,7 @@ impl std::fmt::Debug for PutBackupVaultNotificationsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutBackupVaultLockConfigurationInput {
@@ -13192,6 +14005,7 @@ impl std::fmt::Debug for PutBackupVaultLockConfigurationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutBackupVaultAccessPolicyInput {
@@ -13212,6 +14026,7 @@ impl std::fmt::Debug for PutBackupVaultAccessPolicyInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsInput {
@@ -13237,6 +14052,7 @@ impl std::fmt::Debug for ListTagsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRestoreJobsInput {
@@ -13251,9 +14067,9 @@ pub struct ListRestoreJobsInput {
     /// specified account ID.</p>
     pub by_account_id: std::option::Option<std::string::String>,
     /// <p>Returns only restore jobs that were created before the specified date.</p>
-    pub by_created_before: std::option::Option<smithy_types::Instant>,
+    pub by_created_before: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Returns only restore jobs that were created after the specified date.</p>
-    pub by_created_after: std::option::Option<smithy_types::Instant>,
+    pub by_created_after: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Returns only restore jobs associated with the specified job status.</p>
     pub by_status: std::option::Option<crate::model::RestoreJobStatus>,
 }
@@ -13270,6 +14086,7 @@ impl std::fmt::Debug for ListRestoreJobsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListReportPlansInput {
@@ -13289,6 +14106,7 @@ impl std::fmt::Debug for ListReportPlansInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListReportJobsInput {
@@ -13297,11 +14115,11 @@ pub struct ListReportJobsInput {
     /// <p>Returns only report jobs that were created before the date and time specified in Unix
     /// format and Coordinated Universal Time (UTC). For example, the value 1516925490 represents
     /// Friday, January 26, 2018 12:11:30 AM.</p>
-    pub by_creation_before: std::option::Option<smithy_types::Instant>,
+    pub by_creation_before: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Returns only report jobs that were created after the date and time specified in Unix
     /// format and Coordinated Universal Time (UTC). For example, the value 1516925490 represents
     /// Friday, January 26, 2018 12:11:30 AM.</p>
-    pub by_creation_after: std::option::Option<smithy_types::Instant>,
+    pub by_creation_after: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Returns only report jobs that are in the specified status. The statuses are:</p>
     /// <p>
     /// <code>CREATED | RUNNING | COMPLETED | FAILED</code>
@@ -13327,6 +14145,7 @@ impl std::fmt::Debug for ListReportJobsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRecoveryPointsByResourceInput {
@@ -13354,6 +14173,7 @@ impl std::fmt::Debug for ListRecoveryPointsByResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRecoveryPointsByBackupVaultInput {
@@ -13381,9 +14201,9 @@ pub struct ListRecoveryPointsByBackupVaultInput {
     /// <p>Returns only recovery points that match the specified backup plan ID.</p>
     pub by_backup_plan_id: std::option::Option<std::string::String>,
     /// <p>Returns only recovery points that were created before the specified timestamp.</p>
-    pub by_created_before: std::option::Option<smithy_types::Instant>,
+    pub by_created_before: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Returns only recovery points that were created after the specified timestamp.</p>
-    pub by_created_after: std::option::Option<smithy_types::Instant>,
+    pub by_created_after: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for ListRecoveryPointsByBackupVaultInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13400,6 +14220,7 @@ impl std::fmt::Debug for ListRecoveryPointsByBackupVaultInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProtectedResourcesInput {
@@ -13420,6 +14241,7 @@ impl std::fmt::Debug for ListProtectedResourcesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFrameworksInput {
@@ -13439,6 +14261,7 @@ impl std::fmt::Debug for ListFrameworksInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCopyJobsInput {
@@ -13454,9 +14277,9 @@ pub struct ListCopyJobsInput {
     /// <p>Returns only copy jobs that are in the specified state.</p>
     pub by_state: std::option::Option<crate::model::CopyJobState>,
     /// <p>Returns only copy jobs that were created before the specified date.</p>
-    pub by_created_before: std::option::Option<smithy_types::Instant>,
+    pub by_created_before: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Returns only copy jobs that were created after the specified date.</p>
-    pub by_created_after: std::option::Option<smithy_types::Instant>,
+    pub by_created_after: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Returns only backup jobs for the specified resources:</p>
     /// <ul>
     /// <li>
@@ -13513,6 +14336,7 @@ impl std::fmt::Debug for ListCopyJobsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBackupVaultsInput {
@@ -13533,6 +14357,7 @@ impl std::fmt::Debug for ListBackupVaultsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBackupSelectionsInput {
@@ -13556,6 +14381,7 @@ impl std::fmt::Debug for ListBackupSelectionsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBackupPlanVersionsInput {
@@ -13579,6 +14405,7 @@ impl std::fmt::Debug for ListBackupPlanVersionsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBackupPlanTemplatesInput {
@@ -13599,6 +14426,7 @@ impl std::fmt::Debug for ListBackupPlanTemplatesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBackupPlansInput {
@@ -13623,6 +14451,7 @@ impl std::fmt::Debug for ListBackupPlansInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBackupJobsInput {
@@ -13644,9 +14473,9 @@ pub struct ListBackupJobsInput {
     /// numbers, and hyphens.</p>
     pub by_backup_vault_name: std::option::Option<std::string::String>,
     /// <p>Returns only backup jobs that were created before the specified date.</p>
-    pub by_created_before: std::option::Option<smithy_types::Instant>,
+    pub by_created_before: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Returns only backup jobs that were created after the specified date.</p>
-    pub by_created_after: std::option::Option<smithy_types::Instant>,
+    pub by_created_after: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Returns only backup jobs for the specified resources:</p>
     /// <ul>
     /// <li>
@@ -13701,6 +14530,7 @@ impl std::fmt::Debug for ListBackupJobsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSupportedResourceTypesInput {}
@@ -13711,6 +14541,7 @@ impl std::fmt::Debug for GetSupportedResourceTypesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRecoveryPointRestoreMetadataInput {
@@ -13732,6 +14563,7 @@ impl std::fmt::Debug for GetRecoveryPointRestoreMetadataInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBackupVaultNotificationsInput {
@@ -13749,6 +14581,7 @@ impl std::fmt::Debug for GetBackupVaultNotificationsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBackupVaultAccessPolicyInput {
@@ -13766,6 +14599,7 @@ impl std::fmt::Debug for GetBackupVaultAccessPolicyInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBackupSelectionInput {
@@ -13784,6 +14618,7 @@ impl std::fmt::Debug for GetBackupSelectionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBackupPlanFromTemplateInput {
@@ -13798,6 +14633,7 @@ impl std::fmt::Debug for GetBackupPlanFromTemplateInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBackupPlanFromJsonInput {
@@ -13812,6 +14648,7 @@ impl std::fmt::Debug for GetBackupPlanFromJsonInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBackupPlanInput {
@@ -13830,6 +14667,7 @@ impl std::fmt::Debug for GetBackupPlanInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportBackupPlanTemplateInput {
@@ -13844,6 +14682,7 @@ impl std::fmt::Debug for ExportBackupPlanTemplateInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateRecoveryPointInput {
@@ -13862,6 +14701,7 @@ impl std::fmt::Debug for DisassociateRecoveryPointInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRestoreJobInput {
@@ -13876,6 +14716,7 @@ impl std::fmt::Debug for DescribeRestoreJobInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReportPlanInput {
@@ -13890,6 +14731,7 @@ impl std::fmt::Debug for DescribeReportPlanInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReportJobInput {
@@ -13905,6 +14747,7 @@ impl std::fmt::Debug for DescribeReportJobInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRegionSettingsInput {}
@@ -13915,6 +14758,7 @@ impl std::fmt::Debug for DescribeRegionSettingsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRecoveryPointInput {
@@ -13936,6 +14780,7 @@ impl std::fmt::Debug for DescribeRecoveryPointInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeProtectedResourceInput {
@@ -13951,6 +14796,7 @@ impl std::fmt::Debug for DescribeProtectedResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeGlobalSettingsInput {}
@@ -13961,6 +14807,7 @@ impl std::fmt::Debug for DescribeGlobalSettingsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFrameworkInput {
@@ -13975,6 +14822,7 @@ impl std::fmt::Debug for DescribeFrameworkInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCopyJobInput {
@@ -13989,6 +14837,7 @@ impl std::fmt::Debug for DescribeCopyJobInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBackupVaultInput {
@@ -14006,6 +14855,7 @@ impl std::fmt::Debug for DescribeBackupVaultInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBackupJobInput {
@@ -14020,6 +14870,7 @@ impl std::fmt::Debug for DescribeBackupJobInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteReportPlanInput {
@@ -14034,6 +14885,7 @@ impl std::fmt::Debug for DeleteReportPlanInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRecoveryPointInput {
@@ -14055,6 +14907,7 @@ impl std::fmt::Debug for DeleteRecoveryPointInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFrameworkInput {
@@ -14069,6 +14922,7 @@ impl std::fmt::Debug for DeleteFrameworkInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBackupVaultNotificationsInput {
@@ -14085,6 +14939,7 @@ impl std::fmt::Debug for DeleteBackupVaultNotificationsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBackupVaultLockConfigurationInput {
@@ -14099,6 +14954,7 @@ impl std::fmt::Debug for DeleteBackupVaultLockConfigurationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBackupVaultAccessPolicyInput {
@@ -14116,6 +14972,7 @@ impl std::fmt::Debug for DeleteBackupVaultAccessPolicyInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBackupVaultInput {
@@ -14133,6 +14990,7 @@ impl std::fmt::Debug for DeleteBackupVaultInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBackupSelectionInput {
@@ -14151,6 +15009,7 @@ impl std::fmt::Debug for DeleteBackupSelectionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBackupPlanInput {
@@ -14165,6 +15024,7 @@ impl std::fmt::Debug for DeleteBackupPlanInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateReportPlanInput {
@@ -14210,6 +15070,7 @@ impl std::fmt::Debug for CreateReportPlanInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFrameworkInput {
@@ -14243,6 +15104,7 @@ impl std::fmt::Debug for CreateFrameworkInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBackupVaultInput {
@@ -14272,6 +15134,7 @@ impl std::fmt::Debug for CreateBackupVaultInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBackupSelectionInput {
@@ -14294,6 +15157,7 @@ impl std::fmt::Debug for CreateBackupSelectionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBackupPlanInput {

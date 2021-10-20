@@ -32,6 +32,11 @@ pub mod validate_pipeline_definition_output {
         pub(crate) errored: std::option::Option<bool>,
     }
     impl Builder {
+        /// Appends an item to `validation_errors`.
+        ///
+        /// To override the contents of this collection use [`set_validation_errors`](Self::set_validation_errors).
+        ///
+        /// <p>Any validation errors that were found.</p>
         pub fn validation_errors(
             mut self,
             input: impl Into<crate::model::ValidationError>,
@@ -41,6 +46,7 @@ pub mod validate_pipeline_definition_output {
             self.validation_errors = Some(v);
             self
         }
+        /// <p>Any validation errors that were found.</p>
         pub fn set_validation_errors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ValidationError>>,
@@ -48,6 +54,11 @@ pub mod validate_pipeline_definition_output {
             self.validation_errors = input;
             self
         }
+        /// Appends an item to `validation_warnings`.
+        ///
+        /// To override the contents of this collection use [`set_validation_warnings`](Self::set_validation_warnings).
+        ///
+        /// <p>Any validation warnings that were found.</p>
         pub fn validation_warnings(
             mut self,
             input: impl Into<crate::model::ValidationWarning>,
@@ -57,6 +68,7 @@ pub mod validate_pipeline_definition_output {
             self.validation_warnings = Some(v);
             self
         }
+        /// <p>Any validation warnings that were found.</p>
         pub fn set_validation_warnings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ValidationWarning>>,
@@ -69,6 +81,7 @@ pub mod validate_pipeline_definition_output {
             self.errored = Some(input);
             self
         }
+        /// <p>Indicates whether there were validation errors.</p>
         pub fn set_errored(mut self, input: std::option::Option<bool>) -> Self {
             self.errored = input;
             self
@@ -120,6 +133,7 @@ impl SetTaskStatusOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetStatusOutput {}
@@ -177,6 +191,7 @@ pub mod report_task_runner_heartbeat_output {
             self.terminate = Some(input);
             self
         }
+        /// <p>Indicates whether the calling task runner should terminate.</p>
         pub fn set_terminate(mut self, input: std::option::Option<bool>) -> Self {
             self.terminate = input;
             self
@@ -224,6 +239,7 @@ pub mod report_task_progress_output {
             self.canceled = Some(input);
             self
         }
+        /// <p>If true, the calling task runner should cancel processing of the task. The task runner does not need to call <a>SetTaskStatus</a> for canceled tasks.</p>
         pub fn set_canceled(mut self, input: std::option::Option<bool>) -> Self {
             self.canceled = input;
             self
@@ -305,12 +321,18 @@ pub mod query_objects_output {
         pub(crate) has_more_results: std::option::Option<bool>,
     }
     impl Builder {
+        /// Appends an item to `ids`.
+        ///
+        /// To override the contents of this collection use [`set_ids`](Self::set_ids).
+        ///
+        /// <p>The identifiers that match the query selectors.</p>
         pub fn ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.ids.unwrap_or_default();
             v.push(input.into());
             self.ids = Some(v);
             self
         }
+        /// <p>The identifiers that match the query selectors.</p>
         pub fn set_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -324,6 +346,8 @@ pub mod query_objects_output {
             self.marker = Some(input.into());
             self
         }
+        /// <p>The starting point for the next page of results. To view the next page of results, call <code>QueryObjects</code>
+        /// again with this marker value. If the value is null, there are no more results.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -333,6 +357,7 @@ pub mod query_objects_output {
             self.has_more_results = Some(input);
             self
         }
+        /// <p>Indicates whether there are more results that can be obtained by a subsequent call.</p>
         pub fn set_has_more_results(mut self, input: std::option::Option<bool>) -> Self {
             self.has_more_results = input;
             self
@@ -388,6 +413,11 @@ pub mod put_pipeline_definition_output {
         pub(crate) errored: std::option::Option<bool>,
     }
     impl Builder {
+        /// Appends an item to `validation_errors`.
+        ///
+        /// To override the contents of this collection use [`set_validation_errors`](Self::set_validation_errors).
+        ///
+        /// <p>The validation errors that are associated with the objects defined in <code>pipelineObjects</code>.</p>
         pub fn validation_errors(
             mut self,
             input: impl Into<crate::model::ValidationError>,
@@ -397,6 +427,7 @@ pub mod put_pipeline_definition_output {
             self.validation_errors = Some(v);
             self
         }
+        /// <p>The validation errors that are associated with the objects defined in <code>pipelineObjects</code>.</p>
         pub fn set_validation_errors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ValidationError>>,
@@ -404,6 +435,11 @@ pub mod put_pipeline_definition_output {
             self.validation_errors = input;
             self
         }
+        /// Appends an item to `validation_warnings`.
+        ///
+        /// To override the contents of this collection use [`set_validation_warnings`](Self::set_validation_warnings).
+        ///
+        /// <p>The validation warnings that are associated with the objects defined in <code>pipelineObjects</code>.</p>
         pub fn validation_warnings(
             mut self,
             input: impl Into<crate::model::ValidationWarning>,
@@ -413,6 +449,7 @@ pub mod put_pipeline_definition_output {
             self.validation_warnings = Some(v);
             self
         }
+        /// <p>The validation warnings that are associated with the objects defined in <code>pipelineObjects</code>.</p>
         pub fn set_validation_warnings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ValidationWarning>>,
@@ -426,6 +463,8 @@ pub mod put_pipeline_definition_output {
             self.errored = Some(input);
             self
         }
+        /// <p>Indicates whether there were validation errors, and the pipeline definition is stored but cannot be
+        /// activated until you correct the pipeline and call <code>PutPipelineDefinition</code> to commit the corrected pipeline.</p>
         pub fn set_errored(mut self, input: std::option::Option<bool>) -> Self {
             self.errored = input;
             self
@@ -479,6 +518,9 @@ pub mod poll_for_task_output {
             self.task_object = Some(input);
             self
         }
+        /// <p>The information needed to complete the task that is being assigned to the task runner. One of the fields returned in this object is <code>taskId</code>,
+        /// which contains an identifier for the task being assigned. The calling task runner uses <code>taskId</code> in subsequent calls to <a>ReportTaskProgress</a>
+        /// and <a>SetTaskStatus</a>.</p>
         pub fn set_task_object(
             mut self,
             input: std::option::Option<crate::model::TaskObject>,
@@ -535,12 +577,20 @@ pub mod list_pipelines_output {
         pub(crate) has_more_results: std::option::Option<bool>,
     }
     impl Builder {
+        /// Appends an item to `pipeline_id_list`.
+        ///
+        /// To override the contents of this collection use [`set_pipeline_id_list`](Self::set_pipeline_id_list).
+        ///
+        /// <p>The pipeline identifiers. If you require additional information about the pipelines, you can use these identifiers to call
+        /// <a>DescribePipelines</a> and <a>GetPipelineDefinition</a>.</p>
         pub fn pipeline_id_list(mut self, input: impl Into<crate::model::PipelineIdName>) -> Self {
             let mut v = self.pipeline_id_list.unwrap_or_default();
             v.push(input.into());
             self.pipeline_id_list = Some(v);
             self
         }
+        /// <p>The pipeline identifiers. If you require additional information about the pipelines, you can use these identifiers to call
+        /// <a>DescribePipelines</a> and <a>GetPipelineDefinition</a>.</p>
         pub fn set_pipeline_id_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PipelineIdName>>,
@@ -554,6 +604,8 @@ pub mod list_pipelines_output {
             self.marker = Some(input.into());
             self
         }
+        /// <p>The starting point for the next page of results. To view the next page of results, call <code>ListPipelinesOutput</code>
+        /// again with this marker value. If the value is null, there are no more results.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -563,6 +615,7 @@ pub mod list_pipelines_output {
             self.has_more_results = Some(input);
             self
         }
+        /// <p>Indicates whether there are more results that can be obtained by a subsequent call.</p>
         pub fn set_has_more_results(mut self, input: std::option::Option<bool>) -> Self {
             self.has_more_results = input;
             self
@@ -618,12 +671,18 @@ pub mod get_pipeline_definition_output {
             std::option::Option<std::vec::Vec<crate::model::ParameterValue>>,
     }
     impl Builder {
+        /// Appends an item to `pipeline_objects`.
+        ///
+        /// To override the contents of this collection use [`set_pipeline_objects`](Self::set_pipeline_objects).
+        ///
+        /// <p>The objects defined in the pipeline.</p>
         pub fn pipeline_objects(mut self, input: impl Into<crate::model::PipelineObject>) -> Self {
             let mut v = self.pipeline_objects.unwrap_or_default();
             v.push(input.into());
             self.pipeline_objects = Some(v);
             self
         }
+        /// <p>The objects defined in the pipeline.</p>
         pub fn set_pipeline_objects(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PipelineObject>>,
@@ -631,6 +690,11 @@ pub mod get_pipeline_definition_output {
             self.pipeline_objects = input;
             self
         }
+        /// Appends an item to `parameter_objects`.
+        ///
+        /// To override the contents of this collection use [`set_parameter_objects`](Self::set_parameter_objects).
+        ///
+        /// <p>The parameter objects used in the pipeline definition.</p>
         pub fn parameter_objects(
             mut self,
             input: impl Into<crate::model::ParameterObject>,
@@ -640,6 +704,7 @@ pub mod get_pipeline_definition_output {
             self.parameter_objects = Some(v);
             self
         }
+        /// <p>The parameter objects used in the pipeline definition.</p>
         pub fn set_parameter_objects(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ParameterObject>>,
@@ -647,12 +712,18 @@ pub mod get_pipeline_definition_output {
             self.parameter_objects = input;
             self
         }
+        /// Appends an item to `parameter_values`.
+        ///
+        /// To override the contents of this collection use [`set_parameter_values`](Self::set_parameter_values).
+        ///
+        /// <p>The parameter values used in the pipeline definition.</p>
         pub fn parameter_values(mut self, input: impl Into<crate::model::ParameterValue>) -> Self {
             let mut v = self.parameter_values.unwrap_or_default();
             v.push(input.into());
             self.parameter_values = Some(v);
             self
         }
+        /// <p>The parameter values used in the pipeline definition.</p>
         pub fn set_parameter_values(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ParameterValue>>,
@@ -705,6 +776,7 @@ pub mod evaluate_expression_output {
             self.evaluated_expression = Some(input.into());
             self
         }
+        /// <p>The evaluated expression.</p>
         pub fn set_evaluated_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -752,6 +824,11 @@ pub mod describe_pipelines_output {
             std::option::Option<std::vec::Vec<crate::model::PipelineDescription>>,
     }
     impl Builder {
+        /// Appends an item to `pipeline_description_list`.
+        ///
+        /// To override the contents of this collection use [`set_pipeline_description_list`](Self::set_pipeline_description_list).
+        ///
+        /// <p>An array of descriptions for the specified pipelines.</p>
         pub fn pipeline_description_list(
             mut self,
             input: impl Into<crate::model::PipelineDescription>,
@@ -761,6 +838,7 @@ pub mod describe_pipelines_output {
             self.pipeline_description_list = Some(v);
             self
         }
+        /// <p>An array of descriptions for the specified pipelines.</p>
         pub fn set_pipeline_description_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PipelineDescription>>,
@@ -816,12 +894,18 @@ pub mod describe_objects_output {
         pub(crate) has_more_results: std::option::Option<bool>,
     }
     impl Builder {
+        /// Appends an item to `pipeline_objects`.
+        ///
+        /// To override the contents of this collection use [`set_pipeline_objects`](Self::set_pipeline_objects).
+        ///
+        /// <p>An array of object definitions.</p>
         pub fn pipeline_objects(mut self, input: impl Into<crate::model::PipelineObject>) -> Self {
             let mut v = self.pipeline_objects.unwrap_or_default();
             v.push(input.into());
             self.pipeline_objects = Some(v);
             self
         }
+        /// <p>An array of object definitions.</p>
         pub fn set_pipeline_objects(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PipelineObject>>,
@@ -835,6 +919,8 @@ pub mod describe_objects_output {
             self.marker = Some(input.into());
             self
         }
+        /// <p>The starting point for the next page of results. To view the next page of results, call <code>DescribeObjects</code>
+        /// again with this marker value. If the value is null, there are no more results.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -844,6 +930,7 @@ pub mod describe_objects_output {
             self.has_more_results = Some(input);
             self
         }
+        /// <p>Indicates whether there are more results to return.</p>
         pub fn set_has_more_results(mut self, input: std::option::Option<bool>) -> Self {
             self.has_more_results = input;
             self
@@ -865,6 +952,7 @@ impl DescribeObjectsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePipelineOutput {}
@@ -952,6 +1040,7 @@ pub mod create_pipeline_output {
             self.pipeline_id = Some(input.into());
             self
         }
+        /// <p>The ID that AWS Data Pipeline assigns the newly created pipeline. For example, <code>df-06372391ZG65EXAMPLE</code>.</p>
         pub fn set_pipeline_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.pipeline_id = input;
             self

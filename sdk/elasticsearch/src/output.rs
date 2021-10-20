@@ -44,6 +44,7 @@ pub mod upgrade_elasticsearch_domain_output {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -53,6 +54,7 @@ pub mod upgrade_elasticsearch_domain_output {
             self.target_version = Some(input.into());
             self
         }
+        /// <p>The version of Elasticsearch that you intend to upgrade the domain to.</p>
         pub fn set_target_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -68,6 +70,10 @@ pub mod upgrade_elasticsearch_domain_output {
             self.perform_check_only = Some(input);
             self
         }
+        /// <p>
+        /// This flag, when set to True, indicates that an Upgrade Eligibility Check needs to be performed.
+        /// This will not actually perform the Upgrade.
+        /// </p>
         pub fn set_perform_check_only(mut self, input: std::option::Option<bool>) -> Self {
             self.perform_check_only = input;
             self
@@ -123,6 +129,7 @@ pub mod update_package_output {
             self.package_details = Some(input);
             self
         }
+        /// <p>Information about the package <code>PackageDetails</code>.</p>
         pub fn set_package_details(
             mut self,
             input: std::option::Option<crate::model::PackageDetails>,
@@ -173,6 +180,7 @@ pub mod update_elasticsearch_domain_config_output {
             self.domain_config = Some(input);
             self
         }
+        /// <p>The status of the updated Elasticsearch domain. </p>
         pub fn set_domain_config(
             mut self,
             input: std::option::Option<crate::model::ElasticsearchDomainConfig>,
@@ -227,6 +235,7 @@ pub mod start_elasticsearch_service_software_update_output {
             self.service_software_options = Some(input);
             self
         }
+        /// <p>The current status of the Elasticsearch service software update.</p>
         pub fn set_service_software_options(
             mut self,
             input: std::option::Option<crate::model::ServiceSoftwareOptions>,
@@ -249,6 +258,7 @@ impl StartElasticsearchServiceSoftwareUpdateOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveTagsOutput {}
@@ -314,6 +324,7 @@ pub mod reject_inbound_cross_cluster_search_connection_output {
             self.cross_cluster_search_connection = Some(input);
             self
         }
+        /// <p>Specifies the <code><a>InboundCrossClusterSearchConnection</a></code> of rejected inbound connection. </p>
         pub fn set_cross_cluster_search_connection(
             mut self,
             input: std::option::Option<crate::model::InboundCrossClusterSearchConnection>,
@@ -375,6 +386,7 @@ pub mod purchase_reserved_elasticsearch_instance_offering_output {
             self.reserved_elasticsearch_instance_id = Some(input.into());
             self
         }
+        /// <p>Details of the reserved Elasticsearch instance which was purchased.</p>
         pub fn set_reserved_elasticsearch_instance_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -387,6 +399,7 @@ pub mod purchase_reserved_elasticsearch_instance_offering_output {
             self.reservation_name = Some(input.into());
             self
         }
+        /// <p>The customer-specified identifier used to track this reservation.</p>
         pub fn set_reservation_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -434,12 +447,18 @@ pub mod list_tags_output {
         pub(crate) tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
+        /// Appends an item to `tag_list`.
+        ///
+        /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
+        ///
+        /// <p> List of <code>Tag</code> for the requested Elasticsearch domain.</p>
         pub fn tag_list(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
             v.push(input.into());
             self.tag_list = Some(v);
             self
         }
+        /// <p> List of <code>Tag</code> for the requested Elasticsearch domain.</p>
         pub fn set_tag_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -500,6 +519,11 @@ pub mod list_packages_for_domain_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `domain_package_details_list`.
+        ///
+        /// To override the contents of this collection use [`set_domain_package_details_list`](Self::set_domain_package_details_list).
+        ///
+        /// <p>List of <code>DomainPackageDetails</code> objects.</p>
         pub fn domain_package_details_list(
             mut self,
             input: impl Into<crate::model::DomainPackageDetails>,
@@ -509,6 +533,7 @@ pub mod list_packages_for_domain_output {
             self.domain_package_details_list = Some(v);
             self
         }
+        /// <p>List of <code>DomainPackageDetails</code> objects.</p>
         pub fn set_domain_package_details_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DomainPackageDetails>>,
@@ -521,6 +546,7 @@ pub mod list_packages_for_domain_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>Pagination token that needs to be supplied to the next call to get the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -578,12 +604,20 @@ pub mod list_elasticsearch_versions_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `elasticsearch_versions`.
+        ///
+        /// To override the contents of this collection use [`set_elasticsearch_versions`](Self::set_elasticsearch_versions).
+        ///
+        /// <p>List of supported elastic search versions.
+        /// </p>
         pub fn elasticsearch_versions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.elasticsearch_versions.unwrap_or_default();
             v.push(input.into());
             self.elasticsearch_versions = Some(v);
             self
         }
+        /// <p>List of supported elastic search versions.
+        /// </p>
         pub fn set_elasticsearch_versions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -599,6 +633,10 @@ pub mod list_elasticsearch_versions_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>
+        /// Paginated APIs accepts NextToken input to returns next page results and provides
+        /// a NextToken output in the response which can be used by the client to retrieve more results.
+        /// </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -666,6 +704,17 @@ pub mod list_elasticsearch_instance_types_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `elasticsearch_instance_types`.
+        ///
+        /// To override the contents of this collection use [`set_elasticsearch_instance_types`](Self::set_elasticsearch_instance_types).
+        ///
+        /// <p>
+        /// List of instance types supported by Amazon Elasticsearch service for
+        /// given
+        /// <code>
+        /// <a>ElasticsearchVersion</a>
+        /// </code>
+        /// </p>
         pub fn elasticsearch_instance_types(
             mut self,
             input: impl Into<crate::model::EsPartitionInstanceType>,
@@ -675,6 +724,13 @@ pub mod list_elasticsearch_instance_types_output {
             self.elasticsearch_instance_types = Some(v);
             self
         }
+        /// <p>
+        /// List of instance types supported by Amazon Elasticsearch service for
+        /// given
+        /// <code>
+        /// <a>ElasticsearchVersion</a>
+        /// </code>
+        /// </p>
         pub fn set_elasticsearch_instance_types(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EsPartitionInstanceType>>,
@@ -690,6 +746,10 @@ pub mod list_elasticsearch_instance_types_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>In case if there are more results available NextToken would be
+        /// present, make further request to the same API with
+        /// received NextToken to paginate remaining results.
+        /// </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -723,6 +783,7 @@ pub struct ListDomainsForPackageOutput {
     /// <p>List of <code>DomainPackageDetails</code> objects.</p>
     pub domain_package_details_list:
         std::option::Option<std::vec::Vec<crate::model::DomainPackageDetails>>,
+    #[allow(missing_docs)] // documentation missing in model
     pub next_token: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ListDomainsForPackageOutput {
@@ -747,6 +808,11 @@ pub mod list_domains_for_package_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `domain_package_details_list`.
+        ///
+        /// To override the contents of this collection use [`set_domain_package_details_list`](Self::set_domain_package_details_list).
+        ///
+        /// <p>List of <code>DomainPackageDetails</code> objects.</p>
         pub fn domain_package_details_list(
             mut self,
             input: impl Into<crate::model::DomainPackageDetails>,
@@ -756,6 +822,7 @@ pub mod list_domains_for_package_output {
             self.domain_package_details_list = Some(v);
             self
         }
+        /// <p>List of <code>DomainPackageDetails</code> objects.</p>
         pub fn set_domain_package_details_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DomainPackageDetails>>,
@@ -763,10 +830,12 @@ pub mod list_domains_for_package_output {
             self.domain_package_details_list = input;
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -810,12 +879,18 @@ pub mod list_domain_names_output {
         pub(crate) domain_names: std::option::Option<std::vec::Vec<crate::model::DomainInfo>>,
     }
     impl Builder {
+        /// Appends an item to `domain_names`.
+        ///
+        /// To override the contents of this collection use [`set_domain_names`](Self::set_domain_names).
+        ///
+        /// <p>List of domain names and respective engine types.</p>
         pub fn domain_names(mut self, input: impl Into<crate::model::DomainInfo>) -> Self {
             let mut v = self.domain_names.unwrap_or_default();
             v.push(input.into());
             self.domain_names = Some(v);
             self
         }
+        /// <p>List of domain names and respective engine types.</p>
         pub fn set_domain_names(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DomainInfo>>,
@@ -906,6 +981,14 @@ pub mod get_upgrade_status_output {
             self.upgrade_step = Some(input);
             self
         }
+        /// <p>
+        /// Represents one of 3 steps that an Upgrade or Upgrade Eligibility Check does through:
+        /// <ul>
+        /// <li>PreUpgradeCheck</li>
+        /// <li>Snapshot</li>
+        /// <li>Upgrade</li>
+        /// </ul>
+        /// </p>
         pub fn set_upgrade_step(
             mut self,
             input: std::option::Option<crate::model::UpgradeStep>,
@@ -930,6 +1013,19 @@ pub mod get_upgrade_status_output {
             self.step_status = Some(input);
             self
         }
+        /// <p>
+        /// One of 4 statuses that a step can go through returned as part of the
+        /// <code>
+        /// <a>GetUpgradeStatusResponse</a>
+        /// </code>
+        /// object. The status can take one of the following values:
+        /// <ul>
+        /// <li>In Progress</li>
+        /// <li>Succeeded</li>
+        /// <li>Succeeded with Issues</li>
+        /// <li>Failed</li>
+        /// </ul>
+        /// </p>
         pub fn set_step_status(
             mut self,
             input: std::option::Option<crate::model::UpgradeStatus>,
@@ -942,6 +1038,7 @@ pub mod get_upgrade_status_output {
             self.upgrade_name = Some(input.into());
             self
         }
+        /// <p>A string that describes the update briefly</p>
         pub fn set_upgrade_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.upgrade_name = input;
             self
@@ -1007,12 +1104,38 @@ pub mod get_upgrade_history_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `upgrade_histories`.
+        ///
+        /// To override the contents of this collection use [`set_upgrade_histories`](Self::set_upgrade_histories).
+        ///
+        /// <p>
+        /// A list of
+        /// <code>
+        /// <a>UpgradeHistory</a>
+        /// </code>
+        /// objects corresponding to each Upgrade or Upgrade Eligibility Check performed on a domain returned as part of
+        /// <code>
+        /// <a>GetUpgradeHistoryResponse</a>
+        /// </code>
+        /// object.
+        /// </p>
         pub fn upgrade_histories(mut self, input: impl Into<crate::model::UpgradeHistory>) -> Self {
             let mut v = self.upgrade_histories.unwrap_or_default();
             v.push(input.into());
             self.upgrade_histories = Some(v);
             self
         }
+        /// <p>
+        /// A list of
+        /// <code>
+        /// <a>UpgradeHistory</a>
+        /// </code>
+        /// objects corresponding to each Upgrade or Upgrade Eligibility Check performed on a domain returned as part of
+        /// <code>
+        /// <a>GetUpgradeHistoryResponse</a>
+        /// </code>
+        /// object.
+        /// </p>
         pub fn set_upgrade_histories(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UpgradeHistory>>,
@@ -1025,6 +1148,7 @@ pub mod get_upgrade_history_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>Pagination token that needs to be supplied to the next call to get the next page of results</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1055,10 +1179,12 @@ impl GetUpgradeHistoryOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPackageVersionHistoryOutput {
+    #[allow(missing_docs)] // documentation missing in model
     pub package_id: std::option::Option<std::string::String>,
     /// <p>List of <code>PackageVersionHistory</code> objects.</p>
     pub package_version_history_list:
         std::option::Option<std::vec::Vec<crate::model::PackageVersionHistory>>,
+    #[allow(missing_docs)] // documentation missing in model
     pub next_token: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetPackageVersionHistoryOutput {
@@ -1085,14 +1211,21 @@ pub mod get_package_version_history_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
         pub fn package_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.package_id = Some(input.into());
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
         pub fn set_package_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.package_id = input;
             self
         }
+        /// Appends an item to `package_version_history_list`.
+        ///
+        /// To override the contents of this collection use [`set_package_version_history_list`](Self::set_package_version_history_list).
+        ///
+        /// <p>List of <code>PackageVersionHistory</code> objects.</p>
         pub fn package_version_history_list(
             mut self,
             input: impl Into<crate::model::PackageVersionHistory>,
@@ -1102,6 +1235,7 @@ pub mod get_package_version_history_output {
             self.package_version_history_list = Some(v);
             self
         }
+        /// <p>List of <code>PackageVersionHistory</code> objects.</p>
         pub fn set_package_version_history_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PackageVersionHistory>>,
@@ -1109,10 +1243,12 @@ pub mod get_package_version_history_output {
             self.package_version_history_list = input;
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1174,6 +1310,17 @@ pub mod get_compatible_elasticsearch_versions_output {
             std::option::Option<std::vec::Vec<crate::model::CompatibleVersionsMap>>,
     }
     impl Builder {
+        /// Appends an item to `compatible_elasticsearch_versions`.
+        ///
+        /// To override the contents of this collection use [`set_compatible_elasticsearch_versions`](Self::set_compatible_elasticsearch_versions).
+        ///
+        /// <p>
+        /// A map of compatible Elasticsearch versions returned as part of the
+        /// <code>
+        /// <a>GetCompatibleElasticsearchVersions</a>
+        /// </code>
+        /// operation.
+        /// </p>
         pub fn compatible_elasticsearch_versions(
             mut self,
             input: impl Into<crate::model::CompatibleVersionsMap>,
@@ -1183,6 +1330,13 @@ pub mod get_compatible_elasticsearch_versions_output {
             self.compatible_elasticsearch_versions = Some(v);
             self
         }
+        /// <p>
+        /// A map of compatible Elasticsearch versions returned as part of the
+        /// <code>
+        /// <a>GetCompatibleElasticsearchVersions</a>
+        /// </code>
+        /// operation.
+        /// </p>
         pub fn set_compatible_elasticsearch_versions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CompatibleVersionsMap>>,
@@ -1239,6 +1393,7 @@ pub mod dissociate_package_output {
             self.domain_package_details = Some(input);
             self
         }
+        /// <p><code>DomainPackageDetails</code></p>
         pub fn set_domain_package_details(
             mut self,
             input: std::option::Option<crate::model::DomainPackageDetails>,
@@ -1298,10 +1453,16 @@ pub mod describe_reserved_elasticsearch_instances_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>Provides an identifier to allow retrieval of paginated results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
+        /// Appends an item to `reserved_elasticsearch_instances`.
+        ///
+        /// To override the contents of this collection use [`set_reserved_elasticsearch_instances`](Self::set_reserved_elasticsearch_instances).
+        ///
+        /// <p>List of reserved Elasticsearch instances.</p>
         pub fn reserved_elasticsearch_instances(
             mut self,
             input: impl Into<crate::model::ReservedElasticsearchInstance>,
@@ -1311,6 +1472,7 @@ pub mod describe_reserved_elasticsearch_instances_output {
             self.reserved_elasticsearch_instances = Some(v);
             self
         }
+        /// <p>List of reserved Elasticsearch instances.</p>
         pub fn set_reserved_elasticsearch_instances(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ReservedElasticsearchInstance>>,
@@ -1371,10 +1533,16 @@ pub mod describe_reserved_elasticsearch_instance_offerings_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>Provides an identifier to allow retrieval of paginated results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
+        /// Appends an item to `reserved_elasticsearch_instance_offerings`.
+        ///
+        /// To override the contents of this collection use [`set_reserved_elasticsearch_instance_offerings`](Self::set_reserved_elasticsearch_instance_offerings).
+        ///
+        /// <p>List of reserved Elasticsearch instance offerings</p>
         pub fn reserved_elasticsearch_instance_offerings(
             mut self,
             input: impl Into<crate::model::ReservedElasticsearchInstanceOffering>,
@@ -1386,6 +1554,7 @@ pub mod describe_reserved_elasticsearch_instance_offerings_output {
             self.reserved_elasticsearch_instance_offerings = Some(v);
             self
         }
+        /// <p>List of reserved Elasticsearch instance offerings</p>
         pub fn set_reserved_elasticsearch_instance_offerings(
             mut self,
             input: std::option::Option<
@@ -1425,6 +1594,7 @@ impl DescribeReservedElasticsearchInstanceOfferingsOutput {
 pub struct DescribePackagesOutput {
     /// <p>List of <code>PackageDetails</code> objects.</p>
     pub package_details_list: std::option::Option<std::vec::Vec<crate::model::PackageDetails>>,
+    #[allow(missing_docs)] // documentation missing in model
     pub next_token: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribePackagesOutput {
@@ -1446,6 +1616,11 @@ pub mod describe_packages_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `package_details_list`.
+        ///
+        /// To override the contents of this collection use [`set_package_details_list`](Self::set_package_details_list).
+        ///
+        /// <p>List of <code>PackageDetails</code> objects.</p>
         pub fn package_details_list(
             mut self,
             input: impl Into<crate::model::PackageDetails>,
@@ -1455,6 +1630,7 @@ pub mod describe_packages_output {
             self.package_details_list = Some(v);
             self
         }
+        /// <p>List of <code>PackageDetails</code> objects.</p>
         pub fn set_package_details_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PackageDetails>>,
@@ -1462,10 +1638,12 @@ pub mod describe_packages_output {
             self.package_details_list = input;
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1519,6 +1697,11 @@ pub mod describe_outbound_cross_cluster_search_connections_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `cross_cluster_search_connections`.
+        ///
+        /// To override the contents of this collection use [`set_cross_cluster_search_connections`](Self::set_cross_cluster_search_connections).
+        ///
+        /// <p>Consists of list of <code><a>OutboundCrossClusterSearchConnection</a></code> matching the specified filter criteria.</p>
         pub fn cross_cluster_search_connections(
             mut self,
             input: impl Into<crate::model::OutboundCrossClusterSearchConnection>,
@@ -1528,6 +1711,7 @@ pub mod describe_outbound_cross_cluster_search_connections_output {
             self.cross_cluster_search_connections = Some(v);
             self
         }
+        /// <p>Consists of list of <code><a>OutboundCrossClusterSearchConnection</a></code> matching the specified filter criteria.</p>
         pub fn set_cross_cluster_search_connections(
             mut self,
             input: std::option::Option<
@@ -1543,6 +1727,8 @@ pub mod describe_outbound_cross_cluster_search_connections_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If more results are available and NextToken is present, make the next request to the same API with the received NextToken to paginate the remaining results.
+        /// </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1597,6 +1783,11 @@ pub mod describe_inbound_cross_cluster_search_connections_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `cross_cluster_search_connections`.
+        ///
+        /// To override the contents of this collection use [`set_cross_cluster_search_connections`](Self::set_cross_cluster_search_connections).
+        ///
+        /// <p>Consists of list of <code><a>InboundCrossClusterSearchConnection</a></code> matching the specified filter criteria.</p>
         pub fn cross_cluster_search_connections(
             mut self,
             input: impl Into<crate::model::InboundCrossClusterSearchConnection>,
@@ -1606,6 +1797,7 @@ pub mod describe_inbound_cross_cluster_search_connections_output {
             self.cross_cluster_search_connections = Some(v);
             self
         }
+        /// <p>Consists of list of <code><a>InboundCrossClusterSearchConnection</a></code> matching the specified filter criteria.</p>
         pub fn set_cross_cluster_search_connections(
             mut self,
             input: std::option::Option<
@@ -1621,6 +1813,8 @@ pub mod describe_inbound_cross_cluster_search_connections_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If more results are available and NextToken is present, make the next request to the same API with the received NextToken to paginate the remaining results.
+        /// </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1683,6 +1877,20 @@ pub mod describe_elasticsearch_instance_type_limits_output {
         >,
     }
     impl Builder {
+        /// Adds a key-value pair to `limits_by_role`.
+        ///
+        /// To override the contents of this collection use [`set_limits_by_role`](Self::set_limits_by_role).
+        ///
+        /// <p>
+        /// Map of Role of the Instance and Limits that are applicable.
+        /// Role performed by given Instance in Elasticsearch
+        /// can be one of the following:
+        /// <ul>
+        /// <li>data: If the given InstanceType is used as data node</li>
+        /// <li>master: If the given InstanceType is used as master node</li>
+        /// <li>ultra_warm: If the given InstanceType is used as warm node</li>
+        /// </ul>
+        /// </p>
         pub fn limits_by_role(
             mut self,
             k: impl Into<std::string::String>,
@@ -1693,6 +1901,16 @@ pub mod describe_elasticsearch_instance_type_limits_output {
             self.limits_by_role = Some(hash_map);
             self
         }
+        /// <p>
+        /// Map of Role of the Instance and Limits that are applicable.
+        /// Role performed by given Instance in Elasticsearch
+        /// can be one of the following:
+        /// <ul>
+        /// <li>data: If the given InstanceType is used as data node</li>
+        /// <li>master: If the given InstanceType is used as master node</li>
+        /// <li>ultra_warm: If the given InstanceType is used as warm node</li>
+        /// </ul>
+        /// </p>
         pub fn set_limits_by_role(
             mut self,
             input: std::option::Option<
@@ -1742,6 +1960,11 @@ pub mod describe_elasticsearch_domains_output {
             std::option::Option<std::vec::Vec<crate::model::ElasticsearchDomainStatus>>,
     }
     impl Builder {
+        /// Appends an item to `domain_status_list`.
+        ///
+        /// To override the contents of this collection use [`set_domain_status_list`](Self::set_domain_status_list).
+        ///
+        /// <p>The status of the domains requested in the <code>DescribeElasticsearchDomains</code> request.</p>
         pub fn domain_status_list(
             mut self,
             input: impl Into<crate::model::ElasticsearchDomainStatus>,
@@ -1751,6 +1974,7 @@ pub mod describe_elasticsearch_domains_output {
             self.domain_status_list = Some(v);
             self
         }
+        /// <p>The status of the domains requested in the <code>DescribeElasticsearchDomains</code> request.</p>
         pub fn set_domain_status_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ElasticsearchDomainStatus>>,
@@ -1801,6 +2025,7 @@ pub mod describe_elasticsearch_domain_config_output {
             self.domain_config = Some(input);
             self
         }
+        /// <p>The configuration information of the domain requested in the <code>DescribeElasticsearchDomainConfig</code> request.</p>
         pub fn set_domain_config(
             mut self,
             input: std::option::Option<crate::model::ElasticsearchDomainConfig>,
@@ -1851,6 +2076,7 @@ pub mod describe_elasticsearch_domain_output {
             self.domain_status = Some(input);
             self
         }
+        /// <p>The current status of the Elasticsearch domain.</p>
         pub fn set_domain_status(
             mut self,
             input: std::option::Option<crate::model::ElasticsearchDomainStatus>,
@@ -1900,12 +2126,18 @@ pub mod describe_domain_auto_tunes_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `auto_tunes`.
+        ///
+        /// To override the contents of this collection use [`set_auto_tunes`](Self::set_auto_tunes).
+        ///
+        /// <p>Specifies the list of setting adjustments that Auto-Tune has made to the domain. See the <a href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html" target="_blank">Developer Guide</a> for more information.</p>
         pub fn auto_tunes(mut self, input: impl Into<crate::model::AutoTune>) -> Self {
             let mut v = self.auto_tunes.unwrap_or_default();
             v.push(input.into());
             self.auto_tunes = Some(v);
             self
         }
+        /// <p>Specifies the list of setting adjustments that Auto-Tune has made to the domain. See the <a href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html" target="_blank">Developer Guide</a> for more information.</p>
         pub fn set_auto_tunes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AutoTune>>,
@@ -1918,6 +2150,7 @@ pub mod describe_domain_auto_tunes_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>Specifies an identifier to allow retrieval of paginated results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1972,6 +2205,7 @@ pub mod delete_package_output {
             self.package_details = Some(input);
             self
         }
+        /// <p><code>PackageDetails</code></p>
         pub fn set_package_details(
             mut self,
             input: std::option::Option<crate::model::PackageDetails>,
@@ -2030,6 +2264,7 @@ pub mod delete_outbound_cross_cluster_search_connection_output {
             self.cross_cluster_search_connection = Some(input);
             self
         }
+        /// <p>Specifies the <code><a>OutboundCrossClusterSearchConnection</a></code> of deleted outbound connection. </p>
         pub fn set_cross_cluster_search_connection(
             mut self,
             input: std::option::Option<crate::model::OutboundCrossClusterSearchConnection>,
@@ -2089,6 +2324,7 @@ pub mod delete_inbound_cross_cluster_search_connection_output {
             self.cross_cluster_search_connection = Some(input);
             self
         }
+        /// <p>Specifies the <code><a>InboundCrossClusterSearchConnection</a></code> of deleted inbound connection. </p>
         pub fn set_cross_cluster_search_connection(
             mut self,
             input: std::option::Option<crate::model::InboundCrossClusterSearchConnection>,
@@ -2112,6 +2348,7 @@ impl DeleteInboundCrossClusterSearchConnectionOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteElasticsearchServiceRoleOutput {}
@@ -2169,6 +2406,7 @@ pub mod delete_elasticsearch_domain_output {
             self.domain_status = Some(input);
             self
         }
+        /// <p>The status of the Elasticsearch domain being deleted.</p>
         pub fn set_domain_status(
             mut self,
             input: std::option::Option<crate::model::ElasticsearchDomainStatus>,
@@ -2225,6 +2463,7 @@ pub mod create_package_output {
             self.package_details = Some(input);
             self
         }
+        /// <p>Information about the package <code>PackageDetails</code>.</p>
         pub fn set_package_details(
             mut self,
             input: std::option::Option<crate::model::PackageDetails>,
@@ -2296,6 +2535,7 @@ pub mod create_outbound_cross_cluster_search_connection_output {
             self.source_domain_info = Some(input);
             self
         }
+        /// <p>Specifies the <code><a>DomainInformation</a></code> for the source Elasticsearch domain.</p>
         pub fn set_source_domain_info(
             mut self,
             input: std::option::Option<crate::model::DomainInformation>,
@@ -2308,6 +2548,7 @@ pub mod create_outbound_cross_cluster_search_connection_output {
             self.destination_domain_info = Some(input);
             self
         }
+        /// <p>Specifies the <code><a>DomainInformation</a></code> for the destination Elasticsearch domain.</p>
         pub fn set_destination_domain_info(
             mut self,
             input: std::option::Option<crate::model::DomainInformation>,
@@ -2320,6 +2561,7 @@ pub mod create_outbound_cross_cluster_search_connection_output {
             self.connection_alias = Some(input.into());
             self
         }
+        /// <p>Specifies the connection alias provided during the create connection request.</p>
         pub fn set_connection_alias(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2335,6 +2577,7 @@ pub mod create_outbound_cross_cluster_search_connection_output {
             self.connection_status = Some(input);
             self
         }
+        /// <p>Specifies the <code><a>OutboundCrossClusterSearchConnectionStatus</a></code> for the newly created connection.</p>
         pub fn set_connection_status(
             mut self,
             input: std::option::Option<crate::model::OutboundCrossClusterSearchConnectionStatus>,
@@ -2350,6 +2593,7 @@ pub mod create_outbound_cross_cluster_search_connection_output {
             self.cross_cluster_search_connection_id = Some(input.into());
             self
         }
+        /// <p>Unique id for the created outbound connection, which is used for subsequent operations on connection.</p>
         pub fn set_cross_cluster_search_connection_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2405,6 +2649,7 @@ pub mod create_elasticsearch_domain_output {
             self.domain_status = Some(input);
             self
         }
+        /// <p>The status of the newly created Elasticsearch domain. </p>
         pub fn set_domain_status(
             mut self,
             input: std::option::Option<crate::model::ElasticsearchDomainStatus>,
@@ -2459,6 +2704,7 @@ pub mod cancel_elasticsearch_service_software_update_output {
             self.service_software_options = Some(input);
             self
         }
+        /// <p>The current status of the Elasticsearch service software update.</p>
         pub fn set_service_software_options(
             mut self,
             input: std::option::Option<crate::model::ServiceSoftwareOptions>,
@@ -2516,6 +2762,7 @@ pub mod associate_package_output {
             self.domain_package_details = Some(input);
             self
         }
+        /// <p><code>DomainPackageDetails</code></p>
         pub fn set_domain_package_details(
             mut self,
             input: std::option::Option<crate::model::DomainPackageDetails>,
@@ -2538,6 +2785,7 @@ impl AssociatePackageOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddTagsOutput {}
@@ -2603,6 +2851,7 @@ pub mod accept_inbound_cross_cluster_search_connection_output {
             self.cross_cluster_search_connection = Some(input);
             self
         }
+        /// <p>Specifies the <code><a>InboundCrossClusterSearchConnection</a></code> of accepted inbound connection. </p>
         pub fn set_cross_cluster_search_connection(
             mut self,
             input: std::option::Option<crate::model::InboundCrossClusterSearchConnection>,

@@ -12,11 +12,11 @@ use aws_sdk_transcribestreaming::model::{
 };
 use aws_sdk_transcribestreaming::output::StartStreamTranscriptionOutput;
 use aws_sdk_transcribestreaming::{Blob, Client, Config, Credentials, Region, SdkError};
+use aws_smithy_client::dvr::{Event, ReplayingConnection};
+use aws_smithy_eventstream::frame::{DecodedFrame, HeaderValue, Message, MessageFrameDecoder};
+use aws_smithy_http::event_stream::BoxError;
 use bytes::BufMut;
 use futures_core::Stream;
-use smithy_client::dvr::{Event, ReplayingConnection};
-use smithy_eventstream::frame::{DecodedFrame, HeaderValue, Message, MessageFrameDecoder};
-use smithy_http::event_stream::BoxError;
 use std::collections::{BTreeMap, BTreeSet};
 use std::error::Error as StdError;
 

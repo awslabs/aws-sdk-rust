@@ -74,8 +74,8 @@ impl ProvideCredentials for EnvironmentVariableCredentialsProvider {
 
 fn to_cred_error(err: VarError) -> CredentialsError {
     match err {
-        VarError::NotPresent => CredentialsError::CredentialsNotLoaded,
-        e @ VarError::NotUnicode(_) => CredentialsError::Unhandled(Box::new(e)),
+        VarError::NotPresent => CredentialsError::not_loaded("environment variable not set"),
+        e @ VarError::NotUnicode(_) => CredentialsError::unhandled(e),
     }
 }
 
@@ -153,9 +153,7 @@ mod test {
             .now_or_never()
             .unwrap()
             .expect_err("no credentials defined");
-        if let CredentialsError::Unhandled(_) = err {
-            panic!("wrong error type")
-        };
+        assert!(matches!(err, CredentialsError::CredentialsNotLoaded { .. }));
     }
 
     #[test]

@@ -2,10 +2,10 @@
 pub fn deser_payload_get_introspection_schema_get_introspection_schema_output_schema(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<smithy_types::Blob>,
+    std::option::Option<aws_smithy_types::Blob>,
     crate::error::GetIntrospectionSchemaError,
 > {
     (!body.is_empty())
-        .then(|| Ok(smithy_types::Blob::new(body)))
+        .then(|| Ok(aws_smithy_types::Blob::new(body)))
         .transpose()
 }

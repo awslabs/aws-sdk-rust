@@ -44,6 +44,8 @@ pub mod booking_options {
             self.auto_accept_requests = Some(input);
             self
         }
+        /// <p>The resource's ability to automatically reply to requests. If disabled, delegates
+        /// must be associated to the resource.</p>
         pub fn set_auto_accept_requests(mut self, input: std::option::Option<bool>) -> Self {
             self.auto_accept_requests = input;
             self
@@ -53,6 +55,7 @@ pub mod booking_options {
             self.auto_decline_recurring_requests = Some(input);
             self
         }
+        /// <p>The resource's ability to automatically decline any recurring requests.</p>
         pub fn set_auto_decline_recurring_requests(
             mut self,
             input: std::option::Option<bool>,
@@ -65,6 +68,7 @@ pub mod booking_options {
             self.auto_decline_conflicting_requests = Some(input);
             self
         }
+        /// <p>The resource's ability to automatically decline any conflicting requests.</p>
         pub fn set_auto_decline_conflicting_requests(
             mut self,
             input: std::option::Option<bool>,
@@ -93,6 +97,7 @@ impl BookingOptions {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -104,7 +109,9 @@ impl BookingOptions {
     std::hash::Hash,
 )]
 pub enum MobileDeviceAccessRuleEffect {
+    #[allow(missing_docs)] // documentation missing in model
     Allow,
+    #[allow(missing_docs)] // documentation missing in model
     Deny,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -126,6 +133,7 @@ impl std::str::FromStr for MobileDeviceAccessRuleEffect {
     }
 }
 impl MobileDeviceAccessRuleEffect {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MobileDeviceAccessRuleEffect::Allow => "ALLOW",
@@ -133,6 +141,7 @@ impl MobileDeviceAccessRuleEffect {
             MobileDeviceAccessRuleEffect::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ALLOW", "DENY"]
     }
@@ -175,6 +184,7 @@ pub mod tag {
             self.key = Some(input.into());
             self
         }
+        /// <p>The key of the tag.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -184,6 +194,7 @@ pub mod tag {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value of the tag.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -242,6 +253,7 @@ pub mod folder_configuration {
             self.name = Some(input);
             self
         }
+        /// <p>The folder name.</p>
         pub fn set_name(mut self, input: std::option::Option<crate::model::FolderName>) -> Self {
             self.name = input;
             self
@@ -252,6 +264,8 @@ pub mod folder_configuration {
             self.action = Some(input);
             self
         }
+        /// <p>The action to take on the folder contents at the end of the folder configuration
+        /// period.</p>
         pub fn set_action(
             mut self,
             input: std::option::Option<crate::model::RetentionAction>,
@@ -264,6 +278,7 @@ pub mod folder_configuration {
             self.period = Some(input);
             self
         }
+        /// <p>The number of days for which the folder-configuration action applies.</p>
         pub fn set_period(mut self, input: std::option::Option<i32>) -> Self {
             self.period = input;
             self
@@ -285,6 +300,7 @@ impl FolderConfiguration {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -296,8 +312,11 @@ impl FolderConfiguration {
     std::hash::Hash,
 )]
 pub enum RetentionAction {
+    #[allow(missing_docs)] // documentation missing in model
     Delete,
+    #[allow(missing_docs)] // documentation missing in model
     None,
+    #[allow(missing_docs)] // documentation missing in model
     PermanentlyDelete,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -320,6 +339,7 @@ impl std::str::FromStr for RetentionAction {
     }
 }
 impl RetentionAction {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RetentionAction::Delete => "DELETE",
@@ -328,6 +348,7 @@ impl RetentionAction {
             RetentionAction::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DELETE", "NONE", "PERMANENTLY_DELETE"]
     }
@@ -338,6 +359,7 @@ impl AsRef<str> for RetentionAction {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -349,10 +371,15 @@ impl AsRef<str> for RetentionAction {
     std::hash::Hash,
 )]
 pub enum FolderName {
+    #[allow(missing_docs)] // documentation missing in model
     DeletedItems,
+    #[allow(missing_docs)] // documentation missing in model
     Drafts,
+    #[allow(missing_docs)] // documentation missing in model
     Inbox,
+    #[allow(missing_docs)] // documentation missing in model
     JunkEmail,
+    #[allow(missing_docs)] // documentation missing in model
     SentItems,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -377,6 +404,7 @@ impl std::str::FromStr for FolderName {
     }
 }
 impl FolderName {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FolderName::DeletedItems => "DELETED_ITEMS",
@@ -387,6 +415,7 @@ impl FolderName {
             FolderName::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "DELETED_ITEMS",
@@ -403,6 +432,7 @@ impl AsRef<str> for FolderName {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -414,8 +444,11 @@ impl AsRef<str> for FolderName {
     std::hash::Hash,
 )]
 pub enum PermissionType {
+    #[allow(missing_docs)] // documentation missing in model
     FullAccess,
+    #[allow(missing_docs)] // documentation missing in model
     SendAs,
+    #[allow(missing_docs)] // documentation missing in model
     SendOnBehalf,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -438,6 +471,7 @@ impl std::str::FromStr for PermissionType {
     }
 }
 impl PermissionType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PermissionType::FullAccess => "FULL_ACCESS",
@@ -446,6 +480,7 @@ impl PermissionType {
             PermissionType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FULL_ACCESS", "SEND_AS", "SEND_ON_BEHALF"]
     }
@@ -456,6 +491,7 @@ impl AsRef<str> for PermissionType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -467,7 +503,9 @@ impl AsRef<str> for PermissionType {
     std::hash::Hash,
 )]
 pub enum AccessControlRuleEffect {
+    #[allow(missing_docs)] // documentation missing in model
     Allow,
+    #[allow(missing_docs)] // documentation missing in model
     Deny,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -489,6 +527,7 @@ impl std::str::FromStr for AccessControlRuleEffect {
     }
 }
 impl AccessControlRuleEffect {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AccessControlRuleEffect::Allow => "ALLOW",
@@ -496,6 +535,7 @@ impl AccessControlRuleEffect {
             AccessControlRuleEffect::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ALLOW", "DENY"]
     }
@@ -523,9 +563,9 @@ pub struct User {
     /// <p>The role of the user.</p>
     pub user_role: std::option::Option<crate::model::UserRole>,
     /// <p>The date indicating when the user was enabled for Amazon WorkMail use.</p>
-    pub enabled_date: std::option::Option<smithy_types::Instant>,
+    pub enabled_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date indicating when the user was disabled from Amazon WorkMail use.</p>
-    pub disabled_date: std::option::Option<smithy_types::Instant>,
+    pub disabled_date: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for User {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -553,8 +593,8 @@ pub mod user {
         pub(crate) display_name: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::EntityState>,
         pub(crate) user_role: std::option::Option<crate::model::UserRole>,
-        pub(crate) enabled_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) disabled_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) enabled_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) disabled_date: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The identifier of the user.</p>
@@ -562,6 +602,7 @@ pub mod user {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier of the user.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -571,6 +612,7 @@ pub mod user {
             self.email = Some(input.into());
             self
         }
+        /// <p>The email of the user.</p>
         pub fn set_email(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.email = input;
             self
@@ -580,6 +622,7 @@ pub mod user {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the user.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -589,6 +632,7 @@ pub mod user {
             self.display_name = Some(input.into());
             self
         }
+        /// <p>The display name of the user.</p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.display_name = input;
             self
@@ -598,6 +642,7 @@ pub mod user {
             self.state = Some(input);
             self
         }
+        /// <p>The state of the user, which can be ENABLED, DISABLED, or DELETED.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::EntityState>) -> Self {
             self.state = input;
             self
@@ -607,30 +652,33 @@ pub mod user {
             self.user_role = Some(input);
             self
         }
+        /// <p>The role of the user.</p>
         pub fn set_user_role(mut self, input: std::option::Option<crate::model::UserRole>) -> Self {
             self.user_role = input;
             self
         }
         /// <p>The date indicating when the user was enabled for Amazon WorkMail use.</p>
-        pub fn enabled_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn enabled_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.enabled_date = Some(input);
             self
         }
+        /// <p>The date indicating when the user was enabled for Amazon WorkMail use.</p>
         pub fn set_enabled_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.enabled_date = input;
             self
         }
         /// <p>The date indicating when the user was disabled from Amazon WorkMail use.</p>
-        pub fn disabled_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn disabled_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.disabled_date = Some(input);
             self
         }
+        /// <p>The date indicating when the user was disabled from Amazon WorkMail use.</p>
         pub fn set_disabled_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.disabled_date = input;
             self
@@ -657,6 +705,7 @@ impl User {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -668,8 +717,11 @@ impl User {
     std::hash::Hash,
 )]
 pub enum UserRole {
+    #[allow(missing_docs)] // documentation missing in model
     Resource,
+    #[allow(missing_docs)] // documentation missing in model
     SystemUser,
+    #[allow(missing_docs)] // documentation missing in model
     User,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -692,6 +744,7 @@ impl std::str::FromStr for UserRole {
     }
 }
 impl UserRole {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             UserRole::Resource => "RESOURCE",
@@ -700,6 +753,7 @@ impl UserRole {
             UserRole::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["RESOURCE", "SYSTEM_USER", "USER"]
     }
@@ -710,6 +764,7 @@ impl AsRef<str> for UserRole {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -721,8 +776,11 @@ impl AsRef<str> for UserRole {
     std::hash::Hash,
 )]
 pub enum EntityState {
+    #[allow(missing_docs)] // documentation missing in model
     Deleted,
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -745,6 +803,7 @@ impl std::str::FromStr for EntityState {
     }
 }
 impl EntityState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EntityState::Deleted => "DELETED",
@@ -753,6 +812,7 @@ impl EntityState {
             EntityState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DELETED", "DISABLED", "ENABLED"]
     }
@@ -778,9 +838,9 @@ pub struct Resource {
     /// <p>The state of the resource, which can be ENABLED, DISABLED, or DELETED.</p>
     pub state: std::option::Option<crate::model::EntityState>,
     /// <p>The date indicating when the resource was enabled for Amazon WorkMail use.</p>
-    pub enabled_date: std::option::Option<smithy_types::Instant>,
+    pub enabled_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date indicating when the resource was disabled from Amazon WorkMail use.</p>
-    pub disabled_date: std::option::Option<smithy_types::Instant>,
+    pub disabled_date: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for Resource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -806,8 +866,8 @@ pub mod resource {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::ResourceType>,
         pub(crate) state: std::option::Option<crate::model::EntityState>,
-        pub(crate) enabled_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) disabled_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) enabled_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) disabled_date: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The identifier of the resource.</p>
@@ -815,6 +875,7 @@ pub mod resource {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier of the resource.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -824,6 +885,7 @@ pub mod resource {
             self.email = Some(input.into());
             self
         }
+        /// <p>The email of the resource.</p>
         pub fn set_email(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.email = input;
             self
@@ -833,6 +895,7 @@ pub mod resource {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the resource.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -842,6 +905,7 @@ pub mod resource {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of the resource: equipment or room.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ResourceType>) -> Self {
             self.r#type = input;
             self
@@ -851,30 +915,33 @@ pub mod resource {
             self.state = Some(input);
             self
         }
+        /// <p>The state of the resource, which can be ENABLED, DISABLED, or DELETED.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::EntityState>) -> Self {
             self.state = input;
             self
         }
         /// <p>The date indicating when the resource was enabled for Amazon WorkMail use.</p>
-        pub fn enabled_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn enabled_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.enabled_date = Some(input);
             self
         }
+        /// <p>The date indicating when the resource was enabled for Amazon WorkMail use.</p>
         pub fn set_enabled_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.enabled_date = input;
             self
         }
         /// <p>The date indicating when the resource was disabled from Amazon WorkMail use.</p>
-        pub fn disabled_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn disabled_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.disabled_date = Some(input);
             self
         }
+        /// <p>The date indicating when the resource was disabled from Amazon WorkMail use.</p>
         pub fn set_disabled_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.disabled_date = input;
             self
@@ -900,6 +967,7 @@ impl Resource {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -911,7 +979,9 @@ impl Resource {
     std::hash::Hash,
 )]
 pub enum ResourceType {
+    #[allow(missing_docs)] // documentation missing in model
     Equipment,
+    #[allow(missing_docs)] // documentation missing in model
     Room,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -933,6 +1003,7 @@ impl std::str::FromStr for ResourceType {
     }
 }
 impl ResourceType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ResourceType::Equipment => "EQUIPMENT",
@@ -940,6 +1011,7 @@ impl ResourceType {
             ResourceType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["EQUIPMENT", "ROOM"]
     }
@@ -983,6 +1055,7 @@ pub mod delegate {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier for the user or group associated as the resource's delegate.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -992,6 +1065,7 @@ pub mod delegate {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of the delegate: user or group.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::MemberType>) -> Self {
             self.r#type = input;
             self
@@ -1012,6 +1086,7 @@ impl Delegate {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1023,7 +1098,9 @@ impl Delegate {
     std::hash::Hash,
 )]
 pub enum MemberType {
+    #[allow(missing_docs)] // documentation missing in model
     Group,
+    #[allow(missing_docs)] // documentation missing in model
     User,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1045,6 +1122,7 @@ impl std::str::FromStr for MemberType {
     }
 }
 impl MemberType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MemberType::Group => "GROUP",
@@ -1052,6 +1130,7 @@ impl MemberType {
             MemberType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["GROUP", "USER"]
     }
@@ -1108,6 +1187,7 @@ pub mod organization_summary {
             self.organization_id = Some(input.into());
             self
         }
+        /// <p>The identifier associated with the organization.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1120,6 +1200,7 @@ pub mod organization_summary {
             self.alias = Some(input.into());
             self
         }
+        /// <p>The alias associated with the organization.</p>
         pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.alias = input;
             self
@@ -1129,6 +1210,7 @@ pub mod organization_summary {
             self.default_mail_domain = Some(input.into());
             self
         }
+        /// <p>The default email domain associated with the organization.</p>
         pub fn set_default_mail_domain(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1143,6 +1225,9 @@ pub mod organization_summary {
             self.error_message = Some(input.into());
             self
         }
+        /// <p>The error message associated with the organization. It is only present if unexpected
+        /// behavior has occurred with regards to the organization. It provides insight or solutions
+        /// regarding unexpected behavior.</p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1155,6 +1240,7 @@ pub mod organization_summary {
             self.state = Some(input.into());
             self
         }
+        /// <p>The state associated with the organization.</p>
         pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.state = input;
             self
@@ -1207,9 +1293,9 @@ pub struct MobileDeviceAccessRule {
     /// <p>Device user agents that a rule <b>will not</b> match. All other device user agents will match.</p>
     pub not_device_user_agents: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The date and time at which an access rule was created.</p>
-    pub date_created: std::option::Option<smithy_types::Instant>,
+    pub date_created: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time at which an access rule was modified.</p>
-    pub date_modified: std::option::Option<smithy_types::Instant>,
+    pub date_modified: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for MobileDeviceAccessRule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1257,8 +1343,8 @@ pub mod mobile_device_access_rule {
             std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) device_user_agents: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) not_device_user_agents: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) date_created: std::option::Option<smithy_types::Instant>,
-        pub(crate) date_modified: std::option::Option<smithy_types::Instant>,
+        pub(crate) date_created: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) date_modified: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The ID assigned to a mobile access rule. </p>
@@ -1269,6 +1355,7 @@ pub mod mobile_device_access_rule {
             self.mobile_device_access_rule_id = Some(input.into());
             self
         }
+        /// <p>The ID assigned to a mobile access rule. </p>
         pub fn set_mobile_device_access_rule_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1281,6 +1368,7 @@ pub mod mobile_device_access_rule {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of a mobile access rule.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1290,6 +1378,7 @@ pub mod mobile_device_access_rule {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of a mobile access rule.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -1299,6 +1388,7 @@ pub mod mobile_device_access_rule {
             self.effect = Some(input);
             self
         }
+        /// <p>The effect of the rule when it matches. Allowed values are <code>ALLOW</code> or <code>DENY</code>.</p>
         pub fn set_effect(
             mut self,
             input: std::option::Option<crate::model::MobileDeviceAccessRuleEffect>,
@@ -1306,12 +1396,18 @@ pub mod mobile_device_access_rule {
             self.effect = input;
             self
         }
+        /// Appends an item to `device_types`.
+        ///
+        /// To override the contents of this collection use [`set_device_types`](Self::set_device_types).
+        ///
+        /// <p>Device types that a rule will match. </p>
         pub fn device_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.device_types.unwrap_or_default();
             v.push(input.into());
             self.device_types = Some(v);
             self
         }
+        /// <p>Device types that a rule will match. </p>
         pub fn set_device_types(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1319,12 +1415,18 @@ pub mod mobile_device_access_rule {
             self.device_types = input;
             self
         }
+        /// Appends an item to `not_device_types`.
+        ///
+        /// To override the contents of this collection use [`set_not_device_types`](Self::set_not_device_types).
+        ///
+        /// <p>Device types that a rule <b>will not</b> match. All other device types will match.</p>
         pub fn not_device_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.not_device_types.unwrap_or_default();
             v.push(input.into());
             self.not_device_types = Some(v);
             self
         }
+        /// <p>Device types that a rule <b>will not</b> match. All other device types will match.</p>
         pub fn set_not_device_types(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1332,12 +1434,18 @@ pub mod mobile_device_access_rule {
             self.not_device_types = input;
             self
         }
+        /// Appends an item to `device_models`.
+        ///
+        /// To override the contents of this collection use [`set_device_models`](Self::set_device_models).
+        ///
+        /// <p>Device models that a rule will match.</p>
         pub fn device_models(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.device_models.unwrap_or_default();
             v.push(input.into());
             self.device_models = Some(v);
             self
         }
+        /// <p>Device models that a rule will match.</p>
         pub fn set_device_models(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1345,12 +1453,18 @@ pub mod mobile_device_access_rule {
             self.device_models = input;
             self
         }
+        /// Appends an item to `not_device_models`.
+        ///
+        /// To override the contents of this collection use [`set_not_device_models`](Self::set_not_device_models).
+        ///
+        /// <p>Device models that a rule <b>will not</b> match. All other device models will match.</p>
         pub fn not_device_models(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.not_device_models.unwrap_or_default();
             v.push(input.into());
             self.not_device_models = Some(v);
             self
         }
+        /// <p>Device models that a rule <b>will not</b> match. All other device models will match.</p>
         pub fn set_not_device_models(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1358,12 +1472,18 @@ pub mod mobile_device_access_rule {
             self.not_device_models = input;
             self
         }
+        /// Appends an item to `device_operating_systems`.
+        ///
+        /// To override the contents of this collection use [`set_device_operating_systems`](Self::set_device_operating_systems).
+        ///
+        /// <p>Device operating systems that a rule will match.</p>
         pub fn device_operating_systems(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.device_operating_systems.unwrap_or_default();
             v.push(input.into());
             self.device_operating_systems = Some(v);
             self
         }
+        /// <p>Device operating systems that a rule will match.</p>
         pub fn set_device_operating_systems(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1371,6 +1491,11 @@ pub mod mobile_device_access_rule {
             self.device_operating_systems = input;
             self
         }
+        /// Appends an item to `not_device_operating_systems`.
+        ///
+        /// To override the contents of this collection use [`set_not_device_operating_systems`](Self::set_not_device_operating_systems).
+        ///
+        /// <p>Device operating systems that a rule <b>will not</b> match. All other device types will match.</p>
         pub fn not_device_operating_systems(
             mut self,
             input: impl Into<std::string::String>,
@@ -1380,6 +1505,7 @@ pub mod mobile_device_access_rule {
             self.not_device_operating_systems = Some(v);
             self
         }
+        /// <p>Device operating systems that a rule <b>will not</b> match. All other device types will match.</p>
         pub fn set_not_device_operating_systems(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1387,12 +1513,18 @@ pub mod mobile_device_access_rule {
             self.not_device_operating_systems = input;
             self
         }
+        /// Appends an item to `device_user_agents`.
+        ///
+        /// To override the contents of this collection use [`set_device_user_agents`](Self::set_device_user_agents).
+        ///
+        /// <p>Device user agents that a rule will match.</p>
         pub fn device_user_agents(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.device_user_agents.unwrap_or_default();
             v.push(input.into());
             self.device_user_agents = Some(v);
             self
         }
+        /// <p>Device user agents that a rule will match.</p>
         pub fn set_device_user_agents(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1400,12 +1532,18 @@ pub mod mobile_device_access_rule {
             self.device_user_agents = input;
             self
         }
+        /// Appends an item to `not_device_user_agents`.
+        ///
+        /// To override the contents of this collection use [`set_not_device_user_agents`](Self::set_not_device_user_agents).
+        ///
+        /// <p>Device user agents that a rule <b>will not</b> match. All other device user agents will match.</p>
         pub fn not_device_user_agents(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.not_device_user_agents.unwrap_or_default();
             v.push(input.into());
             self.not_device_user_agents = Some(v);
             self
         }
+        /// <p>Device user agents that a rule <b>will not</b> match. All other device user agents will match.</p>
         pub fn set_not_device_user_agents(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1414,25 +1552,27 @@ pub mod mobile_device_access_rule {
             self
         }
         /// <p>The date and time at which an access rule was created.</p>
-        pub fn date_created(mut self, input: smithy_types::Instant) -> Self {
+        pub fn date_created(mut self, input: aws_smithy_types::Instant) -> Self {
             self.date_created = Some(input);
             self
         }
+        /// <p>The date and time at which an access rule was created.</p>
         pub fn set_date_created(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.date_created = input;
             self
         }
         /// <p>The date and time at which an access rule was modified.</p>
-        pub fn date_modified(mut self, input: smithy_types::Instant) -> Self {
+        pub fn date_modified(mut self, input: aws_smithy_types::Instant) -> Self {
             self.date_modified = Some(input);
             self
         }
+        /// <p>The date and time at which an access rule was modified.</p>
         pub fn set_date_modified(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.date_modified = input;
             self
@@ -1478,9 +1618,9 @@ pub struct MobileDeviceAccessOverride {
     /// <p>A description of the override.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The date the override was first created.</p>
-    pub date_created: std::option::Option<smithy_types::Instant>,
+    pub date_created: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date the override was last modified.</p>
-    pub date_modified: std::option::Option<smithy_types::Instant>,
+    pub date_modified: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for MobileDeviceAccessOverride {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1504,8 +1644,8 @@ pub mod mobile_device_access_override {
         pub(crate) device_id: std::option::Option<std::string::String>,
         pub(crate) effect: std::option::Option<crate::model::MobileDeviceAccessRuleEffect>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) date_created: std::option::Option<smithy_types::Instant>,
-        pub(crate) date_modified: std::option::Option<smithy_types::Instant>,
+        pub(crate) date_created: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) date_modified: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The WorkMail user to which the access override applies.</p>
@@ -1513,6 +1653,7 @@ pub mod mobile_device_access_override {
             self.user_id = Some(input.into());
             self
         }
+        /// <p>The WorkMail user to which the access override applies.</p>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_id = input;
             self
@@ -1522,6 +1663,7 @@ pub mod mobile_device_access_override {
             self.device_id = Some(input.into());
             self
         }
+        /// <p>The device to which the override applies.</p>
         pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.device_id = input;
             self
@@ -1531,6 +1673,7 @@ pub mod mobile_device_access_override {
             self.effect = Some(input);
             self
         }
+        /// <p>The effect of the override, <code>ALLOW</code> or <code>DENY</code>.</p>
         pub fn set_effect(
             mut self,
             input: std::option::Option<crate::model::MobileDeviceAccessRuleEffect>,
@@ -1543,30 +1686,33 @@ pub mod mobile_device_access_override {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description of the override.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
         /// <p>The date the override was first created.</p>
-        pub fn date_created(mut self, input: smithy_types::Instant) -> Self {
+        pub fn date_created(mut self, input: aws_smithy_types::Instant) -> Self {
             self.date_created = Some(input);
             self
         }
+        /// <p>The date the override was first created.</p>
         pub fn set_date_created(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.date_created = input;
             self
         }
         /// <p>The date the override was last modified.</p>
-        pub fn date_modified(mut self, input: smithy_types::Instant) -> Self {
+        pub fn date_modified(mut self, input: aws_smithy_types::Instant) -> Self {
             self.date_modified = Some(input);
             self
         }
+        /// <p>The date the override was last modified.</p>
         pub fn set_date_modified(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.date_modified = input;
             self
@@ -1623,6 +1769,7 @@ pub mod mail_domain_summary {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The domain name.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -1632,6 +1779,7 @@ pub mod mail_domain_summary {
             self.default_domain = Some(input);
             self
         }
+        /// <p>Whether the domain is default or not.</p>
         pub fn set_default_domain(mut self, input: std::option::Option<bool>) -> Self {
             self.default_domain = input;
             self
@@ -1697,6 +1845,8 @@ pub mod permission {
             self.grantee_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the user, group, or resource to which the permissions are
+        /// granted.</p>
         pub fn set_grantee_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.grantee_id = input;
             self
@@ -1706,6 +1856,7 @@ pub mod permission {
             self.grantee_type = Some(input);
             self
         }
+        /// <p>The type of user, group, or resource referred to in GranteeId.</p>
         pub fn set_grantee_type(
             mut self,
             input: std::option::Option<crate::model::MemberType>,
@@ -1713,12 +1864,28 @@ pub mod permission {
             self.grantee_type = input;
             self
         }
+        /// Appends an item to `permission_values`.
+        ///
+        /// To override the contents of this collection use [`set_permission_values`](Self::set_permission_values).
+        ///
+        /// <p>The permissions granted to the grantee. SEND_AS allows the grantee to send email as
+        /// the owner of the mailbox (the grantee is not mentioned on these emails). SEND_ON_BEHALF
+        /// allows the grantee to send email on behalf of the owner of the mailbox (the grantee is not
+        /// mentioned as the physical sender of these emails). FULL_ACCESS allows the grantee full
+        /// access to the mailbox, irrespective of other folder-level permissions set on the
+        /// mailbox.</p>
         pub fn permission_values(mut self, input: impl Into<crate::model::PermissionType>) -> Self {
             let mut v = self.permission_values.unwrap_or_default();
             v.push(input.into());
             self.permission_values = Some(v);
             self
         }
+        /// <p>The permissions granted to the grantee. SEND_AS allows the grantee to send email as
+        /// the owner of the mailbox (the grantee is not mentioned on these emails). SEND_ON_BEHALF
+        /// allows the grantee to send email on behalf of the owner of the mailbox (the grantee is not
+        /// mentioned as the physical sender of these emails). FULL_ACCESS allows the grantee full
+        /// access to the mailbox, irrespective of other folder-level permissions set on the
+        /// mailbox.</p>
         pub fn set_permission_values(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PermissionType>>,
@@ -1763,9 +1930,9 @@ pub struct MailboxExportJob {
     /// <p>The state of the mailbox export job.</p>
     pub state: std::option::Option<crate::model::MailboxExportJobState>,
     /// <p>The mailbox export job start timestamp.</p>
-    pub start_time: std::option::Option<smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The mailbox export job end timestamp.</p>
-    pub end_time: std::option::Option<smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for MailboxExportJob {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1795,8 +1962,8 @@ pub mod mailbox_export_job {
         pub(crate) s3_path: std::option::Option<std::string::String>,
         pub(crate) estimated_progress: std::option::Option<i32>,
         pub(crate) state: std::option::Option<crate::model::MailboxExportJobState>,
-        pub(crate) start_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The identifier of the mailbox export job.</p>
@@ -1804,6 +1971,7 @@ pub mod mailbox_export_job {
             self.job_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the mailbox export job.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -1813,6 +1981,7 @@ pub mod mailbox_export_job {
             self.entity_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the user or resource associated with the mailbox.</p>
         pub fn set_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.entity_id = input;
             self
@@ -1822,6 +1991,7 @@ pub mod mailbox_export_job {
             self.description = Some(input.into());
             self
         }
+        /// <p>The mailbox export job description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -1831,6 +2001,7 @@ pub mod mailbox_export_job {
             self.s3_bucket_name = Some(input.into());
             self
         }
+        /// <p>The name of the S3 bucket.</p>
         pub fn set_s3_bucket_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1843,6 +2014,7 @@ pub mod mailbox_export_job {
             self.s3_path = Some(input.into());
             self
         }
+        /// <p>The path to the S3 bucket and file that the mailbox export job exports to.</p>
         pub fn set_s3_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.s3_path = input;
             self
@@ -1852,6 +2024,7 @@ pub mod mailbox_export_job {
             self.estimated_progress = Some(input);
             self
         }
+        /// <p>The estimated progress of the mailbox export job, in percentage points.</p>
         pub fn set_estimated_progress(mut self, input: std::option::Option<i32>) -> Self {
             self.estimated_progress = input;
             self
@@ -1861,6 +2034,7 @@ pub mod mailbox_export_job {
             self.state = Some(input);
             self
         }
+        /// <p>The state of the mailbox export job.</p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::MailboxExportJobState>,
@@ -1869,20 +2043,28 @@ pub mod mailbox_export_job {
             self
         }
         /// <p>The mailbox export job start timestamp.</p>
-        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The mailbox export job start timestamp.</p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The mailbox export job end timestamp.</p>
-        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The mailbox export job end timestamp.</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.end_time = input;
             self
         }
@@ -1909,6 +2091,7 @@ impl MailboxExportJob {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1920,9 +2103,13 @@ impl MailboxExportJob {
     std::hash::Hash,
 )]
 pub enum MailboxExportJobState {
+    #[allow(missing_docs)] // documentation missing in model
     Cancelled,
+    #[allow(missing_docs)] // documentation missing in model
     Completed,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Running,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1946,6 +2133,7 @@ impl std::str::FromStr for MailboxExportJobState {
     }
 }
 impl MailboxExportJobState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MailboxExportJobState::Cancelled => "CANCELLED",
@@ -1955,6 +2143,7 @@ impl MailboxExportJobState {
             MailboxExportJobState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CANCELLED", "COMPLETED", "FAILED", "RUNNING"]
     }
@@ -1978,9 +2167,9 @@ pub struct Group {
     /// <p>The state of the group, which can be ENABLED, DISABLED, or DELETED.</p>
     pub state: std::option::Option<crate::model::EntityState>,
     /// <p>The date indicating when the group was enabled for Amazon WorkMail use.</p>
-    pub enabled_date: std::option::Option<smithy_types::Instant>,
+    pub enabled_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date indicating when the group was disabled from Amazon WorkMail use.</p>
-    pub disabled_date: std::option::Option<smithy_types::Instant>,
+    pub disabled_date: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for Group {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2004,8 +2193,8 @@ pub mod group {
         pub(crate) email: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::EntityState>,
-        pub(crate) enabled_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) disabled_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) enabled_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) disabled_date: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The identifier of the group.</p>
@@ -2013,6 +2202,7 @@ pub mod group {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier of the group.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -2022,6 +2212,7 @@ pub mod group {
             self.email = Some(input.into());
             self
         }
+        /// <p>The email of the group.</p>
         pub fn set_email(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.email = input;
             self
@@ -2031,6 +2222,7 @@ pub mod group {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the group.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2040,30 +2232,33 @@ pub mod group {
             self.state = Some(input);
             self
         }
+        /// <p>The state of the group, which can be ENABLED, DISABLED, or DELETED.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::EntityState>) -> Self {
             self.state = input;
             self
         }
         /// <p>The date indicating when the group was enabled for Amazon WorkMail use.</p>
-        pub fn enabled_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn enabled_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.enabled_date = Some(input);
             self
         }
+        /// <p>The date indicating when the group was enabled for Amazon WorkMail use.</p>
         pub fn set_enabled_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.enabled_date = input;
             self
         }
         /// <p>The date indicating when the group was disabled from Amazon WorkMail use.</p>
-        pub fn disabled_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn disabled_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.disabled_date = Some(input);
             self
         }
+        /// <p>The date indicating when the group was disabled from Amazon WorkMail use.</p>
         pub fn set_disabled_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.disabled_date = input;
             self
@@ -2101,9 +2296,9 @@ pub struct Member {
     /// <p>The state of the member, which can be ENABLED, DISABLED, or DELETED.</p>
     pub state: std::option::Option<crate::model::EntityState>,
     /// <p>The date indicating when the member was enabled for Amazon WorkMail use.</p>
-    pub enabled_date: std::option::Option<smithy_types::Instant>,
+    pub enabled_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date indicating when the member was disabled from Amazon WorkMail use.</p>
-    pub disabled_date: std::option::Option<smithy_types::Instant>,
+    pub disabled_date: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for Member {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2127,8 +2322,8 @@ pub mod member {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::MemberType>,
         pub(crate) state: std::option::Option<crate::model::EntityState>,
-        pub(crate) enabled_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) disabled_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) enabled_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) disabled_date: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The identifier of the member.</p>
@@ -2136,6 +2331,7 @@ pub mod member {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier of the member.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -2145,6 +2341,7 @@ pub mod member {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the member.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2154,6 +2351,7 @@ pub mod member {
             self.r#type = Some(input);
             self
         }
+        /// <p>A member can be a user or group.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::MemberType>) -> Self {
             self.r#type = input;
             self
@@ -2163,30 +2361,33 @@ pub mod member {
             self.state = Some(input);
             self
         }
+        /// <p>The state of the member, which can be ENABLED, DISABLED, or DELETED.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::EntityState>) -> Self {
             self.state = input;
             self
         }
         /// <p>The date indicating when the member was enabled for Amazon WorkMail use.</p>
-        pub fn enabled_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn enabled_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.enabled_date = Some(input);
             self
         }
+        /// <p>The date indicating when the member was enabled for Amazon WorkMail use.</p>
         pub fn set_enabled_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.enabled_date = input;
             self
         }
         /// <p>The date indicating when the member was disabled from Amazon WorkMail use.</p>
-        pub fn disabled_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn disabled_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.disabled_date = Some(input);
             self
         }
+        /// <p>The date indicating when the member was disabled from Amazon WorkMail use.</p>
         pub fn set_disabled_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.disabled_date = input;
             self
@@ -2238,9 +2439,9 @@ pub struct AccessControlRule {
     /// <p>User IDs to exclude from the rule.</p>
     pub not_user_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The date that the rule was created.</p>
-    pub date_created: std::option::Option<smithy_types::Instant>,
+    pub date_created: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date that the rule was modified.</p>
-    pub date_modified: std::option::Option<smithy_types::Instant>,
+    pub date_modified: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for AccessControlRule {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2274,8 +2475,8 @@ pub mod access_control_rule {
         pub(crate) not_actions: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) user_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) not_user_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) date_created: std::option::Option<smithy_types::Instant>,
-        pub(crate) date_modified: std::option::Option<smithy_types::Instant>,
+        pub(crate) date_created: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) date_modified: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The rule name.</p>
@@ -2283,6 +2484,7 @@ pub mod access_control_rule {
             self.name = Some(input.into());
             self
         }
+        /// <p>The rule name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2292,6 +2494,7 @@ pub mod access_control_rule {
             self.effect = Some(input);
             self
         }
+        /// <p>The rule effect.</p>
         pub fn set_effect(
             mut self,
             input: std::option::Option<crate::model::AccessControlRuleEffect>,
@@ -2304,16 +2507,23 @@ pub mod access_control_rule {
             self.description = Some(input.into());
             self
         }
+        /// <p>The rule description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Appends an item to `ip_ranges`.
+        ///
+        /// To override the contents of this collection use [`set_ip_ranges`](Self::set_ip_ranges).
+        ///
+        /// <p>IPv4 CIDR ranges to include in the rule.</p>
         pub fn ip_ranges(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.ip_ranges.unwrap_or_default();
             v.push(input.into());
             self.ip_ranges = Some(v);
             self
         }
+        /// <p>IPv4 CIDR ranges to include in the rule.</p>
         pub fn set_ip_ranges(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2321,12 +2531,18 @@ pub mod access_control_rule {
             self.ip_ranges = input;
             self
         }
+        /// Appends an item to `not_ip_ranges`.
+        ///
+        /// To override the contents of this collection use [`set_not_ip_ranges`](Self::set_not_ip_ranges).
+        ///
+        /// <p>IPv4 CIDR ranges to exclude from the rule.</p>
         pub fn not_ip_ranges(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.not_ip_ranges.unwrap_or_default();
             v.push(input.into());
             self.not_ip_ranges = Some(v);
             self
         }
+        /// <p>IPv4 CIDR ranges to exclude from the rule.</p>
         pub fn set_not_ip_ranges(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2334,12 +2550,22 @@ pub mod access_control_rule {
             self.not_ip_ranges = input;
             self
         }
+        /// Appends an item to `actions`.
+        ///
+        /// To override the contents of this collection use [`set_actions`](Self::set_actions).
+        ///
+        /// <p>Access protocol actions to include in the rule. Valid values include
+        /// <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>,
+        /// <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
         pub fn actions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.actions.unwrap_or_default();
             v.push(input.into());
             self.actions = Some(v);
             self
         }
+        /// <p>Access protocol actions to include in the rule. Valid values include
+        /// <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>,
+        /// <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
         pub fn set_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2347,12 +2573,22 @@ pub mod access_control_rule {
             self.actions = input;
             self
         }
+        /// Appends an item to `not_actions`.
+        ///
+        /// To override the contents of this collection use [`set_not_actions`](Self::set_not_actions).
+        ///
+        /// <p>Access protocol actions to exclude from the rule. Valid values include
+        /// <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>,
+        /// <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
         pub fn not_actions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.not_actions.unwrap_or_default();
             v.push(input.into());
             self.not_actions = Some(v);
             self
         }
+        /// <p>Access protocol actions to exclude from the rule. Valid values include
+        /// <code>ActiveSync</code>, <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>,
+        /// <code>SMTP</code>, <code>WindowsOutlook</code>, and <code>WebMail</code>.</p>
         pub fn set_not_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2360,12 +2596,18 @@ pub mod access_control_rule {
             self.not_actions = input;
             self
         }
+        /// Appends an item to `user_ids`.
+        ///
+        /// To override the contents of this collection use [`set_user_ids`](Self::set_user_ids).
+        ///
+        /// <p>User IDs to include in the rule.</p>
         pub fn user_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.user_ids.unwrap_or_default();
             v.push(input.into());
             self.user_ids = Some(v);
             self
         }
+        /// <p>User IDs to include in the rule.</p>
         pub fn set_user_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2373,12 +2615,18 @@ pub mod access_control_rule {
             self.user_ids = input;
             self
         }
+        /// Appends an item to `not_user_ids`.
+        ///
+        /// To override the contents of this collection use [`set_not_user_ids`](Self::set_not_user_ids).
+        ///
+        /// <p>User IDs to exclude from the rule.</p>
         pub fn not_user_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.not_user_ids.unwrap_or_default();
             v.push(input.into());
             self.not_user_ids = Some(v);
             self
         }
+        /// <p>User IDs to exclude from the rule.</p>
         pub fn set_not_user_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2387,25 +2635,27 @@ pub mod access_control_rule {
             self
         }
         /// <p>The date that the rule was created.</p>
-        pub fn date_created(mut self, input: smithy_types::Instant) -> Self {
+        pub fn date_created(mut self, input: aws_smithy_types::Instant) -> Self {
             self.date_created = Some(input);
             self
         }
+        /// <p>The date that the rule was created.</p>
         pub fn set_date_created(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.date_created = input;
             self
         }
         /// <p>The date that the rule was modified.</p>
-        pub fn date_modified(mut self, input: smithy_types::Instant) -> Self {
+        pub fn date_modified(mut self, input: aws_smithy_types::Instant) -> Self {
             self.date_modified = Some(input);
             self
         }
+        /// <p>The date that the rule was modified.</p>
         pub fn set_date_modified(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.date_modified = input;
             self
@@ -2473,6 +2723,7 @@ pub mod mobile_device_access_matched_rule {
             self.mobile_device_access_rule_id = Some(input.into());
             self
         }
+        /// <p>Identifier of the rule that a simulated user matches.</p>
         pub fn set_mobile_device_access_rule_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2485,6 +2736,7 @@ pub mod mobile_device_access_matched_rule {
             self.name = Some(input.into());
             self
         }
+        /// <p>Name of a rule that a simulated user matches.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2505,6 +2757,7 @@ impl MobileDeviceAccessMatchedRule {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2516,8 +2769,11 @@ impl MobileDeviceAccessMatchedRule {
     std::hash::Hash,
 )]
 pub enum DnsRecordVerificationStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
+    #[allow(missing_docs)] // documentation missing in model
     Verified,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2540,6 +2796,7 @@ impl std::str::FromStr for DnsRecordVerificationStatus {
     }
 }
 impl DnsRecordVerificationStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DnsRecordVerificationStatus::Failed => "FAILED",
@@ -2548,6 +2805,7 @@ impl DnsRecordVerificationStatus {
             DnsRecordVerificationStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FAILED", "PENDING", "VERIFIED"]
     }
@@ -2594,6 +2852,7 @@ pub mod dns_record {
             self.r#type = Some(input.into());
             self
         }
+        /// <p>The RFC 1035 record type. Possible values: <code>CNAME</code>, <code>A</code>, <code>MX</code>.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
@@ -2603,6 +2862,7 @@ pub mod dns_record {
             self.hostname = Some(input.into());
             self
         }
+        /// <p>The DNS hostname.- For example, <code>domain.example.com</code>.</p>
         pub fn set_hostname(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.hostname = input;
             self
@@ -2612,6 +2872,7 @@ pub mod dns_record {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value returned by the DNS for a query to that hostname and record type.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -2666,6 +2927,7 @@ pub mod domain {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The fully qualified domain name.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -2675,6 +2937,7 @@ pub mod domain {
             self.hosted_zone_id = Some(input.into());
             self
         }
+        /// <p>The hosted zone ID for a domain hosted in Route 53. Required when configuring a domain hosted in Route 53.</p>
         pub fn set_hosted_zone_id(
             mut self,
             input: std::option::Option<std::string::String>,

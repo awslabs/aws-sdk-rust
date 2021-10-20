@@ -17,6 +17,8 @@ pub mod build_bot_locale_input {
             self.bot_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the bot to build. The identifier is returned in
+        /// the response from the  operation.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_id = input;
             self
@@ -27,6 +29,8 @@ pub mod build_bot_locale_input {
             self.bot_version = Some(input.into());
             self
         }
+        /// <p>The version of the bot to build. This can only be the draft version
+        /// of the bot.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_version = input;
             self
@@ -39,6 +43,10 @@ pub mod build_bot_locale_input {
             self.locale_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the language and locale that the bot will be used
+        /// in. The string must match one of the supported locales. All of the
+        /// intents, slot types, and slots used in the bot must have the same
+        /// locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.locale_id = input;
             self
@@ -48,7 +56,7 @@ pub mod build_bot_locale_input {
             self,
         ) -> std::result::Result<
             crate::input::BuildBotLocaleInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::BuildBotLocaleInput {
                 bot_id: self.bot_id,
@@ -69,27 +77,27 @@ impl BuildBotLocaleInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::BuildBotLocale,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::BuildBotLocaleInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_1 = &_input.bot_id;
             let input_1 =
                 input_1
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_id = smithy_http::label::fmt_string(input_1, false);
+            let bot_id = aws_smithy_http::label::fmt_string(input_1, false);
             if bot_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 });
@@ -98,13 +106,13 @@ impl BuildBotLocaleInput {
             let input_2 =
                 input_2
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_version",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_version = smithy_http::label::fmt_string(input_2, false);
+            let bot_version = aws_smithy_http::label::fmt_string(input_2, false);
             if bot_version.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_version",
                     details: "cannot be empty or unset",
                 });
@@ -113,13 +121,13 @@ impl BuildBotLocaleInput {
             let input_3 =
                 input_3
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "locale_id",
                         details: "cannot be empty or unset",
                     })?;
-            let locale_id = smithy_http::label::fmt_string(input_3, false);
+            let locale_id = aws_smithy_http::label::fmt_string(input_3, false);
             if locale_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "locale_id",
                     details: "cannot be empty or unset",
                 });
@@ -138,7 +146,7 @@ impl BuildBotLocaleInput {
         fn update_http_builder(
             input: &crate::input::BuildBotLocaleInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -147,23 +155,23 @@ impl BuildBotLocaleInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::BuildBotLocaleInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -186,15 +194,15 @@ impl BuildBotLocaleInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::BuildBotLocale::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "BuildBotLocale",
             "lexmodelsv2",
         ));
@@ -203,10 +211,10 @@ impl BuildBotLocaleInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -245,6 +253,8 @@ pub mod create_bot_input {
             self.bot_name = Some(input.into());
             self
         }
+        /// <p>The name of the bot. The bot name must be unique in the account that
+        /// creates the bot.</p>
         pub fn set_bot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_name = input;
             self
@@ -255,6 +265,8 @@ pub mod create_bot_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description of the bot. It appears in lists to help you identify a
+        /// particular bot.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -265,6 +277,8 @@ pub mod create_bot_input {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of an IAM role that has permission to
+        /// access the bot.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -275,6 +289,8 @@ pub mod create_bot_input {
             self.data_privacy = Some(input);
             self
         }
+        /// <p>Provides information on additional privacy protections Amazon Lex should
+        /// use with the bot's data.</p>
         pub fn set_data_privacy(
             mut self,
             input: std::option::Option<crate::model::DataPrivacy>,
@@ -293,10 +309,25 @@ pub mod create_bot_input {
             self.idle_session_ttl_in_seconds = Some(input);
             self
         }
+        /// <p>The time, in seconds, that Amazon Lex should keep information about a
+        /// user's conversation with the bot. </p>
+        /// <p>A user interaction remains active for the amount of time specified.
+        /// If no conversation occurs during this time, the session expires and
+        /// Amazon Lex deletes any data provided before the timeout.</p>
+        /// <p>You can specify between 60 (1 minute) and 86,400 (24 hours)
+        /// seconds.</p>
         pub fn set_idle_session_ttl_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.idle_session_ttl_in_seconds = input;
             self
         }
+        /// Adds a key-value pair to `bot_tags`.
+        ///
+        /// To override the contents of this collection use [`set_bot_tags`](Self::set_bot_tags).
+        ///
+        /// <p>A list of tags to add to the bot. You can only add tags when you
+        /// create a bot. You can't use the <code>UpdateBot</code> operation to
+        /// update tags. To update tags, use the <code>TagResource</code>
+        /// operation.</p>
         pub fn bot_tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -307,6 +338,10 @@ pub mod create_bot_input {
             self.bot_tags = Some(hash_map);
             self
         }
+        /// <p>A list of tags to add to the bot. You can only add tags when you
+        /// create a bot. You can't use the <code>UpdateBot</code> operation to
+        /// update tags. To update tags, use the <code>TagResource</code>
+        /// operation.</p>
         pub fn set_bot_tags(
             mut self,
             input: std::option::Option<
@@ -316,6 +351,14 @@ pub mod create_bot_input {
             self.bot_tags = input;
             self
         }
+        /// Adds a key-value pair to `test_bot_alias_tags`.
+        ///
+        /// To override the contents of this collection use [`set_test_bot_alias_tags`](Self::set_test_bot_alias_tags).
+        ///
+        /// <p>A list of tags to add to the test alias for a bot. You can only add
+        /// tags when you create a bot. You can't use the <code>UpdateAlias</code>
+        /// operation to update tags. To update tags on the test alias, use the
+        /// <code>TagResource</code> operation.</p>
         pub fn test_bot_alias_tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -326,6 +369,10 @@ pub mod create_bot_input {
             self.test_bot_alias_tags = Some(hash_map);
             self
         }
+        /// <p>A list of tags to add to the test alias for a bot. You can only add
+        /// tags when you create a bot. You can't use the <code>UpdateAlias</code>
+        /// operation to update tags. To update tags on the test alias, use the
+        /// <code>TagResource</code> operation.</p>
         pub fn set_test_bot_alias_tags(
             mut self,
             input: std::option::Option<
@@ -338,7 +385,7 @@ pub mod create_bot_input {
         /// Consumes the builder and constructs a [`CreateBotInput`](crate::input::CreateBotInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreateBotInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::CreateBotInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::CreateBotInput {
                 bot_name: self.bot_name,
@@ -363,16 +410,16 @@ impl CreateBotInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateBot,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateBotInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/bots").expect("formatting should succeed");
             Ok(())
         }
@@ -380,7 +427,7 @@ impl CreateBotInput {
         fn update_http_builder(
             input: &crate::input::CreateBotInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -389,24 +436,26 @@ impl CreateBotInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateBotInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_bot(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -429,13 +478,13 @@ impl CreateBotInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
         let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreateBot::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
+            aws_smithy_http::operation::Operation::new(request, crate::operation::CreateBot::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "CreateBot",
                     "lexmodelsv2",
                 ));
@@ -444,10 +493,10 @@ impl CreateBotInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -488,6 +537,7 @@ pub mod create_bot_alias_input {
             self.bot_alias_name = Some(input.into());
             self
         }
+        /// <p>The alias to create. The name must be unique for the bot.</p>
         pub fn set_bot_alias_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -501,6 +551,8 @@ pub mod create_bot_alias_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description of the alias. Use this description to help identify
+        /// the alias.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -512,10 +564,20 @@ pub mod create_bot_alias_input {
             self.bot_version = Some(input.into());
             self
         }
+        /// <p>The version of the bot that this alias points to. You can use the
+        /// operation to change the bot
+        /// version associated with the alias.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_version = input;
             self
         }
+        /// Adds a key-value pair to `bot_alias_locale_settings`.
+        ///
+        /// To override the contents of this collection use [`set_bot_alias_locale_settings`](Self::set_bot_alias_locale_settings).
+        ///
+        /// <p>Maps configuration information to a specific locale. You can use
+        /// this parameter to specify a specific Lambda function to run different
+        /// functions in different locales.</p>
         pub fn bot_alias_locale_settings(
             mut self,
             k: impl Into<std::string::String>,
@@ -526,6 +588,9 @@ pub mod create_bot_alias_input {
             self.bot_alias_locale_settings = Some(hash_map);
             self
         }
+        /// <p>Maps configuration information to a specific locale. You can use
+        /// this parameter to specify a specific Lambda function to run different
+        /// functions in different locales.</p>
         pub fn set_bot_alias_locale_settings(
             mut self,
             input: std::option::Option<
@@ -549,6 +614,10 @@ pub mod create_bot_alias_input {
             self.conversation_log_settings = Some(input);
             self
         }
+        /// <p>Specifies whether Amazon Lex logs text and audio for a conversation with
+        /// the bot. When you enable conversation logs, text logs store text input,
+        /// transcripts of audio input, and associated metadata in Amazon CloudWatch Logs. Audio
+        /// logs store audio input in Amazon S3.</p>
         pub fn set_conversation_log_settings(
             mut self,
             input: std::option::Option<crate::model::ConversationLogSettings>,
@@ -565,6 +634,8 @@ pub mod create_bot_alias_input {
             self.sentiment_analysis_settings = Some(input);
             self
         }
+        /// <p>Determines whether Amazon Lex will use Amazon Comprehend to detect the sentiment of
+        /// user utterances.</p>
         pub fn set_sentiment_analysis_settings(
             mut self,
             input: std::option::Option<crate::model::SentimentAnalysisSettings>,
@@ -577,10 +648,19 @@ pub mod create_bot_alias_input {
             self.bot_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier of the bot that the alias applies to.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_id = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of tags to add to the bot alias. You can only add tags when
+        /// you create an alias, you can't use the <code>UpdateBotAlias</code>
+        /// operation to update the tags on a bot alias. To update tags, use the
+        /// <code>TagResource</code> operation.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -591,6 +671,10 @@ pub mod create_bot_alias_input {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>A list of tags to add to the bot alias. You can only add tags when
+        /// you create an alias, you can't use the <code>UpdateBotAlias</code>
+        /// operation to update the tags on a bot alias. To update tags, use the
+        /// <code>TagResource</code> operation.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -605,7 +689,7 @@ pub mod create_bot_alias_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateBotAliasInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateBotAliasInput {
                 bot_alias_name: self.bot_alias_name,
@@ -631,27 +715,27 @@ impl CreateBotAliasInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateBotAlias,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateBotAliasInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_4 = &_input.bot_id;
             let input_4 =
                 input_4
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_id = smithy_http::label::fmt_string(input_4, false);
+            let bot_id = aws_smithy_http::label::fmt_string(input_4, false);
             if bot_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 });
@@ -664,7 +748,7 @@ impl CreateBotAliasInput {
         fn update_http_builder(
             input: &crate::input::CreateBotAliasInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -673,27 +757,27 @@ impl CreateBotAliasInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateBotAliasInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_bot_alias(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -716,15 +800,15 @@ impl CreateBotAliasInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateBotAlias::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateBotAlias",
             "lexmodelsv2",
         ));
@@ -733,10 +817,10 @@ impl CreateBotAliasInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -769,6 +853,7 @@ pub mod create_bot_locale_input {
             self.bot_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the bot to create the locale for.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_id = input;
             self
@@ -779,6 +864,8 @@ pub mod create_bot_locale_input {
             self.bot_version = Some(input.into());
             self
         }
+        /// <p>The version of the bot to create the locale for. This can only be
+        /// the draft version of the bot.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_version = input;
             self
@@ -791,6 +878,10 @@ pub mod create_bot_locale_input {
             self.locale_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the language and locale that the bot will be used
+        /// in. The string must match one of the supported locales. All of the
+        /// intents, slot types, and slots used in the bot must have the same
+        /// locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.locale_id = input;
             self
@@ -801,6 +892,8 @@ pub mod create_bot_locale_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description of the bot locale. Use this to help identify the bot
+        /// locale in lists.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -834,6 +927,31 @@ pub mod create_bot_locale_input {
             self.nlu_intent_confidence_threshold = Some(input);
             self
         }
+        /// <p>Determines the threshold where Amazon Lex will insert the
+        /// <code>AMAZON.FallbackIntent</code>,
+        /// <code>AMAZON.KendraSearchIntent</code>, or both when returning
+        /// alternative intents. <code>AMAZON.FallbackIntent</code> and
+        /// <code>AMAZON.KendraSearchIntent</code> are only inserted if they are
+        /// configured for the bot.</p>
+        /// <p>For example, suppose a bot is configured with the confidence
+        /// threshold of 0.80 and the <code>AMAZON.FallbackIntent</code>. Amazon Lex
+        /// returns three alternative intents with the following confidence scores:
+        /// IntentA (0.70), IntentB (0.60), IntentC (0.50). The response from the
+        /// <code>RecognizeText</code> operation would be:</p>
+        /// <ul>
+        /// <li>
+        /// <p>AMAZON.FallbackIntent</p>
+        /// </li>
+        /// <li>
+        /// <p>IntentA</p>
+        /// </li>
+        /// <li>
+        /// <p>IntentB</p>
+        /// </li>
+        /// <li>
+        /// <p>IntentC</p>
+        /// </li>
+        /// </ul>
         pub fn set_nlu_intent_confidence_threshold(
             mut self,
             input: std::option::Option<f64>,
@@ -847,6 +965,8 @@ pub mod create_bot_locale_input {
             self.voice_settings = Some(input);
             self
         }
+        /// <p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the
+        /// user.</p>
         pub fn set_voice_settings(
             mut self,
             input: std::option::Option<crate::model::VoiceSettings>,
@@ -859,7 +979,7 @@ pub mod create_bot_locale_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateBotLocaleInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateBotLocaleInput {
                 bot_id: self.bot_id,
@@ -883,27 +1003,27 @@ impl CreateBotLocaleInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateBotLocale,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateBotLocaleInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_5 = &_input.bot_id;
             let input_5 =
                 input_5
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_id = smithy_http::label::fmt_string(input_5, false);
+            let bot_id = aws_smithy_http::label::fmt_string(input_5, false);
             if bot_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 });
@@ -912,13 +1032,13 @@ impl CreateBotLocaleInput {
             let input_6 =
                 input_6
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_version",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_version = smithy_http::label::fmt_string(input_6, false);
+            let bot_version = aws_smithy_http::label::fmt_string(input_6, false);
             if bot_version.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_version",
                     details: "cannot be empty or unset",
                 });
@@ -936,7 +1056,7 @@ impl CreateBotLocaleInput {
         fn update_http_builder(
             input: &crate::input::CreateBotLocaleInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -945,27 +1065,27 @@ impl CreateBotLocaleInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateBotLocaleInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_bot_locale(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -988,15 +1108,15 @@ impl CreateBotLocaleInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateBotLocale::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateBotLocale",
             "lexmodelsv2",
         ));
@@ -1005,10 +1125,10 @@ impl CreateBotLocaleInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1040,6 +1160,7 @@ pub mod create_bot_version_input {
             self.bot_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the bot to create the version for.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_id = input;
             self
@@ -1050,10 +1171,20 @@ pub mod create_bot_version_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description of the version. Use the description to help identify
+        /// the version in lists.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Adds a key-value pair to `bot_version_locale_specification`.
+        ///
+        /// To override the contents of this collection use [`set_bot_version_locale_specification`](Self::set_bot_version_locale_specification).
+        ///
+        /// <p>Specifies the locales that Amazon Lex adds to this version. You can
+        /// choose the <code>Draft</code> version or any other previously published
+        /// version for each locale. When you specify a source version, the locale
+        /// data is copied from the source version to the new version.</p>
         pub fn bot_version_locale_specification(
             mut self,
             k: impl Into<std::string::String>,
@@ -1064,6 +1195,10 @@ pub mod create_bot_version_input {
             self.bot_version_locale_specification = Some(hash_map);
             self
         }
+        /// <p>Specifies the locales that Amazon Lex adds to this version. You can
+        /// choose the <code>Draft</code> version or any other previously published
+        /// version for each locale. When you specify a source version, the locale
+        /// data is copied from the source version to the new version.</p>
         pub fn set_bot_version_locale_specification(
             mut self,
             input: std::option::Option<
@@ -1081,7 +1216,7 @@ pub mod create_bot_version_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateBotVersionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateBotVersionInput {
                 bot_id: self.bot_id,
@@ -1102,27 +1237,27 @@ impl CreateBotVersionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateBotVersion,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateBotVersionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_7 = &_input.bot_id;
             let input_7 =
                 input_7
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_id = smithy_http::label::fmt_string(input_7, false);
+            let bot_id = aws_smithy_http::label::fmt_string(input_7, false);
             if bot_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 });
@@ -1135,7 +1270,7 @@ impl CreateBotVersionInput {
         fn update_http_builder(
             input: &crate::input::CreateBotVersionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1144,27 +1279,27 @@ impl CreateBotVersionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateBotVersionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_bot_version(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1187,15 +1322,15 @@ impl CreateBotVersionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateBotVersion::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateBotVersion",
             "lexmodelsv2",
         ));
@@ -1204,10 +1339,10 @@ impl CreateBotVersionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1242,6 +1377,8 @@ pub mod create_export_input {
             self.resource_specification = Some(input);
             self
         }
+        /// <p>Specifies the type of resource to export, either a bot or a bot
+        /// locale. You can only specify one type of resource to export.</p>
         pub fn set_resource_specification(
             mut self,
             input: std::option::Option<crate::model::ExportResourceSpecification>,
@@ -1254,6 +1391,7 @@ pub mod create_export_input {
             self.file_format = Some(input);
             self
         }
+        /// <p>The file format of the bot or bot locale definition files.</p>
         pub fn set_file_format(
             mut self,
             input: std::option::Option<crate::model::ImportExportFileFormat>,
@@ -1268,6 +1406,9 @@ pub mod create_export_input {
             self.file_password = Some(input.into());
             self
         }
+        /// <p>An password to use to encrypt the exported archive. Using a password
+        /// is optional, but you should encrypt the archive to protect the data in
+        /// transit between Amazon Lex and your local computer.</p>
         pub fn set_file_password(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1278,8 +1419,10 @@ pub mod create_export_input {
         /// Consumes the builder and constructs a [`CreateExportInput`](crate::input::CreateExportInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreateExportInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateExportInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateExportInput {
                 resource_specification: self.resource_specification,
                 file_format: self.file_format,
@@ -1299,16 +1442,16 @@ impl CreateExportInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateExport,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateExportInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/exports").expect("formatting should succeed");
             Ok(())
         }
@@ -1316,7 +1459,7 @@ impl CreateExportInput {
         fn update_http_builder(
             input: &crate::input::CreateExportInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1325,26 +1468,26 @@ impl CreateExportInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateExportInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_export(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1367,25 +1510,27 @@ impl CreateExportInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreateExport::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "CreateExport",
-                    "lexmodelsv2",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateExport::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateExport",
+            "lexmodelsv2",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1431,6 +1576,9 @@ pub mod create_intent_input {
             self.intent_name = Some(input.into());
             self
         }
+        /// <p>The name of the intent. Intent names must be unique in the locale
+        /// that contains the intent and cannot match the name of any built-in
+        /// intent.</p>
         pub fn set_intent_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.intent_name = input;
             self
@@ -1441,6 +1589,8 @@ pub mod create_intent_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description of the intent. Use the description to help identify
+        /// the intent in lists.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -1451,6 +1601,8 @@ pub mod create_intent_input {
             self.parent_intent_signature = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the built-in intent to base this intent
+        /// on.</p>
         pub fn set_parent_intent_signature(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1458,6 +1610,15 @@ pub mod create_intent_input {
             self.parent_intent_signature = input;
             self
         }
+        /// Appends an item to `sample_utterances`.
+        ///
+        /// To override the contents of this collection use [`set_sample_utterances`](Self::set_sample_utterances).
+        ///
+        /// <p>An array of strings that a user might say to signal the intent. For
+        /// example, "I want a pizza", or "I want a {PizzaSize} pizza". </p>
+        /// <p>In an utterance, slot names are enclosed in curly braces ("{", "}")
+        /// to indicate where they should be displayed in the utterance shown to
+        /// the user.. </p>
         pub fn sample_utterances(
             mut self,
             input: impl Into<crate::model::SampleUtterance>,
@@ -1467,6 +1628,11 @@ pub mod create_intent_input {
             self.sample_utterances = Some(v);
             self
         }
+        /// <p>An array of strings that a user might say to signal the intent. For
+        /// example, "I want a pizza", or "I want a {PizzaSize} pizza". </p>
+        /// <p>In an utterance, slot names are enclosed in curly braces ("{", "}")
+        /// to indicate where they should be displayed in the utterance shown to
+        /// the user.. </p>
         pub fn set_sample_utterances(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SampleUtterance>>,
@@ -1488,6 +1654,16 @@ pub mod create_intent_input {
             self.dialog_code_hook = Some(input);
             self
         }
+        /// <p>Specifies that Amazon Lex invokes the alias Lambda function for each user
+        /// input. You can invoke this Lambda function to personalize user
+        /// interaction.</p>
+        /// <p>For example, suppose that your bot determines that the user's name
+        /// is John. You Lambda function might retrieve John's information from a
+        /// backend database and prepopulate some of the values. For example, if
+        /// you find that John is gluten intolerant, you might set the
+        /// corresponding intent slot, <code>glutenIntolerant</code> to
+        /// <code>true</code>. You might find John's phone number and set the
+        /// corresponding session attribute.</p>
         pub fn set_dialog_code_hook(
             mut self,
             input: std::option::Option<crate::model::DialogCodeHookSettings>,
@@ -1508,6 +1684,12 @@ pub mod create_intent_input {
             self.fulfillment_code_hook = Some(input);
             self
         }
+        /// <p>Specifies that Amazon Lex invokes the alias Lambda function when the
+        /// intent is ready for fulfillment. You can invoke this function to
+        /// complete the bot's transaction with the user.</p>
+        /// <p>For example, in a pizza ordering bot, the Lambda function can look up
+        /// the closest pizza restaurant to the customer's location and then place
+        /// an order on the customer's behalf.</p>
         pub fn set_fulfillment_code_hook(
             mut self,
             input: std::option::Option<crate::model::FulfillmentCodeHookSettings>,
@@ -1525,6 +1707,9 @@ pub mod create_intent_input {
             self.intent_confirmation_setting = Some(input);
             self
         }
+        /// <p>Provides prompts that Amazon Lex sends to the user to confirm the
+        /// completion of an intent. If the user answers "no," the settings contain
+        /// a statement that is sent to the user to end the intent.</p>
         pub fn set_intent_confirmation_setting(
             mut self,
             input: std::option::Option<crate::model::IntentConfirmationSetting>,
@@ -1538,6 +1723,8 @@ pub mod create_intent_input {
             self.intent_closing_setting = Some(input);
             self
         }
+        /// <p>Sets the response that Amazon Lex sends to the user when the intent is
+        /// closed.</p>
         pub fn set_intent_closing_setting(
             mut self,
             input: std::option::Option<crate::model::IntentClosingSetting>,
@@ -1545,12 +1732,46 @@ pub mod create_intent_input {
             self.intent_closing_setting = input;
             self
         }
+        /// Appends an item to `input_contexts`.
+        ///
+        /// To override the contents of this collection use [`set_input_contexts`](Self::set_input_contexts).
+        ///
+        /// <p>A list of contexts that must be active for this intent to be
+        /// considered by Amazon Lex.</p>
+        /// <p>When an intent has an input context list, Amazon Lex only considers using
+        /// the intent in an interaction with the user when the specified contexts
+        /// are included in the active context list for the session. If the
+        /// contexts are not active, then Amazon Lex will not use the intent.</p>
+        /// <p>A context can be automatically activated using the
+        /// <code>outputContexts</code> property or it can be set at
+        /// runtime.</p>
+        /// <p> For example, if there are two intents with different input contexts
+        /// that respond to the same utterances, only the intent with the active
+        /// context will respond.</p>
+        /// <p>An intent may have up to 5 input contexts. If an intent has multiple
+        /// input contexts, all of the contexts must be active to consider the
+        /// intent.</p>
         pub fn input_contexts(mut self, input: impl Into<crate::model::InputContext>) -> Self {
             let mut v = self.input_contexts.unwrap_or_default();
             v.push(input.into());
             self.input_contexts = Some(v);
             self
         }
+        /// <p>A list of contexts that must be active for this intent to be
+        /// considered by Amazon Lex.</p>
+        /// <p>When an intent has an input context list, Amazon Lex only considers using
+        /// the intent in an interaction with the user when the specified contexts
+        /// are included in the active context list for the session. If the
+        /// contexts are not active, then Amazon Lex will not use the intent.</p>
+        /// <p>A context can be automatically activated using the
+        /// <code>outputContexts</code> property or it can be set at
+        /// runtime.</p>
+        /// <p> For example, if there are two intents with different input contexts
+        /// that respond to the same utterances, only the intent with the active
+        /// context will respond.</p>
+        /// <p>An intent may have up to 5 input contexts. If an intent has multiple
+        /// input contexts, all of the contexts must be active to consider the
+        /// intent.</p>
         pub fn set_input_contexts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InputContext>>,
@@ -1558,12 +1779,34 @@ pub mod create_intent_input {
             self.input_contexts = input;
             self
         }
+        /// Appends an item to `output_contexts`.
+        ///
+        /// To override the contents of this collection use [`set_output_contexts`](Self::set_output_contexts).
+        ///
+        /// <p>A lists of contexts that the intent activates when it is
+        /// fulfilled.</p>
+        /// <p>You can use an output context to indicate the intents that Amazon Lex
+        /// should consider for the next turn of the conversation with a customer. </p>
+        /// <p>When you use the <code>outputContextsList</code> property, all of
+        /// the contexts specified in the list are activated when the intent is
+        /// fulfilled. You can set up to 10 output contexts. You can also set the
+        /// number of conversation turns that the context should be active, or the
+        /// length of time that the context should be active.</p>
         pub fn output_contexts(mut self, input: impl Into<crate::model::OutputContext>) -> Self {
             let mut v = self.output_contexts.unwrap_or_default();
             v.push(input.into());
             self.output_contexts = Some(v);
             self
         }
+        /// <p>A lists of contexts that the intent activates when it is
+        /// fulfilled.</p>
+        /// <p>You can use an output context to indicate the intents that Amazon Lex
+        /// should consider for the next turn of the conversation with a customer. </p>
+        /// <p>When you use the <code>outputContextsList</code> property, all of
+        /// the contexts specified in the list are activated when the intent is
+        /// fulfilled. You can set up to 10 output contexts. You can also set the
+        /// number of conversation turns that the context should be active, or the
+        /// length of time that the context should be active.</p>
         pub fn set_output_contexts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::OutputContext>>,
@@ -1579,6 +1822,10 @@ pub mod create_intent_input {
             self.kendra_configuration = Some(input);
             self
         }
+        /// <p>Configuration information required to use the
+        /// <code>AMAZON.KendraSearchIntent</code> intent to connect to an Amazon Kendra
+        /// index. The <code>AMAZON.KendraSearchIntent</code> intent is called when
+        /// Amazon Lex can't determine another intent to invoke.</p>
         pub fn set_kendra_configuration(
             mut self,
             input: std::option::Option<crate::model::KendraConfiguration>,
@@ -1591,6 +1838,7 @@ pub mod create_intent_input {
             self.bot_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the bot associated with this intent.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_id = input;
             self
@@ -1601,6 +1849,8 @@ pub mod create_intent_input {
             self.bot_version = Some(input.into());
             self
         }
+        /// <p>The identifier of the version of the bot associated with this
+        /// intent.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_version = input;
             self
@@ -1612,6 +1862,9 @@ pub mod create_intent_input {
             self.locale_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the language and locale where this intent is used.
+        /// All of the bots, slot types, and slots used by the intent must have the
+        /// same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.locale_id = input;
             self
@@ -1619,8 +1872,10 @@ pub mod create_intent_input {
         /// Consumes the builder and constructs a [`CreateIntentInput`](crate::input::CreateIntentInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreateIntentInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateIntentInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateIntentInput {
                 intent_name: self.intent_name,
                 description: self.description,
@@ -1651,27 +1906,27 @@ impl CreateIntentInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateIntent,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateIntentInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_8 = &_input.bot_id;
             let input_8 =
                 input_8
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_id = smithy_http::label::fmt_string(input_8, false);
+            let bot_id = aws_smithy_http::label::fmt_string(input_8, false);
             if bot_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 });
@@ -1680,13 +1935,13 @@ impl CreateIntentInput {
             let input_9 =
                 input_9
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_version",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_version = smithy_http::label::fmt_string(input_9, false);
+            let bot_version = aws_smithy_http::label::fmt_string(input_9, false);
             if bot_version.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_version",
                     details: "cannot be empty or unset",
                 });
@@ -1695,13 +1950,13 @@ impl CreateIntentInput {
             let input_10 =
                 input_10
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "locale_id",
                         details: "cannot be empty or unset",
                     })?;
-            let locale_id = smithy_http::label::fmt_string(input_10, false);
+            let locale_id = aws_smithy_http::label::fmt_string(input_10, false);
             if locale_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "locale_id",
                     details: "cannot be empty or unset",
                 });
@@ -1720,7 +1975,7 @@ impl CreateIntentInput {
         fn update_http_builder(
             input: &crate::input::CreateIntentInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1729,26 +1984,26 @@ impl CreateIntentInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateIntentInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_intent(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1771,25 +2026,27 @@ impl CreateIntentInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreateIntent::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "CreateIntent",
-                    "lexmodelsv2",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateIntent::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateIntent",
+            "lexmodelsv2",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1819,6 +2076,8 @@ pub mod create_resource_policy_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the
+        /// resource policy is attached to.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -1834,6 +2093,13 @@ pub mod create_resource_policy_input {
             self.policy = Some(input.into());
             self
         }
+        /// <p>A resource policy to add to the resource. The policy is a JSON
+        /// structure that contains one or more statements that define the policy.
+        /// The policy must follow the IAM syntax. For more information about the
+        /// contents of a JSON policy document, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html"> IAM JSON policy
+        /// reference </a>. </p>
+        /// <p>If the policy isn't valid, Amazon Lex returns a validation
+        /// exception.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy = input;
             self
@@ -1843,7 +2109,7 @@ pub mod create_resource_policy_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateResourcePolicyInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateResourcePolicyInput {
                 resource_arn: self.resource_arn,
@@ -1863,27 +2129,27 @@ impl CreateResourcePolicyInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateResourcePolicy,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateResourcePolicyInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_11 = &_input.resource_arn;
             let input_11 =
                 input_11
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = smithy_http::label::fmt_string(input_11, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_11, false);
             if resource_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 });
@@ -1896,7 +2162,7 @@ impl CreateResourcePolicyInput {
         fn update_http_builder(
             input: &crate::input::CreateResourcePolicyInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1905,27 +2171,27 @@ impl CreateResourcePolicyInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateResourcePolicyInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_resource_policy(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1948,15 +2214,15 @@ impl CreateResourcePolicyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateResourcePolicy::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateResourcePolicy",
             "lexmodelsv2",
         ));
@@ -1965,10 +2231,10 @@ impl CreateResourcePolicyInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2008,6 +2274,8 @@ pub mod create_resource_policy_statement_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the
+        /// resource policy is attached to.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -2020,6 +2288,10 @@ pub mod create_resource_policy_statement_input {
             self.statement_id = Some(input.into());
             self
         }
+        /// <p>The name of the statement. The ID is the same as the
+        /// <code>Sid</code> IAM property. The statement name must be unique
+        /// within the policy. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html">IAM
+        /// JSON policy elements: Sid</a>. </p>
         pub fn set_statement_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.statement_id = input;
             self
@@ -2030,16 +2302,28 @@ pub mod create_resource_policy_statement_input {
             self.effect = Some(input);
             self
         }
+        /// <p>Determines whether the statement allows or denies access to the
+        /// resource.</p>
         pub fn set_effect(mut self, input: std::option::Option<crate::model::Effect>) -> Self {
             self.effect = input;
             self
         }
+        /// Appends an item to `principal`.
+        ///
+        /// To override the contents of this collection use [`set_principal`](Self::set_principal).
+        ///
+        /// <p>An IAM principal, such as an IAM users, IAM roles, or AWS services
+        /// that is allowed or denied access to a resource. For more information,
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">AWS JSON policy elements: Principal</a>.</p>
         pub fn principal(mut self, input: impl Into<crate::model::Principal>) -> Self {
             let mut v = self.principal.unwrap_or_default();
             v.push(input.into());
             self.principal = Some(v);
             self
         }
+        /// <p>An IAM principal, such as an IAM users, IAM roles, or AWS services
+        /// that is allowed or denied access to a resource. For more information,
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">AWS JSON policy elements: Principal</a>.</p>
         pub fn set_principal(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Principal>>,
@@ -2047,12 +2331,24 @@ pub mod create_resource_policy_statement_input {
             self.principal = input;
             self
         }
+        /// Appends an item to `action`.
+        ///
+        /// To override the contents of this collection use [`set_action`](Self::set_action).
+        ///
+        /// <p>The Amazon Lex action that this policy either allows or denies. The
+        /// action must apply to the resource type of the specified ARN. For more
+        /// information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlexv2.html">
+        /// Actions, resources, and condition keys for Amazon Lex V2</a>.</p>
         pub fn action(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.action.unwrap_or_default();
             v.push(input.into());
             self.action = Some(v);
             self
         }
+        /// <p>The Amazon Lex action that this policy either allows or denies. The
+        /// action must apply to the resource type of the specified ARN. For more
+        /// information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonlexv2.html">
+        /// Actions, resources, and condition keys for Amazon Lex V2</a>.</p>
         pub fn set_action(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2060,6 +2356,15 @@ pub mod create_resource_policy_statement_input {
             self.action = input;
             self
         }
+        /// Adds a key-value pair to `condition`.
+        ///
+        /// To override the contents of this collection use [`set_condition`](Self::set_condition).
+        ///
+        /// <p>Specifies a condition when the policy is in effect. If the principal
+        /// of the policy is a service principal, you must provide two condition
+        /// blocks, one with a SourceAccount global condition key and one with a
+        /// SourceArn global condition key.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition.html">IAM JSON policy elements: Condition </a>.</p>
         pub fn condition(
             mut self,
             k: impl Into<std::string::String>,
@@ -2070,6 +2375,11 @@ pub mod create_resource_policy_statement_input {
             self.condition = Some(hash_map);
             self
         }
+        /// <p>Specifies a condition when the policy is in effect. If the principal
+        /// of the policy is a service principal, you must provide two condition
+        /// blocks, one with a SourceAccount global condition key and one with a
+        /// SourceArn global condition key.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition.html">IAM JSON policy elements: Condition </a>.</p>
         pub fn set_condition(
             mut self,
             input: std::option::Option<
@@ -2091,6 +2401,11 @@ pub mod create_resource_policy_statement_input {
             self.expected_revision_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the revision of the policy to edit. If this
+        /// revision ID doesn't match the current revision ID, Amazon Lex throws an
+        /// exception.</p>
+        /// <p>If you don't specify a revision, Amazon Lex overwrites the contents of
+        /// the policy with the new values.</p>
         pub fn set_expected_revision_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2103,7 +2418,7 @@ pub mod create_resource_policy_statement_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateResourcePolicyStatementInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateResourcePolicyStatementInput {
                 resource_arn: self.resource_arn,
@@ -2129,27 +2444,27 @@ impl CreateResourcePolicyStatementInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateResourcePolicyStatement,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateResourcePolicyStatementInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_12 = &_input.resource_arn;
             let input_12 =
                 input_12
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = smithy_http::label::fmt_string(input_12, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_12, false);
             if resource_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 });
@@ -2166,11 +2481,11 @@ impl CreateResourcePolicyStatementInput {
             _input: &crate::input::CreateResourcePolicyStatementInput,
             mut output: &mut String,
         ) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_13) = &_input.expected_revision_id {
                 query.push_kv(
                     "expectedRevisionId",
-                    &smithy_http::query::fmt_string(&inner_13),
+                    &aws_smithy_http::query::fmt_string(&inner_13),
                 );
             }
         }
@@ -2178,7 +2493,7 @@ impl CreateResourcePolicyStatementInput {
         fn update_http_builder(
             input: &crate::input::CreateResourcePolicyStatementInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2188,25 +2503,25 @@ impl CreateResourcePolicyStatementInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateResourcePolicyStatementInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_resource_policy_statement(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_resource_policy_statement(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2229,15 +2544,15 @@ impl CreateResourcePolicyStatementInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateResourcePolicyStatement::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateResourcePolicyStatement",
             "lexmodelsv2",
         ));
@@ -2246,10 +2561,10 @@ impl CreateResourcePolicyStatementInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2289,6 +2604,8 @@ pub mod create_slot_input {
             self.slot_name = Some(input.into());
             self
         }
+        /// <p>The name of the slot. Slot names must be unique within the bot that
+        /// contains the slot.</p>
         pub fn set_slot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.slot_name = input;
             self
@@ -2299,6 +2616,8 @@ pub mod create_slot_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description of the slot. Use this to help identify the slot in
+        /// lists.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -2310,6 +2629,9 @@ pub mod create_slot_input {
             self.slot_type_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the slot type associated with this slot.
+        /// The slot type determines the values that can be entered into the
+        /// slot.</p>
         pub fn set_slot_type_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.slot_type_id = input;
             self
@@ -2323,6 +2645,8 @@ pub mod create_slot_input {
             self.value_elicitation_setting = Some(input);
             self
         }
+        /// <p>Specifies prompts that Amazon Lex sends to the user to elicit a response
+        /// that provides the value for the slot. </p>
         pub fn set_value_elicitation_setting(
             mut self,
             input: std::option::Option<crate::model::SlotValueElicitationSetting>,
@@ -2340,6 +2664,12 @@ pub mod create_slot_input {
             self.obfuscation_setting = Some(input);
             self
         }
+        /// <p>Determines how slot values are used in Amazon CloudWatch logs. If the value of
+        /// the <code>obfuscationSetting</code> parameter is
+        /// <code>DefaultObfuscation</code>, slot values are obfuscated in the
+        /// log output. If the value is <code>None</code>, the actual value is
+        /// present in the log output.</p>
+        /// <p>The default is to obfuscate values in the CloudWatch logs.</p>
         pub fn set_obfuscation_setting(
             mut self,
             input: std::option::Option<crate::model::ObfuscationSetting>,
@@ -2352,6 +2682,7 @@ pub mod create_slot_input {
             self.bot_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the bot associated with the slot.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_id = input;
             self
@@ -2361,6 +2692,7 @@ pub mod create_slot_input {
             self.bot_version = Some(input.into());
             self
         }
+        /// <p>The version of the bot associated with the slot.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_version = input;
             self
@@ -2373,6 +2705,10 @@ pub mod create_slot_input {
             self.locale_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the language and locale that the slot will be used
+        /// in. The string must match one of the supported locales. All of the
+        /// bots, intents, slot types used by the slot must have the same locale.
+        /// For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.locale_id = input;
             self
@@ -2382,6 +2718,7 @@ pub mod create_slot_input {
             self.intent_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the intent that contains the slot.</p>
         pub fn set_intent_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.intent_id = input;
             self
@@ -2399,6 +2736,12 @@ pub mod create_slot_input {
             self.multiple_values_setting = Some(input);
             self
         }
+        /// <p>Indicates whether the slot returns multiple values in one response.
+        /// Multi-value slots are only available in the en-US locale. If you set
+        /// this value to <code>true</code> in any other locale, Amazon Lex throws a
+        /// <code>ValidationException</code>. </p>
+        /// <p>If the <code>multipleValuesSetting</code> is not set, the default
+        /// value is <code>false</code>.</p>
         pub fn set_multiple_values_setting(
             mut self,
             input: std::option::Option<crate::model::MultipleValuesSetting>,
@@ -2409,8 +2752,10 @@ pub mod create_slot_input {
         /// Consumes the builder and constructs a [`CreateSlotInput`](crate::input::CreateSlotInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreateSlotInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateSlotInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateSlotInput {
                 slot_name: self.slot_name,
                 description: self.description,
@@ -2437,27 +2782,27 @@ impl CreateSlotInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateSlot,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateSlotInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_14 = &_input.bot_id;
             let input_14 =
                 input_14
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_id = smithy_http::label::fmt_string(input_14, false);
+            let bot_id = aws_smithy_http::label::fmt_string(input_14, false);
             if bot_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 });
@@ -2466,13 +2811,13 @@ impl CreateSlotInput {
             let input_15 =
                 input_15
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_version",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_version = smithy_http::label::fmt_string(input_15, false);
+            let bot_version = aws_smithy_http::label::fmt_string(input_15, false);
             if bot_version.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_version",
                     details: "cannot be empty or unset",
                 });
@@ -2481,13 +2826,13 @@ impl CreateSlotInput {
             let input_16 =
                 input_16
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "locale_id",
                         details: "cannot be empty or unset",
                     })?;
-            let locale_id = smithy_http::label::fmt_string(input_16, false);
+            let locale_id = aws_smithy_http::label::fmt_string(input_16, false);
             if locale_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "locale_id",
                     details: "cannot be empty or unset",
                 });
@@ -2496,13 +2841,13 @@ impl CreateSlotInput {
             let input_17 =
                 input_17
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "intent_id",
                         details: "cannot be empty or unset",
                     })?;
-            let intent_id = smithy_http::label::fmt_string(input_17, false);
+            let intent_id = aws_smithy_http::label::fmt_string(input_17, false);
             if intent_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "intent_id",
                     details: "cannot be empty or unset",
                 });
@@ -2514,7 +2859,7 @@ impl CreateSlotInput {
         fn update_http_builder(
             input: &crate::input::CreateSlotInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2523,24 +2868,26 @@ impl CreateSlotInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateSlotInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_slot(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2563,25 +2910,27 @@ impl CreateSlotInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreateSlot::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "CreateSlot",
-                    "lexmodelsv2",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateSlot::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateSlot",
+            "lexmodelsv2",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2619,6 +2968,8 @@ pub mod create_slot_type_input {
             self.slot_type_name = Some(input.into());
             self
         }
+        /// <p>The name for the slot. A slot type name must be unique within the
+        /// account.</p>
         pub fn set_slot_type_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2632,16 +2983,30 @@ pub mod create_slot_type_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description of the slot type. Use the description to help identify
+        /// the slot type in lists.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Appends an item to `slot_type_values`.
+        ///
+        /// To override the contents of this collection use [`set_slot_type_values`](Self::set_slot_type_values).
+        ///
+        /// <p>A list of <code>SlotTypeValue</code> objects that defines the values
+        /// that the slot type can take. Each value can have a list of synonyms,
+        /// additional values that help train the machine learning model about the
+        /// values that it resolves for a slot.</p>
         pub fn slot_type_values(mut self, input: impl Into<crate::model::SlotTypeValue>) -> Self {
             let mut v = self.slot_type_values.unwrap_or_default();
             v.push(input.into());
             self.slot_type_values = Some(v);
             self
         }
+        /// <p>A list of <code>SlotTypeValue</code> objects that defines the values
+        /// that the slot type can take. Each value can have a list of synonyms,
+        /// additional values that help train the machine learning model about the
+        /// values that it resolves for a slot.</p>
         pub fn set_slot_type_values(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SlotTypeValue>>,
@@ -2674,6 +3039,24 @@ pub mod create_slot_type_input {
             self.value_selection_setting = Some(input);
             self
         }
+        /// <p>Determines the strategy that Amazon Lex uses to select a value from the
+        /// list of possible values. The field can be set to one of the following
+        /// values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>OriginalValue</code> - Returns the value entered by the
+        /// user, if the user value is similar to the slot value.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TopResolution</code> - If there is a resolution list for
+        /// the slot, return the first value in the resolution list. If there
+        /// is no resolution list, return null.</p>
+        /// </li>
+        /// </ul>
+        /// <p>If you don't specify the <code>valueSelectionSetting</code>
+        /// parameter, the default is <code>OriginalValue</code>.</p>
         pub fn set_value_selection_setting(
             mut self,
             input: std::option::Option<crate::model::SlotValueSelectionSetting>,
@@ -2689,6 +3072,10 @@ pub mod create_slot_type_input {
             self.parent_slot_type_signature = Some(input.into());
             self
         }
+        /// <p>The built-in slot type used as a parent of this slot type. When you
+        /// define a parent slot type, the new slot type has the configuration of
+        /// the parent slot type.</p>
+        /// <p>Only <code>AMAZON.AlphaNumeric</code> is supported.</p>
         pub fn set_parent_slot_type_signature(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2701,6 +3088,7 @@ pub mod create_slot_type_input {
             self.bot_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the bot associated with this slot type.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_id = input;
             self
@@ -2711,6 +3099,8 @@ pub mod create_slot_type_input {
             self.bot_version = Some(input.into());
             self
         }
+        /// <p>The identifier of the bot version associated with this slot
+        /// type.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_version = input;
             self
@@ -2723,6 +3113,10 @@ pub mod create_slot_type_input {
             self.locale_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the language and locale that the slot type will be
+        /// used in. The string must match one of the supported locales. All of the
+        /// bots, intents, and slots used by the slot type must have the same
+        /// locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.locale_id = input;
             self
@@ -2732,7 +3126,7 @@ pub mod create_slot_type_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateSlotTypeInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateSlotTypeInput {
                 slot_type_name: self.slot_type_name,
@@ -2758,27 +3152,27 @@ impl CreateSlotTypeInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateSlotType,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateSlotTypeInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_18 = &_input.bot_id;
             let input_18 =
                 input_18
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_id = smithy_http::label::fmt_string(input_18, false);
+            let bot_id = aws_smithy_http::label::fmt_string(input_18, false);
             if bot_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 });
@@ -2787,13 +3181,13 @@ impl CreateSlotTypeInput {
             let input_19 =
                 input_19
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_version",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_version = smithy_http::label::fmt_string(input_19, false);
+            let bot_version = aws_smithy_http::label::fmt_string(input_19, false);
             if bot_version.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_version",
                     details: "cannot be empty or unset",
                 });
@@ -2802,13 +3196,13 @@ impl CreateSlotTypeInput {
             let input_20 =
                 input_20
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "locale_id",
                         details: "cannot be empty or unset",
                     })?;
-            let locale_id = smithy_http::label::fmt_string(input_20, false);
+            let locale_id = aws_smithy_http::label::fmt_string(input_20, false);
             if locale_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "locale_id",
                     details: "cannot be empty or unset",
                 });
@@ -2827,7 +3221,7 @@ impl CreateSlotTypeInput {
         fn update_http_builder(
             input: &crate::input::CreateSlotTypeInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2836,27 +3230,27 @@ impl CreateSlotTypeInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateSlotTypeInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_slot_type(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2879,15 +3273,15 @@ impl CreateSlotTypeInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateSlotType::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateSlotType",
             "lexmodelsv2",
         ));
@@ -2896,10 +3290,10 @@ impl CreateSlotTypeInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2925,7 +3319,7 @@ pub mod create_upload_url_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateUploadUrlInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateUploadUrlInput {})
         }
@@ -2942,16 +3336,16 @@ impl CreateUploadUrlInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateUploadUrl,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateUploadUrlInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/createuploadurl").expect("formatting should succeed");
             Ok(())
         }
@@ -2959,7 +3353,7 @@ impl CreateUploadUrlInput {
         fn update_http_builder(
             input: &crate::input::CreateUploadUrlInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2968,23 +3362,23 @@ impl CreateUploadUrlInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateUploadUrlInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3007,15 +3401,15 @@ impl CreateUploadUrlInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateUploadUrl::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateUploadUrl",
             "lexmodelsv2",
         ));
@@ -3024,10 +3418,10 @@ impl CreateUploadUrlInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3056,6 +3450,7 @@ pub mod delete_bot_input {
             self.bot_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the bot to delete. </p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_id = input;
             self
@@ -3067,6 +3462,9 @@ pub mod delete_bot_input {
             self.skip_resource_in_use_check = Some(input);
             self
         }
+        /// <p>When <code>true</code>, Amazon Lex doesn't check to see if another
+        /// resource, such as an alias, is using the bot before it is
+        /// deleted.</p>
         pub fn set_skip_resource_in_use_check(mut self, input: std::option::Option<bool>) -> Self {
             self.skip_resource_in_use_check = input;
             self
@@ -3074,7 +3472,7 @@ pub mod delete_bot_input {
         /// Consumes the builder and constructs a [`DeleteBotInput`](crate::input::DeleteBotInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeleteBotInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::DeleteBotInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::DeleteBotInput {
                 bot_id: self.bot_id,
@@ -3094,27 +3492,27 @@ impl DeleteBotInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteBot,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteBotInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_21 = &_input.bot_id;
             let input_21 =
                 input_21
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_id = smithy_http::label::fmt_string(input_21, false);
+            let bot_id = aws_smithy_http::label::fmt_string(input_21, false);
             if bot_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 });
@@ -3123,11 +3521,11 @@ impl DeleteBotInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::DeleteBotInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if _input.skip_resource_in_use_check {
                 query.push_kv(
                     "skipResourceInUseCheck",
-                    &smithy_types::primitive::Encoder::from(_input.skip_resource_in_use_check)
+                    &aws_smithy_types::primitive::Encoder::from(_input.skip_resource_in_use_check)
                         .encode(),
                 );
             }
@@ -3136,7 +3534,7 @@ impl DeleteBotInput {
         fn update_http_builder(
             input: &crate::input::DeleteBotInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3146,23 +3544,23 @@ impl DeleteBotInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteBotInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3185,13 +3583,13 @@ impl DeleteBotInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
         let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeleteBot::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
+            aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteBot::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "DeleteBot",
                     "lexmodelsv2",
                 ));
@@ -3200,10 +3598,10 @@ impl DeleteBotInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3233,6 +3631,7 @@ pub mod delete_bot_alias_input {
             self.bot_alias_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier of the bot alias to delete.</p>
         pub fn set_bot_alias_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_alias_id = input;
             self
@@ -3243,6 +3642,8 @@ pub mod delete_bot_alias_input {
             self.bot_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier of the bot associated with the alias to
+        /// delete.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_id = input;
             self
@@ -3253,6 +3654,8 @@ pub mod delete_bot_alias_input {
             self.skip_resource_in_use_check = Some(input);
             self
         }
+        /// <p>When this parameter is true, Amazon Lex doesn't check to see if any other
+        /// resource is using the alias before it is deleted.</p>
         pub fn set_skip_resource_in_use_check(mut self, input: std::option::Option<bool>) -> Self {
             self.skip_resource_in_use_check = input;
             self
@@ -3262,7 +3665,7 @@ pub mod delete_bot_alias_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteBotAliasInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteBotAliasInput {
                 bot_alias_id: self.bot_alias_id,
@@ -3283,27 +3686,27 @@ impl DeleteBotAliasInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteBotAlias,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteBotAliasInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_22 = &_input.bot_id;
             let input_22 =
                 input_22
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_id = smithy_http::label::fmt_string(input_22, false);
+            let bot_id = aws_smithy_http::label::fmt_string(input_22, false);
             if bot_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 });
@@ -3312,13 +3715,13 @@ impl DeleteBotAliasInput {
             let input_23 =
                 input_23
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_alias_id",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_alias_id = smithy_http::label::fmt_string(input_23, false);
+            let bot_alias_id = aws_smithy_http::label::fmt_string(input_23, false);
             if bot_alias_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_alias_id",
                     details: "cannot be empty or unset",
                 });
@@ -3333,11 +3736,11 @@ impl DeleteBotAliasInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::DeleteBotAliasInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if _input.skip_resource_in_use_check {
                 query.push_kv(
                     "skipResourceInUseCheck",
-                    &smithy_types::primitive::Encoder::from(_input.skip_resource_in_use_check)
+                    &aws_smithy_types::primitive::Encoder::from(_input.skip_resource_in_use_check)
                         .encode(),
                 );
             }
@@ -3346,7 +3749,7 @@ impl DeleteBotAliasInput {
         fn update_http_builder(
             input: &crate::input::DeleteBotAliasInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3356,23 +3759,23 @@ impl DeleteBotAliasInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteBotAliasInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3395,15 +3798,15 @@ impl DeleteBotAliasInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteBotAlias::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteBotAlias",
             "lexmodelsv2",
         ));
@@ -3412,10 +3815,10 @@ impl DeleteBotAliasInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3445,6 +3848,7 @@ pub mod delete_bot_locale_input {
             self.bot_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier of the bot that contains the locale.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_id = input;
             self
@@ -3454,6 +3858,7 @@ pub mod delete_bot_locale_input {
             self.bot_version = Some(input.into());
             self
         }
+        /// <p>The version of the bot that contains the locale. </p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_version = input;
             self
@@ -3465,6 +3870,9 @@ pub mod delete_bot_locale_input {
             self.locale_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the language and locale that will be deleted. The
+        /// string must match one of the supported locales. For more information,
+        /// see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.locale_id = input;
             self
@@ -3474,7 +3882,7 @@ pub mod delete_bot_locale_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteBotLocaleInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteBotLocaleInput {
                 bot_id: self.bot_id,
@@ -3495,27 +3903,27 @@ impl DeleteBotLocaleInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteBotLocale,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteBotLocaleInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_24 = &_input.bot_id;
             let input_24 =
                 input_24
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_id = smithy_http::label::fmt_string(input_24, false);
+            let bot_id = aws_smithy_http::label::fmt_string(input_24, false);
             if bot_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 });
@@ -3524,13 +3932,13 @@ impl DeleteBotLocaleInput {
             let input_25 =
                 input_25
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_version",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_version = smithy_http::label::fmt_string(input_25, false);
+            let bot_version = aws_smithy_http::label::fmt_string(input_25, false);
             if bot_version.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_version",
                     details: "cannot be empty or unset",
                 });
@@ -3539,13 +3947,13 @@ impl DeleteBotLocaleInput {
             let input_26 =
                 input_26
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "locale_id",
                         details: "cannot be empty or unset",
                     })?;
-            let locale_id = smithy_http::label::fmt_string(input_26, false);
+            let locale_id = aws_smithy_http::label::fmt_string(input_26, false);
             if locale_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "locale_id",
                     details: "cannot be empty or unset",
                 });
@@ -3564,7 +3972,7 @@ impl DeleteBotLocaleInput {
         fn update_http_builder(
             input: &crate::input::DeleteBotLocaleInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3573,23 +3981,23 @@ impl DeleteBotLocaleInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteBotLocaleInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3612,15 +4020,15 @@ impl DeleteBotLocaleInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteBotLocale::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteBotLocale",
             "lexmodelsv2",
         ));
@@ -3629,10 +4037,10 @@ impl DeleteBotLocaleInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3662,6 +4070,7 @@ pub mod delete_bot_version_input {
             self.bot_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the bot that contains the version.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_id = input;
             self
@@ -3671,6 +4080,7 @@ pub mod delete_bot_version_input {
             self.bot_version = Some(input.into());
             self
         }
+        /// <p>The version of the bot to delete.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_version = input;
             self
@@ -3685,6 +4095,12 @@ pub mod delete_bot_version_input {
             self.skip_resource_in_use_check = Some(input);
             self
         }
+        /// <p>By default, the <code>DeleteBotVersion</code> operations throws a
+        /// <code>ResourceInUseException</code> exception if you try to delete a
+        /// bot version that has an alias pointing at it. Set the
+        /// <code>skipResourceInUseCheck</code> parameter to <code>true</code>
+        /// to skip this check and remove the version even if an alias points to
+        /// it.</p>
         pub fn set_skip_resource_in_use_check(mut self, input: std::option::Option<bool>) -> Self {
             self.skip_resource_in_use_check = input;
             self
@@ -3694,7 +4110,7 @@ pub mod delete_bot_version_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteBotVersionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteBotVersionInput {
                 bot_id: self.bot_id,
@@ -3715,27 +4131,27 @@ impl DeleteBotVersionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteBotVersion,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteBotVersionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_27 = &_input.bot_id;
             let input_27 =
                 input_27
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_id = smithy_http::label::fmt_string(input_27, false);
+            let bot_id = aws_smithy_http::label::fmt_string(input_27, false);
             if bot_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 });
@@ -3744,13 +4160,13 @@ impl DeleteBotVersionInput {
             let input_28 =
                 input_28
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_version",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_version = smithy_http::label::fmt_string(input_28, false);
+            let bot_version = aws_smithy_http::label::fmt_string(input_28, false);
             if bot_version.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_version",
                     details: "cannot be empty or unset",
                 });
@@ -3765,11 +4181,11 @@ impl DeleteBotVersionInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::DeleteBotVersionInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if _input.skip_resource_in_use_check {
                 query.push_kv(
                     "skipResourceInUseCheck",
-                    &smithy_types::primitive::Encoder::from(_input.skip_resource_in_use_check)
+                    &aws_smithy_types::primitive::Encoder::from(_input.skip_resource_in_use_check)
                         .encode(),
                 );
             }
@@ -3778,7 +4194,7 @@ impl DeleteBotVersionInput {
         fn update_http_builder(
             input: &crate::input::DeleteBotVersionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3788,23 +4204,23 @@ impl DeleteBotVersionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteBotVersionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3827,15 +4243,15 @@ impl DeleteBotVersionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteBotVersion::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteBotVersion",
             "lexmodelsv2",
         ));
@@ -3844,10 +4260,10 @@ impl DeleteBotVersionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3875,6 +4291,7 @@ pub mod delete_export_input {
             self.export_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier of the export to delete.</p>
         pub fn set_export_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.export_id = input;
             self
@@ -3882,8 +4299,10 @@ pub mod delete_export_input {
         /// Consumes the builder and constructs a [`DeleteExportInput`](crate::input::DeleteExportInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeleteExportInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteExportInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteExportInput {
                 export_id: self.export_id,
             })
@@ -3901,27 +4320,27 @@ impl DeleteExportInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteExport,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteExportInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_29 = &_input.export_id;
             let input_29 =
                 input_29
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "export_id",
                         details: "cannot be empty or unset",
                     })?;
-            let export_id = smithy_http::label::fmt_string(input_29, false);
+            let export_id = aws_smithy_http::label::fmt_string(input_29, false);
             if export_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "export_id",
                     details: "cannot be empty or unset",
                 });
@@ -3934,7 +4353,7 @@ impl DeleteExportInput {
         fn update_http_builder(
             input: &crate::input::DeleteExportInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3943,23 +4362,23 @@ impl DeleteExportInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteExportInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3982,25 +4401,27 @@ impl DeleteExportInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeleteExport::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DeleteExport",
-                    "lexmodelsv2",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteExport::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteExport",
+            "lexmodelsv2",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4028,6 +4449,7 @@ pub mod delete_import_input {
             self.import_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier of the import to delete.</p>
         pub fn set_import_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.import_id = input;
             self
@@ -4035,8 +4457,10 @@ pub mod delete_import_input {
         /// Consumes the builder and constructs a [`DeleteImportInput`](crate::input::DeleteImportInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeleteImportInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteImportInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteImportInput {
                 import_id: self.import_id,
             })
@@ -4054,27 +4478,27 @@ impl DeleteImportInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteImport,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteImportInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_30 = &_input.import_id;
             let input_30 =
                 input_30
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "import_id",
                         details: "cannot be empty or unset",
                     })?;
-            let import_id = smithy_http::label::fmt_string(input_30, false);
+            let import_id = aws_smithy_http::label::fmt_string(input_30, false);
             if import_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "import_id",
                     details: "cannot be empty or unset",
                 });
@@ -4087,7 +4511,7 @@ impl DeleteImportInput {
         fn update_http_builder(
             input: &crate::input::DeleteImportInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4096,23 +4520,23 @@ impl DeleteImportInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteImportInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4135,25 +4559,27 @@ impl DeleteImportInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeleteImport::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DeleteImport",
-                    "lexmodelsv2",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteImport::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteImport",
+            "lexmodelsv2",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4184,6 +4610,7 @@ pub mod delete_intent_input {
             self.intent_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier of the intent to delete.</p>
         pub fn set_intent_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.intent_id = input;
             self
@@ -4193,6 +4620,7 @@ pub mod delete_intent_input {
             self.bot_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the bot associated with the intent.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_id = input;
             self
@@ -4202,6 +4630,7 @@ pub mod delete_intent_input {
             self.bot_version = Some(input.into());
             self
         }
+        /// <p>The version of the bot associated with the intent.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_version = input;
             self
@@ -4213,6 +4642,9 @@ pub mod delete_intent_input {
             self.locale_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the language and locale where the bot will be
+        /// deleted. The string must match one of the supported locales. For more
+        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.locale_id = input;
             self
@@ -4220,8 +4652,10 @@ pub mod delete_intent_input {
         /// Consumes the builder and constructs a [`DeleteIntentInput`](crate::input::DeleteIntentInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeleteIntentInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteIntentInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteIntentInput {
                 intent_id: self.intent_id,
                 bot_id: self.bot_id,
@@ -4242,27 +4676,27 @@ impl DeleteIntentInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteIntent,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteIntentInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_31 = &_input.bot_id;
             let input_31 =
                 input_31
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_id = smithy_http::label::fmt_string(input_31, false);
+            let bot_id = aws_smithy_http::label::fmt_string(input_31, false);
             if bot_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 });
@@ -4271,13 +4705,13 @@ impl DeleteIntentInput {
             let input_32 =
                 input_32
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_version",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_version = smithy_http::label::fmt_string(input_32, false);
+            let bot_version = aws_smithy_http::label::fmt_string(input_32, false);
             if bot_version.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_version",
                     details: "cannot be empty or unset",
                 });
@@ -4286,13 +4720,13 @@ impl DeleteIntentInput {
             let input_33 =
                 input_33
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "locale_id",
                         details: "cannot be empty or unset",
                     })?;
-            let locale_id = smithy_http::label::fmt_string(input_33, false);
+            let locale_id = aws_smithy_http::label::fmt_string(input_33, false);
             if locale_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "locale_id",
                     details: "cannot be empty or unset",
                 });
@@ -4301,13 +4735,13 @@ impl DeleteIntentInput {
             let input_34 =
                 input_34
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "intent_id",
                         details: "cannot be empty or unset",
                     })?;
-            let intent_id = smithy_http::label::fmt_string(input_34, false);
+            let intent_id = aws_smithy_http::label::fmt_string(input_34, false);
             if intent_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "intent_id",
                     details: "cannot be empty or unset",
                 });
@@ -4327,7 +4761,7 @@ impl DeleteIntentInput {
         fn update_http_builder(
             input: &crate::input::DeleteIntentInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4336,23 +4770,23 @@ impl DeleteIntentInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteIntentInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4375,25 +4809,27 @@ impl DeleteIntentInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeleteIntent::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DeleteIntent",
-                    "lexmodelsv2",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteIntent::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteIntent",
+            "lexmodelsv2",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4423,6 +4859,8 @@ pub mod delete_resource_policy_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that has the
+        /// resource policy attached.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -4435,6 +4873,10 @@ pub mod delete_resource_policy_input {
             self.expected_revision_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the revision to edit. If this ID doesn't match the
+        /// current revision number, Amazon Lex returns an exception</p>
+        /// <p>If you don't specify a revision ID, Amazon Lex will delete the current
+        /// policy.</p>
         pub fn set_expected_revision_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4447,7 +4889,7 @@ pub mod delete_resource_policy_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteResourcePolicyInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteResourcePolicyInput {
                 resource_arn: self.resource_arn,
@@ -4467,27 +4909,27 @@ impl DeleteResourcePolicyInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteResourcePolicy,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteResourcePolicyInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_35 = &_input.resource_arn;
             let input_35 =
                 input_35
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = smithy_http::label::fmt_string(input_35, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_35, false);
             if resource_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 });
@@ -4497,11 +4939,11 @@ impl DeleteResourcePolicyInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::DeleteResourcePolicyInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_36) = &_input.expected_revision_id {
                 query.push_kv(
                     "expectedRevisionId",
-                    &smithy_http::query::fmt_string(&inner_36),
+                    &aws_smithy_http::query::fmt_string(&inner_36),
                 );
             }
         }
@@ -4509,7 +4951,7 @@ impl DeleteResourcePolicyInput {
         fn update_http_builder(
             input: &crate::input::DeleteResourcePolicyInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4519,23 +4961,23 @@ impl DeleteResourcePolicyInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteResourcePolicyInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4558,15 +5000,15 @@ impl DeleteResourcePolicyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteResourcePolicy::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteResourcePolicy",
             "lexmodelsv2",
         ));
@@ -4575,10 +5017,10 @@ impl DeleteResourcePolicyInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4609,6 +5051,8 @@ pub mod delete_resource_policy_statement_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the
+        /// resource policy is attached to.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -4618,6 +5062,7 @@ pub mod delete_resource_policy_statement_input {
             self.statement_id = Some(input.into());
             self
         }
+        /// <p>The name of the statement (SID) to delete from the policy.</p>
         pub fn set_statement_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.statement_id = input;
             self
@@ -4631,6 +5076,11 @@ pub mod delete_resource_policy_statement_input {
             self.expected_revision_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the revision of the policy to delete the statement
+        /// from. If this revision ID doesn't match the current revision ID, Amazon Lex
+        /// throws an exception.</p>
+        /// <p>If you don't specify a revision, Amazon Lex removes the current contents
+        /// of the statement. </p>
         pub fn set_expected_revision_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4643,7 +5093,7 @@ pub mod delete_resource_policy_statement_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteResourcePolicyStatementInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteResourcePolicyStatementInput {
                 resource_arn: self.resource_arn,
@@ -4665,27 +5115,27 @@ impl DeleteResourcePolicyStatementInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteResourcePolicyStatement,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteResourcePolicyStatementInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_37 = &_input.resource_arn;
             let input_37 =
                 input_37
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = smithy_http::label::fmt_string(input_37, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_37, false);
             if resource_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 });
@@ -4694,13 +5144,13 @@ impl DeleteResourcePolicyStatementInput {
             let input_38 =
                 input_38
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "statement_id",
                         details: "cannot be empty or unset",
                     })?;
-            let statement_id = smithy_http::label::fmt_string(input_38, false);
+            let statement_id = aws_smithy_http::label::fmt_string(input_38, false);
             if statement_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "statement_id",
                     details: "cannot be empty or unset",
                 });
@@ -4718,11 +5168,11 @@ impl DeleteResourcePolicyStatementInput {
             _input: &crate::input::DeleteResourcePolicyStatementInput,
             mut output: &mut String,
         ) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_39) = &_input.expected_revision_id {
                 query.push_kv(
                     "expectedRevisionId",
-                    &smithy_http::query::fmt_string(&inner_39),
+                    &aws_smithy_http::query::fmt_string(&inner_39),
                 );
             }
         }
@@ -4730,7 +5180,7 @@ impl DeleteResourcePolicyStatementInput {
         fn update_http_builder(
             input: &crate::input::DeleteResourcePolicyStatementInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4740,23 +5190,23 @@ impl DeleteResourcePolicyStatementInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteResourcePolicyStatementInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4779,15 +5229,15 @@ impl DeleteResourcePolicyStatementInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteResourcePolicyStatement::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteResourcePolicyStatement",
             "lexmodelsv2",
         ));
@@ -4796,10 +5246,10 @@ impl DeleteResourcePolicyStatementInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4831,6 +5281,7 @@ pub mod delete_slot_input {
             self.slot_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the slot to delete. </p>
         pub fn set_slot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.slot_id = input;
             self
@@ -4840,6 +5291,7 @@ pub mod delete_slot_input {
             self.bot_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the bot associated with the slot to delete.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_id = input;
             self
@@ -4849,6 +5301,7 @@ pub mod delete_slot_input {
             self.bot_version = Some(input.into());
             self
         }
+        /// <p>The version of the bot associated with the slot to delete.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_version = input;
             self
@@ -4860,6 +5313,9 @@ pub mod delete_slot_input {
             self.locale_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the language and locale that the slot will be
+        /// deleted from. The string must match one of the supported locales. For
+        /// more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.locale_id = input;
             self
@@ -4869,6 +5325,7 @@ pub mod delete_slot_input {
             self.intent_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the intent associated with the slot.</p>
         pub fn set_intent_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.intent_id = input;
             self
@@ -4876,8 +5333,10 @@ pub mod delete_slot_input {
         /// Consumes the builder and constructs a [`DeleteSlotInput`](crate::input::DeleteSlotInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeleteSlotInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteSlotInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteSlotInput {
                 slot_id: self.slot_id,
                 bot_id: self.bot_id,
@@ -4899,27 +5358,27 @@ impl DeleteSlotInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteSlot,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteSlotInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_40 = &_input.bot_id;
             let input_40 =
                 input_40
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_id = smithy_http::label::fmt_string(input_40, false);
+            let bot_id = aws_smithy_http::label::fmt_string(input_40, false);
             if bot_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 });
@@ -4928,13 +5387,13 @@ impl DeleteSlotInput {
             let input_41 =
                 input_41
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_version",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_version = smithy_http::label::fmt_string(input_41, false);
+            let bot_version = aws_smithy_http::label::fmt_string(input_41, false);
             if bot_version.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_version",
                     details: "cannot be empty or unset",
                 });
@@ -4943,13 +5402,13 @@ impl DeleteSlotInput {
             let input_42 =
                 input_42
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "locale_id",
                         details: "cannot be empty or unset",
                     })?;
-            let locale_id = smithy_http::label::fmt_string(input_42, false);
+            let locale_id = aws_smithy_http::label::fmt_string(input_42, false);
             if locale_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "locale_id",
                     details: "cannot be empty or unset",
                 });
@@ -4958,13 +5417,13 @@ impl DeleteSlotInput {
             let input_43 =
                 input_43
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "intent_id",
                         details: "cannot be empty or unset",
                     })?;
-            let intent_id = smithy_http::label::fmt_string(input_43, false);
+            let intent_id = aws_smithy_http::label::fmt_string(input_43, false);
             if intent_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "intent_id",
                     details: "cannot be empty or unset",
                 });
@@ -4973,13 +5432,13 @@ impl DeleteSlotInput {
             let input_44 =
                 input_44
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "slot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let slot_id = smithy_http::label::fmt_string(input_44, false);
+            let slot_id = aws_smithy_http::label::fmt_string(input_44, false);
             if slot_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "slot_id",
                     details: "cannot be empty or unset",
                 });
@@ -4991,7 +5450,7 @@ impl DeleteSlotInput {
         fn update_http_builder(
             input: &crate::input::DeleteSlotInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5000,23 +5459,23 @@ impl DeleteSlotInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteSlotInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5039,25 +5498,27 @@ impl DeleteSlotInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeleteSlot::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DeleteSlot",
-                    "lexmodelsv2",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteSlot::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteSlot",
+            "lexmodelsv2",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5089,6 +5550,7 @@ pub mod delete_slot_type_input {
             self.slot_type_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the slot type to delete.</p>
         pub fn set_slot_type_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.slot_type_id = input;
             self
@@ -5098,6 +5560,7 @@ pub mod delete_slot_type_input {
             self.bot_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the bot associated with the slot type.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_id = input;
             self
@@ -5107,6 +5570,7 @@ pub mod delete_slot_type_input {
             self.bot_version = Some(input.into());
             self
         }
+        /// <p>The version of the bot associated with the slot type.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_version = input;
             self
@@ -5118,6 +5582,9 @@ pub mod delete_slot_type_input {
             self.locale_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the language and locale that the slot type will be
+        /// deleted from. The string must match one of the supported locales. For
+        /// more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.locale_id = input;
             self
@@ -5131,6 +5598,11 @@ pub mod delete_slot_type_input {
             self.skip_resource_in_use_check = Some(input);
             self
         }
+        /// <p>By default, the <code>DeleteSlotType</code> operations throws a
+        /// <code>ResourceInUseException</code> exception if you try to delete a
+        /// slot type used by a slot. Set the <code>skipResourceInUseCheck</code>
+        /// parameter to <code>true</code> to skip this check and remove the slot
+        /// type even if a slot uses it.</p>
         pub fn set_skip_resource_in_use_check(mut self, input: std::option::Option<bool>) -> Self {
             self.skip_resource_in_use_check = input;
             self
@@ -5140,7 +5612,7 @@ pub mod delete_slot_type_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteSlotTypeInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteSlotTypeInput {
                 slot_type_id: self.slot_type_id,
@@ -5163,27 +5635,27 @@ impl DeleteSlotTypeInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteSlotType,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteSlotTypeInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_45 = &_input.bot_id;
             let input_45 =
                 input_45
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_id = smithy_http::label::fmt_string(input_45, false);
+            let bot_id = aws_smithy_http::label::fmt_string(input_45, false);
             if bot_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 });
@@ -5192,13 +5664,13 @@ impl DeleteSlotTypeInput {
             let input_46 =
                 input_46
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_version",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_version = smithy_http::label::fmt_string(input_46, false);
+            let bot_version = aws_smithy_http::label::fmt_string(input_46, false);
             if bot_version.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_version",
                     details: "cannot be empty or unset",
                 });
@@ -5207,13 +5679,13 @@ impl DeleteSlotTypeInput {
             let input_47 =
                 input_47
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "locale_id",
                         details: "cannot be empty or unset",
                     })?;
-            let locale_id = smithy_http::label::fmt_string(input_47, false);
+            let locale_id = aws_smithy_http::label::fmt_string(input_47, false);
             if locale_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "locale_id",
                     details: "cannot be empty or unset",
                 });
@@ -5222,13 +5694,13 @@ impl DeleteSlotTypeInput {
             let input_48 =
                 input_48
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "slot_type_id",
                         details: "cannot be empty or unset",
                     })?;
-            let slot_type_id = smithy_http::label::fmt_string(input_48, false);
+            let slot_type_id = aws_smithy_http::label::fmt_string(input_48, false);
             if slot_type_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "slot_type_id",
                     details: "cannot be empty or unset",
                 });
@@ -5237,11 +5709,11 @@ impl DeleteSlotTypeInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::DeleteSlotTypeInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if _input.skip_resource_in_use_check {
                 query.push_kv(
                     "skipResourceInUseCheck",
-                    &smithy_types::primitive::Encoder::from(_input.skip_resource_in_use_check)
+                    &aws_smithy_types::primitive::Encoder::from(_input.skip_resource_in_use_check)
                         .encode(),
                 );
             }
@@ -5250,7 +5722,7 @@ impl DeleteSlotTypeInput {
         fn update_http_builder(
             input: &crate::input::DeleteSlotTypeInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5260,23 +5732,23 @@ impl DeleteSlotTypeInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteSlotTypeInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5299,15 +5771,15 @@ impl DeleteSlotTypeInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteSlotType::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteSlotType",
             "lexmodelsv2",
         ));
@@ -5316,10 +5788,10 @@ impl DeleteSlotTypeInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5350,6 +5822,8 @@ pub mod delete_utterances_input {
             self.bot_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier of the bot that contains the
+        /// utterances.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_id = input;
             self
@@ -5362,6 +5836,10 @@ pub mod delete_utterances_input {
             self.locale_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the language and locale where the utterances were
+        /// collected. The string must match one of the supported locales. For more
+        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported
+        /// languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.locale_id = input;
             self
@@ -5372,6 +5850,8 @@ pub mod delete_utterances_input {
             self.session_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier of the session with the user. The ID is
+        /// returned in the response from the  and  operations.</p>
         pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.session_id = input;
             self
@@ -5381,7 +5861,7 @@ pub mod delete_utterances_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteUtterancesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteUtterancesInput {
                 bot_id: self.bot_id,
@@ -5402,27 +5882,27 @@ impl DeleteUtterancesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteUtterances,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteUtterancesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_49 = &_input.bot_id;
             let input_49 =
                 input_49
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_id = smithy_http::label::fmt_string(input_49, false);
+            let bot_id = aws_smithy_http::label::fmt_string(input_49, false);
             if bot_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 });
@@ -5432,19 +5912,19 @@ impl DeleteUtterancesInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::DeleteUtterancesInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_50) = &_input.locale_id {
-                query.push_kv("localeId", &smithy_http::query::fmt_string(&inner_50));
+                query.push_kv("localeId", &aws_smithy_http::query::fmt_string(&inner_50));
             }
             if let Some(inner_51) = &_input.session_id {
-                query.push_kv("sessionId", &smithy_http::query::fmt_string(&inner_51));
+                query.push_kv("sessionId", &aws_smithy_http::query::fmt_string(&inner_51));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::DeleteUtterancesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5454,23 +5934,23 @@ impl DeleteUtterancesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteUtterancesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5493,15 +5973,15 @@ impl DeleteUtterancesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteUtterances::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteUtterances",
             "lexmodelsv2",
         ));
@@ -5510,10 +5990,10 @@ impl DeleteUtterancesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5541,6 +6021,7 @@ pub mod describe_bot_input {
             self.bot_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier of the bot to describe.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_id = input;
             self
@@ -5548,8 +6029,10 @@ pub mod describe_bot_input {
         /// Consumes the builder and constructs a [`DescribeBotInput`](crate::input::DescribeBotInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DescribeBotInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeBotInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeBotInput {
                 bot_id: self.bot_id,
             })
@@ -5567,27 +6050,27 @@ impl DescribeBotInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeBot,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeBotInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_52 = &_input.bot_id;
             let input_52 =
                 input_52
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_id = smithy_http::label::fmt_string(input_52, false);
+            let bot_id = aws_smithy_http::label::fmt_string(input_52, false);
             if bot_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 });
@@ -5599,7 +6082,7 @@ impl DescribeBotInput {
         fn update_http_builder(
             input: &crate::input::DescribeBotInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5608,23 +6091,23 @@ impl DescribeBotInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeBotInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5647,25 +6130,27 @@ impl DescribeBotInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DescribeBot::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DescribeBot",
-                    "lexmodelsv2",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeBot::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeBot",
+            "lexmodelsv2",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5694,6 +6179,7 @@ pub mod describe_bot_alias_input {
             self.bot_alias_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the bot alias to describe.</p>
         pub fn set_bot_alias_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_alias_id = input;
             self
@@ -5704,6 +6190,8 @@ pub mod describe_bot_alias_input {
             self.bot_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the bot associated with the bot alias to
+        /// describe.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_id = input;
             self
@@ -5713,7 +6201,7 @@ pub mod describe_bot_alias_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeBotAliasInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeBotAliasInput {
                 bot_alias_id: self.bot_alias_id,
@@ -5733,27 +6221,27 @@ impl DescribeBotAliasInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeBotAlias,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeBotAliasInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_53 = &_input.bot_id;
             let input_53 =
                 input_53
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_id = smithy_http::label::fmt_string(input_53, false);
+            let bot_id = aws_smithy_http::label::fmt_string(input_53, false);
             if bot_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 });
@@ -5762,13 +6250,13 @@ impl DescribeBotAliasInput {
             let input_54 =
                 input_54
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_alias_id",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_alias_id = smithy_http::label::fmt_string(input_54, false);
+            let bot_alias_id = aws_smithy_http::label::fmt_string(input_54, false);
             if bot_alias_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_alias_id",
                     details: "cannot be empty or unset",
                 });
@@ -5786,7 +6274,7 @@ impl DescribeBotAliasInput {
         fn update_http_builder(
             input: &crate::input::DescribeBotAliasInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5795,23 +6283,23 @@ impl DescribeBotAliasInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeBotAliasInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5834,15 +6322,15 @@ impl DescribeBotAliasInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeBotAlias::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeBotAlias",
             "lexmodelsv2",
         ));
@@ -5851,10 +6339,10 @@ impl DescribeBotAliasInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5884,6 +6372,7 @@ pub mod describe_bot_locale_input {
             self.bot_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the bot associated with the locale.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_id = input;
             self
@@ -5894,6 +6383,8 @@ pub mod describe_bot_locale_input {
             self.bot_version = Some(input.into());
             self
         }
+        /// <p>The identifier of the version of the bot associated with the
+        /// locale.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_version = input;
             self
@@ -5904,6 +6395,8 @@ pub mod describe_bot_locale_input {
             self.locale_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier of the locale to describe. The string must
+        /// match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>. </p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.locale_id = input;
             self
@@ -5913,7 +6406,7 @@ pub mod describe_bot_locale_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeBotLocaleInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeBotLocaleInput {
                 bot_id: self.bot_id,
@@ -5934,27 +6427,27 @@ impl DescribeBotLocaleInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeBotLocale,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeBotLocaleInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_55 = &_input.bot_id;
             let input_55 =
                 input_55
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_id = smithy_http::label::fmt_string(input_55, false);
+            let bot_id = aws_smithy_http::label::fmt_string(input_55, false);
             if bot_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 });
@@ -5963,13 +6456,13 @@ impl DescribeBotLocaleInput {
             let input_56 =
                 input_56
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_version",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_version = smithy_http::label::fmt_string(input_56, false);
+            let bot_version = aws_smithy_http::label::fmt_string(input_56, false);
             if bot_version.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_version",
                     details: "cannot be empty or unset",
                 });
@@ -5978,13 +6471,13 @@ impl DescribeBotLocaleInput {
             let input_57 =
                 input_57
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "locale_id",
                         details: "cannot be empty or unset",
                     })?;
-            let locale_id = smithy_http::label::fmt_string(input_57, false);
+            let locale_id = aws_smithy_http::label::fmt_string(input_57, false);
             if locale_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "locale_id",
                     details: "cannot be empty or unset",
                 });
@@ -6003,7 +6496,7 @@ impl DescribeBotLocaleInput {
         fn update_http_builder(
             input: &crate::input::DescribeBotLocaleInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6012,23 +6505,23 @@ impl DescribeBotLocaleInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeBotLocaleInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6051,15 +6544,15 @@ impl DescribeBotLocaleInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeBotLocale::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeBotLocale",
             "lexmodelsv2",
         ));
@@ -6068,10 +6561,10 @@ impl DescribeBotLocaleInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6101,6 +6594,8 @@ pub mod describe_bot_version_input {
             self.bot_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the bot containing the version to return metadata
+        /// for.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_id = input;
             self
@@ -6110,6 +6605,7 @@ pub mod describe_bot_version_input {
             self.bot_version = Some(input.into());
             self
         }
+        /// <p>The version of the bot to return metadata for.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_version = input;
             self
@@ -6119,7 +6615,7 @@ pub mod describe_bot_version_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeBotVersionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeBotVersionInput {
                 bot_id: self.bot_id,
@@ -6139,27 +6635,27 @@ impl DescribeBotVersionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeBotVersion,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeBotVersionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_58 = &_input.bot_id;
             let input_58 =
                 input_58
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_id = smithy_http::label::fmt_string(input_58, false);
+            let bot_id = aws_smithy_http::label::fmt_string(input_58, false);
             if bot_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 });
@@ -6168,13 +6664,13 @@ impl DescribeBotVersionInput {
             let input_59 =
                 input_59
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_version",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_version = smithy_http::label::fmt_string(input_59, false);
+            let bot_version = aws_smithy_http::label::fmt_string(input_59, false);
             if bot_version.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_version",
                     details: "cannot be empty or unset",
                 });
@@ -6192,7 +6688,7 @@ impl DescribeBotVersionInput {
         fn update_http_builder(
             input: &crate::input::DescribeBotVersionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6201,23 +6697,23 @@ impl DescribeBotVersionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeBotVersionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6240,15 +6736,15 @@ impl DescribeBotVersionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeBotVersion::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeBotVersion",
             "lexmodelsv2",
         ));
@@ -6257,10 +6753,10 @@ impl DescribeBotVersionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6288,6 +6784,7 @@ pub mod describe_export_input {
             self.export_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier of the export to describe.</p>
         pub fn set_export_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.export_id = input;
             self
@@ -6297,7 +6794,7 @@ pub mod describe_export_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeExportInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeExportInput {
                 export_id: self.export_id,
@@ -6316,27 +6813,27 @@ impl DescribeExportInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeExport,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeExportInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_60 = &_input.export_id;
             let input_60 =
                 input_60
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "export_id",
                         details: "cannot be empty or unset",
                     })?;
-            let export_id = smithy_http::label::fmt_string(input_60, false);
+            let export_id = aws_smithy_http::label::fmt_string(input_60, false);
             if export_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "export_id",
                     details: "cannot be empty or unset",
                 });
@@ -6349,7 +6846,7 @@ impl DescribeExportInput {
         fn update_http_builder(
             input: &crate::input::DescribeExportInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6358,23 +6855,23 @@ impl DescribeExportInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeExportInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6397,15 +6894,15 @@ impl DescribeExportInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeExport::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeExport",
             "lexmodelsv2",
         ));
@@ -6414,10 +6911,10 @@ impl DescribeExportInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6445,6 +6942,7 @@ pub mod describe_import_input {
             self.import_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier of the import to describe.</p>
         pub fn set_import_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.import_id = input;
             self
@@ -6454,7 +6952,7 @@ pub mod describe_import_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeImportInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeImportInput {
                 import_id: self.import_id,
@@ -6473,27 +6971,27 @@ impl DescribeImportInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeImport,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeImportInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_61 = &_input.import_id;
             let input_61 =
                 input_61
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "import_id",
                         details: "cannot be empty or unset",
                     })?;
-            let import_id = smithy_http::label::fmt_string(input_61, false);
+            let import_id = aws_smithy_http::label::fmt_string(input_61, false);
             if import_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "import_id",
                     details: "cannot be empty or unset",
                 });
@@ -6506,7 +7004,7 @@ impl DescribeImportInput {
         fn update_http_builder(
             input: &crate::input::DescribeImportInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6515,23 +7013,23 @@ impl DescribeImportInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeImportInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6554,15 +7052,15 @@ impl DescribeImportInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeImport::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeImport",
             "lexmodelsv2",
         ));
@@ -6571,10 +7069,10 @@ impl DescribeImportInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6605,6 +7103,7 @@ pub mod describe_intent_input {
             self.intent_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the intent to describe.</p>
         pub fn set_intent_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.intent_id = input;
             self
@@ -6614,6 +7113,7 @@ pub mod describe_intent_input {
             self.bot_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the bot associated with the intent.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_id = input;
             self
@@ -6623,6 +7123,7 @@ pub mod describe_intent_input {
             self.bot_version = Some(input.into());
             self
         }
+        /// <p>The version of the bot associated with the intent.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_version = input;
             self
@@ -6634,6 +7135,9 @@ pub mod describe_intent_input {
             self.locale_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the language and locale of the intent to describe.
+        /// The string must match one of the supported locales. For more
+        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.locale_id = input;
             self
@@ -6643,7 +7147,7 @@ pub mod describe_intent_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeIntentInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeIntentInput {
                 intent_id: self.intent_id,
@@ -6665,27 +7169,27 @@ impl DescribeIntentInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeIntent,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeIntentInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_62 = &_input.bot_id;
             let input_62 =
                 input_62
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_id = smithy_http::label::fmt_string(input_62, false);
+            let bot_id = aws_smithy_http::label::fmt_string(input_62, false);
             if bot_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 });
@@ -6694,13 +7198,13 @@ impl DescribeIntentInput {
             let input_63 =
                 input_63
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_version",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_version = smithy_http::label::fmt_string(input_63, false);
+            let bot_version = aws_smithy_http::label::fmt_string(input_63, false);
             if bot_version.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_version",
                     details: "cannot be empty or unset",
                 });
@@ -6709,13 +7213,13 @@ impl DescribeIntentInput {
             let input_64 =
                 input_64
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "locale_id",
                         details: "cannot be empty or unset",
                     })?;
-            let locale_id = smithy_http::label::fmt_string(input_64, false);
+            let locale_id = aws_smithy_http::label::fmt_string(input_64, false);
             if locale_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "locale_id",
                     details: "cannot be empty or unset",
                 });
@@ -6724,13 +7228,13 @@ impl DescribeIntentInput {
             let input_65 =
                 input_65
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "intent_id",
                         details: "cannot be empty or unset",
                     })?;
-            let intent_id = smithy_http::label::fmt_string(input_65, false);
+            let intent_id = aws_smithy_http::label::fmt_string(input_65, false);
             if intent_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "intent_id",
                     details: "cannot be empty or unset",
                 });
@@ -6750,7 +7254,7 @@ impl DescribeIntentInput {
         fn update_http_builder(
             input: &crate::input::DescribeIntentInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6759,23 +7263,23 @@ impl DescribeIntentInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeIntentInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6798,15 +7302,15 @@ impl DescribeIntentInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeIntent::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeIntent",
             "lexmodelsv2",
         ));
@@ -6815,10 +7319,10 @@ impl DescribeIntentInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6847,6 +7351,8 @@ pub mod describe_resource_policy_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the
+        /// resource policy is attached to.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -6856,7 +7362,7 @@ pub mod describe_resource_policy_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeResourcePolicyInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeResourcePolicyInput {
                 resource_arn: self.resource_arn,
@@ -6875,27 +7381,27 @@ impl DescribeResourcePolicyInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeResourcePolicy,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeResourcePolicyInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_66 = &_input.resource_arn;
             let input_66 =
                 input_66
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = smithy_http::label::fmt_string(input_66, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_66, false);
             if resource_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 });
@@ -6908,7 +7414,7 @@ impl DescribeResourcePolicyInput {
         fn update_http_builder(
             input: &crate::input::DescribeResourcePolicyInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6917,23 +7423,23 @@ impl DescribeResourcePolicyInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeResourcePolicyInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6956,15 +7462,15 @@ impl DescribeResourcePolicyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeResourcePolicy::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeResourcePolicy",
             "lexmodelsv2",
         ));
@@ -6973,10 +7479,10 @@ impl DescribeResourcePolicyInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7008,6 +7514,7 @@ pub mod describe_slot_input {
             self.slot_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the slot.</p>
         pub fn set_slot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.slot_id = input;
             self
@@ -7017,6 +7524,7 @@ pub mod describe_slot_input {
             self.bot_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the bot associated with the slot.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_id = input;
             self
@@ -7026,6 +7534,7 @@ pub mod describe_slot_input {
             self.bot_version = Some(input.into());
             self
         }
+        /// <p>The version of the bot associated with the slot.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_version = input;
             self
@@ -7037,6 +7546,9 @@ pub mod describe_slot_input {
             self.locale_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the language and locale of the slot to describe.
+        /// The string must match one of the supported locales. For more
+        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.locale_id = input;
             self
@@ -7046,6 +7558,7 @@ pub mod describe_slot_input {
             self.intent_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the intent that contains the slot.</p>
         pub fn set_intent_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.intent_id = input;
             self
@@ -7053,8 +7566,10 @@ pub mod describe_slot_input {
         /// Consumes the builder and constructs a [`DescribeSlotInput`](crate::input::DescribeSlotInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DescribeSlotInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeSlotInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeSlotInput {
                 slot_id: self.slot_id,
                 bot_id: self.bot_id,
@@ -7076,27 +7591,27 @@ impl DescribeSlotInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeSlot,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeSlotInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_67 = &_input.bot_id;
             let input_67 =
                 input_67
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_id = smithy_http::label::fmt_string(input_67, false);
+            let bot_id = aws_smithy_http::label::fmt_string(input_67, false);
             if bot_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 });
@@ -7105,13 +7620,13 @@ impl DescribeSlotInput {
             let input_68 =
                 input_68
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_version",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_version = smithy_http::label::fmt_string(input_68, false);
+            let bot_version = aws_smithy_http::label::fmt_string(input_68, false);
             if bot_version.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_version",
                     details: "cannot be empty or unset",
                 });
@@ -7120,13 +7635,13 @@ impl DescribeSlotInput {
             let input_69 =
                 input_69
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "locale_id",
                         details: "cannot be empty or unset",
                     })?;
-            let locale_id = smithy_http::label::fmt_string(input_69, false);
+            let locale_id = aws_smithy_http::label::fmt_string(input_69, false);
             if locale_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "locale_id",
                     details: "cannot be empty or unset",
                 });
@@ -7135,13 +7650,13 @@ impl DescribeSlotInput {
             let input_70 =
                 input_70
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "intent_id",
                         details: "cannot be empty or unset",
                     })?;
-            let intent_id = smithy_http::label::fmt_string(input_70, false);
+            let intent_id = aws_smithy_http::label::fmt_string(input_70, false);
             if intent_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "intent_id",
                     details: "cannot be empty or unset",
                 });
@@ -7150,13 +7665,13 @@ impl DescribeSlotInput {
             let input_71 =
                 input_71
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "slot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let slot_id = smithy_http::label::fmt_string(input_71, false);
+            let slot_id = aws_smithy_http::label::fmt_string(input_71, false);
             if slot_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "slot_id",
                     details: "cannot be empty or unset",
                 });
@@ -7168,7 +7683,7 @@ impl DescribeSlotInput {
         fn update_http_builder(
             input: &crate::input::DescribeSlotInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7177,23 +7692,23 @@ impl DescribeSlotInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeSlotInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7216,25 +7731,27 @@ impl DescribeSlotInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DescribeSlot::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DescribeSlot",
-                    "lexmodelsv2",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeSlot::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeSlot",
+            "lexmodelsv2",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7265,6 +7782,7 @@ pub mod describe_slot_type_input {
             self.slot_type_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the slot type.</p>
         pub fn set_slot_type_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.slot_type_id = input;
             self
@@ -7274,6 +7792,7 @@ pub mod describe_slot_type_input {
             self.bot_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the bot associated with the slot type.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_id = input;
             self
@@ -7283,6 +7802,7 @@ pub mod describe_slot_type_input {
             self.bot_version = Some(input.into());
             self
         }
+        /// <p>The version of the bot associated with the slot type.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_version = input;
             self
@@ -7294,6 +7814,9 @@ pub mod describe_slot_type_input {
             self.locale_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the language and locale of the slot type to
+        /// describe. The string must match one of the supported locales. For more
+        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.locale_id = input;
             self
@@ -7303,7 +7826,7 @@ pub mod describe_slot_type_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeSlotTypeInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeSlotTypeInput {
                 slot_type_id: self.slot_type_id,
@@ -7325,27 +7848,27 @@ impl DescribeSlotTypeInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeSlotType,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeSlotTypeInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_72 = &_input.bot_id;
             let input_72 =
                 input_72
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_id = smithy_http::label::fmt_string(input_72, false);
+            let bot_id = aws_smithy_http::label::fmt_string(input_72, false);
             if bot_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 });
@@ -7354,13 +7877,13 @@ impl DescribeSlotTypeInput {
             let input_73 =
                 input_73
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_version",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_version = smithy_http::label::fmt_string(input_73, false);
+            let bot_version = aws_smithy_http::label::fmt_string(input_73, false);
             if bot_version.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_version",
                     details: "cannot be empty or unset",
                 });
@@ -7369,13 +7892,13 @@ impl DescribeSlotTypeInput {
             let input_74 =
                 input_74
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "locale_id",
                         details: "cannot be empty or unset",
                     })?;
-            let locale_id = smithy_http::label::fmt_string(input_74, false);
+            let locale_id = aws_smithy_http::label::fmt_string(input_74, false);
             if locale_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "locale_id",
                     details: "cannot be empty or unset",
                 });
@@ -7384,13 +7907,13 @@ impl DescribeSlotTypeInput {
             let input_75 =
                 input_75
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "slot_type_id",
                         details: "cannot be empty or unset",
                     })?;
-            let slot_type_id = smithy_http::label::fmt_string(input_75, false);
+            let slot_type_id = aws_smithy_http::label::fmt_string(input_75, false);
             if slot_type_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "slot_type_id",
                     details: "cannot be empty or unset",
                 });
@@ -7402,7 +7925,7 @@ impl DescribeSlotTypeInput {
         fn update_http_builder(
             input: &crate::input::DescribeSlotTypeInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7411,23 +7934,23 @@ impl DescribeSlotTypeInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeSlotTypeInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7450,15 +7973,15 @@ impl DescribeSlotTypeInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeSlotType::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeSlotType",
             "lexmodelsv2",
         ));
@@ -7467,10 +7990,10 @@ impl DescribeSlotTypeInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7509,6 +8032,8 @@ pub mod list_aggregated_utterances_input {
             self.bot_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier of the bot associated with this
+        /// request.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_id = input;
             self
@@ -7519,6 +8044,8 @@ pub mod list_aggregated_utterances_input {
             self.bot_alias_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the bot alias associated with this request. If you
+        /// specify the bot alias, you can't specify the bot version.</p>
         pub fn set_bot_alias_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_alias_id = input;
             self
@@ -7529,6 +8056,8 @@ pub mod list_aggregated_utterances_input {
             self.bot_version = Some(input.into());
             self
         }
+        /// <p>The identifier of the bot version associated with this request. If
+        /// you specify the bot version, you can't specify the bot alias.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_version = input;
             self
@@ -7540,6 +8069,9 @@ pub mod list_aggregated_utterances_input {
             self.locale_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the language and locale where the utterances were
+        /// collected. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported
+        /// languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.locale_id = input;
             self
@@ -7553,6 +8085,8 @@ pub mod list_aggregated_utterances_input {
             self.aggregation_duration = Some(input);
             self
         }
+        /// <p>The time window for aggregating the utterance information. You can
+        /// specify a time between one hour and two weeks.</p>
         pub fn set_aggregation_duration(
             mut self,
             input: std::option::Option<crate::model::UtteranceAggregationDuration>,
@@ -7567,6 +8101,9 @@ pub mod list_aggregated_utterances_input {
             self.sort_by = Some(input);
             self
         }
+        /// <p>Specifies sorting parameters for the list of utterances. You can
+        /// sort by the hit count, the missed count, or the number of distinct
+        /// sessions the utterance appeared in.</p>
         pub fn set_sort_by(
             mut self,
             input: std::option::Option<crate::model::AggregatedUtterancesSortBy>,
@@ -7574,6 +8111,13 @@ pub mod list_aggregated_utterances_input {
             self.sort_by = input;
             self
         }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>Provides the specification of a filter used to limit the utterances
+        /// in the response to only those that match the filter specification. You
+        /// can only specify one filter and one string to filter on.</p>
         pub fn filters(
             mut self,
             input: impl Into<crate::model::AggregatedUtterancesFilter>,
@@ -7583,6 +8127,9 @@ pub mod list_aggregated_utterances_input {
             self.filters = Some(v);
             self
         }
+        /// <p>Provides the specification of a filter used to limit the utterances
+        /// in the response to only those that match the filter specification. You
+        /// can only specify one filter and one string to filter on.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AggregatedUtterancesFilter>>,
@@ -7599,6 +8146,11 @@ pub mod list_aggregated_utterances_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of utterances to return in each page of results.
+        /// If there are fewer results than the maximum page size, only the actual
+        /// number of results are returned. If you don't specify the
+        /// <code>maxResults</code> parameter, 1,000 results are
+        /// returned.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -7612,6 +8164,11 @@ pub mod list_aggregated_utterances_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the response from the <code>ListAggregatedUtterances</code>
+        /// operation contains more results that specified in the
+        /// <code>maxResults</code> parameter, a token is returned in the
+        /// response. Use that token in the <code>nextToken</code> parameter to
+        /// return the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7621,7 +8178,7 @@ pub mod list_aggregated_utterances_input {
             self,
         ) -> std::result::Result<
             crate::input::ListAggregatedUtterancesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListAggregatedUtterancesInput {
                 bot_id: self.bot_id,
@@ -7649,27 +8206,27 @@ impl ListAggregatedUtterancesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListAggregatedUtterances,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListAggregatedUtterancesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_76 = &_input.bot_id;
             let input_76 =
                 input_76
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_id = smithy_http::label::fmt_string(input_76, false);
+            let bot_id = aws_smithy_http::label::fmt_string(input_76, false);
             if bot_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 });
@@ -7682,7 +8239,7 @@ impl ListAggregatedUtterancesInput {
         fn update_http_builder(
             input: &crate::input::ListAggregatedUtterancesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7691,27 +8248,29 @@ impl ListAggregatedUtterancesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListAggregatedUtterancesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_aggregated_utterances(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7734,15 +8293,15 @@ impl ListAggregatedUtterancesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListAggregatedUtterances::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListAggregatedUtterances",
             "lexmodelsv2",
         ));
@@ -7751,10 +8310,10 @@ impl ListAggregatedUtterancesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7784,6 +8343,7 @@ pub mod list_bot_aliases_input {
             self.bot_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the bot to list aliases for.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_id = input;
             self
@@ -7795,6 +8355,9 @@ pub mod list_bot_aliases_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of aliases to return in each page of results. If
+        /// there are fewer results than the max page size, only the actual number
+        /// of results are returned.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -7808,6 +8371,11 @@ pub mod list_bot_aliases_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the response from the <code>ListBotAliases</code> operation
+        /// contains more results than specified in the <code>maxResults</code>
+        /// parameter, a token is returned in the response. Use that token in the
+        /// <code>nextToken</code> parameter to return the next page of
+        /// results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7817,7 +8385,7 @@ pub mod list_bot_aliases_input {
             self,
         ) -> std::result::Result<
             crate::input::ListBotAliasesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListBotAliasesInput {
                 bot_id: self.bot_id,
@@ -7838,27 +8406,27 @@ impl ListBotAliasesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListBotAliases,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListBotAliasesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_77 = &_input.bot_id;
             let input_77 =
                 input_77
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_id = smithy_http::label::fmt_string(input_77, false);
+            let bot_id = aws_smithy_http::label::fmt_string(input_77, false);
             if bot_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 });
@@ -7871,7 +8439,7 @@ impl ListBotAliasesInput {
         fn update_http_builder(
             input: &crate::input::ListBotAliasesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7880,27 +8448,27 @@ impl ListBotAliasesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListBotAliasesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_bot_aliases(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7923,15 +8491,15 @@ impl ListBotAliasesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListBotAliases::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListBotAliases",
             "lexmodelsv2",
         ));
@@ -7940,10 +8508,10 @@ impl ListBotAliasesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7976,6 +8544,7 @@ pub mod list_bot_locales_input {
             self.bot_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the bot to list locales for.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_id = input;
             self
@@ -7985,6 +8554,7 @@ pub mod list_bot_locales_input {
             self.bot_version = Some(input.into());
             self
         }
+        /// <p>The version of the bot to list locales for.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_version = input;
             self
@@ -7995,6 +8565,8 @@ pub mod list_bot_locales_input {
             self.sort_by = Some(input);
             self
         }
+        /// <p>Specifies sorting parameters for the list of locales. You can sort
+        /// by locale name in ascending or descending order.</p>
         pub fn set_sort_by(
             mut self,
             input: std::option::Option<crate::model::BotLocaleSortBy>,
@@ -8002,12 +8574,22 @@ pub mod list_bot_locales_input {
             self.sort_by = input;
             self
         }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>Provides the specification for a filter used to limit the response
+        /// to only those locales that match the filter specification. You can only
+        /// specify one filter and one value to filter on.</p>
         pub fn filters(mut self, input: impl Into<crate::model::BotLocaleFilter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input.into());
             self.filters = Some(v);
             self
         }
+        /// <p>Provides the specification for a filter used to limit the response
+        /// to only those locales that match the filter specification. You can only
+        /// specify one filter and one value to filter on.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BotLocaleFilter>>,
@@ -8022,6 +8604,9 @@ pub mod list_bot_locales_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of aliases to return in each page of results. If
+        /// there are fewer results than the max page size, only the actual number
+        /// of results are returned.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -8035,6 +8620,11 @@ pub mod list_bot_locales_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the response from the <code>ListBotLocales</code> operation
+        /// contains more results than specified in the <code>maxResults</code>
+        /// parameter, a token is returned in the response. Use that token as the
+        /// <code>nextToken</code> parameter to return the next page of results.
+        /// </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8044,7 +8634,7 @@ pub mod list_bot_locales_input {
             self,
         ) -> std::result::Result<
             crate::input::ListBotLocalesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListBotLocalesInput {
                 bot_id: self.bot_id,
@@ -8068,27 +8658,27 @@ impl ListBotLocalesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListBotLocales,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListBotLocalesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_78 = &_input.bot_id;
             let input_78 =
                 input_78
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_id = smithy_http::label::fmt_string(input_78, false);
+            let bot_id = aws_smithy_http::label::fmt_string(input_78, false);
             if bot_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 });
@@ -8097,13 +8687,13 @@ impl ListBotLocalesInput {
             let input_79 =
                 input_79
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_version",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_version = smithy_http::label::fmt_string(input_79, false);
+            let bot_version = aws_smithy_http::label::fmt_string(input_79, false);
             if bot_version.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_version",
                     details: "cannot be empty or unset",
                 });
@@ -8121,7 +8711,7 @@ impl ListBotLocalesInput {
         fn update_http_builder(
             input: &crate::input::ListBotLocalesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8130,27 +8720,27 @@ impl ListBotLocalesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListBotLocalesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_bot_locales(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8173,15 +8763,15 @@ impl ListBotLocalesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListBotLocales::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListBotLocales",
             "lexmodelsv2",
         ));
@@ -8190,10 +8780,10 @@ impl ListBotLocalesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8226,16 +8816,29 @@ pub mod list_bots_input {
             self.sort_by = Some(input);
             self
         }
+        /// <p>Specifies sorting parameters for the list of bots. You can specify
+        /// that the list be sorted by bot name in ascending or descending
+        /// order.</p>
         pub fn set_sort_by(mut self, input: std::option::Option<crate::model::BotSortBy>) -> Self {
             self.sort_by = input;
             self
         }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>Provides the specification of a filter used to limit the bots in the
+        /// response to only those that match the filter specification. You can
+        /// only specify one filter and one string to filter on.</p>
         pub fn filters(mut self, input: impl Into<crate::model::BotFilter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input.into());
             self.filters = Some(v);
             self
         }
+        /// <p>Provides the specification of a filter used to limit the bots in the
+        /// response to only those that match the filter specification. You can
+        /// only specify one filter and one string to filter on.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BotFilter>>,
@@ -8250,6 +8853,9 @@ pub mod list_bots_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of bots to return in each page of results. If
+        /// there are fewer results than the maximum page size, only the actual
+        /// number of results are returned.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -8263,6 +8869,11 @@ pub mod list_bots_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the response from the <code>ListBots</code> operation contains
+        /// more results than specified in the <code>maxResults</code> parameter, a
+        /// token is returned in the response. Use that token in the
+        /// <code>nextToken</code> parameter to return the next page of
+        /// results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8270,7 +8881,7 @@ pub mod list_bots_input {
         /// Consumes the builder and constructs a [`ListBotsInput`](crate::input::ListBotsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListBotsInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::ListBotsInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::ListBotsInput {
                 sort_by: self.sort_by,
@@ -8292,16 +8903,16 @@ impl ListBotsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListBots,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListBotsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/bots").expect("formatting should succeed");
             Ok(())
         }
@@ -8309,7 +8920,7 @@ impl ListBotsInput {
         fn update_http_builder(
             input: &crate::input::ListBotsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8318,24 +8929,26 @@ impl ListBotsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListBotsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_bots(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8358,24 +8971,25 @@ impl ListBotsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(request, crate::operation::ListBots::new())
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "ListBots",
-                "lexmodelsv2",
-            ));
+        let op =
+            aws_smithy_http::operation::Operation::new(request, crate::operation::ListBots::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "ListBots",
+                    "lexmodelsv2",
+                ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8406,6 +9020,7 @@ pub mod list_bot_versions_input {
             self.bot_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the bot to list versions for.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_id = input;
             self
@@ -8417,6 +9032,9 @@ pub mod list_bot_versions_input {
             self.sort_by = Some(input);
             self
         }
+        /// <p>Specifies sorting parameters for the list of versions. You can
+        /// specify that the list be sorted by version name in either ascending or
+        /// descending order.</p>
         pub fn set_sort_by(
             mut self,
             input: std::option::Option<crate::model::BotVersionSortBy>,
@@ -8431,6 +9049,9 @@ pub mod list_bot_versions_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of versions to return in each page of results. If
+        /// there are fewer results than the max page size, only the actual number
+        /// of results are returned.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -8444,6 +9065,11 @@ pub mod list_bot_versions_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the response to the <code>ListBotVersion</code> operation
+        /// contains more results than specified in the <code>maxResults</code>
+        /// parameter, a token is returned in the response. Use that token in the
+        /// <code>nextToken</code> parameter to return the next page of
+        /// results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8453,7 +9079,7 @@ pub mod list_bot_versions_input {
             self,
         ) -> std::result::Result<
             crate::input::ListBotVersionsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListBotVersionsInput {
                 bot_id: self.bot_id,
@@ -8475,27 +9101,27 @@ impl ListBotVersionsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListBotVersions,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListBotVersionsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_80 = &_input.bot_id;
             let input_80 =
                 input_80
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_id = smithy_http::label::fmt_string(input_80, false);
+            let bot_id = aws_smithy_http::label::fmt_string(input_80, false);
             if bot_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 });
@@ -8508,7 +9134,7 @@ impl ListBotVersionsInput {
         fn update_http_builder(
             input: &crate::input::ListBotVersionsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8517,27 +9143,27 @@ impl ListBotVersionsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListBotVersionsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_bot_versions(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8560,15 +9186,15 @@ impl ListBotVersionsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListBotVersions::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListBotVersions",
             "lexmodelsv2",
         ));
@@ -8577,10 +9203,10 @@ impl ListBotVersionsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8613,6 +9239,9 @@ pub mod list_built_in_intents_input {
             self.locale_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the language and locale of the intents to list.
+        /// The string must match one of the supported locales. For more
+        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.locale_id = input;
             self
@@ -8624,6 +9253,9 @@ pub mod list_built_in_intents_input {
             self.sort_by = Some(input);
             self
         }
+        /// <p>Specifies sorting parameters for the list of built-in intents. You
+        /// can specify that the list be sorted by the built-in intent signature in
+        /// either ascending or descending order.</p>
         pub fn set_sort_by(
             mut self,
             input: std::option::Option<crate::model::BuiltInIntentSortBy>,
@@ -8638,6 +9270,9 @@ pub mod list_built_in_intents_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of built-in intents to return in each page of
+        /// results. If there are fewer results than the max page size, only the
+        /// actual number of results are returned.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -8651,6 +9286,11 @@ pub mod list_built_in_intents_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the response from the <code>ListBuiltInIntents</code> operation
+        /// contains more results than specified in the <code>maxResults</code>
+        /// parameter, a token is returned in the response. Use that token in the
+        /// <code>nextToken</code> parameter to return the next page of
+        /// results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8660,7 +9300,7 @@ pub mod list_built_in_intents_input {
             self,
         ) -> std::result::Result<
             crate::input::ListBuiltInIntentsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListBuiltInIntentsInput {
                 locale_id: self.locale_id,
@@ -8682,27 +9322,27 @@ impl ListBuiltInIntentsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListBuiltInIntents,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListBuiltInIntentsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_81 = &_input.locale_id;
             let input_81 =
                 input_81
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "locale_id",
                         details: "cannot be empty or unset",
                     })?;
-            let locale_id = smithy_http::label::fmt_string(input_81, false);
+            let locale_id = aws_smithy_http::label::fmt_string(input_81, false);
             if locale_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "locale_id",
                     details: "cannot be empty or unset",
                 });
@@ -8719,7 +9359,7 @@ impl ListBuiltInIntentsInput {
         fn update_http_builder(
             input: &crate::input::ListBuiltInIntentsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8728,27 +9368,27 @@ impl ListBuiltInIntentsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListBuiltInIntentsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_built_in_intents(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8771,15 +9411,15 @@ impl ListBuiltInIntentsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListBuiltInIntents::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListBuiltInIntents",
             "lexmodelsv2",
         ));
@@ -8788,10 +9428,10 @@ impl ListBuiltInIntentsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8824,6 +9464,9 @@ pub mod list_built_in_slot_types_input {
             self.locale_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the language and locale of the slot types to list.
+        /// The string must match one of the supported locales. For more
+        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.locale_id = input;
             self
@@ -8836,6 +9479,10 @@ pub mod list_built_in_slot_types_input {
             self.sort_by = Some(input);
             self
         }
+        /// <p>Determines the sort order for the response from the
+        /// <code>ListBuiltInSlotTypes</code> operation. You can choose to sort
+        /// by the slot type signature in either ascending or descending
+        /// order.</p>
         pub fn set_sort_by(
             mut self,
             input: std::option::Option<crate::model::BuiltInSlotTypeSortBy>,
@@ -8850,6 +9497,9 @@ pub mod list_built_in_slot_types_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of built-in slot types to return in each page of
+        /// results. If there are fewer results than the max page size, only the
+        /// actual number of results are returned.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -8863,6 +9513,11 @@ pub mod list_built_in_slot_types_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the response from the <code>ListBuiltInSlotTypes</code> operation
+        /// contains more results than specified in the <code>maxResults</code>
+        /// parameter, a token is returned in the response. Use that token in the
+        /// <code>nextToken</code> parameter to return the next page of
+        /// results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8872,7 +9527,7 @@ pub mod list_built_in_slot_types_input {
             self,
         ) -> std::result::Result<
             crate::input::ListBuiltInSlotTypesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListBuiltInSlotTypesInput {
                 locale_id: self.locale_id,
@@ -8894,27 +9549,27 @@ impl ListBuiltInSlotTypesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListBuiltInSlotTypes,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListBuiltInSlotTypesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_82 = &_input.locale_id;
             let input_82 =
                 input_82
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "locale_id",
                         details: "cannot be empty or unset",
                     })?;
-            let locale_id = smithy_http::label::fmt_string(input_82, false);
+            let locale_id = aws_smithy_http::label::fmt_string(input_82, false);
             if locale_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "locale_id",
                     details: "cannot be empty or unset",
                 });
@@ -8931,7 +9586,7 @@ impl ListBuiltInSlotTypesInput {
         fn update_http_builder(
             input: &crate::input::ListBuiltInSlotTypesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8940,27 +9595,29 @@ impl ListBuiltInSlotTypesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListBuiltInSlotTypesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_built_in_slot_types(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8983,15 +9640,15 @@ impl ListBuiltInSlotTypesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListBuiltInSlotTypes::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListBuiltInSlotTypes",
             "lexmodelsv2",
         ));
@@ -9000,10 +9657,10 @@ impl ListBuiltInSlotTypesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9036,6 +9693,7 @@ pub mod list_exports_input {
             self.bot_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier that Amazon Lex assigned to the bot.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_id = input;
             self
@@ -9045,6 +9703,7 @@ pub mod list_exports_input {
             self.bot_version = Some(input.into());
             self
         }
+        /// <p>The version of the bot to list exports for. </p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_version = input;
             self
@@ -9056,6 +9715,9 @@ pub mod list_exports_input {
             self.sort_by = Some(input);
             self
         }
+        /// <p>Determines the field that the list of exports is sorted by. You can
+        /// sort by the <code>LastUpdatedDateTime</code> field in ascending or
+        /// descending order.</p>
         pub fn set_sort_by(
             mut self,
             input: std::option::Option<crate::model::ExportSortBy>,
@@ -9063,12 +9725,22 @@ pub mod list_exports_input {
             self.sort_by = input;
             self
         }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>Provides the specification of a filter used to limit the exports in
+        /// the response to only those that match the filter specification. You can
+        /// only specify one filter and one string to filter on.</p>
         pub fn filters(mut self, input: impl Into<crate::model::ExportFilter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input.into());
             self.filters = Some(v);
             self
         }
+        /// <p>Provides the specification of a filter used to limit the exports in
+        /// the response to only those that match the filter specification. You can
+        /// only specify one filter and one string to filter on.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ExportFilter>>,
@@ -9083,6 +9755,9 @@ pub mod list_exports_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of exports to return in each page of results. If
+        /// there are fewer results than the max page size, only the actual number
+        /// of results are returned.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -9096,6 +9771,11 @@ pub mod list_exports_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the response from the <code>ListExports</code> operation contains
+        /// more results that specified in the <code>maxResults</code> parameter, a
+        /// token is returned in the response. Use that token in the
+        /// <code>nextToken</code> parameter to return the next page of
+        /// results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -9103,8 +9783,10 @@ pub mod list_exports_input {
         /// Consumes the builder and constructs a [`ListExportsInput`](crate::input::ListExportsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListExportsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListExportsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListExportsInput {
                 bot_id: self.bot_id,
                 bot_version: self.bot_version,
@@ -9127,16 +9809,16 @@ impl ListExportsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListExports,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListExportsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/exports").expect("formatting should succeed");
             Ok(())
         }
@@ -9144,7 +9826,7 @@ impl ListExportsInput {
         fn update_http_builder(
             input: &crate::input::ListExportsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9153,24 +9835,26 @@ impl ListExportsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListExportsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_exports(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9193,25 +9877,27 @@ impl ListExportsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListExports::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ListExports",
-                    "lexmodelsv2",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListExports::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListExports",
+            "lexmodelsv2",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9244,6 +9930,7 @@ pub mod list_imports_input {
             self.bot_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier that Amazon Lex assigned to the bot.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_id = input;
             self
@@ -9253,6 +9940,7 @@ pub mod list_imports_input {
             self.bot_version = Some(input.into());
             self
         }
+        /// <p>The version of the bot to list imports for.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_version = input;
             self
@@ -9264,6 +9952,9 @@ pub mod list_imports_input {
             self.sort_by = Some(input);
             self
         }
+        /// <p>Determines the field that the list of imports is sorted by. You can
+        /// sort by the <code>LastUpdatedDateTime</code> field in ascending or
+        /// descending order.</p>
         pub fn set_sort_by(
             mut self,
             input: std::option::Option<crate::model::ImportSortBy>,
@@ -9271,12 +9962,22 @@ pub mod list_imports_input {
             self.sort_by = input;
             self
         }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>Provides the specification of a filter used to limit the bots in the
+        /// response to only those that match the filter specification. You can
+        /// only specify one filter and one string to filter on.</p>
         pub fn filters(mut self, input: impl Into<crate::model::ImportFilter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input.into());
             self.filters = Some(v);
             self
         }
+        /// <p>Provides the specification of a filter used to limit the bots in the
+        /// response to only those that match the filter specification. You can
+        /// only specify one filter and one string to filter on.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ImportFilter>>,
@@ -9291,6 +9992,9 @@ pub mod list_imports_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of imports to return in each page of results. If
+        /// there are fewer results than the max page size, only the actual number
+        /// of results are returned.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -9304,6 +10008,11 @@ pub mod list_imports_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the response from the <code>ListImports</code> operation contains
+        /// more results than specified in the <code>maxResults</code> parameter, a
+        /// token is returned in the response. Use that token in the
+        /// <code>nextToken</code> parameter to return the next page of
+        /// results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -9311,8 +10020,10 @@ pub mod list_imports_input {
         /// Consumes the builder and constructs a [`ListImportsInput`](crate::input::ListImportsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListImportsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListImportsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListImportsInput {
                 bot_id: self.bot_id,
                 bot_version: self.bot_version,
@@ -9335,16 +10046,16 @@ impl ListImportsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListImports,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListImportsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/imports").expect("formatting should succeed");
             Ok(())
         }
@@ -9352,7 +10063,7 @@ impl ListImportsInput {
         fn update_http_builder(
             input: &crate::input::ListImportsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9361,24 +10072,26 @@ impl ListImportsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListImportsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_imports(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9401,25 +10114,27 @@ impl ListImportsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListImports::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ListImports",
-                    "lexmodelsv2",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListImports::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListImports",
+            "lexmodelsv2",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9453,6 +10168,7 @@ pub mod list_intents_input {
             self.bot_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier of the bot that contains the intent.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_id = input;
             self
@@ -9462,6 +10178,7 @@ pub mod list_intents_input {
             self.bot_version = Some(input.into());
             self
         }
+        /// <p>The version of the bot that contains the intent.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_version = input;
             self
@@ -9473,6 +10190,9 @@ pub mod list_intents_input {
             self.locale_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the language and locale of the intents to list.
+        /// The string must match one of the supported locales. For more
+        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.locale_id = input;
             self
@@ -9485,6 +10205,10 @@ pub mod list_intents_input {
             self.sort_by = Some(input);
             self
         }
+        /// <p>Determines the sort order for the response from the
+        /// <code>ListIntents</code> operation. You can choose to sort by the
+        /// intent name or last updated date in either ascending or descending
+        /// order.</p>
         pub fn set_sort_by(
             mut self,
             input: std::option::Option<crate::model::IntentSortBy>,
@@ -9492,12 +10216,22 @@ pub mod list_intents_input {
             self.sort_by = input;
             self
         }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>Provides the specification of a filter used to limit the intents in
+        /// the response to only those that match the filter specification. You can
+        /// only specify one filter and only one string to filter on.</p>
         pub fn filters(mut self, input: impl Into<crate::model::IntentFilter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input.into());
             self.filters = Some(v);
             self
         }
+        /// <p>Provides the specification of a filter used to limit the intents in
+        /// the response to only those that match the filter specification. You can
+        /// only specify one filter and only one string to filter on.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::IntentFilter>>,
@@ -9512,6 +10246,9 @@ pub mod list_intents_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of intents to return in each page of results. If
+        /// there are fewer results than the max page size, only the actual number
+        /// of results are returned.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -9525,6 +10262,11 @@ pub mod list_intents_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the response from the <code>ListIntents</code> operation contains
+        /// more results than specified in the <code>maxResults</code> parameter, a
+        /// token is returned in the response. Use that token in the
+        /// <code>nextToken</code> parameter to return the next page of
+        /// results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -9532,8 +10274,10 @@ pub mod list_intents_input {
         /// Consumes the builder and constructs a [`ListIntentsInput`](crate::input::ListIntentsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListIntentsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListIntentsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListIntentsInput {
                 bot_id: self.bot_id,
                 bot_version: self.bot_version,
@@ -9557,27 +10301,27 @@ impl ListIntentsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListIntents,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListIntentsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_83 = &_input.bot_id;
             let input_83 =
                 input_83
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_id = smithy_http::label::fmt_string(input_83, false);
+            let bot_id = aws_smithy_http::label::fmt_string(input_83, false);
             if bot_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 });
@@ -9586,13 +10330,13 @@ impl ListIntentsInput {
             let input_84 =
                 input_84
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_version",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_version = smithy_http::label::fmt_string(input_84, false);
+            let bot_version = aws_smithy_http::label::fmt_string(input_84, false);
             if bot_version.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_version",
                     details: "cannot be empty or unset",
                 });
@@ -9601,13 +10345,13 @@ impl ListIntentsInput {
             let input_85 =
                 input_85
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "locale_id",
                         details: "cannot be empty or unset",
                     })?;
-            let locale_id = smithy_http::label::fmt_string(input_85, false);
+            let locale_id = aws_smithy_http::label::fmt_string(input_85, false);
             if locale_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "locale_id",
                     details: "cannot be empty or unset",
                 });
@@ -9626,7 +10370,7 @@ impl ListIntentsInput {
         fn update_http_builder(
             input: &crate::input::ListIntentsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9635,24 +10379,26 @@ impl ListIntentsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListIntentsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_intents(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9675,25 +10421,27 @@ impl ListIntentsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListIntents::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ListIntents",
-                    "lexmodelsv2",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListIntents::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListIntents",
+            "lexmodelsv2",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9728,6 +10476,7 @@ pub mod list_slots_input {
             self.bot_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the bot that contains the slot.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_id = input;
             self
@@ -9737,6 +10486,7 @@ pub mod list_slots_input {
             self.bot_version = Some(input.into());
             self
         }
+        /// <p>The version of the bot that contains the slot.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_version = input;
             self
@@ -9748,6 +10498,9 @@ pub mod list_slots_input {
             self.locale_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the language and locale of the slots to list. The
+        /// string must match one of the supported locales. For more information,
+        /// see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.locale_id = input;
             self
@@ -9757,6 +10510,7 @@ pub mod list_slots_input {
             self.intent_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier of the intent that contains the slot.</p>
         pub fn set_intent_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.intent_id = input;
             self
@@ -9769,16 +10523,30 @@ pub mod list_slots_input {
             self.sort_by = Some(input);
             self
         }
+        /// <p>Determines the sort order for the response from the
+        /// <code>ListSlots</code> operation. You can choose to sort by the slot
+        /// name or last updated date in either ascending or descending
+        /// order.</p>
         pub fn set_sort_by(mut self, input: std::option::Option<crate::model::SlotSortBy>) -> Self {
             self.sort_by = input;
             self
         }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>Provides the specification of a filter used to limit the slots in
+        /// the response to only those that match the filter specification. You can
+        /// only specify one filter and only one string to filter on.</p>
         pub fn filters(mut self, input: impl Into<crate::model::SlotFilter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input.into());
             self.filters = Some(v);
             self
         }
+        /// <p>Provides the specification of a filter used to limit the slots in
+        /// the response to only those that match the filter specification. You can
+        /// only specify one filter and only one string to filter on.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SlotFilter>>,
@@ -9793,6 +10561,9 @@ pub mod list_slots_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of slots to return in each page of results. If
+        /// there are fewer results than the max page size, only the actual number
+        /// of results are returned.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -9806,6 +10577,11 @@ pub mod list_slots_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the response from the <code>ListSlots</code> operation contains
+        /// more results than specified in the <code>maxResults</code> parameter, a
+        /// token is returned in the response. Use that token in the
+        /// <code>nextToken</code> parameter to return the next page of
+        /// results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -9813,7 +10589,7 @@ pub mod list_slots_input {
         /// Consumes the builder and constructs a [`ListSlotsInput`](crate::input::ListSlotsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListSlotsInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::ListSlotsInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::ListSlotsInput {
                 bot_id: self.bot_id,
@@ -9839,27 +10615,27 @@ impl ListSlotsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListSlots,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListSlotsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_86 = &_input.bot_id;
             let input_86 =
                 input_86
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_id = smithy_http::label::fmt_string(input_86, false);
+            let bot_id = aws_smithy_http::label::fmt_string(input_86, false);
             if bot_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 });
@@ -9868,13 +10644,13 @@ impl ListSlotsInput {
             let input_87 =
                 input_87
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_version",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_version = smithy_http::label::fmt_string(input_87, false);
+            let bot_version = aws_smithy_http::label::fmt_string(input_87, false);
             if bot_version.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_version",
                     details: "cannot be empty or unset",
                 });
@@ -9883,13 +10659,13 @@ impl ListSlotsInput {
             let input_88 =
                 input_88
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "locale_id",
                         details: "cannot be empty or unset",
                     })?;
-            let locale_id = smithy_http::label::fmt_string(input_88, false);
+            let locale_id = aws_smithy_http::label::fmt_string(input_88, false);
             if locale_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "locale_id",
                     details: "cannot be empty or unset",
                 });
@@ -9898,13 +10674,13 @@ impl ListSlotsInput {
             let input_89 =
                 input_89
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "intent_id",
                         details: "cannot be empty or unset",
                     })?;
-            let intent_id = smithy_http::label::fmt_string(input_89, false);
+            let intent_id = aws_smithy_http::label::fmt_string(input_89, false);
             if intent_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "intent_id",
                     details: "cannot be empty or unset",
                 });
@@ -9916,7 +10692,7 @@ impl ListSlotsInput {
         fn update_http_builder(
             input: &crate::input::ListSlotsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9925,24 +10701,26 @@ impl ListSlotsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListSlotsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_slots(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9965,13 +10743,13 @@ impl ListSlotsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
         let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListSlots::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
+            aws_smithy_http::operation::Operation::new(request, crate::operation::ListSlots::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "ListSlots",
                     "lexmodelsv2",
                 ));
@@ -9980,10 +10758,10 @@ impl ListSlotsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10018,6 +10796,8 @@ pub mod list_slot_types_input {
             self.bot_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier of the bot that contains the slot
+        /// types.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_id = input;
             self
@@ -10027,6 +10807,7 @@ pub mod list_slot_types_input {
             self.bot_version = Some(input.into());
             self
         }
+        /// <p>The version of the bot that contains the slot type.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_version = input;
             self
@@ -10038,6 +10819,9 @@ pub mod list_slot_types_input {
             self.locale_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the language and locale of the slot types to list.
+        /// The string must match one of the supported locales. For more
+        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.locale_id = input;
             self
@@ -10050,6 +10834,10 @@ pub mod list_slot_types_input {
             self.sort_by = Some(input);
             self
         }
+        /// <p>Determines the sort order for the response from the
+        /// <code>ListSlotTypes</code> operation. You can choose to sort by the
+        /// slot type name or last updated date in either ascending or descending
+        /// order.</p>
         pub fn set_sort_by(
             mut self,
             input: std::option::Option<crate::model::SlotTypeSortBy>,
@@ -10057,12 +10845,22 @@ pub mod list_slot_types_input {
             self.sort_by = input;
             self
         }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>Provides the specification of a filter used to limit the slot types
+        /// in the response to only those that match the filter specification. You
+        /// can only specify one filter and only one string to filter on.</p>
         pub fn filters(mut self, input: impl Into<crate::model::SlotTypeFilter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input.into());
             self.filters = Some(v);
             self
         }
+        /// <p>Provides the specification of a filter used to limit the slot types
+        /// in the response to only those that match the filter specification. You
+        /// can only specify one filter and only one string to filter on.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SlotTypeFilter>>,
@@ -10077,6 +10875,9 @@ pub mod list_slot_types_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of slot types to return in each page of results.
+        /// If there are fewer results than the max page size, only the actual
+        /// number of results are returned.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -10090,6 +10891,11 @@ pub mod list_slot_types_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the response from the <code>ListSlotTypes</code> operation
+        /// contains more results than specified in the <code>maxResults</code>
+        /// parameter, a token is returned in the response. Use that token in the
+        /// <code>nextToken</code> parameter to return the next page of
+        /// results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -10097,8 +10903,10 @@ pub mod list_slot_types_input {
         /// Consumes the builder and constructs a [`ListSlotTypesInput`](crate::input::ListSlotTypesInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListSlotTypesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListSlotTypesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListSlotTypesInput {
                 bot_id: self.bot_id,
                 bot_version: self.bot_version,
@@ -10122,27 +10930,27 @@ impl ListSlotTypesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListSlotTypes,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListSlotTypesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_90 = &_input.bot_id;
             let input_90 =
                 input_90
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_id = smithy_http::label::fmt_string(input_90, false);
+            let bot_id = aws_smithy_http::label::fmt_string(input_90, false);
             if bot_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 });
@@ -10151,13 +10959,13 @@ impl ListSlotTypesInput {
             let input_91 =
                 input_91
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_version",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_version = smithy_http::label::fmt_string(input_91, false);
+            let bot_version = aws_smithy_http::label::fmt_string(input_91, false);
             if bot_version.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_version",
                     details: "cannot be empty or unset",
                 });
@@ -10166,13 +10974,13 @@ impl ListSlotTypesInput {
             let input_92 =
                 input_92
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "locale_id",
                         details: "cannot be empty or unset",
                     })?;
-            let locale_id = smithy_http::label::fmt_string(input_92, false);
+            let locale_id = aws_smithy_http::label::fmt_string(input_92, false);
             if locale_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "locale_id",
                     details: "cannot be empty or unset",
                 });
@@ -10191,7 +10999,7 @@ impl ListSlotTypesInput {
         fn update_http_builder(
             input: &crate::input::ListSlotTypesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10200,24 +11008,26 @@ impl ListSlotTypesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListSlotTypesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_slot_types(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -10240,25 +11050,27 @@ impl ListSlotTypesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListSlotTypes::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ListSlotTypes",
-                    "lexmodelsv2",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListSlotTypes::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListSlotTypes",
+            "lexmodelsv2",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10287,6 +11099,8 @@ pub mod list_tags_for_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the resource to get a list of tags
+        /// for.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -10296,7 +11110,7 @@ pub mod list_tags_for_resource_input {
             self,
         ) -> std::result::Result<
             crate::input::ListTagsForResourceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListTagsForResourceInput {
                 resource_arn: self.resource_arn,
@@ -10315,27 +11129,27 @@ impl ListTagsForResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListTagsForResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_93 = &_input.resource_arn;
             let input_93 =
                 input_93
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = smithy_http::label::fmt_string(input_93, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_93, false);
             if resource_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 });
@@ -10348,7 +11162,7 @@ impl ListTagsForResourceInput {
         fn update_http_builder(
             input: &crate::input::ListTagsForResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10357,23 +11171,23 @@ impl ListTagsForResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListTagsForResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -10396,15 +11210,15 @@ impl ListTagsForResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListTagsForResource::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListTagsForResource",
             "lexmodelsv2",
         ));
@@ -10413,10 +11227,10 @@ impl ListTagsForResourceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10449,6 +11263,8 @@ pub mod start_import_input {
             self.import_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the import. It is included in the response
+        /// from the  operation.</p>
         pub fn set_import_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.import_id = input;
             self
@@ -10461,6 +11277,7 @@ pub mod start_import_input {
             self.resource_specification = Some(input);
             self
         }
+        /// <p>Parameters for creating the bot or bot locale.</p>
         pub fn set_resource_specification(
             mut self,
             input: std::option::Option<crate::model::ImportResourceSpecification>,
@@ -10476,6 +11293,10 @@ pub mod start_import_input {
             self.merge_strategy = Some(input);
             self
         }
+        /// <p>The strategy to use when there is a name conflict between the
+        /// imported resource and an existing resource. When the merge strategy is
+        /// <code>FailOnConflict</code> existing resources are not overwritten
+        /// and the import fails.</p>
         pub fn set_merge_strategy(
             mut self,
             input: std::option::Option<crate::model::MergeStrategy>,
@@ -10490,6 +11311,9 @@ pub mod start_import_input {
             self.file_password = Some(input.into());
             self
         }
+        /// <p>The password used to encrypt the zip archive that contains the bot
+        /// or bot locale definition. You should always encrypt the zip archive to
+        /// protect it during transit between your site and Amazon Lex.</p>
         pub fn set_file_password(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10500,8 +11324,10 @@ pub mod start_import_input {
         /// Consumes the builder and constructs a [`StartImportInput`](crate::input::StartImportInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::StartImportInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::StartImportInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::StartImportInput {
                 import_id: self.import_id,
                 resource_specification: self.resource_specification,
@@ -10522,16 +11348,16 @@ impl StartImportInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::StartImport,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::StartImportInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/imports").expect("formatting should succeed");
             Ok(())
         }
@@ -10539,7 +11365,7 @@ impl StartImportInput {
         fn update_http_builder(
             input: &crate::input::StartImportInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10548,24 +11374,26 @@ impl StartImportInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::StartImportInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_start_import(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -10588,25 +11416,27 @@ impl StartImportInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::StartImport::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "StartImport",
-                    "lexmodelsv2",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::StartImport::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "StartImport",
+            "lexmodelsv2",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10638,10 +11468,18 @@ pub mod tag_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the bot, bot alias, or bot channel
+        /// to tag.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of tag keys to add to the resource. If a tag key already
+        /// exists, the existing value is replaced with the new value.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -10652,6 +11490,8 @@ pub mod tag_resource_input {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>A list of tag keys to add to the resource. If a tag key already
+        /// exists, the existing value is replaced with the new value.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -10664,8 +11504,10 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::TagResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::TagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::TagResourceInput {
                 resource_arn: self.resource_arn,
                 tags: self.tags,
@@ -10684,27 +11526,27 @@ impl TagResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::TagResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_94 = &_input.resource_arn;
             let input_94 =
                 input_94
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = smithy_http::label::fmt_string(input_94, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_94, false);
             if resource_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 });
@@ -10717,7 +11559,7 @@ impl TagResourceInput {
         fn update_http_builder(
             input: &crate::input::TagResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10726,24 +11568,26 @@ impl TagResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::TagResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -10766,25 +11610,27 @@ impl TagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::TagResource::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "TagResource",
-                    "lexmodelsv2",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::TagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "TagResource",
+            "lexmodelsv2",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10814,16 +11660,26 @@ pub mod untag_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the resource to remove the tags
+        /// from.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Appends an item to `tag_keys`.
+        ///
+        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
+        ///
+        /// <p>A list of tag keys to remove from the resource. If a tag key does
+        /// not exist on the resource, it is ignored.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
+        /// <p>A list of tag keys to remove from the resource. If a tag key does
+        /// not exist on the resource, it is ignored.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -10834,8 +11690,10 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UntagResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UntagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UntagResourceInput {
                 resource_arn: self.resource_arn,
                 tag_keys: self.tag_keys,
@@ -10854,27 +11712,27 @@ impl UntagResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UntagResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_95 = &_input.resource_arn;
             let input_95 =
                 input_95
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = smithy_http::label::fmt_string(input_95, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_95, false);
             if resource_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 });
@@ -10884,10 +11742,10 @@ impl UntagResourceInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::UntagResourceInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_96) = &_input.tag_keys {
                 for inner_97 in inner_96 {
-                    query.push_kv("tagKeys", &smithy_http::query::fmt_string(&inner_97));
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_97));
                 }
             }
         }
@@ -10895,7 +11753,7 @@ impl UntagResourceInput {
         fn update_http_builder(
             input: &crate::input::UntagResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10905,23 +11763,23 @@ impl UntagResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UntagResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -10944,25 +11802,27 @@ impl UntagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UntagResource::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UntagResource",
-                    "lexmodelsv2",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UntagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UntagResource",
+            "lexmodelsv2",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10996,6 +11856,8 @@ pub mod update_bot_input {
             self.bot_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier of the bot to update. This identifier is
+        /// returned by the <a>CreateBot</a> operation.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_id = input;
             self
@@ -11006,6 +11868,8 @@ pub mod update_bot_input {
             self.bot_name = Some(input.into());
             self
         }
+        /// <p>The new name of the bot. The name must be unique in the account that
+        /// creates the bot.</p>
         pub fn set_bot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_name = input;
             self
@@ -11015,6 +11879,7 @@ pub mod update_bot_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description of the bot.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -11025,6 +11890,8 @@ pub mod update_bot_input {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of an IAM role that has permissions
+        /// to access the bot.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -11035,6 +11902,8 @@ pub mod update_bot_input {
             self.data_privacy = Some(input);
             self
         }
+        /// <p>Provides information on additional privacy protections Amazon Lex should
+        /// use with the bot's data.</p>
         pub fn set_data_privacy(
             mut self,
             input: std::option::Option<crate::model::DataPrivacy>,
@@ -11053,6 +11922,13 @@ pub mod update_bot_input {
             self.idle_session_ttl_in_seconds = Some(input);
             self
         }
+        /// <p>The time, in seconds, that Amazon Lex should keep information about a
+        /// user's conversation with the bot.</p>
+        /// <p>A user interaction remains active for the amount of time specified.
+        /// If no conversation occurs during this time, the session expires and
+        /// Amazon Lex deletes any data provided before the timeout.</p>
+        /// <p>You can specify between 60 (1 minute) and 86,400 (24 hours)
+        /// seconds.</p>
         pub fn set_idle_session_ttl_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.idle_session_ttl_in_seconds = input;
             self
@@ -11060,7 +11936,7 @@ pub mod update_bot_input {
         /// Consumes the builder and constructs a [`UpdateBotInput`](crate::input::UpdateBotInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UpdateBotInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::UpdateBotInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::UpdateBotInput {
                 bot_id: self.bot_id,
@@ -11084,27 +11960,27 @@ impl UpdateBotInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateBot,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateBotInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_98 = &_input.bot_id;
             let input_98 =
                 input_98
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_id = smithy_http::label::fmt_string(input_98, false);
+            let bot_id = aws_smithy_http::label::fmt_string(input_98, false);
             if bot_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 });
@@ -11116,7 +11992,7 @@ impl UpdateBotInput {
         fn update_http_builder(
             input: &crate::input::UpdateBotInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -11125,24 +12001,26 @@ impl UpdateBotInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateBotInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_update_bot(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -11165,13 +12043,13 @@ impl UpdateBotInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
         let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UpdateBot::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
+            aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateBot::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "UpdateBot",
                     "lexmodelsv2",
                 ));
@@ -11180,10 +12058,10 @@ impl UpdateBotInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -11222,6 +12100,7 @@ pub mod update_bot_alias_input {
             self.bot_alias_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier of the bot alias.</p>
         pub fn set_bot_alias_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_alias_id = input;
             self
@@ -11231,6 +12110,7 @@ pub mod update_bot_alias_input {
             self.bot_alias_name = Some(input.into());
             self
         }
+        /// <p>The new name to assign to the bot alias.</p>
         pub fn set_bot_alias_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11243,6 +12123,7 @@ pub mod update_bot_alias_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>The new description to assign to the bot alias.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -11252,10 +12133,17 @@ pub mod update_bot_alias_input {
             self.bot_version = Some(input.into());
             self
         }
+        /// <p>The new bot version to assign to the bot alias.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_version = input;
             self
         }
+        /// Adds a key-value pair to `bot_alias_locale_settings`.
+        ///
+        /// To override the contents of this collection use [`set_bot_alias_locale_settings`](Self::set_bot_alias_locale_settings).
+        ///
+        /// <p>The new Lambda functions to use in each locale for the bot
+        /// alias.</p>
         pub fn bot_alias_locale_settings(
             mut self,
             k: impl Into<std::string::String>,
@@ -11266,6 +12154,8 @@ pub mod update_bot_alias_input {
             self.bot_alias_locale_settings = Some(hash_map);
             self
         }
+        /// <p>The new Lambda functions to use in each locale for the bot
+        /// alias.</p>
         pub fn set_bot_alias_locale_settings(
             mut self,
             input: std::option::Option<
@@ -11287,6 +12177,8 @@ pub mod update_bot_alias_input {
             self.conversation_log_settings = Some(input);
             self
         }
+        /// <p>The new settings for storing conversation logs in Amazon CloudWatch Logs and
+        /// Amazon S3 buckets.</p>
         pub fn set_conversation_log_settings(
             mut self,
             input: std::option::Option<crate::model::ConversationLogSettings>,
@@ -11303,6 +12195,8 @@ pub mod update_bot_alias_input {
             self.sentiment_analysis_settings = Some(input);
             self
         }
+        /// <p>Determines whether Amazon Lex will use Amazon Comprehend to detect the sentiment of
+        /// user utterances.</p>
         pub fn set_sentiment_analysis_settings(
             mut self,
             input: std::option::Option<crate::model::SentimentAnalysisSettings>,
@@ -11315,6 +12209,7 @@ pub mod update_bot_alias_input {
             self.bot_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the bot with the updated alias.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_id = input;
             self
@@ -11324,7 +12219,7 @@ pub mod update_bot_alias_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateBotAliasInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateBotAliasInput {
                 bot_alias_id: self.bot_alias_id,
@@ -11350,27 +12245,27 @@ impl UpdateBotAliasInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateBotAlias,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateBotAliasInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_99 = &_input.bot_id;
             let input_99 =
                 input_99
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_id = smithy_http::label::fmt_string(input_99, false);
+            let bot_id = aws_smithy_http::label::fmt_string(input_99, false);
             if bot_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 });
@@ -11379,13 +12274,13 @@ impl UpdateBotAliasInput {
             let input_100 =
                 input_100
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_alias_id",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_alias_id = smithy_http::label::fmt_string(input_100, false);
+            let bot_alias_id = aws_smithy_http::label::fmt_string(input_100, false);
             if bot_alias_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_alias_id",
                     details: "cannot be empty or unset",
                 });
@@ -11403,7 +12298,7 @@ impl UpdateBotAliasInput {
         fn update_http_builder(
             input: &crate::input::UpdateBotAliasInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -11412,27 +12307,27 @@ impl UpdateBotAliasInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateBotAliasInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_bot_alias(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -11455,15 +12350,15 @@ impl UpdateBotAliasInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateBotAlias::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateBotAlias",
             "lexmodelsv2",
         ));
@@ -11472,10 +12367,10 @@ impl UpdateBotAliasInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -11508,6 +12403,7 @@ pub mod update_bot_locale_input {
             self.bot_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier of the bot that contains the locale.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_id = input;
             self
@@ -11518,6 +12414,8 @@ pub mod update_bot_locale_input {
             self.bot_version = Some(input.into());
             self
         }
+        /// <p>The version of the bot that contains the locale to be updated. The
+        /// version can only be the <code>DRAFT</code> version.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_version = input;
             self
@@ -11528,6 +12426,8 @@ pub mod update_bot_locale_input {
             self.locale_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the language and locale to update. The string must
+        /// match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.locale_id = input;
             self
@@ -11537,6 +12437,7 @@ pub mod update_bot_locale_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>The new description of the locale.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -11549,6 +12450,10 @@ pub mod update_bot_locale_input {
             self.nlu_intent_confidence_threshold = Some(input);
             self
         }
+        /// <p>The new confidence threshold where Amazon Lex inserts the
+        /// <code>AMAZON.FallbackIntent</code> and
+        /// <code>AMAZON.KendraSearchIntent</code> intents in the list of
+        /// possible intents for an utterance.</p>
         pub fn set_nlu_intent_confidence_threshold(
             mut self,
             input: std::option::Option<f64>,
@@ -11562,6 +12467,8 @@ pub mod update_bot_locale_input {
             self.voice_settings = Some(input);
             self
         }
+        /// <p>The new Amazon Polly voice Amazon Lex should use for voice interaction with the
+        /// user.</p>
         pub fn set_voice_settings(
             mut self,
             input: std::option::Option<crate::model::VoiceSettings>,
@@ -11574,7 +12481,7 @@ pub mod update_bot_locale_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateBotLocaleInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateBotLocaleInput {
                 bot_id: self.bot_id,
@@ -11598,27 +12505,27 @@ impl UpdateBotLocaleInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateBotLocale,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateBotLocaleInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_101 = &_input.bot_id;
             let input_101 =
                 input_101
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_id = smithy_http::label::fmt_string(input_101, false);
+            let bot_id = aws_smithy_http::label::fmt_string(input_101, false);
             if bot_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 });
@@ -11627,13 +12534,13 @@ impl UpdateBotLocaleInput {
             let input_102 =
                 input_102
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_version",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_version = smithy_http::label::fmt_string(input_102, false);
+            let bot_version = aws_smithy_http::label::fmt_string(input_102, false);
             if bot_version.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_version",
                     details: "cannot be empty or unset",
                 });
@@ -11642,13 +12549,13 @@ impl UpdateBotLocaleInput {
             let input_103 =
                 input_103
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "locale_id",
                         details: "cannot be empty or unset",
                     })?;
-            let locale_id = smithy_http::label::fmt_string(input_103, false);
+            let locale_id = aws_smithy_http::label::fmt_string(input_103, false);
             if locale_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "locale_id",
                     details: "cannot be empty or unset",
                 });
@@ -11667,7 +12574,7 @@ impl UpdateBotLocaleInput {
         fn update_http_builder(
             input: &crate::input::UpdateBotLocaleInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -11676,27 +12583,27 @@ impl UpdateBotLocaleInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateBotLocaleInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_bot_locale(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -11719,15 +12626,15 @@ impl UpdateBotLocaleInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateBotLocale::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateBotLocale",
             "lexmodelsv2",
         ));
@@ -11736,10 +12643,10 @@ impl UpdateBotLocaleInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -11768,6 +12675,7 @@ pub mod update_export_input {
             self.export_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier Amazon Lex assigned to the export.</p>
         pub fn set_export_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.export_id = input;
             self
@@ -11777,6 +12685,7 @@ pub mod update_export_input {
             self.file_password = Some(input.into());
             self
         }
+        /// <p>The new password to use to encrypt the export zip archive.</p>
         pub fn set_file_password(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11787,8 +12696,10 @@ pub mod update_export_input {
         /// Consumes the builder and constructs a [`UpdateExportInput`](crate::input::UpdateExportInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UpdateExportInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateExportInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateExportInput {
                 export_id: self.export_id,
                 file_password: self.file_password,
@@ -11807,27 +12718,27 @@ impl UpdateExportInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateExport,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateExportInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_104 = &_input.export_id;
             let input_104 =
                 input_104
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "export_id",
                         details: "cannot be empty or unset",
                     })?;
-            let export_id = smithy_http::label::fmt_string(input_104, false);
+            let export_id = aws_smithy_http::label::fmt_string(input_104, false);
             if export_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "export_id",
                     details: "cannot be empty or unset",
                 });
@@ -11840,7 +12751,7 @@ impl UpdateExportInput {
         fn update_http_builder(
             input: &crate::input::UpdateExportInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -11849,26 +12760,26 @@ impl UpdateExportInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateExportInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_update_export(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -11891,25 +12802,27 @@ impl UpdateExportInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UpdateExport::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UpdateExport",
-                    "lexmodelsv2",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateExport::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateExport",
+            "lexmodelsv2",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -11955,6 +12868,7 @@ pub mod update_intent_input {
             self.intent_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier of the intent to update.</p>
         pub fn set_intent_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.intent_id = input;
             self
@@ -11964,6 +12878,7 @@ pub mod update_intent_input {
             self.intent_name = Some(input.into());
             self
         }
+        /// <p>The new name for the intent.</p>
         pub fn set_intent_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.intent_name = input;
             self
@@ -11973,6 +12888,7 @@ pub mod update_intent_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>The new description of the intent.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -11983,6 +12899,8 @@ pub mod update_intent_input {
             self.parent_intent_signature = Some(input.into());
             self
         }
+        /// <p>The signature of the new built-in intent to use as the parent of
+        /// this intent.</p>
         pub fn set_parent_intent_signature(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11990,6 +12908,11 @@ pub mod update_intent_input {
             self.parent_intent_signature = input;
             self
         }
+        /// Appends an item to `sample_utterances`.
+        ///
+        /// To override the contents of this collection use [`set_sample_utterances`](Self::set_sample_utterances).
+        ///
+        /// <p>New utterances used to invoke the intent.</p>
         pub fn sample_utterances(
             mut self,
             input: impl Into<crate::model::SampleUtterance>,
@@ -11999,6 +12922,7 @@ pub mod update_intent_input {
             self.sample_utterances = Some(v);
             self
         }
+        /// <p>New utterances used to invoke the intent.</p>
         pub fn set_sample_utterances(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SampleUtterance>>,
@@ -12012,6 +12936,8 @@ pub mod update_intent_input {
             self.dialog_code_hook = Some(input);
             self
         }
+        /// <p>The new Lambda function to use between each turn of the conversation
+        /// with the bot.</p>
         pub fn set_dialog_code_hook(
             mut self,
             input: std::option::Option<crate::model::DialogCodeHookSettings>,
@@ -12028,6 +12954,8 @@ pub mod update_intent_input {
             self.fulfillment_code_hook = Some(input);
             self
         }
+        /// <p>The new Lambda function to call when all of the intents required
+        /// slots are provided and the intent is ready for fulfillment.</p>
         pub fn set_fulfillment_code_hook(
             mut self,
             input: std::option::Option<crate::model::FulfillmentCodeHookSettings>,
@@ -12035,12 +12963,20 @@ pub mod update_intent_input {
             self.fulfillment_code_hook = input;
             self
         }
+        /// Appends an item to `slot_priorities`.
+        ///
+        /// To override the contents of this collection use [`set_slot_priorities`](Self::set_slot_priorities).
+        ///
+        /// <p>A new list of slots and their priorities that are contained by the
+        /// intent.</p>
         pub fn slot_priorities(mut self, input: impl Into<crate::model::SlotPriority>) -> Self {
             let mut v = self.slot_priorities.unwrap_or_default();
             v.push(input.into());
             self.slot_priorities = Some(v);
             self
         }
+        /// <p>A new list of slots and their priorities that are contained by the
+        /// intent.</p>
         pub fn set_slot_priorities(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SlotPriority>>,
@@ -12057,6 +12993,8 @@ pub mod update_intent_input {
             self.intent_confirmation_setting = Some(input);
             self
         }
+        /// <p>New prompts that Amazon Lex sends to the user to confirm the completion
+        /// of an intent.</p>
         pub fn set_intent_confirmation_setting(
             mut self,
             input: std::option::Option<crate::model::IntentConfirmationSetting>,
@@ -12070,6 +13008,8 @@ pub mod update_intent_input {
             self.intent_closing_setting = Some(input);
             self
         }
+        /// <p>The new response that Amazon Lex sends the user when the intent is
+        /// closed.</p>
         pub fn set_intent_closing_setting(
             mut self,
             input: std::option::Option<crate::model::IntentClosingSetting>,
@@ -12077,12 +13017,20 @@ pub mod update_intent_input {
             self.intent_closing_setting = input;
             self
         }
+        /// Appends an item to `input_contexts`.
+        ///
+        /// To override the contents of this collection use [`set_input_contexts`](Self::set_input_contexts).
+        ///
+        /// <p>A new list of contexts that must be active in order for Amazon Lex to
+        /// consider the intent.</p>
         pub fn input_contexts(mut self, input: impl Into<crate::model::InputContext>) -> Self {
             let mut v = self.input_contexts.unwrap_or_default();
             v.push(input.into());
             self.input_contexts = Some(v);
             self
         }
+        /// <p>A new list of contexts that must be active in order for Amazon Lex to
+        /// consider the intent.</p>
         pub fn set_input_contexts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InputContext>>,
@@ -12090,12 +13038,20 @@ pub mod update_intent_input {
             self.input_contexts = input;
             self
         }
+        /// Appends an item to `output_contexts`.
+        ///
+        /// To override the contents of this collection use [`set_output_contexts`](Self::set_output_contexts).
+        ///
+        /// <p>A new list of contexts that Amazon Lex activates when the intent is
+        /// fulfilled.</p>
         pub fn output_contexts(mut self, input: impl Into<crate::model::OutputContext>) -> Self {
             let mut v = self.output_contexts.unwrap_or_default();
             v.push(input.into());
             self.output_contexts = Some(v);
             self
         }
+        /// <p>A new list of contexts that Amazon Lex activates when the intent is
+        /// fulfilled.</p>
         pub fn set_output_contexts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::OutputContext>>,
@@ -12108,6 +13064,7 @@ pub mod update_intent_input {
             self.kendra_configuration = Some(input);
             self
         }
+        /// <p>New configuration settings for connecting to an Amazon Kendra index.</p>
         pub fn set_kendra_configuration(
             mut self,
             input: std::option::Option<crate::model::KendraConfiguration>,
@@ -12120,6 +13077,7 @@ pub mod update_intent_input {
             self.bot_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the bot that contains the intent.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_id = input;
             self
@@ -12130,6 +13088,8 @@ pub mod update_intent_input {
             self.bot_version = Some(input.into());
             self
         }
+        /// <p>The version of the bot that contains the intent. Must be
+        /// <code>DRAFT</code>.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_version = input;
             self
@@ -12141,6 +13101,9 @@ pub mod update_intent_input {
             self.locale_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the language and locale where this intent is used.
+        /// The string must match one of the supported locales. For more
+        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.locale_id = input;
             self
@@ -12148,8 +13111,10 @@ pub mod update_intent_input {
         /// Consumes the builder and constructs a [`UpdateIntentInput`](crate::input::UpdateIntentInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UpdateIntentInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateIntentInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateIntentInput {
                 intent_id: self.intent_id,
                 intent_name: self.intent_name,
@@ -12182,27 +13147,27 @@ impl UpdateIntentInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateIntent,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateIntentInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_105 = &_input.bot_id;
             let input_105 =
                 input_105
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_id = smithy_http::label::fmt_string(input_105, false);
+            let bot_id = aws_smithy_http::label::fmt_string(input_105, false);
             if bot_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 });
@@ -12211,13 +13176,13 @@ impl UpdateIntentInput {
             let input_106 =
                 input_106
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_version",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_version = smithy_http::label::fmt_string(input_106, false);
+            let bot_version = aws_smithy_http::label::fmt_string(input_106, false);
             if bot_version.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_version",
                     details: "cannot be empty or unset",
                 });
@@ -12226,13 +13191,13 @@ impl UpdateIntentInput {
             let input_107 =
                 input_107
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "locale_id",
                         details: "cannot be empty or unset",
                     })?;
-            let locale_id = smithy_http::label::fmt_string(input_107, false);
+            let locale_id = aws_smithy_http::label::fmt_string(input_107, false);
             if locale_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "locale_id",
                     details: "cannot be empty or unset",
                 });
@@ -12241,13 +13206,13 @@ impl UpdateIntentInput {
             let input_108 =
                 input_108
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "intent_id",
                         details: "cannot be empty or unset",
                     })?;
-            let intent_id = smithy_http::label::fmt_string(input_108, false);
+            let intent_id = aws_smithy_http::label::fmt_string(input_108, false);
             if intent_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "intent_id",
                     details: "cannot be empty or unset",
                 });
@@ -12267,7 +13232,7 @@ impl UpdateIntentInput {
         fn update_http_builder(
             input: &crate::input::UpdateIntentInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -12276,26 +13241,26 @@ impl UpdateIntentInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateIntentInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_update_intent(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -12318,25 +13283,27 @@ impl UpdateIntentInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UpdateIntent::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UpdateIntent",
-                    "lexmodelsv2",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateIntent::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateIntent",
+            "lexmodelsv2",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -12367,6 +13334,8 @@ pub mod update_resource_policy_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that the
+        /// resource policy is attached to.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -12382,6 +13351,13 @@ pub mod update_resource_policy_input {
             self.policy = Some(input.into());
             self
         }
+        /// <p>A resource policy to add to the resource. The policy is a JSON
+        /// structure that contains one or more statements that define the policy.
+        /// The policy must follow the IAM syntax. For more information about the
+        /// contents of a JSON policy document, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html"> IAM JSON policy
+        /// reference </a>. </p>
+        /// <p>If the policy isn't valid, Amazon Lex returns a validation
+        /// exception.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy = input;
             self
@@ -12395,6 +13371,11 @@ pub mod update_resource_policy_input {
             self.expected_revision_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the revision of the policy to update. If this
+        /// revision ID doesn't match the current revision ID, Amazon Lex throws an
+        /// exception.</p>
+        /// <p>If you don't specify a revision, Amazon Lex overwrites the contents of
+        /// the policy with the new values.</p>
         pub fn set_expected_revision_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12407,7 +13388,7 @@ pub mod update_resource_policy_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateResourcePolicyInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateResourcePolicyInput {
                 resource_arn: self.resource_arn,
@@ -12428,27 +13409,27 @@ impl UpdateResourcePolicyInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateResourcePolicy,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateResourcePolicyInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_109 = &_input.resource_arn;
             let input_109 =
                 input_109
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = smithy_http::label::fmt_string(input_109, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_109, false);
             if resource_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 });
@@ -12458,11 +13439,11 @@ impl UpdateResourcePolicyInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::UpdateResourcePolicyInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_110) = &_input.expected_revision_id {
                 query.push_kv(
                     "expectedRevisionId",
-                    &smithy_http::query::fmt_string(&inner_110),
+                    &aws_smithy_http::query::fmt_string(&inner_110),
                 );
             }
         }
@@ -12470,7 +13451,7 @@ impl UpdateResourcePolicyInput {
         fn update_http_builder(
             input: &crate::input::UpdateResourcePolicyInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -12480,27 +13461,27 @@ impl UpdateResourcePolicyInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateResourcePolicyInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_resource_policy(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -12523,15 +13504,15 @@ impl UpdateResourcePolicyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateResourcePolicy::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateResourcePolicy",
             "lexmodelsv2",
         ));
@@ -12540,10 +13521,10 @@ impl UpdateResourcePolicyInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -12583,6 +13564,7 @@ pub mod update_slot_input {
             self.slot_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the slot to update.</p>
         pub fn set_slot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.slot_id = input;
             self
@@ -12592,6 +13574,7 @@ pub mod update_slot_input {
             self.slot_name = Some(input.into());
             self
         }
+        /// <p>The new name for the slot.</p>
         pub fn set_slot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.slot_name = input;
             self
@@ -12601,6 +13584,7 @@ pub mod update_slot_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>The new description for the slot.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -12611,6 +13595,8 @@ pub mod update_slot_input {
             self.slot_type_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier of the new slot type to associate with this
+        /// slot. </p>
         pub fn set_slot_type_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.slot_type_id = input;
             self
@@ -12624,6 +13610,8 @@ pub mod update_slot_input {
             self.value_elicitation_setting = Some(input);
             self
         }
+        /// <p>A new set of prompts that Amazon Lex sends to the user to elicit a
+        /// response the provides a value for the slot.</p>
         pub fn set_value_elicitation_setting(
             mut self,
             input: std::option::Option<crate::model::SlotValueElicitationSetting>,
@@ -12637,6 +13625,8 @@ pub mod update_slot_input {
             self.obfuscation_setting = Some(input);
             self
         }
+        /// <p>New settings that determine how slot values are formatted in Amazon CloudWatch
+        /// logs. </p>
         pub fn set_obfuscation_setting(
             mut self,
             input: std::option::Option<crate::model::ObfuscationSetting>,
@@ -12649,6 +13639,7 @@ pub mod update_slot_input {
             self.bot_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier of the bot that contains the slot.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_id = input;
             self
@@ -12659,6 +13650,8 @@ pub mod update_slot_input {
             self.bot_version = Some(input.into());
             self
         }
+        /// <p>The version of the bot that contains the slot. Must always be
+        /// <code>DRAFT</code>.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_version = input;
             self
@@ -12670,6 +13663,9 @@ pub mod update_slot_input {
             self.locale_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the language and locale that contains the slot.
+        /// The string must match one of the supported locales. For more
+        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.locale_id = input;
             self
@@ -12679,6 +13675,7 @@ pub mod update_slot_input {
             self.intent_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the intent that contains the slot.</p>
         pub fn set_intent_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.intent_id = input;
             self
@@ -12696,6 +13693,12 @@ pub mod update_slot_input {
             self.multiple_values_setting = Some(input);
             self
         }
+        /// <p>Determines whether the slot accepts multiple values in one response.
+        /// Multiple value slots are only available in the en-US locale. If you set
+        /// this value to <code>true</code> in any other locale, Amazon Lex throws a
+        /// <code>ValidationException</code>.</p>
+        /// <p>If the <code>multipleValuesSetting</code> is not set, the default
+        /// value is <code>false</code>.</p>
         pub fn set_multiple_values_setting(
             mut self,
             input: std::option::Option<crate::model::MultipleValuesSetting>,
@@ -12706,8 +13709,10 @@ pub mod update_slot_input {
         /// Consumes the builder and constructs a [`UpdateSlotInput`](crate::input::UpdateSlotInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UpdateSlotInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateSlotInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateSlotInput {
                 slot_id: self.slot_id,
                 slot_name: self.slot_name,
@@ -12735,27 +13740,27 @@ impl UpdateSlotInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateSlot,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateSlotInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_111 = &_input.bot_id;
             let input_111 =
                 input_111
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_id = smithy_http::label::fmt_string(input_111, false);
+            let bot_id = aws_smithy_http::label::fmt_string(input_111, false);
             if bot_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 });
@@ -12764,13 +13769,13 @@ impl UpdateSlotInput {
             let input_112 =
                 input_112
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_version",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_version = smithy_http::label::fmt_string(input_112, false);
+            let bot_version = aws_smithy_http::label::fmt_string(input_112, false);
             if bot_version.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_version",
                     details: "cannot be empty or unset",
                 });
@@ -12779,13 +13784,13 @@ impl UpdateSlotInput {
             let input_113 =
                 input_113
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "locale_id",
                         details: "cannot be empty or unset",
                     })?;
-            let locale_id = smithy_http::label::fmt_string(input_113, false);
+            let locale_id = aws_smithy_http::label::fmt_string(input_113, false);
             if locale_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "locale_id",
                     details: "cannot be empty or unset",
                 });
@@ -12794,13 +13799,13 @@ impl UpdateSlotInput {
             let input_114 =
                 input_114
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "intent_id",
                         details: "cannot be empty or unset",
                     })?;
-            let intent_id = smithy_http::label::fmt_string(input_114, false);
+            let intent_id = aws_smithy_http::label::fmt_string(input_114, false);
             if intent_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "intent_id",
                     details: "cannot be empty or unset",
                 });
@@ -12809,13 +13814,13 @@ impl UpdateSlotInput {
             let input_115 =
                 input_115
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "slot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let slot_id = smithy_http::label::fmt_string(input_115, false);
+            let slot_id = aws_smithy_http::label::fmt_string(input_115, false);
             if slot_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "slot_id",
                     details: "cannot be empty or unset",
                 });
@@ -12827,7 +13832,7 @@ impl UpdateSlotInput {
         fn update_http_builder(
             input: &crate::input::UpdateSlotInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -12836,24 +13841,26 @@ impl UpdateSlotInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateSlotInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_update_slot(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -12876,25 +13883,27 @@ impl UpdateSlotInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UpdateSlot::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UpdateSlot",
-                    "lexmodelsv2",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateSlot::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateSlot",
+            "lexmodelsv2",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -12932,6 +13941,7 @@ pub mod update_slot_type_input {
             self.slot_type_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier of the slot type to update.</p>
         pub fn set_slot_type_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.slot_type_id = input;
             self
@@ -12941,6 +13951,7 @@ pub mod update_slot_type_input {
             self.slot_type_name = Some(input.into());
             self
         }
+        /// <p>The new name of the slot type.</p>
         pub fn set_slot_type_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12953,16 +13964,25 @@ pub mod update_slot_type_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>The new description of the slot type.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Appends an item to `slot_type_values`.
+        ///
+        /// To override the contents of this collection use [`set_slot_type_values`](Self::set_slot_type_values).
+        ///
+        /// <p>A new list of values and their optional synonyms that define the
+        /// values that the slot type can take.</p>
         pub fn slot_type_values(mut self, input: impl Into<crate::model::SlotTypeValue>) -> Self {
             let mut v = self.slot_type_values.unwrap_or_default();
             v.push(input.into());
             self.slot_type_values = Some(v);
             self
         }
+        /// <p>A new list of values and their optional synonyms that define the
+        /// values that the slot type can take.</p>
         pub fn set_slot_type_values(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SlotTypeValue>>,
@@ -12979,6 +13999,8 @@ pub mod update_slot_type_input {
             self.value_selection_setting = Some(input);
             self
         }
+        /// <p>The strategy that Amazon Lex should use when deciding on a value from the
+        /// list of slot type values.</p>
         pub fn set_value_selection_setting(
             mut self,
             input: std::option::Option<crate::model::SlotValueSelectionSetting>,
@@ -12992,6 +14014,8 @@ pub mod update_slot_type_input {
             self.parent_slot_type_signature = Some(input.into());
             self
         }
+        /// <p>The new built-in slot type that should be used as the parent of this
+        /// slot type.</p>
         pub fn set_parent_slot_type_signature(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13004,6 +14028,7 @@ pub mod update_slot_type_input {
             self.bot_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the bot that contains the slot type.</p>
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_id = input;
             self
@@ -13014,6 +14039,8 @@ pub mod update_slot_type_input {
             self.bot_version = Some(input.into());
             self
         }
+        /// <p>The version of the bot that contains the slot type. Must be
+        /// <code>DRAFT</code>.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_version = input;
             self
@@ -13025,6 +14052,9 @@ pub mod update_slot_type_input {
             self.locale_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the language and locale that contains the slot
+        /// type. The string must match one of the supported locales. For more
+        /// information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</p>
         pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.locale_id = input;
             self
@@ -13034,7 +14064,7 @@ pub mod update_slot_type_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateSlotTypeInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateSlotTypeInput {
                 slot_type_id: self.slot_type_id,
@@ -13061,27 +14091,27 @@ impl UpdateSlotTypeInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateSlotType,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateSlotTypeInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_116 = &_input.bot_id;
             let input_116 =
                 input_116
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_id = smithy_http::label::fmt_string(input_116, false);
+            let bot_id = aws_smithy_http::label::fmt_string(input_116, false);
             if bot_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_id",
                     details: "cannot be empty or unset",
                 });
@@ -13090,13 +14120,13 @@ impl UpdateSlotTypeInput {
             let input_117 =
                 input_117
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "bot_version",
                         details: "cannot be empty or unset",
                     })?;
-            let bot_version = smithy_http::label::fmt_string(input_117, false);
+            let bot_version = aws_smithy_http::label::fmt_string(input_117, false);
             if bot_version.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "bot_version",
                     details: "cannot be empty or unset",
                 });
@@ -13105,13 +14135,13 @@ impl UpdateSlotTypeInput {
             let input_118 =
                 input_118
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "locale_id",
                         details: "cannot be empty or unset",
                     })?;
-            let locale_id = smithy_http::label::fmt_string(input_118, false);
+            let locale_id = aws_smithy_http::label::fmt_string(input_118, false);
             if locale_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "locale_id",
                     details: "cannot be empty or unset",
                 });
@@ -13120,13 +14150,13 @@ impl UpdateSlotTypeInput {
             let input_119 =
                 input_119
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "slot_type_id",
                         details: "cannot be empty or unset",
                     })?;
-            let slot_type_id = smithy_http::label::fmt_string(input_119, false);
+            let slot_type_id = aws_smithy_http::label::fmt_string(input_119, false);
             if slot_type_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "slot_type_id",
                     details: "cannot be empty or unset",
                 });
@@ -13138,7 +14168,7 @@ impl UpdateSlotTypeInput {
         fn update_http_builder(
             input: &crate::input::UpdateSlotTypeInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -13147,27 +14177,27 @@ impl UpdateSlotTypeInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateSlotTypeInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_slot_type(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -13190,15 +14220,15 @@ impl UpdateSlotTypeInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateSlotType::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateSlotType",
             "lexmodelsv2",
         ));
@@ -13207,10 +14237,10 @@ impl UpdateSlotTypeInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -13224,6 +14254,7 @@ impl UpdateSlotTypeInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSlotTypeInput {
@@ -13271,6 +14302,7 @@ impl std::fmt::Debug for UpdateSlotTypeInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateSlotInput {
@@ -13326,6 +14358,7 @@ impl std::fmt::Debug for UpdateSlotInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateResourcePolicyInput {
@@ -13357,6 +14390,7 @@ impl std::fmt::Debug for UpdateResourcePolicyInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateIntentInput {
@@ -13430,6 +14464,7 @@ impl std::fmt::Debug for UpdateIntentInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateExportInput {
@@ -13447,6 +14482,7 @@ impl std::fmt::Debug for UpdateExportInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateBotLocaleInput {
@@ -13485,6 +14521,7 @@ impl std::fmt::Debug for UpdateBotLocaleInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateBotAliasInput {
@@ -13528,6 +14565,7 @@ impl std::fmt::Debug for UpdateBotAliasInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateBotInput {
@@ -13570,6 +14608,7 @@ impl std::fmt::Debug for UpdateBotInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
@@ -13589,6 +14628,7 @@ impl std::fmt::Debug for UntagResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
@@ -13609,6 +14649,7 @@ impl std::fmt::Debug for TagResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartImportInput {
@@ -13638,6 +14679,7 @@ impl std::fmt::Debug for StartImportInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
@@ -13653,6 +14695,7 @@ impl std::fmt::Debug for ListTagsForResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSlotTypesInput {
@@ -13699,6 +14742,7 @@ impl std::fmt::Debug for ListSlotTypesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSlotsInput {
@@ -13747,6 +14791,7 @@ impl std::fmt::Debug for ListSlotsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListIntentsInput {
@@ -13792,6 +14837,7 @@ impl std::fmt::Debug for ListIntentsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListImportsInput {
@@ -13831,6 +14877,7 @@ impl std::fmt::Debug for ListImportsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListExportsInput {
@@ -13870,6 +14917,7 @@ impl std::fmt::Debug for ListExportsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBuiltInSlotTypesInput {
@@ -13904,6 +14952,7 @@ impl std::fmt::Debug for ListBuiltInSlotTypesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBuiltInIntentsInput {
@@ -13937,6 +14986,7 @@ impl std::fmt::Debug for ListBuiltInIntentsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBotVersionsInput {
@@ -13968,6 +15018,7 @@ impl std::fmt::Debug for ListBotVersionsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBotsInput {
@@ -14001,6 +15052,7 @@ impl std::fmt::Debug for ListBotsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBotLocalesInput {
@@ -14039,6 +15091,7 @@ impl std::fmt::Debug for ListBotLocalesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBotAliasesInput {
@@ -14065,6 +15118,7 @@ impl std::fmt::Debug for ListBotAliasesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAggregatedUtterancesInput {
@@ -14121,6 +15175,7 @@ impl std::fmt::Debug for ListAggregatedUtterancesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSlotTypeInput {
@@ -14146,6 +15201,7 @@ impl std::fmt::Debug for DescribeSlotTypeInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSlotInput {
@@ -14174,6 +15230,7 @@ impl std::fmt::Debug for DescribeSlotInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeResourcePolicyInput {
@@ -14189,6 +15246,7 @@ impl std::fmt::Debug for DescribeResourcePolicyInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeIntentInput {
@@ -14214,6 +15272,7 @@ impl std::fmt::Debug for DescribeIntentInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeImportInput {
@@ -14228,6 +15287,7 @@ impl std::fmt::Debug for DescribeImportInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeExportInput {
@@ -14242,6 +15302,7 @@ impl std::fmt::Debug for DescribeExportInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBotVersionInput {
@@ -14260,6 +15321,7 @@ impl std::fmt::Debug for DescribeBotVersionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBotLocaleInput {
@@ -14282,6 +15344,7 @@ impl std::fmt::Debug for DescribeBotLocaleInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBotAliasInput {
@@ -14300,6 +15363,7 @@ impl std::fmt::Debug for DescribeBotAliasInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBotInput {
@@ -14314,6 +15378,7 @@ impl std::fmt::Debug for DescribeBotInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteUtterancesInput {
@@ -14339,6 +15404,7 @@ impl std::fmt::Debug for DeleteUtterancesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSlotTypeInput {
@@ -14374,6 +15440,7 @@ impl std::fmt::Debug for DeleteSlotTypeInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSlotInput {
@@ -14402,6 +15469,7 @@ impl std::fmt::Debug for DeleteSlotInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteResourcePolicyStatementInput {
@@ -14427,6 +15495,7 @@ impl std::fmt::Debug for DeleteResourcePolicyStatementInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteResourcePolicyInput {
@@ -14448,6 +15517,7 @@ impl std::fmt::Debug for DeleteResourcePolicyInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteIntentInput {
@@ -14473,6 +15543,7 @@ impl std::fmt::Debug for DeleteIntentInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteImportInput {
@@ -14487,6 +15558,7 @@ impl std::fmt::Debug for DeleteImportInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteExportInput {
@@ -14501,6 +15573,7 @@ impl std::fmt::Debug for DeleteExportInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBotVersionInput {
@@ -14529,6 +15602,7 @@ impl std::fmt::Debug for DeleteBotVersionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBotLocaleInput {
@@ -14551,6 +15625,7 @@ impl std::fmt::Debug for DeleteBotLocaleInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBotAliasInput {
@@ -14576,6 +15651,7 @@ impl std::fmt::Debug for DeleteBotAliasInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBotInput {
@@ -14598,6 +15674,7 @@ impl std::fmt::Debug for DeleteBotInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateUploadUrlInput {}
@@ -14608,6 +15685,7 @@ impl std::fmt::Debug for CreateUploadUrlInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSlotTypeInput {
@@ -14675,6 +15753,7 @@ impl std::fmt::Debug for CreateSlotTypeInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSlotInput {
@@ -14734,6 +15813,7 @@ impl std::fmt::Debug for CreateSlotInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateResourcePolicyStatementInput {
@@ -14789,6 +15869,7 @@ impl std::fmt::Debug for CreateResourcePolicyStatementInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateResourcePolicyInput {
@@ -14813,6 +15894,7 @@ impl std::fmt::Debug for CreateResourcePolicyInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateIntentInput {
@@ -14922,6 +16004,7 @@ impl std::fmt::Debug for CreateIntentInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateExportInput {
@@ -14945,6 +16028,7 @@ impl std::fmt::Debug for CreateExportInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBotVersionInput {
@@ -14974,6 +16058,7 @@ impl std::fmt::Debug for CreateBotVersionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBotLocaleInput {
@@ -15036,6 +16121,7 @@ impl std::fmt::Debug for CreateBotLocaleInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBotAliasInput {
@@ -15089,6 +16175,7 @@ impl std::fmt::Debug for CreateBotAliasInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBotInput {
@@ -15142,6 +16229,7 @@ impl std::fmt::Debug for CreateBotInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BuildBotLocaleInput {

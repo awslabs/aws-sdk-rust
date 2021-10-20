@@ -14,11 +14,11 @@ pub struct Service {
     /// <p>A subdomain URL that App Runner generated for this service. You can use this URL to access your service web application.</p>
     pub service_url: std::option::Option<std::string::String>,
     /// <p>The time when the App Runner service was created. It's in the Unix time stamp format.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time when the App Runner service was last updated at. It's in the Unix time stamp format.</p>
-    pub updated_at: std::option::Option<smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time when the App Runner service was deleted. It's in the Unix time stamp format.</p>
-    pub deleted_at: std::option::Option<smithy_types::Instant>,
+    pub deleted_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The current state of the App Runner service. These particular values mean the following.</p>
     /// <ul>
     /// <li>
@@ -82,9 +82,9 @@ pub mod service {
         pub(crate) service_id: std::option::Option<std::string::String>,
         pub(crate) service_arn: std::option::Option<std::string::String>,
         pub(crate) service_url: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
-        pub(crate) updated_at: std::option::Option<smithy_types::Instant>,
-        pub(crate) deleted_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) deleted_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) status: std::option::Option<crate::model::ServiceStatus>,
         pub(crate) source_configuration: std::option::Option<crate::model::SourceConfiguration>,
         pub(crate) instance_configuration: std::option::Option<crate::model::InstanceConfiguration>,
@@ -101,6 +101,7 @@ pub mod service {
             self.service_name = Some(input.into());
             self
         }
+        /// <p>The customer-provided service name.</p>
         pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service_name = input;
             self
@@ -110,6 +111,7 @@ pub mod service {
             self.service_id = Some(input.into());
             self
         }
+        /// <p>An ID that App Runner generated for this service. It's unique within the Amazon Web Services Region.</p>
         pub fn set_service_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service_id = input;
             self
@@ -119,6 +121,7 @@ pub mod service {
             self.service_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of this service.</p>
         pub fn set_service_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service_arn = input;
             self
@@ -128,34 +131,47 @@ pub mod service {
             self.service_url = Some(input.into());
             self
         }
+        /// <p>A subdomain URL that App Runner generated for this service. You can use this URL to access your service web application.</p>
         pub fn set_service_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service_url = input;
             self
         }
         /// <p>The time when the App Runner service was created. It's in the Unix time stamp format.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time when the App Runner service was created. It's in the Unix time stamp format.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The time when the App Runner service was last updated at. It's in the Unix time stamp format.</p>
-        pub fn updated_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.updated_at = Some(input);
             self
         }
-        pub fn set_updated_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time when the App Runner service was last updated at. It's in the Unix time stamp format.</p>
+        pub fn set_updated_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.updated_at = input;
             self
         }
         /// <p>The time when the App Runner service was deleted. It's in the Unix time stamp format.</p>
-        pub fn deleted_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn deleted_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.deleted_at = Some(input);
             self
         }
-        pub fn set_deleted_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time when the App Runner service was deleted. It's in the Unix time stamp format.</p>
+        pub fn set_deleted_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.deleted_at = input;
             self
         }
@@ -177,6 +193,20 @@ pub mod service {
             self.status = Some(input);
             self
         }
+        /// <p>The current state of the App Runner service. These particular values mean the following.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>CREATE_FAILED</code> – The service failed to create. To troubleshoot this failure, read the failure events and logs, change any
+        /// parameters that need to be fixed, and retry the call to create the service.</p>
+        /// <p>The failed service isn't usable, and still counts towards your service quota. When you're done analyzing the failure, delete the service.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DELETE_FAILED</code> – The service failed to delete and can't be successfully recovered. Retry the service deletion call to ensure
+        /// that all related resources are removed.</p>
+        /// </li>
+        /// </ul>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ServiceStatus>,
@@ -189,6 +219,7 @@ pub mod service {
             self.source_configuration = Some(input);
             self
         }
+        /// <p>The source deployed to the App Runner service. It can be a code or an image repository.</p>
         pub fn set_source_configuration(
             mut self,
             input: std::option::Option<crate::model::SourceConfiguration>,
@@ -204,6 +235,7 @@ pub mod service {
             self.instance_configuration = Some(input);
             self
         }
+        /// <p>The runtime configuration of instances (scaling units) of this service.</p>
         pub fn set_instance_configuration(
             mut self,
             input: std::option::Option<crate::model::InstanceConfiguration>,
@@ -220,6 +252,8 @@ pub mod service {
             self.encryption_configuration = Some(input);
             self
         }
+        /// <p>The encryption key that App Runner uses to encrypt the service logs and the copy of the source repository that App Runner maintains for the service. It can be
+        /// either a customer-provided encryption key or an Amazon Web Services managed CMK.</p>
         pub fn set_encryption_configuration(
             mut self,
             input: std::option::Option<crate::model::EncryptionConfiguration>,
@@ -235,6 +269,7 @@ pub mod service {
             self.health_check_configuration = Some(input);
             self
         }
+        /// <p>The settings for the health check that App Runner performs to monitor the health of this service.</p>
         pub fn set_health_check_configuration(
             mut self,
             input: std::option::Option<crate::model::HealthCheckConfiguration>,
@@ -250,6 +285,7 @@ pub mod service {
             self.auto_scaling_configuration_summary = Some(input);
             self
         }
+        /// <p>Summary information for the App Runner automatic scaling configuration resource that's associated with this service.</p>
         pub fn set_auto_scaling_configuration_summary(
             mut self,
             input: std::option::Option<crate::model::AutoScalingConfigurationSummary>,
@@ -336,6 +372,7 @@ pub mod auto_scaling_configuration_summary {
             self.auto_scaling_configuration_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of this auto scaling configuration.</p>
         pub fn set_auto_scaling_configuration_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -351,6 +388,7 @@ pub mod auto_scaling_configuration_summary {
             self.auto_scaling_configuration_name = Some(input.into());
             self
         }
+        /// <p>The customer-provided auto scaling configuration name. It can be used in multiple revisions of a configuration.</p>
         pub fn set_auto_scaling_configuration_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -364,6 +402,8 @@ pub mod auto_scaling_configuration_summary {
             self.auto_scaling_configuration_revision = Some(input);
             self
         }
+        /// <p>The revision of this auto scaling configuration. It's unique among all the active configurations (<code>"Status": "ACTIVE"</code>) with the same
+        /// <code>AutoScalingConfigurationName</code>.</p>
         pub fn set_auto_scaling_configuration_revision(
             mut self,
             input: std::option::Option<i32>,
@@ -456,6 +496,10 @@ pub mod health_check_configuration {
             self.protocol = Some(input);
             self
         }
+        /// <p>The IP protocol that App Runner uses to perform health checks for your service.</p>
+        /// <p>If you set <code>Protocol</code> to <code>HTTP</code>, App Runner sends health check requests to the HTTP path specified by <code>Path</code>.</p>
+        /// <p>Default: <code>TCP</code>
+        /// </p>
         pub fn set_protocol(
             mut self,
             input: std::option::Option<crate::model::HealthCheckProtocol>,
@@ -472,6 +516,11 @@ pub mod health_check_configuration {
             self.path = Some(input.into());
             self
         }
+        /// <p>The URL that health check requests are sent to.</p>
+        /// <p>
+        /// <code>Path</code> is only applicable when you set <code>Protocol</code> to <code>HTTP</code>.</p>
+        /// <p>Default: <code>"/"</code>
+        /// </p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.path = input;
             self
@@ -483,6 +532,9 @@ pub mod health_check_configuration {
             self.interval = Some(input);
             self
         }
+        /// <p>The time interval, in seconds, between health checks.</p>
+        /// <p>Default: <code>5</code>
+        /// </p>
         pub fn set_interval(mut self, input: std::option::Option<i32>) -> Self {
             self.interval = input;
             self
@@ -494,6 +546,9 @@ pub mod health_check_configuration {
             self.timeout = Some(input);
             self
         }
+        /// <p>The time, in seconds, to wait for a health check response before deciding it failed.</p>
+        /// <p>Default: <code>2</code>
+        /// </p>
         pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
             self.timeout = input;
             self
@@ -505,6 +560,9 @@ pub mod health_check_configuration {
             self.healthy_threshold = Some(input);
             self
         }
+        /// <p>The number of consecutive checks that must succeed before App Runner decides that the service is healthy.</p>
+        /// <p>Default: <code>1</code>
+        /// </p>
         pub fn set_healthy_threshold(mut self, input: std::option::Option<i32>) -> Self {
             self.healthy_threshold = input;
             self
@@ -516,6 +574,9 @@ pub mod health_check_configuration {
             self.unhealthy_threshold = Some(input);
             self
         }
+        /// <p>The number of consecutive checks that must fail before App Runner decides that the service is unhealthy.</p>
+        /// <p>Default: <code>5</code>
+        /// </p>
         pub fn set_unhealthy_threshold(mut self, input: std::option::Option<i32>) -> Self {
             self.unhealthy_threshold = input;
             self
@@ -540,6 +601,7 @@ impl HealthCheckConfiguration {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -551,7 +613,9 @@ impl HealthCheckConfiguration {
     std::hash::Hash,
 )]
 pub enum HealthCheckProtocol {
+    #[allow(missing_docs)] // documentation missing in model
     Http,
+    #[allow(missing_docs)] // documentation missing in model
     Tcp,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -573,6 +637,7 @@ impl std::str::FromStr for HealthCheckProtocol {
     }
 }
 impl HealthCheckProtocol {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             HealthCheckProtocol::Http => "HTTP",
@@ -580,6 +645,7 @@ impl HealthCheckProtocol {
             HealthCheckProtocol::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["HTTP", "TCP"]
     }
@@ -618,6 +684,7 @@ pub mod encryption_configuration {
             self.kms_key = Some(input.into());
             self
         }
+        /// <p>The ARN of the KMS key that's used for encryption.</p>
         pub fn set_kms_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key = input;
             self
@@ -680,6 +747,9 @@ pub mod instance_configuration {
             self.cpu = Some(input.into());
             self
         }
+        /// <p>The number of CPU units reserved for each instance of your App Runner service.</p>
+        /// <p>Default: <code>1 vCPU</code>
+        /// </p>
         pub fn set_cpu(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cpu = input;
             self
@@ -691,6 +761,9 @@ pub mod instance_configuration {
             self.memory = Some(input.into());
             self
         }
+        /// <p>The amount of memory, in MB or GB, reserved for each instance of your App Runner service.</p>
+        /// <p>Default: <code>2 GB</code>
+        /// </p>
         pub fn set_memory(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.memory = input;
             self
@@ -701,6 +774,8 @@ pub mod instance_configuration {
             self.instance_role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of an IAM role that provides permissions to your App Runner service. These are permissions that your code needs when it calls
+        /// any Amazon Web Services APIs.</p>
         pub fn set_instance_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -777,6 +852,8 @@ pub mod source_configuration {
             self.code_repository = Some(input);
             self
         }
+        /// <p>The description of a source code repository.</p>
+        /// <p>You must provide either this member or <code>ImageRepository</code> (but not both).</p>
         pub fn set_code_repository(
             mut self,
             input: std::option::Option<crate::model::CodeRepository>,
@@ -791,6 +868,9 @@ pub mod source_configuration {
             self.image_repository = Some(input);
             self
         }
+        /// <p>The description of a source image
+        /// repository.</p>
+        /// <p>You must provide either this member or <code>CodeRepository</code> (but not both).</p>
         pub fn set_image_repository(
             mut self,
             input: std::option::Option<crate::model::ImageRepository>,
@@ -806,6 +886,10 @@ pub mod source_configuration {
             self.auto_deployments_enabled = Some(input);
             self
         }
+        /// <p>If <code>true</code>, continuous integration from the source repository is enabled for the App Runner service. Each repository change (including any source
+        /// code commit or new image version) starts a deployment.</p>
+        /// <p>Default: App Runner sets to <code>false</code> for a source image that uses an ECR Public repository or an ECR repository that's in an Amazon Web Services account other than the one that the service is in. App Runner sets to <code>true</code> in all other cases (which currently include a source code
+        /// repository or a source image using a same-account ECR repository).</p>
         pub fn set_auto_deployments_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.auto_deployments_enabled = input;
             self
@@ -818,6 +902,7 @@ pub mod source_configuration {
             self.authentication_configuration = Some(input);
             self
         }
+        /// <p>Describes the resources that are needed to authenticate access to some source repositories.</p>
         pub fn set_authentication_configuration(
             mut self,
             input: std::option::Option<crate::model::AuthenticationConfiguration>,
@@ -878,6 +963,8 @@ pub mod authentication_configuration {
             self.connection_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the App Runner connection that enables the App Runner service to connect to a source repository. It's required for GitHub code
+        /// repositories.</p>
         pub fn set_connection_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -891,6 +978,8 @@ pub mod authentication_configuration {
             self.access_role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the IAM role that grants the App Runner service access to a source repository. It's required for ECR image repositories
+        /// (but not for ECR Public repositories).</p>
         pub fn set_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -952,6 +1041,8 @@ pub mod image_repository {
             self.image_identifier = Some(input.into());
             self
         }
+        /// <p>The identifier of an image.</p>
+        /// <p>For an image in Amazon Elastic Container Registry (Amazon ECR), this is an image name. For the image name format, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/docker-pull-ecr-image.html">Pulling an image</a> in the <i>Amazon ECR User Guide</i>.</p>
         pub fn set_image_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -964,6 +1055,7 @@ pub mod image_repository {
             self.image_configuration = Some(input);
             self
         }
+        /// <p>Configuration for running the identified image.</p>
         pub fn set_image_configuration(
             mut self,
             input: std::option::Option<crate::model::ImageConfiguration>,
@@ -976,6 +1068,7 @@ pub mod image_repository {
             self.image_repository_type = Some(input);
             self
         }
+        /// <p>The type of the image repository. This reflects the repository provider and whether the repository is private or public.</p>
         pub fn set_image_repository_type(
             mut self,
             input: std::option::Option<crate::model::ImageRepositoryType>,
@@ -1000,6 +1093,7 @@ impl ImageRepository {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1011,7 +1105,9 @@ impl ImageRepository {
     std::hash::Hash,
 )]
 pub enum ImageRepositoryType {
+    #[allow(missing_docs)] // documentation missing in model
     Ecr,
+    #[allow(missing_docs)] // documentation missing in model
     EcrPublic,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1033,6 +1129,7 @@ impl std::str::FromStr for ImageRepositoryType {
     }
 }
 impl ImageRepositoryType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ImageRepositoryType::Ecr => "ECR",
@@ -1040,6 +1137,7 @@ impl ImageRepositoryType {
             ImageRepositoryType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ECR", "ECR_PUBLIC"]
     }
@@ -1091,6 +1189,12 @@ pub mod image_configuration {
         pub(crate) port: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Adds a key-value pair to `runtime_environment_variables`.
+        ///
+        /// To override the contents of this collection use [`set_runtime_environment_variables`](Self::set_runtime_environment_variables).
+        ///
+        /// <p>Environment variables that are available to your running App Runner service. An array of key-value pairs. Keys with a prefix of <code>AWSAPPRUNNER</code>
+        /// are reserved for system use and aren't valid.</p>
         pub fn runtime_environment_variables(
             mut self,
             k: impl Into<std::string::String>,
@@ -1101,6 +1205,8 @@ pub mod image_configuration {
             self.runtime_environment_variables = Some(hash_map);
             self
         }
+        /// <p>Environment variables that are available to your running App Runner service. An array of key-value pairs. Keys with a prefix of <code>AWSAPPRUNNER</code>
+        /// are reserved for system use and aren't valid.</p>
         pub fn set_runtime_environment_variables(
             mut self,
             input: std::option::Option<
@@ -1116,6 +1222,8 @@ pub mod image_configuration {
             self.start_command = Some(input.into());
             self
         }
+        /// <p>An optional command that App Runner runs to start the application in the source image. If specified, this command overrides the Docker image’s default start
+        /// command.</p>
         pub fn set_start_command(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1130,6 +1238,9 @@ pub mod image_configuration {
             self.port = Some(input.into());
             self
         }
+        /// <p>The port that your application listens to in the container.</p>
+        /// <p>Default: <code>8080</code>
+        /// </p>
         pub fn set_port(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.port = input;
             self
@@ -1187,6 +1298,7 @@ pub mod code_repository {
             self.repository_url = Some(input.into());
             self
         }
+        /// <p>The location of the repository that contains the source code.</p>
         pub fn set_repository_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1199,6 +1311,7 @@ pub mod code_repository {
             self.source_code_version = Some(input);
             self
         }
+        /// <p>The version that should be used within the source code repository.</p>
         pub fn set_source_code_version(
             mut self,
             input: std::option::Option<crate::model::SourceCodeVersion>,
@@ -1211,6 +1324,7 @@ pub mod code_repository {
             self.code_configuration = Some(input);
             self
         }
+        /// <p>Configuration for building and running the service from a source code repository.</p>
         pub fn set_code_configuration(
             mut self,
             input: std::option::Option<crate::model::CodeConfiguration>,
@@ -1293,6 +1407,19 @@ pub mod code_configuration {
             self.configuration_source = Some(input);
             self
         }
+        /// <p>The source of the App Runner configuration. Values are interpreted as follows:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>REPOSITORY</code> – App Runner reads configuration values from the <code>apprunner.yaml</code> file in the source code repository and
+        /// ignores <code>CodeConfigurationValues</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>API</code> – App Runner uses configuration values provided in <code>CodeConfigurationValues</code> and ignores the
+        /// <code>apprunner.yaml</code> file in the source code repository.</p>
+        /// </li>
+        /// </ul>
         pub fn set_configuration_source(
             mut self,
             input: std::option::Option<crate::model::ConfigurationSource>,
@@ -1309,6 +1436,8 @@ pub mod code_configuration {
             self.code_configuration_values = Some(input);
             self
         }
+        /// <p>The basic configuration for building and running the App Runner service. Use it to quickly launch an App Runner service without providing a
+        /// <code>apprunner.yaml</code> file in the source code repository (or ignoring the file if it exists).</p>
         pub fn set_code_configuration_values(
             mut self,
             input: std::option::Option<crate::model::CodeConfigurationValues>,
@@ -1390,6 +1519,9 @@ pub mod code_configuration_values {
             self.runtime = Some(input);
             self
         }
+        /// <p>A runtime environment type for building and running an App Runner service.
+        /// It represents a
+        /// programming language runtime.</p>
         pub fn set_runtime(mut self, input: std::option::Option<crate::model::Runtime>) -> Self {
             self.runtime = input;
             self
@@ -1399,6 +1531,7 @@ pub mod code_configuration_values {
             self.build_command = Some(input.into());
             self
         }
+        /// <p>The command App Runner runs to build your application.</p>
         pub fn set_build_command(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1411,6 +1544,7 @@ pub mod code_configuration_values {
             self.start_command = Some(input.into());
             self
         }
+        /// <p>The command App Runner runs to start your application.</p>
         pub fn set_start_command(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1425,10 +1559,19 @@ pub mod code_configuration_values {
             self.port = Some(input.into());
             self
         }
+        /// <p>The port that your application listens to in the container.</p>
+        /// <p>Default: <code>8080</code>
+        /// </p>
         pub fn set_port(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.port = input;
             self
         }
+        /// Adds a key-value pair to `runtime_environment_variables`.
+        ///
+        /// To override the contents of this collection use [`set_runtime_environment_variables`](Self::set_runtime_environment_variables).
+        ///
+        /// <p>The environment variables that are available to your running App Runner service. An array of key-value pairs. Keys with a prefix of
+        /// <code>AWSAPPRUNNER</code> are reserved for system use and aren't valid.</p>
         pub fn runtime_environment_variables(
             mut self,
             k: impl Into<std::string::String>,
@@ -1439,6 +1582,8 @@ pub mod code_configuration_values {
             self.runtime_environment_variables = Some(hash_map);
             self
         }
+        /// <p>The environment variables that are available to your running App Runner service. An array of key-value pairs. Keys with a prefix of
+        /// <code>AWSAPPRUNNER</code> are reserved for system use and aren't valid.</p>
         pub fn set_runtime_environment_variables(
             mut self,
             input: std::option::Option<
@@ -1467,6 +1612,7 @@ impl CodeConfigurationValues {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1478,7 +1624,9 @@ impl CodeConfigurationValues {
     std::hash::Hash,
 )]
 pub enum Runtime {
+    #[allow(missing_docs)] // documentation missing in model
     Nodejs12,
+    #[allow(missing_docs)] // documentation missing in model
     Python3,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1500,6 +1648,7 @@ impl std::str::FromStr for Runtime {
     }
 }
 impl Runtime {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Runtime::Nodejs12 => "NODEJS_12",
@@ -1507,6 +1656,7 @@ impl Runtime {
             Runtime::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["NODEJS_12", "PYTHON_3"]
     }
@@ -1517,6 +1667,7 @@ impl AsRef<str> for Runtime {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1528,7 +1679,9 @@ impl AsRef<str> for Runtime {
     std::hash::Hash,
 )]
 pub enum ConfigurationSource {
+    #[allow(missing_docs)] // documentation missing in model
     Api,
+    #[allow(missing_docs)] // documentation missing in model
     Repository,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1550,6 +1703,7 @@ impl std::str::FromStr for ConfigurationSource {
     }
 }
 impl ConfigurationSource {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ConfigurationSource::Api => "API",
@@ -1557,6 +1711,7 @@ impl ConfigurationSource {
             ConfigurationSource::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["API", "REPOSITORY"]
     }
@@ -1602,6 +1757,8 @@ pub mod source_code_version {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of version identifier.</p>
+        /// <p>For a git-based repository, branches represent versions.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::SourceCodeVersionType>,
@@ -1615,6 +1772,8 @@ pub mod source_code_version {
             self.value = Some(input.into());
             self
         }
+        /// <p>A source code version.</p>
+        /// <p>For a git-based repository, a branch name maps to a specific version. App Runner uses the most recent commit to the branch.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -1635,6 +1794,7 @@ impl SourceCodeVersion {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1646,6 +1806,7 @@ impl SourceCodeVersion {
     std::hash::Hash,
 )]
 pub enum SourceCodeVersionType {
+    #[allow(missing_docs)] // documentation missing in model
     Branch,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1666,12 +1827,14 @@ impl std::str::FromStr for SourceCodeVersionType {
     }
 }
 impl SourceCodeVersionType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SourceCodeVersionType::Branch => "BRANCH",
             SourceCodeVersionType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["BRANCH"]
     }
@@ -1682,6 +1845,7 @@ impl AsRef<str> for SourceCodeVersionType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1693,11 +1857,17 @@ impl AsRef<str> for SourceCodeVersionType {
     std::hash::Hash,
 )]
 pub enum ServiceStatus {
+    #[allow(missing_docs)] // documentation missing in model
     CreateFailed,
+    #[allow(missing_docs)] // documentation missing in model
     Deleted,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteFailed,
+    #[allow(missing_docs)] // documentation missing in model
     OperationInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Paused,
+    #[allow(missing_docs)] // documentation missing in model
     Running,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1723,6 +1893,7 @@ impl std::str::FromStr for ServiceStatus {
     }
 }
 impl ServiceStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ServiceStatus::CreateFailed => "CREATE_FAILED",
@@ -1734,6 +1905,7 @@ impl ServiceStatus {
             ServiceStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CREATE_FAILED",
@@ -1783,6 +1955,7 @@ pub mod tag {
             self.key = Some(input.into());
             self
         }
+        /// <p>The key of the tag.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -1792,6 +1965,7 @@ pub mod tag {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value of the tag.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -1826,9 +2000,9 @@ pub struct ServiceSummary {
     /// <p>A subdomain URL that App Runner generated for this service. You can use this URL to access your service web application.</p>
     pub service_url: std::option::Option<std::string::String>,
     /// <p>The time when the App Runner service was created. It's in the Unix time stamp format.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time when the App Runner service was last updated. It's in theUnix time stamp format.</p>
-    pub updated_at: std::option::Option<smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The current state of the App Runner service. These particular values mean the following.</p>
     /// <ul>
     /// <li>
@@ -1868,8 +2042,8 @@ pub mod service_summary {
         pub(crate) service_id: std::option::Option<std::string::String>,
         pub(crate) service_arn: std::option::Option<std::string::String>,
         pub(crate) service_url: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
-        pub(crate) updated_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) status: std::option::Option<crate::model::ServiceStatus>,
     }
     impl Builder {
@@ -1878,6 +2052,7 @@ pub mod service_summary {
             self.service_name = Some(input.into());
             self
         }
+        /// <p>The customer-provided service name.</p>
         pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service_name = input;
             self
@@ -1887,6 +2062,7 @@ pub mod service_summary {
             self.service_id = Some(input.into());
             self
         }
+        /// <p>An ID that App Runner generated for this service. It's unique within the Amazon Web Services Region.</p>
         pub fn set_service_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service_id = input;
             self
@@ -1896,6 +2072,7 @@ pub mod service_summary {
             self.service_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of this service.</p>
         pub fn set_service_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service_arn = input;
             self
@@ -1905,25 +2082,34 @@ pub mod service_summary {
             self.service_url = Some(input.into());
             self
         }
+        /// <p>A subdomain URL that App Runner generated for this service. You can use this URL to access your service web application.</p>
         pub fn set_service_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service_url = input;
             self
         }
         /// <p>The time when the App Runner service was created. It's in the Unix time stamp format.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time when the App Runner service was created. It's in the Unix time stamp format.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The time when the App Runner service was last updated. It's in theUnix time stamp format.</p>
-        pub fn updated_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.updated_at = Some(input);
             self
         }
-        pub fn set_updated_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time when the App Runner service was last updated. It's in theUnix time stamp format.</p>
+        pub fn set_updated_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.updated_at = input;
             self
         }
@@ -1945,6 +2131,20 @@ pub mod service_summary {
             self.status = Some(input);
             self
         }
+        /// <p>The current state of the App Runner service. These particular values mean the following.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>CREATE_FAILED</code> – The service failed to create. Read the failure events and logs, change any parameters that need to be fixed,
+        /// and retry the call to create the service.</p>
+        /// <p>The failed service isn't usable, and still counts towards your service quota. When you're done analyzing the failure, delete the service.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DELETE_FAILED</code> – The service failed to delete and can't be successfully recovered. Retry the service deletion call to ensure
+        /// that all related resources are removed.</p>
+        /// </li>
+        /// </ul>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ServiceStatus>,
@@ -1986,11 +2186,11 @@ pub struct OperationSummary {
     /// <p>The Amazon Resource Name (ARN) of the resource that the operation acted on (for example, an App Runner service).</p>
     pub target_arn: std::option::Option<std::string::String>,
     /// <p>The time when the operation started. It's in the Unix time stamp format.</p>
-    pub started_at: std::option::Option<smithy_types::Instant>,
+    pub started_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time when the operation ended. It's in the Unix time stamp format.</p>
-    pub ended_at: std::option::Option<smithy_types::Instant>,
+    pub ended_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time when the operation was last updated. It's in the Unix time stamp format.</p>
-    pub updated_at: std::option::Option<smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for OperationSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2015,9 +2215,9 @@ pub mod operation_summary {
         pub(crate) r#type: std::option::Option<crate::model::OperationType>,
         pub(crate) status: std::option::Option<crate::model::OperationStatus>,
         pub(crate) target_arn: std::option::Option<std::string::String>,
-        pub(crate) started_at: std::option::Option<smithy_types::Instant>,
-        pub(crate) ended_at: std::option::Option<smithy_types::Instant>,
-        pub(crate) updated_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) started_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) ended_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>A unique ID of this operation. It's unique in the scope of the App Runner service.</p>
@@ -2025,6 +2225,7 @@ pub mod operation_summary {
             self.id = Some(input.into());
             self
         }
+        /// <p>A unique ID of this operation. It's unique in the scope of the App Runner service.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -2034,6 +2235,7 @@ pub mod operation_summary {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of operation. It indicates a specific action that occured.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::OperationType>) -> Self {
             self.r#type = input;
             self
@@ -2043,6 +2245,7 @@ pub mod operation_summary {
             self.status = Some(input);
             self
         }
+        /// <p>The current state of the operation.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::OperationStatus>,
@@ -2055,34 +2258,47 @@ pub mod operation_summary {
             self.target_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the resource that the operation acted on (for example, an App Runner service).</p>
         pub fn set_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.target_arn = input;
             self
         }
         /// <p>The time when the operation started. It's in the Unix time stamp format.</p>
-        pub fn started_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn started_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.started_at = Some(input);
             self
         }
-        pub fn set_started_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time when the operation started. It's in the Unix time stamp format.</p>
+        pub fn set_started_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.started_at = input;
             self
         }
         /// <p>The time when the operation ended. It's in the Unix time stamp format.</p>
-        pub fn ended_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn ended_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.ended_at = Some(input);
             self
         }
-        pub fn set_ended_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time when the operation ended. It's in the Unix time stamp format.</p>
+        pub fn set_ended_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.ended_at = input;
             self
         }
         /// <p>The time when the operation was last updated. It's in the Unix time stamp format.</p>
-        pub fn updated_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.updated_at = Some(input);
             self
         }
-        pub fn set_updated_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time when the operation was last updated. It's in the Unix time stamp format.</p>
+        pub fn set_updated_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.updated_at = input;
             self
         }
@@ -2107,6 +2323,7 @@ impl OperationSummary {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2118,12 +2335,19 @@ impl OperationSummary {
     std::hash::Hash,
 )]
 pub enum OperationStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     InProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
+    #[allow(missing_docs)] // documentation missing in model
     RollbackFailed,
+    #[allow(missing_docs)] // documentation missing in model
     RollbackInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     RollbackSucceeded,
+    #[allow(missing_docs)] // documentation missing in model
     Succeeded,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2150,6 +2374,7 @@ impl std::str::FromStr for OperationStatus {
     }
 }
 impl OperationStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             OperationStatus::Failed => "FAILED",
@@ -2162,6 +2387,7 @@ impl OperationStatus {
             OperationStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "FAILED",
@@ -2180,6 +2406,7 @@ impl AsRef<str> for OperationStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2191,10 +2418,15 @@ impl AsRef<str> for OperationStatus {
     std::hash::Hash,
 )]
 pub enum OperationType {
+    #[allow(missing_docs)] // documentation missing in model
     CreateService,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteService,
+    #[allow(missing_docs)] // documentation missing in model
     PauseService,
+    #[allow(missing_docs)] // documentation missing in model
     ResumeService,
+    #[allow(missing_docs)] // documentation missing in model
     StartDeployment,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2219,6 +2451,7 @@ impl std::str::FromStr for OperationType {
     }
 }
 impl OperationType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             OperationType::CreateService => "CREATE_SERVICE",
@@ -2229,6 +2462,7 @@ impl OperationType {
             OperationType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CREATE_SERVICE",
@@ -2258,7 +2492,7 @@ pub struct ConnectionSummary {
     /// <p>The current state of the App Runner connection. When the state is <code>AVAILABLE</code>, you can use the connection to create an App Runner service.</p>
     pub status: std::option::Option<crate::model::ConnectionStatus>,
     /// <p>The App Runner connection creation time, expressed as a Unix time stamp.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for ConnectionSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2281,7 +2515,7 @@ pub mod connection_summary {
         pub(crate) connection_arn: std::option::Option<std::string::String>,
         pub(crate) provider_type: std::option::Option<crate::model::ProviderType>,
         pub(crate) status: std::option::Option<crate::model::ConnectionStatus>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The customer-provided connection name.</p>
@@ -2289,6 +2523,7 @@ pub mod connection_summary {
             self.connection_name = Some(input.into());
             self
         }
+        /// <p>The customer-provided connection name.</p>
         pub fn set_connection_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2301,6 +2536,7 @@ pub mod connection_summary {
             self.connection_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of this connection.</p>
         pub fn set_connection_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2313,6 +2549,7 @@ pub mod connection_summary {
             self.provider_type = Some(input);
             self
         }
+        /// <p>The source repository provider.</p>
         pub fn set_provider_type(
             mut self,
             input: std::option::Option<crate::model::ProviderType>,
@@ -2325,6 +2562,7 @@ pub mod connection_summary {
             self.status = Some(input);
             self
         }
+        /// <p>The current state of the App Runner connection. When the state is <code>AVAILABLE</code>, you can use the connection to create an App Runner service.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ConnectionStatus>,
@@ -2333,11 +2571,15 @@ pub mod connection_summary {
             self
         }
         /// <p>The App Runner connection creation time, expressed as a Unix time stamp.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The App Runner connection creation time, expressed as a Unix time stamp.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
@@ -2360,6 +2602,7 @@ impl ConnectionSummary {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2371,9 +2614,13 @@ impl ConnectionSummary {
     std::hash::Hash,
 )]
 pub enum ConnectionStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Available,
+    #[allow(missing_docs)] // documentation missing in model
     Deleted,
+    #[allow(missing_docs)] // documentation missing in model
     Error,
+    #[allow(missing_docs)] // documentation missing in model
     PendingHandshake,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2397,6 +2644,7 @@ impl std::str::FromStr for ConnectionStatus {
     }
 }
 impl ConnectionStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ConnectionStatus::Available => "AVAILABLE",
@@ -2406,6 +2654,7 @@ impl ConnectionStatus {
             ConnectionStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AVAILABLE", "DELETED", "ERROR", "PENDING_HANDSHAKE"]
     }
@@ -2416,6 +2665,7 @@ impl AsRef<str> for ConnectionStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2427,6 +2677,7 @@ impl AsRef<str> for ConnectionStatus {
     std::hash::Hash,
 )]
 pub enum ProviderType {
+    #[allow(missing_docs)] // documentation missing in model
     Github,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2447,12 +2698,14 @@ impl std::str::FromStr for ProviderType {
     }
 }
 impl ProviderType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ProviderType::Github => "GITHUB",
             ProviderType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["GITHUB"]
     }
@@ -2512,6 +2765,8 @@ pub mod custom_domain {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>An associated custom domain endpoint. It can be a root domain (for example, <code>example.com</code>), a subdomain (for example,
+        /// <code>login.example.com</code> or <code>admin.login.example.com</code>), or a wildcard (for example, <code>*.example.com</code>).</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -2523,10 +2778,18 @@ pub mod custom_domain {
             self.enable_www_subdomain = Some(input);
             self
         }
+        /// <p>When <code>true</code>, the subdomain <code>www.<i>DomainName</i>
+        /// </code> is associated with the App Runner service in addition to the base
+        /// domain.</p>
         pub fn set_enable_www_subdomain(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_www_subdomain = input;
             self
         }
+        /// Appends an item to `certificate_validation_records`.
+        ///
+        /// To override the contents of this collection use [`set_certificate_validation_records`](Self::set_certificate_validation_records).
+        ///
+        /// <p>A list of certificate CNAME records that's used for this domain name.</p>
         pub fn certificate_validation_records(
             mut self,
             input: impl Into<crate::model::CertificateValidationRecord>,
@@ -2536,6 +2799,7 @@ pub mod custom_domain {
             self.certificate_validation_records = Some(v);
             self
         }
+        /// <p>A list of certificate CNAME records that's used for this domain name.</p>
         pub fn set_certificate_validation_records(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CertificateValidationRecord>>,
@@ -2548,6 +2812,7 @@ pub mod custom_domain {
             self.status = Some(input);
             self
         }
+        /// <p>The current state of the domain name association.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::CustomDomainAssociationStatus>,
@@ -2573,6 +2838,7 @@ impl CustomDomain {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2584,12 +2850,19 @@ impl CustomDomain {
     std::hash::Hash,
 )]
 pub enum CustomDomainAssociationStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     BindingCertificate,
+    #[allow(missing_docs)] // documentation missing in model
     CreateFailed,
+    #[allow(missing_docs)] // documentation missing in model
     Creating,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteFailed,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
+    #[allow(missing_docs)] // documentation missing in model
     PendingCertificateDnsValidation,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2618,6 +2891,7 @@ impl std::str::FromStr for CustomDomainAssociationStatus {
     }
 }
 impl CustomDomainAssociationStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CustomDomainAssociationStatus::Active => "ACTIVE",
@@ -2632,6 +2906,7 @@ impl CustomDomainAssociationStatus {
             CustomDomainAssociationStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
@@ -2691,6 +2966,7 @@ pub mod certificate_validation_record {
             self.name = Some(input.into());
             self
         }
+        /// <p>The certificate CNAME record name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2700,6 +2976,7 @@ pub mod certificate_validation_record {
             self.r#type = Some(input.into());
             self
         }
+        /// <p>The record type, always <code>CNAME</code>.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
@@ -2709,6 +2986,7 @@ pub mod certificate_validation_record {
             self.value = Some(input.into());
             self
         }
+        /// <p>The certificate CNAME record value.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -2719,6 +2997,8 @@ pub mod certificate_validation_record {
             self.status = Some(input);
             self
         }
+        /// <p>The current state of the certificate CNAME record validation. It should change to <code>SUCCESS</code> after App Runner completes validation with your
+        /// DNS.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::CertificateValidationRecordStatus>,
@@ -2744,6 +3024,7 @@ impl CertificateValidationRecord {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2755,8 +3036,11 @@ impl CertificateValidationRecord {
     std::hash::Hash,
 )]
 pub enum CertificateValidationRecordStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     PendingValidation,
+    #[allow(missing_docs)] // documentation missing in model
     Success,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2779,6 +3063,7 @@ impl std::str::FromStr for CertificateValidationRecordStatus {
     }
 }
 impl CertificateValidationRecordStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CertificateValidationRecordStatus::Failed => "FAILED",
@@ -2787,6 +3072,7 @@ impl CertificateValidationRecordStatus {
             CertificateValidationRecordStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FAILED", "PENDING_VALIDATION", "SUCCESS"]
     }
@@ -2829,9 +3115,9 @@ pub struct AutoScalingConfiguration {
     /// <p>The maximum number of instances that a service scales up to. At most <code>MaxSize</code> instances actively serve traffic for your service.</p>
     pub max_size: i32,
     /// <p>The time when the auto scaling configuration was created. It's in Unix time stamp format.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time when the auto scaling configuration was deleted. It's in Unix time stamp format.</p>
-    pub deleted_at: std::option::Option<smithy_types::Instant>,
+    pub deleted_at: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for AutoScalingConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2872,8 +3158,8 @@ pub mod auto_scaling_configuration {
         pub(crate) max_concurrency: std::option::Option<i32>,
         pub(crate) min_size: std::option::Option<i32>,
         pub(crate) max_size: std::option::Option<i32>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
-        pub(crate) deleted_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) deleted_at: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of this auto scaling configuration.</p>
@@ -2884,6 +3170,7 @@ pub mod auto_scaling_configuration {
             self.auto_scaling_configuration_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of this auto scaling configuration.</p>
         pub fn set_auto_scaling_configuration_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2899,6 +3186,7 @@ pub mod auto_scaling_configuration {
             self.auto_scaling_configuration_name = Some(input.into());
             self
         }
+        /// <p>The customer-provided auto scaling configuration name. It can be used in multiple revisions of a configuration.</p>
         pub fn set_auto_scaling_configuration_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2912,6 +3200,8 @@ pub mod auto_scaling_configuration {
             self.auto_scaling_configuration_revision = Some(input);
             self
         }
+        /// <p>The revision of this auto scaling configuration. It's unique among all the active configurations (<code>"Status": "ACTIVE"</code>) that share the same
+        /// <code>AutoScalingConfigurationName</code>.</p>
         pub fn set_auto_scaling_configuration_revision(
             mut self,
             input: std::option::Option<i32>,
@@ -2925,6 +3215,8 @@ pub mod auto_scaling_configuration {
             self.latest = Some(input);
             self
         }
+        /// <p>It's set to <code>true</code> for the configuration with the highest <code>Revision</code> among all configurations that share the same
+        /// <code>Name</code>. It's set to <code>false</code> otherwise.</p>
         pub fn set_latest(mut self, input: std::option::Option<bool>) -> Self {
             self.latest = input;
             self
@@ -2935,6 +3227,8 @@ pub mod auto_scaling_configuration {
             self.status = Some(input);
             self
         }
+        /// <p>The current state of the auto scaling configuration. If the status of a configuration revision is <code>INACTIVE</code>, it was deleted and can't be
+        /// used. Inactive configuration revisions are permanently removed some time after they are deleted.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::AutoScalingConfigurationStatus>,
@@ -2948,6 +3242,8 @@ pub mod auto_scaling_configuration {
             self.max_concurrency = Some(input);
             self
         }
+        /// <p>The maximum number of concurrent requests that an instance processes. If the number of concurrent requests exceeds this limit, App Runner scales the service
+        /// up.</p>
         pub fn set_max_concurrency(mut self, input: std::option::Option<i32>) -> Self {
             self.max_concurrency = input;
             self
@@ -2960,6 +3256,10 @@ pub mod auto_scaling_configuration {
             self.min_size = Some(input);
             self
         }
+        /// <p>The minimum number of instances that App Runner provisions for a service. The service always has at least <code>MinSize</code> provisioned instances. Some
+        /// of them actively serve traffic. The rest of them (provisioned and inactive instances) are a cost-effective compute capacity reserve and are ready to be
+        /// quickly activated. You pay for memory usage of all the provisioned instances. You pay for CPU usage of only the active subset.</p>
+        /// <p>App Runner temporarily doubles the number of provisioned instances during deployments, to maintain the same capacity for both old and new code.</p>
         pub fn set_min_size(mut self, input: std::option::Option<i32>) -> Self {
             self.min_size = input;
             self
@@ -2969,25 +3269,34 @@ pub mod auto_scaling_configuration {
             self.max_size = Some(input);
             self
         }
+        /// <p>The maximum number of instances that a service scales up to. At most <code>MaxSize</code> instances actively serve traffic for your service.</p>
         pub fn set_max_size(mut self, input: std::option::Option<i32>) -> Self {
             self.max_size = input;
             self
         }
         /// <p>The time when the auto scaling configuration was created. It's in Unix time stamp format.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time when the auto scaling configuration was created. It's in Unix time stamp format.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The time when the auto scaling configuration was deleted. It's in Unix time stamp format.</p>
-        pub fn deleted_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn deleted_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.deleted_at = Some(input);
             self
         }
-        pub fn set_deleted_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time when the auto scaling configuration was deleted. It's in Unix time stamp format.</p>
+        pub fn set_deleted_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.deleted_at = input;
             self
         }
@@ -3017,6 +3326,7 @@ impl AutoScalingConfiguration {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3028,7 +3338,9 @@ impl AutoScalingConfiguration {
     std::hash::Hash,
 )]
 pub enum AutoScalingConfigurationStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     Inactive,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3050,6 +3362,7 @@ impl std::str::FromStr for AutoScalingConfigurationStatus {
     }
 }
 impl AutoScalingConfigurationStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AutoScalingConfigurationStatus::Active => "ACTIVE",
@@ -3057,6 +3370,7 @@ impl AutoScalingConfigurationStatus {
             AutoScalingConfigurationStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ACTIVE", "INACTIVE"]
     }
@@ -3080,7 +3394,7 @@ pub struct Connection {
     /// <p>The current state of the App Runner connection. When the state is <code>AVAILABLE</code>, you can use the connection to create an App Runner service.</p>
     pub status: std::option::Option<crate::model::ConnectionStatus>,
     /// <p>The App Runner connection creation time, expressed as a Unix time stamp.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for Connection {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3103,7 +3417,7 @@ pub mod connection {
         pub(crate) connection_arn: std::option::Option<std::string::String>,
         pub(crate) provider_type: std::option::Option<crate::model::ProviderType>,
         pub(crate) status: std::option::Option<crate::model::ConnectionStatus>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The customer-provided connection name.</p>
@@ -3111,6 +3425,7 @@ pub mod connection {
             self.connection_name = Some(input.into());
             self
         }
+        /// <p>The customer-provided connection name.</p>
         pub fn set_connection_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3123,6 +3438,7 @@ pub mod connection {
             self.connection_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of this connection.</p>
         pub fn set_connection_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3135,6 +3451,7 @@ pub mod connection {
             self.provider_type = Some(input);
             self
         }
+        /// <p>The source repository provider.</p>
         pub fn set_provider_type(
             mut self,
             input: std::option::Option<crate::model::ProviderType>,
@@ -3147,6 +3464,7 @@ pub mod connection {
             self.status = Some(input);
             self
         }
+        /// <p>The current state of the App Runner connection. When the state is <code>AVAILABLE</code>, you can use the connection to create an App Runner service.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ConnectionStatus>,
@@ -3155,11 +3473,15 @@ pub mod connection {
             self
         }
         /// <p>The App Runner connection creation time, expressed as a Unix time stamp.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The App Runner connection creation time, expressed as a Unix time stamp.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }

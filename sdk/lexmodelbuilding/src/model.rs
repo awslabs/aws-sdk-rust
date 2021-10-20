@@ -36,6 +36,8 @@ pub mod tag {
             self.key = Some(input.into());
             self
         }
+        /// <p>The key for the tag. Keys are not case-sensitive and must be
+        /// unique.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -46,6 +48,8 @@ pub mod tag {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value associated with a key. The value may be an empty string but
+        /// it can't be null.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -66,6 +70,7 @@ impl Tag {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -77,7 +82,9 @@ impl Tag {
     std::hash::Hash,
 )]
 pub enum MigrationStrategy {
+    #[allow(missing_docs)] // documentation missing in model
     CreateNew,
+    #[allow(missing_docs)] // documentation missing in model
     UpdateExisting,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -99,6 +106,7 @@ impl std::str::FromStr for MigrationStrategy {
     }
 }
 impl MigrationStrategy {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MigrationStrategy::CreateNew => "CREATE_NEW",
@@ -106,6 +114,7 @@ impl MigrationStrategy {
             MigrationStrategy::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CREATE_NEW", "UPDATE_EXISTING"]
     }
@@ -116,6 +125,7 @@ impl AsRef<str> for MigrationStrategy {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -127,18 +137,31 @@ impl AsRef<str> for MigrationStrategy {
     std::hash::Hash,
 )]
 pub enum Locale {
+    #[allow(missing_docs)] // documentation missing in model
     DeDe,
+    #[allow(missing_docs)] // documentation missing in model
     EnAu,
+    #[allow(missing_docs)] // documentation missing in model
     EnGb,
+    #[allow(missing_docs)] // documentation missing in model
     EnIn,
+    #[allow(missing_docs)] // documentation missing in model
     EnUs,
+    #[allow(missing_docs)] // documentation missing in model
     Es419,
+    #[allow(missing_docs)] // documentation missing in model
     EsEs,
+    #[allow(missing_docs)] // documentation missing in model
     EsUs,
+    #[allow(missing_docs)] // documentation missing in model
     FrCa,
+    #[allow(missing_docs)] // documentation missing in model
     FrFr,
+    #[allow(missing_docs)] // documentation missing in model
     ItIt,
+    #[allow(missing_docs)] // documentation missing in model
     JaJp,
+    #[allow(missing_docs)] // documentation missing in model
     KoKr,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -171,6 +194,7 @@ impl std::str::FromStr for Locale {
     }
 }
 impl Locale {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Locale::DeDe => "de-DE",
@@ -189,6 +213,7 @@ impl Locale {
             Locale::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "de-DE", "en-AU", "en-GB", "en-IN", "en-US", "es-419", "es-ES", "es-US", "fr-CA",
@@ -202,6 +227,7 @@ impl AsRef<str> for Locale {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -213,8 +239,11 @@ impl AsRef<str> for Locale {
     std::hash::Hash,
 )]
 pub enum ImportStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Complete,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     InProgress,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -237,6 +266,7 @@ impl std::str::FromStr for ImportStatus {
     }
 }
 impl ImportStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ImportStatus::Complete => "COMPLETE",
@@ -245,6 +275,7 @@ impl ImportStatus {
             ImportStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["COMPLETE", "FAILED", "IN_PROGRESS"]
     }
@@ -255,6 +286,7 @@ impl AsRef<str> for ImportStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -266,7 +298,9 @@ impl AsRef<str> for ImportStatus {
     std::hash::Hash,
 )]
 pub enum MergeStrategy {
+    #[allow(missing_docs)] // documentation missing in model
     FailOnConflict,
+    #[allow(missing_docs)] // documentation missing in model
     OverwriteLatest,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -288,6 +322,7 @@ impl std::str::FromStr for MergeStrategy {
     }
 }
 impl MergeStrategy {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MergeStrategy::FailOnConflict => "FAIL_ON_CONFLICT",
@@ -295,6 +330,7 @@ impl MergeStrategy {
             MergeStrategy::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FAIL_ON_CONFLICT", "OVERWRITE_LATEST"]
     }
@@ -305,6 +341,7 @@ impl AsRef<str> for MergeStrategy {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -316,8 +353,11 @@ impl AsRef<str> for MergeStrategy {
     std::hash::Hash,
 )]
 pub enum ResourceType {
+    #[allow(missing_docs)] // documentation missing in model
     Bot,
+    #[allow(missing_docs)] // documentation missing in model
     Intent,
+    #[allow(missing_docs)] // documentation missing in model
     SlotType,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -340,6 +380,7 @@ impl std::str::FromStr for ResourceType {
     }
 }
 impl ResourceType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ResourceType::Bot => "BOT",
@@ -348,6 +389,7 @@ impl ResourceType {
             ResourceType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["BOT", "INTENT", "SLOT_TYPE"]
     }
@@ -390,6 +432,7 @@ pub mod slot_type_configuration {
             self.regex_configuration = Some(input);
             self
         }
+        /// <p>A regular expression used to validate the value of a slot.</p>
         pub fn set_regex_configuration(
             mut self,
             input: std::option::Option<crate::model::SlotTypeRegexConfiguration>,
@@ -489,6 +532,31 @@ pub mod slot_type_regex_configuration {
             self.pattern = Some(input.into());
             self
         }
+        /// <p>A regular expression used to validate the value of a slot. </p>
+        /// <p>Use a standard regular expression. Amazon Lex supports the following
+        /// characters in the regular expression:</p>
+        /// <ul>
+        /// <li>
+        /// <p>A-Z, a-z</p>
+        /// </li>
+        /// <li>
+        /// <p>0-9</p>
+        /// </li>
+        /// <li>
+        /// <p>Unicode characters ("\ u<Unicode>")</p>
+        /// </li>
+        /// </ul>
+        /// <p>Represent Unicode characters with four digits, for example
+        /// "\u0041" or "\u005A".</p>
+        /// <p>The following regular expression operators are not supported:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Infinite repeaters: *, +, or {x,} with no upper bound.</p>
+        /// </li>
+        /// <li>
+        /// <p>Wild card (.)</p>
+        /// </li>
+        /// </ul>
         pub fn set_pattern(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.pattern = input;
             self
@@ -508,6 +576,7 @@ impl SlotTypeRegexConfiguration {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -519,7 +588,9 @@ impl SlotTypeRegexConfiguration {
     std::hash::Hash,
 )]
 pub enum SlotValueSelectionStrategy {
+    #[allow(missing_docs)] // documentation missing in model
     OriginalValue,
+    #[allow(missing_docs)] // documentation missing in model
     TopResolution,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -541,6 +612,7 @@ impl std::str::FromStr for SlotValueSelectionStrategy {
     }
 }
 impl SlotValueSelectionStrategy {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SlotValueSelectionStrategy::OriginalValue => "ORIGINAL_VALUE",
@@ -548,6 +620,7 @@ impl SlotValueSelectionStrategy {
             SlotValueSelectionStrategy::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ORIGINAL_VALUE", "TOP_RESOLUTION"]
     }
@@ -605,16 +678,23 @@ pub mod enumeration_value {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value of the slot type.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
         }
+        /// Appends an item to `synonyms`.
+        ///
+        /// To override the contents of this collection use [`set_synonyms`](Self::set_synonyms).
+        ///
+        /// <p>Additional values related to the slot type value.</p>
         pub fn synonyms(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.synonyms.unwrap_or_default();
             v.push(input.into());
             self.synonyms = Some(v);
             self
         }
+        /// <p>Additional values related to the slot type value.</p>
         pub fn set_synonyms(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -680,6 +760,7 @@ pub mod output_context {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the context.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -692,6 +773,10 @@ pub mod output_context {
             self.time_to_live_in_seconds = Some(input);
             self
         }
+        /// <p>The number of seconds that the context should be active after it is
+        /// first sent in a <code>PostContent</code> or <code>PostText</code>
+        /// response. You can set the value between 5 and 86,400 seconds (24
+        /// hours).</p>
         pub fn set_time_to_live_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.time_to_live_in_seconds = input;
             self
@@ -703,6 +788,9 @@ pub mod output_context {
             self.turns_to_live = Some(input);
             self
         }
+        /// <p>The number of conversation turns that the context should be active. A
+        /// conversation turn is one <code>PostContent</code> or <code>PostText</code>
+        /// request and the corresponding response from Amazon Lex.</p>
         pub fn set_turns_to_live(mut self, input: std::option::Option<i32>) -> Self {
             self.turns_to_live = input;
             self
@@ -753,6 +841,7 @@ pub mod input_context {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the context.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -826,6 +915,11 @@ pub mod kendra_configuration {
             self.kendra_index = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the Amazon Kendra index that you
+        /// want the AMAZON.KendraSearchIntent intent to search. The index must be in
+        /// the same account and Region as the Amazon Lex bot. If the Amazon Kendra index
+        /// does not exist, you get an exception when you call the
+        /// <code>PutIntent</code> operation.</p>
         pub fn set_kendra_index(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kendra_index = input;
             self
@@ -840,6 +934,12 @@ pub mod kendra_configuration {
             self.query_filter_string = Some(input.into());
             self
         }
+        /// <p>A query filter that Amazon Lex sends to Amazon Kendra to filter the
+        /// response from the query. The filter is in the format defined by Amazon
+        /// Kendra. For more information, see <a href="http://docs.aws.amazon.com/kendra/latest/dg/filtering.html">Filtering
+        /// queries</a>.</p>
+        /// <p>You can override this filter string with a new filter string at
+        /// runtime.</p>
         pub fn set_query_filter_string(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -855,6 +955,10 @@ pub mod kendra_configuration {
             self.role = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of an IAM role that has permission to
+        /// search the Amazon Kendra index. The role must be in the same account and
+        /// Region as the Amazon Lex bot. If the role does not exist, you get an exception
+        /// when you call the <code>PutIntent</code> operation.</p>
         pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role = input;
             self
@@ -884,6 +988,8 @@ impl KendraConfiguration {
 /// primarily to presentation. If you need to update the logic, you only
 /// update the Lambda function; you don't need to upgrade your client
 /// application. </p>
+///
+///
 /// <p>Consider the following examples:</p>
 /// <ul>
 /// <li>
@@ -934,6 +1040,9 @@ pub mod fulfillment_activity {
             self.r#type = Some(input);
             self
         }
+        /// <p> How the intent should be fulfilled, either by running a Lambda
+        /// function or by returning the slot data to the client application.
+        /// </p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::FulfillmentActivityType>,
@@ -947,6 +1056,8 @@ pub mod fulfillment_activity {
             self.code_hook = Some(input);
             self
         }
+        /// <p> A description of the Lambda function that is run to fulfill the
+        /// intent. </p>
         pub fn set_code_hook(mut self, input: std::option::Option<crate::model::CodeHook>) -> Self {
             self.code_hook = input;
             self
@@ -1001,6 +1112,7 @@ pub mod code_hook {
             self.uri = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
         pub fn set_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.uri = input;
             self
@@ -1011,6 +1123,8 @@ pub mod code_hook {
             self.message_version = Some(input.into());
             self
         }
+        /// <p>The version of the request-response that you want Amazon Lex to use to
+        /// invoke your Lambda function. For more information, see <a>using-lambda</a>.</p>
         pub fn set_message_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1034,6 +1148,7 @@ impl CodeHook {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1045,7 +1160,9 @@ impl CodeHook {
     std::hash::Hash,
 )]
 pub enum FulfillmentActivityType {
+    #[allow(missing_docs)] // documentation missing in model
     CodeHook,
+    #[allow(missing_docs)] // documentation missing in model
     ReturnIntent,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1067,6 +1184,7 @@ impl std::str::FromStr for FulfillmentActivityType {
     }
 }
 impl FulfillmentActivityType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FulfillmentActivityType::CodeHook => "CodeHook",
@@ -1074,6 +1192,7 @@ impl FulfillmentActivityType {
             FulfillmentActivityType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CodeHook", "ReturnIntent"]
     }
@@ -1114,12 +1233,18 @@ pub mod statement {
         pub(crate) response_card: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `messages`.
+        ///
+        /// To override the contents of this collection use [`set_messages`](Self::set_messages).
+        ///
+        /// <p>A collection of message objects.</p>
         pub fn messages(mut self, input: impl Into<crate::model::Message>) -> Self {
             let mut v = self.messages.unwrap_or_default();
             v.push(input.into());
             self.messages = Some(v);
             self
         }
+        /// <p>A collection of message objects.</p>
         pub fn set_messages(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Message>>,
@@ -1134,6 +1259,9 @@ pub mod statement {
             self.response_card = Some(input.into());
             self
         }
+        /// <p> At runtime, if the client is using the <a href="http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> API, Amazon Lex includes the response card in the response.
+        /// It substitutes all of the session attributes and slot values for
+        /// placeholders in the response card. </p>
         pub fn set_response_card(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1196,6 +1324,7 @@ pub mod message {
             self.content_type = Some(input);
             self
         }
+        /// <p>The content type of the message string.</p>
         pub fn set_content_type(
             mut self,
             input: std::option::Option<crate::model::ContentType>,
@@ -1208,6 +1337,7 @@ pub mod message {
             self.content = Some(input.into());
             self
         }
+        /// <p>The text of the message.</p>
         pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content = input;
             self
@@ -1219,6 +1349,9 @@ pub mod message {
             self.group_number = Some(input);
             self
         }
+        /// <p>Identifies the message group that the message belongs to. When a group
+        /// is assigned to a message, Amazon Lex returns one message from each group in the
+        /// response.</p>
         pub fn set_group_number(mut self, input: std::option::Option<i32>) -> Self {
             self.group_number = input;
             self
@@ -1240,6 +1373,7 @@ impl Message {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1251,8 +1385,11 @@ impl Message {
     std::hash::Hash,
 )]
 pub enum ContentType {
+    #[allow(missing_docs)] // documentation missing in model
     CustomPayload,
+    #[allow(missing_docs)] // documentation missing in model
     PlainText,
+    #[allow(missing_docs)] // documentation missing in model
     Ssml,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1275,6 +1412,7 @@ impl std::str::FromStr for ContentType {
     }
 }
 impl ContentType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ContentType::CustomPayload => "CustomPayload",
@@ -1283,6 +1421,7 @@ impl ContentType {
             ContentType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CustomPayload", "PlainText", "SSML"]
     }
@@ -1330,6 +1469,7 @@ pub mod follow_up_prompt {
             self.prompt = Some(input);
             self
         }
+        /// <p>Prompts for information from the user. </p>
         pub fn set_prompt(mut self, input: std::option::Option<crate::model::Prompt>) -> Self {
             self.prompt = input;
             self
@@ -1341,6 +1481,9 @@ pub mod follow_up_prompt {
             self.rejection_statement = Some(input);
             self
         }
+        /// <p>If the user answers "no" to the question defined in the
+        /// <code>prompt</code> field, Amazon Lex responds with this statement to
+        /// acknowledge that the intent was canceled. </p>
         pub fn set_rejection_statement(
             mut self,
             input: std::option::Option<crate::model::Statement>,
@@ -1403,12 +1546,22 @@ pub mod prompt {
         pub(crate) response_card: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `messages`.
+        ///
+        /// To override the contents of this collection use [`set_messages`](Self::set_messages).
+        ///
+        /// <p>An array of objects, each of which provides a message string and
+        /// its type. You can specify the message string in plain text or in Speech
+        /// Synthesis Markup Language (SSML).</p>
         pub fn messages(mut self, input: impl Into<crate::model::Message>) -> Self {
             let mut v = self.messages.unwrap_or_default();
             v.push(input.into());
             self.messages = Some(v);
             self
         }
+        /// <p>An array of objects, each of which provides a message string and
+        /// its type. You can specify the message string in plain text or in Speech
+        /// Synthesis Markup Language (SSML).</p>
         pub fn set_messages(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Message>>,
@@ -1421,6 +1574,7 @@ pub mod prompt {
             self.max_attempts = Some(input);
             self
         }
+        /// <p>The number of times to prompt the user for information.</p>
         pub fn set_max_attempts(mut self, input: std::option::Option<i32>) -> Self {
             self.max_attempts = input;
             self
@@ -1433,6 +1587,10 @@ pub mod prompt {
             self.response_card = Some(input.into());
             self
         }
+        /// <p>A response card. Amazon Lex uses this prompt at runtime, in the
+        /// <code>PostText</code> API response. It substitutes session attributes
+        /// and slot values for placeholders in the response card. For more
+        /// information, see <a>ex-resp-card</a>. </p>
         pub fn set_response_card(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1543,6 +1701,7 @@ pub mod slot {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the slot.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1552,6 +1711,7 @@ pub mod slot {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description of the slot.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -1561,6 +1721,7 @@ pub mod slot {
             self.slot_constraint = Some(input);
             self
         }
+        /// <p>Specifies whether the slot is required or optional. </p>
         pub fn set_slot_constraint(
             mut self,
             input: std::option::Option<crate::model::SlotConstraint>,
@@ -1574,6 +1735,8 @@ pub mod slot {
             self.slot_type = Some(input.into());
             self
         }
+        /// <p>The type of the slot, either a custom slot type that you defined or
+        /// one of the built-in slot types.</p>
         pub fn set_slot_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.slot_type = input;
             self
@@ -1583,6 +1746,7 @@ pub mod slot {
             self.slot_type_version = Some(input.into());
             self
         }
+        /// <p>The version of the slot type.</p>
         pub fn set_slot_type_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1596,6 +1760,8 @@ pub mod slot {
             self.value_elicitation_prompt = Some(input);
             self
         }
+        /// <p>The prompt that Amazon Lex uses to elicit the slot value from the
+        /// user.</p>
         pub fn set_value_elicitation_prompt(
             mut self,
             input: std::option::Option<crate::model::Prompt>,
@@ -1612,16 +1778,33 @@ pub mod slot {
             self.priority = Some(input);
             self
         }
+        /// <p> Directs Amazon Lex the order in which to elicit this slot value from
+        /// the user. For example, if the intent has two slots with priorities 1 and
+        /// 2, AWS Amazon Lex first elicits a value for the slot with priority 1.</p>
+        /// <p>If multiple slots share the same priority, the order in which Amazon Lex
+        /// elicits values is arbitrary.</p>
         pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
             self.priority = input;
             self
         }
+        /// Appends an item to `sample_utterances`.
+        ///
+        /// To override the contents of this collection use [`set_sample_utterances`](Self::set_sample_utterances).
+        ///
+        /// <p> If you know a specific pattern with which users might respond to
+        /// an Amazon Lex request for a slot value, you can provide those utterances to
+        /// improve accuracy. This is optional. In most cases, Amazon Lex is capable of
+        /// understanding user utterances. </p>
         pub fn sample_utterances(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.sample_utterances.unwrap_or_default();
             v.push(input.into());
             self.sample_utterances = Some(v);
             self
         }
+        /// <p> If you know a specific pattern with which users might respond to
+        /// an Amazon Lex request for a slot value, you can provide those utterances to
+        /// improve accuracy. This is optional. In most cases, Amazon Lex is capable of
+        /// understanding user utterances. </p>
         pub fn set_sample_utterances(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1636,6 +1819,9 @@ pub mod slot {
             self.response_card = Some(input.into());
             self
         }
+        /// <p> A set of possible responses for the slot type used by text-based
+        /// clients. A user chooses an option from the response card, instead of using
+        /// text to reply. </p>
         pub fn set_response_card(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1653,6 +1839,12 @@ pub mod slot {
             self.obfuscation_setting = Some(input);
             self
         }
+        /// <p>Determines whether a slot is obfuscated in conversation logs and
+        /// stored utterances. When you obfuscate a slot, the value is replaced by the
+        /// slot name in curly braces ({}). For example, if the slot name is
+        /// "full_name", obfuscated values are replaced with "{full_name}". For more
+        /// information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/how-obfuscate.html"> Slot Obfuscation </a>.
+        /// </p>
         pub fn set_obfuscation_setting(
             mut self,
             input: std::option::Option<crate::model::ObfuscationSetting>,
@@ -1667,6 +1859,9 @@ pub mod slot {
             self.default_value_spec = Some(input);
             self
         }
+        /// <p>A list of default values for the slot. Default values are used when
+        /// Amazon Lex hasn't determined a value for a slot. You can specify default values
+        /// from context variables, session attributes, and defined values.</p>
         pub fn set_default_value_spec(
             mut self,
             input: std::option::Option<crate::model::SlotDefaultValueSpec>,
@@ -1730,6 +1925,17 @@ pub mod slot_default_value_spec {
             std::option::Option<std::vec::Vec<crate::model::SlotDefaultValue>>,
     }
     impl Builder {
+        /// Appends an item to `default_value_list`.
+        ///
+        /// To override the contents of this collection use [`set_default_value_list`](Self::set_default_value_list).
+        ///
+        /// <p>The default values for a slot. You can specify more than one default.
+        /// For example, you can specify a default value to use from a matching
+        /// context variable, a session attribute, or a fixed value.</p>
+        /// <p>The default value chosen is selected based on the order that you
+        /// specify them in the list. For example, if you specify a context variable
+        /// and a fixed value in that order, Amazon Lex uses the context variable if it is
+        /// available, else it uses the fixed value.</p>
         pub fn default_value_list(
             mut self,
             input: impl Into<crate::model::SlotDefaultValue>,
@@ -1739,6 +1945,13 @@ pub mod slot_default_value_spec {
             self.default_value_list = Some(v);
             self
         }
+        /// <p>The default values for a slot. You can specify more than one default.
+        /// For example, you can specify a default value to use from a matching
+        /// context variable, a session attribute, or a fixed value.</p>
+        /// <p>The default value chosen is selected based on the order that you
+        /// specify them in the list. For example, if you specify a context variable
+        /// and a fixed value in that order, Amazon Lex uses the context variable if it is
+        /// available, else it uses the fixed value.</p>
         pub fn set_default_value_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SlotDefaultValue>>,
@@ -1823,6 +2036,24 @@ pub mod slot_default_value {
             self.default_value = Some(input.into());
             self
         }
+        /// <p>The default value for the slot. You can specify one of the
+        /// following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>#context-name.slot-name</code> - The slot value "slot-name"
+        /// in the context "context-name."</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>{attribute}</code> - The slot value of the session attribute
+        /// "attribute."</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>'value'</code> - The discrete value "value."</p>
+        /// </li>
+        /// </ul>
         pub fn set_default_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1845,6 +2076,7 @@ impl SlotDefaultValue {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1856,7 +2088,9 @@ impl SlotDefaultValue {
     std::hash::Hash,
 )]
 pub enum ObfuscationSetting {
+    #[allow(missing_docs)] // documentation missing in model
     DefaultObfuscation,
+    #[allow(missing_docs)] // documentation missing in model
     None,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1878,6 +2112,7 @@ impl std::str::FromStr for ObfuscationSetting {
     }
 }
 impl ObfuscationSetting {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ObfuscationSetting::DefaultObfuscation => "DEFAULT_OBFUSCATION",
@@ -1885,6 +2120,7 @@ impl ObfuscationSetting {
             ObfuscationSetting::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DEFAULT_OBFUSCATION", "NONE"]
     }
@@ -1895,6 +2131,7 @@ impl AsRef<str> for ObfuscationSetting {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1906,7 +2143,9 @@ impl AsRef<str> for ObfuscationSetting {
     std::hash::Hash,
 )]
 pub enum SlotConstraint {
+    #[allow(missing_docs)] // documentation missing in model
     Optional,
+    #[allow(missing_docs)] // documentation missing in model
     Required,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1928,6 +2167,7 @@ impl std::str::FromStr for SlotConstraint {
     }
 }
 impl SlotConstraint {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SlotConstraint::Optional => "Optional",
@@ -1935,6 +2175,7 @@ impl SlotConstraint {
             SlotConstraint::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Optional", "Required"]
     }
@@ -1975,12 +2216,20 @@ pub mod conversation_logs_response {
         pub(crate) iam_role_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `log_settings`.
+        ///
+        /// To override the contents of this collection use [`set_log_settings`](Self::set_log_settings).
+        ///
+        /// <p>The settings for your conversation logs. You can log text, audio, or
+        /// both.</p>
         pub fn log_settings(mut self, input: impl Into<crate::model::LogSettingsResponse>) -> Self {
             let mut v = self.log_settings.unwrap_or_default();
             v.push(input.into());
             self.log_settings = Some(v);
             self
         }
+        /// <p>The settings for your conversation logs. You can log text, audio, or
+        /// both.</p>
         pub fn set_log_settings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LogSettingsResponse>>,
@@ -1994,6 +2243,8 @@ pub mod conversation_logs_response {
             self.iam_role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the IAM role used to write your logs
+        /// to CloudWatch Logs or an S3 bucket.</p>
         pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.iam_role_arn = input;
             self
@@ -2063,6 +2314,7 @@ pub mod log_settings_response {
             self.log_type = Some(input);
             self
         }
+        /// <p>The type of logging that is enabled.</p>
         pub fn set_log_type(mut self, input: std::option::Option<crate::model::LogType>) -> Self {
             self.log_type = input;
             self
@@ -2072,6 +2324,7 @@ pub mod log_settings_response {
             self.destination = Some(input);
             self
         }
+        /// <p>The destination where logs are delivered.</p>
         pub fn set_destination(
             mut self,
             input: std::option::Option<crate::model::Destination>,
@@ -2085,6 +2338,8 @@ pub mod log_settings_response {
             self.kms_key_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the key used to encrypt audio logs
+        /// in an S3 bucket.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_arn = input;
             self
@@ -2095,6 +2350,8 @@ pub mod log_settings_response {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the CloudWatch Logs log group or S3
+        /// bucket where the logs are delivered.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -2107,6 +2364,10 @@ pub mod log_settings_response {
             self.resource_prefix = Some(input.into());
             self
         }
+        /// <p>The resource prefix is the first part of the S3 object key within the
+        /// S3 bucket that you specified to contain audio logs. For CloudWatch Logs it
+        /// is the prefix of the log stream name within the log group that you
+        /// specified. </p>
         pub fn set_resource_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2133,6 +2394,7 @@ impl LogSettingsResponse {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2144,7 +2406,9 @@ impl LogSettingsResponse {
     std::hash::Hash,
 )]
 pub enum Destination {
+    #[allow(missing_docs)] // documentation missing in model
     CloudwatchLogs,
+    #[allow(missing_docs)] // documentation missing in model
     S3,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2166,6 +2430,7 @@ impl std::str::FromStr for Destination {
     }
 }
 impl Destination {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Destination::CloudwatchLogs => "CLOUDWATCH_LOGS",
@@ -2173,6 +2438,7 @@ impl Destination {
             Destination::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CLOUDWATCH_LOGS", "S3"]
     }
@@ -2183,6 +2449,7 @@ impl AsRef<str> for Destination {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2194,7 +2461,9 @@ impl AsRef<str> for Destination {
     std::hash::Hash,
 )]
 pub enum LogType {
+    #[allow(missing_docs)] // documentation missing in model
     Audio,
+    #[allow(missing_docs)] // documentation missing in model
     Text,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2216,6 +2485,7 @@ impl std::str::FromStr for LogType {
     }
 }
 impl LogType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LogType::Audio => "AUDIO",
@@ -2223,6 +2493,7 @@ impl LogType {
             LogType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AUDIO", "TEXT"]
     }
@@ -2267,12 +2538,20 @@ pub mod conversation_logs_request {
         pub(crate) iam_role_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `log_settings`.
+        ///
+        /// To override the contents of this collection use [`set_log_settings`](Self::set_log_settings).
+        ///
+        /// <p>The settings for your conversation logs. You can log the conversation
+        /// text, conversation audio, or both.</p>
         pub fn log_settings(mut self, input: impl Into<crate::model::LogSettingsRequest>) -> Self {
             let mut v = self.log_settings.unwrap_or_default();
             v.push(input.into());
             self.log_settings = Some(v);
             self
         }
+        /// <p>The settings for your conversation logs. You can log the conversation
+        /// text, conversation audio, or both.</p>
         pub fn set_log_settings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LogSettingsRequest>>,
@@ -2290,6 +2569,12 @@ pub mod conversation_logs_request {
             self.iam_role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to write
+        /// to your CloudWatch Logs for text logs and your S3 bucket for audio logs.
+        /// If audio encryption is enabled, this role also provides access permission
+        /// for the AWS KMS key used for encrypting audio logs. For more information,
+        /// see <a href="https://docs.aws.amazon.com/lex/latest/dg/conversation-logs-role-and-policy.html">Creating an
+        /// IAM Role and Policy for Conversation Logs</a>.</p>
         pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.iam_role_arn = input;
             self
@@ -2358,6 +2643,8 @@ pub mod log_settings_request {
             self.log_type = Some(input);
             self
         }
+        /// <p>The type of logging to enable. Text logs are delivered to a CloudWatch
+        /// Logs log group. Audio logs are delivered to an S3 bucket.</p>
         pub fn set_log_type(mut self, input: std::option::Option<crate::model::LogType>) -> Self {
             self.log_type = input;
             self
@@ -2369,6 +2656,9 @@ pub mod log_settings_request {
             self.destination = Some(input);
             self
         }
+        /// <p>Where the logs will be delivered. Text logs are delivered to a
+        /// CloudWatch Logs log group. Audio logs are delivered to an S3
+        /// bucket.</p>
         pub fn set_destination(
             mut self,
             input: std::option::Option<crate::model::Destination>,
@@ -2383,6 +2673,9 @@ pub mod log_settings_request {
             self.kms_key_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the AWS KMS customer managed key for
+        /// encrypting audio logs delivered to an S3 bucket. The key does not apply to
+        /// CloudWatch Logs and is optional for S3 buckets.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_arn = input;
             self
@@ -2393,6 +2686,8 @@ pub mod log_settings_request {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the CloudWatch Logs log group or S3
+        /// bucket where the logs should be delivered.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -2415,6 +2710,7 @@ impl LogSettingsRequest {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2426,10 +2722,15 @@ impl LogSettingsRequest {
     std::hash::Hash,
 )]
 pub enum Status {
+    #[allow(missing_docs)] // documentation missing in model
     Building,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     NotBuilt,
+    #[allow(missing_docs)] // documentation missing in model
     Ready,
+    #[allow(missing_docs)] // documentation missing in model
     ReadyBasicTesting,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2454,6 +2755,7 @@ impl std::str::FromStr for Status {
     }
 }
 impl Status {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Status::Building => "BUILDING",
@@ -2464,6 +2766,7 @@ impl Status {
             Status::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "BUILDING",
@@ -2512,6 +2815,7 @@ pub mod intent {
             self.intent_name = Some(input.into());
             self
         }
+        /// <p>The name of the intent.</p>
         pub fn set_intent_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.intent_name = input;
             self
@@ -2521,6 +2825,7 @@ pub mod intent {
             self.intent_version = Some(input.into());
             self
         }
+        /// <p>The version of the intent.</p>
         pub fn set_intent_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2544,6 +2849,7 @@ impl Intent {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2555,7 +2861,9 @@ impl Intent {
     std::hash::Hash,
 )]
 pub enum ProcessBehavior {
+    #[allow(missing_docs)] // documentation missing in model
     Build,
+    #[allow(missing_docs)] // documentation missing in model
     Save,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2577,6 +2885,7 @@ impl std::str::FromStr for ProcessBehavior {
     }
 }
 impl ProcessBehavior {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ProcessBehavior::Build => "BUILD",
@@ -2584,6 +2893,7 @@ impl ProcessBehavior {
             ProcessBehavior::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["BUILD", "SAVE"]
     }
@@ -2630,16 +2940,27 @@ pub mod utterance_list {
             self.bot_version = Some(input.into());
             self
         }
+        /// <p>The version of the bot that processed the list.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_version = input;
             self
         }
+        /// Appends an item to `utterances`.
+        ///
+        /// To override the contents of this collection use [`set_utterances`](Self::set_utterances).
+        ///
+        /// <p>One or more <a>UtteranceData</a> objects that contain
+        /// information about the utterances that have been made to a bot. The maximum
+        /// number of object is 100.</p>
         pub fn utterances(mut self, input: impl Into<crate::model::UtteranceData>) -> Self {
             let mut v = self.utterances.unwrap_or_default();
             v.push(input.into());
             self.utterances = Some(v);
             self
         }
+        /// <p>One or more <a>UtteranceData</a> objects that contain
+        /// information about the utterances that have been made to a bot. The maximum
+        /// number of object is 100.</p>
         pub fn set_utterances(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UtteranceData>>,
@@ -2676,9 +2997,9 @@ pub struct UtteranceData {
     /// <p>The total number of individuals that used the utterance.</p>
     pub distinct_users: std::option::Option<i32>,
     /// <p>The date that the utterance was first recorded.</p>
-    pub first_uttered_date: std::option::Option<smithy_types::Instant>,
+    pub first_uttered_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date that the utterance was last recorded.</p>
-    pub last_uttered_date: std::option::Option<smithy_types::Instant>,
+    pub last_uttered_date: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for UtteranceData {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2700,8 +3021,8 @@ pub mod utterance_data {
         pub(crate) utterance_string: std::option::Option<std::string::String>,
         pub(crate) count: std::option::Option<i32>,
         pub(crate) distinct_users: std::option::Option<i32>,
-        pub(crate) first_uttered_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_uttered_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) first_uttered_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_uttered_date: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The text that was entered by the user or the text representation of
@@ -2710,6 +3031,8 @@ pub mod utterance_data {
             self.utterance_string = Some(input.into());
             self
         }
+        /// <p>The text that was entered by the user or the text representation of
+        /// an audio clip.</p>
         pub fn set_utterance_string(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2722,6 +3045,7 @@ pub mod utterance_data {
             self.count = Some(input);
             self
         }
+        /// <p>The number of times that the utterance was processed.</p>
         pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
             self.count = input;
             self
@@ -2731,30 +3055,33 @@ pub mod utterance_data {
             self.distinct_users = Some(input);
             self
         }
+        /// <p>The total number of individuals that used the utterance.</p>
         pub fn set_distinct_users(mut self, input: std::option::Option<i32>) -> Self {
             self.distinct_users = input;
             self
         }
         /// <p>The date that the utterance was first recorded.</p>
-        pub fn first_uttered_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn first_uttered_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.first_uttered_date = Some(input);
             self
         }
+        /// <p>The date that the utterance was first recorded.</p>
         pub fn set_first_uttered_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.first_uttered_date = input;
             self
         }
         /// <p>The date that the utterance was last recorded.</p>
-        pub fn last_uttered_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_uttered_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_uttered_date = Some(input);
             self
         }
+        /// <p>The date that the utterance was last recorded.</p>
         pub fn set_last_uttered_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_uttered_date = input;
             self
@@ -2778,6 +3105,7 @@ impl UtteranceData {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2789,7 +3117,9 @@ impl UtteranceData {
     std::hash::Hash,
 )]
 pub enum StatusType {
+    #[allow(missing_docs)] // documentation missing in model
     Detected,
+    #[allow(missing_docs)] // documentation missing in model
     Missed,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2811,6 +3141,7 @@ impl std::str::FromStr for StatusType {
     }
 }
 impl StatusType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StatusType::Detected => "Detected",
@@ -2818,6 +3149,7 @@ impl StatusType {
             StatusType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Detected", "Missed"]
     }
@@ -2838,9 +3170,9 @@ pub struct SlotTypeMetadata {
     pub description: std::option::Option<std::string::String>,
     /// <p>The date that the slot type was updated. When you create a
     /// resource, the creation date and last updated date are the same. </p>
-    pub last_updated_date: std::option::Option<smithy_types::Instant>,
+    pub last_updated_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date that the slot type was created.</p>
-    pub created_date: std::option::Option<smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The version of the slot type.</p>
     pub version: std::option::Option<std::string::String>,
 }
@@ -2863,8 +3195,8 @@ pub mod slot_type_metadata {
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) last_updated_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) created_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_updated_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) version: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2873,6 +3205,7 @@ pub mod slot_type_metadata {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the slot type.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2882,31 +3215,35 @@ pub mod slot_type_metadata {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description of the slot type.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
         /// <p>The date that the slot type was updated. When you create a
         /// resource, the creation date and last updated date are the same. </p>
-        pub fn last_updated_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_updated_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_updated_date = Some(input);
             self
         }
+        /// <p>The date that the slot type was updated. When you create a
+        /// resource, the creation date and last updated date are the same. </p>
         pub fn set_last_updated_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_updated_date = input;
             self
         }
         /// <p>The date that the slot type was created.</p>
-        pub fn created_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_date = Some(input);
             self
         }
+        /// <p>The date that the slot type was created.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_date = input;
             self
@@ -2916,6 +3253,7 @@ pub mod slot_type_metadata {
             self.version = Some(input.into());
             self
         }
+        /// <p>The version of the slot type.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -2962,7 +3300,7 @@ pub struct MigrationSummary {
     /// <p>The strategy used to conduct the migration.</p>
     pub migration_strategy: std::option::Option<crate::model::MigrationStrategy>,
     /// <p>The date and time that the migration started.</p>
-    pub migration_timestamp: std::option::Option<smithy_types::Instant>,
+    pub migration_timestamp: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for MigrationSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2993,7 +3331,7 @@ pub mod migration_summary {
         pub(crate) v2_bot_role: std::option::Option<std::string::String>,
         pub(crate) migration_status: std::option::Option<crate::model::MigrationStatus>,
         pub(crate) migration_strategy: std::option::Option<crate::model::MigrationStrategy>,
-        pub(crate) migration_timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) migration_timestamp: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The unique identifier that Amazon Lex assigned to the migration.</p>
@@ -3001,6 +3339,7 @@ pub mod migration_summary {
             self.migration_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier that Amazon Lex assigned to the migration.</p>
         pub fn set_migration_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.migration_id = input;
             self
@@ -3010,6 +3349,7 @@ pub mod migration_summary {
             self.v1_bot_name = Some(input.into());
             self
         }
+        /// <p>The name of the Amazon Lex V1 bot that is the source of the migration.</p>
         pub fn set_v1_bot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.v1_bot_name = input;
             self
@@ -3019,6 +3359,7 @@ pub mod migration_summary {
             self.v1_bot_version = Some(input.into());
             self
         }
+        /// <p>The version of the Amazon Lex V1 bot that is the source of the migration.</p>
         pub fn set_v1_bot_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3031,6 +3372,7 @@ pub mod migration_summary {
             self.v1_bot_locale = Some(input);
             self
         }
+        /// <p>The locale of the Amazon Lex V1 bot that is the source of the migration.</p>
         pub fn set_v1_bot_locale(
             mut self,
             input: std::option::Option<crate::model::Locale>,
@@ -3043,6 +3385,7 @@ pub mod migration_summary {
             self.v2_bot_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier of the Amazon Lex V2 that is the destination of the migration.</p>
         pub fn set_v2_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.v2_bot_id = input;
             self
@@ -3052,6 +3395,7 @@ pub mod migration_summary {
             self.v2_bot_role = Some(input.into());
             self
         }
+        /// <p>The IAM role that Amazon Lex uses to run the Amazon Lex V2 bot.</p>
         pub fn set_v2_bot_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.v2_bot_role = input;
             self
@@ -3063,6 +3407,9 @@ pub mod migration_summary {
             self.migration_status = Some(input);
             self
         }
+        /// <p>The status of the operation. When the status is <code>COMPLETE</code>
+        /// the bot is available in Amazon Lex V2. There may be alerts and warnings that
+        /// need to be resolved to complete the migration.</p>
         pub fn set_migration_status(
             mut self,
             input: std::option::Option<crate::model::MigrationStatus>,
@@ -3075,6 +3422,7 @@ pub mod migration_summary {
             self.migration_strategy = Some(input);
             self
         }
+        /// <p>The strategy used to conduct the migration.</p>
         pub fn set_migration_strategy(
             mut self,
             input: std::option::Option<crate::model::MigrationStrategy>,
@@ -3083,13 +3431,14 @@ pub mod migration_summary {
             self
         }
         /// <p>The date and time that the migration started.</p>
-        pub fn migration_timestamp(mut self, input: smithy_types::Instant) -> Self {
+        pub fn migration_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
             self.migration_timestamp = Some(input);
             self
         }
+        /// <p>The date and time that the migration started.</p>
         pub fn set_migration_timestamp(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.migration_timestamp = input;
             self
@@ -3117,6 +3466,7 @@ impl MigrationSummary {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3128,8 +3478,11 @@ impl MigrationSummary {
     std::hash::Hash,
 )]
 pub enum MigrationStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Completed,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     InProgress,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3152,6 +3505,7 @@ impl std::str::FromStr for MigrationStatus {
     }
 }
 impl MigrationStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MigrationStatus::Completed => "COMPLETED",
@@ -3160,6 +3514,7 @@ impl MigrationStatus {
             MigrationStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["COMPLETED", "FAILED", "IN_PROGRESS"]
     }
@@ -3170,6 +3525,7 @@ impl AsRef<str> for MigrationStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3181,7 +3537,9 @@ impl AsRef<str> for MigrationStatus {
     std::hash::Hash,
 )]
 pub enum SortOrder {
+    #[allow(missing_docs)] // documentation missing in model
     Ascending,
+    #[allow(missing_docs)] // documentation missing in model
     Descending,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3203,6 +3561,7 @@ impl std::str::FromStr for SortOrder {
     }
 }
 impl SortOrder {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SortOrder::Ascending => "ASCENDING",
@@ -3210,6 +3569,7 @@ impl SortOrder {
             SortOrder::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ASCENDING", "DESCENDING"]
     }
@@ -3220,6 +3580,7 @@ impl AsRef<str> for SortOrder {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3231,7 +3592,9 @@ impl AsRef<str> for SortOrder {
     std::hash::Hash,
 )]
 pub enum MigrationSortAttribute {
+    #[allow(missing_docs)] // documentation missing in model
     MigrationDateTime,
+    #[allow(missing_docs)] // documentation missing in model
     V1BotName,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3253,6 +3616,7 @@ impl std::str::FromStr for MigrationSortAttribute {
     }
 }
 impl MigrationSortAttribute {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MigrationSortAttribute::MigrationDateTime => "MIGRATION_DATE_TIME",
@@ -3260,6 +3624,7 @@ impl MigrationSortAttribute {
             MigrationSortAttribute::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["MIGRATION_DATE_TIME", "V1_BOT_NAME"]
     }
@@ -3339,6 +3704,20 @@ pub mod migration_alert {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of alert. There are two kinds of alerts:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ERROR</code> - There was an issue with the migration that
+        /// can't be resolved. The migration stops.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>WARN</code> - There was an issue with the migration that
+        /// requires manual changes to the new Amazon Lex V2 bot. The migration
+        /// continues.</p>
+        /// </li>
+        /// </ul>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::MigrationAlertType>,
@@ -3351,16 +3730,23 @@ pub mod migration_alert {
             self.message = Some(input.into());
             self
         }
+        /// <p>A message that describes why the alert was issued.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
         }
+        /// Appends an item to `details`.
+        ///
+        /// To override the contents of this collection use [`set_details`](Self::set_details).
+        ///
+        /// <p>Additional details about the alert.</p>
         pub fn details(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.details.unwrap_or_default();
             v.push(input.into());
             self.details = Some(v);
             self
         }
+        /// <p>Additional details about the alert.</p>
         pub fn set_details(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3368,12 +3754,20 @@ pub mod migration_alert {
             self.details = input;
             self
         }
+        /// Appends an item to `reference_ur_ls`.
+        ///
+        /// To override the contents of this collection use [`set_reference_ur_ls`](Self::set_reference_ur_ls).
+        ///
+        /// <p>A link to the Amazon Lex documentation that describes how to resolve
+        /// the alert.</p>
         pub fn reference_ur_ls(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.reference_ur_ls.unwrap_or_default();
             v.push(input.into());
             self.reference_ur_ls = Some(v);
             self
         }
+        /// <p>A link to the Amazon Lex documentation that describes how to resolve
+        /// the alert.</p>
         pub fn set_reference_ur_ls(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3399,6 +3793,7 @@ impl MigrationAlert {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3410,7 +3805,9 @@ impl MigrationAlert {
     std::hash::Hash,
 )]
 pub enum MigrationAlertType {
+    #[allow(missing_docs)] // documentation missing in model
     Error,
+    #[allow(missing_docs)] // documentation missing in model
     Warn,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3432,6 +3829,7 @@ impl std::str::FromStr for MigrationAlertType {
     }
 }
 impl MigrationAlertType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MigrationAlertType::Error => "ERROR",
@@ -3439,6 +3837,7 @@ impl MigrationAlertType {
             MigrationAlertType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ERROR", "WARN"]
     }
@@ -3459,9 +3858,9 @@ pub struct IntentMetadata {
     pub description: std::option::Option<std::string::String>,
     /// <p>The date that the intent was updated. When you create an intent,
     /// the creation date and last updated date are the same.</p>
-    pub last_updated_date: std::option::Option<smithy_types::Instant>,
+    pub last_updated_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date that the intent was created.</p>
-    pub created_date: std::option::Option<smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The version of the intent.</p>
     pub version: std::option::Option<std::string::String>,
 }
@@ -3484,8 +3883,8 @@ pub mod intent_metadata {
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) last_updated_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) created_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_updated_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) version: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -3494,6 +3893,7 @@ pub mod intent_metadata {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the intent.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -3503,31 +3903,35 @@ pub mod intent_metadata {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description of the intent.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
         /// <p>The date that the intent was updated. When you create an intent,
         /// the creation date and last updated date are the same.</p>
-        pub fn last_updated_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_updated_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_updated_date = Some(input);
             self
         }
+        /// <p>The date that the intent was updated. When you create an intent,
+        /// the creation date and last updated date are the same.</p>
         pub fn set_last_updated_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_updated_date = input;
             self
         }
         /// <p>The date that the intent was created.</p>
-        pub fn created_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_date = Some(input);
             self
         }
+        /// <p>The date that the intent was created.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_date = input;
             self
@@ -3537,6 +3941,7 @@ pub mod intent_metadata {
             self.version = Some(input.into());
             self
         }
+        /// <p>The version of the intent.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -3560,6 +3965,7 @@ impl IntentMetadata {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3571,8 +3977,11 @@ impl IntentMetadata {
     std::hash::Hash,
 )]
 pub enum ExportStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     InProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Ready,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3595,6 +4004,7 @@ impl std::str::FromStr for ExportStatus {
     }
 }
 impl ExportStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ExportStatus::Failed => "FAILED",
@@ -3603,6 +4013,7 @@ impl ExportStatus {
             ExportStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FAILED", "IN_PROGRESS", "READY"]
     }
@@ -3613,6 +4024,7 @@ impl AsRef<str> for ExportStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3624,7 +4036,9 @@ impl AsRef<str> for ExportStatus {
     std::hash::Hash,
 )]
 pub enum ExportType {
+    #[allow(missing_docs)] // documentation missing in model
     AlexaSkillsKit,
+    #[allow(missing_docs)] // documentation missing in model
     Lex,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3646,6 +4060,7 @@ impl std::str::FromStr for ExportType {
     }
 }
 impl ExportType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ExportType::AlexaSkillsKit => "ALEXA_SKILLS_KIT",
@@ -3653,6 +4068,7 @@ impl ExportType {
             ExportType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ALEXA_SKILLS_KIT", "LEX"]
     }
@@ -3699,16 +4115,25 @@ pub mod builtin_slot_type_metadata {
             self.signature = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the built-in slot type. To find the
+        /// signature for a slot type, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/slot-type-reference">Slot Type Reference</a> in the <i>Alexa Skills
+        /// Kit</i>.</p>
         pub fn set_signature(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.signature = input;
             self
         }
+        /// Appends an item to `supported_locales`.
+        ///
+        /// To override the contents of this collection use [`set_supported_locales`](Self::set_supported_locales).
+        ///
+        /// <p>A list of target locales for the slot. </p>
         pub fn supported_locales(mut self, input: impl Into<crate::model::Locale>) -> Self {
             let mut v = self.supported_locales.unwrap_or_default();
             v.push(input.into());
             self.supported_locales = Some(v);
             self
         }
+        /// <p>A list of target locales for the slot. </p>
         pub fn set_supported_locales(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Locale>>,
@@ -3769,16 +4194,27 @@ pub mod builtin_intent_metadata {
             self.signature = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the built-in intent. To find the signature
+        /// for an intent, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard Built-in Intents</a> in the <i>Alexa Skills
+        /// Kit</i>.</p>
         pub fn set_signature(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.signature = input;
             self
         }
+        /// Appends an item to `supported_locales`.
+        ///
+        /// To override the contents of this collection use [`set_supported_locales`](Self::set_supported_locales).
+        ///
+        /// <p>A list of identifiers for the locales that the intent
+        /// supports.</p>
         pub fn supported_locales(mut self, input: impl Into<crate::model::Locale>) -> Self {
             let mut v = self.supported_locales.unwrap_or_default();
             v.push(input.into());
             self.supported_locales = Some(v);
             self
         }
+        /// <p>A list of identifiers for the locales that the intent
+        /// supports.</p>
         pub fn set_supported_locales(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Locale>>,
@@ -3831,6 +4267,7 @@ pub mod builtin_intent_slot {
             self.name = Some(input.into());
             self
         }
+        /// <p>A list of the slots defined for the intent.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -3860,9 +4297,9 @@ pub struct BotMetadata {
     pub status: std::option::Option<crate::model::Status>,
     /// <p>The date that the bot was updated. When you create a bot, the
     /// creation date and last updated date are the same. </p>
-    pub last_updated_date: std::option::Option<smithy_types::Instant>,
+    pub last_updated_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date that the bot was created.</p>
-    pub created_date: std::option::Option<smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The version of the bot. For a new bot, the version is always
     /// <code>$LATEST</code>.</p>
     pub version: std::option::Option<std::string::String>,
@@ -3888,8 +4325,8 @@ pub mod bot_metadata {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::Status>,
-        pub(crate) last_updated_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) created_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_updated_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) version: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -3898,6 +4335,7 @@ pub mod bot_metadata {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the bot. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -3907,6 +4345,7 @@ pub mod bot_metadata {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description of the bot.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -3916,31 +4355,35 @@ pub mod bot_metadata {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the bot.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::Status>) -> Self {
             self.status = input;
             self
         }
         /// <p>The date that the bot was updated. When you create a bot, the
         /// creation date and last updated date are the same. </p>
-        pub fn last_updated_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_updated_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_updated_date = Some(input);
             self
         }
+        /// <p>The date that the bot was updated. When you create a bot, the
+        /// creation date and last updated date are the same. </p>
         pub fn set_last_updated_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_updated_date = input;
             self
         }
         /// <p>The date that the bot was created.</p>
-        pub fn created_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_date = Some(input);
             self
         }
+        /// <p>The date that the bot was created.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_date = input;
             self
@@ -3951,6 +4394,8 @@ pub mod bot_metadata {
             self.version = Some(input.into());
             self
         }
+        /// <p>The version of the bot. For a new bot, the version is always
+        /// <code>$LATEST</code>.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -3992,11 +4437,12 @@ pub struct BotChannelAssociation {
     /// <note>
     /// <p>Currently, Amazon Lex supports associations with Facebook and Slack,
     /// and Twilio.</p>
+    ///
     /// </note>
     pub bot_name: std::option::Option<std::string::String>,
     /// <p>The date that the association between the Amazon Lex bot and the channel
     /// was created. </p>
-    pub created_date: std::option::Option<smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Specifies the type of association by indicating the type of channel
     /// being established between the Amazon Lex bot and the external messaging
     /// platform.</p>
@@ -4054,7 +4500,7 @@ pub mod bot_channel_association {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) bot_alias: std::option::Option<std::string::String>,
         pub(crate) bot_name: std::option::Option<std::string::String>,
-        pub(crate) created_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) r#type: std::option::Option<crate::model::ChannelType>,
         pub(crate) bot_configuration: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -4069,6 +4515,8 @@ pub mod bot_channel_association {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the association between the bot and the channel.
+        /// </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -4078,6 +4526,7 @@ pub mod bot_channel_association {
             self.description = Some(input.into());
             self
         }
+        /// <p>A text description of the association you are creating. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -4088,6 +4537,8 @@ pub mod bot_channel_association {
             self.bot_alias = Some(input.into());
             self
         }
+        /// <p>An alias pointing to the specific version of the Amazon Lex bot to which
+        /// this association is being made. </p>
         pub fn set_bot_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_alias = input;
             self
@@ -4096,24 +4547,33 @@ pub mod bot_channel_association {
         /// <note>
         /// <p>Currently, Amazon Lex supports associations with Facebook and Slack,
         /// and Twilio.</p>
+        ///
         /// </note>
         pub fn bot_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.bot_name = Some(input.into());
             self
         }
+        /// <p>The name of the Amazon Lex bot to which this association is being made. </p>
+        /// <note>
+        /// <p>Currently, Amazon Lex supports associations with Facebook and Slack,
+        /// and Twilio.</p>
+        ///
+        /// </note>
         pub fn set_bot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_name = input;
             self
         }
         /// <p>The date that the association between the Amazon Lex bot and the channel
         /// was created. </p>
-        pub fn created_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_date = Some(input);
             self
         }
+        /// <p>The date that the association between the Amazon Lex bot and the channel
+        /// was created. </p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_date = input;
             self
@@ -4125,10 +4585,19 @@ pub mod bot_channel_association {
             self.r#type = Some(input);
             self
         }
+        /// <p>Specifies the type of association by indicating the type of channel
+        /// being established between the Amazon Lex bot and the external messaging
+        /// platform.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ChannelType>) -> Self {
             self.r#type = input;
             self
         }
+        /// Adds a key-value pair to `bot_configuration`.
+        ///
+        /// To override the contents of this collection use [`set_bot_configuration`](Self::set_bot_configuration).
+        ///
+        /// <p>Provides information necessary to communicate with the messaging
+        /// platform. </p>
         pub fn bot_configuration(
             mut self,
             k: impl Into<std::string::String>,
@@ -4139,6 +4608,8 @@ pub mod bot_channel_association {
             self.bot_configuration = Some(hash_map);
             self
         }
+        /// <p>Provides information necessary to communicate with the messaging
+        /// platform. </p>
         pub fn set_bot_configuration(
             mut self,
             input: std::option::Option<
@@ -4171,6 +4642,25 @@ pub mod bot_channel_association {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the bot channel. </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>CREATED</code> - The channel has been created and is
+        /// ready for use.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>IN_PROGRESS</code> - Channel creation is in
+        /// progress.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FAILED</code> - There was an error creating the channel.
+        /// For information about the reason for the failure, see the
+        /// <code>failureReason</code> field.</p>
+        /// </li>
+        /// </ul>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ChannelStatus>,
@@ -4184,6 +4674,8 @@ pub mod bot_channel_association {
             self.failure_reason = Some(input.into());
             self
         }
+        /// <p>If <code>status</code> is <code>FAILED</code>, Amazon Lex provides the
+        /// reason that it failed to create the association.</p>
         pub fn set_failure_reason(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4214,6 +4706,7 @@ impl BotChannelAssociation {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4225,8 +4718,11 @@ impl BotChannelAssociation {
     std::hash::Hash,
 )]
 pub enum ChannelStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Created,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     InProgress,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4249,6 +4745,7 @@ impl std::str::FromStr for ChannelStatus {
     }
 }
 impl ChannelStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ChannelStatus::Created => "CREATED",
@@ -4257,6 +4754,7 @@ impl ChannelStatus {
             ChannelStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CREATED", "FAILED", "IN_PROGRESS"]
     }
@@ -4267,6 +4765,7 @@ impl AsRef<str> for ChannelStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4278,9 +4777,13 @@ impl AsRef<str> for ChannelStatus {
     std::hash::Hash,
 )]
 pub enum ChannelType {
+    #[allow(missing_docs)] // documentation missing in model
     Facebook,
+    #[allow(missing_docs)] // documentation missing in model
     Kik,
+    #[allow(missing_docs)] // documentation missing in model
     Slack,
+    #[allow(missing_docs)] // documentation missing in model
     TwilioSms,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4304,6 +4807,7 @@ impl std::str::FromStr for ChannelType {
     }
 }
 impl ChannelType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ChannelType::Facebook => "Facebook",
@@ -4313,6 +4817,7 @@ impl ChannelType {
             ChannelType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Facebook", "Kik", "Slack", "Twilio-Sms"]
     }
@@ -4337,9 +4842,9 @@ pub struct BotAliasMetadata {
     pub bot_name: std::option::Option<std::string::String>,
     /// <p>The date that the bot alias was updated. When you create a
     /// resource, the creation date and last updated date are the same.</p>
-    pub last_updated_date: std::option::Option<smithy_types::Instant>,
+    pub last_updated_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date that the bot alias was created.</p>
-    pub created_date: std::option::Option<smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Checksum of the bot alias.</p>
     pub checksum: std::option::Option<std::string::String>,
     /// <p>Settings that determine how Amazon Lex uses conversation logs for the
@@ -4370,8 +4875,8 @@ pub mod bot_alias_metadata {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) bot_version: std::option::Option<std::string::String>,
         pub(crate) bot_name: std::option::Option<std::string::String>,
-        pub(crate) last_updated_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) created_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_updated_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) checksum: std::option::Option<std::string::String>,
         pub(crate) conversation_logs: std::option::Option<crate::model::ConversationLogsResponse>,
     }
@@ -4381,6 +4886,7 @@ pub mod bot_alias_metadata {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the bot alias.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -4390,6 +4896,7 @@ pub mod bot_alias_metadata {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description of the bot alias.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -4399,6 +4906,7 @@ pub mod bot_alias_metadata {
             self.bot_version = Some(input.into());
             self
         }
+        /// <p>The version of the Amazon Lex bot to which the alias points.</p>
         pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_version = input;
             self
@@ -4408,31 +4916,35 @@ pub mod bot_alias_metadata {
             self.bot_name = Some(input.into());
             self
         }
+        /// <p>The name of the bot to which the alias points.</p>
         pub fn set_bot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bot_name = input;
             self
         }
         /// <p>The date that the bot alias was updated. When you create a
         /// resource, the creation date and last updated date are the same.</p>
-        pub fn last_updated_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_updated_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_updated_date = Some(input);
             self
         }
+        /// <p>The date that the bot alias was updated. When you create a
+        /// resource, the creation date and last updated date are the same.</p>
         pub fn set_last_updated_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_updated_date = input;
             self
         }
         /// <p>The date that the bot alias was created.</p>
-        pub fn created_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_date = Some(input);
             self
         }
+        /// <p>The date that the bot alias was created.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_date = input;
             self
@@ -4442,6 +4954,7 @@ pub mod bot_alias_metadata {
             self.checksum = Some(input.into());
             self
         }
+        /// <p>Checksum of the bot alias.</p>
         pub fn set_checksum(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.checksum = input;
             self
@@ -4452,6 +4965,8 @@ pub mod bot_alias_metadata {
             self.conversation_logs = Some(input);
             self
         }
+        /// <p>Settings that determine how Amazon Lex uses conversation logs for the
+        /// alias.</p>
         pub fn set_conversation_logs(
             mut self,
             input: std::option::Option<crate::model::ConversationLogsResponse>,
@@ -4518,6 +5033,8 @@ pub mod resource_reference {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the resource that is using the resource that you are
+        /// trying to delete.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -4528,6 +5045,8 @@ pub mod resource_reference {
             self.version = Some(input.into());
             self
         }
+        /// <p>The version of the resource that is using the resource that you are
+        /// trying to delete.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -4548,6 +5067,7 @@ impl ResourceReference {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4559,9 +5079,13 @@ impl ResourceReference {
     std::hash::Hash,
 )]
 pub enum ReferenceType {
+    #[allow(missing_docs)] // documentation missing in model
     Bot,
+    #[allow(missing_docs)] // documentation missing in model
     Botalias,
+    #[allow(missing_docs)] // documentation missing in model
     Botchannel,
+    #[allow(missing_docs)] // documentation missing in model
     Intent,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4585,6 +5109,7 @@ impl std::str::FromStr for ReferenceType {
     }
 }
 impl ReferenceType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ReferenceType::Bot => "Bot",
@@ -4594,6 +5119,7 @@ impl ReferenceType {
             ReferenceType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Bot", "BotAlias", "BotChannel", "Intent"]
     }

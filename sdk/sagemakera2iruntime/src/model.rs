@@ -24,6 +24,12 @@ pub mod human_loop_data_attributes {
             std::option::Option<std::vec::Vec<crate::model::ContentClassifier>>,
     }
     impl Builder {
+        /// Appends an item to `content_classifiers`.
+        ///
+        /// To override the contents of this collection use [`set_content_classifiers`](Self::set_content_classifiers).
+        ///
+        /// <p>Declares that your content is free of personally identifiable information or adult content.</p>
+        /// <p>Amazon SageMaker can restrict the Amazon Mechanical Turk workers who can view your task based on this information.</p>
         pub fn content_classifiers(
             mut self,
             input: impl Into<crate::model::ContentClassifier>,
@@ -33,6 +39,8 @@ pub mod human_loop_data_attributes {
             self.content_classifiers = Some(v);
             self
         }
+        /// <p>Declares that your content is free of personally identifiable information or adult content.</p>
+        /// <p>Amazon SageMaker can restrict the Amazon Mechanical Turk workers who can view your task based on this information.</p>
         pub fn set_content_classifiers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ContentClassifier>>,
@@ -55,6 +63,7 @@ impl HumanLoopDataAttributes {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -66,7 +75,9 @@ impl HumanLoopDataAttributes {
     std::hash::Hash,
 )]
 pub enum ContentClassifier {
+    #[allow(missing_docs)] // documentation missing in model
     FreeOfAdultContent,
+    #[allow(missing_docs)] // documentation missing in model
     FreeOfPersonallyIdentifiableInformation,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -90,6 +101,7 @@ impl std::str::FromStr for ContentClassifier {
     }
 }
 impl ContentClassifier {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ContentClassifier::FreeOfAdultContent => "FreeOfAdultContent",
@@ -99,6 +111,7 @@ impl ContentClassifier {
             ContentClassifier::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "FreeOfAdultContent",
@@ -140,6 +153,7 @@ pub mod human_loop_input {
             self.input_content = Some(input.into());
             self
         }
+        /// <p>Serialized input from the human loop. The input must be a string representation of a file in JSON format.</p>
         pub fn set_input_content(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -171,7 +185,7 @@ pub struct HumanLoopSummary {
     /// <p>The status of the human loop. </p>
     pub human_loop_status: std::option::Option<crate::model::HumanLoopStatus>,
     /// <p>When Amazon Augmented AI created the human loop.</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The reason why the human loop failed. A failure reason is returned when the status of the
     /// human loop is <code>Failed</code>.</p>
     pub failure_reason: std::option::Option<std::string::String>,
@@ -198,7 +212,7 @@ pub mod human_loop_summary {
     pub struct Builder {
         pub(crate) human_loop_name: std::option::Option<std::string::String>,
         pub(crate) human_loop_status: std::option::Option<crate::model::HumanLoopStatus>,
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) failure_reason: std::option::Option<std::string::String>,
         pub(crate) flow_definition_arn: std::option::Option<std::string::String>,
     }
@@ -208,6 +222,7 @@ pub mod human_loop_summary {
             self.human_loop_name = Some(input.into());
             self
         }
+        /// <p>The name of the human loop.</p>
         pub fn set_human_loop_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -220,6 +235,7 @@ pub mod human_loop_summary {
             self.human_loop_status = Some(input);
             self
         }
+        /// <p>The status of the human loop. </p>
         pub fn set_human_loop_status(
             mut self,
             input: std::option::Option<crate::model::HumanLoopStatus>,
@@ -228,13 +244,14 @@ pub mod human_loop_summary {
             self
         }
         /// <p>When Amazon Augmented AI created the human loop.</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>When Amazon Augmented AI created the human loop.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -245,6 +262,8 @@ pub mod human_loop_summary {
             self.failure_reason = Some(input.into());
             self
         }
+        /// <p>The reason why the human loop failed. A failure reason is returned when the status of the
+        /// human loop is <code>Failed</code>.</p>
         pub fn set_failure_reason(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -258,6 +277,8 @@ pub mod human_loop_summary {
             self.flow_definition_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the flow definition used to configure the human
+        /// loop.</p>
         pub fn set_flow_definition_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -284,6 +305,7 @@ impl HumanLoopSummary {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -295,10 +317,15 @@ impl HumanLoopSummary {
     std::hash::Hash,
 )]
 pub enum HumanLoopStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Completed,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     InProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Stopped,
+    #[allow(missing_docs)] // documentation missing in model
     Stopping,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -323,6 +350,7 @@ impl std::str::FromStr for HumanLoopStatus {
     }
 }
 impl HumanLoopStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             HumanLoopStatus::Completed => "Completed",
@@ -333,6 +361,7 @@ impl HumanLoopStatus {
             HumanLoopStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Completed", "Failed", "InProgress", "Stopped", "Stopping"]
     }
@@ -343,6 +372,7 @@ impl AsRef<str> for HumanLoopStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -354,7 +384,9 @@ impl AsRef<str> for HumanLoopStatus {
     std::hash::Hash,
 )]
 pub enum SortOrder {
+    #[allow(missing_docs)] // documentation missing in model
     Ascending,
+    #[allow(missing_docs)] // documentation missing in model
     Descending,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -376,6 +408,7 @@ impl std::str::FromStr for SortOrder {
     }
 }
 impl SortOrder {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SortOrder::Ascending => "Ascending",
@@ -383,6 +416,7 @@ impl SortOrder {
             SortOrder::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Ascending", "Descending"]
     }
@@ -421,6 +455,7 @@ pub mod human_loop_output {
             self.output_s3_uri = Some(input.into());
             self
         }
+        /// <p>The location of the Amazon S3 object where Amazon Augmented AI stores your human loop output.</p>
         pub fn set_output_s3_uri(
             mut self,
             input: std::option::Option<std::string::String>,

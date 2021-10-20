@@ -21,17 +21,17 @@ use aws_http::user_agent::AwsUserAgent;
 use aws_http::AwsErrorRetryPolicy;
 use aws_hyper::{Client, RetryConfig};
 use aws_sig_auth::signer::OperationSigningConfig;
+use aws_smithy_client::test_connection::TestConnection;
+use aws_smithy_http::body::SdkBody;
+use aws_smithy_http::operation;
+use aws_smithy_http::operation::Operation;
+use aws_smithy_http::response::ParseHttpResponse;
+use aws_smithy_http::result::SdkError;
+use aws_smithy_types::retry::{ErrorKind, ProvideErrorKind};
 use aws_types::credentials::SharedCredentialsProvider;
 use aws_types::region::Region;
 use aws_types::Credentials;
 use aws_types::SigningService;
-use smithy_client::test_connection::TestConnection;
-use smithy_http::body::SdkBody;
-use smithy_http::operation;
-use smithy_http::operation::Operation;
-use smithy_http::response::ParseHttpResponse;
-use smithy_http::result::SdkError;
-use smithy_types::retry::{ErrorKind, ProvideErrorKind};
 
 #[derive(Clone)]
 struct TestOperationParser;
@@ -90,7 +90,7 @@ fn test_operation() -> Operation<TestOperationParser, AwsErrorRetryPolicy> {
                 signature_versions: SignatureVersion::V4,
             }),
         );
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut conf,
             SharedCredentialsProvider::new(Credentials::from_keys(
                 "access_key",

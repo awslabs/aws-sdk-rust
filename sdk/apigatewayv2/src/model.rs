@@ -11,6 +11,7 @@
     std::hash::Hash,
 )]
 pub enum VpcLinkVersion {
+    #[allow(missing_docs)] // documentation missing in model
     V2,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -31,12 +32,14 @@ impl std::str::FromStr for VpcLinkVersion {
     }
 }
 impl VpcLinkVersion {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             VpcLinkVersion::V2 => "V2",
             VpcLinkVersion::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["V2"]
     }
@@ -59,10 +62,15 @@ impl AsRef<str> for VpcLinkVersion {
     std::hash::Hash,
 )]
 pub enum VpcLinkStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Available,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Inactive,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -87,6 +95,7 @@ impl std::str::FromStr for VpcLinkStatus {
     }
 }
 impl VpcLinkStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             VpcLinkStatus::Available => "AVAILABLE",
@@ -97,6 +106,7 @@ impl VpcLinkStatus {
             VpcLinkStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AVAILABLE", "DELETING", "FAILED", "INACTIVE", "PENDING"]
     }
@@ -151,6 +161,7 @@ pub mod route_settings {
             self.data_trace_enabled = Some(input);
             self
         }
+        /// <p>Specifies whether (true) or not (false) data trace logging is enabled for this route. This property affects the log entries pushed to Amazon CloudWatch Logs. Supported only for WebSocket APIs.</p>
         pub fn set_data_trace_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.data_trace_enabled = input;
             self
@@ -160,6 +171,7 @@ pub mod route_settings {
             self.detailed_metrics_enabled = Some(input);
             self
         }
+        /// <p>Specifies whether detailed metrics are enabled.</p>
         pub fn set_detailed_metrics_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.detailed_metrics_enabled = input;
             self
@@ -169,6 +181,7 @@ pub mod route_settings {
             self.logging_level = Some(input);
             self
         }
+        /// <p>Specifies the logging level for this route: INFO, ERROR, or OFF. This property affects the log entries pushed to Amazon CloudWatch Logs. Supported only for WebSocket APIs.</p>
         pub fn set_logging_level(
             mut self,
             input: std::option::Option<crate::model::LoggingLevel>,
@@ -181,6 +194,7 @@ pub mod route_settings {
             self.throttling_burst_limit = Some(input);
             self
         }
+        /// <p>Specifies the throttling burst limit.</p>
         pub fn set_throttling_burst_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.throttling_burst_limit = input;
             self
@@ -190,6 +204,7 @@ pub mod route_settings {
             self.throttling_rate_limit = Some(input);
             self
         }
+        /// <p>Specifies the throttling rate limit.</p>
         pub fn set_throttling_rate_limit(mut self, input: std::option::Option<f64>) -> Self {
             self.throttling_rate_limit = input;
             self
@@ -225,8 +240,11 @@ impl RouteSettings {
     std::hash::Hash,
 )]
 pub enum LoggingLevel {
+    #[allow(missing_docs)] // documentation missing in model
     Error,
+    #[allow(missing_docs)] // documentation missing in model
     Info,
+    #[allow(missing_docs)] // documentation missing in model
     Off,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -249,6 +267,7 @@ impl std::str::FromStr for LoggingLevel {
     }
 }
 impl LoggingLevel {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LoggingLevel::Error => "ERROR",
@@ -257,6 +276,7 @@ impl LoggingLevel {
             LoggingLevel::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ERROR", "INFO", "OFF"]
     }
@@ -299,6 +319,7 @@ pub mod access_log_settings {
             self.destination_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the CloudWatch Logs log group to receive access logs.</p>
         pub fn set_destination_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -311,6 +332,7 @@ pub mod access_log_settings {
             self.format = Some(input.into());
             self
         }
+        /// <p>A single line format of the access logs of data, as specified by selected $context variables. The format must include at least $context.requestId.</p>
         pub fn set_format(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.format = input;
             self
@@ -359,6 +381,7 @@ pub mod parameter_constraints {
             self.required = Some(input);
             self
         }
+        /// <p>Whether or not the parameter is required.</p>
         pub fn set_required(mut self, input: std::option::Option<bool>) -> Self {
             self.required = input;
             self
@@ -390,9 +413,13 @@ impl ParameterConstraints {
     std::hash::Hash,
 )]
 pub enum AuthorizationType {
+    #[allow(missing_docs)] // documentation missing in model
     AwsIam,
+    #[allow(missing_docs)] // documentation missing in model
     Custom,
+    #[allow(missing_docs)] // documentation missing in model
     Jwt,
+    #[allow(missing_docs)] // documentation missing in model
     None,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -416,6 +443,7 @@ impl std::str::FromStr for AuthorizationType {
     }
 }
 impl AuthorizationType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AuthorizationType::AwsIam => "AWS_IAM",
@@ -425,6 +453,7 @@ impl AuthorizationType {
             AuthorizationType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AWS_IAM", "CUSTOM", "JWT", "NONE"]
     }
@@ -447,7 +476,9 @@ impl AsRef<str> for AuthorizationType {
     std::hash::Hash,
 )]
 pub enum ContentHandlingStrategy {
+    #[allow(missing_docs)] // documentation missing in model
     ConvertToBinary,
+    #[allow(missing_docs)] // documentation missing in model
     ConvertToText,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -469,6 +500,7 @@ impl std::str::FromStr for ContentHandlingStrategy {
     }
 }
 impl ContentHandlingStrategy {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ContentHandlingStrategy::ConvertToBinary => "CONVERT_TO_BINARY",
@@ -476,6 +508,7 @@ impl ContentHandlingStrategy {
             ContentHandlingStrategy::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CONVERT_TO_BINARY", "CONVERT_TO_TEXT"]
     }
@@ -514,6 +547,7 @@ pub mod tls_config {
             self.server_name_to_verify = Some(input.into());
             self
         }
+        /// <p>If you specify a server name, API Gateway uses it to verify the hostname on the integration's certificate. The server name is also included in the TLS handshake to support Server Name Indication (SNI) or virtual hosting.</p>
         pub fn set_server_name_to_verify(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -548,8 +582,11 @@ impl TlsConfig {
     std::hash::Hash,
 )]
 pub enum PassthroughBehavior {
+    #[allow(missing_docs)] // documentation missing in model
     Never,
+    #[allow(missing_docs)] // documentation missing in model
     WhenNoMatch,
+    #[allow(missing_docs)] // documentation missing in model
     WhenNoTemplates,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -572,6 +609,7 @@ impl std::str::FromStr for PassthroughBehavior {
     }
 }
 impl PassthroughBehavior {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PassthroughBehavior::Never => "NEVER",
@@ -580,6 +618,7 @@ impl PassthroughBehavior {
             PassthroughBehavior::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["NEVER", "WHEN_NO_MATCH", "WHEN_NO_TEMPLATES"]
     }
@@ -602,10 +641,15 @@ impl AsRef<str> for PassthroughBehavior {
     std::hash::Hash,
 )]
 pub enum IntegrationType {
+    #[allow(missing_docs)] // documentation missing in model
     Aws,
+    #[allow(missing_docs)] // documentation missing in model
     AwsProxy,
+    #[allow(missing_docs)] // documentation missing in model
     Http,
+    #[allow(missing_docs)] // documentation missing in model
     HttpProxy,
+    #[allow(missing_docs)] // documentation missing in model
     Mock,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -630,6 +674,7 @@ impl std::str::FromStr for IntegrationType {
     }
 }
 impl IntegrationType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             IntegrationType::Aws => "AWS",
@@ -640,6 +685,7 @@ impl IntegrationType {
             IntegrationType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AWS", "AWS_PROXY", "HTTP", "HTTP_PROXY", "MOCK"]
     }
@@ -662,7 +708,9 @@ impl AsRef<str> for IntegrationType {
     std::hash::Hash,
 )]
 pub enum ConnectionType {
+    #[allow(missing_docs)] // documentation missing in model
     Internet,
+    #[allow(missing_docs)] // documentation missing in model
     VpcLink,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -684,6 +732,7 @@ impl std::str::FromStr for ConnectionType {
     }
 }
 impl ConnectionType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ConnectionType::Internet => "INTERNET",
@@ -691,6 +740,7 @@ impl ConnectionType {
             ConnectionType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["INTERNET", "VPC_LINK"]
     }
@@ -729,6 +779,7 @@ pub mod tls_config_input {
             self.server_name_to_verify = Some(input.into());
             self
         }
+        /// <p>If you specify a server name, API Gateway uses it to verify the hostname on the integration's certificate. The server name is also included in the TLS handshake to support Server Name Indication (SNI) or virtual hosting.</p>
         pub fn set_server_name_to_verify(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -751,6 +802,7 @@ impl TlsConfigInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MutualTlsAuthentication {
@@ -786,6 +838,7 @@ pub mod mutual_tls_authentication {
             self.truststore_uri = Some(input.into());
             self
         }
+        /// <p>An Amazon S3 URL that specifies the truststore for mutual TLS authentication, for example, s3://<replaceable>bucket-name</replaceable>/<replaceable>key-name</replaceable>. The truststore can contain certificates from public or private certificate authorities. To update the truststore, upload a new version to S3, and then update your custom domain name to use the new version. To update the truststore, you must have permissions to access the S3 object.</p>
         pub fn set_truststore_uri(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -798,6 +851,7 @@ pub mod mutual_tls_authentication {
             self.truststore_version = Some(input.into());
             self
         }
+        /// <p>The version of the S3 object that contains your truststore. To specify a version, you must have versioning enabled for the S3 bucket.</p>
         pub fn set_truststore_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -805,12 +859,18 @@ pub mod mutual_tls_authentication {
             self.truststore_version = input;
             self
         }
+        /// Appends an item to `truststore_warnings`.
+        ///
+        /// To override the contents of this collection use [`set_truststore_warnings`](Self::set_truststore_warnings).
+        ///
+        /// <p>A list of warnings that API Gateway returns while processing your truststore. Invalid certificates produce warnings. Mutual TLS is still enabled, but some clients might not be able to access your API. To resolve warnings, upload a new truststore to S3, and then update you domain name to use the new version.</p>
         pub fn truststore_warnings(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.truststore_warnings.unwrap_or_default();
             v.push(input.into());
             self.truststore_warnings = Some(v);
             self
         }
+        /// <p>A list of warnings that API Gateway returns while processing your truststore. Invalid certificates produce warnings. Mutual TLS is still enabled, but some clients might not be able to access your API. To resolve warnings, upload a new truststore to S3, and then update you domain name to use the new version.</p>
         pub fn set_truststore_warnings(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -846,7 +906,7 @@ pub struct DomainNameConfiguration {
     /// <p>The user-friendly name of the certificate that will be used by the edge-optimized endpoint for this domain name.</p>
     pub certificate_name: std::option::Option<std::string::String>,
     /// <p>The timestamp when the certificate that was used by edge-optimized endpoint for this domain name was uploaded.</p>
-    pub certificate_upload_date: std::option::Option<smithy_types::Instant>,
+    pub certificate_upload_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The status of the domain name migration. The valid values are AVAILABLE, UPDATING, PENDING_CERTIFICATE_REIMPORT, and PENDING_OWNERSHIP_VERIFICATION. If the status is UPDATING, the domain cannot be modified further until the existing operation is complete. If it is AVAILABLE, the domain can be updated.</p>
     pub domain_name_status: std::option::Option<crate::model::DomainNameStatus>,
     /// <p>An optional text message containing detailed information about status of the domain name migration.</p>
@@ -891,7 +951,7 @@ pub mod domain_name_configuration {
         pub(crate) api_gateway_domain_name: std::option::Option<std::string::String>,
         pub(crate) certificate_arn: std::option::Option<std::string::String>,
         pub(crate) certificate_name: std::option::Option<std::string::String>,
-        pub(crate) certificate_upload_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) certificate_upload_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) domain_name_status: std::option::Option<crate::model::DomainNameStatus>,
         pub(crate) domain_name_status_message: std::option::Option<std::string::String>,
         pub(crate) endpoint_type: std::option::Option<crate::model::EndpointType>,
@@ -905,6 +965,7 @@ pub mod domain_name_configuration {
             self.api_gateway_domain_name = Some(input.into());
             self
         }
+        /// <p>A domain name for the API.</p>
         pub fn set_api_gateway_domain_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -917,6 +978,7 @@ pub mod domain_name_configuration {
             self.certificate_arn = Some(input.into());
             self
         }
+        /// <p>An AWS-managed certificate that will be used by the edge-optimized endpoint for this domain name. AWS Certificate Manager is the only supported source.</p>
         pub fn set_certificate_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -929,6 +991,7 @@ pub mod domain_name_configuration {
             self.certificate_name = Some(input.into());
             self
         }
+        /// <p>The user-friendly name of the certificate that will be used by the edge-optimized endpoint for this domain name.</p>
         pub fn set_certificate_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -937,13 +1000,14 @@ pub mod domain_name_configuration {
             self
         }
         /// <p>The timestamp when the certificate that was used by edge-optimized endpoint for this domain name was uploaded.</p>
-        pub fn certificate_upload_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn certificate_upload_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.certificate_upload_date = Some(input);
             self
         }
+        /// <p>The timestamp when the certificate that was used by edge-optimized endpoint for this domain name was uploaded.</p>
         pub fn set_certificate_upload_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.certificate_upload_date = input;
             self
@@ -953,6 +1017,7 @@ pub mod domain_name_configuration {
             self.domain_name_status = Some(input);
             self
         }
+        /// <p>The status of the domain name migration. The valid values are AVAILABLE, UPDATING, PENDING_CERTIFICATE_REIMPORT, and PENDING_OWNERSHIP_VERIFICATION. If the status is UPDATING, the domain cannot be modified further until the existing operation is complete. If it is AVAILABLE, the domain can be updated.</p>
         pub fn set_domain_name_status(
             mut self,
             input: std::option::Option<crate::model::DomainNameStatus>,
@@ -965,6 +1030,7 @@ pub mod domain_name_configuration {
             self.domain_name_status_message = Some(input.into());
             self
         }
+        /// <p>An optional text message containing detailed information about status of the domain name migration.</p>
         pub fn set_domain_name_status_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -977,6 +1043,7 @@ pub mod domain_name_configuration {
             self.endpoint_type = Some(input);
             self
         }
+        /// <p>The endpoint type.</p>
         pub fn set_endpoint_type(
             mut self,
             input: std::option::Option<crate::model::EndpointType>,
@@ -989,6 +1056,7 @@ pub mod domain_name_configuration {
             self.hosted_zone_id = Some(input.into());
             self
         }
+        /// <p>The Amazon Route 53 Hosted Zone ID of the endpoint.</p>
         pub fn set_hosted_zone_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1001,6 +1069,7 @@ pub mod domain_name_configuration {
             self.security_policy = Some(input);
             self
         }
+        /// <p>The Transport Layer Security (TLS) version of the security policy for this domain name. The valid values are TLS_1_0 and TLS_1_2.</p>
         pub fn set_security_policy(
             mut self,
             input: std::option::Option<crate::model::SecurityPolicy>,
@@ -1016,6 +1085,7 @@ pub mod domain_name_configuration {
             self.ownership_verification_certificate_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the public certificate issued by ACM to validate ownership of your custom domain. Only required when configuring mutual TLS and using an ACM imported or private CA certificate ARN as the regionalCertificateArn</p>
         pub fn set_ownership_verification_certificate_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1059,7 +1129,9 @@ impl DomainNameConfiguration {
     std::hash::Hash,
 )]
 pub enum SecurityPolicy {
+    #[allow(missing_docs)] // documentation missing in model
     Tls10,
+    #[allow(missing_docs)] // documentation missing in model
     Tls12,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1081,6 +1153,7 @@ impl std::str::FromStr for SecurityPolicy {
     }
 }
 impl SecurityPolicy {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SecurityPolicy::Tls10 => "TLS_1_0",
@@ -1088,6 +1161,7 @@ impl SecurityPolicy {
             SecurityPolicy::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["TLS_1_0", "TLS_1_2"]
     }
@@ -1110,7 +1184,9 @@ impl AsRef<str> for SecurityPolicy {
     std::hash::Hash,
 )]
 pub enum EndpointType {
+    #[allow(missing_docs)] // documentation missing in model
     Edge,
+    #[allow(missing_docs)] // documentation missing in model
     Regional,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1132,6 +1208,7 @@ impl std::str::FromStr for EndpointType {
     }
 }
 impl EndpointType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EndpointType::Edge => "EDGE",
@@ -1139,6 +1216,7 @@ impl EndpointType {
             EndpointType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["EDGE", "REGIONAL"]
     }
@@ -1161,9 +1239,13 @@ impl AsRef<str> for EndpointType {
     std::hash::Hash,
 )]
 pub enum DomainNameStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Available,
+    #[allow(missing_docs)] // documentation missing in model
     PendingCertificateReimport,
+    #[allow(missing_docs)] // documentation missing in model
     PendingOwnershipVerification,
+    #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1187,6 +1269,7 @@ impl std::str::FromStr for DomainNameStatus {
     }
 }
 impl DomainNameStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DomainNameStatus::Available => "AVAILABLE",
@@ -1196,6 +1279,7 @@ impl DomainNameStatus {
             DomainNameStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "AVAILABLE",
@@ -1211,6 +1295,7 @@ impl AsRef<str> for DomainNameStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MutualTlsAuthenticationInput {
@@ -1242,6 +1327,7 @@ pub mod mutual_tls_authentication_input {
             self.truststore_uri = Some(input.into());
             self
         }
+        /// <p>An Amazon S3 URL that specifies the truststore for mutual TLS authentication, for example, s3://<replaceable>bucket-name</replaceable>/<replaceable>key-name</replaceable>. The truststore can contain certificates from public or private certificate authorities. To update the truststore, upload a new version to S3, and then update your custom domain name to use the new version. To update the truststore, you must have permissions to access the S3 object.</p>
         pub fn set_truststore_uri(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1254,6 +1340,7 @@ pub mod mutual_tls_authentication_input {
             self.truststore_version = Some(input.into());
             self
         }
+        /// <p>The version of the S3 object that contains your truststore. To specify a version, you must have versioning enabled for the S3 bucket.</p>
         pub fn set_truststore_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1289,8 +1376,11 @@ impl MutualTlsAuthenticationInput {
     std::hash::Hash,
 )]
 pub enum DeploymentStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Deployed,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1313,6 +1403,7 @@ impl std::str::FromStr for DeploymentStatus {
     }
 }
 impl DeploymentStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DeploymentStatus::Deployed => "DEPLOYED",
@@ -1321,6 +1412,7 @@ impl DeploymentStatus {
             DeploymentStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DEPLOYED", "FAILED", "PENDING"]
     }
@@ -1359,12 +1451,18 @@ pub mod jwt_configuration {
         pub(crate) issuer: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `audience`.
+        ///
+        /// To override the contents of this collection use [`set_audience`](Self::set_audience).
+        ///
+        /// <p>A list of the intended recipients of the JWT. A valid JWT must provide an aud that matches at least one entry in this list. See <a href="https://tools.ietf.org/html/rfc7519#section-4.1.3">RFC 7519</a>. Supported only for HTTP APIs.</p>
         pub fn audience(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.audience.unwrap_or_default();
             v.push(input.into());
             self.audience = Some(v);
             self
         }
+        /// <p>A list of the intended recipients of the JWT. A valid JWT must provide an aud that matches at least one entry in this list. See <a href="https://tools.ietf.org/html/rfc7519#section-4.1.3">RFC 7519</a>. Supported only for HTTP APIs.</p>
         pub fn set_audience(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1378,6 +1476,8 @@ pub mod jwt_configuration {
             self.issuer = Some(input.into());
             self
         }
+        /// <p>The base domain of the identity provider that issues JSON Web Tokens. For example, an Amazon Cognito user pool has the following format: https://cognito-idp.<replaceable>{region}</replaceable>.amazonaws.com/<replaceable>{userPoolId}</replaceable>
+        /// . Required for the JWT authorizer type. Supported only for HTTP APIs.</p>
         pub fn set_issuer(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.issuer = input;
             self
@@ -1410,7 +1510,9 @@ impl JwtConfiguration {
     std::hash::Hash,
 )]
 pub enum AuthorizerType {
+    #[allow(missing_docs)] // documentation missing in model
     Jwt,
+    #[allow(missing_docs)] // documentation missing in model
     Request,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1432,6 +1534,7 @@ impl std::str::FromStr for AuthorizerType {
     }
 }
 impl AuthorizerType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AuthorizerType::Jwt => "JWT",
@@ -1439,6 +1542,7 @@ impl AuthorizerType {
             AuthorizerType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["JWT", "REQUEST"]
     }
@@ -1461,7 +1565,9 @@ impl AsRef<str> for AuthorizerType {
     std::hash::Hash,
 )]
 pub enum ProtocolType {
+    #[allow(missing_docs)] // documentation missing in model
     Http,
+    #[allow(missing_docs)] // documentation missing in model
     Websocket,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1483,6 +1589,7 @@ impl std::str::FromStr for ProtocolType {
     }
 }
 impl ProtocolType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ProtocolType::Http => "HTTP",
@@ -1490,6 +1597,7 @@ impl ProtocolType {
             ProtocolType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["HTTP", "WEBSOCKET"]
     }
@@ -1548,16 +1656,23 @@ pub mod cors {
             self.allow_credentials = Some(input);
             self
         }
+        /// <p>Specifies whether credentials are included in the CORS request. Supported only for HTTP APIs.</p>
         pub fn set_allow_credentials(mut self, input: std::option::Option<bool>) -> Self {
             self.allow_credentials = input;
             self
         }
+        /// Appends an item to `allow_headers`.
+        ///
+        /// To override the contents of this collection use [`set_allow_headers`](Self::set_allow_headers).
+        ///
+        /// <p>Represents a collection of allowed headers. Supported only for HTTP APIs.</p>
         pub fn allow_headers(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.allow_headers.unwrap_or_default();
             v.push(input.into());
             self.allow_headers = Some(v);
             self
         }
+        /// <p>Represents a collection of allowed headers. Supported only for HTTP APIs.</p>
         pub fn set_allow_headers(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1565,12 +1680,18 @@ pub mod cors {
             self.allow_headers = input;
             self
         }
+        /// Appends an item to `allow_methods`.
+        ///
+        /// To override the contents of this collection use [`set_allow_methods`](Self::set_allow_methods).
+        ///
+        /// <p>Represents a collection of allowed HTTP methods. Supported only for HTTP APIs.</p>
         pub fn allow_methods(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.allow_methods.unwrap_or_default();
             v.push(input.into());
             self.allow_methods = Some(v);
             self
         }
+        /// <p>Represents a collection of allowed HTTP methods. Supported only for HTTP APIs.</p>
         pub fn set_allow_methods(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1578,12 +1699,18 @@ pub mod cors {
             self.allow_methods = input;
             self
         }
+        /// Appends an item to `allow_origins`.
+        ///
+        /// To override the contents of this collection use [`set_allow_origins`](Self::set_allow_origins).
+        ///
+        /// <p>Represents a collection of allowed origins. Supported only for HTTP APIs.</p>
         pub fn allow_origins(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.allow_origins.unwrap_or_default();
             v.push(input.into());
             self.allow_origins = Some(v);
             self
         }
+        /// <p>Represents a collection of allowed origins. Supported only for HTTP APIs.</p>
         pub fn set_allow_origins(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1591,12 +1718,18 @@ pub mod cors {
             self.allow_origins = input;
             self
         }
+        /// Appends an item to `expose_headers`.
+        ///
+        /// To override the contents of this collection use [`set_expose_headers`](Self::set_expose_headers).
+        ///
+        /// <p>Represents a collection of exposed headers. Supported only for HTTP APIs.</p>
         pub fn expose_headers(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.expose_headers.unwrap_or_default();
             v.push(input.into());
             self.expose_headers = Some(v);
             self
         }
+        /// <p>Represents a collection of exposed headers. Supported only for HTTP APIs.</p>
         pub fn set_expose_headers(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1609,6 +1742,7 @@ pub mod cors {
             self.max_age = Some(input);
             self
         }
+        /// <p>The number of seconds that the browser should cache preflight request results. Supported only for HTTP APIs.</p>
         pub fn set_max_age(mut self, input: std::option::Option<i32>) -> Self {
             self.max_age = input;
             self
@@ -1638,7 +1772,7 @@ impl Cors {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VpcLink {
     /// <p>The timestamp when the VPC link was created.</p>
-    pub created_date: std::option::Option<smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The name of the VPC link.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>A list of security group IDs for the VPC link.</p>
@@ -1678,7 +1812,7 @@ pub mod vpc_link {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) created_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1692,13 +1826,14 @@ pub mod vpc_link {
     }
     impl Builder {
         /// <p>The timestamp when the VPC link was created.</p>
-        pub fn created_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_date = Some(input);
             self
         }
+        /// <p>The timestamp when the VPC link was created.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_date = input;
             self
@@ -1708,16 +1843,23 @@ pub mod vpc_link {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the VPC link.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
+        /// Appends an item to `security_group_ids`.
+        ///
+        /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
+        ///
+        /// <p>A list of security group IDs for the VPC link.</p>
         pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_ids.unwrap_or_default();
             v.push(input.into());
             self.security_group_ids = Some(v);
             self
         }
+        /// <p>A list of security group IDs for the VPC link.</p>
         pub fn set_security_group_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1725,12 +1867,18 @@ pub mod vpc_link {
             self.security_group_ids = input;
             self
         }
+        /// Appends an item to `subnet_ids`.
+        ///
+        /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
+        ///
+        /// <p>A list of subnet IDs to include in the VPC link.</p>
         pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnet_ids.unwrap_or_default();
             v.push(input.into());
             self.subnet_ids = Some(v);
             self
         }
+        /// <p>A list of subnet IDs to include in the VPC link.</p>
         pub fn set_subnet_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1738,6 +1886,11 @@ pub mod vpc_link {
             self.subnet_ids = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Tags for the VPC link.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1748,6 +1901,7 @@ pub mod vpc_link {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>Tags for the VPC link.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1762,6 +1916,7 @@ pub mod vpc_link {
             self.vpc_link_id = Some(input.into());
             self
         }
+        /// <p>The ID of the VPC link.</p>
         pub fn set_vpc_link_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.vpc_link_id = input;
             self
@@ -1771,6 +1926,7 @@ pub mod vpc_link {
             self.vpc_link_status = Some(input);
             self
         }
+        /// <p>The status of the VPC link.</p>
         pub fn set_vpc_link_status(
             mut self,
             input: std::option::Option<crate::model::VpcLinkStatus>,
@@ -1783,6 +1939,7 @@ pub mod vpc_link {
             self.vpc_link_status_message = Some(input.into());
             self
         }
+        /// <p>A message summarizing the cause of the status of the VPC link.</p>
         pub fn set_vpc_link_status_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1795,6 +1952,7 @@ pub mod vpc_link {
             self.vpc_link_version = Some(input);
             self
         }
+        /// <p>The version of the VPC link.</p>
         pub fn set_vpc_link_version(
             mut self,
             input: std::option::Option<crate::model::VpcLinkVersion>,
@@ -1838,7 +1996,7 @@ pub struct Stage {
     /// <p>The identifier of a client certificate for a Stage. Supported only for WebSocket APIs.</p>
     pub client_certificate_id: std::option::Option<std::string::String>,
     /// <p>The timestamp when the stage was created.</p>
-    pub created_date: std::option::Option<smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Default route settings for the stage.</p>
     pub default_route_settings: std::option::Option<crate::model::RouteSettings>,
     /// <p>The identifier of the Deployment that the Stage is associated with. Can't be updated if autoDeploy is enabled.</p>
@@ -1848,7 +2006,7 @@ pub struct Stage {
     /// <p>Describes the status of the last deployment of a stage. Supported only for stages with autoDeploy enabled.</p>
     pub last_deployment_status_message: std::option::Option<std::string::String>,
     /// <p>The timestamp when the stage was last updated.</p>
-    pub last_updated_date: std::option::Option<smithy_types::Instant>,
+    pub last_updated_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Route settings for the stage, by routeKey.</p>
     pub route_settings: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::RouteSettings>,
@@ -1895,12 +2053,12 @@ pub mod stage {
         pub(crate) api_gateway_managed: std::option::Option<bool>,
         pub(crate) auto_deploy: std::option::Option<bool>,
         pub(crate) client_certificate_id: std::option::Option<std::string::String>,
-        pub(crate) created_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) default_route_settings: std::option::Option<crate::model::RouteSettings>,
         pub(crate) deployment_id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) last_deployment_status_message: std::option::Option<std::string::String>,
-        pub(crate) last_updated_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_updated_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) route_settings: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::RouteSettings>,
         >,
@@ -1918,6 +2076,7 @@ pub mod stage {
             self.access_log_settings = Some(input);
             self
         }
+        /// <p>Settings for logging access in this stage.</p>
         pub fn set_access_log_settings(
             mut self,
             input: std::option::Option<crate::model::AccessLogSettings>,
@@ -1930,6 +2089,7 @@ pub mod stage {
             self.api_gateway_managed = Some(input);
             self
         }
+        /// <p>Specifies whether a stage is managed by API Gateway. If you created an API using quick create, the $default stage is managed by API Gateway. You can't modify the $default stage.</p>
         pub fn set_api_gateway_managed(mut self, input: std::option::Option<bool>) -> Self {
             self.api_gateway_managed = input;
             self
@@ -1939,6 +2099,7 @@ pub mod stage {
             self.auto_deploy = Some(input);
             self
         }
+        /// <p>Specifies whether updates to an API automatically trigger a new deployment. The default value is false.</p>
         pub fn set_auto_deploy(mut self, input: std::option::Option<bool>) -> Self {
             self.auto_deploy = input;
             self
@@ -1948,6 +2109,7 @@ pub mod stage {
             self.client_certificate_id = Some(input.into());
             self
         }
+        /// <p>The identifier of a client certificate for a Stage. Supported only for WebSocket APIs.</p>
         pub fn set_client_certificate_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1956,13 +2118,14 @@ pub mod stage {
             self
         }
         /// <p>The timestamp when the stage was created.</p>
-        pub fn created_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_date = Some(input);
             self
         }
+        /// <p>The timestamp when the stage was created.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_date = input;
             self
@@ -1972,6 +2135,7 @@ pub mod stage {
             self.default_route_settings = Some(input);
             self
         }
+        /// <p>Default route settings for the stage.</p>
         pub fn set_default_route_settings(
             mut self,
             input: std::option::Option<crate::model::RouteSettings>,
@@ -1984,6 +2148,7 @@ pub mod stage {
             self.deployment_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the Deployment that the Stage is associated with. Can't be updated if autoDeploy is enabled.</p>
         pub fn set_deployment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1996,6 +2161,7 @@ pub mod stage {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the stage.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -2008,6 +2174,7 @@ pub mod stage {
             self.last_deployment_status_message = Some(input.into());
             self
         }
+        /// <p>Describes the status of the last deployment of a stage. Supported only for stages with autoDeploy enabled.</p>
         pub fn set_last_deployment_status_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2016,17 +2183,23 @@ pub mod stage {
             self
         }
         /// <p>The timestamp when the stage was last updated.</p>
-        pub fn last_updated_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_updated_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_updated_date = Some(input);
             self
         }
+        /// <p>The timestamp when the stage was last updated.</p>
         pub fn set_last_updated_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_updated_date = input;
             self
         }
+        /// Adds a key-value pair to `route_settings`.
+        ///
+        /// To override the contents of this collection use [`set_route_settings`](Self::set_route_settings).
+        ///
+        /// <p>Route settings for the stage, by routeKey.</p>
         pub fn route_settings(
             mut self,
             k: impl Into<std::string::String>,
@@ -2037,6 +2210,7 @@ pub mod stage {
             self.route_settings = Some(hash_map);
             self
         }
+        /// <p>Route settings for the stage, by routeKey.</p>
         pub fn set_route_settings(
             mut self,
             input: std::option::Option<
@@ -2051,10 +2225,16 @@ pub mod stage {
             self.stage_name = Some(input.into());
             self
         }
+        /// <p>The name of the stage.</p>
         pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stage_name = input;
             self
         }
+        /// Adds a key-value pair to `stage_variables`.
+        ///
+        /// To override the contents of this collection use [`set_stage_variables`](Self::set_stage_variables).
+        ///
+        /// <p>A map that defines the stage variables for a stage resource. Variable names can have alphanumeric and underscore characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+.</p>
         pub fn stage_variables(
             mut self,
             k: impl Into<std::string::String>,
@@ -2065,6 +2245,7 @@ pub mod stage {
             self.stage_variables = Some(hash_map);
             self
         }
+        /// <p>A map that defines the stage variables for a stage resource. Variable names can have alphanumeric and underscore characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+.</p>
         pub fn set_stage_variables(
             mut self,
             input: std::option::Option<
@@ -2074,6 +2255,11 @@ pub mod stage {
             self.stage_variables = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2084,6 +2270,7 @@ pub mod stage {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2210,6 +2397,7 @@ pub mod route {
             self.api_gateway_managed = Some(input);
             self
         }
+        /// <p>Specifies whether a route is managed by API Gateway. If you created an API using quick create, the $default route is managed by API Gateway. You can't modify the $default route key.</p>
         pub fn set_api_gateway_managed(mut self, input: std::option::Option<bool>) -> Self {
             self.api_gateway_managed = input;
             self
@@ -2219,16 +2407,23 @@ pub mod route {
             self.api_key_required = Some(input);
             self
         }
+        /// <p>Specifies whether an API key is required for this route. Supported only for WebSocket APIs.</p>
         pub fn set_api_key_required(mut self, input: std::option::Option<bool>) -> Self {
             self.api_key_required = input;
             self
         }
+        /// Appends an item to `authorization_scopes`.
+        ///
+        /// To override the contents of this collection use [`set_authorization_scopes`](Self::set_authorization_scopes).
+        ///
+        /// <p>A list of authorization scopes configured on a route. The scopes are used with a JWT authorizer to authorize the method invocation. The authorization works by matching the route scopes against the scopes parsed from the access token in the incoming request. The method invocation is authorized if any route scope matches a claimed scope in the access token. Otherwise, the invocation is not authorized. When the route scope is configured, the client must provide an access token instead of an identity token for authorization purposes.</p>
         pub fn authorization_scopes(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.authorization_scopes.unwrap_or_default();
             v.push(input.into());
             self.authorization_scopes = Some(v);
             self
         }
+        /// <p>A list of authorization scopes configured on a route. The scopes are used with a JWT authorizer to authorize the method invocation. The authorization works by matching the route scopes against the scopes parsed from the access token in the incoming request. The method invocation is authorized if any route scope matches a claimed scope in the access token. Otherwise, the invocation is not authorized. When the route scope is configured, the client must provide an access token instead of an identity token for authorization purposes.</p>
         pub fn set_authorization_scopes(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2241,6 +2436,7 @@ pub mod route {
             self.authorization_type = Some(input);
             self
         }
+        /// <p>The authorization type for the route. For WebSocket APIs, valid values are NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer For HTTP APIs, valid values are NONE for open access, JWT for using JSON Web Tokens, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer.</p>
         pub fn set_authorization_type(
             mut self,
             input: std::option::Option<crate::model::AuthorizationType>,
@@ -2253,6 +2449,7 @@ pub mod route {
             self.authorizer_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the Authorizer resource to be associated with this route. The authorizer identifier is generated by API Gateway when you created the authorizer.</p>
         pub fn set_authorizer_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2265,6 +2462,7 @@ pub mod route {
             self.model_selection_expression = Some(input.into());
             self
         }
+        /// <p>The model selection expression for the route. Supported only for WebSocket APIs.</p>
         pub fn set_model_selection_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2277,6 +2475,7 @@ pub mod route {
             self.operation_name = Some(input.into());
             self
         }
+        /// <p>The operation name for the route.</p>
         pub fn set_operation_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2284,6 +2483,11 @@ pub mod route {
             self.operation_name = input;
             self
         }
+        /// Adds a key-value pair to `request_models`.
+        ///
+        /// To override the contents of this collection use [`set_request_models`](Self::set_request_models).
+        ///
+        /// <p>The request models for the route. Supported only for WebSocket APIs.</p>
         pub fn request_models(
             mut self,
             k: impl Into<std::string::String>,
@@ -2294,6 +2498,7 @@ pub mod route {
             self.request_models = Some(hash_map);
             self
         }
+        /// <p>The request models for the route. Supported only for WebSocket APIs.</p>
         pub fn set_request_models(
             mut self,
             input: std::option::Option<
@@ -2303,6 +2508,11 @@ pub mod route {
             self.request_models = input;
             self
         }
+        /// Adds a key-value pair to `request_parameters`.
+        ///
+        /// To override the contents of this collection use [`set_request_parameters`](Self::set_request_parameters).
+        ///
+        /// <p>The request parameters for the route. Supported only for WebSocket APIs.</p>
         pub fn request_parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -2313,6 +2523,7 @@ pub mod route {
             self.request_parameters = Some(hash_map);
             self
         }
+        /// <p>The request parameters for the route. Supported only for WebSocket APIs.</p>
         pub fn set_request_parameters(
             mut self,
             input: std::option::Option<
@@ -2327,6 +2538,7 @@ pub mod route {
             self.route_id = Some(input.into());
             self
         }
+        /// <p>The route ID.</p>
         pub fn set_route_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.route_id = input;
             self
@@ -2336,6 +2548,7 @@ pub mod route {
             self.route_key = Some(input.into());
             self
         }
+        /// <p>The route key for the route.</p>
         pub fn set_route_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.route_key = input;
             self
@@ -2348,6 +2561,7 @@ pub mod route {
             self.route_response_selection_expression = Some(input.into());
             self
         }
+        /// <p>The route response selection expression for the route. Supported only for WebSocket APIs.</p>
         pub fn set_route_response_selection_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2360,6 +2574,7 @@ pub mod route {
             self.target = Some(input.into());
             self
         }
+        /// <p>The target for the route.</p>
         pub fn set_target(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.target = input;
             self
@@ -2445,6 +2660,7 @@ pub mod route_response {
             self.model_selection_expression = Some(input.into());
             self
         }
+        /// <p>Represents the model selection expression of a route response. Supported only for WebSocket APIs.</p>
         pub fn set_model_selection_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2452,6 +2668,11 @@ pub mod route_response {
             self.model_selection_expression = input;
             self
         }
+        /// Adds a key-value pair to `response_models`.
+        ///
+        /// To override the contents of this collection use [`set_response_models`](Self::set_response_models).
+        ///
+        /// <p>Represents the response models of a route response.</p>
         pub fn response_models(
             mut self,
             k: impl Into<std::string::String>,
@@ -2462,6 +2683,7 @@ pub mod route_response {
             self.response_models = Some(hash_map);
             self
         }
+        /// <p>Represents the response models of a route response.</p>
         pub fn set_response_models(
             mut self,
             input: std::option::Option<
@@ -2471,6 +2693,11 @@ pub mod route_response {
             self.response_models = input;
             self
         }
+        /// Adds a key-value pair to `response_parameters`.
+        ///
+        /// To override the contents of this collection use [`set_response_parameters`](Self::set_response_parameters).
+        ///
+        /// <p>Represents the response parameters of a route response.</p>
         pub fn response_parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -2481,6 +2708,7 @@ pub mod route_response {
             self.response_parameters = Some(hash_map);
             self
         }
+        /// <p>Represents the response parameters of a route response.</p>
         pub fn set_response_parameters(
             mut self,
             input: std::option::Option<
@@ -2495,6 +2723,7 @@ pub mod route_response {
             self.route_response_id = Some(input.into());
             self
         }
+        /// <p>Represents the identifier of a route response.</p>
         pub fn set_route_response_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2507,6 +2736,7 @@ pub mod route_response {
             self.route_response_key = Some(input.into());
             self
         }
+        /// <p>Represents the route response key of a route response.</p>
         pub fn set_route_response_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2577,6 +2807,7 @@ pub mod model {
             self.content_type = Some(input.into());
             self
         }
+        /// <p>The content-type for the model, for example, "application/json".</p>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_type = input;
             self
@@ -2586,6 +2817,7 @@ pub mod model {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the model.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -2595,6 +2827,7 @@ pub mod model {
             self.model_id = Some(input.into());
             self
         }
+        /// <p>The model identifier.</p>
         pub fn set_model_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.model_id = input;
             self
@@ -2604,6 +2837,7 @@ pub mod model {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the model. Must be alphanumeric.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2613,6 +2847,7 @@ pub mod model {
             self.schema = Some(input.into());
             self
         }
+        /// <p>The schema for the model. For application/json models, this should be JSON schema draft 4 model.</p>
         pub fn set_schema(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.schema = input;
             self
@@ -2769,6 +3004,7 @@ pub mod integration {
             self.api_gateway_managed = Some(input);
             self
         }
+        /// <p>Specifies whether an integration is managed by API Gateway. If you created an API using using quick create, the resulting integration is managed by API Gateway. You can update a managed integration, but you can't delete it.</p>
         pub fn set_api_gateway_managed(mut self, input: std::option::Option<bool>) -> Self {
             self.api_gateway_managed = input;
             self
@@ -2778,6 +3014,7 @@ pub mod integration {
             self.connection_id = Some(input.into());
             self
         }
+        /// <p>The ID of the VPC link for a private integration. Supported only for HTTP APIs.</p>
         pub fn set_connection_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2790,6 +3027,7 @@ pub mod integration {
             self.connection_type = Some(input);
             self
         }
+        /// <p>The type of the network connection to the integration endpoint. Specify INTERNET for connections through the public routable internet or VPC_LINK for private connections between API Gateway and resources in a VPC. The default value is INTERNET.</p>
         pub fn set_connection_type(
             mut self,
             input: std::option::Option<crate::model::ConnectionType>,
@@ -2805,6 +3043,7 @@ pub mod integration {
             self.content_handling_strategy = Some(input);
             self
         }
+        /// <p>Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p> <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p> <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p> <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
         pub fn set_content_handling_strategy(
             mut self,
             input: std::option::Option<crate::model::ContentHandlingStrategy>,
@@ -2817,6 +3056,7 @@ pub mod integration {
             self.credentials_arn = Some(input.into());
             self
         }
+        /// <p>Specifies the credentials required for the integration, if any. For AWS integrations, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify the string arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services, specify null.</p>
         pub fn set_credentials_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2829,6 +3069,7 @@ pub mod integration {
             self.description = Some(input.into());
             self
         }
+        /// <p>Represents the description of an integration.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -2838,6 +3079,7 @@ pub mod integration {
             self.integration_id = Some(input.into());
             self
         }
+        /// <p>Represents the identifier of an integration.</p>
         pub fn set_integration_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2850,6 +3092,7 @@ pub mod integration {
             self.integration_method = Some(input.into());
             self
         }
+        /// <p>Specifies the integration's HTTP method type.</p>
         pub fn set_integration_method(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2865,6 +3108,7 @@ pub mod integration {
             self.integration_response_selection_expression = Some(input.into());
             self
         }
+        /// <p>The integration response selection expression for the integration. Supported only for WebSocket APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-integration-response-selection-expressions">Integration Response Selection Expressions</a>.</p>
         pub fn set_integration_response_selection_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2877,6 +3121,7 @@ pub mod integration {
             self.integration_subtype = Some(input.into());
             self
         }
+        /// <p>Supported only for HTTP API AWS_PROXY integrations. Specifies the AWS service action to invoke. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services-reference.html">Integration subtype reference</a>.</p>
         pub fn set_integration_subtype(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2889,6 +3134,7 @@ pub mod integration {
             self.integration_type = Some(input);
             self
         }
+        /// <p>The integration type of an integration. One of the following:</p> <p>AWS: for integrating the route or method request with an AWS service action, including the Lambda function-invoking action. With the Lambda function-invoking action, this is referred to as the Lambda custom integration. With any other AWS service action, this is known as AWS integration. Supported only for WebSocket APIs.</p> <p>AWS_PROXY: for integrating the route or method request with a Lambda function or other AWS service action. This integration is also referred to as a Lambda proxy integration.</p> <p>HTTP: for integrating the route or method request with an HTTP endpoint. This integration is also referred to as the HTTP custom integration. Supported only for WebSocket APIs.</p> <p>HTTP_PROXY: for integrating the route or method request with an HTTP endpoint, with the client request passed through as-is. This is also referred to as HTTP proxy integration.</p> <p>MOCK: for integrating the route or method request with API Gateway as a "loopback" endpoint without invoking any backend. Supported only for WebSocket APIs.</p>
         pub fn set_integration_type(
             mut self,
             input: std::option::Option<crate::model::IntegrationType>,
@@ -2901,6 +3147,7 @@ pub mod integration {
             self.integration_uri = Some(input.into());
             self
         }
+        /// <p>For a Lambda integration, specify the URI of a Lambda function.</p> <p>For an HTTP integration, specify a fully-qualified URL.</p> <p>For an HTTP API private integration, specify the ARN of an Application Load Balancer listener, Network Load Balancer listener, or AWS Cloud Map service. If you specify the ARN of an AWS Cloud Map service, API Gateway uses DiscoverInstances to identify resources. You can use query parameters to target specific resources. To learn more, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a>. For private integrations, all resources must be owned by the same AWS account.</p>
         pub fn set_integration_uri(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2913,6 +3160,7 @@ pub mod integration {
             self.passthrough_behavior = Some(input);
             self
         }
+        /// <p>Specifies the pass-through behavior for incoming requests based on the Content-Type header in the request, and the available mapping templates specified as the requestTemplates property on the Integration resource. There are three valid values: WHEN_NO_MATCH, WHEN_NO_TEMPLATES, and NEVER. Supported only for WebSocket APIs.</p> <p>WHEN_NO_MATCH passes the request body for unmapped content types through to the integration backend without transformation.</p> <p>NEVER rejects unmapped content types with an HTTP 415 Unsupported Media Type response.</p> <p>WHEN_NO_TEMPLATES allows pass-through when the integration has no content types mapped to templates. However, if there is at least one content type defined, unmapped content types will be rejected with the same HTTP 415 Unsupported Media Type response.</p>
         pub fn set_passthrough_behavior(
             mut self,
             input: std::option::Option<crate::model::PassthroughBehavior>,
@@ -2925,6 +3173,7 @@ pub mod integration {
             self.payload_format_version = Some(input.into());
             self
         }
+        /// <p>Specifies the format of the payload sent to an integration. Required for HTTP APIs.</p>
         pub fn set_payload_format_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2932,6 +3181,16 @@ pub mod integration {
             self.payload_format_version = input;
             self
         }
+        /// Adds a key-value pair to `request_parameters`.
+        ///
+        /// To override the contents of this collection use [`set_request_parameters`](Self::set_request_parameters).
+        ///
+        /// <p>For WebSocket APIs, a key-value map specifying request parameters that are passed from the method request to the backend. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the backend. The method request parameter value must match the pattern of method.request.<replaceable>{location}</replaceable>.<replaceable>{name}</replaceable>
+        /// , where
+        /// <replaceable>{location}</replaceable>
+        /// is querystring, path, or header; and
+        /// <replaceable>{name}</replaceable>
+        /// must be a valid and unique method request parameter name.</p> <p>For HTTP API integrations with a specified integrationSubtype, request parameters are a key-value map specifying parameters that are passed to AWS_PROXY integrations. You can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working with AWS service integrations for HTTP APIs</a>.</p> <p>For HTTP API itegrations, without a specified integrationSubtype request parameters are a key-value map specifying how to transform HTTP requests before sending them to backend integrations. The key should follow the pattern &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt;. The action can be append, overwrite or remove. For values, you can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming API requests and responses</a>.</p>
         pub fn request_parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -2942,6 +3201,12 @@ pub mod integration {
             self.request_parameters = Some(hash_map);
             self
         }
+        /// <p>For WebSocket APIs, a key-value map specifying request parameters that are passed from the method request to the backend. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the backend. The method request parameter value must match the pattern of method.request.<replaceable>{location}</replaceable>.<replaceable>{name}</replaceable>
+        /// , where
+        /// <replaceable>{location}</replaceable>
+        /// is querystring, path, or header; and
+        /// <replaceable>{name}</replaceable>
+        /// must be a valid and unique method request parameter name.</p> <p>For HTTP API integrations with a specified integrationSubtype, request parameters are a key-value map specifying parameters that are passed to AWS_PROXY integrations. You can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working with AWS service integrations for HTTP APIs</a>.</p> <p>For HTTP API itegrations, without a specified integrationSubtype request parameters are a key-value map specifying how to transform HTTP requests before sending them to backend integrations. The key should follow the pattern &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt;. The action can be append, overwrite or remove. For values, you can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming API requests and responses</a>.</p>
         pub fn set_request_parameters(
             mut self,
             input: std::option::Option<
@@ -2951,6 +3216,11 @@ pub mod integration {
             self.request_parameters = input;
             self
         }
+        /// Adds a key-value pair to `request_templates`.
+        ///
+        /// To override the contents of this collection use [`set_request_templates`](Self::set_request_templates).
+        ///
+        /// <p>Represents a map of Velocity templates that are applied on the request payload based on the value of the Content-Type header sent by the client. The content type value is the key in this map, and the template (as a String) is the value. Supported only for WebSocket APIs.</p>
         pub fn request_templates(
             mut self,
             k: impl Into<std::string::String>,
@@ -2961,6 +3231,7 @@ pub mod integration {
             self.request_templates = Some(hash_map);
             self
         }
+        /// <p>Represents a map of Velocity templates that are applied on the request payload based on the value of the Content-Type header sent by the client. The content type value is the key in this map, and the template (as a String) is the value. Supported only for WebSocket APIs.</p>
         pub fn set_request_templates(
             mut self,
             input: std::option::Option<
@@ -2970,6 +3241,11 @@ pub mod integration {
             self.request_templates = input;
             self
         }
+        /// Adds a key-value pair to `response_parameters`.
+        ///
+        /// To override the contents of this collection use [`set_response_parameters`](Self::set_response_parameters).
+        ///
+        /// <p>Supported only for HTTP APIs. You use response parameters to transform the HTTP response from a backend integration before returning the response to clients. Specify a key-value map from a selection key to response parameters. The selection key must be a valid HTTP status code within the range of 200-599. Response parameters are a key-value map. The key must match pattern &lt;action&gt;:&lt;header&gt;.&lt;location&gt; or overwrite.statuscode. The action can be append, overwrite or remove. The value can be a static value, or map to response data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming API requests and responses</a>.</p>
         pub fn response_parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -2980,6 +3256,7 @@ pub mod integration {
             self.response_parameters = Some(hash_map);
             self
         }
+        /// <p>Supported only for HTTP APIs. You use response parameters to transform the HTTP response from a backend integration before returning the response to clients. Specify a key-value map from a selection key to response parameters. The selection key must be a valid HTTP status code within the range of 200-599. Response parameters are a key-value map. The key must match pattern &lt;action&gt;:&lt;header&gt;.&lt;location&gt; or overwrite.statuscode. The action can be append, overwrite or remove. The value can be a static value, or map to response data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming API requests and responses</a>.</p>
         pub fn set_response_parameters(
             mut self,
             input: std::option::Option<
@@ -3000,6 +3277,7 @@ pub mod integration {
             self.template_selection_expression = Some(input.into());
             self
         }
+        /// <p>The template selection expression for the integration. Supported only for WebSocket APIs.</p>
         pub fn set_template_selection_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3012,6 +3290,7 @@ pub mod integration {
             self.timeout_in_millis = Some(input);
             self
         }
+        /// <p>Custom timeout between 50 and 29,000 milliseconds for WebSocket APIs and between 50 and 30,000 milliseconds for HTTP APIs. The default timeout is 29 seconds for WebSocket APIs and 30 seconds for HTTP APIs.</p>
         pub fn set_timeout_in_millis(mut self, input: std::option::Option<i32>) -> Self {
             self.timeout_in_millis = input;
             self
@@ -3021,6 +3300,7 @@ pub mod integration {
             self.tls_config = Some(input);
             self
         }
+        /// <p>The TLS configuration for a private integration. If you specify a TLS configuration, private integration traffic uses the HTTPS protocol. Supported only for HTTP APIs.</p>
         pub fn set_tls_config(
             mut self,
             input: std::option::Option<crate::model::TlsConfig>,
@@ -3124,6 +3404,7 @@ pub mod integration_response {
             self.content_handling_strategy = Some(input);
             self
         }
+        /// <p>Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p> <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p> <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p> <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
         pub fn set_content_handling_strategy(
             mut self,
             input: std::option::Option<crate::model::ContentHandlingStrategy>,
@@ -3136,6 +3417,7 @@ pub mod integration_response {
             self.integration_response_id = Some(input.into());
             self
         }
+        /// <p>The integration response ID.</p>
         pub fn set_integration_response_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3148,6 +3430,7 @@ pub mod integration_response {
             self.integration_response_key = Some(input.into());
             self
         }
+        /// <p>The integration response key.</p>
         pub fn set_integration_response_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3155,6 +3438,11 @@ pub mod integration_response {
             self.integration_response_key = input;
             self
         }
+        /// Adds a key-value pair to `response_parameters`.
+        ///
+        /// To override the contents of this collection use [`set_response_parameters`](Self::set_response_parameters).
+        ///
+        /// <p>A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.{name}, where name is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.{name} or integration.response.body.{JSON-expression}, where name is a valid and unique response header name and JSON-expression is a valid JSON expression without the $ prefix.</p>
         pub fn response_parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -3165,6 +3453,7 @@ pub mod integration_response {
             self.response_parameters = Some(hash_map);
             self
         }
+        /// <p>A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.{name}, where name is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.{name} or integration.response.body.{JSON-expression}, where name is a valid and unique response header name and JSON-expression is a valid JSON expression without the $ prefix.</p>
         pub fn set_response_parameters(
             mut self,
             input: std::option::Option<
@@ -3174,6 +3463,11 @@ pub mod integration_response {
             self.response_parameters = input;
             self
         }
+        /// Adds a key-value pair to `response_templates`.
+        ///
+        /// To override the contents of this collection use [`set_response_templates`](Self::set_response_templates).
+        ///
+        /// <p>The collection of response templates for the integration response as a string-to-string map of key-value pairs. Response templates are represented as a key/value map, with a content-type as the key and a template as the value.</p>
         pub fn response_templates(
             mut self,
             k: impl Into<std::string::String>,
@@ -3184,6 +3478,7 @@ pub mod integration_response {
             self.response_templates = Some(hash_map);
             self
         }
+        /// <p>The collection of response templates for the integration response as a string-to-string map of key-value pairs. Response templates are represented as a key/value map, with a content-type as the key and a template as the value.</p>
         pub fn set_response_templates(
             mut self,
             input: std::option::Option<
@@ -3201,6 +3496,7 @@ pub mod integration_response {
             self.template_selection_expression = Some(input.into());
             self
         }
+        /// <p>The template selection expressions for the integration response.</p>
         pub fn set_template_selection_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3287,6 +3583,7 @@ pub mod domain_name {
             self.api_mapping_selection_expression = Some(input.into());
             self
         }
+        /// <p>The API mapping selection expression.</p>
         pub fn set_api_mapping_selection_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3299,10 +3596,16 @@ pub mod domain_name {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The name of the DomainName resource.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
         }
+        /// Appends an item to `domain_name_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_domain_name_configurations`](Self::set_domain_name_configurations).
+        ///
+        /// <p>The domain name configurations.</p>
         pub fn domain_name_configurations(
             mut self,
             input: impl Into<crate::model::DomainNameConfiguration>,
@@ -3312,6 +3615,7 @@ pub mod domain_name {
             self.domain_name_configurations = Some(v);
             self
         }
+        /// <p>The domain name configurations.</p>
         pub fn set_domain_name_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DomainNameConfiguration>>,
@@ -3327,6 +3631,7 @@ pub mod domain_name {
             self.mutual_tls_authentication = Some(input);
             self
         }
+        /// <p>The mutual TLS authentication configuration for a custom domain name.</p>
         pub fn set_mutual_tls_authentication(
             mut self,
             input: std::option::Option<crate::model::MutualTlsAuthentication>,
@@ -3334,6 +3639,11 @@ pub mod domain_name {
             self.mutual_tls_authentication = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The collection of tags associated with a domain name.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -3344,6 +3654,7 @@ pub mod domain_name {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The collection of tags associated with a domain name.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -3379,7 +3690,7 @@ pub struct Deployment {
     /// <p>Specifies whether a deployment was automatically released.</p>
     pub auto_deployed: bool,
     /// <p>The date and time when the Deployment resource was created.</p>
-    pub created_date: std::option::Option<smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The identifier for the deployment.</p>
     pub deployment_id: std::option::Option<std::string::String>,
     /// <p>The status of the deployment: PENDING, FAILED, or SUCCEEDED.</p>
@@ -3408,7 +3719,7 @@ pub mod deployment {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) auto_deployed: std::option::Option<bool>,
-        pub(crate) created_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) deployment_id: std::option::Option<std::string::String>,
         pub(crate) deployment_status: std::option::Option<crate::model::DeploymentStatus>,
         pub(crate) deployment_status_message: std::option::Option<std::string::String>,
@@ -3420,18 +3731,20 @@ pub mod deployment {
             self.auto_deployed = Some(input);
             self
         }
+        /// <p>Specifies whether a deployment was automatically released.</p>
         pub fn set_auto_deployed(mut self, input: std::option::Option<bool>) -> Self {
             self.auto_deployed = input;
             self
         }
         /// <p>The date and time when the Deployment resource was created.</p>
-        pub fn created_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_date = Some(input);
             self
         }
+        /// <p>The date and time when the Deployment resource was created.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_date = input;
             self
@@ -3441,6 +3754,7 @@ pub mod deployment {
             self.deployment_id = Some(input.into());
             self
         }
+        /// <p>The identifier for the deployment.</p>
         pub fn set_deployment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3453,6 +3767,7 @@ pub mod deployment {
             self.deployment_status = Some(input);
             self
         }
+        /// <p>The status of the deployment: PENDING, FAILED, or SUCCEEDED.</p>
         pub fn set_deployment_status(
             mut self,
             input: std::option::Option<crate::model::DeploymentStatus>,
@@ -3465,6 +3780,7 @@ pub mod deployment {
             self.deployment_status_message = Some(input.into());
             self
         }
+        /// <p>May contain additional feedback on the status of an API deployment.</p>
         pub fn set_deployment_status_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3477,6 +3793,7 @@ pub mod deployment {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description for the deployment.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -3582,6 +3899,7 @@ pub mod authorizer {
             self.authorizer_credentials_arn = Some(input.into());
             self
         }
+        /// <p>Specifies the required credentials as an IAM role for API Gateway to invoke the authorizer. To specify an IAM role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based permissions on the Lambda function, don't specify this parameter. Supported only for REQUEST authorizers.</p>
         pub fn set_authorizer_credentials_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3594,6 +3912,7 @@ pub mod authorizer {
             self.authorizer_id = Some(input.into());
             self
         }
+        /// <p>The authorizer identifier.</p>
         pub fn set_authorizer_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3609,6 +3928,7 @@ pub mod authorizer {
             self.authorizer_payload_format_version = Some(input.into());
             self
         }
+        /// <p>Specifies the format of the payload sent to an HTTP API Lambda authorizer. Required for HTTP API Lambda authorizers. Supported values are 1.0 and 2.0. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a>.</p>
         pub fn set_authorizer_payload_format_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3621,6 +3941,7 @@ pub mod authorizer {
             self.authorizer_result_ttl_in_seconds = Some(input);
             self
         }
+        /// <p>The time to live (TTL) for cached authorizer results, in seconds. If it equals 0, authorization caching is disabled. If it is greater than 0, API Gateway caches authorizer responses. The maximum value is 3600, or 1 hour. Supported only for HTTP API Lambda authorizers.</p>
         pub fn set_authorizer_result_ttl_in_seconds(
             mut self,
             input: std::option::Option<i32>,
@@ -3633,6 +3954,7 @@ pub mod authorizer {
             self.authorizer_type = Some(input);
             self
         }
+        /// <p>The authorizer type. Specify REQUEST for a Lambda function using incoming request parameters. Specify JWT to use JSON Web Tokens (supported only for HTTP APIs).</p>
         pub fn set_authorizer_type(
             mut self,
             input: std::option::Option<crate::model::AuthorizerType>,
@@ -3646,6 +3968,8 @@ pub mod authorizer {
             self.authorizer_uri = Some(input.into());
             self
         }
+        /// <p>The authorizer's Uniform Resource Identifier (URI). For REQUEST authorizers, this must be a well-formed Lambda function URI, for example, arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:<replaceable>{account_id}</replaceable>:function:<replaceable>{lambda_function_name}</replaceable>/invocations. In general, the URI has this form: arn:aws:apigateway:<replaceable>{region}</replaceable>:lambda:path/<replaceable>{service_api}</replaceable>
+        /// , where <replaceable></replaceable>{region} is the same as the region hosting the Lambda function, path indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial /. For Lambda functions, this is usually of the form /2015-03-31/functions/[FunctionARN]/invocations. Supported only for REQUEST authorizers.</p>
         pub fn set_authorizer_uri(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3658,16 +3982,23 @@ pub mod authorizer {
             self.enable_simple_responses = Some(input);
             self
         }
+        /// <p>Specifies whether a Lambda authorizer returns a response in a simple format. If enabled, the Lambda authorizer can return a boolean value instead of an IAM policy. Supported only for HTTP APIs. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a></p>
         pub fn set_enable_simple_responses(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_simple_responses = input;
             self
         }
+        /// Appends an item to `identity_source`.
+        ///
+        /// To override the contents of this collection use [`set_identity_source`](Self::set_identity_source).
+        ///
+        /// <p>The identity source for which authorization is requested.</p> <p>For a REQUEST authorizer, this is optional. The value is a set of one or more mapping expressions of the specified request parameters. The identity source can be headers, query string parameters, stage variables, and context parameters. For example, if an Auth header and a Name query string parameter are defined as identity sources, this value is route.request.header.Auth, route.request.querystring.Name for WebSocket APIs. For HTTP APIs, use selection expressions prefixed with $, for example, $request.header.Auth, $request.querystring.Name. These parameters are used to perform runtime validation for Lambda-based authorizers by verifying all of the identity-related request parameters are present in the request, not null, and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function. Otherwise, it returns a 401 Unauthorized response without calling the Lambda function. For HTTP APIs, identity sources are also used as the cache key when caching is enabled. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a>.</p> <p>For JWT, a single entry that specifies where to extract the JSON Web Token (JWT) from inbound requests. Currently only header-based and query parameter-based selections are supported, for example $request.header.Authorization.</p>
         pub fn identity_source(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.identity_source.unwrap_or_default();
             v.push(input.into());
             self.identity_source = Some(v);
             self
         }
+        /// <p>The identity source for which authorization is requested.</p> <p>For a REQUEST authorizer, this is optional. The value is a set of one or more mapping expressions of the specified request parameters. The identity source can be headers, query string parameters, stage variables, and context parameters. For example, if an Auth header and a Name query string parameter are defined as identity sources, this value is route.request.header.Auth, route.request.querystring.Name for WebSocket APIs. For HTTP APIs, use selection expressions prefixed with $, for example, $request.header.Auth, $request.querystring.Name. These parameters are used to perform runtime validation for Lambda-based authorizers by verifying all of the identity-related request parameters are present in the request, not null, and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function. Otherwise, it returns a 401 Unauthorized response without calling the Lambda function. For HTTP APIs, identity sources are also used as the cache key when caching is enabled. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a>.</p> <p>For JWT, a single entry that specifies where to extract the JSON Web Token (JWT) from inbound requests. Currently only header-based and query parameter-based selections are supported, for example $request.header.Authorization.</p>
         pub fn set_identity_source(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3683,6 +4014,7 @@ pub mod authorizer {
             self.identity_validation_expression = Some(input.into());
             self
         }
+        /// <p>The validation expression does not apply to the REQUEST authorizer.</p>
         pub fn set_identity_validation_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3695,6 +4027,7 @@ pub mod authorizer {
             self.jwt_configuration = Some(input);
             self
         }
+        /// <p>Represents the configuration of a JWT authorizer. Required for the JWT authorizer type. Supported only for HTTP APIs.</p>
         pub fn set_jwt_configuration(
             mut self,
             input: std::option::Option<crate::model::JwtConfiguration>,
@@ -3707,6 +4040,7 @@ pub mod authorizer {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the authorizer.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -3753,7 +4087,7 @@ pub struct Api {
     /// <p>A CORS configuration. Supported only for HTTP APIs.</p>
     pub cors_configuration: std::option::Option<crate::model::Cors>,
     /// <p>The timestamp when the API was created.</p>
-    pub created_date: std::option::Option<smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The description of the API.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>Avoid validating models when creating a deployment. Supported only for WebSocket APIs.</p>
@@ -3818,7 +4152,7 @@ pub mod api {
         pub(crate) api_id: std::option::Option<std::string::String>,
         pub(crate) api_key_selection_expression: std::option::Option<std::string::String>,
         pub(crate) cors_configuration: std::option::Option<crate::model::Cors>,
-        pub(crate) created_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) disable_schema_validation: std::option::Option<bool>,
         pub(crate) disable_execute_api_endpoint: std::option::Option<bool>,
@@ -3838,6 +4172,7 @@ pub mod api {
             self.api_endpoint = Some(input.into());
             self
         }
+        /// <p>The URI of the API, of the form {api-id}.execute-api.{region}.amazonaws.com. The stage name is typically appended to this URI to form a complete path to a deployed API stage.</p>
         pub fn set_api_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.api_endpoint = input;
             self
@@ -3847,6 +4182,7 @@ pub mod api {
             self.api_gateway_managed = Some(input);
             self
         }
+        /// <p>Specifies whether an API is managed by API Gateway. You can't update or delete a managed API by using API Gateway. A managed API can be deleted only through the tooling or service that created it.</p>
         pub fn set_api_gateway_managed(mut self, input: std::option::Option<bool>) -> Self {
             self.api_gateway_managed = input;
             self
@@ -3856,6 +4192,7 @@ pub mod api {
             self.api_id = Some(input.into());
             self
         }
+        /// <p>The API ID.</p>
         pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.api_id = input;
             self
@@ -3868,6 +4205,7 @@ pub mod api {
             self.api_key_selection_expression = Some(input.into());
             self
         }
+        /// <p>An API key selection expression. Supported only for WebSocket APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">API Key Selection Expressions</a>.</p>
         pub fn set_api_key_selection_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3880,6 +4218,7 @@ pub mod api {
             self.cors_configuration = Some(input);
             self
         }
+        /// <p>A CORS configuration. Supported only for HTTP APIs.</p>
         pub fn set_cors_configuration(
             mut self,
             input: std::option::Option<crate::model::Cors>,
@@ -3888,13 +4227,14 @@ pub mod api {
             self
         }
         /// <p>The timestamp when the API was created.</p>
-        pub fn created_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_date = Some(input);
             self
         }
+        /// <p>The timestamp when the API was created.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_date = input;
             self
@@ -3904,6 +4244,7 @@ pub mod api {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the API.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -3913,6 +4254,7 @@ pub mod api {
             self.disable_schema_validation = Some(input);
             self
         }
+        /// <p>Avoid validating models when creating a deployment. Supported only for WebSocket APIs.</p>
         pub fn set_disable_schema_validation(mut self, input: std::option::Option<bool>) -> Self {
             self.disable_schema_validation = input;
             self
@@ -3922,6 +4264,7 @@ pub mod api {
             self.disable_execute_api_endpoint = Some(input);
             self
         }
+        /// <p>Specifies whether clients can invoke your API by using the default execute-api endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
         pub fn set_disable_execute_api_endpoint(
             mut self,
             input: std::option::Option<bool>,
@@ -3929,12 +4272,18 @@ pub mod api {
             self.disable_execute_api_endpoint = input;
             self
         }
+        /// Appends an item to `import_info`.
+        ///
+        /// To override the contents of this collection use [`set_import_info`](Self::set_import_info).
+        ///
+        /// <p>The validation information during API import. This may include particular properties of your OpenAPI definition which are ignored during import. Supported only for HTTP APIs.</p>
         pub fn import_info(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.import_info.unwrap_or_default();
             v.push(input.into());
             self.import_info = Some(v);
             self
         }
+        /// <p>The validation information during API import. This may include particular properties of your OpenAPI definition which are ignored during import. Supported only for HTTP APIs.</p>
         pub fn set_import_info(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3947,6 +4296,7 @@ pub mod api {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the API.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -3956,6 +4306,7 @@ pub mod api {
             self.protocol_type = Some(input);
             self
         }
+        /// <p>The API protocol.</p>
         pub fn set_protocol_type(
             mut self,
             input: std::option::Option<crate::model::ProtocolType>,
@@ -3968,6 +4319,7 @@ pub mod api {
             self.route_selection_expression = Some(input.into());
             self
         }
+        /// <p>The route selection expression for the API. For HTTP APIs, the routeSelectionExpression must be ${request.method} ${request.path}. If not provided, this will be the default for HTTP APIs. This property is required for WebSocket APIs.</p>
         pub fn set_route_selection_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3975,6 +4327,11 @@ pub mod api {
             self.route_selection_expression = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A collection of tags associated with the API.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -3985,6 +4342,7 @@ pub mod api {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>A collection of tags associated with the API.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -3999,16 +4357,23 @@ pub mod api {
             self.version = Some(input.into());
             self
         }
+        /// <p>A version identifier for the API.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
         }
+        /// Appends an item to `warnings`.
+        ///
+        /// To override the contents of this collection use [`set_warnings`](Self::set_warnings).
+        ///
+        /// <p>The warning messages reported when failonwarnings is turned on during API import.</p>
         pub fn warnings(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.warnings.unwrap_or_default();
             v.push(input.into());
             self.warnings = Some(v);
             self
         }
+        /// <p>The warning messages reported when failonwarnings is turned on during API import.</p>
         pub fn set_warnings(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4086,6 +4451,7 @@ pub mod api_mapping {
             self.api_id = Some(input.into());
             self
         }
+        /// <p>The API identifier.</p>
         pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.api_id = input;
             self
@@ -4095,6 +4461,7 @@ pub mod api_mapping {
             self.api_mapping_id = Some(input.into());
             self
         }
+        /// <p>The API mapping identifier.</p>
         pub fn set_api_mapping_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4107,6 +4474,7 @@ pub mod api_mapping {
             self.api_mapping_key = Some(input.into());
             self
         }
+        /// <p>The API mapping key.</p>
         pub fn set_api_mapping_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4119,6 +4487,7 @@ pub mod api_mapping {
             self.stage = Some(input.into());
             self
         }
+        /// <p>The API stage.</p>
         pub fn set_stage(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stage = input;
             self

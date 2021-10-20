@@ -9,7 +9,7 @@ pub mod activate_pipeline_input {
         pub(crate) pipeline_id: std::option::Option<std::string::String>,
         pub(crate) parameter_values:
             std::option::Option<std::vec::Vec<crate::model::ParameterValue>>,
-        pub(crate) start_timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) start_timestamp: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The ID of the pipeline.</p>
@@ -17,16 +17,23 @@ pub mod activate_pipeline_input {
             self.pipeline_id = Some(input.into());
             self
         }
+        /// <p>The ID of the pipeline.</p>
         pub fn set_pipeline_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.pipeline_id = input;
             self
         }
+        /// Appends an item to `parameter_values`.
+        ///
+        /// To override the contents of this collection use [`set_parameter_values`](Self::set_parameter_values).
+        ///
+        /// <p>A list of parameter values to pass to the pipeline at activation.</p>
         pub fn parameter_values(mut self, input: impl Into<crate::model::ParameterValue>) -> Self {
             let mut v = self.parameter_values.unwrap_or_default();
             v.push(input.into());
             self.parameter_values = Some(v);
             self
         }
+        /// <p>A list of parameter values to pass to the pipeline at activation.</p>
         pub fn set_parameter_values(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ParameterValue>>,
@@ -35,13 +42,14 @@ pub mod activate_pipeline_input {
             self
         }
         /// <p>The date and time to resume the pipeline. By default, the pipeline resumes from the last completed execution.</p>
-        pub fn start_timestamp(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_timestamp = Some(input);
             self
         }
+        /// <p>The date and time to resume the pipeline. By default, the pipeline resumes from the last completed execution.</p>
         pub fn set_start_timestamp(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.start_timestamp = input;
             self
@@ -51,7 +59,7 @@ pub mod activate_pipeline_input {
             self,
         ) -> std::result::Result<
             crate::input::ActivatePipelineInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ActivatePipelineInput {
                 pipeline_id: self.pipeline_id,
@@ -72,16 +80,16 @@ impl ActivatePipelineInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ActivatePipeline,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ActivatePipelineInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -89,7 +97,7 @@ impl ActivatePipelineInput {
         fn update_http_builder(
             input: &crate::input::ActivatePipelineInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -98,32 +106,32 @@ impl ActivatePipelineInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ActivatePipelineInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "DataPipeline.ActivatePipeline",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_activate_pipeline(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -146,15 +154,15 @@ impl ActivatePipelineInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ActivatePipeline::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ActivatePipeline",
             "datapipeline",
         ));
@@ -163,10 +171,10 @@ impl ActivatePipelineInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -195,16 +203,23 @@ pub mod add_tags_input {
             self.pipeline_id = Some(input.into());
             self
         }
+        /// <p>The ID of the pipeline.</p>
         pub fn set_pipeline_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.pipeline_id = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags to add, as key/value pairs.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The tags to add, as key/value pairs.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -215,7 +230,7 @@ pub mod add_tags_input {
         /// Consumes the builder and constructs a [`AddTagsInput`](crate::input::AddTagsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::AddTagsInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::AddTagsInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::AddTagsInput {
                 pipeline_id: self.pipeline_id,
@@ -235,13 +250,16 @@ impl AddTagsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<crate::operation::AddTags, aws_http::AwsErrorRetryPolicy>,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::Operation<
+            crate::operation::AddTags,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AddTagsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -249,7 +267,7 @@ impl AddTagsInput {
         fn update_http_builder(
             input: &crate::input::AddTagsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -258,29 +276,31 @@ impl AddTagsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AddTagsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "DataPipeline.AddTags",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_add_tags(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -303,24 +323,25 @@ impl AddTagsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(request, crate::operation::AddTags::new())
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "AddTags",
-                "datapipeline",
-            ));
+        let op =
+            aws_smithy_http::operation::Operation::new(request, crate::operation::AddTags::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "AddTags",
+                    "datapipeline",
+                ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -352,6 +373,8 @@ pub mod create_pipeline_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name for the pipeline. You can use the same name for multiple pipelines associated with your AWS account,
+        /// because AWS Data Pipeline assigns each pipeline a unique pipeline identifier.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -368,6 +391,14 @@ pub mod create_pipeline_input {
             self.unique_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier. This identifier is not the same as the pipeline identifier assigned by AWS Data Pipeline.
+        /// You are responsible for defining the format and ensuring the uniqueness of this identifier. You use this
+        /// parameter to ensure idempotency during repeated calls to <code>CreatePipeline</code>. For example, if the
+        /// first call to <code>CreatePipeline</code> does not succeed, you can pass in the same unique identifier and
+        /// pipeline name combination on a subsequent call to <code>CreatePipeline</code>. <code>CreatePipeline</code>
+        /// ensures that if a pipeline already exists with the same name and unique identifier, a new pipeline is not
+        /// created. Instead, you'll receive the pipeline identifier from the previous attempt. The uniqueness of the
+        /// name and unique identifier combination is scoped to the AWS account or IAM user credentials.</p>
         pub fn set_unique_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.unique_id = input;
             self
@@ -377,16 +408,27 @@ pub mod create_pipeline_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description for the pipeline.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of tags to associate with the pipeline at creation. Tags let you control access to pipelines.
+        /// For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a>
+        /// in the <i>AWS Data Pipeline Developer Guide</i>.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>A list of tags to associate with the pipeline at creation. Tags let you control access to pipelines.
+        /// For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a>
+        /// in the <i>AWS Data Pipeline Developer Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -399,7 +441,7 @@ pub mod create_pipeline_input {
             self,
         ) -> std::result::Result<
             crate::input::CreatePipelineInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreatePipelineInput {
                 name: self.name,
@@ -421,16 +463,16 @@ impl CreatePipelineInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreatePipeline,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreatePipelineInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -438,7 +480,7 @@ impl CreatePipelineInput {
         fn update_http_builder(
             input: &crate::input::CreatePipelineInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -447,29 +489,31 @@ impl CreatePipelineInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreatePipelineInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "DataPipeline.CreatePipeline",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_pipeline(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -492,15 +536,15 @@ impl CreatePipelineInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreatePipeline::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreatePipeline",
             "datapipeline",
         ));
@@ -509,10 +553,10 @@ impl CreatePipelineInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -541,6 +585,7 @@ pub mod deactivate_pipeline_input {
             self.pipeline_id = Some(input.into());
             self
         }
+        /// <p>The ID of the pipeline.</p>
         pub fn set_pipeline_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.pipeline_id = input;
             self
@@ -553,6 +598,10 @@ pub mod deactivate_pipeline_input {
             self.cancel_active = Some(input);
             self
         }
+        /// <p>Indicates whether to cancel any running objects. The default is true,
+        /// which sets the state of any running objects to <code>CANCELED</code>.
+        /// If this value is false, the pipeline is deactivated after all
+        /// running objects finish.</p>
         pub fn set_cancel_active(mut self, input: std::option::Option<bool>) -> Self {
             self.cancel_active = input;
             self
@@ -562,7 +611,7 @@ pub mod deactivate_pipeline_input {
             self,
         ) -> std::result::Result<
             crate::input::DeactivatePipelineInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeactivatePipelineInput {
                 pipeline_id: self.pipeline_id,
@@ -582,16 +631,16 @@ impl DeactivatePipelineInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeactivatePipeline,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeactivatePipelineInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -599,7 +648,7 @@ impl DeactivatePipelineInput {
         fn update_http_builder(
             input: &crate::input::DeactivatePipelineInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -608,32 +657,32 @@ impl DeactivatePipelineInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeactivatePipelineInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "DataPipeline.DeactivatePipeline",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_deactivate_pipeline(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -656,15 +705,15 @@ impl DeactivatePipelineInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeactivatePipeline::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeactivatePipeline",
             "datapipeline",
         ));
@@ -673,10 +722,10 @@ impl DeactivatePipelineInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -704,6 +753,7 @@ pub mod delete_pipeline_input {
             self.pipeline_id = Some(input.into());
             self
         }
+        /// <p>The ID of the pipeline.</p>
         pub fn set_pipeline_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.pipeline_id = input;
             self
@@ -713,7 +763,7 @@ pub mod delete_pipeline_input {
             self,
         ) -> std::result::Result<
             crate::input::DeletePipelineInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeletePipelineInput {
                 pipeline_id: self.pipeline_id,
@@ -732,16 +782,16 @@ impl DeletePipelineInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeletePipeline,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeletePipelineInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -749,7 +799,7 @@ impl DeletePipelineInput {
         fn update_http_builder(
             input: &crate::input::DeletePipelineInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -758,29 +808,31 @@ impl DeletePipelineInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeletePipelineInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "DataPipeline.DeletePipeline",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_delete_pipeline(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -803,15 +855,15 @@ impl DeletePipelineInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeletePipeline::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeletePipeline",
             "datapipeline",
         ));
@@ -820,10 +872,10 @@ impl DeletePipelineInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -854,16 +906,23 @@ pub mod describe_objects_input {
             self.pipeline_id = Some(input.into());
             self
         }
+        /// <p>The ID of the pipeline that contains the object definitions.</p>
         pub fn set_pipeline_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.pipeline_id = input;
             self
         }
+        /// Appends an item to `object_ids`.
+        ///
+        /// To override the contents of this collection use [`set_object_ids`](Self::set_object_ids).
+        ///
+        /// <p>The IDs of the pipeline objects that contain the definitions to be described. You can pass as many as 25 identifiers in a single call to <code>DescribeObjects</code>.</p>
         pub fn object_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.object_ids.unwrap_or_default();
             v.push(input.into());
             self.object_ids = Some(v);
             self
         }
+        /// <p>The IDs of the pipeline objects that contain the definitions to be described. You can pass as many as 25 identifiers in a single call to <code>DescribeObjects</code>.</p>
         pub fn set_object_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -876,6 +935,7 @@ pub mod describe_objects_input {
             self.evaluate_expressions = Some(input);
             self
         }
+        /// <p>Indicates whether any expressions in the object should be evaluated when the object descriptions are returned.</p>
         pub fn set_evaluate_expressions(mut self, input: std::option::Option<bool>) -> Self {
             self.evaluate_expressions = input;
             self
@@ -887,6 +947,9 @@ pub mod describe_objects_input {
             self.marker = Some(input.into());
             self
         }
+        /// <p>The starting point for the results to be returned. For the first call, this value should be empty.
+        /// As long as there are more results, continue to call <code>DescribeObjects</code> with
+        /// the marker value from the previous call to retrieve the next set of results.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -896,7 +959,7 @@ pub mod describe_objects_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeObjectsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeObjectsInput {
                 pipeline_id: self.pipeline_id,
@@ -918,16 +981,16 @@ impl DescribeObjectsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeObjects,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeObjectsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -935,7 +998,7 @@ impl DescribeObjectsInput {
         fn update_http_builder(
             input: &crate::input::DescribeObjectsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -944,32 +1007,32 @@ impl DescribeObjectsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeObjectsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "DataPipeline.DescribeObjects",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_objects(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -992,15 +1055,15 @@ impl DescribeObjectsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeObjects::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeObjects",
             "datapipeline",
         ));
@@ -1009,10 +1072,10 @@ impl DescribeObjectsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1035,12 +1098,20 @@ pub mod describe_pipelines_input {
         pub(crate) pipeline_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `pipeline_ids`.
+        ///
+        /// To override the contents of this collection use [`set_pipeline_ids`](Self::set_pipeline_ids).
+        ///
+        /// <p>The IDs of the pipelines to describe. You can pass as many as 25 identifiers in a single call.
+        /// To obtain pipeline IDs, call <a>ListPipelines</a>.</p>
         pub fn pipeline_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.pipeline_ids.unwrap_or_default();
             v.push(input.into());
             self.pipeline_ids = Some(v);
             self
         }
+        /// <p>The IDs of the pipelines to describe. You can pass as many as 25 identifiers in a single call.
+        /// To obtain pipeline IDs, call <a>ListPipelines</a>.</p>
         pub fn set_pipeline_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1053,7 +1124,7 @@ pub mod describe_pipelines_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribePipelinesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribePipelinesInput {
                 pipeline_ids: self.pipeline_ids,
@@ -1072,16 +1143,16 @@ impl DescribePipelinesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribePipelines,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribePipelinesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1089,7 +1160,7 @@ impl DescribePipelinesInput {
         fn update_http_builder(
             input: &crate::input::DescribePipelinesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1098,32 +1169,32 @@ impl DescribePipelinesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribePipelinesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "DataPipeline.DescribePipelines",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_pipelines(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1146,15 +1217,15 @@ impl DescribePipelinesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribePipelines::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribePipelines",
             "datapipeline",
         ));
@@ -1163,10 +1234,10 @@ impl DescribePipelinesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1196,6 +1267,7 @@ pub mod evaluate_expression_input {
             self.pipeline_id = Some(input.into());
             self
         }
+        /// <p>The ID of the pipeline.</p>
         pub fn set_pipeline_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.pipeline_id = input;
             self
@@ -1205,6 +1277,7 @@ pub mod evaluate_expression_input {
             self.object_id = Some(input.into());
             self
         }
+        /// <p>The ID of the object.</p>
         pub fn set_object_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.object_id = input;
             self
@@ -1214,6 +1287,7 @@ pub mod evaluate_expression_input {
             self.expression = Some(input.into());
             self
         }
+        /// <p>The expression to evaluate.</p>
         pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.expression = input;
             self
@@ -1223,7 +1297,7 @@ pub mod evaluate_expression_input {
             self,
         ) -> std::result::Result<
             crate::input::EvaluateExpressionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::EvaluateExpressionInput {
                 pipeline_id: self.pipeline_id,
@@ -1244,16 +1318,16 @@ impl EvaluateExpressionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::EvaluateExpression,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::EvaluateExpressionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1261,7 +1335,7 @@ impl EvaluateExpressionInput {
         fn update_http_builder(
             input: &crate::input::EvaluateExpressionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1270,32 +1344,32 @@ impl EvaluateExpressionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::EvaluateExpressionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "DataPipeline.EvaluateExpression",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_evaluate_expression(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1318,15 +1392,15 @@ impl EvaluateExpressionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::EvaluateExpression::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "EvaluateExpression",
             "datapipeline",
         ));
@@ -1335,10 +1409,10 @@ impl EvaluateExpressionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1367,6 +1441,7 @@ pub mod get_pipeline_definition_input {
             self.pipeline_id = Some(input.into());
             self
         }
+        /// <p>The ID of the pipeline.</p>
         pub fn set_pipeline_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.pipeline_id = input;
             self
@@ -1378,6 +1453,9 @@ pub mod get_pipeline_definition_input {
             self.version = Some(input.into());
             self
         }
+        /// <p>The version of the pipeline definition to retrieve. Set this parameter to <code>latest</code> (default)
+        /// to use the last definition saved to the pipeline or <code>active</code> to use the last definition  
+        /// that was activated.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -1387,7 +1465,7 @@ pub mod get_pipeline_definition_input {
             self,
         ) -> std::result::Result<
             crate::input::GetPipelineDefinitionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetPipelineDefinitionInput {
                 pipeline_id: self.pipeline_id,
@@ -1407,16 +1485,16 @@ impl GetPipelineDefinitionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetPipelineDefinition,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetPipelineDefinitionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1424,7 +1502,7 @@ impl GetPipelineDefinitionInput {
         fn update_http_builder(
             input: &crate::input::GetPipelineDefinitionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1433,32 +1511,34 @@ impl GetPipelineDefinitionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetPipelineDefinitionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "DataPipeline.GetPipelineDefinition",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_pipeline_definition(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1481,15 +1561,15 @@ impl GetPipelineDefinitionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetPipelineDefinition::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetPipelineDefinition",
             "datapipeline",
         ));
@@ -1498,10 +1578,10 @@ impl GetPipelineDefinitionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1531,6 +1611,9 @@ pub mod list_pipelines_input {
             self.marker = Some(input.into());
             self
         }
+        /// <p>The starting point for the results to be returned. For the first call, this value should be empty.
+        /// As long as there are more results, continue to call <code>ListPipelines</code> with
+        /// the marker value from the previous call to retrieve the next set of results.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -1538,8 +1621,10 @@ pub mod list_pipelines_input {
         /// Consumes the builder and constructs a [`ListPipelinesInput`](crate::input::ListPipelinesInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListPipelinesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListPipelinesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListPipelinesInput {
                 marker: self.marker,
             })
@@ -1557,16 +1642,16 @@ impl ListPipelinesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListPipelines,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListPipelinesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1574,7 +1659,7 @@ impl ListPipelinesInput {
         fn update_http_builder(
             input: &crate::input::ListPipelinesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1583,29 +1668,31 @@ impl ListPipelinesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListPipelinesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "DataPipeline.ListPipelines",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_pipelines(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1628,25 +1715,27 @@ impl ListPipelinesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListPipelines::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ListPipelines",
-                    "datapipeline",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListPipelines::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListPipelines",
+            "datapipeline",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1678,6 +1767,9 @@ pub mod poll_for_task_input {
             self.worker_group = Some(input.into());
             self
         }
+        /// <p>The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created.
+        /// You can only specify a single value for <code>workerGroup</code> in the call to <code>PollForTask</code>. There are no wildcard values permitted in
+        /// <code>workerGroup</code>; the string must be an exact, case-sensitive, match.</p>
         pub fn set_worker_group(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.worker_group = input;
             self
@@ -1687,6 +1779,7 @@ pub mod poll_for_task_input {
             self.hostname = Some(input.into());
             self
         }
+        /// <p>The public DNS name of the calling task runner.</p>
         pub fn set_hostname(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.hostname = input;
             self
@@ -1696,6 +1789,7 @@ pub mod poll_for_task_input {
             self.instance_identity = Some(input);
             self
         }
+        /// <p>Identity information for the EC2 instance that is hosting the task runner. You can get this value from the instance using <code>http://169.254.169.254/latest/meta-data/instance-id</code>. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html">Instance Metadata</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i> Passing in this value proves that your task runner is running on an EC2 instance, and ensures the proper AWS Data Pipeline service charges are applied to your pipeline.</p>
         pub fn set_instance_identity(
             mut self,
             input: std::option::Option<crate::model::InstanceIdentity>,
@@ -1706,8 +1800,10 @@ pub mod poll_for_task_input {
         /// Consumes the builder and constructs a [`PollForTaskInput`](crate::input::PollForTaskInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::PollForTaskInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::PollForTaskInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::PollForTaskInput {
                 worker_group: self.worker_group,
                 hostname: self.hostname,
@@ -1727,16 +1823,16 @@ impl PollForTaskInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::PollForTask,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::PollForTaskInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1744,7 +1840,7 @@ impl PollForTaskInput {
         fn update_http_builder(
             input: &crate::input::PollForTaskInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1753,31 +1849,31 @@ impl PollForTaskInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::PollForTaskInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "DataPipeline.PollForTask",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_poll_for_task(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1800,25 +1896,27 @@ impl PollForTaskInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::PollForTask::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "PollForTask",
-                    "datapipeline",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::PollForTask::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "PollForTask",
+            "datapipeline",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1852,16 +1950,23 @@ pub mod put_pipeline_definition_input {
             self.pipeline_id = Some(input.into());
             self
         }
+        /// <p>The ID of the pipeline.</p>
         pub fn set_pipeline_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.pipeline_id = input;
             self
         }
+        /// Appends an item to `pipeline_objects`.
+        ///
+        /// To override the contents of this collection use [`set_pipeline_objects`](Self::set_pipeline_objects).
+        ///
+        /// <p>The objects that define the pipeline. These objects overwrite the existing pipeline definition.</p>
         pub fn pipeline_objects(mut self, input: impl Into<crate::model::PipelineObject>) -> Self {
             let mut v = self.pipeline_objects.unwrap_or_default();
             v.push(input.into());
             self.pipeline_objects = Some(v);
             self
         }
+        /// <p>The objects that define the pipeline. These objects overwrite the existing pipeline definition.</p>
         pub fn set_pipeline_objects(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PipelineObject>>,
@@ -1869,6 +1974,11 @@ pub mod put_pipeline_definition_input {
             self.pipeline_objects = input;
             self
         }
+        /// Appends an item to `parameter_objects`.
+        ///
+        /// To override the contents of this collection use [`set_parameter_objects`](Self::set_parameter_objects).
+        ///
+        /// <p>The parameter objects used with the pipeline.</p>
         pub fn parameter_objects(
             mut self,
             input: impl Into<crate::model::ParameterObject>,
@@ -1878,6 +1988,7 @@ pub mod put_pipeline_definition_input {
             self.parameter_objects = Some(v);
             self
         }
+        /// <p>The parameter objects used with the pipeline.</p>
         pub fn set_parameter_objects(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ParameterObject>>,
@@ -1885,12 +1996,18 @@ pub mod put_pipeline_definition_input {
             self.parameter_objects = input;
             self
         }
+        /// Appends an item to `parameter_values`.
+        ///
+        /// To override the contents of this collection use [`set_parameter_values`](Self::set_parameter_values).
+        ///
+        /// <p>The parameter values used with the pipeline.</p>
         pub fn parameter_values(mut self, input: impl Into<crate::model::ParameterValue>) -> Self {
             let mut v = self.parameter_values.unwrap_or_default();
             v.push(input.into());
             self.parameter_values = Some(v);
             self
         }
+        /// <p>The parameter values used with the pipeline.</p>
         pub fn set_parameter_values(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ParameterValue>>,
@@ -1903,7 +2020,7 @@ pub mod put_pipeline_definition_input {
             self,
         ) -> std::result::Result<
             crate::input::PutPipelineDefinitionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutPipelineDefinitionInput {
                 pipeline_id: self.pipeline_id,
@@ -1925,16 +2042,16 @@ impl PutPipelineDefinitionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::PutPipelineDefinition,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::PutPipelineDefinitionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1942,7 +2059,7 @@ impl PutPipelineDefinitionInput {
         fn update_http_builder(
             input: &crate::input::PutPipelineDefinitionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1951,32 +2068,34 @@ impl PutPipelineDefinitionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::PutPipelineDefinitionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "DataPipeline.PutPipelineDefinition",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_put_pipeline_definition(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1999,15 +2118,15 @@ impl PutPipelineDefinitionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::PutPipelineDefinition::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "PutPipelineDefinition",
             "datapipeline",
         ));
@@ -2016,10 +2135,10 @@ impl PutPipelineDefinitionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2051,6 +2170,7 @@ pub mod query_objects_input {
             self.pipeline_id = Some(input.into());
             self
         }
+        /// <p>The ID of the pipeline.</p>
         pub fn set_pipeline_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.pipeline_id = input;
             self
@@ -2062,6 +2182,9 @@ pub mod query_objects_input {
             self.query = Some(input);
             self
         }
+        /// <p>The query that defines the objects to be returned. The <code>Query</code> object can contain a maximum of ten selectors.
+        /// The conditions in the query are limited to top-level String fields in the object.
+        /// These filters can be applied to components, instances, and attempts.</p>
         pub fn set_query(mut self, input: std::option::Option<crate::model::Query>) -> Self {
             self.query = input;
             self
@@ -2072,6 +2195,8 @@ pub mod query_objects_input {
             self.sphere = Some(input.into());
             self
         }
+        /// <p>Indicates whether the query applies to components or instances. The possible values are:  
+        /// <code>COMPONENT</code>, <code>INSTANCE</code>, and <code>ATTEMPT</code>.</p>
         pub fn set_sphere(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.sphere = input;
             self
@@ -2083,6 +2208,9 @@ pub mod query_objects_input {
             self.marker = Some(input.into());
             self
         }
+        /// <p>The starting point for the results to be returned. For the first call, this value should be empty.
+        /// As long as there are more results, continue to call <code>QueryObjects</code> with
+        /// the marker value from the previous call to retrieve the next set of results.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -2092,6 +2220,7 @@ pub mod query_objects_input {
             self.limit = Some(input);
             self
         }
+        /// <p>The maximum number of object names that <code>QueryObjects</code> will return in a single call. The default value is 100. </p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -2099,8 +2228,10 @@ pub mod query_objects_input {
         /// Consumes the builder and constructs a [`QueryObjectsInput`](crate::input::QueryObjectsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::QueryObjectsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::QueryObjectsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::QueryObjectsInput {
                 pipeline_id: self.pipeline_id,
                 query: self.query,
@@ -2122,16 +2253,16 @@ impl QueryObjectsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::QueryObjects,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::QueryObjectsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2139,7 +2270,7 @@ impl QueryObjectsInput {
         fn update_http_builder(
             input: &crate::input::QueryObjectsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2148,31 +2279,31 @@ impl QueryObjectsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::QueryObjectsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "DataPipeline.QueryObjects",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_query_objects(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2195,25 +2326,27 @@ impl QueryObjectsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::QueryObjects::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "QueryObjects",
-                    "datapipeline",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::QueryObjects::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "QueryObjects",
+            "datapipeline",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2242,16 +2375,23 @@ pub mod remove_tags_input {
             self.pipeline_id = Some(input.into());
             self
         }
+        /// <p>The ID of the pipeline.</p>
         pub fn set_pipeline_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.pipeline_id = input;
             self
         }
+        /// Appends an item to `tag_keys`.
+        ///
+        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
+        ///
+        /// <p>The keys of the tags to remove.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
+        /// <p>The keys of the tags to remove.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2262,8 +2402,10 @@ pub mod remove_tags_input {
         /// Consumes the builder and constructs a [`RemoveTagsInput`](crate::input::RemoveTagsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::RemoveTagsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::RemoveTagsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::RemoveTagsInput {
                 pipeline_id: self.pipeline_id,
                 tag_keys: self.tag_keys,
@@ -2282,16 +2424,16 @@ impl RemoveTagsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RemoveTags,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RemoveTagsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2299,7 +2441,7 @@ impl RemoveTagsInput {
         fn update_http_builder(
             input: &crate::input::RemoveTagsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2308,29 +2450,31 @@ impl RemoveTagsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RemoveTagsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "DataPipeline.RemoveTags",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_remove_tags(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2353,25 +2497,27 @@ impl RemoveTagsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::RemoveTags::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "RemoveTags",
-                    "datapipeline",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::RemoveTags::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "RemoveTags",
+            "datapipeline",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2400,16 +2546,23 @@ pub mod report_task_progress_input {
             self.task_id = Some(input.into());
             self
         }
+        /// <p>The ID of the task assigned to the task runner. This value is provided in the response for <a>PollForTask</a>.</p>
         pub fn set_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.task_id = input;
             self
         }
+        /// Appends an item to `fields`.
+        ///
+        /// To override the contents of this collection use [`set_fields`](Self::set_fields).
+        ///
+        /// <p>Key-value pairs that define the properties of the ReportTaskProgressInput object.</p>
         pub fn fields(mut self, input: impl Into<crate::model::Field>) -> Self {
             let mut v = self.fields.unwrap_or_default();
             v.push(input.into());
             self.fields = Some(v);
             self
         }
+        /// <p>Key-value pairs that define the properties of the ReportTaskProgressInput object.</p>
         pub fn set_fields(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Field>>,
@@ -2422,7 +2575,7 @@ pub mod report_task_progress_input {
             self,
         ) -> std::result::Result<
             crate::input::ReportTaskProgressInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ReportTaskProgressInput {
                 task_id: self.task_id,
@@ -2442,16 +2595,16 @@ impl ReportTaskProgressInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ReportTaskProgress,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ReportTaskProgressInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2459,7 +2612,7 @@ impl ReportTaskProgressInput {
         fn update_http_builder(
             input: &crate::input::ReportTaskProgressInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2468,30 +2621,32 @@ impl ReportTaskProgressInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ReportTaskProgressInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "DataPipeline.ReportTaskProgress",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_report_task_progress(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2514,15 +2669,15 @@ impl ReportTaskProgressInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ReportTaskProgress::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ReportTaskProgress",
             "datapipeline",
         ));
@@ -2531,10 +2686,10 @@ impl ReportTaskProgressInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2566,6 +2721,9 @@ pub mod report_task_runner_heartbeat_input {
             self.taskrunner_id = Some(input.into());
             self
         }
+        /// <p>The ID of the task runner. This value should be unique across your AWS account. In the case of AWS Data Pipeline Task Runner
+        /// launched on a resource managed by AWS Data Pipeline, the web service provides a unique identifier when it launches the application.
+        /// If you have written a custom task runner, you should assign a unique identifier for the task runner.</p>
         pub fn set_taskrunner_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2580,6 +2738,9 @@ pub mod report_task_runner_heartbeat_input {
             self.worker_group = Some(input.into());
             self
         }
+        /// <p>The type of task the task runner is configured to accept and process. The worker group is set as a field on objects in the pipeline when they are created.
+        /// You can only specify a single value for <code>workerGroup</code>. There are no wildcard values permitted in <code>workerGroup</code>; the string
+        /// must be an exact, case-sensitive, match.</p>
         pub fn set_worker_group(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.worker_group = input;
             self
@@ -2589,6 +2750,7 @@ pub mod report_task_runner_heartbeat_input {
             self.hostname = Some(input.into());
             self
         }
+        /// <p>The public DNS name of the task runner.</p>
         pub fn set_hostname(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.hostname = input;
             self
@@ -2598,7 +2760,7 @@ pub mod report_task_runner_heartbeat_input {
             self,
         ) -> std::result::Result<
             crate::input::ReportTaskRunnerHeartbeatInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ReportTaskRunnerHeartbeatInput {
                 taskrunner_id: self.taskrunner_id,
@@ -2620,16 +2782,16 @@ impl ReportTaskRunnerHeartbeatInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ReportTaskRunnerHeartbeat,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ReportTaskRunnerHeartbeatInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2637,7 +2799,7 @@ impl ReportTaskRunnerHeartbeatInput {
         fn update_http_builder(
             input: &crate::input::ReportTaskRunnerHeartbeatInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2646,32 +2808,34 @@ impl ReportTaskRunnerHeartbeatInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ReportTaskRunnerHeartbeatInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "DataPipeline.ReportTaskRunnerHeartbeat",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_report_task_runner_heartbeat(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2694,15 +2858,15 @@ impl ReportTaskRunnerHeartbeatInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ReportTaskRunnerHeartbeat::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ReportTaskRunnerHeartbeat",
             "datapipeline",
         ));
@@ -2711,10 +2875,10 @@ impl ReportTaskRunnerHeartbeatInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2744,16 +2908,23 @@ pub mod set_status_input {
             self.pipeline_id = Some(input.into());
             self
         }
+        /// <p>The ID of the pipeline that contains the objects.</p>
         pub fn set_pipeline_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.pipeline_id = input;
             self
         }
+        /// Appends an item to `object_ids`.
+        ///
+        /// To override the contents of this collection use [`set_object_ids`](Self::set_object_ids).
+        ///
+        /// <p>The IDs of the objects. The corresponding objects can be either physical or components, but not a mix of both types.</p>
         pub fn object_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.object_ids.unwrap_or_default();
             v.push(input.into());
             self.object_ids = Some(v);
             self
         }
+        /// <p>The IDs of the objects. The corresponding objects can be either physical or components, but not a mix of both types.</p>
         pub fn set_object_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2767,6 +2938,8 @@ pub mod set_status_input {
             self.status = Some(input.into());
             self
         }
+        /// <p>The status to be set on all the objects specified in <code>objectIds</code>. For components, use <code>PAUSE</code> or <code>RESUME</code>.
+        /// For instances, use <code>TRY_CANCEL</code>, <code>RERUN</code>, or <code>MARK_FINISHED</code>.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -2774,7 +2947,7 @@ pub mod set_status_input {
         /// Consumes the builder and constructs a [`SetStatusInput`](crate::input::SetStatusInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::SetStatusInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::SetStatusInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::SetStatusInput {
                 pipeline_id: self.pipeline_id,
@@ -2795,16 +2968,16 @@ impl SetStatusInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::SetStatus,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SetStatusInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2812,7 +2985,7 @@ impl SetStatusInput {
         fn update_http_builder(
             input: &crate::input::SetStatusInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2821,29 +2994,31 @@ impl SetStatusInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SetStatusInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "DataPipeline.SetStatus",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_set_status(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2866,13 +3041,13 @@ impl SetStatusInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
         let op =
-            smithy_http::operation::Operation::new(request, crate::operation::SetStatus::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
+            aws_smithy_http::operation::Operation::new(request, crate::operation::SetStatus::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "SetStatus",
                     "datapipeline",
                 ));
@@ -2881,10 +3056,10 @@ impl SetStatusInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2916,6 +3091,7 @@ pub mod set_task_status_input {
             self.task_id = Some(input.into());
             self
         }
+        /// <p>The ID of the task assigned to the task runner. This value is provided in the response for <a>PollForTask</a>.</p>
         pub fn set_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.task_id = input;
             self
@@ -2925,6 +3101,7 @@ pub mod set_task_status_input {
             self.task_status = Some(input);
             self
         }
+        /// <p>If <code>FINISHED</code>, the task successfully completed. If <code>FAILED</code>, the task ended unsuccessfully. Preconditions use false.</p>
         pub fn set_task_status(
             mut self,
             input: std::option::Option<crate::model::TaskStatus>,
@@ -2938,6 +3115,8 @@ pub mod set_task_status_input {
             self.error_id = Some(input.into());
             self
         }
+        /// <p>If an error occurred during the task, this value specifies the error code. This value is set on the physical attempt object.
+        /// It is used to display error information to the user. It should not start with string "Service_" which is reserved by the system.</p>
         pub fn set_error_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_id = input;
             self
@@ -2948,6 +3127,8 @@ pub mod set_task_status_input {
             self.error_message = Some(input.into());
             self
         }
+        /// <p>If an error occurred during the task, this value specifies a text description of the error. This value is set on the physical attempt object.
+        /// It is used to display error information to the user. The web service does not parse this value.</p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2961,6 +3142,8 @@ pub mod set_task_status_input {
             self.error_stack_trace = Some(input.into());
             self
         }
+        /// <p>If an error occurred during the task, this value specifies the stack trace associated with the error. This value is set on the physical attempt object.
+        /// It is used to display error information to the user. The web service does not parse this value.</p>
         pub fn set_error_stack_trace(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2971,8 +3154,10 @@ pub mod set_task_status_input {
         /// Consumes the builder and constructs a [`SetTaskStatusInput`](crate::input::SetTaskStatusInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::SetTaskStatusInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::SetTaskStatusInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::SetTaskStatusInput {
                 task_id: self.task_id,
                 task_status: self.task_status,
@@ -2994,16 +3179,16 @@ impl SetTaskStatusInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::SetTaskStatus,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SetTaskStatusInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3011,7 +3196,7 @@ impl SetTaskStatusInput {
         fn update_http_builder(
             input: &crate::input::SetTaskStatusInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3020,29 +3205,31 @@ impl SetTaskStatusInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SetTaskStatusInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "DataPipeline.SetTaskStatus",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_set_task_status(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3065,25 +3252,27 @@ impl SetTaskStatusInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::SetTaskStatus::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "SetTaskStatus",
-                    "datapipeline",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::SetTaskStatus::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "SetTaskStatus",
+            "datapipeline",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3117,16 +3306,23 @@ pub mod validate_pipeline_definition_input {
             self.pipeline_id = Some(input.into());
             self
         }
+        /// <p>The ID of the pipeline.</p>
         pub fn set_pipeline_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.pipeline_id = input;
             self
         }
+        /// Appends an item to `pipeline_objects`.
+        ///
+        /// To override the contents of this collection use [`set_pipeline_objects`](Self::set_pipeline_objects).
+        ///
+        /// <p>The objects that define the pipeline changes to validate against the pipeline.</p>
         pub fn pipeline_objects(mut self, input: impl Into<crate::model::PipelineObject>) -> Self {
             let mut v = self.pipeline_objects.unwrap_or_default();
             v.push(input.into());
             self.pipeline_objects = Some(v);
             self
         }
+        /// <p>The objects that define the pipeline changes to validate against the pipeline.</p>
         pub fn set_pipeline_objects(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PipelineObject>>,
@@ -3134,6 +3330,11 @@ pub mod validate_pipeline_definition_input {
             self.pipeline_objects = input;
             self
         }
+        /// Appends an item to `parameter_objects`.
+        ///
+        /// To override the contents of this collection use [`set_parameter_objects`](Self::set_parameter_objects).
+        ///
+        /// <p>The parameter objects used with the pipeline.</p>
         pub fn parameter_objects(
             mut self,
             input: impl Into<crate::model::ParameterObject>,
@@ -3143,6 +3344,7 @@ pub mod validate_pipeline_definition_input {
             self.parameter_objects = Some(v);
             self
         }
+        /// <p>The parameter objects used with the pipeline.</p>
         pub fn set_parameter_objects(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ParameterObject>>,
@@ -3150,12 +3352,18 @@ pub mod validate_pipeline_definition_input {
             self.parameter_objects = input;
             self
         }
+        /// Appends an item to `parameter_values`.
+        ///
+        /// To override the contents of this collection use [`set_parameter_values`](Self::set_parameter_values).
+        ///
+        /// <p>The parameter values used with the pipeline.</p>
         pub fn parameter_values(mut self, input: impl Into<crate::model::ParameterValue>) -> Self {
             let mut v = self.parameter_values.unwrap_or_default();
             v.push(input.into());
             self.parameter_values = Some(v);
             self
         }
+        /// <p>The parameter values used with the pipeline.</p>
         pub fn set_parameter_values(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ParameterValue>>,
@@ -3168,7 +3376,7 @@ pub mod validate_pipeline_definition_input {
             self,
         ) -> std::result::Result<
             crate::input::ValidatePipelineDefinitionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ValidatePipelineDefinitionInput {
                 pipeline_id: self.pipeline_id,
@@ -3191,16 +3399,16 @@ impl ValidatePipelineDefinitionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ValidatePipelineDefinition,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ValidatePipelineDefinitionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3208,7 +3416,7 @@ impl ValidatePipelineDefinitionInput {
         fn update_http_builder(
             input: &crate::input::ValidatePipelineDefinitionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3217,32 +3425,34 @@ impl ValidatePipelineDefinitionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ValidatePipelineDefinitionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "DataPipeline.ValidatePipelineDefinition",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_validate_pipeline_definition(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3265,15 +3475,15 @@ impl ValidatePipelineDefinitionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ValidatePipelineDefinition::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ValidatePipelineDefinition",
             "datapipeline",
         ));
@@ -3282,10 +3492,10 @@ impl ValidatePipelineDefinitionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3712,7 +3922,7 @@ pub struct ActivatePipelineInput {
     /// <p>A list of parameter values to pass to the pipeline at activation.</p>
     pub parameter_values: std::option::Option<std::vec::Vec<crate::model::ParameterValue>>,
     /// <p>The date and time to resume the pipeline. By default, the pipeline resumes from the last completed execution.</p>
-    pub start_timestamp: std::option::Option<smithy_types::Instant>,
+    pub start_timestamp: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for ActivatePipelineInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {

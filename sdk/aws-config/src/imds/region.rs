@@ -12,9 +12,9 @@ use crate::imds;
 use crate::imds::client::LazyClient;
 use crate::meta::region::{future, ProvideRegion};
 use crate::provider_config::ProviderConfig;
+use aws_smithy_async::rt::sleep::AsyncSleep;
 use aws_types::os_shim_internal::Env;
 use aws_types::region::Region;
-use smithy_async::rt::sleep::AsyncSleep;
 use std::sync::Arc;
 use tracing::Instrument;
 
@@ -48,6 +48,7 @@ impl ImdsRegionProvider {
     /// This provider uses the API `/latest/meta-data/placement/region`
     pub async fn region(&self) -> Option<Region> {
         if self.imds_disabled() {
+            tracing::debug!("not using IMDS to load region, IMDS is disabled");
             return None;
         }
         let client = self.client.client().await.ok()?;
@@ -123,9 +124,9 @@ mod test {
     use crate::provider_config::ProviderConfig;
     use aws_hyper::DynConnector;
     use aws_sdk_sts::Region;
-    use smithy_async::rt::sleep::TokioSleep;
-    use smithy_client::test_connection::TestConnection;
-    use smithy_http::body::SdkBody;
+    use aws_smithy_async::rt::sleep::TokioSleep;
+    use aws_smithy_client::test_connection::TestConnection;
+    use aws_smithy_http::body::SdkBody;
     use tracing_test::traced_test;
 
     #[tokio::test]
@@ -146,7 +147,7 @@ mod test {
         let provider = ImdsRegionProvider::builder()
             .configure(
                 &ProviderConfig::no_configuration()
-                    .with_connector(DynConnector::new(conn))
+                    .with_http_connector(DynConnector::new(conn))
                     .with_sleep(TokioSleep::new()),
             )
             .build();
@@ -169,7 +170,7 @@ mod test {
         let provider = ImdsRegionProvider::builder()
             .configure(
                 &ProviderConfig::no_configuration()
-                    .with_connector(DynConnector::new(conn))
+                    .with_http_connector(DynConnector::new(conn))
                     .with_sleep(TokioSleep::new()),
             )
             .build();

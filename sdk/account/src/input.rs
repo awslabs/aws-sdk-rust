@@ -15,6 +15,7 @@ pub mod delete_alternate_contact_input {
             self.alternate_contact_type = Some(input);
             self
         }
+        /// <p>Specifies which of the alternate contacts to delete. </p>
         pub fn set_alternate_contact_type(
             mut self,
             input: std::option::Option<crate::model::AlternateContactType>,
@@ -44,6 +45,24 @@ pub mod delete_alternate_contact_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>Specifies the 12 digit account ID number of the Amazon Web Services account that
+        /// you want to access or modify with this operation.</p>
+        /// <p>If you do not specify this parameter, it defaults to the Amazon Web Services account of the
+        /// identity used to call the operation.</p>
+        /// <p>To use this parameter, the caller must be an identity in the <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#account">organization's management account</a> or a delegated administrator account, and
+        /// the specified account ID must be a member account in the same organization. The
+        /// organization must have <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">all features
+        /// enabled</a>, and the organization must have <a href="https://docs.aws.amazon.com/organizations/latest/userguide/using-orgs-trusted-access.html">trusted access</a> enabled for the
+        /// Account Management service, and optionally a <a href="https://docs.aws.amazon.com/organizations/latest/userguide/using-orgs-delegated-admin.html">delegated admin</a> account
+        /// assigned.</p>
+        /// <note>
+        /// <p>The management account can't specify its own <code>AccountId</code>; it must call
+        /// the operation in standalone context by not including the <code>AccountId</code>
+        /// parameter.</p>
+        /// </note>
+        /// <p>To call this operation on an account that is not a member of an organization, then
+        /// don't specify this parameter, and call the operation using an identity belonging to
+        /// the account whose contacts you wish to retrieve or modify.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -53,7 +72,7 @@ pub mod delete_alternate_contact_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteAlternateContactInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteAlternateContactInput {
                 alternate_contact_type: self.alternate_contact_type,
@@ -73,16 +92,16 @@ impl DeleteAlternateContactInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteAlternateContact,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteAlternateContactInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/deleteAlternateContact").expect("formatting should succeed");
             Ok(())
         }
@@ -90,7 +109,7 @@ impl DeleteAlternateContactInput {
         fn update_http_builder(
             input: &crate::input::DeleteAlternateContactInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -99,27 +118,29 @@ impl DeleteAlternateContactInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteAlternateContactInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_alternate_contact(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -142,15 +163,15 @@ impl DeleteAlternateContactInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteAlternateContact::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteAlternateContact",
             "account",
         ));
@@ -159,10 +180,10 @@ impl DeleteAlternateContactInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -191,6 +212,7 @@ pub mod get_alternate_contact_input {
             self.alternate_contact_type = Some(input);
             self
         }
+        /// <p>Specifies which alternate contact you want to retrieve.</p>
         pub fn set_alternate_contact_type(
             mut self,
             input: std::option::Option<crate::model::AlternateContactType>,
@@ -220,6 +242,24 @@ pub mod get_alternate_contact_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>Specifies the 12 digit account ID number of the Amazon Web Services account that
+        /// you want to access or modify with this operation.</p>
+        /// <p>If you do not specify this parameter, it defaults to the Amazon Web Services account of the
+        /// identity used to call the operation.</p>
+        /// <p>To use this parameter, the caller must be an identity in the <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#account">organization's management account</a> or a delegated administrator account, and
+        /// the specified account ID must be a member account in the same organization. The
+        /// organization must have <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">all features
+        /// enabled</a>, and the organization must have <a href="https://docs.aws.amazon.com/organizations/latest/userguide/using-orgs-trusted-access.html">trusted access</a> enabled for the
+        /// Account Management service, and optionally a <a href="https://docs.aws.amazon.com/organizations/latest/userguide/using-orgs-delegated-admin.html">delegated admin</a> account
+        /// assigned.</p>
+        /// <note>
+        /// <p>The management account can't specify its own <code>AccountId</code>; it must call
+        /// the operation in standalone context by not including the <code>AccountId</code>
+        /// parameter.</p>
+        /// </note>
+        /// <p>To call this operation on an account that is not a member of an organization, then
+        /// don't specify this parameter, and call the operation using an identity belonging to
+        /// the account whose contacts you wish to retrieve or modify.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -229,7 +269,7 @@ pub mod get_alternate_contact_input {
             self,
         ) -> std::result::Result<
             crate::input::GetAlternateContactInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetAlternateContactInput {
                 alternate_contact_type: self.alternate_contact_type,
@@ -249,16 +289,16 @@ impl GetAlternateContactInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetAlternateContact,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetAlternateContactInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/getAlternateContact").expect("formatting should succeed");
             Ok(())
         }
@@ -266,7 +306,7 @@ impl GetAlternateContactInput {
         fn update_http_builder(
             input: &crate::input::GetAlternateContactInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -275,27 +315,27 @@ impl GetAlternateContactInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetAlternateContactInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_alternate_contact(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -318,15 +358,15 @@ impl GetAlternateContactInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetAlternateContact::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetAlternateContact",
             "account",
         ));
@@ -335,10 +375,10 @@ impl GetAlternateContactInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -371,6 +411,7 @@ pub mod put_alternate_contact_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>Specifies a name for the alternate contact.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -380,6 +421,7 @@ pub mod put_alternate_contact_input {
             self.title = Some(input.into());
             self
         }
+        /// <p>Specifies a title for the alternate contact.</p>
         pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.title = input;
             self
@@ -389,6 +431,7 @@ pub mod put_alternate_contact_input {
             self.email_address = Some(input.into());
             self
         }
+        /// <p>Specifies an email address for the alternate contact. </p>
         pub fn set_email_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -401,6 +444,7 @@ pub mod put_alternate_contact_input {
             self.phone_number = Some(input.into());
             self
         }
+        /// <p>Specifies a phone number for the alternate contact.</p>
         pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.phone_number = input;
             self
@@ -410,6 +454,7 @@ pub mod put_alternate_contact_input {
             self.alternate_contact_type = Some(input);
             self
         }
+        /// <p>Specifies which alternate contact you want to create or update.</p>
         pub fn set_alternate_contact_type(
             mut self,
             input: std::option::Option<crate::model::AlternateContactType>,
@@ -439,6 +484,24 @@ pub mod put_alternate_contact_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>Specifies the 12 digit account ID number of the Amazon Web Services account that
+        /// you want to access or modify with this operation.</p>
+        /// <p>If you do not specify this parameter, it defaults to the Amazon Web Services account of the
+        /// identity used to call the operation.</p>
+        /// <p>To use this parameter, the caller must be an identity in the <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#account">organization's management account</a> or a delegated administrator account, and
+        /// the specified account ID must be a member account in the same organization. The
+        /// organization must have <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">all features
+        /// enabled</a>, and the organization must have <a href="https://docs.aws.amazon.com/organizations/latest/userguide/using-orgs-trusted-access.html">trusted access</a> enabled for the
+        /// Account Management service, and optionally a <a href="https://docs.aws.amazon.com/organizations/latest/userguide/using-orgs-delegated-admin.html">delegated admin</a> account
+        /// assigned.</p>
+        /// <note>
+        /// <p>The management account can't specify its own <code>AccountId</code>; it must call
+        /// the operation in standalone context by not including the <code>AccountId</code>
+        /// parameter.</p>
+        /// </note>
+        /// <p>To call this operation on an account that is not a member of an organization, then
+        /// don't specify this parameter, and call the operation using an identity belonging to
+        /// the account whose contacts you wish to retrieve or modify.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -448,7 +511,7 @@ pub mod put_alternate_contact_input {
             self,
         ) -> std::result::Result<
             crate::input::PutAlternateContactInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutAlternateContactInput {
                 name: self.name,
@@ -472,16 +535,16 @@ impl PutAlternateContactInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::PutAlternateContact,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::PutAlternateContactInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/putAlternateContact").expect("formatting should succeed");
             Ok(())
         }
@@ -489,7 +552,7 @@ impl PutAlternateContactInput {
         fn update_http_builder(
             input: &crate::input::PutAlternateContactInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -498,27 +561,27 @@ impl PutAlternateContactInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::PutAlternateContactInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_put_alternate_contact(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -541,15 +604,15 @@ impl PutAlternateContactInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::PutAlternateContact::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "PutAlternateContact",
             "account",
         ));
@@ -558,10 +621,10 @@ impl PutAlternateContactInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -575,6 +638,7 @@ impl PutAlternateContactInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutAlternateContactInput {
@@ -621,6 +685,7 @@ impl std::fmt::Debug for PutAlternateContactInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAlternateContactInput {
@@ -655,6 +720,7 @@ impl std::fmt::Debug for DeleteAlternateContactInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAlternateContactInput {

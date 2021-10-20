@@ -31,6 +31,7 @@ pub mod validation_exception_field {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the exception field.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -40,6 +41,7 @@ pub mod validation_exception_field {
             self.message = Some(input.into());
             self
         }
+        /// <p>The message of the exception field.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -60,6 +62,7 @@ impl ValidationExceptionField {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -71,9 +74,13 @@ impl ValidationExceptionField {
     std::hash::Hash,
 )]
 pub enum ValidationExceptionReason {
+    #[allow(missing_docs)] // documentation missing in model
     CannotParse,
+    #[allow(missing_docs)] // documentation missing in model
     FieldValidationFailed,
+    #[allow(missing_docs)] // documentation missing in model
     Other,
+    #[allow(missing_docs)] // documentation missing in model
     UnknownOperation,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -97,6 +104,7 @@ impl std::str::FromStr for ValidationExceptionReason {
     }
 }
 impl ValidationExceptionReason {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ValidationExceptionReason::CannotParse => "CANNOT_PARSE",
@@ -106,6 +114,7 @@ impl ValidationExceptionReason {
             ValidationExceptionReason::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CANNOT_PARSE",
@@ -133,7 +142,7 @@ pub struct ResolvedComponentVersion {
     /// <p>The version of the component.</p>
     pub component_version: std::option::Option<std::string::String>,
     /// <p>The recipe of the component version.</p>
-    pub recipe: std::option::Option<smithy_types::Blob>,
+    pub recipe: std::option::Option<aws_smithy_types::Blob>,
 }
 impl std::fmt::Debug for ResolvedComponentVersion {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -154,7 +163,7 @@ pub mod resolved_component_version {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) component_name: std::option::Option<std::string::String>,
         pub(crate) component_version: std::option::Option<std::string::String>,
-        pub(crate) recipe: std::option::Option<smithy_types::Blob>,
+        pub(crate) recipe: std::option::Option<aws_smithy_types::Blob>,
     }
     impl Builder {
         /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
@@ -162,6 +171,7 @@ pub mod resolved_component_version {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -171,6 +181,7 @@ pub mod resolved_component_version {
             self.component_name = Some(input.into());
             self
         }
+        /// <p>The name of the component.</p>
         pub fn set_component_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -183,6 +194,7 @@ pub mod resolved_component_version {
             self.component_version = Some(input.into());
             self
         }
+        /// <p>The version of the component.</p>
         pub fn set_component_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -191,11 +203,12 @@ pub mod resolved_component_version {
             self
         }
         /// <p>The recipe of the component version.</p>
-        pub fn recipe(mut self, input: smithy_types::Blob) -> Self {
+        pub fn recipe(mut self, input: aws_smithy_types::Blob) -> Self {
             self.recipe = Some(input);
             self
         }
-        pub fn set_recipe(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+        /// <p>The recipe of the component version.</p>
+        pub fn set_recipe(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.recipe = input;
             self
         }
@@ -259,6 +272,7 @@ pub mod component_candidate {
             self.component_name = Some(input.into());
             self
         }
+        /// <p>The name of the component.</p>
         pub fn set_component_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -271,6 +285,7 @@ pub mod component_candidate {
             self.component_version = Some(input.into());
             self
         }
+        /// <p>The version of the component.</p>
         pub fn set_component_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -278,6 +293,13 @@ pub mod component_candidate {
             self.component_version = input;
             self
         }
+        /// Adds a key-value pair to `version_requirements`.
+        ///
+        /// To override the contents of this collection use [`set_version_requirements`](Self::set_version_requirements).
+        ///
+        /// <p>The version requirements for the component's dependencies. Greengrass core devices get the
+        /// version requirements from component recipes.</p>
+        /// <p>IoT Greengrass V2 uses semantic version constraints. For more information, see <a href="https://semver.org/">Semantic Versioning</a>.</p>
         pub fn version_requirements(
             mut self,
             k: impl Into<std::string::String>,
@@ -288,6 +310,9 @@ pub mod component_candidate {
             self.version_requirements = Some(hash_map);
             self
         }
+        /// <p>The version requirements for the component's dependencies. Greengrass core devices get the
+        /// version requirements from component recipes.</p>
+        /// <p>IoT Greengrass V2 uses semantic version constraints. For more information, see <a href="https://semver.org/">Semantic Versioning</a>.</p>
         pub fn set_version_requirements(
             mut self,
             input: std::option::Option<
@@ -357,10 +382,22 @@ pub mod component_platform {
             self.name = Some(input.into());
             self
         }
+        /// <p>The friendly name of the platform. This name helps you identify the platform.</p>
+        /// <p>If you omit this parameter, IoT Greengrass creates a friendly name from the <code>os</code> and
+        /// <code>architecture</code> of the platform.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
+        /// Adds a key-value pair to `attributes`.
+        ///
+        /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
+        ///
+        /// <p>A dictionary of attributes for the platform. The IoT Greengrass Core software defines the
+        /// <code>os</code> and <code>platform</code> by default. You can specify additional platform
+        /// attributes for a core device when you deploy the Greengrass nucleus component. For more information,
+        /// see the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html">Greengrass nucleus
+        /// component</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -371,6 +408,11 @@ pub mod component_platform {
             self.attributes = Some(hash_map);
             self
         }
+        /// <p>A dictionary of attributes for the platform. The IoT Greengrass Core software defines the
+        /// <code>os</code> and <code>platform</code> by default. You can specify additional platform
+        /// attributes for a core device when you deploy the Greengrass nucleus component. For more information,
+        /// see the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-nucleus-component.html">Greengrass nucleus
+        /// component</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -441,6 +483,7 @@ pub mod installed_component {
             self.component_name = Some(input.into());
             self
         }
+        /// <p>The name of the component.</p>
         pub fn set_component_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -453,6 +496,7 @@ pub mod installed_component {
             self.component_version = Some(input.into());
             self
         }
+        /// <p>The version of the component.</p>
         pub fn set_component_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -468,6 +512,7 @@ pub mod installed_component {
             self.lifecycle_state = Some(input);
             self
         }
+        /// <p>The lifecycle state of the component.</p>
         pub fn set_lifecycle_state(
             mut self,
             input: std::option::Option<crate::model::InstalledComponentLifecycleState>,
@@ -480,6 +525,7 @@ pub mod installed_component {
             self.lifecycle_state_details = Some(input.into());
             self
         }
+        /// <p>The details about the lifecycle state of the component.</p>
         pub fn set_lifecycle_state_details(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -492,6 +538,7 @@ pub mod installed_component {
             self.is_root = Some(input);
             self
         }
+        /// <p>Whether or not the component is a root component.</p>
         pub fn set_is_root(mut self, input: std::option::Option<bool>) -> Self {
             self.is_root = input;
             self
@@ -515,6 +562,7 @@ impl InstalledComponent {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -526,13 +574,21 @@ impl InstalledComponent {
     std::hash::Hash,
 )]
 pub enum InstalledComponentLifecycleState {
+    #[allow(missing_docs)] // documentation missing in model
     Broken,
+    #[allow(missing_docs)] // documentation missing in model
     Errored,
+    #[allow(missing_docs)] // documentation missing in model
     Finished,
+    #[allow(missing_docs)] // documentation missing in model
     Installed,
+    #[allow(missing_docs)] // documentation missing in model
     New,
+    #[allow(missing_docs)] // documentation missing in model
     Running,
+    #[allow(missing_docs)] // documentation missing in model
     Starting,
+    #[allow(missing_docs)] // documentation missing in model
     Stopping,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -560,6 +616,7 @@ impl std::str::FromStr for InstalledComponentLifecycleState {
     }
 }
 impl InstalledComponentLifecycleState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             InstalledComponentLifecycleState::Broken => "BROKEN",
@@ -573,6 +630,7 @@ impl InstalledComponentLifecycleState {
             InstalledComponentLifecycleState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "BROKEN",
@@ -614,10 +672,10 @@ pub struct EffectiveDeployment {
     /// <p>The reason code for the update, if the job was updated.</p>
     pub reason: std::option::Option<std::string::String>,
     /// <p>The time at which the deployment was created, expressed in ISO 8601 format.</p>
-    pub creation_timestamp: std::option::Option<smithy_types::Instant>,
+    pub creation_timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time at which the deployment job was last modified, expressed in ISO 8601
     /// format.</p>
-    pub modified_timestamp: std::option::Option<smithy_types::Instant>,
+    pub modified_timestamp: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for EffectiveDeployment {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -653,8 +711,8 @@ pub mod effective_deployment {
         pub(crate) core_device_execution_status:
             std::option::Option<crate::model::EffectiveDeploymentExecutionStatus>,
         pub(crate) reason: std::option::Option<std::string::String>,
-        pub(crate) creation_timestamp: std::option::Option<smithy_types::Instant>,
-        pub(crate) modified_timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) modified_timestamp: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The ID of the deployment.</p>
@@ -662,6 +720,7 @@ pub mod effective_deployment {
             self.deployment_id = Some(input.into());
             self
         }
+        /// <p>The ID of the deployment.</p>
         pub fn set_deployment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -674,6 +733,7 @@ pub mod effective_deployment {
             self.deployment_name = Some(input.into());
             self
         }
+        /// <p>The name of the deployment.</p>
         pub fn set_deployment_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -686,6 +746,7 @@ pub mod effective_deployment {
             self.iot_job_id = Some(input.into());
             self
         }
+        /// <p>The ID of the IoT job that applies the deployment to target devices.</p>
         pub fn set_iot_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.iot_job_id = input;
             self
@@ -695,6 +756,7 @@ pub mod effective_deployment {
             self.iot_job_arn = Some(input.into());
             self
         }
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT job that applies the deployment to target devices.</p>
         pub fn set_iot_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.iot_job_arn = input;
             self
@@ -704,6 +766,7 @@ pub mod effective_deployment {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the deployment job.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -713,6 +776,7 @@ pub mod effective_deployment {
             self.target_arn = Some(input.into());
             self
         }
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group.</p>
         pub fn set_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.target_arn = input;
             self
@@ -725,6 +789,7 @@ pub mod effective_deployment {
             self.core_device_execution_status = Some(input);
             self
         }
+        /// <p>The status of the deployment job on the Greengrass core device.</p>
         pub fn set_core_device_execution_status(
             mut self,
             input: std::option::Option<crate::model::EffectiveDeploymentExecutionStatus>,
@@ -737,31 +802,35 @@ pub mod effective_deployment {
             self.reason = Some(input.into());
             self
         }
+        /// <p>The reason code for the update, if the job was updated.</p>
         pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.reason = input;
             self
         }
         /// <p>The time at which the deployment was created, expressed in ISO 8601 format.</p>
-        pub fn creation_timestamp(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_timestamp = Some(input);
             self
         }
+        /// <p>The time at which the deployment was created, expressed in ISO 8601 format.</p>
         pub fn set_creation_timestamp(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_timestamp = input;
             self
         }
         /// <p>The time at which the deployment job was last modified, expressed in ISO 8601
         /// format.</p>
-        pub fn modified_timestamp(mut self, input: smithy_types::Instant) -> Self {
+        pub fn modified_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
             self.modified_timestamp = Some(input);
             self
         }
+        /// <p>The time at which the deployment job was last modified, expressed in ISO 8601
+        /// format.</p>
         pub fn set_modified_timestamp(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.modified_timestamp = input;
             self
@@ -790,6 +859,7 @@ impl EffectiveDeployment {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -801,12 +871,19 @@ impl EffectiveDeployment {
     std::hash::Hash,
 )]
 pub enum EffectiveDeploymentExecutionStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Canceled,
+    #[allow(missing_docs)] // documentation missing in model
     Completed,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     InProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Queued,
+    #[allow(missing_docs)] // documentation missing in model
     Rejected,
+    #[allow(missing_docs)] // documentation missing in model
     TimedOut,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -833,6 +910,7 @@ impl std::str::FromStr for EffectiveDeploymentExecutionStatus {
     }
 }
 impl EffectiveDeploymentExecutionStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EffectiveDeploymentExecutionStatus::Canceled => "CANCELED",
@@ -845,6 +923,7 @@ impl EffectiveDeploymentExecutionStatus {
             EffectiveDeploymentExecutionStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CANCELED",
@@ -876,7 +955,7 @@ pub struct Deployment {
     /// <p>The name of the deployment.</p>
     pub deployment_name: std::option::Option<std::string::String>,
     /// <p>The time at which the deployment was created, expressed in ISO 8601 format.</p>
-    pub creation_timestamp: std::option::Option<smithy_types::Instant>,
+    pub creation_timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The status of the deployment.</p>
     pub deployment_status: std::option::Option<crate::model::DeploymentStatus>,
     /// <p>Whether or not the deployment is the latest revision for its target.</p>
@@ -905,7 +984,7 @@ pub mod deployment {
         pub(crate) revision_id: std::option::Option<std::string::String>,
         pub(crate) deployment_id: std::option::Option<std::string::String>,
         pub(crate) deployment_name: std::option::Option<std::string::String>,
-        pub(crate) creation_timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_timestamp: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) deployment_status: std::option::Option<crate::model::DeploymentStatus>,
         pub(crate) is_latest_for_target: std::option::Option<bool>,
     }
@@ -915,6 +994,7 @@ pub mod deployment {
             self.target_arn = Some(input.into());
             self
         }
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group.</p>
         pub fn set_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.target_arn = input;
             self
@@ -924,6 +1004,7 @@ pub mod deployment {
             self.revision_id = Some(input.into());
             self
         }
+        /// <p>The revision number of the deployment.</p>
         pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.revision_id = input;
             self
@@ -933,6 +1014,7 @@ pub mod deployment {
             self.deployment_id = Some(input.into());
             self
         }
+        /// <p>The ID of the deployment.</p>
         pub fn set_deployment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -945,6 +1027,7 @@ pub mod deployment {
             self.deployment_name = Some(input.into());
             self
         }
+        /// <p>The name of the deployment.</p>
         pub fn set_deployment_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -953,13 +1036,14 @@ pub mod deployment {
             self
         }
         /// <p>The time at which the deployment was created, expressed in ISO 8601 format.</p>
-        pub fn creation_timestamp(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_timestamp = Some(input);
             self
         }
+        /// <p>The time at which the deployment was created, expressed in ISO 8601 format.</p>
         pub fn set_creation_timestamp(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_timestamp = input;
             self
@@ -969,6 +1053,7 @@ pub mod deployment {
             self.deployment_status = Some(input);
             self
         }
+        /// <p>The status of the deployment.</p>
         pub fn set_deployment_status(
             mut self,
             input: std::option::Option<crate::model::DeploymentStatus>,
@@ -981,6 +1066,7 @@ pub mod deployment {
             self.is_latest_for_target = Some(input);
             self
         }
+        /// <p>Whether or not the deployment is the latest revision for its target.</p>
         pub fn set_is_latest_for_target(mut self, input: std::option::Option<bool>) -> Self {
             self.is_latest_for_target = input;
             self
@@ -1006,6 +1092,7 @@ impl Deployment {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1017,10 +1104,15 @@ impl Deployment {
     std::hash::Hash,
 )]
 pub enum DeploymentStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     Canceled,
+    #[allow(missing_docs)] // documentation missing in model
     Completed,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Inactive,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1045,6 +1137,7 @@ impl std::str::FromStr for DeploymentStatus {
     }
 }
 impl DeploymentStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DeploymentStatus::Active => "ACTIVE",
@@ -1055,6 +1148,7 @@ impl DeploymentStatus {
             DeploymentStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ACTIVE", "CANCELED", "COMPLETED", "FAILED", "INACTIVE"]
     }
@@ -1065,6 +1159,7 @@ impl AsRef<str> for DeploymentStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1076,7 +1171,9 @@ impl AsRef<str> for DeploymentStatus {
     std::hash::Hash,
 )]
 pub enum DeploymentHistoryFilter {
+    #[allow(missing_docs)] // documentation missing in model
     All,
+    #[allow(missing_docs)] // documentation missing in model
     LatestOnly,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1098,6 +1195,7 @@ impl std::str::FromStr for DeploymentHistoryFilter {
     }
 }
 impl DeploymentHistoryFilter {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DeploymentHistoryFilter::All => "ALL",
@@ -1105,6 +1203,7 @@ impl DeploymentHistoryFilter {
             DeploymentHistoryFilter::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ALL", "LATEST_ONLY"]
     }
@@ -1137,7 +1236,7 @@ pub struct CoreDevice {
     pub status: std::option::Option<crate::model::CoreDeviceStatus>,
     /// <p>The time at which the core device's status last updated, expressed in ISO 8601
     /// format.</p>
-    pub last_status_update_timestamp: std::option::Option<smithy_types::Instant>,
+    pub last_status_update_timestamp: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for CoreDevice {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1159,7 +1258,7 @@ pub mod core_device {
     pub struct Builder {
         pub(crate) core_device_thing_name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::CoreDeviceStatus>,
-        pub(crate) last_status_update_timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_status_update_timestamp: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The name of the core device. This is also the name of the IoT thing.</p>
@@ -1167,6 +1266,7 @@ pub mod core_device {
             self.core_device_thing_name = Some(input.into());
             self
         }
+        /// <p>The name of the core device. This is also the name of the IoT thing.</p>
         pub fn set_core_device_thing_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1190,6 +1290,18 @@ pub mod core_device {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the core device. Core devices can have the following statuses:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>HEALTHY</code> – The IoT Greengrass Core software and all components run on the core device without issue.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>UNHEALTHY</code> – The IoT Greengrass Core software or a component is in a failed state
+        /// on the core device.</p>
+        /// </li>
+        /// </ul>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::CoreDeviceStatus>,
@@ -1199,13 +1311,15 @@ pub mod core_device {
         }
         /// <p>The time at which the core device's status last updated, expressed in ISO 8601
         /// format.</p>
-        pub fn last_status_update_timestamp(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_status_update_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_status_update_timestamp = Some(input);
             self
         }
+        /// <p>The time at which the core device's status last updated, expressed in ISO 8601
+        /// format.</p>
         pub fn set_last_status_update_timestamp(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_status_update_timestamp = input;
             self
@@ -1227,6 +1341,7 @@ impl CoreDevice {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1238,7 +1353,9 @@ impl CoreDevice {
     std::hash::Hash,
 )]
 pub enum CoreDeviceStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Healthy,
+    #[allow(missing_docs)] // documentation missing in model
     Unhealthy,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1260,6 +1377,7 @@ impl std::str::FromStr for CoreDeviceStatus {
     }
 }
 impl CoreDeviceStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CoreDeviceStatus::Healthy => "HEALTHY",
@@ -1267,6 +1385,7 @@ impl CoreDeviceStatus {
             CoreDeviceStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["HEALTHY", "UNHEALTHY"]
     }
@@ -1313,6 +1432,7 @@ pub mod component_version_list_item {
             self.component_name = Some(input.into());
             self
         }
+        /// <p>The name of the component.</p>
         pub fn set_component_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1325,6 +1445,7 @@ pub mod component_version_list_item {
             self.component_version = Some(input.into());
             self
         }
+        /// <p>The version of the component.</p>
         pub fn set_component_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1337,6 +1458,7 @@ pub mod component_version_list_item {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -1394,6 +1516,7 @@ pub mod component {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -1403,6 +1526,7 @@ pub mod component {
             self.component_name = Some(input.into());
             self
         }
+        /// <p>The name of the component.</p>
         pub fn set_component_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1415,6 +1539,7 @@ pub mod component {
             self.latest_version = Some(input);
             self
         }
+        /// <p>The latest version of the component and its details.</p>
         pub fn set_latest_version(
             mut self,
             input: std::option::Option<crate::model::ComponentLatestVersion>,
@@ -1448,7 +1573,7 @@ pub struct ComponentLatestVersion {
     /// <p>The version of the component.</p>
     pub component_version: std::option::Option<std::string::String>,
     /// <p>The time at which the component was created, expressed in ISO 8601 format.</p>
-    pub creation_timestamp: std::option::Option<smithy_types::Instant>,
+    pub creation_timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The description of the component version.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The publisher of the component version.</p>
@@ -1476,7 +1601,7 @@ pub mod component_latest_version {
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) component_version: std::option::Option<std::string::String>,
-        pub(crate) creation_timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_timestamp: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) publisher: std::option::Option<std::string::String>,
         pub(crate) platforms: std::option::Option<std::vec::Vec<crate::model::ComponentPlatform>>,
@@ -1487,6 +1612,7 @@ pub mod component_latest_version {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -1496,6 +1622,7 @@ pub mod component_latest_version {
             self.component_version = Some(input.into());
             self
         }
+        /// <p>The version of the component.</p>
         pub fn set_component_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1504,13 +1631,14 @@ pub mod component_latest_version {
             self
         }
         /// <p>The time at which the component was created, expressed in ISO 8601 format.</p>
-        pub fn creation_timestamp(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_timestamp = Some(input);
             self
         }
+        /// <p>The time at which the component was created, expressed in ISO 8601 format.</p>
         pub fn set_creation_timestamp(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_timestamp = input;
             self
@@ -1520,6 +1648,7 @@ pub mod component_latest_version {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the component version.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -1529,16 +1658,23 @@ pub mod component_latest_version {
             self.publisher = Some(input.into());
             self
         }
+        /// <p>The publisher of the component version.</p>
         pub fn set_publisher(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.publisher = input;
             self
         }
+        /// Appends an item to `platforms`.
+        ///
+        /// To override the contents of this collection use [`set_platforms`](Self::set_platforms).
+        ///
+        /// <p>The platforms that the component version supports.</p>
         pub fn platforms(mut self, input: impl Into<crate::model::ComponentPlatform>) -> Self {
             let mut v = self.platforms.unwrap_or_default();
             v.push(input.into());
             self.platforms = Some(v);
             self
         }
+        /// <p>The platforms that the component version supports.</p>
         pub fn set_platforms(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ComponentPlatform>>,
@@ -1566,6 +1702,7 @@ impl ComponentLatestVersion {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1577,7 +1714,9 @@ impl ComponentLatestVersion {
     std::hash::Hash,
 )]
 pub enum ComponentVisibilityScope {
+    #[allow(missing_docs)] // documentation missing in model
     Private,
+    #[allow(missing_docs)] // documentation missing in model
     Public,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1599,6 +1738,7 @@ impl std::str::FromStr for ComponentVisibilityScope {
     }
 }
 impl ComponentVisibilityScope {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ComponentVisibilityScope::Private => "PRIVATE",
@@ -1606,6 +1746,7 @@ impl ComponentVisibilityScope {
             ComponentVisibilityScope::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["PRIVATE", "PUBLIC"]
     }
@@ -1624,7 +1765,7 @@ pub struct AssociatedClientDevice {
     /// <p>The name of the IoT thing that represents the associated client device.</p>
     pub thing_name: std::option::Option<std::string::String>,
     /// <p>The time that the client device was associated, expressed in ISO 8601 format.</p>
-    pub association_timestamp: std::option::Option<smithy_types::Instant>,
+    pub association_timestamp: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for AssociatedClientDevice {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1641,7 +1782,7 @@ pub mod associated_client_device {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) thing_name: std::option::Option<std::string::String>,
-        pub(crate) association_timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) association_timestamp: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The name of the IoT thing that represents the associated client device.</p>
@@ -1649,18 +1790,20 @@ pub mod associated_client_device {
             self.thing_name = Some(input.into());
             self
         }
+        /// <p>The name of the IoT thing that represents the associated client device.</p>
         pub fn set_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.thing_name = input;
             self
         }
         /// <p>The time that the client device was associated, expressed in ISO 8601 format.</p>
-        pub fn association_timestamp(mut self, input: smithy_types::Instant) -> Self {
+        pub fn association_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
             self.association_timestamp = Some(input);
             self
         }
+        /// <p>The time that the client device was associated, expressed in ISO 8601 format.</p>
         pub fn set_association_timestamp(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.association_timestamp = input;
             self
@@ -1729,6 +1872,8 @@ pub mod deployment_io_t_job_configuration {
             self.job_executions_rollout_config = Some(input);
             self
         }
+        /// <p>The rollout configuration for the job. This configuration defines the rate at which the
+        /// job rolls out to the fleet of target devices.</p>
         pub fn set_job_executions_rollout_config(
             mut self,
             input: std::option::Option<crate::model::IoTJobExecutionsRolloutConfig>,
@@ -1742,6 +1887,8 @@ pub mod deployment_io_t_job_configuration {
             self.abort_config = Some(input);
             self
         }
+        /// <p>The stop configuration for the job. This configuration defines when and how to stop a job
+        /// rollout.</p>
         pub fn set_abort_config(
             mut self,
             input: std::option::Option<crate::model::IoTJobAbortConfig>,
@@ -1755,6 +1902,8 @@ pub mod deployment_io_t_job_configuration {
             self.timeout_config = Some(input);
             self
         }
+        /// <p>The timeout configuration for the job. This configuration defines the amount of time each
+        /// device has to complete the job.</p>
         pub fn set_timeout_config(
             mut self,
             input: std::option::Option<crate::model::IoTJobTimeoutConfig>,
@@ -1818,6 +1967,11 @@ pub mod io_t_job_timeout_config {
             self.in_progress_timeout_in_minutes = Some(input);
             self
         }
+        /// <p>The amount of time, in minutes, that devices have to complete the job. The timer starts
+        /// when the job status is set to <code>IN_PROGRESS</code>. If the job status doesn't change to a
+        /// terminal state before the time expires, then the job status is set to
+        /// <code>TIMED_OUT</code>.</p>
+        /// <p>The timeout interval must be between 1 minute and 7 days (10080 minutes).</p>
         pub fn set_in_progress_timeout_in_minutes(
             mut self,
             input: std::option::Option<i64>,
@@ -1865,6 +2019,11 @@ pub mod io_t_job_abort_config {
             std::option::Option<std::vec::Vec<crate::model::IoTJobAbortCriteria>>,
     }
     impl Builder {
+        /// Appends an item to `criteria_list`.
+        ///
+        /// To override the contents of this collection use [`set_criteria_list`](Self::set_criteria_list).
+        ///
+        /// <p>The list of criteria that define when and how to cancel the configuration deployment.</p>
         pub fn criteria_list(
             mut self,
             input: impl Into<crate::model::IoTJobAbortCriteria>,
@@ -1874,6 +2033,7 @@ pub mod io_t_job_abort_config {
             self.criteria_list = Some(v);
             self
         }
+        /// <p>The list of criteria that define when and how to cancel the configuration deployment.</p>
         pub fn set_criteria_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::IoTJobAbortCriteria>>,
@@ -1954,6 +2114,7 @@ pub mod io_t_job_abort_criteria {
             self.failure_type = Some(input);
             self
         }
+        /// <p>The type of job deployment failure that can cancel a job.</p>
         pub fn set_failure_type(
             mut self,
             input: std::option::Option<crate::model::IoTJobExecutionFailureType>,
@@ -1966,6 +2127,7 @@ pub mod io_t_job_abort_criteria {
             self.action = Some(input);
             self
         }
+        /// <p>The action to perform when the criteria are met.</p>
         pub fn set_action(
             mut self,
             input: std::option::Option<crate::model::IoTJobAbortAction>,
@@ -1981,6 +2143,10 @@ pub mod io_t_job_abort_criteria {
             self.threshold_percentage = Some(input);
             self
         }
+        /// <p>The minimum percentage of <code>failureType</code> failures that occur before the job can
+        /// cancel.</p>
+        /// <p>This parameter supports up to two digits after the decimal (for example, you can specify
+        /// <code>10.9</code> or <code>10.99</code>, but not <code>10.999</code>).</p>
         pub fn set_threshold_percentage(mut self, input: std::option::Option<f64>) -> Self {
             self.threshold_percentage = input;
             self
@@ -1991,6 +2157,8 @@ pub mod io_t_job_abort_criteria {
             self.min_number_of_executed_things = Some(input);
             self
         }
+        /// <p>The minimum number of things that receive the configuration before the job can
+        /// cancel.</p>
         pub fn set_min_number_of_executed_things(
             mut self,
             input: std::option::Option<i32>,
@@ -2018,6 +2186,7 @@ impl IoTJobAbortCriteria {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2029,6 +2198,7 @@ impl IoTJobAbortCriteria {
     std::hash::Hash,
 )]
 pub enum IoTJobAbortAction {
+    #[allow(missing_docs)] // documentation missing in model
     Cancel,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2049,12 +2219,14 @@ impl std::str::FromStr for IoTJobAbortAction {
     }
 }
 impl IoTJobAbortAction {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             IoTJobAbortAction::Cancel => "CANCEL",
             IoTJobAbortAction::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CANCEL"]
     }
@@ -2065,6 +2237,7 @@ impl AsRef<str> for IoTJobAbortAction {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2076,9 +2249,13 @@ impl AsRef<str> for IoTJobAbortAction {
     std::hash::Hash,
 )]
 pub enum IoTJobExecutionFailureType {
+    #[allow(missing_docs)] // documentation missing in model
     All,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Rejected,
+    #[allow(missing_docs)] // documentation missing in model
     TimedOut,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2102,6 +2279,7 @@ impl std::str::FromStr for IoTJobExecutionFailureType {
     }
 }
 impl IoTJobExecutionFailureType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             IoTJobExecutionFailureType::All => "ALL",
@@ -2111,6 +2289,7 @@ impl IoTJobExecutionFailureType {
             IoTJobExecutionFailureType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ALL", "FAILED", "REJECTED", "TIMED_OUT"]
     }
@@ -2158,6 +2337,7 @@ pub mod io_t_job_executions_rollout_config {
             self.exponential_rate = Some(input);
             self
         }
+        /// <p>The exponential rate to increase the job rollout rate.</p>
         pub fn set_exponential_rate(
             mut self,
             input: std::option::Option<crate::model::IoTJobExponentialRolloutRate>,
@@ -2170,6 +2350,7 @@ pub mod io_t_job_executions_rollout_config {
             self.maximum_per_minute = Some(input);
             self
         }
+        /// <p>The maximum number of devices that receive a pending job notification, per minute.</p>
         pub fn set_maximum_per_minute(mut self, input: std::option::Option<i32>) -> Self {
             self.maximum_per_minute = input;
             self
@@ -2232,6 +2413,8 @@ pub mod io_t_job_exponential_rollout_rate {
             self.base_rate_per_minute = Some(input);
             self
         }
+        /// <p>The minimum number of devices that receive a pending job notification, per minute, when
+        /// the job starts. This parameter defines the initial rollout rate of the job.</p>
         pub fn set_base_rate_per_minute(mut self, input: std::option::Option<i32>) -> Self {
             self.base_rate_per_minute = input;
             self
@@ -2243,6 +2426,9 @@ pub mod io_t_job_exponential_rollout_rate {
             self.increment_factor = Some(input);
             self
         }
+        /// <p>The exponential factor to increase the rollout rate for the job.</p>
+        /// <p>This parameter supports up to one digit after the decimal (for example, you can specify
+        /// <code>1.5</code>, but not <code>1.55</code>).</p>
         pub fn set_increment_factor(mut self, input: std::option::Option<f64>) -> Self {
             self.increment_factor = input;
             self
@@ -2255,6 +2441,7 @@ pub mod io_t_job_exponential_rollout_rate {
             self.rate_increase_criteria = Some(input);
             self
         }
+        /// <p>The criteria to increase the rollout rate for the job.</p>
         pub fn set_rate_increase_criteria(
             mut self,
             input: std::option::Option<crate::model::IoTJobRateIncreaseCriteria>,
@@ -2319,6 +2506,8 @@ pub mod io_t_job_rate_increase_criteria {
             self.number_of_notified_things = Some(input);
             self
         }
+        /// <p>The number of devices to receive the job notification before the rollout rate
+        /// increases.</p>
         pub fn set_number_of_notified_things(mut self, input: std::option::Option<i32>) -> Self {
             self.number_of_notified_things = input;
             self
@@ -2329,6 +2518,8 @@ pub mod io_t_job_rate_increase_criteria {
             self.number_of_succeeded_things = Some(input);
             self
         }
+        /// <p>The number of devices to successfully run the configuration job before the rollout rate
+        /// increases.</p>
         pub fn set_number_of_succeeded_things(mut self, input: std::option::Option<i32>) -> Self {
             self.number_of_succeeded_things = input;
             self
@@ -2404,6 +2595,10 @@ pub mod deployment_policies {
             self.failure_handling_policy = Some(input);
             self
         }
+        /// <p>The failure handling policy for the configuration deployment. This policy defines what to
+        /// do if the deployment fails.</p>
+        /// <p>Default: <code>ROLLBACK</code>
+        /// </p>
         pub fn set_failure_handling_policy(
             mut self,
             input: std::option::Option<crate::model::DeploymentFailureHandlingPolicy>,
@@ -2420,6 +2615,8 @@ pub mod deployment_policies {
             self.component_update_policy = Some(input);
             self
         }
+        /// <p>The component update policy for the configuration deployment. This policy defines when
+        /// it's safe to deploy the configuration to devices.</p>
         pub fn set_component_update_policy(
             mut self,
             input: std::option::Option<crate::model::DeploymentComponentUpdatePolicy>,
@@ -2436,6 +2633,8 @@ pub mod deployment_policies {
             self.configuration_validation_policy = Some(input);
             self
         }
+        /// <p>The configuration validation policy for the configuration deployment. This policy defines
+        /// how long each component has to validate its configure updates.</p>
         pub fn set_configuration_validation_policy(
             mut self,
             input: std::option::Option<crate::model::DeploymentConfigurationValidationPolicy>,
@@ -2496,6 +2695,10 @@ pub mod deployment_configuration_validation_policy {
             self.timeout_in_seconds = Some(input);
             self
         }
+        /// <p>The amount of time in seconds that a component can validate its configuration updates. If
+        /// the validation time exceeds this timeout, then the deployment proceeds for the device.</p>
+        /// <p>Default: <code>30</code>
+        /// </p>
         pub fn set_timeout_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.timeout_in_seconds = input;
             self
@@ -2577,6 +2780,11 @@ pub mod deployment_component_update_policy {
             self.timeout_in_seconds = Some(input);
             self
         }
+        /// <p>The amount of time in seconds that each component on a device has to report that it's safe
+        /// to update. If the component waits for longer than this timeout, then the deployment proceeds
+        /// on the device.</p>
+        /// <p>Default: <code>60</code>
+        /// </p>
         pub fn set_timeout_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.timeout_in_seconds = input;
             self
@@ -2605,6 +2813,23 @@ pub mod deployment_component_update_policy {
             self.action = Some(input);
             self
         }
+        /// <p>Whether or not to notify components and wait for components to become safe to update.
+        /// Choose from the following options:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>NOTIFY_COMPONENTS</code> – The deployment notifies each component before
+        /// it stops and updates that component. Components can use the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/interprocess-communication.html#ipc-operation-subscribetocomponentupdates">SubscribeToComponentUpdates</a> IPC operation to receive these notifications. Then,
+        /// components can respond with the <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/interprocess-communication.html#ipc-operation-defercomponentupdate">DeferComponentUpdate</a> IPC operation. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/create-deployments.html">Create deployments</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SKIP_NOTIFY_COMPONENTS</code> – The deployment doesn't notify components
+        /// or wait for them to be safe to update.</p>
+        /// </li>
+        /// </ul>
+        /// <p>Default: <code>NOTIFY_COMPONENTS</code>
+        /// </p>
         pub fn set_action(
             mut self,
             input: std::option::Option<crate::model::DeploymentComponentUpdatePolicyAction>,
@@ -2628,6 +2853,7 @@ impl DeploymentComponentUpdatePolicy {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2639,7 +2865,9 @@ impl DeploymentComponentUpdatePolicy {
     std::hash::Hash,
 )]
 pub enum DeploymentComponentUpdatePolicyAction {
+    #[allow(missing_docs)] // documentation missing in model
     NotifyComponents,
+    #[allow(missing_docs)] // documentation missing in model
     SkipNotifyComponents,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2661,6 +2889,7 @@ impl std::str::FromStr for DeploymentComponentUpdatePolicyAction {
     }
 }
 impl DeploymentComponentUpdatePolicyAction {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DeploymentComponentUpdatePolicyAction::NotifyComponents => "NOTIFY_COMPONENTS",
@@ -2668,6 +2897,7 @@ impl DeploymentComponentUpdatePolicyAction {
             DeploymentComponentUpdatePolicyAction::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["NOTIFY_COMPONENTS", "SKIP_NOTIFY_COMPONENTS"]
     }
@@ -2678,6 +2908,7 @@ impl AsRef<str> for DeploymentComponentUpdatePolicyAction {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2689,7 +2920,9 @@ impl AsRef<str> for DeploymentComponentUpdatePolicyAction {
     std::hash::Hash,
 )]
 pub enum DeploymentFailureHandlingPolicy {
+    #[allow(missing_docs)] // documentation missing in model
     DoNothing,
+    #[allow(missing_docs)] // documentation missing in model
     Rollback,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2711,6 +2944,7 @@ impl std::str::FromStr for DeploymentFailureHandlingPolicy {
     }
 }
 impl DeploymentFailureHandlingPolicy {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DeploymentFailureHandlingPolicy::DoNothing => "DO_NOTHING",
@@ -2718,6 +2952,7 @@ impl DeploymentFailureHandlingPolicy {
             DeploymentFailureHandlingPolicy::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DO_NOTHING", "ROLLBACK"]
     }
@@ -2774,6 +3009,7 @@ pub mod component_deployment_specification {
             self.component_version = Some(input.into());
             self
         }
+        /// <p>The version of the component.</p>
         pub fn set_component_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2795,6 +3031,13 @@ pub mod component_deployment_specification {
             self.configuration_update = Some(input);
             self
         }
+        /// <p>The configuration updates to deploy for the component. You can define
+        /// <i>reset</i> updates and <i>merge</i> updates. A reset updates
+        /// the keys that you specify to the default configuration for the component. A merge updates the
+        /// core device's component configuration with the keys and values that you specify. The IoT Greengrass Core
+        /// software applies reset updates before it applies merge updates. For more information, see
+        /// <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html">Update component
+        /// configurations</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
         pub fn set_configuration_update(
             mut self,
             input: std::option::Option<crate::model::ComponentConfigurationUpdate>,
@@ -2810,6 +3053,10 @@ pub mod component_deployment_specification {
             self.run_with = Some(input);
             self
         }
+        /// <p>The system user and group that the IoT Greengrass Core software uses to run component processes on the
+        /// core device. If you omit this parameter, the IoT Greengrass Core software uses the system user and group
+        /// that you configure for the core device. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user">Configure the user and group that run components</a> in the <i>IoT Greengrass V2 Developer
+        /// Guide</i>.</p>
         pub fn set_run_with(
             mut self,
             input: std::option::Option<crate::model::ComponentRunWith>,
@@ -2880,6 +3127,12 @@ pub mod component_run_with {
             self.posix_user = Some(input.into());
             self
         }
+        /// <p>The POSIX system user and (optional) group to use to run this component. Specify the user
+        /// and group separated by a colon (<code>:</code>) in the following format:
+        /// <code>user:group</code>. The group is optional. If you don't specify a group, the IoT Greengrass Core
+        /// software uses the primary user for the group.</p>
+        /// <p>If you omit this parameter, the IoT Greengrass Core software uses the default system user and group that
+        /// you configure on the Greengrass nucleus component. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user">Configure the user and group that run components</a>.</p>
         pub fn set_posix_user(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.posix_user = input;
             self
@@ -2891,6 +3144,9 @@ pub mod component_run_with {
             self.system_resource_limits = Some(input);
             self
         }
+        /// <p>The system resource limits to apply to this component's process on the core device.</p>
+        /// <p>If you omit this parameter, the IoT Greengrass Core software uses the default system resource limits
+        /// that you configure on the Greengrass nucleus component. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-system-resource-limits">Configure system resource limits for components</a>.</p>
         pub fn set_system_resource_limits(
             mut self,
             input: std::option::Option<crate::model::SystemResourceLimits>,
@@ -2955,6 +3211,8 @@ pub mod system_resource_limits {
             self.memory = Some(input);
             self
         }
+        /// <p>The maximum amount of RAM, expressed in kilobytes, that a component's processes can use on
+        /// the core device.</p>
         pub fn set_memory(mut self, input: std::option::Option<i64>) -> Self {
             self.memory = input;
             self
@@ -2970,6 +3228,13 @@ pub mod system_resource_limits {
             self.cpus = Some(input);
             self
         }
+        /// <p>The maximum amount of CPU time that a component's processes can use on the core device. A
+        /// core device's total CPU time is equivalent to the device's number of CPU cores. For example,
+        /// on a core device with 4 CPU cores, you can set this value to <code>2</code> to limit the
+        /// component's processes to 50 percent usage of each CPU core. On a device with 1 CPU core, you
+        /// can set this value to <code>0.25</code> to limit the component's processes to 25 percent usage
+        /// of the CPU. If you set this value to a number greater than the number of CPU cores, the IoT Greengrass Core
+        /// software doesn't limit the component's CPU usage.</p>
         pub fn set_cpus(mut self, input: std::option::Option<f64>) -> Self {
             self.cpus = input;
             self
@@ -3041,16 +3306,39 @@ pub mod component_configuration_update {
             self.merge = Some(input.into());
             self
         }
+        /// <p>A serialized JSON string that contains the configuration object to merge to target
+        /// devices. The core device merges this configuration with the component's existing
+        /// configuration. If this is the first time a component deploys on a device, the core device
+        /// merges this configuration with the component's default configuration. This means that the core
+        /// device keeps it's existing configuration for keys and values that you don't specify in this
+        /// object. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html#merge-configuration-update">Merge configuration updates</a> in the <i>IoT Greengrass V2 Developer
+        /// Guide</i>.</p>
         pub fn set_merge(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.merge = input;
             self
         }
+        /// Appends an item to `reset`.
+        ///
+        /// To override the contents of this collection use [`set_reset`](Self::set_reset).
+        ///
+        /// <p>The list of configuration nodes to reset to default values on target devices. Use JSON
+        /// pointers to specify each node to reset. JSON pointers start with a forward slash
+        /// (<code>/</code>) and use forward slashes to separate the key for each level in the object.
+        /// For more information, see the <a href="https://tools.ietf.org/html/rfc6901">JSON pointer
+        /// specification</a> and <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html#reset-configuration-update">Reset configuration updates</a> in the <i>IoT Greengrass V2 Developer
+        /// Guide</i>.</p>
         pub fn reset(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.reset.unwrap_or_default();
             v.push(input.into());
             self.reset = Some(v);
             self
         }
+        /// <p>The list of configuration nodes to reset to default values on target devices. Use JSON
+        /// pointers to specify each node to reset. JSON pointers start with a forward slash
+        /// (<code>/</code>) and use forward slashes to separate the key for each level in the object.
+        /// For more information, see the <a href="https://tools.ietf.org/html/rfc6901">JSON pointer
+        /// specification</a> and <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html#reset-configuration-update">Reset configuration updates</a> in the <i>IoT Greengrass V2 Developer
+        /// Guide</i>.</p>
         pub fn set_reset(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3074,6 +3362,7 @@ impl ComponentConfigurationUpdate {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3085,7 +3374,9 @@ impl ComponentConfigurationUpdate {
     std::hash::Hash,
 )]
 pub enum RecipeOutputFormat {
+    #[allow(missing_docs)] // documentation missing in model
     Json,
+    #[allow(missing_docs)] // documentation missing in model
     Yaml,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3107,6 +3398,7 @@ impl std::str::FromStr for RecipeOutputFormat {
     }
 }
 impl RecipeOutputFormat {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RecipeOutputFormat::Json => "JSON",
@@ -3114,6 +3406,7 @@ impl RecipeOutputFormat {
             RecipeOutputFormat::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["JSON", "YAML"]
     }
@@ -3165,6 +3458,7 @@ pub mod cloud_component_status {
             self.component_state = Some(input);
             self
         }
+        /// <p>The state of the component.</p>
         pub fn set_component_state(
             mut self,
             input: std::option::Option<crate::model::CloudComponentState>,
@@ -3177,10 +3471,18 @@ pub mod cloud_component_status {
             self.message = Some(input.into());
             self
         }
+        /// <p>A message that communicates details, such as errors, about the status of the component.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
         }
+        /// Adds a key-value pair to `errors`.
+        ///
+        /// To override the contents of this collection use [`set_errors`](Self::set_errors).
+        ///
+        /// <p>A dictionary of errors that communicate why the component is in an error state. For
+        /// example, if IoT Greengrass can't access an artifact for the component, then <code>errors</code> contains
+        /// the artifact's URI as a key, and the error message as the value for that key.</p>
         pub fn errors(
             mut self,
             k: impl Into<std::string::String>,
@@ -3191,6 +3493,9 @@ pub mod cloud_component_status {
             self.errors = Some(hash_map);
             self
         }
+        /// <p>A dictionary of errors that communicate why the component is in an error state. For
+        /// example, if IoT Greengrass can't access an artifact for the component, then <code>errors</code> contains
+        /// the artifact's URI as a key, and the error message as the value for that key.</p>
         pub fn set_errors(
             mut self,
             input: std::option::Option<
@@ -3217,6 +3522,7 @@ impl CloudComponentStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3228,10 +3534,15 @@ impl CloudComponentStatus {
     std::hash::Hash,
 )]
 pub enum CloudComponentState {
+    #[allow(missing_docs)] // documentation missing in model
     Deployable,
+    #[allow(missing_docs)] // documentation missing in model
     Deprecated,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Initiated,
+    #[allow(missing_docs)] // documentation missing in model
     Requested,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3256,6 +3567,7 @@ impl std::str::FromStr for CloudComponentState {
     }
 }
 impl CloudComponentState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CloudComponentState::Deployable => "DEPLOYABLE",
@@ -3266,6 +3578,7 @@ impl CloudComponentState {
             CloudComponentState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "DEPLOYABLE",
@@ -3351,6 +3664,8 @@ pub mod lambda_function_recipe_source {
             self.lambda_arn = Some(input.into());
             self
         }
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the Lambda function. The ARN must include the version of the function to
+        /// import. You can't use version aliases like <code>$LATEST</code>.</p>
         pub fn set_lambda_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lambda_arn = input;
             self
@@ -3361,6 +3676,8 @@ pub mod lambda_function_recipe_source {
             self.component_name = Some(input.into());
             self
         }
+        /// <p>The name of the component.</p>
+        /// <p>Defaults to the name of the Lambda function.</p>
         pub fn set_component_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3375,6 +3692,9 @@ pub mod lambda_function_recipe_source {
             self.component_version = Some(input.into());
             self
         }
+        /// <p>The version of the component.</p>
+        /// <p>Defaults to the version of the Lambda function as a semantic version. For example, if your
+        /// function version is <code>3</code>, the component version becomes <code>3.0.0</code>.</p>
         pub fn set_component_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3382,6 +3702,11 @@ pub mod lambda_function_recipe_source {
             self.component_version = input;
             self
         }
+        /// Appends an item to `component_platforms`.
+        ///
+        /// To override the contents of this collection use [`set_component_platforms`](Self::set_component_platforms).
+        ///
+        /// <p>The platforms that the component version supports.</p>
         pub fn component_platforms(
             mut self,
             input: impl Into<crate::model::ComponentPlatform>,
@@ -3391,6 +3716,7 @@ pub mod lambda_function_recipe_source {
             self.component_platforms = Some(v);
             self
         }
+        /// <p>The platforms that the component version supports.</p>
         pub fn set_component_platforms(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ComponentPlatform>>,
@@ -3398,6 +3724,11 @@ pub mod lambda_function_recipe_source {
             self.component_platforms = input;
             self
         }
+        /// Adds a key-value pair to `component_dependencies`.
+        ///
+        /// To override the contents of this collection use [`set_component_dependencies`](Self::set_component_dependencies).
+        ///
+        /// <p>The component versions on which this Lambda function component depends.</p>
         pub fn component_dependencies(
             mut self,
             k: impl Into<std::string::String>,
@@ -3408,6 +3739,7 @@ pub mod lambda_function_recipe_source {
             self.component_dependencies = Some(hash_map);
             self
         }
+        /// <p>The component versions on which this Lambda function component depends.</p>
         pub fn set_component_dependencies(
             mut self,
             input: std::option::Option<
@@ -3429,6 +3761,8 @@ pub mod lambda_function_recipe_source {
             self.component_lambda_parameters = Some(input);
             self
         }
+        /// <p>The system and runtime parameters for the Lambda function as it runs on the Greengrass core
+        /// device.</p>
         pub fn set_component_lambda_parameters(
             mut self,
             input: std::option::Option<crate::model::LambdaExecutionParameters>,
@@ -3552,12 +3886,22 @@ pub mod lambda_execution_parameters {
             std::option::Option<crate::model::LambdaLinuxProcessParams>,
     }
     impl Builder {
+        /// Appends an item to `event_sources`.
+        ///
+        /// To override the contents of this collection use [`set_event_sources`](Self::set_event_sources).
+        ///
+        /// <p>The list of event sources to which to subscribe to receive work messages. The Lambda
+        /// function runs when it receives a message from an event source. You can subscribe this function
+        /// to local publish/subscribe messages and Amazon Web Services IoT Core MQTT messages.</p>
         pub fn event_sources(mut self, input: impl Into<crate::model::LambdaEventSource>) -> Self {
             let mut v = self.event_sources.unwrap_or_default();
             v.push(input.into());
             self.event_sources = Some(v);
             self
         }
+        /// <p>The list of event sources to which to subscribe to receive work messages. The Lambda
+        /// function runs when it receives a message from an event source. You can subscribe this function
+        /// to local publish/subscribe messages and Amazon Web Services IoT Core MQTT messages.</p>
         pub fn set_event_sources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LambdaEventSource>>,
@@ -3572,6 +3916,9 @@ pub mod lambda_execution_parameters {
             self.max_queue_size = Some(input);
             self
         }
+        /// <p>The maximum size of the message queue for the Lambda function component. The IoT Greengrass core
+        /// stores messages in a FIFO (first-in-first-out) queue until it can run the Lambda function to
+        /// consume each message.</p>
         pub fn set_max_queue_size(mut self, input: std::option::Option<i32>) -> Self {
             self.max_queue_size = input;
             self
@@ -3582,6 +3929,8 @@ pub mod lambda_execution_parameters {
             self.max_instances_count = Some(input);
             self
         }
+        /// <p>The maximum number of instances that a non-pinned Lambda function can run at the same
+        /// time.</p>
         pub fn set_max_instances_count(mut self, input: std::option::Option<i32>) -> Self {
             self.max_instances_count = input;
             self
@@ -3592,6 +3941,8 @@ pub mod lambda_execution_parameters {
             self.max_idle_time_in_seconds = Some(input);
             self
         }
+        /// <p>The maximum amount of time in seconds that a non-pinned Lambda function can idle before the
+        /// IoT Greengrass Core software stops its process.</p>
         pub fn set_max_idle_time_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.max_idle_time_in_seconds = input;
             self
@@ -3602,6 +3953,8 @@ pub mod lambda_execution_parameters {
             self.timeout_in_seconds = Some(input);
             self
         }
+        /// <p>The maximum amount of time in seconds that the Lambda function can process a work
+        /// item.</p>
         pub fn set_timeout_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.timeout_in_seconds = input;
             self
@@ -3612,6 +3965,8 @@ pub mod lambda_execution_parameters {
             self.status_timeout_in_seconds = Some(input);
             self
         }
+        /// <p>The interval in seconds at which a pinned (also known as long-lived) Lambda function
+        /// component sends status updates to the Lambda manager component.</p>
         pub fn set_status_timeout_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.status_timeout_in_seconds = input;
             self
@@ -3634,6 +3989,20 @@ pub mod lambda_execution_parameters {
             self.pinned = Some(input);
             self
         }
+        /// <p>Whether or not the Lambda function is pinned, or long-lived.</p>
+        /// <ul>
+        /// <li>
+        /// <p>A pinned Lambda function starts
+        /// when IoT Greengrass starts and keeps running in its own container.</p>
+        /// </li>
+        /// <li>
+        /// <p>A non-pinned Lambda function starts only when it receives a work item and exists after
+        /// it idles for <code>maxIdleTimeInSeconds</code>. If the function has multiple work items,
+        /// the IoT Greengrass Core software creates multiple instances of the function.</p>
+        /// </li>
+        /// </ul>
+        /// <p>Default: <code>true</code>
+        /// </p>
         pub fn set_pinned(mut self, input: std::option::Option<bool>) -> Self {
             self.pinned = input;
             self
@@ -3648,6 +4017,9 @@ pub mod lambda_execution_parameters {
             self.input_payload_encoding_type = Some(input);
             self
         }
+        /// <p>The encoding type that the Lambda function supports.</p>
+        /// <p>Default: <code>json</code>
+        /// </p>
         pub fn set_input_payload_encoding_type(
             mut self,
             input: std::option::Option<crate::model::LambdaInputPayloadEncodingType>,
@@ -3655,12 +4027,18 @@ pub mod lambda_execution_parameters {
             self.input_payload_encoding_type = input;
             self
         }
+        /// Appends an item to `exec_args`.
+        ///
+        /// To override the contents of this collection use [`set_exec_args`](Self::set_exec_args).
+        ///
+        /// <p>The list of arguments to pass to the Lambda function when it runs.</p>
         pub fn exec_args(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.exec_args.unwrap_or_default();
             v.push(input.into());
             self.exec_args = Some(v);
             self
         }
+        /// <p>The list of arguments to pass to the Lambda function when it runs.</p>
         pub fn set_exec_args(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3668,6 +4046,11 @@ pub mod lambda_execution_parameters {
             self.exec_args = input;
             self
         }
+        /// Adds a key-value pair to `environment_variables`.
+        ///
+        /// To override the contents of this collection use [`set_environment_variables`](Self::set_environment_variables).
+        ///
+        /// <p>The map of environment variables that are available to the Lambda function when it runs.</p>
         pub fn environment_variables(
             mut self,
             k: impl Into<std::string::String>,
@@ -3678,6 +4061,7 @@ pub mod lambda_execution_parameters {
             self.environment_variables = Some(hash_map);
             self
         }
+        /// <p>The map of environment variables that are available to the Lambda function when it runs.</p>
         pub fn set_environment_variables(
             mut self,
             input: std::option::Option<
@@ -3695,6 +4079,7 @@ pub mod lambda_execution_parameters {
             self.linux_process_params = Some(input);
             self
         }
+        /// <p>The parameters for the Linux process that contains the Lambda function.</p>
         pub fn set_linux_process_params(
             mut self,
             input: std::option::Option<crate::model::LambdaLinuxProcessParams>,
@@ -3767,6 +4152,11 @@ pub mod lambda_linux_process_params {
             self.isolation_mode = Some(input);
             self
         }
+        /// <p>The isolation mode for the process that contains the Lambda function. The process can run
+        /// in an isolated runtime environment inside the IoT Greengrass container, or as a regular process outside
+        /// any container.</p>
+        /// <p>Default: <code>GreengrassContainer</code>
+        /// </p>
         pub fn set_isolation_mode(
             mut self,
             input: std::option::Option<crate::model::LambdaIsolationMode>,
@@ -3779,6 +4169,7 @@ pub mod lambda_linux_process_params {
             self.container_params = Some(input);
             self
         }
+        /// <p>The parameters for the container in which the Lambda function runs.</p>
         pub fn set_container_params(
             mut self,
             input: std::option::Option<crate::model::LambdaContainerParams>,
@@ -3848,6 +4239,8 @@ pub mod lambda_container_params {
             self.memory_size_in_kb = Some(input);
             self
         }
+        /// <p>The memory size of the container, expressed in kilobytes.</p>
+        /// <p>Default: <code>16384</code> (16 MB)</p>
         pub fn set_memory_size_in_kb(mut self, input: std::option::Option<i32>) -> Self {
             self.memory_size_in_kb = input;
             self
@@ -3860,16 +4253,26 @@ pub mod lambda_container_params {
             self.mount_ro_sysfs = Some(input);
             self
         }
+        /// <p>Whether or not the container can read information from the device's <code>/sys</code>
+        /// folder.</p>
+        /// <p>Default: <code>false</code>
+        /// </p>
         pub fn set_mount_ro_sysfs(mut self, input: std::option::Option<bool>) -> Self {
             self.mount_ro_sysfs = input;
             self
         }
+        /// Appends an item to `volumes`.
+        ///
+        /// To override the contents of this collection use [`set_volumes`](Self::set_volumes).
+        ///
+        /// <p>The list of volumes that the container can access.</p>
         pub fn volumes(mut self, input: impl Into<crate::model::LambdaVolumeMount>) -> Self {
             let mut v = self.volumes.unwrap_or_default();
             v.push(input.into());
             self.volumes = Some(v);
             self
         }
+        /// <p>The list of volumes that the container can access.</p>
         pub fn set_volumes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LambdaVolumeMount>>,
@@ -3877,12 +4280,18 @@ pub mod lambda_container_params {
             self.volumes = input;
             self
         }
+        /// Appends an item to `devices`.
+        ///
+        /// To override the contents of this collection use [`set_devices`](Self::set_devices).
+        ///
+        /// <p>The list of system devices that the container can access.</p>
         pub fn devices(mut self, input: impl Into<crate::model::LambdaDeviceMount>) -> Self {
             let mut v = self.devices.unwrap_or_default();
             v.push(input.into());
             self.devices = Some(v);
             self
         }
+        /// <p>The list of system devices that the container can access.</p>
         pub fn set_devices(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LambdaDeviceMount>>,
@@ -3949,6 +4358,7 @@ pub mod lambda_device_mount {
             self.path = Some(input.into());
             self
         }
+        /// <p>The mount path for the device in the file system.</p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.path = input;
             self
@@ -3961,6 +4371,10 @@ pub mod lambda_device_mount {
             self.permission = Some(input);
             self
         }
+        /// <p>The permission to access the device: read/only (<code>ro</code>) or read/write
+        /// (<code>rw</code>).</p>
+        /// <p>Default: <code>ro</code>
+        /// </p>
         pub fn set_permission(
             mut self,
             input: std::option::Option<crate::model::LambdaFilesystemPermission>,
@@ -3975,6 +4389,9 @@ pub mod lambda_device_mount {
             self.add_group_owner = Some(input);
             self
         }
+        /// <p>Whether or not to add the component's system user as an owner of the device.</p>
+        /// <p>Default: <code>false</code>
+        /// </p>
         pub fn set_add_group_owner(mut self, input: std::option::Option<bool>) -> Self {
             self.add_group_owner = input;
             self
@@ -3996,6 +4413,7 @@ impl LambdaDeviceMount {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4007,7 +4425,9 @@ impl LambdaDeviceMount {
     std::hash::Hash,
 )]
 pub enum LambdaFilesystemPermission {
+    #[allow(missing_docs)] // documentation missing in model
     Ro,
+    #[allow(missing_docs)] // documentation missing in model
     Rw,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4029,6 +4449,7 @@ impl std::str::FromStr for LambdaFilesystemPermission {
     }
 }
 impl LambdaFilesystemPermission {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LambdaFilesystemPermission::Ro => "ro",
@@ -4036,6 +4457,7 @@ impl LambdaFilesystemPermission {
             LambdaFilesystemPermission::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ro", "rw"]
     }
@@ -4093,6 +4515,7 @@ pub mod lambda_volume_mount {
             self.source_path = Some(input.into());
             self
         }
+        /// <p>The path to the physical volume in the file system.</p>
         pub fn set_source_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source_path = input;
             self
@@ -4102,6 +4525,7 @@ pub mod lambda_volume_mount {
             self.destination_path = Some(input.into());
             self
         }
+        /// <p>The path to the logical volume in the file system.</p>
         pub fn set_destination_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4117,6 +4541,10 @@ pub mod lambda_volume_mount {
             self.permission = Some(input);
             self
         }
+        /// <p>The permission to access the volume: read/only (<code>ro</code>) or read/write
+        /// (<code>rw</code>).</p>
+        /// <p>Default: <code>ro</code>
+        /// </p>
         pub fn set_permission(
             mut self,
             input: std::option::Option<crate::model::LambdaFilesystemPermission>,
@@ -4131,6 +4559,9 @@ pub mod lambda_volume_mount {
             self.add_group_owner = Some(input);
             self
         }
+        /// <p>Whether or not to add the IoT Greengrass user group as an owner of the volume.</p>
+        /// <p>Default: <code>false</code>
+        /// </p>
         pub fn set_add_group_owner(mut self, input: std::option::Option<bool>) -> Self {
             self.add_group_owner = input;
             self
@@ -4153,6 +4584,7 @@ impl LambdaVolumeMount {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4164,7 +4596,9 @@ impl LambdaVolumeMount {
     std::hash::Hash,
 )]
 pub enum LambdaIsolationMode {
+    #[allow(missing_docs)] // documentation missing in model
     GreengrassContainer,
+    #[allow(missing_docs)] // documentation missing in model
     NoContainer,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4186,6 +4620,7 @@ impl std::str::FromStr for LambdaIsolationMode {
     }
 }
 impl LambdaIsolationMode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LambdaIsolationMode::GreengrassContainer => "GreengrassContainer",
@@ -4193,6 +4628,7 @@ impl LambdaIsolationMode {
             LambdaIsolationMode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["GreengrassContainer", "NoContainer"]
     }
@@ -4203,6 +4639,7 @@ impl AsRef<str> for LambdaIsolationMode {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4214,7 +4651,9 @@ impl AsRef<str> for LambdaIsolationMode {
     std::hash::Hash,
 )]
 pub enum LambdaInputPayloadEncodingType {
+    #[allow(missing_docs)] // documentation missing in model
     Binary,
+    #[allow(missing_docs)] // documentation missing in model
     Json,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4236,6 +4675,7 @@ impl std::str::FromStr for LambdaInputPayloadEncodingType {
     }
 }
 impl LambdaInputPayloadEncodingType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LambdaInputPayloadEncodingType::Binary => "binary",
@@ -4243,6 +4683,7 @@ impl LambdaInputPayloadEncodingType {
             LambdaInputPayloadEncodingType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["binary", "json"]
     }
@@ -4301,6 +4742,7 @@ pub mod lambda_event_source {
             self.topic = Some(input.into());
             self
         }
+        /// <p>The topic to which to subscribe to receive event messages.</p>
         pub fn set_topic(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.topic = input;
             self
@@ -4324,6 +4766,21 @@ pub mod lambda_event_source {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of event source. Choose from the following options:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>PUB_SUB</code> – Subscribe to local publish/subscribe messages. This event
+        /// source type doesn't support MQTT wildcards (<code>+</code> and <code>#</code>) in the
+        /// event source topic.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>IOT_CORE</code> – Subscribe to Amazon Web Services IoT Core MQTT messages. This event source
+        /// type supports MQTT wildcards (<code>+</code> and <code>#</code>) in the event source
+        /// topic.</p>
+        /// </li>
+        /// </ul>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::LambdaEventSourceType>,
@@ -4347,6 +4804,7 @@ impl LambdaEventSource {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4358,7 +4816,9 @@ impl LambdaEventSource {
     std::hash::Hash,
 )]
 pub enum LambdaEventSourceType {
+    #[allow(missing_docs)] // documentation missing in model
     IotCore,
+    #[allow(missing_docs)] // documentation missing in model
     PubSub,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4380,6 +4840,7 @@ impl std::str::FromStr for LambdaEventSourceType {
     }
 }
 impl LambdaEventSourceType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LambdaEventSourceType::IotCore => "IOT_CORE",
@@ -4387,6 +4848,7 @@ impl LambdaEventSourceType {
             LambdaEventSourceType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["IOT_CORE", "PUB_SUB"]
     }
@@ -4445,6 +4907,8 @@ pub mod component_dependency_requirement {
             self.version_requirement = Some(input.into());
             self
         }
+        /// <p>The component version requirement for the component dependency.</p>
+        /// <p>IoT Greengrass V2 uses semantic version constraints. For more information, see <a href="https://semver.org/">Semantic Versioning</a>.</p>
         pub fn set_version_requirement(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4471,6 +4935,21 @@ pub mod component_dependency_requirement {
             self.dependency_type = Some(input);
             self
         }
+        /// <p>The type of this dependency. Choose from the following options:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>SOFT</code> – The component doesn't restart if the dependency changes
+        /// state.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>HARD</code> – The component restarts if the dependency changes
+        /// state.</p>
+        /// </li>
+        /// </ul>
+        /// <p>Default: <code>HARD</code>
+        /// </p>
         pub fn set_dependency_type(
             mut self,
             input: std::option::Option<crate::model::ComponentDependencyType>,
@@ -4494,6 +4973,7 @@ impl ComponentDependencyRequirement {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4505,7 +4985,9 @@ impl ComponentDependencyRequirement {
     std::hash::Hash,
 )]
 pub enum ComponentDependencyType {
+    #[allow(missing_docs)] // documentation missing in model
     Hard,
+    #[allow(missing_docs)] // documentation missing in model
     Soft,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4527,6 +5009,7 @@ impl std::str::FromStr for ComponentDependencyType {
     }
 }
 impl ComponentDependencyType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ComponentDependencyType::Hard => "HARD",
@@ -4534,6 +5017,7 @@ impl ComponentDependencyType {
             ComponentDependencyType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["HARD", "SOFT"]
     }
@@ -4582,6 +5066,7 @@ pub mod disassociate_client_device_from_core_device_error_entry {
             self.thing_name = Some(input.into());
             self
         }
+        /// <p>The name of the IoT thing whose disassociate request failed.</p>
         pub fn set_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.thing_name = input;
             self
@@ -4591,6 +5076,7 @@ pub mod disassociate_client_device_from_core_device_error_entry {
             self.code = Some(input.into());
             self
         }
+        /// <p>The error code for the request.</p>
         pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.code = input;
             self
@@ -4600,6 +5086,7 @@ pub mod disassociate_client_device_from_core_device_error_entry {
             self.message = Some(input.into());
             self
         }
+        /// <p>A message that provides additional information about the error.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -4651,6 +5138,7 @@ pub mod disassociate_client_device_from_core_device_entry {
             self.thing_name = Some(input.into());
             self
         }
+        /// <p>The name of the IoT thing that represents the client device to disassociate.</p>
         pub fn set_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.thing_name = input;
             self
@@ -4708,6 +5196,7 @@ pub mod associate_client_device_with_core_device_error_entry {
             self.thing_name = Some(input.into());
             self
         }
+        /// <p>The name of the IoT thing whose associate request failed.</p>
         pub fn set_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.thing_name = input;
             self
@@ -4717,6 +5206,7 @@ pub mod associate_client_device_with_core_device_error_entry {
             self.code = Some(input.into());
             self
         }
+        /// <p>The error code for the request.</p>
         pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.code = input;
             self
@@ -4726,6 +5216,7 @@ pub mod associate_client_device_with_core_device_error_entry {
             self.message = Some(input.into());
             self
         }
+        /// <p>A message that provides additional information about the error.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -4777,6 +5268,7 @@ pub mod associate_client_device_with_core_device_entry {
             self.thing_name = Some(input.into());
             self
         }
+        /// <p>The name of the IoT thing that represents the client device to associate.</p>
         pub fn set_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.thing_name = input;
             self

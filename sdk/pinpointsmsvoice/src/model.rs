@@ -55,6 +55,7 @@ pub mod event_destination_definition {
             self.cloud_watch_logs_destination = Some(input);
             self
         }
+        /// An object that contains information about an event destination that sends data to Amazon CloudWatch Logs.
         pub fn set_cloud_watch_logs_destination(
             mut self,
             input: std::option::Option<crate::model::CloudWatchLogsDestination>,
@@ -67,6 +68,7 @@ pub mod event_destination_definition {
             self.enabled = Some(input);
             self
         }
+        /// Indicates whether or not the event destination is enabled. If the event destination is enabled, then Amazon Pinpoint sends response data to the specified event destination.
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -79,6 +81,7 @@ pub mod event_destination_definition {
             self.kinesis_firehose_destination = Some(input);
             self
         }
+        /// An object that contains information about an event destination that sends data to Amazon Kinesis Data Firehose.
         pub fn set_kinesis_firehose_destination(
             mut self,
             input: std::option::Option<crate::model::KinesisFirehoseDestination>,
@@ -86,12 +89,18 @@ pub mod event_destination_definition {
             self.kinesis_firehose_destination = input;
             self
         }
+        /// Appends an item to `matching_event_types`.
+        ///
+        /// To override the contents of this collection use [`set_matching_event_types`](Self::set_matching_event_types).
+        ///
+        /// An array of EventDestination objects. Each EventDestination object includes ARNs and other information that define an event destination.
         pub fn matching_event_types(mut self, input: impl Into<crate::model::EventType>) -> Self {
             let mut v = self.matching_event_types.unwrap_or_default();
             v.push(input.into());
             self.matching_event_types = Some(v);
             self
         }
+        /// An array of EventDestination objects. Each EventDestination object includes ARNs and other information that define an event destination.
         pub fn set_matching_event_types(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EventType>>,
@@ -104,6 +113,7 @@ pub mod event_destination_definition {
             self.sns_destination = Some(input);
             self
         }
+        /// An object that contains information about an event destination that sends data to Amazon SNS.
         pub fn set_sns_destination(
             mut self,
             input: std::option::Option<crate::model::SnsDestination>,
@@ -158,6 +168,7 @@ pub mod sns_destination {
             self.topic_arn = Some(input.into());
             self
         }
+        /// The Amazon Resource Name (ARN) of the Amazon SNS topic that you want to publish events to.
         pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.topic_arn = input;
             self
@@ -189,12 +200,19 @@ impl SnsDestination {
     std::hash::Hash,
 )]
 pub enum EventType {
+    #[allow(missing_docs)] // documentation missing in model
     Answered,
+    #[allow(missing_docs)] // documentation missing in model
     Busy,
+    #[allow(missing_docs)] // documentation missing in model
     CompletedCall,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     InitiatedCall,
+    #[allow(missing_docs)] // documentation missing in model
     NoAnswer,
+    #[allow(missing_docs)] // documentation missing in model
     Ringing,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -221,6 +239,7 @@ impl std::str::FromStr for EventType {
     }
 }
 impl EventType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EventType::Answered => "ANSWERED",
@@ -233,6 +252,7 @@ impl EventType {
             EventType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ANSWERED",
@@ -283,6 +303,7 @@ pub mod kinesis_firehose_destination {
             self.delivery_stream_arn = Some(input.into());
             self
         }
+        /// The Amazon Resource Name (ARN) of an IAM role that can write data to an Amazon Kinesis Data Firehose stream.
         pub fn set_delivery_stream_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -295,6 +316,7 @@ pub mod kinesis_firehose_destination {
             self.iam_role_arn = Some(input.into());
             self
         }
+        /// The Amazon Resource Name (ARN) of the Amazon Kinesis Data Firehose destination that you want to use in the event destination.
         pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.iam_role_arn = input;
             self
@@ -347,6 +369,7 @@ pub mod cloud_watch_logs_destination {
             self.iam_role_arn = Some(input.into());
             self
         }
+        /// The Amazon Resource Name (ARN) of an Amazon Identity and Access Management (IAM) role that is able to write event data to an Amazon CloudWatch destination.
         pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.iam_role_arn = input;
             self
@@ -356,6 +379,7 @@ pub mod cloud_watch_logs_destination {
             self.log_group_arn = Some(input.into());
             self
         }
+        /// The name of the Amazon CloudWatch Log Group that you want to record events in.
         pub fn set_log_group_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -419,6 +443,7 @@ pub mod voice_message_content {
             self.call_instructions_message = Some(input);
             self
         }
+        /// An object that defines a message that contains text formatted using Amazon Pinpoint Voice Instructions markup.
         pub fn set_call_instructions_message(
             mut self,
             input: std::option::Option<crate::model::CallInstructionsMessageType>,
@@ -431,6 +456,7 @@ pub mod voice_message_content {
             self.plain_text_message = Some(input);
             self
         }
+        /// An object that defines a message that contains unformatted text.
         pub fn set_plain_text_message(
             mut self,
             input: std::option::Option<crate::model::PlainTextMessageType>,
@@ -443,6 +469,7 @@ pub mod voice_message_content {
             self.ssml_message = Some(input);
             self
         }
+        /// An object that defines a message that contains SSML-formatted text.
         pub fn set_ssml_message(
             mut self,
             input: std::option::Option<crate::model::SsmlMessageType>,
@@ -503,6 +530,7 @@ pub mod ssml_message_type {
             self.language_code = Some(input.into());
             self
         }
+        /// The language to use when delivering the message. For a complete list of supported languages, see the Amazon Polly Developer Guide.
         pub fn set_language_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -515,6 +543,7 @@ pub mod ssml_message_type {
             self.text = Some(input.into());
             self
         }
+        /// The SSML-formatted text to deliver to the recipient.
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.text = input;
             self
@@ -524,6 +553,7 @@ pub mod ssml_message_type {
             self.voice_id = Some(input.into());
             self
         }
+        /// The name of the voice that you want to use to deliver the message. For a complete list of supported voices, see the Amazon Polly Developer Guide.
         pub fn set_voice_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.voice_id = input;
             self
@@ -581,6 +611,7 @@ pub mod plain_text_message_type {
             self.language_code = Some(input.into());
             self
         }
+        /// The language to use when delivering the message. For a complete list of supported languages, see the Amazon Polly Developer Guide.
         pub fn set_language_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -593,6 +624,7 @@ pub mod plain_text_message_type {
             self.text = Some(input.into());
             self
         }
+        /// The plain (not SSML-formatted) text to deliver to the recipient.
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.text = input;
             self
@@ -602,6 +634,7 @@ pub mod plain_text_message_type {
             self.voice_id = Some(input.into());
             self
         }
+        /// The name of the voice that you want to use to deliver the message. For a complete list of supported voices, see the Amazon Polly Developer Guide.
         pub fn set_voice_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.voice_id = input;
             self
@@ -651,6 +684,7 @@ pub mod call_instructions_message_type {
             self.text = Some(input.into());
             self
         }
+        /// The language to use when delivering the message. For a complete list of supported languages, see the Amazon Polly Developer Guide.
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.text = input;
             self
@@ -728,6 +762,7 @@ pub mod event_destination {
             self.cloud_watch_logs_destination = Some(input);
             self
         }
+        /// An object that contains information about an event destination that sends data to Amazon CloudWatch Logs.
         pub fn set_cloud_watch_logs_destination(
             mut self,
             input: std::option::Option<crate::model::CloudWatchLogsDestination>,
@@ -740,6 +775,7 @@ pub mod event_destination {
             self.enabled = Some(input);
             self
         }
+        /// Indicates whether or not the event destination is enabled. If the event destination is enabled, then Amazon Pinpoint sends response data to the specified event destination.
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -752,6 +788,7 @@ pub mod event_destination {
             self.kinesis_firehose_destination = Some(input);
             self
         }
+        /// An object that contains information about an event destination that sends data to Amazon Kinesis Data Firehose.
         pub fn set_kinesis_firehose_destination(
             mut self,
             input: std::option::Option<crate::model::KinesisFirehoseDestination>,
@@ -759,12 +796,18 @@ pub mod event_destination {
             self.kinesis_firehose_destination = input;
             self
         }
+        /// Appends an item to `matching_event_types`.
+        ///
+        /// To override the contents of this collection use [`set_matching_event_types`](Self::set_matching_event_types).
+        ///
+        /// An array of EventDestination objects. Each EventDestination object includes ARNs and other information that define an event destination.
         pub fn matching_event_types(mut self, input: impl Into<crate::model::EventType>) -> Self {
             let mut v = self.matching_event_types.unwrap_or_default();
             v.push(input.into());
             self.matching_event_types = Some(v);
             self
         }
+        /// An array of EventDestination objects. Each EventDestination object includes ARNs and other information that define an event destination.
         pub fn set_matching_event_types(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EventType>>,
@@ -777,6 +820,7 @@ pub mod event_destination {
             self.name = Some(input.into());
             self
         }
+        /// A name that identifies the event destination configuration.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -786,6 +830,7 @@ pub mod event_destination {
             self.sns_destination = Some(input);
             self
         }
+        /// An object that contains information about an event destination that sends data to Amazon SNS.
         pub fn set_sns_destination(
             mut self,
             input: std::option::Option<crate::model::SnsDestination>,

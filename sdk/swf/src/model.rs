@@ -43,6 +43,11 @@ pub mod workflow_type {
             self.name = Some(input.into());
             self
         }
+        /// <p>
+        /// The name of the workflow type.</p>
+        /// <note>
+        /// <p>The combination of workflow type name and version must be unique with in a domain.</p>
+        /// </note>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -56,6 +61,11 @@ pub mod workflow_type {
             self.version = Some(input.into());
             self
         }
+        /// <p>
+        /// The version of the workflow type.</p>
+        /// <note>
+        /// <p>The combination of workflow type name and version must be unique with in a domain.</p>
+        /// </note>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -117,6 +127,10 @@ pub mod activity_type {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of this activity.</p>
+        /// <note>
+        /// <p>The combination of activity type name and version must be unique within a domain.</p>
+        /// </note>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -129,6 +143,10 @@ pub mod activity_type {
             self.version = Some(input.into());
             self
         }
+        /// <p>The version of this activity.</p>
+        /// <note>
+        /// <p>The combination of activity type name and version must be unique with in a domain.</p>
+        /// </note>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -149,6 +167,7 @@ impl ActivityType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -160,8 +179,11 @@ impl ActivityType {
     std::hash::Hash,
 )]
 pub enum ChildPolicy {
+    #[allow(missing_docs)] // documentation missing in model
     Abandon,
+    #[allow(missing_docs)] // documentation missing in model
     RequestCancel,
+    #[allow(missing_docs)] // documentation missing in model
     Terminate,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -184,6 +206,7 @@ impl std::str::FromStr for ChildPolicy {
     }
 }
 impl ChildPolicy {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ChildPolicy::Abandon => "ABANDON",
@@ -192,6 +215,7 @@ impl ChildPolicy {
             ChildPolicy::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ABANDON", "REQUEST_CANCEL", "TERMINATE"]
     }
@@ -236,6 +260,7 @@ pub mod resource_tag {
             self.key = Some(input.into());
             self
         }
+        /// <p>The key of a tag.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -245,6 +270,7 @@ pub mod resource_tag {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value of a tag.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -293,6 +319,7 @@ pub mod task_list {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the task list.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -386,10 +413,13 @@ impl TaskList {
 /// decisions as a pseudo API maintains a uniform conceptual model and helps keep policies readable. For details and
 /// example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
 /// Workflows</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+///
 /// <p>
 /// <b>Decision Failure</b>
 /// </p>
+///
 /// <p>Decisions can fail for several reasons</p>
+///
 /// <ul>
 /// <li>
 /// <p>The ordering of decisions should follow a logical flow. Some decisions might not make sense in the current context of the workflow execution and therefore fails.</p>
@@ -401,10 +431,12 @@ impl TaskList {
 /// <p>The decision lacks sufficient permissions.</p>
 /// </li>
 /// </ul>
+///
 /// <p>One of the following events might be added to the history to indicate an error. The event attribute's
 /// <code>cause</code> parameter indicates the cause. If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed
 /// because it lacked sufficient permissions. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a>
 /// in the <i>Amazon SWF Developer Guide</i>.</p>
+///
 /// <ul>
 /// <li>
 /// <p>
@@ -727,6 +759,7 @@ pub mod decision {
             self.decision_type = Some(input);
             self
         }
+        /// <p>Specifies the type of the decision.</p>
         pub fn set_decision_type(
             mut self,
             input: std::option::Option<crate::model::DecisionType>,
@@ -742,6 +775,7 @@ pub mod decision {
             self.schedule_activity_task_decision_attributes = Some(input);
             self
         }
+        /// <p>Provides the details of the <code>ScheduleActivityTask</code> decision. It isn't set for other decision types.</p>
         pub fn set_schedule_activity_task_decision_attributes(
             mut self,
             input: std::option::Option<crate::model::ScheduleActivityTaskDecisionAttributes>,
@@ -757,6 +791,7 @@ pub mod decision {
             self.request_cancel_activity_task_decision_attributes = Some(input);
             self
         }
+        /// <p>Provides the details of the <code>RequestCancelActivityTask</code> decision. It isn't set for other decision types.</p>
         pub fn set_request_cancel_activity_task_decision_attributes(
             mut self,
             input: std::option::Option<crate::model::RequestCancelActivityTaskDecisionAttributes>,
@@ -772,6 +807,7 @@ pub mod decision {
             self.complete_workflow_execution_decision_attributes = Some(input);
             self
         }
+        /// <p>Provides the details of the <code>CompleteWorkflowExecution</code> decision. It isn't set for other decision types.</p>
         pub fn set_complete_workflow_execution_decision_attributes(
             mut self,
             input: std::option::Option<crate::model::CompleteWorkflowExecutionDecisionAttributes>,
@@ -787,6 +823,7 @@ pub mod decision {
             self.fail_workflow_execution_decision_attributes = Some(input);
             self
         }
+        /// <p>Provides the details of the <code>FailWorkflowExecution</code> decision. It isn't set for other decision types.</p>
         pub fn set_fail_workflow_execution_decision_attributes(
             mut self,
             input: std::option::Option<crate::model::FailWorkflowExecutionDecisionAttributes>,
@@ -802,6 +839,7 @@ pub mod decision {
             self.cancel_workflow_execution_decision_attributes = Some(input);
             self
         }
+        /// <p>Provides the details of the <code>CancelWorkflowExecution</code> decision. It isn't set for other decision types.</p>
         pub fn set_cancel_workflow_execution_decision_attributes(
             mut self,
             input: std::option::Option<crate::model::CancelWorkflowExecutionDecisionAttributes>,
@@ -817,6 +855,7 @@ pub mod decision {
             self.continue_as_new_workflow_execution_decision_attributes = Some(input);
             self
         }
+        /// <p>Provides the details of the <code>ContinueAsNewWorkflowExecution</code> decision. It isn't set for other decision types.</p>
         pub fn set_continue_as_new_workflow_execution_decision_attributes(
             mut self,
             input: std::option::Option<
@@ -834,6 +873,7 @@ pub mod decision {
             self.record_marker_decision_attributes = Some(input);
             self
         }
+        /// <p>Provides the details of the <code>RecordMarker</code> decision. It isn't set for other decision types.</p>
         pub fn set_record_marker_decision_attributes(
             mut self,
             input: std::option::Option<crate::model::RecordMarkerDecisionAttributes>,
@@ -849,6 +889,7 @@ pub mod decision {
             self.start_timer_decision_attributes = Some(input);
             self
         }
+        /// <p>Provides the details of the <code>StartTimer</code> decision. It isn't set for other decision types.</p>
         pub fn set_start_timer_decision_attributes(
             mut self,
             input: std::option::Option<crate::model::StartTimerDecisionAttributes>,
@@ -864,6 +905,7 @@ pub mod decision {
             self.cancel_timer_decision_attributes = Some(input);
             self
         }
+        /// <p>Provides the details of the <code>CancelTimer</code> decision. It isn't set for other decision types.</p>
         pub fn set_cancel_timer_decision_attributes(
             mut self,
             input: std::option::Option<crate::model::CancelTimerDecisionAttributes>,
@@ -879,6 +921,7 @@ pub mod decision {
             self.signal_external_workflow_execution_decision_attributes = Some(input);
             self
         }
+        /// <p>Provides the details of the <code>SignalExternalWorkflowExecution</code> decision. It isn't set for other decision types.</p>
         pub fn set_signal_external_workflow_execution_decision_attributes(
             mut self,
             input: std::option::Option<
@@ -897,6 +940,8 @@ pub mod decision {
             self.request_cancel_external_workflow_execution_decision_attributes = Some(input);
             self
         }
+        /// <p>Provides the details of the <code>RequestCancelExternalWorkflowExecution</code> decision.
+        /// It isn't set for other decision types.</p>
         pub fn set_request_cancel_external_workflow_execution_decision_attributes(
             mut self,
             input: std::option::Option<
@@ -914,6 +959,7 @@ pub mod decision {
             self.start_child_workflow_execution_decision_attributes = Some(input);
             self
         }
+        /// <p>Provides the details of the <code>StartChildWorkflowExecution</code> decision. It isn't set for other decision types.</p>
         pub fn set_start_child_workflow_execution_decision_attributes(
             mut self,
             input: std::option::Option<crate::model::StartChildWorkflowExecutionDecisionAttributes>,
@@ -930,6 +976,8 @@ pub mod decision {
             self.schedule_lambda_function_decision_attributes = Some(input);
             self
         }
+        /// <p>Provides the details of the <code>ScheduleLambdaFunction</code> decision. It isn't set
+        /// for other decision types.</p>
         pub fn set_schedule_lambda_function_decision_attributes(
             mut self,
             input: std::option::Option<crate::model::ScheduleLambdaFunctionDecisionAttributes>,
@@ -1021,6 +1069,7 @@ pub mod schedule_lambda_function_decision_attributes {
             self.id = Some(input.into());
             self
         }
+        /// <p>A string that identifies the Lambda function execution in the event history.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -1030,6 +1079,7 @@ pub mod schedule_lambda_function_decision_attributes {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name, or ARN, of the Lambda function to schedule.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1040,6 +1090,8 @@ pub mod schedule_lambda_function_decision_attributes {
             self.control = Some(input.into());
             self
         }
+        /// <p>The data attached to the event that the decider can use in subsequent workflow tasks.
+        /// This data isn't sent to the Lambda task.</p>
         pub fn set_control(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.control = input;
             self
@@ -1049,6 +1101,7 @@ pub mod schedule_lambda_function_decision_attributes {
             self.input = Some(input.into());
             self
         }
+        /// <p>The optional input data to be supplied to the Lambda function.</p>
         pub fn set_input(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.input = input;
             self
@@ -1058,6 +1111,7 @@ pub mod schedule_lambda_function_decision_attributes {
             self.start_to_close_timeout = Some(input.into());
             self
         }
+        /// <p>The timeout value, in seconds, after which the Lambda function is considered to be failed once it has started. This can be any integer from 1-300 (1s-5m). If no value is supplied, than a default value of 300s is assumed.</p>
         pub fn set_start_to_close_timeout(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1249,6 +1303,8 @@ pub mod start_child_workflow_execution_decision_attributes {
             self.workflow_type = Some(input);
             self
         }
+        /// <p>
+        /// The type of the workflow execution to be started.</p>
         pub fn set_workflow_type(
             mut self,
             input: std::option::Option<crate::model::WorkflowType>,
@@ -1264,6 +1320,10 @@ pub mod start_child_workflow_execution_decision_attributes {
             self.workflow_id = Some(input.into());
             self
         }
+        /// <p>
+        /// The <code>workflowId</code> of the workflow execution.</p>
+        /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code>
+        /// (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not contain the literal string <code>arn</code>.</p>
         pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workflow_id = input;
             self
@@ -1273,6 +1333,7 @@ pub mod start_child_workflow_execution_decision_attributes {
             self.control = Some(input.into());
             self
         }
+        /// <p>The data attached to the event that can be used by the decider in subsequent workflow tasks. This data isn't sent to the child workflow execution.</p>
         pub fn set_control(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.control = input;
             self
@@ -1282,6 +1343,7 @@ pub mod start_child_workflow_execution_decision_attributes {
             self.input = Some(input.into());
             self
         }
+        /// <p>The input to be provided to the workflow execution.</p>
         pub fn set_input(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.input = input;
             self
@@ -1298,6 +1360,11 @@ pub mod start_child_workflow_execution_decision_attributes {
             self.execution_start_to_close_timeout = Some(input.into());
             self
         }
+        /// <p>The total duration for this workflow execution. This overrides the defaultExecutionStartToCloseTimeout specified when registering the workflow type.</p>
+        /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+        /// <note>
+        /// <p>An execution start-to-close timeout for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default execution start-to-close timeout was specified at registration time then a fault is returned.</p>
+        /// </note>
         pub fn set_execution_start_to_close_timeout(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1315,6 +1382,12 @@ pub mod start_child_workflow_execution_decision_attributes {
             self.task_list = Some(input);
             self
         }
+        /// <p>The name of the task list to be used for decision tasks of the child workflow execution.</p>
+        /// <note>
+        /// <p>A task list for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default task list was specified at registration time then a fault is returned.</p>
+        /// </note>
+        /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code>
+        /// (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not contain the literal string <code>arn</code>.</p>
         pub fn set_task_list(mut self, input: std::option::Option<crate::model::TaskList>) -> Self {
             self.task_list = input;
             self
@@ -1329,6 +1402,12 @@ pub mod start_child_workflow_execution_decision_attributes {
             self.task_priority = Some(input.into());
             self
         }
+        /// <p>
+        /// A task priority that, if set, specifies the priority for a decision task of this workflow
+        /// execution. This overrides the defaultTaskPriority specified when registering the workflow type.
+        /// Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code>
+        /// (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
+        /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
         pub fn set_task_priority(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1350,6 +1429,13 @@ pub mod start_child_workflow_execution_decision_attributes {
             self.task_start_to_close_timeout = Some(input.into());
             self
         }
+        /// <p>Specifies the maximum duration of decision tasks for this workflow execution. This parameter overrides the
+        /// <code>defaultTaskStartToCloseTimout</code> specified when registering the workflow type using
+        /// <a>RegisterWorkflowType</a>.</p>
+        /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+        /// <note>
+        /// <p>A task start-to-close timeout for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default task start-to-close timeout was specified at registration time then a fault is returned.</p>
+        /// </note>
         pub fn set_task_start_to_close_timeout(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1386,6 +1472,31 @@ pub mod start_child_workflow_execution_decision_attributes {
             self.child_policy = Some(input);
             self
         }
+        /// <p>
+        /// If set, specifies the policy to use for the child workflow executions if the workflow execution
+        /// being started is terminated by calling the <a>TerminateWorkflowExecution</a> action explicitly or due to an
+        /// expired timeout. This policy overrides the default child policy specified when registering the workflow type using
+        /// <a>RegisterWorkflowType</a>.</p>
+        /// <p>The supported child policies are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>TERMINATE</code> – The child executions are terminated.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child
+        /// execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider
+        /// to take appropriate actions when it receives an execution history with this event.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ABANDON</code> – No action is taken. The child executions continue to run.</p>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>A child policy for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default child policy was specified at registration time then a fault is returned.</p>
+        /// </note>
         pub fn set_child_policy(
             mut self,
             input: std::option::Option<crate::model::ChildPolicy>,
@@ -1393,12 +1504,22 @@ pub mod start_child_workflow_execution_decision_attributes {
             self.child_policy = input;
             self
         }
+        /// Appends an item to `tag_list`.
+        ///
+        /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
+        ///
+        /// <p>The list of tags to associate with the child workflow execution. A maximum of 5 tags can be specified. You can
+        /// list workflow executions with a specific tag by calling <a>ListOpenWorkflowExecutions</a> or
+        /// <a>ListClosedWorkflowExecutions</a> and specifying a <a>TagFilter</a>.</p>
         pub fn tag_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
             v.push(input.into());
             self.tag_list = Some(v);
             self
         }
+        /// <p>The list of tags to associate with the child workflow execution. A maximum of 5 tags can be specified. You can
+        /// list workflow executions with a specific tag by calling <a>ListOpenWorkflowExecutions</a> or
+        /// <a>ListClosedWorkflowExecutions</a> and specifying a <a>TagFilter</a>.</p>
         pub fn set_tag_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1411,6 +1532,7 @@ pub mod start_child_workflow_execution_decision_attributes {
             self.lambda_role = Some(input.into());
             self
         }
+        /// <p>The IAM role attached to the child workflow execution.</p>
         pub fn set_lambda_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lambda_role = input;
             self
@@ -1499,6 +1621,8 @@ pub mod request_cancel_external_workflow_execution_decision_attributes {
             self.workflow_id = Some(input.into());
             self
         }
+        /// <p>
+        /// The <code>workflowId</code> of the external workflow execution to cancel.</p>
         pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workflow_id = input;
             self
@@ -1508,6 +1632,7 @@ pub mod request_cancel_external_workflow_execution_decision_attributes {
             self.run_id = Some(input.into());
             self
         }
+        /// <p>The <code>runId</code> of the external workflow execution to cancel.</p>
         pub fn set_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.run_id = input;
             self
@@ -1517,6 +1642,7 @@ pub mod request_cancel_external_workflow_execution_decision_attributes {
             self.control = Some(input.into());
             self
         }
+        /// <p>The data attached to the event that can be used by the decider in subsequent workflow tasks.</p>
         pub fn set_control(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.control = input;
             self
@@ -1611,6 +1737,8 @@ pub mod signal_external_workflow_execution_decision_attributes {
             self.workflow_id = Some(input.into());
             self
         }
+        /// <p>
+        /// The <code>workflowId</code> of the workflow execution to be signaled.</p>
         pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workflow_id = input;
             self
@@ -1620,6 +1748,7 @@ pub mod signal_external_workflow_execution_decision_attributes {
             self.run_id = Some(input.into());
             self
         }
+        /// <p>The <code>runId</code> of the workflow execution to be signaled.</p>
         pub fn set_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.run_id = input;
             self
@@ -1631,6 +1760,9 @@ pub mod signal_external_workflow_execution_decision_attributes {
             self.signal_name = Some(input.into());
             self
         }
+        /// <p>
+        /// The name of the signal.The target workflow execution uses the signal name and input to
+        /// process the signal.</p>
         pub fn set_signal_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.signal_name = input;
             self
@@ -1642,6 +1774,9 @@ pub mod signal_external_workflow_execution_decision_attributes {
             self.input = Some(input.into());
             self
         }
+        /// <p>
+        /// The input data to be provided with the signal. The target workflow execution uses the signal
+        /// name and input data to process the signal.</p>
         pub fn set_input(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.input = input;
             self
@@ -1651,6 +1786,7 @@ pub mod signal_external_workflow_execution_decision_attributes {
             self.control = Some(input.into());
             self
         }
+        /// <p>The data attached to the event that can be used by the decider in subsequent decision tasks.</p>
         pub fn set_control(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.control = input;
             self
@@ -1725,6 +1861,8 @@ pub mod cancel_timer_decision_attributes {
             self.timer_id = Some(input.into());
             self
         }
+        /// <p>
+        /// The unique ID of the timer to cancel.</p>
         pub fn set_timer_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.timer_id = input;
             self
@@ -1808,6 +1946,10 @@ pub mod start_timer_decision_attributes {
             self.timer_id = Some(input.into());
             self
         }
+        /// <p>
+        /// The unique ID of the timer.</p>
+        /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code>
+        /// (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not contain the literal string <code>arn</code>.</p>
         pub fn set_timer_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.timer_id = input;
             self
@@ -1817,6 +1959,7 @@ pub mod start_timer_decision_attributes {
             self.control = Some(input.into());
             self
         }
+        /// <p>The data attached to the event that can be used by the decider in subsequent workflow tasks.</p>
         pub fn set_control(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.control = input;
             self
@@ -1828,6 +1971,9 @@ pub mod start_timer_decision_attributes {
             self.start_to_fire_timeout = Some(input.into());
             self
         }
+        /// <p>
+        /// The duration to wait before firing the timer.</p>
+        /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>.</p>
         pub fn set_start_to_fire_timeout(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1907,6 +2053,8 @@ pub mod record_marker_decision_attributes {
             self.marker_name = Some(input.into());
             self
         }
+        /// <p>
+        /// The name of the marker.</p>
         pub fn set_marker_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker_name = input;
             self
@@ -1917,6 +2065,8 @@ pub mod record_marker_decision_attributes {
             self.details = Some(input.into());
             self
         }
+        /// <p>
+        /// The details of the marker.</p>
         pub fn set_details(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.details = input;
             self
@@ -2080,6 +2230,7 @@ pub mod continue_as_new_workflow_execution_decision_attributes {
             self.input = Some(input.into());
             self
         }
+        /// <p>The input provided to the new workflow execution.</p>
         pub fn set_input(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.input = input;
             self
@@ -2097,6 +2248,12 @@ pub mod continue_as_new_workflow_execution_decision_attributes {
             self.execution_start_to_close_timeout = Some(input.into());
             self
         }
+        /// <p>If set, specifies the total duration for this workflow execution. This overrides the
+        /// <code>defaultExecutionStartToCloseTimeout</code> specified when registering the workflow type.</p>
+        /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+        /// <note>
+        /// <p>An execution start-to-close timeout for this workflow execution must be specified either as a default for the workflow type or through this field. If neither this field is set nor a default execution start-to-close timeout was specified at registration time then a fault is returned.</p>
+        /// </note>
         pub fn set_execution_start_to_close_timeout(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2110,6 +2267,8 @@ pub mod continue_as_new_workflow_execution_decision_attributes {
             self.task_list = Some(input);
             self
         }
+        /// <p>The task list to use for the decisions of the new (continued) workflow
+        /// execution.</p>
         pub fn set_task_list(mut self, input: std::option::Option<crate::model::TaskList>) -> Self {
             self.task_list = input;
             self
@@ -2124,6 +2283,12 @@ pub mod continue_as_new_workflow_execution_decision_attributes {
             self.task_priority = Some(input.into());
             self
         }
+        /// <p>
+        /// The task priority that, if set, specifies the priority for the decision tasks for this workflow
+        /// execution. This overrides the defaultTaskPriority specified when registering the workflow type.
+        /// Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code>
+        /// (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
+        /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a>  in the <i>Amazon SWF Developer Guide</i>.</p>
         pub fn set_task_priority(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2145,6 +2310,13 @@ pub mod continue_as_new_workflow_execution_decision_attributes {
             self.task_start_to_close_timeout = Some(input.into());
             self
         }
+        /// <p>Specifies the maximum duration of decision tasks for the new workflow execution. This parameter overrides the
+        /// <code>defaultTaskStartToCloseTimout</code> specified when registering the workflow type using
+        /// <a>RegisterWorkflowType</a>.</p>
+        /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+        /// <note>
+        /// <p>A task start-to-close timeout for the new workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default task start-to-close timeout was specified at registration time then a fault is returned.</p>
+        /// </note>
         pub fn set_task_start_to_close_timeout(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2180,6 +2352,30 @@ pub mod continue_as_new_workflow_execution_decision_attributes {
             self.child_policy = Some(input);
             self
         }
+        /// <p>If set, specifies the policy to use for the child workflow executions of the new execution if it is terminated
+        /// by calling the <a>TerminateWorkflowExecution</a> action explicitly or due to an expired timeout. This policy
+        /// overrides the default child policy specified when registering the workflow type using
+        /// <a>RegisterWorkflowType</a>.</p>
+        /// <p>The supported child policies are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>TERMINATE</code> – The child executions are terminated.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child
+        /// execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider
+        /// to take appropriate actions when it receives an execution history with this event.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ABANDON</code> – No action is taken. The child executions continue to run.</p>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>A child policy for this workflow execution must be specified either as a default for the workflow type or through this parameter. If neither this parameter is set nor a default child policy was specified at registration time then a fault is returned.</p>
+        /// </note>
         pub fn set_child_policy(
             mut self,
             input: std::option::Option<crate::model::ChildPolicy>,
@@ -2187,12 +2383,22 @@ pub mod continue_as_new_workflow_execution_decision_attributes {
             self.child_policy = input;
             self
         }
+        /// Appends an item to `tag_list`.
+        ///
+        /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
+        ///
+        /// <p>The list of tags to associate with the new workflow execution. A maximum of 5 tags can be specified. You can
+        /// list workflow executions with a specific tag by calling <a>ListOpenWorkflowExecutions</a> or
+        /// <a>ListClosedWorkflowExecutions</a> and specifying a <a>TagFilter</a>.</p>
         pub fn tag_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
             v.push(input.into());
             self.tag_list = Some(v);
             self
         }
+        /// <p>The list of tags to associate with the new workflow execution. A maximum of 5 tags can be specified. You can
+        /// list workflow executions with a specific tag by calling <a>ListOpenWorkflowExecutions</a> or
+        /// <a>ListClosedWorkflowExecutions</a> and specifying a <a>TagFilter</a>.</p>
         pub fn set_tag_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2205,6 +2411,7 @@ pub mod continue_as_new_workflow_execution_decision_attributes {
             self.workflow_type_version = Some(input.into());
             self
         }
+        /// <p>The version of the workflow to start.</p>
         pub fn set_workflow_type_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2217,6 +2424,7 @@ pub mod continue_as_new_workflow_execution_decision_attributes {
             self.lambda_role = Some(input.into());
             self
         }
+        /// <p>The IAM role to attach to the new (continued) execution.</p>
         pub fn set_lambda_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lambda_role = input;
             self
@@ -2295,6 +2503,8 @@ pub mod cancel_workflow_execution_decision_attributes {
             self.details = Some(input.into());
             self
         }
+        /// <p>
+        /// Details of the cancellation.</p>
         pub fn set_details(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.details = input;
             self
@@ -2368,6 +2578,7 @@ pub mod fail_workflow_execution_decision_attributes {
             self.reason = Some(input.into());
             self
         }
+        /// <p>A descriptive reason for the failure that may help in diagnostics.</p>
         pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.reason = input;
             self
@@ -2378,6 +2589,8 @@ pub mod fail_workflow_execution_decision_attributes {
             self.details = Some(input.into());
             self
         }
+        /// <p>
+        /// Details of the failure.</p>
         pub fn set_details(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.details = input;
             self
@@ -2446,6 +2659,7 @@ pub mod complete_workflow_execution_decision_attributes {
             self.result = Some(input.into());
             self
         }
+        /// <p>The result of the workflow execution. The form of the result is implementation defined.</p>
         pub fn set_result(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.result = input;
             self
@@ -2514,6 +2728,7 @@ pub mod request_cancel_activity_task_decision_attributes {
             self.activity_id = Some(input.into());
             self
         }
+        /// <p>The <code>activityId</code> of the activity task to be canceled.</p>
         pub fn set_activity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.activity_id = input;
             self
@@ -2670,6 +2885,8 @@ pub mod schedule_activity_task_decision_attributes {
             self.activity_type = Some(input);
             self
         }
+        /// <p>
+        /// The type of the activity task to schedule.</p>
         pub fn set_activity_type(
             mut self,
             input: std::option::Option<crate::model::ActivityType>,
@@ -2685,6 +2902,10 @@ pub mod schedule_activity_task_decision_attributes {
             self.activity_id = Some(input.into());
             self
         }
+        /// <p>
+        /// The <code>activityId</code> of the activity task.</p>
+        /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code>
+        /// (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not contain the literal string <code>arn</code>.</p>
         pub fn set_activity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.activity_id = input;
             self
@@ -2694,6 +2915,7 @@ pub mod schedule_activity_task_decision_attributes {
             self.control = Some(input.into());
             self
         }
+        /// <p>Data attached to the event that can be used by the decider in subsequent workflow tasks. This data isn't sent to the activity.</p>
         pub fn set_control(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.control = input;
             self
@@ -2703,6 +2925,7 @@ pub mod schedule_activity_task_decision_attributes {
             self.input = Some(input.into());
             self
         }
+        /// <p>The input provided to the activity task.</p>
         pub fn set_input(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.input = input;
             self
@@ -2716,6 +2939,11 @@ pub mod schedule_activity_task_decision_attributes {
             self.schedule_to_close_timeout = Some(input.into());
             self
         }
+        /// <p>The maximum duration for this activity task.</p>
+        /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+        /// <note>
+        /// <p>A schedule-to-close timeout for this activity task must be specified either as a default for the activity type or through this field. If neither this field is set nor a default schedule-to-close timeout was specified at registration time then a fault is returned.</p>
+        /// </note>
         pub fn set_schedule_to_close_timeout(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2734,6 +2962,13 @@ pub mod schedule_activity_task_decision_attributes {
             self.task_list = Some(input);
             self
         }
+        /// <p>If set, specifies the name of the task list in which to schedule the activity task. If not specified, the
+        /// <code>defaultTaskList</code> registered with the activity type is used.</p>
+        /// <note>
+        /// <p>A task list for this activity task must be specified either as a default for the activity type or through this field. If neither this field is set nor a default task list was specified at registration time then a fault is returned.</p>
+        /// </note>
+        /// <p>The specified string must not start or end with whitespace. It must not contain a <code>:</code>
+        /// (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not contain the literal string <code>arn</code>.</p>
         pub fn set_task_list(mut self, input: std::option::Option<crate::model::TaskList>) -> Self {
             self.task_list = input;
             self
@@ -2748,6 +2983,12 @@ pub mod schedule_activity_task_decision_attributes {
             self.task_priority = Some(input.into());
             self
         }
+        /// <p>
+        /// If set, specifies the priority with which the activity task is to be assigned to a worker. This
+        /// overrides the defaultTaskPriority specified when registering the activity type using <a>RegisterActivityType</a>.
+        /// Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code>
+        /// (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
+        /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a>  in the <i>Amazon SWF Developer Guide</i>.</p>
         pub fn set_task_priority(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2767,6 +3008,14 @@ pub mod schedule_activity_task_decision_attributes {
             self.schedule_to_start_timeout = Some(input.into());
             self
         }
+        /// <p>
+        /// If set, specifies the maximum duration the activity task can wait to be assigned to a worker.
+        /// This overrides the default schedule-to-start timeout specified when registering the activity type using
+        /// <a>RegisterActivityType</a>.</p>
+        /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+        /// <note>
+        /// <p>A schedule-to-start timeout for this activity task must be specified either as a default for the activity type or through this field. If neither this field is set nor a default schedule-to-start timeout was specified at registration time then a fault is returned.</p>
+        /// </note>
         pub fn set_schedule_to_start_timeout(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2784,6 +3033,12 @@ pub mod schedule_activity_task_decision_attributes {
             self.start_to_close_timeout = Some(input.into());
             self
         }
+        /// <p>If set, specifies the maximum duration a worker may take to process this activity task. This overrides the
+        /// default start-to-close timeout specified when registering the activity type using <a>RegisterActivityType</a>.</p>
+        /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+        /// <note>
+        /// <p>A start-to-close timeout for this activity task must be specified either as a default for the activity type or through this field. If neither this field is set nor a default start-to-close timeout was specified at registration time then a fault is returned.</p>
+        /// </note>
         pub fn set_start_to_close_timeout(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2801,6 +3056,12 @@ pub mod schedule_activity_task_decision_attributes {
             self.heartbeat_timeout = Some(input.into());
             self
         }
+        /// <p>If set, specifies the maximum time before which a worker processing a task of this type must report progress by
+        /// calling <a>RecordActivityTaskHeartbeat</a>. If the timeout is exceeded, the activity task is automatically timed
+        /// out. If the worker subsequently attempts to record a heartbeat or returns a result, it is ignored. This
+        /// overrides the default heartbeat timeout specified when registering the activity type using
+        /// <a>RegisterActivityType</a>.</p>
+        /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
         pub fn set_heartbeat_timeout(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2832,6 +3093,7 @@ impl ScheduleActivityTaskDecisionAttributes {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2843,18 +3105,31 @@ impl ScheduleActivityTaskDecisionAttributes {
     std::hash::Hash,
 )]
 pub enum DecisionType {
+    #[allow(missing_docs)] // documentation missing in model
     CancelTimer,
+    #[allow(missing_docs)] // documentation missing in model
     CancelWorkflowExecution,
+    #[allow(missing_docs)] // documentation missing in model
     CompleteWorkflowExecution,
+    #[allow(missing_docs)] // documentation missing in model
     ContinueAsNewWorkflowExecution,
+    #[allow(missing_docs)] // documentation missing in model
     FailWorkflowExecution,
+    #[allow(missing_docs)] // documentation missing in model
     RecordMarker,
+    #[allow(missing_docs)] // documentation missing in model
     RequestCancelActivityTask,
+    #[allow(missing_docs)] // documentation missing in model
     RequestCancelExternalWorkflowExecution,
+    #[allow(missing_docs)] // documentation missing in model
     ScheduleActivityTask,
+    #[allow(missing_docs)] // documentation missing in model
     ScheduleLambdaFunction,
+    #[allow(missing_docs)] // documentation missing in model
     SignalExternalWorkflowExecution,
+    #[allow(missing_docs)] // documentation missing in model
     StartChildWorkflowExecution,
+    #[allow(missing_docs)] // documentation missing in model
     StartTimer,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2889,6 +3164,7 @@ impl std::str::FromStr for DecisionType {
     }
 }
 impl DecisionType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DecisionType::CancelTimer => "CancelTimer",
@@ -2909,6 +3185,7 @@ impl DecisionType {
             DecisionType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CancelTimer",
@@ -3155,7 +3432,7 @@ impl AsRef<str> for DecisionType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HistoryEvent {
     /// <p>The date and time when the event occurred.</p>
-    pub event_timestamp: std::option::Option<smithy_types::Instant>,
+    pub event_timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The type of the history event.</p>
     pub event_type: std::option::Option<crate::model::EventType>,
     /// <p>The system generated ID of the event. This ID uniquely identifies the event with in the workflow execution history.</p>
@@ -3609,7 +3886,7 @@ pub mod history_event {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) event_timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) event_timestamp: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) event_type: std::option::Option<crate::model::EventType>,
         pub(crate) event_id: std::option::Option<i64>,
         pub(crate) workflow_execution_started_event_attributes:
@@ -3731,13 +4008,14 @@ pub mod history_event {
     }
     impl Builder {
         /// <p>The date and time when the event occurred.</p>
-        pub fn event_timestamp(mut self, input: smithy_types::Instant) -> Self {
+        pub fn event_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
             self.event_timestamp = Some(input);
             self
         }
+        /// <p>The date and time when the event occurred.</p>
         pub fn set_event_timestamp(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.event_timestamp = input;
             self
@@ -3747,6 +4025,7 @@ pub mod history_event {
             self.event_type = Some(input);
             self
         }
+        /// <p>The type of the history event.</p>
         pub fn set_event_type(
             mut self,
             input: std::option::Option<crate::model::EventType>,
@@ -3759,6 +4038,7 @@ pub mod history_event {
             self.event_id = Some(input);
             self
         }
+        /// <p>The system generated ID of the event. This ID uniquely identifies the event with in the workflow execution history.</p>
         pub fn set_event_id(mut self, input: std::option::Option<i64>) -> Self {
             self.event_id = input;
             self
@@ -3772,6 +4052,8 @@ pub mod history_event {
             self.workflow_execution_started_event_attributes = Some(input);
             self
         }
+        /// <p>If the event is of type <code>WorkflowExecutionStarted</code> then this member is set and provides detailed
+        /// information about the event. It isn't set for other event types.</p>
         pub fn set_workflow_execution_started_event_attributes(
             mut self,
             input: std::option::Option<crate::model::WorkflowExecutionStartedEventAttributes>,
@@ -3788,6 +4070,8 @@ pub mod history_event {
             self.workflow_execution_completed_event_attributes = Some(input);
             self
         }
+        /// <p>If the event is of type <code>WorkflowExecutionCompleted</code> then this member is set and provides detailed
+        /// information about the event. It isn't set for other event types.</p>
         pub fn set_workflow_execution_completed_event_attributes(
             mut self,
             input: std::option::Option<crate::model::WorkflowExecutionCompletedEventAttributes>,
@@ -3804,6 +4088,8 @@ pub mod history_event {
             self.complete_workflow_execution_failed_event_attributes = Some(input);
             self
         }
+        /// <p>If the event is of type <code>CompleteWorkflowExecutionFailed</code> then this member is set and provides
+        /// detailed information about the event. It isn't set for other event types.</p>
         pub fn set_complete_workflow_execution_failed_event_attributes(
             mut self,
             input: std::option::Option<
@@ -3822,6 +4108,8 @@ pub mod history_event {
             self.workflow_execution_failed_event_attributes = Some(input);
             self
         }
+        /// <p>If the event is of type <code>WorkflowExecutionFailed</code> then this member is set and provides detailed
+        /// information about the event. It isn't set for other event types.</p>
         pub fn set_workflow_execution_failed_event_attributes(
             mut self,
             input: std::option::Option<crate::model::WorkflowExecutionFailedEventAttributes>,
@@ -3838,6 +4126,8 @@ pub mod history_event {
             self.fail_workflow_execution_failed_event_attributes = Some(input);
             self
         }
+        /// <p>If the event is of type <code>FailWorkflowExecutionFailed</code> then this member is set and provides detailed
+        /// information about the event. It isn't set for other event types.</p>
         pub fn set_fail_workflow_execution_failed_event_attributes(
             mut self,
             input: std::option::Option<crate::model::FailWorkflowExecutionFailedEventAttributes>,
@@ -3854,6 +4144,8 @@ pub mod history_event {
             self.workflow_execution_timed_out_event_attributes = Some(input);
             self
         }
+        /// <p>If the event is of type <code>WorkflowExecutionTimedOut</code> then this member is set and provides detailed
+        /// information about the event. It isn't set for other event types.</p>
         pub fn set_workflow_execution_timed_out_event_attributes(
             mut self,
             input: std::option::Option<crate::model::WorkflowExecutionTimedOutEventAttributes>,
@@ -3870,6 +4162,8 @@ pub mod history_event {
             self.workflow_execution_canceled_event_attributes = Some(input);
             self
         }
+        /// <p>If the event is of type <code>WorkflowExecutionCanceled</code> then this member is set and provides detailed
+        /// information about the event. It isn't set for other event types.</p>
         pub fn set_workflow_execution_canceled_event_attributes(
             mut self,
             input: std::option::Option<crate::model::WorkflowExecutionCanceledEventAttributes>,
@@ -3886,6 +4180,8 @@ pub mod history_event {
             self.cancel_workflow_execution_failed_event_attributes = Some(input);
             self
         }
+        /// <p>If the event is of type <code>CancelWorkflowExecutionFailed</code> then this member is set and provides detailed
+        /// information about the event. It isn't set for other event types.</p>
         pub fn set_cancel_workflow_execution_failed_event_attributes(
             mut self,
             input: std::option::Option<crate::model::CancelWorkflowExecutionFailedEventAttributes>,
@@ -3902,6 +4198,8 @@ pub mod history_event {
             self.workflow_execution_continued_as_new_event_attributes = Some(input);
             self
         }
+        /// <p>If the event is of type <code>WorkflowExecutionContinuedAsNew</code> then this member is set and provides
+        /// detailed information about the event. It isn't set for other event types.</p>
         pub fn set_workflow_execution_continued_as_new_event_attributes(
             mut self,
             input: std::option::Option<
@@ -3920,6 +4218,8 @@ pub mod history_event {
             self.continue_as_new_workflow_execution_failed_event_attributes = Some(input);
             self
         }
+        /// <p>If the event is of type <code>ContinueAsNewWorkflowExecutionFailed</code> then this member is set and provides
+        /// detailed information about the event. It isn't set for other event types.</p>
         pub fn set_continue_as_new_workflow_execution_failed_event_attributes(
             mut self,
             input: std::option::Option<
@@ -3938,6 +4238,8 @@ pub mod history_event {
             self.workflow_execution_terminated_event_attributes = Some(input);
             self
         }
+        /// <p>If the event is of type <code>WorkflowExecutionTerminated</code> then this member is set and provides detailed
+        /// information about the event. It isn't set for other event types.</p>
         pub fn set_workflow_execution_terminated_event_attributes(
             mut self,
             input: std::option::Option<crate::model::WorkflowExecutionTerminatedEventAttributes>,
@@ -3954,6 +4256,8 @@ pub mod history_event {
             self.workflow_execution_cancel_requested_event_attributes = Some(input);
             self
         }
+        /// <p>If the event is of type <code>WorkflowExecutionCancelRequested</code> then this member is set and provides
+        /// detailed information about the event. It isn't set for other event types.</p>
         pub fn set_workflow_execution_cancel_requested_event_attributes(
             mut self,
             input: std::option::Option<
@@ -3972,6 +4276,8 @@ pub mod history_event {
             self.decision_task_scheduled_event_attributes = Some(input);
             self
         }
+        /// <p>If the event is of type <code>DecisionTaskScheduled</code> then this member is set and provides detailed
+        /// information about the event. It isn't set for other event types.</p>
         pub fn set_decision_task_scheduled_event_attributes(
             mut self,
             input: std::option::Option<crate::model::DecisionTaskScheduledEventAttributes>,
@@ -3988,6 +4294,8 @@ pub mod history_event {
             self.decision_task_started_event_attributes = Some(input);
             self
         }
+        /// <p>If the event is of type <code>DecisionTaskStarted</code> then this member is set and provides detailed
+        /// information about the event. It isn't set for other event types.</p>
         pub fn set_decision_task_started_event_attributes(
             mut self,
             input: std::option::Option<crate::model::DecisionTaskStartedEventAttributes>,
@@ -4004,6 +4312,8 @@ pub mod history_event {
             self.decision_task_completed_event_attributes = Some(input);
             self
         }
+        /// <p>If the event is of type <code>DecisionTaskCompleted</code> then this member is set and provides detailed
+        /// information about the event. It isn't set for other event types.</p>
         pub fn set_decision_task_completed_event_attributes(
             mut self,
             input: std::option::Option<crate::model::DecisionTaskCompletedEventAttributes>,
@@ -4020,6 +4330,8 @@ pub mod history_event {
             self.decision_task_timed_out_event_attributes = Some(input);
             self
         }
+        /// <p>If the event is of type <code>DecisionTaskTimedOut</code> then this member is set and provides detailed
+        /// information about the event. It isn't set for other event types.</p>
         pub fn set_decision_task_timed_out_event_attributes(
             mut self,
             input: std::option::Option<crate::model::DecisionTaskTimedOutEventAttributes>,
@@ -4036,6 +4348,8 @@ pub mod history_event {
             self.activity_task_scheduled_event_attributes = Some(input);
             self
         }
+        /// <p>If the event is of type <code>ActivityTaskScheduled</code> then this member is set and provides detailed
+        /// information about the event. It isn't set for other event types.</p>
         pub fn set_activity_task_scheduled_event_attributes(
             mut self,
             input: std::option::Option<crate::model::ActivityTaskScheduledEventAttributes>,
@@ -4052,6 +4366,8 @@ pub mod history_event {
             self.activity_task_started_event_attributes = Some(input);
             self
         }
+        /// <p>If the event is of type <code>ActivityTaskStarted</code> then this member is set and provides detailed
+        /// information about the event. It isn't set for other event types.</p>
         pub fn set_activity_task_started_event_attributes(
             mut self,
             input: std::option::Option<crate::model::ActivityTaskStartedEventAttributes>,
@@ -4068,6 +4384,8 @@ pub mod history_event {
             self.activity_task_completed_event_attributes = Some(input);
             self
         }
+        /// <p>If the event is of type <code>ActivityTaskCompleted</code> then this member is set and provides detailed
+        /// information about the event. It isn't set for other event types.</p>
         pub fn set_activity_task_completed_event_attributes(
             mut self,
             input: std::option::Option<crate::model::ActivityTaskCompletedEventAttributes>,
@@ -4084,6 +4402,8 @@ pub mod history_event {
             self.activity_task_failed_event_attributes = Some(input);
             self
         }
+        /// <p>If the event is of type <code>ActivityTaskFailed</code> then this member is set and provides detailed
+        /// information about the event. It isn't set for other event types.</p>
         pub fn set_activity_task_failed_event_attributes(
             mut self,
             input: std::option::Option<crate::model::ActivityTaskFailedEventAttributes>,
@@ -4100,6 +4420,8 @@ pub mod history_event {
             self.activity_task_timed_out_event_attributes = Some(input);
             self
         }
+        /// <p>If the event is of type <code>ActivityTaskTimedOut</code> then this member is set and provides detailed
+        /// information about the event. It isn't set for other event types.</p>
         pub fn set_activity_task_timed_out_event_attributes(
             mut self,
             input: std::option::Option<crate::model::ActivityTaskTimedOutEventAttributes>,
@@ -4116,6 +4438,8 @@ pub mod history_event {
             self.activity_task_canceled_event_attributes = Some(input);
             self
         }
+        /// <p>If the event is of type <code>ActivityTaskCanceled</code> then this member is set and provides detailed
+        /// information about the event. It isn't set for other event types.</p>
         pub fn set_activity_task_canceled_event_attributes(
             mut self,
             input: std::option::Option<crate::model::ActivityTaskCanceledEventAttributes>,
@@ -4132,6 +4456,8 @@ pub mod history_event {
             self.activity_task_cancel_requested_event_attributes = Some(input);
             self
         }
+        /// <p>If the event is of type <code>ActivityTaskcancelRequested</code> then this member is set and provides detailed
+        /// information about the event. It isn't set for other event types.</p>
         pub fn set_activity_task_cancel_requested_event_attributes(
             mut self,
             input: std::option::Option<crate::model::ActivityTaskCancelRequestedEventAttributes>,
@@ -4148,6 +4474,8 @@ pub mod history_event {
             self.workflow_execution_signaled_event_attributes = Some(input);
             self
         }
+        /// <p>If the event is of type <code>WorkflowExecutionSignaled</code> then this member is set and provides detailed
+        /// information about the event. It isn't set for other event types.</p>
         pub fn set_workflow_execution_signaled_event_attributes(
             mut self,
             input: std::option::Option<crate::model::WorkflowExecutionSignaledEventAttributes>,
@@ -4164,6 +4492,8 @@ pub mod history_event {
             self.marker_recorded_event_attributes = Some(input);
             self
         }
+        /// <p>If the event is of type <code>MarkerRecorded</code> then this member is set and provides detailed information
+        /// about the event. It isn't set for other event types.</p>
         pub fn set_marker_recorded_event_attributes(
             mut self,
             input: std::option::Option<crate::model::MarkerRecordedEventAttributes>,
@@ -4180,6 +4510,8 @@ pub mod history_event {
             self.record_marker_failed_event_attributes = Some(input);
             self
         }
+        /// <p>If the event is of type <code>DecisionTaskFailed</code> then this member is set and provides detailed
+        /// information about the event. It isn't set for other event types.</p>
         pub fn set_record_marker_failed_event_attributes(
             mut self,
             input: std::option::Option<crate::model::RecordMarkerFailedEventAttributes>,
@@ -4196,6 +4528,8 @@ pub mod history_event {
             self.timer_started_event_attributes = Some(input);
             self
         }
+        /// <p>If the event is of type <code>TimerStarted</code> then this member is set and provides detailed information
+        /// about the event. It isn't set for other event types.</p>
         pub fn set_timer_started_event_attributes(
             mut self,
             input: std::option::Option<crate::model::TimerStartedEventAttributes>,
@@ -4212,6 +4546,8 @@ pub mod history_event {
             self.timer_fired_event_attributes = Some(input);
             self
         }
+        /// <p>If the event is of type <code>TimerFired</code> then this member is set and provides detailed information about
+        /// the event. It isn't set for other event types.</p>
         pub fn set_timer_fired_event_attributes(
             mut self,
             input: std::option::Option<crate::model::TimerFiredEventAttributes>,
@@ -4228,6 +4564,8 @@ pub mod history_event {
             self.timer_canceled_event_attributes = Some(input);
             self
         }
+        /// <p>If the event is of type <code>TimerCanceled</code> then this member is set and provides detailed information
+        /// about the event. It isn't set for other event types.</p>
         pub fn set_timer_canceled_event_attributes(
             mut self,
             input: std::option::Option<crate::model::TimerCanceledEventAttributes>,
@@ -4244,6 +4582,8 @@ pub mod history_event {
             self.start_child_workflow_execution_initiated_event_attributes = Some(input);
             self
         }
+        /// <p>If the event is of type <code>StartChildWorkflowExecutionInitiated</code> then this member is set and provides
+        /// detailed information about the event. It isn't set for other event types.</p>
         pub fn set_start_child_workflow_execution_initiated_event_attributes(
             mut self,
             input: std::option::Option<
@@ -4262,6 +4602,8 @@ pub mod history_event {
             self.child_workflow_execution_started_event_attributes = Some(input);
             self
         }
+        /// <p>If the event is of type <code>ChildWorkflowExecutionStarted</code> then this member is set and provides detailed
+        /// information about the event. It isn't set for other event types.</p>
         pub fn set_child_workflow_execution_started_event_attributes(
             mut self,
             input: std::option::Option<crate::model::ChildWorkflowExecutionStartedEventAttributes>,
@@ -4278,6 +4620,8 @@ pub mod history_event {
             self.child_workflow_execution_completed_event_attributes = Some(input);
             self
         }
+        /// <p>If the event is of type <code>ChildWorkflowExecutionCompleted</code> then this member is set and provides
+        /// detailed information about the event. It isn't set for other event types.</p>
         pub fn set_child_workflow_execution_completed_event_attributes(
             mut self,
             input: std::option::Option<
@@ -4296,6 +4640,8 @@ pub mod history_event {
             self.child_workflow_execution_failed_event_attributes = Some(input);
             self
         }
+        /// <p>If the event is of type <code>ChildWorkflowExecutionFailed</code> then this member is set and provides detailed
+        /// information about the event. It isn't set for other event types.</p>
         pub fn set_child_workflow_execution_failed_event_attributes(
             mut self,
             input: std::option::Option<crate::model::ChildWorkflowExecutionFailedEventAttributes>,
@@ -4312,6 +4658,8 @@ pub mod history_event {
             self.child_workflow_execution_timed_out_event_attributes = Some(input);
             self
         }
+        /// <p>If the event is of type <code>ChildWorkflowExecutionTimedOut</code> then this member is set and provides
+        /// detailed information about the event. It isn't set for other event types.</p>
         pub fn set_child_workflow_execution_timed_out_event_attributes(
             mut self,
             input: std::option::Option<crate::model::ChildWorkflowExecutionTimedOutEventAttributes>,
@@ -4328,6 +4676,8 @@ pub mod history_event {
             self.child_workflow_execution_canceled_event_attributes = Some(input);
             self
         }
+        /// <p>If the event is of type <code>ChildWorkflowExecutionCanceled</code> then this member is set and provides
+        /// detailed information about the event. It isn't set for other event types.</p>
         pub fn set_child_workflow_execution_canceled_event_attributes(
             mut self,
             input: std::option::Option<crate::model::ChildWorkflowExecutionCanceledEventAttributes>,
@@ -4344,6 +4694,8 @@ pub mod history_event {
             self.child_workflow_execution_terminated_event_attributes = Some(input);
             self
         }
+        /// <p>If the event is of type <code>ChildWorkflowExecutionTerminated</code> then this member is set and provides
+        /// detailed information about the event. It isn't set for other event types.</p>
         pub fn set_child_workflow_execution_terminated_event_attributes(
             mut self,
             input: std::option::Option<
@@ -4362,6 +4714,8 @@ pub mod history_event {
             self.signal_external_workflow_execution_initiated_event_attributes = Some(input);
             self
         }
+        /// <p>If the event is of type <code>SignalExternalWorkflowExecutionInitiated</code> then this member is set and
+        /// provides detailed information about the event. It isn't set for other event types.</p>
         pub fn set_signal_external_workflow_execution_initiated_event_attributes(
             mut self,
             input: std::option::Option<
@@ -4380,6 +4734,8 @@ pub mod history_event {
             self.external_workflow_execution_signaled_event_attributes = Some(input);
             self
         }
+        /// <p>If the event is of type <code>ExternalWorkflowExecutionSignaled</code> then this member is set and provides
+        /// detailed information about the event. It isn't set for other event types.</p>
         pub fn set_external_workflow_execution_signaled_event_attributes(
             mut self,
             input: std::option::Option<
@@ -4398,6 +4754,8 @@ pub mod history_event {
             self.signal_external_workflow_execution_failed_event_attributes = Some(input);
             self
         }
+        /// <p>If the event is of type <code>SignalExternalWorkflowExecutionFailed</code> then this member is set and provides
+        /// detailed information about the event. It isn't set for other event types.</p>
         pub fn set_signal_external_workflow_execution_failed_event_attributes(
             mut self,
             input: std::option::Option<
@@ -4416,6 +4774,8 @@ pub mod history_event {
             self.external_workflow_execution_cancel_requested_event_attributes = Some(input);
             self
         }
+        /// <p>If the event is of type <code>ExternalWorkflowExecutionCancelRequested</code> then this member is set and
+        /// provides detailed information about the event. It isn't set for other event types. </p>
         pub fn set_external_workflow_execution_cancel_requested_event_attributes(
             mut self,
             input: std::option::Option<
@@ -4435,6 +4795,8 @@ pub mod history_event {
                 Some(input);
             self
         }
+        /// <p>If the event is of type <code>RequestCancelExternalWorkflowExecutionInitiated</code> then this member is set and
+        /// provides detailed information about the event. It isn't set for other event types.</p>
         pub fn set_request_cancel_external_workflow_execution_initiated_event_attributes(
             mut self,
             input: std::option::Option<
@@ -4453,6 +4815,8 @@ pub mod history_event {
             self.request_cancel_external_workflow_execution_failed_event_attributes = Some(input);
             self
         }
+        /// <p>If the event is of type <code>RequestCancelExternalWorkflowExecutionFailed</code> then this member is set and
+        /// provides detailed information about the event. It isn't set for other event types.</p>
         pub fn set_request_cancel_external_workflow_execution_failed_event_attributes(
             mut self,
             input: std::option::Option<
@@ -4471,6 +4835,8 @@ pub mod history_event {
             self.schedule_activity_task_failed_event_attributes = Some(input);
             self
         }
+        /// <p>If the event is of type <code>ScheduleActivityTaskFailed</code> then this member is set and provides detailed
+        /// information about the event. It isn't set for other event types.</p>
         pub fn set_schedule_activity_task_failed_event_attributes(
             mut self,
             input: std::option::Option<crate::model::ScheduleActivityTaskFailedEventAttributes>,
@@ -4487,6 +4853,8 @@ pub mod history_event {
             self.request_cancel_activity_task_failed_event_attributes = Some(input);
             self
         }
+        /// <p>If the event is of type <code>RequestCancelActivityTaskFailed</code> then this member is set and provides
+        /// detailed information about the event. It isn't set for other event types.</p>
         pub fn set_request_cancel_activity_task_failed_event_attributes(
             mut self,
             input: std::option::Option<
@@ -4505,6 +4873,8 @@ pub mod history_event {
             self.start_timer_failed_event_attributes = Some(input);
             self
         }
+        /// <p>If the event is of type <code>StartTimerFailed</code> then this member is set and provides detailed information
+        /// about the event. It isn't set for other event types.</p>
         pub fn set_start_timer_failed_event_attributes(
             mut self,
             input: std::option::Option<crate::model::StartTimerFailedEventAttributes>,
@@ -4521,6 +4891,8 @@ pub mod history_event {
             self.cancel_timer_failed_event_attributes = Some(input);
             self
         }
+        /// <p>If the event is of type <code>CancelTimerFailed</code> then this member is set and provides detailed information
+        /// about the event. It isn't set for other event types.</p>
         pub fn set_cancel_timer_failed_event_attributes(
             mut self,
             input: std::option::Option<crate::model::CancelTimerFailedEventAttributes>,
@@ -4537,6 +4909,8 @@ pub mod history_event {
             self.start_child_workflow_execution_failed_event_attributes = Some(input);
             self
         }
+        /// <p>If the event is of type <code>StartChildWorkflowExecutionFailed</code> then this member is set and provides
+        /// detailed information about the event. It isn't set for other event types.</p>
         pub fn set_start_child_workflow_execution_failed_event_attributes(
             mut self,
             input: std::option::Option<
@@ -4555,6 +4929,8 @@ pub mod history_event {
             self.lambda_function_scheduled_event_attributes = Some(input);
             self
         }
+        /// <p>Provides the details of the <code>LambdaFunctionScheduled</code> event. It isn't set
+        /// for other event types.</p>
         pub fn set_lambda_function_scheduled_event_attributes(
             mut self,
             input: std::option::Option<crate::model::LambdaFunctionScheduledEventAttributes>,
@@ -4571,6 +4947,8 @@ pub mod history_event {
             self.lambda_function_started_event_attributes = Some(input);
             self
         }
+        /// <p>Provides the details of the <code>LambdaFunctionStarted</code> event. It isn't set for
+        /// other event types.</p>
         pub fn set_lambda_function_started_event_attributes(
             mut self,
             input: std::option::Option<crate::model::LambdaFunctionStartedEventAttributes>,
@@ -4587,6 +4965,8 @@ pub mod history_event {
             self.lambda_function_completed_event_attributes = Some(input);
             self
         }
+        /// <p>Provides the details of the <code>LambdaFunctionCompleted</code> event. It isn't set
+        /// for other event types.</p>
         pub fn set_lambda_function_completed_event_attributes(
             mut self,
             input: std::option::Option<crate::model::LambdaFunctionCompletedEventAttributes>,
@@ -4603,6 +4983,8 @@ pub mod history_event {
             self.lambda_function_failed_event_attributes = Some(input);
             self
         }
+        /// <p>Provides the details of the <code>LambdaFunctionFailed</code> event. It isn't set for
+        /// other event types.</p>
         pub fn set_lambda_function_failed_event_attributes(
             mut self,
             input: std::option::Option<crate::model::LambdaFunctionFailedEventAttributes>,
@@ -4619,6 +5001,8 @@ pub mod history_event {
             self.lambda_function_timed_out_event_attributes = Some(input);
             self
         }
+        /// <p>Provides the details of the <code>LambdaFunctionTimedOut</code> event. It isn't set for
+        /// other event types.</p>
         pub fn set_lambda_function_timed_out_event_attributes(
             mut self,
             input: std::option::Option<crate::model::LambdaFunctionTimedOutEventAttributes>,
@@ -4635,6 +5019,8 @@ pub mod history_event {
             self.schedule_lambda_function_failed_event_attributes = Some(input);
             self
         }
+        /// <p>Provides the details of the <code>ScheduleLambdaFunctionFailed</code> event. It isn't
+        /// set for other event types.</p>
         pub fn set_schedule_lambda_function_failed_event_attributes(
             mut self,
             input: std::option::Option<crate::model::ScheduleLambdaFunctionFailedEventAttributes>,
@@ -4651,6 +5037,8 @@ pub mod history_event {
             self.start_lambda_function_failed_event_attributes = Some(input);
             self
         }
+        /// <p>Provides the details of the <code>StartLambdaFunctionFailed</code> event. It isn't set
+        /// for other event types.</p>
         pub fn set_start_lambda_function_failed_event_attributes(
             mut self,
             input: std::option::Option<crate::model::StartLambdaFunctionFailedEventAttributes>,
@@ -4818,6 +5206,8 @@ pub mod start_lambda_function_failed_event_attributes {
             self.scheduled_event_id = Some(input);
             self
         }
+        /// <p>The ID of the <code>ActivityTaskScheduled</code> event that was recorded when this
+        /// activity task was scheduled. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
         pub fn set_scheduled_event_id(mut self, input: std::option::Option<i64>) -> Self {
             self.scheduled_event_id = input;
             self
@@ -4833,6 +5223,13 @@ pub mod start_lambda_function_failed_event_attributes {
             self.cause = Some(input);
             self
         }
+        /// <p>The cause of the failure. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
+        /// <note>
+        /// <p>If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision
+        /// failed because the IAM role attached to the execution lacked sufficient permissions. For
+        /// details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">Lambda Tasks</a> in the
+        /// <i>Amazon SWF Developer Guide</i>.</p>
+        /// </note>
         pub fn set_cause(
             mut self,
             input: std::option::Option<crate::model::StartLambdaFunctionFailedCause>,
@@ -4845,6 +5242,7 @@ pub mod start_lambda_function_failed_event_attributes {
             self.message = Some(input.into());
             self
         }
+        /// <p>A description that can help diagnose the cause of the fault.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -4866,6 +5264,7 @@ impl StartLambdaFunctionFailedEventAttributes {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4877,6 +5276,7 @@ impl StartLambdaFunctionFailedEventAttributes {
     std::hash::Hash,
 )]
 pub enum StartLambdaFunctionFailedCause {
+    #[allow(missing_docs)] // documentation missing in model
     AssumeRoleFailed,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4897,12 +5297,14 @@ impl std::str::FromStr for StartLambdaFunctionFailedCause {
     }
 }
 impl StartLambdaFunctionFailedCause {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StartLambdaFunctionFailedCause::AssumeRoleFailed => "ASSUME_ROLE_FAILED",
             StartLambdaFunctionFailedCause::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ASSUME_ROLE_FAILED"]
     }
@@ -4967,6 +5369,8 @@ pub mod schedule_lambda_function_failed_event_attributes {
             self.id = Some(input.into());
             self
         }
+        /// <p>The ID provided in the <code>ScheduleLambdaFunction</code> decision that failed.
+        /// </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -4976,6 +5380,7 @@ pub mod schedule_lambda_function_failed_event_attributes {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the Lambda function.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -4992,6 +5397,14 @@ pub mod schedule_lambda_function_failed_event_attributes {
             self.cause = Some(input);
             self
         }
+        /// <p>The cause of the failure. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
+        /// <note>
+        /// <p>If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision
+        /// failed because it lacked sufficient permissions. For details and example IAM policies, see
+        /// <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// IAM to Manage Access to Amazon SWF Workflows</a> in the
+        /// <i>Amazon SWF Developer Guide</i>.</p>
+        /// </note>
         pub fn set_cause(
             mut self,
             input: std::option::Option<crate::model::ScheduleLambdaFunctionFailedCause>,
@@ -5005,6 +5418,8 @@ pub mod schedule_lambda_function_failed_event_attributes {
             self.decision_task_completed_event_id = Some(input);
             self
         }
+        /// <p>The ID of the <code>LambdaFunctionCompleted</code> event corresponding to the decision
+        /// that resulted in scheduling this Lambda task. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
         pub fn set_decision_task_completed_event_id(
             mut self,
             input: std::option::Option<i64>,
@@ -5032,6 +5447,7 @@ impl ScheduleLambdaFunctionFailedEventAttributes {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5043,9 +5459,13 @@ impl ScheduleLambdaFunctionFailedEventAttributes {
     std::hash::Hash,
 )]
 pub enum ScheduleLambdaFunctionFailedCause {
+    #[allow(missing_docs)] // documentation missing in model
     IdAlreadyInUse,
+    #[allow(missing_docs)] // documentation missing in model
     LambdaFunctionCreationRateExceeded,
+    #[allow(missing_docs)] // documentation missing in model
     LambdaServiceNotAvailableInRegion,
+    #[allow(missing_docs)] // documentation missing in model
     OpenLambdaFunctionsLimitExceeded,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5075,6 +5495,7 @@ impl std::str::FromStr for ScheduleLambdaFunctionFailedCause {
     }
 }
 impl ScheduleLambdaFunctionFailedCause {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ScheduleLambdaFunctionFailedCause::IdAlreadyInUse => "ID_ALREADY_IN_USE",
@@ -5090,6 +5511,7 @@ impl ScheduleLambdaFunctionFailedCause {
             ScheduleLambdaFunctionFailedCause::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ID_ALREADY_IN_USE",
@@ -5144,6 +5566,8 @@ pub mod lambda_function_timed_out_event_attributes {
             self.scheduled_event_id = Some(input);
             self
         }
+        /// <p>The ID of the <code>LambdaFunctionScheduled</code> event that was recorded when this
+        /// activity task was scheduled. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
         pub fn set_scheduled_event_id(mut self, input: std::option::Option<i64>) -> Self {
             self.scheduled_event_id = input;
             self
@@ -5154,6 +5578,8 @@ pub mod lambda_function_timed_out_event_attributes {
             self.started_event_id = Some(input);
             self
         }
+        /// <p>The ID of the <code>ActivityTaskStarted</code> event that was recorded when this
+        /// activity task started. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
         pub fn set_started_event_id(mut self, input: std::option::Option<i64>) -> Self {
             self.started_event_id = input;
             self
@@ -5163,6 +5589,7 @@ pub mod lambda_function_timed_out_event_attributes {
             self.timeout_type = Some(input);
             self
         }
+        /// <p>The type of the timeout that caused this event.</p>
         pub fn set_timeout_type(
             mut self,
             input: std::option::Option<crate::model::LambdaFunctionTimeoutType>,
@@ -5187,6 +5614,7 @@ impl LambdaFunctionTimedOutEventAttributes {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5198,6 +5626,7 @@ impl LambdaFunctionTimedOutEventAttributes {
     std::hash::Hash,
 )]
 pub enum LambdaFunctionTimeoutType {
+    #[allow(missing_docs)] // documentation missing in model
     StartToClose,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5218,12 +5647,14 @@ impl std::str::FromStr for LambdaFunctionTimeoutType {
     }
 }
 impl LambdaFunctionTimeoutType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LambdaFunctionTimeoutType::StartToClose => "START_TO_CLOSE",
             LambdaFunctionTimeoutType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["START_TO_CLOSE"]
     }
@@ -5278,6 +5709,8 @@ pub mod lambda_function_failed_event_attributes {
             self.scheduled_event_id = Some(input);
             self
         }
+        /// <p>The ID of the <code>LambdaFunctionScheduled</code> event that was recorded when this
+        /// activity task was scheduled. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
         pub fn set_scheduled_event_id(mut self, input: std::option::Option<i64>) -> Self {
             self.scheduled_event_id = input;
             self
@@ -5288,6 +5721,8 @@ pub mod lambda_function_failed_event_attributes {
             self.started_event_id = Some(input);
             self
         }
+        /// <p>The ID of the <code>LambdaFunctionStarted</code> event recorded when this activity task
+        /// started. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
         pub fn set_started_event_id(mut self, input: std::option::Option<i64>) -> Self {
             self.started_event_id = input;
             self
@@ -5297,6 +5732,7 @@ pub mod lambda_function_failed_event_attributes {
             self.reason = Some(input.into());
             self
         }
+        /// <p>The reason provided for the failure.</p>
         pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.reason = input;
             self
@@ -5306,6 +5742,7 @@ pub mod lambda_function_failed_event_attributes {
             self.details = Some(input.into());
             self
         }
+        /// <p>The details of the failure.</p>
         pub fn set_details(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.details = input;
             self
@@ -5368,6 +5805,8 @@ pub mod lambda_function_completed_event_attributes {
             self.scheduled_event_id = Some(input);
             self
         }
+        /// <p>The ID of the <code>LambdaFunctionScheduled</code> event that was recorded when this
+        /// Lambda task was scheduled. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
         pub fn set_scheduled_event_id(mut self, input: std::option::Option<i64>) -> Self {
             self.scheduled_event_id = input;
             self
@@ -5378,6 +5817,8 @@ pub mod lambda_function_completed_event_attributes {
             self.started_event_id = Some(input);
             self
         }
+        /// <p>The ID of the <code>LambdaFunctionStarted</code> event recorded when this activity task
+        /// started. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
         pub fn set_started_event_id(mut self, input: std::option::Option<i64>) -> Self {
             self.started_event_id = input;
             self
@@ -5387,6 +5828,7 @@ pub mod lambda_function_completed_event_attributes {
             self.result = Some(input.into());
             self
         }
+        /// <p>The results of the Lambda task.</p>
         pub fn set_result(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.result = input;
             self
@@ -5439,6 +5881,8 @@ pub mod lambda_function_started_event_attributes {
             self.scheduled_event_id = Some(input);
             self
         }
+        /// <p>The ID of the <code>LambdaFunctionScheduled</code> event that was recorded when this
+        /// activity task was scheduled. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
         pub fn set_scheduled_event_id(mut self, input: std::option::Option<i64>) -> Self {
             self.scheduled_event_id = input;
             self
@@ -5512,6 +5956,7 @@ pub mod lambda_function_scheduled_event_attributes {
             self.id = Some(input.into());
             self
         }
+        /// <p>The unique ID of the Lambda task.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -5521,6 +5966,7 @@ pub mod lambda_function_scheduled_event_attributes {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the Lambda function.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -5531,6 +5977,8 @@ pub mod lambda_function_scheduled_event_attributes {
             self.control = Some(input.into());
             self
         }
+        /// <p>Data attached to the event that the decider can use in subsequent workflow tasks. This
+        /// data isn't sent to the Lambda task.</p>
         pub fn set_control(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.control = input;
             self
@@ -5540,6 +5988,7 @@ pub mod lambda_function_scheduled_event_attributes {
             self.input = Some(input.into());
             self
         }
+        /// <p>The input provided to the Lambda task.</p>
         pub fn set_input(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.input = input;
             self
@@ -5549,6 +5998,7 @@ pub mod lambda_function_scheduled_event_attributes {
             self.start_to_close_timeout = Some(input.into());
             self
         }
+        /// <p>The maximum amount of time a worker can take to process the Lambda task.</p>
         pub fn set_start_to_close_timeout(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5562,6 +6012,8 @@ pub mod lambda_function_scheduled_event_attributes {
             self.decision_task_completed_event_id = Some(input);
             self
         }
+        /// <p>The ID of the <code>LambdaFunctionCompleted</code> event corresponding to the decision
+        /// that resulted in scheduling this activity task. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
         pub fn set_decision_task_completed_event_id(
             mut self,
             input: std::option::Option<i64>,
@@ -5656,6 +6108,8 @@ pub mod start_child_workflow_execution_failed_event_attributes {
             self.workflow_type = Some(input);
             self
         }
+        /// <p>The workflow type provided in the <code>StartChildWorkflowExecution</code>
+        /// <a>Decision</a> that failed.</p>
         pub fn set_workflow_type(
             mut self,
             input: std::option::Option<crate::model::WorkflowType>,
@@ -5676,6 +6130,12 @@ pub mod start_child_workflow_execution_failed_event_attributes {
             self.cause = Some(input);
             self
         }
+        /// <p>The cause of the failure. This information is generated by the system and can be useful for diagnostic purposes.</p>
+        /// <note>
+        /// <p>When <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision fails because it lacks sufficient permissions.
+        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">
+        /// Using IAM to Manage Access to Amazon SWF Workflows</a>  in the <i>Amazon SWF Developer Guide</i>.</p>
+        /// </note>
         pub fn set_cause(
             mut self,
             input: std::option::Option<crate::model::StartChildWorkflowExecutionFailedCause>,
@@ -5688,6 +6148,7 @@ pub mod start_child_workflow_execution_failed_event_attributes {
             self.workflow_id = Some(input.into());
             self
         }
+        /// <p>The <code>workflowId</code> of the child workflow execution.</p>
         pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workflow_id = input;
             self
@@ -5702,6 +6163,12 @@ pub mod start_child_workflow_execution_failed_event_attributes {
             self.initiated_event_id = Some(input);
             self
         }
+        /// <p>When the <code>cause</code> is <code>WORKFLOW_ALREADY_RUNNING</code>, <code>initiatedEventId</code> is the ID of the <code>StartChildWorkflowExecutionInitiated</code>
+        /// event that corresponds to the <code>StartChildWorkflowExecution</code>
+        /// <a>Decision</a> to start the workflow execution. You can use this information to diagnose
+        /// problems by tracing back the chain of events leading up to this event.</p>
+        /// <p>When the <code>cause</code> isn't <code>WORKFLOW_ALREADY_RUNNING</code>, <code>initiatedEventId</code> is set to <code>0</code> because the
+        /// <code>StartChildWorkflowExecutionInitiated</code> event doesn't exist.</p>
         pub fn set_initiated_event_id(mut self, input: std::option::Option<i64>) -> Self {
             self.initiated_event_id = input;
             self
@@ -5712,6 +6179,8 @@ pub mod start_child_workflow_execution_failed_event_attributes {
             self.decision_task_completed_event_id = Some(input);
             self
         }
+        /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>StartChildWorkflowExecution</code>
+        /// <a>Decision</a> to request this child workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events.</p>
         pub fn set_decision_task_completed_event_id(
             mut self,
             input: std::option::Option<i64>,
@@ -5725,6 +6194,8 @@ pub mod start_child_workflow_execution_failed_event_attributes {
             self.control = Some(input.into());
             self
         }
+        /// <p>The data attached to the event that the decider can use in subsequent workflow tasks.
+        /// This data isn't sent to the child workflow execution.</p>
         pub fn set_control(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.control = input;
             self
@@ -5752,6 +6223,7 @@ impl StartChildWorkflowExecutionFailedEventAttributes {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5763,16 +6235,27 @@ impl StartChildWorkflowExecutionFailedEventAttributes {
     std::hash::Hash,
 )]
 pub enum StartChildWorkflowExecutionFailedCause {
+    #[allow(missing_docs)] // documentation missing in model
     ChildCreationRateExceeded,
+    #[allow(missing_docs)] // documentation missing in model
     DefaultChildPolicyUndefined,
+    #[allow(missing_docs)] // documentation missing in model
     DefaultExecutionStartToCloseTimeoutUndefined,
+    #[allow(missing_docs)] // documentation missing in model
     DefaultTaskListUndefined,
+    #[allow(missing_docs)] // documentation missing in model
     DefaultTaskStartToCloseTimeoutUndefined,
+    #[allow(missing_docs)] // documentation missing in model
     OpenChildrenLimitExceeded,
+    #[allow(missing_docs)] // documentation missing in model
     OpenWorkflowsLimitExceeded,
+    #[allow(missing_docs)] // documentation missing in model
     OperationNotPermitted,
+    #[allow(missing_docs)] // documentation missing in model
     WorkflowAlreadyRunning,
+    #[allow(missing_docs)] // documentation missing in model
     WorkflowTypeDeprecated,
+    #[allow(missing_docs)] // documentation missing in model
     WorkflowTypeDoesNotExist,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5825,6 +6308,7 @@ impl std::str::FromStr for StartChildWorkflowExecutionFailedCause {
     }
 }
 impl StartChildWorkflowExecutionFailedCause {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StartChildWorkflowExecutionFailedCause::ChildCreationRateExceeded => "CHILD_CREATION_RATE_EXCEEDED",
@@ -5841,6 +6325,7 @@ impl StartChildWorkflowExecutionFailedCause {
             StartChildWorkflowExecutionFailedCause::Unknown(s) => s.as_ref()
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CHILD_CREATION_RATE_EXCEEDED",
@@ -5907,6 +6392,7 @@ pub mod cancel_timer_failed_event_attributes {
             self.timer_id = Some(input.into());
             self
         }
+        /// <p>The timerId provided in the <code>CancelTimer</code> decision that failed.</p>
         pub fn set_timer_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.timer_id = input;
             self
@@ -5921,6 +6407,12 @@ pub mod cancel_timer_failed_event_attributes {
             self.cause = Some(input);
             self
         }
+        /// <p>The cause of the failure. This information is generated by the system and can be useful for diagnostic purposes.</p>
+        /// <note>
+        /// <p>If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed
+        /// because it lacked sufficient permissions. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a>
+        /// in the <i>Amazon SWF Developer Guide</i>.</p>
+        /// </note>
         pub fn set_cause(
             mut self,
             input: std::option::Option<crate::model::CancelTimerFailedCause>,
@@ -5933,6 +6425,7 @@ pub mod cancel_timer_failed_event_attributes {
             self.decision_task_completed_event_id = Some(input);
             self
         }
+        /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>CancelTimer</code> decision to cancel this timer. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
         pub fn set_decision_task_completed_event_id(
             mut self,
             input: std::option::Option<i64>,
@@ -5959,6 +6452,7 @@ impl CancelTimerFailedEventAttributes {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5970,7 +6464,9 @@ impl CancelTimerFailedEventAttributes {
     std::hash::Hash,
 )]
 pub enum CancelTimerFailedCause {
+    #[allow(missing_docs)] // documentation missing in model
     OperationNotPermitted,
+    #[allow(missing_docs)] // documentation missing in model
     TimerIdUnknown,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5992,6 +6488,7 @@ impl std::str::FromStr for CancelTimerFailedCause {
     }
 }
 impl CancelTimerFailedCause {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CancelTimerFailedCause::OperationNotPermitted => "OPERATION_NOT_PERMITTED",
@@ -5999,6 +6496,7 @@ impl CancelTimerFailedCause {
             CancelTimerFailedCause::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["OPERATION_NOT_PERMITTED", "TIMER_ID_UNKNOWN"]
     }
@@ -6055,6 +6553,7 @@ pub mod start_timer_failed_event_attributes {
             self.timer_id = Some(input.into());
             self
         }
+        /// <p>The timerId provided in the <code>StartTimer</code> decision that failed.</p>
         pub fn set_timer_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.timer_id = input;
             self
@@ -6069,6 +6568,12 @@ pub mod start_timer_failed_event_attributes {
             self.cause = Some(input);
             self
         }
+        /// <p>The cause of the failure. This information is generated by the system and can be useful for diagnostic purposes.</p>
+        /// <note>
+        /// <p>If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed
+        /// because it lacked sufficient permissions. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a>
+        /// in the <i>Amazon SWF Developer Guide</i>.</p>
+        /// </note>
         pub fn set_cause(
             mut self,
             input: std::option::Option<crate::model::StartTimerFailedCause>,
@@ -6083,6 +6588,9 @@ pub mod start_timer_failed_event_attributes {
             self.decision_task_completed_event_id = Some(input);
             self
         }
+        /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the
+        /// <code>StartTimer</code> decision for this activity task. This information can be useful for diagnosing problems by tracing back the chain of
+        /// events leading up to this event.</p>
         pub fn set_decision_task_completed_event_id(
             mut self,
             input: std::option::Option<i64>,
@@ -6109,6 +6617,7 @@ impl StartTimerFailedEventAttributes {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -6120,9 +6629,13 @@ impl StartTimerFailedEventAttributes {
     std::hash::Hash,
 )]
 pub enum StartTimerFailedCause {
+    #[allow(missing_docs)] // documentation missing in model
     OpenTimersLimitExceeded,
+    #[allow(missing_docs)] // documentation missing in model
     OperationNotPermitted,
+    #[allow(missing_docs)] // documentation missing in model
     TimerCreationRateExceeded,
+    #[allow(missing_docs)] // documentation missing in model
     TimerIdAlreadyInUse,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -6146,6 +6659,7 @@ impl std::str::FromStr for StartTimerFailedCause {
     }
 }
 impl StartTimerFailedCause {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StartTimerFailedCause::OpenTimersLimitExceeded => "OPEN_TIMERS_LIMIT_EXCEEDED",
@@ -6155,6 +6669,7 @@ impl StartTimerFailedCause {
             StartTimerFailedCause::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "OPEN_TIMERS_LIMIT_EXCEEDED",
@@ -6216,6 +6731,7 @@ pub mod request_cancel_activity_task_failed_event_attributes {
             self.activity_id = Some(input.into());
             self
         }
+        /// <p>The activityId provided in the <code>RequestCancelActivityTask</code> decision that failed.</p>
         pub fn set_activity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.activity_id = input;
             self
@@ -6230,6 +6746,12 @@ pub mod request_cancel_activity_task_failed_event_attributes {
             self.cause = Some(input);
             self
         }
+        /// <p>The cause of the failure. This information is generated by the system and can be useful for diagnostic purposes.</p>
+        /// <note>
+        /// <p>If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed
+        /// because it lacked sufficient permissions. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a>
+        /// in the <i>Amazon SWF Developer Guide</i>.</p>
+        /// </note>
         pub fn set_cause(
             mut self,
             input: std::option::Option<crate::model::RequestCancelActivityTaskFailedCause>,
@@ -6244,6 +6766,9 @@ pub mod request_cancel_activity_task_failed_event_attributes {
             self.decision_task_completed_event_id = Some(input);
             self
         }
+        /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the
+        /// <code>RequestCancelActivityTask</code> decision for this cancellation request. This information can be useful for diagnosing problems by tracing back the chain of
+        /// events leading up to this event.</p>
         pub fn set_decision_task_completed_event_id(
             mut self,
             input: std::option::Option<i64>,
@@ -6271,6 +6796,7 @@ impl RequestCancelActivityTaskFailedEventAttributes {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -6282,7 +6808,9 @@ impl RequestCancelActivityTaskFailedEventAttributes {
     std::hash::Hash,
 )]
 pub enum RequestCancelActivityTaskFailedCause {
+    #[allow(missing_docs)] // documentation missing in model
     ActivityIdUnknown,
+    #[allow(missing_docs)] // documentation missing in model
     OperationNotPermitted,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -6306,6 +6834,7 @@ impl std::str::FromStr for RequestCancelActivityTaskFailedCause {
     }
 }
 impl RequestCancelActivityTaskFailedCause {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RequestCancelActivityTaskFailedCause::ActivityIdUnknown => "ACTIVITY_ID_UNKNOWN",
@@ -6315,6 +6844,7 @@ impl RequestCancelActivityTaskFailedCause {
             RequestCancelActivityTaskFailedCause::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ACTIVITY_ID_UNKNOWN", "OPERATION_NOT_PERMITTED"]
     }
@@ -6375,6 +6905,7 @@ pub mod schedule_activity_task_failed_event_attributes {
             self.activity_type = Some(input);
             self
         }
+        /// <p>The activity type provided in the <code>ScheduleActivityTask</code> decision that failed.</p>
         pub fn set_activity_type(
             mut self,
             input: std::option::Option<crate::model::ActivityType>,
@@ -6387,6 +6918,7 @@ pub mod schedule_activity_task_failed_event_attributes {
             self.activity_id = Some(input.into());
             self
         }
+        /// <p>The activityId provided in the <code>ScheduleActivityTask</code> decision that failed.</p>
         pub fn set_activity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.activity_id = input;
             self
@@ -6401,6 +6933,12 @@ pub mod schedule_activity_task_failed_event_attributes {
             self.cause = Some(input);
             self
         }
+        /// <p>The cause of the failure. This information is generated by the system and can be useful for diagnostic purposes.</p>
+        /// <note>
+        /// <p>If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed
+        /// because it lacked sufficient permissions. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a>
+        /// in the <i>Amazon SWF Developer Guide</i>.</p>
+        /// </note>
         pub fn set_cause(
             mut self,
             input: std::option::Option<crate::model::ScheduleActivityTaskFailedCause>,
@@ -6415,6 +6953,9 @@ pub mod schedule_activity_task_failed_event_attributes {
             self.decision_task_completed_event_id = Some(input);
             self
         }
+        /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision that resulted in the
+        /// scheduling of this activity task. This information can be useful for diagnosing problems by tracing back the chain of
+        /// events leading up to this event.</p>
         pub fn set_decision_task_completed_event_id(
             mut self,
             input: std::option::Option<i64>,
@@ -6442,6 +6983,7 @@ impl ScheduleActivityTaskFailedEventAttributes {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -6453,16 +6995,27 @@ impl ScheduleActivityTaskFailedEventAttributes {
     std::hash::Hash,
 )]
 pub enum ScheduleActivityTaskFailedCause {
+    #[allow(missing_docs)] // documentation missing in model
     ActivityCreationRateExceeded,
+    #[allow(missing_docs)] // documentation missing in model
     ActivityIdAlreadyInUse,
+    #[allow(missing_docs)] // documentation missing in model
     ActivityTypeDeprecated,
+    #[allow(missing_docs)] // documentation missing in model
     ActivityTypeDoesNotExist,
+    #[allow(missing_docs)] // documentation missing in model
     DefaultHeartbeatTimeoutUndefined,
+    #[allow(missing_docs)] // documentation missing in model
     DefaultScheduleToCloseTimeoutUndefined,
+    #[allow(missing_docs)] // documentation missing in model
     DefaultScheduleToStartTimeoutUndefined,
+    #[allow(missing_docs)] // documentation missing in model
     DefaultStartToCloseTimeoutUndefined,
+    #[allow(missing_docs)] // documentation missing in model
     DefaultTaskListUndefined,
+    #[allow(missing_docs)] // documentation missing in model
     OpenActivitiesLimitExceeded,
+    #[allow(missing_docs)] // documentation missing in model
     OperationNotPermitted,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -6509,6 +7062,7 @@ impl std::str::FromStr for ScheduleActivityTaskFailedCause {
     }
 }
 impl ScheduleActivityTaskFailedCause {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ScheduleActivityTaskFailedCause::ActivityCreationRateExceeded => {
@@ -6541,6 +7095,7 @@ impl ScheduleActivityTaskFailedCause {
             ScheduleActivityTaskFailedCause::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ACTIVITY_CREATION_RATE_EXCEEDED",
@@ -6627,6 +7182,7 @@ pub mod request_cancel_external_workflow_execution_failed_event_attributes {
             self.workflow_id = Some(input.into());
             self
         }
+        /// <p>The <code>workflowId</code> of the external workflow to which the cancel request was to be delivered.</p>
         pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workflow_id = input;
             self
@@ -6636,6 +7192,7 @@ pub mod request_cancel_external_workflow_execution_failed_event_attributes {
             self.run_id = Some(input.into());
             self
         }
+        /// <p>The <code>runId</code> of the external workflow execution.</p>
         pub fn set_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.run_id = input;
             self
@@ -6653,6 +7210,12 @@ pub mod request_cancel_external_workflow_execution_failed_event_attributes {
             self.cause = Some(input);
             self
         }
+        /// <p>The cause of the failure. This information is generated by the system and can be useful for diagnostic purposes.</p>
+        /// <note>
+        /// <p>If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed
+        /// because it lacked sufficient permissions. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a>
+        /// in the <i>Amazon SWF Developer Guide</i>.</p>
+        /// </note>
         pub fn set_cause(
             mut self,
             input: std::option::Option<
@@ -6670,6 +7233,10 @@ pub mod request_cancel_external_workflow_execution_failed_event_attributes {
             self.initiated_event_id = Some(input);
             self
         }
+        /// <p>The ID of the <code>RequestCancelExternalWorkflowExecutionInitiated</code> event corresponding to the
+        /// <code>RequestCancelExternalWorkflowExecution</code> decision to cancel this external workflow execution. This
+        /// information can be useful for diagnosing problems by tracing back the chain of events leading up to this
+        /// event.</p>
         pub fn set_initiated_event_id(mut self, input: std::option::Option<i64>) -> Self {
             self.initiated_event_id = input;
             self
@@ -6681,6 +7248,9 @@ pub mod request_cancel_external_workflow_execution_failed_event_attributes {
             self.decision_task_completed_event_id = Some(input);
             self
         }
+        /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the
+        /// <code>RequestCancelExternalWorkflowExecution</code> decision for this cancellation request. This information can be useful for diagnosing problems by tracing back the chain of
+        /// events leading up to this event.</p>
         pub fn set_decision_task_completed_event_id(
             mut self,
             input: std::option::Option<i64>,
@@ -6694,6 +7264,8 @@ pub mod request_cancel_external_workflow_execution_failed_event_attributes {
             self.control = Some(input.into());
             self
         }
+        /// <p>The data attached to the event that the decider can use in subsequent workflow tasks.
+        /// This data isn't sent to the workflow execution.</p>
         pub fn set_control(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.control = input;
             self
@@ -6724,6 +7296,7 @@ impl RequestCancelExternalWorkflowExecutionFailedEventAttributes {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -6735,8 +7308,11 @@ impl RequestCancelExternalWorkflowExecutionFailedEventAttributes {
     std::hash::Hash,
 )]
 pub enum RequestCancelExternalWorkflowExecutionFailedCause {
+    #[allow(missing_docs)] // documentation missing in model
     OperationNotPermitted,
+    #[allow(missing_docs)] // documentation missing in model
     RequestCancelExternalWorkflowExecutionRateExceeded,
+    #[allow(missing_docs)] // documentation missing in model
     UnknownExternalWorkflowExecution,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -6759,6 +7335,7 @@ impl std::str::FromStr for RequestCancelExternalWorkflowExecutionFailedCause {
     }
 }
 impl RequestCancelExternalWorkflowExecutionFailedCause {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RequestCancelExternalWorkflowExecutionFailedCause::OperationNotPermitted => "OPERATION_NOT_PERMITTED",
@@ -6767,6 +7344,7 @@ impl RequestCancelExternalWorkflowExecutionFailedCause {
             RequestCancelExternalWorkflowExecutionFailedCause::Unknown(s) => s.as_ref()
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "OPERATION_NOT_PERMITTED",
@@ -6828,6 +7406,7 @@ pub mod request_cancel_external_workflow_execution_initiated_event_attributes {
             self.workflow_id = Some(input.into());
             self
         }
+        /// <p>The <code>workflowId</code> of the external workflow execution to be canceled.</p>
         pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workflow_id = input;
             self
@@ -6837,6 +7416,7 @@ pub mod request_cancel_external_workflow_execution_initiated_event_attributes {
             self.run_id = Some(input.into());
             self
         }
+        /// <p>The <code>runId</code> of the external workflow execution to be canceled.</p>
         pub fn set_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.run_id = input;
             self
@@ -6849,6 +7429,10 @@ pub mod request_cancel_external_workflow_execution_initiated_event_attributes {
             self.decision_task_completed_event_id = Some(input);
             self
         }
+        /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the
+        /// <code>RequestCancelExternalWorkflowExecution</code> decision for this cancellation request.
+        /// This information can be useful for diagnosing problems by tracing back the chain of
+        /// events leading up to this event.</p>
         pub fn set_decision_task_completed_event_id(
             mut self,
             input: std::option::Option<i64>,
@@ -6861,6 +7445,7 @@ pub mod request_cancel_external_workflow_execution_initiated_event_attributes {
             self.control = Some(input.into());
             self
         }
+        /// <p>Data attached to the event that can be used by the decider in subsequent workflow tasks.</p>
         pub fn set_control(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.control = input;
             self
@@ -6925,6 +7510,7 @@ pub mod external_workflow_execution_cancel_requested_event_attributes {
             self.workflow_execution = Some(input);
             self
         }
+        /// <p>The external workflow execution to which the cancellation request was delivered.</p>
         pub fn set_workflow_execution(
             mut self,
             input: std::option::Option<crate::model::WorkflowExecution>,
@@ -6940,6 +7526,10 @@ pub mod external_workflow_execution_cancel_requested_event_attributes {
             self.initiated_event_id = Some(input);
             self
         }
+        /// <p>The ID of the <code>RequestCancelExternalWorkflowExecutionInitiated</code> event corresponding to the
+        /// <code>RequestCancelExternalWorkflowExecution</code> decision to cancel this external workflow execution. This
+        /// information can be useful for diagnosing problems by tracing back the chain of events leading up to this
+        /// event.</p>
         pub fn set_initiated_event_id(mut self, input: std::option::Option<i64>) -> Self {
             self.initiated_event_id = input;
             self
@@ -6995,6 +7585,7 @@ pub mod workflow_execution {
             self.workflow_id = Some(input.into());
             self
         }
+        /// <p>The user defined identifier associated with the workflow execution.</p>
         pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workflow_id = input;
             self
@@ -7004,6 +7595,7 @@ pub mod workflow_execution {
             self.run_id = Some(input.into());
             self
         }
+        /// <p>A system-generated unique identifier for the workflow execution.</p>
         pub fn set_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.run_id = input;
             self
@@ -7086,6 +7678,7 @@ pub mod signal_external_workflow_execution_failed_event_attributes {
             self.workflow_id = Some(input.into());
             self
         }
+        /// <p>The <code>workflowId</code> of the external workflow execution that the signal was being delivered to.</p>
         pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workflow_id = input;
             self
@@ -7095,6 +7688,7 @@ pub mod signal_external_workflow_execution_failed_event_attributes {
             self.run_id = Some(input.into());
             self
         }
+        /// <p>The <code>runId</code> of the external workflow execution that the signal was being delivered to.</p>
         pub fn set_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.run_id = input;
             self
@@ -7112,6 +7706,12 @@ pub mod signal_external_workflow_execution_failed_event_attributes {
             self.cause = Some(input);
             self
         }
+        /// <p>The cause of the failure. This information is generated by the system and can be useful for diagnostic purposes.</p>
+        /// <note>
+        /// <p>If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed
+        /// because it lacked sufficient permissions. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a>
+        /// in the <i>Amazon SWF Developer Guide</i>.</p>
+        /// </note>
         pub fn set_cause(
             mut self,
             input: std::option::Option<crate::model::SignalExternalWorkflowExecutionFailedCause>,
@@ -7126,6 +7726,9 @@ pub mod signal_external_workflow_execution_failed_event_attributes {
             self.initiated_event_id = Some(input);
             self
         }
+        /// <p>The ID of the <code>SignalExternalWorkflowExecutionInitiated</code> event corresponding to the
+        /// <code>SignalExternalWorkflowExecution</code> decision to request this signal. This information can be useful for diagnosing problems by tracing back the chain of
+        /// events leading up to this event.</p>
         pub fn set_initiated_event_id(mut self, input: std::option::Option<i64>) -> Self {
             self.initiated_event_id = input;
             self
@@ -7137,6 +7740,9 @@ pub mod signal_external_workflow_execution_failed_event_attributes {
             self.decision_task_completed_event_id = Some(input);
             self
         }
+        /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the
+        /// <code>SignalExternalWorkflowExecution</code> decision for this signal. This information can be useful for diagnosing problems by tracing back the chain of
+        /// events leading up to this event.</p>
         pub fn set_decision_task_completed_event_id(
             mut self,
             input: std::option::Option<i64>,
@@ -7150,6 +7756,8 @@ pub mod signal_external_workflow_execution_failed_event_attributes {
             self.control = Some(input.into());
             self
         }
+        /// <p>The data attached to the event that the decider can use in subsequent workflow tasks.
+        /// This data isn't sent to the workflow execution.</p>
         pub fn set_control(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.control = input;
             self
@@ -7177,6 +7785,7 @@ impl SignalExternalWorkflowExecutionFailedEventAttributes {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -7188,8 +7797,11 @@ impl SignalExternalWorkflowExecutionFailedEventAttributes {
     std::hash::Hash,
 )]
 pub enum SignalExternalWorkflowExecutionFailedCause {
+    #[allow(missing_docs)] // documentation missing in model
     OperationNotPermitted,
+    #[allow(missing_docs)] // documentation missing in model
     SignalExternalWorkflowExecutionRateExceeded,
+    #[allow(missing_docs)] // documentation missing in model
     UnknownExternalWorkflowExecution,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -7212,6 +7824,7 @@ impl std::str::FromStr for SignalExternalWorkflowExecutionFailedCause {
     }
 }
 impl SignalExternalWorkflowExecutionFailedCause {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SignalExternalWorkflowExecutionFailedCause::OperationNotPermitted => "OPERATION_NOT_PERMITTED",
@@ -7220,6 +7833,7 @@ impl SignalExternalWorkflowExecutionFailedCause {
             SignalExternalWorkflowExecutionFailedCause::Unknown(s) => s.as_ref()
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "OPERATION_NOT_PERMITTED",
@@ -7268,6 +7882,7 @@ pub mod external_workflow_execution_signaled_event_attributes {
             self.workflow_execution = Some(input);
             self
         }
+        /// <p>The external workflow execution that the signal was delivered to.</p>
         pub fn set_workflow_execution(
             mut self,
             input: std::option::Option<crate::model::WorkflowExecution>,
@@ -7282,6 +7897,9 @@ pub mod external_workflow_execution_signaled_event_attributes {
             self.initiated_event_id = Some(input);
             self
         }
+        /// <p>The ID of the <code>SignalExternalWorkflowExecutionInitiated</code> event corresponding to the
+        /// <code>SignalExternalWorkflowExecution</code> decision to request this signal. This information can be useful for diagnosing problems by tracing back the chain of
+        /// events leading up to this event.</p>
         pub fn set_initiated_event_id(mut self, input: std::option::Option<i64>) -> Self {
             self.initiated_event_id = input;
             self
@@ -7357,6 +7975,7 @@ pub mod signal_external_workflow_execution_initiated_event_attributes {
             self.workflow_id = Some(input.into());
             self
         }
+        /// <p>The <code>workflowId</code> of the external workflow execution.</p>
         pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workflow_id = input;
             self
@@ -7366,6 +7985,7 @@ pub mod signal_external_workflow_execution_initiated_event_attributes {
             self.run_id = Some(input.into());
             self
         }
+        /// <p>The <code>runId</code> of the external workflow execution to send the signal to.</p>
         pub fn set_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.run_id = input;
             self
@@ -7375,6 +7995,7 @@ pub mod signal_external_workflow_execution_initiated_event_attributes {
             self.signal_name = Some(input.into());
             self
         }
+        /// <p>The name of the signal.</p>
         pub fn set_signal_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.signal_name = input;
             self
@@ -7384,6 +8005,7 @@ pub mod signal_external_workflow_execution_initiated_event_attributes {
             self.input = Some(input.into());
             self
         }
+        /// <p>The input provided to the signal.</p>
         pub fn set_input(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.input = input;
             self
@@ -7395,6 +8017,9 @@ pub mod signal_external_workflow_execution_initiated_event_attributes {
             self.decision_task_completed_event_id = Some(input);
             self
         }
+        /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the
+        /// <code>SignalExternalWorkflowExecution</code> decision for this signal. This information can be useful for diagnosing problems by tracing back the chain of
+        /// events leading up to this event.</p>
         pub fn set_decision_task_completed_event_id(
             mut self,
             input: std::option::Option<i64>,
@@ -7407,6 +8032,7 @@ pub mod signal_external_workflow_execution_initiated_event_attributes {
             self.control = Some(input.into());
             self
         }
+        /// <p>Data attached to the event that can be used by the decider in subsequent decision tasks.</p>
         pub fn set_control(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.control = input;
             self
@@ -7482,6 +8108,7 @@ pub mod child_workflow_execution_terminated_event_attributes {
             self.workflow_execution = Some(input);
             self
         }
+        /// <p>The child workflow execution that was terminated.</p>
         pub fn set_workflow_execution(
             mut self,
             input: std::option::Option<crate::model::WorkflowExecution>,
@@ -7494,6 +8121,7 @@ pub mod child_workflow_execution_terminated_event_attributes {
             self.workflow_type = Some(input);
             self
         }
+        /// <p>The type of the child workflow execution.</p>
         pub fn set_workflow_type(
             mut self,
             input: std::option::Option<crate::model::WorkflowType>,
@@ -7510,6 +8138,11 @@ pub mod child_workflow_execution_terminated_event_attributes {
             self.initiated_event_id = Some(input);
             self
         }
+        /// <p>The ID of the <code>StartChildWorkflowExecutionInitiated</code> event corresponding to the
+        /// <code>StartChildWorkflowExecution</code>
+        /// <a>Decision</a> to start this child workflow execution.
+        /// This information can be useful for diagnosing problems by tracing back the chain of
+        /// events leading up to this event.</p>
         pub fn set_initiated_event_id(mut self, input: std::option::Option<i64>) -> Self {
             self.initiated_event_id = input;
             self
@@ -7521,6 +8154,9 @@ pub mod child_workflow_execution_terminated_event_attributes {
             self.started_event_id = Some(input);
             self
         }
+        /// <p>The ID of the <code>ChildWorkflowExecutionStarted</code> event recorded when this child workflow execution was
+        /// started. This information can be useful for diagnosing problems by tracing back the chain of
+        /// events leading up to this event.</p>
         pub fn set_started_event_id(mut self, input: std::option::Option<i64>) -> Self {
             self.started_event_id = input;
             self
@@ -7594,6 +8230,7 @@ pub mod child_workflow_execution_canceled_event_attributes {
             self.workflow_execution = Some(input);
             self
         }
+        /// <p>The child workflow execution that was canceled.</p>
         pub fn set_workflow_execution(
             mut self,
             input: std::option::Option<crate::model::WorkflowExecution>,
@@ -7606,6 +8243,7 @@ pub mod child_workflow_execution_canceled_event_attributes {
             self.workflow_type = Some(input);
             self
         }
+        /// <p>The type of the child workflow execution.</p>
         pub fn set_workflow_type(
             mut self,
             input: std::option::Option<crate::model::WorkflowType>,
@@ -7618,6 +8256,7 @@ pub mod child_workflow_execution_canceled_event_attributes {
             self.details = Some(input.into());
             self
         }
+        /// <p>Details of the cancellation (if provided).</p>
         pub fn set_details(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.details = input;
             self
@@ -7631,6 +8270,11 @@ pub mod child_workflow_execution_canceled_event_attributes {
             self.initiated_event_id = Some(input);
             self
         }
+        /// <p>The ID of the <code>StartChildWorkflowExecutionInitiated</code> event corresponding to the
+        /// <code>StartChildWorkflowExecution</code>
+        /// <a>Decision</a> to start this child workflow execution.
+        /// This information can be useful for diagnosing problems by tracing back the chain of
+        /// events leading up to this event.</p>
         pub fn set_initiated_event_id(mut self, input: std::option::Option<i64>) -> Self {
             self.initiated_event_id = input;
             self
@@ -7642,6 +8286,9 @@ pub mod child_workflow_execution_canceled_event_attributes {
             self.started_event_id = Some(input);
             self
         }
+        /// <p>The ID of the <code>ChildWorkflowExecutionStarted</code> event recorded when this child workflow execution was
+        /// started. This information can be useful for diagnosing problems by tracing back the chain of
+        /// events leading up to this event.</p>
         pub fn set_started_event_id(mut self, input: std::option::Option<i64>) -> Self {
             self.started_event_id = input;
             self
@@ -7714,6 +8361,7 @@ pub mod child_workflow_execution_timed_out_event_attributes {
             self.workflow_execution = Some(input);
             self
         }
+        /// <p>The child workflow execution that timed out.</p>
         pub fn set_workflow_execution(
             mut self,
             input: std::option::Option<crate::model::WorkflowExecution>,
@@ -7726,6 +8374,7 @@ pub mod child_workflow_execution_timed_out_event_attributes {
             self.workflow_type = Some(input);
             self
         }
+        /// <p>The type of the child workflow execution.</p>
         pub fn set_workflow_type(
             mut self,
             input: std::option::Option<crate::model::WorkflowType>,
@@ -7738,6 +8387,7 @@ pub mod child_workflow_execution_timed_out_event_attributes {
             self.timeout_type = Some(input);
             self
         }
+        /// <p>The type of the timeout that caused the child workflow execution to time out.</p>
         pub fn set_timeout_type(
             mut self,
             input: std::option::Option<crate::model::WorkflowExecutionTimeoutType>,
@@ -7753,6 +8403,10 @@ pub mod child_workflow_execution_timed_out_event_attributes {
             self.initiated_event_id = Some(input);
             self
         }
+        /// <p>The ID of the <code>StartChildWorkflowExecutionInitiated</code> event corresponding to the
+        /// <code>StartChildWorkflowExecution</code>
+        /// <a>Decision</a> to start this child workflow execution. This information can be useful for diagnosing problems by tracing back the chain of
+        /// events leading up to this event.</p>
         pub fn set_initiated_event_id(mut self, input: std::option::Option<i64>) -> Self {
             self.initiated_event_id = input;
             self
@@ -7764,6 +8418,9 @@ pub mod child_workflow_execution_timed_out_event_attributes {
             self.started_event_id = Some(input);
             self
         }
+        /// <p>The ID of the <code>ChildWorkflowExecutionStarted</code> event recorded when this child workflow execution was
+        /// started. This information can be useful for diagnosing problems by tracing back the chain of
+        /// events leading up to this event.</p>
         pub fn set_started_event_id(mut self, input: std::option::Option<i64>) -> Self {
             self.started_event_id = input;
             self
@@ -7787,6 +8444,7 @@ impl ChildWorkflowExecutionTimedOutEventAttributes {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -7798,6 +8456,7 @@ impl ChildWorkflowExecutionTimedOutEventAttributes {
     std::hash::Hash,
 )]
 pub enum WorkflowExecutionTimeoutType {
+    #[allow(missing_docs)] // documentation missing in model
     StartToClose,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -7818,12 +8477,14 @@ impl std::str::FromStr for WorkflowExecutionTimeoutType {
     }
 }
 impl WorkflowExecutionTimeoutType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             WorkflowExecutionTimeoutType::StartToClose => "START_TO_CLOSE",
             WorkflowExecutionTimeoutType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["START_TO_CLOSE"]
     }
@@ -7888,6 +8549,7 @@ pub mod child_workflow_execution_failed_event_attributes {
             self.workflow_execution = Some(input);
             self
         }
+        /// <p>The child workflow execution that failed.</p>
         pub fn set_workflow_execution(
             mut self,
             input: std::option::Option<crate::model::WorkflowExecution>,
@@ -7900,6 +8562,7 @@ pub mod child_workflow_execution_failed_event_attributes {
             self.workflow_type = Some(input);
             self
         }
+        /// <p>The type of the child workflow execution.</p>
         pub fn set_workflow_type(
             mut self,
             input: std::option::Option<crate::model::WorkflowType>,
@@ -7912,6 +8575,7 @@ pub mod child_workflow_execution_failed_event_attributes {
             self.reason = Some(input.into());
             self
         }
+        /// <p>The reason for the failure (if provided).</p>
         pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.reason = input;
             self
@@ -7921,6 +8585,7 @@ pub mod child_workflow_execution_failed_event_attributes {
             self.details = Some(input.into());
             self
         }
+        /// <p>The details of the failure (if provided).</p>
         pub fn set_details(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.details = input;
             self
@@ -7934,6 +8599,11 @@ pub mod child_workflow_execution_failed_event_attributes {
             self.initiated_event_id = Some(input);
             self
         }
+        /// <p>The ID of the <code>StartChildWorkflowExecutionInitiated</code> event corresponding to the
+        /// <code>StartChildWorkflowExecution</code>
+        /// <a>Decision</a> to start this child workflow execution.
+        /// This information can be useful for diagnosing problems by tracing back the chain of
+        /// events leading up to this event.</p>
         pub fn set_initiated_event_id(mut self, input: std::option::Option<i64>) -> Self {
             self.initiated_event_id = input;
             self
@@ -7945,6 +8615,9 @@ pub mod child_workflow_execution_failed_event_attributes {
             self.started_event_id = Some(input);
             self
         }
+        /// <p>The ID of the <code>ChildWorkflowExecutionStarted</code> event recorded when this child workflow execution was
+        /// started. This information can be useful for diagnosing problems by tracing back the chain of
+        /// events leading up to this event.</p>
         pub fn set_started_event_id(mut self, input: std::option::Option<i64>) -> Self {
             self.started_event_id = input;
             self
@@ -8016,6 +8689,7 @@ pub mod child_workflow_execution_completed_event_attributes {
             self.workflow_execution = Some(input);
             self
         }
+        /// <p>The child workflow execution that was completed.</p>
         pub fn set_workflow_execution(
             mut self,
             input: std::option::Option<crate::model::WorkflowExecution>,
@@ -8028,6 +8702,7 @@ pub mod child_workflow_execution_completed_event_attributes {
             self.workflow_type = Some(input);
             self
         }
+        /// <p>The type of the child workflow execution.</p>
         pub fn set_workflow_type(
             mut self,
             input: std::option::Option<crate::model::WorkflowType>,
@@ -8040,6 +8715,7 @@ pub mod child_workflow_execution_completed_event_attributes {
             self.result = Some(input.into());
             self
         }
+        /// <p>The result of the child workflow execution.</p>
         pub fn set_result(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.result = input;
             self
@@ -8050,6 +8726,8 @@ pub mod child_workflow_execution_completed_event_attributes {
             self.initiated_event_id = Some(input);
             self
         }
+        /// <p>The ID of the <code>StartChildWorkflowExecutionInitiated</code> event corresponding to the <code>StartChildWorkflowExecution</code>
+        /// <a>Decision</a> to start this child workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
         pub fn set_initiated_event_id(mut self, input: std::option::Option<i64>) -> Self {
             self.initiated_event_id = input;
             self
@@ -8061,6 +8739,9 @@ pub mod child_workflow_execution_completed_event_attributes {
             self.started_event_id = Some(input);
             self
         }
+        /// <p>The ID of the <code>ChildWorkflowExecutionStarted</code> event recorded when this child workflow execution was
+        /// started. This information can be useful for diagnosing problems by tracing back the chain of
+        /// events leading up to this event.</p>
         pub fn set_started_event_id(mut self, input: std::option::Option<i64>) -> Self {
             self.started_event_id = input;
             self
@@ -8124,6 +8805,7 @@ pub mod child_workflow_execution_started_event_attributes {
             self.workflow_execution = Some(input);
             self
         }
+        /// <p>The child workflow execution that was started.</p>
         pub fn set_workflow_execution(
             mut self,
             input: std::option::Option<crate::model::WorkflowExecution>,
@@ -8136,6 +8818,7 @@ pub mod child_workflow_execution_started_event_attributes {
             self.workflow_type = Some(input);
             self
         }
+        /// <p>The type of the child workflow execution.</p>
         pub fn set_workflow_type(
             mut self,
             input: std::option::Option<crate::model::WorkflowType>,
@@ -8152,6 +8835,11 @@ pub mod child_workflow_execution_started_event_attributes {
             self.initiated_event_id = Some(input);
             self
         }
+        /// <p>The ID of the <code>StartChildWorkflowExecutionInitiated</code> event corresponding to the
+        /// <code>StartChildWorkflowExecution</code>
+        /// <a>Decision</a> to start this child workflow execution.
+        /// This information can be useful for diagnosing problems by tracing back the chain of
+        /// events leading up to this event.</p>
         pub fn set_initiated_event_id(mut self, input: std::option::Option<i64>) -> Self {
             self.initiated_event_id = input;
             self
@@ -8281,6 +8969,7 @@ pub mod start_child_workflow_execution_initiated_event_attributes {
             self.workflow_id = Some(input.into());
             self
         }
+        /// <p>The <code>workflowId</code> of the child workflow execution.</p>
         pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workflow_id = input;
             self
@@ -8290,6 +8979,7 @@ pub mod start_child_workflow_execution_initiated_event_attributes {
             self.workflow_type = Some(input);
             self
         }
+        /// <p>The type of the child workflow execution.</p>
         pub fn set_workflow_type(
             mut self,
             input: std::option::Option<crate::model::WorkflowType>,
@@ -8302,6 +8992,7 @@ pub mod start_child_workflow_execution_initiated_event_attributes {
             self.control = Some(input.into());
             self
         }
+        /// <p>Data attached to the event that can be used by the decider in subsequent decision tasks. This data isn't sent to the activity.</p>
         pub fn set_control(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.control = input;
             self
@@ -8311,6 +9002,7 @@ pub mod start_child_workflow_execution_initiated_event_attributes {
             self.input = Some(input.into());
             self
         }
+        /// <p>The inputs provided to the child workflow execution.</p>
         pub fn set_input(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.input = input;
             self
@@ -8324,6 +9016,8 @@ pub mod start_child_workflow_execution_initiated_event_attributes {
             self.execution_start_to_close_timeout = Some(input.into());
             self
         }
+        /// <p>The maximum duration for the child workflow execution. If the workflow execution isn't closed within this duration, it is timed out and force-terminated.</p>
+        /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
         pub fn set_execution_start_to_close_timeout(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8336,6 +9030,7 @@ pub mod start_child_workflow_execution_initiated_event_attributes {
             self.task_list = Some(input);
             self
         }
+        /// <p>The name of the task list used for the decision tasks of the child workflow execution.</p>
         pub fn set_task_list(mut self, input: std::option::Option<crate::model::TaskList>) -> Self {
             self.task_list = input;
             self
@@ -8349,6 +9044,11 @@ pub mod start_child_workflow_execution_initiated_event_attributes {
             self.task_priority = Some(input.into());
             self
         }
+        /// <p>
+        /// The priority assigned for the decision tasks for this workflow execution.
+        /// Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code>
+        /// (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
+        /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
         pub fn set_task_priority(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8364,6 +9064,10 @@ pub mod start_child_workflow_execution_initiated_event_attributes {
             self.decision_task_completed_event_id = Some(input);
             self
         }
+        /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the
+        /// <code>StartChildWorkflowExecution</code>
+        /// <a>Decision</a> to request this child workflow execution. This
+        /// information can be useful for diagnosing problems by tracing back the cause of events.</p>
         pub fn set_decision_task_completed_event_id(
             mut self,
             input: std::option::Option<i64>,
@@ -8394,6 +9098,25 @@ pub mod start_child_workflow_execution_initiated_event_attributes {
             self.child_policy = Some(input);
             self
         }
+        /// <p>The policy to use for the child workflow executions if this execution gets terminated by explicitly calling the
+        /// <a>TerminateWorkflowExecution</a> action or due to an expired timeout.</p>
+        /// <p>The supported child policies are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>TERMINATE</code> – The child executions are terminated.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child
+        /// execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider
+        /// to take appropriate actions when it receives an execution history with this event.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ABANDON</code> – No action is taken. The child executions continue to run.</p>
+        /// </li>
+        /// </ul>
         pub fn set_child_policy(
             mut self,
             input: std::option::Option<crate::model::ChildPolicy>,
@@ -8410,6 +9133,8 @@ pub mod start_child_workflow_execution_initiated_event_attributes {
             self.task_start_to_close_timeout = Some(input.into());
             self
         }
+        /// <p>The maximum duration allowed for the decision tasks for this workflow execution.</p>
+        /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
         pub fn set_task_start_to_close_timeout(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8417,12 +9142,18 @@ pub mod start_child_workflow_execution_initiated_event_attributes {
             self.task_start_to_close_timeout = input;
             self
         }
+        /// Appends an item to `tag_list`.
+        ///
+        /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
+        ///
+        /// <p>The list of tags to associated with the child workflow execution.</p>
         pub fn tag_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
             v.push(input.into());
             self.tag_list = Some(v);
             self
         }
+        /// <p>The list of tags to associated with the child workflow execution.</p>
         pub fn set_tag_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8435,6 +9166,7 @@ pub mod start_child_workflow_execution_initiated_event_attributes {
             self.lambda_role = Some(input.into());
             self
         }
+        /// <p>The IAM role to attach to the child workflow execution.</p>
         pub fn set_lambda_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lambda_role = input;
             self
@@ -8513,6 +9245,7 @@ pub mod timer_canceled_event_attributes {
             self.timer_id = Some(input.into());
             self
         }
+        /// <p>The unique ID of the timer that was canceled.</p>
         pub fn set_timer_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.timer_id = input;
             self
@@ -8524,6 +9257,9 @@ pub mod timer_canceled_event_attributes {
             self.started_event_id = Some(input);
             self
         }
+        /// <p>The ID of the <code>TimerStarted</code> event that was recorded when this timer was started.
+        /// This information can be useful for diagnosing problems by tracing back the chain of
+        /// events leading up to this event.</p>
         pub fn set_started_event_id(mut self, input: std::option::Option<i64>) -> Self {
             self.started_event_id = input;
             self
@@ -8535,6 +9271,9 @@ pub mod timer_canceled_event_attributes {
             self.decision_task_completed_event_id = Some(input);
             self
         }
+        /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the
+        /// <code>CancelTimer</code> decision to cancel this timer. This information can be useful for diagnosing problems by tracing back the chain of
+        /// events leading up to this event.</p>
         pub fn set_decision_task_completed_event_id(
             mut self,
             input: std::option::Option<i64>,
@@ -8595,6 +9334,7 @@ pub mod timer_fired_event_attributes {
             self.timer_id = Some(input.into());
             self
         }
+        /// <p>The unique ID of the timer that fired.</p>
         pub fn set_timer_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.timer_id = input;
             self
@@ -8606,6 +9346,9 @@ pub mod timer_fired_event_attributes {
             self.started_event_id = Some(input);
             self
         }
+        /// <p>The ID of the <code>TimerStarted</code> event that was recorded when this timer was started.
+        /// This information can be useful for diagnosing problems by tracing back the chain of
+        /// events leading up to this event.</p>
         pub fn set_started_event_id(mut self, input: std::option::Option<i64>) -> Self {
             self.started_event_id = input;
             self
@@ -8672,6 +9415,7 @@ pub mod timer_started_event_attributes {
             self.timer_id = Some(input.into());
             self
         }
+        /// <p>The unique ID of the timer that was started.</p>
         pub fn set_timer_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.timer_id = input;
             self
@@ -8681,6 +9425,7 @@ pub mod timer_started_event_attributes {
             self.control = Some(input.into());
             self
         }
+        /// <p>Data attached to the event that can be used by the decider in subsequent workflow tasks.</p>
         pub fn set_control(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.control = input;
             self
@@ -8691,6 +9436,8 @@ pub mod timer_started_event_attributes {
             self.start_to_fire_timeout = Some(input.into());
             self
         }
+        /// <p>The duration of time after which the timer fires.</p>
+        /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>.</p>
         pub fn set_start_to_fire_timeout(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8705,6 +9452,9 @@ pub mod timer_started_event_attributes {
             self.decision_task_completed_event_id = Some(input);
             self
         }
+        /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the
+        /// <code>StartTimer</code> decision for this activity task. This information can be useful for diagnosing problems by tracing back the chain of
+        /// events leading up to this event.</p>
         pub fn set_decision_task_completed_event_id(
             mut self,
             input: std::option::Option<i64>,
@@ -8778,6 +9528,7 @@ pub mod record_marker_failed_event_attributes {
             self.marker_name = Some(input.into());
             self
         }
+        /// <p>The marker's name.</p>
         pub fn set_marker_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker_name = input;
             self
@@ -8792,6 +9543,12 @@ pub mod record_marker_failed_event_attributes {
             self.cause = Some(input);
             self
         }
+        /// <p>The cause of the failure. This information is generated by the system and can be useful for diagnostic purposes.</p>
+        /// <note>
+        /// <p>If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed
+        /// because it lacked sufficient permissions. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a>
+        /// in the <i>Amazon SWF Developer Guide</i>.</p>
+        /// </note>
         pub fn set_cause(
             mut self,
             input: std::option::Option<crate::model::RecordMarkerFailedCause>,
@@ -8806,6 +9563,9 @@ pub mod record_marker_failed_event_attributes {
             self.decision_task_completed_event_id = Some(input);
             self
         }
+        /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the
+        /// <code>RecordMarkerFailed</code> decision for this cancellation request. This information can be useful for diagnosing problems by tracing back the chain of
+        /// events leading up to this event.</p>
         pub fn set_decision_task_completed_event_id(
             mut self,
             input: std::option::Option<i64>,
@@ -8832,6 +9592,7 @@ impl RecordMarkerFailedEventAttributes {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -8843,6 +9604,7 @@ impl RecordMarkerFailedEventAttributes {
     std::hash::Hash,
 )]
 pub enum RecordMarkerFailedCause {
+    #[allow(missing_docs)] // documentation missing in model
     OperationNotPermitted,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -8863,12 +9625,14 @@ impl std::str::FromStr for RecordMarkerFailedCause {
     }
 }
 impl RecordMarkerFailedCause {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RecordMarkerFailedCause::OperationNotPermitted => "OPERATION_NOT_PERMITTED",
             RecordMarkerFailedCause::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["OPERATION_NOT_PERMITTED"]
     }
@@ -8920,6 +9684,7 @@ pub mod marker_recorded_event_attributes {
             self.marker_name = Some(input.into());
             self
         }
+        /// <p>The name of the marker.</p>
         pub fn set_marker_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker_name = input;
             self
@@ -8929,6 +9694,7 @@ pub mod marker_recorded_event_attributes {
             self.details = Some(input.into());
             self
         }
+        /// <p>The details of the marker.</p>
         pub fn set_details(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.details = input;
             self
@@ -8940,6 +9706,9 @@ pub mod marker_recorded_event_attributes {
             self.decision_task_completed_event_id = Some(input);
             self
         }
+        /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the
+        /// <code>RecordMarker</code> decision that requested this marker. This information can be useful for diagnosing problems by tracing back the chain of
+        /// events leading up to this event.</p>
         pub fn set_decision_task_completed_event_id(
             mut self,
             input: std::option::Option<i64>,
@@ -9017,6 +9786,7 @@ pub mod workflow_execution_signaled_event_attributes {
             self.signal_name = Some(input.into());
             self
         }
+        /// <p>The name of the signal received. The decider can use the signal name and inputs to determine how to the process the signal.</p>
         pub fn set_signal_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.signal_name = input;
             self
@@ -9026,6 +9796,7 @@ pub mod workflow_execution_signaled_event_attributes {
             self.input = Some(input.into());
             self
         }
+        /// <p>The inputs provided with the signal. The decider can use the signal name and inputs to determine how to process the signal.</p>
         pub fn set_input(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.input = input;
             self
@@ -9038,6 +9809,7 @@ pub mod workflow_execution_signaled_event_attributes {
             self.external_workflow_execution = Some(input);
             self
         }
+        /// <p>The workflow execution that sent the signal. This is set only of the signal was sent by another workflow execution.</p>
         pub fn set_external_workflow_execution(
             mut self,
             input: std::option::Option<crate::model::WorkflowExecution>,
@@ -9054,6 +9826,11 @@ pub mod workflow_execution_signaled_event_attributes {
             self.external_initiated_event_id = Some(input);
             self
         }
+        /// <p>The ID of the <code>SignalExternalWorkflowExecutionInitiated</code> event corresponding to the
+        /// <code>SignalExternalWorkflow</code> decision to signal this workflow execution.The source event with this ID can
+        /// be found in the history of the source workflow execution. This information can be useful for diagnosing problems by tracing back the chain of
+        /// events leading up to this event. This field is set only if
+        /// the signal was initiated by another workflow execution.</p>
         pub fn set_external_initiated_event_id(mut self, input: std::option::Option<i64>) -> Self {
             self.external_initiated_event_id = input;
             self
@@ -9113,6 +9890,8 @@ pub mod activity_task_cancel_requested_event_attributes {
             self.decision_task_completed_event_id = Some(input);
             self
         }
+        /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the
+        /// <code>RequestCancelActivityTask</code> decision for this cancellation request. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
         pub fn set_decision_task_completed_event_id(
             mut self,
             input: std::option::Option<i64>,
@@ -9125,6 +9904,7 @@ pub mod activity_task_cancel_requested_event_attributes {
             self.activity_id = Some(input.into());
             self
         }
+        /// <p>The unique ID of the task.</p>
         pub fn set_activity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.activity_id = input;
             self
@@ -9192,6 +9972,7 @@ pub mod activity_task_canceled_event_attributes {
             self.details = Some(input.into());
             self
         }
+        /// <p>Details of the cancellation.</p>
         pub fn set_details(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.details = input;
             self
@@ -9201,6 +9982,7 @@ pub mod activity_task_canceled_event_attributes {
             self.scheduled_event_id = Some(input);
             self
         }
+        /// <p>The ID of the <code>ActivityTaskScheduled</code> event that was recorded when this activity task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
         pub fn set_scheduled_event_id(mut self, input: std::option::Option<i64>) -> Self {
             self.scheduled_event_id = input;
             self
@@ -9212,6 +9994,9 @@ pub mod activity_task_canceled_event_attributes {
             self.started_event_id = Some(input);
             self
         }
+        /// <p>The ID of the <code>ActivityTaskStarted</code> event recorded when this activity task was started. This
+        /// information can be useful for diagnosing problems by tracing back the chain of events leading up to this
+        /// event.</p>
         pub fn set_started_event_id(mut self, input: std::option::Option<i64>) -> Self {
             self.started_event_id = input;
             self
@@ -9221,6 +10006,7 @@ pub mod activity_task_canceled_event_attributes {
             self.latest_cancel_requested_event_id = Some(input);
             self
         }
+        /// <p>If set, contains the ID of the last <code>ActivityTaskCancelRequested</code> event recorded for this activity task. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
         pub fn set_latest_cancel_requested_event_id(
             mut self,
             input: std::option::Option<i64>,
@@ -9291,6 +10077,7 @@ pub mod activity_task_timed_out_event_attributes {
             self.timeout_type = Some(input);
             self
         }
+        /// <p>The type of the timeout that caused this event.</p>
         pub fn set_timeout_type(
             mut self,
             input: std::option::Option<crate::model::ActivityTaskTimeoutType>,
@@ -9303,6 +10090,7 @@ pub mod activity_task_timed_out_event_attributes {
             self.scheduled_event_id = Some(input);
             self
         }
+        /// <p>The ID of the <code>ActivityTaskScheduled</code> event that was recorded when this activity task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
         pub fn set_scheduled_event_id(mut self, input: std::option::Option<i64>) -> Self {
             self.scheduled_event_id = input;
             self
@@ -9314,6 +10102,9 @@ pub mod activity_task_timed_out_event_attributes {
             self.started_event_id = Some(input);
             self
         }
+        /// <p>The ID of the <code>ActivityTaskStarted</code> event recorded when this activity task was started. This
+        /// information can be useful for diagnosing problems by tracing back the chain of events leading up to this
+        /// event.</p>
         pub fn set_started_event_id(mut self, input: std::option::Option<i64>) -> Self {
             self.started_event_id = input;
             self
@@ -9324,6 +10115,8 @@ pub mod activity_task_timed_out_event_attributes {
             self.details = Some(input.into());
             self
         }
+        /// <p>Contains the content of the <code>details</code> parameter for the last call made by the activity to
+        /// <code>RecordActivityTaskHeartbeat</code>.</p>
         pub fn set_details(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.details = input;
             self
@@ -9346,6 +10139,7 @@ impl ActivityTaskTimedOutEventAttributes {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -9357,9 +10151,13 @@ impl ActivityTaskTimedOutEventAttributes {
     std::hash::Hash,
 )]
 pub enum ActivityTaskTimeoutType {
+    #[allow(missing_docs)] // documentation missing in model
     Heartbeat,
+    #[allow(missing_docs)] // documentation missing in model
     ScheduleToClose,
+    #[allow(missing_docs)] // documentation missing in model
     ScheduleToStart,
+    #[allow(missing_docs)] // documentation missing in model
     StartToClose,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -9383,6 +10181,7 @@ impl std::str::FromStr for ActivityTaskTimeoutType {
     }
 }
 impl ActivityTaskTimeoutType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ActivityTaskTimeoutType::Heartbeat => "HEARTBEAT",
@@ -9392,6 +10191,7 @@ impl ActivityTaskTimeoutType {
             ActivityTaskTimeoutType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "HEARTBEAT",
@@ -9449,6 +10249,7 @@ pub mod activity_task_failed_event_attributes {
             self.reason = Some(input.into());
             self
         }
+        /// <p>The reason provided for the failure.</p>
         pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.reason = input;
             self
@@ -9458,6 +10259,7 @@ pub mod activity_task_failed_event_attributes {
             self.details = Some(input.into());
             self
         }
+        /// <p>The details of the failure.</p>
         pub fn set_details(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.details = input;
             self
@@ -9467,6 +10269,7 @@ pub mod activity_task_failed_event_attributes {
             self.scheduled_event_id = Some(input);
             self
         }
+        /// <p>The ID of the <code>ActivityTaskScheduled</code> event that was recorded when this activity task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
         pub fn set_scheduled_event_id(mut self, input: std::option::Option<i64>) -> Self {
             self.scheduled_event_id = input;
             self
@@ -9478,6 +10281,9 @@ pub mod activity_task_failed_event_attributes {
             self.started_event_id = Some(input);
             self
         }
+        /// <p>The ID of the <code>ActivityTaskStarted</code> event recorded when this activity task was started. This
+        /// information can be useful for diagnosing problems by tracing back the chain of events leading up to this
+        /// event.</p>
         pub fn set_started_event_id(mut self, input: std::option::Option<i64>) -> Self {
             self.started_event_id = input;
             self
@@ -9538,6 +10344,7 @@ pub mod activity_task_completed_event_attributes {
             self.result = Some(input.into());
             self
         }
+        /// <p>The results of the activity task.</p>
         pub fn set_result(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.result = input;
             self
@@ -9547,6 +10354,7 @@ pub mod activity_task_completed_event_attributes {
             self.scheduled_event_id = Some(input);
             self
         }
+        /// <p>The ID of the <code>ActivityTaskScheduled</code> event that was recorded when this activity task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
         pub fn set_scheduled_event_id(mut self, input: std::option::Option<i64>) -> Self {
             self.scheduled_event_id = input;
             self
@@ -9558,6 +10366,9 @@ pub mod activity_task_completed_event_attributes {
             self.started_event_id = Some(input);
             self
         }
+        /// <p>The ID of the <code>ActivityTaskStarted</code> event recorded when this activity task was started. This
+        /// information can be useful for diagnosing problems by tracing back the chain of events leading up to this
+        /// event.</p>
         pub fn set_started_event_id(mut self, input: std::option::Option<i64>) -> Self {
             self.started_event_id = input;
             self
@@ -9611,6 +10422,7 @@ pub mod activity_task_started_event_attributes {
             self.identity = Some(input.into());
             self
         }
+        /// <p>Identity of the worker that was assigned this task. This aids diagnostics when problems arise. The form of this identity is user defined.</p>
         pub fn set_identity(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identity = input;
             self
@@ -9620,6 +10432,7 @@ pub mod activity_task_started_event_attributes {
             self.scheduled_event_id = Some(input);
             self
         }
+        /// <p>The ID of the <code>ActivityTaskScheduled</code> event that was recorded when this activity task was scheduled. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
         pub fn set_scheduled_event_id(mut self, input: std::option::Option<i64>) -> Self {
             self.scheduled_event_id = input;
             self
@@ -9718,6 +10531,7 @@ pub mod activity_task_scheduled_event_attributes {
             self.activity_type = Some(input);
             self
         }
+        /// <p>The type of the activity task.</p>
         pub fn set_activity_type(
             mut self,
             input: std::option::Option<crate::model::ActivityType>,
@@ -9730,6 +10544,7 @@ pub mod activity_task_scheduled_event_attributes {
             self.activity_id = Some(input.into());
             self
         }
+        /// <p>The unique ID of the activity task.</p>
         pub fn set_activity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.activity_id = input;
             self
@@ -9739,6 +10554,7 @@ pub mod activity_task_scheduled_event_attributes {
             self.input = Some(input.into());
             self
         }
+        /// <p>The input provided to the activity task.</p>
         pub fn set_input(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.input = input;
             self
@@ -9748,6 +10564,7 @@ pub mod activity_task_scheduled_event_attributes {
             self.control = Some(input.into());
             self
         }
+        /// <p>Data attached to the event that can be used by the decider in subsequent workflow tasks. This data isn't sent to the activity.</p>
         pub fn set_control(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.control = input;
             self
@@ -9757,6 +10574,7 @@ pub mod activity_task_scheduled_event_attributes {
             self.schedule_to_start_timeout = Some(input.into());
             self
         }
+        /// <p>The maximum amount of time the activity task can wait to be assigned to a worker.</p>
         pub fn set_schedule_to_start_timeout(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9769,6 +10587,7 @@ pub mod activity_task_scheduled_event_attributes {
             self.schedule_to_close_timeout = Some(input.into());
             self
         }
+        /// <p>The maximum amount of time for this activity task.</p>
         pub fn set_schedule_to_close_timeout(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9781,6 +10600,7 @@ pub mod activity_task_scheduled_event_attributes {
             self.start_to_close_timeout = Some(input.into());
             self
         }
+        /// <p>The maximum amount of time a worker may take to process the activity task.</p>
         pub fn set_start_to_close_timeout(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9793,6 +10613,7 @@ pub mod activity_task_scheduled_event_attributes {
             self.task_list = Some(input);
             self
         }
+        /// <p>The task list in which the activity task has been scheduled.</p>
         pub fn set_task_list(mut self, input: std::option::Option<crate::model::TaskList>) -> Self {
             self.task_list = input;
             self
@@ -9807,6 +10628,12 @@ pub mod activity_task_scheduled_event_attributes {
             self.task_priority = Some(input.into());
             self
         }
+        /// <p>
+        /// The priority to assign to the scheduled activity task. If set, this overrides any default
+        /// priority value that was assigned when the activity type was registered.</p>
+        /// <p>Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code>
+        /// (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
+        /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
         pub fn set_task_priority(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9819,6 +10646,7 @@ pub mod activity_task_scheduled_event_attributes {
             self.decision_task_completed_event_id = Some(input);
             self
         }
+        /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision that resulted in the scheduling of this activity task. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
         pub fn set_decision_task_completed_event_id(
             mut self,
             input: std::option::Option<i64>,
@@ -9833,6 +10661,9 @@ pub mod activity_task_scheduled_event_attributes {
             self.heartbeat_timeout = Some(input.into());
             self
         }
+        /// <p>The maximum time before which the worker processing this task must report progress by calling
+        /// <a>RecordActivityTaskHeartbeat</a>. If the timeout is exceeded, the activity task is automatically timed out. If
+        /// the worker subsequently attempts to record a heartbeat or return a result, it is ignored.</p>
         pub fn set_heartbeat_timeout(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9907,6 +10738,7 @@ pub mod decision_task_timed_out_event_attributes {
             self.timeout_type = Some(input);
             self
         }
+        /// <p>The type of timeout that expired before the decision task could be completed.</p>
         pub fn set_timeout_type(
             mut self,
             input: std::option::Option<crate::model::DecisionTaskTimeoutType>,
@@ -9921,6 +10753,9 @@ pub mod decision_task_timed_out_event_attributes {
             self.scheduled_event_id = Some(input);
             self
         }
+        /// <p>The ID of the <code>DecisionTaskScheduled</code> event that was recorded when this decision task was scheduled.
+        /// This information can be useful for diagnosing problems by tracing back the chain of
+        /// events leading up to this event.</p>
         pub fn set_scheduled_event_id(mut self, input: std::option::Option<i64>) -> Self {
             self.scheduled_event_id = input;
             self
@@ -9932,6 +10767,9 @@ pub mod decision_task_timed_out_event_attributes {
             self.started_event_id = Some(input);
             self
         }
+        /// <p>The ID of the <code>DecisionTaskStarted</code> event recorded when this decision task was started. This
+        /// information can be useful for diagnosing problems by tracing back the chain of events leading up to this
+        /// event.</p>
         pub fn set_started_event_id(mut self, input: std::option::Option<i64>) -> Self {
             self.started_event_id = input;
             self
@@ -9953,6 +10791,7 @@ impl DecisionTaskTimedOutEventAttributes {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -9964,6 +10803,7 @@ impl DecisionTaskTimedOutEventAttributes {
     std::hash::Hash,
 )]
 pub enum DecisionTaskTimeoutType {
+    #[allow(missing_docs)] // documentation missing in model
     StartToClose,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -9984,12 +10824,14 @@ impl std::str::FromStr for DecisionTaskTimeoutType {
     }
 }
 impl DecisionTaskTimeoutType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DecisionTaskTimeoutType::StartToClose => "START_TO_CLOSE",
             DecisionTaskTimeoutType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["START_TO_CLOSE"]
     }
@@ -10040,6 +10882,7 @@ pub mod decision_task_completed_event_attributes {
             self.execution_context = Some(input.into());
             self
         }
+        /// <p>User defined context for the workflow execution.</p>
         pub fn set_execution_context(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10054,6 +10897,9 @@ pub mod decision_task_completed_event_attributes {
             self.scheduled_event_id = Some(input);
             self
         }
+        /// <p>The ID of the <code>DecisionTaskScheduled</code> event that was recorded when this decision task was scheduled.
+        /// This information can be useful for diagnosing problems by tracing back the chain of
+        /// events leading up to this event.</p>
         pub fn set_scheduled_event_id(mut self, input: std::option::Option<i64>) -> Self {
             self.scheduled_event_id = input;
             self
@@ -10065,6 +10911,9 @@ pub mod decision_task_completed_event_attributes {
             self.started_event_id = Some(input);
             self
         }
+        /// <p>The ID of the <code>DecisionTaskStarted</code> event recorded when this decision task was started.
+        /// This information can be useful for diagnosing problems by tracing back the chain of
+        /// events leading up to this event.</p>
         pub fn set_started_event_id(mut self, input: std::option::Option<i64>) -> Self {
             self.started_event_id = input;
             self
@@ -10120,6 +10969,7 @@ pub mod decision_task_started_event_attributes {
             self.identity = Some(input.into());
             self
         }
+        /// <p>Identity of the decider making the request. This enables diagnostic tracing when problems arise. The form of this identity is user defined.</p>
         pub fn set_identity(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identity = input;
             self
@@ -10131,6 +10981,9 @@ pub mod decision_task_started_event_attributes {
             self.scheduled_event_id = Some(input);
             self
         }
+        /// <p>The ID of the <code>DecisionTaskScheduled</code> event that was recorded when this decision task was scheduled.
+        /// This information can be useful for diagnosing problems by tracing back the chain of
+        /// events leading up to this event.</p>
         pub fn set_scheduled_event_id(mut self, input: std::option::Option<i64>) -> Self {
             self.scheduled_event_id = input;
             self
@@ -10192,6 +11045,7 @@ pub mod decision_task_scheduled_event_attributes {
             self.task_list = Some(input);
             self
         }
+        /// <p>The name of the task list in which the decision task was scheduled.</p>
         pub fn set_task_list(mut self, input: std::option::Option<crate::model::TaskList>) -> Self {
             self.task_list = input;
             self
@@ -10205,6 +11059,11 @@ pub mod decision_task_scheduled_event_attributes {
             self.task_priority = Some(input.into());
             self
         }
+        /// <p>
+        /// A task priority that, if set, specifies the priority for this decision task.
+        /// Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code>
+        /// (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
+        /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
         pub fn set_task_priority(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10218,6 +11077,8 @@ pub mod decision_task_scheduled_event_attributes {
             self.start_to_close_timeout = Some(input.into());
             self
         }
+        /// <p>The maximum duration for this decision task. The task is considered timed out if it doesn't completed within this duration.</p>
+        /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
         pub fn set_start_to_close_timeout(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10291,6 +11152,7 @@ pub mod workflow_execution_cancel_requested_event_attributes {
             self.external_workflow_execution = Some(input);
             self
         }
+        /// <p>The external workflow execution for which the cancellation was requested.</p>
         pub fn set_external_workflow_execution(
             mut self,
             input: std::option::Option<crate::model::WorkflowExecution>,
@@ -10306,6 +11168,10 @@ pub mod workflow_execution_cancel_requested_event_attributes {
             self.external_initiated_event_id = Some(input);
             self
         }
+        /// <p>The ID of the <code>RequestCancelExternalWorkflowExecutionInitiated</code> event corresponding to the
+        /// <code>RequestCancelExternalWorkflowExecution</code> decision to cancel this workflow execution.The source event
+        /// with this ID can be found in the history of the source workflow execution. This information can be useful for diagnosing problems by tracing back the chain of
+        /// events leading up to this event.</p>
         pub fn set_external_initiated_event_id(mut self, input: std::option::Option<i64>) -> Self {
             self.external_initiated_event_id = input;
             self
@@ -10315,6 +11181,7 @@ pub mod workflow_execution_cancel_requested_event_attributes {
             self.cause = Some(input);
             self
         }
+        /// <p>If set, indicates that the request to cancel the workflow execution was automatically generated, and specifies the cause. This happens if the parent workflow execution times out or is terminated, and the child policy is set to cancel child executions.</p>
         pub fn set_cause(
             mut self,
             input: std::option::Option<crate::model::WorkflowExecutionCancelRequestedCause>,
@@ -10340,6 +11207,7 @@ impl WorkflowExecutionCancelRequestedEventAttributes {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -10351,6 +11219,7 @@ impl WorkflowExecutionCancelRequestedEventAttributes {
     std::hash::Hash,
 )]
 pub enum WorkflowExecutionCancelRequestedCause {
+    #[allow(missing_docs)] // documentation missing in model
     ChildPolicyApplied,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -10371,12 +11240,14 @@ impl std::str::FromStr for WorkflowExecutionCancelRequestedCause {
     }
 }
 impl WorkflowExecutionCancelRequestedCause {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             WorkflowExecutionCancelRequestedCause::ChildPolicyApplied => "CHILD_POLICY_APPLIED",
             WorkflowExecutionCancelRequestedCause::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CHILD_POLICY_APPLIED"]
     }
@@ -10444,6 +11315,7 @@ pub mod workflow_execution_terminated_event_attributes {
             self.reason = Some(input.into());
             self
         }
+        /// <p>The reason provided for the termination.</p>
         pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.reason = input;
             self
@@ -10453,6 +11325,7 @@ pub mod workflow_execution_terminated_event_attributes {
             self.details = Some(input.into());
             self
         }
+        /// <p>The details provided for the termination.</p>
         pub fn set_details(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.details = input;
             self
@@ -10479,6 +11352,24 @@ pub mod workflow_execution_terminated_event_attributes {
             self.child_policy = Some(input);
             self
         }
+        /// <p>The policy used for the child workflow executions of this workflow execution.</p>
+        /// <p>The supported child policies are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>TERMINATE</code> – The child executions are terminated.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child
+        /// execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider
+        /// to take appropriate actions when it receives an execution history with this event.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ABANDON</code> – No action is taken. The child executions continue to run.</p>
+        /// </li>
+        /// </ul>
         pub fn set_child_policy(
             mut self,
             input: std::option::Option<crate::model::ChildPolicy>,
@@ -10491,6 +11382,7 @@ pub mod workflow_execution_terminated_event_attributes {
             self.cause = Some(input);
             self
         }
+        /// <p>If set, indicates that the workflow execution was automatically terminated, and specifies the cause. This happens if the parent workflow execution times out or is terminated and the child policy is set to terminate child executions.</p>
         pub fn set_cause(
             mut self,
             input: std::option::Option<crate::model::WorkflowExecutionTerminatedCause>,
@@ -10516,6 +11408,7 @@ impl WorkflowExecutionTerminatedEventAttributes {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -10527,8 +11420,11 @@ impl WorkflowExecutionTerminatedEventAttributes {
     std::hash::Hash,
 )]
 pub enum WorkflowExecutionTerminatedCause {
+    #[allow(missing_docs)] // documentation missing in model
     ChildPolicyApplied,
+    #[allow(missing_docs)] // documentation missing in model
     EventLimitExceeded,
+    #[allow(missing_docs)] // documentation missing in model
     OperatorInitiated,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -10551,6 +11447,7 @@ impl std::str::FromStr for WorkflowExecutionTerminatedCause {
     }
 }
 impl WorkflowExecutionTerminatedCause {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             WorkflowExecutionTerminatedCause::ChildPolicyApplied => "CHILD_POLICY_APPLIED",
@@ -10559,6 +11456,7 @@ impl WorkflowExecutionTerminatedCause {
             WorkflowExecutionTerminatedCause::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CHILD_POLICY_APPLIED",
@@ -10624,6 +11522,12 @@ pub mod continue_as_new_workflow_execution_failed_event_attributes {
             self.cause = Some(input);
             self
         }
+        /// <p>The cause of the failure. This information is generated by the system and can be useful for diagnostic purposes.</p>
+        /// <note>
+        /// <p>If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed
+        /// because it lacked sufficient permissions. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a>
+        /// in the <i>Amazon SWF Developer Guide</i>.</p>
+        /// </note>
         pub fn set_cause(
             mut self,
             input: std::option::Option<crate::model::ContinueAsNewWorkflowExecutionFailedCause>,
@@ -10638,6 +11542,9 @@ pub mod continue_as_new_workflow_execution_failed_event_attributes {
             self.decision_task_completed_event_id = Some(input);
             self
         }
+        /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the
+        /// <code>ContinueAsNewWorkflowExecution</code> decision that started this execution. This information can be useful for diagnosing problems by tracing back the chain of
+        /// events leading up to this event.</p>
         pub fn set_decision_task_completed_event_id(
             mut self,
             input: std::option::Option<i64>,
@@ -10664,6 +11571,7 @@ impl ContinueAsNewWorkflowExecutionFailedEventAttributes {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -10675,14 +11583,23 @@ impl ContinueAsNewWorkflowExecutionFailedEventAttributes {
     std::hash::Hash,
 )]
 pub enum ContinueAsNewWorkflowExecutionFailedCause {
+    #[allow(missing_docs)] // documentation missing in model
     ContinueAsNewWorkflowExecutionRateExceeded,
+    #[allow(missing_docs)] // documentation missing in model
     DefaultChildPolicyUndefined,
+    #[allow(missing_docs)] // documentation missing in model
     DefaultExecutionStartToCloseTimeoutUndefined,
+    #[allow(missing_docs)] // documentation missing in model
     DefaultTaskListUndefined,
+    #[allow(missing_docs)] // documentation missing in model
     DefaultTaskStartToCloseTimeoutUndefined,
+    #[allow(missing_docs)] // documentation missing in model
     OperationNotPermitted,
+    #[allow(missing_docs)] // documentation missing in model
     UnhandledDecision,
+    #[allow(missing_docs)] // documentation missing in model
     WorkflowTypeDeprecated,
+    #[allow(missing_docs)] // documentation missing in model
     WorkflowTypeDoesNotExist,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -10711,6 +11628,7 @@ impl std::str::FromStr for ContinueAsNewWorkflowExecutionFailedCause {
     }
 }
 impl ContinueAsNewWorkflowExecutionFailedCause {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ContinueAsNewWorkflowExecutionFailedCause::ContinueAsNewWorkflowExecutionRateExceeded => "CONTINUE_AS_NEW_WORKFLOW_EXECUTION_RATE_EXCEEDED",
@@ -10725,6 +11643,7 @@ impl ContinueAsNewWorkflowExecutionFailedCause {
             ContinueAsNewWorkflowExecutionFailedCause::Unknown(s) => s.as_ref()
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CONTINUE_AS_NEW_WORKFLOW_EXECUTION_RATE_EXCEEDED",
@@ -10846,6 +11765,7 @@ pub mod workflow_execution_continued_as_new_event_attributes {
             self.input = Some(input.into());
             self
         }
+        /// <p>The input provided to the new workflow execution.</p>
         pub fn set_input(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.input = input;
             self
@@ -10857,6 +11777,9 @@ pub mod workflow_execution_continued_as_new_event_attributes {
             self.decision_task_completed_event_id = Some(input);
             self
         }
+        /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the
+        /// <code>ContinueAsNewWorkflowExecution</code> decision that started this execution. This information can be useful for diagnosing problems by tracing back the chain of
+        /// events leading up to this event.</p>
         pub fn set_decision_task_completed_event_id(
             mut self,
             input: std::option::Option<i64>,
@@ -10869,6 +11792,7 @@ pub mod workflow_execution_continued_as_new_event_attributes {
             self.new_execution_run_id = Some(input.into());
             self
         }
+        /// <p>The <code>runId</code> of the new workflow execution.</p>
         pub fn set_new_execution_run_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10885,6 +11809,8 @@ pub mod workflow_execution_continued_as_new_event_attributes {
             self.execution_start_to_close_timeout = Some(input.into());
             self
         }
+        /// <p>The total duration allowed for the new workflow execution.</p>
+        /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
         pub fn set_execution_start_to_close_timeout(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10898,6 +11824,8 @@ pub mod workflow_execution_continued_as_new_event_attributes {
             self.task_list = Some(input);
             self
         }
+        /// <p>The task list to use for the decisions of the new (continued) workflow
+        /// execution.</p>
         pub fn set_task_list(mut self, input: std::option::Option<crate::model::TaskList>) -> Self {
             self.task_list = input;
             self
@@ -10908,6 +11836,8 @@ pub mod workflow_execution_continued_as_new_event_attributes {
             self.task_priority = Some(input.into());
             self
         }
+        /// <p>The priority of the task to use for the decisions of the new (continued) workflow
+        /// execution.</p>
         pub fn set_task_priority(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10924,6 +11854,8 @@ pub mod workflow_execution_continued_as_new_event_attributes {
             self.task_start_to_close_timeout = Some(input.into());
             self
         }
+        /// <p>The maximum duration of decision tasks for the new workflow execution.</p>
+        /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
         pub fn set_task_start_to_close_timeout(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10954,6 +11886,25 @@ pub mod workflow_execution_continued_as_new_event_attributes {
             self.child_policy = Some(input);
             self
         }
+        /// <p>The policy to use for the child workflow executions of the new execution if it is terminated by calling the
+        /// <a>TerminateWorkflowExecution</a> action explicitly or due to an expired timeout.</p>
+        /// <p>The supported child policies are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>TERMINATE</code> – The child executions are terminated.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child
+        /// execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider
+        /// to take appropriate actions when it receives an execution history with this event.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ABANDON</code> – No action is taken. The child executions continue to run.</p>
+        /// </li>
+        /// </ul>
         pub fn set_child_policy(
             mut self,
             input: std::option::Option<crate::model::ChildPolicy>,
@@ -10961,12 +11912,18 @@ pub mod workflow_execution_continued_as_new_event_attributes {
             self.child_policy = input;
             self
         }
+        /// Appends an item to `tag_list`.
+        ///
+        /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
+        ///
+        /// <p>The list of tags associated with the new workflow execution.</p>
         pub fn tag_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
             v.push(input.into());
             self.tag_list = Some(v);
             self
         }
+        /// <p>The list of tags associated with the new workflow execution.</p>
         pub fn set_tag_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -10979,6 +11936,7 @@ pub mod workflow_execution_continued_as_new_event_attributes {
             self.workflow_type = Some(input);
             self
         }
+        /// <p>The workflow type of this execution.</p>
         pub fn set_workflow_type(
             mut self,
             input: std::option::Option<crate::model::WorkflowType>,
@@ -10991,6 +11949,7 @@ pub mod workflow_execution_continued_as_new_event_attributes {
             self.lambda_role = Some(input.into());
             self
         }
+        /// <p>The IAM role to attach to the new (continued) workflow execution.</p>
         pub fn set_lambda_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lambda_role = input;
             self
@@ -11068,6 +12027,12 @@ pub mod cancel_workflow_execution_failed_event_attributes {
             self.cause = Some(input);
             self
         }
+        /// <p>The cause of the failure. This information is generated by the system and can be useful for diagnostic purposes.</p>
+        /// <note>
+        /// <p>If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed
+        /// because it lacked sufficient permissions. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a>
+        /// in the <i>Amazon SWF Developer Guide</i>.</p>
+        /// </note>
         pub fn set_cause(
             mut self,
             input: std::option::Option<crate::model::CancelWorkflowExecutionFailedCause>,
@@ -11080,6 +12045,7 @@ pub mod cancel_workflow_execution_failed_event_attributes {
             self.decision_task_completed_event_id = Some(input);
             self
         }
+        /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>CancelWorkflowExecution</code> decision for this cancellation request. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
         pub fn set_decision_task_completed_event_id(
             mut self,
             input: std::option::Option<i64>,
@@ -11105,6 +12071,7 @@ impl CancelWorkflowExecutionFailedEventAttributes {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -11116,7 +12083,9 @@ impl CancelWorkflowExecutionFailedEventAttributes {
     std::hash::Hash,
 )]
 pub enum CancelWorkflowExecutionFailedCause {
+    #[allow(missing_docs)] // documentation missing in model
     OperationNotPermitted,
+    #[allow(missing_docs)] // documentation missing in model
     UnhandledDecision,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -11138,6 +12107,7 @@ impl std::str::FromStr for CancelWorkflowExecutionFailedCause {
     }
 }
 impl CancelWorkflowExecutionFailedCause {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CancelWorkflowExecutionFailedCause::OperationNotPermitted => "OPERATION_NOT_PERMITTED",
@@ -11145,6 +12115,7 @@ impl CancelWorkflowExecutionFailedCause {
             CancelWorkflowExecutionFailedCause::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["OPERATION_NOT_PERMITTED", "UNHANDLED_DECISION"]
     }
@@ -11192,6 +12163,7 @@ pub mod workflow_execution_canceled_event_attributes {
             self.details = Some(input.into());
             self
         }
+        /// <p>The details of the cancellation.</p>
         pub fn set_details(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.details = input;
             self
@@ -11203,6 +12175,9 @@ pub mod workflow_execution_canceled_event_attributes {
             self.decision_task_completed_event_id = Some(input);
             self
         }
+        /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the
+        /// <code>CancelWorkflowExecution</code> decision for this cancellation request. This information can be useful for diagnosing problems by tracing back the chain of
+        /// events leading up to this event.</p>
         pub fn set_decision_task_completed_event_id(
             mut self,
             input: std::option::Option<i64>,
@@ -11277,6 +12252,7 @@ pub mod workflow_execution_timed_out_event_attributes {
             self.timeout_type = Some(input);
             self
         }
+        /// <p>The type of timeout that caused this event.</p>
         pub fn set_timeout_type(
             mut self,
             input: std::option::Option<crate::model::WorkflowExecutionTimeoutType>,
@@ -11306,6 +12282,24 @@ pub mod workflow_execution_timed_out_event_attributes {
             self.child_policy = Some(input);
             self
         }
+        /// <p>The policy used for the child workflow executions of this workflow execution.</p>
+        /// <p>The supported child policies are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>TERMINATE</code> – The child executions are terminated.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child
+        /// execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider
+        /// to take appropriate actions when it receives an execution history with this event.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ABANDON</code> – No action is taken. The child executions continue to run.</p>
+        /// </li>
+        /// </ul>
         pub fn set_child_policy(
             mut self,
             input: std::option::Option<crate::model::ChildPolicy>,
@@ -11376,6 +12370,12 @@ pub mod fail_workflow_execution_failed_event_attributes {
             self.cause = Some(input);
             self
         }
+        /// <p>The cause of the failure. This information is generated by the system and can be useful for diagnostic purposes.</p>
+        /// <note>
+        /// <p>If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed
+        /// because it lacked sufficient permissions. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a>
+        /// in the <i>Amazon SWF Developer Guide</i>.</p>
+        /// </note>
         pub fn set_cause(
             mut self,
             input: std::option::Option<crate::model::FailWorkflowExecutionFailedCause>,
@@ -11390,6 +12390,9 @@ pub mod fail_workflow_execution_failed_event_attributes {
             self.decision_task_completed_event_id = Some(input);
             self
         }
+        /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the
+        /// <code>FailWorkflowExecution</code> decision to fail this execution. This information can be useful for diagnosing problems by tracing back the chain of
+        /// events leading up to this event.</p>
         pub fn set_decision_task_completed_event_id(
             mut self,
             input: std::option::Option<i64>,
@@ -11415,6 +12418,7 @@ impl FailWorkflowExecutionFailedEventAttributes {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -11426,7 +12430,9 @@ impl FailWorkflowExecutionFailedEventAttributes {
     std::hash::Hash,
 )]
 pub enum FailWorkflowExecutionFailedCause {
+    #[allow(missing_docs)] // documentation missing in model
     OperationNotPermitted,
+    #[allow(missing_docs)] // documentation missing in model
     UnhandledDecision,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -11448,6 +12454,7 @@ impl std::str::FromStr for FailWorkflowExecutionFailedCause {
     }
 }
 impl FailWorkflowExecutionFailedCause {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FailWorkflowExecutionFailedCause::OperationNotPermitted => "OPERATION_NOT_PERMITTED",
@@ -11455,6 +12462,7 @@ impl FailWorkflowExecutionFailedCause {
             FailWorkflowExecutionFailedCause::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["OPERATION_NOT_PERMITTED", "UNHANDLED_DECISION"]
     }
@@ -11506,6 +12514,7 @@ pub mod workflow_execution_failed_event_attributes {
             self.reason = Some(input.into());
             self
         }
+        /// <p>The descriptive reason provided for the failure.</p>
         pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.reason = input;
             self
@@ -11515,6 +12524,7 @@ pub mod workflow_execution_failed_event_attributes {
             self.details = Some(input.into());
             self
         }
+        /// <p>The details of the failure.</p>
         pub fn set_details(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.details = input;
             self
@@ -11526,6 +12536,9 @@ pub mod workflow_execution_failed_event_attributes {
             self.decision_task_completed_event_id = Some(input);
             self
         }
+        /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the
+        /// <code>FailWorkflowExecution</code> decision to fail this execution. This information can be useful for diagnosing problems by tracing back the chain of
+        /// events leading up to this event.</p>
         pub fn set_decision_task_completed_event_id(
             mut self,
             input: std::option::Option<i64>,
@@ -11599,6 +12612,12 @@ pub mod complete_workflow_execution_failed_event_attributes {
             self.cause = Some(input);
             self
         }
+        /// <p>The cause of the failure. This information is generated by the system and can be useful for diagnostic purposes.</p>
+        /// <note>
+        /// <p>If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision failed
+        /// because it lacked sufficient permissions. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF Workflows</a>
+        /// in the <i>Amazon SWF Developer Guide</i>.</p>
+        /// </note>
         pub fn set_cause(
             mut self,
             input: std::option::Option<crate::model::CompleteWorkflowExecutionFailedCause>,
@@ -11613,6 +12632,9 @@ pub mod complete_workflow_execution_failed_event_attributes {
             self.decision_task_completed_event_id = Some(input);
             self
         }
+        /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the
+        /// <code>CompleteWorkflowExecution</code> decision to complete this execution. This information can be useful for diagnosing problems by tracing back the chain of
+        /// events leading up to this event.</p>
         pub fn set_decision_task_completed_event_id(
             mut self,
             input: std::option::Option<i64>,
@@ -11638,6 +12660,7 @@ impl CompleteWorkflowExecutionFailedEventAttributes {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -11649,7 +12672,9 @@ impl CompleteWorkflowExecutionFailedEventAttributes {
     std::hash::Hash,
 )]
 pub enum CompleteWorkflowExecutionFailedCause {
+    #[allow(missing_docs)] // documentation missing in model
     OperationNotPermitted,
+    #[allow(missing_docs)] // documentation missing in model
     UnhandledDecision,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -11673,6 +12698,7 @@ impl std::str::FromStr for CompleteWorkflowExecutionFailedCause {
     }
 }
 impl CompleteWorkflowExecutionFailedCause {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CompleteWorkflowExecutionFailedCause::OperationNotPermitted => {
@@ -11682,6 +12708,7 @@ impl CompleteWorkflowExecutionFailedCause {
             CompleteWorkflowExecutionFailedCause::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["OPERATION_NOT_PERMITTED", "UNHANDLED_DECISION"]
     }
@@ -11729,6 +12756,7 @@ pub mod workflow_execution_completed_event_attributes {
             self.result = Some(input.into());
             self
         }
+        /// <p>The result produced by the workflow execution upon successful completion.</p>
         pub fn set_result(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.result = input;
             self
@@ -11740,6 +12768,9 @@ pub mod workflow_execution_completed_event_attributes {
             self.decision_task_completed_event_id = Some(input);
             self
         }
+        /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the
+        /// <code>CompleteWorkflowExecution</code> decision to complete this execution. This information can be useful for diagnosing problems by tracing back the chain of
+        /// events leading up to this event.</p>
         pub fn set_decision_task_completed_event_id(
             mut self,
             input: std::option::Option<i64>,
@@ -11872,6 +12903,7 @@ pub mod workflow_execution_started_event_attributes {
             self.input = Some(input.into());
             self
         }
+        /// <p>The input provided to the workflow execution.</p>
         pub fn set_input(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.input = input;
             self
@@ -11885,6 +12917,8 @@ pub mod workflow_execution_started_event_attributes {
             self.execution_start_to_close_timeout = Some(input.into());
             self
         }
+        /// <p>The maximum duration for this workflow execution.</p>
+        /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
         pub fn set_execution_start_to_close_timeout(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11901,6 +12935,8 @@ pub mod workflow_execution_started_event_attributes {
             self.task_start_to_close_timeout = Some(input.into());
             self
         }
+        /// <p>The maximum duration of decision tasks for this workflow type.</p>
+        /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
         pub fn set_task_start_to_close_timeout(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11931,6 +12967,25 @@ pub mod workflow_execution_started_event_attributes {
             self.child_policy = Some(input);
             self
         }
+        /// <p>The policy to use for the child workflow executions if this workflow execution is terminated, by calling the
+        /// <a>TerminateWorkflowExecution</a> action explicitly or due to an expired timeout.</p>
+        /// <p>The supported child policies are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>TERMINATE</code> – The child executions are terminated.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child
+        /// execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider
+        /// to take appropriate actions when it receives an execution history with this event.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ABANDON</code> – No action is taken. The child executions continue to run.</p>
+        /// </li>
+        /// </ul>
         pub fn set_child_policy(
             mut self,
             input: std::option::Option<crate::model::ChildPolicy>,
@@ -11943,6 +12998,7 @@ pub mod workflow_execution_started_event_attributes {
             self.task_list = Some(input);
             self
         }
+        /// <p>The name of the task list for scheduling the decision tasks for this workflow execution.</p>
         pub fn set_task_list(mut self, input: std::option::Option<crate::model::TaskList>) -> Self {
             self.task_list = input;
             self
@@ -11952,6 +13008,7 @@ pub mod workflow_execution_started_event_attributes {
             self.task_priority = Some(input.into());
             self
         }
+        /// <p>The priority of the decision tasks in the workflow execution.</p>
         pub fn set_task_priority(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11964,6 +13021,7 @@ pub mod workflow_execution_started_event_attributes {
             self.workflow_type = Some(input);
             self
         }
+        /// <p>The workflow type of this execution.</p>
         pub fn set_workflow_type(
             mut self,
             input: std::option::Option<crate::model::WorkflowType>,
@@ -11971,12 +13029,18 @@ pub mod workflow_execution_started_event_attributes {
             self.workflow_type = input;
             self
         }
+        /// Appends an item to `tag_list`.
+        ///
+        /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
+        ///
+        /// <p>The list of tags associated with this workflow execution. An execution can have up to 5 tags.</p>
         pub fn tag_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
             v.push(input.into());
             self.tag_list = Some(v);
             self
         }
+        /// <p>The list of tags associated with this workflow execution. An execution can have up to 5 tags.</p>
         pub fn set_tag_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -11991,6 +13055,9 @@ pub mod workflow_execution_started_event_attributes {
             self.continued_execution_run_id = Some(input.into());
             self
         }
+        /// <p>If this workflow execution was started due to a <code>ContinueAsNewWorkflowExecution</code> decision, then it
+        /// contains the <code>runId</code> of the previous workflow execution that was closed and continued as this
+        /// execution.</p>
         pub fn set_continued_execution_run_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12003,6 +13070,7 @@ pub mod workflow_execution_started_event_attributes {
             self.parent_workflow_execution = Some(input);
             self
         }
+        /// <p>The source workflow execution that started this workflow execution. The member isn't set if the workflow execution was not started by a workflow.</p>
         pub fn set_parent_workflow_execution(
             mut self,
             input: std::option::Option<crate::model::WorkflowExecution>,
@@ -12019,6 +13087,11 @@ pub mod workflow_execution_started_event_attributes {
             self.parent_initiated_event_id = Some(input);
             self
         }
+        /// <p>The ID of the <code>StartChildWorkflowExecutionInitiated</code> event corresponding to the
+        /// <code>StartChildWorkflowExecution</code>
+        /// <a>Decision</a> to start this workflow execution. The source event with
+        /// this ID can be found in the history of the source workflow execution. This information can be useful for diagnosing problems by tracing back the chain of
+        /// events leading up to this event.</p>
         pub fn set_parent_initiated_event_id(mut self, input: std::option::Option<i64>) -> Self {
             self.parent_initiated_event_id = input;
             self
@@ -12028,6 +13101,7 @@ pub mod workflow_execution_started_event_attributes {
             self.lambda_role = Some(input.into());
             self
         }
+        /// <p>The IAM role attached to the workflow execution.</p>
         pub fn set_lambda_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lambda_role = input;
             self
@@ -12058,6 +13132,7 @@ impl WorkflowExecutionStartedEventAttributes {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -12069,59 +13144,113 @@ impl WorkflowExecutionStartedEventAttributes {
     std::hash::Hash,
 )]
 pub enum EventType {
+    #[allow(missing_docs)] // documentation missing in model
     ActivityTaskCancelRequested,
+    #[allow(missing_docs)] // documentation missing in model
     ActivityTaskCanceled,
+    #[allow(missing_docs)] // documentation missing in model
     ActivityTaskCompleted,
+    #[allow(missing_docs)] // documentation missing in model
     ActivityTaskFailed,
+    #[allow(missing_docs)] // documentation missing in model
     ActivityTaskScheduled,
+    #[allow(missing_docs)] // documentation missing in model
     ActivityTaskStarted,
+    #[allow(missing_docs)] // documentation missing in model
     ActivityTaskTimedOut,
+    #[allow(missing_docs)] // documentation missing in model
     CancelTimerFailed,
+    #[allow(missing_docs)] // documentation missing in model
     CancelWorkflowExecutionFailed,
+    #[allow(missing_docs)] // documentation missing in model
     ChildWorkflowExecutionCanceled,
+    #[allow(missing_docs)] // documentation missing in model
     ChildWorkflowExecutionCompleted,
+    #[allow(missing_docs)] // documentation missing in model
     ChildWorkflowExecutionFailed,
+    #[allow(missing_docs)] // documentation missing in model
     ChildWorkflowExecutionStarted,
+    #[allow(missing_docs)] // documentation missing in model
     ChildWorkflowExecutionTerminated,
+    #[allow(missing_docs)] // documentation missing in model
     ChildWorkflowExecutionTimedOut,
+    #[allow(missing_docs)] // documentation missing in model
     CompleteWorkflowExecutionFailed,
+    #[allow(missing_docs)] // documentation missing in model
     ContinueAsNewWorkflowExecutionFailed,
+    #[allow(missing_docs)] // documentation missing in model
     DecisionTaskCompleted,
+    #[allow(missing_docs)] // documentation missing in model
     DecisionTaskScheduled,
+    #[allow(missing_docs)] // documentation missing in model
     DecisionTaskStarted,
+    #[allow(missing_docs)] // documentation missing in model
     DecisionTaskTimedOut,
+    #[allow(missing_docs)] // documentation missing in model
     ExternalWorkflowExecutionCancelRequested,
+    #[allow(missing_docs)] // documentation missing in model
     ExternalWorkflowExecutionSignaled,
+    #[allow(missing_docs)] // documentation missing in model
     FailWorkflowExecutionFailed,
+    #[allow(missing_docs)] // documentation missing in model
     LambdaFunctionCompleted,
+    #[allow(missing_docs)] // documentation missing in model
     LambdaFunctionFailed,
+    #[allow(missing_docs)] // documentation missing in model
     LambdaFunctionScheduled,
+    #[allow(missing_docs)] // documentation missing in model
     LambdaFunctionStarted,
+    #[allow(missing_docs)] // documentation missing in model
     LambdaFunctionTimedOut,
+    #[allow(missing_docs)] // documentation missing in model
     MarkerRecorded,
+    #[allow(missing_docs)] // documentation missing in model
     RecordMarkerFailed,
+    #[allow(missing_docs)] // documentation missing in model
     RequestCancelActivityTaskFailed,
+    #[allow(missing_docs)] // documentation missing in model
     RequestCancelExternalWorkflowExecutionFailed,
+    #[allow(missing_docs)] // documentation missing in model
     RequestCancelExternalWorkflowExecutionInitiated,
+    #[allow(missing_docs)] // documentation missing in model
     ScheduleActivityTaskFailed,
+    #[allow(missing_docs)] // documentation missing in model
     ScheduleLambdaFunctionFailed,
+    #[allow(missing_docs)] // documentation missing in model
     SignalExternalWorkflowExecutionFailed,
+    #[allow(missing_docs)] // documentation missing in model
     SignalExternalWorkflowExecutionInitiated,
+    #[allow(missing_docs)] // documentation missing in model
     StartChildWorkflowExecutionFailed,
+    #[allow(missing_docs)] // documentation missing in model
     StartChildWorkflowExecutionInitiated,
+    #[allow(missing_docs)] // documentation missing in model
     StartLambdaFunctionFailed,
+    #[allow(missing_docs)] // documentation missing in model
     StartTimerFailed,
+    #[allow(missing_docs)] // documentation missing in model
     TimerCanceled,
+    #[allow(missing_docs)] // documentation missing in model
     TimerFired,
+    #[allow(missing_docs)] // documentation missing in model
     TimerStarted,
+    #[allow(missing_docs)] // documentation missing in model
     WorkflowExecutionCancelRequested,
+    #[allow(missing_docs)] // documentation missing in model
     WorkflowExecutionCanceled,
+    #[allow(missing_docs)] // documentation missing in model
     WorkflowExecutionCompleted,
+    #[allow(missing_docs)] // documentation missing in model
     WorkflowExecutionContinuedAsNew,
+    #[allow(missing_docs)] // documentation missing in model
     WorkflowExecutionFailed,
+    #[allow(missing_docs)] // documentation missing in model
     WorkflowExecutionSignaled,
+    #[allow(missing_docs)] // documentation missing in model
     WorkflowExecutionStarted,
+    #[allow(missing_docs)] // documentation missing in model
     WorkflowExecutionTerminated,
+    #[allow(missing_docs)] // documentation missing in model
     WorkflowExecutionTimedOut,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -12209,6 +13338,7 @@ impl std::str::FromStr for EventType {
     }
 }
 impl EventType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EventType::ActivityTaskCancelRequested => "ActivityTaskCancelRequested",
@@ -12282,6 +13412,7 @@ impl EventType {
             EventType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ActivityTaskCancelRequested",
@@ -12358,9 +13489,9 @@ pub struct WorkflowTypeInfo {
     /// <p>The description of the type registered through <a>RegisterWorkflowType</a>.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The date when this type was registered.</p>
-    pub creation_date: std::option::Option<smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>If the type is in deprecated state, then it is set to the date when the type was deprecated.</p>
-    pub deprecation_date: std::option::Option<smithy_types::Instant>,
+    pub deprecation_date: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for WorkflowTypeInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12382,8 +13513,8 @@ pub mod workflow_type_info {
         pub(crate) workflow_type: std::option::Option<crate::model::WorkflowType>,
         pub(crate) status: std::option::Option<crate::model::RegistrationStatus>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) creation_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) deprecation_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) deprecation_date: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The workflow type this information is about.</p>
@@ -12391,6 +13522,7 @@ pub mod workflow_type_info {
             self.workflow_type = Some(input);
             self
         }
+        /// <p>The workflow type this information is about.</p>
         pub fn set_workflow_type(
             mut self,
             input: std::option::Option<crate::model::WorkflowType>,
@@ -12403,6 +13535,7 @@ pub mod workflow_type_info {
             self.status = Some(input);
             self
         }
+        /// <p>The current status of the workflow type.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::RegistrationStatus>,
@@ -12415,30 +13548,33 @@ pub mod workflow_type_info {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the type registered through <a>RegisterWorkflowType</a>.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
         /// <p>The date when this type was registered.</p>
-        pub fn creation_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_date = Some(input);
             self
         }
+        /// <p>The date when this type was registered.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_date = input;
             self
         }
         /// <p>If the type is in deprecated state, then it is set to the date when the type was deprecated.</p>
-        pub fn deprecation_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn deprecation_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.deprecation_date = Some(input);
             self
         }
+        /// <p>If the type is in deprecated state, then it is set to the date when the type was deprecated.</p>
         pub fn set_deprecation_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.deprecation_date = input;
             self
@@ -12462,6 +13598,7 @@ impl WorkflowTypeInfo {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -12473,7 +13610,9 @@ impl WorkflowTypeInfo {
     std::hash::Hash,
 )]
 pub enum RegistrationStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Deprecated,
+    #[allow(missing_docs)] // documentation missing in model
     Registered,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -12495,6 +13634,7 @@ impl std::str::FromStr for RegistrationStatus {
     }
 }
 impl RegistrationStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RegistrationStatus::Deprecated => "DEPRECATED",
@@ -12502,6 +13642,7 @@ impl RegistrationStatus {
             RegistrationStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DEPRECATED", "REGISTERED"]
     }
@@ -12521,9 +13662,9 @@ pub struct WorkflowExecutionInfo {
     /// <p>The type of the workflow execution.</p>
     pub workflow_type: std::option::Option<crate::model::WorkflowType>,
     /// <p>The time when the execution was started.</p>
-    pub start_timestamp: std::option::Option<smithy_types::Instant>,
+    pub start_timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time when the workflow execution was closed. Set only if the execution status is CLOSED.</p>
-    pub close_timestamp: std::option::Option<smithy_types::Instant>,
+    pub close_timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The current status of the execution.</p>
     pub execution_status: std::option::Option<crate::model::ExecutionStatus>,
     /// <p>If the execution status is closed then this specifies how the execution was closed:</p>
@@ -12587,8 +13728,8 @@ pub mod workflow_execution_info {
     pub struct Builder {
         pub(crate) execution: std::option::Option<crate::model::WorkflowExecution>,
         pub(crate) workflow_type: std::option::Option<crate::model::WorkflowType>,
-        pub(crate) start_timestamp: std::option::Option<smithy_types::Instant>,
-        pub(crate) close_timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) start_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) close_timestamp: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) execution_status: std::option::Option<crate::model::ExecutionStatus>,
         pub(crate) close_status: std::option::Option<crate::model::CloseStatus>,
         pub(crate) parent: std::option::Option<crate::model::WorkflowExecution>,
@@ -12601,6 +13742,7 @@ pub mod workflow_execution_info {
             self.execution = Some(input);
             self
         }
+        /// <p>The workflow execution this information is about.</p>
         pub fn set_execution(
             mut self,
             input: std::option::Option<crate::model::WorkflowExecution>,
@@ -12613,6 +13755,7 @@ pub mod workflow_execution_info {
             self.workflow_type = Some(input);
             self
         }
+        /// <p>The type of the workflow execution.</p>
         pub fn set_workflow_type(
             mut self,
             input: std::option::Option<crate::model::WorkflowType>,
@@ -12621,25 +13764,27 @@ pub mod workflow_execution_info {
             self
         }
         /// <p>The time when the execution was started.</p>
-        pub fn start_timestamp(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_timestamp = Some(input);
             self
         }
+        /// <p>The time when the execution was started.</p>
         pub fn set_start_timestamp(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.start_timestamp = input;
             self
         }
         /// <p>The time when the workflow execution was closed. Set only if the execution status is CLOSED.</p>
-        pub fn close_timestamp(mut self, input: smithy_types::Instant) -> Self {
+        pub fn close_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
             self.close_timestamp = Some(input);
             self
         }
+        /// <p>The time when the workflow execution was closed. Set only if the execution status is CLOSED.</p>
         pub fn set_close_timestamp(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.close_timestamp = input;
             self
@@ -12649,6 +13794,7 @@ pub mod workflow_execution_info {
             self.execution_status = Some(input);
             self
         }
+        /// <p>The current status of the execution.</p>
         pub fn set_execution_status(
             mut self,
             input: std::option::Option<crate::model::ExecutionStatus>,
@@ -12690,6 +13836,36 @@ pub mod workflow_execution_info {
             self.close_status = Some(input);
             self
         }
+        /// <p>If the execution status is closed then this specifies how the execution was closed:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>COMPLETED</code> – the execution was successfully completed.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CANCELED</code> – the execution was canceled.Cancellation allows the implementation to gracefully clean
+        /// up before the execution is closed.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TERMINATED</code> – the execution was force terminated.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FAILED</code> – the execution failed to complete.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TIMED_OUT</code> – the execution did not complete in the alloted time and was automatically timed
+        /// out.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CONTINUED_AS_NEW</code> – the execution is logically continued. This means the current execution was
+        /// completed and a new execution was started to carry on the workflow.</p>
+        /// </li>
+        /// </ul>
         pub fn set_close_status(
             mut self,
             input: std::option::Option<crate::model::CloseStatus>,
@@ -12702,6 +13878,7 @@ pub mod workflow_execution_info {
             self.parent = Some(input);
             self
         }
+        /// <p>If this workflow execution is a child of another execution then contains the workflow execution that started this execution.</p>
         pub fn set_parent(
             mut self,
             input: std::option::Option<crate::model::WorkflowExecution>,
@@ -12709,12 +13886,18 @@ pub mod workflow_execution_info {
             self.parent = input;
             self
         }
+        /// Appends an item to `tag_list`.
+        ///
+        /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
+        ///
+        /// <p>The list of tags associated with the workflow execution. Tags can be used to identify and list workflow executions of interest through the visibility APIs. A workflow execution can have a maximum of 5 tags.</p>
         pub fn tag_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
             v.push(input.into());
             self.tag_list = Some(v);
             self
         }
+        /// <p>The list of tags associated with the workflow execution. Tags can be used to identify and list workflow executions of interest through the visibility APIs. A workflow execution can have a maximum of 5 tags.</p>
         pub fn set_tag_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -12727,6 +13910,7 @@ pub mod workflow_execution_info {
             self.cancel_requested = Some(input);
             self
         }
+        /// <p>Set to true if a cancellation is requested for this workflow execution.</p>
         pub fn set_cancel_requested(mut self, input: std::option::Option<bool>) -> Self {
             self.cancel_requested = input;
             self
@@ -12754,6 +13938,7 @@ impl WorkflowExecutionInfo {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -12765,11 +13950,17 @@ impl WorkflowExecutionInfo {
     std::hash::Hash,
 )]
 pub enum CloseStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Canceled,
+    #[allow(missing_docs)] // documentation missing in model
     Completed,
+    #[allow(missing_docs)] // documentation missing in model
     ContinuedAsNew,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Terminated,
+    #[allow(missing_docs)] // documentation missing in model
     TimedOut,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -12795,6 +13986,7 @@ impl std::str::FromStr for CloseStatus {
     }
 }
 impl CloseStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CloseStatus::Canceled => "CANCELED",
@@ -12806,6 +13998,7 @@ impl CloseStatus {
             CloseStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CANCELED",
@@ -12823,6 +14016,7 @@ impl AsRef<str> for CloseStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -12834,7 +14028,9 @@ impl AsRef<str> for CloseStatus {
     std::hash::Hash,
 )]
 pub enum ExecutionStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Closed,
+    #[allow(missing_docs)] // documentation missing in model
     Open,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -12856,6 +14052,7 @@ impl std::str::FromStr for ExecutionStatus {
     }
 }
 impl ExecutionStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ExecutionStatus::Closed => "CLOSED",
@@ -12863,6 +14060,7 @@ impl ExecutionStatus {
             ExecutionStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CLOSED", "OPEN"]
     }
@@ -12901,6 +14099,7 @@ pub mod workflow_execution_filter {
             self.workflow_id = Some(input.into());
             self
         }
+        /// <p>The workflowId to pass of match the criteria of this filter.</p>
         pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workflow_id = input;
             self
@@ -12954,6 +14153,10 @@ pub mod tag_filter {
             self.tag = Some(input.into());
             self
         }
+        /// <p>
+        /// Specifies the tag that must be associated with the execution for it to meet the filter
+        /// criteria.</p>
+        /// <p>Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>
         pub fn set_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.tag = input;
             self
@@ -13005,6 +14208,8 @@ pub mod workflow_type_filter {
             self.name = Some(input.into());
             self
         }
+        /// <p>
+        /// Name of the workflow type.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -13014,6 +14219,7 @@ pub mod workflow_type_filter {
             self.version = Some(input.into());
             self
         }
+        /// <p>Version of the workflow type.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -13042,9 +14248,9 @@ impl WorkflowTypeFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExecutionTimeFilter {
     /// <p>Specifies the oldest start or close date and time to return.</p>
-    pub oldest_date: std::option::Option<smithy_types::Instant>,
+    pub oldest_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Specifies the latest start or close date and time to return.</p>
-    pub latest_date: std::option::Option<smithy_types::Instant>,
+    pub latest_date: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for ExecutionTimeFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13060,30 +14266,32 @@ pub mod execution_time_filter {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) oldest_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) latest_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) oldest_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) latest_date: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>Specifies the oldest start or close date and time to return.</p>
-        pub fn oldest_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn oldest_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.oldest_date = Some(input);
             self
         }
+        /// <p>Specifies the oldest start or close date and time to return.</p>
         pub fn set_oldest_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.oldest_date = input;
             self
         }
         /// <p>Specifies the latest start or close date and time to return.</p>
-        pub fn latest_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn latest_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.latest_date = Some(input);
             self
         }
+        /// <p>Specifies the latest start or close date and time to return.</p>
         pub fn set_latest_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.latest_date = input;
             self
@@ -13158,6 +14366,7 @@ pub mod domain_info {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the domain. This name is unique within the account.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -13181,6 +14390,21 @@ pub mod domain_info {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the domain:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>REGISTERED</code> – The domain is properly registered and available. You can use this domain
+        /// for registering types and creating new workflow executions.
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DEPRECATED</code> – The domain was deprecated using <a>DeprecateDomain</a>, but is
+        /// still in use. You should not create new workflow executions in this domain.
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::RegistrationStatus>,
@@ -13193,6 +14417,7 @@ pub mod domain_info {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the domain provided through <a>RegisterDomain</a>.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -13202,6 +14427,7 @@ pub mod domain_info {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the domain.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -13256,6 +14482,9 @@ pub mod close_status_filter {
             self.status = Some(input);
             self
         }
+        /// <p>
+        /// The close status that must match the close status of an execution for it to meet the criteria of
+        /// this filter.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::CloseStatus>) -> Self {
             self.status = input;
             self
@@ -13286,9 +14515,9 @@ pub struct ActivityTypeInfo {
     /// <p>The description of the activity type provided in <a>RegisterActivityType</a>.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The date and time this activity type was created through <a>RegisterActivityType</a>.</p>
-    pub creation_date: std::option::Option<smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>If DEPRECATED, the date and time <a>DeprecateActivityType</a> was called.</p>
-    pub deprecation_date: std::option::Option<smithy_types::Instant>,
+    pub deprecation_date: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for ActivityTypeInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13310,8 +14539,8 @@ pub mod activity_type_info {
         pub(crate) activity_type: std::option::Option<crate::model::ActivityType>,
         pub(crate) status: std::option::Option<crate::model::RegistrationStatus>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) creation_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) deprecation_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) deprecation_date: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The <a>ActivityType</a> type structure representing the activity type.</p>
@@ -13319,6 +14548,7 @@ pub mod activity_type_info {
             self.activity_type = Some(input);
             self
         }
+        /// <p>The <a>ActivityType</a> type structure representing the activity type.</p>
         pub fn set_activity_type(
             mut self,
             input: std::option::Option<crate::model::ActivityType>,
@@ -13331,6 +14561,7 @@ pub mod activity_type_info {
             self.status = Some(input);
             self
         }
+        /// <p>The current status of the activity type.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::RegistrationStatus>,
@@ -13343,30 +14574,33 @@ pub mod activity_type_info {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the activity type provided in <a>RegisterActivityType</a>.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
         /// <p>The date and time this activity type was created through <a>RegisterActivityType</a>.</p>
-        pub fn creation_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_date = Some(input);
             self
         }
+        /// <p>The date and time this activity type was created through <a>RegisterActivityType</a>.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_date = input;
             self
         }
         /// <p>If DEPRECATED, the date and time <a>DeprecateActivityType</a> was called.</p>
-        pub fn deprecation_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn deprecation_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.deprecation_date = Some(input);
             self
         }
+        /// <p>If DEPRECATED, the date and time <a>DeprecateActivityType</a> was called.</p>
         pub fn set_deprecation_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.deprecation_date = input;
             self
@@ -13505,6 +14739,14 @@ pub mod workflow_type_configuration {
             self.default_task_start_to_close_timeout = Some(input.into());
             self
         }
+        /// <p>
+        /// The default maximum duration, specified when registering the workflow type, that a decision task
+        /// for executions of this workflow type might take before returning completion or failure. If the task doesn'tdo  close
+        /// in the specified time then the task is automatically timed out and rescheduled. If the decider eventually reports
+        /// a completion or failure, it is ignored. This default can be overridden when starting a workflow execution using
+        /// the <a>StartWorkflowExecution</a> action or the <code>StartChildWorkflowExecution</code>
+        /// <a>Decision</a>.</p>
+        /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
         pub fn set_default_task_start_to_close_timeout(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13525,6 +14767,12 @@ pub mod workflow_type_configuration {
             self.default_execution_start_to_close_timeout = Some(input.into());
             self
         }
+        /// <p>
+        /// The default maximum duration, specified when registering the workflow type, for executions of
+        /// this workflow type. This default can be overridden when starting a workflow execution using the
+        /// <a>StartWorkflowExecution</a> action or the <code>StartChildWorkflowExecution</code>
+        /// <a>Decision</a>.</p>
+        /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
         pub fn set_default_execution_start_to_close_timeout(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13541,6 +14789,11 @@ pub mod workflow_type_configuration {
             self.default_task_list = Some(input);
             self
         }
+        /// <p>
+        /// The default task list, specified when registering the workflow type, for decisions tasks
+        /// scheduled for workflow executions of this type. This default can be overridden when starting a workflow execution
+        /// using the <a>StartWorkflowExecution</a> action or the <code>StartChildWorkflowExecution</code>
+        /// <a>Decision</a>.</p>
         pub fn set_default_task_list(
             mut self,
             input: std::option::Option<crate::model::TaskList>,
@@ -13559,6 +14812,13 @@ pub mod workflow_type_configuration {
             self.default_task_priority = Some(input.into());
             self
         }
+        /// <p>
+        /// The default task priority, specified when registering the workflow type, for all decision tasks
+        /// of this workflow type. This default can be overridden when starting a workflow execution using the
+        /// <a>StartWorkflowExecution</a> action or the <code>StartChildWorkflowExecution</code> decision.</p>
+        /// <p>Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code>
+        /// (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
+        /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
         pub fn set_default_task_priority(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13593,6 +14853,29 @@ pub mod workflow_type_configuration {
             self.default_child_policy = Some(input);
             self
         }
+        /// <p>
+        /// The default policy to use for the child workflow executions when a workflow execution of this
+        /// type is terminated, by calling the <a>TerminateWorkflowExecution</a> action explicitly or due to an expired
+        /// timeout. This default can be overridden when starting a workflow execution using the <a>StartWorkflowExecution</a>
+        /// action or the <code>StartChildWorkflowExecution</code>
+        /// <a>Decision</a>.</p>
+        /// <p>The supported child policies are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>TERMINATE</code> – The child executions are terminated.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child
+        /// execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider
+        /// to take appropriate actions when it receives an execution history with this event.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ABANDON</code> – No action is taken. The child executions continue to run.</p>
+        /// </li>
+        /// </ul>
         pub fn set_default_child_policy(
             mut self,
             input: std::option::Option<crate::model::ChildPolicy>,
@@ -13611,6 +14894,13 @@ pub mod workflow_type_configuration {
             self.default_lambda_role = Some(input.into());
             self
         }
+        /// <p>The default IAM role attached to this workflow type.</p>
+        /// <note>
+        /// <p>Executions of this workflow type need IAM roles to invoke Lambda functions. If you
+        /// don't specify an IAM role when starting this workflow type, the default Lambda role is
+        /// attached to the execution. For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a> in the
+        /// <i>Amazon SWF Developer Guide</i>.</p>
+        /// </note>
         pub fn set_default_lambda_role(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13686,6 +14976,7 @@ pub mod workflow_execution_open_counts {
             self.open_activity_tasks = Some(input);
             self
         }
+        /// <p>The count of activity tasks whose status is <code>OPEN</code>.</p>
         pub fn set_open_activity_tasks(mut self, input: std::option::Option<i32>) -> Self {
             self.open_activity_tasks = input;
             self
@@ -13695,6 +14986,7 @@ pub mod workflow_execution_open_counts {
             self.open_decision_tasks = Some(input);
             self
         }
+        /// <p>The count of decision tasks whose status is OPEN. A workflow execution can have at most one open decision task.</p>
         pub fn set_open_decision_tasks(mut self, input: std::option::Option<i32>) -> Self {
             self.open_decision_tasks = input;
             self
@@ -13704,6 +14996,7 @@ pub mod workflow_execution_open_counts {
             self.open_timers = Some(input);
             self
         }
+        /// <p>The count of timers started by this workflow execution that have not fired yet.</p>
         pub fn set_open_timers(mut self, input: std::option::Option<i32>) -> Self {
             self.open_timers = input;
             self
@@ -13713,6 +15006,7 @@ pub mod workflow_execution_open_counts {
             self.open_child_workflow_executions = Some(input);
             self
         }
+        /// <p>The count of child workflow executions whose status is <code>OPEN</code>.</p>
         pub fn set_open_child_workflow_executions(
             mut self,
             input: std::option::Option<i32>,
@@ -13725,6 +15019,7 @@ pub mod workflow_execution_open_counts {
             self.open_lambda_functions = Some(input);
             self
         }
+        /// <p>The count of Lambda tasks whose status is <code>OPEN</code>.</p>
         pub fn set_open_lambda_functions(mut self, input: std::option::Option<i32>) -> Self {
             self.open_lambda_functions = input;
             self
@@ -13830,6 +15125,8 @@ pub mod workflow_execution_configuration {
             self.task_start_to_close_timeout = Some(input.into());
             self
         }
+        /// <p>The maximum duration allowed for decision tasks for this workflow execution.</p>
+        /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
         pub fn set_task_start_to_close_timeout(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13846,6 +15143,8 @@ pub mod workflow_execution_configuration {
             self.execution_start_to_close_timeout = Some(input.into());
             self
         }
+        /// <p>The total duration for this workflow execution.</p>
+        /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
         pub fn set_execution_start_to_close_timeout(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13858,6 +15157,7 @@ pub mod workflow_execution_configuration {
             self.task_list = Some(input);
             self
         }
+        /// <p>The task list used for the decision tasks generated for this workflow execution.</p>
         pub fn set_task_list(mut self, input: std::option::Option<crate::model::TaskList>) -> Self {
             self.task_list = input;
             self
@@ -13869,6 +15169,9 @@ pub mod workflow_execution_configuration {
             self.task_priority = Some(input.into());
             self
         }
+        /// <p>The priority assigned to decision tasks for this workflow execution. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code>
+        /// (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
+        /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
         pub fn set_task_priority(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13899,6 +15202,25 @@ pub mod workflow_execution_configuration {
             self.child_policy = Some(input);
             self
         }
+        /// <p>The policy to use for the child workflow executions if this workflow execution is terminated, by calling the
+        /// <a>TerminateWorkflowExecution</a> action explicitly or due to an expired timeout.</p>
+        /// <p>The supported child policies are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>TERMINATE</code> – The child executions are terminated.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child
+        /// execution by recording a <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to the decider
+        /// to take appropriate actions when it receives an execution history with this event.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ABANDON</code> – No action is taken. The child executions continue to run.</p>
+        /// </li>
+        /// </ul>
         pub fn set_child_policy(
             mut self,
             input: std::option::Option<crate::model::ChildPolicy>,
@@ -13911,6 +15233,7 @@ pub mod workflow_execution_configuration {
             self.lambda_role = Some(input.into());
             self
         }
+        /// <p>The IAM role attached to the child workflow execution.</p>
         pub fn set_lambda_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.lambda_role = input;
             self
@@ -13970,6 +15293,7 @@ pub mod domain_configuration {
             self.workflow_execution_retention_period_in_days = Some(input.into());
             self
         }
+        /// <p>The retention period for workflow executions in this domain.</p>
         pub fn set_workflow_execution_retention_period_in_days(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14093,6 +15417,11 @@ pub mod activity_type_configuration {
             self.default_task_start_to_close_timeout = Some(input.into());
             self
         }
+        /// <p>
+        /// The default maximum duration for tasks of an activity type specified when registering the activity
+        /// type. You can override this default when scheduling a task through the <code>ScheduleActivityTask</code>
+        /// <a>Decision</a>.</p>
+        /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
         pub fn set_default_task_start_to_close_timeout(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14117,6 +15446,16 @@ pub mod activity_type_configuration {
             self.default_task_heartbeat_timeout = Some(input.into());
             self
         }
+        /// <p>
+        /// The default maximum time, in seconds, before which a worker processing a task must report
+        /// progress by calling <a>RecordActivityTaskHeartbeat</a>.</p>
+        /// <p>You can specify this value only when <i>registering</i> an activity type. The registered default value can be
+        /// overridden when you schedule a task through the <code>ScheduleActivityTask</code>
+        /// <a>Decision</a>. If the activity
+        /// worker subsequently attempts to record a heartbeat or returns a result, the activity worker receives an
+        /// <code>UnknownResource</code> fault. In this case, Amazon SWF no longer considers the activity task to be valid;
+        /// the activity worker should clean up the activity task.</p>
+        /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
         pub fn set_default_task_heartbeat_timeout(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14134,6 +15473,12 @@ pub mod activity_type_configuration {
             self.default_task_list = Some(input);
             self
         }
+        /// <p>
+        /// The default task list specified for this activity type at registration. This default is used if
+        /// a task list isn't provided when a task is scheduled through the <code>ScheduleActivityTask</code>
+        /// <a>Decision</a>. You can override the default registered task list when scheduling a task through the
+        /// <code>ScheduleActivityTask</code>
+        /// <a>Decision</a>.</p>
         pub fn set_default_task_list(
             mut self,
             input: std::option::Option<crate::model::TaskList>,
@@ -14152,6 +15497,13 @@ pub mod activity_type_configuration {
             self.default_task_priority = Some(input.into());
             self
         }
+        /// <p>
+        /// The default task priority for tasks of this activity type, specified at registration. If not
+        /// set, then <code>0</code> is used as the default priority. This default can be overridden when scheduling an activity
+        /// task.</p>
+        /// <p>Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code>
+        /// (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.</p>
+        /// <p>For more information about setting task priority, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
         pub fn set_default_task_priority(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14172,6 +15524,12 @@ pub mod activity_type_configuration {
             self.default_task_schedule_to_start_timeout = Some(input.into());
             self
         }
+        /// <p>
+        /// The default maximum duration, specified when registering the activity type, that a task of an
+        /// activity type can wait before being assigned to a worker. You can override this default when scheduling a task
+        /// through the <code>ScheduleActivityTask</code>
+        /// <a>Decision</a>.</p>
+        /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
         pub fn set_default_task_schedule_to_start_timeout(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14191,6 +15549,11 @@ pub mod activity_type_configuration {
             self.default_task_schedule_to_close_timeout = Some(input.into());
             self
         }
+        /// <p>
+        /// The default maximum duration, specified when registering the activity type, for tasks of this activity
+        /// type. You can override this default when scheduling a task through the <code>ScheduleActivityTask</code>
+        /// <a>Decision</a>.</p>
+        /// <p>The duration is specified in seconds, an integer greater than or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
         pub fn set_default_task_schedule_to_close_timeout(
             mut self,
             input: std::option::Option<std::string::String>,

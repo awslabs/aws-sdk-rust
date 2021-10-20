@@ -15,6 +15,7 @@ pub mod cancel_journal_kinesis_stream_input {
             self.ledger_name = Some(input.into());
             self
         }
+        /// <p>The name of the ledger.</p>
         pub fn set_ledger_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ledger_name = input;
             self
@@ -25,6 +26,8 @@ pub mod cancel_journal_kinesis_stream_input {
             self.stream_id = Some(input.into());
             self
         }
+        /// <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream to be
+        /// canceled.</p>
         pub fn set_stream_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_id = input;
             self
@@ -34,7 +37,7 @@ pub mod cancel_journal_kinesis_stream_input {
             self,
         ) -> std::result::Result<
             crate::input::CancelJournalKinesisStreamInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CancelJournalKinesisStreamInput {
                 ledger_name: self.ledger_name,
@@ -55,27 +58,27 @@ impl CancelJournalKinesisStreamInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CancelJournalKinesisStream,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CancelJournalKinesisStreamInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_1 = &_input.ledger_name;
             let input_1 =
                 input_1
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "ledger_name",
                         details: "cannot be empty or unset",
                     })?;
-            let ledger_name = smithy_http::label::fmt_string(input_1, false);
+            let ledger_name = aws_smithy_http::label::fmt_string(input_1, false);
             if ledger_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "ledger_name",
                     details: "cannot be empty or unset",
                 });
@@ -84,13 +87,13 @@ impl CancelJournalKinesisStreamInput {
             let input_2 =
                 input_2
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "stream_id",
                         details: "cannot be empty or unset",
                     })?;
-            let stream_id = smithy_http::label::fmt_string(input_2, false);
+            let stream_id = aws_smithy_http::label::fmt_string(input_2, false);
             if stream_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "stream_id",
                     details: "cannot be empty or unset",
                 });
@@ -108,7 +111,7 @@ impl CancelJournalKinesisStreamInput {
         fn update_http_builder(
             input: &crate::input::CancelJournalKinesisStreamInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -117,23 +120,23 @@ impl CancelJournalKinesisStreamInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CancelJournalKinesisStreamInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -156,15 +159,15 @@ impl CancelJournalKinesisStreamInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CancelJournalKinesisStream::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CancelJournalKinesisStream",
             "qldb",
         ));
@@ -173,10 +176,10 @@ impl CancelJournalKinesisStreamInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -216,10 +219,20 @@ pub mod create_ledger_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the ledger that you want to create. The name must be unique among all of
+        /// the ledgers in your account in the current Region.</p>
+        /// <p>Naming constraints for ledger names are defined in <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/limits.html#limits.naming">Quotas in Amazon QLDB</a>
+        /// in the <i>Amazon QLDB Developer Guide</i>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The key-value pairs to add as tags to the ledger that you want to create. Tag keys are
+        /// case sensitive. Tag values are case sensitive and can be null.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -230,6 +243,8 @@ pub mod create_ledger_input {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The key-value pairs to add as tags to the ledger that you want to create. Tag keys are
+        /// case sensitive. Tag values are case sensitive and can be null.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -276,6 +291,36 @@ pub mod create_ledger_input {
             self.permissions_mode = Some(input);
             self
         }
+        /// <p>The permissions mode to assign to the ledger that you want to create. This parameter can
+        /// have one of the following values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ALLOW_ALL</code>: A legacy permissions mode that enables access control with
+        /// API-level granularity for ledgers.</p>
+        /// <p>This mode allows users who have the <code>SendCommand</code> API permission for
+        /// this ledger to run all PartiQL commands (hence, <code>ALLOW_ALL</code>) on any tables
+        /// in the specified ledger. This mode disregards any table-level or command-level IAM
+        /// permissions policies that you create for the ledger.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>STANDARD</code>: (<i>Recommended</i>) A permissions mode that
+        /// enables access control with finer granularity for ledgers, tables, and PartiQL
+        /// commands.</p>
+        /// <p>By default, this mode denies all user requests to run any PartiQL commands on any
+        /// tables in this ledger. To allow PartiQL commands to run, you must create IAM
+        /// permissions policies for specific table resources and PartiQL actions, in addition to
+        /// the <code>SendCommand</code> API permission for the ledger. For information, see
+        /// <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/getting-started-standard-mode.html">Getting
+        /// started with the standard permissions mode</a> in the <i>Amazon QLDB
+        /// Developer Guide</i>.</p>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>We strongly recommend using the <code>STANDARD</code> permissions mode to maximize
+        /// the security of your ledger data.</p>
+        /// </note>
         pub fn set_permissions_mode(
             mut self,
             input: std::option::Option<crate::model::PermissionsMode>,
@@ -291,6 +336,10 @@ pub mod create_ledger_input {
             self.deletion_protection = Some(input);
             self
         }
+        /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on
+        /// ledger creation, this feature is enabled (<code>true</code>) by default.</p>
+        /// <p>If deletion protection is enabled, you must first disable it before you can delete the
+        /// ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
         pub fn set_deletion_protection(mut self, input: std::option::Option<bool>) -> Self {
             self.deletion_protection = input;
             self
@@ -349,6 +398,56 @@ pub mod create_ledger_input {
             self.kms_key = Some(input.into());
             self
         }
+        /// <p>The key in Key Management Service (KMS) to use for encryption of data at rest in the ledger. For
+        /// more information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/encryption-at-rest.html">Encryption at rest</a> in
+        /// the <i>Amazon QLDB Developer Guide</i>.</p>
+        /// <p>Use one of the following options to specify this parameter:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>AWS_OWNED_KMS_KEY</code>: Use an KMS key that is owned and managed by Amazon Web Services
+        /// on your behalf.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>Undefined</b>: By default, use an Amazon Web Services owned KMS
+        /// key.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>A valid symmetric customer managed KMS key</b>: Use
+        /// the specified KMS key in your account that you create, own, and manage.</p>
+        /// <p>Amazon QLDB does not support asymmetric keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>Key Management Service Developer
+        /// Guide</i>.</p>
+        /// </li>
+        /// </ul>
+        /// <p>To specify a customer managed KMS key, you can use its key ID, Amazon Resource Name
+        /// (ARN), alias name, or alias ARN. When using an alias name, prefix it with
+        /// <code>"alias/"</code>. To specify a key in a different account, you must use the key
+        /// ARN or alias ARN.</p>
+        /// <p>For example:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Key ARN:
+        /// <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Alias name: <code>alias/ExampleAlias</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Alias ARN:
+        /// <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key identifiers (KeyId)</a> in
+        /// the <i>Key Management Service Developer Guide</i>.</p>
         pub fn set_kms_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key = input;
             self
@@ -356,8 +455,10 @@ pub mod create_ledger_input {
         /// Consumes the builder and constructs a [`CreateLedgerInput`](crate::input::CreateLedgerInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreateLedgerInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateLedgerInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateLedgerInput {
                 name: self.name,
                 tags: self.tags,
@@ -379,16 +480,16 @@ impl CreateLedgerInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateLedger,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateLedgerInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/ledgers").expect("formatting should succeed");
             Ok(())
         }
@@ -396,7 +497,7 @@ impl CreateLedgerInput {
         fn update_http_builder(
             input: &crate::input::CreateLedgerInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -405,26 +506,26 @@ impl CreateLedgerInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateLedgerInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_ledger(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -447,25 +548,27 @@ impl CreateLedgerInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreateLedger::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "CreateLedger",
-                    "qldb",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateLedger::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateLedger",
+            "qldb",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -493,6 +596,7 @@ pub mod delete_ledger_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the ledger that you want to delete.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -500,8 +604,10 @@ pub mod delete_ledger_input {
         /// Consumes the builder and constructs a [`DeleteLedgerInput`](crate::input::DeleteLedgerInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeleteLedgerInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteLedgerInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteLedgerInput { name: self.name })
         }
     }
@@ -517,27 +623,27 @@ impl DeleteLedgerInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteLedger,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteLedgerInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_3 = &_input.name;
             let input_3 =
                 input_3
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     })?;
-            let name = smithy_http::label::fmt_string(input_3, false);
+            let name = aws_smithy_http::label::fmt_string(input_3, false);
             if name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 });
@@ -549,7 +655,7 @@ impl DeleteLedgerInput {
         fn update_http_builder(
             input: &crate::input::DeleteLedgerInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -558,23 +664,23 @@ impl DeleteLedgerInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteLedgerInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -597,25 +703,27 @@ impl DeleteLedgerInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeleteLedger::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DeleteLedger",
-                    "qldb",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteLedger::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteLedger",
+            "qldb",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -644,6 +752,7 @@ pub mod describe_journal_kinesis_stream_input {
             self.ledger_name = Some(input.into());
             self
         }
+        /// <p>The name of the ledger.</p>
         pub fn set_ledger_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ledger_name = input;
             self
@@ -654,6 +763,8 @@ pub mod describe_journal_kinesis_stream_input {
             self.stream_id = Some(input.into());
             self
         }
+        /// <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream to
+        /// describe.</p>
         pub fn set_stream_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_id = input;
             self
@@ -663,7 +774,7 @@ pub mod describe_journal_kinesis_stream_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeJournalKinesisStreamInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeJournalKinesisStreamInput {
                 ledger_name: self.ledger_name,
@@ -684,27 +795,27 @@ impl DescribeJournalKinesisStreamInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeJournalKinesisStream,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeJournalKinesisStreamInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_4 = &_input.ledger_name;
             let input_4 =
                 input_4
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "ledger_name",
                         details: "cannot be empty or unset",
                     })?;
-            let ledger_name = smithy_http::label::fmt_string(input_4, false);
+            let ledger_name = aws_smithy_http::label::fmt_string(input_4, false);
             if ledger_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "ledger_name",
                     details: "cannot be empty or unset",
                 });
@@ -713,13 +824,13 @@ impl DescribeJournalKinesisStreamInput {
             let input_5 =
                 input_5
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "stream_id",
                         details: "cannot be empty or unset",
                     })?;
-            let stream_id = smithy_http::label::fmt_string(input_5, false);
+            let stream_id = aws_smithy_http::label::fmt_string(input_5, false);
             if stream_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "stream_id",
                     details: "cannot be empty or unset",
                 });
@@ -737,7 +848,7 @@ impl DescribeJournalKinesisStreamInput {
         fn update_http_builder(
             input: &crate::input::DescribeJournalKinesisStreamInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -746,23 +857,23 @@ impl DescribeJournalKinesisStreamInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeJournalKinesisStreamInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -785,15 +896,15 @@ impl DescribeJournalKinesisStreamInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeJournalKinesisStream::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeJournalKinesisStream",
             "qldb",
         ));
@@ -802,10 +913,10 @@ impl DescribeJournalKinesisStreamInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -834,6 +945,7 @@ pub mod describe_journal_s3_export_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the ledger.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -844,6 +956,8 @@ pub mod describe_journal_s3_export_input {
             self.export_id = Some(input.into());
             self
         }
+        /// <p>The UUID (represented in Base62-encoded text) of the journal export job to
+        /// describe.</p>
         pub fn set_export_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.export_id = input;
             self
@@ -853,7 +967,7 @@ pub mod describe_journal_s3_export_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeJournalS3ExportInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeJournalS3ExportInput {
                 name: self.name,
@@ -874,27 +988,27 @@ impl DescribeJournalS3ExportInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeJournalS3Export,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeJournalS3ExportInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_6 = &_input.name;
             let input_6 =
                 input_6
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     })?;
-            let name = smithy_http::label::fmt_string(input_6, false);
+            let name = aws_smithy_http::label::fmt_string(input_6, false);
             if name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 });
@@ -903,13 +1017,13 @@ impl DescribeJournalS3ExportInput {
             let input_7 =
                 input_7
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "export_id",
                         details: "cannot be empty or unset",
                     })?;
-            let export_id = smithy_http::label::fmt_string(input_7, false);
+            let export_id = aws_smithy_http::label::fmt_string(input_7, false);
             if export_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "export_id",
                     details: "cannot be empty or unset",
                 });
@@ -927,7 +1041,7 @@ impl DescribeJournalS3ExportInput {
         fn update_http_builder(
             input: &crate::input::DescribeJournalS3ExportInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -936,23 +1050,23 @@ impl DescribeJournalS3ExportInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeJournalS3ExportInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -975,15 +1089,15 @@ impl DescribeJournalS3ExportInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeJournalS3Export::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeJournalS3Export",
             "qldb",
         ));
@@ -992,10 +1106,10 @@ impl DescribeJournalS3ExportInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1023,6 +1137,7 @@ pub mod describe_ledger_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the ledger that you want to describe.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1032,7 +1147,7 @@ pub mod describe_ledger_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeLedgerInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeLedgerInput { name: self.name })
         }
@@ -1049,27 +1164,27 @@ impl DescribeLedgerInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeLedger,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeLedgerInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_8 = &_input.name;
             let input_8 =
                 input_8
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     })?;
-            let name = smithy_http::label::fmt_string(input_8, false);
+            let name = aws_smithy_http::label::fmt_string(input_8, false);
             if name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 });
@@ -1081,7 +1196,7 @@ impl DescribeLedgerInput {
         fn update_http_builder(
             input: &crate::input::DescribeLedgerInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1090,23 +1205,23 @@ impl DescribeLedgerInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeLedgerInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1129,15 +1244,15 @@ impl DescribeLedgerInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeLedger::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeLedger",
             "qldb",
         ));
@@ -1146,10 +1261,10 @@ impl DescribeLedgerInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1170,8 +1285,8 @@ pub mod export_journal_to_s3_input {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) inclusive_start_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) exclusive_end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) inclusive_start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) exclusive_end_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) s3_export_configuration:
             std::option::Option<crate::model::S3ExportConfiguration>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
@@ -1182,6 +1297,7 @@ pub mod export_journal_to_s3_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the ledger.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1194,13 +1310,21 @@ pub mod export_journal_to_s3_input {
         /// <p>If you provide an <code>InclusiveStartTime</code> that is before the ledger's
         /// <code>CreationDateTime</code>, Amazon QLDB defaults it to the ledger's
         /// <code>CreationDateTime</code>.</p>
-        pub fn inclusive_start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn inclusive_start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.inclusive_start_time = Some(input);
             self
         }
+        /// <p>The inclusive start date and time for the range of journal contents to export.</p>
+        /// <p>The <code>InclusiveStartTime</code> must be in <code>ISO 8601</code> date and time
+        /// format and in Universal Coordinated Time (UTC). For example:
+        /// <code>2019-06-13T21:36:34Z</code>.</p>
+        /// <p>The <code>InclusiveStartTime</code> must be before <code>ExclusiveEndTime</code>.</p>
+        /// <p>If you provide an <code>InclusiveStartTime</code> that is before the ledger's
+        /// <code>CreationDateTime</code>, Amazon QLDB defaults it to the ledger's
+        /// <code>CreationDateTime</code>.</p>
         pub fn set_inclusive_start_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.inclusive_start_time = input;
             self
@@ -1211,13 +1335,19 @@ pub mod export_journal_to_s3_input {
         /// <code>2019-06-13T21:36:34Z</code>.</p>
         /// <p>The <code>ExclusiveEndTime</code> must be less than or equal to the current UTC date and
         /// time.</p>
-        pub fn exclusive_end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn exclusive_end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.exclusive_end_time = Some(input);
             self
         }
+        /// <p>The exclusive end date and time for the range of journal contents to export.</p>
+        /// <p>The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format
+        /// and in Universal Coordinated Time (UTC). For example:
+        /// <code>2019-06-13T21:36:34Z</code>.</p>
+        /// <p>The <code>ExclusiveEndTime</code> must be less than or equal to the current UTC date and
+        /// time.</p>
         pub fn set_exclusive_end_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.exclusive_end_time = input;
             self
@@ -1231,6 +1361,8 @@ pub mod export_journal_to_s3_input {
             self.s3_export_configuration = Some(input);
             self
         }
+        /// <p>The configuration settings of the Amazon S3 bucket destination for your export
+        /// request.</p>
         pub fn set_s3_export_configuration(
             mut self,
             input: std::option::Option<crate::model::S3ExportConfiguration>,
@@ -1253,6 +1385,17 @@ pub mod export_journal_to_s3_input {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a
+        /// journal export job to do the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Write objects into your Amazon Simple Storage Service (Amazon S3) bucket.</p>
+        /// </li>
+        /// <li>
+        /// <p>(Optional) Use your customer master key (CMK) in Key Management Service (KMS) for server-side
+        /// encryption of your exported data.</p>
+        /// </li>
+        /// </ul>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -1262,7 +1405,7 @@ pub mod export_journal_to_s3_input {
             self,
         ) -> std::result::Result<
             crate::input::ExportJournalToS3Input,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ExportJournalToS3Input {
                 name: self.name,
@@ -1285,27 +1428,27 @@ impl ExportJournalToS3Input {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ExportJournalToS3,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ExportJournalToS3Input,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_9 = &_input.name;
             let input_9 =
                 input_9
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     })?;
-            let name = smithy_http::label::fmt_string(input_9, false);
+            let name = aws_smithy_http::label::fmt_string(input_9, false);
             if name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 });
@@ -1318,7 +1461,7 @@ impl ExportJournalToS3Input {
         fn update_http_builder(
             input: &crate::input::ExportJournalToS3Input,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1327,25 +1470,27 @@ impl ExportJournalToS3Input {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ExportJournalToS3Input,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_export_journal_to_s3(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1368,15 +1513,15 @@ impl ExportJournalToS3Input {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ExportJournalToS3::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ExportJournalToS3",
             "qldb",
         ));
@@ -1385,10 +1530,10 @@ impl ExportJournalToS3Input {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1418,6 +1563,7 @@ pub mod get_block_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the ledger.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1429,6 +1575,9 @@ pub mod get_block_input {
             self.block_address = Some(input);
             self
         }
+        /// <p>The location of the block that you want to request. An address is an Amazon Ion
+        /// structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
+        /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>.</p>
         pub fn set_block_address(
             mut self,
             input: std::option::Option<crate::model::ValueHolder>,
@@ -1444,6 +1593,10 @@ pub mod get_block_input {
             self.digest_tip_address = Some(input);
             self
         }
+        /// <p>The latest block location covered by the digest for which to request a proof. An address
+        /// is an Amazon Ion structure that has two fields: <code>strandId</code> and
+        /// <code>sequenceNo</code>.</p>
+        /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>.</p>
         pub fn set_digest_tip_address(
             mut self,
             input: std::option::Option<crate::model::ValueHolder>,
@@ -1454,7 +1607,7 @@ pub mod get_block_input {
         /// Consumes the builder and constructs a [`GetBlockInput`](crate::input::GetBlockInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetBlockInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::GetBlockInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::GetBlockInput {
                 name: self.name,
@@ -1475,27 +1628,27 @@ impl GetBlockInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetBlock,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetBlockInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_10 = &_input.name;
             let input_10 =
                 input_10
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     })?;
-            let name = smithy_http::label::fmt_string(input_10, false);
+            let name = aws_smithy_http::label::fmt_string(input_10, false);
             if name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 });
@@ -1508,7 +1661,7 @@ impl GetBlockInput {
         fn update_http_builder(
             input: &crate::input::GetBlockInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1517,24 +1670,26 @@ impl GetBlockInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetBlockInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_get_block(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1557,21 +1712,24 @@ impl GetBlockInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(request, crate::operation::GetBlock::new())
-            .with_metadata(smithy_http::operation::Metadata::new("GetBlock", "qldb"));
+        let op =
+            aws_smithy_http::operation::Operation::new(request, crate::operation::GetBlock::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "GetBlock", "qldb",
+                ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1599,6 +1757,7 @@ pub mod get_digest_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the ledger.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1606,7 +1765,7 @@ pub mod get_digest_input {
         /// Consumes the builder and constructs a [`GetDigestInput`](crate::input::GetDigestInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetDigestInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::GetDigestInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::GetDigestInput { name: self.name })
         }
@@ -1623,27 +1782,27 @@ impl GetDigestInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetDigest,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetDigestInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_11 = &_input.name;
             let input_11 =
                 input_11
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     })?;
-            let name = smithy_http::label::fmt_string(input_11, false);
+            let name = aws_smithy_http::label::fmt_string(input_11, false);
             if name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 });
@@ -1656,7 +1815,7 @@ impl GetDigestInput {
         fn update_http_builder(
             input: &crate::input::GetDigestInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1665,23 +1824,23 @@ impl GetDigestInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetDigestInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1704,22 +1863,25 @@ impl GetDigestInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
         let op =
-            smithy_http::operation::Operation::new(request, crate::operation::GetDigest::new())
-                .with_metadata(smithy_http::operation::Metadata::new("GetDigest", "qldb"));
+            aws_smithy_http::operation::Operation::new(request, crate::operation::GetDigest::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "GetDigest",
+                    "qldb",
+                ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1750,6 +1912,7 @@ pub mod get_revision_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the ledger.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1761,6 +1924,9 @@ pub mod get_revision_input {
             self.block_address = Some(input);
             self
         }
+        /// <p>The block location of the document revision to be verified. An address is an Amazon Ion
+        /// structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
+        /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>.</p>
         pub fn set_block_address(
             mut self,
             input: std::option::Option<crate::model::ValueHolder>,
@@ -1773,6 +1939,7 @@ pub mod get_revision_input {
             self.document_id = Some(input.into());
             self
         }
+        /// <p>The UUID (represented in Base62-encoded text) of the document to be verified.</p>
         pub fn set_document_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.document_id = input;
             self
@@ -1785,6 +1952,10 @@ pub mod get_revision_input {
             self.digest_tip_address = Some(input);
             self
         }
+        /// <p>The latest block location covered by the digest for which to request a proof. An address
+        /// is an Amazon Ion structure that has two fields: <code>strandId</code> and
+        /// <code>sequenceNo</code>.</p>
+        /// <p>For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>.</p>
         pub fn set_digest_tip_address(
             mut self,
             input: std::option::Option<crate::model::ValueHolder>,
@@ -1795,8 +1966,10 @@ pub mod get_revision_input {
         /// Consumes the builder and constructs a [`GetRevisionInput`](crate::input::GetRevisionInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetRevisionInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetRevisionInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetRevisionInput {
                 name: self.name,
                 block_address: self.block_address,
@@ -1817,27 +1990,27 @@ impl GetRevisionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetRevision,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetRevisionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_12 = &_input.name;
             let input_12 =
                 input_12
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     })?;
-            let name = smithy_http::label::fmt_string(input_12, false);
+            let name = aws_smithy_http::label::fmt_string(input_12, false);
             if name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 });
@@ -1850,7 +2023,7 @@ impl GetRevisionInput {
         fn update_http_builder(
             input: &crate::input::GetRevisionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1859,24 +2032,26 @@ impl GetRevisionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetRevisionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_get_revision(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1899,22 +2074,27 @@ impl GetRevisionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::GetRevision::new())
-                .with_metadata(smithy_http::operation::Metadata::new("GetRevision", "qldb"));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetRevision::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetRevision",
+            "qldb",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1944,6 +2124,7 @@ pub mod list_journal_kinesis_streams_for_ledger_input {
             self.ledger_name = Some(input.into());
             self
         }
+        /// <p>The name of the ledger.</p>
         pub fn set_ledger_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ledger_name = input;
             self
@@ -1955,6 +2136,9 @@ pub mod list_journal_kinesis_streams_for_ledger_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of results to return in a single
+        /// <code>ListJournalKinesisStreamsForLedger</code> request. (The actual number of results
+        /// returned might be fewer.)</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1967,6 +2151,10 @@ pub mod list_journal_kinesis_streams_for_ledger_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A pagination token, indicating that you want to retrieve the next page of results. If
+        /// you received a value for <code>NextToken</code> in the response from a previous
+        /// <code>ListJournalKinesisStreamsForLedger</code> call, you should use that value as input
+        /// here.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1976,7 +2164,7 @@ pub mod list_journal_kinesis_streams_for_ledger_input {
             self,
         ) -> std::result::Result<
             crate::input::ListJournalKinesisStreamsForLedgerInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListJournalKinesisStreamsForLedgerInput {
                 ledger_name: self.ledger_name,
@@ -1998,27 +2186,27 @@ impl ListJournalKinesisStreamsForLedgerInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListJournalKinesisStreamsForLedger,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListJournalKinesisStreamsForLedgerInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_13 = &_input.ledger_name;
             let input_13 =
                 input_13
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "ledger_name",
                         details: "cannot be empty or unset",
                     })?;
-            let ledger_name = smithy_http::label::fmt_string(input_13, false);
+            let ledger_name = aws_smithy_http::label::fmt_string(input_13, false);
             if ledger_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "ledger_name",
                     details: "cannot be empty or unset",
                 });
@@ -2035,22 +2223,22 @@ impl ListJournalKinesisStreamsForLedgerInput {
             _input: &crate::input::ListJournalKinesisStreamsForLedgerInput,
             mut output: &mut String,
         ) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_14) = &_input.max_results {
                 query.push_kv(
                     "max_results",
-                    &smithy_types::primitive::Encoder::from(*inner_14).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_14).encode(),
                 );
             }
             if let Some(inner_15) = &_input.next_token {
-                query.push_kv("next_token", &smithy_http::query::fmt_string(&inner_15));
+                query.push_kv("next_token", &aws_smithy_http::query::fmt_string(&inner_15));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::ListJournalKinesisStreamsForLedgerInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2060,23 +2248,23 @@ impl ListJournalKinesisStreamsForLedgerInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListJournalKinesisStreamsForLedgerInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2099,15 +2287,15 @@ impl ListJournalKinesisStreamsForLedgerInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListJournalKinesisStreamsForLedger::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListJournalKinesisStreamsForLedger",
             "qldb",
         ));
@@ -2116,10 +2304,10 @@ impl ListJournalKinesisStreamsForLedgerInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2149,6 +2337,8 @@ pub mod list_journal_s3_exports_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of results to return in a single <code>ListJournalS3Exports</code>
+        /// request. (The actual number of results returned might be fewer.)</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -2161,6 +2351,10 @@ pub mod list_journal_s3_exports_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A pagination token, indicating that you want to retrieve the next page of results. If
+        /// you received a value for <code>NextToken</code> in the response from a previous
+        /// <code>ListJournalS3Exports</code> call, then you should use that value as input
+        /// here.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2170,7 +2364,7 @@ pub mod list_journal_s3_exports_input {
             self,
         ) -> std::result::Result<
             crate::input::ListJournalS3ExportsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListJournalS3ExportsInput {
                 max_results: self.max_results,
@@ -2190,36 +2384,36 @@ impl ListJournalS3ExportsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListJournalS3Exports,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListJournalS3ExportsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/journal-s3-exports").expect("formatting should succeed");
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListJournalS3ExportsInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_16) = &_input.max_results {
                 query.push_kv(
                     "max_results",
-                    &smithy_types::primitive::Encoder::from(*inner_16).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_16).encode(),
                 );
             }
             if let Some(inner_17) = &_input.next_token {
-                query.push_kv("next_token", &smithy_http::query::fmt_string(&inner_17));
+                query.push_kv("next_token", &aws_smithy_http::query::fmt_string(&inner_17));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::ListJournalS3ExportsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2229,23 +2423,23 @@ impl ListJournalS3ExportsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListJournalS3ExportsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2268,15 +2462,15 @@ impl ListJournalS3ExportsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListJournalS3Exports::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListJournalS3Exports",
             "qldb",
         ));
@@ -2285,10 +2479,10 @@ impl ListJournalS3ExportsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2318,6 +2512,7 @@ pub mod list_journal_s3_exports_for_ledger_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the ledger.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2329,6 +2524,9 @@ pub mod list_journal_s3_exports_for_ledger_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of results to return in a single
+        /// <code>ListJournalS3ExportsForLedger</code> request. (The actual number of results
+        /// returned might be fewer.)</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -2341,6 +2539,10 @@ pub mod list_journal_s3_exports_for_ledger_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A pagination token, indicating that you want to retrieve the next page of results. If
+        /// you received a value for <code>NextToken</code> in the response from a previous
+        /// <code>ListJournalS3ExportsForLedger</code> call, then you should use that value as input
+        /// here.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2350,7 +2552,7 @@ pub mod list_journal_s3_exports_for_ledger_input {
             self,
         ) -> std::result::Result<
             crate::input::ListJournalS3ExportsForLedgerInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListJournalS3ExportsForLedgerInput {
                 name: self.name,
@@ -2372,27 +2574,27 @@ impl ListJournalS3ExportsForLedgerInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListJournalS3ExportsForLedger,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListJournalS3ExportsForLedgerInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_18 = &_input.name;
             let input_18 =
                 input_18
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     })?;
-            let name = smithy_http::label::fmt_string(input_18, false);
+            let name = aws_smithy_http::label::fmt_string(input_18, false);
             if name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 });
@@ -2405,22 +2607,22 @@ impl ListJournalS3ExportsForLedgerInput {
             _input: &crate::input::ListJournalS3ExportsForLedgerInput,
             mut output: &mut String,
         ) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_19) = &_input.max_results {
                 query.push_kv(
                     "max_results",
-                    &smithy_types::primitive::Encoder::from(*inner_19).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_19).encode(),
                 );
             }
             if let Some(inner_20) = &_input.next_token {
-                query.push_kv("next_token", &smithy_http::query::fmt_string(&inner_20));
+                query.push_kv("next_token", &aws_smithy_http::query::fmt_string(&inner_20));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::ListJournalS3ExportsForLedgerInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2430,23 +2632,23 @@ impl ListJournalS3ExportsForLedgerInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListJournalS3ExportsForLedgerInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2469,15 +2671,15 @@ impl ListJournalS3ExportsForLedgerInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListJournalS3ExportsForLedger::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListJournalS3ExportsForLedger",
             "qldb",
         ));
@@ -2486,10 +2688,10 @@ impl ListJournalS3ExportsForLedgerInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2519,6 +2721,8 @@ pub mod list_ledgers_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of results to return in a single <code>ListLedgers</code> request.
+        /// (The actual number of results returned might be fewer.)</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -2530,6 +2734,9 @@ pub mod list_ledgers_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A pagination token, indicating that you want to retrieve the next page of results. If
+        /// you received a value for <code>NextToken</code> in the response from a previous
+        /// <code>ListLedgers</code> call, then you should use that value as input here.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2537,8 +2744,10 @@ pub mod list_ledgers_input {
         /// Consumes the builder and constructs a [`ListLedgersInput`](crate::input::ListLedgersInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListLedgersInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListLedgersInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListLedgersInput {
                 max_results: self.max_results,
                 next_token: self.next_token,
@@ -2557,36 +2766,36 @@ impl ListLedgersInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListLedgers,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListLedgersInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/ledgers").expect("formatting should succeed");
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListLedgersInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_21) = &_input.max_results {
                 query.push_kv(
                     "max_results",
-                    &smithy_types::primitive::Encoder::from(*inner_21).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_21).encode(),
                 );
             }
             if let Some(inner_22) = &_input.next_token {
-                query.push_kv("next_token", &smithy_http::query::fmt_string(&inner_22));
+                query.push_kv("next_token", &aws_smithy_http::query::fmt_string(&inner_22));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::ListLedgersInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2596,23 +2805,23 @@ impl ListLedgersInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListLedgersInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2635,22 +2844,27 @@ impl ListLedgersInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListLedgers::new())
-                .with_metadata(smithy_http::operation::Metadata::new("ListLedgers", "qldb"));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListLedgers::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListLedgers",
+            "qldb",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2681,6 +2895,10 @@ pub mod list_tags_for_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) for which to list the tags. For example:</p>
+        /// <p>
+        /// <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code>
+        /// </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -2690,7 +2908,7 @@ pub mod list_tags_for_resource_input {
             self,
         ) -> std::result::Result<
             crate::input::ListTagsForResourceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListTagsForResourceInput {
                 resource_arn: self.resource_arn,
@@ -2709,27 +2927,27 @@ impl ListTagsForResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListTagsForResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_23 = &_input.resource_arn;
             let input_23 =
                 input_23
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = smithy_http::label::fmt_string(input_23, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_23, false);
             if resource_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 });
@@ -2742,7 +2960,7 @@ impl ListTagsForResourceInput {
         fn update_http_builder(
             input: &crate::input::ListTagsForResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2751,23 +2969,23 @@ impl ListTagsForResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListTagsForResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2790,15 +3008,15 @@ impl ListTagsForResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListTagsForResource::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListTagsForResource",
             "qldb",
         ));
@@ -2807,10 +3025,10 @@ impl ListTagsForResourceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2838,8 +3056,8 @@ pub mod stream_journal_to_kinesis_input {
                 std::option::Option<std::string::String>,
             >,
         >,
-        pub(crate) inclusive_start_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) exclusive_end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) inclusive_start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) exclusive_end_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) kinesis_configuration: std::option::Option<crate::model::KinesisConfiguration>,
         pub(crate) stream_name: std::option::Option<std::string::String>,
     }
@@ -2849,6 +3067,7 @@ pub mod stream_journal_to_kinesis_input {
             self.ledger_name = Some(input.into());
             self
         }
+        /// <p>The name of the ledger.</p>
         pub fn set_ledger_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ledger_name = input;
             self
@@ -2859,10 +3078,18 @@ pub mod stream_journal_to_kinesis_input {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a
+        /// journal stream to write data records to a Kinesis Data Streams resource.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The key-value pairs to add as tags to the stream that you want to create. Tag keys are
+        /// case sensitive. Tag values are case sensitive and can be null.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2873,6 +3100,8 @@ pub mod stream_journal_to_kinesis_input {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The key-value pairs to add as tags to the stream that you want to create. Tag keys are
+        /// case sensitive. Tag values are case sensitive and can be null.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2893,13 +3122,21 @@ pub mod stream_journal_to_kinesis_input {
         /// <p>If you provide an <code>InclusiveStartTime</code> that is before the ledger's
         /// <code>CreationDateTime</code>, QLDB effectively defaults it to the ledger's
         /// <code>CreationDateTime</code>.</p>
-        pub fn inclusive_start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn inclusive_start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.inclusive_start_time = Some(input);
             self
         }
+        /// <p>The inclusive start date and time from which to start streaming journal data. This
+        /// parameter must be in <code>ISO 8601</code> date and time format and in Universal
+        /// Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.</p>
+        /// <p>The <code>InclusiveStartTime</code> cannot be in the future and must be before
+        /// <code>ExclusiveEndTime</code>.</p>
+        /// <p>If you provide an <code>InclusiveStartTime</code> that is before the ledger's
+        /// <code>CreationDateTime</code>, QLDB effectively defaults it to the ledger's
+        /// <code>CreationDateTime</code>.</p>
         pub fn set_inclusive_start_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.inclusive_start_time = input;
             self
@@ -2909,13 +3146,18 @@ pub mod stream_journal_to_kinesis_input {
         /// <p>The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format
         /// and in Universal Coordinated Time (UTC). For example:
         /// <code>2019-06-13T21:36:34Z</code>.</p>
-        pub fn exclusive_end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn exclusive_end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.exclusive_end_time = Some(input);
             self
         }
+        /// <p>The exclusive date and time that specifies when the stream ends. If you don't define
+        /// this parameter, the stream runs indefinitely until you cancel it.</p>
+        /// <p>The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format
+        /// and in Universal Coordinated Time (UTC). For example:
+        /// <code>2019-06-13T21:36:34Z</code>.</p>
         pub fn set_exclusive_end_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.exclusive_end_time = input;
             self
@@ -2925,6 +3167,7 @@ pub mod stream_journal_to_kinesis_input {
             self.kinesis_configuration = Some(input);
             self
         }
+        /// <p>The configuration settings of the Kinesis Data Streams destination for your stream request.</p>
         pub fn set_kinesis_configuration(
             mut self,
             input: std::option::Option<crate::model::KinesisConfiguration>,
@@ -2942,6 +3185,12 @@ pub mod stream_journal_to_kinesis_input {
             self.stream_name = Some(input.into());
             self
         }
+        /// <p>The name that you want to assign to the QLDB journal stream. User-defined names can
+        /// help identify and indicate the purpose of a stream.</p>
+        /// <p>Your stream name must be unique among other <i>active</i> streams for a
+        /// given ledger. Stream names have the same naming constraints as ledger names, as defined in
+        /// <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/limits.html#limits.naming">Quotas in Amazon QLDB</a> in the <i>Amazon QLDB Developer
+        /// Guide</i>.</p>
         pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_name = input;
             self
@@ -2951,7 +3200,7 @@ pub mod stream_journal_to_kinesis_input {
             self,
         ) -> std::result::Result<
             crate::input::StreamJournalToKinesisInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::StreamJournalToKinesisInput {
                 ledger_name: self.ledger_name,
@@ -2976,27 +3225,27 @@ impl StreamJournalToKinesisInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::StreamJournalToKinesis,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::StreamJournalToKinesisInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_24 = &_input.ledger_name;
             let input_24 =
                 input_24
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "ledger_name",
                         details: "cannot be empty or unset",
                     })?;
-            let ledger_name = smithy_http::label::fmt_string(input_24, false);
+            let ledger_name = aws_smithy_http::label::fmt_string(input_24, false);
             if ledger_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "ledger_name",
                     details: "cannot be empty or unset",
                 });
@@ -3013,7 +3262,7 @@ impl StreamJournalToKinesisInput {
         fn update_http_builder(
             input: &crate::input::StreamJournalToKinesisInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3022,27 +3271,29 @@ impl StreamJournalToKinesisInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::StreamJournalToKinesisInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_stream_journal_to_kinesis(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3065,15 +3316,15 @@ impl StreamJournalToKinesisInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::StreamJournalToKinesis::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "StreamJournalToKinesis",
             "qldb",
         ));
@@ -3082,10 +3333,10 @@ impl StreamJournalToKinesisInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3122,10 +3373,21 @@ pub mod tag_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) to which you want to add the tags. For example:</p>
+        /// <p>
+        /// <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code>
+        /// </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The key-value pairs to add as tags to the specified QLDB resource. Tag keys are case
+        /// sensitive. If you specify a key that already exists for the resource, your request fails
+        /// and returns an error. Tag values are case sensitive and can be null.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -3136,6 +3398,9 @@ pub mod tag_resource_input {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The key-value pairs to add as tags to the specified QLDB resource. Tag keys are case
+        /// sensitive. If you specify a key that already exists for the resource, your request fails
+        /// and returns an error. Tag values are case sensitive and can be null.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -3151,8 +3416,10 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::TagResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::TagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::TagResourceInput {
                 resource_arn: self.resource_arn,
                 tags: self.tags,
@@ -3171,27 +3438,27 @@ impl TagResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::TagResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_25 = &_input.resource_arn;
             let input_25 =
                 input_25
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = smithy_http::label::fmt_string(input_25, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_25, false);
             if resource_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 });
@@ -3204,7 +3471,7 @@ impl TagResourceInput {
         fn update_http_builder(
             input: &crate::input::TagResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3213,24 +3480,26 @@ impl TagResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::TagResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3253,22 +3522,27 @@ impl TagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::TagResource::new())
-                .with_metadata(smithy_http::operation::Metadata::new("TagResource", "qldb"));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::TagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "TagResource",
+            "qldb",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3300,16 +3574,26 @@ pub mod untag_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) from which to remove the tags. For example:</p>
+        /// <p>
+        /// <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code>
+        /// </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Appends an item to `tag_keys`.
+        ///
+        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
+        ///
+        /// <p>The list of tag keys to remove.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
+        /// <p>The list of tag keys to remove.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3320,8 +3604,10 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UntagResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UntagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UntagResourceInput {
                 resource_arn: self.resource_arn,
                 tag_keys: self.tag_keys,
@@ -3340,27 +3626,27 @@ impl UntagResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UntagResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_26 = &_input.resource_arn;
             let input_26 =
                 input_26
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = smithy_http::label::fmt_string(input_26, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_26, false);
             if resource_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 });
@@ -3370,10 +3656,10 @@ impl UntagResourceInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::UntagResourceInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_27) = &_input.tag_keys {
                 for inner_28 in inner_27 {
-                    query.push_kv("tagKeys", &smithy_http::query::fmt_string(&inner_28));
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_28));
                 }
             }
         }
@@ -3381,7 +3667,7 @@ impl UntagResourceInput {
         fn update_http_builder(
             input: &crate::input::UntagResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3391,23 +3677,23 @@ impl UntagResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UntagResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3430,25 +3716,27 @@ impl UntagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UntagResource::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UntagResource",
-                    "qldb",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UntagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UntagResource",
+            "qldb",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3478,6 +3766,7 @@ pub mod update_ledger_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the ledger.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -3490,6 +3779,10 @@ pub mod update_ledger_input {
             self.deletion_protection = Some(input);
             self
         }
+        /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on
+        /// ledger creation, this feature is enabled (<code>true</code>) by default.</p>
+        /// <p>If deletion protection is enabled, you must first disable it before you can delete the
+        /// ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
         pub fn set_deletion_protection(mut self, input: std::option::Option<bool>) -> Self {
             self.deletion_protection = input;
             self
@@ -3548,6 +3841,56 @@ pub mod update_ledger_input {
             self.kms_key = Some(input.into());
             self
         }
+        /// <p>The key in Key Management Service (KMS) to use for encryption of data at rest in the ledger. For
+        /// more information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/encryption-at-rest.html">Encryption at rest</a> in
+        /// the <i>Amazon QLDB Developer Guide</i>.</p>
+        /// <p>Use one of the following options to specify this parameter:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>AWS_OWNED_KMS_KEY</code>: Use an KMS key that is owned and managed by Amazon Web Services
+        /// on your behalf.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>Undefined</b>: Make no changes to the KMS key of the
+        /// ledger.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>A valid symmetric customer managed KMS key</b>: Use
+        /// the specified KMS key in your account that you create, own, and manage.</p>
+        /// <p>Amazon QLDB does not support asymmetric keys. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and asymmetric keys</a> in the <i>Key Management Service Developer
+        /// Guide</i>.</p>
+        /// </li>
+        /// </ul>
+        /// <p>To specify a customer managed KMS key, you can use its key ID, Amazon Resource Name
+        /// (ARN), alias name, or alias ARN. When using an alias name, prefix it with
+        /// <code>"alias/"</code>. To specify a key in a different account, you must use the key
+        /// ARN or alias ARN.</p>
+        /// <p>For example:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Key ARN:
+        /// <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Alias name: <code>alias/ExampleAlias</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Alias ARN:
+        /// <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key identifiers (KeyId)</a> in
+        /// the <i>Key Management Service Developer Guide</i>.</p>
         pub fn set_kms_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key = input;
             self
@@ -3555,8 +3898,10 @@ pub mod update_ledger_input {
         /// Consumes the builder and constructs a [`UpdateLedgerInput`](crate::input::UpdateLedgerInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UpdateLedgerInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateLedgerInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateLedgerInput {
                 name: self.name,
                 deletion_protection: self.deletion_protection,
@@ -3576,27 +3921,27 @@ impl UpdateLedgerInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateLedger,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateLedgerInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_29 = &_input.name;
             let input_29 =
                 input_29
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     })?;
-            let name = smithy_http::label::fmt_string(input_29, false);
+            let name = aws_smithy_http::label::fmt_string(input_29, false);
             if name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 });
@@ -3608,7 +3953,7 @@ impl UpdateLedgerInput {
         fn update_http_builder(
             input: &crate::input::UpdateLedgerInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3617,26 +3962,26 @@ impl UpdateLedgerInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateLedgerInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_update_ledger(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3659,25 +4004,27 @@ impl UpdateLedgerInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UpdateLedger::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UpdateLedger",
-                    "qldb",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateLedger::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateLedger",
+            "qldb",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3706,6 +4053,7 @@ pub mod update_ledger_permissions_mode_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the ledger.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -3744,6 +4092,36 @@ pub mod update_ledger_permissions_mode_input {
             self.permissions_mode = Some(input);
             self
         }
+        /// <p>The permissions mode to assign to the ledger. This parameter can have one of the
+        /// following values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ALLOW_ALL</code>: A legacy permissions mode that enables access control with
+        /// API-level granularity for ledgers.</p>
+        /// <p>This mode allows users who have the <code>SendCommand</code> API permission for
+        /// this ledger to run all PartiQL commands (hence, <code>ALLOW_ALL</code>) on any tables
+        /// in the specified ledger. This mode disregards any table-level or command-level IAM
+        /// permissions policies that you create for the ledger.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>STANDARD</code>: (<i>Recommended</i>) A permissions mode that
+        /// enables access control with finer granularity for ledgers, tables, and PartiQL
+        /// commands.</p>
+        /// <p>By default, this mode denies all user requests to run any PartiQL commands on any
+        /// tables in this ledger. To allow PartiQL commands to run, you must create IAM
+        /// permissions policies for specific table resources and PartiQL actions, in addition to
+        /// the <code>SendCommand</code> API permission for the ledger. For information, see
+        /// <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/getting-started-standard-mode.html">Getting
+        /// started with the standard permissions mode</a> in the <i>Amazon QLDB
+        /// Developer Guide</i>.</p>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>We strongly recommend using the <code>STANDARD</code> permissions mode to maximize
+        /// the security of your ledger data.</p>
+        /// </note>
         pub fn set_permissions_mode(
             mut self,
             input: std::option::Option<crate::model::PermissionsMode>,
@@ -3756,7 +4134,7 @@ pub mod update_ledger_permissions_mode_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateLedgerPermissionsModeInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateLedgerPermissionsModeInput {
                 name: self.name,
@@ -3777,27 +4155,27 @@ impl UpdateLedgerPermissionsModeInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateLedgerPermissionsMode,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateLedgerPermissionsModeInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_30 = &_input.name;
             let input_30 =
                 input_30
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "name",
                         details: "cannot be empty or unset",
                     })?;
-            let name = smithy_http::label::fmt_string(input_30, false);
+            let name = aws_smithy_http::label::fmt_string(input_30, false);
             if name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "name",
                     details: "cannot be empty or unset",
                 });
@@ -3810,7 +4188,7 @@ impl UpdateLedgerPermissionsModeInput {
         fn update_http_builder(
             input: &crate::input::UpdateLedgerPermissionsModeInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3819,25 +4197,25 @@ impl UpdateLedgerPermissionsModeInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateLedgerPermissionsModeInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_ledger_permissions_mode(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_ledger_permissions_mode(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3860,15 +4238,15 @@ impl UpdateLedgerPermissionsModeInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateLedgerPermissionsMode::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateLedgerPermissionsMode",
             "qldb",
         ));
@@ -3877,10 +4255,10 @@ impl UpdateLedgerPermissionsModeInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3894,6 +4272,7 @@ impl UpdateLedgerPermissionsModeInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateLedgerPermissionsModeInput {
@@ -3940,6 +4319,7 @@ impl std::fmt::Debug for UpdateLedgerPermissionsModeInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateLedgerInput {
@@ -4012,6 +4392,7 @@ impl std::fmt::Debug for UpdateLedgerInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
@@ -4032,6 +4413,7 @@ impl std::fmt::Debug for UntagResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
@@ -4056,6 +4438,7 @@ impl std::fmt::Debug for TagResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StreamJournalToKinesisInput {
@@ -4077,13 +4460,13 @@ pub struct StreamJournalToKinesisInput {
     /// <p>If you provide an <code>InclusiveStartTime</code> that is before the ledger's
     /// <code>CreationDateTime</code>, QLDB effectively defaults it to the ledger's
     /// <code>CreationDateTime</code>.</p>
-    pub inclusive_start_time: std::option::Option<smithy_types::Instant>,
+    pub inclusive_start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The exclusive date and time that specifies when the stream ends. If you don't define
     /// this parameter, the stream runs indefinitely until you cancel it.</p>
     /// <p>The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format
     /// and in Universal Coordinated Time (UTC). For example:
     /// <code>2019-06-13T21:36:34Z</code>.</p>
-    pub exclusive_end_time: std::option::Option<smithy_types::Instant>,
+    pub exclusive_end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The configuration settings of the Kinesis Data Streams destination for your stream request.</p>
     pub kinesis_configuration: std::option::Option<crate::model::KinesisConfiguration>,
     /// <p>The name that you want to assign to the QLDB journal stream. User-defined names can
@@ -4108,6 +4491,7 @@ impl std::fmt::Debug for StreamJournalToKinesisInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
@@ -4125,6 +4509,7 @@ impl std::fmt::Debug for ListTagsForResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLedgersInput {
@@ -4145,6 +4530,7 @@ impl std::fmt::Debug for ListLedgersInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListJournalS3ExportsForLedgerInput {
@@ -4170,6 +4556,7 @@ impl std::fmt::Debug for ListJournalS3ExportsForLedgerInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListJournalS3ExportsInput {
@@ -4191,6 +4578,7 @@ impl std::fmt::Debug for ListJournalS3ExportsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListJournalKinesisStreamsForLedgerInput {
@@ -4216,6 +4604,7 @@ impl std::fmt::Debug for ListJournalKinesisStreamsForLedgerInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRevisionInput {
@@ -4244,6 +4633,7 @@ impl std::fmt::Debug for GetRevisionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDigestInput {
@@ -4258,6 +4648,7 @@ impl std::fmt::Debug for GetDigestInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBlockInput {
@@ -4283,6 +4674,7 @@ impl std::fmt::Debug for GetBlockInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportJournalToS3Input {
@@ -4296,14 +4688,14 @@ pub struct ExportJournalToS3Input {
     /// <p>If you provide an <code>InclusiveStartTime</code> that is before the ledger's
     /// <code>CreationDateTime</code>, Amazon QLDB defaults it to the ledger's
     /// <code>CreationDateTime</code>.</p>
-    pub inclusive_start_time: std::option::Option<smithy_types::Instant>,
+    pub inclusive_start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The exclusive end date and time for the range of journal contents to export.</p>
     /// <p>The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format
     /// and in Universal Coordinated Time (UTC). For example:
     /// <code>2019-06-13T21:36:34Z</code>.</p>
     /// <p>The <code>ExclusiveEndTime</code> must be less than or equal to the current UTC date and
     /// time.</p>
-    pub exclusive_end_time: std::option::Option<smithy_types::Instant>,
+    pub exclusive_end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The configuration settings of the Amazon S3 bucket destination for your export
     /// request.</p>
     pub s3_export_configuration: std::option::Option<crate::model::S3ExportConfiguration>,
@@ -4332,6 +4724,7 @@ impl std::fmt::Debug for ExportJournalToS3Input {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLedgerInput {
@@ -4346,6 +4739,7 @@ impl std::fmt::Debug for DescribeLedgerInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeJournalS3ExportInput {
@@ -4364,6 +4758,7 @@ impl std::fmt::Debug for DescribeJournalS3ExportInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeJournalKinesisStreamInput {
@@ -4382,6 +4777,7 @@ impl std::fmt::Debug for DescribeJournalKinesisStreamInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLedgerInput {
@@ -4396,6 +4792,7 @@ impl std::fmt::Debug for DeleteLedgerInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLedgerInput {
@@ -4509,6 +4906,7 @@ impl std::fmt::Debug for CreateLedgerInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelJournalKinesisStreamInput {

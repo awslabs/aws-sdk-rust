@@ -36,6 +36,8 @@ pub mod update_user_output {
             self.server_id = Some(input.into());
             self
         }
+        /// <p>A system-assigned unique identifier for a server instance that the user account is
+        /// assigned to.</p>
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_id = input;
             self
@@ -46,6 +48,8 @@ pub mod update_user_output {
             self.user_name = Some(input.into());
             self
         }
+        /// <p>The unique identifier for a user that is assigned to a server instance that was specified
+        /// in the request.</p>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_name = input;
             self
@@ -66,6 +70,7 @@ impl UpdateUserOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateServerOutput {
@@ -95,6 +100,8 @@ pub mod update_server_output {
             self.server_id = Some(input.into());
             self
         }
+        /// <p>A system-assigned unique identifier for a server that the user account is assigned
+        /// to.</p>
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_id = input;
             self
@@ -114,6 +121,7 @@ impl UpdateServerOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAccessOutput {
@@ -146,6 +154,7 @@ pub mod update_access_output {
             self.server_id = Some(input.into());
             self
         }
+        /// <p>The ID of the server that the user is attached to.</p>
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_id = input;
             self
@@ -156,6 +165,8 @@ pub mod update_access_output {
             self.external_id = Some(input.into());
             self
         }
+        /// <p>The external ID of the group whose users have access to your Amazon S3 or Amazon EFS
+        /// resources over the enabled protocols using Amazon Web ServicesTransfer Family.</p>
         pub fn set_external_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.external_id = input;
             self
@@ -176,6 +187,7 @@ impl UpdateAccessOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceOutput {}
@@ -205,6 +217,7 @@ impl UntagResourceOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestIdentityProviderOutput {
@@ -244,6 +257,7 @@ pub mod test_identity_provider_output {
             self.response = Some(input.into());
             self
         }
+        /// <p>The response that is returned from your API Gateway.</p>
         pub fn set_response(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.response = input;
             self
@@ -253,6 +267,7 @@ pub mod test_identity_provider_output {
             self.status_code = Some(input);
             self
         }
+        /// <p>The HTTP status code that is the response from your API Gateway.</p>
         pub fn set_status_code(mut self, input: std::option::Option<i32>) -> Self {
             self.status_code = input;
             self
@@ -262,6 +277,7 @@ pub mod test_identity_provider_output {
             self.message = Some(input.into());
             self
         }
+        /// <p>A message that indicates whether the test was successful or not.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -271,6 +287,7 @@ pub mod test_identity_provider_output {
             self.url = Some(input.into());
             self
         }
+        /// <p>The endpoint of the service used to authenticate a user.</p>
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.url = input;
             self
@@ -293,6 +310,7 @@ impl TestIdentityProviderOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceOutput {}
@@ -322,6 +340,7 @@ impl TagResourceOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopServerOutput {}
@@ -351,6 +370,7 @@ impl StopServerOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartServerOutput {}
@@ -380,6 +400,7 @@ impl StartServerOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendWorkflowStepStateOutput {}
@@ -409,6 +430,7 @@ impl SendWorkflowStepStateOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWorkflowsOutput {
@@ -446,16 +468,26 @@ pub mod list_workflows_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>
+        /// <code>ListWorkflows</code> returns the <code>NextToken</code> parameter in the output.
+        /// You can then pass the <code>NextToken</code> parameter in a subsequent command to
+        /// continue listing additional workflows.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
+        /// Appends an item to `workflows`.
+        ///
+        /// To override the contents of this collection use [`set_workflows`](Self::set_workflows).
+        ///
+        /// <p>Returns the <code>Arn</code>, <code>WorkflowId</code>, and <code>Description</code> for each workflow.</p>
         pub fn workflows(mut self, input: impl Into<crate::model::ListedWorkflow>) -> Self {
             let mut v = self.workflows.unwrap_or_default();
             v.push(input.into());
             self.workflows = Some(v);
             self
         }
+        /// <p>Returns the <code>Arn</code>, <code>WorkflowId</code>, and <code>Description</code> for each workflow.</p>
         pub fn set_workflows(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ListedWorkflow>>,
@@ -479,6 +511,7 @@ impl ListWorkflowsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListUsersOutput {
@@ -521,6 +554,10 @@ pub mod list_users_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>When you can get additional results from the <code>ListUsers</code> call, a
+        /// <code>NextToken</code> parameter is returned in the output. You can then pass in a
+        /// subsequent command to the <code>NextToken</code> parameter to continue listing additional
+        /// users.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -530,16 +567,25 @@ pub mod list_users_output {
             self.server_id = Some(input.into());
             self
         }
+        /// <p>A system-assigned unique identifier for a server that the users are assigned to.</p>
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_id = input;
             self
         }
+        /// Appends an item to `users`.
+        ///
+        /// To override the contents of this collection use [`set_users`](Self::set_users).
+        ///
+        /// <p>Returns the user accounts and their properties for the <code>ServerId</code> value that
+        /// you specify.</p>
         pub fn users(mut self, input: impl Into<crate::model::ListedUser>) -> Self {
             let mut v = self.users.unwrap_or_default();
             v.push(input.into());
             self.users = Some(v);
             self
         }
+        /// <p>Returns the user accounts and their properties for the <code>ServerId</code> value that
+        /// you specify.</p>
         pub fn set_users(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ListedUser>>,
@@ -564,6 +610,7 @@ impl ListUsersOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
@@ -603,6 +650,7 @@ pub mod list_tags_for_resource_output {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The ARN you specified to list the tags of.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -615,16 +663,28 @@ pub mod list_tags_for_resource_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>When you can get additional results from the <code>ListTagsForResource</code> call, a
+        /// <code>NextToken</code> parameter is returned in the output. You can then pass in a
+        /// subsequent command to the <code>NextToken</code> parameter to continue listing additional
+        /// tags.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Key-value pairs that are assigned to a resource, usually for the purpose of grouping and
+        /// searching for items. Tags are metadata that you define.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>Key-value pairs that are assigned to a resource, usually for the purpose of grouping and
+        /// searching for items. Tags are metadata that you define.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -649,6 +709,7 @@ impl ListTagsForResourceOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListServersOutput {
@@ -684,16 +745,25 @@ pub mod list_servers_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>When you can get additional results from the <code>ListServers</code> operation, a
+        /// <code>NextToken</code> parameter is returned in the output. In a following command, you can
+        /// pass in the <code>NextToken</code> parameter to continue listing additional servers.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
+        /// Appends an item to `servers`.
+        ///
+        /// To override the contents of this collection use [`set_servers`](Self::set_servers).
+        ///
+        /// <p>An array of servers that were listed.</p>
         pub fn servers(mut self, input: impl Into<crate::model::ListedServer>) -> Self {
             let mut v = self.servers.unwrap_or_default();
             v.push(input.into());
             self.servers = Some(v);
             self
         }
+        /// <p>An array of servers that were listed.</p>
         pub fn set_servers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ListedServer>>,
@@ -717,6 +787,7 @@ impl ListServersOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSecurityPoliciesOutput {
@@ -752,16 +823,25 @@ pub mod list_security_policies_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>When you can get additional results from the <code>ListSecurityPolicies</code> operation,
+        /// a <code>NextToken</code> parameter is returned in the output. In a following command, you can
+        /// pass in the <code>NextToken</code> parameter to continue listing security policies.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
+        /// Appends an item to `security_policy_names`.
+        ///
+        /// To override the contents of this collection use [`set_security_policy_names`](Self::set_security_policy_names).
+        ///
+        /// <p>An array of security policies that were listed.</p>
         pub fn security_policy_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_policy_names.unwrap_or_default();
             v.push(input.into());
             self.security_policy_names = Some(v);
             self
         }
+        /// <p>An array of security policies that were listed.</p>
         pub fn set_security_policy_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -785,6 +865,7 @@ impl ListSecurityPoliciesOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListExecutionsOutput {
@@ -848,6 +929,10 @@ pub mod list_executions_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>
+        /// <code>ListExecutions</code> returns the <code>NextToken</code> parameter in the output.
+        /// You can then pass the <code>NextToken</code> parameter in a subsequent command to
+        /// continue listing additional executions.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -857,16 +942,67 @@ pub mod list_executions_output {
             self.workflow_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the workflow.</p>
         pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workflow_id = input;
             self
         }
+        /// Appends an item to `executions`.
+        ///
+        /// To override the contents of this collection use [`set_executions`](Self::set_executions).
+        ///
+        /// <p>Returns the details for each execution.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>NextToken</b>: returned from a call to several APIs,
+        /// you can use pass it to a subsequent command to continue listing additional executions.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>StartTime</b>: timestamp indicating when the execution began.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>Executions</b>: details of the execution, including the execution ID, initial file location,
+        /// and Service metadata.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>Status</b>: one of the following values:
+        /// <code>IN_PROGRESS</code>, <code>COMPLETED</code>, <code>EXCEPTION</code>, <code>HANDLING_EXEPTION</code>.
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn executions(mut self, input: impl Into<crate::model::ListedExecution>) -> Self {
             let mut v = self.executions.unwrap_or_default();
             v.push(input.into());
             self.executions = Some(v);
             self
         }
+        /// <p>Returns the details for each execution.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>NextToken</b>: returned from a call to several APIs,
+        /// you can use pass it to a subsequent command to continue listing additional executions.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>StartTime</b>: timestamp indicating when the execution began.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>Executions</b>: details of the execution, including the execution ID, initial file location,
+        /// and Service metadata.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>Status</b>: one of the following values:
+        /// <code>IN_PROGRESS</code>, <code>COMPLETED</code>, <code>EXCEPTION</code>, <code>HANDLING_EXEPTION</code>.
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_executions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ListedExecution>>,
@@ -891,6 +1027,7 @@ impl ListExecutionsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAccessesOutput {
@@ -933,6 +1070,10 @@ pub mod list_accesses_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>When you can get additional results from the <code>ListAccesses</code> call, a
+        /// <code>NextToken</code> parameter is returned in the output. You can then pass in a
+        /// subsequent command to the <code>NextToken</code> parameter to continue listing additional
+        /// accesses.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -942,16 +1083,25 @@ pub mod list_accesses_output {
             self.server_id = Some(input.into());
             self
         }
+        /// <p>A system-assigned unique identifier for a server that has users assigned to it.</p>
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_id = input;
             self
         }
+        /// Appends an item to `accesses`.
+        ///
+        /// To override the contents of this collection use [`set_accesses`](Self::set_accesses).
+        ///
+        /// <p>Returns the accesses and their properties for the <code>ServerId</code> value that you
+        /// specify.</p>
         pub fn accesses(mut self, input: impl Into<crate::model::ListedAccess>) -> Self {
             let mut v = self.accesses.unwrap_or_default();
             v.push(input.into());
             self.accesses = Some(v);
             self
         }
+        /// <p>Returns the accesses and their properties for the <code>ServerId</code> value that you
+        /// specify.</p>
         pub fn set_accesses(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ListedAccess>>,
@@ -1014,6 +1164,7 @@ pub mod import_ssh_public_key_output {
             self.server_id = Some(input.into());
             self
         }
+        /// <p>A system-assigned unique identifier for a server.</p>
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_id = input;
             self
@@ -1023,6 +1174,7 @@ pub mod import_ssh_public_key_output {
             self.ssh_public_key_id = Some(input.into());
             self
         }
+        /// <p>The name given to a public key by the system that was imported.</p>
         pub fn set_ssh_public_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1035,6 +1187,7 @@ pub mod import_ssh_public_key_output {
             self.user_name = Some(input.into());
             self
         }
+        /// <p>A user name assigned to the <code>ServerID</code> value that you specified.</p>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_name = input;
             self
@@ -1056,6 +1209,7 @@ impl ImportSshPublicKeyOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeWorkflowOutput {
@@ -1083,6 +1237,7 @@ pub mod describe_workflow_output {
             self.workflow = Some(input);
             self
         }
+        /// <p>The structure that contains the details of the workflow.</p>
         pub fn set_workflow(
             mut self,
             input: std::option::Option<crate::model::DescribedWorkflow>,
@@ -1105,6 +1260,7 @@ impl DescribeWorkflowOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeUserOutput {
@@ -1137,6 +1293,7 @@ pub mod describe_user_output {
             self.server_id = Some(input.into());
             self
         }
+        /// <p>A system-assigned unique identifier for a server that has this user assigned.</p>
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_id = input;
             self
@@ -1147,6 +1304,8 @@ pub mod describe_user_output {
             self.user = Some(input);
             self
         }
+        /// <p>An array containing the properties of the user account for the <code>ServerID</code> value
+        /// that you specified.</p>
         pub fn set_user(mut self, input: std::option::Option<crate::model::DescribedUser>) -> Self {
             self.user = input;
             self
@@ -1167,6 +1326,7 @@ impl DescribeUserOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeServerOutput {
@@ -1196,6 +1356,8 @@ pub mod describe_server_output {
             self.server = Some(input);
             self
         }
+        /// <p>An array containing the properties of a server with the <code>ServerID</code> you
+        /// specified.</p>
         pub fn set_server(
             mut self,
             input: std::option::Option<crate::model::DescribedServer>,
@@ -1218,6 +1380,7 @@ impl DescribeServerOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSecurityPolicyOutput {
@@ -1245,6 +1408,7 @@ pub mod describe_security_policy_output {
             self.security_policy = Some(input);
             self
         }
+        /// <p>An array containing the properties of the security policy.</p>
         pub fn set_security_policy(
             mut self,
             input: std::option::Option<crate::model::DescribedSecurityPolicy>,
@@ -1267,6 +1431,7 @@ impl DescribeSecurityPolicyOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeExecutionOutput {
@@ -1298,6 +1463,7 @@ pub mod describe_execution_output {
             self.workflow_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the workflow.</p>
         pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workflow_id = input;
             self
@@ -1307,6 +1473,7 @@ pub mod describe_execution_output {
             self.execution = Some(input);
             self
         }
+        /// <p>The structure that contains the details of the workflow' execution.</p>
         pub fn set_execution(
             mut self,
             input: std::option::Option<crate::model::DescribedExecution>,
@@ -1330,6 +1497,7 @@ impl DescribeExecutionOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccessOutput {
@@ -1361,6 +1529,7 @@ pub mod describe_access_output {
             self.server_id = Some(input.into());
             self
         }
+        /// <p>A system-assigned unique identifier for a server that has this access assigned.</p>
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_id = input;
             self
@@ -1370,6 +1539,7 @@ pub mod describe_access_output {
             self.access = Some(input);
             self
         }
+        /// <p>The external ID of the server that the access is attached to.</p>
         pub fn set_access(
             mut self,
             input: std::option::Option<crate::model::DescribedAccess>,
@@ -1393,6 +1563,7 @@ impl DescribeAccessOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteWorkflowOutput {}
@@ -1422,6 +1593,7 @@ impl DeleteWorkflowOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteUserOutput {}
@@ -1451,6 +1623,7 @@ impl DeleteUserOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSshPublicKeyOutput {}
@@ -1480,6 +1653,7 @@ impl DeleteSshPublicKeyOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteServerOutput {}
@@ -1509,6 +1683,7 @@ impl DeleteServerOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAccessOutput {}
@@ -1538,6 +1713,7 @@ impl DeleteAccessOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWorkflowOutput {
@@ -1565,6 +1741,7 @@ pub mod create_workflow_output {
             self.workflow_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the workflow.</p>
         pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workflow_id = input;
             self
@@ -1584,6 +1761,7 @@ impl CreateWorkflowOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateUserOutput {
@@ -1615,6 +1793,7 @@ pub mod create_user_output {
             self.server_id = Some(input.into());
             self
         }
+        /// <p>The ID of the server that the user is attached to.</p>
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_id = input;
             self
@@ -1624,6 +1803,7 @@ pub mod create_user_output {
             self.user_name = Some(input.into());
             self
         }
+        /// <p>A unique string that identifies a user account associated with a server.</p>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_name = input;
             self
@@ -1644,6 +1824,7 @@ impl CreateUserOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateServerOutput {
@@ -1671,6 +1852,7 @@ pub mod create_server_output {
             self.server_id = Some(input.into());
             self
         }
+        /// <p>The service-assigned ID of the server that is created.</p>
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_id = input;
             self
@@ -1690,6 +1872,7 @@ impl CreateServerOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAccessOutput {
@@ -1722,6 +1905,7 @@ pub mod create_access_output {
             self.server_id = Some(input.into());
             self
         }
+        /// <p>The ID of the server that the user is attached to.</p>
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_id = input;
             self
@@ -1732,6 +1916,8 @@ pub mod create_access_output {
             self.external_id = Some(input.into());
             self
         }
+        /// <p>The external ID of the group whose users have access to your Amazon S3 or Amazon EFS
+        /// resources over the enabled protocols using Amazon Web Services Transfer Family.</p>
         pub fn set_external_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.external_id = input;
             self

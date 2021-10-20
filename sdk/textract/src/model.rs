@@ -47,6 +47,7 @@ pub mod output_config {
             self.s3_bucket = Some(input.into());
             self
         }
+        /// <p>The name of the bucket your output will go to.</p>
         pub fn set_s3_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.s3_bucket = input;
             self
@@ -57,6 +58,8 @@ pub mod output_config {
             self.s3_prefix = Some(input.into());
             self
         }
+        /// <p>The prefix of the object key that the output will be saved to. When not enabled, the
+        /// prefix will be “textract_output".</p>
         pub fn set_s3_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.s3_prefix = input;
             self
@@ -110,6 +113,7 @@ pub mod notification_channel {
             self.sns_topic_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon SNS topic that Amazon Textract posts the completion status to.</p>
         pub fn set_sns_topic_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -122,6 +126,7 @@ pub mod notification_channel {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of an IAM role that gives Amazon Textract publishing permissions to the Amazon SNS topic. </p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -173,6 +178,7 @@ pub mod document_location {
             self.s3_object = Some(input);
             self
         }
+        /// <p>The Amazon S3 bucket that contains the input document.</p>
         pub fn set_s3_object(mut self, input: std::option::Option<crate::model::S3Object>) -> Self {
             self.s3_object = input;
             self
@@ -195,8 +201,10 @@ impl DocumentLocation {
 /// <p>The S3 bucket name and file name that identifies the document.</p>
 /// <p>The AWS Region for the S3 bucket that contains the document must match the Region that
 /// you use for Amazon Textract operations.</p>
+///
 /// <p>For Amazon Textract to process a file in an S3 bucket, the user must have
 /// permission to access the S3 bucket and file.
+///
 /// </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -236,6 +244,8 @@ pub mod s3_object {
             self.bucket = Some(input.into());
             self
         }
+        /// <p>The name of the S3 bucket. Note that the # character is not valid in the file
+        /// name.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -246,6 +256,8 @@ pub mod s3_object {
             self.name = Some(input.into());
             self
         }
+        /// <p>The file name of the input document. Synchronous operations can use image files that are
+        /// in JPEG or PNG format. Asynchronous operations also support PDF format files.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -255,6 +267,7 @@ pub mod s3_object {
             self.version = Some(input.into());
             self
         }
+        /// <p>If the bucket has versioning enabled, you can specify the object version. </p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -276,6 +289,7 @@ impl S3Object {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -287,7 +301,9 @@ impl S3Object {
     std::hash::Hash,
 )]
 pub enum FeatureType {
+    #[allow(missing_docs)] // documentation missing in model
     Forms,
+    #[allow(missing_docs)] // documentation missing in model
     Tables,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -309,6 +325,7 @@ impl std::str::FromStr for FeatureType {
     }
 }
 impl FeatureType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FeatureType::Forms => "FORMS",
@@ -316,6 +333,7 @@ impl FeatureType {
             FeatureType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FORMS", "TABLES"]
     }
@@ -358,16 +376,23 @@ pub mod warning {
             self.error_code = Some(input.into());
             self
         }
+        /// <p>The error code for the warning.</p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_code = input;
             self
         }
+        /// Appends an item to `pages`.
+        ///
+        /// To override the contents of this collection use [`set_pages`](Self::set_pages).
+        ///
+        /// <p>A list of the pages that the warning applies to.</p>
         pub fn pages(mut self, input: impl Into<i32>) -> Self {
             let mut v = self.pages.unwrap_or_default();
             v.push(input.into());
             self.pages = Some(v);
             self
         }
+        /// <p>A list of the pages that the warning applies to.</p>
         pub fn set_pages(mut self, input: std::option::Option<std::vec::Vec<i32>>) -> Self {
             self.pages = input;
             self
@@ -644,6 +669,68 @@ pub mod block {
             self.block_type = Some(input);
             self
         }
+        /// <p>The type of text item that's recognized. In operations for text detection, the following
+        /// types are returned:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <i>PAGE</i> - Contains a list of the LINE <code>Block</code> objects
+        /// that are detected on a document page.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <i>WORD</i> - A word detected on a document page. A word is one or
+        /// more ISO basic Latin script characters that aren't separated by spaces.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <i>LINE</i> - A string of tab-delimited, contiguous words that are
+        /// detected on a document page.</p>
+        /// </li>
+        /// </ul>
+        /// <p>In text analysis operations, the following types are returned:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <i>PAGE</i> - Contains a list of child <code>Block</code> objects
+        /// that are detected on a document page.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <i>KEY_VALUE_SET</i> - Stores the KEY and VALUE <code>Block</code>
+        /// objects for linked text that's detected on a document page. Use the
+        /// <code>EntityType</code> field to determine if a KEY_VALUE_SET object is a KEY
+        /// <code>Block</code> object or a VALUE <code>Block</code> object. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <i>WORD</i> - A word that's detected on a document page. A word is
+        /// one or more ISO basic Latin script characters that aren't separated by spaces.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <i>LINE</i> - A string of tab-delimited, contiguous words that are
+        /// detected on a document page.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <i>TABLE</i> - A table that's detected on a document page. A table
+        /// is grid-based information with two or more rows or columns, with a cell span of one
+        /// row and one column each. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <i>CELL</i> - A cell within a detected table. The cell is the parent
+        /// of the block that contains the text in the cell.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <i>SELECTION_ELEMENT</i> - A selection element such as an option
+        /// button (radio button) or a check box that's detected on a document page. Use the
+        /// value of <code>SelectionStatus</code> to determine the status of the selection
+        /// element.</p>
+        /// </li>
+        /// </ul>
         pub fn set_block_type(
             mut self,
             input: std::option::Option<crate::model::BlockType>,
@@ -657,6 +744,8 @@ pub mod block {
             self.confidence = Some(input);
             self
         }
+        /// <p>The confidence score that Amazon Textract has in the accuracy of the recognized text and
+        /// the accuracy of the geometry points around the recognized text.</p>
         pub fn set_confidence(mut self, input: std::option::Option<f32>) -> Self {
             self.confidence = input;
             self
@@ -666,6 +755,7 @@ pub mod block {
             self.text = Some(input.into());
             self
         }
+        /// <p>The word or line of text that's recognized by Amazon Textract. </p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.text = input;
             self
@@ -676,6 +766,8 @@ pub mod block {
             self.text_type = Some(input);
             self
         }
+        /// <p>The kind of text that Amazon Textract has detected. Can check for handwritten text and
+        /// printed text.</p>
         pub fn set_text_type(mut self, input: std::option::Option<crate::model::TextType>) -> Self {
             self.text_type = input;
             self
@@ -687,6 +779,9 @@ pub mod block {
             self.row_index = Some(input);
             self
         }
+        /// <p>The row in which a table cell is located. The first row position is 1.
+        /// <code>RowIndex</code> isn't returned by <code>DetectDocumentText</code> and
+        /// <code>GetDocumentTextDetection</code>.</p>
         pub fn set_row_index(mut self, input: std::option::Option<i32>) -> Self {
             self.row_index = input;
             self
@@ -698,6 +793,9 @@ pub mod block {
             self.column_index = Some(input);
             self
         }
+        /// <p>The column in which a table cell appears. The first column position is 1.
+        /// <code>ColumnIndex</code> isn't returned by <code>DetectDocumentText</code> and
+        /// <code>GetDocumentTextDetection</code>.</p>
         pub fn set_column_index(mut self, input: std::option::Option<i32>) -> Self {
             self.column_index = input;
             self
@@ -709,6 +807,9 @@ pub mod block {
             self.row_span = Some(input);
             self
         }
+        /// <p>The number of rows that a table cell spans. Currently this value is always 1, even if
+        /// the number of rows spanned is greater than 1. <code>RowSpan</code> isn't returned by
+        /// <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>.</p>
         pub fn set_row_span(mut self, input: std::option::Option<i32>) -> Self {
             self.row_span = input;
             self
@@ -720,6 +821,9 @@ pub mod block {
             self.column_span = Some(input);
             self
         }
+        /// <p>The number of columns that a table cell spans. Currently this value is always 1, even if
+        /// the number of columns spanned is greater than 1. <code>ColumnSpan</code> isn't returned by
+        /// <code>DetectDocumentText</code> and <code>GetDocumentTextDetection</code>. </p>
         pub fn set_column_span(mut self, input: std::option::Option<i32>) -> Self {
             self.column_span = input;
             self
@@ -731,6 +835,9 @@ pub mod block {
             self.geometry = Some(input);
             self
         }
+        /// <p>The location of the recognized text on the image. It includes an axis-aligned, coarse
+        /// bounding box that surrounds the text, and a finer-grain polygon for more accurate spatial
+        /// information. </p>
         pub fn set_geometry(mut self, input: std::option::Option<crate::model::Geometry>) -> Self {
             self.geometry = input;
             self
@@ -741,16 +848,46 @@ pub mod block {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier for the recognized text. The identifier is only unique for a single
+        /// operation. </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
+        /// Appends an item to `relationships`.
+        ///
+        /// To override the contents of this collection use [`set_relationships`](Self::set_relationships).
+        ///
+        /// <p>A list of child blocks of the current block. For example, a LINE object has child blocks
+        /// for each WORD block that's part of the line of text. There aren't Relationship objects in
+        /// the list for relationships that don't exist, such as when the current block has no child
+        /// blocks. The list size can be the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>0 - The block has no child blocks.</p>
+        /// </li>
+        /// <li>
+        /// <p>1 - The block has child blocks.</p>
+        /// </li>
+        /// </ul>
         pub fn relationships(mut self, input: impl Into<crate::model::Relationship>) -> Self {
             let mut v = self.relationships.unwrap_or_default();
             v.push(input.into());
             self.relationships = Some(v);
             self
         }
+        /// <p>A list of child blocks of the current block. For example, a LINE object has child blocks
+        /// for each WORD block that's part of the line of text. There aren't Relationship objects in
+        /// the list for relationships that don't exist, such as when the current block has no child
+        /// blocks. The list size can be the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>0 - The block has no child blocks.</p>
+        /// </li>
+        /// <li>
+        /// <p>1 - The block has child blocks.</p>
+        /// </li>
+        /// </ul>
         pub fn set_relationships(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Relationship>>,
@@ -758,12 +895,44 @@ pub mod block {
             self.relationships = input;
             self
         }
+        /// Appends an item to `entity_types`.
+        ///
+        /// To override the contents of this collection use [`set_entity_types`](Self::set_entity_types).
+        ///
+        /// <p>The type of entity. The following can be returned:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <i>KEY</i> - An identifier for a field on the document.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <i>VALUE</i> - The field text.</p>
+        /// </li>
+        /// </ul>
+        /// <p>
+        /// <code>EntityTypes</code> isn't returned by <code>DetectDocumentText</code> and
+        /// <code>GetDocumentTextDetection</code>.</p>
         pub fn entity_types(mut self, input: impl Into<crate::model::EntityType>) -> Self {
             let mut v = self.entity_types.unwrap_or_default();
             v.push(input.into());
             self.entity_types = Some(v);
             self
         }
+        /// <p>The type of entity. The following can be returned:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <i>KEY</i> - An identifier for a field on the document.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <i>VALUE</i> - The field text.</p>
+        /// </li>
+        /// </ul>
+        /// <p>
+        /// <code>EntityTypes</code> isn't returned by <code>DetectDocumentText</code> and
+        /// <code>GetDocumentTextDetection</code>.</p>
         pub fn set_entity_types(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EntityType>>,
@@ -777,6 +946,8 @@ pub mod block {
             self.selection_status = Some(input);
             self
         }
+        /// <p>The selection status of a selection element, such as an option button or check box.
+        /// </p>
         pub fn set_selection_status(
             mut self,
             input: std::option::Option<crate::model::SelectionStatus>,
@@ -794,6 +965,12 @@ pub mod block {
             self.page = Some(input);
             self
         }
+        /// <p>The page on which a block was detected. <code>Page</code> is returned by asynchronous
+        /// operations. Page values greater than 1 are only returned for multipage documents that are
+        /// in PDF format. A scanned image (JPEG/PNG), even if it contains multiple document pages, is
+        /// considered to be a single-page document. The value of <code>Page</code> is always 1.
+        /// Synchronous operations don't return <code>Page</code> because every input document is
+        /// considered to be a single-page document.</p>
         pub fn set_page(mut self, input: std::option::Option<i32>) -> Self {
             self.page = input;
             self
@@ -826,6 +1003,7 @@ impl Block {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -837,7 +1015,9 @@ impl Block {
     std::hash::Hash,
 )]
 pub enum SelectionStatus {
+    #[allow(missing_docs)] // documentation missing in model
     NotSelected,
+    #[allow(missing_docs)] // documentation missing in model
     Selected,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -859,6 +1039,7 @@ impl std::str::FromStr for SelectionStatus {
     }
 }
 impl SelectionStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SelectionStatus::NotSelected => "NOT_SELECTED",
@@ -866,6 +1047,7 @@ impl SelectionStatus {
             SelectionStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["NOT_SELECTED", "SELECTED"]
     }
@@ -876,6 +1058,7 @@ impl AsRef<str> for SelectionStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -887,7 +1070,9 @@ impl AsRef<str> for SelectionStatus {
     std::hash::Hash,
 )]
 pub enum EntityType {
+    #[allow(missing_docs)] // documentation missing in model
     Key,
+    #[allow(missing_docs)] // documentation missing in model
     Value,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -909,6 +1094,7 @@ impl std::str::FromStr for EntityType {
     }
 }
 impl EntityType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EntityType::Key => "KEY",
@@ -916,6 +1102,7 @@ impl EntityType {
             EntityType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["KEY", "VALUE"]
     }
@@ -974,6 +1161,12 @@ pub mod relationship {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of relationship that the blocks in the IDs array have with the current block.
+        /// The relationship can be <code>VALUE</code> or <code>CHILD</code>. A relationship of type
+        /// VALUE is a list that contains the ID of the VALUE block that's associated with the KEY of a
+        /// key-value pair. A relationship of type CHILD is a list of IDs that identify WORD blocks in
+        /// the case of lines Cell blocks in the case of Tables, and WORD blocks in the case of
+        /// Selection Elements.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::RelationshipType>,
@@ -981,12 +1174,22 @@ pub mod relationship {
             self.r#type = input;
             self
         }
+        /// Appends an item to `ids`.
+        ///
+        /// To override the contents of this collection use [`set_ids`](Self::set_ids).
+        ///
+        /// <p>An
+        /// array of IDs for related blocks. You can get the type of the relationship from the
+        /// <code>Type</code> element.</p>
         pub fn ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.ids.unwrap_or_default();
             v.push(input.into());
             self.ids = Some(v);
             self
         }
+        /// <p>An
+        /// array of IDs for related blocks. You can get the type of the relationship from the
+        /// <code>Type</code> element.</p>
         pub fn set_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1010,6 +1213,7 @@ impl Relationship {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1021,8 +1225,11 @@ impl Relationship {
     std::hash::Hash,
 )]
 pub enum RelationshipType {
+    #[allow(missing_docs)] // documentation missing in model
     Child,
+    #[allow(missing_docs)] // documentation missing in model
     ComplexFeatures,
+    #[allow(missing_docs)] // documentation missing in model
     Value,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1045,6 +1252,7 @@ impl std::str::FromStr for RelationshipType {
     }
 }
 impl RelationshipType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RelationshipType::Child => "CHILD",
@@ -1053,6 +1261,7 @@ impl RelationshipType {
             RelationshipType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CHILD", "COMPLEX_FEATURES", "VALUE"]
     }
@@ -1098,6 +1307,8 @@ pub mod geometry {
             self.bounding_box = Some(input);
             self
         }
+        /// <p>An axis-aligned coarse representation of the location of the recognized item on the
+        /// document page.</p>
         pub fn set_bounding_box(
             mut self,
             input: std::option::Option<crate::model::BoundingBox>,
@@ -1105,12 +1316,18 @@ pub mod geometry {
             self.bounding_box = input;
             self
         }
+        /// Appends an item to `polygon`.
+        ///
+        /// To override the contents of this collection use [`set_polygon`](Self::set_polygon).
+        ///
+        /// <p>Within the bounding box, a fine-grained polygon around the recognized item.</p>
         pub fn polygon(mut self, input: impl Into<crate::model::Point>) -> Self {
             let mut v = self.polygon.unwrap_or_default();
             v.push(input.into());
             self.polygon = Some(v);
             self
         }
+        /// <p>Within the bounding box, a fine-grained polygon around the recognized item.</p>
         pub fn set_polygon(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Point>>,
@@ -1138,6 +1355,7 @@ impl Geometry {
 /// values that are returned are ratios of the overall document page size. For example, if the
 /// input document is 700 x 200 and the operation returns X=0.5 and Y=0.25, then the point is
 /// at the (350,50) pixel coordinate on the document page.</p>
+///
 /// <p>An array of <code>Point</code> objects, <code>Polygon</code>, is returned
 /// by <a>DetectDocumentText</a>. <code>Polygon</code> represents a fine-grained
 /// polygon around detected text. For more information, see Geometry in the Amazon Textract
@@ -1173,6 +1391,7 @@ pub mod point {
             self.x = Some(input);
             self
         }
+        /// <p>The value of the X coordinate for a point on a <code>Polygon</code>.</p>
         pub fn set_x(mut self, input: std::option::Option<f32>) -> Self {
             self.x = input;
             self
@@ -1182,6 +1401,7 @@ pub mod point {
             self.y = Some(input);
             self
         }
+        /// <p>The value of the Y coordinate for a point on a <code>Polygon</code>.</p>
         pub fn set_y(mut self, input: std::option::Option<f32>) -> Self {
             self.y = input;
             self
@@ -1258,6 +1478,8 @@ pub mod bounding_box {
             self.width = Some(input);
             self
         }
+        /// <p>The width of the bounding box as a ratio of the overall document page
+        /// width.</p>
         pub fn set_width(mut self, input: std::option::Option<f32>) -> Self {
             self.width = input;
             self
@@ -1268,6 +1490,8 @@ pub mod bounding_box {
             self.height = Some(input);
             self
         }
+        /// <p>The height of the bounding box as a ratio of the overall document page
+        /// height.</p>
         pub fn set_height(mut self, input: std::option::Option<f32>) -> Self {
             self.height = input;
             self
@@ -1278,6 +1502,8 @@ pub mod bounding_box {
             self.left = Some(input);
             self
         }
+        /// <p>The left coordinate of the bounding box as a ratio of overall document page
+        /// width.</p>
         pub fn set_left(mut self, input: std::option::Option<f32>) -> Self {
             self.left = input;
             self
@@ -1288,6 +1514,8 @@ pub mod bounding_box {
             self.top = Some(input);
             self
         }
+        /// <p>The top coordinate of the bounding box as a ratio of overall document page
+        /// height.</p>
         pub fn set_top(mut self, input: std::option::Option<f32>) -> Self {
             self.top = input;
             self
@@ -1310,6 +1538,7 @@ impl BoundingBox {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1321,7 +1550,9 @@ impl BoundingBox {
     std::hash::Hash,
 )]
 pub enum TextType {
+    #[allow(missing_docs)] // documentation missing in model
     Handwriting,
+    #[allow(missing_docs)] // documentation missing in model
     Printed,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1343,6 +1574,7 @@ impl std::str::FromStr for TextType {
     }
 }
 impl TextType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TextType::Handwriting => "HANDWRITING",
@@ -1350,6 +1582,7 @@ impl TextType {
             TextType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["HANDWRITING", "PRINTED"]
     }
@@ -1360,6 +1593,7 @@ impl AsRef<str> for TextType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1371,12 +1605,19 @@ impl AsRef<str> for TextType {
     std::hash::Hash,
 )]
 pub enum BlockType {
+    #[allow(missing_docs)] // documentation missing in model
     Cell,
+    #[allow(missing_docs)] // documentation missing in model
     KeyValueSet,
+    #[allow(missing_docs)] // documentation missing in model
     Line,
+    #[allow(missing_docs)] // documentation missing in model
     Page,
+    #[allow(missing_docs)] // documentation missing in model
     SelectionElement,
+    #[allow(missing_docs)] // documentation missing in model
     Table,
+    #[allow(missing_docs)] // documentation missing in model
     Word,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1403,6 +1644,7 @@ impl std::str::FromStr for BlockType {
     }
 }
 impl BlockType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             BlockType::Cell => "CELL",
@@ -1415,6 +1657,7 @@ impl BlockType {
             BlockType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CELL",
@@ -1433,6 +1676,7 @@ impl AsRef<str> for BlockType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1444,9 +1688,13 @@ impl AsRef<str> for BlockType {
     std::hash::Hash,
 )]
 pub enum JobStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     InProgress,
+    #[allow(missing_docs)] // documentation missing in model
     PartialSuccess,
+    #[allow(missing_docs)] // documentation missing in model
     Succeeded,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1470,6 +1718,7 @@ impl std::str::FromStr for JobStatus {
     }
 }
 impl JobStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             JobStatus::Failed => "FAILED",
@@ -1479,6 +1728,7 @@ impl JobStatus {
             JobStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FAILED", "IN_PROGRESS", "PARTIAL_SUCCESS", "SUCCEEDED"]
     }
@@ -1517,6 +1767,7 @@ pub mod document_metadata {
             self.pages = Some(input);
             self
         }
+        /// <p>The number of pages that are detected in the document.</p>
         pub fn set_pages(mut self, input: std::option::Option<i32>) -> Self {
             self.pages = input;
             self
@@ -1548,6 +1799,7 @@ impl DocumentMetadata {
 /// <p>If you use the AWS CLI to call Amazon Textract operations, passing image bytes using
 /// the Bytes property isn't supported. You must first upload the document to an Amazon S3
 /// bucket, and then call the operation using the S3Object property.</p>
+///
 /// <p>For Amazon Textract to process an S3 object, the user must have permission
 /// to access the S3 object. </p>
 #[non_exhaustive]
@@ -1557,7 +1809,7 @@ pub struct Document {
     /// in a blob of bytes is 5 MB. The document bytes must be in PNG or JPEG format.</p>
     /// <p>If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode
     /// image bytes passed using the <code>Bytes</code> field. </p>
-    pub bytes: std::option::Option<smithy_types::Blob>,
+    pub bytes: std::option::Option<aws_smithy_types::Blob>,
     /// <p>Identifies an S3 object as the document source. The maximum size of a document that's
     /// stored in an S3 bucket is 5 MB.</p>
     pub s3_object: std::option::Option<crate::model::S3Object>,
@@ -1576,7 +1828,7 @@ pub mod document {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) bytes: std::option::Option<smithy_types::Blob>,
+        pub(crate) bytes: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) s3_object: std::option::Option<crate::model::S3Object>,
     }
     impl Builder {
@@ -1584,11 +1836,15 @@ pub mod document {
         /// in a blob of bytes is 5 MB. The document bytes must be in PNG or JPEG format.</p>
         /// <p>If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode
         /// image bytes passed using the <code>Bytes</code> field. </p>
-        pub fn bytes(mut self, input: smithy_types::Blob) -> Self {
+        pub fn bytes(mut self, input: aws_smithy_types::Blob) -> Self {
             self.bytes = Some(input);
             self
         }
-        pub fn set_bytes(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+        /// <p>A blob of base64-encoded document bytes. The maximum size of a document that's provided
+        /// in a blob of bytes is 5 MB. The document bytes must be in PNG or JPEG format.</p>
+        /// <p>If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode
+        /// image bytes passed using the <code>Bytes</code> field. </p>
+        pub fn set_bytes(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.bytes = input;
             self
         }
@@ -1598,6 +1854,8 @@ pub mod document {
             self.s3_object = Some(input);
             self
         }
+        /// <p>Identifies an S3 object as the document source. The maximum size of a document that's
+        /// stored in an S3 bucket is 5 MB.</p>
         pub fn set_s3_object(mut self, input: std::option::Option<crate::model::S3Object>) -> Self {
             self.s3_object = input;
             self
@@ -1657,16 +1915,24 @@ pub mod expense_document {
             self.expense_index = Some(input);
             self
         }
+        /// <p>Denotes which invoice or receipt in the document the information is coming from.
+        /// First document will be 1, the second 2, and so on.</p>
         pub fn set_expense_index(mut self, input: std::option::Option<i32>) -> Self {
             self.expense_index = input;
             self
         }
+        /// Appends an item to `summary_fields`.
+        ///
+        /// To override the contents of this collection use [`set_summary_fields`](Self::set_summary_fields).
+        ///
+        /// <p>Any information found outside of a table by Amazon Textract.</p>
         pub fn summary_fields(mut self, input: impl Into<crate::model::ExpenseField>) -> Self {
             let mut v = self.summary_fields.unwrap_or_default();
             v.push(input.into());
             self.summary_fields = Some(v);
             self
         }
+        /// <p>Any information found outside of a table by Amazon Textract.</p>
         pub fn set_summary_fields(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ExpenseField>>,
@@ -1674,12 +1940,18 @@ pub mod expense_document {
             self.summary_fields = input;
             self
         }
+        /// Appends an item to `line_item_groups`.
+        ///
+        /// To override the contents of this collection use [`set_line_item_groups`](Self::set_line_item_groups).
+        ///
+        /// <p>Information detected on each table of a document, seperated into <code>LineItems</code>.</p>
         pub fn line_item_groups(mut self, input: impl Into<crate::model::LineItemGroup>) -> Self {
             let mut v = self.line_item_groups.unwrap_or_default();
             v.push(input.into());
             self.line_item_groups = Some(v);
             self
         }
+        /// <p>Information detected on each table of a document, seperated into <code>LineItems</code>.</p>
         pub fn set_line_item_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LineItemGroup>>,
@@ -1736,16 +2008,23 @@ pub mod line_item_group {
             self.line_item_group_index = Some(input);
             self
         }
+        /// <p>The number used to identify a specific table in a document. The first table encountered will have a LineItemGroupIndex of 1, the second 2, etc.</p>
         pub fn set_line_item_group_index(mut self, input: std::option::Option<i32>) -> Self {
             self.line_item_group_index = input;
             self
         }
+        /// Appends an item to `line_items`.
+        ///
+        /// To override the contents of this collection use [`set_line_items`](Self::set_line_items).
+        ///
+        /// <p>The breakdown of information on a particular line of a table. </p>
         pub fn line_items(mut self, input: impl Into<crate::model::LineItemFields>) -> Self {
             let mut v = self.line_items.unwrap_or_default();
             v.push(input.into());
             self.line_items = Some(v);
             self
         }
+        /// <p>The breakdown of information on a particular line of a table. </p>
         pub fn set_line_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LineItemFields>>,
@@ -1793,6 +2072,11 @@ pub mod line_item_fields {
             std::option::Option<std::vec::Vec<crate::model::ExpenseField>>,
     }
     impl Builder {
+        /// Appends an item to `line_item_expense_fields`.
+        ///
+        /// To override the contents of this collection use [`set_line_item_expense_fields`](Self::set_line_item_expense_fields).
+        ///
+        /// <p>ExpenseFields used to show information from detected lines on a table.</p>
         pub fn line_item_expense_fields(
             mut self,
             input: impl Into<crate::model::ExpenseField>,
@@ -1802,6 +2086,7 @@ pub mod line_item_fields {
             self.line_item_expense_fields = Some(v);
             self
         }
+        /// <p>ExpenseFields used to show information from detected lines on a table.</p>
         pub fn set_line_item_expense_fields(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ExpenseField>>,
@@ -1865,6 +2150,7 @@ pub mod expense_field {
             self.r#type = Some(input);
             self
         }
+        /// <p>The implied label of a detected element. Present alongside LabelDetection for explicit elements.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ExpenseType>) -> Self {
             self.r#type = input;
             self
@@ -1874,6 +2160,7 @@ pub mod expense_field {
             self.label_detection = Some(input);
             self
         }
+        /// <p>The explicitly stated label of a detected element.</p>
         pub fn set_label_detection(
             mut self,
             input: std::option::Option<crate::model::ExpenseDetection>,
@@ -1886,6 +2173,7 @@ pub mod expense_field {
             self.value_detection = Some(input);
             self
         }
+        /// <p>The value of a detected element. Present in explicit and implicit elements.</p>
         pub fn set_value_detection(
             mut self,
             input: std::option::Option<crate::model::ExpenseDetection>,
@@ -1898,6 +2186,7 @@ pub mod expense_field {
             self.page_number = Some(input);
             self
         }
+        /// <p>The page number the value was detected on.</p>
         pub fn set_page_number(mut self, input: std::option::Option<i32>) -> Self {
             self.page_number = input;
             self
@@ -1957,6 +2246,7 @@ pub mod expense_detection {
             self.text = Some(input.into());
             self
         }
+        /// <p>The word or line of text recognized by Amazon Textract</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.text = input;
             self
@@ -1967,6 +2257,8 @@ pub mod expense_detection {
             self.geometry = Some(input);
             self
         }
+        /// <p>Information about where the following items are located on a document page: detected
+        /// page, text, key-value pairs, tables, table cells, and selection elements.</p>
         pub fn set_geometry(mut self, input: std::option::Option<crate::model::Geometry>) -> Self {
             self.geometry = input;
             self
@@ -1976,6 +2268,7 @@ pub mod expense_detection {
             self.confidence = Some(input);
             self
         }
+        /// <p>The confidence in detection, as a percentage</p>
         pub fn set_confidence(mut self, input: std::option::Option<f32>) -> Self {
             self.confidence = input;
             self
@@ -2029,6 +2322,7 @@ pub mod expense_type {
             self.text = Some(input.into());
             self
         }
+        /// <p>The word or line of text detected by Amazon Textract.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.text = input;
             self
@@ -2038,6 +2332,7 @@ pub mod expense_type {
             self.confidence = Some(input);
             self
         }
+        /// <p>The confidence of accuracy, as a percentage.</p>
         pub fn set_confidence(mut self, input: std::option::Option<f32>) -> Self {
             self.confidence = input;
             self
@@ -2105,6 +2400,7 @@ pub mod human_loop_activation_output {
             self.human_loop_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the HumanLoop created.</p>
         pub fn set_human_loop_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2112,6 +2408,11 @@ pub mod human_loop_activation_output {
             self.human_loop_arn = input;
             self
         }
+        /// Appends an item to `human_loop_activation_reasons`.
+        ///
+        /// To override the contents of this collection use [`set_human_loop_activation_reasons`](Self::set_human_loop_activation_reasons).
+        ///
+        /// <p>Shows if and why human review was needed.</p>
         pub fn human_loop_activation_reasons(
             mut self,
             input: impl Into<std::string::String>,
@@ -2121,6 +2422,7 @@ pub mod human_loop_activation_output {
             self.human_loop_activation_reasons = Some(v);
             self
         }
+        /// <p>Shows if and why human review was needed.</p>
         pub fn set_human_loop_activation_reasons(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2137,6 +2439,8 @@ pub mod human_loop_activation_output {
             self.human_loop_activation_conditions_evaluation_results = Some(input.into());
             self
         }
+        /// <p>Shows the result of condition evaluations, including those conditions which activated a
+        /// human review.</p>
         pub fn set_human_loop_activation_conditions_evaluation_results(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2201,6 +2505,8 @@ pub mod human_loop_config {
             self.human_loop_name = Some(input.into());
             self
         }
+        /// <p>The name of the human workflow used for this image. This should be kept unique within a
+        /// region.</p>
         pub fn set_human_loop_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2213,6 +2519,7 @@ pub mod human_loop_config {
             self.flow_definition_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the flow definition.</p>
         pub fn set_flow_definition_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2225,6 +2532,7 @@ pub mod human_loop_config {
             self.data_attributes = Some(input);
             self
         }
+        /// <p>Sets attributes of the input data.</p>
         pub fn set_data_attributes(
             mut self,
             input: std::option::Option<crate::model::HumanLoopDataAttributes>,
@@ -2275,6 +2583,12 @@ pub mod human_loop_data_attributes {
             std::option::Option<std::vec::Vec<crate::model::ContentClassifier>>,
     }
     impl Builder {
+        /// Appends an item to `content_classifiers`.
+        ///
+        /// To override the contents of this collection use [`set_content_classifiers`](Self::set_content_classifiers).
+        ///
+        /// <p>Sets whether the input image is free of personally identifiable information or adult
+        /// content.</p>
         pub fn content_classifiers(
             mut self,
             input: impl Into<crate::model::ContentClassifier>,
@@ -2284,6 +2598,8 @@ pub mod human_loop_data_attributes {
             self.content_classifiers = Some(v);
             self
         }
+        /// <p>Sets whether the input image is free of personally identifiable information or adult
+        /// content.</p>
         pub fn set_content_classifiers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ContentClassifier>>,
@@ -2306,6 +2622,7 @@ impl HumanLoopDataAttributes {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2317,7 +2634,9 @@ impl HumanLoopDataAttributes {
     std::hash::Hash,
 )]
 pub enum ContentClassifier {
+    #[allow(missing_docs)] // documentation missing in model
     FreeOfAdultContent,
+    #[allow(missing_docs)] // documentation missing in model
     FreeOfPersonallyIdentifiableInformation,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2341,6 +2660,7 @@ impl std::str::FromStr for ContentClassifier {
     }
 }
 impl ContentClassifier {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ContentClassifier::FreeOfAdultContent => "FreeOfAdultContent",
@@ -2350,6 +2670,7 @@ impl ContentClassifier {
             ContentClassifier::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "FreeOfAdultContent",

@@ -40,6 +40,9 @@ pub mod validation_exception_field {
             self.name = Some(input.into());
             self
         }
+        /// <p>
+        /// The name of the field.
+        /// </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -52,6 +55,10 @@ pub mod validation_exception_field {
             self.message = Some(input.into());
             self
         }
+        /// <p>
+        /// The message associated with the validation exception with information to help
+        /// determine its cause.
+        /// </p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -72,6 +79,7 @@ impl ValidationExceptionField {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -83,9 +91,13 @@ impl ValidationExceptionField {
     std::hash::Hash,
 )]
 pub enum ValidationExceptionReason {
+    #[allow(missing_docs)] // documentation missing in model
     CannotParse,
+    #[allow(missing_docs)] // documentation missing in model
     FieldValidationFailed,
+    #[allow(missing_docs)] // documentation missing in model
     Other,
+    #[allow(missing_docs)] // documentation missing in model
     UnknownOperation,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -109,6 +121,7 @@ impl std::str::FromStr for ValidationExceptionReason {
     }
 }
 impl ValidationExceptionReason {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ValidationExceptionReason::CannotParse => "CANNOT_PARSE",
@@ -118,6 +131,7 @@ impl ValidationExceptionReason {
             ValidationExceptionReason::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CANNOT_PARSE",
@@ -167,6 +181,9 @@ pub mod update_service_integration_config {
             self.ops_center = Some(input);
             self
         }
+        /// <p>
+        /// Information about whether DevOps Guru is configured to create an OpsItem in AWS Systems Manager OpsCenter for each created insight.
+        /// </p>
         pub fn set_ops_center(
             mut self,
             input: std::option::Option<crate::model::OpsCenterIntegrationConfig>,
@@ -223,6 +240,9 @@ pub mod ops_center_integration_config {
             self.opt_in_status = Some(input);
             self
         }
+        /// <p>
+        /// Specifies if DevOps Guru is enabled to create an AWS Systems Manager OpsItem for each created insight.
+        /// </p>
         pub fn set_opt_in_status(
             mut self,
             input: std::option::Option<crate::model::OptInStatus>,
@@ -259,7 +279,9 @@ impl OpsCenterIntegrationConfig {
     std::hash::Hash,
 )]
 pub enum OptInStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -281,6 +303,7 @@ impl std::str::FromStr for OptInStatus {
     }
 }
 impl OptInStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             OptInStatus::Disabled => "DISABLED",
@@ -288,6 +311,7 @@ impl OptInStatus {
             OptInStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -336,6 +360,9 @@ pub mod update_resource_collection_filter {
             self.cloud_formation = Some(input);
             self
         }
+        /// <p>
+        /// An collection of AWS CloudFormation stacks. You can specify up to 500 AWS CloudFormation stacks.
+        /// </p>
         pub fn set_cloud_formation(
             mut self,
             input: std::option::Option<crate::model::UpdateCloudFormationCollectionFilter>,
@@ -383,12 +410,22 @@ pub mod update_cloud_formation_collection_filter {
         pub(crate) stack_names: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `stack_names`.
+        ///
+        /// To override the contents of this collection use [`set_stack_names`](Self::set_stack_names).
+        ///
+        /// <p>
+        /// An array of the names of the AWS CloudFormation stacks to update. You can specify up to 500 AWS CloudFormation stacks.
+        /// </p>
         pub fn stack_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.stack_names.unwrap_or_default();
             v.push(input.into());
             self.stack_names = Some(v);
             self
         }
+        /// <p>
+        /// An array of the names of the AWS CloudFormation stacks to update. You can specify up to 500 AWS CloudFormation stacks.
+        /// </p>
         pub fn set_stack_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -411,6 +448,7 @@ impl UpdateCloudFormationCollectionFilter {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -422,7 +460,9 @@ impl UpdateCloudFormationCollectionFilter {
     std::hash::Hash,
 )]
 pub enum UpdateResourceCollectionAction {
+    #[allow(missing_docs)] // documentation missing in model
     Add,
+    #[allow(missing_docs)] // documentation missing in model
     Remove,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -444,6 +484,7 @@ impl std::str::FromStr for UpdateResourceCollectionAction {
     }
 }
 impl UpdateResourceCollectionAction {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             UpdateResourceCollectionAction::Add => "ADD",
@@ -451,6 +492,7 @@ impl UpdateResourceCollectionAction {
             UpdateResourceCollectionAction::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ADD", "REMOVE"]
     }
@@ -501,6 +543,8 @@ pub mod cost_estimation_resource_collection_filter {
             self.cloud_formation = Some(input);
             self
         }
+        /// <p>An object that specifies the CloudFormation stack that defines the AWS resources
+        /// used to create a monthly estimate for DevOps Guru.</p>
         pub fn set_cloud_formation(
             mut self,
             input: std::option::Option<
@@ -551,12 +595,18 @@ pub mod cloud_formation_cost_estimation_resource_collection_filter {
         pub(crate) stack_names: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `stack_names`.
+        ///
+        /// To override the contents of this collection use [`set_stack_names`](Self::set_stack_names).
+        ///
+        /// <p>An array of CloudFormation stack names. Its size is fixed at 1 item.</p>
         pub fn stack_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.stack_names.unwrap_or_default();
             v.push(input.into());
             self.stack_names = Some(v);
             self
         }
+        /// <p>An array of CloudFormation stack names. Its size is fixed at 1 item.</p>
         pub fn set_stack_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -648,6 +698,9 @@ pub mod reactive_insight_summary {
             self.id = Some(input.into());
             self
         }
+        /// <p>
+        /// The ID of a reactive summary.
+        /// </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -659,6 +712,9 @@ pub mod reactive_insight_summary {
             self.name = Some(input.into());
             self
         }
+        /// <p>
+        /// The name of a reactive insight.
+        /// </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -670,6 +726,9 @@ pub mod reactive_insight_summary {
             self.severity = Some(input);
             self
         }
+        /// <p>
+        /// The severity of a reactive insight.
+        /// </p>
         pub fn set_severity(
             mut self,
             input: std::option::Option<crate::model::InsightSeverity>,
@@ -684,6 +743,9 @@ pub mod reactive_insight_summary {
             self.status = Some(input);
             self
         }
+        /// <p>
+        /// The status of a reactive insight.
+        /// </p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::InsightStatus>,
@@ -697,6 +759,8 @@ pub mod reactive_insight_summary {
             self.insight_time_range = Some(input);
             self
         }
+        /// <p> A time ranged that specifies when the observed behavior in an insight started and
+        /// ended. </p>
         pub fn set_insight_time_range(
             mut self,
             input: std::option::Option<crate::model::InsightTimeRange>,
@@ -712,6 +776,10 @@ pub mod reactive_insight_summary {
             self.resource_collection = Some(input);
             self
         }
+        /// <p>
+        /// A collection of AWS resources supported by DevOps Guru. The one type of AWS resource collection supported is AWS CloudFormation stacks. DevOps Guru can be configured to analyze
+        /// only the AWS resources that are defined in the stacks. You can specify up to 500 AWS CloudFormation stacks.
+        /// </p>
         pub fn set_resource_collection(
             mut self,
             input: std::option::Option<crate::model::ResourceCollection>,
@@ -724,6 +792,7 @@ pub mod reactive_insight_summary {
             self.service_collection = Some(input);
             self
         }
+        /// <p>A collection of the names of AWS services.</p>
         pub fn set_service_collection(
             mut self,
             input: std::option::Option<crate::model::ServiceCollection>,
@@ -775,12 +844,18 @@ pub mod service_collection {
         pub(crate) service_names: std::option::Option<std::vec::Vec<crate::model::ServiceName>>,
     }
     impl Builder {
+        /// Appends an item to `service_names`.
+        ///
+        /// To override the contents of this collection use [`set_service_names`](Self::set_service_names).
+        ///
+        /// <p>An array of strings that each specifies the name of an AWS service.</p>
         pub fn service_names(mut self, input: impl Into<crate::model::ServiceName>) -> Self {
             let mut v = self.service_names.unwrap_or_default();
             v.push(input.into());
             self.service_names = Some(v);
             self
         }
+        /// <p>An array of strings that each specifies the name of an AWS service.</p>
         pub fn set_service_names(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ServiceName>>,
@@ -803,6 +878,7 @@ impl ServiceCollection {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -814,30 +890,55 @@ impl ServiceCollection {
     std::hash::Hash,
 )]
 pub enum ServiceName {
+    #[allow(missing_docs)] // documentation missing in model
     ApiGateway,
+    #[allow(missing_docs)] // documentation missing in model
     ApplicationElb,
+    #[allow(missing_docs)] // documentation missing in model
     AutoScalingGroup,
+    #[allow(missing_docs)] // documentation missing in model
     CloudFront,
+    #[allow(missing_docs)] // documentation missing in model
     DynamoDb,
+    #[allow(missing_docs)] // documentation missing in model
     Ec2,
+    #[allow(missing_docs)] // documentation missing in model
     Ecs,
+    #[allow(missing_docs)] // documentation missing in model
     Eks,
+    #[allow(missing_docs)] // documentation missing in model
     ElasticBeanstalk,
+    #[allow(missing_docs)] // documentation missing in model
     ElastiCache,
+    #[allow(missing_docs)] // documentation missing in model
     Elb,
+    #[allow(missing_docs)] // documentation missing in model
     Es,
+    #[allow(missing_docs)] // documentation missing in model
     Kinesis,
+    #[allow(missing_docs)] // documentation missing in model
     Lambda,
+    #[allow(missing_docs)] // documentation missing in model
     NatGateway,
+    #[allow(missing_docs)] // documentation missing in model
     NetworkElb,
+    #[allow(missing_docs)] // documentation missing in model
     Rds,
+    #[allow(missing_docs)] // documentation missing in model
     Redshift,
+    #[allow(missing_docs)] // documentation missing in model
     Route53,
+    #[allow(missing_docs)] // documentation missing in model
     S3,
+    #[allow(missing_docs)] // documentation missing in model
     SageMaker,
+    #[allow(missing_docs)] // documentation missing in model
     Sns,
+    #[allow(missing_docs)] // documentation missing in model
     Sqs,
+    #[allow(missing_docs)] // documentation missing in model
     StepFunctions,
+    #[allow(missing_docs)] // documentation missing in model
     Swf,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -882,6 +983,7 @@ impl std::str::FromStr for ServiceName {
     }
 }
 impl ServiceName {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ServiceName::ApiGateway => "API_GATEWAY",
@@ -912,6 +1014,7 @@ impl ServiceName {
             ServiceName::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "API_GATEWAY",
@@ -983,6 +1086,9 @@ pub mod resource_collection {
             self.cloud_formation = Some(input);
             self
         }
+        /// <p> An array of the names of AWS CloudFormation stacks. The stacks define AWS resources
+        /// that DevOps Guru analyzes. You can specify up to 500 AWS CloudFormation stacks.
+        /// </p>
         pub fn set_cloud_formation(
             mut self,
             input: std::option::Option<crate::model::CloudFormationCollection>,
@@ -1034,12 +1140,22 @@ pub mod cloud_formation_collection {
         pub(crate) stack_names: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `stack_names`.
+        ///
+        /// To override the contents of this collection use [`set_stack_names`](Self::set_stack_names).
+        ///
+        /// <p>
+        /// An array of CloudFormation stack names.
+        /// </p>
         pub fn stack_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.stack_names.unwrap_or_default();
             v.push(input.into());
             self.stack_names = Some(v);
             self
         }
+        /// <p>
+        /// An array of CloudFormation stack names.
+        /// </p>
         pub fn set_stack_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1070,11 +1186,11 @@ pub struct InsightTimeRange {
     /// <p>
     /// The time when the behavior described in an insight started.
     /// </p>
-    pub start_time: std::option::Option<smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>
     /// The time when the behavior described in an insight ended.
     /// </p>
-    pub end_time: std::option::Option<smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for InsightTimeRange {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1090,29 +1206,41 @@ pub mod insight_time_range {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) start_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>
         /// The time when the behavior described in an insight started.
         /// </p>
-        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>
+        /// The time when the behavior described in an insight started.
+        /// </p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>
         /// The time when the behavior described in an insight ended.
         /// </p>
-        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>
+        /// The time when the behavior described in an insight ended.
+        /// </p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.end_time = input;
             self
         }
@@ -1132,6 +1260,7 @@ impl InsightTimeRange {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1143,7 +1272,9 @@ impl InsightTimeRange {
     std::hash::Hash,
 )]
 pub enum InsightStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Closed,
+    #[allow(missing_docs)] // documentation missing in model
     Ongoing,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1165,6 +1296,7 @@ impl std::str::FromStr for InsightStatus {
     }
 }
 impl InsightStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             InsightStatus::Closed => "CLOSED",
@@ -1172,6 +1304,7 @@ impl InsightStatus {
             InsightStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CLOSED", "ONGOING"]
     }
@@ -1182,6 +1315,7 @@ impl AsRef<str> for InsightStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1193,8 +1327,11 @@ impl AsRef<str> for InsightStatus {
     std::hash::Hash,
 )]
 pub enum InsightSeverity {
+    #[allow(missing_docs)] // documentation missing in model
     High,
+    #[allow(missing_docs)] // documentation missing in model
     Low,
+    #[allow(missing_docs)] // documentation missing in model
     Medium,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1217,6 +1354,7 @@ impl std::str::FromStr for InsightSeverity {
     }
 }
 impl InsightSeverity {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             InsightSeverity::High => "HIGH",
@@ -1225,6 +1363,7 @@ impl InsightSeverity {
             InsightSeverity::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["HIGH", "LOW", "MEDIUM"]
     }
@@ -1299,6 +1438,7 @@ pub mod proactive_insight_summary {
             self.id = Some(input.into());
             self
         }
+        /// <p>The ID of the proactive insight. </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -1308,6 +1448,7 @@ pub mod proactive_insight_summary {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the proactive insight. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1317,6 +1458,7 @@ pub mod proactive_insight_summary {
             self.severity = Some(input);
             self
         }
+        /// <p>The severity of the proactive insight. </p>
         pub fn set_severity(
             mut self,
             input: std::option::Option<crate::model::InsightSeverity>,
@@ -1329,6 +1471,7 @@ pub mod proactive_insight_summary {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the proactive insight. </p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::InsightStatus>,
@@ -1342,6 +1485,8 @@ pub mod proactive_insight_summary {
             self.insight_time_range = Some(input);
             self
         }
+        /// <p> A time ranged that specifies when the observed behavior in an insight started and
+        /// ended. </p>
         pub fn set_insight_time_range(
             mut self,
             input: std::option::Option<crate::model::InsightTimeRange>,
@@ -1356,6 +1501,9 @@ pub mod proactive_insight_summary {
             self.prediction_time_range = Some(input);
             self
         }
+        /// <p>
+        /// The time range during which anomalous behavior in a proactive anomaly or an insight is expected to occur.
+        /// </p>
         pub fn set_prediction_time_range(
             mut self,
             input: std::option::Option<crate::model::PredictionTimeRange>,
@@ -1371,6 +1519,10 @@ pub mod proactive_insight_summary {
             self.resource_collection = Some(input);
             self
         }
+        /// <p>
+        /// A collection of AWS resources supported by DevOps Guru. The one type of AWS resource collection supported is AWS CloudFormation stacks. DevOps Guru can be configured to analyze
+        /// only the AWS resources that are defined in the stacks. You can specify up to 500 AWS CloudFormation stacks.
+        /// </p>
         pub fn set_resource_collection(
             mut self,
             input: std::option::Option<crate::model::ResourceCollection>,
@@ -1383,6 +1535,7 @@ pub mod proactive_insight_summary {
             self.service_collection = Some(input);
             self
         }
+        /// <p>A collection of the names of AWS services.</p>
         pub fn set_service_collection(
             mut self,
             input: std::option::Option<crate::model::ServiceCollection>,
@@ -1421,11 +1574,11 @@ pub struct PredictionTimeRange {
     /// <p>
     /// The time range during which a metric limit is expected to be exceeded. This applies to proactive insights only.
     /// </p>
-    pub start_time: std::option::Option<smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>
     /// The time when the behavior in a proactive insight is expected to end.
     /// </p>
-    pub end_time: std::option::Option<smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for PredictionTimeRange {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1441,29 +1594,41 @@ pub mod prediction_time_range {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) start_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>
         /// The time range during which a metric limit is expected to be exceeded. This applies to proactive insights only.
         /// </p>
-        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>
+        /// The time range during which a metric limit is expected to be exceeded. This applies to proactive insights only.
+        /// </p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>
         /// The time when the behavior in a proactive insight is expected to end.
         /// </p>
-        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>
+        /// The time when the behavior in a proactive insight is expected to end.
+        /// </p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.end_time = input;
             self
         }
@@ -1483,6 +1648,7 @@ impl PredictionTimeRange {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1494,7 +1660,9 @@ impl PredictionTimeRange {
     std::hash::Hash,
 )]
 pub enum InsightType {
+    #[allow(missing_docs)] // documentation missing in model
     Proactive,
+    #[allow(missing_docs)] // documentation missing in model
     Reactive,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1516,6 +1684,7 @@ impl std::str::FromStr for InsightType {
     }
 }
 impl InsightType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             InsightType::Proactive => "PROACTIVE",
@@ -1523,6 +1692,7 @@ impl InsightType {
             InsightType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["PROACTIVE", "REACTIVE"]
     }
@@ -1578,12 +1748,22 @@ pub mod search_insights_filters {
         pub(crate) service_collection: std::option::Option<crate::model::ServiceCollection>,
     }
     impl Builder {
+        /// Appends an item to `severities`.
+        ///
+        /// To override the contents of this collection use [`set_severities`](Self::set_severities).
+        ///
+        /// <p>
+        /// An array of severity values used to search for insights.
+        /// </p>
         pub fn severities(mut self, input: impl Into<crate::model::InsightSeverity>) -> Self {
             let mut v = self.severities.unwrap_or_default();
             v.push(input.into());
             self.severities = Some(v);
             self
         }
+        /// <p>
+        /// An array of severity values used to search for insights.
+        /// </p>
         pub fn set_severities(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InsightSeverity>>,
@@ -1591,12 +1771,22 @@ pub mod search_insights_filters {
             self.severities = input;
             self
         }
+        /// Appends an item to `statuses`.
+        ///
+        /// To override the contents of this collection use [`set_statuses`](Self::set_statuses).
+        ///
+        /// <p>
+        /// An array of status values used to search for insights.
+        /// </p>
         pub fn statuses(mut self, input: impl Into<crate::model::InsightStatus>) -> Self {
             let mut v = self.statuses.unwrap_or_default();
             v.push(input.into());
             self.statuses = Some(v);
             self
         }
+        /// <p>
+        /// An array of status values used to search for insights.
+        /// </p>
         pub fn set_statuses(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InsightStatus>>,
@@ -1612,6 +1802,10 @@ pub mod search_insights_filters {
             self.resource_collection = Some(input);
             self
         }
+        /// <p>
+        /// A collection of AWS resources supported by DevOps Guru. The one type of AWS resource collection supported is AWS CloudFormation stacks. DevOps Guru can be configured to analyze
+        /// only the AWS resources that are defined in the stacks. You can specify up to 500 AWS CloudFormation stacks.
+        /// </p>
         pub fn set_resource_collection(
             mut self,
             input: std::option::Option<crate::model::ResourceCollection>,
@@ -1624,6 +1818,7 @@ pub mod search_insights_filters {
             self.service_collection = Some(input);
             self
         }
+        /// <p>A collection of the names of AWS services.</p>
         pub fn set_service_collection(
             mut self,
             input: std::option::Option<crate::model::ServiceCollection>,
@@ -1658,11 +1853,11 @@ pub struct StartTimeRange {
     /// <p>
     /// The start time of the time range.
     /// </p>
-    pub from_time: std::option::Option<smithy_types::Instant>,
+    pub from_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>
     /// The end time of the time range.
     /// </p>
-    pub to_time: std::option::Option<smithy_types::Instant>,
+    pub to_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for StartTimeRange {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1678,29 +1873,41 @@ pub mod start_time_range {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) from_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) to_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) from_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) to_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>
         /// The start time of the time range.
         /// </p>
-        pub fn from_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn from_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.from_time = Some(input);
             self
         }
-        pub fn set_from_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>
+        /// The start time of the time range.
+        /// </p>
+        pub fn set_from_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.from_time = input;
             self
         }
         /// <p>
         /// The end time of the time range.
         /// </p>
-        pub fn to_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn to_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.to_time = Some(input);
             self
         }
-        pub fn set_to_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>
+        /// The end time of the time range.
+        /// </p>
+        pub fn set_to_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.to_time = input;
             self
         }
@@ -1760,6 +1967,9 @@ pub mod insight_feedback {
             self.id = Some(input.into());
             self
         }
+        /// <p>
+        /// The insight feedback ID.
+        /// </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -1771,6 +1981,9 @@ pub mod insight_feedback {
             self.feedback = Some(input);
             self
         }
+        /// <p>
+        /// The feedback provided by the customer.
+        /// </p>
         pub fn set_feedback(
             mut self,
             input: std::option::Option<crate::model::InsightFeedbackOption>,
@@ -1794,6 +2007,7 @@ impl InsightFeedback {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1805,10 +2019,15 @@ impl InsightFeedback {
     std::hash::Hash,
 )]
 pub enum InsightFeedbackOption {
+    #[allow(missing_docs)] // documentation missing in model
     AlertTooSensitive,
+    #[allow(missing_docs)] // documentation missing in model
     DataIncorrect,
+    #[allow(missing_docs)] // documentation missing in model
     DataNoisyAnomaly,
+    #[allow(missing_docs)] // documentation missing in model
     RecommendationUseful,
+    #[allow(missing_docs)] // documentation missing in model
     ValidCollection,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1833,6 +2052,7 @@ impl std::str::FromStr for InsightFeedbackOption {
     }
 }
 impl InsightFeedbackOption {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             InsightFeedbackOption::AlertTooSensitive => "ALERT_TOO_SENSITIVE",
@@ -1843,6 +2063,7 @@ impl InsightFeedbackOption {
             InsightFeedbackOption::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ALERT_TOO_SENSITIVE",
@@ -1926,6 +2147,9 @@ pub mod recommendation {
             self.description = Some(input.into());
             self
         }
+        /// <p>
+        /// A description of the problem.
+        /// </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -1937,6 +2161,9 @@ pub mod recommendation {
             self.link = Some(input.into());
             self
         }
+        /// <p>
+        /// A hyperlink to information to help you address the problem.
+        /// </p>
         pub fn set_link(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.link = input;
             self
@@ -1948,6 +2175,9 @@ pub mod recommendation {
             self.name = Some(input.into());
             self
         }
+        /// <p>
+        /// The name of the recommendation.
+        /// </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1959,10 +2189,20 @@ pub mod recommendation {
             self.reason = Some(input.into());
             self
         }
+        /// <p>
+        /// The reason DevOps Guru flagged the anomalous behavior as a problem.
+        /// </p>
         pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.reason = input;
             self
         }
+        /// Appends an item to `related_events`.
+        ///
+        /// To override the contents of this collection use [`set_related_events`](Self::set_related_events).
+        ///
+        /// <p>
+        /// Events that are related to the problem. Use these events to learn more about what's happening and to help address the issue.
+        /// </p>
         pub fn related_events(
             mut self,
             input: impl Into<crate::model::RecommendationRelatedEvent>,
@@ -1972,6 +2212,9 @@ pub mod recommendation {
             self.related_events = Some(v);
             self
         }
+        /// <p>
+        /// Events that are related to the problem. Use these events to learn more about what's happening and to help address the issue.
+        /// </p>
         pub fn set_related_events(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RecommendationRelatedEvent>>,
@@ -1979,6 +2222,13 @@ pub mod recommendation {
             self.related_events = input;
             self
         }
+        /// Appends an item to `related_anomalies`.
+        ///
+        /// To override the contents of this collection use [`set_related_anomalies`](Self::set_related_anomalies).
+        ///
+        /// <p>
+        /// Anomalies that are related to the problem. Use these Anomalies to learn more about what's happening and to help address the issue.
+        /// </p>
         pub fn related_anomalies(
             mut self,
             input: impl Into<crate::model::RecommendationRelatedAnomaly>,
@@ -1988,6 +2238,9 @@ pub mod recommendation {
             self.related_anomalies = Some(v);
             self
         }
+        /// <p>
+        /// Anomalies that are related to the problem. Use these Anomalies to learn more about what's happening and to help address the issue.
+        /// </p>
         pub fn set_related_anomalies(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RecommendationRelatedAnomaly>>,
@@ -2054,6 +2307,14 @@ pub mod recommendation_related_anomaly {
         >,
     }
     impl Builder {
+        /// Appends an item to `resources`.
+        ///
+        /// To override the contents of this collection use [`set_resources`](Self::set_resources).
+        ///
+        /// <p>
+        /// An array of objects that represent resources in which DevOps Guru detected anomalous behavior. Each object contains the name
+        /// and type of the resource.
+        /// </p>
         pub fn resources(
             mut self,
             input: impl Into<crate::model::RecommendationRelatedAnomalyResource>,
@@ -2063,6 +2324,10 @@ pub mod recommendation_related_anomaly {
             self.resources = Some(v);
             self
         }
+        /// <p>
+        /// An array of objects that represent resources in which DevOps Guru detected anomalous behavior. Each object contains the name
+        /// and type of the resource.
+        /// </p>
         pub fn set_resources(
             mut self,
             input: std::option::Option<
@@ -2072,6 +2337,13 @@ pub mod recommendation_related_anomaly {
             self.resources = input;
             self
         }
+        /// Appends an item to `source_details`.
+        ///
+        /// To override the contents of this collection use [`set_source_details`](Self::set_source_details).
+        ///
+        /// <p>
+        /// Information about where the anomalous behavior related the recommendation was found. For example, details in Amazon CloudWatch metrics.
+        /// </p>
         pub fn source_details(
             mut self,
             input: impl Into<crate::model::RecommendationRelatedAnomalySourceDetail>,
@@ -2081,6 +2353,9 @@ pub mod recommendation_related_anomaly {
             self.source_details = Some(v);
             self
         }
+        /// <p>
+        /// Information about where the anomalous behavior related the recommendation was found. For example, details in Amazon CloudWatch metrics.
+        /// </p>
         pub fn set_source_details(
             mut self,
             input: std::option::Option<
@@ -2137,6 +2412,12 @@ pub mod recommendation_related_anomaly_source_detail {
         >,
     }
     impl Builder {
+        /// Appends an item to `cloud_watch_metrics`.
+        ///
+        /// To override the contents of this collection use [`set_cloud_watch_metrics`](Self::set_cloud_watch_metrics).
+        ///
+        /// <p> An array of <code>CloudWatchMetricsDetail</code> objects that contains information
+        /// about the analyzed metrics that displayed anomalous behavior. </p>
         pub fn cloud_watch_metrics(
             mut self,
             input: impl Into<crate::model::RecommendationRelatedCloudWatchMetricsSourceDetail>,
@@ -2146,6 +2427,8 @@ pub mod recommendation_related_anomaly_source_detail {
             self.cloud_watch_metrics = Some(v);
             self
         }
+        /// <p> An array of <code>CloudWatchMetricsDetail</code> objects that contains information
+        /// about the analyzed metrics that displayed anomalous behavior. </p>
         pub fn set_cloud_watch_metrics(
             mut self,
             input: std::option::Option<
@@ -2205,6 +2488,7 @@ pub mod recommendation_related_cloud_watch_metrics_source_detail {
             self.metric_name = Some(input.into());
             self
         }
+        /// <p>The name of the CloudWatch metric.</p>
         pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.metric_name = input;
             self
@@ -2214,6 +2498,7 @@ pub mod recommendation_related_cloud_watch_metrics_source_detail {
             self.namespace = Some(input.into());
             self
         }
+        /// <p>The namespace of the CloudWatch metric. A namespace is a container for CloudWatch metrics.</p>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.namespace = input;
             self
@@ -2275,6 +2560,9 @@ pub mod recommendation_related_anomaly_resource {
             self.name = Some(input.into());
             self
         }
+        /// <p>
+        /// The name of the resource.
+        /// </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2286,6 +2574,9 @@ pub mod recommendation_related_anomaly_resource {
             self.r#type = Some(input.into());
             self
         }
+        /// <p>
+        /// The type of the resource.
+        /// </p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
@@ -2351,10 +2642,22 @@ pub mod recommendation_related_event {
             self.name = Some(input.into());
             self
         }
+        /// <p>
+        /// The name of the event. This corresponds to the <code>Name</code> field in an
+        /// <code>Event</code> object.
+        /// </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
+        /// Appends an item to `resources`.
+        ///
+        /// To override the contents of this collection use [`set_resources`](Self::set_resources).
+        ///
+        /// <p>
+        /// A <code>ResourceCollection</code> object that contains arrays of the names of AWS
+        /// CloudFormation stacks. You can specify up to 500 AWS CloudFormation stacks.
+        /// </p>
         pub fn resources(
             mut self,
             input: impl Into<crate::model::RecommendationRelatedEventResource>,
@@ -2364,6 +2667,10 @@ pub mod recommendation_related_event {
             self.resources = Some(v);
             self
         }
+        /// <p>
+        /// A <code>ResourceCollection</code> object that contains arrays of the names of AWS
+        /// CloudFormation stacks. You can specify up to 500 AWS CloudFormation stacks.
+        /// </p>
         pub fn set_resources(
             mut self,
             input: std::option::Option<
@@ -2432,6 +2739,10 @@ pub mod recommendation_related_event_resource {
             self.name = Some(input.into());
             self
         }
+        /// <p>
+        /// The name of the resource that emitted the event. This corresponds to the <code>Name</code> field in an
+        /// <code>EventResource</code> object.
+        /// </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2444,6 +2755,10 @@ pub mod recommendation_related_event_resource {
             self.r#type = Some(input.into());
             self
         }
+        /// <p>
+        /// The type of the resource that emitted the event. This corresponds to the <code>Type</code> field in an
+        /// <code>EventResource</code> object.
+        /// </p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
@@ -2464,6 +2779,7 @@ impl RecommendationRelatedEventResource {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2475,16 +2791,27 @@ impl RecommendationRelatedEventResource {
     std::hash::Hash,
 )]
 pub enum Locale {
+    #[allow(missing_docs)] // documentation missing in model
     DeDe,
+    #[allow(missing_docs)] // documentation missing in model
     EnGb,
+    #[allow(missing_docs)] // documentation missing in model
     EnUs,
+    #[allow(missing_docs)] // documentation missing in model
     EsEs,
+    #[allow(missing_docs)] // documentation missing in model
     FrFr,
+    #[allow(missing_docs)] // documentation missing in model
     ItIt,
+    #[allow(missing_docs)] // documentation missing in model
     JaJp,
+    #[allow(missing_docs)] // documentation missing in model
     KoKr,
+    #[allow(missing_docs)] // documentation missing in model
     PtBr,
+    #[allow(missing_docs)] // documentation missing in model
     ZhCn,
+    #[allow(missing_docs)] // documentation missing in model
     ZhTw,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2515,6 +2842,7 @@ impl std::str::FromStr for Locale {
     }
 }
 impl Locale {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Locale::DeDe => "DE_DE",
@@ -2531,6 +2859,7 @@ impl Locale {
             Locale::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "DE_DE", "EN_GB", "EN_US", "ES_ES", "FR_FR", "IT_IT", "JA_JP", "KO_KR", "PT_BR",
@@ -2549,6 +2878,7 @@ impl AsRef<str> for Locale {
 /// The one
 /// supported notification channel is Amazon Simple Notification Service (Amazon SNS).
 /// </p>
+///
 /// <p>If you use an Amazon SNS topic in another account, you must attach a policy to it that grants DevOps Guru permission
 /// to it notifications. DevOps Guru adds the required policy on your behalf to send notifications using Amazon SNS in your account.
 /// For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-required-permissions.html">Permissions
@@ -2593,6 +2923,9 @@ pub mod notification_channel {
             self.id = Some(input.into());
             self
         }
+        /// <p>
+        /// The ID of a notification channel.
+        /// </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -2604,6 +2937,9 @@ pub mod notification_channel {
             self.config = Some(input);
             self
         }
+        /// <p>
+        /// A <code>NotificationChannelConfig</code> object that contains information about configured notification channels.
+        /// </p>
         pub fn set_config(
             mut self,
             input: std::option::Option<crate::model::NotificationChannelConfig>,
@@ -2636,6 +2972,7 @@ pub struct NotificationChannelConfig {
     /// <p>
     /// Information about a notification channel configured in DevOps Guru to send notifications when insights are created.
     /// </p>
+    ///
     /// <p>If you use an Amazon SNS topic in another account, you must attach a policy to it that grants DevOps Guru permission
     /// to it notifications. DevOps Guru adds the required policy on your behalf to send notifications using Amazon SNS in your account.
     /// For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-required-permissions.html">Permissions
@@ -2664,6 +3001,7 @@ pub mod notification_channel_config {
         /// <p>
         /// Information about a notification channel configured in DevOps Guru to send notifications when insights are created.
         /// </p>
+        ///
         /// <p>If you use an Amazon SNS topic in another account, you must attach a policy to it that grants DevOps Guru permission
         /// to it notifications. DevOps Guru adds the required policy on your behalf to send notifications using Amazon SNS in your account.
         /// For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-required-permissions.html">Permissions
@@ -2675,6 +3013,17 @@ pub mod notification_channel_config {
             self.sns = Some(input);
             self
         }
+        /// <p>
+        /// Information about a notification channel configured in DevOps Guru to send notifications when insights are created.
+        /// </p>
+        ///
+        /// <p>If you use an Amazon SNS topic in another account, you must attach a policy to it that grants DevOps Guru permission
+        /// to it notifications. DevOps Guru adds the required policy on your behalf to send notifications using Amazon SNS in your account.
+        /// For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-required-permissions.html">Permissions
+        /// for cross account Amazon SNS topics</a>.</p>
+        /// <p>If you use an Amazon SNS topic that is encrypted by an AWS Key Management Service customer-managed key (CMK), then you must add permissions
+        /// to the CMK. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-kms-permissions.html">Permissions for
+        /// AWS KMS–encrypted Amazon SNS topics</a>.</p>
         pub fn set_sns(
             mut self,
             input: std::option::Option<crate::model::SnsChannelConfig>,
@@ -2696,6 +3045,7 @@ impl NotificationChannelConfig {
 }
 
 /// <p> Contains the Amazon Resource Name (ARN) of an Amazon Simple Notification Service topic. </p>
+///
 /// <p>If you use an Amazon SNS topic in another account, you must attach a policy to it that grants DevOps Guru permission
 /// to it notifications. DevOps Guru adds the required policy on your behalf to send notifications using Amazon SNS in your account.
 /// For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-required-permissions.html">Permissions
@@ -2730,6 +3080,7 @@ pub mod sns_channel_config {
             self.topic_arn = Some(input.into());
             self
         }
+        /// <p> The Amazon Resource Name (ARN) of an Amazon Simple Notification Service topic. </p>
         pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.topic_arn = input;
             self
@@ -2799,6 +3150,10 @@ pub mod list_insights_status_filter {
             self.ongoing = Some(input);
             self
         }
+        /// <p>
+        /// A <code>ListInsightsAnyStatusFilter</code> that specifies ongoing insights
+        /// that are either <code>REACTIVE</code> or <code>PROACTIVE</code>.
+        /// </p>
         pub fn set_ongoing(
             mut self,
             input: std::option::Option<crate::model::ListInsightsOngoingStatusFilter>,
@@ -2814,6 +3169,10 @@ pub mod list_insights_status_filter {
             self.closed = Some(input);
             self
         }
+        /// <p>
+        /// A <code>ListInsightsClosedStatusFilter</code> that specifies closed insights that are
+        /// either <code>REACTIVE</code> or <code>PROACTIVE</code>.
+        /// </p>
         pub fn set_closed(
             mut self,
             input: std::option::Option<crate::model::ListInsightsClosedStatusFilter>,
@@ -2829,6 +3188,10 @@ pub mod list_insights_status_filter {
             self.any = Some(input);
             self
         }
+        /// <p>
+        /// A <code>ListInsightsAnyStatusFilter</code> that specifies insights of any status
+        /// that are either <code>REACTIVE</code> or <code>PROACTIVE</code>.
+        /// </p>
         pub fn set_any(
             mut self,
             input: std::option::Option<crate::model::ListInsightsAnyStatusFilter>,
@@ -2893,6 +3256,9 @@ pub mod list_insights_any_status_filter {
             self.r#type = Some(input);
             self
         }
+        /// <p>
+        /// Use to filter for either <code>REACTIVE</code> or <code>PROACTIVE</code> insights.
+        /// </p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::InsightType>) -> Self {
             self.r#type = input;
             self
@@ -2904,6 +3270,9 @@ pub mod list_insights_any_status_filter {
             self.start_time_range = Some(input);
             self
         }
+        /// <p>
+        /// A time range used to specify when the behavior of the filtered insights started.
+        /// </p>
         pub fn set_start_time_range(
             mut self,
             input: std::option::Option<crate::model::StartTimeRange>,
@@ -2967,6 +3336,9 @@ pub mod list_insights_closed_status_filter {
             self.r#type = Some(input);
             self
         }
+        /// <p>
+        /// Use to filter for either <code>REACTIVE</code> or <code>PROACTIVE</code> insights.
+        /// </p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::InsightType>) -> Self {
             self.r#type = input;
             self
@@ -2978,6 +3350,9 @@ pub mod list_insights_closed_status_filter {
             self.end_time_range = Some(input);
             self
         }
+        /// <p>
+        /// A time range used to specify when the behavior of the filtered insights ended.
+        /// </p>
         pub fn set_end_time_range(
             mut self,
             input: std::option::Option<crate::model::EndTimeRange>,
@@ -3010,11 +3385,11 @@ pub struct EndTimeRange {
     /// <p>
     /// The earliest end time in the time range.
     /// </p>
-    pub from_time: std::option::Option<smithy_types::Instant>,
+    pub from_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>
     /// The latest end time in the time range.
     /// </p>
-    pub to_time: std::option::Option<smithy_types::Instant>,
+    pub to_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for EndTimeRange {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3030,29 +3405,41 @@ pub mod end_time_range {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) from_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) to_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) from_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) to_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>
         /// The earliest end time in the time range.
         /// </p>
-        pub fn from_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn from_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.from_time = Some(input);
             self
         }
-        pub fn set_from_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>
+        /// The earliest end time in the time range.
+        /// </p>
+        pub fn set_from_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.from_time = input;
             self
         }
         /// <p>
         /// The latest end time in the time range.
         /// </p>
-        pub fn to_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn to_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.to_time = Some(input);
             self
         }
-        pub fn set_to_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>
+        /// The latest end time in the time range.
+        /// </p>
+        pub fn set_to_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.to_time = input;
             self
         }
@@ -3106,6 +3493,9 @@ pub mod list_insights_ongoing_status_filter {
             self.r#type = Some(input);
             self
         }
+        /// <p>
+        /// Use to filter for either <code>REACTIVE</code> or <code>PROACTIVE</code> insights.
+        /// </p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::InsightType>) -> Self {
             self.r#type = input;
             self
@@ -3142,7 +3532,7 @@ pub struct Event {
     /// </p>
     pub id: std::option::Option<std::string::String>,
     /// <p> A <code>Timestamp</code> that specifies the time the event occurred. </p>
-    pub time: std::option::Option<smithy_types::Instant>,
+    pub time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>
     /// The AWS source that emitted the event.
     /// </p>
@@ -3186,7 +3576,7 @@ pub mod event {
     pub struct Builder {
         pub(crate) resource_collection: std::option::Option<crate::model::ResourceCollection>,
         pub(crate) id: std::option::Option<std::string::String>,
-        pub(crate) time: std::option::Option<smithy_types::Instant>,
+        pub(crate) time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) event_source: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) data_source: std::option::Option<crate::model::EventDataSource>,
@@ -3202,6 +3592,10 @@ pub mod event {
             self.resource_collection = Some(input);
             self
         }
+        /// <p>
+        /// A collection of AWS resources supported by DevOps Guru. The one type of AWS resource collection supported is AWS CloudFormation stacks. DevOps Guru can be configured to analyze
+        /// only the AWS resources that are defined in the stacks. You can specify up to 500 AWS CloudFormation stacks.
+        /// </p>
         pub fn set_resource_collection(
             mut self,
             input: std::option::Option<crate::model::ResourceCollection>,
@@ -3216,16 +3610,20 @@ pub mod event {
             self.id = Some(input.into());
             self
         }
+        /// <p>
+        /// The ID of the event.
+        /// </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
         /// <p> A <code>Timestamp</code> that specifies the time the event occurred. </p>
-        pub fn time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.time = Some(input);
             self
         }
-        pub fn set_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p> A <code>Timestamp</code> that specifies the time the event occurred. </p>
+        pub fn set_time(mut self, input: std::option::Option<aws_smithy_types::Instant>) -> Self {
             self.time = input;
             self
         }
@@ -3236,6 +3634,9 @@ pub mod event {
             self.event_source = Some(input.into());
             self
         }
+        /// <p>
+        /// The AWS source that emitted the event.
+        /// </p>
         pub fn set_event_source(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.event_source = input;
             self
@@ -3247,6 +3648,9 @@ pub mod event {
             self.name = Some(input.into());
             self
         }
+        /// <p>
+        /// The name of the event.
+        /// </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -3258,6 +3662,9 @@ pub mod event {
             self.data_source = Some(input);
             self
         }
+        /// <p>
+        /// The source, <code>AWS_CLOUD_TRAIL</code> or <code>AWS_CODE_DEPLOY</code>, where DevOps Guru analysis found the event.
+        /// </p>
         pub fn set_data_source(
             mut self,
             input: std::option::Option<crate::model::EventDataSource>,
@@ -3272,6 +3679,9 @@ pub mod event {
             self.event_class = Some(input);
             self
         }
+        /// <p>
+        /// The class of the event. The class specifies what the event is related to, such as an infrastructure change, a deployment, or a schema change.
+        /// </p>
         pub fn set_event_class(
             mut self,
             input: std::option::Option<crate::model::EventClass>,
@@ -3279,12 +3689,22 @@ pub mod event {
             self.event_class = input;
             self
         }
+        /// Appends an item to `resources`.
+        ///
+        /// To override the contents of this collection use [`set_resources`](Self::set_resources).
+        ///
+        /// <p>
+        /// An <code>EventResource</code> object that contains information about the resource that emitted the event.
+        /// </p>
         pub fn resources(mut self, input: impl Into<crate::model::EventResource>) -> Self {
             let mut v = self.resources.unwrap_or_default();
             v.push(input.into());
             self.resources = Some(v);
             self
         }
+        /// <p>
+        /// An <code>EventResource</code> object that contains information about the resource that emitted the event.
+        /// </p>
         pub fn set_resources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EventResource>>,
@@ -3361,6 +3781,9 @@ pub mod event_resource {
             self.r#type = Some(input.into());
             self
         }
+        /// <p>
+        /// The type of resource that emitted an event.
+        /// </p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
@@ -3372,6 +3795,9 @@ pub mod event_resource {
             self.name = Some(input.into());
             self
         }
+        /// <p>
+        /// The name of the resource that emitted an event.
+        /// </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -3383,6 +3809,9 @@ pub mod event_resource {
             self.arn = Some(input.into());
             self
         }
+        /// <p>
+        /// The Amazon Resource Name (ARN) of the resource that emitted an event.
+        /// </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -3404,6 +3833,7 @@ impl EventResource {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3415,10 +3845,15 @@ impl EventResource {
     std::hash::Hash,
 )]
 pub enum EventClass {
+    #[allow(missing_docs)] // documentation missing in model
     ConfigChange,
+    #[allow(missing_docs)] // documentation missing in model
     Deployment,
+    #[allow(missing_docs)] // documentation missing in model
     Infrastructure,
+    #[allow(missing_docs)] // documentation missing in model
     SchemaChange,
+    #[allow(missing_docs)] // documentation missing in model
     SecurityChange,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3443,6 +3878,7 @@ impl std::str::FromStr for EventClass {
     }
 }
 impl EventClass {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EventClass::ConfigChange => "CONFIG_CHANGE",
@@ -3453,6 +3889,7 @@ impl EventClass {
             EventClass::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CONFIG_CHANGE",
@@ -3469,6 +3906,7 @@ impl AsRef<str> for EventClass {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3480,7 +3918,9 @@ impl AsRef<str> for EventClass {
     std::hash::Hash,
 )]
 pub enum EventDataSource {
+    #[allow(missing_docs)] // documentation missing in model
     AwsCloudTrail,
+    #[allow(missing_docs)] // documentation missing in model
     AwsCodeDeploy,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3502,6 +3942,7 @@ impl std::str::FromStr for EventDataSource {
     }
 }
 impl EventDataSource {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EventDataSource::AwsCloudTrail => "AWS_CLOUD_TRAIL",
@@ -3509,6 +3950,7 @@ impl EventDataSource {
             EventDataSource::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AWS_CLOUD_TRAIL", "AWS_CODE_DEPLOY"]
     }
@@ -3582,6 +4024,9 @@ pub mod list_events_filters {
             self.insight_id = Some(input.into());
             self
         }
+        /// <p>
+        /// An ID of an insight that is related to the events you want to filter for.
+        /// </p>
         pub fn set_insight_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.insight_id = input;
             self
@@ -3591,6 +4036,7 @@ pub mod list_events_filters {
             self.event_time_range = Some(input);
             self
         }
+        /// <p> A time range during which you want the filtered events to have occurred. </p>
         pub fn set_event_time_range(
             mut self,
             input: std::option::Option<crate::model::EventTimeRange>,
@@ -3605,6 +4051,9 @@ pub mod list_events_filters {
             self.event_class = Some(input);
             self
         }
+        /// <p>
+        /// The class of the events you want to filter for, such as an infrastructure change, a deployment, or a schema change.        
+        /// </p>
         pub fn set_event_class(
             mut self,
             input: std::option::Option<crate::model::EventClass>,
@@ -3619,6 +4068,9 @@ pub mod list_events_filters {
             self.event_source = Some(input.into());
             self
         }
+        /// <p>
+        /// The AWS source that emitted the events you want to filter for.
+        /// </p>
         pub fn set_event_source(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.event_source = input;
             self
@@ -3630,6 +4082,9 @@ pub mod list_events_filters {
             self.data_source = Some(input);
             self
         }
+        /// <p>
+        /// The source, <code>AWS_CLOUD_TRAIL</code> or <code>AWS_CODE_DEPLOY</code>, of the events you want returned.
+        /// </p>
         pub fn set_data_source(
             mut self,
             input: std::option::Option<crate::model::EventDataSource>,
@@ -3645,6 +4100,10 @@ pub mod list_events_filters {
             self.resource_collection = Some(input);
             self
         }
+        /// <p>
+        /// A collection of AWS resources supported by DevOps Guru. The one type of AWS resource collection supported is AWS CloudFormation stacks. DevOps Guru can be configured to analyze
+        /// only the AWS resources that are defined in the stacks. You can specify up to 500 AWS CloudFormation stacks.
+        /// </p>
         pub fn set_resource_collection(
             mut self,
             input: std::option::Option<crate::model::ResourceCollection>,
@@ -3682,11 +4141,11 @@ pub struct EventTimeRange {
     /// <p>
     /// The time when the event started.
     /// </p>
-    pub from_time: std::option::Option<smithy_types::Instant>,
+    pub from_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>
     /// The time when the event ended.
     /// </p>
-    pub to_time: std::option::Option<smithy_types::Instant>,
+    pub to_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for EventTimeRange {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3702,29 +4161,41 @@ pub mod event_time_range {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) from_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) to_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) from_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) to_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>
         /// The time when the event started.
         /// </p>
-        pub fn from_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn from_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.from_time = Some(input);
             self
         }
-        pub fn set_from_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>
+        /// The time when the event started.
+        /// </p>
+        pub fn set_from_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.from_time = input;
             self
         }
         /// <p>
         /// The time when the event ended.
         /// </p>
-        pub fn to_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn to_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.to_time = Some(input);
             self
         }
-        pub fn set_to_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>
+        /// The time when the event ended.
+        /// </p>
+        pub fn set_to_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.to_time = input;
             self
         }
@@ -3827,6 +4298,9 @@ pub mod reactive_anomaly_summary {
             self.id = Some(input.into());
             self
         }
+        /// <p>
+        /// The ID of the reactive anomaly.
+        /// </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -3838,6 +4312,9 @@ pub mod reactive_anomaly_summary {
             self.severity = Some(input);
             self
         }
+        /// <p>
+        /// The severity of the reactive anomaly.      
+        /// </p>
         pub fn set_severity(
             mut self,
             input: std::option::Option<crate::model::AnomalySeverity>,
@@ -3852,6 +4329,9 @@ pub mod reactive_anomaly_summary {
             self.status = Some(input);
             self
         }
+        /// <p>
+        /// The status of the reactive anomaly.
+        /// </p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::AnomalyStatus>,
@@ -3868,6 +4348,11 @@ pub mod reactive_anomaly_summary {
             self.anomaly_time_range = Some(input);
             self
         }
+        /// <p>
+        /// A time range that specifies when the observed unusual behavior in an anomaly started and ended. This is different from
+        /// <code>AnomalyReportedTimeRange</code>, which specifies the time range when DevOps Guru opens and then closes
+        /// an anomaly.
+        /// </p>
         pub fn set_anomaly_time_range(
             mut self,
             input: std::option::Option<crate::model::AnomalyTimeRange>,
@@ -3885,6 +4370,9 @@ pub mod reactive_anomaly_summary {
             self.anomaly_reported_time_range = Some(input);
             self
         }
+        /// <p>
+        /// A <code>AnomalyReportedTimeRange</code> object that specifies the time range between when the anomaly is opened and the time when it is closed.
+        /// </p>
         pub fn set_anomaly_reported_time_range(
             mut self,
             input: std::option::Option<crate::model::AnomalyReportedTimeRange>,
@@ -3899,6 +4387,9 @@ pub mod reactive_anomaly_summary {
             self.source_details = Some(input);
             self
         }
+        /// <p>
+        /// Details about the source of the analyzed operational data that triggered the anomaly. The one supported source is Amazon CloudWatch metrics.
+        /// </p>
         pub fn set_source_details(
             mut self,
             input: std::option::Option<crate::model::AnomalySourceDetails>,
@@ -3913,6 +4404,9 @@ pub mod reactive_anomaly_summary {
             self.associated_insight_id = Some(input.into());
             self
         }
+        /// <p>
+        /// The ID of the insight that contains this anomaly. An insight is composed of related anomalies.
+        /// </p>
         pub fn set_associated_insight_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3928,6 +4422,10 @@ pub mod reactive_anomaly_summary {
             self.resource_collection = Some(input);
             self
         }
+        /// <p>
+        /// A collection of AWS resources supported by DevOps Guru. The one type of AWS resource collection supported is AWS CloudFormation stacks. DevOps Guru can be configured to analyze
+        /// only the AWS resources that are defined in the stacks. You can specify up to 500 AWS CloudFormation stacks.
+        /// </p>
         pub fn set_resource_collection(
             mut self,
             input: std::option::Option<crate::model::ResourceCollection>,
@@ -3984,6 +4482,12 @@ pub mod anomaly_source_details {
             std::option::Option<std::vec::Vec<crate::model::CloudWatchMetricsDetail>>,
     }
     impl Builder {
+        /// Appends an item to `cloud_watch_metrics`.
+        ///
+        /// To override the contents of this collection use [`set_cloud_watch_metrics`](Self::set_cloud_watch_metrics).
+        ///
+        /// <p> An array of <code>CloudWatchMetricsDetail</code> object that contains information
+        /// about the analyzed metrics that displayed anomalous behavior. </p>
         pub fn cloud_watch_metrics(
             mut self,
             input: impl Into<crate::model::CloudWatchMetricsDetail>,
@@ -3993,6 +4497,8 @@ pub mod anomaly_source_details {
             self.cloud_watch_metrics = Some(v);
             self
         }
+        /// <p> An array of <code>CloudWatchMetricsDetail</code> object that contains information
+        /// about the analyzed metrics that displayed anomalous behavior. </p>
         pub fn set_cloud_watch_metrics(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CloudWatchMetricsDetail>>,
@@ -4083,6 +4589,9 @@ pub mod cloud_watch_metrics_detail {
             self.metric_name = Some(input.into());
             self
         }
+        /// <p>
+        /// The name of the CloudWatch metric.
+        /// </p>
         pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.metric_name = input;
             self
@@ -4094,10 +4603,20 @@ pub mod cloud_watch_metrics_detail {
             self.namespace = Some(input.into());
             self
         }
+        /// <p>
+        /// The namespace of the CloudWatch metric. A namespace is a container for CloudWatch metrics.
+        /// </p>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.namespace = input;
             self
         }
+        /// Appends an item to `dimensions`.
+        ///
+        /// To override the contents of this collection use [`set_dimensions`](Self::set_dimensions).
+        ///
+        /// <p>
+        /// An array of CloudWatch dimensions associated with
+        /// </p>
         pub fn dimensions(
             mut self,
             input: impl Into<crate::model::CloudWatchMetricsDimension>,
@@ -4107,6 +4626,9 @@ pub mod cloud_watch_metrics_detail {
             self.dimensions = Some(v);
             self
         }
+        /// <p>
+        /// An array of CloudWatch dimensions associated with
+        /// </p>
         pub fn set_dimensions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CloudWatchMetricsDimension>>,
@@ -4123,6 +4645,11 @@ pub mod cloud_watch_metrics_detail {
             self.stat = Some(input);
             self
         }
+        /// <p>
+        /// The type of statistic associated with the CloudWatch metric. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Statistic">Statistics</a> in the
+        /// <i>Amazon CloudWatch User Guide</i>.
+        /// </p>
         pub fn set_stat(
             mut self,
             input: std::option::Option<crate::model::CloudWatchMetricsStat>,
@@ -4138,6 +4665,10 @@ pub mod cloud_watch_metrics_detail {
             self.unit = Some(input.into());
             self
         }
+        /// <p>
+        /// The unit of measure used for the CloudWatch metric. For example, <code>Bytes</code>, <code>Seconds</code>,
+        /// <code>Count</code>, and <code>Percent</code>.
+        /// </p>
         pub fn set_unit(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.unit = input;
             self
@@ -4149,6 +4680,9 @@ pub mod cloud_watch_metrics_detail {
             self.period = Some(input);
             self
         }
+        /// <p>
+        /// The length of time associated with the CloudWatch metric in number of seconds.
+        /// </p>
         pub fn set_period(mut self, input: std::option::Option<i32>) -> Self {
             self.period = input;
             self
@@ -4173,6 +4707,7 @@ impl CloudWatchMetricsDetail {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4184,13 +4719,21 @@ impl CloudWatchMetricsDetail {
     std::hash::Hash,
 )]
 pub enum CloudWatchMetricsStat {
+    #[allow(missing_docs)] // documentation missing in model
     Average,
+    #[allow(missing_docs)] // documentation missing in model
     Maximum,
+    #[allow(missing_docs)] // documentation missing in model
     Minimum,
+    #[allow(missing_docs)] // documentation missing in model
     SampleCount,
+    #[allow(missing_docs)] // documentation missing in model
     Sum,
+    #[allow(missing_docs)] // documentation missing in model
     P50,
+    #[allow(missing_docs)] // documentation missing in model
     P90,
+    #[allow(missing_docs)] // documentation missing in model
     P99,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4218,6 +4761,7 @@ impl std::str::FromStr for CloudWatchMetricsStat {
     }
 }
 impl CloudWatchMetricsStat {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CloudWatchMetricsStat::Average => "Average",
@@ -4231,6 +4775,7 @@ impl CloudWatchMetricsStat {
             CloudWatchMetricsStat::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "Average",
@@ -4291,6 +4836,9 @@ pub mod cloud_watch_metrics_dimension {
             self.name = Some(input.into());
             self
         }
+        /// <p>
+        /// The name of the CloudWatch dimension.
+        /// </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -4302,6 +4850,9 @@ pub mod cloud_watch_metrics_dimension {
             self.value = Some(input.into());
             self
         }
+        /// <p>
+        /// The value of the CloudWatch dimension.
+        /// </p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -4333,11 +4884,11 @@ pub struct AnomalyReportedTimeRange {
     /// <p>
     /// The time when an anomaly is opened.
     /// </p>
-    pub open_time: std::option::Option<smithy_types::Instant>,
+    pub open_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>
     /// The time when an anomaly is closed.
     /// </p>
-    pub close_time: std::option::Option<smithy_types::Instant>,
+    pub close_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for AnomalyReportedTimeRange {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4353,29 +4904,41 @@ pub mod anomaly_reported_time_range {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) open_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) close_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) open_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) close_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>
         /// The time when an anomaly is opened.
         /// </p>
-        pub fn open_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn open_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.open_time = Some(input);
             self
         }
-        pub fn set_open_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>
+        /// The time when an anomaly is opened.
+        /// </p>
+        pub fn set_open_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.open_time = input;
             self
         }
         /// <p>
         /// The time when an anomaly is closed.
         /// </p>
-        pub fn close_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn close_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.close_time = Some(input);
             self
         }
-        pub fn set_close_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>
+        /// The time when an anomaly is closed.
+        /// </p>
+        pub fn set_close_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.close_time = input;
             self
         }
@@ -4406,9 +4969,9 @@ pub struct AnomalyTimeRange {
     /// <p>
     /// The time when the anomalous behavior started.
     /// </p>
-    pub start_time: std::option::Option<smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p> The time when the anomalous behavior ended. </p>
-    pub end_time: std::option::Option<smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for AnomalyTimeRange {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4424,27 +4987,37 @@ pub mod anomaly_time_range {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) start_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>
         /// The time when the anomalous behavior started.
         /// </p>
-        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>
+        /// The time when the anomalous behavior started.
+        /// </p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.start_time = input;
             self
         }
         /// <p> The time when the anomalous behavior ended. </p>
-        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p> The time when the anomalous behavior ended. </p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.end_time = input;
             self
         }
@@ -4464,6 +5037,7 @@ impl AnomalyTimeRange {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4475,7 +5049,9 @@ impl AnomalyTimeRange {
     std::hash::Hash,
 )]
 pub enum AnomalyStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Closed,
+    #[allow(missing_docs)] // documentation missing in model
     Ongoing,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4497,6 +5073,7 @@ impl std::str::FromStr for AnomalyStatus {
     }
 }
 impl AnomalyStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AnomalyStatus::Closed => "CLOSED",
@@ -4504,6 +5081,7 @@ impl AnomalyStatus {
             AnomalyStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CLOSED", "ONGOING"]
     }
@@ -4514,6 +5092,7 @@ impl AsRef<str> for AnomalyStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4525,8 +5104,11 @@ impl AsRef<str> for AnomalyStatus {
     std::hash::Hash,
 )]
 pub enum AnomalySeverity {
+    #[allow(missing_docs)] // documentation missing in model
     High,
+    #[allow(missing_docs)] // documentation missing in model
     Low,
+    #[allow(missing_docs)] // documentation missing in model
     Medium,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4549,6 +5131,7 @@ impl std::str::FromStr for AnomalySeverity {
     }
 }
 impl AnomalySeverity {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AnomalySeverity::High => "HIGH",
@@ -4557,6 +5140,7 @@ impl AnomalySeverity {
             AnomalySeverity::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["HIGH", "LOW", "MEDIUM"]
     }
@@ -4582,7 +5166,7 @@ pub struct ProactiveAnomalySummary {
     /// <p>
     /// The time of the anomaly's most recent update.
     /// </p>
-    pub update_time: std::option::Option<smithy_types::Instant>,
+    pub update_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>
     /// A time range that specifies when the observed unusual behavior in an anomaly started and ended. This is different from
     /// <code>AnomalyReportedTimeRange</code>, which specifies the time range when DevOps Guru opens and then closes
@@ -4645,7 +5229,7 @@ pub mod proactive_anomaly_summary {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) severity: std::option::Option<crate::model::AnomalySeverity>,
         pub(crate) status: std::option::Option<crate::model::AnomalyStatus>,
-        pub(crate) update_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) update_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) anomaly_time_range: std::option::Option<crate::model::AnomalyTimeRange>,
         pub(crate) anomaly_reported_time_range:
             std::option::Option<crate::model::AnomalyReportedTimeRange>,
@@ -4661,6 +5245,7 @@ pub mod proactive_anomaly_summary {
             self.id = Some(input.into());
             self
         }
+        /// <p>The ID of the anomaly.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -4670,6 +5255,7 @@ pub mod proactive_anomaly_summary {
             self.severity = Some(input);
             self
         }
+        /// <p>The severity of the anomaly.</p>
         pub fn set_severity(
             mut self,
             input: std::option::Option<crate::model::AnomalySeverity>,
@@ -4682,6 +5268,7 @@ pub mod proactive_anomaly_summary {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the anomaly.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::AnomalyStatus>,
@@ -4692,13 +5279,16 @@ pub mod proactive_anomaly_summary {
         /// <p>
         /// The time of the anomaly's most recent update.
         /// </p>
-        pub fn update_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn update_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.update_time = Some(input);
             self
         }
+        /// <p>
+        /// The time of the anomaly's most recent update.
+        /// </p>
         pub fn set_update_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.update_time = input;
             self
@@ -4712,6 +5302,11 @@ pub mod proactive_anomaly_summary {
             self.anomaly_time_range = Some(input);
             self
         }
+        /// <p>
+        /// A time range that specifies when the observed unusual behavior in an anomaly started and ended. This is different from
+        /// <code>AnomalyReportedTimeRange</code>, which specifies the time range when DevOps Guru opens and then closes
+        /// an anomaly.
+        /// </p>
         pub fn set_anomaly_time_range(
             mut self,
             input: std::option::Option<crate::model::AnomalyTimeRange>,
@@ -4729,6 +5324,9 @@ pub mod proactive_anomaly_summary {
             self.anomaly_reported_time_range = Some(input);
             self
         }
+        /// <p>
+        /// A <code>AnomalyReportedTimeRange</code> object that specifies the time range between when the anomaly is opened and the time when it is closed.
+        /// </p>
         pub fn set_anomaly_reported_time_range(
             mut self,
             input: std::option::Option<crate::model::AnomalyReportedTimeRange>,
@@ -4743,6 +5341,9 @@ pub mod proactive_anomaly_summary {
             self.prediction_time_range = Some(input);
             self
         }
+        /// <p>
+        /// The time range during which anomalous behavior in a proactive anomaly or an insight is expected to occur.
+        /// </p>
         pub fn set_prediction_time_range(
             mut self,
             input: std::option::Option<crate::model::PredictionTimeRange>,
@@ -4757,6 +5358,9 @@ pub mod proactive_anomaly_summary {
             self.source_details = Some(input);
             self
         }
+        /// <p>
+        /// Details about the source of the analyzed operational data that triggered the anomaly. The one supported source is Amazon CloudWatch metrics.
+        /// </p>
         pub fn set_source_details(
             mut self,
             input: std::option::Option<crate::model::AnomalySourceDetails>,
@@ -4771,6 +5375,9 @@ pub mod proactive_anomaly_summary {
             self.associated_insight_id = Some(input.into());
             self
         }
+        /// <p>
+        /// The ID of the insight that contains this anomaly. An insight is composed of related anomalies.
+        /// </p>
         pub fn set_associated_insight_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4786,6 +5393,10 @@ pub mod proactive_anomaly_summary {
             self.resource_collection = Some(input);
             self
         }
+        /// <p>
+        /// A collection of AWS resources supported by DevOps Guru. The one type of AWS resource collection supported is AWS CloudFormation stacks. DevOps Guru can be configured to analyze
+        /// only the AWS resources that are defined in the stacks. You can specify up to 500 AWS CloudFormation stacks.
+        /// </p>
         pub fn set_resource_collection(
             mut self,
             input: std::option::Option<crate::model::ResourceCollection>,
@@ -4801,6 +5412,10 @@ pub mod proactive_anomaly_summary {
             self.limit = Some(input);
             self
         }
+        /// <p>
+        /// A threshold that was exceeded by behavior in analyzed resources. Exceeding this
+        /// threshold is related to the anomalous behavior that generated this anomaly.
+        /// </p>
         pub fn set_limit(mut self, input: std::option::Option<f64>) -> Self {
             self.limit = input;
             self
@@ -4872,6 +5487,11 @@ pub mod resource_collection_filter {
             self.cloud_formation = Some(input);
             self
         }
+        /// <p>
+        /// Information about AWS CloudFormation stacks. You can use up to 500 stacks to specify which AWS resources in your account to analyze.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacks.html">Stacks</a>
+        /// in the <i>AWS CloudFormation User Guide</i>.
+        /// </p>
         pub fn set_cloud_formation(
             mut self,
             input: std::option::Option<crate::model::CloudFormationCollectionFilter>,
@@ -4923,12 +5543,22 @@ pub mod cloud_formation_collection_filter {
         pub(crate) stack_names: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `stack_names`.
+        ///
+        /// To override the contents of this collection use [`set_stack_names`](Self::set_stack_names).
+        ///
+        /// <p>
+        /// An array of CloudFormation stack names.
+        /// </p>
         pub fn stack_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.stack_names.unwrap_or_default();
             v.push(input.into());
             self.stack_names = Some(v);
             self
         }
+        /// <p>
+        /// An array of CloudFormation stack names.
+        /// </p>
         pub fn set_stack_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4951,6 +5581,7 @@ impl CloudFormationCollectionFilter {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4962,7 +5593,9 @@ impl CloudFormationCollectionFilter {
     std::hash::Hash,
 )]
 pub enum ResourceCollectionType {
+    #[allow(missing_docs)] // documentation missing in model
     AwsCloudFormation,
+    #[allow(missing_docs)] // documentation missing in model
     AwsService,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4984,6 +5617,7 @@ impl std::str::FromStr for ResourceCollectionType {
     }
 }
 impl ResourceCollectionType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ResourceCollectionType::AwsCloudFormation => "AWS_CLOUD_FORMATION",
@@ -4991,6 +5625,7 @@ impl ResourceCollectionType {
             ResourceCollectionType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AWS_CLOUD_FORMATION", "AWS_SERVICE"]
     }
@@ -5006,9 +5641,9 @@ impl AsRef<str> for ResourceCollectionType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CostEstimationTimeRange {
     /// <p>The start time of the cost estimation.</p>
-    pub start_time: std::option::Option<smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The end time of the cost estimation.</p>
-    pub end_time: std::option::Option<smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for CostEstimationTimeRange {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5024,25 +5659,33 @@ pub mod cost_estimation_time_range {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) start_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The start time of the cost estimation.</p>
-        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The start time of the cost estimation.</p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The end time of the cost estimation.</p>
-        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The end time of the cost estimation.</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.end_time = input;
             self
         }
@@ -5119,6 +5762,7 @@ pub mod service_resource_cost {
             self.r#type = Some(input.into());
             self
         }
+        /// <p>The type of the AWS resource.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
@@ -5132,6 +5776,11 @@ pub mod service_resource_cost {
             self.state = Some(input);
             self
         }
+        /// <p>The state of the resource. The resource is <code>ACTIVE</code> if it produces metrics,
+        /// events, or logs within an hour, otherwise it is <code>INACTIVE</code>. You pay for
+        /// the number of active AWS resource hours analyzed for each resource. Inactive resources are
+        /// not charged.
+        /// </p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::CostEstimationServiceResourceState>,
@@ -5145,6 +5794,8 @@ pub mod service_resource_cost {
             self.count = Some(input);
             self
         }
+        /// <p>The number of active resources analyzed for this service to create a monthly cost
+        /// estimate.</p>
         pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
             self.count = input;
             self
@@ -5158,6 +5809,11 @@ pub mod service_resource_cost {
             self.unit_cost = Some(input);
             self
         }
+        /// <p>The price per hour to analyze the resources in the service.
+        /// For more information,
+        /// see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/cost-estimate.html">Estimate your
+        /// Amazon DevOps Guru costs</a> and
+        /// <a href="http://aws.amazon.com/devops-guru/pricing/">Amazon DevOps Guru pricing</a>.</p>
         pub fn set_unit_cost(mut self, input: std::option::Option<f64>) -> Self {
             self.unit_cost = input;
             self
@@ -5167,6 +5823,7 @@ pub mod service_resource_cost {
             self.cost = Some(input);
             self
         }
+        /// <p>The total estimated monthly cost to analyze the active resources for this resource.</p>
         pub fn set_cost(mut self, input: std::option::Option<f64>) -> Self {
             self.cost = input;
             self
@@ -5190,6 +5847,7 @@ impl ServiceResourceCost {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5201,7 +5859,9 @@ impl ServiceResourceCost {
     std::hash::Hash,
 )]
 pub enum CostEstimationServiceResourceState {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     Inactive,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5223,6 +5883,7 @@ impl std::str::FromStr for CostEstimationServiceResourceState {
     }
 }
 impl CostEstimationServiceResourceState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CostEstimationServiceResourceState::Active => "ACTIVE",
@@ -5230,6 +5891,7 @@ impl CostEstimationServiceResourceState {
             CostEstimationServiceResourceState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ACTIVE", "INACTIVE"]
     }
@@ -5240,6 +5902,7 @@ impl AsRef<str> for CostEstimationServiceResourceState {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5251,7 +5914,9 @@ impl AsRef<str> for CostEstimationServiceResourceState {
     std::hash::Hash,
 )]
 pub enum CostEstimationStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Completed,
+    #[allow(missing_docs)] // documentation missing in model
     Ongoing,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5273,6 +5938,7 @@ impl std::str::FromStr for CostEstimationStatus {
     }
 }
 impl CostEstimationStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CostEstimationStatus::Completed => "COMPLETED",
@@ -5280,6 +5946,7 @@ impl CostEstimationStatus {
             CostEstimationStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["COMPLETED", "ONGOING"]
     }
@@ -5324,6 +5991,9 @@ pub mod service_integration_config {
             self.ops_center = Some(input);
             self
         }
+        /// <p>
+        /// Information about whether DevOps Guru is configured to create an OpsItem in AWS Systems Manager OpsCenter for each created insight.
+        /// </p>
         pub fn set_ops_center(
             mut self,
             input: std::option::Option<crate::model::OpsCenterIntegration>,
@@ -5380,6 +6050,9 @@ pub mod ops_center_integration {
             self.opt_in_status = Some(input);
             self
         }
+        /// <p>
+        /// Specifies if DevOps Guru is enabled to create an AWS Systems Manager OpsItem for each created insight.
+        /// </p>
         pub fn set_opt_in_status(
             mut self,
             input: std::option::Option<crate::model::OptInStatus>,
@@ -5435,6 +6108,7 @@ pub mod service_health {
             self.service_name = Some(input);
             self
         }
+        /// <p>The name of the AWS service.</p>
         pub fn set_service_name(
             mut self,
             input: std::option::Option<crate::model::ServiceName>,
@@ -5448,6 +6122,8 @@ pub mod service_health {
             self.insight = Some(input);
             self
         }
+        /// <p>Represents the health of an AWS service. This is a <code>ServiceInsightHealth</code> that
+        /// contains the number of open proactive and reactive insights for this service.</p>
         pub fn set_insight(
             mut self,
             input: std::option::Option<crate::model::ServiceInsightHealth>,
@@ -5503,6 +6179,7 @@ pub mod service_insight_health {
             self.open_proactive_insights = Some(input);
             self
         }
+        /// <p>The number of open proactive insights in the AWS service</p>
         pub fn set_open_proactive_insights(mut self, input: std::option::Option<i32>) -> Self {
             self.open_proactive_insights = input;
             self
@@ -5512,6 +6189,7 @@ pub mod service_insight_health {
             self.open_reactive_insights = Some(input);
             self
         }
+        /// <p>The number of open reactive insights in the AWS service</p>
         pub fn set_open_reactive_insights(mut self, input: std::option::Option<i32>) -> Self {
             self.open_reactive_insights = input;
             self
@@ -5573,6 +6251,9 @@ pub mod cloud_formation_health {
             self.stack_name = Some(input.into());
             self
         }
+        /// <p>
+        /// The name of the CloudFormation stack.
+        /// </p>
         pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_name = input;
             self
@@ -5585,6 +6266,10 @@ pub mod cloud_formation_health {
             self.insight = Some(input);
             self
         }
+        /// <p>
+        /// Information about the health of the AWS resources in your account that are specified by an AWS CloudFormation stack, including
+        /// the number of open proactive, open reactive insights, and the Mean Time to Recover (MTTR) of closed insights.
+        /// </p>
         pub fn set_insight(
             mut self,
             input: std::option::Option<crate::model::InsightHealth>,
@@ -5658,6 +6343,9 @@ pub mod insight_health {
             self.open_proactive_insights = Some(input);
             self
         }
+        /// <p>
+        /// The number of open proactive insights.
+        /// </p>
         pub fn set_open_proactive_insights(mut self, input: std::option::Option<i32>) -> Self {
             self.open_proactive_insights = input;
             self
@@ -5669,6 +6357,9 @@ pub mod insight_health {
             self.open_reactive_insights = Some(input);
             self
         }
+        /// <p>
+        /// The number of open reactive insights.
+        /// </p>
         pub fn set_open_reactive_insights(mut self, input: std::option::Option<i32>) -> Self {
             self.open_reactive_insights = input;
             self
@@ -5680,6 +6371,9 @@ pub mod insight_health {
             self.mean_time_to_recover_in_milliseconds = Some(input);
             self
         }
+        /// <p>
+        /// The Meant Time to Recover (MTTR) for the insight.  
+        /// </p>
         pub fn set_mean_time_to_recover_in_milliseconds(
             mut self,
             input: std::option::Option<i64>,
@@ -5775,6 +6469,9 @@ pub mod reactive_insight {
             self.id = Some(input.into());
             self
         }
+        /// <p>
+        /// The ID of a reactive insight.
+        /// </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -5786,6 +6483,9 @@ pub mod reactive_insight {
             self.name = Some(input.into());
             self
         }
+        /// <p>
+        /// The name of a reactive insight.
+        /// </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -5797,6 +6497,9 @@ pub mod reactive_insight {
             self.severity = Some(input);
             self
         }
+        /// <p>
+        /// The severity of a reactive insight.
+        /// </p>
         pub fn set_severity(
             mut self,
             input: std::option::Option<crate::model::InsightSeverity>,
@@ -5811,6 +6514,9 @@ pub mod reactive_insight {
             self.status = Some(input);
             self
         }
+        /// <p>
+        /// The status of a reactive insight.
+        /// </p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::InsightStatus>,
@@ -5824,6 +6530,8 @@ pub mod reactive_insight {
             self.insight_time_range = Some(input);
             self
         }
+        /// <p> A time ranged that specifies when the observed behavior in an insight started and
+        /// ended. </p>
         pub fn set_insight_time_range(
             mut self,
             input: std::option::Option<crate::model::InsightTimeRange>,
@@ -5839,6 +6547,10 @@ pub mod reactive_insight {
             self.resource_collection = Some(input);
             self
         }
+        /// <p>
+        /// A collection of AWS resources supported by DevOps Guru. The one type of AWS resource collection supported is AWS CloudFormation stacks. DevOps Guru can be configured to analyze
+        /// only the AWS resources that are defined in the stacks. You can specify up to 500 AWS CloudFormation stacks.
+        /// </p>
         pub fn set_resource_collection(
             mut self,
             input: std::option::Option<crate::model::ResourceCollection>,
@@ -5854,6 +6566,10 @@ pub mod reactive_insight {
             self.ssm_ops_item_id = Some(input.into());
             self
         }
+        /// <p>
+        /// The ID of the AWS System Manager OpsItem created for this insight. You must enable
+        /// the creation of OpstItems insights before they are created for each insight.
+        /// </p>
         pub fn set_ssm_ops_item_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5947,6 +6663,7 @@ pub mod proactive_insight {
             self.id = Some(input.into());
             self
         }
+        /// <p>The ID of the proactive insight. </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -5956,6 +6673,7 @@ pub mod proactive_insight {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the proactive insight. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -5965,6 +6683,7 @@ pub mod proactive_insight {
             self.severity = Some(input);
             self
         }
+        /// <p>The severity of the proactive insight. </p>
         pub fn set_severity(
             mut self,
             input: std::option::Option<crate::model::InsightSeverity>,
@@ -5977,6 +6696,7 @@ pub mod proactive_insight {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the proactive insight. </p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::InsightStatus>,
@@ -5990,6 +6710,8 @@ pub mod proactive_insight {
             self.insight_time_range = Some(input);
             self
         }
+        /// <p> A time ranged that specifies when the observed behavior in an insight started and
+        /// ended. </p>
         pub fn set_insight_time_range(
             mut self,
             input: std::option::Option<crate::model::InsightTimeRange>,
@@ -6004,6 +6726,9 @@ pub mod proactive_insight {
             self.prediction_time_range = Some(input);
             self
         }
+        /// <p>
+        /// The time range during which anomalous behavior in a proactive anomaly or an insight is expected to occur.
+        /// </p>
         pub fn set_prediction_time_range(
             mut self,
             input: std::option::Option<crate::model::PredictionTimeRange>,
@@ -6019,6 +6744,10 @@ pub mod proactive_insight {
             self.resource_collection = Some(input);
             self
         }
+        /// <p>
+        /// A collection of AWS resources supported by DevOps Guru. The one type of AWS resource collection supported is AWS CloudFormation stacks. DevOps Guru can be configured to analyze
+        /// only the AWS resources that are defined in the stacks. You can specify up to 500 AWS CloudFormation stacks.
+        /// </p>
         pub fn set_resource_collection(
             mut self,
             input: std::option::Option<crate::model::ResourceCollection>,
@@ -6034,6 +6763,10 @@ pub mod proactive_insight {
             self.ssm_ops_item_id = Some(input.into());
             self
         }
+        /// <p>
+        /// The ID of the AWS System Manager OpsItem created for this insight. You must enable
+        /// the creation of OpstItems insights before they are created for each insight.
+        /// </p>
         pub fn set_ssm_ops_item_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6138,6 +6871,7 @@ pub mod reactive_anomaly {
             self.id = Some(input.into());
             self
         }
+        /// <p>The ID of the reactive anomaly. </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -6147,6 +6881,7 @@ pub mod reactive_anomaly {
             self.severity = Some(input);
             self
         }
+        /// <p>The severity of the anomaly. </p>
         pub fn set_severity(
             mut self,
             input: std::option::Option<crate::model::AnomalySeverity>,
@@ -6161,6 +6896,9 @@ pub mod reactive_anomaly {
             self.status = Some(input);
             self
         }
+        /// <p>
+        /// The status of the anomaly.
+        /// </p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::AnomalyStatus>,
@@ -6177,6 +6915,11 @@ pub mod reactive_anomaly {
             self.anomaly_time_range = Some(input);
             self
         }
+        /// <p>
+        /// A time range that specifies when the observed unusual behavior in an anomaly started and ended. This is different from
+        /// <code>AnomalyReportedTimeRange</code>, which specifies the time range when DevOps Guru opens and then closes
+        /// an anomaly.
+        /// </p>
         pub fn set_anomaly_time_range(
             mut self,
             input: std::option::Option<crate::model::AnomalyTimeRange>,
@@ -6194,6 +6937,9 @@ pub mod reactive_anomaly {
             self.anomaly_reported_time_range = Some(input);
             self
         }
+        /// <p>
+        /// A <code>AnomalyReportedTimeRange</code> object that specifies the time range between when the anomaly is opened and the time when it is closed.
+        /// </p>
         pub fn set_anomaly_reported_time_range(
             mut self,
             input: std::option::Option<crate::model::AnomalyReportedTimeRange>,
@@ -6208,6 +6954,9 @@ pub mod reactive_anomaly {
             self.source_details = Some(input);
             self
         }
+        /// <p>
+        /// Details about the source of the analyzed operational data that triggered the anomaly. The one supported source is Amazon CloudWatch metrics.
+        /// </p>
         pub fn set_source_details(
             mut self,
             input: std::option::Option<crate::model::AnomalySourceDetails>,
@@ -6222,6 +6971,9 @@ pub mod reactive_anomaly {
             self.associated_insight_id = Some(input.into());
             self
         }
+        /// <p>
+        /// The ID of the insight that contains this anomaly. An insight is composed of related anomalies.
+        /// </p>
         pub fn set_associated_insight_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6237,6 +6989,10 @@ pub mod reactive_anomaly {
             self.resource_collection = Some(input);
             self
         }
+        /// <p>
+        /// A collection of AWS resources supported by DevOps Guru. The one type of AWS resource collection supported is AWS CloudFormation stacks. DevOps Guru can be configured to analyze
+        /// only the AWS resources that are defined in the stacks. You can specify up to 500 AWS CloudFormation stacks.
+        /// </p>
         pub fn set_resource_collection(
             mut self,
             input: std::option::Option<crate::model::ResourceCollection>,
@@ -6285,7 +7041,7 @@ pub struct ProactiveAnomaly {
     /// <p>
     /// The time of the anomaly's most recent update.
     /// </p>
-    pub update_time: std::option::Option<smithy_types::Instant>,
+    pub update_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>
     /// A time range that specifies when the observed unusual behavior in an anomaly started and ended. This is different from
     /// <code>AnomalyReportedTimeRange</code>, which specifies the time range when DevOps Guru opens and then closes
@@ -6348,7 +7104,7 @@ pub mod proactive_anomaly {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) severity: std::option::Option<crate::model::AnomalySeverity>,
         pub(crate) status: std::option::Option<crate::model::AnomalyStatus>,
-        pub(crate) update_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) update_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) anomaly_time_range: std::option::Option<crate::model::AnomalyTimeRange>,
         pub(crate) anomaly_reported_time_range:
             std::option::Option<crate::model::AnomalyReportedTimeRange>,
@@ -6366,6 +7122,9 @@ pub mod proactive_anomaly {
             self.id = Some(input.into());
             self
         }
+        /// <p>
+        /// The ID of a proactive anomaly.
+        /// </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -6377,6 +7136,9 @@ pub mod proactive_anomaly {
             self.severity = Some(input);
             self
         }
+        /// <p>
+        /// The severity of a proactive anomaly.
+        /// </p>
         pub fn set_severity(
             mut self,
             input: std::option::Option<crate::model::AnomalySeverity>,
@@ -6391,6 +7153,9 @@ pub mod proactive_anomaly {
             self.status = Some(input);
             self
         }
+        /// <p>
+        /// The status of a proactive anomaly.
+        /// </p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::AnomalyStatus>,
@@ -6401,13 +7166,16 @@ pub mod proactive_anomaly {
         /// <p>
         /// The time of the anomaly's most recent update.
         /// </p>
-        pub fn update_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn update_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.update_time = Some(input);
             self
         }
+        /// <p>
+        /// The time of the anomaly's most recent update.
+        /// </p>
         pub fn set_update_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.update_time = input;
             self
@@ -6421,6 +7189,11 @@ pub mod proactive_anomaly {
             self.anomaly_time_range = Some(input);
             self
         }
+        /// <p>
+        /// A time range that specifies when the observed unusual behavior in an anomaly started and ended. This is different from
+        /// <code>AnomalyReportedTimeRange</code>, which specifies the time range when DevOps Guru opens and then closes
+        /// an anomaly.
+        /// </p>
         pub fn set_anomaly_time_range(
             mut self,
             input: std::option::Option<crate::model::AnomalyTimeRange>,
@@ -6438,6 +7211,9 @@ pub mod proactive_anomaly {
             self.anomaly_reported_time_range = Some(input);
             self
         }
+        /// <p>
+        /// A <code>AnomalyReportedTimeRange</code> object that specifies the time range between when the anomaly is opened and the time when it is closed.
+        /// </p>
         pub fn set_anomaly_reported_time_range(
             mut self,
             input: std::option::Option<crate::model::AnomalyReportedTimeRange>,
@@ -6452,6 +7228,9 @@ pub mod proactive_anomaly {
             self.prediction_time_range = Some(input);
             self
         }
+        /// <p>
+        /// The time range during which anomalous behavior in a proactive anomaly or an insight is expected to occur.
+        /// </p>
         pub fn set_prediction_time_range(
             mut self,
             input: std::option::Option<crate::model::PredictionTimeRange>,
@@ -6466,6 +7245,9 @@ pub mod proactive_anomaly {
             self.source_details = Some(input);
             self
         }
+        /// <p>
+        /// Details about the source of the analyzed operational data that triggered the anomaly. The one supported source is Amazon CloudWatch metrics.
+        /// </p>
         pub fn set_source_details(
             mut self,
             input: std::option::Option<crate::model::AnomalySourceDetails>,
@@ -6480,6 +7262,9 @@ pub mod proactive_anomaly {
             self.associated_insight_id = Some(input.into());
             self
         }
+        /// <p>
+        /// The ID of the insight that contains this anomaly. An insight is composed of related anomalies.
+        /// </p>
         pub fn set_associated_insight_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6495,6 +7280,10 @@ pub mod proactive_anomaly {
             self.resource_collection = Some(input);
             self
         }
+        /// <p>
+        /// A collection of AWS resources supported by DevOps Guru. The one type of AWS resource collection supported is AWS CloudFormation stacks. DevOps Guru can be configured to analyze
+        /// only the AWS resources that are defined in the stacks. You can specify up to 500 AWS CloudFormation stacks.
+        /// </p>
         pub fn set_resource_collection(
             mut self,
             input: std::option::Option<crate::model::ResourceCollection>,
@@ -6510,6 +7299,10 @@ pub mod proactive_anomaly {
             self.limit = Some(input);
             self
         }
+        /// <p>
+        /// A threshold that was exceeded by behavior in analyzed resources. Exceeding this
+        /// threshold is related to the anomalous behavior that generated this anomaly.
+        /// </p>
         pub fn set_limit(mut self, input: std::option::Option<f64>) -> Self {
             self.limit = input;
             self

@@ -32,6 +32,7 @@ pub mod feature_value {
             self.feature_name = Some(input.into());
             self
         }
+        /// <p>The name of a feature that a feature value corresponds to.</p>
         pub fn set_feature_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.feature_name = input;
             self
@@ -42,6 +43,8 @@ pub mod feature_value {
             self.value_as_string = Some(input.into());
             self
         }
+        /// <p>The value associated with a feature, in string format. Note that features types can be
+        /// String, Integral, or Fractional. This value represents all three types as a string.</p>
         pub fn set_value_as_string(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -106,6 +109,7 @@ pub mod batch_get_record_identifier {
             self.feature_group_name = Some(input.into());
             self
         }
+        /// <p>A <code>FeatureGroupName</code> containing Records you are retrieving in a batch.</p>
         pub fn set_feature_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -113,6 +117,11 @@ pub mod batch_get_record_identifier {
             self.feature_group_name = input;
             self
         }
+        /// Appends an item to `record_identifiers_value_as_string`.
+        ///
+        /// To override the contents of this collection use [`set_record_identifiers_value_as_string`](Self::set_record_identifiers_value_as_string).
+        ///
+        /// <p>The value for a list of record identifiers in string format.</p>
         pub fn record_identifiers_value_as_string(
             mut self,
             input: impl Into<std::string::String>,
@@ -122,6 +131,7 @@ pub mod batch_get_record_identifier {
             self.record_identifiers_value_as_string = Some(v);
             self
         }
+        /// <p>The value for a list of record identifiers in string format.</p>
         pub fn set_record_identifiers_value_as_string(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -129,12 +139,20 @@ pub mod batch_get_record_identifier {
             self.record_identifiers_value_as_string = input;
             self
         }
+        /// Appends an item to `feature_names`.
+        ///
+        /// To override the contents of this collection use [`set_feature_names`](Self::set_feature_names).
+        ///
+        /// <p>List of names of Features to be retrieved. If not specified, the latest value for all
+        /// the Features are returned.</p>
         pub fn feature_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.feature_names.unwrap_or_default();
             v.push(input.into());
             self.feature_names = Some(v);
             self
         }
+        /// <p>List of names of Features to be retrieved. If not specified, the latest value for all
+        /// the Features are returned.</p>
         pub fn set_feature_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -203,6 +221,7 @@ pub mod batch_get_record_error {
             self.feature_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the feature group that the record belongs to.</p>
         pub fn set_feature_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -219,6 +238,8 @@ pub mod batch_get_record_error {
             self.record_identifier_value_as_string = Some(input.into());
             self
         }
+        /// <p>The value for the <code>RecordIdentifier</code> in string format of a Record from a <code>FeatureGroup</code> that is causing
+        /// an error when attempting to be retrieved.</p>
         pub fn set_record_identifier_value_as_string(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -231,6 +252,7 @@ pub mod batch_get_record_error {
             self.error_code = Some(input.into());
             self
         }
+        /// <p>The error code of an error that has occured when attempting to retrieve a batch of Records. For more information on errors, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_GetRecord.html#API_feature_store_GetRecord_Errors"> Errors</a>.</p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_code = input;
             self
@@ -240,6 +262,7 @@ pub mod batch_get_record_error {
             self.error_message = Some(input.into());
             self
         }
+        /// <p>The error message of an error that has occured when attempting to retrieve a record in the batch.</p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -304,6 +327,7 @@ pub mod batch_get_record_result_detail {
             self.feature_group_name = Some(input.into());
             self
         }
+        /// <p>The <code>FeatureGroupName</code> containing Records you retrieved in a batch.</p>
         pub fn set_feature_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -319,6 +343,7 @@ pub mod batch_get_record_result_detail {
             self.record_identifier_value_as_string = Some(input.into());
             self
         }
+        /// <p>The value of the record identifer in string format.</p>
         pub fn set_record_identifier_value_as_string(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -326,12 +351,18 @@ pub mod batch_get_record_result_detail {
             self.record_identifier_value_as_string = input;
             self
         }
+        /// Appends an item to `record`.
+        ///
+        /// To override the contents of this collection use [`set_record`](Self::set_record).
+        ///
+        /// <p>The <code>Record</code> retrieved.</p>
         pub fn record(mut self, input: impl Into<crate::model::FeatureValue>) -> Self {
             let mut v = self.record.unwrap_or_default();
             v.push(input.into());
             self.record = Some(v);
             self
         }
+        /// <p>The <code>Record</code> retrieved.</p>
         pub fn set_record(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FeatureValue>>,

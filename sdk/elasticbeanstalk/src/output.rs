@@ -22,12 +22,18 @@ pub mod validate_configuration_settings_output {
         pub(crate) messages: std::option::Option<std::vec::Vec<crate::model::ValidationMessage>>,
     }
     impl Builder {
+        /// Appends an item to `messages`.
+        ///
+        /// To override the contents of this collection use [`set_messages`](Self::set_messages).
+        ///
+        /// <p> A list of <a>ValidationMessage</a>. </p>
         pub fn messages(mut self, input: impl Into<crate::model::ValidationMessage>) -> Self {
             let mut v = self.messages.unwrap_or_default();
             v.push(input.into());
             self.messages = Some(v);
             self
         }
+        /// <p> A list of <a>ValidationMessage</a>. </p>
         pub fn set_messages(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ValidationMessage>>,
@@ -50,6 +56,7 @@ impl ValidateConfigurationSettingsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTagsForResourceOutput {}
@@ -106,10 +113,11 @@ pub struct UpdateEnvironmentOutput {
     /// <p>The URL to the CNAME for this environment.</p>
     pub cname: std::option::Option<std::string::String>,
     /// <p>The creation date for this environment.</p>
-    pub date_created: std::option::Option<smithy_types::Instant>,
+    pub date_created: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The last modified date for this environment.</p>
-    pub date_updated: std::option::Option<smithy_types::Instant>,
+    pub date_updated: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The current operational status of the environment:</p>
+    ///
     /// <ul>
     /// <li>
     /// <p>
@@ -231,8 +239,8 @@ pub mod update_environment_output {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) endpoint_url: std::option::Option<std::string::String>,
         pub(crate) cname: std::option::Option<std::string::String>,
-        pub(crate) date_created: std::option::Option<smithy_types::Instant>,
-        pub(crate) date_updated: std::option::Option<smithy_types::Instant>,
+        pub(crate) date_created: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) date_updated: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) status: std::option::Option<crate::model::EnvironmentStatus>,
         pub(crate) abortable_operation_in_progress: std::option::Option<bool>,
         pub(crate) health: std::option::Option<crate::model::EnvironmentHealth>,
@@ -250,6 +258,7 @@ pub mod update_environment_output {
             self.environment_name = Some(input.into());
             self
         }
+        /// <p>The name of this environment.</p>
         pub fn set_environment_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -262,6 +271,7 @@ pub mod update_environment_output {
             self.environment_id = Some(input.into());
             self
         }
+        /// <p>The ID of this environment.</p>
         pub fn set_environment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -274,6 +284,7 @@ pub mod update_environment_output {
             self.application_name = Some(input.into());
             self
         }
+        /// <p>The name of the application associated with this environment.</p>
         pub fn set_application_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -286,6 +297,7 @@ pub mod update_environment_output {
             self.version_label = Some(input.into());
             self
         }
+        /// <p>The application version deployed in this environment.</p>
         pub fn set_version_label(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -298,6 +310,7 @@ pub mod update_environment_output {
             self.solution_stack_name = Some(input.into());
             self
         }
+        /// <p> The name of the <code>SolutionStack</code> deployed with this environment. </p>
         pub fn set_solution_stack_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -310,6 +323,7 @@ pub mod update_environment_output {
             self.platform_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the platform version.</p>
         pub fn set_platform_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.platform_arn = input;
             self
@@ -320,6 +334,8 @@ pub mod update_environment_output {
             self.template_name = Some(input.into());
             self
         }
+        /// <p>The name of the configuration template used to originally launch this
+        /// environment.</p>
         pub fn set_template_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -332,6 +348,7 @@ pub mod update_environment_output {
             self.description = Some(input.into());
             self
         }
+        /// <p>Describes this environment.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -342,6 +359,8 @@ pub mod update_environment_output {
             self.endpoint_url = Some(input.into());
             self
         }
+        /// <p>For load-balanced, autoscaling environments, the URL to the LoadBalancer. For
+        /// single-instance environments, the IP address of the instance.</p>
         pub fn set_endpoint_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.endpoint_url = input;
             self
@@ -351,35 +370,39 @@ pub mod update_environment_output {
             self.cname = Some(input.into());
             self
         }
+        /// <p>The URL to the CNAME for this environment.</p>
         pub fn set_cname(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cname = input;
             self
         }
         /// <p>The creation date for this environment.</p>
-        pub fn date_created(mut self, input: smithy_types::Instant) -> Self {
+        pub fn date_created(mut self, input: aws_smithy_types::Instant) -> Self {
             self.date_created = Some(input);
             self
         }
+        /// <p>The creation date for this environment.</p>
         pub fn set_date_created(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.date_created = input;
             self
         }
         /// <p>The last modified date for this environment.</p>
-        pub fn date_updated(mut self, input: smithy_types::Instant) -> Self {
+        pub fn date_updated(mut self, input: aws_smithy_types::Instant) -> Self {
             self.date_updated = Some(input);
             self
         }
+        /// <p>The last modified date for this environment.</p>
         pub fn set_date_updated(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.date_updated = input;
             self
         }
         /// <p>The current operational status of the environment:</p>
+        ///
         /// <ul>
         /// <li>
         /// <p>
@@ -408,6 +431,32 @@ pub mod update_environment_output {
             self.status = Some(input);
             self
         }
+        /// <p>The current operational status of the environment:</p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Launching</code>: Environment is in the process of initial deployment.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Updating</code>: Environment is in the process of updating its configuration
+        /// settings or application version.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Ready</code>: Environment is available to have an action performed on it, such as
+        /// update or terminate.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Terminating</code>: Environment is in the shut-down process.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Terminated</code>: Environment is not running.</p>
+        /// </li>
+        /// </ul>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::EnvironmentStatus>,
@@ -425,6 +474,12 @@ pub mod update_environment_output {
             self.abortable_operation_in_progress = Some(input);
             self
         }
+        /// <p>Indicates if there is an in-progress environment configuration update or application
+        /// version deployment that you can cancel.</p>
+        /// <p>
+        /// <code>true:</code> There is an update in progress. </p>
+        /// <p>
+        /// <code>false:</code> There are no updates currently in progress. </p>
         pub fn set_abortable_operation_in_progress(
             mut self,
             input: std::option::Option<bool>,
@@ -462,6 +517,32 @@ pub mod update_environment_output {
             self.health = Some(input);
             self
         }
+        /// <p>Describes the health status of the environment. AWS Elastic Beanstalk indicates the
+        /// failure levels for a running environment:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more
+        /// consecutive failures occur for an environment.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive
+        /// failures occur for an environment.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Green</code>: Indicates the environment is healthy and fully functional.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Grey</code>: Default health for a new environment. The environment is not fully
+        /// launched and health checks have not started or health checks are suspended during an
+        /// <code>UpdateEnvironment</code> or <code>RestartEnvironment</code> request.</p>
+        /// </li>
+        /// </ul>
+        /// <p> Default: <code>Grey</code>
+        /// </p>
         pub fn set_health(
             mut self,
             input: std::option::Option<crate::model::EnvironmentHealth>,
@@ -476,6 +557,9 @@ pub mod update_environment_output {
             self.health_status = Some(input);
             self
         }
+        /// <p>Returns the health status of the application running in your environment. For more
+        /// information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
+        /// Statuses</a>.</p>
         pub fn set_health_status(
             mut self,
             input: std::option::Option<crate::model::EnvironmentHealthStatus>,
@@ -488,6 +572,7 @@ pub mod update_environment_output {
             self.resources = Some(input);
             self
         }
+        /// <p>The description of the AWS resources used by this environment.</p>
         pub fn set_resources(
             mut self,
             input: std::option::Option<crate::model::EnvironmentResourcesDescription>,
@@ -500,6 +585,7 @@ pub mod update_environment_output {
             self.tier = Some(input);
             self
         }
+        /// <p>Describes the current tier of this environment.</p>
         pub fn set_tier(
             mut self,
             input: std::option::Option<crate::model::EnvironmentTier>,
@@ -507,6 +593,11 @@ pub mod update_environment_output {
             self.tier = input;
             self
         }
+        /// Appends an item to `environment_links`.
+        ///
+        /// To override the contents of this collection use [`set_environment_links`](Self::set_environment_links).
+        ///
+        /// <p>A list of links to other environments in the same group.</p>
         pub fn environment_links(
             mut self,
             input: impl Into<crate::model::EnvironmentLink>,
@@ -516,6 +607,7 @@ pub mod update_environment_output {
             self.environment_links = Some(v);
             self
         }
+        /// <p>A list of links to other environments in the same group.</p>
         pub fn set_environment_links(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EnvironmentLink>>,
@@ -528,6 +620,7 @@ pub mod update_environment_output {
             self.environment_arn = Some(input.into());
             self
         }
+        /// <p>The environment's Amazon Resource Name (ARN), which can be used in other API requests that require an ARN.</p>
         pub fn set_environment_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -541,6 +634,8 @@ pub mod update_environment_output {
             self.operations_role = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the environment's operations role. For more information,
+        /// see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
         pub fn set_operations_role(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -628,9 +723,9 @@ pub struct UpdateConfigurationTemplateOutput {
     /// </ul>
     pub deployment_status: std::option::Option<crate::model::ConfigurationDeploymentStatus>,
     /// <p>The date (in UTC time) when this configuration set was created.</p>
-    pub date_created: std::option::Option<smithy_types::Instant>,
+    pub date_created: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date (in UTC time) when this configuration set was last modified.</p>
-    pub date_updated: std::option::Option<smithy_types::Instant>,
+    pub date_updated: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A list of the configuration options and their values in this configuration
     /// set.</p>
     pub option_settings:
@@ -666,8 +761,8 @@ pub mod update_configuration_template_output {
         pub(crate) environment_name: std::option::Option<std::string::String>,
         pub(crate) deployment_status:
             std::option::Option<crate::model::ConfigurationDeploymentStatus>,
-        pub(crate) date_created: std::option::Option<smithy_types::Instant>,
-        pub(crate) date_updated: std::option::Option<smithy_types::Instant>,
+        pub(crate) date_created: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) date_updated: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) option_settings:
             std::option::Option<std::vec::Vec<crate::model::ConfigurationOptionSetting>>,
     }
@@ -677,6 +772,7 @@ pub mod update_configuration_template_output {
             self.solution_stack_name = Some(input.into());
             self
         }
+        /// <p>The name of the solution stack this configuration set uses.</p>
         pub fn set_solution_stack_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -689,6 +785,7 @@ pub mod update_configuration_template_output {
             self.platform_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the platform version.</p>
         pub fn set_platform_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.platform_arn = input;
             self
@@ -698,6 +795,7 @@ pub mod update_configuration_template_output {
             self.application_name = Some(input.into());
             self
         }
+        /// <p>The name of the application associated with this configuration set.</p>
         pub fn set_application_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -711,6 +809,8 @@ pub mod update_configuration_template_output {
             self.template_name = Some(input.into());
             self
         }
+        /// <p> If not <code>null</code>, the name of the configuration template for this
+        /// configuration set. </p>
         pub fn set_template_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -723,6 +823,7 @@ pub mod update_configuration_template_output {
             self.description = Some(input.into());
             self
         }
+        /// <p>Describes this configuration set.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -733,6 +834,8 @@ pub mod update_configuration_template_output {
             self.environment_name = Some(input.into());
             self
         }
+        /// <p> If not <code>null</code>, the name of the environment for this configuration set.
+        /// </p>
         pub fn set_environment_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -772,6 +875,31 @@ pub mod update_configuration_template_output {
             self.deployment_status = Some(input);
             self
         }
+        /// <p> If this configuration set is associated with an environment, the
+        /// <code>DeploymentStatus</code> parameter indicates the deployment status of this
+        /// configuration set: </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>null</code>: This configuration is not associated with a running
+        /// environment.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>pending</code>: This is a draft configuration that is not deployed to the associated
+        /// environment but is in the process of deploying.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>deployed</code>: This is the configuration that is currently deployed to the
+        /// associated running environment.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>failed</code>: This is a draft configuration that failed to successfully
+        /// deploy.</p>
+        /// </li>
+        /// </ul>
         pub fn set_deployment_status(
             mut self,
             input: std::option::Option<crate::model::ConfigurationDeploymentStatus>,
@@ -780,29 +908,37 @@ pub mod update_configuration_template_output {
             self
         }
         /// <p>The date (in UTC time) when this configuration set was created.</p>
-        pub fn date_created(mut self, input: smithy_types::Instant) -> Self {
+        pub fn date_created(mut self, input: aws_smithy_types::Instant) -> Self {
             self.date_created = Some(input);
             self
         }
+        /// <p>The date (in UTC time) when this configuration set was created.</p>
         pub fn set_date_created(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.date_created = input;
             self
         }
         /// <p>The date (in UTC time) when this configuration set was last modified.</p>
-        pub fn date_updated(mut self, input: smithy_types::Instant) -> Self {
+        pub fn date_updated(mut self, input: aws_smithy_types::Instant) -> Self {
             self.date_updated = Some(input);
             self
         }
+        /// <p>The date (in UTC time) when this configuration set was last modified.</p>
         pub fn set_date_updated(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.date_updated = input;
             self
         }
+        /// Appends an item to `option_settings`.
+        ///
+        /// To override the contents of this collection use [`set_option_settings`](Self::set_option_settings).
+        ///
+        /// <p>A list of the configuration options and their values in this configuration
+        /// set.</p>
         pub fn option_settings(
             mut self,
             input: impl Into<crate::model::ConfigurationOptionSetting>,
@@ -812,6 +948,8 @@ pub mod update_configuration_template_output {
             self.option_settings = Some(v);
             self
         }
+        /// <p>A list of the configuration options and their values in this configuration
+        /// set.</p>
         pub fn set_option_settings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ConfigurationOptionSetting>>,
@@ -877,6 +1015,8 @@ pub mod update_application_version_output {
             self.application_version = Some(input);
             self
         }
+        /// <p> The <a>ApplicationVersionDescription</a> of the application version.
+        /// </p>
         pub fn set_application_version(
             mut self,
             input: std::option::Option<crate::model::ApplicationVersionDescription>,
@@ -899,6 +1039,7 @@ impl UpdateApplicationVersionOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateApplicationResourceLifecycleOutput {
@@ -932,6 +1073,7 @@ pub mod update_application_resource_lifecycle_output {
             self.application_name = Some(input.into());
             self
         }
+        /// <p>The name of the application.</p>
         pub fn set_application_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -947,6 +1089,7 @@ pub mod update_application_resource_lifecycle_output {
             self.resource_lifecycle_config = Some(input);
             self
         }
+        /// <p>The lifecycle configuration.</p>
         pub fn set_resource_lifecycle_config(
             mut self,
             input: std::option::Option<crate::model::ApplicationResourceLifecycleConfig>,
@@ -998,6 +1141,7 @@ pub mod update_application_output {
             self.application = Some(input);
             self
         }
+        /// <p> The <a>ApplicationDescription</a> of the application. </p>
         pub fn set_application(
             mut self,
             input: std::option::Option<crate::model::ApplicationDescription>,
@@ -1047,10 +1191,11 @@ pub struct TerminateEnvironmentOutput {
     /// <p>The URL to the CNAME for this environment.</p>
     pub cname: std::option::Option<std::string::String>,
     /// <p>The creation date for this environment.</p>
-    pub date_created: std::option::Option<smithy_types::Instant>,
+    pub date_created: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The last modified date for this environment.</p>
-    pub date_updated: std::option::Option<smithy_types::Instant>,
+    pub date_updated: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The current operational status of the environment:</p>
+    ///
     /// <ul>
     /// <li>
     /// <p>
@@ -1172,8 +1317,8 @@ pub mod terminate_environment_output {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) endpoint_url: std::option::Option<std::string::String>,
         pub(crate) cname: std::option::Option<std::string::String>,
-        pub(crate) date_created: std::option::Option<smithy_types::Instant>,
-        pub(crate) date_updated: std::option::Option<smithy_types::Instant>,
+        pub(crate) date_created: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) date_updated: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) status: std::option::Option<crate::model::EnvironmentStatus>,
         pub(crate) abortable_operation_in_progress: std::option::Option<bool>,
         pub(crate) health: std::option::Option<crate::model::EnvironmentHealth>,
@@ -1191,6 +1336,7 @@ pub mod terminate_environment_output {
             self.environment_name = Some(input.into());
             self
         }
+        /// <p>The name of this environment.</p>
         pub fn set_environment_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1203,6 +1349,7 @@ pub mod terminate_environment_output {
             self.environment_id = Some(input.into());
             self
         }
+        /// <p>The ID of this environment.</p>
         pub fn set_environment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1215,6 +1362,7 @@ pub mod terminate_environment_output {
             self.application_name = Some(input.into());
             self
         }
+        /// <p>The name of the application associated with this environment.</p>
         pub fn set_application_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1227,6 +1375,7 @@ pub mod terminate_environment_output {
             self.version_label = Some(input.into());
             self
         }
+        /// <p>The application version deployed in this environment.</p>
         pub fn set_version_label(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1239,6 +1388,7 @@ pub mod terminate_environment_output {
             self.solution_stack_name = Some(input.into());
             self
         }
+        /// <p> The name of the <code>SolutionStack</code> deployed with this environment. </p>
         pub fn set_solution_stack_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1251,6 +1401,7 @@ pub mod terminate_environment_output {
             self.platform_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the platform version.</p>
         pub fn set_platform_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.platform_arn = input;
             self
@@ -1261,6 +1412,8 @@ pub mod terminate_environment_output {
             self.template_name = Some(input.into());
             self
         }
+        /// <p>The name of the configuration template used to originally launch this
+        /// environment.</p>
         pub fn set_template_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1273,6 +1426,7 @@ pub mod terminate_environment_output {
             self.description = Some(input.into());
             self
         }
+        /// <p>Describes this environment.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -1283,6 +1437,8 @@ pub mod terminate_environment_output {
             self.endpoint_url = Some(input.into());
             self
         }
+        /// <p>For load-balanced, autoscaling environments, the URL to the LoadBalancer. For
+        /// single-instance environments, the IP address of the instance.</p>
         pub fn set_endpoint_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.endpoint_url = input;
             self
@@ -1292,35 +1448,39 @@ pub mod terminate_environment_output {
             self.cname = Some(input.into());
             self
         }
+        /// <p>The URL to the CNAME for this environment.</p>
         pub fn set_cname(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cname = input;
             self
         }
         /// <p>The creation date for this environment.</p>
-        pub fn date_created(mut self, input: smithy_types::Instant) -> Self {
+        pub fn date_created(mut self, input: aws_smithy_types::Instant) -> Self {
             self.date_created = Some(input);
             self
         }
+        /// <p>The creation date for this environment.</p>
         pub fn set_date_created(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.date_created = input;
             self
         }
         /// <p>The last modified date for this environment.</p>
-        pub fn date_updated(mut self, input: smithy_types::Instant) -> Self {
+        pub fn date_updated(mut self, input: aws_smithy_types::Instant) -> Self {
             self.date_updated = Some(input);
             self
         }
+        /// <p>The last modified date for this environment.</p>
         pub fn set_date_updated(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.date_updated = input;
             self
         }
         /// <p>The current operational status of the environment:</p>
+        ///
         /// <ul>
         /// <li>
         /// <p>
@@ -1349,6 +1509,32 @@ pub mod terminate_environment_output {
             self.status = Some(input);
             self
         }
+        /// <p>The current operational status of the environment:</p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Launching</code>: Environment is in the process of initial deployment.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Updating</code>: Environment is in the process of updating its configuration
+        /// settings or application version.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Ready</code>: Environment is available to have an action performed on it, such as
+        /// update or terminate.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Terminating</code>: Environment is in the shut-down process.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Terminated</code>: Environment is not running.</p>
+        /// </li>
+        /// </ul>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::EnvironmentStatus>,
@@ -1366,6 +1552,12 @@ pub mod terminate_environment_output {
             self.abortable_operation_in_progress = Some(input);
             self
         }
+        /// <p>Indicates if there is an in-progress environment configuration update or application
+        /// version deployment that you can cancel.</p>
+        /// <p>
+        /// <code>true:</code> There is an update in progress. </p>
+        /// <p>
+        /// <code>false:</code> There are no updates currently in progress. </p>
         pub fn set_abortable_operation_in_progress(
             mut self,
             input: std::option::Option<bool>,
@@ -1403,6 +1595,32 @@ pub mod terminate_environment_output {
             self.health = Some(input);
             self
         }
+        /// <p>Describes the health status of the environment. AWS Elastic Beanstalk indicates the
+        /// failure levels for a running environment:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more
+        /// consecutive failures occur for an environment.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive
+        /// failures occur for an environment.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Green</code>: Indicates the environment is healthy and fully functional.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Grey</code>: Default health for a new environment. The environment is not fully
+        /// launched and health checks have not started or health checks are suspended during an
+        /// <code>UpdateEnvironment</code> or <code>RestartEnvironment</code> request.</p>
+        /// </li>
+        /// </ul>
+        /// <p> Default: <code>Grey</code>
+        /// </p>
         pub fn set_health(
             mut self,
             input: std::option::Option<crate::model::EnvironmentHealth>,
@@ -1417,6 +1635,9 @@ pub mod terminate_environment_output {
             self.health_status = Some(input);
             self
         }
+        /// <p>Returns the health status of the application running in your environment. For more
+        /// information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
+        /// Statuses</a>.</p>
         pub fn set_health_status(
             mut self,
             input: std::option::Option<crate::model::EnvironmentHealthStatus>,
@@ -1429,6 +1650,7 @@ pub mod terminate_environment_output {
             self.resources = Some(input);
             self
         }
+        /// <p>The description of the AWS resources used by this environment.</p>
         pub fn set_resources(
             mut self,
             input: std::option::Option<crate::model::EnvironmentResourcesDescription>,
@@ -1441,6 +1663,7 @@ pub mod terminate_environment_output {
             self.tier = Some(input);
             self
         }
+        /// <p>Describes the current tier of this environment.</p>
         pub fn set_tier(
             mut self,
             input: std::option::Option<crate::model::EnvironmentTier>,
@@ -1448,6 +1671,11 @@ pub mod terminate_environment_output {
             self.tier = input;
             self
         }
+        /// Appends an item to `environment_links`.
+        ///
+        /// To override the contents of this collection use [`set_environment_links`](Self::set_environment_links).
+        ///
+        /// <p>A list of links to other environments in the same group.</p>
         pub fn environment_links(
             mut self,
             input: impl Into<crate::model::EnvironmentLink>,
@@ -1457,6 +1685,7 @@ pub mod terminate_environment_output {
             self.environment_links = Some(v);
             self
         }
+        /// <p>A list of links to other environments in the same group.</p>
         pub fn set_environment_links(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EnvironmentLink>>,
@@ -1469,6 +1698,7 @@ pub mod terminate_environment_output {
             self.environment_arn = Some(input.into());
             self
         }
+        /// <p>The environment's Amazon Resource Name (ARN), which can be used in other API requests that require an ARN.</p>
         pub fn set_environment_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1482,6 +1712,8 @@ pub mod terminate_environment_output {
             self.operations_role = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the environment's operations role. For more information,
+        /// see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
         pub fn set_operations_role(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1524,6 +1756,7 @@ impl TerminateEnvironmentOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SwapEnvironmentCnamEsOutput {}
@@ -1578,6 +1811,11 @@ pub mod retrieve_environment_info_output {
             std::option::Option<std::vec::Vec<crate::model::EnvironmentInfoDescription>>,
     }
     impl Builder {
+        /// Appends an item to `environment_info`.
+        ///
+        /// To override the contents of this collection use [`set_environment_info`](Self::set_environment_info).
+        ///
+        /// <p> The <a>EnvironmentInfoDescription</a> of the environment. </p>
         pub fn environment_info(
             mut self,
             input: impl Into<crate::model::EnvironmentInfoDescription>,
@@ -1587,6 +1825,7 @@ pub mod retrieve_environment_info_output {
             self.environment_info = Some(v);
             self
         }
+        /// <p> The <a>EnvironmentInfoDescription</a> of the environment. </p>
         pub fn set_environment_info(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EnvironmentInfoDescription>>,
@@ -1609,6 +1848,7 @@ impl RetrieveEnvironmentInfoOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RestartAppServerOutput {}
@@ -1638,6 +1878,7 @@ impl RestartAppServerOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RequestEnvironmentInfoOutput {}
@@ -1667,6 +1908,7 @@ impl RequestEnvironmentInfoOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RebuildEnvironmentOutput {}
@@ -1696,6 +1938,7 @@ impl RebuildEnvironmentOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
@@ -1727,16 +1970,23 @@ pub mod list_tags_for_resource_output {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the resource for which a tag list was requested.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Appends an item to `resource_tags`.
+        ///
+        /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
+        ///
+        /// <p>A list of tag key-value pairs.</p>
         pub fn resource_tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.resource_tags.unwrap_or_default();
             v.push(input.into());
             self.resource_tags = Some(v);
             self
         }
+        /// <p>A list of tag key-value pairs.</p>
         pub fn set_resource_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1760,6 +2010,7 @@ impl ListTagsForResourceOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPlatformVersionsOutput {
@@ -1788,6 +2039,11 @@ pub mod list_platform_versions_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `platform_summary_list`.
+        ///
+        /// To override the contents of this collection use [`set_platform_summary_list`](Self::set_platform_summary_list).
+        ///
+        /// <p>Summary information about the platform versions.</p>
         pub fn platform_summary_list(
             mut self,
             input: impl Into<crate::model::PlatformSummary>,
@@ -1797,6 +2053,7 @@ pub mod list_platform_versions_output {
             self.platform_summary_list = Some(v);
             self
         }
+        /// <p>Summary information about the platform versions.</p>
         pub fn set_platform_summary_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PlatformSummary>>,
@@ -1810,6 +2067,8 @@ pub mod list_platform_versions_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>In a paginated request, if this value isn't <code>null</code>, it's the token that you can
+        /// pass in a subsequent request to get the next response page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1830,6 +2089,7 @@ impl ListPlatformVersionsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPlatformBranchesOutput {
@@ -1862,6 +2122,11 @@ pub mod list_platform_branches_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `platform_branch_summary_list`.
+        ///
+        /// To override the contents of this collection use [`set_platform_branch_summary_list`](Self::set_platform_branch_summary_list).
+        ///
+        /// <p>Summary information about the platform branches.</p>
         pub fn platform_branch_summary_list(
             mut self,
             input: impl Into<crate::model::PlatformBranchSummary>,
@@ -1871,6 +2136,7 @@ pub mod list_platform_branches_output {
             self.platform_branch_summary_list = Some(v);
             self
         }
+        /// <p>Summary information about the platform branches.</p>
         pub fn set_platform_branch_summary_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PlatformBranchSummary>>,
@@ -1884,6 +2150,8 @@ pub mod list_platform_branches_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>In a paginated request, if this value isn't <code>null</code>, it's the token that you can
+        /// pass in a subsequent request to get the next response page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1933,12 +2201,18 @@ pub mod list_available_solution_stacks_output {
             std::option::Option<std::vec::Vec<crate::model::SolutionStackDescription>>,
     }
     impl Builder {
+        /// Appends an item to `solution_stacks`.
+        ///
+        /// To override the contents of this collection use [`set_solution_stacks`](Self::set_solution_stacks).
+        ///
+        /// <p>A list of available solution stacks.</p>
         pub fn solution_stacks(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.solution_stacks.unwrap_or_default();
             v.push(input.into());
             self.solution_stacks = Some(v);
             self
         }
+        /// <p>A list of available solution stacks.</p>
         pub fn set_solution_stacks(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1946,6 +2220,11 @@ pub mod list_available_solution_stacks_output {
             self.solution_stacks = input;
             self
         }
+        /// Appends an item to `solution_stack_details`.
+        ///
+        /// To override the contents of this collection use [`set_solution_stack_details`](Self::set_solution_stack_details).
+        ///
+        /// <p> A list of available solution stacks and their <a>SolutionStackDescription</a>. </p>
         pub fn solution_stack_details(
             mut self,
             input: impl Into<crate::model::SolutionStackDescription>,
@@ -1955,6 +2234,7 @@ pub mod list_available_solution_stacks_output {
             self.solution_stack_details = Some(v);
             self
         }
+        /// <p> A list of available solution stacks and their <a>SolutionStackDescription</a>. </p>
         pub fn set_solution_stack_details(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SolutionStackDescription>>,
@@ -1978,6 +2258,7 @@ impl ListAvailableSolutionStacksOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateEnvironmentOperationsRoleOutput {}
@@ -2007,6 +2288,7 @@ impl DisassociateEnvironmentOperationsRoleOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePlatformVersionOutput {
@@ -2034,6 +2316,7 @@ pub mod describe_platform_version_output {
             self.platform_description = Some(input);
             self
         }
+        /// <p>Detailed information about the platform version.</p>
         pub fn set_platform_description(
             mut self,
             input: std::option::Option<crate::model::PlatformDescription>,
@@ -2067,7 +2350,7 @@ pub struct DescribeInstancesHealthOutput {
     pub instance_health_list:
         std::option::Option<std::vec::Vec<crate::model::SingleInstanceHealth>>,
     /// <p>The date and time that the health information was retrieved.</p>
-    pub refreshed_at: std::option::Option<smithy_types::Instant>,
+    pub refreshed_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Pagination token for the next page of results, if available.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
@@ -2088,10 +2371,17 @@ pub mod describe_instances_health_output {
     pub struct Builder {
         pub(crate) instance_health_list:
             std::option::Option<std::vec::Vec<crate::model::SingleInstanceHealth>>,
-        pub(crate) refreshed_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) refreshed_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `instance_health_list`.
+        ///
+        /// To override the contents of this collection use [`set_instance_health_list`](Self::set_instance_health_list).
+        ///
+        /// <p>Detailed health information about each instance.</p>
+        /// <p>The output differs slightly between Linux and Windows environments. There is a difference
+        /// in the members that are supported under the <code><CPUUtilization></code> type.</p>
         pub fn instance_health_list(
             mut self,
             input: impl Into<crate::model::SingleInstanceHealth>,
@@ -2101,6 +2391,9 @@ pub mod describe_instances_health_output {
             self.instance_health_list = Some(v);
             self
         }
+        /// <p>Detailed health information about each instance.</p>
+        /// <p>The output differs slightly between Linux and Windows environments. There is a difference
+        /// in the members that are supported under the <code><CPUUtilization></code> type.</p>
         pub fn set_instance_health_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SingleInstanceHealth>>,
@@ -2109,13 +2402,14 @@ pub mod describe_instances_health_output {
             self
         }
         /// <p>The date and time that the health information was retrieved.</p>
-        pub fn refreshed_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn refreshed_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.refreshed_at = Some(input);
             self
         }
+        /// <p>The date and time that the health information was retrieved.</p>
         pub fn set_refreshed_at(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.refreshed_at = input;
             self
@@ -2125,6 +2419,7 @@ pub mod describe_instances_health_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>Pagination token for the next page of results, if available.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2174,12 +2469,18 @@ pub mod describe_events_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `events`.
+        ///
+        /// To override the contents of this collection use [`set_events`](Self::set_events).
+        ///
+        /// <p> A list of <a>EventDescription</a>. </p>
         pub fn events(mut self, input: impl Into<crate::model::EventDescription>) -> Self {
             let mut v = self.events.unwrap_or_default();
             v.push(input.into());
             self.events = Some(v);
             self
         }
+        /// <p> A list of <a>EventDescription</a>. </p>
         pub fn set_events(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EventDescription>>,
@@ -2193,6 +2494,8 @@ pub mod describe_events_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p> If returned, this indicates that there are more results to obtain. Use this token in
+        /// the next <a>DescribeEvents</a> call to get the next batch of events. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2242,6 +2545,11 @@ pub mod describe_environments_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `environments`.
+        ///
+        /// To override the contents of this collection use [`set_environments`](Self::set_environments).
+        ///
+        /// <p> Returns an <a>EnvironmentDescription</a> list. </p>
         pub fn environments(
             mut self,
             input: impl Into<crate::model::EnvironmentDescription>,
@@ -2251,6 +2559,7 @@ pub mod describe_environments_output {
             self.environments = Some(v);
             self
         }
+        /// <p> Returns an <a>EnvironmentDescription</a> list. </p>
         pub fn set_environments(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EnvironmentDescription>>,
@@ -2264,6 +2573,8 @@ pub mod describe_environments_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>In a paginated request, the token that you can pass in a subsequent request to get the
+        /// next response page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2316,6 +2627,7 @@ pub mod describe_environment_resources_output {
             self.environment_resources = Some(input);
             self
         }
+        /// <p> A list of <a>EnvironmentResourceDescription</a>. </p>
         pub fn set_environment_resources(
             mut self,
             input: std::option::Option<crate::model::EnvironmentResourceDescription>,
@@ -2361,12 +2673,18 @@ pub mod describe_environment_managed_actions_output {
         pub(crate) managed_actions: std::option::Option<std::vec::Vec<crate::model::ManagedAction>>,
     }
     impl Builder {
+        /// Appends an item to `managed_actions`.
+        ///
+        /// To override the contents of this collection use [`set_managed_actions`](Self::set_managed_actions).
+        ///
+        /// <p>A list of upcoming and in-progress managed actions.</p>
         pub fn managed_actions(mut self, input: impl Into<crate::model::ManagedAction>) -> Self {
             let mut v = self.managed_actions.unwrap_or_default();
             v.push(input.into());
             self.managed_actions = Some(v);
             self
         }
+        /// <p>A list of upcoming and in-progress managed actions.</p>
         pub fn set_managed_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ManagedAction>>,
@@ -2422,6 +2740,11 @@ pub mod describe_environment_managed_action_history_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `managed_action_history_items`.
+        ///
+        /// To override the contents of this collection use [`set_managed_action_history_items`](Self::set_managed_action_history_items).
+        ///
+        /// <p>A list of completed and failed managed actions.</p>
         pub fn managed_action_history_items(
             mut self,
             input: impl Into<crate::model::ManagedActionHistoryItem>,
@@ -2431,6 +2754,7 @@ pub mod describe_environment_managed_action_history_output {
             self.managed_action_history_items = Some(v);
             self
         }
+        /// <p>A list of completed and failed managed actions.</p>
         pub fn set_managed_action_history_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ManagedActionHistoryItem>>,
@@ -2444,6 +2768,8 @@ pub mod describe_environment_managed_action_history_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A pagination token that you pass to <a>DescribeEnvironmentManagedActionHistory</a> to get the next page of
+        /// results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2487,7 +2813,7 @@ pub struct DescribeEnvironmentHealthOutput {
     /// <p>Summary health information for the instances in the environment.</p>
     pub instances_health: std::option::Option<crate::model::InstanceHealthSummary>,
     /// <p>The date and time that the health information was retrieved.</p>
-    pub refreshed_at: std::option::Option<smithy_types::Instant>,
+    pub refreshed_at: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for DescribeEnvironmentHealthOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2516,7 +2842,7 @@ pub mod describe_environment_health_output {
         pub(crate) causes: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) application_metrics: std::option::Option<crate::model::ApplicationMetrics>,
         pub(crate) instances_health: std::option::Option<crate::model::InstanceHealthSummary>,
-        pub(crate) refreshed_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) refreshed_at: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The environment's name.</p>
@@ -2524,6 +2850,7 @@ pub mod describe_environment_health_output {
             self.environment_name = Some(input.into());
             self
         }
+        /// <p>The environment's name.</p>
         pub fn set_environment_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2537,6 +2864,8 @@ pub mod describe_environment_health_output {
             self.health_status = Some(input.into());
             self
         }
+        /// <p>The <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health status</a> of the
+        /// environment. For example, <code>Ok</code>.</p>
         pub fn set_health_status(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2550,6 +2879,8 @@ pub mod describe_environment_health_output {
             self.status = Some(input);
             self
         }
+        /// <p>The environment's operational status. <code>Ready</code>, <code>Launching</code>,
+        /// <code>Updating</code>, <code>Terminating</code>, or <code>Terminated</code>.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::EnvironmentHealth>,
@@ -2563,16 +2894,26 @@ pub mod describe_environment_health_output {
             self.color = Some(input.into());
             self
         }
+        /// <p>The <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health color</a> of the
+        /// environment.</p>
         pub fn set_color(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.color = input;
             self
         }
+        /// Appends an item to `causes`.
+        ///
+        /// To override the contents of this collection use [`set_causes`](Self::set_causes).
+        ///
+        /// <p>Descriptions of the data that contributed to the environment's current health
+        /// status.</p>
         pub fn causes(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.causes.unwrap_or_default();
             v.push(input.into());
             self.causes = Some(v);
             self
         }
+        /// <p>Descriptions of the data that contributed to the environment's current health
+        /// status.</p>
         pub fn set_causes(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2585,6 +2926,7 @@ pub mod describe_environment_health_output {
             self.application_metrics = Some(input);
             self
         }
+        /// <p>Application request metrics for the environment.</p>
         pub fn set_application_metrics(
             mut self,
             input: std::option::Option<crate::model::ApplicationMetrics>,
@@ -2597,6 +2939,7 @@ pub mod describe_environment_health_output {
             self.instances_health = Some(input);
             self
         }
+        /// <p>Summary health information for the instances in the environment.</p>
         pub fn set_instances_health(
             mut self,
             input: std::option::Option<crate::model::InstanceHealthSummary>,
@@ -2605,13 +2948,14 @@ pub mod describe_environment_health_output {
             self
         }
         /// <p>The date and time that the health information was retrieved.</p>
-        pub fn refreshed_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn refreshed_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.refreshed_at = Some(input);
             self
         }
+        /// <p>The date and time that the health information was retrieved.</p>
         pub fn set_refreshed_at(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.refreshed_at = input;
             self
@@ -2664,6 +3008,11 @@ pub mod describe_configuration_settings_output {
             std::option::Option<std::vec::Vec<crate::model::ConfigurationSettingsDescription>>,
     }
     impl Builder {
+        /// Appends an item to `configuration_settings`.
+        ///
+        /// To override the contents of this collection use [`set_configuration_settings`](Self::set_configuration_settings).
+        ///
+        /// <p> A list of <a>ConfigurationSettingsDescription</a>. </p>
         pub fn configuration_settings(
             mut self,
             input: impl Into<crate::model::ConfigurationSettingsDescription>,
@@ -2673,6 +3022,7 @@ pub mod describe_configuration_settings_output {
             self.configuration_settings = Some(v);
             self
         }
+        /// <p> A list of <a>ConfigurationSettingsDescription</a>. </p>
         pub fn set_configuration_settings(
             mut self,
             input: std::option::Option<
@@ -2734,6 +3084,7 @@ pub mod describe_configuration_options_output {
             self.solution_stack_name = Some(input.into());
             self
         }
+        /// <p>The name of the solution stack these configuration options belong to.</p>
         pub fn set_solution_stack_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2746,10 +3097,16 @@ pub mod describe_configuration_options_output {
             self.platform_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the platform version.</p>
         pub fn set_platform_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.platform_arn = input;
             self
         }
+        /// Appends an item to `options`.
+        ///
+        /// To override the contents of this collection use [`set_options`](Self::set_options).
+        ///
+        /// <p> A list of <a>ConfigurationOptionDescription</a>. </p>
         pub fn options(
             mut self,
             input: impl Into<crate::model::ConfigurationOptionDescription>,
@@ -2759,6 +3116,7 @@ pub mod describe_configuration_options_output {
             self.options = Some(v);
             self
         }
+        /// <p> A list of <a>ConfigurationOptionDescription</a>. </p>
         pub fn set_options(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ConfigurationOptionDescription>>,
@@ -2814,6 +3172,12 @@ pub mod describe_application_versions_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `application_versions`.
+        ///
+        /// To override the contents of this collection use [`set_application_versions`](Self::set_application_versions).
+        ///
+        /// <p>List of <code>ApplicationVersionDescription</code> objects sorted in order of
+        /// creation.</p>
         pub fn application_versions(
             mut self,
             input: impl Into<crate::model::ApplicationVersionDescription>,
@@ -2823,6 +3187,8 @@ pub mod describe_application_versions_output {
             self.application_versions = Some(v);
             self
         }
+        /// <p>List of <code>ApplicationVersionDescription</code> objects sorted in order of
+        /// creation.</p>
         pub fn set_application_versions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ApplicationVersionDescription>>,
@@ -2836,6 +3202,8 @@ pub mod describe_application_versions_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>In a paginated request, the token that you can pass in a subsequent request to get the
+        /// next response page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2880,6 +3248,11 @@ pub mod describe_applications_output {
             std::option::Option<std::vec::Vec<crate::model::ApplicationDescription>>,
     }
     impl Builder {
+        /// Appends an item to `applications`.
+        ///
+        /// To override the contents of this collection use [`set_applications`](Self::set_applications).
+        ///
+        /// <p>This parameter contains a list of <a>ApplicationDescription</a>.</p>
         pub fn applications(
             mut self,
             input: impl Into<crate::model::ApplicationDescription>,
@@ -2889,6 +3262,7 @@ pub mod describe_applications_output {
             self.applications = Some(v);
             self
         }
+        /// <p>This parameter contains a list of <a>ApplicationDescription</a>.</p>
         pub fn set_applications(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ApplicationDescription>>,
@@ -2911,6 +3285,7 @@ impl DescribeApplicationsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccountAttributesOutput {
@@ -2938,6 +3313,7 @@ pub mod describe_account_attributes_output {
             self.resource_quotas = Some(input);
             self
         }
+        /// <p>The Elastic Beanstalk resource quotas associated with the calling AWS account.</p>
         pub fn set_resource_quotas(
             mut self,
             input: std::option::Option<crate::model::ResourceQuotas>,
@@ -2960,6 +3336,7 @@ impl DescribeAccountAttributesOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePlatformVersionOutput {
@@ -2987,6 +3364,7 @@ pub mod delete_platform_version_output {
             self.platform_summary = Some(input);
             self
         }
+        /// <p>Detailed information about the version of the custom platform.</p>
         pub fn set_platform_summary(
             mut self,
             input: std::option::Option<crate::model::PlatformSummary>,
@@ -3009,6 +3387,7 @@ impl DeletePlatformVersionOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEnvironmentConfigurationOutput {}
@@ -3038,6 +3417,7 @@ impl DeleteEnvironmentConfigurationOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteConfigurationTemplateOutput {}
@@ -3067,6 +3447,7 @@ impl DeleteConfigurationTemplateOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteApplicationVersionOutput {}
@@ -3096,6 +3477,7 @@ impl DeleteApplicationVersionOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteApplicationOutput {}
@@ -3153,6 +3535,7 @@ pub mod create_storage_location_output {
             self.s3_bucket = Some(input.into());
             self
         }
+        /// <p>The name of the Amazon S3 bucket created.</p>
         pub fn set_s3_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.s3_bucket = input;
             self
@@ -3172,6 +3555,7 @@ impl CreateStorageLocationOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePlatformVersionOutput {
@@ -3203,6 +3587,7 @@ pub mod create_platform_version_output {
             self.platform_summary = Some(input);
             self
         }
+        /// <p>Detailed information about the new version of the custom platform.</p>
         pub fn set_platform_summary(
             mut self,
             input: std::option::Option<crate::model::PlatformSummary>,
@@ -3215,6 +3600,7 @@ pub mod create_platform_version_output {
             self.builder = Some(input);
             self
         }
+        /// <p>The builder used to create the custom platform.</p>
         pub fn set_builder(mut self, input: std::option::Option<crate::model::Builder>) -> Self {
             self.builder = input;
             self
@@ -3262,10 +3648,11 @@ pub struct CreateEnvironmentOutput {
     /// <p>The URL to the CNAME for this environment.</p>
     pub cname: std::option::Option<std::string::String>,
     /// <p>The creation date for this environment.</p>
-    pub date_created: std::option::Option<smithy_types::Instant>,
+    pub date_created: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The last modified date for this environment.</p>
-    pub date_updated: std::option::Option<smithy_types::Instant>,
+    pub date_updated: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The current operational status of the environment:</p>
+    ///
     /// <ul>
     /// <li>
     /// <p>
@@ -3387,8 +3774,8 @@ pub mod create_environment_output {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) endpoint_url: std::option::Option<std::string::String>,
         pub(crate) cname: std::option::Option<std::string::String>,
-        pub(crate) date_created: std::option::Option<smithy_types::Instant>,
-        pub(crate) date_updated: std::option::Option<smithy_types::Instant>,
+        pub(crate) date_created: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) date_updated: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) status: std::option::Option<crate::model::EnvironmentStatus>,
         pub(crate) abortable_operation_in_progress: std::option::Option<bool>,
         pub(crate) health: std::option::Option<crate::model::EnvironmentHealth>,
@@ -3406,6 +3793,7 @@ pub mod create_environment_output {
             self.environment_name = Some(input.into());
             self
         }
+        /// <p>The name of this environment.</p>
         pub fn set_environment_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3418,6 +3806,7 @@ pub mod create_environment_output {
             self.environment_id = Some(input.into());
             self
         }
+        /// <p>The ID of this environment.</p>
         pub fn set_environment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3430,6 +3819,7 @@ pub mod create_environment_output {
             self.application_name = Some(input.into());
             self
         }
+        /// <p>The name of the application associated with this environment.</p>
         pub fn set_application_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3442,6 +3832,7 @@ pub mod create_environment_output {
             self.version_label = Some(input.into());
             self
         }
+        /// <p>The application version deployed in this environment.</p>
         pub fn set_version_label(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3454,6 +3845,7 @@ pub mod create_environment_output {
             self.solution_stack_name = Some(input.into());
             self
         }
+        /// <p> The name of the <code>SolutionStack</code> deployed with this environment. </p>
         pub fn set_solution_stack_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3466,6 +3858,7 @@ pub mod create_environment_output {
             self.platform_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the platform version.</p>
         pub fn set_platform_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.platform_arn = input;
             self
@@ -3476,6 +3869,8 @@ pub mod create_environment_output {
             self.template_name = Some(input.into());
             self
         }
+        /// <p>The name of the configuration template used to originally launch this
+        /// environment.</p>
         pub fn set_template_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3488,6 +3883,7 @@ pub mod create_environment_output {
             self.description = Some(input.into());
             self
         }
+        /// <p>Describes this environment.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -3498,6 +3894,8 @@ pub mod create_environment_output {
             self.endpoint_url = Some(input.into());
             self
         }
+        /// <p>For load-balanced, autoscaling environments, the URL to the LoadBalancer. For
+        /// single-instance environments, the IP address of the instance.</p>
         pub fn set_endpoint_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.endpoint_url = input;
             self
@@ -3507,35 +3905,39 @@ pub mod create_environment_output {
             self.cname = Some(input.into());
             self
         }
+        /// <p>The URL to the CNAME for this environment.</p>
         pub fn set_cname(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cname = input;
             self
         }
         /// <p>The creation date for this environment.</p>
-        pub fn date_created(mut self, input: smithy_types::Instant) -> Self {
+        pub fn date_created(mut self, input: aws_smithy_types::Instant) -> Self {
             self.date_created = Some(input);
             self
         }
+        /// <p>The creation date for this environment.</p>
         pub fn set_date_created(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.date_created = input;
             self
         }
         /// <p>The last modified date for this environment.</p>
-        pub fn date_updated(mut self, input: smithy_types::Instant) -> Self {
+        pub fn date_updated(mut self, input: aws_smithy_types::Instant) -> Self {
             self.date_updated = Some(input);
             self
         }
+        /// <p>The last modified date for this environment.</p>
         pub fn set_date_updated(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.date_updated = input;
             self
         }
         /// <p>The current operational status of the environment:</p>
+        ///
         /// <ul>
         /// <li>
         /// <p>
@@ -3564,6 +3966,32 @@ pub mod create_environment_output {
             self.status = Some(input);
             self
         }
+        /// <p>The current operational status of the environment:</p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Launching</code>: Environment is in the process of initial deployment.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Updating</code>: Environment is in the process of updating its configuration
+        /// settings or application version.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Ready</code>: Environment is available to have an action performed on it, such as
+        /// update or terminate.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Terminating</code>: Environment is in the shut-down process.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Terminated</code>: Environment is not running.</p>
+        /// </li>
+        /// </ul>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::EnvironmentStatus>,
@@ -3581,6 +4009,12 @@ pub mod create_environment_output {
             self.abortable_operation_in_progress = Some(input);
             self
         }
+        /// <p>Indicates if there is an in-progress environment configuration update or application
+        /// version deployment that you can cancel.</p>
+        /// <p>
+        /// <code>true:</code> There is an update in progress. </p>
+        /// <p>
+        /// <code>false:</code> There are no updates currently in progress. </p>
         pub fn set_abortable_operation_in_progress(
             mut self,
             input: std::option::Option<bool>,
@@ -3618,6 +4052,32 @@ pub mod create_environment_output {
             self.health = Some(input);
             self
         }
+        /// <p>Describes the health status of the environment. AWS Elastic Beanstalk indicates the
+        /// failure levels for a running environment:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Red</code>: Indicates the environment is not responsive. Occurs when three or more
+        /// consecutive failures occur for an environment.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive
+        /// failures occur for an environment.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Green</code>: Indicates the environment is healthy and fully functional.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Grey</code>: Default health for a new environment. The environment is not fully
+        /// launched and health checks have not started or health checks are suspended during an
+        /// <code>UpdateEnvironment</code> or <code>RestartEnvironment</code> request.</p>
+        /// </li>
+        /// </ul>
+        /// <p> Default: <code>Grey</code>
+        /// </p>
         pub fn set_health(
             mut self,
             input: std::option::Option<crate::model::EnvironmentHealth>,
@@ -3632,6 +4092,9 @@ pub mod create_environment_output {
             self.health_status = Some(input);
             self
         }
+        /// <p>Returns the health status of the application running in your environment. For more
+        /// information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and
+        /// Statuses</a>.</p>
         pub fn set_health_status(
             mut self,
             input: std::option::Option<crate::model::EnvironmentHealthStatus>,
@@ -3644,6 +4107,7 @@ pub mod create_environment_output {
             self.resources = Some(input);
             self
         }
+        /// <p>The description of the AWS resources used by this environment.</p>
         pub fn set_resources(
             mut self,
             input: std::option::Option<crate::model::EnvironmentResourcesDescription>,
@@ -3656,6 +4120,7 @@ pub mod create_environment_output {
             self.tier = Some(input);
             self
         }
+        /// <p>Describes the current tier of this environment.</p>
         pub fn set_tier(
             mut self,
             input: std::option::Option<crate::model::EnvironmentTier>,
@@ -3663,6 +4128,11 @@ pub mod create_environment_output {
             self.tier = input;
             self
         }
+        /// Appends an item to `environment_links`.
+        ///
+        /// To override the contents of this collection use [`set_environment_links`](Self::set_environment_links).
+        ///
+        /// <p>A list of links to other environments in the same group.</p>
         pub fn environment_links(
             mut self,
             input: impl Into<crate::model::EnvironmentLink>,
@@ -3672,6 +4142,7 @@ pub mod create_environment_output {
             self.environment_links = Some(v);
             self
         }
+        /// <p>A list of links to other environments in the same group.</p>
         pub fn set_environment_links(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EnvironmentLink>>,
@@ -3684,6 +4155,7 @@ pub mod create_environment_output {
             self.environment_arn = Some(input.into());
             self
         }
+        /// <p>The environment's Amazon Resource Name (ARN), which can be used in other API requests that require an ARN.</p>
         pub fn set_environment_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3697,6 +4169,8 @@ pub mod create_environment_output {
             self.operations_role = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the environment's operations role. For more information,
+        /// see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
         pub fn set_operations_role(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3784,9 +4258,9 @@ pub struct CreateConfigurationTemplateOutput {
     /// </ul>
     pub deployment_status: std::option::Option<crate::model::ConfigurationDeploymentStatus>,
     /// <p>The date (in UTC time) when this configuration set was created.</p>
-    pub date_created: std::option::Option<smithy_types::Instant>,
+    pub date_created: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date (in UTC time) when this configuration set was last modified.</p>
-    pub date_updated: std::option::Option<smithy_types::Instant>,
+    pub date_updated: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A list of the configuration options and their values in this configuration
     /// set.</p>
     pub option_settings:
@@ -3822,8 +4296,8 @@ pub mod create_configuration_template_output {
         pub(crate) environment_name: std::option::Option<std::string::String>,
         pub(crate) deployment_status:
             std::option::Option<crate::model::ConfigurationDeploymentStatus>,
-        pub(crate) date_created: std::option::Option<smithy_types::Instant>,
-        pub(crate) date_updated: std::option::Option<smithy_types::Instant>,
+        pub(crate) date_created: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) date_updated: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) option_settings:
             std::option::Option<std::vec::Vec<crate::model::ConfigurationOptionSetting>>,
     }
@@ -3833,6 +4307,7 @@ pub mod create_configuration_template_output {
             self.solution_stack_name = Some(input.into());
             self
         }
+        /// <p>The name of the solution stack this configuration set uses.</p>
         pub fn set_solution_stack_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3845,6 +4320,7 @@ pub mod create_configuration_template_output {
             self.platform_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the platform version.</p>
         pub fn set_platform_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.platform_arn = input;
             self
@@ -3854,6 +4330,7 @@ pub mod create_configuration_template_output {
             self.application_name = Some(input.into());
             self
         }
+        /// <p>The name of the application associated with this configuration set.</p>
         pub fn set_application_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3867,6 +4344,8 @@ pub mod create_configuration_template_output {
             self.template_name = Some(input.into());
             self
         }
+        /// <p> If not <code>null</code>, the name of the configuration template for this
+        /// configuration set. </p>
         pub fn set_template_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3879,6 +4358,7 @@ pub mod create_configuration_template_output {
             self.description = Some(input.into());
             self
         }
+        /// <p>Describes this configuration set.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -3889,6 +4369,8 @@ pub mod create_configuration_template_output {
             self.environment_name = Some(input.into());
             self
         }
+        /// <p> If not <code>null</code>, the name of the environment for this configuration set.
+        /// </p>
         pub fn set_environment_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3928,6 +4410,31 @@ pub mod create_configuration_template_output {
             self.deployment_status = Some(input);
             self
         }
+        /// <p> If this configuration set is associated with an environment, the
+        /// <code>DeploymentStatus</code> parameter indicates the deployment status of this
+        /// configuration set: </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>null</code>: This configuration is not associated with a running
+        /// environment.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>pending</code>: This is a draft configuration that is not deployed to the associated
+        /// environment but is in the process of deploying.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>deployed</code>: This is the configuration that is currently deployed to the
+        /// associated running environment.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>failed</code>: This is a draft configuration that failed to successfully
+        /// deploy.</p>
+        /// </li>
+        /// </ul>
         pub fn set_deployment_status(
             mut self,
             input: std::option::Option<crate::model::ConfigurationDeploymentStatus>,
@@ -3936,29 +4443,37 @@ pub mod create_configuration_template_output {
             self
         }
         /// <p>The date (in UTC time) when this configuration set was created.</p>
-        pub fn date_created(mut self, input: smithy_types::Instant) -> Self {
+        pub fn date_created(mut self, input: aws_smithy_types::Instant) -> Self {
             self.date_created = Some(input);
             self
         }
+        /// <p>The date (in UTC time) when this configuration set was created.</p>
         pub fn set_date_created(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.date_created = input;
             self
         }
         /// <p>The date (in UTC time) when this configuration set was last modified.</p>
-        pub fn date_updated(mut self, input: smithy_types::Instant) -> Self {
+        pub fn date_updated(mut self, input: aws_smithy_types::Instant) -> Self {
             self.date_updated = Some(input);
             self
         }
+        /// <p>The date (in UTC time) when this configuration set was last modified.</p>
         pub fn set_date_updated(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.date_updated = input;
             self
         }
+        /// Appends an item to `option_settings`.
+        ///
+        /// To override the contents of this collection use [`set_option_settings`](Self::set_option_settings).
+        ///
+        /// <p>A list of the configuration options and their values in this configuration
+        /// set.</p>
         pub fn option_settings(
             mut self,
             input: impl Into<crate::model::ConfigurationOptionSetting>,
@@ -3968,6 +4483,8 @@ pub mod create_configuration_template_output {
             self.option_settings = Some(v);
             self
         }
+        /// <p>A list of the configuration options and their values in this configuration
+        /// set.</p>
         pub fn set_option_settings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ConfigurationOptionSetting>>,
@@ -4033,6 +4550,8 @@ pub mod create_application_version_output {
             self.application_version = Some(input);
             self
         }
+        /// <p> The <a>ApplicationVersionDescription</a> of the application version.
+        /// </p>
         pub fn set_application_version(
             mut self,
             input: std::option::Option<crate::model::ApplicationVersionDescription>,
@@ -4083,6 +4602,7 @@ pub mod create_application_output {
             self.application = Some(input);
             self
         }
+        /// <p> The <a>ApplicationDescription</a> of the application. </p>
         pub fn set_application(
             mut self,
             input: std::option::Option<crate::model::ApplicationDescription>,
@@ -4134,6 +4654,11 @@ pub mod compose_environments_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `environments`.
+        ///
+        /// To override the contents of this collection use [`set_environments`](Self::set_environments).
+        ///
+        /// <p> Returns an <a>EnvironmentDescription</a> list. </p>
         pub fn environments(
             mut self,
             input: impl Into<crate::model::EnvironmentDescription>,
@@ -4143,6 +4668,7 @@ pub mod compose_environments_output {
             self.environments = Some(v);
             self
         }
+        /// <p> Returns an <a>EnvironmentDescription</a> list. </p>
         pub fn set_environments(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EnvironmentDescription>>,
@@ -4156,6 +4682,8 @@ pub mod compose_environments_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>In a paginated request, the token that you can pass in a subsequent request to get the
+        /// next response page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4229,6 +4757,17 @@ pub mod check_dns_availability_output {
             self.available = Some(input);
             self
         }
+        /// <p>Indicates if the specified CNAME is available:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>true</code> : The CNAME is available.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>false</code> : The CNAME is not available.</p>
+        /// </li>
+        /// </ul>
         pub fn set_available(mut self, input: std::option::Option<bool>) -> Self {
             self.available = input;
             self
@@ -4239,6 +4778,8 @@ pub mod check_dns_availability_output {
             self.fully_qualified_cname = Some(input.into());
             self
         }
+        /// <p>The fully qualified CNAME to reserve when <a>CreateEnvironment</a> is called
+        /// with the provided prefix.</p>
         pub fn set_fully_qualified_cname(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4262,6 +4803,7 @@ impl CheckDnsAvailabilityOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateEnvironmentOperationsRoleOutput {}
@@ -4331,6 +4873,7 @@ pub mod apply_environment_managed_action_output {
             self.action_id = Some(input.into());
             self
         }
+        /// <p>The action ID of the managed action.</p>
         pub fn set_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.action_id = input;
             self
@@ -4340,6 +4883,7 @@ pub mod apply_environment_managed_action_output {
             self.action_description = Some(input.into());
             self
         }
+        /// <p>A description of the managed action.</p>
         pub fn set_action_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4352,6 +4896,7 @@ pub mod apply_environment_managed_action_output {
             self.action_type = Some(input);
             self
         }
+        /// <p>The type of managed action.</p>
         pub fn set_action_type(
             mut self,
             input: std::option::Option<crate::model::ActionType>,
@@ -4364,6 +4909,7 @@ pub mod apply_environment_managed_action_output {
             self.status = Some(input.into());
             self
         }
+        /// <p>The status of the managed action.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -4386,6 +4932,7 @@ impl ApplyEnvironmentManagedActionOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AbortEnvironmentUpdateOutput {}

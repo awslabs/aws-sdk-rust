@@ -21,7 +21,7 @@ pub fn parse_create_app_instance_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_bad_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateAppInstanceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAppInstanceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -39,7 +39,7 @@ pub fn parse_create_app_instance_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::conflict_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateAppInstanceError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAppInstanceError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -49,25 +49,23 @@ pub fn parse_create_app_instance_error(
                 }),
             }
         }
-        "ForbiddenException" => {
-            crate::error::CreateAppInstanceError {
-                meta: generic,
-                kind: crate::error::CreateAppInstanceErrorKind::ForbiddenException({
+        "ForbiddenException" => crate::error::CreateAppInstanceError {
+            meta: generic,
+            kind: crate::error::CreateAppInstanceErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::forbidden_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_forbidden_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateAppInstanceError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::forbidden_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAppInstanceError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ResourceLimitExceededException" => crate::error::CreateAppInstanceError {
             meta: generic,
             kind: crate::error::CreateAppInstanceErrorKind::ResourceLimitExceededException({
@@ -77,7 +75,7 @@ pub fn parse_create_app_instance_error(
                     let mut output =
                         crate::error::resource_limit_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateAppInstanceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAppInstanceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -94,7 +92,7 @@ pub fn parse_create_app_instance_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_failure_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateAppInstanceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAppInstanceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -112,7 +110,7 @@ pub fn parse_create_app_instance_error(
                     let mut output =
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateAppInstanceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAppInstanceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -129,7 +127,7 @@ pub fn parse_create_app_instance_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_throttled_client_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateAppInstanceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAppInstanceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -147,7 +145,7 @@ pub fn parse_create_app_instance_error(
                     let mut output =
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateAppInstanceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAppInstanceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -206,7 +204,7 @@ pub fn parse_create_app_instance_admin_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_bad_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateAppInstanceAdminError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAppInstanceAdminError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -224,7 +222,7 @@ pub fn parse_create_app_instance_admin_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::conflict_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateAppInstanceAdminError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAppInstanceAdminError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -234,25 +232,23 @@ pub fn parse_create_app_instance_admin_error(
                 }),
             }
         }
-        "ForbiddenException" => {
-            crate::error::CreateAppInstanceAdminError {
-                meta: generic,
-                kind: crate::error::CreateAppInstanceAdminErrorKind::ForbiddenException({
+        "ForbiddenException" => crate::error::CreateAppInstanceAdminError {
+            meta: generic,
+            kind: crate::error::CreateAppInstanceAdminErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::forbidden_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_forbidden_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateAppInstanceAdminError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::forbidden_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAppInstanceAdminError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ResourceLimitExceededException" => crate::error::CreateAppInstanceAdminError {
             meta: generic,
             kind: crate::error::CreateAppInstanceAdminErrorKind::ResourceLimitExceededException({
@@ -262,7 +258,7 @@ pub fn parse_create_app_instance_admin_error(
                     let mut output =
                         crate::error::resource_limit_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateAppInstanceAdminError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAppInstanceAdminError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -279,7 +275,7 @@ pub fn parse_create_app_instance_admin_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_failure_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateAppInstanceAdminError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAppInstanceAdminError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -297,7 +293,7 @@ pub fn parse_create_app_instance_admin_error(
                     let mut output =
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateAppInstanceAdminError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAppInstanceAdminError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -314,7 +310,7 @@ pub fn parse_create_app_instance_admin_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_throttled_client_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateAppInstanceAdminError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAppInstanceAdminError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -332,7 +328,7 @@ pub fn parse_create_app_instance_admin_error(
                     let mut output =
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateAppInstanceAdminError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAppInstanceAdminError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -389,7 +385,7 @@ pub fn parse_create_app_instance_user_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_bad_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateAppInstanceUserError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAppInstanceUserError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -407,7 +403,7 @@ pub fn parse_create_app_instance_user_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::conflict_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateAppInstanceUserError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAppInstanceUserError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -417,25 +413,23 @@ pub fn parse_create_app_instance_user_error(
                 }),
             }
         }
-        "ForbiddenException" => {
-            crate::error::CreateAppInstanceUserError {
-                meta: generic,
-                kind: crate::error::CreateAppInstanceUserErrorKind::ForbiddenException({
+        "ForbiddenException" => crate::error::CreateAppInstanceUserError {
+            meta: generic,
+            kind: crate::error::CreateAppInstanceUserErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::forbidden_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_forbidden_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateAppInstanceUserError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::forbidden_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAppInstanceUserError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ResourceLimitExceededException" => crate::error::CreateAppInstanceUserError {
             meta: generic,
             kind: crate::error::CreateAppInstanceUserErrorKind::ResourceLimitExceededException({
@@ -445,7 +439,7 @@ pub fn parse_create_app_instance_user_error(
                     let mut output =
                         crate::error::resource_limit_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateAppInstanceUserError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAppInstanceUserError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -462,7 +456,7 @@ pub fn parse_create_app_instance_user_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_failure_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateAppInstanceUserError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAppInstanceUserError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -480,7 +474,7 @@ pub fn parse_create_app_instance_user_error(
                     let mut output =
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateAppInstanceUserError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAppInstanceUserError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -497,7 +491,7 @@ pub fn parse_create_app_instance_user_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_throttled_client_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateAppInstanceUserError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAppInstanceUserError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -515,7 +509,7 @@ pub fn parse_create_app_instance_user_error(
                     let mut output =
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateAppInstanceUserError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAppInstanceUserError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -570,7 +564,7 @@ pub fn parse_delete_app_instance_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_bad_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteAppInstanceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAppInstanceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -579,25 +573,23 @@ pub fn parse_delete_app_instance_error(
                 tmp
             }),
         },
-        "ForbiddenException" => {
-            crate::error::DeleteAppInstanceError {
-                meta: generic,
-                kind: crate::error::DeleteAppInstanceErrorKind::ForbiddenException({
+        "ForbiddenException" => crate::error::DeleteAppInstanceError {
+            meta: generic,
+            kind: crate::error::DeleteAppInstanceErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::forbidden_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_forbidden_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteAppInstanceError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::forbidden_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAppInstanceError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ResourceLimitExceededException" => crate::error::DeleteAppInstanceError {
             meta: generic,
             kind: crate::error::DeleteAppInstanceErrorKind::ResourceLimitExceededException({
@@ -607,7 +599,7 @@ pub fn parse_delete_app_instance_error(
                     let mut output =
                         crate::error::resource_limit_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteAppInstanceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAppInstanceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -624,7 +616,7 @@ pub fn parse_delete_app_instance_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_failure_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteAppInstanceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAppInstanceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -642,7 +634,7 @@ pub fn parse_delete_app_instance_error(
                     let mut output =
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteAppInstanceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAppInstanceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -659,7 +651,7 @@ pub fn parse_delete_app_instance_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_throttled_client_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteAppInstanceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAppInstanceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -677,7 +669,7 @@ pub fn parse_delete_app_instance_error(
                     let mut output =
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteAppInstanceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAppInstanceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -731,7 +723,7 @@ pub fn parse_delete_app_instance_admin_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_bad_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteAppInstanceAdminError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAppInstanceAdminError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -749,7 +741,7 @@ pub fn parse_delete_app_instance_admin_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::conflict_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteAppInstanceAdminError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAppInstanceAdminError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -759,25 +751,23 @@ pub fn parse_delete_app_instance_admin_error(
                 }),
             }
         }
-        "ForbiddenException" => {
-            crate::error::DeleteAppInstanceAdminError {
-                meta: generic,
-                kind: crate::error::DeleteAppInstanceAdminErrorKind::ForbiddenException({
+        "ForbiddenException" => crate::error::DeleteAppInstanceAdminError {
+            meta: generic,
+            kind: crate::error::DeleteAppInstanceAdminErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::forbidden_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_forbidden_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteAppInstanceAdminError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::forbidden_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAppInstanceAdminError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ResourceLimitExceededException" => crate::error::DeleteAppInstanceAdminError {
             meta: generic,
             kind: crate::error::DeleteAppInstanceAdminErrorKind::ResourceLimitExceededException({
@@ -787,7 +777,7 @@ pub fn parse_delete_app_instance_admin_error(
                     let mut output =
                         crate::error::resource_limit_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteAppInstanceAdminError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAppInstanceAdminError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -804,7 +794,7 @@ pub fn parse_delete_app_instance_admin_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_failure_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteAppInstanceAdminError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAppInstanceAdminError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -822,7 +812,7 @@ pub fn parse_delete_app_instance_admin_error(
                     let mut output =
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteAppInstanceAdminError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAppInstanceAdminError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -839,7 +829,7 @@ pub fn parse_delete_app_instance_admin_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_throttled_client_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteAppInstanceAdminError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAppInstanceAdminError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -857,7 +847,7 @@ pub fn parse_delete_app_instance_admin_error(
                     let mut output =
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteAppInstanceAdminError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAppInstanceAdminError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -909,7 +899,7 @@ pub fn parse_delete_app_instance_user_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_bad_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteAppInstanceUserError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAppInstanceUserError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -927,7 +917,7 @@ pub fn parse_delete_app_instance_user_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::conflict_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteAppInstanceUserError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAppInstanceUserError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -937,25 +927,23 @@ pub fn parse_delete_app_instance_user_error(
                 }),
             }
         }
-        "ForbiddenException" => {
-            crate::error::DeleteAppInstanceUserError {
-                meta: generic,
-                kind: crate::error::DeleteAppInstanceUserErrorKind::ForbiddenException({
+        "ForbiddenException" => crate::error::DeleteAppInstanceUserError {
+            meta: generic,
+            kind: crate::error::DeleteAppInstanceUserErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::forbidden_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_forbidden_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteAppInstanceUserError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::forbidden_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAppInstanceUserError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ResourceLimitExceededException" => crate::error::DeleteAppInstanceUserError {
             meta: generic,
             kind: crate::error::DeleteAppInstanceUserErrorKind::ResourceLimitExceededException({
@@ -965,7 +953,7 @@ pub fn parse_delete_app_instance_user_error(
                     let mut output =
                         crate::error::resource_limit_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteAppInstanceUserError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAppInstanceUserError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -982,7 +970,7 @@ pub fn parse_delete_app_instance_user_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_failure_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteAppInstanceUserError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAppInstanceUserError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1000,7 +988,7 @@ pub fn parse_delete_app_instance_user_error(
                     let mut output =
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteAppInstanceUserError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAppInstanceUserError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1017,7 +1005,7 @@ pub fn parse_delete_app_instance_user_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_throttled_client_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteAppInstanceUserError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAppInstanceUserError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1035,7 +1023,7 @@ pub fn parse_delete_app_instance_user_error(
                     let mut output =
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteAppInstanceUserError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAppInstanceUserError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1087,7 +1075,7 @@ pub fn parse_describe_app_instance_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_bad_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeAppInstanceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAppInstanceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1096,25 +1084,23 @@ pub fn parse_describe_app_instance_error(
                 tmp
             }),
         },
-        "ForbiddenException" => {
-            crate::error::DescribeAppInstanceError {
-                meta: generic,
-                kind: crate::error::DescribeAppInstanceErrorKind::ForbiddenException({
+        "ForbiddenException" => crate::error::DescribeAppInstanceError {
+            meta: generic,
+            kind: crate::error::DescribeAppInstanceErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::forbidden_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_forbidden_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeAppInstanceError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::forbidden_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAppInstanceError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ServiceFailureException" => crate::error::DescribeAppInstanceError {
             meta: generic,
             kind: crate::error::DescribeAppInstanceErrorKind::ServiceFailureException({
@@ -1123,7 +1109,7 @@ pub fn parse_describe_app_instance_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_failure_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeAppInstanceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAppInstanceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1141,7 +1127,7 @@ pub fn parse_describe_app_instance_error(
                     let mut output =
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeAppInstanceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAppInstanceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1158,7 +1144,7 @@ pub fn parse_describe_app_instance_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_throttled_client_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeAppInstanceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAppInstanceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1176,7 +1162,7 @@ pub fn parse_describe_app_instance_error(
                     let mut output =
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeAppInstanceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAppInstanceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1237,7 +1223,7 @@ pub fn parse_describe_app_instance_admin_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_bad_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeAppInstanceAdminError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAppInstanceAdminError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1246,25 +1232,23 @@ pub fn parse_describe_app_instance_admin_error(
                 tmp
             }),
         },
-        "ForbiddenException" => {
-            crate::error::DescribeAppInstanceAdminError {
-                meta: generic,
-                kind: crate::error::DescribeAppInstanceAdminErrorKind::ForbiddenException({
+        "ForbiddenException" => crate::error::DescribeAppInstanceAdminError {
+            meta: generic,
+            kind: crate::error::DescribeAppInstanceAdminErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::forbidden_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_forbidden_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeAppInstanceAdminError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::forbidden_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAppInstanceAdminError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ServiceFailureException" => crate::error::DescribeAppInstanceAdminError {
             meta: generic,
             kind: crate::error::DescribeAppInstanceAdminErrorKind::ServiceFailureException({
@@ -1273,7 +1257,7 @@ pub fn parse_describe_app_instance_admin_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_failure_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeAppInstanceAdminError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAppInstanceAdminError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1291,7 +1275,7 @@ pub fn parse_describe_app_instance_admin_error(
                     let mut output =
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeAppInstanceAdminError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAppInstanceAdminError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1308,7 +1292,7 @@ pub fn parse_describe_app_instance_admin_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_throttled_client_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeAppInstanceAdminError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAppInstanceAdminError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1326,7 +1310,7 @@ pub fn parse_describe_app_instance_admin_error(
                     let mut output =
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeAppInstanceAdminError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAppInstanceAdminError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1387,7 +1371,7 @@ pub fn parse_describe_app_instance_user_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_bad_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeAppInstanceUserError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAppInstanceUserError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1396,25 +1380,23 @@ pub fn parse_describe_app_instance_user_error(
                 tmp
             }),
         },
-        "ForbiddenException" => {
-            crate::error::DescribeAppInstanceUserError {
-                meta: generic,
-                kind: crate::error::DescribeAppInstanceUserErrorKind::ForbiddenException({
+        "ForbiddenException" => crate::error::DescribeAppInstanceUserError {
+            meta: generic,
+            kind: crate::error::DescribeAppInstanceUserErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::forbidden_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_forbidden_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeAppInstanceUserError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::forbidden_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAppInstanceUserError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ServiceFailureException" => crate::error::DescribeAppInstanceUserError {
             meta: generic,
             kind: crate::error::DescribeAppInstanceUserErrorKind::ServiceFailureException({
@@ -1423,7 +1405,7 @@ pub fn parse_describe_app_instance_user_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_failure_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeAppInstanceUserError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAppInstanceUserError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1441,7 +1423,7 @@ pub fn parse_describe_app_instance_user_error(
                     let mut output =
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeAppInstanceUserError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAppInstanceUserError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1458,7 +1440,7 @@ pub fn parse_describe_app_instance_user_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_throttled_client_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeAppInstanceUserError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAppInstanceUserError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1476,7 +1458,7 @@ pub fn parse_describe_app_instance_user_error(
                     let mut output =
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeAppInstanceUserError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAppInstanceUserError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1533,7 +1515,7 @@ pub fn parse_get_app_instance_retention_settings_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_bad_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetAppInstanceRetentionSettingsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAppInstanceRetentionSettingsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1542,25 +1524,23 @@ pub fn parse_get_app_instance_retention_settings_error(
                 tmp
             }),
         },
-        "ForbiddenException" => {
-            crate::error::GetAppInstanceRetentionSettingsError {
-                meta: generic,
-                kind: crate::error::GetAppInstanceRetentionSettingsErrorKind::ForbiddenException({
+        "ForbiddenException" => crate::error::GetAppInstanceRetentionSettingsError {
+            meta: generic,
+            kind: crate::error::GetAppInstanceRetentionSettingsErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::forbidden_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_forbidden_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetAppInstanceRetentionSettingsError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::forbidden_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAppInstanceRetentionSettingsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ServiceFailureException" => crate::error::GetAppInstanceRetentionSettingsError {
             meta: generic,
             kind: crate::error::GetAppInstanceRetentionSettingsErrorKind::ServiceFailureException(
@@ -1571,7 +1551,7 @@ pub fn parse_get_app_instance_retention_settings_error(
                         let mut output =
                             crate::error::service_failure_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_failure_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetAppInstanceRetentionSettingsError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAppInstanceRetentionSettingsError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -1592,7 +1572,7 @@ pub fn parse_get_app_instance_retention_settings_error(
                             let mut output =
                                 crate::error::service_unavailable_exception::Builder::default();
                             let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetAppInstanceRetentionSettingsError::unhandled)?;
+                            output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAppInstanceRetentionSettingsError::unhandled)?;
                             output.build()
                         };
                         if (&tmp.message).is_none() {
@@ -1612,7 +1592,7 @@ pub fn parse_get_app_instance_retention_settings_error(
                         let mut output =
                             crate::error::throttled_client_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_throttled_client_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetAppInstanceRetentionSettingsError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAppInstanceRetentionSettingsError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -1633,7 +1613,7 @@ pub fn parse_get_app_instance_retention_settings_error(
                             let mut output =
                                 crate::error::unauthorized_client_exception::Builder::default();
                             let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetAppInstanceRetentionSettingsError::unhandled)?;
+                            output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAppInstanceRetentionSettingsError::unhandled)?;
                             output.build()
                         };
                         if (&tmp.message).is_none() {
@@ -1693,7 +1673,7 @@ pub fn parse_list_app_instance_admins_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_bad_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListAppInstanceAdminsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAppInstanceAdminsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1702,25 +1682,23 @@ pub fn parse_list_app_instance_admins_error(
                 tmp
             }),
         },
-        "ForbiddenException" => {
-            crate::error::ListAppInstanceAdminsError {
-                meta: generic,
-                kind: crate::error::ListAppInstanceAdminsErrorKind::ForbiddenException({
+        "ForbiddenException" => crate::error::ListAppInstanceAdminsError {
+            meta: generic,
+            kind: crate::error::ListAppInstanceAdminsErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::forbidden_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_forbidden_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListAppInstanceAdminsError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::forbidden_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAppInstanceAdminsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ResourceLimitExceededException" => crate::error::ListAppInstanceAdminsError {
             meta: generic,
             kind: crate::error::ListAppInstanceAdminsErrorKind::ResourceLimitExceededException({
@@ -1730,7 +1708,7 @@ pub fn parse_list_app_instance_admins_error(
                     let mut output =
                         crate::error::resource_limit_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListAppInstanceAdminsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAppInstanceAdminsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1747,7 +1725,7 @@ pub fn parse_list_app_instance_admins_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_failure_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListAppInstanceAdminsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAppInstanceAdminsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1765,7 +1743,7 @@ pub fn parse_list_app_instance_admins_error(
                     let mut output =
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListAppInstanceAdminsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAppInstanceAdminsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1782,7 +1760,7 @@ pub fn parse_list_app_instance_admins_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_throttled_client_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListAppInstanceAdminsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAppInstanceAdminsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1800,7 +1778,7 @@ pub fn parse_list_app_instance_admins_error(
                     let mut output =
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListAppInstanceAdminsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAppInstanceAdminsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1855,7 +1833,7 @@ pub fn parse_list_app_instances_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_bad_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListAppInstancesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAppInstancesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1864,25 +1842,23 @@ pub fn parse_list_app_instances_error(
                 tmp
             }),
         },
-        "ForbiddenException" => {
-            crate::error::ListAppInstancesError {
-                meta: generic,
-                kind: crate::error::ListAppInstancesErrorKind::ForbiddenException({
+        "ForbiddenException" => crate::error::ListAppInstancesError {
+            meta: generic,
+            kind: crate::error::ListAppInstancesErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::forbidden_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_forbidden_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListAppInstancesError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::forbidden_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAppInstancesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ServiceFailureException" => crate::error::ListAppInstancesError {
             meta: generic,
             kind: crate::error::ListAppInstancesErrorKind::ServiceFailureException({
@@ -1891,7 +1867,7 @@ pub fn parse_list_app_instances_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_failure_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListAppInstancesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAppInstancesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1909,7 +1885,7 @@ pub fn parse_list_app_instances_error(
                     let mut output =
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListAppInstancesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAppInstancesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1926,7 +1902,7 @@ pub fn parse_list_app_instances_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_throttled_client_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListAppInstancesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAppInstancesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1944,7 +1920,7 @@ pub fn parse_list_app_instances_error(
                     let mut output =
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListAppInstancesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAppInstancesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1999,7 +1975,7 @@ pub fn parse_list_app_instance_users_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_bad_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListAppInstanceUsersError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAppInstanceUsersError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2008,25 +1984,23 @@ pub fn parse_list_app_instance_users_error(
                 tmp
             }),
         },
-        "ForbiddenException" => {
-            crate::error::ListAppInstanceUsersError {
-                meta: generic,
-                kind: crate::error::ListAppInstanceUsersErrorKind::ForbiddenException({
+        "ForbiddenException" => crate::error::ListAppInstanceUsersError {
+            meta: generic,
+            kind: crate::error::ListAppInstanceUsersErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::forbidden_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_forbidden_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListAppInstanceUsersError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::forbidden_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAppInstanceUsersError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ServiceFailureException" => crate::error::ListAppInstanceUsersError {
             meta: generic,
             kind: crate::error::ListAppInstanceUsersErrorKind::ServiceFailureException({
@@ -2035,7 +2009,7 @@ pub fn parse_list_app_instance_users_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_failure_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListAppInstanceUsersError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAppInstanceUsersError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2053,7 +2027,7 @@ pub fn parse_list_app_instance_users_error(
                     let mut output =
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListAppInstanceUsersError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAppInstanceUsersError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2070,7 +2044,7 @@ pub fn parse_list_app_instance_users_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_throttled_client_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListAppInstanceUsersError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAppInstanceUsersError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2088,7 +2062,7 @@ pub fn parse_list_app_instance_users_error(
                     let mut output =
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListAppInstanceUsersError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAppInstanceUsersError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2145,7 +2119,7 @@ pub fn parse_put_app_instance_retention_settings_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_bad_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutAppInstanceRetentionSettingsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutAppInstanceRetentionSettingsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2154,25 +2128,23 @@ pub fn parse_put_app_instance_retention_settings_error(
                 tmp
             }),
         },
-        "ForbiddenException" => {
-            crate::error::PutAppInstanceRetentionSettingsError {
-                meta: generic,
-                kind: crate::error::PutAppInstanceRetentionSettingsErrorKind::ForbiddenException({
+        "ForbiddenException" => crate::error::PutAppInstanceRetentionSettingsError {
+            meta: generic,
+            kind: crate::error::PutAppInstanceRetentionSettingsErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::forbidden_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_forbidden_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutAppInstanceRetentionSettingsError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::forbidden_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutAppInstanceRetentionSettingsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ServiceFailureException" => crate::error::PutAppInstanceRetentionSettingsError {
             meta: generic,
             kind: crate::error::PutAppInstanceRetentionSettingsErrorKind::ServiceFailureException(
@@ -2183,7 +2155,7 @@ pub fn parse_put_app_instance_retention_settings_error(
                         let mut output =
                             crate::error::service_failure_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_failure_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutAppInstanceRetentionSettingsError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutAppInstanceRetentionSettingsError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -2204,7 +2176,7 @@ pub fn parse_put_app_instance_retention_settings_error(
                             let mut output =
                                 crate::error::service_unavailable_exception::Builder::default();
                             let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutAppInstanceRetentionSettingsError::unhandled)?;
+                            output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutAppInstanceRetentionSettingsError::unhandled)?;
                             output.build()
                         };
                         if (&tmp.message).is_none() {
@@ -2224,7 +2196,7 @@ pub fn parse_put_app_instance_retention_settings_error(
                         let mut output =
                             crate::error::throttled_client_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_throttled_client_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutAppInstanceRetentionSettingsError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutAppInstanceRetentionSettingsError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -2245,7 +2217,7 @@ pub fn parse_put_app_instance_retention_settings_error(
                             let mut output =
                                 crate::error::unauthorized_client_exception::Builder::default();
                             let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutAppInstanceRetentionSettingsError::unhandled)?;
+                            output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutAppInstanceRetentionSettingsError::unhandled)?;
                             output.build()
                         };
                         if (&tmp.message).is_none() {
@@ -2303,7 +2275,7 @@ pub fn parse_update_app_instance_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_bad_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateAppInstanceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAppInstanceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2321,7 +2293,7 @@ pub fn parse_update_app_instance_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::conflict_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateAppInstanceError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAppInstanceError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -2331,25 +2303,23 @@ pub fn parse_update_app_instance_error(
                 }),
             }
         }
-        "ForbiddenException" => {
-            crate::error::UpdateAppInstanceError {
-                meta: generic,
-                kind: crate::error::UpdateAppInstanceErrorKind::ForbiddenException({
+        "ForbiddenException" => crate::error::UpdateAppInstanceError {
+            meta: generic,
+            kind: crate::error::UpdateAppInstanceErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::forbidden_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_forbidden_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateAppInstanceError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::forbidden_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAppInstanceError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ServiceFailureException" => crate::error::UpdateAppInstanceError {
             meta: generic,
             kind: crate::error::UpdateAppInstanceErrorKind::ServiceFailureException({
@@ -2358,7 +2328,7 @@ pub fn parse_update_app_instance_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_failure_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateAppInstanceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAppInstanceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2376,7 +2346,7 @@ pub fn parse_update_app_instance_error(
                     let mut output =
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateAppInstanceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAppInstanceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2393,7 +2363,7 @@ pub fn parse_update_app_instance_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_throttled_client_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateAppInstanceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAppInstanceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2411,7 +2381,7 @@ pub fn parse_update_app_instance_error(
                     let mut output =
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateAppInstanceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAppInstanceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2466,7 +2436,7 @@ pub fn parse_update_app_instance_user_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_bad_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateAppInstanceUserError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAppInstanceUserError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2484,7 +2454,7 @@ pub fn parse_update_app_instance_user_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::conflict_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateAppInstanceUserError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAppInstanceUserError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -2494,25 +2464,23 @@ pub fn parse_update_app_instance_user_error(
                 }),
             }
         }
-        "ForbiddenException" => {
-            crate::error::UpdateAppInstanceUserError {
-                meta: generic,
-                kind: crate::error::UpdateAppInstanceUserErrorKind::ForbiddenException({
+        "ForbiddenException" => crate::error::UpdateAppInstanceUserError {
+            meta: generic,
+            kind: crate::error::UpdateAppInstanceUserErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::forbidden_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_forbidden_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateAppInstanceUserError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::forbidden_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAppInstanceUserError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ResourceLimitExceededException" => crate::error::UpdateAppInstanceUserError {
             meta: generic,
             kind: crate::error::UpdateAppInstanceUserErrorKind::ResourceLimitExceededException({
@@ -2522,7 +2490,7 @@ pub fn parse_update_app_instance_user_error(
                     let mut output =
                         crate::error::resource_limit_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateAppInstanceUserError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAppInstanceUserError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2539,7 +2507,7 @@ pub fn parse_update_app_instance_user_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_failure_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateAppInstanceUserError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAppInstanceUserError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2557,7 +2525,7 @@ pub fn parse_update_app_instance_user_error(
                     let mut output =
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateAppInstanceUserError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAppInstanceUserError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2574,7 +2542,7 @@ pub fn parse_update_app_instance_user_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_throttled_client_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateAppInstanceUserError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAppInstanceUserError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2592,7 +2560,7 @@ pub fn parse_update_app_instance_user_error(
                     let mut output =
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateAppInstanceUserError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAppInstanceUserError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {

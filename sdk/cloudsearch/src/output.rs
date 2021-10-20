@@ -27,6 +27,7 @@ pub mod update_service_access_policies_output {
             self.access_policies = Some(input);
             self
         }
+        /// <p>The access rules configured for the domain.</p>
         pub fn set_access_policies(
             mut self,
             input: std::option::Option<crate::model::AccessPoliciesStatus>,
@@ -77,6 +78,7 @@ pub mod update_scaling_parameters_output {
             self.scaling_parameters = Some(input);
             self
         }
+        /// <p>The status and configuration of a search domain's scaling parameters. </p>
         pub fn set_scaling_parameters(
             mut self,
             input: std::option::Option<crate::model::ScalingParametersStatus>,
@@ -131,6 +133,7 @@ pub mod update_domain_endpoint_options_output {
             self.domain_endpoint_options = Some(input);
             self
         }
+        /// <p>The newly-configured domain endpoint options.</p>
         pub fn set_domain_endpoint_options(
             mut self,
             input: std::option::Option<crate::model::DomainEndpointOptionsStatus>,
@@ -185,6 +188,7 @@ pub mod update_availability_options_output {
             self.availability_options = Some(input);
             self
         }
+        /// <p>The newly-configured availability options. Indicates whether Multi-AZ is enabled for the domain. </p>
         pub fn set_availability_options(
             mut self,
             input: std::option::Option<crate::model::AvailabilityOptionsStatus>,
@@ -233,6 +237,11 @@ pub mod list_domain_names_output {
         >,
     }
     impl Builder {
+        /// Adds a key-value pair to `domain_names`.
+        ///
+        /// To override the contents of this collection use [`set_domain_names`](Self::set_domain_names).
+        ///
+        /// <p>The names of the search domains owned by an account.</p>
         pub fn domain_names(
             mut self,
             k: impl Into<std::string::String>,
@@ -243,6 +252,7 @@ pub mod list_domain_names_output {
             self.domain_names = Some(hash_map);
             self
         }
+        /// <p>The names of the search domains owned by an account.</p>
         pub fn set_domain_names(
             mut self,
             input: std::option::Option<
@@ -290,12 +300,18 @@ pub mod index_documents_output {
         pub(crate) field_names: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `field_names`.
+        ///
+        /// To override the contents of this collection use [`set_field_names`](Self::set_field_names).
+        ///
+        /// <p>The names of the fields that are currently being indexed.</p>
         pub fn field_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.field_names.unwrap_or_default();
             v.push(input.into());
             self.field_names = Some(v);
             self
         }
+        /// <p>The names of the fields that are currently being indexed.</p>
         pub fn set_field_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -341,12 +357,18 @@ pub mod describe_suggesters_output {
         pub(crate) suggesters: std::option::Option<std::vec::Vec<crate::model::SuggesterStatus>>,
     }
     impl Builder {
+        /// Appends an item to `suggesters`.
+        ///
+        /// To override the contents of this collection use [`set_suggesters`](Self::set_suggesters).
+        ///
+        /// <p>The suggesters configured for the domain specified in the request.</p>
         pub fn suggesters(mut self, input: impl Into<crate::model::SuggesterStatus>) -> Self {
             let mut v = self.suggesters.unwrap_or_default();
             v.push(input.into());
             self.suggesters = Some(v);
             self
         }
+        /// <p>The suggesters configured for the domain specified in the request.</p>
         pub fn set_suggesters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SuggesterStatus>>,
@@ -397,6 +419,7 @@ pub mod describe_service_access_policies_output {
             self.access_policies = Some(input);
             self
         }
+        /// <p>The access rules configured for the domain specified in the request.</p>
         pub fn set_access_policies(
             mut self,
             input: std::option::Option<crate::model::AccessPoliciesStatus>,
@@ -447,6 +470,7 @@ pub mod describe_scaling_parameters_output {
             self.scaling_parameters = Some(input);
             self
         }
+        /// <p>The status and configuration of a search domain's scaling parameters. </p>
         pub fn set_scaling_parameters(
             mut self,
             input: std::option::Option<crate::model::ScalingParametersStatus>,
@@ -492,12 +516,18 @@ pub mod describe_index_fields_output {
         pub(crate) index_fields: std::option::Option<std::vec::Vec<crate::model::IndexFieldStatus>>,
     }
     impl Builder {
+        /// Appends an item to `index_fields`.
+        ///
+        /// To override the contents of this collection use [`set_index_fields`](Self::set_index_fields).
+        ///
+        /// <p>The index fields configured for the domain.</p>
         pub fn index_fields(mut self, input: impl Into<crate::model::IndexFieldStatus>) -> Self {
             let mut v = self.index_fields.unwrap_or_default();
             v.push(input.into());
             self.index_fields = Some(v);
             self
         }
+        /// <p>The index fields configured for the domain.</p>
         pub fn set_index_fields(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::IndexFieldStatus>>,
@@ -543,12 +573,18 @@ pub mod describe_expressions_output {
         pub(crate) expressions: std::option::Option<std::vec::Vec<crate::model::ExpressionStatus>>,
     }
     impl Builder {
+        /// Appends an item to `expressions`.
+        ///
+        /// To override the contents of this collection use [`set_expressions`](Self::set_expressions).
+        ///
+        /// <p>The expressions configured for the domain.</p>
         pub fn expressions(mut self, input: impl Into<crate::model::ExpressionStatus>) -> Self {
             let mut v = self.expressions.unwrap_or_default();
             v.push(input.into());
             self.expressions = Some(v);
             self
         }
+        /// <p>The expressions configured for the domain.</p>
         pub fn set_expressions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ExpressionStatus>>,
@@ -595,12 +631,18 @@ pub mod describe_domains_output {
             std::option::Option<std::vec::Vec<crate::model::DomainStatus>>,
     }
     impl Builder {
+        /// Appends an item to `domain_status_list`.
+        ///
+        /// To override the contents of this collection use [`set_domain_status_list`](Self::set_domain_status_list).
+        ///
+        /// <p>A list that contains the status of each requested domain.</p>
         pub fn domain_status_list(mut self, input: impl Into<crate::model::DomainStatus>) -> Self {
             let mut v = self.domain_status_list.unwrap_or_default();
             v.push(input.into());
             self.domain_status_list = Some(v);
             self
         }
+        /// <p>A list that contains the status of each requested domain.</p>
         pub fn set_domain_status_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DomainStatus>>,
@@ -655,6 +697,7 @@ pub mod describe_domain_endpoint_options_output {
             self.domain_endpoint_options = Some(input);
             self
         }
+        /// <p>The status and configuration of a search domain's endpoint options.</p>
         pub fn set_domain_endpoint_options(
             mut self,
             input: std::option::Option<crate::model::DomainEndpointOptionsStatus>,
@@ -709,6 +752,7 @@ pub mod describe_availability_options_output {
             self.availability_options = Some(input);
             self
         }
+        /// <p>The availability options configured for the domain. Indicates whether Multi-AZ is enabled for the domain. </p>
         pub fn set_availability_options(
             mut self,
             input: std::option::Option<crate::model::AvailabilityOptionsStatus>,
@@ -755,6 +799,11 @@ pub mod describe_analysis_schemes_output {
             std::option::Option<std::vec::Vec<crate::model::AnalysisSchemeStatus>>,
     }
     impl Builder {
+        /// Appends an item to `analysis_schemes`.
+        ///
+        /// To override the contents of this collection use [`set_analysis_schemes`](Self::set_analysis_schemes).
+        ///
+        /// <p>The analysis scheme descriptions.</p>
         pub fn analysis_schemes(
             mut self,
             input: impl Into<crate::model::AnalysisSchemeStatus>,
@@ -764,6 +813,7 @@ pub mod describe_analysis_schemes_output {
             self.analysis_schemes = Some(v);
             self
         }
+        /// <p>The analysis scheme descriptions.</p>
         pub fn set_analysis_schemes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AnalysisSchemeStatus>>,
@@ -814,6 +864,7 @@ pub mod delete_suggester_output {
             self.suggester = Some(input);
             self
         }
+        /// <p>The status of the suggester being deleted.</p>
         pub fn set_suggester(
             mut self,
             input: std::option::Option<crate::model::SuggesterStatus>,
@@ -864,6 +915,7 @@ pub mod delete_index_field_output {
             self.index_field = Some(input);
             self
         }
+        /// <p>The status of the index field being deleted.</p>
         pub fn set_index_field(
             mut self,
             input: std::option::Option<crate::model::IndexFieldStatus>,
@@ -914,6 +966,7 @@ pub mod delete_expression_output {
             self.expression = Some(input);
             self
         }
+        /// <p>The status of the expression being deleted.</p>
         pub fn set_expression(
             mut self,
             input: std::option::Option<crate::model::ExpressionStatus>,
@@ -964,6 +1017,7 @@ pub mod delete_domain_output {
             self.domain_status = Some(input);
             self
         }
+        /// <p>The current status of the search domain.</p>
         pub fn set_domain_status(
             mut self,
             input: std::option::Option<crate::model::DomainStatus>,
@@ -1014,6 +1068,7 @@ pub mod delete_analysis_scheme_output {
             self.analysis_scheme = Some(input);
             self
         }
+        /// <p>The status of the analysis scheme being deleted.</p>
         pub fn set_analysis_scheme(
             mut self,
             input: std::option::Option<crate::model::AnalysisSchemeStatus>,
@@ -1064,6 +1119,7 @@ pub mod define_suggester_output {
             self.suggester = Some(input);
             self
         }
+        /// <p>The value of a <code>Suggester</code> and its current status.</p>
         pub fn set_suggester(
             mut self,
             input: std::option::Option<crate::model::SuggesterStatus>,
@@ -1114,6 +1170,7 @@ pub mod define_index_field_output {
             self.index_field = Some(input);
             self
         }
+        /// <p>The value of an <code>IndexField</code> and its current status.</p>
         pub fn set_index_field(
             mut self,
             input: std::option::Option<crate::model::IndexFieldStatus>,
@@ -1164,6 +1221,7 @@ pub mod define_expression_output {
             self.expression = Some(input);
             self
         }
+        /// <p>The value of an <code>Expression</code> and its current status.</p>
         pub fn set_expression(
             mut self,
             input: std::option::Option<crate::model::ExpressionStatus>,
@@ -1214,6 +1272,7 @@ pub mod define_analysis_scheme_output {
             self.analysis_scheme = Some(input);
             self
         }
+        /// <p>The status and configuration of an  <code>AnalysisScheme</code>.</p>
         pub fn set_analysis_scheme(
             mut self,
             input: std::option::Option<crate::model::AnalysisSchemeStatus>,
@@ -1264,6 +1323,7 @@ pub mod create_domain_output {
             self.domain_status = Some(input);
             self
         }
+        /// <p>The current status of the search domain.</p>
         pub fn set_domain_status(
             mut self,
             input: std::option::Option<crate::model::DomainStatus>,
@@ -1309,12 +1369,18 @@ pub mod build_suggesters_output {
         pub(crate) field_names: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `field_names`.
+        ///
+        /// To override the contents of this collection use [`set_field_names`](Self::set_field_names).
+        ///
+        /// <p>A list of field names.</p>
         pub fn field_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.field_names.unwrap_or_default();
             v.push(input.into());
             self.field_names = Some(v);
             self
         }
+        /// <p>A list of field names.</p>
         pub fn set_field_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,

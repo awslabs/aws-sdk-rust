@@ -78,6 +78,12 @@ pub mod rule_group_response {
             self.rule_group_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the rule group.</p>
+        /// <note>
+        /// <p>If this response is for a create request that had <code>DryRun</code> set to
+        /// <code>TRUE</code>, then this ARN is a placeholder that isn't attached to a valid
+        /// resource.</p>
+        /// </note>
         pub fn set_rule_group_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -90,6 +96,7 @@ pub mod rule_group_response {
             self.rule_group_name = Some(input.into());
             self
         }
+        /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
         pub fn set_rule_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -102,6 +109,7 @@ pub mod rule_group_response {
             self.rule_group_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the rule group. </p>
         pub fn set_rule_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -114,6 +122,7 @@ pub mod rule_group_response {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description of the rule group. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -124,6 +133,8 @@ pub mod rule_group_response {
             self.r#type = Some(input);
             self
         }
+        /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains
+        /// stateless rules. If it is stateful, it contains stateful rules. </p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::RuleGroupType>) -> Self {
             self.r#type = input;
             self
@@ -137,6 +148,11 @@ pub mod rule_group_response {
             self.capacity = Some(input);
             self
         }
+        /// <p>The maximum operating resources that this rule group can use. Rule group capacity is fixed at creation.
+        /// When you update a rule group, you are limited to this capacity. When you reference a rule group
+        /// from a firewall policy, Network Firewall reserves this capacity for the rule group. </p>
+        /// <p>You can retrieve the capacity that would be required for a rule group before you create the rule group by calling
+        /// <a>CreateRuleGroup</a> with <code>DryRun</code> set to <code>TRUE</code>. </p>
         pub fn set_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.capacity = input;
             self
@@ -146,6 +162,7 @@ pub mod rule_group_response {
             self.rule_group_status = Some(input);
             self
         }
+        /// <p>Detailed information about the current status of a rule group. </p>
         pub fn set_rule_group_status(
             mut self,
             input: std::option::Option<crate::model::ResourceStatus>,
@@ -153,12 +170,18 @@ pub mod rule_group_response {
             self.rule_group_status = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The key:value pairs to associate with the resource.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The key:value pairs to associate with the resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -171,6 +194,7 @@ pub mod rule_group_response {
             self.consumed_capacity = Some(input);
             self
         }
+        /// <p>The number of capacity units currently consumed by the rule group rules. </p>
         pub fn set_consumed_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.consumed_capacity = input;
             self
@@ -180,6 +204,7 @@ pub mod rule_group_response {
             self.number_of_associations = Some(input);
             self
         }
+        /// <p>The number of firewall policies that use this rule group.</p>
         pub fn set_number_of_associations(mut self, input: std::option::Option<i32>) -> Self {
             self.number_of_associations = input;
             self
@@ -247,6 +272,8 @@ pub mod tag {
             self.key = Some(input.into());
             self
         }
+        /// <p>The part of the key:value pair that defines a tag. You can use a tag key to describe a
+        /// category of information, such as "customer." Tag keys are case-sensitive.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -258,6 +285,9 @@ pub mod tag {
             self.value = Some(input.into());
             self
         }
+        /// <p>The part of the key:value pair that defines a tag. You can use a tag value to describe a
+        /// specific value within a category, such as "companyA" or "companyB." Tag values are
+        /// case-sensitive.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -278,6 +308,7 @@ impl Tag {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -289,7 +320,9 @@ impl Tag {
     std::hash::Hash,
 )]
 pub enum ResourceStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -311,6 +344,7 @@ impl std::str::FromStr for ResourceStatus {
     }
 }
 impl ResourceStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ResourceStatus::Active => "ACTIVE",
@@ -318,6 +352,7 @@ impl ResourceStatus {
             ResourceStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ACTIVE", "DELETING"]
     }
@@ -328,6 +363,7 @@ impl AsRef<str> for ResourceStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -339,7 +375,9 @@ impl AsRef<str> for ResourceStatus {
     std::hash::Hash,
 )]
 pub enum RuleGroupType {
+    #[allow(missing_docs)] // documentation missing in model
     Stateful,
+    #[allow(missing_docs)] // documentation missing in model
     Stateless,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -361,6 +399,7 @@ impl std::str::FromStr for RuleGroupType {
     }
 }
 impl RuleGroupType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RuleGroupType::Stateful => "STATEFUL",
@@ -368,6 +407,7 @@ impl RuleGroupType {
             RuleGroupType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["STATEFUL", "STATELESS"]
     }
@@ -422,6 +462,8 @@ pub mod rule_group {
             self.rule_variables = Some(input);
             self
         }
+        /// <p>Settings that are available for use in the rules in the rule group. You can only use
+        /// these for stateful rule groups. </p>
         pub fn set_rule_variables(
             mut self,
             input: std::option::Option<crate::model::RuleVariables>,
@@ -434,6 +476,7 @@ pub mod rule_group {
             self.rules_source = Some(input);
             self
         }
+        /// <p>The stateful rules or stateless rules for the rule group. </p>
         pub fn set_rules_source(
             mut self,
             input: std::option::Option<crate::model::RulesSource>,
@@ -447,6 +490,8 @@ pub mod rule_group {
             self.stateful_rule_options = Some(input);
             self
         }
+        /// <p>Additional options governing how Network Firewall handles stateful rules. The policies where you use your stateful
+        /// rule group must have stateful rule options settings that are compatible with these settings.</p>
         pub fn set_stateful_rule_options(
             mut self,
             input: std::option::Option<crate::model::StatefulRuleOptions>,
@@ -505,6 +550,10 @@ pub mod stateful_rule_options {
             self.rule_order = Some(input);
             self
         }
+        /// <p>Indicates how to manage the order of the rule evaluation for the rule group. By default, Network Firewall
+        /// leaves the rule evaluation order up to the Suricata rule processing engine. If you set
+        /// this to <code>STRICT_ORDER</code>, your rules are evaluated in the exact order that they're listed
+        /// in your Suricata rules string. </p>
         pub fn set_rule_order(
             mut self,
             input: std::option::Option<crate::model::RuleOrder>,
@@ -527,6 +576,7 @@ impl StatefulRuleOptions {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -538,7 +588,9 @@ impl StatefulRuleOptions {
     std::hash::Hash,
 )]
 pub enum RuleOrder {
+    #[allow(missing_docs)] // documentation missing in model
     DefaultActionOrder,
+    #[allow(missing_docs)] // documentation missing in model
     StrictOrder,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -560,6 +612,7 @@ impl std::str::FromStr for RuleOrder {
     }
 }
 impl RuleOrder {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RuleOrder::DefaultActionOrder => "DEFAULT_ACTION_ORDER",
@@ -567,6 +620,7 @@ impl RuleOrder {
             RuleOrder::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DEFAULT_ACTION_ORDER", "STRICT_ORDER"]
     }
@@ -637,6 +691,12 @@ pub mod rules_source {
             self.rules_string = Some(input.into());
             self
         }
+        /// <p>Stateful inspection criteria, provided in Suricata compatible intrusion prevention
+        /// system (IPS) rules. Suricata is an open-source network IPS that includes a standard
+        /// rule-based language for network traffic inspection.</p>
+        /// <p>These rules contain the inspection criteria and the action to take for traffic that
+        /// matches the criteria, so this type of rule group doesn't have a separate action
+        /// setting.</p>
         pub fn set_rules_string(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rules_string = input;
             self
@@ -646,6 +706,7 @@ pub mod rules_source {
             self.rules_source_list = Some(input);
             self
         }
+        /// <p>Stateful inspection criteria for a domain list rule group. </p>
         pub fn set_rules_source_list(
             mut self,
             input: std::option::Option<crate::model::RulesSourceList>,
@@ -653,12 +714,24 @@ pub mod rules_source {
             self.rules_source_list = input;
             self
         }
+        /// Appends an item to `stateful_rules`.
+        ///
+        /// To override the contents of this collection use [`set_stateful_rules`](Self::set_stateful_rules).
+        ///
+        /// <p>An array of individual stateful rules inspection criteria to be used together in a stateful rule group.
+        /// Use this option to specify simple Suricata rules with protocol, source and destination, ports, direction, and rule options.
+        /// For information about the Suricata <code>Rules</code> format, see
+        /// <a href="https://suricata.readthedocs.io/en/suricata-5.0.0/rules/intro.html#">Rules Format</a>. </p>
         pub fn stateful_rules(mut self, input: impl Into<crate::model::StatefulRule>) -> Self {
             let mut v = self.stateful_rules.unwrap_or_default();
             v.push(input.into());
             self.stateful_rules = Some(v);
             self
         }
+        /// <p>An array of individual stateful rules inspection criteria to be used together in a stateful rule group.
+        /// Use this option to specify simple Suricata rules with protocol, source and destination, ports, direction, and rule options.
+        /// For information about the Suricata <code>Rules</code> format, see
+        /// <a href="https://suricata.readthedocs.io/en/suricata-5.0.0/rules/intro.html#">Rules Format</a>. </p>
         pub fn set_stateful_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::StatefulRule>>,
@@ -674,6 +747,7 @@ pub mod rules_source {
             self.stateless_rules_and_custom_actions = Some(input);
             self
         }
+        /// <p>Stateless inspection criteria to be used in a stateless rule group. </p>
         pub fn set_stateless_rules_and_custom_actions(
             mut self,
             input: std::option::Option<crate::model::StatelessRulesAndCustomActions>,
@@ -731,12 +805,18 @@ pub mod stateless_rules_and_custom_actions {
         pub(crate) custom_actions: std::option::Option<std::vec::Vec<crate::model::CustomAction>>,
     }
     impl Builder {
+        /// Appends an item to `stateless_rules`.
+        ///
+        /// To override the contents of this collection use [`set_stateless_rules`](Self::set_stateless_rules).
+        ///
+        /// <p>Defines the set of stateless rules for use in a stateless rule group. </p>
         pub fn stateless_rules(mut self, input: impl Into<crate::model::StatelessRule>) -> Self {
             let mut v = self.stateless_rules.unwrap_or_default();
             v.push(input.into());
             self.stateless_rules = Some(v);
             self
         }
+        /// <p>Defines the set of stateless rules for use in a stateless rule group. </p>
         pub fn set_stateless_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::StatelessRule>>,
@@ -744,12 +824,26 @@ pub mod stateless_rules_and_custom_actions {
             self.stateless_rules = input;
             self
         }
+        /// Appends an item to `custom_actions`.
+        ///
+        /// To override the contents of this collection use [`set_custom_actions`](Self::set_custom_actions).
+        ///
+        /// <p>Defines an array of individual custom action definitions that are available for use by
+        /// the stateless rules in this <code>StatelessRulesAndCustomActions</code> specification. You
+        /// name each custom action that you define, and then you can use it by name in your <a>StatelessRule</a>
+        /// <a>RuleDefinition</a>
+        /// <code>Actions</code> specification.</p>
         pub fn custom_actions(mut self, input: impl Into<crate::model::CustomAction>) -> Self {
             let mut v = self.custom_actions.unwrap_or_default();
             v.push(input.into());
             self.custom_actions = Some(v);
             self
         }
+        /// <p>Defines an array of individual custom action definitions that are available for use by
+        /// the stateless rules in this <code>StatelessRulesAndCustomActions</code> specification. You
+        /// name each custom action that you define, and then you can use it by name in your <a>StatelessRule</a>
+        /// <a>RuleDefinition</a>
+        /// <code>Actions</code> specification.</p>
         pub fn set_custom_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CustomAction>>,
@@ -825,6 +919,7 @@ pub mod custom_action {
             self.action_name = Some(input.into());
             self
         }
+        /// <p>The descriptive name of the custom action. You can't change the name of a custom action after you create it.</p>
         pub fn set_action_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.action_name = input;
             self
@@ -834,6 +929,7 @@ pub mod custom_action {
             self.action_definition = Some(input);
             self
         }
+        /// <p>The custom action associated with the action name.</p>
         pub fn set_action_definition(
             mut self,
             input: std::option::Option<crate::model::ActionDefinition>,
@@ -895,6 +991,12 @@ pub mod action_definition {
             self.publish_metric_action = Some(input);
             self
         }
+        /// <p>Stateless inspection criteria that publishes the specified metrics to Amazon CloudWatch for the
+        /// matching packet. This setting defines a CloudWatch dimension value to be published.</p>
+        /// <p>You can pair this custom action with any of the standard stateless rule actions. For
+        /// example, you could pair this in a rule action with the standard action that forwards the
+        /// packet for stateful inspection. Then, when a packet matches the rule, Network Firewall
+        /// publishes metrics for the packet and forwards it. </p>
         pub fn set_publish_metric_action(
             mut self,
             input: std::option::Option<crate::model::PublishMetricAction>,
@@ -941,12 +1043,18 @@ pub mod publish_metric_action {
         pub(crate) dimensions: std::option::Option<std::vec::Vec<crate::model::Dimension>>,
     }
     impl Builder {
+        /// Appends an item to `dimensions`.
+        ///
+        /// To override the contents of this collection use [`set_dimensions`](Self::set_dimensions).
+        ///
+        /// <p></p>
         pub fn dimensions(mut self, input: impl Into<crate::model::Dimension>) -> Self {
             let mut v = self.dimensions.unwrap_or_default();
             v.push(input.into());
             self.dimensions = Some(v);
             self
         }
+        /// <p></p>
         pub fn set_dimensions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Dimension>>,
@@ -1004,6 +1112,7 @@ pub mod dimension {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value to use in the custom metric dimension.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -1066,6 +1175,8 @@ pub mod stateless_rule {
             self.rule_definition = Some(input);
             self
         }
+        /// <p>Defines the stateless 5-tuple packet inspection criteria and the action to take on a
+        /// packet that matches the criteria. </p>
         pub fn set_rule_definition(
             mut self,
             input: std::option::Option<crate::model::RuleDefinition>,
@@ -1089,6 +1200,18 @@ pub mod stateless_rule {
             self.priority = Some(input);
             self
         }
+        /// <p>Indicates the order in which to run this rule relative to all of the
+        /// rules that are defined for a stateless rule group. Network Firewall evaluates the rules in a
+        /// rule group starting with the lowest priority setting. You must ensure that the priority
+        /// settings are unique for the rule group. </p>
+        /// <p>Each stateless rule group uses exactly one <code>StatelessRulesAndCustomActions</code>
+        /// object, and each <code>StatelessRulesAndCustomActions</code> contains exactly one
+        /// <code>StatelessRules</code> object. To ensure unique priority settings for your rule
+        /// groups, set unique priorities for the stateless rules that you define inside any single
+        /// <code>StatelessRules</code> object.</p>
+        /// <p>You can change the priority settings of your rules at any time. To make it easier to
+        /// insert rules later, number them so there's a wide range in between, for example use 100,
+        /// 200, and so on. </p>
         pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
             self.priority = input;
             self
@@ -1179,6 +1302,7 @@ pub mod rule_definition {
             self.match_attributes = Some(input);
             self
         }
+        /// <p>Criteria for Network Firewall to use to inspect an individual packet in stateless rule inspection. Each match attributes set can include one or more items such as IP address, CIDR range, port number, protocol, and TCP flags. </p>
         pub fn set_match_attributes(
             mut self,
             input: std::option::Option<crate::model::MatchAttributes>,
@@ -1186,12 +1310,90 @@ pub mod rule_definition {
             self.match_attributes = input;
             self
         }
+        /// Appends an item to `actions`.
+        ///
+        /// To override the contents of this collection use [`set_actions`](Self::set_actions).
+        ///
+        /// <p>The actions to take on a packet that matches one of the stateless rule definition's
+        /// match attributes. You must specify a standard action and you can add custom actions. </p>
+        /// <note>
+        /// <p>Network Firewall only forwards a packet for stateful rule inspection if you specify
+        /// <code>aws:forward_to_sfe</code> for a rule that the packet matches, or if the packet
+        /// doesn't match any stateless rule and you specify <code>aws:forward_to_sfe</code> for the
+        /// <code>StatelessDefaultActions</code> setting for the <a>FirewallPolicy</a>.</p>
+        /// </note>
+        /// <p>For every rule, you must specify exactly one of the following standard actions. </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>aws:pass</b> - Discontinues all inspection of
+        /// the packet and permits it to go to its intended destination.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>aws:drop</b> - Discontinues all inspection of
+        /// the packet and blocks it from going to its intended destination.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>aws:forward_to_sfe</b> - Discontinues
+        /// stateless inspection of the packet and forwards it to the stateful rule engine for
+        /// inspection. </p>
+        /// </li>
+        /// </ul>
+        /// <p>Additionally, you can specify a custom action.
+        /// To
+        /// do this, you define a custom action by name and type, then provide the name you've assigned
+        /// to the action in this <code>Actions</code> setting. For information about the options, see
+        /// <a>CustomAction</a>. </p>
+        /// <p>To provide more than one action in this setting, separate the settings with a comma. For
+        /// example, if you have a custom <code>PublishMetrics</code> action that you've named
+        /// <code>MyMetricsAction</code>, then you could specify the standard action
+        /// <code>aws:pass</code> and the custom action with <code>[“aws:pass”,
+        /// “MyMetricsAction”]</code>. </p>
         pub fn actions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.actions.unwrap_or_default();
             v.push(input.into());
             self.actions = Some(v);
             self
         }
+        /// <p>The actions to take on a packet that matches one of the stateless rule definition's
+        /// match attributes. You must specify a standard action and you can add custom actions. </p>
+        /// <note>
+        /// <p>Network Firewall only forwards a packet for stateful rule inspection if you specify
+        /// <code>aws:forward_to_sfe</code> for a rule that the packet matches, or if the packet
+        /// doesn't match any stateless rule and you specify <code>aws:forward_to_sfe</code> for the
+        /// <code>StatelessDefaultActions</code> setting for the <a>FirewallPolicy</a>.</p>
+        /// </note>
+        /// <p>For every rule, you must specify exactly one of the following standard actions. </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>aws:pass</b> - Discontinues all inspection of
+        /// the packet and permits it to go to its intended destination.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>aws:drop</b> - Discontinues all inspection of
+        /// the packet and blocks it from going to its intended destination.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>aws:forward_to_sfe</b> - Discontinues
+        /// stateless inspection of the packet and forwards it to the stateful rule engine for
+        /// inspection. </p>
+        /// </li>
+        /// </ul>
+        /// <p>Additionally, you can specify a custom action.
+        /// To
+        /// do this, you define a custom action by name and type, then provide the name you've assigned
+        /// to the action in this <code>Actions</code> setting. For information about the options, see
+        /// <a>CustomAction</a>. </p>
+        /// <p>To provide more than one action in this setting, separate the settings with a comma. For
+        /// example, if you have a custom <code>PublishMetrics</code> action that you've named
+        /// <code>MyMetricsAction</code>, then you could specify the standard action
+        /// <code>aws:pass</code> and the custom action with <code>[“aws:pass”,
+        /// “MyMetricsAction”]</code>. </p>
         pub fn set_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1268,12 +1470,20 @@ pub mod match_attributes {
         pub(crate) tcp_flags: std::option::Option<std::vec::Vec<crate::model::TcpFlagField>>,
     }
     impl Builder {
+        /// Appends an item to `sources`.
+        ///
+        /// To override the contents of this collection use [`set_sources`](Self::set_sources).
+        ///
+        /// <p>The source IP addresses and address ranges to inspect for, in CIDR notation. If not
+        /// specified, this matches with any source address. </p>
         pub fn sources(mut self, input: impl Into<crate::model::Address>) -> Self {
             let mut v = self.sources.unwrap_or_default();
             v.push(input.into());
             self.sources = Some(v);
             self
         }
+        /// <p>The source IP addresses and address ranges to inspect for, in CIDR notation. If not
+        /// specified, this matches with any source address. </p>
         pub fn set_sources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Address>>,
@@ -1281,12 +1491,20 @@ pub mod match_attributes {
             self.sources = input;
             self
         }
+        /// Appends an item to `destinations`.
+        ///
+        /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
+        ///
+        /// <p>The destination IP addresses and address ranges to inspect for, in CIDR notation. If not
+        /// specified, this matches with any destination address. </p>
         pub fn destinations(mut self, input: impl Into<crate::model::Address>) -> Self {
             let mut v = self.destinations.unwrap_or_default();
             v.push(input.into());
             self.destinations = Some(v);
             self
         }
+        /// <p>The destination IP addresses and address ranges to inspect for, in CIDR notation. If not
+        /// specified, this matches with any destination address. </p>
         pub fn set_destinations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Address>>,
@@ -1294,12 +1512,24 @@ pub mod match_attributes {
             self.destinations = input;
             self
         }
+        /// Appends an item to `source_ports`.
+        ///
+        /// To override the contents of this collection use [`set_source_ports`](Self::set_source_ports).
+        ///
+        /// <p>The source ports to inspect for. If not specified, this matches with any source port.
+        /// This setting is only used for protocols 6 (TCP) and 17 (UDP). </p>
+        /// <p>You can specify individual ports, for example <code>1994</code> and you can specify port
+        /// ranges, for example <code>1990:1994</code>. </p>
         pub fn source_ports(mut self, input: impl Into<crate::model::PortRange>) -> Self {
             let mut v = self.source_ports.unwrap_or_default();
             v.push(input.into());
             self.source_ports = Some(v);
             self
         }
+        /// <p>The source ports to inspect for. If not specified, this matches with any source port.
+        /// This setting is only used for protocols 6 (TCP) and 17 (UDP). </p>
+        /// <p>You can specify individual ports, for example <code>1994</code> and you can specify port
+        /// ranges, for example <code>1990:1994</code>. </p>
         pub fn set_source_ports(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PortRange>>,
@@ -1307,12 +1537,24 @@ pub mod match_attributes {
             self.source_ports = input;
             self
         }
+        /// Appends an item to `destination_ports`.
+        ///
+        /// To override the contents of this collection use [`set_destination_ports`](Self::set_destination_ports).
+        ///
+        /// <p>The destination ports to inspect for. If not specified, this matches with any
+        /// destination port. This setting is only used for protocols 6 (TCP) and 17 (UDP). </p>
+        /// <p>You can specify individual ports, for example <code>1994</code> and you can specify port
+        /// ranges, for example <code>1990:1994</code>. </p>
         pub fn destination_ports(mut self, input: impl Into<crate::model::PortRange>) -> Self {
             let mut v = self.destination_ports.unwrap_or_default();
             v.push(input.into());
             self.destination_ports = Some(v);
             self
         }
+        /// <p>The destination ports to inspect for. If not specified, this matches with any
+        /// destination port. This setting is only used for protocols 6 (TCP) and 17 (UDP). </p>
+        /// <p>You can specify individual ports, for example <code>1994</code> and you can specify port
+        /// ranges, for example <code>1990:1994</code>. </p>
         pub fn set_destination_ports(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PortRange>>,
@@ -1320,22 +1562,38 @@ pub mod match_attributes {
             self.destination_ports = input;
             self
         }
+        /// Appends an item to `protocols`.
+        ///
+        /// To override the contents of this collection use [`set_protocols`](Self::set_protocols).
+        ///
+        /// <p>The protocols to inspect for, specified using each protocol's assigned internet protocol
+        /// number (IANA). If not specified, this matches with any protocol. </p>
         pub fn protocols(mut self, input: impl Into<i32>) -> Self {
             let mut v = self.protocols.unwrap_or_default();
             v.push(input.into());
             self.protocols = Some(v);
             self
         }
+        /// <p>The protocols to inspect for, specified using each protocol's assigned internet protocol
+        /// number (IANA). If not specified, this matches with any protocol. </p>
         pub fn set_protocols(mut self, input: std::option::Option<std::vec::Vec<i32>>) -> Self {
             self.protocols = input;
             self
         }
+        /// Appends an item to `tcp_flags`.
+        ///
+        /// To override the contents of this collection use [`set_tcp_flags`](Self::set_tcp_flags).
+        ///
+        /// <p>The TCP flags and masks to inspect for. If not specified, this matches with any
+        /// settings. This setting is only used for protocol 6 (TCP).</p>
         pub fn tcp_flags(mut self, input: impl Into<crate::model::TcpFlagField>) -> Self {
             let mut v = self.tcp_flags.unwrap_or_default();
             v.push(input.into());
             self.tcp_flags = Some(v);
             self
         }
+        /// <p>The TCP flags and masks to inspect for. If not specified, this matches with any
+        /// settings. This setting is only used for protocol 6 (TCP).</p>
         pub fn set_tcp_flags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TcpFlagField>>,
@@ -1399,12 +1657,36 @@ pub mod tcp_flag_field {
         pub(crate) masks: std::option::Option<std::vec::Vec<crate::model::TcpFlag>>,
     }
     impl Builder {
+        /// Appends an item to `flags`.
+        ///
+        /// To override the contents of this collection use [`set_flags`](Self::set_flags).
+        ///
+        /// <p>Used in conjunction with the <code>Masks</code> setting to define the flags that must be set and flags that must not be set in order for the packet to match. This setting can only specify values that are also specified in the <code>Masks</code> setting.</p>
+        /// <p>For the flags that are specified in the masks setting, the following must be true for the packet to match: </p>
+        /// <ul>
+        /// <li>
+        /// <p>The ones that are set in this flags setting must be set in the packet. </p>
+        /// </li>
+        /// <li>
+        /// <p>The ones that are not set in this flags setting must also not be set in the packet. </p>
+        /// </li>
+        /// </ul>
         pub fn flags(mut self, input: impl Into<crate::model::TcpFlag>) -> Self {
             let mut v = self.flags.unwrap_or_default();
             v.push(input.into());
             self.flags = Some(v);
             self
         }
+        /// <p>Used in conjunction with the <code>Masks</code> setting to define the flags that must be set and flags that must not be set in order for the packet to match. This setting can only specify values that are also specified in the <code>Masks</code> setting.</p>
+        /// <p>For the flags that are specified in the masks setting, the following must be true for the packet to match: </p>
+        /// <ul>
+        /// <li>
+        /// <p>The ones that are set in this flags setting must be set in the packet. </p>
+        /// </li>
+        /// <li>
+        /// <p>The ones that are not set in this flags setting must also not be set in the packet. </p>
+        /// </li>
+        /// </ul>
         pub fn set_flags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TcpFlag>>,
@@ -1412,12 +1694,18 @@ pub mod tcp_flag_field {
             self.flags = input;
             self
         }
+        /// Appends an item to `masks`.
+        ///
+        /// To override the contents of this collection use [`set_masks`](Self::set_masks).
+        ///
+        /// <p>The set of flags to consider in the inspection. To inspect all flags in the valid values list, leave this with no setting.</p>
         pub fn masks(mut self, input: impl Into<crate::model::TcpFlag>) -> Self {
             let mut v = self.masks.unwrap_or_default();
             v.push(input.into());
             self.masks = Some(v);
             self
         }
+        /// <p>The set of flags to consider in the inspection. To inspect all flags in the valid values list, leave this with no setting.</p>
         pub fn set_masks(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TcpFlag>>,
@@ -1441,6 +1729,7 @@ impl TcpFlagField {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1452,13 +1741,21 @@ impl TcpFlagField {
     std::hash::Hash,
 )]
 pub enum TcpFlag {
+    #[allow(missing_docs)] // documentation missing in model
     Ack,
+    #[allow(missing_docs)] // documentation missing in model
     Cwr,
+    #[allow(missing_docs)] // documentation missing in model
     Ece,
+    #[allow(missing_docs)] // documentation missing in model
     Fin,
+    #[allow(missing_docs)] // documentation missing in model
     Psh,
+    #[allow(missing_docs)] // documentation missing in model
     Rst,
+    #[allow(missing_docs)] // documentation missing in model
     Syn,
+    #[allow(missing_docs)] // documentation missing in model
     Urg,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1486,6 +1783,7 @@ impl std::str::FromStr for TcpFlag {
     }
 }
 impl TcpFlag {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TcpFlag::Ack => "ACK",
@@ -1499,6 +1797,7 @@ impl TcpFlag {
             TcpFlag::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ACK", "CWR", "ECE", "FIN", "PSH", "RST", "SYN", "URG"]
     }
@@ -1546,6 +1845,8 @@ pub mod port_range {
             self.from_port = Some(input);
             self
         }
+        /// <p>The lower limit of the port range. This must be less than or equal to the
+        /// <code>ToPort</code> specification. </p>
         pub fn set_from_port(mut self, input: std::option::Option<i32>) -> Self {
             self.from_port = input;
             self
@@ -1556,6 +1857,8 @@ pub mod port_range {
             self.to_port = Some(input);
             self
         }
+        /// <p>The upper limit of the port range. This must be greater than or equal to the
+        /// <code>FromPort</code> specification. </p>
         pub fn set_to_port(mut self, input: std::option::Option<i32>) -> Self {
             self.to_port = input;
             self
@@ -1627,6 +1930,18 @@ pub mod address {
             self.address_definition = Some(input.into());
             self
         }
+        /// <p>Specify an IP address or a block of IP addresses in Classless Inter-Domain Routing (CIDR) notation. Network Firewall supports all address ranges for IPv4. </p>
+        /// <p>Examples: </p>
+        /// <ul>
+        /// <li>
+        /// <p>To configure Network Firewall to inspect for the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>To configure Network Firewall to inspect for IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
+        /// Inter-Domain Routing</a>.</p>
         pub fn set_address_definition(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1739,6 +2054,32 @@ pub mod stateful_rule {
             self.action = Some(input);
             self
         }
+        /// <p>Defines what Network Firewall should do with the packets in a traffic flow when the flow
+        /// matches the stateful rule criteria. For all actions, Network Firewall performs the specified
+        /// action and discontinues stateful inspection of the traffic flow. </p>
+        /// <p>The actions for a stateful rule are defined as follows: </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>PASS</b> - Permits the packets to go to the
+        /// intended destination.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>DROP</b> - Blocks the packets from going to
+        /// the intended destination and sends an alert log message, if alert logging is configured in the <a>Firewall</a>
+        /// <a>LoggingConfiguration</a>. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>ALERT</b> - Permits the packets to go to the
+        /// intended destination and sends an alert log message, if alert logging is configured in the <a>Firewall</a>
+        /// <a>LoggingConfiguration</a>. </p>
+        /// <p>You can use this action to test a rule that you intend to use to drop traffic. You
+        /// can enable the rule with <code>ALERT</code> action, verify in the logs that the rule
+        /// is filtering as you want, then change the action to <code>DROP</code>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_action(
             mut self,
             input: std::option::Option<crate::model::StatefulAction>,
@@ -1752,16 +2093,24 @@ pub mod stateful_rule {
             self.header = Some(input);
             self
         }
+        /// <p>The stateful inspection criteria for this rule, used to inspect traffic flows.
+        /// </p>
         pub fn set_header(mut self, input: std::option::Option<crate::model::Header>) -> Self {
             self.header = input;
             self
         }
+        /// Appends an item to `rule_options`.
+        ///
+        /// To override the contents of this collection use [`set_rule_options`](Self::set_rule_options).
+        ///
+        /// <p>Additional options for the rule. These are the Suricata <code>RuleOptions</code> settings.</p>
         pub fn rule_options(mut self, input: impl Into<crate::model::RuleOption>) -> Self {
             let mut v = self.rule_options.unwrap_or_default();
             v.push(input.into());
             self.rule_options = Some(v);
             self
         }
+        /// <p>Additional options for the rule. These are the Suricata <code>RuleOptions</code> settings.</p>
         pub fn set_rule_options(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RuleOption>>,
@@ -1818,16 +2167,23 @@ pub mod rule_option {
             self.keyword = Some(input.into());
             self
         }
+        /// <p></p>
         pub fn set_keyword(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.keyword = input;
             self
         }
+        /// Appends an item to `settings`.
+        ///
+        /// To override the contents of this collection use [`set_settings`](Self::set_settings).
+        ///
+        /// <p></p>
         pub fn settings(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.settings.unwrap_or_default();
             v.push(input.into());
             self.settings = Some(v);
             self
         }
+        /// <p></p>
         pub fn set_settings(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1936,6 +2292,7 @@ pub mod header {
             self.protocol = Some(input);
             self
         }
+        /// <p>The protocol to inspect for. To specify all, you can use <code>IP</code>, because all traffic on AWS and on the internet is IP.</p>
         pub fn set_protocol(
             mut self,
             input: std::option::Option<crate::model::StatefulRuleProtocol>,
@@ -1961,6 +2318,20 @@ pub mod header {
             self.source = Some(input.into());
             self
         }
+        /// <p>The source IP address or address range to inspect for, in CIDR notation.
+        /// To match with any address, specify <code>ANY</code>. </p>
+        /// <p>Specify an IP address or a block of IP addresses in Classless Inter-Domain Routing (CIDR) notation. Network Firewall supports all address ranges for IPv4. </p>
+        /// <p>Examples: </p>
+        /// <ul>
+        /// <li>
+        /// <p>To configure Network Firewall to inspect for the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>To configure Network Firewall to inspect for IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
+        /// Inter-Domain Routing</a>.</p>
         pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source = input;
             self
@@ -1973,6 +2344,10 @@ pub mod header {
             self.source_port = Some(input.into());
             self
         }
+        /// <p>The source port to inspect for. You can specify an individual port, for
+        /// example <code>1994</code> and you can specify a port
+        /// range, for example <code>1990:1994</code>.
+        /// To match with any port, specify <code>ANY</code>. </p>
         pub fn set_source_port(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source_port = input;
             self
@@ -1985,6 +2360,10 @@ pub mod header {
             self.direction = Some(input);
             self
         }
+        /// <p>The direction of traffic flow to inspect. If set to <code>ANY</code>, the inspection
+        /// matches bidirectional traffic, both from the source to the destination and from the
+        /// destination to the source. If set to <code>FORWARD</code>, the inspection only matches
+        /// traffic going from the source to the destination. </p>
         pub fn set_direction(
             mut self,
             input: std::option::Option<crate::model::StatefulRuleDirection>,
@@ -2010,6 +2389,20 @@ pub mod header {
             self.destination = Some(input.into());
             self
         }
+        /// <p>The destination IP address or address range to inspect for, in CIDR notation.
+        /// To match with any address, specify <code>ANY</code>. </p>
+        /// <p>Specify an IP address or a block of IP addresses in Classless Inter-Domain Routing (CIDR) notation. Network Firewall supports all address ranges for IPv4. </p>
+        /// <p>Examples: </p>
+        /// <ul>
+        /// <li>
+        /// <p>To configure Network Firewall to inspect for the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>To configure Network Firewall to inspect for IP addresses from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
+        /// Inter-Domain Routing</a>.</p>
         pub fn set_destination(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.destination = input;
             self
@@ -2022,6 +2415,10 @@ pub mod header {
             self.destination_port = Some(input.into());
             self
         }
+        /// <p>The destination port to inspect for. You can specify an individual port, for
+        /// example <code>1994</code> and you can specify
+        /// a port range, for example <code>1990:1994</code>.
+        /// To match with any port, specify <code>ANY</code>. </p>
         pub fn set_destination_port(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2049,6 +2446,7 @@ impl Header {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2060,7 +2458,9 @@ impl Header {
     std::hash::Hash,
 )]
 pub enum StatefulRuleDirection {
+    #[allow(missing_docs)] // documentation missing in model
     Any,
+    #[allow(missing_docs)] // documentation missing in model
     Forward,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2082,6 +2482,7 @@ impl std::str::FromStr for StatefulRuleDirection {
     }
 }
 impl StatefulRuleDirection {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StatefulRuleDirection::Any => "ANY",
@@ -2089,6 +2490,7 @@ impl StatefulRuleDirection {
             StatefulRuleDirection::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ANY", "FORWARD"]
     }
@@ -2099,6 +2501,7 @@ impl AsRef<str> for StatefulRuleDirection {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2110,24 +2513,43 @@ impl AsRef<str> for StatefulRuleDirection {
     std::hash::Hash,
 )]
 pub enum StatefulRuleProtocol {
+    #[allow(missing_docs)] // documentation missing in model
     Dcerpc,
+    #[allow(missing_docs)] // documentation missing in model
     Dhcp,
+    #[allow(missing_docs)] // documentation missing in model
     Dns,
+    #[allow(missing_docs)] // documentation missing in model
     Ftp,
+    #[allow(missing_docs)] // documentation missing in model
     Http,
+    #[allow(missing_docs)] // documentation missing in model
     Icmp,
+    #[allow(missing_docs)] // documentation missing in model
     Ikev2,
+    #[allow(missing_docs)] // documentation missing in model
     Imap,
+    #[allow(missing_docs)] // documentation missing in model
     Any,
+    #[allow(missing_docs)] // documentation missing in model
     Krb5,
+    #[allow(missing_docs)] // documentation missing in model
     Msn,
+    #[allow(missing_docs)] // documentation missing in model
     Ntp,
+    #[allow(missing_docs)] // documentation missing in model
     Smb,
+    #[allow(missing_docs)] // documentation missing in model
     Smtp,
+    #[allow(missing_docs)] // documentation missing in model
     Ssh,
+    #[allow(missing_docs)] // documentation missing in model
     Tcp,
+    #[allow(missing_docs)] // documentation missing in model
     Tftp,
+    #[allow(missing_docs)] // documentation missing in model
     Tls,
+    #[allow(missing_docs)] // documentation missing in model
     Udp,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2166,6 +2588,7 @@ impl std::str::FromStr for StatefulRuleProtocol {
     }
 }
 impl StatefulRuleProtocol {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StatefulRuleProtocol::Dcerpc => "DCERPC",
@@ -2190,6 +2613,7 @@ impl StatefulRuleProtocol {
             StatefulRuleProtocol::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "DCERPC", "DHCP", "DNS", "FTP", "HTTP", "ICMP", "IKEV2", "IMAP", "IP", "KRB5", "MSN",
@@ -2203,6 +2627,7 @@ impl AsRef<str> for StatefulRuleProtocol {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2214,8 +2639,11 @@ impl AsRef<str> for StatefulRuleProtocol {
     std::hash::Hash,
 )]
 pub enum StatefulAction {
+    #[allow(missing_docs)] // documentation missing in model
     Alert,
+    #[allow(missing_docs)] // documentation missing in model
     Drop,
+    #[allow(missing_docs)] // documentation missing in model
     Pass,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2238,6 +2666,7 @@ impl std::str::FromStr for StatefulAction {
     }
 }
 impl StatefulAction {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StatefulAction::Alert => "ALERT",
@@ -2246,6 +2675,7 @@ impl StatefulAction {
             StatefulAction::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ALERT", "DROP", "PASS"]
     }
@@ -2298,12 +2728,36 @@ pub mod rules_source_list {
         pub(crate) generated_rules_type: std::option::Option<crate::model::GeneratedRulesType>,
     }
     impl Builder {
+        /// Appends an item to `targets`.
+        ///
+        /// To override the contents of this collection use [`set_targets`](Self::set_targets).
+        ///
+        /// <p>The domains that you want to inspect for in your traffic flows. To provide multiple
+        /// domains, separate them with commas. Valid domain specifications are the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Explicit names. For example, <code>abc.example.com</code> matches only the domain <code>abc.example.com</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>Names that use a domain wildcard, which you indicate with an initial '<code>.</code>'. For example,<code>.example.com</code> matches <code>example.com</code> and matches all subdomains of <code>example.com</code>, such as <code>abc.example.com</code> and <code>www.example.com</code>. </p>
+        /// </li>
+        /// </ul>
         pub fn targets(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.targets.unwrap_or_default();
             v.push(input.into());
             self.targets = Some(v);
             self
         }
+        /// <p>The domains that you want to inspect for in your traffic flows. To provide multiple
+        /// domains, separate them with commas. Valid domain specifications are the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Explicit names. For example, <code>abc.example.com</code> matches only the domain <code>abc.example.com</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>Names that use a domain wildcard, which you indicate with an initial '<code>.</code>'. For example,<code>.example.com</code> matches <code>example.com</code> and matches all subdomains of <code>example.com</code>, such as <code>abc.example.com</code> and <code>www.example.com</code>. </p>
+        /// </li>
+        /// </ul>
         pub fn set_targets(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2311,12 +2765,18 @@ pub mod rules_source_list {
             self.targets = input;
             self
         }
+        /// Appends an item to `target_types`.
+        ///
+        /// To override the contents of this collection use [`set_target_types`](Self::set_target_types).
+        ///
+        /// <p>The protocols you want to inspect. Specify <code>TLS_SNI</code> for <code>HTTPS</code>. Specify <code>HTTP_HOST</code> for <code>HTTP</code>. You can specify either or both. </p>
         pub fn target_types(mut self, input: impl Into<crate::model::TargetType>) -> Self {
             let mut v = self.target_types.unwrap_or_default();
             v.push(input.into());
             self.target_types = Some(v);
             self
         }
+        /// <p>The protocols you want to inspect. Specify <code>TLS_SNI</code> for <code>HTTPS</code>. Specify <code>HTTP_HOST</code> for <code>HTTP</code>. You can specify either or both. </p>
         pub fn set_target_types(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TargetType>>,
@@ -2329,6 +2789,7 @@ pub mod rules_source_list {
             self.generated_rules_type = Some(input);
             self
         }
+        /// <p>Whether you want to allow or deny access to the domains in your target list.</p>
         pub fn set_generated_rules_type(
             mut self,
             input: std::option::Option<crate::model::GeneratedRulesType>,
@@ -2353,6 +2814,7 @@ impl RulesSourceList {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2364,7 +2826,9 @@ impl RulesSourceList {
     std::hash::Hash,
 )]
 pub enum GeneratedRulesType {
+    #[allow(missing_docs)] // documentation missing in model
     Allowlist,
+    #[allow(missing_docs)] // documentation missing in model
     Denylist,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2386,6 +2850,7 @@ impl std::str::FromStr for GeneratedRulesType {
     }
 }
 impl GeneratedRulesType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             GeneratedRulesType::Allowlist => "ALLOWLIST",
@@ -2393,6 +2858,7 @@ impl GeneratedRulesType {
             GeneratedRulesType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ALLOWLIST", "DENYLIST"]
     }
@@ -2403,6 +2869,7 @@ impl AsRef<str> for GeneratedRulesType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2414,7 +2881,9 @@ impl AsRef<str> for GeneratedRulesType {
     std::hash::Hash,
 )]
 pub enum TargetType {
+    #[allow(missing_docs)] // documentation missing in model
     HttpHost,
+    #[allow(missing_docs)] // documentation missing in model
     TlsSni,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2436,6 +2905,7 @@ impl std::str::FromStr for TargetType {
     }
 }
 impl TargetType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TargetType::HttpHost => "HTTP_HOST",
@@ -2443,6 +2913,7 @@ impl TargetType {
             TargetType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["HTTP_HOST", "TLS_SNI"]
     }
@@ -2487,6 +2958,11 @@ pub mod rule_variables {
         >,
     }
     impl Builder {
+        /// Adds a key-value pair to `ip_sets`.
+        ///
+        /// To override the contents of this collection use [`set_ip_sets`](Self::set_ip_sets).
+        ///
+        /// <p>A list of IP addresses and address ranges, in CIDR notation. </p>
         pub fn ip_sets(
             mut self,
             k: impl Into<std::string::String>,
@@ -2497,6 +2973,7 @@ pub mod rule_variables {
             self.ip_sets = Some(hash_map);
             self
         }
+        /// <p>A list of IP addresses and address ranges, in CIDR notation. </p>
         pub fn set_ip_sets(
             mut self,
             input: std::option::Option<
@@ -2506,6 +2983,11 @@ pub mod rule_variables {
             self.ip_sets = input;
             self
         }
+        /// Adds a key-value pair to `port_sets`.
+        ///
+        /// To override the contents of this collection use [`set_port_sets`](Self::set_port_sets).
+        ///
+        /// <p>A list of port ranges. </p>
         pub fn port_sets(
             mut self,
             k: impl Into<std::string::String>,
@@ -2516,6 +2998,7 @@ pub mod rule_variables {
             self.port_sets = Some(hash_map);
             self
         }
+        /// <p>A list of port ranges. </p>
         pub fn set_port_sets(
             mut self,
             input: std::option::Option<
@@ -2565,12 +3048,20 @@ pub mod port_set {
         pub(crate) definition: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `definition`.
+        ///
+        /// To override the contents of this collection use [`set_definition`](Self::set_definition).
+        ///
+        /// <p>The set of port ranges.
+        /// </p>
         pub fn definition(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.definition.unwrap_or_default();
             v.push(input.into());
             self.definition = Some(v);
             self
         }
+        /// <p>The set of port ranges.
+        /// </p>
         pub fn set_definition(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2598,6 +3089,7 @@ impl PortSet {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IpSet {
     /// <p>The list of IP addresses and address ranges, in CIDR notation.
+    ///
     /// </p>
     pub definition: std::option::Option<std::vec::Vec<std::string::String>>,
 }
@@ -2617,12 +3109,22 @@ pub mod ip_set {
         pub(crate) definition: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `definition`.
+        ///
+        /// To override the contents of this collection use [`set_definition`](Self::set_definition).
+        ///
+        /// <p>The list of IP addresses and address ranges, in CIDR notation.
+        ///
+        /// </p>
         pub fn definition(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.definition.unwrap_or_default();
             v.push(input.into());
             self.definition = Some(v);
             self
         }
+        /// <p>The list of IP addresses and address ranges, in CIDR notation.
+        ///
+        /// </p>
         pub fn set_definition(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2671,6 +3173,12 @@ pub mod logging_configuration {
             std::option::Option<std::vec::Vec<crate::model::LogDestinationConfig>>,
     }
     impl Builder {
+        /// Appends an item to `log_destination_configs`.
+        ///
+        /// To override the contents of this collection use [`set_log_destination_configs`](Self::set_log_destination_configs).
+        ///
+        /// <p>Defines the logging destinations for the logs for a firewall. Network Firewall generates
+        /// logs for stateful rule groups. </p>
         pub fn log_destination_configs(
             mut self,
             input: impl Into<crate::model::LogDestinationConfig>,
@@ -2680,6 +3188,8 @@ pub mod logging_configuration {
             self.log_destination_configs = Some(v);
             self
         }
+        /// <p>Defines the logging destinations for the logs for a firewall. Network Firewall generates
+        /// logs for stateful rule groups. </p>
         pub fn set_log_destination_configs(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LogDestinationConfig>>,
@@ -2779,6 +3289,8 @@ pub mod log_destination_config {
             self.log_type = Some(input);
             self
         }
+        /// <p>The type of log to send. Alert logs report traffic that matches a <a>StatefulRule</a> with an action setting that sends an alert log message. Flow logs are
+        /// standard network traffic flow logs. </p>
         pub fn set_log_type(mut self, input: std::option::Option<crate::model::LogType>) -> Self {
             self.log_type = input;
             self
@@ -2789,6 +3301,8 @@ pub mod log_destination_config {
             self.log_destination_type = Some(input);
             self
         }
+        /// <p>The type of storage destination to send these logs to. You can send logs to an Amazon S3 bucket,
+        /// a CloudWatch log group, or a Kinesis Data Firehose delivery stream.</p>
         pub fn set_log_destination_type(
             mut self,
             input: std::option::Option<crate::model::LogDestinationType>,
@@ -2796,6 +3310,41 @@ pub mod log_destination_config {
             self.log_destination_type = input;
             self
         }
+        /// Adds a key-value pair to `log_destination`.
+        ///
+        /// To override the contents of this collection use [`set_log_destination`](Self::set_log_destination).
+        ///
+        /// <p>The named location for the logs, provided in a key:value mapping that is specific to the
+        /// chosen destination type. </p>
+        /// <ul>
+        /// <li>
+        /// <p>For an Amazon S3 bucket, provide the name of the bucket, with key <code>bucketName</code>,
+        /// and optionally provide a prefix, with key <code>prefix</code>. The following example
+        /// specifies an Amazon S3 bucket named
+        /// <code>DOC-EXAMPLE-BUCKET</code> and the prefix <code>alerts</code>: </p>
+        /// <p>
+        /// <code>"LogDestination": { "bucketName": "DOC-EXAMPLE-BUCKET", "prefix": "alerts"
+        /// }</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>For a CloudWatch log group, provide the name of the CloudWatch log group, with key
+        /// <code>logGroup</code>. The following example specifies a log group named
+        /// <code>alert-log-group</code>: </p>
+        /// <p>
+        /// <code>"LogDestination": { "logGroup": "alert-log-group" }</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>For a Kinesis Data Firehose delivery stream, provide the name of the delivery stream, with key
+        /// <code>deliveryStream</code>. The following example specifies a delivery stream
+        /// named <code>alert-delivery-stream</code>: </p>
+        /// <p>
+        /// <code>"LogDestination": { "deliveryStream": "alert-delivery-stream"
+        /// }</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn log_destination(
             mut self,
             k: impl Into<std::string::String>,
@@ -2806,6 +3355,37 @@ pub mod log_destination_config {
             self.log_destination = Some(hash_map);
             self
         }
+        /// <p>The named location for the logs, provided in a key:value mapping that is specific to the
+        /// chosen destination type. </p>
+        /// <ul>
+        /// <li>
+        /// <p>For an Amazon S3 bucket, provide the name of the bucket, with key <code>bucketName</code>,
+        /// and optionally provide a prefix, with key <code>prefix</code>. The following example
+        /// specifies an Amazon S3 bucket named
+        /// <code>DOC-EXAMPLE-BUCKET</code> and the prefix <code>alerts</code>: </p>
+        /// <p>
+        /// <code>"LogDestination": { "bucketName": "DOC-EXAMPLE-BUCKET", "prefix": "alerts"
+        /// }</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>For a CloudWatch log group, provide the name of the CloudWatch log group, with key
+        /// <code>logGroup</code>. The following example specifies a log group named
+        /// <code>alert-log-group</code>: </p>
+        /// <p>
+        /// <code>"LogDestination": { "logGroup": "alert-log-group" }</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>For a Kinesis Data Firehose delivery stream, provide the name of the delivery stream, with key
+        /// <code>deliveryStream</code>. The following example specifies a delivery stream
+        /// named <code>alert-delivery-stream</code>: </p>
+        /// <p>
+        /// <code>"LogDestination": { "deliveryStream": "alert-delivery-stream"
+        /// }</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_log_destination(
             mut self,
             input: std::option::Option<
@@ -2832,6 +3412,7 @@ impl LogDestinationConfig {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2843,8 +3424,11 @@ impl LogDestinationConfig {
     std::hash::Hash,
 )]
 pub enum LogDestinationType {
+    #[allow(missing_docs)] // documentation missing in model
     CloudwatchLogs,
+    #[allow(missing_docs)] // documentation missing in model
     KinesisDataFirehose,
+    #[allow(missing_docs)] // documentation missing in model
     S3,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2867,6 +3451,7 @@ impl std::str::FromStr for LogDestinationType {
     }
 }
 impl LogDestinationType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LogDestinationType::CloudwatchLogs => "CloudWatchLogs",
@@ -2875,6 +3460,7 @@ impl LogDestinationType {
             LogDestinationType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CloudWatchLogs", "KinesisDataFirehose", "S3"]
     }
@@ -2885,6 +3471,7 @@ impl AsRef<str> for LogDestinationType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2896,7 +3483,9 @@ impl AsRef<str> for LogDestinationType {
     std::hash::Hash,
 )]
 pub enum LogType {
+    #[allow(missing_docs)] // documentation missing in model
     Alert,
+    #[allow(missing_docs)] // documentation missing in model
     Flow,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2918,6 +3507,7 @@ impl std::str::FromStr for LogType {
     }
 }
 impl LogType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LogType::Alert => "ALERT",
@@ -2925,6 +3515,7 @@ impl LogType {
             LogType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ALERT", "FLOW"]
     }
@@ -3008,6 +3599,7 @@ pub mod firewall_policy_response {
             self.firewall_policy_name = Some(input.into());
             self
         }
+        /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
         pub fn set_firewall_policy_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3025,6 +3617,12 @@ pub mod firewall_policy_response {
             self.firewall_policy_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
+        /// <note>
+        /// <p>If this response is for a create request that had <code>DryRun</code> set to
+        /// <code>TRUE</code>, then this ARN is a placeholder that isn't attached to a valid
+        /// resource.</p>
+        /// </note>
         pub fn set_firewall_policy_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3037,6 +3635,7 @@ pub mod firewall_policy_response {
             self.firewall_policy_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the firewall policy. </p>
         pub fn set_firewall_policy_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3049,6 +3648,7 @@ pub mod firewall_policy_response {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description of the firewall policy.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -3060,6 +3660,9 @@ pub mod firewall_policy_response {
             self.firewall_policy_status = Some(input);
             self
         }
+        /// <p>The current status of the firewall policy. You can retrieve this for a firewall policy
+        /// by calling <a>DescribeFirewallPolicy</a> and providing the firewall policy's
+        /// name or ARN.</p>
         pub fn set_firewall_policy_status(
             mut self,
             input: std::option::Option<crate::model::ResourceStatus>,
@@ -3067,12 +3670,18 @@ pub mod firewall_policy_response {
             self.firewall_policy_status = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The key:value pairs to associate with the resource.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The key:value pairs to associate with the resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -3085,6 +3694,7 @@ pub mod firewall_policy_response {
             self.consumed_stateless_rule_capacity = Some(input);
             self
         }
+        /// <p>The number of capacity units currently consumed by the policy's stateless rules.</p>
         pub fn set_consumed_stateless_rule_capacity(
             mut self,
             input: std::option::Option<i32>,
@@ -3097,6 +3707,7 @@ pub mod firewall_policy_response {
             self.consumed_stateful_rule_capacity = Some(input);
             self
         }
+        /// <p>The number of capacity units currently consumed by the policy's stateful rules.</p>
         pub fn set_consumed_stateful_rule_capacity(
             mut self,
             input: std::option::Option<i32>,
@@ -3109,6 +3720,7 @@ pub mod firewall_policy_response {
             self.number_of_associations = Some(input);
             self
         }
+        /// <p>The number of firewalls that are associated with this firewall policy.</p>
         pub fn set_number_of_associations(mut self, input: std::option::Option<i32>) -> Self {
             self.number_of_associations = input;
             self
@@ -3227,6 +3839,12 @@ pub mod firewall_policy {
             std::option::Option<crate::model::StatefulEngineOptions>,
     }
     impl Builder {
+        /// Appends an item to `stateless_rule_group_references`.
+        ///
+        /// To override the contents of this collection use [`set_stateless_rule_group_references`](Self::set_stateless_rule_group_references).
+        ///
+        /// <p>References to the stateless rule groups that are used in the policy. These define the
+        /// matching criteria in stateless rules. </p>
         pub fn stateless_rule_group_references(
             mut self,
             input: impl Into<crate::model::StatelessRuleGroupReference>,
@@ -3236,6 +3854,8 @@ pub mod firewall_policy {
             self.stateless_rule_group_references = Some(v);
             self
         }
+        /// <p>References to the stateless rule groups that are used in the policy. These define the
+        /// matching criteria in stateless rules. </p>
         pub fn set_stateless_rule_group_references(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::StatelessRuleGroupReference>>,
@@ -3243,12 +3863,34 @@ pub mod firewall_policy {
             self.stateless_rule_group_references = input;
             self
         }
+        /// Appends an item to `stateless_default_actions`.
+        ///
+        /// To override the contents of this collection use [`set_stateless_default_actions`](Self::set_stateless_default_actions).
+        ///
+        /// <p>The actions to take on a packet if it doesn't match any of the stateless rules in the
+        /// policy. If you want non-matching packets to be forwarded for stateful inspection, specify
+        /// <code>aws:forward_to_sfe</code>. </p>
+        /// <p>You must specify one of the standard actions: <code>aws:pass</code>,
+        /// <code>aws:drop</code>, or <code>aws:forward_to_sfe</code>. In addition, you can specify
+        /// custom actions that are compatible with your standard section choice.</p>
+        /// <p>For example, you could specify <code>["aws:pass"]</code> or you could specify
+        /// <code>["aws:pass", “customActionName”]</code>. For information about compatibility, see
+        /// the custom action descriptions under <a>CustomAction</a>.</p>
         pub fn stateless_default_actions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.stateless_default_actions.unwrap_or_default();
             v.push(input.into());
             self.stateless_default_actions = Some(v);
             self
         }
+        /// <p>The actions to take on a packet if it doesn't match any of the stateless rules in the
+        /// policy. If you want non-matching packets to be forwarded for stateful inspection, specify
+        /// <code>aws:forward_to_sfe</code>. </p>
+        /// <p>You must specify one of the standard actions: <code>aws:pass</code>,
+        /// <code>aws:drop</code>, or <code>aws:forward_to_sfe</code>. In addition, you can specify
+        /// custom actions that are compatible with your standard section choice.</p>
+        /// <p>For example, you could specify <code>["aws:pass"]</code> or you could specify
+        /// <code>["aws:pass", “customActionName”]</code>. For information about compatibility, see
+        /// the custom action descriptions under <a>CustomAction</a>.</p>
         pub fn set_stateless_default_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3256,6 +3898,20 @@ pub mod firewall_policy {
             self.stateless_default_actions = input;
             self
         }
+        /// Appends an item to `stateless_fragment_default_actions`.
+        ///
+        /// To override the contents of this collection use [`set_stateless_fragment_default_actions`](Self::set_stateless_fragment_default_actions).
+        ///
+        /// <p>The actions to take on a fragmented UDP packet if it doesn't match any of the stateless
+        /// rules in the policy. Network Firewall only manages UDP packet fragments and silently drops packet fragments for other protocols.
+        /// If you want non-matching fragmented UDP packets to be forwarded for
+        /// stateful inspection, specify <code>aws:forward_to_sfe</code>. </p>
+        /// <p>You must specify one of the standard actions: <code>aws:pass</code>,
+        /// <code>aws:drop</code>, or <code>aws:forward_to_sfe</code>. In addition, you can specify
+        /// custom actions that are compatible with your standard section choice.</p>
+        /// <p>For example, you could specify <code>["aws:pass"]</code> or you could specify
+        /// <code>["aws:pass", “customActionName”]</code>. For information about compatibility, see
+        /// the custom action descriptions under <a>CustomAction</a>.</p>
         pub fn stateless_fragment_default_actions(
             mut self,
             input: impl Into<std::string::String>,
@@ -3265,6 +3921,16 @@ pub mod firewall_policy {
             self.stateless_fragment_default_actions = Some(v);
             self
         }
+        /// <p>The actions to take on a fragmented UDP packet if it doesn't match any of the stateless
+        /// rules in the policy. Network Firewall only manages UDP packet fragments and silently drops packet fragments for other protocols.
+        /// If you want non-matching fragmented UDP packets to be forwarded for
+        /// stateful inspection, specify <code>aws:forward_to_sfe</code>. </p>
+        /// <p>You must specify one of the standard actions: <code>aws:pass</code>,
+        /// <code>aws:drop</code>, or <code>aws:forward_to_sfe</code>. In addition, you can specify
+        /// custom actions that are compatible with your standard section choice.</p>
+        /// <p>For example, you could specify <code>["aws:pass"]</code> or you could specify
+        /// <code>["aws:pass", “customActionName”]</code>. For information about compatibility, see
+        /// the custom action descriptions under <a>CustomAction</a>.</p>
         pub fn set_stateless_fragment_default_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3272,6 +3938,13 @@ pub mod firewall_policy {
             self.stateless_fragment_default_actions = input;
             self
         }
+        /// Appends an item to `stateless_custom_actions`.
+        ///
+        /// To override the contents of this collection use [`set_stateless_custom_actions`](Self::set_stateless_custom_actions).
+        ///
+        /// <p>The custom action definitions that are available for use in the firewall policy's
+        /// <code>StatelessDefaultActions</code> setting. You name each custom action that you
+        /// define, and then you can use it by name in your default actions specifications.</p>
         pub fn stateless_custom_actions(
             mut self,
             input: impl Into<crate::model::CustomAction>,
@@ -3281,6 +3954,9 @@ pub mod firewall_policy {
             self.stateless_custom_actions = Some(v);
             self
         }
+        /// <p>The custom action definitions that are available for use in the firewall policy's
+        /// <code>StatelessDefaultActions</code> setting. You name each custom action that you
+        /// define, and then you can use it by name in your default actions specifications.</p>
         pub fn set_stateless_custom_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CustomAction>>,
@@ -3288,6 +3964,12 @@ pub mod firewall_policy {
             self.stateless_custom_actions = input;
             self
         }
+        /// Appends an item to `stateful_rule_group_references`.
+        ///
+        /// To override the contents of this collection use [`set_stateful_rule_group_references`](Self::set_stateful_rule_group_references).
+        ///
+        /// <p>References to the stateful rule groups that are used in the policy. These define the
+        /// inspection criteria in stateful rules. </p>
         pub fn stateful_rule_group_references(
             mut self,
             input: impl Into<crate::model::StatefulRuleGroupReference>,
@@ -3297,6 +3979,8 @@ pub mod firewall_policy {
             self.stateful_rule_group_references = Some(v);
             self
         }
+        /// <p>References to the stateful rule groups that are used in the policy. These define the
+        /// inspection criteria in stateful rules. </p>
         pub fn set_stateful_rule_group_references(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::StatefulRuleGroupReference>>,
@@ -3304,12 +3988,18 @@ pub mod firewall_policy {
             self.stateful_rule_group_references = input;
             self
         }
+        /// Appends an item to `stateful_default_actions`.
+        ///
+        /// To override the contents of this collection use [`set_stateful_default_actions`](Self::set_stateful_default_actions).
+        ///
+        /// <p>The default actions to take on a packet that doesn't match any stateful rules.</p>
         pub fn stateful_default_actions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.stateful_default_actions.unwrap_or_default();
             v.push(input.into());
             self.stateful_default_actions = Some(v);
             self
         }
+        /// <p>The default actions to take on a packet that doesn't match any stateful rules.</p>
         pub fn set_stateful_default_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3326,6 +4016,8 @@ pub mod firewall_policy {
             self.stateful_engine_options = Some(input);
             self
         }
+        /// <p>Additional options governing how Network Firewall handles stateful rules. The stateful
+        /// rule groups that you use in your policy must have stateful rule options settings that are compatible with these settings.</p>
         pub fn set_stateful_engine_options(
             mut self,
             input: std::option::Option<crate::model::StatefulEngineOptions>,
@@ -3390,6 +4082,11 @@ pub mod stateful_engine_options {
             self.rule_order = Some(input);
             self
         }
+        /// <p>Indicates how to manage the order of stateful rule evaluation for the policy. By default, Network Firewall
+        /// leaves the rule evaluation order up to the Suricata rule processing engine. If you set
+        /// this to <code>STRICT_ORDER</code>, your rules are evaluated in the exact order that you provide them
+        /// in the policy. With strict ordering, the rule groups are evaluated by order of priority, starting from the lowest number, and
+        /// the rules in each rule group are processed in the order that they're defined. </p>
         pub fn set_rule_order(
             mut self,
             input: std::option::Option<crate::model::RuleOrder>,
@@ -3453,6 +4150,7 @@ pub mod stateful_rule_group_reference {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the stateful rule group.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -3470,6 +4168,15 @@ pub mod stateful_rule_group_reference {
             self.priority = Some(input);
             self
         }
+        /// <p>An integer setting that indicates the order in which to run the stateful rule groups in
+        /// a single <a>FirewallPolicy</a>. This setting only applies to firewall policies
+        /// that specify the <code>STRICT_ORDER</code> rule order in the stateful engine options settings.</p>
+        /// <p>Network Firewall evalutes each stateful rule group
+        /// against a packet starting with the group that has the lowest priority setting. You must ensure
+        /// that the priority settings are unique within each policy.</p>
+        /// <p>You can change the priority settings of your rule groups at any time. To make it easier to
+        /// insert rule groups later, number them so there's a wide range in between, for example use 100,
+        /// 200, and so on. </p>
         pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
             self.priority = input;
             self
@@ -3526,6 +4233,7 @@ pub mod stateless_rule_group_reference {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the stateless rule group.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -3538,6 +4246,10 @@ pub mod stateless_rule_group_reference {
             self.priority = Some(input);
             self
         }
+        /// <p>An integer setting that indicates the order in which to run the stateless rule groups in
+        /// a single <a>FirewallPolicy</a>. Network Firewall applies each stateless rule group
+        /// to a packet starting with the group that has the lowest priority setting. You must ensure
+        /// that the priority settings are unique within each policy.</p>
         pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
             self.priority = input;
             self
@@ -3592,6 +4304,7 @@ pub mod rule_group_metadata {
             self.name = Some(input.into());
             self
         }
+        /// <p>The descriptive name of the rule group. You can't change the name of a rule group after you create it.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -3601,6 +4314,7 @@ pub mod rule_group_metadata {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the rule group.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -3655,6 +4369,7 @@ pub mod firewall_metadata {
             self.firewall_name = Some(input.into());
             self
         }
+        /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
         pub fn set_firewall_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3667,6 +4382,7 @@ pub mod firewall_metadata {
             self.firewall_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
         pub fn set_firewall_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.firewall_arn = input;
             self
@@ -3721,6 +4437,7 @@ pub mod firewall_policy_metadata {
             self.name = Some(input.into());
             self
         }
+        /// <p>The descriptive name of the firewall policy. You can't change the name of a firewall policy after you create it.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -3730,6 +4447,7 @@ pub mod firewall_policy_metadata {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -3781,6 +4499,7 @@ pub mod subnet_mapping {
             self.subnet_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the subnet. </p>
         pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.subnet_id = input;
             self
@@ -3867,6 +4586,12 @@ pub mod firewall_status {
             self.status = Some(input);
             self
         }
+        /// <p>The readiness of the configured firewall to handle network traffic across all of the
+        /// Availability Zones where you've configured it. This setting is <code>READY</code> only when
+        /// the <code>ConfigurationSyncStateSummary</code> value is <code>IN_SYNC</code> and the
+        /// <code>Attachment</code>
+        /// <code>Status</code> values for all of the configured subnets are <code>READY</code>.
+        /// </p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::FirewallStatusValue>,
@@ -3891,6 +4616,16 @@ pub mod firewall_status {
             self.configuration_sync_state_summary = Some(input);
             self
         }
+        /// <p>The configuration sync state for the firewall. This summarizes the sync states reported
+        /// in the <code>Config</code> settings for all of the Availability Zones where you have
+        /// configured the firewall. </p>
+        /// <p>When you create a firewall or update its configuration, for example by adding a rule
+        /// group to its firewall policy, Network Firewall distributes the configuration changes to all
+        /// zones where the firewall is in use. This summary indicates whether the configuration
+        /// changes have been applied everywhere. </p>
+        /// <p>This status must be <code>IN_SYNC</code> for the firewall to be ready for use, but it
+        /// doesn't indicate that the firewall is ready. The <code>Status</code> setting indicates
+        /// firewall readiness.</p>
         pub fn set_configuration_sync_state_summary(
             mut self,
             input: std::option::Option<crate::model::ConfigurationSyncState>,
@@ -3898,6 +4633,15 @@ pub mod firewall_status {
             self.configuration_sync_state_summary = input;
             self
         }
+        /// Adds a key-value pair to `sync_states`.
+        ///
+        /// To override the contents of this collection use [`set_sync_states`](Self::set_sync_states).
+        ///
+        /// <p>The subnets that you've configured for use by the Network Firewall firewall. This contains
+        /// one array element per Availability Zone where you've configured a subnet. These objects
+        /// provide details of the information that is summarized in the
+        /// <code>ConfigurationSyncStateSummary</code> and <code>Status</code>, broken down by zone
+        /// and configuration object. </p>
         pub fn sync_states(
             mut self,
             k: impl Into<std::string::String>,
@@ -3908,6 +4652,11 @@ pub mod firewall_status {
             self.sync_states = Some(hash_map);
             self
         }
+        /// <p>The subnets that you've configured for use by the Network Firewall firewall. This contains
+        /// one array element per Availability Zone where you've configured a subnet. These objects
+        /// provide details of the information that is summarized in the
+        /// <code>ConfigurationSyncStateSummary</code> and <code>Status</code>, broken down by zone
+        /// and configuration object. </p>
         pub fn set_sync_states(
             mut self,
             input: std::option::Option<
@@ -3992,6 +4741,9 @@ pub mod sync_state {
             self.attachment = Some(input);
             self
         }
+        /// <p>The attachment status of the firewall's association with a single VPC subnet. For each
+        /// configured subnet, Network Firewall creates the attachment by instantiating the firewall
+        /// endpoint in the subnet so that it's ready to take traffic. This is part of the <a>FirewallStatus</a>.</p>
         pub fn set_attachment(
             mut self,
             input: std::option::Option<crate::model::Attachment>,
@@ -3999,6 +4751,14 @@ pub mod sync_state {
             self.attachment = input;
             self
         }
+        /// Adds a key-value pair to `config`.
+        ///
+        /// To override the contents of this collection use [`set_config`](Self::set_config).
+        ///
+        /// <p>The configuration status of the firewall endpoint in a single VPC subnet. Network Firewall
+        /// provides each endpoint with the rules that are configured in the firewall policy. Each time
+        /// you add a subnet or modify the associated firewall policy, Network Firewall synchronizes the
+        /// rules in the endpoint, so it can properly filter network traffic. This is part of the <a>FirewallStatus</a>.</p>
         pub fn config(
             mut self,
             k: impl Into<std::string::String>,
@@ -4009,6 +4769,10 @@ pub mod sync_state {
             self.config = Some(hash_map);
             self
         }
+        /// <p>The configuration status of the firewall endpoint in a single VPC subnet. Network Firewall
+        /// provides each endpoint with the rules that are configured in the firewall policy. Each time
+        /// you add a subnet or modify the associated firewall policy, Network Firewall synchronizes the
+        /// rules in the endpoint, so it can properly filter network traffic. This is part of the <a>FirewallStatus</a>.</p>
         pub fn set_config(
             mut self,
             input: std::option::Option<
@@ -4069,6 +4833,7 @@ pub mod per_object_status {
             self.sync_status = Some(input);
             self
         }
+        /// <p>Indicates whether this object is in sync with the version indicated in the update token.</p>
         pub fn set_sync_status(
             mut self,
             input: std::option::Option<crate::model::PerObjectSyncStatus>,
@@ -4081,6 +4846,7 @@ pub mod per_object_status {
             self.update_token = Some(input.into());
             self
         }
+        /// <p>The current version of the object that is either in sync or pending synchronization. </p>
         pub fn set_update_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.update_token = input;
             self
@@ -4101,6 +4867,7 @@ impl PerObjectStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4112,7 +4879,9 @@ impl PerObjectStatus {
     std::hash::Hash,
 )]
 pub enum PerObjectSyncStatus {
+    #[allow(missing_docs)] // documentation missing in model
     InSync,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4134,6 +4903,7 @@ impl std::str::FromStr for PerObjectSyncStatus {
     }
 }
 impl PerObjectSyncStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PerObjectSyncStatus::InSync => "IN_SYNC",
@@ -4141,6 +4911,7 @@ impl PerObjectSyncStatus {
             PerObjectSyncStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["IN_SYNC", "PENDING"]
     }
@@ -4197,6 +4968,8 @@ pub mod attachment {
             self.subnet_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier of the subnet that you've specified to be used for a firewall
+        /// endpoint. </p>
         pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.subnet_id = input;
             self
@@ -4208,6 +4981,9 @@ pub mod attachment {
             self.endpoint_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the firewall endpoint that Network Firewall has instantiated in the
+        /// subnet. You use this to identify the firewall endpoint in the VPC route tables, when you
+        /// redirect the VPC traffic through the endpoint. </p>
         pub fn set_endpoint_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.endpoint_id = input;
             self
@@ -4222,6 +4998,12 @@ pub mod attachment {
             self.status = Some(input);
             self
         }
+        /// <p>The current status of the firewall endpoint in the subnet. This value reflects both the
+        /// instantiation of the endpoint in the VPC subnet and the sync states that are reported in
+        /// the <code>Config</code> settings. When this value is <code>READY</code>, the endpoint is
+        /// available and configured properly to handle network traffic. When the endpoint isn't
+        /// available for traffic, this value will reflect its state, for example
+        /// <code>CREATING</code>, <code>DELETING</code>, or <code>FAILED</code>.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::AttachmentStatus>,
@@ -4246,6 +5028,7 @@ impl Attachment {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4257,9 +5040,13 @@ impl Attachment {
     std::hash::Hash,
 )]
 pub enum AttachmentStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Creating,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
+    #[allow(missing_docs)] // documentation missing in model
     Ready,
+    #[allow(missing_docs)] // documentation missing in model
     Scaling,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4283,6 +5070,7 @@ impl std::str::FromStr for AttachmentStatus {
     }
 }
 impl AttachmentStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AttachmentStatus::Creating => "CREATING",
@@ -4292,6 +5080,7 @@ impl AttachmentStatus {
             AttachmentStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CREATING", "DELETING", "READY", "SCALING"]
     }
@@ -4302,6 +5091,7 @@ impl AsRef<str> for AttachmentStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4313,7 +5103,9 @@ impl AsRef<str> for AttachmentStatus {
     std::hash::Hash,
 )]
 pub enum ConfigurationSyncState {
+    #[allow(missing_docs)] // documentation missing in model
     InSync,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4335,6 +5127,7 @@ impl std::str::FromStr for ConfigurationSyncState {
     }
 }
 impl ConfigurationSyncState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ConfigurationSyncState::InSync => "IN_SYNC",
@@ -4342,6 +5135,7 @@ impl ConfigurationSyncState {
             ConfigurationSyncState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["IN_SYNC", "PENDING"]
     }
@@ -4352,6 +5146,7 @@ impl AsRef<str> for ConfigurationSyncState {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4363,8 +5158,11 @@ impl AsRef<str> for ConfigurationSyncState {
     std::hash::Hash,
 )]
 pub enum FirewallStatusValue {
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
+    #[allow(missing_docs)] // documentation missing in model
     Provisioning,
+    #[allow(missing_docs)] // documentation missing in model
     Ready,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4387,6 +5185,7 @@ impl std::str::FromStr for FirewallStatusValue {
     }
 }
 impl FirewallStatusValue {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FirewallStatusValue::Deleting => "DELETING",
@@ -4395,6 +5194,7 @@ impl FirewallStatusValue {
             FirewallStatusValue::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DELETING", "PROVISIONING", "READY"]
     }
@@ -4489,6 +5289,7 @@ pub mod firewall {
             self.firewall_name = Some(input.into());
             self
         }
+        /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
         pub fn set_firewall_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4501,6 +5302,7 @@ pub mod firewall {
             self.firewall_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
         pub fn set_firewall_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.firewall_arn = input;
             self
@@ -4513,6 +5315,10 @@ pub mod firewall {
             self.firewall_policy_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the firewall policy.</p>
+        /// <p>The relationship of firewall to firewall policy is many to one. Each firewall requires
+        /// one firewall policy association, and you can use the same firewall policy for multiple
+        /// firewalls. </p>
         pub fn set_firewall_policy_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4525,16 +5331,25 @@ pub mod firewall {
             self.vpc_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier of the VPC where the firewall is in use. </p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.vpc_id = input;
             self
         }
+        /// Appends an item to `subnet_mappings`.
+        ///
+        /// To override the contents of this collection use [`set_subnet_mappings`](Self::set_subnet_mappings).
+        ///
+        /// <p>The public subnets that Network Firewall is using for the firewall. Each subnet must belong
+        /// to a different Availability Zone. </p>
         pub fn subnet_mappings(mut self, input: impl Into<crate::model::SubnetMapping>) -> Self {
             let mut v = self.subnet_mappings.unwrap_or_default();
             v.push(input.into());
             self.subnet_mappings = Some(v);
             self
         }
+        /// <p>The public subnets that Network Firewall is using for the firewall. Each subnet must belong
+        /// to a different Availability Zone. </p>
         pub fn set_subnet_mappings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SubnetMapping>>,
@@ -4549,6 +5364,9 @@ pub mod firewall {
             self.delete_protection = Some(input);
             self
         }
+        /// <p>A flag indicating whether it is possible to delete the firewall. A setting of <code>TRUE</code> indicates
+        /// that the firewall is protected against deletion. Use this setting to protect against
+        /// accidentally deleting a firewall that is in use. When you create a firewall, the operation initializes this flag to <code>TRUE</code>.</p>
         pub fn set_delete_protection(mut self, input: std::option::Option<bool>) -> Self {
             self.delete_protection = input;
             self
@@ -4560,6 +5378,9 @@ pub mod firewall {
             self.subnet_change_protection = Some(input);
             self
         }
+        /// <p>A setting indicating whether the firewall is protected against changes to the subnet associations.
+        /// Use this setting to protect against
+        /// accidentally modifying the subnet associations for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
         pub fn set_subnet_change_protection(mut self, input: std::option::Option<bool>) -> Self {
             self.subnet_change_protection = input;
             self
@@ -4571,6 +5392,9 @@ pub mod firewall {
             self.firewall_policy_change_protection = Some(input);
             self
         }
+        /// <p>A setting indicating whether the firewall is protected against a change to the firewall policy association.
+        /// Use this setting to protect against
+        /// accidentally modifying the firewall policy for a firewall that is in use. When you create a firewall, the operation initializes this setting to <code>TRUE</code>.</p>
         pub fn set_firewall_policy_change_protection(
             mut self,
             input: std::option::Option<bool>,
@@ -4583,6 +5407,7 @@ pub mod firewall {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description of the firewall.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -4592,16 +5417,23 @@ pub mod firewall {
             self.firewall_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the firewall. </p>
         pub fn set_firewall_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.firewall_id = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p></p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p></p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,

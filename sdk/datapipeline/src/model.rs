@@ -31,16 +31,23 @@ pub mod validation_warning {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier of the object that contains the validation warning.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
+        /// Appends an item to `warnings`.
+        ///
+        /// To override the contents of this collection use [`set_warnings`](Self::set_warnings).
+        ///
+        /// <p>A description of the validation warning.</p>
         pub fn warnings(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.warnings.unwrap_or_default();
             v.push(input.into());
             self.warnings = Some(v);
             self
         }
+        /// <p>A description of the validation warning.</p>
         pub fn set_warnings(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -96,16 +103,23 @@ pub mod validation_error {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier of the object that contains the validation error.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
+        /// Appends an item to `errors`.
+        ///
+        /// To override the contents of this collection use [`set_errors`](Self::set_errors).
+        ///
+        /// <p>A description of the validation error.</p>
         pub fn errors(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.errors.unwrap_or_default();
             v.push(input.into());
             self.errors = Some(v);
             self
         }
+        /// <p>A description of the validation error.</p>
         pub fn set_errors(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -161,6 +175,7 @@ pub mod parameter_value {
             self.id = Some(input.into());
             self
         }
+        /// <p>The ID of the parameter value.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -170,6 +185,7 @@ pub mod parameter_value {
             self.string_value = Some(input.into());
             self
         }
+        /// <p>The field value, expressed as a String.</p>
         pub fn set_string_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.string_value = input;
             self
@@ -222,16 +238,23 @@ pub mod parameter_object {
             self.id = Some(input.into());
             self
         }
+        /// <p>The ID of the parameter object. </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
+        /// Appends an item to `attributes`.
+        ///
+        /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
+        ///
+        /// <p>The attributes of the parameter object.</p>
         pub fn attributes(mut self, input: impl Into<crate::model::ParameterAttribute>) -> Self {
             let mut v = self.attributes.unwrap_or_default();
             v.push(input.into());
             self.attributes = Some(v);
             self
         }
+        /// <p>The attributes of the parameter object.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ParameterAttribute>>,
@@ -287,6 +310,7 @@ pub mod parameter_attribute {
             self.key = Some(input.into());
             self
         }
+        /// <p>The field identifier.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -296,6 +320,7 @@ pub mod parameter_attribute {
             self.string_value = Some(input.into());
             self
         }
+        /// <p>The field value, expressed as a String.</p>
         pub fn set_string_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.string_value = input;
             self
@@ -352,6 +377,7 @@ pub mod pipeline_object {
             self.id = Some(input.into());
             self
         }
+        /// <p>The ID of the object.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -361,16 +387,23 @@ pub mod pipeline_object {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the object.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
+        /// Appends an item to `fields`.
+        ///
+        /// To override the contents of this collection use [`set_fields`](Self::set_fields).
+        ///
+        /// <p>Key-value pairs that define the properties of the object.</p>
         pub fn fields(mut self, input: impl Into<crate::model::Field>) -> Self {
             let mut v = self.fields.unwrap_or_default();
             v.push(input.into());
             self.fields = Some(v);
             self
         }
+        /// <p>Key-value pairs that define the properties of the object.</p>
         pub fn set_fields(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Field>>,
@@ -431,6 +464,7 @@ pub mod field {
             self.key = Some(input.into());
             self
         }
+        /// <p>The field identifier.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -440,6 +474,7 @@ pub mod field {
             self.string_value = Some(input.into());
             self
         }
+        /// <p>The field value, expressed as a String.</p>
         pub fn set_string_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.string_value = input;
             self
@@ -449,6 +484,7 @@ pub mod field {
             self.ref_value = Some(input.into());
             self
         }
+        /// <p>The field value, expressed as the identifier of another object.</p>
         pub fn set_ref_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ref_value = input;
             self
@@ -470,6 +506,7 @@ impl Field {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -481,8 +518,11 @@ impl Field {
     std::hash::Hash,
 )]
 pub enum TaskStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     False,
+    #[allow(missing_docs)] // documentation missing in model
     Finished,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -505,6 +545,7 @@ impl std::str::FromStr for TaskStatus {
     }
 }
 impl TaskStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TaskStatus::Failed => "FAILED",
@@ -513,6 +554,7 @@ impl TaskStatus {
             TaskStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FAILED", "FALSE", "FINISHED"]
     }
@@ -546,12 +588,18 @@ pub mod query {
         pub(crate) selectors: std::option::Option<std::vec::Vec<crate::model::Selector>>,
     }
     impl Builder {
+        /// Appends an item to `selectors`.
+        ///
+        /// To override the contents of this collection use [`set_selectors`](Self::set_selectors).
+        ///
+        /// <p>List of selectors that define the query. An object must satisfy all of the selectors to match the query.</p>
         pub fn selectors(mut self, input: impl Into<crate::model::Selector>) -> Self {
             let mut v = self.selectors.unwrap_or_default();
             v.push(input.into());
             self.selectors = Some(v);
             self
         }
+        /// <p>List of selectors that define the query. An object must satisfy all of the selectors to match the query.</p>
         pub fn set_selectors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Selector>>,
@@ -606,6 +654,7 @@ pub mod selector {
             self.field_name = Some(input.into());
             self
         }
+        /// <p>The name of the field that the operator will be applied to. The field name is the "key" portion of the field definition in the pipeline definition syntax that is used by the AWS Data Pipeline API. If the field is not set on the object, the condition fails.</p>
         pub fn set_field_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.field_name = input;
             self
@@ -615,6 +664,7 @@ pub mod selector {
             self.operator = Some(input);
             self
         }
+        /// <p>Contains a logical operation for comparing the value of a field with a specified value.</p>
         pub fn set_operator(mut self, input: std::option::Option<crate::model::Operator>) -> Self {
             self.operator = input;
             self
@@ -657,6 +707,7 @@ pub struct Operator {
     /// <li>@actualStartTime</li>
     /// <li>@actualEndTime</li>
     /// </ul>
+    ///
     /// <p>
     /// The comparison operators <code>GE</code>, <code>LE</code>, and <code>BETWEEN</code> act on the following fields:
     /// </p>
@@ -707,6 +758,7 @@ pub mod operator {
         /// <li>@actualStartTime</li>
         /// <li>@actualEndTime</li>
         /// </ul>
+        ///
         /// <p>
         /// The comparison operators <code>GE</code>, <code>LE</code>, and <code>BETWEEN</code> act on the following fields:
         /// </p>
@@ -721,16 +773,51 @@ pub mod operator {
             self.r#type = Some(input);
             self
         }
+        /// <p>
+        /// The logical operation to be performed: equal (<code>EQ</code>), equal reference (<code>REF_EQ</code>), less than or equal (<code>LE</code>), greater than or equal (<code>GE</code>), or between (<code>BETWEEN</code>). Equal reference (<code>REF_EQ</code>) can be used only with reference fields. The other comparison types can be used only with String fields. The comparison types you can use apply only to certain object fields, as detailed below.  
+        /// </p>
+        /// <p>
+        /// The comparison operators EQ and REF_EQ act on the following fields:
+        /// </p>
+        /// <ul>
+        /// <li>name</li>
+        /// <li>@sphere</li>
+        /// <li>parent</li>
+        /// <li>@componentParent</li>
+        /// <li>@instanceParent</li>
+        /// <li>@status</li>
+        /// <li>@scheduledStartTime</li>
+        /// <li>@scheduledEndTime</li>
+        /// <li>@actualStartTime</li>
+        /// <li>@actualEndTime</li>
+        /// </ul>
+        ///
+        /// <p>
+        /// The comparison operators <code>GE</code>, <code>LE</code>, and <code>BETWEEN</code> act on the following fields:
+        /// </p>
+        /// <ul>
+        /// <li>@scheduledStartTime</li>
+        /// <li>@scheduledEndTime</li>
+        /// <li>@actualStartTime</li>
+        /// <li>@actualEndTime</li>
+        /// </ul>
+        /// <p>Note that fields beginning with the at sign (@) are read-only and set by the web service. When you name fields, you should choose names containing only alpha-numeric values, as symbols may be reserved by AWS Data Pipeline. User-defined fields that you add to a pipeline should prefix their name with the string "my".</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::OperatorType>) -> Self {
             self.r#type = input;
             self
         }
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>The value that the actual field value will be compared with.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
+        /// <p>The value that the actual field value will be compared with.</p>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -754,6 +841,7 @@ impl Operator {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -765,10 +853,15 @@ impl Operator {
     std::hash::Hash,
 )]
 pub enum OperatorType {
+    #[allow(missing_docs)] // documentation missing in model
     Between,
+    #[allow(missing_docs)] // documentation missing in model
     Equal,
+    #[allow(missing_docs)] // documentation missing in model
     GreaterThanOrEqual,
+    #[allow(missing_docs)] // documentation missing in model
     LessThanOrEqual,
+    #[allow(missing_docs)] // documentation missing in model
     ReferenceEqual,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -793,6 +886,7 @@ impl std::str::FromStr for OperatorType {
     }
 }
 impl OperatorType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             OperatorType::Between => "BETWEEN",
@@ -803,6 +897,7 @@ impl OperatorType {
             OperatorType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["BETWEEN", "EQ", "GE", "LE", "REF_EQ"]
     }
@@ -857,6 +952,7 @@ pub mod task_object {
             self.task_id = Some(input.into());
             self
         }
+        /// <p>An internal identifier for the task. This ID is passed to the <a>SetTaskStatus</a> and <a>ReportTaskProgress</a> actions.</p>
         pub fn set_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.task_id = input;
             self
@@ -866,6 +962,7 @@ pub mod task_object {
             self.pipeline_id = Some(input.into());
             self
         }
+        /// <p>The ID of the pipeline that provided the task.</p>
         pub fn set_pipeline_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.pipeline_id = input;
             self
@@ -875,10 +972,16 @@ pub mod task_object {
             self.attempt_id = Some(input.into());
             self
         }
+        /// <p>The ID of the pipeline task attempt object. AWS Data Pipeline uses this value to track how many times a task is attempted.</p>
         pub fn set_attempt_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.attempt_id = input;
             self
         }
+        /// Adds a key-value pair to `objects`.
+        ///
+        /// To override the contents of this collection use [`set_objects`](Self::set_objects).
+        ///
+        /// <p>Connection information for the location where the task runner will publish the output of the task.</p>
         pub fn objects(
             mut self,
             k: impl Into<std::string::String>,
@@ -889,6 +992,7 @@ pub mod task_object {
             self.objects = Some(hash_map);
             self
         }
+        /// <p>Connection information for the location where the task runner will publish the output of the task.</p>
         pub fn set_objects(
             mut self,
             input: std::option::Option<
@@ -950,6 +1054,7 @@ pub mod instance_identity {
             self.document = Some(input.into());
             self
         }
+        /// <p>A description of an EC2 instance that is generated when the instance is launched and exposed to the instance via the instance metadata service in the form of a JSON representation of an object.</p>
         pub fn set_document(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.document = input;
             self
@@ -959,6 +1064,7 @@ pub mod instance_identity {
             self.signature = Some(input.into());
             self
         }
+        /// <p>A signature which can be used to verify the accuracy and authenticity of the information provided in the instance identity document.</p>
         pub fn set_signature(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.signature = input;
             self
@@ -1011,6 +1117,7 @@ pub mod pipeline_id_name {
             self.id = Some(input.into());
             self
         }
+        /// <p>The ID of the pipeline that was assigned by AWS Data Pipeline. This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -1020,6 +1127,7 @@ pub mod pipeline_id_name {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the pipeline.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1085,6 +1193,7 @@ pub mod pipeline_description {
             self.pipeline_id = Some(input.into());
             self
         }
+        /// <p>The pipeline identifier that was assigned by AWS Data Pipeline. This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.</p>
         pub fn set_pipeline_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.pipeline_id = input;
             self
@@ -1094,16 +1203,23 @@ pub mod pipeline_description {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the pipeline.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
+        /// Appends an item to `fields`.
+        ///
+        /// To override the contents of this collection use [`set_fields`](Self::set_fields).
+        ///
+        /// <p>A list of read-only fields that contain metadata about the pipeline: @userId, @accountId, and @pipelineState.</p>
         pub fn fields(mut self, input: impl Into<crate::model::Field>) -> Self {
             let mut v = self.fields.unwrap_or_default();
             v.push(input.into());
             self.fields = Some(v);
             self
         }
+        /// <p>A list of read-only fields that contain metadata about the pipeline: @userId, @accountId, and @pipelineState.</p>
         pub fn set_fields(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Field>>,
@@ -1116,16 +1232,25 @@ pub mod pipeline_description {
             self.description = Some(input.into());
             self
         }
+        /// <p>Description of the pipeline.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of tags to associated with a pipeline. Tags let you control access to pipelines.
+        /// For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>A list of tags to associated with a pipeline. Tags let you control access to pipelines.
+        /// For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1188,6 +1313,8 @@ pub mod tag {
             self.key = Some(input.into());
             self
         }
+        /// <p>The key name of a tag defined by a user.  
+        /// For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -1198,6 +1325,8 @@ pub mod tag {
             self.value = Some(input.into());
             self
         }
+        /// <p>The optional value portion of a tag defined by a user.    
+        /// For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self

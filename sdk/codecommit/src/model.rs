@@ -11,9 +11,9 @@ pub struct PullRequest {
     /// <p>The user-defined description of the pull request. This description can be used to clarify what should be reviewed and other details of the request.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The day and time of the last user or system activity on the pull request, in timestamp format.</p>
-    pub last_activity_date: std::option::Option<smithy_types::Instant>,
+    pub last_activity_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time the pull request was originally created, in timestamp format.</p>
-    pub creation_date: std::option::Option<smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The status of the pull request. Pull request status can only change from <code>OPEN</code> to <code>CLOSED</code>.</p>
     pub pull_request_status: std::option::Option<crate::model::PullRequestStatusEnum>,
     /// <p>The Amazon Resource Name (ARN) of the user who created the pull request.</p>
@@ -56,8 +56,8 @@ pub mod pull_request {
         pub(crate) pull_request_id: std::option::Option<std::string::String>,
         pub(crate) title: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) last_activity_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) creation_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_activity_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) pull_request_status: std::option::Option<crate::model::PullRequestStatusEnum>,
         pub(crate) author_arn: std::option::Option<std::string::String>,
         pub(crate) pull_request_targets:
@@ -72,6 +72,7 @@ pub mod pull_request {
             self.pull_request_id = Some(input.into());
             self
         }
+        /// <p>The system-generated ID of the pull request. </p>
         pub fn set_pull_request_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -85,6 +86,8 @@ pub mod pull_request {
             self.title = Some(input.into());
             self
         }
+        /// <p>The user-defined title of the pull request. This title is displayed in the list of
+        /// pull requests to other repository users.</p>
         pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.title = input;
             self
@@ -94,30 +97,33 @@ pub mod pull_request {
             self.description = Some(input.into());
             self
         }
+        /// <p>The user-defined description of the pull request. This description can be used to clarify what should be reviewed and other details of the request.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
         /// <p>The day and time of the last user or system activity on the pull request, in timestamp format.</p>
-        pub fn last_activity_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_activity_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_activity_date = Some(input);
             self
         }
+        /// <p>The day and time of the last user or system activity on the pull request, in timestamp format.</p>
         pub fn set_last_activity_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_activity_date = input;
             self
         }
         /// <p>The date and time the pull request was originally created, in timestamp format.</p>
-        pub fn creation_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_date = Some(input);
             self
         }
+        /// <p>The date and time the pull request was originally created, in timestamp format.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_date = input;
             self
@@ -127,6 +133,7 @@ pub mod pull_request {
             self.pull_request_status = Some(input);
             self
         }
+        /// <p>The status of the pull request. Pull request status can only change from <code>OPEN</code> to <code>CLOSED</code>.</p>
         pub fn set_pull_request_status(
             mut self,
             input: std::option::Option<crate::model::PullRequestStatusEnum>,
@@ -139,10 +146,16 @@ pub mod pull_request {
             self.author_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the user who created the pull request.</p>
         pub fn set_author_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.author_arn = input;
             self
         }
+        /// Appends an item to `pull_request_targets`.
+        ///
+        /// To override the contents of this collection use [`set_pull_request_targets`](Self::set_pull_request_targets).
+        ///
+        /// <p>The targets of the pull request, including the source branch and destination branch for the pull request.</p>
         pub fn pull_request_targets(
             mut self,
             input: impl Into<crate::model::PullRequestTarget>,
@@ -152,6 +165,7 @@ pub mod pull_request {
             self.pull_request_targets = Some(v);
             self
         }
+        /// <p>The targets of the pull request, including the source branch and destination branch for the pull request.</p>
         pub fn set_pull_request_targets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PullRequestTarget>>,
@@ -167,6 +181,10 @@ pub mod pull_request {
             self.client_request_token = Some(input.into());
             self
         }
+        /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures
+        /// the request cannot be repeated with a changed parameter. If a request is received with
+        /// the same parameters and a token is included, the request returns information about the
+        /// initial request that used that token.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -179,16 +197,23 @@ pub mod pull_request {
             self.revision_id = Some(input.into());
             self
         }
+        /// <p>The system-generated revision ID for the pull request.</p>
         pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.revision_id = input;
             self
         }
+        /// Appends an item to `approval_rules`.
+        ///
+        /// To override the contents of this collection use [`set_approval_rules`](Self::set_approval_rules).
+        ///
+        /// <p>The approval rules applied to the pull request.</p>
         pub fn approval_rules(mut self, input: impl Into<crate::model::ApprovalRule>) -> Self {
             let mut v = self.approval_rules.unwrap_or_default();
             v.push(input.into());
             self.approval_rules = Some(v);
             self
         }
+        /// <p>The approval rules applied to the pull request.</p>
         pub fn set_approval_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ApprovalRule>>,
@@ -234,9 +259,9 @@ pub struct ApprovalRule {
     /// <p>The SHA-256 hash signature for the content of the approval rule.</p>
     pub rule_content_sha256: std::option::Option<std::string::String>,
     /// <p>The date the approval rule was most recently changed, in timestamp format.</p>
-    pub last_modified_date: std::option::Option<smithy_types::Instant>,
+    pub last_modified_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date the approval rule was created, in timestamp format.</p>
-    pub creation_date: std::option::Option<smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The Amazon Resource Name (ARN) of the user who made the most recent changes to the approval rule.</p>
     pub last_modified_user: std::option::Option<std::string::String>,
     /// <p>The approval rule template used to create the rule.</p>
@@ -270,8 +295,8 @@ pub mod approval_rule {
         pub(crate) approval_rule_name: std::option::Option<std::string::String>,
         pub(crate) approval_rule_content: std::option::Option<std::string::String>,
         pub(crate) rule_content_sha256: std::option::Option<std::string::String>,
-        pub(crate) last_modified_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) creation_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_modified_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) last_modified_user: std::option::Option<std::string::String>,
         pub(crate) origin_approval_rule_template:
             std::option::Option<crate::model::OriginApprovalRuleTemplate>,
@@ -282,6 +307,7 @@ pub mod approval_rule {
             self.approval_rule_id = Some(input.into());
             self
         }
+        /// <p>The system-generated ID of the approval rule.</p>
         pub fn set_approval_rule_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -294,6 +320,7 @@ pub mod approval_rule {
             self.approval_rule_name = Some(input.into());
             self
         }
+        /// <p>The name of the approval rule.</p>
         pub fn set_approval_rule_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -306,6 +333,7 @@ pub mod approval_rule {
             self.approval_rule_content = Some(input.into());
             self
         }
+        /// <p>The content of the approval rule.</p>
         pub fn set_approval_rule_content(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -318,6 +346,7 @@ pub mod approval_rule {
             self.rule_content_sha256 = Some(input.into());
             self
         }
+        /// <p>The SHA-256 hash signature for the content of the approval rule.</p>
         pub fn set_rule_content_sha256(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -326,25 +355,27 @@ pub mod approval_rule {
             self
         }
         /// <p>The date the approval rule was most recently changed, in timestamp format.</p>
-        pub fn last_modified_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_modified_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_modified_date = Some(input);
             self
         }
+        /// <p>The date the approval rule was most recently changed, in timestamp format.</p>
         pub fn set_last_modified_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_modified_date = input;
             self
         }
         /// <p>The date the approval rule was created, in timestamp format.</p>
-        pub fn creation_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_date = Some(input);
             self
         }
+        /// <p>The date the approval rule was created, in timestamp format.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_date = input;
             self
@@ -354,6 +385,7 @@ pub mod approval_rule {
             self.last_modified_user = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the user who made the most recent changes to the approval rule.</p>
         pub fn set_last_modified_user(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -369,6 +401,7 @@ pub mod approval_rule {
             self.origin_approval_rule_template = Some(input);
             self
         }
+        /// <p>The approval rule template used to create the rule.</p>
         pub fn set_origin_approval_rule_template(
             mut self,
             input: std::option::Option<crate::model::OriginApprovalRuleTemplate>,
@@ -433,6 +466,7 @@ pub mod origin_approval_rule_template {
             self.approval_rule_template_id = Some(input.into());
             self
         }
+        /// <p>The ID of the template that created the approval rule.</p>
         pub fn set_approval_rule_template_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -448,6 +482,7 @@ pub mod origin_approval_rule_template {
             self.approval_rule_template_name = Some(input.into());
             self
         }
+        /// <p>The name of the template that created the approval rule.</p>
         pub fn set_approval_rule_template_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -526,6 +561,7 @@ pub mod pull_request_target {
             self.repository_name = Some(input.into());
             self
         }
+        /// <p>The name of the repository that contains the pull request source and destination branches.</p>
         pub fn set_repository_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -538,6 +574,7 @@ pub mod pull_request_target {
             self.source_reference = Some(input.into());
             self
         }
+        /// <p>The branch of the repository that contains the changes for the pull request. Also known as the source branch.</p>
         pub fn set_source_reference(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -551,6 +588,8 @@ pub mod pull_request_target {
             self.destination_reference = Some(input.into());
             self
         }
+        /// <p>The branch of the repository where the pull request changes are merged. Also known as
+        /// the destination branch. </p>
         pub fn set_destination_reference(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -563,6 +602,7 @@ pub mod pull_request_target {
             self.destination_commit = Some(input.into());
             self
         }
+        /// <p>The full commit ID that is the tip of the destination branch. This is the commit where the pull request was or will be merged.</p>
         pub fn set_destination_commit(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -577,6 +617,9 @@ pub mod pull_request_target {
             self.source_commit = Some(input.into());
             self
         }
+        /// <p>The full commit ID of the tip of the source branch used to create the pull request. If
+        /// the pull request branch is updated by a push while the pull request is open, the commit
+        /// ID changes to reflect the new tip of the branch.</p>
         pub fn set_source_commit(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -589,6 +632,7 @@ pub mod pull_request_target {
             self.merge_base = Some(input.into());
             self
         }
+        /// <p>The commit ID of the most recent commit that the source branch and the destination branch have in common.</p>
         pub fn set_merge_base(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.merge_base = input;
             self
@@ -598,6 +642,7 @@ pub mod pull_request_target {
             self.merge_metadata = Some(input);
             self
         }
+        /// <p>Returns metadata about the state of the merge, including whether the merge has been made.</p>
         pub fn set_merge_metadata(
             mut self,
             input: std::option::Option<crate::model::MergeMetadata>,
@@ -666,6 +711,7 @@ pub mod merge_metadata {
             self.is_merged = Some(input);
             self
         }
+        /// <p>A Boolean value indicating whether the merge has been made.</p>
         pub fn set_is_merged(mut self, input: std::option::Option<bool>) -> Self {
             self.is_merged = input;
             self
@@ -675,6 +721,7 @@ pub mod merge_metadata {
             self.merged_by = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the user who merged the branches.</p>
         pub fn set_merged_by(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.merged_by = input;
             self
@@ -684,6 +731,7 @@ pub mod merge_metadata {
             self.merge_commit_id = Some(input.into());
             self
         }
+        /// <p>The commit ID for the merge commit, if any.</p>
         pub fn set_merge_commit_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -696,6 +744,7 @@ pub mod merge_metadata {
             self.merge_option = Some(input);
             self
         }
+        /// <p>The merge strategy used in the merge.</p>
         pub fn set_merge_option(
             mut self,
             input: std::option::Option<crate::model::MergeOptionTypeEnum>,
@@ -721,6 +770,7 @@ impl MergeMetadata {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -732,8 +782,11 @@ impl MergeMetadata {
     std::hash::Hash,
 )]
 pub enum MergeOptionTypeEnum {
+    #[allow(missing_docs)] // documentation missing in model
     FastForwardMerge,
+    #[allow(missing_docs)] // documentation missing in model
     SquashMerge,
+    #[allow(missing_docs)] // documentation missing in model
     ThreeWayMerge,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -756,6 +809,7 @@ impl std::str::FromStr for MergeOptionTypeEnum {
     }
 }
 impl MergeOptionTypeEnum {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MergeOptionTypeEnum::FastForwardMerge => "FAST_FORWARD_MERGE",
@@ -764,6 +818,7 @@ impl MergeOptionTypeEnum {
             MergeOptionTypeEnum::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FAST_FORWARD_MERGE", "SQUASH_MERGE", "THREE_WAY_MERGE"]
     }
@@ -774,6 +829,7 @@ impl AsRef<str> for MergeOptionTypeEnum {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -785,7 +841,9 @@ impl AsRef<str> for MergeOptionTypeEnum {
     std::hash::Hash,
 )]
 pub enum PullRequestStatusEnum {
+    #[allow(missing_docs)] // documentation missing in model
     Closed,
+    #[allow(missing_docs)] // documentation missing in model
     Open,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -807,6 +865,7 @@ impl std::str::FromStr for PullRequestStatusEnum {
     }
 }
 impl PullRequestStatusEnum {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PullRequestStatusEnum::Closed => "CLOSED",
@@ -814,6 +873,7 @@ impl PullRequestStatusEnum {
             PullRequestStatusEnum::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CLOSED", "OPEN"]
     }
@@ -824,6 +884,7 @@ impl AsRef<str> for PullRequestStatusEnum {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -835,7 +896,9 @@ impl AsRef<str> for PullRequestStatusEnum {
     std::hash::Hash,
 )]
 pub enum ApprovalState {
+    #[allow(missing_docs)] // documentation missing in model
     Approve,
+    #[allow(missing_docs)] // documentation missing in model
     Revoke,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -857,6 +920,7 @@ impl std::str::FromStr for ApprovalState {
     }
 }
 impl ApprovalState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ApprovalState::Approve => "APPROVE",
@@ -864,6 +928,7 @@ impl ApprovalState {
             ApprovalState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["APPROVE", "REVOKE"]
     }
@@ -885,9 +950,9 @@ pub struct Comment {
     /// <p>The ID of the comment for which this comment is a reply, if any.</p>
     pub in_reply_to: std::option::Option<std::string::String>,
     /// <p>The date and time the comment was created, in timestamp format.</p>
-    pub creation_date: std::option::Option<smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time the comment was most recently modified, in timestamp format.</p>
-    pub last_modified_date: std::option::Option<smithy_types::Instant>,
+    pub last_modified_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The Amazon Resource Name (ARN) of the person who posted the comment.</p>
     pub author_arn: std::option::Option<std::string::String>,
     /// <p>A Boolean value indicating whether the comment has been deleted.</p>
@@ -927,8 +992,8 @@ pub mod comment {
         pub(crate) comment_id: std::option::Option<std::string::String>,
         pub(crate) content: std::option::Option<std::string::String>,
         pub(crate) in_reply_to: std::option::Option<std::string::String>,
-        pub(crate) creation_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_modified_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) author_arn: std::option::Option<std::string::String>,
         pub(crate) deleted: std::option::Option<bool>,
         pub(crate) client_request_token: std::option::Option<std::string::String>,
@@ -942,6 +1007,7 @@ pub mod comment {
             self.comment_id = Some(input.into());
             self
         }
+        /// <p>The system-generated comment ID.</p>
         pub fn set_comment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.comment_id = input;
             self
@@ -951,6 +1017,7 @@ pub mod comment {
             self.content = Some(input.into());
             self
         }
+        /// <p>The content of the comment.</p>
         pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content = input;
             self
@@ -960,30 +1027,33 @@ pub mod comment {
             self.in_reply_to = Some(input.into());
             self
         }
+        /// <p>The ID of the comment for which this comment is a reply, if any.</p>
         pub fn set_in_reply_to(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.in_reply_to = input;
             self
         }
         /// <p>The date and time the comment was created, in timestamp format.</p>
-        pub fn creation_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_date = Some(input);
             self
         }
+        /// <p>The date and time the comment was created, in timestamp format.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_date = input;
             self
         }
         /// <p>The date and time the comment was most recently modified, in timestamp format.</p>
-        pub fn last_modified_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_modified_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_modified_date = Some(input);
             self
         }
+        /// <p>The date and time the comment was most recently modified, in timestamp format.</p>
         pub fn set_last_modified_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_modified_date = input;
             self
@@ -993,6 +1063,7 @@ pub mod comment {
             self.author_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the person who posted the comment.</p>
         pub fn set_author_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.author_arn = input;
             self
@@ -1002,6 +1073,7 @@ pub mod comment {
             self.deleted = Some(input);
             self
         }
+        /// <p>A Boolean value indicating whether the comment has been deleted.</p>
         pub fn set_deleted(mut self, input: std::option::Option<bool>) -> Self {
             self.deleted = input;
             self
@@ -1014,6 +1086,10 @@ pub mod comment {
             self.client_request_token = Some(input.into());
             self
         }
+        /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures
+        /// the request cannot be repeated with a changed parameter. If a request is received with
+        /// the same parameters and a token is included, the request returns information about the
+        /// initial request that used that token.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1021,12 +1097,18 @@ pub mod comment {
             self.client_request_token = input;
             self
         }
+        /// Appends an item to `caller_reactions`.
+        ///
+        /// To override the contents of this collection use [`set_caller_reactions`](Self::set_caller_reactions).
+        ///
+        /// <p>The emoji reactions to a comment, if any, submitted by the user whose credentials are associated with the call to the API.</p>
         pub fn caller_reactions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.caller_reactions.unwrap_or_default();
             v.push(input.into());
             self.caller_reactions = Some(v);
             self
         }
+        /// <p>The emoji reactions to a comment, if any, submitted by the user whose credentials are associated with the call to the API.</p>
         pub fn set_caller_reactions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1034,6 +1116,11 @@ pub mod comment {
             self.caller_reactions = input;
             self
         }
+        /// Adds a key-value pair to `reaction_counts`.
+        ///
+        /// To override the contents of this collection use [`set_reaction_counts`](Self::set_reaction_counts).
+        ///
+        /// <p>A string to integer map that represents the number of individual users who have responded to a comment with the specified reactions.</p>
         pub fn reaction_counts(
             mut self,
             k: impl Into<std::string::String>,
@@ -1044,6 +1131,7 @@ pub mod comment {
             self.reaction_counts = Some(hash_map);
             self
         }
+        /// <p>A string to integer map that represents the number of individual users who have responded to a comment with the specified reactions.</p>
         pub fn set_reaction_counts(
             mut self,
             input: std::option::Option<std::collections::HashMap<std::string::String, i32>>,
@@ -1090,9 +1178,9 @@ pub struct ApprovalRuleTemplate {
     /// <p>The SHA-256 hash signature for the content of the approval rule template.</p>
     pub rule_content_sha256: std::option::Option<std::string::String>,
     /// <p>The date the approval rule template was most recently changed, in timestamp format.</p>
-    pub last_modified_date: std::option::Option<smithy_types::Instant>,
+    pub last_modified_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date the approval rule template was created, in timestamp format.</p>
-    pub creation_date: std::option::Option<smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The Amazon Resource Name (ARN) of the user who made the most recent changes to the approval rule template.</p>
     pub last_modified_user: std::option::Option<std::string::String>,
 }
@@ -1130,8 +1218,8 @@ pub mod approval_rule_template {
         pub(crate) approval_rule_template_description: std::option::Option<std::string::String>,
         pub(crate) approval_rule_template_content: std::option::Option<std::string::String>,
         pub(crate) rule_content_sha256: std::option::Option<std::string::String>,
-        pub(crate) last_modified_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) creation_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_modified_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) last_modified_user: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1140,6 +1228,7 @@ pub mod approval_rule_template {
             self.approval_rule_template_id = Some(input.into());
             self
         }
+        /// <p>The system-generated ID of the approval rule template.</p>
         pub fn set_approval_rule_template_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1155,6 +1244,7 @@ pub mod approval_rule_template {
             self.approval_rule_template_name = Some(input.into());
             self
         }
+        /// <p>The name of the approval rule template.</p>
         pub fn set_approval_rule_template_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1170,6 +1260,7 @@ pub mod approval_rule_template {
             self.approval_rule_template_description = Some(input.into());
             self
         }
+        /// <p>The description of the approval rule template.</p>
         pub fn set_approval_rule_template_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1185,6 +1276,7 @@ pub mod approval_rule_template {
             self.approval_rule_template_content = Some(input.into());
             self
         }
+        /// <p>The content of the approval rule template.</p>
         pub fn set_approval_rule_template_content(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1197,6 +1289,7 @@ pub mod approval_rule_template {
             self.rule_content_sha256 = Some(input.into());
             self
         }
+        /// <p>The SHA-256 hash signature for the content of the approval rule template.</p>
         pub fn set_rule_content_sha256(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1205,25 +1298,27 @@ pub mod approval_rule_template {
             self
         }
         /// <p>The date the approval rule template was most recently changed, in timestamp format.</p>
-        pub fn last_modified_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_modified_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_modified_date = Some(input);
             self
         }
+        /// <p>The date the approval rule template was most recently changed, in timestamp format.</p>
         pub fn set_last_modified_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_modified_date = input;
             self
         }
         /// <p>The date the approval rule template was created, in timestamp format.</p>
-        pub fn creation_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_date = Some(input);
             self
         }
+        /// <p>The date the approval rule template was created, in timestamp format.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_date = input;
             self
@@ -1233,6 +1328,7 @@ pub mod approval_rule_template {
             self.last_modified_user = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the user who made the most recent changes to the approval rule template.</p>
         pub fn set_last_modified_user(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1294,6 +1390,7 @@ pub mod repository_trigger_execution_failure {
             self.trigger = Some(input.into());
             self
         }
+        /// <p>The name of the trigger that did not run.</p>
         pub fn set_trigger(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.trigger = input;
             self
@@ -1303,6 +1400,7 @@ pub mod repository_trigger_execution_failure {
             self.failure_message = Some(input.into());
             self
         }
+        /// <p>Message information about the trigger that did not run.</p>
         pub fn set_failure_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1346,6 +1444,7 @@ pub struct RepositoryTrigger {
     pub branches: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The repository events that cause the trigger to run actions in another service, such
     /// as sending a notification through Amazon SNS.
+    ///
     /// </p>
     /// <note>
     /// <p>The valid value "all" cannot be used with any other values.</p>
@@ -1382,6 +1481,7 @@ pub mod repository_trigger {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the trigger.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1392,6 +1492,8 @@ pub mod repository_trigger {
             self.destination_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the resource that is the target for a trigger (for example, the ARN of a
+        /// topic in Amazon SNS).</p>
         pub fn set_destination_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1405,16 +1507,32 @@ pub mod repository_trigger {
             self.custom_data = Some(input.into());
             self
         }
+        /// <p>Any custom data associated with the trigger to be included in the information sent to
+        /// the target of the trigger.</p>
         pub fn set_custom_data(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.custom_data = input;
             self
         }
+        /// Appends an item to `branches`.
+        ///
+        /// To override the contents of this collection use [`set_branches`](Self::set_branches).
+        ///
+        /// <p>The branches to be included in the trigger configuration. If you specify an empty
+        /// array, the trigger applies to all branches.</p>
+        /// <note>
+        /// <p>Although no content is required in the array, you must include the array itself.</p>
+        /// </note>
         pub fn branches(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.branches.unwrap_or_default();
             v.push(input.into());
             self.branches = Some(v);
             self
         }
+        /// <p>The branches to be included in the trigger configuration. If you specify an empty
+        /// array, the trigger applies to all branches.</p>
+        /// <note>
+        /// <p>Although no content is required in the array, you must include the array itself.</p>
+        /// </note>
         pub fn set_branches(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1422,6 +1540,17 @@ pub mod repository_trigger {
             self.branches = input;
             self
         }
+        /// Appends an item to `events`.
+        ///
+        /// To override the contents of this collection use [`set_events`](Self::set_events).
+        ///
+        /// <p>The repository events that cause the trigger to run actions in another service, such
+        /// as sending a notification through Amazon SNS.
+        ///
+        /// </p>
+        /// <note>
+        /// <p>The valid value "all" cannot be used with any other values.</p>
+        /// </note>
         pub fn events(
             mut self,
             input: impl Into<crate::model::RepositoryTriggerEventEnum>,
@@ -1431,6 +1560,13 @@ pub mod repository_trigger {
             self.events = Some(v);
             self
         }
+        /// <p>The repository events that cause the trigger to run actions in another service, such
+        /// as sending a notification through Amazon SNS.
+        ///
+        /// </p>
+        /// <note>
+        /// <p>The valid value "all" cannot be used with any other values.</p>
+        /// </note>
         pub fn set_events(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RepositoryTriggerEventEnum>>,
@@ -1457,6 +1593,7 @@ impl RepositoryTrigger {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1468,9 +1605,13 @@ impl RepositoryTrigger {
     std::hash::Hash,
 )]
 pub enum RepositoryTriggerEventEnum {
+    #[allow(missing_docs)] // documentation missing in model
     All,
+    #[allow(missing_docs)] // documentation missing in model
     CreateReference,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteReference,
+    #[allow(missing_docs)] // documentation missing in model
     UpdateReference,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1494,6 +1635,7 @@ impl std::str::FromStr for RepositoryTriggerEventEnum {
     }
 }
 impl RepositoryTriggerEventEnum {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RepositoryTriggerEventEnum::All => "all",
@@ -1503,6 +1645,7 @@ impl RepositoryTriggerEventEnum {
             RepositoryTriggerEventEnum::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "all",
@@ -1518,6 +1661,7 @@ impl AsRef<str> for RepositoryTriggerEventEnum {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1529,8 +1673,11 @@ impl AsRef<str> for RepositoryTriggerEventEnum {
     std::hash::Hash,
 )]
 pub enum FileModeTypeEnum {
+    #[allow(missing_docs)] // documentation missing in model
     Executable,
+    #[allow(missing_docs)] // documentation missing in model
     Normal,
+    #[allow(missing_docs)] // documentation missing in model
     Symlink,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1553,6 +1700,7 @@ impl std::str::FromStr for FileModeTypeEnum {
     }
 }
 impl FileModeTypeEnum {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FileModeTypeEnum::Executable => "EXECUTABLE",
@@ -1561,6 +1709,7 @@ impl FileModeTypeEnum {
             FileModeTypeEnum::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["EXECUTABLE", "NORMAL", "SYMLINK"]
     }
@@ -1609,6 +1758,7 @@ pub mod location {
             self.file_path = Some(input.into());
             self
         }
+        /// <p>The name of the file being compared, including its extension and subdirectory, if any.</p>
         pub fn set_file_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.file_path = input;
             self
@@ -1618,6 +1768,7 @@ pub mod location {
             self.file_position = Some(input);
             self
         }
+        /// <p>The position of a change in a compared file, in line number format.</p>
         pub fn set_file_position(mut self, input: std::option::Option<i64>) -> Self {
             self.file_position = input;
             self
@@ -1631,6 +1782,8 @@ pub mod location {
             self.relative_file_version = Some(input);
             self
         }
+        /// <p>In a comparison of commits or a pull request, whether the change is in the before or
+        /// after of that comparison.</p>
         pub fn set_relative_file_version(
             mut self,
             input: std::option::Option<crate::model::RelativeFileVersionEnum>,
@@ -1655,6 +1808,7 @@ impl Location {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1666,7 +1820,9 @@ impl Location {
     std::hash::Hash,
 )]
 pub enum RelativeFileVersionEnum {
+    #[allow(missing_docs)] // documentation missing in model
     After,
+    #[allow(missing_docs)] // documentation missing in model
     Before,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1688,6 +1844,7 @@ impl std::str::FromStr for RelativeFileVersionEnum {
     }
 }
 impl RelativeFileVersionEnum {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RelativeFileVersionEnum::After => "AFTER",
@@ -1695,6 +1852,7 @@ impl RelativeFileVersionEnum {
             RelativeFileVersionEnum::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AFTER", "BEFORE"]
     }
@@ -1705,6 +1863,7 @@ impl AsRef<str> for RelativeFileVersionEnum {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1716,7 +1875,9 @@ impl AsRef<str> for RelativeFileVersionEnum {
     std::hash::Hash,
 )]
 pub enum OverrideStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Override,
+    #[allow(missing_docs)] // documentation missing in model
     Revoke,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1738,6 +1899,7 @@ impl std::str::FromStr for OverrideStatus {
     }
 }
 impl OverrideStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             OverrideStatus::Override => "OVERRIDE",
@@ -1745,6 +1907,7 @@ impl OverrideStatus {
             OverrideStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["OVERRIDE", "REVOKE"]
     }
@@ -1789,6 +1952,11 @@ pub mod conflict_resolution {
             std::option::Option<std::vec::Vec<crate::model::SetFileModeEntry>>,
     }
     impl Builder {
+        /// Appends an item to `replace_contents`.
+        ///
+        /// To override the contents of this collection use [`set_replace_contents`](Self::set_replace_contents).
+        ///
+        /// <p>Files to have content replaced as part of the merge conflict resolution.</p>
         pub fn replace_contents(
             mut self,
             input: impl Into<crate::model::ReplaceContentEntry>,
@@ -1798,6 +1966,7 @@ pub mod conflict_resolution {
             self.replace_contents = Some(v);
             self
         }
+        /// <p>Files to have content replaced as part of the merge conflict resolution.</p>
         pub fn set_replace_contents(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ReplaceContentEntry>>,
@@ -1805,12 +1974,18 @@ pub mod conflict_resolution {
             self.replace_contents = input;
             self
         }
+        /// Appends an item to `delete_files`.
+        ///
+        /// To override the contents of this collection use [`set_delete_files`](Self::set_delete_files).
+        ///
+        /// <p>Files to be deleted as part of the merge conflict resolution.</p>
         pub fn delete_files(mut self, input: impl Into<crate::model::DeleteFileEntry>) -> Self {
             let mut v = self.delete_files.unwrap_or_default();
             v.push(input.into());
             self.delete_files = Some(v);
             self
         }
+        /// <p>Files to be deleted as part of the merge conflict resolution.</p>
         pub fn set_delete_files(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DeleteFileEntry>>,
@@ -1818,12 +1993,18 @@ pub mod conflict_resolution {
             self.delete_files = input;
             self
         }
+        /// Appends an item to `set_file_modes`.
+        ///
+        /// To override the contents of this collection use [`set_set_file_modes`](Self::set_set_file_modes).
+        ///
+        /// <p>File modes that are set as part of the merge conflict resolution.</p>
         pub fn set_file_modes(mut self, input: impl Into<crate::model::SetFileModeEntry>) -> Self {
             let mut v = self.set_file_modes.unwrap_or_default();
             v.push(input.into());
             self.set_file_modes = Some(v);
             self
         }
+        /// <p>File modes that are set as part of the merge conflict resolution.</p>
         pub fn set_set_file_modes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SetFileModeEntry>>,
@@ -1880,6 +2061,7 @@ pub mod set_file_mode_entry {
             self.file_path = Some(input.into());
             self
         }
+        /// <p>The full path to the file, including the name of the file.</p>
         pub fn set_file_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.file_path = input;
             self
@@ -1889,6 +2071,7 @@ pub mod set_file_mode_entry {
             self.file_mode = Some(input);
             self
         }
+        /// <p>The file mode for the file.</p>
         pub fn set_file_mode(
             mut self,
             input: std::option::Option<crate::model::FileModeTypeEnum>,
@@ -1940,6 +2123,7 @@ pub mod delete_file_entry {
             self.file_path = Some(input.into());
             self
         }
+        /// <p>The full path of the file to be deleted, including the name of the file.</p>
         pub fn set_file_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.file_path = input;
             self
@@ -1968,7 +2152,7 @@ pub struct ReplaceContentEntry {
     /// <p>The replacement type to use when determining how to resolve the conflict.</p>
     pub replacement_type: std::option::Option<crate::model::ReplacementTypeEnum>,
     /// <p>The base-64 encoded content to use when the replacement type is USE_NEW_CONTENT.</p>
-    pub content: std::option::Option<smithy_types::Blob>,
+    pub content: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The file mode to apply during conflict resoltion.</p>
     pub file_mode: std::option::Option<crate::model::FileModeTypeEnum>,
 }
@@ -1990,7 +2174,7 @@ pub mod replace_content_entry {
     pub struct Builder {
         pub(crate) file_path: std::option::Option<std::string::String>,
         pub(crate) replacement_type: std::option::Option<crate::model::ReplacementTypeEnum>,
-        pub(crate) content: std::option::Option<smithy_types::Blob>,
+        pub(crate) content: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) file_mode: std::option::Option<crate::model::FileModeTypeEnum>,
     }
     impl Builder {
@@ -1999,6 +2183,7 @@ pub mod replace_content_entry {
             self.file_path = Some(input.into());
             self
         }
+        /// <p>The path of the conflicting file.</p>
         pub fn set_file_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.file_path = input;
             self
@@ -2008,6 +2193,7 @@ pub mod replace_content_entry {
             self.replacement_type = Some(input);
             self
         }
+        /// <p>The replacement type to use when determining how to resolve the conflict.</p>
         pub fn set_replacement_type(
             mut self,
             input: std::option::Option<crate::model::ReplacementTypeEnum>,
@@ -2016,11 +2202,12 @@ pub mod replace_content_entry {
             self
         }
         /// <p>The base-64 encoded content to use when the replacement type is USE_NEW_CONTENT.</p>
-        pub fn content(mut self, input: smithy_types::Blob) -> Self {
+        pub fn content(mut self, input: aws_smithy_types::Blob) -> Self {
             self.content = Some(input);
             self
         }
-        pub fn set_content(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+        /// <p>The base-64 encoded content to use when the replacement type is USE_NEW_CONTENT.</p>
+        pub fn set_content(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.content = input;
             self
         }
@@ -2029,6 +2216,7 @@ pub mod replace_content_entry {
             self.file_mode = Some(input);
             self
         }
+        /// <p>The file mode to apply during conflict resoltion.</p>
         pub fn set_file_mode(
             mut self,
             input: std::option::Option<crate::model::FileModeTypeEnum>,
@@ -2054,6 +2242,7 @@ impl ReplaceContentEntry {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2065,9 +2254,13 @@ impl ReplaceContentEntry {
     std::hash::Hash,
 )]
 pub enum ReplacementTypeEnum {
+    #[allow(missing_docs)] // documentation missing in model
     KeepBase,
+    #[allow(missing_docs)] // documentation missing in model
     KeepDestination,
+    #[allow(missing_docs)] // documentation missing in model
     KeepSource,
+    #[allow(missing_docs)] // documentation missing in model
     UseNewContent,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2091,6 +2284,7 @@ impl std::str::FromStr for ReplacementTypeEnum {
     }
 }
 impl ReplacementTypeEnum {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ReplacementTypeEnum::KeepBase => "KEEP_BASE",
@@ -2100,6 +2294,7 @@ impl ReplacementTypeEnum {
             ReplacementTypeEnum::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "KEEP_BASE",
@@ -2115,6 +2310,7 @@ impl AsRef<str> for ReplacementTypeEnum {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2126,9 +2322,13 @@ impl AsRef<str> for ReplacementTypeEnum {
     std::hash::Hash,
 )]
 pub enum ConflictResolutionStrategyTypeEnum {
+    #[allow(missing_docs)] // documentation missing in model
     AcceptDestination,
+    #[allow(missing_docs)] // documentation missing in model
     AcceptSource,
+    #[allow(missing_docs)] // documentation missing in model
     Automerge,
+    #[allow(missing_docs)] // documentation missing in model
     None,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2152,6 +2352,7 @@ impl std::str::FromStr for ConflictResolutionStrategyTypeEnum {
     }
 }
 impl ConflictResolutionStrategyTypeEnum {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ConflictResolutionStrategyTypeEnum::AcceptDestination => "ACCEPT_DESTINATION",
@@ -2161,6 +2362,7 @@ impl ConflictResolutionStrategyTypeEnum {
             ConflictResolutionStrategyTypeEnum::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ACCEPT_DESTINATION", "ACCEPT_SOURCE", "AUTOMERGE", "NONE"]
     }
@@ -2171,6 +2373,7 @@ impl AsRef<str> for ConflictResolutionStrategyTypeEnum {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2182,7 +2385,9 @@ impl AsRef<str> for ConflictResolutionStrategyTypeEnum {
     std::hash::Hash,
 )]
 pub enum ConflictDetailLevelTypeEnum {
+    #[allow(missing_docs)] // documentation missing in model
     FileLevel,
+    #[allow(missing_docs)] // documentation missing in model
     LineLevel,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2204,6 +2409,7 @@ impl std::str::FromStr for ConflictDetailLevelTypeEnum {
     }
 }
 impl ConflictDetailLevelTypeEnum {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ConflictDetailLevelTypeEnum::FileLevel => "FILE_LEVEL",
@@ -2211,6 +2417,7 @@ impl ConflictDetailLevelTypeEnum {
             ConflictDetailLevelTypeEnum::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FILE_LEVEL", "LINE_LEVEL"]
     }
@@ -2253,6 +2460,7 @@ pub mod repository_name_id_pair {
             self.repository_name = Some(input.into());
             self
         }
+        /// <p>The name associated with the repository.</p>
         pub fn set_repository_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2265,6 +2473,7 @@ pub mod repository_name_id_pair {
             self.repository_id = Some(input.into());
             self
         }
+        /// <p>The ID associated with the repository.</p>
         pub fn set_repository_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2288,6 +2497,7 @@ impl RepositoryNameIdPair {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2299,7 +2509,9 @@ impl RepositoryNameIdPair {
     std::hash::Hash,
 )]
 pub enum OrderEnum {
+    #[allow(missing_docs)] // documentation missing in model
     Ascending,
+    #[allow(missing_docs)] // documentation missing in model
     Descending,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2321,6 +2533,7 @@ impl std::str::FromStr for OrderEnum {
     }
 }
 impl OrderEnum {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             OrderEnum::Ascending => "ascending",
@@ -2328,6 +2541,7 @@ impl OrderEnum {
             OrderEnum::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ascending", "descending"]
     }
@@ -2338,6 +2552,7 @@ impl AsRef<str> for OrderEnum {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2349,7 +2564,9 @@ impl AsRef<str> for OrderEnum {
     std::hash::Hash,
 )]
 pub enum SortByEnum {
+    #[allow(missing_docs)] // documentation missing in model
     ModifiedDate,
+    #[allow(missing_docs)] // documentation missing in model
     RepositoryName,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2371,6 +2588,7 @@ impl std::str::FromStr for SortByEnum {
     }
 }
 impl SortByEnum {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SortByEnum::ModifiedDate => "lastModifiedDate",
@@ -2378,6 +2596,7 @@ impl SortByEnum {
             SortByEnum::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["lastModifiedDate", "repositoryName"]
     }
@@ -2403,9 +2622,9 @@ pub struct RepositoryMetadata {
     /// <p>The repository's default branch name.</p>
     pub default_branch: std::option::Option<std::string::String>,
     /// <p>The date and time the repository was last modified, in timestamp format.</p>
-    pub last_modified_date: std::option::Option<smithy_types::Instant>,
+    pub last_modified_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time the repository was created, in timestamp format.</p>
-    pub creation_date: std::option::Option<smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The URL to use for cloning the repository over HTTPS.</p>
     pub clone_url_http: std::option::Option<std::string::String>,
     /// <p>The URL to use for cloning the repository over SSH.</p>
@@ -2440,8 +2659,8 @@ pub mod repository_metadata {
         pub(crate) repository_name: std::option::Option<std::string::String>,
         pub(crate) repository_description: std::option::Option<std::string::String>,
         pub(crate) default_branch: std::option::Option<std::string::String>,
-        pub(crate) last_modified_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) creation_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_modified_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) clone_url_http: std::option::Option<std::string::String>,
         pub(crate) clone_url_ssh: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
@@ -2452,6 +2671,7 @@ pub mod repository_metadata {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The ID of the AWS account associated with the repository.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -2461,6 +2681,7 @@ pub mod repository_metadata {
             self.repository_id = Some(input.into());
             self
         }
+        /// <p>The ID of the repository.</p>
         pub fn set_repository_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2473,6 +2694,7 @@ pub mod repository_metadata {
             self.repository_name = Some(input.into());
             self
         }
+        /// <p>The repository's name.</p>
         pub fn set_repository_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2485,6 +2707,7 @@ pub mod repository_metadata {
             self.repository_description = Some(input.into());
             self
         }
+        /// <p>A comment or description about the repository.</p>
         pub fn set_repository_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2497,6 +2720,7 @@ pub mod repository_metadata {
             self.default_branch = Some(input.into());
             self
         }
+        /// <p>The repository's default branch name.</p>
         pub fn set_default_branch(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2505,25 +2729,27 @@ pub mod repository_metadata {
             self
         }
         /// <p>The date and time the repository was last modified, in timestamp format.</p>
-        pub fn last_modified_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_modified_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_modified_date = Some(input);
             self
         }
+        /// <p>The date and time the repository was last modified, in timestamp format.</p>
         pub fn set_last_modified_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_modified_date = input;
             self
         }
         /// <p>The date and time the repository was created, in timestamp format.</p>
-        pub fn creation_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_date = Some(input);
             self
         }
+        /// <p>The date and time the repository was created, in timestamp format.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_date = input;
             self
@@ -2533,6 +2759,7 @@ pub mod repository_metadata {
             self.clone_url_http = Some(input.into());
             self
         }
+        /// <p>The URL to use for cloning the repository over HTTPS.</p>
         pub fn set_clone_url_http(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2545,6 +2772,7 @@ pub mod repository_metadata {
             self.clone_url_ssh = Some(input.into());
             self
         }
+        /// <p>The URL to use for cloning the repository over SSH.</p>
         pub fn set_clone_url_ssh(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2557,6 +2785,7 @@ pub mod repository_metadata {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the repository.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -2617,6 +2846,7 @@ pub mod approval {
             self.user_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the user.</p>
         pub fn set_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_arn = input;
             self
@@ -2626,6 +2856,7 @@ pub mod approval {
             self.approval_state = Some(input);
             self
         }
+        /// <p>The state of the approval, APPROVE or REVOKE. REVOKE states are not stored.</p>
         pub fn set_approval_state(
             mut self,
             input: std::option::Option<crate::model::ApprovalState>,
@@ -2713,6 +2944,7 @@ pub mod conflict_metadata {
             self.file_path = Some(input.into());
             self
         }
+        /// <p>The path of the file that contains conflicts.</p>
         pub fn set_file_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.file_path = input;
             self
@@ -2722,6 +2954,7 @@ pub mod conflict_metadata {
             self.file_sizes = Some(input);
             self
         }
+        /// <p>The file sizes of the file in the source, destination, and base of the merge.</p>
         pub fn set_file_sizes(
             mut self,
             input: std::option::Option<crate::model::FileSizes>,
@@ -2734,6 +2967,7 @@ pub mod conflict_metadata {
             self.file_modes = Some(input);
             self
         }
+        /// <p>The file modes of the file in the source, destination, and base of the merge.</p>
         pub fn set_file_modes(
             mut self,
             input: std::option::Option<crate::model::FileModes>,
@@ -2746,6 +2980,7 @@ pub mod conflict_metadata {
             self.object_types = Some(input);
             self
         }
+        /// <p>Information about any object type conflicts in a merge operation.</p>
         pub fn set_object_types(
             mut self,
             input: std::option::Option<crate::model::ObjectTypes>,
@@ -2758,6 +2993,7 @@ pub mod conflict_metadata {
             self.number_of_conflicts = Some(input);
             self
         }
+        /// <p>The number of conflicts, including both hunk conflicts and metadata conflicts.</p>
         pub fn set_number_of_conflicts(mut self, input: std::option::Option<i32>) -> Self {
             self.number_of_conflicts = input;
             self
@@ -2767,6 +3003,7 @@ pub mod conflict_metadata {
             self.is_binary_file = Some(input);
             self
         }
+        /// <p>A boolean value (true or false) indicating whether the file is binary or textual in the source, destination, and base of the merge.</p>
         pub fn set_is_binary_file(
             mut self,
             input: std::option::Option<crate::model::IsBinaryFile>,
@@ -2779,6 +3016,7 @@ pub mod conflict_metadata {
             self.content_conflict = Some(input);
             self
         }
+        /// <p>A boolean value indicating whether there are conflicts in the content of a file.</p>
         pub fn set_content_conflict(mut self, input: std::option::Option<bool>) -> Self {
             self.content_conflict = input;
             self
@@ -2788,6 +3026,7 @@ pub mod conflict_metadata {
             self.file_mode_conflict = Some(input);
             self
         }
+        /// <p>A boolean value indicating whether there are conflicts in the file mode of a file.</p>
         pub fn set_file_mode_conflict(mut self, input: std::option::Option<bool>) -> Self {
             self.file_mode_conflict = input;
             self
@@ -2797,6 +3036,7 @@ pub mod conflict_metadata {
             self.object_type_conflict = Some(input);
             self
         }
+        /// <p>A boolean value (true or false) indicating whether there are conflicts between the branches in the object type of a file, folder, or submodule.</p>
         pub fn set_object_type_conflict(mut self, input: std::option::Option<bool>) -> Self {
             self.object_type_conflict = input;
             self
@@ -2806,6 +3046,7 @@ pub mod conflict_metadata {
             self.merge_operations = Some(input);
             self
         }
+        /// <p>Whether an add, modify, or delete operation caused the conflict between the source and destination of the merge.</p>
         pub fn set_merge_operations(
             mut self,
             input: std::option::Option<crate::model::MergeOperations>,
@@ -2871,6 +3112,8 @@ pub mod merge_operations {
             self.source = Some(input);
             self
         }
+        /// <p>The operation (add, modify, or delete) on a file in the source of a merge or pull
+        /// request.</p>
         pub fn set_source(
             mut self,
             input: std::option::Option<crate::model::ChangeTypeEnum>,
@@ -2883,6 +3126,7 @@ pub mod merge_operations {
             self.destination = Some(input);
             self
         }
+        /// <p>The operation on a file in the destination of a merge or pull request.</p>
         pub fn set_destination(
             mut self,
             input: std::option::Option<crate::model::ChangeTypeEnum>,
@@ -2906,6 +3150,7 @@ impl MergeOperations {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2917,8 +3162,11 @@ impl MergeOperations {
     std::hash::Hash,
 )]
 pub enum ChangeTypeEnum {
+    #[allow(missing_docs)] // documentation missing in model
     Added,
+    #[allow(missing_docs)] // documentation missing in model
     Deleted,
+    #[allow(missing_docs)] // documentation missing in model
     Modified,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2941,6 +3189,7 @@ impl std::str::FromStr for ChangeTypeEnum {
     }
 }
 impl ChangeTypeEnum {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ChangeTypeEnum::Added => "A",
@@ -2949,6 +3198,7 @@ impl ChangeTypeEnum {
             ChangeTypeEnum::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["A", "D", "M"]
     }
@@ -2995,6 +3245,7 @@ pub mod is_binary_file {
             self.source = Some(input);
             self
         }
+        /// <p>The binary or non-binary status of file in the source of a merge or pull request.</p>
         pub fn set_source(mut self, input: std::option::Option<bool>) -> Self {
             self.source = input;
             self
@@ -3004,6 +3255,7 @@ pub mod is_binary_file {
             self.destination = Some(input);
             self
         }
+        /// <p>The binary or non-binary status of a file in the destination of a merge or pull request.</p>
         pub fn set_destination(mut self, input: std::option::Option<bool>) -> Self {
             self.destination = input;
             self
@@ -3013,6 +3265,7 @@ pub mod is_binary_file {
             self.base = Some(input);
             self
         }
+        /// <p>The binary or non-binary status of a file in the base of a merge or pull request.</p>
         pub fn set_base(mut self, input: std::option::Option<bool>) -> Self {
             self.base = input;
             self
@@ -3070,6 +3323,7 @@ pub mod object_types {
             self.source = Some(input);
             self
         }
+        /// <p>The type of the object in the source branch.</p>
         pub fn set_source(
             mut self,
             input: std::option::Option<crate::model::ObjectTypeEnum>,
@@ -3082,6 +3336,7 @@ pub mod object_types {
             self.destination = Some(input);
             self
         }
+        /// <p>The type of the object in the destination branch.</p>
         pub fn set_destination(
             mut self,
             input: std::option::Option<crate::model::ObjectTypeEnum>,
@@ -3094,6 +3349,7 @@ pub mod object_types {
             self.base = Some(input);
             self
         }
+        /// <p>The type of the object in the base commit of the merge.</p>
         pub fn set_base(
             mut self,
             input: std::option::Option<crate::model::ObjectTypeEnum>,
@@ -3118,6 +3374,7 @@ impl ObjectTypes {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3129,9 +3386,13 @@ impl ObjectTypes {
     std::hash::Hash,
 )]
 pub enum ObjectTypeEnum {
+    #[allow(missing_docs)] // documentation missing in model
     Directory,
+    #[allow(missing_docs)] // documentation missing in model
     File,
+    #[allow(missing_docs)] // documentation missing in model
     GitLink,
+    #[allow(missing_docs)] // documentation missing in model
     SymbolicLink,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3155,6 +3416,7 @@ impl std::str::FromStr for ObjectTypeEnum {
     }
 }
 impl ObjectTypeEnum {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ObjectTypeEnum::Directory => "DIRECTORY",
@@ -3164,6 +3426,7 @@ impl ObjectTypeEnum {
             ObjectTypeEnum::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DIRECTORY", "FILE", "GIT_LINK", "SYMBOLIC_LINK"]
     }
@@ -3210,6 +3473,7 @@ pub mod file_modes {
             self.source = Some(input);
             self
         }
+        /// <p>The file mode of a file in the source of a merge or pull request.</p>
         pub fn set_source(
             mut self,
             input: std::option::Option<crate::model::FileModeTypeEnum>,
@@ -3222,6 +3486,7 @@ pub mod file_modes {
             self.destination = Some(input);
             self
         }
+        /// <p>The file mode of a file in the destination of a merge or pull request.</p>
         pub fn set_destination(
             mut self,
             input: std::option::Option<crate::model::FileModeTypeEnum>,
@@ -3234,6 +3499,7 @@ pub mod file_modes {
             self.base = Some(input);
             self
         }
+        /// <p>The file mode of a file in the base of a merge or pull request.</p>
         pub fn set_base(
             mut self,
             input: std::option::Option<crate::model::FileModeTypeEnum>,
@@ -3294,6 +3560,7 @@ pub mod file_sizes {
             self.source = Some(input);
             self
         }
+        /// <p>The  size of a file in the source of a merge or pull request.</p>
         pub fn set_source(mut self, input: std::option::Option<i64>) -> Self {
             self.source = input;
             self
@@ -3303,6 +3570,7 @@ pub mod file_sizes {
             self.destination = Some(input);
             self
         }
+        /// <p>The size of a file in the destination of a merge or pull request.</p>
         pub fn set_destination(mut self, input: std::option::Option<i64>) -> Self {
             self.destination = input;
             self
@@ -3312,6 +3580,7 @@ pub mod file_sizes {
             self.base = Some(input);
             self
         }
+        /// <p>The size of a file in the base of a merge or pull request.</p>
         pub fn set_base(mut self, input: std::option::Option<i64>) -> Self {
             self.base = input;
             self
@@ -3369,6 +3638,7 @@ pub mod sub_module {
             self.commit_id = Some(input.into());
             self
         }
+        /// <p>The commit ID that contains the reference to the submodule.</p>
         pub fn set_commit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.commit_id = input;
             self
@@ -3378,6 +3648,7 @@ pub mod sub_module {
             self.absolute_path = Some(input.into());
             self
         }
+        /// <p>The fully qualified path to the folder that contains the reference to the submodule.</p>
         pub fn set_absolute_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3390,6 +3661,7 @@ pub mod sub_module {
             self.relative_path = Some(input.into());
             self
         }
+        /// <p>The relative path of the submodule from the folder where the query originated.</p>
         pub fn set_relative_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3454,6 +3726,7 @@ pub mod symbolic_link {
             self.blob_id = Some(input.into());
             self
         }
+        /// <p>The blob ID that contains the information about the symbolic link.</p>
         pub fn set_blob_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.blob_id = input;
             self
@@ -3463,6 +3736,7 @@ pub mod symbolic_link {
             self.absolute_path = Some(input.into());
             self
         }
+        /// <p>The fully qualified path to the folder that contains the symbolic link.</p>
         pub fn set_absolute_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3475,6 +3749,7 @@ pub mod symbolic_link {
             self.relative_path = Some(input.into());
             self
         }
+        /// <p>The relative path of the symbolic link from the folder where the query originated.</p>
         pub fn set_relative_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3487,6 +3762,7 @@ pub mod symbolic_link {
             self.file_mode = Some(input);
             self
         }
+        /// <p>The file mode permissions of the blob that cotains information about the symbolic link.</p>
         pub fn set_file_mode(
             mut self,
             input: std::option::Option<crate::model::FileModeTypeEnum>,
@@ -3552,6 +3828,7 @@ pub mod file {
             self.blob_id = Some(input.into());
             self
         }
+        /// <p>The blob ID that contains the file information.</p>
         pub fn set_blob_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.blob_id = input;
             self
@@ -3561,6 +3838,7 @@ pub mod file {
             self.absolute_path = Some(input.into());
             self
         }
+        /// <p>The fully qualified path to the file in the repository.</p>
         pub fn set_absolute_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3573,6 +3851,7 @@ pub mod file {
             self.relative_path = Some(input.into());
             self
         }
+        /// <p>The relative path of the file from the folder where the query originated.</p>
         pub fn set_relative_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3585,6 +3864,7 @@ pub mod file {
             self.file_mode = Some(input);
             self
         }
+        /// <p>The extrapolated file mode permissions for the file. Valid values include EXECUTABLE and NORMAL.</p>
         pub fn set_file_mode(
             mut self,
             input: std::option::Option<crate::model::FileModeTypeEnum>,
@@ -3646,6 +3926,7 @@ pub mod folder {
             self.tree_id = Some(input.into());
             self
         }
+        /// <p>The full SHA-1 pointer of the tree information for the commit that contains the folder.</p>
         pub fn set_tree_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.tree_id = input;
             self
@@ -3655,6 +3936,7 @@ pub mod folder {
             self.absolute_path = Some(input.into());
             self
         }
+        /// <p>The fully qualified path of the folder in the repository.</p>
         pub fn set_absolute_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3667,6 +3949,7 @@ pub mod folder {
             self.relative_path = Some(input.into());
             self
         }
+        /// <p>The relative path of the specified folder from the folder where the query originated.</p>
         pub fn set_relative_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3730,6 +4013,8 @@ pub mod difference {
             self.before_blob = Some(input);
             self
         }
+        /// <p>Information about a <code>beforeBlob</code> data type object, including the ID,
+        /// the file mode permission code, and the path.</p>
         pub fn set_before_blob(
             mut self,
             input: std::option::Option<crate::model::BlobMetadata>,
@@ -3743,6 +4028,8 @@ pub mod difference {
             self.after_blob = Some(input);
             self
         }
+        /// <p>Information about an <code>afterBlob</code> data type object, including the ID,
+        /// the file mode permission code, and the path.</p>
         pub fn set_after_blob(
             mut self,
             input: std::option::Option<crate::model::BlobMetadata>,
@@ -3755,6 +4042,7 @@ pub mod difference {
             self.change_type = Some(input);
             self
         }
+        /// <p>Whether the change type of the difference is an addition (A), deletion (D), or modification (M).</p>
         pub fn set_change_type(
             mut self,
             input: std::option::Option<crate::model::ChangeTypeEnum>,
@@ -3833,6 +4121,7 @@ pub mod blob_metadata {
             self.blob_id = Some(input.into());
             self
         }
+        /// <p>The full ID of the blob.</p>
         pub fn set_blob_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.blob_id = input;
             self
@@ -3842,6 +4131,7 @@ pub mod blob_metadata {
             self.path = Some(input.into());
             self
         }
+        /// <p>The path to the blob and associated file name, if any.</p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.path = input;
             self
@@ -3869,6 +4159,25 @@ pub mod blob_metadata {
             self.mode = Some(input.into());
             self
         }
+        /// <p>The file mode permissions of the blob. File mode permission codes include:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>100644</code> indicates read/write</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>100755</code> indicates read/write/execute</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>160000</code> indicates a submodule</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>120000</code> indicates a symlink</p>
+        /// </li>
+        /// </ul>
         pub fn set_mode(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mode = input;
             self
@@ -3949,6 +4258,7 @@ pub mod commit {
             self.commit_id = Some(input.into());
             self
         }
+        /// <p>The full SHA ID of the specified commit. </p>
         pub fn set_commit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.commit_id = input;
             self
@@ -3958,16 +4268,23 @@ pub mod commit {
             self.tree_id = Some(input.into());
             self
         }
+        /// <p>Tree information for the specified commit.</p>
         pub fn set_tree_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.tree_id = input;
             self
         }
+        /// Appends an item to `parents`.
+        ///
+        /// To override the contents of this collection use [`set_parents`](Self::set_parents).
+        ///
+        /// <p>A list of parent commits for the specified commit. Each parent commit ID is the full commit ID.</p>
         pub fn parents(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.parents.unwrap_or_default();
             v.push(input.into());
             self.parents = Some(v);
             self
         }
+        /// <p>A list of parent commits for the specified commit. Each parent commit ID is the full commit ID.</p>
         pub fn set_parents(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3980,6 +4297,7 @@ pub mod commit {
             self.message = Some(input.into());
             self
         }
+        /// <p>The commit message associated with the specified commit.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -3991,6 +4309,9 @@ pub mod commit {
             self.author = Some(input);
             self
         }
+        /// <p>Information about the author of the specified commit. Information includes
+        /// the date in timestamp format with GMT offset, the name of the author, and the email address for the author, as configured
+        /// in Git.</p>
         pub fn set_author(mut self, input: std::option::Option<crate::model::UserInfo>) -> Self {
             self.author = input;
             self
@@ -4005,6 +4326,12 @@ pub mod commit {
             self.committer = Some(input);
             self
         }
+        /// <p>Information about the person who committed the specified commit, also known as the committer. Information includes
+        /// the date in timestamp format with GMT offset, the name of the committer, and the email address for the committer, as configured
+        /// in Git.</p>
+        /// <p>For more information
+        /// about the difference between an author and a committer in Git, see <a href="http://git-scm.com/book/ch2-3.html">Viewing the Commit History</a> in Pro Git
+        /// by Scott Chacon and Ben Straub.</p>
         pub fn set_committer(mut self, input: std::option::Option<crate::model::UserInfo>) -> Self {
             self.committer = input;
             self
@@ -4014,6 +4341,7 @@ pub mod commit {
             self.additional_data = Some(input.into());
             self
         }
+        /// <p>Any other data associated with the specified commit.</p>
         pub fn set_additional_data(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4078,6 +4406,7 @@ pub mod user_info {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the user who made the specified commit.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -4087,6 +4416,7 @@ pub mod user_info {
             self.email = Some(input.into());
             self
         }
+        /// <p>The email address associated with the user who made the commit, if any.</p>
         pub fn set_email(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.email = input;
             self
@@ -4096,6 +4426,7 @@ pub mod user_info {
             self.date = Some(input.into());
             self
         }
+        /// <p>The date when the specified commit was commited, in timestamp format with GMT offset.</p>
         pub fn set_date(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.date = input;
             self
@@ -4178,6 +4509,7 @@ pub mod comments_for_pull_request {
             self.pull_request_id = Some(input.into());
             self
         }
+        /// <p>The system-generated ID of the pull request.</p>
         pub fn set_pull_request_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4190,6 +4522,7 @@ pub mod comments_for_pull_request {
             self.repository_name = Some(input.into());
             self
         }
+        /// <p>The name of the repository that contains the pull request.</p>
         pub fn set_repository_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4204,6 +4537,9 @@ pub mod comments_for_pull_request {
             self.before_commit_id = Some(input.into());
             self
         }
+        /// <p>The full commit ID of the commit that was the tip of the destination branch when the
+        /// pull request was created. This commit is superceded by the after commit in the source
+        /// branch when and if you merge the source branch into the destination branch.</p>
         pub fn set_before_commit_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4217,6 +4553,8 @@ pub mod comments_for_pull_request {
             self.after_commit_id = Some(input.into());
             self
         }
+        /// <p>The full commit ID of the commit that was the tip of the source branch at the time the
+        /// comment was made. </p>
         pub fn set_after_commit_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4229,6 +4567,7 @@ pub mod comments_for_pull_request {
             self.before_blob_id = Some(input.into());
             self
         }
+        /// <p>The full blob ID of the file on which you want to comment on the destination commit.</p>
         pub fn set_before_blob_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4241,6 +4580,7 @@ pub mod comments_for_pull_request {
             self.after_blob_id = Some(input.into());
             self
         }
+        /// <p>The full blob ID of the file on which you want to comment on the source commit.</p>
         pub fn set_after_blob_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4255,16 +4595,25 @@ pub mod comments_for_pull_request {
             self.location = Some(input);
             self
         }
+        /// <p>Location information about the comment on the pull request, including the file name,
+        /// line number, and whether the version of the file where the comment was made is BEFORE
+        /// (destination branch) or AFTER (source branch).</p>
         pub fn set_location(mut self, input: std::option::Option<crate::model::Location>) -> Self {
             self.location = input;
             self
         }
+        /// Appends an item to `comments`.
+        ///
+        /// To override the contents of this collection use [`set_comments`](Self::set_comments).
+        ///
+        /// <p>An array of comment objects. Each comment object contains information about a comment on the pull request.</p>
         pub fn comments(mut self, input: impl Into<crate::model::Comment>) -> Self {
             let mut v = self.comments.unwrap_or_default();
             v.push(input.into());
             self.comments = Some(v);
             self
         }
+        /// <p>An array of comment objects. Each comment object contains information about a comment on the pull request.</p>
         pub fn set_comments(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Comment>>,
@@ -4350,6 +4699,7 @@ pub mod comments_for_compared_commit {
             self.repository_name = Some(input.into());
             self
         }
+        /// <p>The name of the repository that contains the compared commits.</p>
         pub fn set_repository_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4363,6 +4713,8 @@ pub mod comments_for_compared_commit {
             self.before_commit_id = Some(input.into());
             self
         }
+        /// <p>The full commit ID of the commit used to establish the before of the
+        /// comparison.</p>
         pub fn set_before_commit_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4375,6 +4727,7 @@ pub mod comments_for_compared_commit {
             self.after_commit_id = Some(input.into());
             self
         }
+        /// <p>The full commit ID of the commit used to establish the after of the comparison.</p>
         pub fn set_after_commit_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4387,6 +4740,7 @@ pub mod comments_for_compared_commit {
             self.before_blob_id = Some(input.into());
             self
         }
+        /// <p>The full blob ID of the commit used to establish the before of the comparison.</p>
         pub fn set_before_blob_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4399,6 +4753,7 @@ pub mod comments_for_compared_commit {
             self.after_blob_id = Some(input.into());
             self
         }
+        /// <p>The full blob ID of the commit used to establish the after of the comparison.</p>
         pub fn set_after_blob_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4413,16 +4768,27 @@ pub mod comments_for_compared_commit {
             self.location = Some(input);
             self
         }
+        /// <p>Location information about the comment on the comparison, including the file name,
+        /// line number, and whether the version of the file where the comment was made is BEFORE or
+        /// AFTER.</p>
         pub fn set_location(mut self, input: std::option::Option<crate::model::Location>) -> Self {
             self.location = input;
             self
         }
+        /// Appends an item to `comments`.
+        ///
+        /// To override the contents of this collection use [`set_comments`](Self::set_comments).
+        ///
+        /// <p>An array of comment objects. Each comment object contains information about a comment on the comparison
+        /// between commits.</p>
         pub fn comments(mut self, input: impl Into<crate::model::Comment>) -> Self {
             let mut v = self.comments.unwrap_or_default();
             v.push(input.into());
             self.comments = Some(v);
             self
         }
+        /// <p>An array of comment objects. Each comment object contains information about a comment on the comparison
+        /// between commits.</p>
         pub fn set_comments(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Comment>>,
@@ -4491,6 +4857,7 @@ pub mod reaction_for_comment {
             self.reaction = Some(input);
             self
         }
+        /// <p>The reaction for a specified comment.</p>
         pub fn set_reaction(
             mut self,
             input: std::option::Option<crate::model::ReactionValueFormats>,
@@ -4498,12 +4865,18 @@ pub mod reaction_for_comment {
             self.reaction = input;
             self
         }
+        /// Appends an item to `reaction_users`.
+        ///
+        /// To override the contents of this collection use [`set_reaction_users`](Self::set_reaction_users).
+        ///
+        /// <p>The Amazon Resource Names (ARNs) of users who have provided reactions to the comment.</p>
         pub fn reaction_users(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.reaction_users.unwrap_or_default();
             v.push(input.into());
             self.reaction_users = Some(v);
             self
         }
+        /// <p>The Amazon Resource Names (ARNs) of users who have provided reactions to the comment.</p>
         pub fn set_reaction_users(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4517,6 +4890,8 @@ pub mod reaction_for_comment {
             self.reactions_from_deleted_users_count = Some(input);
             self
         }
+        /// <p>A numerical count of users who reacted with the specified emoji whose identities have been subsequently deleted
+        /// from IAM. While these IAM users or roles no longer exist, the reactions might still appear in total reaction counts.</p>
         pub fn set_reactions_from_deleted_users_count(
             mut self,
             input: std::option::Option<i32>,
@@ -4577,6 +4952,7 @@ pub mod reaction_value_formats {
             self.emoji = Some(input.into());
             self
         }
+        /// <p>The Emoji Version 1.0 graphic of the reaction. These graphics are interpreted slightly differently on different operating systems.</p>
         pub fn set_emoji(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.emoji = input;
             self
@@ -4586,6 +4962,7 @@ pub mod reaction_value_formats {
             self.short_code = Some(input.into());
             self
         }
+        /// <p>The emoji short code for the reaction. Short codes are interpreted slightly differently on different operating systems. </p>
         pub fn set_short_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.short_code = input;
             self
@@ -4595,6 +4972,7 @@ pub mod reaction_value_formats {
             self.unicode = Some(input.into());
             self
         }
+        /// <p>The Unicode codepoint for the reaction.</p>
         pub fn set_unicode(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.unicode = input;
             self
@@ -4648,6 +5026,7 @@ pub mod branch_info {
             self.branch_name = Some(input.into());
             self
         }
+        /// <p>The name of the branch.</p>
         pub fn set_branch_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.branch_name = input;
             self
@@ -4657,6 +5036,7 @@ pub mod branch_info {
             self.commit_id = Some(input.into());
             self
         }
+        /// <p>The ID of the last commit made to the branch.</p>
         pub fn set_commit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.commit_id = input;
             self
@@ -4722,6 +5102,7 @@ pub mod evaluation {
             self.approved = Some(input);
             self
         }
+        /// <p>Whether the state of the pull request is approved.</p>
         pub fn set_approved(mut self, input: std::option::Option<bool>) -> Self {
             self.approved = input;
             self
@@ -4731,16 +5112,23 @@ pub mod evaluation {
             self.overridden = Some(input);
             self
         }
+        /// <p>Whether the approval rule requirements for the pull request have been overridden and no longer need to be met.</p>
         pub fn set_overridden(mut self, input: std::option::Option<bool>) -> Self {
             self.overridden = input;
             self
         }
+        /// Appends an item to `approval_rules_satisfied`.
+        ///
+        /// To override the contents of this collection use [`set_approval_rules_satisfied`](Self::set_approval_rules_satisfied).
+        ///
+        /// <p>The names of the approval rules that have had their conditions met.</p>
         pub fn approval_rules_satisfied(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.approval_rules_satisfied.unwrap_or_default();
             v.push(input.into());
             self.approval_rules_satisfied = Some(v);
             self
         }
+        /// <p>The names of the approval rules that have had their conditions met.</p>
         pub fn set_approval_rules_satisfied(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4748,6 +5136,11 @@ pub mod evaluation {
             self.approval_rules_satisfied = input;
             self
         }
+        /// Appends an item to `approval_rules_not_satisfied`.
+        ///
+        /// To override the contents of this collection use [`set_approval_rules_not_satisfied`](Self::set_approval_rules_not_satisfied).
+        ///
+        /// <p>The names of the approval rules that have not had their conditions met.</p>
         pub fn approval_rules_not_satisfied(
             mut self,
             input: impl Into<std::string::String>,
@@ -4757,6 +5150,7 @@ pub mod evaluation {
             self.approval_rules_not_satisfied = Some(v);
             self
         }
+        /// <p>The names of the approval rules that have not had their conditions met.</p>
         pub fn set_approval_rules_not_satisfied(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4789,7 +5183,7 @@ pub struct PullRequestEvent {
     /// <p>The system-generated ID of the pull request.</p>
     pub pull_request_id: std::option::Option<std::string::String>,
     /// <p>The day and time of the pull request event, in timestamp format.</p>
-    pub event_date: std::option::Option<smithy_types::Instant>,
+    pub event_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The type of the pull request event (for example, a status change event
     /// (PULL_REQUEST_STATUS_CHANGED) or update event
     /// (PULL_REQUEST_SOURCE_REFERENCE_UPDATED)).</p>
@@ -4864,7 +5258,7 @@ pub mod pull_request_event {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pull_request_id: std::option::Option<std::string::String>,
-        pub(crate) event_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) event_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) pull_request_event_type: std::option::Option<crate::model::PullRequestEventType>,
         pub(crate) actor_arn: std::option::Option<std::string::String>,
         pub(crate) pull_request_created_event_metadata:
@@ -4888,6 +5282,7 @@ pub mod pull_request_event {
             self.pull_request_id = Some(input.into());
             self
         }
+        /// <p>The system-generated ID of the pull request.</p>
         pub fn set_pull_request_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4896,11 +5291,15 @@ pub mod pull_request_event {
             self
         }
         /// <p>The day and time of the pull request event, in timestamp format.</p>
-        pub fn event_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn event_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.event_date = Some(input);
             self
         }
-        pub fn set_event_date(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The day and time of the pull request event, in timestamp format.</p>
+        pub fn set_event_date(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.event_date = input;
             self
         }
@@ -4914,6 +5313,9 @@ pub mod pull_request_event {
             self.pull_request_event_type = Some(input);
             self
         }
+        /// <p>The type of the pull request event (for example, a status change event
+        /// (PULL_REQUEST_STATUS_CHANGED) or update event
+        /// (PULL_REQUEST_SOURCE_REFERENCE_UPDATED)).</p>
         pub fn set_pull_request_event_type(
             mut self,
             input: std::option::Option<crate::model::PullRequestEventType>,
@@ -4928,6 +5330,9 @@ pub mod pull_request_event {
             self.actor_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the user whose actions resulted in the event.
+        /// Examples include updating the pull request with more commits or changing the status of a
+        /// pull request.</p>
         pub fn set_actor_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.actor_arn = input;
             self
@@ -4940,6 +5345,7 @@ pub mod pull_request_event {
             self.pull_request_created_event_metadata = Some(input);
             self
         }
+        /// <p>Information about the source and destination branches for the pull request.</p>
         pub fn set_pull_request_created_event_metadata(
             mut self,
             input: std::option::Option<crate::model::PullRequestCreatedEventMetadata>,
@@ -4955,6 +5361,7 @@ pub mod pull_request_event {
             self.pull_request_status_changed_event_metadata = Some(input);
             self
         }
+        /// <p>Information about the change in status for the pull request event.</p>
         pub fn set_pull_request_status_changed_event_metadata(
             mut self,
             input: std::option::Option<crate::model::PullRequestStatusChangedEventMetadata>,
@@ -4970,6 +5377,7 @@ pub mod pull_request_event {
             self.pull_request_source_reference_updated_event_metadata = Some(input);
             self
         }
+        /// <p>Information about the updated source branch for the pull request event. </p>
         pub fn set_pull_request_source_reference_updated_event_metadata(
             mut self,
             input: std::option::Option<
@@ -4987,6 +5395,7 @@ pub mod pull_request_event {
             self.pull_request_merged_state_changed_event_metadata = Some(input);
             self
         }
+        /// <p>Information about the change in mergability state for the pull request event.</p>
         pub fn set_pull_request_merged_state_changed_event_metadata(
             mut self,
             input: std::option::Option<crate::model::PullRequestMergedStateChangedEventMetadata>,
@@ -5002,6 +5411,7 @@ pub mod pull_request_event {
             self.approval_rule_event_metadata = Some(input);
             self
         }
+        /// <p>Information about a pull request event.</p>
         pub fn set_approval_rule_event_metadata(
             mut self,
             input: std::option::Option<crate::model::ApprovalRuleEventMetadata>,
@@ -5017,6 +5427,7 @@ pub mod pull_request_event {
             self.approval_state_changed_event_metadata = Some(input);
             self
         }
+        /// <p>Information about an approval state change for a pull request.</p>
         pub fn set_approval_state_changed_event_metadata(
             mut self,
             input: std::option::Option<crate::model::ApprovalStateChangedEventMetadata>,
@@ -5032,6 +5443,7 @@ pub mod pull_request_event {
             self.approval_rule_overridden_event_metadata = Some(input);
             self
         }
+        /// <p>Information about an approval rule override event for a pull request.</p>
         pub fn set_approval_rule_overridden_event_metadata(
             mut self,
             input: std::option::Option<crate::model::ApprovalRuleOverriddenEventMetadata>,
@@ -5100,6 +5512,7 @@ pub mod approval_rule_overridden_event_metadata {
             self.revision_id = Some(input.into());
             self
         }
+        /// <p>The revision ID of the pull request when the override event occurred.</p>
         pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.revision_id = input;
             self
@@ -5109,6 +5522,7 @@ pub mod approval_rule_overridden_event_metadata {
             self.override_status = Some(input);
             self
         }
+        /// <p>The status of the override event.</p>
         pub fn set_override_status(
             mut self,
             input: std::option::Option<crate::model::OverrideStatus>,
@@ -5164,6 +5578,7 @@ pub mod approval_state_changed_event_metadata {
             self.revision_id = Some(input.into());
             self
         }
+        /// <p>The revision ID of the pull request when the approval state changed.</p>
         pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.revision_id = input;
             self
@@ -5173,6 +5588,7 @@ pub mod approval_state_changed_event_metadata {
             self.approval_status = Some(input);
             self
         }
+        /// <p>The approval status for the pull request.</p>
         pub fn set_approval_status(
             mut self,
             input: std::option::Option<crate::model::ApprovalState>,
@@ -5232,6 +5648,7 @@ pub mod approval_rule_event_metadata {
             self.approval_rule_name = Some(input.into());
             self
         }
+        /// <p>The name of the approval rule.</p>
         pub fn set_approval_rule_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5244,6 +5661,7 @@ pub mod approval_rule_event_metadata {
             self.approval_rule_id = Some(input.into());
             self
         }
+        /// <p>The system-generated ID of the approval rule.</p>
         pub fn set_approval_rule_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5256,6 +5674,7 @@ pub mod approval_rule_event_metadata {
             self.approval_rule_content = Some(input.into());
             self
         }
+        /// <p>The content of the approval rule.</p>
         pub fn set_approval_rule_content(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5316,6 +5735,7 @@ pub mod pull_request_merged_state_changed_event_metadata {
             self.repository_name = Some(input.into());
             self
         }
+        /// <p>The name of the repository where the pull request was created.</p>
         pub fn set_repository_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5328,6 +5748,7 @@ pub mod pull_request_merged_state_changed_event_metadata {
             self.destination_reference = Some(input.into());
             self
         }
+        /// <p>The name of the branch that the pull request is merged into.</p>
         pub fn set_destination_reference(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5340,6 +5761,7 @@ pub mod pull_request_merged_state_changed_event_metadata {
             self.merge_metadata = Some(input);
             self
         }
+        /// <p>Information about the merge state change event.</p>
         pub fn set_merge_metadata(
             mut self,
             input: std::option::Option<crate::model::MergeMetadata>,
@@ -5404,6 +5826,7 @@ pub mod pull_request_source_reference_updated_event_metadata {
             self.repository_name = Some(input.into());
             self
         }
+        /// <p>The name of the repository where the pull request was updated.</p>
         pub fn set_repository_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5416,6 +5839,7 @@ pub mod pull_request_source_reference_updated_event_metadata {
             self.before_commit_id = Some(input.into());
             self
         }
+        /// <p>The full commit ID of the commit in the destination branch that was the tip of the branch at the time the pull request was updated.</p>
         pub fn set_before_commit_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5428,6 +5852,7 @@ pub mod pull_request_source_reference_updated_event_metadata {
             self.after_commit_id = Some(input.into());
             self
         }
+        /// <p>The full commit ID of the commit in the source branch that was the tip of the branch at the time the pull request was updated.</p>
         pub fn set_after_commit_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5440,6 +5865,7 @@ pub mod pull_request_source_reference_updated_event_metadata {
             self.merge_base = Some(input.into());
             self
         }
+        /// <p>The commit ID of the most recent commit that the source branch and the destination branch have in common.</p>
         pub fn set_merge_base(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.merge_base = input;
             self
@@ -5491,6 +5917,7 @@ pub mod pull_request_status_changed_event_metadata {
             self.pull_request_status = Some(input);
             self
         }
+        /// <p>The changed status of the pull request.</p>
         pub fn set_pull_request_status(
             mut self,
             input: std::option::Option<crate::model::PullRequestStatusEnum>,
@@ -5553,6 +5980,7 @@ pub mod pull_request_created_event_metadata {
             self.repository_name = Some(input.into());
             self
         }
+        /// <p>The name of the repository where the pull request was created.</p>
         pub fn set_repository_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5565,6 +5993,7 @@ pub mod pull_request_created_event_metadata {
             self.source_commit_id = Some(input.into());
             self
         }
+        /// <p>The commit ID on the source branch used when the pull request was created.</p>
         pub fn set_source_commit_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5577,6 +6006,7 @@ pub mod pull_request_created_event_metadata {
             self.destination_commit_id = Some(input.into());
             self
         }
+        /// <p>The commit ID of the tip of the branch specified as the destination branch when the pull request was created.</p>
         pub fn set_destination_commit_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5589,6 +6019,7 @@ pub mod pull_request_created_event_metadata {
             self.merge_base = Some(input.into());
             self
         }
+        /// <p>The commit ID of the most recent commit that the source branch and the destination branch have in common.</p>
         pub fn set_merge_base(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.merge_base = input;
             self
@@ -5611,6 +6042,7 @@ impl PullRequestCreatedEventMetadata {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5622,14 +6054,23 @@ impl PullRequestCreatedEventMetadata {
     std::hash::Hash,
 )]
 pub enum PullRequestEventType {
+    #[allow(missing_docs)] // documentation missing in model
     PullRequestApprovalRuleCreated,
+    #[allow(missing_docs)] // documentation missing in model
     PullRequestApprovalRuleDeleted,
+    #[allow(missing_docs)] // documentation missing in model
     PullRequestApprovalRuleOverridden,
+    #[allow(missing_docs)] // documentation missing in model
     PullRequestApprovalRuleUpdated,
+    #[allow(missing_docs)] // documentation missing in model
     PullRequestApprovalStateChanged,
+    #[allow(missing_docs)] // documentation missing in model
     PullRequestCreated,
+    #[allow(missing_docs)] // documentation missing in model
     PullRequestMergeStateChanged,
+    #[allow(missing_docs)] // documentation missing in model
     PullRequestSourceReferenceUpdated,
+    #[allow(missing_docs)] // documentation missing in model
     PullRequestStatusChanged,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5672,6 +6113,7 @@ impl std::str::FromStr for PullRequestEventType {
     }
 }
 impl PullRequestEventType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PullRequestEventType::PullRequestApprovalRuleCreated => {
@@ -5700,6 +6142,7 @@ impl PullRequestEventType {
             PullRequestEventType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "PULL_REQUEST_APPROVAL_RULE_CREATED",
@@ -5768,6 +6211,11 @@ pub mod merge_hunk {
             self.is_conflict = Some(input);
             self
         }
+        /// <p>A Boolean value indicating whether a combination of hunks contains a conflict.
+        /// Conflicts occur when the same file or the same lines in a file were modified in both the
+        /// source and destination of a merge or pull request. Valid values include true, false, and
+        /// null. True when the hunk represents a conflict and one or more files contains a line
+        /// conflict. File mode conflicts in a merge do not set this to true.</p>
         pub fn set_is_conflict(mut self, input: std::option::Option<bool>) -> Self {
             self.is_conflict = input;
             self
@@ -5777,6 +6225,7 @@ pub mod merge_hunk {
             self.source = Some(input);
             self
         }
+        /// <p>Information about the merge hunk in the source of a merge or pull request.</p>
         pub fn set_source(
             mut self,
             input: std::option::Option<crate::model::MergeHunkDetail>,
@@ -5789,6 +6238,7 @@ pub mod merge_hunk {
             self.destination = Some(input);
             self
         }
+        /// <p>Information about the merge hunk in the destination of a merge or pull request.</p>
         pub fn set_destination(
             mut self,
             input: std::option::Option<crate::model::MergeHunkDetail>,
@@ -5801,6 +6251,7 @@ pub mod merge_hunk {
             self.base = Some(input);
             self
         }
+        /// <p>Information about the merge hunk in the base of a merge or pull request.</p>
         pub fn set_base(
             mut self,
             input: std::option::Option<crate::model::MergeHunkDetail>,
@@ -5863,6 +6314,7 @@ pub mod merge_hunk_detail {
             self.start_line = Some(input);
             self
         }
+        /// <p>The start position of the hunk in the merge result.</p>
         pub fn set_start_line(mut self, input: std::option::Option<i32>) -> Self {
             self.start_line = input;
             self
@@ -5872,6 +6324,7 @@ pub mod merge_hunk_detail {
             self.end_line = Some(input);
             self
         }
+        /// <p>The end position of the hunk in the merge result.</p>
         pub fn set_end_line(mut self, input: std::option::Option<i32>) -> Self {
             self.end_line = input;
             self
@@ -5882,6 +6335,8 @@ pub mod merge_hunk_detail {
             self.hunk_content = Some(input.into());
             self
         }
+        /// <p>The base-64 encoded content of the hunk merged region that might contain a
+        /// conflict.</p>
         pub fn set_hunk_content(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.hunk_content = input;
             self
@@ -5940,6 +6395,7 @@ pub mod target {
             self.repository_name = Some(input.into());
             self
         }
+        /// <p>The name of the repository that contains the pull request.</p>
         pub fn set_repository_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5952,6 +6408,7 @@ pub mod target {
             self.source_reference = Some(input.into());
             self
         }
+        /// <p>The branch of the repository that contains the changes for the pull request. Also known as the source branch.</p>
         pub fn set_source_reference(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5965,6 +6422,8 @@ pub mod target {
             self.destination_reference = Some(input.into());
             self
         }
+        /// <p>The branch of the repository where the pull request changes are merged. Also known as
+        /// the destination branch.</p>
         pub fn set_destination_reference(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6027,6 +6486,8 @@ pub mod file_metadata {
             self.absolute_path = Some(input.into());
             self
         }
+        /// <p>The full path to the file to be added or updated, including the name of the
+        /// file.</p>
         pub fn set_absolute_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6039,6 +6500,7 @@ pub mod file_metadata {
             self.blob_id = Some(input.into());
             self
         }
+        /// <p>The blob ID that contains the file information.</p>
         pub fn set_blob_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.blob_id = input;
             self
@@ -6048,6 +6510,7 @@ pub mod file_metadata {
             self.file_mode = Some(input);
             self
         }
+        /// <p>The extrapolated file mode permissions for the file. Valid values include EXECUTABLE and NORMAL.</p>
         pub fn set_file_mode(
             mut self,
             input: std::option::Option<crate::model::FileModeTypeEnum>,
@@ -6081,7 +6544,7 @@ pub struct PutFileEntry {
     /// <p>The extrapolated file mode permissions for the file. Valid values include EXECUTABLE and NORMAL.</p>
     pub file_mode: std::option::Option<crate::model::FileModeTypeEnum>,
     /// <p>The content of the file, if a source file is not specified.</p>
-    pub file_content: std::option::Option<smithy_types::Blob>,
+    pub file_content: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The name and full path of the file that contains the changes you want to make as part of the commit,
     /// if you are not providing the file content directly.</p>
     pub source_file: std::option::Option<crate::model::SourceFileSpecifier>,
@@ -6104,7 +6567,7 @@ pub mod put_file_entry {
     pub struct Builder {
         pub(crate) file_path: std::option::Option<std::string::String>,
         pub(crate) file_mode: std::option::Option<crate::model::FileModeTypeEnum>,
-        pub(crate) file_content: std::option::Option<smithy_types::Blob>,
+        pub(crate) file_content: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) source_file: std::option::Option<crate::model::SourceFileSpecifier>,
     }
     impl Builder {
@@ -6113,6 +6576,7 @@ pub mod put_file_entry {
             self.file_path = Some(input.into());
             self
         }
+        /// <p>The full path to the file in the repository, including the name of the file.</p>
         pub fn set_file_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.file_path = input;
             self
@@ -6122,6 +6586,7 @@ pub mod put_file_entry {
             self.file_mode = Some(input);
             self
         }
+        /// <p>The extrapolated file mode permissions for the file. Valid values include EXECUTABLE and NORMAL.</p>
         pub fn set_file_mode(
             mut self,
             input: std::option::Option<crate::model::FileModeTypeEnum>,
@@ -6130,11 +6595,15 @@ pub mod put_file_entry {
             self
         }
         /// <p>The content of the file, if a source file is not specified.</p>
-        pub fn file_content(mut self, input: smithy_types::Blob) -> Self {
+        pub fn file_content(mut self, input: aws_smithy_types::Blob) -> Self {
             self.file_content = Some(input);
             self
         }
-        pub fn set_file_content(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+        /// <p>The content of the file, if a source file is not specified.</p>
+        pub fn set_file_content(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Blob>,
+        ) -> Self {
             self.file_content = input;
             self
         }
@@ -6144,6 +6613,8 @@ pub mod put_file_entry {
             self.source_file = Some(input);
             self
         }
+        /// <p>The name and full path of the file that contains the changes you want to make as part of the commit,
+        /// if you are not providing the file content directly.</p>
         pub fn set_source_file(
             mut self,
             input: std::option::Option<crate::model::SourceFileSpecifier>,
@@ -6201,6 +6672,7 @@ pub mod source_file_specifier {
             self.file_path = Some(input.into());
             self
         }
+        /// <p>The full path to the file, including the name of the file.</p>
         pub fn set_file_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.file_path = input;
             self
@@ -6210,6 +6682,7 @@ pub mod source_file_specifier {
             self.is_move = Some(input);
             self
         }
+        /// <p>Whether to remove the source file from the parent commit.</p>
         pub fn set_is_move(mut self, input: std::option::Option<bool>) -> Self {
             self.is_move = input;
             self
@@ -6266,6 +6739,7 @@ pub mod batch_get_commits_error {
             self.commit_id = Some(input.into());
             self
         }
+        /// <p>A commit ID that either could not be found or was not in a valid format.</p>
         pub fn set_commit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.commit_id = input;
             self
@@ -6275,6 +6749,7 @@ pub mod batch_get_commits_error {
             self.error_code = Some(input.into());
             self
         }
+        /// <p>An error code that specifies whether the commit ID was not valid or not found.</p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_code = input;
             self
@@ -6284,6 +6759,7 @@ pub mod batch_get_commits_error {
             self.error_message = Some(input.into());
             self
         }
+        /// <p>An error message that provides detail about why the commit ID either was not found or was not valid.</p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6346,6 +6822,7 @@ pub mod batch_disassociate_approval_rule_template_from_repositories_error {
             self.repository_name = Some(input.into());
             self
         }
+        /// <p>The name of the repository where the association with the template was not able to be removed.</p>
         pub fn set_repository_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6359,6 +6836,8 @@ pub mod batch_disassociate_approval_rule_template_from_repositories_error {
             self.error_code = Some(input.into());
             self
         }
+        /// <p>An error code that specifies whether the repository name was not valid or not
+        /// found.</p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_code = input;
             self
@@ -6368,6 +6847,7 @@ pub mod batch_disassociate_approval_rule_template_from_repositories_error {
             self.error_message = Some(input.into());
             self
         }
+        /// <p>An error message that provides details about why the repository name was either not found or not valid.</p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6432,6 +6912,7 @@ pub mod batch_describe_merge_conflicts_error {
             self.file_path = Some(input.into());
             self
         }
+        /// <p>The path to the file.</p>
         pub fn set_file_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.file_path = input;
             self
@@ -6441,6 +6922,7 @@ pub mod batch_describe_merge_conflicts_error {
             self.exception_name = Some(input.into());
             self
         }
+        /// <p>The name of the exception.</p>
         pub fn set_exception_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6453,6 +6935,7 @@ pub mod batch_describe_merge_conflicts_error {
             self.message = Some(input.into());
             self
         }
+        /// <p>The message provided by the exception.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -6506,6 +6989,7 @@ pub mod conflict {
             self.conflict_metadata = Some(input);
             self
         }
+        /// <p>Metadata about a conflict in a merge operation.</p>
         pub fn set_conflict_metadata(
             mut self,
             input: std::option::Option<crate::model::ConflictMetadata>,
@@ -6513,12 +6997,18 @@ pub mod conflict {
             self.conflict_metadata = input;
             self
         }
+        /// Appends an item to `merge_hunks`.
+        ///
+        /// To override the contents of this collection use [`set_merge_hunks`](Self::set_merge_hunks).
+        ///
+        /// <p>A list of hunks that contain the differences between files or lines causing the conflict.</p>
         pub fn merge_hunks(mut self, input: impl Into<crate::model::MergeHunk>) -> Self {
             let mut v = self.merge_hunks.unwrap_or_default();
             v.push(input.into());
             self.merge_hunks = Some(v);
             self
         }
+        /// <p>A list of hunks that contain the differences between files or lines causing the conflict.</p>
         pub fn set_merge_hunks(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MergeHunk>>,
@@ -6579,6 +7069,7 @@ pub mod batch_associate_approval_rule_template_with_repositories_error {
             self.repository_name = Some(input.into());
             self
         }
+        /// <p>The name of the repository where the association was not made.</p>
         pub fn set_repository_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6591,6 +7082,7 @@ pub mod batch_associate_approval_rule_template_with_repositories_error {
             self.error_code = Some(input.into());
             self
         }
+        /// <p>An error code that specifies whether the repository name was not valid or not found.</p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_code = input;
             self
@@ -6600,6 +7092,7 @@ pub mod batch_associate_approval_rule_template_with_repositories_error {
             self.error_message = Some(input.into());
             self
         }
+        /// <p>An error message that provides details about why the repository name was not found or not valid.</p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,

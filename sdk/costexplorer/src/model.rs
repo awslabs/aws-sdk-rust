@@ -53,16 +53,26 @@ pub mod cost_category_split_charge_rule {
             self.source = Some(input.into());
             self
         }
+        /// <p>The Cost Category value that you want to split. That value can't be used as a source
+        /// or a target in other split charge rules. To indicate uncategorized costs, you can use an empty string as the source.</p>
         pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source = input;
             self
         }
+        /// Appends an item to `targets`.
+        ///
+        /// To override the contents of this collection use [`set_targets`](Self::set_targets).
+        ///
+        /// <p>The Cost Category values that you want to split costs across. These values can't be
+        /// used as a source in other split charge rules. </p>
         pub fn targets(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.targets.unwrap_or_default();
             v.push(input.into());
             self.targets = Some(v);
             self
         }
+        /// <p>The Cost Category values that you want to split costs across. These values can't be
+        /// used as a source in other split charge rules. </p>
         pub fn set_targets(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -82,6 +92,14 @@ pub mod cost_category_split_charge_rule {
             self.method = Some(input);
             self
         }
+        /// <p>The method that's used to define how to split your source costs across your targets. </p>
+        /// <p>
+        /// <code>Proportional</code> - Allocates charges across your targets based on the
+        /// proportional weighted cost of each target.</p>
+        /// <p>
+        /// <code>Fixed</code> - Allocates charges across your targets based on your defined
+        /// allocation percentage.</p>
+        /// <p>><code>Even</code> - Allocates costs evenly across all targets.</p>
         pub fn set_method(
             mut self,
             input: std::option::Option<crate::model::CostCategorySplitChargeMethod>,
@@ -89,6 +107,12 @@ pub mod cost_category_split_charge_rule {
             self.method = input;
             self
         }
+        /// Appends an item to `parameters`.
+        ///
+        /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
+        ///
+        /// <p>The parameters for a split charge method. This is only required for the
+        /// <code>FIXED</code> method. </p>
         pub fn parameters(
             mut self,
             input: impl Into<crate::model::CostCategorySplitChargeRuleParameter>,
@@ -98,6 +122,8 @@ pub mod cost_category_split_charge_rule {
             self.parameters = Some(v);
             self
         }
+        /// <p>The parameters for a split charge method. This is only required for the
+        /// <code>FIXED</code> method. </p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<
@@ -161,6 +187,7 @@ pub mod cost_category_split_charge_rule_parameter {
             self.r#type = Some(input);
             self
         }
+        /// <p>The parameter type. </p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::CostCategorySplitChargeRuleParameterType>,
@@ -168,12 +195,18 @@ pub mod cost_category_split_charge_rule_parameter {
             self.r#type = input;
             self
         }
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>The parameter values. </p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
+        /// <p>The parameter values. </p>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -197,6 +230,7 @@ impl CostCategorySplitChargeRuleParameter {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -208,6 +242,7 @@ impl CostCategorySplitChargeRuleParameter {
     std::hash::Hash,
 )]
 pub enum CostCategorySplitChargeRuleParameterType {
+    #[allow(missing_docs)] // documentation missing in model
     AllocationPercentages,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -230,6 +265,7 @@ impl std::str::FromStr for CostCategorySplitChargeRuleParameterType {
     }
 }
 impl CostCategorySplitChargeRuleParameterType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CostCategorySplitChargeRuleParameterType::AllocationPercentages => {
@@ -238,6 +274,7 @@ impl CostCategorySplitChargeRuleParameterType {
             CostCategorySplitChargeRuleParameterType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ALLOCATION_PERCENTAGES"]
     }
@@ -248,6 +285,7 @@ impl AsRef<str> for CostCategorySplitChargeRuleParameterType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -259,8 +297,11 @@ impl AsRef<str> for CostCategorySplitChargeRuleParameterType {
     std::hash::Hash,
 )]
 pub enum CostCategorySplitChargeMethod {
+    #[allow(missing_docs)] // documentation missing in model
     Even,
+    #[allow(missing_docs)] // documentation missing in model
     Fixed,
+    #[allow(missing_docs)] // documentation missing in model
     Proportional,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -283,6 +324,7 @@ impl std::str::FromStr for CostCategorySplitChargeMethod {
     }
 }
 impl CostCategorySplitChargeMethod {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CostCategorySplitChargeMethod::Even => "EVEN",
@@ -291,6 +333,7 @@ impl CostCategorySplitChargeMethod {
             CostCategorySplitChargeMethod::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["EVEN", "FIXED", "PROPORTIONAL"]
     }
@@ -365,6 +408,8 @@ pub mod cost_category_rule {
             self.value = Some(input.into());
             self
         }
+        /// <p>The
+        /// default value for the cost category.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -386,6 +431,19 @@ pub mod cost_category_rule {
             self.rule = Some(input);
             self
         }
+        /// <p>An <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+        /// object used to categorize costs. This supports dimensions, tags, and nested expressions.
+        /// Currently the only dimensions supported are <code>LINKED_ACCOUNT</code>,
+        /// <code>SERVICE_CODE</code>, <code>RECORD_TYPE</code>, and
+        /// <code>LINKED_ACCOUNT_NAME</code>.</p>
+        /// <p>Root level <code>OR</code> isn't supported. We recommend that you create a separate
+        /// rule instead.</p>
+        /// <p>
+        /// <code>RECORD_TYPE</code> is a dimension used for Cost Explorer APIs, and is also
+        /// supported for Cost Category expressions. This dimension uses different terms, depending
+        /// on whether you're using the console or API/JSON editor. For a detailed comparison, see
+        /// <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-cost-categories.html#cost-categories-terms">Term Comparisons</a> in the <i>Billing and Cost Management User
+        /// Guide</i>.</p>
         pub fn set_rule(mut self, input: std::option::Option<crate::model::Expression>) -> Self {
             self.rule = input;
             self
@@ -399,6 +457,8 @@ pub mod cost_category_rule {
             self.inherited_value = Some(input);
             self
         }
+        /// <p>The value the line item is categorized as if the line item contains the matched
+        /// dimension.</p>
         pub fn set_inherited_value(
             mut self,
             input: std::option::Option<crate::model::CostCategoryInheritedValueDimension>,
@@ -418,6 +478,14 @@ pub mod cost_category_rule {
             self.r#type = Some(input);
             self
         }
+        /// <p>You can define the <code>CostCategoryRule</code> rule type as either
+        /// <code>REGULAR</code> or <code>INHERITED_VALUE</code>. The
+        /// <code>INHERITED_VALUE</code> rule type adds the flexibility of defining a rule that
+        /// dynamically inherits the cost category value from the dimension value defined by
+        /// <code>CostCategoryInheritedValueDimension</code>. For example, if you want to
+        /// dynamically group costs based on the value of a specific tag key, first choose an
+        /// inherited value rule type, then choose the tag dimension and specify the tag key to
+        /// use.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::CostCategoryRuleType>,
@@ -443,6 +511,7 @@ impl CostCategoryRule {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -454,7 +523,9 @@ impl CostCategoryRule {
     std::hash::Hash,
 )]
 pub enum CostCategoryRuleType {
+    #[allow(missing_docs)] // documentation missing in model
     InheritedValue,
+    #[allow(missing_docs)] // documentation missing in model
     Regular,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -476,6 +547,7 @@ impl std::str::FromStr for CostCategoryRuleType {
     }
 }
 impl CostCategoryRuleType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CostCategoryRuleType::InheritedValue => "INHERITED_VALUE",
@@ -483,6 +555,7 @@ impl CostCategoryRuleType {
             CostCategoryRuleType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["INHERITED_VALUE", "REGULAR"]
     }
@@ -542,6 +615,10 @@ pub mod cost_category_inherited_value_dimension {
             self.dimension_name = Some(input);
             self
         }
+        /// <p>The name of the dimension that's used to group costs.</p>
+        /// <p>If you specify <code>LINKED_ACCOUNT_NAME</code>, the cost category value is based on
+        /// account name. If you specify <code>TAG</code>, the cost category value will be based on
+        /// the value of the specified tag key.</p>
         pub fn set_dimension_name(
             mut self,
             input: std::option::Option<crate::model::CostCategoryInheritedValueDimensionName>,
@@ -554,6 +631,7 @@ pub mod cost_category_inherited_value_dimension {
             self.dimension_key = Some(input.into());
             self
         }
+        /// <p>The key to extract cost category values.</p>
         pub fn set_dimension_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -577,6 +655,7 @@ impl CostCategoryInheritedValueDimension {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -588,7 +667,9 @@ impl CostCategoryInheritedValueDimension {
     std::hash::Hash,
 )]
 pub enum CostCategoryInheritedValueDimensionName {
+    #[allow(missing_docs)] // documentation missing in model
     LinkedAccountName,
+    #[allow(missing_docs)] // documentation missing in model
     Tag,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -610,6 +691,7 @@ impl std::str::FromStr for CostCategoryInheritedValueDimensionName {
     }
 }
 impl CostCategoryInheritedValueDimensionName {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CostCategoryInheritedValueDimensionName::LinkedAccountName => "LINKED_ACCOUNT_NAME",
@@ -617,6 +699,7 @@ impl CostCategoryInheritedValueDimensionName {
             CostCategoryInheritedValueDimensionName::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["LINKED_ACCOUNT_NAME", "TAG"]
     }
@@ -724,12 +807,18 @@ pub mod expression {
         pub(crate) cost_categories: std::option::Option<crate::model::CostCategoryValues>,
     }
     impl Builder {
+        /// Appends an item to `or`.
+        ///
+        /// To override the contents of this collection use [`set_or`](Self::set_or).
+        ///
+        /// <p>Return results that match either <code>Dimension</code> object.</p>
         pub fn or(mut self, input: impl Into<crate::model::Expression>) -> Self {
             let mut v = self.or.unwrap_or_default();
             v.push(input.into());
             self.or = Some(v);
             self
         }
+        /// <p>Return results that match either <code>Dimension</code> object.</p>
         pub fn set_or(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Expression>>,
@@ -737,12 +826,18 @@ pub mod expression {
             self.or = input;
             self
         }
+        /// Appends an item to `and`.
+        ///
+        /// To override the contents of this collection use [`set_and`](Self::set_and).
+        ///
+        /// <p>Return results that match both <code>Dimension</code> objects.</p>
         pub fn and(mut self, input: impl Into<crate::model::Expression>) -> Self {
             let mut v = self.and.unwrap_or_default();
             v.push(input.into());
             self.and = Some(v);
             self
         }
+        /// <p>Return results that match both <code>Dimension</code> objects.</p>
         pub fn set_and(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Expression>>,
@@ -755,6 +850,7 @@ pub mod expression {
             self.not = Some(input.into());
             self
         }
+        /// <p>Return results that don't match a <code>Dimension</code> object.</p>
         pub fn set_not(
             mut self,
             input: std::option::Option<std::boxed::Box<crate::model::Expression>>,
@@ -767,6 +863,7 @@ pub mod expression {
             self.dimensions = Some(input);
             self
         }
+        /// <p>The specific <code>Dimension</code> to use for <code>Expression</code>.</p>
         pub fn set_dimensions(
             mut self,
             input: std::option::Option<crate::model::DimensionValues>,
@@ -779,6 +876,7 @@ pub mod expression {
             self.tags = Some(input);
             self
         }
+        /// <p>The specific <code>Tag</code> to use for <code>Expression</code>.</p>
         pub fn set_tags(mut self, input: std::option::Option<crate::model::TagValues>) -> Self {
             self.tags = input;
             self
@@ -788,6 +886,7 @@ pub mod expression {
             self.cost_categories = Some(input);
             self
         }
+        /// <p>The filter that's based on <code>CostCategory</code> values.</p>
         pub fn set_cost_categories(
             mut self,
             input: std::option::Option<crate::model::CostCategoryValues>,
@@ -861,16 +960,23 @@ pub mod cost_category_values {
             self.key = Some(input.into());
             self
         }
+        /// <p>The unique name of the Cost Category.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
         }
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>The specific value of the Cost Category.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
+        /// <p>The specific value of the Cost Category.</p>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -878,12 +984,24 @@ pub mod cost_category_values {
             self.values = input;
             self
         }
+        /// Appends an item to `match_options`.
+        ///
+        /// To override the contents of this collection use [`set_match_options`](Self::set_match_options).
+        ///
+        /// <p>The match options that you can use to filter your results. MatchOptions is only
+        /// applicable for actions related to cost category. The default values for
+        /// <code>MatchOptions</code> is <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.
+        /// </p>
         pub fn match_options(mut self, input: impl Into<crate::model::MatchOption>) -> Self {
             let mut v = self.match_options.unwrap_or_default();
             v.push(input.into());
             self.match_options = Some(v);
             self
         }
+        /// <p>The match options that you can use to filter your results. MatchOptions is only
+        /// applicable for actions related to cost category. The default values for
+        /// <code>MatchOptions</code> is <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.
+        /// </p>
         pub fn set_match_options(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MatchOption>>,
@@ -908,6 +1026,7 @@ impl CostCategoryValues {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -919,12 +1038,19 @@ impl CostCategoryValues {
     std::hash::Hash,
 )]
 pub enum MatchOption {
+    #[allow(missing_docs)] // documentation missing in model
     Absent,
+    #[allow(missing_docs)] // documentation missing in model
     CaseInsensitive,
+    #[allow(missing_docs)] // documentation missing in model
     CaseSensitive,
+    #[allow(missing_docs)] // documentation missing in model
     Contains,
+    #[allow(missing_docs)] // documentation missing in model
     EndsWith,
+    #[allow(missing_docs)] // documentation missing in model
     Equals,
+    #[allow(missing_docs)] // documentation missing in model
     StartsWith,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -951,6 +1077,7 @@ impl std::str::FromStr for MatchOption {
     }
 }
 impl MatchOption {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MatchOption::Absent => "ABSENT",
@@ -963,6 +1090,7 @@ impl MatchOption {
             MatchOption::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ABSENT",
@@ -1027,16 +1155,23 @@ pub mod tag_values {
             self.key = Some(input.into());
             self
         }
+        /// <p>The key for the tag.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
         }
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>The specific value of the tag.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
+        /// <p>The specific value of the tag.</p>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1044,12 +1179,24 @@ pub mod tag_values {
             self.values = input;
             self
         }
+        /// Appends an item to `match_options`.
+        ///
+        /// To override the contents of this collection use [`set_match_options`](Self::set_match_options).
+        ///
+        /// <p>The match options that you can use to filter your results. <code>MatchOptions</code>
+        /// is only applicable for actions related to Cost Category. The default values for
+        /// <code>MatchOptions</code> are <code>EQUALS</code> and
+        /// <code>CASE_SENSITIVE</code>.</p>
         pub fn match_options(mut self, input: impl Into<crate::model::MatchOption>) -> Self {
             let mut v = self.match_options.unwrap_or_default();
             v.push(input.into());
             self.match_options = Some(v);
             self
         }
+        /// <p>The match options that you can use to filter your results. <code>MatchOptions</code>
+        /// is only applicable for actions related to Cost Category. The default values for
+        /// <code>MatchOptions</code> are <code>EQUALS</code> and
+        /// <code>CASE_SENSITIVE</code>.</p>
         pub fn set_match_options(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MatchOption>>,
@@ -1117,16 +1264,26 @@ pub mod dimension_values {
             self.key = Some(input);
             self
         }
+        /// <p>The names of the metadata types that you can use to filter and group your results. For
+        /// example, <code>AZ</code> returns a list of Availability Zones.</p>
         pub fn set_key(mut self, input: std::option::Option<crate::model::Dimension>) -> Self {
             self.key = input;
             self
         }
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>The metadata values that you can use to filter and group your results. You can use
+        /// <code>GetDimensionValues</code> to find specific values.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
+        /// <p>The metadata values that you can use to filter and group your results. You can use
+        /// <code>GetDimensionValues</code> to find specific values.</p>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1134,12 +1291,24 @@ pub mod dimension_values {
             self.values = input;
             self
         }
+        /// Appends an item to `match_options`.
+        ///
+        /// To override the contents of this collection use [`set_match_options`](Self::set_match_options).
+        ///
+        /// <p>The match options that you can use to filter your results. <code>MatchOptions</code>
+        /// is only applicable for actions related to Cost Category. The default values for
+        /// <code>MatchOptions</code> are <code>EQUALS</code> and
+        /// <code>CASE_SENSITIVE</code>.</p>
         pub fn match_options(mut self, input: impl Into<crate::model::MatchOption>) -> Self {
             let mut v = self.match_options.unwrap_or_default();
             v.push(input.into());
             self.match_options = Some(v);
             self
         }
+        /// <p>The match options that you can use to filter your results. <code>MatchOptions</code>
+        /// is only applicable for actions related to Cost Category. The default values for
+        /// <code>MatchOptions</code> are <code>EQUALS</code> and
+        /// <code>CASE_SENSITIVE</code>.</p>
         pub fn set_match_options(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MatchOption>>,
@@ -1164,6 +1333,7 @@ impl DimensionValues {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1175,36 +1345,67 @@ impl DimensionValues {
     std::hash::Hash,
 )]
 pub enum Dimension {
+    #[allow(missing_docs)] // documentation missing in model
     AgreementEndDateTimeAfter,
+    #[allow(missing_docs)] // documentation missing in model
     AgreementEndDateTimeBefore,
+    #[allow(missing_docs)] // documentation missing in model
     Az,
+    #[allow(missing_docs)] // documentation missing in model
     BillingEntity,
+    #[allow(missing_docs)] // documentation missing in model
     CacheEngine,
+    #[allow(missing_docs)] // documentation missing in model
     DatabaseEngine,
+    #[allow(missing_docs)] // documentation missing in model
     DeploymentOption,
+    #[allow(missing_docs)] // documentation missing in model
     InstanceType,
+    #[allow(missing_docs)] // documentation missing in model
     InstanceTypeFamily,
+    #[allow(missing_docs)] // documentation missing in model
     LegalEntityName,
+    #[allow(missing_docs)] // documentation missing in model
     LinkedAccount,
+    #[allow(missing_docs)] // documentation missing in model
     LinkedAccountName,
+    #[allow(missing_docs)] // documentation missing in model
     OperatingSystem,
+    #[allow(missing_docs)] // documentation missing in model
     Operation,
+    #[allow(missing_docs)] // documentation missing in model
     PaymentOption,
+    #[allow(missing_docs)] // documentation missing in model
     Platform,
+    #[allow(missing_docs)] // documentation missing in model
     PurchaseType,
+    #[allow(missing_docs)] // documentation missing in model
     RecordType,
+    #[allow(missing_docs)] // documentation missing in model
     Region,
+    #[allow(missing_docs)] // documentation missing in model
     ReservationId,
+    #[allow(missing_docs)] // documentation missing in model
     ResourceId,
+    #[allow(missing_docs)] // documentation missing in model
     RightsizingType,
+    #[allow(missing_docs)] // documentation missing in model
     SavingsPlansType,
+    #[allow(missing_docs)] // documentation missing in model
     SavingsPlanArn,
+    #[allow(missing_docs)] // documentation missing in model
     Scope,
+    #[allow(missing_docs)] // documentation missing in model
     Service,
+    #[allow(missing_docs)] // documentation missing in model
     ServiceCode,
+    #[allow(missing_docs)] // documentation missing in model
     SubscriptionId,
+    #[allow(missing_docs)] // documentation missing in model
     Tenancy,
+    #[allow(missing_docs)] // documentation missing in model
     UsageType,
+    #[allow(missing_docs)] // documentation missing in model
     UsageTypeGroup,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1255,6 +1456,7 @@ impl std::str::FromStr for Dimension {
     }
 }
 impl Dimension {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Dimension::AgreementEndDateTimeAfter => "AGREEMENT_END_DATE_TIME_AFTER",
@@ -1291,6 +1493,7 @@ impl Dimension {
             Dimension::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "AGREEMENT_END_DATE_TIME_AFTER",
@@ -1345,6 +1548,7 @@ impl AsRef<str> for Dimension {
     std::hash::Hash,
 )]
 pub enum CostCategoryRuleVersion {
+    #[allow(missing_docs)] // documentation missing in model
     CostCategoryExpressionV1,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1365,12 +1569,14 @@ impl std::str::FromStr for CostCategoryRuleVersion {
     }
 }
 impl CostCategoryRuleVersion {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CostCategoryRuleVersion::CostCategoryExpressionV1 => "CostCategoryExpression.v1",
             CostCategoryRuleVersion::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CostCategoryExpression.v1"]
     }
@@ -1419,6 +1625,8 @@ pub mod subscriber {
             self.address = Some(input.into());
             self
         }
+        /// <p>The email address or SNS Amazon Resource Name (ARN). This depends on the
+        /// <code>Type</code>. </p>
         pub fn set_address(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.address = input;
             self
@@ -1428,6 +1636,7 @@ pub mod subscriber {
             self.r#type = Some(input);
             self
         }
+        /// <p>The notification delivery channel. </p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::SubscriberType>,
@@ -1440,6 +1649,7 @@ pub mod subscriber {
             self.status = Some(input);
             self
         }
+        /// <p>Indicates if the subscriber accepts the notifications. </p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::SubscriberStatus>,
@@ -1464,6 +1674,7 @@ impl Subscriber {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1475,7 +1686,9 @@ impl Subscriber {
     std::hash::Hash,
 )]
 pub enum SubscriberStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Confirmed,
+    #[allow(missing_docs)] // documentation missing in model
     Declined,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1497,6 +1710,7 @@ impl std::str::FromStr for SubscriberStatus {
     }
 }
 impl SubscriberStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SubscriberStatus::Confirmed => "CONFIRMED",
@@ -1504,6 +1718,7 @@ impl SubscriberStatus {
             SubscriberStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CONFIRMED", "DECLINED"]
     }
@@ -1514,6 +1729,7 @@ impl AsRef<str> for SubscriberStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1525,7 +1741,9 @@ impl AsRef<str> for SubscriberStatus {
     std::hash::Hash,
 )]
 pub enum SubscriberType {
+    #[allow(missing_docs)] // documentation missing in model
     Email,
+    #[allow(missing_docs)] // documentation missing in model
     Sns,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1547,6 +1765,7 @@ impl std::str::FromStr for SubscriberType {
     }
 }
 impl SubscriberType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SubscriberType::Email => "EMAIL",
@@ -1554,6 +1773,7 @@ impl SubscriberType {
             SubscriberType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["EMAIL", "SNS"]
     }
@@ -1564,6 +1784,7 @@ impl AsRef<str> for SubscriberType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1575,8 +1796,11 @@ impl AsRef<str> for SubscriberType {
     std::hash::Hash,
 )]
 pub enum AnomalySubscriptionFrequency {
+    #[allow(missing_docs)] // documentation missing in model
     Daily,
+    #[allow(missing_docs)] // documentation missing in model
     Immediate,
+    #[allow(missing_docs)] // documentation missing in model
     Weekly,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1599,6 +1823,7 @@ impl std::str::FromStr for AnomalySubscriptionFrequency {
     }
 }
 impl AnomalySubscriptionFrequency {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AnomalySubscriptionFrequency::Daily => "DAILY",
@@ -1607,6 +1832,7 @@ impl AnomalySubscriptionFrequency {
             AnomalySubscriptionFrequency::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DAILY", "IMMEDIATE", "WEEKLY"]
     }
@@ -1617,6 +1843,7 @@ impl AsRef<str> for AnomalySubscriptionFrequency {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1628,8 +1855,11 @@ impl AsRef<str> for AnomalySubscriptionFrequency {
     std::hash::Hash,
 )]
 pub enum AnomalyFeedbackType {
+    #[allow(missing_docs)] // documentation missing in model
     No,
+    #[allow(missing_docs)] // documentation missing in model
     PlannedActivity,
+    #[allow(missing_docs)] // documentation missing in model
     Yes,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1652,6 +1882,7 @@ impl std::str::FromStr for AnomalyFeedbackType {
     }
 }
 impl AnomalyFeedbackType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AnomalyFeedbackType::No => "NO",
@@ -1660,6 +1891,7 @@ impl AnomalyFeedbackType {
             AnomalyFeedbackType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["NO", "PLANNED_ACTIVITY", "YES"]
     }
@@ -1733,6 +1965,7 @@ pub mod cost_category_reference {
             self.cost_category_arn = Some(input.into());
             self
         }
+        /// <p>The unique identifier for your Cost Category. </p>
         pub fn set_cost_category_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1745,6 +1978,7 @@ pub mod cost_category_reference {
             self.name = Some(input.into());
             self
         }
+        /// <p>The unique name of the Cost Category.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1754,6 +1988,7 @@ pub mod cost_category_reference {
             self.effective_start = Some(input.into());
             self
         }
+        /// <p>The Cost Category's effective start date.</p>
         pub fn set_effective_start(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1766,6 +2001,7 @@ pub mod cost_category_reference {
             self.effective_end = Some(input.into());
             self
         }
+        /// <p>The Cost Category's effective end date.</p>
         pub fn set_effective_end(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1778,10 +2014,17 @@ pub mod cost_category_reference {
             self.number_of_rules = Some(input);
             self
         }
+        /// <p>The number of rules that are associated with a specific Cost Category. </p>
         pub fn set_number_of_rules(mut self, input: std::option::Option<i32>) -> Self {
             self.number_of_rules = input;
             self
         }
+        /// Appends an item to `processing_status`.
+        ///
+        /// To override the contents of this collection use [`set_processing_status`](Self::set_processing_status).
+        ///
+        /// <p>The list of processing statuses for Cost Management products for a specific cost
+        /// category. </p>
         pub fn processing_status(
             mut self,
             input: impl Into<crate::model::CostCategoryProcessingStatus>,
@@ -1791,6 +2034,8 @@ pub mod cost_category_reference {
             self.processing_status = Some(v);
             self
         }
+        /// <p>The list of processing statuses for Cost Management products for a specific cost
+        /// category. </p>
         pub fn set_processing_status(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CostCategoryProcessingStatus>>,
@@ -1798,12 +2043,18 @@ pub mod cost_category_reference {
             self.processing_status = input;
             self
         }
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>A list of unique cost category values in a specific cost category. </p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
+        /// <p>A list of unique cost category values in a specific cost category. </p>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1817,6 +2068,8 @@ pub mod cost_category_reference {
             self.default_value = Some(input.into());
             self
         }
+        /// <p>The
+        /// default value for the cost category.</p>
         pub fn set_default_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1879,6 +2132,7 @@ pub mod cost_category_processing_status {
             self.component = Some(input);
             self
         }
+        /// <p>The Cost Management product name of the applied status. </p>
         pub fn set_component(
             mut self,
             input: std::option::Option<crate::model::CostCategoryStatusComponent>,
@@ -1891,6 +2145,7 @@ pub mod cost_category_processing_status {
             self.status = Some(input);
             self
         }
+        /// <p>The process status for a specific cost category. </p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::CostCategoryStatus>,
@@ -1914,6 +2169,7 @@ impl CostCategoryProcessingStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1925,7 +2181,9 @@ impl CostCategoryProcessingStatus {
     std::hash::Hash,
 )]
 pub enum CostCategoryStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Applied,
+    #[allow(missing_docs)] // documentation missing in model
     Processing,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1947,6 +2205,7 @@ impl std::str::FromStr for CostCategoryStatus {
     }
 }
 impl CostCategoryStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CostCategoryStatus::Applied => "APPLIED",
@@ -1954,6 +2213,7 @@ impl CostCategoryStatus {
             CostCategoryStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["APPLIED", "PROCESSING"]
     }
@@ -1964,6 +2224,7 @@ impl AsRef<str> for CostCategoryStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1975,6 +2236,7 @@ impl AsRef<str> for CostCategoryStatus {
     std::hash::Hash,
 )]
 pub enum CostCategoryStatusComponent {
+    #[allow(missing_docs)] // documentation missing in model
     CostExplorer,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1995,12 +2257,14 @@ impl std::str::FromStr for CostCategoryStatusComponent {
     }
 }
 impl CostCategoryStatusComponent {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CostCategoryStatusComponent::CostExplorer => "COST_EXPLORER",
             CostCategoryStatusComponent::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["COST_EXPLORER"]
     }
@@ -2057,6 +2321,7 @@ pub mod forecast_result {
             self.time_period = Some(input);
             self
         }
+        /// <p>The period of time that the forecast covers.</p>
         pub fn set_time_period(
             mut self,
             input: std::option::Option<crate::model::DateInterval>,
@@ -2069,6 +2334,7 @@ pub mod forecast_result {
             self.mean_value = Some(input.into());
             self
         }
+        /// <p>The mean value of the forecast.</p>
         pub fn set_mean_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mean_value = input;
             self
@@ -2081,6 +2347,7 @@ pub mod forecast_result {
             self.prediction_interval_lower_bound = Some(input.into());
             self
         }
+        /// <p>The lower limit for the prediction interval. </p>
         pub fn set_prediction_interval_lower_bound(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2096,6 +2363,7 @@ pub mod forecast_result {
             self.prediction_interval_upper_bound = Some(input.into());
             self
         }
+        /// <p>The upper limit for the prediction interval. </p>
         pub fn set_prediction_interval_upper_bound(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2161,6 +2429,10 @@ pub mod date_interval {
             self.start = Some(input.into());
             self
         }
+        /// <p>The beginning of the time period. The start date is inclusive. For example, if
+        /// <code>start</code> is <code>2017-01-01</code>, Amazon Web Services retrieves cost and
+        /// usage data starting at <code>2017-01-01</code> up to the end date. The start date must
+        /// be equal to or no later than the current date to avoid a validation error.</p>
         pub fn set_start(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.start = input;
             self
@@ -2172,6 +2444,9 @@ pub mod date_interval {
             self.end = Some(input.into());
             self
         }
+        /// <p>The end of the time period. The end date is exclusive. For example, if
+        /// <code>end</code> is <code>2017-05-01</code>, Amazon Web Services retrieves cost and
+        /// usage data from the start date up to, but not including, <code>2017-05-01</code>.</p>
         pub fn set_end(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.end = input;
             self
@@ -2224,6 +2499,7 @@ pub mod metric_value {
             self.amount = Some(input.into());
             self
         }
+        /// <p>The actual number that represents the metric.</p>
         pub fn set_amount(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.amount = input;
             self
@@ -2233,6 +2509,7 @@ pub mod metric_value {
             self.unit = Some(input.into());
             self
         }
+        /// <p>The unit that the metric is given in.</p>
         pub fn set_unit(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.unit = input;
             self
@@ -2253,6 +2530,7 @@ impl MetricValue {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2264,8 +2542,11 @@ impl MetricValue {
     std::hash::Hash,
 )]
 pub enum Granularity {
+    #[allow(missing_docs)] // documentation missing in model
     Daily,
+    #[allow(missing_docs)] // documentation missing in model
     Hourly,
+    #[allow(missing_docs)] // documentation missing in model
     Monthly,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2288,6 +2569,7 @@ impl std::str::FromStr for Granularity {
     }
 }
 impl Granularity {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Granularity::Daily => "DAILY",
@@ -2296,6 +2578,7 @@ impl Granularity {
             Granularity::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DAILY", "HOURLY", "MONTHLY"]
     }
@@ -2306,6 +2589,7 @@ impl AsRef<str> for Granularity {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2317,12 +2601,19 @@ impl AsRef<str> for Granularity {
     std::hash::Hash,
 )]
 pub enum Metric {
+    #[allow(missing_docs)] // documentation missing in model
     AmortizedCost,
+    #[allow(missing_docs)] // documentation missing in model
     BlendedCost,
+    #[allow(missing_docs)] // documentation missing in model
     NetAmortizedCost,
+    #[allow(missing_docs)] // documentation missing in model
     NetUnblendedCost,
+    #[allow(missing_docs)] // documentation missing in model
     NormalizedUsageAmount,
+    #[allow(missing_docs)] // documentation missing in model
     UnblendedCost,
+    #[allow(missing_docs)] // documentation missing in model
     UsageQuantity,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2349,6 +2640,7 @@ impl std::str::FromStr for Metric {
     }
 }
 impl Metric {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Metric::AmortizedCost => "AMORTIZED_COST",
@@ -2361,6 +2653,7 @@ impl Metric {
             Metric::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "AMORTIZED_COST",
@@ -2411,6 +2704,7 @@ pub mod sort_definition {
             self.key = Some(input.into());
             self
         }
+        /// <p>The key that's used to sort the data.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -2420,6 +2714,7 @@ pub mod sort_definition {
             self.sort_order = Some(input);
             self
         }
+        /// <p>The order that's used to sort the data.</p>
         pub fn set_sort_order(
             mut self,
             input: std::option::Option<crate::model::SortOrder>,
@@ -2443,6 +2738,7 @@ impl SortDefinition {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2454,7 +2750,9 @@ impl SortDefinition {
     std::hash::Hash,
 )]
 pub enum SortOrder {
+    #[allow(missing_docs)] // documentation missing in model
     Ascending,
+    #[allow(missing_docs)] // documentation missing in model
     Descending,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2476,6 +2774,7 @@ impl std::str::FromStr for SortOrder {
     }
 }
 impl SortOrder {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SortOrder::Ascending => "ASCENDING",
@@ -2483,6 +2782,7 @@ impl SortOrder {
             SortOrder::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ASCENDING", "DESCENDING"]
     }
@@ -2535,6 +2835,8 @@ pub mod savings_plans_utilization_aggregates {
             self.utilization = Some(input);
             self
         }
+        /// <p>A ratio of your effectiveness of using existing Savings Plans to apply to workloads
+        /// that are Savings Plans eligible.</p>
         pub fn set_utilization(
             mut self,
             input: std::option::Option<crate::model::SavingsPlansUtilization>,
@@ -2549,6 +2851,9 @@ pub mod savings_plans_utilization_aggregates {
             self.savings = Some(input);
             self
         }
+        /// <p>The amount saved by using existing Savings Plans. Savings returns both net savings
+        /// from Savings Plans, as well as the <code>onDemandCostEquivalent</code> of the Savings
+        /// Plans when considering the utilization rate.</p>
         pub fn set_savings(
             mut self,
             input: std::option::Option<crate::model::SavingsPlansSavings>,
@@ -2565,6 +2870,8 @@ pub mod savings_plans_utilization_aggregates {
             self.amortized_commitment = Some(input);
             self
         }
+        /// <p>The total amortized commitment for a Savings Plans. This includes the sum of the
+        /// upfront and recurring Savings Plans fees.</p>
         pub fn set_amortized_commitment(
             mut self,
             input: std::option::Option<crate::model::SavingsPlansAmortizedCommitment>,
@@ -2642,6 +2949,8 @@ pub mod savings_plans_amortized_commitment {
             self.amortized_recurring_commitment = Some(input.into());
             self
         }
+        /// <p>The amortized amount of your Savings Plans commitment that was purchased with either a
+        /// <code>Partial</code> or a <code>NoUpfront</code>.</p>
         pub fn set_amortized_recurring_commitment(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2658,6 +2967,8 @@ pub mod savings_plans_amortized_commitment {
             self.amortized_upfront_commitment = Some(input.into());
             self
         }
+        /// <p>The amortized amount of your Savings Plans commitment that was purchased with an
+        /// <code>Upfront</code> or <code>PartialUpfront</code> Savings Plans.</p>
         pub fn set_amortized_upfront_commitment(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2671,6 +2982,8 @@ pub mod savings_plans_amortized_commitment {
             self.total_amortized_commitment = Some(input.into());
             self
         }
+        /// <p>The total amortized amount of your Savings Plans commitment, regardless of your
+        /// Savings Plans purchase method. </p>
         pub fn set_total_amortized_commitment(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2731,6 +3044,8 @@ pub mod savings_plans_savings {
             self.net_savings = Some(input.into());
             self
         }
+        /// <p>The savings amount that you're accumulating for the usage that's covered by a Savings
+        /// Plans, when compared to the On-Demand equivalent of the same usage.</p>
         pub fn set_net_savings(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.net_savings = input;
             self
@@ -2741,6 +3056,8 @@ pub mod savings_plans_savings {
             self.on_demand_cost_equivalent = Some(input.into());
             self
         }
+        /// <p>How much the amount that the usage would have cost if it was accrued at the On-Demand
+        /// rate.</p>
         pub fn set_on_demand_cost_equivalent(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2809,6 +3126,8 @@ pub mod savings_plans_utilization {
             self.total_commitment = Some(input.into());
             self
         }
+        /// <p>The total amount of Savings Plans commitment that's been purchased in an account (or
+        /// set of accounts).</p>
         pub fn set_total_commitment(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2822,6 +3141,8 @@ pub mod savings_plans_utilization {
             self.used_commitment = Some(input.into());
             self
         }
+        /// <p>The amount of your Savings Plans commitment that was consumed from Savings Plans
+        /// eligible usage in a specific period.</p>
         pub fn set_used_commitment(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2835,6 +3156,8 @@ pub mod savings_plans_utilization {
             self.unused_commitment = Some(input.into());
             self
         }
+        /// <p>The amount of your Savings Plans commitment that wasn't consumed from Savings Plans
+        /// eligible usage in a specific period.</p>
         pub fn set_unused_commitment(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2848,6 +3171,8 @@ pub mod savings_plans_utilization {
             self.utilization_percentage = Some(input.into());
             self
         }
+        /// <p>The amount of <code>UsedCommitment</code> divided by the <code>TotalCommitment</code>
+        /// for your Savings Plans.</p>
         pub fn set_utilization_percentage(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2927,6 +3252,7 @@ pub mod savings_plans_utilization_detail {
             self.savings_plan_arn = Some(input.into());
             self
         }
+        /// <p>The unique Amazon Resource Name (ARN) for a particular Savings Plan.</p>
         pub fn set_savings_plan_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2934,6 +3260,11 @@ pub mod savings_plans_utilization_detail {
             self.savings_plan_arn = input;
             self
         }
+        /// Adds a key-value pair to `attributes`.
+        ///
+        /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
+        ///
+        /// <p>The attribute that applies to a specific <code>Dimension</code>.</p>
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -2944,6 +3275,7 @@ pub mod savings_plans_utilization_detail {
             self.attributes = Some(hash_map);
             self
         }
+        /// <p>The attribute that applies to a specific <code>Dimension</code>.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -2959,6 +3291,8 @@ pub mod savings_plans_utilization_detail {
             self.utilization = Some(input);
             self
         }
+        /// <p>A ratio of your effectiveness of using existing Savings Plans to apply to workloads
+        /// that are Savings Plans eligible.</p>
         pub fn set_utilization(
             mut self,
             input: std::option::Option<crate::model::SavingsPlansUtilization>,
@@ -2973,6 +3307,9 @@ pub mod savings_plans_utilization_detail {
             self.savings = Some(input);
             self
         }
+        /// <p>The amount saved by using existing Savings Plans. Savings returns both net savings
+        /// from savings plans as well as the <code>onDemandCostEquivalent</code> of the Savings
+        /// Plans when considering the utilization rate.</p>
         pub fn set_savings(
             mut self,
             input: std::option::Option<crate::model::SavingsPlansSavings>,
@@ -2989,6 +3326,8 @@ pub mod savings_plans_utilization_detail {
             self.amortized_commitment = Some(input);
             self
         }
+        /// <p>The total amortized commitment for a Savings Plans. Includes the sum of the upfront
+        /// and recurring Savings Plans fees.</p>
         pub fn set_amortized_commitment(
             mut self,
             input: std::option::Option<crate::model::SavingsPlansAmortizedCommitment>,
@@ -3015,6 +3354,7 @@ impl SavingsPlansUtilizationDetail {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3026,9 +3366,13 @@ impl SavingsPlansUtilizationDetail {
     std::hash::Hash,
 )]
 pub enum SavingsPlansDataType {
+    #[allow(missing_docs)] // documentation missing in model
     AmortizedCommitment,
+    #[allow(missing_docs)] // documentation missing in model
     Attributes,
+    #[allow(missing_docs)] // documentation missing in model
     Savings,
+    #[allow(missing_docs)] // documentation missing in model
     Utilization,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3052,6 +3396,7 @@ impl std::str::FromStr for SavingsPlansDataType {
     }
 }
 impl SavingsPlansDataType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SavingsPlansDataType::AmortizedCommitment => "AMORTIZED_COMMITMENT",
@@ -3061,6 +3406,7 @@ impl SavingsPlansDataType {
             SavingsPlansDataType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "AMORTIZED_COMMITMENT",
@@ -3121,6 +3467,7 @@ pub mod savings_plans_utilization_by_time {
             self.time_period = Some(input);
             self
         }
+        /// <p>The time period of the request. </p>
         pub fn set_time_period(
             mut self,
             input: std::option::Option<crate::model::DateInterval>,
@@ -3134,6 +3481,8 @@ pub mod savings_plans_utilization_by_time {
             self.utilization = Some(input);
             self
         }
+        /// <p>A ratio of your effectiveness of using existing Savings Plans to apply to workloads
+        /// that are Savings Plans eligible.</p>
         pub fn set_utilization(
             mut self,
             input: std::option::Option<crate::model::SavingsPlansUtilization>,
@@ -3148,6 +3497,9 @@ pub mod savings_plans_utilization_by_time {
             self.savings = Some(input);
             self
         }
+        /// <p>The amount saved by using existing Savings Plans. Savings returns both net savings
+        /// from Savings Plans as well as the <code>onDemandCostEquivalent</code> of the Savings
+        /// Plans when considering the utilization rate.</p>
         pub fn set_savings(
             mut self,
             input: std::option::Option<crate::model::SavingsPlansSavings>,
@@ -3164,6 +3516,8 @@ pub mod savings_plans_utilization_by_time {
             self.amortized_commitment = Some(input);
             self
         }
+        /// <p>The total amortized commitment for a Savings Plans. This includes the sum of the
+        /// upfront and recurring Savings Plans fees.</p>
         pub fn set_amortized_commitment(
             mut self,
             input: std::option::Option<crate::model::SavingsPlansAmortizedCommitment>,
@@ -3261,6 +3615,10 @@ pub mod savings_plans_purchase_recommendation {
             self.account_scope = Some(input);
             self
         }
+        /// <p>The account scope that you want your recommendations for. Amazon Web Services
+        /// calculates recommendations that include the management account and member accounts if
+        /// the value is set to <code>PAYER</code>. If the value is <code>LINKED</code>,
+        /// recommendations are calculated for individual member accounts only.</p>
         pub fn set_account_scope(
             mut self,
             input: std::option::Option<crate::model::AccountScope>,
@@ -3276,6 +3634,7 @@ pub mod savings_plans_purchase_recommendation {
             self.savings_plans_type = Some(input);
             self
         }
+        /// <p>The requested Savings Plans recommendation type.</p>
         pub fn set_savings_plans_type(
             mut self,
             input: std::option::Option<crate::model::SupportedSavingsPlansType>,
@@ -3289,6 +3648,8 @@ pub mod savings_plans_purchase_recommendation {
             self.term_in_years = Some(input);
             self
         }
+        /// <p>The Savings Plans recommendation term in years. It's used to generate the
+        /// recommendation.</p>
         pub fn set_term_in_years(
             mut self,
             input: std::option::Option<crate::model::TermInYears>,
@@ -3301,6 +3662,7 @@ pub mod savings_plans_purchase_recommendation {
             self.payment_option = Some(input);
             self
         }
+        /// <p>The payment option used to generate the recommendation.</p>
         pub fn set_payment_option(
             mut self,
             input: std::option::Option<crate::model::PaymentOption>,
@@ -3316,6 +3678,7 @@ pub mod savings_plans_purchase_recommendation {
             self.lookback_period_in_days = Some(input);
             self
         }
+        /// <p>The lookback period in days, used to generate the recommendation.</p>
         pub fn set_lookback_period_in_days(
             mut self,
             input: std::option::Option<crate::model::LookbackPeriodInDays>,
@@ -3323,6 +3686,12 @@ pub mod savings_plans_purchase_recommendation {
             self.lookback_period_in_days = input;
             self
         }
+        /// Appends an item to `savings_plans_purchase_recommendation_details`.
+        ///
+        /// To override the contents of this collection use [`set_savings_plans_purchase_recommendation_details`](Self::set_savings_plans_purchase_recommendation_details).
+        ///
+        /// <p>Details for the Savings Plans we recommend that you purchase to cover existing Savings
+        /// Plans eligible workloads.</p>
         pub fn savings_plans_purchase_recommendation_details(
             mut self,
             input: impl Into<crate::model::SavingsPlansPurchaseRecommendationDetail>,
@@ -3334,6 +3703,8 @@ pub mod savings_plans_purchase_recommendation {
             self.savings_plans_purchase_recommendation_details = Some(v);
             self
         }
+        /// <p>Details for the Savings Plans we recommend that you purchase to cover existing Savings
+        /// Plans eligible workloads.</p>
         pub fn set_savings_plans_purchase_recommendation_details(
             mut self,
             input: std::option::Option<
@@ -3351,6 +3722,7 @@ pub mod savings_plans_purchase_recommendation {
             self.savings_plans_purchase_recommendation_summary = Some(input);
             self
         }
+        /// <p>Summary metrics for your Savings Plans Recommendations. </p>
         pub fn set_savings_plans_purchase_recommendation_summary(
             mut self,
             input: std::option::Option<crate::model::SavingsPlansPurchaseRecommendationSummary>,
@@ -3481,6 +3853,8 @@ pub mod savings_plans_purchase_recommendation_summary {
             self.estimated_roi = Some(input.into());
             self
         }
+        /// <p>The estimated return on investment that's based on the recommended Savings Plans and
+        /// estimated savings.</p>
         pub fn set_estimated_roi(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3494,6 +3868,8 @@ pub mod savings_plans_purchase_recommendation_summary {
             self.currency_code = Some(input.into());
             self
         }
+        /// <p>The currency code that Amazon Web Services used to generate the recommendations and
+        /// present potential savings.</p>
         pub fn set_currency_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3508,6 +3884,9 @@ pub mod savings_plans_purchase_recommendation_summary {
             self.estimated_total_cost = Some(input.into());
             self
         }
+        /// <p>The estimated total cost of the usage after purchasing the recommended Savings Plans.
+        /// This is a sum of the cost of Savings Plans during this term, and the remaining On-Demand
+        /// usage.</p>
         pub fn set_estimated_total_cost(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3521,6 +3900,8 @@ pub mod savings_plans_purchase_recommendation_summary {
             self.current_on_demand_spend = Some(input.into());
             self
         }
+        /// <p>The current total on demand spend of the applicable usage types over the lookback
+        /// period.</p>
         pub fn set_current_on_demand_spend(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3534,6 +3915,8 @@ pub mod savings_plans_purchase_recommendation_summary {
             self.estimated_savings_amount = Some(input.into());
             self
         }
+        /// <p>The estimated total savings over the lookback period, based on the purchase of the
+        /// recommended Savings Plans.</p>
         pub fn set_estimated_savings_amount(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3547,6 +3930,8 @@ pub mod savings_plans_purchase_recommendation_summary {
             self.total_recommendation_count = Some(input.into());
             self
         }
+        /// <p>The aggregate number of Savings Plans recommendations that exist for your
+        /// account.</p>
         pub fn set_total_recommendation_count(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3562,6 +3947,7 @@ pub mod savings_plans_purchase_recommendation_summary {
             self.daily_commitment_to_purchase = Some(input.into());
             self
         }
+        /// <p>The recommended Savings Plans cost on a daily (24 hourly) basis.</p>
         pub fn set_daily_commitment_to_purchase(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3578,6 +3964,8 @@ pub mod savings_plans_purchase_recommendation_summary {
             self.hourly_commitment_to_purchase = Some(input.into());
             self
         }
+        /// <p>The recommended hourly commitment that's based on the recommendation
+        /// parameters.</p>
         pub fn set_hourly_commitment_to_purchase(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3595,6 +3983,9 @@ pub mod savings_plans_purchase_recommendation_summary {
             self.estimated_savings_percentage = Some(input.into());
             self
         }
+        /// <p>The estimated savings relative to the total cost of On-Demand usage, over the lookback
+        /// period. This is calculated as <code>estimatedSavingsAmount</code>/
+        /// <code>CurrentOnDemandSpend</code>*100.</p>
         pub fn set_estimated_savings_percentage(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3611,6 +4002,8 @@ pub mod savings_plans_purchase_recommendation_summary {
             self.estimated_monthly_savings_amount = Some(input.into());
             self
         }
+        /// <p>The estimated monthly savings amount that's based on the recommended Savings Plans
+        /// purchase.</p>
         pub fn set_estimated_monthly_savings_amount(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3627,6 +4020,8 @@ pub mod savings_plans_purchase_recommendation_summary {
             self.estimated_on_demand_cost_with_current_commitment = Some(input.into());
             self
         }
+        /// <p> The estimated On-Demand costs you would expect with no additional commitment. It's
+        /// based on your usage of the selected time period and the Savings Plans you own. </p>
         pub fn set_estimated_on_demand_cost_with_current_commitment(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3786,6 +4181,7 @@ pub mod savings_plans_purchase_recommendation_detail {
             self.savings_plans_details = Some(input);
             self
         }
+        /// <p>Details for your recommended Savings Plans.</p>
         pub fn set_savings_plans_details(
             mut self,
             input: std::option::Option<crate::model::SavingsPlansDetails>,
@@ -3798,6 +4194,7 @@ pub mod savings_plans_purchase_recommendation_detail {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The <code>AccountID</code> the recommendation is generated for.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -3808,6 +4205,8 @@ pub mod savings_plans_purchase_recommendation_detail {
             self.upfront_cost = Some(input.into());
             self
         }
+        /// <p>The upfront cost of the recommended Savings Plans, based on the selected payment
+        /// option.</p>
         pub fn set_upfront_cost(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.upfront_cost = input;
             self
@@ -3819,6 +4218,9 @@ pub mod savings_plans_purchase_recommendation_detail {
             self.estimated_roi = Some(input.into());
             self
         }
+        /// <p>The estimated return on investment that's based on the recommended Savings Plans that
+        /// you purchased. This is calculated as <code>estimatedSavingsAmount</code>/
+        /// <code>estimatedSPCost</code>*100.</p>
         pub fn set_estimated_roi(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3832,6 +4234,8 @@ pub mod savings_plans_purchase_recommendation_detail {
             self.currency_code = Some(input.into());
             self
         }
+        /// <p>The currency code that Amazon Web Services used to generate the recommendations and
+        /// present potential savings.</p>
         pub fn set_currency_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3845,6 +4249,8 @@ pub mod savings_plans_purchase_recommendation_detail {
             self.estimated_sp_cost = Some(input.into());
             self
         }
+        /// <p>The cost of the recommended Savings Plans over the length of the lookback
+        /// period.</p>
         pub fn set_estimated_sp_cost(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3858,6 +4264,8 @@ pub mod savings_plans_purchase_recommendation_detail {
             self.estimated_on_demand_cost = Some(input.into());
             self
         }
+        /// <p>The remaining On-Demand cost estimated to not be covered by the recommended Savings
+        /// Plans, over the length of the lookback period.</p>
         pub fn set_estimated_on_demand_cost(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3874,6 +4282,8 @@ pub mod savings_plans_purchase_recommendation_detail {
             self.estimated_on_demand_cost_with_current_commitment = Some(input.into());
             self
         }
+        /// <p> The estimated On-Demand costs you would expect with no additional commitment, based
+        /// on your usage of the selected time period and the Savings Plans you own. </p>
         pub fn set_estimated_on_demand_cost_with_current_commitment(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3887,6 +4297,8 @@ pub mod savings_plans_purchase_recommendation_detail {
             self.estimated_savings_amount = Some(input.into());
             self
         }
+        /// <p>The estimated savings amount that's based on the recommended Savings Plans over the
+        /// length of the lookback period.</p>
         pub fn set_estimated_savings_amount(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3903,6 +4315,8 @@ pub mod savings_plans_purchase_recommendation_detail {
             self.estimated_savings_percentage = Some(input.into());
             self
         }
+        /// <p>The estimated savings percentage relative to the total cost of applicable On-Demand
+        /// usage over the lookback period.</p>
         pub fn set_estimated_savings_percentage(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3919,6 +4333,8 @@ pub mod savings_plans_purchase_recommendation_detail {
             self.hourly_commitment_to_purchase = Some(input.into());
             self
         }
+        /// <p>The recommended hourly commitment level for the Savings Plans type and the
+        /// configuration that's based on the usage during the lookback period.</p>
         pub fn set_hourly_commitment_to_purchase(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3934,6 +4350,7 @@ pub mod savings_plans_purchase_recommendation_detail {
             self.estimated_average_utilization = Some(input.into());
             self
         }
+        /// <p>The estimated utilization of the recommended Savings Plans.</p>
         pub fn set_estimated_average_utilization(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3949,6 +4366,7 @@ pub mod savings_plans_purchase_recommendation_detail {
             self.estimated_monthly_savings_amount = Some(input.into());
             self
         }
+        /// <p>The estimated monthly savings amount based on the recommended Savings Plans.</p>
         pub fn set_estimated_monthly_savings_amount(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3965,6 +4383,8 @@ pub mod savings_plans_purchase_recommendation_detail {
             self.current_minimum_hourly_on_demand_spend = Some(input.into());
             self
         }
+        /// <p>The lowest value of hourly On-Demand spend over the lookback period of the applicable
+        /// usage type.</p>
         pub fn set_current_minimum_hourly_on_demand_spend(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3981,6 +4401,8 @@ pub mod savings_plans_purchase_recommendation_detail {
             self.current_maximum_hourly_on_demand_spend = Some(input.into());
             self
         }
+        /// <p>The highest value of hourly On-Demand spend over the lookback period of the applicable
+        /// usage type.</p>
         pub fn set_current_maximum_hourly_on_demand_spend(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3997,6 +4419,8 @@ pub mod savings_plans_purchase_recommendation_detail {
             self.current_average_hourly_on_demand_spend = Some(input.into());
             self
         }
+        /// <p>The average value of hourly On-Demand spend over the lookback period of the applicable
+        /// usage type.</p>
         pub fn set_current_average_hourly_on_demand_spend(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4071,6 +4495,7 @@ pub mod savings_plans_details {
             self.region = Some(input.into());
             self
         }
+        /// <p>A collection of Amazon Web Services resources in a geographic area. Each Amazon Web Services Region is isolated and independent of the other Regions.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
@@ -4080,6 +4505,7 @@ pub mod savings_plans_details {
             self.instance_family = Some(input.into());
             self
         }
+        /// <p>A group of instance types that Savings Plans applies to.</p>
         pub fn set_instance_family(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4092,6 +4518,7 @@ pub mod savings_plans_details {
             self.offering_id = Some(input.into());
             self
         }
+        /// <p>The unique ID that's used to distinguish Savings Plans from one another.</p>
         pub fn set_offering_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.offering_id = input;
             self
@@ -4113,6 +4540,7 @@ impl SavingsPlansDetails {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4124,8 +4552,11 @@ impl SavingsPlansDetails {
     std::hash::Hash,
 )]
 pub enum LookbackPeriodInDays {
+    #[allow(missing_docs)] // documentation missing in model
     SevenDays,
+    #[allow(missing_docs)] // documentation missing in model
     SixtyDays,
+    #[allow(missing_docs)] // documentation missing in model
     ThirtyDays,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4148,6 +4579,7 @@ impl std::str::FromStr for LookbackPeriodInDays {
     }
 }
 impl LookbackPeriodInDays {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LookbackPeriodInDays::SevenDays => "SEVEN_DAYS",
@@ -4156,6 +4588,7 @@ impl LookbackPeriodInDays {
             LookbackPeriodInDays::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["SEVEN_DAYS", "SIXTY_DAYS", "THIRTY_DAYS"]
     }
@@ -4166,6 +4599,7 @@ impl AsRef<str> for LookbackPeriodInDays {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4177,11 +4611,17 @@ impl AsRef<str> for LookbackPeriodInDays {
     std::hash::Hash,
 )]
 pub enum PaymentOption {
+    #[allow(missing_docs)] // documentation missing in model
     AllUpfront,
+    #[allow(missing_docs)] // documentation missing in model
     HeavyUtilization,
+    #[allow(missing_docs)] // documentation missing in model
     LightUtilization,
+    #[allow(missing_docs)] // documentation missing in model
     MediumUtilization,
+    #[allow(missing_docs)] // documentation missing in model
     NoUpfront,
+    #[allow(missing_docs)] // documentation missing in model
     PartialUpfront,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4207,6 +4647,7 @@ impl std::str::FromStr for PaymentOption {
     }
 }
 impl PaymentOption {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PaymentOption::AllUpfront => "ALL_UPFRONT",
@@ -4218,6 +4659,7 @@ impl PaymentOption {
             PaymentOption::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ALL_UPFRONT",
@@ -4235,6 +4677,7 @@ impl AsRef<str> for PaymentOption {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4246,7 +4689,9 @@ impl AsRef<str> for PaymentOption {
     std::hash::Hash,
 )]
 pub enum TermInYears {
+    #[allow(missing_docs)] // documentation missing in model
     OneYear,
+    #[allow(missing_docs)] // documentation missing in model
     ThreeYears,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4268,6 +4713,7 @@ impl std::str::FromStr for TermInYears {
     }
 }
 impl TermInYears {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TermInYears::OneYear => "ONE_YEAR",
@@ -4275,6 +4721,7 @@ impl TermInYears {
             TermInYears::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ONE_YEAR", "THREE_YEARS"]
     }
@@ -4285,6 +4732,7 @@ impl AsRef<str> for TermInYears {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4296,8 +4744,11 @@ impl AsRef<str> for TermInYears {
     std::hash::Hash,
 )]
 pub enum SupportedSavingsPlansType {
+    #[allow(missing_docs)] // documentation missing in model
     ComputeSp,
+    #[allow(missing_docs)] // documentation missing in model
     Ec2InstanceSp,
+    #[allow(missing_docs)] // documentation missing in model
     SagemakerSp,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4320,6 +4771,7 @@ impl std::str::FromStr for SupportedSavingsPlansType {
     }
 }
 impl SupportedSavingsPlansType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SupportedSavingsPlansType::ComputeSp => "COMPUTE_SP",
@@ -4328,6 +4780,7 @@ impl SupportedSavingsPlansType {
             SupportedSavingsPlansType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["COMPUTE_SP", "EC2_INSTANCE_SP", "SAGEMAKER_SP"]
     }
@@ -4338,6 +4791,7 @@ impl AsRef<str> for SupportedSavingsPlansType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4349,7 +4803,9 @@ impl AsRef<str> for SupportedSavingsPlansType {
     std::hash::Hash,
 )]
 pub enum AccountScope {
+    #[allow(missing_docs)] // documentation missing in model
     Linked,
+    #[allow(missing_docs)] // documentation missing in model
     Payer,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4371,6 +4827,7 @@ impl std::str::FromStr for AccountScope {
     }
 }
 impl AccountScope {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AccountScope::Linked => "LINKED",
@@ -4378,6 +4835,7 @@ impl AccountScope {
             AccountScope::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["LINKED", "PAYER"]
     }
@@ -4424,6 +4882,7 @@ pub mod savings_plans_purchase_recommendation_metadata {
             self.recommendation_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the recommendation set.</p>
         pub fn set_recommendation_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4436,6 +4895,7 @@ pub mod savings_plans_purchase_recommendation_metadata {
             self.generation_timestamp = Some(input.into());
             self
         }
+        /// <p>The timestamp showing when the recommendations were generated.</p>
         pub fn set_generation_timestamp(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4448,6 +4908,7 @@ pub mod savings_plans_purchase_recommendation_metadata {
             self.additional_metadata = Some(input.into());
             self
         }
+        /// <p>Additional metadata that might be applicable to the recommendation.</p>
         pub fn set_additional_metadata(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4507,6 +4968,11 @@ pub mod savings_plans_coverage {
         pub(crate) time_period: std::option::Option<crate::model::DateInterval>,
     }
     impl Builder {
+        /// Adds a key-value pair to `attributes`.
+        ///
+        /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
+        ///
+        /// <p>The attribute that applies to a specific <code>Dimension</code>.</p>
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -4517,6 +4983,7 @@ pub mod savings_plans_coverage {
             self.attributes = Some(hash_map);
             self
         }
+        /// <p>The attribute that applies to a specific <code>Dimension</code>.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -4531,6 +4998,7 @@ pub mod savings_plans_coverage {
             self.coverage = Some(input);
             self
         }
+        /// <p>The amount of Savings Plans eligible usage that the Savings Plans covered.</p>
         pub fn set_coverage(
             mut self,
             input: std::option::Option<crate::model::SavingsPlansCoverageData>,
@@ -4543,6 +5011,7 @@ pub mod savings_plans_coverage {
             self.time_period = Some(input);
             self
         }
+        /// <p>The time period of the request. </p>
         pub fn set_time_period(
             mut self,
             input: std::option::Option<crate::model::DateInterval>,
@@ -4616,6 +5085,7 @@ pub mod savings_plans_coverage_data {
             self.spend_covered_by_savings_plans = Some(input.into());
             self
         }
+        /// <p>The amount of your Amazon Web Services usage that is covered by a Savings Plans.</p>
         pub fn set_spend_covered_by_savings_plans(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4628,6 +5098,7 @@ pub mod savings_plans_coverage_data {
             self.on_demand_cost = Some(input.into());
             self
         }
+        /// <p>The cost of your Amazon Web Services usage at the public On-Demand rate.</p>
         pub fn set_on_demand_cost(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4641,6 +5112,8 @@ pub mod savings_plans_coverage_data {
             self.total_cost = Some(input.into());
             self
         }
+        /// <p>The total cost of your Amazon Web Services usage, regardless of your purchase
+        /// option.</p>
         pub fn set_total_cost(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.total_cost = input;
             self
@@ -4651,6 +5124,8 @@ pub mod savings_plans_coverage_data {
             self.coverage_percentage = Some(input.into());
             self
         }
+        /// <p>The percentage of your existing Savings Plans covered usage, divided by all of your
+        /// eligible Savings Plans usage in an account (or set of accounts).</p>
         pub fn set_coverage_percentage(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4709,6 +5184,7 @@ pub mod group_definition {
             self.r#type = Some(input);
             self
         }
+        /// <p>The string that represents the type of group.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::GroupDefinitionType>,
@@ -4721,6 +5197,7 @@ pub mod group_definition {
             self.key = Some(input.into());
             self
         }
+        /// <p>The string that represents a key for a specified group.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -4741,6 +5218,7 @@ impl GroupDefinition {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4752,8 +5230,11 @@ impl GroupDefinition {
     std::hash::Hash,
 )]
 pub enum GroupDefinitionType {
+    #[allow(missing_docs)] // documentation missing in model
     CostCategory,
+    #[allow(missing_docs)] // documentation missing in model
     Dimension,
+    #[allow(missing_docs)] // documentation missing in model
     Tag,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4776,6 +5257,7 @@ impl std::str::FromStr for GroupDefinitionType {
     }
 }
 impl GroupDefinitionType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             GroupDefinitionType::CostCategory => "COST_CATEGORY",
@@ -4784,6 +5266,7 @@ impl GroupDefinitionType {
             GroupDefinitionType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["COST_CATEGORY", "DIMENSION", "TAG"]
     }
@@ -4835,6 +5318,9 @@ pub mod rightsizing_recommendation_configuration {
             self.recommendation_target = Some(input);
             self
         }
+        /// <p>The option to see recommendations within the same instance family or recommendations
+        /// for instances across other families. The default value is
+        /// <code>SAME_INSTANCE_FAMILY</code>. </p>
         pub fn set_recommendation_target(
             mut self,
             input: std::option::Option<crate::model::RecommendationTarget>,
@@ -4848,6 +5334,8 @@ pub mod rightsizing_recommendation_configuration {
             self.benefits_considered = Some(input);
             self
         }
+        /// <p>The option to consider RI or Savings Plans discount benefits in your savings
+        /// calculation. The default value is <code>TRUE</code>. </p>
         pub fn set_benefits_considered(mut self, input: std::option::Option<bool>) -> Self {
             self.benefits_considered = input;
             self
@@ -4868,6 +5356,7 @@ impl RightsizingRecommendationConfiguration {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4879,7 +5368,9 @@ impl RightsizingRecommendationConfiguration {
     std::hash::Hash,
 )]
 pub enum RecommendationTarget {
+    #[allow(missing_docs)] // documentation missing in model
     CrossInstanceFamily,
+    #[allow(missing_docs)] // documentation missing in model
     SameInstanceFamily,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4901,6 +5392,7 @@ impl std::str::FromStr for RecommendationTarget {
     }
 }
 impl RecommendationTarget {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RecommendationTarget::CrossInstanceFamily => "CROSS_INSTANCE_FAMILY",
@@ -4908,6 +5400,7 @@ impl RecommendationTarget {
             RecommendationTarget::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CROSS_INSTANCE_FAMILY", "SAME_INSTANCE_FAMILY"]
     }
@@ -4977,6 +5470,7 @@ pub mod rightsizing_recommendation {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The account that this recommendation is for.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -4986,6 +5480,7 @@ pub mod rightsizing_recommendation {
             self.current_instance = Some(input);
             self
         }
+        /// <p>Context regarding the current instance.</p>
         pub fn set_current_instance(
             mut self,
             input: std::option::Option<crate::model::CurrentInstance>,
@@ -4998,6 +5493,7 @@ pub mod rightsizing_recommendation {
             self.rightsizing_type = Some(input);
             self
         }
+        /// <p>A recommendation to either terminate or modify the resource.</p>
         pub fn set_rightsizing_type(
             mut self,
             input: std::option::Option<crate::model::RightsizingType>,
@@ -5013,6 +5509,7 @@ pub mod rightsizing_recommendation {
             self.modify_recommendation_detail = Some(input);
             self
         }
+        /// <p>The details for the modification recommendations. </p>
         pub fn set_modify_recommendation_detail(
             mut self,
             input: std::option::Option<crate::model::ModifyRecommendationDetail>,
@@ -5028,6 +5525,7 @@ pub mod rightsizing_recommendation {
             self.terminate_recommendation_detail = Some(input);
             self
         }
+        /// <p>The details for termination recommendations.</p>
         pub fn set_terminate_recommendation_detail(
             mut self,
             input: std::option::Option<crate::model::TerminateRecommendationDetail>,
@@ -5035,6 +5533,12 @@ pub mod rightsizing_recommendation {
             self.terminate_recommendation_detail = input;
             self
         }
+        /// Appends an item to `finding_reason_codes`.
+        ///
+        /// To override the contents of this collection use [`set_finding_reason_codes`](Self::set_finding_reason_codes).
+        ///
+        /// <p> The list of possible reasons why the recommendation is generated such as under or
+        /// over utilization of specific metrics (for example, CPU, Memory, Network). </p>
         pub fn finding_reason_codes(
             mut self,
             input: impl Into<crate::model::FindingReasonCode>,
@@ -5044,6 +5548,8 @@ pub mod rightsizing_recommendation {
             self.finding_reason_codes = Some(v);
             self
         }
+        /// <p> The list of possible reasons why the recommendation is generated such as under or
+        /// over utilization of specific metrics (for example, CPU, Memory, Network). </p>
         pub fn set_finding_reason_codes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FindingReasonCode>>,
@@ -5071,6 +5577,7 @@ impl RightsizingRecommendation {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5082,21 +5589,37 @@ impl RightsizingRecommendation {
     std::hash::Hash,
 )]
 pub enum FindingReasonCode {
+    #[allow(missing_docs)] // documentation missing in model
     CpuOverProvisioned,
+    #[allow(missing_docs)] // documentation missing in model
     CpuUnderProvisioned,
+    #[allow(missing_docs)] // documentation missing in model
     DiskIopsOverProvisioned,
+    #[allow(missing_docs)] // documentation missing in model
     DiskIopsUnderProvisioned,
+    #[allow(missing_docs)] // documentation missing in model
     DiskThroughputOverProvisioned,
+    #[allow(missing_docs)] // documentation missing in model
     DiskThroughputUnderProvisioned,
+    #[allow(missing_docs)] // documentation missing in model
     EbsIopsOverProvisioned,
+    #[allow(missing_docs)] // documentation missing in model
     EbsIopsUnderProvisioned,
+    #[allow(missing_docs)] // documentation missing in model
     EbsThroughputOverProvisioned,
+    #[allow(missing_docs)] // documentation missing in model
     EbsThroughputUnderProvisioned,
+    #[allow(missing_docs)] // documentation missing in model
     MemoryOverProvisioned,
+    #[allow(missing_docs)] // documentation missing in model
     MemoryUnderProvisioned,
+    #[allow(missing_docs)] // documentation missing in model
     NetworkBandwidthOverProvisioned,
+    #[allow(missing_docs)] // documentation missing in model
     NetworkBandwidthUnderProvisioned,
+    #[allow(missing_docs)] // documentation missing in model
     NetworkPpsOverProvisioned,
+    #[allow(missing_docs)] // documentation missing in model
     NetworkPpsUnderProvisioned,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5138,6 +5661,7 @@ impl std::str::FromStr for FindingReasonCode {
     }
 }
 impl FindingReasonCode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FindingReasonCode::CpuOverProvisioned => "CPU_OVER_PROVISIONED",
@@ -5165,6 +5689,7 @@ impl FindingReasonCode {
             FindingReasonCode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CPU_OVER_PROVISIONED",
@@ -5225,6 +5750,7 @@ pub mod terminate_recommendation_detail {
             self.estimated_monthly_savings = Some(input.into());
             self
         }
+        /// <p>The estimated savings that result from modification, on a monthly basis.</p>
         pub fn set_estimated_monthly_savings(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5238,6 +5764,8 @@ pub mod terminate_recommendation_detail {
             self.currency_code = Some(input.into());
             self
         }
+        /// <p>The currency code that Amazon Web Services used to calculate the costs for this
+        /// instance.</p>
         pub fn set_currency_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5286,12 +5814,20 @@ pub mod modify_recommendation_detail {
             std::option::Option<std::vec::Vec<crate::model::TargetInstance>>,
     }
     impl Builder {
+        /// Appends an item to `target_instances`.
+        ///
+        /// To override the contents of this collection use [`set_target_instances`](Self::set_target_instances).
+        ///
+        /// <p>Determines whether this instance type is the Amazon Web Services default
+        /// recommendation.</p>
         pub fn target_instances(mut self, input: impl Into<crate::model::TargetInstance>) -> Self {
             let mut v = self.target_instances.unwrap_or_default();
             v.push(input.into());
             self.target_instances = Some(v);
             self
         }
+        /// <p>Determines whether this instance type is the Amazon Web Services default
+        /// recommendation.</p>
         pub fn set_target_instances(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TargetInstance>>,
@@ -5374,6 +5910,7 @@ pub mod target_instance {
             self.estimated_monthly_cost = Some(input.into());
             self
         }
+        /// <p>The expected cost to operate this instance type on a monthly basis.</p>
         pub fn set_estimated_monthly_cost(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5386,6 +5923,7 @@ pub mod target_instance {
             self.estimated_monthly_savings = Some(input.into());
             self
         }
+        /// <p>The estimated savings that result from modification, on a monthly basis.</p>
         pub fn set_estimated_monthly_savings(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5399,6 +5937,8 @@ pub mod target_instance {
             self.currency_code = Some(input.into());
             self
         }
+        /// <p>The currency code that Amazon Web Services used to calculate the costs for this
+        /// instance.</p>
         pub fn set_currency_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5412,6 +5952,8 @@ pub mod target_instance {
             self.default_target_instance = Some(input);
             self
         }
+        /// <p>Determines whether this recommendation is the defaulted Amazon Web Services
+        /// recommendation.</p>
         pub fn set_default_target_instance(mut self, input: std::option::Option<bool>) -> Self {
             self.default_target_instance = input;
             self
@@ -5421,6 +5963,7 @@ pub mod target_instance {
             self.resource_details = Some(input);
             self
         }
+        /// <p>Details on the target instance type. </p>
         pub fn set_resource_details(
             mut self,
             input: std::option::Option<crate::model::ResourceDetails>,
@@ -5436,6 +5979,7 @@ pub mod target_instance {
             self.expected_resource_utilization = Some(input);
             self
         }
+        /// <p>The expected utilization metrics for target instance type.</p>
         pub fn set_expected_resource_utilization(
             mut self,
             input: std::option::Option<crate::model::ResourceUtilization>,
@@ -5443,6 +5987,12 @@ pub mod target_instance {
             self.expected_resource_utilization = input;
             self
         }
+        /// Appends an item to `platform_differences`.
+        ///
+        /// To override the contents of this collection use [`set_platform_differences`](Self::set_platform_differences).
+        ///
+        /// <p> Explains the actions you might need to take in order to successfully migrate your
+        /// workloads from the current instance type to the recommended instance type. </p>
         pub fn platform_differences(
             mut self,
             input: impl Into<crate::model::PlatformDifference>,
@@ -5452,6 +6002,8 @@ pub mod target_instance {
             self.platform_differences = Some(v);
             self
         }
+        /// <p> Explains the actions you might need to take in order to successfully migrate your
+        /// workloads from the current instance type to the recommended instance type. </p>
         pub fn set_platform_differences(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PlatformDifference>>,
@@ -5480,6 +6032,7 @@ impl TargetInstance {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5491,10 +6044,15 @@ impl TargetInstance {
     std::hash::Hash,
 )]
 pub enum PlatformDifference {
+    #[allow(missing_docs)] // documentation missing in model
     Hypervisor,
+    #[allow(missing_docs)] // documentation missing in model
     InstanceStoreAvailability,
+    #[allow(missing_docs)] // documentation missing in model
     NetworkInterface,
+    #[allow(missing_docs)] // documentation missing in model
     StorageInterface,
+    #[allow(missing_docs)] // documentation missing in model
     VirtualizationType,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5519,6 +6077,7 @@ impl std::str::FromStr for PlatformDifference {
     }
 }
 impl PlatformDifference {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PlatformDifference::Hypervisor => "HYPERVISOR",
@@ -5529,6 +6088,7 @@ impl PlatformDifference {
             PlatformDifference::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "HYPERVISOR",
@@ -5577,6 +6137,7 @@ pub mod resource_utilization {
             self.ec2_resource_utilization = Some(input);
             self
         }
+        /// <p>The utilization of current Amazon EC2 instance. </p>
         pub fn set_ec2_resource_utilization(
             mut self,
             input: std::option::Option<crate::model::Ec2ResourceUtilization>,
@@ -5669,6 +6230,7 @@ pub mod ec2_resource_utilization {
             self.max_cpu_utilization_percentage = Some(input.into());
             self
         }
+        /// <p> The maximum observed or expected CPU utilization of the instance.</p>
         pub fn set_max_cpu_utilization_percentage(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5684,6 +6246,7 @@ pub mod ec2_resource_utilization {
             self.max_memory_utilization_percentage = Some(input.into());
             self
         }
+        /// <p> The maximum observed or expected memory utilization of the instance.</p>
         pub fn set_max_memory_utilization_percentage(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5700,6 +6263,8 @@ pub mod ec2_resource_utilization {
             self.max_storage_utilization_percentage = Some(input.into());
             self
         }
+        /// <p> The maximum observed or expected storage utilization of the instance. This doesn't
+        /// include EBS storage.</p>
         pub fn set_max_storage_utilization_percentage(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5716,6 +6281,8 @@ pub mod ec2_resource_utilization {
             self.ebs_resource_utilization = Some(input);
             self
         }
+        /// <p>The EBS field that contains a list of EBS metrics that are associated with the current
+        /// instance. </p>
         pub fn set_ebs_resource_utilization(
             mut self,
             input: std::option::Option<crate::model::EbsResourceUtilization>,
@@ -5732,6 +6299,8 @@ pub mod ec2_resource_utilization {
             self.disk_resource_utilization = Some(input);
             self
         }
+        /// <p> The field that contains a list of disk (local storage) metrics that are associated
+        /// with the current instance. </p>
         pub fn set_disk_resource_utilization(
             mut self,
             input: std::option::Option<crate::model::DiskResourceUtilization>,
@@ -5748,6 +6317,8 @@ pub mod ec2_resource_utilization {
             self.network_resource_utilization = Some(input);
             self
         }
+        /// <p> The network field that contains a list of network metrics that are associated with
+        /// the current instance. </p>
         pub fn set_network_resource_utilization(
             mut self,
             input: std::option::Option<crate::model::NetworkResourceUtilization>,
@@ -5831,6 +6402,7 @@ pub mod network_resource_utilization {
             self.network_in_bytes_per_second = Some(input.into());
             self
         }
+        /// <p> The network inbound throughput utilization measured in Bytes per second. </p>
         pub fn set_network_in_bytes_per_second(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5846,6 +6418,7 @@ pub mod network_resource_utilization {
             self.network_out_bytes_per_second = Some(input.into());
             self
         }
+        /// <p> The network outbound throughput utilization measured in Bytes per second. </p>
         pub fn set_network_out_bytes_per_second(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5861,6 +6434,7 @@ pub mod network_resource_utilization {
             self.network_packets_in_per_second = Some(input.into());
             self
         }
+        /// <p> The network ingress packets that are measured in packets per second. </p>
         pub fn set_network_packets_in_per_second(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5876,6 +6450,7 @@ pub mod network_resource_utilization {
             self.network_packets_out_per_second = Some(input.into());
             self
         }
+        /// <p> The network outgress packets that are measured in packets per second. </p>
         pub fn set_network_packets_out_per_second(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5948,6 +6523,7 @@ pub mod disk_resource_utilization {
             self.disk_read_ops_per_second = Some(input.into());
             self
         }
+        /// <p> The maximum number of read operations per second. </p>
         pub fn set_disk_read_ops_per_second(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5960,6 +6536,7 @@ pub mod disk_resource_utilization {
             self.disk_write_ops_per_second = Some(input.into());
             self
         }
+        /// <p> The maximum number of write operations per second. </p>
         pub fn set_disk_write_ops_per_second(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5972,6 +6549,7 @@ pub mod disk_resource_utilization {
             self.disk_read_bytes_per_second = Some(input.into());
             self
         }
+        /// <p> The maximum read throughput operations per second. </p>
         pub fn set_disk_read_bytes_per_second(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5987,6 +6565,7 @@ pub mod disk_resource_utilization {
             self.disk_write_bytes_per_second = Some(input.into());
             self
         }
+        /// <p> The maximum write throughput operations per second. </p>
         pub fn set_disk_write_bytes_per_second(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6056,6 +6635,7 @@ pub mod ebs_resource_utilization {
             self.ebs_read_ops_per_second = Some(input.into());
             self
         }
+        /// <p>The maximum number of read operations per second. </p>
         pub fn set_ebs_read_ops_per_second(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6068,6 +6648,7 @@ pub mod ebs_resource_utilization {
             self.ebs_write_ops_per_second = Some(input.into());
             self
         }
+        /// <p>The maximum number of write operations per second. </p>
         pub fn set_ebs_write_ops_per_second(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6080,6 +6661,7 @@ pub mod ebs_resource_utilization {
             self.ebs_read_bytes_per_second = Some(input.into());
             self
         }
+        /// <p>The maximum size of read operations per second </p>
         pub fn set_ebs_read_bytes_per_second(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6092,6 +6674,7 @@ pub mod ebs_resource_utilization {
             self.ebs_write_bytes_per_second = Some(input.into());
             self
         }
+        /// <p>The maximum size of write operations per second. </p>
         pub fn set_ebs_write_bytes_per_second(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6145,6 +6728,7 @@ pub mod resource_details {
             self.ec2_resource_details = Some(input);
             self
         }
+        /// <p>Details on the Amazon EC2 resource.</p>
         pub fn set_ec2_resource_details(
             mut self,
             input: std::option::Option<crate::model::Ec2ResourceDetails>,
@@ -6229,6 +6813,7 @@ pub mod ec2_resource_details {
             self.hourly_on_demand_rate = Some(input.into());
             self
         }
+        /// <p>The hourly public On-Demand rate for the instance type.</p>
         pub fn set_hourly_on_demand_rate(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6241,6 +6826,7 @@ pub mod ec2_resource_details {
             self.instance_type = Some(input.into());
             self
         }
+        /// <p>The type of Amazon Web Services instance.</p>
         pub fn set_instance_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6254,6 +6840,8 @@ pub mod ec2_resource_details {
             self.platform = Some(input.into());
             self
         }
+        /// <p>The platform of the Amazon Web Services instance. The platform is the specific
+        /// combination of operating system, license model, and software on an instance.</p>
         pub fn set_platform(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.platform = input;
             self
@@ -6263,6 +6851,7 @@ pub mod ec2_resource_details {
             self.region = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services Region of the instance.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
@@ -6272,6 +6861,7 @@ pub mod ec2_resource_details {
             self.sku = Some(input.into());
             self
         }
+        /// <p>The SKU of the product.</p>
         pub fn set_sku(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.sku = input;
             self
@@ -6281,6 +6871,7 @@ pub mod ec2_resource_details {
             self.memory = Some(input.into());
             self
         }
+        /// <p>The memory capacity of the Amazon Web Services instance.</p>
         pub fn set_memory(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.memory = input;
             self
@@ -6290,6 +6881,7 @@ pub mod ec2_resource_details {
             self.network_performance = Some(input.into());
             self
         }
+        /// <p>The network performance capacity of the Amazon Web Services instance.</p>
         pub fn set_network_performance(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6303,6 +6895,8 @@ pub mod ec2_resource_details {
             self.storage = Some(input.into());
             self
         }
+        /// <p>The disk storage of the Amazon Web Services instance. This doesn't include EBS
+        /// storage.</p>
         pub fn set_storage(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.storage = input;
             self
@@ -6312,6 +6906,7 @@ pub mod ec2_resource_details {
             self.vcpu = Some(input.into());
             self
         }
+        /// <p> The number of VCPU cores in the Amazon Web Services instance type.</p>
         pub fn set_vcpu(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.vcpu = input;
             self
@@ -6339,6 +6934,7 @@ impl Ec2ResourceDetails {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -6350,7 +6946,9 @@ impl Ec2ResourceDetails {
     std::hash::Hash,
 )]
 pub enum RightsizingType {
+    #[allow(missing_docs)] // documentation missing in model
     Modify,
+    #[allow(missing_docs)] // documentation missing in model
     Terminate,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -6372,6 +6970,7 @@ impl std::str::FromStr for RightsizingType {
     }
 }
 impl RightsizingType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RightsizingType::Modify => "MODIFY",
@@ -6379,6 +6978,7 @@ impl RightsizingType {
             RightsizingType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["MODIFY", "TERMINATE"]
     }
@@ -6474,6 +7074,7 @@ pub mod current_instance {
             self.resource_id = Some(input.into());
             self
         }
+        /// <p>Resource ID of the current instance.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
@@ -6484,6 +7085,8 @@ pub mod current_instance {
             self.instance_name = Some(input.into());
             self
         }
+        /// <p>The name that you given an instance. This field shows as blank if you haven't given
+        /// the instance a name.</p>
         pub fn set_instance_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6491,12 +7094,18 @@ pub mod current_instance {
             self.instance_name = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Cost allocation resource tags that are applied to the instance.</p>
         pub fn tags(mut self, input: impl Into<crate::model::TagValues>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>Cost allocation resource tags that are applied to the instance.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TagValues>>,
@@ -6509,6 +7118,7 @@ pub mod current_instance {
             self.resource_details = Some(input);
             self
         }
+        /// <p>Details about the resource and utilization.</p>
         pub fn set_resource_details(
             mut self,
             input: std::option::Option<crate::model::ResourceDetails>,
@@ -6521,6 +7131,7 @@ pub mod current_instance {
             self.resource_utilization = Some(input);
             self
         }
+        /// <p>Utilization information of the current instance during the lookback period.</p>
         pub fn set_resource_utilization(
             mut self,
             input: std::option::Option<crate::model::ResourceUtilization>,
@@ -6536,6 +7147,7 @@ pub mod current_instance {
             self.reservation_covered_hours_in_lookback_period = Some(input.into());
             self
         }
+        /// <p> The number of hours during the lookback period that's covered by reservations.</p>
         pub fn set_reservation_covered_hours_in_lookback_period(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6551,6 +7163,7 @@ pub mod current_instance {
             self.savings_plans_covered_hours_in_lookback_period = Some(input.into());
             self
         }
+        /// <p>The number of hours during the lookback period that's covered by Savings Plans.</p>
         pub fn set_savings_plans_covered_hours_in_lookback_period(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6567,6 +7180,8 @@ pub mod current_instance {
             self.on_demand_hours_in_lookback_period = Some(input.into());
             self
         }
+        /// <p> The number of hours during the lookback period that's billed at On-Demand
+        /// rates.</p>
         pub fn set_on_demand_hours_in_lookback_period(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6582,6 +7197,7 @@ pub mod current_instance {
             self.total_running_hours_in_lookback_period = Some(input.into());
             self
         }
+        /// <p>The total number of hours that the instance ran during the lookback period.</p>
         pub fn set_total_running_hours_in_lookback_period(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6594,6 +7210,7 @@ pub mod current_instance {
             self.monthly_cost = Some(input.into());
             self
         }
+        /// <p>The current On-Demand cost of operating this instance on a monthly basis.</p>
         pub fn set_monthly_cost(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.monthly_cost = input;
             self
@@ -6604,6 +7221,8 @@ pub mod current_instance {
             self.currency_code = Some(input.into());
             self
         }
+        /// <p> The currency code that Amazon Web Services used to calculate the costs for this
+        /// instance.</p>
         pub fn set_currency_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6685,6 +7304,7 @@ pub mod rightsizing_recommendation_summary {
             self.total_recommendation_count = Some(input.into());
             self
         }
+        /// <p>The total number of instance recommendations.</p>
         pub fn set_total_recommendation_count(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6700,6 +7320,7 @@ pub mod rightsizing_recommendation_summary {
             self.estimated_total_monthly_savings_amount = Some(input.into());
             self
         }
+        /// <p>The estimated total savings resulting from modifications, on a monthly basis.</p>
         pub fn set_estimated_total_monthly_savings_amount(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6712,6 +7333,7 @@ pub mod rightsizing_recommendation_summary {
             self.savings_currency_code = Some(input.into());
             self
         }
+        /// <p>The currency code that Amazon Web Services used to calculate the savings.</p>
         pub fn set_savings_currency_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6725,6 +7347,8 @@ pub mod rightsizing_recommendation_summary {
             self.savings_percentage = Some(input.into());
             self
         }
+        /// <p> The savings percentage based on the recommended modifications. It's relative to the
+        /// total On-Demand costs that are associated with these instances.</p>
         pub fn set_savings_percentage(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6791,6 +7415,7 @@ pub mod rightsizing_recommendation_metadata {
             self.recommendation_id = Some(input.into());
             self
         }
+        /// <p>The ID for this specific recommendation.</p>
         pub fn set_recommendation_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6803,6 +7428,7 @@ pub mod rightsizing_recommendation_metadata {
             self.generation_timestamp = Some(input.into());
             self
         }
+        /// <p>The timestamp for when Amazon Web Services made this recommendation.</p>
         pub fn set_generation_timestamp(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6819,6 +7445,8 @@ pub mod rightsizing_recommendation_metadata {
             self.lookback_period_in_days = Some(input);
             self
         }
+        /// <p>The number of days of previous usage that Amazon Web Services considers when making
+        /// this recommendation.</p>
         pub fn set_lookback_period_in_days(
             mut self,
             input: std::option::Option<crate::model::LookbackPeriodInDays>,
@@ -6831,6 +7459,7 @@ pub mod rightsizing_recommendation_metadata {
             self.additional_metadata = Some(input.into());
             self
         }
+        /// <p>Additional metadata that might be applicable to the recommendation.</p>
         pub fn set_additional_metadata(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6969,6 +7598,7 @@ pub mod reservation_aggregates {
             self.utilization_percentage = Some(input.into());
             self
         }
+        /// <p>The percentage of reservation time that you used.</p>
         pub fn set_utilization_percentage(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6986,6 +7616,9 @@ pub mod reservation_aggregates {
             self.utilization_percentage_in_units = Some(input.into());
             self
         }
+        /// <p>The percentage of Amazon EC2 reservation time that you used. It's converted to
+        /// normalized units. Normalized units are available only for Amazon EC2 usage after
+        /// November 11, 2017.</p>
         pub fn set_utilization_percentage_in_units(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6998,6 +7631,7 @@ pub mod reservation_aggregates {
             self.purchased_hours = Some(input.into());
             self
         }
+        /// <p>How many reservation hours that you purchased.</p>
         pub fn set_purchased_hours(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7012,6 +7646,9 @@ pub mod reservation_aggregates {
             self.purchased_units = Some(input.into());
             self
         }
+        /// <p>The number of Amazon EC2 reservation hours that you purchased. It's converted to
+        /// normalized units. Normalized units are available only for Amazon EC2 usage after
+        /// November 11, 2017.</p>
         pub fn set_purchased_units(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7024,6 +7661,7 @@ pub mod reservation_aggregates {
             self.total_actual_hours = Some(input.into());
             self
         }
+        /// <p>The total number of reservation hours that you used.</p>
         pub fn set_total_actual_hours(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7038,6 +7676,9 @@ pub mod reservation_aggregates {
             self.total_actual_units = Some(input.into());
             self
         }
+        /// <p>The total number of Amazon EC2 reservation hours that you used. It's converted to
+        /// normalized units. Normalized units are available only for Amazon EC2 usage after
+        /// November 11, 2017.</p>
         pub fn set_total_actual_units(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7050,6 +7691,7 @@ pub mod reservation_aggregates {
             self.unused_hours = Some(input.into());
             self
         }
+        /// <p>The number of reservation hours that you didn't use.</p>
         pub fn set_unused_hours(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.unused_hours = input;
             self
@@ -7061,6 +7703,9 @@ pub mod reservation_aggregates {
             self.unused_units = Some(input.into());
             self
         }
+        /// <p>The number of Amazon EC2 reservation hours that you didn't use. It's converted to
+        /// normalized units. Normalized units are available only for Amazon EC2 usage after
+        /// November 11, 2017.</p>
         pub fn set_unused_units(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.unused_units = input;
             self
@@ -7073,6 +7718,7 @@ pub mod reservation_aggregates {
             self.on_demand_cost_of_ri_hours_used = Some(input.into());
             self
         }
+        /// <p>How much your reservation costs if charged On-Demand rates.</p>
         pub fn set_on_demand_cost_of_ri_hours_used(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7087,6 +7733,9 @@ pub mod reservation_aggregates {
             self.net_ri_savings = Some(input.into());
             self
         }
+        /// <p>How much you saved due to purchasing and utilizing reservation. Amazon Web Services
+        /// calculates this by subtracting <code>TotalAmortizedFee</code> from
+        /// <code>OnDemandCostOfRIHoursUsed</code>.</p>
         pub fn set_net_ri_savings(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7099,6 +7748,7 @@ pub mod reservation_aggregates {
             self.total_potential_ri_savings = Some(input.into());
             self
         }
+        /// <p>How much you might save if you use your entire reservation.</p>
         pub fn set_total_potential_ri_savings(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7112,6 +7762,8 @@ pub mod reservation_aggregates {
             self.amortized_upfront_fee = Some(input.into());
             self
         }
+        /// <p>The upfront cost of your reservation. It's amortized over the reservation
+        /// period.</p>
         pub fn set_amortized_upfront_fee(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7125,6 +7777,8 @@ pub mod reservation_aggregates {
             self.amortized_recurring_fee = Some(input.into());
             self
         }
+        /// <p>The monthly cost of your reservation. It's amortized over the reservation
+        /// period.</p>
         pub fn set_amortized_recurring_fee(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7137,6 +7791,7 @@ pub mod reservation_aggregates {
             self.total_amortized_fee = Some(input.into());
             self
         }
+        /// <p>The total cost of your reservation. It's amortized over the reservation period.</p>
         pub fn set_total_amortized_fee(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7149,6 +7804,7 @@ pub mod reservation_aggregates {
             self.ri_cost_for_unused_hours = Some(input.into());
             self
         }
+        /// <p>The cost of unused hours for your reservation.</p>
         pub fn set_ri_cost_for_unused_hours(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7161,6 +7817,7 @@ pub mod reservation_aggregates {
             self.realized_savings = Some(input.into());
             self
         }
+        /// <p>The realized savings because of purchasing and using a reservation.</p>
         pub fn set_realized_savings(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7173,6 +7830,7 @@ pub mod reservation_aggregates {
             self.unrealized_savings = Some(input.into());
             self
         }
+        /// <p>The unrealized savings because of purchasing and using a reservation.</p>
         pub fn set_unrealized_savings(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7248,6 +7906,7 @@ pub mod utilization_by_time {
             self.time_period = Some(input);
             self
         }
+        /// <p>The period of time that this utilization was used for.</p>
         pub fn set_time_period(
             mut self,
             input: std::option::Option<crate::model::DateInterval>,
@@ -7255,6 +7914,11 @@ pub mod utilization_by_time {
             self.time_period = input;
             self
         }
+        /// Appends an item to `groups`.
+        ///
+        /// To override the contents of this collection use [`set_groups`](Self::set_groups).
+        ///
+        /// <p>The groups that this utilization result uses.</p>
         pub fn groups(
             mut self,
             input: impl Into<crate::model::ReservationUtilizationGroup>,
@@ -7264,6 +7928,7 @@ pub mod utilization_by_time {
             self.groups = Some(v);
             self
         }
+        /// <p>The groups that this utilization result uses.</p>
         pub fn set_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ReservationUtilizationGroup>>,
@@ -7276,6 +7941,7 @@ pub mod utilization_by_time {
             self.total = Some(input);
             self
         }
+        /// <p>The total number of reservation hours that were used.</p>
         pub fn set_total(
             mut self,
             input: std::option::Option<crate::model::ReservationAggregates>,
@@ -7343,6 +8009,7 @@ pub mod reservation_utilization_group {
             self.key = Some(input.into());
             self
         }
+        /// <p>The key for a specific reservation attribute.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -7352,10 +8019,16 @@ pub mod reservation_utilization_group {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value of a specific reservation attribute.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
         }
+        /// Adds a key-value pair to `attributes`.
+        ///
+        /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
+        ///
+        /// <p>The attributes for this group of reservations.</p>
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -7366,6 +8039,7 @@ pub mod reservation_utilization_group {
             self.attributes = Some(hash_map);
             self
         }
+        /// <p>The attributes for this group of reservations.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -7380,6 +8054,7 @@ pub mod reservation_utilization_group {
             self.utilization = Some(input);
             self
         }
+        /// <p>How much you used this group of reservations.</p>
         pub fn set_utilization(
             mut self,
             input: std::option::Option<crate::model::ReservationAggregates>,
@@ -7468,6 +8143,9 @@ pub mod reservation_purchase_recommendation {
             self.account_scope = Some(input);
             self
         }
+        /// <p>The account scope that Amazon Web Services recommends that you purchase this instance
+        /// for. For example, you can purchase this reservation for an entire organization in
+        /// Amazon Web Services Organizations.</p>
         pub fn set_account_scope(
             mut self,
             input: std::option::Option<crate::model::AccountScope>,
@@ -7484,6 +8162,8 @@ pub mod reservation_purchase_recommendation {
             self.lookback_period_in_days = Some(input);
             self
         }
+        /// <p>How many days of previous usage that Amazon Web Services considers when making this
+        /// recommendation.</p>
         pub fn set_lookback_period_in_days(
             mut self,
             input: std::option::Option<crate::model::LookbackPeriodInDays>,
@@ -7496,6 +8176,7 @@ pub mod reservation_purchase_recommendation {
             self.term_in_years = Some(input);
             self
         }
+        /// <p>The term of the reservation that you want recommendations for, in years.</p>
         pub fn set_term_in_years(
             mut self,
             input: std::option::Option<crate::model::TermInYears>,
@@ -7509,6 +8190,8 @@ pub mod reservation_purchase_recommendation {
             self.payment_option = Some(input);
             self
         }
+        /// <p>The payment option for the reservation (for example, <code>AllUpfront</code> or
+        /// <code>NoUpfront</code>).</p>
         pub fn set_payment_option(
             mut self,
             input: std::option::Option<crate::model::PaymentOption>,
@@ -7521,6 +8204,7 @@ pub mod reservation_purchase_recommendation {
             self.service_specification = Some(input);
             self
         }
+        /// <p>Hardware specifications for the service that you want recommendations for.</p>
         pub fn set_service_specification(
             mut self,
             input: std::option::Option<crate::model::ServiceSpecification>,
@@ -7528,6 +8212,11 @@ pub mod reservation_purchase_recommendation {
             self.service_specification = input;
             self
         }
+        /// Appends an item to `recommendation_details`.
+        ///
+        /// To override the contents of this collection use [`set_recommendation_details`](Self::set_recommendation_details).
+        ///
+        /// <p>Details about the recommended purchases.</p>
         pub fn recommendation_details(
             mut self,
             input: impl Into<crate::model::ReservationPurchaseRecommendationDetail>,
@@ -7537,6 +8226,7 @@ pub mod reservation_purchase_recommendation {
             self.recommendation_details = Some(v);
             self
         }
+        /// <p>Details about the recommended purchases.</p>
         pub fn set_recommendation_details(
             mut self,
             input: std::option::Option<
@@ -7554,6 +8244,7 @@ pub mod reservation_purchase_recommendation {
             self.recommendation_summary = Some(input);
             self
         }
+        /// <p>A summary about the recommended purchase.</p>
         pub fn set_recommendation_summary(
             mut self,
             input: std::option::Option<crate::model::ReservationPurchaseRecommendationSummary>,
@@ -7633,6 +8324,8 @@ pub mod reservation_purchase_recommendation_summary {
             self.total_estimated_monthly_savings_amount = Some(input.into());
             self
         }
+        /// <p>The total amount that Amazon Web Services estimates that this recommendation could save
+        /// you in a month.</p>
         pub fn set_total_estimated_monthly_savings_amount(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7649,6 +8342,8 @@ pub mod reservation_purchase_recommendation_summary {
             self.total_estimated_monthly_savings_percentage = Some(input.into());
             self
         }
+        /// <p>The total amount that Amazon Web Services estimates that this recommendation could save
+        /// you in a month, as a percentage of your costs.</p>
         pub fn set_total_estimated_monthly_savings_percentage(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7661,6 +8356,7 @@ pub mod reservation_purchase_recommendation_summary {
             self.currency_code = Some(input.into());
             self
         }
+        /// <p>The currency code used for this recommendation.</p>
         pub fn set_currency_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7855,6 +8551,7 @@ pub mod reservation_purchase_recommendation_detail {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The account that this RI recommendation is for.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -7865,6 +8562,8 @@ pub mod reservation_purchase_recommendation_detail {
             self.instance_details = Some(input);
             self
         }
+        /// <p>Details about the instances that Amazon Web Services recommends that you
+        /// purchase.</p>
         pub fn set_instance_details(
             mut self,
             input: std::option::Option<crate::model::InstanceDetails>,
@@ -7880,6 +8579,7 @@ pub mod reservation_purchase_recommendation_detail {
             self.recommended_number_of_instances_to_purchase = Some(input.into());
             self
         }
+        /// <p>The number of instances that Amazon Web Services recommends that you purchase.</p>
         pub fn set_recommended_number_of_instances_to_purchase(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7896,6 +8596,8 @@ pub mod reservation_purchase_recommendation_detail {
             self.recommended_normalized_units_to_purchase = Some(input.into());
             self
         }
+        /// <p>The number of normalized units that Amazon Web Services recommends that you
+        /// purchase.</p>
         pub fn set_recommended_normalized_units_to_purchase(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7913,6 +8615,9 @@ pub mod reservation_purchase_recommendation_detail {
             self.minimum_number_of_instances_used_per_hour = Some(input.into());
             self
         }
+        /// <p>The minimum number of instances that you used in an hour during the historical period.
+        /// Amazon Web Services uses this to calculate your recommended reservation
+        /// purchases.</p>
         pub fn set_minimum_number_of_instances_used_per_hour(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7930,6 +8635,9 @@ pub mod reservation_purchase_recommendation_detail {
             self.minimum_normalized_units_used_per_hour = Some(input.into());
             self
         }
+        /// <p>The minimum number of normalized units that you used in an hour during the historical
+        /// period. Amazon Web Services uses this to calculate your recommended reservation
+        /// purchases.</p>
         pub fn set_minimum_normalized_units_used_per_hour(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7947,6 +8655,9 @@ pub mod reservation_purchase_recommendation_detail {
             self.maximum_number_of_instances_used_per_hour = Some(input.into());
             self
         }
+        /// <p>The maximum number of instances that you used in an hour during the historical period.
+        /// Amazon Web Services uses this to calculate your recommended reservation
+        /// purchases.</p>
         pub fn set_maximum_number_of_instances_used_per_hour(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7964,6 +8675,9 @@ pub mod reservation_purchase_recommendation_detail {
             self.maximum_normalized_units_used_per_hour = Some(input.into());
             self
         }
+        /// <p>The maximum number of normalized units that you used in an hour during the historical
+        /// period. Amazon Web Services uses this to calculate your recommended reservation
+        /// purchases.</p>
         pub fn set_maximum_normalized_units_used_per_hour(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7981,6 +8695,9 @@ pub mod reservation_purchase_recommendation_detail {
             self.average_number_of_instances_used_per_hour = Some(input.into());
             self
         }
+        /// <p>The average number of instances that you used in an hour during the historical period.
+        /// Amazon Web Services uses this to calculate your recommended reservation
+        /// purchases.</p>
         pub fn set_average_number_of_instances_used_per_hour(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7998,6 +8715,9 @@ pub mod reservation_purchase_recommendation_detail {
             self.average_normalized_units_used_per_hour = Some(input.into());
             self
         }
+        /// <p>The average number of normalized units that you used in an hour during the historical
+        /// period. Amazon Web Services uses this to calculate your recommended reservation
+        /// purchases.</p>
         pub fn set_average_normalized_units_used_per_hour(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8011,6 +8731,8 @@ pub mod reservation_purchase_recommendation_detail {
             self.average_utilization = Some(input.into());
             self
         }
+        /// <p>The average utilization of your instances. Amazon Web Services uses this to calculate
+        /// your recommended reservation purchases.</p>
         pub fn set_average_utilization(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8027,6 +8749,8 @@ pub mod reservation_purchase_recommendation_detail {
             self.estimated_break_even_in_months = Some(input.into());
             self
         }
+        /// <p>How long Amazon Web Services estimates that it takes for this instance to start saving
+        /// you money, in months.</p>
         pub fn set_estimated_break_even_in_months(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8040,6 +8764,8 @@ pub mod reservation_purchase_recommendation_detail {
             self.currency_code = Some(input.into());
             self
         }
+        /// <p>The currency code that Amazon Web Services used to calculate the costs for this
+        /// instance.</p>
         pub fn set_currency_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8056,6 +8782,8 @@ pub mod reservation_purchase_recommendation_detail {
             self.estimated_monthly_savings_amount = Some(input.into());
             self
         }
+        /// <p>How much Amazon Web Services estimates that this specific recommendation could save you
+        /// in a month.</p>
         pub fn set_estimated_monthly_savings_amount(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8072,6 +8800,8 @@ pub mod reservation_purchase_recommendation_detail {
             self.estimated_monthly_savings_percentage = Some(input.into());
             self
         }
+        /// <p>How much Amazon Web Services estimates that this specific recommendation could save you
+        /// in a month, as a percentage of your overall costs.</p>
         pub fn set_estimated_monthly_savings_percentage(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8088,6 +8818,8 @@ pub mod reservation_purchase_recommendation_detail {
             self.estimated_monthly_on_demand_cost = Some(input.into());
             self
         }
+        /// <p>How much Amazon Web Services estimates that you spend on On-Demand Instances in a
+        /// month.</p>
         pub fn set_estimated_monthly_on_demand_cost(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8104,6 +8836,8 @@ pub mod reservation_purchase_recommendation_detail {
             self.estimated_reservation_cost_for_lookback_period = Some(input.into());
             self
         }
+        /// <p>How much Amazon Web Services estimates that you would have spent for all usage during
+        /// the specified historical period if you had a reservation.</p>
         pub fn set_estimated_reservation_cost_for_lookback_period(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8116,6 +8850,7 @@ pub mod reservation_purchase_recommendation_detail {
             self.upfront_cost = Some(input.into());
             self
         }
+        /// <p>How much purchasing this instance costs you upfront.</p>
         pub fn set_upfront_cost(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.upfront_cost = input;
             self
@@ -8128,6 +8863,7 @@ pub mod reservation_purchase_recommendation_detail {
             self.recurring_standard_monthly_cost = Some(input.into());
             self
         }
+        /// <p>How much purchasing this instance costs you on a monthly basis.</p>
         pub fn set_recurring_standard_monthly_cost(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8226,6 +8962,7 @@ pub mod instance_details {
             self.ec2_instance_details = Some(input);
             self
         }
+        /// <p>The Amazon EC2 instances that Amazon Web Services recommends that you purchase.</p>
         pub fn set_ec2_instance_details(
             mut self,
             input: std::option::Option<crate::model::Ec2InstanceDetails>,
@@ -8238,6 +8975,7 @@ pub mod instance_details {
             self.rds_instance_details = Some(input);
             self
         }
+        /// <p>The Amazon RDS instances that Amazon Web Services recommends that you purchase.</p>
         pub fn set_rds_instance_details(
             mut self,
             input: std::option::Option<crate::model::RdsInstanceDetails>,
@@ -8254,6 +8992,8 @@ pub mod instance_details {
             self.redshift_instance_details = Some(input);
             self
         }
+        /// <p>The Amazon Redshift instances that Amazon Web Services recommends that you
+        /// purchase.</p>
         pub fn set_redshift_instance_details(
             mut self,
             input: std::option::Option<crate::model::RedshiftInstanceDetails>,
@@ -8269,6 +9009,7 @@ pub mod instance_details {
             self.elasti_cache_instance_details = Some(input);
             self
         }
+        /// <p>The ElastiCache instances that Amazon Web Services recommends that you purchase.</p>
         pub fn set_elasti_cache_instance_details(
             mut self,
             input: std::option::Option<crate::model::ElastiCacheInstanceDetails>,
@@ -8281,6 +9022,7 @@ pub mod instance_details {
             self.es_instance_details = Some(input);
             self
         }
+        /// <p>The Amazon ES instances that Amazon Web Services recommends that you purchase.</p>
         pub fn set_es_instance_details(
             mut self,
             input: std::option::Option<crate::model::EsInstanceDetails>,
@@ -8352,6 +9094,7 @@ pub mod es_instance_details {
             self.instance_class = Some(input.into());
             self
         }
+        /// <p>The class of instance that Amazon Web Services recommends.</p>
         pub fn set_instance_class(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8364,6 +9107,7 @@ pub mod es_instance_details {
             self.instance_size = Some(input.into());
             self
         }
+        /// <p>The size of instance that Amazon Web Services recommends.</p>
         pub fn set_instance_size(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8376,6 +9120,7 @@ pub mod es_instance_details {
             self.region = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services Region of the recommended reservation.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
@@ -8385,6 +9130,7 @@ pub mod es_instance_details {
             self.current_generation = Some(input);
             self
         }
+        /// <p>Determines whether the recommendation is for a current-generation instance.</p>
         pub fn set_current_generation(mut self, input: std::option::Option<bool>) -> Self {
             self.current_generation = input;
             self
@@ -8394,6 +9140,7 @@ pub mod es_instance_details {
             self.size_flex_eligible = Some(input);
             self
         }
+        /// <p>Determines whether the recommended reservation is size flexible.</p>
         pub fn set_size_flex_eligible(mut self, input: std::option::Option<bool>) -> Self {
             self.size_flex_eligible = input;
             self
@@ -8466,6 +9213,7 @@ pub mod elasti_cache_instance_details {
             self.family = Some(input.into());
             self
         }
+        /// <p>The instance family of the recommended reservation.</p>
         pub fn set_family(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.family = input;
             self
@@ -8475,6 +9223,7 @@ pub mod elasti_cache_instance_details {
             self.node_type = Some(input.into());
             self
         }
+        /// <p>The type of node that Amazon Web Services recommends.</p>
         pub fn set_node_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.node_type = input;
             self
@@ -8484,6 +9233,7 @@ pub mod elasti_cache_instance_details {
             self.region = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services Region of the recommended reservation.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
@@ -8493,6 +9243,7 @@ pub mod elasti_cache_instance_details {
             self.product_description = Some(input.into());
             self
         }
+        /// <p>The description of the recommended reservation.</p>
         pub fn set_product_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8505,6 +9256,7 @@ pub mod elasti_cache_instance_details {
             self.current_generation = Some(input);
             self
         }
+        /// <p>Determines whether the recommendation is for a current generation instance.</p>
         pub fn set_current_generation(mut self, input: std::option::Option<bool>) -> Self {
             self.current_generation = input;
             self
@@ -8514,6 +9266,7 @@ pub mod elasti_cache_instance_details {
             self.size_flex_eligible = Some(input);
             self
         }
+        /// <p>Determines whether the recommended reservation is size flexible.</p>
         pub fn set_size_flex_eligible(mut self, input: std::option::Option<bool>) -> Self {
             self.size_flex_eligible = input;
             self
@@ -8583,6 +9336,7 @@ pub mod redshift_instance_details {
             self.family = Some(input.into());
             self
         }
+        /// <p>The instance family of the recommended reservation.</p>
         pub fn set_family(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.family = input;
             self
@@ -8592,6 +9346,7 @@ pub mod redshift_instance_details {
             self.node_type = Some(input.into());
             self
         }
+        /// <p>The type of node that Amazon Web Services recommends.</p>
         pub fn set_node_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.node_type = input;
             self
@@ -8601,6 +9356,7 @@ pub mod redshift_instance_details {
             self.region = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services Region of the recommended reservation.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
@@ -8610,6 +9366,7 @@ pub mod redshift_instance_details {
             self.current_generation = Some(input);
             self
         }
+        /// <p>Determines whether the recommendation is for a current-generation instance.</p>
         pub fn set_current_generation(mut self, input: std::option::Option<bool>) -> Self {
             self.current_generation = input;
             self
@@ -8619,6 +9376,7 @@ pub mod redshift_instance_details {
             self.size_flex_eligible = Some(input);
             self
         }
+        /// <p>Determines whether the recommended reservation is size flexible.</p>
         pub fn set_size_flex_eligible(mut self, input: std::option::Option<bool>) -> Self {
             self.size_flex_eligible = input;
             self
@@ -8704,6 +9462,7 @@ pub mod rds_instance_details {
             self.family = Some(input.into());
             self
         }
+        /// <p>The instance family of the recommended reservation.</p>
         pub fn set_family(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.family = input;
             self
@@ -8713,6 +9472,7 @@ pub mod rds_instance_details {
             self.instance_type = Some(input.into());
             self
         }
+        /// <p>The type of instance that Amazon Web Services recommends.</p>
         pub fn set_instance_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8725,6 +9485,7 @@ pub mod rds_instance_details {
             self.region = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services Region of the recommended reservation.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
@@ -8734,6 +9495,7 @@ pub mod rds_instance_details {
             self.database_engine = Some(input.into());
             self
         }
+        /// <p>The database engine that the recommended reservation supports.</p>
         pub fn set_database_engine(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8746,6 +9508,7 @@ pub mod rds_instance_details {
             self.database_edition = Some(input.into());
             self
         }
+        /// <p>The database edition that the recommended reservation supports.</p>
         pub fn set_database_edition(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8759,6 +9522,8 @@ pub mod rds_instance_details {
             self.deployment_option = Some(input.into());
             self
         }
+        /// <p>Determines whether the recommendation is for a reservation in a single Availability
+        /// Zone or a reservation with a backup in a second Availability Zone.</p>
         pub fn set_deployment_option(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8771,6 +9536,7 @@ pub mod rds_instance_details {
             self.license_model = Some(input.into());
             self
         }
+        /// <p>The license model that the recommended reservation supports.</p>
         pub fn set_license_model(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8783,6 +9549,7 @@ pub mod rds_instance_details {
             self.current_generation = Some(input);
             self
         }
+        /// <p>Determines whether the recommendation is for a current-generation instance. </p>
         pub fn set_current_generation(mut self, input: std::option::Option<bool>) -> Self {
             self.current_generation = input;
             self
@@ -8792,6 +9559,7 @@ pub mod rds_instance_details {
             self.size_flex_eligible = Some(input);
             self
         }
+        /// <p>Determines whether the recommended reservation is size flexible.</p>
         pub fn set_size_flex_eligible(mut self, input: std::option::Option<bool>) -> Self {
             self.size_flex_eligible = input;
             self
@@ -8877,6 +9645,7 @@ pub mod ec2_instance_details {
             self.family = Some(input.into());
             self
         }
+        /// <p>The instance family of the recommended reservation.</p>
         pub fn set_family(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.family = input;
             self
@@ -8886,6 +9655,7 @@ pub mod ec2_instance_details {
             self.instance_type = Some(input.into());
             self
         }
+        /// <p>The type of instance that Amazon Web Services recommends.</p>
         pub fn set_instance_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8898,6 +9668,7 @@ pub mod ec2_instance_details {
             self.region = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services Region of the recommended reservation.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
@@ -8907,6 +9678,7 @@ pub mod ec2_instance_details {
             self.availability_zone = Some(input.into());
             self
         }
+        /// <p>The Availability Zone of the recommended reservation.</p>
         pub fn set_availability_zone(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8920,6 +9692,8 @@ pub mod ec2_instance_details {
             self.platform = Some(input.into());
             self
         }
+        /// <p>The platform of the recommended reservation. The platform is the specific combination
+        /// of operating system, license model, and software on an instance.</p>
         pub fn set_platform(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.platform = input;
             self
@@ -8929,6 +9703,7 @@ pub mod ec2_instance_details {
             self.tenancy = Some(input.into());
             self
         }
+        /// <p>Determines whether the recommended reservation is dedicated or shared.</p>
         pub fn set_tenancy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.tenancy = input;
             self
@@ -8938,6 +9713,7 @@ pub mod ec2_instance_details {
             self.current_generation = Some(input);
             self
         }
+        /// <p>Determines whether the recommendation is for a current-generation instance. </p>
         pub fn set_current_generation(mut self, input: std::option::Option<bool>) -> Self {
             self.current_generation = input;
             self
@@ -8947,6 +9723,7 @@ pub mod ec2_instance_details {
             self.size_flex_eligible = Some(input);
             self
         }
+        /// <p>Determines whether the recommended reservation is size flexible.</p>
         pub fn set_size_flex_eligible(mut self, input: std::option::Option<bool>) -> Self {
             self.size_flex_eligible = input;
             self
@@ -9003,6 +9780,8 @@ pub mod service_specification {
             self.ec2_specification = Some(input);
             self
         }
+        /// <p>The Amazon EC2 hardware specifications that you want Amazon Web Services to provide
+        /// recommendations for.</p>
         pub fn set_ec2_specification(
             mut self,
             input: std::option::Option<crate::model::Ec2Specification>,
@@ -9056,6 +9835,8 @@ pub mod ec2_specification {
             self.offering_class = Some(input);
             self
         }
+        /// <p>Indicates whether you want a recommendation for standard or convertible
+        /// reservations.</p>
         pub fn set_offering_class(
             mut self,
             input: std::option::Option<crate::model::OfferingClass>,
@@ -9078,6 +9859,7 @@ impl Ec2Specification {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -9089,7 +9871,9 @@ impl Ec2Specification {
     std::hash::Hash,
 )]
 pub enum OfferingClass {
+    #[allow(missing_docs)] // documentation missing in model
     Convertible,
+    #[allow(missing_docs)] // documentation missing in model
     Standard,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -9111,6 +9895,7 @@ impl std::str::FromStr for OfferingClass {
     }
 }
 impl OfferingClass {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             OfferingClass::Convertible => "CONVERTIBLE",
@@ -9118,6 +9903,7 @@ impl OfferingClass {
             OfferingClass::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CONVERTIBLE", "STANDARD"]
     }
@@ -9160,6 +9946,7 @@ pub mod reservation_purchase_recommendation_metadata {
             self.recommendation_id = Some(input.into());
             self
         }
+        /// <p>The ID for this specific recommendation.</p>
         pub fn set_recommendation_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9172,6 +9959,7 @@ pub mod reservation_purchase_recommendation_metadata {
             self.generation_timestamp = Some(input.into());
             self
         }
+        /// <p>The timestamp for when Amazon Web Services made this recommendation.</p>
         pub fn set_generation_timestamp(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9232,6 +10020,7 @@ pub mod coverage {
             self.coverage_hours = Some(input);
             self
         }
+        /// <p>The amount of instance usage that the reservation covered, in hours.</p>
         pub fn set_coverage_hours(
             mut self,
             input: std::option::Option<crate::model::CoverageHours>,
@@ -9247,6 +10036,7 @@ pub mod coverage {
             self.coverage_normalized_units = Some(input);
             self
         }
+        /// <p>The amount of instance usage that the reservation covered, in normalized units.</p>
         pub fn set_coverage_normalized_units(
             mut self,
             input: std::option::Option<crate::model::CoverageNormalizedUnits>,
@@ -9259,6 +10049,7 @@ pub mod coverage {
             self.coverage_cost = Some(input);
             self
         }
+        /// <p>The amount of cost that the reservation covered.</p>
         pub fn set_coverage_cost(
             mut self,
             input: std::option::Option<crate::model::CoverageCost>,
@@ -9311,6 +10102,7 @@ pub mod coverage_cost {
             self.on_demand_cost = Some(input.into());
             self
         }
+        /// <p>How much an On-Demand Instance costs.</p>
         pub fn set_on_demand_cost(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9394,6 +10186,8 @@ pub mod coverage_normalized_units {
             self.on_demand_normalized_units = Some(input.into());
             self
         }
+        /// <p>The number of normalized units that are covered by On-Demand Instances instead of a
+        /// reservation.</p>
         pub fn set_on_demand_normalized_units(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9406,6 +10200,7 @@ pub mod coverage_normalized_units {
             self.reserved_normalized_units = Some(input.into());
             self
         }
+        /// <p>The number of normalized units that a reservation covers.</p>
         pub fn set_reserved_normalized_units(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9421,6 +10216,7 @@ pub mod coverage_normalized_units {
             self.total_running_normalized_units = Some(input.into());
             self
         }
+        /// <p>The total number of normalized units that you used.</p>
         pub fn set_total_running_normalized_units(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9437,6 +10233,8 @@ pub mod coverage_normalized_units {
             self.coverage_normalized_units_percentage = Some(input.into());
             self
         }
+        /// <p>The percentage of your used instance normalized units that a reservation
+        /// covers.</p>
         pub fn set_coverage_normalized_units_percentage(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9502,6 +10300,7 @@ pub mod coverage_hours {
             self.on_demand_hours = Some(input.into());
             self
         }
+        /// <p>The number of instance running hours that On-Demand Instances covered.</p>
         pub fn set_on_demand_hours(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9514,6 +10313,7 @@ pub mod coverage_hours {
             self.reserved_hours = Some(input.into());
             self
         }
+        /// <p>The number of instance running hours that reservations covered.</p>
         pub fn set_reserved_hours(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9526,6 +10326,7 @@ pub mod coverage_hours {
             self.total_running_hours = Some(input.into());
             self
         }
+        /// <p>The total instance usage, in hours.</p>
         pub fn set_total_running_hours(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9538,6 +10339,7 @@ pub mod coverage_hours {
             self.coverage_hours_percentage = Some(input.into());
             self
         }
+        /// <p>The percentage of instance hours that a reservation covered.</p>
         pub fn set_coverage_hours_percentage(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9600,6 +10402,7 @@ pub mod coverage_by_time {
             self.time_period = Some(input);
             self
         }
+        /// <p>The period that this coverage was used over.</p>
         pub fn set_time_period(
             mut self,
             input: std::option::Option<crate::model::DateInterval>,
@@ -9607,12 +10410,18 @@ pub mod coverage_by_time {
             self.time_period = input;
             self
         }
+        /// Appends an item to `groups`.
+        ///
+        /// To override the contents of this collection use [`set_groups`](Self::set_groups).
+        ///
+        /// <p>The groups of instances that the reservation covered.</p>
         pub fn groups(mut self, input: impl Into<crate::model::ReservationCoverageGroup>) -> Self {
             let mut v = self.groups.unwrap_or_default();
             v.push(input.into());
             self.groups = Some(v);
             self
         }
+        /// <p>The groups of instances that the reservation covered.</p>
         pub fn set_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ReservationCoverageGroup>>,
@@ -9625,6 +10434,7 @@ pub mod coverage_by_time {
             self.total = Some(input);
             self
         }
+        /// <p>The total reservation coverage, in hours.</p>
         pub fn set_total(mut self, input: std::option::Option<crate::model::Coverage>) -> Self {
             self.total = input;
             self
@@ -9676,6 +10486,11 @@ pub mod reservation_coverage_group {
         pub(crate) coverage: std::option::Option<crate::model::Coverage>,
     }
     impl Builder {
+        /// Adds a key-value pair to `attributes`.
+        ///
+        /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
+        ///
+        /// <p>The attributes for this group of reservations.</p>
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -9686,6 +10501,7 @@ pub mod reservation_coverage_group {
             self.attributes = Some(hash_map);
             self
         }
+        /// <p>The attributes for this group of reservations.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -9700,6 +10516,7 @@ pub mod reservation_coverage_group {
             self.coverage = Some(input);
             self
         }
+        /// <p>How much instance usage this group of reservations covered.</p>
         pub fn set_coverage(mut self, input: std::option::Option<crate::model::Coverage>) -> Self {
             self.coverage = input;
             self
@@ -9756,10 +10573,16 @@ pub mod dimension_values_with_attributes {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value of a dimension with a specific attribute.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
         }
+        /// Adds a key-value pair to `attributes`.
+        ///
+        /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
+        ///
+        /// <p>The attribute that applies to a specific <code>Dimension</code>.</p>
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -9770,6 +10593,7 @@ pub mod dimension_values_with_attributes {
             self.attributes = Some(hash_map);
             self
         }
+        /// <p>The attribute that applies to a specific <code>Dimension</code>.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -9795,6 +10619,7 @@ impl DimensionValuesWithAttributes {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -9806,8 +10631,11 @@ impl DimensionValuesWithAttributes {
     std::hash::Hash,
 )]
 pub enum Context {
+    #[allow(missing_docs)] // documentation missing in model
     CostAndUsage,
+    #[allow(missing_docs)] // documentation missing in model
     Reservations,
+    #[allow(missing_docs)] // documentation missing in model
     SavingsPlans,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -9830,6 +10658,7 @@ impl std::str::FromStr for Context {
     }
 }
 impl Context {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Context::CostAndUsage => "COST_AND_USAGE",
@@ -9838,6 +10667,7 @@ impl Context {
             Context::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["COST_AND_USAGE", "RESERVATIONS", "SAVINGS_PLANS"]
     }
@@ -9892,6 +10722,7 @@ pub mod result_by_time {
             self.time_period = Some(input);
             self
         }
+        /// <p>The time period that the result covers.</p>
         pub fn set_time_period(
             mut self,
             input: std::option::Option<crate::model::DateInterval>,
@@ -9899,6 +10730,11 @@ pub mod result_by_time {
             self.time_period = input;
             self
         }
+        /// Adds a key-value pair to `total`.
+        ///
+        /// To override the contents of this collection use [`set_total`](Self::set_total).
+        ///
+        /// <p>The total amount of cost or usage accrued during the time period.</p>
         pub fn total(
             mut self,
             k: impl Into<std::string::String>,
@@ -9909,6 +10745,7 @@ pub mod result_by_time {
             self.total = Some(hash_map);
             self
         }
+        /// <p>The total amount of cost or usage accrued during the time period.</p>
         pub fn set_total(
             mut self,
             input: std::option::Option<
@@ -9918,12 +10755,18 @@ pub mod result_by_time {
             self.total = input;
             self
         }
+        /// Appends an item to `groups`.
+        ///
+        /// To override the contents of this collection use [`set_groups`](Self::set_groups).
+        ///
+        /// <p>The groups that this time period includes.</p>
         pub fn groups(mut self, input: impl Into<crate::model::Group>) -> Self {
             let mut v = self.groups.unwrap_or_default();
             v.push(input.into());
             self.groups = Some(v);
             self
         }
+        /// <p>The groups that this time period includes.</p>
         pub fn set_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Group>>,
@@ -9936,6 +10779,7 @@ pub mod result_by_time {
             self.estimated = Some(input);
             self
         }
+        /// <p>Determines whether the result is estimated.</p>
         pub fn set_estimated(mut self, input: std::option::Option<bool>) -> Self {
             self.estimated = input;
             self
@@ -9989,12 +10833,18 @@ pub mod group {
         >,
     }
     impl Builder {
+        /// Appends an item to `keys`.
+        ///
+        /// To override the contents of this collection use [`set_keys`](Self::set_keys).
+        ///
+        /// <p>The keys that are included in this group.</p>
         pub fn keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.keys.unwrap_or_default();
             v.push(input.into());
             self.keys = Some(v);
             self
         }
+        /// <p>The keys that are included in this group.</p>
         pub fn set_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -10002,6 +10852,11 @@ pub mod group {
             self.keys = input;
             self
         }
+        /// Adds a key-value pair to `metrics`.
+        ///
+        /// To override the contents of this collection use [`set_metrics`](Self::set_metrics).
+        ///
+        /// <p>The metrics that are included in this group.</p>
         pub fn metrics(
             mut self,
             k: impl Into<std::string::String>,
@@ -10012,6 +10867,7 @@ pub mod group {
             self.metrics = Some(hash_map);
             self
         }
+        /// <p>The metrics that are included in this group.</p>
         pub fn set_metrics(
             mut self,
             input: std::option::Option<
@@ -10092,6 +10948,7 @@ pub mod anomaly_subscription {
             self.subscription_arn = Some(input.into());
             self
         }
+        /// <p>The <code>AnomalySubscription</code> Amazon Resource Name (ARN). </p>
         pub fn set_subscription_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10104,16 +10961,23 @@ pub mod anomaly_subscription {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>Your unique account identifier. </p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
         }
+        /// Appends an item to `monitor_arn_list`.
+        ///
+        /// To override the contents of this collection use [`set_monitor_arn_list`](Self::set_monitor_arn_list).
+        ///
+        /// <p>A list of cost anomaly monitors. </p>
         pub fn monitor_arn_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.monitor_arn_list.unwrap_or_default();
             v.push(input.into());
             self.monitor_arn_list = Some(v);
             self
         }
+        /// <p>A list of cost anomaly monitors. </p>
         pub fn set_monitor_arn_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -10121,12 +10985,18 @@ pub mod anomaly_subscription {
             self.monitor_arn_list = input;
             self
         }
+        /// Appends an item to `subscribers`.
+        ///
+        /// To override the contents of this collection use [`set_subscribers`](Self::set_subscribers).
+        ///
+        /// <p>A list of subscribers to notify. </p>
         pub fn subscribers(mut self, input: impl Into<crate::model::Subscriber>) -> Self {
             let mut v = self.subscribers.unwrap_or_default();
             v.push(input.into());
             self.subscribers = Some(v);
             self
         }
+        /// <p>A list of subscribers to notify. </p>
         pub fn set_subscribers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Subscriber>>,
@@ -10139,6 +11009,7 @@ pub mod anomaly_subscription {
             self.threshold = Some(input);
             self
         }
+        /// <p>The dollar value that triggers a notification if the threshold is exceeded. </p>
         pub fn set_threshold(mut self, input: std::option::Option<f64>) -> Self {
             self.threshold = input;
             self
@@ -10148,6 +11019,7 @@ pub mod anomaly_subscription {
             self.frequency = Some(input);
             self
         }
+        /// <p>The frequency that anomaly reports are sent over email. </p>
         pub fn set_frequency(
             mut self,
             input: std::option::Option<crate::model::AnomalySubscriptionFrequency>,
@@ -10160,6 +11032,7 @@ pub mod anomaly_subscription {
             self.subscription_name = Some(input.into());
             self
         }
+        /// <p>The name for the subscription. </p>
         pub fn set_subscription_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10304,6 +11177,7 @@ pub mod anomaly_monitor {
             self.monitor_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) value. </p>
         pub fn set_monitor_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.monitor_arn = input;
             self
@@ -10313,6 +11187,7 @@ pub mod anomaly_monitor {
             self.monitor_name = Some(input.into());
             self
         }
+        /// <p>The name of the monitor. </p>
         pub fn set_monitor_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.monitor_name = input;
             self
@@ -10322,6 +11197,7 @@ pub mod anomaly_monitor {
             self.creation_date = Some(input.into());
             self
         }
+        /// <p>The date when the monitor was created. </p>
         pub fn set_creation_date(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10334,6 +11210,7 @@ pub mod anomaly_monitor {
             self.last_updated_date = Some(input.into());
             self
         }
+        /// <p>The date when the monitor was last updated. </p>
         pub fn set_last_updated_date(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10346,6 +11223,7 @@ pub mod anomaly_monitor {
             self.last_evaluated_date = Some(input.into());
             self
         }
+        /// <p>The date when the monitor last evaluated for anomalies. </p>
         pub fn set_last_evaluated_date(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10358,6 +11236,7 @@ pub mod anomaly_monitor {
             self.monitor_type = Some(input);
             self
         }
+        /// <p>The possible type values. </p>
         pub fn set_monitor_type(
             mut self,
             input: std::option::Option<crate::model::MonitorType>,
@@ -10370,6 +11249,7 @@ pub mod anomaly_monitor {
             self.monitor_dimension = Some(input);
             self
         }
+        /// <p>The dimensions to evaluate. </p>
         pub fn set_monitor_dimension(
             mut self,
             input: std::option::Option<crate::model::MonitorDimension>,
@@ -10436,6 +11316,61 @@ pub mod anomaly_monitor {
             self.monitor_specification = Some(input);
             self
         }
+        /// <p>Use <code>Expression</code> to filter by cost or by usage. There are two patterns: </p>
+        /// <ul>
+        /// <li>
+        /// <p>Simple dimension values - You can set the dimension name and values for the
+        /// filters that you plan to use. For example, you can filter for
+        /// <code>REGION==us-east-1 OR REGION==us-west-1</code>. For
+        /// <code>GetRightsizingRecommendation</code>, the Region is a full name (for
+        /// example, <code>REGION==US East (N. Virginia)</code>. The <code>Expression</code>
+        /// example is as follows:</p>
+        /// <p>
+        /// <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ]
+        /// } }</code>
+        /// </p>
+        /// <p>The list of dimension values are OR'd together to retrieve cost or usage data.
+        /// You can create <code>Expression</code> and <code>DimensionValues</code> objects
+        /// using either <code>with*</code> methods or <code>set*</code> methods in multiple
+        /// lines. </p>
+        /// </li>
+        /// <li>
+        /// <p>Compound dimension values with logical operations - You can use multiple
+        /// <code>Expression</code> types and the logical operators
+        /// <code>AND/OR/NOT</code> to create a list of one or more
+        /// <code>Expression</code> objects. By doing this, you can filter on more
+        /// advanced options. For example, you can filter on <code>((REGION == us-east-1 OR
+        /// REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE !=
+        /// DataTransfer)</code>. The <code>Expression</code> for that is as
+        /// follows:</p>
+        /// <p>
+        /// <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [
+        /// "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values":
+        /// ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values":
+        /// ["DataTransfer"] }}} ] } </code>
+        /// </p>
+        /// <note>
+        /// <p>Because each <code>Expression</code> can have only one operator, the
+        /// service returns an error if more than one is specified. The following
+        /// example shows an <code>Expression</code> object that creates an
+        /// error.</p>
+        /// </note>
+        /// <p>
+        /// <code> { "And": [ ... ], "DimensionValues": { "Dimension": "USAGE_TYPE",
+        /// "Values": [ "DataTransfer" ] } } </code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and
+        /// NOT isn't supported. OR isn't supported between different dimensions, or dimensions
+        /// and tags. NOT operators aren't supported. Dimensions are also limited to
+        /// <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or
+        /// <code>RIGHTSIZING_TYPE</code>.</p>
+        /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is
+        /// supported. AND and OR aren't supported. Dimensions are limited to
+        /// <code>LINKED_ACCOUNT</code>.</p>
+        /// </note>
         pub fn set_monitor_specification(
             mut self,
             input: std::option::Option<crate::model::Expression>,
@@ -10448,6 +11383,7 @@ pub mod anomaly_monitor {
             self.dimensional_value_count = Some(input);
             self
         }
+        /// <p>The value for evaluated dimensions. </p>
         pub fn set_dimensional_value_count(mut self, input: std::option::Option<i32>) -> Self {
             self.dimensional_value_count = input;
             self
@@ -10475,6 +11411,7 @@ impl AnomalyMonitor {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -10486,6 +11423,7 @@ impl AnomalyMonitor {
     std::hash::Hash,
 )]
 pub enum MonitorDimension {
+    #[allow(missing_docs)] // documentation missing in model
     Service,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -10506,12 +11444,14 @@ impl std::str::FromStr for MonitorDimension {
     }
 }
 impl MonitorDimension {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MonitorDimension::Service => "SERVICE",
             MonitorDimension::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["SERVICE"]
     }
@@ -10522,6 +11462,7 @@ impl AsRef<str> for MonitorDimension {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -10533,7 +11474,9 @@ impl AsRef<str> for MonitorDimension {
     std::hash::Hash,
 )]
 pub enum MonitorType {
+    #[allow(missing_docs)] // documentation missing in model
     Custom,
+    #[allow(missing_docs)] // documentation missing in model
     Dimensional,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -10555,6 +11498,7 @@ impl std::str::FromStr for MonitorType {
     }
 }
 impl MonitorType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MonitorType::Custom => "CUSTOM",
@@ -10562,6 +11506,7 @@ impl MonitorType {
             MonitorType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CUSTOM", "DIMENSIONAL"]
     }
@@ -10635,6 +11580,7 @@ pub mod anomaly {
             self.anomaly_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the anomaly. </p>
         pub fn set_anomaly_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.anomaly_id = input;
             self
@@ -10644,6 +11590,7 @@ pub mod anomaly {
             self.anomaly_start_date = Some(input.into());
             self
         }
+        /// <p>The first day the anomaly is detected. </p>
         pub fn set_anomaly_start_date(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10656,6 +11603,7 @@ pub mod anomaly {
             self.anomaly_end_date = Some(input.into());
             self
         }
+        /// <p>The last day the anomaly is detected. </p>
         pub fn set_anomaly_end_date(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10669,6 +11617,8 @@ pub mod anomaly {
             self.dimension_value = Some(input.into());
             self
         }
+        /// <p>The dimension for the anomaly (for example, an Amazon Web Services service in a service
+        /// monitor). </p>
         pub fn set_dimension_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10676,12 +11626,18 @@ pub mod anomaly {
             self.dimension_value = input;
             self
         }
+        /// Appends an item to `root_causes`.
+        ///
+        /// To override the contents of this collection use [`set_root_causes`](Self::set_root_causes).
+        ///
+        /// <p>The list of identified root causes for the anomaly. </p>
         pub fn root_causes(mut self, input: impl Into<crate::model::RootCause>) -> Self {
             let mut v = self.root_causes.unwrap_or_default();
             v.push(input.into());
             self.root_causes = Some(v);
             self
         }
+        /// <p>The list of identified root causes for the anomaly. </p>
         pub fn set_root_causes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RootCause>>,
@@ -10694,6 +11650,7 @@ pub mod anomaly {
             self.anomaly_score = Some(input);
             self
         }
+        /// <p>The latest and maximum score for the anomaly. </p>
         pub fn set_anomaly_score(
             mut self,
             input: std::option::Option<crate::model::AnomalyScore>,
@@ -10706,6 +11663,7 @@ pub mod anomaly {
             self.impact = Some(input);
             self
         }
+        /// <p>The dollar impact for the anomaly. </p>
         pub fn set_impact(mut self, input: std::option::Option<crate::model::Impact>) -> Self {
             self.impact = input;
             self
@@ -10716,6 +11674,8 @@ pub mod anomaly {
             self.monitor_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) for the cost monitor that generated this anomaly.
+        /// </p>
         pub fn set_monitor_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.monitor_arn = input;
             self
@@ -10725,6 +11685,7 @@ pub mod anomaly {
             self.feedback = Some(input);
             self
         }
+        /// <p>The feedback value. </p>
         pub fn set_feedback(
             mut self,
             input: std::option::Option<crate::model::AnomalyFeedbackType>,
@@ -10787,6 +11748,7 @@ pub mod impact {
             self.max_impact = Some(input);
             self
         }
+        /// <p>The maximum dollar value that's observed for an anomaly. </p>
         pub fn set_max_impact(mut self, input: std::option::Option<f64>) -> Self {
             self.max_impact = input;
             self
@@ -10796,6 +11758,7 @@ pub mod impact {
             self.total_impact = Some(input);
             self
         }
+        /// <p>The cumulative dollar value that's observed for an anomaly. </p>
         pub fn set_total_impact(mut self, input: std::option::Option<f64>) -> Self {
             self.total_impact = input;
             self
@@ -10848,6 +11811,7 @@ pub mod anomaly_score {
             self.max_score = Some(input);
             self
         }
+        /// <p>The maximum score that's observed during the <code>AnomalyDateInterval</code>. </p>
         pub fn set_max_score(mut self, input: std::option::Option<f64>) -> Self {
             self.max_score = input;
             self
@@ -10857,6 +11821,7 @@ pub mod anomaly_score {
             self.current_score = Some(input);
             self
         }
+        /// <p>The last observed score. </p>
         pub fn set_current_score(mut self, input: std::option::Option<f64>) -> Self {
             self.current_score = input;
             self
@@ -10918,6 +11883,7 @@ pub mod root_cause {
             self.service = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services service name that's associated with the cost anomaly. </p>
         pub fn set_service(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service = input;
             self
@@ -10927,6 +11893,7 @@ pub mod root_cause {
             self.region = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services Region that's associated with the cost anomaly. </p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
@@ -10936,6 +11903,7 @@ pub mod root_cause {
             self.linked_account = Some(input.into());
             self
         }
+        /// <p>The member account value that's associated with the cost anomaly. </p>
         pub fn set_linked_account(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10948,6 +11916,7 @@ pub mod root_cause {
             self.usage_type = Some(input.into());
             self
         }
+        /// <p>The <code>UsageType</code> value that's associated with the cost anomaly. </p>
         pub fn set_usage_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.usage_type = input;
             self
@@ -11006,6 +11975,7 @@ pub mod total_impact_filter {
             self.numeric_operator = Some(input);
             self
         }
+        /// <p>The comparing value that's used in the filter. </p>
         pub fn set_numeric_operator(
             mut self,
             input: std::option::Option<crate::model::NumericOperator>,
@@ -11018,6 +11988,7 @@ pub mod total_impact_filter {
             self.start_value = Some(input);
             self
         }
+        /// <p>The lower bound dollar value that's used in the filter. </p>
         pub fn set_start_value(mut self, input: std::option::Option<f64>) -> Self {
             self.start_value = input;
             self
@@ -11027,6 +11998,7 @@ pub mod total_impact_filter {
             self.end_value = Some(input);
             self
         }
+        /// <p>The upper bound dollar value that's used in the filter. </p>
         pub fn set_end_value(mut self, input: std::option::Option<f64>) -> Self {
             self.end_value = input;
             self
@@ -11048,6 +12020,7 @@ impl TotalImpactFilter {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -11059,11 +12032,17 @@ impl TotalImpactFilter {
     std::hash::Hash,
 )]
 pub enum NumericOperator {
+    #[allow(missing_docs)] // documentation missing in model
     Between,
+    #[allow(missing_docs)] // documentation missing in model
     Equal,
+    #[allow(missing_docs)] // documentation missing in model
     GreaterThan,
+    #[allow(missing_docs)] // documentation missing in model
     GreaterThanOrEqual,
+    #[allow(missing_docs)] // documentation missing in model
     LessThan,
+    #[allow(missing_docs)] // documentation missing in model
     LessThanOrEqual,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -11089,6 +12068,7 @@ impl std::str::FromStr for NumericOperator {
     }
 }
 impl NumericOperator {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             NumericOperator::Between => "BETWEEN",
@@ -11100,6 +12080,7 @@ impl NumericOperator {
             NumericOperator::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "BETWEEN",
@@ -11149,6 +12130,7 @@ pub mod anomaly_date_interval {
             self.start_date = Some(input.into());
             self
         }
+        /// <p>The first date an anomaly was observed. </p>
         pub fn set_start_date(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.start_date = input;
             self
@@ -11158,6 +12140,7 @@ pub mod anomaly_date_interval {
             self.end_date = Some(input.into());
             self
         }
+        /// <p>The last date an anomaly was observed. </p>
         pub fn set_end_date(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.end_date = input;
             self
@@ -11248,6 +12231,7 @@ pub mod cost_category {
             self.cost_category_arn = Some(input.into());
             self
         }
+        /// <p>The unique identifier for your Cost Category. </p>
         pub fn set_cost_category_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11260,6 +12244,7 @@ pub mod cost_category {
             self.effective_start = Some(input.into());
             self
         }
+        /// <p>The effective state data of your Cost Category.</p>
         pub fn set_effective_start(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11272,6 +12257,7 @@ pub mod cost_category {
             self.effective_end = Some(input.into());
             self
         }
+        /// <p> The effective end data of your Cost Category.</p>
         pub fn set_effective_end(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11284,6 +12270,7 @@ pub mod cost_category {
             self.name = Some(input.into());
             self
         }
+        /// <p>The unique name of the Cost Category.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -11293,6 +12280,7 @@ pub mod cost_category {
             self.rule_version = Some(input);
             self
         }
+        /// <p>The rule schema version in this particular Cost Category.</p>
         pub fn set_rule_version(
             mut self,
             input: std::option::Option<crate::model::CostCategoryRuleVersion>,
@@ -11300,12 +12288,22 @@ pub mod cost_category {
             self.rule_version = input;
             self
         }
+        /// Appends an item to `rules`.
+        ///
+        /// To override the contents of this collection use [`set_rules`](Self::set_rules).
+        ///
+        /// <p>The rules are processed in order. If there are multiple rules that match the line
+        /// item, then the first rule to match is used to determine that Cost Category value.
+        /// </p>
         pub fn rules(mut self, input: impl Into<crate::model::CostCategoryRule>) -> Self {
             let mut v = self.rules.unwrap_or_default();
             v.push(input.into());
             self.rules = Some(v);
             self
         }
+        /// <p>The rules are processed in order. If there are multiple rules that match the line
+        /// item, then the first rule to match is used to determine that Cost Category value.
+        /// </p>
         pub fn set_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CostCategoryRule>>,
@@ -11313,6 +12311,12 @@ pub mod cost_category {
             self.rules = input;
             self
         }
+        /// Appends an item to `split_charge_rules`.
+        ///
+        /// To override the contents of this collection use [`set_split_charge_rules`](Self::set_split_charge_rules).
+        ///
+        /// <p> The split charge rules that are used to allocate your charges between your Cost
+        /// Category values. </p>
         pub fn split_charge_rules(
             mut self,
             input: impl Into<crate::model::CostCategorySplitChargeRule>,
@@ -11322,6 +12326,8 @@ pub mod cost_category {
             self.split_charge_rules = Some(v);
             self
         }
+        /// <p> The split charge rules that are used to allocate your charges between your Cost
+        /// Category values. </p>
         pub fn set_split_charge_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CostCategorySplitChargeRule>>,
@@ -11329,6 +12335,12 @@ pub mod cost_category {
             self.split_charge_rules = input;
             self
         }
+        /// Appends an item to `processing_status`.
+        ///
+        /// To override the contents of this collection use [`set_processing_status`](Self::set_processing_status).
+        ///
+        /// <p>The list of processing statuses for Cost Management products for a specific cost
+        /// category. </p>
         pub fn processing_status(
             mut self,
             input: impl Into<crate::model::CostCategoryProcessingStatus>,
@@ -11338,6 +12350,8 @@ pub mod cost_category {
             self.processing_status = Some(v);
             self
         }
+        /// <p>The list of processing statuses for Cost Management products for a specific cost
+        /// category. </p>
         pub fn set_processing_status(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CostCategoryProcessingStatus>>,
@@ -11351,6 +12365,8 @@ pub mod cost_category {
             self.default_value = Some(input.into());
             self
         }
+        /// <p>The
+        /// default value for the cost category.</p>
         pub fn set_default_value(
             mut self,
             input: std::option::Option<std::string::String>,

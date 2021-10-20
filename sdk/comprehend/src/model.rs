@@ -42,6 +42,10 @@ pub mod tag {
             self.key = Some(input.into());
             self
         }
+        /// <p>The initial part of a key-value pair that forms a tag associated with a given resource.
+        /// For instance, if you want to show which resources are used by which departments, you might use
+        /// “Department” as the key portion of the pair, with multiple possible values such as “sales,”
+        /// “legal,” and “administration.” </p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -54,6 +58,10 @@ pub mod tag {
             self.value = Some(input.into());
             self
         }
+        /// <p> The second part of a key-value pair that forms a tag associated with a given resource.
+        /// For instance, if you want to show which resources are used by which departments, you might use
+        /// “Department” as the initial (key) portion of the pair, with a value of “sales” to indicate the
+        /// sales department. </p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -74,6 +82,7 @@ impl Tag {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -85,11 +94,17 @@ impl Tag {
     std::hash::Hash,
 )]
 pub enum JobStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Completed,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     InProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Stopped,
+    #[allow(missing_docs)] // documentation missing in model
     StopRequested,
+    #[allow(missing_docs)] // documentation missing in model
     Submitted,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -115,6 +130,7 @@ impl std::str::FromStr for JobStatus {
     }
 }
 impl JobStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             JobStatus::Completed => "COMPLETED",
@@ -126,6 +142,7 @@ impl JobStatus {
             JobStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "COMPLETED",
@@ -180,12 +197,26 @@ pub mod vpc_config {
         pub(crate) subnets: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `security_group_ids`.
+        ///
+        /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
+        ///
+        /// <p>The ID number for a security group on an instance of your private VPC. Security groups on
+        /// your VPC function serve as a virtual firewall to control inbound and outbound traffic and
+        /// provides security for the resources that you’ll be accessing on the VPC. This ID number is
+        /// preceded by "sg-", for instance: "sg-03b388029b0a285ea". For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Security
+        /// Groups for your VPC</a>. </p>
         pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_ids.unwrap_or_default();
             v.push(input.into());
             self.security_group_ids = Some(v);
             self
         }
+        /// <p>The ID number for a security group on an instance of your private VPC. Security groups on
+        /// your VPC function serve as a virtual firewall to control inbound and outbound traffic and
+        /// provides security for the resources that you’ll be accessing on the VPC. This ID number is
+        /// preceded by "sg-", for instance: "sg-03b388029b0a285ea". For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Security
+        /// Groups for your VPC</a>. </p>
         pub fn set_security_group_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -193,12 +224,26 @@ pub mod vpc_config {
             self.security_group_ids = input;
             self
         }
+        /// Appends an item to `subnets`.
+        ///
+        /// To override the contents of this collection use [`set_subnets`](Self::set_subnets).
+        ///
+        /// <p>The ID for each subnet being used in your private VPC. This subnet is a subset of the a
+        /// range of IPv4 addresses used by the VPC and is specific to a given availability zone in the
+        /// VPC’s region. This ID number is preceded by "subnet-", for instance:
+        /// "subnet-04ccf456919e69055". For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and
+        /// Subnets</a>. </p>
         pub fn subnets(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnets.unwrap_or_default();
             v.push(input.into());
             self.subnets = Some(v);
             self
         }
+        /// <p>The ID for each subnet being used in your private VPC. This subnet is a subset of the a
+        /// range of IPv4 addresses used by the VPC and is specific to a given availability zone in the
+        /// VPC’s region. This ID number is preceded by "subnet-", for instance:
+        /// "subnet-04ccf456919e69055". For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and
+        /// Subnets</a>. </p>
         pub fn set_subnets(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -290,6 +335,14 @@ pub mod output_data_config {
             self.s3_uri = Some(input.into());
             self
         }
+        /// <p>When you use the <code>OutputDataConfig</code> object with asynchronous operations, you
+        /// specify the Amazon S3 location where you want to write the output data. The URI must be in the
+        /// same region as the API endpoint that you are calling. The location is used as the prefix for
+        /// the actual location of the output file.</p>
+        /// <p>When the topic detection job is finished, the service creates an output file in a
+        /// directory specific to the job. The <code>S3Uri</code> field contains the location of the
+        /// output file, called <code>output.tar.gz</code>. It is a compressed archive that contains the
+        /// ouput of the operation.</p>
         pub fn set_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.s3_uri = input;
             self
@@ -320,6 +373,28 @@ pub mod output_data_config {
             self.kms_key_id = Some(input.into());
             self
         }
+        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt the
+        /// output results from an analysis job. The KmsKeyId can be one of the following formats:</p>
+        /// <ul>
+        /// <li>
+        /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Resource Name (ARN) of a KMS Key:
+        /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>KMS Key Alias: <code>"alias/ExampleAlias"</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>ARN of a KMS Key Alias:
+        /// <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -402,6 +477,12 @@ pub mod input_data_config {
             self.s3_uri = Some(input.into());
             self
         }
+        /// <p>The Amazon S3 URI for the input data. The URI must be in same region as the API
+        /// endpoint that you are calling. The URI can point to a single input file or it can provide the
+        /// prefix for a collection of data files. </p>
+        /// <p>For example, if you use the URI <code>S3://bucketName/prefix</code>, if the prefix is a
+        /// single file, Amazon Comprehend uses that file as input. If more than one file begins with the
+        /// prefix, Amazon Comprehend uses all of them as input.</p>
         pub fn set_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.s3_uri = input;
             self
@@ -425,6 +506,21 @@ pub mod input_data_config {
             self.input_format = Some(input);
             self
         }
+        /// <p>Specifies how the text in an input file should be processed:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ONE_DOC_PER_FILE</code> - Each file is considered a separate document. Use
+        /// this option when you are processing large documents, such as newspaper articles or
+        /// scientific papers.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ONE_DOC_PER_LINE</code> - Each line in a file is considered a separate
+        /// document. Use this option when you are processing many short documents, such as text
+        /// messages.</p>
+        /// </li>
+        /// </ul>
         pub fn set_input_format(
             mut self,
             input: std::option::Option<crate::model::InputFormat>,
@@ -439,6 +535,9 @@ pub mod input_data_config {
             self.document_reader_config = Some(input);
             self
         }
+        /// <p>The document reader config field applies only for InputDataConfig of StartEntitiesDetectionJob. </p>
+        /// <p>Use DocumentReaderConfig to provide specifications about how you want your inference documents read.
+        /// Currently it applies for PDF documents in StartEntitiesDetectionJob custom inference.</p>
         pub fn set_document_reader_config(
             mut self,
             input: std::option::Option<crate::model::DocumentReaderConfig>,
@@ -531,6 +630,17 @@ pub mod document_reader_config {
             self.document_read_action = Some(input);
             self
         }
+        /// <p>This enum field will start with two values which will apply to PDFs:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>TEXTRACT_DETECT_DOCUMENT_TEXT</code> - The service calls DetectDocumentText for PDF documents per page.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TEXTRACT_ANALYZE_DOCUMENT</code> - The service calls AnalyzeDocument for PDF documents per page.</p>
+        /// </li>
+        /// </ul>
         pub fn set_document_read_action(
             mut self,
             input: std::option::Option<crate::model::DocumentReadAction>,
@@ -554,6 +664,18 @@ pub mod document_reader_config {
             self.document_read_mode = Some(input);
             self
         }
+        /// <p>This enum field provides two values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>SERVICE_DEFAULT</code> - use service defaults for Document reading. For Digital PDF it would mean using an internal parser instead of Textract APIs</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FORCE_DOCUMENT_READ_ACTION</code> - Always use specified action for DocumentReadAction, including Digital PDF.
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_document_read_mode(
             mut self,
             input: std::option::Option<crate::model::DocumentReadMode>,
@@ -561,6 +683,11 @@ pub mod document_reader_config {
             self.document_read_mode = input;
             self
         }
+        /// Appends an item to `feature_types`.
+        ///
+        /// To override the contents of this collection use [`set_feature_types`](Self::set_feature_types).
+        ///
+        /// <p>Specifies how the text in an input file should be processed:</p>
         pub fn feature_types(
             mut self,
             input: impl Into<crate::model::DocumentReadFeatureTypes>,
@@ -570,6 +697,7 @@ pub mod document_reader_config {
             self.feature_types = Some(v);
             self
         }
+        /// <p>Specifies how the text in an input file should be processed:</p>
         pub fn set_feature_types(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DocumentReadFeatureTypes>>,
@@ -596,6 +724,7 @@ impl DocumentReaderConfig {
 
 /// <p>A list of the types of analyses to perform. This field specifies what feature types need to be extracted from the document where entity recognition is
 /// expected.</p>
+///
 /// <ul>
 /// <li>
 /// <p>
@@ -618,7 +747,9 @@ impl DocumentReaderConfig {
     std::hash::Hash,
 )]
 pub enum DocumentReadFeatureTypes {
+    #[allow(missing_docs)] // documentation missing in model
     Forms,
+    #[allow(missing_docs)] // documentation missing in model
     Tables,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -640,6 +771,7 @@ impl std::str::FromStr for DocumentReadFeatureTypes {
     }
 }
 impl DocumentReadFeatureTypes {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DocumentReadFeatureTypes::Forms => "FORMS",
@@ -647,6 +779,7 @@ impl DocumentReadFeatureTypes {
             DocumentReadFeatureTypes::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FORMS", "TABLES"]
     }
@@ -657,6 +790,7 @@ impl AsRef<str> for DocumentReadFeatureTypes {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -668,7 +802,9 @@ impl AsRef<str> for DocumentReadFeatureTypes {
     std::hash::Hash,
 )]
 pub enum DocumentReadMode {
+    #[allow(missing_docs)] // documentation missing in model
     ForceDocumentReadAction,
+    #[allow(missing_docs)] // documentation missing in model
     ServiceDefault,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -690,6 +826,7 @@ impl std::str::FromStr for DocumentReadMode {
     }
 }
 impl DocumentReadMode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DocumentReadMode::ForceDocumentReadAction => "FORCE_DOCUMENT_READ_ACTION",
@@ -697,6 +834,7 @@ impl DocumentReadMode {
             DocumentReadMode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FORCE_DOCUMENT_READ_ACTION", "SERVICE_DEFAULT"]
     }
@@ -707,6 +845,7 @@ impl AsRef<str> for DocumentReadMode {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -718,7 +857,9 @@ impl AsRef<str> for DocumentReadMode {
     std::hash::Hash,
 )]
 pub enum DocumentReadAction {
+    #[allow(missing_docs)] // documentation missing in model
     TextractAnalyzeDocument,
+    #[allow(missing_docs)] // documentation missing in model
     TextractDetectDocumentText,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -740,6 +881,7 @@ impl std::str::FromStr for DocumentReadAction {
     }
 }
 impl DocumentReadAction {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DocumentReadAction::TextractAnalyzeDocument => "TEXTRACT_ANALYZE_DOCUMENT",
@@ -747,6 +889,7 @@ impl DocumentReadAction {
             DocumentReadAction::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["TEXTRACT_ANALYZE_DOCUMENT", "TEXTRACT_DETECT_DOCUMENT_TEXT"]
     }
@@ -757,6 +900,7 @@ impl AsRef<str> for DocumentReadAction {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -768,7 +912,9 @@ impl AsRef<str> for DocumentReadAction {
     std::hash::Hash,
 )]
 pub enum InputFormat {
+    #[allow(missing_docs)] // documentation missing in model
     OneDocPerFile,
+    #[allow(missing_docs)] // documentation missing in model
     OneDocPerLine,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -790,6 +936,7 @@ impl std::str::FromStr for InputFormat {
     }
 }
 impl InputFormat {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             InputFormat::OneDocPerFile => "ONE_DOC_PER_FILE",
@@ -797,6 +944,7 @@ impl InputFormat {
             InputFormat::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ONE_DOC_PER_FILE", "ONE_DOC_PER_LINE"]
     }
@@ -807,6 +955,7 @@ impl AsRef<str> for InputFormat {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -818,17 +967,29 @@ impl AsRef<str> for InputFormat {
     std::hash::Hash,
 )]
 pub enum LanguageCode {
+    #[allow(missing_docs)] // documentation missing in model
     Ar,
+    #[allow(missing_docs)] // documentation missing in model
     De,
+    #[allow(missing_docs)] // documentation missing in model
     En,
+    #[allow(missing_docs)] // documentation missing in model
     Es,
+    #[allow(missing_docs)] // documentation missing in model
     Fr,
+    #[allow(missing_docs)] // documentation missing in model
     Hi,
+    #[allow(missing_docs)] // documentation missing in model
     It,
+    #[allow(missing_docs)] // documentation missing in model
     Ja,
+    #[allow(missing_docs)] // documentation missing in model
     Ko,
+    #[allow(missing_docs)] // documentation missing in model
     Pt,
+    #[allow(missing_docs)] // documentation missing in model
     Zh,
+    #[allow(missing_docs)] // documentation missing in model
     ZhTw,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -860,6 +1021,7 @@ impl std::str::FromStr for LanguageCode {
     }
 }
 impl LanguageCode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LanguageCode::Ar => "ar",
@@ -877,6 +1039,7 @@ impl LanguageCode {
             LanguageCode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ar", "de", "en", "es", "fr", "hi", "it", "ja", "ko", "pt", "zh", "zh-TW",
@@ -923,12 +1086,20 @@ pub mod redaction_config {
         pub(crate) mask_character: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `pii_entity_types`.
+        ///
+        /// To override the contents of this collection use [`set_pii_entity_types`](Self::set_pii_entity_types).
+        ///
+        /// <p>An array of the types of PII entities that Amazon Comprehend detects in the input text for
+        /// your request.</p>
         pub fn pii_entity_types(mut self, input: impl Into<crate::model::PiiEntityType>) -> Self {
             let mut v = self.pii_entity_types.unwrap_or_default();
             v.push(input.into());
             self.pii_entity_types = Some(v);
             self
         }
+        /// <p>An array of the types of PII entities that Amazon Comprehend detects in the input text for
+        /// your request.</p>
         pub fn set_pii_entity_types(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PiiEntityType>>,
@@ -942,6 +1113,8 @@ pub mod redaction_config {
             self.mask_mode = Some(input);
             self
         }
+        /// <p>Specifies whether the PII entity is redacted with the mask character or the entity
+        /// type.</p>
         pub fn set_mask_mode(
             mut self,
             input: std::option::Option<crate::model::PiiEntitiesDetectionMaskMode>,
@@ -954,6 +1127,7 @@ pub mod redaction_config {
             self.mask_character = Some(input.into());
             self
         }
+        /// <p>A character that replaces each character in the redacted PII entity.</p>
         pub fn set_mask_character(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -978,6 +1152,7 @@ impl RedactionConfig {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -989,7 +1164,9 @@ impl RedactionConfig {
     std::hash::Hash,
 )]
 pub enum PiiEntitiesDetectionMaskMode {
+    #[allow(missing_docs)] // documentation missing in model
     Mask,
+    #[allow(missing_docs)] // documentation missing in model
     ReplaceWithPiiEntityType,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1013,6 +1190,7 @@ impl std::str::FromStr for PiiEntitiesDetectionMaskMode {
     }
 }
 impl PiiEntitiesDetectionMaskMode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PiiEntitiesDetectionMaskMode::Mask => "MASK",
@@ -1022,6 +1200,7 @@ impl PiiEntitiesDetectionMaskMode {
             PiiEntitiesDetectionMaskMode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["MASK", "REPLACE_WITH_PII_ENTITY_TYPE"]
     }
@@ -1032,6 +1211,7 @@ impl AsRef<str> for PiiEntitiesDetectionMaskMode {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1043,28 +1223,51 @@ impl AsRef<str> for PiiEntitiesDetectionMaskMode {
     std::hash::Hash,
 )]
 pub enum PiiEntityType {
+    #[allow(missing_docs)] // documentation missing in model
     Address,
+    #[allow(missing_docs)] // documentation missing in model
     Age,
+    #[allow(missing_docs)] // documentation missing in model
     All,
+    #[allow(missing_docs)] // documentation missing in model
     AwsAccessKey,
+    #[allow(missing_docs)] // documentation missing in model
     AwsSecretKey,
+    #[allow(missing_docs)] // documentation missing in model
     BankAccountNumber,
+    #[allow(missing_docs)] // documentation missing in model
     BankRouting,
+    #[allow(missing_docs)] // documentation missing in model
     CreditDebitCvv,
+    #[allow(missing_docs)] // documentation missing in model
     CreditDebitExpiry,
+    #[allow(missing_docs)] // documentation missing in model
     CreditDebitNumber,
+    #[allow(missing_docs)] // documentation missing in model
     DateTime,
+    #[allow(missing_docs)] // documentation missing in model
     DriverId,
+    #[allow(missing_docs)] // documentation missing in model
     Email,
+    #[allow(missing_docs)] // documentation missing in model
     IpAddress,
+    #[allow(missing_docs)] // documentation missing in model
     MacAddress,
+    #[allow(missing_docs)] // documentation missing in model
     Name,
+    #[allow(missing_docs)] // documentation missing in model
     PassportNumber,
+    #[allow(missing_docs)] // documentation missing in model
     Password,
+    #[allow(missing_docs)] // documentation missing in model
     Phone,
+    #[allow(missing_docs)] // documentation missing in model
     Pin,
+    #[allow(missing_docs)] // documentation missing in model
     Ssn,
+    #[allow(missing_docs)] // documentation missing in model
     Url,
+    #[allow(missing_docs)] // documentation missing in model
     Username,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1107,6 +1310,7 @@ impl std::str::FromStr for PiiEntityType {
     }
 }
 impl PiiEntityType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PiiEntityType::Address => "ADDRESS",
@@ -1135,6 +1339,7 @@ impl PiiEntityType {
             PiiEntityType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ADDRESS",
@@ -1169,6 +1374,7 @@ impl AsRef<str> for PiiEntityType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1180,7 +1386,9 @@ impl AsRef<str> for PiiEntityType {
     std::hash::Hash,
 )]
 pub enum PiiEntitiesDetectionMode {
+    #[allow(missing_docs)] // documentation missing in model
     OnlyOffsets,
+    #[allow(missing_docs)] // documentation missing in model
     OnlyRedaction,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1202,6 +1410,7 @@ impl std::str::FromStr for PiiEntitiesDetectionMode {
     }
 }
 impl PiiEntitiesDetectionMode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PiiEntitiesDetectionMode::OnlyOffsets => "ONLY_OFFSETS",
@@ -1209,6 +1418,7 @@ impl PiiEntitiesDetectionMode {
             PiiEntitiesDetectionMode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ONLY_OFFSETS", "ONLY_REDACTION"]
     }
@@ -1244,9 +1454,9 @@ pub struct TopicsDetectionJobProperties {
     /// <p>A description for the status of a job.</p>
     pub message: std::option::Option<std::string::String>,
     /// <p>The time that the topic detection job was submitted for processing.</p>
-    pub submit_time: std::option::Option<smithy_types::Instant>,
+    pub submit_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time that the topic detection job was completed.</p>
-    pub end_time: std::option::Option<smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The input data configuration supplied when you created the topic detection
     /// job.</p>
     pub input_data_config: std::option::Option<crate::model::InputDataConfig>,
@@ -1309,8 +1519,8 @@ pub mod topics_detection_job_properties {
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
         pub(crate) message: std::option::Option<std::string::String>,
-        pub(crate) submit_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) submit_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) input_data_config: std::option::Option<crate::model::InputDataConfig>,
         pub(crate) output_data_config: std::option::Option<crate::model::OutputDataConfig>,
         pub(crate) number_of_topics: std::option::Option<i32>,
@@ -1324,6 +1534,7 @@ pub mod topics_detection_job_properties {
             self.job_id = Some(input.into());
             self
         }
+        /// <p>The identifier assigned to the topic detection job.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -1342,6 +1553,16 @@ pub mod topics_detection_job_properties {
             self.job_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the topics detection job. It is a unique, fully
+        /// qualified identifier for the job. It includes the AWS account, Region, and the job ID. The
+        /// format of the ARN is as follows:</p>
+        /// <p>
+        /// <code>arn:<partition>:comprehend:<region>:<account-id>:topics-detection-job/<job-id></code>
+        /// </p>
+        /// <p>The following is an example job ARN:</p>
+        /// <p>
+        /// <code>arn:aws:comprehend:us-west-2:111122223333:topics-detection-job/1234abcd12ab34cd56ef1234567890ab</code>
+        /// </p>
         pub fn set_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_arn = input;
             self
@@ -1351,6 +1572,7 @@ pub mod topics_detection_job_properties {
             self.job_name = Some(input.into());
             self
         }
+        /// <p>The name of the topic detection job.</p>
         pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_name = input;
             self
@@ -1361,6 +1583,8 @@ pub mod topics_detection_job_properties {
             self.job_status = Some(input);
             self
         }
+        /// <p>The current status of the topic detection job. If the status is <code>Failed</code>,
+        /// the reason for the failure is shown in the <code>Message</code> field.</p>
         pub fn set_job_status(
             mut self,
             input: std::option::Option<crate::model::JobStatus>,
@@ -1373,28 +1597,34 @@ pub mod topics_detection_job_properties {
             self.message = Some(input.into());
             self
         }
+        /// <p>A description for the status of a job.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
         }
         /// <p>The time that the topic detection job was submitted for processing.</p>
-        pub fn submit_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn submit_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.submit_time = Some(input);
             self
         }
+        /// <p>The time that the topic detection job was submitted for processing.</p>
         pub fn set_submit_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.submit_time = input;
             self
         }
         /// <p>The time that the topic detection job was completed.</p>
-        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time that the topic detection job was completed.</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.end_time = input;
             self
         }
@@ -1404,6 +1634,8 @@ pub mod topics_detection_job_properties {
             self.input_data_config = Some(input);
             self
         }
+        /// <p>The input data configuration supplied when you created the topic detection
+        /// job.</p>
         pub fn set_input_data_config(
             mut self,
             input: std::option::Option<crate::model::InputDataConfig>,
@@ -1417,6 +1649,8 @@ pub mod topics_detection_job_properties {
             self.output_data_config = Some(input);
             self
         }
+        /// <p>The output data configuration supplied when you created the topic detection
+        /// job.</p>
         pub fn set_output_data_config(
             mut self,
             input: std::option::Option<crate::model::OutputDataConfig>,
@@ -1430,6 +1664,8 @@ pub mod topics_detection_job_properties {
             self.number_of_topics = Some(input);
             self
         }
+        /// <p>The number of topics to detect supplied when you created the topic detection job. The
+        /// default is 10. </p>
         pub fn set_number_of_topics(mut self, input: std::option::Option<i32>) -> Self {
             self.number_of_topics = input;
             self
@@ -1440,6 +1676,8 @@ pub mod topics_detection_job_properties {
             self.data_access_role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants
+        /// Amazon Comprehend read access to your job data. </p>
         pub fn set_data_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1465,6 +1703,20 @@ pub mod topics_detection_job_properties {
             self.volume_kms_key_id = Some(input.into());
             self
         }
+        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
+        /// data on the storage volume attached to the ML compute instance(s) that process the analysis
+        /// job. The VolumeKmsKeyId can be either of the following formats:</p>
+        /// <ul>
+        /// <li>
+        /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Resource Name (ARN) of a KMS Key:
+        /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_volume_kms_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1479,6 +1731,9 @@ pub mod topics_detection_job_properties {
             self.vpc_config = Some(input);
             self
         }
+        /// <p>Configuration parameters for a private Virtual Private Cloud (VPC) containing the
+        /// resources you are using for your topic detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
+        /// VPC</a>. </p>
         pub fn set_vpc_config(
             mut self,
             input: std::option::Option<crate::model::VpcConfig>,
@@ -1526,11 +1781,11 @@ pub struct TopicsDetectionJobFilter {
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
     /// Only returns jobs submitted before the specified time. Jobs are returned in descending order,
     /// newest to oldest.</p>
-    pub submit_time_before: std::option::Option<smithy_types::Instant>,
+    pub submit_time_before: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
     /// Only returns jobs submitted after the specified time. Jobs are returned in ascending order,
     /// oldest to newest.</p>
-    pub submit_time_after: std::option::Option<smithy_types::Instant>,
+    pub submit_time_after: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for TopicsDetectionJobFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1550,8 +1805,8 @@ pub mod topics_detection_job_filter {
     pub struct Builder {
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
-        pub(crate) submit_time_before: std::option::Option<smithy_types::Instant>,
-        pub(crate) submit_time_after: std::option::Option<smithy_types::Instant>,
+        pub(crate) submit_time_before: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) submit_time_after: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p></p>
@@ -1559,6 +1814,7 @@ pub mod topics_detection_job_filter {
             self.job_name = Some(input.into());
             self
         }
+        /// <p></p>
         pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_name = input;
             self
@@ -1569,6 +1825,8 @@ pub mod topics_detection_job_filter {
             self.job_status = Some(input);
             self
         }
+        /// <p>Filters the list of topic detection jobs based on job status. Returns only jobs with
+        /// the specified status.</p>
         pub fn set_job_status(
             mut self,
             input: std::option::Option<crate::model::JobStatus>,
@@ -1579,13 +1837,16 @@ pub mod topics_detection_job_filter {
         /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
         /// Only returns jobs submitted before the specified time. Jobs are returned in descending order,
         /// newest to oldest.</p>
-        pub fn submit_time_before(mut self, input: smithy_types::Instant) -> Self {
+        pub fn submit_time_before(mut self, input: aws_smithy_types::Instant) -> Self {
             self.submit_time_before = Some(input);
             self
         }
+        /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
+        /// Only returns jobs submitted before the specified time. Jobs are returned in descending order,
+        /// newest to oldest.</p>
         pub fn set_submit_time_before(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.submit_time_before = input;
             self
@@ -1593,13 +1854,16 @@ pub mod topics_detection_job_filter {
         /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
         /// Only returns jobs submitted after the specified time. Jobs are returned in ascending order,
         /// oldest to newest.</p>
-        pub fn submit_time_after(mut self, input: smithy_types::Instant) -> Self {
+        pub fn submit_time_after(mut self, input: aws_smithy_types::Instant) -> Self {
             self.submit_time_after = Some(input);
             self
         }
+        /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
+        /// Only returns jobs submitted after the specified time. Jobs are returned in ascending order,
+        /// oldest to newest.</p>
         pub fn set_submit_time_after(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.submit_time_after = input;
             self
@@ -1647,9 +1911,9 @@ pub struct SentimentDetectionJobProperties {
     /// <p>A description of the status of a job.</p>
     pub message: std::option::Option<std::string::String>,
     /// <p>The time that the sentiment detection job was submitted for processing.</p>
-    pub submit_time: std::option::Option<smithy_types::Instant>,
+    pub submit_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time that the sentiment detection job ended.</p>
-    pub end_time: std::option::Option<smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The input data configuration that you supplied when you created the sentiment detection
     /// job.</p>
     pub input_data_config: std::option::Option<crate::model::InputDataConfig>,
@@ -1711,8 +1975,8 @@ pub mod sentiment_detection_job_properties {
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
         pub(crate) message: std::option::Option<std::string::String>,
-        pub(crate) submit_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) submit_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) input_data_config: std::option::Option<crate::model::InputDataConfig>,
         pub(crate) output_data_config: std::option::Option<crate::model::OutputDataConfig>,
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
@@ -1726,6 +1990,7 @@ pub mod sentiment_detection_job_properties {
             self.job_id = Some(input.into());
             self
         }
+        /// <p>The identifier assigned to the sentiment detection job.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -1744,6 +2009,16 @@ pub mod sentiment_detection_job_properties {
             self.job_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the sentiment detection job. It is a unique, fully
+        /// qualified identifier for the job. It includes the AWS account, Region, and the job ID. The
+        /// format of the ARN is as follows:</p>
+        /// <p>
+        /// <code>arn:<partition>:comprehend:<region>:<account-id>:sentiment-detection-job/<job-id></code>
+        /// </p>
+        /// <p>The following is an example job ARN:</p>
+        /// <p>
+        /// <code>arn:aws:comprehend:us-west-2:111122223333:sentiment-detection-job/1234abcd12ab34cd56ef1234567890ab</code>
+        /// </p>
         pub fn set_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_arn = input;
             self
@@ -1753,6 +2028,7 @@ pub mod sentiment_detection_job_properties {
             self.job_name = Some(input.into());
             self
         }
+        /// <p>The name that you assigned to the sentiment detection job</p>
         pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_name = input;
             self
@@ -1763,6 +2039,8 @@ pub mod sentiment_detection_job_properties {
             self.job_status = Some(input);
             self
         }
+        /// <p>The current status of the sentiment detection job. If the status is <code>FAILED</code>,
+        /// the <code>Messages</code> field shows the reason for the failure.</p>
         pub fn set_job_status(
             mut self,
             input: std::option::Option<crate::model::JobStatus>,
@@ -1775,28 +2053,34 @@ pub mod sentiment_detection_job_properties {
             self.message = Some(input.into());
             self
         }
+        /// <p>A description of the status of a job.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
         }
         /// <p>The time that the sentiment detection job was submitted for processing.</p>
-        pub fn submit_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn submit_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.submit_time = Some(input);
             self
         }
+        /// <p>The time that the sentiment detection job was submitted for processing.</p>
         pub fn set_submit_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.submit_time = input;
             self
         }
         /// <p>The time that the sentiment detection job ended.</p>
-        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time that the sentiment detection job ended.</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.end_time = input;
             self
         }
@@ -1806,6 +2090,8 @@ pub mod sentiment_detection_job_properties {
             self.input_data_config = Some(input);
             self
         }
+        /// <p>The input data configuration that you supplied when you created the sentiment detection
+        /// job.</p>
         pub fn set_input_data_config(
             mut self,
             input: std::option::Option<crate::model::InputDataConfig>,
@@ -1819,6 +2105,8 @@ pub mod sentiment_detection_job_properties {
             self.output_data_config = Some(input);
             self
         }
+        /// <p>The output data configuration that you supplied when you created the sentiment detection
+        /// job.</p>
         pub fn set_output_data_config(
             mut self,
             input: std::option::Option<crate::model::OutputDataConfig>,
@@ -1831,6 +2119,7 @@ pub mod sentiment_detection_job_properties {
             self.language_code = Some(input);
             self
         }
+        /// <p>The language code of the input documents.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,
@@ -1844,6 +2133,8 @@ pub mod sentiment_detection_job_properties {
             self.data_access_role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) that gives Amazon Comprehend read access to your input
+        /// data.</p>
         pub fn set_data_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1869,6 +2160,20 @@ pub mod sentiment_detection_job_properties {
             self.volume_kms_key_id = Some(input.into());
             self
         }
+        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
+        /// data on the storage volume attached to the ML compute instance(s) that process the analysis
+        /// job. The VolumeKmsKeyId can be either of the following formats:</p>
+        /// <ul>
+        /// <li>
+        /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Resource Name (ARN) of a KMS Key:
+        /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_volume_kms_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1883,6 +2188,9 @@ pub mod sentiment_detection_job_properties {
             self.vpc_config = Some(input);
             self
         }
+        /// <p> Configuration parameters for a private Virtual Private Cloud (VPC) containing the
+        /// resources you are using for your sentiment detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
+        /// VPC</a>. </p>
         pub fn set_vpc_config(
             mut self,
             input: std::option::Option<crate::model::VpcConfig>,
@@ -1930,11 +2238,11 @@ pub struct SentimentDetectionJobFilter {
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
     /// Returns only jobs submitted before the specified time. Jobs are returned in ascending order,
     /// oldest to newest.</p>
-    pub submit_time_before: std::option::Option<smithy_types::Instant>,
+    pub submit_time_before: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
     /// Returns only jobs submitted after the specified time. Jobs are returned in descending order,
     /// newest to oldest.</p>
-    pub submit_time_after: std::option::Option<smithy_types::Instant>,
+    pub submit_time_after: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for SentimentDetectionJobFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1954,8 +2262,8 @@ pub mod sentiment_detection_job_filter {
     pub struct Builder {
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
-        pub(crate) submit_time_before: std::option::Option<smithy_types::Instant>,
-        pub(crate) submit_time_after: std::option::Option<smithy_types::Instant>,
+        pub(crate) submit_time_before: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) submit_time_after: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>Filters on the name of the job.</p>
@@ -1963,6 +2271,7 @@ pub mod sentiment_detection_job_filter {
             self.job_name = Some(input.into());
             self
         }
+        /// <p>Filters on the name of the job.</p>
         pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_name = input;
             self
@@ -1973,6 +2282,8 @@ pub mod sentiment_detection_job_filter {
             self.job_status = Some(input);
             self
         }
+        /// <p>Filters the list of jobs based on job status. Returns only jobs with the specified
+        /// status.</p>
         pub fn set_job_status(
             mut self,
             input: std::option::Option<crate::model::JobStatus>,
@@ -1983,13 +2294,16 @@ pub mod sentiment_detection_job_filter {
         /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
         /// Returns only jobs submitted before the specified time. Jobs are returned in ascending order,
         /// oldest to newest.</p>
-        pub fn submit_time_before(mut self, input: smithy_types::Instant) -> Self {
+        pub fn submit_time_before(mut self, input: aws_smithy_types::Instant) -> Self {
             self.submit_time_before = Some(input);
             self
         }
+        /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
+        /// Returns only jobs submitted before the specified time. Jobs are returned in ascending order,
+        /// oldest to newest.</p>
         pub fn set_submit_time_before(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.submit_time_before = input;
             self
@@ -1997,13 +2311,16 @@ pub mod sentiment_detection_job_filter {
         /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
         /// Returns only jobs submitted after the specified time. Jobs are returned in descending order,
         /// newest to oldest.</p>
-        pub fn submit_time_after(mut self, input: smithy_types::Instant) -> Self {
+        pub fn submit_time_after(mut self, input: aws_smithy_types::Instant) -> Self {
             self.submit_time_after = Some(input);
             self
         }
+        /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
+        /// Returns only jobs submitted after the specified time. Jobs are returned in descending order,
+        /// newest to oldest.</p>
         pub fn set_submit_time_after(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.submit_time_after = input;
             self
@@ -2051,9 +2368,9 @@ pub struct PiiEntitiesDetectionJobProperties {
     /// <p>A description of the status of a job.</p>
     pub message: std::option::Option<std::string::String>,
     /// <p>The time that the PII entities detection job was submitted for processing.</p>
-    pub submit_time: std::option::Option<smithy_types::Instant>,
+    pub submit_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time that the PII entities detection job completed.</p>
-    pub end_time: std::option::Option<smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The input properties for a PII entities detection job.</p>
     pub input_data_config: std::option::Option<crate::model::InputDataConfig>,
     /// <p>The output data configuration that you supplied when you created the PII entities
@@ -2103,8 +2420,8 @@ pub mod pii_entities_detection_job_properties {
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
         pub(crate) message: std::option::Option<std::string::String>,
-        pub(crate) submit_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) submit_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) input_data_config: std::option::Option<crate::model::InputDataConfig>,
         pub(crate) output_data_config: std::option::Option<crate::model::PiiOutputDataConfig>,
         pub(crate) redaction_config: std::option::Option<crate::model::RedactionConfig>,
@@ -2118,6 +2435,7 @@ pub mod pii_entities_detection_job_properties {
             self.job_id = Some(input.into());
             self
         }
+        /// <p>The identifier assigned to the PII entities detection job.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -2136,6 +2454,16 @@ pub mod pii_entities_detection_job_properties {
             self.job_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the PII entities detection job. It is a unique, fully
+        /// qualified identifier for the job. It includes the AWS account, Region, and the job ID. The
+        /// format of the ARN is as follows:</p>
+        /// <p>
+        /// <code>arn:<partition>:comprehend:<region>:<account-id>:pii-entities-detection-job/<job-id></code>
+        /// </p>
+        /// <p>The following is an example job ARN:</p>
+        /// <p>
+        /// <code>arn:aws:comprehend:us-west-2:111122223333:pii-entities-detection-job/1234abcd12ab34cd56ef1234567890ab</code>
+        /// </p>
         pub fn set_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_arn = input;
             self
@@ -2145,6 +2473,7 @@ pub mod pii_entities_detection_job_properties {
             self.job_name = Some(input.into());
             self
         }
+        /// <p>The name that you assigned the PII entities detection job.</p>
         pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_name = input;
             self
@@ -2155,6 +2484,8 @@ pub mod pii_entities_detection_job_properties {
             self.job_status = Some(input);
             self
         }
+        /// <p>The current status of the PII entities detection job. If the status is
+        /// <code>FAILED</code>, the <code>Message</code> field shows the reason for the failure.</p>
         pub fn set_job_status(
             mut self,
             input: std::option::Option<crate::model::JobStatus>,
@@ -2167,28 +2498,34 @@ pub mod pii_entities_detection_job_properties {
             self.message = Some(input.into());
             self
         }
+        /// <p>A description of the status of a job.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
         }
         /// <p>The time that the PII entities detection job was submitted for processing.</p>
-        pub fn submit_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn submit_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.submit_time = Some(input);
             self
         }
+        /// <p>The time that the PII entities detection job was submitted for processing.</p>
         pub fn set_submit_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.submit_time = input;
             self
         }
         /// <p>The time that the PII entities detection job completed.</p>
-        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time that the PII entities detection job completed.</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.end_time = input;
             self
         }
@@ -2197,6 +2534,7 @@ pub mod pii_entities_detection_job_properties {
             self.input_data_config = Some(input);
             self
         }
+        /// <p>The input properties for a PII entities detection job.</p>
         pub fn set_input_data_config(
             mut self,
             input: std::option::Option<crate::model::InputDataConfig>,
@@ -2210,6 +2548,8 @@ pub mod pii_entities_detection_job_properties {
             self.output_data_config = Some(input);
             self
         }
+        /// <p>The output data configuration that you supplied when you created the PII entities
+        /// detection job.</p>
         pub fn set_output_data_config(
             mut self,
             input: std::option::Option<crate::model::PiiOutputDataConfig>,
@@ -2225,6 +2565,10 @@ pub mod pii_entities_detection_job_properties {
             self.redaction_config = Some(input);
             self
         }
+        /// <p>Provides configuration parameters for PII entity redaction.</p>
+        /// <p>This parameter is required if you set the <code>Mode</code> parameter to
+        /// <code>ONLY_REDACTION</code>. In that case, you must provide a <code>RedactionConfig</code>
+        /// definition that includes the <code>PiiEntityTypes</code> parameter.</p>
         pub fn set_redaction_config(
             mut self,
             input: std::option::Option<crate::model::RedactionConfig>,
@@ -2237,6 +2581,7 @@ pub mod pii_entities_detection_job_properties {
             self.language_code = Some(input);
             self
         }
+        /// <p>The language code of the input documents</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,
@@ -2250,6 +2595,8 @@ pub mod pii_entities_detection_job_properties {
             self.data_access_role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) that gives Amazon Comprehend read access to your input
+        /// data.</p>
         pub fn set_data_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2263,6 +2610,8 @@ pub mod pii_entities_detection_job_properties {
             self.mode = Some(input);
             self
         }
+        /// <p>Specifies whether the output provides the locations (offsets) of PII entities or a file in
+        /// which PII entities are redacted.</p>
         pub fn set_mode(
             mut self,
             input: std::option::Option<crate::model::PiiEntitiesDetectionMode>,
@@ -2332,6 +2681,8 @@ pub mod pii_output_data_config {
             self.s3_uri = Some(input.into());
             self
         }
+        /// <p>When you use the <code>PiiOutputDataConfig</code> object with asynchronous operations,
+        /// you specify the Amazon S3 location where you want to write the output data. </p>
         pub fn set_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.s3_uri = input;
             self
@@ -2342,6 +2693,8 @@ pub mod pii_output_data_config {
             self.kms_key_id = Some(input.into());
             self
         }
+        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt the
+        /// output results from an analysis job.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -2374,11 +2727,11 @@ pub struct PiiEntitiesDetectionJobFilter {
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
     /// Returns only jobs submitted before the specified time. Jobs are returned in ascending order,
     /// oldest to newest.</p>
-    pub submit_time_before: std::option::Option<smithy_types::Instant>,
+    pub submit_time_before: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
     /// Returns only jobs submitted after the specified time. Jobs are returned in descending order,
     /// newest to oldest.</p>
-    pub submit_time_after: std::option::Option<smithy_types::Instant>,
+    pub submit_time_after: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for PiiEntitiesDetectionJobFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2398,8 +2751,8 @@ pub mod pii_entities_detection_job_filter {
     pub struct Builder {
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
-        pub(crate) submit_time_before: std::option::Option<smithy_types::Instant>,
-        pub(crate) submit_time_after: std::option::Option<smithy_types::Instant>,
+        pub(crate) submit_time_before: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) submit_time_after: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>Filters on the name of the job.</p>
@@ -2407,6 +2760,7 @@ pub mod pii_entities_detection_job_filter {
             self.job_name = Some(input.into());
             self
         }
+        /// <p>Filters on the name of the job.</p>
         pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_name = input;
             self
@@ -2417,6 +2771,8 @@ pub mod pii_entities_detection_job_filter {
             self.job_status = Some(input);
             self
         }
+        /// <p>Filters the list of jobs based on job status. Returns only jobs with the specified
+        /// status.</p>
         pub fn set_job_status(
             mut self,
             input: std::option::Option<crate::model::JobStatus>,
@@ -2427,13 +2783,16 @@ pub mod pii_entities_detection_job_filter {
         /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
         /// Returns only jobs submitted before the specified time. Jobs are returned in ascending order,
         /// oldest to newest.</p>
-        pub fn submit_time_before(mut self, input: smithy_types::Instant) -> Self {
+        pub fn submit_time_before(mut self, input: aws_smithy_types::Instant) -> Self {
             self.submit_time_before = Some(input);
             self
         }
+        /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
+        /// Returns only jobs submitted before the specified time. Jobs are returned in ascending order,
+        /// oldest to newest.</p>
         pub fn set_submit_time_before(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.submit_time_before = input;
             self
@@ -2441,13 +2800,16 @@ pub mod pii_entities_detection_job_filter {
         /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
         /// Returns only jobs submitted after the specified time. Jobs are returned in descending order,
         /// newest to oldest.</p>
-        pub fn submit_time_after(mut self, input: smithy_types::Instant) -> Self {
+        pub fn submit_time_after(mut self, input: aws_smithy_types::Instant) -> Self {
             self.submit_time_after = Some(input);
             self
         }
+        /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
+        /// Returns only jobs submitted after the specified time. Jobs are returned in descending order,
+        /// newest to oldest.</p>
         pub fn set_submit_time_after(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.submit_time_after = input;
             self
@@ -2495,9 +2857,9 @@ pub struct KeyPhrasesDetectionJobProperties {
     /// <p>A description of the status of a job.</p>
     pub message: std::option::Option<std::string::String>,
     /// <p>The time that the key phrases detection job was submitted for processing.</p>
-    pub submit_time: std::option::Option<smithy_types::Instant>,
+    pub submit_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time that the key phrases detection job completed.</p>
-    pub end_time: std::option::Option<smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The input data configuration that you supplied when you created the key phrases detection
     /// job.</p>
     pub input_data_config: std::option::Option<crate::model::InputDataConfig>,
@@ -2559,8 +2921,8 @@ pub mod key_phrases_detection_job_properties {
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
         pub(crate) message: std::option::Option<std::string::String>,
-        pub(crate) submit_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) submit_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) input_data_config: std::option::Option<crate::model::InputDataConfig>,
         pub(crate) output_data_config: std::option::Option<crate::model::OutputDataConfig>,
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
@@ -2574,6 +2936,7 @@ pub mod key_phrases_detection_job_properties {
             self.job_id = Some(input.into());
             self
         }
+        /// <p>The identifier assigned to the key phrases detection job.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -2592,6 +2955,16 @@ pub mod key_phrases_detection_job_properties {
             self.job_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the key phrases detection job. It is a unique, fully
+        /// qualified identifier for the job. It includes the AWS account, Region, and the job ID. The
+        /// format of the ARN is as follows:</p>
+        /// <p>
+        /// <code>arn:<partition>:comprehend:<region>:<account-id>:key-phrases-detection-job/<job-id></code>
+        /// </p>
+        /// <p>The following is an example job ARN:</p>
+        /// <p>
+        /// <code>arn:aws:comprehend:us-west-2:111122223333:key-phrases-detection-job/1234abcd12ab34cd56ef1234567890ab</code>
+        /// </p>
         pub fn set_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_arn = input;
             self
@@ -2601,6 +2974,7 @@ pub mod key_phrases_detection_job_properties {
             self.job_name = Some(input.into());
             self
         }
+        /// <p>The name that you assigned the key phrases detection job.</p>
         pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_name = input;
             self
@@ -2611,6 +2985,8 @@ pub mod key_phrases_detection_job_properties {
             self.job_status = Some(input);
             self
         }
+        /// <p>The current status of the key phrases detection job. If the status is <code>FAILED</code>,
+        /// the <code>Message</code> field shows the reason for the failure.</p>
         pub fn set_job_status(
             mut self,
             input: std::option::Option<crate::model::JobStatus>,
@@ -2623,28 +2999,34 @@ pub mod key_phrases_detection_job_properties {
             self.message = Some(input.into());
             self
         }
+        /// <p>A description of the status of a job.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
         }
         /// <p>The time that the key phrases detection job was submitted for processing.</p>
-        pub fn submit_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn submit_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.submit_time = Some(input);
             self
         }
+        /// <p>The time that the key phrases detection job was submitted for processing.</p>
         pub fn set_submit_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.submit_time = input;
             self
         }
         /// <p>The time that the key phrases detection job completed.</p>
-        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time that the key phrases detection job completed.</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.end_time = input;
             self
         }
@@ -2654,6 +3036,8 @@ pub mod key_phrases_detection_job_properties {
             self.input_data_config = Some(input);
             self
         }
+        /// <p>The input data configuration that you supplied when you created the key phrases detection
+        /// job.</p>
         pub fn set_input_data_config(
             mut self,
             input: std::option::Option<crate::model::InputDataConfig>,
@@ -2667,6 +3051,8 @@ pub mod key_phrases_detection_job_properties {
             self.output_data_config = Some(input);
             self
         }
+        /// <p>The output data configuration that you supplied when you created the key phrases detection
+        /// job.</p>
         pub fn set_output_data_config(
             mut self,
             input: std::option::Option<crate::model::OutputDataConfig>,
@@ -2679,6 +3065,7 @@ pub mod key_phrases_detection_job_properties {
             self.language_code = Some(input);
             self
         }
+        /// <p>The language code of the input documents.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,
@@ -2692,6 +3079,8 @@ pub mod key_phrases_detection_job_properties {
             self.data_access_role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) that gives Amazon Comprehend read access to your input
+        /// data.</p>
         pub fn set_data_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2717,6 +3106,20 @@ pub mod key_phrases_detection_job_properties {
             self.volume_kms_key_id = Some(input.into());
             self
         }
+        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
+        /// data on the storage volume attached to the ML compute instance(s) that process the analysis
+        /// job. The VolumeKmsKeyId can be either of the following formats:</p>
+        /// <ul>
+        /// <li>
+        /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Resource Name (ARN) of a KMS Key:
+        /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_volume_kms_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2731,6 +3134,9 @@ pub mod key_phrases_detection_job_properties {
             self.vpc_config = Some(input);
             self
         }
+        /// <p> Configuration parameters for a private Virtual Private Cloud (VPC) containing the
+        /// resources you are using for your key phrases detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
+        /// VPC</a>. </p>
         pub fn set_vpc_config(
             mut self,
             input: std::option::Option<crate::model::VpcConfig>,
@@ -2778,11 +3184,11 @@ pub struct KeyPhrasesDetectionJobFilter {
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
     /// Returns only jobs submitted before the specified time. Jobs are returned in ascending order,
     /// oldest to newest.</p>
-    pub submit_time_before: std::option::Option<smithy_types::Instant>,
+    pub submit_time_before: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
     /// Returns only jobs submitted after the specified time. Jobs are returned in descending order,
     /// newest to oldest.</p>
-    pub submit_time_after: std::option::Option<smithy_types::Instant>,
+    pub submit_time_after: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for KeyPhrasesDetectionJobFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2802,8 +3208,8 @@ pub mod key_phrases_detection_job_filter {
     pub struct Builder {
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
-        pub(crate) submit_time_before: std::option::Option<smithy_types::Instant>,
-        pub(crate) submit_time_after: std::option::Option<smithy_types::Instant>,
+        pub(crate) submit_time_before: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) submit_time_after: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>Filters on the name of the job.</p>
@@ -2811,6 +3217,7 @@ pub mod key_phrases_detection_job_filter {
             self.job_name = Some(input.into());
             self
         }
+        /// <p>Filters on the name of the job.</p>
         pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_name = input;
             self
@@ -2821,6 +3228,8 @@ pub mod key_phrases_detection_job_filter {
             self.job_status = Some(input);
             self
         }
+        /// <p>Filters the list of jobs based on job status. Returns only jobs with the specified
+        /// status.</p>
         pub fn set_job_status(
             mut self,
             input: std::option::Option<crate::model::JobStatus>,
@@ -2831,13 +3240,16 @@ pub mod key_phrases_detection_job_filter {
         /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
         /// Returns only jobs submitted before the specified time. Jobs are returned in ascending order,
         /// oldest to newest.</p>
-        pub fn submit_time_before(mut self, input: smithy_types::Instant) -> Self {
+        pub fn submit_time_before(mut self, input: aws_smithy_types::Instant) -> Self {
             self.submit_time_before = Some(input);
             self
         }
+        /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
+        /// Returns only jobs submitted before the specified time. Jobs are returned in ascending order,
+        /// oldest to newest.</p>
         pub fn set_submit_time_before(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.submit_time_before = input;
             self
@@ -2845,13 +3257,16 @@ pub mod key_phrases_detection_job_filter {
         /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
         /// Returns only jobs submitted after the specified time. Jobs are returned in descending order,
         /// newest to oldest.</p>
-        pub fn submit_time_after(mut self, input: smithy_types::Instant) -> Self {
+        pub fn submit_time_after(mut self, input: aws_smithy_types::Instant) -> Self {
             self.submit_time_after = Some(input);
             self
         }
+        /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
+        /// Returns only jobs submitted after the specified time. Jobs are returned in descending order,
+        /// newest to oldest.</p>
         pub fn set_submit_time_after(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.submit_time_after = input;
             self
@@ -2898,9 +3313,9 @@ pub struct EventsDetectionJobProperties {
     /// <p>A description of the status of the events detection job.</p>
     pub message: std::option::Option<std::string::String>,
     /// <p>The time that the events detection job was submitted for processing.</p>
-    pub submit_time: std::option::Option<smithy_types::Instant>,
+    pub submit_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time that the events detection job completed.</p>
-    pub end_time: std::option::Option<smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The input data configuration that you supplied when you created the events detection
     /// job.</p>
     pub input_data_config: std::option::Option<crate::model::InputDataConfig>,
@@ -2944,8 +3359,8 @@ pub mod events_detection_job_properties {
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
         pub(crate) message: std::option::Option<std::string::String>,
-        pub(crate) submit_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) submit_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) input_data_config: std::option::Option<crate::model::InputDataConfig>,
         pub(crate) output_data_config: std::option::Option<crate::model::OutputDataConfig>,
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
@@ -2958,6 +3373,7 @@ pub mod events_detection_job_properties {
             self.job_id = Some(input.into());
             self
         }
+        /// <p>The identifier assigned to the events detection job.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -2976,6 +3392,16 @@ pub mod events_detection_job_properties {
             self.job_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the events detection job. It is a unique, fully
+        /// qualified identifier for the job. It includes the AWS account, Region, and the job ID. The
+        /// format of the ARN is as follows:</p>
+        /// <p>
+        /// <code>arn:<partition>:comprehend:<region>:<account-id>:events-detection-job/<job-id></code>
+        /// </p>
+        /// <p>The following is an example job ARN:</p>
+        /// <p>
+        /// <code>arn:aws:comprehend:us-west-2:111122223333:events-detection-job/1234abcd12ab34cd56ef1234567890ab</code>
+        /// </p>
         pub fn set_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_arn = input;
             self
@@ -2985,6 +3411,7 @@ pub mod events_detection_job_properties {
             self.job_name = Some(input.into());
             self
         }
+        /// <p>The name you assigned the events detection job.</p>
         pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_name = input;
             self
@@ -2994,6 +3421,7 @@ pub mod events_detection_job_properties {
             self.job_status = Some(input);
             self
         }
+        /// <p>The current status of the events detection job.</p>
         pub fn set_job_status(
             mut self,
             input: std::option::Option<crate::model::JobStatus>,
@@ -3006,28 +3434,34 @@ pub mod events_detection_job_properties {
             self.message = Some(input.into());
             self
         }
+        /// <p>A description of the status of the events detection job.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
         }
         /// <p>The time that the events detection job was submitted for processing.</p>
-        pub fn submit_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn submit_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.submit_time = Some(input);
             self
         }
+        /// <p>The time that the events detection job was submitted for processing.</p>
         pub fn set_submit_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.submit_time = input;
             self
         }
         /// <p>The time that the events detection job completed.</p>
-        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time that the events detection job completed.</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.end_time = input;
             self
         }
@@ -3037,6 +3471,8 @@ pub mod events_detection_job_properties {
             self.input_data_config = Some(input);
             self
         }
+        /// <p>The input data configuration that you supplied when you created the events detection
+        /// job.</p>
         pub fn set_input_data_config(
             mut self,
             input: std::option::Option<crate::model::InputDataConfig>,
@@ -3050,6 +3486,8 @@ pub mod events_detection_job_properties {
             self.output_data_config = Some(input);
             self
         }
+        /// <p>The output data configuration that you supplied when you created the events detection
+        /// job.</p>
         pub fn set_output_data_config(
             mut self,
             input: std::option::Option<crate::model::OutputDataConfig>,
@@ -3062,6 +3500,7 @@ pub mod events_detection_job_properties {
             self.language_code = Some(input);
             self
         }
+        /// <p>The language code of the input documents.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,
@@ -3075,6 +3514,8 @@ pub mod events_detection_job_properties {
             self.data_access_role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identify and Access Management (IAM) role that
+        /// grants Amazon Comprehend read access to your input data.</p>
         pub fn set_data_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3082,12 +3523,18 @@ pub mod events_detection_job_properties {
             self.data_access_role_arn = input;
             self
         }
+        /// Appends an item to `target_event_types`.
+        ///
+        /// To override the contents of this collection use [`set_target_event_types`](Self::set_target_event_types).
+        ///
+        /// <p>The types of events that are detected by the job.</p>
         pub fn target_event_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.target_event_types.unwrap_or_default();
             v.push(input.into());
             self.target_event_types = Some(v);
             self
         }
+        /// <p>The types of events that are detected by the job.</p>
         pub fn set_target_event_types(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3133,11 +3580,11 @@ pub struct EventsDetectionJobFilter {
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
     /// Returns only jobs submitted before the specified time. Jobs are returned in ascending order,
     /// oldest to newest.</p>
-    pub submit_time_before: std::option::Option<smithy_types::Instant>,
+    pub submit_time_before: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
     /// Returns only jobs submitted after the specified time. Jobs are returned in descending order,
     /// newest to oldest.</p>
-    pub submit_time_after: std::option::Option<smithy_types::Instant>,
+    pub submit_time_after: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for EventsDetectionJobFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3157,8 +3604,8 @@ pub mod events_detection_job_filter {
     pub struct Builder {
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
-        pub(crate) submit_time_before: std::option::Option<smithy_types::Instant>,
-        pub(crate) submit_time_after: std::option::Option<smithy_types::Instant>,
+        pub(crate) submit_time_before: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) submit_time_after: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>Filters on the name of the events detection job.</p>
@@ -3166,6 +3613,7 @@ pub mod events_detection_job_filter {
             self.job_name = Some(input.into());
             self
         }
+        /// <p>Filters on the name of the events detection job.</p>
         pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_name = input;
             self
@@ -3176,6 +3624,8 @@ pub mod events_detection_job_filter {
             self.job_status = Some(input);
             self
         }
+        /// <p>Filters the list of jobs based on job status. Returns only jobs with the specified
+        /// status.</p>
         pub fn set_job_status(
             mut self,
             input: std::option::Option<crate::model::JobStatus>,
@@ -3186,13 +3636,16 @@ pub mod events_detection_job_filter {
         /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
         /// Returns only jobs submitted before the specified time. Jobs are returned in ascending order,
         /// oldest to newest.</p>
-        pub fn submit_time_before(mut self, input: smithy_types::Instant) -> Self {
+        pub fn submit_time_before(mut self, input: aws_smithy_types::Instant) -> Self {
             self.submit_time_before = Some(input);
             self
         }
+        /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
+        /// Returns only jobs submitted before the specified time. Jobs are returned in ascending order,
+        /// oldest to newest.</p>
         pub fn set_submit_time_before(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.submit_time_before = input;
             self
@@ -3200,13 +3653,16 @@ pub mod events_detection_job_filter {
         /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
         /// Returns only jobs submitted after the specified time. Jobs are returned in descending order,
         /// newest to oldest.</p>
-        pub fn submit_time_after(mut self, input: smithy_types::Instant) -> Self {
+        pub fn submit_time_after(mut self, input: aws_smithy_types::Instant) -> Self {
             self.submit_time_after = Some(input);
             self
         }
+        /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
+        /// Returns only jobs submitted after the specified time. Jobs are returned in descending order,
+        /// newest to oldest.</p>
         pub fn set_submit_time_after(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.submit_time_after = input;
             self
@@ -3238,7 +3694,7 @@ pub struct EntityRecognizerSummary {
     /// <p> The number of versions you created.</p>
     pub number_of_versions: std::option::Option<i32>,
     /// <p> The time that the latest entity recognizer version was submitted for processing.</p>
-    pub latest_version_created_at: std::option::Option<smithy_types::Instant>,
+    pub latest_version_created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p> The version name you assigned to the latest entity recognizer version.</p>
     pub latest_version_name: std::option::Option<std::string::String>,
     /// <p> Provides the status of the latest entity recognizer version.</p>
@@ -3263,7 +3719,7 @@ pub mod entity_recognizer_summary {
     pub struct Builder {
         pub(crate) recognizer_name: std::option::Option<std::string::String>,
         pub(crate) number_of_versions: std::option::Option<i32>,
-        pub(crate) latest_version_created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) latest_version_created_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) latest_version_name: std::option::Option<std::string::String>,
         pub(crate) latest_version_status: std::option::Option<crate::model::ModelStatus>,
     }
@@ -3273,6 +3729,7 @@ pub mod entity_recognizer_summary {
             self.recognizer_name = Some(input.into());
             self
         }
+        /// <p> The name that you assigned the entity recognizer.</p>
         pub fn set_recognizer_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3285,18 +3742,20 @@ pub mod entity_recognizer_summary {
             self.number_of_versions = Some(input);
             self
         }
+        /// <p> The number of versions you created.</p>
         pub fn set_number_of_versions(mut self, input: std::option::Option<i32>) -> Self {
             self.number_of_versions = input;
             self
         }
         /// <p> The time that the latest entity recognizer version was submitted for processing.</p>
-        pub fn latest_version_created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn latest_version_created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.latest_version_created_at = Some(input);
             self
         }
+        /// <p> The time that the latest entity recognizer version was submitted for processing.</p>
         pub fn set_latest_version_created_at(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.latest_version_created_at = input;
             self
@@ -3306,6 +3765,7 @@ pub mod entity_recognizer_summary {
             self.latest_version_name = Some(input.into());
             self
         }
+        /// <p> The version name you assigned to the latest entity recognizer version.</p>
         pub fn set_latest_version_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3318,6 +3778,7 @@ pub mod entity_recognizer_summary {
             self.latest_version_status = Some(input);
             self
         }
+        /// <p> Provides the status of the latest entity recognizer version.</p>
         pub fn set_latest_version_status(
             mut self,
             input: std::option::Option<crate::model::ModelStatus>,
@@ -3344,6 +3805,7 @@ impl EntityRecognizerSummary {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3355,12 +3817,19 @@ impl EntityRecognizerSummary {
     std::hash::Hash,
 )]
 pub enum ModelStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
+    #[allow(missing_docs)] // documentation missing in model
     InError,
+    #[allow(missing_docs)] // documentation missing in model
     Stopped,
+    #[allow(missing_docs)] // documentation missing in model
     StopRequested,
+    #[allow(missing_docs)] // documentation missing in model
     Submitted,
+    #[allow(missing_docs)] // documentation missing in model
     Trained,
+    #[allow(missing_docs)] // documentation missing in model
     Training,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3387,6 +3856,7 @@ impl std::str::FromStr for ModelStatus {
     }
 }
 impl ModelStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ModelStatus::Deleting => "DELETING",
@@ -3399,6 +3869,7 @@ impl ModelStatus {
             ModelStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "DELETING",
@@ -3431,13 +3902,13 @@ pub struct EntityRecognizerProperties {
     /// <p> A description of the status of the recognizer.</p>
     pub message: std::option::Option<std::string::String>,
     /// <p>The time that the recognizer was submitted for processing.</p>
-    pub submit_time: std::option::Option<smithy_types::Instant>,
+    pub submit_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time that the recognizer creation completed.</p>
-    pub end_time: std::option::Option<smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time that training of the entity recognizer started.</p>
-    pub training_start_time: std::option::Option<smithy_types::Instant>,
+    pub training_start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time that training of the entity recognizer was completed.</p>
-    pub training_end_time: std::option::Option<smithy_types::Instant>,
+    pub training_end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The input data properties of an entity recognizer.</p>
     pub input_data_config: std::option::Option<crate::model::EntityRecognizerInputDataConfig>,
     /// <p> Provides information about an entity recognizer.</p>
@@ -3512,10 +3983,10 @@ pub mod entity_recognizer_properties {
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
         pub(crate) status: std::option::Option<crate::model::ModelStatus>,
         pub(crate) message: std::option::Option<std::string::String>,
-        pub(crate) submit_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) training_start_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) training_end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) submit_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) training_start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) training_end_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) input_data_config:
             std::option::Option<crate::model::EntityRecognizerInputDataConfig>,
         pub(crate) recognizer_metadata: std::option::Option<crate::model::EntityRecognizerMetadata>,
@@ -3531,6 +4002,7 @@ pub mod entity_recognizer_properties {
             self.entity_recognizer_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>
         pub fn set_entity_recognizer_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3544,6 +4016,8 @@ pub mod entity_recognizer_properties {
             self.language_code = Some(input);
             self
         }
+        /// <p> The language of the input documents. All documents must be in the same language. Only
+        /// English ("en") is currently supported.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,
@@ -3556,6 +4030,7 @@ pub mod entity_recognizer_properties {
             self.status = Some(input);
             self
         }
+        /// <p>Provides the status of the entity recognizer.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::ModelStatus>) -> Self {
             self.status = input;
             self
@@ -3565,51 +4040,59 @@ pub mod entity_recognizer_properties {
             self.message = Some(input.into());
             self
         }
+        /// <p> A description of the status of the recognizer.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
         }
         /// <p>The time that the recognizer was submitted for processing.</p>
-        pub fn submit_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn submit_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.submit_time = Some(input);
             self
         }
+        /// <p>The time that the recognizer was submitted for processing.</p>
         pub fn set_submit_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.submit_time = input;
             self
         }
         /// <p>The time that the recognizer creation completed.</p>
-        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time that the recognizer creation completed.</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.end_time = input;
             self
         }
         /// <p>The time that training of the entity recognizer started.</p>
-        pub fn training_start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn training_start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.training_start_time = Some(input);
             self
         }
+        /// <p>The time that training of the entity recognizer started.</p>
         pub fn set_training_start_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.training_start_time = input;
             self
         }
         /// <p>The time that training of the entity recognizer was completed.</p>
-        pub fn training_end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn training_end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.training_end_time = Some(input);
             self
         }
+        /// <p>The time that training of the entity recognizer was completed.</p>
         pub fn set_training_end_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.training_end_time = input;
             self
@@ -3622,6 +4105,7 @@ pub mod entity_recognizer_properties {
             self.input_data_config = Some(input);
             self
         }
+        /// <p>The input data properties of an entity recognizer.</p>
         pub fn set_input_data_config(
             mut self,
             input: std::option::Option<crate::model::EntityRecognizerInputDataConfig>,
@@ -3637,6 +4121,7 @@ pub mod entity_recognizer_properties {
             self.recognizer_metadata = Some(input);
             self
         }
+        /// <p> Provides information about an entity recognizer.</p>
         pub fn set_recognizer_metadata(
             mut self,
             input: std::option::Option<crate::model::EntityRecognizerMetadata>,
@@ -3650,6 +4135,8 @@ pub mod entity_recognizer_properties {
             self.data_access_role_arn = Some(input.into());
             self
         }
+        /// <p> The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants
+        /// Amazon Comprehend read access to your input data.</p>
         pub fn set_data_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3675,6 +4162,20 @@ pub mod entity_recognizer_properties {
             self.volume_kms_key_id = Some(input.into());
             self
         }
+        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
+        /// data on the storage volume attached to the ML compute instance(s) that process the analysis
+        /// job. The VolumeKmsKeyId can be either of the following formats:</p>
+        /// <ul>
+        /// <li>
+        /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Resource Name (ARN) of a KMS Key:
+        /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_volume_kms_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3689,6 +4190,9 @@ pub mod entity_recognizer_properties {
             self.vpc_config = Some(input);
             self
         }
+        /// <p> Configuration parameters for a private Virtual Private Cloud (VPC) containing the
+        /// resources you are using for your custom entity recognizer. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
+        /// VPC</a>. </p>
         pub fn set_vpc_config(
             mut self,
             input: std::option::Option<crate::model::VpcConfig>,
@@ -3713,6 +4217,19 @@ pub mod entity_recognizer_properties {
             self.model_kms_key_id = Some(input.into());
             self
         }
+        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
+        /// trained custom models. The ModelKmsKeyId can be either of the following formats: </p>
+        /// <ul>
+        /// <li>
+        /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Resource Name (ARN) of a KMS Key:
+        /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_model_kms_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3725,6 +4242,7 @@ pub mod entity_recognizer_properties {
             self.version_name = Some(input.into());
             self
         }
+        /// <p>The version name you assigned to the entity recognizer.</p>
         pub fn set_version_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version_name = input;
             self
@@ -3809,6 +4327,8 @@ pub mod entity_recognizer_metadata {
             self.number_of_trained_documents = Some(input);
             self
         }
+        /// <p> The number of documents in the input data that were used to train the entity recognizer.
+        /// Typically this is 80 to 90 percent of the input documents.</p>
         pub fn set_number_of_trained_documents(mut self, input: std::option::Option<i32>) -> Self {
             self.number_of_trained_documents = input;
             self
@@ -3819,6 +4339,8 @@ pub mod entity_recognizer_metadata {
             self.number_of_test_documents = Some(input);
             self
         }
+        /// <p> The number of documents in the input data that were used to test the entity recognizer.
+        /// Typically this is 10 to 20 percent of the input documents.</p>
         pub fn set_number_of_test_documents(mut self, input: std::option::Option<i32>) -> Self {
             self.number_of_test_documents = input;
             self
@@ -3831,6 +4353,7 @@ pub mod entity_recognizer_metadata {
             self.evaluation_metrics = Some(input);
             self
         }
+        /// <p>Detailed information about the accuracy of an entity recognizer.</p>
         pub fn set_evaluation_metrics(
             mut self,
             input: std::option::Option<crate::model::EntityRecognizerEvaluationMetrics>,
@@ -3838,6 +4361,11 @@ pub mod entity_recognizer_metadata {
             self.evaluation_metrics = input;
             self
         }
+        /// Appends an item to `entity_types`.
+        ///
+        /// To override the contents of this collection use [`set_entity_types`](Self::set_entity_types).
+        ///
+        /// <p>Entity types from the metadata of an entity recognizer.</p>
         pub fn entity_types(
             mut self,
             input: impl Into<crate::model::EntityRecognizerMetadataEntityTypesListItem>,
@@ -3847,6 +4375,7 @@ pub mod entity_recognizer_metadata {
             self.entity_types = Some(v);
             self
         }
+        /// <p>Entity types from the metadata of an entity recognizer.</p>
         pub fn set_entity_types(
             mut self,
             input: std::option::Option<
@@ -3915,6 +4444,8 @@ pub mod entity_recognizer_metadata_entity_types_list_item {
             self.r#type = Some(input.into());
             self
         }
+        /// <p>Type of entity from the list of entity types in the metadata of an entity recognizer.
+        /// </p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
@@ -3928,6 +4459,8 @@ pub mod entity_recognizer_metadata_entity_types_list_item {
             self.evaluation_metrics = Some(input);
             self
         }
+        /// <p>Detailed information about the accuracy of the entity recognizer for a specific item on
+        /// the list of entity types. </p>
         pub fn set_evaluation_metrics(
             mut self,
             input: std::option::Option<crate::model::EntityTypesEvaluationMetrics>,
@@ -3940,6 +4473,7 @@ pub mod entity_recognizer_metadata_entity_types_list_item {
             self.number_of_train_mentions = Some(input);
             self
         }
+        /// <p>Indicates the number of times the given entity type was seen in the training data. </p>
         pub fn set_number_of_train_mentions(mut self, input: std::option::Option<i32>) -> Self {
             self.number_of_train_mentions = input;
             self
@@ -4006,6 +4540,9 @@ pub mod entity_types_evaluation_metrics {
             self.precision = Some(input);
             self
         }
+        /// <p>A measure of the usefulness of the recognizer results for a specific entity type in the
+        /// test data. High precision means that the recognizer returned substantially more relevant
+        /// results than irrelevant ones. </p>
         pub fn set_precision(mut self, input: std::option::Option<f64>) -> Self {
             self.precision = input;
             self
@@ -4016,6 +4553,8 @@ pub mod entity_types_evaluation_metrics {
             self.recall = Some(input);
             self
         }
+        /// <p>A measure of how complete the recognizer results are for a specific entity type in the
+        /// test data. High recall means that the recognizer returned most of the relevant results.</p>
         pub fn set_recall(mut self, input: std::option::Option<f64>) -> Self {
             self.recall = input;
             self
@@ -4028,6 +4567,10 @@ pub mod entity_types_evaluation_metrics {
             self.f1_score = Some(input);
             self
         }
+        /// <p>A measure of how accurate the recognizer results are for a specific entity type in the
+        /// test data. It is derived from the <code>Precision</code> and <code>Recall</code> values. The
+        /// <code>F1Score</code> is the harmonic average of the two scores. The highest score is 1, and
+        /// the worst score is 0. </p>
         pub fn set_f1_score(mut self, input: std::option::Option<f64>) -> Self {
             self.f1_score = input;
             self
@@ -4092,6 +4635,9 @@ pub mod entity_recognizer_evaluation_metrics {
             self.precision = Some(input);
             self
         }
+        /// <p>A measure of the usefulness of the recognizer results in the test data. High precision
+        /// means that the recognizer returned substantially more relevant results than irrelevant ones.
+        /// </p>
         pub fn set_precision(mut self, input: std::option::Option<f64>) -> Self {
             self.precision = input;
             self
@@ -4102,6 +4648,8 @@ pub mod entity_recognizer_evaluation_metrics {
             self.recall = Some(input);
             self
         }
+        /// <p>A measure of how complete the recognizer results are for the test data. High recall means
+        /// that the recognizer returned most of the relevant results.</p>
         pub fn set_recall(mut self, input: std::option::Option<f64>) -> Self {
             self.recall = input;
             self
@@ -4113,6 +4661,9 @@ pub mod entity_recognizer_evaluation_metrics {
             self.f1_score = Some(input);
             self
         }
+        /// <p>A measure of how accurate the recognizer results are for the test data. It is derived from
+        /// the <code>Precision</code> and <code>Recall</code> values. The <code>F1Score</code> is the
+        /// harmonic average of the two scores. The highest score is 1, and the worst score is 0. </p>
         pub fn set_f1_score(mut self, input: std::option::Option<f64>) -> Self {
             self.f1_score = input;
             self
@@ -4244,6 +4795,30 @@ pub mod entity_recognizer_input_data_config {
             self.data_format = Some(input);
             self
         }
+        /// <p>The format of your training data:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>COMPREHEND_CSV</code>: A CSV file that supplements your training documents. The
+        /// CSV file contains information about the custom entities that your trained model will
+        /// detect. The required format of the file depends on whether you are providing annotations
+        /// or an entity list.</p>
+        /// <p>If you use this value, you must provide your CSV file by using either the
+        /// <code>Annotations</code> or <code>EntityList</code> parameters. You must provide your
+        /// training documents by using the <code>Documents</code> parameter.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AUGMENTED_MANIFEST</code>: A labeled dataset that is produced by Amazon
+        /// SageMaker Ground Truth. This file is in JSON lines format. Each line is a complete JSON
+        /// object that contains a training document and its labels. Each label annotates a named
+        /// entity in the training document. </p>
+        /// <p>If you use this value, you must provide the <code>AugmentedManifests</code> parameter
+        /// in your request.</p>
+        /// </li>
+        /// </ul>
+        /// <p>If you don't specify a value, Amazon Comprehend uses <code>COMPREHEND_CSV</code> as the
+        /// default.</p>
         pub fn set_data_format(
             mut self,
             input: std::option::Option<crate::model::EntityRecognizerDataFormat>,
@@ -4251,12 +4826,28 @@ pub mod entity_recognizer_input_data_config {
             self.data_format = input;
             self
         }
+        /// Appends an item to `entity_types`.
+        ///
+        /// To override the contents of this collection use [`set_entity_types`](Self::set_entity_types).
+        ///
+        /// <p>The entity types in the labeled training data that Amazon Comprehend uses to train the
+        /// custom entity recognizer. Any entity types that you don't specify are ignored.</p>
+        /// <p>A maximum of 25 entity types can be used at one time to train an entity recognizer. Entity
+        /// types must not contain the following invalid characters: \n (line break), \\n (escaped line
+        /// break), \r (carriage return), \\r (escaped carriage return), \t (tab), \\t (escaped tab),
+        /// space, and , (comma). </p>
         pub fn entity_types(mut self, input: impl Into<crate::model::EntityTypesListItem>) -> Self {
             let mut v = self.entity_types.unwrap_or_default();
             v.push(input.into());
             self.entity_types = Some(v);
             self
         }
+        /// <p>The entity types in the labeled training data that Amazon Comprehend uses to train the
+        /// custom entity recognizer. Any entity types that you don't specify are ignored.</p>
+        /// <p>A maximum of 25 entity types can be used at one time to train an entity recognizer. Entity
+        /// types must not contain the following invalid characters: \n (line break), \\n (escaped line
+        /// break), \r (carriage return), \\r (escaped carriage return), \t (tab), \\t (escaped tab),
+        /// space, and , (comma). </p>
         pub fn set_entity_types(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EntityTypesListItem>>,
@@ -4272,6 +4863,10 @@ pub mod entity_recognizer_input_data_config {
             self.documents = Some(input);
             self
         }
+        /// <p>The S3 location of the folder that contains the training documents for your custom entity
+        /// recognizer.</p>
+        /// <p>This parameter is required if you set <code>DataFormat</code> to
+        /// <code>COMPREHEND_CSV</code>.</p>
         pub fn set_documents(
             mut self,
             input: std::option::Option<crate::model::EntityRecognizerDocuments>,
@@ -4284,6 +4879,7 @@ pub mod entity_recognizer_input_data_config {
             self.annotations = Some(input);
             self
         }
+        /// <p>The S3 location of the CSV file that annotates your training documents.</p>
         pub fn set_annotations(
             mut self,
             input: std::option::Option<crate::model::EntityRecognizerAnnotations>,
@@ -4297,6 +4893,8 @@ pub mod entity_recognizer_input_data_config {
             self.entity_list = Some(input);
             self
         }
+        /// <p>The S3 location of the CSV file that has the entity list for your custom entity
+        /// recognizer.</p>
         pub fn set_entity_list(
             mut self,
             input: std::option::Option<crate::model::EntityRecognizerEntityList>,
@@ -4304,6 +4902,15 @@ pub mod entity_recognizer_input_data_config {
             self.entity_list = input;
             self
         }
+        /// Appends an item to `augmented_manifests`.
+        ///
+        /// To override the contents of this collection use [`set_augmented_manifests`](Self::set_augmented_manifests).
+        ///
+        /// <p>A list of augmented manifest files that provide training data for your custom model. An
+        /// augmented manifest file is a labeled dataset that is produced by Amazon SageMaker Ground
+        /// Truth.</p>
+        /// <p>This parameter is required if you set <code>DataFormat</code> to
+        /// <code>AUGMENTED_MANIFEST</code>.</p>
         pub fn augmented_manifests(
             mut self,
             input: impl Into<crate::model::AugmentedManifestsListItem>,
@@ -4313,6 +4920,11 @@ pub mod entity_recognizer_input_data_config {
             self.augmented_manifests = Some(v);
             self
         }
+        /// <p>A list of augmented manifest files that provide training data for your custom model. An
+        /// augmented manifest file is a labeled dataset that is produced by Amazon SageMaker Ground
+        /// Truth.</p>
+        /// <p>This parameter is required if you set <code>DataFormat</code> to
+        /// <code>AUGMENTED_MANIFEST</code>.</p>
         pub fn set_augmented_manifests(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AugmentedManifestsListItem>>,
@@ -4410,6 +5022,7 @@ pub mod augmented_manifests_list_item {
             self.s3_uri = Some(input.into());
             self
         }
+        /// <p>The Amazon S3 location of the augmented manifest file.</p>
         pub fn set_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.s3_uri = input;
             self
@@ -4421,16 +5034,39 @@ pub mod augmented_manifests_list_item {
             self.split = Some(input);
             self
         }
+        /// <p>The purpose of the data you've provided in the augmented manifest. You can either train or test this data. If you don't specify, the default is train.</p>
+        /// <p>TRAIN - all of the documents in the manifest will be used for training. If no test documents are provided, Amazon Comprehend will automatically reserve a portion of the training documents for testing.</p>
+        /// <p> TEST - all of the documents in the manifest will be used for testing.</p>
         pub fn set_split(mut self, input: std::option::Option<crate::model::Split>) -> Self {
             self.split = input;
             self
         }
+        /// Appends an item to `attribute_names`.
+        ///
+        /// To override the contents of this collection use [`set_attribute_names`](Self::set_attribute_names).
+        ///
+        /// <p>The JSON attribute that contains the annotations for your training documents. The number
+        /// of attribute names that you specify depends on whether your augmented manifest file is the
+        /// output of a single labeling job or a chained labeling job.</p>
+        /// <p>If your file is the output of a single labeling job, specify the LabelAttributeName key
+        /// that was used when the job was created in Ground Truth.</p>
+        /// <p>If your file is the output of a chained labeling job, specify the LabelAttributeName key
+        /// for one or more jobs in the chain. Each LabelAttributeName key provides the annotations from
+        /// an individual job.</p>
         pub fn attribute_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.attribute_names.unwrap_or_default();
             v.push(input.into());
             self.attribute_names = Some(v);
             self
         }
+        /// <p>The JSON attribute that contains the annotations for your training documents. The number
+        /// of attribute names that you specify depends on whether your augmented manifest file is the
+        /// output of a single labeling job or a chained labeling job.</p>
+        /// <p>If your file is the output of a single labeling job, specify the LabelAttributeName key
+        /// that was used when the job was created in Ground Truth.</p>
+        /// <p>If your file is the output of a chained labeling job, specify the LabelAttributeName key
+        /// for one or more jobs in the chain. Each LabelAttributeName key provides the annotations from
+        /// an individual job.</p>
         pub fn set_attribute_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4443,6 +5079,7 @@ pub mod augmented_manifests_list_item {
             self.annotation_data_s3_uri = Some(input.into());
             self
         }
+        /// <p>The S3 prefix to the annotation files that are referred in the augmented manifest file.</p>
         pub fn set_annotation_data_s3_uri(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4455,6 +5092,7 @@ pub mod augmented_manifests_list_item {
             self.source_documents_s3_uri = Some(input.into());
             self
         }
+        /// <p>The S3 prefix to the source files (PDFs) that are referred to in the augmented manifest file.</p>
         pub fn set_source_documents_s3_uri(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4481,6 +5119,18 @@ pub mod augmented_manifests_list_item {
             self.document_type = Some(input);
             self
         }
+        /// <p>The type of augmented manifest. PlainTextDocument or SemiStructuredDocument. If you don't specify, the default is PlainTextDocument. </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>PLAIN_TEXT_DOCUMENT</code> A document type that represents any unicode text that is encoded in UTF-8.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SEMI_STRUCTURED_DOCUMENT</code> A document type with positional and structural context, like a PDF. For training with Amazon Comprehend, only PDFs are supported.
+        /// For inference, Amazon Comprehend support PDFs, DOCX and TXT.</p>
+        /// </li>
+        /// </ul>
         pub fn set_document_type(
             mut self,
             input: std::option::Option<crate::model::AugmentedManifestsDocumentTypeFormat>,
@@ -4508,6 +5158,7 @@ impl AugmentedManifestsListItem {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4519,7 +5170,9 @@ impl AugmentedManifestsListItem {
     std::hash::Hash,
 )]
 pub enum AugmentedManifestsDocumentTypeFormat {
+    #[allow(missing_docs)] // documentation missing in model
     PlainTextDocument,
+    #[allow(missing_docs)] // documentation missing in model
     SemiStructuredDocument,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4543,6 +5196,7 @@ impl std::str::FromStr for AugmentedManifestsDocumentTypeFormat {
     }
 }
 impl AugmentedManifestsDocumentTypeFormat {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AugmentedManifestsDocumentTypeFormat::PlainTextDocument => "PLAIN_TEXT_DOCUMENT",
@@ -4552,6 +5206,7 @@ impl AugmentedManifestsDocumentTypeFormat {
             AugmentedManifestsDocumentTypeFormat::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["PLAIN_TEXT_DOCUMENT", "SEMI_STRUCTURED_DOCUMENT"]
     }
@@ -4562,6 +5217,7 @@ impl AsRef<str> for AugmentedManifestsDocumentTypeFormat {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4573,7 +5229,9 @@ impl AsRef<str> for AugmentedManifestsDocumentTypeFormat {
     std::hash::Hash,
 )]
 pub enum Split {
+    #[allow(missing_docs)] // documentation missing in model
     Test,
+    #[allow(missing_docs)] // documentation missing in model
     Train,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4595,6 +5253,7 @@ impl std::str::FromStr for Split {
     }
 }
 impl Split {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Split::Test => "TEST",
@@ -4602,6 +5261,7 @@ impl Split {
             Split::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["TEST", "TRAIN"]
     }
@@ -4642,6 +5302,8 @@ pub mod entity_recognizer_entity_list {
             self.s3_uri = Some(input.into());
             self
         }
+        /// <p>Specifies the Amazon S3 location where the entity list is located. The URI must be in the
+        /// same region as the API endpoint that you are calling.</p>
         pub fn set_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.s3_uri = input;
             self
@@ -4696,6 +5358,8 @@ pub mod entity_recognizer_annotations {
             self.s3_uri = Some(input.into());
             self
         }
+        /// <p> Specifies the Amazon S3 location where the annotations for an entity recognizer are
+        /// located. The URI must be in the same region as the API endpoint that you are calling.</p>
         pub fn set_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.s3_uri = input;
             self
@@ -4706,6 +5370,8 @@ pub mod entity_recognizer_annotations {
             self.test_s3_uri = Some(input.into());
             self
         }
+        /// <p>This specifies the Amazon S3 location where the test annotations for an entity recognizer are located.
+        /// The URI must be in the same AWS Region as the API endpoint that you are calling.</p>
         pub fn set_test_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.test_s3_uri = input;
             self
@@ -4738,7 +5404,9 @@ pub struct EntityRecognizerDocuments {
     /// The URI must be in the same AWS Region as the API endpoint that you are calling.</p>
     pub test_s3_uri: std::option::Option<std::string::String>,
     /// <p> Specifies how the text in an input file should be processed. This is optional, and the default is ONE_DOC_PER_LINE.
+    ///
     /// ONE_DOC_PER_FILE - Each file is considered a separate document. Use this option when you are processing large documents, such as newspaper articles or scientific papers.
+    ///
     /// ONE_DOC_PER_LINE - Each line in a file is considered a separate document. Use this option when you are processing many short documents, such as text messages.</p>
     pub input_format: std::option::Option<crate::model::InputFormat>,
 }
@@ -4769,6 +5437,9 @@ pub mod entity_recognizer_documents {
             self.s3_uri = Some(input.into());
             self
         }
+        /// <p> Specifies the Amazon S3 location where the training documents for an entity recognizer
+        /// are located. The URI must be in the same region as the API endpoint that you are
+        /// calling.</p>
         pub fn set_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.s3_uri = input;
             self
@@ -4779,17 +5450,26 @@ pub mod entity_recognizer_documents {
             self.test_s3_uri = Some(input.into());
             self
         }
+        /// <p> Specifies the Amazon S3 location where the test documents for an entity recognizer are located.
+        /// The URI must be in the same AWS Region as the API endpoint that you are calling.</p>
         pub fn set_test_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.test_s3_uri = input;
             self
         }
         /// <p> Specifies how the text in an input file should be processed. This is optional, and the default is ONE_DOC_PER_LINE.
+        ///
         /// ONE_DOC_PER_FILE - Each file is considered a separate document. Use this option when you are processing large documents, such as newspaper articles or scientific papers.
+        ///
         /// ONE_DOC_PER_LINE - Each line in a file is considered a separate document. Use this option when you are processing many short documents, such as text messages.</p>
         pub fn input_format(mut self, input: crate::model::InputFormat) -> Self {
             self.input_format = Some(input);
             self
         }
+        /// <p> Specifies how the text in an input file should be processed. This is optional, and the default is ONE_DOC_PER_LINE.
+        ///
+        /// ONE_DOC_PER_FILE - Each file is considered a separate document. Use this option when you are processing large documents, such as newspaper articles or scientific papers.
+        ///
+        /// ONE_DOC_PER_LINE - Each line in a file is considered a separate document. Use this option when you are processing many short documents, such as text messages.</p>
         pub fn set_input_format(
             mut self,
             input: std::option::Option<crate::model::InputFormat>,
@@ -4851,6 +5531,11 @@ pub mod entity_types_list_item {
             self.r#type = Some(input.into());
             self
         }
+        /// <p>An entity type within a labeled training dataset that Amazon Comprehend uses to train a
+        /// custom entity recognizer.</p>
+        /// <p>Entity types must not contain the following invalid characters: \n (line break), \\n
+        /// (escaped line break, \r (carriage return), \\r (escaped carriage return), \t (tab), \\t
+        /// (escaped tab), space, and , (comma).</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
@@ -4870,6 +5555,7 @@ impl EntityTypesListItem {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4881,7 +5567,9 @@ impl EntityTypesListItem {
     std::hash::Hash,
 )]
 pub enum EntityRecognizerDataFormat {
+    #[allow(missing_docs)] // documentation missing in model
     AugmentedManifest,
+    #[allow(missing_docs)] // documentation missing in model
     ComprehendCsv,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4903,6 +5591,7 @@ impl std::str::FromStr for EntityRecognizerDataFormat {
     }
 }
 impl EntityRecognizerDataFormat {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EntityRecognizerDataFormat::AugmentedManifest => "AUGMENTED_MANIFEST",
@@ -4910,6 +5599,7 @@ impl EntityRecognizerDataFormat {
             EntityRecognizerDataFormat::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AUGMENTED_MANIFEST", "COMPREHEND_CSV"]
     }
@@ -4932,11 +5622,11 @@ pub struct EntityRecognizerFilter {
     /// <p>Filters the list of entities based on the time that the list was submitted for processing.
     /// Returns only jobs submitted before the specified time. Jobs are returned in descending order,
     /// newest to oldest.</p>
-    pub submit_time_before: std::option::Option<smithy_types::Instant>,
+    pub submit_time_before: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Filters the list of entities based on the time that the list was submitted for processing.
     /// Returns only jobs submitted after the specified time. Jobs are returned in ascending order,
     /// oldest to newest.</p>
-    pub submit_time_after: std::option::Option<smithy_types::Instant>,
+    pub submit_time_after: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for EntityRecognizerFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4956,8 +5646,8 @@ pub mod entity_recognizer_filter {
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::ModelStatus>,
         pub(crate) recognizer_name: std::option::Option<std::string::String>,
-        pub(crate) submit_time_before: std::option::Option<smithy_types::Instant>,
-        pub(crate) submit_time_after: std::option::Option<smithy_types::Instant>,
+        pub(crate) submit_time_before: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) submit_time_after: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The status of an entity recognizer.</p>
@@ -4965,6 +5655,7 @@ pub mod entity_recognizer_filter {
             self.status = Some(input);
             self
         }
+        /// <p>The status of an entity recognizer.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::ModelStatus>) -> Self {
             self.status = input;
             self
@@ -4974,6 +5665,7 @@ pub mod entity_recognizer_filter {
             self.recognizer_name = Some(input.into());
             self
         }
+        /// <p>The name that you assigned the entity recognizer.</p>
         pub fn set_recognizer_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4984,13 +5676,16 @@ pub mod entity_recognizer_filter {
         /// <p>Filters the list of entities based on the time that the list was submitted for processing.
         /// Returns only jobs submitted before the specified time. Jobs are returned in descending order,
         /// newest to oldest.</p>
-        pub fn submit_time_before(mut self, input: smithy_types::Instant) -> Self {
+        pub fn submit_time_before(mut self, input: aws_smithy_types::Instant) -> Self {
             self.submit_time_before = Some(input);
             self
         }
+        /// <p>Filters the list of entities based on the time that the list was submitted for processing.
+        /// Returns only jobs submitted before the specified time. Jobs are returned in descending order,
+        /// newest to oldest.</p>
         pub fn set_submit_time_before(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.submit_time_before = input;
             self
@@ -4998,13 +5693,16 @@ pub mod entity_recognizer_filter {
         /// <p>Filters the list of entities based on the time that the list was submitted for processing.
         /// Returns only jobs submitted after the specified time. Jobs are returned in ascending order,
         /// oldest to newest.</p>
-        pub fn submit_time_after(mut self, input: smithy_types::Instant) -> Self {
+        pub fn submit_time_after(mut self, input: aws_smithy_types::Instant) -> Self {
             self.submit_time_after = Some(input);
             self
         }
+        /// <p>Filters the list of entities based on the time that the list was submitted for processing.
+        /// Returns only jobs submitted after the specified time. Jobs are returned in ascending order,
+        /// oldest to newest.</p>
         pub fn set_submit_time_after(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.submit_time_after = input;
             self
@@ -5052,9 +5750,9 @@ pub struct EntitiesDetectionJobProperties {
     /// <p>A description of the status of a job.</p>
     pub message: std::option::Option<std::string::String>,
     /// <p>The time that the entities detection job was submitted for processing.</p>
-    pub submit_time: std::option::Option<smithy_types::Instant>,
+    pub submit_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time that the entities detection job completed</p>
-    pub end_time: std::option::Option<smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>
     pub entity_recognizer_arn: std::option::Option<std::string::String>,
     /// <p>The input data configuration that you supplied when you created the entities detection
@@ -5119,8 +5817,8 @@ pub mod entities_detection_job_properties {
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
         pub(crate) message: std::option::Option<std::string::String>,
-        pub(crate) submit_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) submit_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) entity_recognizer_arn: std::option::Option<std::string::String>,
         pub(crate) input_data_config: std::option::Option<crate::model::InputDataConfig>,
         pub(crate) output_data_config: std::option::Option<crate::model::OutputDataConfig>,
@@ -5135,6 +5833,7 @@ pub mod entities_detection_job_properties {
             self.job_id = Some(input.into());
             self
         }
+        /// <p>The identifier assigned to the entities detection job.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -5153,6 +5852,16 @@ pub mod entities_detection_job_properties {
             self.job_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the entities detection job. It is a unique, fully
+        /// qualified identifier for the job. It includes the AWS account, Region, and the job ID. The
+        /// format of the ARN is as follows:</p>
+        /// <p>
+        /// <code>arn:<partition>:comprehend:<region>:<account-id>:entities-detection-job/<job-id></code>
+        /// </p>
+        /// <p>The following is an example job ARN:</p>
+        /// <p>
+        /// <code>arn:aws:comprehend:us-west-2:111122223333:entities-detection-job/1234abcd12ab34cd56ef1234567890ab</code>
+        /// </p>
         pub fn set_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_arn = input;
             self
@@ -5162,6 +5871,7 @@ pub mod entities_detection_job_properties {
             self.job_name = Some(input.into());
             self
         }
+        /// <p>The name that you assigned the entities detection job.</p>
         pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_name = input;
             self
@@ -5172,6 +5882,8 @@ pub mod entities_detection_job_properties {
             self.job_status = Some(input);
             self
         }
+        /// <p>The current status of the entities detection job. If the status is <code>FAILED</code>,
+        /// the <code>Message</code> field shows the reason for the failure.</p>
         pub fn set_job_status(
             mut self,
             input: std::option::Option<crate::model::JobStatus>,
@@ -5184,28 +5896,34 @@ pub mod entities_detection_job_properties {
             self.message = Some(input.into());
             self
         }
+        /// <p>A description of the status of a job.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
         }
         /// <p>The time that the entities detection job was submitted for processing.</p>
-        pub fn submit_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn submit_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.submit_time = Some(input);
             self
         }
+        /// <p>The time that the entities detection job was submitted for processing.</p>
         pub fn set_submit_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.submit_time = input;
             self
         }
         /// <p>The time that the entities detection job completed</p>
-        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time that the entities detection job completed</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.end_time = input;
             self
         }
@@ -5214,6 +5932,7 @@ pub mod entities_detection_job_properties {
             self.entity_recognizer_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>
         pub fn set_entity_recognizer_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5227,6 +5946,8 @@ pub mod entities_detection_job_properties {
             self.input_data_config = Some(input);
             self
         }
+        /// <p>The input data configuration that you supplied when you created the entities detection
+        /// job.</p>
         pub fn set_input_data_config(
             mut self,
             input: std::option::Option<crate::model::InputDataConfig>,
@@ -5240,6 +5961,8 @@ pub mod entities_detection_job_properties {
             self.output_data_config = Some(input);
             self
         }
+        /// <p>The output data configuration that you supplied when you created the entities detection
+        /// job. </p>
         pub fn set_output_data_config(
             mut self,
             input: std::option::Option<crate::model::OutputDataConfig>,
@@ -5252,6 +5975,7 @@ pub mod entities_detection_job_properties {
             self.language_code = Some(input);
             self
         }
+        /// <p>The language code of the input documents.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,
@@ -5265,6 +5989,8 @@ pub mod entities_detection_job_properties {
             self.data_access_role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) that gives Amazon Comprehend read access to your input
+        /// data.</p>
         pub fn set_data_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5290,6 +6016,20 @@ pub mod entities_detection_job_properties {
             self.volume_kms_key_id = Some(input.into());
             self
         }
+        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
+        /// data on the storage volume attached to the ML compute instance(s) that process the analysis
+        /// job. The VolumeKmsKeyId can be either of the following formats:</p>
+        /// <ul>
+        /// <li>
+        /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Resource Name (ARN) of a KMS Key:
+        /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_volume_kms_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5304,6 +6044,9 @@ pub mod entities_detection_job_properties {
             self.vpc_config = Some(input);
             self
         }
+        /// <p> Configuration parameters for a private Virtual Private Cloud (VPC) containing the
+        /// resources you are using for your entity detection job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
+        /// VPC</a>. </p>
         pub fn set_vpc_config(
             mut self,
             input: std::option::Option<crate::model::VpcConfig>,
@@ -5352,11 +6095,11 @@ pub struct EntitiesDetectionJobFilter {
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
     /// Returns only jobs submitted before the specified time. Jobs are returned in ascending order,
     /// oldest to newest.</p>
-    pub submit_time_before: std::option::Option<smithy_types::Instant>,
+    pub submit_time_before: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
     /// Returns only jobs submitted after the specified time. Jobs are returned in descending order,
     /// newest to oldest.</p>
-    pub submit_time_after: std::option::Option<smithy_types::Instant>,
+    pub submit_time_after: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for EntitiesDetectionJobFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5376,8 +6119,8 @@ pub mod entities_detection_job_filter {
     pub struct Builder {
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
-        pub(crate) submit_time_before: std::option::Option<smithy_types::Instant>,
-        pub(crate) submit_time_after: std::option::Option<smithy_types::Instant>,
+        pub(crate) submit_time_before: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) submit_time_after: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>Filters on the name of the job.</p>
@@ -5385,6 +6128,7 @@ pub mod entities_detection_job_filter {
             self.job_name = Some(input.into());
             self
         }
+        /// <p>Filters on the name of the job.</p>
         pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_name = input;
             self
@@ -5395,6 +6139,8 @@ pub mod entities_detection_job_filter {
             self.job_status = Some(input);
             self
         }
+        /// <p>Filters the list of jobs based on job status. Returns only jobs with the specified
+        /// status.</p>
         pub fn set_job_status(
             mut self,
             input: std::option::Option<crate::model::JobStatus>,
@@ -5405,13 +6151,16 @@ pub mod entities_detection_job_filter {
         /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
         /// Returns only jobs submitted before the specified time. Jobs are returned in ascending order,
         /// oldest to newest.</p>
-        pub fn submit_time_before(mut self, input: smithy_types::Instant) -> Self {
+        pub fn submit_time_before(mut self, input: aws_smithy_types::Instant) -> Self {
             self.submit_time_before = Some(input);
             self
         }
+        /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
+        /// Returns only jobs submitted before the specified time. Jobs are returned in ascending order,
+        /// oldest to newest.</p>
         pub fn set_submit_time_before(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.submit_time_before = input;
             self
@@ -5419,13 +6168,16 @@ pub mod entities_detection_job_filter {
         /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
         /// Returns only jobs submitted after the specified time. Jobs are returned in descending order,
         /// newest to oldest.</p>
-        pub fn submit_time_after(mut self, input: smithy_types::Instant) -> Self {
+        pub fn submit_time_after(mut self, input: aws_smithy_types::Instant) -> Self {
             self.submit_time_after = Some(input);
             self
         }
+        /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
+        /// Returns only jobs submitted after the specified time. Jobs are returned in descending order,
+        /// newest to oldest.</p>
         pub fn set_submit_time_after(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.submit_time_after = input;
             self
@@ -5465,14 +6217,15 @@ pub struct EndpointProperties {
     /// <p>ARN of the new model to use for updating an existing endpoint. This ARN is going to be different from the model ARN when the update is in progress</p>
     pub desired_model_arn: std::option::Option<std::string::String>,
     /// <p>The desired number of inference units to be used by the model using this endpoint.
+    ///
     /// Each inference unit represents of a throughput of 100 characters per second.</p>
     pub desired_inference_units: std::option::Option<i32>,
     /// <p>The number of inference units currently used by the model using this endpoint.</p>
     pub current_inference_units: std::option::Option<i32>,
     /// <p>The creation date and time of the endpoint.</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time that the endpoint was last modified.</p>
-    pub last_modified_time: std::option::Option<smithy_types::Instant>,
+    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The Amazon Resource Name (ARN) of the AWS identity and Access Management (IAM) role that
     /// grants Amazon Comprehend read access to trained custom models encrypted with a customer
     /// managed key (ModelKmsKeyId).</p>
@@ -5513,8 +6266,8 @@ pub mod endpoint_properties {
         pub(crate) desired_model_arn: std::option::Option<std::string::String>,
         pub(crate) desired_inference_units: std::option::Option<i32>,
         pub(crate) current_inference_units: std::option::Option<i32>,
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_modified_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) data_access_role_arn: std::option::Option<std::string::String>,
         pub(crate) desired_data_access_role_arn: std::option::Option<std::string::String>,
     }
@@ -5524,6 +6277,7 @@ pub mod endpoint_properties {
             self.endpoint_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Number (ARN) of the endpoint.</p>
         pub fn set_endpoint_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.endpoint_arn = input;
             self
@@ -5535,6 +6289,9 @@ pub mod endpoint_properties {
             self.status = Some(input);
             self
         }
+        /// <p>Specifies the status of the endpoint. Because the endpoint updates and creation are
+        /// asynchronous, so customers will need to wait for the endpoint to be <code>Ready</code> status
+        /// before making inference requests.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::EndpointStatus>,
@@ -5547,6 +6304,7 @@ pub mod endpoint_properties {
             self.message = Some(input.into());
             self
         }
+        /// <p>Specifies a reason for failure in cases of <code>Failed</code> status.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -5556,6 +6314,7 @@ pub mod endpoint_properties {
             self.model_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Number (ARN) of the model to which the endpoint is attached.</p>
         pub fn set_model_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.model_arn = input;
             self
@@ -5565,6 +6324,7 @@ pub mod endpoint_properties {
             self.desired_model_arn = Some(input.into());
             self
         }
+        /// <p>ARN of the new model to use for updating an existing endpoint. This ARN is going to be different from the model ARN when the update is in progress</p>
         pub fn set_desired_model_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5573,11 +6333,15 @@ pub mod endpoint_properties {
             self
         }
         /// <p>The desired number of inference units to be used by the model using this endpoint.
+        ///
         /// Each inference unit represents of a throughput of 100 characters per second.</p>
         pub fn desired_inference_units(mut self, input: i32) -> Self {
             self.desired_inference_units = Some(input);
             self
         }
+        /// <p>The desired number of inference units to be used by the model using this endpoint.
+        ///
+        /// Each inference unit represents of a throughput of 100 characters per second.</p>
         pub fn set_desired_inference_units(mut self, input: std::option::Option<i32>) -> Self {
             self.desired_inference_units = input;
             self
@@ -5587,30 +6351,33 @@ pub mod endpoint_properties {
             self.current_inference_units = Some(input);
             self
         }
+        /// <p>The number of inference units currently used by the model using this endpoint.</p>
         pub fn set_current_inference_units(mut self, input: std::option::Option<i32>) -> Self {
             self.current_inference_units = input;
             self
         }
         /// <p>The creation date and time of the endpoint.</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>The creation date and time of the endpoint.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
         }
         /// <p>The date and time that the endpoint was last modified.</p>
-        pub fn last_modified_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_modified_time = Some(input);
             self
         }
+        /// <p>The date and time that the endpoint was last modified.</p>
         pub fn set_last_modified_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_modified_time = input;
             self
@@ -5622,6 +6389,9 @@ pub mod endpoint_properties {
             self.data_access_role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the AWS identity and Access Management (IAM) role that
+        /// grants Amazon Comprehend read access to trained custom models encrypted with a customer
+        /// managed key (ModelKmsKeyId).</p>
         pub fn set_data_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5637,6 +6407,7 @@ pub mod endpoint_properties {
             self.desired_data_access_role_arn = Some(input.into());
             self
         }
+        /// <p>Data access role ARN to use in case the new model is encrypted with a customer KMS key.</p>
         pub fn set_desired_data_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5669,6 +6440,7 @@ impl EndpointProperties {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5680,10 +6452,15 @@ impl EndpointProperties {
     std::hash::Hash,
 )]
 pub enum EndpointStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Creating,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     InService,
+    #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5708,6 +6485,7 @@ impl std::str::FromStr for EndpointStatus {
     }
 }
 impl EndpointStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EndpointStatus::Creating => "CREATING",
@@ -5718,6 +6496,7 @@ impl EndpointStatus {
             EndpointStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CREATING", "DELETING", "FAILED", "IN_SERVICE", "UPDATING"]
     }
@@ -5740,9 +6519,9 @@ pub struct EndpointFilter {
     /// Updating, Deleting, Failed.</p>
     pub status: std::option::Option<crate::model::EndpointStatus>,
     /// <p>Specifies a date before which the returned endpoint or endpoints were created.</p>
-    pub creation_time_before: std::option::Option<smithy_types::Instant>,
+    pub creation_time_before: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Specifies a date after which the returned endpoint or endpoints were created.</p>
-    pub creation_time_after: std::option::Option<smithy_types::Instant>,
+    pub creation_time_after: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for EndpointFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5762,8 +6541,8 @@ pub mod endpoint_filter {
     pub struct Builder {
         pub(crate) model_arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::EndpointStatus>,
-        pub(crate) creation_time_before: std::option::Option<smithy_types::Instant>,
-        pub(crate) creation_time_after: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time_before: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time_after: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The Amazon Resource Number (ARN) of the model to which the endpoint is attached.</p>
@@ -5771,6 +6550,7 @@ pub mod endpoint_filter {
             self.model_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Number (ARN) of the model to which the endpoint is attached.</p>
         pub fn set_model_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.model_arn = input;
             self
@@ -5781,6 +6561,8 @@ pub mod endpoint_filter {
             self.status = Some(input);
             self
         }
+        /// <p>Specifies the status of the endpoint being returned. Possible values are: Creating, Ready,
+        /// Updating, Deleting, Failed.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::EndpointStatus>,
@@ -5789,25 +6571,27 @@ pub mod endpoint_filter {
             self
         }
         /// <p>Specifies a date before which the returned endpoint or endpoints were created.</p>
-        pub fn creation_time_before(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time_before(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time_before = Some(input);
             self
         }
+        /// <p>Specifies a date before which the returned endpoint or endpoints were created.</p>
         pub fn set_creation_time_before(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time_before = input;
             self
         }
         /// <p>Specifies a date after which the returned endpoint or endpoints were created.</p>
-        pub fn creation_time_after(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time_after(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time_after = Some(input);
             self
         }
+        /// <p>Specifies a date after which the returned endpoint or endpoints were created.</p>
         pub fn set_creation_time_after(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time_after = input;
             self
@@ -5855,9 +6639,9 @@ pub struct DominantLanguageDetectionJobProperties {
     /// <p>A description for the status of a job.</p>
     pub message: std::option::Option<std::string::String>,
     /// <p>The time that the dominant language detection job was submitted for processing.</p>
-    pub submit_time: std::option::Option<smithy_types::Instant>,
+    pub submit_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time that the dominant language detection job completed.</p>
-    pub end_time: std::option::Option<smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The input data configuration that you supplied when you created the dominant language
     /// detection job.</p>
     pub input_data_config: std::option::Option<crate::model::InputDataConfig>,
@@ -5917,8 +6701,8 @@ pub mod dominant_language_detection_job_properties {
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
         pub(crate) message: std::option::Option<std::string::String>,
-        pub(crate) submit_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) submit_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) input_data_config: std::option::Option<crate::model::InputDataConfig>,
         pub(crate) output_data_config: std::option::Option<crate::model::OutputDataConfig>,
         pub(crate) data_access_role_arn: std::option::Option<std::string::String>,
@@ -5931,6 +6715,7 @@ pub mod dominant_language_detection_job_properties {
             self.job_id = Some(input.into());
             self
         }
+        /// <p>The identifier assigned to the dominant language detection job.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -5949,6 +6734,16 @@ pub mod dominant_language_detection_job_properties {
             self.job_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the dominant language detection job. It is a unique,
+        /// fully qualified identifier for the job. It includes the AWS account, Region, and the job ID.
+        /// The format of the ARN is as follows:</p>
+        /// <p>
+        /// <code>arn:<partition>:comprehend:<region>:<account-id>:dominant-language-detection-job/<job-id></code>
+        /// </p>
+        /// <p>The following is an example job ARN:</p>
+        /// <p>
+        /// <code>arn:aws:comprehend:us-west-2:111122223333:dominant-language-detection-job/1234abcd12ab34cd56ef1234567890ab</code>
+        /// </p>
         pub fn set_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_arn = input;
             self
@@ -5958,6 +6753,7 @@ pub mod dominant_language_detection_job_properties {
             self.job_name = Some(input.into());
             self
         }
+        /// <p>The name that you assigned to the dominant language detection job.</p>
         pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_name = input;
             self
@@ -5968,6 +6764,8 @@ pub mod dominant_language_detection_job_properties {
             self.job_status = Some(input);
             self
         }
+        /// <p>The current status of the dominant language detection job. If the status is
+        /// <code>FAILED</code>, the <code>Message</code> field shows the reason for the failure.</p>
         pub fn set_job_status(
             mut self,
             input: std::option::Option<crate::model::JobStatus>,
@@ -5980,28 +6778,34 @@ pub mod dominant_language_detection_job_properties {
             self.message = Some(input.into());
             self
         }
+        /// <p>A description for the status of a job.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
         }
         /// <p>The time that the dominant language detection job was submitted for processing.</p>
-        pub fn submit_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn submit_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.submit_time = Some(input);
             self
         }
+        /// <p>The time that the dominant language detection job was submitted for processing.</p>
         pub fn set_submit_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.submit_time = input;
             self
         }
         /// <p>The time that the dominant language detection job completed.</p>
-        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time that the dominant language detection job completed.</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.end_time = input;
             self
         }
@@ -6011,6 +6815,8 @@ pub mod dominant_language_detection_job_properties {
             self.input_data_config = Some(input);
             self
         }
+        /// <p>The input data configuration that you supplied when you created the dominant language
+        /// detection job.</p>
         pub fn set_input_data_config(
             mut self,
             input: std::option::Option<crate::model::InputDataConfig>,
@@ -6024,6 +6830,8 @@ pub mod dominant_language_detection_job_properties {
             self.output_data_config = Some(input);
             self
         }
+        /// <p>The output data configuration that you supplied when you created the dominant language
+        /// detection job.</p>
         pub fn set_output_data_config(
             mut self,
             input: std::option::Option<crate::model::OutputDataConfig>,
@@ -6037,6 +6845,8 @@ pub mod dominant_language_detection_job_properties {
             self.data_access_role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) that gives Amazon Comprehend read access to your input
+        /// data.</p>
         pub fn set_data_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6062,6 +6872,20 @@ pub mod dominant_language_detection_job_properties {
             self.volume_kms_key_id = Some(input.into());
             self
         }
+        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
+        /// data on the storage volume attached to the ML compute instance(s) that process the analysis
+        /// job. The VolumeKmsKeyId can be either of the following formats:</p>
+        /// <ul>
+        /// <li>
+        /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Resource Name (ARN) of a KMS Key:
+        /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_volume_kms_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6077,6 +6901,10 @@ pub mod dominant_language_detection_job_properties {
             self.vpc_config = Some(input);
             self
         }
+        /// <p> Configuration parameters for a private Virtual Private Cloud (VPC) containing the
+        /// resources you are using for your dominant language detection job. For more information, see
+        /// <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
+        /// VPC</a>. </p>
         pub fn set_vpc_config(
             mut self,
             input: std::option::Option<crate::model::VpcConfig>,
@@ -6123,11 +6951,11 @@ pub struct DominantLanguageDetectionJobFilter {
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
     /// Returns only jobs submitted before the specified time. Jobs are returned in ascending order,
     /// oldest to newest.</p>
-    pub submit_time_before: std::option::Option<smithy_types::Instant>,
+    pub submit_time_before: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
     /// Returns only jobs submitted after the specified time. Jobs are returned in descending order,
     /// newest to oldest.</p>
-    pub submit_time_after: std::option::Option<smithy_types::Instant>,
+    pub submit_time_after: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for DominantLanguageDetectionJobFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6147,8 +6975,8 @@ pub mod dominant_language_detection_job_filter {
     pub struct Builder {
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
-        pub(crate) submit_time_before: std::option::Option<smithy_types::Instant>,
-        pub(crate) submit_time_after: std::option::Option<smithy_types::Instant>,
+        pub(crate) submit_time_before: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) submit_time_after: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>Filters on the name of the job.</p>
@@ -6156,6 +6984,7 @@ pub mod dominant_language_detection_job_filter {
             self.job_name = Some(input.into());
             self
         }
+        /// <p>Filters on the name of the job.</p>
         pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_name = input;
             self
@@ -6166,6 +6995,8 @@ pub mod dominant_language_detection_job_filter {
             self.job_status = Some(input);
             self
         }
+        /// <p>Filters the list of jobs based on job status. Returns only jobs with the specified
+        /// status.</p>
         pub fn set_job_status(
             mut self,
             input: std::option::Option<crate::model::JobStatus>,
@@ -6176,13 +7007,16 @@ pub mod dominant_language_detection_job_filter {
         /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
         /// Returns only jobs submitted before the specified time. Jobs are returned in ascending order,
         /// oldest to newest.</p>
-        pub fn submit_time_before(mut self, input: smithy_types::Instant) -> Self {
+        pub fn submit_time_before(mut self, input: aws_smithy_types::Instant) -> Self {
             self.submit_time_before = Some(input);
             self
         }
+        /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
+        /// Returns only jobs submitted before the specified time. Jobs are returned in ascending order,
+        /// oldest to newest.</p>
         pub fn set_submit_time_before(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.submit_time_before = input;
             self
@@ -6190,13 +7024,16 @@ pub mod dominant_language_detection_job_filter {
         /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
         /// Returns only jobs submitted after the specified time. Jobs are returned in descending order,
         /// newest to oldest.</p>
-        pub fn submit_time_after(mut self, input: smithy_types::Instant) -> Self {
+        pub fn submit_time_after(mut self, input: aws_smithy_types::Instant) -> Self {
             self.submit_time_after = Some(input);
             self
         }
+        /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
+        /// Returns only jobs submitted after the specified time. Jobs are returned in descending order,
+        /// newest to oldest.</p>
         pub fn set_submit_time_after(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.submit_time_after = input;
             self
@@ -6228,7 +7065,7 @@ pub struct DocumentClassifierSummary {
     /// <p>The number of versions you created.</p>
     pub number_of_versions: std::option::Option<i32>,
     /// <p>The time that the latest document classifier version was submitted for processing.</p>
-    pub latest_version_created_at: std::option::Option<smithy_types::Instant>,
+    pub latest_version_created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The version name you assigned to the latest document classifier version.</p>
     pub latest_version_name: std::option::Option<std::string::String>,
     /// <p>Provides the status of the latest document classifier version.</p>
@@ -6253,7 +7090,7 @@ pub mod document_classifier_summary {
     pub struct Builder {
         pub(crate) document_classifier_name: std::option::Option<std::string::String>,
         pub(crate) number_of_versions: std::option::Option<i32>,
-        pub(crate) latest_version_created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) latest_version_created_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) latest_version_name: std::option::Option<std::string::String>,
         pub(crate) latest_version_status: std::option::Option<crate::model::ModelStatus>,
     }
@@ -6263,6 +7100,7 @@ pub mod document_classifier_summary {
             self.document_classifier_name = Some(input.into());
             self
         }
+        /// <p>The name that you assigned the document classifier.</p>
         pub fn set_document_classifier_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6275,18 +7113,20 @@ pub mod document_classifier_summary {
             self.number_of_versions = Some(input);
             self
         }
+        /// <p>The number of versions you created.</p>
         pub fn set_number_of_versions(mut self, input: std::option::Option<i32>) -> Self {
             self.number_of_versions = input;
             self
         }
         /// <p>The time that the latest document classifier version was submitted for processing.</p>
-        pub fn latest_version_created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn latest_version_created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.latest_version_created_at = Some(input);
             self
         }
+        /// <p>The time that the latest document classifier version was submitted for processing.</p>
         pub fn set_latest_version_created_at(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.latest_version_created_at = input;
             self
@@ -6296,6 +7136,7 @@ pub mod document_classifier_summary {
             self.latest_version_name = Some(input.into());
             self
         }
+        /// <p>The version name you assigned to the latest document classifier version.</p>
         pub fn set_latest_version_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6308,6 +7149,7 @@ pub mod document_classifier_summary {
             self.latest_version_status = Some(input);
             self
         }
+        /// <p>Provides the status of the latest document classifier version.</p>
         pub fn set_latest_version_status(
             mut self,
             input: std::option::Option<crate::model::ModelStatus>,
@@ -6350,16 +7192,16 @@ pub struct DocumentClassifierProperties {
     /// <p>Additional information about the status of the classifier.</p>
     pub message: std::option::Option<std::string::String>,
     /// <p>The time that the document classifier was submitted for training.</p>
-    pub submit_time: std::option::Option<smithy_types::Instant>,
+    pub submit_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time that training the document classifier completed.</p>
-    pub end_time: std::option::Option<smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Indicates the time when the training starts on documentation classifiers. You are billed
     /// for the time interval between this time and the value of TrainingEndTime. </p>
-    pub training_start_time: std::option::Option<smithy_types::Instant>,
+    pub training_start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time that training of the document classifier was completed. Indicates the time when
     /// the training completes on documentation classifiers. You are billed for the time interval
     /// between this time and the value of TrainingStartTime.</p>
-    pub training_end_time: std::option::Option<smithy_types::Instant>,
+    pub training_end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The input data configuration that you supplied when you created the document classifier
     /// for training.</p>
     pub input_data_config: std::option::Option<crate::model::DocumentClassifierInputDataConfig>,
@@ -6445,10 +7287,10 @@ pub mod document_classifier_properties {
         pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
         pub(crate) status: std::option::Option<crate::model::ModelStatus>,
         pub(crate) message: std::option::Option<std::string::String>,
-        pub(crate) submit_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) training_start_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) training_end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) submit_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) training_start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) training_end_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) input_data_config:
             std::option::Option<crate::model::DocumentClassifierInputDataConfig>,
         pub(crate) output_data_config:
@@ -6467,6 +7309,7 @@ pub mod document_classifier_properties {
             self.document_classifier_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) that identifies the document classifier.</p>
         pub fn set_document_classifier_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6480,6 +7323,8 @@ pub mod document_classifier_properties {
             self.language_code = Some(input);
             self
         }
+        /// <p>The language code for the language of the documents that the classifier was trained
+        /// on.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,
@@ -6494,6 +7339,9 @@ pub mod document_classifier_properties {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the document classifier. If the status is <code>TRAINED</code> the
+        /// classifier is ready to use. If the status is <code>FAILED</code> you can see additional
+        /// information about why the classifier wasn't trained in the <code>Message</code> field.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::ModelStatus>) -> Self {
             self.status = input;
             self
@@ -6503,40 +7351,48 @@ pub mod document_classifier_properties {
             self.message = Some(input.into());
             self
         }
+        /// <p>Additional information about the status of the classifier.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
         }
         /// <p>The time that the document classifier was submitted for training.</p>
-        pub fn submit_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn submit_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.submit_time = Some(input);
             self
         }
+        /// <p>The time that the document classifier was submitted for training.</p>
         pub fn set_submit_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.submit_time = input;
             self
         }
         /// <p>The time that training the document classifier completed.</p>
-        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time that training the document classifier completed.</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.end_time = input;
             self
         }
         /// <p>Indicates the time when the training starts on documentation classifiers. You are billed
         /// for the time interval between this time and the value of TrainingEndTime. </p>
-        pub fn training_start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn training_start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.training_start_time = Some(input);
             self
         }
+        /// <p>Indicates the time when the training starts on documentation classifiers. You are billed
+        /// for the time interval between this time and the value of TrainingEndTime. </p>
         pub fn set_training_start_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.training_start_time = input;
             self
@@ -6544,13 +7400,16 @@ pub mod document_classifier_properties {
         /// <p>The time that training of the document classifier was completed. Indicates the time when
         /// the training completes on documentation classifiers. You are billed for the time interval
         /// between this time and the value of TrainingStartTime.</p>
-        pub fn training_end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn training_end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.training_end_time = Some(input);
             self
         }
+        /// <p>The time that training of the document classifier was completed. Indicates the time when
+        /// the training completes on documentation classifiers. You are billed for the time interval
+        /// between this time and the value of TrainingStartTime.</p>
         pub fn set_training_end_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.training_end_time = input;
             self
@@ -6564,6 +7423,8 @@ pub mod document_classifier_properties {
             self.input_data_config = Some(input);
             self
         }
+        /// <p>The input data configuration that you supplied when you created the document classifier
+        /// for training.</p>
         pub fn set_input_data_config(
             mut self,
             input: std::option::Option<crate::model::DocumentClassifierInputDataConfig>,
@@ -6579,6 +7440,7 @@ pub mod document_classifier_properties {
             self.output_data_config = Some(input);
             self
         }
+        /// <p> Provides output results configuration parameters for custom classifier jobs.</p>
         pub fn set_output_data_config(
             mut self,
             input: std::option::Option<crate::model::DocumentClassifierOutputDataConfig>,
@@ -6593,6 +7455,9 @@ pub mod document_classifier_properties {
             self.classifier_metadata = Some(input);
             self
         }
+        /// <p>Information about the document classifier, including the number of documents used for
+        /// training the classifier, the number of documents used for test the classifier, and an accuracy
+        /// rating.</p>
         pub fn set_classifier_metadata(
             mut self,
             input: std::option::Option<crate::model::ClassifierMetadata>,
@@ -6606,6 +7471,8 @@ pub mod document_classifier_properties {
             self.data_access_role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants
+        /// Amazon Comprehend read access to your input data.</p>
         pub fn set_data_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6631,6 +7498,20 @@ pub mod document_classifier_properties {
             self.volume_kms_key_id = Some(input.into());
             self
         }
+        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
+        /// data on the storage volume attached to the ML compute instance(s) that process the analysis
+        /// job. The VolumeKmsKeyId can be either of the following formats:</p>
+        /// <ul>
+        /// <li>
+        /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Resource Name (ARN) of a KMS Key:
+        /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_volume_kms_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6645,6 +7526,9 @@ pub mod document_classifier_properties {
             self.vpc_config = Some(input);
             self
         }
+        /// <p> Configuration parameters for a private Virtual Private Cloud (VPC) containing the
+        /// resources you are using for your custom classifier. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
+        /// VPC</a>. </p>
         pub fn set_vpc_config(
             mut self,
             input: std::option::Option<crate::model::VpcConfig>,
@@ -6659,6 +7543,9 @@ pub mod document_classifier_properties {
             self.mode = Some(input);
             self
         }
+        /// <p>Indicates the mode in which the specific classifier was trained. This also indicates the
+        /// format of input documents and the format of the confusion matrix. Each classifier can only be
+        /// trained in one mode and this cannot be changed once the classifier is trained.</p>
         pub fn set_mode(
             mut self,
             input: std::option::Option<crate::model::DocumentClassifierMode>,
@@ -6683,6 +7570,19 @@ pub mod document_classifier_properties {
             self.model_kms_key_id = Some(input.into());
             self
         }
+        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
+        /// trained custom models. The ModelKmsKeyId can be either of the following formats:</p>
+        /// <ul>
+        /// <li>
+        /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Resource Name (ARN) of a KMS Key:
+        /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_model_kms_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6695,6 +7595,7 @@ pub mod document_classifier_properties {
             self.version_name = Some(input.into());
             self
         }
+        /// <p>The version name that you assigned to the document classifier.</p>
         pub fn set_version_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version_name = input;
             self
@@ -6730,6 +7631,7 @@ impl DocumentClassifierProperties {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -6741,7 +7643,9 @@ impl DocumentClassifierProperties {
     std::hash::Hash,
 )]
 pub enum DocumentClassifierMode {
+    #[allow(missing_docs)] // documentation missing in model
     MultiClass,
+    #[allow(missing_docs)] // documentation missing in model
     MultiLabel,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -6763,6 +7667,7 @@ impl std::str::FromStr for DocumentClassifierMode {
     }
 }
 impl DocumentClassifierMode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DocumentClassifierMode::MultiClass => "MULTI_CLASS",
@@ -6770,6 +7675,7 @@ impl DocumentClassifierMode {
             DocumentClassifierMode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["MULTI_CLASS", "MULTI_LABEL"]
     }
@@ -6827,6 +7733,7 @@ pub mod classifier_metadata {
             self.number_of_labels = Some(input);
             self
         }
+        /// <p>The number of labels in the input data. </p>
         pub fn set_number_of_labels(mut self, input: std::option::Option<i32>) -> Self {
             self.number_of_labels = input;
             self
@@ -6837,6 +7744,8 @@ pub mod classifier_metadata {
             self.number_of_trained_documents = Some(input);
             self
         }
+        /// <p>The number of documents in the input data that were used to train the classifier.
+        /// Typically this is 80 to 90 percent of the input documents.</p>
         pub fn set_number_of_trained_documents(mut self, input: std::option::Option<i32>) -> Self {
             self.number_of_trained_documents = input;
             self
@@ -6847,6 +7756,8 @@ pub mod classifier_metadata {
             self.number_of_test_documents = Some(input);
             self
         }
+        /// <p>The number of documents in the input data that were used to test the classifier. Typically
+        /// this is 10 to 20 percent of the input documents, up to 10,000 documents.</p>
         pub fn set_number_of_test_documents(mut self, input: std::option::Option<i32>) -> Self {
             self.number_of_test_documents = input;
             self
@@ -6860,6 +7771,8 @@ pub mod classifier_metadata {
             self.evaluation_metrics = Some(input);
             self
         }
+        /// <p> Describes the result metrics for the test data associated with an documentation
+        /// classifier.</p>
         pub fn set_evaluation_metrics(
             mut self,
             input: std::option::Option<crate::model::ClassifierEvaluationMetrics>,
@@ -6964,6 +7877,9 @@ pub mod classifier_evaluation_metrics {
             self.accuracy = Some(input);
             self
         }
+        /// <p>The fraction of the labels that were correct recognized. It is computed by dividing the
+        /// number of labels in the test documents that were correctly recognized by the total number of
+        /// labels in the test documents.</p>
         pub fn set_accuracy(mut self, input: std::option::Option<f64>) -> Self {
             self.accuracy = input;
             self
@@ -6975,6 +7891,9 @@ pub mod classifier_evaluation_metrics {
             self.precision = Some(input);
             self
         }
+        /// <p>A measure of the usefulness of the classifier results in the test data. High precision
+        /// means that the classifier returned substantially more relevant results than irrelevant
+        /// ones.</p>
         pub fn set_precision(mut self, input: std::option::Option<f64>) -> Self {
             self.precision = input;
             self
@@ -6985,6 +7904,8 @@ pub mod classifier_evaluation_metrics {
             self.recall = Some(input);
             self
         }
+        /// <p>A measure of how complete the classifier results are for the test data. High recall means
+        /// that the classifier returned most of the relevant results. </p>
         pub fn set_recall(mut self, input: std::option::Option<f64>) -> Self {
             self.recall = input;
             self
@@ -6996,6 +7917,9 @@ pub mod classifier_evaluation_metrics {
             self.f1_score = Some(input);
             self
         }
+        /// <p>A measure of how accurate the classifier results are for the test data. It is derived from
+        /// the <code>Precision</code> and <code>Recall</code> values. The <code>F1Score</code> is the
+        /// harmonic average of the two scores. The highest score is 1, and the worst score is 0. </p>
         pub fn set_f1_score(mut self, input: std::option::Option<f64>) -> Self {
             self.f1_score = input;
             self
@@ -7008,6 +7932,10 @@ pub mod classifier_evaluation_metrics {
             self.micro_precision = Some(input);
             self
         }
+        /// <p>A measure of the usefulness of the recognizer results in the test data. High precision
+        /// means that the recognizer returned substantially more relevant results than irrelevant ones.
+        /// Unlike the Precision metric which comes from averaging the precision of all available labels,
+        /// this is based on the overall score of all precision scores added together.</p>
         pub fn set_micro_precision(mut self, input: std::option::Option<f64>) -> Self {
             self.micro_precision = input;
             self
@@ -7022,6 +7950,12 @@ pub mod classifier_evaluation_metrics {
             self.micro_recall = Some(input);
             self
         }
+        /// <p>A measure of how complete the classifier results are for the test data. High recall means
+        /// that the classifier returned most of the relevant results. Specifically, this indicates how
+        /// many of the correct categories in the text that the model can predict. It is a percentage of
+        /// correct categories in the text that can found. Instead of averaging the recall scores of all
+        /// labels (as with Recall), micro Recall is based on the overall score of all recall scores added
+        /// together.</p>
         pub fn set_micro_recall(mut self, input: std::option::Option<f64>) -> Self {
             self.micro_recall = input;
             self
@@ -7034,6 +7968,10 @@ pub mod classifier_evaluation_metrics {
             self.micro_f1_score = Some(input);
             self
         }
+        /// <p>A measure of how accurate the classifier results are for the test data. It is a
+        /// combination of the <code>Micro Precision</code> and <code>Micro Recall</code> values. The
+        /// <code>Micro F1Score</code> is the harmonic mean of the two scores. The highest score is 1,
+        /// and the worst score is 0.</p>
         pub fn set_micro_f1_score(mut self, input: std::option::Option<f64>) -> Self {
             self.micro_f1_score = input;
             self
@@ -7045,6 +7983,9 @@ pub mod classifier_evaluation_metrics {
             self.hamming_loss = Some(input);
             self
         }
+        /// <p>Indicates the fraction of labels that are incorrectly predicted. Also seen as the fraction
+        /// of wrong labels compared to the total number of labels. Scores closer to zero are
+        /// better.</p>
         pub fn set_hamming_loss(mut self, input: std::option::Option<f64>) -> Self {
             self.hamming_loss = input;
             self
@@ -7138,6 +8079,14 @@ pub mod document_classifier_output_data_config {
             self.s3_uri = Some(input.into());
             self
         }
+        /// <p>When you use the <code>OutputDataConfig</code> object while creating a custom
+        /// classifier, you specify the Amazon S3 location where you want to write the confusion matrix.
+        /// The URI must be in the same region as the API endpoint that you are calling. The location is
+        /// used as the prefix for the actual location of this output file.</p>
+        /// <p>When the custom classifier job is finished, the service creates the output file in a
+        /// directory specific to the job. The <code>S3Uri</code> field contains the location of the
+        /// output file, called <code>output.tar.gz</code>. It is a compressed archive that contains the
+        /// confusion matrix.</p>
         pub fn set_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.s3_uri = input;
             self
@@ -7168,6 +8117,28 @@ pub mod document_classifier_output_data_config {
             self.kms_key_id = Some(input.into());
             self
         }
+        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt the
+        /// output results from an analysis job. The KmsKeyId can be one of the following formats:</p>
+        /// <ul>
+        /// <li>
+        /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Resource Name (ARN) of a KMS Key:
+        /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>KMS Key Alias: <code>"alias/ExampleAlias"</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>ARN of a KMS Key Alias:
+        /// <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -7289,6 +8260,25 @@ pub mod document_classifier_input_data_config {
             self.data_format = Some(input);
             self
         }
+        /// <p>The format of your training data:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>COMPREHEND_CSV</code>: A two-column CSV file, where labels are provided in the
+        /// first column, and documents are provided in the second. If you use this value, you must
+        /// provide the <code>S3Uri</code> parameter in your request.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AUGMENTED_MANIFEST</code>: A labeled dataset that is produced by Amazon
+        /// SageMaker Ground Truth. This file is in JSON lines format. Each line is a complete JSON
+        /// object that contains a training document and its associated labels. </p>
+        /// <p>If you use this value, you must provide the <code>AugmentedManifests</code> parameter
+        /// in your request.</p>
+        /// </li>
+        /// </ul>
+        /// <p>If you don't specify a value, Amazon Comprehend uses <code>COMPREHEND_CSV</code> as the
+        /// default.</p>
         pub fn set_data_format(
             mut self,
             input: std::option::Option<crate::model::DocumentClassifierDataFormat>,
@@ -7308,6 +8298,14 @@ pub mod document_classifier_input_data_config {
             self.s3_uri = Some(input.into());
             self
         }
+        /// <p>The Amazon S3 URI for the input data. The S3 bucket must be in the same region as the API
+        /// endpoint that you are calling. The URI can point to a single input file or it can provide the
+        /// prefix for a collection of input files.</p>
+        /// <p>For example, if you use the URI <code>S3://bucketName/prefix</code>, if the prefix is a
+        /// single file, Amazon Comprehend uses that file as input. If more than one file begins with the
+        /// prefix, Amazon Comprehend uses all of them as input.</p>
+        /// <p>This parameter is required if you set <code>DataFormat</code> to
+        /// <code>COMPREHEND_CSV</code>.</p>
         pub fn set_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.s3_uri = input;
             self
@@ -7319,6 +8317,9 @@ pub mod document_classifier_input_data_config {
             self.test_s3_uri = Some(input.into());
             self
         }
+        /// <p>The Amazon S3 URI for the input data.
+        /// The Amazon S3 bucket must be in the same AWS Region as the API endpoint that you are calling.
+        /// The URI can point to a single input file or it can provide the prefix for a collection of input files. </p>
         pub fn set_test_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.test_s3_uri = input;
             self
@@ -7333,6 +8334,12 @@ pub mod document_classifier_input_data_config {
             self.label_delimiter = Some(input.into());
             self
         }
+        /// <p>Indicates the delimiter used to separate each label for training a multi-label classifier.
+        /// The default delimiter between labels is a pipe (|). You can use a different character as a
+        /// delimiter (if it's an allowed character) by specifying it under Delimiter for labels. If the
+        /// training documents use a delimiter other than the default or the delimiter you specify, the
+        /// labels on that line will be combined to make a single unique label, such as
+        /// LABELLABELLABEL.</p>
         pub fn set_label_delimiter(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7340,6 +8347,15 @@ pub mod document_classifier_input_data_config {
             self.label_delimiter = input;
             self
         }
+        /// Appends an item to `augmented_manifests`.
+        ///
+        /// To override the contents of this collection use [`set_augmented_manifests`](Self::set_augmented_manifests).
+        ///
+        /// <p>A list of augmented manifest files that provide training data for your custom model. An
+        /// augmented manifest file is a labeled dataset that is produced by Amazon SageMaker Ground
+        /// Truth.</p>
+        /// <p>This parameter is required if you set <code>DataFormat</code> to
+        /// <code>AUGMENTED_MANIFEST</code>.</p>
         pub fn augmented_manifests(
             mut self,
             input: impl Into<crate::model::AugmentedManifestsListItem>,
@@ -7349,6 +8365,11 @@ pub mod document_classifier_input_data_config {
             self.augmented_manifests = Some(v);
             self
         }
+        /// <p>A list of augmented manifest files that provide training data for your custom model. An
+        /// augmented manifest file is a labeled dataset that is produced by Amazon SageMaker Ground
+        /// Truth.</p>
+        /// <p>This parameter is required if you set <code>DataFormat</code> to
+        /// <code>AUGMENTED_MANIFEST</code>.</p>
         pub fn set_augmented_manifests(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AugmentedManifestsListItem>>,
@@ -7375,6 +8396,7 @@ impl DocumentClassifierInputDataConfig {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -7386,7 +8408,9 @@ impl DocumentClassifierInputDataConfig {
     std::hash::Hash,
 )]
 pub enum DocumentClassifierDataFormat {
+    #[allow(missing_docs)] // documentation missing in model
     AugmentedManifest,
+    #[allow(missing_docs)] // documentation missing in model
     ComprehendCsv,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -7408,6 +8432,7 @@ impl std::str::FromStr for DocumentClassifierDataFormat {
     }
 }
 impl DocumentClassifierDataFormat {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DocumentClassifierDataFormat::AugmentedManifest => "AUGMENTED_MANIFEST",
@@ -7415,6 +8440,7 @@ impl DocumentClassifierDataFormat {
             DocumentClassifierDataFormat::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AUGMENTED_MANIFEST", "COMPREHEND_CSV"]
     }
@@ -7437,11 +8463,11 @@ pub struct DocumentClassifierFilter {
     /// <p>Filters the list of classifiers based on the time that the classifier was submitted for
     /// processing. Returns only classifiers submitted before the specified time. Classifiers are
     /// returned in ascending order, oldest to newest.</p>
-    pub submit_time_before: std::option::Option<smithy_types::Instant>,
+    pub submit_time_before: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Filters the list of classifiers based on the time that the classifier was submitted for
     /// processing. Returns only classifiers submitted after the specified time. Classifiers are
     /// returned in descending order, newest to oldest.</p>
-    pub submit_time_after: std::option::Option<smithy_types::Instant>,
+    pub submit_time_after: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for DocumentClassifierFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7461,8 +8487,8 @@ pub mod document_classifier_filter {
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::ModelStatus>,
         pub(crate) document_classifier_name: std::option::Option<std::string::String>,
-        pub(crate) submit_time_before: std::option::Option<smithy_types::Instant>,
-        pub(crate) submit_time_after: std::option::Option<smithy_types::Instant>,
+        pub(crate) submit_time_before: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) submit_time_after: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>Filters the list of classifiers based on status.</p>
@@ -7470,6 +8496,7 @@ pub mod document_classifier_filter {
             self.status = Some(input);
             self
         }
+        /// <p>Filters the list of classifiers based on status.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::ModelStatus>) -> Self {
             self.status = input;
             self
@@ -7479,6 +8506,7 @@ pub mod document_classifier_filter {
             self.document_classifier_name = Some(input.into());
             self
         }
+        /// <p>The name that you assigned to the document classifier</p>
         pub fn set_document_classifier_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7489,13 +8517,16 @@ pub mod document_classifier_filter {
         /// <p>Filters the list of classifiers based on the time that the classifier was submitted for
         /// processing. Returns only classifiers submitted before the specified time. Classifiers are
         /// returned in ascending order, oldest to newest.</p>
-        pub fn submit_time_before(mut self, input: smithy_types::Instant) -> Self {
+        pub fn submit_time_before(mut self, input: aws_smithy_types::Instant) -> Self {
             self.submit_time_before = Some(input);
             self
         }
+        /// <p>Filters the list of classifiers based on the time that the classifier was submitted for
+        /// processing. Returns only classifiers submitted before the specified time. Classifiers are
+        /// returned in ascending order, oldest to newest.</p>
         pub fn set_submit_time_before(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.submit_time_before = input;
             self
@@ -7503,13 +8534,16 @@ pub mod document_classifier_filter {
         /// <p>Filters the list of classifiers based on the time that the classifier was submitted for
         /// processing. Returns only classifiers submitted after the specified time. Classifiers are
         /// returned in descending order, newest to oldest.</p>
-        pub fn submit_time_after(mut self, input: smithy_types::Instant) -> Self {
+        pub fn submit_time_after(mut self, input: aws_smithy_types::Instant) -> Self {
             self.submit_time_after = Some(input);
             self
         }
+        /// <p>Filters the list of classifiers based on the time that the classifier was submitted for
+        /// processing. Returns only classifiers submitted after the specified time. Classifiers are
+        /// returned in descending order, newest to oldest.</p>
         pub fn set_submit_time_after(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.submit_time_after = input;
             self
@@ -7557,9 +8591,9 @@ pub struct DocumentClassificationJobProperties {
     /// <p>A description of the status of the job.</p>
     pub message: std::option::Option<std::string::String>,
     /// <p>The time that the document classification job was submitted for processing.</p>
-    pub submit_time: std::option::Option<smithy_types::Instant>,
+    pub submit_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time that the document classification job completed.</p>
-    pub end_time: std::option::Option<smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The Amazon Resource Name (ARN) that identifies the document classifier. </p>
     pub document_classifier_arn: std::option::Option<std::string::String>,
     /// <p>The input data configuration that you supplied when you created the document
@@ -7621,8 +8655,8 @@ pub mod document_classification_job_properties {
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
         pub(crate) message: std::option::Option<std::string::String>,
-        pub(crate) submit_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) submit_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) document_classifier_arn: std::option::Option<std::string::String>,
         pub(crate) input_data_config: std::option::Option<crate::model::InputDataConfig>,
         pub(crate) output_data_config: std::option::Option<crate::model::OutputDataConfig>,
@@ -7636,6 +8670,7 @@ pub mod document_classification_job_properties {
             self.job_id = Some(input.into());
             self
         }
+        /// <p>The identifier assigned to the document classification job.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -7654,6 +8689,16 @@ pub mod document_classification_job_properties {
             self.job_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the document classification job. It is a unique, fully
+        /// qualified identifier for the job. It includes the AWS account, Region, and the job ID. The
+        /// format of the ARN is as follows:</p>
+        /// <p>
+        /// <code>arn:<partition>:comprehend:<region>:<account-id>:document-classification-job/<job-id></code>
+        /// </p>
+        /// <p>The following is an example job ARN:</p>
+        /// <p>
+        /// <code>arn:aws:comprehend:us-west-2:111122223333:document-classification-job/1234abcd12ab34cd56ef1234567890ab</code>
+        /// </p>
         pub fn set_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_arn = input;
             self
@@ -7663,6 +8708,7 @@ pub mod document_classification_job_properties {
             self.job_name = Some(input.into());
             self
         }
+        /// <p>The name that you assigned to the document classification job.</p>
         pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_name = input;
             self
@@ -7673,6 +8719,8 @@ pub mod document_classification_job_properties {
             self.job_status = Some(input);
             self
         }
+        /// <p>The current status of the document classification job. If the status is
+        /// <code>FAILED</code>, the <code>Message</code> field shows the reason for the failure.</p>
         pub fn set_job_status(
             mut self,
             input: std::option::Option<crate::model::JobStatus>,
@@ -7685,28 +8733,34 @@ pub mod document_classification_job_properties {
             self.message = Some(input.into());
             self
         }
+        /// <p>A description of the status of the job.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
         }
         /// <p>The time that the document classification job was submitted for processing.</p>
-        pub fn submit_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn submit_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.submit_time = Some(input);
             self
         }
+        /// <p>The time that the document classification job was submitted for processing.</p>
         pub fn set_submit_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.submit_time = input;
             self
         }
         /// <p>The time that the document classification job completed.</p>
-        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time that the document classification job completed.</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.end_time = input;
             self
         }
@@ -7715,6 +8769,7 @@ pub mod document_classification_job_properties {
             self.document_classifier_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) that identifies the document classifier. </p>
         pub fn set_document_classifier_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7728,6 +8783,8 @@ pub mod document_classification_job_properties {
             self.input_data_config = Some(input);
             self
         }
+        /// <p>The input data configuration that you supplied when you created the document
+        /// classification job.</p>
         pub fn set_input_data_config(
             mut self,
             input: std::option::Option<crate::model::InputDataConfig>,
@@ -7741,6 +8798,8 @@ pub mod document_classification_job_properties {
             self.output_data_config = Some(input);
             self
         }
+        /// <p>The output data configuration that you supplied when you created the document
+        /// classification job.</p>
         pub fn set_output_data_config(
             mut self,
             input: std::option::Option<crate::model::OutputDataConfig>,
@@ -7754,6 +8813,8 @@ pub mod document_classification_job_properties {
             self.data_access_role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the AWS identity and Access Management (IAM) role that
+        /// grants Amazon Comprehend read access to your input data.</p>
         pub fn set_data_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7779,6 +8840,20 @@ pub mod document_classification_job_properties {
             self.volume_kms_key_id = Some(input.into());
             self
         }
+        /// <p>ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
+        /// data on the storage volume attached to the ML compute instance(s) that process the analysis
+        /// job. The VolumeKmsKeyId can be either of the following formats:</p>
+        /// <ul>
+        /// <li>
+        /// <p>KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Resource Name (ARN) of a KMS Key:
+        /// <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_volume_kms_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7793,6 +8868,9 @@ pub mod document_classification_job_properties {
             self.vpc_config = Some(input);
             self
         }
+        /// <p> Configuration parameters for a private Virtual Private Cloud (VPC) containing the
+        /// resources you are using for your document classification job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon
+        /// VPC</a>. </p>
         pub fn set_vpc_config(
             mut self,
             input: std::option::Option<crate::model::VpcConfig>,
@@ -7840,11 +8918,11 @@ pub struct DocumentClassificationJobFilter {
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
     /// Returns only jobs submitted before the specified time. Jobs are returned in ascending order,
     /// oldest to newest.</p>
-    pub submit_time_before: std::option::Option<smithy_types::Instant>,
+    pub submit_time_before: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
     /// Returns only jobs submitted after the specified time. Jobs are returned in descending order,
     /// newest to oldest.</p>
-    pub submit_time_after: std::option::Option<smithy_types::Instant>,
+    pub submit_time_after: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for DocumentClassificationJobFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7864,8 +8942,8 @@ pub mod document_classification_job_filter {
     pub struct Builder {
         pub(crate) job_name: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
-        pub(crate) submit_time_before: std::option::Option<smithy_types::Instant>,
-        pub(crate) submit_time_after: std::option::Option<smithy_types::Instant>,
+        pub(crate) submit_time_before: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) submit_time_after: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>Filters on the name of the job.</p>
@@ -7873,6 +8951,7 @@ pub mod document_classification_job_filter {
             self.job_name = Some(input.into());
             self
         }
+        /// <p>Filters on the name of the job.</p>
         pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_name = input;
             self
@@ -7882,6 +8961,7 @@ pub mod document_classification_job_filter {
             self.job_status = Some(input);
             self
         }
+        /// <p>Filters the list based on job status. Returns only jobs with the specified status.</p>
         pub fn set_job_status(
             mut self,
             input: std::option::Option<crate::model::JobStatus>,
@@ -7892,13 +8972,16 @@ pub mod document_classification_job_filter {
         /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
         /// Returns only jobs submitted before the specified time. Jobs are returned in ascending order,
         /// oldest to newest.</p>
-        pub fn submit_time_before(mut self, input: smithy_types::Instant) -> Self {
+        pub fn submit_time_before(mut self, input: aws_smithy_types::Instant) -> Self {
             self.submit_time_before = Some(input);
             self
         }
+        /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
+        /// Returns only jobs submitted before the specified time. Jobs are returned in ascending order,
+        /// oldest to newest.</p>
         pub fn set_submit_time_before(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.submit_time_before = input;
             self
@@ -7906,13 +8989,16 @@ pub mod document_classification_job_filter {
         /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
         /// Returns only jobs submitted after the specified time. Jobs are returned in descending order,
         /// newest to oldest.</p>
-        pub fn submit_time_after(mut self, input: smithy_types::Instant) -> Self {
+        pub fn submit_time_after(mut self, input: aws_smithy_types::Instant) -> Self {
             self.submit_time_after = Some(input);
             self
         }
+        /// <p>Filters the list of jobs based on the time that the job was submitted for processing.
+        /// Returns only jobs submitted after the specified time. Jobs are returned in descending order,
+        /// newest to oldest.</p>
         pub fn set_submit_time_after(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.submit_time_after = input;
             self
@@ -7983,6 +9069,7 @@ pub mod syntax_token {
             self.token_id = Some(input);
             self
         }
+        /// <p>A unique identifier for a token.</p>
         pub fn set_token_id(mut self, input: std::option::Option<i32>) -> Self {
             self.token_id = input;
             self
@@ -7992,6 +9079,7 @@ pub mod syntax_token {
             self.text = Some(input.into());
             self
         }
+        /// <p>The word that was recognized in the source text.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.text = input;
             self
@@ -8002,6 +9090,8 @@ pub mod syntax_token {
             self.begin_offset = Some(input);
             self
         }
+        /// <p>The zero-based offset from the beginning of the source text to the first character in the
+        /// word.</p>
         pub fn set_begin_offset(mut self, input: std::option::Option<i32>) -> Self {
             self.begin_offset = input;
             self
@@ -8012,6 +9102,8 @@ pub mod syntax_token {
             self.end_offset = Some(input);
             self
         }
+        /// <p>The zero-based offset from the beginning of the source text to the last character in the
+        /// word.</p>
         pub fn set_end_offset(mut self, input: std::option::Option<i32>) -> Self {
             self.end_offset = input;
             self
@@ -8022,6 +9114,8 @@ pub mod syntax_token {
             self.part_of_speech = Some(input);
             self
         }
+        /// <p>Provides the part of speech label and the confidence level that Amazon Comprehend has that
+        /// the part of speech was correctly identified. For more information, see <a>how-syntax</a>.</p>
         pub fn set_part_of_speech(
             mut self,
             input: std::option::Option<crate::model::PartOfSpeechTag>,
@@ -8083,6 +9177,7 @@ pub mod part_of_speech_tag {
             self.tag = Some(input);
             self
         }
+        /// <p>Identifies the part of speech that the token represents.</p>
         pub fn set_tag(
             mut self,
             input: std::option::Option<crate::model::PartOfSpeechTagType>,
@@ -8096,6 +9191,8 @@ pub mod part_of_speech_tag {
             self.score = Some(input);
             self
         }
+        /// <p>The confidence that Amazon Comprehend has that the part of speech was correctly
+        /// identified.</p>
         pub fn set_score(mut self, input: std::option::Option<f32>) -> Self {
             self.score = input;
             self
@@ -8116,6 +9213,7 @@ impl PartOfSpeechTag {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -8127,23 +9225,41 @@ impl PartOfSpeechTag {
     std::hash::Hash,
 )]
 pub enum PartOfSpeechTagType {
+    #[allow(missing_docs)] // documentation missing in model
     Adj,
+    #[allow(missing_docs)] // documentation missing in model
     Adp,
+    #[allow(missing_docs)] // documentation missing in model
     Adv,
+    #[allow(missing_docs)] // documentation missing in model
     Aux,
+    #[allow(missing_docs)] // documentation missing in model
     Cconj,
+    #[allow(missing_docs)] // documentation missing in model
     Conj,
+    #[allow(missing_docs)] // documentation missing in model
     Det,
+    #[allow(missing_docs)] // documentation missing in model
     Intj,
+    #[allow(missing_docs)] // documentation missing in model
     Noun,
+    #[allow(missing_docs)] // documentation missing in model
     Num,
+    #[allow(missing_docs)] // documentation missing in model
     O,
+    #[allow(missing_docs)] // documentation missing in model
     Part,
+    #[allow(missing_docs)] // documentation missing in model
     Pron,
+    #[allow(missing_docs)] // documentation missing in model
     Propn,
+    #[allow(missing_docs)] // documentation missing in model
     Punct,
+    #[allow(missing_docs)] // documentation missing in model
     Sconj,
+    #[allow(missing_docs)] // documentation missing in model
     Sym,
+    #[allow(missing_docs)] // documentation missing in model
     Verb,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -8181,6 +9297,7 @@ impl std::str::FromStr for PartOfSpeechTagType {
     }
 }
 impl PartOfSpeechTagType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PartOfSpeechTagType::Adj => "ADJ",
@@ -8204,6 +9321,7 @@ impl PartOfSpeechTagType {
             PartOfSpeechTagType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ADJ", "ADP", "ADV", "AUX", "CCONJ", "CONJ", "DET", "INTJ", "NOUN", "NUM", "O", "PART",
@@ -8217,6 +9335,7 @@ impl AsRef<str> for PartOfSpeechTagType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -8228,11 +9347,17 @@ impl AsRef<str> for PartOfSpeechTagType {
     std::hash::Hash,
 )]
 pub enum SyntaxLanguageCode {
+    #[allow(missing_docs)] // documentation missing in model
     De,
+    #[allow(missing_docs)] // documentation missing in model
     En,
+    #[allow(missing_docs)] // documentation missing in model
     Es,
+    #[allow(missing_docs)] // documentation missing in model
     Fr,
+    #[allow(missing_docs)] // documentation missing in model
     It,
+    #[allow(missing_docs)] // documentation missing in model
     Pt,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -8258,6 +9383,7 @@ impl std::str::FromStr for SyntaxLanguageCode {
     }
 }
 impl SyntaxLanguageCode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SyntaxLanguageCode::De => "de",
@@ -8269,6 +9395,7 @@ impl SyntaxLanguageCode {
             SyntaxLanguageCode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["de", "en", "es", "fr", "it", "pt"]
     }
@@ -8325,6 +9452,8 @@ pub mod sentiment_score {
             self.positive = Some(input);
             self
         }
+        /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of
+        /// the <code>POSITIVE</code> sentiment.</p>
         pub fn set_positive(mut self, input: std::option::Option<f32>) -> Self {
             self.positive = input;
             self
@@ -8335,6 +9464,8 @@ pub mod sentiment_score {
             self.negative = Some(input);
             self
         }
+        /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of
+        /// the <code>NEGATIVE</code> sentiment.</p>
         pub fn set_negative(mut self, input: std::option::Option<f32>) -> Self {
             self.negative = input;
             self
@@ -8345,6 +9476,8 @@ pub mod sentiment_score {
             self.neutral = Some(input);
             self
         }
+        /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of
+        /// the <code>NEUTRAL</code> sentiment.</p>
         pub fn set_neutral(mut self, input: std::option::Option<f32>) -> Self {
             self.neutral = input;
             self
@@ -8355,6 +9488,8 @@ pub mod sentiment_score {
             self.mixed = Some(input);
             self
         }
+        /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its detection of
+        /// the <code>MIXED</code> sentiment.</p>
         pub fn set_mixed(mut self, input: std::option::Option<f32>) -> Self {
             self.mixed = input;
             self
@@ -8377,6 +9512,7 @@ impl SentimentScore {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -8388,9 +9524,13 @@ impl SentimentScore {
     std::hash::Hash,
 )]
 pub enum SentimentType {
+    #[allow(missing_docs)] // documentation missing in model
     Mixed,
+    #[allow(missing_docs)] // documentation missing in model
     Negative,
+    #[allow(missing_docs)] // documentation missing in model
     Neutral,
+    #[allow(missing_docs)] // documentation missing in model
     Positive,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -8414,6 +9554,7 @@ impl std::str::FromStr for SentimentType {
     }
 }
 impl SentimentType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SentimentType::Mixed => "MIXED",
@@ -8423,6 +9564,7 @@ impl SentimentType {
             SentimentType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["MIXED", "NEGATIVE", "NEUTRAL", "POSITIVE"]
     }
@@ -8482,6 +9624,8 @@ pub mod pii_entity {
             self.score = Some(input);
             self
         }
+        /// <p>The level of confidence that Amazon Comprehend has in the accuracy of the
+        /// detection.</p>
         pub fn set_score(mut self, input: std::option::Option<f32>) -> Self {
             self.score = input;
             self
@@ -8491,6 +9635,7 @@ pub mod pii_entity {
             self.r#type = Some(input);
             self
         }
+        /// <p>The entity's type.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::PiiEntityType>) -> Self {
             self.r#type = input;
             self
@@ -8504,6 +9649,11 @@ pub mod pii_entity {
             self.begin_offset = Some(input);
             self
         }
+        /// <p>A character offset in the input text that shows where the PII entity begins (the first
+        /// character is at position 0). The offset returns the position of each UTF-8 code point in the
+        /// string. A <i>code point</i> is the abstract character from a particular
+        /// graphical representation. For example, a multi-byte UTF-8 character maps to a single code
+        /// point.</p>
         pub fn set_begin_offset(mut self, input: std::option::Option<i32>) -> Self {
             self.begin_offset = input;
             self
@@ -8516,6 +9666,10 @@ pub mod pii_entity {
             self.end_offset = Some(input);
             self
         }
+        /// <p>A character offset in the input text that shows where the PII entity ends. The offset
+        /// returns the position of each UTF-8 code point in the string. A <i>code point</i>
+        /// is the abstract character from a particular graphical representation. For example, a
+        /// multi-byte UTF-8 character maps to a single code point.</p>
         pub fn set_end_offset(mut self, input: std::option::Option<i32>) -> Self {
             self.end_offset = input;
             self
@@ -8587,6 +9741,8 @@ pub mod key_phrase {
             self.score = Some(input);
             self
         }
+        /// <p>The level of confidence that Amazon Comprehend has in the accuracy of the
+        /// detection.</p>
         pub fn set_score(mut self, input: std::option::Option<f32>) -> Self {
             self.score = input;
             self
@@ -8596,6 +9752,7 @@ pub mod key_phrase {
             self.text = Some(input.into());
             self
         }
+        /// <p>The text of a key noun phrase.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.text = input;
             self
@@ -8609,6 +9766,11 @@ pub mod key_phrase {
             self.begin_offset = Some(input);
             self
         }
+        /// <p>A character offset in the input text that shows where the key phrase begins (the first
+        /// character is at position 0). The offset returns the position of each UTF-8 code point in the
+        /// string. A <i>code point</i> is the abstract character from a particular
+        /// graphical representation. For example, a multi-byte UTF-8 character maps to a single code
+        /// point.</p>
         pub fn set_begin_offset(mut self, input: std::option::Option<i32>) -> Self {
             self.begin_offset = input;
             self
@@ -8621,6 +9783,10 @@ pub mod key_phrase {
             self.end_offset = Some(input);
             self
         }
+        /// <p>A character offset in the input text where the key phrase ends. The offset returns the
+        /// position of each UTF-8 code point in the string. A <code>code point</code> is the abstract
+        /// character from a particular graphical representation. For example, a multi-byte UTF-8
+        /// character maps to a single code point.</p>
         pub fn set_end_offset(mut self, input: std::option::Option<i32>) -> Self {
             self.end_offset = input;
             self
@@ -8697,6 +9863,8 @@ pub mod entity {
             self.score = Some(input);
             self
         }
+        /// <p>The level of confidence that Amazon Comprehend has in the accuracy of the
+        /// detection.</p>
         pub fn set_score(mut self, input: std::option::Option<f32>) -> Self {
             self.score = input;
             self
@@ -8706,6 +9874,7 @@ pub mod entity {
             self.r#type = Some(input);
             self
         }
+        /// <p>The entity's type.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::EntityType>) -> Self {
             self.r#type = input;
             self
@@ -8715,6 +9884,7 @@ pub mod entity {
             self.text = Some(input.into());
             self
         }
+        /// <p>The text of the entity.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.text = input;
             self
@@ -8728,6 +9898,11 @@ pub mod entity {
             self.begin_offset = Some(input);
             self
         }
+        /// <p>A character offset in the input text that shows where the entity begins (the first
+        /// character is at position 0). The offset returns the position of each UTF-8 code point in the
+        /// string. A <i>code point</i> is the abstract character from a particular
+        /// graphical representation. For example, a multi-byte UTF-8 character maps to a single code
+        /// point.</p>
         pub fn set_begin_offset(mut self, input: std::option::Option<i32>) -> Self {
             self.begin_offset = input;
             self
@@ -8740,6 +9915,10 @@ pub mod entity {
             self.end_offset = Some(input);
             self
         }
+        /// <p>A character offset in the input text that shows where the entity ends. The offset
+        /// returns the position of each UTF-8 code point in the string. A <i>code point</i>
+        /// is the abstract character from a particular graphical representation. For example, a
+        /// multi-byte UTF-8 character maps to a single code point. </p>
         pub fn set_end_offset(mut self, input: std::option::Option<i32>) -> Self {
             self.end_offset = input;
             self
@@ -8763,6 +9942,7 @@ impl Entity {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -8774,14 +9954,23 @@ impl Entity {
     std::hash::Hash,
 )]
 pub enum EntityType {
+    #[allow(missing_docs)] // documentation missing in model
     CommercialItem,
+    #[allow(missing_docs)] // documentation missing in model
     Date,
+    #[allow(missing_docs)] // documentation missing in model
     Event,
+    #[allow(missing_docs)] // documentation missing in model
     Location,
+    #[allow(missing_docs)] // documentation missing in model
     Organization,
+    #[allow(missing_docs)] // documentation missing in model
     Other,
+    #[allow(missing_docs)] // documentation missing in model
     Person,
+    #[allow(missing_docs)] // documentation missing in model
     Quantity,
+    #[allow(missing_docs)] // documentation missing in model
     Title,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -8810,6 +9999,7 @@ impl std::str::FromStr for EntityType {
     }
 }
 impl EntityType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EntityType::CommercialItem => "COMMERCIAL_ITEM",
@@ -8824,6 +10014,7 @@ impl EntityType {
             EntityType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "COMMERCIAL_ITEM",
@@ -8882,6 +10073,9 @@ pub mod dominant_language {
             self.language_code = Some(input.into());
             self
         }
+        /// <p>The RFC 5646 language code for the dominant language. For more information about RFC
+        /// 5646, see <a href="https://tools.ietf.org/html/rfc5646">Tags for Identifying
+        /// Languages</a> on the <i>IETF Tools</i> web site.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8895,6 +10089,8 @@ pub mod dominant_language {
             self.score = Some(input);
             self
         }
+        /// <p>The level of confidence that Amazon Comprehend has in the accuracy of the
+        /// detection.</p>
         pub fn set_score(mut self, input: std::option::Option<f32>) -> Self {
             self.score = input;
             self
@@ -8949,6 +10145,7 @@ pub mod entity_label {
             self.name = Some(input);
             self
         }
+        /// <p>The name of the label.</p>
         pub fn set_name(mut self, input: std::option::Option<crate::model::PiiEntityType>) -> Self {
             self.name = input;
             self
@@ -8959,6 +10156,8 @@ pub mod entity_label {
             self.score = Some(input);
             self
         }
+        /// <p>The level of confidence that Amazon Comprehend has in the accuracy of the
+        /// detection.</p>
         pub fn set_score(mut self, input: std::option::Option<f32>) -> Self {
             self.score = input;
             self
@@ -9011,6 +10210,7 @@ pub mod document_label {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the label.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -9020,6 +10220,7 @@ pub mod document_label {
             self.score = Some(input);
             self
         }
+        /// <p>The confidence score that Amazon Comprehend has this label correctly attributed.</p>
         pub fn set_score(mut self, input: std::option::Option<f32>) -> Self {
             self.score = input;
             self
@@ -9072,6 +10273,7 @@ pub mod document_class {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the class.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -9081,6 +10283,7 @@ pub mod document_class {
             self.score = Some(input);
             self
         }
+        /// <p>The confidence score that Amazon Comprehend has this class correctly attributed.</p>
         pub fn set_score(mut self, input: std::option::Option<f32>) -> Self {
             self.score = input;
             self
@@ -9139,6 +10342,7 @@ pub mod batch_item_error {
             self.index = Some(input);
             self
         }
+        /// <p>The zero-based index of the document in the input list.</p>
         pub fn set_index(mut self, input: std::option::Option<i32>) -> Self {
             self.index = input;
             self
@@ -9148,6 +10352,7 @@ pub mod batch_item_error {
             self.error_code = Some(input.into());
             self
         }
+        /// <p>The numeric error code of the error.</p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_code = input;
             self
@@ -9157,6 +10362,7 @@ pub mod batch_item_error {
             self.error_message = Some(input.into());
             self
         }
+        /// <p>A text description of the error.</p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9214,16 +10420,23 @@ pub mod batch_detect_syntax_item_result {
             self.index = Some(input);
             self
         }
+        /// <p>The zero-based index of the document in the input list.</p>
         pub fn set_index(mut self, input: std::option::Option<i32>) -> Self {
             self.index = input;
             self
         }
+        /// Appends an item to `syntax_tokens`.
+        ///
+        /// To override the contents of this collection use [`set_syntax_tokens`](Self::set_syntax_tokens).
+        ///
+        /// <p>The syntax tokens for the words in the document, one token for each word.</p>
         pub fn syntax_tokens(mut self, input: impl Into<crate::model::SyntaxToken>) -> Self {
             let mut v = self.syntax_tokens.unwrap_or_default();
             v.push(input.into());
             self.syntax_tokens = Some(v);
             self
         }
+        /// <p>The syntax tokens for the words in the document, one token for each word.</p>
         pub fn set_syntax_tokens(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SyntaxToken>>,
@@ -9286,6 +10499,7 @@ pub mod batch_detect_sentiment_item_result {
             self.index = Some(input);
             self
         }
+        /// <p>The zero-based index of the document in the input list.</p>
         pub fn set_index(mut self, input: std::option::Option<i32>) -> Self {
             self.index = input;
             self
@@ -9295,6 +10509,7 @@ pub mod batch_detect_sentiment_item_result {
             self.sentiment = Some(input);
             self
         }
+        /// <p>The sentiment detected in the document.</p>
         pub fn set_sentiment(
             mut self,
             input: std::option::Option<crate::model::SentimentType>,
@@ -9308,6 +10523,8 @@ pub mod batch_detect_sentiment_item_result {
             self.sentiment_score = Some(input);
             self
         }
+        /// <p>The level of confidence that Amazon Comprehend has in the accuracy of its sentiment
+        /// detection.</p>
         pub fn set_sentiment_score(
             mut self,
             input: std::option::Option<crate::model::SentimentScore>,
@@ -9367,16 +10584,25 @@ pub mod batch_detect_key_phrases_item_result {
             self.index = Some(input);
             self
         }
+        /// <p>The zero-based index of the document in the input list.</p>
         pub fn set_index(mut self, input: std::option::Option<i32>) -> Self {
             self.index = input;
             self
         }
+        /// Appends an item to `key_phrases`.
+        ///
+        /// To override the contents of this collection use [`set_key_phrases`](Self::set_key_phrases).
+        ///
+        /// <p>One or more <a>KeyPhrase</a> objects, one for each key phrase detected in
+        /// the document.</p>
         pub fn key_phrases(mut self, input: impl Into<crate::model::KeyPhrase>) -> Self {
             let mut v = self.key_phrases.unwrap_or_default();
             v.push(input.into());
             self.key_phrases = Some(v);
             self
         }
+        /// <p>One or more <a>KeyPhrase</a> objects, one for each key phrase detected in
+        /// the document.</p>
         pub fn set_key_phrases(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::KeyPhrase>>,
@@ -9435,16 +10661,25 @@ pub mod batch_detect_entities_item_result {
             self.index = Some(input);
             self
         }
+        /// <p>The zero-based index of the document in the input list.</p>
         pub fn set_index(mut self, input: std::option::Option<i32>) -> Self {
             self.index = input;
             self
         }
+        /// Appends an item to `entities`.
+        ///
+        /// To override the contents of this collection use [`set_entities`](Self::set_entities).
+        ///
+        /// <p>One or more <a>Entity</a> objects, one for each entity detected in the
+        /// document.</p>
         pub fn entities(mut self, input: impl Into<crate::model::Entity>) -> Self {
             let mut v = self.entities.unwrap_or_default();
             v.push(input.into());
             self.entities = Some(v);
             self
         }
+        /// <p>One or more <a>Entity</a> objects, one for each entity detected in the
+        /// document.</p>
         pub fn set_entities(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Entity>>,
@@ -9503,16 +10738,25 @@ pub mod batch_detect_dominant_language_item_result {
             self.index = Some(input);
             self
         }
+        /// <p>The zero-based index of the document in the input list.</p>
         pub fn set_index(mut self, input: std::option::Option<i32>) -> Self {
             self.index = input;
             self
         }
+        /// Appends an item to `languages`.
+        ///
+        /// To override the contents of this collection use [`set_languages`](Self::set_languages).
+        ///
+        /// <p>One or more <a>DominantLanguage</a> objects describing the dominant
+        /// languages in the document.</p>
         pub fn languages(mut self, input: impl Into<crate::model::DominantLanguage>) -> Self {
             let mut v = self.languages.unwrap_or_default();
             v.push(input.into());
             self.languages = Some(v);
             self
         }
+        /// <p>One or more <a>DominantLanguage</a> objects describing the dominant
+        /// languages in the document.</p>
         pub fn set_languages(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DominantLanguage>>,

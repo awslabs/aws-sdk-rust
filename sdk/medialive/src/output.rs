@@ -27,6 +27,7 @@ pub mod update_reservation_output {
             self.reservation = Some(input);
             self
         }
+        /// Reserved resources available to use
         pub fn set_reservation(
             mut self,
             input: std::option::Option<crate::model::Reservation>,
@@ -77,6 +78,7 @@ pub mod update_multiplex_program_output {
             self.multiplex_program = Some(input);
             self
         }
+        /// The updated multiplex program.
         pub fn set_multiplex_program(
             mut self,
             input: std::option::Option<crate::model::MultiplexProgram>,
@@ -127,6 +129,7 @@ pub mod update_multiplex_output {
             self.multiplex = Some(input);
             self
         }
+        /// The updated multiplex.
         pub fn set_multiplex(
             mut self,
             input: std::option::Option<crate::model::Multiplex>,
@@ -177,6 +180,7 @@ pub mod update_input_security_group_output {
             self.security_group = Some(input);
             self
         }
+        /// An Input Security Group
         pub fn set_security_group(
             mut self,
             input: std::option::Option<crate::model::InputSecurityGroup>,
@@ -275,6 +279,7 @@ pub mod update_input_device_output {
             self.arn = Some(input.into());
             self
         }
+        /// The unique ARN of the input device.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -284,6 +289,7 @@ pub mod update_input_device_output {
             self.connection_state = Some(input);
             self
         }
+        /// The state of the connection between the input device and AWS.
         pub fn set_connection_state(
             mut self,
             input: std::option::Option<crate::model::InputDeviceConnectionState>,
@@ -299,6 +305,7 @@ pub mod update_input_device_output {
             self.device_settings_sync_state = Some(input);
             self
         }
+        /// The status of the action to synchronize the device configuration. If you change the configuration of the input device (for example, the maximum bitrate), MediaLive sends the new data to the device. The device might not update itself immediately. SYNCED means the device has updated its configuration. SYNCING means that it has not updated its configuration.
         pub fn set_device_settings_sync_state(
             mut self,
             input: std::option::Option<crate::model::DeviceSettingsSyncState>,
@@ -311,6 +318,7 @@ pub mod update_input_device_output {
             self.device_update_status = Some(input);
             self
         }
+        /// The status of software on the input device.
         pub fn set_device_update_status(
             mut self,
             input: std::option::Option<crate::model::DeviceUpdateStatus>,
@@ -323,6 +331,7 @@ pub mod update_input_device_output {
             self.hd_device_settings = Some(input);
             self
         }
+        /// Settings that describe an input device that is type HD.
         pub fn set_hd_device_settings(
             mut self,
             input: std::option::Option<crate::model::InputDeviceHdSettings>,
@@ -335,6 +344,7 @@ pub mod update_input_device_output {
             self.id = Some(input.into());
             self
         }
+        /// The unique ID of the input device.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -344,6 +354,7 @@ pub mod update_input_device_output {
             self.mac_address = Some(input.into());
             self
         }
+        /// The network MAC address of the input device.
         pub fn set_mac_address(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mac_address = input;
             self
@@ -353,6 +364,7 @@ pub mod update_input_device_output {
             self.name = Some(input.into());
             self
         }
+        /// A name that you specify for the input device.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -362,6 +374,7 @@ pub mod update_input_device_output {
             self.network_settings = Some(input);
             self
         }
+        /// The network settings for the input device.
         pub fn set_network_settings(
             mut self,
             input: std::option::Option<crate::model::InputDeviceNetworkSettings>,
@@ -374,6 +387,7 @@ pub mod update_input_device_output {
             self.serial_number = Some(input.into());
             self
         }
+        /// The unique serial number of the input device.
         pub fn set_serial_number(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -386,6 +400,7 @@ pub mod update_input_device_output {
             self.r#type = Some(input);
             self
         }
+        /// The type of the input device.
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::InputDeviceType>,
@@ -398,6 +413,7 @@ pub mod update_input_device_output {
             self.uhd_device_settings = Some(input);
             self
         }
+        /// Settings that describe an input device that is type UHD.
         pub fn set_uhd_device_settings(
             mut self,
             input: std::option::Option<crate::model::InputDeviceUhdSettings>,
@@ -459,6 +475,7 @@ pub mod update_input_output {
             self.input = Some(input);
             self
         }
+        /// Placeholder documentation for Input
         pub fn set_input(mut self, input: std::option::Option<crate::model::Input>) -> Self {
             self.input = input;
             self
@@ -504,6 +521,7 @@ pub mod update_channel_class_output {
             self.channel = Some(input);
             self
         }
+        /// Placeholder documentation for Channel
         pub fn set_channel(mut self, input: std::option::Option<crate::model::Channel>) -> Self {
             self.channel = input;
             self
@@ -551,6 +569,7 @@ pub mod update_channel_output {
             self.channel = Some(input);
             self
         }
+        /// Placeholder documentation for Channel
         pub fn set_channel(mut self, input: std::option::Option<crate::model::Channel>) -> Self {
             self.channel = input;
             self
@@ -668,16 +687,23 @@ pub mod stop_multiplex_output {
             self.arn = Some(input.into());
             self
         }
+        /// The unique arn of the multiplex.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
+        /// Appends an item to `availability_zones`.
+        ///
+        /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
+        ///
+        /// A list of availability zones for the multiplex.
         pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.availability_zones.unwrap_or_default();
             v.push(input.into());
             self.availability_zones = Some(v);
             self
         }
+        /// A list of availability zones for the multiplex.
         pub fn set_availability_zones(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -685,6 +711,11 @@ pub mod stop_multiplex_output {
             self.availability_zones = input;
             self
         }
+        /// Appends an item to `destinations`.
+        ///
+        /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
+        ///
+        /// A list of the multiplex output destinations.
         pub fn destinations(
             mut self,
             input: impl Into<crate::model::MultiplexOutputDestination>,
@@ -694,6 +725,7 @@ pub mod stop_multiplex_output {
             self.destinations = Some(v);
             self
         }
+        /// A list of the multiplex output destinations.
         pub fn set_destinations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MultiplexOutputDestination>>,
@@ -706,6 +738,7 @@ pub mod stop_multiplex_output {
             self.id = Some(input.into());
             self
         }
+        /// The unique id of the multiplex.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -715,6 +748,7 @@ pub mod stop_multiplex_output {
             self.multiplex_settings = Some(input);
             self
         }
+        /// Configuration for a multiplex event.
         pub fn set_multiplex_settings(
             mut self,
             input: std::option::Option<crate::model::MultiplexSettings>,
@@ -727,6 +761,7 @@ pub mod stop_multiplex_output {
             self.name = Some(input.into());
             self
         }
+        /// The name of the multiplex.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -736,6 +771,7 @@ pub mod stop_multiplex_output {
             self.pipelines_running_count = Some(input);
             self
         }
+        /// The number of currently healthy pipelines.
         pub fn set_pipelines_running_count(mut self, input: std::option::Option<i32>) -> Self {
             self.pipelines_running_count = input;
             self
@@ -745,6 +781,7 @@ pub mod stop_multiplex_output {
             self.program_count = Some(input);
             self
         }
+        /// The number of programs in the multiplex.
         pub fn set_program_count(mut self, input: std::option::Option<i32>) -> Self {
             self.program_count = input;
             self
@@ -754,6 +791,7 @@ pub mod stop_multiplex_output {
             self.state = Some(input);
             self
         }
+        /// The current state of the multiplex.
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::MultiplexState>,
@@ -761,6 +799,11 @@ pub mod stop_multiplex_output {
             self.state = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// A collection of key-value pairs.
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -771,6 +814,7 @@ pub mod stop_multiplex_output {
             self.tags = Some(hash_map);
             self
         }
+        /// A collection of key-value pairs.
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -906,6 +950,7 @@ pub mod stop_channel_output {
             self.arn = Some(input.into());
             self
         }
+        /// The unique arn of the channel.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -918,6 +963,7 @@ pub mod stop_channel_output {
             self.cdi_input_specification = Some(input);
             self
         }
+        /// Specification of CDI inputs for this channel
         pub fn set_cdi_input_specification(
             mut self,
             input: std::option::Option<crate::model::CdiInputSpecification>,
@@ -930,6 +976,7 @@ pub mod stop_channel_output {
             self.channel_class = Some(input);
             self
         }
+        /// The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel with one pipeline.
         pub fn set_channel_class(
             mut self,
             input: std::option::Option<crate::model::ChannelClass>,
@@ -937,12 +984,22 @@ pub mod stop_channel_output {
             self.channel_class = input;
             self
         }
+        /// Appends an item to `destinations`.
+        ///
+        /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
+        ///
+        /// A list of destinations of the channel. For UDP outputs, there is one
+        /// destination per output. For other types (HLS, for example), there is
+        /// one destination per packager.
         pub fn destinations(mut self, input: impl Into<crate::model::OutputDestination>) -> Self {
             let mut v = self.destinations.unwrap_or_default();
             v.push(input.into());
             self.destinations = Some(v);
             self
         }
+        /// A list of destinations of the channel. For UDP outputs, there is one
+        /// destination per output. For other types (HLS, for example), there is
+        /// one destination per packager.
         pub fn set_destinations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::OutputDestination>>,
@@ -950,6 +1007,11 @@ pub mod stop_channel_output {
             self.destinations = input;
             self
         }
+        /// Appends an item to `egress_endpoints`.
+        ///
+        /// To override the contents of this collection use [`set_egress_endpoints`](Self::set_egress_endpoints).
+        ///
+        /// The endpoints where outgoing connections initiate from
         pub fn egress_endpoints(
             mut self,
             input: impl Into<crate::model::ChannelEgressEndpoint>,
@@ -959,6 +1021,7 @@ pub mod stop_channel_output {
             self.egress_endpoints = Some(v);
             self
         }
+        /// The endpoints where outgoing connections initiate from
         pub fn set_egress_endpoints(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ChannelEgressEndpoint>>,
@@ -971,6 +1034,7 @@ pub mod stop_channel_output {
             self.encoder_settings = Some(input);
             self
         }
+        /// Encoder Settings
         pub fn set_encoder_settings(
             mut self,
             input: std::option::Option<crate::model::EncoderSettings>,
@@ -983,10 +1047,16 @@ pub mod stop_channel_output {
             self.id = Some(input.into());
             self
         }
+        /// The unique id of the channel.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
+        /// Appends an item to `input_attachments`.
+        ///
+        /// To override the contents of this collection use [`set_input_attachments`](Self::set_input_attachments).
+        ///
+        /// List of input attachments for channel.
         pub fn input_attachments(
             mut self,
             input: impl Into<crate::model::InputAttachment>,
@@ -996,6 +1066,7 @@ pub mod stop_channel_output {
             self.input_attachments = Some(v);
             self
         }
+        /// List of input attachments for channel.
         pub fn set_input_attachments(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InputAttachment>>,
@@ -1008,6 +1079,7 @@ pub mod stop_channel_output {
             self.input_specification = Some(input);
             self
         }
+        /// Specification of network and file inputs for this channel
         pub fn set_input_specification(
             mut self,
             input: std::option::Option<crate::model::InputSpecification>,
@@ -1020,6 +1092,7 @@ pub mod stop_channel_output {
             self.log_level = Some(input);
             self
         }
+        /// The log level being written to CloudWatch Logs.
         pub fn set_log_level(mut self, input: std::option::Option<crate::model::LogLevel>) -> Self {
             self.log_level = input;
             self
@@ -1029,16 +1102,23 @@ pub mod stop_channel_output {
             self.name = Some(input.into());
             self
         }
+        /// The name of the channel. (user-mutable)
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
+        /// Appends an item to `pipeline_details`.
+        ///
+        /// To override the contents of this collection use [`set_pipeline_details`](Self::set_pipeline_details).
+        ///
+        /// Runtime details for the pipelines of a running channel.
         pub fn pipeline_details(mut self, input: impl Into<crate::model::PipelineDetail>) -> Self {
             let mut v = self.pipeline_details.unwrap_or_default();
             v.push(input.into());
             self.pipeline_details = Some(v);
             self
         }
+        /// Runtime details for the pipelines of a running channel.
         pub fn set_pipeline_details(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PipelineDetail>>,
@@ -1051,6 +1131,7 @@ pub mod stop_channel_output {
             self.pipelines_running_count = Some(input);
             self
         }
+        /// The number of currently healthy pipelines.
         pub fn set_pipelines_running_count(mut self, input: std::option::Option<i32>) -> Self {
             self.pipelines_running_count = input;
             self
@@ -1060,6 +1141,7 @@ pub mod stop_channel_output {
             self.role_arn = Some(input.into());
             self
         }
+        /// The Amazon Resource Name (ARN) of the role assumed when running the Channel.
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -1069,10 +1151,16 @@ pub mod stop_channel_output {
             self.state = Some(input);
             self
         }
+        /// Placeholder documentation for ChannelState
         pub fn set_state(mut self, input: std::option::Option<crate::model::ChannelState>) -> Self {
             self.state = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// A collection of key-value pairs.
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1083,6 +1171,7 @@ pub mod stop_channel_output {
             self.tags = Some(hash_map);
             self
         }
+        /// A collection of key-value pairs.
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1097,6 +1186,7 @@ pub mod stop_channel_output {
             self.vpc = Some(input);
             self
         }
+        /// Settings for VPC output
         pub fn set_vpc(
             mut self,
             input: std::option::Option<crate::model::VpcOutputSettingsDescription>,
@@ -1203,16 +1293,23 @@ pub mod start_multiplex_output {
             self.arn = Some(input.into());
             self
         }
+        /// The unique arn of the multiplex.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
+        /// Appends an item to `availability_zones`.
+        ///
+        /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
+        ///
+        /// A list of availability zones for the multiplex.
         pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.availability_zones.unwrap_or_default();
             v.push(input.into());
             self.availability_zones = Some(v);
             self
         }
+        /// A list of availability zones for the multiplex.
         pub fn set_availability_zones(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1220,6 +1317,11 @@ pub mod start_multiplex_output {
             self.availability_zones = input;
             self
         }
+        /// Appends an item to `destinations`.
+        ///
+        /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
+        ///
+        /// A list of the multiplex output destinations.
         pub fn destinations(
             mut self,
             input: impl Into<crate::model::MultiplexOutputDestination>,
@@ -1229,6 +1331,7 @@ pub mod start_multiplex_output {
             self.destinations = Some(v);
             self
         }
+        /// A list of the multiplex output destinations.
         pub fn set_destinations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MultiplexOutputDestination>>,
@@ -1241,6 +1344,7 @@ pub mod start_multiplex_output {
             self.id = Some(input.into());
             self
         }
+        /// The unique id of the multiplex.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -1250,6 +1354,7 @@ pub mod start_multiplex_output {
             self.multiplex_settings = Some(input);
             self
         }
+        /// Configuration for a multiplex event.
         pub fn set_multiplex_settings(
             mut self,
             input: std::option::Option<crate::model::MultiplexSettings>,
@@ -1262,6 +1367,7 @@ pub mod start_multiplex_output {
             self.name = Some(input.into());
             self
         }
+        /// The name of the multiplex.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1271,6 +1377,7 @@ pub mod start_multiplex_output {
             self.pipelines_running_count = Some(input);
             self
         }
+        /// The number of currently healthy pipelines.
         pub fn set_pipelines_running_count(mut self, input: std::option::Option<i32>) -> Self {
             self.pipelines_running_count = input;
             self
@@ -1280,6 +1387,7 @@ pub mod start_multiplex_output {
             self.program_count = Some(input);
             self
         }
+        /// The number of programs in the multiplex.
         pub fn set_program_count(mut self, input: std::option::Option<i32>) -> Self {
             self.program_count = input;
             self
@@ -1289,6 +1397,7 @@ pub mod start_multiplex_output {
             self.state = Some(input);
             self
         }
+        /// The current state of the multiplex.
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::MultiplexState>,
@@ -1296,6 +1405,11 @@ pub mod start_multiplex_output {
             self.state = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// A collection of key-value pairs.
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1306,6 +1420,7 @@ pub mod start_multiplex_output {
             self.tags = Some(hash_map);
             self
         }
+        /// A collection of key-value pairs.
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1441,6 +1556,7 @@ pub mod start_channel_output {
             self.arn = Some(input.into());
             self
         }
+        /// The unique arn of the channel.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -1453,6 +1569,7 @@ pub mod start_channel_output {
             self.cdi_input_specification = Some(input);
             self
         }
+        /// Specification of CDI inputs for this channel
         pub fn set_cdi_input_specification(
             mut self,
             input: std::option::Option<crate::model::CdiInputSpecification>,
@@ -1465,6 +1582,7 @@ pub mod start_channel_output {
             self.channel_class = Some(input);
             self
         }
+        /// The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel with one pipeline.
         pub fn set_channel_class(
             mut self,
             input: std::option::Option<crate::model::ChannelClass>,
@@ -1472,12 +1590,22 @@ pub mod start_channel_output {
             self.channel_class = input;
             self
         }
+        /// Appends an item to `destinations`.
+        ///
+        /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
+        ///
+        /// A list of destinations of the channel. For UDP outputs, there is one
+        /// destination per output. For other types (HLS, for example), there is
+        /// one destination per packager.
         pub fn destinations(mut self, input: impl Into<crate::model::OutputDestination>) -> Self {
             let mut v = self.destinations.unwrap_or_default();
             v.push(input.into());
             self.destinations = Some(v);
             self
         }
+        /// A list of destinations of the channel. For UDP outputs, there is one
+        /// destination per output. For other types (HLS, for example), there is
+        /// one destination per packager.
         pub fn set_destinations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::OutputDestination>>,
@@ -1485,6 +1613,11 @@ pub mod start_channel_output {
             self.destinations = input;
             self
         }
+        /// Appends an item to `egress_endpoints`.
+        ///
+        /// To override the contents of this collection use [`set_egress_endpoints`](Self::set_egress_endpoints).
+        ///
+        /// The endpoints where outgoing connections initiate from
         pub fn egress_endpoints(
             mut self,
             input: impl Into<crate::model::ChannelEgressEndpoint>,
@@ -1494,6 +1627,7 @@ pub mod start_channel_output {
             self.egress_endpoints = Some(v);
             self
         }
+        /// The endpoints where outgoing connections initiate from
         pub fn set_egress_endpoints(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ChannelEgressEndpoint>>,
@@ -1506,6 +1640,7 @@ pub mod start_channel_output {
             self.encoder_settings = Some(input);
             self
         }
+        /// Encoder Settings
         pub fn set_encoder_settings(
             mut self,
             input: std::option::Option<crate::model::EncoderSettings>,
@@ -1518,10 +1653,16 @@ pub mod start_channel_output {
             self.id = Some(input.into());
             self
         }
+        /// The unique id of the channel.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
+        /// Appends an item to `input_attachments`.
+        ///
+        /// To override the contents of this collection use [`set_input_attachments`](Self::set_input_attachments).
+        ///
+        /// List of input attachments for channel.
         pub fn input_attachments(
             mut self,
             input: impl Into<crate::model::InputAttachment>,
@@ -1531,6 +1672,7 @@ pub mod start_channel_output {
             self.input_attachments = Some(v);
             self
         }
+        /// List of input attachments for channel.
         pub fn set_input_attachments(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InputAttachment>>,
@@ -1543,6 +1685,7 @@ pub mod start_channel_output {
             self.input_specification = Some(input);
             self
         }
+        /// Specification of network and file inputs for this channel
         pub fn set_input_specification(
             mut self,
             input: std::option::Option<crate::model::InputSpecification>,
@@ -1555,6 +1698,7 @@ pub mod start_channel_output {
             self.log_level = Some(input);
             self
         }
+        /// The log level being written to CloudWatch Logs.
         pub fn set_log_level(mut self, input: std::option::Option<crate::model::LogLevel>) -> Self {
             self.log_level = input;
             self
@@ -1564,16 +1708,23 @@ pub mod start_channel_output {
             self.name = Some(input.into());
             self
         }
+        /// The name of the channel. (user-mutable)
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
+        /// Appends an item to `pipeline_details`.
+        ///
+        /// To override the contents of this collection use [`set_pipeline_details`](Self::set_pipeline_details).
+        ///
+        /// Runtime details for the pipelines of a running channel.
         pub fn pipeline_details(mut self, input: impl Into<crate::model::PipelineDetail>) -> Self {
             let mut v = self.pipeline_details.unwrap_or_default();
             v.push(input.into());
             self.pipeline_details = Some(v);
             self
         }
+        /// Runtime details for the pipelines of a running channel.
         pub fn set_pipeline_details(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PipelineDetail>>,
@@ -1586,6 +1737,7 @@ pub mod start_channel_output {
             self.pipelines_running_count = Some(input);
             self
         }
+        /// The number of currently healthy pipelines.
         pub fn set_pipelines_running_count(mut self, input: std::option::Option<i32>) -> Self {
             self.pipelines_running_count = input;
             self
@@ -1595,6 +1747,7 @@ pub mod start_channel_output {
             self.role_arn = Some(input.into());
             self
         }
+        /// The Amazon Resource Name (ARN) of the role assumed when running the Channel.
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -1604,10 +1757,16 @@ pub mod start_channel_output {
             self.state = Some(input);
             self
         }
+        /// Placeholder documentation for ChannelState
         pub fn set_state(mut self, input: std::option::Option<crate::model::ChannelState>) -> Self {
             self.state = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// A collection of key-value pairs.
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1618,6 +1777,7 @@ pub mod start_channel_output {
             self.tags = Some(hash_map);
             self
         }
+        /// A collection of key-value pairs.
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1632,6 +1792,7 @@ pub mod start_channel_output {
             self.vpc = Some(input);
             self
         }
+        /// Settings for VPC output
         pub fn set_vpc(
             mut self,
             input: std::option::Option<crate::model::VpcOutputSettingsDescription>,
@@ -1728,6 +1889,7 @@ pub mod purchase_offering_output {
             self.reservation = Some(input);
             self
         }
+        /// Reserved resources available to use
         pub fn set_reservation(
             mut self,
             input: std::option::Option<crate::model::Reservation>,
@@ -1776,6 +1938,11 @@ pub mod list_tags_for_resource_output {
         >,
     }
     impl Builder {
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// Placeholder documentation for Tags
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1786,6 +1953,7 @@ pub mod list_tags_for_resource_output {
             self.tags = Some(hash_map);
             self
         }
+        /// Placeholder documentation for Tags
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1840,16 +2008,23 @@ pub mod list_reservations_output {
             self.next_token = Some(input.into());
             self
         }
+        /// Token to retrieve the next page of results
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
+        /// Appends an item to `reservations`.
+        ///
+        /// To override the contents of this collection use [`set_reservations`](Self::set_reservations).
+        ///
+        /// List of reservations
         pub fn reservations(mut self, input: impl Into<crate::model::Reservation>) -> Self {
             let mut v = self.reservations.unwrap_or_default();
             v.push(input.into());
             self.reservations = Some(v);
             self
         }
+        /// List of reservations
         pub fn set_reservations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Reservation>>,
@@ -1905,16 +2080,23 @@ pub mod list_offerings_output {
             self.next_token = Some(input.into());
             self
         }
+        /// Token to retrieve the next page of results
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
+        /// Appends an item to `offerings`.
+        ///
+        /// To override the contents of this collection use [`set_offerings`](Self::set_offerings).
+        ///
+        /// List of offerings
         pub fn offerings(mut self, input: impl Into<crate::model::Offering>) -> Self {
             let mut v = self.offerings.unwrap_or_default();
             v.push(input.into());
             self.offerings = Some(v);
             self
         }
+        /// List of offerings
         pub fn set_offerings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Offering>>,
@@ -1967,6 +2149,11 @@ pub mod list_multiplex_programs_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `multiplex_programs`.
+        ///
+        /// To override the contents of this collection use [`set_multiplex_programs`](Self::set_multiplex_programs).
+        ///
+        /// List of multiplex programs.
         pub fn multiplex_programs(
             mut self,
             input: impl Into<crate::model::MultiplexProgramSummary>,
@@ -1976,6 +2163,7 @@ pub mod list_multiplex_programs_output {
             self.multiplex_programs = Some(v);
             self
         }
+        /// List of multiplex programs.
         pub fn set_multiplex_programs(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MultiplexProgramSummary>>,
@@ -1988,6 +2176,7 @@ pub mod list_multiplex_programs_output {
             self.next_token = Some(input.into());
             self
         }
+        /// Token for the next ListMultiplexProgram request.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2035,12 +2224,18 @@ pub mod list_multiplexes_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `multiplexes`.
+        ///
+        /// To override the contents of this collection use [`set_multiplexes`](Self::set_multiplexes).
+        ///
+        /// List of multiplexes.
         pub fn multiplexes(mut self, input: impl Into<crate::model::MultiplexSummary>) -> Self {
             let mut v = self.multiplexes.unwrap_or_default();
             v.push(input.into());
             self.multiplexes = Some(v);
             self
         }
+        /// List of multiplexes.
         pub fn set_multiplexes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MultiplexSummary>>,
@@ -2053,6 +2248,7 @@ pub mod list_multiplexes_output {
             self.next_token = Some(input.into());
             self
         }
+        /// Token for the next ListMultiplexes request.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2101,6 +2297,11 @@ pub mod list_input_security_groups_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `input_security_groups`.
+        ///
+        /// To override the contents of this collection use [`set_input_security_groups`](Self::set_input_security_groups).
+        ///
+        /// List of input security groups
         pub fn input_security_groups(
             mut self,
             input: impl Into<crate::model::InputSecurityGroup>,
@@ -2110,6 +2311,7 @@ pub mod list_input_security_groups_output {
             self.input_security_groups = Some(v);
             self
         }
+        /// List of input security groups
         pub fn set_input_security_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InputSecurityGroup>>,
@@ -2122,6 +2324,7 @@ pub mod list_input_security_groups_output {
             self.next_token = Some(input.into());
             self
         }
+        /// Placeholder documentation for __string
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2169,12 +2372,18 @@ pub mod list_inputs_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `inputs`.
+        ///
+        /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
+        ///
+        /// Placeholder documentation for __listOfInput
         pub fn inputs(mut self, input: impl Into<crate::model::Input>) -> Self {
             let mut v = self.inputs.unwrap_or_default();
             v.push(input.into());
             self.inputs = Some(v);
             self
         }
+        /// Placeholder documentation for __listOfInput
         pub fn set_inputs(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Input>>,
@@ -2187,6 +2396,7 @@ pub mod list_inputs_output {
             self.next_token = Some(input.into());
             self
         }
+        /// Placeholder documentation for __string
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2236,6 +2446,11 @@ pub mod list_input_device_transfers_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `input_device_transfers`.
+        ///
+        /// To override the contents of this collection use [`set_input_device_transfers`](Self::set_input_device_transfers).
+        ///
+        /// The list of devices that you are transferring or are being transferred to you.
         pub fn input_device_transfers(
             mut self,
             input: impl Into<crate::model::TransferringInputDeviceSummary>,
@@ -2245,6 +2460,7 @@ pub mod list_input_device_transfers_output {
             self.input_device_transfers = Some(v);
             self
         }
+        /// The list of devices that you are transferring or are being transferred to you.
         pub fn set_input_device_transfers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TransferringInputDeviceSummary>>,
@@ -2257,6 +2473,7 @@ pub mod list_input_device_transfers_output {
             self.next_token = Some(input.into());
             self
         }
+        /// A token to get additional list results.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2305,12 +2522,18 @@ pub mod list_input_devices_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `input_devices`.
+        ///
+        /// To override the contents of this collection use [`set_input_devices`](Self::set_input_devices).
+        ///
+        /// The list of input devices.
         pub fn input_devices(mut self, input: impl Into<crate::model::InputDeviceSummary>) -> Self {
             let mut v = self.input_devices.unwrap_or_default();
             v.push(input.into());
             self.input_devices = Some(v);
             self
         }
+        /// The list of input devices.
         pub fn set_input_devices(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InputDeviceSummary>>,
@@ -2323,6 +2546,7 @@ pub mod list_input_devices_output {
             self.next_token = Some(input.into());
             self
         }
+        /// A token to get additional list results.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2370,12 +2594,18 @@ pub mod list_channels_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `channels`.
+        ///
+        /// To override the contents of this collection use [`set_channels`](Self::set_channels).
+        ///
+        /// Placeholder documentation for __listOfChannelSummary
         pub fn channels(mut self, input: impl Into<crate::model::ChannelSummary>) -> Self {
             let mut v = self.channels.unwrap_or_default();
             v.push(input.into());
             self.channels = Some(v);
             self
         }
+        /// Placeholder documentation for __listOfChannelSummary
         pub fn set_channels(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ChannelSummary>>,
@@ -2388,6 +2618,7 @@ pub mod list_channels_output {
             self.next_token = Some(input.into());
             self
         }
+        /// Placeholder documentation for __string
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2441,16 +2672,23 @@ pub mod describe_schedule_output {
             self.next_token = Some(input.into());
             self
         }
+        /// The next token; for use in pagination.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
+        /// Appends an item to `schedule_actions`.
+        ///
+        /// To override the contents of this collection use [`set_schedule_actions`](Self::set_schedule_actions).
+        ///
+        /// The list of actions in the schedule.
         pub fn schedule_actions(mut self, input: impl Into<crate::model::ScheduleAction>) -> Self {
             let mut v = self.schedule_actions.unwrap_or_default();
             v.push(input.into());
             self.schedule_actions = Some(v);
             self
         }
+        /// The list of actions in the schedule.
         pub fn set_schedule_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ScheduleAction>>,
@@ -2574,6 +2812,7 @@ pub mod describe_reservation_output {
             self.arn = Some(input.into());
             self
         }
+        /// Unique reservation ARN, e.g. 'arn:aws:medialive:us-west-2:123456789012:reservation:1234567'
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -2583,6 +2822,7 @@ pub mod describe_reservation_output {
             self.count = Some(input);
             self
         }
+        /// Number of reserved resources
         pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
             self.count = input;
             self
@@ -2592,6 +2832,7 @@ pub mod describe_reservation_output {
             self.currency_code = Some(input.into());
             self
         }
+        /// Currency code for usagePrice and fixedPrice in ISO-4217 format, e.g. 'USD'
         pub fn set_currency_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2604,6 +2845,7 @@ pub mod describe_reservation_output {
             self.duration = Some(input);
             self
         }
+        /// Lease duration, e.g. '12'
         pub fn set_duration(mut self, input: std::option::Option<i32>) -> Self {
             self.duration = input;
             self
@@ -2613,6 +2855,7 @@ pub mod describe_reservation_output {
             self.duration_units = Some(input);
             self
         }
+        /// Units for duration, e.g. 'MONTHS'
         pub fn set_duration_units(
             mut self,
             input: std::option::Option<crate::model::OfferingDurationUnits>,
@@ -2625,6 +2868,7 @@ pub mod describe_reservation_output {
             self.end = Some(input.into());
             self
         }
+        /// Reservation UTC end date and time in ISO-8601 format, e.g. '2019-03-01T00:00:00'
         pub fn set_end(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.end = input;
             self
@@ -2634,6 +2878,7 @@ pub mod describe_reservation_output {
             self.fixed_price = Some(input);
             self
         }
+        /// One-time charge for each reserved resource, e.g. '0.0' for a NO_UPFRONT offering
         pub fn set_fixed_price(mut self, input: std::option::Option<f64>) -> Self {
             self.fixed_price = input;
             self
@@ -2643,6 +2888,7 @@ pub mod describe_reservation_output {
             self.name = Some(input.into());
             self
         }
+        /// User specified reservation name
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2652,6 +2898,7 @@ pub mod describe_reservation_output {
             self.offering_description = Some(input.into());
             self
         }
+        /// Offering description, e.g. 'HD AVC output at 10-20 Mbps, 30 fps, and standard VQ in US West (Oregon)'
         pub fn set_offering_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2664,6 +2911,7 @@ pub mod describe_reservation_output {
             self.offering_id = Some(input.into());
             self
         }
+        /// Unique offering ID, e.g. '87654321'
         pub fn set_offering_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.offering_id = input;
             self
@@ -2673,6 +2921,7 @@ pub mod describe_reservation_output {
             self.offering_type = Some(input);
             self
         }
+        /// Offering type, e.g. 'NO_UPFRONT'
         pub fn set_offering_type(
             mut self,
             input: std::option::Option<crate::model::OfferingType>,
@@ -2685,6 +2934,7 @@ pub mod describe_reservation_output {
             self.region = Some(input.into());
             self
         }
+        /// AWS region, e.g. 'us-west-2'
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
@@ -2694,6 +2944,7 @@ pub mod describe_reservation_output {
             self.reservation_id = Some(input.into());
             self
         }
+        /// Unique reservation ID, e.g. '1234567'
         pub fn set_reservation_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2709,6 +2960,7 @@ pub mod describe_reservation_output {
             self.resource_specification = Some(input);
             self
         }
+        /// Resource configuration details
         pub fn set_resource_specification(
             mut self,
             input: std::option::Option<crate::model::ReservationResourceSpecification>,
@@ -2721,6 +2973,7 @@ pub mod describe_reservation_output {
             self.start = Some(input.into());
             self
         }
+        /// Reservation UTC start date and time in ISO-8601 format, e.g. '2018-03-01T00:00:00'
         pub fn set_start(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.start = input;
             self
@@ -2730,6 +2983,7 @@ pub mod describe_reservation_output {
             self.state = Some(input);
             self
         }
+        /// Current state of reservation, e.g. 'ACTIVE'
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::ReservationState>,
@@ -2737,6 +2991,11 @@ pub mod describe_reservation_output {
             self.state = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// A collection of key-value pairs
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2747,6 +3006,7 @@ pub mod describe_reservation_output {
             self.tags = Some(hash_map);
             self
         }
+        /// A collection of key-value pairs
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2761,6 +3021,7 @@ pub mod describe_reservation_output {
             self.usage_price = Some(input);
             self
         }
+        /// Recurring usage charge for each reserved resource, e.g. '157.0'
         pub fn set_usage_price(mut self, input: std::option::Option<f64>) -> Self {
             self.usage_price = input;
             self
@@ -2866,6 +3127,7 @@ pub mod describe_offering_output {
             self.arn = Some(input.into());
             self
         }
+        /// Unique offering ARN, e.g. 'arn:aws:medialive:us-west-2:123456789012:offering:87654321'
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -2875,6 +3137,7 @@ pub mod describe_offering_output {
             self.currency_code = Some(input.into());
             self
         }
+        /// Currency code for usagePrice and fixedPrice in ISO-4217 format, e.g. 'USD'
         pub fn set_currency_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2887,6 +3150,7 @@ pub mod describe_offering_output {
             self.duration = Some(input);
             self
         }
+        /// Lease duration, e.g. '12'
         pub fn set_duration(mut self, input: std::option::Option<i32>) -> Self {
             self.duration = input;
             self
@@ -2896,6 +3160,7 @@ pub mod describe_offering_output {
             self.duration_units = Some(input);
             self
         }
+        /// Units for duration, e.g. 'MONTHS'
         pub fn set_duration_units(
             mut self,
             input: std::option::Option<crate::model::OfferingDurationUnits>,
@@ -2908,6 +3173,7 @@ pub mod describe_offering_output {
             self.fixed_price = Some(input);
             self
         }
+        /// One-time charge for each reserved resource, e.g. '0.0' for a NO_UPFRONT offering
         pub fn set_fixed_price(mut self, input: std::option::Option<f64>) -> Self {
             self.fixed_price = input;
             self
@@ -2917,6 +3183,7 @@ pub mod describe_offering_output {
             self.offering_description = Some(input.into());
             self
         }
+        /// Offering description, e.g. 'HD AVC output at 10-20 Mbps, 30 fps, and standard VQ in US West (Oregon)'
         pub fn set_offering_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2929,6 +3196,7 @@ pub mod describe_offering_output {
             self.offering_id = Some(input.into());
             self
         }
+        /// Unique offering ID, e.g. '87654321'
         pub fn set_offering_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.offering_id = input;
             self
@@ -2938,6 +3206,7 @@ pub mod describe_offering_output {
             self.offering_type = Some(input);
             self
         }
+        /// Offering type, e.g. 'NO_UPFRONT'
         pub fn set_offering_type(
             mut self,
             input: std::option::Option<crate::model::OfferingType>,
@@ -2950,6 +3219,7 @@ pub mod describe_offering_output {
             self.region = Some(input.into());
             self
         }
+        /// AWS region, e.g. 'us-west-2'
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
@@ -2962,6 +3232,7 @@ pub mod describe_offering_output {
             self.resource_specification = Some(input);
             self
         }
+        /// Resource configuration details
         pub fn set_resource_specification(
             mut self,
             input: std::option::Option<crate::model::ReservationResourceSpecification>,
@@ -2974,6 +3245,7 @@ pub mod describe_offering_output {
             self.usage_price = Some(input);
             self
         }
+        /// Recurring usage charge for each reserved resource, e.g. '157.0'
         pub fn set_usage_price(mut self, input: std::option::Option<f64>) -> Self {
             self.usage_price = input;
             self
@@ -3055,6 +3327,7 @@ pub mod describe_multiplex_program_output {
             self.channel_id = Some(input.into());
             self
         }
+        /// The MediaLive channel associated with the program.
         pub fn set_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.channel_id = input;
             self
@@ -3067,6 +3340,7 @@ pub mod describe_multiplex_program_output {
             self.multiplex_program_settings = Some(input);
             self
         }
+        /// The settings for this multiplex program.
         pub fn set_multiplex_program_settings(
             mut self,
             input: std::option::Option<crate::model::MultiplexProgramSettings>,
@@ -3082,6 +3356,7 @@ pub mod describe_multiplex_program_output {
             self.packet_identifiers_map = Some(input);
             self
         }
+        /// The packet identifier map for this multiplex program.
         pub fn set_packet_identifiers_map(
             mut self,
             input: std::option::Option<crate::model::MultiplexProgramPacketIdentifiersMap>,
@@ -3089,6 +3364,11 @@ pub mod describe_multiplex_program_output {
             self.packet_identifiers_map = input;
             self
         }
+        /// Appends an item to `pipeline_details`.
+        ///
+        /// To override the contents of this collection use [`set_pipeline_details`](Self::set_pipeline_details).
+        ///
+        /// Contains information about the current sources for the specified program in the specified multiplex. Keep in mind that each multiplex pipeline connects to both pipelines in a given source channel (the channel identified by the program). But only one of those channel pipelines is ever active at one time.
         pub fn pipeline_details(
             mut self,
             input: impl Into<crate::model::MultiplexProgramPipelineDetail>,
@@ -3098,6 +3378,7 @@ pub mod describe_multiplex_program_output {
             self.pipeline_details = Some(v);
             self
         }
+        /// Contains information about the current sources for the specified program in the specified multiplex. Keep in mind that each multiplex pipeline connects to both pipelines in a given source channel (the channel identified by the program). But only one of those channel pipelines is ever active at one time.
         pub fn set_pipeline_details(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MultiplexProgramPipelineDetail>>,
@@ -3110,6 +3391,7 @@ pub mod describe_multiplex_program_output {
             self.program_name = Some(input.into());
             self
         }
+        /// The name of the multiplex program.
         pub fn set_program_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.program_name = input;
             self
@@ -3201,16 +3483,23 @@ pub mod describe_multiplex_output {
             self.arn = Some(input.into());
             self
         }
+        /// The unique arn of the multiplex.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
+        /// Appends an item to `availability_zones`.
+        ///
+        /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
+        ///
+        /// A list of availability zones for the multiplex.
         pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.availability_zones.unwrap_or_default();
             v.push(input.into());
             self.availability_zones = Some(v);
             self
         }
+        /// A list of availability zones for the multiplex.
         pub fn set_availability_zones(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3218,6 +3507,11 @@ pub mod describe_multiplex_output {
             self.availability_zones = input;
             self
         }
+        /// Appends an item to `destinations`.
+        ///
+        /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
+        ///
+        /// A list of the multiplex output destinations.
         pub fn destinations(
             mut self,
             input: impl Into<crate::model::MultiplexOutputDestination>,
@@ -3227,6 +3521,7 @@ pub mod describe_multiplex_output {
             self.destinations = Some(v);
             self
         }
+        /// A list of the multiplex output destinations.
         pub fn set_destinations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MultiplexOutputDestination>>,
@@ -3239,6 +3534,7 @@ pub mod describe_multiplex_output {
             self.id = Some(input.into());
             self
         }
+        /// The unique id of the multiplex.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -3248,6 +3544,7 @@ pub mod describe_multiplex_output {
             self.multiplex_settings = Some(input);
             self
         }
+        /// Configuration for a multiplex event.
         pub fn set_multiplex_settings(
             mut self,
             input: std::option::Option<crate::model::MultiplexSettings>,
@@ -3260,6 +3557,7 @@ pub mod describe_multiplex_output {
             self.name = Some(input.into());
             self
         }
+        /// The name of the multiplex.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -3269,6 +3567,7 @@ pub mod describe_multiplex_output {
             self.pipelines_running_count = Some(input);
             self
         }
+        /// The number of currently healthy pipelines.
         pub fn set_pipelines_running_count(mut self, input: std::option::Option<i32>) -> Self {
             self.pipelines_running_count = input;
             self
@@ -3278,6 +3577,7 @@ pub mod describe_multiplex_output {
             self.program_count = Some(input);
             self
         }
+        /// The number of programs in the multiplex.
         pub fn set_program_count(mut self, input: std::option::Option<i32>) -> Self {
             self.program_count = input;
             self
@@ -3287,6 +3587,7 @@ pub mod describe_multiplex_output {
             self.state = Some(input);
             self
         }
+        /// The current state of the multiplex.
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::MultiplexState>,
@@ -3294,6 +3595,11 @@ pub mod describe_multiplex_output {
             self.state = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// A collection of key-value pairs.
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -3304,6 +3610,7 @@ pub mod describe_multiplex_output {
             self.tags = Some(hash_map);
             self
         }
+        /// A collection of key-value pairs.
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -3389,6 +3696,7 @@ pub mod describe_input_security_group_output {
             self.arn = Some(input.into());
             self
         }
+        /// Unique ARN of Input Security Group
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -3398,16 +3706,23 @@ pub mod describe_input_security_group_output {
             self.id = Some(input.into());
             self
         }
+        /// The Id of the Input Security Group
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
+        /// Appends an item to `inputs`.
+        ///
+        /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
+        ///
+        /// The list of inputs currently using this Input Security Group.
         pub fn inputs(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.inputs.unwrap_or_default();
             v.push(input.into());
             self.inputs = Some(v);
             self
         }
+        /// The list of inputs currently using this Input Security Group.
         pub fn set_inputs(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3420,6 +3735,7 @@ pub mod describe_input_security_group_output {
             self.state = Some(input);
             self
         }
+        /// The current state of the Input Security Group.
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::InputSecurityGroupState>,
@@ -3427,6 +3743,11 @@ pub mod describe_input_security_group_output {
             self.state = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// A collection of key-value pairs.
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -3437,6 +3758,7 @@ pub mod describe_input_security_group_output {
             self.tags = Some(hash_map);
             self
         }
+        /// A collection of key-value pairs.
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -3446,6 +3768,11 @@ pub mod describe_input_security_group_output {
             self.tags = input;
             self
         }
+        /// Appends an item to `whitelist_rules`.
+        ///
+        /// To override the contents of this collection use [`set_whitelist_rules`](Self::set_whitelist_rules).
+        ///
+        /// Whitelist rules and their sync status
         pub fn whitelist_rules(
             mut self,
             input: impl Into<crate::model::InputWhitelistRule>,
@@ -3455,6 +3782,7 @@ pub mod describe_input_security_group_output {
             self.whitelist_rules = Some(v);
             self
         }
+        /// Whitelist rules and their sync status
         pub fn set_whitelist_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InputWhitelistRule>>,
@@ -3486,7 +3814,7 @@ impl DescribeInputSecurityGroupOutput {
 #[non_exhaustive]
 pub struct DescribeInputDeviceThumbnailOutput {
     /// The binary data for the thumbnail that the Link device has most recently sent to MediaLive.
-    pub body: smithy_http::byte_stream::ByteStream,
+    pub body: aws_smithy_http::byte_stream::ByteStream,
     /// Specifies the media type of the thumbnail.
     pub content_type: std::option::Option<crate::model::ContentType>,
     /// The length of the content.
@@ -3494,7 +3822,7 @@ pub struct DescribeInputDeviceThumbnailOutput {
     /// The unique, cacheable version of this thumbnail.
     pub e_tag: std::option::Option<std::string::String>,
     /// The date and time the thumbnail was last updated at the device.
-    pub last_modified: std::option::Option<smithy_types::Instant>,
+    pub last_modified: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for DescribeInputDeviceThumbnailOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3513,21 +3841,22 @@ pub mod describe_input_device_thumbnail_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) body: std::option::Option<smithy_http::byte_stream::ByteStream>,
+        pub(crate) body: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
         pub(crate) content_type: std::option::Option<crate::model::ContentType>,
         pub(crate) content_length: std::option::Option<i64>,
         pub(crate) e_tag: std::option::Option<std::string::String>,
-        pub(crate) last_modified: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_modified: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// The binary data for the thumbnail that the Link device has most recently sent to MediaLive.
-        pub fn body(mut self, input: smithy_http::byte_stream::ByteStream) -> Self {
+        pub fn body(mut self, input: aws_smithy_http::byte_stream::ByteStream) -> Self {
             self.body = Some(input);
             self
         }
+        /// The binary data for the thumbnail that the Link device has most recently sent to MediaLive.
         pub fn set_body(
             mut self,
-            input: std::option::Option<smithy_http::byte_stream::ByteStream>,
+            input: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
         ) -> Self {
             self.body = input;
             self
@@ -3537,6 +3866,7 @@ pub mod describe_input_device_thumbnail_output {
             self.content_type = Some(input);
             self
         }
+        /// Specifies the media type of the thumbnail.
         pub fn set_content_type(
             mut self,
             input: std::option::Option<crate::model::ContentType>,
@@ -3549,6 +3879,7 @@ pub mod describe_input_device_thumbnail_output {
             self.content_length = Some(input);
             self
         }
+        /// The length of the content.
         pub fn set_content_length(mut self, input: std::option::Option<i64>) -> Self {
             self.content_length = input;
             self
@@ -3558,18 +3889,20 @@ pub mod describe_input_device_thumbnail_output {
             self.e_tag = Some(input.into());
             self
         }
+        /// The unique, cacheable version of this thumbnail.
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.e_tag = input;
             self
         }
         /// The date and time the thumbnail was last updated at the device.
-        pub fn last_modified(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_modified(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_modified = Some(input);
             self
         }
+        /// The date and time the thumbnail was last updated at the device.
         pub fn set_last_modified(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_modified = input;
             self
@@ -3669,6 +4002,7 @@ pub mod describe_input_device_output {
             self.arn = Some(input.into());
             self
         }
+        /// The unique ARN of the input device.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -3678,6 +4012,7 @@ pub mod describe_input_device_output {
             self.connection_state = Some(input);
             self
         }
+        /// The state of the connection between the input device and AWS.
         pub fn set_connection_state(
             mut self,
             input: std::option::Option<crate::model::InputDeviceConnectionState>,
@@ -3693,6 +4028,7 @@ pub mod describe_input_device_output {
             self.device_settings_sync_state = Some(input);
             self
         }
+        /// The status of the action to synchronize the device configuration. If you change the configuration of the input device (for example, the maximum bitrate), MediaLive sends the new data to the device. The device might not update itself immediately. SYNCED means the device has updated its configuration. SYNCING means that it has not updated its configuration.
         pub fn set_device_settings_sync_state(
             mut self,
             input: std::option::Option<crate::model::DeviceSettingsSyncState>,
@@ -3705,6 +4041,7 @@ pub mod describe_input_device_output {
             self.device_update_status = Some(input);
             self
         }
+        /// The status of software on the input device.
         pub fn set_device_update_status(
             mut self,
             input: std::option::Option<crate::model::DeviceUpdateStatus>,
@@ -3717,6 +4054,7 @@ pub mod describe_input_device_output {
             self.hd_device_settings = Some(input);
             self
         }
+        /// Settings that describe an input device that is type HD.
         pub fn set_hd_device_settings(
             mut self,
             input: std::option::Option<crate::model::InputDeviceHdSettings>,
@@ -3729,6 +4067,7 @@ pub mod describe_input_device_output {
             self.id = Some(input.into());
             self
         }
+        /// The unique ID of the input device.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -3738,6 +4077,7 @@ pub mod describe_input_device_output {
             self.mac_address = Some(input.into());
             self
         }
+        /// The network MAC address of the input device.
         pub fn set_mac_address(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mac_address = input;
             self
@@ -3747,6 +4087,7 @@ pub mod describe_input_device_output {
             self.name = Some(input.into());
             self
         }
+        /// A name that you specify for the input device.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -3756,6 +4097,7 @@ pub mod describe_input_device_output {
             self.network_settings = Some(input);
             self
         }
+        /// The network settings for the input device.
         pub fn set_network_settings(
             mut self,
             input: std::option::Option<crate::model::InputDeviceNetworkSettings>,
@@ -3768,6 +4110,7 @@ pub mod describe_input_device_output {
             self.serial_number = Some(input.into());
             self
         }
+        /// The unique serial number of the input device.
         pub fn set_serial_number(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3780,6 +4123,7 @@ pub mod describe_input_device_output {
             self.r#type = Some(input);
             self
         }
+        /// The type of the input device.
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::InputDeviceType>,
@@ -3792,6 +4136,7 @@ pub mod describe_input_device_output {
             self.uhd_device_settings = Some(input);
             self
         }
+        /// Settings that describe an input device that is type UHD.
         pub fn set_uhd_device_settings(
             mut self,
             input: std::option::Option<crate::model::InputDeviceUhdSettings>,
@@ -3920,16 +4265,23 @@ pub mod describe_input_output {
             self.arn = Some(input.into());
             self
         }
+        /// The Unique ARN of the input (generated, immutable).
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
+        /// Appends an item to `attached_channels`.
+        ///
+        /// To override the contents of this collection use [`set_attached_channels`](Self::set_attached_channels).
+        ///
+        /// A list of channel IDs that that input is attached to (currently an input can only be attached to one channel).
         pub fn attached_channels(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.attached_channels.unwrap_or_default();
             v.push(input.into());
             self.attached_channels = Some(v);
             self
         }
+        /// A list of channel IDs that that input is attached to (currently an input can only be attached to one channel).
         pub fn set_attached_channels(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3937,12 +4289,18 @@ pub mod describe_input_output {
             self.attached_channels = input;
             self
         }
+        /// Appends an item to `destinations`.
+        ///
+        /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
+        ///
+        /// A list of the destinations of the input (PUSH-type).
         pub fn destinations(mut self, input: impl Into<crate::model::InputDestination>) -> Self {
             let mut v = self.destinations.unwrap_or_default();
             v.push(input.into());
             self.destinations = Some(v);
             self
         }
+        /// A list of the destinations of the input (PUSH-type).
         pub fn set_destinations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InputDestination>>,
@@ -3955,6 +4313,7 @@ pub mod describe_input_output {
             self.id = Some(input.into());
             self
         }
+        /// The generated ID of the input (unique for user account, immutable).
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -3965,6 +4324,8 @@ pub mod describe_input_output {
             self.input_class = Some(input);
             self
         }
+        /// STANDARD - MediaLive expects two sources to be connected to this input. If the channel is also STANDARD, both sources will be ingested. If the channel is SINGLE_PIPELINE, only the first source will be ingested; the second source will always be ignored, even if the first source fails.
+        /// SINGLE_PIPELINE - You can connect only one source to this input. If the ChannelClass is also  SINGLE_PIPELINE, this value is valid. If the ChannelClass is STANDARD, this value is not valid because the channel requires two sources in the input.
         pub fn set_input_class(
             mut self,
             input: std::option::Option<crate::model::InputClass>,
@@ -3972,6 +4333,11 @@ pub mod describe_input_output {
             self.input_class = input;
             self
         }
+        /// Appends an item to `input_devices`.
+        ///
+        /// To override the contents of this collection use [`set_input_devices`](Self::set_input_devices).
+        ///
+        /// Settings for the input devices.
         pub fn input_devices(
             mut self,
             input: impl Into<crate::model::InputDeviceSettings>,
@@ -3981,6 +4347,7 @@ pub mod describe_input_output {
             self.input_devices = Some(v);
             self
         }
+        /// Settings for the input devices.
         pub fn set_input_devices(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InputDeviceSettings>>,
@@ -3988,12 +4355,18 @@ pub mod describe_input_output {
             self.input_devices = input;
             self
         }
+        /// Appends an item to `input_partner_ids`.
+        ///
+        /// To override the contents of this collection use [`set_input_partner_ids`](Self::set_input_partner_ids).
+        ///
+        /// A list of IDs for all Inputs which are partners of this one.
         pub fn input_partner_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.input_partner_ids.unwrap_or_default();
             v.push(input.into());
             self.input_partner_ids = Some(v);
             self
         }
+        /// A list of IDs for all Inputs which are partners of this one.
         pub fn set_input_partner_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4007,6 +4380,8 @@ pub mod describe_input_output {
             self.input_source_type = Some(input);
             self
         }
+        /// Certain pull input sources can be dynamic, meaning that they can have their URL's dynamically changes
+        /// during input switch actions. Presently, this functionality only works with MP4_FILE and TS_FILE inputs.
         pub fn set_input_source_type(
             mut self,
             input: std::option::Option<crate::model::InputSourceType>,
@@ -4014,6 +4389,11 @@ pub mod describe_input_output {
             self.input_source_type = input;
             self
         }
+        /// Appends an item to `media_connect_flows`.
+        ///
+        /// To override the contents of this collection use [`set_media_connect_flows`](Self::set_media_connect_flows).
+        ///
+        /// A list of MediaConnect Flows for this input.
         pub fn media_connect_flows(
             mut self,
             input: impl Into<crate::model::MediaConnectFlow>,
@@ -4023,6 +4403,7 @@ pub mod describe_input_output {
             self.media_connect_flows = Some(v);
             self
         }
+        /// A list of MediaConnect Flows for this input.
         pub fn set_media_connect_flows(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MediaConnectFlow>>,
@@ -4035,6 +4416,7 @@ pub mod describe_input_output {
             self.name = Some(input.into());
             self
         }
+        /// The user-assigned name (This is a mutable value).
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -4044,16 +4426,23 @@ pub mod describe_input_output {
             self.role_arn = Some(input.into());
             self
         }
+        /// The Amazon Resource Name (ARN) of the role this input assumes during and after creation.
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
         }
+        /// Appends an item to `security_groups`.
+        ///
+        /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
+        ///
+        /// A list of IDs for all the Input Security Groups attached to the input.
         pub fn security_groups(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_groups.unwrap_or_default();
             v.push(input.into());
             self.security_groups = Some(v);
             self
         }
+        /// A list of IDs for all the Input Security Groups attached to the input.
         pub fn set_security_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4061,12 +4450,18 @@ pub mod describe_input_output {
             self.security_groups = input;
             self
         }
+        /// Appends an item to `sources`.
+        ///
+        /// To override the contents of this collection use [`set_sources`](Self::set_sources).
+        ///
+        /// A list of the sources of the input (PULL-type).
         pub fn sources(mut self, input: impl Into<crate::model::InputSource>) -> Self {
             let mut v = self.sources.unwrap_or_default();
             v.push(input.into());
             self.sources = Some(v);
             self
         }
+        /// A list of the sources of the input (PULL-type).
         pub fn set_sources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InputSource>>,
@@ -4079,10 +4474,16 @@ pub mod describe_input_output {
             self.state = Some(input);
             self
         }
+        /// Placeholder documentation for InputState
         pub fn set_state(mut self, input: std::option::Option<crate::model::InputState>) -> Self {
             self.state = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// A collection of key-value pairs.
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -4093,6 +4494,7 @@ pub mod describe_input_output {
             self.tags = Some(hash_map);
             self
         }
+        /// A collection of key-value pairs.
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -4107,6 +4509,7 @@ pub mod describe_input_output {
             self.r#type = Some(input);
             self
         }
+        /// The different types of inputs that AWS Elemental MediaLive supports.
         pub fn set_type(mut self, input: std::option::Option<crate::model::InputType>) -> Self {
             self.r#type = input;
             self
@@ -4243,6 +4646,7 @@ pub mod describe_channel_output {
             self.arn = Some(input.into());
             self
         }
+        /// The unique arn of the channel.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -4255,6 +4659,7 @@ pub mod describe_channel_output {
             self.cdi_input_specification = Some(input);
             self
         }
+        /// Specification of CDI inputs for this channel
         pub fn set_cdi_input_specification(
             mut self,
             input: std::option::Option<crate::model::CdiInputSpecification>,
@@ -4267,6 +4672,7 @@ pub mod describe_channel_output {
             self.channel_class = Some(input);
             self
         }
+        /// The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel with one pipeline.
         pub fn set_channel_class(
             mut self,
             input: std::option::Option<crate::model::ChannelClass>,
@@ -4274,12 +4680,22 @@ pub mod describe_channel_output {
             self.channel_class = input;
             self
         }
+        /// Appends an item to `destinations`.
+        ///
+        /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
+        ///
+        /// A list of destinations of the channel. For UDP outputs, there is one
+        /// destination per output. For other types (HLS, for example), there is
+        /// one destination per packager.
         pub fn destinations(mut self, input: impl Into<crate::model::OutputDestination>) -> Self {
             let mut v = self.destinations.unwrap_or_default();
             v.push(input.into());
             self.destinations = Some(v);
             self
         }
+        /// A list of destinations of the channel. For UDP outputs, there is one
+        /// destination per output. For other types (HLS, for example), there is
+        /// one destination per packager.
         pub fn set_destinations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::OutputDestination>>,
@@ -4287,6 +4703,11 @@ pub mod describe_channel_output {
             self.destinations = input;
             self
         }
+        /// Appends an item to `egress_endpoints`.
+        ///
+        /// To override the contents of this collection use [`set_egress_endpoints`](Self::set_egress_endpoints).
+        ///
+        /// The endpoints where outgoing connections initiate from
         pub fn egress_endpoints(
             mut self,
             input: impl Into<crate::model::ChannelEgressEndpoint>,
@@ -4296,6 +4717,7 @@ pub mod describe_channel_output {
             self.egress_endpoints = Some(v);
             self
         }
+        /// The endpoints where outgoing connections initiate from
         pub fn set_egress_endpoints(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ChannelEgressEndpoint>>,
@@ -4308,6 +4730,7 @@ pub mod describe_channel_output {
             self.encoder_settings = Some(input);
             self
         }
+        /// Encoder Settings
         pub fn set_encoder_settings(
             mut self,
             input: std::option::Option<crate::model::EncoderSettings>,
@@ -4320,10 +4743,16 @@ pub mod describe_channel_output {
             self.id = Some(input.into());
             self
         }
+        /// The unique id of the channel.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
+        /// Appends an item to `input_attachments`.
+        ///
+        /// To override the contents of this collection use [`set_input_attachments`](Self::set_input_attachments).
+        ///
+        /// List of input attachments for channel.
         pub fn input_attachments(
             mut self,
             input: impl Into<crate::model::InputAttachment>,
@@ -4333,6 +4762,7 @@ pub mod describe_channel_output {
             self.input_attachments = Some(v);
             self
         }
+        /// List of input attachments for channel.
         pub fn set_input_attachments(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InputAttachment>>,
@@ -4345,6 +4775,7 @@ pub mod describe_channel_output {
             self.input_specification = Some(input);
             self
         }
+        /// Specification of network and file inputs for this channel
         pub fn set_input_specification(
             mut self,
             input: std::option::Option<crate::model::InputSpecification>,
@@ -4357,6 +4788,7 @@ pub mod describe_channel_output {
             self.log_level = Some(input);
             self
         }
+        /// The log level being written to CloudWatch Logs.
         pub fn set_log_level(mut self, input: std::option::Option<crate::model::LogLevel>) -> Self {
             self.log_level = input;
             self
@@ -4366,16 +4798,23 @@ pub mod describe_channel_output {
             self.name = Some(input.into());
             self
         }
+        /// The name of the channel. (user-mutable)
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
+        /// Appends an item to `pipeline_details`.
+        ///
+        /// To override the contents of this collection use [`set_pipeline_details`](Self::set_pipeline_details).
+        ///
+        /// Runtime details for the pipelines of a running channel.
         pub fn pipeline_details(mut self, input: impl Into<crate::model::PipelineDetail>) -> Self {
             let mut v = self.pipeline_details.unwrap_or_default();
             v.push(input.into());
             self.pipeline_details = Some(v);
             self
         }
+        /// Runtime details for the pipelines of a running channel.
         pub fn set_pipeline_details(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PipelineDetail>>,
@@ -4388,6 +4827,7 @@ pub mod describe_channel_output {
             self.pipelines_running_count = Some(input);
             self
         }
+        /// The number of currently healthy pipelines.
         pub fn set_pipelines_running_count(mut self, input: std::option::Option<i32>) -> Self {
             self.pipelines_running_count = input;
             self
@@ -4397,6 +4837,7 @@ pub mod describe_channel_output {
             self.role_arn = Some(input.into());
             self
         }
+        /// The Amazon Resource Name (ARN) of the role assumed when running the Channel.
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -4406,10 +4847,16 @@ pub mod describe_channel_output {
             self.state = Some(input);
             self
         }
+        /// Placeholder documentation for ChannelState
         pub fn set_state(mut self, input: std::option::Option<crate::model::ChannelState>) -> Self {
             self.state = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// A collection of key-value pairs.
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -4420,6 +4867,7 @@ pub mod describe_channel_output {
             self.tags = Some(hash_map);
             self
         }
+        /// A collection of key-value pairs.
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -4434,6 +4882,7 @@ pub mod describe_channel_output {
             self.vpc = Some(input);
             self
         }
+        /// Settings for VPC output
         pub fn set_vpc(
             mut self,
             input: std::option::Option<crate::model::VpcOutputSettingsDescription>,
@@ -4472,6 +4921,7 @@ impl DescribeChannelOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTagsOutput {}
@@ -4631,6 +5081,7 @@ pub mod delete_reservation_output {
             self.arn = Some(input.into());
             self
         }
+        /// Unique reservation ARN, e.g. 'arn:aws:medialive:us-west-2:123456789012:reservation:1234567'
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -4640,6 +5091,7 @@ pub mod delete_reservation_output {
             self.count = Some(input);
             self
         }
+        /// Number of reserved resources
         pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
             self.count = input;
             self
@@ -4649,6 +5101,7 @@ pub mod delete_reservation_output {
             self.currency_code = Some(input.into());
             self
         }
+        /// Currency code for usagePrice and fixedPrice in ISO-4217 format, e.g. 'USD'
         pub fn set_currency_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4661,6 +5114,7 @@ pub mod delete_reservation_output {
             self.duration = Some(input);
             self
         }
+        /// Lease duration, e.g. '12'
         pub fn set_duration(mut self, input: std::option::Option<i32>) -> Self {
             self.duration = input;
             self
@@ -4670,6 +5124,7 @@ pub mod delete_reservation_output {
             self.duration_units = Some(input);
             self
         }
+        /// Units for duration, e.g. 'MONTHS'
         pub fn set_duration_units(
             mut self,
             input: std::option::Option<crate::model::OfferingDurationUnits>,
@@ -4682,6 +5137,7 @@ pub mod delete_reservation_output {
             self.end = Some(input.into());
             self
         }
+        /// Reservation UTC end date and time in ISO-8601 format, e.g. '2019-03-01T00:00:00'
         pub fn set_end(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.end = input;
             self
@@ -4691,6 +5147,7 @@ pub mod delete_reservation_output {
             self.fixed_price = Some(input);
             self
         }
+        /// One-time charge for each reserved resource, e.g. '0.0' for a NO_UPFRONT offering
         pub fn set_fixed_price(mut self, input: std::option::Option<f64>) -> Self {
             self.fixed_price = input;
             self
@@ -4700,6 +5157,7 @@ pub mod delete_reservation_output {
             self.name = Some(input.into());
             self
         }
+        /// User specified reservation name
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -4709,6 +5167,7 @@ pub mod delete_reservation_output {
             self.offering_description = Some(input.into());
             self
         }
+        /// Offering description, e.g. 'HD AVC output at 10-20 Mbps, 30 fps, and standard VQ in US West (Oregon)'
         pub fn set_offering_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4721,6 +5180,7 @@ pub mod delete_reservation_output {
             self.offering_id = Some(input.into());
             self
         }
+        /// Unique offering ID, e.g. '87654321'
         pub fn set_offering_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.offering_id = input;
             self
@@ -4730,6 +5190,7 @@ pub mod delete_reservation_output {
             self.offering_type = Some(input);
             self
         }
+        /// Offering type, e.g. 'NO_UPFRONT'
         pub fn set_offering_type(
             mut self,
             input: std::option::Option<crate::model::OfferingType>,
@@ -4742,6 +5203,7 @@ pub mod delete_reservation_output {
             self.region = Some(input.into());
             self
         }
+        /// AWS region, e.g. 'us-west-2'
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
@@ -4751,6 +5213,7 @@ pub mod delete_reservation_output {
             self.reservation_id = Some(input.into());
             self
         }
+        /// Unique reservation ID, e.g. '1234567'
         pub fn set_reservation_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4766,6 +5229,7 @@ pub mod delete_reservation_output {
             self.resource_specification = Some(input);
             self
         }
+        /// Resource configuration details
         pub fn set_resource_specification(
             mut self,
             input: std::option::Option<crate::model::ReservationResourceSpecification>,
@@ -4778,6 +5242,7 @@ pub mod delete_reservation_output {
             self.start = Some(input.into());
             self
         }
+        /// Reservation UTC start date and time in ISO-8601 format, e.g. '2018-03-01T00:00:00'
         pub fn set_start(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.start = input;
             self
@@ -4787,6 +5252,7 @@ pub mod delete_reservation_output {
             self.state = Some(input);
             self
         }
+        /// Current state of reservation, e.g. 'ACTIVE'
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::ReservationState>,
@@ -4794,6 +5260,11 @@ pub mod delete_reservation_output {
             self.state = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// A collection of key-value pairs
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -4804,6 +5275,7 @@ pub mod delete_reservation_output {
             self.tags = Some(hash_map);
             self
         }
+        /// A collection of key-value pairs
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -4818,6 +5290,7 @@ pub mod delete_reservation_output {
             self.usage_price = Some(input);
             self
         }
+        /// Recurring usage charge for each reserved resource, e.g. '157.0'
         pub fn set_usage_price(mut self, input: std::option::Option<f64>) -> Self {
             self.usage_price = input;
             self
@@ -4906,6 +5379,7 @@ pub mod delete_multiplex_program_output {
             self.channel_id = Some(input.into());
             self
         }
+        /// The MediaLive channel associated with the program.
         pub fn set_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.channel_id = input;
             self
@@ -4918,6 +5392,7 @@ pub mod delete_multiplex_program_output {
             self.multiplex_program_settings = Some(input);
             self
         }
+        /// The settings for this multiplex program.
         pub fn set_multiplex_program_settings(
             mut self,
             input: std::option::Option<crate::model::MultiplexProgramSettings>,
@@ -4933,6 +5408,7 @@ pub mod delete_multiplex_program_output {
             self.packet_identifiers_map = Some(input);
             self
         }
+        /// The packet identifier map for this multiplex program.
         pub fn set_packet_identifiers_map(
             mut self,
             input: std::option::Option<crate::model::MultiplexProgramPacketIdentifiersMap>,
@@ -4940,6 +5416,11 @@ pub mod delete_multiplex_program_output {
             self.packet_identifiers_map = input;
             self
         }
+        /// Appends an item to `pipeline_details`.
+        ///
+        /// To override the contents of this collection use [`set_pipeline_details`](Self::set_pipeline_details).
+        ///
+        /// Contains information about the current sources for the specified program in the specified multiplex. Keep in mind that each multiplex pipeline connects to both pipelines in a given source channel (the channel identified by the program). But only one of those channel pipelines is ever active at one time.
         pub fn pipeline_details(
             mut self,
             input: impl Into<crate::model::MultiplexProgramPipelineDetail>,
@@ -4949,6 +5430,7 @@ pub mod delete_multiplex_program_output {
             self.pipeline_details = Some(v);
             self
         }
+        /// Contains information about the current sources for the specified program in the specified multiplex. Keep in mind that each multiplex pipeline connects to both pipelines in a given source channel (the channel identified by the program). But only one of those channel pipelines is ever active at one time.
         pub fn set_pipeline_details(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MultiplexProgramPipelineDetail>>,
@@ -4961,6 +5443,7 @@ pub mod delete_multiplex_program_output {
             self.program_name = Some(input.into());
             self
         }
+        /// The name of the multiplex program.
         pub fn set_program_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.program_name = input;
             self
@@ -5052,16 +5535,23 @@ pub mod delete_multiplex_output {
             self.arn = Some(input.into());
             self
         }
+        /// The unique arn of the multiplex.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
+        /// Appends an item to `availability_zones`.
+        ///
+        /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
+        ///
+        /// A list of availability zones for the multiplex.
         pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.availability_zones.unwrap_or_default();
             v.push(input.into());
             self.availability_zones = Some(v);
             self
         }
+        /// A list of availability zones for the multiplex.
         pub fn set_availability_zones(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5069,6 +5559,11 @@ pub mod delete_multiplex_output {
             self.availability_zones = input;
             self
         }
+        /// Appends an item to `destinations`.
+        ///
+        /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
+        ///
+        /// A list of the multiplex output destinations.
         pub fn destinations(
             mut self,
             input: impl Into<crate::model::MultiplexOutputDestination>,
@@ -5078,6 +5573,7 @@ pub mod delete_multiplex_output {
             self.destinations = Some(v);
             self
         }
+        /// A list of the multiplex output destinations.
         pub fn set_destinations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MultiplexOutputDestination>>,
@@ -5090,6 +5586,7 @@ pub mod delete_multiplex_output {
             self.id = Some(input.into());
             self
         }
+        /// The unique id of the multiplex.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -5099,6 +5596,7 @@ pub mod delete_multiplex_output {
             self.multiplex_settings = Some(input);
             self
         }
+        /// Configuration for a multiplex event.
         pub fn set_multiplex_settings(
             mut self,
             input: std::option::Option<crate::model::MultiplexSettings>,
@@ -5111,6 +5609,7 @@ pub mod delete_multiplex_output {
             self.name = Some(input.into());
             self
         }
+        /// The name of the multiplex.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -5120,6 +5619,7 @@ pub mod delete_multiplex_output {
             self.pipelines_running_count = Some(input);
             self
         }
+        /// The number of currently healthy pipelines.
         pub fn set_pipelines_running_count(mut self, input: std::option::Option<i32>) -> Self {
             self.pipelines_running_count = input;
             self
@@ -5129,6 +5629,7 @@ pub mod delete_multiplex_output {
             self.program_count = Some(input);
             self
         }
+        /// The number of programs in the multiplex.
         pub fn set_program_count(mut self, input: std::option::Option<i32>) -> Self {
             self.program_count = input;
             self
@@ -5138,6 +5639,7 @@ pub mod delete_multiplex_output {
             self.state = Some(input);
             self
         }
+        /// The current state of the multiplex.
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::MultiplexState>,
@@ -5145,6 +5647,11 @@ pub mod delete_multiplex_output {
             self.state = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// A collection of key-value pairs.
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -5155,6 +5662,7 @@ pub mod delete_multiplex_output {
             self.tags = Some(hash_map);
             self
         }
+        /// A collection of key-value pairs.
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -5350,6 +5858,7 @@ pub mod delete_channel_output {
             self.arn = Some(input.into());
             self
         }
+        /// The unique arn of the channel.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -5362,6 +5871,7 @@ pub mod delete_channel_output {
             self.cdi_input_specification = Some(input);
             self
         }
+        /// Specification of CDI inputs for this channel
         pub fn set_cdi_input_specification(
             mut self,
             input: std::option::Option<crate::model::CdiInputSpecification>,
@@ -5374,6 +5884,7 @@ pub mod delete_channel_output {
             self.channel_class = Some(input);
             self
         }
+        /// The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel with one pipeline.
         pub fn set_channel_class(
             mut self,
             input: std::option::Option<crate::model::ChannelClass>,
@@ -5381,12 +5892,22 @@ pub mod delete_channel_output {
             self.channel_class = input;
             self
         }
+        /// Appends an item to `destinations`.
+        ///
+        /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
+        ///
+        /// A list of destinations of the channel. For UDP outputs, there is one
+        /// destination per output. For other types (HLS, for example), there is
+        /// one destination per packager.
         pub fn destinations(mut self, input: impl Into<crate::model::OutputDestination>) -> Self {
             let mut v = self.destinations.unwrap_or_default();
             v.push(input.into());
             self.destinations = Some(v);
             self
         }
+        /// A list of destinations of the channel. For UDP outputs, there is one
+        /// destination per output. For other types (HLS, for example), there is
+        /// one destination per packager.
         pub fn set_destinations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::OutputDestination>>,
@@ -5394,6 +5915,11 @@ pub mod delete_channel_output {
             self.destinations = input;
             self
         }
+        /// Appends an item to `egress_endpoints`.
+        ///
+        /// To override the contents of this collection use [`set_egress_endpoints`](Self::set_egress_endpoints).
+        ///
+        /// The endpoints where outgoing connections initiate from
         pub fn egress_endpoints(
             mut self,
             input: impl Into<crate::model::ChannelEgressEndpoint>,
@@ -5403,6 +5929,7 @@ pub mod delete_channel_output {
             self.egress_endpoints = Some(v);
             self
         }
+        /// The endpoints where outgoing connections initiate from
         pub fn set_egress_endpoints(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ChannelEgressEndpoint>>,
@@ -5415,6 +5942,7 @@ pub mod delete_channel_output {
             self.encoder_settings = Some(input);
             self
         }
+        /// Encoder Settings
         pub fn set_encoder_settings(
             mut self,
             input: std::option::Option<crate::model::EncoderSettings>,
@@ -5427,10 +5955,16 @@ pub mod delete_channel_output {
             self.id = Some(input.into());
             self
         }
+        /// The unique id of the channel.
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
+        /// Appends an item to `input_attachments`.
+        ///
+        /// To override the contents of this collection use [`set_input_attachments`](Self::set_input_attachments).
+        ///
+        /// List of input attachments for channel.
         pub fn input_attachments(
             mut self,
             input: impl Into<crate::model::InputAttachment>,
@@ -5440,6 +5974,7 @@ pub mod delete_channel_output {
             self.input_attachments = Some(v);
             self
         }
+        /// List of input attachments for channel.
         pub fn set_input_attachments(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InputAttachment>>,
@@ -5452,6 +5987,7 @@ pub mod delete_channel_output {
             self.input_specification = Some(input);
             self
         }
+        /// Specification of network and file inputs for this channel
         pub fn set_input_specification(
             mut self,
             input: std::option::Option<crate::model::InputSpecification>,
@@ -5464,6 +6000,7 @@ pub mod delete_channel_output {
             self.log_level = Some(input);
             self
         }
+        /// The log level being written to CloudWatch Logs.
         pub fn set_log_level(mut self, input: std::option::Option<crate::model::LogLevel>) -> Self {
             self.log_level = input;
             self
@@ -5473,16 +6010,23 @@ pub mod delete_channel_output {
             self.name = Some(input.into());
             self
         }
+        /// The name of the channel. (user-mutable)
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
+        /// Appends an item to `pipeline_details`.
+        ///
+        /// To override the contents of this collection use [`set_pipeline_details`](Self::set_pipeline_details).
+        ///
+        /// Runtime details for the pipelines of a running channel.
         pub fn pipeline_details(mut self, input: impl Into<crate::model::PipelineDetail>) -> Self {
             let mut v = self.pipeline_details.unwrap_or_default();
             v.push(input.into());
             self.pipeline_details = Some(v);
             self
         }
+        /// Runtime details for the pipelines of a running channel.
         pub fn set_pipeline_details(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PipelineDetail>>,
@@ -5495,6 +6039,7 @@ pub mod delete_channel_output {
             self.pipelines_running_count = Some(input);
             self
         }
+        /// The number of currently healthy pipelines.
         pub fn set_pipelines_running_count(mut self, input: std::option::Option<i32>) -> Self {
             self.pipelines_running_count = input;
             self
@@ -5504,6 +6049,7 @@ pub mod delete_channel_output {
             self.role_arn = Some(input.into());
             self
         }
+        /// The Amazon Resource Name (ARN) of the role assumed when running the Channel.
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -5513,10 +6059,16 @@ pub mod delete_channel_output {
             self.state = Some(input);
             self
         }
+        /// Placeholder documentation for ChannelState
         pub fn set_state(mut self, input: std::option::Option<crate::model::ChannelState>) -> Self {
             self.state = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// A collection of key-value pairs.
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -5527,6 +6079,7 @@ pub mod delete_channel_output {
             self.tags = Some(hash_map);
             self
         }
+        /// A collection of key-value pairs.
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -5541,6 +6094,7 @@ pub mod delete_channel_output {
             self.vpc = Some(input);
             self
         }
+        /// Settings for VPC output
         pub fn set_vpc(
             mut self,
             input: std::option::Option<crate::model::VpcOutputSettingsDescription>,
@@ -5579,6 +6133,7 @@ impl DeleteChannelOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTagsOutput {}
@@ -5636,6 +6191,7 @@ pub mod create_partner_input_output {
             self.input = Some(input);
             self
         }
+        /// Placeholder documentation for Input
         pub fn set_input(mut self, input: std::option::Option<crate::model::Input>) -> Self {
             self.input = input;
             self
@@ -5681,6 +6237,7 @@ pub mod create_multiplex_program_output {
             self.multiplex_program = Some(input);
             self
         }
+        /// The newly created multiplex program.
         pub fn set_multiplex_program(
             mut self,
             input: std::option::Option<crate::model::MultiplexProgram>,
@@ -5731,6 +6288,7 @@ pub mod create_multiplex_output {
             self.multiplex = Some(input);
             self
         }
+        /// The newly created multiplex.
         pub fn set_multiplex(
             mut self,
             input: std::option::Option<crate::model::Multiplex>,
@@ -5781,6 +6339,7 @@ pub mod create_input_security_group_output {
             self.security_group = Some(input);
             self
         }
+        /// An Input Security Group
         pub fn set_security_group(
             mut self,
             input: std::option::Option<crate::model::InputSecurityGroup>,
@@ -5831,6 +6390,7 @@ pub mod create_input_output {
             self.input = Some(input);
             self
         }
+        /// Placeholder documentation for Input
         pub fn set_input(mut self, input: std::option::Option<crate::model::Input>) -> Self {
             self.input = input;
             self
@@ -5876,6 +6436,7 @@ pub mod create_channel_output {
             self.channel = Some(input);
             self
         }
+        /// Placeholder documentation for Channel
         pub fn set_channel(mut self, input: std::option::Option<crate::model::Channel>) -> Self {
             self.channel = input;
             self
@@ -5987,6 +6548,7 @@ pub mod batch_update_schedule_output {
             self.creates = Some(input);
             self
         }
+        /// Schedule actions created in the schedule.
         pub fn set_creates(
             mut self,
             input: std::option::Option<crate::model::BatchScheduleActionCreateResult>,
@@ -5999,6 +6561,7 @@ pub mod batch_update_schedule_output {
             self.deletes = Some(input);
             self
         }
+        /// Schedule actions deleted from the schedule.
         pub fn set_deletes(
             mut self,
             input: std::option::Option<crate::model::BatchScheduleActionDeleteResult>,
@@ -6050,12 +6613,18 @@ pub mod batch_stop_output {
             std::option::Option<std::vec::Vec<crate::model::BatchSuccessfulResultModel>>,
     }
     impl Builder {
+        /// Appends an item to `failed`.
+        ///
+        /// To override the contents of this collection use [`set_failed`](Self::set_failed).
+        ///
+        /// List of failed operations
         pub fn failed(mut self, input: impl Into<crate::model::BatchFailedResultModel>) -> Self {
             let mut v = self.failed.unwrap_or_default();
             v.push(input.into());
             self.failed = Some(v);
             self
         }
+        /// List of failed operations
         pub fn set_failed(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BatchFailedResultModel>>,
@@ -6063,6 +6632,11 @@ pub mod batch_stop_output {
             self.failed = input;
             self
         }
+        /// Appends an item to `successful`.
+        ///
+        /// To override the contents of this collection use [`set_successful`](Self::set_successful).
+        ///
+        /// List of successful operations
         pub fn successful(
             mut self,
             input: impl Into<crate::model::BatchSuccessfulResultModel>,
@@ -6072,6 +6646,7 @@ pub mod batch_stop_output {
             self.successful = Some(v);
             self
         }
+        /// List of successful operations
         pub fn set_successful(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BatchSuccessfulResultModel>>,
@@ -6123,12 +6698,18 @@ pub mod batch_start_output {
             std::option::Option<std::vec::Vec<crate::model::BatchSuccessfulResultModel>>,
     }
     impl Builder {
+        /// Appends an item to `failed`.
+        ///
+        /// To override the contents of this collection use [`set_failed`](Self::set_failed).
+        ///
+        /// List of failed operations
         pub fn failed(mut self, input: impl Into<crate::model::BatchFailedResultModel>) -> Self {
             let mut v = self.failed.unwrap_or_default();
             v.push(input.into());
             self.failed = Some(v);
             self
         }
+        /// List of failed operations
         pub fn set_failed(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BatchFailedResultModel>>,
@@ -6136,6 +6717,11 @@ pub mod batch_start_output {
             self.failed = input;
             self
         }
+        /// Appends an item to `successful`.
+        ///
+        /// To override the contents of this collection use [`set_successful`](Self::set_successful).
+        ///
+        /// List of successful operations
         pub fn successful(
             mut self,
             input: impl Into<crate::model::BatchSuccessfulResultModel>,
@@ -6145,6 +6731,7 @@ pub mod batch_start_output {
             self.successful = Some(v);
             self
         }
+        /// List of successful operations
         pub fn set_successful(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BatchSuccessfulResultModel>>,
@@ -6196,12 +6783,18 @@ pub mod batch_delete_output {
             std::option::Option<std::vec::Vec<crate::model::BatchSuccessfulResultModel>>,
     }
     impl Builder {
+        /// Appends an item to `failed`.
+        ///
+        /// To override the contents of this collection use [`set_failed`](Self::set_failed).
+        ///
+        /// List of failed operations
         pub fn failed(mut self, input: impl Into<crate::model::BatchFailedResultModel>) -> Self {
             let mut v = self.failed.unwrap_or_default();
             v.push(input.into());
             self.failed = Some(v);
             self
         }
+        /// List of failed operations
         pub fn set_failed(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BatchFailedResultModel>>,
@@ -6209,6 +6802,11 @@ pub mod batch_delete_output {
             self.failed = input;
             self
         }
+        /// Appends an item to `successful`.
+        ///
+        /// To override the contents of this collection use [`set_successful`](Self::set_successful).
+        ///
+        /// List of successful operations
         pub fn successful(
             mut self,
             input: impl Into<crate::model::BatchSuccessfulResultModel>,
@@ -6218,6 +6816,7 @@ pub mod batch_delete_output {
             self.successful = Some(v);
             self
         }
+        /// List of successful operations
         pub fn set_successful(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BatchSuccessfulResultModel>>,

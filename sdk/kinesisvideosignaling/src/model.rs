@@ -36,12 +36,20 @@ pub mod ice_server {
         pub(crate) ttl: std::option::Option<i32>,
     }
     impl Builder {
+        /// Appends an item to `uris`.
+        ///
+        /// To override the contents of this collection use [`set_uris`](Self::set_uris).
+        ///
+        /// <p>An array of URIs, in the form specified in the <a href="https://tools.ietf.org/html/draft-petithuguenin-behave-turn-uris-03">I-D.petithuguenin-behave-turn-uris</a> spec. These URIs provide the different
+        /// addresses and/or protocols that can be used to reach the TURN server.</p>
         pub fn uris(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.uris.unwrap_or_default();
             v.push(input.into());
             self.uris = Some(v);
             self
         }
+        /// <p>An array of URIs, in the form specified in the <a href="https://tools.ietf.org/html/draft-petithuguenin-behave-turn-uris-03">I-D.petithuguenin-behave-turn-uris</a> spec. These URIs provide the different
+        /// addresses and/or protocols that can be used to reach the TURN server.</p>
         pub fn set_uris(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -54,6 +62,7 @@ pub mod ice_server {
             self.username = Some(input.into());
             self
         }
+        /// <p>A username to login to the ICE server.</p>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.username = input;
             self
@@ -63,6 +72,7 @@ pub mod ice_server {
             self.password = Some(input.into());
             self
         }
+        /// <p>A password to login to the ICE server.</p>
         pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.password = input;
             self
@@ -73,6 +83,8 @@ pub mod ice_server {
             self.ttl = Some(input);
             self
         }
+        /// <p>The period of time, in seconds, during which the username and password are
+        /// valid.</p>
         pub fn set_ttl(mut self, input: std::option::Option<i32>) -> Self {
             self.ttl = input;
             self
@@ -95,6 +107,7 @@ impl IceServer {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -106,6 +119,7 @@ impl IceServer {
     std::hash::Hash,
 )]
 pub enum Service {
+    #[allow(missing_docs)] // documentation missing in model
     Turn,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -126,12 +140,14 @@ impl std::str::FromStr for Service {
     }
 }
 impl Service {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Service::Turn => "TURN",
             Service::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["TURN"]
     }

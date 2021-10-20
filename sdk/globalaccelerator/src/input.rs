@@ -11,6 +11,11 @@ pub mod add_custom_routing_endpoints_input {
         pub(crate) endpoint_group_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `endpoint_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_endpoint_configurations`](Self::set_endpoint_configurations).
+        ///
+        /// <p>The list of endpoint objects to add to a custom routing accelerator.</p>
         pub fn endpoint_configurations(
             mut self,
             input: impl Into<crate::model::CustomRoutingEndpointConfiguration>,
@@ -20,6 +25,7 @@ pub mod add_custom_routing_endpoints_input {
             self.endpoint_configurations = Some(v);
             self
         }
+        /// <p>The list of endpoint objects to add to a custom routing accelerator.</p>
         pub fn set_endpoint_configurations(
             mut self,
             input: std::option::Option<
@@ -34,6 +40,7 @@ pub mod add_custom_routing_endpoints_input {
             self.endpoint_group_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the endpoint group for the custom routing endpoint.</p>
         pub fn set_endpoint_group_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -46,7 +53,7 @@ pub mod add_custom_routing_endpoints_input {
             self,
         ) -> std::result::Result<
             crate::input::AddCustomRoutingEndpointsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::AddCustomRoutingEndpointsInput {
                 endpoint_configurations: self.endpoint_configurations,
@@ -67,16 +74,16 @@ impl AddCustomRoutingEndpointsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AddCustomRoutingEndpoints,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AddCustomRoutingEndpointsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -84,7 +91,7 @@ impl AddCustomRoutingEndpointsInput {
         fn update_http_builder(
             input: &crate::input::AddCustomRoutingEndpointsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -93,32 +100,34 @@ impl AddCustomRoutingEndpointsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AddCustomRoutingEndpointsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GlobalAccelerator_V20180706.AddCustomRoutingEndpoints",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_add_custom_routing_endpoints(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -141,15 +150,15 @@ impl AddCustomRoutingEndpointsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::AddCustomRoutingEndpoints::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "AddCustomRoutingEndpoints",
             "globalaccelerator",
         ));
@@ -158,10 +167,10 @@ impl AddCustomRoutingEndpointsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -190,6 +199,8 @@ pub mod advertise_byoip_cidr_input {
             self.cidr = Some(input.into());
             self
         }
+        /// <p>The address range, in CIDR notation. This must be the exact range that you provisioned.
+        /// You can't advertise only a portion of the provisioned range.</p>
         pub fn set_cidr(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cidr = input;
             self
@@ -199,7 +210,7 @@ pub mod advertise_byoip_cidr_input {
             self,
         ) -> std::result::Result<
             crate::input::AdvertiseByoipCidrInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::AdvertiseByoipCidrInput { cidr: self.cidr })
         }
@@ -216,16 +227,16 @@ impl AdvertiseByoipCidrInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AdvertiseByoipCidr,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AdvertiseByoipCidrInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -233,7 +244,7 @@ impl AdvertiseByoipCidrInput {
         fn update_http_builder(
             input: &crate::input::AdvertiseByoipCidrInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -242,30 +253,32 @@ impl AdvertiseByoipCidrInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AdvertiseByoipCidrInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GlobalAccelerator_V20180706.AdvertiseByoipCidr",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_advertise_byoip_cidr(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -288,15 +301,15 @@ impl AdvertiseByoipCidrInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::AdvertiseByoipCidr::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "AdvertiseByoipCidr",
             "globalaccelerator",
         ));
@@ -305,10 +318,10 @@ impl AdvertiseByoipCidrInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -340,6 +353,7 @@ pub mod allow_custom_routing_traffic_input {
             self.endpoint_group_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
         pub fn set_endpoint_group_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -352,16 +366,31 @@ pub mod allow_custom_routing_traffic_input {
             self.endpoint_id = Some(input.into());
             self
         }
+        /// <p>An ID for the endpoint. For custom routing accelerators, this is the virtual private cloud (VPC) subnet ID.</p>
         pub fn set_endpoint_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.endpoint_id = input;
             self
         }
+        /// Appends an item to `destination_addresses`.
+        ///
+        /// To override the contents of this collection use [`set_destination_addresses`](Self::set_destination_addresses).
+        ///
+        /// <p>A list of specific Amazon EC2 instance IP addresses (destination addresses) in a subnet that you want to allow to receive
+        /// traffic. The IP addresses must be a subset of the IP addresses that you specified for the endpoint group.</p>
+        /// <p>
+        /// <code>DestinationAddresses</code> is required if <code>AllowAllTrafficToEndpoint</code> is <code>FALSE</code> or is
+        /// not specified.</p>
         pub fn destination_addresses(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.destination_addresses.unwrap_or_default();
             v.push(input.into());
             self.destination_addresses = Some(v);
             self
         }
+        /// <p>A list of specific Amazon EC2 instance IP addresses (destination addresses) in a subnet that you want to allow to receive
+        /// traffic. The IP addresses must be a subset of the IP addresses that you specified for the endpoint group.</p>
+        /// <p>
+        /// <code>DestinationAddresses</code> is required if <code>AllowAllTrafficToEndpoint</code> is <code>FALSE</code> or is
+        /// not specified.</p>
         pub fn set_destination_addresses(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -369,12 +398,18 @@ pub mod allow_custom_routing_traffic_input {
             self.destination_addresses = input;
             self
         }
+        /// Appends an item to `destination_ports`.
+        ///
+        /// To override the contents of this collection use [`set_destination_ports`](Self::set_destination_ports).
+        ///
+        /// <p>A list of specific Amazon EC2 instance ports (destination ports) that you want to allow to receive traffic.</p>
         pub fn destination_ports(mut self, input: impl Into<i32>) -> Self {
             let mut v = self.destination_ports.unwrap_or_default();
             v.push(input.into());
             self.destination_ports = Some(v);
             self
         }
+        /// <p>A list of specific Amazon EC2 instance ports (destination ports) that you want to allow to receive traffic.</p>
         pub fn set_destination_ports(
             mut self,
             input: std::option::Option<std::vec::Vec<i32>>,
@@ -394,6 +429,14 @@ pub mod allow_custom_routing_traffic_input {
             self.allow_all_traffic_to_endpoint = Some(input);
             self
         }
+        /// <p>Indicates whether all destination IP addresses and ports for a specified VPC subnet endpoint can receive traffic
+        /// from a custom routing accelerator. The value is TRUE or FALSE. </p>
+        /// <p>When set to TRUE, <i>all</i> destinations in the custom routing VPC subnet can receive traffic. Note
+        /// that you cannot specify destination IP addresses and ports when the value is set to TRUE.</p>
+        /// <p>When set to FALSE (or not specified), you <i>must</i> specify a list of destination IP addresses that are allowed
+        /// to receive traffic. A list of ports is optional. If you don't specify a list of ports, the ports that can accept traffic is
+        /// the same as the ports configured for the endpoint group.</p>
+        /// <p>The default value is FALSE.</p>
         pub fn set_allow_all_traffic_to_endpoint(
             mut self,
             input: std::option::Option<bool>,
@@ -406,7 +449,7 @@ pub mod allow_custom_routing_traffic_input {
             self,
         ) -> std::result::Result<
             crate::input::AllowCustomRoutingTrafficInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::AllowCustomRoutingTrafficInput {
                 endpoint_group_arn: self.endpoint_group_arn,
@@ -430,16 +473,16 @@ impl AllowCustomRoutingTrafficInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AllowCustomRoutingTraffic,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AllowCustomRoutingTrafficInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -447,7 +490,7 @@ impl AllowCustomRoutingTrafficInput {
         fn update_http_builder(
             input: &crate::input::AllowCustomRoutingTrafficInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -456,32 +499,34 @@ impl AllowCustomRoutingTrafficInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AllowCustomRoutingTrafficInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GlobalAccelerator_V20180706.AllowCustomRoutingTraffic",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_allow_custom_routing_traffic(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -504,15 +549,15 @@ impl AllowCustomRoutingTrafficInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::AllowCustomRoutingTraffic::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "AllowCustomRoutingTraffic",
             "globalaccelerator",
         ));
@@ -521,10 +566,10 @@ impl AllowCustomRoutingTrafficInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -558,6 +603,8 @@ pub mod create_accelerator_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of an accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric characters or
+        /// hyphens (-), and must not begin or end with a hyphen.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -567,6 +614,7 @@ pub mod create_accelerator_input {
             self.ip_address_type = Some(input);
             self
         }
+        /// <p>The value for the address type must be IPv4.</p>
         pub fn set_ip_address_type(
             mut self,
             input: std::option::Option<crate::model::IpAddressType>,
@@ -574,12 +622,36 @@ pub mod create_accelerator_input {
             self.ip_address_type = input;
             self
         }
+        /// Appends an item to `ip_addresses`.
+        ///
+        /// To override the contents of this collection use [`set_ip_addresses`](Self::set_ip_addresses).
+        ///
+        /// <p>Optionally, if you've added your own IP address pool to Global Accelerator (BYOIP), you can choose IP addresses
+        /// from your own pool to use for the accelerator's static IP addresses when you create an accelerator. You can
+        /// specify one or two addresses, separated by a space. Do not include the /32 suffix.</p>
+        /// <p>Only one IP address from each of your IP address ranges can be used for each accelerator. If you specify only
+        /// one IP address from your IP address range, Global Accelerator assigns a second static IP address for the
+        /// accelerator from the AWS IP address pool.</p>
+        /// <p>Note that you can't update IP addresses for an existing accelerator. To change them, you must create a new
+        /// accelerator with the new addresses.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring Your Own
+        /// IP Addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
         pub fn ip_addresses(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.ip_addresses.unwrap_or_default();
             v.push(input.into());
             self.ip_addresses = Some(v);
             self
         }
+        /// <p>Optionally, if you've added your own IP address pool to Global Accelerator (BYOIP), you can choose IP addresses
+        /// from your own pool to use for the accelerator's static IP addresses when you create an accelerator. You can
+        /// specify one or two addresses, separated by a space. Do not include the /32 suffix.</p>
+        /// <p>Only one IP address from each of your IP address ranges can be used for each accelerator. If you specify only
+        /// one IP address from your IP address range, Global Accelerator assigns a second static IP address for the
+        /// accelerator from the AWS IP address pool.</p>
+        /// <p>Note that you can't update IP addresses for an existing accelerator. To change them, you must create a new
+        /// accelerator with the new addresses.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring Your Own
+        /// IP Addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
         pub fn set_ip_addresses(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -593,6 +665,8 @@ pub mod create_accelerator_input {
             self.enabled = Some(input);
             self
         }
+        /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true. </p>
+        /// <p>If the value is set to true, an accelerator cannot be deleted. If set to false, the accelerator can be deleted.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -603,6 +677,8 @@ pub mod create_accelerator_input {
             self.idempotency_token = Some(input.into());
             self
         }
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the
+        /// uniqueness—of an accelerator.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -610,12 +686,22 @@ pub mod create_accelerator_input {
             self.idempotency_token = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Create tags for an accelerator.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging
+        /// in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>Create tags for an accelerator.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging
+        /// in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -628,7 +714,7 @@ pub mod create_accelerator_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateAcceleratorInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateAcceleratorInput {
                 name: self.name,
@@ -652,16 +738,16 @@ impl CreateAcceleratorInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateAccelerator,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateAcceleratorInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -669,7 +755,7 @@ impl CreateAcceleratorInput {
         fn update_http_builder(
             input: &crate::input::CreateAcceleratorInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -678,15 +764,15 @@ impl CreateAcceleratorInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateAcceleratorInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GlobalAccelerator_V20180706.CreateAccelerator",
@@ -696,17 +782,17 @@ impl CreateAcceleratorInput {
         if self.idempotency_token.is_none() {
             self.idempotency_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_accelerator(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -729,15 +815,15 @@ impl CreateAcceleratorInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateAccelerator::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateAccelerator",
             "globalaccelerator",
         ));
@@ -746,10 +832,10 @@ impl CreateAcceleratorInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -783,6 +869,8 @@ pub mod create_custom_routing_accelerator_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of a custom routing accelerator. The name can have a maximum of 64 characters, must contain
+        /// only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -792,6 +880,7 @@ pub mod create_custom_routing_accelerator_input {
             self.ip_address_type = Some(input);
             self
         }
+        /// <p>The value for the address type must be IPv4.</p>
         pub fn set_ip_address_type(
             mut self,
             input: std::option::Option<crate::model::IpAddressType>,
@@ -799,12 +888,36 @@ pub mod create_custom_routing_accelerator_input {
             self.ip_address_type = input;
             self
         }
+        /// Appends an item to `ip_addresses`.
+        ///
+        /// To override the contents of this collection use [`set_ip_addresses`](Self::set_ip_addresses).
+        ///
+        /// <p>Optionally, if you've added your own IP address pool to Global Accelerator (BYOIP), you can choose IP addresses
+        /// from your own pool to use for the accelerator's static IP addresses when you create an accelerator. You can
+        /// specify one or two addresses, separated by a space. Do not include the /32 suffix.</p>
+        /// <p>Only one IP address from each of your IP address ranges can be used for each accelerator. If you specify only
+        /// one IP address from your IP address range, Global Accelerator assigns a second static IP address for the
+        /// accelerator from the AWS IP address pool.</p>
+        /// <p>Note that you can't update IP addresses for an existing accelerator. To change them, you must create a new
+        /// accelerator with the new addresses.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring
+        /// your own IP addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
         pub fn ip_addresses(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.ip_addresses.unwrap_or_default();
             v.push(input.into());
             self.ip_addresses = Some(v);
             self
         }
+        /// <p>Optionally, if you've added your own IP address pool to Global Accelerator (BYOIP), you can choose IP addresses
+        /// from your own pool to use for the accelerator's static IP addresses when you create an accelerator. You can
+        /// specify one or two addresses, separated by a space. Do not include the /32 suffix.</p>
+        /// <p>Only one IP address from each of your IP address ranges can be used for each accelerator. If you specify only
+        /// one IP address from your IP address range, Global Accelerator assigns a second static IP address for the
+        /// accelerator from the AWS IP address pool.</p>
+        /// <p>Note that you can't update IP addresses for an existing accelerator. To change them, you must create a new
+        /// accelerator with the new addresses.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring
+        /// your own IP addresses (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
         pub fn set_ip_addresses(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -818,6 +931,8 @@ pub mod create_custom_routing_accelerator_input {
             self.enabled = Some(input);
             self
         }
+        /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true. </p>
+        /// <p>If the value is set to true, an accelerator cannot be deleted. If set to false, the accelerator can be deleted.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -828,6 +943,8 @@ pub mod create_custom_routing_accelerator_input {
             self.idempotency_token = Some(input.into());
             self
         }
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that
+        /// is, the uniqueness—of the request.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -835,12 +952,22 @@ pub mod create_custom_routing_accelerator_input {
             self.idempotency_token = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Create tags for an accelerator.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging
+        /// in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>Create tags for an accelerator.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging
+        /// in AWS Global Accelerator</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -853,7 +980,7 @@ pub mod create_custom_routing_accelerator_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateCustomRoutingAcceleratorInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateCustomRoutingAcceleratorInput {
                 name: self.name,
@@ -878,16 +1005,16 @@ impl CreateCustomRoutingAcceleratorInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateCustomRoutingAccelerator,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateCustomRoutingAcceleratorInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -895,7 +1022,7 @@ impl CreateCustomRoutingAcceleratorInput {
         fn update_http_builder(
             input: &crate::input::CreateCustomRoutingAcceleratorInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -904,15 +1031,15 @@ impl CreateCustomRoutingAcceleratorInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateCustomRoutingAcceleratorInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GlobalAccelerator_V20180706.CreateCustomRoutingAccelerator",
@@ -922,15 +1049,15 @@ impl CreateCustomRoutingAcceleratorInput {
         if self.idempotency_token.is_none() {
             self.idempotency_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_custom_routing_accelerator(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_custom_routing_accelerator(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -953,15 +1080,15 @@ impl CreateCustomRoutingAcceleratorInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateCustomRoutingAccelerator::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateCustomRoutingAccelerator",
             "globalaccelerator",
         ));
@@ -970,10 +1097,10 @@ impl CreateCustomRoutingAcceleratorInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1005,6 +1132,7 @@ pub mod create_custom_routing_endpoint_group_input {
             self.listener_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the listener for a custom routing endpoint.</p>
         pub fn set_listener_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.listener_arn = input;
             self
@@ -1015,6 +1143,8 @@ pub mod create_custom_routing_endpoint_group_input {
             self.endpoint_group_region = Some(input.into());
             self
         }
+        /// <p>The AWS Region where the endpoint group is located. A listener can have only one endpoint group in a
+        /// specific Region.</p>
         pub fn set_endpoint_group_region(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1022,6 +1152,12 @@ pub mod create_custom_routing_endpoint_group_input {
             self.endpoint_group_region = input;
             self
         }
+        /// Appends an item to `destination_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_destination_configurations`](Self::set_destination_configurations).
+        ///
+        /// <p>Sets the port range and protocol for all endpoints (virtual private cloud subnets) in a custom routing endpoint group to accept
+        /// client traffic on.</p>
         pub fn destination_configurations(
             mut self,
             input: impl Into<crate::model::CustomRoutingDestinationConfiguration>,
@@ -1031,6 +1167,8 @@ pub mod create_custom_routing_endpoint_group_input {
             self.destination_configurations = Some(v);
             self
         }
+        /// <p>Sets the port range and protocol for all endpoints (virtual private cloud subnets) in a custom routing endpoint group to accept
+        /// client traffic on.</p>
         pub fn set_destination_configurations(
             mut self,
             input: std::option::Option<
@@ -1046,6 +1184,8 @@ pub mod create_custom_routing_endpoint_group_input {
             self.idempotency_token = Some(input.into());
             self
         }
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the
+        /// uniqueness—of the request.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1058,7 +1198,7 @@ pub mod create_custom_routing_endpoint_group_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateCustomRoutingEndpointGroupInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateCustomRoutingEndpointGroupInput {
                 listener_arn: self.listener_arn,
@@ -1081,16 +1221,16 @@ impl CreateCustomRoutingEndpointGroupInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateCustomRoutingEndpointGroup,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateCustomRoutingEndpointGroupInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1098,7 +1238,7 @@ impl CreateCustomRoutingEndpointGroupInput {
         fn update_http_builder(
             input: &crate::input::CreateCustomRoutingEndpointGroupInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1107,15 +1247,15 @@ impl CreateCustomRoutingEndpointGroupInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateCustomRoutingEndpointGroupInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GlobalAccelerator_V20180706.CreateCustomRoutingEndpointGroup",
@@ -1125,15 +1265,15 @@ impl CreateCustomRoutingEndpointGroupInput {
         if self.idempotency_token.is_none() {
             self.idempotency_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_custom_routing_endpoint_group(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_custom_routing_endpoint_group(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1156,15 +1296,15 @@ impl CreateCustomRoutingEndpointGroupInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateCustomRoutingEndpointGroup::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateCustomRoutingEndpointGroup",
             "globalaccelerator",
         ));
@@ -1173,10 +1313,10 @@ impl CreateCustomRoutingEndpointGroupInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1206,6 +1346,7 @@ pub mod create_custom_routing_listener_input {
             self.accelerator_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the accelerator for a custom routing listener.</p>
         pub fn set_accelerator_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1213,12 +1354,22 @@ pub mod create_custom_routing_listener_input {
             self.accelerator_arn = input;
             self
         }
+        /// Appends an item to `port_ranges`.
+        ///
+        /// To override the contents of this collection use [`set_port_ranges`](Self::set_port_ranges).
+        ///
+        /// <p>The port range to support for connections from clients to your accelerator.</p>
+        /// <p>Separately, you set port ranges for endpoints. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html">About
+        /// endpoints for custom routing accelerators</a>.</p>
         pub fn port_ranges(mut self, input: impl Into<crate::model::PortRange>) -> Self {
             let mut v = self.port_ranges.unwrap_or_default();
             v.push(input.into());
             self.port_ranges = Some(v);
             self
         }
+        /// <p>The port range to support for connections from clients to your accelerator.</p>
+        /// <p>Separately, you set port ranges for endpoints. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html">About
+        /// endpoints for custom routing accelerators</a>.</p>
         pub fn set_port_ranges(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PortRange>>,
@@ -1232,6 +1383,8 @@ pub mod create_custom_routing_listener_input {
             self.idempotency_token = Some(input.into());
             self
         }
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the
+        /// uniqueness—of the request.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1244,7 +1397,7 @@ pub mod create_custom_routing_listener_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateCustomRoutingListenerInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateCustomRoutingListenerInput {
                 accelerator_arn: self.accelerator_arn,
@@ -1266,16 +1419,16 @@ impl CreateCustomRoutingListenerInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateCustomRoutingListener,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateCustomRoutingListenerInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1283,7 +1436,7 @@ impl CreateCustomRoutingListenerInput {
         fn update_http_builder(
             input: &crate::input::CreateCustomRoutingListenerInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1292,15 +1445,15 @@ impl CreateCustomRoutingListenerInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateCustomRoutingListenerInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GlobalAccelerator_V20180706.CreateCustomRoutingListener",
@@ -1310,15 +1463,15 @@ impl CreateCustomRoutingListenerInput {
         if self.idempotency_token.is_none() {
             self.idempotency_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_custom_routing_listener(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_custom_routing_listener(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1341,15 +1494,15 @@ impl CreateCustomRoutingListenerInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateCustomRoutingListener::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateCustomRoutingListener",
             "globalaccelerator",
         ));
@@ -1358,10 +1511,10 @@ impl CreateCustomRoutingListenerInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1400,6 +1553,7 @@ pub mod create_endpoint_group_input {
             self.listener_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the listener.</p>
         pub fn set_listener_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.listener_arn = input;
             self
@@ -1410,6 +1564,8 @@ pub mod create_endpoint_group_input {
             self.endpoint_group_region = Some(input.into());
             self
         }
+        /// <p>The AWS Region where the endpoint group is located. A listener can have only one endpoint group in a
+        /// specific Region.</p>
         pub fn set_endpoint_group_region(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1417,6 +1573,11 @@ pub mod create_endpoint_group_input {
             self.endpoint_group_region = input;
             self
         }
+        /// Appends an item to `endpoint_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_endpoint_configurations`](Self::set_endpoint_configurations).
+        ///
+        /// <p>The list of endpoint objects.</p>
         pub fn endpoint_configurations(
             mut self,
             input: impl Into<crate::model::EndpointConfiguration>,
@@ -1426,6 +1587,7 @@ pub mod create_endpoint_group_input {
             self.endpoint_configurations = Some(v);
             self
         }
+        /// <p>The list of endpoint objects.</p>
         pub fn set_endpoint_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EndpointConfiguration>>,
@@ -1442,6 +1604,11 @@ pub mod create_endpoint_group_input {
             self.traffic_dial_percentage = Some(input);
             self
         }
+        /// <p>The percentage of traffic to send to an AWS Region. Additional traffic is distributed to other endpoint groups for
+        /// this listener. </p>
+        /// <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is
+        /// applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p>
+        /// <p>The default value is 100.</p>
         pub fn set_traffic_dial_percentage(mut self, input: std::option::Option<f32>) -> Self {
             self.traffic_dial_percentage = input;
             self
@@ -1453,6 +1620,9 @@ pub mod create_endpoint_group_input {
             self.health_check_port = Some(input);
             self
         }
+        /// <p>The port that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default port
+        /// is the listener port that this endpoint group is associated with. If listener port is a list of ports, Global Accelerator uses the
+        /// first port in the list.</p>
         pub fn set_health_check_port(mut self, input: std::option::Option<i32>) -> Self {
             self.health_check_port = input;
             self
@@ -1463,6 +1633,8 @@ pub mod create_endpoint_group_input {
             self.health_check_protocol = Some(input);
             self
         }
+        /// <p>The protocol that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default
+        /// value is TCP.</p>
         pub fn set_health_check_protocol(
             mut self,
             input: std::option::Option<crate::model::HealthCheckProtocol>,
@@ -1476,6 +1648,8 @@ pub mod create_endpoint_group_input {
             self.health_check_path = Some(input.into());
             self
         }
+        /// <p>If the protocol is HTTP/S, then this specifies the path that is the destination for health check targets. The
+        /// default value is slash (/).</p>
         pub fn set_health_check_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1488,6 +1662,7 @@ pub mod create_endpoint_group_input {
             self.health_check_interval_seconds = Some(input);
             self
         }
+        /// <p>The time—10 seconds or 30 seconds—between each health check for an endpoint. The default value is 30.</p>
         pub fn set_health_check_interval_seconds(
             mut self,
             input: std::option::Option<i32>,
@@ -1501,6 +1676,8 @@ pub mod create_endpoint_group_input {
             self.threshold_count = Some(input);
             self
         }
+        /// <p>The number of consecutive health checks required to set the state of a healthy endpoint to unhealthy, or to set an
+        /// unhealthy endpoint to healthy. The default value is 3.</p>
         pub fn set_threshold_count(mut self, input: std::option::Option<i32>) -> Self {
             self.threshold_count = input;
             self
@@ -1511,6 +1688,8 @@ pub mod create_endpoint_group_input {
             self.idempotency_token = Some(input.into());
             self
         }
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the
+        /// uniqueness—of the request.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1518,12 +1697,28 @@ pub mod create_endpoint_group_input {
             self.idempotency_token = input;
             self
         }
+        /// Appends an item to `port_overrides`.
+        ///
+        /// To override the contents of this collection use [`set_port_overrides`](Self::set_port_overrides).
+        ///
+        /// <p>Override specific listener ports used to route traffic to endpoints that are part of this endpoint group.
+        /// For example, you can create a port override in which the listener
+        /// receives user traffic on ports 80 and 443, but your accelerator routes that traffic to ports 1080
+        /// and 1443, respectively, on the endpoints.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html">
+        /// Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
         pub fn port_overrides(mut self, input: impl Into<crate::model::PortOverride>) -> Self {
             let mut v = self.port_overrides.unwrap_or_default();
             v.push(input.into());
             self.port_overrides = Some(v);
             self
         }
+        /// <p>Override specific listener ports used to route traffic to endpoints that are part of this endpoint group.
+        /// For example, you can create a port override in which the listener
+        /// receives user traffic on ports 80 and 443, but your accelerator routes that traffic to ports 1080
+        /// and 1443, respectively, on the endpoints.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html">
+        /// Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
         pub fn set_port_overrides(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PortOverride>>,
@@ -1536,7 +1731,7 @@ pub mod create_endpoint_group_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateEndpointGroupInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateEndpointGroupInput {
                 listener_arn: self.listener_arn,
@@ -1565,16 +1760,16 @@ impl CreateEndpointGroupInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateEndpointGroup,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateEndpointGroupInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1582,7 +1777,7 @@ impl CreateEndpointGroupInput {
         fn update_http_builder(
             input: &crate::input::CreateEndpointGroupInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1591,15 +1786,15 @@ impl CreateEndpointGroupInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateEndpointGroupInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GlobalAccelerator_V20180706.CreateEndpointGroup",
@@ -1609,17 +1804,17 @@ impl CreateEndpointGroupInput {
         if self.idempotency_token.is_none() {
             self.idempotency_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_endpoint_group(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1642,15 +1837,15 @@ impl CreateEndpointGroupInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateEndpointGroup::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateEndpointGroup",
             "globalaccelerator",
         ));
@@ -1659,10 +1854,10 @@ impl CreateEndpointGroupInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1694,6 +1889,7 @@ pub mod create_listener_input {
             self.accelerator_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of your accelerator.</p>
         pub fn set_accelerator_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1701,12 +1897,18 @@ pub mod create_listener_input {
             self.accelerator_arn = input;
             self
         }
+        /// Appends an item to `port_ranges`.
+        ///
+        /// To override the contents of this collection use [`set_port_ranges`](Self::set_port_ranges).
+        ///
+        /// <p>The list of port ranges to support for connections from clients to your accelerator.</p>
         pub fn port_ranges(mut self, input: impl Into<crate::model::PortRange>) -> Self {
             let mut v = self.port_ranges.unwrap_or_default();
             v.push(input.into());
             self.port_ranges = Some(v);
             self
         }
+        /// <p>The list of port ranges to support for connections from clients to your accelerator.</p>
         pub fn set_port_ranges(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PortRange>>,
@@ -1719,6 +1921,7 @@ pub mod create_listener_input {
             self.protocol = Some(input);
             self
         }
+        /// <p>The protocol for connections from clients to your accelerator.</p>
         pub fn set_protocol(mut self, input: std::option::Option<crate::model::Protocol>) -> Self {
             self.protocol = input;
             self
@@ -1739,6 +1942,18 @@ pub mod create_listener_input {
             self.client_affinity = Some(input);
             self
         }
+        /// <p>Client affinity lets you direct all requests from a user to the same endpoint, if you have stateful applications,
+        /// regardless of the port and protocol of the client request. Client affinity gives you control over whether to always
+        /// route each client to the same specific endpoint.</p>
+        /// <p>AWS Global Accelerator uses a consistent-flow hashing algorithm to choose the optimal endpoint for a connection. If client
+        /// affinity is <code>NONE</code>, Global Accelerator uses the "five-tuple" (5-tuple) properties—source IP address, source port,
+        /// destination IP address, destination port, and protocol—to select the hash value, and then chooses the best
+        /// endpoint. However, with this setting, if someone uses different ports to connect to Global Accelerator, their connections might not
+        /// be always routed to the same endpoint because the hash value changes. </p>
+        /// <p>If you want a given client to always be routed to the same endpoint, set client affinity to <code>SOURCE_IP</code>
+        /// instead. When you use the <code>SOURCE_IP</code> setting, Global Accelerator uses the "two-tuple" (2-tuple) properties—
+        /// source (client) IP address and destination IP address—to select the hash value.</p>
+        /// <p>The default value is <code>NONE</code>.</p>
         pub fn set_client_affinity(
             mut self,
             input: std::option::Option<crate::model::ClientAffinity>,
@@ -1752,6 +1967,8 @@ pub mod create_listener_input {
             self.idempotency_token = Some(input.into());
             self
         }
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the
+        /// uniqueness—of the request.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1764,7 +1981,7 @@ pub mod create_listener_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateListenerInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateListenerInput {
                 accelerator_arn: self.accelerator_arn,
@@ -1787,16 +2004,16 @@ impl CreateListenerInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateListener,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateListenerInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1804,7 +2021,7 @@ impl CreateListenerInput {
         fn update_http_builder(
             input: &crate::input::CreateListenerInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1813,15 +2030,15 @@ impl CreateListenerInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateListenerInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GlobalAccelerator_V20180706.CreateListener",
@@ -1831,14 +2048,16 @@ impl CreateListenerInput {
         if self.idempotency_token.is_none() {
             self.idempotency_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_listener(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1861,15 +2080,15 @@ impl CreateListenerInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateListener::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateListener",
             "globalaccelerator",
         ));
@@ -1878,10 +2097,10 @@ impl CreateListenerInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1909,6 +2128,7 @@ pub mod delete_accelerator_input {
             self.accelerator_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of an accelerator.</p>
         pub fn set_accelerator_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1921,7 +2141,7 @@ pub mod delete_accelerator_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteAcceleratorInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteAcceleratorInput {
                 accelerator_arn: self.accelerator_arn,
@@ -1940,16 +2160,16 @@ impl DeleteAcceleratorInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteAccelerator,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteAcceleratorInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1957,7 +2177,7 @@ impl DeleteAcceleratorInput {
         fn update_http_builder(
             input: &crate::input::DeleteAcceleratorInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1966,32 +2186,32 @@ impl DeleteAcceleratorInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteAcceleratorInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GlobalAccelerator_V20180706.DeleteAccelerator",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_accelerator(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2014,15 +2234,15 @@ impl DeleteAcceleratorInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteAccelerator::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteAccelerator",
             "globalaccelerator",
         ));
@@ -2031,10 +2251,10 @@ impl DeleteAcceleratorInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2062,6 +2282,7 @@ pub mod delete_custom_routing_accelerator_input {
             self.accelerator_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the custom routing accelerator to delete.</p>
         pub fn set_accelerator_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2074,7 +2295,7 @@ pub mod delete_custom_routing_accelerator_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteCustomRoutingAcceleratorInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteCustomRoutingAcceleratorInput {
                 accelerator_arn: self.accelerator_arn,
@@ -2094,16 +2315,16 @@ impl DeleteCustomRoutingAcceleratorInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteCustomRoutingAccelerator,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteCustomRoutingAcceleratorInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2111,7 +2332,7 @@ impl DeleteCustomRoutingAcceleratorInput {
         fn update_http_builder(
             input: &crate::input::DeleteCustomRoutingAcceleratorInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2120,30 +2341,30 @@ impl DeleteCustomRoutingAcceleratorInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteCustomRoutingAcceleratorInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GlobalAccelerator_V20180706.DeleteCustomRoutingAccelerator",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_custom_routing_accelerator(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_custom_routing_accelerator(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2166,15 +2387,15 @@ impl DeleteCustomRoutingAcceleratorInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteCustomRoutingAccelerator::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteCustomRoutingAccelerator",
             "globalaccelerator",
         ));
@@ -2183,10 +2404,10 @@ impl DeleteCustomRoutingAcceleratorInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2214,6 +2435,7 @@ pub mod delete_custom_routing_endpoint_group_input {
             self.endpoint_group_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the endpoint group to delete.</p>
         pub fn set_endpoint_group_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2226,7 +2448,7 @@ pub mod delete_custom_routing_endpoint_group_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteCustomRoutingEndpointGroupInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteCustomRoutingEndpointGroupInput {
                 endpoint_group_arn: self.endpoint_group_arn,
@@ -2246,16 +2468,16 @@ impl DeleteCustomRoutingEndpointGroupInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteCustomRoutingEndpointGroup,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteCustomRoutingEndpointGroupInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2263,7 +2485,7 @@ impl DeleteCustomRoutingEndpointGroupInput {
         fn update_http_builder(
             input: &crate::input::DeleteCustomRoutingEndpointGroupInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2272,30 +2494,30 @@ impl DeleteCustomRoutingEndpointGroupInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteCustomRoutingEndpointGroupInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GlobalAccelerator_V20180706.DeleteCustomRoutingEndpointGroup",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_custom_routing_endpoint_group(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_custom_routing_endpoint_group(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2318,15 +2540,15 @@ impl DeleteCustomRoutingEndpointGroupInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteCustomRoutingEndpointGroup::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteCustomRoutingEndpointGroup",
             "globalaccelerator",
         ));
@@ -2335,10 +2557,10 @@ impl DeleteCustomRoutingEndpointGroupInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2366,6 +2588,7 @@ pub mod delete_custom_routing_listener_input {
             self.listener_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the listener to delete.</p>
         pub fn set_listener_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.listener_arn = input;
             self
@@ -2375,7 +2598,7 @@ pub mod delete_custom_routing_listener_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteCustomRoutingListenerInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteCustomRoutingListenerInput {
                 listener_arn: self.listener_arn,
@@ -2395,16 +2618,16 @@ impl DeleteCustomRoutingListenerInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteCustomRoutingListener,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteCustomRoutingListenerInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2412,7 +2635,7 @@ impl DeleteCustomRoutingListenerInput {
         fn update_http_builder(
             input: &crate::input::DeleteCustomRoutingListenerInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2421,30 +2644,30 @@ impl DeleteCustomRoutingListenerInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteCustomRoutingListenerInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GlobalAccelerator_V20180706.DeleteCustomRoutingListener",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_custom_routing_listener(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_custom_routing_listener(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2467,15 +2690,15 @@ impl DeleteCustomRoutingListenerInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteCustomRoutingListener::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteCustomRoutingListener",
             "globalaccelerator",
         ));
@@ -2484,10 +2707,10 @@ impl DeleteCustomRoutingListenerInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2515,6 +2738,7 @@ pub mod delete_endpoint_group_input {
             self.endpoint_group_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the endpoint group to delete.</p>
         pub fn set_endpoint_group_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2527,7 +2751,7 @@ pub mod delete_endpoint_group_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteEndpointGroupInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteEndpointGroupInput {
                 endpoint_group_arn: self.endpoint_group_arn,
@@ -2546,16 +2770,16 @@ impl DeleteEndpointGroupInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteEndpointGroup,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteEndpointGroupInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2563,7 +2787,7 @@ impl DeleteEndpointGroupInput {
         fn update_http_builder(
             input: &crate::input::DeleteEndpointGroupInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2572,32 +2796,32 @@ impl DeleteEndpointGroupInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteEndpointGroupInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GlobalAccelerator_V20180706.DeleteEndpointGroup",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_endpoint_group(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2620,15 +2844,15 @@ impl DeleteEndpointGroupInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteEndpointGroup::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteEndpointGroup",
             "globalaccelerator",
         ));
@@ -2637,10 +2861,10 @@ impl DeleteEndpointGroupInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2668,6 +2892,7 @@ pub mod delete_listener_input {
             self.listener_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the listener.</p>
         pub fn set_listener_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.listener_arn = input;
             self
@@ -2677,7 +2902,7 @@ pub mod delete_listener_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteListenerInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteListenerInput {
                 listener_arn: self.listener_arn,
@@ -2696,16 +2921,16 @@ impl DeleteListenerInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteListener,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteListenerInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2713,7 +2938,7 @@ impl DeleteListenerInput {
         fn update_http_builder(
             input: &crate::input::DeleteListenerInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2722,29 +2947,31 @@ impl DeleteListenerInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteListenerInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GlobalAccelerator_V20180706.DeleteListener",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_delete_listener(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2767,15 +2994,15 @@ impl DeleteListenerInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteListener::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteListener",
             "globalaccelerator",
         ));
@@ -2784,10 +3011,10 @@ impl DeleteListenerInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2819,6 +3046,7 @@ pub mod deny_custom_routing_traffic_input {
             self.endpoint_group_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
         pub fn set_endpoint_group_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2831,16 +3059,27 @@ pub mod deny_custom_routing_traffic_input {
             self.endpoint_id = Some(input.into());
             self
         }
+        /// <p>An ID for the endpoint. For custom routing accelerators, this is the virtual private cloud (VPC) subnet ID.</p>
         pub fn set_endpoint_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.endpoint_id = input;
             self
         }
+        /// Appends an item to `destination_addresses`.
+        ///
+        /// To override the contents of this collection use [`set_destination_addresses`](Self::set_destination_addresses).
+        ///
+        /// <p>A list of specific Amazon EC2 instance IP addresses (destination addresses) in a subnet that you want to prevent from receiving
+        /// traffic. The IP addresses must be a subset of the IP addresses allowed for the VPC subnet associated with the
+        /// endpoint group.</p>
         pub fn destination_addresses(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.destination_addresses.unwrap_or_default();
             v.push(input.into());
             self.destination_addresses = Some(v);
             self
         }
+        /// <p>A list of specific Amazon EC2 instance IP addresses (destination addresses) in a subnet that you want to prevent from receiving
+        /// traffic. The IP addresses must be a subset of the IP addresses allowed for the VPC subnet associated with the
+        /// endpoint group.</p>
         pub fn set_destination_addresses(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2848,12 +3087,20 @@ pub mod deny_custom_routing_traffic_input {
             self.destination_addresses = input;
             self
         }
+        /// Appends an item to `destination_ports`.
+        ///
+        /// To override the contents of this collection use [`set_destination_ports`](Self::set_destination_ports).
+        ///
+        /// <p>A list of specific Amazon EC2 instance ports (destination ports) in a subnet endpoint that you want to prevent from
+        /// receiving traffic.</p>
         pub fn destination_ports(mut self, input: impl Into<i32>) -> Self {
             let mut v = self.destination_ports.unwrap_or_default();
             v.push(input.into());
             self.destination_ports = Some(v);
             self
         }
+        /// <p>A list of specific Amazon EC2 instance ports (destination ports) in a subnet endpoint that you want to prevent from
+        /// receiving traffic.</p>
         pub fn set_destination_ports(
             mut self,
             input: std::option::Option<std::vec::Vec<i32>>,
@@ -2873,6 +3120,14 @@ pub mod deny_custom_routing_traffic_input {
             self.deny_all_traffic_to_endpoint = Some(input);
             self
         }
+        /// <p>Indicates whether all destination IP addresses and ports for a specified VPC subnet endpoint <i>cannot</i>
+        /// receive traffic from a custom routing accelerator. The value is TRUE or FALSE. </p>
+        /// <p>When set to TRUE, <i>no</i> destinations in the custom routing VPC subnet can receive traffic. Note
+        /// that you cannot specify destination IP addresses and ports when the value is set to TRUE.</p>
+        /// <p>When set to FALSE (or not specified), you <i>must</i> specify a list of destination IP addresses that cannot receive
+        /// traffic. A list of ports is optional. If you don't specify a list of ports, the ports that can accept traffic is
+        /// the same as the ports configured for the endpoint group.</p>
+        /// <p>The default value is FALSE.</p>
         pub fn set_deny_all_traffic_to_endpoint(
             mut self,
             input: std::option::Option<bool>,
@@ -2885,7 +3140,7 @@ pub mod deny_custom_routing_traffic_input {
             self,
         ) -> std::result::Result<
             crate::input::DenyCustomRoutingTrafficInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DenyCustomRoutingTrafficInput {
                 endpoint_group_arn: self.endpoint_group_arn,
@@ -2909,16 +3164,16 @@ impl DenyCustomRoutingTrafficInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DenyCustomRoutingTraffic,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DenyCustomRoutingTrafficInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2926,7 +3181,7 @@ impl DenyCustomRoutingTrafficInput {
         fn update_http_builder(
             input: &crate::input::DenyCustomRoutingTrafficInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2935,32 +3190,34 @@ impl DenyCustomRoutingTrafficInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DenyCustomRoutingTrafficInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GlobalAccelerator_V20180706.DenyCustomRoutingTraffic",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_deny_custom_routing_traffic(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2983,15 +3240,15 @@ impl DenyCustomRoutingTrafficInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DenyCustomRoutingTraffic::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DenyCustomRoutingTraffic",
             "globalaccelerator",
         ));
@@ -3000,10 +3257,10 @@ impl DenyCustomRoutingTrafficInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3032,6 +3289,8 @@ pub mod deprovision_byoip_cidr_input {
             self.cidr = Some(input.into());
             self
         }
+        /// <p>The address range, in CIDR notation. The prefix must be the same prefix that you specified
+        /// when you provisioned the address range.</p>
         pub fn set_cidr(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cidr = input;
             self
@@ -3041,7 +3300,7 @@ pub mod deprovision_byoip_cidr_input {
             self,
         ) -> std::result::Result<
             crate::input::DeprovisionByoipCidrInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeprovisionByoipCidrInput { cidr: self.cidr })
         }
@@ -3058,16 +3317,16 @@ impl DeprovisionByoipCidrInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeprovisionByoipCidr,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeprovisionByoipCidrInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3075,7 +3334,7 @@ impl DeprovisionByoipCidrInput {
         fn update_http_builder(
             input: &crate::input::DeprovisionByoipCidrInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3084,32 +3343,32 @@ impl DeprovisionByoipCidrInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeprovisionByoipCidrInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GlobalAccelerator_V20180706.DeprovisionByoipCidr",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_deprovision_byoip_cidr(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3132,15 +3391,15 @@ impl DeprovisionByoipCidrInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeprovisionByoipCidr::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeprovisionByoipCidr",
             "globalaccelerator",
         ));
@@ -3149,10 +3408,10 @@ impl DeprovisionByoipCidrInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3180,6 +3439,7 @@ pub mod describe_accelerator_input {
             self.accelerator_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the accelerator to describe.</p>
         pub fn set_accelerator_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3192,7 +3452,7 @@ pub mod describe_accelerator_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeAcceleratorInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeAcceleratorInput {
                 accelerator_arn: self.accelerator_arn,
@@ -3211,16 +3471,16 @@ impl DescribeAcceleratorInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeAccelerator,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeAcceleratorInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3228,7 +3488,7 @@ impl DescribeAcceleratorInput {
         fn update_http_builder(
             input: &crate::input::DescribeAcceleratorInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3237,30 +3497,32 @@ impl DescribeAcceleratorInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeAcceleratorInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GlobalAccelerator_V20180706.DescribeAccelerator",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_accelerator(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3283,15 +3545,15 @@ impl DescribeAcceleratorInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeAccelerator::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeAccelerator",
             "globalaccelerator",
         ));
@@ -3300,10 +3562,10 @@ impl DescribeAcceleratorInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3331,6 +3593,7 @@ pub mod describe_accelerator_attributes_input {
             self.accelerator_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the accelerator with the attributes that you want to describe.</p>
         pub fn set_accelerator_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3343,7 +3606,7 @@ pub mod describe_accelerator_attributes_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeAcceleratorAttributesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeAcceleratorAttributesInput {
                 accelerator_arn: self.accelerator_arn,
@@ -3363,16 +3626,16 @@ impl DescribeAcceleratorAttributesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeAcceleratorAttributes,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeAcceleratorAttributesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3380,7 +3643,7 @@ impl DescribeAcceleratorAttributesInput {
         fn update_http_builder(
             input: &crate::input::DescribeAcceleratorAttributesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3389,30 +3652,30 @@ impl DescribeAcceleratorAttributesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeAcceleratorAttributesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GlobalAccelerator_V20180706.DescribeAcceleratorAttributes",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_accelerator_attributes(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_accelerator_attributes(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3435,15 +3698,15 @@ impl DescribeAcceleratorAttributesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeAcceleratorAttributes::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeAcceleratorAttributes",
             "globalaccelerator",
         ));
@@ -3452,10 +3715,10 @@ impl DescribeAcceleratorAttributesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3483,6 +3746,7 @@ pub mod describe_custom_routing_accelerator_input {
             self.accelerator_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the accelerator to describe.</p>
         pub fn set_accelerator_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3495,7 +3759,7 @@ pub mod describe_custom_routing_accelerator_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeCustomRoutingAcceleratorInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeCustomRoutingAcceleratorInput {
                 accelerator_arn: self.accelerator_arn,
@@ -3515,16 +3779,16 @@ impl DescribeCustomRoutingAcceleratorInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeCustomRoutingAccelerator,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeCustomRoutingAcceleratorInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3532,7 +3796,7 @@ impl DescribeCustomRoutingAcceleratorInput {
         fn update_http_builder(
             input: &crate::input::DescribeCustomRoutingAcceleratorInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3541,30 +3805,30 @@ impl DescribeCustomRoutingAcceleratorInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeCustomRoutingAcceleratorInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GlobalAccelerator_V20180706.DescribeCustomRoutingAccelerator",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_custom_routing_accelerator(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_custom_routing_accelerator(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3587,15 +3851,15 @@ impl DescribeCustomRoutingAcceleratorInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeCustomRoutingAccelerator::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeCustomRoutingAccelerator",
             "globalaccelerator",
         ));
@@ -3604,10 +3868,10 @@ impl DescribeCustomRoutingAcceleratorInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3635,6 +3899,7 @@ pub mod describe_custom_routing_accelerator_attributes_input {
             self.accelerator_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the custom routing accelerator to describe the attributes for.</p>
         pub fn set_accelerator_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3647,7 +3912,7 @@ pub mod describe_custom_routing_accelerator_attributes_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeCustomRoutingAcceleratorAttributesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(
                 crate::input::DescribeCustomRoutingAcceleratorAttributesInput {
@@ -3670,16 +3935,16 @@ impl DescribeCustomRoutingAcceleratorAttributesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeCustomRoutingAcceleratorAttributes,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeCustomRoutingAcceleratorAttributesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3687,7 +3952,7 @@ impl DescribeCustomRoutingAcceleratorAttributesInput {
         fn update_http_builder(
             input: &crate::input::DescribeCustomRoutingAcceleratorAttributesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3696,30 +3961,30 @@ impl DescribeCustomRoutingAcceleratorAttributesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeCustomRoutingAcceleratorAttributesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GlobalAccelerator_V20180706.DescribeCustomRoutingAcceleratorAttributes",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_custom_routing_accelerator_attributes(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_custom_routing_accelerator_attributes(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3742,15 +4007,15 @@ impl DescribeCustomRoutingAcceleratorAttributesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeCustomRoutingAcceleratorAttributes::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeCustomRoutingAcceleratorAttributes",
             "globalaccelerator",
         ));
@@ -3759,10 +4024,10 @@ impl DescribeCustomRoutingAcceleratorAttributesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3791,6 +4056,7 @@ pub mod describe_custom_routing_endpoint_group_input {
             self.endpoint_group_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the endpoint group to describe.</p>
         pub fn set_endpoint_group_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3803,7 +4069,7 @@ pub mod describe_custom_routing_endpoint_group_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeCustomRoutingEndpointGroupInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeCustomRoutingEndpointGroupInput {
                 endpoint_group_arn: self.endpoint_group_arn,
@@ -3823,16 +4089,16 @@ impl DescribeCustomRoutingEndpointGroupInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeCustomRoutingEndpointGroup,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeCustomRoutingEndpointGroupInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3840,7 +4106,7 @@ impl DescribeCustomRoutingEndpointGroupInput {
         fn update_http_builder(
             input: &crate::input::DescribeCustomRoutingEndpointGroupInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3849,30 +4115,30 @@ impl DescribeCustomRoutingEndpointGroupInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeCustomRoutingEndpointGroupInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GlobalAccelerator_V20180706.DescribeCustomRoutingEndpointGroup",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_custom_routing_endpoint_group(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_custom_routing_endpoint_group(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3895,15 +4161,15 @@ impl DescribeCustomRoutingEndpointGroupInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeCustomRoutingEndpointGroup::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeCustomRoutingEndpointGroup",
             "globalaccelerator",
         ));
@@ -3912,10 +4178,10 @@ impl DescribeCustomRoutingEndpointGroupInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3943,6 +4209,7 @@ pub mod describe_custom_routing_listener_input {
             self.listener_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the listener to describe.</p>
         pub fn set_listener_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.listener_arn = input;
             self
@@ -3952,7 +4219,7 @@ pub mod describe_custom_routing_listener_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeCustomRoutingListenerInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeCustomRoutingListenerInput {
                 listener_arn: self.listener_arn,
@@ -3972,16 +4239,16 @@ impl DescribeCustomRoutingListenerInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeCustomRoutingListener,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeCustomRoutingListenerInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3989,7 +4256,7 @@ impl DescribeCustomRoutingListenerInput {
         fn update_http_builder(
             input: &crate::input::DescribeCustomRoutingListenerInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3998,30 +4265,30 @@ impl DescribeCustomRoutingListenerInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeCustomRoutingListenerInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GlobalAccelerator_V20180706.DescribeCustomRoutingListener",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_custom_routing_listener(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_custom_routing_listener(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4044,15 +4311,15 @@ impl DescribeCustomRoutingListenerInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeCustomRoutingListener::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeCustomRoutingListener",
             "globalaccelerator",
         ));
@@ -4061,10 +4328,10 @@ impl DescribeCustomRoutingListenerInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4092,6 +4359,7 @@ pub mod describe_endpoint_group_input {
             self.endpoint_group_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the endpoint group to describe.</p>
         pub fn set_endpoint_group_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4104,7 +4372,7 @@ pub mod describe_endpoint_group_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeEndpointGroupInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeEndpointGroupInput {
                 endpoint_group_arn: self.endpoint_group_arn,
@@ -4123,16 +4391,16 @@ impl DescribeEndpointGroupInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeEndpointGroup,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeEndpointGroupInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4140,7 +4408,7 @@ impl DescribeEndpointGroupInput {
         fn update_http_builder(
             input: &crate::input::DescribeEndpointGroupInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4149,32 +4417,34 @@ impl DescribeEndpointGroupInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeEndpointGroupInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GlobalAccelerator_V20180706.DescribeEndpointGroup",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_endpoint_group(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4197,15 +4467,15 @@ impl DescribeEndpointGroupInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeEndpointGroup::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeEndpointGroup",
             "globalaccelerator",
         ));
@@ -4214,10 +4484,10 @@ impl DescribeEndpointGroupInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4245,6 +4515,7 @@ pub mod describe_listener_input {
             self.listener_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the listener to describe.</p>
         pub fn set_listener_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.listener_arn = input;
             self
@@ -4254,7 +4525,7 @@ pub mod describe_listener_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeListenerInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeListenerInput {
                 listener_arn: self.listener_arn,
@@ -4273,16 +4544,16 @@ impl DescribeListenerInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeListener,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeListenerInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4290,7 +4561,7 @@ impl DescribeListenerInput {
         fn update_http_builder(
             input: &crate::input::DescribeListenerInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4299,32 +4570,32 @@ impl DescribeListenerInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeListenerInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GlobalAccelerator_V20180706.DescribeListener",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_listener(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4347,15 +4618,15 @@ impl DescribeListenerInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeListener::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeListener",
             "globalaccelerator",
         ));
@@ -4364,10 +4635,10 @@ impl DescribeListenerInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4396,6 +4667,7 @@ pub mod list_accelerators_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The number of Global Accelerator objects that you want to return with this call. The default value is 10.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -4405,6 +4677,7 @@ pub mod list_accelerators_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token for the next set of results. You receive this token from a previous call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4414,7 +4687,7 @@ pub mod list_accelerators_input {
             self,
         ) -> std::result::Result<
             crate::input::ListAcceleratorsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListAcceleratorsInput {
                 max_results: self.max_results,
@@ -4434,16 +4707,16 @@ impl ListAcceleratorsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListAccelerators,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListAcceleratorsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4451,7 +4724,7 @@ impl ListAcceleratorsInput {
         fn update_http_builder(
             input: &crate::input::ListAcceleratorsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4460,32 +4733,32 @@ impl ListAcceleratorsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListAcceleratorsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GlobalAccelerator_V20180706.ListAccelerators",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_accelerators(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4508,15 +4781,15 @@ impl ListAcceleratorsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListAccelerators::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListAccelerators",
             "globalaccelerator",
         ));
@@ -4525,10 +4798,10 @@ impl ListAcceleratorsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4558,6 +4831,8 @@ pub mod list_byoip_cidrs_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make
+        /// another call with the returned <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -4567,6 +4842,7 @@ pub mod list_byoip_cidrs_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token for the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4576,7 +4852,7 @@ pub mod list_byoip_cidrs_input {
             self,
         ) -> std::result::Result<
             crate::input::ListByoipCidrsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListByoipCidrsInput {
                 max_results: self.max_results,
@@ -4596,16 +4872,16 @@ impl ListByoipCidrsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListByoipCidrs,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListByoipCidrsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4613,7 +4889,7 @@ impl ListByoipCidrsInput {
         fn update_http_builder(
             input: &crate::input::ListByoipCidrsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4622,32 +4898,32 @@ impl ListByoipCidrsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListByoipCidrsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GlobalAccelerator_V20180706.ListByoipCidrs",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_byoip_cidrs(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4670,15 +4946,15 @@ impl ListByoipCidrsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListByoipCidrs::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListByoipCidrs",
             "globalaccelerator",
         ));
@@ -4687,10 +4963,10 @@ impl ListByoipCidrsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4719,6 +4995,7 @@ pub mod list_custom_routing_accelerators_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The number of custom routing Global Accelerator objects that you want to return with this call. The default value is 10.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -4728,6 +5005,7 @@ pub mod list_custom_routing_accelerators_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token for the next set of results. You receive this token from a previous call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4737,7 +5015,7 @@ pub mod list_custom_routing_accelerators_input {
             self,
         ) -> std::result::Result<
             crate::input::ListCustomRoutingAcceleratorsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListCustomRoutingAcceleratorsInput {
                 max_results: self.max_results,
@@ -4758,16 +5036,16 @@ impl ListCustomRoutingAcceleratorsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListCustomRoutingAccelerators,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListCustomRoutingAcceleratorsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4775,7 +5053,7 @@ impl ListCustomRoutingAcceleratorsInput {
         fn update_http_builder(
             input: &crate::input::ListCustomRoutingAcceleratorsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4784,30 +5062,30 @@ impl ListCustomRoutingAcceleratorsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListCustomRoutingAcceleratorsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GlobalAccelerator_V20180706.ListCustomRoutingAccelerators",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_custom_routing_accelerators(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_custom_routing_accelerators(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4830,15 +5108,15 @@ impl ListCustomRoutingAcceleratorsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListCustomRoutingAccelerators::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListCustomRoutingAccelerators",
             "globalaccelerator",
         ));
@@ -4847,10 +5125,10 @@ impl ListCustomRoutingAcceleratorsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4880,6 +5158,7 @@ pub mod list_custom_routing_endpoint_groups_input {
             self.listener_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the listener to list endpoint groups for.</p>
         pub fn set_listener_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.listener_arn = input;
             self
@@ -4889,6 +5168,7 @@ pub mod list_custom_routing_endpoint_groups_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The number of endpoint group objects that you want to return with this call. The default value is 10.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -4898,6 +5178,7 @@ pub mod list_custom_routing_endpoint_groups_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token for the next set of results. You receive this token from a previous call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4907,7 +5188,7 @@ pub mod list_custom_routing_endpoint_groups_input {
             self,
         ) -> std::result::Result<
             crate::input::ListCustomRoutingEndpointGroupsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListCustomRoutingEndpointGroupsInput {
                 listener_arn: self.listener_arn,
@@ -4929,16 +5210,16 @@ impl ListCustomRoutingEndpointGroupsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListCustomRoutingEndpointGroups,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListCustomRoutingEndpointGroupsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4946,7 +5227,7 @@ impl ListCustomRoutingEndpointGroupsInput {
         fn update_http_builder(
             input: &crate::input::ListCustomRoutingEndpointGroupsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4955,30 +5236,30 @@ impl ListCustomRoutingEndpointGroupsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListCustomRoutingEndpointGroupsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GlobalAccelerator_V20180706.ListCustomRoutingEndpointGroups",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_custom_routing_endpoint_groups(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_custom_routing_endpoint_groups(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5001,15 +5282,15 @@ impl ListCustomRoutingEndpointGroupsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListCustomRoutingEndpointGroups::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListCustomRoutingEndpointGroups",
             "globalaccelerator",
         ));
@@ -5018,10 +5299,10 @@ impl ListCustomRoutingEndpointGroupsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5051,6 +5332,7 @@ pub mod list_custom_routing_listeners_input {
             self.accelerator_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the accelerator to list listeners for.</p>
         pub fn set_accelerator_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5063,6 +5345,7 @@ pub mod list_custom_routing_listeners_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The number of listener objects that you want to return with this call. The default value is 10.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -5072,6 +5355,7 @@ pub mod list_custom_routing_listeners_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token for the next set of results. You receive this token from a previous call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5081,7 +5365,7 @@ pub mod list_custom_routing_listeners_input {
             self,
         ) -> std::result::Result<
             crate::input::ListCustomRoutingListenersInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListCustomRoutingListenersInput {
                 accelerator_arn: self.accelerator_arn,
@@ -5103,16 +5387,16 @@ impl ListCustomRoutingListenersInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListCustomRoutingListeners,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListCustomRoutingListenersInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5120,7 +5404,7 @@ impl ListCustomRoutingListenersInput {
         fn update_http_builder(
             input: &crate::input::ListCustomRoutingListenersInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5129,30 +5413,30 @@ impl ListCustomRoutingListenersInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListCustomRoutingListenersInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GlobalAccelerator_V20180706.ListCustomRoutingListeners",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_custom_routing_listeners(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_custom_routing_listeners(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5175,15 +5459,15 @@ impl ListCustomRoutingListenersInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListCustomRoutingListeners::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListCustomRoutingListeners",
             "globalaccelerator",
         ));
@@ -5192,10 +5476,10 @@ impl ListCustomRoutingListenersInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5226,6 +5510,7 @@ pub mod list_custom_routing_port_mappings_input {
             self.accelerator_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the accelerator to list the custom routing port mappings for.</p>
         pub fn set_accelerator_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5238,6 +5523,7 @@ pub mod list_custom_routing_port_mappings_input {
             self.endpoint_group_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the endpoint group to list the custom routing port mappings for.</p>
         pub fn set_endpoint_group_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5250,6 +5536,7 @@ pub mod list_custom_routing_port_mappings_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The number of destination port mappings that you want to return with this call. The default value is 10.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -5259,6 +5546,7 @@ pub mod list_custom_routing_port_mappings_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token for the next set of results. You receive this token from a previous call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5268,7 +5556,7 @@ pub mod list_custom_routing_port_mappings_input {
             self,
         ) -> std::result::Result<
             crate::input::ListCustomRoutingPortMappingsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListCustomRoutingPortMappingsInput {
                 accelerator_arn: self.accelerator_arn,
@@ -5291,16 +5579,16 @@ impl ListCustomRoutingPortMappingsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListCustomRoutingPortMappings,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListCustomRoutingPortMappingsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5308,7 +5596,7 @@ impl ListCustomRoutingPortMappingsInput {
         fn update_http_builder(
             input: &crate::input::ListCustomRoutingPortMappingsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5317,30 +5605,30 @@ impl ListCustomRoutingPortMappingsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListCustomRoutingPortMappingsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GlobalAccelerator_V20180706.ListCustomRoutingPortMappings",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_custom_routing_port_mappings(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_custom_routing_port_mappings(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5363,15 +5651,15 @@ impl ListCustomRoutingPortMappingsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListCustomRoutingPortMappings::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListCustomRoutingPortMappings",
             "globalaccelerator",
         ));
@@ -5380,10 +5668,10 @@ impl ListCustomRoutingPortMappingsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5414,6 +5702,7 @@ pub mod list_custom_routing_port_mappings_by_destination_input {
             self.endpoint_id = Some(input.into());
             self
         }
+        /// <p>The ID for the virtual private cloud (VPC) subnet.</p>
         pub fn set_endpoint_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.endpoint_id = input;
             self
@@ -5424,6 +5713,8 @@ pub mod list_custom_routing_port_mappings_by_destination_input {
             self.destination_address = Some(input.into());
             self
         }
+        /// <p>The endpoint IP address in a virtual private cloud (VPC) subnet for which you want to receive back port
+        /// mappings.</p>
         pub fn set_destination_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5436,6 +5727,7 @@ pub mod list_custom_routing_port_mappings_by_destination_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The number of destination port mappings that you want to return with this call. The default value is 10.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -5445,6 +5737,7 @@ pub mod list_custom_routing_port_mappings_by_destination_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token for the next set of results. You receive this token from a previous call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5454,7 +5747,7 @@ pub mod list_custom_routing_port_mappings_by_destination_input {
             self,
         ) -> std::result::Result<
             crate::input::ListCustomRoutingPortMappingsByDestinationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(
                 crate::input::ListCustomRoutingPortMappingsByDestinationInput {
@@ -5480,16 +5773,16 @@ impl ListCustomRoutingPortMappingsByDestinationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListCustomRoutingPortMappingsByDestination,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListCustomRoutingPortMappingsByDestinationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5497,7 +5790,7 @@ impl ListCustomRoutingPortMappingsByDestinationInput {
         fn update_http_builder(
             input: &crate::input::ListCustomRoutingPortMappingsByDestinationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5506,30 +5799,30 @@ impl ListCustomRoutingPortMappingsByDestinationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListCustomRoutingPortMappingsByDestinationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GlobalAccelerator_V20180706.ListCustomRoutingPortMappingsByDestination",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_custom_routing_port_mappings_by_destination(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_custom_routing_port_mappings_by_destination(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5552,15 +5845,15 @@ impl ListCustomRoutingPortMappingsByDestinationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListCustomRoutingPortMappingsByDestination::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListCustomRoutingPortMappingsByDestination",
             "globalaccelerator",
         ));
@@ -5569,10 +5862,10 @@ impl ListCustomRoutingPortMappingsByDestinationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5603,6 +5896,7 @@ pub mod list_endpoint_groups_input {
             self.listener_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the listener.</p>
         pub fn set_listener_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.listener_arn = input;
             self
@@ -5612,6 +5906,7 @@ pub mod list_endpoint_groups_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The number of endpoint group objects that you want to return with this call. The default value is 10.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -5621,6 +5916,7 @@ pub mod list_endpoint_groups_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token for the next set of results. You receive this token from a previous call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5630,7 +5926,7 @@ pub mod list_endpoint_groups_input {
             self,
         ) -> std::result::Result<
             crate::input::ListEndpointGroupsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListEndpointGroupsInput {
                 listener_arn: self.listener_arn,
@@ -5651,16 +5947,16 @@ impl ListEndpointGroupsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListEndpointGroups,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListEndpointGroupsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5668,7 +5964,7 @@ impl ListEndpointGroupsInput {
         fn update_http_builder(
             input: &crate::input::ListEndpointGroupsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5677,30 +5973,32 @@ impl ListEndpointGroupsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListEndpointGroupsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GlobalAccelerator_V20180706.ListEndpointGroups",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_endpoint_groups(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5723,15 +6021,15 @@ impl ListEndpointGroupsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListEndpointGroups::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListEndpointGroups",
             "globalaccelerator",
         ));
@@ -5740,10 +6038,10 @@ impl ListEndpointGroupsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5773,6 +6071,7 @@ pub mod list_listeners_input {
             self.accelerator_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the accelerator for which you want to list listener objects.</p>
         pub fn set_accelerator_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5785,6 +6084,7 @@ pub mod list_listeners_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The number of listener objects that you want to return with this call. The default value is 10.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -5794,6 +6094,7 @@ pub mod list_listeners_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token for the next set of results. You receive this token from a previous call.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5801,8 +6102,10 @@ pub mod list_listeners_input {
         /// Consumes the builder and constructs a [`ListListenersInput`](crate::input::ListListenersInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListListenersInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListListenersInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListListenersInput {
                 accelerator_arn: self.accelerator_arn,
                 max_results: self.max_results,
@@ -5822,16 +6125,16 @@ impl ListListenersInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListListeners,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListListenersInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5839,7 +6142,7 @@ impl ListListenersInput {
         fn update_http_builder(
             input: &crate::input::ListListenersInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5848,29 +6151,31 @@ impl ListListenersInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListListenersInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GlobalAccelerator_V20180706.ListListeners",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_listeners(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5893,25 +6198,27 @@ impl ListListenersInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListListeners::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ListListeners",
-                    "globalaccelerator",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListListeners::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListListeners",
+            "globalaccelerator",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5939,6 +6246,7 @@ pub mod list_tags_for_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the accelerator to list tags for. An ARN uniquely identifies an accelerator.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -5948,7 +6256,7 @@ pub mod list_tags_for_resource_input {
             self,
         ) -> std::result::Result<
             crate::input::ListTagsForResourceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListTagsForResourceInput {
                 resource_arn: self.resource_arn,
@@ -5967,16 +6275,16 @@ impl ListTagsForResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListTagsForResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5984,7 +6292,7 @@ impl ListTagsForResourceInput {
         fn update_http_builder(
             input: &crate::input::ListTagsForResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5993,32 +6301,32 @@ impl ListTagsForResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListTagsForResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GlobalAccelerator_V20180706.ListTagsForResource",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6041,15 +6349,15 @@ impl ListTagsForResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListTagsForResource::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListTagsForResource",
             "globalaccelerator",
         ));
@@ -6058,10 +6366,10 @@ impl ListTagsForResourceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6093,6 +6401,9 @@ pub mod provision_byoip_cidr_input {
             self.cidr = Some(input.into());
             self
         }
+        /// <p>The public IPv4 address range, in CIDR notation. The most specific IP prefix that you can
+        /// specify is /24. The address range cannot overlap with another address range that you've brought
+        /// to this or another Region.</p>
         pub fn set_cidr(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cidr = input;
             self
@@ -6107,6 +6418,9 @@ pub mod provision_byoip_cidr_input {
             self.cidr_authorization_context = Some(input);
             self
         }
+        /// <p>A signed document that proves that you are authorized to bring the specified IP address range to
+        /// Amazon using BYOIP.
+        /// </p>
         pub fn set_cidr_authorization_context(
             mut self,
             input: std::option::Option<crate::model::CidrAuthorizationContext>,
@@ -6119,7 +6433,7 @@ pub mod provision_byoip_cidr_input {
             self,
         ) -> std::result::Result<
             crate::input::ProvisionByoipCidrInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ProvisionByoipCidrInput {
                 cidr: self.cidr,
@@ -6139,16 +6453,16 @@ impl ProvisionByoipCidrInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ProvisionByoipCidr,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ProvisionByoipCidrInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6156,7 +6470,7 @@ impl ProvisionByoipCidrInput {
         fn update_http_builder(
             input: &crate::input::ProvisionByoipCidrInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6165,30 +6479,32 @@ impl ProvisionByoipCidrInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ProvisionByoipCidrInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GlobalAccelerator_V20180706.ProvisionByoipCidr",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_provision_byoip_cidr(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6211,15 +6527,15 @@ impl ProvisionByoipCidrInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ProvisionByoipCidr::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ProvisionByoipCidr",
             "globalaccelerator",
         ));
@@ -6228,10 +6544,10 @@ impl ProvisionByoipCidrInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6255,12 +6571,20 @@ pub mod remove_custom_routing_endpoints_input {
         pub(crate) endpoint_group_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `endpoint_ids`.
+        ///
+        /// To override the contents of this collection use [`set_endpoint_ids`](Self::set_endpoint_ids).
+        ///
+        /// <p>The IDs for the endpoints. For custom routing accelerators, endpoint IDs are the virtual private cloud (VPC)
+        /// subnet IDs. </p>
         pub fn endpoint_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.endpoint_ids.unwrap_or_default();
             v.push(input.into());
             self.endpoint_ids = Some(v);
             self
         }
+        /// <p>The IDs for the endpoints. For custom routing accelerators, endpoint IDs are the virtual private cloud (VPC)
+        /// subnet IDs. </p>
         pub fn set_endpoint_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6273,6 +6597,7 @@ pub mod remove_custom_routing_endpoints_input {
             self.endpoint_group_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the endpoint group to remove endpoints from.</p>
         pub fn set_endpoint_group_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6285,7 +6610,7 @@ pub mod remove_custom_routing_endpoints_input {
             self,
         ) -> std::result::Result<
             crate::input::RemoveCustomRoutingEndpointsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::RemoveCustomRoutingEndpointsInput {
                 endpoint_ids: self.endpoint_ids,
@@ -6306,16 +6631,16 @@ impl RemoveCustomRoutingEndpointsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RemoveCustomRoutingEndpoints,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RemoveCustomRoutingEndpointsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6323,7 +6648,7 @@ impl RemoveCustomRoutingEndpointsInput {
         fn update_http_builder(
             input: &crate::input::RemoveCustomRoutingEndpointsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6332,30 +6657,30 @@ impl RemoveCustomRoutingEndpointsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RemoveCustomRoutingEndpointsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GlobalAccelerator_V20180706.RemoveCustomRoutingEndpoints",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_remove_custom_routing_endpoints(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_remove_custom_routing_endpoints(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6378,15 +6703,15 @@ impl RemoveCustomRoutingEndpointsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::RemoveCustomRoutingEndpoints::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "RemoveCustomRoutingEndpoints",
             "globalaccelerator",
         ));
@@ -6395,10 +6720,10 @@ impl RemoveCustomRoutingEndpointsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6427,16 +6752,23 @@ pub mod tag_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the Global Accelerator resource to add tags to. An ARN uniquely identifies a resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags to add to a resource. A tag consists of a key and a value that you define.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The tags to add to a resource. A tag consists of a key and a value that you define.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -6447,8 +6779,10 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::TagResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::TagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::TagResourceInput {
                 resource_arn: self.resource_arn,
                 tags: self.tags,
@@ -6467,16 +6801,16 @@ impl TagResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::TagResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6484,7 +6818,7 @@ impl TagResourceInput {
         fn update_http_builder(
             input: &crate::input::TagResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6493,29 +6827,31 @@ impl TagResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::TagResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GlobalAccelerator_V20180706.TagResource",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6538,25 +6874,27 @@ impl TagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::TagResource::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "TagResource",
-                    "globalaccelerator",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::TagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "TagResource",
+            "globalaccelerator",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6585,16 +6923,23 @@ pub mod untag_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the Global Accelerator resource to remove tags from. An ARN uniquely identifies a resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Appends an item to `tag_keys`.
+        ///
+        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
+        ///
+        /// <p>The tag key pairs that you want to remove from the specified resources.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
+        /// <p>The tag key pairs that you want to remove from the specified resources.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6605,8 +6950,10 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UntagResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UntagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UntagResourceInput {
                 resource_arn: self.resource_arn,
                 tag_keys: self.tag_keys,
@@ -6625,16 +6972,16 @@ impl UntagResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UntagResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6642,7 +6989,7 @@ impl UntagResourceInput {
         fn update_http_builder(
             input: &crate::input::UntagResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6651,29 +6998,31 @@ impl UntagResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UntagResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GlobalAccelerator_V20180706.UntagResource",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6696,25 +7045,27 @@ impl UntagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UntagResource::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UntagResource",
-                    "globalaccelerator",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UntagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UntagResource",
+            "globalaccelerator",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6745,6 +7096,7 @@ pub mod update_accelerator_input {
             self.accelerator_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the accelerator to update.</p>
         pub fn set_accelerator_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6758,6 +7110,8 @@ pub mod update_accelerator_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric characters or
+        /// hyphens (-), and must not begin or end with a hyphen.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -6767,6 +7121,7 @@ pub mod update_accelerator_input {
             self.ip_address_type = Some(input);
             self
         }
+        /// <p>The IP address type, which must be IPv4.</p>
         pub fn set_ip_address_type(
             mut self,
             input: std::option::Option<crate::model::IpAddressType>,
@@ -6780,6 +7135,8 @@ pub mod update_accelerator_input {
             self.enabled = Some(input);
             self
         }
+        /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true. </p>
+        /// <p>If the value is set to true, the accelerator cannot be deleted. If set to false, the accelerator can be deleted.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -6789,7 +7146,7 @@ pub mod update_accelerator_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateAcceleratorInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateAcceleratorInput {
                 accelerator_arn: self.accelerator_arn,
@@ -6811,16 +7168,16 @@ impl UpdateAcceleratorInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateAccelerator,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateAcceleratorInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6828,7 +7185,7 @@ impl UpdateAcceleratorInput {
         fn update_http_builder(
             input: &crate::input::UpdateAcceleratorInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6837,32 +7194,32 @@ impl UpdateAcceleratorInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateAcceleratorInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GlobalAccelerator_V20180706.UpdateAccelerator",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_accelerator(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6885,15 +7242,15 @@ impl UpdateAcceleratorInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateAccelerator::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateAccelerator",
             "globalaccelerator",
         ));
@@ -6902,10 +7259,10 @@ impl UpdateAcceleratorInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6936,6 +7293,7 @@ pub mod update_accelerator_attributes_input {
             self.accelerator_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the accelerator that you want to update.</p>
         pub fn set_accelerator_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6951,6 +7309,10 @@ pub mod update_accelerator_attributes_input {
             self.flow_logs_enabled = Some(input);
             self
         }
+        /// <p>Update whether flow logs are enabled. The default value is false. If the value is true,
+        /// <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow Logs</a> in
+        /// the <i>AWS Global Accelerator Developer Guide</i>.</p>
         pub fn set_flow_logs_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.flow_logs_enabled = input;
             self
@@ -6962,6 +7324,9 @@ pub mod update_accelerator_attributes_input {
             self.flow_logs_s3_bucket = Some(input.into());
             self
         }
+        /// <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is
+        /// <code>true</code>. The bucket must exist and have a bucket policy that grants AWS Global Accelerator permission to write to the
+        /// bucket.</p>
         pub fn set_flow_logs_s3_bucket(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6978,6 +7343,11 @@ pub mod update_accelerator_attributes_input {
             self.flow_logs_s3_prefix = Some(input.into());
             self
         }
+        /// <p>Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if
+        /// <code>FlowLogsEnabled</code> is <code>true</code>. </p>
+        /// <p>If you don’t specify a prefix, the flow logs are stored in the
+        /// root of the bucket. If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:</p>
+        /// <p>s3-bucket_name//AWSLogs/aws_account_id</p>
         pub fn set_flow_logs_s3_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6990,7 +7360,7 @@ pub mod update_accelerator_attributes_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateAcceleratorAttributesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateAcceleratorAttributesInput {
                 accelerator_arn: self.accelerator_arn,
@@ -7013,16 +7383,16 @@ impl UpdateAcceleratorAttributesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateAcceleratorAttributes,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateAcceleratorAttributesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7030,7 +7400,7 @@ impl UpdateAcceleratorAttributesInput {
         fn update_http_builder(
             input: &crate::input::UpdateAcceleratorAttributesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7039,30 +7409,30 @@ impl UpdateAcceleratorAttributesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateAcceleratorAttributesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GlobalAccelerator_V20180706.UpdateAcceleratorAttributes",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_accelerator_attributes(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_accelerator_attributes(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7085,15 +7455,15 @@ impl UpdateAcceleratorAttributesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateAcceleratorAttributes::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateAcceleratorAttributes",
             "globalaccelerator",
         ));
@@ -7102,10 +7472,10 @@ impl UpdateAcceleratorAttributesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7136,6 +7506,7 @@ pub mod update_custom_routing_accelerator_input {
             self.accelerator_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the accelerator to update.</p>
         pub fn set_accelerator_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7149,6 +7520,8 @@ pub mod update_custom_routing_accelerator_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric characters or
+        /// hyphens (-), and must not begin or end with a hyphen.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -7158,6 +7531,7 @@ pub mod update_custom_routing_accelerator_input {
             self.ip_address_type = Some(input);
             self
         }
+        /// <p>The value for the address type must be IPv4.</p>
         pub fn set_ip_address_type(
             mut self,
             input: std::option::Option<crate::model::IpAddressType>,
@@ -7171,6 +7545,8 @@ pub mod update_custom_routing_accelerator_input {
             self.enabled = Some(input);
             self
         }
+        /// <p>Indicates whether an accelerator is enabled. The value is true or false. The default value is true. </p>
+        /// <p>If the value is set to true, the accelerator cannot be deleted. If set to false, the accelerator can be deleted.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -7180,7 +7556,7 @@ pub mod update_custom_routing_accelerator_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateCustomRoutingAcceleratorInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateCustomRoutingAcceleratorInput {
                 accelerator_arn: self.accelerator_arn,
@@ -7203,16 +7579,16 @@ impl UpdateCustomRoutingAcceleratorInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateCustomRoutingAccelerator,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateCustomRoutingAcceleratorInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7220,7 +7596,7 @@ impl UpdateCustomRoutingAcceleratorInput {
         fn update_http_builder(
             input: &crate::input::UpdateCustomRoutingAcceleratorInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7229,30 +7605,30 @@ impl UpdateCustomRoutingAcceleratorInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateCustomRoutingAcceleratorInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GlobalAccelerator_V20180706.UpdateCustomRoutingAccelerator",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_custom_routing_accelerator(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_custom_routing_accelerator(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7275,15 +7651,15 @@ impl UpdateCustomRoutingAcceleratorInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateCustomRoutingAccelerator::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateCustomRoutingAccelerator",
             "globalaccelerator",
         ));
@@ -7292,10 +7668,10 @@ impl UpdateCustomRoutingAcceleratorInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7326,6 +7702,7 @@ pub mod update_custom_routing_accelerator_attributes_input {
             self.accelerator_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the custom routing accelerator to update attributes for.</p>
         pub fn set_accelerator_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7341,6 +7718,10 @@ pub mod update_custom_routing_accelerator_attributes_input {
             self.flow_logs_enabled = Some(input);
             self
         }
+        /// <p>Update whether flow logs are enabled. The default value is false. If the value is true,
+        /// <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow Logs</a> in
+        /// the <i>AWS Global Accelerator Developer Guide</i>.</p>
         pub fn set_flow_logs_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.flow_logs_enabled = input;
             self
@@ -7352,6 +7733,9 @@ pub mod update_custom_routing_accelerator_attributes_input {
             self.flow_logs_s3_bucket = Some(input.into());
             self
         }
+        /// <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is
+        /// <code>true</code>. The bucket must exist and have a bucket policy that grants AWS Global Accelerator permission to write to the
+        /// bucket.</p>
         pub fn set_flow_logs_s3_bucket(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7368,6 +7752,11 @@ pub mod update_custom_routing_accelerator_attributes_input {
             self.flow_logs_s3_prefix = Some(input.into());
             self
         }
+        /// <p>Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if
+        /// <code>FlowLogsEnabled</code> is <code>true</code>. </p>
+        /// <p>If you don’t specify a prefix, the flow logs are stored in the
+        /// root of the bucket. If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:</p>
+        /// <p>DOC-EXAMPLE-BUCKET//AWSLogs/aws_account_id</p>
         pub fn set_flow_logs_s3_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7380,7 +7769,7 @@ pub mod update_custom_routing_accelerator_attributes_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateCustomRoutingAcceleratorAttributesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(
                 crate::input::UpdateCustomRoutingAcceleratorAttributesInput {
@@ -7406,16 +7795,16 @@ impl UpdateCustomRoutingAcceleratorAttributesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateCustomRoutingAcceleratorAttributes,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateCustomRoutingAcceleratorAttributesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7423,7 +7812,7 @@ impl UpdateCustomRoutingAcceleratorAttributesInput {
         fn update_http_builder(
             input: &crate::input::UpdateCustomRoutingAcceleratorAttributesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7432,30 +7821,30 @@ impl UpdateCustomRoutingAcceleratorAttributesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateCustomRoutingAcceleratorAttributesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GlobalAccelerator_V20180706.UpdateCustomRoutingAcceleratorAttributes",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_custom_routing_accelerator_attributes(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_custom_routing_accelerator_attributes(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7478,15 +7867,15 @@ impl UpdateCustomRoutingAcceleratorAttributesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateCustomRoutingAcceleratorAttributes::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateCustomRoutingAcceleratorAttributes",
             "globalaccelerator",
         ));
@@ -7495,10 +7884,10 @@ impl UpdateCustomRoutingAcceleratorAttributesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7527,16 +7916,29 @@ pub mod update_custom_routing_listener_input {
             self.listener_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the listener to update.</p>
         pub fn set_listener_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.listener_arn = input;
             self
         }
+        /// Appends an item to `port_ranges`.
+        ///
+        /// To override the contents of this collection use [`set_port_ranges`](Self::set_port_ranges).
+        ///
+        /// <p>The updated port range to support for connections from clients to your accelerator. If you remove ports that are
+        /// currently being used by a subnet endpoint, the call fails.</p>
+        /// <p>Separately, you set port ranges for endpoints. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html">About
+        /// endpoints for custom routing accelerators</a>.</p>
         pub fn port_ranges(mut self, input: impl Into<crate::model::PortRange>) -> Self {
             let mut v = self.port_ranges.unwrap_or_default();
             v.push(input.into());
             self.port_ranges = Some(v);
             self
         }
+        /// <p>The updated port range to support for connections from clients to your accelerator. If you remove ports that are
+        /// currently being used by a subnet endpoint, the call fails.</p>
+        /// <p>Separately, you set port ranges for endpoints. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html">About
+        /// endpoints for custom routing accelerators</a>.</p>
         pub fn set_port_ranges(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PortRange>>,
@@ -7549,7 +7951,7 @@ pub mod update_custom_routing_listener_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateCustomRoutingListenerInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateCustomRoutingListenerInput {
                 listener_arn: self.listener_arn,
@@ -7570,16 +7972,16 @@ impl UpdateCustomRoutingListenerInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateCustomRoutingListener,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateCustomRoutingListenerInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7587,7 +7989,7 @@ impl UpdateCustomRoutingListenerInput {
         fn update_http_builder(
             input: &crate::input::UpdateCustomRoutingListenerInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7596,30 +7998,30 @@ impl UpdateCustomRoutingListenerInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateCustomRoutingListenerInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GlobalAccelerator_V20180706.UpdateCustomRoutingListener",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_custom_routing_listener(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_custom_routing_listener(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7642,15 +8044,15 @@ impl UpdateCustomRoutingListenerInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateCustomRoutingListener::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateCustomRoutingListener",
             "globalaccelerator",
         ));
@@ -7659,10 +8061,10 @@ impl UpdateCustomRoutingListenerInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7699,6 +8101,7 @@ pub mod update_endpoint_group_input {
             self.endpoint_group_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
         pub fn set_endpoint_group_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7706,6 +8109,11 @@ pub mod update_endpoint_group_input {
             self.endpoint_group_arn = input;
             self
         }
+        /// Appends an item to `endpoint_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_endpoint_configurations`](Self::set_endpoint_configurations).
+        ///
+        /// <p>The list of endpoint objects. A resource must be valid and active when you add it as an endpoint.</p>
         pub fn endpoint_configurations(
             mut self,
             input: impl Into<crate::model::EndpointConfiguration>,
@@ -7715,6 +8123,7 @@ pub mod update_endpoint_group_input {
             self.endpoint_configurations = Some(v);
             self
         }
+        /// <p>The list of endpoint objects. A resource must be valid and active when you add it as an endpoint.</p>
         pub fn set_endpoint_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EndpointConfiguration>>,
@@ -7731,6 +8140,11 @@ pub mod update_endpoint_group_input {
             self.traffic_dial_percentage = Some(input);
             self
         }
+        /// <p>The percentage of traffic to send to an AWS Region. Additional traffic is distributed to other endpoint groups for
+        /// this listener. </p>
+        /// <p>Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is
+        /// applied to the traffic that would otherwise have been routed to the Region based on optimal routing.</p>
+        /// <p>The default value is 100.</p>
         pub fn set_traffic_dial_percentage(mut self, input: std::option::Option<f32>) -> Self {
             self.traffic_dial_percentage = input;
             self
@@ -7742,6 +8156,9 @@ pub mod update_endpoint_group_input {
             self.health_check_port = Some(input);
             self
         }
+        /// <p>The port that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default port
+        /// is the listener port that this endpoint group is associated with. If the listener port is a list of ports, Global Accelerator uses
+        /// the first port in the list.</p>
         pub fn set_health_check_port(mut self, input: std::option::Option<i32>) -> Self {
             self.health_check_port = input;
             self
@@ -7752,6 +8169,8 @@ pub mod update_endpoint_group_input {
             self.health_check_protocol = Some(input);
             self
         }
+        /// <p>The protocol that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default
+        /// value is TCP.</p>
         pub fn set_health_check_protocol(
             mut self,
             input: std::option::Option<crate::model::HealthCheckProtocol>,
@@ -7765,6 +8184,8 @@ pub mod update_endpoint_group_input {
             self.health_check_path = Some(input.into());
             self
         }
+        /// <p>If the protocol is HTTP/S, then this specifies the path that is the destination for health check targets. The
+        /// default value is slash (/).</p>
         pub fn set_health_check_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7777,6 +8198,7 @@ pub mod update_endpoint_group_input {
             self.health_check_interval_seconds = Some(input);
             self
         }
+        /// <p>The time—10 seconds or 30 seconds—between each health check for an endpoint. The default value is 30.</p>
         pub fn set_health_check_interval_seconds(
             mut self,
             input: std::option::Option<i32>,
@@ -7790,16 +8212,34 @@ pub mod update_endpoint_group_input {
             self.threshold_count = Some(input);
             self
         }
+        /// <p>The number of consecutive health checks required to set the state of a healthy endpoint to unhealthy, or to set an
+        /// unhealthy endpoint to healthy. The default value is 3.</p>
         pub fn set_threshold_count(mut self, input: std::option::Option<i32>) -> Self {
             self.threshold_count = input;
             self
         }
+        /// Appends an item to `port_overrides`.
+        ///
+        /// To override the contents of this collection use [`set_port_overrides`](Self::set_port_overrides).
+        ///
+        /// <p>Override specific listener ports used to route traffic to endpoints that are part of this endpoint group.
+        /// For example, you can create a port override in which the listener
+        /// receives user traffic on ports 80 and 443, but your accelerator routes that traffic to ports 1080
+        /// and 1443, respectively, on the endpoints.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html">
+        /// Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
         pub fn port_overrides(mut self, input: impl Into<crate::model::PortOverride>) -> Self {
             let mut v = self.port_overrides.unwrap_or_default();
             v.push(input.into());
             self.port_overrides = Some(v);
             self
         }
+        /// <p>Override specific listener ports used to route traffic to endpoints that are part of this endpoint group.
+        /// For example, you can create a port override in which the listener
+        /// receives user traffic on ports 80 and 443, but your accelerator routes that traffic to ports 1080
+        /// and 1443, respectively, on the endpoints.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html">
+        /// Port overrides</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
         pub fn set_port_overrides(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PortOverride>>,
@@ -7812,7 +8252,7 @@ pub mod update_endpoint_group_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateEndpointGroupInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateEndpointGroupInput {
                 endpoint_group_arn: self.endpoint_group_arn,
@@ -7839,16 +8279,16 @@ impl UpdateEndpointGroupInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateEndpointGroup,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateEndpointGroupInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7856,7 +8296,7 @@ impl UpdateEndpointGroupInput {
         fn update_http_builder(
             input: &crate::input::UpdateEndpointGroupInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7865,32 +8305,32 @@ impl UpdateEndpointGroupInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateEndpointGroupInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GlobalAccelerator_V20180706.UpdateEndpointGroup",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_endpoint_group(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7913,15 +8353,15 @@ impl UpdateEndpointGroupInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateEndpointGroup::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateEndpointGroup",
             "globalaccelerator",
         ));
@@ -7930,10 +8370,10 @@ impl UpdateEndpointGroupInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7964,16 +8404,23 @@ pub mod update_listener_input {
             self.listener_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the listener to update.</p>
         pub fn set_listener_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.listener_arn = input;
             self
         }
+        /// Appends an item to `port_ranges`.
+        ///
+        /// To override the contents of this collection use [`set_port_ranges`](Self::set_port_ranges).
+        ///
+        /// <p>The updated list of port ranges for the connections from clients to the accelerator.</p>
         pub fn port_ranges(mut self, input: impl Into<crate::model::PortRange>) -> Self {
             let mut v = self.port_ranges.unwrap_or_default();
             v.push(input.into());
             self.port_ranges = Some(v);
             self
         }
+        /// <p>The updated list of port ranges for the connections from clients to the accelerator.</p>
         pub fn set_port_ranges(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PortRange>>,
@@ -7986,6 +8433,7 @@ pub mod update_listener_input {
             self.protocol = Some(input);
             self
         }
+        /// <p>The updated protocol for the connections from clients to the accelerator.</p>
         pub fn set_protocol(mut self, input: std::option::Option<crate::model::Protocol>) -> Self {
             self.protocol = input;
             self
@@ -8006,6 +8454,18 @@ pub mod update_listener_input {
             self.client_affinity = Some(input);
             self
         }
+        /// <p>Client affinity lets you direct all requests from a user to the same endpoint, if you have stateful applications,
+        /// regardless of the port and protocol of the client request. Client affinity gives you control over whether to always
+        /// route each client to the same specific endpoint.</p>
+        /// <p>AWS Global Accelerator uses a consistent-flow hashing algorithm to choose the optimal endpoint for a connection. If client
+        /// affinity is <code>NONE</code>, Global Accelerator uses the "five-tuple" (5-tuple) properties—source IP address, source port,
+        /// destination IP address, destination port, and protocol—to select the hash value, and then chooses the best
+        /// endpoint. However, with this setting, if someone uses different ports to connect to Global Accelerator, their connections might not
+        /// be always routed to the same endpoint because the hash value changes. </p>
+        /// <p>If you want a given client to always be routed to the same endpoint, set client affinity to <code>SOURCE_IP</code>
+        /// instead. When you use the <code>SOURCE_IP</code> setting, Global Accelerator uses the "two-tuple" (2-tuple) properties—
+        /// source (client) IP address and destination IP address—to select the hash value.</p>
+        /// <p>The default value is <code>NONE</code>.</p>
         pub fn set_client_affinity(
             mut self,
             input: std::option::Option<crate::model::ClientAffinity>,
@@ -8018,7 +8478,7 @@ pub mod update_listener_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateListenerInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateListenerInput {
                 listener_arn: self.listener_arn,
@@ -8040,16 +8500,16 @@ impl UpdateListenerInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateListener,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateListenerInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8057,7 +8517,7 @@ impl UpdateListenerInput {
         fn update_http_builder(
             input: &crate::input::UpdateListenerInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8066,29 +8526,31 @@ impl UpdateListenerInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateListenerInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GlobalAccelerator_V20180706.UpdateListener",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_update_listener(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8111,15 +8573,15 @@ impl UpdateListenerInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateListener::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateListener",
             "globalaccelerator",
         ));
@@ -8128,10 +8590,10 @@ impl UpdateListenerInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8159,6 +8621,7 @@ pub mod withdraw_byoip_cidr_input {
             self.cidr = Some(input.into());
             self
         }
+        /// <p>The address range, in CIDR notation.</p>
         pub fn set_cidr(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cidr = input;
             self
@@ -8168,7 +8631,7 @@ pub mod withdraw_byoip_cidr_input {
             self,
         ) -> std::result::Result<
             crate::input::WithdrawByoipCidrInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::WithdrawByoipCidrInput { cidr: self.cidr })
         }
@@ -8185,16 +8648,16 @@ impl WithdrawByoipCidrInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::WithdrawByoipCidr,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::WithdrawByoipCidrInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8202,7 +8665,7 @@ impl WithdrawByoipCidrInput {
         fn update_http_builder(
             input: &crate::input::WithdrawByoipCidrInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8211,32 +8674,32 @@ impl WithdrawByoipCidrInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::WithdrawByoipCidrInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "GlobalAccelerator_V20180706.WithdrawByoipCidr",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_withdraw_byoip_cidr(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8259,15 +8722,15 @@ impl WithdrawByoipCidrInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::WithdrawByoipCidr::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "WithdrawByoipCidr",
             "globalaccelerator",
         ));
@@ -8276,10 +8739,10 @@ impl WithdrawByoipCidrInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8293,6 +8756,7 @@ impl WithdrawByoipCidrInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WithdrawByoipCidrInput {
@@ -8307,6 +8771,7 @@ impl std::fmt::Debug for WithdrawByoipCidrInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateListenerInput {
@@ -8341,6 +8806,7 @@ impl std::fmt::Debug for UpdateListenerInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateEndpointGroupInput {
@@ -8397,6 +8863,7 @@ impl std::fmt::Debug for UpdateEndpointGroupInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateCustomRoutingListenerInput {
@@ -8417,6 +8884,7 @@ impl std::fmt::Debug for UpdateCustomRoutingListenerInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateCustomRoutingAcceleratorAttributesInput {
@@ -8449,6 +8917,7 @@ impl std::fmt::Debug for UpdateCustomRoutingAcceleratorAttributesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateCustomRoutingAcceleratorInput {
@@ -8474,6 +8943,7 @@ impl std::fmt::Debug for UpdateCustomRoutingAcceleratorInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAcceleratorAttributesInput {
@@ -8506,6 +8976,7 @@ impl std::fmt::Debug for UpdateAcceleratorAttributesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAcceleratorInput {
@@ -8531,6 +9002,7 @@ impl std::fmt::Debug for UpdateAcceleratorInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
@@ -8548,6 +9020,7 @@ impl std::fmt::Debug for UntagResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
@@ -8565,6 +9038,7 @@ impl std::fmt::Debug for TagResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveCustomRoutingEndpointsInput {
@@ -8583,6 +9057,7 @@ impl std::fmt::Debug for RemoveCustomRoutingEndpointsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProvisionByoipCidrInput {
@@ -8607,6 +9082,7 @@ impl std::fmt::Debug for ProvisionByoipCidrInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
@@ -8621,6 +9097,7 @@ impl std::fmt::Debug for ListTagsForResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListListenersInput {
@@ -8641,6 +9118,7 @@ impl std::fmt::Debug for ListListenersInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEndpointGroupsInput {
@@ -8661,6 +9139,7 @@ impl std::fmt::Debug for ListEndpointGroupsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCustomRoutingPortMappingsByDestinationInput {
@@ -8685,6 +9164,7 @@ impl std::fmt::Debug for ListCustomRoutingPortMappingsByDestinationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCustomRoutingPortMappingsInput {
@@ -8708,6 +9188,7 @@ impl std::fmt::Debug for ListCustomRoutingPortMappingsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCustomRoutingListenersInput {
@@ -8728,6 +9209,7 @@ impl std::fmt::Debug for ListCustomRoutingListenersInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCustomRoutingEndpointGroupsInput {
@@ -8748,6 +9230,7 @@ impl std::fmt::Debug for ListCustomRoutingEndpointGroupsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCustomRoutingAcceleratorsInput {
@@ -8765,6 +9248,7 @@ impl std::fmt::Debug for ListCustomRoutingAcceleratorsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListByoipCidrsInput {
@@ -8783,6 +9267,7 @@ impl std::fmt::Debug for ListByoipCidrsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAcceleratorsInput {
@@ -8800,6 +9285,7 @@ impl std::fmt::Debug for ListAcceleratorsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeListenerInput {
@@ -8814,6 +9300,7 @@ impl std::fmt::Debug for DescribeListenerInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEndpointGroupInput {
@@ -8828,6 +9315,7 @@ impl std::fmt::Debug for DescribeEndpointGroupInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCustomRoutingListenerInput {
@@ -8842,6 +9330,7 @@ impl std::fmt::Debug for DescribeCustomRoutingListenerInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCustomRoutingEndpointGroupInput {
@@ -8856,6 +9345,7 @@ impl std::fmt::Debug for DescribeCustomRoutingEndpointGroupInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCustomRoutingAcceleratorAttributesInput {
@@ -8870,6 +9360,7 @@ impl std::fmt::Debug for DescribeCustomRoutingAcceleratorAttributesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCustomRoutingAcceleratorInput {
@@ -8884,6 +9375,7 @@ impl std::fmt::Debug for DescribeCustomRoutingAcceleratorInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAcceleratorAttributesInput {
@@ -8898,6 +9390,7 @@ impl std::fmt::Debug for DescribeAcceleratorAttributesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAcceleratorInput {
@@ -8912,6 +9405,7 @@ impl std::fmt::Debug for DescribeAcceleratorInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeprovisionByoipCidrInput {
@@ -8927,6 +9421,7 @@ impl std::fmt::Debug for DeprovisionByoipCidrInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DenyCustomRoutingTrafficInput {
@@ -8966,6 +9461,7 @@ impl std::fmt::Debug for DenyCustomRoutingTrafficInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteListenerInput {
@@ -8980,6 +9476,7 @@ impl std::fmt::Debug for DeleteListenerInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEndpointGroupInput {
@@ -8994,6 +9491,7 @@ impl std::fmt::Debug for DeleteEndpointGroupInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCustomRoutingListenerInput {
@@ -9008,6 +9506,7 @@ impl std::fmt::Debug for DeleteCustomRoutingListenerInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCustomRoutingEndpointGroupInput {
@@ -9022,6 +9521,7 @@ impl std::fmt::Debug for DeleteCustomRoutingEndpointGroupInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCustomRoutingAcceleratorInput {
@@ -9036,6 +9536,7 @@ impl std::fmt::Debug for DeleteCustomRoutingAcceleratorInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAcceleratorInput {
@@ -9050,6 +9551,7 @@ impl std::fmt::Debug for DeleteAcceleratorInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateListenerInput {
@@ -9088,6 +9590,7 @@ impl std::fmt::Debug for CreateListenerInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEndpointGroupInput {
@@ -9152,6 +9655,7 @@ impl std::fmt::Debug for CreateEndpointGroupInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCustomRoutingListenerInput {
@@ -9175,6 +9679,7 @@ impl std::fmt::Debug for CreateCustomRoutingListenerInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCustomRoutingEndpointGroupInput {
@@ -9205,6 +9710,7 @@ impl std::fmt::Debug for CreateCustomRoutingEndpointGroupInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCustomRoutingAcceleratorInput {
@@ -9248,6 +9754,7 @@ impl std::fmt::Debug for CreateCustomRoutingAcceleratorInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAcceleratorInput {
@@ -9291,6 +9798,7 @@ impl std::fmt::Debug for CreateAcceleratorInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AllowCustomRoutingTrafficInput {
@@ -9331,6 +9839,7 @@ impl std::fmt::Debug for AllowCustomRoutingTrafficInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AdvertiseByoipCidrInput {
@@ -9346,6 +9855,7 @@ impl std::fmt::Debug for AdvertiseByoipCidrInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddCustomRoutingEndpointsInput {

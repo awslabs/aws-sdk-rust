@@ -20,6 +20,7 @@ pub mod create_dataset_input {
             self.dataset_name = Some(input.into());
             self
         }
+        /// <p>A name for the dataset.</p>
         pub fn set_dataset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.dataset_name = input;
             self
@@ -35,6 +36,13 @@ pub mod create_dataset_input {
             self.domain = Some(input);
             self
         }
+        /// <p>The domain associated with the dataset. When you add a dataset to a dataset group, this
+        /// value and the value specified for the <code>Domain</code> parameter of the <a>CreateDatasetGroup</a> operation must match.</p>
+        /// <p>The <code>Domain</code> and <code>DatasetType</code> that you choose determine the fields
+        /// that must be present in the training data that you import to the dataset. For example, if you
+        /// choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the
+        /// <code>DatasetType</code>, Amazon Forecast requires <code>item_id</code>, <code>timestamp</code>,
+        /// and <code>demand</code> fields to be present in your data. For more information, see <a>howitworks-datasets-groups</a>.</p>
         pub fn set_domain(mut self, input: std::option::Option<crate::model::Domain>) -> Self {
             self.domain = input;
             self
@@ -44,6 +52,7 @@ pub mod create_dataset_input {
             self.dataset_type = Some(input);
             self
         }
+        /// <p>The dataset type. Valid values depend on the chosen <code>Domain</code>.</p>
         pub fn set_dataset_type(
             mut self,
             input: std::option::Option<crate::model::DatasetType>,
@@ -60,6 +69,11 @@ pub mod create_dataset_input {
             self.data_frequency = Some(input.into());
             self
         }
+        /// <p>The frequency of data collection. This parameter is required for RELATED_TIME_SERIES
+        /// datasets.</p>
+        /// <p>Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes),
+        /// 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example,
+        /// "D" indicates every day and "15min" indicates every 15 minutes.</p>
         pub fn set_data_frequency(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -75,6 +89,10 @@ pub mod create_dataset_input {
             self.schema = Some(input);
             self
         }
+        /// <p>The schema for the dataset. The schema attributes and their order must match the fields in
+        /// your data. The dataset <code>Domain</code> and <code>DatasetType</code> that you choose
+        /// determine the minimum required fields in your training data. For information about the
+        /// required fields for a specific dataset domain and type, see <a>howitworks-domains-ds-types</a>.</p>
         pub fn set_schema(mut self, input: std::option::Option<crate::model::Schema>) -> Self {
             self.schema = input;
             self
@@ -85,6 +103,8 @@ pub mod create_dataset_input {
             self.encryption_config = Some(input);
             self
         }
+        /// <p>An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access
+        /// the key.</p>
         pub fn set_encryption_config(
             mut self,
             input: std::option::Option<crate::model::EncryptionConfig>,
@@ -92,12 +112,66 @@ pub mod create_dataset_input {
             self.encryption_config = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The optional metadata that you apply to the dataset to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
+        /// <p>The following basic restrictions apply to tags:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Maximum number of tags per resource - 50.</p>
+        /// </li>
+        /// <li>
+        /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum key length - 128 Unicode characters in UTF-8.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum value length - 256 Unicode characters in UTF-8.</p>
+        /// </li>
+        /// <li>
+        /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p>
+        /// </li>
+        /// <li>
+        /// <p>Tag keys and values are case sensitive.</p>
+        /// </li>
+        /// <li>
+        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p>
+        /// </li>
+        /// </ul>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The optional metadata that you apply to the dataset to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
+        /// <p>The following basic restrictions apply to tags:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Maximum number of tags per resource - 50.</p>
+        /// </li>
+        /// <li>
+        /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum key length - 128 Unicode characters in UTF-8.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum value length - 256 Unicode characters in UTF-8.</p>
+        /// </li>
+        /// <li>
+        /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p>
+        /// </li>
+        /// <li>
+        /// <p>Tag keys and values are case sensitive.</p>
+        /// </li>
+        /// <li>
+        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p>
+        /// </li>
+        /// </ul>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -108,8 +182,10 @@ pub mod create_dataset_input {
         /// Consumes the builder and constructs a [`CreateDatasetInput`](crate::input::CreateDatasetInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreateDatasetInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateDatasetInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateDatasetInput {
                 dataset_name: self.dataset_name,
                 domain: self.domain,
@@ -133,16 +209,16 @@ impl CreateDatasetInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateDataset,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateDatasetInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -150,7 +226,7 @@ impl CreateDatasetInput {
         fn update_http_builder(
             input: &crate::input::CreateDatasetInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -159,29 +235,31 @@ impl CreateDatasetInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateDatasetInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonForecast.CreateDataset",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_dataset(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -204,25 +282,27 @@ impl CreateDatasetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreateDataset::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "CreateDataset",
-                    "forecast",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateDataset::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateDataset",
+            "forecast",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -253,6 +333,7 @@ pub mod create_dataset_group_input {
             self.dataset_group_name = Some(input.into());
             self
         }
+        /// <p>A name for the dataset group.</p>
         pub fn set_dataset_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -272,16 +353,32 @@ pub mod create_dataset_group_input {
             self.domain = Some(input);
             self
         }
+        /// <p>The domain associated with the dataset group. When you add a dataset to a dataset group,
+        /// this value and the value specified for the <code>Domain</code> parameter of the <a>CreateDataset</a> operation must match.</p>
+        /// <p>The <code>Domain</code> and <code>DatasetType</code> that you choose determine the fields
+        /// that must be present in training data that you import to a dataset. For example, if you choose
+        /// the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the
+        /// <code>DatasetType</code>, Amazon Forecast requires that <code>item_id</code>,
+        /// <code>timestamp</code>, and <code>demand</code> fields are present in your data. For more
+        /// information, see <a>howitworks-datasets-groups</a>.</p>
         pub fn set_domain(mut self, input: std::option::Option<crate::model::Domain>) -> Self {
             self.domain = input;
             self
         }
+        /// Appends an item to `dataset_arns`.
+        ///
+        /// To override the contents of this collection use [`set_dataset_arns`](Self::set_dataset_arns).
+        ///
+        /// <p>An array of Amazon Resource Names (ARNs) of the datasets that you want to include in the
+        /// dataset group.</p>
         pub fn dataset_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.dataset_arns.unwrap_or_default();
             v.push(input.into());
             self.dataset_arns = Some(v);
             self
         }
+        /// <p>An array of Amazon Resource Names (ARNs) of the datasets that you want to include in the
+        /// dataset group.</p>
         pub fn set_dataset_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -289,12 +386,66 @@ pub mod create_dataset_group_input {
             self.dataset_arns = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The optional metadata that you apply to the dataset group to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
+        /// <p>The following basic restrictions apply to tags:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Maximum number of tags per resource - 50.</p>
+        /// </li>
+        /// <li>
+        /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum key length - 128 Unicode characters in UTF-8.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum value length - 256 Unicode characters in UTF-8.</p>
+        /// </li>
+        /// <li>
+        /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p>
+        /// </li>
+        /// <li>
+        /// <p>Tag keys and values are case sensitive.</p>
+        /// </li>
+        /// <li>
+        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p>
+        /// </li>
+        /// </ul>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The optional metadata that you apply to the dataset group to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
+        /// <p>The following basic restrictions apply to tags:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Maximum number of tags per resource - 50.</p>
+        /// </li>
+        /// <li>
+        /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum key length - 128 Unicode characters in UTF-8.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum value length - 256 Unicode characters in UTF-8.</p>
+        /// </li>
+        /// <li>
+        /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p>
+        /// </li>
+        /// <li>
+        /// <p>Tag keys and values are case sensitive.</p>
+        /// </li>
+        /// <li>
+        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p>
+        /// </li>
+        /// </ul>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -307,7 +458,7 @@ pub mod create_dataset_group_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateDatasetGroupInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateDatasetGroupInput {
                 dataset_group_name: self.dataset_group_name,
@@ -329,16 +480,16 @@ impl CreateDatasetGroupInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateDatasetGroup,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateDatasetGroupInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -346,7 +497,7 @@ impl CreateDatasetGroupInput {
         fn update_http_builder(
             input: &crate::input::CreateDatasetGroupInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -355,30 +506,32 @@ impl CreateDatasetGroupInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateDatasetGroupInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonForecast.CreateDatasetGroup",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_dataset_group(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -401,15 +554,15 @@ impl CreateDatasetGroupInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateDatasetGroup::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateDatasetGroup",
             "forecast",
         ));
@@ -418,10 +571,10 @@ impl CreateDatasetGroupInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -458,6 +611,9 @@ pub mod create_dataset_import_job_input {
             self.dataset_import_job_name = Some(input.into());
             self
         }
+        /// <p>The name for the dataset import job. We recommend including the current timestamp in the
+        /// name, for example, <code>20190721DatasetImport</code>. This can help you avoid getting a
+        /// <code>ResourceAlreadyExistsException</code> exception.</p>
         pub fn set_dataset_import_job_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -471,6 +627,8 @@ pub mod create_dataset_import_job_input {
             self.dataset_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the Amazon Forecast dataset that you want to import data
+        /// to.</p>
         pub fn set_dataset_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.dataset_arn = input;
             self
@@ -484,6 +642,11 @@ pub mod create_dataset_import_job_input {
             self.data_source = Some(input);
             self
         }
+        /// <p>The location of the training data to import and an AWS Identity and Access Management (IAM) role that Amazon Forecast
+        /// can assume to access the data. The training data must be stored in an Amazon S3 bucket.</p>
+        /// <p>If encryption is used, <code>DataSource</code> must include an AWS Key Management Service (KMS) key and the
+        /// IAM role must allow Amazon Forecast permission to access the key. The KMS key and IAM role must
+        /// match those specified in the <code>EncryptionConfig</code> parameter of the <a>CreateDataset</a> operation.</p>
         pub fn set_data_source(
             mut self,
             input: std::option::Option<crate::model::DataSource>,
@@ -511,6 +674,22 @@ pub mod create_dataset_import_job_input {
             self.timestamp_format = Some(input.into());
             self
         }
+        /// <p>The format of timestamps in the dataset. The format that you specify depends on the
+        /// <code>DataFrequency</code> specified when the dataset was created. The following formats are
+        /// supported</p>
+        /// <ul>
+        /// <li>
+        /// <p>"yyyy-MM-dd"</p>
+        /// <p>For the following data frequencies: Y, M, W, and D</p>
+        /// </li>
+        /// <li>
+        /// <p>"yyyy-MM-dd HH:mm:ss"</p>
+        /// <p>For the following data frequencies: H, 30min, 15min, and 1min; and optionally, for: Y,
+        /// M, W, and D</p>
+        /// </li>
+        /// </ul>
+        /// <p>If the format isn't specified, Amazon Forecast expects the format to be "yyyy-MM-dd
+        /// HH:mm:ss".</p>
         pub fn set_timestamp_format(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -527,6 +706,11 @@ pub mod create_dataset_import_job_input {
             self.time_zone = Some(input.into());
             self
         }
+        /// <p>A single time zone for every item in your dataset. This option is ideal for datasets
+        /// with all timestamps within a single time zone, or if all timestamps are normalized to a
+        /// single time zone. </p>
+        /// <p>Refer to the <a href="http://joda-time.sourceforge.net/timezones.html">Joda-Time
+        /// API</a> for a complete list of valid time zone names.</p>
         pub fn set_time_zone(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.time_zone = input;
             self
@@ -538,6 +722,9 @@ pub mod create_dataset_import_job_input {
             self.use_geolocation_for_time_zone = Some(input);
             self
         }
+        /// <p>Automatically derive time zone information from the geolocation attribute. This option
+        /// is ideal for datasets that contain timestamps in multiple time zones and those
+        /// timestamps are expressed in local time.</p>
         pub fn set_use_geolocation_for_time_zone(
             mut self,
             input: std::option::Option<bool>,
@@ -561,6 +748,18 @@ pub mod create_dataset_import_job_input {
             self.geolocation_format = Some(input.into());
             self
         }
+        /// <p>The format of the geolocation attribute. The geolocation attribute can be formatted in
+        /// one of two ways:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>LAT_LONG</code> - the latitude and longitude in decimal format (Example: 47.61_-122.33).</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CC_POSTALCODE</code> (US Only) - the country code (US), followed by the 5-digit ZIP code (Example: US_98121).</p>
+        /// </li>
+        /// </ul>
         pub fn set_geolocation_format(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -568,12 +767,66 @@ pub mod create_dataset_import_job_input {
             self.geolocation_format = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The optional metadata that you apply to the dataset import job to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
+        /// <p>The following basic restrictions apply to tags:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Maximum number of tags per resource - 50.</p>
+        /// </li>
+        /// <li>
+        /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum key length - 128 Unicode characters in UTF-8.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum value length - 256 Unicode characters in UTF-8.</p>
+        /// </li>
+        /// <li>
+        /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p>
+        /// </li>
+        /// <li>
+        /// <p>Tag keys and values are case sensitive.</p>
+        /// </li>
+        /// <li>
+        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p>
+        /// </li>
+        /// </ul>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The optional metadata that you apply to the dataset import job to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
+        /// <p>The following basic restrictions apply to tags:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Maximum number of tags per resource - 50.</p>
+        /// </li>
+        /// <li>
+        /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum key length - 128 Unicode characters in UTF-8.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum value length - 256 Unicode characters in UTF-8.</p>
+        /// </li>
+        /// <li>
+        /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p>
+        /// </li>
+        /// <li>
+        /// <p>Tag keys and values are case sensitive.</p>
+        /// </li>
+        /// <li>
+        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p>
+        /// </li>
+        /// </ul>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -586,7 +839,7 @@ pub mod create_dataset_import_job_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateDatasetImportJobInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateDatasetImportJobInput {
                 dataset_import_job_name: self.dataset_import_job_name,
@@ -614,16 +867,16 @@ impl CreateDatasetImportJobInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateDatasetImportJob,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateDatasetImportJobInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -631,7 +884,7 @@ impl CreateDatasetImportJobInput {
         fn update_http_builder(
             input: &crate::input::CreateDatasetImportJobInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -640,32 +893,34 @@ impl CreateDatasetImportJobInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateDatasetImportJobInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonForecast.CreateDatasetImportJob",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_dataset_import_job(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -688,15 +943,15 @@ impl CreateDatasetImportJobInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateDatasetImportJob::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateDatasetImportJob",
             "forecast",
         ));
@@ -705,10 +960,10 @@ impl CreateDatasetImportJobInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -739,6 +994,7 @@ pub mod create_forecast_input {
             self.forecast_name = Some(input.into());
             self
         }
+        /// <p>A name for the forecast.</p>
         pub fn set_forecast_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -751,6 +1007,7 @@ pub mod create_forecast_input {
             self.predictor_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the predictor to use to generate the forecast.</p>
         pub fn set_predictor_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -758,12 +1015,26 @@ pub mod create_forecast_input {
             self.predictor_arn = input;
             self
         }
+        /// Appends an item to `forecast_types`.
+        ///
+        /// To override the contents of this collection use [`set_forecast_types`](Self::set_forecast_types).
+        ///
+        /// <p>The quantiles at which probabilistic forecasts are generated. <b>You
+        /// can currently specify up to 5 quantiles per forecast</b>. Accepted values include
+        /// <code>0.01 to 0.99</code> (increments of .01 only) and <code>mean</code>. The mean forecast
+        /// is different from the median (0.50) when the distribution is not symmetric (for example, Beta
+        /// and Negative Binomial). The default value is <code>["0.1", "0.5", "0.9"]</code>.</p>
         pub fn forecast_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.forecast_types.unwrap_or_default();
             v.push(input.into());
             self.forecast_types = Some(v);
             self
         }
+        /// <p>The quantiles at which probabilistic forecasts are generated. <b>You
+        /// can currently specify up to 5 quantiles per forecast</b>. Accepted values include
+        /// <code>0.01 to 0.99</code> (increments of .01 only) and <code>mean</code>. The mean forecast
+        /// is different from the median (0.50) when the distribution is not symmetric (for example, Beta
+        /// and Negative Binomial). The default value is <code>["0.1", "0.5", "0.9"]</code>.</p>
         pub fn set_forecast_types(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -771,12 +1042,66 @@ pub mod create_forecast_input {
             self.forecast_types = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The optional metadata that you apply to the forecast to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
+        /// <p>The following basic restrictions apply to tags:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Maximum number of tags per resource - 50.</p>
+        /// </li>
+        /// <li>
+        /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum key length - 128 Unicode characters in UTF-8.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum value length - 256 Unicode characters in UTF-8.</p>
+        /// </li>
+        /// <li>
+        /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p>
+        /// </li>
+        /// <li>
+        /// <p>Tag keys and values are case sensitive.</p>
+        /// </li>
+        /// <li>
+        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p>
+        /// </li>
+        /// </ul>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The optional metadata that you apply to the forecast to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
+        /// <p>The following basic restrictions apply to tags:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Maximum number of tags per resource - 50.</p>
+        /// </li>
+        /// <li>
+        /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum key length - 128 Unicode characters in UTF-8.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum value length - 256 Unicode characters in UTF-8.</p>
+        /// </li>
+        /// <li>
+        /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p>
+        /// </li>
+        /// <li>
+        /// <p>Tag keys and values are case sensitive.</p>
+        /// </li>
+        /// <li>
+        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p>
+        /// </li>
+        /// </ul>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -789,7 +1114,7 @@ pub mod create_forecast_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateForecastInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateForecastInput {
                 forecast_name: self.forecast_name,
@@ -811,16 +1136,16 @@ impl CreateForecastInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateForecast,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateForecastInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -828,7 +1153,7 @@ impl CreateForecastInput {
         fn update_http_builder(
             input: &crate::input::CreateForecastInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -837,29 +1162,31 @@ impl CreateForecastInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateForecastInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonForecast.CreateForecast",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_forecast(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -882,15 +1209,15 @@ impl CreateForecastInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateForecast::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateForecast",
             "forecast",
         ));
@@ -899,10 +1226,10 @@ impl CreateForecastInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -933,6 +1260,7 @@ pub mod create_forecast_export_job_input {
             self.forecast_export_job_name = Some(input.into());
             self
         }
+        /// <p>The name for the forecast export job.</p>
         pub fn set_forecast_export_job_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -945,6 +1273,7 @@ pub mod create_forecast_export_job_input {
             self.forecast_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the forecast that you want to export.</p>
         pub fn set_forecast_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.forecast_arn = input;
             self
@@ -958,6 +1287,11 @@ pub mod create_forecast_export_job_input {
             self.destination = Some(input);
             self
         }
+        /// <p>The location where you want to save the forecast and an AWS Identity and Access Management (IAM) role that
+        /// Amazon Forecast can assume to access the location. The forecast must be exported to an Amazon S3
+        /// bucket.</p>
+        /// <p>If encryption is used, <code>Destination</code> must include an AWS Key Management Service (KMS) key. The
+        /// IAM role must allow Amazon Forecast permission to access the key.</p>
         pub fn set_destination(
             mut self,
             input: std::option::Option<crate::model::DataDestination>,
@@ -965,12 +1299,66 @@ pub mod create_forecast_export_job_input {
             self.destination = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The optional metadata that you apply to the forecast export job to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
+        /// <p>The following basic restrictions apply to tags:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Maximum number of tags per resource - 50.</p>
+        /// </li>
+        /// <li>
+        /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum key length - 128 Unicode characters in UTF-8.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum value length - 256 Unicode characters in UTF-8.</p>
+        /// </li>
+        /// <li>
+        /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p>
+        /// </li>
+        /// <li>
+        /// <p>Tag keys and values are case sensitive.</p>
+        /// </li>
+        /// <li>
+        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p>
+        /// </li>
+        /// </ul>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The optional metadata that you apply to the forecast export job to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
+        /// <p>The following basic restrictions apply to tags:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Maximum number of tags per resource - 50.</p>
+        /// </li>
+        /// <li>
+        /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum key length - 128 Unicode characters in UTF-8.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum value length - 256 Unicode characters in UTF-8.</p>
+        /// </li>
+        /// <li>
+        /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p>
+        /// </li>
+        /// <li>
+        /// <p>Tag keys and values are case sensitive.</p>
+        /// </li>
+        /// <li>
+        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p>
+        /// </li>
+        /// </ul>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -983,7 +1371,7 @@ pub mod create_forecast_export_job_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateForecastExportJobInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateForecastExportJobInput {
                 forecast_export_job_name: self.forecast_export_job_name,
@@ -1006,16 +1394,16 @@ impl CreateForecastExportJobInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateForecastExportJob,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateForecastExportJobInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1023,7 +1411,7 @@ impl CreateForecastExportJobInput {
         fn update_http_builder(
             input: &crate::input::CreateForecastExportJobInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1032,32 +1420,34 @@ impl CreateForecastExportJobInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateForecastExportJobInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonForecast.CreateForecastExportJob",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_forecast_export_job(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1080,15 +1470,15 @@ impl CreateForecastExportJobInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateForecastExportJob::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateForecastExportJob",
             "forecast",
         ));
@@ -1097,10 +1487,10 @@ impl CreateForecastExportJobInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1145,6 +1535,7 @@ pub mod create_predictor_input {
             self.predictor_name = Some(input.into());
             self
         }
+        /// <p>A name for the predictor.</p>
         pub fn set_predictor_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1193,6 +1584,43 @@ pub mod create_predictor_input {
             self.algorithm_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the algorithm to use for model training. Required if
+        /// <code>PerformAutoML</code> is not set to <code>true</code>.</p>
+        /// <p class="title">
+        /// <b>Supported algorithms:</b>
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>arn:aws:forecast:::algorithm/ARIMA</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>arn:aws:forecast:::algorithm/CNN-QR</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>arn:aws:forecast:::algorithm/ETS</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>arn:aws:forecast:::algorithm/NPTS</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>arn:aws:forecast:::algorithm/Prophet</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_algorithm_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1211,16 +1639,37 @@ pub mod create_predictor_input {
             self.forecast_horizon = Some(input);
             self
         }
+        /// <p>Specifies the number of time-steps that the model is trained to predict. The forecast
+        /// horizon is also called the prediction length.</p>
+        /// <p>For example, if you configure a dataset for daily data collection (using the
+        /// <code>DataFrequency</code> parameter of the <a>CreateDataset</a> operation) and
+        /// set the forecast horizon to 10, the model returns predictions for 10 days.</p>
+        /// <p>The maximum forecast horizon is the lesser of 500 time-steps or 1/3 of the
+        /// TARGET_TIME_SERIES dataset length.</p>
         pub fn set_forecast_horizon(mut self, input: std::option::Option<i32>) -> Self {
             self.forecast_horizon = input;
             self
         }
+        /// Appends an item to `forecast_types`.
+        ///
+        /// To override the contents of this collection use [`set_forecast_types`](Self::set_forecast_types).
+        ///
+        /// <p>Specifies the forecast types used to train a predictor. You can specify up to five forecast types.
+        /// Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or higher. You can also specify
+        /// the mean forecast with <code>mean</code>.
+        /// </p>
+        /// <p>The default value is <code>["0.10", "0.50", "0.9"]</code>.</p>
         pub fn forecast_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.forecast_types.unwrap_or_default();
             v.push(input.into());
             self.forecast_types = Some(v);
             self
         }
+        /// <p>Specifies the forecast types used to train a predictor. You can specify up to five forecast types.
+        /// Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or higher. You can also specify
+        /// the mean forecast with <code>mean</code>.
+        /// </p>
+        /// <p>The default value is <code>["0.10", "0.50", "0.9"]</code>.</p>
         pub fn set_forecast_types(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1239,6 +1688,13 @@ pub mod create_predictor_input {
             self.perform_auto_ml = Some(input);
             self
         }
+        /// <p>Whether to perform AutoML. When Amazon Forecast performs AutoML, it evaluates the algorithms it
+        /// provides and chooses the best algorithm and configuration for your training dataset.</p>
+        /// <p>The default value is <code>false</code>. In this case, you are required to specify an
+        /// algorithm.</p>
+        /// <p>Set <code>PerformAutoML</code> to <code>true</code> to have Amazon Forecast perform AutoML. This
+        /// is a good option if you aren't sure which algorithm is suitable for your training data. In
+        /// this case, <code>PerformHPO</code> must be false.</p>
         pub fn set_perform_auto_ml(mut self, input: std::option::Option<bool>) -> Self {
             self.perform_auto_ml = input;
             self
@@ -1259,6 +1715,15 @@ pub mod create_predictor_input {
             self.auto_ml_override_strategy = Some(input);
             self
         }
+        /// <note>
+        /// <p> The <code>LatencyOptimized</code> AutoML override strategy is only available in private beta.
+        /// Contact AWS Support or your account manager to learn more about access privileges.
+        /// </p>
+        /// </note>
+        /// <p>Used to overide the default AutoML strategy, which is to optimize predictor accuracy.
+        /// To apply an AutoML strategy that minimizes training time, use
+        /// <code>LatencyOptimized</code>.</p>
+        /// <p>This parameter is only valid for predictors trained using AutoML.</p>
         pub fn set_auto_ml_override_strategy(
             mut self,
             input: std::option::Option<crate::model::AutoMlOverrideStrategy>,
@@ -1289,10 +1754,36 @@ pub mod create_predictor_input {
             self.perform_hpo = Some(input);
             self
         }
+        /// <p>Whether to perform hyperparameter optimization (HPO). HPO finds optimal hyperparameter
+        /// values for your training data. The process of performing HPO is known as running a
+        /// hyperparameter tuning job.</p>
+        /// <p>The default value is <code>false</code>. In this case, Amazon Forecast uses default
+        /// hyperparameter values from the chosen algorithm.</p>
+        /// <p>To override the default values, set <code>PerformHPO</code> to <code>true</code> and,
+        /// optionally, supply the <a>HyperParameterTuningJobConfig</a> object. The tuning job
+        /// specifies a metric to optimize, which hyperparameters participate in tuning, and the valid
+        /// range for each tunable hyperparameter. In this case, you are required to specify an algorithm
+        /// and <code>PerformAutoML</code> must be false.</p>
+        /// <p>The following algorithms support HPO:</p>
+        /// <ul>
+        /// <li>
+        /// <p>DeepAR+</p>
+        /// </li>
+        /// <li>
+        /// <p>CNN-QR</p>
+        /// </li>
+        /// </ul>
         pub fn set_perform_hpo(mut self, input: std::option::Option<bool>) -> Self {
             self.perform_hpo = input;
             self
         }
+        /// Adds a key-value pair to `training_parameters`.
+        ///
+        /// To override the contents of this collection use [`set_training_parameters`](Self::set_training_parameters).
+        ///
+        /// <p>The hyperparameters to override for model training. The hyperparameters that you can
+        /// override are listed in the individual algorithms. For the list of supported algorithms, see
+        /// <a>aws-forecast-choosing-recipes</a>.</p>
         pub fn training_parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -1303,6 +1794,9 @@ pub mod create_predictor_input {
             self.training_parameters = Some(hash_map);
             self
         }
+        /// <p>The hyperparameters to override for model training. The hyperparameters that you can
+        /// override are listed in the individual algorithms. For the list of supported algorithms, see
+        /// <a>aws-forecast-choosing-recipes</a>.</p>
         pub fn set_training_parameters(
             mut self,
             input: std::option::Option<
@@ -1319,6 +1813,9 @@ pub mod create_predictor_input {
             self.evaluation_parameters = Some(input);
             self
         }
+        /// <p>Used to override the default evaluation parameters of the specified algorithm. Amazon Forecast
+        /// evaluates a predictor by splitting a dataset into training data and testing data. The
+        /// evaluation parameters define how to perform the split and the number of iterations.</p>
         pub fn set_evaluation_parameters(
             mut self,
             input: std::option::Option<crate::model::EvaluationParameters>,
@@ -1335,6 +1832,11 @@ pub mod create_predictor_input {
             self.hpo_config = Some(input);
             self
         }
+        /// <p>Provides hyperparameter override values for the algorithm. If you don't provide this
+        /// parameter, Amazon Forecast uses default values. The individual algorithms specify which
+        /// hyperparameters support hyperparameter optimization (HPO). For more information, see <a>aws-forecast-choosing-recipes</a>.</p>
+        /// <p>If you included the <code>HPOConfig</code> object, you must set <code>PerformHPO</code> to
+        /// true.</p>
         pub fn set_hpo_config(
             mut self,
             input: std::option::Option<crate::model::HyperParameterTuningJobConfig>,
@@ -1347,6 +1849,7 @@ pub mod create_predictor_input {
             self.input_data_config = Some(input);
             self
         }
+        /// <p>Describes the dataset group that contains the data to use to train the predictor.</p>
         pub fn set_input_data_config(
             mut self,
             input: std::option::Option<crate::model::InputDataConfig>,
@@ -1359,6 +1862,7 @@ pub mod create_predictor_input {
             self.featurization_config = Some(input);
             self
         }
+        /// <p>The featurization configuration.</p>
         pub fn set_featurization_config(
             mut self,
             input: std::option::Option<crate::model::FeaturizationConfig>,
@@ -1372,6 +1876,8 @@ pub mod create_predictor_input {
             self.encryption_config = Some(input);
             self
         }
+        /// <p>An AWS Key Management Service (KMS) key and the AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to access
+        /// the key.</p>
         pub fn set_encryption_config(
             mut self,
             input: std::option::Option<crate::model::EncryptionConfig>,
@@ -1379,12 +1885,66 @@ pub mod create_predictor_input {
             self.encryption_config = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The optional metadata that you apply to the predictor to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
+        /// <p>The following basic restrictions apply to tags:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Maximum number of tags per resource - 50.</p>
+        /// </li>
+        /// <li>
+        /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum key length - 128 Unicode characters in UTF-8.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum value length - 256 Unicode characters in UTF-8.</p>
+        /// </li>
+        /// <li>
+        /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p>
+        /// </li>
+        /// <li>
+        /// <p>Tag keys and values are case sensitive.</p>
+        /// </li>
+        /// <li>
+        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p>
+        /// </li>
+        /// </ul>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The optional metadata that you apply to the predictor to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
+        /// <p>The following basic restrictions apply to tags:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Maximum number of tags per resource - 50.</p>
+        /// </li>
+        /// <li>
+        /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum key length - 128 Unicode characters in UTF-8.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum value length - 256 Unicode characters in UTF-8.</p>
+        /// </li>
+        /// <li>
+        /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p>
+        /// </li>
+        /// <li>
+        /// <p>Tag keys and values are case sensitive.</p>
+        /// </li>
+        /// <li>
+        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p>
+        /// </li>
+        /// </ul>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1397,6 +1957,7 @@ pub mod create_predictor_input {
             self.optimization_metric = Some(input);
             self
         }
+        /// <p>The accuracy metric used to optimize the predictor.</p>
         pub fn set_optimization_metric(
             mut self,
             input: std::option::Option<crate::model::OptimizationMetric>,
@@ -1409,7 +1970,7 @@ pub mod create_predictor_input {
             self,
         ) -> std::result::Result<
             crate::input::CreatePredictorInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreatePredictorInput {
                 predictor_name: self.predictor_name,
@@ -1442,16 +2003,16 @@ impl CreatePredictorInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreatePredictor,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreatePredictorInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1459,7 +2020,7 @@ impl CreatePredictorInput {
         fn update_http_builder(
             input: &crate::input::CreatePredictorInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1468,32 +2029,32 @@ impl CreatePredictorInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreatePredictorInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonForecast.CreatePredictor",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_predictor(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1516,15 +2077,15 @@ impl CreatePredictorInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreatePredictor::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreatePredictor",
             "forecast",
         ));
@@ -1533,10 +2094,10 @@ impl CreatePredictorInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1570,6 +2131,7 @@ pub mod create_predictor_backtest_export_job_input {
             self.predictor_backtest_export_job_name = Some(input.into());
             self
         }
+        /// <p>The name for the backtest export job.</p>
         pub fn set_predictor_backtest_export_job_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1582,6 +2144,7 @@ pub mod create_predictor_backtest_export_job_input {
             self.predictor_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the predictor that you want to export.</p>
         pub fn set_predictor_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1595,6 +2158,8 @@ pub mod create_predictor_backtest_export_job_input {
             self.destination = Some(input);
             self
         }
+        /// <p>The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast
+        /// to access the location, and an AWS Key Management Service (KMS) key (optional). </p>
         pub fn set_destination(
             mut self,
             input: std::option::Option<crate::model::DataDestination>,
@@ -1602,12 +2167,80 @@ pub mod create_predictor_backtest_export_job_input {
             self.destination = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Optional metadata to help you categorize and organize your backtests. Each tag consists
+        /// of a key and an optional value, both of which you define. Tag keys and values are case
+        /// sensitive.</p>
+        /// <p>The following restrictions apply to tags:</p>
+        /// <ul>
+        /// <li>
+        /// <p>For each resource, each tag key must be unique and each tag key must have one
+        /// value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum number of tags per resource: 50.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum key length: 128 Unicode characters in UTF-8.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum value length: 256 Unicode characters in UTF-8.</p>
+        /// </li>
+        /// <li>
+        /// <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and +
+        /// - = . _ : / @. If your tagging schema is used across other services and resources,
+        /// the character restrictions of those services also apply. </p>
+        /// </li>
+        /// <li>
+        /// <p>Key prefixes cannot include any upper or lowercase combination of
+        /// <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag
+        /// value has <code>aws</code> as its prefix but the key does not, Forecast considers it
+        /// to be a user tag and will count against the limit of 50 tags. Tags with only the key
+        /// prefix of <code>aws</code> do not count against your tags per resource limit. You
+        /// cannot edit or delete tag keys with this prefix.</p>
+        /// </li>
+        /// </ul>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>Optional metadata to help you categorize and organize your backtests. Each tag consists
+        /// of a key and an optional value, both of which you define. Tag keys and values are case
+        /// sensitive.</p>
+        /// <p>The following restrictions apply to tags:</p>
+        /// <ul>
+        /// <li>
+        /// <p>For each resource, each tag key must be unique and each tag key must have one
+        /// value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum number of tags per resource: 50.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum key length: 128 Unicode characters in UTF-8.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum value length: 256 Unicode characters in UTF-8.</p>
+        /// </li>
+        /// <li>
+        /// <p>Accepted characters: all letters and numbers, spaces representable in UTF-8, and +
+        /// - = . _ : / @. If your tagging schema is used across other services and resources,
+        /// the character restrictions of those services also apply. </p>
+        /// </li>
+        /// <li>
+        /// <p>Key prefixes cannot include any upper or lowercase combination of
+        /// <code>aws:</code> or <code>AWS:</code>. Values can have this prefix. If a tag
+        /// value has <code>aws</code> as its prefix but the key does not, Forecast considers it
+        /// to be a user tag and will count against the limit of 50 tags. Tags with only the key
+        /// prefix of <code>aws</code> do not count against your tags per resource limit. You
+        /// cannot edit or delete tag keys with this prefix.</p>
+        /// </li>
+        /// </ul>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1620,7 +2253,7 @@ pub mod create_predictor_backtest_export_job_input {
             self,
         ) -> std::result::Result<
             crate::input::CreatePredictorBacktestExportJobInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreatePredictorBacktestExportJobInput {
                 predictor_backtest_export_job_name: self.predictor_backtest_export_job_name,
@@ -1643,16 +2276,16 @@ impl CreatePredictorBacktestExportJobInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreatePredictorBacktestExportJob,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreatePredictorBacktestExportJobInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1660,7 +2293,7 @@ impl CreatePredictorBacktestExportJobInput {
         fn update_http_builder(
             input: &crate::input::CreatePredictorBacktestExportJobInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1669,30 +2302,30 @@ impl CreatePredictorBacktestExportJobInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreatePredictorBacktestExportJobInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonForecast.CreatePredictorBacktestExportJob",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_predictor_backtest_export_job(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_predictor_backtest_export_job(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1715,15 +2348,15 @@ impl CreatePredictorBacktestExportJobInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreatePredictorBacktestExportJob::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreatePredictorBacktestExportJob",
             "forecast",
         ));
@@ -1732,10 +2365,10 @@ impl CreatePredictorBacktestExportJobInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1763,6 +2396,7 @@ pub mod delete_dataset_input {
             self.dataset_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the dataset to delete.</p>
         pub fn set_dataset_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.dataset_arn = input;
             self
@@ -1770,8 +2404,10 @@ pub mod delete_dataset_input {
         /// Consumes the builder and constructs a [`DeleteDatasetInput`](crate::input::DeleteDatasetInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeleteDatasetInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteDatasetInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteDatasetInput {
                 dataset_arn: self.dataset_arn,
             })
@@ -1789,16 +2425,16 @@ impl DeleteDatasetInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteDataset,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteDatasetInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1806,7 +2442,7 @@ impl DeleteDatasetInput {
         fn update_http_builder(
             input: &crate::input::DeleteDatasetInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1815,29 +2451,31 @@ impl DeleteDatasetInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteDatasetInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonForecast.DeleteDataset",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_delete_dataset(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1860,25 +2498,27 @@ impl DeleteDatasetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeleteDataset::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DeleteDataset",
-                    "forecast",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteDataset::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteDataset",
+            "forecast",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1906,6 +2546,7 @@ pub mod delete_dataset_group_input {
             self.dataset_group_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the dataset group to delete.</p>
         pub fn set_dataset_group_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1918,7 +2559,7 @@ pub mod delete_dataset_group_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteDatasetGroupInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteDatasetGroupInput {
                 dataset_group_arn: self.dataset_group_arn,
@@ -1937,16 +2578,16 @@ impl DeleteDatasetGroupInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteDatasetGroup,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteDatasetGroupInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1954,7 +2595,7 @@ impl DeleteDatasetGroupInput {
         fn update_http_builder(
             input: &crate::input::DeleteDatasetGroupInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1963,30 +2604,32 @@ impl DeleteDatasetGroupInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteDatasetGroupInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonForecast.DeleteDatasetGroup",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_dataset_group(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2009,15 +2652,15 @@ impl DeleteDatasetGroupInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteDatasetGroup::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteDatasetGroup",
             "forecast",
         ));
@@ -2026,10 +2669,10 @@ impl DeleteDatasetGroupInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2057,6 +2700,7 @@ pub mod delete_dataset_import_job_input {
             self.dataset_import_job_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the dataset import job to delete.</p>
         pub fn set_dataset_import_job_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2069,7 +2713,7 @@ pub mod delete_dataset_import_job_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteDatasetImportJobInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteDatasetImportJobInput {
                 dataset_import_job_arn: self.dataset_import_job_arn,
@@ -2088,16 +2732,16 @@ impl DeleteDatasetImportJobInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteDatasetImportJob,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteDatasetImportJobInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2105,7 +2749,7 @@ impl DeleteDatasetImportJobInput {
         fn update_http_builder(
             input: &crate::input::DeleteDatasetImportJobInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2114,32 +2758,34 @@ impl DeleteDatasetImportJobInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteDatasetImportJobInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonForecast.DeleteDatasetImportJob",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_dataset_import_job(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2162,15 +2808,15 @@ impl DeleteDatasetImportJobInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteDatasetImportJob::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteDatasetImportJob",
             "forecast",
         ));
@@ -2179,10 +2825,10 @@ impl DeleteDatasetImportJobInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2210,6 +2856,7 @@ pub mod delete_forecast_input {
             self.forecast_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the forecast to delete.</p>
         pub fn set_forecast_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.forecast_arn = input;
             self
@@ -2219,7 +2866,7 @@ pub mod delete_forecast_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteForecastInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteForecastInput {
                 forecast_arn: self.forecast_arn,
@@ -2238,16 +2885,16 @@ impl DeleteForecastInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteForecast,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteForecastInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2255,7 +2902,7 @@ impl DeleteForecastInput {
         fn update_http_builder(
             input: &crate::input::DeleteForecastInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2264,29 +2911,31 @@ impl DeleteForecastInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteForecastInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonForecast.DeleteForecast",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_delete_forecast(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2309,15 +2958,15 @@ impl DeleteForecastInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteForecast::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteForecast",
             "forecast",
         ));
@@ -2326,10 +2975,10 @@ impl DeleteForecastInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2357,6 +3006,7 @@ pub mod delete_forecast_export_job_input {
             self.forecast_export_job_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the forecast export job to delete.</p>
         pub fn set_forecast_export_job_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2369,7 +3019,7 @@ pub mod delete_forecast_export_job_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteForecastExportJobInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteForecastExportJobInput {
                 forecast_export_job_arn: self.forecast_export_job_arn,
@@ -2389,16 +3039,16 @@ impl DeleteForecastExportJobInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteForecastExportJob,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteForecastExportJobInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2406,7 +3056,7 @@ impl DeleteForecastExportJobInput {
         fn update_http_builder(
             input: &crate::input::DeleteForecastExportJobInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2415,32 +3065,34 @@ impl DeleteForecastExportJobInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteForecastExportJobInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonForecast.DeleteForecastExportJob",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_forecast_export_job(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2463,15 +3115,15 @@ impl DeleteForecastExportJobInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteForecastExportJob::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteForecastExportJob",
             "forecast",
         ));
@@ -2480,10 +3132,10 @@ impl DeleteForecastExportJobInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2511,6 +3163,7 @@ pub mod delete_predictor_input {
             self.predictor_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the predictor to delete.</p>
         pub fn set_predictor_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2523,7 +3176,7 @@ pub mod delete_predictor_input {
             self,
         ) -> std::result::Result<
             crate::input::DeletePredictorInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeletePredictorInput {
                 predictor_arn: self.predictor_arn,
@@ -2542,16 +3195,16 @@ impl DeletePredictorInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeletePredictor,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeletePredictorInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2559,7 +3212,7 @@ impl DeletePredictorInput {
         fn update_http_builder(
             input: &crate::input::DeletePredictorInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2568,32 +3221,32 @@ impl DeletePredictorInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeletePredictorInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonForecast.DeletePredictor",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_predictor(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2616,15 +3269,15 @@ impl DeletePredictorInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeletePredictor::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeletePredictor",
             "forecast",
         ));
@@ -2633,10 +3286,10 @@ impl DeletePredictorInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2667,6 +3320,7 @@ pub mod delete_predictor_backtest_export_job_input {
             self.predictor_backtest_export_job_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the predictor backtest export job to delete.</p>
         pub fn set_predictor_backtest_export_job_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2679,7 +3333,7 @@ pub mod delete_predictor_backtest_export_job_input {
             self,
         ) -> std::result::Result<
             crate::input::DeletePredictorBacktestExportJobInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeletePredictorBacktestExportJobInput {
                 predictor_backtest_export_job_arn: self.predictor_backtest_export_job_arn,
@@ -2699,16 +3353,16 @@ impl DeletePredictorBacktestExportJobInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeletePredictorBacktestExportJob,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeletePredictorBacktestExportJobInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2716,7 +3370,7 @@ impl DeletePredictorBacktestExportJobInput {
         fn update_http_builder(
             input: &crate::input::DeletePredictorBacktestExportJobInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2725,30 +3379,30 @@ impl DeletePredictorBacktestExportJobInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeletePredictorBacktestExportJobInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonForecast.DeletePredictorBacktestExportJob",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_predictor_backtest_export_job(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_predictor_backtest_export_job(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2771,15 +3425,15 @@ impl DeletePredictorBacktestExportJobInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeletePredictorBacktestExportJob::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeletePredictorBacktestExportJob",
             "forecast",
         ));
@@ -2788,10 +3442,10 @@ impl DeletePredictorBacktestExportJobInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2820,6 +3474,8 @@ pub mod delete_resource_tree_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the parent resource to delete. All child resources
+        /// of the parent resource will also be deleted.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -2829,7 +3485,7 @@ pub mod delete_resource_tree_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteResourceTreeInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteResourceTreeInput {
                 resource_arn: self.resource_arn,
@@ -2848,16 +3504,16 @@ impl DeleteResourceTreeInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteResourceTree,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteResourceTreeInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2865,7 +3521,7 @@ impl DeleteResourceTreeInput {
         fn update_http_builder(
             input: &crate::input::DeleteResourceTreeInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2874,30 +3530,32 @@ impl DeleteResourceTreeInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteResourceTreeInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonForecast.DeleteResourceTree",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_resource_tree(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2920,15 +3578,15 @@ impl DeleteResourceTreeInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteResourceTree::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteResourceTree",
             "forecast",
         ));
@@ -2937,10 +3595,10 @@ impl DeleteResourceTreeInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2968,6 +3626,7 @@ pub mod describe_dataset_input {
             self.dataset_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the dataset.</p>
         pub fn set_dataset_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.dataset_arn = input;
             self
@@ -2977,7 +3636,7 @@ pub mod describe_dataset_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeDatasetInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeDatasetInput {
                 dataset_arn: self.dataset_arn,
@@ -2996,16 +3655,16 @@ impl DescribeDatasetInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeDataset,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeDatasetInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3013,7 +3672,7 @@ impl DescribeDatasetInput {
         fn update_http_builder(
             input: &crate::input::DescribeDatasetInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3022,32 +3681,32 @@ impl DescribeDatasetInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeDatasetInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonForecast.DescribeDataset",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_dataset(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3070,15 +3729,15 @@ impl DescribeDatasetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeDataset::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeDataset",
             "forecast",
         ));
@@ -3087,10 +3746,10 @@ impl DescribeDatasetInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3118,6 +3777,7 @@ pub mod describe_dataset_group_input {
             self.dataset_group_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
         pub fn set_dataset_group_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3130,7 +3790,7 @@ pub mod describe_dataset_group_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeDatasetGroupInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeDatasetGroupInput {
                 dataset_group_arn: self.dataset_group_arn,
@@ -3149,16 +3809,16 @@ impl DescribeDatasetGroupInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeDatasetGroup,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeDatasetGroupInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3166,7 +3826,7 @@ impl DescribeDatasetGroupInput {
         fn update_http_builder(
             input: &crate::input::DescribeDatasetGroupInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3175,32 +3835,32 @@ impl DescribeDatasetGroupInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeDatasetGroupInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonForecast.DescribeDatasetGroup",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_dataset_group(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3223,15 +3883,15 @@ impl DescribeDatasetGroupInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeDatasetGroup::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeDatasetGroup",
             "forecast",
         ));
@@ -3240,10 +3900,10 @@ impl DescribeDatasetGroupInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3271,6 +3931,7 @@ pub mod describe_dataset_import_job_input {
             self.dataset_import_job_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the dataset import job.</p>
         pub fn set_dataset_import_job_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3283,7 +3944,7 @@ pub mod describe_dataset_import_job_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeDatasetImportJobInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeDatasetImportJobInput {
                 dataset_import_job_arn: self.dataset_import_job_arn,
@@ -3303,16 +3964,16 @@ impl DescribeDatasetImportJobInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeDatasetImportJob,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeDatasetImportJobInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3320,7 +3981,7 @@ impl DescribeDatasetImportJobInput {
         fn update_http_builder(
             input: &crate::input::DescribeDatasetImportJobInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3329,32 +3990,34 @@ impl DescribeDatasetImportJobInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeDatasetImportJobInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonForecast.DescribeDatasetImportJob",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_dataset_import_job(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3377,15 +4040,15 @@ impl DescribeDatasetImportJobInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeDatasetImportJob::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeDatasetImportJob",
             "forecast",
         ));
@@ -3394,10 +4057,10 @@ impl DescribeDatasetImportJobInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3425,6 +4088,7 @@ pub mod describe_forecast_input {
             self.forecast_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the forecast.</p>
         pub fn set_forecast_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.forecast_arn = input;
             self
@@ -3434,7 +4098,7 @@ pub mod describe_forecast_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeForecastInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeForecastInput {
                 forecast_arn: self.forecast_arn,
@@ -3453,16 +4117,16 @@ impl DescribeForecastInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeForecast,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeForecastInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3470,7 +4134,7 @@ impl DescribeForecastInput {
         fn update_http_builder(
             input: &crate::input::DescribeForecastInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3479,32 +4143,32 @@ impl DescribeForecastInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeForecastInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonForecast.DescribeForecast",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_forecast(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3527,15 +4191,15 @@ impl DescribeForecastInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeForecast::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeForecast",
             "forecast",
         ));
@@ -3544,10 +4208,10 @@ impl DescribeForecastInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3575,6 +4239,7 @@ pub mod describe_forecast_export_job_input {
             self.forecast_export_job_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the forecast export job.</p>
         pub fn set_forecast_export_job_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3587,7 +4252,7 @@ pub mod describe_forecast_export_job_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeForecastExportJobInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeForecastExportJobInput {
                 forecast_export_job_arn: self.forecast_export_job_arn,
@@ -3607,16 +4272,16 @@ impl DescribeForecastExportJobInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeForecastExportJob,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeForecastExportJobInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3624,7 +4289,7 @@ impl DescribeForecastExportJobInput {
         fn update_http_builder(
             input: &crate::input::DescribeForecastExportJobInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3633,32 +4298,34 @@ impl DescribeForecastExportJobInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeForecastExportJobInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonForecast.DescribeForecastExportJob",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_forecast_export_job(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3681,15 +4348,15 @@ impl DescribeForecastExportJobInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeForecastExportJob::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeForecastExportJob",
             "forecast",
         ));
@@ -3698,10 +4365,10 @@ impl DescribeForecastExportJobInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3729,6 +4396,7 @@ pub mod describe_predictor_input {
             self.predictor_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the predictor that you want information about.</p>
         pub fn set_predictor_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3741,7 +4409,7 @@ pub mod describe_predictor_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribePredictorInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribePredictorInput {
                 predictor_arn: self.predictor_arn,
@@ -3760,16 +4428,16 @@ impl DescribePredictorInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribePredictor,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribePredictorInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3777,7 +4445,7 @@ impl DescribePredictorInput {
         fn update_http_builder(
             input: &crate::input::DescribePredictorInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3786,32 +4454,32 @@ impl DescribePredictorInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribePredictorInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonForecast.DescribePredictor",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_predictor(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3834,15 +4502,15 @@ impl DescribePredictorInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribePredictor::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribePredictor",
             "forecast",
         ));
@@ -3851,10 +4519,10 @@ impl DescribePredictorInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3885,6 +4553,7 @@ pub mod describe_predictor_backtest_export_job_input {
             self.predictor_backtest_export_job_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the predictor backtest export job.</p>
         pub fn set_predictor_backtest_export_job_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3897,7 +4566,7 @@ pub mod describe_predictor_backtest_export_job_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribePredictorBacktestExportJobInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribePredictorBacktestExportJobInput {
                 predictor_backtest_export_job_arn: self.predictor_backtest_export_job_arn,
@@ -3917,16 +4586,16 @@ impl DescribePredictorBacktestExportJobInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribePredictorBacktestExportJob,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribePredictorBacktestExportJobInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3934,7 +4603,7 @@ impl DescribePredictorBacktestExportJobInput {
         fn update_http_builder(
             input: &crate::input::DescribePredictorBacktestExportJobInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3943,30 +4612,30 @@ impl DescribePredictorBacktestExportJobInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribePredictorBacktestExportJobInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonForecast.DescribePredictorBacktestExportJob",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_predictor_backtest_export_job(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_predictor_backtest_export_job(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3989,15 +4658,15 @@ impl DescribePredictorBacktestExportJobInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribePredictorBacktestExportJob::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribePredictorBacktestExportJob",
             "forecast",
         ));
@@ -4006,10 +4675,10 @@ impl DescribePredictorBacktestExportJobInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4037,6 +4706,7 @@ pub mod get_accuracy_metrics_input {
             self.predictor_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the predictor to get metrics for.</p>
         pub fn set_predictor_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4049,7 +4719,7 @@ pub mod get_accuracy_metrics_input {
             self,
         ) -> std::result::Result<
             crate::input::GetAccuracyMetricsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetAccuracyMetricsInput {
                 predictor_arn: self.predictor_arn,
@@ -4068,16 +4738,16 @@ impl GetAccuracyMetricsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetAccuracyMetrics,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetAccuracyMetricsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4085,7 +4755,7 @@ impl GetAccuracyMetricsInput {
         fn update_http_builder(
             input: &crate::input::GetAccuracyMetricsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4094,30 +4764,32 @@ impl GetAccuracyMetricsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetAccuracyMetricsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonForecast.GetAccuracyMetrics",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_accuracy_metrics(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4140,15 +4812,15 @@ impl GetAccuracyMetricsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetAccuracyMetrics::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetAccuracyMetrics",
             "forecast",
         ));
@@ -4157,10 +4829,10 @@ impl GetAccuracyMetricsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4191,6 +4863,9 @@ pub mod list_dataset_groups_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the result of the previous request was truncated, the response includes a
+        /// <code>NextToken</code>. To retrieve the next set of results, use the token in the next
+        /// request. Tokens expire after 24 hours.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4200,6 +4875,7 @@ pub mod list_dataset_groups_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The number of items to return in the response.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -4209,7 +4885,7 @@ pub mod list_dataset_groups_input {
             self,
         ) -> std::result::Result<
             crate::input::ListDatasetGroupsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListDatasetGroupsInput {
                 next_token: self.next_token,
@@ -4229,16 +4905,16 @@ impl ListDatasetGroupsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListDatasetGroups,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListDatasetGroupsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4246,7 +4922,7 @@ impl ListDatasetGroupsInput {
         fn update_http_builder(
             input: &crate::input::ListDatasetGroupsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4255,32 +4931,32 @@ impl ListDatasetGroupsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListDatasetGroupsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonForecast.ListDatasetGroups",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_dataset_groups(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4303,15 +4979,15 @@ impl ListDatasetGroupsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListDatasetGroups::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListDatasetGroups",
             "forecast",
         ));
@@ -4320,10 +4996,10 @@ impl ListDatasetGroupsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4355,6 +5031,9 @@ pub mod list_dataset_import_jobs_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the result of the previous request was truncated, the response includes a
+        /// <code>NextToken</code>. To retrieve the next set of results, use the token in the next
+        /// request. Tokens expire after 24 hours.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4364,16 +5043,81 @@ pub mod list_dataset_import_jobs_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The number of items to return in the response.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>An array of filters. For each filter, you provide a condition and a match statement. The
+        /// condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include
+        /// or exclude the datasets that match the statement from the list, respectively. The match
+        /// statement consists of a key and a value.</p>
+        /// <p>
+        /// <b>Filter properties</b>
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and
+        /// <code>IS_NOT</code>. To include the datasets that match the statement, specify
+        /// <code>IS</code>. To exclude matching datasets, specify <code>IS_NOT</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Key</code> - The name of the parameter to filter on. Valid values are
+        /// <code>DatasetArn</code> and <code>Status</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Value</code> - The value to match.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For example, to list all dataset import jobs whose status is ACTIVE, you specify the
+        /// following filter:</p>
+        /// <p>
+        /// <code>"Filters": [ { "Condition": "IS", "Key": "Status", "Value": "ACTIVE" }
+        /// ]</code>
+        /// </p>
         pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input.into());
             self.filters = Some(v);
             self
         }
+        /// <p>An array of filters. For each filter, you provide a condition and a match statement. The
+        /// condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include
+        /// or exclude the datasets that match the statement from the list, respectively. The match
+        /// statement consists of a key and a value.</p>
+        /// <p>
+        /// <b>Filter properties</b>
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and
+        /// <code>IS_NOT</code>. To include the datasets that match the statement, specify
+        /// <code>IS</code>. To exclude matching datasets, specify <code>IS_NOT</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Key</code> - The name of the parameter to filter on. Valid values are
+        /// <code>DatasetArn</code> and <code>Status</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Value</code> - The value to match.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For example, to list all dataset import jobs whose status is ACTIVE, you specify the
+        /// following filter:</p>
+        /// <p>
+        /// <code>"Filters": [ { "Condition": "IS", "Key": "Status", "Value": "ACTIVE" }
+        /// ]</code>
+        /// </p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -4386,7 +5130,7 @@ pub mod list_dataset_import_jobs_input {
             self,
         ) -> std::result::Result<
             crate::input::ListDatasetImportJobsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListDatasetImportJobsInput {
                 next_token: self.next_token,
@@ -4407,16 +5151,16 @@ impl ListDatasetImportJobsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListDatasetImportJobs,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListDatasetImportJobsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4424,7 +5168,7 @@ impl ListDatasetImportJobsInput {
         fn update_http_builder(
             input: &crate::input::ListDatasetImportJobsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4433,32 +5177,34 @@ impl ListDatasetImportJobsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListDatasetImportJobsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonForecast.ListDatasetImportJobs",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_dataset_import_jobs(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4481,15 +5227,15 @@ impl ListDatasetImportJobsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListDatasetImportJobs::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListDatasetImportJobs",
             "forecast",
         ));
@@ -4498,10 +5244,10 @@ impl ListDatasetImportJobsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4532,6 +5278,9 @@ pub mod list_datasets_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the result of the previous request was truncated, the response includes a
+        /// <code>NextToken</code>. To retrieve the next set of results, use the token in the next
+        /// request. Tokens expire after 24 hours.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4541,6 +5290,7 @@ pub mod list_datasets_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The number of items to return in the response.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -4548,8 +5298,10 @@ pub mod list_datasets_input {
         /// Consumes the builder and constructs a [`ListDatasetsInput`](crate::input::ListDatasetsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListDatasetsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListDatasetsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListDatasetsInput {
                 next_token: self.next_token,
                 max_results: self.max_results,
@@ -4568,16 +5320,16 @@ impl ListDatasetsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListDatasets,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListDatasetsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4585,7 +5337,7 @@ impl ListDatasetsInput {
         fn update_http_builder(
             input: &crate::input::ListDatasetsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4594,31 +5346,31 @@ impl ListDatasetsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListDatasetsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonForecast.ListDatasets",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_datasets(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4641,25 +5393,27 @@ impl ListDatasetsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListDatasets::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ListDatasets",
-                    "forecast",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListDatasets::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListDatasets",
+            "forecast",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4691,6 +5445,9 @@ pub mod list_forecast_export_jobs_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the result of the previous request was truncated, the response includes a
+        /// <code>NextToken</code>. To retrieve the next set of results, use the token in the next
+        /// request. Tokens expire after 24 hours.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4700,16 +5457,83 @@ pub mod list_forecast_export_jobs_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The number of items to return in the response.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>An array of filters. For each filter, you provide a condition and a match statement. The
+        /// condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include
+        /// or exclude the forecast export jobs that match the statement from the list, respectively. The
+        /// match statement consists of a key and a value.</p>
+        /// <p>
+        /// <b>Filter properties</b>
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and
+        /// <code>IS_NOT</code>. To include the forecast export jobs that match the statement,
+        /// specify <code>IS</code>. To exclude matching forecast export jobs, specify
+        /// <code>IS_NOT</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Key</code> - The name of the parameter to filter on. Valid values are
+        /// <code>ForecastArn</code> and <code>Status</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Value</code> - The value to match.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For example, to list all jobs that export a forecast named
+        /// <i>electricityforecast</i>, specify the following filter:</p>
+        /// <p>
+        /// <code>"Filters": [ { "Condition": "IS", "Key": "ForecastArn", "Value":
+        /// "arn:aws:forecast:us-west-2:<acct-id>:forecast/electricityforecast" } ]</code>
+        /// </p>
         pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input.into());
             self.filters = Some(v);
             self
         }
+        /// <p>An array of filters. For each filter, you provide a condition and a match statement. The
+        /// condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include
+        /// or exclude the forecast export jobs that match the statement from the list, respectively. The
+        /// match statement consists of a key and a value.</p>
+        /// <p>
+        /// <b>Filter properties</b>
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and
+        /// <code>IS_NOT</code>. To include the forecast export jobs that match the statement,
+        /// specify <code>IS</code>. To exclude matching forecast export jobs, specify
+        /// <code>IS_NOT</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Key</code> - The name of the parameter to filter on. Valid values are
+        /// <code>ForecastArn</code> and <code>Status</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Value</code> - The value to match.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For example, to list all jobs that export a forecast named
+        /// <i>electricityforecast</i>, specify the following filter:</p>
+        /// <p>
+        /// <code>"Filters": [ { "Condition": "IS", "Key": "ForecastArn", "Value":
+        /// "arn:aws:forecast:us-west-2:<acct-id>:forecast/electricityforecast" } ]</code>
+        /// </p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -4722,7 +5546,7 @@ pub mod list_forecast_export_jobs_input {
             self,
         ) -> std::result::Result<
             crate::input::ListForecastExportJobsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListForecastExportJobsInput {
                 next_token: self.next_token,
@@ -4743,16 +5567,16 @@ impl ListForecastExportJobsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListForecastExportJobs,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListForecastExportJobsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4760,7 +5584,7 @@ impl ListForecastExportJobsInput {
         fn update_http_builder(
             input: &crate::input::ListForecastExportJobsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4769,32 +5593,34 @@ impl ListForecastExportJobsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListForecastExportJobsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonForecast.ListForecastExportJobs",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_forecast_export_jobs(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4817,15 +5643,15 @@ impl ListForecastExportJobsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListForecastExportJobs::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListForecastExportJobs",
             "forecast",
         ));
@@ -4834,10 +5660,10 @@ impl ListForecastExportJobsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4869,6 +5695,9 @@ pub mod list_forecasts_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the result of the previous request was truncated, the response includes a
+        /// <code>NextToken</code>. To retrieve the next set of results, use the token in the next
+        /// request. Tokens expire after 24 hours.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4878,16 +5707,79 @@ pub mod list_forecasts_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The number of items to return in the response.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>An array of filters. For each filter, you provide a condition and a match statement. The
+        /// condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include
+        /// or exclude the forecasts that match the statement from the list, respectively. The match
+        /// statement consists of a key and a value.</p>
+        /// <p>
+        /// <b>Filter properties</b>
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and
+        /// <code>IS_NOT</code>. To include the forecasts that match the statement, specify
+        /// <code>IS</code>. To exclude matching forecasts, specify <code>IS_NOT</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Key</code> - The name of the parameter to filter on. Valid values are
+        /// <code>DatasetGroupArn</code>, <code>PredictorArn</code>, and <code>Status</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Value</code> - The value to match.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For example, to list all forecasts whose status is not ACTIVE, you would specify:</p>
+        /// <p>
+        /// <code>"Filters": [ { "Condition": "IS_NOT", "Key": "Status", "Value": "ACTIVE" }
+        /// ]</code>
+        /// </p>
         pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input.into());
             self.filters = Some(v);
             self
         }
+        /// <p>An array of filters. For each filter, you provide a condition and a match statement. The
+        /// condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include
+        /// or exclude the forecasts that match the statement from the list, respectively. The match
+        /// statement consists of a key and a value.</p>
+        /// <p>
+        /// <b>Filter properties</b>
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and
+        /// <code>IS_NOT</code>. To include the forecasts that match the statement, specify
+        /// <code>IS</code>. To exclude matching forecasts, specify <code>IS_NOT</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Key</code> - The name of the parameter to filter on. Valid values are
+        /// <code>DatasetGroupArn</code>, <code>PredictorArn</code>, and <code>Status</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Value</code> - The value to match.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For example, to list all forecasts whose status is not ACTIVE, you would specify:</p>
+        /// <p>
+        /// <code>"Filters": [ { "Condition": "IS_NOT", "Key": "Status", "Value": "ACTIVE" }
+        /// ]</code>
+        /// </p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -4898,8 +5790,10 @@ pub mod list_forecasts_input {
         /// Consumes the builder and constructs a [`ListForecastsInput`](crate::input::ListForecastsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListForecastsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListForecastsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListForecastsInput {
                 next_token: self.next_token,
                 max_results: self.max_results,
@@ -4919,16 +5813,16 @@ impl ListForecastsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListForecasts,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListForecastsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4936,7 +5830,7 @@ impl ListForecastsInput {
         fn update_http_builder(
             input: &crate::input::ListForecastsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4945,29 +5839,31 @@ impl ListForecastsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListForecastsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonForecast.ListForecasts",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_forecasts(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4990,25 +5886,27 @@ impl ListForecastsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListForecasts::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ListForecasts",
-                    "forecast",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListForecasts::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListForecasts",
+            "forecast",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5040,6 +5938,9 @@ pub mod list_predictor_backtest_export_jobs_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the result of the previous request was truncated, the response includes a NextToken.
+        /// To retrieve the next set of results, use the token in the next request. Tokens expire after
+        /// 24 hours.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5049,16 +5950,71 @@ pub mod list_predictor_backtest_export_jobs_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The number of items to return in the response.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>An array of filters. For each filter, provide a condition and a match statement. The
+        /// condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to
+        /// include or exclude the predictor backtest export jobs that match the statement from the
+        /// list. The match statement consists of a key and a value.</p>
+        /// <p>
+        /// <b>Filter properties</b>
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Condition</code> - The condition to apply. Valid values are
+        /// <code>IS</code> and <code>IS_NOT</code>. To include the predictor backtest
+        /// export jobs that match the statement, specify <code>IS</code>. To exclude matching
+        /// predictor backtest export jobs, specify <code>IS_NOT</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Key</code> - The name of the parameter to filter on. Valid values are
+        /// <code>PredictorArn</code> and <code>Status</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Value</code> - The value to match.</p>
+        /// </li>
+        /// </ul>
         pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input.into());
             self.filters = Some(v);
             self
         }
+        /// <p>An array of filters. For each filter, provide a condition and a match statement. The
+        /// condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to
+        /// include or exclude the predictor backtest export jobs that match the statement from the
+        /// list. The match statement consists of a key and a value.</p>
+        /// <p>
+        /// <b>Filter properties</b>
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Condition</code> - The condition to apply. Valid values are
+        /// <code>IS</code> and <code>IS_NOT</code>. To include the predictor backtest
+        /// export jobs that match the statement, specify <code>IS</code>. To exclude matching
+        /// predictor backtest export jobs, specify <code>IS_NOT</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Key</code> - The name of the parameter to filter on. Valid values are
+        /// <code>PredictorArn</code> and <code>Status</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Value</code> - The value to match.</p>
+        /// </li>
+        /// </ul>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -5071,7 +6027,7 @@ pub mod list_predictor_backtest_export_jobs_input {
             self,
         ) -> std::result::Result<
             crate::input::ListPredictorBacktestExportJobsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListPredictorBacktestExportJobsInput {
                 next_token: self.next_token,
@@ -5093,16 +6049,16 @@ impl ListPredictorBacktestExportJobsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListPredictorBacktestExportJobs,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListPredictorBacktestExportJobsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5110,7 +6066,7 @@ impl ListPredictorBacktestExportJobsInput {
         fn update_http_builder(
             input: &crate::input::ListPredictorBacktestExportJobsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5119,30 +6075,30 @@ impl ListPredictorBacktestExportJobsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListPredictorBacktestExportJobsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonForecast.ListPredictorBacktestExportJobs",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_predictor_backtest_export_jobs(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_predictor_backtest_export_jobs(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5165,15 +6121,15 @@ impl ListPredictorBacktestExportJobsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListPredictorBacktestExportJobs::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListPredictorBacktestExportJobs",
             "forecast",
         ));
@@ -5182,10 +6138,10 @@ impl ListPredictorBacktestExportJobsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5217,6 +6173,9 @@ pub mod list_predictors_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the result of the previous request was truncated, the response includes a
+        /// <code>NextToken</code>. To retrieve the next set of results, use the token in the next
+        /// request. Tokens expire after 24 hours.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5226,16 +6185,79 @@ pub mod list_predictors_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The number of items to return in the response.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>An array of filters. For each filter, you provide a condition and a match statement. The
+        /// condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include
+        /// or exclude the predictors that match the statement from the list, respectively. The match
+        /// statement consists of a key and a value.</p>
+        /// <p>
+        /// <b>Filter properties</b>
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and
+        /// <code>IS_NOT</code>. To include the predictors that match the statement, specify
+        /// <code>IS</code>. To exclude matching predictors, specify <code>IS_NOT</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Key</code> - The name of the parameter to filter on. Valid values are
+        /// <code>DatasetGroupArn</code> and <code>Status</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Value</code> - The value to match.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For example, to list all predictors whose status is ACTIVE, you would specify:</p>
+        /// <p>
+        /// <code>"Filters": [ { "Condition": "IS", "Key": "Status", "Value": "ACTIVE" }
+        /// ]</code>
+        /// </p>
         pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input.into());
             self.filters = Some(v);
             self
         }
+        /// <p>An array of filters. For each filter, you provide a condition and a match statement. The
+        /// condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether to include
+        /// or exclude the predictors that match the statement from the list, respectively. The match
+        /// statement consists of a key and a value.</p>
+        /// <p>
+        /// <b>Filter properties</b>
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Condition</code> - The condition to apply. Valid values are <code>IS</code> and
+        /// <code>IS_NOT</code>. To include the predictors that match the statement, specify
+        /// <code>IS</code>. To exclude matching predictors, specify <code>IS_NOT</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Key</code> - The name of the parameter to filter on. Valid values are
+        /// <code>DatasetGroupArn</code> and <code>Status</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Value</code> - The value to match.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For example, to list all predictors whose status is ACTIVE, you would specify:</p>
+        /// <p>
+        /// <code>"Filters": [ { "Condition": "IS", "Key": "Status", "Value": "ACTIVE" }
+        /// ]</code>
+        /// </p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -5248,7 +6270,7 @@ pub mod list_predictors_input {
             self,
         ) -> std::result::Result<
             crate::input::ListPredictorsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListPredictorsInput {
                 next_token: self.next_token,
@@ -5269,16 +6291,16 @@ impl ListPredictorsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListPredictors,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListPredictorsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5286,7 +6308,7 @@ impl ListPredictorsInput {
         fn update_http_builder(
             input: &crate::input::ListPredictorsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5295,29 +6317,31 @@ impl ListPredictorsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListPredictorsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonForecast.ListPredictors",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_predictors(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5340,15 +6364,15 @@ impl ListPredictorsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListPredictors::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListPredictors",
             "forecast",
         ));
@@ -5357,10 +6381,10 @@ impl ListPredictorsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5388,6 +6412,7 @@ pub mod list_tags_for_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resources are Forecast dataset groups, datasets, dataset import jobs, predictors, forecasts, and forecast export jobs.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -5397,7 +6422,7 @@ pub mod list_tags_for_resource_input {
             self,
         ) -> std::result::Result<
             crate::input::ListTagsForResourceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListTagsForResourceInput {
                 resource_arn: self.resource_arn,
@@ -5416,16 +6441,16 @@ impl ListTagsForResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListTagsForResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5433,7 +6458,7 @@ impl ListTagsForResourceInput {
         fn update_http_builder(
             input: &crate::input::ListTagsForResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5442,32 +6467,32 @@ impl ListTagsForResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListTagsForResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonForecast.ListTagsForResource",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5490,15 +6515,15 @@ impl ListTagsForResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListTagsForResource::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListTagsForResource",
             "forecast",
         ));
@@ -5507,10 +6532,10 @@ impl ListTagsForResourceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5541,6 +6566,10 @@ pub mod stop_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) that identifies the resource to stop. The supported ARNs
+        /// are <code>DatasetImportJobArn</code>, <code>PredictorArn</code>,
+        /// <code>PredictorBacktestExportJobArn</code>, <code>ForecastArn</code>, and
+        /// <code>ForecastExportJobArn</code>. </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -5548,8 +6577,10 @@ pub mod stop_resource_input {
         /// Consumes the builder and constructs a [`StopResourceInput`](crate::input::StopResourceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::StopResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::StopResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::StopResourceInput {
                 resource_arn: self.resource_arn,
             })
@@ -5567,16 +6598,16 @@ impl StopResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::StopResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::StopResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5584,7 +6615,7 @@ impl StopResourceInput {
         fn update_http_builder(
             input: &crate::input::StopResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5593,31 +6624,31 @@ impl StopResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::StopResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonForecast.StopResource",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_stop_resource(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5640,25 +6671,27 @@ impl StopResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::StopResource::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "StopResource",
-                    "forecast",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::StopResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "StopResource",
+            "forecast",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5687,16 +6720,71 @@ pub mod tag_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resources are Forecast dataset groups, datasets, dataset import jobs, predictors, forecasts, and forecast export jobs.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags to add to the resource. A tag is an array of key-value pairs.</p>
+        /// <p>The following basic restrictions apply to tags:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Maximum number of tags per resource - 50.</p>
+        /// </li>
+        /// <li>
+        /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum key length - 128 Unicode characters in UTF-8.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum value length - 256 Unicode characters in UTF-8.</p>
+        /// </li>
+        /// <li>
+        /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p>
+        /// </li>
+        /// <li>
+        /// <p>Tag keys and values are case sensitive.</p>
+        /// </li>
+        /// <li>
+        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p>
+        /// </li>
+        /// </ul>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The tags to add to the resource. A tag is an array of key-value pairs.</p>
+        /// <p>The following basic restrictions apply to tags:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Maximum number of tags per resource - 50.</p>
+        /// </li>
+        /// <li>
+        /// <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum key length - 128 Unicode characters in UTF-8.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum value length - 256 Unicode characters in UTF-8.</p>
+        /// </li>
+        /// <li>
+        /// <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p>
+        /// </li>
+        /// <li>
+        /// <p>Tag keys and values are case sensitive.</p>
+        /// </li>
+        /// <li>
+        /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not count against your tags per resource limit.</p>
+        /// </li>
+        /// </ul>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -5707,8 +6795,10 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::TagResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::TagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::TagResourceInput {
                 resource_arn: self.resource_arn,
                 tags: self.tags,
@@ -5727,16 +6817,16 @@ impl TagResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::TagResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5744,7 +6834,7 @@ impl TagResourceInput {
         fn update_http_builder(
             input: &crate::input::TagResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5753,29 +6843,31 @@ impl TagResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::TagResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonForecast.TagResource",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5798,25 +6890,27 @@ impl TagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::TagResource::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "TagResource",
-                    "forecast",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::TagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "TagResource",
+            "forecast",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5845,16 +6939,23 @@ pub mod untag_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) that identifies the resource for which to list the tags. Currently, the supported resources are Forecast dataset groups, datasets, dataset import jobs, predictors, forecasts, and forecast exports.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Appends an item to `tag_keys`.
+        ///
+        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
+        ///
+        /// <p>The keys of the tags to be removed.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
+        /// <p>The keys of the tags to be removed.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5865,8 +6966,10 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UntagResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UntagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UntagResourceInput {
                 resource_arn: self.resource_arn,
                 tag_keys: self.tag_keys,
@@ -5885,16 +6988,16 @@ impl UntagResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UntagResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5902,7 +7005,7 @@ impl UntagResourceInput {
         fn update_http_builder(
             input: &crate::input::UntagResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5911,29 +7014,31 @@ impl UntagResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UntagResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonForecast.UntagResource",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5956,25 +7061,27 @@ impl UntagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UntagResource::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UntagResource",
-                    "forecast",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UntagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UntagResource",
+            "forecast",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6003,6 +7110,7 @@ pub mod update_dataset_group_input {
             self.dataset_group_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the dataset group.</p>
         pub fn set_dataset_group_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6010,12 +7118,20 @@ pub mod update_dataset_group_input {
             self.dataset_group_arn = input;
             self
         }
+        /// Appends an item to `dataset_arns`.
+        ///
+        /// To override the contents of this collection use [`set_dataset_arns`](Self::set_dataset_arns).
+        ///
+        /// <p>An array of the Amazon Resource Names (ARNs) of the datasets to add to the dataset
+        /// group.</p>
         pub fn dataset_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.dataset_arns.unwrap_or_default();
             v.push(input.into());
             self.dataset_arns = Some(v);
             self
         }
+        /// <p>An array of the Amazon Resource Names (ARNs) of the datasets to add to the dataset
+        /// group.</p>
         pub fn set_dataset_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6028,7 +7144,7 @@ pub mod update_dataset_group_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateDatasetGroupInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateDatasetGroupInput {
                 dataset_group_arn: self.dataset_group_arn,
@@ -6048,16 +7164,16 @@ impl UpdateDatasetGroupInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateDatasetGroup,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateDatasetGroupInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6065,7 +7181,7 @@ impl UpdateDatasetGroupInput {
         fn update_http_builder(
             input: &crate::input::UpdateDatasetGroupInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6074,30 +7190,32 @@ impl UpdateDatasetGroupInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateDatasetGroupInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AmazonForecast.UpdateDatasetGroup",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_dataset_group(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6120,15 +7238,15 @@ impl UpdateDatasetGroupInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateDatasetGroup::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateDatasetGroup",
             "forecast",
         ));
@@ -6137,10 +7255,10 @@ impl UpdateDatasetGroupInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6154,6 +7272,7 @@ impl UpdateDatasetGroupInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDatasetGroupInput {
@@ -6172,6 +7291,7 @@ impl std::fmt::Debug for UpdateDatasetGroupInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
@@ -6189,6 +7309,7 @@ impl std::fmt::Debug for UntagResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
@@ -6230,6 +7351,7 @@ impl std::fmt::Debug for TagResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopResourceInput {
@@ -6247,6 +7369,7 @@ impl std::fmt::Debug for StopResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
@@ -6261,6 +7384,7 @@ impl std::fmt::Debug for ListTagsForResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPredictorsInput {
@@ -6311,6 +7435,7 @@ impl std::fmt::Debug for ListPredictorsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPredictorBacktestExportJobsInput {
@@ -6357,6 +7482,7 @@ impl std::fmt::Debug for ListPredictorBacktestExportJobsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListForecastsInput {
@@ -6407,6 +7533,7 @@ impl std::fmt::Debug for ListForecastsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListForecastExportJobsInput {
@@ -6459,6 +7586,7 @@ impl std::fmt::Debug for ListForecastExportJobsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDatasetsInput {
@@ -6478,6 +7606,7 @@ impl std::fmt::Debug for ListDatasetsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDatasetImportJobsInput {
@@ -6529,6 +7658,7 @@ impl std::fmt::Debug for ListDatasetImportJobsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDatasetGroupsInput {
@@ -6548,6 +7678,7 @@ impl std::fmt::Debug for ListDatasetGroupsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAccuracyMetricsInput {
@@ -6562,6 +7693,7 @@ impl std::fmt::Debug for GetAccuracyMetricsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePredictorBacktestExportJobInput {
@@ -6579,6 +7711,7 @@ impl std::fmt::Debug for DescribePredictorBacktestExportJobInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePredictorInput {
@@ -6593,6 +7726,7 @@ impl std::fmt::Debug for DescribePredictorInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeForecastExportJobInput {
@@ -6607,6 +7741,7 @@ impl std::fmt::Debug for DescribeForecastExportJobInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeForecastInput {
@@ -6621,6 +7756,7 @@ impl std::fmt::Debug for DescribeForecastInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDatasetImportJobInput {
@@ -6635,6 +7771,7 @@ impl std::fmt::Debug for DescribeDatasetImportJobInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDatasetGroupInput {
@@ -6649,6 +7786,7 @@ impl std::fmt::Debug for DescribeDatasetGroupInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDatasetInput {
@@ -6663,6 +7801,7 @@ impl std::fmt::Debug for DescribeDatasetInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteResourceTreeInput {
@@ -6678,6 +7817,7 @@ impl std::fmt::Debug for DeleteResourceTreeInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePredictorBacktestExportJobInput {
@@ -6695,6 +7835,7 @@ impl std::fmt::Debug for DeletePredictorBacktestExportJobInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePredictorInput {
@@ -6709,6 +7850,7 @@ impl std::fmt::Debug for DeletePredictorInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteForecastExportJobInput {
@@ -6723,6 +7865,7 @@ impl std::fmt::Debug for DeleteForecastExportJobInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteForecastInput {
@@ -6737,6 +7880,7 @@ impl std::fmt::Debug for DeleteForecastInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDatasetImportJobInput {
@@ -6751,6 +7895,7 @@ impl std::fmt::Debug for DeleteDatasetImportJobInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDatasetGroupInput {
@@ -6765,6 +7910,7 @@ impl std::fmt::Debug for DeleteDatasetGroupInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDatasetInput {
@@ -6779,6 +7925,7 @@ impl std::fmt::Debug for DeleteDatasetInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePredictorBacktestExportJobInput {
@@ -6837,6 +7984,7 @@ impl std::fmt::Debug for CreatePredictorBacktestExportJobInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePredictorInput {
@@ -7005,6 +8153,7 @@ impl std::fmt::Debug for CreatePredictorInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateForecastExportJobInput {
@@ -7056,6 +8205,7 @@ impl std::fmt::Debug for CreateForecastExportJobInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateForecastInput {
@@ -7107,6 +8257,7 @@ impl std::fmt::Debug for CreateForecastInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDatasetImportJobInput {
@@ -7208,6 +8359,7 @@ impl std::fmt::Debug for CreateDatasetImportJobInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDatasetGroupInput {
@@ -7263,6 +8415,7 @@ impl std::fmt::Debug for CreateDatasetGroupInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDatasetInput {

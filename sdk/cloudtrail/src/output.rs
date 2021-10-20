@@ -35,6 +35,7 @@ pub struct UpdateTrailOutput {
     /// <p>Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's log group.</p>
     pub cloud_watch_logs_role_arn: std::option::Option<std::string::String>,
     /// <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>
+    ///
     /// <p>
     /// <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
     /// </p>
@@ -96,6 +97,7 @@ pub mod update_trail_output {
             self.name = Some(input.into());
             self
         }
+        /// <p>Specifies the name of the trail.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -105,6 +107,7 @@ pub mod update_trail_output {
             self.s3_bucket_name = Some(input.into());
             self
         }
+        /// <p>Specifies the name of the Amazon S3 bucket designated for publishing log files.</p>
         pub fn set_s3_bucket_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -119,6 +122,9 @@ pub mod update_trail_output {
             self.s3_key_prefix = Some(input.into());
             self
         }
+        /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated
+        /// for log file delivery.
+        /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your IAM Log Files</a>.</p>
         pub fn set_s3_key_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -131,6 +137,7 @@ pub mod update_trail_output {
             self.sns_topic_name = Some(input.into());
             self
         }
+        /// <p>This field is no longer in use. Use <a>UpdateTrailResponse$SnsTopicARN</a>.</p>
         pub fn set_sns_topic_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -147,6 +154,11 @@ pub mod update_trail_output {
             self.sns_topic_arn = Some(input.into());
             self
         }
+        /// <p>Specifies the ARN of the Amazon SNS topic that CloudTrail uses to send notifications
+        /// when log files are delivered. The following is the format of a topic ARN.</p>
+        /// <p>
+        /// <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code>
+        /// </p>
         pub fn set_sns_topic_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -159,6 +171,7 @@ pub mod update_trail_output {
             self.include_global_service_events = Some(input);
             self
         }
+        /// <p>Specifies whether the trail is publishing events from global services such as IAM to the log files.</p>
         pub fn set_include_global_service_events(
             mut self,
             input: std::option::Option<bool>,
@@ -171,6 +184,7 @@ pub mod update_trail_output {
             self.is_multi_region_trail = Some(input);
             self
         }
+        /// <p>Specifies whether the trail exists in one region or in all regions.</p>
         pub fn set_is_multi_region_trail(mut self, input: std::option::Option<bool>) -> Self {
             self.is_multi_region_trail = input;
             self
@@ -183,6 +197,10 @@ pub mod update_trail_output {
             self.trail_arn = Some(input.into());
             self
         }
+        /// <p>Specifies the ARN of the trail that was updated. The following is the format of a trail ARN.</p>
+        /// <p>
+        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
+        /// </p>
         pub fn set_trail_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.trail_arn = input;
             self
@@ -192,6 +210,7 @@ pub mod update_trail_output {
             self.log_file_validation_enabled = Some(input);
             self
         }
+        /// <p>Specifies whether log file integrity validation is enabled.</p>
         pub fn set_log_file_validation_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.log_file_validation_enabled = input;
             self
@@ -204,6 +223,7 @@ pub mod update_trail_output {
             self.cloud_watch_logs_log_group_arn = Some(input.into());
             self
         }
+        /// <p>Specifies the Amazon Resource Name (ARN) of the log group to which CloudTrail logs are delivered.</p>
         pub fn set_cloud_watch_logs_log_group_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -216,6 +236,7 @@ pub mod update_trail_output {
             self.cloud_watch_logs_role_arn = Some(input.into());
             self
         }
+        /// <p>Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's log group.</p>
         pub fn set_cloud_watch_logs_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -224,6 +245,7 @@ pub mod update_trail_output {
             self
         }
         /// <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>
+        ///
         /// <p>
         /// <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
         /// </p>
@@ -231,6 +253,11 @@ pub mod update_trail_output {
             self.kms_key_id = Some(input.into());
             self
         }
+        /// <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail. The value is a fully specified ARN to a KMS key in the following format.</p>
+        ///
+        /// <p>
+        /// <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+        /// </p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -240,6 +267,7 @@ pub mod update_trail_output {
             self.is_organization_trail = Some(input);
             self
         }
+        /// <p>Specifies whether the trail is an organization trail.</p>
         pub fn set_is_organization_trail(mut self, input: std::option::Option<bool>) -> Self {
             self.is_organization_trail = input;
             self
@@ -361,6 +389,7 @@ impl RemoveTagsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutInsightSelectorsOutput {
@@ -393,10 +422,16 @@ pub mod put_insight_selectors_output {
             self.trail_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of a trail for which you want to change or add Insights selectors.</p>
         pub fn set_trail_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.trail_arn = input;
             self
         }
+        /// Appends an item to `insight_selectors`.
+        ///
+        /// To override the contents of this collection use [`set_insight_selectors`](Self::set_insight_selectors).
+        ///
+        /// <p>A JSON string that contains the Insights event types that you want to log on a trail. The valid Insights type in this release is <code>ApiCallRateInsight</code>.</p>
         pub fn insight_selectors(
             mut self,
             input: impl Into<crate::model::InsightSelector>,
@@ -406,6 +441,7 @@ pub mod put_insight_selectors_output {
             self.insight_selectors = Some(v);
             self
         }
+        /// <p>A JSON string that contains the Insights event types that you want to log on a trail. The valid Insights type in this release is <code>ApiCallRateInsight</code>.</p>
         pub fn set_insight_selectors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InsightSelector>>,
@@ -429,6 +465,7 @@ impl PutInsightSelectorsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutEventSelectorsOutput {
@@ -472,16 +509,26 @@ pub mod put_event_selectors_output {
             self.trail_arn = Some(input.into());
             self
         }
+        /// <p>Specifies the ARN of the trail that was updated with event selectors. The following is the format of a trail ARN.</p>
+        /// <p>
+        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
+        /// </p>
         pub fn set_trail_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.trail_arn = input;
             self
         }
+        /// Appends an item to `event_selectors`.
+        ///
+        /// To override the contents of this collection use [`set_event_selectors`](Self::set_event_selectors).
+        ///
+        /// <p>Specifies the event selectors configured for your trail.</p>
         pub fn event_selectors(mut self, input: impl Into<crate::model::EventSelector>) -> Self {
             let mut v = self.event_selectors.unwrap_or_default();
             v.push(input.into());
             self.event_selectors = Some(v);
             self
         }
+        /// <p>Specifies the event selectors configured for your trail.</p>
         pub fn set_event_selectors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EventSelector>>,
@@ -489,6 +536,11 @@ pub mod put_event_selectors_output {
             self.event_selectors = input;
             self
         }
+        /// Appends an item to `advanced_event_selectors`.
+        ///
+        /// To override the contents of this collection use [`set_advanced_event_selectors`](Self::set_advanced_event_selectors).
+        ///
+        /// <p>Specifies the advanced event selectors configured for your trail.</p>
         pub fn advanced_event_selectors(
             mut self,
             input: impl Into<crate::model::AdvancedEventSelector>,
@@ -498,6 +550,7 @@ pub mod put_event_selectors_output {
             self.advanced_event_selectors = Some(v);
             self
         }
+        /// <p>Specifies the advanced event selectors configured for your trail.</p>
         pub fn set_advanced_event_selectors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AdvancedEventSelector>>,
@@ -552,12 +605,18 @@ pub mod lookup_events_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `events`.
+        ///
+        /// To override the contents of this collection use [`set_events`](Self::set_events).
+        ///
+        /// <p>A list of events returned based on the lookup attributes specified and the CloudTrail event. The events list is sorted by time. The most recent event is listed first.</p>
         pub fn events(mut self, input: impl Into<crate::model::Event>) -> Self {
             let mut v = self.events.unwrap_or_default();
             v.push(input.into());
             self.events = Some(v);
             self
         }
+        /// <p>A list of events returned based on the lookup attributes specified and the CloudTrail event. The events list is sorted by time. The most recent event is listed first.</p>
         pub fn set_events(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Event>>,
@@ -573,6 +632,10 @@ pub mod lookup_events_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token to use to get the next page of results after a previous API call. If the token does not appear,
+        /// there are no more results to return. The token must be passed in with the same parameters as the previous call.
+        /// For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with
+        /// NextToken should include those same parameters.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -593,6 +656,7 @@ impl LookupEventsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTrailsOutput {
@@ -622,12 +686,18 @@ pub mod list_trails_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `trails`.
+        ///
+        /// To override the contents of this collection use [`set_trails`](Self::set_trails).
+        ///
+        /// <p>Returns the name, ARN, and home region of trails in the current account.</p>
         pub fn trails(mut self, input: impl Into<crate::model::TrailInfo>) -> Self {
             let mut v = self.trails.unwrap_or_default();
             v.push(input.into());
             self.trails = Some(v);
             self
         }
+        /// <p>Returns the name, ARN, and home region of trails in the current account.</p>
         pub fn set_trails(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TrailInfo>>,
@@ -643,6 +713,10 @@ pub mod list_trails_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token to use to get the next page of results after a previous API call. If the token does not appear,
+        /// there are no more results to return. The token must be passed in with the same parameters as the previous call.
+        /// For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with
+        /// NextToken should include those same parameters.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -690,12 +764,18 @@ pub mod list_tags_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `resource_tag_list`.
+        ///
+        /// To override the contents of this collection use [`set_resource_tag_list`](Self::set_resource_tag_list).
+        ///
+        /// <p>A list of resource tags.</p>
         pub fn resource_tag_list(mut self, input: impl Into<crate::model::ResourceTag>) -> Self {
             let mut v = self.resource_tag_list.unwrap_or_default();
             v.push(input.into());
             self.resource_tag_list = Some(v);
             self
         }
+        /// <p>A list of resource tags.</p>
         pub fn set_resource_tag_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
@@ -708,6 +788,7 @@ pub mod list_tags_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>Reserved for future use.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -758,12 +839,24 @@ pub mod list_public_keys_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `public_key_list`.
+        ///
+        /// To override the contents of this collection use [`set_public_key_list`](Self::set_public_key_list).
+        ///
+        /// <p>Contains an array of PublicKey objects.</p>
+        /// <note>
+        /// <p>The returned public keys may have validity time ranges that overlap.</p>
+        /// </note>
         pub fn public_key_list(mut self, input: impl Into<crate::model::PublicKey>) -> Self {
             let mut v = self.public_key_list.unwrap_or_default();
             v.push(input.into());
             self.public_key_list = Some(v);
             self
         }
+        /// <p>Contains an array of PublicKey objects.</p>
+        /// <note>
+        /// <p>The returned public keys may have validity time ranges that overlap.</p>
+        /// </note>
         pub fn set_public_key_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PublicKey>>,
@@ -776,6 +869,7 @@ pub mod list_public_keys_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>Reserved for future use.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -817,19 +911,19 @@ pub struct GetTrailStatusOutput {
     /// </p>
     pub latest_notification_error: std::option::Option<std::string::String>,
     /// <p>Specifies the date and time that CloudTrail last delivered log files to an account's Amazon S3 bucket.</p>
-    pub latest_delivery_time: std::option::Option<smithy_types::Instant>,
+    pub latest_delivery_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Specifies the date and time of the most recent Amazon SNS notification that CloudTrail has written a new log file to an account's Amazon S3 bucket.</p>
-    pub latest_notification_time: std::option::Option<smithy_types::Instant>,
+    pub latest_notification_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Specifies the most recent date and time when CloudTrail started recording API calls for an Amazon Web Services account.</p>
-    pub start_logging_time: std::option::Option<smithy_types::Instant>,
+    pub start_logging_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Specifies the most recent date and time when CloudTrail stopped recording API calls for an Amazon Web Services account.</p>
-    pub stop_logging_time: std::option::Option<smithy_types::Instant>,
+    pub stop_logging_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Displays any CloudWatch Logs error that CloudTrail encountered when attempting to deliver logs to CloudWatch Logs.</p>
     pub latest_cloud_watch_logs_delivery_error: std::option::Option<std::string::String>,
     /// <p>Displays the most recent date and time when CloudTrail delivered logs to CloudWatch Logs.</p>
-    pub latest_cloud_watch_logs_delivery_time: std::option::Option<smithy_types::Instant>,
+    pub latest_cloud_watch_logs_delivery_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Specifies the date and time that CloudTrail last delivered a digest file to an account's Amazon S3 bucket.</p>
-    pub latest_digest_delivery_time: std::option::Option<smithy_types::Instant>,
+    pub latest_digest_delivery_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Displays any Amazon S3 error that CloudTrail encountered when attempting to deliver a digest
     /// file to the designated bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
     /// Responses</a> in the Amazon S3 API Reference. </p>
@@ -909,14 +1003,14 @@ pub mod get_trail_status_output {
         pub(crate) is_logging: std::option::Option<bool>,
         pub(crate) latest_delivery_error: std::option::Option<std::string::String>,
         pub(crate) latest_notification_error: std::option::Option<std::string::String>,
-        pub(crate) latest_delivery_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) latest_notification_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) start_logging_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) stop_logging_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) latest_delivery_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) latest_notification_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_logging_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) stop_logging_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) latest_cloud_watch_logs_delivery_error: std::option::Option<std::string::String>,
         pub(crate) latest_cloud_watch_logs_delivery_time:
-            std::option::Option<smithy_types::Instant>,
-        pub(crate) latest_digest_delivery_time: std::option::Option<smithy_types::Instant>,
+            std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) latest_digest_delivery_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) latest_digest_delivery_error: std::option::Option<std::string::String>,
         pub(crate) latest_delivery_attempt_time: std::option::Option<std::string::String>,
         pub(crate) latest_notification_attempt_time: std::option::Option<std::string::String>,
@@ -931,6 +1025,7 @@ pub mod get_trail_status_output {
             self.is_logging = Some(input);
             self
         }
+        /// <p>Whether the CloudTrail trail is currently logging Amazon Web Services API calls.</p>
         pub fn set_is_logging(mut self, input: std::option::Option<bool>) -> Self {
             self.is_logging = input;
             self
@@ -948,6 +1043,15 @@ pub mod get_trail_status_output {
             self.latest_delivery_error = Some(input.into());
             self
         }
+        /// <p>Displays any Amazon S3 error that CloudTrail encountered when attempting to deliver log files
+        /// to the designated bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
+        /// Responses</a> in the Amazon S3 API Reference. </p>
+        /// <note>
+        /// <p>This error occurs only when there is a problem with the destination S3 bucket, and does
+        /// not occur for requests that time out. To resolve the issue, create a new bucket, and then call
+        /// <code>UpdateTrail</code> to specify the new bucket; or fix the existing objects so that
+        /// CloudTrail can again write to the bucket.</p>
+        /// </note>
         pub fn set_latest_delivery_error(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -962,6 +1066,9 @@ pub mod get_trail_status_output {
             self.latest_notification_error = Some(input.into());
             self
         }
+        /// <p>Displays any Amazon SNS error that CloudTrail encountered when attempting to send a
+        /// notification. For more information about Amazon SNS errors, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon SNS Developer Guide</a>.
+        /// </p>
         pub fn set_latest_notification_error(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -970,49 +1077,53 @@ pub mod get_trail_status_output {
             self
         }
         /// <p>Specifies the date and time that CloudTrail last delivered log files to an account's Amazon S3 bucket.</p>
-        pub fn latest_delivery_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn latest_delivery_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.latest_delivery_time = Some(input);
             self
         }
+        /// <p>Specifies the date and time that CloudTrail last delivered log files to an account's Amazon S3 bucket.</p>
         pub fn set_latest_delivery_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.latest_delivery_time = input;
             self
         }
         /// <p>Specifies the date and time of the most recent Amazon SNS notification that CloudTrail has written a new log file to an account's Amazon S3 bucket.</p>
-        pub fn latest_notification_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn latest_notification_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.latest_notification_time = Some(input);
             self
         }
+        /// <p>Specifies the date and time of the most recent Amazon SNS notification that CloudTrail has written a new log file to an account's Amazon S3 bucket.</p>
         pub fn set_latest_notification_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.latest_notification_time = input;
             self
         }
         /// <p>Specifies the most recent date and time when CloudTrail started recording API calls for an Amazon Web Services account.</p>
-        pub fn start_logging_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_logging_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_logging_time = Some(input);
             self
         }
+        /// <p>Specifies the most recent date and time when CloudTrail started recording API calls for an Amazon Web Services account.</p>
         pub fn set_start_logging_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.start_logging_time = input;
             self
         }
         /// <p>Specifies the most recent date and time when CloudTrail stopped recording API calls for an Amazon Web Services account.</p>
-        pub fn stop_logging_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn stop_logging_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.stop_logging_time = Some(input);
             self
         }
+        /// <p>Specifies the most recent date and time when CloudTrail stopped recording API calls for an Amazon Web Services account.</p>
         pub fn set_stop_logging_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.stop_logging_time = input;
             self
@@ -1025,6 +1136,7 @@ pub mod get_trail_status_output {
             self.latest_cloud_watch_logs_delivery_error = Some(input.into());
             self
         }
+        /// <p>Displays any CloudWatch Logs error that CloudTrail encountered when attempting to deliver logs to CloudWatch Logs.</p>
         pub fn set_latest_cloud_watch_logs_delivery_error(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1035,26 +1147,28 @@ pub mod get_trail_status_output {
         /// <p>Displays the most recent date and time when CloudTrail delivered logs to CloudWatch Logs.</p>
         pub fn latest_cloud_watch_logs_delivery_time(
             mut self,
-            input: smithy_types::Instant,
+            input: aws_smithy_types::Instant,
         ) -> Self {
             self.latest_cloud_watch_logs_delivery_time = Some(input);
             self
         }
+        /// <p>Displays the most recent date and time when CloudTrail delivered logs to CloudWatch Logs.</p>
         pub fn set_latest_cloud_watch_logs_delivery_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.latest_cloud_watch_logs_delivery_time = input;
             self
         }
         /// <p>Specifies the date and time that CloudTrail last delivered a digest file to an account's Amazon S3 bucket.</p>
-        pub fn latest_digest_delivery_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn latest_digest_delivery_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.latest_digest_delivery_time = Some(input);
             self
         }
+        /// <p>Specifies the date and time that CloudTrail last delivered a digest file to an account's Amazon S3 bucket.</p>
         pub fn set_latest_digest_delivery_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.latest_digest_delivery_time = input;
             self
@@ -1075,6 +1189,15 @@ pub mod get_trail_status_output {
             self.latest_digest_delivery_error = Some(input.into());
             self
         }
+        /// <p>Displays any Amazon S3 error that CloudTrail encountered when attempting to deliver a digest
+        /// file to the designated bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
+        /// Responses</a> in the Amazon S3 API Reference. </p>
+        /// <note>
+        /// <p>This error occurs only when there is a problem with the destination S3 bucket, and does
+        /// not occur for requests that time out. To resolve the issue, create a new bucket, and then call
+        /// <code>UpdateTrail</code> to specify the new bucket; or fix the existing objects so that
+        /// CloudTrail can again write to the bucket.</p>
+        /// </note>
         pub fn set_latest_digest_delivery_error(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1090,6 +1213,7 @@ pub mod get_trail_status_output {
             self.latest_delivery_attempt_time = Some(input.into());
             self
         }
+        /// <p>This field is no longer in use.</p>
         pub fn set_latest_delivery_attempt_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1105,6 +1229,7 @@ pub mod get_trail_status_output {
             self.latest_notification_attempt_time = Some(input.into());
             self
         }
+        /// <p>This field is no longer in use.</p>
         pub fn set_latest_notification_attempt_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1120,6 +1245,7 @@ pub mod get_trail_status_output {
             self.latest_notification_attempt_succeeded = Some(input.into());
             self
         }
+        /// <p>This field is no longer in use.</p>
         pub fn set_latest_notification_attempt_succeeded(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1135,6 +1261,7 @@ pub mod get_trail_status_output {
             self.latest_delivery_attempt_succeeded = Some(input.into());
             self
         }
+        /// <p>This field is no longer in use.</p>
         pub fn set_latest_delivery_attempt_succeeded(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1147,6 +1274,7 @@ pub mod get_trail_status_output {
             self.time_logging_started = Some(input.into());
             self
         }
+        /// <p>This field is no longer in use.</p>
         pub fn set_time_logging_started(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1159,6 +1287,7 @@ pub mod get_trail_status_output {
             self.time_logging_stopped = Some(input.into());
             self
         }
+        /// <p>This field is no longer in use.</p>
         pub fn set_time_logging_stopped(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1197,6 +1326,7 @@ impl GetTrailStatusOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTrailOutput {
@@ -1224,6 +1354,7 @@ pub mod get_trail_output {
             self.trail = Some(input);
             self
         }
+        /// <p>The settings for a trail.</p>
         pub fn set_trail(mut self, input: std::option::Option<crate::model::Trail>) -> Self {
             self.trail = input;
             self
@@ -1241,6 +1372,7 @@ impl GetTrailOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetInsightSelectorsOutput {
@@ -1273,10 +1405,16 @@ pub mod get_insight_selectors_output {
             self.trail_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of a trail for which you want to get Insights selectors.</p>
         pub fn set_trail_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.trail_arn = input;
             self
         }
+        /// Appends an item to `insight_selectors`.
+        ///
+        /// To override the contents of this collection use [`set_insight_selectors`](Self::set_insight_selectors).
+        ///
+        /// <p>A JSON string that contains the insight types you want to log on a trail. In this release, only <code>ApiCallRateInsight</code> is supported as an insight type.</p>
         pub fn insight_selectors(
             mut self,
             input: impl Into<crate::model::InsightSelector>,
@@ -1286,6 +1424,7 @@ pub mod get_insight_selectors_output {
             self.insight_selectors = Some(v);
             self
         }
+        /// <p>A JSON string that contains the insight types you want to log on a trail. In this release, only <code>ApiCallRateInsight</code> is supported as an insight type.</p>
         pub fn set_insight_selectors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InsightSelector>>,
@@ -1309,6 +1448,7 @@ impl GetInsightSelectorsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEventSelectorsOutput {
@@ -1348,16 +1488,23 @@ pub mod get_event_selectors_output {
             self.trail_arn = Some(input.into());
             self
         }
+        /// <p>The specified trail ARN that has the event selectors.</p>
         pub fn set_trail_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.trail_arn = input;
             self
         }
+        /// Appends an item to `event_selectors`.
+        ///
+        /// To override the contents of this collection use [`set_event_selectors`](Self::set_event_selectors).
+        ///
+        /// <p>The event selectors that are configured for the trail.</p>
         pub fn event_selectors(mut self, input: impl Into<crate::model::EventSelector>) -> Self {
             let mut v = self.event_selectors.unwrap_or_default();
             v.push(input.into());
             self.event_selectors = Some(v);
             self
         }
+        /// <p>The event selectors that are configured for the trail.</p>
         pub fn set_event_selectors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EventSelector>>,
@@ -1365,6 +1512,13 @@ pub mod get_event_selectors_output {
             self.event_selectors = input;
             self
         }
+        /// Appends an item to `advanced_event_selectors`.
+        ///
+        /// To override the contents of this collection use [`set_advanced_event_selectors`](Self::set_advanced_event_selectors).
+        ///
+        /// <p>
+        /// The advanced event selectors that are configured for the trail.
+        /// </p>
         pub fn advanced_event_selectors(
             mut self,
             input: impl Into<crate::model::AdvancedEventSelector>,
@@ -1374,6 +1528,9 @@ pub mod get_event_selectors_output {
             self.advanced_event_selectors = Some(v);
             self
         }
+        /// <p>
+        /// The advanced event selectors that are configured for the trail.
+        /// </p>
         pub fn set_advanced_event_selectors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AdvancedEventSelector>>,
@@ -1423,12 +1580,22 @@ pub mod describe_trails_output {
         pub(crate) trail_list: std::option::Option<std::vec::Vec<crate::model::Trail>>,
     }
     impl Builder {
+        /// Appends an item to `trail_list`.
+        ///
+        /// To override the contents of this collection use [`set_trail_list`](Self::set_trail_list).
+        ///
+        /// <p>The list of trail objects. Trail objects with string values are only returned if values for the objects exist in a trail's configuration.
+        /// For example, <code>SNSTopicName</code> and <code>SNSTopicARN</code> are only returned in results if a trail is configured to send SNS notifications. Similarly,
+        /// <code>KMSKeyId</code> only appears in results if a trail's log files are encrypted with KMS customer managed keys.</p>
         pub fn trail_list(mut self, input: impl Into<crate::model::Trail>) -> Self {
             let mut v = self.trail_list.unwrap_or_default();
             v.push(input.into());
             self.trail_list = Some(v);
             self
         }
+        /// <p>The list of trail objects. Trail objects with string values are only returned if values for the objects exist in a trail's configuration.
+        /// For example, <code>SNSTopicName</code> and <code>SNSTopicARN</code> are only returned in results if a trail is configured to send SNS notifications. Similarly,
+        /// <code>KMSKeyId</code> only appears in results if a trail's log files are encrypted with KMS customer managed keys.</p>
         pub fn set_trail_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Trail>>,
@@ -1578,6 +1745,7 @@ pub mod create_trail_output {
             self.name = Some(input.into());
             self
         }
+        /// <p>Specifies the name of the trail.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1587,6 +1755,7 @@ pub mod create_trail_output {
             self.s3_bucket_name = Some(input.into());
             self
         }
+        /// <p>Specifies the name of the Amazon S3 bucket designated for publishing log files.</p>
         pub fn set_s3_bucket_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1600,6 +1769,8 @@ pub mod create_trail_output {
             self.s3_key_prefix = Some(input.into());
             self
         }
+        /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated
+        /// for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>.</p>
         pub fn set_s3_key_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1612,6 +1783,7 @@ pub mod create_trail_output {
             self.sns_topic_name = Some(input.into());
             self
         }
+        /// <p>This field is no longer in use. Use SnsTopicARN.</p>
         pub fn set_sns_topic_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1627,6 +1799,10 @@ pub mod create_trail_output {
             self.sns_topic_arn = Some(input.into());
             self
         }
+        /// <p>Specifies the ARN of the Amazon SNS topic that CloudTrail uses to send notifications when log files are delivered. The format of a topic ARN is:</p>
+        /// <p>
+        /// <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code>
+        /// </p>
         pub fn set_sns_topic_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1639,6 +1815,7 @@ pub mod create_trail_output {
             self.include_global_service_events = Some(input);
             self
         }
+        /// <p>Specifies whether the trail is publishing events from global services such as IAM to the log files.</p>
         pub fn set_include_global_service_events(
             mut self,
             input: std::option::Option<bool>,
@@ -1651,6 +1828,7 @@ pub mod create_trail_output {
             self.is_multi_region_trail = Some(input);
             self
         }
+        /// <p>Specifies whether the trail exists in one region or in all regions.</p>
         pub fn set_is_multi_region_trail(mut self, input: std::option::Option<bool>) -> Self {
             self.is_multi_region_trail = input;
             self
@@ -1664,6 +1842,11 @@ pub mod create_trail_output {
             self.trail_arn = Some(input.into());
             self
         }
+        /// <p>Specifies the ARN of the trail that was created. The format of a trail ARN
+        /// is:</p>
+        /// <p>
+        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
+        /// </p>
         pub fn set_trail_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.trail_arn = input;
             self
@@ -1673,6 +1856,7 @@ pub mod create_trail_output {
             self.log_file_validation_enabled = Some(input);
             self
         }
+        /// <p>Specifies whether log file integrity validation is enabled.</p>
         pub fn set_log_file_validation_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.log_file_validation_enabled = input;
             self
@@ -1685,6 +1869,7 @@ pub mod create_trail_output {
             self.cloud_watch_logs_log_group_arn = Some(input.into());
             self
         }
+        /// <p>Specifies the Amazon Resource Name (ARN) of the log group to which CloudTrail logs will be delivered.</p>
         pub fn set_cloud_watch_logs_log_group_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1697,6 +1882,7 @@ pub mod create_trail_output {
             self.cloud_watch_logs_role_arn = Some(input.into());
             self
         }
+        /// <p>Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's log group.</p>
         pub fn set_cloud_watch_logs_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1713,6 +1899,11 @@ pub mod create_trail_output {
             self.kms_key_id = Some(input.into());
             self
         }
+        /// <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail.
+        /// The value is a fully specified ARN to a KMS key in the following format.</p>
+        /// <p>
+        /// <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+        /// </p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -1722,6 +1913,7 @@ pub mod create_trail_output {
             self.is_organization_trail = Some(input);
             self
         }
+        /// <p>Specifies whether the trail is an organization trail.</p>
         pub fn set_is_organization_trail(mut self, input: std::option::Option<bool>) -> Self {
             self.is_organization_trail = input;
             self

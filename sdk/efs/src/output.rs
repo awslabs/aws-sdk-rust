@@ -18,7 +18,7 @@ pub struct UpdateFileSystemOutput {
     pub file_system_arn: std::option::Option<std::string::String>,
     /// <p>The time that the file system was created, in seconds (since
     /// 1970-01-01T00:00:00Z).</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The lifecycle phase of the file system.</p>
     pub life_cycle_state: std::option::Option<crate::model::LifeCycleState>,
     /// <p>You can add tags to a file system, including a <code>Name</code> tag. For more
@@ -100,7 +100,7 @@ pub mod update_file_system_output {
         pub(crate) creation_token: std::option::Option<std::string::String>,
         pub(crate) file_system_id: std::option::Option<std::string::String>,
         pub(crate) file_system_arn: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) life_cycle_state: std::option::Option<crate::model::LifeCycleState>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) number_of_mount_targets: std::option::Option<i32>,
@@ -121,6 +121,8 @@ pub mod update_file_system_output {
             self.owner_id = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services account that created the file system. If the file system was created by an IAM
+        /// user, the parent account to which the user belongs is the owner.</p>
         pub fn set_owner_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.owner_id = input;
             self
@@ -130,6 +132,7 @@ pub mod update_file_system_output {
             self.creation_token = Some(input.into());
             self
         }
+        /// <p>The opaque string specified in the request.</p>
         pub fn set_creation_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -142,6 +145,7 @@ pub mod update_file_system_output {
             self.file_system_id = Some(input.into());
             self
         }
+        /// <p>The ID of the file system, assigned by Amazon EFS.</p>
         pub fn set_file_system_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -158,6 +162,11 @@ pub mod update_file_system_output {
             self.file_system_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) for the EFS file system, in the format
+        /// <code>arn:aws:elasticfilesystem:<i>region</i>:<i>account-id</i>:file-system/<i>file-system-id</i>
+        /// </code>.
+        /// Example with sample data: <code>arn:aws:elasticfilesystem:us-west-2:1111333322228888:file-system/fs-01234567</code>
+        /// </p>
         pub fn set_file_system_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -167,13 +176,15 @@ pub mod update_file_system_output {
         }
         /// <p>The time that the file system was created, in seconds (since
         /// 1970-01-01T00:00:00Z).</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>The time that the file system was created, in seconds (since
+        /// 1970-01-01T00:00:00Z).</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -183,6 +194,7 @@ pub mod update_file_system_output {
             self.life_cycle_state = Some(input);
             self
         }
+        /// <p>The lifecycle phase of the file system.</p>
         pub fn set_life_cycle_state(
             mut self,
             input: std::option::Option<crate::model::LifeCycleState>,
@@ -197,6 +209,9 @@ pub mod update_file_system_output {
             self.name = Some(input.into());
             self
         }
+        /// <p>You can add tags to a file system, including a <code>Name</code> tag. For more
+        /// information, see <a>CreateFileSystem</a>. If the file system has a <code>Name</code> tag, Amazon EFS returns
+        /// the value in this field. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -206,6 +221,7 @@ pub mod update_file_system_output {
             self.number_of_mount_targets = Some(input);
             self
         }
+        /// <p>The current number of mount targets that the file system has. For more information, see <a>CreateMountTarget</a>.</p>
         pub fn set_number_of_mount_targets(mut self, input: std::option::Option<i32>) -> Self {
             self.number_of_mount_targets = input;
             self
@@ -223,6 +239,15 @@ pub mod update_file_system_output {
             self.size_in_bytes = Some(input);
             self
         }
+        /// <p>The latest known metered size (in bytes) of data stored in the file system, in its
+        /// <code>Value</code> field, and the time at which that size was determined in its
+        /// <code>Timestamp</code> field. The <code>Timestamp</code> value is the integer number of
+        /// seconds since 1970-01-01T00:00:00Z. The <code>SizeInBytes</code> value doesn't represent
+        /// the size of a consistent snapshot of the file system, but it is eventually consistent when
+        /// there are no writes to the file system. That is, <code>SizeInBytes</code> represents actual
+        /// size only if the file system is not modified for a period longer than a couple of hours.
+        /// Otherwise, the value is not the exact size that the file system was at any point in time.
+        /// </p>
         pub fn set_size_in_bytes(
             mut self,
             input: std::option::Option<crate::model::FileSystemSize>,
@@ -235,6 +260,7 @@ pub mod update_file_system_output {
             self.performance_mode = Some(input);
             self
         }
+        /// <p>The performance mode of the file system.</p>
         pub fn set_performance_mode(
             mut self,
             input: std::option::Option<crate::model::PerformanceMode>,
@@ -247,6 +273,7 @@ pub mod update_file_system_output {
             self.encrypted = Some(input);
             self
         }
+        /// <p>A Boolean value that, if true, indicates that the file system is encrypted.</p>
         pub fn set_encrypted(mut self, input: std::option::Option<bool>) -> Self {
             self.encrypted = input;
             self
@@ -257,6 +284,8 @@ pub mod update_file_system_output {
             self.kms_key_id = Some(input.into());
             self
         }
+        /// <p>The ID of an Key Management Service customer master key (CMK) that was
+        /// used to protect the encrypted file system.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -269,6 +298,10 @@ pub mod update_file_system_output {
             self.throughput_mode = Some(input);
             self
         }
+        /// <p>Displays the file system's throughput mode. For more information, see
+        /// <a href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#throughput-modes">Throughput modes</a>
+        /// in the <i>Amazon EFS User Guide</i>.
+        /// </p>
         pub fn set_throughput_mode(
             mut self,
             input: std::option::Option<crate::model::ThroughputMode>,
@@ -282,6 +315,8 @@ pub mod update_file_system_output {
             self.provisioned_throughput_in_mibps = Some(input);
             self
         }
+        /// <p>The amount of provisioned throughput, measured in MiB/s, for the file system. Valid for
+        /// file systems using <code>ThroughputMode</code> set to <code>provisioned</code>.</p>
         pub fn set_provisioned_throughput_in_mibps(
             mut self,
             input: std::option::Option<f64>,
@@ -296,6 +331,9 @@ pub mod update_file_system_output {
             self.availability_zone_name = Some(input.into());
             self
         }
+        /// <p>Describes the Amazon Web Services Availability Zone in which the file system is located, and is valid only
+        /// for file systems using One Zone storage classes. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS storage classes</a>
+        /// in the <i>Amazon EFS User Guide</i>.</p>
         pub fn set_availability_zone_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -310,6 +348,9 @@ pub mod update_file_system_output {
             self.availability_zone_id = Some(input.into());
             self
         }
+        /// <p>The unique and consistent identifier of the Availability Zone in which the file system's
+        /// One Zone storage classes exist. For example, <code>use1-az1</code> is an Availability Zone ID
+        /// for the us-east-1 Amazon Web Services Region, and it has the same location in every Amazon Web Services account.</p>
         pub fn set_availability_zone_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -317,12 +358,20 @@ pub mod update_file_system_output {
             self.availability_zone_id = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags associated with the file system, presented as an array of <code>Tag</code>
+        /// objects.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The tags associated with the file system, presented as an array of <code>Tag</code>
+        /// objects.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -361,6 +410,7 @@ impl UpdateFileSystemOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceOutput {}
@@ -390,6 +440,7 @@ impl UntagResourceOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceOutput {}
@@ -419,6 +470,7 @@ impl TagResourceOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutLifecycleConfigurationOutput {
@@ -443,6 +495,12 @@ pub mod put_lifecycle_configuration_output {
             std::option::Option<std::vec::Vec<crate::model::LifecyclePolicy>>,
     }
     impl Builder {
+        /// Appends an item to `lifecycle_policies`.
+        ///
+        /// To override the contents of this collection use [`set_lifecycle_policies`](Self::set_lifecycle_policies).
+        ///
+        /// <p>An array of lifecycle management policies. EFS supports a maximum of one
+        /// policy per file system.</p>
         pub fn lifecycle_policies(
             mut self,
             input: impl Into<crate::model::LifecyclePolicy>,
@@ -452,6 +510,8 @@ pub mod put_lifecycle_configuration_output {
             self.lifecycle_policies = Some(v);
             self
         }
+        /// <p>An array of lifecycle management policies. EFS supports a maximum of one
+        /// policy per file system.</p>
         pub fn set_lifecycle_policies(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LifecyclePolicy>>,
@@ -474,6 +534,7 @@ impl PutLifecycleConfigurationOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutFileSystemPolicyOutput {
@@ -505,6 +566,7 @@ pub mod put_file_system_policy_output {
             self.file_system_id = Some(input.into());
             self
         }
+        /// <p>Specifies the EFS file system to which the <code>FileSystemPolicy</code> applies.</p>
         pub fn set_file_system_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -517,6 +579,7 @@ pub mod put_file_system_policy_output {
             self.policy = Some(input.into());
             self
         }
+        /// <p>The JSON formatted <code>FileSystemPolicy</code> for the EFS file system.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy = input;
             self
@@ -537,6 +600,7 @@ impl PutFileSystemPolicyOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutBackupPolicyOutput {
@@ -564,6 +628,7 @@ pub mod put_backup_policy_output {
             self.backup_policy = Some(input);
             self
         }
+        /// <p>Describes the file system's backup policy, indicating whether automatic backups are turned on or off..</p>
         pub fn set_backup_policy(
             mut self,
             input: std::option::Option<crate::model::BackupPolicy>,
@@ -586,6 +651,7 @@ impl PutBackupPolicyOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutAccountPreferencesOutput {
@@ -613,6 +679,7 @@ pub mod put_account_preferences_output {
             self.resource_id_preference = Some(input);
             self
         }
+        /// <p>Describes the resource type and its ID preference for the user's Amazon Web Services account, in the current Amazon Web Services Region.</p>
         pub fn set_resource_id_preference(
             mut self,
             input: std::option::Option<crate::model::ResourceIdPreference>,
@@ -635,6 +702,7 @@ impl PutAccountPreferencesOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyMountTargetSecurityGroupsOutput {}
@@ -664,6 +732,7 @@ impl ModifyMountTargetSecurityGroupsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
@@ -691,12 +760,18 @@ pub mod list_tags_for_resource_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>An array of the tags for the specified EFS resource.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>An array of the tags for the specified EFS resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -710,6 +785,8 @@ pub mod list_tags_for_resource_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>
+        /// <code>NextToken</code> is present if the response payload is paginated. You can use <code>NextToken</code> in a subsequent request to fetch the next page of access point descriptions.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -771,16 +848,26 @@ pub mod describe_tags_output {
             self.marker = Some(input.into());
             self
         }
+        /// <p>If the request included a <code>Marker</code>, the response returns that value in this
+        /// field.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Returns tags associated with the file system as an array of <code>Tag</code> objects.
+        /// </p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>Returns tags associated with the file system as an array of <code>Tag</code> objects.
+        /// </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -795,6 +882,9 @@ pub mod describe_tags_output {
             self.next_marker = Some(input.into());
             self
         }
+        /// <p>If a value is present, there are more tags to return. In a subsequent request, you can
+        /// provide the value of <code>NextMarker</code> as the value of the <code>Marker</code> parameter
+        /// in your next request to retrieve the next set of tags.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
@@ -816,6 +906,7 @@ impl DescribeTagsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMountTargetSecurityGroupsOutput {
@@ -838,12 +929,18 @@ pub mod describe_mount_target_security_groups_output {
         pub(crate) security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `security_groups`.
+        ///
+        /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
+        ///
+        /// <p>An array of security groups.</p>
         pub fn security_groups(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_groups.unwrap_or_default();
             v.push(input.into());
             self.security_groups = Some(v);
             self
         }
+        /// <p>An array of security groups.</p>
         pub fn set_security_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -908,10 +1005,18 @@ pub mod describe_mount_targets_output {
             self.marker = Some(input.into());
             self
         }
+        /// <p>If the request included the <code>Marker</code>, the response returns that value in
+        /// this field.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
         }
+        /// Appends an item to `mount_targets`.
+        ///
+        /// To override the contents of this collection use [`set_mount_targets`](Self::set_mount_targets).
+        ///
+        /// <p>Returns the file system's mount targets as an array of
+        /// <code>MountTargetDescription</code> objects.</p>
         pub fn mount_targets(
             mut self,
             input: impl Into<crate::model::MountTargetDescription>,
@@ -921,6 +1026,8 @@ pub mod describe_mount_targets_output {
             self.mount_targets = Some(v);
             self
         }
+        /// <p>Returns the file system's mount targets as an array of
+        /// <code>MountTargetDescription</code> objects.</p>
         pub fn set_mount_targets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MountTargetDescription>>,
@@ -935,6 +1042,9 @@ pub mod describe_mount_targets_output {
             self.next_marker = Some(input.into());
             self
         }
+        /// <p>If a value is present, there are more mount targets to return. In a subsequent request,
+        /// you can provide <code>Marker</code> in your request with this value to retrieve the next set
+        /// of mount targets.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
@@ -956,6 +1066,7 @@ impl DescribeMountTargetsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLifecycleConfigurationOutput {
@@ -980,6 +1091,12 @@ pub mod describe_lifecycle_configuration_output {
             std::option::Option<std::vec::Vec<crate::model::LifecyclePolicy>>,
     }
     impl Builder {
+        /// Appends an item to `lifecycle_policies`.
+        ///
+        /// To override the contents of this collection use [`set_lifecycle_policies`](Self::set_lifecycle_policies).
+        ///
+        /// <p>An array of lifecycle management policies. EFS supports a maximum of one
+        /// policy per file system.</p>
         pub fn lifecycle_policies(
             mut self,
             input: impl Into<crate::model::LifecyclePolicy>,
@@ -989,6 +1106,8 @@ pub mod describe_lifecycle_configuration_output {
             self.lifecycle_policies = Some(v);
             self
         }
+        /// <p>An array of lifecycle management policies. EFS supports a maximum of one
+        /// policy per file system.</p>
         pub fn set_lifecycle_policies(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LifecyclePolicy>>,
@@ -1011,6 +1130,7 @@ impl DescribeLifecycleConfigurationOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFileSystemsOutput {
@@ -1048,10 +1168,16 @@ pub mod describe_file_systems_output {
             self.marker = Some(input.into());
             self
         }
+        /// <p>Present if provided by caller in the request (String).</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
         }
+        /// Appends an item to `file_systems`.
+        ///
+        /// To override the contents of this collection use [`set_file_systems`](Self::set_file_systems).
+        ///
+        /// <p>An array of file system descriptions.</p>
         pub fn file_systems(
             mut self,
             input: impl Into<crate::model::FileSystemDescription>,
@@ -1061,6 +1187,7 @@ pub mod describe_file_systems_output {
             self.file_systems = Some(v);
             self
         }
+        /// <p>An array of file system descriptions.</p>
         pub fn set_file_systems(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FileSystemDescription>>,
@@ -1074,6 +1201,8 @@ pub mod describe_file_systems_output {
             self.next_marker = Some(input.into());
             self
         }
+        /// <p>Present if there are more file systems than returned in the response (String). You can
+        /// use the <code>NextMarker</code> in the subsequent request to fetch the descriptions.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
@@ -1095,6 +1224,7 @@ impl DescribeFileSystemsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFileSystemPolicyOutput {
@@ -1126,6 +1256,7 @@ pub mod describe_file_system_policy_output {
             self.file_system_id = Some(input.into());
             self
         }
+        /// <p>Specifies the EFS file system to which the <code>FileSystemPolicy</code> applies.</p>
         pub fn set_file_system_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1138,6 +1269,7 @@ pub mod describe_file_system_policy_output {
             self.policy = Some(input.into());
             self
         }
+        /// <p>The JSON formatted <code>FileSystemPolicy</code> for the EFS file system.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy = input;
             self
@@ -1158,6 +1290,7 @@ impl DescribeFileSystemPolicyOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeBackupPolicyOutput {
@@ -1185,6 +1318,7 @@ pub mod describe_backup_policy_output {
             self.backup_policy = Some(input);
             self
         }
+        /// <p>Describes the file system's backup policy, indicating whether automatic backups are turned on or off..</p>
         pub fn set_backup_policy(
             mut self,
             input: std::option::Option<crate::model::BackupPolicy>,
@@ -1207,6 +1341,7 @@ impl DescribeBackupPolicyOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccountPreferencesOutput {
@@ -1239,6 +1374,7 @@ pub mod describe_account_preferences_output {
             self.resource_id_preference = Some(input);
             self
         }
+        /// <p>Describes the resource ID preference setting for the Amazon Web Services account associated with the user making the request, in the current Amazon Web Services Region.</p>
         pub fn set_resource_id_preference(
             mut self,
             input: std::option::Option<crate::model::ResourceIdPreference>,
@@ -1252,6 +1388,8 @@ pub mod describe_account_preferences_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>Present if there are more records than returned in the response.
+        /// You can use the <code>NextToken</code> in the subsequent request to fetch the additional descriptions.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1272,6 +1410,7 @@ impl DescribeAccountPreferencesOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccessPointsOutput {
@@ -1300,6 +1439,11 @@ pub mod describe_access_points_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `access_points`.
+        ///
+        /// To override the contents of this collection use [`set_access_points`](Self::set_access_points).
+        ///
+        /// <p>An array of access point descriptions.</p>
         pub fn access_points(
             mut self,
             input: impl Into<crate::model::AccessPointDescription>,
@@ -1309,6 +1453,7 @@ pub mod describe_access_points_output {
             self.access_points = Some(v);
             self
         }
+        /// <p>An array of access point descriptions.</p>
         pub fn set_access_points(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AccessPointDescription>>,
@@ -1322,6 +1467,8 @@ pub mod describe_access_points_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>Present if there are more access points than returned in the response.
+        /// You can use the NextMarker in the subsequent request to fetch the additional descriptions.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1342,6 +1489,7 @@ impl DescribeAccessPointsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTagsOutput {}
@@ -1371,6 +1519,7 @@ impl DeleteTagsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMountTargetOutput {}
@@ -1400,6 +1549,7 @@ impl DeleteMountTargetOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFileSystemPolicyOutput {}
@@ -1429,6 +1579,7 @@ impl DeleteFileSystemPolicyOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFileSystemOutput {}
@@ -1458,6 +1609,7 @@ impl DeleteFileSystemOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAccessPointOutput {}
@@ -1487,6 +1639,7 @@ impl DeleteAccessPointOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTagsOutput {}
@@ -1584,6 +1737,7 @@ pub mod create_mount_target_output {
             self.owner_id = Some(input.into());
             self
         }
+        /// <p>Amazon Web Services account ID that owns the resource.</p>
         pub fn set_owner_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.owner_id = input;
             self
@@ -1593,6 +1747,7 @@ pub mod create_mount_target_output {
             self.mount_target_id = Some(input.into());
             self
         }
+        /// <p>System-assigned mount target ID.</p>
         pub fn set_mount_target_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1605,6 +1760,7 @@ pub mod create_mount_target_output {
             self.file_system_id = Some(input.into());
             self
         }
+        /// <p>The ID of the file system for which the mount target is intended.</p>
         pub fn set_file_system_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1617,6 +1773,7 @@ pub mod create_mount_target_output {
             self.subnet_id = Some(input.into());
             self
         }
+        /// <p>The ID of the mount target's subnet.</p>
         pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.subnet_id = input;
             self
@@ -1626,6 +1783,7 @@ pub mod create_mount_target_output {
             self.life_cycle_state = Some(input);
             self
         }
+        /// <p>Lifecycle state of the mount target.</p>
         pub fn set_life_cycle_state(
             mut self,
             input: std::option::Option<crate::model::LifeCycleState>,
@@ -1638,6 +1796,7 @@ pub mod create_mount_target_output {
             self.ip_address = Some(input.into());
             self
         }
+        /// <p>Address at which the file system can be mounted by using the mount target.</p>
         pub fn set_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ip_address = input;
             self
@@ -1648,6 +1807,8 @@ pub mod create_mount_target_output {
             self.network_interface_id = Some(input.into());
             self
         }
+        /// <p>The ID of the network interface that Amazon EFS created when it created the mount
+        /// target.</p>
         pub fn set_network_interface_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1661,6 +1822,8 @@ pub mod create_mount_target_output {
             self.availability_zone_id = Some(input.into());
             self
         }
+        /// <p>The unique and consistent identifier of the Availability Zone that the mount target resides in.
+        /// For example, <code>use1-az1</code> is an AZ ID for the us-east-1 Region and it has the same location in every Amazon Web Services account.</p>
         pub fn set_availability_zone_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1675,6 +1838,9 @@ pub mod create_mount_target_output {
             self.availability_zone_name = Some(input.into());
             self
         }
+        /// <p>The name of the Availability Zone in which the mount target is located. Availability Zones are
+        /// independently mapped to names for each Amazon Web Services account. For example, the Availability Zone
+        /// <code>us-east-1a</code> for your Amazon Web Services account might not be the same location as <code>us-east-1a</code> for another Amazon Web Services account.</p>
         pub fn set_availability_zone_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1687,6 +1853,7 @@ pub mod create_mount_target_output {
             self.vpc_id = Some(input.into());
             self
         }
+        /// <p>The virtual private cloud (VPC) ID that the mount target is configured in.</p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.vpc_id = input;
             self
@@ -1734,7 +1901,7 @@ pub struct CreateFileSystemOutput {
     pub file_system_arn: std::option::Option<std::string::String>,
     /// <p>The time that the file system was created, in seconds (since
     /// 1970-01-01T00:00:00Z).</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The lifecycle phase of the file system.</p>
     pub life_cycle_state: std::option::Option<crate::model::LifeCycleState>,
     /// <p>You can add tags to a file system, including a <code>Name</code> tag. For more
@@ -1816,7 +1983,7 @@ pub mod create_file_system_output {
         pub(crate) creation_token: std::option::Option<std::string::String>,
         pub(crate) file_system_id: std::option::Option<std::string::String>,
         pub(crate) file_system_arn: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) life_cycle_state: std::option::Option<crate::model::LifeCycleState>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) number_of_mount_targets: std::option::Option<i32>,
@@ -1837,6 +2004,8 @@ pub mod create_file_system_output {
             self.owner_id = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services account that created the file system. If the file system was created by an IAM
+        /// user, the parent account to which the user belongs is the owner.</p>
         pub fn set_owner_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.owner_id = input;
             self
@@ -1846,6 +2015,7 @@ pub mod create_file_system_output {
             self.creation_token = Some(input.into());
             self
         }
+        /// <p>The opaque string specified in the request.</p>
         pub fn set_creation_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1858,6 +2028,7 @@ pub mod create_file_system_output {
             self.file_system_id = Some(input.into());
             self
         }
+        /// <p>The ID of the file system, assigned by Amazon EFS.</p>
         pub fn set_file_system_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1874,6 +2045,11 @@ pub mod create_file_system_output {
             self.file_system_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) for the EFS file system, in the format
+        /// <code>arn:aws:elasticfilesystem:<i>region</i>:<i>account-id</i>:file-system/<i>file-system-id</i>
+        /// </code>.
+        /// Example with sample data: <code>arn:aws:elasticfilesystem:us-west-2:1111333322228888:file-system/fs-01234567</code>
+        /// </p>
         pub fn set_file_system_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1883,13 +2059,15 @@ pub mod create_file_system_output {
         }
         /// <p>The time that the file system was created, in seconds (since
         /// 1970-01-01T00:00:00Z).</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>The time that the file system was created, in seconds (since
+        /// 1970-01-01T00:00:00Z).</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -1899,6 +2077,7 @@ pub mod create_file_system_output {
             self.life_cycle_state = Some(input);
             self
         }
+        /// <p>The lifecycle phase of the file system.</p>
         pub fn set_life_cycle_state(
             mut self,
             input: std::option::Option<crate::model::LifeCycleState>,
@@ -1913,6 +2092,9 @@ pub mod create_file_system_output {
             self.name = Some(input.into());
             self
         }
+        /// <p>You can add tags to a file system, including a <code>Name</code> tag. For more
+        /// information, see <a>CreateFileSystem</a>. If the file system has a <code>Name</code> tag, Amazon EFS returns
+        /// the value in this field. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1922,6 +2104,7 @@ pub mod create_file_system_output {
             self.number_of_mount_targets = Some(input);
             self
         }
+        /// <p>The current number of mount targets that the file system has. For more information, see <a>CreateMountTarget</a>.</p>
         pub fn set_number_of_mount_targets(mut self, input: std::option::Option<i32>) -> Self {
             self.number_of_mount_targets = input;
             self
@@ -1939,6 +2122,15 @@ pub mod create_file_system_output {
             self.size_in_bytes = Some(input);
             self
         }
+        /// <p>The latest known metered size (in bytes) of data stored in the file system, in its
+        /// <code>Value</code> field, and the time at which that size was determined in its
+        /// <code>Timestamp</code> field. The <code>Timestamp</code> value is the integer number of
+        /// seconds since 1970-01-01T00:00:00Z. The <code>SizeInBytes</code> value doesn't represent
+        /// the size of a consistent snapshot of the file system, but it is eventually consistent when
+        /// there are no writes to the file system. That is, <code>SizeInBytes</code> represents actual
+        /// size only if the file system is not modified for a period longer than a couple of hours.
+        /// Otherwise, the value is not the exact size that the file system was at any point in time.
+        /// </p>
         pub fn set_size_in_bytes(
             mut self,
             input: std::option::Option<crate::model::FileSystemSize>,
@@ -1951,6 +2143,7 @@ pub mod create_file_system_output {
             self.performance_mode = Some(input);
             self
         }
+        /// <p>The performance mode of the file system.</p>
         pub fn set_performance_mode(
             mut self,
             input: std::option::Option<crate::model::PerformanceMode>,
@@ -1963,6 +2156,7 @@ pub mod create_file_system_output {
             self.encrypted = Some(input);
             self
         }
+        /// <p>A Boolean value that, if true, indicates that the file system is encrypted.</p>
         pub fn set_encrypted(mut self, input: std::option::Option<bool>) -> Self {
             self.encrypted = input;
             self
@@ -1973,6 +2167,8 @@ pub mod create_file_system_output {
             self.kms_key_id = Some(input.into());
             self
         }
+        /// <p>The ID of an Key Management Service customer master key (CMK) that was
+        /// used to protect the encrypted file system.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -1985,6 +2181,10 @@ pub mod create_file_system_output {
             self.throughput_mode = Some(input);
             self
         }
+        /// <p>Displays the file system's throughput mode. For more information, see
+        /// <a href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#throughput-modes">Throughput modes</a>
+        /// in the <i>Amazon EFS User Guide</i>.
+        /// </p>
         pub fn set_throughput_mode(
             mut self,
             input: std::option::Option<crate::model::ThroughputMode>,
@@ -1998,6 +2198,8 @@ pub mod create_file_system_output {
             self.provisioned_throughput_in_mibps = Some(input);
             self
         }
+        /// <p>The amount of provisioned throughput, measured in MiB/s, for the file system. Valid for
+        /// file systems using <code>ThroughputMode</code> set to <code>provisioned</code>.</p>
         pub fn set_provisioned_throughput_in_mibps(
             mut self,
             input: std::option::Option<f64>,
@@ -2012,6 +2214,9 @@ pub mod create_file_system_output {
             self.availability_zone_name = Some(input.into());
             self
         }
+        /// <p>Describes the Amazon Web Services Availability Zone in which the file system is located, and is valid only
+        /// for file systems using One Zone storage classes. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS storage classes</a>
+        /// in the <i>Amazon EFS User Guide</i>.</p>
         pub fn set_availability_zone_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2026,6 +2231,9 @@ pub mod create_file_system_output {
             self.availability_zone_id = Some(input.into());
             self
         }
+        /// <p>The unique and consistent identifier of the Availability Zone in which the file system's
+        /// One Zone storage classes exist. For example, <code>use1-az1</code> is an Availability Zone ID
+        /// for the us-east-1 Amazon Web Services Region, and it has the same location in every Amazon Web Services account.</p>
         pub fn set_availability_zone_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2033,12 +2241,20 @@ pub mod create_file_system_output {
             self.availability_zone_id = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags associated with the file system, presented as an array of <code>Tag</code>
+        /// objects.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The tags associated with the file system, presented as an array of <code>Tag</code>
+        /// objects.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2142,6 +2358,7 @@ pub mod create_access_point_output {
             self.client_token = Some(input.into());
             self
         }
+        /// <p>The opaque string specified in the request to ensure idempotent creation.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -2151,16 +2368,23 @@ pub mod create_access_point_output {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the access point. This is the value of the <code>Name</code> tag.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags associated with the access point, presented as an array of Tag objects.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The tags associated with the access point, presented as an array of Tag objects.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2173,6 +2397,7 @@ pub mod create_access_point_output {
             self.access_point_id = Some(input.into());
             self
         }
+        /// <p>The ID of the access point, assigned by Amazon EFS.</p>
         pub fn set_access_point_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2185,6 +2410,7 @@ pub mod create_access_point_output {
             self.access_point_arn = Some(input.into());
             self
         }
+        /// <p>The  unique Amazon Resource Name (ARN) associated with the access point.</p>
         pub fn set_access_point_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2197,6 +2423,7 @@ pub mod create_access_point_output {
             self.file_system_id = Some(input.into());
             self
         }
+        /// <p>The ID of the EFS file system that the access point applies to.</p>
         pub fn set_file_system_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2210,6 +2437,8 @@ pub mod create_access_point_output {
             self.posix_user = Some(input);
             self
         }
+        /// <p>The full POSIX identity, including the user ID, group ID, and secondary group IDs on the access point that is used for all file operations by
+        /// NFS clients using the access point.</p>
         pub fn set_posix_user(
             mut self,
             input: std::option::Option<crate::model::PosixUser>,
@@ -2222,6 +2451,7 @@ pub mod create_access_point_output {
             self.root_directory = Some(input);
             self
         }
+        /// <p>The directory on the Amazon EFS file system that the access point exposes as the root directory to NFS clients using the access point.</p>
         pub fn set_root_directory(
             mut self,
             input: std::option::Option<crate::model::RootDirectory>,
@@ -2234,6 +2464,7 @@ pub mod create_access_point_output {
             self.owner_id = Some(input.into());
             self
         }
+        /// <p>Identified the Amazon Web Services account that owns the access point resource.</p>
         pub fn set_owner_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.owner_id = input;
             self
@@ -2243,6 +2474,7 @@ pub mod create_access_point_output {
             self.life_cycle_state = Some(input);
             self
         }
+        /// <p>Identifies the lifecycle phase of the access point.</p>
         pub fn set_life_cycle_state(
             mut self,
             input: std::option::Option<crate::model::LifeCycleState>,

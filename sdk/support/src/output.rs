@@ -32,6 +32,7 @@ pub mod resolve_case_output {
             self.initial_case_status = Some(input.into());
             self
         }
+        /// <p>The status of the case when the <a>ResolveCase</a> request was sent.</p>
         pub fn set_initial_case_status(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -45,6 +46,8 @@ pub mod resolve_case_output {
             self.final_case_status = Some(input.into());
             self
         }
+        /// <p>The status of the case after the <a>ResolveCase</a> request was
+        /// processed.</p>
         pub fn set_final_case_status(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -98,6 +101,8 @@ pub mod refresh_trusted_advisor_check_output {
             self.status = Some(input);
             self
         }
+        /// <p>The current refresh status for a check, including the amount of time until the check
+        /// is eligible for refresh.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::TrustedAdvisorCheckRefreshStatus>,
@@ -144,6 +149,11 @@ pub mod describe_trusted_advisor_check_summaries_output {
             std::option::Option<std::vec::Vec<crate::model::TrustedAdvisorCheckSummary>>,
     }
     impl Builder {
+        /// Appends an item to `summaries`.
+        ///
+        /// To override the contents of this collection use [`set_summaries`](Self::set_summaries).
+        ///
+        /// <p>The summary information for the requested Trusted Advisor checks.</p>
         pub fn summaries(
             mut self,
             input: impl Into<crate::model::TrustedAdvisorCheckSummary>,
@@ -153,6 +163,7 @@ pub mod describe_trusted_advisor_check_summaries_output {
             self.summaries = Some(v);
             self
         }
+        /// <p>The summary information for the requested Trusted Advisor checks.</p>
         pub fn set_summaries(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TrustedAdvisorCheckSummary>>,
@@ -199,6 +210,11 @@ pub mod describe_trusted_advisor_checks_output {
             std::option::Option<std::vec::Vec<crate::model::TrustedAdvisorCheckDescription>>,
     }
     impl Builder {
+        /// Appends an item to `checks`.
+        ///
+        /// To override the contents of this collection use [`set_checks`](Self::set_checks).
+        ///
+        /// <p>Information about all available Trusted Advisor checks.</p>
         pub fn checks(
             mut self,
             input: impl Into<crate::model::TrustedAdvisorCheckDescription>,
@@ -208,6 +224,7 @@ pub mod describe_trusted_advisor_checks_output {
             self.checks = Some(v);
             self
         }
+        /// <p>Information about all available Trusted Advisor checks.</p>
         pub fn set_checks(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TrustedAdvisorCheckDescription>>,
@@ -258,6 +275,7 @@ pub mod describe_trusted_advisor_check_result_output {
             self.result = Some(input);
             self
         }
+        /// <p>The detailed results of the Trusted Advisor check.</p>
         pub fn set_result(
             mut self,
             input: std::option::Option<crate::model::TrustedAdvisorCheckResult>,
@@ -305,6 +323,11 @@ pub mod describe_trusted_advisor_check_refresh_statuses_output {
             std::option::Option<std::vec::Vec<crate::model::TrustedAdvisorCheckRefreshStatus>>,
     }
     impl Builder {
+        /// Appends an item to `statuses`.
+        ///
+        /// To override the contents of this collection use [`set_statuses`](Self::set_statuses).
+        ///
+        /// <p>The refresh status of the specified Trusted Advisor checks.</p>
         pub fn statuses(
             mut self,
             input: impl Into<crate::model::TrustedAdvisorCheckRefreshStatus>,
@@ -314,6 +337,7 @@ pub mod describe_trusted_advisor_check_refresh_statuses_output {
             self.statuses = Some(v);
             self
         }
+        /// <p>The refresh status of the specified Trusted Advisor checks.</p>
         pub fn set_statuses(
             mut self,
             input: std::option::Option<
@@ -364,12 +388,20 @@ pub mod describe_severity_levels_output {
         pub(crate) severity_levels: std::option::Option<std::vec::Vec<crate::model::SeverityLevel>>,
     }
     impl Builder {
+        /// Appends an item to `severity_levels`.
+        ///
+        /// To override the contents of this collection use [`set_severity_levels`](Self::set_severity_levels).
+        ///
+        /// <p>The available severity levels for the support case. Available severity levels are
+        /// defined by your service level agreement with AWS.</p>
         pub fn severity_levels(mut self, input: impl Into<crate::model::SeverityLevel>) -> Self {
             let mut v = self.severity_levels.unwrap_or_default();
             v.push(input.into());
             self.severity_levels = Some(v);
             self
         }
+        /// <p>The available severity levels for the support case. Available severity levels are
+        /// defined by your service level agreement with AWS.</p>
         pub fn set_severity_levels(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SeverityLevel>>,
@@ -416,12 +448,18 @@ pub mod describe_services_output {
         pub(crate) services: std::option::Option<std::vec::Vec<crate::model::Service>>,
     }
     impl Builder {
+        /// Appends an item to `services`.
+        ///
+        /// To override the contents of this collection use [`set_services`](Self::set_services).
+        ///
+        /// <p>A JSON-formatted list of AWS services.</p>
         pub fn services(mut self, input: impl Into<crate::model::Service>) -> Self {
             let mut v = self.services.unwrap_or_default();
             v.push(input.into());
             self.services = Some(v);
             self
         }
+        /// <p>A JSON-formatted list of AWS services.</p>
         pub fn set_services(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Service>>,
@@ -472,12 +510,18 @@ pub mod describe_communications_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `communications`.
+        ///
+        /// To override the contents of this collection use [`set_communications`](Self::set_communications).
+        ///
+        /// <p>The communications for the case.</p>
         pub fn communications(mut self, input: impl Into<crate::model::Communication>) -> Self {
             let mut v = self.communications.unwrap_or_default();
             v.push(input.into());
             self.communications = Some(v);
             self
         }
+        /// <p>The communications for the case.</p>
         pub fn set_communications(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Communication>>,
@@ -490,6 +534,7 @@ pub mod describe_communications_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A resumption point for pagination.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -539,12 +584,18 @@ pub mod describe_cases_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `cases`.
+        ///
+        /// To override the contents of this collection use [`set_cases`](Self::set_cases).
+        ///
+        /// <p>The details for the cases that match the request.</p>
         pub fn cases(mut self, input: impl Into<crate::model::CaseDetails>) -> Self {
             let mut v = self.cases.unwrap_or_default();
             v.push(input.into());
             self.cases = Some(v);
             self
         }
+        /// <p>The details for the cases that match the request.</p>
         pub fn set_cases(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CaseDetails>>,
@@ -557,6 +608,7 @@ pub mod describe_cases_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A resumption point for pagination.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -613,6 +665,11 @@ pub mod describe_attachment_output {
             self.attachment = Some(input);
             self
         }
+        /// <p>This object includes the attachment content and file name.</p>
+        /// <p>In the previous response syntax, the value for the <code>data</code> parameter appears
+        /// as <code>blob</code>, which is represented as a base64-encoded string. The value for
+        /// <code>fileName</code> is the name of the attachment, such as
+        /// <code>troubleshoot-screenshot.png</code>.</p>
         pub fn set_attachment(
             mut self,
             input: std::option::Option<crate::model::Attachment>,
@@ -669,6 +726,10 @@ pub mod create_case_output {
             self.case_id = Some(input.into());
             self
         }
+        /// <p>The support case ID requested or returned in the call. The case ID is an
+        /// alphanumeric string in the following format:
+        /// case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
+        /// </p>
         pub fn set_case_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.case_id = input;
             self
@@ -718,6 +779,8 @@ pub mod add_communication_to_case_output {
             self.result = Some(input);
             self
         }
+        /// <p>True if <a>AddCommunicationToCase</a> succeeds. Otherwise, returns an
+        /// error.</p>
         pub fn set_result(mut self, input: std::option::Option<bool>) -> Self {
             self.result = input;
             self
@@ -775,6 +838,10 @@ pub mod add_attachments_to_set_output {
             self.attachment_set_id = Some(input.into());
             self
         }
+        /// <p>The ID of the attachment set. If an <code>attachmentSetId</code> was not specified, a
+        /// new attachment set is created, and the ID of the set is returned in the response. If an
+        /// <code>attachmentSetId</code> was specified, the attachments are added to the
+        /// specified set, if it exists.</p>
         pub fn set_attachment_set_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -787,6 +854,7 @@ pub mod add_attachments_to_set_output {
             self.expiry_time = Some(input.into());
             self
         }
+        /// <p>The time and date when the attachment set expires.</p>
         pub fn set_expiry_time(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.expiry_time = input;
             self

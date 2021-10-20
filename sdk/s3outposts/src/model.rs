@@ -15,7 +15,7 @@ pub struct Endpoint {
     /// <p>The status of the endpoint.</p>
     pub status: std::option::Option<crate::model::EndpointStatus>,
     /// <p>The time the endpoint was created.</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The network interface of the endpoint.</p>
     pub network_interfaces: std::option::Option<std::vec::Vec<crate::model::NetworkInterface>>,
     /// <p>The ID of the VPC used for the endpoint.</p>
@@ -56,7 +56,7 @@ pub mod endpoint {
         pub(crate) outposts_id: std::option::Option<std::string::String>,
         pub(crate) cidr_block: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::EndpointStatus>,
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) network_interfaces:
             std::option::Option<std::vec::Vec<crate::model::NetworkInterface>>,
         pub(crate) vpc_id: std::option::Option<std::string::String>,
@@ -71,6 +71,7 @@ pub mod endpoint {
             self.endpoint_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the endpoint.</p>
         pub fn set_endpoint_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.endpoint_arn = input;
             self
@@ -80,6 +81,7 @@ pub mod endpoint {
             self.outposts_id = Some(input.into());
             self
         }
+        /// <p>The ID of the AWS Outposts.</p>
         pub fn set_outposts_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.outposts_id = input;
             self
@@ -89,6 +91,7 @@ pub mod endpoint {
             self.cidr_block = Some(input.into());
             self
         }
+        /// <p>The VPC CIDR committed by this endpoint.</p>
         pub fn set_cidr_block(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cidr_block = input;
             self
@@ -98,6 +101,7 @@ pub mod endpoint {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the endpoint.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::EndpointStatus>,
@@ -106,17 +110,23 @@ pub mod endpoint {
             self
         }
         /// <p>The time the endpoint was created.</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>The time the endpoint was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
         }
+        /// Appends an item to `network_interfaces`.
+        ///
+        /// To override the contents of this collection use [`set_network_interfaces`](Self::set_network_interfaces).
+        ///
+        /// <p>The network interface of the endpoint.</p>
         pub fn network_interfaces(
             mut self,
             input: impl Into<crate::model::NetworkInterface>,
@@ -126,6 +136,7 @@ pub mod endpoint {
             self.network_interfaces = Some(v);
             self
         }
+        /// <p>The network interface of the endpoint.</p>
         pub fn set_network_interfaces(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::NetworkInterface>>,
@@ -138,6 +149,7 @@ pub mod endpoint {
             self.vpc_id = Some(input.into());
             self
         }
+        /// <p>The ID of the VPC used for the endpoint.</p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.vpc_id = input;
             self
@@ -147,6 +159,7 @@ pub mod endpoint {
             self.subnet_id = Some(input.into());
             self
         }
+        /// <p>The ID of the subnet used for the endpoint.</p>
         pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.subnet_id = input;
             self
@@ -156,6 +169,7 @@ pub mod endpoint {
             self.security_group_id = Some(input.into());
             self
         }
+        /// <p>The ID of the security group used for the endpoint.</p>
         pub fn set_security_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -168,6 +182,7 @@ pub mod endpoint {
             self.access_type = Some(input);
             self
         }
+        /// <p></p>
         pub fn set_access_type(
             mut self,
             input: std::option::Option<crate::model::EndpointAccessType>,
@@ -180,6 +195,7 @@ pub mod endpoint {
             self.customer_owned_ipv4_pool = Some(input.into());
             self
         }
+        /// <p>The ID of the customer-owned IPv4 pool used for the endpoint.</p>
         pub fn set_customer_owned_ipv4_pool(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -212,6 +228,7 @@ impl Endpoint {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -223,7 +240,9 @@ impl Endpoint {
     std::hash::Hash,
 )]
 pub enum EndpointAccessType {
+    #[allow(missing_docs)] // documentation missing in model
     CustomerOwnedIp,
+    #[allow(missing_docs)] // documentation missing in model
     Private,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -245,6 +264,7 @@ impl std::str::FromStr for EndpointAccessType {
     }
 }
 impl EndpointAccessType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EndpointAccessType::CustomerOwnedIp => "CustomerOwnedIp",
@@ -252,6 +272,7 @@ impl EndpointAccessType {
             EndpointAccessType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CustomerOwnedIp", "Private"]
     }
@@ -290,6 +311,7 @@ pub mod network_interface {
             self.network_interface_id = Some(input.into());
             self
         }
+        /// <p>The ID for the network interface.</p>
         pub fn set_network_interface_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -312,6 +334,7 @@ impl NetworkInterface {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -323,8 +346,11 @@ impl NetworkInterface {
     std::hash::Hash,
 )]
 pub enum EndpointStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Available,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -347,6 +373,7 @@ impl std::str::FromStr for EndpointStatus {
     }
 }
 impl EndpointStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EndpointStatus::Available => "Available",
@@ -355,6 +382,7 @@ impl EndpointStatus {
             EndpointStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Available", "Deleting", "Pending"]
     }

@@ -39,6 +39,7 @@ pub mod satellite_list_item {
             self.satellite_id = Some(input.into());
             self
         }
+        /// <p>UUID of a satellite.</p>
         pub fn set_satellite_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.satellite_id = input;
             self
@@ -48,6 +49,7 @@ pub mod satellite_list_item {
             self.satellite_arn = Some(input.into());
             self
         }
+        /// <p>ARN of a satellite.</p>
         pub fn set_satellite_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -60,16 +62,23 @@ pub mod satellite_list_item {
             self.norad_satellite_id = Some(input);
             self
         }
+        /// <p>NORAD satellite ID number.</p>
         pub fn set_norad_satellite_id(mut self, input: std::option::Option<i32>) -> Self {
             self.norad_satellite_id = input;
             self
         }
+        /// Appends an item to `ground_stations`.
+        ///
+        /// To override the contents of this collection use [`set_ground_stations`](Self::set_ground_stations).
+        ///
+        /// <p>A list of ground stations to which the satellite is on-boarded.</p>
         pub fn ground_stations(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.ground_stations.unwrap_or_default();
             v.push(input.into());
             self.ground_stations = Some(v);
             self
         }
+        /// <p>A list of ground stations to which the satellite is on-boarded.</p>
         pub fn set_ground_stations(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -135,6 +144,7 @@ pub mod mission_profile_list_item {
             self.mission_profile_id = Some(input.into());
             self
         }
+        /// <p>UUID of a mission profile.</p>
         pub fn set_mission_profile_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -147,6 +157,7 @@ pub mod mission_profile_list_item {
             self.mission_profile_arn = Some(input.into());
             self
         }
+        /// <p>ARN of a mission profile.</p>
         pub fn set_mission_profile_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -159,6 +170,7 @@ pub mod mission_profile_list_item {
             self.region = Some(input.into());
             self
         }
+        /// <p>Region of a mission profile.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
@@ -168,6 +180,7 @@ pub mod mission_profile_list_item {
             self.name = Some(input.into());
             self
         }
+        /// <p>Name of a mission profile.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -226,6 +239,7 @@ pub mod ground_station_data {
             self.ground_station_id = Some(input.into());
             self
         }
+        /// <p>UUID of a ground station.</p>
         pub fn set_ground_station_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -238,6 +252,7 @@ pub mod ground_station_data {
             self.ground_station_name = Some(input.into());
             self
         }
+        /// <p>Name of a ground station.</p>
         pub fn set_ground_station_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -250,6 +265,7 @@ pub mod ground_station_data {
             self.region = Some(input.into());
             self
         }
+        /// <p>Ground station Region.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
@@ -309,6 +325,7 @@ pub mod dataflow_endpoint_list_item {
             self.dataflow_endpoint_group_id = Some(input.into());
             self
         }
+        /// <p>UUID of a dataflow endpoint group.</p>
         pub fn set_dataflow_endpoint_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -324,6 +341,7 @@ pub mod dataflow_endpoint_list_item {
             self.dataflow_endpoint_group_arn = Some(input.into());
             self
         }
+        /// <p>ARN of a dataflow endpoint group.</p>
         pub fn set_dataflow_endpoint_group_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -379,6 +397,7 @@ pub mod endpoint_details {
             self.security_details = Some(input);
             self
         }
+        /// <p>Endpoint security details.</p>
         pub fn set_security_details(
             mut self,
             input: std::option::Option<crate::model::SecurityDetails>,
@@ -391,6 +410,7 @@ pub mod endpoint_details {
             self.endpoint = Some(input);
             self
         }
+        /// <p>A dataflow endpoint.</p>
         pub fn set_endpoint(
             mut self,
             input: std::option::Option<crate::model::DataflowEndpoint>,
@@ -454,6 +474,7 @@ pub mod dataflow_endpoint {
             self.name = Some(input.into());
             self
         }
+        /// <p>Name of a dataflow endpoint.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -463,6 +484,7 @@ pub mod dataflow_endpoint {
             self.address = Some(input);
             self
         }
+        /// <p>Socket address of a dataflow endpoint.</p>
         pub fn set_address(
             mut self,
             input: std::option::Option<crate::model::SocketAddress>,
@@ -475,6 +497,7 @@ pub mod dataflow_endpoint {
             self.status = Some(input);
             self
         }
+        /// <p>Status of a dataflow endpoint.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::EndpointStatus>,
@@ -487,6 +510,7 @@ pub mod dataflow_endpoint {
             self.mtu = Some(input);
             self
         }
+        /// <p>Maximum transmission unit (MTU) size in bytes of a dataflow endpoint.</p>
         pub fn set_mtu(mut self, input: std::option::Option<i32>) -> Self {
             self.mtu = input;
             self
@@ -509,6 +533,7 @@ impl DataflowEndpoint {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -520,10 +545,15 @@ impl DataflowEndpoint {
     std::hash::Hash,
 )]
 pub enum EndpointStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Created,
+    #[allow(missing_docs)] // documentation missing in model
     Creating,
+    #[allow(missing_docs)] // documentation missing in model
     Deleted,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -548,6 +578,7 @@ impl std::str::FromStr for EndpointStatus {
     }
 }
 impl EndpointStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EndpointStatus::Created => "created",
@@ -558,6 +589,7 @@ impl EndpointStatus {
             EndpointStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["created", "creating", "deleted", "deleting", "failed"]
     }
@@ -600,6 +632,7 @@ pub mod socket_address {
             self.name = Some(input.into());
             self
         }
+        /// <p>Name of a socket address.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -609,6 +642,7 @@ pub mod socket_address {
             self.port = Some(input);
             self
         }
+        /// <p>Port of a socket address.</p>
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
             self.port = input;
             self
@@ -660,12 +694,18 @@ pub mod security_details {
         pub(crate) role_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `subnet_ids`.
+        ///
+        /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
+        ///
+        /// <p>A list of subnets where AWS Ground Station places elastic network interfaces to send streams to your instances.</p>
         pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnet_ids.unwrap_or_default();
             v.push(input.into());
             self.subnet_ids = Some(v);
             self
         }
+        /// <p>A list of subnets where AWS Ground Station places elastic network interfaces to send streams to your instances.</p>
         pub fn set_subnet_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -673,12 +713,18 @@ pub mod security_details {
             self.subnet_ids = input;
             self
         }
+        /// Appends an item to `security_group_ids`.
+        ///
+        /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
+        ///
+        /// <p>The security groups to attach to the elastic network interfaces.</p>
         pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_ids.unwrap_or_default();
             v.push(input.into());
             self.security_group_ids = Some(v);
             self
         }
+        /// <p>The security groups to attach to the elastic network interfaces.</p>
         pub fn set_security_group_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -691,6 +737,7 @@ pub mod security_details {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>ARN to a role needed for connecting streams to your instances. </p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -723,13 +770,13 @@ pub struct ContactData {
     /// <p>ARN of a satellite.</p>
     pub satellite_arn: std::option::Option<std::string::String>,
     /// <p>Start time of a contact.</p>
-    pub start_time: std::option::Option<smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>End time of a contact.</p>
-    pub end_time: std::option::Option<smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Amount of time prior to contact start you’d like to receive a CloudWatch event indicating an upcoming pass.</p>
-    pub pre_pass_start_time: std::option::Option<smithy_types::Instant>,
+    pub pre_pass_start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
-    pub post_pass_end_time: std::option::Option<smithy_types::Instant>,
+    pub post_pass_end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Name of a ground station.</p>
     pub ground_station: std::option::Option<std::string::String>,
     /// <p>Status of a contact.</p>
@@ -772,10 +819,10 @@ pub mod contact_data {
         pub(crate) contact_id: std::option::Option<std::string::String>,
         pub(crate) mission_profile_arn: std::option::Option<std::string::String>,
         pub(crate) satellite_arn: std::option::Option<std::string::String>,
-        pub(crate) start_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) pre_pass_start_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) post_pass_end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) pre_pass_start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) post_pass_end_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) ground_station: std::option::Option<std::string::String>,
         pub(crate) contact_status: std::option::Option<crate::model::ContactStatus>,
         pub(crate) error_message: std::option::Option<std::string::String>,
@@ -791,6 +838,7 @@ pub mod contact_data {
             self.contact_id = Some(input.into());
             self
         }
+        /// <p>UUID of a contact.</p>
         pub fn set_contact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.contact_id = input;
             self
@@ -800,6 +848,7 @@ pub mod contact_data {
             self.mission_profile_arn = Some(input.into());
             self
         }
+        /// <p>ARN of a mission profile.</p>
         pub fn set_mission_profile_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -812,6 +861,7 @@ pub mod contact_data {
             self.satellite_arn = Some(input.into());
             self
         }
+        /// <p>ARN of a satellite.</p>
         pub fn set_satellite_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -820,43 +870,53 @@ pub mod contact_data {
             self
         }
         /// <p>Start time of a contact.</p>
-        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>Start time of a contact.</p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>End time of a contact.</p>
-        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>End time of a contact.</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.end_time = input;
             self
         }
         /// <p>Amount of time prior to contact start you’d like to receive a CloudWatch event indicating an upcoming pass.</p>
-        pub fn pre_pass_start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn pre_pass_start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.pre_pass_start_time = Some(input);
             self
         }
+        /// <p>Amount of time prior to contact start you’d like to receive a CloudWatch event indicating an upcoming pass.</p>
         pub fn set_pre_pass_start_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.pre_pass_start_time = input;
             self
         }
         /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
-        pub fn post_pass_end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn post_pass_end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.post_pass_end_time = Some(input);
             self
         }
+        /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
         pub fn set_post_pass_end_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.post_pass_end_time = input;
             self
@@ -866,6 +926,7 @@ pub mod contact_data {
             self.ground_station = Some(input.into());
             self
         }
+        /// <p>Name of a ground station.</p>
         pub fn set_ground_station(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -878,6 +939,7 @@ pub mod contact_data {
             self.contact_status = Some(input);
             self
         }
+        /// <p>Status of a contact.</p>
         pub fn set_contact_status(
             mut self,
             input: std::option::Option<crate::model::ContactStatus>,
@@ -890,6 +952,7 @@ pub mod contact_data {
             self.error_message = Some(input.into());
             self
         }
+        /// <p>Error message of a contact.</p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -902,6 +965,7 @@ pub mod contact_data {
             self.maximum_elevation = Some(input);
             self
         }
+        /// <p>Maximum elevation angle of a contact.</p>
         pub fn set_maximum_elevation(
             mut self,
             input: std::option::Option<crate::model::Elevation>,
@@ -914,10 +978,16 @@ pub mod contact_data {
             self.region = Some(input.into());
             self
         }
+        /// <p>Region of a contact.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Tags assigned to a contact.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -928,6 +998,7 @@ pub mod contact_data {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>Tags assigned to a contact.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -996,6 +1067,7 @@ pub mod elevation {
             self.value = Some(input);
             self
         }
+        /// <p>Elevation angle value.</p>
         pub fn set_value(mut self, input: std::option::Option<f64>) -> Self {
             self.value = input;
             self
@@ -1005,6 +1077,7 @@ pub mod elevation {
             self.unit = Some(input);
             self
         }
+        /// <p>Elevation angle units.</p>
         pub fn set_unit(mut self, input: std::option::Option<crate::model::AngleUnits>) -> Self {
             self.unit = input;
             self
@@ -1025,6 +1098,7 @@ impl Elevation {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1036,7 +1110,9 @@ impl Elevation {
     std::hash::Hash,
 )]
 pub enum AngleUnits {
+    #[allow(missing_docs)] // documentation missing in model
     DegreeAngle,
+    #[allow(missing_docs)] // documentation missing in model
     Radian,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1058,6 +1134,7 @@ impl std::str::FromStr for AngleUnits {
     }
 }
 impl AngleUnits {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AngleUnits::DegreeAngle => "DEGREE_ANGLE",
@@ -1065,6 +1142,7 @@ impl AngleUnits {
             AngleUnits::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DEGREE_ANGLE", "RADIAN"]
     }
@@ -1075,6 +1153,7 @@ impl AsRef<str> for AngleUnits {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1086,18 +1165,31 @@ impl AsRef<str> for AngleUnits {
     std::hash::Hash,
 )]
 pub enum ContactStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Available,
+    #[allow(missing_docs)] // documentation missing in model
     AwsCancelled,
+    #[allow(missing_docs)] // documentation missing in model
     AwsFailed,
+    #[allow(missing_docs)] // documentation missing in model
     Cancelled,
+    #[allow(missing_docs)] // documentation missing in model
     Cancelling,
+    #[allow(missing_docs)] // documentation missing in model
     Completed,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     FailedToSchedule,
+    #[allow(missing_docs)] // documentation missing in model
     Pass,
+    #[allow(missing_docs)] // documentation missing in model
     Postpass,
+    #[allow(missing_docs)] // documentation missing in model
     Prepass,
+    #[allow(missing_docs)] // documentation missing in model
     Scheduled,
+    #[allow(missing_docs)] // documentation missing in model
     Scheduling,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1130,6 +1222,7 @@ impl std::str::FromStr for ContactStatus {
     }
 }
 impl ContactStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ContactStatus::Available => "AVAILABLE",
@@ -1148,6 +1241,7 @@ impl ContactStatus {
             ContactStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "AVAILABLE",
@@ -1208,6 +1302,7 @@ pub mod dataflow_detail {
             self.source = Some(input);
             self
         }
+        /// <p>Dataflow details for the source side.</p>
         pub fn set_source(mut self, input: std::option::Option<crate::model::Source>) -> Self {
             self.source = input;
             self
@@ -1217,6 +1312,7 @@ pub mod dataflow_detail {
             self.destination = Some(input);
             self
         }
+        /// <p>Dataflow details for the destination side.</p>
         pub fn set_destination(
             mut self,
             input: std::option::Option<crate::model::Destination>,
@@ -1229,6 +1325,7 @@ pub mod dataflow_detail {
             self.error_message = Some(input.into());
             self
         }
+        /// <p>Error message for a dataflow.</p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1296,6 +1393,7 @@ pub mod destination {
             self.config_type = Some(input);
             self
         }
+        /// <p>Type of a <code>Config</code>.</p>
         pub fn set_config_type(
             mut self,
             input: std::option::Option<crate::model::ConfigCapabilityType>,
@@ -1308,6 +1406,7 @@ pub mod destination {
             self.config_id = Some(input.into());
             self
         }
+        /// <p>UUID of a <code>Config</code>.</p>
         pub fn set_config_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.config_id = input;
             self
@@ -1317,6 +1416,7 @@ pub mod destination {
             self.config_details = Some(input);
             self
         }
+        /// <p>Additional details for a <code>Config</code>, if type is dataflow endpoint or antenna demod decode.</p>
         pub fn set_config_details(
             mut self,
             input: std::option::Option<crate::model::ConfigDetails>,
@@ -1332,6 +1432,7 @@ pub mod destination {
             self.dataflow_destination_region = Some(input.into());
             self
         }
+        /// <p>Region of a dataflow destination.</p>
         pub fn set_dataflow_destination_region(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1357,6 +1458,7 @@ impl Destination {
     }
 }
 
+/// <p>Details for certain <code>Config</code> object types in a contact.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum ConfigDetails {
@@ -1368,6 +1470,8 @@ pub enum ConfigDetails {
     S3RecordingDetails(crate::model::S3RecordingDetails),
 }
 impl ConfigDetails {
+    /// Tries to convert the enum instance into its [`ConfigDetails`](crate::model::ConfigDetails) variant.
+    /// Returns `Err(&Self) if it can't be converted.`
     pub fn as_antenna_demod_decode_details(
         &self,
     ) -> std::result::Result<&crate::model::AntennaDemodDecodeDetails, &Self> {
@@ -1377,9 +1481,12 @@ impl ConfigDetails {
             Err(&self)
         }
     }
+    /// Returns true if the enum instance is the `ConfigDetails` variant.
     pub fn is_antenna_demod_decode_details(&self) -> bool {
         self.as_antenna_demod_decode_details().is_ok()
     }
+    /// Tries to convert the enum instance into its [`ConfigDetails`](crate::model::ConfigDetails) variant.
+    /// Returns `Err(&Self) if it can't be converted.`
     pub fn as_endpoint_details(
         &self,
     ) -> std::result::Result<&crate::model::EndpointDetails, &Self> {
@@ -1389,9 +1496,12 @@ impl ConfigDetails {
             Err(&self)
         }
     }
+    /// Returns true if the enum instance is the `ConfigDetails` variant.
     pub fn is_endpoint_details(&self) -> bool {
         self.as_endpoint_details().is_ok()
     }
+    /// Tries to convert the enum instance into its [`ConfigDetails`](crate::model::ConfigDetails) variant.
+    /// Returns `Err(&Self) if it can't be converted.`
     pub fn as_s3_recording_details(
         &self,
     ) -> std::result::Result<&crate::model::S3RecordingDetails, &Self> {
@@ -1401,6 +1511,7 @@ impl ConfigDetails {
             Err(&self)
         }
     }
+    /// Returns true if the enum instance is the `ConfigDetails` variant.
     pub fn is_s3_recording_details(&self) -> bool {
         self.as_s3_recording_details().is_ok()
     }
@@ -1438,6 +1549,7 @@ pub mod s3_recording_details {
             self.bucket_arn = Some(input.into());
             self
         }
+        /// <p>ARN of the bucket used.</p>
         pub fn set_bucket_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket_arn = input;
             self
@@ -1447,6 +1559,7 @@ pub mod s3_recording_details {
             self.key_template = Some(input.into());
             self
         }
+        /// <p>Template of the S3 key used.</p>
         pub fn set_key_template(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_template = input;
             self
@@ -1495,6 +1608,7 @@ pub mod antenna_demod_decode_details {
             self.output_node = Some(input.into());
             self
         }
+        /// <p>Name of an antenna demod decode output node used in a contact.</p>
         pub fn set_output_node(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.output_node = input;
             self
@@ -1514,6 +1628,7 @@ impl AntennaDemodDecodeDetails {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1525,12 +1640,19 @@ impl AntennaDemodDecodeDetails {
     std::hash::Hash,
 )]
 pub enum ConfigCapabilityType {
+    #[allow(missing_docs)] // documentation missing in model
     AntennaDownlink,
+    #[allow(missing_docs)] // documentation missing in model
     AntennaDownlinkDemodDecode,
+    #[allow(missing_docs)] // documentation missing in model
     AntennaUplink,
+    #[allow(missing_docs)] // documentation missing in model
     DataflowEndpoint,
+    #[allow(missing_docs)] // documentation missing in model
     S3Recording,
+    #[allow(missing_docs)] // documentation missing in model
     Tracking,
+    #[allow(missing_docs)] // documentation missing in model
     UplinkEcho,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1557,6 +1679,7 @@ impl std::str::FromStr for ConfigCapabilityType {
     }
 }
 impl ConfigCapabilityType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ConfigCapabilityType::AntennaDownlink => "antenna-downlink",
@@ -1569,6 +1692,7 @@ impl ConfigCapabilityType {
             ConfigCapabilityType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "antenna-downlink",
@@ -1627,6 +1751,7 @@ pub mod source {
             self.config_type = Some(input);
             self
         }
+        /// <p>Type of a <code>Config</code>.</p>
         pub fn set_config_type(
             mut self,
             input: std::option::Option<crate::model::ConfigCapabilityType>,
@@ -1639,6 +1764,7 @@ pub mod source {
             self.config_id = Some(input.into());
             self
         }
+        /// <p>UUID of a <code>Config</code>.</p>
         pub fn set_config_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.config_id = input;
             self
@@ -1648,6 +1774,7 @@ pub mod source {
             self.config_details = Some(input);
             self
         }
+        /// <p>Additional details for a <code>Config</code>, if type is dataflow endpoint or antenna demod decode.</p>
         pub fn set_config_details(
             mut self,
             input: std::option::Option<crate::model::ConfigDetails>,
@@ -1660,6 +1787,7 @@ pub mod source {
             self.dataflow_source_region = Some(input.into());
             self
         }
+        /// <p>Region of a dataflow source.</p>
         pub fn set_dataflow_source_region(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1725,6 +1853,7 @@ pub mod config_list_item {
             self.config_id = Some(input.into());
             self
         }
+        /// <p>UUID of a <code>Config</code>.</p>
         pub fn set_config_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.config_id = input;
             self
@@ -1734,6 +1863,7 @@ pub mod config_list_item {
             self.config_type = Some(input);
             self
         }
+        /// <p>Type of a <code>Config</code>.</p>
         pub fn set_config_type(
             mut self,
             input: std::option::Option<crate::model::ConfigCapabilityType>,
@@ -1746,6 +1876,7 @@ pub mod config_list_item {
             self.config_arn = Some(input.into());
             self
         }
+        /// <p>ARN of a <code>Config</code>.</p>
         pub fn set_config_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.config_arn = input;
             self
@@ -1755,6 +1886,7 @@ pub mod config_list_item {
             self.name = Some(input.into());
             self
         }
+        /// <p>Name of a <code>Config</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1777,6 +1909,8 @@ impl ConfigListItem {
     }
 }
 
+/// <p>Object containing the parameters of a <code>Config</code>.</p>
+/// <p>See the subtype definitions for what each type of <code>Config</code> contains.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum ConfigTypeData {
@@ -1797,6 +1931,8 @@ pub enum ConfigTypeData {
     UplinkEchoConfig(crate::model::UplinkEchoConfig),
 }
 impl ConfigTypeData {
+    /// Tries to convert the enum instance into its [`ConfigTypeData`](crate::model::ConfigTypeData) variant.
+    /// Returns `Err(&Self) if it can't be converted.`
     pub fn as_antenna_downlink_config(
         &self,
     ) -> std::result::Result<&crate::model::AntennaDownlinkConfig, &Self> {
@@ -1806,9 +1942,12 @@ impl ConfigTypeData {
             Err(&self)
         }
     }
+    /// Returns true if the enum instance is the `ConfigTypeData` variant.
     pub fn is_antenna_downlink_config(&self) -> bool {
         self.as_antenna_downlink_config().is_ok()
     }
+    /// Tries to convert the enum instance into its [`ConfigTypeData`](crate::model::ConfigTypeData) variant.
+    /// Returns `Err(&Self) if it can't be converted.`
     pub fn as_antenna_downlink_demod_decode_config(
         &self,
     ) -> std::result::Result<&crate::model::AntennaDownlinkDemodDecodeConfig, &Self> {
@@ -1818,9 +1957,12 @@ impl ConfigTypeData {
             Err(&self)
         }
     }
+    /// Returns true if the enum instance is the `ConfigTypeData` variant.
     pub fn is_antenna_downlink_demod_decode_config(&self) -> bool {
         self.as_antenna_downlink_demod_decode_config().is_ok()
     }
+    /// Tries to convert the enum instance into its [`ConfigTypeData`](crate::model::ConfigTypeData) variant.
+    /// Returns `Err(&Self) if it can't be converted.`
     pub fn as_antenna_uplink_config(
         &self,
     ) -> std::result::Result<&crate::model::AntennaUplinkConfig, &Self> {
@@ -1830,9 +1972,12 @@ impl ConfigTypeData {
             Err(&self)
         }
     }
+    /// Returns true if the enum instance is the `ConfigTypeData` variant.
     pub fn is_antenna_uplink_config(&self) -> bool {
         self.as_antenna_uplink_config().is_ok()
     }
+    /// Tries to convert the enum instance into its [`ConfigTypeData`](crate::model::ConfigTypeData) variant.
+    /// Returns `Err(&Self) if it can't be converted.`
     pub fn as_dataflow_endpoint_config(
         &self,
     ) -> std::result::Result<&crate::model::DataflowEndpointConfig, &Self> {
@@ -1842,9 +1987,12 @@ impl ConfigTypeData {
             Err(&self)
         }
     }
+    /// Returns true if the enum instance is the `ConfigTypeData` variant.
     pub fn is_dataflow_endpoint_config(&self) -> bool {
         self.as_dataflow_endpoint_config().is_ok()
     }
+    /// Tries to convert the enum instance into its [`ConfigTypeData`](crate::model::ConfigTypeData) variant.
+    /// Returns `Err(&Self) if it can't be converted.`
     pub fn as_s3_recording_config(
         &self,
     ) -> std::result::Result<&crate::model::S3RecordingConfig, &Self> {
@@ -1854,9 +2002,12 @@ impl ConfigTypeData {
             Err(&self)
         }
     }
+    /// Returns true if the enum instance is the `ConfigTypeData` variant.
     pub fn is_s3_recording_config(&self) -> bool {
         self.as_s3_recording_config().is_ok()
     }
+    /// Tries to convert the enum instance into its [`ConfigTypeData`](crate::model::ConfigTypeData) variant.
+    /// Returns `Err(&Self) if it can't be converted.`
     pub fn as_tracking_config(&self) -> std::result::Result<&crate::model::TrackingConfig, &Self> {
         if let ConfigTypeData::TrackingConfig(val) = &self {
             Ok(&val)
@@ -1864,9 +2015,12 @@ impl ConfigTypeData {
             Err(&self)
         }
     }
+    /// Returns true if the enum instance is the `ConfigTypeData` variant.
     pub fn is_tracking_config(&self) -> bool {
         self.as_tracking_config().is_ok()
     }
+    /// Tries to convert the enum instance into its [`ConfigTypeData`](crate::model::ConfigTypeData) variant.
+    /// Returns `Err(&Self) if it can't be converted.`
     pub fn as_uplink_echo_config(
         &self,
     ) -> std::result::Result<&crate::model::UplinkEchoConfig, &Self> {
@@ -1876,6 +2030,7 @@ impl ConfigTypeData {
             Err(&self)
         }
     }
+    /// Returns true if the enum instance is the `ConfigTypeData` variant.
     pub fn is_uplink_echo_config(&self) -> bool {
         self.as_uplink_echo_config().is_ok()
     }
@@ -1917,6 +2072,7 @@ pub mod s3_recording_config {
             self.bucket_arn = Some(input.into());
             self
         }
+        /// <p>ARN of the bucket to record to.</p>
         pub fn set_bucket_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket_arn = input;
             self
@@ -1926,6 +2082,7 @@ pub mod s3_recording_config {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>ARN of the role Ground Station assumes to write data to the bucket.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -1935,6 +2092,7 @@ pub mod s3_recording_config {
             self.prefix = Some(input.into());
             self
         }
+        /// <p>S3 Key prefix to prefice data files.</p>
         pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.prefix = input;
             self
@@ -1991,6 +2149,7 @@ pub mod uplink_echo_config {
             self.enabled = Some(input);
             self
         }
+        /// <p>Whether or not an uplink <code>Config</code> is enabled.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -2000,6 +2159,7 @@ pub mod uplink_echo_config {
             self.antenna_uplink_config_arn = Some(input.into());
             self
         }
+        /// <p>ARN of an uplink <code>Config</code>.</p>
         pub fn set_antenna_uplink_config_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2059,6 +2219,7 @@ pub mod antenna_uplink_config {
             self.transmit_disabled = Some(input);
             self
         }
+        /// <p>Whether or not uplink transmit is disabled.</p>
         pub fn set_transmit_disabled(mut self, input: std::option::Option<bool>) -> Self {
             self.transmit_disabled = input;
             self
@@ -2068,6 +2229,7 @@ pub mod antenna_uplink_config {
             self.spectrum_config = Some(input);
             self
         }
+        /// <p>Information about the uplink spectral <code>Config</code>.</p>
         pub fn set_spectrum_config(
             mut self,
             input: std::option::Option<crate::model::UplinkSpectrumConfig>,
@@ -2080,6 +2242,7 @@ pub mod antenna_uplink_config {
             self.target_eirp = Some(input);
             self
         }
+        /// <p>EIRP of the target.</p>
         pub fn set_target_eirp(mut self, input: std::option::Option<crate::model::Eirp>) -> Self {
             self.target_eirp = input;
             self
@@ -2133,6 +2296,7 @@ pub mod eirp {
             self.value = Some(input);
             self
         }
+        /// <p>Value of an EIRP. Valid values are between 20.0 to 50.0 dBW.</p>
         pub fn set_value(mut self, input: std::option::Option<f64>) -> Self {
             self.value = input;
             self
@@ -2142,6 +2306,7 @@ pub mod eirp {
             self.units = Some(input);
             self
         }
+        /// <p>Units of an EIRP.</p>
         pub fn set_units(mut self, input: std::option::Option<crate::model::EirpUnits>) -> Self {
             self.units = input;
             self
@@ -2162,6 +2327,7 @@ impl Eirp {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2173,6 +2339,7 @@ impl Eirp {
     std::hash::Hash,
 )]
 pub enum EirpUnits {
+    #[allow(missing_docs)] // documentation missing in model
     Dbw,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2193,12 +2360,14 @@ impl std::str::FromStr for EirpUnits {
     }
 }
 impl EirpUnits {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EirpUnits::Dbw => "dBW",
             EirpUnits::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["dBW"]
     }
@@ -2241,6 +2410,7 @@ pub mod uplink_spectrum_config {
             self.center_frequency = Some(input);
             self
         }
+        /// <p>Center frequency of an uplink spectral <code>Config</code>. Valid values are between 2025 to 2120 MHz.</p>
         pub fn set_center_frequency(
             mut self,
             input: std::option::Option<crate::model::Frequency>,
@@ -2253,6 +2423,7 @@ pub mod uplink_spectrum_config {
             self.polarization = Some(input);
             self
         }
+        /// <p>Polarization of an uplink spectral <code>Config</code>. Capturing both <code>"RIGHT_HAND"</code> and <code>"LEFT_HAND"</code> polarization requires two separate configs.</p>
         pub fn set_polarization(
             mut self,
             input: std::option::Option<crate::model::Polarization>,
@@ -2276,6 +2447,7 @@ impl UplinkSpectrumConfig {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2287,8 +2459,11 @@ impl UplinkSpectrumConfig {
     std::hash::Hash,
 )]
 pub enum Polarization {
+    #[allow(missing_docs)] // documentation missing in model
     LeftHand,
+    #[allow(missing_docs)] // documentation missing in model
     None,
+    #[allow(missing_docs)] // documentation missing in model
     RightHand,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2311,6 +2486,7 @@ impl std::str::FromStr for Polarization {
     }
 }
 impl Polarization {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Polarization::LeftHand => "LEFT_HAND",
@@ -2319,6 +2495,7 @@ impl Polarization {
             Polarization::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["LEFT_HAND", "NONE", "RIGHT_HAND"]
     }
@@ -2361,6 +2538,7 @@ pub mod frequency {
             self.value = Some(input);
             self
         }
+        /// <p>Frequency value. Valid values are between 2200 to 2300 MHz and 7750 to 8400 MHz for downlink and 2025 to 2120 MHz for uplink.</p>
         pub fn set_value(mut self, input: std::option::Option<f64>) -> Self {
             self.value = input;
             self
@@ -2370,6 +2548,7 @@ pub mod frequency {
             self.units = Some(input);
             self
         }
+        /// <p>Frequency units.</p>
         pub fn set_units(
             mut self,
             input: std::option::Option<crate::model::FrequencyUnits>,
@@ -2393,6 +2572,7 @@ impl Frequency {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2404,8 +2584,11 @@ impl Frequency {
     std::hash::Hash,
 )]
 pub enum FrequencyUnits {
+    #[allow(missing_docs)] // documentation missing in model
     Ghz,
+    #[allow(missing_docs)] // documentation missing in model
     Mhz,
+    #[allow(missing_docs)] // documentation missing in model
     Khz,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2428,6 +2611,7 @@ impl std::str::FromStr for FrequencyUnits {
     }
 }
 impl FrequencyUnits {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FrequencyUnits::Ghz => "GHz",
@@ -2436,6 +2620,7 @@ impl FrequencyUnits {
             FrequencyUnits::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["GHz", "MHz", "kHz"]
     }
@@ -2482,6 +2667,7 @@ pub mod antenna_downlink_demod_decode_config {
             self.spectrum_config = Some(input);
             self
         }
+        /// <p>Information about the spectral <code>Config</code>.</p>
         pub fn set_spectrum_config(
             mut self,
             input: std::option::Option<crate::model::SpectrumConfig>,
@@ -2494,6 +2680,7 @@ pub mod antenna_downlink_demod_decode_config {
             self.demodulation_config = Some(input);
             self
         }
+        /// <p>Information about the demodulation <code>Config</code>.</p>
         pub fn set_demodulation_config(
             mut self,
             input: std::option::Option<crate::model::DemodulationConfig>,
@@ -2506,6 +2693,7 @@ pub mod antenna_downlink_demod_decode_config {
             self.decode_config = Some(input);
             self
         }
+        /// <p>Information about the decode <code>Config</code>.</p>
         pub fn set_decode_config(
             mut self,
             input: std::option::Option<crate::model::DecodeConfig>,
@@ -2558,6 +2746,7 @@ pub mod decode_config {
             self.unvalidated_json = Some(input.into());
             self
         }
+        /// <p>Unvalidated JSON of a decode <code>Config</code>.</p>
         pub fn set_unvalidated_json(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2608,6 +2797,7 @@ pub mod demodulation_config {
             self.unvalidated_json = Some(input.into());
             self
         }
+        /// <p>Unvalidated JSON of a demodulation <code>Config</code>.</p>
         pub fn set_unvalidated_json(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2677,6 +2867,7 @@ pub mod spectrum_config {
             self.center_frequency = Some(input);
             self
         }
+        /// <p>Center frequency of a spectral <code>Config</code>. Valid values are between 2200 to 2300 MHz and 7750 to 8400 MHz for downlink and 2025 to 2120 MHz for uplink.</p>
         pub fn set_center_frequency(
             mut self,
             input: std::option::Option<crate::model::Frequency>,
@@ -2700,6 +2891,18 @@ pub mod spectrum_config {
             self.bandwidth = Some(input);
             self
         }
+        /// <p>Bandwidth of a spectral <code>Config</code>. AWS Ground Station currently has the following bandwidth limitations:</p>
+        /// <ul>
+        /// <li>
+        /// <p>For <code>AntennaDownlinkDemodDecodeconfig</code>, valid values are between 125 kHz to 650 MHz.</p>
+        /// </li>
+        /// <li>
+        /// <p>For <code>AntennaDownlinkconfig</code> valid values are between 10 kHz to 54 MHz.</p>
+        /// </li>
+        /// <li>
+        /// <p>For <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.</p>
+        /// </li>
+        /// </ul>
         pub fn set_bandwidth(
             mut self,
             input: std::option::Option<crate::model::FrequencyBandwidth>,
@@ -2712,6 +2915,7 @@ pub mod spectrum_config {
             self.polarization = Some(input);
             self
         }
+        /// <p>Polarization of a spectral <code>Config</code>. Capturing both <code>"RIGHT_HAND"</code> and <code>"LEFT_HAND"</code> polarization requires two separate configs.</p>
         pub fn set_polarization(
             mut self,
             input: std::option::Option<crate::model::Polarization>,
@@ -2790,6 +2994,18 @@ pub mod frequency_bandwidth {
             self.value = Some(input);
             self
         }
+        /// <p>Frequency bandwidth value. AWS Ground Station currently has the following bandwidth limitations:</p>
+        /// <ul>
+        /// <li>
+        /// <p>For <code>AntennaDownlinkDemodDecodeconfig</code>, valid values are between 125 kHz to 650 MHz.</p>
+        /// </li>
+        /// <li>
+        /// <p>For <code>AntennaDownlinkconfig</code>, valid values are between 10 kHz to 54 MHz.</p>
+        /// </li>
+        /// <li>
+        /// <p>For <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.</p>
+        /// </li>
+        /// </ul>
         pub fn set_value(mut self, input: std::option::Option<f64>) -> Self {
             self.value = input;
             self
@@ -2799,6 +3015,7 @@ pub mod frequency_bandwidth {
             self.units = Some(input);
             self
         }
+        /// <p>Frequency bandwidth units.</p>
         pub fn set_units(
             mut self,
             input: std::option::Option<crate::model::BandwidthUnits>,
@@ -2822,6 +3039,7 @@ impl FrequencyBandwidth {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2833,8 +3051,11 @@ impl FrequencyBandwidth {
     std::hash::Hash,
 )]
 pub enum BandwidthUnits {
+    #[allow(missing_docs)] // documentation missing in model
     Ghz,
+    #[allow(missing_docs)] // documentation missing in model
     Mhz,
+    #[allow(missing_docs)] // documentation missing in model
     Khz,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2857,6 +3078,7 @@ impl std::str::FromStr for BandwidthUnits {
     }
 }
 impl BandwidthUnits {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             BandwidthUnits::Ghz => "GHz",
@@ -2865,6 +3087,7 @@ impl BandwidthUnits {
             BandwidthUnits::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["GHz", "MHz", "kHz"]
     }
@@ -2907,6 +3130,7 @@ pub mod dataflow_endpoint_config {
             self.dataflow_endpoint_name = Some(input.into());
             self
         }
+        /// <p>Name of a dataflow endpoint.</p>
         pub fn set_dataflow_endpoint_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2919,6 +3143,7 @@ pub mod dataflow_endpoint_config {
             self.dataflow_endpoint_region = Some(input.into());
             self
         }
+        /// <p>Region of a dataflow endpoint.</p>
         pub fn set_dataflow_endpoint_region(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2971,6 +3196,7 @@ pub mod tracking_config {
             self.autotrack = Some(input);
             self
         }
+        /// <p>Current setting for autotrack.</p>
         pub fn set_autotrack(
             mut self,
             input: std::option::Option<crate::model::Criticality>,
@@ -2993,6 +3219,7 @@ impl TrackingConfig {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3004,8 +3231,11 @@ impl TrackingConfig {
     std::hash::Hash,
 )]
 pub enum Criticality {
+    #[allow(missing_docs)] // documentation missing in model
     Preferred,
+    #[allow(missing_docs)] // documentation missing in model
     Removed,
+    #[allow(missing_docs)] // documentation missing in model
     Required,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3028,6 +3258,7 @@ impl std::str::FromStr for Criticality {
     }
 }
 impl Criticality {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Criticality::Preferred => "PREFERRED",
@@ -3036,6 +3267,7 @@ impl Criticality {
             Criticality::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["PREFERRED", "REMOVED", "REQUIRED"]
     }
@@ -3075,6 +3307,7 @@ pub mod antenna_downlink_config {
             self.spectrum_config = Some(input);
             self
         }
+        /// <p>Object that describes a spectral <code>Config</code>.</p>
         pub fn set_spectrum_config(
             mut self,
             input: std::option::Option<crate::model::SpectrumConfig>,

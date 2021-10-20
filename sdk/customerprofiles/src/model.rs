@@ -63,6 +63,7 @@ pub mod update_address {
             self.address1 = Some(input.into());
             self
         }
+        /// <p>The first line of a customer address.</p>
         pub fn set_address1(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.address1 = input;
             self
@@ -72,6 +73,7 @@ pub mod update_address {
             self.address2 = Some(input.into());
             self
         }
+        /// <p>The second line of a customer address.</p>
         pub fn set_address2(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.address2 = input;
             self
@@ -81,6 +83,7 @@ pub mod update_address {
             self.address3 = Some(input.into());
             self
         }
+        /// <p>The third line of a customer address.</p>
         pub fn set_address3(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.address3 = input;
             self
@@ -90,6 +93,7 @@ pub mod update_address {
             self.address4 = Some(input.into());
             self
         }
+        /// <p>The fourth line of a customer address.</p>
         pub fn set_address4(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.address4 = input;
             self
@@ -99,6 +103,7 @@ pub mod update_address {
             self.city = Some(input.into());
             self
         }
+        /// <p>The city in which a customer lives.</p>
         pub fn set_city(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.city = input;
             self
@@ -108,6 +113,7 @@ pub mod update_address {
             self.county = Some(input.into());
             self
         }
+        /// <p>The county in which a customer lives.</p>
         pub fn set_county(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.county = input;
             self
@@ -117,6 +123,7 @@ pub mod update_address {
             self.state = Some(input.into());
             self
         }
+        /// <p>The state in which a customer lives.</p>
         pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.state = input;
             self
@@ -126,6 +133,7 @@ pub mod update_address {
             self.province = Some(input.into());
             self
         }
+        /// <p>The province in which a customer lives.</p>
         pub fn set_province(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.province = input;
             self
@@ -135,6 +143,7 @@ pub mod update_address {
             self.country = Some(input.into());
             self
         }
+        /// <p>The country in which a customer lives.</p>
         pub fn set_country(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.country = input;
             self
@@ -144,6 +153,7 @@ pub mod update_address {
             self.postal_code = Some(input.into());
             self
         }
+        /// <p>The postal code of a customer address.</p>
         pub fn set_postal_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.postal_code = input;
             self
@@ -172,6 +182,7 @@ impl UpdateAddress {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -183,8 +194,11 @@ impl UpdateAddress {
     std::hash::Hash,
 )]
 pub enum Gender {
+    #[allow(missing_docs)] // documentation missing in model
     Female,
+    #[allow(missing_docs)] // documentation missing in model
     Male,
+    #[allow(missing_docs)] // documentation missing in model
     Unspecified,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -207,6 +221,7 @@ impl std::str::FromStr for Gender {
     }
 }
 impl Gender {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Gender::Female => "FEMALE",
@@ -215,6 +230,7 @@ impl Gender {
             Gender::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FEMALE", "MALE", "UNSPECIFIED"]
     }
@@ -225,6 +241,7 @@ impl AsRef<str> for Gender {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -236,8 +253,11 @@ impl AsRef<str> for Gender {
     std::hash::Hash,
 )]
 pub enum PartyType {
+    #[allow(missing_docs)] // documentation missing in model
     Business,
+    #[allow(missing_docs)] // documentation missing in model
     Individual,
+    #[allow(missing_docs)] // documentation missing in model
     Other,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -260,6 +280,7 @@ impl std::str::FromStr for PartyType {
     }
 }
 impl PartyType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PartyType::Business => "BUSINESS",
@@ -268,6 +289,7 @@ impl PartyType {
             PartyType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["BUSINESS", "INDIVIDUAL", "OTHER"]
     }
@@ -306,6 +328,7 @@ pub mod matching_response {
             self.enabled = Some(input);
             self
         }
+        /// <p>The flag that enables the matching process of duplicate profiles.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -353,6 +376,7 @@ pub mod matching_request {
             self.enabled = Some(input);
             self
         }
+        /// <p>The flag that enables the matching process of duplicate profiles.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -490,6 +514,7 @@ pub mod profile {
             self.profile_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier of a customer profile.</p>
         pub fn set_profile_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.profile_id = input;
             self
@@ -499,6 +524,7 @@ pub mod profile {
             self.account_number = Some(input.into());
             self
         }
+        /// <p>A unique account number that you have given to the customer.</p>
         pub fn set_account_number(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -511,6 +537,7 @@ pub mod profile {
             self.additional_information = Some(input.into());
             self
         }
+        /// <p>Any additional information relevant to the customer’s profile.</p>
         pub fn set_additional_information(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -523,6 +550,7 @@ pub mod profile {
             self.party_type = Some(input);
             self
         }
+        /// <p>The type of profile used to describe the customer.</p>
         pub fn set_party_type(
             mut self,
             input: std::option::Option<crate::model::PartyType>,
@@ -535,6 +563,7 @@ pub mod profile {
             self.business_name = Some(input.into());
             self
         }
+        /// <p>The name of the customer’s business.</p>
         pub fn set_business_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -547,6 +576,7 @@ pub mod profile {
             self.first_name = Some(input.into());
             self
         }
+        /// <p>The customer’s first name.</p>
         pub fn set_first_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.first_name = input;
             self
@@ -556,6 +586,7 @@ pub mod profile {
             self.middle_name = Some(input.into());
             self
         }
+        /// <p>The customer’s middle name.</p>
         pub fn set_middle_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.middle_name = input;
             self
@@ -565,6 +596,7 @@ pub mod profile {
             self.last_name = Some(input.into());
             self
         }
+        /// <p>The customer’s last name.</p>
         pub fn set_last_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.last_name = input;
             self
@@ -574,6 +606,7 @@ pub mod profile {
             self.birth_date = Some(input.into());
             self
         }
+        /// <p>The customer’s birth date. </p>
         pub fn set_birth_date(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.birth_date = input;
             self
@@ -583,6 +616,7 @@ pub mod profile {
             self.gender = Some(input);
             self
         }
+        /// <p>The gender with which the customer identifies. </p>
         pub fn set_gender(mut self, input: std::option::Option<crate::model::Gender>) -> Self {
             self.gender = input;
             self
@@ -593,6 +627,8 @@ pub mod profile {
             self.phone_number = Some(input.into());
             self
         }
+        /// <p>The customer's phone number, which has not been specified as a mobile, home, or business
+        /// number.</p>
         pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.phone_number = input;
             self
@@ -602,6 +638,7 @@ pub mod profile {
             self.mobile_phone_number = Some(input.into());
             self
         }
+        /// <p>The customer’s mobile phone number.</p>
         pub fn set_mobile_phone_number(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -614,6 +651,7 @@ pub mod profile {
             self.home_phone_number = Some(input.into());
             self
         }
+        /// <p>The customer’s home phone number.</p>
         pub fn set_home_phone_number(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -626,6 +664,7 @@ pub mod profile {
             self.business_phone_number = Some(input.into());
             self
         }
+        /// <p>The customer’s home phone number.</p>
         pub fn set_business_phone_number(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -639,6 +678,8 @@ pub mod profile {
             self.email_address = Some(input.into());
             self
         }
+        /// <p>The customer’s email address, which has not been specified as a personal or business
+        /// address. </p>
         pub fn set_email_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -651,6 +692,7 @@ pub mod profile {
             self.personal_email_address = Some(input.into());
             self
         }
+        /// <p>The customer’s personal email address.</p>
         pub fn set_personal_email_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -663,6 +705,7 @@ pub mod profile {
             self.business_email_address = Some(input.into());
             self
         }
+        /// <p>The customer’s business email address.</p>
         pub fn set_business_email_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -676,6 +719,8 @@ pub mod profile {
             self.address = Some(input);
             self
         }
+        /// <p>A generic address associated with the customer that is not mailing, shipping, or
+        /// billing.</p>
         pub fn set_address(mut self, input: std::option::Option<crate::model::Address>) -> Self {
             self.address = input;
             self
@@ -685,6 +730,7 @@ pub mod profile {
             self.shipping_address = Some(input);
             self
         }
+        /// <p>The customer’s shipping address.</p>
         pub fn set_shipping_address(
             mut self,
             input: std::option::Option<crate::model::Address>,
@@ -697,6 +743,7 @@ pub mod profile {
             self.mailing_address = Some(input);
             self
         }
+        /// <p>The customer’s mailing address.</p>
         pub fn set_mailing_address(
             mut self,
             input: std::option::Option<crate::model::Address>,
@@ -709,6 +756,7 @@ pub mod profile {
             self.billing_address = Some(input);
             self
         }
+        /// <p>The customer’s billing address.</p>
         pub fn set_billing_address(
             mut self,
             input: std::option::Option<crate::model::Address>,
@@ -716,6 +764,11 @@ pub mod profile {
             self.billing_address = input;
             self
         }
+        /// Adds a key-value pair to `attributes`.
+        ///
+        /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
+        ///
+        /// <p>A key value pair of attributes of a customer profile.</p>
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -726,6 +779,7 @@ pub mod profile {
             self.attributes = Some(hash_map);
             self
         }
+        /// <p>A key value pair of attributes of a customer profile.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -836,6 +890,7 @@ pub mod address {
             self.address1 = Some(input.into());
             self
         }
+        /// <p>The first line of a customer address.</p>
         pub fn set_address1(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.address1 = input;
             self
@@ -845,6 +900,7 @@ pub mod address {
             self.address2 = Some(input.into());
             self
         }
+        /// <p>The second line of a customer address.</p>
         pub fn set_address2(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.address2 = input;
             self
@@ -854,6 +910,7 @@ pub mod address {
             self.address3 = Some(input.into());
             self
         }
+        /// <p>The third line of a customer address.</p>
         pub fn set_address3(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.address3 = input;
             self
@@ -863,6 +920,7 @@ pub mod address {
             self.address4 = Some(input.into());
             self
         }
+        /// <p>The fourth line of a customer address.</p>
         pub fn set_address4(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.address4 = input;
             self
@@ -872,6 +930,7 @@ pub mod address {
             self.city = Some(input.into());
             self
         }
+        /// <p>The city in which a customer lives.</p>
         pub fn set_city(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.city = input;
             self
@@ -881,6 +940,7 @@ pub mod address {
             self.county = Some(input.into());
             self
         }
+        /// <p>The county in which a customer lives.</p>
         pub fn set_county(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.county = input;
             self
@@ -890,6 +950,7 @@ pub mod address {
             self.state = Some(input.into());
             self
         }
+        /// <p>The state in which a customer lives.</p>
         pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.state = input;
             self
@@ -899,6 +960,7 @@ pub mod address {
             self.province = Some(input.into());
             self
         }
+        /// <p>The province in which a customer lives.</p>
         pub fn set_province(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.province = input;
             self
@@ -908,6 +970,7 @@ pub mod address {
             self.country = Some(input.into());
             self
         }
+        /// <p>The country in which a customer lives.</p>
         pub fn set_country(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.country = input;
             self
@@ -917,6 +980,7 @@ pub mod address {
             self.postal_code = Some(input.into());
             self
         }
+        /// <p>The postal code of a customer address.</p>
         pub fn set_postal_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.postal_code = input;
             self
@@ -981,6 +1045,18 @@ pub mod object_type_key {
         pub(crate) field_names: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `standard_identifiers`.
+        ///
+        /// To override the contents of this collection use [`set_standard_identifiers`](Self::set_standard_identifiers).
+        ///
+        /// <p>The types of keys that a ProfileObject can have. Each ProfileObject can have only 1
+        /// UNIQUE key but multiple PROFILE keys. PROFILE, ASSET or CASE means that this key can be used to tie an
+        /// object to a PROFILE, ASSET or CASE respectively. UNIQUE means that it can be used to uniquely identify an object.
+        /// If a key a is marked as SECONDARY, it will be used to search for profiles after all other
+        /// PROFILE keys have been searched. A LOOKUP_ONLY key is only used to match a profile but is
+        /// not persisted to be used for searching of the profile. A NEW_ONLY key is only used if the
+        /// profile does not already exist before the object is ingested, otherwise it is only used for
+        /// matching objects to profiles.</p>
         pub fn standard_identifiers(
             mut self,
             input: impl Into<crate::model::StandardIdentifier>,
@@ -990,6 +1066,14 @@ pub mod object_type_key {
             self.standard_identifiers = Some(v);
             self
         }
+        /// <p>The types of keys that a ProfileObject can have. Each ProfileObject can have only 1
+        /// UNIQUE key but multiple PROFILE keys. PROFILE, ASSET or CASE means that this key can be used to tie an
+        /// object to a PROFILE, ASSET or CASE respectively. UNIQUE means that it can be used to uniquely identify an object.
+        /// If a key a is marked as SECONDARY, it will be used to search for profiles after all other
+        /// PROFILE keys have been searched. A LOOKUP_ONLY key is only used to match a profile but is
+        /// not persisted to be used for searching of the profile. A NEW_ONLY key is only used if the
+        /// profile does not already exist before the object is ingested, otherwise it is only used for
+        /// matching objects to profiles.</p>
         pub fn set_standard_identifiers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::StandardIdentifier>>,
@@ -997,12 +1081,18 @@ pub mod object_type_key {
             self.standard_identifiers = input;
             self
         }
+        /// Appends an item to `field_names`.
+        ///
+        /// To override the contents of this collection use [`set_field_names`](Self::set_field_names).
+        ///
+        /// <p>The reference for the key name of the fields map.</p>
         pub fn field_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.field_names.unwrap_or_default();
             v.push(input.into());
             self.field_names = Some(v);
             self
         }
+        /// <p>The reference for the key name of the fields map.</p>
         pub fn set_field_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1026,6 +1116,7 @@ impl ObjectTypeKey {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1037,12 +1128,19 @@ impl ObjectTypeKey {
     std::hash::Hash,
 )]
 pub enum StandardIdentifier {
+    #[allow(missing_docs)] // documentation missing in model
     Asset,
+    #[allow(missing_docs)] // documentation missing in model
     Case,
+    #[allow(missing_docs)] // documentation missing in model
     LookupOnly,
+    #[allow(missing_docs)] // documentation missing in model
     NewOnly,
+    #[allow(missing_docs)] // documentation missing in model
     Profile,
+    #[allow(missing_docs)] // documentation missing in model
     Secondary,
+    #[allow(missing_docs)] // documentation missing in model
     Unique,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1069,6 +1167,7 @@ impl std::str::FromStr for StandardIdentifier {
     }
 }
 impl StandardIdentifier {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StandardIdentifier::Asset => "ASSET",
@@ -1081,6 +1180,7 @@ impl StandardIdentifier {
             StandardIdentifier::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ASSET",
@@ -1138,6 +1238,8 @@ pub mod object_type_field {
             self.source = Some(input.into());
             self
         }
+        /// <p>A field of a ProfileObject. For example: _source.FirstName, where “_source” is a
+        /// ProfileObjectType of a Zendesk user and “FirstName” is a field in that ObjectType.</p>
         pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source = input;
             self
@@ -1148,6 +1250,8 @@ pub mod object_type_field {
             self.target = Some(input.into());
             self
         }
+        /// <p>The location of the data in the standard ProfileObject model. For example:
+        /// _profile.Address.PostalCode.</p>
         pub fn set_target(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.target = input;
             self
@@ -1157,6 +1261,7 @@ pub mod object_type_field {
             self.content_type = Some(input);
             self
         }
+        /// <p>The content type of the field. Used for determining equality when searching.</p>
         pub fn set_content_type(
             mut self,
             input: std::option::Option<crate::model::FieldContentType>,
@@ -1181,6 +1286,7 @@ impl ObjectTypeField {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1192,10 +1298,15 @@ impl ObjectTypeField {
     std::hash::Hash,
 )]
 pub enum FieldContentType {
+    #[allow(missing_docs)] // documentation missing in model
     EmailAddress,
+    #[allow(missing_docs)] // documentation missing in model
     Name,
+    #[allow(missing_docs)] // documentation missing in model
     Number,
+    #[allow(missing_docs)] // documentation missing in model
     PhoneNumber,
+    #[allow(missing_docs)] // documentation missing in model
     String,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1220,6 +1331,7 @@ impl std::str::FromStr for FieldContentType {
     }
 }
 impl FieldContentType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FieldContentType::EmailAddress => "EMAIL_ADDRESS",
@@ -1230,6 +1342,7 @@ impl FieldContentType {
             FieldContentType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["EMAIL_ADDRESS", "NAME", "NUMBER", "PHONE_NUMBER", "STRING"]
     }
@@ -1293,6 +1406,7 @@ pub mod flow_definition {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description of the flow you want to create.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -1303,6 +1417,8 @@ pub mod flow_definition {
             self.flow_name = Some(input.into());
             self
         }
+        /// <p>The specified name of the flow. Use underscores (_) or hyphens (-) only. Spaces are not
+        /// allowed.</p>
         pub fn set_flow_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.flow_name = input;
             self
@@ -1312,6 +1428,7 @@ pub mod flow_definition {
             self.kms_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name of the AWS Key Management Service (KMS) key you provide for encryption.</p>
         pub fn set_kms_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_arn = input;
             self
@@ -1322,6 +1439,8 @@ pub mod flow_definition {
             self.source_flow_config = Some(input);
             self
         }
+        /// <p>The configuration that controls how Customer Profiles retrieves data from the
+        /// source.</p>
         pub fn set_source_flow_config(
             mut self,
             input: std::option::Option<crate::model::SourceFlowConfig>,
@@ -1329,12 +1448,20 @@ pub mod flow_definition {
             self.source_flow_config = input;
             self
         }
+        /// Appends an item to `tasks`.
+        ///
+        /// To override the contents of this collection use [`set_tasks`](Self::set_tasks).
+        ///
+        /// <p>A list of tasks that Customer Profiles performs while transferring the data in the flow
+        /// run.</p>
         pub fn tasks(mut self, input: impl Into<crate::model::Task>) -> Self {
             let mut v = self.tasks.unwrap_or_default();
             v.push(input.into());
             self.tasks = Some(v);
             self
         }
+        /// <p>A list of tasks that Customer Profiles performs while transferring the data in the flow
+        /// run.</p>
         pub fn set_tasks(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Task>>,
@@ -1347,6 +1474,7 @@ pub mod flow_definition {
             self.trigger_config = Some(input);
             self
         }
+        /// <p>The trigger settings that determine how and when the flow runs.</p>
         pub fn set_trigger_config(
             mut self,
             input: std::option::Option<crate::model::TriggerConfig>,
@@ -1408,6 +1536,7 @@ pub mod trigger_config {
             self.trigger_type = Some(input);
             self
         }
+        /// <p>Specifies the type of flow trigger. It can be OnDemand, Scheduled, or Event.</p>
         pub fn set_trigger_type(
             mut self,
             input: std::option::Option<crate::model::TriggerType>,
@@ -1421,6 +1550,8 @@ pub mod trigger_config {
             self.trigger_properties = Some(input);
             self
         }
+        /// <p>Specifies the configuration details of a schedule-triggered flow that you define.
+        /// Currently, these settings only apply to the Scheduled trigger type.</p>
         pub fn set_trigger_properties(
             mut self,
             input: std::option::Option<crate::model::TriggerProperties>,
@@ -1473,6 +1604,7 @@ pub mod trigger_properties {
             self.scheduled = Some(input);
             self
         }
+        /// <p>Specifies the configuration details of a schedule-triggered flow that you define.</p>
         pub fn set_scheduled(
             mut self,
             input: std::option::Option<crate::model::ScheduledTriggerProperties>,
@@ -1507,9 +1639,9 @@ pub struct ScheduledTriggerProperties {
     /// transfer for each flow run.</p>
     pub data_pull_mode: std::option::Option<crate::model::DataPullMode>,
     /// <p>Specifies the scheduled start time for a scheduled-trigger flow.</p>
-    pub schedule_start_time: std::option::Option<smithy_types::Instant>,
+    pub schedule_start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Specifies the scheduled end time for a scheduled-trigger flow.</p>
-    pub schedule_end_time: std::option::Option<smithy_types::Instant>,
+    pub schedule_end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Specifies the time zone used when referring to the date and time of a
     /// scheduled-triggered flow, such as America/New_York.</p>
     pub timezone: std::option::Option<std::string::String>,
@@ -1518,7 +1650,7 @@ pub struct ScheduledTriggerProperties {
     pub schedule_offset: std::option::Option<i64>,
     /// <p>Specifies the date range for the records to import from the connector in the first flow
     /// run.</p>
-    pub first_execution_from: std::option::Option<smithy_types::Instant>,
+    pub first_execution_from: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for ScheduledTriggerProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1541,11 +1673,11 @@ pub mod scheduled_trigger_properties {
     pub struct Builder {
         pub(crate) schedule_expression: std::option::Option<std::string::String>,
         pub(crate) data_pull_mode: std::option::Option<crate::model::DataPullMode>,
-        pub(crate) schedule_start_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) schedule_end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) schedule_start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) schedule_end_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) timezone: std::option::Option<std::string::String>,
         pub(crate) schedule_offset: std::option::Option<i64>,
-        pub(crate) first_execution_from: std::option::Option<smithy_types::Instant>,
+        pub(crate) first_execution_from: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The scheduling expression that determines the rate at which the schedule will run, for
@@ -1554,6 +1686,8 @@ pub mod scheduled_trigger_properties {
             self.schedule_expression = Some(input.into());
             self
         }
+        /// <p>The scheduling expression that determines the rate at which the schedule will run, for
+        /// example rate (5 minutes).</p>
         pub fn set_schedule_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1567,6 +1701,8 @@ pub mod scheduled_trigger_properties {
             self.data_pull_mode = Some(input);
             self
         }
+        /// <p>Specifies whether a scheduled flow has an incremental data transfer or a complete data
+        /// transfer for each flow run.</p>
         pub fn set_data_pull_mode(
             mut self,
             input: std::option::Option<crate::model::DataPullMode>,
@@ -1575,25 +1711,27 @@ pub mod scheduled_trigger_properties {
             self
         }
         /// <p>Specifies the scheduled start time for a scheduled-trigger flow.</p>
-        pub fn schedule_start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn schedule_start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.schedule_start_time = Some(input);
             self
         }
+        /// <p>Specifies the scheduled start time for a scheduled-trigger flow.</p>
         pub fn set_schedule_start_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.schedule_start_time = input;
             self
         }
         /// <p>Specifies the scheduled end time for a scheduled-trigger flow.</p>
-        pub fn schedule_end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn schedule_end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.schedule_end_time = Some(input);
             self
         }
+        /// <p>Specifies the scheduled end time for a scheduled-trigger flow.</p>
         pub fn set_schedule_end_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.schedule_end_time = input;
             self
@@ -1604,6 +1742,8 @@ pub mod scheduled_trigger_properties {
             self.timezone = Some(input.into());
             self
         }
+        /// <p>Specifies the time zone used when referring to the date and time of a
+        /// scheduled-triggered flow, such as America/New_York.</p>
         pub fn set_timezone(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.timezone = input;
             self
@@ -1614,19 +1754,23 @@ pub mod scheduled_trigger_properties {
             self.schedule_offset = Some(input);
             self
         }
+        /// <p>Specifies the optional offset that is added to the time interval for a
+        /// schedule-triggered flow.</p>
         pub fn set_schedule_offset(mut self, input: std::option::Option<i64>) -> Self {
             self.schedule_offset = input;
             self
         }
         /// <p>Specifies the date range for the records to import from the connector in the first flow
         /// run.</p>
-        pub fn first_execution_from(mut self, input: smithy_types::Instant) -> Self {
+        pub fn first_execution_from(mut self, input: aws_smithy_types::Instant) -> Self {
             self.first_execution_from = Some(input);
             self
         }
+        /// <p>Specifies the date range for the records to import from the connector in the first flow
+        /// run.</p>
         pub fn set_first_execution_from(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.first_execution_from = input;
             self
@@ -1652,6 +1796,7 @@ impl ScheduledTriggerProperties {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1663,7 +1808,9 @@ impl ScheduledTriggerProperties {
     std::hash::Hash,
 )]
 pub enum DataPullMode {
+    #[allow(missing_docs)] // documentation missing in model
     Complete,
+    #[allow(missing_docs)] // documentation missing in model
     Incremental,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1685,6 +1832,7 @@ impl std::str::FromStr for DataPullMode {
     }
 }
 impl DataPullMode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DataPullMode::Complete => "Complete",
@@ -1692,6 +1840,7 @@ impl DataPullMode {
             DataPullMode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Complete", "Incremental"]
     }
@@ -1702,6 +1851,7 @@ impl AsRef<str> for DataPullMode {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1713,8 +1863,11 @@ impl AsRef<str> for DataPullMode {
     std::hash::Hash,
 )]
 pub enum TriggerType {
+    #[allow(missing_docs)] // documentation missing in model
     Event,
+    #[allow(missing_docs)] // documentation missing in model
     Ondemand,
+    #[allow(missing_docs)] // documentation missing in model
     Scheduled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1737,6 +1890,7 @@ impl std::str::FromStr for TriggerType {
     }
 }
 impl TriggerType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TriggerType::Event => "Event",
@@ -1745,6 +1899,7 @@ impl TriggerType {
             TriggerType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Event", "OnDemand", "Scheduled"]
     }
@@ -1806,6 +1961,7 @@ pub mod task {
             self.connector_operator = Some(input);
             self
         }
+        /// <p>The operation to be performed on the provided source fields.</p>
         pub fn set_connector_operator(
             mut self,
             input: std::option::Option<crate::model::ConnectorOperator>,
@@ -1819,6 +1975,8 @@ pub mod task {
             self.destination_field = Some(input.into());
             self
         }
+        /// <p>A field in a destination connector, or a field value against which Amazon AppFlow validates a
+        /// source field.</p>
         pub fn set_destination_field(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1826,12 +1984,18 @@ pub mod task {
             self.destination_field = input;
             self
         }
+        /// Appends an item to `source_fields`.
+        ///
+        /// To override the contents of this collection use [`set_source_fields`](Self::set_source_fields).
+        ///
+        /// <p>The source fields to which a particular task is applied.</p>
         pub fn source_fields(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.source_fields.unwrap_or_default();
             v.push(input.into());
             self.source_fields = Some(v);
             self
         }
+        /// <p>The source fields to which a particular task is applied.</p>
         pub fn set_source_fields(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1839,6 +2003,12 @@ pub mod task {
             self.source_fields = input;
             self
         }
+        /// Adds a key-value pair to `task_properties`.
+        ///
+        /// To override the contents of this collection use [`set_task_properties`](Self::set_task_properties).
+        ///
+        /// <p>A map used to store task-related information. The service looks for particular
+        /// information based on the TaskType.</p>
         pub fn task_properties(
             mut self,
             k: impl Into<crate::model::OperatorPropertiesKeys>,
@@ -1849,6 +2019,8 @@ pub mod task {
             self.task_properties = Some(hash_map);
             self
         }
+        /// <p>A map used to store task-related information. The service looks for particular
+        /// information based on the TaskType.</p>
         pub fn set_task_properties(
             mut self,
             input: std::option::Option<
@@ -1866,6 +2038,7 @@ pub mod task {
             self.task_type = Some(input);
             self
         }
+        /// <p>Specifies the particular task implementation that Amazon AppFlow performs.</p>
         pub fn set_task_type(mut self, input: std::option::Option<crate::model::TaskType>) -> Self {
             self.task_type = input;
             self
@@ -1889,6 +2062,7 @@ impl Task {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1900,12 +2074,19 @@ impl Task {
     std::hash::Hash,
 )]
 pub enum TaskType {
+    #[allow(missing_docs)] // documentation missing in model
     Arithmetic,
+    #[allow(missing_docs)] // documentation missing in model
     Filter,
+    #[allow(missing_docs)] // documentation missing in model
     Map,
+    #[allow(missing_docs)] // documentation missing in model
     Mask,
+    #[allow(missing_docs)] // documentation missing in model
     Merge,
+    #[allow(missing_docs)] // documentation missing in model
     Truncate,
+    #[allow(missing_docs)] // documentation missing in model
     Validate,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1932,6 +2113,7 @@ impl std::str::FromStr for TaskType {
     }
 }
 impl TaskType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TaskType::Arithmetic => "Arithmetic",
@@ -1944,6 +2126,7 @@ impl TaskType {
             TaskType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "Arithmetic",
@@ -1962,6 +2145,7 @@ impl AsRef<str> for TaskType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1973,19 +2157,33 @@ impl AsRef<str> for TaskType {
     std::hash::Hash,
 )]
 pub enum OperatorPropertiesKeys {
+    #[allow(missing_docs)] // documentation missing in model
     ConcatFormat,
+    #[allow(missing_docs)] // documentation missing in model
     DataType,
+    #[allow(missing_docs)] // documentation missing in model
     DestinationDataType,
+    #[allow(missing_docs)] // documentation missing in model
     LowerBound,
+    #[allow(missing_docs)] // documentation missing in model
     MaskLength,
+    #[allow(missing_docs)] // documentation missing in model
     MaskValue,
+    #[allow(missing_docs)] // documentation missing in model
     MathOperationFieldsOrder,
+    #[allow(missing_docs)] // documentation missing in model
     SourceDataType,
+    #[allow(missing_docs)] // documentation missing in model
     SubfieldCategoryMap,
+    #[allow(missing_docs)] // documentation missing in model
     TruncateLength,
+    #[allow(missing_docs)] // documentation missing in model
     UpperBound,
+    #[allow(missing_docs)] // documentation missing in model
     ValidationAction,
+    #[allow(missing_docs)] // documentation missing in model
     Value,
+    #[allow(missing_docs)] // documentation missing in model
     Values,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2019,6 +2217,7 @@ impl std::str::FromStr for OperatorPropertiesKeys {
     }
 }
 impl OperatorPropertiesKeys {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             OperatorPropertiesKeys::ConcatFormat => "CONCAT_FORMAT",
@@ -2038,6 +2237,7 @@ impl OperatorPropertiesKeys {
             OperatorPropertiesKeys::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CONCAT_FORMAT",
@@ -2107,6 +2307,7 @@ pub mod connector_operator {
             self.marketo = Some(input);
             self
         }
+        /// <p>The operation to be performed on the provided Marketo source fields.</p>
         pub fn set_marketo(
             mut self,
             input: std::option::Option<crate::model::MarketoConnectorOperator>,
@@ -2119,6 +2320,7 @@ pub mod connector_operator {
             self.s3 = Some(input);
             self
         }
+        /// <p>The operation to be performed on the provided Amazon S3 source fields.</p>
         pub fn set_s3(
             mut self,
             input: std::option::Option<crate::model::S3ConnectorOperator>,
@@ -2131,6 +2333,7 @@ pub mod connector_operator {
             self.salesforce = Some(input);
             self
         }
+        /// <p>The operation to be performed on the provided Salesforce source fields.</p>
         pub fn set_salesforce(
             mut self,
             input: std::option::Option<crate::model::SalesforceConnectorOperator>,
@@ -2143,6 +2346,7 @@ pub mod connector_operator {
             self.service_now = Some(input);
             self
         }
+        /// <p>The operation to be performed on the provided ServiceNow source fields.</p>
         pub fn set_service_now(
             mut self,
             input: std::option::Option<crate::model::ServiceNowConnectorOperator>,
@@ -2155,6 +2359,7 @@ pub mod connector_operator {
             self.zendesk = Some(input);
             self
         }
+        /// <p>The operation to be performed on the provided Zendesk source fields.</p>
         pub fn set_zendesk(
             mut self,
             input: std::option::Option<crate::model::ZendeskConnectorOperator>,
@@ -2181,6 +2386,7 @@ impl ConnectorOperator {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2192,19 +2398,33 @@ impl ConnectorOperator {
     std::hash::Hash,
 )]
 pub enum ZendeskConnectorOperator {
+    #[allow(missing_docs)] // documentation missing in model
     Addition,
+    #[allow(missing_docs)] // documentation missing in model
     Division,
+    #[allow(missing_docs)] // documentation missing in model
     GreaterThan,
+    #[allow(missing_docs)] // documentation missing in model
     MaskAll,
+    #[allow(missing_docs)] // documentation missing in model
     MaskFirstN,
+    #[allow(missing_docs)] // documentation missing in model
     MaskLastN,
+    #[allow(missing_docs)] // documentation missing in model
     Multiplication,
+    #[allow(missing_docs)] // documentation missing in model
     NoOp,
+    #[allow(missing_docs)] // documentation missing in model
     Projection,
+    #[allow(missing_docs)] // documentation missing in model
     Subtraction,
+    #[allow(missing_docs)] // documentation missing in model
     ValidateNonNegative,
+    #[allow(missing_docs)] // documentation missing in model
     ValidateNonNull,
+    #[allow(missing_docs)] // documentation missing in model
     ValidateNonZero,
+    #[allow(missing_docs)] // documentation missing in model
     ValidateNumeric,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2238,6 +2458,7 @@ impl std::str::FromStr for ZendeskConnectorOperator {
     }
 }
 impl ZendeskConnectorOperator {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ZendeskConnectorOperator::Addition => "ADDITION",
@@ -2257,6 +2478,7 @@ impl ZendeskConnectorOperator {
             ZendeskConnectorOperator::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ADDITION",
@@ -2282,6 +2504,7 @@ impl AsRef<str> for ZendeskConnectorOperator {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2293,26 +2516,47 @@ impl AsRef<str> for ZendeskConnectorOperator {
     std::hash::Hash,
 )]
 pub enum ServiceNowConnectorOperator {
+    #[allow(missing_docs)] // documentation missing in model
     Addition,
+    #[allow(missing_docs)] // documentation missing in model
     Between,
+    #[allow(missing_docs)] // documentation missing in model
     Contains,
+    #[allow(missing_docs)] // documentation missing in model
     Division,
+    #[allow(missing_docs)] // documentation missing in model
     EqualTo,
+    #[allow(missing_docs)] // documentation missing in model
     GreaterThan,
+    #[allow(missing_docs)] // documentation missing in model
     GreaterThanOrEqualTo,
+    #[allow(missing_docs)] // documentation missing in model
     LessThan,
+    #[allow(missing_docs)] // documentation missing in model
     LessThanOrEqualTo,
+    #[allow(missing_docs)] // documentation missing in model
     MaskAll,
+    #[allow(missing_docs)] // documentation missing in model
     MaskFirstN,
+    #[allow(missing_docs)] // documentation missing in model
     MaskLastN,
+    #[allow(missing_docs)] // documentation missing in model
     Multiplication,
+    #[allow(missing_docs)] // documentation missing in model
     NotEqualTo,
+    #[allow(missing_docs)] // documentation missing in model
     NoOp,
+    #[allow(missing_docs)] // documentation missing in model
     Projection,
+    #[allow(missing_docs)] // documentation missing in model
     Subtraction,
+    #[allow(missing_docs)] // documentation missing in model
     ValidateNonNegative,
+    #[allow(missing_docs)] // documentation missing in model
     ValidateNonNull,
+    #[allow(missing_docs)] // documentation missing in model
     ValidateNonZero,
+    #[allow(missing_docs)] // documentation missing in model
     ValidateNumeric,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2353,6 +2597,7 @@ impl std::str::FromStr for ServiceNowConnectorOperator {
     }
 }
 impl ServiceNowConnectorOperator {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ServiceNowConnectorOperator::Addition => "ADDITION",
@@ -2379,6 +2624,7 @@ impl ServiceNowConnectorOperator {
             ServiceNowConnectorOperator::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ADDITION",
@@ -2411,6 +2657,7 @@ impl AsRef<str> for ServiceNowConnectorOperator {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2422,26 +2669,47 @@ impl AsRef<str> for ServiceNowConnectorOperator {
     std::hash::Hash,
 )]
 pub enum SalesforceConnectorOperator {
+    #[allow(missing_docs)] // documentation missing in model
     Addition,
+    #[allow(missing_docs)] // documentation missing in model
     Between,
+    #[allow(missing_docs)] // documentation missing in model
     Contains,
+    #[allow(missing_docs)] // documentation missing in model
     Division,
+    #[allow(missing_docs)] // documentation missing in model
     EqualTo,
+    #[allow(missing_docs)] // documentation missing in model
     GreaterThan,
+    #[allow(missing_docs)] // documentation missing in model
     GreaterThanOrEqualTo,
+    #[allow(missing_docs)] // documentation missing in model
     LessThan,
+    #[allow(missing_docs)] // documentation missing in model
     LessThanOrEqualTo,
+    #[allow(missing_docs)] // documentation missing in model
     MaskAll,
+    #[allow(missing_docs)] // documentation missing in model
     MaskFirstN,
+    #[allow(missing_docs)] // documentation missing in model
     MaskLastN,
+    #[allow(missing_docs)] // documentation missing in model
     Multiplication,
+    #[allow(missing_docs)] // documentation missing in model
     NotEqualTo,
+    #[allow(missing_docs)] // documentation missing in model
     NoOp,
+    #[allow(missing_docs)] // documentation missing in model
     Projection,
+    #[allow(missing_docs)] // documentation missing in model
     Subtraction,
+    #[allow(missing_docs)] // documentation missing in model
     ValidateNonNegative,
+    #[allow(missing_docs)] // documentation missing in model
     ValidateNonNull,
+    #[allow(missing_docs)] // documentation missing in model
     ValidateNonZero,
+    #[allow(missing_docs)] // documentation missing in model
     ValidateNumeric,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2482,6 +2750,7 @@ impl std::str::FromStr for SalesforceConnectorOperator {
     }
 }
 impl SalesforceConnectorOperator {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SalesforceConnectorOperator::Addition => "ADDITION",
@@ -2508,6 +2777,7 @@ impl SalesforceConnectorOperator {
             SalesforceConnectorOperator::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ADDITION",
@@ -2540,6 +2810,7 @@ impl AsRef<str> for SalesforceConnectorOperator {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2551,25 +2822,45 @@ impl AsRef<str> for SalesforceConnectorOperator {
     std::hash::Hash,
 )]
 pub enum S3ConnectorOperator {
+    #[allow(missing_docs)] // documentation missing in model
     Addition,
+    #[allow(missing_docs)] // documentation missing in model
     Between,
+    #[allow(missing_docs)] // documentation missing in model
     Division,
+    #[allow(missing_docs)] // documentation missing in model
     EqualTo,
+    #[allow(missing_docs)] // documentation missing in model
     GreaterThan,
+    #[allow(missing_docs)] // documentation missing in model
     GreaterThanOrEqualTo,
+    #[allow(missing_docs)] // documentation missing in model
     LessThan,
+    #[allow(missing_docs)] // documentation missing in model
     LessThanOrEqualTo,
+    #[allow(missing_docs)] // documentation missing in model
     MaskAll,
+    #[allow(missing_docs)] // documentation missing in model
     MaskFirstN,
+    #[allow(missing_docs)] // documentation missing in model
     MaskLastN,
+    #[allow(missing_docs)] // documentation missing in model
     Multiplication,
+    #[allow(missing_docs)] // documentation missing in model
     NotEqualTo,
+    #[allow(missing_docs)] // documentation missing in model
     NoOp,
+    #[allow(missing_docs)] // documentation missing in model
     Projection,
+    #[allow(missing_docs)] // documentation missing in model
     Subtraction,
+    #[allow(missing_docs)] // documentation missing in model
     ValidateNonNegative,
+    #[allow(missing_docs)] // documentation missing in model
     ValidateNonNull,
+    #[allow(missing_docs)] // documentation missing in model
     ValidateNonZero,
+    #[allow(missing_docs)] // documentation missing in model
     ValidateNumeric,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2609,6 +2900,7 @@ impl std::str::FromStr for S3ConnectorOperator {
     }
 }
 impl S3ConnectorOperator {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             S3ConnectorOperator::Addition => "ADDITION",
@@ -2634,6 +2926,7 @@ impl S3ConnectorOperator {
             S3ConnectorOperator::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ADDITION",
@@ -2665,6 +2958,7 @@ impl AsRef<str> for S3ConnectorOperator {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2676,21 +2970,37 @@ impl AsRef<str> for S3ConnectorOperator {
     std::hash::Hash,
 )]
 pub enum MarketoConnectorOperator {
+    #[allow(missing_docs)] // documentation missing in model
     Addition,
+    #[allow(missing_docs)] // documentation missing in model
     Between,
+    #[allow(missing_docs)] // documentation missing in model
     Division,
+    #[allow(missing_docs)] // documentation missing in model
     GreaterThan,
+    #[allow(missing_docs)] // documentation missing in model
     LessThan,
+    #[allow(missing_docs)] // documentation missing in model
     MaskAll,
+    #[allow(missing_docs)] // documentation missing in model
     MaskFirstN,
+    #[allow(missing_docs)] // documentation missing in model
     MaskLastN,
+    #[allow(missing_docs)] // documentation missing in model
     Multiplication,
+    #[allow(missing_docs)] // documentation missing in model
     NoOp,
+    #[allow(missing_docs)] // documentation missing in model
     Projection,
+    #[allow(missing_docs)] // documentation missing in model
     Subtraction,
+    #[allow(missing_docs)] // documentation missing in model
     ValidateNonNegative,
+    #[allow(missing_docs)] // documentation missing in model
     ValidateNonNull,
+    #[allow(missing_docs)] // documentation missing in model
     ValidateNonZero,
+    #[allow(missing_docs)] // documentation missing in model
     ValidateNumeric,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2726,6 +3036,7 @@ impl std::str::FromStr for MarketoConnectorOperator {
     }
 }
 impl MarketoConnectorOperator {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MarketoConnectorOperator::Addition => "ADDITION",
@@ -2747,6 +3058,7 @@ impl MarketoConnectorOperator {
             MarketoConnectorOperator::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ADDITION",
@@ -2825,6 +3137,8 @@ pub mod source_flow_config {
             self.connector_profile_name = Some(input.into());
             self
         }
+        /// <p>The name of the AppFlow connector profile. This name must be unique for each connector
+        /// profile in the AWS account.</p>
         pub fn set_connector_profile_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2837,6 +3151,7 @@ pub mod source_flow_config {
             self.connector_type = Some(input);
             self
         }
+        /// <p>The type of connector, such as Salesforce, Marketo, and so on.</p>
         pub fn set_connector_type(
             mut self,
             input: std::option::Option<crate::model::SourceConnectorType>,
@@ -2854,6 +3169,9 @@ pub mod source_flow_config {
             self.incremental_pull_config = Some(input);
             self
         }
+        /// <p>Defines the configuration for a scheduled incremental data pull. If a valid
+        /// configuration is provided, the fields specified in the configuration are used when querying
+        /// for the incremental data pull.</p>
         pub fn set_incremental_pull_config(
             mut self,
             input: std::option::Option<crate::model::IncrementalPullConfig>,
@@ -2870,6 +3188,8 @@ pub mod source_flow_config {
             self.source_connector_properties = Some(input);
             self
         }
+        /// <p>Specifies the information that is required to query a particular source
+        /// connector.</p>
         pub fn set_source_connector_properties(
             mut self,
             input: std::option::Option<crate::model::SourceConnectorProperties>,
@@ -2940,6 +3260,7 @@ pub mod source_connector_properties {
             self.marketo = Some(input);
             self
         }
+        /// <p>The properties that are applied when Marketo is being used as a source.</p>
         pub fn set_marketo(
             mut self,
             input: std::option::Option<crate::model::MarketoSourceProperties>,
@@ -2952,6 +3273,7 @@ pub mod source_connector_properties {
             self.s3 = Some(input);
             self
         }
+        /// <p>The properties that are applied when Amazon S3 is being used as the flow source.</p>
         pub fn set_s3(
             mut self,
             input: std::option::Option<crate::model::S3SourceProperties>,
@@ -2964,6 +3286,7 @@ pub mod source_connector_properties {
             self.salesforce = Some(input);
             self
         }
+        /// <p>The properties that are applied when Salesforce is being used as a source.</p>
         pub fn set_salesforce(
             mut self,
             input: std::option::Option<crate::model::SalesforceSourceProperties>,
@@ -2976,6 +3299,7 @@ pub mod source_connector_properties {
             self.service_now = Some(input);
             self
         }
+        /// <p>The properties that are applied when ServiceNow is being used as a source.</p>
         pub fn set_service_now(
             mut self,
             input: std::option::Option<crate::model::ServiceNowSourceProperties>,
@@ -2988,6 +3312,7 @@ pub mod source_connector_properties {
             self.zendesk = Some(input);
             self
         }
+        /// <p>The properties that are applied when using Zendesk as a flow source.</p>
         pub fn set_zendesk(
             mut self,
             input: std::option::Option<crate::model::ZendeskSourceProperties>,
@@ -3042,6 +3367,7 @@ pub mod zendesk_source_properties {
             self.object = Some(input.into());
             self
         }
+        /// <p>The object specified in the Zendesk flow source.</p>
         pub fn set_object(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.object = input;
             self
@@ -3089,6 +3415,7 @@ pub mod service_now_source_properties {
             self.object = Some(input.into());
             self
         }
+        /// <p>The object specified in the ServiceNow flow source.</p>
         pub fn set_object(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.object = input;
             self
@@ -3148,6 +3475,7 @@ pub mod salesforce_source_properties {
             self.object = Some(input.into());
             self
         }
+        /// <p>The object specified in the Salesforce flow source.</p>
         pub fn set_object(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.object = input;
             self
@@ -3158,6 +3486,8 @@ pub mod salesforce_source_properties {
             self.enable_dynamic_field_update = Some(input);
             self
         }
+        /// <p>The flag that enables dynamic fetching of new (recently added) fields in the Salesforce
+        /// objects while running a flow.</p>
         pub fn set_enable_dynamic_field_update(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_dynamic_field_update = input;
             self
@@ -3167,6 +3497,7 @@ pub mod salesforce_source_properties {
             self.include_deleted_records = Some(input);
             self
         }
+        /// <p>Indicates whether Amazon AppFlow includes deleted files in the flow run.</p>
         pub fn set_include_deleted_records(mut self, input: std::option::Option<bool>) -> Self {
             self.include_deleted_records = input;
             self
@@ -3220,6 +3551,7 @@ pub mod s3_source_properties {
             self.bucket_name = Some(input.into());
             self
         }
+        /// <p>The Amazon S3 bucket name where the source files are stored.</p>
         pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket_name = input;
             self
@@ -3229,6 +3561,7 @@ pub mod s3_source_properties {
             self.bucket_prefix = Some(input.into());
             self
         }
+        /// <p>The object key for the Amazon S3 bucket in which the source files are stored.</p>
         pub fn set_bucket_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3280,6 +3613,7 @@ pub mod marketo_source_properties {
             self.object = Some(input.into());
             self
         }
+        /// <p>The object specified in the Marketo flow source.</p>
         pub fn set_object(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.object = input;
             self
@@ -3330,6 +3664,8 @@ pub mod incremental_pull_config {
             self.datetime_type_field_name = Some(input.into());
             self
         }
+        /// <p>A field that specifies the date time or timestamp field as the criteria to use when
+        /// importing incremental records from the source.</p>
         pub fn set_datetime_type_field_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3352,6 +3688,7 @@ impl IncrementalPullConfig {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3363,10 +3700,15 @@ impl IncrementalPullConfig {
     std::hash::Hash,
 )]
 pub enum SourceConnectorType {
+    #[allow(missing_docs)] // documentation missing in model
     Marketo,
+    #[allow(missing_docs)] // documentation missing in model
     S3,
+    #[allow(missing_docs)] // documentation missing in model
     Salesforce,
+    #[allow(missing_docs)] // documentation missing in model
     Servicenow,
+    #[allow(missing_docs)] // documentation missing in model
     Zendesk,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3391,6 +3733,7 @@ impl std::str::FromStr for SourceConnectorType {
     }
 }
 impl SourceConnectorType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SourceConnectorType::Marketo => "Marketo",
@@ -3401,6 +3744,7 @@ impl SourceConnectorType {
             SourceConnectorType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Marketo", "S3", "Salesforce", "Servicenow", "Zendesk"]
     }
@@ -3522,6 +3866,7 @@ pub mod field_source_profile_ids {
             self.account_number = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the account number field to be merged. </p>
         pub fn set_account_number(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3534,6 +3879,7 @@ pub mod field_source_profile_ids {
             self.additional_information = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the additional information field to be merged.</p>
         pub fn set_additional_information(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3546,6 +3892,7 @@ pub mod field_source_profile_ids {
             self.party_type = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the party type field to be merged.</p>
         pub fn set_party_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.party_type = input;
             self
@@ -3555,6 +3902,7 @@ pub mod field_source_profile_ids {
             self.business_name = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the business name field to be merged.</p>
         pub fn set_business_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3567,6 +3915,7 @@ pub mod field_source_profile_ids {
             self.first_name = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the first name field to be merged.</p>
         pub fn set_first_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.first_name = input;
             self
@@ -3576,6 +3925,7 @@ pub mod field_source_profile_ids {
             self.middle_name = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the middle name field to be merged.</p>
         pub fn set_middle_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.middle_name = input;
             self
@@ -3585,6 +3935,7 @@ pub mod field_source_profile_ids {
             self.last_name = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the last name field to be merged.</p>
         pub fn set_last_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.last_name = input;
             self
@@ -3594,6 +3945,7 @@ pub mod field_source_profile_ids {
             self.birth_date = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the birthdate field to be merged.</p>
         pub fn set_birth_date(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.birth_date = input;
             self
@@ -3603,6 +3955,7 @@ pub mod field_source_profile_ids {
             self.gender = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the gender field to be merged.</p>
         pub fn set_gender(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.gender = input;
             self
@@ -3612,6 +3965,7 @@ pub mod field_source_profile_ids {
             self.phone_number = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the phone number field to be merged.</p>
         pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.phone_number = input;
             self
@@ -3621,6 +3975,7 @@ pub mod field_source_profile_ids {
             self.mobile_phone_number = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the mobile phone number field to be merged.</p>
         pub fn set_mobile_phone_number(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3633,6 +3988,7 @@ pub mod field_source_profile_ids {
             self.home_phone_number = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the home phone number field to be merged.</p>
         pub fn set_home_phone_number(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3645,6 +4001,7 @@ pub mod field_source_profile_ids {
             self.business_phone_number = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the business phone number field to be merged.</p>
         pub fn set_business_phone_number(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3657,6 +4014,7 @@ pub mod field_source_profile_ids {
             self.email_address = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the email address field to be merged.</p>
         pub fn set_email_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3669,6 +4027,7 @@ pub mod field_source_profile_ids {
             self.personal_email_address = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the personal email address field to be merged.</p>
         pub fn set_personal_email_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3681,6 +4040,7 @@ pub mod field_source_profile_ids {
             self.business_email_address = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the party type field to be merged.</p>
         pub fn set_business_email_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3693,6 +4053,7 @@ pub mod field_source_profile_ids {
             self.address = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the party type field to be merged.</p>
         pub fn set_address(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.address = input;
             self
@@ -3702,6 +4063,7 @@ pub mod field_source_profile_ids {
             self.shipping_address = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the shipping address field to be merged.</p>
         pub fn set_shipping_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3714,6 +4076,7 @@ pub mod field_source_profile_ids {
             self.mailing_address = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the mailing address field to be merged.</p>
         pub fn set_mailing_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3726,6 +4089,7 @@ pub mod field_source_profile_ids {
             self.billing_address = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the billing type field to be merged.</p>
         pub fn set_billing_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3733,6 +4097,11 @@ pub mod field_source_profile_ids {
             self.billing_address = input;
             self
         }
+        /// Adds a key-value pair to `attributes`.
+        ///
+        /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
+        ///
+        /// <p>A unique identifier for the attributes field to be merged.</p>
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -3743,6 +4112,7 @@ pub mod field_source_profile_ids {
             self.attributes = Some(hash_map);
             self
         }
+        /// <p>A unique identifier for the attributes field to be merged.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -3823,6 +4193,7 @@ pub mod list_profile_object_type_template_item {
             self.template_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the object template.</p>
         pub fn set_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.template_id = input;
             self
@@ -3832,6 +4203,7 @@ pub mod list_profile_object_type_template_item {
             self.source_name = Some(input.into());
             self
         }
+        /// <p>The name of the source of the object template.</p>
         pub fn set_source_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source_name = input;
             self
@@ -3841,6 +4213,7 @@ pub mod list_profile_object_type_template_item {
             self.source_object = Some(input.into());
             self
         }
+        /// <p>The source of the object template.</p>
         pub fn set_source_object(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3874,9 +4247,9 @@ pub struct ListProfileObjectTypeItem {
     /// <p>Description of the profile object type.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The timestamp of when the domain was created.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The timestamp of when the domain was most recently edited.</p>
-    pub last_updated_at: std::option::Option<smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -3900,8 +4273,8 @@ pub mod list_profile_object_type_item {
     pub struct Builder {
         pub(crate) object_type_name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_updated_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -3912,6 +4285,7 @@ pub mod list_profile_object_type_item {
             self.object_type_name = Some(input.into());
             self
         }
+        /// <p>The name of the profile object type.</p>
         pub fn set_object_type_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3924,31 +4298,42 @@ pub mod list_profile_object_type_item {
             self.description = Some(input.into());
             self
         }
+        /// <p>Description of the profile object type.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
         /// <p>The timestamp of when the domain was created.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The timestamp of when the domain was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The timestamp of when the domain was most recently edited.</p>
-        pub fn last_updated_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_updated_at = Some(input);
             self
         }
+        /// <p>The timestamp of when the domain was most recently edited.</p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_updated_at = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -3959,6 +4344,7 @@ pub mod list_profile_object_type_item {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -4025,6 +4411,8 @@ pub mod list_profile_objects_item {
             self.object_type_name = Some(input.into());
             self
         }
+        /// <p>Specifies the kind of object being added to a profile, such as
+        /// "Salesforce-Account."</p>
         pub fn set_object_type_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4037,6 +4425,7 @@ pub mod list_profile_objects_item {
             self.profile_object_unique_key = Some(input.into());
             self
         }
+        /// <p>The unique identifier of the ProfileObject generated by the service.</p>
         pub fn set_profile_object_unique_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4049,6 +4438,7 @@ pub mod list_profile_objects_item {
             self.object = Some(input.into());
             self
         }
+        /// <p>A JSON representation of a ProfileObject that belongs to a profile.</p>
         pub fn set_object(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.object = input;
             self
@@ -4105,16 +4495,24 @@ pub mod object_filter {
             self.key_name = Some(input.into());
             self
         }
+        /// <p>A searchable identifier of a standard profile object. The predefined keys you can use to search for _asset include: _assetId, _assetName, _serialNumber.
+        /// The predefined keys you can use to search for _case include: _caseId.</p>
         pub fn set_key_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_name = input;
             self
         }
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>A list of key values.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
+        /// <p>A list of key values.</p>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4149,9 +4547,9 @@ pub struct ListIntegrationItem {
     /// <p>The name of the profile object type.</p>
     pub object_type_name: std::option::Option<std::string::String>,
     /// <p>The timestamp of when the domain was created.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The timestamp of when the domain was most recently edited.</p>
-    pub last_updated_at: std::option::Option<smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -4177,8 +4575,8 @@ pub mod list_integration_item {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) uri: std::option::Option<std::string::String>,
         pub(crate) object_type_name: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_updated_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -4189,6 +4587,7 @@ pub mod list_integration_item {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The unique name of the domain.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -4198,6 +4597,7 @@ pub mod list_integration_item {
             self.uri = Some(input.into());
             self
         }
+        /// <p>The URI of the S3 bucket or any other type of data source.</p>
         pub fn set_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.uri = input;
             self
@@ -4207,6 +4607,7 @@ pub mod list_integration_item {
             self.object_type_name = Some(input.into());
             self
         }
+        /// <p>The name of the profile object type.</p>
         pub fn set_object_type_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4215,26 +4616,36 @@ pub mod list_integration_item {
             self
         }
         /// <p>The timestamp of when the domain was created.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The timestamp of when the domain was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The timestamp of when the domain was most recently edited.</p>
-        pub fn last_updated_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_updated_at = Some(input);
             self
         }
+        /// <p>The timestamp of when the domain was most recently edited.</p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_updated_at = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -4245,6 +4656,7 @@ pub mod list_integration_item {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -4281,9 +4693,9 @@ pub struct ListDomainItem {
     /// <p>The unique name of the domain.</p>
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The timestamp of when the domain was created.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The timestamp of when the domain was most recently edited.</p>
-    pub last_updated_at: std::option::Option<smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -4305,8 +4717,8 @@ pub mod list_domain_item {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_updated_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -4317,31 +4729,42 @@ pub mod list_domain_item {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The unique name of the domain.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
         }
         /// <p>The timestamp of when the domain was created.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The timestamp of when the domain was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The timestamp of when the domain was most recently edited.</p>
-        pub fn last_updated_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_updated_at = Some(input);
             self
         }
+        /// <p>The timestamp of when the domain was most recently edited.</p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_updated_at = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -4352,6 +4775,7 @@ pub mod list_domain_item {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -4411,16 +4835,23 @@ pub mod match_item {
             self.match_id = Some(input.into());
             self
         }
+        /// <p>The unique identifiers for this group of profiles that match.</p>
         pub fn set_match_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.match_id = input;
             self
         }
+        /// Appends an item to `profile_ids`.
+        ///
+        /// To override the contents of this collection use [`set_profile_ids`](Self::set_profile_ids).
+        ///
+        /// <p>A list of identifiers for profiles that match.</p>
         pub fn profile_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.profile_ids.unwrap_or_default();
             v.push(input.into());
             self.profile_ids = Some(v);
             self
         }
+        /// <p>A list of identifiers for profiles that match.</p>
         pub fn set_profile_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4486,6 +4917,7 @@ pub mod domain_stats {
             self.profile_count = Some(input);
             self
         }
+        /// <p>The total number of profiles currently in the domain.</p>
         pub fn set_profile_count(mut self, input: std::option::Option<i64>) -> Self {
             self.profile_count = input;
             self
@@ -4497,6 +4929,9 @@ pub mod domain_stats {
             self.metering_profile_count = Some(input);
             self
         }
+        /// <p>The number of profiles that you are currently paying for in the domain. If you have more
+        /// than 100 objects associated with a single profile, that profile counts as two profiles. If
+        /// you have more than 200 objects, that profile counts as three, and so on.</p>
         pub fn set_metering_profile_count(mut self, input: std::option::Option<i64>) -> Self {
             self.metering_profile_count = input;
             self
@@ -4506,6 +4941,7 @@ pub mod domain_stats {
             self.object_count = Some(input);
             self
         }
+        /// <p>The total number of objects in domain.</p>
         pub fn set_object_count(mut self, input: std::option::Option<i64>) -> Self {
             self.object_count = input;
             self
@@ -4515,6 +4951,7 @@ pub mod domain_stats {
             self.total_size = Some(input);
             self
         }
+        /// <p>The total size, in bytes, of all objects in the domain.</p>
         pub fn set_total_size(mut self, input: std::option::Option<i64>) -> Self {
             self.total_size = input;
             self

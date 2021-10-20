@@ -41,6 +41,8 @@ pub mod job_execution_state {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the job execution. Can be one of: "QUEUED", "IN_PROGRESS", "FAILED", "SUCCESS", "CANCELED",
+        /// "REJECTED", or "REMOVED".</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::JobExecutionStatus>,
@@ -48,6 +50,11 @@ pub mod job_execution_state {
             self.status = input;
             self
         }
+        /// Adds a key-value pair to `status_details`.
+        ///
+        /// To override the contents of this collection use [`set_status_details`](Self::set_status_details).
+        ///
+        /// <p>A collection of name/value pairs that describe the status of the job execution.</p>
         pub fn status_details(
             mut self,
             k: impl Into<std::string::String>,
@@ -58,6 +65,7 @@ pub mod job_execution_state {
             self.status_details = Some(hash_map);
             self
         }
+        /// <p>A collection of name/value pairs that describe the status of the job execution.</p>
         pub fn set_status_details(
             mut self,
             input: std::option::Option<
@@ -73,6 +81,8 @@ pub mod job_execution_state {
             self.version_number = Some(input);
             self
         }
+        /// <p>The version of the job execution. Job execution versions are incremented each time they are updated by a
+        /// device.</p>
         pub fn set_version_number(mut self, input: std::option::Option<i64>) -> Self {
             self.version_number = input;
             self
@@ -94,6 +104,7 @@ impl JobExecutionState {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -105,13 +116,21 @@ impl JobExecutionState {
     std::hash::Hash,
 )]
 pub enum JobExecutionStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Canceled,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     InProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Queued,
+    #[allow(missing_docs)] // documentation missing in model
     Rejected,
+    #[allow(missing_docs)] // documentation missing in model
     Removed,
+    #[allow(missing_docs)] // documentation missing in model
     Succeeded,
+    #[allow(missing_docs)] // documentation missing in model
     TimedOut,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -139,6 +158,7 @@ impl std::str::FromStr for JobExecutionStatus {
     }
 }
 impl JobExecutionStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             JobExecutionStatus::Canceled => "CANCELED",
@@ -152,6 +172,7 @@ impl JobExecutionStatus {
             JobExecutionStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CANCELED",
@@ -249,6 +270,7 @@ pub mod job_execution {
             self.job_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier you assigned to this job when it was created.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -258,6 +280,7 @@ pub mod job_execution {
             self.thing_name = Some(input.into());
             self
         }
+        /// <p>The name of the thing that is executing the job.</p>
         pub fn set_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.thing_name = input;
             self
@@ -268,6 +291,8 @@ pub mod job_execution {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the job execution. Can be one of: "QUEUED", "IN_PROGRESS", "FAILED", "SUCCESS", "CANCELED",
+        /// "REJECTED", or "REMOVED".</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::JobExecutionStatus>,
@@ -275,6 +300,11 @@ pub mod job_execution {
             self.status = input;
             self
         }
+        /// Adds a key-value pair to `status_details`.
+        ///
+        /// To override the contents of this collection use [`set_status_details`](Self::set_status_details).
+        ///
+        /// <p>A collection of name/value pairs that describe the status of the job execution.</p>
         pub fn status_details(
             mut self,
             k: impl Into<std::string::String>,
@@ -285,6 +315,7 @@ pub mod job_execution {
             self.status_details = Some(hash_map);
             self
         }
+        /// <p>A collection of name/value pairs that describe the status of the job execution.</p>
         pub fn set_status_details(
             mut self,
             input: std::option::Option<
@@ -299,6 +330,7 @@ pub mod job_execution {
             self.queued_at = Some(input);
             self
         }
+        /// <p>The time, in milliseconds since the epoch, when the job execution was enqueued.</p>
         pub fn set_queued_at(mut self, input: std::option::Option<i64>) -> Self {
             self.queued_at = input;
             self
@@ -308,6 +340,7 @@ pub mod job_execution {
             self.started_at = Some(input);
             self
         }
+        /// <p>The time, in milliseconds since the epoch, when the job execution was started.</p>
         pub fn set_started_at(mut self, input: std::option::Option<i64>) -> Self {
             self.started_at = input;
             self
@@ -317,6 +350,7 @@ pub mod job_execution {
             self.last_updated_at = Some(input);
             self
         }
+        /// <p>The time, in milliseconds since the epoch, when the job execution was last updated. </p>
         pub fn set_last_updated_at(mut self, input: std::option::Option<i64>) -> Self {
             self.last_updated_at = input;
             self
@@ -327,6 +361,8 @@ pub mod job_execution {
             self.approximate_seconds_before_timed_out = Some(input);
             self
         }
+        /// <p>The estimated number of seconds that remain before the job execution status will be
+        /// changed to <code>TIMED_OUT</code>.</p>
         pub fn set_approximate_seconds_before_timed_out(
             mut self,
             input: std::option::Option<i64>,
@@ -340,6 +376,8 @@ pub mod job_execution {
             self.version_number = Some(input);
             self
         }
+        /// <p>The version of the job execution. Job execution versions are incremented each time they are updated by a
+        /// device.</p>
         pub fn set_version_number(mut self, input: std::option::Option<i64>) -> Self {
             self.version_number = input;
             self
@@ -350,6 +388,8 @@ pub mod job_execution {
             self.execution_number = Some(input);
             self
         }
+        /// <p>A number that identifies a particular job execution on a particular device. It can be used later in
+        /// commands that return or update job execution information.</p>
         pub fn set_execution_number(mut self, input: std::option::Option<i64>) -> Self {
             self.execution_number = input;
             self
@@ -359,6 +399,7 @@ pub mod job_execution {
             self.job_document = Some(input.into());
             self
         }
+        /// <p>The content of the job document.</p>
         pub fn set_job_document(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_document = input;
             self
@@ -437,6 +478,7 @@ pub mod job_execution_summary {
             self.job_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier you assigned to this job when it was created.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -446,6 +488,7 @@ pub mod job_execution_summary {
             self.queued_at = Some(input);
             self
         }
+        /// <p>The time, in milliseconds since the epoch, when the job execution was enqueued.</p>
         pub fn set_queued_at(mut self, input: std::option::Option<i64>) -> Self {
             self.queued_at = input;
             self
@@ -455,6 +498,7 @@ pub mod job_execution_summary {
             self.started_at = Some(input);
             self
         }
+        /// <p>The time, in milliseconds since the epoch, when the job execution started.</p>
         pub fn set_started_at(mut self, input: std::option::Option<i64>) -> Self {
             self.started_at = input;
             self
@@ -464,6 +508,7 @@ pub mod job_execution_summary {
             self.last_updated_at = Some(input);
             self
         }
+        /// <p>The time, in milliseconds since the epoch, when the job execution was last updated.</p>
         pub fn set_last_updated_at(mut self, input: std::option::Option<i64>) -> Self {
             self.last_updated_at = input;
             self
@@ -474,6 +519,8 @@ pub mod job_execution_summary {
             self.version_number = Some(input);
             self
         }
+        /// <p>The version of the job execution. Job execution versions are incremented each time AWS IoT Jobs receives
+        /// an update from a device.</p>
         pub fn set_version_number(mut self, input: std::option::Option<i64>) -> Self {
             self.version_number = input;
             self
@@ -483,6 +530,7 @@ pub mod job_execution_summary {
             self.execution_number = Some(input);
             self
         }
+        /// <p>A number that identifies a particular job execution on a particular device.</p>
         pub fn set_execution_number(mut self, input: std::option::Option<i64>) -> Self {
             self.execution_number = input;
             self

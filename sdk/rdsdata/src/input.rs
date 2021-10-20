@@ -21,6 +21,7 @@ pub mod batch_execute_statement_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -30,6 +31,7 @@ pub mod batch_execute_statement_input {
             self.secret_arn = Some(input.into());
             self
         }
+        /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
         pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_arn = input;
             self
@@ -39,6 +41,7 @@ pub mod batch_execute_statement_input {
             self.sql = Some(input.into());
             self
         }
+        /// <p>The SQL statement to run.</p>
         pub fn set_sql(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.sql = input;
             self
@@ -48,6 +51,7 @@ pub mod batch_execute_statement_input {
             self.database = Some(input.into());
             self
         }
+        /// <p>The name of the database.</p>
         pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.database = input;
             self
@@ -57,10 +61,29 @@ pub mod batch_execute_statement_input {
             self.schema = Some(input.into());
             self
         }
+        /// <p>The name of the database schema.</p>
         pub fn set_schema(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.schema = input;
             self
         }
+        /// Appends an item to `parameter_sets`.
+        ///
+        /// To override the contents of this collection use [`set_parameter_sets`](Self::set_parameter_sets).
+        ///
+        /// <p>The parameter set for the batch operation.</p>
+        /// <p>The SQL statement is executed as many times as the number of parameter sets provided.
+        /// To execute a SQL statement with no parameters, use one of the following options:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Specify one or more empty parameter sets.</p>
+        /// </li>
+        /// <li>
+        /// <p>Use the <code>ExecuteStatement</code> operation instead of the <code>BatchExecuteStatement</code> operation.</p>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>Array parameters are not supported.</p>
+        /// </note>
         pub fn parameter_sets(
             mut self,
             input: impl Into<std::vec::Vec<crate::model::SqlParameter>>,
@@ -70,6 +93,20 @@ pub mod batch_execute_statement_input {
             self.parameter_sets = Some(v);
             self
         }
+        /// <p>The parameter set for the batch operation.</p>
+        /// <p>The SQL statement is executed as many times as the number of parameter sets provided.
+        /// To execute a SQL statement with no parameters, use one of the following options:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Specify one or more empty parameter sets.</p>
+        /// </li>
+        /// <li>
+        /// <p>Use the <code>ExecuteStatement</code> operation instead of the <code>BatchExecuteStatement</code> operation.</p>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>Array parameters are not supported.</p>
+        /// </note>
         pub fn set_parameter_sets(
             mut self,
             input: std::option::Option<std::vec::Vec<std::vec::Vec<crate::model::SqlParameter>>>,
@@ -86,6 +123,11 @@ pub mod batch_execute_statement_input {
             self.transaction_id = Some(input.into());
             self
         }
+        /// <p>The identifier of a transaction that was started by using the
+        /// <code>BeginTransaction</code> operation. Specify the transaction ID of the
+        /// transaction that you want to include the SQL statement in.</p>
+        /// <p>If the SQL statement is not part of a transaction, don't set this
+        /// parameter.</p>
         pub fn set_transaction_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -98,7 +140,7 @@ pub mod batch_execute_statement_input {
             self,
         ) -> std::result::Result<
             crate::input::BatchExecuteStatementInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::BatchExecuteStatementInput {
                 resource_arn: self.resource_arn,
@@ -123,16 +165,16 @@ impl BatchExecuteStatementInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::BatchExecuteStatement,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::BatchExecuteStatementInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/BatchExecute").expect("formatting should succeed");
             Ok(())
         }
@@ -140,7 +182,7 @@ impl BatchExecuteStatementInput {
         fn update_http_builder(
             input: &crate::input::BatchExecuteStatementInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -149,27 +191,29 @@ impl BatchExecuteStatementInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::BatchExecuteStatementInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_batch_execute_statement(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -192,15 +236,15 @@ impl BatchExecuteStatementInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::BatchExecuteStatement::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "BatchExecuteStatement",
             "rdsdata",
         ));
@@ -209,10 +253,10 @@ impl BatchExecuteStatementInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -243,6 +287,7 @@ pub mod begin_transaction_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -252,6 +297,7 @@ pub mod begin_transaction_input {
             self.secret_arn = Some(input.into());
             self
         }
+        /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
         pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_arn = input;
             self
@@ -261,6 +307,7 @@ pub mod begin_transaction_input {
             self.database = Some(input.into());
             self
         }
+        /// <p>The name of the database.</p>
         pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.database = input;
             self
@@ -270,6 +317,7 @@ pub mod begin_transaction_input {
             self.schema = Some(input.into());
             self
         }
+        /// <p>The name of the database schema.</p>
         pub fn set_schema(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.schema = input;
             self
@@ -279,7 +327,7 @@ pub mod begin_transaction_input {
             self,
         ) -> std::result::Result<
             crate::input::BeginTransactionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::BeginTransactionInput {
                 resource_arn: self.resource_arn,
@@ -301,16 +349,16 @@ impl BeginTransactionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::BeginTransaction,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::BeginTransactionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/BeginTransaction").expect("formatting should succeed");
             Ok(())
         }
@@ -318,7 +366,7 @@ impl BeginTransactionInput {
         fn update_http_builder(
             input: &crate::input::BeginTransactionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -327,27 +375,27 @@ impl BeginTransactionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::BeginTransactionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_begin_transaction(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -370,15 +418,15 @@ impl BeginTransactionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::BeginTransaction::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "BeginTransaction",
             "rdsdata",
         ));
@@ -387,10 +435,10 @@ impl BeginTransactionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -420,6 +468,7 @@ pub mod commit_transaction_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -429,6 +478,7 @@ pub mod commit_transaction_input {
             self.secret_arn = Some(input.into());
             self
         }
+        /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
         pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_arn = input;
             self
@@ -438,6 +488,7 @@ pub mod commit_transaction_input {
             self.transaction_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the transaction to end and commit.</p>
         pub fn set_transaction_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -450,7 +501,7 @@ pub mod commit_transaction_input {
             self,
         ) -> std::result::Result<
             crate::input::CommitTransactionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CommitTransactionInput {
                 resource_arn: self.resource_arn,
@@ -471,16 +522,16 @@ impl CommitTransactionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CommitTransaction,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CommitTransactionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/CommitTransaction").expect("formatting should succeed");
             Ok(())
         }
@@ -488,7 +539,7 @@ impl CommitTransactionInput {
         fn update_http_builder(
             input: &crate::input::CommitTransactionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -497,27 +548,27 @@ impl CommitTransactionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CommitTransactionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_commit_transaction(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -540,15 +591,15 @@ impl CommitTransactionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CommitTransaction::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CommitTransaction",
             "rdsdata",
         ));
@@ -557,10 +608,10 @@ impl CommitTransactionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -592,6 +643,7 @@ pub mod execute_sql_input {
             self.db_cluster_or_instance_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the Aurora Serverless DB cluster.</p>
         pub fn set_db_cluster_or_instance_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -604,6 +656,7 @@ pub mod execute_sql_input {
             self.aws_secret_store_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the secret that enables access to the DB cluster.</p>
         pub fn set_aws_secret_store_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -619,6 +672,10 @@ pub mod execute_sql_input {
             self.sql_statements = Some(input.into());
             self
         }
+        /// <p>One or more SQL statements to run on the DB cluster.</p>
+        /// <p>You can separate SQL statements from each other with a semicolon (;). Any valid SQL
+        /// statement is permitted, including data definition, data manipulation, and commit
+        /// statements. </p>
         pub fn set_sql_statements(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -631,6 +688,7 @@ pub mod execute_sql_input {
             self.database = Some(input.into());
             self
         }
+        /// <p>The name of the database.</p>
         pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.database = input;
             self
@@ -640,6 +698,7 @@ pub mod execute_sql_input {
             self.schema = Some(input.into());
             self
         }
+        /// <p>The name of the database schema.</p>
         pub fn set_schema(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.schema = input;
             self
@@ -647,8 +706,10 @@ pub mod execute_sql_input {
         /// Consumes the builder and constructs a [`ExecuteSqlInput`](crate::input::ExecuteSqlInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ExecuteSqlInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ExecuteSqlInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ExecuteSqlInput {
                 db_cluster_or_instance_arn: self.db_cluster_or_instance_arn,
                 aws_secret_store_arn: self.aws_secret_store_arn,
@@ -670,16 +731,16 @@ impl ExecuteSqlInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ExecuteSql,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ExecuteSqlInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/ExecuteSql").expect("formatting should succeed");
             Ok(())
         }
@@ -687,7 +748,7 @@ impl ExecuteSqlInput {
         fn update_http_builder(
             input: &crate::input::ExecuteSqlInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -696,24 +757,26 @@ impl ExecuteSqlInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ExecuteSqlInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_execute_sql(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -736,25 +799,27 @@ impl ExecuteSqlInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ExecuteSql::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ExecuteSql",
-                    "rdsdata",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ExecuteSql::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ExecuteSql",
+            "rdsdata",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -791,6 +856,7 @@ pub mod execute_statement_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -800,6 +866,7 @@ pub mod execute_statement_input {
             self.secret_arn = Some(input.into());
             self
         }
+        /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
         pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_arn = input;
             self
@@ -809,6 +876,7 @@ pub mod execute_statement_input {
             self.sql = Some(input.into());
             self
         }
+        /// <p>The SQL statement to run.</p>
         pub fn set_sql(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.sql = input;
             self
@@ -818,6 +886,7 @@ pub mod execute_statement_input {
             self.database = Some(input.into());
             self
         }
+        /// <p>The name of the database.</p>
         pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.database = input;
             self
@@ -830,16 +899,32 @@ pub mod execute_statement_input {
             self.schema = Some(input.into());
             self
         }
+        /// <p>The name of the database schema.</p>
+        /// <note>
+        /// <p>Currently, the <code>schema</code> parameter isn't supported.</p>
+        /// </note>
         pub fn set_schema(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.schema = input;
             self
         }
+        /// Appends an item to `parameters`.
+        ///
+        /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
+        ///
+        /// <p>The parameters for the SQL statement.</p>
+        /// <note>
+        /// <p>Array parameters are not supported.</p>
+        /// </note>
         pub fn parameters(mut self, input: impl Into<crate::model::SqlParameter>) -> Self {
             let mut v = self.parameters.unwrap_or_default();
             v.push(input.into());
             self.parameters = Some(v);
             self
         }
+        /// <p>The parameters for the SQL statement.</p>
+        /// <note>
+        /// <p>Array parameters are not supported.</p>
+        /// </note>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SqlParameter>>,
@@ -855,6 +940,10 @@ pub mod execute_statement_input {
             self.transaction_id = Some(input.into());
             self
         }
+        /// <p>The identifier of a transaction that was started by using the
+        /// <code>BeginTransaction</code> operation. Specify the transaction ID of the
+        /// transaction that you want to include the SQL statement in.</p>
+        /// <p>If the SQL statement is not part of a transaction, don't set this parameter.</p>
         pub fn set_transaction_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -867,6 +956,7 @@ pub mod execute_statement_input {
             self.include_result_metadata = Some(input);
             self
         }
+        /// <p>A value that indicates whether to include metadata in the results.</p>
         pub fn set_include_result_metadata(mut self, input: std::option::Option<bool>) -> Self {
             self.include_result_metadata = input;
             self
@@ -883,6 +973,14 @@ pub mod execute_statement_input {
             self.continue_after_timeout = Some(input);
             self
         }
+        /// <p>A value that indicates whether to continue running the statement after
+        /// the call times out. By default, the statement stops running when the call
+        /// times out.</p>
+        /// <important>
+        /// <p>For DDL statements, we recommend continuing to run the statement after
+        /// the call times out. When a DDL statement terminates before it is finished
+        /// running, it can result in errors and possibly corrupted data structures.</p>
+        /// </important>
         pub fn set_continue_after_timeout(mut self, input: std::option::Option<bool>) -> Self {
             self.continue_after_timeout = input;
             self
@@ -892,6 +990,7 @@ pub mod execute_statement_input {
             self.result_set_options = Some(input);
             self
         }
+        /// <p>Options that control how the result set is returned.</p>
         pub fn set_result_set_options(
             mut self,
             input: std::option::Option<crate::model::ResultSetOptions>,
@@ -904,7 +1003,7 @@ pub mod execute_statement_input {
             self,
         ) -> std::result::Result<
             crate::input::ExecuteStatementInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ExecuteStatementInput {
                 resource_arn: self.resource_arn,
@@ -932,16 +1031,16 @@ impl ExecuteStatementInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ExecuteStatement,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ExecuteStatementInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/Execute").expect("formatting should succeed");
             Ok(())
         }
@@ -949,7 +1048,7 @@ impl ExecuteStatementInput {
         fn update_http_builder(
             input: &crate::input::ExecuteStatementInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -958,27 +1057,27 @@ impl ExecuteStatementInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ExecuteStatementInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_execute_statement(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1001,15 +1100,15 @@ impl ExecuteStatementInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ExecuteStatement::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ExecuteStatement",
             "rdsdata",
         ));
@@ -1018,10 +1117,10 @@ impl ExecuteStatementInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1051,6 +1150,7 @@ pub mod rollback_transaction_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -1060,6 +1160,7 @@ pub mod rollback_transaction_input {
             self.secret_arn = Some(input.into());
             self
         }
+        /// <p>The name or ARN of the secret that enables access to the DB cluster.</p>
         pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_arn = input;
             self
@@ -1069,6 +1170,7 @@ pub mod rollback_transaction_input {
             self.transaction_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the transaction to roll back.</p>
         pub fn set_transaction_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1081,7 +1183,7 @@ pub mod rollback_transaction_input {
             self,
         ) -> std::result::Result<
             crate::input::RollbackTransactionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::RollbackTransactionInput {
                 resource_arn: self.resource_arn,
@@ -1102,16 +1204,16 @@ impl RollbackTransactionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RollbackTransaction,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RollbackTransactionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/RollbackTransaction").expect("formatting should succeed");
             Ok(())
         }
@@ -1119,7 +1221,7 @@ impl RollbackTransactionInput {
         fn update_http_builder(
             input: &crate::input::RollbackTransactionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1128,25 +1230,27 @@ impl RollbackTransactionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RollbackTransactionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_rollback_transaction(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1169,15 +1273,15 @@ impl RollbackTransactionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::RollbackTransaction::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "RollbackTransaction",
             "rdsdata",
         ));
@@ -1186,10 +1290,10 @@ impl RollbackTransactionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,

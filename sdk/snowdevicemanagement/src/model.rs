@@ -43,6 +43,7 @@ pub mod task_summary {
             self.task_id = Some(input.into());
             self
         }
+        /// <p>The task ID.</p>
         pub fn set_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.task_id = input;
             self
@@ -52,6 +53,7 @@ pub mod task_summary {
             self.task_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the task.</p>
         pub fn set_task_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.task_arn = input;
             self
@@ -61,10 +63,17 @@ pub mod task_summary {
             self.state = Some(input);
             self
         }
+        /// <p>The state of the task assigned to one or many devices.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::TaskState>) -> Self {
             self.state = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource
+        /// in different ways, such as by purpose, owner, or environment.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -75,6 +84,8 @@ pub mod task_summary {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource
+        /// in different ways, such as by purpose, owner, or environment.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -102,6 +113,7 @@ impl TaskSummary {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -113,8 +125,11 @@ impl TaskSummary {
     std::hash::Hash,
 )]
 pub enum TaskState {
+    #[allow(missing_docs)] // documentation missing in model
     Canceled,
+    #[allow(missing_docs)] // documentation missing in model
     Completed,
+    #[allow(missing_docs)] // documentation missing in model
     InProgress,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -137,6 +152,7 @@ impl std::str::FromStr for TaskState {
     }
 }
 impl TaskState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TaskState::Canceled => "CANCELED",
@@ -145,6 +161,7 @@ impl TaskState {
             TaskState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CANCELED", "COMPLETED", "IN_PROGRESS"]
     }
@@ -155,6 +172,7 @@ impl AsRef<str> for TaskState {
     }
 }
 
+/// <p>The command given to the device to execute.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum Command {
@@ -164,6 +182,8 @@ pub enum Command {
     Unlock(crate::model::Unlock),
 }
 impl Command {
+    /// Tries to convert the enum instance into its [`Command`](crate::model::Command) variant.
+    /// Returns `Err(&Self) if it can't be converted.`
     pub fn as_reboot(&self) -> std::result::Result<&crate::model::Reboot, &Self> {
         if let Command::Reboot(val) = &self {
             Ok(&val)
@@ -171,9 +191,12 @@ impl Command {
             Err(&self)
         }
     }
+    /// Returns true if the enum instance is the `Command` variant.
     pub fn is_reboot(&self) -> bool {
         self.as_reboot().is_ok()
     }
+    /// Tries to convert the enum instance into its [`Command`](crate::model::Command) variant.
+    /// Returns `Err(&Self) if it can't be converted.`
     pub fn as_unlock(&self) -> std::result::Result<&crate::model::Unlock, &Self> {
         if let Command::Unlock(val) = &self {
             Ok(&val)
@@ -181,6 +204,7 @@ impl Command {
             Err(&self)
         }
     }
+    /// Returns true if the enum instance is the `Command` variant.
     pub fn is_unlock(&self) -> bool {
         self.as_unlock().is_ok()
     }
@@ -286,6 +310,7 @@ pub mod execution_summary {
             self.task_id = Some(input.into());
             self
         }
+        /// <p>The ID of the task.</p>
         pub fn set_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.task_id = input;
             self
@@ -295,6 +320,7 @@ pub mod execution_summary {
             self.execution_id = Some(input.into());
             self
         }
+        /// <p>The ID of the execution.</p>
         pub fn set_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.execution_id = input;
             self
@@ -304,6 +330,7 @@ pub mod execution_summary {
             self.managed_device_id = Some(input.into());
             self
         }
+        /// <p>The ID of the managed device that the task is being executed on.</p>
         pub fn set_managed_device_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -316,6 +343,7 @@ pub mod execution_summary {
             self.state = Some(input);
             self
         }
+        /// <p>The state of the execution.</p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::ExecutionState>,
@@ -341,6 +369,7 @@ impl ExecutionSummary {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -352,12 +381,19 @@ impl ExecutionSummary {
     std::hash::Hash,
 )]
 pub enum ExecutionState {
+    #[allow(missing_docs)] // documentation missing in model
     Canceled,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     InProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Queued,
+    #[allow(missing_docs)] // documentation missing in model
     Rejected,
+    #[allow(missing_docs)] // documentation missing in model
     Succeeded,
+    #[allow(missing_docs)] // documentation missing in model
     TimedOut,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -384,6 +420,7 @@ impl std::str::FromStr for ExecutionState {
     }
 }
 impl ExecutionState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ExecutionState::Canceled => "CANCELED",
@@ -396,6 +433,7 @@ impl ExecutionState {
             ExecutionState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CANCELED",
@@ -450,6 +488,7 @@ pub mod resource_summary {
             self.resource_type = Some(input.into());
             self
         }
+        /// <p>The resource type.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -462,6 +501,7 @@ pub mod resource_summary {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the resource.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -471,6 +511,7 @@ pub mod resource_summary {
             self.id = Some(input.into());
             self
         }
+        /// <p>The ID of the resource.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -499,7 +540,7 @@ pub struct InstanceSummary {
     /// <p>A structure containing details about the instance.</p>
     pub instance: std::option::Option<crate::model::Instance>,
     /// <p>When the instance summary was last updated.</p>
-    pub last_updated_at: std::option::Option<smithy_types::Instant>,
+    pub last_updated_at: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for InstanceSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -516,7 +557,7 @@ pub mod instance_summary {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance: std::option::Option<crate::model::Instance>,
-        pub(crate) last_updated_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_updated_at: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>A structure containing details about the instance.</p>
@@ -524,18 +565,20 @@ pub mod instance_summary {
             self.instance = Some(input);
             self
         }
+        /// <p>A structure containing details about the instance.</p>
         pub fn set_instance(mut self, input: std::option::Option<crate::model::Instance>) -> Self {
             self.instance = input;
             self
         }
         /// <p>When the instance summary was last updated.</p>
-        pub fn last_updated_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_updated_at = Some(input);
             self
         }
+        /// <p>When the instance summary was last updated.</p>
         pub fn set_last_updated_at(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_updated_at = input;
             self
@@ -578,9 +621,9 @@ pub struct Instance {
     /// <p>The public IPv4 address assigned to the instance.</p>
     pub public_ip_address: std::option::Option<std::string::String>,
     /// <p>When the instance was created.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>When the instance was last updated.</p>
-    pub updated_at: std::option::Option<smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Any block device mapping entries for the instance.</p>
     pub block_device_mappings:
         std::option::Option<std::vec::Vec<crate::model::InstanceBlockDeviceMapping>>,
@@ -623,8 +666,8 @@ pub mod instance {
         pub(crate) instance_type: std::option::Option<std::string::String>,
         pub(crate) private_ip_address: std::option::Option<std::string::String>,
         pub(crate) public_ip_address: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
-        pub(crate) updated_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) block_device_mappings:
             std::option::Option<std::vec::Vec<crate::model::InstanceBlockDeviceMapping>>,
         pub(crate) security_groups:
@@ -638,6 +681,7 @@ pub mod instance {
             self.image_id = Some(input.into());
             self
         }
+        /// <p>The ID of the AMI used to launch the instance.</p>
         pub fn set_image_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.image_id = input;
             self
@@ -648,6 +692,8 @@ pub mod instance {
             self.ami_launch_index = Some(input);
             self
         }
+        /// <p>The Amazon Machine Image (AMI) launch index, which you can use to find this instance in
+        /// the launch group. </p>
         pub fn set_ami_launch_index(mut self, input: std::option::Option<i32>) -> Self {
             self.ami_launch_index = input;
             self
@@ -657,6 +703,7 @@ pub mod instance {
             self.instance_id = Some(input.into());
             self
         }
+        /// <p>The ID of the instance.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.instance_id = input;
             self
@@ -666,6 +713,7 @@ pub mod instance {
             self.state = Some(input);
             self
         }
+        /// <p>The description of the current state of an instance.</p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::InstanceState>,
@@ -678,6 +726,7 @@ pub mod instance {
             self.instance_type = Some(input.into());
             self
         }
+        /// <p>The instance type.</p>
         pub fn set_instance_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -690,6 +739,7 @@ pub mod instance {
             self.private_ip_address = Some(input.into());
             self
         }
+        /// <p>The private IPv4 address assigned to the instance.</p>
         pub fn set_private_ip_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -702,6 +752,7 @@ pub mod instance {
             self.public_ip_address = Some(input.into());
             self
         }
+        /// <p>The public IPv4 address assigned to the instance.</p>
         pub fn set_public_ip_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -710,23 +761,36 @@ pub mod instance {
             self
         }
         /// <p>When the instance was created.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>When the instance was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>When the instance was last updated.</p>
-        pub fn updated_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.updated_at = Some(input);
             self
         }
-        pub fn set_updated_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>When the instance was last updated.</p>
+        pub fn set_updated_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.updated_at = input;
             self
         }
+        /// Appends an item to `block_device_mappings`.
+        ///
+        /// To override the contents of this collection use [`set_block_device_mappings`](Self::set_block_device_mappings).
+        ///
+        /// <p>Any block device mapping entries for the instance.</p>
         pub fn block_device_mappings(
             mut self,
             input: impl Into<crate::model::InstanceBlockDeviceMapping>,
@@ -736,6 +800,7 @@ pub mod instance {
             self.block_device_mappings = Some(v);
             self
         }
+        /// <p>Any block device mapping entries for the instance.</p>
         pub fn set_block_device_mappings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InstanceBlockDeviceMapping>>,
@@ -743,6 +808,11 @@ pub mod instance {
             self.block_device_mappings = input;
             self
         }
+        /// Appends an item to `security_groups`.
+        ///
+        /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
+        ///
+        /// <p>The security groups for the instance.</p>
         pub fn security_groups(
             mut self,
             input: impl Into<crate::model::SecurityGroupIdentifier>,
@@ -752,6 +822,7 @@ pub mod instance {
             self.security_groups = Some(v);
             self
         }
+        /// <p>The security groups for the instance.</p>
         pub fn set_security_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SecurityGroupIdentifier>>,
@@ -764,6 +835,7 @@ pub mod instance {
             self.cpu_options = Some(input);
             self
         }
+        /// <p>The CPU options for the instance.</p>
         pub fn set_cpu_options(
             mut self,
             input: std::option::Option<crate::model::CpuOptions>,
@@ -776,6 +848,7 @@ pub mod instance {
             self.root_device_name = Some(input.into());
             self
         }
+        /// <p>The device name of the root device volume (for example, <code>/dev/sda1</code>). </p>
         pub fn set_root_device_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -842,6 +915,7 @@ pub mod cpu_options {
             self.core_count = Some(input);
             self
         }
+        /// <p>The number of cores that the CPU can use.</p>
         pub fn set_core_count(mut self, input: std::option::Option<i32>) -> Self {
             self.core_count = input;
             self
@@ -851,6 +925,7 @@ pub mod cpu_options {
             self.threads_per_core = Some(input);
             self
         }
+        /// <p>The number of threads per core in the CPU.</p>
         pub fn set_threads_per_core(mut self, input: std::option::Option<i32>) -> Self {
             self.threads_per_core = input;
             self
@@ -903,6 +978,7 @@ pub mod security_group_identifier {
             self.group_id = Some(input.into());
             self
         }
+        /// <p>The security group ID.</p>
         pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.group_id = input;
             self
@@ -912,6 +988,7 @@ pub mod security_group_identifier {
             self.group_name = Some(input.into());
             self
         }
+        /// <p>The security group name.</p>
         pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.group_name = input;
             self
@@ -965,6 +1042,7 @@ pub mod instance_block_device_mapping {
             self.device_name = Some(input.into());
             self
         }
+        /// <p>The block device name.</p>
         pub fn set_device_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.device_name = input;
             self
@@ -975,6 +1053,8 @@ pub mod instance_block_device_mapping {
             self.ebs = Some(input);
             self
         }
+        /// <p>The parameters used to automatically set up Amazon Elastic Block Store (Amazon EBS)
+        /// volumes when the instance is launched. </p>
         pub fn set_ebs(
             mut self,
             input: std::option::Option<crate::model::EbsInstanceBlockDevice>,
@@ -1004,7 +1084,7 @@ impl InstanceBlockDeviceMapping {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EbsInstanceBlockDevice {
     /// <p>When the attachment was initiated.</p>
-    pub attach_time: std::option::Option<smithy_types::Instant>,
+    pub attach_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A value that indicates whether the volume is deleted on instance termination.</p>
     pub delete_on_termination: std::option::Option<bool>,
     /// <p>The attachment state.</p>
@@ -1028,20 +1108,21 @@ pub mod ebs_instance_block_device {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) attach_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) attach_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) delete_on_termination: std::option::Option<bool>,
         pub(crate) status: std::option::Option<crate::model::AttachmentStatus>,
         pub(crate) volume_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>When the attachment was initiated.</p>
-        pub fn attach_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn attach_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.attach_time = Some(input);
             self
         }
+        /// <p>When the attachment was initiated.</p>
         pub fn set_attach_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.attach_time = input;
             self
@@ -1051,6 +1132,7 @@ pub mod ebs_instance_block_device {
             self.delete_on_termination = Some(input);
             self
         }
+        /// <p>A value that indicates whether the volume is deleted on instance termination.</p>
         pub fn set_delete_on_termination(mut self, input: std::option::Option<bool>) -> Self {
             self.delete_on_termination = input;
             self
@@ -1060,6 +1142,7 @@ pub mod ebs_instance_block_device {
             self.status = Some(input);
             self
         }
+        /// <p>The attachment state.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::AttachmentStatus>,
@@ -1072,6 +1155,7 @@ pub mod ebs_instance_block_device {
             self.volume_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Amazon EBS volume.</p>
         pub fn set_volume_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.volume_id = input;
             self
@@ -1094,6 +1178,7 @@ impl EbsInstanceBlockDevice {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1105,9 +1190,13 @@ impl EbsInstanceBlockDevice {
     std::hash::Hash,
 )]
 pub enum AttachmentStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Attached,
+    #[allow(missing_docs)] // documentation missing in model
     Attaching,
+    #[allow(missing_docs)] // documentation missing in model
     Detached,
+    #[allow(missing_docs)] // documentation missing in model
     Detaching,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1131,6 +1220,7 @@ impl std::str::FromStr for AttachmentStatus {
     }
 }
 impl AttachmentStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AttachmentStatus::Attached => "ATTACHED",
@@ -1140,6 +1230,7 @@ impl AttachmentStatus {
             AttachmentStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ATTACHED", "ATTACHING", "DETACHED", "DETACHING"]
     }
@@ -1266,6 +1357,48 @@ pub mod instance_state {
             self.code = Some(input);
             self
         }
+        /// <p>The state of the instance as a 16-bit unsigned integer. </p>
+        /// <p>The high byte is all of the bits between 2^8 and (2^16)-1, which equals decimal values
+        /// between 256 and 65,535. These numerical values are used for internal purposes and should be
+        /// ignored. </p>
+        /// <p>The low byte is all of the bits between 2^0 and (2^8)-1, which equals decimal values
+        /// between 0 and 255. </p>
+        /// <p>The valid values for the instance state code are all in the range of the low byte. These
+        /// values are: </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>0</code> : <code>pending</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>16</code> : <code>running</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>32</code> : <code>shutting-down</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>48</code> : <code>terminated</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>64</code> : <code>stopping</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>80</code> : <code>stopped</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>You can ignore the high byte value by zeroing out all of the bits above 2^8 or 256 in
+        /// decimal. </p>
         pub fn set_code(mut self, input: std::option::Option<i32>) -> Self {
             self.code = input;
             self
@@ -1277,6 +1410,9 @@ pub mod instance_state {
             self.name = Some(input);
             self
         }
+        /// <p>The current
+        /// state
+        /// of the instance.</p>
         pub fn set_name(
             mut self,
             input: std::option::Option<crate::model::InstanceStateName>,
@@ -1300,6 +1436,7 @@ impl InstanceState {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1311,11 +1448,17 @@ impl InstanceState {
     std::hash::Hash,
 )]
 pub enum InstanceStateName {
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
+    #[allow(missing_docs)] // documentation missing in model
     Running,
+    #[allow(missing_docs)] // documentation missing in model
     ShuttingDown,
+    #[allow(missing_docs)] // documentation missing in model
     Stopped,
+    #[allow(missing_docs)] // documentation missing in model
     Stopping,
+    #[allow(missing_docs)] // documentation missing in model
     Terminated,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1341,6 +1484,7 @@ impl std::str::FromStr for InstanceStateName {
     }
 }
 impl InstanceStateName {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             InstanceStateName::Pending => "PENDING",
@@ -1352,6 +1496,7 @@ impl InstanceStateName {
             InstanceStateName::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "PENDING",
@@ -1413,6 +1558,7 @@ pub mod device_summary {
             self.managed_device_id = Some(input.into());
             self
         }
+        /// <p>The ID of the device.</p>
         pub fn set_managed_device_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1425,6 +1571,7 @@ pub mod device_summary {
             self.managed_device_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the device.</p>
         pub fn set_managed_device_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1437,6 +1584,7 @@ pub mod device_summary {
             self.associated_with_job = Some(input.into());
             self
         }
+        /// <p>The ID of the job used to order the device.</p>
         pub fn set_associated_with_job(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1444,6 +1592,12 @@ pub mod device_summary {
             self.associated_with_job = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource
+        /// in different ways, such as by purpose, owner, or environment.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1454,6 +1608,8 @@ pub mod device_summary {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>Optional metadata that you assign to a resource. You can use tags to categorize a resource
+        /// in different ways, such as by purpose, owner, or environment.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1518,6 +1674,7 @@ pub mod software_information {
             self.installed_version = Some(input.into());
             self
         }
+        /// <p>The version of the software currently installed on the device.</p>
         pub fn set_installed_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1530,6 +1687,7 @@ pub mod software_information {
             self.installing_version = Some(input.into());
             self
         }
+        /// <p>The version of the software being installed on the device.</p>
         pub fn set_installing_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1543,6 +1701,8 @@ pub mod software_information {
             self.install_state = Some(input.into());
             self
         }
+        /// <p>The state of the software that is installed or that is being installed on the
+        /// device.</p>
         pub fn set_install_state(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1611,6 +1771,7 @@ pub mod capacity {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the type of capacity, such as memory.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1620,6 +1781,7 @@ pub mod capacity {
             self.unit = Some(input.into());
             self
         }
+        /// <p>The unit of measure for the type of capacity.</p>
         pub fn set_unit(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.unit = input;
             self
@@ -1629,6 +1791,7 @@ pub mod capacity {
             self.total = Some(input);
             self
         }
+        /// <p>The total capacity on the device.</p>
         pub fn set_total(mut self, input: std::option::Option<i64>) -> Self {
             self.total = input;
             self
@@ -1638,6 +1801,7 @@ pub mod capacity {
             self.used = Some(input);
             self
         }
+        /// <p>The amount of capacity used on the device.</p>
         pub fn set_used(mut self, input: std::option::Option<i64>) -> Self {
             self.used = input;
             self
@@ -1647,6 +1811,7 @@ pub mod capacity {
             self.available = Some(input);
             self
         }
+        /// <p>The amount of capacity available for use on the device.</p>
         pub fn set_available(mut self, input: std::option::Option<i64>) -> Self {
             self.available = input;
             self
@@ -1731,6 +1896,7 @@ pub mod physical_network_interface {
             self.physical_network_interface_id = Some(input.into());
             self
         }
+        /// <p>The physical network interface ID.</p>
         pub fn set_physical_network_interface_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1748,6 +1914,9 @@ pub mod physical_network_interface {
             self.physical_connector_type = Some(input);
             self
         }
+        /// <p>The
+        /// physical
+        /// connector type.</p>
         pub fn set_physical_connector_type(
             mut self,
             input: std::option::Option<crate::model::PhysicalConnectorType>,
@@ -1760,6 +1929,7 @@ pub mod physical_network_interface {
             self.ip_address_assignment = Some(input);
             self
         }
+        /// <p>A value that describes whether the IP address is dynamic or persistent.</p>
         pub fn set_ip_address_assignment(
             mut self,
             input: std::option::Option<crate::model::IpAddressAssignment>,
@@ -1772,6 +1942,7 @@ pub mod physical_network_interface {
             self.ip_address = Some(input.into());
             self
         }
+        /// <p>The IP address of the device.</p>
         pub fn set_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ip_address = input;
             self
@@ -1781,6 +1952,7 @@ pub mod physical_network_interface {
             self.netmask = Some(input.into());
             self
         }
+        /// <p>The netmask used to divide the IP address into subnets.</p>
         pub fn set_netmask(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.netmask = input;
             self
@@ -1790,6 +1962,7 @@ pub mod physical_network_interface {
             self.default_gateway = Some(input.into());
             self
         }
+        /// <p>The default gateway of the device.</p>
         pub fn set_default_gateway(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1802,6 +1975,7 @@ pub mod physical_network_interface {
             self.mac_address = Some(input.into());
             self
         }
+        /// <p>The MAC address of the device.</p>
         pub fn set_mac_address(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mac_address = input;
             self
@@ -1827,6 +2001,7 @@ impl PhysicalNetworkInterface {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1838,7 +2013,9 @@ impl PhysicalNetworkInterface {
     std::hash::Hash,
 )]
 pub enum IpAddressAssignment {
+    #[allow(missing_docs)] // documentation missing in model
     Dhcp,
+    #[allow(missing_docs)] // documentation missing in model
     Static,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1860,6 +2037,7 @@ impl std::str::FromStr for IpAddressAssignment {
     }
 }
 impl IpAddressAssignment {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             IpAddressAssignment::Dhcp => "DHCP",
@@ -1867,6 +2045,7 @@ impl IpAddressAssignment {
             IpAddressAssignment::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DHCP", "STATIC"]
     }
@@ -1877,6 +2056,7 @@ impl AsRef<str> for IpAddressAssignment {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1888,10 +2068,15 @@ impl AsRef<str> for IpAddressAssignment {
     std::hash::Hash,
 )]
 pub enum PhysicalConnectorType {
+    #[allow(missing_docs)] // documentation missing in model
     Qsfp,
+    #[allow(missing_docs)] // documentation missing in model
     Rj45,
+    #[allow(missing_docs)] // documentation missing in model
     Rj452,
+    #[allow(missing_docs)] // documentation missing in model
     SfpPlus,
+    #[allow(missing_docs)] // documentation missing in model
     Wifi,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1916,6 +2101,7 @@ impl std::str::FromStr for PhysicalConnectorType {
     }
 }
 impl PhysicalConnectorType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PhysicalConnectorType::Qsfp => "QSFP",
@@ -1926,6 +2112,7 @@ impl PhysicalConnectorType {
             PhysicalConnectorType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["QSFP", "RJ45", "RJ45_2", "SFP_PLUS", "WIFI"]
     }
@@ -1936,6 +2123,7 @@ impl AsRef<str> for PhysicalConnectorType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1947,8 +2135,11 @@ impl AsRef<str> for PhysicalConnectorType {
     std::hash::Hash,
 )]
 pub enum UnlockState {
+    #[allow(missing_docs)] // documentation missing in model
     Locked,
+    #[allow(missing_docs)] // documentation missing in model
     Unlocked,
+    #[allow(missing_docs)] // documentation missing in model
     Unlocking,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1971,6 +2162,7 @@ impl std::str::FromStr for UnlockState {
     }
 }
 impl UnlockState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             UnlockState::Locked => "LOCKED",
@@ -1979,6 +2171,7 @@ impl UnlockState {
             UnlockState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["LOCKED", "UNLOCKED", "UNLOCKING"]
     }

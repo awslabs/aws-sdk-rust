@@ -30,6 +30,7 @@ impl UpdateConfigurationSetEventDestinationOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceOutput {}
@@ -59,6 +60,7 @@ impl UntagResourceOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceOutput {}
@@ -130,6 +132,14 @@ pub mod send_email_output {
             self.message_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the message that is generated when Amazon Pinpoint accepts the
+        /// message.</p>
+        /// <note>
+        /// <p>It is possible for Amazon Pinpoint to accept a message without sending it. This can happen
+        /// when the message you're trying to send has an attachment doesn't pass a virus check,
+        /// or when you send a templated email that contains invalid personalization content,
+        /// for example.</p>
+        /// </note>
         pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message_id = input;
             self
@@ -521,6 +531,7 @@ impl PutAccountDedicatedIpWarmupAttributesOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
@@ -545,12 +556,22 @@ pub mod list_tags_for_resource_output {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>An array that lists all the tags that are associated with the resource. Each tag
+        /// consists of a required tag key (<code>Key</code>) and an associated tag value
+        /// (<code>Value</code>)</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>An array that lists all the tags that are associated with the resource. Each tag
+        /// consists of a required tag key (<code>Key</code>) and an associated tag value
+        /// (<code>Value</code>)</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -603,12 +624,20 @@ pub mod list_email_identities_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `email_identities`.
+        ///
+        /// To override the contents of this collection use [`set_email_identities`](Self::set_email_identities).
+        ///
+        /// <p>An array that includes all of the identities associated with your Amazon Pinpoint
+        /// account.</p>
         pub fn email_identities(mut self, input: impl Into<crate::model::IdentityInfo>) -> Self {
             let mut v = self.email_identities.unwrap_or_default();
             v.push(input.into());
             self.email_identities = Some(v);
             self
         }
+        /// <p>An array that includes all of the identities associated with your Amazon Pinpoint
+        /// account.</p>
         pub fn set_email_identities(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::IdentityInfo>>,
@@ -624,6 +653,10 @@ pub mod list_email_identities_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A token that indicates that there are additional configuration sets to list. To view
+        /// additional configuration sets, issue another request to
+        /// <code>ListEmailIdentities</code>, and pass this token in the <code>NextToken</code>
+        /// parameter.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -682,6 +715,12 @@ pub mod list_domain_deliverability_campaigns_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `domain_deliverability_campaigns`.
+        ///
+        /// To override the contents of this collection use [`set_domain_deliverability_campaigns`](Self::set_domain_deliverability_campaigns).
+        ///
+        /// <p>An array of responses, one for each campaign that used the domain to send email during
+        /// the specified time range.</p>
         pub fn domain_deliverability_campaigns(
             mut self,
             input: impl Into<crate::model::DomainDeliverabilityCampaign>,
@@ -691,6 +730,8 @@ pub mod list_domain_deliverability_campaigns_output {
             self.domain_deliverability_campaigns = Some(v);
             self
         }
+        /// <p>An array of responses, one for each campaign that used the domain to send email during
+        /// the specified time range.</p>
         pub fn set_domain_deliverability_campaigns(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DomainDeliverabilityCampaign>>,
@@ -705,6 +746,9 @@ pub mod list_domain_deliverability_campaigns_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A token that’s returned from a previous call to the
+        /// <code>ListDomainDeliverabilityCampaigns</code> operation. This token indicates the
+        /// position of the campaign in the list of campaigns.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -760,6 +804,11 @@ pub mod list_deliverability_test_reports_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `deliverability_test_reports`.
+        ///
+        /// To override the contents of this collection use [`set_deliverability_test_reports`](Self::set_deliverability_test_reports).
+        ///
+        /// <p>An object that contains a lists of predictive inbox placement tests that you've performed.</p>
         pub fn deliverability_test_reports(
             mut self,
             input: impl Into<crate::model::DeliverabilityTestReport>,
@@ -769,6 +818,7 @@ pub mod list_deliverability_test_reports_output {
             self.deliverability_test_reports = Some(v);
             self
         }
+        /// <p>An object that contains a lists of predictive inbox placement tests that you've performed.</p>
         pub fn set_deliverability_test_reports(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DeliverabilityTestReport>>,
@@ -783,6 +833,9 @@ pub mod list_deliverability_test_reports_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A token that indicates that there are additional predictive inbox placement tests to list. To view additional
+        /// predictive inbox placement tests, issue another request to <code>ListDeliverabilityTestReports</code>, and pass
+        /// this token in the <code>NextToken</code> parameter.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -833,12 +886,20 @@ pub mod list_dedicated_ip_pools_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `dedicated_ip_pools`.
+        ///
+        /// To override the contents of this collection use [`set_dedicated_ip_pools`](Self::set_dedicated_ip_pools).
+        ///
+        /// <p>A list of all of the dedicated IP pools that are associated with your Amazon Pinpoint
+        /// account.</p>
         pub fn dedicated_ip_pools(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.dedicated_ip_pools.unwrap_or_default();
             v.push(input.into());
             self.dedicated_ip_pools = Some(v);
             self
         }
+        /// <p>A list of all of the dedicated IP pools that are associated with your Amazon Pinpoint
+        /// account.</p>
         pub fn set_dedicated_ip_pools(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -853,6 +914,9 @@ pub mod list_dedicated_ip_pools_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A token that indicates that there are additional IP pools to list. To view additional
+        /// IP pools, issue another request to <code>ListDedicatedIpPools</code>, passing this token
+        /// in the <code>NextToken</code> parameter.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -904,12 +968,20 @@ pub mod list_configuration_sets_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `configuration_sets`.
+        ///
+        /// To override the contents of this collection use [`set_configuration_sets`](Self::set_configuration_sets).
+        ///
+        /// <p>An array that contains all of the configuration sets in your Amazon Pinpoint account in the
+        /// current AWS Region.</p>
         pub fn configuration_sets(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.configuration_sets.unwrap_or_default();
             v.push(input.into());
             self.configuration_sets = Some(v);
             self
         }
+        /// <p>An array that contains all of the configuration sets in your Amazon Pinpoint account in the
+        /// current AWS Region.</p>
         pub fn set_configuration_sets(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -925,6 +997,10 @@ pub mod list_configuration_sets_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A token that indicates that there are additional configuration sets to list. To view
+        /// additional configuration sets, issue another request to
+        /// <code>ListConfigurationSets</code>, and pass this token in the
+        /// <code>NextToken</code> parameter.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1013,6 +1089,7 @@ pub mod get_email_identity_output {
             self.identity_type = Some(input);
             self
         }
+        /// <p>The email identity type.</p>
         pub fn set_identity_type(
             mut self,
             input: std::option::Option<crate::model::IdentityType>,
@@ -1033,6 +1110,15 @@ pub mod get_email_identity_output {
             self.feedback_forwarding_status = Some(input);
             self
         }
+        /// <p>The feedback forwarding configuration for the identity.</p>
+        /// <p>If the value is <code>true</code>, Amazon Pinpoint sends you email notifications when bounce or
+        /// complaint events occur. Amazon Pinpoint sends this notification to the address that you specified
+        /// in the Return-Path header of the original email.</p>
+        /// <p>When you set this value to <code>false</code>, Amazon Pinpoint sends notifications through other
+        /// mechanisms, such as by notifying an Amazon SNS topic or another event destination. You're
+        /// required to have a method of tracking bounces and complaints. If you haven't set up
+        /// another mechanism for receiving bounce or complaint notifications, Amazon Pinpoint sends an email
+        /// notification when these events occur (even if this setting is disabled).</p>
         pub fn set_feedback_forwarding_status(mut self, input: std::option::Option<bool>) -> Self {
             self.feedback_forwarding_status = input;
             self
@@ -1044,6 +1130,9 @@ pub mod get_email_identity_output {
             self.verified_for_sending_status = Some(input);
             self
         }
+        /// <p>Specifies whether or not the identity is verified. In Amazon Pinpoint, you can only send email
+        /// from verified email addresses or domains. For more information about verifying
+        /// identities, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon Pinpoint User Guide</a>.</p>
         pub fn set_verified_for_sending_status(mut self, input: std::option::Option<bool>) -> Self {
             self.verified_for_sending_status = input;
             self
@@ -1055,6 +1144,9 @@ pub mod get_email_identity_output {
             self.dkim_attributes = Some(input);
             self
         }
+        /// <p>An object that contains information about the DKIM attributes for the identity. This
+        /// object includes the tokens that you use to create the CNAME records that are required to
+        /// complete the DKIM verification process.</p>
         pub fn set_dkim_attributes(
             mut self,
             input: std::option::Option<crate::model::DkimAttributes>,
@@ -1068,6 +1160,8 @@ pub mod get_email_identity_output {
             self.mail_from_attributes = Some(input);
             self
         }
+        /// <p>An object that contains information about the Mail-From attributes for the email
+        /// identity.</p>
         pub fn set_mail_from_attributes(
             mut self,
             input: std::option::Option<crate::model::MailFromAttributes>,
@@ -1075,12 +1169,20 @@ pub mod get_email_identity_output {
             self.mail_from_attributes = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>An array of objects that define the tags (keys and values) that are associated with
+        /// the email identity.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>An array of objects that define the tags (keys and values) that are associated with
+        /// the email identity.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1147,6 +1249,9 @@ pub mod get_domain_statistics_report_output {
             self.overall_volume = Some(input);
             self
         }
+        /// <p>An object that contains deliverability metrics for the domain that you specified. The
+        /// data in this object is a summary of all of the data that was collected from the
+        /// <code>StartDate</code> to the <code>EndDate</code>.</p>
         pub fn set_overall_volume(
             mut self,
             input: std::option::Option<crate::model::OverallVolume>,
@@ -1154,12 +1259,22 @@ pub mod get_domain_statistics_report_output {
             self.overall_volume = input;
             self
         }
+        /// Appends an item to `daily_volumes`.
+        ///
+        /// To override the contents of this collection use [`set_daily_volumes`](Self::set_daily_volumes).
+        ///
+        /// <p>An object that contains deliverability metrics for the domain that you specified. This
+        /// object contains data for each day, starting on the <code>StartDate</code> and ending on
+        /// the <code>EndDate</code>.</p>
         pub fn daily_volumes(mut self, input: impl Into<crate::model::DailyVolume>) -> Self {
             let mut v = self.daily_volumes.unwrap_or_default();
             v.push(input.into());
             self.daily_volumes = Some(v);
             self
         }
+        /// <p>An object that contains deliverability metrics for the domain that you specified. This
+        /// object contains data for each day, starting on the <code>StartDate</code> and ending on
+        /// the <code>EndDate</code>.</p>
         pub fn set_daily_volumes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DailyVolume>>,
@@ -1222,6 +1337,7 @@ pub mod get_domain_deliverability_campaign_output {
             self.domain_deliverability_campaign = Some(input);
             self
         }
+        /// <p>An object that contains the deliverability data for the campaign.</p>
         pub fn set_domain_deliverability_campaign(
             mut self,
             input: std::option::Option<crate::model::DomainDeliverabilityCampaign>,
@@ -1300,6 +1416,7 @@ pub mod get_deliverability_test_report_output {
             self.deliverability_test_report = Some(input);
             self
         }
+        /// <p>An object that contains the results of the predictive inbox placement test.</p>
         pub fn set_deliverability_test_report(
             mut self,
             input: std::option::Option<crate::model::DeliverabilityTestReport>,
@@ -1314,6 +1431,9 @@ pub mod get_deliverability_test_report_output {
             self.overall_placement = Some(input);
             self
         }
+        /// <p>An object that specifies how many test messages that were sent during the predictive inbox placement test were
+        /// delivered to recipients' inboxes, how many were sent to recipients' spam folders, and
+        /// how many weren't delivered.</p>
         pub fn set_overall_placement(
             mut self,
             input: std::option::Option<crate::model::PlacementStatistics>,
@@ -1321,12 +1441,20 @@ pub mod get_deliverability_test_report_output {
             self.overall_placement = input;
             self
         }
+        /// Appends an item to `isp_placements`.
+        ///
+        /// To override the contents of this collection use [`set_isp_placements`](Self::set_isp_placements).
+        ///
+        /// <p>An object that describes how the test email was handled by several email providers,
+        /// including Gmail, Hotmail, Yahoo, AOL, and others.</p>
         pub fn isp_placements(mut self, input: impl Into<crate::model::IspPlacement>) -> Self {
             let mut v = self.isp_placements.unwrap_or_default();
             v.push(input.into());
             self.isp_placements = Some(v);
             self
         }
+        /// <p>An object that describes how the test email was handled by several email providers,
+        /// including Gmail, Hotmail, Yahoo, AOL, and others.</p>
         pub fn set_isp_placements(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::IspPlacement>>,
@@ -1340,16 +1468,26 @@ pub mod get_deliverability_test_report_output {
             self.message = Some(input.into());
             self
         }
+        /// <p>An object that contains the message that you sent when you performed this
+        /// predictive inbox placement test.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>An array of objects that define the tags (keys and values) that are associated with
+        /// the predictive inbox placement test.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>An array of objects that define the tags (keys and values) that are associated with
+        /// the predictive inbox placement test.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1387,7 +1525,7 @@ pub struct GetDeliverabilityDashboardOptionsOutput {
     /// is scheduled to expire, if your subscription is scheduled to expire at the end of the
     /// current calendar month. This value is null if you have an active subscription that isn’t
     /// due to expire at the end of the month.</p>
-    pub subscription_expiry_date: std::option::Option<smithy_types::Instant>,
+    pub subscription_expiry_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The current status of your Deliverability dashboard subscription. If this value is
     /// <code>PENDING_EXPIRATION</code>, your subscription is scheduled to expire at the end
     /// of the current calendar month.</p>
@@ -1424,7 +1562,7 @@ pub mod get_deliverability_dashboard_options_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dashboard_enabled: std::option::Option<bool>,
-        pub(crate) subscription_expiry_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) subscription_expiry_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) account_status:
             std::option::Option<crate::model::DeliverabilityDashboardAccountStatus>,
         pub(crate) active_subscribed_domains:
@@ -1439,6 +1577,8 @@ pub mod get_deliverability_dashboard_options_output {
             self.dashboard_enabled = Some(input);
             self
         }
+        /// <p>Specifies whether the Deliverability dashboard is enabled for your Amazon Pinpoint account. If this value
+        /// is <code>true</code>, the dashboard is enabled.</p>
         pub fn set_dashboard_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.dashboard_enabled = input;
             self
@@ -1447,13 +1587,17 @@ pub mod get_deliverability_dashboard_options_output {
         /// is scheduled to expire, if your subscription is scheduled to expire at the end of the
         /// current calendar month. This value is null if you have an active subscription that isn’t
         /// due to expire at the end of the month.</p>
-        pub fn subscription_expiry_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn subscription_expiry_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.subscription_expiry_date = Some(input);
             self
         }
+        /// <p>The date, in Unix time format, when your current subscription to the Deliverability dashboard
+        /// is scheduled to expire, if your subscription is scheduled to expire at the end of the
+        /// current calendar month. This value is null if you have an active subscription that isn’t
+        /// due to expire at the end of the month.</p>
         pub fn set_subscription_expiry_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.subscription_expiry_date = input;
             self
@@ -1468,6 +1612,9 @@ pub mod get_deliverability_dashboard_options_output {
             self.account_status = Some(input);
             self
         }
+        /// <p>The current status of your Deliverability dashboard subscription. If this value is
+        /// <code>PENDING_EXPIRATION</code>, your subscription is scheduled to expire at the end
+        /// of the current calendar month.</p>
         pub fn set_account_status(
             mut self,
             input: std::option::Option<crate::model::DeliverabilityDashboardAccountStatus>,
@@ -1475,6 +1622,13 @@ pub mod get_deliverability_dashboard_options_output {
             self.account_status = input;
             self
         }
+        /// Appends an item to `active_subscribed_domains`.
+        ///
+        /// To override the contents of this collection use [`set_active_subscribed_domains`](Self::set_active_subscribed_domains).
+        ///
+        /// <p>An array of objects, one for each verified domain that you use to send email and
+        /// currently has an active Deliverability dashboard subscription that isn’t scheduled to expire at
+        /// the end of the current calendar month.</p>
         pub fn active_subscribed_domains(
             mut self,
             input: impl Into<crate::model::DomainDeliverabilityTrackingOption>,
@@ -1484,6 +1638,9 @@ pub mod get_deliverability_dashboard_options_output {
             self.active_subscribed_domains = Some(v);
             self
         }
+        /// <p>An array of objects, one for each verified domain that you use to send email and
+        /// currently has an active Deliverability dashboard subscription that isn’t scheduled to expire at
+        /// the end of the current calendar month.</p>
         pub fn set_active_subscribed_domains(
             mut self,
             input: std::option::Option<
@@ -1493,6 +1650,13 @@ pub mod get_deliverability_dashboard_options_output {
             self.active_subscribed_domains = input;
             self
         }
+        /// Appends an item to `pending_expiration_subscribed_domains`.
+        ///
+        /// To override the contents of this collection use [`set_pending_expiration_subscribed_domains`](Self::set_pending_expiration_subscribed_domains).
+        ///
+        /// <p>An array of objects, one for each verified domain that you use to send email and
+        /// currently has an active Deliverability dashboard subscription that's scheduled to expire at the
+        /// end of the current calendar month.</p>
         pub fn pending_expiration_subscribed_domains(
             mut self,
             input: impl Into<crate::model::DomainDeliverabilityTrackingOption>,
@@ -1504,6 +1668,9 @@ pub mod get_deliverability_dashboard_options_output {
             self.pending_expiration_subscribed_domains = Some(v);
             self
         }
+        /// <p>An array of objects, one for each verified domain that you use to send email and
+        /// currently has an active Deliverability dashboard subscription that's scheduled to expire at the
+        /// end of the current calendar month.</p>
         pub fn set_pending_expiration_subscribed_domains(
             mut self,
             input: std::option::Option<
@@ -1563,12 +1730,20 @@ pub mod get_dedicated_ips_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `dedicated_ips`.
+        ///
+        /// To override the contents of this collection use [`set_dedicated_ips`](Self::set_dedicated_ips).
+        ///
+        /// <p>A list of dedicated IP addresses that are reserved for use by your Amazon Pinpoint
+        /// account.</p>
         pub fn dedicated_ips(mut self, input: impl Into<crate::model::DedicatedIp>) -> Self {
             let mut v = self.dedicated_ips.unwrap_or_default();
             v.push(input.into());
             self.dedicated_ips = Some(v);
             self
         }
+        /// <p>A list of dedicated IP addresses that are reserved for use by your Amazon Pinpoint
+        /// account.</p>
         pub fn set_dedicated_ips(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DedicatedIp>>,
@@ -1583,6 +1758,9 @@ pub mod get_dedicated_ips_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A token that indicates that there are additional dedicated IP addresses to list. To
+        /// view additional addresses, issue another request to <code>GetDedicatedIps</code>,
+        /// passing this token in the <code>NextToken</code> parameter.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1631,6 +1809,7 @@ pub mod get_dedicated_ip_output {
             self.dedicated_ip = Some(input);
             self
         }
+        /// <p>An object that contains information about a dedicated IP address.</p>
         pub fn set_dedicated_ip(
             mut self,
             input: std::option::Option<crate::model::DedicatedIp>,
@@ -1678,6 +1857,12 @@ pub mod get_configuration_set_event_destinations_output {
             std::option::Option<std::vec::Vec<crate::model::EventDestination>>,
     }
     impl Builder {
+        /// Appends an item to `event_destinations`.
+        ///
+        /// To override the contents of this collection use [`set_event_destinations`](Self::set_event_destinations).
+        ///
+        /// <p>An array that includes all of the events destinations that have been configured for
+        /// the configuration set.</p>
         pub fn event_destinations(
             mut self,
             input: impl Into<crate::model::EventDestination>,
@@ -1687,6 +1872,8 @@ pub mod get_configuration_set_event_destinations_output {
             self.event_destinations = Some(v);
             self
         }
+        /// <p>An array that includes all of the events destinations that have been configured for
+        /// the configuration set.</p>
         pub fn set_event_destinations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EventDestination>>,
@@ -1762,6 +1949,7 @@ pub mod get_configuration_set_output {
             self.configuration_set_name = Some(input.into());
             self
         }
+        /// <p>The name of the configuration set.</p>
         pub fn set_configuration_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1775,6 +1963,8 @@ pub mod get_configuration_set_output {
             self.tracking_options = Some(input);
             self
         }
+        /// <p>An object that defines the open and click tracking options for emails that you send
+        /// using the configuration set.</p>
         pub fn set_tracking_options(
             mut self,
             input: std::option::Option<crate::model::TrackingOptions>,
@@ -1788,6 +1978,8 @@ pub mod get_configuration_set_output {
             self.delivery_options = Some(input);
             self
         }
+        /// <p>An object that defines the dedicated IP pool that is used to send emails that you send
+        /// using the configuration set.</p>
         pub fn set_delivery_options(
             mut self,
             input: std::option::Option<crate::model::DeliveryOptions>,
@@ -1801,6 +1993,8 @@ pub mod get_configuration_set_output {
             self.reputation_options = Some(input);
             self
         }
+        /// <p>An object that defines whether or not Amazon Pinpoint collects reputation metrics for the emails
+        /// that you send that use the configuration set.</p>
         pub fn set_reputation_options(
             mut self,
             input: std::option::Option<crate::model::ReputationOptions>,
@@ -1814,6 +2008,8 @@ pub mod get_configuration_set_output {
             self.sending_options = Some(input);
             self
         }
+        /// <p>An object that defines whether or not Amazon Pinpoint can send email that you send using the
+        /// configuration set.</p>
         pub fn set_sending_options(
             mut self,
             input: std::option::Option<crate::model::SendingOptions>,
@@ -1821,12 +2017,20 @@ pub mod get_configuration_set_output {
             self.sending_options = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>An array of objects that define the tags (keys and values) that are associated with
+        /// the configuration set.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>An array of objects that define the tags (keys and values) that are associated with
+        /// the configuration set.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1885,6 +2089,12 @@ pub mod get_blacklist_reports_output {
         >,
     }
     impl Builder {
+        /// Adds a key-value pair to `blacklist_report`.
+        ///
+        /// To override the contents of this collection use [`set_blacklist_report`](Self::set_blacklist_report).
+        ///
+        /// <p>An object that contains information about a blacklist that one of your dedicated IP
+        /// addresses appears on.</p>
         pub fn blacklist_report(
             mut self,
             k: impl Into<std::string::String>,
@@ -1895,6 +2105,8 @@ pub mod get_blacklist_reports_output {
             self.blacklist_report = Some(hash_map);
             self
         }
+        /// <p>An object that contains information about a blacklist that one of your dedicated IP
+        /// addresses appears on.</p>
         pub fn set_blacklist_report(
             mut self,
             input: std::option::Option<
@@ -2004,6 +2216,8 @@ pub mod get_account_output {
             self.send_quota = Some(input);
             self
         }
+        /// <p>An object that contains information about the per-day and per-second sending limits
+        /// for your Amazon Pinpoint account in the current AWS Region.</p>
         pub fn set_send_quota(
             mut self,
             input: std::option::Option<crate::model::SendQuota>,
@@ -2017,6 +2231,8 @@ pub mod get_account_output {
             self.sending_enabled = Some(input);
             self
         }
+        /// <p>Indicates whether or not email sending is enabled for your Amazon Pinpoint account in the
+        /// current AWS Region.</p>
         pub fn set_sending_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.sending_enabled = input;
             self
@@ -2027,6 +2243,8 @@ pub mod get_account_output {
             self.dedicated_ip_auto_warmup_enabled = Some(input);
             self
         }
+        /// <p>Indicates whether or not the automatic warm-up feature is enabled for dedicated IP
+        /// addresses that are associated with your account.</p>
         pub fn set_dedicated_ip_auto_warmup_enabled(
             mut self,
             input: std::option::Option<bool>,
@@ -2060,6 +2278,28 @@ pub mod get_account_output {
             self.enforcement_status = Some(input.into());
             self
         }
+        /// <p>The reputation status of your Amazon Pinpoint account. The status can be one of the
+        /// following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>HEALTHY</code> – There are no reputation-related issues that
+        /// currently impact your account.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PROBATION</code> – We've identified some issues with your Amazon Pinpoint
+        /// account. We're placing your account under review while you work on correcting
+        /// these issues.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SHUTDOWN</code> – Your account's ability to send email is
+        /// currently paused because of an issue with the email sent from your account. When
+        /// you correct the issue, you can contact us and request that your account's
+        /// ability to send email is resumed.</p>
+        /// </li>
+        /// </ul>
         pub fn set_enforcement_status(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2081,6 +2321,16 @@ pub mod get_account_output {
             self.production_access_enabled = Some(input);
             self
         }
+        /// <p>Indicates whether or not your account has production access in the current AWS
+        /// Region.</p>
+        /// <p>If the value is <code>false</code>, then your account is in the
+        /// <i>sandbox</i>. When your account is in the sandbox, you can only send
+        /// email to verified identities. Additionally, the maximum number of emails you can send in
+        /// a 24-hour period (your sending quota) is 200, and the maximum number of emails you can
+        /// send per second (your maximum sending rate) is 1.</p>
+        /// <p>If the value is <code>true</code>, then your account has production access. When your
+        /// account has production access, you can send email to any address. The sending quota and
+        /// maximum sending rate for your account vary based on your specific use case.</p>
         pub fn set_production_access_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.production_access_enabled = input;
             self
@@ -2276,6 +2526,7 @@ pub mod create_email_identity_output {
             self.identity_type = Some(input);
             self
         }
+        /// <p>The email identity type.</p>
         pub fn set_identity_type(
             mut self,
             input: std::option::Option<crate::model::IdentityType>,
@@ -2290,6 +2541,9 @@ pub mod create_email_identity_output {
             self.verified_for_sending_status = Some(input);
             self
         }
+        /// <p>Specifies whether or not the identity is verified. In Amazon Pinpoint, you can only send email
+        /// from verified email addresses or domains. For more information about verifying
+        /// identities, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-email-manage-verify.html">Amazon Pinpoint User Guide</a>.</p>
         pub fn set_verified_for_sending_status(mut self, input: std::option::Option<bool>) -> Self {
             self.verified_for_sending_status = input;
             self
@@ -2301,6 +2555,9 @@ pub mod create_email_identity_output {
             self.dkim_attributes = Some(input);
             self
         }
+        /// <p>An object that contains information about the DKIM attributes for the identity. This
+        /// object includes the tokens that you use to create the CNAME records that are required to
+        /// complete the DKIM verification process.</p>
         pub fn set_dkim_attributes(
             mut self,
             input: std::option::Option<crate::model::DkimAttributes>,
@@ -2364,6 +2621,7 @@ pub mod create_deliverability_test_report_output {
             self.report_id = Some(input.into());
             self
         }
+        /// <p>A unique string that identifies the predictive inbox placement test.</p>
         pub fn set_report_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.report_id = input;
             self
@@ -2379,6 +2637,10 @@ pub mod create_deliverability_test_report_output {
             self.deliverability_test_status = Some(input);
             self
         }
+        /// <p>The status of the predictive inbox placement test. If the status is <code>IN_PROGRESS</code>, then the predictive inbox placement test
+        /// is currently running. Predictive inbox placement tests are usually complete within 24 hours of creating the
+        /// test. If the status is <code>COMPLETE</code>, then the test is finished, and you can use
+        /// the <code>GetDeliverabilityTestReport</code> to view the results of the test.</p>
         pub fn set_deliverability_test_status(
             mut self,
             input: std::option::Option<crate::model::DeliverabilityTestStatus>,

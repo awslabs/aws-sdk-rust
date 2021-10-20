@@ -31,6 +31,7 @@ pub mod tag {
             self.key = Some(input.into());
             self
         }
+        /// <p>The key of the tag.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -40,6 +41,7 @@ pub mod tag {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value of the tag.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -76,9 +78,9 @@ pub struct Backup {
     /// <p>The identifier (ID) of the cluster that was backed up.</p>
     pub cluster_id: std::option::Option<std::string::String>,
     /// <p>The date and time when the backup was created.</p>
-    pub create_timestamp: std::option::Option<smithy_types::Instant>,
+    pub create_timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time when the backup was copied from a source backup.</p>
-    pub copy_timestamp: std::option::Option<smithy_types::Instant>,
+    pub copy_timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Specifies whether the service should exempt a backup from the retention policy for the cluster. <code>True</code> exempts
     /// a backup from the retention policy. <code>False</code> means the service applies the backup retention policy defined at the cluster.</p>
     pub never_expires: std::option::Option<bool>,
@@ -92,7 +94,7 @@ pub struct Backup {
     /// backup was copied.</p>
     pub source_cluster: std::option::Option<std::string::String>,
     /// <p>The date and time when the backup will be permanently deleted.</p>
-    pub delete_timestamp: std::option::Option<smithy_types::Instant>,
+    pub delete_timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The list of tags for the backup.</p>
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
@@ -122,13 +124,13 @@ pub mod backup {
         pub(crate) backup_id: std::option::Option<std::string::String>,
         pub(crate) backup_state: std::option::Option<crate::model::BackupState>,
         pub(crate) cluster_id: std::option::Option<std::string::String>,
-        pub(crate) create_timestamp: std::option::Option<smithy_types::Instant>,
-        pub(crate) copy_timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) create_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) copy_timestamp: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) never_expires: std::option::Option<bool>,
         pub(crate) source_region: std::option::Option<std::string::String>,
         pub(crate) source_backup: std::option::Option<std::string::String>,
         pub(crate) source_cluster: std::option::Option<std::string::String>,
-        pub(crate) delete_timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) delete_timestamp: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
@@ -137,6 +139,7 @@ pub mod backup {
             self.backup_id = Some(input.into());
             self
         }
+        /// <p>The identifier (ID) of the backup.</p>
         pub fn set_backup_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.backup_id = input;
             self
@@ -146,6 +149,7 @@ pub mod backup {
             self.backup_state = Some(input);
             self
         }
+        /// <p>The state of the backup.</p>
         pub fn set_backup_state(
             mut self,
             input: std::option::Option<crate::model::BackupState>,
@@ -158,30 +162,33 @@ pub mod backup {
             self.cluster_id = Some(input.into());
             self
         }
+        /// <p>The identifier (ID) of the cluster that was backed up.</p>
         pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster_id = input;
             self
         }
         /// <p>The date and time when the backup was created.</p>
-        pub fn create_timestamp(mut self, input: smithy_types::Instant) -> Self {
+        pub fn create_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
             self.create_timestamp = Some(input);
             self
         }
+        /// <p>The date and time when the backup was created.</p>
         pub fn set_create_timestamp(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.create_timestamp = input;
             self
         }
         /// <p>The date and time when the backup was copied from a source backup.</p>
-        pub fn copy_timestamp(mut self, input: smithy_types::Instant) -> Self {
+        pub fn copy_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
             self.copy_timestamp = Some(input);
             self
         }
+        /// <p>The date and time when the backup was copied from a source backup.</p>
         pub fn set_copy_timestamp(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.copy_timestamp = input;
             self
@@ -192,6 +199,8 @@ pub mod backup {
             self.never_expires = Some(input);
             self
         }
+        /// <p>Specifies whether the service should exempt a backup from the retention policy for the cluster. <code>True</code> exempts
+        /// a backup from the retention policy. <code>False</code> means the service applies the backup retention policy defined at the cluster.</p>
         pub fn set_never_expires(mut self, input: std::option::Option<bool>) -> Self {
             self.never_expires = input;
             self
@@ -202,6 +211,8 @@ pub mod backup {
             self.source_region = Some(input.into());
             self
         }
+        /// <p>The AWS Region that contains the source backup from which the new backup was
+        /// copied.</p>
         pub fn set_source_region(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -215,6 +226,8 @@ pub mod backup {
             self.source_backup = Some(input.into());
             self
         }
+        /// <p>The identifier (ID) of the source backup from which the new backup was
+        /// copied.</p>
         pub fn set_source_backup(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -228,6 +241,8 @@ pub mod backup {
             self.source_cluster = Some(input.into());
             self
         }
+        /// <p>The identifier (ID) of the cluster containing the source backup from which the new
+        /// backup was copied.</p>
         pub fn set_source_cluster(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -236,23 +251,30 @@ pub mod backup {
             self
         }
         /// <p>The date and time when the backup will be permanently deleted.</p>
-        pub fn delete_timestamp(mut self, input: smithy_types::Instant) -> Self {
+        pub fn delete_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
             self.delete_timestamp = Some(input);
             self
         }
+        /// <p>The date and time when the backup will be permanently deleted.</p>
         pub fn set_delete_timestamp(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.delete_timestamp = input;
             self
         }
+        /// Appends an item to `tag_list`.
+        ///
+        /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
+        ///
+        /// <p>The list of tags for the backup.</p>
         pub fn tag_list(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
             v.push(input.into());
             self.tag_list = Some(v);
             self
         }
+        /// <p>The list of tags for the backup.</p>
         pub fn set_tag_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -285,6 +307,7 @@ impl Backup {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -296,9 +319,13 @@ impl Backup {
     std::hash::Hash,
 )]
 pub enum BackupState {
+    #[allow(missing_docs)] // documentation missing in model
     CreateInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Deleted,
+    #[allow(missing_docs)] // documentation missing in model
     PendingDeletion,
+    #[allow(missing_docs)] // documentation missing in model
     Ready,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -322,6 +349,7 @@ impl std::str::FromStr for BackupState {
     }
 }
 impl BackupState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             BackupState::CreateInProgress => "CREATE_IN_PROGRESS",
@@ -331,6 +359,7 @@ impl BackupState {
             BackupState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CREATE_IN_PROGRESS", "DELETED", "PENDING_DELETION", "READY"]
     }
@@ -352,7 +381,7 @@ pub struct Cluster {
     /// <p>The cluster's identifier (ID).</p>
     pub cluster_id: std::option::Option<std::string::String>,
     /// <p>The date and time when the cluster was created.</p>
-    pub create_timestamp: std::option::Option<smithy_types::Instant>,
+    pub create_timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Contains information about the HSMs in the cluster.</p>
     pub hsms: std::option::Option<std::vec::Vec<crate::model::Hsm>>,
     /// <p>The type of HSM that the cluster contains.</p>
@@ -410,7 +439,7 @@ pub mod cluster {
         pub(crate) backup_retention_policy:
             std::option::Option<crate::model::BackupRetentionPolicy>,
         pub(crate) cluster_id: std::option::Option<std::string::String>,
-        pub(crate) create_timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) create_timestamp: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) hsms: std::option::Option<std::vec::Vec<crate::model::Hsm>>,
         pub(crate) hsm_type: std::option::Option<std::string::String>,
         pub(crate) pre_co_password: std::option::Option<std::string::String>,
@@ -431,6 +460,7 @@ pub mod cluster {
             self.backup_policy = Some(input);
             self
         }
+        /// <p>The cluster's backup policy.</p>
         pub fn set_backup_policy(
             mut self,
             input: std::option::Option<crate::model::BackupPolicy>,
@@ -446,6 +476,7 @@ pub mod cluster {
             self.backup_retention_policy = Some(input);
             self
         }
+        /// <p>A policy that defines how the service retains backups.</p>
         pub fn set_backup_retention_policy(
             mut self,
             input: std::option::Option<crate::model::BackupRetentionPolicy>,
@@ -458,28 +489,36 @@ pub mod cluster {
             self.cluster_id = Some(input.into());
             self
         }
+        /// <p>The cluster's identifier (ID).</p>
         pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster_id = input;
             self
         }
         /// <p>The date and time when the cluster was created.</p>
-        pub fn create_timestamp(mut self, input: smithy_types::Instant) -> Self {
+        pub fn create_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
             self.create_timestamp = Some(input);
             self
         }
+        /// <p>The date and time when the cluster was created.</p>
         pub fn set_create_timestamp(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.create_timestamp = input;
             self
         }
+        /// Appends an item to `hsms`.
+        ///
+        /// To override the contents of this collection use [`set_hsms`](Self::set_hsms).
+        ///
+        /// <p>Contains information about the HSMs in the cluster.</p>
         pub fn hsms(mut self, input: impl Into<crate::model::Hsm>) -> Self {
             let mut v = self.hsms.unwrap_or_default();
             v.push(input.into());
             self.hsms = Some(v);
             self
         }
+        /// <p>Contains information about the HSMs in the cluster.</p>
         pub fn set_hsms(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Hsm>>,
@@ -492,6 +531,7 @@ pub mod cluster {
             self.hsm_type = Some(input.into());
             self
         }
+        /// <p>The type of HSM that the cluster contains.</p>
         pub fn set_hsm_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.hsm_type = input;
             self
@@ -501,6 +541,7 @@ pub mod cluster {
             self.pre_co_password = Some(input.into());
             self
         }
+        /// <p>The default password for the cluster's Pre-Crypto Officer (PRECO) user.</p>
         pub fn set_pre_co_password(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -513,6 +554,7 @@ pub mod cluster {
             self.security_group = Some(input.into());
             self
         }
+        /// <p>The identifier (ID) of the cluster's security group.</p>
         pub fn set_security_group(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -526,6 +568,8 @@ pub mod cluster {
             self.source_backup_id = Some(input.into());
             self
         }
+        /// <p>The identifier (ID) of the backup used to create the cluster. This value exists only
+        /// when the cluster was created from a backup.</p>
         pub fn set_source_backup_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -538,6 +582,7 @@ pub mod cluster {
             self.state = Some(input);
             self
         }
+        /// <p>The cluster's state.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::ClusterState>) -> Self {
             self.state = input;
             self
@@ -547,6 +592,7 @@ pub mod cluster {
             self.state_message = Some(input.into());
             self
         }
+        /// <p>A description of the cluster's state.</p>
         pub fn set_state_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -554,6 +600,11 @@ pub mod cluster {
             self.state_message = input;
             self
         }
+        /// Adds a key-value pair to `subnet_mapping`.
+        ///
+        /// To override the contents of this collection use [`set_subnet_mapping`](Self::set_subnet_mapping).
+        ///
+        /// <p>A map from availability zone to the cluster’s subnet in that availability zone.</p>
         pub fn subnet_mapping(
             mut self,
             k: impl Into<std::string::String>,
@@ -564,6 +615,7 @@ pub mod cluster {
             self.subnet_mapping = Some(hash_map);
             self
         }
+        /// <p>A map from availability zone to the cluster’s subnet in that availability zone.</p>
         pub fn set_subnet_mapping(
             mut self,
             input: std::option::Option<
@@ -579,6 +631,8 @@ pub mod cluster {
             self.vpc_id = Some(input.into());
             self
         }
+        /// <p>The identifier (ID) of the virtual private cloud (VPC) that contains the
+        /// cluster.</p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.vpc_id = input;
             self
@@ -588,6 +642,7 @@ pub mod cluster {
             self.certificates = Some(input);
             self
         }
+        /// <p>Contains one or more certificates or a certificate signing request (CSR).</p>
         pub fn set_certificates(
             mut self,
             input: std::option::Option<crate::model::Certificates>,
@@ -595,12 +650,18 @@ pub mod cluster {
             self.certificates = input;
             self
         }
+        /// Appends an item to `tag_list`.
+        ///
+        /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
+        ///
+        /// <p>The list of tags for the cluster.</p>
         pub fn tag_list(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
             v.push(input.into());
             self.tag_list = Some(v);
             self
         }
+        /// <p>The list of tags for the cluster.</p>
         pub fn set_tag_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -687,6 +748,8 @@ pub mod certificates {
             self.cluster_csr = Some(input.into());
             self
         }
+        /// <p>The cluster's certificate signing request (CSR). The CSR exists only when the cluster's
+        /// state is <code>UNINITIALIZED</code>.</p>
         pub fn set_cluster_csr(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster_csr = input;
             self
@@ -696,6 +759,7 @@ pub mod certificates {
             self.hsm_certificate = Some(input.into());
             self
         }
+        /// <p>The HSM certificate issued (signed) by the HSM hardware.</p>
         pub fn set_hsm_certificate(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -708,6 +772,7 @@ pub mod certificates {
             self.aws_hardware_certificate = Some(input.into());
             self
         }
+        /// <p>The HSM hardware certificate issued (signed) by AWS CloudHSM.</p>
         pub fn set_aws_hardware_certificate(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -723,6 +788,7 @@ pub mod certificates {
             self.manufacturer_hardware_certificate = Some(input.into());
             self
         }
+        /// <p>The HSM hardware certificate issued (signed) by the hardware manufacturer.</p>
         pub fn set_manufacturer_hardware_certificate(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -736,6 +802,8 @@ pub mod certificates {
             self.cluster_certificate = Some(input.into());
             self
         }
+        /// <p>The cluster certificate issued (signed) by the issuing certificate authority (CA) of
+        /// the cluster's owner.</p>
         pub fn set_cluster_certificate(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -762,6 +830,7 @@ impl Certificates {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -773,14 +842,23 @@ impl Certificates {
     std::hash::Hash,
 )]
 pub enum ClusterState {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     CreateInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Degraded,
+    #[allow(missing_docs)] // documentation missing in model
     Deleted,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Initialized,
+    #[allow(missing_docs)] // documentation missing in model
     InitializeInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Uninitialized,
+    #[allow(missing_docs)] // documentation missing in model
     UpdateInProgress,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -809,6 +887,7 @@ impl std::str::FromStr for ClusterState {
     }
 }
 impl ClusterState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ClusterState::Active => "ACTIVE",
@@ -823,6 +902,7 @@ impl ClusterState {
             ClusterState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
@@ -900,6 +980,7 @@ pub mod hsm {
             self.availability_zone = Some(input.into());
             self
         }
+        /// <p>The Availability Zone that contains the HSM.</p>
         pub fn set_availability_zone(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -912,6 +993,7 @@ pub mod hsm {
             self.cluster_id = Some(input.into());
             self
         }
+        /// <p>The identifier (ID) of the cluster that contains the HSM.</p>
         pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster_id = input;
             self
@@ -921,6 +1003,7 @@ pub mod hsm {
             self.subnet_id = Some(input.into());
             self
         }
+        /// <p>The subnet that contains the HSM's elastic network interface (ENI).</p>
         pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.subnet_id = input;
             self
@@ -930,6 +1013,7 @@ pub mod hsm {
             self.eni_id = Some(input.into());
             self
         }
+        /// <p>The identifier (ID) of the HSM's elastic network interface (ENI).</p>
         pub fn set_eni_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.eni_id = input;
             self
@@ -939,6 +1023,7 @@ pub mod hsm {
             self.eni_ip = Some(input.into());
             self
         }
+        /// <p>The IP address of the HSM's elastic network interface (ENI).</p>
         pub fn set_eni_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.eni_ip = input;
             self
@@ -948,6 +1033,7 @@ pub mod hsm {
             self.hsm_id = Some(input.into());
             self
         }
+        /// <p>The HSM's identifier (ID).</p>
         pub fn set_hsm_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.hsm_id = input;
             self
@@ -957,6 +1043,7 @@ pub mod hsm {
             self.state = Some(input);
             self
         }
+        /// <p>The HSM's state.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::HsmState>) -> Self {
             self.state = input;
             self
@@ -966,6 +1053,7 @@ pub mod hsm {
             self.state_message = Some(input.into());
             self
         }
+        /// <p>A description of the HSM's state.</p>
         pub fn set_state_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -995,6 +1083,7 @@ impl Hsm {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1006,10 +1095,15 @@ impl Hsm {
     std::hash::Hash,
 )]
 pub enum HsmState {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     CreateInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Degraded,
+    #[allow(missing_docs)] // documentation missing in model
     Deleted,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteInProgress,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1034,6 +1128,7 @@ impl std::str::FromStr for HsmState {
     }
 }
 impl HsmState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             HsmState::Active => "ACTIVE",
@@ -1044,6 +1139,7 @@ impl HsmState {
             HsmState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
@@ -1094,6 +1190,8 @@ pub mod backup_retention_policy {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of backup retention policy. For the <code>DAYS</code> type, the value is
+        /// the number of days to retain backups.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::BackupRetentionType>,
@@ -1106,6 +1204,7 @@ pub mod backup_retention_policy {
             self.value = Some(input.into());
             self
         }
+        /// <p>Use a value between 7 - 379.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -1126,6 +1225,7 @@ impl BackupRetentionPolicy {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1137,6 +1237,7 @@ impl BackupRetentionPolicy {
     std::hash::Hash,
 )]
 pub enum BackupRetentionType {
+    #[allow(missing_docs)] // documentation missing in model
     Days,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1157,12 +1258,14 @@ impl std::str::FromStr for BackupRetentionType {
     }
 }
 impl BackupRetentionType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             BackupRetentionType::Days => "DAYS",
             BackupRetentionType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DAYS"]
     }
@@ -1173,6 +1276,7 @@ impl AsRef<str> for BackupRetentionType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1184,6 +1288,7 @@ impl AsRef<str> for BackupRetentionType {
     std::hash::Hash,
 )]
 pub enum BackupPolicy {
+    #[allow(missing_docs)] // documentation missing in model
     Default,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1204,12 +1309,14 @@ impl std::str::FromStr for BackupPolicy {
     }
 }
 impl BackupPolicy {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             BackupPolicy::Default => "DEFAULT",
             BackupPolicy::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DEFAULT"]
     }
@@ -1225,7 +1332,7 @@ impl AsRef<str> for BackupPolicy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DestinationBackup {
     /// <p>The date and time when both the source backup was created.</p>
-    pub create_timestamp: std::option::Option<smithy_types::Instant>,
+    pub create_timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The AWS region that contains the source backup from which the new backup was copied.</p>
     pub source_region: std::option::Option<std::string::String>,
     /// <p>The identifier (ID) of the source backup from which the new backup was copied.</p>
@@ -1249,20 +1356,21 @@ pub mod destination_backup {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) create_timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) create_timestamp: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) source_region: std::option::Option<std::string::String>,
         pub(crate) source_backup: std::option::Option<std::string::String>,
         pub(crate) source_cluster: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The date and time when both the source backup was created.</p>
-        pub fn create_timestamp(mut self, input: smithy_types::Instant) -> Self {
+        pub fn create_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
             self.create_timestamp = Some(input);
             self
         }
+        /// <p>The date and time when both the source backup was created.</p>
         pub fn set_create_timestamp(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.create_timestamp = input;
             self
@@ -1272,6 +1380,7 @@ pub mod destination_backup {
             self.source_region = Some(input.into());
             self
         }
+        /// <p>The AWS region that contains the source backup from which the new backup was copied.</p>
         pub fn set_source_region(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1284,6 +1393,7 @@ pub mod destination_backup {
             self.source_backup = Some(input.into());
             self
         }
+        /// <p>The identifier (ID) of the source backup from which the new backup was copied.</p>
         pub fn set_source_backup(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1296,6 +1406,7 @@ pub mod destination_backup {
             self.source_cluster = Some(input.into());
             self
         }
+        /// <p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied.</p>
         pub fn set_source_cluster(
             mut self,
             input: std::option::Option<std::string::String>,

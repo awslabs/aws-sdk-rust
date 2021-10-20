@@ -85,6 +85,7 @@ pub mod update_identity_pool_output {
             self.identity_pool_id = Some(input.into());
             self
         }
+        /// <p>An identity pool ID in the format REGION:GUID.</p>
         pub fn set_identity_pool_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -97,6 +98,7 @@ pub mod update_identity_pool_output {
             self.identity_pool_name = Some(input.into());
             self
         }
+        /// <p>A string that you provide.</p>
         pub fn set_identity_pool_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -109,6 +111,7 @@ pub mod update_identity_pool_output {
             self.allow_unauthenticated_identities = Some(input);
             self
         }
+        /// <p>TRUE if the identity pool supports unauthenticated logins.</p>
         pub fn set_allow_unauthenticated_identities(
             mut self,
             input: std::option::Option<bool>,
@@ -122,10 +125,17 @@ pub mod update_identity_pool_output {
             self.allow_classic_flow = Some(input);
             self
         }
+        /// <p>Enables or disables the Basic (Classic) authentication flow. For more information, see
+        /// <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flow.html">Identity Pools (Federated Identities) Authentication Flow</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
         pub fn set_allow_classic_flow(mut self, input: std::option::Option<bool>) -> Self {
             self.allow_classic_flow = input;
             self
         }
+        /// Adds a key-value pair to `supported_login_providers`.
+        ///
+        /// To override the contents of this collection use [`set_supported_login_providers`](Self::set_supported_login_providers).
+        ///
+        /// <p>Optional key:value pairs mapping provider names to provider app IDs.</p>
         pub fn supported_login_providers(
             mut self,
             k: impl Into<std::string::String>,
@@ -136,6 +146,7 @@ pub mod update_identity_pool_output {
             self.supported_login_providers = Some(hash_map);
             self
         }
+        /// <p>Optional key:value pairs mapping provider names to provider app IDs.</p>
         pub fn set_supported_login_providers(
             mut self,
             input: std::option::Option<
@@ -150,6 +161,7 @@ pub mod update_identity_pool_output {
             self.developer_provider_name = Some(input.into());
             self
         }
+        /// <p>The "domain" by which Cognito will refer to your users.</p>
         pub fn set_developer_provider_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -157,6 +169,11 @@ pub mod update_identity_pool_output {
             self.developer_provider_name = input;
             self
         }
+        /// Appends an item to `open_id_connect_provider_ar_ns`.
+        ///
+        /// To override the contents of this collection use [`set_open_id_connect_provider_ar_ns`](Self::set_open_id_connect_provider_ar_ns).
+        ///
+        /// <p>The ARNs of the OpenID Connect providers.</p>
         pub fn open_id_connect_provider_ar_ns(
             mut self,
             input: impl Into<std::string::String>,
@@ -166,6 +183,7 @@ pub mod update_identity_pool_output {
             self.open_id_connect_provider_ar_ns = Some(v);
             self
         }
+        /// <p>The ARNs of the OpenID Connect providers.</p>
         pub fn set_open_id_connect_provider_ar_ns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -173,6 +191,11 @@ pub mod update_identity_pool_output {
             self.open_id_connect_provider_ar_ns = input;
             self
         }
+        /// Appends an item to `cognito_identity_providers`.
+        ///
+        /// To override the contents of this collection use [`set_cognito_identity_providers`](Self::set_cognito_identity_providers).
+        ///
+        /// <p>A list representing an Amazon Cognito user pool and its client ID.</p>
         pub fn cognito_identity_providers(
             mut self,
             input: impl Into<crate::model::CognitoIdentityProvider>,
@@ -182,6 +205,7 @@ pub mod update_identity_pool_output {
             self.cognito_identity_providers = Some(v);
             self
         }
+        /// <p>A list representing an Amazon Cognito user pool and its client ID.</p>
         pub fn set_cognito_identity_providers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CognitoIdentityProvider>>,
@@ -189,12 +213,20 @@ pub mod update_identity_pool_output {
             self.cognito_identity_providers = input;
             self
         }
+        /// Appends an item to `saml_provider_ar_ns`.
+        ///
+        /// To override the contents of this collection use [`set_saml_provider_ar_ns`](Self::set_saml_provider_ar_ns).
+        ///
+        /// <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity
+        /// pool.</p>
         pub fn saml_provider_ar_ns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.saml_provider_ar_ns.unwrap_or_default();
             v.push(input.into());
             self.saml_provider_ar_ns = Some(v);
             self
         }
+        /// <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity
+        /// pool.</p>
         pub fn set_saml_provider_ar_ns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -202,6 +234,13 @@ pub mod update_identity_pool_output {
             self.saml_provider_ar_ns = input;
             self
         }
+        /// Adds a key-value pair to `identity_pool_tags`.
+        ///
+        /// To override the contents of this collection use [`set_identity_pool_tags`](Self::set_identity_pool_tags).
+        ///
+        /// <p>The tags that are assigned to the identity pool. A tag is a label that you can apply to
+        /// identity pools to categorize and manage them in different ways, such as by purpose, owner,
+        /// environment, or other criteria.</p>
         pub fn identity_pool_tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -212,6 +251,9 @@ pub mod update_identity_pool_output {
             self.identity_pool_tags = Some(hash_map);
             self
         }
+        /// <p>The tags that are assigned to the identity pool. A tag is a label that you can apply to
+        /// identity pools to categorize and manage them in different ways, such as by purpose, owner,
+        /// environment, or other criteria.</p>
         pub fn set_identity_pool_tags(
             mut self,
             input: std::option::Option<
@@ -247,6 +289,7 @@ impl UpdateIdentityPoolOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceOutput {}
@@ -276,6 +319,7 @@ impl UntagResourceOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnlinkIdentityOutput {}
@@ -305,6 +349,7 @@ impl UnlinkIdentityOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnlinkDeveloperIdentityOutput {}
@@ -334,6 +379,7 @@ impl UnlinkDeveloperIdentityOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceOutput {}
@@ -363,6 +409,7 @@ impl TagResourceOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetPrincipalTagAttributeMapOutput {
@@ -405,6 +452,7 @@ pub mod set_principal_tag_attribute_map_output {
             self.identity_pool_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Identity Pool you want to set attribute mappings for.</p>
         pub fn set_identity_pool_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -417,6 +465,7 @@ pub mod set_principal_tag_attribute_map_output {
             self.identity_provider_name = Some(input.into());
             self
         }
+        /// <p>The provider name you want to use for attribute mappings.</p>
         pub fn set_identity_provider_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -429,10 +478,16 @@ pub mod set_principal_tag_attribute_map_output {
             self.use_defaults = Some(input);
             self
         }
+        /// <p>You can use this operation to select default (username and clientID) attribute mappings.</p>
         pub fn set_use_defaults(mut self, input: std::option::Option<bool>) -> Self {
             self.use_defaults = input;
             self
         }
+        /// Adds a key-value pair to `principal_tags`.
+        ///
+        /// To override the contents of this collection use [`set_principal_tags`](Self::set_principal_tags).
+        ///
+        /// <p>You can use this operation to add principal tags. The <code>PrincipalTags</code>operation enables you to reference user attributes in your IAM permissions policy.</p>
         pub fn principal_tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -443,6 +498,7 @@ pub mod set_principal_tag_attribute_map_output {
             self.principal_tags = Some(hash_map);
             self
         }
+        /// <p>You can use this operation to add principal tags. The <code>PrincipalTags</code>operation enables you to reference user attributes in your IAM permissions policy.</p>
         pub fn set_principal_tags(
             mut self,
             input: std::option::Option<
@@ -470,6 +526,7 @@ impl SetPrincipalTagAttributeMapOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetIdentityPoolRolesOutput {}
@@ -528,6 +585,7 @@ pub mod merge_developer_identities_output {
             self.identity_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier in the format REGION:GUID.</p>
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identity_id = input;
             self
@@ -595,10 +653,18 @@ pub mod lookup_developer_identity_output {
             self.identity_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier in the format REGION:GUID.</p>
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identity_id = input;
             self
         }
+        /// Appends an item to `developer_user_identifier_list`.
+        ///
+        /// To override the contents of this collection use [`set_developer_user_identifier_list`](Self::set_developer_user_identifier_list).
+        ///
+        /// <p>This is the list of developer user identifiers associated with an identity ID.
+        /// Cognito supports the association of multiple developer user identifiers with an identity
+        /// ID.</p>
         pub fn developer_user_identifier_list(
             mut self,
             input: impl Into<std::string::String>,
@@ -608,6 +674,9 @@ pub mod lookup_developer_identity_output {
             self.developer_user_identifier_list = Some(v);
             self
         }
+        /// <p>This is the list of developer user identifiers associated with an identity ID.
+        /// Cognito supports the association of multiple developer user identifiers with an identity
+        /// ID.</p>
         pub fn set_developer_user_identifier_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -625,6 +694,12 @@ pub mod lookup_developer_identity_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A pagination token. The first call you make will have <code>NextToken</code> set to
+        /// null. After that the service will return <code>NextToken</code> values as needed. For
+        /// example, let's say you make a request with <code>MaxResults</code> set to 10, and there are
+        /// 20 matches in the database. The service will return a pagination token as a part of the
+        /// response. This token can be used to call the API again and get results starting from the
+        /// 11th match.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -646,6 +721,7 @@ impl LookupDeveloperIdentityOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
@@ -671,6 +747,11 @@ pub mod list_tags_for_resource_output {
         >,
     }
     impl Builder {
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags that are assigned to the identity pool.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -681,6 +762,7 @@ pub mod list_tags_for_resource_output {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The tags that are assigned to the identity pool.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -732,6 +814,11 @@ pub mod list_identity_pools_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `identity_pools`.
+        ///
+        /// To override the contents of this collection use [`set_identity_pools`](Self::set_identity_pools).
+        ///
+        /// <p>The identity pools returned by the ListIdentityPools action.</p>
         pub fn identity_pools(
             mut self,
             input: impl Into<crate::model::IdentityPoolShortDescription>,
@@ -741,6 +828,7 @@ pub mod list_identity_pools_output {
             self.identity_pools = Some(v);
             self
         }
+        /// <p>The identity pools returned by the ListIdentityPools action.</p>
         pub fn set_identity_pools(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::IdentityPoolShortDescription>>,
@@ -753,6 +841,7 @@ pub mod list_identity_pools_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -810,6 +899,7 @@ pub mod list_identities_output {
             self.identity_pool_id = Some(input.into());
             self
         }
+        /// <p>An identity pool ID in the format REGION:GUID.</p>
         pub fn set_identity_pool_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -817,12 +907,18 @@ pub mod list_identities_output {
             self.identity_pool_id = input;
             self
         }
+        /// Appends an item to `identities`.
+        ///
+        /// To override the contents of this collection use [`set_identities`](Self::set_identities).
+        ///
+        /// <p>An object containing a set of identities and associated mappings.</p>
         pub fn identities(mut self, input: impl Into<crate::model::IdentityDescription>) -> Self {
             let mut v = self.identities.unwrap_or_default();
             v.push(input.into());
             self.identities = Some(v);
             self
         }
+        /// <p>An object containing a set of identities and associated mappings.</p>
         pub fn set_identities(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::IdentityDescription>>,
@@ -835,6 +931,7 @@ pub mod list_identities_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A pagination token.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -856,6 +953,7 @@ impl ListIdentitiesOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPrincipalTagAttributeMapOutput {
@@ -898,6 +996,7 @@ pub mod get_principal_tag_attribute_map_output {
             self.identity_pool_id = Some(input.into());
             self
         }
+        /// <p>You can use this operation to get the ID of the Identity Pool you setup attribute mappings for.</p>
         pub fn set_identity_pool_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -910,6 +1009,7 @@ pub mod get_principal_tag_attribute_map_output {
             self.identity_provider_name = Some(input.into());
             self
         }
+        /// <p>You can use this operation to get the provider name.</p>
         pub fn set_identity_provider_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -922,10 +1022,16 @@ pub mod get_principal_tag_attribute_map_output {
             self.use_defaults = Some(input);
             self
         }
+        /// <p>You can use this operation to list </p>
         pub fn set_use_defaults(mut self, input: std::option::Option<bool>) -> Self {
             self.use_defaults = input;
             self
         }
+        /// Adds a key-value pair to `principal_tags`.
+        ///
+        /// To override the contents of this collection use [`set_principal_tags`](Self::set_principal_tags).
+        ///
+        /// <p>You can use this operation to add principal tags. The <code>PrincipalTags</code>operation enables you to reference user attributes in your IAM permissions policy.</p>
         pub fn principal_tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -936,6 +1042,7 @@ pub mod get_principal_tag_attribute_map_output {
             self.principal_tags = Some(hash_map);
             self
         }
+        /// <p>You can use this operation to add principal tags. The <code>PrincipalTags</code>operation enables you to reference user attributes in your IAM permissions policy.</p>
         pub fn set_principal_tags(
             mut self,
             input: std::option::Option<
@@ -996,6 +1103,7 @@ pub mod get_open_id_token_for_developer_identity_output {
             self.identity_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier in the format REGION:GUID.</p>
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identity_id = input;
             self
@@ -1005,6 +1113,7 @@ pub mod get_open_id_token_for_developer_identity_output {
             self.token = Some(input.into());
             self
         }
+        /// <p>An OpenID token.</p>
         pub fn set_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.token = input;
             self
@@ -1059,6 +1168,8 @@ pub mod get_open_id_token_output {
             self.identity_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier in the format REGION:GUID. Note that the IdentityId returned may
+        /// not match the one passed on input.</p>
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identity_id = input;
             self
@@ -1068,6 +1179,7 @@ pub mod get_open_id_token_output {
             self.token = Some(input.into());
             self
         }
+        /// <p>An OpenID token, valid for 10 minutes.</p>
         pub fn set_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.token = input;
             self
@@ -1136,6 +1248,7 @@ pub mod get_identity_pool_roles_output {
             self.identity_pool_id = Some(input.into());
             self
         }
+        /// <p>An identity pool ID in the format REGION:GUID.</p>
         pub fn set_identity_pool_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1143,6 +1256,12 @@ pub mod get_identity_pool_roles_output {
             self.identity_pool_id = input;
             self
         }
+        /// Adds a key-value pair to `roles`.
+        ///
+        /// To override the contents of this collection use [`set_roles`](Self::set_roles).
+        ///
+        /// <p>The map of roles associated with this pool. Currently only authenticated and
+        /// unauthenticated roles are supported.</p>
         pub fn roles(
             mut self,
             k: impl Into<std::string::String>,
@@ -1153,6 +1272,8 @@ pub mod get_identity_pool_roles_output {
             self.roles = Some(hash_map);
             self
         }
+        /// <p>The map of roles associated with this pool. Currently only authenticated and
+        /// unauthenticated roles are supported.</p>
         pub fn set_roles(
             mut self,
             input: std::option::Option<
@@ -1162,6 +1283,14 @@ pub mod get_identity_pool_roles_output {
             self.roles = input;
             self
         }
+        /// Adds a key-value pair to `role_mappings`.
+        ///
+        /// To override the contents of this collection use [`set_role_mappings`](Self::set_role_mappings).
+        ///
+        /// <p>How users for a specific identity provider are to mapped to roles. This is a
+        /// String-to-<a>RoleMapping</a> object map. The string identifies the identity
+        /// provider, for example, "graph.facebook.com" or
+        /// "cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p>
         pub fn role_mappings(
             mut self,
             k: impl Into<std::string::String>,
@@ -1172,6 +1301,10 @@ pub mod get_identity_pool_roles_output {
             self.role_mappings = Some(hash_map);
             self
         }
+        /// <p>How users for a specific identity provider are to mapped to roles. This is a
+        /// String-to-<a>RoleMapping</a> object map. The string identifies the identity
+        /// provider, for example, "graph.facebook.com" or
+        /// "cognito-idp.us-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p>
         pub fn set_role_mappings(
             mut self,
             input: std::option::Option<
@@ -1226,6 +1359,7 @@ pub mod get_id_output {
             self.identity_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier in the format REGION:GUID.</p>
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identity_id = input;
             self
@@ -1278,6 +1412,7 @@ pub mod get_credentials_for_identity_output {
             self.identity_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier in the format REGION:GUID.</p>
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identity_id = input;
             self
@@ -1287,6 +1422,7 @@ pub mod get_credentials_for_identity_output {
             self.credentials = Some(input);
             self
         }
+        /// <p>Credentials for the provided identity ID.</p>
         pub fn set_credentials(
             mut self,
             input: std::option::Option<crate::model::Credentials>,
@@ -1396,6 +1532,7 @@ pub mod describe_identity_pool_output {
             self.identity_pool_id = Some(input.into());
             self
         }
+        /// <p>An identity pool ID in the format REGION:GUID.</p>
         pub fn set_identity_pool_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1408,6 +1545,7 @@ pub mod describe_identity_pool_output {
             self.identity_pool_name = Some(input.into());
             self
         }
+        /// <p>A string that you provide.</p>
         pub fn set_identity_pool_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1420,6 +1558,7 @@ pub mod describe_identity_pool_output {
             self.allow_unauthenticated_identities = Some(input);
             self
         }
+        /// <p>TRUE if the identity pool supports unauthenticated logins.</p>
         pub fn set_allow_unauthenticated_identities(
             mut self,
             input: std::option::Option<bool>,
@@ -1433,10 +1572,17 @@ pub mod describe_identity_pool_output {
             self.allow_classic_flow = Some(input);
             self
         }
+        /// <p>Enables or disables the Basic (Classic) authentication flow. For more information, see
+        /// <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flow.html">Identity Pools (Federated Identities) Authentication Flow</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
         pub fn set_allow_classic_flow(mut self, input: std::option::Option<bool>) -> Self {
             self.allow_classic_flow = input;
             self
         }
+        /// Adds a key-value pair to `supported_login_providers`.
+        ///
+        /// To override the contents of this collection use [`set_supported_login_providers`](Self::set_supported_login_providers).
+        ///
+        /// <p>Optional key:value pairs mapping provider names to provider app IDs.</p>
         pub fn supported_login_providers(
             mut self,
             k: impl Into<std::string::String>,
@@ -1447,6 +1593,7 @@ pub mod describe_identity_pool_output {
             self.supported_login_providers = Some(hash_map);
             self
         }
+        /// <p>Optional key:value pairs mapping provider names to provider app IDs.</p>
         pub fn set_supported_login_providers(
             mut self,
             input: std::option::Option<
@@ -1461,6 +1608,7 @@ pub mod describe_identity_pool_output {
             self.developer_provider_name = Some(input.into());
             self
         }
+        /// <p>The "domain" by which Cognito will refer to your users.</p>
         pub fn set_developer_provider_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1468,6 +1616,11 @@ pub mod describe_identity_pool_output {
             self.developer_provider_name = input;
             self
         }
+        /// Appends an item to `open_id_connect_provider_ar_ns`.
+        ///
+        /// To override the contents of this collection use [`set_open_id_connect_provider_ar_ns`](Self::set_open_id_connect_provider_ar_ns).
+        ///
+        /// <p>The ARNs of the OpenID Connect providers.</p>
         pub fn open_id_connect_provider_ar_ns(
             mut self,
             input: impl Into<std::string::String>,
@@ -1477,6 +1630,7 @@ pub mod describe_identity_pool_output {
             self.open_id_connect_provider_ar_ns = Some(v);
             self
         }
+        /// <p>The ARNs of the OpenID Connect providers.</p>
         pub fn set_open_id_connect_provider_ar_ns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1484,6 +1638,11 @@ pub mod describe_identity_pool_output {
             self.open_id_connect_provider_ar_ns = input;
             self
         }
+        /// Appends an item to `cognito_identity_providers`.
+        ///
+        /// To override the contents of this collection use [`set_cognito_identity_providers`](Self::set_cognito_identity_providers).
+        ///
+        /// <p>A list representing an Amazon Cognito user pool and its client ID.</p>
         pub fn cognito_identity_providers(
             mut self,
             input: impl Into<crate::model::CognitoIdentityProvider>,
@@ -1493,6 +1652,7 @@ pub mod describe_identity_pool_output {
             self.cognito_identity_providers = Some(v);
             self
         }
+        /// <p>A list representing an Amazon Cognito user pool and its client ID.</p>
         pub fn set_cognito_identity_providers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CognitoIdentityProvider>>,
@@ -1500,12 +1660,20 @@ pub mod describe_identity_pool_output {
             self.cognito_identity_providers = input;
             self
         }
+        /// Appends an item to `saml_provider_ar_ns`.
+        ///
+        /// To override the contents of this collection use [`set_saml_provider_ar_ns`](Self::set_saml_provider_ar_ns).
+        ///
+        /// <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity
+        /// pool.</p>
         pub fn saml_provider_ar_ns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.saml_provider_ar_ns.unwrap_or_default();
             v.push(input.into());
             self.saml_provider_ar_ns = Some(v);
             self
         }
+        /// <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity
+        /// pool.</p>
         pub fn set_saml_provider_ar_ns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1513,6 +1681,13 @@ pub mod describe_identity_pool_output {
             self.saml_provider_ar_ns = input;
             self
         }
+        /// Adds a key-value pair to `identity_pool_tags`.
+        ///
+        /// To override the contents of this collection use [`set_identity_pool_tags`](Self::set_identity_pool_tags).
+        ///
+        /// <p>The tags that are assigned to the identity pool. A tag is a label that you can apply to
+        /// identity pools to categorize and manage them in different ways, such as by purpose, owner,
+        /// environment, or other criteria.</p>
         pub fn identity_pool_tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1523,6 +1698,9 @@ pub mod describe_identity_pool_output {
             self.identity_pool_tags = Some(hash_map);
             self
         }
+        /// <p>The tags that are assigned to the identity pool. A tag is a label that you can apply to
+        /// identity pools to categorize and manage them in different ways, such as by purpose, owner,
+        /// environment, or other criteria.</p>
         pub fn set_identity_pool_tags(
             mut self,
             input: std::option::Option<
@@ -1567,9 +1745,9 @@ pub struct DescribeIdentityOutput {
     /// <p>The provider names.</p>
     pub logins: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Date on which the identity was created.</p>
-    pub creation_date: std::option::Option<smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Date on which the identity was last modified.</p>
-    pub last_modified_date: std::option::Option<smithy_types::Instant>,
+    pub last_modified_date: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for DescribeIdentityOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1589,8 +1767,8 @@ pub mod describe_identity_output {
     pub struct Builder {
         pub(crate) identity_id: std::option::Option<std::string::String>,
         pub(crate) logins: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) creation_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_modified_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified_date: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>A unique identifier in the format REGION:GUID.</p>
@@ -1598,16 +1776,23 @@ pub mod describe_identity_output {
             self.identity_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier in the format REGION:GUID.</p>
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identity_id = input;
             self
         }
+        /// Appends an item to `logins`.
+        ///
+        /// To override the contents of this collection use [`set_logins`](Self::set_logins).
+        ///
+        /// <p>The provider names.</p>
         pub fn logins(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.logins.unwrap_or_default();
             v.push(input.into());
             self.logins = Some(v);
             self
         }
+        /// <p>The provider names.</p>
         pub fn set_logins(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1616,25 +1801,27 @@ pub mod describe_identity_output {
             self
         }
         /// <p>Date on which the identity was created.</p>
-        pub fn creation_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_date = Some(input);
             self
         }
+        /// <p>Date on which the identity was created.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_date = input;
             self
         }
         /// <p>Date on which the identity was last modified.</p>
-        pub fn last_modified_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_modified_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_modified_date = Some(input);
             self
         }
+        /// <p>Date on which the identity was last modified.</p>
         pub fn set_last_modified_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_modified_date = input;
             self
@@ -1657,6 +1844,7 @@ impl DescribeIdentityOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteIdentityPoolOutput {}
@@ -1713,6 +1901,12 @@ pub mod delete_identities_output {
             std::option::Option<std::vec::Vec<crate::model::UnprocessedIdentityId>>,
     }
     impl Builder {
+        /// Appends an item to `unprocessed_identity_ids`.
+        ///
+        /// To override the contents of this collection use [`set_unprocessed_identity_ids`](Self::set_unprocessed_identity_ids).
+        ///
+        /// <p>An array of UnprocessedIdentityId objects, each of which contains an ErrorCode and
+        /// IdentityId.</p>
         pub fn unprocessed_identity_ids(
             mut self,
             input: impl Into<crate::model::UnprocessedIdentityId>,
@@ -1722,6 +1916,8 @@ pub mod delete_identities_output {
             self.unprocessed_identity_ids = Some(v);
             self
         }
+        /// <p>An array of UnprocessedIdentityId objects, each of which contains an ErrorCode and
+        /// IdentityId.</p>
         pub fn set_unprocessed_identity_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UnprocessedIdentityId>>,
@@ -1830,6 +2026,7 @@ pub mod create_identity_pool_output {
             self.identity_pool_id = Some(input.into());
             self
         }
+        /// <p>An identity pool ID in the format REGION:GUID.</p>
         pub fn set_identity_pool_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1842,6 +2039,7 @@ pub mod create_identity_pool_output {
             self.identity_pool_name = Some(input.into());
             self
         }
+        /// <p>A string that you provide.</p>
         pub fn set_identity_pool_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1854,6 +2052,7 @@ pub mod create_identity_pool_output {
             self.allow_unauthenticated_identities = Some(input);
             self
         }
+        /// <p>TRUE if the identity pool supports unauthenticated logins.</p>
         pub fn set_allow_unauthenticated_identities(
             mut self,
             input: std::option::Option<bool>,
@@ -1867,10 +2066,17 @@ pub mod create_identity_pool_output {
             self.allow_classic_flow = Some(input);
             self
         }
+        /// <p>Enables or disables the Basic (Classic) authentication flow. For more information, see
+        /// <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flow.html">Identity Pools (Federated Identities) Authentication Flow</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
         pub fn set_allow_classic_flow(mut self, input: std::option::Option<bool>) -> Self {
             self.allow_classic_flow = input;
             self
         }
+        /// Adds a key-value pair to `supported_login_providers`.
+        ///
+        /// To override the contents of this collection use [`set_supported_login_providers`](Self::set_supported_login_providers).
+        ///
+        /// <p>Optional key:value pairs mapping provider names to provider app IDs.</p>
         pub fn supported_login_providers(
             mut self,
             k: impl Into<std::string::String>,
@@ -1881,6 +2087,7 @@ pub mod create_identity_pool_output {
             self.supported_login_providers = Some(hash_map);
             self
         }
+        /// <p>Optional key:value pairs mapping provider names to provider app IDs.</p>
         pub fn set_supported_login_providers(
             mut self,
             input: std::option::Option<
@@ -1895,6 +2102,7 @@ pub mod create_identity_pool_output {
             self.developer_provider_name = Some(input.into());
             self
         }
+        /// <p>The "domain" by which Cognito will refer to your users.</p>
         pub fn set_developer_provider_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1902,6 +2110,11 @@ pub mod create_identity_pool_output {
             self.developer_provider_name = input;
             self
         }
+        /// Appends an item to `open_id_connect_provider_ar_ns`.
+        ///
+        /// To override the contents of this collection use [`set_open_id_connect_provider_ar_ns`](Self::set_open_id_connect_provider_ar_ns).
+        ///
+        /// <p>The ARNs of the OpenID Connect providers.</p>
         pub fn open_id_connect_provider_ar_ns(
             mut self,
             input: impl Into<std::string::String>,
@@ -1911,6 +2124,7 @@ pub mod create_identity_pool_output {
             self.open_id_connect_provider_ar_ns = Some(v);
             self
         }
+        /// <p>The ARNs of the OpenID Connect providers.</p>
         pub fn set_open_id_connect_provider_ar_ns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1918,6 +2132,11 @@ pub mod create_identity_pool_output {
             self.open_id_connect_provider_ar_ns = input;
             self
         }
+        /// Appends an item to `cognito_identity_providers`.
+        ///
+        /// To override the contents of this collection use [`set_cognito_identity_providers`](Self::set_cognito_identity_providers).
+        ///
+        /// <p>A list representing an Amazon Cognito user pool and its client ID.</p>
         pub fn cognito_identity_providers(
             mut self,
             input: impl Into<crate::model::CognitoIdentityProvider>,
@@ -1927,6 +2146,7 @@ pub mod create_identity_pool_output {
             self.cognito_identity_providers = Some(v);
             self
         }
+        /// <p>A list representing an Amazon Cognito user pool and its client ID.</p>
         pub fn set_cognito_identity_providers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CognitoIdentityProvider>>,
@@ -1934,12 +2154,20 @@ pub mod create_identity_pool_output {
             self.cognito_identity_providers = input;
             self
         }
+        /// Appends an item to `saml_provider_ar_ns`.
+        ///
+        /// To override the contents of this collection use [`set_saml_provider_ar_ns`](Self::set_saml_provider_ar_ns).
+        ///
+        /// <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity
+        /// pool.</p>
         pub fn saml_provider_ar_ns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.saml_provider_ar_ns.unwrap_or_default();
             v.push(input.into());
             self.saml_provider_ar_ns = Some(v);
             self
         }
+        /// <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity
+        /// pool.</p>
         pub fn set_saml_provider_ar_ns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1947,6 +2175,13 @@ pub mod create_identity_pool_output {
             self.saml_provider_ar_ns = input;
             self
         }
+        /// Adds a key-value pair to `identity_pool_tags`.
+        ///
+        /// To override the contents of this collection use [`set_identity_pool_tags`](Self::set_identity_pool_tags).
+        ///
+        /// <p>The tags that are assigned to the identity pool. A tag is a label that you can apply to
+        /// identity pools to categorize and manage them in different ways, such as by purpose, owner,
+        /// environment, or other criteria.</p>
         pub fn identity_pool_tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1957,6 +2192,9 @@ pub mod create_identity_pool_output {
             self.identity_pool_tags = Some(hash_map);
             self
         }
+        /// <p>The tags that are assigned to the identity pool. A tag is a label that you can apply to
+        /// identity pools to categorize and manage them in different ways, such as by purpose, owner,
+        /// environment, or other criteria.</p>
         pub fn set_identity_pool_tags(
             mut self,
             input: std::option::Option<

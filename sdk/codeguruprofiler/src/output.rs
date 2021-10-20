@@ -69,6 +69,10 @@ pub mod remove_permission_output {
             self.policy = Some(input.into());
             self
         }
+        /// <p>
+        /// The JSON-formatted resource-based policy on the profiling group after
+        /// the specified permissions were removed.
+        /// </p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy = input;
             self
@@ -80,6 +84,9 @@ pub mod remove_permission_output {
             self.revision_id = Some(input.into());
             self
         }
+        /// <p> A universally unique identifier (UUID) for the revision of the resource-based policy
+        /// after the specified permissions were removed. The updated JSON-formatted policy is in the
+        /// <code>policy</code> element of the response. </p>
         pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.revision_id = input;
             self
@@ -135,6 +142,7 @@ pub mod remove_notification_channel_output {
             self.notification_configuration = Some(input);
             self
         }
+        /// <p>The new notification configuration for this profiling group.</p>
         pub fn set_notification_configuration(
             mut self,
             input: std::option::Option<crate::model::NotificationConfiguration>,
@@ -197,6 +205,10 @@ pub mod put_permission_output {
             self.policy = Some(input.into());
             self
         }
+        /// <p>
+        /// The JSON-formatted resource-based policy on the profiling group that includes the  
+        /// added permissions.
+        /// </p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy = input;
             self
@@ -208,6 +220,9 @@ pub mod put_permission_output {
             self.revision_id = Some(input.into());
             self
         }
+        /// <p> A universally unique identifier (UUID) for the revision of the resource-based policy
+        /// that includes the added permissions. The JSON-formatted policy is in the
+        /// <code>policy</code> element of the response. </p>
         pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.revision_id = input;
             self
@@ -290,12 +305,22 @@ pub mod list_profile_times_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `profile_times`.
+        ///
+        /// To override the contents of this collection use [`set_profile_times`](Self::set_profile_times).
+        ///
+        /// <p>The list of start times of the available profiles for the aggregation
+        /// period in the specified time range.
+        /// </p>
         pub fn profile_times(mut self, input: impl Into<crate::model::ProfileTime>) -> Self {
             let mut v = self.profile_times.unwrap_or_default();
             v.push(input.into());
             self.profile_times = Some(v);
             self
         }
+        /// <p>The list of start times of the available profiles for the aggregation
+        /// period in the specified time range.
+        /// </p>
         pub fn set_profile_times(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ProfileTime>>,
@@ -311,6 +336,10 @@ pub mod list_profile_times_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The <code>nextToken</code> value to include in a future <code>ListProfileTimes</code> request.
+        /// When the results of a <code>ListProfileTimes</code> request exceed <code>maxResults</code>, this
+        /// value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more
+        /// results to return. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -363,6 +392,11 @@ pub mod list_findings_reports_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `findings_report_summaries`.
+        ///
+        /// To override the contents of this collection use [`set_findings_report_summaries`](Self::set_findings_report_summaries).
+        ///
+        /// <p>The list of analysis results summaries.</p>
         pub fn findings_report_summaries(
             mut self,
             input: impl Into<crate::model::FindingsReportSummary>,
@@ -372,6 +406,7 @@ pub mod list_findings_reports_output {
             self.findings_report_summaries = Some(v);
             self
         }
+        /// <p>The list of analysis results summaries.</p>
         pub fn set_findings_report_summaries(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FindingsReportSummary>>,
@@ -387,6 +422,10 @@ pub mod list_findings_reports_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The <code>nextToken</code> value to include in a future <code>ListFindingsReports</code> request.
+        /// When the results of a <code>ListFindingsReports</code> request exceed <code>maxResults</code>, this
+        /// value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more
+        /// results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -418,13 +457,13 @@ pub struct GetRecommendationsOutput {
     /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
     /// millisecond past June 1, 2020 1:15:02 PM UTC.
     /// </p>
-    pub profile_start_time: std::option::Option<smithy_types::Instant>,
+    pub profile_start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>
     /// The end time of the profile the analysis data is about. This is specified
     /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
     /// millisecond past June 1, 2020 1:15:02 PM UTC.
     /// </p>
-    pub profile_end_time: std::option::Option<smithy_types::Instant>,
+    pub profile_end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The list of recommendations that the analysis found for this profile.</p>
     pub recommendations: std::option::Option<std::vec::Vec<crate::model::Recommendation>>,
     /// <p>
@@ -450,8 +489,8 @@ pub mod get_recommendations_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profiling_group_name: std::option::Option<std::string::String>,
-        pub(crate) profile_start_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) profile_end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) profile_start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) profile_end_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) recommendations:
             std::option::Option<std::vec::Vec<crate::model::Recommendation>>,
         pub(crate) anomalies: std::option::Option<std::vec::Vec<crate::model::Anomaly>>,
@@ -462,6 +501,7 @@ pub mod get_recommendations_output {
             self.profiling_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the profiling group the analysis data is about.</p>
         pub fn set_profiling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -474,13 +514,18 @@ pub mod get_recommendations_output {
         /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
         /// millisecond past June 1, 2020 1:15:02 PM UTC.
         /// </p>
-        pub fn profile_start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn profile_start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.profile_start_time = Some(input);
             self
         }
+        /// <p>
+        /// The start time of the profile the analysis data is about. This is specified
+        /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
+        /// millisecond past June 1, 2020 1:15:02 PM UTC.
+        /// </p>
         pub fn set_profile_start_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.profile_start_time = input;
             self
@@ -490,23 +535,34 @@ pub mod get_recommendations_output {
         /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
         /// millisecond past June 1, 2020 1:15:02 PM UTC.
         /// </p>
-        pub fn profile_end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn profile_end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.profile_end_time = Some(input);
             self
         }
+        /// <p>
+        /// The end time of the profile the analysis data is about. This is specified
+        /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
+        /// millisecond past June 1, 2020 1:15:02 PM UTC.
+        /// </p>
         pub fn set_profile_end_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.profile_end_time = input;
             self
         }
+        /// Appends an item to `recommendations`.
+        ///
+        /// To override the contents of this collection use [`set_recommendations`](Self::set_recommendations).
+        ///
+        /// <p>The list of recommendations that the analysis found for this profile.</p>
         pub fn recommendations(mut self, input: impl Into<crate::model::Recommendation>) -> Self {
             let mut v = self.recommendations.unwrap_or_default();
             v.push(input.into());
             self.recommendations = Some(v);
             self
         }
+        /// <p>The list of recommendations that the analysis found for this profile.</p>
         pub fn set_recommendations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Recommendation>>,
@@ -514,12 +570,22 @@ pub mod get_recommendations_output {
             self.recommendations = input;
             self
         }
+        /// Appends an item to `anomalies`.
+        ///
+        /// To override the contents of this collection use [`set_anomalies`](Self::set_anomalies).
+        ///
+        /// <p>
+        /// The list of anomalies that the analysis has found for this profile.
+        /// </p>
         pub fn anomalies(mut self, input: impl Into<crate::model::Anomaly>) -> Self {
             let mut v = self.anomalies.unwrap_or_default();
             v.push(input.into());
             self.anomalies = Some(v);
             self
         }
+        /// <p>
+        /// The list of anomalies that the analysis has found for this profile.
+        /// </p>
         pub fn set_anomalies(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Anomaly>>,
@@ -551,7 +617,7 @@ impl GetRecommendationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetProfileOutput {
     /// <p>Information about the profile.</p>
-    pub profile: std::option::Option<smithy_types::Blob>,
+    pub profile: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The content type of the profile in the payload. It is
     /// either <code>application/json</code> or the default
     /// <code>application/x-amzn-ion</code>.</p>
@@ -574,17 +640,18 @@ pub mod get_profile_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) profile: std::option::Option<smithy_types::Blob>,
+        pub(crate) profile: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) content_type: std::option::Option<std::string::String>,
         pub(crate) content_encoding: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>Information about the profile.</p>
-        pub fn profile(mut self, input: smithy_types::Blob) -> Self {
+        pub fn profile(mut self, input: aws_smithy_types::Blob) -> Self {
             self.profile = Some(input);
             self
         }
-        pub fn set_profile(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+        /// <p>Information about the profile.</p>
+        pub fn set_profile(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.profile = input;
             self
         }
@@ -595,6 +662,9 @@ pub mod get_profile_output {
             self.content_type = Some(input.into());
             self
         }
+        /// <p>The content type of the profile in the payload. It is
+        /// either <code>application/json</code> or the default
+        /// <code>application/x-amzn-ion</code>.</p>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_type = input;
             self
@@ -604,6 +674,7 @@ pub mod get_profile_output {
             self.content_encoding = Some(input.into());
             self
         }
+        /// <p>The content encoding of the profile.</p>
         pub fn set_content_encoding(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -660,6 +731,7 @@ pub mod get_policy_output {
             self.policy = Some(input.into());
             self
         }
+        /// <p>The JSON-formatted resource-based policy attached to the <code>ProfilingGroup</code>.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy = input;
             self
@@ -669,6 +741,7 @@ pub mod get_policy_output {
             self.revision_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the current revision of the returned policy.</p>
         pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.revision_id = input;
             self
@@ -724,6 +797,7 @@ pub mod get_notification_configuration_output {
             self.notification_configuration = Some(input);
             self
         }
+        /// <p>The current notification configuration for this profiling group.</p>
         pub fn set_notification_configuration(
             mut self,
             input: std::option::Option<crate::model::NotificationConfiguration>,
@@ -784,6 +858,12 @@ pub mod configure_agent_output {
             self.configuration = Some(input);
             self
         }
+        /// <p>
+        /// An <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AgentConfiguration.html">
+        /// <code>AgentConfiguration</code>
+        /// </a>
+        /// object that specifies if an agent profiles or not and for how long to return profiling data.
+        /// </p>
         pub fn set_configuration(
             mut self,
             input: std::option::Option<crate::model::AgentConfiguration>,
@@ -816,14 +896,14 @@ pub struct BatchGetFrameMetricDataOutput {
     /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
     /// millisecond past June 1, 2020 1:15:02 PM UTC.
     /// </p>
-    pub start_time: std::option::Option<smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>
     /// The end time of the time period for the returned time series values.
     /// This is specified
     /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
     /// millisecond past June 1, 2020 1:15:02 PM UTC.
     /// </p>
-    pub end_time: std::option::Option<smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Resolution or granularity of the profile data used to generate the time series.
     /// This is the value used to jump through time steps in a time series. There are 3 valid values.
     /// </p>
@@ -882,8 +962,8 @@ pub mod batch_get_frame_metric_data_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) start_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) resolution: std::option::Option<crate::model::AggregationPeriod>,
         pub(crate) end_times: std::option::Option<std::vec::Vec<crate::model::TimestampStructure>>,
         pub(crate) unprocessed_end_times: std::option::Option<
@@ -902,11 +982,20 @@ pub mod batch_get_frame_metric_data_output {
         /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
         /// millisecond past June 1, 2020 1:15:02 PM UTC.
         /// </p>
-        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>
+        /// The start time of the time period for the returned time series values.
+        /// This is specified
+        /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
+        /// millisecond past June 1, 2020 1:15:02 PM UTC.
+        /// </p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.start_time = input;
             self
         }
@@ -916,11 +1005,20 @@ pub mod batch_get_frame_metric_data_output {
         /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
         /// millisecond past June 1, 2020 1:15:02 PM UTC.
         /// </p>
-        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>
+        /// The end time of the time period for the returned time series values.
+        /// This is specified
+        /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
+        /// millisecond past June 1, 2020 1:15:02 PM UTC.
+        /// </p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.end_time = input;
             self
         }
@@ -948,6 +1046,26 @@ pub mod batch_get_frame_metric_data_output {
             self.resolution = Some(input);
             self
         }
+        /// <p>Resolution or granularity of the profile data used to generate the time series.
+        /// This is the value used to jump through time steps in a time series. There are 3 valid values.
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>P1D</code> — 1 day
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PT1H</code> — 1 hour
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PT5M</code> — 5 minutes
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_resolution(
             mut self,
             input: std::option::Option<crate::model::AggregationPeriod>,
@@ -955,12 +1073,28 @@ pub mod batch_get_frame_metric_data_output {
             self.resolution = input;
             self
         }
+        /// Appends an item to `end_times`.
+        ///
+        /// To override the contents of this collection use [`set_end_times`](Self::set_end_times).
+        ///
+        /// <p>
+        /// List of instances, or time steps, in the time series. For example, if the
+        /// <code>period</code> is one day (<code>PT24H)</code>), and the <code>resolution</code>
+        /// is five minutes (<code>PT5M</code>), then there are 288 <code>endTimes</code> in the
+        /// list that are each five minutes appart.
+        /// </p>
         pub fn end_times(mut self, input: impl Into<crate::model::TimestampStructure>) -> Self {
             let mut v = self.end_times.unwrap_or_default();
             v.push(input.into());
             self.end_times = Some(v);
             self
         }
+        /// <p>
+        /// List of instances, or time steps, in the time series. For example, if the
+        /// <code>period</code> is one day (<code>PT24H)</code>), and the <code>resolution</code>
+        /// is five minutes (<code>PT5M</code>), then there are 288 <code>endTimes</code> in the
+        /// list that are each five minutes appart.
+        /// </p>
         pub fn set_end_times(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TimestampStructure>>,
@@ -968,6 +1102,11 @@ pub mod batch_get_frame_metric_data_output {
             self.end_times = input;
             self
         }
+        /// Adds a key-value pair to `unprocessed_end_times`.
+        ///
+        /// To override the contents of this collection use [`set_unprocessed_end_times`](Self::set_unprocessed_end_times).
+        ///
+        /// <p>List of instances which remained unprocessed. This will create a missing time step in the list of end times.</p>
         pub fn unprocessed_end_times(
             mut self,
             k: impl Into<std::string::String>,
@@ -978,6 +1117,7 @@ pub mod batch_get_frame_metric_data_output {
             self.unprocessed_end_times = Some(hash_map);
             self
         }
+        /// <p>List of instances which remained unprocessed. This will create a missing time step in the list of end times.</p>
         pub fn set_unprocessed_end_times(
             mut self,
             input: std::option::Option<
@@ -990,6 +1130,13 @@ pub mod batch_get_frame_metric_data_output {
             self.unprocessed_end_times = input;
             self
         }
+        /// Appends an item to `frame_metric_data`.
+        ///
+        /// To override the contents of this collection use [`set_frame_metric_data`](Self::set_frame_metric_data).
+        ///
+        /// <p>Details of the metrics to request a time series of values. The metric includes
+        /// the name of the frame, the aggregation type to calculate the metric value for the frame,
+        /// and the thread states to use to get the count for the metric value of the frame.</p>
         pub fn frame_metric_data(
             mut self,
             input: impl Into<crate::model::FrameMetricDatum>,
@@ -999,6 +1146,9 @@ pub mod batch_get_frame_metric_data_output {
             self.frame_metric_data = Some(v);
             self
         }
+        /// <p>Details of the metrics to request a time series of values. The metric includes
+        /// the name of the frame, the aggregation type to calculate the metric value for the frame,
+        /// and the thread states to use to get the count for the metric value of the frame.</p>
         pub fn set_frame_metric_data(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FrameMetricDatum>>,
@@ -1061,6 +1211,7 @@ pub mod add_notification_channels_output {
             self.notification_configuration = Some(input);
             self
         }
+        /// <p>The new notification configuration for this profiling group.</p>
         pub fn set_notification_configuration(
             mut self,
             input: std::option::Option<crate::model::NotificationConfiguration>,
@@ -1136,12 +1287,32 @@ pub mod list_profiling_groups_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `profiling_group_names`.
+        ///
+        /// To override the contents of this collection use [`set_profiling_group_names`](Self::set_profiling_group_names).
+        ///
+        /// <p>
+        /// A returned list of profiling group names. A list of the names is returned only if
+        /// <code>includeDescription</code> is <code>false</code>, otherwise a list of
+        /// <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+        /// <code>ProfilingGroupDescription</code>
+        /// </a> objects
+        /// is returned.         
+        /// </p>
         pub fn profiling_group_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.profiling_group_names.unwrap_or_default();
             v.push(input.into());
             self.profiling_group_names = Some(v);
             self
         }
+        /// <p>
+        /// A returned list of profiling group names. A list of the names is returned only if
+        /// <code>includeDescription</code> is <code>false</code>, otherwise a list of
+        /// <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+        /// <code>ProfilingGroupDescription</code>
+        /// </a> objects
+        /// is returned.         
+        /// </p>
         pub fn set_profiling_group_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1149,6 +1320,21 @@ pub mod list_profiling_groups_output {
             self.profiling_group_names = input;
             self
         }
+        /// Appends an item to `profiling_groups`.
+        ///
+        /// To override the contents of this collection use [`set_profiling_groups`](Self::set_profiling_groups).
+        ///
+        /// <p>
+        /// A returned list
+        /// <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+        /// <code>ProfilingGroupDescription</code>
+        /// </a>
+        /// objects. A list of
+        /// <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+        /// <code>ProfilingGroupDescription</code>
+        /// </a>
+        /// objects is returned only if <code>includeDescription</code> is <code>true</code>, otherwise a list of profiling group names is returned.
+        /// </p>
         pub fn profiling_groups(
             mut self,
             input: impl Into<crate::model::ProfilingGroupDescription>,
@@ -1158,6 +1344,17 @@ pub mod list_profiling_groups_output {
             self.profiling_groups = Some(v);
             self
         }
+        /// <p>
+        /// A returned list
+        /// <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+        /// <code>ProfilingGroupDescription</code>
+        /// </a>
+        /// objects. A list of
+        /// <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+        /// <code>ProfilingGroupDescription</code>
+        /// </a>
+        /// objects is returned only if <code>includeDescription</code> is <code>true</code>, otherwise a list of profiling group names is returned.
+        /// </p>
         pub fn set_profiling_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ProfilingGroupDescription>>,
@@ -1173,6 +1370,10 @@ pub mod list_profiling_groups_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The <code>nextToken</code> value to include in a future <code>ListProfilingGroups</code> request.
+        /// When the results of a <code>ListProfilingGroups</code> request exceed <code>maxResults</code>, this
+        /// value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more
+        /// results to return. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1228,6 +1429,10 @@ pub mod create_profiling_group_output {
             self.profiling_group = Some(input);
             self
         }
+        /// <p> The returned <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+        /// <code>ProfilingGroupDescription</code>
+        /// </a> object that contains information
+        /// about the created profiling group. </p>
         pub fn set_profiling_group(
             mut self,
             input: std::option::Option<crate::model::ProfilingGroupDescription>,
@@ -1318,6 +1523,12 @@ pub mod update_profiling_group_output {
             self.profiling_group = Some(input);
             self
         }
+        /// <p>
+        /// A <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+        /// <code>ProfilingGroupDescription</code>
+        /// </a>
+        /// that contains information about the returned updated profiling group.
+        /// </p>
         pub fn set_profiling_group(
             mut self,
             input: std::option::Option<crate::model::ProfilingGroupDescription>,
@@ -1378,6 +1589,12 @@ pub mod describe_profiling_group_output {
             self.profiling_group = Some(input);
             self
         }
+        /// <p>
+        /// The returned <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+        /// <code>ProfilingGroupDescription</code>
+        /// </a>
+        /// object that contains information about the requested profiling group.
+        /// </p>
         pub fn set_profiling_group(
             mut self,
             input: std::option::Option<crate::model::ProfilingGroupDescription>,
@@ -1400,6 +1617,7 @@ impl DescribeProfilingGroupOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceOutput {}
@@ -1429,6 +1647,7 @@ impl UntagResourceOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceOutput {}
@@ -1458,6 +1677,7 @@ impl TagResourceOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
@@ -1486,6 +1706,14 @@ pub mod list_tags_for_resource_output {
         >,
     }
     impl Builder {
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>
+        /// The list of tags assigned to the specified resource. This is the list of tags
+        /// returned in the response.
+        /// </p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1496,6 +1724,10 @@ pub mod list_tags_for_resource_output {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>
+        /// The list of tags assigned to the specified resource. This is the list of tags
+        /// returned in the response.
+        /// </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1553,6 +1785,15 @@ pub mod get_findings_report_account_summary_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `report_summaries`.
+        ///
+        /// To override the contents of this collection use [`set_report_summaries`](Self::set_report_summaries).
+        ///
+        /// <p>The return list of
+        /// <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_FindingsReportSummary.html">
+        /// <code>FindingsReportSummary</code>
+        /// </a>
+        /// objects taht contain summaries of analysis results for all profiling groups in your AWS account.</p>
         pub fn report_summaries(
             mut self,
             input: impl Into<crate::model::FindingsReportSummary>,
@@ -1562,6 +1803,11 @@ pub mod get_findings_report_account_summary_output {
             self.report_summaries = Some(v);
             self
         }
+        /// <p>The return list of
+        /// <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_FindingsReportSummary.html">
+        /// <code>FindingsReportSummary</code>
+        /// </a>
+        /// objects taht contain summaries of analysis results for all profiling groups in your AWS account.</p>
         pub fn set_report_summaries(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FindingsReportSummary>>,
@@ -1577,6 +1823,10 @@ pub mod get_findings_report_account_summary_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The <code>nextToken</code> value to include in a future <code>GetFindingsReportAccountSummary</code> request.
+        /// When the results of a <code>GetFindingsReportAccountSummary</code> request exceed <code>maxResults</code>, this
+        /// value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more
+        /// results to return.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self

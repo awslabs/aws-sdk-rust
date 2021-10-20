@@ -11,7 +11,9 @@
     std::hash::Hash,
 )]
 pub enum MacieStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
+    #[allow(missing_docs)] // documentation missing in model
     Paused,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -33,6 +35,7 @@ impl std::str::FromStr for MacieStatus {
     }
 }
 impl MacieStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MacieStatus::Enabled => "ENABLED",
@@ -40,6 +43,7 @@ impl MacieStatus {
             MacieStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ENABLED", "PAUSED"]
     }
@@ -62,8 +66,11 @@ impl AsRef<str> for MacieStatus {
     std::hash::Hash,
 )]
 pub enum FindingPublishingFrequency {
+    #[allow(missing_docs)] // documentation missing in model
     FifteenMinutes,
+    #[allow(missing_docs)] // documentation missing in model
     OneHour,
+    #[allow(missing_docs)] // documentation missing in model
     SixHours,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -86,6 +93,7 @@ impl std::str::FromStr for FindingPublishingFrequency {
     }
 }
 impl FindingPublishingFrequency {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FindingPublishingFrequency::FifteenMinutes => "FIFTEEN_MINUTES",
@@ -94,6 +102,7 @@ impl FindingPublishingFrequency {
             FindingPublishingFrequency::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FIFTEEN_MINUTES", "ONE_HOUR", "SIX_HOURS"]
     }
@@ -134,6 +143,11 @@ pub mod finding_criteria {
         >,
     }
     impl Builder {
+        /// Adds a key-value pair to `criterion`.
+        ///
+        /// To override the contents of this collection use [`set_criterion`](Self::set_criterion).
+        ///
+        /// <p>A condition that specifies the property, operator, and one or more values to use to filter the results.</p>
         pub fn criterion(
             mut self,
             k: impl Into<std::string::String>,
@@ -144,6 +158,7 @@ pub mod finding_criteria {
             self.criterion = Some(hash_map);
             self
         }
+        /// <p>A condition that specifies the property, operator, and one or more values to use to filter the results.</p>
         pub fn set_criterion(
             mut self,
             input: std::option::Option<
@@ -218,12 +233,18 @@ pub mod criterion_additional_properties {
         pub(crate) neq: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `eq`.
+        ///
+        /// To override the contents of this collection use [`set_eq`](Self::set_eq).
+        ///
+        /// <p>The value for the property matches (equals) the specified value. If you specify multiple values, Macie uses OR logic to join the values.</p>
         pub fn eq(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.eq.unwrap_or_default();
             v.push(input.into());
             self.eq = Some(v);
             self
         }
+        /// <p>The value for the property matches (equals) the specified value. If you specify multiple values, Macie uses OR logic to join the values.</p>
         pub fn set_eq(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -231,12 +252,18 @@ pub mod criterion_additional_properties {
             self.eq = input;
             self
         }
+        /// Appends an item to `eq_exact_match`.
+        ///
+        /// To override the contents of this collection use [`set_eq_exact_match`](Self::set_eq_exact_match).
+        ///
+        /// <p>The value for the property exclusively matches (equals an exact match for) all the specified values. If you specify multiple values, Amazon Macie uses AND logic to join the values.</p> <p>You can use this operator with the following properties: customDataIdentifiers.detections.arn, customDataIdentifiers.detections.name, resourcesAffected.s3Bucket.tags.key, resourcesAffected.s3Bucket.tags.value, resourcesAffected.s3Object.tags.key, resourcesAffected.s3Object.tags.value, sensitiveData.category, and sensitiveData.detections.type.</p>
         pub fn eq_exact_match(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.eq_exact_match.unwrap_or_default();
             v.push(input.into());
             self.eq_exact_match = Some(v);
             self
         }
+        /// <p>The value for the property exclusively matches (equals an exact match for) all the specified values. If you specify multiple values, Amazon Macie uses AND logic to join the values.</p> <p>You can use this operator with the following properties: customDataIdentifiers.detections.arn, customDataIdentifiers.detections.name, resourcesAffected.s3Bucket.tags.key, resourcesAffected.s3Bucket.tags.value, resourcesAffected.s3Object.tags.key, resourcesAffected.s3Object.tags.value, sensitiveData.category, and sensitiveData.detections.type.</p>
         pub fn set_eq_exact_match(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -249,6 +276,7 @@ pub mod criterion_additional_properties {
             self.gt = Some(input);
             self
         }
+        /// <p>The value for the property is greater than the specified value.</p>
         pub fn set_gt(mut self, input: std::option::Option<i64>) -> Self {
             self.gt = input;
             self
@@ -258,6 +286,7 @@ pub mod criterion_additional_properties {
             self.gte = Some(input);
             self
         }
+        /// <p>The value for the property is greater than or equal to the specified value.</p>
         pub fn set_gte(mut self, input: std::option::Option<i64>) -> Self {
             self.gte = input;
             self
@@ -267,6 +296,7 @@ pub mod criterion_additional_properties {
             self.lt = Some(input);
             self
         }
+        /// <p>The value for the property is less than the specified value.</p>
         pub fn set_lt(mut self, input: std::option::Option<i64>) -> Self {
             self.lt = input;
             self
@@ -276,16 +306,23 @@ pub mod criterion_additional_properties {
             self.lte = Some(input);
             self
         }
+        /// <p>The value for the property is less than or equal to the specified value.</p>
         pub fn set_lte(mut self, input: std::option::Option<i64>) -> Self {
             self.lte = input;
             self
         }
+        /// Appends an item to `neq`.
+        ///
+        /// To override the contents of this collection use [`set_neq`](Self::set_neq).
+        ///
+        /// <p>The value for the property doesn't match (doesn't equal) the specified value. If you specify multiple values, Macie uses OR logic to join the values.</p>
         pub fn neq(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.neq.unwrap_or_default();
             v.push(input.into());
             self.neq = Some(v);
             self
         }
+        /// <p>The value for the property doesn't match (doesn't equal) the specified value. If you specify multiple values, Macie uses OR logic to join the values.</p>
         pub fn set_neq(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -326,7 +363,9 @@ impl CriterionAdditionalProperties {
     std::hash::Hash,
 )]
 pub enum FindingsFilterAction {
+    #[allow(missing_docs)] // documentation missing in model
     Archive,
+    #[allow(missing_docs)] // documentation missing in model
     Noop,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -348,6 +387,7 @@ impl std::str::FromStr for FindingsFilterAction {
     }
 }
 impl FindingsFilterAction {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FindingsFilterAction::Archive => "ARCHIVE",
@@ -355,6 +395,7 @@ impl FindingsFilterAction {
             FindingsFilterAction::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ARCHIVE", "NOOP"]
     }
@@ -377,11 +418,17 @@ impl AsRef<str> for FindingsFilterAction {
     std::hash::Hash,
 )]
 pub enum JobStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Cancelled,
+    #[allow(missing_docs)] // documentation missing in model
     Complete,
+    #[allow(missing_docs)] // documentation missing in model
     Idle,
+    #[allow(missing_docs)] // documentation missing in model
     Paused,
+    #[allow(missing_docs)] // documentation missing in model
     Running,
+    #[allow(missing_docs)] // documentation missing in model
     UserPaused,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -407,6 +454,7 @@ impl std::str::FromStr for JobStatus {
     }
 }
 impl JobStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             JobStatus::Cancelled => "CANCELLED",
@@ -418,6 +466,7 @@ impl JobStatus {
             JobStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CANCELLED",
@@ -463,6 +512,7 @@ pub mod matching_resource {
             self.matching_bucket = Some(input);
             self
         }
+        /// <p>The details of an S3 bucket that Amazon Macie monitors and analyzes.</p>
         pub fn set_matching_bucket(
             mut self,
             input: std::option::Option<crate::model::MatchingBucket>,
@@ -578,6 +628,7 @@ pub mod matching_bucket {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the Amazon Web Services account that owns the bucket.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -587,6 +638,7 @@ pub mod matching_bucket {
             self.bucket_name = Some(input.into());
             self
         }
+        /// <p>The name of the bucket.</p>
         pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket_name = input;
             self
@@ -596,6 +648,7 @@ pub mod matching_bucket {
             self.classifiable_object_count = Some(input);
             self
         }
+        /// <p>The total number of objects that Amazon Macie can analyze in the bucket. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>
         pub fn set_classifiable_object_count(mut self, input: std::option::Option<i64>) -> Self {
             self.classifiable_object_count = input;
             self
@@ -605,6 +658,7 @@ pub mod matching_bucket {
             self.classifiable_size_in_bytes = Some(input);
             self
         }
+        /// <p>The total storage size, in bytes, of the objects that Amazon Macie can analyze in the bucket. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p> <p>If versioning is enabled for the bucket, Macie calculates this value based on the size of the latest version of each applicable object in the bucket. This value doesn't reflect the storage size of all versions of each applicable object in the bucket.</p>
         pub fn set_classifiable_size_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
             self.classifiable_size_in_bytes = input;
             self
@@ -614,6 +668,7 @@ pub mod matching_bucket {
             self.error_code = Some(input);
             self
         }
+        /// <p>Specifies the error code for an error that prevented Amazon Macie from retrieving and processing information about the bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have permission to retrieve the information. For example, the bucket has a restrictive bucket policy and Amazon S3 denied the request. If this value is null, Macie was able to retrieve and process the information.</p>
         pub fn set_error_code(
             mut self,
             input: std::option::Option<crate::model::BucketMetadataErrorCode>,
@@ -626,6 +681,7 @@ pub mod matching_bucket {
             self.error_message = Some(input.into());
             self
         }
+        /// <p>A brief description of the error (errorCode) that prevented Amazon Macie from retrieving and processing information about the bucket and the bucket's objects. This value is null if Macie was able to retrieve and process the information.</p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -638,6 +694,7 @@ pub mod matching_bucket {
             self.job_details = Some(input);
             self
         }
+        /// <p>Specifies whether any one-time or recurring classification jobs are configured to analyze objects in the bucket, and, if so, the details of the job that ran most recently.</p>
         pub fn set_job_details(
             mut self,
             input: std::option::Option<crate::model::JobDetails>,
@@ -650,6 +707,7 @@ pub mod matching_bucket {
             self.object_count = Some(input);
             self
         }
+        /// <p>The total number of objects in the bucket.</p>
         pub fn set_object_count(mut self, input: std::option::Option<i64>) -> Self {
             self.object_count = input;
             self
@@ -662,6 +720,7 @@ pub mod matching_bucket {
             self.object_count_by_encryption_type = Some(input);
             self
         }
+        /// <p>The total number of objects that are in the bucket, grouped by server-side encryption type. This includes a grouping that reports the total number of objects that aren't encrypted or use client-side encryption.</p>
         pub fn set_object_count_by_encryption_type(
             mut self,
             input: std::option::Option<crate::model::ObjectCountByEncryptionType>,
@@ -674,6 +733,7 @@ pub mod matching_bucket {
             self.size_in_bytes = Some(input);
             self
         }
+        /// <p>The total storage size, in bytes, of the bucket.</p> <p>If versioning is enabled for the bucket, Amazon Macie calculates this value based on the size of the latest version of each object in the bucket. This value doesn't reflect the storage size of all versions of each object in the bucket.</p>
         pub fn set_size_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
             self.size_in_bytes = input;
             self
@@ -683,6 +743,7 @@ pub mod matching_bucket {
             self.size_in_bytes_compressed = Some(input);
             self
         }
+        /// <p>The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the bucket.</p> <p>If versioning is enabled for the bucket, Amazon Macie calculates this value based on the size of the latest version of each applicable object in the bucket. This value doesn't reflect the storage size of all versions of each applicable object in the bucket.</p>
         pub fn set_size_in_bytes_compressed(mut self, input: std::option::Option<i64>) -> Self {
             self.size_in_bytes_compressed = input;
             self
@@ -695,6 +756,7 @@ pub mod matching_bucket {
             self.unclassifiable_object_count = Some(input);
             self
         }
+        /// <p>The total number of objects that Amazon Macie can't analyze in the bucket. These objects don't use a supported storage class or don't have a file name extension for a supported file or storage format.</p>
         pub fn set_unclassifiable_object_count(
             mut self,
             input: std::option::Option<crate::model::ObjectLevelStatistics>,
@@ -710,6 +772,7 @@ pub mod matching_bucket {
             self.unclassifiable_object_size_in_bytes = Some(input);
             self
         }
+        /// <p>The total storage size, in bytes, of the objects that Amazon Macie can't analyze in the bucket. These objects don't use a supported storage class or don't have a file name extension for a supported file or storage format.</p>
         pub fn set_unclassifiable_object_size_in_bytes(
             mut self,
             input: std::option::Option<crate::model::ObjectLevelStatistics>,
@@ -780,6 +843,7 @@ pub mod object_level_statistics {
             self.file_type = Some(input);
             self
         }
+        /// <p>The total storage size (in bytes) or number of objects that Amazon Macie can't analyze because the objects don't have a file name extension for a supported file or storage format.</p>
         pub fn set_file_type(mut self, input: std::option::Option<i64>) -> Self {
             self.file_type = input;
             self
@@ -789,6 +853,7 @@ pub mod object_level_statistics {
             self.storage_class = Some(input);
             self
         }
+        /// <p>The total storage size (in bytes) or number of objects that Amazon Macie can't analyze because the objects use an unsupported storage class.</p>
         pub fn set_storage_class(mut self, input: std::option::Option<i64>) -> Self {
             self.storage_class = input;
             self
@@ -798,6 +863,7 @@ pub mod object_level_statistics {
             self.total = Some(input);
             self
         }
+        /// <p>The total storage size (in bytes) or number of objects that Amazon Macie can't analyze because the objects use an unsupported storage class or don't have a file name extension for a supported file or storage format.</p>
         pub fn set_total(mut self, input: std::option::Option<i64>) -> Self {
             self.total = input;
             self
@@ -863,6 +929,7 @@ pub mod object_count_by_encryption_type {
             self.customer_managed = Some(input);
             self
         }
+        /// <p>The total number of objects that are encrypted with a customer-provided key. The objects use customer-provided server-side encryption (SSE-C).</p>
         pub fn set_customer_managed(mut self, input: std::option::Option<i64>) -> Self {
             self.customer_managed = input;
             self
@@ -872,6 +939,7 @@ pub mod object_count_by_encryption_type {
             self.kms_managed = Some(input);
             self
         }
+        /// <p>The total number of objects that are encrypted with an KMS key, either an Amazon Web Services managed key or a customer managed key. The objects use KMS encryption (SSE-KMS).</p>
         pub fn set_kms_managed(mut self, input: std::option::Option<i64>) -> Self {
             self.kms_managed = input;
             self
@@ -881,6 +949,7 @@ pub mod object_count_by_encryption_type {
             self.s3_managed = Some(input);
             self
         }
+        /// <p>The total number of objects that are encrypted with an Amazon S3 managed key. The objects use Amazon S3 managed encryption (SSE-S3).</p>
         pub fn set_s3_managed(mut self, input: std::option::Option<i64>) -> Self {
             self.s3_managed = input;
             self
@@ -890,6 +959,7 @@ pub mod object_count_by_encryption_type {
             self.unencrypted = Some(input);
             self
         }
+        /// <p>The total number of objects that aren't encrypted or use client-side encryption.</p>
         pub fn set_unencrypted(mut self, input: std::option::Option<i64>) -> Self {
             self.unencrypted = input;
             self
@@ -899,6 +969,7 @@ pub mod object_count_by_encryption_type {
             self.unknown = Some(input);
             self
         }
+        /// <p>The total number of objects that Amazon Macie doesn't have current encryption metadata for. Macie can't provide current data about the encryption settings for these objects.</p>
         pub fn set_unknown(mut self, input: std::option::Option<i64>) -> Self {
             self.unknown = input;
             self
@@ -933,7 +1004,7 @@ pub struct JobDetails {
     /// <p>The unique identifier for the job that ran most recently and is configured to analyze data in the bucket, either the latest run of a recurring job or the only run of a one-time job.</p> <p>This value is typically null if the value for the isDefinedInJob property is FALSE or UNKNOWN.</p>
     pub last_job_id: std::option::Option<std::string::String>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the job (lastJobId) started. If the job is a recurring job, this value indicates when the most recent run started.</p> <p>This value is typically null if the value for the isDefinedInJob property is FALSE or UNKNOWN.</p>
-    pub last_job_run_time: std::option::Option<smithy_types::Instant>,
+    pub last_job_run_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for JobDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -954,7 +1025,7 @@ pub mod job_details {
         pub(crate) is_defined_in_job: std::option::Option<crate::model::IsDefinedInJob>,
         pub(crate) is_monitored_by_job: std::option::Option<crate::model::IsMonitoredByJob>,
         pub(crate) last_job_id: std::option::Option<std::string::String>,
-        pub(crate) last_job_run_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_job_run_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>Specifies whether any one-time or recurring jobs are configured to analyze data in the bucket. Possible values are:</p> <ul><li><p>TRUE - The bucket is explicitly included in the bucket definition (S3BucketDefinitionForJob) for one or more jobs and at least one of those jobs has a status other than CANCELLED. Or the bucket matched the bucket criteria (S3BucketCriteriaForJob) for at least one job that previously ran.</p></li> <li><p>FALSE - The bucket isn't explicitly included in the bucket definition (S3BucketDefinitionForJob) for any jobs, all the jobs that explicitly include the bucket in their bucket definitions have a status of CANCELLED, or the bucket didn't match the bucket criteria (S3BucketCriteriaForJob) for any jobs that previously ran.</p></li> <li><p>UNKNOWN - An exception occurred when Amazon Macie attempted to retrieve job data for the bucket.</p></li></ul> <p></p>
@@ -962,6 +1033,7 @@ pub mod job_details {
             self.is_defined_in_job = Some(input);
             self
         }
+        /// <p>Specifies whether any one-time or recurring jobs are configured to analyze data in the bucket. Possible values are:</p> <ul><li><p>TRUE - The bucket is explicitly included in the bucket definition (S3BucketDefinitionForJob) for one or more jobs and at least one of those jobs has a status other than CANCELLED. Or the bucket matched the bucket criteria (S3BucketCriteriaForJob) for at least one job that previously ran.</p></li> <li><p>FALSE - The bucket isn't explicitly included in the bucket definition (S3BucketDefinitionForJob) for any jobs, all the jobs that explicitly include the bucket in their bucket definitions have a status of CANCELLED, or the bucket didn't match the bucket criteria (S3BucketCriteriaForJob) for any jobs that previously ran.</p></li> <li><p>UNKNOWN - An exception occurred when Amazon Macie attempted to retrieve job data for the bucket.</p></li></ul> <p></p>
         pub fn set_is_defined_in_job(
             mut self,
             input: std::option::Option<crate::model::IsDefinedInJob>,
@@ -974,6 +1046,7 @@ pub mod job_details {
             self.is_monitored_by_job = Some(input);
             self
         }
+        /// <p>Specifies whether any recurring jobs are configured to analyze data in the bucket. Possible values are:</p> <ul><li><p>TRUE - The bucket is explicitly included in the bucket definition (S3BucketDefinitionForJob) for one or more recurring jobs or the bucket matches the bucket criteria (S3BucketCriteriaForJob) for one or more recurring jobs. At least one of those jobs has a status other than CANCELLED.</p></li> <li><p>FALSE - The bucket isn't explicitly included in the bucket definition (S3BucketDefinitionForJob) for any recurring jobs, the bucket doesn't match the bucket criteria (S3BucketCriteriaForJob) for any recurring jobs, or all the recurring jobs that are configured to analyze data in the bucket have a status of CANCELLED.</p></li> <li><p>UNKNOWN - An exception occurred when Amazon Macie attempted to retrieve job data for the bucket.</p></li></ul>
         pub fn set_is_monitored_by_job(
             mut self,
             input: std::option::Option<crate::model::IsMonitoredByJob>,
@@ -986,18 +1059,20 @@ pub mod job_details {
             self.last_job_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the job that ran most recently and is configured to analyze data in the bucket, either the latest run of a recurring job or the only run of a one-time job.</p> <p>This value is typically null if the value for the isDefinedInJob property is FALSE or UNKNOWN.</p>
         pub fn set_last_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.last_job_id = input;
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when the job (lastJobId) started. If the job is a recurring job, this value indicates when the most recent run started.</p> <p>This value is typically null if the value for the isDefinedInJob property is FALSE or UNKNOWN.</p>
-        pub fn last_job_run_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_job_run_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_job_run_time = Some(input);
             self
         }
+        /// <p>The date and time, in UTC and extended ISO 8601 format, when the job (lastJobId) started. If the job is a recurring job, this value indicates when the most recent run started.</p> <p>This value is typically null if the value for the isDefinedInJob property is FALSE or UNKNOWN.</p>
         pub fn set_last_job_run_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_job_run_time = input;
             self
@@ -1020,7 +1095,7 @@ impl JobDetails {
     }
 }
 
-/// **NOTE:** `IsMonitoredByJob::Unknown` has been renamed to `::UnknownValue`.
+/// _Note: `IsMonitoredByJob::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1032,9 +1107,11 @@ impl JobDetails {
     std::hash::Hash,
 )]
 pub enum IsMonitoredByJob {
+    #[allow(missing_docs)] // documentation missing in model
     False,
+    #[allow(missing_docs)] // documentation missing in model
     True,
-    /// **NOTE:** `::Unknown` has been renamed to `::UnknownValue`.
+    /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
     UnknownValue,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1057,6 +1134,7 @@ impl std::str::FromStr for IsMonitoredByJob {
     }
 }
 impl IsMonitoredByJob {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             IsMonitoredByJob::False => "FALSE",
@@ -1065,6 +1143,7 @@ impl IsMonitoredByJob {
             IsMonitoredByJob::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FALSE", "TRUE", "UNKNOWN"]
     }
@@ -1075,7 +1154,7 @@ impl AsRef<str> for IsMonitoredByJob {
     }
 }
 
-/// **NOTE:** `IsDefinedInJob::Unknown` has been renamed to `::UnknownValue`.
+/// _Note: `IsDefinedInJob::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1087,9 +1166,11 @@ impl AsRef<str> for IsMonitoredByJob {
     std::hash::Hash,
 )]
 pub enum IsDefinedInJob {
+    #[allow(missing_docs)] // documentation missing in model
     False,
+    #[allow(missing_docs)] // documentation missing in model
     True,
-    /// **NOTE:** `::Unknown` has been renamed to `::UnknownValue`.
+    /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
     UnknownValue,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1112,6 +1193,7 @@ impl std::str::FromStr for IsDefinedInJob {
     }
 }
 impl IsDefinedInJob {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             IsDefinedInJob::False => "FALSE",
@@ -1120,6 +1202,7 @@ impl IsDefinedInJob {
             IsDefinedInJob::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FALSE", "TRUE", "UNKNOWN"]
     }
@@ -1142,6 +1225,7 @@ impl AsRef<str> for IsDefinedInJob {
     std::hash::Hash,
 )]
 pub enum BucketMetadataErrorCode {
+    #[allow(missing_docs)] // documentation missing in model
     AccessDenied,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1162,12 +1246,14 @@ impl std::str::FromStr for BucketMetadataErrorCode {
     }
 }
 impl BucketMetadataErrorCode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             BucketMetadataErrorCode::AccessDenied => "ACCESS_DENIED",
             BucketMetadataErrorCode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ACCESS_DENIED"]
     }
@@ -1214,6 +1300,7 @@ pub mod search_resources_sort_criteria {
             self.attribute_name = Some(input);
             self
         }
+        /// <p>The property to sort the results by.</p>
         pub fn set_attribute_name(
             mut self,
             input: std::option::Option<crate::model::SearchResourcesSortAttributeName>,
@@ -1226,6 +1313,7 @@ pub mod search_resources_sort_criteria {
             self.order_by = Some(input);
             self
         }
+        /// <p>The sort order to apply to the results, based on the value for the property specified by the attributeName property. Valid values are: ASC, sort the results in ascending order; and, DESC, sort the results in descending order.</p>
         pub fn set_order_by(mut self, input: std::option::Option<crate::model::OrderBy>) -> Self {
             self.order_by = input;
             self
@@ -1246,6 +1334,7 @@ impl SearchResourcesSortCriteria {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1257,7 +1346,9 @@ impl SearchResourcesSortCriteria {
     std::hash::Hash,
 )]
 pub enum OrderBy {
+    #[allow(missing_docs)] // documentation missing in model
     Asc,
+    #[allow(missing_docs)] // documentation missing in model
     Desc,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1279,6 +1370,7 @@ impl std::str::FromStr for OrderBy {
     }
 }
 impl OrderBy {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             OrderBy::Asc => "ASC",
@@ -1286,6 +1378,7 @@ impl OrderBy {
             OrderBy::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ASC", "DESC"]
     }
@@ -1308,9 +1401,13 @@ impl AsRef<str> for OrderBy {
     std::hash::Hash,
 )]
 pub enum SearchResourcesSortAttributeName {
+    #[allow(missing_docs)] // documentation missing in model
     AccountId,
+    #[allow(missing_docs)] // documentation missing in model
     ResourceName,
+    #[allow(missing_docs)] // documentation missing in model
     S3ClassifiableObjectCount,
+    #[allow(missing_docs)] // documentation missing in model
     S3ClassifiableSizeInBytes,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1338,6 +1435,7 @@ impl std::str::FromStr for SearchResourcesSortAttributeName {
     }
 }
 impl SearchResourcesSortAttributeName {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SearchResourcesSortAttributeName::AccountId => "ACCOUNT_ID",
@@ -1351,6 +1449,7 @@ impl SearchResourcesSortAttributeName {
             SearchResourcesSortAttributeName::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ACCOUNT_ID",
@@ -1398,6 +1497,7 @@ pub mod search_resources_bucket_criteria {
             self.excludes = Some(input);
             self
         }
+        /// <p>The property- and tag-based conditions that determine which buckets to exclude from the results.</p>
         pub fn set_excludes(
             mut self,
             input: std::option::Option<crate::model::SearchResourcesCriteriaBlock>,
@@ -1410,6 +1510,7 @@ pub mod search_resources_bucket_criteria {
             self.includes = Some(input);
             self
         }
+        /// <p>The property- and tag-based conditions that determine which buckets to include in the results.</p>
         pub fn set_includes(
             mut self,
             input: std::option::Option<crate::model::SearchResourcesCriteriaBlock>,
@@ -1456,12 +1557,18 @@ pub mod search_resources_criteria_block {
         pub(crate) and: std::option::Option<std::vec::Vec<crate::model::SearchResourcesCriteria>>,
     }
     impl Builder {
+        /// Appends an item to `and`.
+        ///
+        /// To override the contents of this collection use [`set_and`](Self::set_and).
+        ///
+        /// <p>An array of objects, one for each property- or tag-based condition that includes or excludes resources from the query results. If you specify more than one condition, Amazon Macie uses AND logic to join the conditions.</p>
         pub fn and(mut self, input: impl Into<crate::model::SearchResourcesCriteria>) -> Self {
             let mut v = self.and.unwrap_or_default();
             v.push(input.into());
             self.and = Some(v);
             self
         }
+        /// <p>An array of objects, one for each property- or tag-based condition that includes or excludes resources from the query results. If you specify more than one condition, Amazon Macie uses AND logic to join the conditions.</p>
         pub fn set_and(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SearchResourcesCriteria>>,
@@ -1518,6 +1625,7 @@ pub mod search_resources_criteria {
             self.simple_criterion = Some(input);
             self
         }
+        /// <p>A property-based condition that defines a property, operator, and one or more values for including or excluding resources from the results.</p>
         pub fn set_simple_criterion(
             mut self,
             input: std::option::Option<crate::model::SearchResourcesSimpleCriterion>,
@@ -1530,6 +1638,7 @@ pub mod search_resources_criteria {
             self.tag_criterion = Some(input);
             self
         }
+        /// <p>A tag-based condition that defines an operator and tag keys, tag values, or tag key and value pairs for including or excluding resources from the results.</p>
         pub fn set_tag_criterion(
             mut self,
             input: std::option::Option<crate::model::SearchResourcesTagCriterion>,
@@ -1587,6 +1696,7 @@ pub mod search_resources_tag_criterion {
             self.comparator = Some(input);
             self
         }
+        /// <p>The operator to use in the condition. Valid values are EQ (equals) and NE (not equals).</p>
         pub fn set_comparator(
             mut self,
             input: std::option::Option<crate::model::SearchResourcesComparator>,
@@ -1594,6 +1704,11 @@ pub mod search_resources_tag_criterion {
             self.comparator = input;
             self
         }
+        /// Appends an item to `tag_values`.
+        ///
+        /// To override the contents of this collection use [`set_tag_values`](Self::set_tag_values).
+        ///
+        /// <p>The tag keys, tag values, or tag key and value pairs to use in the condition.</p>
         pub fn tag_values(
             mut self,
             input: impl Into<crate::model::SearchResourcesTagCriterionPair>,
@@ -1603,6 +1718,7 @@ pub mod search_resources_tag_criterion {
             self.tag_values = Some(v);
             self
         }
+        /// <p>The tag keys, tag values, or tag key and value pairs to use in the condition.</p>
         pub fn set_tag_values(
             mut self,
             input: std::option::Option<
@@ -1660,6 +1776,7 @@ pub mod search_resources_tag_criterion_pair {
             self.key = Some(input.into());
             self
         }
+        /// <p>The value for the tag key to use in the condition.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -1669,6 +1786,7 @@ pub mod search_resources_tag_criterion_pair {
             self.value = Some(input.into());
             self
         }
+        /// <p>The tag value to use in the condition.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -1701,7 +1819,9 @@ impl SearchResourcesTagCriterionPair {
     std::hash::Hash,
 )]
 pub enum SearchResourcesComparator {
+    #[allow(missing_docs)] // documentation missing in model
     Eq,
+    #[allow(missing_docs)] // documentation missing in model
     Ne,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1723,6 +1843,7 @@ impl std::str::FromStr for SearchResourcesComparator {
     }
 }
 impl SearchResourcesComparator {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SearchResourcesComparator::Eq => "EQ",
@@ -1730,6 +1851,7 @@ impl SearchResourcesComparator {
             SearchResourcesComparator::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["EQ", "NE"]
     }
@@ -1776,6 +1898,7 @@ pub mod search_resources_simple_criterion {
             self.comparator = Some(input);
             self
         }
+        /// <p>The operator to use in the condition. Valid values are EQ (equals) and NE (not equals).</p>
         pub fn set_comparator(
             mut self,
             input: std::option::Option<crate::model::SearchResourcesComparator>,
@@ -1788,6 +1911,7 @@ pub mod search_resources_simple_criterion {
             self.key = Some(input);
             self
         }
+        /// <p>The property to use in the condition.</p>
         pub fn set_key(
             mut self,
             input: std::option::Option<crate::model::SearchResourcesSimpleCriterionKey>,
@@ -1795,12 +1919,18 @@ pub mod search_resources_simple_criterion {
             self.key = input;
             self
         }
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>An array that lists one or more values to use in the condition. If you specify multiple values, Amazon Macie uses OR logic to join the values. Valid values for each supported property (key) are:</p> <ul><li><p>ACCOUNT_ID - A string that represents the unique identifier for the Amazon Web Services account that owns the resource.</p></li> <li><p>S3_BUCKET_EFFECTIVE_PERMISSION - A string that represents an enumerated value that Macie defines for the <a href="https://docs.aws.amazon.com/macie/latest/APIReference/datasources-s3.html#datasources-s3-prop-bucketpublicaccess-effectivepermission">BucketPublicAccess.effectivePermission</a> property of an S3 bucket.</p></li> <li><p>S3_BUCKET_NAME - A string that represents the name of an S3 bucket.</p></li> <li><p>S3_BUCKET_SHARED_ACCESS - A string that represents an enumerated value that Macie defines for the <a href="https://docs.aws.amazon.com/macie/latest/APIReference/datasources-s3.html#datasources-s3-prop-bucketmetadata-sharedaccess">BucketMetadata.sharedAccess</a> property of an S3 bucket.</p></li></ul> <p>Values are case sensitive. Also, Macie doesn't support use of partial values or wildcard characters in values.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
+        /// <p>An array that lists one or more values to use in the condition. If you specify multiple values, Amazon Macie uses OR logic to join the values. Valid values for each supported property (key) are:</p> <ul><li><p>ACCOUNT_ID - A string that represents the unique identifier for the Amazon Web Services account that owns the resource.</p></li> <li><p>S3_BUCKET_EFFECTIVE_PERMISSION - A string that represents an enumerated value that Macie defines for the <a href="https://docs.aws.amazon.com/macie/latest/APIReference/datasources-s3.html#datasources-s3-prop-bucketpublicaccess-effectivepermission">BucketPublicAccess.effectivePermission</a> property of an S3 bucket.</p></li> <li><p>S3_BUCKET_NAME - A string that represents the name of an S3 bucket.</p></li> <li><p>S3_BUCKET_SHARED_ACCESS - A string that represents an enumerated value that Macie defines for the <a href="https://docs.aws.amazon.com/macie/latest/APIReference/datasources-s3.html#datasources-s3-prop-bucketmetadata-sharedaccess">BucketMetadata.sharedAccess</a> property of an S3 bucket.</p></li></ul> <p>Values are case sensitive. Also, Macie doesn't support use of partial values or wildcard characters in values.</p>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1837,9 +1967,13 @@ impl SearchResourcesSimpleCriterion {
     std::hash::Hash,
 )]
 pub enum SearchResourcesSimpleCriterionKey {
+    #[allow(missing_docs)] // documentation missing in model
     AccountId,
+    #[allow(missing_docs)] // documentation missing in model
     S3BucketEffectivePermission,
+    #[allow(missing_docs)] // documentation missing in model
     S3BucketName,
+    #[allow(missing_docs)] // documentation missing in model
     S3BucketSharedAccess,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1865,6 +1999,7 @@ impl std::str::FromStr for SearchResourcesSimpleCriterionKey {
     }
 }
 impl SearchResourcesSimpleCriterionKey {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SearchResourcesSimpleCriterionKey::AccountId => "ACCOUNT_ID",
@@ -1876,6 +2011,7 @@ impl SearchResourcesSimpleCriterionKey {
             SearchResourcesSimpleCriterionKey::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ACCOUNT_ID",
@@ -1926,6 +2062,7 @@ pub mod security_hub_configuration {
             self.publish_classification_findings = Some(input);
             self
         }
+        /// <p>Specifies whether to publish sensitive data findings to Security Hub. If you set this value to true, Amazon Macie automatically publishes all sensitive data findings that weren't suppressed by a findings filter. The default value is false.</p>
         pub fn set_publish_classification_findings(
             mut self,
             input: std::option::Option<bool>,
@@ -1938,6 +2075,7 @@ pub mod security_hub_configuration {
             self.publish_policy_findings = Some(input);
             self
         }
+        /// <p>Specifies whether to publish policy findings to Security Hub. If you set this value to true, Amazon Macie automatically publishes all new and updated policy findings that weren't suppressed by a findings filter. The default value is true.</p>
         pub fn set_publish_policy_findings(mut self, input: std::option::Option<bool>) -> Self {
             self.publish_policy_findings = input;
             self
@@ -1988,6 +2126,7 @@ pub mod classification_export_configuration {
             self.s3_destination = Some(input);
             self
         }
+        /// <p>The S3 bucket to store data classification results in, and the encryption settings to use when storing results in that bucket.</p>
         pub fn set_s3_destination(
             mut self,
             input: std::option::Option<crate::model::S3Destination>,
@@ -2046,6 +2185,7 @@ pub mod s3_destination {
             self.bucket_name = Some(input.into());
             self
         }
+        /// <p>The name of the bucket.</p>
         pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket_name = input;
             self
@@ -2055,6 +2195,7 @@ pub mod s3_destination {
             self.key_prefix = Some(input.into());
             self
         }
+        /// <p>The path prefix to use in the path to the location in the bucket. This prefix specifies where to store classification results in the bucket.</p>
         pub fn set_key_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_prefix = input;
             self
@@ -2064,6 +2205,7 @@ pub mod s3_destination {
             self.kms_key_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the KMS key to use for encryption of the results. This must be the ARN of an existing, symmetric, customer managed KMS key that's in the same Amazon Web Services Region as the bucket.</p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_arn = input;
             self
@@ -2117,6 +2259,7 @@ pub mod admin_account {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services account ID for the account.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -2126,6 +2269,7 @@ pub mod admin_account {
             self.status = Some(input);
             self
         }
+        /// <p>The current status of the account as the delegated administrator of Amazon Macie for the organization.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::AdminStatus>) -> Self {
             self.status = input;
             self
@@ -2158,7 +2302,9 @@ impl AdminAccount {
     std::hash::Hash,
 )]
 pub enum AdminStatus {
+    #[allow(missing_docs)] // documentation missing in model
     DisablingInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2180,6 +2326,7 @@ impl std::str::FromStr for AdminStatus {
     }
 }
 impl AdminStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AdminStatus::DisablingInProgress => "DISABLING_IN_PROGRESS",
@@ -2187,6 +2334,7 @@ impl AdminStatus {
             AdminStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLING_IN_PROGRESS", "ENABLED"]
     }
@@ -2210,7 +2358,7 @@ pub struct Member {
     /// <p>The email address for the account.</p>
     pub email: std::option::Option<std::string::String>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when an Amazon Macie membership invitation was last sent to the account. This value is null if a Macie invitation hasn't been sent to the account.</p>
-    pub invited_at: std::option::Option<smithy_types::Instant>,
+    pub invited_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>(Deprecated) The Amazon Web Services account ID for the administrator account. This property has been replaced by the administratorAccountId property and is retained only for backward compatibility.</p>
     pub master_account_id: std::option::Option<std::string::String>,
     /// <p>The current status of the relationship between the account and the administrator account.</p>
@@ -2219,7 +2367,7 @@ pub struct Member {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the relationship between the account and the administrator account.</p>
-    pub updated_at: std::option::Option<smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for Member {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2246,13 +2394,13 @@ pub mod member {
         pub(crate) administrator_account_id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) email: std::option::Option<std::string::String>,
-        pub(crate) invited_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) invited_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) master_account_id: std::option::Option<std::string::String>,
         pub(crate) relationship_status: std::option::Option<crate::model::RelationshipStatus>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        pub(crate) updated_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The Amazon Web Services account ID for the account.</p>
@@ -2260,6 +2408,7 @@ pub mod member {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services account ID for the account.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -2269,6 +2418,7 @@ pub mod member {
             self.administrator_account_id = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services account ID for the administrator account.</p>
         pub fn set_administrator_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2281,6 +2431,7 @@ pub mod member {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the account.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -2290,16 +2441,21 @@ pub mod member {
             self.email = Some(input.into());
             self
         }
+        /// <p>The email address for the account.</p>
         pub fn set_email(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.email = input;
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when an Amazon Macie membership invitation was last sent to the account. This value is null if a Macie invitation hasn't been sent to the account.</p>
-        pub fn invited_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn invited_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.invited_at = Some(input);
             self
         }
-        pub fn set_invited_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date and time, in UTC and extended ISO 8601 format, when an Amazon Macie membership invitation was last sent to the account. This value is null if a Macie invitation hasn't been sent to the account.</p>
+        pub fn set_invited_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.invited_at = input;
             self
         }
@@ -2308,6 +2464,7 @@ pub mod member {
             self.master_account_id = Some(input.into());
             self
         }
+        /// <p>(Deprecated) The Amazon Web Services account ID for the administrator account. This property has been replaced by the administratorAccountId property and is retained only for backward compatibility.</p>
         pub fn set_master_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2320,6 +2477,7 @@ pub mod member {
             self.relationship_status = Some(input);
             self
         }
+        /// <p>The current status of the relationship between the account and the administrator account.</p>
         pub fn set_relationship_status(
             mut self,
             input: std::option::Option<crate::model::RelationshipStatus>,
@@ -2327,6 +2485,11 @@ pub mod member {
             self.relationship_status = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A map of key-value pairs that identifies the tags (keys and values) that are associated with the account in Amazon Macie.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2337,6 +2500,7 @@ pub mod member {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>A map of key-value pairs that identifies the tags (keys and values) that are associated with the account in Amazon Macie.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2347,11 +2511,15 @@ pub mod member {
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the relationship between the account and the administrator account.</p>
-        pub fn updated_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.updated_at = Some(input);
             self
         }
-        pub fn set_updated_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the relationship between the account and the administrator account.</p>
+        pub fn set_updated_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.updated_at = input;
             self
         }
@@ -2390,15 +2558,25 @@ impl Member {
     std::hash::Hash,
 )]
 pub enum RelationshipStatus {
+    #[allow(missing_docs)] // documentation missing in model
     AccountSuspended,
+    #[allow(missing_docs)] // documentation missing in model
     Created,
+    #[allow(missing_docs)] // documentation missing in model
     EmailVerificationFailed,
+    #[allow(missing_docs)] // documentation missing in model
     EmailVerificationInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
+    #[allow(missing_docs)] // documentation missing in model
     Invited,
+    #[allow(missing_docs)] // documentation missing in model
     Paused,
+    #[allow(missing_docs)] // documentation missing in model
     RegionDisabled,
+    #[allow(missing_docs)] // documentation missing in model
     Removed,
+    #[allow(missing_docs)] // documentation missing in model
     Resigned,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2428,6 +2606,7 @@ impl std::str::FromStr for RelationshipStatus {
     }
 }
 impl RelationshipStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RelationshipStatus::AccountSuspended => "AccountSuspended",
@@ -2443,6 +2622,7 @@ impl RelationshipStatus {
             RelationshipStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "AccountSuspended",
@@ -2496,6 +2676,7 @@ pub mod managed_data_identifier_summary {
             self.category = Some(input);
             self
         }
+        /// <p>The category of sensitive data that the managed data identifier detects: CREDENTIALS, for credentials data such as private keys or Amazon Web Services secret keys; FINANCIAL_INFORMATION, for financial data such as credit card numbers; or, PERSONAL_INFORMATION, for personal health information, such as health insurance identification numbers, or personally identifiable information, such as passport numbers.</p>
         pub fn set_category(
             mut self,
             input: std::option::Option<crate::model::SensitiveDataItemCategory>,
@@ -2508,6 +2689,7 @@ pub mod managed_data_identifier_summary {
             self.id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the managed data identifier. This is a string that describes the type of sensitive data that the managed data identifier detects. For example: OPENSSH_PRIVATE_KEY for OpenSSH private keys, CREDIT_CARD_NUMBER for credit card numbers, or USA_PASSPORT_NUMBER for US passport numbers.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -2540,9 +2722,13 @@ impl ManagedDataIdentifierSummary {
     std::hash::Hash,
 )]
 pub enum SensitiveDataItemCategory {
+    #[allow(missing_docs)] // documentation missing in model
     Credentials,
+    #[allow(missing_docs)] // documentation missing in model
     CustomIdentifier,
+    #[allow(missing_docs)] // documentation missing in model
     FinancialInformation,
+    #[allow(missing_docs)] // documentation missing in model
     PersonalInformation,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2566,6 +2752,7 @@ impl std::str::FromStr for SensitiveDataItemCategory {
     }
 }
 impl SensitiveDataItemCategory {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SensitiveDataItemCategory::Credentials => "CREDENTIALS",
@@ -2575,6 +2762,7 @@ impl SensitiveDataItemCategory {
             SensitiveDataItemCategory::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CREDENTIALS",
@@ -2599,7 +2787,7 @@ pub struct Invitation {
     /// <p>The unique identifier for the invitation. Amazon Macie uses this identifier to validate the inviter account with the invitee account.</p>
     pub invitation_id: std::option::Option<std::string::String>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the invitation was sent.</p>
-    pub invited_at: std::option::Option<smithy_types::Instant>,
+    pub invited_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The status of the relationship between the account that sent the invitation (<i>inviter account</i>) and the account that received the invitation (<i>invitee account</i>).</p>
     pub relationship_status: std::option::Option<crate::model::RelationshipStatus>,
 }
@@ -2621,7 +2809,7 @@ pub mod invitation {
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) invitation_id: std::option::Option<std::string::String>,
-        pub(crate) invited_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) invited_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) relationship_status: std::option::Option<crate::model::RelationshipStatus>,
     }
     impl Builder {
@@ -2630,6 +2818,7 @@ pub mod invitation {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services account ID for the account that sent the invitation.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -2639,6 +2828,7 @@ pub mod invitation {
             self.invitation_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the invitation. Amazon Macie uses this identifier to validate the inviter account with the invitee account.</p>
         pub fn set_invitation_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2647,11 +2837,15 @@ pub mod invitation {
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when the invitation was sent.</p>
-        pub fn invited_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn invited_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.invited_at = Some(input);
             self
         }
-        pub fn set_invited_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date and time, in UTC and extended ISO 8601 format, when the invitation was sent.</p>
+        pub fn set_invited_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.invited_at = input;
             self
         }
@@ -2660,6 +2854,7 @@ pub mod invitation {
             self.relationship_status = Some(input);
             self
         }
+        /// <p>The status of the relationship between the account that sent the invitation (<i>inviter account</i>) and the account that received the invitation (<i>invitee account</i>).</p>
         pub fn set_relationship_status(
             mut self,
             input: std::option::Option<crate::model::RelationshipStatus>,
@@ -2732,6 +2927,7 @@ pub mod findings_filter_list_item {
             self.action = Some(input);
             self
         }
+        /// <p>The action that's performed on findings that meet the filter criteria. Possible values are: ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.</p>
         pub fn set_action(
             mut self,
             input: std::option::Option<crate::model::FindingsFilterAction>,
@@ -2744,6 +2940,7 @@ pub mod findings_filter_list_item {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the filter.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -2753,6 +2950,7 @@ pub mod findings_filter_list_item {
             self.id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the filter.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -2762,10 +2960,16 @@ pub mod findings_filter_list_item {
             self.name = Some(input.into());
             self
         }
+        /// <p>The custom name of the filter.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A map of key-value pairs that identifies the tags (keys and values) that are associated with the filter.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2776,6 +2980,7 @@ pub mod findings_filter_list_item {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>A map of key-value pairs that identifies the tags (keys and values) that are associated with the filter.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2836,6 +3041,7 @@ pub mod sort_criteria {
             self.attribute_name = Some(input.into());
             self
         }
+        /// <p>The name of the property to sort the results by. This value can be the name of any property that Amazon Macie defines for a finding.</p>
         pub fn set_attribute_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2848,6 +3054,7 @@ pub mod sort_criteria {
             self.order_by = Some(input);
             self
         }
+        /// <p>The sort order to apply to the results, based on the value for the property specified by the attributeName property. Valid values are: ASC, sort the results in ascending order; and, DESC, sort the results in descending order.</p>
         pub fn set_order_by(mut self, input: std::option::Option<crate::model::OrderBy>) -> Self {
             self.order_by = input;
             self
@@ -2875,7 +3082,7 @@ pub struct CustomDataIdentifierSummary {
     /// <p>The Amazon Resource Name (ARN) of the custom data identifier.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the custom data identifier was created.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The custom description of the custom data identifier.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the custom data identifier.</p>
@@ -2901,7 +3108,7 @@ pub mod custom_data_identifier_summary {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -2912,16 +3119,21 @@ pub mod custom_data_identifier_summary {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the custom data identifier.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when the custom data identifier was created.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date and time, in UTC and extended ISO 8601 format, when the custom data identifier was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
@@ -2930,6 +3142,7 @@ pub mod custom_data_identifier_summary {
             self.description = Some(input.into());
             self
         }
+        /// <p>The custom description of the custom data identifier.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -2939,6 +3152,7 @@ pub mod custom_data_identifier_summary {
             self.id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the custom data identifier.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -2948,6 +3162,7 @@ pub mod custom_data_identifier_summary {
             self.name = Some(input.into());
             self
         }
+        /// <p>The custom name of the custom data identifier.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2979,7 +3194,7 @@ pub struct JobSummary {
     pub bucket_definitions:
         std::option::Option<std::vec::Vec<crate::model::S3BucketDefinitionForJob>>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the job was created.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The unique identifier for the job.</p>
     pub job_id: std::option::Option<std::string::String>,
     /// <p>The current status of the job. Possible values are:</p> <ul><li><p>CANCELLED - You cancelled the job or, if it's a one-time job, you paused the job and didn't resume it within 30 days.</p></li> <li><p>COMPLETE - For a one-time job, Amazon Macie finished processing the data specified for the job. This value doesn't apply to recurring jobs.</p></li> <li><p>IDLE - For a recurring job, the previous scheduled run is complete and the next scheduled run is pending. This value doesn't apply to one-time jobs.</p></li> <li><p>PAUSED - Macie started running the job but additional processing would exceed the monthly sensitive data discovery quota for your account or one or more member accounts that the job analyzes data for.</p></li> <li><p>RUNNING - For a one-time job, the job is in progress. For a recurring job, a scheduled run is in progress.</p></li> <li><p>USER_PAUSED - You paused the job. If you paused the job while it had a status of RUNNING and you don't resume it within 30 days of pausing it, the job or job run will expire and be cancelled, depending on the job's type. To check the expiration date, refer to the UserPausedDetails.jobExpiresAt property.</p></li></ul>
@@ -3018,7 +3233,7 @@ pub mod job_summary {
     pub struct Builder {
         pub(crate) bucket_definitions:
             std::option::Option<std::vec::Vec<crate::model::S3BucketDefinitionForJob>>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
         pub(crate) job_type: std::option::Option<crate::model::JobType>,
@@ -3028,6 +3243,11 @@ pub mod job_summary {
         pub(crate) bucket_criteria: std::option::Option<crate::model::S3BucketCriteriaForJob>,
     }
     impl Builder {
+        /// Appends an item to `bucket_definitions`.
+        ///
+        /// To override the contents of this collection use [`set_bucket_definitions`](Self::set_bucket_definitions).
+        ///
+        /// <p>An array of objects, one for each Amazon Web Services account that owns specific S3 buckets for the job to analyze. Each object specifies the account ID for an account and one or more buckets to analyze for that account. A job's definition can contain a bucketDefinitions array or a bucketCriteria object, not both.</p>
         pub fn bucket_definitions(
             mut self,
             input: impl Into<crate::model::S3BucketDefinitionForJob>,
@@ -3037,6 +3257,7 @@ pub mod job_summary {
             self.bucket_definitions = Some(v);
             self
         }
+        /// <p>An array of objects, one for each Amazon Web Services account that owns specific S3 buckets for the job to analyze. Each object specifies the account ID for an account and one or more buckets to analyze for that account. A job's definition can contain a bucketDefinitions array or a bucketCriteria object, not both.</p>
         pub fn set_bucket_definitions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::S3BucketDefinitionForJob>>,
@@ -3045,11 +3266,15 @@ pub mod job_summary {
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when the job was created.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date and time, in UTC and extended ISO 8601 format, when the job was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
@@ -3058,6 +3283,7 @@ pub mod job_summary {
             self.job_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the job.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -3067,6 +3293,7 @@ pub mod job_summary {
             self.job_status = Some(input);
             self
         }
+        /// <p>The current status of the job. Possible values are:</p> <ul><li><p>CANCELLED - You cancelled the job or, if it's a one-time job, you paused the job and didn't resume it within 30 days.</p></li> <li><p>COMPLETE - For a one-time job, Amazon Macie finished processing the data specified for the job. This value doesn't apply to recurring jobs.</p></li> <li><p>IDLE - For a recurring job, the previous scheduled run is complete and the next scheduled run is pending. This value doesn't apply to one-time jobs.</p></li> <li><p>PAUSED - Macie started running the job but additional processing would exceed the monthly sensitive data discovery quota for your account or one or more member accounts that the job analyzes data for.</p></li> <li><p>RUNNING - For a one-time job, the job is in progress. For a recurring job, a scheduled run is in progress.</p></li> <li><p>USER_PAUSED - You paused the job. If you paused the job while it had a status of RUNNING and you don't resume it within 30 days of pausing it, the job or job run will expire and be cancelled, depending on the job's type. To check the expiration date, refer to the UserPausedDetails.jobExpiresAt property.</p></li></ul>
         pub fn set_job_status(
             mut self,
             input: std::option::Option<crate::model::JobStatus>,
@@ -3079,6 +3306,7 @@ pub mod job_summary {
             self.job_type = Some(input);
             self
         }
+        /// <p>The schedule for running the job. Possible values are:</p> <ul><li><p>ONE_TIME - The job runs only once.</p></li> <li><p>SCHEDULED - The job runs on a daily, weekly, or monthly basis.</p></li></ul>
         pub fn set_job_type(mut self, input: std::option::Option<crate::model::JobType>) -> Self {
             self.job_type = input;
             self
@@ -3088,6 +3316,7 @@ pub mod job_summary {
             self.last_run_error_status = Some(input);
             self
         }
+        /// <p>Specifies whether any account- or bucket-level access errors occurred when the job ran. For a recurring job, this value indicates the error status of the job's most recent run.</p>
         pub fn set_last_run_error_status(
             mut self,
             input: std::option::Option<crate::model::LastRunErrorStatus>,
@@ -3100,6 +3329,7 @@ pub mod job_summary {
             self.name = Some(input.into());
             self
         }
+        /// <p>The custom name of the job.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -3109,6 +3339,7 @@ pub mod job_summary {
             self.user_paused_details = Some(input);
             self
         }
+        /// <p>If the current status of the job is USER_PAUSED, specifies when the job was paused and when the job or job run will expire and be cancelled if it isn't resumed. This value is present only if the value for jobStatus is USER_PAUSED.</p>
         pub fn set_user_paused_details(
             mut self,
             input: std::option::Option<crate::model::UserPausedDetails>,
@@ -3121,6 +3352,7 @@ pub mod job_summary {
             self.bucket_criteria = Some(input);
             self
         }
+        /// <p>The property- and tag-based conditions that determine which S3 buckets are included or excluded from the job's analysis. Each time the job runs, the job uses these criteria to determine which buckets to analyze. A job's definition can contain a bucketCriteria object or a bucketDefinitions array, not both.</p>
         pub fn set_bucket_criteria(
             mut self,
             input: std::option::Option<crate::model::S3BucketCriteriaForJob>,
@@ -3183,6 +3415,7 @@ pub mod s3_bucket_criteria_for_job {
             self.excludes = Some(input);
             self
         }
+        /// <p>The property- and tag-based conditions that determine which buckets to exclude from the job.</p>
         pub fn set_excludes(
             mut self,
             input: std::option::Option<crate::model::CriteriaBlockForJob>,
@@ -3195,6 +3428,7 @@ pub mod s3_bucket_criteria_for_job {
             self.includes = Some(input);
             self
         }
+        /// <p>The property- and tag-based conditions that determine which buckets to include in the job.</p>
         pub fn set_includes(
             mut self,
             input: std::option::Option<crate::model::CriteriaBlockForJob>,
@@ -3241,12 +3475,18 @@ pub mod criteria_block_for_job {
         pub(crate) and: std::option::Option<std::vec::Vec<crate::model::CriteriaForJob>>,
     }
     impl Builder {
+        /// Appends an item to `and`.
+        ///
+        /// To override the contents of this collection use [`set_and`](Self::set_and).
+        ///
+        /// <p>An array of conditions, one for each condition that determines which buckets to include or exclude from the job. If you specify more than one condition, Amazon Macie uses AND logic to join the conditions.</p>
         pub fn and(mut self, input: impl Into<crate::model::CriteriaForJob>) -> Self {
             let mut v = self.and.unwrap_or_default();
             v.push(input.into());
             self.and = Some(v);
             self
         }
+        /// <p>An array of conditions, one for each condition that determines which buckets to include or exclude from the job. If you specify more than one condition, Amazon Macie uses AND logic to join the conditions.</p>
         pub fn set_and(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CriteriaForJob>>,
@@ -3299,6 +3539,7 @@ pub mod criteria_for_job {
             self.simple_criterion = Some(input);
             self
         }
+        /// <p>A property-based condition that defines a property, operator, and one or more values for including or excluding buckets from the job.</p>
         pub fn set_simple_criterion(
             mut self,
             input: std::option::Option<crate::model::SimpleCriterionForJob>,
@@ -3311,6 +3552,7 @@ pub mod criteria_for_job {
             self.tag_criterion = Some(input);
             self
         }
+        /// <p>A tag-based condition that defines an operator and tag keys, tag values, or tag key and value pairs for including or excluding buckets from the job.</p>
         pub fn set_tag_criterion(
             mut self,
             input: std::option::Option<crate::model::TagCriterionForJob>,
@@ -3367,6 +3609,7 @@ pub mod tag_criterion_for_job {
             self.comparator = Some(input);
             self
         }
+        /// <p>The operator to use in the condition. Valid values are EQ (equals) and NE (not equals).</p>
         pub fn set_comparator(
             mut self,
             input: std::option::Option<crate::model::JobComparator>,
@@ -3374,6 +3617,11 @@ pub mod tag_criterion_for_job {
             self.comparator = input;
             self
         }
+        /// Appends an item to `tag_values`.
+        ///
+        /// To override the contents of this collection use [`set_tag_values`](Self::set_tag_values).
+        ///
+        /// <p>The tag keys, tag values, or tag key and value pairs to use in the condition.</p>
         pub fn tag_values(
             mut self,
             input: impl Into<crate::model::TagCriterionPairForJob>,
@@ -3383,6 +3631,7 @@ pub mod tag_criterion_for_job {
             self.tag_values = Some(v);
             self
         }
+        /// <p>The tag keys, tag values, or tag key and value pairs to use in the condition.</p>
         pub fn set_tag_values(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TagCriterionPairForJob>>,
@@ -3438,6 +3687,7 @@ pub mod tag_criterion_pair_for_job {
             self.key = Some(input.into());
             self
         }
+        /// <p>The value for the tag key to use in the condition.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -3447,6 +3697,7 @@ pub mod tag_criterion_pair_for_job {
             self.value = Some(input.into());
             self
         }
+        /// <p>The tag value to use in the condition.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -3479,13 +3730,21 @@ impl TagCriterionPairForJob {
     std::hash::Hash,
 )]
 pub enum JobComparator {
+    #[allow(missing_docs)] // documentation missing in model
     Contains,
+    #[allow(missing_docs)] // documentation missing in model
     Eq,
+    #[allow(missing_docs)] // documentation missing in model
     Gt,
+    #[allow(missing_docs)] // documentation missing in model
     Gte,
+    #[allow(missing_docs)] // documentation missing in model
     Lt,
+    #[allow(missing_docs)] // documentation missing in model
     Lte,
+    #[allow(missing_docs)] // documentation missing in model
     Ne,
+    #[allow(missing_docs)] // documentation missing in model
     StartsWith,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3513,6 +3772,7 @@ impl std::str::FromStr for JobComparator {
     }
 }
 impl JobComparator {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             JobComparator::Contains => "CONTAINS",
@@ -3526,6 +3786,7 @@ impl JobComparator {
             JobComparator::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CONTAINS",
@@ -3581,6 +3842,7 @@ pub mod simple_criterion_for_job {
             self.comparator = Some(input);
             self
         }
+        /// <p>The operator to use in the condition. Valid values are EQ (equals) and NE (not equals).</p>
         pub fn set_comparator(
             mut self,
             input: std::option::Option<crate::model::JobComparator>,
@@ -3593,6 +3855,7 @@ pub mod simple_criterion_for_job {
             self.key = Some(input);
             self
         }
+        /// <p>The property to use in the condition.</p>
         pub fn set_key(
             mut self,
             input: std::option::Option<crate::model::SimpleCriterionKeyForJob>,
@@ -3600,12 +3863,18 @@ pub mod simple_criterion_for_job {
             self.key = input;
             self
         }
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>An array that lists one or more values to use in the condition. If you specify multiple values, Amazon Macie uses OR logic to join the values. Valid values for each supported property (key) are:</p> <ul><li><p>ACCOUNT_ID - A string that represents the unique identifier for the Amazon Web Services account that owns the bucket.</p></li> <li><p>S3_BUCKET_EFFECTIVE_PERMISSION - A string that represents an enumerated value that Macie defines for the <a href="https://docs.aws.amazon.com/macie/latest/APIReference/datasources-s3.html#datasources-s3-prop-bucketpublicaccess-effectivepermission">BucketPublicAccess.effectivePermission</a> property of a bucket.</p></li> <li><p>S3_BUCKET_NAME - A string that represents the name of a bucket.</p></li> <li><p>S3_BUCKET_SHARED_ACCESS - A string that represents an enumerated value that Macie defines for the <a href="https://docs.aws.amazon.com/macie/latest/APIReference/datasources-s3.html#datasources-s3-prop-bucketmetadata-sharedaccess">BucketMetadata.sharedAccess</a> property of a bucket.</p></li></ul> <p>Values are case sensitive. Also, Macie doesn't support use of partial values or wildcard characters in these values.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
+        /// <p>An array that lists one or more values to use in the condition. If you specify multiple values, Amazon Macie uses OR logic to join the values. Valid values for each supported property (key) are:</p> <ul><li><p>ACCOUNT_ID - A string that represents the unique identifier for the Amazon Web Services account that owns the bucket.</p></li> <li><p>S3_BUCKET_EFFECTIVE_PERMISSION - A string that represents an enumerated value that Macie defines for the <a href="https://docs.aws.amazon.com/macie/latest/APIReference/datasources-s3.html#datasources-s3-prop-bucketpublicaccess-effectivepermission">BucketPublicAccess.effectivePermission</a> property of a bucket.</p></li> <li><p>S3_BUCKET_NAME - A string that represents the name of a bucket.</p></li> <li><p>S3_BUCKET_SHARED_ACCESS - A string that represents an enumerated value that Macie defines for the <a href="https://docs.aws.amazon.com/macie/latest/APIReference/datasources-s3.html#datasources-s3-prop-bucketmetadata-sharedaccess">BucketMetadata.sharedAccess</a> property of a bucket.</p></li></ul> <p>Values are case sensitive. Also, Macie doesn't support use of partial values or wildcard characters in these values.</p>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3642,9 +3911,13 @@ impl SimpleCriterionForJob {
     std::hash::Hash,
 )]
 pub enum SimpleCriterionKeyForJob {
+    #[allow(missing_docs)] // documentation missing in model
     AccountId,
+    #[allow(missing_docs)] // documentation missing in model
     S3BucketEffectivePermission,
+    #[allow(missing_docs)] // documentation missing in model
     S3BucketName,
+    #[allow(missing_docs)] // documentation missing in model
     S3BucketSharedAccess,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3670,6 +3943,7 @@ impl std::str::FromStr for SimpleCriterionKeyForJob {
     }
 }
 impl SimpleCriterionKeyForJob {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SimpleCriterionKeyForJob::AccountId => "ACCOUNT_ID",
@@ -3681,6 +3955,7 @@ impl SimpleCriterionKeyForJob {
             SimpleCriterionKeyForJob::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ACCOUNT_ID",
@@ -3701,11 +3976,11 @@ impl AsRef<str> for SimpleCriterionKeyForJob {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserPausedDetails {
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the job or job run will expire and be cancelled if you don't resume it first.</p>
-    pub job_expires_at: std::option::Option<smithy_types::Instant>,
+    pub job_expires_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The Amazon Resource Name (ARN) of the Health event that Amazon Macie sent to notify you of the job or job run's pending expiration and cancellation. This value is null if a job has been paused for less than 23 days.</p>
     pub job_imminent_expiration_health_event_arn: std::option::Option<std::string::String>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when you paused the job.</p>
-    pub job_paused_at: std::option::Option<smithy_types::Instant>,
+    pub job_paused_at: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for UserPausedDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3725,20 +4000,21 @@ pub mod user_paused_details {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) job_expires_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) job_expires_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) job_imminent_expiration_health_event_arn:
             std::option::Option<std::string::String>,
-        pub(crate) job_paused_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) job_paused_at: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The date and time, in UTC and extended ISO 8601 format, when the job or job run will expire and be cancelled if you don't resume it first.</p>
-        pub fn job_expires_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn job_expires_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.job_expires_at = Some(input);
             self
         }
+        /// <p>The date and time, in UTC and extended ISO 8601 format, when the job or job run will expire and be cancelled if you don't resume it first.</p>
         pub fn set_job_expires_at(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.job_expires_at = input;
             self
@@ -3751,6 +4027,7 @@ pub mod user_paused_details {
             self.job_imminent_expiration_health_event_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the Health event that Amazon Macie sent to notify you of the job or job run's pending expiration and cancellation. This value is null if a job has been paused for less than 23 days.</p>
         pub fn set_job_imminent_expiration_health_event_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3759,13 +4036,14 @@ pub mod user_paused_details {
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when you paused the job.</p>
-        pub fn job_paused_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn job_paused_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.job_paused_at = Some(input);
             self
         }
+        /// <p>The date and time, in UTC and extended ISO 8601 format, when you paused the job.</p>
         pub fn set_job_paused_at(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.job_paused_at = input;
             self
@@ -3816,6 +4094,7 @@ pub mod last_run_error_status {
             self.code = Some(input);
             self
         }
+        /// <p>Specifies whether any account- or bucket-level access errors occurred when the job ran. For a recurring job, this value indicates the error status of the job's most recent run. Possible values are:</p> <ul><li><p>ERROR - One or more errors occurred. Amazon Macie didn't process all the data specified for the job.</p></li> <li><p>NONE - No errors occurred. Macie processed all the data specified for the job.</p></li></ul>
         pub fn set_code(
             mut self,
             input: std::option::Option<crate::model::LastRunErrorStatusCode>,
@@ -3848,7 +4127,9 @@ impl LastRunErrorStatus {
     std::hash::Hash,
 )]
 pub enum LastRunErrorStatusCode {
+    #[allow(missing_docs)] // documentation missing in model
     Error,
+    #[allow(missing_docs)] // documentation missing in model
     None,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3870,6 +4151,7 @@ impl std::str::FromStr for LastRunErrorStatusCode {
     }
 }
 impl LastRunErrorStatusCode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LastRunErrorStatusCode::Error => "ERROR",
@@ -3877,6 +4159,7 @@ impl LastRunErrorStatusCode {
             LastRunErrorStatusCode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ERROR", "NONE"]
     }
@@ -3899,7 +4182,9 @@ impl AsRef<str> for LastRunErrorStatusCode {
     std::hash::Hash,
 )]
 pub enum JobType {
+    #[allow(missing_docs)] // documentation missing in model
     OneTime,
+    #[allow(missing_docs)] // documentation missing in model
     Scheduled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3921,6 +4206,7 @@ impl std::str::FromStr for JobType {
     }
 }
 impl JobType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             JobType::OneTime => "ONE_TIME",
@@ -3928,6 +4214,7 @@ impl JobType {
             JobType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ONE_TIME", "SCHEDULED"]
     }
@@ -3970,16 +4257,23 @@ pub mod s3_bucket_definition_for_job {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the Amazon Web Services account that owns the buckets.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
         }
+        /// Appends an item to `buckets`.
+        ///
+        /// To override the contents of this collection use [`set_buckets`](Self::set_buckets).
+        ///
+        /// <p>An array that lists the names of the buckets.</p>
         pub fn buckets(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.buckets.unwrap_or_default();
             v.push(input.into());
             self.buckets = Some(v);
             self
         }
+        /// <p>An array that lists the names of the buckets.</p>
         pub fn set_buckets(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4035,6 +4329,7 @@ pub mod list_jobs_sort_criteria {
             self.attribute_name = Some(input);
             self
         }
+        /// <p>The property to sort the results by.</p>
         pub fn set_attribute_name(
             mut self,
             input: std::option::Option<crate::model::ListJobsSortAttributeName>,
@@ -4047,6 +4342,7 @@ pub mod list_jobs_sort_criteria {
             self.order_by = Some(input);
             self
         }
+        /// <p>The sort order to apply to the results, based on the value for the property specified by the attributeName property. Valid values are: ASC, sort the results in ascending order; and, DESC, sort the results in descending order.</p>
         pub fn set_order_by(mut self, input: std::option::Option<crate::model::OrderBy>) -> Self {
             self.order_by = input;
             self
@@ -4079,9 +4375,13 @@ impl ListJobsSortCriteria {
     std::hash::Hash,
 )]
 pub enum ListJobsSortAttributeName {
+    #[allow(missing_docs)] // documentation missing in model
     CreatedAt,
+    #[allow(missing_docs)] // documentation missing in model
     JobStatus,
+    #[allow(missing_docs)] // documentation missing in model
     JobType,
+    #[allow(missing_docs)] // documentation missing in model
     Name,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4105,6 +4405,7 @@ impl std::str::FromStr for ListJobsSortAttributeName {
     }
 }
 impl ListJobsSortAttributeName {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ListJobsSortAttributeName::CreatedAt => "createdAt",
@@ -4114,6 +4415,7 @@ impl ListJobsSortAttributeName {
             ListJobsSortAttributeName::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["createdAt", "jobStatus", "jobType", "name"]
     }
@@ -4151,12 +4453,18 @@ pub mod list_jobs_filter_criteria {
         pub(crate) includes: std::option::Option<std::vec::Vec<crate::model::ListJobsFilterTerm>>,
     }
     impl Builder {
+        /// Appends an item to `excludes`.
+        ///
+        /// To override the contents of this collection use [`set_excludes`](Self::set_excludes).
+        ///
+        /// <p>An array of objects, one for each condition that determines which jobs to exclude from the results.</p>
         pub fn excludes(mut self, input: impl Into<crate::model::ListJobsFilterTerm>) -> Self {
             let mut v = self.excludes.unwrap_or_default();
             v.push(input.into());
             self.excludes = Some(v);
             self
         }
+        /// <p>An array of objects, one for each condition that determines which jobs to exclude from the results.</p>
         pub fn set_excludes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ListJobsFilterTerm>>,
@@ -4164,12 +4472,18 @@ pub mod list_jobs_filter_criteria {
             self.excludes = input;
             self
         }
+        /// Appends an item to `includes`.
+        ///
+        /// To override the contents of this collection use [`set_includes`](Self::set_includes).
+        ///
+        /// <p>An array of objects, one for each condition that determines which jobs to include in the results.</p>
         pub fn includes(mut self, input: impl Into<crate::model::ListJobsFilterTerm>) -> Self {
             let mut v = self.includes.unwrap_or_default();
             v.push(input.into());
             self.includes = Some(v);
             self
         }
+        /// <p>An array of objects, one for each condition that determines which jobs to include in the results.</p>
         pub fn set_includes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ListJobsFilterTerm>>,
@@ -4229,6 +4543,7 @@ pub mod list_jobs_filter_term {
             self.comparator = Some(input);
             self
         }
+        /// <p>The operator to use to filter the results.</p>
         pub fn set_comparator(
             mut self,
             input: std::option::Option<crate::model::JobComparator>,
@@ -4241,6 +4556,7 @@ pub mod list_jobs_filter_term {
             self.key = Some(input);
             self
         }
+        /// <p>The property to use to filter the results.</p>
         pub fn set_key(
             mut self,
             input: std::option::Option<crate::model::ListJobsFilterKey>,
@@ -4248,12 +4564,18 @@ pub mod list_jobs_filter_term {
             self.key = input;
             self
         }
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>An array that lists one or more values to use to filter the results.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
+        /// <p>An array that lists one or more values to use to filter the results.</p>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4290,9 +4612,13 @@ impl ListJobsFilterTerm {
     std::hash::Hash,
 )]
 pub enum ListJobsFilterKey {
+    #[allow(missing_docs)] // documentation missing in model
     CreatedAt,
+    #[allow(missing_docs)] // documentation missing in model
     JobStatus,
+    #[allow(missing_docs)] // documentation missing in model
     JobType,
+    #[allow(missing_docs)] // documentation missing in model
     Name,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4316,6 +4642,7 @@ impl std::str::FromStr for ListJobsFilterKey {
     }
 }
 impl ListJobsFilterKey {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ListJobsFilterKey::CreatedAt => "createdAt",
@@ -4325,6 +4652,7 @@ impl ListJobsFilterKey {
             ListJobsFilterKey::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["createdAt", "jobStatus", "jobType", "name"]
     }
@@ -4371,6 +4699,7 @@ pub mod usage_total {
             self.currency = Some(input);
             self
         }
+        /// <p>The type of currency that the value for the metric (estimatedCost) is reported in.</p>
         pub fn set_currency(mut self, input: std::option::Option<crate::model::Currency>) -> Self {
             self.currency = input;
             self
@@ -4380,6 +4709,7 @@ pub mod usage_total {
             self.estimated_cost = Some(input.into());
             self
         }
+        /// <p>The estimated value for the metric.</p>
         pub fn set_estimated_cost(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4392,6 +4722,7 @@ pub mod usage_total {
             self.r#type = Some(input);
             self
         }
+        /// <p>The name of the metric. Possible values are: DATA_INVENTORY_EVALUATION, for monitoring S3 buckets; and, SENSITIVE_DATA_DISCOVERY, for analyzing S3 objects to detect sensitive data.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::UsageType>) -> Self {
             self.r#type = input;
             self
@@ -4425,7 +4756,9 @@ impl UsageTotal {
     std::hash::Hash,
 )]
 pub enum UsageType {
+    #[allow(missing_docs)] // documentation missing in model
     DataInventoryEvaluation,
+    #[allow(missing_docs)] // documentation missing in model
     SensitiveDataDiscovery,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4447,6 +4780,7 @@ impl std::str::FromStr for UsageType {
     }
 }
 impl UsageType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             UsageType::DataInventoryEvaluation => "DATA_INVENTORY_EVALUATION",
@@ -4454,6 +4788,7 @@ impl UsageType {
             UsageType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DATA_INVENTORY_EVALUATION", "SENSITIVE_DATA_DISCOVERY"]
     }
@@ -4476,6 +4811,7 @@ impl AsRef<str> for UsageType {
     std::hash::Hash,
 )]
 pub enum Currency {
+    #[allow(missing_docs)] // documentation missing in model
     Usd,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4496,12 +4832,14 @@ impl std::str::FromStr for Currency {
     }
 }
 impl Currency {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Currency::Usd => "USD",
             Currency::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["USD"]
     }
@@ -4524,7 +4862,9 @@ impl AsRef<str> for Currency {
     std::hash::Hash,
 )]
 pub enum TimeRange {
+    #[allow(missing_docs)] // documentation missing in model
     MonthToDate,
+    #[allow(missing_docs)] // documentation missing in model
     Past30Days,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4546,6 +4886,7 @@ impl std::str::FromStr for TimeRange {
     }
 }
 impl TimeRange {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TimeRange::MonthToDate => "MONTH_TO_DATE",
@@ -4553,6 +4894,7 @@ impl TimeRange {
             TimeRange::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["MONTH_TO_DATE", "PAST_30_DAYS"]
     }
@@ -4570,7 +4912,7 @@ pub struct UsageRecord {
     /// <p>The unique identifier for the Amazon Web Services account that the data applies to.</p>
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the free trial started for the account.</p>
-    pub free_trial_start_date: std::option::Option<smithy_types::Instant>,
+    pub free_trial_start_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>An array of objects that contains usage data and quotas for the account. Each object contains the data for a specific usage metric and the corresponding quota.</p>
     pub usage: std::option::Option<std::vec::Vec<crate::model::UsageByAccount>>,
 }
@@ -4590,7 +4932,7 @@ pub mod usage_record {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_id: std::option::Option<std::string::String>,
-        pub(crate) free_trial_start_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) free_trial_start_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) usage: std::option::Option<std::vec::Vec<crate::model::UsageByAccount>>,
     }
     impl Builder {
@@ -4599,28 +4941,36 @@ pub mod usage_record {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the Amazon Web Services account that the data applies to.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when the free trial started for the account.</p>
-        pub fn free_trial_start_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn free_trial_start_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.free_trial_start_date = Some(input);
             self
         }
+        /// <p>The date and time, in UTC and extended ISO 8601 format, when the free trial started for the account.</p>
         pub fn set_free_trial_start_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.free_trial_start_date = input;
             self
         }
+        /// Appends an item to `usage`.
+        ///
+        /// To override the contents of this collection use [`set_usage`](Self::set_usage).
+        ///
+        /// <p>An array of objects that contains usage data and quotas for the account. Each object contains the data for a specific usage metric and the corresponding quota.</p>
         pub fn usage(mut self, input: impl Into<crate::model::UsageByAccount>) -> Self {
             let mut v = self.usage.unwrap_or_default();
             v.push(input.into());
             self.usage = Some(v);
             self
         }
+        /// <p>An array of objects that contains usage data and quotas for the account. Each object contains the data for a specific usage metric and the corresponding quota.</p>
         pub fn set_usage(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UsageByAccount>>,
@@ -4685,6 +5035,7 @@ pub mod usage_by_account {
             self.currency = Some(input);
             self
         }
+        /// <p>The type of currency that the value for the metric (estimatedCost) is reported in.</p>
         pub fn set_currency(mut self, input: std::option::Option<crate::model::Currency>) -> Self {
             self.currency = input;
             self
@@ -4694,6 +5045,7 @@ pub mod usage_by_account {
             self.estimated_cost = Some(input.into());
             self
         }
+        /// <p>The estimated value for the metric.</p>
         pub fn set_estimated_cost(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4706,6 +5058,7 @@ pub mod usage_by_account {
             self.service_limit = Some(input);
             self
         }
+        /// <p>The current value for the quota that corresponds to the metric specified by the type field.</p>
         pub fn set_service_limit(
             mut self,
             input: std::option::Option<crate::model::ServiceLimit>,
@@ -4718,6 +5071,7 @@ pub mod usage_by_account {
             self.r#type = Some(input);
             self
         }
+        /// <p>The name of the metric. Possible values are: DATA_INVENTORY_EVALUATION, for monitoring S3 buckets; and, SENSITIVE_DATA_DISCOVERY, for analyzing S3 objects to detect sensitive data.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::UsageType>) -> Self {
             self.r#type = input;
             self
@@ -4776,6 +5130,7 @@ pub mod service_limit {
             self.is_service_limited = Some(input);
             self
         }
+        /// <p>Specifies whether the account has met the quota that corresponds to the metric specified by the UsageByAccount.type field in the response.</p>
         pub fn set_is_service_limited(mut self, input: std::option::Option<bool>) -> Self {
             self.is_service_limited = input;
             self
@@ -4785,6 +5140,7 @@ pub mod service_limit {
             self.unit = Some(input);
             self
         }
+        /// <p>The unit of measurement for the value specified by the value field.</p>
         pub fn set_unit(mut self, input: std::option::Option<crate::model::Unit>) -> Self {
             self.unit = input;
             self
@@ -4794,6 +5150,7 @@ pub mod service_limit {
             self.value = Some(input);
             self
         }
+        /// <p>The value for the metric specified by the UsageByAccount.type field in the response.</p>
         pub fn set_value(mut self, input: std::option::Option<i64>) -> Self {
             self.value = input;
             self
@@ -4815,6 +5172,7 @@ impl ServiceLimit {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4826,6 +5184,7 @@ impl ServiceLimit {
     std::hash::Hash,
 )]
 pub enum Unit {
+    #[allow(missing_docs)] // documentation missing in model
     Terabytes,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4846,12 +5205,14 @@ impl std::str::FromStr for Unit {
     }
 }
 impl Unit {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Unit::Terabytes => "TERABYTES",
             Unit::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["TERABYTES"]
     }
@@ -4894,6 +5255,7 @@ pub mod usage_statistics_sort_by {
             self.key = Some(input);
             self
         }
+        /// <p>The field to sort the results by.</p>
         pub fn set_key(
             mut self,
             input: std::option::Option<crate::model::UsageStatisticsSortKey>,
@@ -4906,6 +5268,7 @@ pub mod usage_statistics_sort_by {
             self.order_by = Some(input);
             self
         }
+        /// <p>The sort order to apply to the results, based on the value for the field specified by the key property. Valid values are: ASC, sort the results in ascending order; and, DESC, sort the results in descending order.</p>
         pub fn set_order_by(mut self, input: std::option::Option<crate::model::OrderBy>) -> Self {
             self.order_by = input;
             self
@@ -4938,9 +5301,13 @@ impl UsageStatisticsSortBy {
     std::hash::Hash,
 )]
 pub enum UsageStatisticsSortKey {
+    #[allow(missing_docs)] // documentation missing in model
     AccountId,
+    #[allow(missing_docs)] // documentation missing in model
     FreeTrialStartDate,
+    #[allow(missing_docs)] // documentation missing in model
     ServiceLimitValue,
+    #[allow(missing_docs)] // documentation missing in model
     Total,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4964,6 +5331,7 @@ impl std::str::FromStr for UsageStatisticsSortKey {
     }
 }
 impl UsageStatisticsSortKey {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             UsageStatisticsSortKey::AccountId => "accountId",
@@ -4973,6 +5341,7 @@ impl UsageStatisticsSortKey {
             UsageStatisticsSortKey::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "accountId",
@@ -5024,6 +5393,7 @@ pub mod usage_statistics_filter {
             self.comparator = Some(input);
             self
         }
+        /// <p>The operator to use in the condition. If the value for the key property is accountId, this value must be CONTAINS. If the value for the key property is any other supported field, this value can be EQ, GT, GTE, LT, LTE, or NE.</p>
         pub fn set_comparator(
             mut self,
             input: std::option::Option<crate::model::UsageStatisticsFilterComparator>,
@@ -5036,6 +5406,7 @@ pub mod usage_statistics_filter {
             self.key = Some(input);
             self
         }
+        /// <p>The field to use in the condition.</p>
         pub fn set_key(
             mut self,
             input: std::option::Option<crate::model::UsageStatisticsFilterKey>,
@@ -5043,12 +5414,18 @@ pub mod usage_statistics_filter {
             self.key = input;
             self
         }
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>An array that lists values to use in the condition, based on the value for the field specified by the key property. If the value for the key property is accountId, this array can specify multiple values. Otherwise, this array can specify only one value.</p> <p>Valid values for each supported field are:</p> <ul><li><p>accountId - The unique identifier for an Amazon Web Services account.</p></li> <li><p>freeTrialStartDate - The date and time, in UTC and extended ISO 8601 format, when the free trial started for an account.</p></li> <li><p>serviceLimit - A Boolean (true or false) value that indicates whether an account has reached its monthly quota.</p></li> <li><p>total - A string that represents the current estimated cost for an account.</p></li></ul>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
+        /// <p>An array that lists values to use in the condition, based on the value for the field specified by the key property. If the value for the key property is accountId, this array can specify multiple values. Otherwise, this array can specify only one value.</p> <p>Valid values for each supported field are:</p> <ul><li><p>accountId - The unique identifier for an Amazon Web Services account.</p></li> <li><p>freeTrialStartDate - The date and time, in UTC and extended ISO 8601 format, when the free trial started for an account.</p></li> <li><p>serviceLimit - A Boolean (true or false) value that indicates whether an account has reached its monthly quota.</p></li> <li><p>total - A string that represents the current estimated cost for an account.</p></li></ul>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5085,9 +5462,13 @@ impl UsageStatisticsFilter {
     std::hash::Hash,
 )]
 pub enum UsageStatisticsFilterKey {
+    #[allow(missing_docs)] // documentation missing in model
     AccountId,
+    #[allow(missing_docs)] // documentation missing in model
     FreeTrialStartDate,
+    #[allow(missing_docs)] // documentation missing in model
     ServiceLimit,
+    #[allow(missing_docs)] // documentation missing in model
     Total,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5111,6 +5492,7 @@ impl std::str::FromStr for UsageStatisticsFilterKey {
     }
 }
 impl UsageStatisticsFilterKey {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             UsageStatisticsFilterKey::AccountId => "accountId",
@@ -5120,6 +5502,7 @@ impl UsageStatisticsFilterKey {
             UsageStatisticsFilterKey::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["accountId", "freeTrialStartDate", "serviceLimit", "total"]
     }
@@ -5142,12 +5525,19 @@ impl AsRef<str> for UsageStatisticsFilterKey {
     std::hash::Hash,
 )]
 pub enum UsageStatisticsFilterComparator {
+    #[allow(missing_docs)] // documentation missing in model
     Contains,
+    #[allow(missing_docs)] // documentation missing in model
     Eq,
+    #[allow(missing_docs)] // documentation missing in model
     Gt,
+    #[allow(missing_docs)] // documentation missing in model
     Gte,
+    #[allow(missing_docs)] // documentation missing in model
     Lt,
+    #[allow(missing_docs)] // documentation missing in model
     Lte,
+    #[allow(missing_docs)] // documentation missing in model
     Ne,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5174,6 +5564,7 @@ impl std::str::FromStr for UsageStatisticsFilterComparator {
     }
 }
 impl UsageStatisticsFilterComparator {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             UsageStatisticsFilterComparator::Contains => "CONTAINS",
@@ -5186,6 +5577,7 @@ impl UsageStatisticsFilterComparator {
             UsageStatisticsFilterComparator::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CONTAINS", "EQ", "GT", "GTE", "LT", "LTE", "NE"]
     }
@@ -5228,6 +5620,7 @@ pub mod group_count {
             self.count = Some(input);
             self
         }
+        /// <p>The total number of findings in the group of query results.</p>
         pub fn set_count(mut self, input: std::option::Option<i64>) -> Self {
             self.count = input;
             self
@@ -5237,6 +5630,7 @@ pub mod group_count {
             self.group_key = Some(input.into());
             self
         }
+        /// <p>The name of the property that defines the group in the query results, as specified by the groupBy property in the query request.</p>
         pub fn set_group_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.group_key = input;
             self
@@ -5293,6 +5687,7 @@ pub mod finding_statistics_sort_criteria {
             self.attribute_name = Some(input);
             self
         }
+        /// <p>The grouping to sort the results by. Valid values are: count, sort the results by the number of findings in each group of results; and, groupKey, sort the results by the name of each group of results.</p>
         pub fn set_attribute_name(
             mut self,
             input: std::option::Option<crate::model::FindingStatisticsSortAttributeName>,
@@ -5305,6 +5700,7 @@ pub mod finding_statistics_sort_criteria {
             self.order_by = Some(input);
             self
         }
+        /// <p>The sort order to apply to the results, based on the value for the property specified by the attributeName property. Valid values are: ASC, sort the results in ascending order; and, DESC, sort the results in descending order.</p>
         pub fn set_order_by(mut self, input: std::option::Option<crate::model::OrderBy>) -> Self {
             self.order_by = input;
             self
@@ -5337,7 +5733,9 @@ impl FindingStatisticsSortCriteria {
     std::hash::Hash,
 )]
 pub enum FindingStatisticsSortAttributeName {
+    #[allow(missing_docs)] // documentation missing in model
     Count,
+    #[allow(missing_docs)] // documentation missing in model
     GroupKey,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5359,6 +5757,7 @@ impl std::str::FromStr for FindingStatisticsSortAttributeName {
     }
 }
 impl FindingStatisticsSortAttributeName {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FindingStatisticsSortAttributeName::Count => "count",
@@ -5366,6 +5765,7 @@ impl FindingStatisticsSortAttributeName {
             FindingStatisticsSortAttributeName::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["count", "groupKey"]
     }
@@ -5376,6 +5776,7 @@ impl AsRef<str> for FindingStatisticsSortAttributeName {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5387,9 +5788,13 @@ impl AsRef<str> for FindingStatisticsSortAttributeName {
     std::hash::Hash,
 )]
 pub enum GroupBy {
+    #[allow(missing_docs)] // documentation missing in model
     ClassificationDetailsJobId,
+    #[allow(missing_docs)] // documentation missing in model
     ResourcesAffectedS3BucketName,
+    #[allow(missing_docs)] // documentation missing in model
     SeverityDescription,
+    #[allow(missing_docs)] // documentation missing in model
     Type,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5413,6 +5818,7 @@ impl std::str::FromStr for GroupBy {
     }
 }
 impl GroupBy {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             GroupBy::ClassificationDetailsJobId => "classificationDetails.jobId",
@@ -5422,6 +5828,7 @@ impl GroupBy {
             GroupBy::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "classificationDetails.jobId",
@@ -5452,7 +5859,7 @@ pub struct Finding {
     /// <p>The total number of occurrences of the finding. For sensitive data findings, this value is always 1. All sensitive data findings are considered new (unique) because they derive from individual classification jobs.</p>
     pub count: i64,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the finding was created.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The description of the finding.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the finding. This is a random string that Amazon Macie generates and assigns to a finding when it creates the finding.</p>
@@ -5476,7 +5883,7 @@ pub struct Finding {
     /// <p>The type of the finding.</p>
     pub r#type: std::option::Option<crate::model::FindingType>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the finding was last updated. For sensitive data findings, this value is the same as the value for the createdAt property. All sensitive data findings are considered new (unique) because they derive from individual classification jobs.</p>
-    pub updated_at: std::option::Option<smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for Finding {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5513,7 +5920,7 @@ pub mod finding {
         pub(crate) category: std::option::Option<crate::model::FindingCategory>,
         pub(crate) classification_details: std::option::Option<crate::model::ClassificationDetails>,
         pub(crate) count: std::option::Option<i64>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) partition: std::option::Option<std::string::String>,
@@ -5525,7 +5932,7 @@ pub mod finding {
         pub(crate) severity: std::option::Option<crate::model::Severity>,
         pub(crate) title: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::FindingType>,
-        pub(crate) updated_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The unique identifier for the Amazon Web Services account that the finding applies to. This is typically the account that owns the affected resource.</p>
@@ -5533,6 +5940,7 @@ pub mod finding {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the Amazon Web Services account that the finding applies to. This is typically the account that owns the affected resource.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -5542,6 +5950,7 @@ pub mod finding {
             self.archived = Some(input);
             self
         }
+        /// <p>Specifies whether the finding is archived (suppressed).</p>
         pub fn set_archived(mut self, input: std::option::Option<bool>) -> Self {
             self.archived = input;
             self
@@ -5551,6 +5960,7 @@ pub mod finding {
             self.category = Some(input);
             self
         }
+        /// <p>The category of the finding. Possible values are: CLASSIFICATION, for a sensitive data finding; and, POLICY, for a policy finding.</p>
         pub fn set_category(
             mut self,
             input: std::option::Option<crate::model::FindingCategory>,
@@ -5566,6 +5976,7 @@ pub mod finding {
             self.classification_details = Some(input);
             self
         }
+        /// <p>The details of a sensitive data finding. This value is null for a policy finding.</p>
         pub fn set_classification_details(
             mut self,
             input: std::option::Option<crate::model::ClassificationDetails>,
@@ -5578,16 +5989,21 @@ pub mod finding {
             self.count = Some(input);
             self
         }
+        /// <p>The total number of occurrences of the finding. For sensitive data findings, this value is always 1. All sensitive data findings are considered new (unique) because they derive from individual classification jobs.</p>
         pub fn set_count(mut self, input: std::option::Option<i64>) -> Self {
             self.count = input;
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when the finding was created.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date and time, in UTC and extended ISO 8601 format, when the finding was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
@@ -5596,6 +6012,7 @@ pub mod finding {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the finding.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -5605,6 +6022,7 @@ pub mod finding {
             self.id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the finding. This is a random string that Amazon Macie generates and assigns to a finding when it creates the finding.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -5614,6 +6032,7 @@ pub mod finding {
             self.partition = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services partition that Amazon Macie created the finding in.</p>
         pub fn set_partition(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.partition = input;
             self
@@ -5623,6 +6042,7 @@ pub mod finding {
             self.policy_details = Some(input);
             self
         }
+        /// <p>The details of a policy finding. This value is null for a sensitive data finding.</p>
         pub fn set_policy_details(
             mut self,
             input: std::option::Option<crate::model::PolicyDetails>,
@@ -5635,6 +6055,7 @@ pub mod finding {
             self.region = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services Region that Amazon Macie created the finding in.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
@@ -5644,6 +6065,7 @@ pub mod finding {
             self.resources_affected = Some(input);
             self
         }
+        /// <p>The resources that the finding applies to.</p>
         pub fn set_resources_affected(
             mut self,
             input: std::option::Option<crate::model::ResourcesAffected>,
@@ -5656,6 +6078,7 @@ pub mod finding {
             self.sample = Some(input);
             self
         }
+        /// <p>Specifies whether the finding is a sample finding. A <i>sample finding</i> is a finding that uses example data to demonstrate what a finding might contain.</p>
         pub fn set_sample(mut self, input: std::option::Option<bool>) -> Self {
             self.sample = input;
             self
@@ -5665,6 +6088,7 @@ pub mod finding {
             self.schema_version = Some(input.into());
             self
         }
+        /// <p>The version of the schema that was used to define the data structures in the finding.</p>
         pub fn set_schema_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5677,6 +6101,7 @@ pub mod finding {
             self.severity = Some(input);
             self
         }
+        /// <p>The severity level and score for the finding.</p>
         pub fn set_severity(mut self, input: std::option::Option<crate::model::Severity>) -> Self {
             self.severity = input;
             self
@@ -5686,6 +6111,7 @@ pub mod finding {
             self.title = Some(input.into());
             self
         }
+        /// <p>The brief description of the finding.</p>
         pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.title = input;
             self
@@ -5695,16 +6121,21 @@ pub mod finding {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of the finding.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::FindingType>) -> Self {
             self.r#type = input;
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when the finding was last updated. For sensitive data findings, this value is the same as the value for the createdAt property. All sensitive data findings are considered new (unique) because they derive from individual classification jobs.</p>
-        pub fn updated_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.updated_at = Some(input);
             self
         }
-        pub fn set_updated_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date and time, in UTC and extended ISO 8601 format, when the finding was last updated. For sensitive data findings, this value is the same as the value for the createdAt property. All sensitive data findings are considered new (unique) because they derive from individual classification jobs.</p>
+        pub fn set_updated_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.updated_at = input;
             self
         }
@@ -5752,15 +6183,25 @@ impl Finding {
     std::hash::Hash,
 )]
 pub enum FindingType {
+    #[allow(missing_docs)] // documentation missing in model
     PolicyIamUserS3BlockPublicAccessDisabled,
+    #[allow(missing_docs)] // documentation missing in model
     PolicyIamUserS3BucketEncryptionDisabled,
+    #[allow(missing_docs)] // documentation missing in model
     PolicyIamUserS3BucketPublic,
+    #[allow(missing_docs)] // documentation missing in model
     PolicyIamUserS3BucketReplicatedExternally,
+    #[allow(missing_docs)] // documentation missing in model
     PolicyIamUserS3BucketSharedExternally,
+    #[allow(missing_docs)] // documentation missing in model
     SensitiveDataS3ObjectCredentials,
+    #[allow(missing_docs)] // documentation missing in model
     SensitiveDataS3ObjectCustomIdentifier,
+    #[allow(missing_docs)] // documentation missing in model
     SensitiveDataS3ObjectFinancial,
+    #[allow(missing_docs)] // documentation missing in model
     SensitiveDataS3ObjectMultiple,
+    #[allow(missing_docs)] // documentation missing in model
     SensitiveDataS3ObjectPersonal,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5800,6 +6241,7 @@ impl std::str::FromStr for FindingType {
     }
 }
 impl FindingType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FindingType::PolicyIamUserS3BlockPublicAccessDisabled => {
@@ -5825,6 +6267,7 @@ impl FindingType {
             FindingType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "Policy:IAMUser/S3BlockPublicAccessDisabled",
@@ -5878,6 +6321,7 @@ pub mod severity {
             self.description = Some(input);
             self
         }
+        /// <p>The qualitative representation of the finding's severity, ranging from Low (least severe) to High (most severe).</p>
         pub fn set_description(
             mut self,
             input: std::option::Option<crate::model::SeverityDescription>,
@@ -5890,6 +6334,7 @@ pub mod severity {
             self.score = Some(input);
             self
         }
+        /// <p>The numerical representation of the finding's severity, ranging from 1 (least severe) to 3 (most severe).</p>
         pub fn set_score(mut self, input: std::option::Option<i64>) -> Self {
             self.score = input;
             self
@@ -5922,8 +6367,11 @@ impl Severity {
     std::hash::Hash,
 )]
 pub enum SeverityDescription {
+    #[allow(missing_docs)] // documentation missing in model
     High,
+    #[allow(missing_docs)] // documentation missing in model
     Low,
+    #[allow(missing_docs)] // documentation missing in model
     Medium,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5946,6 +6394,7 @@ impl std::str::FromStr for SeverityDescription {
     }
 }
 impl SeverityDescription {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SeverityDescription::High => "High",
@@ -5954,6 +6403,7 @@ impl SeverityDescription {
             SeverityDescription::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["High", "Low", "Medium"]
     }
@@ -5996,6 +6446,7 @@ pub mod resources_affected {
             self.s3_bucket = Some(input);
             self
         }
+        /// <p>The details of the S3 bucket that the finding applies to.</p>
         pub fn set_s3_bucket(mut self, input: std::option::Option<crate::model::S3Bucket>) -> Self {
             self.s3_bucket = input;
             self
@@ -6005,6 +6456,7 @@ pub mod resources_affected {
             self.s3_object = Some(input);
             self
         }
+        /// <p>The details of the S3 object that the finding applies to.</p>
         pub fn set_s3_object(mut self, input: std::option::Option<crate::model::S3Object>) -> Self {
             self.s3_object = input;
             self
@@ -6038,7 +6490,7 @@ pub struct S3Object {
     /// <p>The full key (name) that's assigned to the object.</p>
     pub key: std::option::Option<std::string::String>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the object was last modified.</p>
-    pub last_modified: std::option::Option<smithy_types::Instant>,
+    pub last_modified: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The path to the object, including the full key (name).</p>
     pub path: std::option::Option<std::string::String>,
     /// <p>Specifies whether the object is publicly accessible due to the combination of permissions settings that apply to the object.</p>
@@ -6082,7 +6534,7 @@ pub mod s3_object {
         pub(crate) e_tag: std::option::Option<std::string::String>,
         pub(crate) extension: std::option::Option<std::string::String>,
         pub(crate) key: std::option::Option<std::string::String>,
-        pub(crate) last_modified: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_modified: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) path: std::option::Option<std::string::String>,
         pub(crate) public_access: std::option::Option<bool>,
         pub(crate) server_side_encryption: std::option::Option<crate::model::ServerSideEncryption>,
@@ -6097,6 +6549,7 @@ pub mod s3_object {
             self.bucket_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the bucket that contains the object.</p>
         pub fn set_bucket_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket_arn = input;
             self
@@ -6106,6 +6559,7 @@ pub mod s3_object {
             self.e_tag = Some(input.into());
             self
         }
+        /// <p>The entity tag (ETag) that identifies the affected version of the object. If the object was overwritten or changed after Amazon Macie produced the finding, this value might be different from the current ETag for the object.</p>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.e_tag = input;
             self
@@ -6115,6 +6569,7 @@ pub mod s3_object {
             self.extension = Some(input.into());
             self
         }
+        /// <p>The file name extension of the object. If the object doesn't have a file name extension, this value is "".</p>
         pub fn set_extension(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.extension = input;
             self
@@ -6124,18 +6579,20 @@ pub mod s3_object {
             self.key = Some(input.into());
             self
         }
+        /// <p>The full key (name) that's assigned to the object.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when the object was last modified.</p>
-        pub fn last_modified(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_modified(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_modified = Some(input);
             self
         }
+        /// <p>The date and time, in UTC and extended ISO 8601 format, when the object was last modified.</p>
         pub fn set_last_modified(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_modified = input;
             self
@@ -6145,6 +6602,7 @@ pub mod s3_object {
             self.path = Some(input.into());
             self
         }
+        /// <p>The path to the object, including the full key (name).</p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.path = input;
             self
@@ -6154,6 +6612,7 @@ pub mod s3_object {
             self.public_access = Some(input);
             self
         }
+        /// <p>Specifies whether the object is publicly accessible due to the combination of permissions settings that apply to the object.</p>
         pub fn set_public_access(mut self, input: std::option::Option<bool>) -> Self {
             self.public_access = input;
             self
@@ -6163,6 +6622,7 @@ pub mod s3_object {
             self.server_side_encryption = Some(input);
             self
         }
+        /// <p>The type of server-side encryption that's used to encrypt the object.</p>
         pub fn set_server_side_encryption(
             mut self,
             input: std::option::Option<crate::model::ServerSideEncryption>,
@@ -6175,6 +6635,7 @@ pub mod s3_object {
             self.size = Some(input);
             self
         }
+        /// <p>The total storage size, in bytes, of the object.</p>
         pub fn set_size(mut self, input: std::option::Option<i64>) -> Self {
             self.size = input;
             self
@@ -6184,6 +6645,7 @@ pub mod s3_object {
             self.storage_class = Some(input);
             self
         }
+        /// <p>The storage class of the object.</p>
         pub fn set_storage_class(
             mut self,
             input: std::option::Option<crate::model::StorageClass>,
@@ -6191,12 +6653,18 @@ pub mod s3_object {
             self.storage_class = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags that are associated with the object.</p>
         pub fn tags(mut self, input: impl Into<crate::model::KeyValuePair>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The tags that are associated with the object.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::KeyValuePair>>,
@@ -6209,6 +6677,7 @@ pub mod s3_object {
             self.version_id = Some(input.into());
             self
         }
+        /// <p>The identifier for the affected version of the object.</p>
         pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version_id = input;
             self
@@ -6271,6 +6740,7 @@ pub mod key_value_pair {
             self.key = Some(input.into());
             self
         }
+        /// <p>One part of a key-value pair that comprises a tag. A tag key is a general label that acts as a category for more specific tag values.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -6280,6 +6750,7 @@ pub mod key_value_pair {
             self.value = Some(input.into());
             self
         }
+        /// <p>One part of a key-value pair that comprises a tag. A tag value acts as a descriptor for a tag key. A tag value can be an empty string.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -6312,12 +6783,19 @@ impl KeyValuePair {
     std::hash::Hash,
 )]
 pub enum StorageClass {
+    #[allow(missing_docs)] // documentation missing in model
     DeepArchive,
+    #[allow(missing_docs)] // documentation missing in model
     Glacier,
+    #[allow(missing_docs)] // documentation missing in model
     IntelligentTiering,
+    #[allow(missing_docs)] // documentation missing in model
     OnezoneIa,
+    #[allow(missing_docs)] // documentation missing in model
     ReducedRedundancy,
+    #[allow(missing_docs)] // documentation missing in model
     Standard,
+    #[allow(missing_docs)] // documentation missing in model
     StandardIa,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -6344,6 +6822,7 @@ impl std::str::FromStr for StorageClass {
     }
 }
 impl StorageClass {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StorageClass::DeepArchive => "DEEP_ARCHIVE",
@@ -6356,6 +6835,7 @@ impl StorageClass {
             StorageClass::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "DEEP_ARCHIVE",
@@ -6406,6 +6886,7 @@ pub mod server_side_encryption {
             self.encryption_type = Some(input);
             self
         }
+        /// <p>The server-side encryption algorithm that's used when storing data in the bucket or object. If default encryption is disabled for the bucket or the object isn't encrypted using server-side encryption, this value is NONE.</p>
         pub fn set_encryption_type(
             mut self,
             input: std::option::Option<crate::model::EncryptionType>,
@@ -6418,6 +6899,7 @@ pub mod server_side_encryption {
             self.kms_master_key_id = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) or unique identifier (key ID) for the KMS key that's used to encrypt data in the bucket or the object. This value is null if an KMS key isn't used to encrypt the data.</p>
         pub fn set_kms_master_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6443,7 +6925,7 @@ impl ServerSideEncryption {
 
 /// <p>The type of server-side encryption that's used to encrypt an S3 object or objects in an S3 bucket. Valid values are:</p>
 ///
-/// **NOTE:** `EncryptionType::Unknown` has been renamed to `::UnknownValue`.
+/// _Note: `EncryptionType::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -6455,10 +6937,13 @@ impl ServerSideEncryption {
     std::hash::Hash,
 )]
 pub enum EncryptionType {
+    #[allow(missing_docs)] // documentation missing in model
     Aes256,
+    #[allow(missing_docs)] // documentation missing in model
     None,
-    /// **NOTE:** `::Unknown` has been renamed to `::UnknownValue`.
+    /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
     UnknownValue,
+    #[allow(missing_docs)] // documentation missing in model
     AwsKms,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -6482,6 +6967,7 @@ impl std::str::FromStr for EncryptionType {
     }
 }
 impl EncryptionType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EncryptionType::Aes256 => "AES256",
@@ -6491,6 +6977,7 @@ impl EncryptionType {
             EncryptionType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AES256", "NONE", "UNKNOWN", "aws:kms"]
     }
@@ -6511,7 +6998,7 @@ pub struct S3Bucket {
     /// <p>The Amazon Resource Name (ARN) of the bucket.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the bucket was created.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The type of server-side encryption that's used by default to encrypt objects in the bucket.</p>
     pub default_server_side_encryption: std::option::Option<crate::model::ServerSideEncryption>,
     /// <p>The name of the bucket.</p>
@@ -6552,7 +7039,7 @@ pub mod s3_bucket {
         pub(crate) allows_unencrypted_object_uploads:
             std::option::Option<crate::model::AllowsUnencryptedObjectUploads>,
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) default_server_side_encryption:
             std::option::Option<crate::model::ServerSideEncryption>,
         pub(crate) name: std::option::Option<std::string::String>,
@@ -6569,6 +7056,7 @@ pub mod s3_bucket {
             self.allows_unencrypted_object_uploads = Some(input);
             self
         }
+        /// <p>Specifies whether the bucket policy for the bucket requires server-side encryption of objects when objects are uploaded to the bucket. Possible values are:</p> <ul><li><p>FALSE - The bucket policy requires server-side encryption of new objects. PutObject requests must include the x-amz-server-side-encryption header and the value for that header must be AES256 or aws:kms.</p></li> <li><p>TRUE - The bucket doesn't have a bucket policy or it has a bucket policy that doesn't require server-side encryption of new objects. If a bucket policy exists, it doesn't require PutObject requests to include the x-amz-server-side-encryption header and it doesn't require the value for that header to be AES256 or aws:kms.</p></li> <li><p>UNKNOWN - Amazon Macie can't determine whether the bucket policy requires server-side encryption of objects.</p></li></ul>
         pub fn set_allows_unencrypted_object_uploads(
             mut self,
             input: std::option::Option<crate::model::AllowsUnencryptedObjectUploads>,
@@ -6581,16 +7069,21 @@ pub mod s3_bucket {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the bucket.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when the bucket was created.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date and time, in UTC and extended ISO 8601 format, when the bucket was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
@@ -6602,6 +7095,7 @@ pub mod s3_bucket {
             self.default_server_side_encryption = Some(input);
             self
         }
+        /// <p>The type of server-side encryption that's used by default to encrypt objects in the bucket.</p>
         pub fn set_default_server_side_encryption(
             mut self,
             input: std::option::Option<crate::model::ServerSideEncryption>,
@@ -6614,6 +7108,7 @@ pub mod s3_bucket {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the bucket.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -6623,6 +7118,7 @@ pub mod s3_bucket {
             self.owner = Some(input);
             self
         }
+        /// <p>The display name and canonical user ID for the Amazon Web Services account that owns the bucket.</p>
         pub fn set_owner(
             mut self,
             input: std::option::Option<crate::model::S3BucketOwner>,
@@ -6635,6 +7131,7 @@ pub mod s3_bucket {
             self.public_access = Some(input);
             self
         }
+        /// <p>The permissions settings that determine whether the bucket is publicly accessible.</p>
         pub fn set_public_access(
             mut self,
             input: std::option::Option<crate::model::BucketPublicAccess>,
@@ -6642,12 +7139,18 @@ pub mod s3_bucket {
             self.public_access = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags that are associated with the bucket.</p>
         pub fn tags(mut self, input: impl Into<crate::model::KeyValuePair>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The tags that are associated with the bucket.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::KeyValuePair>>,
@@ -6710,6 +7213,7 @@ pub mod bucket_public_access {
             self.effective_permission = Some(input);
             self
         }
+        /// <p>Specifies whether the bucket is publicly accessible due to the combination of permissions settings that apply to the bucket. Possible values are:</p> <ul><li><p>NOT_PUBLIC - The bucket isn't publicly accessible.</p></li> <li><p>PUBLIC - The bucket is publicly accessible.</p></li> <li><p>UNKNOWN - Amazon Macie can't determine whether the bucket is publicly accessible.</p></li></ul>
         pub fn set_effective_permission(
             mut self,
             input: std::option::Option<crate::model::EffectivePermission>,
@@ -6725,6 +7229,7 @@ pub mod bucket_public_access {
             self.permission_configuration = Some(input);
             self
         }
+        /// <p>The account-level and bucket-level permissions settings for the bucket.</p>
         pub fn set_permission_configuration(
             mut self,
             input: std::option::Option<crate::model::BucketPermissionConfiguration>,
@@ -6785,6 +7290,7 @@ pub mod bucket_permission_configuration {
             self.account_level_permissions = Some(input);
             self
         }
+        /// <p>The account-level permissions settings that apply to the bucket.</p>
         pub fn set_account_level_permissions(
             mut self,
             input: std::option::Option<crate::model::AccountLevelPermissions>,
@@ -6800,6 +7306,7 @@ pub mod bucket_permission_configuration {
             self.bucket_level_permissions = Some(input);
             self
         }
+        /// <p>The bucket-level permissions settings for the bucket.</p>
         pub fn set_bucket_level_permissions(
             mut self,
             input: std::option::Option<crate::model::BucketLevelPermissions>,
@@ -6859,6 +7366,7 @@ pub mod bucket_level_permissions {
             self.access_control_list = Some(input);
             self
         }
+        /// <p>The permissions settings of the access control list (ACL) for the bucket. This value is null if an ACL hasn't been defined for the bucket.</p>
         pub fn set_access_control_list(
             mut self,
             input: std::option::Option<crate::model::AccessControlList>,
@@ -6871,6 +7379,7 @@ pub mod bucket_level_permissions {
             self.block_public_access = Some(input);
             self
         }
+        /// <p>The block public access settings for the bucket.</p>
         pub fn set_block_public_access(
             mut self,
             input: std::option::Option<crate::model::BlockPublicAccess>,
@@ -6883,6 +7392,7 @@ pub mod bucket_level_permissions {
             self.bucket_policy = Some(input);
             self
         }
+        /// <p>The permissions settings of the bucket policy for the bucket. This value is null if a bucket policy hasn't been defined for the bucket.</p>
         pub fn set_bucket_policy(
             mut self,
             input: std::option::Option<crate::model::BucketPolicy>,
@@ -6942,6 +7452,7 @@ pub mod bucket_policy {
             self.allows_public_read_access = Some(input);
             self
         }
+        /// <p>Specifies whether the bucket policy allows the general public to have read access to the bucket.</p>
         pub fn set_allows_public_read_access(mut self, input: std::option::Option<bool>) -> Self {
             self.allows_public_read_access = input;
             self
@@ -6951,6 +7462,7 @@ pub mod bucket_policy {
             self.allows_public_write_access = Some(input);
             self
         }
+        /// <p>Specifies whether the bucket policy allows the general public to have write access to the bucket.</p>
         pub fn set_allows_public_write_access(mut self, input: std::option::Option<bool>) -> Self {
             self.allows_public_write_access = input;
             self
@@ -7011,6 +7523,7 @@ pub mod block_public_access {
             self.block_public_acls = Some(input);
             self
         }
+        /// <p>Specifies whether Amazon S3 blocks public access control lists (ACLs) for the bucket and objects in the bucket.</p>
         pub fn set_block_public_acls(mut self, input: std::option::Option<bool>) -> Self {
             self.block_public_acls = input;
             self
@@ -7020,6 +7533,7 @@ pub mod block_public_access {
             self.block_public_policy = Some(input);
             self
         }
+        /// <p>Specifies whether Amazon S3 blocks public bucket policies for the bucket.</p>
         pub fn set_block_public_policy(mut self, input: std::option::Option<bool>) -> Self {
             self.block_public_policy = input;
             self
@@ -7029,6 +7543,7 @@ pub mod block_public_access {
             self.ignore_public_acls = Some(input);
             self
         }
+        /// <p>Specifies whether Amazon S3 ignores public ACLs for the bucket and objects in the bucket.</p>
         pub fn set_ignore_public_acls(mut self, input: std::option::Option<bool>) -> Self {
             self.ignore_public_acls = input;
             self
@@ -7038,6 +7553,7 @@ pub mod block_public_access {
             self.restrict_public_buckets = Some(input);
             self
         }
+        /// <p>Specifies whether Amazon S3 restricts public bucket policies for the bucket.</p>
         pub fn set_restrict_public_buckets(mut self, input: std::option::Option<bool>) -> Self {
             self.restrict_public_buckets = input;
             self
@@ -7095,6 +7611,7 @@ pub mod access_control_list {
             self.allows_public_read_access = Some(input);
             self
         }
+        /// <p>Specifies whether the ACL grants the general public with read access permissions for the bucket.</p>
         pub fn set_allows_public_read_access(mut self, input: std::option::Option<bool>) -> Self {
             self.allows_public_read_access = input;
             self
@@ -7104,6 +7621,7 @@ pub mod access_control_list {
             self.allows_public_write_access = Some(input);
             self
         }
+        /// <p>Specifies whether the ACL grants the general public with write access permissions for the bucket.</p>
         pub fn set_allows_public_write_access(mut self, input: std::option::Option<bool>) -> Self {
             self.allows_public_write_access = input;
             self
@@ -7152,6 +7670,7 @@ pub mod account_level_permissions {
             self.block_public_access = Some(input);
             self
         }
+        /// <p>The block public access settings for the Amazon Web Services account that owns the bucket.</p>
         pub fn set_block_public_access(
             mut self,
             input: std::option::Option<crate::model::BlockPublicAccess>,
@@ -7174,7 +7693,7 @@ impl AccountLevelPermissions {
     }
 }
 
-/// **NOTE:** `EffectivePermission::Unknown` has been renamed to `::UnknownValue`.
+/// _Note: `EffectivePermission::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -7186,9 +7705,11 @@ impl AccountLevelPermissions {
     std::hash::Hash,
 )]
 pub enum EffectivePermission {
+    #[allow(missing_docs)] // documentation missing in model
     NotPublic,
+    #[allow(missing_docs)] // documentation missing in model
     Public,
-    /// **NOTE:** `::Unknown` has been renamed to `::UnknownValue`.
+    /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
     UnknownValue,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -7211,6 +7732,7 @@ impl std::str::FromStr for EffectivePermission {
     }
 }
 impl EffectivePermission {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EffectivePermission::NotPublic => "NOT_PUBLIC",
@@ -7219,6 +7741,7 @@ impl EffectivePermission {
             EffectivePermission::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["NOT_PUBLIC", "PUBLIC", "UNKNOWN"]
     }
@@ -7261,6 +7784,7 @@ pub mod s3_bucket_owner {
             self.display_name = Some(input.into());
             self
         }
+        /// <p>The display name of the account that owns the bucket.</p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.display_name = input;
             self
@@ -7270,6 +7794,7 @@ pub mod s3_bucket_owner {
             self.id = Some(input.into());
             self
         }
+        /// <p>The canonical user ID for the account that owns the bucket.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -7290,7 +7815,7 @@ impl S3BucketOwner {
     }
 }
 
-/// **NOTE:** `AllowsUnencryptedObjectUploads::Unknown` has been renamed to `::UnknownValue`.
+/// _Note: `AllowsUnencryptedObjectUploads::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -7302,9 +7827,11 @@ impl S3BucketOwner {
     std::hash::Hash,
 )]
 pub enum AllowsUnencryptedObjectUploads {
+    #[allow(missing_docs)] // documentation missing in model
     False,
+    #[allow(missing_docs)] // documentation missing in model
     True,
-    /// **NOTE:** `::Unknown` has been renamed to `::UnknownValue`.
+    /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
     UnknownValue,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -7327,6 +7854,7 @@ impl std::str::FromStr for AllowsUnencryptedObjectUploads {
     }
 }
 impl AllowsUnencryptedObjectUploads {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AllowsUnencryptedObjectUploads::False => "FALSE",
@@ -7335,6 +7863,7 @@ impl AllowsUnencryptedObjectUploads {
             AllowsUnencryptedObjectUploads::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FALSE", "TRUE", "UNKNOWN"]
     }
@@ -7377,6 +7906,7 @@ pub mod policy_details {
             self.action = Some(input);
             self
         }
+        /// <p>The action that produced the finding.</p>
         pub fn set_action(
             mut self,
             input: std::option::Option<crate::model::FindingAction>,
@@ -7389,6 +7919,7 @@ pub mod policy_details {
             self.actor = Some(input);
             self
         }
+        /// <p>The entity that performed the action that produced the finding.</p>
         pub fn set_actor(mut self, input: std::option::Option<crate::model::FindingActor>) -> Self {
             self.actor = input;
             self
@@ -7445,6 +7976,7 @@ pub mod finding_actor {
             self.domain_details = Some(input);
             self
         }
+        /// <p>The domain name of the device that the entity used to perform the action on the affected resource.</p>
         pub fn set_domain_details(
             mut self,
             input: std::option::Option<crate::model::DomainDetails>,
@@ -7457,6 +7989,7 @@ pub mod finding_actor {
             self.ip_address_details = Some(input);
             self
         }
+        /// <p>The IP address of the device that the entity used to perform the action on the affected resource. This object also provides information such as the owner and geographic location for the IP address.</p>
         pub fn set_ip_address_details(
             mut self,
             input: std::option::Option<crate::model::IpAddressDetails>,
@@ -7469,6 +8002,7 @@ pub mod finding_actor {
             self.user_identity = Some(input);
             self
         }
+        /// <p>The type and other characteristics of the entity that performed the action on the affected resource.</p>
         pub fn set_user_identity(
             mut self,
             input: std::option::Option<crate::model::UserIdentity>,
@@ -7545,6 +8079,7 @@ pub mod user_identity {
             self.assumed_role = Some(input);
             self
         }
+        /// <p>If the action was performed with temporary security credentials that were obtained using the AssumeRole operation of the Security Token Service (STS) API, the identifiers, session context, and other details about the identity.</p>
         pub fn set_assumed_role(
             mut self,
             input: std::option::Option<crate::model::AssumedRole>,
@@ -7557,6 +8092,7 @@ pub mod user_identity {
             self.aws_account = Some(input);
             self
         }
+        /// <p>If the action was performed using the credentials for another Amazon Web Services account, the details of that account.</p>
         pub fn set_aws_account(
             mut self,
             input: std::option::Option<crate::model::AwsAccount>,
@@ -7569,6 +8105,7 @@ pub mod user_identity {
             self.aws_service = Some(input);
             self
         }
+        /// <p>If the action was performed by an Amazon Web Services account that belongs to an Amazon Web Service, the name of the service.</p>
         pub fn set_aws_service(
             mut self,
             input: std::option::Option<crate::model::AwsService>,
@@ -7581,6 +8118,7 @@ pub mod user_identity {
             self.federated_user = Some(input);
             self
         }
+        /// <p>If the action was performed with temporary security credentials that were obtained using the GetFederationToken operation of the Security Token Service (STS) API, the identifiers, session context, and other details about the identity.</p>
         pub fn set_federated_user(
             mut self,
             input: std::option::Option<crate::model::FederatedUser>,
@@ -7593,6 +8131,7 @@ pub mod user_identity {
             self.iam_user = Some(input);
             self
         }
+        /// <p>If the action was performed using the credentials for an Identity and Access Management (IAM) user, the name and other details about the user.</p>
         pub fn set_iam_user(mut self, input: std::option::Option<crate::model::IamUser>) -> Self {
             self.iam_user = input;
             self
@@ -7602,6 +8141,7 @@ pub mod user_identity {
             self.root = Some(input);
             self
         }
+        /// <p>If the action was performed using the credentials for your Amazon Web Services account, the details of your account.</p>
         pub fn set_root(
             mut self,
             input: std::option::Option<crate::model::UserIdentityRoot>,
@@ -7614,6 +8154,7 @@ pub mod user_identity {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of entity that performed the action.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::UserIdentityType>,
@@ -7654,11 +8195,17 @@ impl UserIdentity {
     std::hash::Hash,
 )]
 pub enum UserIdentityType {
+    #[allow(missing_docs)] // documentation missing in model
     AwsAccount,
+    #[allow(missing_docs)] // documentation missing in model
     AwsService,
+    #[allow(missing_docs)] // documentation missing in model
     AssumedRole,
+    #[allow(missing_docs)] // documentation missing in model
     FederatedUser,
+    #[allow(missing_docs)] // documentation missing in model
     IamUser,
+    #[allow(missing_docs)] // documentation missing in model
     Root,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -7684,6 +8231,7 @@ impl std::str::FromStr for UserIdentityType {
     }
 }
 impl UserIdentityType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             UserIdentityType::AwsAccount => "AWSAccount",
@@ -7695,6 +8243,7 @@ impl UserIdentityType {
             UserIdentityType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "AWSAccount",
@@ -7748,6 +8297,7 @@ pub mod user_identity_root {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the Amazon Web Services account.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -7757,6 +8307,7 @@ pub mod user_identity_root {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the principal that performed the action. The last section of the ARN contains the name of the user or role that performed the action.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -7766,6 +8317,7 @@ pub mod user_identity_root {
             self.principal_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the entity that performed the action.</p>
         pub fn set_principal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.principal_id = input;
             self
@@ -7827,6 +8379,7 @@ pub mod iam_user {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the Amazon Web Services account that's associated with the IAM user who performed the action.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -7836,6 +8389,7 @@ pub mod iam_user {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the principal that performed the action. The last section of the ARN contains the name of the user who performed the action.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -7845,6 +8399,7 @@ pub mod iam_user {
             self.principal_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the IAM user who performed the action.</p>
         pub fn set_principal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.principal_id = input;
             self
@@ -7854,6 +8409,7 @@ pub mod iam_user {
             self.user_name = Some(input.into());
             self
         }
+        /// <p>The user name of the IAM user who performed the action.</p>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_name = input;
             self
@@ -7920,6 +8476,7 @@ pub mod federated_user {
             self.access_key_id = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services access key ID that identifies the credentials.</p>
         pub fn set_access_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7932,6 +8489,7 @@ pub mod federated_user {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the Amazon Web Services account that owns the entity that was used to get the credentials.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -7941,6 +8499,7 @@ pub mod federated_user {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the entity that was used to get the credentials.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -7950,6 +8509,7 @@ pub mod federated_user {
             self.principal_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the entity that was used to get the credentials.</p>
         pub fn set_principal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.principal_id = input;
             self
@@ -7959,6 +8519,7 @@ pub mod federated_user {
             self.session_context = Some(input);
             self
         }
+        /// <p>The details of the session that was created for the credentials, including the entity that issued the session.</p>
         pub fn set_session_context(
             mut self,
             input: std::option::Option<crate::model::SessionContext>,
@@ -8017,6 +8578,7 @@ pub mod session_context {
             self.attributes = Some(input);
             self
         }
+        /// <p>The date and time when the credentials were issued, and whether the credentials were authenticated with a multi-factor authentication (MFA) device.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<crate::model::SessionContextAttributes>,
@@ -8029,6 +8591,7 @@ pub mod session_context {
             self.session_issuer = Some(input);
             self
         }
+        /// <p>The source and type of credentials that were issued to the entity.</p>
         pub fn set_session_issuer(
             mut self,
             input: std::option::Option<crate::model::SessionIssuer>,
@@ -8096,6 +8659,7 @@ pub mod session_issuer {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the Amazon Web Services account that owns the entity that was used to get the credentials.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -8105,6 +8669,7 @@ pub mod session_issuer {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the source account, IAM user, or role that was used to get the credentials.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -8114,6 +8679,7 @@ pub mod session_issuer {
             self.principal_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the entity that was used to get the credentials.</p>
         pub fn set_principal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.principal_id = input;
             self
@@ -8123,6 +8689,7 @@ pub mod session_issuer {
             self.r#type = Some(input.into());
             self
         }
+        /// <p>The source of the temporary security credentials, such as Root, IAMUser, or Role.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
@@ -8132,6 +8699,7 @@ pub mod session_issuer {
             self.user_name = Some(input.into());
             self
         }
+        /// <p>The name or alias of the user or role that issued the session. This value is null if the credentials were obtained from a root account that doesn't have an alias.</p>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_name = input;
             self
@@ -8160,7 +8728,7 @@ impl SessionIssuer {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SessionContextAttributes {
     /// <p>The date and time, in UTC and ISO 8601 format, when the credentials were issued.</p>
-    pub creation_date: std::option::Option<smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Specifies whether the credentials were authenticated with a multi-factor authentication (MFA) device.</p>
     pub mfa_authenticated: bool,
 }
@@ -8178,18 +8746,19 @@ pub mod session_context_attributes {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) creation_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) mfa_authenticated: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The date and time, in UTC and ISO 8601 format, when the credentials were issued.</p>
-        pub fn creation_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_date = Some(input);
             self
         }
+        /// <p>The date and time, in UTC and ISO 8601 format, when the credentials were issued.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_date = input;
             self
@@ -8199,6 +8768,7 @@ pub mod session_context_attributes {
             self.mfa_authenticated = Some(input);
             self
         }
+        /// <p>Specifies whether the credentials were authenticated with a multi-factor authentication (MFA) device.</p>
         pub fn set_mfa_authenticated(mut self, input: std::option::Option<bool>) -> Self {
             self.mfa_authenticated = input;
             self
@@ -8247,6 +8817,7 @@ pub mod aws_service {
             self.invoked_by = Some(input.into());
             self
         }
+        /// <p>The name of the Amazon Web Service that performed the action.</p>
         pub fn set_invoked_by(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.invoked_by = input;
             self
@@ -8298,6 +8869,7 @@ pub mod aws_account {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the Amazon Web Services account.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -8307,6 +8879,7 @@ pub mod aws_account {
             self.principal_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the entity that performed the action.</p>
         pub fn set_principal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.principal_id = input;
             self
@@ -8371,6 +8944,7 @@ pub mod assumed_role {
             self.access_key_id = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services access key ID that identifies the credentials.</p>
         pub fn set_access_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8383,6 +8957,7 @@ pub mod assumed_role {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the Amazon Web Services account that owns the entity that was used to get the credentials.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -8392,6 +8967,7 @@ pub mod assumed_role {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the entity that was used to get the credentials.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -8401,6 +8977,7 @@ pub mod assumed_role {
             self.principal_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the entity that was used to get the credentials.</p>
         pub fn set_principal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.principal_id = input;
             self
@@ -8410,6 +8987,7 @@ pub mod assumed_role {
             self.session_context = Some(input);
             self
         }
+        /// <p>The details of the session that was created for the credentials, including the entity that issued the session.</p>
         pub fn set_session_context(
             mut self,
             input: std::option::Option<crate::model::SessionContext>,
@@ -8480,6 +9058,7 @@ pub mod ip_address_details {
             self.ip_address_v4 = Some(input.into());
             self
         }
+        /// <p>The Internet Protocol version 4 (IPv4) address of the device.</p>
         pub fn set_ip_address_v4(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8492,6 +9071,7 @@ pub mod ip_address_details {
             self.ip_city = Some(input);
             self
         }
+        /// <p>The city that the IP address originated from.</p>
         pub fn set_ip_city(mut self, input: std::option::Option<crate::model::IpCity>) -> Self {
             self.ip_city = input;
             self
@@ -8501,6 +9081,7 @@ pub mod ip_address_details {
             self.ip_country = Some(input);
             self
         }
+        /// <p>The country that the IP address originated from.</p>
         pub fn set_ip_country(
             mut self,
             input: std::option::Option<crate::model::IpCountry>,
@@ -8513,6 +9094,7 @@ pub mod ip_address_details {
             self.ip_geo_location = Some(input);
             self
         }
+        /// <p>The geographic coordinates of the location that the IP address originated from.</p>
         pub fn set_ip_geo_location(
             mut self,
             input: std::option::Option<crate::model::IpGeoLocation>,
@@ -8525,6 +9107,7 @@ pub mod ip_address_details {
             self.ip_owner = Some(input);
             self
         }
+        /// <p>The registered owner of the IP address.</p>
         pub fn set_ip_owner(mut self, input: std::option::Option<crate::model::IpOwner>) -> Self {
             self.ip_owner = input;
             self
@@ -8588,6 +9171,7 @@ pub mod ip_owner {
             self.asn = Some(input.into());
             self
         }
+        /// <p>The autonomous system number (ASN) for the autonomous system that included the IP address.</p>
         pub fn set_asn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.asn = input;
             self
@@ -8597,6 +9181,7 @@ pub mod ip_owner {
             self.asn_org = Some(input.into());
             self
         }
+        /// <p>The organization identifier that's associated with the autonomous system number (ASN) for the autonomous system that included the IP address.</p>
         pub fn set_asn_org(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.asn_org = input;
             self
@@ -8606,6 +9191,7 @@ pub mod ip_owner {
             self.isp = Some(input.into());
             self
         }
+        /// <p>The name of the internet service provider (ISP) that owned the IP address.</p>
         pub fn set_isp(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.isp = input;
             self
@@ -8615,6 +9201,7 @@ pub mod ip_owner {
             self.org = Some(input.into());
             self
         }
+        /// <p>The name of the organization that owned the IP address.</p>
         pub fn set_org(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.org = input;
             self
@@ -8669,6 +9256,7 @@ pub mod ip_geo_location {
             self.lat = Some(input);
             self
         }
+        /// <p>The latitude coordinate of the location, rounded to four decimal places.</p>
         pub fn set_lat(mut self, input: std::option::Option<f64>) -> Self {
             self.lat = input;
             self
@@ -8678,6 +9266,7 @@ pub mod ip_geo_location {
             self.lon = Some(input);
             self
         }
+        /// <p>The longitude coordinate of the location, rounded to four decimal places.</p>
         pub fn set_lon(mut self, input: std::option::Option<f64>) -> Self {
             self.lon = input;
             self
@@ -8730,6 +9319,7 @@ pub mod ip_country {
             self.code = Some(input.into());
             self
         }
+        /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country that the IP address originated from. For example, US for the United States.</p>
         pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.code = input;
             self
@@ -8739,6 +9329,7 @@ pub mod ip_country {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the country that the IP address originated from.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -8787,6 +9378,7 @@ pub mod ip_city {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the city.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -8832,6 +9424,7 @@ pub mod domain_details {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The name of the domain.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -8883,6 +9476,7 @@ pub mod finding_action {
             self.action_type = Some(input);
             self
         }
+        /// <p>The type of action that occurred for the affected resource. This value is typically AWS_API_CALL, which indicates that an entity invoked an API operation for the resource.</p>
         pub fn set_action_type(
             mut self,
             input: std::option::Option<crate::model::FindingActionType>,
@@ -8895,6 +9489,7 @@ pub mod finding_action {
             self.api_call_details = Some(input);
             self
         }
+        /// <p>The invocation details of the API operation that an entity invoked for the affected resource, if the value for the actionType property is AWS_API_CALL.</p>
         pub fn set_api_call_details(
             mut self,
             input: std::option::Option<crate::model::ApiCallDetails>,
@@ -8927,9 +9522,9 @@ pub struct ApiCallDetails {
     /// <p>The URL of the Amazon Web Service that provides the operation, for example: s3.amazonaws.com.</p>
     pub api_service_name: std::option::Option<std::string::String>,
     /// <p>The first date and time, in UTC and extended ISO 8601 format, when any operation was invoked and produced the finding.</p>
-    pub first_seen: std::option::Option<smithy_types::Instant>,
+    pub first_seen: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The most recent date and time, in UTC and extended ISO 8601 format, when the specified operation (api) was invoked and produced the finding.</p>
-    pub last_seen: std::option::Option<smithy_types::Instant>,
+    pub last_seen: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for ApiCallDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8949,8 +9544,8 @@ pub mod api_call_details {
     pub struct Builder {
         pub(crate) api: std::option::Option<std::string::String>,
         pub(crate) api_service_name: std::option::Option<std::string::String>,
-        pub(crate) first_seen: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_seen: std::option::Option<smithy_types::Instant>,
+        pub(crate) first_seen: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_seen: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The name of the operation that was invoked most recently and produced the finding.</p>
@@ -8958,6 +9553,7 @@ pub mod api_call_details {
             self.api = Some(input.into());
             self
         }
+        /// <p>The name of the operation that was invoked most recently and produced the finding.</p>
         pub fn set_api(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.api = input;
             self
@@ -8967,6 +9563,7 @@ pub mod api_call_details {
             self.api_service_name = Some(input.into());
             self
         }
+        /// <p>The URL of the Amazon Web Service that provides the operation, for example: s3.amazonaws.com.</p>
         pub fn set_api_service_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8975,20 +9572,28 @@ pub mod api_call_details {
             self
         }
         /// <p>The first date and time, in UTC and extended ISO 8601 format, when any operation was invoked and produced the finding.</p>
-        pub fn first_seen(mut self, input: smithy_types::Instant) -> Self {
+        pub fn first_seen(mut self, input: aws_smithy_types::Instant) -> Self {
             self.first_seen = Some(input);
             self
         }
-        pub fn set_first_seen(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The first date and time, in UTC and extended ISO 8601 format, when any operation was invoked and produced the finding.</p>
+        pub fn set_first_seen(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.first_seen = input;
             self
         }
         /// <p>The most recent date and time, in UTC and extended ISO 8601 format, when the specified operation (api) was invoked and produced the finding.</p>
-        pub fn last_seen(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_seen(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_seen = Some(input);
             self
         }
-        pub fn set_last_seen(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The most recent date and time, in UTC and extended ISO 8601 format, when the specified operation (api) was invoked and produced the finding.</p>
+        pub fn set_last_seen(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.last_seen = input;
             self
         }
@@ -9022,6 +9627,7 @@ impl ApiCallDetails {
     std::hash::Hash,
 )]
 pub enum FindingActionType {
+    #[allow(missing_docs)] // documentation missing in model
     AwsApiCall,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -9042,12 +9648,14 @@ impl std::str::FromStr for FindingActionType {
     }
 }
 impl FindingActionType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FindingActionType::AwsApiCall => "AWS_API_CALL",
             FindingActionType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AWS_API_CALL"]
     }
@@ -9098,6 +9706,7 @@ pub mod classification_details {
             self.detailed_results_location = Some(input.into());
             self
         }
+        /// <p>The path to the folder or file (in Amazon S3) that contains the corresponding sensitive data discovery result for the finding. If a finding applies to a large archive or compressed file, this value is the path to a folder. Otherwise, this value is the path to a file.</p>
         pub fn set_detailed_results_location(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9110,6 +9719,7 @@ pub mod classification_details {
             self.job_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the classification job that produced the finding.</p>
         pub fn set_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_arn = input;
             self
@@ -9119,6 +9729,7 @@ pub mod classification_details {
             self.job_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the classification job that produced the finding.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -9128,6 +9739,7 @@ pub mod classification_details {
             self.result = Some(input);
             self
         }
+        /// <p>The status and other details of the finding.</p>
         pub fn set_result(
             mut self,
             input: std::option::Option<crate::model::ClassificationResult>,
@@ -9203,6 +9815,7 @@ pub mod classification_result {
             self.additional_occurrences = Some(input);
             self
         }
+        /// <p>Specifies whether Amazon Macie detected additional occurrences of sensitive data in the S3 object. A finding includes location data for a maximum of 15 occurrences of sensitive data.</p> <p>This value can help you determine whether to investigate additional occurrences of sensitive data in an object. You can do this by referring to the corresponding sensitive data discovery result for the finding (ClassificationDetails.detailedResultsLocation).</p>
         pub fn set_additional_occurrences(mut self, input: std::option::Option<bool>) -> Self {
             self.additional_occurrences = input;
             self
@@ -9215,6 +9828,7 @@ pub mod classification_result {
             self.custom_data_identifiers = Some(input);
             self
         }
+        /// <p>The custom data identifiers that detected the sensitive data and the number of occurrences of the data that they detected.</p>
         pub fn set_custom_data_identifiers(
             mut self,
             input: std::option::Option<crate::model::CustomDataIdentifiers>,
@@ -9227,16 +9841,23 @@ pub mod classification_result {
             self.mime_type = Some(input.into());
             self
         }
+        /// <p>The type of content, as a MIME type, that the finding applies to. For example, application/gzip, for a GNU Gzip compressed archive file, or application/pdf, for an Adobe Portable Document Format file.</p>
         pub fn set_mime_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mime_type = input;
             self
         }
+        /// Appends an item to `sensitive_data`.
+        ///
+        /// To override the contents of this collection use [`set_sensitive_data`](Self::set_sensitive_data).
+        ///
+        /// <p>The category, types, and number of occurrences of the sensitive data that produced the finding.</p>
         pub fn sensitive_data(mut self, input: impl Into<crate::model::SensitiveDataItem>) -> Self {
             let mut v = self.sensitive_data.unwrap_or_default();
             v.push(input.into());
             self.sensitive_data = Some(v);
             self
         }
+        /// <p>The category, types, and number of occurrences of the sensitive data that produced the finding.</p>
         pub fn set_sensitive_data(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SensitiveDataItem>>,
@@ -9249,6 +9870,7 @@ pub mod classification_result {
             self.size_classified = Some(input);
             self
         }
+        /// <p>The total size, in bytes, of the data that the finding applies to.</p>
         pub fn set_size_classified(mut self, input: std::option::Option<i64>) -> Self {
             self.size_classified = input;
             self
@@ -9258,6 +9880,7 @@ pub mod classification_result {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the finding.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ClassificationResultStatus>,
@@ -9317,6 +9940,7 @@ pub mod classification_result_status {
             self.code = Some(input.into());
             self
         }
+        /// <p>The status of the finding. Possible values are:</p> <ul><li><p>COMPLETE - Amazon Macie successfully completed its analysis of the S3 object that the finding applies to.</p></li> <li><p>PARTIAL - Macie analyzed only a subset of the data in the S3 object that the finding applies to. For example, the object is an archive file that contains files in an unsupported format.</p></li> <li><p>SKIPPED - Macie wasn't able to analyze the S3 object that the finding applies to. For example, the object is a file in an unsupported format.</p></li></ul>
         pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.code = input;
             self
@@ -9326,6 +9950,7 @@ pub mod classification_result_status {
             self.reason = Some(input.into());
             self
         }
+        /// <p>A brief description of the status of the finding. Amazon Macie uses this value to notify you of any errors, warnings, or considerations that might impact your analysis of the finding.</p>
         pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.reason = input;
             self
@@ -9382,6 +10007,7 @@ pub mod sensitive_data_item {
             self.category = Some(input);
             self
         }
+        /// <p>The category of sensitive data that was detected. For example: CREDENTIALS, for credentials data such as private keys or Amazon Web Services secret keys; FINANCIAL_INFORMATION, for financial data such as credit card numbers; or, PERSONAL_INFORMATION, for personal health information, such as health insurance identification numbers, or personally identifiable information, such as passport numbers.</p>
         pub fn set_category(
             mut self,
             input: std::option::Option<crate::model::SensitiveDataItemCategory>,
@@ -9389,12 +10015,18 @@ pub mod sensitive_data_item {
             self.category = input;
             self
         }
+        /// Appends an item to `detections`.
+        ///
+        /// To override the contents of this collection use [`set_detections`](Self::set_detections).
+        ///
+        /// <p>An array of objects, one for each type of sensitive data that was detected. Each object reports the number of occurrences of a specific type of sensitive data that was detected, and the location of up to 15 of those occurrences.</p>
         pub fn detections(mut self, input: impl Into<crate::model::DefaultDetection>) -> Self {
             let mut v = self.detections.unwrap_or_default();
             v.push(input.into());
             self.detections = Some(v);
             self
         }
+        /// <p>An array of objects, one for each type of sensitive data that was detected. Each object reports the number of occurrences of a specific type of sensitive data that was detected, and the location of up to 15 of those occurrences.</p>
         pub fn set_detections(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DefaultDetection>>,
@@ -9407,6 +10039,7 @@ pub mod sensitive_data_item {
             self.total_count = Some(input);
             self
         }
+        /// <p>The total number of occurrences of the sensitive data that was detected.</p>
         pub fn set_total_count(mut self, input: std::option::Option<i64>) -> Self {
             self.total_count = input;
             self
@@ -9464,6 +10097,7 @@ pub mod default_detection {
             self.count = Some(input);
             self
         }
+        /// <p>The total number of occurrences of the type of sensitive data that was detected.</p>
         pub fn set_count(mut self, input: std::option::Option<i64>) -> Self {
             self.count = input;
             self
@@ -9473,6 +10107,7 @@ pub mod default_detection {
             self.occurrences = Some(input);
             self
         }
+        /// <p>The location of 1-15 occurrences of the sensitive data that was detected. A finding includes location data for a maximum of 15 occurrences of sensitive data.</p>
         pub fn set_occurrences(
             mut self,
             input: std::option::Option<crate::model::Occurrences>,
@@ -9485,6 +10120,7 @@ pub mod default_detection {
             self.r#type = Some(input.into());
             self
         }
+        /// <p>The type of sensitive data that was detected. For example, AWS_CREDENTIALS, PHONE_NUMBER, or ADDRESS.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
@@ -9545,12 +10181,18 @@ pub mod occurrences {
         pub(crate) records: std::option::Option<std::vec::Vec<crate::model::Record>>,
     }
     impl Builder {
+        /// Appends an item to `cells`.
+        ///
+        /// To override the contents of this collection use [`set_cells`](Self::set_cells).
+        ///
+        /// <p>An array of objects, one for each occurrence of sensitive data in a Microsoft Excel workbook, CSV file, or TSV file. This value is null for all other types of files.</p><p>Each Cell object specifies a cell or field that contains the sensitive data.</p>
         pub fn cells(mut self, input: impl Into<crate::model::Cell>) -> Self {
             let mut v = self.cells.unwrap_or_default();
             v.push(input.into());
             self.cells = Some(v);
             self
         }
+        /// <p>An array of objects, one for each occurrence of sensitive data in a Microsoft Excel workbook, CSV file, or TSV file. This value is null for all other types of files.</p><p>Each Cell object specifies a cell or field that contains the sensitive data.</p>
         pub fn set_cells(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Cell>>,
@@ -9558,12 +10200,18 @@ pub mod occurrences {
             self.cells = input;
             self
         }
+        /// Appends an item to `line_ranges`.
+        ///
+        /// To override the contents of this collection use [`set_line_ranges`](Self::set_line_ranges).
+        ///
+        /// <p>An array of objects, one for each occurrence of sensitive data in a non-binary text file, such as an HTML, TXT, or XML file. Each Range object specifies a line or inclusive range of lines that contains the sensitive data, and the position of the data on the specified line or lines.</p> <p>This value is often null for file types that are supported by Cell, Page, or Record objects. Exceptions are the location of sensitive data in: unstructured sections of an otherwise structured file, such as a comment in a file; a malformed file that Amazon Macie analyzes as plain text; and, a CSV or TSV file that has any column names that contain sensitive data.</p>
         pub fn line_ranges(mut self, input: impl Into<crate::model::Range>) -> Self {
             let mut v = self.line_ranges.unwrap_or_default();
             v.push(input.into());
             self.line_ranges = Some(v);
             self
         }
+        /// <p>An array of objects, one for each occurrence of sensitive data in a non-binary text file, such as an HTML, TXT, or XML file. Each Range object specifies a line or inclusive range of lines that contains the sensitive data, and the position of the data on the specified line or lines.</p> <p>This value is often null for file types that are supported by Cell, Page, or Record objects. Exceptions are the location of sensitive data in: unstructured sections of an otherwise structured file, such as a comment in a file; a malformed file that Amazon Macie analyzes as plain text; and, a CSV or TSV file that has any column names that contain sensitive data.</p>
         pub fn set_line_ranges(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Range>>,
@@ -9571,12 +10219,18 @@ pub mod occurrences {
             self.line_ranges = input;
             self
         }
+        /// Appends an item to `offset_ranges`.
+        ///
+        /// To override the contents of this collection use [`set_offset_ranges`](Self::set_offset_ranges).
+        ///
+        /// <p>Reserved for future use.</p>
         pub fn offset_ranges(mut self, input: impl Into<crate::model::Range>) -> Self {
             let mut v = self.offset_ranges.unwrap_or_default();
             v.push(input.into());
             self.offset_ranges = Some(v);
             self
         }
+        /// <p>Reserved for future use.</p>
         pub fn set_offset_ranges(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Range>>,
@@ -9584,12 +10238,18 @@ pub mod occurrences {
             self.offset_ranges = input;
             self
         }
+        /// Appends an item to `pages`.
+        ///
+        /// To override the contents of this collection use [`set_pages`](Self::set_pages).
+        ///
+        /// <p>An array of objects, one for each occurrence of sensitive data in an Adobe Portable Document Format file. This value is null for all other types of files.</p><p>Each Page object specifies a page that contains the sensitive data.</p>
         pub fn pages(mut self, input: impl Into<crate::model::Page>) -> Self {
             let mut v = self.pages.unwrap_or_default();
             v.push(input.into());
             self.pages = Some(v);
             self
         }
+        /// <p>An array of objects, one for each occurrence of sensitive data in an Adobe Portable Document Format file. This value is null for all other types of files.</p><p>Each Page object specifies a page that contains the sensitive data.</p>
         pub fn set_pages(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Page>>,
@@ -9597,12 +10257,18 @@ pub mod occurrences {
             self.pages = input;
             self
         }
+        /// Appends an item to `records`.
+        ///
+        /// To override the contents of this collection use [`set_records`](Self::set_records).
+        ///
+        /// <p>An array of objects, one for each occurrence of sensitive data in an Apache Avro object container, Apache Parquet file, JSON file, or JSON Lines file. This value is null for all other types of files.</p> <p>For an Avro object container or Parquet file, each Record object specifies a record index and the path to a field in a record that contains the sensitive data. For a JSON or JSON Lines file, each Record object specifies the path to a field or array that contains the sensitive data. For a JSON Lines file, it also specifies the index of the line that contains the data.</p>
         pub fn records(mut self, input: impl Into<crate::model::Record>) -> Self {
             let mut v = self.records.unwrap_or_default();
             v.push(input.into());
             self.records = Some(v);
             self
         }
+        /// <p>An array of objects, one for each occurrence of sensitive data in an Apache Avro object container, Apache Parquet file, JSON file, or JSON Lines file. This value is null for all other types of files.</p> <p>For an Avro object container or Parquet file, each Record object specifies a record index and the path to a field in a record that contains the sensitive data. For a JSON or JSON Lines file, each Record object specifies the path to a field or array that contains the sensitive data. For a JSON Lines file, it also specifies the index of the line that contains the data.</p>
         pub fn set_records(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Record>>,
@@ -9661,6 +10327,7 @@ pub mod record {
             self.json_path = Some(input.into());
             self
         }
+        /// <p>The path, as a JSONPath expression, to the sensitive data. For an Avro object container or Parquet file, this is the path to the field in the record (recordIndex) that contains the data. For a JSON or JSON Lines file, this is the path to the field or array that contains the data. If the data is a value in an array, the path also indicates which value contains the data.</p> <p>If Amazon Macie detects sensitive data in the name of any element in the path, Macie omits this field. If the name of an element exceeds 20 characters, Macie truncates the name by removing characters from the beginning of the name. If the resulting full path exceeds 250 characters, Macie also truncates the path, starting with the first element in the path, until the path contains 250 or fewer characters.</p>
         pub fn set_json_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.json_path = input;
             self
@@ -9670,6 +10337,7 @@ pub mod record {
             self.record_index = Some(input);
             self
         }
+        /// <p>For an Avro object container or Parquet file, the record index, starting from 0, for the record that contains the sensitive data. For a JSON Lines file, the line index, starting from 0, for the line that contains the sensitive data. This value is always 0 for JSON files.</p>
         pub fn set_record_index(mut self, input: std::option::Option<i64>) -> Self {
             self.record_index = input;
             self
@@ -9726,6 +10394,7 @@ pub mod page {
             self.line_range = Some(input);
             self
         }
+        /// <p>Reserved for future use.</p>
         pub fn set_line_range(mut self, input: std::option::Option<crate::model::Range>) -> Self {
             self.line_range = input;
             self
@@ -9735,6 +10404,7 @@ pub mod page {
             self.offset_range = Some(input);
             self
         }
+        /// <p>Reserved for future use.</p>
         pub fn set_offset_range(mut self, input: std::option::Option<crate::model::Range>) -> Self {
             self.offset_range = input;
             self
@@ -9744,6 +10414,7 @@ pub mod page {
             self.page_number = Some(input);
             self
         }
+        /// <p>The page number of the page that contains the sensitive data.</p>
         pub fn set_page_number(mut self, input: std::option::Option<i64>) -> Self {
             self.page_number = input;
             self
@@ -9801,6 +10472,7 @@ pub mod range {
             self.end = Some(input);
             self
         }
+        /// <p>The number of lines from the beginning of the file to the end of the sensitive data.</p>
         pub fn set_end(mut self, input: std::option::Option<i64>) -> Self {
             self.end = input;
             self
@@ -9810,6 +10482,7 @@ pub mod range {
             self.start = Some(input);
             self
         }
+        /// <p>The number of lines from the beginning of the file to the beginning of the sensitive data.</p>
         pub fn set_start(mut self, input: std::option::Option<i64>) -> Self {
             self.start = input;
             self
@@ -9819,6 +10492,7 @@ pub mod range {
             self.start_column = Some(input);
             self
         }
+        /// <p>The number of characters, with spaces and starting from 1, from the beginning of the first line that contains the sensitive data (start) to the beginning of the sensitive data.</p>
         pub fn set_start_column(mut self, input: std::option::Option<i64>) -> Self {
             self.start_column = input;
             self
@@ -9880,6 +10554,7 @@ pub mod cell {
             self.cell_reference = Some(input.into());
             self
         }
+        /// <p>The location of the cell, as an absolute cell reference, that contains the sensitive data, for example Sheet2!C5 for cell C5 on Sheet2 in a Microsoft Excel workbook. This value is null for CSV and TSV files.</p>
         pub fn set_cell_reference(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9892,6 +10567,7 @@ pub mod cell {
             self.column = Some(input);
             self
         }
+        /// <p>The column number of the column that contains the sensitive data. For a Microsoft Excel workbook, this value correlates to the alphabetical character(s) for a column identifier, for example: 1 for column A, 2 for column B, and so on.</p>
         pub fn set_column(mut self, input: std::option::Option<i64>) -> Self {
             self.column = input;
             self
@@ -9901,6 +10577,7 @@ pub mod cell {
             self.column_name = Some(input.into());
             self
         }
+        /// <p>The name of the column that contains the sensitive data, if available.</p>
         pub fn set_column_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.column_name = input;
             self
@@ -9910,6 +10587,7 @@ pub mod cell {
             self.row = Some(input);
             self
         }
+        /// <p>The row number of the row that contains the sensitive data.</p>
         pub fn set_row(mut self, input: std::option::Option<i64>) -> Self {
             self.row = input;
             self
@@ -9959,12 +10637,18 @@ pub mod custom_data_identifiers {
         pub(crate) total_count: std::option::Option<i64>,
     }
     impl Builder {
+        /// Appends an item to `detections`.
+        ///
+        /// To override the contents of this collection use [`set_detections`](Self::set_detections).
+        ///
+        /// <p>The custom data identifiers that detected the data, and the number of occurrences of the data that each identifier detected.</p>
         pub fn detections(mut self, input: impl Into<crate::model::CustomDetection>) -> Self {
             let mut v = self.detections.unwrap_or_default();
             v.push(input.into());
             self.detections = Some(v);
             self
         }
+        /// <p>The custom data identifiers that detected the data, and the number of occurrences of the data that each identifier detected.</p>
         pub fn set_detections(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CustomDetection>>,
@@ -9977,6 +10661,7 @@ pub mod custom_data_identifiers {
             self.total_count = Some(input);
             self
         }
+        /// <p>The total number of occurrences of the data that was detected by the custom data identifiers and produced the finding.</p>
         pub fn set_total_count(mut self, input: std::option::Option<i64>) -> Self {
             self.total_count = input;
             self
@@ -10037,6 +10722,7 @@ pub mod custom_detection {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the custom data identifier.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -10046,6 +10732,7 @@ pub mod custom_detection {
             self.count = Some(input);
             self
         }
+        /// <p>The total number of occurrences of the sensitive data that the custom data identifier detected.</p>
         pub fn set_count(mut self, input: std::option::Option<i64>) -> Self {
             self.count = input;
             self
@@ -10055,6 +10742,7 @@ pub mod custom_detection {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the custom data identifier.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -10064,6 +10752,7 @@ pub mod custom_detection {
             self.occurrences = Some(input);
             self
         }
+        /// <p>The location of 1-15 occurrences of the sensitive data that the custom data identifier detected. A finding includes location data for a maximum of 15 occurrences of sensitive data.</p>
         pub fn set_occurrences(
             mut self,
             input: std::option::Option<crate::model::Occurrences>,
@@ -10101,7 +10790,9 @@ impl CustomDetection {
     std::hash::Hash,
 )]
 pub enum FindingCategory {
+    #[allow(missing_docs)] // documentation missing in model
     Classification,
+    #[allow(missing_docs)] // documentation missing in model
     Policy,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -10123,6 +10814,7 @@ impl std::str::FromStr for FindingCategory {
     }
 }
 impl FindingCategory {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FindingCategory::Classification => "CLASSIFICATION",
@@ -10130,6 +10822,7 @@ impl FindingCategory {
             FindingCategory::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CLASSIFICATION", "POLICY"]
     }
@@ -10180,6 +10873,7 @@ pub mod bucket_count_by_shared_access_type {
             self.external = Some(input);
             self
         }
+        /// <p>The total number of buckets that are shared with an Amazon Web Services account that isn't part of the same Amazon Macie organization.</p>
         pub fn set_external(mut self, input: std::option::Option<i64>) -> Self {
             self.external = input;
             self
@@ -10189,6 +10883,7 @@ pub mod bucket_count_by_shared_access_type {
             self.internal = Some(input);
             self
         }
+        /// <p>The total number of buckets that are shared with an Amazon Web Services account that's part of the same Amazon Macie organization.</p>
         pub fn set_internal(mut self, input: std::option::Option<i64>) -> Self {
             self.internal = input;
             self
@@ -10198,6 +10893,7 @@ pub mod bucket_count_by_shared_access_type {
             self.not_shared = Some(input);
             self
         }
+        /// <p>The total number of buckets that aren't shared with other Amazon Web Services accounts.</p>
         pub fn set_not_shared(mut self, input: std::option::Option<i64>) -> Self {
             self.not_shared = input;
             self
@@ -10207,6 +10903,7 @@ pub mod bucket_count_by_shared_access_type {
             self.unknown = Some(input);
             self
         }
+        /// <p>The total number of buckets that Amazon Macie wasn't able to evaluate shared access settings for. Macie can't determine whether these buckets are shared with other Amazon Web Services accounts.</p>
         pub fn set_unknown(mut self, input: std::option::Option<i64>) -> Self {
             self.unknown = input;
             self
@@ -10271,6 +10968,7 @@ pub mod bucket_count_policy_allows_unencrypted_object_uploads {
             self.allows_unencrypted_object_uploads = Some(input);
             self
         }
+        /// <p>The total number of buckets that don't have a bucket policy or have a bucket policy that doesn't require server-side encryption of new objects. If a bucket policy exists, the policy doesn't require PutObject requests to include the x-amz-server-side-encryption header and it doesn't require the value for that header to be AES256 or aws:kms.</p>
         pub fn set_allows_unencrypted_object_uploads(
             mut self,
             input: std::option::Option<i64>,
@@ -10283,6 +10981,7 @@ pub mod bucket_count_policy_allows_unencrypted_object_uploads {
             self.denies_unencrypted_object_uploads = Some(input);
             self
         }
+        /// <p>The total number of buckets whose bucket policies require server-side encryption of new objects. PutObject requests for these buckets must include the x-amz-server-side-encryption header and the value for that header must be AES256 or aws:kms.</p>
         pub fn set_denies_unencrypted_object_uploads(
             mut self,
             input: std::option::Option<i64>,
@@ -10295,6 +10994,7 @@ pub mod bucket_count_policy_allows_unencrypted_object_uploads {
             self.unknown = Some(input);
             self
         }
+        /// <p>The total number of buckets that Amazon Macie wasn't able to evaluate server-side encryption requirements for. Macie can't determine whether the bucket policies for these buckets require server-side encryption of new objects.</p>
         pub fn set_unknown(mut self, input: std::option::Option<i64>) -> Self {
             self.unknown = input;
             self
@@ -10361,6 +11061,7 @@ pub mod bucket_count_by_encryption_type {
             self.kms_managed = Some(input);
             self
         }
+        /// <p>The total number of buckets that use an KMS key to encrypt new objects by default, either an Amazon Web Services managed key or a customer managed key. These buckets use KMS encryption (SSE-KMS) by default.</p>
         pub fn set_kms_managed(mut self, input: std::option::Option<i64>) -> Self {
             self.kms_managed = input;
             self
@@ -10370,6 +11071,7 @@ pub mod bucket_count_by_encryption_type {
             self.s3_managed = Some(input);
             self
         }
+        /// <p>The total number of buckets that use an Amazon S3 managed key to encrypt new objects by default. These buckets use Amazon S3 managed encryption (SSE-S3) by default.</p>
         pub fn set_s3_managed(mut self, input: std::option::Option<i64>) -> Self {
             self.s3_managed = input;
             self
@@ -10379,6 +11081,7 @@ pub mod bucket_count_by_encryption_type {
             self.unencrypted = Some(input);
             self
         }
+        /// <p>The total number of buckets that don't encrypt new objects by default. Default encryption is disabled for these buckets.</p>
         pub fn set_unencrypted(mut self, input: std::option::Option<i64>) -> Self {
             self.unencrypted = input;
             self
@@ -10388,6 +11091,7 @@ pub mod bucket_count_by_encryption_type {
             self.unknown = Some(input);
             self
         }
+        /// <p>The total number of buckets that Amazon Macie doesn't have current encryption metadata for. Macie can't provide current data about the default encryption settings for these buckets.</p>
         pub fn set_unknown(mut self, input: std::option::Option<i64>) -> Self {
             self.unknown = input;
             self
@@ -10450,6 +11154,7 @@ pub mod bucket_count_by_effective_permission {
             self.publicly_accessible = Some(input);
             self
         }
+        /// <p>The total number of buckets that allow the general public to have read or write access to the bucket.</p>
         pub fn set_publicly_accessible(mut self, input: std::option::Option<i64>) -> Self {
             self.publicly_accessible = input;
             self
@@ -10459,6 +11164,7 @@ pub mod bucket_count_by_effective_permission {
             self.publicly_readable = Some(input);
             self
         }
+        /// <p>The total number of buckets that allow the general public to have read access to the bucket.</p>
         pub fn set_publicly_readable(mut self, input: std::option::Option<i64>) -> Self {
             self.publicly_readable = input;
             self
@@ -10468,6 +11174,7 @@ pub mod bucket_count_by_effective_permission {
             self.publicly_writable = Some(input);
             self
         }
+        /// <p>The total number of buckets that allow the general public to have write access to the bucket.</p>
         pub fn set_publicly_writable(mut self, input: std::option::Option<i64>) -> Self {
             self.publicly_writable = input;
             self
@@ -10477,6 +11184,7 @@ pub mod bucket_count_by_effective_permission {
             self.unknown = Some(input);
             self
         }
+        /// <p>The total number of buckets that Amazon Macie wasn't able to evaluate permissions settings for. Macie can't determine whether these buckets are publicly accessible.</p>
         pub fn set_unknown(mut self, input: std::option::Option<i64>) -> Self {
             self.unknown = input;
             self
@@ -10534,6 +11242,7 @@ pub mod statistics {
             self.approximate_number_of_objects_to_process = Some(input);
             self
         }
+        /// <p>The approximate number of objects that the job has yet to process during its current run.</p>
         pub fn set_approximate_number_of_objects_to_process(
             mut self,
             input: std::option::Option<f64>,
@@ -10546,6 +11255,7 @@ pub mod statistics {
             self.number_of_runs = Some(input);
             self
         }
+        /// <p>The number of times that the job has run.</p>
         pub fn set_number_of_runs(mut self, input: std::option::Option<f64>) -> Self {
             self.number_of_runs = input;
             self
@@ -10604,6 +11314,7 @@ pub mod job_schedule_frequency {
             self.daily_schedule = Some(input);
             self
         }
+        /// <p>Specifies a daily recurrence pattern for running the job.</p>
         pub fn set_daily_schedule(
             mut self,
             input: std::option::Option<crate::model::DailySchedule>,
@@ -10616,6 +11327,7 @@ pub mod job_schedule_frequency {
             self.monthly_schedule = Some(input);
             self
         }
+        /// <p>Specifies a monthly recurrence pattern for running the job.</p>
         pub fn set_monthly_schedule(
             mut self,
             input: std::option::Option<crate::model::MonthlySchedule>,
@@ -10628,6 +11340,7 @@ pub mod job_schedule_frequency {
             self.weekly_schedule = Some(input);
             self
         }
+        /// <p>Specifies a weekly recurrence pattern for running the job.</p>
         pub fn set_weekly_schedule(
             mut self,
             input: std::option::Option<crate::model::WeeklySchedule>,
@@ -10680,6 +11393,7 @@ pub mod weekly_schedule {
             self.day_of_week = Some(input);
             self
         }
+        /// <p>The day of the week when Amazon Macie runs the job.</p>
         pub fn set_day_of_week(
             mut self,
             input: std::option::Option<crate::model::DayOfWeek>,
@@ -10702,6 +11416,7 @@ impl WeeklySchedule {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -10713,12 +11428,19 @@ impl WeeklySchedule {
     std::hash::Hash,
 )]
 pub enum DayOfWeek {
+    #[allow(missing_docs)] // documentation missing in model
     Friday,
+    #[allow(missing_docs)] // documentation missing in model
     Monday,
+    #[allow(missing_docs)] // documentation missing in model
     Saturday,
+    #[allow(missing_docs)] // documentation missing in model
     Sunday,
+    #[allow(missing_docs)] // documentation missing in model
     Thursday,
+    #[allow(missing_docs)] // documentation missing in model
     Tuesday,
+    #[allow(missing_docs)] // documentation missing in model
     Wednesday,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -10745,6 +11467,7 @@ impl std::str::FromStr for DayOfWeek {
     }
 }
 impl DayOfWeek {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DayOfWeek::Friday => "FRIDAY",
@@ -10757,6 +11480,7 @@ impl DayOfWeek {
             DayOfWeek::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "FRIDAY",
@@ -10803,6 +11527,7 @@ pub mod monthly_schedule {
             self.day_of_month = Some(input);
             self
         }
+        /// <p>The numeric day of the month when Amazon Macie runs the job. This value can be an integer from 1 through 31.</p> <p>If this value exceeds the number of days in a certain month, Macie doesn't run the job that month. Macie runs the job only during months that have the specified day. For example, if this value is 31 and a month has only 30 days, Macie doesn't run the job that month. To run the job every month, specify a value that's less than 29.</p>
         pub fn set_day_of_month(mut self, input: std::option::Option<i32>) -> Self {
             self.day_of_month = input;
             self
@@ -10885,6 +11610,11 @@ pub mod s3_job_definition {
         pub(crate) bucket_criteria: std::option::Option<crate::model::S3BucketCriteriaForJob>,
     }
     impl Builder {
+        /// Appends an item to `bucket_definitions`.
+        ///
+        /// To override the contents of this collection use [`set_bucket_definitions`](Self::set_bucket_definitions).
+        ///
+        /// <p>An array of objects, one for each Amazon Web Services account that owns specific S3 buckets to analyze. Each object specifies the account ID for an account and one or more buckets to analyze for that account. A job's definition can contain a bucketDefinitions array or a bucketCriteria object, not both.</p>
         pub fn bucket_definitions(
             mut self,
             input: impl Into<crate::model::S3BucketDefinitionForJob>,
@@ -10894,6 +11624,7 @@ pub mod s3_job_definition {
             self.bucket_definitions = Some(v);
             self
         }
+        /// <p>An array of objects, one for each Amazon Web Services account that owns specific S3 buckets to analyze. Each object specifies the account ID for an account and one or more buckets to analyze for that account. A job's definition can contain a bucketDefinitions array or a bucketCriteria object, not both.</p>
         pub fn set_bucket_definitions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::S3BucketDefinitionForJob>>,
@@ -10906,6 +11637,7 @@ pub mod s3_job_definition {
             self.scoping = Some(input);
             self
         }
+        /// <p>The property- and tag-based conditions that determine which S3 objects to include or exclude from the analysis. Each time the job runs, the job uses these criteria to determine which objects to analyze.</p>
         pub fn set_scoping(mut self, input: std::option::Option<crate::model::Scoping>) -> Self {
             self.scoping = input;
             self
@@ -10915,6 +11647,7 @@ pub mod s3_job_definition {
             self.bucket_criteria = Some(input);
             self
         }
+        /// <p>The property- and tag-based conditions that determine which S3 buckets to include or exclude from the analysis. Each time the job runs, the job uses these criteria to determine which buckets contain objects to analyze. A job's definition can contain a bucketCriteria object or a bucketDefinitions array, not both.</p>
         pub fn set_bucket_criteria(
             mut self,
             input: std::option::Option<crate::model::S3BucketCriteriaForJob>,
@@ -10971,6 +11704,7 @@ pub mod scoping {
             self.excludes = Some(input);
             self
         }
+        /// <p>The property- and tag-based conditions that determine which objects to exclude from the analysis.</p>
         pub fn set_excludes(
             mut self,
             input: std::option::Option<crate::model::JobScopingBlock>,
@@ -10983,6 +11717,7 @@ pub mod scoping {
             self.includes = Some(input);
             self
         }
+        /// <p>The property- and tag-based conditions that determine which objects to include in the analysis.</p>
         pub fn set_includes(
             mut self,
             input: std::option::Option<crate::model::JobScopingBlock>,
@@ -11029,12 +11764,18 @@ pub mod job_scoping_block {
         pub(crate) and: std::option::Option<std::vec::Vec<crate::model::JobScopeTerm>>,
     }
     impl Builder {
+        /// Appends an item to `and`.
+        ///
+        /// To override the contents of this collection use [`set_and`](Self::set_and).
+        ///
+        /// <p>An array of conditions, one for each property- or tag-based condition that determines which objects to include or exclude from the job. If you specify more than one condition, Amazon Macie uses AND logic to join the conditions.</p>
         pub fn and(mut self, input: impl Into<crate::model::JobScopeTerm>) -> Self {
             let mut v = self.and.unwrap_or_default();
             v.push(input.into());
             self.and = Some(v);
             self
         }
+        /// <p>An array of conditions, one for each property- or tag-based condition that determines which objects to include or exclude from the job. If you specify more than one condition, Amazon Macie uses AND logic to join the conditions.</p>
         pub fn set_and(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::JobScopeTerm>>,
@@ -11087,6 +11828,7 @@ pub mod job_scope_term {
             self.simple_scope_term = Some(input);
             self
         }
+        /// <p>A property-based condition that defines a property, operator, and one or more values for including or excluding objects from the job.</p>
         pub fn set_simple_scope_term(
             mut self,
             input: std::option::Option<crate::model::SimpleScopeTerm>,
@@ -11099,6 +11841,7 @@ pub mod job_scope_term {
             self.tag_scope_term = Some(input);
             self
         }
+        /// <p>A tag-based condition that defines the operator and tag keys or tag key and value pairs for including or excluding objects from the job.</p>
         pub fn set_tag_scope_term(
             mut self,
             input: std::option::Option<crate::model::TagScopeTerm>,
@@ -11162,6 +11905,7 @@ pub mod tag_scope_term {
             self.comparator = Some(input);
             self
         }
+        /// <p>The operator to use in the condition. Valid values are EQ (equals) or NE (not equals).</p>
         pub fn set_comparator(
             mut self,
             input: std::option::Option<crate::model::JobComparator>,
@@ -11174,16 +11918,23 @@ pub mod tag_scope_term {
             self.key = Some(input.into());
             self
         }
+        /// <p>The object property to use in the condition. The only valid value is TAG.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
         }
+        /// Appends an item to `tag_values`.
+        ///
+        /// To override the contents of this collection use [`set_tag_values`](Self::set_tag_values).
+        ///
+        /// <p>The tag keys or tag key and value pairs to use in the condition. To specify only tag keys in a condition, specify the keys in this array and set the value for each associated tag value to an empty string.</p>
         pub fn tag_values(mut self, input: impl Into<crate::model::TagValuePair>) -> Self {
             let mut v = self.tag_values.unwrap_or_default();
             v.push(input.into());
             self.tag_values = Some(v);
             self
         }
+        /// <p>The tag keys or tag key and value pairs to use in the condition. To specify only tag keys in a condition, specify the keys in this array and set the value for each associated tag value to an empty string.</p>
         pub fn set_tag_values(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TagValuePair>>,
@@ -11196,6 +11947,7 @@ pub mod tag_scope_term {
             self.target = Some(input);
             self
         }
+        /// <p>The type of object to apply the condition to.</p>
         pub fn set_target(mut self, input: std::option::Option<crate::model::TagTarget>) -> Self {
             self.target = input;
             self
@@ -11230,6 +11982,7 @@ impl TagScopeTerm {
     std::hash::Hash,
 )]
 pub enum TagTarget {
+    #[allow(missing_docs)] // documentation missing in model
     S3Object,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -11250,12 +12003,14 @@ impl std::str::FromStr for TagTarget {
     }
 }
 impl TagTarget {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TagTarget::S3Object => "S3_OBJECT",
             TagTarget::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["S3_OBJECT"]
     }
@@ -11298,6 +12053,7 @@ pub mod tag_value_pair {
             self.key = Some(input.into());
             self
         }
+        /// <p>The value for the tag key to use in the condition.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -11307,6 +12063,7 @@ pub mod tag_value_pair {
             self.value = Some(input.into());
             self
         }
+        /// <p>The tag value, associated with the specified tag key (key), to use in the condition. To specify only a tag key for a condition, specify the tag key for the key property and set this value to an empty string.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -11363,6 +12120,7 @@ pub mod simple_scope_term {
             self.comparator = Some(input);
             self
         }
+        /// <p>The operator to use in the condition. Valid values for each supported property (key) are:</p> <ul><li><p>OBJECT_EXTENSION - EQ (equals) or NE (not equals)</p></li> <li><p>OBJECT_KEY - STARTS_WITH</p></li> <li><p>OBJECT_LAST_MODIFIED_DATE - Any operator except CONTAINS</p></li> <li><p>OBJECT_SIZE - Any operator except CONTAINS</p></li></ul>
         pub fn set_comparator(
             mut self,
             input: std::option::Option<crate::model::JobComparator>,
@@ -11375,16 +12133,23 @@ pub mod simple_scope_term {
             self.key = Some(input);
             self
         }
+        /// <p>The object property to use in the condition.</p>
         pub fn set_key(mut self, input: std::option::Option<crate::model::ScopeFilterKey>) -> Self {
             self.key = input;
             self
         }
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>An array that lists the values to use in the condition. If the value for the key property is OBJECT_EXTENSION or OBJECT_KEY, this array can specify multiple values and Amazon Macie uses OR logic to join the values. Otherwise, this array can specify only one value.</p> <p>Valid values for each supported property (key) are:</p> <ul><li><p>OBJECT_EXTENSION - A string that represents the file name extension of an object. For example: docx or pdf</p></li> <li><p>OBJECT_KEY - A string that represents the key prefix (folder name or path) of an object. For example: logs or awslogs/eventlogs. This value applies a condition to objects whose keys (names) begin with the specified value.</p></li> <li><p>OBJECT_LAST_MODIFIED_DATE - The date and time (in UTC and extended ISO 8601 format) when an object was created or last changed, whichever is latest. For example: 2020-09-28T14:31:13Z</p></li> <li><p>OBJECT_SIZE - An integer that represents the storage size (in bytes) of an object.</p></li></ul> <p>Macie doesn't support use of wildcard characters in these values. Also, string values are case sensitive.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
+        /// <p>An array that lists the values to use in the condition. If the value for the key property is OBJECT_EXTENSION or OBJECT_KEY, this array can specify multiple values and Amazon Macie uses OR logic to join the values. Otherwise, this array can specify only one value.</p> <p>Valid values for each supported property (key) are:</p> <ul><li><p>OBJECT_EXTENSION - A string that represents the file name extension of an object. For example: docx or pdf</p></li> <li><p>OBJECT_KEY - A string that represents the key prefix (folder name or path) of an object. For example: logs or awslogs/eventlogs. This value applies a condition to objects whose keys (names) begin with the specified value.</p></li> <li><p>OBJECT_LAST_MODIFIED_DATE - The date and time (in UTC and extended ISO 8601 format) when an object was created or last changed, whichever is latest. For example: 2020-09-28T14:31:13Z</p></li> <li><p>OBJECT_SIZE - An integer that represents the storage size (in bytes) of an object.</p></li></ul> <p>Macie doesn't support use of wildcard characters in these values. Also, string values are case sensitive.</p>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -11421,9 +12186,13 @@ impl SimpleScopeTerm {
     std::hash::Hash,
 )]
 pub enum ScopeFilterKey {
+    #[allow(missing_docs)] // documentation missing in model
     ObjectExtension,
+    #[allow(missing_docs)] // documentation missing in model
     ObjectKey,
+    #[allow(missing_docs)] // documentation missing in model
     ObjectLastModifiedDate,
+    #[allow(missing_docs)] // documentation missing in model
     ObjectSize,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -11447,6 +12216,7 @@ impl std::str::FromStr for ScopeFilterKey {
     }
 }
 impl ScopeFilterKey {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ScopeFilterKey::ObjectExtension => "OBJECT_EXTENSION",
@@ -11456,6 +12226,7 @@ impl ScopeFilterKey {
             ScopeFilterKey::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "OBJECT_EXTENSION",
@@ -11483,9 +12254,13 @@ impl AsRef<str> for ScopeFilterKey {
     std::hash::Hash,
 )]
 pub enum ManagedDataIdentifierSelector {
+    #[allow(missing_docs)] // documentation missing in model
     All,
+    #[allow(missing_docs)] // documentation missing in model
     Exclude,
+    #[allow(missing_docs)] // documentation missing in model
     Include,
+    #[allow(missing_docs)] // documentation missing in model
     None,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -11509,6 +12284,7 @@ impl std::str::FromStr for ManagedDataIdentifierSelector {
     }
 }
 impl ManagedDataIdentifierSelector {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ManagedDataIdentifierSelector::All => "ALL",
@@ -11518,6 +12294,7 @@ impl ManagedDataIdentifierSelector {
             ManagedDataIdentifierSelector::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ALL", "EXCLUDE", "INCLUDE", "NONE"]
     }
@@ -11540,7 +12317,7 @@ pub struct BucketMetadata {
     /// <p>The Amazon Resource Name (ARN) of the bucket.</p>
     pub bucket_arn: std::option::Option<std::string::String>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the bucket was created.</p>
-    pub bucket_created_at: std::option::Option<smithy_types::Instant>,
+    pub bucket_created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The name of the bucket.</p>
     pub bucket_name: std::option::Option<std::string::String>,
     /// <p>The total number of objects that Amazon Macie can analyze in the bucket. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>
@@ -11554,7 +12331,7 @@ pub struct BucketMetadata {
     /// <p>Specifies whether any one-time or recurring classification jobs are configured to analyze data in the bucket, and, if so, the details of the job that ran most recently.</p>
     pub job_details: std::option::Option<crate::model::JobDetails>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved both bucket and object metadata from Amazon S3 for the bucket.</p>
-    pub last_updated: std::option::Option<smithy_types::Instant>,
+    pub last_updated: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The total number of objects in the bucket.</p>
     pub object_count: i64,
     /// <p>The total number of objects that are in the bucket, grouped by server-side encryption type. This includes a grouping that reports the total number of objects that aren't encrypted or use client-side encryption.</p>
@@ -11639,14 +12416,14 @@ pub mod bucket_metadata {
         pub(crate) allows_unencrypted_object_uploads:
             std::option::Option<crate::model::AllowsUnencryptedObjectUploads>,
         pub(crate) bucket_arn: std::option::Option<std::string::String>,
-        pub(crate) bucket_created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) bucket_created_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) bucket_name: std::option::Option<std::string::String>,
         pub(crate) classifiable_object_count: std::option::Option<i64>,
         pub(crate) classifiable_size_in_bytes: std::option::Option<i64>,
         pub(crate) error_code: std::option::Option<crate::model::BucketMetadataErrorCode>,
         pub(crate) error_message: std::option::Option<std::string::String>,
         pub(crate) job_details: std::option::Option<crate::model::JobDetails>,
-        pub(crate) last_updated: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_updated: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) object_count: std::option::Option<i64>,
         pub(crate) object_count_by_encryption_type:
             std::option::Option<crate::model::ObjectCountByEncryptionType>,
@@ -11671,6 +12448,7 @@ pub mod bucket_metadata {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the Amazon Web Services account that owns the bucket.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -11683,6 +12461,7 @@ pub mod bucket_metadata {
             self.allows_unencrypted_object_uploads = Some(input);
             self
         }
+        /// <p>Specifies whether the bucket policy for the bucket requires server-side encryption of objects when objects are uploaded to the bucket. Possible values are:</p> <ul><li><p>FALSE - The bucket policy requires server-side encryption of new objects. PutObject requests must include the x-amz-server-side-encryption header and the value for that header must be AES256 or aws:kms.</p></li> <li><p>TRUE - The bucket doesn't have a bucket policy or it has a bucket policy that doesn't require server-side encryption of new objects. If a bucket policy exists, it doesn't require PutObject requests to include the x-amz-server-side-encryption header and it doesn't require the value for that header to be AES256 or aws:kms.</p></li> <li><p>UNKNOWN - Amazon Macie can't determine whether the bucket policy requires server-side encryption of new objects.</p></li></ul>
         pub fn set_allows_unencrypted_object_uploads(
             mut self,
             input: std::option::Option<crate::model::AllowsUnencryptedObjectUploads>,
@@ -11695,18 +12474,20 @@ pub mod bucket_metadata {
             self.bucket_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the bucket.</p>
         pub fn set_bucket_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket_arn = input;
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when the bucket was created.</p>
-        pub fn bucket_created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn bucket_created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.bucket_created_at = Some(input);
             self
         }
+        /// <p>The date and time, in UTC and extended ISO 8601 format, when the bucket was created.</p>
         pub fn set_bucket_created_at(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.bucket_created_at = input;
             self
@@ -11716,6 +12497,7 @@ pub mod bucket_metadata {
             self.bucket_name = Some(input.into());
             self
         }
+        /// <p>The name of the bucket.</p>
         pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket_name = input;
             self
@@ -11725,6 +12507,7 @@ pub mod bucket_metadata {
             self.classifiable_object_count = Some(input);
             self
         }
+        /// <p>The total number of objects that Amazon Macie can analyze in the bucket. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p>
         pub fn set_classifiable_object_count(mut self, input: std::option::Option<i64>) -> Self {
             self.classifiable_object_count = input;
             self
@@ -11734,6 +12517,7 @@ pub mod bucket_metadata {
             self.classifiable_size_in_bytes = Some(input);
             self
         }
+        /// <p>The total storage size, in bytes, of the objects that Amazon Macie can analyze in the bucket. These objects use a supported storage class and have a file name extension for a supported file or storage format.</p> <p>If versioning is enabled for the bucket, Macie calculates this value based on the size of the latest version of each applicable object in the bucket. This value doesn't reflect the storage size of all versions of each applicable object in the bucket.</p>
         pub fn set_classifiable_size_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
             self.classifiable_size_in_bytes = input;
             self
@@ -11743,6 +12527,7 @@ pub mod bucket_metadata {
             self.error_code = Some(input);
             self
         }
+        /// <p>Specifies the error code for an error that prevented Amazon Macie from retrieving and processing information about the bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have permission to retrieve the information. For example, the bucket has a restrictive bucket policy and Amazon S3 denied the request. If this value is null, Macie was able to retrieve and process the information.</p>
         pub fn set_error_code(
             mut self,
             input: std::option::Option<crate::model::BucketMetadataErrorCode>,
@@ -11755,6 +12540,7 @@ pub mod bucket_metadata {
             self.error_message = Some(input.into());
             self
         }
+        /// <p>A brief description of the error (errorCode) that prevented Amazon Macie from retrieving and processing information about the bucket and the bucket's objects. This value is null if Macie was able to retrieve and process the information.</p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11767,6 +12553,7 @@ pub mod bucket_metadata {
             self.job_details = Some(input);
             self
         }
+        /// <p>Specifies whether any one-time or recurring classification jobs are configured to analyze data in the bucket, and, if so, the details of the job that ran most recently.</p>
         pub fn set_job_details(
             mut self,
             input: std::option::Option<crate::model::JobDetails>,
@@ -11775,13 +12562,14 @@ pub mod bucket_metadata {
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved both bucket and object metadata from Amazon S3 for the bucket.</p>
-        pub fn last_updated(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_updated(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_updated = Some(input);
             self
         }
+        /// <p>The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved both bucket and object metadata from Amazon S3 for the bucket.</p>
         pub fn set_last_updated(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_updated = input;
             self
@@ -11791,6 +12579,7 @@ pub mod bucket_metadata {
             self.object_count = Some(input);
             self
         }
+        /// <p>The total number of objects in the bucket.</p>
         pub fn set_object_count(mut self, input: std::option::Option<i64>) -> Self {
             self.object_count = input;
             self
@@ -11803,6 +12592,7 @@ pub mod bucket_metadata {
             self.object_count_by_encryption_type = Some(input);
             self
         }
+        /// <p>The total number of objects that are in the bucket, grouped by server-side encryption type. This includes a grouping that reports the total number of objects that aren't encrypted or use client-side encryption.</p>
         pub fn set_object_count_by_encryption_type(
             mut self,
             input: std::option::Option<crate::model::ObjectCountByEncryptionType>,
@@ -11815,6 +12605,7 @@ pub mod bucket_metadata {
             self.public_access = Some(input);
             self
         }
+        /// <p>Specifies whether the bucket is publicly accessible due to the combination of permissions settings that apply to the bucket, and provides information about those settings.</p>
         pub fn set_public_access(
             mut self,
             input: std::option::Option<crate::model::BucketPublicAccess>,
@@ -11827,6 +12618,7 @@ pub mod bucket_metadata {
             self.region = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services Region that hosts the bucket.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
@@ -11836,6 +12628,7 @@ pub mod bucket_metadata {
             self.replication_details = Some(input);
             self
         }
+        /// <p>Specifies whether the bucket is configured to replicate one or more objects to buckets for other Amazon Web Services accounts and, if so, which accounts.</p>
         pub fn set_replication_details(
             mut self,
             input: std::option::Option<crate::model::ReplicationDetails>,
@@ -11851,6 +12644,7 @@ pub mod bucket_metadata {
             self.server_side_encryption = Some(input);
             self
         }
+        /// <p>Specifies whether the bucket encrypts new objects by default and, if so, the type of server-side encryption that's used.</p>
         pub fn set_server_side_encryption(
             mut self,
             input: std::option::Option<crate::model::BucketServerSideEncryption>,
@@ -11863,6 +12657,7 @@ pub mod bucket_metadata {
             self.shared_access = Some(input);
             self
         }
+        /// <p>Specifies whether the bucket is shared with another Amazon Web Services account. Possible values are:</p> <ul><li><p>EXTERNAL - The bucket is shared with an Amazon Web Services account that isn't part of the same Amazon Macie organization.</p></li> <li><p>INTERNAL - The bucket is shared with an Amazon Web Services account that's part of the same Amazon Macie organization.</p></li> <li><p>NOT_SHARED - The bucket isn't shared with other Amazon Web Services accounts.</p></li> <li><p>UNKNOWN - Amazon Macie wasn't able to evaluate the shared access settings for the bucket.</p></li></ul>
         pub fn set_shared_access(
             mut self,
             input: std::option::Option<crate::model::SharedAccess>,
@@ -11875,6 +12670,7 @@ pub mod bucket_metadata {
             self.size_in_bytes = Some(input);
             self
         }
+        /// <p>The total storage size, in bytes, of the bucket.</p> <p>If versioning is enabled for the bucket, Amazon Macie calculates this value based on the size of the latest version of each object in the bucket. This value doesn't reflect the storage size of all versions of each object in the bucket.</p>
         pub fn set_size_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
             self.size_in_bytes = input;
             self
@@ -11884,16 +12680,23 @@ pub mod bucket_metadata {
             self.size_in_bytes_compressed = Some(input);
             self
         }
+        /// <p>The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the bucket.</p> <p>If versioning is enabled for the bucket, Amazon Macie calculates this value based on the size of the latest version of each applicable object in the bucket. This value doesn't reflect the storage size of all versions of each applicable object in the bucket.</p>
         pub fn set_size_in_bytes_compressed(mut self, input: std::option::Option<i64>) -> Self {
             self.size_in_bytes_compressed = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>An array that specifies the tags (keys and values) that are associated with the bucket.</p>
         pub fn tags(mut self, input: impl Into<crate::model::KeyValuePair>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>An array that specifies the tags (keys and values) that are associated with the bucket.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::KeyValuePair>>,
@@ -11909,6 +12712,7 @@ pub mod bucket_metadata {
             self.unclassifiable_object_count = Some(input);
             self
         }
+        /// <p>The total number of objects that Amazon Macie can't analyze in the bucket. These objects don't use a supported storage class or don't have a file name extension for a supported file or storage format.</p>
         pub fn set_unclassifiable_object_count(
             mut self,
             input: std::option::Option<crate::model::ObjectLevelStatistics>,
@@ -11924,6 +12728,7 @@ pub mod bucket_metadata {
             self.unclassifiable_object_size_in_bytes = Some(input);
             self
         }
+        /// <p>The total storage size, in bytes, of the objects that Amazon Macie can't analyze in the bucket. These objects don't use a supported storage class or don't have a file name extension for a supported file or storage format.</p>
         pub fn set_unclassifiable_object_size_in_bytes(
             mut self,
             input: std::option::Option<crate::model::ObjectLevelStatistics>,
@@ -11936,6 +12741,7 @@ pub mod bucket_metadata {
             self.versioning = Some(input);
             self
         }
+        /// <p>Specifies whether versioning is enabled for the bucket.</p>
         pub fn set_versioning(mut self, input: std::option::Option<bool>) -> Self {
             self.versioning = input;
             self
@@ -11978,7 +12784,7 @@ impl BucketMetadata {
     }
 }
 
-/// **NOTE:** `SharedAccess::Unknown` has been renamed to `::UnknownValue`.
+/// _Note: `SharedAccess::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -11990,10 +12796,13 @@ impl BucketMetadata {
     std::hash::Hash,
 )]
 pub enum SharedAccess {
+    #[allow(missing_docs)] // documentation missing in model
     External,
+    #[allow(missing_docs)] // documentation missing in model
     Internal,
+    #[allow(missing_docs)] // documentation missing in model
     NotShared,
-    /// **NOTE:** `::Unknown` has been renamed to `::UnknownValue`.
+    /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
     UnknownValue,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -12017,6 +12826,7 @@ impl std::str::FromStr for SharedAccess {
     }
 }
 impl SharedAccess {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SharedAccess::External => "EXTERNAL",
@@ -12026,6 +12836,7 @@ impl SharedAccess {
             SharedAccess::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["EXTERNAL", "INTERNAL", "NOT_SHARED", "UNKNOWN"]
     }
@@ -12068,6 +12879,7 @@ pub mod bucket_server_side_encryption {
             self.kms_master_key_id = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) or unique identifier (key ID) for the KMS key that's used by default to encrypt objects that are added to the bucket. This value is null if the bucket uses an Amazon S3 managed key to encrypt new objects or the bucket doesn't encrypt new objects by default.</p>
         pub fn set_kms_master_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12080,6 +12892,7 @@ pub mod bucket_server_side_encryption {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of server-side encryption that's used by default when storing new objects in the bucket. Possible values are:</p> <ul><li><p>AES256 - New objects are encrypted with an Amazon S3 managed key. They use SSE-S3 encryption.</p></li> <li><p>aws:kms - New objects are encrypted with an KMS key (kmsMasterKeyId), either an Amazon Web Services managed key or a customer managed key. They use SSE-KMS encryption.</p></li> <li><p>NONE - New objects aren't encrypted by default. Default encryption is disabled for the bucket.</p></li></ul>
         pub fn set_type(mut self, input: std::option::Option<crate::model::Type>) -> Self {
             self.r#type = input;
             self
@@ -12100,6 +12913,7 @@ impl BucketServerSideEncryption {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -12111,8 +12925,11 @@ impl BucketServerSideEncryption {
     std::hash::Hash,
 )]
 pub enum Type {
+    #[allow(missing_docs)] // documentation missing in model
     Aes256,
+    #[allow(missing_docs)] // documentation missing in model
     None,
+    #[allow(missing_docs)] // documentation missing in model
     AwsKms,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -12135,6 +12952,7 @@ impl std::str::FromStr for Type {
     }
 }
 impl Type {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Type::Aes256 => "AES256",
@@ -12143,6 +12961,7 @@ impl Type {
             Type::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AES256", "NONE", "aws:kms"]
     }
@@ -12189,6 +13008,7 @@ pub mod replication_details {
             self.replicated = Some(input);
             self
         }
+        /// <p>Specifies whether the bucket is configured to replicate one or more objects to any destination.</p>
         pub fn set_replicated(mut self, input: std::option::Option<bool>) -> Self {
             self.replicated = input;
             self
@@ -12198,16 +13018,23 @@ pub mod replication_details {
             self.replicated_externally = Some(input);
             self
         }
+        /// <p>Specifies whether the bucket is configured to replicate one or more objects to an Amazon Web Services account that isn't part of the same Amazon Macie organization.</p>
         pub fn set_replicated_externally(mut self, input: std::option::Option<bool>) -> Self {
             self.replicated_externally = input;
             self
         }
+        /// Appends an item to `replication_accounts`.
+        ///
+        /// To override the contents of this collection use [`set_replication_accounts`](Self::set_replication_accounts).
+        ///
+        /// <p>An array of Amazon Web Services account IDs, one for each Amazon Web Services account that the bucket is configured to replicate one or more objects to.</p>
         pub fn replication_accounts(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.replication_accounts.unwrap_or_default();
             v.push(input.into());
             self.replication_accounts = Some(v);
             self
         }
+        /// <p>An array of Amazon Web Services account IDs, one for each Amazon Web Services account that the bucket is configured to replicate one or more objects to.</p>
         pub fn set_replication_accounts(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -12264,6 +13091,7 @@ pub mod bucket_sort_criteria {
             self.attribute_name = Some(input.into());
             self
         }
+        /// <p>The name of the bucket property to sort the results by. This value can be one of the following properties that Amazon Macie defines as bucket metadata: accountId, bucketName, classifiableObjectCount, classifiableSizeInBytes, objectCount, or sizeInBytes.</p>
         pub fn set_attribute_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12276,6 +13104,7 @@ pub mod bucket_sort_criteria {
             self.order_by = Some(input);
             self
         }
+        /// <p>The sort order to apply to the results, based on the value specified by the attributeName property. Valid values are: ASC, sort the results in ascending order; and, DESC, sort the results in descending order.</p>
         pub fn set_order_by(mut self, input: std::option::Option<crate::model::OrderBy>) -> Self {
             self.order_by = input;
             self
@@ -12343,12 +13172,18 @@ pub mod bucket_criteria_additional_properties {
         pub(crate) prefix: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `eq`.
+        ///
+        /// To override the contents of this collection use [`set_eq`](Self::set_eq).
+        ///
+        /// <p>The value for the property matches (equals) the specified value. If you specify multiple values, Amazon Macie uses OR logic to join the values.</p>
         pub fn eq(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.eq.unwrap_or_default();
             v.push(input.into());
             self.eq = Some(v);
             self
         }
+        /// <p>The value for the property matches (equals) the specified value. If you specify multiple values, Amazon Macie uses OR logic to join the values.</p>
         pub fn set_eq(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -12361,6 +13196,7 @@ pub mod bucket_criteria_additional_properties {
             self.gt = Some(input);
             self
         }
+        /// <p>The value for the property is greater than the specified value.</p>
         pub fn set_gt(mut self, input: std::option::Option<i64>) -> Self {
             self.gt = input;
             self
@@ -12370,6 +13206,7 @@ pub mod bucket_criteria_additional_properties {
             self.gte = Some(input);
             self
         }
+        /// <p>The value for the property is greater than or equal to the specified value.</p>
         pub fn set_gte(mut self, input: std::option::Option<i64>) -> Self {
             self.gte = input;
             self
@@ -12379,6 +13216,7 @@ pub mod bucket_criteria_additional_properties {
             self.lt = Some(input);
             self
         }
+        /// <p>The value for the property is less than the specified value.</p>
         pub fn set_lt(mut self, input: std::option::Option<i64>) -> Self {
             self.lt = input;
             self
@@ -12388,16 +13226,23 @@ pub mod bucket_criteria_additional_properties {
             self.lte = Some(input);
             self
         }
+        /// <p>The value for the property is less than or equal to the specified value.</p>
         pub fn set_lte(mut self, input: std::option::Option<i64>) -> Self {
             self.lte = input;
             self
         }
+        /// Appends an item to `neq`.
+        ///
+        /// To override the contents of this collection use [`set_neq`](Self::set_neq).
+        ///
+        /// <p>The value for the property doesn't match (doesn't equal) the specified value. If you specify multiple values, Amazon Macie uses OR logic to join the values.</p>
         pub fn neq(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.neq.unwrap_or_default();
             v.push(input.into());
             self.neq = Some(v);
             self
         }
+        /// <p>The value for the property doesn't match (doesn't equal) the specified value. If you specify multiple values, Amazon Macie uses OR logic to join the values.</p>
         pub fn set_neq(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -12410,6 +13255,7 @@ pub mod bucket_criteria_additional_properties {
             self.prefix = Some(input.into());
             self
         }
+        /// <p>The name of the bucket begins with the specified value.</p>
         pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.prefix = input;
             self
@@ -12471,6 +13317,7 @@ pub mod unprocessed_account {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services account ID for the account that the request applies to.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -12480,6 +13327,7 @@ pub mod unprocessed_account {
             self.error_code = Some(input);
             self
         }
+        /// <p>The source of the issue or delay in processing the request.</p>
         pub fn set_error_code(
             mut self,
             input: std::option::Option<crate::model::ErrorCode>,
@@ -12492,6 +13340,7 @@ pub mod unprocessed_account {
             self.error_message = Some(input.into());
             self
         }
+        /// <p>The reason why the request hasn't been processed.</p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12528,7 +13377,9 @@ impl UnprocessedAccount {
     std::hash::Hash,
 )]
 pub enum ErrorCode {
+    #[allow(missing_docs)] // documentation missing in model
     ClientError,
+    #[allow(missing_docs)] // documentation missing in model
     InternalError,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -12550,6 +13401,7 @@ impl std::str::FromStr for ErrorCode {
     }
 }
 impl ErrorCode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ErrorCode::ClientError => "ClientError",
@@ -12557,6 +13409,7 @@ impl ErrorCode {
             ErrorCode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ClientError", "InternalError"]
     }
@@ -12599,6 +13452,7 @@ pub mod account_detail {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services account ID for the account.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -12608,6 +13462,7 @@ pub mod account_detail {
             self.email = Some(input.into());
             self
         }
+        /// <p>The email address for the account.</p>
         pub fn set_email(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.email = input;
             self
@@ -12635,7 +13490,7 @@ pub struct BatchGetCustomDataIdentifierSummary {
     /// <p>The Amazon Resource Name (ARN) of the custom data identifier.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the custom data identifier was created.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Specifies whether the custom data identifier was deleted. If you delete a custom data identifier, Amazon Macie doesn't delete it permanently. Instead, it soft deletes the identifier.</p>
     pub deleted: bool,
     /// <p>The custom description of the custom data identifier.</p>
@@ -12664,7 +13519,7 @@ pub mod batch_get_custom_data_identifier_summary {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) deleted: std::option::Option<bool>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,
@@ -12676,16 +13531,21 @@ pub mod batch_get_custom_data_identifier_summary {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the custom data identifier.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
         /// <p>The date and time, in UTC and extended ISO 8601 format, when the custom data identifier was created.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date and time, in UTC and extended ISO 8601 format, when the custom data identifier was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
@@ -12694,6 +13554,7 @@ pub mod batch_get_custom_data_identifier_summary {
             self.deleted = Some(input);
             self
         }
+        /// <p>Specifies whether the custom data identifier was deleted. If you delete a custom data identifier, Amazon Macie doesn't delete it permanently. Instead, it soft deletes the identifier.</p>
         pub fn set_deleted(mut self, input: std::option::Option<bool>) -> Self {
             self.deleted = input;
             self
@@ -12703,6 +13564,7 @@ pub mod batch_get_custom_data_identifier_summary {
             self.description = Some(input.into());
             self
         }
+        /// <p>The custom description of the custom data identifier.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -12712,6 +13574,7 @@ pub mod batch_get_custom_data_identifier_summary {
             self.id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the custom data identifier.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -12721,6 +13584,7 @@ pub mod batch_get_custom_data_identifier_summary {
             self.name = Some(input.into());
             self
         }
+        /// <p>The custom name of the custom data identifier.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self

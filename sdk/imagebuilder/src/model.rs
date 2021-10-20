@@ -77,6 +77,23 @@ pub mod instance_metadata_options {
             self.http_tokens = Some(input.into());
             self
         }
+        /// <p>Indicates whether a signed token header is required for instance metadata retrieval requests.
+        /// The values affect the response as follows:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>required</b> – When you retrieve the
+        /// IAM role credentials, version 2.0 credentials are returned in all cases.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>optional</b> – You can include a signed token header
+        /// in your request to retrieve instance metadata, or you can leave it out. If you
+        /// include it, version 2.0 credentials are returned for the IAM role. Otherwise,
+        /// version 1.0 credentials are returned.</p>
+        /// </li>
+        /// </ul>
+        /// <p>The default setting is <b>optional</b>.</p>
         pub fn set_http_tokens(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.http_tokens = input;
             self
@@ -87,6 +104,8 @@ pub mod instance_metadata_options {
             self.http_put_response_hop_limit = Some(input);
             self
         }
+        /// <p>Limit the number of hops that an instance metadata request can traverse to reach its
+        /// destination.</p>
         pub fn set_http_put_response_hop_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.http_put_response_hop_limit = input;
             self
@@ -135,6 +154,7 @@ pub mod logging {
             self.s3_logs = Some(input);
             self
         }
+        /// <p>The Amazon S3 logging configuration.</p>
         pub fn set_s3_logs(mut self, input: std::option::Option<crate::model::S3Logs>) -> Self {
             self.s3_logs = input;
             self
@@ -186,6 +206,7 @@ pub mod s3_logs {
             self.s3_bucket_name = Some(input.into());
             self
         }
+        /// <p>The Amazon S3 bucket in which to store the logs.</p>
         pub fn set_s3_bucket_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -198,6 +219,7 @@ pub mod s3_logs {
             self.s3_key_prefix = Some(input.into());
             self
         }
+        /// <p>The Amazon S3 path in which to store the logs.</p>
         pub fn set_s3_key_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -221,6 +243,7 @@ impl S3Logs {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -232,7 +255,9 @@ impl S3Logs {
     std::hash::Hash,
 )]
 pub enum PipelineStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -254,6 +279,7 @@ impl std::str::FromStr for PipelineStatus {
     }
 }
 impl PipelineStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PipelineStatus::Disabled => "DISABLED",
@@ -261,6 +287,7 @@ impl PipelineStatus {
             PipelineStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -328,6 +355,10 @@ pub mod schedule {
             self.schedule_expression = Some(input.into());
             self
         }
+        /// <p>The cron expression determines how often EC2 Image Builder evaluates your
+        /// <code>pipelineExecutionStartCondition</code>.</p>
+        /// <p>For information on how to format a cron expression in Image Builder, see <a href="https://docs.aws.amazon.com/imagebuilder/latest/userguide/image-builder-cron.html">Use cron
+        /// expressions in EC2 Image Builder</a>.</p>
         pub fn set_schedule_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -342,6 +373,9 @@ pub mod schedule {
             self.timezone = Some(input.into());
             self
         }
+        /// <p>The timezone that applies to the scheduling expression. For example, "Etc/UTC",
+        /// "America/Los_Angeles" in the <a href="https://www.joda.org/joda-time/timezones.html">IANA
+        /// timezone format</a>. If not specified this defaults to UTC.</p>
         pub fn set_timezone(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.timezone = input;
             self
@@ -362,6 +396,15 @@ pub mod schedule {
             self.pipeline_execution_start_condition = Some(input);
             self
         }
+        /// <p>The condition configures when the pipeline should trigger a new image build. When the
+        /// <code>pipelineExecutionStartCondition</code> is set to
+        /// <code>EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE</code>, and you use semantic version
+        /// filters on the base image or components in your image recipe, EC2 Image Builder will build a
+        /// new image only when there are new versions of the image or components in your recipe that
+        /// match the semantic version filter. When it is set to <code>EXPRESSION_MATCH_ONLY</code>, it
+        /// will build a new image every time the CRON expression matches the current time. For semantic
+        /// version syntax, see <a href="https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateComponent.html">CreateComponent</a> in the <i> EC2 Image Builder API
+        /// Reference</i>.</p>
         pub fn set_pipeline_execution_start_condition(
             mut self,
             input: std::option::Option<crate::model::PipelineExecutionStartCondition>,
@@ -386,6 +429,7 @@ impl Schedule {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -397,7 +441,9 @@ impl Schedule {
     std::hash::Hash,
 )]
 pub enum PipelineExecutionStartCondition {
+    #[allow(missing_docs)] // documentation missing in model
     ExpressionMatchAndDependencyUpdatesAvailable,
+    #[allow(missing_docs)] // documentation missing in model
     ExpressionMatchOnly,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -421,6 +467,7 @@ impl std::str::FromStr for PipelineExecutionStartCondition {
     }
 }
 impl PipelineExecutionStartCondition {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PipelineExecutionStartCondition::ExpressionMatchAndDependencyUpdatesAvailable => {
@@ -430,6 +477,7 @@ impl PipelineExecutionStartCondition {
             PipelineExecutionStartCondition::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE",
@@ -475,6 +523,7 @@ pub mod image_tests_configuration {
             self.image_tests_enabled = Some(input);
             self
         }
+        /// <p>Defines if tests should be executed when building this image.</p>
         pub fn set_image_tests_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.image_tests_enabled = input;
             self
@@ -484,6 +533,7 @@ pub mod image_tests_configuration {
             self.timeout_minutes = Some(input);
             self
         }
+        /// <p>The maximum time in minutes that tests are permitted to run.</p>
         pub fn set_timeout_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.timeout_minutes = input;
             self
@@ -570,6 +620,7 @@ pub mod distribution {
             self.region = Some(input.into());
             self
         }
+        /// <p>The target Region.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
@@ -582,6 +633,7 @@ pub mod distribution {
             self.ami_distribution_configuration = Some(input);
             self
         }
+        /// <p>The specific AMI settings; for example, launch permissions or AMI tags.</p>
         pub fn set_ami_distribution_configuration(
             mut self,
             input: std::option::Option<crate::model::AmiDistributionConfiguration>,
@@ -598,6 +650,8 @@ pub mod distribution {
             self.container_distribution_configuration = Some(input);
             self
         }
+        /// <p>Container distribution settings for encryption, licensing, and sharing
+        /// in a specific Region.</p>
         pub fn set_container_distribution_configuration(
             mut self,
             input: std::option::Option<crate::model::ContainerDistributionConfiguration>,
@@ -605,12 +659,20 @@ pub mod distribution {
             self.container_distribution_configuration = input;
             self
         }
+        /// Appends an item to `license_configuration_arns`.
+        ///
+        /// To override the contents of this collection use [`set_license_configuration_arns`](Self::set_license_configuration_arns).
+        ///
+        /// <p>The License Manager Configuration to associate with the AMI in the specified
+        /// Region.</p>
         pub fn license_configuration_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.license_configuration_arns.unwrap_or_default();
             v.push(input.into());
             self.license_configuration_arns = Some(v);
             self
         }
+        /// <p>The License Manager Configuration to associate with the AMI in the specified
+        /// Region.</p>
         pub fn set_license_configuration_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -618,6 +680,12 @@ pub mod distribution {
             self.license_configuration_arns = input;
             self
         }
+        /// Appends an item to `launch_template_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_launch_template_configurations`](Self::set_launch_template_configurations).
+        ///
+        /// <p>A group of launchTemplateConfiguration settings that apply to image distribution
+        /// for specified accounts.</p>
         pub fn launch_template_configurations(
             mut self,
             input: impl Into<crate::model::LaunchTemplateConfiguration>,
@@ -627,6 +695,8 @@ pub mod distribution {
             self.launch_template_configurations = Some(v);
             self
         }
+        /// <p>A group of launchTemplateConfiguration settings that apply to image distribution
+        /// for specified accounts.</p>
         pub fn set_launch_template_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LaunchTemplateConfiguration>>,
@@ -689,6 +759,7 @@ pub mod launch_template_configuration {
             self.launch_template_id = Some(input.into());
             self
         }
+        /// <p>Identifies the Amazon EC2 launch template to use.</p>
         pub fn set_launch_template_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -701,6 +772,7 @@ pub mod launch_template_configuration {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The account ID that this configuration applies to.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -710,6 +782,7 @@ pub mod launch_template_configuration {
             self.set_default_version = Some(input);
             self
         }
+        /// <p>Set the specified Amazon EC2 launch template as the default launch template for the specified account.</p>
         pub fn set_set_default_version(mut self, input: std::option::Option<bool>) -> Self {
             self.set_default_version = input;
             self
@@ -767,16 +840,23 @@ pub mod container_distribution_configuration {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the container distribution configuration.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Appends an item to `container_tags`.
+        ///
+        /// To override the contents of this collection use [`set_container_tags`](Self::set_container_tags).
+        ///
+        /// <p>Tags that are attached to the container distribution configuration.</p>
         pub fn container_tags(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.container_tags.unwrap_or_default();
             v.push(input.into());
             self.container_tags = Some(v);
             self
         }
+        /// <p>Tags that are attached to the container distribution configuration.</p>
         pub fn set_container_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -789,6 +869,7 @@ pub mod container_distribution_configuration {
             self.target_repository = Some(input);
             self
         }
+        /// <p>The destination repository for the container distribution configuration.</p>
         pub fn set_target_repository(
             mut self,
             input: std::option::Option<crate::model::TargetContainerRepository>,
@@ -845,6 +926,7 @@ pub mod target_container_repository {
             self.service = Some(input);
             self
         }
+        /// <p>Specifies the service in which this image was registered.</p>
         pub fn set_service(
             mut self,
             input: std::option::Option<crate::model::ContainerRepositoryService>,
@@ -857,6 +939,7 @@ pub mod target_container_repository {
             self.repository_name = Some(input.into());
             self
         }
+        /// <p>The name of the container repository where the output container image is stored. This name is prefixed by the repository location.</p>
         pub fn set_repository_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -880,6 +963,7 @@ impl TargetContainerRepository {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -891,6 +975,7 @@ impl TargetContainerRepository {
     std::hash::Hash,
 )]
 pub enum ContainerRepositoryService {
+    #[allow(missing_docs)] // documentation missing in model
     Ecr,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -911,12 +996,14 @@ impl std::str::FromStr for ContainerRepositoryService {
     }
 }
 impl ContainerRepositoryService {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ContainerRepositoryService::Ecr => "ECR",
             ContainerRepositoryService::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ECR"]
     }
@@ -980,6 +1067,7 @@ pub mod ami_distribution_configuration {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the output AMI.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -989,16 +1077,23 @@ pub mod ami_distribution_configuration {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the distribution configuration. Minimum and maximum length are in characters.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Appends an item to `target_account_ids`.
+        ///
+        /// To override the contents of this collection use [`set_target_account_ids`](Self::set_target_account_ids).
+        ///
+        /// <p>The ID of an account to which you want to distribute an image.</p>
         pub fn target_account_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.target_account_ids.unwrap_or_default();
             v.push(input.into());
             self.target_account_ids = Some(v);
             self
         }
+        /// <p>The ID of an account to which you want to distribute an image.</p>
         pub fn set_target_account_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1006,6 +1101,11 @@ pub mod ami_distribution_configuration {
             self.target_account_ids = input;
             self
         }
+        /// Adds a key-value pair to `ami_tags`.
+        ///
+        /// To override the contents of this collection use [`set_ami_tags`](Self::set_ami_tags).
+        ///
+        /// <p>The tags to apply to AMIs distributed to this Region.</p>
         pub fn ami_tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1016,6 +1116,7 @@ pub mod ami_distribution_configuration {
             self.ami_tags = Some(hash_map);
             self
         }
+        /// <p>The tags to apply to AMIs distributed to this Region.</p>
         pub fn set_ami_tags(
             mut self,
             input: std::option::Option<
@@ -1030,6 +1131,7 @@ pub mod ami_distribution_configuration {
             self.kms_key_id = Some(input.into());
             self
         }
+        /// <p>The KMS key identifier used to encrypt the distributed image.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -1043,6 +1145,8 @@ pub mod ami_distribution_configuration {
             self.launch_permission = Some(input);
             self
         }
+        /// <p> Launch permissions can be used to configure which Amazon Web Services accounts can use the AMI to launch
+        /// instances.</p>
         pub fn set_launch_permission(
             mut self,
             input: std::option::Option<crate::model::LaunchPermissionConfiguration>,
@@ -1101,12 +1205,18 @@ pub mod launch_permission_configuration {
         pub(crate) user_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `user_ids`.
+        ///
+        /// To override the contents of this collection use [`set_user_ids`](Self::set_user_ids).
+        ///
+        /// <p>The Amazon Web Services account ID.</p>
         pub fn user_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.user_ids.unwrap_or_default();
             v.push(input.into());
             self.user_ids = Some(v);
             self
         }
+        /// <p>The Amazon Web Services account ID.</p>
         pub fn set_user_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1114,12 +1224,18 @@ pub mod launch_permission_configuration {
             self.user_ids = input;
             self
         }
+        /// Appends an item to `user_groups`.
+        ///
+        /// To override the contents of this collection use [`set_user_groups`](Self::set_user_groups).
+        ///
+        /// <p>The name of the group.</p>
         pub fn user_groups(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.user_groups.unwrap_or_default();
             v.push(input.into());
             self.user_groups = Some(v);
             self
         }
+        /// <p>The name of the group.</p>
         pub fn set_user_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1209,6 +1325,7 @@ pub mod infrastructure_configuration_summary {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -1218,6 +1335,7 @@ pub mod infrastructure_configuration_summary {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the infrastructure configuration.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1227,6 +1345,7 @@ pub mod infrastructure_configuration_summary {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the infrastructure configuration.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -1236,6 +1355,7 @@ pub mod infrastructure_configuration_summary {
             self.date_created = Some(input.into());
             self
         }
+        /// <p>The date on which the infrastructure configuration was created.</p>
         pub fn set_date_created(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.date_created = input;
             self
@@ -1245,10 +1365,16 @@ pub mod infrastructure_configuration_summary {
             self.date_updated = Some(input.into());
             self
         }
+        /// <p>The date on which the infrastructure configuration was last updated.</p>
         pub fn set_date_updated(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.date_updated = input;
             self
         }
+        /// Adds a key-value pair to `resource_tags`.
+        ///
+        /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
+        ///
+        /// <p>The tags attached to the image created by Image Builder.</p>
         pub fn resource_tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1259,6 +1385,7 @@ pub mod infrastructure_configuration_summary {
             self.resource_tags = Some(hash_map);
             self
         }
+        /// <p>The tags attached to the image created by Image Builder.</p>
         pub fn set_resource_tags(
             mut self,
             input: std::option::Option<
@@ -1268,6 +1395,11 @@ pub mod infrastructure_configuration_summary {
             self.resource_tags = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags of the infrastructure configuration.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1278,6 +1410,7 @@ pub mod infrastructure_configuration_summary {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The tags of the infrastructure configuration.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1287,12 +1420,18 @@ pub mod infrastructure_configuration_summary {
             self.tags = input;
             self
         }
+        /// Appends an item to `instance_types`.
+        ///
+        /// To override the contents of this collection use [`set_instance_types`](Self::set_instance_types).
+        ///
+        /// <p>The instance types of the infrastructure configuration.</p>
         pub fn instance_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.instance_types.unwrap_or_default();
             v.push(input.into());
             self.instance_types = Some(v);
             self
         }
+        /// <p>The instance types of the infrastructure configuration.</p>
         pub fn set_instance_types(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1305,6 +1444,7 @@ pub mod infrastructure_configuration_summary {
             self.instance_profile_name = Some(input.into());
             self
         }
+        /// <p>The instance profile of the infrastructure configuration.</p>
         pub fn set_instance_profile_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1369,16 +1509,23 @@ pub mod filter {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the filter. Filter names are case-sensitive.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>The filter values. Filter values are case-sensitive.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
+        /// <p>The filter values. Filter values are case-sensitive.</p>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1508,6 +1655,23 @@ pub mod image_version {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of a specific version of an Image Builder image.</p>
+        /// <note>
+        /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN),
+        /// at the level that applies to that object as follows:</p>
+        /// <ol>
+        /// <li>
+        /// <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are
+        /// either left off entirely, or they are specified as wildcards, for example: x.x.x.</p>
+        /// </li>
+        /// <li>
+        /// <p>Version ARNs have only the first three nodes: <major>.<minor>.<patch></p>
+        /// </li>
+        /// <li>
+        /// <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p>
+        /// </li>
+        /// </ol>
+        /// </note>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -1517,6 +1681,7 @@ pub mod image_version {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of this specific version of an Image Builder image.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1526,6 +1691,7 @@ pub mod image_version {
             self.r#type = Some(input);
             self
         }
+        /// <p>Specifies whether this image is an AMI or a container image.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ImageType>) -> Self {
             self.r#type = input;
             self
@@ -1552,6 +1718,24 @@ pub mod image_version {
             self.version = Some(input.into());
             self
         }
+        /// <p>Details for a specific version of an Image Builder image. This version follows the semantic version syntax.</p>
+        /// <note>
+        /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
+        /// You can assign values for the first three, and can filter on all of them.</p>
+        /// <p>
+        /// <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including
+        /// zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the
+        /// build number to the fourth node.</p>
+        /// <p>
+        /// <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for
+        /// the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or
+        /// a date, such as 2021.01.01.</p>
+        /// <p>
+        /// <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x)
+        /// to specify the most recent versions or nodes when selecting the base image or components for your
+        /// recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be
+        /// wildcards.</p>
+        /// </note>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -1561,6 +1745,7 @@ pub mod image_version {
             self.platform = Some(input);
             self
         }
+        /// <p>The platform of the image version, for example "Windows" or "Linux".</p>
         pub fn set_platform(mut self, input: std::option::Option<crate::model::Platform>) -> Self {
             self.platform = input;
             self
@@ -1571,6 +1756,8 @@ pub mod image_version {
             self.os_version = Some(input.into());
             self
         }
+        /// <p>The operating system version of the Amazon EC2 build instance. For example, Amazon Linux 2, Ubuntu 18, or
+        /// Microsoft Windows Server 2019.</p>
         pub fn set_os_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.os_version = input;
             self
@@ -1580,6 +1767,7 @@ pub mod image_version {
             self.owner = Some(input.into());
             self
         }
+        /// <p>The owner of the image version.</p>
         pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.owner = input;
             self
@@ -1589,6 +1777,7 @@ pub mod image_version {
             self.date_created = Some(input.into());
             self
         }
+        /// <p>The date on which this specific version of the Image Builder image was created.</p>
         pub fn set_date_created(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.date_created = input;
             self
@@ -1615,6 +1804,7 @@ impl ImageVersion {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1626,7 +1816,9 @@ impl ImageVersion {
     std::hash::Hash,
 )]
 pub enum Platform {
+    #[allow(missing_docs)] // documentation missing in model
     Linux,
+    #[allow(missing_docs)] // documentation missing in model
     Windows,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1648,6 +1840,7 @@ impl std::str::FromStr for Platform {
     }
 }
 impl Platform {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Platform::Linux => "Linux",
@@ -1655,6 +1848,7 @@ impl Platform {
             Platform::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Linux", "Windows"]
     }
@@ -1665,6 +1859,7 @@ impl AsRef<str> for Platform {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1676,7 +1871,9 @@ impl AsRef<str> for Platform {
     std::hash::Hash,
 )]
 pub enum ImageType {
+    #[allow(missing_docs)] // documentation missing in model
     Ami,
+    #[allow(missing_docs)] // documentation missing in model
     Docker,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1698,6 +1895,7 @@ impl std::str::FromStr for ImageType {
     }
 }
 impl ImageType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ImageType::Ami => "AMI",
@@ -1705,6 +1903,7 @@ impl ImageType {
             ImageType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AMI", "DOCKER"]
     }
@@ -1715,7 +1914,7 @@ impl AsRef<str> for ImageType {
     }
 }
 
-/// **NOTE:** `Ownership::Self` has been renamed to `::SelfValue`.
+/// _Note: `Ownership::Self` has been renamed to `::SelfValue`._
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1727,9 +1926,11 @@ impl AsRef<str> for ImageType {
     std::hash::Hash,
 )]
 pub enum Ownership {
+    #[allow(missing_docs)] // documentation missing in model
     Amazon,
-    /// **NOTE:** `::Self` has been renamed to `::SelfValue`.
+    /// _Note: `::Self` has been renamed to `::SelfValue`._
     SelfValue,
+    #[allow(missing_docs)] // documentation missing in model
     Shared,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1752,6 +1953,7 @@ impl std::str::FromStr for Ownership {
     }
 }
 impl Ownership {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Ownership::Amazon => "Amazon",
@@ -1760,6 +1962,7 @@ impl Ownership {
             Ownership::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Amazon", "Self", "Shared"]
     }
@@ -1825,6 +2028,7 @@ pub mod image_recipe_summary {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the image recipe.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -1834,6 +2038,7 @@ pub mod image_recipe_summary {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the image recipe.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1843,6 +2048,7 @@ pub mod image_recipe_summary {
             self.platform = Some(input);
             self
         }
+        /// <p>The platform of the image recipe.</p>
         pub fn set_platform(mut self, input: std::option::Option<crate::model::Platform>) -> Self {
             self.platform = input;
             self
@@ -1852,6 +2058,7 @@ pub mod image_recipe_summary {
             self.owner = Some(input.into());
             self
         }
+        /// <p>The owner of the image recipe.</p>
         pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.owner = input;
             self
@@ -1861,6 +2068,7 @@ pub mod image_recipe_summary {
             self.parent_image = Some(input.into());
             self
         }
+        /// <p>The base image of the image recipe.</p>
         pub fn set_parent_image(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.parent_image = input;
             self
@@ -1870,10 +2078,16 @@ pub mod image_recipe_summary {
             self.date_created = Some(input.into());
             self
         }
+        /// <p>The date on which this image recipe was created.</p>
         pub fn set_date_created(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.date_created = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags of the image recipe.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1884,6 +2098,7 @@ pub mod image_recipe_summary {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The tags of the image recipe.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2024,6 +2239,7 @@ pub mod image_pipeline {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the image pipeline.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -2033,6 +2249,7 @@ pub mod image_pipeline {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the image pipeline.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2042,6 +2259,7 @@ pub mod image_pipeline {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the image pipeline.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -2051,6 +2269,7 @@ pub mod image_pipeline {
             self.platform = Some(input);
             self
         }
+        /// <p>The platform of the image pipeline.</p>
         pub fn set_platform(mut self, input: std::option::Option<crate::model::Platform>) -> Self {
             self.platform = input;
             self
@@ -2062,6 +2281,9 @@ pub mod image_pipeline {
             self.enhanced_image_metadata_enabled = Some(input);
             self
         }
+        /// <p> Collects additional information about the image being created, including the operating
+        /// system (OS) version and package list. This information is used to enhance the overall
+        /// experience of using EC2 Image Builder. Enabled by default.</p>
         pub fn set_enhanced_image_metadata_enabled(
             mut self,
             input: std::option::Option<bool>,
@@ -2075,6 +2297,8 @@ pub mod image_pipeline {
             self.image_recipe_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the image recipe associated with this image
+        /// pipeline.</p>
         pub fn set_image_recipe_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2087,6 +2311,7 @@ pub mod image_pipeline {
             self.container_recipe_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the container recipe that is used for this pipeline.</p>
         pub fn set_container_recipe_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2103,6 +2328,8 @@ pub mod image_pipeline {
             self.infrastructure_configuration_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration associated with this
+        /// image pipeline.</p>
         pub fn set_infrastructure_configuration_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2119,6 +2346,8 @@ pub mod image_pipeline {
             self.distribution_configuration_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the distribution configuration associated with this
+        /// image pipeline.</p>
         pub fn set_distribution_configuration_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2134,6 +2363,7 @@ pub mod image_pipeline {
             self.image_tests_configuration = Some(input);
             self
         }
+        /// <p>The image tests configuration of the image pipeline.</p>
         pub fn set_image_tests_configuration(
             mut self,
             input: std::option::Option<crate::model::ImageTestsConfiguration>,
@@ -2146,6 +2376,7 @@ pub mod image_pipeline {
             self.schedule = Some(input);
             self
         }
+        /// <p>The schedule of the image pipeline.</p>
         pub fn set_schedule(mut self, input: std::option::Option<crate::model::Schedule>) -> Self {
             self.schedule = input;
             self
@@ -2155,6 +2386,7 @@ pub mod image_pipeline {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the image pipeline.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::PipelineStatus>,
@@ -2167,6 +2399,7 @@ pub mod image_pipeline {
             self.date_created = Some(input.into());
             self
         }
+        /// <p>The date on which this image pipeline was created.</p>
         pub fn set_date_created(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.date_created = input;
             self
@@ -2176,6 +2409,7 @@ pub mod image_pipeline {
             self.date_updated = Some(input.into());
             self
         }
+        /// <p>The date on which this image pipeline was last updated.</p>
         pub fn set_date_updated(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.date_updated = input;
             self
@@ -2185,6 +2419,7 @@ pub mod image_pipeline {
             self.date_last_run = Some(input.into());
             self
         }
+        /// <p>The date on which this image pipeline was last run.</p>
         pub fn set_date_last_run(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2197,6 +2432,7 @@ pub mod image_pipeline {
             self.date_next_run = Some(input.into());
             self
         }
+        /// <p>The date on which this image pipeline will next be run.</p>
         pub fn set_date_next_run(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2204,6 +2440,11 @@ pub mod image_pipeline {
             self.date_next_run = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags of this image pipeline.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2214,6 +2455,7 @@ pub mod image_pipeline {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The tags of this image pipeline.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2326,6 +2568,7 @@ pub mod image_summary {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the image.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -2335,6 +2578,7 @@ pub mod image_summary {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the image.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2344,6 +2588,7 @@ pub mod image_summary {
             self.r#type = Some(input);
             self
         }
+        /// <p>Specifies whether this is an AMI or container image.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ImageType>) -> Self {
             self.r#type = input;
             self
@@ -2353,6 +2598,7 @@ pub mod image_summary {
             self.version = Some(input.into());
             self
         }
+        /// <p>The version of the image.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -2362,6 +2608,7 @@ pub mod image_summary {
             self.platform = Some(input);
             self
         }
+        /// <p>The platform of the image.</p>
         pub fn set_platform(mut self, input: std::option::Option<crate::model::Platform>) -> Self {
             self.platform = input;
             self
@@ -2372,6 +2619,8 @@ pub mod image_summary {
             self.os_version = Some(input.into());
             self
         }
+        /// <p>The operating system version of the instance. For example, Amazon Linux 2, Ubuntu 18, or
+        /// Microsoft Windows Server 2019.</p>
         pub fn set_os_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.os_version = input;
             self
@@ -2381,6 +2630,7 @@ pub mod image_summary {
             self.state = Some(input);
             self
         }
+        /// <p>The state of the image.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::ImageState>) -> Self {
             self.state = input;
             self
@@ -2390,6 +2640,7 @@ pub mod image_summary {
             self.owner = Some(input.into());
             self
         }
+        /// <p>The owner of the image.</p>
         pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.owner = input;
             self
@@ -2399,6 +2650,7 @@ pub mod image_summary {
             self.date_created = Some(input.into());
             self
         }
+        /// <p>The date on which this image was created.</p>
         pub fn set_date_created(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.date_created = input;
             self
@@ -2408,6 +2660,7 @@ pub mod image_summary {
             self.output_resources = Some(input);
             self
         }
+        /// <p>The output resources produced when creating this image.</p>
         pub fn set_output_resources(
             mut self,
             input: std::option::Option<crate::model::OutputResources>,
@@ -2415,6 +2668,11 @@ pub mod image_summary {
             self.output_resources = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags of the image.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2425,6 +2683,7 @@ pub mod image_summary {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The tags of the image.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2486,12 +2745,18 @@ pub mod output_resources {
         pub(crate) containers: std::option::Option<std::vec::Vec<crate::model::Container>>,
     }
     impl Builder {
+        /// Appends an item to `amis`.
+        ///
+        /// To override the contents of this collection use [`set_amis`](Self::set_amis).
+        ///
+        /// <p>The Amazon EC2 AMIs created by this image.</p>
         pub fn amis(mut self, input: impl Into<crate::model::Ami>) -> Self {
             let mut v = self.amis.unwrap_or_default();
             v.push(input.into());
             self.amis = Some(v);
             self
         }
+        /// <p>The Amazon EC2 AMIs created by this image.</p>
         pub fn set_amis(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Ami>>,
@@ -2499,12 +2764,18 @@ pub mod output_resources {
             self.amis = input;
             self
         }
+        /// Appends an item to `containers`.
+        ///
+        /// To override the contents of this collection use [`set_containers`](Self::set_containers).
+        ///
+        /// <p>Container images that the pipeline has generated and stored in the output repository.</p>
         pub fn containers(mut self, input: impl Into<crate::model::Container>) -> Self {
             let mut v = self.containers.unwrap_or_default();
             v.push(input.into());
             self.containers = Some(v);
             self
         }
+        /// <p>Container images that the pipeline has generated and stored in the output repository.</p>
         pub fn set_containers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Container>>,
@@ -2560,16 +2831,23 @@ pub mod container {
             self.region = Some(input.into());
             self
         }
+        /// <p>Containers and container images are Region-specific. This is the Region context for the container.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
         }
+        /// Appends an item to `image_uris`.
+        ///
+        /// To override the contents of this collection use [`set_image_uris`](Self::set_image_uris).
+        ///
+        /// <p>A list of URIs for containers created in the context Region.</p>
         pub fn image_uris(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.image_uris.unwrap_or_default();
             v.push(input.into());
             self.image_uris = Some(v);
             self
         }
+        /// <p>A list of URIs for containers created in the context Region.</p>
         pub fn set_image_uris(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2641,6 +2919,7 @@ pub mod ami {
             self.region = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services Region of the Amazon EC2 AMI.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
@@ -2650,6 +2929,7 @@ pub mod ami {
             self.image = Some(input.into());
             self
         }
+        /// <p>The AMI ID of the Amazon EC2 AMI.</p>
         pub fn set_image(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.image = input;
             self
@@ -2659,6 +2939,7 @@ pub mod ami {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the Amazon EC2 AMI.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2668,6 +2949,7 @@ pub mod ami {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the Amazon EC2 AMI. Minimum and maximum length are in characters.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -2677,6 +2959,7 @@ pub mod ami {
             self.state = Some(input);
             self
         }
+        /// <p> Image state shows the image status and the reason for that status.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::ImageState>) -> Self {
             self.state = input;
             self
@@ -2686,6 +2969,7 @@ pub mod ami {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The account ID of the owner of the AMI.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -2742,6 +3026,7 @@ pub mod image_state {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the image.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::ImageStatus>) -> Self {
             self.status = input;
             self
@@ -2751,6 +3036,7 @@ pub mod image_state {
             self.reason = Some(input.into());
             self
         }
+        /// <p>The reason for the image's status.</p>
         pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.reason = input;
             self
@@ -2771,6 +3057,7 @@ impl ImageState {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2782,16 +3069,27 @@ impl ImageState {
     std::hash::Hash,
 )]
 pub enum ImageStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Available,
+    #[allow(missing_docs)] // documentation missing in model
     Building,
+    #[allow(missing_docs)] // documentation missing in model
     Cancelled,
+    #[allow(missing_docs)] // documentation missing in model
     Creating,
+    #[allow(missing_docs)] // documentation missing in model
     Deleted,
+    #[allow(missing_docs)] // documentation missing in model
     Deprecated,
+    #[allow(missing_docs)] // documentation missing in model
     Distributing,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Integrating,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
+    #[allow(missing_docs)] // documentation missing in model
     Testing,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2822,6 +3120,7 @@ impl std::str::FromStr for ImageStatus {
     }
 }
 impl ImageStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ImageStatus::Available => "AVAILABLE",
@@ -2838,6 +3137,7 @@ impl ImageStatus {
             ImageStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "AVAILABLE",
@@ -2892,6 +3192,7 @@ pub mod image_package {
             self.package_name = Some(input.into());
             self
         }
+        /// <p>The name of the package as reported to the operating system package manager.</p>
         pub fn set_package_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.package_name = input;
             self
@@ -2901,6 +3202,7 @@ pub mod image_package {
             self.package_version = Some(input.into());
             self
         }
+        /// <p>The version of the package as reported to the operating system package manager.</p>
         pub fn set_package_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2979,6 +3281,7 @@ pub mod distribution_configuration_summary {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the distribution configuration.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -2988,6 +3291,7 @@ pub mod distribution_configuration_summary {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the distribution configuration.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2997,6 +3301,7 @@ pub mod distribution_configuration_summary {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the distribution configuration.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -3006,6 +3311,7 @@ pub mod distribution_configuration_summary {
             self.date_created = Some(input.into());
             self
         }
+        /// <p>The date on which the distribution configuration was created.</p>
         pub fn set_date_created(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.date_created = input;
             self
@@ -3015,10 +3321,16 @@ pub mod distribution_configuration_summary {
             self.date_updated = Some(input.into());
             self
         }
+        /// <p>The date on which the distribution configuration was updated.</p>
         pub fn set_date_updated(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.date_updated = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags associated with the distribution configuration.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -3029,6 +3341,7 @@ pub mod distribution_configuration_summary {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The tags associated with the distribution configuration.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -3038,12 +3351,18 @@ pub mod distribution_configuration_summary {
             self.tags = input;
             self
         }
+        /// Appends an item to `regions`.
+        ///
+        /// To override the contents of this collection use [`set_regions`](Self::set_regions).
+        ///
+        /// <p>A list of Regions where the container image is distributed to.</p>
         pub fn regions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.regions.unwrap_or_default();
             v.push(input.into());
             self.regions = Some(v);
             self
         }
+        /// <p>A list of Regions where the container image is distributed to.</p>
         pub fn set_regions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3131,6 +3450,7 @@ pub mod container_recipe_summary {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the container recipe.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -3140,6 +3460,7 @@ pub mod container_recipe_summary {
             self.container_type = Some(input);
             self
         }
+        /// <p>Specifies the type of container, such as "Docker".</p>
         pub fn set_container_type(
             mut self,
             input: std::option::Option<crate::model::ContainerType>,
@@ -3152,6 +3473,7 @@ pub mod container_recipe_summary {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the container recipe.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -3161,6 +3483,7 @@ pub mod container_recipe_summary {
             self.platform = Some(input);
             self
         }
+        /// <p>The system platform for the container, such as Windows or Linux.</p>
         pub fn set_platform(mut self, input: std::option::Option<crate::model::Platform>) -> Self {
             self.platform = input;
             self
@@ -3170,6 +3493,7 @@ pub mod container_recipe_summary {
             self.owner = Some(input.into());
             self
         }
+        /// <p>The owner of the container recipe.</p>
         pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.owner = input;
             self
@@ -3179,6 +3503,7 @@ pub mod container_recipe_summary {
             self.parent_image = Some(input.into());
             self
         }
+        /// <p>The base image for the container recipe.</p>
         pub fn set_parent_image(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.parent_image = input;
             self
@@ -3188,10 +3513,16 @@ pub mod container_recipe_summary {
             self.date_created = Some(input.into());
             self
         }
+        /// <p>The date when this container recipe was created.</p>
         pub fn set_date_created(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.date_created = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Tags that are attached to the container recipe.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -3202,6 +3533,7 @@ pub mod container_recipe_summary {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>Tags that are attached to the container recipe.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -3233,6 +3565,7 @@ impl ContainerRecipeSummary {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3244,6 +3577,7 @@ impl ContainerRecipeSummary {
     std::hash::Hash,
 )]
 pub enum ContainerType {
+    #[allow(missing_docs)] // documentation missing in model
     Docker,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3264,12 +3598,14 @@ impl std::str::FromStr for ContainerType {
     }
 }
 impl ContainerType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ContainerType::Docker => "DOCKER",
             ContainerType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DOCKER"]
     }
@@ -3392,6 +3728,23 @@ pub mod component_version {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the component.</p>
+        /// <note>
+        /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN),
+        /// at the level that applies to that object as follows:</p>
+        /// <ol>
+        /// <li>
+        /// <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are
+        /// either left off entirely, or they are specified as wildcards, for example: x.x.x.</p>
+        /// </li>
+        /// <li>
+        /// <p>Version ARNs have only the first three nodes: <major>.<minor>.<patch></p>
+        /// </li>
+        /// <li>
+        /// <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p>
+        /// </li>
+        /// </ol>
+        /// </note>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -3401,6 +3754,7 @@ pub mod component_version {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the component.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -3427,6 +3781,24 @@ pub mod component_version {
             self.version = Some(input.into());
             self
         }
+        /// <p>The semantic version of the component.</p>
+        /// <note>
+        /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
+        /// You can assign values for the first three, and can filter on all of them.</p>
+        /// <p>
+        /// <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including
+        /// zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the
+        /// build number to the fourth node.</p>
+        /// <p>
+        /// <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for
+        /// the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or
+        /// a date, such as 2021.01.01.</p>
+        /// <p>
+        /// <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x)
+        /// to specify the most recent versions or nodes when selecting the base image or components for your
+        /// recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be
+        /// wildcards.</p>
+        /// </note>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -3436,6 +3808,7 @@ pub mod component_version {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the component.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -3445,16 +3818,27 @@ pub mod component_version {
             self.platform = Some(input);
             self
         }
+        /// <p>The platform of the component.</p>
         pub fn set_platform(mut self, input: std::option::Option<crate::model::Platform>) -> Self {
             self.platform = input;
             self
         }
+        /// Appends an item to `supported_os_versions`.
+        ///
+        /// To override the contents of this collection use [`set_supported_os_versions`](Self::set_supported_os_versions).
+        ///
+        /// <p>he operating system (OS) version supported by the component. If the OS information is
+        /// available, a prefix match is performed against the base image OS version during image recipe
+        /// creation.</p>
         pub fn supported_os_versions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.supported_os_versions.unwrap_or_default();
             v.push(input.into());
             self.supported_os_versions = Some(v);
             self
         }
+        /// <p>he operating system (OS) version supported by the component. If the OS information is
+        /// available, a prefix match is performed against the base image OS version during image recipe
+        /// creation.</p>
         pub fn set_supported_os_versions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3468,6 +3852,8 @@ pub mod component_version {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of the component denotes whether the component is used to build the image or only
+        /// to test it.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ComponentType>) -> Self {
             self.r#type = input;
             self
@@ -3477,6 +3863,7 @@ pub mod component_version {
             self.owner = Some(input.into());
             self
         }
+        /// <p>The owner of the component.</p>
         pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.owner = input;
             self
@@ -3486,6 +3873,7 @@ pub mod component_version {
             self.date_created = Some(input.into());
             self
         }
+        /// <p>The date that the component was created.</p>
         pub fn set_date_created(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.date_created = input;
             self
@@ -3513,6 +3901,7 @@ impl ComponentVersion {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3524,7 +3913,9 @@ impl ComponentVersion {
     std::hash::Hash,
 )]
 pub enum ComponentType {
+    #[allow(missing_docs)] // documentation missing in model
     Build,
+    #[allow(missing_docs)] // documentation missing in model
     Test,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3546,6 +3937,7 @@ impl std::str::FromStr for ComponentType {
     }
 }
 impl ComponentType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ComponentType::Build => "BUILD",
@@ -3553,6 +3945,7 @@ impl ComponentType {
             ComponentType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["BUILD", "TEST"]
     }
@@ -3641,6 +4034,7 @@ pub mod component_summary {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the component.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -3650,6 +4044,7 @@ pub mod component_summary {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the component.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -3659,6 +4054,7 @@ pub mod component_summary {
             self.version = Some(input.into());
             self
         }
+        /// <p>The version of the component.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -3668,16 +4064,27 @@ pub mod component_summary {
             self.platform = Some(input);
             self
         }
+        /// <p>The platform of the component.</p>
         pub fn set_platform(mut self, input: std::option::Option<crate::model::Platform>) -> Self {
             self.platform = input;
             self
         }
+        /// Appends an item to `supported_os_versions`.
+        ///
+        /// To override the contents of this collection use [`set_supported_os_versions`](Self::set_supported_os_versions).
+        ///
+        /// <p>The operating system (OS) version supported by the component. If the OS information is
+        /// available, a prefix match is performed against the base image OS version during image recipe
+        /// creation.</p>
         pub fn supported_os_versions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.supported_os_versions.unwrap_or_default();
             v.push(input.into());
             self.supported_os_versions = Some(v);
             self
         }
+        /// <p>The operating system (OS) version supported by the component. If the OS information is
+        /// available, a prefix match is performed against the base image OS version during image recipe
+        /// creation.</p>
         pub fn set_supported_os_versions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3690,6 +4097,7 @@ pub mod component_summary {
             self.state = Some(input);
             self
         }
+        /// <p>Describes the current status of the component.</p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::ComponentState>,
@@ -3703,6 +4111,8 @@ pub mod component_summary {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of the component denotes whether the component is used to build the image or only
+        /// to test it.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ComponentType>) -> Self {
             self.r#type = input;
             self
@@ -3712,6 +4122,7 @@ pub mod component_summary {
             self.owner = Some(input.into());
             self
         }
+        /// <p>The owner of the component.</p>
         pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.owner = input;
             self
@@ -3721,6 +4132,7 @@ pub mod component_summary {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the component.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -3730,6 +4142,7 @@ pub mod component_summary {
             self.change_description = Some(input.into());
             self
         }
+        /// <p>The change description of the component.</p>
         pub fn set_change_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3742,10 +4155,16 @@ pub mod component_summary {
             self.date_created = Some(input.into());
             self
         }
+        /// <p>The date that the component was created.</p>
         pub fn set_date_created(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.date_created = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags associated with the component.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -3756,6 +4175,7 @@ pub mod component_summary {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The tags associated with the component.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -3824,6 +4244,7 @@ pub mod component_state {
             self.status = Some(input);
             self
         }
+        /// <p>The current state of the component.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ComponentStatus>,
@@ -3836,6 +4257,7 @@ pub mod component_state {
             self.reason = Some(input.into());
             self
         }
+        /// <p>Describes how or why the component changed state.</p>
         pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.reason = input;
             self
@@ -3856,6 +4278,7 @@ impl ComponentState {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3867,6 +4290,7 @@ impl ComponentState {
     std::hash::Hash,
 )]
 pub enum ComponentStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Deprecated,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3887,12 +4311,14 @@ impl std::str::FromStr for ComponentStatus {
     }
 }
 impl ComponentStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ComponentStatus::Deprecated => "DEPRECATED",
             ComponentStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DEPRECATED"]
     }
@@ -3903,6 +4329,7 @@ impl AsRef<str> for ComponentStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3914,6 +4341,7 @@ impl AsRef<str> for ComponentStatus {
     std::hash::Hash,
 )]
 pub enum ComponentFormat {
+    #[allow(missing_docs)] // documentation missing in model
     Shell,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3934,12 +4362,14 @@ impl std::str::FromStr for ComponentFormat {
     }
 }
 impl ComponentFormat {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ComponentFormat::Shell => "SHELL",
             ComponentFormat::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["SHELL"]
     }
@@ -4049,6 +4479,7 @@ pub mod infrastructure_configuration {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -4058,6 +4489,7 @@ pub mod infrastructure_configuration {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the infrastructure configuration.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -4067,16 +4499,23 @@ pub mod infrastructure_configuration {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the infrastructure configuration.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Appends an item to `instance_types`.
+        ///
+        /// To override the contents of this collection use [`set_instance_types`](Self::set_instance_types).
+        ///
+        /// <p>The instance types of the infrastructure configuration.</p>
         pub fn instance_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.instance_types.unwrap_or_default();
             v.push(input.into());
             self.instance_types = Some(v);
             self
         }
+        /// <p>The instance types of the infrastructure configuration.</p>
         pub fn set_instance_types(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4089,6 +4528,7 @@ pub mod infrastructure_configuration {
             self.instance_profile_name = Some(input.into());
             self
         }
+        /// <p>The instance profile of the infrastructure configuration.</p>
         pub fn set_instance_profile_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4096,12 +4536,18 @@ pub mod infrastructure_configuration {
             self.instance_profile_name = input;
             self
         }
+        /// Appends an item to `security_group_ids`.
+        ///
+        /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
+        ///
+        /// <p>The security group IDs of the infrastructure configuration.</p>
         pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_ids.unwrap_or_default();
             v.push(input.into());
             self.security_group_ids = Some(v);
             self
         }
+        /// <p>The security group IDs of the infrastructure configuration.</p>
         pub fn set_security_group_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4114,6 +4560,7 @@ pub mod infrastructure_configuration {
             self.subnet_id = Some(input.into());
             self
         }
+        /// <p>The subnet ID of the infrastructure configuration.</p>
         pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.subnet_id = input;
             self
@@ -4123,6 +4570,7 @@ pub mod infrastructure_configuration {
             self.logging = Some(input);
             self
         }
+        /// <p>The logging configuration of the infrastructure configuration.</p>
         pub fn set_logging(mut self, input: std::option::Option<crate::model::Logging>) -> Self {
             self.logging = input;
             self
@@ -4132,6 +4580,7 @@ pub mod infrastructure_configuration {
             self.key_pair = Some(input.into());
             self
         }
+        /// <p>The Amazon EC2 key pair of the infrastructure configuration.</p>
         pub fn set_key_pair(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_pair = input;
             self
@@ -4142,6 +4591,8 @@ pub mod infrastructure_configuration {
             self.terminate_instance_on_failure = Some(input);
             self
         }
+        /// <p>The terminate instance on failure configuration of the infrastructure
+        /// configuration.</p>
         pub fn set_terminate_instance_on_failure(
             mut self,
             input: std::option::Option<bool>,
@@ -4154,6 +4605,7 @@ pub mod infrastructure_configuration {
             self.sns_topic_arn = Some(input.into());
             self
         }
+        /// <p>The SNS topic Amazon Resource Name (ARN) of the infrastructure configuration.</p>
         pub fn set_sns_topic_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4166,6 +4618,7 @@ pub mod infrastructure_configuration {
             self.date_created = Some(input.into());
             self
         }
+        /// <p>The date on which the infrastructure configuration was created.</p>
         pub fn set_date_created(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.date_created = input;
             self
@@ -4175,10 +4628,16 @@ pub mod infrastructure_configuration {
             self.date_updated = Some(input.into());
             self
         }
+        /// <p>The date on which the infrastructure configuration was last updated.</p>
         pub fn set_date_updated(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.date_updated = input;
             self
         }
+        /// Adds a key-value pair to `resource_tags`.
+        ///
+        /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
+        ///
+        /// <p>The tags attached to the resource created by Image Builder.</p>
         pub fn resource_tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -4189,6 +4648,7 @@ pub mod infrastructure_configuration {
             self.resource_tags = Some(hash_map);
             self
         }
+        /// <p>The tags attached to the resource created by Image Builder.</p>
         pub fn set_resource_tags(
             mut self,
             input: std::option::Option<
@@ -4206,6 +4666,7 @@ pub mod infrastructure_configuration {
             self.instance_metadata_options = Some(input);
             self
         }
+        /// <p>The instance metadata option settings for the infrastructure configuration.</p>
         pub fn set_instance_metadata_options(
             mut self,
             input: std::option::Option<crate::model::InstanceMetadataOptions>,
@@ -4213,6 +4674,11 @@ pub mod infrastructure_configuration {
             self.instance_metadata_options = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags of the infrastructure configuration.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -4223,6 +4689,7 @@ pub mod infrastructure_configuration {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The tags of the infrastructure configuration.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -4357,6 +4824,7 @@ pub mod image_recipe {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the image recipe.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -4367,6 +4835,8 @@ pub mod image_recipe {
             self.r#type = Some(input);
             self
         }
+        /// <p>Specifies which type of image is created by the recipe - an AMI or a
+        /// container image.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ImageType>) -> Self {
             self.r#type = input;
             self
@@ -4376,6 +4846,7 @@ pub mod image_recipe {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the image recipe.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -4385,6 +4856,7 @@ pub mod image_recipe {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the image recipe.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -4394,6 +4866,7 @@ pub mod image_recipe {
             self.platform = Some(input);
             self
         }
+        /// <p>The platform of the image recipe.</p>
         pub fn set_platform(mut self, input: std::option::Option<crate::model::Platform>) -> Self {
             self.platform = input;
             self
@@ -4403,6 +4876,7 @@ pub mod image_recipe {
             self.owner = Some(input.into());
             self
         }
+        /// <p>The owner of the image recipe.</p>
         pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.owner = input;
             self
@@ -4412,10 +4886,16 @@ pub mod image_recipe {
             self.version = Some(input.into());
             self
         }
+        /// <p>The version of the image recipe.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
         }
+        /// Appends an item to `components`.
+        ///
+        /// To override the contents of this collection use [`set_components`](Self::set_components).
+        ///
+        /// <p>The components of the image recipe.</p>
         pub fn components(
             mut self,
             input: impl Into<crate::model::ComponentConfiguration>,
@@ -4425,6 +4905,7 @@ pub mod image_recipe {
             self.components = Some(v);
             self
         }
+        /// <p>The components of the image recipe.</p>
         pub fn set_components(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ComponentConfiguration>>,
@@ -4437,10 +4918,16 @@ pub mod image_recipe {
             self.parent_image = Some(input.into());
             self
         }
+        /// <p>The base image of the image recipe.</p>
         pub fn set_parent_image(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.parent_image = input;
             self
         }
+        /// Appends an item to `block_device_mappings`.
+        ///
+        /// To override the contents of this collection use [`set_block_device_mappings`](Self::set_block_device_mappings).
+        ///
+        /// <p>The block device mappings to apply when creating images from this recipe.</p>
         pub fn block_device_mappings(
             mut self,
             input: impl Into<crate::model::InstanceBlockDeviceMapping>,
@@ -4450,6 +4937,7 @@ pub mod image_recipe {
             self.block_device_mappings = Some(v);
             self
         }
+        /// <p>The block device mappings to apply when creating images from this recipe.</p>
         pub fn set_block_device_mappings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InstanceBlockDeviceMapping>>,
@@ -4462,10 +4950,16 @@ pub mod image_recipe {
             self.date_created = Some(input.into());
             self
         }
+        /// <p>The date on which this image recipe was created.</p>
         pub fn set_date_created(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.date_created = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags of the image recipe.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -4476,6 +4970,7 @@ pub mod image_recipe {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The tags of the image recipe.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -4490,6 +4985,7 @@ pub mod image_recipe {
             self.working_directory = Some(input.into());
             self
         }
+        /// <p>The working directory to be used during build and test workflows.</p>
         pub fn set_working_directory(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4508,6 +5004,10 @@ pub mod image_recipe {
             self.additional_instance_configuration = Some(input);
             self
         }
+        /// <p>Before you create a new AMI, Image Builder launches temporary Amazon EC2 instances to
+        /// build and test your image configuration. Instance configuration adds a layer
+        /// of control over those instances. You can define settings and add scripts to
+        /// run when an instance is launched from your AMI.</p>
         pub fn set_additional_instance_configuration(
             mut self,
             input: std::option::Option<crate::model::AdditionalInstanceConfiguration>,
@@ -4585,6 +5085,7 @@ pub mod additional_instance_configuration {
             self.systems_manager_agent = Some(input);
             self
         }
+        /// <p>Contains settings for the Systems Manager agent on your build instance.</p>
         pub fn set_systems_manager_agent(
             mut self,
             input: std::option::Option<crate::model::SystemsManagerAgent>,
@@ -4604,6 +5105,14 @@ pub mod additional_instance_configuration {
             self.user_data_override = Some(input.into());
             self
         }
+        /// <p>Use this property to provide commands or a command script to run when you launch
+        /// your build instance.</p>
+        /// <note>
+        /// <p>The userDataOverride property replaces any commands that Image Builder might have added to ensure
+        /// that Systems Manager is installed on your Linux build instance. If you override the user data,
+        /// make sure that you add commands to install Systems Manager, if it is not pre-installed on your
+        /// base image.</p>
+        /// </note>
         pub fn set_user_data_override(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4661,6 +5170,10 @@ pub mod systems_manager_agent {
             self.uninstall_after_build = Some(input);
             self
         }
+        /// <p>Controls whether the Systems Manager agent is removed from your final build image, prior to creating
+        /// the new AMI. If this is set to true, then the agent is removed from the final image. If it's
+        /// set to false, then the agent is left in, so that it is included in the new AMI. The default
+        /// value is false.</p>
         pub fn set_uninstall_after_build(mut self, input: std::option::Option<bool>) -> Self {
             self.uninstall_after_build = input;
             self
@@ -4720,6 +5233,7 @@ pub mod instance_block_device_mapping {
             self.device_name = Some(input.into());
             self
         }
+        /// <p>The device to which these mappings apply.</p>
         pub fn set_device_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.device_name = input;
             self
@@ -4729,6 +5243,7 @@ pub mod instance_block_device_mapping {
             self.ebs = Some(input);
             self
         }
+        /// <p>Use to manage Amazon EBS-specific configuration for this mapping.</p>
         pub fn set_ebs(
             mut self,
             input: std::option::Option<crate::model::EbsInstanceBlockDeviceSpecification>,
@@ -4741,6 +5256,7 @@ pub mod instance_block_device_mapping {
             self.virtual_name = Some(input.into());
             self
         }
+        /// <p>Use to manage instance ephemeral devices.</p>
         pub fn set_virtual_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.virtual_name = input;
             self
@@ -4750,6 +5266,7 @@ pub mod instance_block_device_mapping {
             self.no_device = Some(input.into());
             self
         }
+        /// <p>Use to remove a mapping from the base image.</p>
         pub fn set_no_device(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.no_device = input;
             self
@@ -4830,6 +5347,7 @@ pub mod ebs_instance_block_device_specification {
             self.encrypted = Some(input);
             self
         }
+        /// <p>Use to configure device encryption.</p>
         pub fn set_encrypted(mut self, input: std::option::Option<bool>) -> Self {
             self.encrypted = input;
             self
@@ -4839,6 +5357,7 @@ pub mod ebs_instance_block_device_specification {
             self.delete_on_termination = Some(input);
             self
         }
+        /// <p>Use to configure delete on termination of the associated device.</p>
         pub fn set_delete_on_termination(mut self, input: std::option::Option<bool>) -> Self {
             self.delete_on_termination = input;
             self
@@ -4848,6 +5367,7 @@ pub mod ebs_instance_block_device_specification {
             self.iops = Some(input);
             self
         }
+        /// <p>Use to configure device IOPS.</p>
         pub fn set_iops(mut self, input: std::option::Option<i32>) -> Self {
             self.iops = input;
             self
@@ -4857,6 +5377,7 @@ pub mod ebs_instance_block_device_specification {
             self.kms_key_id = Some(input.into());
             self
         }
+        /// <p>Use to configure the KMS key to use when encrypting the device.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -4866,6 +5387,7 @@ pub mod ebs_instance_block_device_specification {
             self.snapshot_id = Some(input.into());
             self
         }
+        /// <p>The snapshot that defines the device contents.</p>
         pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.snapshot_id = input;
             self
@@ -4875,6 +5397,7 @@ pub mod ebs_instance_block_device_specification {
             self.volume_size = Some(input);
             self
         }
+        /// <p>Use to override the device's volume size.</p>
         pub fn set_volume_size(mut self, input: std::option::Option<i32>) -> Self {
             self.volume_size = input;
             self
@@ -4884,6 +5407,7 @@ pub mod ebs_instance_block_device_specification {
             self.volume_type = Some(input);
             self
         }
+        /// <p>Use to override the device's volume type.</p>
         pub fn set_volume_type(
             mut self,
             input: std::option::Option<crate::model::EbsVolumeType>,
@@ -4898,6 +5422,9 @@ pub mod ebs_instance_block_device_specification {
             self.throughput = Some(input);
             self
         }
+        /// <p>
+        /// <b>For GP3 volumes only</b> –
+        /// The throughput in MiB/s that the volume supports. </p>
         pub fn set_throughput(mut self, input: std::option::Option<i32>) -> Self {
             self.throughput = input;
             self
@@ -4924,6 +5451,7 @@ impl EbsInstanceBlockDeviceSpecification {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4935,12 +5463,19 @@ impl EbsInstanceBlockDeviceSpecification {
     std::hash::Hash,
 )]
 pub enum EbsVolumeType {
+    #[allow(missing_docs)] // documentation missing in model
     Gp2,
+    #[allow(missing_docs)] // documentation missing in model
     Gp3,
+    #[allow(missing_docs)] // documentation missing in model
     Io1,
+    #[allow(missing_docs)] // documentation missing in model
     Io2,
+    #[allow(missing_docs)] // documentation missing in model
     Sc1,
+    #[allow(missing_docs)] // documentation missing in model
     St1,
+    #[allow(missing_docs)] // documentation missing in model
     Standard,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4967,6 +5502,7 @@ impl std::str::FromStr for EbsVolumeType {
     }
 }
 impl EbsVolumeType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EbsVolumeType::Gp2 => "gp2",
@@ -4979,6 +5515,7 @@ impl EbsVolumeType {
             EbsVolumeType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["gp2", "gp3", "io1", "io2", "sc1", "st1", "standard"]
     }
@@ -5021,6 +5558,7 @@ pub mod component_configuration {
             self.component_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the component.</p>
         pub fn set_component_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5028,12 +5566,18 @@ pub mod component_configuration {
             self.component_arn = input;
             self
         }
+        /// Appends an item to `parameters`.
+        ///
+        /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
+        ///
+        /// <p>A group of parameter settings that are used to configure the component for a specific recipe.</p>
         pub fn parameters(mut self, input: impl Into<crate::model::ComponentParameter>) -> Self {
             let mut v = self.parameters.unwrap_or_default();
             v.push(input.into());
             self.parameters = Some(v);
             self
         }
+        /// <p>A group of parameter settings that are used to configure the component for a specific recipe.</p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ComponentParameter>>,
@@ -5089,16 +5633,23 @@ pub mod component_parameter {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the component parameter to set.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
+        /// Appends an item to `value`.
+        ///
+        /// To override the contents of this collection use [`set_value`](Self::set_value).
+        ///
+        /// <p>Sets the value for the named component parameter.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.value.unwrap_or_default();
             v.push(input.into());
             self.value = Some(v);
             self
         }
+        /// <p>Sets the value for the named component parameter.</p>
         pub fn set_value(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5288,6 +5839,23 @@ pub mod image {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the image.</p>
+        /// <note>
+        /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN),
+        /// at the level that applies to that object as follows:</p>
+        /// <ol>
+        /// <li>
+        /// <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are
+        /// either left off entirely, or they are specified as wildcards, for example: x.x.x.</p>
+        /// </li>
+        /// <li>
+        /// <p>Version ARNs have only the first three nodes: <major>.<minor>.<patch></p>
+        /// </li>
+        /// <li>
+        /// <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p>
+        /// </li>
+        /// </ol>
+        /// </note>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -5297,6 +5865,7 @@ pub mod image {
             self.r#type = Some(input);
             self
         }
+        /// <p>Specifies whether this is an AMI or container image.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ImageType>) -> Self {
             self.r#type = input;
             self
@@ -5306,6 +5875,7 @@ pub mod image {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the image.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -5332,6 +5902,24 @@ pub mod image {
             self.version = Some(input.into());
             self
         }
+        /// <p>The semantic version of the image.</p>
+        /// <note>
+        /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
+        /// You can assign values for the first three, and can filter on all of them.</p>
+        /// <p>
+        /// <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including
+        /// zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the
+        /// build number to the fourth node.</p>
+        /// <p>
+        /// <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for
+        /// the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or
+        /// a date, such as 2021.01.01.</p>
+        /// <p>
+        /// <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x)
+        /// to specify the most recent versions or nodes when selecting the base image or components for your
+        /// recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be
+        /// wildcards.</p>
+        /// </note>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -5341,6 +5929,7 @@ pub mod image {
             self.platform = Some(input);
             self
         }
+        /// <p>The platform of the image.</p>
         pub fn set_platform(mut self, input: std::option::Option<crate::model::Platform>) -> Self {
             self.platform = input;
             self
@@ -5352,6 +5941,9 @@ pub mod image {
             self.enhanced_image_metadata_enabled = Some(input);
             self
         }
+        /// <p> Collects additional information about the image being created, including the operating
+        /// system (OS) version and package list. This information is used to enhance the overall
+        /// experience of using EC2 Image Builder. Enabled by default.</p>
         pub fn set_enhanced_image_metadata_enabled(
             mut self,
             input: std::option::Option<bool>,
@@ -5365,6 +5957,8 @@ pub mod image {
             self.os_version = Some(input.into());
             self
         }
+        /// <p>The operating system version of the instance. For example, Amazon Linux 2, Ubuntu 18, or
+        /// Microsoft Windows Server 2019.</p>
         pub fn set_os_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.os_version = input;
             self
@@ -5374,6 +5968,7 @@ pub mod image {
             self.state = Some(input);
             self
         }
+        /// <p>The state of the image.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::ImageState>) -> Self {
             self.state = input;
             self
@@ -5383,6 +5978,7 @@ pub mod image {
             self.image_recipe = Some(input);
             self
         }
+        /// <p>The image recipe used when creating the image.</p>
         pub fn set_image_recipe(
             mut self,
             input: std::option::Option<crate::model::ImageRecipe>,
@@ -5395,6 +5991,7 @@ pub mod image {
             self.container_recipe = Some(input);
             self
         }
+        /// <p>The recipe that is used to create an Image Builder container image.</p>
         pub fn set_container_recipe(
             mut self,
             input: std::option::Option<crate::model::ContainerRecipe>,
@@ -5407,6 +6004,7 @@ pub mod image {
             self.source_pipeline_name = Some(input.into());
             self
         }
+        /// <p>The name of the image pipeline that created this image.</p>
         pub fn set_source_pipeline_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5419,6 +6017,7 @@ pub mod image {
             self.source_pipeline_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the image pipeline that created this image.</p>
         pub fn set_source_pipeline_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5434,6 +6033,7 @@ pub mod image {
             self.infrastructure_configuration = Some(input);
             self
         }
+        /// <p>The infrastructure used when creating this image.</p>
         pub fn set_infrastructure_configuration(
             mut self,
             input: std::option::Option<crate::model::InfrastructureConfiguration>,
@@ -5449,6 +6049,7 @@ pub mod image {
             self.distribution_configuration = Some(input);
             self
         }
+        /// <p>The distribution configuration used when creating this image.</p>
         pub fn set_distribution_configuration(
             mut self,
             input: std::option::Option<crate::model::DistributionConfiguration>,
@@ -5464,6 +6065,7 @@ pub mod image {
             self.image_tests_configuration = Some(input);
             self
         }
+        /// <p>The image tests configuration used when creating this image.</p>
         pub fn set_image_tests_configuration(
             mut self,
             input: std::option::Option<crate::model::ImageTestsConfiguration>,
@@ -5476,6 +6078,7 @@ pub mod image {
             self.date_created = Some(input.into());
             self
         }
+        /// <p>The date on which this image was created.</p>
         pub fn set_date_created(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.date_created = input;
             self
@@ -5485,6 +6088,7 @@ pub mod image {
             self.output_resources = Some(input);
             self
         }
+        /// <p>The output resources produced when creating this image.</p>
         pub fn set_output_resources(
             mut self,
             input: std::option::Option<crate::model::OutputResources>,
@@ -5492,6 +6096,11 @@ pub mod image {
             self.output_resources = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags of the image.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -5502,6 +6111,7 @@ pub mod image {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The tags of the image.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -5603,6 +6213,7 @@ pub mod distribution_configuration {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the distribution configuration.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -5612,6 +6223,7 @@ pub mod distribution_configuration {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the distribution configuration.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -5621,16 +6233,25 @@ pub mod distribution_configuration {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the distribution configuration.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Appends an item to `distributions`.
+        ///
+        /// To override the contents of this collection use [`set_distributions`](Self::set_distributions).
+        ///
+        /// <p>The distribution objects that apply Region-specific
+        /// settings for the deployment of the image to targeted Regions.</p>
         pub fn distributions(mut self, input: impl Into<crate::model::Distribution>) -> Self {
             let mut v = self.distributions.unwrap_or_default();
             v.push(input.into());
             self.distributions = Some(v);
             self
         }
+        /// <p>The distribution objects that apply Region-specific
+        /// settings for the deployment of the image to targeted Regions.</p>
         pub fn set_distributions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Distribution>>,
@@ -5643,6 +6264,7 @@ pub mod distribution_configuration {
             self.timeout_minutes = Some(input);
             self
         }
+        /// <p>The maximum duration in minutes for this distribution configuration.</p>
         pub fn set_timeout_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.timeout_minutes = input;
             self
@@ -5652,6 +6274,7 @@ pub mod distribution_configuration {
             self.date_created = Some(input.into());
             self
         }
+        /// <p>The date on which this distribution configuration was created.</p>
         pub fn set_date_created(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.date_created = input;
             self
@@ -5661,10 +6284,16 @@ pub mod distribution_configuration {
             self.date_updated = Some(input.into());
             self
         }
+        /// <p>The date on which this distribution configuration was last updated.</p>
         pub fn set_date_updated(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.date_updated = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags of the distribution configuration.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -5675,6 +6304,7 @@ pub mod distribution_configuration {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The tags of the distribution configuration.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -5851,6 +6481,23 @@ pub mod container_recipe {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the container recipe.</p>
+        /// <note>
+        /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN),
+        /// at the level that applies to that object as follows:</p>
+        /// <ol>
+        /// <li>
+        /// <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are
+        /// either left off entirely, or they are specified as wildcards, for example: x.x.x.</p>
+        /// </li>
+        /// <li>
+        /// <p>Version ARNs have only the first three nodes: <major>.<minor>.<patch></p>
+        /// </li>
+        /// <li>
+        /// <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p>
+        /// </li>
+        /// </ol>
+        /// </note>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -5860,6 +6507,7 @@ pub mod container_recipe {
             self.container_type = Some(input);
             self
         }
+        /// <p>Specifies the type of container, such as Docker.</p>
         pub fn set_container_type(
             mut self,
             input: std::option::Option<crate::model::ContainerType>,
@@ -5872,6 +6520,7 @@ pub mod container_recipe {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the container recipe.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -5881,6 +6530,7 @@ pub mod container_recipe {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the container recipe.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -5890,6 +6540,7 @@ pub mod container_recipe {
             self.platform = Some(input);
             self
         }
+        /// <p>The system platform for the container, such as Windows or Linux.</p>
         pub fn set_platform(mut self, input: std::option::Option<crate::model::Platform>) -> Self {
             self.platform = input;
             self
@@ -5899,6 +6550,7 @@ pub mod container_recipe {
             self.owner = Some(input.into());
             self
         }
+        /// <p>The owner of the container recipe.</p>
         pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.owner = input;
             self
@@ -5925,10 +6577,33 @@ pub mod container_recipe {
             self.version = Some(input.into());
             self
         }
+        /// <p>The semantic version of the container recipe.</p>
+        /// <note>
+        /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
+        /// You can assign values for the first three, and can filter on all of them.</p>
+        /// <p>
+        /// <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including
+        /// zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the
+        /// build number to the fourth node.</p>
+        /// <p>
+        /// <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for
+        /// the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or
+        /// a date, such as 2021.01.01.</p>
+        /// <p>
+        /// <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x)
+        /// to specify the most recent versions or nodes when selecting the base image or components for your
+        /// recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be
+        /// wildcards.</p>
+        /// </note>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
         }
+        /// Appends an item to `components`.
+        ///
+        /// To override the contents of this collection use [`set_components`](Self::set_components).
+        ///
+        /// <p>Components for build and test that are included in the container recipe.</p>
         pub fn components(
             mut self,
             input: impl Into<crate::model::ComponentConfiguration>,
@@ -5938,6 +6613,7 @@ pub mod container_recipe {
             self.components = Some(v);
             self
         }
+        /// <p>Components for build and test that are included in the container recipe.</p>
         pub fn set_components(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ComponentConfiguration>>,
@@ -5953,6 +6629,7 @@ pub mod container_recipe {
             self.instance_configuration = Some(input);
             self
         }
+        /// <p>A group of options that can be used to configure an instance for building and testing container images.</p>
         pub fn set_instance_configuration(
             mut self,
             input: std::option::Option<crate::model::InstanceConfiguration>,
@@ -5965,6 +6642,7 @@ pub mod container_recipe {
             self.dockerfile_template_data = Some(input.into());
             self
         }
+        /// <p>Dockerfiles are text documents that are used to build Docker containers, and ensure that they contain all of the elements required by the application running inside. The template data consists of contextual variables where Image Builder places build information or scripts, based on your container image recipe.</p>
         pub fn set_dockerfile_template_data(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5977,6 +6655,7 @@ pub mod container_recipe {
             self.kms_key_id = Some(input.into());
             self
         }
+        /// <p>Identifies which KMS key is used to encrypt the container image for distribution to the target Region.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -5986,6 +6665,7 @@ pub mod container_recipe {
             self.encrypted = Some(input);
             self
         }
+        /// <p>A flag that indicates if the target container is encrypted.</p>
         pub fn set_encrypted(mut self, input: std::option::Option<bool>) -> Self {
             self.encrypted = input;
             self
@@ -5995,6 +6675,7 @@ pub mod container_recipe {
             self.parent_image = Some(input.into());
             self
         }
+        /// <p>The base image for the container recipe.</p>
         pub fn set_parent_image(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.parent_image = input;
             self
@@ -6004,10 +6685,16 @@ pub mod container_recipe {
             self.date_created = Some(input.into());
             self
         }
+        /// <p>The date when this container recipe was created.</p>
         pub fn set_date_created(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.date_created = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Tags that are attached to the container recipe.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -6018,6 +6705,7 @@ pub mod container_recipe {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>Tags that are attached to the container recipe.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -6032,6 +6720,7 @@ pub mod container_recipe {
             self.working_directory = Some(input.into());
             self
         }
+        /// <p>The working directory for use during build and test workflows.</p>
         pub fn set_working_directory(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6044,6 +6733,7 @@ pub mod container_recipe {
             self.target_repository = Some(input);
             self
         }
+        /// <p>The destination repository for the container image.</p>
         pub fn set_target_repository(
             mut self,
             input: std::option::Option<crate::model::TargetContainerRepository>,
@@ -6119,10 +6809,17 @@ pub mod instance_configuration {
             self.image = Some(input.into());
             self
         }
+        /// <p>The AMI ID to use as the base image for a container build and test instance. If not specified,
+        /// Image Builder will use the appropriate ECS-optimized AMI as a base image.</p>
         pub fn set_image(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.image = input;
             self
         }
+        /// Appends an item to `block_device_mappings`.
+        ///
+        /// To override the contents of this collection use [`set_block_device_mappings`](Self::set_block_device_mappings).
+        ///
+        /// <p>Defines the block devices to attach for building an instance from this Image Builder AMI.</p>
         pub fn block_device_mappings(
             mut self,
             input: impl Into<crate::model::InstanceBlockDeviceMapping>,
@@ -6132,6 +6829,7 @@ pub mod instance_configuration {
             self.block_device_mappings = Some(v);
             self
         }
+        /// <p>Defines the block devices to attach for building an instance from this Image Builder AMI.</p>
         pub fn set_block_device_mappings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InstanceBlockDeviceMapping>>,
@@ -6251,6 +6949,7 @@ pub mod component {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the component.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -6260,6 +6959,7 @@ pub mod component {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the component.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -6269,6 +6969,7 @@ pub mod component {
             self.version = Some(input.into());
             self
         }
+        /// <p>The version of the component.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -6278,6 +6979,7 @@ pub mod component {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the component.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -6287,6 +6989,7 @@ pub mod component {
             self.change_description = Some(input.into());
             self
         }
+        /// <p>The change description of the component.</p>
         pub fn set_change_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6300,6 +7003,8 @@ pub mod component {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of the component denotes whether the component is used to build the image or only
+        /// to test it.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ComponentType>) -> Self {
             self.r#type = input;
             self
@@ -6309,16 +7014,27 @@ pub mod component {
             self.platform = Some(input);
             self
         }
+        /// <p>The platform of the component.</p>
         pub fn set_platform(mut self, input: std::option::Option<crate::model::Platform>) -> Self {
             self.platform = input;
             self
         }
+        /// Appends an item to `supported_os_versions`.
+        ///
+        /// To override the contents of this collection use [`set_supported_os_versions`](Self::set_supported_os_versions).
+        ///
+        /// <p>The operating system (OS) version supported by the component. If the OS information is
+        /// available, a prefix match is performed against the base image OS version during image recipe
+        /// creation.</p>
         pub fn supported_os_versions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.supported_os_versions.unwrap_or_default();
             v.push(input.into());
             self.supported_os_versions = Some(v);
             self
         }
+        /// <p>The operating system (OS) version supported by the component. If the OS information is
+        /// available, a prefix match is performed against the base image OS version during image recipe
+        /// creation.</p>
         pub fn set_supported_os_versions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6332,6 +7048,8 @@ pub mod component {
             self.state = Some(input);
             self
         }
+        /// <p>Describes the current status of the component. This is used for
+        /// components that are no longer active.</p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::ComponentState>,
@@ -6339,6 +7057,11 @@ pub mod component {
             self.state = input;
             self
         }
+        /// Appends an item to `parameters`.
+        ///
+        /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
+        ///
+        /// <p>Contains parameter details for each of the parameters that are defined for the component.</p>
         pub fn parameters(
             mut self,
             input: impl Into<crate::model::ComponentParameterDetail>,
@@ -6348,6 +7071,7 @@ pub mod component {
             self.parameters = Some(v);
             self
         }
+        /// <p>Contains parameter details for each of the parameters that are defined for the component.</p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ComponentParameterDetail>>,
@@ -6360,6 +7084,7 @@ pub mod component {
             self.owner = Some(input.into());
             self
         }
+        /// <p>The owner of the component.</p>
         pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.owner = input;
             self
@@ -6369,6 +7094,7 @@ pub mod component {
             self.data = Some(input.into());
             self
         }
+        /// <p>The data of the component.</p>
         pub fn set_data(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.data = input;
             self
@@ -6378,6 +7104,7 @@ pub mod component {
             self.kms_key_id = Some(input.into());
             self
         }
+        /// <p>The KMS key identifier used to encrypt the component.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -6387,6 +7114,7 @@ pub mod component {
             self.encrypted = Some(input);
             self
         }
+        /// <p>The encryption status of the component.</p>
         pub fn set_encrypted(mut self, input: std::option::Option<bool>) -> Self {
             self.encrypted = input;
             self
@@ -6396,10 +7124,16 @@ pub mod component {
             self.date_created = Some(input.into());
             self
         }
+        /// <p>The date that the component was created.</p>
         pub fn set_date_created(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.date_created = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags associated with the component.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -6410,6 +7144,7 @@ pub mod component {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The tags associated with the component.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -6489,6 +7224,7 @@ pub mod component_parameter_detail {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of this input parameter.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -6498,16 +7234,23 @@ pub mod component_parameter_detail {
             self.r#type = Some(input.into());
             self
         }
+        /// <p>The type of input this parameter provides. The currently supported value is "string".</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
         }
+        /// Appends an item to `default_value`.
+        ///
+        /// To override the contents of this collection use [`set_default_value`](Self::set_default_value).
+        ///
+        /// <p>The default value of this parameter if no input is provided.</p>
         pub fn default_value(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.default_value.unwrap_or_default();
             v.push(input.into());
             self.default_value = Some(v);
             self
         }
+        /// <p>The default value of this parameter if no input is provided.</p>
         pub fn set_default_value(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6520,6 +7263,7 @@ pub mod component_parameter_detail {
             self.description = Some(input.into());
             self
         }
+        /// <p>Describes this parameter.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self

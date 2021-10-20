@@ -6,18 +6,22 @@
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
 #![allow(rustdoc::bare_urls)]
+#![warn(missing_docs)]
 //! <fullname>AWS Application Discovery Service</fullname>
+//!
 //! <p>AWS Application Discovery Service helps you plan application migration projects. It
 //! automatically identifies servers, virtual machines (VMs), and network dependencies in your
 //! on-premises data centers. For more information, see the <a href="http://aws.amazon.com/application-discovery/faqs/">AWS Application Discovery Service
 //! FAQ</a>. Application Discovery Service offers three ways of performing discovery and
 //! collecting data about your on-premises servers:</p>
+//!
 //! <ul>
 //! <li>
 //! <p>
 //! <b>Agentless discovery</b> is recommended for environments
 //! that use VMware vCenter Server. This mode doesn't require you to install an agent on each
 //! host. It does not work in non-VMware environments.</p>
+//!
 //! <ul>
 //! <li>
 //! <p>Agentless discovery gathers server information regardless of the operating
@@ -31,12 +35,14 @@
 //! </ul>
 //! </li>
 //! </ul>
+//!
 //! <ul>
 //! <li>
 //! <p>
 //! <b>Agent-based discovery</b> collects a richer set of data
 //! than agentless discovery by using the AWS Application Discovery Agent, which you install
 //! on one or more hosts in your data center.</p>
+//!
 //! <ul>
 //! <li>
 //! <p> The agent captures infrastructure and application information, including an
@@ -50,6 +56,7 @@
 //! </ul>
 //! </li>
 //! </ul>
+//!
 //! <ul>
 //! <li>
 //! <p>
@@ -57,6 +64,7 @@
 //! Application Discovery Service, enabling you to import details of your on-premises
 //! environment directly into Migration Hub without using the discovery connector or discovery
 //! agent.</p>
+//!
 //! <ul>
 //! <li>
 //! <p>Third-party application discovery tools can query AWS Application Discovery
@@ -70,6 +78,8 @@
 //! </ul>
 //! </li>
 //! </ul>
+//!
+//!
 //! <p>
 //! <b>Recommendations</b>
 //! </p>
@@ -78,15 +88,18 @@
 //! and agentless discovery simultaneously. Use agentless discovery to complete the initial
 //! infrastructure assessment quickly, and then install agents on select hosts to collect
 //! additional information.</p>
+//!
 //! <p>
 //! <b>Working With This Guide</b>
 //! </p>
+//!
 //! <p>This API reference provides descriptions, syntax, and usage examples for each of the
 //! actions and data types for Application Discovery Service. The topic for each action shows the
 //! API request parameters and the response. Alternatively, you can use one of the AWS SDKs to
 //! access an API that is tailored to the programming language or platform that you're using. For
 //! more information, see <a href="http://aws.amazon.com/tools/#SDKs">AWS
 //! SDKs</a>.</p>
+//!
 //! <note>
 //! <ul>
 //! <li>
@@ -112,8 +125,10 @@
 //! </li>
 //! </ul>
 //! </note>
+//!
 //! <p>This guide is intended for use with the <a href="http://docs.aws.amazon.com/application-discovery/latest/userguide/">AWS Application
 //! Discovery Service User Guide</a>.</p>
+//!
 //! <important>
 //! <p>All data is handled according to the <a href="http://aws.amazon.com/privacy/">AWS
 //! Privacy Policy</a>. You can operate Application Discovery Service offline to inspect
@@ -126,31 +141,39 @@ pub use error_meta::Error;
 pub use config::Config;
 
 mod aws_endpoint;
+/// Client and fluent builders for calling the service.
 #[cfg(feature = "client")]
 pub mod client;
+/// Configuration for the service.
 pub mod config;
+/// Errors that can occur when calling the service.
 pub mod error;
 mod error_meta;
 mod idempotency_token;
+/// Input structures for operations.
 pub mod input;
 mod json_deser;
 mod json_errors;
 mod json_ser;
+/// Data structures used by operation inputs/outputs.
 pub mod model;
 mod no_credentials;
+/// All operations that this crate can perform.
 pub mod operation;
 mod operation_deser;
 mod operation_ser;
+/// Output structures for operations.
 pub mod output;
+/// Crate version number.
 pub static PKG_VERSION: &str = env!("CARGO_PKG_VERSION");
-pub use smithy_http::byte_stream::ByteStream;
-pub use smithy_http::result::SdkError;
-pub use smithy_types::Blob;
+pub use aws_smithy_http::byte_stream::ByteStream;
+pub use aws_smithy_http::result::SdkError;
+pub use aws_smithy_types::Blob;
 static API_METADATA: aws_http::user_agent::ApiMetadata =
     aws_http::user_agent::ApiMetadata::new("applicationdiscoveryservice", PKG_VERSION);
+pub use aws_smithy_http::endpoint::Endpoint;
+pub use aws_smithy_types::retry::RetryConfig;
 pub use aws_types::region::Region;
 pub use aws_types::Credentials;
 #[cfg(feature = "client")]
 pub use client::Client;
-pub use smithy_http::endpoint::Endpoint;
-pub use smithy_types::retry::RetryConfig;

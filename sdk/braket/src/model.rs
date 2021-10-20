@@ -16,9 +16,9 @@ pub struct QuantumTaskSummary {
     /// <p>The folder in the S3 bucket where the task result file is stored.</p>
     pub output_s3_directory: std::option::Option<std::string::String>,
     /// <p>The time at which the task was created.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time at which the task finished.</p>
-    pub ended_at: std::option::Option<smithy_types::Instant>,
+    pub ended_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Displays the key, value pairs of tags associated with this quantum task.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -50,8 +50,8 @@ pub mod quantum_task_summary {
         pub(crate) shots: std::option::Option<i64>,
         pub(crate) output_s3_bucket: std::option::Option<std::string::String>,
         pub(crate) output_s3_directory: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
-        pub(crate) ended_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) ended_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -62,6 +62,7 @@ pub mod quantum_task_summary {
             self.quantum_task_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the task.</p>
         pub fn set_quantum_task_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -74,6 +75,7 @@ pub mod quantum_task_summary {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the task.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::QuantumTaskStatus>,
@@ -86,6 +88,7 @@ pub mod quantum_task_summary {
             self.device_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the device the task ran on.</p>
         pub fn set_device_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.device_arn = input;
             self
@@ -95,6 +98,7 @@ pub mod quantum_task_summary {
             self.shots = Some(input);
             self
         }
+        /// <p>The shots used for the task.</p>
         pub fn set_shots(mut self, input: std::option::Option<i64>) -> Self {
             self.shots = input;
             self
@@ -104,6 +108,7 @@ pub mod quantum_task_summary {
             self.output_s3_bucket = Some(input.into());
             self
         }
+        /// <p>The S3 bucket where the task result file is stored..</p>
         pub fn set_output_s3_bucket(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -116,6 +121,7 @@ pub mod quantum_task_summary {
             self.output_s3_directory = Some(input.into());
             self
         }
+        /// <p>The folder in the S3 bucket where the task result file is stored.</p>
         pub fn set_output_s3_directory(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -124,23 +130,36 @@ pub mod quantum_task_summary {
             self
         }
         /// <p>The time at which the task was created.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time at which the task was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The time at which the task finished.</p>
-        pub fn ended_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn ended_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.ended_at = Some(input);
             self
         }
-        pub fn set_ended_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time at which the task finished.</p>
+        pub fn set_ended_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.ended_at = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Displays the key, value pairs of tags associated with this quantum task.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -151,6 +170,7 @@ pub mod quantum_task_summary {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>Displays the key, value pairs of tags associated with this quantum task.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -183,6 +203,7 @@ impl QuantumTaskSummary {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -194,12 +215,19 @@ impl QuantumTaskSummary {
     std::hash::Hash,
 )]
 pub enum QuantumTaskStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Cancelled,
+    #[allow(missing_docs)] // documentation missing in model
     Cancelling,
+    #[allow(missing_docs)] // documentation missing in model
     Completed,
+    #[allow(missing_docs)] // documentation missing in model
     Created,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Queued,
+    #[allow(missing_docs)] // documentation missing in model
     Running,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -226,6 +254,7 @@ impl std::str::FromStr for QuantumTaskStatus {
     }
 }
 impl QuantumTaskStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             QuantumTaskStatus::Cancelled => "CANCELLED",
@@ -238,6 +267,7 @@ impl QuantumTaskStatus {
             QuantumTaskStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CANCELLED",
@@ -292,16 +322,23 @@ pub mod search_quantum_tasks_filter {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the device used for the task.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>The values to use for the filter.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
+        /// <p>The values to use for the filter.</p>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -314,6 +351,7 @@ pub mod search_quantum_tasks_filter {
             self.operator = Some(input);
             self
         }
+        /// <p>An operator to use in the filter.</p>
         pub fn set_operator(
             mut self,
             input: std::option::Option<crate::model::SearchQuantumTasksFilterOperator>,
@@ -338,6 +376,7 @@ impl SearchQuantumTasksFilter {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -349,11 +388,17 @@ impl SearchQuantumTasksFilter {
     std::hash::Hash,
 )]
 pub enum SearchQuantumTasksFilterOperator {
+    #[allow(missing_docs)] // documentation missing in model
     Between,
+    #[allow(missing_docs)] // documentation missing in model
     Equal,
+    #[allow(missing_docs)] // documentation missing in model
     Gt,
+    #[allow(missing_docs)] // documentation missing in model
     Gte,
+    #[allow(missing_docs)] // documentation missing in model
     Lt,
+    #[allow(missing_docs)] // documentation missing in model
     Lte,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -379,6 +424,7 @@ impl std::str::FromStr for SearchQuantumTasksFilterOperator {
     }
 }
 impl SearchQuantumTasksFilterOperator {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SearchQuantumTasksFilterOperator::Between => "BETWEEN",
@@ -390,6 +436,7 @@ impl SearchQuantumTasksFilterOperator {
             SearchQuantumTasksFilterOperator::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["BETWEEN", "EQUAL", "GT", "GTE", "LT", "LTE"]
     }
@@ -400,6 +447,7 @@ impl AsRef<str> for SearchQuantumTasksFilterOperator {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -411,7 +459,9 @@ impl AsRef<str> for SearchQuantumTasksFilterOperator {
     std::hash::Hash,
 )]
 pub enum CancellationStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Cancelled,
+    #[allow(missing_docs)] // documentation missing in model
     Cancelling,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -433,6 +483,7 @@ impl std::str::FromStr for CancellationStatus {
     }
 }
 impl CancellationStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CancellationStatus::Cancelled => "CANCELLED",
@@ -440,6 +491,7 @@ impl CancellationStatus {
             CancellationStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CANCELLED", "CANCELLING"]
     }
@@ -494,6 +546,7 @@ pub mod device_summary {
             self.device_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the device.</p>
         pub fn set_device_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.device_arn = input;
             self
@@ -503,6 +556,7 @@ pub mod device_summary {
             self.device_name = Some(input.into());
             self
         }
+        /// <p>The name of the device.</p>
         pub fn set_device_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.device_name = input;
             self
@@ -512,6 +566,7 @@ pub mod device_summary {
             self.provider_name = Some(input.into());
             self
         }
+        /// <p>The provider of the device.</p>
         pub fn set_provider_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -524,6 +579,7 @@ pub mod device_summary {
             self.device_type = Some(input);
             self
         }
+        /// <p>The type of the device.</p>
         pub fn set_device_type(
             mut self,
             input: std::option::Option<crate::model::DeviceType>,
@@ -536,6 +592,7 @@ pub mod device_summary {
             self.device_status = Some(input);
             self
         }
+        /// <p>The status of the device.</p>
         pub fn set_device_status(
             mut self,
             input: std::option::Option<crate::model::DeviceStatus>,
@@ -562,6 +619,7 @@ impl DeviceSummary {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -573,8 +631,11 @@ impl DeviceSummary {
     std::hash::Hash,
 )]
 pub enum DeviceStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Offline,
+    #[allow(missing_docs)] // documentation missing in model
     Online,
+    #[allow(missing_docs)] // documentation missing in model
     Retired,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -597,6 +658,7 @@ impl std::str::FromStr for DeviceStatus {
     }
 }
 impl DeviceStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DeviceStatus::Offline => "OFFLINE",
@@ -605,6 +667,7 @@ impl DeviceStatus {
             DeviceStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["OFFLINE", "ONLINE", "RETIRED"]
     }
@@ -615,6 +678,7 @@ impl AsRef<str> for DeviceStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -626,7 +690,9 @@ impl AsRef<str> for DeviceStatus {
     std::hash::Hash,
 )]
 pub enum DeviceType {
+    #[allow(missing_docs)] // documentation missing in model
     Qpu,
+    #[allow(missing_docs)] // documentation missing in model
     Simulator,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -648,6 +714,7 @@ impl std::str::FromStr for DeviceType {
     }
 }
 impl DeviceType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DeviceType::Qpu => "QPU",
@@ -655,6 +722,7 @@ impl DeviceType {
             DeviceType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["QPU", "SIMULATOR"]
     }
@@ -697,16 +765,23 @@ pub mod search_devices_filter {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name to use to filter results.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>The values to use to filter results.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
+        /// <p>The values to use to filter results.</p>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,

@@ -12,18 +12,22 @@ pub fn deser_payload_create_cache_policy_create_cache_policy_output_cache_policy
 
 pub fn deser_header_create_cache_policy_create_cache_policy_output_e_tag(
     header_map: &http::HeaderMap,
-) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
-{
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
     let headers = header_map.get_all("ETag").iter();
-    smithy_http::header::one_or_none(headers)
+    aws_smithy_http::header::one_or_none(headers)
 }
 
 pub fn deser_header_create_cache_policy_create_cache_policy_output_location(
     header_map: &http::HeaderMap,
-) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
-{
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
     let headers = header_map.get_all("Location").iter();
-    smithy_http::header::one_or_none(headers)
+    aws_smithy_http::header::one_or_none(headers)
 }
 
 pub fn deser_payload_create_cloud_front_origin_access_identity_create_cloud_front_origin_access_identity_output_cloud_front_origin_access_identity(
@@ -39,18 +43,22 @@ pub fn deser_payload_create_cloud_front_origin_access_identity_create_cloud_fron
 
 pub fn deser_header_create_cloud_front_origin_access_identity_create_cloud_front_origin_access_identity_output_e_tag(
     header_map: &http::HeaderMap,
-) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
-{
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
     let headers = header_map.get_all("ETag").iter();
-    smithy_http::header::one_or_none(headers)
+    aws_smithy_http::header::one_or_none(headers)
 }
 
 pub fn deser_header_create_cloud_front_origin_access_identity_create_cloud_front_origin_access_identity_output_location(
     header_map: &http::HeaderMap,
-) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
-{
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
     let headers = header_map.get_all("Location").iter();
-    smithy_http::header::one_or_none(headers)
+    aws_smithy_http::header::one_or_none(headers)
 }
 
 pub fn deser_payload_create_distribution_create_distribution_output_distribution(
@@ -66,18 +74,22 @@ pub fn deser_payload_create_distribution_create_distribution_output_distribution
 
 pub fn deser_header_create_distribution_create_distribution_output_e_tag(
     header_map: &http::HeaderMap,
-) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
-{
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
     let headers = header_map.get_all("ETag").iter();
-    smithy_http::header::one_or_none(headers)
+    aws_smithy_http::header::one_or_none(headers)
 }
 
 pub fn deser_header_create_distribution_create_distribution_output_location(
     header_map: &http::HeaderMap,
-) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
-{
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
     let headers = header_map.get_all("Location").iter();
-    smithy_http::header::one_or_none(headers)
+    aws_smithy_http::header::one_or_none(headers)
 }
 
 pub fn deser_payload_create_distribution_with_tags_create_distribution_with_tags_output_distribution(
@@ -93,26 +105,32 @@ pub fn deser_payload_create_distribution_with_tags_create_distribution_with_tags
 
 pub fn deser_header_create_distribution_with_tags_create_distribution_with_tags_output_e_tag(
     header_map: &http::HeaderMap,
-) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
-{
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
     let headers = header_map.get_all("ETag").iter();
-    smithy_http::header::one_or_none(headers)
+    aws_smithy_http::header::one_or_none(headers)
 }
 
 pub fn deser_header_create_distribution_with_tags_create_distribution_with_tags_output_location(
     header_map: &http::HeaderMap,
-) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
-{
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
     let headers = header_map.get_all("Location").iter();
-    smithy_http::header::one_or_none(headers)
+    aws_smithy_http::header::one_or_none(headers)
 }
 
 pub fn deser_header_create_field_level_encryption_config_create_field_level_encryption_config_output_e_tag(
     header_map: &http::HeaderMap,
-) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
-{
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
     let headers = header_map.get_all("ETag").iter();
-    smithy_http::header::one_or_none(headers)
+    aws_smithy_http::header::one_or_none(headers)
 }
 
 pub fn deser_payload_create_field_level_encryption_config_create_field_level_encryption_config_output_field_level_encryption(
@@ -128,18 +146,22 @@ pub fn deser_payload_create_field_level_encryption_config_create_field_level_enc
 
 pub fn deser_header_create_field_level_encryption_config_create_field_level_encryption_config_output_location(
     header_map: &http::HeaderMap,
-) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
-{
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
     let headers = header_map.get_all("Location").iter();
-    smithy_http::header::one_or_none(headers)
+    aws_smithy_http::header::one_or_none(headers)
 }
 
 pub fn deser_header_create_field_level_encryption_profile_create_field_level_encryption_profile_output_e_tag(
     header_map: &http::HeaderMap,
-) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
-{
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
     let headers = header_map.get_all("ETag").iter();
-    smithy_http::header::one_or_none(headers)
+    aws_smithy_http::header::one_or_none(headers)
 }
 
 pub fn deser_payload_create_field_level_encryption_profile_create_field_level_encryption_profile_output_field_level_encryption_profile(
@@ -155,18 +177,22 @@ pub fn deser_payload_create_field_level_encryption_profile_create_field_level_en
 
 pub fn deser_header_create_field_level_encryption_profile_create_field_level_encryption_profile_output_location(
     header_map: &http::HeaderMap,
-) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
-{
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
     let headers = header_map.get_all("Location").iter();
-    smithy_http::header::one_or_none(headers)
+    aws_smithy_http::header::one_or_none(headers)
 }
 
 pub fn deser_header_create_function_create_function_output_e_tag(
     header_map: &http::HeaderMap,
-) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
-{
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
     let headers = header_map.get_all("ETag").iter();
-    smithy_http::header::one_or_none(headers)
+    aws_smithy_http::header::one_or_none(headers)
 }
 
 pub fn deser_payload_create_function_create_function_output_function_summary(
@@ -182,10 +208,12 @@ pub fn deser_payload_create_function_create_function_output_function_summary(
 
 pub fn deser_header_create_function_create_function_output_location(
     header_map: &http::HeaderMap,
-) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
-{
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
     let headers = header_map.get_all("Location").iter();
-    smithy_http::header::one_or_none(headers)
+    aws_smithy_http::header::one_or_none(headers)
 }
 
 pub fn deser_payload_create_invalidation_create_invalidation_output_invalidation(
@@ -201,18 +229,22 @@ pub fn deser_payload_create_invalidation_create_invalidation_output_invalidation
 
 pub fn deser_header_create_invalidation_create_invalidation_output_location(
     header_map: &http::HeaderMap,
-) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
-{
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
     let headers = header_map.get_all("Location").iter();
-    smithy_http::header::one_or_none(headers)
+    aws_smithy_http::header::one_or_none(headers)
 }
 
 pub fn deser_header_create_key_group_create_key_group_output_e_tag(
     header_map: &http::HeaderMap,
-) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
-{
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
     let headers = header_map.get_all("ETag").iter();
-    smithy_http::header::one_or_none(headers)
+    aws_smithy_http::header::one_or_none(headers)
 }
 
 pub fn deser_payload_create_key_group_create_key_group_output_key_group(
@@ -228,10 +260,12 @@ pub fn deser_payload_create_key_group_create_key_group_output_key_group(
 
 pub fn deser_header_create_key_group_create_key_group_output_location(
     header_map: &http::HeaderMap,
-) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
-{
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
     let headers = header_map.get_all("Location").iter();
-    smithy_http::header::one_or_none(headers)
+    aws_smithy_http::header::one_or_none(headers)
 }
 
 pub fn deser_payload_create_monitoring_subscription_create_monitoring_subscription_output_monitoring_subscription(
@@ -247,18 +281,22 @@ pub fn deser_payload_create_monitoring_subscription_create_monitoring_subscripti
 
 pub fn deser_header_create_origin_request_policy_create_origin_request_policy_output_e_tag(
     header_map: &http::HeaderMap,
-) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
-{
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
     let headers = header_map.get_all("ETag").iter();
-    smithy_http::header::one_or_none(headers)
+    aws_smithy_http::header::one_or_none(headers)
 }
 
 pub fn deser_header_create_origin_request_policy_create_origin_request_policy_output_location(
     header_map: &http::HeaderMap,
-) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
-{
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
     let headers = header_map.get_all("Location").iter();
-    smithy_http::header::one_or_none(headers)
+    aws_smithy_http::header::one_or_none(headers)
 }
 
 pub fn deser_payload_create_origin_request_policy_create_origin_request_policy_output_origin_request_policy(
@@ -274,18 +312,22 @@ pub fn deser_payload_create_origin_request_policy_create_origin_request_policy_o
 
 pub fn deser_header_create_public_key_create_public_key_output_e_tag(
     header_map: &http::HeaderMap,
-) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
-{
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
     let headers = header_map.get_all("ETag").iter();
-    smithy_http::header::one_or_none(headers)
+    aws_smithy_http::header::one_or_none(headers)
 }
 
 pub fn deser_header_create_public_key_create_public_key_output_location(
     header_map: &http::HeaderMap,
-) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
-{
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
     let headers = header_map.get_all("Location").iter();
-    smithy_http::header::one_or_none(headers)
+    aws_smithy_http::header::one_or_none(headers)
 }
 
 pub fn deser_payload_create_public_key_create_public_key_output_public_key(
@@ -301,18 +343,22 @@ pub fn deser_payload_create_public_key_create_public_key_output_public_key(
 
 pub fn deser_header_create_streaming_distribution_create_streaming_distribution_output_e_tag(
     header_map: &http::HeaderMap,
-) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
-{
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
     let headers = header_map.get_all("ETag").iter();
-    smithy_http::header::one_or_none(headers)
+    aws_smithy_http::header::one_or_none(headers)
 }
 
 pub fn deser_header_create_streaming_distribution_create_streaming_distribution_output_location(
     header_map: &http::HeaderMap,
-) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
-{
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
     let headers = header_map.get_all("Location").iter();
-    smithy_http::header::one_or_none(headers)
+    aws_smithy_http::header::one_or_none(headers)
 }
 
 pub fn deser_payload_create_streaming_distribution_create_streaming_distribution_output_streaming_distribution(
@@ -328,18 +374,22 @@ pub fn deser_payload_create_streaming_distribution_create_streaming_distribution
 
 pub fn deser_header_create_streaming_distribution_with_tags_create_streaming_distribution_with_tags_output_e_tag(
     header_map: &http::HeaderMap,
-) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
-{
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
     let headers = header_map.get_all("ETag").iter();
-    smithy_http::header::one_or_none(headers)
+    aws_smithy_http::header::one_or_none(headers)
 }
 
 pub fn deser_header_create_streaming_distribution_with_tags_create_streaming_distribution_with_tags_output_location(
     header_map: &http::HeaderMap,
-) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
-{
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
     let headers = header_map.get_all("Location").iter();
-    smithy_http::header::one_or_none(headers)
+    aws_smithy_http::header::one_or_none(headers)
 }
 
 pub fn deser_payload_create_streaming_distribution_with_tags_create_streaming_distribution_with_tags_output_streaming_distribution(
@@ -355,10 +405,12 @@ pub fn deser_payload_create_streaming_distribution_with_tags_create_streaming_di
 
 pub fn deser_header_describe_function_describe_function_output_e_tag(
     header_map: &http::HeaderMap,
-) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
-{
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
     let headers = header_map.get_all("ETag").iter();
-    smithy_http::header::one_or_none(headers)
+    aws_smithy_http::header::one_or_none(headers)
 }
 
 pub fn deser_payload_describe_function_describe_function_output_function_summary(
@@ -385,10 +437,12 @@ pub fn deser_payload_get_cache_policy_get_cache_policy_output_cache_policy(
 
 pub fn deser_header_get_cache_policy_get_cache_policy_output_e_tag(
     header_map: &http::HeaderMap,
-) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
-{
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
     let headers = header_map.get_all("ETag").iter();
-    smithy_http::header::one_or_none(headers)
+    aws_smithy_http::header::one_or_none(headers)
 }
 
 pub fn deser_payload_get_cache_policy_config_get_cache_policy_config_output_cache_policy_config(
@@ -404,10 +458,12 @@ pub fn deser_payload_get_cache_policy_config_get_cache_policy_config_output_cach
 
 pub fn deser_header_get_cache_policy_config_get_cache_policy_config_output_e_tag(
     header_map: &http::HeaderMap,
-) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
-{
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
     let headers = header_map.get_all("ETag").iter();
-    smithy_http::header::one_or_none(headers)
+    aws_smithy_http::header::one_or_none(headers)
 }
 
 pub fn deser_payload_get_cloud_front_origin_access_identity_get_cloud_front_origin_access_identity_output_cloud_front_origin_access_identity(
@@ -423,10 +479,12 @@ pub fn deser_payload_get_cloud_front_origin_access_identity_get_cloud_front_orig
 
 pub fn deser_header_get_cloud_front_origin_access_identity_get_cloud_front_origin_access_identity_output_e_tag(
     header_map: &http::HeaderMap,
-) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
-{
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
     let headers = header_map.get_all("ETag").iter();
-    smithy_http::header::one_or_none(headers)
+    aws_smithy_http::header::one_or_none(headers)
 }
 
 pub fn deser_payload_get_cloud_front_origin_access_identity_config_get_cloud_front_origin_access_identity_config_output_cloud_front_origin_access_identity_config(
@@ -442,10 +500,12 @@ pub fn deser_payload_get_cloud_front_origin_access_identity_config_get_cloud_fro
 
 pub fn deser_header_get_cloud_front_origin_access_identity_config_get_cloud_front_origin_access_identity_config_output_e_tag(
     header_map: &http::HeaderMap,
-) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
-{
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
     let headers = header_map.get_all("ETag").iter();
-    smithy_http::header::one_or_none(headers)
+    aws_smithy_http::header::one_or_none(headers)
 }
 
 pub fn deser_payload_get_distribution_get_distribution_output_distribution(
@@ -461,10 +521,12 @@ pub fn deser_payload_get_distribution_get_distribution_output_distribution(
 
 pub fn deser_header_get_distribution_get_distribution_output_e_tag(
     header_map: &http::HeaderMap,
-) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
-{
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
     let headers = header_map.get_all("ETag").iter();
-    smithy_http::header::one_or_none(headers)
+    aws_smithy_http::header::one_or_none(headers)
 }
 
 pub fn deser_payload_get_distribution_config_get_distribution_config_output_distribution_config(
@@ -480,18 +542,22 @@ pub fn deser_payload_get_distribution_config_get_distribution_config_output_dist
 
 pub fn deser_header_get_distribution_config_get_distribution_config_output_e_tag(
     header_map: &http::HeaderMap,
-) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
-{
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
     let headers = header_map.get_all("ETag").iter();
-    smithy_http::header::one_or_none(headers)
+    aws_smithy_http::header::one_or_none(headers)
 }
 
 pub fn deser_header_get_field_level_encryption_get_field_level_encryption_output_e_tag(
     header_map: &http::HeaderMap,
-) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
-{
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
     let headers = header_map.get_all("ETag").iter();
-    smithy_http::header::one_or_none(headers)
+    aws_smithy_http::header::one_or_none(headers)
 }
 
 pub fn deser_payload_get_field_level_encryption_get_field_level_encryption_output_field_level_encryption(
@@ -507,10 +573,12 @@ pub fn deser_payload_get_field_level_encryption_get_field_level_encryption_outpu
 
 pub fn deser_header_get_field_level_encryption_config_get_field_level_encryption_config_output_e_tag(
     header_map: &http::HeaderMap,
-) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
-{
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
     let headers = header_map.get_all("ETag").iter();
-    smithy_http::header::one_or_none(headers)
+    aws_smithy_http::header::one_or_none(headers)
 }
 
 pub fn deser_payload_get_field_level_encryption_config_get_field_level_encryption_config_output_field_level_encryption_config(
@@ -526,10 +594,12 @@ pub fn deser_payload_get_field_level_encryption_config_get_field_level_encryptio
 
 pub fn deser_header_get_field_level_encryption_profile_get_field_level_encryption_profile_output_e_tag(
     header_map: &http::HeaderMap,
-) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
-{
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
     let headers = header_map.get_all("ETag").iter();
-    smithy_http::header::one_or_none(headers)
+    aws_smithy_http::header::one_or_none(headers)
 }
 
 pub fn deser_payload_get_field_level_encryption_profile_get_field_level_encryption_profile_output_field_level_encryption_profile(
@@ -545,10 +615,12 @@ pub fn deser_payload_get_field_level_encryption_profile_get_field_level_encrypti
 
 pub fn deser_header_get_field_level_encryption_profile_config_get_field_level_encryption_profile_config_output_e_tag(
     header_map: &http::HeaderMap,
-) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
-{
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
     let headers = header_map.get_all("ETag").iter();
-    smithy_http::header::one_or_none(headers)
+    aws_smithy_http::header::one_or_none(headers)
 }
 
 pub fn deser_payload_get_field_level_encryption_profile_config_get_field_level_encryption_profile_config_output_field_level_encryption_profile_config(
@@ -564,25 +636,30 @@ pub fn deser_payload_get_field_level_encryption_profile_config_get_field_level_e
 
 pub fn deser_header_get_function_get_function_output_content_type(
     header_map: &http::HeaderMap,
-) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
-{
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
     let headers = header_map.get_all("Content-Type").iter();
-    smithy_http::header::one_or_none(headers)
+    aws_smithy_http::header::one_or_none(headers)
 }
 
 pub fn deser_header_get_function_get_function_output_e_tag(
     header_map: &http::HeaderMap,
-) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
-{
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
     let headers = header_map.get_all("ETag").iter();
-    smithy_http::header::one_or_none(headers)
+    aws_smithy_http::header::one_or_none(headers)
 }
 
 pub fn deser_payload_get_function_get_function_output_function_code(
     body: &[u8],
-) -> std::result::Result<std::option::Option<smithy_types::Blob>, crate::error::GetFunctionError> {
+) -> std::result::Result<std::option::Option<aws_smithy_types::Blob>, crate::error::GetFunctionError>
+{
     (!body.is_empty())
-        .then(|| Ok(smithy_types::Blob::new(body)))
+        .then(|| Ok(aws_smithy_types::Blob::new(body)))
         .transpose()
 }
 
@@ -599,10 +676,12 @@ pub fn deser_payload_get_invalidation_get_invalidation_output_invalidation(
 
 pub fn deser_header_get_key_group_get_key_group_output_e_tag(
     header_map: &http::HeaderMap,
-) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
-{
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
     let headers = header_map.get_all("ETag").iter();
-    smithy_http::header::one_or_none(headers)
+    aws_smithy_http::header::one_or_none(headers)
 }
 
 pub fn deser_payload_get_key_group_get_key_group_output_key_group(
@@ -616,10 +695,12 @@ pub fn deser_payload_get_key_group_get_key_group_output_key_group(
 
 pub fn deser_header_get_key_group_config_get_key_group_config_output_e_tag(
     header_map: &http::HeaderMap,
-) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
-{
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
     let headers = header_map.get_all("ETag").iter();
-    smithy_http::header::one_or_none(headers)
+    aws_smithy_http::header::one_or_none(headers)
 }
 
 pub fn deser_payload_get_key_group_config_get_key_group_config_output_key_group_config(
@@ -646,10 +727,12 @@ pub fn deser_payload_get_monitoring_subscription_get_monitoring_subscription_out
 
 pub fn deser_header_get_origin_request_policy_get_origin_request_policy_output_e_tag(
     header_map: &http::HeaderMap,
-) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
-{
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
     let headers = header_map.get_all("ETag").iter();
-    smithy_http::header::one_or_none(headers)
+    aws_smithy_http::header::one_or_none(headers)
 }
 
 pub fn deser_payload_get_origin_request_policy_get_origin_request_policy_output_origin_request_policy(
@@ -665,10 +748,12 @@ pub fn deser_payload_get_origin_request_policy_get_origin_request_policy_output_
 
 pub fn deser_header_get_origin_request_policy_config_get_origin_request_policy_config_output_e_tag(
     header_map: &http::HeaderMap,
-) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
-{
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
     let headers = header_map.get_all("ETag").iter();
-    smithy_http::header::one_or_none(headers)
+    aws_smithy_http::header::one_or_none(headers)
 }
 
 pub fn deser_payload_get_origin_request_policy_config_get_origin_request_policy_config_output_origin_request_policy_config(
@@ -684,10 +769,12 @@ pub fn deser_payload_get_origin_request_policy_config_get_origin_request_policy_
 
 pub fn deser_header_get_public_key_get_public_key_output_e_tag(
     header_map: &http::HeaderMap,
-) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
-{
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
     let headers = header_map.get_all("ETag").iter();
-    smithy_http::header::one_or_none(headers)
+    aws_smithy_http::header::one_or_none(headers)
 }
 
 pub fn deser_payload_get_public_key_get_public_key_output_public_key(
@@ -703,10 +790,12 @@ pub fn deser_payload_get_public_key_get_public_key_output_public_key(
 
 pub fn deser_header_get_public_key_config_get_public_key_config_output_e_tag(
     header_map: &http::HeaderMap,
-) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
-{
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
     let headers = header_map.get_all("ETag").iter();
-    smithy_http::header::one_or_none(headers)
+    aws_smithy_http::header::one_or_none(headers)
 }
 
 pub fn deser_payload_get_public_key_config_get_public_key_config_output_public_key_config(
@@ -722,10 +811,12 @@ pub fn deser_payload_get_public_key_config_get_public_key_config_output_public_k
 
 pub fn deser_header_get_streaming_distribution_get_streaming_distribution_output_e_tag(
     header_map: &http::HeaderMap,
-) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
-{
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
     let headers = header_map.get_all("ETag").iter();
-    smithy_http::header::one_or_none(headers)
+    aws_smithy_http::header::one_or_none(headers)
 }
 
 pub fn deser_payload_get_streaming_distribution_get_streaming_distribution_output_streaming_distribution(
@@ -741,10 +832,12 @@ pub fn deser_payload_get_streaming_distribution_get_streaming_distribution_outpu
 
 pub fn deser_header_get_streaming_distribution_config_get_streaming_distribution_config_output_e_tag(
     header_map: &http::HeaderMap,
-) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
-{
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
     let headers = header_map.get_all("ETag").iter();
-    smithy_http::header::one_or_none(headers)
+    aws_smithy_http::header::one_or_none(headers)
 }
 
 pub fn deser_payload_get_streaming_distribution_config_get_streaming_distribution_config_output_streaming_distribution_config(
@@ -1002,10 +1095,12 @@ pub fn deser_payload_update_cache_policy_update_cache_policy_output_cache_policy
 
 pub fn deser_header_update_cache_policy_update_cache_policy_output_e_tag(
     header_map: &http::HeaderMap,
-) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
-{
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
     let headers = header_map.get_all("ETag").iter();
-    smithy_http::header::one_or_none(headers)
+    aws_smithy_http::header::one_or_none(headers)
 }
 
 pub fn deser_payload_update_cloud_front_origin_access_identity_update_cloud_front_origin_access_identity_output_cloud_front_origin_access_identity(
@@ -1021,10 +1116,12 @@ pub fn deser_payload_update_cloud_front_origin_access_identity_update_cloud_fron
 
 pub fn deser_header_update_cloud_front_origin_access_identity_update_cloud_front_origin_access_identity_output_e_tag(
     header_map: &http::HeaderMap,
-) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
-{
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
     let headers = header_map.get_all("ETag").iter();
-    smithy_http::header::one_or_none(headers)
+    aws_smithy_http::header::one_or_none(headers)
 }
 
 pub fn deser_payload_update_distribution_update_distribution_output_distribution(
@@ -1040,18 +1137,22 @@ pub fn deser_payload_update_distribution_update_distribution_output_distribution
 
 pub fn deser_header_update_distribution_update_distribution_output_e_tag(
     header_map: &http::HeaderMap,
-) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
-{
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
     let headers = header_map.get_all("ETag").iter();
-    smithy_http::header::one_or_none(headers)
+    aws_smithy_http::header::one_or_none(headers)
 }
 
 pub fn deser_header_update_field_level_encryption_config_update_field_level_encryption_config_output_e_tag(
     header_map: &http::HeaderMap,
-) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
-{
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
     let headers = header_map.get_all("ETag").iter();
-    smithy_http::header::one_or_none(headers)
+    aws_smithy_http::header::one_or_none(headers)
 }
 
 pub fn deser_payload_update_field_level_encryption_config_update_field_level_encryption_config_output_field_level_encryption(
@@ -1067,10 +1168,12 @@ pub fn deser_payload_update_field_level_encryption_config_update_field_level_enc
 
 pub fn deser_header_update_field_level_encryption_profile_update_field_level_encryption_profile_output_e_tag(
     header_map: &http::HeaderMap,
-) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
-{
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
     let headers = header_map.get_all("ETag").iter();
-    smithy_http::header::one_or_none(headers)
+    aws_smithy_http::header::one_or_none(headers)
 }
 
 pub fn deser_payload_update_field_level_encryption_profile_update_field_level_encryption_profile_output_field_level_encryption_profile(
@@ -1086,10 +1189,12 @@ pub fn deser_payload_update_field_level_encryption_profile_update_field_level_en
 
 pub fn deser_header_update_function_update_function_output_e_tag(
     header_map: &http::HeaderMap,
-) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
-{
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
     let headers = header_map.get_all("ETtag").iter();
-    smithy_http::header::one_or_none(headers)
+    aws_smithy_http::header::one_or_none(headers)
 }
 
 pub fn deser_payload_update_function_update_function_output_function_summary(
@@ -1105,10 +1210,12 @@ pub fn deser_payload_update_function_update_function_output_function_summary(
 
 pub fn deser_header_update_key_group_update_key_group_output_e_tag(
     header_map: &http::HeaderMap,
-) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
-{
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
     let headers = header_map.get_all("ETag").iter();
-    smithy_http::header::one_or_none(headers)
+    aws_smithy_http::header::one_or_none(headers)
 }
 
 pub fn deser_payload_update_key_group_update_key_group_output_key_group(
@@ -1124,10 +1231,12 @@ pub fn deser_payload_update_key_group_update_key_group_output_key_group(
 
 pub fn deser_header_update_origin_request_policy_update_origin_request_policy_output_e_tag(
     header_map: &http::HeaderMap,
-) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
-{
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
     let headers = header_map.get_all("ETag").iter();
-    smithy_http::header::one_or_none(headers)
+    aws_smithy_http::header::one_or_none(headers)
 }
 
 pub fn deser_payload_update_origin_request_policy_update_origin_request_policy_output_origin_request_policy(
@@ -1143,10 +1252,12 @@ pub fn deser_payload_update_origin_request_policy_update_origin_request_policy_o
 
 pub fn deser_header_update_public_key_update_public_key_output_e_tag(
     header_map: &http::HeaderMap,
-) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
-{
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
     let headers = header_map.get_all("ETag").iter();
-    smithy_http::header::one_or_none(headers)
+    aws_smithy_http::header::one_or_none(headers)
 }
 
 pub fn deser_payload_update_public_key_update_public_key_output_public_key(
@@ -1162,10 +1273,12 @@ pub fn deser_payload_update_public_key_update_public_key_output_public_key(
 
 pub fn deser_header_update_streaming_distribution_update_streaming_distribution_output_e_tag(
     header_map: &http::HeaderMap,
-) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
-{
+) -> std::result::Result<
+    std::option::Option<std::string::String>,
+    aws_smithy_http::header::ParseError,
+> {
     let headers = header_map.get_all("ETag").iter();
-    smithy_http::header::one_or_none(headers)
+    aws_smithy_http::header::one_or_none(headers)
 }
 
 pub fn deser_payload_update_streaming_distribution_update_streaming_distribution_output_streaming_distribution(

@@ -16,6 +16,7 @@ pub mod get_role_credentials_input {
             self.role_name = Some(input.into());
             self
         }
+        /// <p>The friendly name of the role that is assigned to the user.</p>
         pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_name = input;
             self
@@ -25,6 +26,7 @@ pub mod get_role_credentials_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The identifier for the AWS account that is assigned to the user.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -35,6 +37,8 @@ pub mod get_role_credentials_input {
             self.access_token = Some(input.into());
             self
         }
+        /// <p>The token issued by the <code>CreateToken</code> API call. For more information, see
+        /// <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in the <i>AWS SSO OIDC API Reference Guide</i>.</p>
         pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.access_token = input;
             self
@@ -44,7 +48,7 @@ pub mod get_role_credentials_input {
             self,
         ) -> std::result::Result<
             crate::input::GetRoleCredentialsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetRoleCredentialsInput {
                 role_name: self.role_name,
@@ -65,23 +69,23 @@ impl GetRoleCredentialsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetRoleCredentials,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetRoleCredentialsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/federation/credentials").expect("formatting should succeed");
             Ok(())
         }
         fn add_headers(
             _input: &crate::input::GetRoleCredentialsInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_1) = &_input.access_token {
                 let formatted_2 = AsRef::<str>::as_ref(inner_1);
@@ -89,7 +93,7 @@ impl GetRoleCredentialsInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_2;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "access_token",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -102,19 +106,19 @@ impl GetRoleCredentialsInput {
             Ok(builder)
         }
         fn uri_query(_input: &crate::input::GetRoleCredentialsInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_3) = &_input.role_name {
-                query.push_kv("role_name", &smithy_http::query::fmt_string(&inner_3));
+                query.push_kv("role_name", &aws_smithy_http::query::fmt_string(&inner_3));
             }
             if let Some(inner_4) = &_input.account_id {
-                query.push_kv("account_id", &smithy_http::query::fmt_string(&inner_4));
+                query.push_kv("account_id", &aws_smithy_http::query::fmt_string(&inner_4));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::GetRoleCredentialsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -125,23 +129,23 @@ impl GetRoleCredentialsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetRoleCredentialsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -165,15 +169,15 @@ impl GetRoleCredentialsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetRoleCredentials::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetRoleCredentials",
             "sso",
         ));
@@ -182,10 +186,10 @@ impl GetRoleCredentialsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -216,6 +220,7 @@ pub mod list_account_roles_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The page token from the previous response output when you request subsequent pages.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -225,6 +230,7 @@ pub mod list_account_roles_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The number of items that clients can request per page.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -235,6 +241,8 @@ pub mod list_account_roles_input {
             self.access_token = Some(input.into());
             self
         }
+        /// <p>The token issued by the <code>CreateToken</code> API call. For more information, see
+        /// <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in the <i>AWS SSO OIDC API Reference Guide</i>.</p>
         pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.access_token = input;
             self
@@ -244,6 +252,7 @@ pub mod list_account_roles_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The identifier for the AWS account that is assigned to the user.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -253,7 +262,7 @@ pub mod list_account_roles_input {
             self,
         ) -> std::result::Result<
             crate::input::ListAccountRolesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListAccountRolesInput {
                 next_token: self.next_token,
@@ -275,23 +284,23 @@ impl ListAccountRolesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListAccountRoles,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListAccountRolesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/assignment/roles").expect("formatting should succeed");
             Ok(())
         }
         fn add_headers(
             _input: &crate::input::ListAccountRolesInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_5) = &_input.access_token {
                 let formatted_6 = AsRef::<str>::as_ref(inner_5);
@@ -299,7 +308,7 @@ impl ListAccountRolesInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_6;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "access_token",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -312,25 +321,25 @@ impl ListAccountRolesInput {
             Ok(builder)
         }
         fn uri_query(_input: &crate::input::ListAccountRolesInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_7) = &_input.next_token {
-                query.push_kv("next_token", &smithy_http::query::fmt_string(&inner_7));
+                query.push_kv("next_token", &aws_smithy_http::query::fmt_string(&inner_7));
             }
             if let Some(inner_8) = &_input.max_results {
                 query.push_kv(
                     "max_result",
-                    &smithy_types::primitive::Encoder::from(*inner_8).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_8).encode(),
                 );
             }
             if let Some(inner_9) = &_input.account_id {
-                query.push_kv("account_id", &smithy_http::query::fmt_string(&inner_9));
+                query.push_kv("account_id", &aws_smithy_http::query::fmt_string(&inner_9));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::ListAccountRolesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -341,23 +350,23 @@ impl ListAccountRolesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListAccountRolesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -381,15 +390,15 @@ impl ListAccountRolesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListAccountRoles::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListAccountRoles",
             "sso",
         ));
@@ -398,10 +407,10 @@ impl ListAccountRolesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -431,6 +440,7 @@ pub mod list_accounts_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>(Optional) When requesting subsequent pages, this is the page token from the previous response output.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -440,6 +450,7 @@ pub mod list_accounts_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>This is the number of items clients can request per page.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -450,6 +461,8 @@ pub mod list_accounts_input {
             self.access_token = Some(input.into());
             self
         }
+        /// <p>The token issued by the <code>CreateToken</code> API call. For more information, see
+        /// <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in the <i>AWS SSO OIDC API Reference Guide</i>.</p>
         pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.access_token = input;
             self
@@ -457,8 +470,10 @@ pub mod list_accounts_input {
         /// Consumes the builder and constructs a [`ListAccountsInput`](crate::input::ListAccountsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListAccountsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListAccountsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListAccountsInput {
                 next_token: self.next_token,
                 max_results: self.max_results,
@@ -478,23 +493,23 @@ impl ListAccountsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListAccounts,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListAccountsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/assignment/accounts").expect("formatting should succeed");
             Ok(())
         }
         fn add_headers(
             _input: &crate::input::ListAccountsInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_10) = &_input.access_token {
                 let formatted_11 = AsRef::<str>::as_ref(inner_10);
@@ -502,7 +517,7 @@ impl ListAccountsInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_11;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "access_token",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -515,14 +530,14 @@ impl ListAccountsInput {
             Ok(builder)
         }
         fn uri_query(_input: &crate::input::ListAccountsInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_12) = &_input.next_token {
-                query.push_kv("next_token", &smithy_http::query::fmt_string(&inner_12));
+                query.push_kv("next_token", &aws_smithy_http::query::fmt_string(&inner_12));
             }
             if let Some(inner_13) = &_input.max_results {
                 query.push_kv(
                     "max_result",
-                    &smithy_types::primitive::Encoder::from(*inner_13).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_13).encode(),
                 );
             }
         }
@@ -530,7 +545,7 @@ impl ListAccountsInput {
         fn update_http_builder(
             input: &crate::input::ListAccountsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -541,23 +556,23 @@ impl ListAccountsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListAccountsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -581,22 +596,27 @@ impl ListAccountsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListAccounts::new())
-                .with_metadata(smithy_http::operation::Metadata::new("ListAccounts", "sso"));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListAccounts::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListAccounts",
+            "sso",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -625,6 +645,8 @@ pub mod logout_input {
             self.access_token = Some(input.into());
             self
         }
+        /// <p>The token issued by the <code>CreateToken</code> API call. For more information, see
+        /// <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html">CreateToken</a> in the <i>AWS SSO OIDC API Reference Guide</i>.</p>
         pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.access_token = input;
             self
@@ -632,7 +654,7 @@ pub mod logout_input {
         /// Consumes the builder and constructs a [`LogoutInput`](crate::input::LogoutInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::LogoutInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::LogoutInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::LogoutInput {
                 access_token: self.access_token,
@@ -651,20 +673,23 @@ impl LogoutInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<crate::operation::Logout, aws_http::AwsErrorRetryPolicy>,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::Operation<
+            crate::operation::Logout,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::LogoutInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/logout").expect("formatting should succeed");
             Ok(())
         }
         fn add_headers(
             _input: &crate::input::LogoutInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_14) = &_input.access_token {
                 let formatted_15 = AsRef::<str>::as_ref(inner_14);
@@ -672,7 +697,7 @@ impl LogoutInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_15;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "access_token",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -688,7 +713,7 @@ impl LogoutInput {
         fn update_http_builder(
             input: &crate::input::LogoutInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -698,23 +723,23 @@ impl LogoutInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::LogoutInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -738,21 +763,22 @@ impl LogoutInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(request, crate::operation::Logout::new())
-            .with_metadata(smithy_http::operation::Metadata::new("Logout", "sso"));
+        let op =
+            aws_smithy_http::operation::Operation::new(request, crate::operation::Logout::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new("Logout", "sso"));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -766,6 +792,7 @@ impl LogoutInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LogoutInput {
@@ -781,6 +808,7 @@ impl std::fmt::Debug for LogoutInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAccountsInput {
@@ -802,6 +830,7 @@ impl std::fmt::Debug for ListAccountsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAccountRolesInput {
@@ -826,6 +855,7 @@ impl std::fmt::Debug for ListAccountRolesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRoleCredentialsInput {

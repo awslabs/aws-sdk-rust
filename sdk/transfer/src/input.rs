@@ -23,6 +23,8 @@ pub mod create_access_input {
             self.home_directory = Some(input.into());
             self
         }
+        /// <p>The landing directory (folder) for a user when they log in to the server using the client.</p>
+        /// <p>A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.</p>
         pub fn set_home_directory(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -38,6 +40,10 @@ pub mod create_access_input {
             self.home_directory_type = Some(input);
             self
         }
+        /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server.
+        /// If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients.
+        /// If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon
+        /// S3 or EFS paths visible to your users.</p>
         pub fn set_home_directory_type(
             mut self,
             input: std::option::Option<crate::model::HomeDirectoryType>,
@@ -45,6 +51,39 @@ pub mod create_access_input {
             self.home_directory_type = input;
             self
         }
+        /// Appends an item to `home_directory_mappings`.
+        ///
+        /// To override the contents of this collection use [`set_home_directory_mappings`](Self::set_home_directory_mappings).
+        ///
+        /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should
+        /// be visible to your user and how you want to make them visible. You must specify the
+        /// <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path
+        /// is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you
+        /// only specify a target, it is displayed as is. You also must ensure that your Amazon Web Services Identity
+        /// and Access Management (IAM) role provides access to paths in <code>Target</code>. This value
+        /// can only be set when <code>HomeDirectoryType</code> is set to
+        /// <i>LOGICAL</i>.</p>
+        /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example.</p>
+        /// <p>
+        /// <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code>
+        /// </p>
+        /// <p>In most cases, you can use this value instead of the session policy to lock down your
+        /// user to the designated home directory ("<code>chroot</code>"). To do this, you can set
+        /// <code>Entry</code> to <code>/</code> and set <code>Target</code> to the
+        /// <code>HomeDirectory</code> parameter value.</p>
+        /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>
+        /// <p>
+        /// <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code>
+        /// </p>
+        ///
+        /// <note>
+        /// <p>If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is
+        /// ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place
+        /// holders for your directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of
+        /// <code>s3</code> or <code>efs</code> so you can use the put-object operation. For example, you use the
+        /// following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make
+        /// sure that the end of the key name ends in a <code>/</code> for it to be considered a folder.</p>
+        /// </note>
         pub fn home_directory_mappings(
             mut self,
             input: impl Into<crate::model::HomeDirectoryMapEntry>,
@@ -54,6 +93,35 @@ pub mod create_access_input {
             self.home_directory_mappings = Some(v);
             self
         }
+        /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should
+        /// be visible to your user and how you want to make them visible. You must specify the
+        /// <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path
+        /// is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you
+        /// only specify a target, it is displayed as is. You also must ensure that your Amazon Web Services Identity
+        /// and Access Management (IAM) role provides access to paths in <code>Target</code>. This value
+        /// can only be set when <code>HomeDirectoryType</code> is set to
+        /// <i>LOGICAL</i>.</p>
+        /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example.</p>
+        /// <p>
+        /// <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code>
+        /// </p>
+        /// <p>In most cases, you can use this value instead of the session policy to lock down your
+        /// user to the designated home directory ("<code>chroot</code>"). To do this, you can set
+        /// <code>Entry</code> to <code>/</code> and set <code>Target</code> to the
+        /// <code>HomeDirectory</code> parameter value.</p>
+        /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>
+        /// <p>
+        /// <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code>
+        /// </p>
+        ///
+        /// <note>
+        /// <p>If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is
+        /// ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place
+        /// holders for your directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of
+        /// <code>s3</code> or <code>efs</code> so you can use the put-object operation. For example, you use the
+        /// following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make
+        /// sure that the end of the key name ends in a <code>/</code> for it to be considered a folder.</p>
+        /// </note>
         pub fn set_home_directory_mappings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::HomeDirectoryMapEntry>>,
@@ -64,6 +132,7 @@ pub mod create_access_input {
         /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user
         /// access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>,
         /// <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p>
+        ///
         /// <note>
         /// <p>This only applies when the domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>
         /// <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead
@@ -78,6 +147,20 @@ pub mod create_access_input {
             self.policy = Some(input.into());
             self
         }
+        /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user
+        /// access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>,
+        /// <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p>
+        ///
+        /// <note>
+        /// <p>This only applies when the domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>
+        /// <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead
+        /// of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass
+        /// it in the <code>Policy</code> argument.</p>      
+        /// <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy.html">Example
+        /// session policy</a>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web Services Security Token Service API
+        /// Reference</i>.</p>
+        /// </note>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy = input;
             self
@@ -91,6 +174,11 @@ pub mod create_access_input {
             self.posix_profile = Some(input);
             self
         }
+        /// <p>The full POSIX identity, including user ID (<code>Uid</code>), group ID
+        /// (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that controls
+        /// your users' access to your Amazon EFS file systems. The POSIX permissions that are set on
+        /// files and directories in your file system determine the level of access your users get when
+        /// transferring files into and out of your Amazon EFS file systems.</p>
         pub fn set_posix_profile(
             mut self,
             input: std::option::Option<crate::model::PosixProfile>,
@@ -106,6 +194,10 @@ pub mod create_access_input {
             self.role = Some(input.into());
             self
         }
+        /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS
+        /// file system. The policies attached to this role determine the level of access that you want to provide your users when transferring
+        /// files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the
+        /// server to access your resources when servicing your users' transfer requests.</p>
         pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role = input;
             self
@@ -115,6 +207,7 @@ pub mod create_access_input {
             self.server_id = Some(input.into());
             self
         }
+        /// <p>A system-assigned unique identifier for a server instance. This is the specific server that you added your user to.</p>
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_id = input;
             self
@@ -123,16 +216,32 @@ pub mod create_access_input {
         /// The users of the group that you associate have access to your Amazon S3 or Amazon EFS
         /// resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name,
         /// you can view the SID values by running the following command using Windows PowerShell.</p>
+        ///
         /// <p>
         /// <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code>
         /// </p>
+        ///
         /// <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
+        ///
         /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces.
         /// You can also include underscores or any of the following characters: =,.@:/-</p>
         pub fn external_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.external_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier that is required to identify specific groups within your directory.
+        /// The users of the group that you associate have access to your Amazon S3 or Amazon EFS
+        /// resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name,
+        /// you can view the SID values by running the following command using Windows PowerShell.</p>
+        ///
+        /// <p>
+        /// <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code>
+        /// </p>
+        ///
+        /// <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
+        ///
+        /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces.
+        /// You can also include underscores or any of the following characters: =,.@:/-</p>
         pub fn set_external_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.external_id = input;
             self
@@ -140,8 +249,10 @@ pub mod create_access_input {
         /// Consumes the builder and constructs a [`CreateAccessInput`](crate::input::CreateAccessInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreateAccessInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateAccessInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateAccessInput {
                 home_directory: self.home_directory,
                 home_directory_type: self.home_directory_type,
@@ -166,16 +277,16 @@ impl CreateAccessInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateAccess,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateAccessInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -183,7 +294,7 @@ impl CreateAccessInput {
         fn update_http_builder(
             input: &crate::input::CreateAccessInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -192,31 +303,31 @@ impl CreateAccessInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateAccessInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TransferService.CreateAccess",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_access(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -239,25 +350,27 @@ impl CreateAccessInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreateAccess::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "CreateAccess",
-                    "transfer",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateAccess::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateAccess",
+            "transfer",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -294,15 +407,20 @@ pub mod create_server_input {
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Certificate Manager (ACM) certificate. Required
         /// when <code>Protocols</code> is set to <code>FTPS</code>.</p>
+        ///
         /// <p>To request a new public certificate, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request a public certificate</a>
         /// in the <i> Amazon Web Services Certificate Manager User Guide</i>.</p>
+        ///
         /// <p>To import an existing certificate into ACM, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates into ACM</a>
         /// in the <i> Amazon Web Services Certificate Manager User Guide</i>.</p>
+        ///
         /// <p>To request a private certificate to use FTPS through private IP addresses, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html">Request a
         /// private certificate</a> in the <i> Amazon Web Services Certificate Manager User
         /// Guide</i>.</p>
+        ///
         /// <p>Certificates with the following cryptographic algorithms and key sizes are
         /// supported:</p>
+        ///
         /// <ul>
         /// <li>
         /// <p>2048-bit RSA (RSA_2048)</p>
@@ -320,6 +438,7 @@ pub mod create_server_input {
         /// <p>Elliptic Prime Curve 521 bit (EC_secp521r1)</p>
         /// </li>
         /// </ul>
+        ///
         /// <note>
         /// <p>The certificate must be a valid SSL/TLS X.509 version 3 certificate with FQDN or IP
         /// address specified and information about the issuer.</p>
@@ -328,6 +447,44 @@ pub mod create_server_input {
             self.certificate = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Certificate Manager (ACM) certificate. Required
+        /// when <code>Protocols</code> is set to <code>FTPS</code>.</p>
+        ///
+        /// <p>To request a new public certificate, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request a public certificate</a>
+        /// in the <i> Amazon Web Services Certificate Manager User Guide</i>.</p>
+        ///
+        /// <p>To import an existing certificate into ACM, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates into ACM</a>
+        /// in the <i> Amazon Web Services Certificate Manager User Guide</i>.</p>
+        ///
+        /// <p>To request a private certificate to use FTPS through private IP addresses, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html">Request a
+        /// private certificate</a> in the <i> Amazon Web Services Certificate Manager User
+        /// Guide</i>.</p>
+        ///
+        /// <p>Certificates with the following cryptographic algorithms and key sizes are
+        /// supported:</p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>2048-bit RSA (RSA_2048)</p>
+        /// </li>
+        /// <li>
+        /// <p>4096-bit RSA (RSA_4096)</p>
+        /// </li>
+        /// <li>
+        /// <p>Elliptic Prime Curve 256 bit (EC_prime256v1)</p>
+        /// </li>
+        /// <li>
+        /// <p>Elliptic Prime Curve 384 bit (EC_secp384r1)</p>
+        /// </li>
+        /// <li>
+        /// <p>Elliptic Prime Curve 521 bit (EC_secp521r1)</p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <note>
+        /// <p>The certificate must be a valid SSL/TLS X.509 version 3 certificate with FQDN or IP
+        /// address specified and information about the issuer.</p>
+        /// </note>
         pub fn set_certificate(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.certificate = input;
             self
@@ -335,6 +492,7 @@ pub mod create_server_input {
         /// <p>The domain of the storage system that is used for file transfers. There are two domains
         /// available: Amazon Simple Storage Service (Amazon S3) and Amazon Elastic File System (Amazon EFS). The
         /// default value is S3.</p>
+        ///
         /// <note>
         /// <p>After the server is created, the domain cannot be changed.</p>
         /// </note>
@@ -342,6 +500,13 @@ pub mod create_server_input {
             self.domain = Some(input);
             self
         }
+        /// <p>The domain of the storage system that is used for file transfers. There are two domains
+        /// available: Amazon Simple Storage Service (Amazon S3) and Amazon Elastic File System (Amazon EFS). The
+        /// default value is S3.</p>
+        ///
+        /// <note>
+        /// <p>After the server is created, the domain cannot be changed.</p>
+        /// </note>
         pub fn set_domain(mut self, input: std::option::Option<crate::model::Domain>) -> Self {
             self.domain = input;
             self
@@ -355,6 +520,11 @@ pub mod create_server_input {
             self.endpoint_details = Some(input);
             self
         }
+        /// <p>The virtual private cloud (VPC) endpoint settings that are configured for your server.
+        /// When you host your endpoint within your VPC, you can make it accessible only to resources
+        /// within your VPC, or you can attach Elastic IP addresses and make it accessible to clients over
+        /// the internet. Your VPC's default security groups are automatically assigned to your
+        /// endpoint.</p>
         pub fn set_endpoint_details(
             mut self,
             input: std::option::Option<crate::model::EndpointDetails>,
@@ -372,6 +542,7 @@ pub mod create_server_input {
         /// <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Services account on or before May 19, 2021,
         /// you will not be affected. After this date, use
         /// <code>EndpointType</code>=<code>VPC</code>.</p>
+        ///
         /// <p>For more information, see
         /// https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>
         /// <p>It is recommended that you use <code>VPC</code> as the <code>EndpointType</code>. With
@@ -384,6 +555,25 @@ pub mod create_server_input {
             self.endpoint_type = Some(input);
             self
         }
+        /// <p>The type of endpoint that you want your server to use. You can choose to make your server's endpoint publicly accessible (PUBLIC)
+        /// or host it inside your VPC. With an endpoint that is hosted in a VPC, you can restrict access to your server and
+        /// resources only within your VPC or choose to make it internet facing by attaching Elastic IP addresses directly to it.</p>
+        /// <note>
+        /// <p> After May 19, 2021, you won't be able to create a server using
+        /// <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Services account if your account hasn't already
+        /// done so before May 19, 2021. If you have already created servers with
+        /// <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Services account on or before May 19, 2021,
+        /// you will not be affected. After this date, use
+        /// <code>EndpointType</code>=<code>VPC</code>.</p>
+        ///
+        /// <p>For more information, see
+        /// https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>
+        /// <p>It is recommended that you use <code>VPC</code> as the <code>EndpointType</code>. With
+        /// this endpoint type, you have the option to directly associate up to three Elastic IPv4
+        /// addresses (BYO IP included) with your server's endpoint and use VPC security groups to
+        /// restrict traffic by the client's public IP address. This is not possible with
+        /// <code>EndpointType</code> set to <code>VPC_ENDPOINT</code>.</p>
+        /// </note>
         pub fn set_endpoint_type(
             mut self,
             input: std::option::Option<crate::model::EndpointType>,
@@ -393,17 +583,34 @@ pub mod create_server_input {
         }
         /// <p>The RSA private key as generated by the <code>ssh-keygen -N "" -m PEM -f
         /// my-new-server-key</code> command.</p>
+        ///
         /// <important>
         /// <p>If you aren't planning to migrate existing users from an existing SFTP-enabled
         /// server to a new server, don't update the host key. Accidentally changing a
         /// server's host key can be disruptive.</p>
         /// </important>
+        ///
+        ///
+        ///
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change the host key for your SFTP-enabled server</a> in the <i>Amazon Web Services Transfer
         /// Family User Guide</i>.</p>
         pub fn host_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.host_key = Some(input.into());
             self
         }
+        /// <p>The RSA private key as generated by the <code>ssh-keygen -N "" -m PEM -f
+        /// my-new-server-key</code> command.</p>
+        ///
+        /// <important>
+        /// <p>If you aren't planning to migrate existing users from an existing SFTP-enabled
+        /// server to a new server, don't update the host key. Accidentally changing a
+        /// server's host key can be disruptive.</p>
+        /// </important>
+        ///
+        ///
+        ///
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change the host key for your SFTP-enabled server</a> in the <i>Amazon Web Services Transfer
+        /// Family User Guide</i>.</p>
         pub fn set_host_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.host_key = input;
             self
@@ -420,6 +627,11 @@ pub mod create_server_input {
             self.identity_provider_details = Some(input);
             self
         }
+        /// <p>Required when <code>IdentityProviderType</code> is set to
+        /// <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>. Accepts an array containing
+        /// all of the information required to use a directory in <code>AWS_DIRECTORY_SERVICE</code> or
+        /// invoke a customer-supplied authentication API, including the API Gateway URL. Not required
+        /// when <code>IdentityProviderType</code> is set to <code>SERVICE_MANAGED</code>.</p>
         pub fn set_identity_provider_details(
             mut self,
             input: std::option::Option<crate::model::IdentityProviderDetails>,
@@ -441,6 +653,16 @@ pub mod create_server_input {
             self.identity_provider_type = Some(input);
             self
         }
+        /// <p>Specifies the mode of authentication for a server. The default value is
+        /// <code>SERVICE_MANAGED</code>, which allows you to store and access user credentials within
+        /// the Amazon Web Services Transfer Family service.</p>
+        /// <p>Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to
+        /// Active Directory groups in Amazon Web Services Managed Active Directory or Microsoft Active Directory in your
+        /// on-premises environment or in Amazon Web Services using AD Connectors. This option also requires you to
+        /// provide a Directory ID using the <code>IdentityProviderDetails</code> parameter.</p>
+        /// <p>Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your choosing. The
+        /// <code>API_GATEWAY</code> setting requires you to provide an API Gateway endpoint URL to call
+        /// for authentication using the <code>IdentityProviderDetails</code> parameter.</p>
         pub fn set_identity_provider_type(
             mut self,
             input: std::option::Option<crate::model::IdentityProviderType>,
@@ -455,16 +677,95 @@ pub mod create_server_input {
             self.logging_role = Some(input.into());
             self
         }
+        /// <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that allows a server to turn
+        /// on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in
+        /// your CloudWatch logs.</p>
         pub fn set_logging_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.logging_role = input;
             self
         }
+        /// Appends an item to `protocols`.
+        ///
+        /// To override the contents of this collection use [`set_protocols`](Self::set_protocols).
+        ///
+        /// <p>Specifies the file transfer protocol or protocols over which your file transfer protocol
+        /// client can connect to your server's endpoint. The available protocols are:</p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>SFTP</code> (Secure Shell (SSH) File Transfer Protocol): File transfer over
+        /// SSH</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FTPS</code> (File Transfer Protocol Secure): File transfer with TLS
+        /// encryption</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FTP</code> (File Transfer Protocol): Unencrypted file transfer</p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <note>
+        /// <p>If you select <code>FTPS</code>, you must choose a certificate stored in Amazon Web Services Certificate
+        /// Manager (ACM) which is used to identify your server when clients connect to it over
+        /// FTPS.</p>
+        ///
+        /// <p>If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
+        /// <code>EndpointType</code> must be <code>VPC</code> and the
+        /// <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p>
+        ///
+        /// <p>If <code>Protocol</code> includes <code>FTP</code>, then
+        /// <code>AddressAllocationIds</code> cannot be associated.</p>
+        ///
+        /// <p>If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code>
+        /// can be set to <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to
+        /// <code>SERVICE_MANAGED</code>.</p>
+        /// </note>
         pub fn protocols(mut self, input: impl Into<crate::model::Protocol>) -> Self {
             let mut v = self.protocols.unwrap_or_default();
             v.push(input.into());
             self.protocols = Some(v);
             self
         }
+        /// <p>Specifies the file transfer protocol or protocols over which your file transfer protocol
+        /// client can connect to your server's endpoint. The available protocols are:</p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>SFTP</code> (Secure Shell (SSH) File Transfer Protocol): File transfer over
+        /// SSH</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FTPS</code> (File Transfer Protocol Secure): File transfer with TLS
+        /// encryption</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FTP</code> (File Transfer Protocol): Unencrypted file transfer</p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <note>
+        /// <p>If you select <code>FTPS</code>, you must choose a certificate stored in Amazon Web Services Certificate
+        /// Manager (ACM) which is used to identify your server when clients connect to it over
+        /// FTPS.</p>
+        ///
+        /// <p>If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
+        /// <code>EndpointType</code> must be <code>VPC</code> and the
+        /// <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p>
+        ///
+        /// <p>If <code>Protocol</code> includes <code>FTP</code>, then
+        /// <code>AddressAllocationIds</code> cannot be associated.</p>
+        ///
+        /// <p>If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code>
+        /// can be set to <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to
+        /// <code>SERVICE_MANAGED</code>.</p>
+        /// </note>
         pub fn set_protocols(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Protocol>>,
@@ -477,6 +778,7 @@ pub mod create_server_input {
             self.security_policy_name = Some(input.into());
             self
         }
+        /// <p>Specifies the name of the security policy that is attached to the server.</p>
         pub fn set_security_policy_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -484,12 +786,18 @@ pub mod create_server_input {
             self.security_policy_name = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Key-value pairs that can be used to group and search for servers.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>Key-value pairs that can be used to group and search for servers.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -502,6 +810,7 @@ pub mod create_server_input {
             self.workflow_details = Some(input);
             self
         }
+        /// <p>Specifies the workflow ID for the workflow to assign and the execution role used for executing the workflow.</p>
         pub fn set_workflow_details(
             mut self,
             input: std::option::Option<crate::model::WorkflowDetails>,
@@ -512,8 +821,10 @@ pub mod create_server_input {
         /// Consumes the builder and constructs a [`CreateServerInput`](crate::input::CreateServerInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreateServerInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateServerInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateServerInput {
                 certificate: self.certificate,
                 domain: self.domain,
@@ -542,16 +853,16 @@ impl CreateServerInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateServer,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateServerInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -559,7 +870,7 @@ impl CreateServerInput {
         fn update_http_builder(
             input: &crate::input::CreateServerInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -568,31 +879,31 @@ impl CreateServerInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateServerInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TransferService.CreateServer",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_server(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -615,25 +926,27 @@ impl CreateServerInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreateServer::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "CreateServer",
-                    "transfer",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateServer::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateServer",
+            "transfer",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -672,6 +985,8 @@ pub mod create_user_input {
             self.home_directory = Some(input.into());
             self
         }
+        /// <p>The landing directory (folder) for a user when they log in to the server using the client.</p>
+        /// <p>A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.</p>
         pub fn set_home_directory(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -687,6 +1002,10 @@ pub mod create_user_input {
             self.home_directory_type = Some(input);
             self
         }
+        /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server.
+        /// If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients.
+        /// If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon
+        /// S3 or EFS paths visible to your users.</p>
         pub fn set_home_directory_type(
             mut self,
             input: std::option::Option<crate::model::HomeDirectoryType>,
@@ -694,6 +1013,43 @@ pub mod create_user_input {
             self.home_directory_type = input;
             self
         }
+        /// Appends an item to `home_directory_mappings`.
+        ///
+        /// To override the contents of this collection use [`set_home_directory_mappings`](Self::set_home_directory_mappings).
+        ///
+        /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should
+        /// be visible to your user and how you want to make them visible. You must specify the
+        /// <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path
+        /// is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you
+        /// only specify a target, it is displayed as is. You also must ensure that your Amazon Web Services Identity
+        /// and Access Management (IAM) role provides access to paths in <code>Target</code>. This value
+        /// can only be set when <code>HomeDirectoryType</code> is set to
+        /// <i>LOGICAL</i>.</p>
+        ///
+        /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example.</p>
+        ///
+        /// <p>
+        /// <code>[ { "Entry": "/directory1", "Target":
+        /// "/bucket_name/home/mydirectory" } ]</code>
+        /// </p>
+        ///
+        /// <p>In most cases, you can use this value instead of the session policy to lock your user
+        /// down to the designated home directory ("<code>chroot</code>"). To do this, you can set
+        /// <code>Entry</code> to <code>/</code> and set <code>Target</code> to the HomeDirectory
+        /// parameter value.</p>
+        /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>
+        /// <p>
+        /// <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code>
+        /// </p>
+        ///
+        /// <note>
+        /// <p>If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is
+        /// ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place
+        /// holders for your directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of
+        /// <code>s3</code> or <code>efs</code> so you can use the put-object operation. For example, you use the
+        /// following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make
+        /// sure that the end of the key name ends in a <code>/</code> for it to be considered a folder.</p>
+        /// </note>
         pub fn home_directory_mappings(
             mut self,
             input: impl Into<crate::model::HomeDirectoryMapEntry>,
@@ -703,6 +1059,39 @@ pub mod create_user_input {
             self.home_directory_mappings = Some(v);
             self
         }
+        /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should
+        /// be visible to your user and how you want to make them visible. You must specify the
+        /// <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path
+        /// is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you
+        /// only specify a target, it is displayed as is. You also must ensure that your Amazon Web Services Identity
+        /// and Access Management (IAM) role provides access to paths in <code>Target</code>. This value
+        /// can only be set when <code>HomeDirectoryType</code> is set to
+        /// <i>LOGICAL</i>.</p>
+        ///
+        /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example.</p>
+        ///
+        /// <p>
+        /// <code>[ { "Entry": "/directory1", "Target":
+        /// "/bucket_name/home/mydirectory" } ]</code>
+        /// </p>
+        ///
+        /// <p>In most cases, you can use this value instead of the session policy to lock your user
+        /// down to the designated home directory ("<code>chroot</code>"). To do this, you can set
+        /// <code>Entry</code> to <code>/</code> and set <code>Target</code> to the HomeDirectory
+        /// parameter value.</p>
+        /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>
+        /// <p>
+        /// <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code>
+        /// </p>
+        ///
+        /// <note>
+        /// <p>If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is
+        /// ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place
+        /// holders for your directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of
+        /// <code>s3</code> or <code>efs</code> so you can use the put-object operation. For example, you use the
+        /// following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make
+        /// sure that the end of the key name ends in a <code>/</code> for it to be considered a folder.</p>
+        /// </note>
         pub fn set_home_directory_mappings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::HomeDirectoryMapEntry>>,
@@ -713,13 +1102,20 @@ pub mod create_user_input {
         /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user
         /// access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>,
         /// <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p>
+        ///
         /// <note>
         /// <p>This only applies when the domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>
         /// <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead
         /// of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass
         /// it in the <code>Policy</code> argument.</p>
+        ///
+        ///
+        ///
         /// <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy.html">Example session
         /// policy</a>.</p>
+        ///
+        ///
+        ///
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web Services
         /// Security Token Service API Reference</i>.</p>
         /// </note>
@@ -727,6 +1123,26 @@ pub mod create_user_input {
             self.policy = Some(input.into());
             self
         }
+        /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user
+        /// access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>,
+        /// <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p>
+        ///
+        /// <note>
+        /// <p>This only applies when the domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>
+        /// <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead
+        /// of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass
+        /// it in the <code>Policy</code> argument.</p>
+        ///
+        ///
+        ///
+        /// <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy.html">Example session
+        /// policy</a>.</p>
+        ///
+        ///
+        ///
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web Services
+        /// Security Token Service API Reference</i>.</p>
+        /// </note>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy = input;
             self
@@ -740,6 +1156,11 @@ pub mod create_user_input {
             self.posix_profile = Some(input);
             self
         }
+        /// <p>Specifies the full POSIX identity, including user ID (<code>Uid</code>), group ID
+        /// (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that controls
+        /// your users' access to your Amazon EFS file systems. The POSIX permissions that are set on
+        /// files and directories in Amazon EFS determine the level of access your users get when
+        /// transferring files into and out of your Amazon EFS file systems.</p>
         pub fn set_posix_profile(
             mut self,
             input: std::option::Option<crate::model::PosixProfile>,
@@ -755,6 +1176,10 @@ pub mod create_user_input {
             self.role = Some(input.into());
             self
         }
+        /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS
+        /// file system. The policies attached to this role determine the level of access that you want to provide your users when transferring
+        /// files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the
+        /// server to access your resources when servicing your users' transfer requests.</p>
         pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role = input;
             self
@@ -765,6 +1190,8 @@ pub mod create_user_input {
             self.server_id = Some(input.into());
             self
         }
+        /// <p>A system-assigned unique identifier for a server instance. This is the specific server
+        /// that you added your user to.</p>
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_id = input;
             self
@@ -775,6 +1202,8 @@ pub mod create_user_input {
             self.ssh_public_key_body = Some(input.into());
             self
         }
+        /// <p>The public portion of the Secure Shell (SSH) key used to authenticate the user to the
+        /// server.</p>
         pub fn set_ssh_public_key_body(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -782,12 +1211,20 @@ pub mod create_user_input {
             self.ssh_public_key_body = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Key-value pairs that can be used to group and search for users. Tags are metadata attached
+        /// to users for any purpose.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>Key-value pairs that can be used to group and search for users. Tags are metadata attached
+        /// to users for any purpose.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -803,6 +1240,10 @@ pub mod create_user_input {
             self.user_name = Some(input.into());
             self
         }
+        /// <p>A unique string that identifies a user and is associated with a <code>ServerId</code>. This user name must be a minimum of 3 and a maximum of 100 characters
+        /// long. The following are valid characters: a-z, A-Z, 0-9, underscore '_', hyphen
+        /// '-', period '.', and at sign '@'. The user name can't start
+        /// with a hyphen, period, or at sign.</p>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_name = input;
             self
@@ -810,8 +1251,10 @@ pub mod create_user_input {
         /// Consumes the builder and constructs a [`CreateUserInput`](crate::input::CreateUserInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreateUserInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateUserInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateUserInput {
                 home_directory: self.home_directory,
                 home_directory_type: self.home_directory_type,
@@ -838,16 +1281,16 @@ impl CreateUserInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateUser,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateUserInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -855,7 +1298,7 @@ impl CreateUserInput {
         fn update_http_builder(
             input: &crate::input::CreateUserInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -864,29 +1307,31 @@ impl CreateUserInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateUserInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TransferService.CreateUser",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_user(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -909,25 +1354,27 @@ impl CreateUserInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreateUser::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "CreateUser",
-                    "transfer",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateUser::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateUser",
+            "transfer",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -959,16 +1406,81 @@ pub mod create_workflow_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>A textual description for the workflow.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Appends an item to `steps`.
+        ///
+        /// To override the contents of this collection use [`set_steps`](Self::set_steps).
+        ///
+        /// <p>Specifies the details for the steps that are in the specified workflow.</p>
+        /// <p>
+        /// The <code>TYPE</code> specifies which of the following actions is being taken for this step.
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <i>Copy</i>: copy the file to another location</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <i>Custom</i>: custom step with a lambda target</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <i>Delete</i>: delete the file</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <i>Tag</i>: add a tag to the file</p>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>
+        /// Currently, copying and tagging are supported only on S3.
+        /// </p>
+        /// </note>
+        /// <p>
+        /// For file location, you specify either the S3 bucket and key, or the EFS filesystem ID and path.
+        /// </p>
         pub fn steps(mut self, input: impl Into<crate::model::WorkflowStep>) -> Self {
             let mut v = self.steps.unwrap_or_default();
             v.push(input.into());
             self.steps = Some(v);
             self
         }
+        /// <p>Specifies the details for the steps that are in the specified workflow.</p>
+        /// <p>
+        /// The <code>TYPE</code> specifies which of the following actions is being taken for this step.
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <i>Copy</i>: copy the file to another location</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <i>Custom</i>: custom step with a lambda target</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <i>Delete</i>: delete the file</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <i>Tag</i>: add a tag to the file</p>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>
+        /// Currently, copying and tagging are supported only on S3.
+        /// </p>
+        /// </note>
+        /// <p>
+        /// For file location, you specify either the S3 bucket and key, or the EFS filesystem ID and path.
+        /// </p>
         pub fn set_steps(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::WorkflowStep>>,
@@ -976,12 +1488,28 @@ pub mod create_workflow_input {
             self.steps = input;
             self
         }
+        /// Appends an item to `on_exception_steps`.
+        ///
+        /// To override the contents of this collection use [`set_on_exception_steps`](Self::set_on_exception_steps).
+        ///
+        /// <p>Specifies the steps (actions) to take if errors are encountered during execution of the workflow.</p>
+        /// <note>
+        /// <p>For custom steps, the lambda function needs to send <code>FAILURE</code> to the call
+        /// back API to kick off the exception steps. Additionally, if the lambda does not send
+        /// <code>SUCCESS</code> before it times out, the exception steps are executed.</p>
+        /// </note>
         pub fn on_exception_steps(mut self, input: impl Into<crate::model::WorkflowStep>) -> Self {
             let mut v = self.on_exception_steps.unwrap_or_default();
             v.push(input.into());
             self.on_exception_steps = Some(v);
             self
         }
+        /// <p>Specifies the steps (actions) to take if errors are encountered during execution of the workflow.</p>
+        /// <note>
+        /// <p>For custom steps, the lambda function needs to send <code>FAILURE</code> to the call
+        /// back API to kick off the exception steps. Additionally, if the lambda does not send
+        /// <code>SUCCESS</code> before it times out, the exception steps are executed.</p>
+        /// </note>
         pub fn set_on_exception_steps(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::WorkflowStep>>,
@@ -989,12 +1517,20 @@ pub mod create_workflow_input {
             self.on_exception_steps = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Key-value pairs that can be used to group and search for workflows. Tags are metadata attached
+        /// to workflows for any purpose.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>Key-value pairs that can be used to group and search for workflows. Tags are metadata attached
+        /// to workflows for any purpose.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1007,7 +1543,7 @@ pub mod create_workflow_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateWorkflowInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateWorkflowInput {
                 description: self.description,
@@ -1029,16 +1565,16 @@ impl CreateWorkflowInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateWorkflow,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateWorkflowInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1046,7 +1582,7 @@ impl CreateWorkflowInput {
         fn update_http_builder(
             input: &crate::input::CreateWorkflowInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1055,29 +1591,31 @@ impl CreateWorkflowInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateWorkflowInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TransferService.CreateWorkflow",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_workflow(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1100,15 +1638,15 @@ impl CreateWorkflowInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateWorkflow::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateWorkflow",
             "transfer",
         ));
@@ -1117,10 +1655,10 @@ impl CreateWorkflowInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1149,6 +1687,7 @@ pub mod delete_access_input {
             self.server_id = Some(input.into());
             self
         }
+        /// <p>A system-assigned unique identifier for a server that has this user assigned.</p>
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_id = input;
             self
@@ -1157,16 +1696,32 @@ pub mod delete_access_input {
         /// The users of the group that you associate have access to your Amazon S3 or Amazon EFS
         /// resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name,
         /// you can view the SID values by running the following command using Windows PowerShell.</p>
+        ///
         /// <p>
         /// <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code>
         /// </p>
+        ///
         /// <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
+        ///
         /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces.
         /// You can also include underscores or any of the following characters: =,.@:/-</p>
         pub fn external_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.external_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier that is required to identify specific groups within your directory.
+        /// The users of the group that you associate have access to your Amazon S3 or Amazon EFS
+        /// resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name,
+        /// you can view the SID values by running the following command using Windows PowerShell.</p>
+        ///
+        /// <p>
+        /// <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code>
+        /// </p>
+        ///
+        /// <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
+        ///
+        /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces.
+        /// You can also include underscores or any of the following characters: =,.@:/-</p>
         pub fn set_external_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.external_id = input;
             self
@@ -1174,8 +1729,10 @@ pub mod delete_access_input {
         /// Consumes the builder and constructs a [`DeleteAccessInput`](crate::input::DeleteAccessInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeleteAccessInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteAccessInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteAccessInput {
                 server_id: self.server_id,
                 external_id: self.external_id,
@@ -1194,16 +1751,16 @@ impl DeleteAccessInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteAccess,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteAccessInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1211,7 +1768,7 @@ impl DeleteAccessInput {
         fn update_http_builder(
             input: &crate::input::DeleteAccessInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1220,31 +1777,31 @@ impl DeleteAccessInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteAccessInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TransferService.DeleteAccess",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_delete_access(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1267,25 +1824,27 @@ impl DeleteAccessInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeleteAccess::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DeleteAccess",
-                    "transfer",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteAccess::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteAccess",
+            "transfer",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1313,6 +1872,7 @@ pub mod delete_server_input {
             self.server_id = Some(input.into());
             self
         }
+        /// <p>A unique system-assigned identifier for a server instance.</p>
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_id = input;
             self
@@ -1320,8 +1880,10 @@ pub mod delete_server_input {
         /// Consumes the builder and constructs a [`DeleteServerInput`](crate::input::DeleteServerInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeleteServerInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteServerInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteServerInput {
                 server_id: self.server_id,
             })
@@ -1339,16 +1901,16 @@ impl DeleteServerInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteServer,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteServerInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1356,7 +1918,7 @@ impl DeleteServerInput {
         fn update_http_builder(
             input: &crate::input::DeleteServerInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1365,31 +1927,31 @@ impl DeleteServerInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteServerInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TransferService.DeleteServer",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_delete_server(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1412,25 +1974,27 @@ impl DeleteServerInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeleteServer::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DeleteServer",
-                    "transfer",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteServer::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteServer",
+            "transfer",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1461,6 +2025,8 @@ pub mod delete_ssh_public_key_input {
             self.server_id = Some(input.into());
             self
         }
+        /// <p>A system-assigned unique identifier for a file transfer protocol-enabled server instance
+        /// that has the user assigned to it.</p>
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_id = input;
             self
@@ -1470,6 +2036,7 @@ pub mod delete_ssh_public_key_input {
             self.ssh_public_key_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier used to reference your user's specific SSH key.</p>
         pub fn set_ssh_public_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1482,6 +2049,7 @@ pub mod delete_ssh_public_key_input {
             self.user_name = Some(input.into());
             self
         }
+        /// <p>A unique string that identifies a user whose public key is being deleted.</p>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_name = input;
             self
@@ -1491,7 +2059,7 @@ pub mod delete_ssh_public_key_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteSshPublicKeyInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteSshPublicKeyInput {
                 server_id: self.server_id,
@@ -1512,16 +2080,16 @@ impl DeleteSshPublicKeyInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteSshPublicKey,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteSshPublicKeyInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1529,7 +2097,7 @@ impl DeleteSshPublicKeyInput {
         fn update_http_builder(
             input: &crate::input::DeleteSshPublicKeyInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1538,32 +2106,32 @@ impl DeleteSshPublicKeyInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteSshPublicKeyInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TransferService.DeleteSshPublicKey",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_ssh_public_key(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1586,15 +2154,15 @@ impl DeleteSshPublicKeyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteSshPublicKey::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteSshPublicKey",
             "transfer",
         ));
@@ -1603,10 +2171,10 @@ impl DeleteSshPublicKeyInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1636,6 +2204,8 @@ pub mod delete_user_input {
             self.server_id = Some(input.into());
             self
         }
+        /// <p>A system-assigned unique identifier for a server instance that has the user assigned to
+        /// it.</p>
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_id = input;
             self
@@ -1645,6 +2215,7 @@ pub mod delete_user_input {
             self.user_name = Some(input.into());
             self
         }
+        /// <p>A unique string that identifies a user that is being deleted from a server.</p>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_name = input;
             self
@@ -1652,8 +2223,10 @@ pub mod delete_user_input {
         /// Consumes the builder and constructs a [`DeleteUserInput`](crate::input::DeleteUserInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeleteUserInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteUserInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteUserInput {
                 server_id: self.server_id,
                 user_name: self.user_name,
@@ -1672,16 +2245,16 @@ impl DeleteUserInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteUser,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteUserInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1689,7 +2262,7 @@ impl DeleteUserInput {
         fn update_http_builder(
             input: &crate::input::DeleteUserInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1698,29 +2271,31 @@ impl DeleteUserInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteUserInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TransferService.DeleteUser",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_delete_user(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1743,25 +2318,27 @@ impl DeleteUserInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeleteUser::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DeleteUser",
-                    "transfer",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteUser::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteUser",
+            "transfer",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1789,6 +2366,7 @@ pub mod delete_workflow_input {
             self.workflow_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the workflow.</p>
         pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workflow_id = input;
             self
@@ -1798,7 +2376,7 @@ pub mod delete_workflow_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteWorkflowInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteWorkflowInput {
                 workflow_id: self.workflow_id,
@@ -1817,16 +2395,16 @@ impl DeleteWorkflowInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteWorkflow,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteWorkflowInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1834,7 +2412,7 @@ impl DeleteWorkflowInput {
         fn update_http_builder(
             input: &crate::input::DeleteWorkflowInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1843,29 +2421,31 @@ impl DeleteWorkflowInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteWorkflowInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TransferService.DeleteWorkflow",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_delete_workflow(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1888,15 +2468,15 @@ impl DeleteWorkflowInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteWorkflow::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteWorkflow",
             "transfer",
         ));
@@ -1905,10 +2485,10 @@ impl DeleteWorkflowInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1937,6 +2517,7 @@ pub mod describe_access_input {
             self.server_id = Some(input.into());
             self
         }
+        /// <p>A system-assigned unique identifier for a server that has this access assigned.</p>
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_id = input;
             self
@@ -1945,16 +2526,32 @@ pub mod describe_access_input {
         /// The users of the group that you associate have access to your Amazon S3 or Amazon EFS
         /// resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name,
         /// you can view the SID values by running the following command using Windows PowerShell.</p>
+        ///
         /// <p>
         /// <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code>
         /// </p>
+        ///
         /// <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
+        ///
         /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces.
         /// You can also include underscores or any of the following characters: =,.@:/-</p>
         pub fn external_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.external_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier that is required to identify specific groups within your directory.
+        /// The users of the group that you associate have access to your Amazon S3 or Amazon EFS
+        /// resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name,
+        /// you can view the SID values by running the following command using Windows PowerShell.</p>
+        ///
+        /// <p>
+        /// <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code>
+        /// </p>
+        ///
+        /// <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
+        ///
+        /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces.
+        /// You can also include underscores or any of the following characters: =,.@:/-</p>
         pub fn set_external_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.external_id = input;
             self
@@ -1964,7 +2561,7 @@ pub mod describe_access_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeAccessInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeAccessInput {
                 server_id: self.server_id,
@@ -1984,16 +2581,16 @@ impl DescribeAccessInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeAccess,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeAccessInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2001,7 +2598,7 @@ impl DescribeAccessInput {
         fn update_http_builder(
             input: &crate::input::DescribeAccessInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2010,29 +2607,31 @@ impl DescribeAccessInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeAccessInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TransferService.DescribeAccess",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_describe_access(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2055,15 +2654,15 @@ impl DescribeAccessInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeAccess::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeAccess",
             "transfer",
         ));
@@ -2072,10 +2671,10 @@ impl DescribeAccessInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2104,6 +2703,7 @@ pub mod describe_execution_input {
             self.execution_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the execution of a workflow.</p>
         pub fn set_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.execution_id = input;
             self
@@ -2113,6 +2713,7 @@ pub mod describe_execution_input {
             self.workflow_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the workflow.</p>
         pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workflow_id = input;
             self
@@ -2122,7 +2723,7 @@ pub mod describe_execution_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeExecutionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeExecutionInput {
                 execution_id: self.execution_id,
@@ -2142,16 +2743,16 @@ impl DescribeExecutionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeExecution,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeExecutionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2159,7 +2760,7 @@ impl DescribeExecutionInput {
         fn update_http_builder(
             input: &crate::input::DescribeExecutionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2168,32 +2769,32 @@ impl DescribeExecutionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeExecutionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TransferService.DescribeExecution",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_execution(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2216,15 +2817,15 @@ impl DescribeExecutionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeExecution::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeExecution",
             "transfer",
         ));
@@ -2233,10 +2834,10 @@ impl DescribeExecutionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2264,6 +2865,7 @@ pub mod describe_security_policy_input {
             self.security_policy_name = Some(input.into());
             self
         }
+        /// <p>Specifies the name of the security policy that is attached to the server.</p>
         pub fn set_security_policy_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2276,7 +2878,7 @@ pub mod describe_security_policy_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeSecurityPolicyInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeSecurityPolicyInput {
                 security_policy_name: self.security_policy_name,
@@ -2295,16 +2897,16 @@ impl DescribeSecurityPolicyInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeSecurityPolicy,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeSecurityPolicyInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2312,7 +2914,7 @@ impl DescribeSecurityPolicyInput {
         fn update_http_builder(
             input: &crate::input::DescribeSecurityPolicyInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2321,32 +2923,34 @@ impl DescribeSecurityPolicyInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeSecurityPolicyInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TransferService.DescribeSecurityPolicy",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_security_policy(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2369,15 +2973,15 @@ impl DescribeSecurityPolicyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeSecurityPolicy::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeSecurityPolicy",
             "transfer",
         ));
@@ -2386,10 +2990,10 @@ impl DescribeSecurityPolicyInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2417,6 +3021,7 @@ pub mod describe_server_input {
             self.server_id = Some(input.into());
             self
         }
+        /// <p>A system-assigned unique identifier for a server.</p>
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_id = input;
             self
@@ -2426,7 +3031,7 @@ pub mod describe_server_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeServerInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeServerInput {
                 server_id: self.server_id,
@@ -2445,16 +3050,16 @@ impl DescribeServerInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeServer,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeServerInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2462,7 +3067,7 @@ impl DescribeServerInput {
         fn update_http_builder(
             input: &crate::input::DescribeServerInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2471,29 +3076,31 @@ impl DescribeServerInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeServerInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TransferService.DescribeServer",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_describe_server(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2516,15 +3123,15 @@ impl DescribeServerInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeServer::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeServer",
             "transfer",
         ));
@@ -2533,10 +3140,10 @@ impl DescribeServerInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2565,6 +3172,7 @@ pub mod describe_user_input {
             self.server_id = Some(input.into());
             self
         }
+        /// <p>A system-assigned unique identifier for a server that has this user assigned.</p>
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_id = input;
             self
@@ -2575,6 +3183,8 @@ pub mod describe_user_input {
             self.user_name = Some(input.into());
             self
         }
+        /// <p>The name of the user assigned to one or more servers. User names are part of the sign-in
+        /// credentials to use the Amazon Web Services Transfer Family service and perform file transfer tasks.</p>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_name = input;
             self
@@ -2582,8 +3192,10 @@ pub mod describe_user_input {
         /// Consumes the builder and constructs a [`DescribeUserInput`](crate::input::DescribeUserInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DescribeUserInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeUserInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeUserInput {
                 server_id: self.server_id,
                 user_name: self.user_name,
@@ -2602,16 +3214,16 @@ impl DescribeUserInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeUser,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeUserInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2619,7 +3231,7 @@ impl DescribeUserInput {
         fn update_http_builder(
             input: &crate::input::DescribeUserInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2628,31 +3240,31 @@ impl DescribeUserInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeUserInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TransferService.DescribeUser",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_describe_user(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2675,25 +3287,27 @@ impl DescribeUserInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DescribeUser::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DescribeUser",
-                    "transfer",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeUser::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeUser",
+            "transfer",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2721,6 +3335,7 @@ pub mod describe_workflow_input {
             self.workflow_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the workflow.</p>
         pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workflow_id = input;
             self
@@ -2730,7 +3345,7 @@ pub mod describe_workflow_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeWorkflowInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeWorkflowInput {
                 workflow_id: self.workflow_id,
@@ -2749,16 +3364,16 @@ impl DescribeWorkflowInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeWorkflow,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeWorkflowInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2766,7 +3381,7 @@ impl DescribeWorkflowInput {
         fn update_http_builder(
             input: &crate::input::DescribeWorkflowInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2775,32 +3390,32 @@ impl DescribeWorkflowInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeWorkflowInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TransferService.DescribeWorkflow",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_workflow(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2823,15 +3438,15 @@ impl DescribeWorkflowInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeWorkflow::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeWorkflow",
             "transfer",
         ));
@@ -2840,10 +3455,10 @@ impl DescribeWorkflowInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2873,6 +3488,7 @@ pub mod import_ssh_public_key_input {
             self.server_id = Some(input.into());
             self
         }
+        /// <p>A system-assigned unique identifier for a server.</p>
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_id = input;
             self
@@ -2882,6 +3498,7 @@ pub mod import_ssh_public_key_input {
             self.ssh_public_key_body = Some(input.into());
             self
         }
+        /// <p>The public key portion of an SSH key pair.</p>
         pub fn set_ssh_public_key_body(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2894,6 +3511,7 @@ pub mod import_ssh_public_key_input {
             self.user_name = Some(input.into());
             self
         }
+        /// <p>The name of the user account that is assigned to one or more servers.</p>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_name = input;
             self
@@ -2903,7 +3521,7 @@ pub mod import_ssh_public_key_input {
             self,
         ) -> std::result::Result<
             crate::input::ImportSshPublicKeyInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ImportSshPublicKeyInput {
                 server_id: self.server_id,
@@ -2924,16 +3542,16 @@ impl ImportSshPublicKeyInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ImportSshPublicKey,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ImportSshPublicKeyInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2941,7 +3559,7 @@ impl ImportSshPublicKeyInput {
         fn update_http_builder(
             input: &crate::input::ImportSshPublicKeyInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2950,32 +3568,32 @@ impl ImportSshPublicKeyInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ImportSshPublicKeyInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TransferService.ImportSshPublicKey",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_import_ssh_public_key(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2998,15 +3616,15 @@ impl ImportSshPublicKeyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ImportSshPublicKey::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ImportSshPublicKey",
             "transfer",
         ));
@@ -3015,10 +3633,10 @@ impl ImportSshPublicKeyInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3048,6 +3666,7 @@ pub mod list_accesses_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>Specifies the maximum number of access SIDs to return.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3060,6 +3679,10 @@ pub mod list_accesses_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>When you can get additional results from the <code>ListAccesses</code> call, a
+        /// <code>NextToken</code> parameter is returned in the output. You can then pass in a
+        /// subsequent command to the <code>NextToken</code> parameter to continue listing additional
+        /// accesses.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3069,6 +3692,7 @@ pub mod list_accesses_input {
             self.server_id = Some(input.into());
             self
         }
+        /// <p>A system-assigned unique identifier for a server that has users assigned to it.</p>
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_id = input;
             self
@@ -3076,8 +3700,10 @@ pub mod list_accesses_input {
         /// Consumes the builder and constructs a [`ListAccessesInput`](crate::input::ListAccessesInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListAccessesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListAccessesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListAccessesInput {
                 max_results: self.max_results,
                 next_token: self.next_token,
@@ -3097,16 +3723,16 @@ impl ListAccessesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListAccesses,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListAccessesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3114,7 +3740,7 @@ impl ListAccessesInput {
         fn update_http_builder(
             input: &crate::input::ListAccessesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3123,31 +3749,31 @@ impl ListAccessesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListAccessesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TransferService.ListAccesses",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_accesses(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3170,25 +3796,27 @@ impl ListAccessesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListAccesses::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ListAccesses",
-                    "transfer",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListAccesses::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListAccesses",
+            "transfer",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3218,6 +3846,7 @@ pub mod list_executions_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>Specifies the aximum number of executions to return.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3248,6 +3877,28 @@ pub mod list_executions_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>
+        /// <code>ListExecutions</code> returns the <code>NextToken</code> parameter in the output.
+        /// You can then pass the <code>NextToken</code> parameter in a subsequent command to
+        /// continue listing additional executions.</p>
+        /// <p>
+        /// This is useful for pagination, for instance.
+        /// If you have 100 executions for a workflow, you might only want to list first 10. If so, callthe API by specifing the <code>max-results</code>:
+        /// </p>
+        /// <p>
+        /// <code>aws transfer list-executions --max-results 10</code>
+        /// </p>
+        /// <p>
+        /// This returns details for the first 10 executions, as well as the pointer (<code>NextToken</code>) to the eleventh execution.
+        /// You can now call the API again, suppling the <code>NextToken</code> value you received:
+        /// </p>
+        /// <p>
+        /// <code>aws transfer list-executions --max-results 10 --next-token $somePointerReturnedFromPreviousListResult</code>
+        /// </p>
+        /// <p>
+        /// This call returns the next 10 executions, the 11th through the 20th. You can then repeat the call until the details
+        /// for all 100 executions have been returned.
+        /// </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3257,6 +3908,7 @@ pub mod list_executions_input {
             self.workflow_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the workflow.</p>
         pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workflow_id = input;
             self
@@ -3266,7 +3918,7 @@ pub mod list_executions_input {
             self,
         ) -> std::result::Result<
             crate::input::ListExecutionsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListExecutionsInput {
                 max_results: self.max_results,
@@ -3287,16 +3939,16 @@ impl ListExecutionsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListExecutions,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListExecutionsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3304,7 +3956,7 @@ impl ListExecutionsInput {
         fn update_http_builder(
             input: &crate::input::ListExecutionsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3313,29 +3965,31 @@ impl ListExecutionsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListExecutionsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TransferService.ListExecutions",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_executions(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3358,15 +4012,15 @@ impl ListExecutionsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListExecutions::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListExecutions",
             "transfer",
         ));
@@ -3375,10 +4029,10 @@ impl ListExecutionsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3408,6 +4062,8 @@ pub mod list_security_policies_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>Specifies the number of security policies to return as a response to the
+        /// <code>ListSecurityPolicies</code> query.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3420,6 +4076,10 @@ pub mod list_security_policies_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>When additional results are obtained from the <code>ListSecurityPolicies</code> command, a
+        /// <code>NextToken</code> parameter is returned in the output. You can then pass the
+        /// <code>NextToken</code> parameter in a subsequent command to continue listing additional
+        /// security policies.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3429,7 +4089,7 @@ pub mod list_security_policies_input {
             self,
         ) -> std::result::Result<
             crate::input::ListSecurityPoliciesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListSecurityPoliciesInput {
                 max_results: self.max_results,
@@ -3449,16 +4109,16 @@ impl ListSecurityPoliciesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListSecurityPolicies,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListSecurityPoliciesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3466,7 +4126,7 @@ impl ListSecurityPoliciesInput {
         fn update_http_builder(
             input: &crate::input::ListSecurityPoliciesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3475,32 +4135,32 @@ impl ListSecurityPoliciesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListSecurityPoliciesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TransferService.ListSecurityPolicies",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_security_policies(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3523,15 +4183,15 @@ impl ListSecurityPoliciesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListSecurityPolicies::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListSecurityPolicies",
             "transfer",
         ));
@@ -3540,10 +4200,10 @@ impl ListSecurityPoliciesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3573,6 +4233,8 @@ pub mod list_servers_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>Specifies the number of servers to return as a response to the <code>ListServers</code>
+        /// query.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3585,6 +4247,10 @@ pub mod list_servers_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>When additional results are obtained from the <code>ListServers</code> command, a
+        /// <code>NextToken</code> parameter is returned in the output. You can then pass the
+        /// <code>NextToken</code> parameter in a subsequent command to continue listing additional
+        /// servers.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3592,8 +4258,10 @@ pub mod list_servers_input {
         /// Consumes the builder and constructs a [`ListServersInput`](crate::input::ListServersInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListServersInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListServersInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListServersInput {
                 max_results: self.max_results,
                 next_token: self.next_token,
@@ -3612,16 +4280,16 @@ impl ListServersInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListServers,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListServersInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3629,7 +4297,7 @@ impl ListServersInput {
         fn update_http_builder(
             input: &crate::input::ListServersInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3638,29 +4306,31 @@ impl ListServersInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListServersInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TransferService.ListServers",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_servers(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3683,25 +4353,27 @@ impl ListServersInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListServers::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ListServers",
-                    "transfer",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListServers::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListServers",
+            "transfer",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3732,6 +4404,8 @@ pub mod list_tags_for_resource_input {
             self.arn = Some(input.into());
             self
         }
+        /// <p>Requests the tags associated with a particular Amazon Resource Name (ARN). An ARN is an
+        /// identifier for a specific Amazon Web Services resource, such as a server, user, or role.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -3742,6 +4416,8 @@ pub mod list_tags_for_resource_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>Specifies the number of tags to return as a response to the
+        /// <code>ListTagsForResource</code> request.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3753,6 +4429,9 @@ pub mod list_tags_for_resource_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>When you request additional results from the <code>ListTagsForResource</code> operation, a
+        /// <code>NextToken</code> parameter is returned in the input. You can then pass in a subsequent
+        /// command to the <code>NextToken</code> parameter to continue listing additional tags.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3762,7 +4441,7 @@ pub mod list_tags_for_resource_input {
             self,
         ) -> std::result::Result<
             crate::input::ListTagsForResourceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListTagsForResourceInput {
                 arn: self.arn,
@@ -3783,16 +4462,16 @@ impl ListTagsForResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListTagsForResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3800,7 +4479,7 @@ impl ListTagsForResourceInput {
         fn update_http_builder(
             input: &crate::input::ListTagsForResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3809,32 +4488,32 @@ impl ListTagsForResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListTagsForResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TransferService.ListTagsForResource",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3857,15 +4536,15 @@ impl ListTagsForResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListTagsForResource::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListTagsForResource",
             "transfer",
         ));
@@ -3874,10 +4553,10 @@ impl ListTagsForResourceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3908,6 +4587,8 @@ pub mod list_users_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>Specifies the number of users to return as a response to the <code>ListUsers</code>
+        /// request.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3920,6 +4601,10 @@ pub mod list_users_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>When you can get additional results from the <code>ListUsers</code> call, a
+        /// <code>NextToken</code> parameter is returned in the output. You can then pass in a
+        /// subsequent command to the <code>NextToken</code> parameter to continue listing additional
+        /// users.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3929,6 +4614,7 @@ pub mod list_users_input {
             self.server_id = Some(input.into());
             self
         }
+        /// <p>A system-assigned unique identifier for a server that has users assigned to it.</p>
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_id = input;
             self
@@ -3936,7 +4622,7 @@ pub mod list_users_input {
         /// Consumes the builder and constructs a [`ListUsersInput`](crate::input::ListUsersInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListUsersInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::ListUsersInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::ListUsersInput {
                 max_results: self.max_results,
@@ -3957,16 +4643,16 @@ impl ListUsersInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListUsers,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListUsersInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3974,7 +4660,7 @@ impl ListUsersInput {
         fn update_http_builder(
             input: &crate::input::ListUsersInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3983,29 +4669,31 @@ impl ListUsersInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListUsersInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TransferService.ListUsers",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_users(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4028,13 +4716,13 @@ impl ListUsersInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
         let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListUsers::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
+            aws_smithy_http::operation::Operation::new(request, crate::operation::ListUsers::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "ListUsers",
                     "transfer",
                 ));
@@ -4043,10 +4731,10 @@ impl ListUsersInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4075,6 +4763,7 @@ pub mod list_workflows_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>Specifies the maximum number of workflows to return.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -4087,6 +4776,10 @@ pub mod list_workflows_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>
+        /// <code>ListWorkflows</code> returns the <code>NextToken</code> parameter in the output.
+        /// You can then pass the <code>NextToken</code> parameter in a subsequent command to
+        /// continue listing additional workflows.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4094,8 +4787,10 @@ pub mod list_workflows_input {
         /// Consumes the builder and constructs a [`ListWorkflowsInput`](crate::input::ListWorkflowsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListWorkflowsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListWorkflowsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListWorkflowsInput {
                 max_results: self.max_results,
                 next_token: self.next_token,
@@ -4114,16 +4809,16 @@ impl ListWorkflowsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListWorkflows,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListWorkflowsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4131,7 +4826,7 @@ impl ListWorkflowsInput {
         fn update_http_builder(
             input: &crate::input::ListWorkflowsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4140,29 +4835,31 @@ impl ListWorkflowsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListWorkflowsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TransferService.ListWorkflows",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_workflows(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4185,25 +4882,27 @@ impl ListWorkflowsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListWorkflows::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ListWorkflows",
-                    "transfer",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListWorkflows::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListWorkflows",
+            "transfer",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4234,6 +4933,7 @@ pub mod send_workflow_step_state_input {
             self.workflow_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the workflow.</p>
         pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workflow_id = input;
             self
@@ -4243,6 +4943,7 @@ pub mod send_workflow_step_state_input {
             self.execution_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the execution of a workflow.</p>
         pub fn set_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.execution_id = input;
             self
@@ -4252,6 +4953,7 @@ pub mod send_workflow_step_state_input {
             self.token = Some(input.into());
             self
         }
+        /// <p>Used to distinguish between multiple callbacks for multiple Lambda steps within the same execution.</p>
         pub fn set_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.token = input;
             self
@@ -4261,6 +4963,7 @@ pub mod send_workflow_step_state_input {
             self.status = Some(input);
             self
         }
+        /// <p>Indicates whether the specified step succeeded or failed.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::CustomStepStatus>,
@@ -4273,7 +4976,7 @@ pub mod send_workflow_step_state_input {
             self,
         ) -> std::result::Result<
             crate::input::SendWorkflowStepStateInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::SendWorkflowStepStateInput {
                 workflow_id: self.workflow_id,
@@ -4295,16 +4998,16 @@ impl SendWorkflowStepStateInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::SendWorkflowStepState,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SendWorkflowStepStateInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4312,7 +5015,7 @@ impl SendWorkflowStepStateInput {
         fn update_http_builder(
             input: &crate::input::SendWorkflowStepStateInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4321,32 +5024,34 @@ impl SendWorkflowStepStateInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SendWorkflowStepStateInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TransferService.SendWorkflowStepState",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_send_workflow_step_state(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4369,15 +5074,15 @@ impl SendWorkflowStepStateInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::SendWorkflowStepState::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "SendWorkflowStepState",
             "transfer",
         ));
@@ -4386,10 +5091,10 @@ impl SendWorkflowStepStateInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4417,6 +5122,7 @@ pub mod start_server_input {
             self.server_id = Some(input.into());
             self
         }
+        /// <p>A system-assigned unique identifier for a server that you start.</p>
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_id = input;
             self
@@ -4424,8 +5130,10 @@ pub mod start_server_input {
         /// Consumes the builder and constructs a [`StartServerInput`](crate::input::StartServerInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::StartServerInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::StartServerInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::StartServerInput {
                 server_id: self.server_id,
             })
@@ -4443,16 +5151,16 @@ impl StartServerInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::StartServer,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::StartServerInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4460,7 +5168,7 @@ impl StartServerInput {
         fn update_http_builder(
             input: &crate::input::StartServerInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4469,29 +5177,31 @@ impl StartServerInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::StartServerInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TransferService.StartServer",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_start_server(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4514,25 +5224,27 @@ impl StartServerInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::StartServer::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "StartServer",
-                    "transfer",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::StartServer::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "StartServer",
+            "transfer",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4560,6 +5272,7 @@ pub mod stop_server_input {
             self.server_id = Some(input.into());
             self
         }
+        /// <p>A system-assigned unique identifier for a server that you stopped.</p>
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_id = input;
             self
@@ -4567,8 +5280,10 @@ pub mod stop_server_input {
         /// Consumes the builder and constructs a [`StopServerInput`](crate::input::StopServerInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::StopServerInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::StopServerInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::StopServerInput {
                 server_id: self.server_id,
             })
@@ -4586,16 +5301,16 @@ impl StopServerInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::StopServer,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::StopServerInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4603,7 +5318,7 @@ impl StopServerInput {
         fn update_http_builder(
             input: &crate::input::StopServerInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4612,29 +5327,31 @@ impl StopServerInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::StopServerInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TransferService.StopServer",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_stop_server(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4657,25 +5374,27 @@ impl StopServerInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::StopServer::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "StopServer",
-                    "transfer",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::StopServer::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "StopServer",
+            "transfer",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4705,16 +5424,26 @@ pub mod tag_resource_input {
             self.arn = Some(input.into());
             self
         }
+        /// <p>An Amazon Resource Name (ARN) for a specific Amazon Web Services resource, such as a server, user, or
+        /// role.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Key-value pairs assigned to ARNs that you can use to group and search for resources by
+        /// type. You can attach this metadata to user accounts for any purpose.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>Key-value pairs assigned to ARNs that you can use to group and search for resources by
+        /// type. You can attach this metadata to user accounts for any purpose.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -4725,8 +5454,10 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::TagResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::TagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::TagResourceInput {
                 arn: self.arn,
                 tags: self.tags,
@@ -4745,16 +5476,16 @@ impl TagResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::TagResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4762,7 +5493,7 @@ impl TagResourceInput {
         fn update_http_builder(
             input: &crate::input::TagResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4771,29 +5502,31 @@ impl TagResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::TagResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TransferService.TagResource",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4816,25 +5549,27 @@ impl TagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::TagResource::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "TagResource",
-                    "transfer",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::TagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "TagResource",
+            "transfer",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4867,12 +5602,16 @@ pub mod test_identity_provider_input {
             self.server_id = Some(input.into());
             self
         }
+        /// <p>A system-assigned identifier for a specific server. That server's user authentication
+        /// method is tested with a user name and password.</p>
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_id = input;
             self
         }
         /// <p>The type of file transfer protocol to be tested.</p>
+        ///
         /// <p>The available protocols are:</p>
+        ///
         /// <ul>
         /// <li>
         /// <p>Secure Shell (SSH) File Transfer Protocol (SFTP)</p>
@@ -4888,6 +5627,21 @@ pub mod test_identity_provider_input {
             self.server_protocol = Some(input);
             self
         }
+        /// <p>The type of file transfer protocol to be tested.</p>
+        ///
+        /// <p>The available protocols are:</p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>Secure Shell (SSH) File Transfer Protocol (SFTP)</p>
+        /// </li>
+        /// <li>
+        /// <p>File Transfer Protocol Secure (FTPS)</p>
+        /// </li>
+        /// <li>
+        /// <p>File Transfer Protocol (FTP)</p>
+        /// </li>
+        /// </ul>
         pub fn set_server_protocol(
             mut self,
             input: std::option::Option<crate::model::Protocol>,
@@ -4900,6 +5654,7 @@ pub mod test_identity_provider_input {
             self.source_ip = Some(input.into());
             self
         }
+        /// <p>The source IP address of the user account to be tested.</p>
         pub fn set_source_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source_ip = input;
             self
@@ -4909,6 +5664,7 @@ pub mod test_identity_provider_input {
             self.user_name = Some(input.into());
             self
         }
+        /// <p>The name of the user account to be tested.</p>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_name = input;
             self
@@ -4918,6 +5674,7 @@ pub mod test_identity_provider_input {
             self.user_password = Some(input.into());
             self
         }
+        /// <p>The password of the user account to be tested.</p>
         pub fn set_user_password(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4930,7 +5687,7 @@ pub mod test_identity_provider_input {
             self,
         ) -> std::result::Result<
             crate::input::TestIdentityProviderInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::TestIdentityProviderInput {
                 server_id: self.server_id,
@@ -4953,16 +5710,16 @@ impl TestIdentityProviderInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::TestIdentityProvider,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::TestIdentityProviderInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4970,7 +5727,7 @@ impl TestIdentityProviderInput {
         fn update_http_builder(
             input: &crate::input::TestIdentityProviderInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4979,32 +5736,32 @@ impl TestIdentityProviderInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::TestIdentityProviderInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TransferService.TestIdentityProvider",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_test_identity_provider(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5027,15 +5784,15 @@ impl TestIdentityProviderInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::TestIdentityProvider::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "TestIdentityProvider",
             "transfer",
         ));
@@ -5044,10 +5801,10 @@ impl TestIdentityProviderInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5077,16 +5834,26 @@ pub mod untag_resource_input {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The value of the resource that will have the tag removed. An Amazon Resource Name (ARN) is
+        /// an identifier for a specific Amazon Web Services resource, such as a server, user, or role.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
+        /// Appends an item to `tag_keys`.
+        ///
+        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
+        ///
+        /// <p>TagKeys are key-value pairs assigned to ARNs that can be used to group and search for
+        /// resources by type. This metadata can be attached to resources for any purpose.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
+        /// <p>TagKeys are key-value pairs assigned to ARNs that can be used to group and search for
+        /// resources by type. This metadata can be attached to resources for any purpose.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5097,8 +5864,10 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UntagResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UntagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UntagResourceInput {
                 arn: self.arn,
                 tag_keys: self.tag_keys,
@@ -5117,16 +5886,16 @@ impl UntagResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UntagResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5134,7 +5903,7 @@ impl UntagResourceInput {
         fn update_http_builder(
             input: &crate::input::UntagResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5143,29 +5912,31 @@ impl UntagResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UntagResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TransferService.UntagResource",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5188,25 +5959,27 @@ impl UntagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UntagResource::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UntagResource",
-                    "transfer",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UntagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UntagResource",
+            "transfer",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5243,6 +6016,8 @@ pub mod update_access_input {
             self.home_directory = Some(input.into());
             self
         }
+        /// <p>The landing directory (folder) for a user when they log in to the server using the client.</p>
+        /// <p>A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.</p>
         pub fn set_home_directory(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5258,6 +6033,10 @@ pub mod update_access_input {
             self.home_directory_type = Some(input);
             self
         }
+        /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server.
+        /// If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients.
+        /// If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon
+        /// S3 or EFS paths visible to your users.</p>
         pub fn set_home_directory_type(
             mut self,
             input: std::option::Option<crate::model::HomeDirectoryType>,
@@ -5265,6 +6044,39 @@ pub mod update_access_input {
             self.home_directory_type = input;
             self
         }
+        /// Appends an item to `home_directory_mappings`.
+        ///
+        /// To override the contents of this collection use [`set_home_directory_mappings`](Self::set_home_directory_mappings).
+        ///
+        /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should
+        /// be visible to your user and how you want to make them visible. You must specify the
+        /// <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path
+        /// is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you
+        /// only specify a target, it is displayed as is. You also must ensure that your Amazon Web Services Identity
+        /// and Access Management (IAM) role provides access to paths in <code>Target</code>. This value
+        /// can only be set when <code>HomeDirectoryType</code> is set to
+        /// <i>LOGICAL</i>.</p>
+        /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example.</p>
+        /// <p>
+        /// <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code>
+        /// </p>
+        /// <p>In most cases, you can use this value instead of the session policy to lock down your
+        /// user to the designated home directory ("<code>chroot</code>"). To do this, you can set
+        /// <code>Entry</code> to <code>/</code> and set <code>Target</code> to the
+        /// <code>HomeDirectory</code> parameter value.</p>
+        /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>
+        /// <p>
+        /// <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code>
+        /// </p>
+        ///
+        /// <note>
+        /// <p>If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is
+        /// ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place
+        /// holders for your directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of
+        /// <code>s3</code> or <code>efs</code> so you can use the put-object operation. For example, you use the
+        /// following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make
+        /// sure that the end of the key name ends in a <code>/</code> for it to be considered a folder.</p>
+        /// </note>
         pub fn home_directory_mappings(
             mut self,
             input: impl Into<crate::model::HomeDirectoryMapEntry>,
@@ -5274,6 +6086,35 @@ pub mod update_access_input {
             self.home_directory_mappings = Some(v);
             self
         }
+        /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should
+        /// be visible to your user and how you want to make them visible. You must specify the
+        /// <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path
+        /// is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you
+        /// only specify a target, it is displayed as is. You also must ensure that your Amazon Web Services Identity
+        /// and Access Management (IAM) role provides access to paths in <code>Target</code>. This value
+        /// can only be set when <code>HomeDirectoryType</code> is set to
+        /// <i>LOGICAL</i>.</p>
+        /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example.</p>
+        /// <p>
+        /// <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code>
+        /// </p>
+        /// <p>In most cases, you can use this value instead of the session policy to lock down your
+        /// user to the designated home directory ("<code>chroot</code>"). To do this, you can set
+        /// <code>Entry</code> to <code>/</code> and set <code>Target</code> to the
+        /// <code>HomeDirectory</code> parameter value.</p>
+        /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>
+        /// <p>
+        /// <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code>
+        /// </p>
+        ///
+        /// <note>
+        /// <p>If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is
+        /// ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place
+        /// holders for your directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of
+        /// <code>s3</code> or <code>efs</code> so you can use the put-object operation. For example, you use the
+        /// following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make
+        /// sure that the end of the key name ends in a <code>/</code> for it to be considered a folder.</p>
+        /// </note>
         pub fn set_home_directory_mappings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::HomeDirectoryMapEntry>>,
@@ -5284,6 +6125,8 @@ pub mod update_access_input {
         /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user
         /// access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>,
         /// <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p>
+        ///
+        ///
         /// <note>
         /// <p>This only applies when the domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>
         /// <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead
@@ -5298,6 +6141,21 @@ pub mod update_access_input {
             self.policy = Some(input.into());
             self
         }
+        /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user
+        /// access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>,
+        /// <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p>
+        ///
+        ///
+        /// <note>
+        /// <p>This only applies when the domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>
+        /// <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead
+        /// of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass
+        /// it in the <code>Policy</code> argument.</p>
+        /// <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy.html">Example
+        /// session policy</a>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web ServicesSecurity Token Service API
+        /// Reference</i>.</p>
+        /// </note>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy = input;
             self
@@ -5311,6 +6169,11 @@ pub mod update_access_input {
             self.posix_profile = Some(input);
             self
         }
+        /// <p>The full POSIX identity, including user ID (<code>Uid</code>), group ID
+        /// (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that controls
+        /// your users' access to your Amazon EFS file systems. The POSIX permissions that are set on
+        /// files and directories in your file system determine the level of access your users get when
+        /// transferring files into and out of your Amazon EFS file systems.</p>
         pub fn set_posix_profile(
             mut self,
             input: std::option::Option<crate::model::PosixProfile>,
@@ -5326,6 +6189,10 @@ pub mod update_access_input {
             self.role = Some(input.into());
             self
         }
+        /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS
+        /// file system. The policies attached to this role determine the level of access that you want to provide your users when transferring
+        /// files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the
+        /// server to access your resources when servicing your users' transfer requests.</p>
         pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role = input;
             self
@@ -5335,6 +6202,7 @@ pub mod update_access_input {
             self.server_id = Some(input.into());
             self
         }
+        /// <p>A system-assigned unique identifier for a server instance. This is the specific server that you added your user to.</p>
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_id = input;
             self
@@ -5343,16 +6211,32 @@ pub mod update_access_input {
         /// The users of the group that you associate have access to your Amazon S3 or Amazon EFS
         /// resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name,
         /// you can view the SID values by running the following command using Windows PowerShell.</p>
+        ///
         /// <p>
         /// <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code>
         /// </p>
+        ///
         /// <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
+        ///
         /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces.
         /// You can also include underscores or any of the following characters: =,.@:/-</p>
         pub fn external_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.external_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier that is required to identify specific groups within your directory.
+        /// The users of the group that you associate have access to your Amazon S3 or Amazon EFS
+        /// resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name,
+        /// you can view the SID values by running the following command using Windows PowerShell.</p>
+        ///
+        /// <p>
+        /// <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code>
+        /// </p>
+        ///
+        /// <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
+        ///
+        /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces.
+        /// You can also include underscores or any of the following characters: =,.@:/-</p>
         pub fn set_external_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.external_id = input;
             self
@@ -5360,8 +6244,10 @@ pub mod update_access_input {
         /// Consumes the builder and constructs a [`UpdateAccessInput`](crate::input::UpdateAccessInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UpdateAccessInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateAccessInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateAccessInput {
                 home_directory: self.home_directory,
                 home_directory_type: self.home_directory_type,
@@ -5386,16 +6272,16 @@ impl UpdateAccessInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateAccess,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateAccessInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5403,7 +6289,7 @@ impl UpdateAccessInput {
         fn update_http_builder(
             input: &crate::input::UpdateAccessInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5412,31 +6298,31 @@ impl UpdateAccessInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateAccessInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TransferService.UpdateAccess",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_update_access(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5459,25 +6345,27 @@ impl UpdateAccessInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UpdateAccess::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UpdateAccess",
-                    "transfer",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateAccess::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateAccess",
+            "transfer",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5513,15 +6401,20 @@ pub mod update_server_input {
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the Amazon Web ServicesCertificate Manager (ACM) certificate. Required
         /// when <code>Protocols</code> is set to <code>FTPS</code>.</p>
+        ///
         /// <p>To request a new public certificate, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request a public certificate</a>
         /// in the <i> Amazon Web ServicesCertificate Manager User Guide</i>.</p>
+        ///
         /// <p>To import an existing certificate into ACM, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates into ACM</a>
         /// in the <i> Amazon Web ServicesCertificate Manager User Guide</i>.</p>
+        ///
         /// <p>To request a private certificate to use FTPS through private IP addresses, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html">Request a
         /// private certificate</a> in the <i> Amazon Web ServicesCertificate Manager User
         /// Guide</i>.</p>
+        ///
         /// <p>Certificates with the following cryptographic algorithms and key sizes are
         /// supported:</p>
+        ///
         /// <ul>
         /// <li>
         /// <p>2048-bit RSA (RSA_2048)</p>
@@ -5539,6 +6432,7 @@ pub mod update_server_input {
         /// <p>Elliptic Prime Curve 521 bit (EC_secp521r1)</p>
         /// </li>
         /// </ul>
+        ///
         /// <note>
         /// <p>The certificate must be a valid SSL/TLS X.509 version 3 certificate with FQDN or IP
         /// address specified and information about the issuer.</p>
@@ -5547,6 +6441,44 @@ pub mod update_server_input {
             self.certificate = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the Amazon Web ServicesCertificate Manager (ACM) certificate. Required
+        /// when <code>Protocols</code> is set to <code>FTPS</code>.</p>
+        ///
+        /// <p>To request a new public certificate, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request a public certificate</a>
+        /// in the <i> Amazon Web ServicesCertificate Manager User Guide</i>.</p>
+        ///
+        /// <p>To import an existing certificate into ACM, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates into ACM</a>
+        /// in the <i> Amazon Web ServicesCertificate Manager User Guide</i>.</p>
+        ///
+        /// <p>To request a private certificate to use FTPS through private IP addresses, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html">Request a
+        /// private certificate</a> in the <i> Amazon Web ServicesCertificate Manager User
+        /// Guide</i>.</p>
+        ///
+        /// <p>Certificates with the following cryptographic algorithms and key sizes are
+        /// supported:</p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>2048-bit RSA (RSA_2048)</p>
+        /// </li>
+        /// <li>
+        /// <p>4096-bit RSA (RSA_4096)</p>
+        /// </li>
+        /// <li>
+        /// <p>Elliptic Prime Curve 256 bit (EC_prime256v1)</p>
+        /// </li>
+        /// <li>
+        /// <p>Elliptic Prime Curve 384 bit (EC_secp384r1)</p>
+        /// </li>
+        /// <li>
+        /// <p>Elliptic Prime Curve 521 bit (EC_secp521r1)</p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <note>
+        /// <p>The certificate must be a valid SSL/TLS X.509 version 3 certificate with FQDN or IP
+        /// address specified and information about the issuer.</p>
+        /// </note>
         pub fn set_certificate(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.certificate = input;
             self
@@ -5562,6 +6494,13 @@ pub mod update_server_input {
             self.protocol_details = Some(input);
             self
         }
+        /// <p>
+        /// The protocol settings that are configured for your server.
+        /// </p>
+        /// <p>
+        /// Use the <code>PassiveIp</code> parameter to indicate passive mode (for FTP and FTPS protocols).
+        /// Enter a single dotted-quad IPv4 address, such as the external IP address of a firewall, router, or load balancer.
+        /// </p>
         pub fn set_protocol_details(
             mut self,
             input: std::option::Option<crate::model::ProtocolDetails>,
@@ -5578,6 +6517,11 @@ pub mod update_server_input {
             self.endpoint_details = Some(input);
             self
         }
+        /// <p>The virtual private cloud (VPC) endpoint settings that are configured for your server.
+        /// When you host your endpoint within your VPC, you can make it accessible only to resources
+        /// within your VPC, or you can attach Elastic IP addresses and make it accessible to clients over
+        /// the internet. Your VPC's default security groups are automatically assigned to your
+        /// endpoint.</p>
         pub fn set_endpoint_details(
             mut self,
             input: std::option::Option<crate::model::EndpointDetails>,
@@ -5595,6 +6539,7 @@ pub mod update_server_input {
         /// <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Servicesaccount on or before May 19, 2021,
         /// you will not be affected. After this date, use
         /// <code>EndpointType</code>=<code>VPC</code>.</p>
+        ///
         /// <p>For more information, see
         /// https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>
         /// <p>It is recommended that you use <code>VPC</code> as the <code>EndpointType</code>. With
@@ -5607,6 +6552,25 @@ pub mod update_server_input {
             self.endpoint_type = Some(input);
             self
         }
+        /// <p>The type of endpoint that you want your server to use. You can choose to make your server's endpoint publicly accessible (PUBLIC)
+        /// or host it inside your VPC. With an endpoint that is hosted in a VPC, you can restrict access to your server and
+        /// resources only within your VPC or choose to make it internet facing by attaching Elastic IP addresses directly to it.</p>
+        /// <note>
+        /// <p> After May 19, 2021, you won't be able to create a server using
+        /// <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Servicesaccount if your account hasn't already
+        /// done so before May 19, 2021. If you have already created servers with
+        /// <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Servicesaccount on or before May 19, 2021,
+        /// you will not be affected. After this date, use
+        /// <code>EndpointType</code>=<code>VPC</code>.</p>
+        ///
+        /// <p>For more information, see
+        /// https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>
+        /// <p>It is recommended that you use <code>VPC</code> as the <code>EndpointType</code>. With
+        /// this endpoint type, you have the option to directly associate up to three Elastic IPv4
+        /// addresses (BYO IP included) with your server's endpoint and use VPC security groups to
+        /// restrict traffic by the client's public IP address. This is not possible with
+        /// <code>EndpointType</code> set to <code>VPC_ENDPOINT</code>.</p>
+        /// </note>
         pub fn set_endpoint_type(
             mut self,
             input: std::option::Option<crate::model::EndpointType>,
@@ -5616,17 +6580,34 @@ pub mod update_server_input {
         }
         /// <p>The RSA private key as generated by <code>ssh-keygen -N "" -m PEM -f
         /// my-new-server-key</code>.</p>
+        ///
         /// <important>
         /// <p>If you aren't planning to migrate existing users from an existing server to a new
         /// server, don't update the host key. Accidentally changing a server's host key can
         /// be disruptive.</p>
         /// </important>
+        ///
+        ///
+        ///
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change the host key for your SFTP-enabled server</a> in the <i>Amazon Web ServicesTransfer
         /// Family User Guide</i>.</p>
         pub fn host_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.host_key = Some(input.into());
             self
         }
+        /// <p>The RSA private key as generated by <code>ssh-keygen -N "" -m PEM -f
+        /// my-new-server-key</code>.</p>
+        ///
+        /// <important>
+        /// <p>If you aren't planning to migrate existing users from an existing server to a new
+        /// server, don't update the host key. Accidentally changing a server's host key can
+        /// be disruptive.</p>
+        /// </important>
+        ///
+        ///
+        ///
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change the host key for your SFTP-enabled server</a> in the <i>Amazon Web ServicesTransfer
+        /// Family User Guide</i>.</p>
         pub fn set_host_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.host_key = input;
             self
@@ -5640,6 +6621,8 @@ pub mod update_server_input {
             self.identity_provider_details = Some(input);
             self
         }
+        /// <p>An array containing all of the information required to call a customer's
+        /// authentication API method.</p>
         pub fn set_identity_provider_details(
             mut self,
             input: std::option::Option<crate::model::IdentityProviderDetails>,
@@ -5654,16 +6637,87 @@ pub mod update_server_input {
             self.logging_role = Some(input.into());
             self
         }
+        /// <p>Specifies the Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that allows a server to turn
+        /// on Amazon CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in
+        /// your CloudWatch logs.</p>
         pub fn set_logging_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.logging_role = input;
             self
         }
+        /// Appends an item to `protocols`.
+        ///
+        /// To override the contents of this collection use [`set_protocols`](Self::set_protocols).
+        ///
+        /// <p>Specifies the file transfer protocol or protocols over which your file transfer protocol
+        /// client can connect to your server's endpoint. The available protocols are:</p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>Secure Shell (SSH) File Transfer Protocol (SFTP): File transfer over SSH</p>
+        /// </li>
+        /// <li>
+        /// <p>File Transfer Protocol Secure (FTPS): File transfer with TLS encryption</p>
+        /// </li>
+        /// <li>
+        /// <p>File Transfer Protocol (FTP): Unencrypted file transfer</p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <note>
+        /// <p>If you select <code>FTPS</code>, you must choose a certificate stored in Amazon Web ServicesCertificate
+        /// Manager (ACM) which will be used to identify your server when clients connect to it over
+        /// FTPS.</p>
+        ///
+        ///
+        /// <p>If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
+        /// <code>EndpointType</code> must be <code>VPC</code> and the
+        /// <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p>
+        ///
+        /// <p>If <code>Protocol</code> includes <code>FTP</code>, then
+        /// <code>AddressAllocationIds</code> cannot be associated.</p>
+        ///
+        /// <p>If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code>
+        /// can be set to <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to
+        /// <code>SERVICE_MANAGED</code>.</p>
+        /// </note>
         pub fn protocols(mut self, input: impl Into<crate::model::Protocol>) -> Self {
             let mut v = self.protocols.unwrap_or_default();
             v.push(input.into());
             self.protocols = Some(v);
             self
         }
+        /// <p>Specifies the file transfer protocol or protocols over which your file transfer protocol
+        /// client can connect to your server's endpoint. The available protocols are:</p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>Secure Shell (SSH) File Transfer Protocol (SFTP): File transfer over SSH</p>
+        /// </li>
+        /// <li>
+        /// <p>File Transfer Protocol Secure (FTPS): File transfer with TLS encryption</p>
+        /// </li>
+        /// <li>
+        /// <p>File Transfer Protocol (FTP): Unencrypted file transfer</p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <note>
+        /// <p>If you select <code>FTPS</code>, you must choose a certificate stored in Amazon Web ServicesCertificate
+        /// Manager (ACM) which will be used to identify your server when clients connect to it over
+        /// FTPS.</p>
+        ///
+        ///
+        /// <p>If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
+        /// <code>EndpointType</code> must be <code>VPC</code> and the
+        /// <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p>
+        ///
+        /// <p>If <code>Protocol</code> includes <code>FTP</code>, then
+        /// <code>AddressAllocationIds</code> cannot be associated.</p>
+        ///
+        /// <p>If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code>
+        /// can be set to <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to
+        /// <code>SERVICE_MANAGED</code>.</p>
+        /// </note>
         pub fn set_protocols(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Protocol>>,
@@ -5676,6 +6730,7 @@ pub mod update_server_input {
             self.security_policy_name = Some(input.into());
             self
         }
+        /// <p>Specifies the name of the security policy that is attached to the server.</p>
         pub fn set_security_policy_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5689,6 +6744,8 @@ pub mod update_server_input {
             self.server_id = Some(input.into());
             self
         }
+        /// <p>A system-assigned unique identifier for a server instance that the user account is
+        /// assigned to.</p>
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_id = input;
             self
@@ -5698,6 +6755,7 @@ pub mod update_server_input {
             self.workflow_details = Some(input);
             self
         }
+        /// <p>Specifies the workflow ID for the workflow to assign and the execution role used for executing the workflow.</p>
         pub fn set_workflow_details(
             mut self,
             input: std::option::Option<crate::model::WorkflowDetails>,
@@ -5708,8 +6766,10 @@ pub mod update_server_input {
         /// Consumes the builder and constructs a [`UpdateServerInput`](crate::input::UpdateServerInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UpdateServerInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateServerInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateServerInput {
                 certificate: self.certificate,
                 protocol_details: self.protocol_details,
@@ -5737,16 +6797,16 @@ impl UpdateServerInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateServer,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateServerInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5754,7 +6814,7 @@ impl UpdateServerInput {
         fn update_http_builder(
             input: &crate::input::UpdateServerInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5763,31 +6823,31 @@ impl UpdateServerInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateServerInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TransferService.UpdateServer",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_update_server(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5810,25 +6870,27 @@ impl UpdateServerInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UpdateServer::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UpdateServer",
-                    "transfer",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateServer::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateServer",
+            "transfer",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5865,6 +6927,8 @@ pub mod update_user_input {
             self.home_directory = Some(input.into());
             self
         }
+        /// <p>The landing directory (folder) for a user when they log in to the server using the client.</p>
+        /// <p>A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.</p>
         pub fn set_home_directory(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5880,6 +6944,10 @@ pub mod update_user_input {
             self.home_directory_type = Some(input);
             self
         }
+        /// <p>The type of landing directory (folder) you want your users' home directory to be when they log into the server.
+        /// If you set it to <code>PATH</code>, the user will see the absolute Amazon S3 bucket or EFS paths as is in their file transfer protocol clients.
+        /// If you set it <code>LOGICAL</code>, you need to provide mappings in the <code>HomeDirectoryMappings</code> for how you want to make Amazon
+        /// S3 or EFS paths visible to your users.</p>
         pub fn set_home_directory_type(
             mut self,
             input: std::option::Option<crate::model::HomeDirectoryType>,
@@ -5887,6 +6955,43 @@ pub mod update_user_input {
             self.home_directory_type = input;
             self
         }
+        /// Appends an item to `home_directory_mappings`.
+        ///
+        /// To override the contents of this collection use [`set_home_directory_mappings`](Self::set_home_directory_mappings).
+        ///
+        /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should
+        /// be visible to your user and how you want to make them visible. You must specify the
+        /// <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path
+        /// is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you
+        /// only specify a target, it is displayed as is. You also must ensure that your Amazon Web Services Identity
+        /// and Access Management (IAM) role provides access to paths in <code>Target</code>. This value
+        /// can only be set when <code>HomeDirectoryType</code> is set to
+        /// <i>LOGICAL</i>.</p>
+        ///
+        /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example.</p>
+        /// <p>
+        /// <code>[ { "Entry": "/directory1", "Target":
+        /// "/bucket_name/home/mydirectory" } ]</code>
+        /// </p>
+        ///
+        /// <p>In most cases, you can use this value instead of the session policy to lock down your
+        /// user to the designated home directory ("<code>chroot</code>"). To do this, you can set
+        /// <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory
+        /// parameter value.</p>
+        ///
+        /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>
+        /// <p>
+        /// <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code>
+        /// </p>
+        ///
+        /// <note>
+        /// <p>If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is
+        /// ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place
+        /// holders for your directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of
+        /// <code>s3</code> or <code>efs</code> so you can use the put-object operation. For example, you use the
+        /// following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make
+        /// sure that the end of the key name ends in a <code>/</code> for it to be considered a folder.</p>
+        /// </note>
         pub fn home_directory_mappings(
             mut self,
             input: impl Into<crate::model::HomeDirectoryMapEntry>,
@@ -5896,6 +7001,39 @@ pub mod update_user_input {
             self.home_directory_mappings = Some(v);
             self
         }
+        /// <p>Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys should
+        /// be visible to your user and how you want to make them visible. You must specify the
+        /// <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows how the path
+        /// is made visible and <code>Target</code> is the actual Amazon S3 or Amazon EFS path. If you
+        /// only specify a target, it is displayed as is. You also must ensure that your Amazon Web Services Identity
+        /// and Access Management (IAM) role provides access to paths in <code>Target</code>. This value
+        /// can only be set when <code>HomeDirectoryType</code> is set to
+        /// <i>LOGICAL</i>.</p>
+        ///
+        /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example.</p>
+        /// <p>
+        /// <code>[ { "Entry": "/directory1", "Target":
+        /// "/bucket_name/home/mydirectory" } ]</code>
+        /// </p>
+        ///
+        /// <p>In most cases, you can use this value instead of the session policy to lock down your
+        /// user to the designated home directory ("<code>chroot</code>"). To do this, you can set
+        /// <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory
+        /// parameter value.</p>
+        ///
+        /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>
+        /// <p>
+        /// <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code>
+        /// </p>
+        ///
+        /// <note>
+        /// <p>If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is
+        /// ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place
+        /// holders for your directory. If using the CLI, use the <code>s3api</code> or <code>efsapi</code> call instead of
+        /// <code>s3</code> or <code>efs</code> so you can use the put-object operation. For example, you use the
+        /// following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make
+        /// sure that the end of the key name ends in a <code>/</code> for it to be considered a folder.</p>
+        /// </note>
         pub fn set_home_directory_mappings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::HomeDirectoryMapEntry>>,
@@ -5906,13 +7044,20 @@ pub mod update_user_input {
         /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user
         /// access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>,
         /// <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p>
+        ///
         /// <note>
         /// <p>This only applies when the domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>
         /// <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead
         /// of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass
         /// it in the <code>Policy</code> argument.</p>
+        ///
+        ///
+        ///
         /// <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy">Creating a session
         /// policy</a>.</p>
+        ///
+        ///
+        ///
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web Services
         /// Security Token Service API Reference</i>.</p>
         /// </note>
@@ -5920,6 +7065,26 @@ pub mod update_user_input {
             self.policy = Some(input.into());
             self
         }
+        /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user
+        /// access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>,
+        /// <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p>
+        ///
+        /// <note>
+        /// <p>This only applies when the domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>
+        /// <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead
+        /// of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass
+        /// it in the <code>Policy</code> argument.</p>
+        ///
+        ///
+        ///
+        /// <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy">Creating a session
+        /// policy</a>.</p>
+        ///
+        ///
+        ///
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web Services
+        /// Security Token Service API Reference</i>.</p>
+        /// </note>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy = input;
             self
@@ -5933,6 +7098,11 @@ pub mod update_user_input {
             self.posix_profile = Some(input);
             self
         }
+        /// <p>Specifies the full POSIX identity, including user ID (<code>Uid</code>), group ID
+        /// (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that controls
+        /// your users' access to your Amazon Elastic File Systems (Amazon EFS). The POSIX permissions
+        /// that are set on files and directories in your file system determines the level of access your
+        /// users get when transferring files into and out of your Amazon EFS file systems.</p>
         pub fn set_posix_profile(
             mut self,
             input: std::option::Option<crate::model::PosixProfile>,
@@ -5948,6 +7118,10 @@ pub mod update_user_input {
             self.role = Some(input.into());
             self
         }
+        /// <p>Specifies the Amazon Resource Name (ARN) of the IAM role that controls your users' access to your Amazon S3 bucket or EFS
+        /// file system. The policies attached to this role determine the level of access that you want to provide your users when transferring
+        /// files into and out of your Amazon S3 bucket or EFS file system. The IAM role should also contain a trust relationship that allows the
+        /// server to access your resources when servicing your users' transfer requests.</p>
         pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role = input;
             self
@@ -5958,6 +7132,8 @@ pub mod update_user_input {
             self.server_id = Some(input.into());
             self
         }
+        /// <p>A system-assigned unique identifier for a server instance that the user account is
+        /// assigned to.</p>
         pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_id = input;
             self
@@ -5971,6 +7147,11 @@ pub mod update_user_input {
             self.user_name = Some(input.into());
             self
         }
+        /// <p>A unique string that identifies a user and is associated with a server as specified by the
+        /// <code>ServerId</code>. This user name must be a minimum of 3 and a maximum of 100 characters
+        /// long. The following are valid characters: a-z, A-Z, 0-9, underscore '_', hyphen
+        /// '-', period '.', and at sign '@'. The user name can't start
+        /// with a hyphen, period, or at sign.</p>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_name = input;
             self
@@ -5978,8 +7159,10 @@ pub mod update_user_input {
         /// Consumes the builder and constructs a [`UpdateUserInput`](crate::input::UpdateUserInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UpdateUserInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateUserInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateUserInput {
                 home_directory: self.home_directory,
                 home_directory_type: self.home_directory_type,
@@ -6004,16 +7187,16 @@ impl UpdateUserInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateUser,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateUserInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6021,7 +7204,7 @@ impl UpdateUserInput {
         fn update_http_builder(
             input: &crate::input::UpdateUserInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6030,29 +7213,31 @@ impl UpdateUserInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateUserInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "TransferService.UpdateUser",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_update_user(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6075,25 +7260,27 @@ impl UpdateUserInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UpdateUser::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UpdateUser",
-                    "transfer",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateUser::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateUser",
+            "transfer",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6107,6 +7294,7 @@ impl UpdateUserInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateUserInput {
@@ -6126,19 +7314,23 @@ pub struct UpdateUserInput {
     /// and Access Management (IAM) role provides access to paths in <code>Target</code>. This value
     /// can only be set when <code>HomeDirectoryType</code> is set to
     /// <i>LOGICAL</i>.</p>
+    ///
     /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example.</p>
     /// <p>
     /// <code>[ { "Entry": "/directory1", "Target":
     /// "/bucket_name/home/mydirectory" } ]</code>
     /// </p>
+    ///
     /// <p>In most cases, you can use this value instead of the session policy to lock down your
     /// user to the designated home directory ("<code>chroot</code>"). To do this, you can set
     /// <code>Entry</code> to '/' and set <code>Target</code> to the HomeDirectory
     /// parameter value.</p>
+    ///
     /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.</p>
     /// <p>
     /// <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code>
     /// </p>
+    ///
     /// <note>
     /// <p>If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is
     /// ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place
@@ -6152,13 +7344,20 @@ pub struct UpdateUserInput {
     /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user
     /// access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>,
     /// <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p>
+    ///
     /// <note>
     /// <p>This only applies when the domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>
     /// <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead
     /// of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass
     /// it in the <code>Policy</code> argument.</p>
+    ///
+    ///
+    ///
     /// <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy">Creating a session
     /// policy</a>.</p>
+    ///
+    ///
+    ///
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web Services
     /// Security Token Service API Reference</i>.</p>
     /// </note>
@@ -6199,20 +7398,26 @@ impl std::fmt::Debug for UpdateUserInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateServerInput {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web ServicesCertificate Manager (ACM) certificate. Required
     /// when <code>Protocols</code> is set to <code>FTPS</code>.</p>
+    ///
     /// <p>To request a new public certificate, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request a public certificate</a>
     /// in the <i> Amazon Web ServicesCertificate Manager User Guide</i>.</p>
+    ///
     /// <p>To import an existing certificate into ACM, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates into ACM</a>
     /// in the <i> Amazon Web ServicesCertificate Manager User Guide</i>.</p>
+    ///
     /// <p>To request a private certificate to use FTPS through private IP addresses, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html">Request a
     /// private certificate</a> in the <i> Amazon Web ServicesCertificate Manager User
     /// Guide</i>.</p>
+    ///
     /// <p>Certificates with the following cryptographic algorithms and key sizes are
     /// supported:</p>
+    ///
     /// <ul>
     /// <li>
     /// <p>2048-bit RSA (RSA_2048)</p>
@@ -6230,6 +7435,7 @@ pub struct UpdateServerInput {
     /// <p>Elliptic Prime Curve 521 bit (EC_secp521r1)</p>
     /// </li>
     /// </ul>
+    ///
     /// <note>
     /// <p>The certificate must be a valid SSL/TLS X.509 version 3 certificate with FQDN or IP
     /// address specified and information about the issuer.</p>
@@ -6259,6 +7465,7 @@ pub struct UpdateServerInput {
     /// <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Servicesaccount on or before May 19, 2021,
     /// you will not be affected. After this date, use
     /// <code>EndpointType</code>=<code>VPC</code>.</p>
+    ///
     /// <p>For more information, see
     /// https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>
     /// <p>It is recommended that you use <code>VPC</code> as the <code>EndpointType</code>. With
@@ -6270,11 +7477,15 @@ pub struct UpdateServerInput {
     pub endpoint_type: std::option::Option<crate::model::EndpointType>,
     /// <p>The RSA private key as generated by <code>ssh-keygen -N "" -m PEM -f
     /// my-new-server-key</code>.</p>
+    ///
     /// <important>
     /// <p>If you aren't planning to migrate existing users from an existing server to a new
     /// server, don't update the host key. Accidentally changing a server's host key can
     /// be disruptive.</p>
     /// </important>
+    ///
+    ///
+    ///
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change the host key for your SFTP-enabled server</a> in the <i>Amazon Web ServicesTransfer
     /// Family User Guide</i>.</p>
     pub host_key: std::option::Option<std::string::String>,
@@ -6287,6 +7498,7 @@ pub struct UpdateServerInput {
     pub logging_role: std::option::Option<std::string::String>,
     /// <p>Specifies the file transfer protocol or protocols over which your file transfer protocol
     /// client can connect to your server's endpoint. The available protocols are:</p>
+    ///
     /// <ul>
     /// <li>
     /// <p>Secure Shell (SSH) File Transfer Protocol (SFTP): File transfer over SSH</p>
@@ -6298,15 +7510,20 @@ pub struct UpdateServerInput {
     /// <p>File Transfer Protocol (FTP): Unencrypted file transfer</p>
     /// </li>
     /// </ul>
+    ///
     /// <note>
     /// <p>If you select <code>FTPS</code>, you must choose a certificate stored in Amazon Web ServicesCertificate
     /// Manager (ACM) which will be used to identify your server when clients connect to it over
     /// FTPS.</p>
+    ///
+    ///
     /// <p>If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
     /// <code>EndpointType</code> must be <code>VPC</code> and the
     /// <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p>
+    ///
     /// <p>If <code>Protocol</code> includes <code>FTP</code>, then
     /// <code>AddressAllocationIds</code> cannot be associated.</p>
+    ///
     /// <p>If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code>
     /// can be set to <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to
     /// <code>SERVICE_MANAGED</code>.</p>
@@ -6338,6 +7555,7 @@ impl std::fmt::Debug for UpdateServerInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAccessInput {
@@ -6369,6 +7587,7 @@ pub struct UpdateAccessInput {
     /// <p>
     /// <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code>
     /// </p>
+    ///
     /// <note>
     /// <p>If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is
     /// ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place
@@ -6382,6 +7601,8 @@ pub struct UpdateAccessInput {
     /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user
     /// access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>,
     /// <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p>
+    ///
+    ///
     /// <note>
     /// <p>This only applies when the domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>
     /// <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead
@@ -6410,10 +7631,13 @@ pub struct UpdateAccessInput {
     /// The users of the group that you associate have access to your Amazon S3 or Amazon EFS
     /// resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name,
     /// you can view the SID values by running the following command using Windows PowerShell.</p>
+    ///
     /// <p>
     /// <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code>
     /// </p>
+    ///
     /// <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
+    ///
     /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces.
     /// You can also include underscores or any of the following characters: =,.@:/-</p>
     pub external_id: std::option::Option<std::string::String>,
@@ -6433,6 +7657,7 @@ impl std::fmt::Debug for UpdateAccessInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
@@ -6452,6 +7677,7 @@ impl std::fmt::Debug for UntagResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestIdentityProviderInput {
@@ -6459,7 +7685,9 @@ pub struct TestIdentityProviderInput {
     /// method is tested with a user name and password.</p>
     pub server_id: std::option::Option<std::string::String>,
     /// <p>The type of file transfer protocol to be tested.</p>
+    ///
     /// <p>The available protocols are:</p>
+    ///
     /// <ul>
     /// <li>
     /// <p>Secure Shell (SSH) File Transfer Protocol (SFTP)</p>
@@ -6491,6 +7719,7 @@ impl std::fmt::Debug for TestIdentityProviderInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
@@ -6510,6 +7739,7 @@ impl std::fmt::Debug for TagResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopServerInput {
@@ -6524,6 +7754,7 @@ impl std::fmt::Debug for StopServerInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartServerInput {
@@ -6538,6 +7769,7 @@ impl std::fmt::Debug for StartServerInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendWorkflowStepStateInput {
@@ -6561,6 +7793,7 @@ impl std::fmt::Debug for SendWorkflowStepStateInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWorkflowsInput {
@@ -6581,6 +7814,7 @@ impl std::fmt::Debug for ListWorkflowsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListUsersInput {
@@ -6605,6 +7839,7 @@ impl std::fmt::Debug for ListUsersInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
@@ -6629,6 +7864,7 @@ impl std::fmt::Debug for ListTagsForResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListServersInput {
@@ -6650,6 +7886,7 @@ impl std::fmt::Debug for ListServersInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSecurityPoliciesInput {
@@ -6671,6 +7908,7 @@ impl std::fmt::Debug for ListSecurityPoliciesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListExecutionsInput {
@@ -6712,6 +7950,7 @@ impl std::fmt::Debug for ListExecutionsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAccessesInput {
@@ -6735,6 +7974,7 @@ impl std::fmt::Debug for ListAccessesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportSshPublicKeyInput {
@@ -6755,6 +7995,7 @@ impl std::fmt::Debug for ImportSshPublicKeyInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeWorkflowInput {
@@ -6769,6 +8010,7 @@ impl std::fmt::Debug for DescribeWorkflowInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeUserInput {
@@ -6787,6 +8029,7 @@ impl std::fmt::Debug for DescribeUserInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeServerInput {
@@ -6801,6 +8044,7 @@ impl std::fmt::Debug for DescribeServerInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSecurityPolicyInput {
@@ -6815,6 +8059,7 @@ impl std::fmt::Debug for DescribeSecurityPolicyInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeExecutionInput {
@@ -6832,6 +8077,7 @@ impl std::fmt::Debug for DescribeExecutionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccessInput {
@@ -6841,10 +8087,13 @@ pub struct DescribeAccessInput {
     /// The users of the group that you associate have access to your Amazon S3 or Amazon EFS
     /// resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name,
     /// you can view the SID values by running the following command using Windows PowerShell.</p>
+    ///
     /// <p>
     /// <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code>
     /// </p>
+    ///
     /// <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
+    ///
     /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces.
     /// You can also include underscores or any of the following characters: =,.@:/-</p>
     pub external_id: std::option::Option<std::string::String>,
@@ -6858,6 +8107,7 @@ impl std::fmt::Debug for DescribeAccessInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteWorkflowInput {
@@ -6872,6 +8122,7 @@ impl std::fmt::Debug for DeleteWorkflowInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteUserInput {
@@ -6890,6 +8141,7 @@ impl std::fmt::Debug for DeleteUserInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSshPublicKeyInput {
@@ -6911,6 +8163,7 @@ impl std::fmt::Debug for DeleteSshPublicKeyInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteServerInput {
@@ -6925,6 +8178,7 @@ impl std::fmt::Debug for DeleteServerInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAccessInput {
@@ -6934,10 +8188,13 @@ pub struct DeleteAccessInput {
     /// The users of the group that you associate have access to your Amazon S3 or Amazon EFS
     /// resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name,
     /// you can view the SID values by running the following command using Windows PowerShell.</p>
+    ///
     /// <p>
     /// <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code>
     /// </p>
+    ///
     /// <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
+    ///
     /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces.
     /// You can also include underscores or any of the following characters: =,.@:/-</p>
     pub external_id: std::option::Option<std::string::String>,
@@ -6951,6 +8208,7 @@ impl std::fmt::Debug for DeleteAccessInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWorkflowInput {
@@ -7009,6 +8267,7 @@ impl std::fmt::Debug for CreateWorkflowInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateUserInput {
@@ -7028,11 +8287,14 @@ pub struct CreateUserInput {
     /// and Access Management (IAM) role provides access to paths in <code>Target</code>. This value
     /// can only be set when <code>HomeDirectoryType</code> is set to
     /// <i>LOGICAL</i>.</p>
+    ///
     /// <p>The following is an <code>Entry</code> and <code>Target</code> pair example.</p>
+    ///
     /// <p>
     /// <code>[ { "Entry": "/directory1", "Target":
     /// "/bucket_name/home/mydirectory" } ]</code>
     /// </p>
+    ///
     /// <p>In most cases, you can use this value instead of the session policy to lock your user
     /// down to the designated home directory ("<code>chroot</code>"). To do this, you can set
     /// <code>Entry</code> to <code>/</code> and set <code>Target</code> to the HomeDirectory
@@ -7041,6 +8303,7 @@ pub struct CreateUserInput {
     /// <p>
     /// <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code>
     /// </p>
+    ///
     /// <note>
     /// <p>If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is
     /// ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place
@@ -7054,13 +8317,20 @@ pub struct CreateUserInput {
     /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user
     /// access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>,
     /// <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p>
+    ///
     /// <note>
     /// <p>This only applies when the domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>
     /// <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead
     /// of the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass
     /// it in the <code>Policy</code> argument.</p>
+    ///
+    ///
+    ///
     /// <p>For an example of a session policy, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/session-policy.html">Example session
     /// policy</a>.</p>
+    ///
+    ///
+    ///
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html">AssumeRole</a> in the <i>Amazon Web Services
     /// Security Token Service API Reference</i>.</p>
     /// </note>
@@ -7108,20 +8378,26 @@ impl std::fmt::Debug for CreateUserInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateServerInput {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Certificate Manager (ACM) certificate. Required
     /// when <code>Protocols</code> is set to <code>FTPS</code>.</p>
+    ///
     /// <p>To request a new public certificate, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html">Request a public certificate</a>
     /// in the <i> Amazon Web Services Certificate Manager User Guide</i>.</p>
+    ///
     /// <p>To import an existing certificate into ACM, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing certificates into ACM</a>
     /// in the <i> Amazon Web Services Certificate Manager User Guide</i>.</p>
+    ///
     /// <p>To request a private certificate to use FTPS through private IP addresses, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html">Request a
     /// private certificate</a> in the <i> Amazon Web Services Certificate Manager User
     /// Guide</i>.</p>
+    ///
     /// <p>Certificates with the following cryptographic algorithms and key sizes are
     /// supported:</p>
+    ///
     /// <ul>
     /// <li>
     /// <p>2048-bit RSA (RSA_2048)</p>
@@ -7139,6 +8415,7 @@ pub struct CreateServerInput {
     /// <p>Elliptic Prime Curve 521 bit (EC_secp521r1)</p>
     /// </li>
     /// </ul>
+    ///
     /// <note>
     /// <p>The certificate must be a valid SSL/TLS X.509 version 3 certificate with FQDN or IP
     /// address specified and information about the issuer.</p>
@@ -7147,6 +8424,7 @@ pub struct CreateServerInput {
     /// <p>The domain of the storage system that is used for file transfers. There are two domains
     /// available: Amazon Simple Storage Service (Amazon S3) and Amazon Elastic File System (Amazon EFS). The
     /// default value is S3.</p>
+    ///
     /// <note>
     /// <p>After the server is created, the domain cannot be changed.</p>
     /// </note>
@@ -7167,6 +8445,7 @@ pub struct CreateServerInput {
     /// <code>EndpointType=VPC_ENDPOINT</code> in your Amazon Web Services account on or before May 19, 2021,
     /// you will not be affected. After this date, use
     /// <code>EndpointType</code>=<code>VPC</code>.</p>
+    ///
     /// <p>For more information, see
     /// https://docs.aws.amazon.com/transfer/latest/userguide/create-server-in-vpc.html#deprecate-vpc-endpoint.</p>
     /// <p>It is recommended that you use <code>VPC</code> as the <code>EndpointType</code>. With
@@ -7178,11 +8457,15 @@ pub struct CreateServerInput {
     pub endpoint_type: std::option::Option<crate::model::EndpointType>,
     /// <p>The RSA private key as generated by the <code>ssh-keygen -N "" -m PEM -f
     /// my-new-server-key</code> command.</p>
+    ///
     /// <important>
     /// <p>If you aren't planning to migrate existing users from an existing SFTP-enabled
     /// server to a new server, don't update the host key. Accidentally changing a
     /// server's host key can be disruptive.</p>
     /// </important>
+    ///
+    ///
+    ///
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key">Change the host key for your SFTP-enabled server</a> in the <i>Amazon Web Services Transfer
     /// Family User Guide</i>.</p>
     pub host_key: std::option::Option<std::string::String>,
@@ -7209,6 +8492,7 @@ pub struct CreateServerInput {
     pub logging_role: std::option::Option<std::string::String>,
     /// <p>Specifies the file transfer protocol or protocols over which your file transfer protocol
     /// client can connect to your server's endpoint. The available protocols are:</p>
+    ///
     /// <ul>
     /// <li>
     /// <p>
@@ -7225,15 +8509,19 @@ pub struct CreateServerInput {
     /// <code>FTP</code> (File Transfer Protocol): Unencrypted file transfer</p>
     /// </li>
     /// </ul>
+    ///
     /// <note>
     /// <p>If you select <code>FTPS</code>, you must choose a certificate stored in Amazon Web Services Certificate
     /// Manager (ACM) which is used to identify your server when clients connect to it over
     /// FTPS.</p>
+    ///
     /// <p>If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
     /// <code>EndpointType</code> must be <code>VPC</code> and the
     /// <code>IdentityProviderType</code> must be <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.</p>
+    ///
     /// <p>If <code>Protocol</code> includes <code>FTP</code>, then
     /// <code>AddressAllocationIds</code> cannot be associated.</p>
+    ///
     /// <p>If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code>
     /// can be set to <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be set to
     /// <code>SERVICE_MANAGED</code>.</p>
@@ -7265,6 +8553,7 @@ impl std::fmt::Debug for CreateServerInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAccessInput {
@@ -7296,6 +8585,7 @@ pub struct CreateAccessInput {
     /// <p>
     /// <code>[ { "Entry:": "/", "Target": "/bucket_name/home/mydirectory" } ]</code>
     /// </p>
+    ///
     /// <note>
     /// <p>If the target of a logical directory entry does not exist in Amazon S3 or EFS, the entry is
     /// ignored. As a workaround, you can use the Amazon S3 API or EFS API to create 0 byte objects as place
@@ -7309,6 +8599,7 @@ pub struct CreateAccessInput {
     /// <p>A session policy for your user so that you can use the same IAM role across multiple users. This policy scopes down user
     /// access to portions of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>,
     /// <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p>
+    ///
     /// <note>
     /// <p>This only applies when the domain of <code>ServerId</code> is S3. EFS does not use session policies.</p>
     /// <p>For session policies, Amazon Web Services Transfer Family stores the policy as a JSON blob, instead
@@ -7337,10 +8628,13 @@ pub struct CreateAccessInput {
     /// The users of the group that you associate have access to your Amazon S3 or Amazon EFS
     /// resources over the enabled protocols using Amazon Web Services Transfer Family. If you know the group name,
     /// you can view the SID values by running the following command using Windows PowerShell.</p>
+    ///
     /// <p>
     /// <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties * | Select SamAccountName,ObjectSid</code>
     /// </p>
+    ///
     /// <p>In that command, replace <i>YourGroupName</i> with the name of your Active Directory group.</p>
+    ///
     /// <p>The regex used to validate this parameter is a string of characters consisting of uppercase and lowercase alphanumeric characters with no spaces.
     /// You can also include underscores or any of the following characters: =,.@:/-</p>
     pub external_id: std::option::Option<std::string::String>,

@@ -57,6 +57,7 @@ pub mod update_vpc_link_output {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier of the  <a>VpcLink</a>. It is used in an <a>Integration</a> to reference this <a>VpcLink</a>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -66,6 +67,7 @@ pub mod update_vpc_link_output {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name used to label and identify the VPC link.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -75,16 +77,23 @@ pub mod update_vpc_link_output {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the VPC link.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Appends an item to `target_arns`.
+        ///
+        /// To override the contents of this collection use [`set_target_arns`](Self::set_target_arns).
+        ///
+        /// <p>The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must be owned by the same AWS account of the API owner.</p>
         pub fn target_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.target_arns.unwrap_or_default();
             v.push(input.into());
             self.target_arns = Some(v);
             self
         }
+        /// <p>The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must be owned by the same AWS account of the API owner.</p>
         pub fn set_target_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -97,6 +106,7 @@ pub mod update_vpc_link_output {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the VPC link. The valid values are <code>AVAILABLE</code>, <code>PENDING</code>, <code>DELETING</code>, or <code>FAILED</code>. Deploying an API will wait if the status is <code>PENDING</code> and will fail if the status is <code>DELETING</code>.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::VpcLinkStatus>,
@@ -109,6 +119,7 @@ pub mod update_vpc_link_output {
             self.status_message = Some(input.into());
             self
         }
+        /// <p>A description about the VPC link status.</p>
         pub fn set_status_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -116,6 +127,11 @@ pub mod update_vpc_link_output {
             self.status_message = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -126,6 +142,7 @@ pub mod update_vpc_link_output {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -221,6 +238,7 @@ pub mod update_usage_plan_output {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier of a <a>UsagePlan</a> resource.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -230,6 +248,7 @@ pub mod update_usage_plan_output {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of a usage plan.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -239,16 +258,23 @@ pub mod update_usage_plan_output {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of a usage plan.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Appends an item to `api_stages`.
+        ///
+        /// To override the contents of this collection use [`set_api_stages`](Self::set_api_stages).
+        ///
+        /// <p>The associated API stages of a usage plan.</p>
         pub fn api_stages(mut self, input: impl Into<crate::model::ApiStage>) -> Self {
             let mut v = self.api_stages.unwrap_or_default();
             v.push(input.into());
             self.api_stages = Some(v);
             self
         }
+        /// <p>The associated API stages of a usage plan.</p>
         pub fn set_api_stages(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ApiStage>>,
@@ -261,6 +287,7 @@ pub mod update_usage_plan_output {
             self.throttle = Some(input);
             self
         }
+        /// <p>The request throttle limits of a usage plan.</p>
         pub fn set_throttle(
             mut self,
             input: std::option::Option<crate::model::ThrottleSettings>,
@@ -273,6 +300,7 @@ pub mod update_usage_plan_output {
             self.quota = Some(input);
             self
         }
+        /// <p>The maximum number of permitted requests per a given unit time interval.</p>
         pub fn set_quota(
             mut self,
             input: std::option::Option<crate::model::QuotaSettings>,
@@ -285,10 +313,16 @@ pub mod update_usage_plan_output {
             self.product_code = Some(input.into());
             self
         }
+        /// <p>The AWS Markeplace product identifier to associate with the usage plan as a SaaS product on AWS Marketplace.</p>
         pub fn set_product_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.product_code = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -299,6 +333,7 @@ pub mod update_usage_plan_output {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -383,6 +418,7 @@ pub mod update_usage_output {
             self.usage_plan_id = Some(input.into());
             self
         }
+        /// <p>The plan Id associated with this usage data.</p>
         pub fn set_usage_plan_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -395,6 +431,7 @@ pub mod update_usage_output {
             self.start_date = Some(input.into());
             self
         }
+        /// <p>The starting date of the usage data.</p>
         pub fn set_start_date(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.start_date = input;
             self
@@ -404,10 +441,16 @@ pub mod update_usage_output {
             self.end_date = Some(input.into());
             self
         }
+        /// <p>The ending date of the usage data.</p>
         pub fn set_end_date(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.end_date = input;
             self
         }
+        /// Adds a key-value pair to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>The usage data, as daily logs of used and remaining quotas, over the specified time interval indexed over the API keys in a usage plan. For example, <code>{..., "values" : { "{api_key}" : [ [0, 100], [10, 90], [100, 10]]}</code>, where <code>{api_key}</code> stands for an API key value and the daily log entry is of the format <code>[used quota, remaining quota]</code>.</p>
         pub fn items(
             mut self,
             k: impl Into<std::string::String>,
@@ -418,6 +461,7 @@ pub mod update_usage_output {
             self.items = Some(hash_map);
             self
         }
+        /// <p>The usage data, as daily logs of used and remaining quotas, over the specified time interval indexed over the API keys in a usage plan. For example, <code>{..., "values" : { "{api_key}" : [ [0, 100], [10, 90], [100, 10]]}</code>, where <code>{api_key}</code> stands for an API key value and the daily log entry is of the format <code>[used quota, remaining quota]</code>.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<
@@ -432,6 +476,7 @@ pub mod update_usage_output {
             self.position = Some(input.into());
             self
         }
+        /// <p>The current pagination position in the paged result set.</p>
         pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.position = input;
             self
@@ -498,9 +543,9 @@ pub struct UpdateStageOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The timestamp when the stage was created.</p>
-    pub created_date: std::option::Option<smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The timestamp when the stage last updated.</p>
-    pub last_updated_date: std::option::Option<smithy_types::Instant>,
+    pub last_updated_date: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for UpdateStageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -552,8 +597,8 @@ pub mod update_stage_output {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        pub(crate) created_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_updated_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated_date: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The identifier of the <a>Deployment</a> that the stage points to.</p>
@@ -561,6 +606,7 @@ pub mod update_stage_output {
             self.deployment_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the <a>Deployment</a> that the stage points to.</p>
         pub fn set_deployment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -573,6 +619,7 @@ pub mod update_stage_output {
             self.client_certificate_id = Some(input.into());
             self
         }
+        /// <p>The identifier of a client certificate for an API stage.</p>
         pub fn set_client_certificate_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -585,6 +632,7 @@ pub mod update_stage_output {
             self.stage_name = Some(input.into());
             self
         }
+        /// <p>The name of the stage is the first path segment in the Uniform Resource Identifier (URI) of a call to API Gateway. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
         pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stage_name = input;
             self
@@ -594,6 +642,7 @@ pub mod update_stage_output {
             self.description = Some(input.into());
             self
         }
+        /// <p>The stage's description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -603,6 +652,7 @@ pub mod update_stage_output {
             self.cache_cluster_enabled = Some(input);
             self
         }
+        /// <p>Specifies whether a cache cluster is enabled for the stage.</p>
         pub fn set_cache_cluster_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.cache_cluster_enabled = input;
             self
@@ -612,6 +662,7 @@ pub mod update_stage_output {
             self.cache_cluster_size = Some(input);
             self
         }
+        /// <p>The size of the cache cluster for the stage, if enabled.</p>
         pub fn set_cache_cluster_size(
             mut self,
             input: std::option::Option<crate::model::CacheClusterSize>,
@@ -624,6 +675,7 @@ pub mod update_stage_output {
             self.cache_cluster_status = Some(input);
             self
         }
+        /// <p>The status of the cache cluster for the stage, if enabled.</p>
         pub fn set_cache_cluster_status(
             mut self,
             input: std::option::Option<crate::model::CacheClusterStatus>,
@@ -631,6 +683,11 @@ pub mod update_stage_output {
             self.cache_cluster_status = input;
             self
         }
+        /// Adds a key-value pair to `method_settings`.
+        ///
+        /// To override the contents of this collection use [`set_method_settings`](Self::set_method_settings).
+        ///
+        /// <p>A map that defines the method settings for a <a>Stage</a> resource. Keys (designated as <code>/{method_setting_key</code> below) are method paths defined as <code>{resource_path}/{http_method}</code> for an individual method override, or <code>/\*/\*</code> for overriding all methods in the stage.  <!-- Any forward slash ("/") characters in the <code>resource_path</code> part must be encoded as "~1" as in, for example, <code>~1resource~1sub-resource/GET</code>.--></p>
         pub fn method_settings(
             mut self,
             k: impl Into<std::string::String>,
@@ -641,6 +698,7 @@ pub mod update_stage_output {
             self.method_settings = Some(hash_map);
             self
         }
+        /// <p>A map that defines the method settings for a <a>Stage</a> resource. Keys (designated as <code>/{method_setting_key</code> below) are method paths defined as <code>{resource_path}/{http_method}</code> for an individual method override, or <code>/\*/\*</code> for overriding all methods in the stage.  <!-- Any forward slash ("/") characters in the <code>resource_path</code> part must be encoded as "~1" as in, for example, <code>~1resource~1sub-resource/GET</code>.--></p>
         pub fn set_method_settings(
             mut self,
             input: std::option::Option<
@@ -650,6 +708,12 @@ pub mod update_stage_output {
             self.method_settings = input;
             self
         }
+        /// Adds a key-value pair to `variables`.
+        ///
+        /// To override the contents of this collection use [`set_variables`](Self::set_variables).
+        ///
+        /// <p>A map that defines the stage variables for a <a>Stage</a> resource. Variable names can
+        /// have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&=,]+</code>.</p>
         pub fn variables(
             mut self,
             k: impl Into<std::string::String>,
@@ -660,6 +724,8 @@ pub mod update_stage_output {
             self.variables = Some(hash_map);
             self
         }
+        /// <p>A map that defines the stage variables for a <a>Stage</a> resource. Variable names can
+        /// have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&=,]+</code>.</p>
         pub fn set_variables(
             mut self,
             input: std::option::Option<
@@ -674,6 +740,7 @@ pub mod update_stage_output {
             self.documentation_version = Some(input.into());
             self
         }
+        /// <p>The version of the associated API documentation.</p>
         pub fn set_documentation_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -686,6 +753,7 @@ pub mod update_stage_output {
             self.access_log_settings = Some(input);
             self
         }
+        /// <p>Settings for logging access in this stage.</p>
         pub fn set_access_log_settings(
             mut self,
             input: std::option::Option<crate::model::AccessLogSettings>,
@@ -698,6 +766,7 @@ pub mod update_stage_output {
             self.canary_settings = Some(input);
             self
         }
+        /// <p>Settings for the canary deployment in this stage.</p>
         pub fn set_canary_settings(
             mut self,
             input: std::option::Option<crate::model::CanarySettings>,
@@ -710,6 +779,7 @@ pub mod update_stage_output {
             self.tracing_enabled = Some(input);
             self
         }
+        /// <p>Specifies whether active tracing with X-ray is enabled for the <a>Stage</a>.</p>
         pub fn set_tracing_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.tracing_enabled = input;
             self
@@ -719,10 +789,16 @@ pub mod update_stage_output {
             self.web_acl_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the WebAcl associated with the <a>Stage</a>.</p>
         pub fn set_web_acl_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.web_acl_arn = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -733,6 +809,7 @@ pub mod update_stage_output {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -743,25 +820,27 @@ pub mod update_stage_output {
             self
         }
         /// <p>The timestamp when the stage was created.</p>
-        pub fn created_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_date = Some(input);
             self
         }
+        /// <p>The timestamp when the stage was created.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_date = input;
             self
         }
         /// <p>The timestamp when the stage last updated.</p>
-        pub fn last_updated_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_updated_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_updated_date = Some(input);
             self
         }
+        /// <p>The timestamp when the stage last updated.</p>
         pub fn set_last_updated_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_updated_date = input;
             self
@@ -811,7 +890,7 @@ pub struct UpdateRestApiOutput {
     /// <p>The API's description.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The timestamp when the API was created.</p>
-    pub created_date: std::option::Option<smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A version identifier for the API.</p>
     pub version: std::option::Option<std::string::String>,
     /// <p>The warning messages reported when <code>failonwarnings</code> is turned on during API import.</p>
@@ -863,7 +942,7 @@ pub mod update_rest_api_output {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) created_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) version: std::option::Option<std::string::String>,
         pub(crate) warnings: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) binary_media_types: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -882,6 +961,7 @@ pub mod update_rest_api_output {
             self.id = Some(input.into());
             self
         }
+        /// <p>The API's identifier. This identifier is unique across all of your APIs in API Gateway.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -891,6 +971,7 @@ pub mod update_rest_api_output {
             self.name = Some(input.into());
             self
         }
+        /// <p>The API's name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -900,18 +981,20 @@ pub mod update_rest_api_output {
             self.description = Some(input.into());
             self
         }
+        /// <p>The API's description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
         /// <p>The timestamp when the API was created.</p>
-        pub fn created_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_date = Some(input);
             self
         }
+        /// <p>The timestamp when the API was created.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_date = input;
             self
@@ -921,16 +1004,23 @@ pub mod update_rest_api_output {
             self.version = Some(input.into());
             self
         }
+        /// <p>A version identifier for the API.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
         }
+        /// Appends an item to `warnings`.
+        ///
+        /// To override the contents of this collection use [`set_warnings`](Self::set_warnings).
+        ///
+        /// <p>The warning messages reported when <code>failonwarnings</code> is turned on during API import.</p>
         pub fn warnings(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.warnings.unwrap_or_default();
             v.push(input.into());
             self.warnings = Some(v);
             self
         }
+        /// <p>The warning messages reported when <code>failonwarnings</code> is turned on during API import.</p>
         pub fn set_warnings(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -938,12 +1028,18 @@ pub mod update_rest_api_output {
             self.warnings = input;
             self
         }
+        /// Appends an item to `binary_media_types`.
+        ///
+        /// To override the contents of this collection use [`set_binary_media_types`](Self::set_binary_media_types).
+        ///
+        /// <p>The list of binary media types supported by the <a>RestApi</a>. By default, the <a>RestApi</a> supports only UTF-8-encoded text payloads.</p>
         pub fn binary_media_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.binary_media_types.unwrap_or_default();
             v.push(input.into());
             self.binary_media_types = Some(v);
             self
         }
+        /// <p>The list of binary media types supported by the <a>RestApi</a>. By default, the <a>RestApi</a> supports only UTF-8-encoded text payloads.</p>
         pub fn set_binary_media_types(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -956,6 +1052,7 @@ pub mod update_rest_api_output {
             self.minimum_compression_size = Some(input);
             self
         }
+        /// <p>A nullable integer that is used to enable compression (with non-negative between 0 and 10485760 (10M) bytes, inclusive) or disable compression (with a null value) on an API. When compression is enabled, compression or decompression is not applied on the payload if the payload size is smaller than this value. Setting it to zero allows compression for any payload size.</p>
         pub fn set_minimum_compression_size(mut self, input: std::option::Option<i32>) -> Self {
             self.minimum_compression_size = input;
             self
@@ -965,6 +1062,7 @@ pub mod update_rest_api_output {
             self.api_key_source = Some(input);
             self
         }
+        /// <p>The source of the API key for metering requests according to a usage plan. Valid values are: <ul><li><code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request. </li><li><code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</li></ul></p>
         pub fn set_api_key_source(
             mut self,
             input: std::option::Option<crate::model::ApiKeySourceType>,
@@ -980,6 +1078,7 @@ pub mod update_rest_api_output {
             self.endpoint_configuration = Some(input);
             self
         }
+        /// <p>The endpoint configuration of this <a>RestApi</a> showing the endpoint types of the API.</p>
         pub fn set_endpoint_configuration(
             mut self,
             input: std::option::Option<crate::model::EndpointConfiguration>,
@@ -992,10 +1091,16 @@ pub mod update_rest_api_output {
             self.policy = Some(input.into());
             self
         }
+        /// <p>A stringified JSON policy document that applies to this RestApi regardless of the caller and <a>Method</a> configuration.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1006,6 +1111,7 @@ pub mod update_rest_api_output {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1020,6 +1126,7 @@ pub mod update_rest_api_output {
             self.disable_execute_api_endpoint = Some(input);
             self
         }
+        /// <p>Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
         pub fn set_disable_execute_api_endpoint(
             mut self,
             input: std::option::Option<bool>,
@@ -1256,6 +1363,7 @@ pub mod update_resource_output {
             self.id = Some(input.into());
             self
         }
+        /// <p>The resource's identifier.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -1265,6 +1373,7 @@ pub mod update_resource_output {
             self.parent_id = Some(input.into());
             self
         }
+        /// <p>The parent resource's identifier.</p>
         pub fn set_parent_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.parent_id = input;
             self
@@ -1274,6 +1383,7 @@ pub mod update_resource_output {
             self.path_part = Some(input.into());
             self
         }
+        /// <p>The last path segment for this resource.</p>
         pub fn set_path_part(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.path_part = input;
             self
@@ -1283,10 +1393,168 @@ pub mod update_resource_output {
             self.path = Some(input.into());
             self
         }
+        /// <p>The full path for this resource.</p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.path = input;
             self
         }
+        /// Adds a key-value pair to `resource_methods`.
+        ///
+        /// To override the contents of this collection use [`set_resource_methods`](Self::set_resource_methods).
+        ///
+        /// <p>Gets an API resource's method of a given HTTP verb.</p>
+        /// <div class="remarks">
+        /// <p>The resource methods are a map of methods indexed by methods' HTTP verbs enabled on the resource. This method map is included in the <code>200 OK</code> response of the <code>GET /restapis/{restapi_id}/resources/{resource_id}</code> or <code>GET /restapis/{restapi_id}/resources/{resource_id}?embed=methods</code> request.</p>
+        /// <h4>Example: Get the GET method of an API resource</h4>
+        /// <h5>Request</h5>
+        /// <pre><code>GET /restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET HTTP/1.1
+        /// Content-Type: application/json
+        /// Host: apigateway.us-east-1.amazonaws.com
+        /// X-Amz-Date: 20170223T031827Z
+        /// Authorization: AWS4-HMAC-SHA256 Credential={access_key_ID}/20170223/us-east-1/apigateway/aws4_request, SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash}</code></pre>
+        /// <h5>Response</h5>
+        /// <pre><code>{
+        /// "_links": {
+        /// "curies": [
+        /// {
+        /// "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html",
+        /// "name": "integration",
+        /// "templated": true
+        /// },
+        /// {
+        /// "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
+        /// "name": "integrationresponse",
+        /// "templated": true
+        /// },
+        /// {
+        /// "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-{rel}.html",
+        /// "name": "method",
+        /// "templated": true
+        /// },
+        /// {
+        /// "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-response-{rel}.html",
+        /// "name": "methodresponse",
+        /// "templated": true
+        /// }
+        /// ],
+        /// "self": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET",
+        /// "name": "GET",
+        /// "title": "GET"
+        /// },
+        /// "integration:put": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration"
+        /// },
+        /// "method:delete": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET"
+        /// },
+        /// "method:integration": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration"
+        /// },
+        /// "method:responses": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/responses/200",
+        /// "name": "200",
+        /// "title": "200"
+        /// },
+        /// "method:update": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET"
+        /// },
+        /// "methodresponse:put": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/responses/{status_code}",
+        /// "templated": true
+        /// }
+        /// },
+        /// "apiKeyRequired": false,
+        /// "authorizationType": "NONE",
+        /// "httpMethod": "GET",
+        /// "_embedded": {
+        /// "method:integration": {
+        /// "_links": {
+        /// "self": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration"
+        /// },
+        /// "integration:delete": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration"
+        /// },
+        /// "integration:responses": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200",
+        /// "name": "200",
+        /// "title": "200"
+        /// },
+        /// "integration:update": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration"
+        /// },
+        /// "integrationresponse:put": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/{status_code}",
+        /// "templated": true
+        /// }
+        /// },
+        /// "cacheKeyParameters": [],
+        /// "cacheNamespace": "3kzxbg5sa2",
+        /// "credentials": "arn:aws:iam::123456789012:role/apigAwsProxyRole",
+        /// "httpMethod": "POST",
+        /// "passthroughBehavior": "WHEN_NO_MATCH",
+        /// "requestParameters": {
+        /// "integration.request.header.Content-Type": "'application/x-amz-json-1.1'"
+        /// },
+        /// "requestTemplates": {
+        /// "application/json": "{\n}"
+        /// },
+        /// "type": "AWS",
+        /// "uri": "arn:aws:apigateway:us-east-1:kinesis:action/ListStreams",
+        /// "_embedded": {
+        /// "integration:responses": {
+        /// "_links": {
+        /// "self": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200",
+        /// "name": "200",
+        /// "title": "200"
+        /// },
+        /// "integrationresponse:delete": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200"
+        /// },
+        /// "integrationresponse:update": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200"
+        /// }
+        /// },
+        /// "responseParameters": {
+        /// "method.response.header.Content-Type": "'application/xml'"
+        /// },
+        /// "responseTemplates": {
+        /// "application/json": "$util.urlDecode(\"%3CkinesisStreams%3E#foreach($stream in $input.path('$.StreamNames'))%3Cstream%3E%3Cname%3E$stream%3C/name%3E%3C/stream%3E#end%3C/kinesisStreams%3E\")\n"
+        /// },
+        /// "statusCode": "200"
+        /// }
+        /// }
+        /// },
+        /// "method:responses": {
+        /// "_links": {
+        /// "self": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/responses/200",
+        /// "name": "200",
+        /// "title": "200"
+        /// },
+        /// "methodresponse:delete": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/responses/200"
+        /// },
+        /// "methodresponse:update": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/responses/200"
+        /// }
+        /// },
+        /// "responseModels": {
+        /// "application/json": "Empty"
+        /// },
+        /// "responseParameters": {
+        /// "method.response.header.Content-Type": false
+        /// },
+        /// "statusCode": "200"
+        /// }
+        /// }
+        /// }</code></pre>
+        /// <p>If the <code>OPTIONS</code> is enabled on the resource, you can follow the example here to get that method. Just replace the <code>GET</code> of the last path segment in the request URL with <code>OPTIONS</code>.</p>
+        /// </div>
+        /// <div class="seeAlso">
+        /// </div>
         pub fn resource_methods(
             mut self,
             k: impl Into<std::string::String>,
@@ -1297,6 +1565,159 @@ pub mod update_resource_output {
             self.resource_methods = Some(hash_map);
             self
         }
+        /// <p>Gets an API resource's method of a given HTTP verb.</p>
+        /// <div class="remarks">
+        /// <p>The resource methods are a map of methods indexed by methods' HTTP verbs enabled on the resource. This method map is included in the <code>200 OK</code> response of the <code>GET /restapis/{restapi_id}/resources/{resource_id}</code> or <code>GET /restapis/{restapi_id}/resources/{resource_id}?embed=methods</code> request.</p>
+        /// <h4>Example: Get the GET method of an API resource</h4>
+        /// <h5>Request</h5>
+        /// <pre><code>GET /restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET HTTP/1.1
+        /// Content-Type: application/json
+        /// Host: apigateway.us-east-1.amazonaws.com
+        /// X-Amz-Date: 20170223T031827Z
+        /// Authorization: AWS4-HMAC-SHA256 Credential={access_key_ID}/20170223/us-east-1/apigateway/aws4_request, SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash}</code></pre>
+        /// <h5>Response</h5>
+        /// <pre><code>{
+        /// "_links": {
+        /// "curies": [
+        /// {
+        /// "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html",
+        /// "name": "integration",
+        /// "templated": true
+        /// },
+        /// {
+        /// "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
+        /// "name": "integrationresponse",
+        /// "templated": true
+        /// },
+        /// {
+        /// "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-{rel}.html",
+        /// "name": "method",
+        /// "templated": true
+        /// },
+        /// {
+        /// "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-response-{rel}.html",
+        /// "name": "methodresponse",
+        /// "templated": true
+        /// }
+        /// ],
+        /// "self": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET",
+        /// "name": "GET",
+        /// "title": "GET"
+        /// },
+        /// "integration:put": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration"
+        /// },
+        /// "method:delete": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET"
+        /// },
+        /// "method:integration": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration"
+        /// },
+        /// "method:responses": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/responses/200",
+        /// "name": "200",
+        /// "title": "200"
+        /// },
+        /// "method:update": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET"
+        /// },
+        /// "methodresponse:put": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/responses/{status_code}",
+        /// "templated": true
+        /// }
+        /// },
+        /// "apiKeyRequired": false,
+        /// "authorizationType": "NONE",
+        /// "httpMethod": "GET",
+        /// "_embedded": {
+        /// "method:integration": {
+        /// "_links": {
+        /// "self": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration"
+        /// },
+        /// "integration:delete": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration"
+        /// },
+        /// "integration:responses": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200",
+        /// "name": "200",
+        /// "title": "200"
+        /// },
+        /// "integration:update": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration"
+        /// },
+        /// "integrationresponse:put": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/{status_code}",
+        /// "templated": true
+        /// }
+        /// },
+        /// "cacheKeyParameters": [],
+        /// "cacheNamespace": "3kzxbg5sa2",
+        /// "credentials": "arn:aws:iam::123456789012:role/apigAwsProxyRole",
+        /// "httpMethod": "POST",
+        /// "passthroughBehavior": "WHEN_NO_MATCH",
+        /// "requestParameters": {
+        /// "integration.request.header.Content-Type": "'application/x-amz-json-1.1'"
+        /// },
+        /// "requestTemplates": {
+        /// "application/json": "{\n}"
+        /// },
+        /// "type": "AWS",
+        /// "uri": "arn:aws:apigateway:us-east-1:kinesis:action/ListStreams",
+        /// "_embedded": {
+        /// "integration:responses": {
+        /// "_links": {
+        /// "self": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200",
+        /// "name": "200",
+        /// "title": "200"
+        /// },
+        /// "integrationresponse:delete": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200"
+        /// },
+        /// "integrationresponse:update": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200"
+        /// }
+        /// },
+        /// "responseParameters": {
+        /// "method.response.header.Content-Type": "'application/xml'"
+        /// },
+        /// "responseTemplates": {
+        /// "application/json": "$util.urlDecode(\"%3CkinesisStreams%3E#foreach($stream in $input.path('$.StreamNames'))%3Cstream%3E%3Cname%3E$stream%3C/name%3E%3C/stream%3E#end%3C/kinesisStreams%3E\")\n"
+        /// },
+        /// "statusCode": "200"
+        /// }
+        /// }
+        /// },
+        /// "method:responses": {
+        /// "_links": {
+        /// "self": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/responses/200",
+        /// "name": "200",
+        /// "title": "200"
+        /// },
+        /// "methodresponse:delete": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/responses/200"
+        /// },
+        /// "methodresponse:update": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/responses/200"
+        /// }
+        /// },
+        /// "responseModels": {
+        /// "application/json": "Empty"
+        /// },
+        /// "responseParameters": {
+        /// "method.response.header.Content-Type": false
+        /// },
+        /// "statusCode": "200"
+        /// }
+        /// }
+        /// }</code></pre>
+        /// <p>If the <code>OPTIONS</code> is enabled on the resource, you can follow the example here to get that method. Just replace the <code>GET</code> of the last path segment in the request URL with <code>OPTIONS</code>.</p>
+        /// </div>
+        /// <div class="seeAlso">
+        /// </div>
         pub fn set_resource_methods(
             mut self,
             input: std::option::Option<
@@ -1372,6 +1793,7 @@ pub mod update_request_validator_output {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier of this <a>RequestValidator</a>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -1381,6 +1803,7 @@ pub mod update_request_validator_output {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of this <a>RequestValidator</a></p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1390,6 +1813,7 @@ pub mod update_request_validator_output {
             self.validate_request_body = Some(input);
             self
         }
+        /// <p>A Boolean flag to indicate whether to validate a request body according to the configured <a>Model</a> schema.</p>
         pub fn set_validate_request_body(mut self, input: std::option::Option<bool>) -> Self {
             self.validate_request_body = input;
             self
@@ -1399,6 +1823,7 @@ pub mod update_request_validator_output {
             self.validate_request_parameters = Some(input);
             self
         }
+        /// <p>A Boolean flag to indicate whether to validate request parameters (<code>true</code>) or not (<code>false</code>).</p>
         pub fn set_validate_request_parameters(mut self, input: std::option::Option<bool>) -> Self {
             self.validate_request_parameters = input;
             self
@@ -1472,6 +1897,7 @@ pub mod update_model_output {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier for the model resource.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -1481,6 +1907,7 @@ pub mod update_model_output {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the model. Must be an alphanumeric string.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1490,6 +1917,7 @@ pub mod update_model_output {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the model.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -1499,6 +1927,7 @@ pub mod update_model_output {
             self.schema = Some(input.into());
             self
         }
+        /// <p>The schema for the model. For <code>application/json</code> models, this should be <a target="_blank" href="https://tools.ietf.org/html/draft-zyp-json-schema-04">JSON schema draft 4</a> model. Do not include "\*/" characters in the description of any properties because such "\*/" characters may be interpreted as the closing marker for comments in some languages, such as Java or JavaScript, causing the installation of your API's SDK generated by API Gateway to fail.</p>
         pub fn set_schema(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.schema = input;
             self
@@ -1508,6 +1937,7 @@ pub mod update_model_output {
             self.content_type = Some(input.into());
             self
         }
+        /// <p>The content-type for the model.</p>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_type = input;
             self
@@ -1616,10 +2046,16 @@ pub mod update_method_response_output {
             self.status_code = Some(input.into());
             self
         }
+        /// <p>The method response's status code.</p>
         pub fn set_status_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status_code = input;
             self
         }
+        /// Adds a key-value pair to `response_parameters`.
+        ///
+        /// To override the contents of this collection use [`set_response_parameters`](Self::set_response_parameters).
+        ///
+        /// <p>A key-value map specifying required or optional response parameters that API Gateway can send back to the caller. A key defines a method response header and the value specifies whether the associated method response header is required or not. The expression of the key must match the pattern <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. API Gateway passes certain integration response data to the method response headers specified here according to the mapping you prescribe in the API's <a>IntegrationResponse</a>. The integration response data that can be mapped include an integration response header expressed in <code>integration.response.header.{name}</code>, a static value enclosed within a pair of single quotes (e.g., <code>'application/json'</code>), or a JSON expression from the back-end response payload in the form of <code>integration.response.body.{JSON-expression}</code>, where <code>JSON-expression</code> is a valid JSON expression without the <code>$</code> prefix.)</p>
         pub fn response_parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -1630,6 +2066,7 @@ pub mod update_method_response_output {
             self.response_parameters = Some(hash_map);
             self
         }
+        /// <p>A key-value map specifying required or optional response parameters that API Gateway can send back to the caller. A key defines a method response header and the value specifies whether the associated method response header is required or not. The expression of the key must match the pattern <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. API Gateway passes certain integration response data to the method response headers specified here according to the mapping you prescribe in the API's <a>IntegrationResponse</a>. The integration response data that can be mapped include an integration response header expressed in <code>integration.response.header.{name}</code>, a static value enclosed within a pair of single quotes (e.g., <code>'application/json'</code>), or a JSON expression from the back-end response payload in the form of <code>integration.response.body.{JSON-expression}</code>, where <code>JSON-expression</code> is a valid JSON expression without the <code>$</code> prefix.)</p>
         pub fn set_response_parameters(
             mut self,
             input: std::option::Option<std::collections::HashMap<std::string::String, bool>>,
@@ -1637,6 +2074,11 @@ pub mod update_method_response_output {
             self.response_parameters = input;
             self
         }
+        /// Adds a key-value pair to `response_models`.
+        ///
+        /// To override the contents of this collection use [`set_response_models`](Self::set_response_models).
+        ///
+        /// <p>Specifies the <a>Model</a> resources used for the response's content-type. Response models are represented as a key/value map, with a content-type as the key and a <a>Model</a> name as the value.</p>
         pub fn response_models(
             mut self,
             k: impl Into<std::string::String>,
@@ -1647,6 +2089,7 @@ pub mod update_method_response_output {
             self.response_models = Some(hash_map);
             self
         }
+        /// <p>Specifies the <a>Model</a> resources used for the response's content-type. Response models are represented as a key/value map, with a content-type as the key and a <a>Model</a> name as the value.</p>
         pub fn set_response_models(
             mut self,
             input: std::option::Option<
@@ -2048,6 +2491,7 @@ pub mod update_method_output {
             self.http_method = Some(input.into());
             self
         }
+        /// <p>The method's HTTP verb.</p>
         pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.http_method = input;
             self
@@ -2057,6 +2501,7 @@ pub mod update_method_output {
             self.authorization_type = Some(input.into());
             self
         }
+        /// <p>The method's authorization type. Valid values are <code>NONE</code> for open access, <code>AWS_IAM</code> for using AWS IAM permissions, <code>CUSTOM</code> for using a custom authorizer, or <code>COGNITO_USER_POOLS</code> for using a Cognito user pool.</p>
         pub fn set_authorization_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2069,6 +2514,7 @@ pub mod update_method_output {
             self.authorizer_id = Some(input.into());
             self
         }
+        /// <p>The identifier of an <a>Authorizer</a> to use on this method. The <code>authorizationType</code> must be <code>CUSTOM</code>.</p>
         pub fn set_authorizer_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2081,6 +2527,7 @@ pub mod update_method_output {
             self.api_key_required = Some(input);
             self
         }
+        /// <p>A boolean flag specifying whether a valid <a>ApiKey</a> is required to invoke this method.</p>
         pub fn set_api_key_required(mut self, input: std::option::Option<bool>) -> Self {
             self.api_key_required = input;
             self
@@ -2090,6 +2537,7 @@ pub mod update_method_output {
             self.request_validator_id = Some(input.into());
             self
         }
+        /// <p>The identifier of a <a>RequestValidator</a> for request validation.</p>
         pub fn set_request_validator_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2102,6 +2550,7 @@ pub mod update_method_output {
             self.operation_name = Some(input.into());
             self
         }
+        /// <p>A human-friendly operation identifier for the method. For example, you can assign the <code>operationName</code> of <code>ListPets</code> for the <code>GET /pets</code> method in the <code>PetStore</code> example.</p>
         pub fn set_operation_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2109,6 +2558,11 @@ pub mod update_method_output {
             self.operation_name = input;
             self
         }
+        /// Adds a key-value pair to `request_parameters`.
+        ///
+        /// To override the contents of this collection use [`set_request_parameters`](Self::set_request_parameters).
+        ///
+        /// <p>A key-value map defining required or optional method request parameters that can be accepted by API Gateway. A key is a method request parameter name matching the pattern of  <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and <code>name</code> is a valid and unique parameter name. The value associated with the key is a Boolean flag indicating whether the parameter is required (<code>true</code>) or optional (<code>false</code>).  The method request parameter names defined here are available in <a>Integration</a> to be mapped to integration request parameters or templates.</p>
         pub fn request_parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -2119,6 +2573,7 @@ pub mod update_method_output {
             self.request_parameters = Some(hash_map);
             self
         }
+        /// <p>A key-value map defining required or optional method request parameters that can be accepted by API Gateway. A key is a method request parameter name matching the pattern of  <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and <code>name</code> is a valid and unique parameter name. The value associated with the key is a Boolean flag indicating whether the parameter is required (<code>true</code>) or optional (<code>false</code>).  The method request parameter names defined here are available in <a>Integration</a> to be mapped to integration request parameters or templates.</p>
         pub fn set_request_parameters(
             mut self,
             input: std::option::Option<std::collections::HashMap<std::string::String, bool>>,
@@ -2126,6 +2581,11 @@ pub mod update_method_output {
             self.request_parameters = input;
             self
         }
+        /// Adds a key-value pair to `request_models`.
+        ///
+        /// To override the contents of this collection use [`set_request_models`](Self::set_request_models).
+        ///
+        /// <p>A key-value map specifying data schemas, represented by <a>Model</a> resources, (as the mapped value) of the request payloads of given content types (as the mapping key).</p>
         pub fn request_models(
             mut self,
             k: impl Into<std::string::String>,
@@ -2136,6 +2596,7 @@ pub mod update_method_output {
             self.request_models = Some(hash_map);
             self
         }
+        /// <p>A key-value map specifying data schemas, represented by <a>Model</a> resources, (as the mapped value) of the request payloads of given content types (as the mapping key).</p>
         pub fn set_request_models(
             mut self,
             input: std::option::Option<
@@ -2145,6 +2606,57 @@ pub mod update_method_output {
             self.request_models = input;
             self
         }
+        /// Adds a key-value pair to `method_responses`.
+        ///
+        /// To override the contents of this collection use [`set_method_responses`](Self::set_method_responses).
+        ///
+        /// <p>Gets a method response associated with a given HTTP status code. </p>
+        /// <div class="remarks">
+        /// <p>The collection of method responses are encapsulated in a key-value map, where the key is a response's HTTP status code and the value is a <a>MethodResponse</a> resource that specifies the response returned to the caller from the back end through the integration response.</p>
+        /// <h4>Example: Get a 200 OK response of a GET method</h4>
+        /// <h5>Request</h5>
+        /// <p></p>
+        /// <pre><code>GET /restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200 HTTP/1.1
+        /// Content-Type: application/json
+        /// Host: apigateway.us-east-1.amazonaws.com
+        /// Content-Length: 117
+        /// X-Amz-Date: 20160613T215008Z
+        /// Authorization: AWS4-HMAC-SHA256 Credential={access_key_ID}/20160613/us-east-1/apigateway/aws4_request, SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash}</code></pre>
+        /// <h5>Response</h5>
+        /// <p>The successful response returns a <code>200 OK</code> status code and a payload similar to the following:</p>
+        /// <pre><code>{
+        /// "_links": {
+        /// "curies": {
+        /// "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-response-{rel}.html",
+        /// "name": "methodresponse",
+        /// "templated": true
+        /// },
+        /// "self": {
+        /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200",
+        /// "title": "200"
+        /// },
+        /// "methodresponse:delete": {
+        /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200"
+        /// },
+        /// "methodresponse:update": {
+        /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200"
+        /// }
+        /// },
+        /// "responseModels": {
+        /// "application/json": "Empty"
+        /// },
+        /// "responseParameters": {
+        /// "method.response.header.operator": false,
+        /// "method.response.header.operand_2": false,
+        /// "method.response.header.operand_1": false
+        /// },
+        /// "statusCode": "200"
+        /// }</code></pre>
+        /// <p></p>
+        /// </div>
+        /// <div class="seeAlso">
+        /// <a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-method-response.html">AWS CLI</a>
+        /// </div>
         pub fn method_responses(
             mut self,
             k: impl Into<std::string::String>,
@@ -2155,6 +2667,53 @@ pub mod update_method_output {
             self.method_responses = Some(hash_map);
             self
         }
+        /// <p>Gets a method response associated with a given HTTP status code. </p>
+        /// <div class="remarks">
+        /// <p>The collection of method responses are encapsulated in a key-value map, where the key is a response's HTTP status code and the value is a <a>MethodResponse</a> resource that specifies the response returned to the caller from the back end through the integration response.</p>
+        /// <h4>Example: Get a 200 OK response of a GET method</h4>
+        /// <h5>Request</h5>
+        /// <p></p>
+        /// <pre><code>GET /restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200 HTTP/1.1
+        /// Content-Type: application/json
+        /// Host: apigateway.us-east-1.amazonaws.com
+        /// Content-Length: 117
+        /// X-Amz-Date: 20160613T215008Z
+        /// Authorization: AWS4-HMAC-SHA256 Credential={access_key_ID}/20160613/us-east-1/apigateway/aws4_request, SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash}</code></pre>
+        /// <h5>Response</h5>
+        /// <p>The successful response returns a <code>200 OK</code> status code and a payload similar to the following:</p>
+        /// <pre><code>{
+        /// "_links": {
+        /// "curies": {
+        /// "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-response-{rel}.html",
+        /// "name": "methodresponse",
+        /// "templated": true
+        /// },
+        /// "self": {
+        /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200",
+        /// "title": "200"
+        /// },
+        /// "methodresponse:delete": {
+        /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200"
+        /// },
+        /// "methodresponse:update": {
+        /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200"
+        /// }
+        /// },
+        /// "responseModels": {
+        /// "application/json": "Empty"
+        /// },
+        /// "responseParameters": {
+        /// "method.response.header.operator": false,
+        /// "method.response.header.operand_2": false,
+        /// "method.response.header.operand_1": false
+        /// },
+        /// "statusCode": "200"
+        /// }</code></pre>
+        /// <p></p>
+        /// </div>
+        /// <div class="seeAlso">
+        /// <a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-method-response.html">AWS CLI</a>
+        /// </div>
         pub fn set_method_responses(
             mut self,
             input: std::option::Option<
@@ -2258,6 +2817,96 @@ pub mod update_method_output {
             self.method_integration = Some(input);
             self
         }
+        /// <p>Gets the method's integration responsible for passing the client-submitted request to the back end and performing necessary transformations to make the request compliant with the back end.</p>
+        /// <div class="remarks">
+        /// <p></p>
+        /// <h4>Example: </h4>
+        /// <h5>Request</h5>
+        /// <p></p>
+        /// <pre><code>GET /restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration HTTP/1.1
+        /// Content-Type: application/json
+        /// Host: apigateway.us-east-1.amazonaws.com
+        /// Content-Length: 117
+        /// X-Amz-Date: 20160613T213210Z
+        /// Authorization: AWS4-HMAC-SHA256 Credential={access_key_ID}/20160613/us-east-1/apigateway/aws4_request, SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash}</code></pre>
+        /// <h5>Response</h5>
+        /// <p>The successful response returns a <code>200 OK</code> status code and a payload similar to the following:</p>
+        /// <pre><code>{
+        /// "_links": {
+        /// "curies": [
+        /// {
+        /// "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html",
+        /// "name": "integration",
+        /// "templated": true
+        /// },
+        /// {
+        /// "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
+        /// "name": "integrationresponse",
+        /// "templated": true
+        /// }
+        /// ],
+        /// "self": {
+        /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration"
+        /// },
+        /// "integration:delete": {
+        /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration"
+        /// },
+        /// "integration:responses": {
+        /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200",
+        /// "name": "200",
+        /// "title": "200"
+        /// },
+        /// "integration:update": {
+        /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration"
+        /// },
+        /// "integrationresponse:put": {
+        /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/{status_code}",
+        /// "templated": true
+        /// }
+        /// },
+        /// "cacheKeyParameters": [],
+        /// "cacheNamespace": "0cjtch",
+        /// "credentials": "arn:aws:iam::123456789012:role/apigAwsProxyRole",
+        /// "httpMethod": "POST",
+        /// "passthroughBehavior": "WHEN_NO_MATCH",
+        /// "requestTemplates": {
+        /// "application/json": "{\n    \"a\":  \"$input.params('operand1')\",\n    \"b\":  \"$input.params('operand2')\", \n    \"op\": \"$input.params('operator')\"   \n}"
+        /// },
+        /// "type": "AWS",
+        /// "uri": "arn:aws:apigateway:us-west-2:lambda:path//2015-03-31/functions/arn:aws:lambda:us-west-2:123456789012:function:Calc/invocations",
+        /// "_embedded": {
+        /// "integration:responses": {
+        /// "_links": {
+        /// "self": {
+        /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200",
+        /// "name": "200",
+        /// "title": "200"
+        /// },
+        /// "integrationresponse:delete": {
+        /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200"
+        /// },
+        /// "integrationresponse:update": {
+        /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200"
+        /// }
+        /// },
+        /// "responseParameters": {
+        /// "method.response.header.operator": "integration.response.body.op",
+        /// "method.response.header.operand_2": "integration.response.body.b",
+        /// "method.response.header.operand_1": "integration.response.body.a"
+        /// },
+        /// "responseTemplates": {
+        /// "application/json": "#set($res = $input.path('$'))\n{\n    \"result\": \"$res.a, $res.b, $res.op => $res.c\",\n  \"a\" : \"$res.a\",\n  \"b\" : \"$res.b\",\n  \"op\" : \"$res.op\",\n  \"c\" : \"$res.c\"\n}"
+        /// },
+        /// "selectionPattern": "",
+        /// "statusCode": "200"
+        /// }
+        /// }
+        /// }</code></pre>
+        /// <p></p>
+        /// </div>
+        /// <div class="seeAlso">
+        /// <a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-integration.html">AWS CLI</a>
+        /// </div>
         pub fn set_method_integration(
             mut self,
             input: std::option::Option<crate::model::Integration>,
@@ -2265,12 +2914,18 @@ pub mod update_method_output {
             self.method_integration = input;
             self
         }
+        /// Appends an item to `authorization_scopes`.
+        ///
+        /// To override the contents of this collection use [`set_authorization_scopes`](Self::set_authorization_scopes).
+        ///
+        /// <p>A list of authorization scopes configured on the method. The scopes are used with a <code>COGNITO_USER_POOLS</code> authorizer to authorize the method invocation. The authorization works by matching the method scopes against the scopes parsed from the access token in the incoming request. The method invocation is authorized if any method scopes matches a claimed scope in the access token. Otherwise, the invocation is not authorized. When the method scope is configured, the client must provide an access token instead of an identity token for authorization purposes.</p>
         pub fn authorization_scopes(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.authorization_scopes.unwrap_or_default();
             v.push(input.into());
             self.authorization_scopes = Some(v);
             self
         }
+        /// <p>A list of authorization scopes configured on the method. The scopes are used with a <code>COGNITO_USER_POOLS</code> authorizer to authorize the method invocation. The authorization works by matching the method scopes against the scopes parsed from the access token in the incoming request. The method invocation is authorized if any method scopes matches a claimed scope in the access token. Otherwise, the invocation is not authorized. When the method scope is configured, the client must provide an access token instead of an identity token for authorization purposes.</p>
         pub fn set_authorization_scopes(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2362,6 +3017,7 @@ pub mod update_integration_response_output {
             self.status_code = Some(input.into());
             self
         }
+        /// <p>Specifies the status code that is used to map the integration response to an existing <a>MethodResponse</a>.</p>
         pub fn set_status_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status_code = input;
             self
@@ -2371,6 +3027,7 @@ pub mod update_integration_response_output {
             self.selection_pattern = Some(input.into());
             self
         }
+        /// <p>Specifies the regular expression (regex) pattern used to choose an integration response based on the response from the back end. For example, if the success response returns nothing and the error response returns some string, you could use the <code>.+</code> regex to match error response. However, make sure that the error response does not contain any newline (<code>\n</code>) character in such cases. If the back end is an AWS Lambda function, the AWS Lambda function error header is matched. For all other HTTP and AWS back ends, the HTTP status code is matched.</p>
         pub fn set_selection_pattern(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2378,6 +3035,12 @@ pub mod update_integration_response_output {
             self.selection_pattern = input;
             self
         }
+        /// Adds a key-value pair to `response_parameters`.
+        ///
+        /// To override the contents of this collection use [`set_response_parameters`](Self::set_response_parameters).
+        ///
+        /// <p>A key-value map specifying response parameters that are passed to the method response from the back end.
+        /// The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. The mapped non-static value must match the pattern of <code>integration.response.header.{name}</code> or <code>integration.response.body.{JSON-expression}</code>, where <code>name</code> is a valid and unique response header name and <code>JSON-expression</code> is a valid JSON expression without the <code>$</code> prefix.</p>
         pub fn response_parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -2388,6 +3051,8 @@ pub mod update_integration_response_output {
             self.response_parameters = Some(hash_map);
             self
         }
+        /// <p>A key-value map specifying response parameters that are passed to the method response from the back end.
+        /// The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. The mapped non-static value must match the pattern of <code>integration.response.header.{name}</code> or <code>integration.response.body.{JSON-expression}</code>, where <code>name</code> is a valid and unique response header name and <code>JSON-expression</code> is a valid JSON expression without the <code>$</code> prefix.</p>
         pub fn set_response_parameters(
             mut self,
             input: std::option::Option<
@@ -2397,6 +3062,11 @@ pub mod update_integration_response_output {
             self.response_parameters = input;
             self
         }
+        /// Adds a key-value pair to `response_templates`.
+        ///
+        /// To override the contents of this collection use [`set_response_templates`](Self::set_response_templates).
+        ///
+        /// <p>Specifies the templates used to transform the integration response body. Response templates are represented as a key/value map, with a content-type as the key and a template as the value.</p>
         pub fn response_templates(
             mut self,
             k: impl Into<std::string::String>,
@@ -2407,6 +3077,7 @@ pub mod update_integration_response_output {
             self.response_templates = Some(hash_map);
             self
         }
+        /// <p>Specifies the templates used to transform the integration response body. Response templates are represented as a key/value map, with a content-type as the key and a template as the value.</p>
         pub fn set_response_templates(
             mut self,
             input: std::option::Option<
@@ -2426,6 +3097,12 @@ pub mod update_integration_response_output {
             self.content_handling = Some(input);
             self
         }
+        /// <p>Specifies how to handle response payload content type conversions. Supported values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
+        /// <ul>
+        /// <li><p><code>CONVERT_TO_BINARY</code>: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p></li>
+        /// <li><p><code>CONVERT_TO_TEXT</code>: Converts a response payload from a binary blob to a Base64-encoded string.</p></li>
+        /// </ul>
+        /// <p>If this property is not defined, the response payload will be passed through from the integration response to the method response without modification.</p>
         pub fn set_content_handling(
             mut self,
             input: std::option::Option<crate::model::ContentHandlingStrategy>,
@@ -2643,6 +3320,15 @@ pub mod update_integration_output {
             self.r#type = Some(input);
             self
         }
+        /// <p>Specifies an API method integration type. The valid value is one of the following:</p>
+        /// <ul>
+        /// <li><code>AWS</code>: for integrating the API method request with an AWS service action, including the Lambda function-invoking action. With the Lambda function-invoking action, this is referred to as the Lambda custom integration. With any other AWS service action, this is known as AWS integration.</li>
+        /// <li><code>AWS_PROXY</code>: for integrating the API method request with the Lambda function-invoking action with the client request passed through as-is. This integration is also referred to as the Lambda proxy integration.</li>
+        /// <li><code>HTTP</code>: for integrating the API method request with an HTTP endpoint, including a private HTTP endpoint within a VPC. This integration is also referred to as the HTTP custom integration.</li>
+        /// <li><code>HTTP_PROXY</code>: for integrating the API method request with an HTTP endpoint, including a private HTTP endpoint within a VPC, with the client request passed through as-is. This is also referred to as the HTTP proxy integration.</li>
+        /// <li><code>MOCK</code>: for integrating the API method request with API Gateway as a "loop-back" endpoint without invoking any backend.</li>
+        /// </ul>
+        /// <p>For the HTTP and HTTP proxy integrations, each integration can specify a protocol (<code>http/https</code>), port and path. Standard 80 and 443 ports are supported as well as custom ports above 1024. An HTTP or HTTP proxy integration with a <code>connectionType</code> of <code>VPC_LINK</code> is referred to as a private integration and uses a <a>VpcLink</a> to connect API Gateway to a network load balancer of a VPC.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::IntegrationType>,
@@ -2655,6 +3341,7 @@ pub mod update_integration_output {
             self.http_method = Some(input.into());
             self
         }
+        /// <p>Specifies the integration's HTTP method type.</p>
         pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.http_method = input;
             self
@@ -2669,6 +3356,12 @@ pub mod update_integration_output {
             self.uri = Some(input.into());
             self
         }
+        /// <p>Specifies Uniform Resource Identifier (URI) of the integration endpoint.</p>
+        /// <ul>
+        /// <li><p> For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the URI must be a fully formed, encoded HTTP(S) URL according to the <a target="_blank" href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">RFC-3986 specification</a>, for either standard integration, where <code>connectionType</code> is not <code>VPC_LINK</code>, or private integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a private HTTP integration, the URI is not used for routing. </p>
+        /// </li>
+        /// <li><p> For <code>AWS</code> or <code>AWS_PROXY</code> integrations, the URI is of the form <code>arn:aws:apigateway:{region}:{subdomain.service|service}:path|action/{service_api}</code>. Here, <code>{Region}</code> is the API Gateway region (e.g., <code>us-east-1</code>); <code>{service}</code> is the name of the integrated AWS service (e.g., <code>s3</code>); and <code>{subdomain}</code> is a designated subdomain supported by certain AWS service for fast host-name lookup. <code>action</code> can be used for an AWS service action-based API, using an <code>Action={name}&{p1}={v1}&p2={v2}...</code> query string. The ensuing <code>{service_api}</code> refers to a supported action <code>{name}</code> plus any required input parameters. Alternatively, <code>path</code> can be used for an AWS service path-based API. The ensuing  <code>service_api</code> refers to the path to an AWS service resource, including the region of the integrated AWS service, if applicable. For example, for integration with the S3 API of <code><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>, the <code>uri</code> can be either <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&Bucket={bucket}&Key={key}</code> or  <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code></p>
+        /// </li></ul>
         pub fn set_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.uri = input;
             self
@@ -2678,6 +3371,7 @@ pub mod update_integration_output {
             self.connection_type = Some(input);
             self
         }
+        /// <p>The type of the network connection to the integration endpoint. The valid value is <code>INTERNET</code> for connections through the public routable internet or <code>VPC_LINK</code> for private connections between API Gateway and a network load balancer in a VPC. The default value is <code>INTERNET</code>.</p>
         pub fn set_connection_type(
             mut self,
             input: std::option::Option<crate::model::ConnectionType>,
@@ -2690,6 +3384,7 @@ pub mod update_integration_output {
             self.connection_id = Some(input.into());
             self
         }
+        /// <p>The (<a href="https://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>) of the <a>VpcLink</a> used for the integration when <code>connectionType=VPC_LINK</code> and undefined, otherwise.</p>
         pub fn set_connection_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2702,10 +3397,16 @@ pub mod update_integration_output {
             self.credentials = Some(input.into());
             self
         }
+        /// <p>Specifies the credentials required for the integration, if any. For AWS integrations, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify the string <code>arn:aws:iam::\*:user/\*</code>. To use resource-based permissions on supported AWS services, specify null.</p>
         pub fn set_credentials(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.credentials = input;
             self
         }
+        /// Adds a key-value pair to `request_parameters`.
+        ///
+        /// To override the contents of this collection use [`set_request_parameters`](Self::set_request_parameters).
+        ///
+        /// <p>A key-value map specifying request parameters that are passed from the method request to the back end. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the back end. The method request parameter value must match the pattern of  <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and <code>name</code> must be a valid and unique method request parameter name.</p>
         pub fn request_parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -2716,6 +3417,7 @@ pub mod update_integration_output {
             self.request_parameters = Some(hash_map);
             self
         }
+        /// <p>A key-value map specifying request parameters that are passed from the method request to the back end. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the back end. The method request parameter value must match the pattern of  <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and <code>name</code> must be a valid and unique method request parameter name.</p>
         pub fn set_request_parameters(
             mut self,
             input: std::option::Option<
@@ -2725,6 +3427,11 @@ pub mod update_integration_output {
             self.request_parameters = input;
             self
         }
+        /// Adds a key-value pair to `request_templates`.
+        ///
+        /// To override the contents of this collection use [`set_request_templates`](Self::set_request_templates).
+        ///
+        /// <p>Represents a map of Velocity templates that are applied on the request payload based on the value of the Content-Type header sent by the client. The content type value is the key in this map, and the template (as a String) is the value.</p>
         pub fn request_templates(
             mut self,
             k: impl Into<std::string::String>,
@@ -2735,6 +3442,7 @@ pub mod update_integration_output {
             self.request_templates = Some(hash_map);
             self
         }
+        /// <p>Represents a map of Velocity templates that are applied on the request payload based on the value of the Content-Type header sent by the client. The content type value is the key in this map, and the template (as a String) is the value.</p>
         pub fn set_request_templates(
             mut self,
             input: std::option::Option<
@@ -2772,6 +3480,30 @@ pub mod update_integration_output {
             self.passthrough_behavior = Some(input.into());
             self
         }
+        /// <div>
+        /// <p>
+        /// Specifies how the method request body of an unmapped content type will be passed through the integration request
+        /// to the back end without transformation. A content type is unmapped if no mapping template is defined in the integration
+        /// or the content type does not match any of the mapped content types, as specified in <code>requestTemplates</code>.
+        /// The valid value is one of the following:
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <code>WHEN_NO_MATCH</code>: passes the method request body through the integration request to the back end without transformation
+        /// when the method request content type does not match any content type associated with the mapping templates defined in the integration request.
+        /// </li>
+        /// <li>
+        /// <code>WHEN_NO_TEMPLATES</code>: passes the method request body through the integration request to the back end without transformation
+        /// when no mapping template is defined in the integration request. If a template is defined when this option is selected, the method request
+        /// of an unmapped content-type will be rejected with an HTTP <code>415 Unsupported Media Type</code> response.
+        /// </li>
+        /// <li>
+        /// <code>NEVER</code>: rejects the method request with an HTTP <code>415 Unsupported Media Type</code> response when either the method
+        /// request content type does not match any content type associated with the mapping templates defined in the integration request or
+        /// no mapping template is defined in the integration request.
+        /// </li>
+        /// </ul>
+        /// </div>
         pub fn set_passthrough_behavior(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2789,6 +3521,12 @@ pub mod update_integration_output {
             self.content_handling = Some(input);
             self
         }
+        /// <p>Specifies how to handle request payload content type conversions. Supported values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
+        /// <ul>
+        /// <li><p><code>CONVERT_TO_BINARY</code>: Converts a request payload from a Base64-encoded string to the corresponding binary blob.</p></li>
+        /// <li><p><code>CONVERT_TO_TEXT</code>: Converts a request payload from a binary blob to a Base64-encoded string.</p></li>
+        /// </ul>
+        /// <p>If this property is not defined, the request payload will be passed through from the method request to integration request without modification, provided that the <code>passthroughBehavior</code> is configured to support payload pass-through.</p>
         pub fn set_content_handling(
             mut self,
             input: std::option::Option<crate::model::ContentHandlingStrategy>,
@@ -2801,6 +3539,7 @@ pub mod update_integration_output {
             self.timeout_in_millis = Some(input);
             self
         }
+        /// <p>Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds or 29 seconds.</p>
         pub fn set_timeout_in_millis(mut self, input: std::option::Option<i32>) -> Self {
             self.timeout_in_millis = input;
             self
@@ -2810,6 +3549,7 @@ pub mod update_integration_output {
             self.cache_namespace = Some(input.into());
             self
         }
+        /// <p>Specifies a group of related cached parameters. By default, API Gateway uses the resource ID as the <code>cacheNamespace</code>. You can specify the same <code>cacheNamespace</code> across resources to return the same cached data for requests to different resources.</p>
         pub fn set_cache_namespace(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2817,12 +3557,18 @@ pub mod update_integration_output {
             self.cache_namespace = input;
             self
         }
+        /// Appends an item to `cache_key_parameters`.
+        ///
+        /// To override the contents of this collection use [`set_cache_key_parameters`](Self::set_cache_key_parameters).
+        ///
+        /// <p>A list of request parameters whose values API Gateway caches. To be valid values for <code>cacheKeyParameters</code>, these parameters must also be specified for <a>Method</a> <code>requestParameters</code>.</p>
         pub fn cache_key_parameters(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.cache_key_parameters.unwrap_or_default();
             v.push(input.into());
             self.cache_key_parameters = Some(v);
             self
         }
+        /// <p>A list of request parameters whose values API Gateway caches. To be valid values for <code>cacheKeyParameters</code>, these parameters must also be specified for <a>Method</a> <code>requestParameters</code>.</p>
         pub fn set_cache_key_parameters(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2830,6 +3576,55 @@ pub mod update_integration_output {
             self.cache_key_parameters = input;
             self
         }
+        /// Adds a key-value pair to `integration_responses`.
+        ///
+        /// To override the contents of this collection use [`set_integration_responses`](Self::set_integration_responses).
+        ///
+        /// <p>Specifies the integration's responses.</p>
+        /// <div class="remarks">
+        /// <p></p>
+        /// <h4>Example: Get integration responses of a method</h4>
+        /// <h5>Request</h5>
+        /// <p></p>
+        /// <pre><code>GET /restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200 HTTP/1.1
+        /// Content-Type: application/json
+        /// Host: apigateway.us-east-1.amazonaws.com
+        /// X-Amz-Date: 20160607T191449Z
+        /// Authorization: AWS4-HMAC-SHA256 Credential={access_key_ID}/20160607/us-east-1/apigateway/aws4_request, SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash}
+        /// </code></pre>
+        /// <h5>Response</h5>
+        /// <p>The successful response returns <code>200 OK</code> status and a payload as follows:</p>
+        /// <pre><code>{
+        /// "_links": {
+        /// "curies": {
+        /// "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
+        /// "name": "integrationresponse",
+        /// "templated": true
+        /// },
+        /// "self": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200",
+        /// "title": "200"
+        /// },
+        /// "integrationresponse:delete": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200"
+        /// },
+        /// "integrationresponse:update": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200"
+        /// }
+        /// },
+        /// "responseParameters": {
+        /// "method.response.header.Content-Type": "'application/xml'"
+        /// },
+        /// "responseTemplates": {
+        /// "application/json": "$util.urlDecode(\"%3CkinesisStreams%3E#foreach($stream in $input.path('$.StreamNames'))%3Cstream%3E%3Cname%3E$stream%3C/name%3E%3C/stream%3E#end%3C/kinesisStreams%3E\")\n"
+        /// },
+        /// "statusCode": "200"
+        /// }</code></pre>
+        /// <p></p>
+        /// </div>
+        /// <div class="seeAlso">
+        /// <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating an API</a>
+        /// </div>
         pub fn integration_responses(
             mut self,
             k: impl Into<std::string::String>,
@@ -2840,6 +3635,51 @@ pub mod update_integration_output {
             self.integration_responses = Some(hash_map);
             self
         }
+        /// <p>Specifies the integration's responses.</p>
+        /// <div class="remarks">
+        /// <p></p>
+        /// <h4>Example: Get integration responses of a method</h4>
+        /// <h5>Request</h5>
+        /// <p></p>
+        /// <pre><code>GET /restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200 HTTP/1.1
+        /// Content-Type: application/json
+        /// Host: apigateway.us-east-1.amazonaws.com
+        /// X-Amz-Date: 20160607T191449Z
+        /// Authorization: AWS4-HMAC-SHA256 Credential={access_key_ID}/20160607/us-east-1/apigateway/aws4_request, SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash}
+        /// </code></pre>
+        /// <h5>Response</h5>
+        /// <p>The successful response returns <code>200 OK</code> status and a payload as follows:</p>
+        /// <pre><code>{
+        /// "_links": {
+        /// "curies": {
+        /// "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
+        /// "name": "integrationresponse",
+        /// "templated": true
+        /// },
+        /// "self": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200",
+        /// "title": "200"
+        /// },
+        /// "integrationresponse:delete": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200"
+        /// },
+        /// "integrationresponse:update": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200"
+        /// }
+        /// },
+        /// "responseParameters": {
+        /// "method.response.header.Content-Type": "'application/xml'"
+        /// },
+        /// "responseTemplates": {
+        /// "application/json": "$util.urlDecode(\"%3CkinesisStreams%3E#foreach($stream in $input.path('$.StreamNames'))%3Cstream%3E%3Cname%3E$stream%3C/name%3E%3C/stream%3E#end%3C/kinesisStreams%3E\")\n"
+        /// },
+        /// "statusCode": "200"
+        /// }</code></pre>
+        /// <p></p>
+        /// </div>
+        /// <div class="seeAlso">
+        /// <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating an API</a>
+        /// </div>
         pub fn set_integration_responses(
             mut self,
             input: std::option::Option<
@@ -2854,6 +3694,7 @@ pub mod update_integration_output {
             self.tls_config = Some(input);
             self
         }
+        /// <p>Specifies the TLS configuration for an integration.</p>
         pub fn set_tls_config(
             mut self,
             input: std::option::Option<crate::model::TlsConfig>,
@@ -2997,6 +3838,7 @@ pub mod update_gateway_response_output {
             self.response_type = Some(input);
             self
         }
+        /// <p>The response type of the associated <a>GatewayResponse</a>.</p>
         pub fn set_response_type(
             mut self,
             input: std::option::Option<crate::model::GatewayResponseType>,
@@ -3009,10 +3851,16 @@ pub mod update_gateway_response_output {
             self.status_code = Some(input.into());
             self
         }
+        /// <p>The HTTP status code for this <a>GatewayResponse</a>.</p>
         pub fn set_status_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status_code = input;
             self
         }
+        /// Adds a key-value pair to `response_parameters`.
+        ///
+        /// To override the contents of this collection use [`set_response_parameters`](Self::set_response_parameters).
+        ///
+        /// <p>Response parameters (paths, query strings and headers) of the <a>GatewayResponse</a> as a string-to-string map of key-value  pairs.</p>
         pub fn response_parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -3023,6 +3871,7 @@ pub mod update_gateway_response_output {
             self.response_parameters = Some(hash_map);
             self
         }
+        /// <p>Response parameters (paths, query strings and headers) of the <a>GatewayResponse</a> as a string-to-string map of key-value  pairs.</p>
         pub fn set_response_parameters(
             mut self,
             input: std::option::Option<
@@ -3032,6 +3881,11 @@ pub mod update_gateway_response_output {
             self.response_parameters = input;
             self
         }
+        /// Adds a key-value pair to `response_templates`.
+        ///
+        /// To override the contents of this collection use [`set_response_templates`](Self::set_response_templates).
+        ///
+        /// <p>Response templates of the <a>GatewayResponse</a> as a string-to-string map of key-value pairs.</p>
         pub fn response_templates(
             mut self,
             k: impl Into<std::string::String>,
@@ -3042,6 +3896,7 @@ pub mod update_gateway_response_output {
             self.response_templates = Some(hash_map);
             self
         }
+        /// <p>Response templates of the <a>GatewayResponse</a> as a string-to-string map of key-value pairs.</p>
         pub fn set_response_templates(
             mut self,
             input: std::option::Option<
@@ -3056,6 +3911,7 @@ pub mod update_gateway_response_output {
             self.default_response = Some(input);
             self
         }
+        /// <p>A Boolean flag to indicate whether this <a>GatewayResponse</a> is the default gateway response (<code>true</code>) or not (<code>false</code>). A default gateway response is one generated by API Gateway without any customization by an API developer. </p>
         pub fn set_default_response(mut self, input: std::option::Option<bool>) -> Self {
             self.default_response = input;
             self
@@ -3097,7 +3953,7 @@ pub struct UpdateDomainNameOutput {
     /// <p>The reference to an AWS-managed certificate that will be used by edge-optimized endpoint for this domain name. AWS Certificate Manager is the only supported source.</p>
     pub certificate_arn: std::option::Option<std::string::String>,
     /// <p>The timestamp when the certificate that was used by edge-optimized endpoint for this domain name was uploaded.</p>
-    pub certificate_upload_date: std::option::Option<smithy_types::Instant>,
+    pub certificate_upload_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The domain name associated with the regional endpoint for this custom domain name. You set up this association by adding a DNS record that points the custom domain name to this regional domain name. The regional domain name is returned by API Gateway when you create a regional endpoint.</p>
     pub regional_domain_name: std::option::Option<std::string::String>,
     /// <p>The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set up a Regional Custom Domain Name</a> and  <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for API Gateway</a>.</p>
@@ -3167,7 +4023,7 @@ pub mod update_domain_name_output {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) certificate_name: std::option::Option<std::string::String>,
         pub(crate) certificate_arn: std::option::Option<std::string::String>,
-        pub(crate) certificate_upload_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) certificate_upload_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) regional_domain_name: std::option::Option<std::string::String>,
         pub(crate) regional_hosted_zone_id: std::option::Option<std::string::String>,
         pub(crate) regional_certificate_name: std::option::Option<std::string::String>,
@@ -3191,6 +4047,7 @@ pub mod update_domain_name_output {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The custom domain name as an API host name, for example, <code>my-api.example.com</code>.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -3200,6 +4057,7 @@ pub mod update_domain_name_output {
             self.certificate_name = Some(input.into());
             self
         }
+        /// <p>The name of the certificate that will be used by edge-optimized endpoint for this domain name.</p>
         pub fn set_certificate_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3212,6 +4070,7 @@ pub mod update_domain_name_output {
             self.certificate_arn = Some(input.into());
             self
         }
+        /// <p>The reference to an AWS-managed certificate that will be used by edge-optimized endpoint for this domain name. AWS Certificate Manager is the only supported source.</p>
         pub fn set_certificate_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3220,13 +4079,14 @@ pub mod update_domain_name_output {
             self
         }
         /// <p>The timestamp when the certificate that was used by edge-optimized endpoint for this domain name was uploaded.</p>
-        pub fn certificate_upload_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn certificate_upload_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.certificate_upload_date = Some(input);
             self
         }
+        /// <p>The timestamp when the certificate that was used by edge-optimized endpoint for this domain name was uploaded.</p>
         pub fn set_certificate_upload_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.certificate_upload_date = input;
             self
@@ -3236,6 +4096,7 @@ pub mod update_domain_name_output {
             self.regional_domain_name = Some(input.into());
             self
         }
+        /// <p>The domain name associated with the regional endpoint for this custom domain name. You set up this association by adding a DNS record that points the custom domain name to this regional domain name. The regional domain name is returned by API Gateway when you create a regional endpoint.</p>
         pub fn set_regional_domain_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3248,6 +4109,7 @@ pub mod update_domain_name_output {
             self.regional_hosted_zone_id = Some(input.into());
             self
         }
+        /// <p>The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set up a Regional Custom Domain Name</a> and  <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for API Gateway</a>.</p>
         pub fn set_regional_hosted_zone_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3260,6 +4122,7 @@ pub mod update_domain_name_output {
             self.regional_certificate_name = Some(input.into());
             self
         }
+        /// <p>The name of the certificate that will be used for validating the regional domain name.</p>
         pub fn set_regional_certificate_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3272,6 +4135,7 @@ pub mod update_domain_name_output {
             self.regional_certificate_arn = Some(input.into());
             self
         }
+        /// <p>The reference to an AWS-managed certificate that will be used for validating the regional domain name. AWS Certificate Manager is the only supported source.</p>
         pub fn set_regional_certificate_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3284,6 +4148,7 @@ pub mod update_domain_name_output {
             self.distribution_domain_name = Some(input.into());
             self
         }
+        /// <p>The domain name of the Amazon CloudFront distribution associated with this custom domain name for an edge-optimized endpoint. You set up this association when adding a DNS record pointing the custom domain name to this distribution name. For more information about CloudFront distributions, see the <a target="_blank" href="https://aws.amazon.com/documentation/cloudfront/">Amazon CloudFront documentation</a>.</p>
         pub fn set_distribution_domain_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3299,6 +4164,7 @@ pub mod update_domain_name_output {
             self.distribution_hosted_zone_id = Some(input.into());
             self
         }
+        /// <p>The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized endpoint. The valid value is <code>Z2FDTNDATAQYW2</code> for all the regions. For more information, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set up a Regional Custom Domain Name</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for API Gateway</a>.</p>
         pub fn set_distribution_hosted_zone_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3314,6 +4180,7 @@ pub mod update_domain_name_output {
             self.endpoint_configuration = Some(input);
             self
         }
+        /// <p>The endpoint configuration of this <a>DomainName</a> showing the endpoint types of the domain name.</p>
         pub fn set_endpoint_configuration(
             mut self,
             input: std::option::Option<crate::model::EndpointConfiguration>,
@@ -3326,6 +4193,7 @@ pub mod update_domain_name_output {
             self.domain_name_status = Some(input);
             self
         }
+        /// <p>The status of the <a>DomainName</a> migration. The valid values are <code>AVAILABLE</code>, <code>UPDATING</code>, <code>PENDING_CERTIFICATE_REIMPORT</code>, and <code>PENDING_OWNERSHIP_VERIFICATION</code>. If the status is <code>UPDATING</code>, the domain cannot be modified further until the existing operation is complete. If it is <code>AVAILABLE</code>, the domain can be updated.</p>
         pub fn set_domain_name_status(
             mut self,
             input: std::option::Option<crate::model::DomainNameStatus>,
@@ -3338,6 +4206,7 @@ pub mod update_domain_name_output {
             self.domain_name_status_message = Some(input.into());
             self
         }
+        /// <p>An optional text message containing detailed information about status of the <a>DomainName</a> migration.</p>
         pub fn set_domain_name_status_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3350,6 +4219,7 @@ pub mod update_domain_name_output {
             self.security_policy = Some(input);
             self
         }
+        /// <p>The Transport Layer Security (TLS) version + cipher suite for this <a>DomainName</a>. The valid values are <code>TLS_1_0</code> and <code>TLS_1_2</code>.</p>
         pub fn set_security_policy(
             mut self,
             input: std::option::Option<crate::model::SecurityPolicy>,
@@ -3357,6 +4227,11 @@ pub mod update_domain_name_output {
             self.security_policy = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -3367,6 +4242,7 @@ pub mod update_domain_name_output {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -3384,6 +4260,7 @@ pub mod update_domain_name_output {
             self.mutual_tls_authentication = Some(input);
             self
         }
+        /// <p>The mutual TLS authentication configuration for a custom domain name. If specified, API Gateway performs two-way authentication between the client and the server. Clients must present a trusted certificate to access your API.</p>
         pub fn set_mutual_tls_authentication(
             mut self,
             input: std::option::Option<crate::model::MutualTlsAuthentication>,
@@ -3399,6 +4276,7 @@ pub mod update_domain_name_output {
             self.ownership_verification_certificate_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the public certificate issued by ACM to validate ownership of your custom domain. Only required when configuring mutual TLS and using an ACM imported or private CA certificate ARN as the regionalCertificateArn.</p>
         pub fn set_ownership_verification_certificate_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3448,7 +4326,7 @@ pub struct UpdateDocumentationVersionOutput {
     /// <p>The version identifier of the API documentation snapshot.</p>
     pub version: std::option::Option<std::string::String>,
     /// <p>The date when the API documentation snapshot is created.</p>
-    pub created_date: std::option::Option<smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The description of the API documentation snapshot.</p>
     pub description: std::option::Option<std::string::String>,
 }
@@ -3468,7 +4346,7 @@ pub mod update_documentation_version_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) version: std::option::Option<std::string::String>,
-        pub(crate) created_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) description: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -3477,18 +4355,20 @@ pub mod update_documentation_version_output {
             self.version = Some(input.into());
             self
         }
+        /// <p>The version identifier of the API documentation snapshot.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
         }
         /// <p>The date when the API documentation snapshot is created.</p>
-        pub fn created_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_date = Some(input);
             self
         }
+        /// <p>The date when the API documentation snapshot is created.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_date = input;
             self
@@ -3498,6 +4378,7 @@ pub mod update_documentation_version_output {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the API documentation snapshot.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -3561,6 +4442,7 @@ pub mod update_documentation_part_output {
             self.id = Some(input.into());
             self
         }
+        /// <p>The <a>DocumentationPart</a> identifier, generated by API Gateway when the <code>DocumentationPart</code> is created.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -3570,6 +4452,7 @@ pub mod update_documentation_part_output {
             self.location = Some(input);
             self
         }
+        /// <p>The location of the API entity to which the documentation applies. Valid fields depend on the targeted API entity type. All the valid location fields are not required. If not explicitly specified, a valid location field is treated as a wildcard and associated documentation content may be inherited by matching entities, unless overridden.</p>
         pub fn set_location(
             mut self,
             input: std::option::Option<crate::model::DocumentationPartLocation>,
@@ -3582,6 +4465,7 @@ pub mod update_documentation_part_output {
             self.properties = Some(input.into());
             self
         }
+        /// <p>A content map of API-specific key-value pairs describing the targeted API entity. The map must be encoded as a JSON string, e.g., <code>"{ \"description\": \"The API does ...\" }"</code>.  Only OpenAPI-compliant documentation-related fields from the <literal>properties</literal> map are exported and, hence, published as part of the API entity definitions, while the original documentation parts are exported in a OpenAPI extension of <code>x-amazon-apigateway-documentation</code>.</p>
         pub fn set_properties(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.properties = input;
             self
@@ -3618,7 +4502,7 @@ pub struct UpdateDeploymentOutput {
     /// <p>The description for the deployment resource.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The date and time that the deployment resource was created.</p>
-    pub created_date: std::option::Option<smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A summary of the <a>RestApi</a> at the date and time that the deployment resource was created.</p>
     pub api_summary: std::option::Option<
         std::collections::HashMap<
@@ -3645,7 +4529,7 @@ pub mod update_deployment_output {
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) created_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) api_summary: std::option::Option<
             std::collections::HashMap<
                 std::string::String,
@@ -3659,6 +4543,7 @@ pub mod update_deployment_output {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier for the deployment resource.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -3668,22 +4553,29 @@ pub mod update_deployment_output {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description for the deployment resource.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
         /// <p>The date and time that the deployment resource was created.</p>
-        pub fn created_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_date = Some(input);
             self
         }
+        /// <p>The date and time that the deployment resource was created.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_date = input;
             self
         }
+        /// Adds a key-value pair to `api_summary`.
+        ///
+        /// To override the contents of this collection use [`set_api_summary`](Self::set_api_summary).
+        ///
+        /// <p>A summary of the <a>RestApi</a> at the date and time that the deployment resource was created.</p>
         pub fn api_summary(
             mut self,
             k: impl Into<std::string::String>,
@@ -3694,6 +4586,7 @@ pub mod update_deployment_output {
             self.api_summary = Some(hash_map);
             self
         }
+        /// <p>A summary of the <a>RestApi</a> at the date and time that the deployment resource was created.</p>
         pub fn set_api_summary(
             mut self,
             input: std::option::Option<
@@ -3739,9 +4632,9 @@ pub struct UpdateClientCertificateOutput {
     /// <p>The PEM-encoded public key of the client certificate, which can be used to configure certificate authentication in the integration endpoint .</p>
     pub pem_encoded_certificate: std::option::Option<std::string::String>,
     /// <p>The timestamp when the client certificate was created.</p>
-    pub created_date: std::option::Option<smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The timestamp when the client certificate will expire.</p>
-    pub expiration_date: std::option::Option<smithy_types::Instant>,
+    pub expiration_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -3767,8 +4660,8 @@ pub mod update_client_certificate_output {
         pub(crate) client_certificate_id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) pem_encoded_certificate: std::option::Option<std::string::String>,
-        pub(crate) created_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) expiration_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) expiration_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -3779,6 +4672,7 @@ pub mod update_client_certificate_output {
             self.client_certificate_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the client certificate.</p>
         pub fn set_client_certificate_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3791,6 +4685,7 @@ pub mod update_client_certificate_output {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the client certificate.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -3800,6 +4695,7 @@ pub mod update_client_certificate_output {
             self.pem_encoded_certificate = Some(input.into());
             self
         }
+        /// <p>The PEM-encoded public key of the client certificate, which can be used to configure certificate authentication in the integration endpoint .</p>
         pub fn set_pem_encoded_certificate(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3808,29 +4704,36 @@ pub mod update_client_certificate_output {
             self
         }
         /// <p>The timestamp when the client certificate was created.</p>
-        pub fn created_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_date = Some(input);
             self
         }
+        /// <p>The timestamp when the client certificate was created.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_date = input;
             self
         }
         /// <p>The timestamp when the client certificate will expire.</p>
-        pub fn expiration_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn expiration_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.expiration_date = Some(input);
             self
         }
+        /// <p>The timestamp when the client certificate will expire.</p>
         pub fn set_expiration_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.expiration_date = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -3841,6 +4744,7 @@ pub mod update_client_certificate_output {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -3910,6 +4814,7 @@ pub mod update_base_path_mapping_output {
             self.base_path = Some(input.into());
             self
         }
+        /// <p>The base path name that callers of the API must provide as part of the URL after the domain name.</p>
         pub fn set_base_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.base_path = input;
             self
@@ -3919,6 +4824,7 @@ pub mod update_base_path_mapping_output {
             self.rest_api_id = Some(input.into());
             self
         }
+        /// <p>The string identifier of the associated <a>RestApi</a>.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
@@ -3928,6 +4834,7 @@ pub mod update_base_path_mapping_output {
             self.stage = Some(input.into());
             self
         }
+        /// <p>The name of the associated stage.</p>
         pub fn set_stage(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stage = input;
             self
@@ -4023,6 +4930,7 @@ pub mod update_authorizer_output {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier for the authorizer resource.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -4032,6 +4940,7 @@ pub mod update_authorizer_output {
             self.name = Some(input.into());
             self
         }
+        /// <p>[Required] The name of the authorizer.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -4041,6 +4950,7 @@ pub mod update_authorizer_output {
             self.r#type = Some(input);
             self
         }
+        /// <p>The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using a single authorization token submitted in a custom header, <code>REQUEST</code> for a Lambda function using incoming request parameters, and <code>COGNITO_USER_POOLS</code> for using an Amazon Cognito user pool.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::AuthorizerType>,
@@ -4048,12 +4958,18 @@ pub mod update_authorizer_output {
             self.r#type = input;
             self
         }
+        /// Appends an item to `provider_ar_ns`.
+        ///
+        /// To override the contents of this collection use [`set_provider_ar_ns`](Self::set_provider_ar_ns).
+        ///
+        /// <p>A list of the Amazon Cognito user pool ARNs for the <code>COGNITO_USER_POOLS</code> authorizer. Each element is of this format: <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>. For a <code>TOKEN</code> or <code>REQUEST</code> authorizer, this is not defined.</p>
         pub fn provider_ar_ns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.provider_ar_ns.unwrap_or_default();
             v.push(input.into());
             self.provider_ar_ns = Some(v);
             self
         }
+        /// <p>A list of the Amazon Cognito user pool ARNs for the <code>COGNITO_USER_POOLS</code> authorizer. Each element is of this format: <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>. For a <code>TOKEN</code> or <code>REQUEST</code> authorizer, this is not defined.</p>
         pub fn set_provider_ar_ns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4066,6 +4982,7 @@ pub mod update_authorizer_output {
             self.auth_type = Some(input.into());
             self
         }
+        /// <p>Optional customer-defined field, used in OpenAPI imports and exports without functional impact.</p>
         pub fn set_auth_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.auth_type = input;
             self
@@ -4075,6 +4992,7 @@ pub mod update_authorizer_output {
             self.authorizer_uri = Some(input.into());
             self
         }
+        /// <p>Specifies the authorizer's Uniform Resource Identifier (URI). For <code>TOKEN</code> or <code>REQUEST</code> authorizers, this must be a well-formed Lambda function URI, for example, <code>arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:{account_id}:function:{lambda_function_name}/invocations</code>. In general, the URI has this form  <code>arn:aws:apigateway:{region}:lambda:path/{service_api}</code>, where <code>{region}</code> is the same as the region hosting the Lambda function, <code>path</code> indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial <code>/</code>. For Lambda functions, this is usually of the form <code>/2015-03-31/functions/[FunctionARN]/invocations</code>.</p>
         pub fn set_authorizer_uri(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4087,6 +5005,7 @@ pub mod update_authorizer_output {
             self.authorizer_credentials = Some(input.into());
             self
         }
+        /// <p>Specifies the required credentials as an IAM role for API Gateway to invoke the authorizer. To specify an IAM role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based permissions on the Lambda function, specify null.</p>
         pub fn set_authorizer_credentials(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4099,6 +5018,7 @@ pub mod update_authorizer_output {
             self.identity_source = Some(input.into());
             self
         }
+        /// <p>The identity source for which authorization is requested. <ul><li>For a <code>TOKEN</code> or <code>COGNITO_USER_POOLS</code> authorizer, this is required and specifies the request header mapping expression for the custom header holding the authorization token submitted by the client. For example, if the token header name is <code>Auth</code>, the header mapping expression is  <code>method.request.header.Auth</code>.</li><li>For the <code>REQUEST</code> authorizer, this is required when authorization caching is enabled. The value is a comma-separated string of one or more mapping expressions of the specified request parameters. For example, if an <code>Auth</code> header, a <code>Name</code> query string parameter are defined as identity sources, this value is <code>method.request.header.Auth, method.request.querystring.Name</code>.  These parameters will be used to derive the authorization caching key and to perform runtime validation of the <code>REQUEST</code> authorizer by verifying all of the identity-related request parameters are present, not null and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized response without calling the Lambda function. The valid value is a string of comma-separated mapping expressions of the specified request parameters. When the authorization caching is not enabled, this property is optional.</li></ul></p>
         pub fn set_identity_source(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4114,6 +5034,7 @@ pub mod update_authorizer_output {
             self.identity_validation_expression = Some(input.into());
             self
         }
+        /// <p>A validation expression for the incoming identity token. For <code>TOKEN</code> authorizers, this value is a regular expression. For <code>COGNITO_USER_POOLS</code> authorizers, API Gateway will match the <code>aud</code> field of the incoming token from the client against the specified regular expression. It will invoke the authorizer's Lambda function when there is a match. Otherwise, it will return a 401 Unauthorized response without calling the Lambda function. The validation expression does not apply to the <code>REQUEST</code> authorizer.</p>
         pub fn set_identity_validation_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4126,6 +5047,7 @@ pub mod update_authorizer_output {
             self.authorizer_result_ttl_in_seconds = Some(input);
             self
         }
+        /// <p>The TTL in seconds of cached authorizer results. If it equals 0, authorization caching is disabled. If it is greater than 0, API Gateway will cache authorizer responses. If this field is not set, the default value is 300. The maximum value is 3600, or 1 hour.</p>
         pub fn set_authorizer_result_ttl_in_seconds(
             mut self,
             input: std::option::Option<i32>,
@@ -4177,9 +5099,9 @@ pub struct UpdateApiKeyOutput {
     /// <p>Specifies whether the API Key can be used by callers.</p>
     pub enabled: bool,
     /// <p>The timestamp when the API Key was created.</p>
-    pub created_date: std::option::Option<smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The timestamp when the API Key was last updated.</p>
-    pub last_updated_date: std::option::Option<smithy_types::Instant>,
+    pub last_updated_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a> resource.</p>
     pub stage_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
@@ -4214,8 +5136,8 @@ pub mod update_api_key_output {
         pub(crate) customer_id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) enabled: std::option::Option<bool>,
-        pub(crate) created_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_updated_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) stage_keys: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -4227,6 +5149,7 @@ pub mod update_api_key_output {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier of the API Key.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -4236,6 +5159,7 @@ pub mod update_api_key_output {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value of the API Key.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -4245,6 +5169,7 @@ pub mod update_api_key_output {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the API Key.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -4254,6 +5179,7 @@ pub mod update_api_key_output {
             self.customer_id = Some(input.into());
             self
         }
+        /// <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.</p>
         pub fn set_customer_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.customer_id = input;
             self
@@ -4263,6 +5189,7 @@ pub mod update_api_key_output {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the API Key.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -4272,40 +5199,49 @@ pub mod update_api_key_output {
             self.enabled = Some(input);
             self
         }
+        /// <p>Specifies whether the API Key can be used by callers.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
         }
         /// <p>The timestamp when the API Key was created.</p>
-        pub fn created_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_date = Some(input);
             self
         }
+        /// <p>The timestamp when the API Key was created.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_date = input;
             self
         }
         /// <p>The timestamp when the API Key was last updated.</p>
-        pub fn last_updated_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_updated_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_updated_date = Some(input);
             self
         }
+        /// <p>The timestamp when the API Key was last updated.</p>
         pub fn set_last_updated_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_updated_date = input;
             self
         }
+        /// Appends an item to `stage_keys`.
+        ///
+        /// To override the contents of this collection use [`set_stage_keys`](Self::set_stage_keys).
+        ///
+        /// <p>A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a> resource.</p>
         pub fn stage_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.stage_keys.unwrap_or_default();
             v.push(input.into());
             self.stage_keys = Some(v);
             self
         }
+        /// <p>A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a> resource.</p>
         pub fn set_stage_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4313,6 +5249,11 @@ pub mod update_api_key_output {
             self.stage_keys = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -4323,6 +5264,7 @@ pub mod update_api_key_output {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -4444,6 +5386,7 @@ pub mod update_account_output {
             self.cloudwatch_role_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of an Amazon CloudWatch role for the current <a>Account</a>.</p>
         pub fn set_cloudwatch_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4456,6 +5399,7 @@ pub mod update_account_output {
             self.throttle_settings = Some(input);
             self
         }
+        /// <p>Specifies the API request limits configured for the current <a>Account</a>.</p>
         pub fn set_throttle_settings(
             mut self,
             input: std::option::Option<crate::model::ThrottleSettings>,
@@ -4463,12 +5407,18 @@ pub mod update_account_output {
             self.throttle_settings = input;
             self
         }
+        /// Appends an item to `features`.
+        ///
+        /// To override the contents of this collection use [`set_features`](Self::set_features).
+        ///
+        /// <p>A list of features supported for the account. When usage plans are enabled, the features list will include an entry of <code>"UsagePlans"</code>.</p>
         pub fn features(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.features.unwrap_or_default();
             v.push(input.into());
             self.features = Some(v);
             self
         }
+        /// <p>A list of features supported for the account. When usage plans are enabled, the features list will include an entry of <code>"UsagePlans"</code>.</p>
         pub fn set_features(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4481,6 +5431,7 @@ pub mod update_account_output {
             self.api_key_version = Some(input.into());
             self
         }
+        /// <p>The version of the API keys used for the account.</p>
         pub fn set_api_key_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4506,6 +5457,7 @@ impl UpdateAccountOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceOutput {}
@@ -4593,6 +5545,7 @@ pub mod test_invoke_method_output {
             self.status = Some(input);
             self
         }
+        /// <p>The HTTP status code.</p>
         pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
             self.status = input;
             self
@@ -4602,10 +5555,16 @@ pub mod test_invoke_method_output {
             self.body = Some(input.into());
             self
         }
+        /// <p>The body of the HTTP response.</p>
         pub fn set_body(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.body = input;
             self
         }
+        /// Adds a key-value pair to `headers`.
+        ///
+        /// To override the contents of this collection use [`set_headers`](Self::set_headers).
+        ///
+        /// <p>The headers of the HTTP response.</p>
         pub fn headers(
             mut self,
             k: impl Into<std::string::String>,
@@ -4616,6 +5575,7 @@ pub mod test_invoke_method_output {
             self.headers = Some(hash_map);
             self
         }
+        /// <p>The headers of the HTTP response.</p>
         pub fn set_headers(
             mut self,
             input: std::option::Option<
@@ -4625,6 +5585,11 @@ pub mod test_invoke_method_output {
             self.headers = input;
             self
         }
+        /// Adds a key-value pair to `multi_value_headers`.
+        ///
+        /// To override the contents of this collection use [`set_multi_value_headers`](Self::set_multi_value_headers).
+        ///
+        /// <p>The headers of the HTTP response as a map from string to list of values.</p>
         pub fn multi_value_headers(
             mut self,
             k: impl Into<std::string::String>,
@@ -4635,6 +5600,7 @@ pub mod test_invoke_method_output {
             self.multi_value_headers = Some(hash_map);
             self
         }
+        /// <p>The headers of the HTTP response as a map from string to list of values.</p>
         pub fn set_multi_value_headers(
             mut self,
             input: std::option::Option<
@@ -4649,6 +5615,7 @@ pub mod test_invoke_method_output {
             self.log = Some(input.into());
             self
         }
+        /// <p>The API Gateway execution log for the test invoke request.</p>
         pub fn set_log(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.log = input;
             self
@@ -4658,6 +5625,7 @@ pub mod test_invoke_method_output {
             self.latency = Some(input);
             self
         }
+        /// <p>The execution latency of the test invoke request.</p>
         pub fn set_latency(mut self, input: std::option::Option<i64>) -> Self {
             self.latency = input;
             self
@@ -4696,6 +5664,7 @@ pub struct TestInvokeAuthorizerOutput {
     pub principal_id: std::option::Option<std::string::String>,
     /// <p>The JSON policy document returned by the <a>Authorizer</a></p>
     pub policy: std::option::Option<std::string::String>,
+    #[allow(missing_docs)] // documentation missing in model
     pub authorization: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
@@ -4740,6 +5709,7 @@ pub mod test_invoke_authorizer_output {
             self.client_status = Some(input);
             self
         }
+        /// <p>The HTTP status code that the client would have received. Value is 0 if the authorizer succeeded.</p>
         pub fn set_client_status(mut self, input: std::option::Option<i32>) -> Self {
             self.client_status = input;
             self
@@ -4749,6 +5719,7 @@ pub mod test_invoke_authorizer_output {
             self.log = Some(input.into());
             self
         }
+        /// <p>The API Gateway execution log for the test authorizer request.</p>
         pub fn set_log(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.log = input;
             self
@@ -4758,6 +5729,7 @@ pub mod test_invoke_authorizer_output {
             self.latency = Some(input);
             self
         }
+        /// <p>The execution latency of the test authorizer request.</p>
         pub fn set_latency(mut self, input: std::option::Option<i64>) -> Self {
             self.latency = input;
             self
@@ -4767,6 +5739,7 @@ pub mod test_invoke_authorizer_output {
             self.principal_id = Some(input.into());
             self
         }
+        /// <p>The principal identity returned by the <a>Authorizer</a></p>
         pub fn set_principal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.principal_id = input;
             self
@@ -4776,10 +5749,15 @@ pub mod test_invoke_authorizer_output {
             self.policy = Some(input.into());
             self
         }
+        /// <p>The JSON policy document returned by the <a>Authorizer</a></p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy = input;
             self
         }
+        /// Adds a key-value pair to `authorization`.
+        ///
+        /// To override the contents of this collection use [`set_authorization`](Self::set_authorization).
+        ///
         pub fn authorization(
             mut self,
             k: impl Into<std::string::String>,
@@ -4790,6 +5768,7 @@ pub mod test_invoke_authorizer_output {
             self.authorization = Some(hash_map);
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
         pub fn set_authorization(
             mut self,
             input: std::option::Option<
@@ -4799,6 +5778,11 @@ pub mod test_invoke_authorizer_output {
             self.authorization = input;
             self
         }
+        /// Adds a key-value pair to `claims`.
+        ///
+        /// To override the contents of this collection use [`set_claims`](Self::set_claims).
+        ///
+        /// <p>The <a href="https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open identity claims</a>, with any supported custom attributes, returned from the Cognito Your User Pool configured for the API.</p>
         pub fn claims(
             mut self,
             k: impl Into<std::string::String>,
@@ -4809,6 +5793,7 @@ pub mod test_invoke_authorizer_output {
             self.claims = Some(hash_map);
             self
         }
+        /// <p>The <a href="https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims">open identity claims</a>, with any supported custom attributes, returned from the Cognito Your User Pool configured for the API.</p>
         pub fn set_claims(
             mut self,
             input: std::option::Option<
@@ -4839,6 +5824,7 @@ impl TestInvokeAuthorizerOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceOutput {}
@@ -4882,7 +5868,7 @@ pub struct PutRestApiOutput {
     /// <p>The API's description.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The timestamp when the API was created.</p>
-    pub created_date: std::option::Option<smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A version identifier for the API.</p>
     pub version: std::option::Option<std::string::String>,
     /// <p>The warning messages reported when <code>failonwarnings</code> is turned on during API import.</p>
@@ -4934,7 +5920,7 @@ pub mod put_rest_api_output {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) created_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) version: std::option::Option<std::string::String>,
         pub(crate) warnings: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) binary_media_types: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4953,6 +5939,7 @@ pub mod put_rest_api_output {
             self.id = Some(input.into());
             self
         }
+        /// <p>The API's identifier. This identifier is unique across all of your APIs in API Gateway.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -4962,6 +5949,7 @@ pub mod put_rest_api_output {
             self.name = Some(input.into());
             self
         }
+        /// <p>The API's name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -4971,18 +5959,20 @@ pub mod put_rest_api_output {
             self.description = Some(input.into());
             self
         }
+        /// <p>The API's description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
         /// <p>The timestamp when the API was created.</p>
-        pub fn created_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_date = Some(input);
             self
         }
+        /// <p>The timestamp when the API was created.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_date = input;
             self
@@ -4992,16 +5982,23 @@ pub mod put_rest_api_output {
             self.version = Some(input.into());
             self
         }
+        /// <p>A version identifier for the API.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
         }
+        /// Appends an item to `warnings`.
+        ///
+        /// To override the contents of this collection use [`set_warnings`](Self::set_warnings).
+        ///
+        /// <p>The warning messages reported when <code>failonwarnings</code> is turned on during API import.</p>
         pub fn warnings(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.warnings.unwrap_or_default();
             v.push(input.into());
             self.warnings = Some(v);
             self
         }
+        /// <p>The warning messages reported when <code>failonwarnings</code> is turned on during API import.</p>
         pub fn set_warnings(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5009,12 +6006,18 @@ pub mod put_rest_api_output {
             self.warnings = input;
             self
         }
+        /// Appends an item to `binary_media_types`.
+        ///
+        /// To override the contents of this collection use [`set_binary_media_types`](Self::set_binary_media_types).
+        ///
+        /// <p>The list of binary media types supported by the <a>RestApi</a>. By default, the <a>RestApi</a> supports only UTF-8-encoded text payloads.</p>
         pub fn binary_media_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.binary_media_types.unwrap_or_default();
             v.push(input.into());
             self.binary_media_types = Some(v);
             self
         }
+        /// <p>The list of binary media types supported by the <a>RestApi</a>. By default, the <a>RestApi</a> supports only UTF-8-encoded text payloads.</p>
         pub fn set_binary_media_types(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5027,6 +6030,7 @@ pub mod put_rest_api_output {
             self.minimum_compression_size = Some(input);
             self
         }
+        /// <p>A nullable integer that is used to enable compression (with non-negative between 0 and 10485760 (10M) bytes, inclusive) or disable compression (with a null value) on an API. When compression is enabled, compression or decompression is not applied on the payload if the payload size is smaller than this value. Setting it to zero allows compression for any payload size.</p>
         pub fn set_minimum_compression_size(mut self, input: std::option::Option<i32>) -> Self {
             self.minimum_compression_size = input;
             self
@@ -5036,6 +6040,7 @@ pub mod put_rest_api_output {
             self.api_key_source = Some(input);
             self
         }
+        /// <p>The source of the API key for metering requests according to a usage plan. Valid values are: <ul><li><code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request. </li><li><code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</li></ul></p>
         pub fn set_api_key_source(
             mut self,
             input: std::option::Option<crate::model::ApiKeySourceType>,
@@ -5051,6 +6056,7 @@ pub mod put_rest_api_output {
             self.endpoint_configuration = Some(input);
             self
         }
+        /// <p>The endpoint configuration of this <a>RestApi</a> showing the endpoint types of the API.</p>
         pub fn set_endpoint_configuration(
             mut self,
             input: std::option::Option<crate::model::EndpointConfiguration>,
@@ -5063,10 +6069,16 @@ pub mod put_rest_api_output {
             self.policy = Some(input.into());
             self
         }
+        /// <p>A stringified JSON policy document that applies to this RestApi regardless of the caller and <a>Method</a> configuration.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -5077,6 +6089,7 @@ pub mod put_rest_api_output {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -5091,6 +6104,7 @@ pub mod put_rest_api_output {
             self.disable_execute_api_endpoint = Some(input);
             self
         }
+        /// <p>Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
         pub fn set_disable_execute_api_endpoint(
             mut self,
             input: std::option::Option<bool>,
@@ -5210,10 +6224,16 @@ pub mod put_method_response_output {
             self.status_code = Some(input.into());
             self
         }
+        /// <p>The method response's status code.</p>
         pub fn set_status_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status_code = input;
             self
         }
+        /// Adds a key-value pair to `response_parameters`.
+        ///
+        /// To override the contents of this collection use [`set_response_parameters`](Self::set_response_parameters).
+        ///
+        /// <p>A key-value map specifying required or optional response parameters that API Gateway can send back to the caller. A key defines a method response header and the value specifies whether the associated method response header is required or not. The expression of the key must match the pattern <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. API Gateway passes certain integration response data to the method response headers specified here according to the mapping you prescribe in the API's <a>IntegrationResponse</a>. The integration response data that can be mapped include an integration response header expressed in <code>integration.response.header.{name}</code>, a static value enclosed within a pair of single quotes (e.g., <code>'application/json'</code>), or a JSON expression from the back-end response payload in the form of <code>integration.response.body.{JSON-expression}</code>, where <code>JSON-expression</code> is a valid JSON expression without the <code>$</code> prefix.)</p>
         pub fn response_parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -5224,6 +6244,7 @@ pub mod put_method_response_output {
             self.response_parameters = Some(hash_map);
             self
         }
+        /// <p>A key-value map specifying required or optional response parameters that API Gateway can send back to the caller. A key defines a method response header and the value specifies whether the associated method response header is required or not. The expression of the key must match the pattern <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. API Gateway passes certain integration response data to the method response headers specified here according to the mapping you prescribe in the API's <a>IntegrationResponse</a>. The integration response data that can be mapped include an integration response header expressed in <code>integration.response.header.{name}</code>, a static value enclosed within a pair of single quotes (e.g., <code>'application/json'</code>), or a JSON expression from the back-end response payload in the form of <code>integration.response.body.{JSON-expression}</code>, where <code>JSON-expression</code> is a valid JSON expression without the <code>$</code> prefix.)</p>
         pub fn set_response_parameters(
             mut self,
             input: std::option::Option<std::collections::HashMap<std::string::String, bool>>,
@@ -5231,6 +6252,11 @@ pub mod put_method_response_output {
             self.response_parameters = input;
             self
         }
+        /// Adds a key-value pair to `response_models`.
+        ///
+        /// To override the contents of this collection use [`set_response_models`](Self::set_response_models).
+        ///
+        /// <p>Specifies the <a>Model</a> resources used for the response's content-type. Response models are represented as a key/value map, with a content-type as the key and a <a>Model</a> name as the value.</p>
         pub fn response_models(
             mut self,
             k: impl Into<std::string::String>,
@@ -5241,6 +6267,7 @@ pub mod put_method_response_output {
             self.response_models = Some(hash_map);
             self
         }
+        /// <p>Specifies the <a>Model</a> resources used for the response's content-type. Response models are represented as a key/value map, with a content-type as the key and a <a>Model</a> name as the value.</p>
         pub fn set_response_models(
             mut self,
             input: std::option::Option<
@@ -5642,6 +6669,7 @@ pub mod put_method_output {
             self.http_method = Some(input.into());
             self
         }
+        /// <p>The method's HTTP verb.</p>
         pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.http_method = input;
             self
@@ -5651,6 +6679,7 @@ pub mod put_method_output {
             self.authorization_type = Some(input.into());
             self
         }
+        /// <p>The method's authorization type. Valid values are <code>NONE</code> for open access, <code>AWS_IAM</code> for using AWS IAM permissions, <code>CUSTOM</code> for using a custom authorizer, or <code>COGNITO_USER_POOLS</code> for using a Cognito user pool.</p>
         pub fn set_authorization_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5663,6 +6692,7 @@ pub mod put_method_output {
             self.authorizer_id = Some(input.into());
             self
         }
+        /// <p>The identifier of an <a>Authorizer</a> to use on this method. The <code>authorizationType</code> must be <code>CUSTOM</code>.</p>
         pub fn set_authorizer_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5675,6 +6705,7 @@ pub mod put_method_output {
             self.api_key_required = Some(input);
             self
         }
+        /// <p>A boolean flag specifying whether a valid <a>ApiKey</a> is required to invoke this method.</p>
         pub fn set_api_key_required(mut self, input: std::option::Option<bool>) -> Self {
             self.api_key_required = input;
             self
@@ -5684,6 +6715,7 @@ pub mod put_method_output {
             self.request_validator_id = Some(input.into());
             self
         }
+        /// <p>The identifier of a <a>RequestValidator</a> for request validation.</p>
         pub fn set_request_validator_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5696,6 +6728,7 @@ pub mod put_method_output {
             self.operation_name = Some(input.into());
             self
         }
+        /// <p>A human-friendly operation identifier for the method. For example, you can assign the <code>operationName</code> of <code>ListPets</code> for the <code>GET /pets</code> method in the <code>PetStore</code> example.</p>
         pub fn set_operation_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5703,6 +6736,11 @@ pub mod put_method_output {
             self.operation_name = input;
             self
         }
+        /// Adds a key-value pair to `request_parameters`.
+        ///
+        /// To override the contents of this collection use [`set_request_parameters`](Self::set_request_parameters).
+        ///
+        /// <p>A key-value map defining required or optional method request parameters that can be accepted by API Gateway. A key is a method request parameter name matching the pattern of  <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and <code>name</code> is a valid and unique parameter name. The value associated with the key is a Boolean flag indicating whether the parameter is required (<code>true</code>) or optional (<code>false</code>).  The method request parameter names defined here are available in <a>Integration</a> to be mapped to integration request parameters or templates.</p>
         pub fn request_parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -5713,6 +6751,7 @@ pub mod put_method_output {
             self.request_parameters = Some(hash_map);
             self
         }
+        /// <p>A key-value map defining required or optional method request parameters that can be accepted by API Gateway. A key is a method request parameter name matching the pattern of  <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and <code>name</code> is a valid and unique parameter name. The value associated with the key is a Boolean flag indicating whether the parameter is required (<code>true</code>) or optional (<code>false</code>).  The method request parameter names defined here are available in <a>Integration</a> to be mapped to integration request parameters or templates.</p>
         pub fn set_request_parameters(
             mut self,
             input: std::option::Option<std::collections::HashMap<std::string::String, bool>>,
@@ -5720,6 +6759,11 @@ pub mod put_method_output {
             self.request_parameters = input;
             self
         }
+        /// Adds a key-value pair to `request_models`.
+        ///
+        /// To override the contents of this collection use [`set_request_models`](Self::set_request_models).
+        ///
+        /// <p>A key-value map specifying data schemas, represented by <a>Model</a> resources, (as the mapped value) of the request payloads of given content types (as the mapping key).</p>
         pub fn request_models(
             mut self,
             k: impl Into<std::string::String>,
@@ -5730,6 +6774,7 @@ pub mod put_method_output {
             self.request_models = Some(hash_map);
             self
         }
+        /// <p>A key-value map specifying data schemas, represented by <a>Model</a> resources, (as the mapped value) of the request payloads of given content types (as the mapping key).</p>
         pub fn set_request_models(
             mut self,
             input: std::option::Option<
@@ -5739,6 +6784,57 @@ pub mod put_method_output {
             self.request_models = input;
             self
         }
+        /// Adds a key-value pair to `method_responses`.
+        ///
+        /// To override the contents of this collection use [`set_method_responses`](Self::set_method_responses).
+        ///
+        /// <p>Gets a method response associated with a given HTTP status code. </p>
+        /// <div class="remarks">
+        /// <p>The collection of method responses are encapsulated in a key-value map, where the key is a response's HTTP status code and the value is a <a>MethodResponse</a> resource that specifies the response returned to the caller from the back end through the integration response.</p>
+        /// <h4>Example: Get a 200 OK response of a GET method</h4>
+        /// <h5>Request</h5>
+        /// <p></p>
+        /// <pre><code>GET /restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200 HTTP/1.1
+        /// Content-Type: application/json
+        /// Host: apigateway.us-east-1.amazonaws.com
+        /// Content-Length: 117
+        /// X-Amz-Date: 20160613T215008Z
+        /// Authorization: AWS4-HMAC-SHA256 Credential={access_key_ID}/20160613/us-east-1/apigateway/aws4_request, SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash}</code></pre>
+        /// <h5>Response</h5>
+        /// <p>The successful response returns a <code>200 OK</code> status code and a payload similar to the following:</p>
+        /// <pre><code>{
+        /// "_links": {
+        /// "curies": {
+        /// "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-response-{rel}.html",
+        /// "name": "methodresponse",
+        /// "templated": true
+        /// },
+        /// "self": {
+        /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200",
+        /// "title": "200"
+        /// },
+        /// "methodresponse:delete": {
+        /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200"
+        /// },
+        /// "methodresponse:update": {
+        /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200"
+        /// }
+        /// },
+        /// "responseModels": {
+        /// "application/json": "Empty"
+        /// },
+        /// "responseParameters": {
+        /// "method.response.header.operator": false,
+        /// "method.response.header.operand_2": false,
+        /// "method.response.header.operand_1": false
+        /// },
+        /// "statusCode": "200"
+        /// }</code></pre>
+        /// <p></p>
+        /// </div>
+        /// <div class="seeAlso">
+        /// <a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-method-response.html">AWS CLI</a>
+        /// </div>
         pub fn method_responses(
             mut self,
             k: impl Into<std::string::String>,
@@ -5749,6 +6845,53 @@ pub mod put_method_output {
             self.method_responses = Some(hash_map);
             self
         }
+        /// <p>Gets a method response associated with a given HTTP status code. </p>
+        /// <div class="remarks">
+        /// <p>The collection of method responses are encapsulated in a key-value map, where the key is a response's HTTP status code and the value is a <a>MethodResponse</a> resource that specifies the response returned to the caller from the back end through the integration response.</p>
+        /// <h4>Example: Get a 200 OK response of a GET method</h4>
+        /// <h5>Request</h5>
+        /// <p></p>
+        /// <pre><code>GET /restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200 HTTP/1.1
+        /// Content-Type: application/json
+        /// Host: apigateway.us-east-1.amazonaws.com
+        /// Content-Length: 117
+        /// X-Amz-Date: 20160613T215008Z
+        /// Authorization: AWS4-HMAC-SHA256 Credential={access_key_ID}/20160613/us-east-1/apigateway/aws4_request, SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash}</code></pre>
+        /// <h5>Response</h5>
+        /// <p>The successful response returns a <code>200 OK</code> status code and a payload similar to the following:</p>
+        /// <pre><code>{
+        /// "_links": {
+        /// "curies": {
+        /// "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-response-{rel}.html",
+        /// "name": "methodresponse",
+        /// "templated": true
+        /// },
+        /// "self": {
+        /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200",
+        /// "title": "200"
+        /// },
+        /// "methodresponse:delete": {
+        /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200"
+        /// },
+        /// "methodresponse:update": {
+        /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200"
+        /// }
+        /// },
+        /// "responseModels": {
+        /// "application/json": "Empty"
+        /// },
+        /// "responseParameters": {
+        /// "method.response.header.operator": false,
+        /// "method.response.header.operand_2": false,
+        /// "method.response.header.operand_1": false
+        /// },
+        /// "statusCode": "200"
+        /// }</code></pre>
+        /// <p></p>
+        /// </div>
+        /// <div class="seeAlso">
+        /// <a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-method-response.html">AWS CLI</a>
+        /// </div>
         pub fn set_method_responses(
             mut self,
             input: std::option::Option<
@@ -5852,6 +6995,96 @@ pub mod put_method_output {
             self.method_integration = Some(input);
             self
         }
+        /// <p>Gets the method's integration responsible for passing the client-submitted request to the back end and performing necessary transformations to make the request compliant with the back end.</p>
+        /// <div class="remarks">
+        /// <p></p>
+        /// <h4>Example: </h4>
+        /// <h5>Request</h5>
+        /// <p></p>
+        /// <pre><code>GET /restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration HTTP/1.1
+        /// Content-Type: application/json
+        /// Host: apigateway.us-east-1.amazonaws.com
+        /// Content-Length: 117
+        /// X-Amz-Date: 20160613T213210Z
+        /// Authorization: AWS4-HMAC-SHA256 Credential={access_key_ID}/20160613/us-east-1/apigateway/aws4_request, SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash}</code></pre>
+        /// <h5>Response</h5>
+        /// <p>The successful response returns a <code>200 OK</code> status code and a payload similar to the following:</p>
+        /// <pre><code>{
+        /// "_links": {
+        /// "curies": [
+        /// {
+        /// "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html",
+        /// "name": "integration",
+        /// "templated": true
+        /// },
+        /// {
+        /// "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
+        /// "name": "integrationresponse",
+        /// "templated": true
+        /// }
+        /// ],
+        /// "self": {
+        /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration"
+        /// },
+        /// "integration:delete": {
+        /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration"
+        /// },
+        /// "integration:responses": {
+        /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200",
+        /// "name": "200",
+        /// "title": "200"
+        /// },
+        /// "integration:update": {
+        /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration"
+        /// },
+        /// "integrationresponse:put": {
+        /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/{status_code}",
+        /// "templated": true
+        /// }
+        /// },
+        /// "cacheKeyParameters": [],
+        /// "cacheNamespace": "0cjtch",
+        /// "credentials": "arn:aws:iam::123456789012:role/apigAwsProxyRole",
+        /// "httpMethod": "POST",
+        /// "passthroughBehavior": "WHEN_NO_MATCH",
+        /// "requestTemplates": {
+        /// "application/json": "{\n    \"a\":  \"$input.params('operand1')\",\n    \"b\":  \"$input.params('operand2')\", \n    \"op\": \"$input.params('operator')\"   \n}"
+        /// },
+        /// "type": "AWS",
+        /// "uri": "arn:aws:apigateway:us-west-2:lambda:path//2015-03-31/functions/arn:aws:lambda:us-west-2:123456789012:function:Calc/invocations",
+        /// "_embedded": {
+        /// "integration:responses": {
+        /// "_links": {
+        /// "self": {
+        /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200",
+        /// "name": "200",
+        /// "title": "200"
+        /// },
+        /// "integrationresponse:delete": {
+        /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200"
+        /// },
+        /// "integrationresponse:update": {
+        /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200"
+        /// }
+        /// },
+        /// "responseParameters": {
+        /// "method.response.header.operator": "integration.response.body.op",
+        /// "method.response.header.operand_2": "integration.response.body.b",
+        /// "method.response.header.operand_1": "integration.response.body.a"
+        /// },
+        /// "responseTemplates": {
+        /// "application/json": "#set($res = $input.path('$'))\n{\n    \"result\": \"$res.a, $res.b, $res.op => $res.c\",\n  \"a\" : \"$res.a\",\n  \"b\" : \"$res.b\",\n  \"op\" : \"$res.op\",\n  \"c\" : \"$res.c\"\n}"
+        /// },
+        /// "selectionPattern": "",
+        /// "statusCode": "200"
+        /// }
+        /// }
+        /// }</code></pre>
+        /// <p></p>
+        /// </div>
+        /// <div class="seeAlso">
+        /// <a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-integration.html">AWS CLI</a>
+        /// </div>
         pub fn set_method_integration(
             mut self,
             input: std::option::Option<crate::model::Integration>,
@@ -5859,12 +7092,18 @@ pub mod put_method_output {
             self.method_integration = input;
             self
         }
+        /// Appends an item to `authorization_scopes`.
+        ///
+        /// To override the contents of this collection use [`set_authorization_scopes`](Self::set_authorization_scopes).
+        ///
+        /// <p>A list of authorization scopes configured on the method. The scopes are used with a <code>COGNITO_USER_POOLS</code> authorizer to authorize the method invocation. The authorization works by matching the method scopes against the scopes parsed from the access token in the incoming request. The method invocation is authorized if any method scopes matches a claimed scope in the access token. Otherwise, the invocation is not authorized. When the method scope is configured, the client must provide an access token instead of an identity token for authorization purposes.</p>
         pub fn authorization_scopes(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.authorization_scopes.unwrap_or_default();
             v.push(input.into());
             self.authorization_scopes = Some(v);
             self
         }
+        /// <p>A list of authorization scopes configured on the method. The scopes are used with a <code>COGNITO_USER_POOLS</code> authorizer to authorize the method invocation. The authorization works by matching the method scopes against the scopes parsed from the access token in the incoming request. The method invocation is authorized if any method scopes matches a claimed scope in the access token. Otherwise, the invocation is not authorized. When the method scope is configured, the client must provide an access token instead of an identity token for authorization purposes.</p>
         pub fn set_authorization_scopes(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5956,6 +7195,7 @@ pub mod put_integration_response_output {
             self.status_code = Some(input.into());
             self
         }
+        /// <p>Specifies the status code that is used to map the integration response to an existing <a>MethodResponse</a>.</p>
         pub fn set_status_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status_code = input;
             self
@@ -5965,6 +7205,7 @@ pub mod put_integration_response_output {
             self.selection_pattern = Some(input.into());
             self
         }
+        /// <p>Specifies the regular expression (regex) pattern used to choose an integration response based on the response from the back end. For example, if the success response returns nothing and the error response returns some string, you could use the <code>.+</code> regex to match error response. However, make sure that the error response does not contain any newline (<code>\n</code>) character in such cases. If the back end is an AWS Lambda function, the AWS Lambda function error header is matched. For all other HTTP and AWS back ends, the HTTP status code is matched.</p>
         pub fn set_selection_pattern(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5972,6 +7213,12 @@ pub mod put_integration_response_output {
             self.selection_pattern = input;
             self
         }
+        /// Adds a key-value pair to `response_parameters`.
+        ///
+        /// To override the contents of this collection use [`set_response_parameters`](Self::set_response_parameters).
+        ///
+        /// <p>A key-value map specifying response parameters that are passed to the method response from the back end.
+        /// The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. The mapped non-static value must match the pattern of <code>integration.response.header.{name}</code> or <code>integration.response.body.{JSON-expression}</code>, where <code>name</code> is a valid and unique response header name and <code>JSON-expression</code> is a valid JSON expression without the <code>$</code> prefix.</p>
         pub fn response_parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -5982,6 +7229,8 @@ pub mod put_integration_response_output {
             self.response_parameters = Some(hash_map);
             self
         }
+        /// <p>A key-value map specifying response parameters that are passed to the method response from the back end.
+        /// The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. The mapped non-static value must match the pattern of <code>integration.response.header.{name}</code> or <code>integration.response.body.{JSON-expression}</code>, where <code>name</code> is a valid and unique response header name and <code>JSON-expression</code> is a valid JSON expression without the <code>$</code> prefix.</p>
         pub fn set_response_parameters(
             mut self,
             input: std::option::Option<
@@ -5991,6 +7240,11 @@ pub mod put_integration_response_output {
             self.response_parameters = input;
             self
         }
+        /// Adds a key-value pair to `response_templates`.
+        ///
+        /// To override the contents of this collection use [`set_response_templates`](Self::set_response_templates).
+        ///
+        /// <p>Specifies the templates used to transform the integration response body. Response templates are represented as a key/value map, with a content-type as the key and a template as the value.</p>
         pub fn response_templates(
             mut self,
             k: impl Into<std::string::String>,
@@ -6001,6 +7255,7 @@ pub mod put_integration_response_output {
             self.response_templates = Some(hash_map);
             self
         }
+        /// <p>Specifies the templates used to transform the integration response body. Response templates are represented as a key/value map, with a content-type as the key and a template as the value.</p>
         pub fn set_response_templates(
             mut self,
             input: std::option::Option<
@@ -6020,6 +7275,12 @@ pub mod put_integration_response_output {
             self.content_handling = Some(input);
             self
         }
+        /// <p>Specifies how to handle response payload content type conversions. Supported values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
+        /// <ul>
+        /// <li><p><code>CONVERT_TO_BINARY</code>: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p></li>
+        /// <li><p><code>CONVERT_TO_TEXT</code>: Converts a response payload from a binary blob to a Base64-encoded string.</p></li>
+        /// </ul>
+        /// <p>If this property is not defined, the response payload will be passed through from the integration response to the method response without modification.</p>
         pub fn set_content_handling(
             mut self,
             input: std::option::Option<crate::model::ContentHandlingStrategy>,
@@ -6237,6 +7498,15 @@ pub mod put_integration_output {
             self.r#type = Some(input);
             self
         }
+        /// <p>Specifies an API method integration type. The valid value is one of the following:</p>
+        /// <ul>
+        /// <li><code>AWS</code>: for integrating the API method request with an AWS service action, including the Lambda function-invoking action. With the Lambda function-invoking action, this is referred to as the Lambda custom integration. With any other AWS service action, this is known as AWS integration.</li>
+        /// <li><code>AWS_PROXY</code>: for integrating the API method request with the Lambda function-invoking action with the client request passed through as-is. This integration is also referred to as the Lambda proxy integration.</li>
+        /// <li><code>HTTP</code>: for integrating the API method request with an HTTP endpoint, including a private HTTP endpoint within a VPC. This integration is also referred to as the HTTP custom integration.</li>
+        /// <li><code>HTTP_PROXY</code>: for integrating the API method request with an HTTP endpoint, including a private HTTP endpoint within a VPC, with the client request passed through as-is. This is also referred to as the HTTP proxy integration.</li>
+        /// <li><code>MOCK</code>: for integrating the API method request with API Gateway as a "loop-back" endpoint without invoking any backend.</li>
+        /// </ul>
+        /// <p>For the HTTP and HTTP proxy integrations, each integration can specify a protocol (<code>http/https</code>), port and path. Standard 80 and 443 ports are supported as well as custom ports above 1024. An HTTP or HTTP proxy integration with a <code>connectionType</code> of <code>VPC_LINK</code> is referred to as a private integration and uses a <a>VpcLink</a> to connect API Gateway to a network load balancer of a VPC.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::IntegrationType>,
@@ -6249,6 +7519,7 @@ pub mod put_integration_output {
             self.http_method = Some(input.into());
             self
         }
+        /// <p>Specifies the integration's HTTP method type.</p>
         pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.http_method = input;
             self
@@ -6263,6 +7534,12 @@ pub mod put_integration_output {
             self.uri = Some(input.into());
             self
         }
+        /// <p>Specifies Uniform Resource Identifier (URI) of the integration endpoint.</p>
+        /// <ul>
+        /// <li><p> For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the URI must be a fully formed, encoded HTTP(S) URL according to the <a target="_blank" href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">RFC-3986 specification</a>, for either standard integration, where <code>connectionType</code> is not <code>VPC_LINK</code>, or private integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a private HTTP integration, the URI is not used for routing. </p>
+        /// </li>
+        /// <li><p> For <code>AWS</code> or <code>AWS_PROXY</code> integrations, the URI is of the form <code>arn:aws:apigateway:{region}:{subdomain.service|service}:path|action/{service_api}</code>. Here, <code>{Region}</code> is the API Gateway region (e.g., <code>us-east-1</code>); <code>{service}</code> is the name of the integrated AWS service (e.g., <code>s3</code>); and <code>{subdomain}</code> is a designated subdomain supported by certain AWS service for fast host-name lookup. <code>action</code> can be used for an AWS service action-based API, using an <code>Action={name}&{p1}={v1}&p2={v2}...</code> query string. The ensuing <code>{service_api}</code> refers to a supported action <code>{name}</code> plus any required input parameters. Alternatively, <code>path</code> can be used for an AWS service path-based API. The ensuing  <code>service_api</code> refers to the path to an AWS service resource, including the region of the integrated AWS service, if applicable. For example, for integration with the S3 API of <code><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>, the <code>uri</code> can be either <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&Bucket={bucket}&Key={key}</code> or  <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code></p>
+        /// </li></ul>
         pub fn set_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.uri = input;
             self
@@ -6272,6 +7549,7 @@ pub mod put_integration_output {
             self.connection_type = Some(input);
             self
         }
+        /// <p>The type of the network connection to the integration endpoint. The valid value is <code>INTERNET</code> for connections through the public routable internet or <code>VPC_LINK</code> for private connections between API Gateway and a network load balancer in a VPC. The default value is <code>INTERNET</code>.</p>
         pub fn set_connection_type(
             mut self,
             input: std::option::Option<crate::model::ConnectionType>,
@@ -6284,6 +7562,7 @@ pub mod put_integration_output {
             self.connection_id = Some(input.into());
             self
         }
+        /// <p>The (<a href="https://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>) of the <a>VpcLink</a> used for the integration when <code>connectionType=VPC_LINK</code> and undefined, otherwise.</p>
         pub fn set_connection_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6296,10 +7575,16 @@ pub mod put_integration_output {
             self.credentials = Some(input.into());
             self
         }
+        /// <p>Specifies the credentials required for the integration, if any. For AWS integrations, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify the string <code>arn:aws:iam::\*:user/\*</code>. To use resource-based permissions on supported AWS services, specify null.</p>
         pub fn set_credentials(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.credentials = input;
             self
         }
+        /// Adds a key-value pair to `request_parameters`.
+        ///
+        /// To override the contents of this collection use [`set_request_parameters`](Self::set_request_parameters).
+        ///
+        /// <p>A key-value map specifying request parameters that are passed from the method request to the back end. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the back end. The method request parameter value must match the pattern of  <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and <code>name</code> must be a valid and unique method request parameter name.</p>
         pub fn request_parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -6310,6 +7595,7 @@ pub mod put_integration_output {
             self.request_parameters = Some(hash_map);
             self
         }
+        /// <p>A key-value map specifying request parameters that are passed from the method request to the back end. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the back end. The method request parameter value must match the pattern of  <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and <code>name</code> must be a valid and unique method request parameter name.</p>
         pub fn set_request_parameters(
             mut self,
             input: std::option::Option<
@@ -6319,6 +7605,11 @@ pub mod put_integration_output {
             self.request_parameters = input;
             self
         }
+        /// Adds a key-value pair to `request_templates`.
+        ///
+        /// To override the contents of this collection use [`set_request_templates`](Self::set_request_templates).
+        ///
+        /// <p>Represents a map of Velocity templates that are applied on the request payload based on the value of the Content-Type header sent by the client. The content type value is the key in this map, and the template (as a String) is the value.</p>
         pub fn request_templates(
             mut self,
             k: impl Into<std::string::String>,
@@ -6329,6 +7620,7 @@ pub mod put_integration_output {
             self.request_templates = Some(hash_map);
             self
         }
+        /// <p>Represents a map of Velocity templates that are applied on the request payload based on the value of the Content-Type header sent by the client. The content type value is the key in this map, and the template (as a String) is the value.</p>
         pub fn set_request_templates(
             mut self,
             input: std::option::Option<
@@ -6366,6 +7658,30 @@ pub mod put_integration_output {
             self.passthrough_behavior = Some(input.into());
             self
         }
+        /// <div>
+        /// <p>
+        /// Specifies how the method request body of an unmapped content type will be passed through the integration request
+        /// to the back end without transformation. A content type is unmapped if no mapping template is defined in the integration
+        /// or the content type does not match any of the mapped content types, as specified in <code>requestTemplates</code>.
+        /// The valid value is one of the following:
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <code>WHEN_NO_MATCH</code>: passes the method request body through the integration request to the back end without transformation
+        /// when the method request content type does not match any content type associated with the mapping templates defined in the integration request.
+        /// </li>
+        /// <li>
+        /// <code>WHEN_NO_TEMPLATES</code>: passes the method request body through the integration request to the back end without transformation
+        /// when no mapping template is defined in the integration request. If a template is defined when this option is selected, the method request
+        /// of an unmapped content-type will be rejected with an HTTP <code>415 Unsupported Media Type</code> response.
+        /// </li>
+        /// <li>
+        /// <code>NEVER</code>: rejects the method request with an HTTP <code>415 Unsupported Media Type</code> response when either the method
+        /// request content type does not match any content type associated with the mapping templates defined in the integration request or
+        /// no mapping template is defined in the integration request.
+        /// </li>
+        /// </ul>
+        /// </div>
         pub fn set_passthrough_behavior(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6383,6 +7699,12 @@ pub mod put_integration_output {
             self.content_handling = Some(input);
             self
         }
+        /// <p>Specifies how to handle request payload content type conversions. Supported values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
+        /// <ul>
+        /// <li><p><code>CONVERT_TO_BINARY</code>: Converts a request payload from a Base64-encoded string to the corresponding binary blob.</p></li>
+        /// <li><p><code>CONVERT_TO_TEXT</code>: Converts a request payload from a binary blob to a Base64-encoded string.</p></li>
+        /// </ul>
+        /// <p>If this property is not defined, the request payload will be passed through from the method request to integration request without modification, provided that the <code>passthroughBehavior</code> is configured to support payload pass-through.</p>
         pub fn set_content_handling(
             mut self,
             input: std::option::Option<crate::model::ContentHandlingStrategy>,
@@ -6395,6 +7717,7 @@ pub mod put_integration_output {
             self.timeout_in_millis = Some(input);
             self
         }
+        /// <p>Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds or 29 seconds.</p>
         pub fn set_timeout_in_millis(mut self, input: std::option::Option<i32>) -> Self {
             self.timeout_in_millis = input;
             self
@@ -6404,6 +7727,7 @@ pub mod put_integration_output {
             self.cache_namespace = Some(input.into());
             self
         }
+        /// <p>Specifies a group of related cached parameters. By default, API Gateway uses the resource ID as the <code>cacheNamespace</code>. You can specify the same <code>cacheNamespace</code> across resources to return the same cached data for requests to different resources.</p>
         pub fn set_cache_namespace(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6411,12 +7735,18 @@ pub mod put_integration_output {
             self.cache_namespace = input;
             self
         }
+        /// Appends an item to `cache_key_parameters`.
+        ///
+        /// To override the contents of this collection use [`set_cache_key_parameters`](Self::set_cache_key_parameters).
+        ///
+        /// <p>A list of request parameters whose values API Gateway caches. To be valid values for <code>cacheKeyParameters</code>, these parameters must also be specified for <a>Method</a> <code>requestParameters</code>.</p>
         pub fn cache_key_parameters(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.cache_key_parameters.unwrap_or_default();
             v.push(input.into());
             self.cache_key_parameters = Some(v);
             self
         }
+        /// <p>A list of request parameters whose values API Gateway caches. To be valid values for <code>cacheKeyParameters</code>, these parameters must also be specified for <a>Method</a> <code>requestParameters</code>.</p>
         pub fn set_cache_key_parameters(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6424,6 +7754,55 @@ pub mod put_integration_output {
             self.cache_key_parameters = input;
             self
         }
+        /// Adds a key-value pair to `integration_responses`.
+        ///
+        /// To override the contents of this collection use [`set_integration_responses`](Self::set_integration_responses).
+        ///
+        /// <p>Specifies the integration's responses.</p>
+        /// <div class="remarks">
+        /// <p></p>
+        /// <h4>Example: Get integration responses of a method</h4>
+        /// <h5>Request</h5>
+        /// <p></p>
+        /// <pre><code>GET /restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200 HTTP/1.1
+        /// Content-Type: application/json
+        /// Host: apigateway.us-east-1.amazonaws.com
+        /// X-Amz-Date: 20160607T191449Z
+        /// Authorization: AWS4-HMAC-SHA256 Credential={access_key_ID}/20160607/us-east-1/apigateway/aws4_request, SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash}
+        /// </code></pre>
+        /// <h5>Response</h5>
+        /// <p>The successful response returns <code>200 OK</code> status and a payload as follows:</p>
+        /// <pre><code>{
+        /// "_links": {
+        /// "curies": {
+        /// "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
+        /// "name": "integrationresponse",
+        /// "templated": true
+        /// },
+        /// "self": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200",
+        /// "title": "200"
+        /// },
+        /// "integrationresponse:delete": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200"
+        /// },
+        /// "integrationresponse:update": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200"
+        /// }
+        /// },
+        /// "responseParameters": {
+        /// "method.response.header.Content-Type": "'application/xml'"
+        /// },
+        /// "responseTemplates": {
+        /// "application/json": "$util.urlDecode(\"%3CkinesisStreams%3E#foreach($stream in $input.path('$.StreamNames'))%3Cstream%3E%3Cname%3E$stream%3C/name%3E%3C/stream%3E#end%3C/kinesisStreams%3E\")\n"
+        /// },
+        /// "statusCode": "200"
+        /// }</code></pre>
+        /// <p></p>
+        /// </div>
+        /// <div class="seeAlso">
+        /// <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating an API</a>
+        /// </div>
         pub fn integration_responses(
             mut self,
             k: impl Into<std::string::String>,
@@ -6434,6 +7813,51 @@ pub mod put_integration_output {
             self.integration_responses = Some(hash_map);
             self
         }
+        /// <p>Specifies the integration's responses.</p>
+        /// <div class="remarks">
+        /// <p></p>
+        /// <h4>Example: Get integration responses of a method</h4>
+        /// <h5>Request</h5>
+        /// <p></p>
+        /// <pre><code>GET /restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200 HTTP/1.1
+        /// Content-Type: application/json
+        /// Host: apigateway.us-east-1.amazonaws.com
+        /// X-Amz-Date: 20160607T191449Z
+        /// Authorization: AWS4-HMAC-SHA256 Credential={access_key_ID}/20160607/us-east-1/apigateway/aws4_request, SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash}
+        /// </code></pre>
+        /// <h5>Response</h5>
+        /// <p>The successful response returns <code>200 OK</code> status and a payload as follows:</p>
+        /// <pre><code>{
+        /// "_links": {
+        /// "curies": {
+        /// "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
+        /// "name": "integrationresponse",
+        /// "templated": true
+        /// },
+        /// "self": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200",
+        /// "title": "200"
+        /// },
+        /// "integrationresponse:delete": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200"
+        /// },
+        /// "integrationresponse:update": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200"
+        /// }
+        /// },
+        /// "responseParameters": {
+        /// "method.response.header.Content-Type": "'application/xml'"
+        /// },
+        /// "responseTemplates": {
+        /// "application/json": "$util.urlDecode(\"%3CkinesisStreams%3E#foreach($stream in $input.path('$.StreamNames'))%3Cstream%3E%3Cname%3E$stream%3C/name%3E%3C/stream%3E#end%3C/kinesisStreams%3E\")\n"
+        /// },
+        /// "statusCode": "200"
+        /// }</code></pre>
+        /// <p></p>
+        /// </div>
+        /// <div class="seeAlso">
+        /// <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating an API</a>
+        /// </div>
         pub fn set_integration_responses(
             mut self,
             input: std::option::Option<
@@ -6448,6 +7872,7 @@ pub mod put_integration_output {
             self.tls_config = Some(input);
             self
         }
+        /// <p>Specifies the TLS configuration for an integration.</p>
         pub fn set_tls_config(
             mut self,
             input: std::option::Option<crate::model::TlsConfig>,
@@ -6591,6 +8016,7 @@ pub mod put_gateway_response_output {
             self.response_type = Some(input);
             self
         }
+        /// <p>The response type of the associated <a>GatewayResponse</a>.</p>
         pub fn set_response_type(
             mut self,
             input: std::option::Option<crate::model::GatewayResponseType>,
@@ -6603,10 +8029,16 @@ pub mod put_gateway_response_output {
             self.status_code = Some(input.into());
             self
         }
+        /// <p>The HTTP status code for this <a>GatewayResponse</a>.</p>
         pub fn set_status_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status_code = input;
             self
         }
+        /// Adds a key-value pair to `response_parameters`.
+        ///
+        /// To override the contents of this collection use [`set_response_parameters`](Self::set_response_parameters).
+        ///
+        /// <p>Response parameters (paths, query strings and headers) of the <a>GatewayResponse</a> as a string-to-string map of key-value  pairs.</p>
         pub fn response_parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -6617,6 +8049,7 @@ pub mod put_gateway_response_output {
             self.response_parameters = Some(hash_map);
             self
         }
+        /// <p>Response parameters (paths, query strings and headers) of the <a>GatewayResponse</a> as a string-to-string map of key-value  pairs.</p>
         pub fn set_response_parameters(
             mut self,
             input: std::option::Option<
@@ -6626,6 +8059,11 @@ pub mod put_gateway_response_output {
             self.response_parameters = input;
             self
         }
+        /// Adds a key-value pair to `response_templates`.
+        ///
+        /// To override the contents of this collection use [`set_response_templates`](Self::set_response_templates).
+        ///
+        /// <p>Response templates of the <a>GatewayResponse</a> as a string-to-string map of key-value pairs.</p>
         pub fn response_templates(
             mut self,
             k: impl Into<std::string::String>,
@@ -6636,6 +8074,7 @@ pub mod put_gateway_response_output {
             self.response_templates = Some(hash_map);
             self
         }
+        /// <p>Response templates of the <a>GatewayResponse</a> as a string-to-string map of key-value pairs.</p>
         pub fn set_response_templates(
             mut self,
             input: std::option::Option<
@@ -6650,6 +8089,7 @@ pub mod put_gateway_response_output {
             self.default_response = Some(input);
             self
         }
+        /// <p>A Boolean flag to indicate whether this <a>GatewayResponse</a> is the default gateway response (<code>true</code>) or not (<code>false</code>). A default gateway response is one generated by API Gateway without any customization by an API developer. </p>
         pub fn set_default_response(mut self, input: std::option::Option<bool>) -> Self {
             self.default_response = input;
             self
@@ -6687,7 +8127,7 @@ pub struct ImportRestApiOutput {
     /// <p>The API's description.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The timestamp when the API was created.</p>
-    pub created_date: std::option::Option<smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A version identifier for the API.</p>
     pub version: std::option::Option<std::string::String>,
     /// <p>The warning messages reported when <code>failonwarnings</code> is turned on during API import.</p>
@@ -6739,7 +8179,7 @@ pub mod import_rest_api_output {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) created_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) version: std::option::Option<std::string::String>,
         pub(crate) warnings: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) binary_media_types: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6758,6 +8198,7 @@ pub mod import_rest_api_output {
             self.id = Some(input.into());
             self
         }
+        /// <p>The API's identifier. This identifier is unique across all of your APIs in API Gateway.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -6767,6 +8208,7 @@ pub mod import_rest_api_output {
             self.name = Some(input.into());
             self
         }
+        /// <p>The API's name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -6776,18 +8218,20 @@ pub mod import_rest_api_output {
             self.description = Some(input.into());
             self
         }
+        /// <p>The API's description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
         /// <p>The timestamp when the API was created.</p>
-        pub fn created_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_date = Some(input);
             self
         }
+        /// <p>The timestamp when the API was created.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_date = input;
             self
@@ -6797,16 +8241,23 @@ pub mod import_rest_api_output {
             self.version = Some(input.into());
             self
         }
+        /// <p>A version identifier for the API.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
         }
+        /// Appends an item to `warnings`.
+        ///
+        /// To override the contents of this collection use [`set_warnings`](Self::set_warnings).
+        ///
+        /// <p>The warning messages reported when <code>failonwarnings</code> is turned on during API import.</p>
         pub fn warnings(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.warnings.unwrap_or_default();
             v.push(input.into());
             self.warnings = Some(v);
             self
         }
+        /// <p>The warning messages reported when <code>failonwarnings</code> is turned on during API import.</p>
         pub fn set_warnings(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6814,12 +8265,18 @@ pub mod import_rest_api_output {
             self.warnings = input;
             self
         }
+        /// Appends an item to `binary_media_types`.
+        ///
+        /// To override the contents of this collection use [`set_binary_media_types`](Self::set_binary_media_types).
+        ///
+        /// <p>The list of binary media types supported by the <a>RestApi</a>. By default, the <a>RestApi</a> supports only UTF-8-encoded text payloads.</p>
         pub fn binary_media_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.binary_media_types.unwrap_or_default();
             v.push(input.into());
             self.binary_media_types = Some(v);
             self
         }
+        /// <p>The list of binary media types supported by the <a>RestApi</a>. By default, the <a>RestApi</a> supports only UTF-8-encoded text payloads.</p>
         pub fn set_binary_media_types(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6832,6 +8289,7 @@ pub mod import_rest_api_output {
             self.minimum_compression_size = Some(input);
             self
         }
+        /// <p>A nullable integer that is used to enable compression (with non-negative between 0 and 10485760 (10M) bytes, inclusive) or disable compression (with a null value) on an API. When compression is enabled, compression or decompression is not applied on the payload if the payload size is smaller than this value. Setting it to zero allows compression for any payload size.</p>
         pub fn set_minimum_compression_size(mut self, input: std::option::Option<i32>) -> Self {
             self.minimum_compression_size = input;
             self
@@ -6841,6 +8299,7 @@ pub mod import_rest_api_output {
             self.api_key_source = Some(input);
             self
         }
+        /// <p>The source of the API key for metering requests according to a usage plan. Valid values are: <ul><li><code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request. </li><li><code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</li></ul></p>
         pub fn set_api_key_source(
             mut self,
             input: std::option::Option<crate::model::ApiKeySourceType>,
@@ -6856,6 +8315,7 @@ pub mod import_rest_api_output {
             self.endpoint_configuration = Some(input);
             self
         }
+        /// <p>The endpoint configuration of this <a>RestApi</a> showing the endpoint types of the API.</p>
         pub fn set_endpoint_configuration(
             mut self,
             input: std::option::Option<crate::model::EndpointConfiguration>,
@@ -6868,10 +8328,16 @@ pub mod import_rest_api_output {
             self.policy = Some(input.into());
             self
         }
+        /// <p>A stringified JSON policy document that applies to this RestApi regardless of the caller and <a>Method</a> configuration.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -6882,6 +8348,7 @@ pub mod import_rest_api_output {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -6896,6 +8363,7 @@ pub mod import_rest_api_output {
             self.disable_execute_api_endpoint = Some(input);
             self
         }
+        /// <p>Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
         pub fn set_disable_execute_api_endpoint(
             mut self,
             input: std::option::Option<bool>,
@@ -6961,12 +8429,18 @@ pub mod import_documentation_parts_output {
         pub(crate) warnings: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `ids`.
+        ///
+        /// To override the contents of this collection use [`set_ids`](Self::set_ids).
+        ///
+        /// <p>A list of the returned documentation part identifiers.</p>
         pub fn ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.ids.unwrap_or_default();
             v.push(input.into());
             self.ids = Some(v);
             self
         }
+        /// <p>A list of the returned documentation part identifiers.</p>
         pub fn set_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6974,12 +8448,18 @@ pub mod import_documentation_parts_output {
             self.ids = input;
             self
         }
+        /// Appends an item to `warnings`.
+        ///
+        /// To override the contents of this collection use [`set_warnings`](Self::set_warnings).
+        ///
+        /// <p>A list of warning messages reported during import of documentation parts.</p>
         pub fn warnings(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.warnings.unwrap_or_default();
             v.push(input.into());
             self.warnings = Some(v);
             self
         }
+        /// <p>A list of warning messages reported during import of documentation parts.</p>
         pub fn set_warnings(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7030,12 +8510,18 @@ pub mod import_api_keys_output {
         pub(crate) warnings: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `ids`.
+        ///
+        /// To override the contents of this collection use [`set_ids`](Self::set_ids).
+        ///
+        /// <p>A list of all the <a>ApiKey</a> identifiers.</p>
         pub fn ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.ids.unwrap_or_default();
             v.push(input.into());
             self.ids = Some(v);
             self
         }
+        /// <p>A list of all the <a>ApiKey</a> identifiers.</p>
         pub fn set_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7043,12 +8529,18 @@ pub mod import_api_keys_output {
             self.ids = input;
             self
         }
+        /// Appends an item to `warnings`.
+        ///
+        /// To override the contents of this collection use [`set_warnings`](Self::set_warnings).
+        ///
+        /// <p>A list of warning messages.</p>
         pub fn warnings(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.warnings.unwrap_or_default();
             v.push(input.into());
             self.warnings = Some(v);
             self
         }
+        /// <p>A list of warning messages.</p>
         pub fn set_warnings(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7103,12 +8595,18 @@ pub mod get_vpc_links_output {
         pub(crate) position: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>The current page of elements from this collection.</p>
         pub fn items(mut self, input: impl Into<crate::model::VpcLink>) -> Self {
             let mut v = self.items.unwrap_or_default();
             v.push(input.into());
             self.items = Some(v);
             self
         }
+        /// <p>The current page of elements from this collection.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::VpcLink>>,
@@ -7121,6 +8619,7 @@ pub mod get_vpc_links_output {
             self.position = Some(input.into());
             self
         }
+        /// <p>The current pagination position in the paged result set.</p>
         pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.position = input;
             self
@@ -7199,6 +8698,7 @@ pub mod get_vpc_link_output {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier of the  <a>VpcLink</a>. It is used in an <a>Integration</a> to reference this <a>VpcLink</a>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -7208,6 +8708,7 @@ pub mod get_vpc_link_output {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name used to label and identify the VPC link.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -7217,16 +8718,23 @@ pub mod get_vpc_link_output {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the VPC link.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Appends an item to `target_arns`.
+        ///
+        /// To override the contents of this collection use [`set_target_arns`](Self::set_target_arns).
+        ///
+        /// <p>The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must be owned by the same AWS account of the API owner.</p>
         pub fn target_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.target_arns.unwrap_or_default();
             v.push(input.into());
             self.target_arns = Some(v);
             self
         }
+        /// <p>The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must be owned by the same AWS account of the API owner.</p>
         pub fn set_target_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7239,6 +8747,7 @@ pub mod get_vpc_link_output {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the VPC link. The valid values are <code>AVAILABLE</code>, <code>PENDING</code>, <code>DELETING</code>, or <code>FAILED</code>. Deploying an API will wait if the status is <code>PENDING</code> and will fail if the status is <code>DELETING</code>.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::VpcLinkStatus>,
@@ -7251,6 +8760,7 @@ pub mod get_vpc_link_output {
             self.status_message = Some(input.into());
             self
         }
+        /// <p>A description about the VPC link status.</p>
         pub fn set_status_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7258,6 +8768,11 @@ pub mod get_vpc_link_output {
             self.status_message = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -7268,6 +8783,7 @@ pub mod get_vpc_link_output {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -7328,12 +8844,18 @@ pub mod get_usage_plans_output {
         pub(crate) position: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>The current page of elements from this collection.</p>
         pub fn items(mut self, input: impl Into<crate::model::UsagePlan>) -> Self {
             let mut v = self.items.unwrap_or_default();
             v.push(input.into());
             self.items = Some(v);
             self
         }
+        /// <p>The current page of elements from this collection.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UsagePlan>>,
@@ -7346,6 +8868,7 @@ pub mod get_usage_plans_output {
             self.position = Some(input.into());
             self
         }
+        /// <p>The current pagination position in the paged result set.</p>
         pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.position = input;
             self
@@ -7396,12 +8919,18 @@ pub mod get_usage_plan_keys_output {
         pub(crate) position: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>The current page of elements from this collection.</p>
         pub fn items(mut self, input: impl Into<crate::model::UsagePlanKey>) -> Self {
             let mut v = self.items.unwrap_or_default();
             v.push(input.into());
             self.items = Some(v);
             self
         }
+        /// <p>The current page of elements from this collection.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UsagePlanKey>>,
@@ -7414,6 +8943,7 @@ pub mod get_usage_plan_keys_output {
             self.position = Some(input.into());
             self
         }
+        /// <p>The current pagination position in the paged result set.</p>
         pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.position = input;
             self
@@ -7480,6 +9010,7 @@ pub mod get_usage_plan_key_output {
             self.id = Some(input.into());
             self
         }
+        /// <p>The Id of a usage plan key.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -7489,6 +9020,7 @@ pub mod get_usage_plan_key_output {
             self.r#type = Some(input.into());
             self
         }
+        /// <p>The type of a usage plan key. Currently, the valid key type is <code>API_KEY</code>.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
@@ -7498,6 +9030,7 @@ pub mod get_usage_plan_key_output {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value of a usage plan key.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -7507,6 +9040,7 @@ pub mod get_usage_plan_key_output {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of a usage plan key.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -7594,6 +9128,7 @@ pub mod get_usage_plan_output {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier of a <a>UsagePlan</a> resource.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -7603,6 +9138,7 @@ pub mod get_usage_plan_output {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of a usage plan.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -7612,16 +9148,23 @@ pub mod get_usage_plan_output {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of a usage plan.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Appends an item to `api_stages`.
+        ///
+        /// To override the contents of this collection use [`set_api_stages`](Self::set_api_stages).
+        ///
+        /// <p>The associated API stages of a usage plan.</p>
         pub fn api_stages(mut self, input: impl Into<crate::model::ApiStage>) -> Self {
             let mut v = self.api_stages.unwrap_or_default();
             v.push(input.into());
             self.api_stages = Some(v);
             self
         }
+        /// <p>The associated API stages of a usage plan.</p>
         pub fn set_api_stages(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ApiStage>>,
@@ -7634,6 +9177,7 @@ pub mod get_usage_plan_output {
             self.throttle = Some(input);
             self
         }
+        /// <p>The request throttle limits of a usage plan.</p>
         pub fn set_throttle(
             mut self,
             input: std::option::Option<crate::model::ThrottleSettings>,
@@ -7646,6 +9190,7 @@ pub mod get_usage_plan_output {
             self.quota = Some(input);
             self
         }
+        /// <p>The maximum number of permitted requests per a given unit time interval.</p>
         pub fn set_quota(
             mut self,
             input: std::option::Option<crate::model::QuotaSettings>,
@@ -7658,10 +9203,16 @@ pub mod get_usage_plan_output {
             self.product_code = Some(input.into());
             self
         }
+        /// <p>The AWS Markeplace product identifier to associate with the usage plan as a SaaS product on AWS Marketplace.</p>
         pub fn set_product_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.product_code = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -7672,6 +9223,7 @@ pub mod get_usage_plan_output {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -7756,6 +9308,7 @@ pub mod get_usage_output {
             self.usage_plan_id = Some(input.into());
             self
         }
+        /// <p>The plan Id associated with this usage data.</p>
         pub fn set_usage_plan_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7768,6 +9321,7 @@ pub mod get_usage_output {
             self.start_date = Some(input.into());
             self
         }
+        /// <p>The starting date of the usage data.</p>
         pub fn set_start_date(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.start_date = input;
             self
@@ -7777,10 +9331,16 @@ pub mod get_usage_output {
             self.end_date = Some(input.into());
             self
         }
+        /// <p>The ending date of the usage data.</p>
         pub fn set_end_date(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.end_date = input;
             self
         }
+        /// Adds a key-value pair to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>The usage data, as daily logs of used and remaining quotas, over the specified time interval indexed over the API keys in a usage plan. For example, <code>{..., "values" : { "{api_key}" : [ [0, 100], [10, 90], [100, 10]]}</code>, where <code>{api_key}</code> stands for an API key value and the daily log entry is of the format <code>[used quota, remaining quota]</code>.</p>
         pub fn items(
             mut self,
             k: impl Into<std::string::String>,
@@ -7791,6 +9351,7 @@ pub mod get_usage_output {
             self.items = Some(hash_map);
             self
         }
+        /// <p>The usage data, as daily logs of used and remaining quotas, over the specified time interval indexed over the API keys in a usage plan. For example, <code>{..., "values" : { "{api_key}" : [ [0, 100], [10, 90], [100, 10]]}</code>, where <code>{api_key}</code> stands for an API key value and the daily log entry is of the format <code>[used quota, remaining quota]</code>.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<
@@ -7805,6 +9366,7 @@ pub mod get_usage_output {
             self.position = Some(input.into());
             self
         }
+        /// <p>The current pagination position in the paged result set.</p>
         pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.position = input;
             self
@@ -7854,6 +9416,11 @@ pub mod get_tags_output {
         >,
     }
     impl Builder {
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -7864,6 +9431,7 @@ pub mod get_tags_output {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -7910,12 +9478,18 @@ pub mod get_stages_output {
         pub(crate) item: std::option::Option<std::vec::Vec<crate::model::Stage>>,
     }
     impl Builder {
+        /// Appends an item to `item`.
+        ///
+        /// To override the contents of this collection use [`set_item`](Self::set_item).
+        ///
+        /// <p>The current page of elements from this collection.</p>
         pub fn item(mut self, input: impl Into<crate::model::Stage>) -> Self {
             let mut v = self.item.unwrap_or_default();
             v.push(input.into());
             self.item = Some(v);
             self
         }
+        /// <p>The current page of elements from this collection.</p>
         pub fn set_item(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Stage>>,
@@ -7979,9 +9553,9 @@ pub struct GetStageOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The timestamp when the stage was created.</p>
-    pub created_date: std::option::Option<smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The timestamp when the stage last updated.</p>
-    pub last_updated_date: std::option::Option<smithy_types::Instant>,
+    pub last_updated_date: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for GetStageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8033,8 +9607,8 @@ pub mod get_stage_output {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        pub(crate) created_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_updated_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated_date: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The identifier of the <a>Deployment</a> that the stage points to.</p>
@@ -8042,6 +9616,7 @@ pub mod get_stage_output {
             self.deployment_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the <a>Deployment</a> that the stage points to.</p>
         pub fn set_deployment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8054,6 +9629,7 @@ pub mod get_stage_output {
             self.client_certificate_id = Some(input.into());
             self
         }
+        /// <p>The identifier of a client certificate for an API stage.</p>
         pub fn set_client_certificate_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8066,6 +9642,7 @@ pub mod get_stage_output {
             self.stage_name = Some(input.into());
             self
         }
+        /// <p>The name of the stage is the first path segment in the Uniform Resource Identifier (URI) of a call to API Gateway. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
         pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stage_name = input;
             self
@@ -8075,6 +9652,7 @@ pub mod get_stage_output {
             self.description = Some(input.into());
             self
         }
+        /// <p>The stage's description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -8084,6 +9662,7 @@ pub mod get_stage_output {
             self.cache_cluster_enabled = Some(input);
             self
         }
+        /// <p>Specifies whether a cache cluster is enabled for the stage.</p>
         pub fn set_cache_cluster_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.cache_cluster_enabled = input;
             self
@@ -8093,6 +9672,7 @@ pub mod get_stage_output {
             self.cache_cluster_size = Some(input);
             self
         }
+        /// <p>The size of the cache cluster for the stage, if enabled.</p>
         pub fn set_cache_cluster_size(
             mut self,
             input: std::option::Option<crate::model::CacheClusterSize>,
@@ -8105,6 +9685,7 @@ pub mod get_stage_output {
             self.cache_cluster_status = Some(input);
             self
         }
+        /// <p>The status of the cache cluster for the stage, if enabled.</p>
         pub fn set_cache_cluster_status(
             mut self,
             input: std::option::Option<crate::model::CacheClusterStatus>,
@@ -8112,6 +9693,11 @@ pub mod get_stage_output {
             self.cache_cluster_status = input;
             self
         }
+        /// Adds a key-value pair to `method_settings`.
+        ///
+        /// To override the contents of this collection use [`set_method_settings`](Self::set_method_settings).
+        ///
+        /// <p>A map that defines the method settings for a <a>Stage</a> resource. Keys (designated as <code>/{method_setting_key</code> below) are method paths defined as <code>{resource_path}/{http_method}</code> for an individual method override, or <code>/\*/\*</code> for overriding all methods in the stage.  <!-- Any forward slash ("/") characters in the <code>resource_path</code> part must be encoded as "~1" as in, for example, <code>~1resource~1sub-resource/GET</code>.--></p>
         pub fn method_settings(
             mut self,
             k: impl Into<std::string::String>,
@@ -8122,6 +9708,7 @@ pub mod get_stage_output {
             self.method_settings = Some(hash_map);
             self
         }
+        /// <p>A map that defines the method settings for a <a>Stage</a> resource. Keys (designated as <code>/{method_setting_key</code> below) are method paths defined as <code>{resource_path}/{http_method}</code> for an individual method override, or <code>/\*/\*</code> for overriding all methods in the stage.  <!-- Any forward slash ("/") characters in the <code>resource_path</code> part must be encoded as "~1" as in, for example, <code>~1resource~1sub-resource/GET</code>.--></p>
         pub fn set_method_settings(
             mut self,
             input: std::option::Option<
@@ -8131,6 +9718,12 @@ pub mod get_stage_output {
             self.method_settings = input;
             self
         }
+        /// Adds a key-value pair to `variables`.
+        ///
+        /// To override the contents of this collection use [`set_variables`](Self::set_variables).
+        ///
+        /// <p>A map that defines the stage variables for a <a>Stage</a> resource. Variable names can
+        /// have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&=,]+</code>.</p>
         pub fn variables(
             mut self,
             k: impl Into<std::string::String>,
@@ -8141,6 +9734,8 @@ pub mod get_stage_output {
             self.variables = Some(hash_map);
             self
         }
+        /// <p>A map that defines the stage variables for a <a>Stage</a> resource. Variable names can
+        /// have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&=,]+</code>.</p>
         pub fn set_variables(
             mut self,
             input: std::option::Option<
@@ -8155,6 +9750,7 @@ pub mod get_stage_output {
             self.documentation_version = Some(input.into());
             self
         }
+        /// <p>The version of the associated API documentation.</p>
         pub fn set_documentation_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8167,6 +9763,7 @@ pub mod get_stage_output {
             self.access_log_settings = Some(input);
             self
         }
+        /// <p>Settings for logging access in this stage.</p>
         pub fn set_access_log_settings(
             mut self,
             input: std::option::Option<crate::model::AccessLogSettings>,
@@ -8179,6 +9776,7 @@ pub mod get_stage_output {
             self.canary_settings = Some(input);
             self
         }
+        /// <p>Settings for the canary deployment in this stage.</p>
         pub fn set_canary_settings(
             mut self,
             input: std::option::Option<crate::model::CanarySettings>,
@@ -8191,6 +9789,7 @@ pub mod get_stage_output {
             self.tracing_enabled = Some(input);
             self
         }
+        /// <p>Specifies whether active tracing with X-ray is enabled for the <a>Stage</a>.</p>
         pub fn set_tracing_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.tracing_enabled = input;
             self
@@ -8200,10 +9799,16 @@ pub mod get_stage_output {
             self.web_acl_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the WebAcl associated with the <a>Stage</a>.</p>
         pub fn set_web_acl_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.web_acl_arn = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -8214,6 +9819,7 @@ pub mod get_stage_output {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -8224,25 +9830,27 @@ pub mod get_stage_output {
             self
         }
         /// <p>The timestamp when the stage was created.</p>
-        pub fn created_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_date = Some(input);
             self
         }
+        /// <p>The timestamp when the stage was created.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_date = input;
             self
         }
         /// <p>The timestamp when the stage last updated.</p>
-        pub fn last_updated_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_updated_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_updated_date = Some(input);
             self
         }
+        /// <p>The timestamp when the stage last updated.</p>
         pub fn set_last_updated_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_updated_date = input;
             self
@@ -8301,12 +9909,18 @@ pub mod get_sdk_types_output {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::SdkType>>,
     }
     impl Builder {
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>The current page of elements from this collection.</p>
         pub fn items(mut self, input: impl Into<crate::model::SdkType>) -> Self {
             let mut v = self.items.unwrap_or_default();
             v.push(input.into());
             self.items = Some(v);
             self
         }
+        /// <p>The current page of elements from this collection.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SdkType>>,
@@ -8369,6 +9983,7 @@ pub mod get_sdk_type_output {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier of an <a>SdkType</a> instance.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -8378,6 +9993,7 @@ pub mod get_sdk_type_output {
             self.friendly_name = Some(input.into());
             self
         }
+        /// <p>The user-friendly name of an <a>SdkType</a> instance.</p>
         pub fn set_friendly_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8390,10 +10006,16 @@ pub mod get_sdk_type_output {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of an <a>SdkType</a>.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Appends an item to `configuration_properties`.
+        ///
+        /// To override the contents of this collection use [`set_configuration_properties`](Self::set_configuration_properties).
+        ///
+        /// <p>A list of configuration properties of an <a>SdkType</a>.</p>
         pub fn configuration_properties(
             mut self,
             input: impl Into<crate::model::SdkConfigurationProperty>,
@@ -8403,6 +10025,7 @@ pub mod get_sdk_type_output {
             self.configuration_properties = Some(v);
             self
         }
+        /// <p>A list of configuration properties of an <a>SdkType</a>.</p>
         pub fn set_configuration_properties(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SdkConfigurationProperty>>,
@@ -8437,7 +10060,7 @@ pub struct GetSdkOutput {
     /// <p>The content-disposition header value in the HTTP response.</p>
     pub content_disposition: std::option::Option<std::string::String>,
     /// <p>The binary blob response to <a>GetSdk</a>, which contains the generated SDK.</p>
-    pub body: std::option::Option<smithy_types::Blob>,
+    pub body: std::option::Option<aws_smithy_types::Blob>,
 }
 impl std::fmt::Debug for GetSdkOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8456,7 +10079,7 @@ pub mod get_sdk_output {
     pub struct Builder {
         pub(crate) content_type: std::option::Option<std::string::String>,
         pub(crate) content_disposition: std::option::Option<std::string::String>,
-        pub(crate) body: std::option::Option<smithy_types::Blob>,
+        pub(crate) body: std::option::Option<aws_smithy_types::Blob>,
     }
     impl Builder {
         /// <p>The content-type header value in the HTTP response.</p>
@@ -8464,6 +10087,7 @@ pub mod get_sdk_output {
             self.content_type = Some(input.into());
             self
         }
+        /// <p>The content-type header value in the HTTP response.</p>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_type = input;
             self
@@ -8473,6 +10097,7 @@ pub mod get_sdk_output {
             self.content_disposition = Some(input.into());
             self
         }
+        /// <p>The content-disposition header value in the HTTP response.</p>
         pub fn set_content_disposition(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8481,11 +10106,12 @@ pub mod get_sdk_output {
             self
         }
         /// <p>The binary blob response to <a>GetSdk</a>, which contains the generated SDK.</p>
-        pub fn body(mut self, input: smithy_types::Blob) -> Self {
+        pub fn body(mut self, input: aws_smithy_types::Blob) -> Self {
             self.body = Some(input);
             self
         }
-        pub fn set_body(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+        /// <p>The binary blob response to <a>GetSdk</a>, which contains the generated SDK.</p>
+        pub fn set_body(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.body = input;
             self
         }
@@ -8536,12 +10162,18 @@ pub mod get_rest_apis_output {
         pub(crate) position: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>The current page of elements from this collection.</p>
         pub fn items(mut self, input: impl Into<crate::model::RestApi>) -> Self {
             let mut v = self.items.unwrap_or_default();
             v.push(input.into());
             self.items = Some(v);
             self
         }
+        /// <p>The current page of elements from this collection.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RestApi>>,
@@ -8554,6 +10186,7 @@ pub mod get_rest_apis_output {
             self.position = Some(input.into());
             self
         }
+        /// <p>The current pagination position in the paged result set.</p>
         pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.position = input;
             self
@@ -8588,7 +10221,7 @@ pub struct GetRestApiOutput {
     /// <p>The API's description.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The timestamp when the API was created.</p>
-    pub created_date: std::option::Option<smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A version identifier for the API.</p>
     pub version: std::option::Option<std::string::String>,
     /// <p>The warning messages reported when <code>failonwarnings</code> is turned on during API import.</p>
@@ -8640,7 +10273,7 @@ pub mod get_rest_api_output {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) created_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) version: std::option::Option<std::string::String>,
         pub(crate) warnings: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) binary_media_types: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8659,6 +10292,7 @@ pub mod get_rest_api_output {
             self.id = Some(input.into());
             self
         }
+        /// <p>The API's identifier. This identifier is unique across all of your APIs in API Gateway.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -8668,6 +10302,7 @@ pub mod get_rest_api_output {
             self.name = Some(input.into());
             self
         }
+        /// <p>The API's name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -8677,18 +10312,20 @@ pub mod get_rest_api_output {
             self.description = Some(input.into());
             self
         }
+        /// <p>The API's description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
         /// <p>The timestamp when the API was created.</p>
-        pub fn created_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_date = Some(input);
             self
         }
+        /// <p>The timestamp when the API was created.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_date = input;
             self
@@ -8698,16 +10335,23 @@ pub mod get_rest_api_output {
             self.version = Some(input.into());
             self
         }
+        /// <p>A version identifier for the API.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
         }
+        /// Appends an item to `warnings`.
+        ///
+        /// To override the contents of this collection use [`set_warnings`](Self::set_warnings).
+        ///
+        /// <p>The warning messages reported when <code>failonwarnings</code> is turned on during API import.</p>
         pub fn warnings(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.warnings.unwrap_or_default();
             v.push(input.into());
             self.warnings = Some(v);
             self
         }
+        /// <p>The warning messages reported when <code>failonwarnings</code> is turned on during API import.</p>
         pub fn set_warnings(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8715,12 +10359,18 @@ pub mod get_rest_api_output {
             self.warnings = input;
             self
         }
+        /// Appends an item to `binary_media_types`.
+        ///
+        /// To override the contents of this collection use [`set_binary_media_types`](Self::set_binary_media_types).
+        ///
+        /// <p>The list of binary media types supported by the <a>RestApi</a>. By default, the <a>RestApi</a> supports only UTF-8-encoded text payloads.</p>
         pub fn binary_media_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.binary_media_types.unwrap_or_default();
             v.push(input.into());
             self.binary_media_types = Some(v);
             self
         }
+        /// <p>The list of binary media types supported by the <a>RestApi</a>. By default, the <a>RestApi</a> supports only UTF-8-encoded text payloads.</p>
         pub fn set_binary_media_types(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8733,6 +10383,7 @@ pub mod get_rest_api_output {
             self.minimum_compression_size = Some(input);
             self
         }
+        /// <p>A nullable integer that is used to enable compression (with non-negative between 0 and 10485760 (10M) bytes, inclusive) or disable compression (with a null value) on an API. When compression is enabled, compression or decompression is not applied on the payload if the payload size is smaller than this value. Setting it to zero allows compression for any payload size.</p>
         pub fn set_minimum_compression_size(mut self, input: std::option::Option<i32>) -> Self {
             self.minimum_compression_size = input;
             self
@@ -8742,6 +10393,7 @@ pub mod get_rest_api_output {
             self.api_key_source = Some(input);
             self
         }
+        /// <p>The source of the API key for metering requests according to a usage plan. Valid values are: <ul><li><code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request. </li><li><code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</li></ul></p>
         pub fn set_api_key_source(
             mut self,
             input: std::option::Option<crate::model::ApiKeySourceType>,
@@ -8757,6 +10409,7 @@ pub mod get_rest_api_output {
             self.endpoint_configuration = Some(input);
             self
         }
+        /// <p>The endpoint configuration of this <a>RestApi</a> showing the endpoint types of the API.</p>
         pub fn set_endpoint_configuration(
             mut self,
             input: std::option::Option<crate::model::EndpointConfiguration>,
@@ -8769,10 +10422,16 @@ pub mod get_rest_api_output {
             self.policy = Some(input.into());
             self
         }
+        /// <p>A stringified JSON policy document that applies to this RestApi regardless of the caller and <a>Method</a> configuration.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -8783,6 +10442,7 @@ pub mod get_rest_api_output {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -8797,6 +10457,7 @@ pub mod get_rest_api_output {
             self.disable_execute_api_endpoint = Some(input);
             self
         }
+        /// <p>Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
         pub fn set_disable_execute_api_endpoint(
             mut self,
             input: std::option::Option<bool>,
@@ -8861,12 +10522,18 @@ pub mod get_resources_output {
         pub(crate) position: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>The current page of elements from this collection.</p>
         pub fn items(mut self, input: impl Into<crate::model::Resource>) -> Self {
             let mut v = self.items.unwrap_or_default();
             v.push(input.into());
             self.items = Some(v);
             self
         }
+        /// <p>The current page of elements from this collection.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Resource>>,
@@ -8879,6 +10546,7 @@ pub mod get_resources_output {
             self.position = Some(input.into());
             self
         }
+        /// <p>The current pagination position in the paged result set.</p>
         pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.position = input;
             self
@@ -9101,6 +10769,7 @@ pub mod get_resource_output {
             self.id = Some(input.into());
             self
         }
+        /// <p>The resource's identifier.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -9110,6 +10779,7 @@ pub mod get_resource_output {
             self.parent_id = Some(input.into());
             self
         }
+        /// <p>The parent resource's identifier.</p>
         pub fn set_parent_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.parent_id = input;
             self
@@ -9119,6 +10789,7 @@ pub mod get_resource_output {
             self.path_part = Some(input.into());
             self
         }
+        /// <p>The last path segment for this resource.</p>
         pub fn set_path_part(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.path_part = input;
             self
@@ -9128,10 +10799,168 @@ pub mod get_resource_output {
             self.path = Some(input.into());
             self
         }
+        /// <p>The full path for this resource.</p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.path = input;
             self
         }
+        /// Adds a key-value pair to `resource_methods`.
+        ///
+        /// To override the contents of this collection use [`set_resource_methods`](Self::set_resource_methods).
+        ///
+        /// <p>Gets an API resource's method of a given HTTP verb.</p>
+        /// <div class="remarks">
+        /// <p>The resource methods are a map of methods indexed by methods' HTTP verbs enabled on the resource. This method map is included in the <code>200 OK</code> response of the <code>GET /restapis/{restapi_id}/resources/{resource_id}</code> or <code>GET /restapis/{restapi_id}/resources/{resource_id}?embed=methods</code> request.</p>
+        /// <h4>Example: Get the GET method of an API resource</h4>
+        /// <h5>Request</h5>
+        /// <pre><code>GET /restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET HTTP/1.1
+        /// Content-Type: application/json
+        /// Host: apigateway.us-east-1.amazonaws.com
+        /// X-Amz-Date: 20170223T031827Z
+        /// Authorization: AWS4-HMAC-SHA256 Credential={access_key_ID}/20170223/us-east-1/apigateway/aws4_request, SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash}</code></pre>
+        /// <h5>Response</h5>
+        /// <pre><code>{
+        /// "_links": {
+        /// "curies": [
+        /// {
+        /// "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html",
+        /// "name": "integration",
+        /// "templated": true
+        /// },
+        /// {
+        /// "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
+        /// "name": "integrationresponse",
+        /// "templated": true
+        /// },
+        /// {
+        /// "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-{rel}.html",
+        /// "name": "method",
+        /// "templated": true
+        /// },
+        /// {
+        /// "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-response-{rel}.html",
+        /// "name": "methodresponse",
+        /// "templated": true
+        /// }
+        /// ],
+        /// "self": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET",
+        /// "name": "GET",
+        /// "title": "GET"
+        /// },
+        /// "integration:put": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration"
+        /// },
+        /// "method:delete": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET"
+        /// },
+        /// "method:integration": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration"
+        /// },
+        /// "method:responses": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/responses/200",
+        /// "name": "200",
+        /// "title": "200"
+        /// },
+        /// "method:update": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET"
+        /// },
+        /// "methodresponse:put": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/responses/{status_code}",
+        /// "templated": true
+        /// }
+        /// },
+        /// "apiKeyRequired": false,
+        /// "authorizationType": "NONE",
+        /// "httpMethod": "GET",
+        /// "_embedded": {
+        /// "method:integration": {
+        /// "_links": {
+        /// "self": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration"
+        /// },
+        /// "integration:delete": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration"
+        /// },
+        /// "integration:responses": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200",
+        /// "name": "200",
+        /// "title": "200"
+        /// },
+        /// "integration:update": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration"
+        /// },
+        /// "integrationresponse:put": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/{status_code}",
+        /// "templated": true
+        /// }
+        /// },
+        /// "cacheKeyParameters": [],
+        /// "cacheNamespace": "3kzxbg5sa2",
+        /// "credentials": "arn:aws:iam::123456789012:role/apigAwsProxyRole",
+        /// "httpMethod": "POST",
+        /// "passthroughBehavior": "WHEN_NO_MATCH",
+        /// "requestParameters": {
+        /// "integration.request.header.Content-Type": "'application/x-amz-json-1.1'"
+        /// },
+        /// "requestTemplates": {
+        /// "application/json": "{\n}"
+        /// },
+        /// "type": "AWS",
+        /// "uri": "arn:aws:apigateway:us-east-1:kinesis:action/ListStreams",
+        /// "_embedded": {
+        /// "integration:responses": {
+        /// "_links": {
+        /// "self": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200",
+        /// "name": "200",
+        /// "title": "200"
+        /// },
+        /// "integrationresponse:delete": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200"
+        /// },
+        /// "integrationresponse:update": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200"
+        /// }
+        /// },
+        /// "responseParameters": {
+        /// "method.response.header.Content-Type": "'application/xml'"
+        /// },
+        /// "responseTemplates": {
+        /// "application/json": "$util.urlDecode(\"%3CkinesisStreams%3E#foreach($stream in $input.path('$.StreamNames'))%3Cstream%3E%3Cname%3E$stream%3C/name%3E%3C/stream%3E#end%3C/kinesisStreams%3E\")\n"
+        /// },
+        /// "statusCode": "200"
+        /// }
+        /// }
+        /// },
+        /// "method:responses": {
+        /// "_links": {
+        /// "self": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/responses/200",
+        /// "name": "200",
+        /// "title": "200"
+        /// },
+        /// "methodresponse:delete": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/responses/200"
+        /// },
+        /// "methodresponse:update": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/responses/200"
+        /// }
+        /// },
+        /// "responseModels": {
+        /// "application/json": "Empty"
+        /// },
+        /// "responseParameters": {
+        /// "method.response.header.Content-Type": false
+        /// },
+        /// "statusCode": "200"
+        /// }
+        /// }
+        /// }</code></pre>
+        /// <p>If the <code>OPTIONS</code> is enabled on the resource, you can follow the example here to get that method. Just replace the <code>GET</code> of the last path segment in the request URL with <code>OPTIONS</code>.</p>
+        /// </div>
+        /// <div class="seeAlso">
+        /// </div>
         pub fn resource_methods(
             mut self,
             k: impl Into<std::string::String>,
@@ -9142,6 +10971,159 @@ pub mod get_resource_output {
             self.resource_methods = Some(hash_map);
             self
         }
+        /// <p>Gets an API resource's method of a given HTTP verb.</p>
+        /// <div class="remarks">
+        /// <p>The resource methods are a map of methods indexed by methods' HTTP verbs enabled on the resource. This method map is included in the <code>200 OK</code> response of the <code>GET /restapis/{restapi_id}/resources/{resource_id}</code> or <code>GET /restapis/{restapi_id}/resources/{resource_id}?embed=methods</code> request.</p>
+        /// <h4>Example: Get the GET method of an API resource</h4>
+        /// <h5>Request</h5>
+        /// <pre><code>GET /restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET HTTP/1.1
+        /// Content-Type: application/json
+        /// Host: apigateway.us-east-1.amazonaws.com
+        /// X-Amz-Date: 20170223T031827Z
+        /// Authorization: AWS4-HMAC-SHA256 Credential={access_key_ID}/20170223/us-east-1/apigateway/aws4_request, SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash}</code></pre>
+        /// <h5>Response</h5>
+        /// <pre><code>{
+        /// "_links": {
+        /// "curies": [
+        /// {
+        /// "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html",
+        /// "name": "integration",
+        /// "templated": true
+        /// },
+        /// {
+        /// "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
+        /// "name": "integrationresponse",
+        /// "templated": true
+        /// },
+        /// {
+        /// "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-{rel}.html",
+        /// "name": "method",
+        /// "templated": true
+        /// },
+        /// {
+        /// "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-response-{rel}.html",
+        /// "name": "methodresponse",
+        /// "templated": true
+        /// }
+        /// ],
+        /// "self": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET",
+        /// "name": "GET",
+        /// "title": "GET"
+        /// },
+        /// "integration:put": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration"
+        /// },
+        /// "method:delete": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET"
+        /// },
+        /// "method:integration": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration"
+        /// },
+        /// "method:responses": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/responses/200",
+        /// "name": "200",
+        /// "title": "200"
+        /// },
+        /// "method:update": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET"
+        /// },
+        /// "methodresponse:put": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/responses/{status_code}",
+        /// "templated": true
+        /// }
+        /// },
+        /// "apiKeyRequired": false,
+        /// "authorizationType": "NONE",
+        /// "httpMethod": "GET",
+        /// "_embedded": {
+        /// "method:integration": {
+        /// "_links": {
+        /// "self": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration"
+        /// },
+        /// "integration:delete": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration"
+        /// },
+        /// "integration:responses": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200",
+        /// "name": "200",
+        /// "title": "200"
+        /// },
+        /// "integration:update": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration"
+        /// },
+        /// "integrationresponse:put": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/{status_code}",
+        /// "templated": true
+        /// }
+        /// },
+        /// "cacheKeyParameters": [],
+        /// "cacheNamespace": "3kzxbg5sa2",
+        /// "credentials": "arn:aws:iam::123456789012:role/apigAwsProxyRole",
+        /// "httpMethod": "POST",
+        /// "passthroughBehavior": "WHEN_NO_MATCH",
+        /// "requestParameters": {
+        /// "integration.request.header.Content-Type": "'application/x-amz-json-1.1'"
+        /// },
+        /// "requestTemplates": {
+        /// "application/json": "{\n}"
+        /// },
+        /// "type": "AWS",
+        /// "uri": "arn:aws:apigateway:us-east-1:kinesis:action/ListStreams",
+        /// "_embedded": {
+        /// "integration:responses": {
+        /// "_links": {
+        /// "self": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200",
+        /// "name": "200",
+        /// "title": "200"
+        /// },
+        /// "integrationresponse:delete": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200"
+        /// },
+        /// "integrationresponse:update": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200"
+        /// }
+        /// },
+        /// "responseParameters": {
+        /// "method.response.header.Content-Type": "'application/xml'"
+        /// },
+        /// "responseTemplates": {
+        /// "application/json": "$util.urlDecode(\"%3CkinesisStreams%3E#foreach($stream in $input.path('$.StreamNames'))%3Cstream%3E%3Cname%3E$stream%3C/name%3E%3C/stream%3E#end%3C/kinesisStreams%3E\")\n"
+        /// },
+        /// "statusCode": "200"
+        /// }
+        /// }
+        /// },
+        /// "method:responses": {
+        /// "_links": {
+        /// "self": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/responses/200",
+        /// "name": "200",
+        /// "title": "200"
+        /// },
+        /// "methodresponse:delete": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/responses/200"
+        /// },
+        /// "methodresponse:update": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/responses/200"
+        /// }
+        /// },
+        /// "responseModels": {
+        /// "application/json": "Empty"
+        /// },
+        /// "responseParameters": {
+        /// "method.response.header.Content-Type": false
+        /// },
+        /// "statusCode": "200"
+        /// }
+        /// }
+        /// }</code></pre>
+        /// <p>If the <code>OPTIONS</code> is enabled on the resource, you can follow the example here to get that method. Just replace the <code>GET</code> of the last path segment in the request URL with <code>OPTIONS</code>.</p>
+        /// </div>
+        /// <div class="seeAlso">
+        /// </div>
         pub fn set_resource_methods(
             mut self,
             input: std::option::Option<
@@ -9201,12 +11183,18 @@ pub mod get_request_validators_output {
         pub(crate) position: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>The current page of elements from this collection.</p>
         pub fn items(mut self, input: impl Into<crate::model::RequestValidator>) -> Self {
             let mut v = self.items.unwrap_or_default();
             v.push(input.into());
             self.items = Some(v);
             self
         }
+        /// <p>The current page of elements from this collection.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RequestValidator>>,
@@ -9219,6 +11207,7 @@ pub mod get_request_validators_output {
             self.position = Some(input.into());
             self
         }
+        /// <p>The current pagination position in the paged result set.</p>
         pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.position = input;
             self
@@ -9286,6 +11275,7 @@ pub mod get_request_validator_output {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier of this <a>RequestValidator</a>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -9295,6 +11285,7 @@ pub mod get_request_validator_output {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of this <a>RequestValidator</a></p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -9304,6 +11295,7 @@ pub mod get_request_validator_output {
             self.validate_request_body = Some(input);
             self
         }
+        /// <p>A Boolean flag to indicate whether to validate a request body according to the configured <a>Model</a> schema.</p>
         pub fn set_validate_request_body(mut self, input: std::option::Option<bool>) -> Self {
             self.validate_request_body = input;
             self
@@ -9313,6 +11305,7 @@ pub mod get_request_validator_output {
             self.validate_request_parameters = Some(input);
             self
         }
+        /// <p>A Boolean flag to indicate whether to validate request parameters (<code>true</code>) or not (<code>false</code>).</p>
         pub fn set_validate_request_parameters(mut self, input: std::option::Option<bool>) -> Self {
             self.validate_request_parameters = input;
             self
@@ -9366,6 +11359,7 @@ pub mod get_model_template_output {
             self.value = Some(input.into());
             self
         }
+        /// <p>The Apache <a target="_blank" href="https://velocity.apache.org/engine/devel/vtl-reference.html">Velocity Template Language (VTL)</a> template content used for the template resource.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -9413,12 +11407,18 @@ pub mod get_models_output {
         pub(crate) position: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>The current page of elements from this collection.</p>
         pub fn items(mut self, input: impl Into<crate::model::Model>) -> Self {
             let mut v = self.items.unwrap_or_default();
             v.push(input.into());
             self.items = Some(v);
             self
         }
+        /// <p>The current page of elements from this collection.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Model>>,
@@ -9431,6 +11431,7 @@ pub mod get_models_output {
             self.position = Some(input.into());
             self
         }
+        /// <p>The current pagination position in the paged result set.</p>
         pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.position = input;
             self
@@ -9502,6 +11503,7 @@ pub mod get_model_output {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier for the model resource.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -9511,6 +11513,7 @@ pub mod get_model_output {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the model. Must be an alphanumeric string.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -9520,6 +11523,7 @@ pub mod get_model_output {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the model.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -9529,6 +11533,7 @@ pub mod get_model_output {
             self.schema = Some(input.into());
             self
         }
+        /// <p>The schema for the model. For <code>application/json</code> models, this should be <a target="_blank" href="https://tools.ietf.org/html/draft-zyp-json-schema-04">JSON schema draft 4</a> model. Do not include "\*/" characters in the description of any properties because such "\*/" characters may be interpreted as the closing marker for comments in some languages, such as Java or JavaScript, causing the installation of your API's SDK generated by API Gateway to fail.</p>
         pub fn set_schema(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.schema = input;
             self
@@ -9538,6 +11543,7 @@ pub mod get_model_output {
             self.content_type = Some(input.into());
             self
         }
+        /// <p>The content-type for the model.</p>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_type = input;
             self
@@ -9646,10 +11652,16 @@ pub mod get_method_response_output {
             self.status_code = Some(input.into());
             self
         }
+        /// <p>The method response's status code.</p>
         pub fn set_status_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status_code = input;
             self
         }
+        /// Adds a key-value pair to `response_parameters`.
+        ///
+        /// To override the contents of this collection use [`set_response_parameters`](Self::set_response_parameters).
+        ///
+        /// <p>A key-value map specifying required or optional response parameters that API Gateway can send back to the caller. A key defines a method response header and the value specifies whether the associated method response header is required or not. The expression of the key must match the pattern <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. API Gateway passes certain integration response data to the method response headers specified here according to the mapping you prescribe in the API's <a>IntegrationResponse</a>. The integration response data that can be mapped include an integration response header expressed in <code>integration.response.header.{name}</code>, a static value enclosed within a pair of single quotes (e.g., <code>'application/json'</code>), or a JSON expression from the back-end response payload in the form of <code>integration.response.body.{JSON-expression}</code>, where <code>JSON-expression</code> is a valid JSON expression without the <code>$</code> prefix.)</p>
         pub fn response_parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -9660,6 +11672,7 @@ pub mod get_method_response_output {
             self.response_parameters = Some(hash_map);
             self
         }
+        /// <p>A key-value map specifying required or optional response parameters that API Gateway can send back to the caller. A key defines a method response header and the value specifies whether the associated method response header is required or not. The expression of the key must match the pattern <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. API Gateway passes certain integration response data to the method response headers specified here according to the mapping you prescribe in the API's <a>IntegrationResponse</a>. The integration response data that can be mapped include an integration response header expressed in <code>integration.response.header.{name}</code>, a static value enclosed within a pair of single quotes (e.g., <code>'application/json'</code>), or a JSON expression from the back-end response payload in the form of <code>integration.response.body.{JSON-expression}</code>, where <code>JSON-expression</code> is a valid JSON expression without the <code>$</code> prefix.)</p>
         pub fn set_response_parameters(
             mut self,
             input: std::option::Option<std::collections::HashMap<std::string::String, bool>>,
@@ -9667,6 +11680,11 @@ pub mod get_method_response_output {
             self.response_parameters = input;
             self
         }
+        /// Adds a key-value pair to `response_models`.
+        ///
+        /// To override the contents of this collection use [`set_response_models`](Self::set_response_models).
+        ///
+        /// <p>Specifies the <a>Model</a> resources used for the response's content-type. Response models are represented as a key/value map, with a content-type as the key and a <a>Model</a> name as the value.</p>
         pub fn response_models(
             mut self,
             k: impl Into<std::string::String>,
@@ -9677,6 +11695,7 @@ pub mod get_method_response_output {
             self.response_models = Some(hash_map);
             self
         }
+        /// <p>Specifies the <a>Model</a> resources used for the response's content-type. Response models are represented as a key/value map, with a content-type as the key and a <a>Model</a> name as the value.</p>
         pub fn set_response_models(
             mut self,
             input: std::option::Option<
@@ -10078,6 +12097,7 @@ pub mod get_method_output {
             self.http_method = Some(input.into());
             self
         }
+        /// <p>The method's HTTP verb.</p>
         pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.http_method = input;
             self
@@ -10087,6 +12107,7 @@ pub mod get_method_output {
             self.authorization_type = Some(input.into());
             self
         }
+        /// <p>The method's authorization type. Valid values are <code>NONE</code> for open access, <code>AWS_IAM</code> for using AWS IAM permissions, <code>CUSTOM</code> for using a custom authorizer, or <code>COGNITO_USER_POOLS</code> for using a Cognito user pool.</p>
         pub fn set_authorization_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10099,6 +12120,7 @@ pub mod get_method_output {
             self.authorizer_id = Some(input.into());
             self
         }
+        /// <p>The identifier of an <a>Authorizer</a> to use on this method. The <code>authorizationType</code> must be <code>CUSTOM</code>.</p>
         pub fn set_authorizer_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10111,6 +12133,7 @@ pub mod get_method_output {
             self.api_key_required = Some(input);
             self
         }
+        /// <p>A boolean flag specifying whether a valid <a>ApiKey</a> is required to invoke this method.</p>
         pub fn set_api_key_required(mut self, input: std::option::Option<bool>) -> Self {
             self.api_key_required = input;
             self
@@ -10120,6 +12143,7 @@ pub mod get_method_output {
             self.request_validator_id = Some(input.into());
             self
         }
+        /// <p>The identifier of a <a>RequestValidator</a> for request validation.</p>
         pub fn set_request_validator_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10132,6 +12156,7 @@ pub mod get_method_output {
             self.operation_name = Some(input.into());
             self
         }
+        /// <p>A human-friendly operation identifier for the method. For example, you can assign the <code>operationName</code> of <code>ListPets</code> for the <code>GET /pets</code> method in the <code>PetStore</code> example.</p>
         pub fn set_operation_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10139,6 +12164,11 @@ pub mod get_method_output {
             self.operation_name = input;
             self
         }
+        /// Adds a key-value pair to `request_parameters`.
+        ///
+        /// To override the contents of this collection use [`set_request_parameters`](Self::set_request_parameters).
+        ///
+        /// <p>A key-value map defining required or optional method request parameters that can be accepted by API Gateway. A key is a method request parameter name matching the pattern of  <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and <code>name</code> is a valid and unique parameter name. The value associated with the key is a Boolean flag indicating whether the parameter is required (<code>true</code>) or optional (<code>false</code>).  The method request parameter names defined here are available in <a>Integration</a> to be mapped to integration request parameters or templates.</p>
         pub fn request_parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -10149,6 +12179,7 @@ pub mod get_method_output {
             self.request_parameters = Some(hash_map);
             self
         }
+        /// <p>A key-value map defining required or optional method request parameters that can be accepted by API Gateway. A key is a method request parameter name matching the pattern of  <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and <code>name</code> is a valid and unique parameter name. The value associated with the key is a Boolean flag indicating whether the parameter is required (<code>true</code>) or optional (<code>false</code>).  The method request parameter names defined here are available in <a>Integration</a> to be mapped to integration request parameters or templates.</p>
         pub fn set_request_parameters(
             mut self,
             input: std::option::Option<std::collections::HashMap<std::string::String, bool>>,
@@ -10156,6 +12187,11 @@ pub mod get_method_output {
             self.request_parameters = input;
             self
         }
+        /// Adds a key-value pair to `request_models`.
+        ///
+        /// To override the contents of this collection use [`set_request_models`](Self::set_request_models).
+        ///
+        /// <p>A key-value map specifying data schemas, represented by <a>Model</a> resources, (as the mapped value) of the request payloads of given content types (as the mapping key).</p>
         pub fn request_models(
             mut self,
             k: impl Into<std::string::String>,
@@ -10166,6 +12202,7 @@ pub mod get_method_output {
             self.request_models = Some(hash_map);
             self
         }
+        /// <p>A key-value map specifying data schemas, represented by <a>Model</a> resources, (as the mapped value) of the request payloads of given content types (as the mapping key).</p>
         pub fn set_request_models(
             mut self,
             input: std::option::Option<
@@ -10175,6 +12212,57 @@ pub mod get_method_output {
             self.request_models = input;
             self
         }
+        /// Adds a key-value pair to `method_responses`.
+        ///
+        /// To override the contents of this collection use [`set_method_responses`](Self::set_method_responses).
+        ///
+        /// <p>Gets a method response associated with a given HTTP status code. </p>
+        /// <div class="remarks">
+        /// <p>The collection of method responses are encapsulated in a key-value map, where the key is a response's HTTP status code and the value is a <a>MethodResponse</a> resource that specifies the response returned to the caller from the back end through the integration response.</p>
+        /// <h4>Example: Get a 200 OK response of a GET method</h4>
+        /// <h5>Request</h5>
+        /// <p></p>
+        /// <pre><code>GET /restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200 HTTP/1.1
+        /// Content-Type: application/json
+        /// Host: apigateway.us-east-1.amazonaws.com
+        /// Content-Length: 117
+        /// X-Amz-Date: 20160613T215008Z
+        /// Authorization: AWS4-HMAC-SHA256 Credential={access_key_ID}/20160613/us-east-1/apigateway/aws4_request, SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash}</code></pre>
+        /// <h5>Response</h5>
+        /// <p>The successful response returns a <code>200 OK</code> status code and a payload similar to the following:</p>
+        /// <pre><code>{
+        /// "_links": {
+        /// "curies": {
+        /// "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-response-{rel}.html",
+        /// "name": "methodresponse",
+        /// "templated": true
+        /// },
+        /// "self": {
+        /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200",
+        /// "title": "200"
+        /// },
+        /// "methodresponse:delete": {
+        /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200"
+        /// },
+        /// "methodresponse:update": {
+        /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200"
+        /// }
+        /// },
+        /// "responseModels": {
+        /// "application/json": "Empty"
+        /// },
+        /// "responseParameters": {
+        /// "method.response.header.operator": false,
+        /// "method.response.header.operand_2": false,
+        /// "method.response.header.operand_1": false
+        /// },
+        /// "statusCode": "200"
+        /// }</code></pre>
+        /// <p></p>
+        /// </div>
+        /// <div class="seeAlso">
+        /// <a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-method-response.html">AWS CLI</a>
+        /// </div>
         pub fn method_responses(
             mut self,
             k: impl Into<std::string::String>,
@@ -10185,6 +12273,53 @@ pub mod get_method_output {
             self.method_responses = Some(hash_map);
             self
         }
+        /// <p>Gets a method response associated with a given HTTP status code. </p>
+        /// <div class="remarks">
+        /// <p>The collection of method responses are encapsulated in a key-value map, where the key is a response's HTTP status code and the value is a <a>MethodResponse</a> resource that specifies the response returned to the caller from the back end through the integration response.</p>
+        /// <h4>Example: Get a 200 OK response of a GET method</h4>
+        /// <h5>Request</h5>
+        /// <p></p>
+        /// <pre><code>GET /restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200 HTTP/1.1
+        /// Content-Type: application/json
+        /// Host: apigateway.us-east-1.amazonaws.com
+        /// Content-Length: 117
+        /// X-Amz-Date: 20160613T215008Z
+        /// Authorization: AWS4-HMAC-SHA256 Credential={access_key_ID}/20160613/us-east-1/apigateway/aws4_request, SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash}</code></pre>
+        /// <h5>Response</h5>
+        /// <p>The successful response returns a <code>200 OK</code> status code and a payload similar to the following:</p>
+        /// <pre><code>{
+        /// "_links": {
+        /// "curies": {
+        /// "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-response-{rel}.html",
+        /// "name": "methodresponse",
+        /// "templated": true
+        /// },
+        /// "self": {
+        /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200",
+        /// "title": "200"
+        /// },
+        /// "methodresponse:delete": {
+        /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200"
+        /// },
+        /// "methodresponse:update": {
+        /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/responses/200"
+        /// }
+        /// },
+        /// "responseModels": {
+        /// "application/json": "Empty"
+        /// },
+        /// "responseParameters": {
+        /// "method.response.header.operator": false,
+        /// "method.response.header.operand_2": false,
+        /// "method.response.header.operand_1": false
+        /// },
+        /// "statusCode": "200"
+        /// }</code></pre>
+        /// <p></p>
+        /// </div>
+        /// <div class="seeAlso">
+        /// <a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-method-response.html">AWS CLI</a>
+        /// </div>
         pub fn set_method_responses(
             mut self,
             input: std::option::Option<
@@ -10288,6 +12423,96 @@ pub mod get_method_output {
             self.method_integration = Some(input);
             self
         }
+        /// <p>Gets the method's integration responsible for passing the client-submitted request to the back end and performing necessary transformations to make the request compliant with the back end.</p>
+        /// <div class="remarks">
+        /// <p></p>
+        /// <h4>Example: </h4>
+        /// <h5>Request</h5>
+        /// <p></p>
+        /// <pre><code>GET /restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration HTTP/1.1
+        /// Content-Type: application/json
+        /// Host: apigateway.us-east-1.amazonaws.com
+        /// Content-Length: 117
+        /// X-Amz-Date: 20160613T213210Z
+        /// Authorization: AWS4-HMAC-SHA256 Credential={access_key_ID}/20160613/us-east-1/apigateway/aws4_request, SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash}</code></pre>
+        /// <h5>Response</h5>
+        /// <p>The successful response returns a <code>200 OK</code> status code and a payload similar to the following:</p>
+        /// <pre><code>{
+        /// "_links": {
+        /// "curies": [
+        /// {
+        /// "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html",
+        /// "name": "integration",
+        /// "templated": true
+        /// },
+        /// {
+        /// "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
+        /// "name": "integrationresponse",
+        /// "templated": true
+        /// }
+        /// ],
+        /// "self": {
+        /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration"
+        /// },
+        /// "integration:delete": {
+        /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration"
+        /// },
+        /// "integration:responses": {
+        /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200",
+        /// "name": "200",
+        /// "title": "200"
+        /// },
+        /// "integration:update": {
+        /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration"
+        /// },
+        /// "integrationresponse:put": {
+        /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/{status_code}",
+        /// "templated": true
+        /// }
+        /// },
+        /// "cacheKeyParameters": [],
+        /// "cacheNamespace": "0cjtch",
+        /// "credentials": "arn:aws:iam::123456789012:role/apigAwsProxyRole",
+        /// "httpMethod": "POST",
+        /// "passthroughBehavior": "WHEN_NO_MATCH",
+        /// "requestTemplates": {
+        /// "application/json": "{\n    \"a\":  \"$input.params('operand1')\",\n    \"b\":  \"$input.params('operand2')\", \n    \"op\": \"$input.params('operator')\"   \n}"
+        /// },
+        /// "type": "AWS",
+        /// "uri": "arn:aws:apigateway:us-west-2:lambda:path//2015-03-31/functions/arn:aws:lambda:us-west-2:123456789012:function:Calc/invocations",
+        /// "_embedded": {
+        /// "integration:responses": {
+        /// "_links": {
+        /// "self": {
+        /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200",
+        /// "name": "200",
+        /// "title": "200"
+        /// },
+        /// "integrationresponse:delete": {
+        /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200"
+        /// },
+        /// "integrationresponse:update": {
+        /// "href": "/restapis/uojnr9hd57/resources/0cjtch/methods/GET/integration/responses/200"
+        /// }
+        /// },
+        /// "responseParameters": {
+        /// "method.response.header.operator": "integration.response.body.op",
+        /// "method.response.header.operand_2": "integration.response.body.b",
+        /// "method.response.header.operand_1": "integration.response.body.a"
+        /// },
+        /// "responseTemplates": {
+        /// "application/json": "#set($res = $input.path('$'))\n{\n    \"result\": \"$res.a, $res.b, $res.op => $res.c\",\n  \"a\" : \"$res.a\",\n  \"b\" : \"$res.b\",\n  \"op\" : \"$res.op\",\n  \"c\" : \"$res.c\"\n}"
+        /// },
+        /// "selectionPattern": "",
+        /// "statusCode": "200"
+        /// }
+        /// }
+        /// }</code></pre>
+        /// <p></p>
+        /// </div>
+        /// <div class="seeAlso">
+        /// <a href="https://docs.aws.amazon.com/cli/latest/reference/apigateway/get-integration.html">AWS CLI</a>
+        /// </div>
         pub fn set_method_integration(
             mut self,
             input: std::option::Option<crate::model::Integration>,
@@ -10295,12 +12520,18 @@ pub mod get_method_output {
             self.method_integration = input;
             self
         }
+        /// Appends an item to `authorization_scopes`.
+        ///
+        /// To override the contents of this collection use [`set_authorization_scopes`](Self::set_authorization_scopes).
+        ///
+        /// <p>A list of authorization scopes configured on the method. The scopes are used with a <code>COGNITO_USER_POOLS</code> authorizer to authorize the method invocation. The authorization works by matching the method scopes against the scopes parsed from the access token in the incoming request. The method invocation is authorized if any method scopes matches a claimed scope in the access token. Otherwise, the invocation is not authorized. When the method scope is configured, the client must provide an access token instead of an identity token for authorization purposes.</p>
         pub fn authorization_scopes(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.authorization_scopes.unwrap_or_default();
             v.push(input.into());
             self.authorization_scopes = Some(v);
             self
         }
+        /// <p>A list of authorization scopes configured on the method. The scopes are used with a <code>COGNITO_USER_POOLS</code> authorizer to authorize the method invocation. The authorization works by matching the method scopes against the scopes parsed from the access token in the incoming request. The method invocation is authorized if any method scopes matches a claimed scope in the access token. Otherwise, the invocation is not authorized. When the method scope is configured, the client must provide an access token instead of an identity token for authorization purposes.</p>
         pub fn set_authorization_scopes(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -10392,6 +12623,7 @@ pub mod get_integration_response_output {
             self.status_code = Some(input.into());
             self
         }
+        /// <p>Specifies the status code that is used to map the integration response to an existing <a>MethodResponse</a>.</p>
         pub fn set_status_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status_code = input;
             self
@@ -10401,6 +12633,7 @@ pub mod get_integration_response_output {
             self.selection_pattern = Some(input.into());
             self
         }
+        /// <p>Specifies the regular expression (regex) pattern used to choose an integration response based on the response from the back end. For example, if the success response returns nothing and the error response returns some string, you could use the <code>.+</code> regex to match error response. However, make sure that the error response does not contain any newline (<code>\n</code>) character in such cases. If the back end is an AWS Lambda function, the AWS Lambda function error header is matched. For all other HTTP and AWS back ends, the HTTP status code is matched.</p>
         pub fn set_selection_pattern(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10408,6 +12641,12 @@ pub mod get_integration_response_output {
             self.selection_pattern = input;
             self
         }
+        /// Adds a key-value pair to `response_parameters`.
+        ///
+        /// To override the contents of this collection use [`set_response_parameters`](Self::set_response_parameters).
+        ///
+        /// <p>A key-value map specifying response parameters that are passed to the method response from the back end.
+        /// The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. The mapped non-static value must match the pattern of <code>integration.response.header.{name}</code> or <code>integration.response.body.{JSON-expression}</code>, where <code>name</code> is a valid and unique response header name and <code>JSON-expression</code> is a valid JSON expression without the <code>$</code> prefix.</p>
         pub fn response_parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -10418,6 +12657,8 @@ pub mod get_integration_response_output {
             self.response_parameters = Some(hash_map);
             self
         }
+        /// <p>A key-value map specifying response parameters that are passed to the method response from the back end.
+        /// The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of <code>method.response.header.{name}</code>, where <code>name</code> is a valid and unique header name. The mapped non-static value must match the pattern of <code>integration.response.header.{name}</code> or <code>integration.response.body.{JSON-expression}</code>, where <code>name</code> is a valid and unique response header name and <code>JSON-expression</code> is a valid JSON expression without the <code>$</code> prefix.</p>
         pub fn set_response_parameters(
             mut self,
             input: std::option::Option<
@@ -10427,6 +12668,11 @@ pub mod get_integration_response_output {
             self.response_parameters = input;
             self
         }
+        /// Adds a key-value pair to `response_templates`.
+        ///
+        /// To override the contents of this collection use [`set_response_templates`](Self::set_response_templates).
+        ///
+        /// <p>Specifies the templates used to transform the integration response body. Response templates are represented as a key/value map, with a content-type as the key and a template as the value.</p>
         pub fn response_templates(
             mut self,
             k: impl Into<std::string::String>,
@@ -10437,6 +12683,7 @@ pub mod get_integration_response_output {
             self.response_templates = Some(hash_map);
             self
         }
+        /// <p>Specifies the templates used to transform the integration response body. Response templates are represented as a key/value map, with a content-type as the key and a template as the value.</p>
         pub fn set_response_templates(
             mut self,
             input: std::option::Option<
@@ -10456,6 +12703,12 @@ pub mod get_integration_response_output {
             self.content_handling = Some(input);
             self
         }
+        /// <p>Specifies how to handle response payload content type conversions. Supported values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
+        /// <ul>
+        /// <li><p><code>CONVERT_TO_BINARY</code>: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p></li>
+        /// <li><p><code>CONVERT_TO_TEXT</code>: Converts a response payload from a binary blob to a Base64-encoded string.</p></li>
+        /// </ul>
+        /// <p>If this property is not defined, the response payload will be passed through from the integration response to the method response without modification.</p>
         pub fn set_content_handling(
             mut self,
             input: std::option::Option<crate::model::ContentHandlingStrategy>,
@@ -10673,6 +12926,15 @@ pub mod get_integration_output {
             self.r#type = Some(input);
             self
         }
+        /// <p>Specifies an API method integration type. The valid value is one of the following:</p>
+        /// <ul>
+        /// <li><code>AWS</code>: for integrating the API method request with an AWS service action, including the Lambda function-invoking action. With the Lambda function-invoking action, this is referred to as the Lambda custom integration. With any other AWS service action, this is known as AWS integration.</li>
+        /// <li><code>AWS_PROXY</code>: for integrating the API method request with the Lambda function-invoking action with the client request passed through as-is. This integration is also referred to as the Lambda proxy integration.</li>
+        /// <li><code>HTTP</code>: for integrating the API method request with an HTTP endpoint, including a private HTTP endpoint within a VPC. This integration is also referred to as the HTTP custom integration.</li>
+        /// <li><code>HTTP_PROXY</code>: for integrating the API method request with an HTTP endpoint, including a private HTTP endpoint within a VPC, with the client request passed through as-is. This is also referred to as the HTTP proxy integration.</li>
+        /// <li><code>MOCK</code>: for integrating the API method request with API Gateway as a "loop-back" endpoint without invoking any backend.</li>
+        /// </ul>
+        /// <p>For the HTTP and HTTP proxy integrations, each integration can specify a protocol (<code>http/https</code>), port and path. Standard 80 and 443 ports are supported as well as custom ports above 1024. An HTTP or HTTP proxy integration with a <code>connectionType</code> of <code>VPC_LINK</code> is referred to as a private integration and uses a <a>VpcLink</a> to connect API Gateway to a network load balancer of a VPC.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::IntegrationType>,
@@ -10685,6 +12947,7 @@ pub mod get_integration_output {
             self.http_method = Some(input.into());
             self
         }
+        /// <p>Specifies the integration's HTTP method type.</p>
         pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.http_method = input;
             self
@@ -10699,6 +12962,12 @@ pub mod get_integration_output {
             self.uri = Some(input.into());
             self
         }
+        /// <p>Specifies Uniform Resource Identifier (URI) of the integration endpoint.</p>
+        /// <ul>
+        /// <li><p> For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the URI must be a fully formed, encoded HTTP(S) URL according to the <a target="_blank" href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">RFC-3986 specification</a>, for either standard integration, where <code>connectionType</code> is not <code>VPC_LINK</code>, or private integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a private HTTP integration, the URI is not used for routing. </p>
+        /// </li>
+        /// <li><p> For <code>AWS</code> or <code>AWS_PROXY</code> integrations, the URI is of the form <code>arn:aws:apigateway:{region}:{subdomain.service|service}:path|action/{service_api}</code>. Here, <code>{Region}</code> is the API Gateway region (e.g., <code>us-east-1</code>); <code>{service}</code> is the name of the integrated AWS service (e.g., <code>s3</code>); and <code>{subdomain}</code> is a designated subdomain supported by certain AWS service for fast host-name lookup. <code>action</code> can be used for an AWS service action-based API, using an <code>Action={name}&{p1}={v1}&p2={v2}...</code> query string. The ensuing <code>{service_api}</code> refers to a supported action <code>{name}</code> plus any required input parameters. Alternatively, <code>path</code> can be used for an AWS service path-based API. The ensuing  <code>service_api</code> refers to the path to an AWS service resource, including the region of the integrated AWS service, if applicable. For example, for integration with the S3 API of <code><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html">GetObject</a></code>, the <code>uri</code> can be either <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&Bucket={bucket}&Key={key}</code> or  <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code></p>
+        /// </li></ul>
         pub fn set_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.uri = input;
             self
@@ -10708,6 +12977,7 @@ pub mod get_integration_output {
             self.connection_type = Some(input);
             self
         }
+        /// <p>The type of the network connection to the integration endpoint. The valid value is <code>INTERNET</code> for connections through the public routable internet or <code>VPC_LINK</code> for private connections between API Gateway and a network load balancer in a VPC. The default value is <code>INTERNET</code>.</p>
         pub fn set_connection_type(
             mut self,
             input: std::option::Option<crate::model::ConnectionType>,
@@ -10720,6 +12990,7 @@ pub mod get_integration_output {
             self.connection_id = Some(input.into());
             self
         }
+        /// <p>The (<a href="https://docs.aws.amazon.com/apigateway/api-reference/resource/vpc-link/#id"><code>id</code></a>) of the <a>VpcLink</a> used for the integration when <code>connectionType=VPC_LINK</code> and undefined, otherwise.</p>
         pub fn set_connection_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10732,10 +13003,16 @@ pub mod get_integration_output {
             self.credentials = Some(input.into());
             self
         }
+        /// <p>Specifies the credentials required for the integration, if any. For AWS integrations, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify the string <code>arn:aws:iam::\*:user/\*</code>. To use resource-based permissions on supported AWS services, specify null.</p>
         pub fn set_credentials(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.credentials = input;
             self
         }
+        /// Adds a key-value pair to `request_parameters`.
+        ///
+        /// To override the contents of this collection use [`set_request_parameters`](Self::set_request_parameters).
+        ///
+        /// <p>A key-value map specifying request parameters that are passed from the method request to the back end. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the back end. The method request parameter value must match the pattern of  <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and <code>name</code> must be a valid and unique method request parameter name.</p>
         pub fn request_parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -10746,6 +13023,7 @@ pub mod get_integration_output {
             self.request_parameters = Some(hash_map);
             self
         }
+        /// <p>A key-value map specifying request parameters that are passed from the method request to the back end. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the back end. The method request parameter value must match the pattern of  <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and <code>name</code> must be a valid and unique method request parameter name.</p>
         pub fn set_request_parameters(
             mut self,
             input: std::option::Option<
@@ -10755,6 +13033,11 @@ pub mod get_integration_output {
             self.request_parameters = input;
             self
         }
+        /// Adds a key-value pair to `request_templates`.
+        ///
+        /// To override the contents of this collection use [`set_request_templates`](Self::set_request_templates).
+        ///
+        /// <p>Represents a map of Velocity templates that are applied on the request payload based on the value of the Content-Type header sent by the client. The content type value is the key in this map, and the template (as a String) is the value.</p>
         pub fn request_templates(
             mut self,
             k: impl Into<std::string::String>,
@@ -10765,6 +13048,7 @@ pub mod get_integration_output {
             self.request_templates = Some(hash_map);
             self
         }
+        /// <p>Represents a map of Velocity templates that are applied on the request payload based on the value of the Content-Type header sent by the client. The content type value is the key in this map, and the template (as a String) is the value.</p>
         pub fn set_request_templates(
             mut self,
             input: std::option::Option<
@@ -10802,6 +13086,30 @@ pub mod get_integration_output {
             self.passthrough_behavior = Some(input.into());
             self
         }
+        /// <div>
+        /// <p>
+        /// Specifies how the method request body of an unmapped content type will be passed through the integration request
+        /// to the back end without transformation. A content type is unmapped if no mapping template is defined in the integration
+        /// or the content type does not match any of the mapped content types, as specified in <code>requestTemplates</code>.
+        /// The valid value is one of the following:
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <code>WHEN_NO_MATCH</code>: passes the method request body through the integration request to the back end without transformation
+        /// when the method request content type does not match any content type associated with the mapping templates defined in the integration request.
+        /// </li>
+        /// <li>
+        /// <code>WHEN_NO_TEMPLATES</code>: passes the method request body through the integration request to the back end without transformation
+        /// when no mapping template is defined in the integration request. If a template is defined when this option is selected, the method request
+        /// of an unmapped content-type will be rejected with an HTTP <code>415 Unsupported Media Type</code> response.
+        /// </li>
+        /// <li>
+        /// <code>NEVER</code>: rejects the method request with an HTTP <code>415 Unsupported Media Type</code> response when either the method
+        /// request content type does not match any content type associated with the mapping templates defined in the integration request or
+        /// no mapping template is defined in the integration request.
+        /// </li>
+        /// </ul>
+        /// </div>
         pub fn set_passthrough_behavior(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10819,6 +13127,12 @@ pub mod get_integration_output {
             self.content_handling = Some(input);
             self
         }
+        /// <p>Specifies how to handle request payload content type conversions. Supported values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p>
+        /// <ul>
+        /// <li><p><code>CONVERT_TO_BINARY</code>: Converts a request payload from a Base64-encoded string to the corresponding binary blob.</p></li>
+        /// <li><p><code>CONVERT_TO_TEXT</code>: Converts a request payload from a binary blob to a Base64-encoded string.</p></li>
+        /// </ul>
+        /// <p>If this property is not defined, the request payload will be passed through from the method request to integration request without modification, provided that the <code>passthroughBehavior</code> is configured to support payload pass-through.</p>
         pub fn set_content_handling(
             mut self,
             input: std::option::Option<crate::model::ContentHandlingStrategy>,
@@ -10831,6 +13145,7 @@ pub mod get_integration_output {
             self.timeout_in_millis = Some(input);
             self
         }
+        /// <p>Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds or 29 seconds.</p>
         pub fn set_timeout_in_millis(mut self, input: std::option::Option<i32>) -> Self {
             self.timeout_in_millis = input;
             self
@@ -10840,6 +13155,7 @@ pub mod get_integration_output {
             self.cache_namespace = Some(input.into());
             self
         }
+        /// <p>Specifies a group of related cached parameters. By default, API Gateway uses the resource ID as the <code>cacheNamespace</code>. You can specify the same <code>cacheNamespace</code> across resources to return the same cached data for requests to different resources.</p>
         pub fn set_cache_namespace(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10847,12 +13163,18 @@ pub mod get_integration_output {
             self.cache_namespace = input;
             self
         }
+        /// Appends an item to `cache_key_parameters`.
+        ///
+        /// To override the contents of this collection use [`set_cache_key_parameters`](Self::set_cache_key_parameters).
+        ///
+        /// <p>A list of request parameters whose values API Gateway caches. To be valid values for <code>cacheKeyParameters</code>, these parameters must also be specified for <a>Method</a> <code>requestParameters</code>.</p>
         pub fn cache_key_parameters(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.cache_key_parameters.unwrap_or_default();
             v.push(input.into());
             self.cache_key_parameters = Some(v);
             self
         }
+        /// <p>A list of request parameters whose values API Gateway caches. To be valid values for <code>cacheKeyParameters</code>, these parameters must also be specified for <a>Method</a> <code>requestParameters</code>.</p>
         pub fn set_cache_key_parameters(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -10860,6 +13182,55 @@ pub mod get_integration_output {
             self.cache_key_parameters = input;
             self
         }
+        /// Adds a key-value pair to `integration_responses`.
+        ///
+        /// To override the contents of this collection use [`set_integration_responses`](Self::set_integration_responses).
+        ///
+        /// <p>Specifies the integration's responses.</p>
+        /// <div class="remarks">
+        /// <p></p>
+        /// <h4>Example: Get integration responses of a method</h4>
+        /// <h5>Request</h5>
+        /// <p></p>
+        /// <pre><code>GET /restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200 HTTP/1.1
+        /// Content-Type: application/json
+        /// Host: apigateway.us-east-1.amazonaws.com
+        /// X-Amz-Date: 20160607T191449Z
+        /// Authorization: AWS4-HMAC-SHA256 Credential={access_key_ID}/20160607/us-east-1/apigateway/aws4_request, SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash}
+        /// </code></pre>
+        /// <h5>Response</h5>
+        /// <p>The successful response returns <code>200 OK</code> status and a payload as follows:</p>
+        /// <pre><code>{
+        /// "_links": {
+        /// "curies": {
+        /// "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
+        /// "name": "integrationresponse",
+        /// "templated": true
+        /// },
+        /// "self": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200",
+        /// "title": "200"
+        /// },
+        /// "integrationresponse:delete": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200"
+        /// },
+        /// "integrationresponse:update": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200"
+        /// }
+        /// },
+        /// "responseParameters": {
+        /// "method.response.header.Content-Type": "'application/xml'"
+        /// },
+        /// "responseTemplates": {
+        /// "application/json": "$util.urlDecode(\"%3CkinesisStreams%3E#foreach($stream in $input.path('$.StreamNames'))%3Cstream%3E%3Cname%3E$stream%3C/name%3E%3C/stream%3E#end%3C/kinesisStreams%3E\")\n"
+        /// },
+        /// "statusCode": "200"
+        /// }</code></pre>
+        /// <p></p>
+        /// </div>
+        /// <div class="seeAlso">
+        /// <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating an API</a>
+        /// </div>
         pub fn integration_responses(
             mut self,
             k: impl Into<std::string::String>,
@@ -10870,6 +13241,51 @@ pub mod get_integration_output {
             self.integration_responses = Some(hash_map);
             self
         }
+        /// <p>Specifies the integration's responses.</p>
+        /// <div class="remarks">
+        /// <p></p>
+        /// <h4>Example: Get integration responses of a method</h4>
+        /// <h5>Request</h5>
+        /// <p></p>
+        /// <pre><code>GET /restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200 HTTP/1.1
+        /// Content-Type: application/json
+        /// Host: apigateway.us-east-1.amazonaws.com
+        /// X-Amz-Date: 20160607T191449Z
+        /// Authorization: AWS4-HMAC-SHA256 Credential={access_key_ID}/20160607/us-east-1/apigateway/aws4_request, SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash}
+        /// </code></pre>
+        /// <h5>Response</h5>
+        /// <p>The successful response returns <code>200 OK</code> status and a payload as follows:</p>
+        /// <pre><code>{
+        /// "_links": {
+        /// "curies": {
+        /// "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
+        /// "name": "integrationresponse",
+        /// "templated": true
+        /// },
+        /// "self": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200",
+        /// "title": "200"
+        /// },
+        /// "integrationresponse:delete": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200"
+        /// },
+        /// "integrationresponse:update": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200"
+        /// }
+        /// },
+        /// "responseParameters": {
+        /// "method.response.header.Content-Type": "'application/xml'"
+        /// },
+        /// "responseTemplates": {
+        /// "application/json": "$util.urlDecode(\"%3CkinesisStreams%3E#foreach($stream in $input.path('$.StreamNames'))%3Cstream%3E%3Cname%3E$stream%3C/name%3E%3C/stream%3E#end%3C/kinesisStreams%3E\")\n"
+        /// },
+        /// "statusCode": "200"
+        /// }</code></pre>
+        /// <p></p>
+        /// </div>
+        /// <div class="seeAlso">
+        /// <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-create-api.html">Creating an API</a>
+        /// </div>
         pub fn set_integration_responses(
             mut self,
             input: std::option::Option<
@@ -10884,6 +13300,7 @@ pub mod get_integration_output {
             self.tls_config = Some(input);
             self
         }
+        /// <p>Specifies the TLS configuration for an integration.</p>
         pub fn set_tls_config(
             mut self,
             input: std::option::Option<crate::model::TlsConfig>,
@@ -11473,12 +13890,18 @@ pub mod get_gateway_responses_output {
         pub(crate) position: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>Returns the entire collection, because of no pagination support.</p>
         pub fn items(mut self, input: impl Into<crate::model::GatewayResponse>) -> Self {
             let mut v = self.items.unwrap_or_default();
             v.push(input.into());
             self.items = Some(v);
             self
         }
+        /// <p>Returns the entire collection, because of no pagination support.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GatewayResponse>>,
@@ -11491,6 +13914,7 @@ pub mod get_gateway_responses_output {
             self.position = Some(input.into());
             self
         }
+        /// <p>The current pagination position in the paged result set. The <a>GatewayResponse</a> collection does not support pagination and the position does not apply here.</p>
         pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.position = input;
             self
@@ -11618,6 +14042,7 @@ pub mod get_gateway_response_output {
             self.response_type = Some(input);
             self
         }
+        /// <p>The response type of the associated <a>GatewayResponse</a>.</p>
         pub fn set_response_type(
             mut self,
             input: std::option::Option<crate::model::GatewayResponseType>,
@@ -11630,10 +14055,16 @@ pub mod get_gateway_response_output {
             self.status_code = Some(input.into());
             self
         }
+        /// <p>The HTTP status code for this <a>GatewayResponse</a>.</p>
         pub fn set_status_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status_code = input;
             self
         }
+        /// Adds a key-value pair to `response_parameters`.
+        ///
+        /// To override the contents of this collection use [`set_response_parameters`](Self::set_response_parameters).
+        ///
+        /// <p>Response parameters (paths, query strings and headers) of the <a>GatewayResponse</a> as a string-to-string map of key-value  pairs.</p>
         pub fn response_parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -11644,6 +14075,7 @@ pub mod get_gateway_response_output {
             self.response_parameters = Some(hash_map);
             self
         }
+        /// <p>Response parameters (paths, query strings and headers) of the <a>GatewayResponse</a> as a string-to-string map of key-value  pairs.</p>
         pub fn set_response_parameters(
             mut self,
             input: std::option::Option<
@@ -11653,6 +14085,11 @@ pub mod get_gateway_response_output {
             self.response_parameters = input;
             self
         }
+        /// Adds a key-value pair to `response_templates`.
+        ///
+        /// To override the contents of this collection use [`set_response_templates`](Self::set_response_templates).
+        ///
+        /// <p>Response templates of the <a>GatewayResponse</a> as a string-to-string map of key-value pairs.</p>
         pub fn response_templates(
             mut self,
             k: impl Into<std::string::String>,
@@ -11663,6 +14100,7 @@ pub mod get_gateway_response_output {
             self.response_templates = Some(hash_map);
             self
         }
+        /// <p>Response templates of the <a>GatewayResponse</a> as a string-to-string map of key-value pairs.</p>
         pub fn set_response_templates(
             mut self,
             input: std::option::Option<
@@ -11677,6 +14115,7 @@ pub mod get_gateway_response_output {
             self.default_response = Some(input);
             self
         }
+        /// <p>A Boolean flag to indicate whether this <a>GatewayResponse</a> is the default gateway response (<code>true</code>) or not (<code>false</code>). A default gateway response is one generated by API Gateway without any customization by an API developer. </p>
         pub fn set_default_response(mut self, input: std::option::Option<bool>) -> Self {
             self.default_response = input;
             self
@@ -11709,7 +14148,7 @@ pub struct GetExportOutput {
     /// <p>The content-disposition header value in the HTTP response.</p>
     pub content_disposition: std::option::Option<std::string::String>,
     /// <p>The binary blob response to <a>GetExport</a>, which contains the export.</p>
-    pub body: std::option::Option<smithy_types::Blob>,
+    pub body: std::option::Option<aws_smithy_types::Blob>,
 }
 impl std::fmt::Debug for GetExportOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11728,7 +14167,7 @@ pub mod get_export_output {
     pub struct Builder {
         pub(crate) content_type: std::option::Option<std::string::String>,
         pub(crate) content_disposition: std::option::Option<std::string::String>,
-        pub(crate) body: std::option::Option<smithy_types::Blob>,
+        pub(crate) body: std::option::Option<aws_smithy_types::Blob>,
     }
     impl Builder {
         /// <p>The content-type header value in the HTTP response. This will correspond to a valid 'accept' type in the request.</p>
@@ -11736,6 +14175,7 @@ pub mod get_export_output {
             self.content_type = Some(input.into());
             self
         }
+        /// <p>The content-type header value in the HTTP response. This will correspond to a valid 'accept' type in the request.</p>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_type = input;
             self
@@ -11745,6 +14185,7 @@ pub mod get_export_output {
             self.content_disposition = Some(input.into());
             self
         }
+        /// <p>The content-disposition header value in the HTTP response.</p>
         pub fn set_content_disposition(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11753,11 +14194,12 @@ pub mod get_export_output {
             self
         }
         /// <p>The binary blob response to <a>GetExport</a>, which contains the export.</p>
-        pub fn body(mut self, input: smithy_types::Blob) -> Self {
+        pub fn body(mut self, input: aws_smithy_types::Blob) -> Self {
             self.body = Some(input);
             self
         }
-        pub fn set_body(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+        /// <p>The binary blob response to <a>GetExport</a>, which contains the export.</p>
+        pub fn set_body(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.body = input;
             self
         }
@@ -11808,12 +14250,18 @@ pub mod get_domain_names_output {
         pub(crate) position: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>The current page of elements from this collection.</p>
         pub fn items(mut self, input: impl Into<crate::model::DomainName>) -> Self {
             let mut v = self.items.unwrap_or_default();
             v.push(input.into());
             self.items = Some(v);
             self
         }
+        /// <p>The current page of elements from this collection.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DomainName>>,
@@ -11826,6 +14274,7 @@ pub mod get_domain_names_output {
             self.position = Some(input.into());
             self
         }
+        /// <p>The current pagination position in the paged result set.</p>
         pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.position = input;
             self
@@ -11864,7 +14313,7 @@ pub struct GetDomainNameOutput {
     /// <p>The reference to an AWS-managed certificate that will be used by edge-optimized endpoint for this domain name. AWS Certificate Manager is the only supported source.</p>
     pub certificate_arn: std::option::Option<std::string::String>,
     /// <p>The timestamp when the certificate that was used by edge-optimized endpoint for this domain name was uploaded.</p>
-    pub certificate_upload_date: std::option::Option<smithy_types::Instant>,
+    pub certificate_upload_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The domain name associated with the regional endpoint for this custom domain name. You set up this association by adding a DNS record that points the custom domain name to this regional domain name. The regional domain name is returned by API Gateway when you create a regional endpoint.</p>
     pub regional_domain_name: std::option::Option<std::string::String>,
     /// <p>The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set up a Regional Custom Domain Name</a> and  <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for API Gateway</a>.</p>
@@ -11934,7 +14383,7 @@ pub mod get_domain_name_output {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) certificate_name: std::option::Option<std::string::String>,
         pub(crate) certificate_arn: std::option::Option<std::string::String>,
-        pub(crate) certificate_upload_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) certificate_upload_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) regional_domain_name: std::option::Option<std::string::String>,
         pub(crate) regional_hosted_zone_id: std::option::Option<std::string::String>,
         pub(crate) regional_certificate_name: std::option::Option<std::string::String>,
@@ -11958,6 +14407,7 @@ pub mod get_domain_name_output {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The custom domain name as an API host name, for example, <code>my-api.example.com</code>.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -11967,6 +14417,7 @@ pub mod get_domain_name_output {
             self.certificate_name = Some(input.into());
             self
         }
+        /// <p>The name of the certificate that will be used by edge-optimized endpoint for this domain name.</p>
         pub fn set_certificate_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11979,6 +14430,7 @@ pub mod get_domain_name_output {
             self.certificate_arn = Some(input.into());
             self
         }
+        /// <p>The reference to an AWS-managed certificate that will be used by edge-optimized endpoint for this domain name. AWS Certificate Manager is the only supported source.</p>
         pub fn set_certificate_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11987,13 +14439,14 @@ pub mod get_domain_name_output {
             self
         }
         /// <p>The timestamp when the certificate that was used by edge-optimized endpoint for this domain name was uploaded.</p>
-        pub fn certificate_upload_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn certificate_upload_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.certificate_upload_date = Some(input);
             self
         }
+        /// <p>The timestamp when the certificate that was used by edge-optimized endpoint for this domain name was uploaded.</p>
         pub fn set_certificate_upload_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.certificate_upload_date = input;
             self
@@ -12003,6 +14456,7 @@ pub mod get_domain_name_output {
             self.regional_domain_name = Some(input.into());
             self
         }
+        /// <p>The domain name associated with the regional endpoint for this custom domain name. You set up this association by adding a DNS record that points the custom domain name to this regional domain name. The regional domain name is returned by API Gateway when you create a regional endpoint.</p>
         pub fn set_regional_domain_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12015,6 +14469,7 @@ pub mod get_domain_name_output {
             self.regional_hosted_zone_id = Some(input.into());
             self
         }
+        /// <p>The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set up a Regional Custom Domain Name</a> and  <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for API Gateway</a>.</p>
         pub fn set_regional_hosted_zone_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12027,6 +14482,7 @@ pub mod get_domain_name_output {
             self.regional_certificate_name = Some(input.into());
             self
         }
+        /// <p>The name of the certificate that will be used for validating the regional domain name.</p>
         pub fn set_regional_certificate_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12039,6 +14495,7 @@ pub mod get_domain_name_output {
             self.regional_certificate_arn = Some(input.into());
             self
         }
+        /// <p>The reference to an AWS-managed certificate that will be used for validating the regional domain name. AWS Certificate Manager is the only supported source.</p>
         pub fn set_regional_certificate_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12051,6 +14508,7 @@ pub mod get_domain_name_output {
             self.distribution_domain_name = Some(input.into());
             self
         }
+        /// <p>The domain name of the Amazon CloudFront distribution associated with this custom domain name for an edge-optimized endpoint. You set up this association when adding a DNS record pointing the custom domain name to this distribution name. For more information about CloudFront distributions, see the <a target="_blank" href="https://aws.amazon.com/documentation/cloudfront/">Amazon CloudFront documentation</a>.</p>
         pub fn set_distribution_domain_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12066,6 +14524,7 @@ pub mod get_domain_name_output {
             self.distribution_hosted_zone_id = Some(input.into());
             self
         }
+        /// <p>The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized endpoint. The valid value is <code>Z2FDTNDATAQYW2</code> for all the regions. For more information, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set up a Regional Custom Domain Name</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for API Gateway</a>.</p>
         pub fn set_distribution_hosted_zone_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12081,6 +14540,7 @@ pub mod get_domain_name_output {
             self.endpoint_configuration = Some(input);
             self
         }
+        /// <p>The endpoint configuration of this <a>DomainName</a> showing the endpoint types of the domain name.</p>
         pub fn set_endpoint_configuration(
             mut self,
             input: std::option::Option<crate::model::EndpointConfiguration>,
@@ -12093,6 +14553,7 @@ pub mod get_domain_name_output {
             self.domain_name_status = Some(input);
             self
         }
+        /// <p>The status of the <a>DomainName</a> migration. The valid values are <code>AVAILABLE</code>, <code>UPDATING</code>, <code>PENDING_CERTIFICATE_REIMPORT</code>, and <code>PENDING_OWNERSHIP_VERIFICATION</code>. If the status is <code>UPDATING</code>, the domain cannot be modified further until the existing operation is complete. If it is <code>AVAILABLE</code>, the domain can be updated.</p>
         pub fn set_domain_name_status(
             mut self,
             input: std::option::Option<crate::model::DomainNameStatus>,
@@ -12105,6 +14566,7 @@ pub mod get_domain_name_output {
             self.domain_name_status_message = Some(input.into());
             self
         }
+        /// <p>An optional text message containing detailed information about status of the <a>DomainName</a> migration.</p>
         pub fn set_domain_name_status_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12117,6 +14579,7 @@ pub mod get_domain_name_output {
             self.security_policy = Some(input);
             self
         }
+        /// <p>The Transport Layer Security (TLS) version + cipher suite for this <a>DomainName</a>. The valid values are <code>TLS_1_0</code> and <code>TLS_1_2</code>.</p>
         pub fn set_security_policy(
             mut self,
             input: std::option::Option<crate::model::SecurityPolicy>,
@@ -12124,6 +14587,11 @@ pub mod get_domain_name_output {
             self.security_policy = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -12134,6 +14602,7 @@ pub mod get_domain_name_output {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -12151,6 +14620,7 @@ pub mod get_domain_name_output {
             self.mutual_tls_authentication = Some(input);
             self
         }
+        /// <p>The mutual TLS authentication configuration for a custom domain name. If specified, API Gateway performs two-way authentication between the client and the server. Clients must present a trusted certificate to access your API.</p>
         pub fn set_mutual_tls_authentication(
             mut self,
             input: std::option::Option<crate::model::MutualTlsAuthentication>,
@@ -12166,6 +14636,7 @@ pub mod get_domain_name_output {
             self.ownership_verification_certificate_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the public certificate issued by ACM to validate ownership of your custom domain. Only required when configuring mutual TLS and using an ACM imported or private CA certificate ARN as the regionalCertificateArn.</p>
         pub fn set_ownership_verification_certificate_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12235,12 +14706,18 @@ pub mod get_documentation_versions_output {
         pub(crate) position: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>The current page of elements from this collection.</p>
         pub fn items(mut self, input: impl Into<crate::model::DocumentationVersion>) -> Self {
             let mut v = self.items.unwrap_or_default();
             v.push(input.into());
             self.items = Some(v);
             self
         }
+        /// <p>The current page of elements from this collection.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DocumentationVersion>>,
@@ -12253,6 +14730,7 @@ pub mod get_documentation_versions_output {
             self.position = Some(input.into());
             self
         }
+        /// <p>The current pagination position in the paged result set.</p>
         pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.position = input;
             self
@@ -12284,7 +14762,7 @@ pub struct GetDocumentationVersionOutput {
     /// <p>The version identifier of the API documentation snapshot.</p>
     pub version: std::option::Option<std::string::String>,
     /// <p>The date when the API documentation snapshot is created.</p>
-    pub created_date: std::option::Option<smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The description of the API documentation snapshot.</p>
     pub description: std::option::Option<std::string::String>,
 }
@@ -12304,7 +14782,7 @@ pub mod get_documentation_version_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) version: std::option::Option<std::string::String>,
-        pub(crate) created_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) description: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -12313,18 +14791,20 @@ pub mod get_documentation_version_output {
             self.version = Some(input.into());
             self
         }
+        /// <p>The version identifier of the API documentation snapshot.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
         }
         /// <p>The date when the API documentation snapshot is created.</p>
-        pub fn created_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_date = Some(input);
             self
         }
+        /// <p>The date when the API documentation snapshot is created.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_date = input;
             self
@@ -12334,6 +14814,7 @@ pub mod get_documentation_version_output {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the API documentation snapshot.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -12386,12 +14867,18 @@ pub mod get_documentation_parts_output {
         pub(crate) position: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>The current page of elements from this collection.</p>
         pub fn items(mut self, input: impl Into<crate::model::DocumentationPart>) -> Self {
             let mut v = self.items.unwrap_or_default();
             v.push(input.into());
             self.items = Some(v);
             self
         }
+        /// <p>The current page of elements from this collection.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DocumentationPart>>,
@@ -12404,6 +14891,7 @@ pub mod get_documentation_parts_output {
             self.position = Some(input.into());
             self
         }
+        /// <p>The current pagination position in the paged result set.</p>
         pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.position = input;
             self
@@ -12466,6 +14954,7 @@ pub mod get_documentation_part_output {
             self.id = Some(input.into());
             self
         }
+        /// <p>The <a>DocumentationPart</a> identifier, generated by API Gateway when the <code>DocumentationPart</code> is created.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -12475,6 +14964,7 @@ pub mod get_documentation_part_output {
             self.location = Some(input);
             self
         }
+        /// <p>The location of the API entity to which the documentation applies. Valid fields depend on the targeted API entity type. All the valid location fields are not required. If not explicitly specified, a valid location field is treated as a wildcard and associated documentation content may be inherited by matching entities, unless overridden.</p>
         pub fn set_location(
             mut self,
             input: std::option::Option<crate::model::DocumentationPartLocation>,
@@ -12487,6 +14977,7 @@ pub mod get_documentation_part_output {
             self.properties = Some(input.into());
             self
         }
+        /// <p>A content map of API-specific key-value pairs describing the targeted API entity. The map must be encoded as a JSON string, e.g., <code>"{ \"description\": \"The API does ...\" }"</code>.  Only OpenAPI-compliant documentation-related fields from the <literal>properties</literal> map are exported and, hence, published as part of the API entity definitions, while the original documentation parts are exported in a OpenAPI extension of <code>x-amazon-apigateway-documentation</code>.</p>
         pub fn set_properties(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.properties = input;
             self
@@ -12542,12 +15033,18 @@ pub mod get_deployments_output {
         pub(crate) position: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>The current page of elements from this collection.</p>
         pub fn items(mut self, input: impl Into<crate::model::Deployment>) -> Self {
             let mut v = self.items.unwrap_or_default();
             v.push(input.into());
             self.items = Some(v);
             self
         }
+        /// <p>The current page of elements from this collection.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Deployment>>,
@@ -12560,6 +15057,7 @@ pub mod get_deployments_output {
             self.position = Some(input.into());
             self
         }
+        /// <p>The current pagination position in the paged result set.</p>
         pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.position = input;
             self
@@ -12595,7 +15093,7 @@ pub struct GetDeploymentOutput {
     /// <p>The description for the deployment resource.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The date and time that the deployment resource was created.</p>
-    pub created_date: std::option::Option<smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A summary of the <a>RestApi</a> at the date and time that the deployment resource was created.</p>
     pub api_summary: std::option::Option<
         std::collections::HashMap<
@@ -12622,7 +15120,7 @@ pub mod get_deployment_output {
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) created_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) api_summary: std::option::Option<
             std::collections::HashMap<
                 std::string::String,
@@ -12636,6 +15134,7 @@ pub mod get_deployment_output {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier for the deployment resource.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -12645,22 +15144,29 @@ pub mod get_deployment_output {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description for the deployment resource.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
         /// <p>The date and time that the deployment resource was created.</p>
-        pub fn created_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_date = Some(input);
             self
         }
+        /// <p>The date and time that the deployment resource was created.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_date = input;
             self
         }
+        /// Adds a key-value pair to `api_summary`.
+        ///
+        /// To override the contents of this collection use [`set_api_summary`](Self::set_api_summary).
+        ///
+        /// <p>A summary of the <a>RestApi</a> at the date and time that the deployment resource was created.</p>
         pub fn api_summary(
             mut self,
             k: impl Into<std::string::String>,
@@ -12671,6 +15177,7 @@ pub mod get_deployment_output {
             self.api_summary = Some(hash_map);
             self
         }
+        /// <p>A summary of the <a>RestApi</a> at the date and time that the deployment resource was created.</p>
         pub fn set_api_summary(
             mut self,
             input: std::option::Option<
@@ -12731,12 +15238,18 @@ pub mod get_client_certificates_output {
         pub(crate) position: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>The current page of elements from this collection.</p>
         pub fn items(mut self, input: impl Into<crate::model::ClientCertificate>) -> Self {
             let mut v = self.items.unwrap_or_default();
             v.push(input.into());
             self.items = Some(v);
             self
         }
+        /// <p>The current page of elements from this collection.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ClientCertificate>>,
@@ -12749,6 +15262,7 @@ pub mod get_client_certificates_output {
             self.position = Some(input.into());
             self
         }
+        /// <p>The current pagination position in the paged result set.</p>
         pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.position = input;
             self
@@ -12784,9 +15298,9 @@ pub struct GetClientCertificateOutput {
     /// <p>The PEM-encoded public key of the client certificate, which can be used to configure certificate authentication in the integration endpoint .</p>
     pub pem_encoded_certificate: std::option::Option<std::string::String>,
     /// <p>The timestamp when the client certificate was created.</p>
-    pub created_date: std::option::Option<smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The timestamp when the client certificate will expire.</p>
-    pub expiration_date: std::option::Option<smithy_types::Instant>,
+    pub expiration_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -12812,8 +15326,8 @@ pub mod get_client_certificate_output {
         pub(crate) client_certificate_id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) pem_encoded_certificate: std::option::Option<std::string::String>,
-        pub(crate) created_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) expiration_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) expiration_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -12824,6 +15338,7 @@ pub mod get_client_certificate_output {
             self.client_certificate_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the client certificate.</p>
         pub fn set_client_certificate_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12836,6 +15351,7 @@ pub mod get_client_certificate_output {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the client certificate.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -12845,6 +15361,7 @@ pub mod get_client_certificate_output {
             self.pem_encoded_certificate = Some(input.into());
             self
         }
+        /// <p>The PEM-encoded public key of the client certificate, which can be used to configure certificate authentication in the integration endpoint .</p>
         pub fn set_pem_encoded_certificate(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12853,29 +15370,36 @@ pub mod get_client_certificate_output {
             self
         }
         /// <p>The timestamp when the client certificate was created.</p>
-        pub fn created_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_date = Some(input);
             self
         }
+        /// <p>The timestamp when the client certificate was created.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_date = input;
             self
         }
         /// <p>The timestamp when the client certificate will expire.</p>
-        pub fn expiration_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn expiration_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.expiration_date = Some(input);
             self
         }
+        /// <p>The timestamp when the client certificate will expire.</p>
         pub fn set_expiration_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.expiration_date = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -12886,6 +15410,7 @@ pub mod get_client_certificate_output {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -12945,12 +15470,18 @@ pub mod get_base_path_mappings_output {
         pub(crate) position: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>The current page of elements from this collection.</p>
         pub fn items(mut self, input: impl Into<crate::model::BasePathMapping>) -> Self {
             let mut v = self.items.unwrap_or_default();
             v.push(input.into());
             self.items = Some(v);
             self
         }
+        /// <p>The current page of elements from this collection.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BasePathMapping>>,
@@ -12963,6 +15494,7 @@ pub mod get_base_path_mappings_output {
             self.position = Some(input.into());
             self
         }
+        /// <p>The current pagination position in the paged result set.</p>
         pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.position = input;
             self
@@ -13023,6 +15555,7 @@ pub mod get_base_path_mapping_output {
             self.base_path = Some(input.into());
             self
         }
+        /// <p>The base path name that callers of the API must provide as part of the URL after the domain name.</p>
         pub fn set_base_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.base_path = input;
             self
@@ -13032,6 +15565,7 @@ pub mod get_base_path_mapping_output {
             self.rest_api_id = Some(input.into());
             self
         }
+        /// <p>The string identifier of the associated <a>RestApi</a>.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
@@ -13041,6 +15575,7 @@ pub mod get_base_path_mapping_output {
             self.stage = Some(input.into());
             self
         }
+        /// <p>The name of the associated stage.</p>
         pub fn set_stage(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stage = input;
             self
@@ -13093,12 +15628,18 @@ pub mod get_authorizers_output {
         pub(crate) position: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>The current page of elements from this collection.</p>
         pub fn items(mut self, input: impl Into<crate::model::Authorizer>) -> Self {
             let mut v = self.items.unwrap_or_default();
             v.push(input.into());
             self.items = Some(v);
             self
         }
+        /// <p>The current page of elements from this collection.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Authorizer>>,
@@ -13111,6 +15652,7 @@ pub mod get_authorizers_output {
             self.position = Some(input.into());
             self
         }
+        /// <p>The current pagination position in the paged result set.</p>
         pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.position = input;
             self
@@ -13205,6 +15747,7 @@ pub mod get_authorizer_output {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier for the authorizer resource.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -13214,6 +15757,7 @@ pub mod get_authorizer_output {
             self.name = Some(input.into());
             self
         }
+        /// <p>[Required] The name of the authorizer.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -13223,6 +15767,7 @@ pub mod get_authorizer_output {
             self.r#type = Some(input);
             self
         }
+        /// <p>The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using a single authorization token submitted in a custom header, <code>REQUEST</code> for a Lambda function using incoming request parameters, and <code>COGNITO_USER_POOLS</code> for using an Amazon Cognito user pool.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::AuthorizerType>,
@@ -13230,12 +15775,18 @@ pub mod get_authorizer_output {
             self.r#type = input;
             self
         }
+        /// Appends an item to `provider_ar_ns`.
+        ///
+        /// To override the contents of this collection use [`set_provider_ar_ns`](Self::set_provider_ar_ns).
+        ///
+        /// <p>A list of the Amazon Cognito user pool ARNs for the <code>COGNITO_USER_POOLS</code> authorizer. Each element is of this format: <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>. For a <code>TOKEN</code> or <code>REQUEST</code> authorizer, this is not defined.</p>
         pub fn provider_ar_ns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.provider_ar_ns.unwrap_or_default();
             v.push(input.into());
             self.provider_ar_ns = Some(v);
             self
         }
+        /// <p>A list of the Amazon Cognito user pool ARNs for the <code>COGNITO_USER_POOLS</code> authorizer. Each element is of this format: <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>. For a <code>TOKEN</code> or <code>REQUEST</code> authorizer, this is not defined.</p>
         pub fn set_provider_ar_ns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13248,6 +15799,7 @@ pub mod get_authorizer_output {
             self.auth_type = Some(input.into());
             self
         }
+        /// <p>Optional customer-defined field, used in OpenAPI imports and exports without functional impact.</p>
         pub fn set_auth_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.auth_type = input;
             self
@@ -13257,6 +15809,7 @@ pub mod get_authorizer_output {
             self.authorizer_uri = Some(input.into());
             self
         }
+        /// <p>Specifies the authorizer's Uniform Resource Identifier (URI). For <code>TOKEN</code> or <code>REQUEST</code> authorizers, this must be a well-formed Lambda function URI, for example, <code>arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:{account_id}:function:{lambda_function_name}/invocations</code>. In general, the URI has this form  <code>arn:aws:apigateway:{region}:lambda:path/{service_api}</code>, where <code>{region}</code> is the same as the region hosting the Lambda function, <code>path</code> indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial <code>/</code>. For Lambda functions, this is usually of the form <code>/2015-03-31/functions/[FunctionARN]/invocations</code>.</p>
         pub fn set_authorizer_uri(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13269,6 +15822,7 @@ pub mod get_authorizer_output {
             self.authorizer_credentials = Some(input.into());
             self
         }
+        /// <p>Specifies the required credentials as an IAM role for API Gateway to invoke the authorizer. To specify an IAM role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based permissions on the Lambda function, specify null.</p>
         pub fn set_authorizer_credentials(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13281,6 +15835,7 @@ pub mod get_authorizer_output {
             self.identity_source = Some(input.into());
             self
         }
+        /// <p>The identity source for which authorization is requested. <ul><li>For a <code>TOKEN</code> or <code>COGNITO_USER_POOLS</code> authorizer, this is required and specifies the request header mapping expression for the custom header holding the authorization token submitted by the client. For example, if the token header name is <code>Auth</code>, the header mapping expression is  <code>method.request.header.Auth</code>.</li><li>For the <code>REQUEST</code> authorizer, this is required when authorization caching is enabled. The value is a comma-separated string of one or more mapping expressions of the specified request parameters. For example, if an <code>Auth</code> header, a <code>Name</code> query string parameter are defined as identity sources, this value is <code>method.request.header.Auth, method.request.querystring.Name</code>.  These parameters will be used to derive the authorization caching key and to perform runtime validation of the <code>REQUEST</code> authorizer by verifying all of the identity-related request parameters are present, not null and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized response without calling the Lambda function. The valid value is a string of comma-separated mapping expressions of the specified request parameters. When the authorization caching is not enabled, this property is optional.</li></ul></p>
         pub fn set_identity_source(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13296,6 +15851,7 @@ pub mod get_authorizer_output {
             self.identity_validation_expression = Some(input.into());
             self
         }
+        /// <p>A validation expression for the incoming identity token. For <code>TOKEN</code> authorizers, this value is a regular expression. For <code>COGNITO_USER_POOLS</code> authorizers, API Gateway will match the <code>aud</code> field of the incoming token from the client against the specified regular expression. It will invoke the authorizer's Lambda function when there is a match. Otherwise, it will return a 401 Unauthorized response without calling the Lambda function. The validation expression does not apply to the <code>REQUEST</code> authorizer.</p>
         pub fn set_identity_validation_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13308,6 +15864,7 @@ pub mod get_authorizer_output {
             self.authorizer_result_ttl_in_seconds = Some(input);
             self
         }
+        /// <p>The TTL in seconds of cached authorizer results. If it equals 0, authorization caching is disabled. If it is greater than 0, API Gateway will cache authorizer responses. If this field is not set, the default value is 300. The maximum value is 3600, or 1 hour.</p>
         pub fn set_authorizer_result_ttl_in_seconds(
             mut self,
             input: std::option::Option<i32>,
@@ -13373,12 +15930,18 @@ pub mod get_api_keys_output {
         pub(crate) position: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `warnings`.
+        ///
+        /// To override the contents of this collection use [`set_warnings`](Self::set_warnings).
+        ///
+        /// <p>A list of warning messages logged during the import of API keys when the <code>failOnWarnings</code> option is set to true.</p>
         pub fn warnings(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.warnings.unwrap_or_default();
             v.push(input.into());
             self.warnings = Some(v);
             self
         }
+        /// <p>A list of warning messages logged during the import of API keys when the <code>failOnWarnings</code> option is set to true.</p>
         pub fn set_warnings(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13386,12 +15949,18 @@ pub mod get_api_keys_output {
             self.warnings = input;
             self
         }
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>The current page of elements from this collection.</p>
         pub fn items(mut self, input: impl Into<crate::model::ApiKey>) -> Self {
             let mut v = self.items.unwrap_or_default();
             v.push(input.into());
             self.items = Some(v);
             self
         }
+        /// <p>The current page of elements from this collection.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ApiKey>>,
@@ -13404,6 +15973,7 @@ pub mod get_api_keys_output {
             self.position = Some(input.into());
             self
         }
+        /// <p>The current pagination position in the paged result set.</p>
         pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.position = input;
             self
@@ -13445,9 +16015,9 @@ pub struct GetApiKeyOutput {
     /// <p>Specifies whether the API Key can be used by callers.</p>
     pub enabled: bool,
     /// <p>The timestamp when the API Key was created.</p>
-    pub created_date: std::option::Option<smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The timestamp when the API Key was last updated.</p>
-    pub last_updated_date: std::option::Option<smithy_types::Instant>,
+    pub last_updated_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a> resource.</p>
     pub stage_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
@@ -13482,8 +16052,8 @@ pub mod get_api_key_output {
         pub(crate) customer_id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) enabled: std::option::Option<bool>,
-        pub(crate) created_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_updated_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) stage_keys: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -13495,6 +16065,7 @@ pub mod get_api_key_output {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier of the API Key.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -13504,6 +16075,7 @@ pub mod get_api_key_output {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value of the API Key.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -13513,6 +16085,7 @@ pub mod get_api_key_output {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the API Key.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -13522,6 +16095,7 @@ pub mod get_api_key_output {
             self.customer_id = Some(input.into());
             self
         }
+        /// <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.</p>
         pub fn set_customer_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.customer_id = input;
             self
@@ -13531,6 +16105,7 @@ pub mod get_api_key_output {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the API Key.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -13540,40 +16115,49 @@ pub mod get_api_key_output {
             self.enabled = Some(input);
             self
         }
+        /// <p>Specifies whether the API Key can be used by callers.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
         }
         /// <p>The timestamp when the API Key was created.</p>
-        pub fn created_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_date = Some(input);
             self
         }
+        /// <p>The timestamp when the API Key was created.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_date = input;
             self
         }
         /// <p>The timestamp when the API Key was last updated.</p>
-        pub fn last_updated_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_updated_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_updated_date = Some(input);
             self
         }
+        /// <p>The timestamp when the API Key was last updated.</p>
         pub fn set_last_updated_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_updated_date = input;
             self
         }
+        /// Appends an item to `stage_keys`.
+        ///
+        /// To override the contents of this collection use [`set_stage_keys`](Self::set_stage_keys).
+        ///
+        /// <p>A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a> resource.</p>
         pub fn stage_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.stage_keys.unwrap_or_default();
             v.push(input.into());
             self.stage_keys = Some(v);
             self
         }
+        /// <p>A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a> resource.</p>
         pub fn set_stage_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13581,6 +16165,11 @@ pub mod get_api_key_output {
             self.stage_keys = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -13591,6 +16180,7 @@ pub mod get_api_key_output {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -13712,6 +16302,7 @@ pub mod get_account_output {
             self.cloudwatch_role_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of an Amazon CloudWatch role for the current <a>Account</a>.</p>
         pub fn set_cloudwatch_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13724,6 +16315,7 @@ pub mod get_account_output {
             self.throttle_settings = Some(input);
             self
         }
+        /// <p>Specifies the API request limits configured for the current <a>Account</a>.</p>
         pub fn set_throttle_settings(
             mut self,
             input: std::option::Option<crate::model::ThrottleSettings>,
@@ -13731,12 +16323,18 @@ pub mod get_account_output {
             self.throttle_settings = input;
             self
         }
+        /// Appends an item to `features`.
+        ///
+        /// To override the contents of this collection use [`set_features`](Self::set_features).
+        ///
+        /// <p>A list of features supported for the account. When usage plans are enabled, the features list will include an entry of <code>"UsagePlans"</code>.</p>
         pub fn features(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.features.unwrap_or_default();
             v.push(input.into());
             self.features = Some(v);
             self
         }
+        /// <p>A list of features supported for the account. When usage plans are enabled, the features list will include an entry of <code>"UsagePlans"</code>.</p>
         pub fn set_features(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13749,6 +16347,7 @@ pub mod get_account_output {
             self.api_key_version = Some(input.into());
             self
         }
+        /// <p>The version of the API keys used for the account.</p>
         pub fn set_api_key_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13789,9 +16388,9 @@ pub struct GenerateClientCertificateOutput {
     /// <p>The PEM-encoded public key of the client certificate, which can be used to configure certificate authentication in the integration endpoint .</p>
     pub pem_encoded_certificate: std::option::Option<std::string::String>,
     /// <p>The timestamp when the client certificate was created.</p>
-    pub created_date: std::option::Option<smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The timestamp when the client certificate will expire.</p>
-    pub expiration_date: std::option::Option<smithy_types::Instant>,
+    pub expiration_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -13817,8 +16416,8 @@ pub mod generate_client_certificate_output {
         pub(crate) client_certificate_id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) pem_encoded_certificate: std::option::Option<std::string::String>,
-        pub(crate) created_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) expiration_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) expiration_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
@@ -13829,6 +16428,7 @@ pub mod generate_client_certificate_output {
             self.client_certificate_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the client certificate.</p>
         pub fn set_client_certificate_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13841,6 +16441,7 @@ pub mod generate_client_certificate_output {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the client certificate.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -13850,6 +16451,7 @@ pub mod generate_client_certificate_output {
             self.pem_encoded_certificate = Some(input.into());
             self
         }
+        /// <p>The PEM-encoded public key of the client certificate, which can be used to configure certificate authentication in the integration endpoint .</p>
         pub fn set_pem_encoded_certificate(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13858,29 +16460,36 @@ pub mod generate_client_certificate_output {
             self
         }
         /// <p>The timestamp when the client certificate was created.</p>
-        pub fn created_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_date = Some(input);
             self
         }
+        /// <p>The timestamp when the client certificate was created.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_date = input;
             self
         }
         /// <p>The timestamp when the client certificate will expire.</p>
-        pub fn expiration_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn expiration_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.expiration_date = Some(input);
             self
         }
+        /// <p>The timestamp when the client certificate will expire.</p>
         pub fn set_expiration_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.expiration_date = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -13891,6 +16500,7 @@ pub mod generate_client_certificate_output {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -13920,6 +16530,7 @@ impl GenerateClientCertificateOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FlushStageCacheOutput {}
@@ -13949,6 +16560,7 @@ impl FlushStageCacheOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FlushStageAuthorizersCacheOutput {}
@@ -13978,6 +16590,7 @@ impl FlushStageAuthorizersCacheOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteVpcLinkOutput {}
@@ -14007,6 +16620,7 @@ impl DeleteVpcLinkOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteUsagePlanKeyOutput {}
@@ -14036,6 +16650,7 @@ impl DeleteUsagePlanKeyOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteUsagePlanOutput {}
@@ -14065,6 +16680,7 @@ impl DeleteUsagePlanOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteStageOutput {}
@@ -14094,6 +16710,7 @@ impl DeleteStageOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRestApiOutput {}
@@ -14123,6 +16740,7 @@ impl DeleteRestApiOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteResourceOutput {}
@@ -14152,6 +16770,7 @@ impl DeleteResourceOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRequestValidatorOutput {}
@@ -14181,6 +16800,7 @@ impl DeleteRequestValidatorOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteModelOutput {}
@@ -14210,6 +16830,7 @@ impl DeleteModelOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMethodResponseOutput {}
@@ -14239,6 +16860,7 @@ impl DeleteMethodResponseOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMethodOutput {}
@@ -14268,6 +16890,7 @@ impl DeleteMethodOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteIntegrationResponseOutput {}
@@ -14297,6 +16920,7 @@ impl DeleteIntegrationResponseOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteIntegrationOutput {}
@@ -14326,6 +16950,7 @@ impl DeleteIntegrationOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteGatewayResponseOutput {}
@@ -14355,6 +16980,7 @@ impl DeleteGatewayResponseOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDomainNameOutput {}
@@ -14384,6 +17010,7 @@ impl DeleteDomainNameOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDocumentationVersionOutput {}
@@ -14413,6 +17040,7 @@ impl DeleteDocumentationVersionOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDocumentationPartOutput {}
@@ -14442,6 +17070,7 @@ impl DeleteDocumentationPartOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDeploymentOutput {}
@@ -14471,6 +17100,7 @@ impl DeleteDeploymentOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteClientCertificateOutput {}
@@ -14500,6 +17130,7 @@ impl DeleteClientCertificateOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteBasePathMappingOutput {}
@@ -14529,6 +17160,7 @@ impl DeleteBasePathMappingOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAuthorizerOutput {}
@@ -14558,6 +17190,7 @@ impl DeleteAuthorizerOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteApiKeyOutput {}
@@ -14645,6 +17278,7 @@ pub mod create_vpc_link_output {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier of the  <a>VpcLink</a>. It is used in an <a>Integration</a> to reference this <a>VpcLink</a>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -14654,6 +17288,7 @@ pub mod create_vpc_link_output {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name used to label and identify the VPC link.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -14663,16 +17298,23 @@ pub mod create_vpc_link_output {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the VPC link.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Appends an item to `target_arns`.
+        ///
+        /// To override the contents of this collection use [`set_target_arns`](Self::set_target_arns).
+        ///
+        /// <p>The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must be owned by the same AWS account of the API owner.</p>
         pub fn target_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.target_arns.unwrap_or_default();
             v.push(input.into());
             self.target_arns = Some(v);
             self
         }
+        /// <p>The ARN of the network load balancer of the VPC targeted by the VPC link. The network load balancer must be owned by the same AWS account of the API owner.</p>
         pub fn set_target_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -14685,6 +17327,7 @@ pub mod create_vpc_link_output {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the VPC link. The valid values are <code>AVAILABLE</code>, <code>PENDING</code>, <code>DELETING</code>, or <code>FAILED</code>. Deploying an API will wait if the status is <code>PENDING</code> and will fail if the status is <code>DELETING</code>.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::VpcLinkStatus>,
@@ -14697,6 +17340,7 @@ pub mod create_vpc_link_output {
             self.status_message = Some(input.into());
             self
         }
+        /// <p>A description about the VPC link status.</p>
         pub fn set_status_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14704,6 +17348,11 @@ pub mod create_vpc_link_output {
             self.status_message = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -14714,6 +17363,7 @@ pub mod create_vpc_link_output {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -14790,6 +17440,7 @@ pub mod create_usage_plan_key_output {
             self.id = Some(input.into());
             self
         }
+        /// <p>The Id of a usage plan key.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -14799,6 +17450,7 @@ pub mod create_usage_plan_key_output {
             self.r#type = Some(input.into());
             self
         }
+        /// <p>The type of a usage plan key. Currently, the valid key type is <code>API_KEY</code>.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
@@ -14808,6 +17460,7 @@ pub mod create_usage_plan_key_output {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value of a usage plan key.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -14817,6 +17470,7 @@ pub mod create_usage_plan_key_output {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of a usage plan key.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -14904,6 +17558,7 @@ pub mod create_usage_plan_output {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier of a <a>UsagePlan</a> resource.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -14913,6 +17568,7 @@ pub mod create_usage_plan_output {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of a usage plan.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -14922,16 +17578,23 @@ pub mod create_usage_plan_output {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of a usage plan.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Appends an item to `api_stages`.
+        ///
+        /// To override the contents of this collection use [`set_api_stages`](Self::set_api_stages).
+        ///
+        /// <p>The associated API stages of a usage plan.</p>
         pub fn api_stages(mut self, input: impl Into<crate::model::ApiStage>) -> Self {
             let mut v = self.api_stages.unwrap_or_default();
             v.push(input.into());
             self.api_stages = Some(v);
             self
         }
+        /// <p>The associated API stages of a usage plan.</p>
         pub fn set_api_stages(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ApiStage>>,
@@ -14944,6 +17607,7 @@ pub mod create_usage_plan_output {
             self.throttle = Some(input);
             self
         }
+        /// <p>The request throttle limits of a usage plan.</p>
         pub fn set_throttle(
             mut self,
             input: std::option::Option<crate::model::ThrottleSettings>,
@@ -14956,6 +17620,7 @@ pub mod create_usage_plan_output {
             self.quota = Some(input);
             self
         }
+        /// <p>The maximum number of permitted requests per a given unit time interval.</p>
         pub fn set_quota(
             mut self,
             input: std::option::Option<crate::model::QuotaSettings>,
@@ -14968,10 +17633,16 @@ pub mod create_usage_plan_output {
             self.product_code = Some(input.into());
             self
         }
+        /// <p>The AWS Markeplace product identifier to associate with the usage plan as a SaaS product on AWS Marketplace.</p>
         pub fn set_product_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.product_code = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -14982,6 +17653,7 @@ pub mod create_usage_plan_output {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -15056,9 +17728,9 @@ pub struct CreateStageOutput {
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The timestamp when the stage was created.</p>
-    pub created_date: std::option::Option<smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The timestamp when the stage last updated.</p>
-    pub last_updated_date: std::option::Option<smithy_types::Instant>,
+    pub last_updated_date: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for CreateStageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -15110,8 +17782,8 @@ pub mod create_stage_output {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
-        pub(crate) created_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_updated_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated_date: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The identifier of the <a>Deployment</a> that the stage points to.</p>
@@ -15119,6 +17791,7 @@ pub mod create_stage_output {
             self.deployment_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the <a>Deployment</a> that the stage points to.</p>
         pub fn set_deployment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15131,6 +17804,7 @@ pub mod create_stage_output {
             self.client_certificate_id = Some(input.into());
             self
         }
+        /// <p>The identifier of a client certificate for an API stage.</p>
         pub fn set_client_certificate_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15143,6 +17817,7 @@ pub mod create_stage_output {
             self.stage_name = Some(input.into());
             self
         }
+        /// <p>The name of the stage is the first path segment in the Uniform Resource Identifier (URI) of a call to API Gateway. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
         pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stage_name = input;
             self
@@ -15152,6 +17827,7 @@ pub mod create_stage_output {
             self.description = Some(input.into());
             self
         }
+        /// <p>The stage's description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -15161,6 +17837,7 @@ pub mod create_stage_output {
             self.cache_cluster_enabled = Some(input);
             self
         }
+        /// <p>Specifies whether a cache cluster is enabled for the stage.</p>
         pub fn set_cache_cluster_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.cache_cluster_enabled = input;
             self
@@ -15170,6 +17847,7 @@ pub mod create_stage_output {
             self.cache_cluster_size = Some(input);
             self
         }
+        /// <p>The size of the cache cluster for the stage, if enabled.</p>
         pub fn set_cache_cluster_size(
             mut self,
             input: std::option::Option<crate::model::CacheClusterSize>,
@@ -15182,6 +17860,7 @@ pub mod create_stage_output {
             self.cache_cluster_status = Some(input);
             self
         }
+        /// <p>The status of the cache cluster for the stage, if enabled.</p>
         pub fn set_cache_cluster_status(
             mut self,
             input: std::option::Option<crate::model::CacheClusterStatus>,
@@ -15189,6 +17868,11 @@ pub mod create_stage_output {
             self.cache_cluster_status = input;
             self
         }
+        /// Adds a key-value pair to `method_settings`.
+        ///
+        /// To override the contents of this collection use [`set_method_settings`](Self::set_method_settings).
+        ///
+        /// <p>A map that defines the method settings for a <a>Stage</a> resource. Keys (designated as <code>/{method_setting_key</code> below) are method paths defined as <code>{resource_path}/{http_method}</code> for an individual method override, or <code>/\*/\*</code> for overriding all methods in the stage.  <!-- Any forward slash ("/") characters in the <code>resource_path</code> part must be encoded as "~1" as in, for example, <code>~1resource~1sub-resource/GET</code>.--></p>
         pub fn method_settings(
             mut self,
             k: impl Into<std::string::String>,
@@ -15199,6 +17883,7 @@ pub mod create_stage_output {
             self.method_settings = Some(hash_map);
             self
         }
+        /// <p>A map that defines the method settings for a <a>Stage</a> resource. Keys (designated as <code>/{method_setting_key</code> below) are method paths defined as <code>{resource_path}/{http_method}</code> for an individual method override, or <code>/\*/\*</code> for overriding all methods in the stage.  <!-- Any forward slash ("/") characters in the <code>resource_path</code> part must be encoded as "~1" as in, for example, <code>~1resource~1sub-resource/GET</code>.--></p>
         pub fn set_method_settings(
             mut self,
             input: std::option::Option<
@@ -15208,6 +17893,12 @@ pub mod create_stage_output {
             self.method_settings = input;
             self
         }
+        /// Adds a key-value pair to `variables`.
+        ///
+        /// To override the contents of this collection use [`set_variables`](Self::set_variables).
+        ///
+        /// <p>A map that defines the stage variables for a <a>Stage</a> resource. Variable names can
+        /// have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&=,]+</code>.</p>
         pub fn variables(
             mut self,
             k: impl Into<std::string::String>,
@@ -15218,6 +17909,8 @@ pub mod create_stage_output {
             self.variables = Some(hash_map);
             self
         }
+        /// <p>A map that defines the stage variables for a <a>Stage</a> resource. Variable names can
+        /// have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&=,]+</code>.</p>
         pub fn set_variables(
             mut self,
             input: std::option::Option<
@@ -15232,6 +17925,7 @@ pub mod create_stage_output {
             self.documentation_version = Some(input.into());
             self
         }
+        /// <p>The version of the associated API documentation.</p>
         pub fn set_documentation_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15244,6 +17938,7 @@ pub mod create_stage_output {
             self.access_log_settings = Some(input);
             self
         }
+        /// <p>Settings for logging access in this stage.</p>
         pub fn set_access_log_settings(
             mut self,
             input: std::option::Option<crate::model::AccessLogSettings>,
@@ -15256,6 +17951,7 @@ pub mod create_stage_output {
             self.canary_settings = Some(input);
             self
         }
+        /// <p>Settings for the canary deployment in this stage.</p>
         pub fn set_canary_settings(
             mut self,
             input: std::option::Option<crate::model::CanarySettings>,
@@ -15268,6 +17964,7 @@ pub mod create_stage_output {
             self.tracing_enabled = Some(input);
             self
         }
+        /// <p>Specifies whether active tracing with X-ray is enabled for the <a>Stage</a>.</p>
         pub fn set_tracing_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.tracing_enabled = input;
             self
@@ -15277,10 +17974,16 @@ pub mod create_stage_output {
             self.web_acl_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the WebAcl associated with the <a>Stage</a>.</p>
         pub fn set_web_acl_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.web_acl_arn = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -15291,6 +17994,7 @@ pub mod create_stage_output {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -15301,25 +18005,27 @@ pub mod create_stage_output {
             self
         }
         /// <p>The timestamp when the stage was created.</p>
-        pub fn created_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_date = Some(input);
             self
         }
+        /// <p>The timestamp when the stage was created.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_date = input;
             self
         }
         /// <p>The timestamp when the stage last updated.</p>
-        pub fn last_updated_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_updated_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_updated_date = Some(input);
             self
         }
+        /// <p>The timestamp when the stage last updated.</p>
         pub fn set_last_updated_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_updated_date = input;
             self
@@ -15369,7 +18075,7 @@ pub struct CreateRestApiOutput {
     /// <p>The API's description.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The timestamp when the API was created.</p>
-    pub created_date: std::option::Option<smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A version identifier for the API.</p>
     pub version: std::option::Option<std::string::String>,
     /// <p>The warning messages reported when <code>failonwarnings</code> is turned on during API import.</p>
@@ -15421,7 +18127,7 @@ pub mod create_rest_api_output {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) created_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) version: std::option::Option<std::string::String>,
         pub(crate) warnings: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) binary_media_types: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -15440,6 +18146,7 @@ pub mod create_rest_api_output {
             self.id = Some(input.into());
             self
         }
+        /// <p>The API's identifier. This identifier is unique across all of your APIs in API Gateway.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -15449,6 +18156,7 @@ pub mod create_rest_api_output {
             self.name = Some(input.into());
             self
         }
+        /// <p>The API's name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -15458,18 +18166,20 @@ pub mod create_rest_api_output {
             self.description = Some(input.into());
             self
         }
+        /// <p>The API's description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
         /// <p>The timestamp when the API was created.</p>
-        pub fn created_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_date = Some(input);
             self
         }
+        /// <p>The timestamp when the API was created.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_date = input;
             self
@@ -15479,16 +18189,23 @@ pub mod create_rest_api_output {
             self.version = Some(input.into());
             self
         }
+        /// <p>A version identifier for the API.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
         }
+        /// Appends an item to `warnings`.
+        ///
+        /// To override the contents of this collection use [`set_warnings`](Self::set_warnings).
+        ///
+        /// <p>The warning messages reported when <code>failonwarnings</code> is turned on during API import.</p>
         pub fn warnings(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.warnings.unwrap_or_default();
             v.push(input.into());
             self.warnings = Some(v);
             self
         }
+        /// <p>The warning messages reported when <code>failonwarnings</code> is turned on during API import.</p>
         pub fn set_warnings(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -15496,12 +18213,18 @@ pub mod create_rest_api_output {
             self.warnings = input;
             self
         }
+        /// Appends an item to `binary_media_types`.
+        ///
+        /// To override the contents of this collection use [`set_binary_media_types`](Self::set_binary_media_types).
+        ///
+        /// <p>The list of binary media types supported by the <a>RestApi</a>. By default, the <a>RestApi</a> supports only UTF-8-encoded text payloads.</p>
         pub fn binary_media_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.binary_media_types.unwrap_or_default();
             v.push(input.into());
             self.binary_media_types = Some(v);
             self
         }
+        /// <p>The list of binary media types supported by the <a>RestApi</a>. By default, the <a>RestApi</a> supports only UTF-8-encoded text payloads.</p>
         pub fn set_binary_media_types(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -15514,6 +18237,7 @@ pub mod create_rest_api_output {
             self.minimum_compression_size = Some(input);
             self
         }
+        /// <p>A nullable integer that is used to enable compression (with non-negative between 0 and 10485760 (10M) bytes, inclusive) or disable compression (with a null value) on an API. When compression is enabled, compression or decompression is not applied on the payload if the payload size is smaller than this value. Setting it to zero allows compression for any payload size.</p>
         pub fn set_minimum_compression_size(mut self, input: std::option::Option<i32>) -> Self {
             self.minimum_compression_size = input;
             self
@@ -15523,6 +18247,7 @@ pub mod create_rest_api_output {
             self.api_key_source = Some(input);
             self
         }
+        /// <p>The source of the API key for metering requests according to a usage plan. Valid values are: <ul><li><code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request. </li><li><code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</li></ul></p>
         pub fn set_api_key_source(
             mut self,
             input: std::option::Option<crate::model::ApiKeySourceType>,
@@ -15538,6 +18263,7 @@ pub mod create_rest_api_output {
             self.endpoint_configuration = Some(input);
             self
         }
+        /// <p>The endpoint configuration of this <a>RestApi</a> showing the endpoint types of the API.</p>
         pub fn set_endpoint_configuration(
             mut self,
             input: std::option::Option<crate::model::EndpointConfiguration>,
@@ -15550,10 +18276,16 @@ pub mod create_rest_api_output {
             self.policy = Some(input.into());
             self
         }
+        /// <p>A stringified JSON policy document that applies to this RestApi regardless of the caller and <a>Method</a> configuration.</p>
         pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -15564,6 +18296,7 @@ pub mod create_rest_api_output {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -15578,6 +18311,7 @@ pub mod create_rest_api_output {
             self.disable_execute_api_endpoint = Some(input);
             self
         }
+        /// <p>Specifies whether clients can invoke your API by using the default <code>execute-api</code> endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
         pub fn set_disable_execute_api_endpoint(
             mut self,
             input: std::option::Option<bool>,
@@ -15814,6 +18548,7 @@ pub mod create_resource_output {
             self.id = Some(input.into());
             self
         }
+        /// <p>The resource's identifier.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -15823,6 +18558,7 @@ pub mod create_resource_output {
             self.parent_id = Some(input.into());
             self
         }
+        /// <p>The parent resource's identifier.</p>
         pub fn set_parent_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.parent_id = input;
             self
@@ -15832,6 +18568,7 @@ pub mod create_resource_output {
             self.path_part = Some(input.into());
             self
         }
+        /// <p>The last path segment for this resource.</p>
         pub fn set_path_part(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.path_part = input;
             self
@@ -15841,10 +18578,168 @@ pub mod create_resource_output {
             self.path = Some(input.into());
             self
         }
+        /// <p>The full path for this resource.</p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.path = input;
             self
         }
+        /// Adds a key-value pair to `resource_methods`.
+        ///
+        /// To override the contents of this collection use [`set_resource_methods`](Self::set_resource_methods).
+        ///
+        /// <p>Gets an API resource's method of a given HTTP verb.</p>
+        /// <div class="remarks">
+        /// <p>The resource methods are a map of methods indexed by methods' HTTP verbs enabled on the resource. This method map is included in the <code>200 OK</code> response of the <code>GET /restapis/{restapi_id}/resources/{resource_id}</code> or <code>GET /restapis/{restapi_id}/resources/{resource_id}?embed=methods</code> request.</p>
+        /// <h4>Example: Get the GET method of an API resource</h4>
+        /// <h5>Request</h5>
+        /// <pre><code>GET /restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET HTTP/1.1
+        /// Content-Type: application/json
+        /// Host: apigateway.us-east-1.amazonaws.com
+        /// X-Amz-Date: 20170223T031827Z
+        /// Authorization: AWS4-HMAC-SHA256 Credential={access_key_ID}/20170223/us-east-1/apigateway/aws4_request, SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash}</code></pre>
+        /// <h5>Response</h5>
+        /// <pre><code>{
+        /// "_links": {
+        /// "curies": [
+        /// {
+        /// "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html",
+        /// "name": "integration",
+        /// "templated": true
+        /// },
+        /// {
+        /// "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
+        /// "name": "integrationresponse",
+        /// "templated": true
+        /// },
+        /// {
+        /// "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-{rel}.html",
+        /// "name": "method",
+        /// "templated": true
+        /// },
+        /// {
+        /// "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-response-{rel}.html",
+        /// "name": "methodresponse",
+        /// "templated": true
+        /// }
+        /// ],
+        /// "self": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET",
+        /// "name": "GET",
+        /// "title": "GET"
+        /// },
+        /// "integration:put": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration"
+        /// },
+        /// "method:delete": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET"
+        /// },
+        /// "method:integration": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration"
+        /// },
+        /// "method:responses": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/responses/200",
+        /// "name": "200",
+        /// "title": "200"
+        /// },
+        /// "method:update": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET"
+        /// },
+        /// "methodresponse:put": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/responses/{status_code}",
+        /// "templated": true
+        /// }
+        /// },
+        /// "apiKeyRequired": false,
+        /// "authorizationType": "NONE",
+        /// "httpMethod": "GET",
+        /// "_embedded": {
+        /// "method:integration": {
+        /// "_links": {
+        /// "self": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration"
+        /// },
+        /// "integration:delete": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration"
+        /// },
+        /// "integration:responses": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200",
+        /// "name": "200",
+        /// "title": "200"
+        /// },
+        /// "integration:update": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration"
+        /// },
+        /// "integrationresponse:put": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/{status_code}",
+        /// "templated": true
+        /// }
+        /// },
+        /// "cacheKeyParameters": [],
+        /// "cacheNamespace": "3kzxbg5sa2",
+        /// "credentials": "arn:aws:iam::123456789012:role/apigAwsProxyRole",
+        /// "httpMethod": "POST",
+        /// "passthroughBehavior": "WHEN_NO_MATCH",
+        /// "requestParameters": {
+        /// "integration.request.header.Content-Type": "'application/x-amz-json-1.1'"
+        /// },
+        /// "requestTemplates": {
+        /// "application/json": "{\n}"
+        /// },
+        /// "type": "AWS",
+        /// "uri": "arn:aws:apigateway:us-east-1:kinesis:action/ListStreams",
+        /// "_embedded": {
+        /// "integration:responses": {
+        /// "_links": {
+        /// "self": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200",
+        /// "name": "200",
+        /// "title": "200"
+        /// },
+        /// "integrationresponse:delete": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200"
+        /// },
+        /// "integrationresponse:update": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200"
+        /// }
+        /// },
+        /// "responseParameters": {
+        /// "method.response.header.Content-Type": "'application/xml'"
+        /// },
+        /// "responseTemplates": {
+        /// "application/json": "$util.urlDecode(\"%3CkinesisStreams%3E#foreach($stream in $input.path('$.StreamNames'))%3Cstream%3E%3Cname%3E$stream%3C/name%3E%3C/stream%3E#end%3C/kinesisStreams%3E\")\n"
+        /// },
+        /// "statusCode": "200"
+        /// }
+        /// }
+        /// },
+        /// "method:responses": {
+        /// "_links": {
+        /// "self": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/responses/200",
+        /// "name": "200",
+        /// "title": "200"
+        /// },
+        /// "methodresponse:delete": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/responses/200"
+        /// },
+        /// "methodresponse:update": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/responses/200"
+        /// }
+        /// },
+        /// "responseModels": {
+        /// "application/json": "Empty"
+        /// },
+        /// "responseParameters": {
+        /// "method.response.header.Content-Type": false
+        /// },
+        /// "statusCode": "200"
+        /// }
+        /// }
+        /// }</code></pre>
+        /// <p>If the <code>OPTIONS</code> is enabled on the resource, you can follow the example here to get that method. Just replace the <code>GET</code> of the last path segment in the request URL with <code>OPTIONS</code>.</p>
+        /// </div>
+        /// <div class="seeAlso">
+        /// </div>
         pub fn resource_methods(
             mut self,
             k: impl Into<std::string::String>,
@@ -15855,6 +18750,159 @@ pub mod create_resource_output {
             self.resource_methods = Some(hash_map);
             self
         }
+        /// <p>Gets an API resource's method of a given HTTP verb.</p>
+        /// <div class="remarks">
+        /// <p>The resource methods are a map of methods indexed by methods' HTTP verbs enabled on the resource. This method map is included in the <code>200 OK</code> response of the <code>GET /restapis/{restapi_id}/resources/{resource_id}</code> or <code>GET /restapis/{restapi_id}/resources/{resource_id}?embed=methods</code> request.</p>
+        /// <h4>Example: Get the GET method of an API resource</h4>
+        /// <h5>Request</h5>
+        /// <pre><code>GET /restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET HTTP/1.1
+        /// Content-Type: application/json
+        /// Host: apigateway.us-east-1.amazonaws.com
+        /// X-Amz-Date: 20170223T031827Z
+        /// Authorization: AWS4-HMAC-SHA256 Credential={access_key_ID}/20170223/us-east-1/apigateway/aws4_request, SignedHeaders=content-type;host;x-amz-date, Signature={sig4_hash}</code></pre>
+        /// <h5>Response</h5>
+        /// <pre><code>{
+        /// "_links": {
+        /// "curies": [
+        /// {
+        /// "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-{rel}.html",
+        /// "name": "integration",
+        /// "templated": true
+        /// },
+        /// {
+        /// "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-integration-response-{rel}.html",
+        /// "name": "integrationresponse",
+        /// "templated": true
+        /// },
+        /// {
+        /// "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-{rel}.html",
+        /// "name": "method",
+        /// "templated": true
+        /// },
+        /// {
+        /// "href": "https://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-method-response-{rel}.html",
+        /// "name": "methodresponse",
+        /// "templated": true
+        /// }
+        /// ],
+        /// "self": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET",
+        /// "name": "GET",
+        /// "title": "GET"
+        /// },
+        /// "integration:put": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration"
+        /// },
+        /// "method:delete": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET"
+        /// },
+        /// "method:integration": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration"
+        /// },
+        /// "method:responses": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/responses/200",
+        /// "name": "200",
+        /// "title": "200"
+        /// },
+        /// "method:update": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET"
+        /// },
+        /// "methodresponse:put": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/responses/{status_code}",
+        /// "templated": true
+        /// }
+        /// },
+        /// "apiKeyRequired": false,
+        /// "authorizationType": "NONE",
+        /// "httpMethod": "GET",
+        /// "_embedded": {
+        /// "method:integration": {
+        /// "_links": {
+        /// "self": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration"
+        /// },
+        /// "integration:delete": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration"
+        /// },
+        /// "integration:responses": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200",
+        /// "name": "200",
+        /// "title": "200"
+        /// },
+        /// "integration:update": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration"
+        /// },
+        /// "integrationresponse:put": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/{status_code}",
+        /// "templated": true
+        /// }
+        /// },
+        /// "cacheKeyParameters": [],
+        /// "cacheNamespace": "3kzxbg5sa2",
+        /// "credentials": "arn:aws:iam::123456789012:role/apigAwsProxyRole",
+        /// "httpMethod": "POST",
+        /// "passthroughBehavior": "WHEN_NO_MATCH",
+        /// "requestParameters": {
+        /// "integration.request.header.Content-Type": "'application/x-amz-json-1.1'"
+        /// },
+        /// "requestTemplates": {
+        /// "application/json": "{\n}"
+        /// },
+        /// "type": "AWS",
+        /// "uri": "arn:aws:apigateway:us-east-1:kinesis:action/ListStreams",
+        /// "_embedded": {
+        /// "integration:responses": {
+        /// "_links": {
+        /// "self": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200",
+        /// "name": "200",
+        /// "title": "200"
+        /// },
+        /// "integrationresponse:delete": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200"
+        /// },
+        /// "integrationresponse:update": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/integration/responses/200"
+        /// }
+        /// },
+        /// "responseParameters": {
+        /// "method.response.header.Content-Type": "'application/xml'"
+        /// },
+        /// "responseTemplates": {
+        /// "application/json": "$util.urlDecode(\"%3CkinesisStreams%3E#foreach($stream in $input.path('$.StreamNames'))%3Cstream%3E%3Cname%3E$stream%3C/name%3E%3C/stream%3E#end%3C/kinesisStreams%3E\")\n"
+        /// },
+        /// "statusCode": "200"
+        /// }
+        /// }
+        /// },
+        /// "method:responses": {
+        /// "_links": {
+        /// "self": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/responses/200",
+        /// "name": "200",
+        /// "title": "200"
+        /// },
+        /// "methodresponse:delete": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/responses/200"
+        /// },
+        /// "methodresponse:update": {
+        /// "href": "/restapis/fugvjdxtri/resources/3kzxbg5sa2/methods/GET/responses/200"
+        /// }
+        /// },
+        /// "responseModels": {
+        /// "application/json": "Empty"
+        /// },
+        /// "responseParameters": {
+        /// "method.response.header.Content-Type": false
+        /// },
+        /// "statusCode": "200"
+        /// }
+        /// }
+        /// }</code></pre>
+        /// <p>If the <code>OPTIONS</code> is enabled on the resource, you can follow the example here to get that method. Just replace the <code>GET</code> of the last path segment in the request URL with <code>OPTIONS</code>.</p>
+        /// </div>
+        /// <div class="seeAlso">
+        /// </div>
         pub fn set_resource_methods(
             mut self,
             input: std::option::Option<
@@ -15930,6 +18978,7 @@ pub mod create_request_validator_output {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier of this <a>RequestValidator</a>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -15939,6 +18988,7 @@ pub mod create_request_validator_output {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of this <a>RequestValidator</a></p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -15948,6 +18998,7 @@ pub mod create_request_validator_output {
             self.validate_request_body = Some(input);
             self
         }
+        /// <p>A Boolean flag to indicate whether to validate a request body according to the configured <a>Model</a> schema.</p>
         pub fn set_validate_request_body(mut self, input: std::option::Option<bool>) -> Self {
             self.validate_request_body = input;
             self
@@ -15957,6 +19008,7 @@ pub mod create_request_validator_output {
             self.validate_request_parameters = Some(input);
             self
         }
+        /// <p>A Boolean flag to indicate whether to validate request parameters (<code>true</code>) or not (<code>false</code>).</p>
         pub fn set_validate_request_parameters(mut self, input: std::option::Option<bool>) -> Self {
             self.validate_request_parameters = input;
             self
@@ -16030,6 +19082,7 @@ pub mod create_model_output {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier for the model resource.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -16039,6 +19092,7 @@ pub mod create_model_output {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the model. Must be an alphanumeric string.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -16048,6 +19102,7 @@ pub mod create_model_output {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the model.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -16057,6 +19112,7 @@ pub mod create_model_output {
             self.schema = Some(input.into());
             self
         }
+        /// <p>The schema for the model. For <code>application/json</code> models, this should be <a target="_blank" href="https://tools.ietf.org/html/draft-zyp-json-schema-04">JSON schema draft 4</a> model. Do not include "\*/" characters in the description of any properties because such "\*/" characters may be interpreted as the closing marker for comments in some languages, such as Java or JavaScript, causing the installation of your API's SDK generated by API Gateway to fail.</p>
         pub fn set_schema(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.schema = input;
             self
@@ -16066,6 +19122,7 @@ pub mod create_model_output {
             self.content_type = Some(input.into());
             self
         }
+        /// <p>The content-type for the model.</p>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_type = input;
             self
@@ -16107,7 +19164,7 @@ pub struct CreateDomainNameOutput {
     /// <p>The reference to an AWS-managed certificate that will be used by edge-optimized endpoint for this domain name. AWS Certificate Manager is the only supported source.</p>
     pub certificate_arn: std::option::Option<std::string::String>,
     /// <p>The timestamp when the certificate that was used by edge-optimized endpoint for this domain name was uploaded.</p>
-    pub certificate_upload_date: std::option::Option<smithy_types::Instant>,
+    pub certificate_upload_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The domain name associated with the regional endpoint for this custom domain name. You set up this association by adding a DNS record that points the custom domain name to this regional domain name. The regional domain name is returned by API Gateway when you create a regional endpoint.</p>
     pub regional_domain_name: std::option::Option<std::string::String>,
     /// <p>The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set up a Regional Custom Domain Name</a> and  <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for API Gateway</a>.</p>
@@ -16177,7 +19234,7 @@ pub mod create_domain_name_output {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) certificate_name: std::option::Option<std::string::String>,
         pub(crate) certificate_arn: std::option::Option<std::string::String>,
-        pub(crate) certificate_upload_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) certificate_upload_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) regional_domain_name: std::option::Option<std::string::String>,
         pub(crate) regional_hosted_zone_id: std::option::Option<std::string::String>,
         pub(crate) regional_certificate_name: std::option::Option<std::string::String>,
@@ -16201,6 +19258,7 @@ pub mod create_domain_name_output {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The custom domain name as an API host name, for example, <code>my-api.example.com</code>.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -16210,6 +19268,7 @@ pub mod create_domain_name_output {
             self.certificate_name = Some(input.into());
             self
         }
+        /// <p>The name of the certificate that will be used by edge-optimized endpoint for this domain name.</p>
         pub fn set_certificate_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16222,6 +19281,7 @@ pub mod create_domain_name_output {
             self.certificate_arn = Some(input.into());
             self
         }
+        /// <p>The reference to an AWS-managed certificate that will be used by edge-optimized endpoint for this domain name. AWS Certificate Manager is the only supported source.</p>
         pub fn set_certificate_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16230,13 +19290,14 @@ pub mod create_domain_name_output {
             self
         }
         /// <p>The timestamp when the certificate that was used by edge-optimized endpoint for this domain name was uploaded.</p>
-        pub fn certificate_upload_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn certificate_upload_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.certificate_upload_date = Some(input);
             self
         }
+        /// <p>The timestamp when the certificate that was used by edge-optimized endpoint for this domain name was uploaded.</p>
         pub fn set_certificate_upload_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.certificate_upload_date = input;
             self
@@ -16246,6 +19307,7 @@ pub mod create_domain_name_output {
             self.regional_domain_name = Some(input.into());
             self
         }
+        /// <p>The domain name associated with the regional endpoint for this custom domain name. You set up this association by adding a DNS record that points the custom domain name to this regional domain name. The regional domain name is returned by API Gateway when you create a regional endpoint.</p>
         pub fn set_regional_domain_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16258,6 +19320,7 @@ pub mod create_domain_name_output {
             self.regional_hosted_zone_id = Some(input.into());
             self
         }
+        /// <p>The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint. For more information, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set up a Regional Custom Domain Name</a> and  <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for API Gateway</a>.</p>
         pub fn set_regional_hosted_zone_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16270,6 +19333,7 @@ pub mod create_domain_name_output {
             self.regional_certificate_name = Some(input.into());
             self
         }
+        /// <p>The name of the certificate that will be used for validating the regional domain name.</p>
         pub fn set_regional_certificate_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16282,6 +19346,7 @@ pub mod create_domain_name_output {
             self.regional_certificate_arn = Some(input.into());
             self
         }
+        /// <p>The reference to an AWS-managed certificate that will be used for validating the regional domain name. AWS Certificate Manager is the only supported source.</p>
         pub fn set_regional_certificate_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16294,6 +19359,7 @@ pub mod create_domain_name_output {
             self.distribution_domain_name = Some(input.into());
             self
         }
+        /// <p>The domain name of the Amazon CloudFront distribution associated with this custom domain name for an edge-optimized endpoint. You set up this association when adding a DNS record pointing the custom domain name to this distribution name. For more information about CloudFront distributions, see the <a target="_blank" href="https://aws.amazon.com/documentation/cloudfront/">Amazon CloudFront documentation</a>.</p>
         pub fn set_distribution_domain_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16309,6 +19375,7 @@ pub mod create_domain_name_output {
             self.distribution_hosted_zone_id = Some(input.into());
             self
         }
+        /// <p>The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized endpoint. The valid value is <code>Z2FDTNDATAQYW2</code> for all the regions. For more information, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set up a Regional Custom Domain Name</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS Regions and Endpoints for API Gateway</a>.</p>
         pub fn set_distribution_hosted_zone_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16324,6 +19391,7 @@ pub mod create_domain_name_output {
             self.endpoint_configuration = Some(input);
             self
         }
+        /// <p>The endpoint configuration of this <a>DomainName</a> showing the endpoint types of the domain name.</p>
         pub fn set_endpoint_configuration(
             mut self,
             input: std::option::Option<crate::model::EndpointConfiguration>,
@@ -16336,6 +19404,7 @@ pub mod create_domain_name_output {
             self.domain_name_status = Some(input);
             self
         }
+        /// <p>The status of the <a>DomainName</a> migration. The valid values are <code>AVAILABLE</code>, <code>UPDATING</code>, <code>PENDING_CERTIFICATE_REIMPORT</code>, and <code>PENDING_OWNERSHIP_VERIFICATION</code>. If the status is <code>UPDATING</code>, the domain cannot be modified further until the existing operation is complete. If it is <code>AVAILABLE</code>, the domain can be updated.</p>
         pub fn set_domain_name_status(
             mut self,
             input: std::option::Option<crate::model::DomainNameStatus>,
@@ -16348,6 +19417,7 @@ pub mod create_domain_name_output {
             self.domain_name_status_message = Some(input.into());
             self
         }
+        /// <p>An optional text message containing detailed information about status of the <a>DomainName</a> migration.</p>
         pub fn set_domain_name_status_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16360,6 +19430,7 @@ pub mod create_domain_name_output {
             self.security_policy = Some(input);
             self
         }
+        /// <p>The Transport Layer Security (TLS) version + cipher suite for this <a>DomainName</a>. The valid values are <code>TLS_1_0</code> and <code>TLS_1_2</code>.</p>
         pub fn set_security_policy(
             mut self,
             input: std::option::Option<crate::model::SecurityPolicy>,
@@ -16367,6 +19438,11 @@ pub mod create_domain_name_output {
             self.security_policy = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -16377,6 +19453,7 @@ pub mod create_domain_name_output {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -16394,6 +19471,7 @@ pub mod create_domain_name_output {
             self.mutual_tls_authentication = Some(input);
             self
         }
+        /// <p>The mutual TLS authentication configuration for a custom domain name. If specified, API Gateway performs two-way authentication between the client and the server. Clients must present a trusted certificate to access your API.</p>
         pub fn set_mutual_tls_authentication(
             mut self,
             input: std::option::Option<crate::model::MutualTlsAuthentication>,
@@ -16409,6 +19487,7 @@ pub mod create_domain_name_output {
             self.ownership_verification_certificate_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the public certificate issued by ACM to validate ownership of your custom domain. Only required when configuring mutual TLS and using an ACM imported or private CA certificate ARN as the regionalCertificateArn.</p>
         pub fn set_ownership_verification_certificate_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16458,7 +19537,7 @@ pub struct CreateDocumentationVersionOutput {
     /// <p>The version identifier of the API documentation snapshot.</p>
     pub version: std::option::Option<std::string::String>,
     /// <p>The date when the API documentation snapshot is created.</p>
-    pub created_date: std::option::Option<smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The description of the API documentation snapshot.</p>
     pub description: std::option::Option<std::string::String>,
 }
@@ -16478,7 +19557,7 @@ pub mod create_documentation_version_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) version: std::option::Option<std::string::String>,
-        pub(crate) created_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) description: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -16487,18 +19566,20 @@ pub mod create_documentation_version_output {
             self.version = Some(input.into());
             self
         }
+        /// <p>The version identifier of the API documentation snapshot.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
         }
         /// <p>The date when the API documentation snapshot is created.</p>
-        pub fn created_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_date = Some(input);
             self
         }
+        /// <p>The date when the API documentation snapshot is created.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_date = input;
             self
@@ -16508,6 +19589,7 @@ pub mod create_documentation_version_output {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the API documentation snapshot.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -16571,6 +19653,7 @@ pub mod create_documentation_part_output {
             self.id = Some(input.into());
             self
         }
+        /// <p>The <a>DocumentationPart</a> identifier, generated by API Gateway when the <code>DocumentationPart</code> is created.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -16580,6 +19663,7 @@ pub mod create_documentation_part_output {
             self.location = Some(input);
             self
         }
+        /// <p>The location of the API entity to which the documentation applies. Valid fields depend on the targeted API entity type. All the valid location fields are not required. If not explicitly specified, a valid location field is treated as a wildcard and associated documentation content may be inherited by matching entities, unless overridden.</p>
         pub fn set_location(
             mut self,
             input: std::option::Option<crate::model::DocumentationPartLocation>,
@@ -16592,6 +19676,7 @@ pub mod create_documentation_part_output {
             self.properties = Some(input.into());
             self
         }
+        /// <p>A content map of API-specific key-value pairs describing the targeted API entity. The map must be encoded as a JSON string, e.g., <code>"{ \"description\": \"The API does ...\" }"</code>.  Only OpenAPI-compliant documentation-related fields from the <literal>properties</literal> map are exported and, hence, published as part of the API entity definitions, while the original documentation parts are exported in a OpenAPI extension of <code>x-amazon-apigateway-documentation</code>.</p>
         pub fn set_properties(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.properties = input;
             self
@@ -16628,7 +19713,7 @@ pub struct CreateDeploymentOutput {
     /// <p>The description for the deployment resource.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The date and time that the deployment resource was created.</p>
-    pub created_date: std::option::Option<smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A summary of the <a>RestApi</a> at the date and time that the deployment resource was created.</p>
     pub api_summary: std::option::Option<
         std::collections::HashMap<
@@ -16655,7 +19740,7 @@ pub mod create_deployment_output {
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) created_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) api_summary: std::option::Option<
             std::collections::HashMap<
                 std::string::String,
@@ -16669,6 +19754,7 @@ pub mod create_deployment_output {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier for the deployment resource.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -16678,22 +19764,29 @@ pub mod create_deployment_output {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description for the deployment resource.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
         /// <p>The date and time that the deployment resource was created.</p>
-        pub fn created_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_date = Some(input);
             self
         }
+        /// <p>The date and time that the deployment resource was created.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_date = input;
             self
         }
+        /// Adds a key-value pair to `api_summary`.
+        ///
+        /// To override the contents of this collection use [`set_api_summary`](Self::set_api_summary).
+        ///
+        /// <p>A summary of the <a>RestApi</a> at the date and time that the deployment resource was created.</p>
         pub fn api_summary(
             mut self,
             k: impl Into<std::string::String>,
@@ -16704,6 +19797,7 @@ pub mod create_deployment_output {
             self.api_summary = Some(hash_map);
             self
         }
+        /// <p>A summary of the <a>RestApi</a> at the date and time that the deployment resource was created.</p>
         pub fn set_api_summary(
             mut self,
             input: std::option::Option<
@@ -16774,6 +19868,7 @@ pub mod create_base_path_mapping_output {
             self.base_path = Some(input.into());
             self
         }
+        /// <p>The base path name that callers of the API must provide as part of the URL after the domain name.</p>
         pub fn set_base_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.base_path = input;
             self
@@ -16783,6 +19878,7 @@ pub mod create_base_path_mapping_output {
             self.rest_api_id = Some(input.into());
             self
         }
+        /// <p>The string identifier of the associated <a>RestApi</a>.</p>
         pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rest_api_id = input;
             self
@@ -16792,6 +19888,7 @@ pub mod create_base_path_mapping_output {
             self.stage = Some(input.into());
             self
         }
+        /// <p>The name of the associated stage.</p>
         pub fn set_stage(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stage = input;
             self
@@ -16887,6 +19984,7 @@ pub mod create_authorizer_output {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier for the authorizer resource.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -16896,6 +19994,7 @@ pub mod create_authorizer_output {
             self.name = Some(input.into());
             self
         }
+        /// <p>[Required] The name of the authorizer.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -16905,6 +20004,7 @@ pub mod create_authorizer_output {
             self.r#type = Some(input);
             self
         }
+        /// <p>The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using a single authorization token submitted in a custom header, <code>REQUEST</code> for a Lambda function using incoming request parameters, and <code>COGNITO_USER_POOLS</code> for using an Amazon Cognito user pool.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::AuthorizerType>,
@@ -16912,12 +20012,18 @@ pub mod create_authorizer_output {
             self.r#type = input;
             self
         }
+        /// Appends an item to `provider_ar_ns`.
+        ///
+        /// To override the contents of this collection use [`set_provider_ar_ns`](Self::set_provider_ar_ns).
+        ///
+        /// <p>A list of the Amazon Cognito user pool ARNs for the <code>COGNITO_USER_POOLS</code> authorizer. Each element is of this format: <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>. For a <code>TOKEN</code> or <code>REQUEST</code> authorizer, this is not defined.</p>
         pub fn provider_ar_ns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.provider_ar_ns.unwrap_or_default();
             v.push(input.into());
             self.provider_ar_ns = Some(v);
             self
         }
+        /// <p>A list of the Amazon Cognito user pool ARNs for the <code>COGNITO_USER_POOLS</code> authorizer. Each element is of this format: <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>. For a <code>TOKEN</code> or <code>REQUEST</code> authorizer, this is not defined.</p>
         pub fn set_provider_ar_ns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -16930,6 +20036,7 @@ pub mod create_authorizer_output {
             self.auth_type = Some(input.into());
             self
         }
+        /// <p>Optional customer-defined field, used in OpenAPI imports and exports without functional impact.</p>
         pub fn set_auth_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.auth_type = input;
             self
@@ -16939,6 +20046,7 @@ pub mod create_authorizer_output {
             self.authorizer_uri = Some(input.into());
             self
         }
+        /// <p>Specifies the authorizer's Uniform Resource Identifier (URI). For <code>TOKEN</code> or <code>REQUEST</code> authorizers, this must be a well-formed Lambda function URI, for example, <code>arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:{account_id}:function:{lambda_function_name}/invocations</code>. In general, the URI has this form  <code>arn:aws:apigateway:{region}:lambda:path/{service_api}</code>, where <code>{region}</code> is the same as the region hosting the Lambda function, <code>path</code> indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial <code>/</code>. For Lambda functions, this is usually of the form <code>/2015-03-31/functions/[FunctionARN]/invocations</code>.</p>
         pub fn set_authorizer_uri(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16951,6 +20059,7 @@ pub mod create_authorizer_output {
             self.authorizer_credentials = Some(input.into());
             self
         }
+        /// <p>Specifies the required credentials as an IAM role for API Gateway to invoke the authorizer. To specify an IAM role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based permissions on the Lambda function, specify null.</p>
         pub fn set_authorizer_credentials(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16963,6 +20072,7 @@ pub mod create_authorizer_output {
             self.identity_source = Some(input.into());
             self
         }
+        /// <p>The identity source for which authorization is requested. <ul><li>For a <code>TOKEN</code> or <code>COGNITO_USER_POOLS</code> authorizer, this is required and specifies the request header mapping expression for the custom header holding the authorization token submitted by the client. For example, if the token header name is <code>Auth</code>, the header mapping expression is  <code>method.request.header.Auth</code>.</li><li>For the <code>REQUEST</code> authorizer, this is required when authorization caching is enabled. The value is a comma-separated string of one or more mapping expressions of the specified request parameters. For example, if an <code>Auth</code> header, a <code>Name</code> query string parameter are defined as identity sources, this value is <code>method.request.header.Auth, method.request.querystring.Name</code>.  These parameters will be used to derive the authorization caching key and to perform runtime validation of the <code>REQUEST</code> authorizer by verifying all of the identity-related request parameters are present, not null and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function, otherwise, it returns a 401 Unauthorized response without calling the Lambda function. The valid value is a string of comma-separated mapping expressions of the specified request parameters. When the authorization caching is not enabled, this property is optional.</li></ul></p>
         pub fn set_identity_source(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16978,6 +20088,7 @@ pub mod create_authorizer_output {
             self.identity_validation_expression = Some(input.into());
             self
         }
+        /// <p>A validation expression for the incoming identity token. For <code>TOKEN</code> authorizers, this value is a regular expression. For <code>COGNITO_USER_POOLS</code> authorizers, API Gateway will match the <code>aud</code> field of the incoming token from the client against the specified regular expression. It will invoke the authorizer's Lambda function when there is a match. Otherwise, it will return a 401 Unauthorized response without calling the Lambda function. The validation expression does not apply to the <code>REQUEST</code> authorizer.</p>
         pub fn set_identity_validation_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16990,6 +20101,7 @@ pub mod create_authorizer_output {
             self.authorizer_result_ttl_in_seconds = Some(input);
             self
         }
+        /// <p>The TTL in seconds of cached authorizer results. If it equals 0, authorization caching is disabled. If it is greater than 0, API Gateway will cache authorizer responses. If this field is not set, the default value is 300. The maximum value is 3600, or 1 hour.</p>
         pub fn set_authorizer_result_ttl_in_seconds(
             mut self,
             input: std::option::Option<i32>,
@@ -17041,9 +20153,9 @@ pub struct CreateApiKeyOutput {
     /// <p>Specifies whether the API Key can be used by callers.</p>
     pub enabled: bool,
     /// <p>The timestamp when the API Key was created.</p>
-    pub created_date: std::option::Option<smithy_types::Instant>,
+    pub created_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The timestamp when the API Key was last updated.</p>
-    pub last_updated_date: std::option::Option<smithy_types::Instant>,
+    pub last_updated_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a> resource.</p>
     pub stage_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
@@ -17078,8 +20190,8 @@ pub mod create_api_key_output {
         pub(crate) customer_id: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) enabled: std::option::Option<bool>,
-        pub(crate) created_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_updated_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) stage_keys: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -17091,6 +20203,7 @@ pub mod create_api_key_output {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier of the API Key.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -17100,6 +20213,7 @@ pub mod create_api_key_output {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value of the API Key.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -17109,6 +20223,7 @@ pub mod create_api_key_output {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the API Key.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -17118,6 +20233,7 @@ pub mod create_api_key_output {
             self.customer_id = Some(input.into());
             self
         }
+        /// <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.</p>
         pub fn set_customer_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.customer_id = input;
             self
@@ -17127,6 +20243,7 @@ pub mod create_api_key_output {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the API Key.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -17136,40 +20253,49 @@ pub mod create_api_key_output {
             self.enabled = Some(input);
             self
         }
+        /// <p>Specifies whether the API Key can be used by callers.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
         }
         /// <p>The timestamp when the API Key was created.</p>
-        pub fn created_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_date = Some(input);
             self
         }
+        /// <p>The timestamp when the API Key was created.</p>
         pub fn set_created_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_date = input;
             self
         }
         /// <p>The timestamp when the API Key was last updated.</p>
-        pub fn last_updated_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_updated_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_updated_date = Some(input);
             self
         }
+        /// <p>The timestamp when the API Key was last updated.</p>
         pub fn set_last_updated_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_updated_date = input;
             self
         }
+        /// Appends an item to `stage_keys`.
+        ///
+        /// To override the contents of this collection use [`set_stage_keys`](Self::set_stage_keys).
+        ///
+        /// <p>A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a> resource.</p>
         pub fn stage_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.stage_keys.unwrap_or_default();
             v.push(input.into());
             self.stage_keys = Some(v);
             self
         }
+        /// <p>A list of <a>Stage</a> resources that are associated with the <a>ApiKey</a> resource.</p>
         pub fn set_stage_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -17177,6 +20303,11 @@ pub mod create_api_key_output {
             self.stage_keys = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -17187,6 +20318,7 @@ pub mod create_api_key_output {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<

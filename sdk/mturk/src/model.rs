@@ -15,7 +15,7 @@ pub struct QualificationType {
     pub qualification_type_id: std::option::Option<std::string::String>,
     /// <p> The date and time the Qualification type was created.
     /// </p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p> The name of the Qualification type. The type name is used to
     /// identify the type, and to find the type using a Qualification type
     /// search.
@@ -100,7 +100,7 @@ pub mod qualification_type {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) qualification_type_id: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) keywords: std::option::Option<std::string::String>,
@@ -123,6 +123,10 @@ pub mod qualification_type {
             self.qualification_type_id = Some(input.into());
             self
         }
+        /// <p> A unique identifier for the Qualification type. A
+        /// Qualification type is given a Qualification type ID when you call the
+        /// CreateQualificationType operation.
+        /// </p>
         pub fn set_qualification_type_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -132,13 +136,15 @@ pub mod qualification_type {
         }
         /// <p> The date and time the Qualification type was created.
         /// </p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p> The date and time the Qualification type was created.
+        /// </p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -151,6 +157,10 @@ pub mod qualification_type {
             self.name = Some(input.into());
             self
         }
+        /// <p> The name of the Qualification type. The type name is used to
+        /// identify the type, and to find the type using a Qualification type
+        /// search.
+        /// </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -161,6 +171,8 @@ pub mod qualification_type {
             self.description = Some(input.into());
             self
         }
+        /// <p> A long description for the Qualification type.
+        /// </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -173,6 +185,10 @@ pub mod qualification_type {
             self.keywords = Some(input.into());
             self
         }
+        /// <p> One or more words or phrases that describe theQualification
+        /// type, separated by commas. The Keywords make the type easier to find
+        /// using a search.
+        /// </p>
         pub fn set_keywords(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.keywords = input;
             self
@@ -189,6 +205,11 @@ pub mod qualification_type {
             self.qualification_type_status = Some(input);
             self
         }
+        /// <p> The status of the Qualification type. A Qualification type's
+        /// status determines if users can apply to receive a Qualification of
+        /// this type, and if HITs can be created with requirements based on this
+        /// type. Valid values are Active | Inactive.
+        /// </p>
         pub fn set_qualification_type_status(
             mut self,
             input: std::option::Option<crate::model::QualificationTypeStatus>,
@@ -206,6 +227,12 @@ pub mod qualification_type {
             self.test = Some(input.into());
             self
         }
+        /// <p> The questions for a Qualification test associated with this
+        /// Qualification type that a user can take to obtain a Qualification of
+        /// this type. This parameter must be specified if AnswerKey is present.
+        /// A Qualification type cannot have both a specified Test parameter and
+        /// an AutoGranted value of true.
+        /// </p>
         pub fn set_test(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.test = input;
             self
@@ -218,6 +245,10 @@ pub mod qualification_type {
             self.test_duration_in_seconds = Some(input);
             self
         }
+        /// <p> The amount of time, in seconds, given to a Worker to
+        /// complete the Qualification test, beginning from the time the Worker
+        /// requests the Qualification.
+        /// </p>
         pub fn set_test_duration_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
             self.test_duration_in_seconds = input;
             self
@@ -228,6 +259,8 @@ pub mod qualification_type {
             self.answer_key = Some(input.into());
             self
         }
+        /// <p>The answers to the Qualification test specified in the Test
+        /// parameter.</p>
         pub fn set_answer_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.answer_key = input;
             self
@@ -244,6 +277,14 @@ pub mod qualification_type {
             self.retry_delay_in_seconds = Some(input);
             self
         }
+        /// <p> The amount of time, in seconds, Workers must wait after
+        /// taking the Qualification test before they can take it again. Workers
+        /// can take a Qualification test multiple times if they were not granted
+        /// the Qualification from a previous attempt, or if the test offers a
+        /// gradient score and they want a better score. If not specified,
+        /// retries are disabled and Workers can request a Qualification only
+        /// once.
+        /// </p>
         pub fn set_retry_delay_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
             self.retry_delay_in_seconds = input;
             self
@@ -257,6 +298,11 @@ pub mod qualification_type {
             self.is_requestable = Some(input);
             self
         }
+        /// <p> Specifies whether the Qualification type is one that a user
+        /// can request through the Amazon Mechanical Turk web site, such as by
+        /// taking a Qualification test. This value is False for Qualifications
+        /// assigned automatically by the system. Valid values are True | False.
+        /// </p>
         pub fn set_is_requestable(mut self, input: std::option::Option<bool>) -> Self {
             self.is_requestable = input;
             self
@@ -268,6 +314,9 @@ pub mod qualification_type {
             self.auto_granted = Some(input);
             self
         }
+        /// <p>Specifies that requests for the Qualification type are
+        /// granted immediately, without prompting the Worker with a
+        /// Qualification test. Valid values are True | False.</p>
         pub fn set_auto_granted(mut self, input: std::option::Option<bool>) -> Self {
             self.auto_granted = input;
             self
@@ -279,6 +328,9 @@ pub mod qualification_type {
             self.auto_granted_value = Some(input);
             self
         }
+        /// <p> The Qualification integer value to use for automatically
+        /// granted Qualifications, if AutoGranted is true. This is 1 by default.
+        /// </p>
         pub fn set_auto_granted_value(mut self, input: std::option::Option<i32>) -> Self {
             self.auto_granted_value = input;
             self
@@ -310,6 +362,7 @@ impl QualificationType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -321,7 +374,9 @@ impl QualificationType {
     std::hash::Hash,
 )]
 pub enum QualificationTypeStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     Inactive,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -343,6 +398,7 @@ impl std::str::FromStr for QualificationTypeStatus {
     }
 }
 impl QualificationTypeStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             QualificationTypeStatus::Active => "Active",
@@ -350,6 +406,7 @@ impl QualificationTypeStatus {
             QualificationTypeStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Active", "Inactive"]
     }
@@ -436,6 +493,20 @@ pub mod notification_specification {
             self.destination = Some(input.into());
             self
         }
+        /// <p>
+        /// The target for notification messages. The Destination’s format is determined by the specified Transport:
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>When Transport is Email, the Destination is your email address.</p>
+        /// </li>
+        /// <li>
+        /// <p>When Transport is SQS, the Destination is your queue URL.</p>
+        /// </li>
+        /// <li>
+        /// <p>When Transport is SNS, the Destination is the ARN of your topic.</p>
+        /// </li>
+        /// </ul>
         pub fn set_destination(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.destination = input;
             self
@@ -447,6 +518,9 @@ pub mod notification_specification {
             self.transport = Some(input);
             self
         }
+        /// <p> The method Amazon Mechanical Turk uses to send the
+        /// notification. Valid Values: Email | SQS | SNS.
+        /// </p>
         pub fn set_transport(
             mut self,
             input: std::option::Option<crate::model::NotificationTransport>,
@@ -460,16 +534,36 @@ pub mod notification_specification {
             self.version = Some(input.into());
             self
         }
+        /// <p>The version of the Notification API to use. Valid value is
+        /// 2006-05-05.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
         }
+        /// Appends an item to `event_types`.
+        ///
+        /// To override the contents of this collection use [`set_event_types`](Self::set_event_types).
+        ///
+        /// <p> The list of events that should cause notifications to be
+        /// sent. Valid Values: AssignmentAccepted | AssignmentAbandoned |
+        /// AssignmentReturned | AssignmentSubmitted | AssignmentRejected |
+        /// AssignmentApproved | HITCreated | HITExtended | HITDisposed |
+        /// HITReviewable | HITExpired | Ping. The Ping event is only valid for
+        /// the SendTestEventNotification operation.
+        /// </p>
         pub fn event_types(mut self, input: impl Into<crate::model::EventType>) -> Self {
             let mut v = self.event_types.unwrap_or_default();
             v.push(input.into());
             self.event_types = Some(v);
             self
         }
+        /// <p> The list of events that should cause notifications to be
+        /// sent. Valid Values: AssignmentAccepted | AssignmentAbandoned |
+        /// AssignmentReturned | AssignmentSubmitted | AssignmentRejected |
+        /// AssignmentApproved | HITCreated | HITExtended | HITDisposed |
+        /// HITReviewable | HITExpired | Ping. The Ping event is only valid for
+        /// the SendTestEventNotification operation.
+        /// </p>
         pub fn set_event_types(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EventType>>,
@@ -495,6 +589,7 @@ impl NotificationSpecification {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -506,17 +601,29 @@ impl NotificationSpecification {
     std::hash::Hash,
 )]
 pub enum EventType {
+    #[allow(missing_docs)] // documentation missing in model
     AssignmentAbandoned,
+    #[allow(missing_docs)] // documentation missing in model
     AssignmentAccepted,
+    #[allow(missing_docs)] // documentation missing in model
     AssignmentApproved,
+    #[allow(missing_docs)] // documentation missing in model
     AssignmentRejected,
+    #[allow(missing_docs)] // documentation missing in model
     AssignmentReturned,
+    #[allow(missing_docs)] // documentation missing in model
     AssignmentSubmitted,
+    #[allow(missing_docs)] // documentation missing in model
     HitCreated,
+    #[allow(missing_docs)] // documentation missing in model
     HitDisposed,
+    #[allow(missing_docs)] // documentation missing in model
     HitExpired,
+    #[allow(missing_docs)] // documentation missing in model
     HitExtended,
+    #[allow(missing_docs)] // documentation missing in model
     HitReviewable,
+    #[allow(missing_docs)] // documentation missing in model
     Ping,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -548,6 +655,7 @@ impl std::str::FromStr for EventType {
     }
 }
 impl EventType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EventType::AssignmentAbandoned => "AssignmentAbandoned",
@@ -565,6 +673,7 @@ impl EventType {
             EventType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "AssignmentAbandoned",
@@ -588,6 +697,7 @@ impl AsRef<str> for EventType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -599,8 +709,11 @@ impl AsRef<str> for EventType {
     std::hash::Hash,
 )]
 pub enum NotificationTransport {
+    #[allow(missing_docs)] // documentation missing in model
     Email,
+    #[allow(missing_docs)] // documentation missing in model
     Sns,
+    #[allow(missing_docs)] // documentation missing in model
     Sqs,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -623,6 +736,7 @@ impl std::str::FromStr for NotificationTransport {
     }
 }
 impl NotificationTransport {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             NotificationTransport::Email => "Email",
@@ -631,6 +745,7 @@ impl NotificationTransport {
             NotificationTransport::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Email", "SNS", "SQS"]
     }
@@ -693,6 +808,8 @@ pub mod notify_workers_failure_status {
             self.notify_workers_failure_code = Some(input);
             self
         }
+        /// <p> Encoded value for the failure type.
+        /// </p>
         pub fn set_notify_workers_failure_code(
             mut self,
             input: std::option::Option<crate::model::NotifyWorkersFailureCode>,
@@ -710,6 +827,9 @@ pub mod notify_workers_failure_status {
             self.notify_workers_failure_message = Some(input.into());
             self
         }
+        /// <p> A message detailing the reason the Worker could not be
+        /// notified.
+        /// </p>
         pub fn set_notify_workers_failure_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -722,6 +842,7 @@ pub mod notify_workers_failure_status {
             self.worker_id = Some(input.into());
             self
         }
+        /// <p> The ID of the Worker.</p>
         pub fn set_worker_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.worker_id = input;
             self
@@ -743,6 +864,7 @@ impl NotifyWorkersFailureStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -754,7 +876,9 @@ impl NotifyWorkersFailureStatus {
     std::hash::Hash,
 )]
 pub enum NotifyWorkersFailureCode {
+    #[allow(missing_docs)] // documentation missing in model
     HardFailure,
+    #[allow(missing_docs)] // documentation missing in model
     SoftFailure,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -776,6 +900,7 @@ impl std::str::FromStr for NotifyWorkersFailureCode {
     }
 }
 impl NotifyWorkersFailureCode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             NotifyWorkersFailureCode::HardFailure => "HardFailure",
@@ -783,6 +908,7 @@ impl NotifyWorkersFailureCode {
             NotifyWorkersFailureCode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["HardFailure", "SoftFailure"]
     }
@@ -809,7 +935,7 @@ pub struct Qualification {
     /// re-granted based on a new Qualification request, GrantTime is the
     /// date and time of the last call to the AcceptQualificationRequest
     /// operation.</p>
-    pub grant_time: std::option::Option<smithy_types::Instant>,
+    pub grant_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p> The value (score) of the Qualification, if the Qualification
     /// has an integer value.</p>
     pub integer_value: std::option::Option<i32>,
@@ -839,7 +965,7 @@ pub mod qualification {
     pub struct Builder {
         pub(crate) qualification_type_id: std::option::Option<std::string::String>,
         pub(crate) worker_id: std::option::Option<std::string::String>,
-        pub(crate) grant_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) grant_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) integer_value: std::option::Option<i32>,
         pub(crate) locale_value: std::option::Option<crate::model::Locale>,
         pub(crate) status: std::option::Option<crate::model::QualificationStatus>,
@@ -850,6 +976,7 @@ pub mod qualification {
             self.qualification_type_id = Some(input.into());
             self
         }
+        /// <p> The ID of the Qualification type for the Qualification.</p>
         pub fn set_qualification_type_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -863,6 +990,8 @@ pub mod qualification {
             self.worker_id = Some(input.into());
             self
         }
+        /// <p> The ID of the Worker who possesses the Qualification.
+        /// </p>
         pub fn set_worker_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.worker_id = input;
             self
@@ -872,11 +1001,19 @@ pub mod qualification {
         /// re-granted based on a new Qualification request, GrantTime is the
         /// date and time of the last call to the AcceptQualificationRequest
         /// operation.</p>
-        pub fn grant_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn grant_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.grant_time = Some(input);
             self
         }
-        pub fn set_grant_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p> The date and time the Qualification was granted to the
+        /// Worker. If the Worker's Qualification was revoked, and then
+        /// re-granted based on a new Qualification request, GrantTime is the
+        /// date and time of the last call to the AcceptQualificationRequest
+        /// operation.</p>
+        pub fn set_grant_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.grant_time = input;
             self
         }
@@ -886,6 +1023,8 @@ pub mod qualification {
             self.integer_value = Some(input);
             self
         }
+        /// <p> The value (score) of the Qualification, if the Qualification
+        /// has an integer value.</p>
         pub fn set_integer_value(mut self, input: std::option::Option<i32>) -> Self {
             self.integer_value = input;
             self
@@ -895,6 +1034,7 @@ pub mod qualification {
             self.locale_value = Some(input);
             self
         }
+        /// <p>The Locale data structure represents a geographical region or location.</p>
         pub fn set_locale_value(
             mut self,
             input: std::option::Option<crate::model::Locale>,
@@ -908,6 +1048,8 @@ pub mod qualification {
             self.status = Some(input);
             self
         }
+        /// <p> The status of the Qualification. Valid values are Granted |
+        /// Revoked.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::QualificationStatus>,
@@ -935,6 +1077,7 @@ impl Qualification {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -946,7 +1089,9 @@ impl Qualification {
     std::hash::Hash,
 )]
 pub enum QualificationStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Granted,
+    #[allow(missing_docs)] // documentation missing in model
     Revoked,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -968,6 +1113,7 @@ impl std::str::FromStr for QualificationStatus {
     }
 }
 impl QualificationStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             QualificationStatus::Granted => "Granted",
@@ -975,6 +1121,7 @@ impl QualificationStatus {
             QualificationStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Granted", "Revoked"]
     }
@@ -1025,6 +1172,10 @@ pub mod locale {
             self.country = Some(input.into());
             self
         }
+        /// <p> The country of the locale. Must be a valid ISO 3166 country
+        /// code. For example, the code US refers to the United States of
+        /// America.
+        /// </p>
         pub fn set_country(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.country = input;
             self
@@ -1036,6 +1187,9 @@ pub mod locale {
             self.subdivision = Some(input.into());
             self
         }
+        /// <p>The state or subdivision of the locale. A valid ISO 3166-2
+        /// subdivision code. For example, the code WA refers to the state of
+        /// Washington.</p>
         pub fn set_subdivision(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.subdivision = input;
             self
@@ -1092,6 +1246,7 @@ pub mod worker_block {
             self.worker_id = Some(input.into());
             self
         }
+        /// <p> The ID of the Worker who accepted the HIT.</p>
         pub fn set_worker_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.worker_id = input;
             self
@@ -1102,6 +1257,8 @@ pub mod worker_block {
             self.reason = Some(input.into());
             self
         }
+        /// <p> A message explaining the reason the Worker was blocked.
+        /// </p>
         pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.reason = input;
             self
@@ -1157,6 +1314,13 @@ pub mod review_report {
             std::option::Option<std::vec::Vec<crate::model::ReviewActionDetail>>,
     }
     impl Builder {
+        /// Appends an item to `review_results`.
+        ///
+        /// To override the contents of this collection use [`set_review_results`](Self::set_review_results).
+        ///
+        /// <p> A list of ReviewResults objects for each action specified in
+        /// the Review Policy.
+        /// </p>
         pub fn review_results(
             mut self,
             input: impl Into<crate::model::ReviewResultDetail>,
@@ -1166,6 +1330,9 @@ pub mod review_report {
             self.review_results = Some(v);
             self
         }
+        /// <p> A list of ReviewResults objects for each action specified in
+        /// the Review Policy.
+        /// </p>
         pub fn set_review_results(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ReviewResultDetail>>,
@@ -1173,6 +1340,13 @@ pub mod review_report {
             self.review_results = input;
             self
         }
+        /// Appends an item to `review_actions`.
+        ///
+        /// To override the contents of this collection use [`set_review_actions`](Self::set_review_actions).
+        ///
+        /// <p> A list of ReviewAction objects for each action specified in
+        /// the Review Policy.
+        /// </p>
         pub fn review_actions(
             mut self,
             input: impl Into<crate::model::ReviewActionDetail>,
@@ -1182,6 +1356,9 @@ pub mod review_report {
             self.review_actions = Some(v);
             self
         }
+        /// <p> A list of ReviewAction objects for each action specified in
+        /// the Review Policy.
+        /// </p>
         pub fn set_review_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ReviewActionDetail>>,
@@ -1228,7 +1405,7 @@ pub struct ReviewActionDetail {
     /// </p>
     pub status: std::option::Option<crate::model::ReviewActionStatus>,
     /// <p> The date when the action was completed.</p>
-    pub complete_time: std::option::Option<smithy_types::Instant>,
+    pub complete_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p> A description of the outcome of the review.</p>
     pub result: std::option::Option<std::string::String>,
     /// <p> Present only when the Results have a FAILED Status.</p>
@@ -1259,7 +1436,7 @@ pub mod review_action_detail {
         pub(crate) target_id: std::option::Option<std::string::String>,
         pub(crate) target_type: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::ReviewActionStatus>,
-        pub(crate) complete_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) complete_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) result: std::option::Option<std::string::String>,
         pub(crate) error_code: std::option::Option<std::string::String>,
     }
@@ -1269,6 +1446,7 @@ pub mod review_action_detail {
             self.action_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the action.</p>
         pub fn set_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.action_id = input;
             self
@@ -1280,6 +1458,9 @@ pub mod review_action_detail {
             self.action_name = Some(input.into());
             self
         }
+        /// <p> The nature of the action itself. The Review Policy is
+        /// responsible for examining the HIT and Assignments, emitting results,
+        /// and deciding which other actions will be necessary. </p>
         pub fn set_action_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.action_name = input;
             self
@@ -1289,6 +1470,7 @@ pub mod review_action_detail {
             self.target_id = Some(input.into());
             self
         }
+        /// <p> The specific HITId or AssignmentID targeted by the action.</p>
         pub fn set_target_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.target_id = input;
             self
@@ -1298,6 +1480,7 @@ pub mod review_action_detail {
             self.target_type = Some(input.into());
             self
         }
+        /// <p> The type of object in TargetId.</p>
         pub fn set_target_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.target_type = input;
             self
@@ -1309,6 +1492,9 @@ pub mod review_action_detail {
             self.status = Some(input);
             self
         }
+        /// <p> The current disposition of the action: INTENDED, SUCCEEDED,
+        /// FAILED, or CANCELLED.
+        /// </p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ReviewActionStatus>,
@@ -1317,13 +1503,14 @@ pub mod review_action_detail {
             self
         }
         /// <p> The date when the action was completed.</p>
-        pub fn complete_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn complete_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.complete_time = Some(input);
             self
         }
+        /// <p> The date when the action was completed.</p>
         pub fn set_complete_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.complete_time = input;
             self
@@ -1333,6 +1520,7 @@ pub mod review_action_detail {
             self.result = Some(input.into());
             self
         }
+        /// <p> A description of the outcome of the review.</p>
         pub fn set_result(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.result = input;
             self
@@ -1342,6 +1530,7 @@ pub mod review_action_detail {
             self.error_code = Some(input.into());
             self
         }
+        /// <p> Present only when the Results have a FAILED Status.</p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_code = input;
             self
@@ -1368,6 +1557,7 @@ impl ReviewActionDetail {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1379,9 +1569,13 @@ impl ReviewActionDetail {
     std::hash::Hash,
 )]
 pub enum ReviewActionStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Cancelled,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Intended,
+    #[allow(missing_docs)] // documentation missing in model
     Succeeded,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1405,6 +1599,7 @@ impl std::str::FromStr for ReviewActionStatus {
     }
 }
 impl ReviewActionStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ReviewActionStatus::Cancelled => "Cancelled",
@@ -1414,6 +1609,7 @@ impl ReviewActionStatus {
             ReviewActionStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Cancelled", "Failed", "Intended", "Succeeded"]
     }
@@ -1491,6 +1687,8 @@ pub mod review_result_detail {
             self.action_id = Some(input.into());
             self
         }
+        /// <p> A unique identifier of the Review action result.
+        /// </p>
         pub fn set_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.action_id = input;
             self
@@ -1505,6 +1703,12 @@ pub mod review_result_detail {
             self.subject_id = Some(input.into());
             self
         }
+        /// <p>The HITID or AssignmentId about which this result was taken.
+        /// Note that HIT-level Review Policies will often emit results about
+        /// both the HIT itself and its Assignments, while Assignment-level
+        /// review policies generally only emit results about the Assignment
+        /// itself.
+        /// </p>
         pub fn set_subject_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.subject_id = input;
             self
@@ -1514,6 +1718,7 @@ pub mod review_result_detail {
             self.subject_type = Some(input.into());
             self
         }
+        /// <p> The type of the object from the SubjectId field.</p>
         pub fn set_subject_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.subject_type = input;
             self
@@ -1530,6 +1735,14 @@ pub mod review_result_detail {
             self.question_id = Some(input.into());
             self
         }
+        /// <p> Specifies the QuestionId the result is describing. Depending
+        /// on whether the TargetType is a HIT or Assignment this results could
+        /// specify multiple values. If TargetType is HIT and QuestionId is
+        /// absent, then the result describes results of the HIT, including the
+        /// HIT agreement score. If ObjectType is Assignment and QuestionId is
+        /// absent, then the result describes the Worker's performance on the
+        /// HIT.
+        /// </p>
         pub fn set_question_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.question_id = input;
             self
@@ -1540,6 +1753,8 @@ pub mod review_result_detail {
             self.key = Some(input.into());
             self
         }
+        /// <p> Key identifies the particular piece of reviewed information.
+        /// </p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -1551,6 +1766,9 @@ pub mod review_result_detail {
             self.value = Some(input.into());
             self
         }
+        /// <p> The values of Key provided by the review policies you have
+        /// selected.
+        /// </p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -1613,16 +1831,25 @@ pub mod review_policy {
             self.policy_name = Some(input.into());
             self
         }
+        /// <p> Name of a Review Policy: SimplePlurality/2011-09-01 or
+        /// ScoreMyKnownAnswers/2011-09-01
+        /// </p>
         pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_name = input;
             self
         }
+        /// Appends an item to `parameters`.
+        ///
+        /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
+        ///
+        /// <p>Name of the parameter from the Review policy.</p>
         pub fn parameters(mut self, input: impl Into<crate::model::PolicyParameter>) -> Self {
             let mut v = self.parameters.unwrap_or_default();
             v.push(input.into());
             self.parameters = Some(v);
             self
         }
+        /// <p>Name of the parameter from the Review policy.</p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PolicyParameter>>,
@@ -1686,16 +1913,24 @@ pub mod policy_parameter {
             self.key = Some(input.into());
             self
         }
+        /// <p> Name of the parameter from the list of Review Polices.
+        /// </p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
         }
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p> The list of values of the Parameter</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
+        /// <p> The list of values of the Parameter</p>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1703,12 +1938,20 @@ pub mod policy_parameter {
             self.values = input;
             self
         }
+        /// Appends an item to `map_entries`.
+        ///
+        /// To override the contents of this collection use [`set_map_entries`](Self::set_map_entries).
+        ///
+        /// <p> List of ParameterMapEntry objects.
+        /// </p>
         pub fn map_entries(mut self, input: impl Into<crate::model::ParameterMapEntry>) -> Self {
             let mut v = self.map_entries.unwrap_or_default();
             v.push(input.into());
             self.map_entries = Some(v);
             self
         }
+        /// <p> List of ParameterMapEntry objects.
+        /// </p>
         pub fn set_map_entries(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ParameterMapEntry>>,
@@ -1776,16 +2019,32 @@ pub mod parameter_map_entry {
             self.key = Some(input.into());
             self
         }
+        /// <p> The QuestionID from the HIT that is used to identify which
+        /// question requires Mechanical Turk to score as part of the
+        /// ScoreMyKnownAnswers/2011-09-01 Review Policy.
+        /// </p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
         }
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p> The list of answers to the question specified in the
+        /// MapEntry Key element. The Worker must match all values in order for
+        /// the answer to be scored correctly.
+        /// </p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
+        /// <p> The list of answers to the question specified in the
+        /// MapEntry Key element. The Worker must match all values in order for
+        /// the answer to be scored correctly.
+        /// </p>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1809,6 +2068,7 @@ impl ParameterMapEntry {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1820,7 +2080,9 @@ impl ParameterMapEntry {
     std::hash::Hash,
 )]
 pub enum ReviewPolicyLevel {
+    #[allow(missing_docs)] // documentation missing in model
     Assignment,
+    #[allow(missing_docs)] // documentation missing in model
     Hit,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1842,6 +2104,7 @@ impl std::str::FromStr for ReviewPolicyLevel {
     }
 }
 impl ReviewPolicyLevel {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ReviewPolicyLevel::Assignment => "Assignment",
@@ -1849,6 +2112,7 @@ impl ReviewPolicyLevel {
             ReviewPolicyLevel::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Assignment", "HIT"]
     }
@@ -1874,7 +2138,7 @@ pub struct Hit {
     /// <p> The ID of the HIT Layout of this HIT.</p>
     pub hit_layout_id: std::option::Option<std::string::String>,
     /// <p> The date and time the HIT was created.</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p> The title of the HIT.</p>
     pub title: std::option::Option<std::string::String>,
     /// <p> A general description of the HIT.</p>
@@ -1905,7 +2169,7 @@ pub struct Hit {
     /// </p>
     pub auto_approval_delay_in_seconds: std::option::Option<i64>,
     /// <p>The date and time the HIT expires.</p>
-    pub expiration: std::option::Option<smithy_types::Instant>,
+    pub expiration: std::option::Option<aws_smithy_types::Instant>,
     /// <p> The length of time, in seconds, that a Worker has to
     /// complete the HIT after accepting it.</p>
     pub assignment_duration_in_seconds: std::option::Option<i64>,
@@ -1992,7 +2256,7 @@ pub mod hit {
         pub(crate) hit_type_id: std::option::Option<std::string::String>,
         pub(crate) hit_group_id: std::option::Option<std::string::String>,
         pub(crate) hit_layout_id: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) title: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) question: std::option::Option<std::string::String>,
@@ -2001,7 +2265,7 @@ pub mod hit {
         pub(crate) max_assignments: std::option::Option<i32>,
         pub(crate) reward: std::option::Option<std::string::String>,
         pub(crate) auto_approval_delay_in_seconds: std::option::Option<i64>,
-        pub(crate) expiration: std::option::Option<smithy_types::Instant>,
+        pub(crate) expiration: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) assignment_duration_in_seconds: std::option::Option<i64>,
         pub(crate) requester_annotation: std::option::Option<std::string::String>,
         pub(crate) qualification_requirements:
@@ -2017,6 +2281,7 @@ pub mod hit {
             self.hit_id = Some(input.into());
             self
         }
+        /// <p> A unique identifier for the HIT.</p>
         pub fn set_hit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.hit_id = input;
             self
@@ -2026,6 +2291,7 @@ pub mod hit {
             self.hit_type_id = Some(input.into());
             self
         }
+        /// <p>The ID of the HIT type of this HIT</p>
         pub fn set_hit_type_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.hit_type_id = input;
             self
@@ -2035,6 +2301,7 @@ pub mod hit {
             self.hit_group_id = Some(input.into());
             self
         }
+        /// <p> The ID of the HIT Group of this HIT.</p>
         pub fn set_hit_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.hit_group_id = input;
             self
@@ -2044,6 +2311,7 @@ pub mod hit {
             self.hit_layout_id = Some(input.into());
             self
         }
+        /// <p> The ID of the HIT Layout of this HIT.</p>
         pub fn set_hit_layout_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2052,13 +2320,14 @@ pub mod hit {
             self
         }
         /// <p> The date and time the HIT was created.</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p> The date and time the HIT was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -2068,6 +2337,7 @@ pub mod hit {
             self.title = Some(input.into());
             self
         }
+        /// <p> The title of the HIT.</p>
         pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.title = input;
             self
@@ -2077,6 +2347,7 @@ pub mod hit {
             self.description = Some(input.into());
             self
         }
+        /// <p> A general description of the HIT.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -2088,6 +2359,9 @@ pub mod hit {
             self.question = Some(input.into());
             self
         }
+        /// <p> The data the Worker completing the HIT uses produce the
+        /// results. This is either either a QuestionForm, HTMLQuestion or an
+        /// ExternalQuestion data structure.</p>
         pub fn set_question(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.question = input;
             self
@@ -2099,6 +2373,9 @@ pub mod hit {
             self.keywords = Some(input.into());
             self
         }
+        /// <p> One or more words or phrases that describe the HIT,
+        /// separated by commas. Search terms similar to the keywords of a HIT
+        /// are more likely to have the HIT in the search results.</p>
         pub fn set_keywords(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.keywords = input;
             self
@@ -2110,6 +2387,9 @@ pub mod hit {
             self.hit_status = Some(input);
             self
         }
+        /// <p>The status of the HIT and its assignments. Valid Values are
+        /// Assignable | Unassignable | Reviewable | Reviewing | Disposed.
+        /// </p>
         pub fn set_hit_status(
             mut self,
             input: std::option::Option<crate::model::HitStatus>,
@@ -2124,6 +2404,9 @@ pub mod hit {
             self.max_assignments = Some(input);
             self
         }
+        /// <p>The number of times the HIT can be accepted and completed
+        /// before the HIT becomes unavailable.
+        /// </p>
         pub fn set_max_assignments(mut self, input: std::option::Option<i32>) -> Self {
             self.max_assignments = input;
             self
@@ -2133,6 +2416,7 @@ pub mod hit {
             self.reward = Some(input.into());
             self
         }
+        /// <p>A string representing a currency amount.</p>
         pub fn set_reward(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.reward = input;
             self
@@ -2147,6 +2431,12 @@ pub mod hit {
             self.auto_approval_delay_in_seconds = Some(input);
             self
         }
+        /// <p>The amount of time, in seconds, after the Worker submits an
+        /// assignment for the HIT that the results are automatically approved by
+        /// Amazon Mechanical Turk. This is the amount of time the Requester has
+        /// to reject an assignment submitted by a Worker before the assignment
+        /// is auto-approved and the Worker is paid.
+        /// </p>
         pub fn set_auto_approval_delay_in_seconds(
             mut self,
             input: std::option::Option<i64>,
@@ -2155,11 +2445,15 @@ pub mod hit {
             self
         }
         /// <p>The date and time the HIT expires.</p>
-        pub fn expiration(mut self, input: smithy_types::Instant) -> Self {
+        pub fn expiration(mut self, input: aws_smithy_types::Instant) -> Self {
             self.expiration = Some(input);
             self
         }
-        pub fn set_expiration(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date and time the HIT expires.</p>
+        pub fn set_expiration(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.expiration = input;
             self
         }
@@ -2169,6 +2463,8 @@ pub mod hit {
             self.assignment_duration_in_seconds = Some(input);
             self
         }
+        /// <p> The length of time, in seconds, that a Worker has to
+        /// complete the HIT after accepting it.</p>
         pub fn set_assignment_duration_in_seconds(
             mut self,
             input: std::option::Option<i64>,
@@ -2182,6 +2478,8 @@ pub mod hit {
             self.requester_annotation = Some(input.into());
             self
         }
+        /// <p> An arbitrary data field the Requester who created the HIT
+        /// can use. This field is visible only to the creator of the HIT.</p>
         pub fn set_requester_annotation(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2189,6 +2487,18 @@ pub mod hit {
             self.requester_annotation = input;
             self
         }
+        /// Appends an item to `qualification_requirements`.
+        ///
+        /// To override the contents of this collection use [`set_qualification_requirements`](Self::set_qualification_requirements).
+        ///
+        /// <p>
+        /// Conditions that a Worker's Qualifications must meet in order
+        /// to accept the HIT. A HIT can have between zero and ten
+        /// Qualification requirements. All requirements must be met in
+        /// order for a Worker to accept the HIT. Additionally, other
+        /// actions can be restricted using the <code>ActionsGuarded</code>
+        /// field on each <code>QualificationRequirement</code> structure.
+        /// </p>
         pub fn qualification_requirements(
             mut self,
             input: impl Into<crate::model::QualificationRequirement>,
@@ -2198,6 +2508,14 @@ pub mod hit {
             self.qualification_requirements = Some(v);
             self
         }
+        /// <p>
+        /// Conditions that a Worker's Qualifications must meet in order
+        /// to accept the HIT. A HIT can have between zero and ten
+        /// Qualification requirements. All requirements must be met in
+        /// order for a Worker to accept the HIT. Additionally, other
+        /// actions can be restricted using the <code>ActionsGuarded</code>
+        /// field on each <code>QualificationRequirement</code> structure.
+        /// </p>
         pub fn set_qualification_requirements(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::QualificationRequirement>>,
@@ -2212,6 +2530,9 @@ pub mod hit {
             self.hit_review_status = Some(input);
             self
         }
+        /// <p> Indicates the review status of the HIT. Valid Values are
+        /// NotReviewed | MarkedForReview | ReviewedAppropriate |
+        /// ReviewedInappropriate.</p>
         pub fn set_hit_review_status(
             mut self,
             input: std::option::Option<crate::model::HitReviewStatus>,
@@ -2226,6 +2547,9 @@ pub mod hit {
             self.number_of_assignments_pending = Some(input);
             self
         }
+        /// <p> The number of assignments for this HIT that are being
+        /// previewed or have been accepted by Workers, but have not yet been
+        /// submitted, returned, or abandoned.</p>
         pub fn set_number_of_assignments_pending(
             mut self,
             input: std::option::Option<i32>,
@@ -2239,6 +2563,8 @@ pub mod hit {
             self.number_of_assignments_available = Some(input);
             self
         }
+        /// <p> The number of assignments for this HIT that are available
+        /// for Workers to accept.</p>
         pub fn set_number_of_assignments_available(
             mut self,
             input: std::option::Option<i32>,
@@ -2252,6 +2578,8 @@ pub mod hit {
             self.number_of_assignments_completed = Some(input);
             self
         }
+        /// <p> The number of assignments for this HIT that have been
+        /// approved or rejected.</p>
         pub fn set_number_of_assignments_completed(
             mut self,
             input: std::option::Option<i32>,
@@ -2294,6 +2622,7 @@ impl Hit {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2305,9 +2634,13 @@ impl Hit {
     std::hash::Hash,
 )]
 pub enum HitReviewStatus {
+    #[allow(missing_docs)] // documentation missing in model
     MarkedForReview,
+    #[allow(missing_docs)] // documentation missing in model
     NotReviewed,
+    #[allow(missing_docs)] // documentation missing in model
     ReviewedAppropriate,
+    #[allow(missing_docs)] // documentation missing in model
     ReviewedInappropriate,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2331,6 +2664,7 @@ impl std::str::FromStr for HitReviewStatus {
     }
 }
 impl HitReviewStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             HitReviewStatus::MarkedForReview => "MarkedForReview",
@@ -2340,6 +2674,7 @@ impl HitReviewStatus {
             HitReviewStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "MarkedForReview",
@@ -2459,6 +2794,7 @@ pub mod qualification_requirement {
             self.qualification_type_id = Some(input.into());
             self
         }
+        /// <p> The ID of the Qualification type for the requirement.</p>
         pub fn set_qualification_type_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2483,6 +2819,19 @@ pub mod qualification_requirement {
             self.comparator = Some(input);
             self
         }
+        /// <p>The kind of comparison to make against a Qualification's
+        /// value. You can compare a Qualification's value to an IntegerValue to
+        /// see if it is LessThan, LessThanOrEqualTo, GreaterThan,
+        /// GreaterThanOrEqualTo, EqualTo, or NotEqualTo the IntegerValue. You
+        /// can compare it to a LocaleValue to see if it is EqualTo, or
+        /// NotEqualTo the LocaleValue. You can check to see if the value is In
+        /// or NotIn a set of IntegerValue
+        /// or LocaleValue values. Lastly, a
+        /// Qualification requirement can also
+        /// test if a Qualification Exists or
+        /// DoesNotExist in the user's profile,
+        /// regardless of its value.
+        /// </p>
         pub fn set_comparator(
             mut self,
             input: std::option::Option<crate::model::Comparator>,
@@ -2490,12 +2839,32 @@ pub mod qualification_requirement {
             self.comparator = input;
             self
         }
+        /// Appends an item to `integer_values`.
+        ///
+        /// To override the contents of this collection use [`set_integer_values`](Self::set_integer_values).
+        ///
+        /// <p> The integer value to compare against the Qualification's
+        /// value. IntegerValue must not be present if Comparator is Exists or
+        /// DoesNotExist. IntegerValue can only be used if the Qualification type
+        /// has an integer value; it cannot be used with the Worker_Locale
+        /// QualificationType ID. When performing a set comparison by using the
+        /// In or the NotIn comparator, you can use up to 15 IntegerValue
+        /// elements in a QualificationRequirement data structure.
+        /// </p>
         pub fn integer_values(mut self, input: impl Into<i32>) -> Self {
             let mut v = self.integer_values.unwrap_or_default();
             v.push(input.into());
             self.integer_values = Some(v);
             self
         }
+        /// <p> The integer value to compare against the Qualification's
+        /// value. IntegerValue must not be present if Comparator is Exists or
+        /// DoesNotExist. IntegerValue can only be used if the Qualification type
+        /// has an integer value; it cannot be used with the Worker_Locale
+        /// QualificationType ID. When performing a set comparison by using the
+        /// In or the NotIn comparator, you can use up to 15 IntegerValue
+        /// elements in a QualificationRequirement data structure.
+        /// </p>
         pub fn set_integer_values(
             mut self,
             input: std::option::Option<std::vec::Vec<i32>>,
@@ -2503,12 +2872,36 @@ pub mod qualification_requirement {
             self.integer_values = input;
             self
         }
+        /// Appends an item to `locale_values`.
+        ///
+        /// To override the contents of this collection use [`set_locale_values`](Self::set_locale_values).
+        ///
+        /// <p> The locale value to compare against the Qualification's
+        /// value. The local value must be a valid ISO 3166 country code or
+        /// supports ISO 3166-2 subdivisions. LocaleValue can only be used with a
+        /// Worker_Locale QualificationType ID. LocaleValue can only be used with
+        /// the EqualTo, NotEqualTo, In, and NotIn comparators. You must only use
+        /// a single LocaleValue element when using the EqualTo or NotEqualTo
+        /// comparators. When performing a set comparison by using the In or the
+        /// NotIn comparator, you can use up to 30 LocaleValue elements in a
+        /// QualificationRequirement data structure.
+        /// </p>
         pub fn locale_values(mut self, input: impl Into<crate::model::Locale>) -> Self {
             let mut v = self.locale_values.unwrap_or_default();
             v.push(input.into());
             self.locale_values = Some(v);
             self
         }
+        /// <p> The locale value to compare against the Qualification's
+        /// value. The local value must be a valid ISO 3166 country code or
+        /// supports ISO 3166-2 subdivisions. LocaleValue can only be used with a
+        /// Worker_Locale QualificationType ID. LocaleValue can only be used with
+        /// the EqualTo, NotEqualTo, In, and NotIn comparators. You must only use
+        /// a single LocaleValue element when using the EqualTo or NotEqualTo
+        /// comparators. When performing a set comparison by using the In or the
+        /// NotIn comparator, you can use up to 30 LocaleValue elements in a
+        /// QualificationRequirement data structure.
+        /// </p>
         pub fn set_locale_values(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Locale>>,
@@ -2532,6 +2925,18 @@ pub mod qualification_requirement {
             self.required_to_preview = Some(input);
             self
         }
+        /// <p> DEPRECATED: Use the <code>ActionsGuarded</code> field instead.
+        /// If RequiredToPreview is true, the question data for the HIT will not be shown
+        /// when a Worker whose Qualifications do not meet this requirement tries
+        /// to preview the HIT. That is, a Worker's Qualifications must meet all
+        /// of the requirements for which RequiredToPreview is true in order to
+        /// preview the HIT. If a Worker meets all of the requirements where
+        /// RequiredToPreview is true (or if there are no such requirements), but
+        /// does not meet all of the requirements for the HIT, the Worker will be
+        /// allowed to preview the HIT's question data, but will not be allowed
+        /// to accept and complete the HIT. The default is false. This should not
+        /// be used in combination with the <code>ActionsGuarded</code> field.
+        /// </p>
         pub fn set_required_to_preview(mut self, input: std::option::Option<bool>) -> Self {
             self.required_to_preview = input;
             self
@@ -2553,6 +2958,19 @@ pub mod qualification_requirement {
             self.actions_guarded = Some(input);
             self
         }
+        /// <p> Setting this attribute prevents Workers whose Qualifications do not meet
+        /// this QualificationRequirement from taking the specified action. Valid arguments include
+        /// "Accept" (Worker cannot accept the HIT, but can preview the HIT and see it in their search results),
+        /// "PreviewAndAccept" (Worker cannot accept or preview the HIT, but can see the HIT in their search results),
+        /// and "DiscoverPreviewAndAccept" (Worker cannot accept, preview, or see the HIT in their search results). It's possible for you to create a HIT with multiple
+        /// QualificationRequirements (which can have different values for the ActionGuarded attribute). In this case,
+        /// the Worker is only permitted to perform an action when they have met all QualificationRequirements guarding
+        /// the action. The actions in the order of least restrictive to most restrictive are Discover, Preview and Accept.
+        /// For example, if a Worker meets all QualificationRequirements that are set to DiscoverPreviewAndAccept, but do
+        /// not meet all requirements that are set with PreviewAndAccept, then the Worker will be able to Discover, i.e. see the
+        /// HIT in their search result, but will not be able to Preview or Accept the HIT. ActionsGuarded should not be used in combination with the
+        /// <code>RequiredToPreview</code> field.
+        /// </p>
         pub fn set_actions_guarded(
             mut self,
             input: std::option::Option<crate::model::HitAccessActions>,
@@ -2580,6 +2998,7 @@ impl QualificationRequirement {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2591,8 +3010,11 @@ impl QualificationRequirement {
     std::hash::Hash,
 )]
 pub enum HitAccessActions {
+    #[allow(missing_docs)] // documentation missing in model
     Accept,
+    #[allow(missing_docs)] // documentation missing in model
     DiscoverPreviewAndAccept,
+    #[allow(missing_docs)] // documentation missing in model
     PreviewAndAccept,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2615,6 +3037,7 @@ impl std::str::FromStr for HitAccessActions {
     }
 }
 impl HitAccessActions {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             HitAccessActions::Accept => "Accept",
@@ -2623,6 +3046,7 @@ impl HitAccessActions {
             HitAccessActions::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Accept", "DiscoverPreviewAndAccept", "PreviewAndAccept"]
     }
@@ -2633,6 +3057,7 @@ impl AsRef<str> for HitAccessActions {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2644,15 +3069,25 @@ impl AsRef<str> for HitAccessActions {
     std::hash::Hash,
 )]
 pub enum Comparator {
+    #[allow(missing_docs)] // documentation missing in model
     DoesNotExist,
+    #[allow(missing_docs)] // documentation missing in model
     EqualTo,
+    #[allow(missing_docs)] // documentation missing in model
     Exists,
+    #[allow(missing_docs)] // documentation missing in model
     GreaterThan,
+    #[allow(missing_docs)] // documentation missing in model
     GreaterThanOrEqualTo,
+    #[allow(missing_docs)] // documentation missing in model
     In,
+    #[allow(missing_docs)] // documentation missing in model
     LessThan,
+    #[allow(missing_docs)] // documentation missing in model
     LessThanOrEqualTo,
+    #[allow(missing_docs)] // documentation missing in model
     NotEqualTo,
+    #[allow(missing_docs)] // documentation missing in model
     NotIn,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2682,6 +3117,7 @@ impl std::str::FromStr for Comparator {
     }
 }
 impl Comparator {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Comparator::DoesNotExist => "DoesNotExist",
@@ -2697,6 +3133,7 @@ impl Comparator {
             Comparator::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "DoesNotExist",
@@ -2718,6 +3155,7 @@ impl AsRef<str> for Comparator {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2729,10 +3167,15 @@ impl AsRef<str> for Comparator {
     std::hash::Hash,
 )]
 pub enum HitStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Assignable,
+    #[allow(missing_docs)] // documentation missing in model
     Disposed,
+    #[allow(missing_docs)] // documentation missing in model
     Reviewable,
+    #[allow(missing_docs)] // documentation missing in model
     Reviewing,
+    #[allow(missing_docs)] // documentation missing in model
     Unassignable,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2757,6 +3200,7 @@ impl std::str::FromStr for HitStatus {
     }
 }
 impl HitStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             HitStatus::Assignable => "Assignable",
@@ -2767,6 +3211,7 @@ impl HitStatus {
             HitStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "Assignable",
@@ -2783,6 +3228,7 @@ impl AsRef<str> for HitStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2794,7 +3240,9 @@ impl AsRef<str> for HitStatus {
     std::hash::Hash,
 )]
 pub enum ReviewableHitStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Reviewable,
+    #[allow(missing_docs)] // documentation missing in model
     Reviewing,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2816,6 +3264,7 @@ impl std::str::FromStr for ReviewableHitStatus {
     }
 }
 impl ReviewableHitStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ReviewableHitStatus::Reviewable => "Reviewable",
@@ -2823,6 +3272,7 @@ impl ReviewableHitStatus {
             ReviewableHitStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Reviewable", "Reviewing"]
     }
@@ -2841,6 +3291,7 @@ impl AsRef<str> for ReviewableHitStatus {
 pub struct QualificationRequest {
     /// <p>The ID of the Qualification request, a unique identifier
     /// generated when the request was submitted.
+    ///
     /// </p>
     pub qualification_request_id: std::option::Option<std::string::String>,
     /// <p> The ID of the Qualification type the Worker is requesting,
@@ -2866,7 +3317,7 @@ pub struct QualificationRequest {
     /// Qualification test, or the time the Worker requested the
     /// Qualification if the Qualification type does not have a test.
     /// </p>
-    pub submit_time: std::option::Option<smithy_types::Instant>,
+    pub submit_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for QualificationRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2891,16 +3342,21 @@ pub mod qualification_request {
         pub(crate) worker_id: std::option::Option<std::string::String>,
         pub(crate) test: std::option::Option<std::string::String>,
         pub(crate) answer: std::option::Option<std::string::String>,
-        pub(crate) submit_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) submit_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The ID of the Qualification request, a unique identifier
         /// generated when the request was submitted.
+        ///
         /// </p>
         pub fn qualification_request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.qualification_request_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Qualification request, a unique identifier
+        /// generated when the request was submitted.
+        ///
+        /// </p>
         pub fn set_qualification_request_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2915,6 +3371,9 @@ pub mod qualification_request {
             self.qualification_type_id = Some(input.into());
             self
         }
+        /// <p> The ID of the Qualification type the Worker is requesting,
+        /// as returned by the CreateQualificationType operation.
+        /// </p>
         pub fn set_qualification_type_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2927,6 +3386,7 @@ pub mod qualification_request {
             self.worker_id = Some(input.into());
             self
         }
+        /// <p> The ID of the Worker requesting the Qualification.</p>
         pub fn set_worker_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.worker_id = input;
             self
@@ -2940,6 +3400,11 @@ pub mod qualification_request {
             self.test = Some(input.into());
             self
         }
+        /// <p> The contents of the Qualification test that was presented to
+        /// the Worker, if the type has a test and the Worker has submitted
+        /// answers. This value is identical to the QuestionForm associated with
+        /// the Qualification type at the time the Worker requests the
+        /// Qualification.</p>
         pub fn set_test(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.test = input;
             self
@@ -2953,6 +3418,11 @@ pub mod qualification_request {
             self.answer = Some(input.into());
             self
         }
+        /// <p> The Worker's answers for the Qualification type's test
+        /// contained in a QuestionFormAnswers document, if the type has a test
+        /// and the Worker has submitted answers. If the Worker does not provide
+        /// any answers, Answer may be empty.
+        /// </p>
         pub fn set_answer(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.answer = input;
             self
@@ -2962,13 +3432,18 @@ pub mod qualification_request {
         /// Qualification test, or the time the Worker requested the
         /// Qualification if the Qualification type does not have a test.
         /// </p>
-        pub fn submit_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn submit_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.submit_time = Some(input);
             self
         }
+        /// <p>The date and time the Qualification request had a status of
+        /// Submitted. This is either the time the Worker submitted answers for a
+        /// Qualification test, or the time the Worker requested the
+        /// Qualification if the Qualification type does not have a test.
+        /// </p>
         pub fn set_submit_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.submit_time = input;
             self
@@ -3006,7 +3481,7 @@ pub struct BonusPayment {
     /// <p>The Reason text given when the bonus was granted, if any.</p>
     pub reason: std::option::Option<std::string::String>,
     /// <p>The date and time of when the bonus was granted.</p>
-    pub grant_time: std::option::Option<smithy_types::Instant>,
+    pub grant_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for BonusPayment {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3029,7 +3504,7 @@ pub mod bonus_payment {
         pub(crate) bonus_amount: std::option::Option<std::string::String>,
         pub(crate) assignment_id: std::option::Option<std::string::String>,
         pub(crate) reason: std::option::Option<std::string::String>,
-        pub(crate) grant_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) grant_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The ID of the Worker to whom the bonus was paid.</p>
@@ -3037,6 +3512,7 @@ pub mod bonus_payment {
             self.worker_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Worker to whom the bonus was paid.</p>
         pub fn set_worker_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.worker_id = input;
             self
@@ -3046,6 +3522,7 @@ pub mod bonus_payment {
             self.bonus_amount = Some(input.into());
             self
         }
+        /// <p>A string representing a currency amount.</p>
         pub fn set_bonus_amount(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bonus_amount = input;
             self
@@ -3055,6 +3532,7 @@ pub mod bonus_payment {
             self.assignment_id = Some(input.into());
             self
         }
+        /// <p>The ID of the assignment associated with this bonus payment.</p>
         pub fn set_assignment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3067,16 +3545,21 @@ pub mod bonus_payment {
             self.reason = Some(input.into());
             self
         }
+        /// <p>The Reason text given when the bonus was granted, if any.</p>
         pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.reason = input;
             self
         }
         /// <p>The date and time of when the bonus was granted.</p>
-        pub fn grant_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn grant_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.grant_time = Some(input);
             self
         }
-        pub fn set_grant_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date and time of when the bonus was granted.</p>
+        pub fn set_grant_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.grant_time = input;
             self
         }
@@ -3121,26 +3604,26 @@ pub struct Assignment {
     /// auto-approval delay specified by the Requester in the HIT. This value
     /// is omitted from the assignment if the Worker has not yet submitted
     /// results.</p>
-    pub auto_approval_time: std::option::Option<smithy_types::Instant>,
+    pub auto_approval_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p> The date and time the Worker accepted the assignment.</p>
-    pub accept_time: std::option::Option<smithy_types::Instant>,
+    pub accept_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p> If the Worker has submitted results, SubmitTime is the date
     /// and time the assignment was submitted. This value is omitted from the
     /// assignment if the Worker has not yet submitted results.</p>
-    pub submit_time: std::option::Option<smithy_types::Instant>,
+    pub submit_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p> If the Worker has submitted results and the Requester has
     /// approved the results, ApprovalTime is the date and time the Requester
     /// approved the results. This value is omitted from the assignment if
     /// the Requester has not yet approved the results.</p>
-    pub approval_time: std::option::Option<smithy_types::Instant>,
+    pub approval_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p> If the Worker has submitted results and the Requester has
     /// rejected the results, RejectionTime is the date and time the
     /// Requester rejected the results.</p>
-    pub rejection_time: std::option::Option<smithy_types::Instant>,
+    pub rejection_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p> The date and time of the deadline for the assignment. This
     /// value is derived from the deadline specification for the HIT and the
     /// date and time the Worker accepted the HIT.</p>
-    pub deadline: std::option::Option<smithy_types::Instant>,
+    pub deadline: std::option::Option<aws_smithy_types::Instant>,
     /// <p> The Worker's answers submitted for the HIT contained in a
     /// QuestionFormAnswers document, if the Worker provides an answer. If
     /// the Worker does not provide any answers, Answer may contain a
@@ -3179,12 +3662,12 @@ pub mod assignment {
         pub(crate) worker_id: std::option::Option<std::string::String>,
         pub(crate) hit_id: std::option::Option<std::string::String>,
         pub(crate) assignment_status: std::option::Option<crate::model::AssignmentStatus>,
-        pub(crate) auto_approval_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) accept_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) submit_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) approval_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) rejection_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) deadline: std::option::Option<smithy_types::Instant>,
+        pub(crate) auto_approval_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) accept_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) submit_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) approval_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) rejection_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) deadline: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) answer: std::option::Option<std::string::String>,
         pub(crate) requester_feedback: std::option::Option<std::string::String>,
     }
@@ -3194,6 +3677,7 @@ pub mod assignment {
             self.assignment_id = Some(input.into());
             self
         }
+        /// <p> A unique identifier for the assignment.</p>
         pub fn set_assignment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3206,6 +3690,7 @@ pub mod assignment {
             self.worker_id = Some(input.into());
             self
         }
+        /// <p> The ID of the Worker who accepted the HIT.</p>
         pub fn set_worker_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.worker_id = input;
             self
@@ -3215,6 +3700,7 @@ pub mod assignment {
             self.hit_id = Some(input.into());
             self
         }
+        /// <p> The ID of the HIT.</p>
         pub fn set_hit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.hit_id = input;
             self
@@ -3224,6 +3710,7 @@ pub mod assignment {
             self.assignment_status = Some(input);
             self
         }
+        /// <p> The status of the assignment.</p>
         pub fn set_assignment_status(
             mut self,
             input: std::option::Option<crate::model::AssignmentStatus>,
@@ -3238,25 +3725,33 @@ pub mod assignment {
         /// auto-approval delay specified by the Requester in the HIT. This value
         /// is omitted from the assignment if the Worker has not yet submitted
         /// results.</p>
-        pub fn auto_approval_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn auto_approval_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.auto_approval_time = Some(input);
             self
         }
+        /// <p> If results have been submitted, AutoApprovalTime is the date
+        /// and time the results of the assignment results are considered
+        /// Approved automatically if they have not already been explicitly
+        /// approved or rejected by the Requester. This value is derived from the
+        /// auto-approval delay specified by the Requester in the HIT. This value
+        /// is omitted from the assignment if the Worker has not yet submitted
+        /// results.</p>
         pub fn set_auto_approval_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.auto_approval_time = input;
             self
         }
         /// <p> The date and time the Worker accepted the assignment.</p>
-        pub fn accept_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn accept_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.accept_time = Some(input);
             self
         }
+        /// <p> The date and time the Worker accepted the assignment.</p>
         pub fn set_accept_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.accept_time = input;
             self
@@ -3264,13 +3759,16 @@ pub mod assignment {
         /// <p> If the Worker has submitted results, SubmitTime is the date
         /// and time the assignment was submitted. This value is omitted from the
         /// assignment if the Worker has not yet submitted results.</p>
-        pub fn submit_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn submit_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.submit_time = Some(input);
             self
         }
+        /// <p> If the Worker has submitted results, SubmitTime is the date
+        /// and time the assignment was submitted. This value is omitted from the
+        /// assignment if the Worker has not yet submitted results.</p>
         pub fn set_submit_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.submit_time = input;
             self
@@ -3279,13 +3777,17 @@ pub mod assignment {
         /// approved the results, ApprovalTime is the date and time the Requester
         /// approved the results. This value is omitted from the assignment if
         /// the Requester has not yet approved the results.</p>
-        pub fn approval_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn approval_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.approval_time = Some(input);
             self
         }
+        /// <p> If the Worker has submitted results and the Requester has
+        /// approved the results, ApprovalTime is the date and time the Requester
+        /// approved the results. This value is omitted from the assignment if
+        /// the Requester has not yet approved the results.</p>
         pub fn set_approval_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.approval_time = input;
             self
@@ -3293,13 +3795,16 @@ pub mod assignment {
         /// <p> If the Worker has submitted results and the Requester has
         /// rejected the results, RejectionTime is the date and time the
         /// Requester rejected the results.</p>
-        pub fn rejection_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn rejection_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.rejection_time = Some(input);
             self
         }
+        /// <p> If the Worker has submitted results and the Requester has
+        /// rejected the results, RejectionTime is the date and time the
+        /// Requester rejected the results.</p>
         pub fn set_rejection_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.rejection_time = input;
             self
@@ -3307,11 +3812,17 @@ pub mod assignment {
         /// <p> The date and time of the deadline for the assignment. This
         /// value is derived from the deadline specification for the HIT and the
         /// date and time the Worker accepted the HIT.</p>
-        pub fn deadline(mut self, input: smithy_types::Instant) -> Self {
+        pub fn deadline(mut self, input: aws_smithy_types::Instant) -> Self {
             self.deadline = Some(input);
             self
         }
-        pub fn set_deadline(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p> The date and time of the deadline for the assignment. This
+        /// value is derived from the deadline specification for the HIT and the
+        /// date and time the Worker accepted the HIT.</p>
+        pub fn set_deadline(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.deadline = input;
             self
         }
@@ -3323,6 +3834,10 @@ pub mod assignment {
             self.answer = Some(input.into());
             self
         }
+        /// <p> The Worker's answers submitted for the HIT contained in a
+        /// QuestionFormAnswers document, if the Worker provides an answer. If
+        /// the Worker does not provide any answers, Answer may contain a
+        /// QuestionFormAnswers document, or Answer may be empty.</p>
         pub fn set_answer(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.answer = input;
             self
@@ -3334,6 +3849,9 @@ pub mod assignment {
             self.requester_feedback = Some(input.into());
             self
         }
+        /// <p> The feedback string included with the call to the
+        /// ApproveAssignment operation or the RejectAssignment operation, if the
+        /// Requester approved or rejected the assignment and specified feedback.</p>
         pub fn set_requester_feedback(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3367,6 +3885,7 @@ impl Assignment {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3378,8 +3897,11 @@ impl Assignment {
     std::hash::Hash,
 )]
 pub enum AssignmentStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Approved,
+    #[allow(missing_docs)] // documentation missing in model
     Rejected,
+    #[allow(missing_docs)] // documentation missing in model
     Submitted,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3402,6 +3924,7 @@ impl std::str::FromStr for AssignmentStatus {
     }
 }
 impl AssignmentStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AssignmentStatus::Approved => "Approved",
@@ -3410,6 +3933,7 @@ impl AssignmentStatus {
             AssignmentStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Approved", "Rejected", "Submitted"]
     }
@@ -3460,6 +3984,8 @@ pub mod hit_layout_parameter {
             self.name = Some(input.into());
             self
         }
+        /// <p> The name of the parameter in the HITLayout.
+        /// </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -3471,6 +3997,9 @@ pub mod hit_layout_parameter {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value substituted for the parameter referenced in the
+        /// HITLayout.
+        /// </p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self

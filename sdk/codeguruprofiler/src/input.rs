@@ -15,6 +15,7 @@ pub mod add_notification_channels_input {
             self.profiling_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the profiling group that we are setting up notifications for.</p>
         pub fn set_profiling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -22,12 +23,18 @@ pub mod add_notification_channels_input {
             self.profiling_group_name = input;
             self
         }
+        /// Appends an item to `channels`.
+        ///
+        /// To override the contents of this collection use [`set_channels`](Self::set_channels).
+        ///
+        /// <p>One or 2 channels to report to when anomalies are detected.</p>
         pub fn channels(mut self, input: impl Into<crate::model::Channel>) -> Self {
             let mut v = self.channels.unwrap_or_default();
             v.push(input.into());
             self.channels = Some(v);
             self
         }
+        /// <p>One or 2 channels to report to when anomalies are detected.</p>
         pub fn set_channels(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Channel>>,
@@ -40,7 +47,7 @@ pub mod add_notification_channels_input {
             self,
         ) -> std::result::Result<
             crate::input::AddNotificationChannelsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::AddNotificationChannelsInput {
                 profiling_group_name: self.profiling_group_name,
@@ -61,27 +68,27 @@ impl AddNotificationChannelsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AddNotificationChannels,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AddNotificationChannelsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_1 = &_input.profiling_group_name;
             let input_1 =
                 input_1
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "profiling_group_name",
                         details: "cannot be empty or unset",
                     })?;
-            let profiling_group_name = smithy_http::label::fmt_string(input_1, false);
+            let profiling_group_name = aws_smithy_http::label::fmt_string(input_1, false);
             if profiling_group_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "profiling_group_name",
                     details: "cannot be empty or unset",
                 });
@@ -98,7 +105,7 @@ impl AddNotificationChannelsInput {
         fn update_http_builder(
             input: &crate::input::AddNotificationChannelsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -107,27 +114,29 @@ impl AddNotificationChannelsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AddNotificationChannelsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_add_notification_channels(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -150,15 +159,15 @@ impl AddNotificationChannelsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::AddNotificationChannels::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "AddNotificationChannels",
             "codeguruprofiler",
         ));
@@ -167,10 +176,10 @@ impl AddNotificationChannelsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -191,8 +200,8 @@ pub mod batch_get_frame_metric_data_input {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profiling_group_name: std::option::Option<std::string::String>,
-        pub(crate) start_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) period: std::option::Option<std::string::String>,
         pub(crate) target_resolution: std::option::Option<crate::model::AggregationPeriod>,
         pub(crate) frame_metrics: std::option::Option<std::vec::Vec<crate::model::FrameMetric>>,
@@ -206,6 +215,10 @@ pub mod batch_get_frame_metric_data_input {
             self.profiling_group_name = Some(input.into());
             self
         }
+        /// <p>
+        /// The name of the profiling group associated with the
+        /// the frame metrics used to return the time series values.
+        /// </p>
         pub fn set_profiling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -219,11 +232,20 @@ pub mod batch_get_frame_metric_data_input {
         /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
         /// millisecond past June 1, 2020 1:15:02 PM UTC.
         /// </p>
-        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>
+        /// The start time of the time period for the frame metrics used to return the time series values.
+        /// This is specified
+        /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
+        /// millisecond past June 1, 2020 1:15:02 PM UTC.
+        /// </p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.start_time = input;
             self
         }
@@ -233,11 +255,20 @@ pub mod batch_get_frame_metric_data_input {
         /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
         /// millisecond past June 1, 2020 1:15:02 PM UTC.
         /// </p>
-        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>
+        /// The end time of the time period for the returned time series values.
+        /// This is specified
+        /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
+        /// millisecond past June 1, 2020 1:15:02 PM UTC.
+        /// </p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.end_time = input;
             self
         }
@@ -250,6 +281,11 @@ pub mod batch_get_frame_metric_data_input {
             self.period = Some(input.into());
             self
         }
+        /// <p>
+        /// The duration of the frame metrics used to return the time series values.
+        /// Specify using the ISO 8601 format. The maximum period duration
+        /// is one day (<code>PT24H</code> or <code>P1D</code>).
+        /// </p>
         pub fn set_period(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.period = input;
             self
@@ -280,6 +316,28 @@ pub mod batch_get_frame_metric_data_input {
             self.target_resolution = Some(input);
             self
         }
+        /// <p>The requested resolution of time steps for the returned time series of values.
+        /// If the requested target resolution is not available due to data not being retained we provide a best effort
+        /// result by falling back to the most granular available resolution after the target resolution.
+        /// There are 3 valid values.
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>P1D</code> — 1 day
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PT1H</code> — 1 hour
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PT5M</code> — 5 minutes
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_target_resolution(
             mut self,
             input: std::option::Option<crate::model::AggregationPeriod>,
@@ -287,12 +345,24 @@ pub mod batch_get_frame_metric_data_input {
             self.target_resolution = input;
             self
         }
+        /// Appends an item to `frame_metrics`.
+        ///
+        /// To override the contents of this collection use [`set_frame_metrics`](Self::set_frame_metrics).
+        ///
+        /// <p>
+        /// The details of the metrics that are used to request a time series of values. The metric includes
+        /// the name of the frame, the aggregation type to calculate the metric value for the
+        /// frame, and the thread states to use to get the count for the metric value of the frame.</p>
         pub fn frame_metrics(mut self, input: impl Into<crate::model::FrameMetric>) -> Self {
             let mut v = self.frame_metrics.unwrap_or_default();
             v.push(input.into());
             self.frame_metrics = Some(v);
             self
         }
+        /// <p>
+        /// The details of the metrics that are used to request a time series of values. The metric includes
+        /// the name of the frame, the aggregation type to calculate the metric value for the
+        /// frame, and the thread states to use to get the count for the metric value of the frame.</p>
         pub fn set_frame_metrics(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FrameMetric>>,
@@ -305,7 +375,7 @@ pub mod batch_get_frame_metric_data_input {
             self,
         ) -> std::result::Result<
             crate::input::BatchGetFrameMetricDataInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::BatchGetFrameMetricDataInput {
                 profiling_group_name: self.profiling_group_name,
@@ -330,27 +400,27 @@ impl BatchGetFrameMetricDataInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::BatchGetFrameMetricData,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::BatchGetFrameMetricDataInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_2 = &_input.profiling_group_name;
             let input_2 =
                 input_2
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "profiling_group_name",
                         details: "cannot be empty or unset",
                     })?;
-            let profiling_group_name = smithy_http::label::fmt_string(input_2, false);
+            let profiling_group_name = aws_smithy_http::label::fmt_string(input_2, false);
             if profiling_group_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "profiling_group_name",
                     details: "cannot be empty or unset",
                 });
@@ -364,32 +434,32 @@ impl BatchGetFrameMetricDataInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::BatchGetFrameMetricDataInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_3) = &_input.start_time {
                 query.push_kv(
                     "startTime",
-                    &smithy_http::query::fmt_timestamp(
+                    &aws_smithy_http::query::fmt_timestamp(
                         inner_3,
-                        smithy_types::instant::Format::DateTime,
+                        aws_smithy_types::instant::Format::DateTime,
                     ),
                 );
             }
             if let Some(inner_4) = &_input.end_time {
                 query.push_kv(
                     "endTime",
-                    &smithy_http::query::fmt_timestamp(
+                    &aws_smithy_http::query::fmt_timestamp(
                         inner_4,
-                        smithy_types::instant::Format::DateTime,
+                        aws_smithy_types::instant::Format::DateTime,
                     ),
                 );
             }
             if let Some(inner_5) = &_input.period {
-                query.push_kv("period", &smithy_http::query::fmt_string(&inner_5));
+                query.push_kv("period", &aws_smithy_http::query::fmt_string(&inner_5));
             }
             if let Some(inner_6) = &_input.target_resolution {
                 query.push_kv(
                     "targetResolution",
-                    &smithy_http::query::fmt_string(&inner_6),
+                    &aws_smithy_http::query::fmt_string(&inner_6),
                 );
             }
         }
@@ -397,7 +467,7 @@ impl BatchGetFrameMetricDataInput {
         fn update_http_builder(
             input: &crate::input::BatchGetFrameMetricDataInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -407,27 +477,29 @@ impl BatchGetFrameMetricDataInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::BatchGetFrameMetricDataInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_batch_get_frame_metric_data(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -450,15 +522,15 @@ impl BatchGetFrameMetricDataInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::BatchGetFrameMetricData::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "BatchGetFrameMetricData",
             "codeguruprofiler",
         ));
@@ -467,10 +539,10 @@ impl BatchGetFrameMetricDataInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -504,6 +576,9 @@ pub mod configure_agent_input {
             self.profiling_group_name = Some(input.into());
             self
         }
+        /// <p>
+        /// The name of the profiling group for which the configured agent is collecting profiling data.
+        /// </p>
         pub fn set_profiling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -518,6 +593,9 @@ pub mod configure_agent_input {
             self.fleet_instance_id = Some(input.into());
             self
         }
+        /// <p> A universally unique identifier (UUID) for a profiling instance. For example, if the
+        /// profiling instance is an Amazon EC2 instance, it is the instance ID. If it is an AWS
+        /// Fargate container, it is the container's task ID. </p>
         pub fn set_fleet_instance_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -525,6 +603,59 @@ pub mod configure_agent_input {
             self.fleet_instance_id = input;
             self
         }
+        /// Adds a key-value pair to `metadata`.
+        ///
+        /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
+        ///
+        /// <p> Metadata captured about the compute platform the agent is running on. It includes
+        /// information about sampling and reporting. The valid fields are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>COMPUTE_PLATFORM</code> - The compute platform on which the agent is running
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AGENT_ID</code> - The ID for an agent instance.
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AWS_REQUEST_ID</code> - The AWS request ID of a Lambda invocation.
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>EXECUTION_ENVIRONMENT</code> - The execution environment a Lambda function is running on.
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>LAMBDA_FUNCTION_ARN</code> - The Amazon Resource Name (ARN) that is used to invoke a Lambda function.
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>LAMBDA_MEMORY_LIMIT_IN_MB</code> - The memory allocated to a Lambda function.
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>LAMBDA_REMAINING_TIME_IN_MILLISECONDS</code> - The time in milliseconds before execution of a Lambda function times out.
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>LAMBDA_TIME_GAP_BETWEEN_INVOKES_IN_MILLISECONDS</code> - The time in milliseconds between two invocations of a Lambda function.
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>LAMBDA_PREVIOUS_EXECUTION_TIME_IN_MILLISECONDS</code> - The time in milliseconds for the previous Lambda invocation.
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn metadata(
             mut self,
             k: impl Into<crate::model::MetadataField>,
@@ -535,6 +666,55 @@ pub mod configure_agent_input {
             self.metadata = Some(hash_map);
             self
         }
+        /// <p> Metadata captured about the compute platform the agent is running on. It includes
+        /// information about sampling and reporting. The valid fields are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>COMPUTE_PLATFORM</code> - The compute platform on which the agent is running
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AGENT_ID</code> - The ID for an agent instance.
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AWS_REQUEST_ID</code> - The AWS request ID of a Lambda invocation.
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>EXECUTION_ENVIRONMENT</code> - The execution environment a Lambda function is running on.
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>LAMBDA_FUNCTION_ARN</code> - The Amazon Resource Name (ARN) that is used to invoke a Lambda function.
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>LAMBDA_MEMORY_LIMIT_IN_MB</code> - The memory allocated to a Lambda function.
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>LAMBDA_REMAINING_TIME_IN_MILLISECONDS</code> - The time in milliseconds before execution of a Lambda function times out.
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>LAMBDA_TIME_GAP_BETWEEN_INVOKES_IN_MILLISECONDS</code> - The time in milliseconds between two invocations of a Lambda function.
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>LAMBDA_PREVIOUS_EXECUTION_TIME_IN_MILLISECONDS</code> - The time in milliseconds for the previous Lambda invocation.
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_metadata(
             mut self,
             input: std::option::Option<
@@ -549,7 +729,7 @@ pub mod configure_agent_input {
             self,
         ) -> std::result::Result<
             crate::input::ConfigureAgentInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ConfigureAgentInput {
                 profiling_group_name: self.profiling_group_name,
@@ -570,27 +750,27 @@ impl ConfigureAgentInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ConfigureAgent,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ConfigureAgentInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_7 = &_input.profiling_group_name;
             let input_7 =
                 input_7
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "profiling_group_name",
                         details: "cannot be empty or unset",
                     })?;
-            let profiling_group_name = smithy_http::label::fmt_string(input_7, false);
+            let profiling_group_name = aws_smithy_http::label::fmt_string(input_7, false);
             if profiling_group_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "profiling_group_name",
                     details: "cannot be empty or unset",
                 });
@@ -607,7 +787,7 @@ impl ConfigureAgentInput {
         fn update_http_builder(
             input: &crate::input::ConfigureAgentInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -616,24 +796,26 @@ impl ConfigureAgentInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ConfigureAgentInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_configure_agent(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -656,15 +838,15 @@ impl ConfigureAgentInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ConfigureAgent::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ConfigureAgent",
             "codeguruprofiler",
         ));
@@ -673,10 +855,10 @@ impl ConfigureAgentInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -711,6 +893,7 @@ pub mod create_profiling_group_input {
             self.profiling_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the profiling group to create.</p>
         pub fn set_profiling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -728,6 +911,12 @@ pub mod create_profiling_group_input {
             self.compute_platform = Some(input);
             self
         }
+        /// <p>
+        /// The compute platform of the profiling group. Use <code>AWSLambda</code> if your application
+        /// runs on AWS Lambda. Use <code>Default</code> if your application runs on a compute platform that
+        /// is not AWS Lambda, such an Amazon EC2 instance, an on-premises server, or a different platform.
+        /// If not specified, <code>Default</code> is used.         
+        /// </p>
         pub fn set_compute_platform(
             mut self,
             input: std::option::Option<crate::model::ComputePlatform>,
@@ -741,6 +930,8 @@ pub mod create_profiling_group_input {
             self.client_token = Some(input.into());
             self
         }
+        /// <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the
+        /// accidental creation of duplicate profiling groups if there are failures and retries. </p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -755,6 +946,9 @@ pub mod create_profiling_group_input {
             self.agent_orchestration_config = Some(input);
             self
         }
+        /// <p>
+        /// Specifies whether profiling is enabled or disabled for the created profiling group.
+        /// </p>
         pub fn set_agent_orchestration_config(
             mut self,
             input: std::option::Option<crate::model::AgentOrchestrationConfig>,
@@ -762,6 +956,13 @@ pub mod create_profiling_group_input {
             self.agent_orchestration_config = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>
+        /// A list of tags to add to the created profiling group.
+        /// </p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -772,6 +973,9 @@ pub mod create_profiling_group_input {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>
+        /// A list of tags to add to the created profiling group.
+        /// </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -786,7 +990,7 @@ pub mod create_profiling_group_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateProfilingGroupInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateProfilingGroupInput {
                 profiling_group_name: self.profiling_group_name,
@@ -809,30 +1013,30 @@ impl CreateProfilingGroupInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateProfilingGroup,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateProfilingGroupInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/profilingGroups").expect("formatting should succeed");
             Ok(())
         }
         fn uri_query(_input: &crate::input::CreateProfilingGroupInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_8) = &_input.client_token {
-                query.push_kv("clientToken", &smithy_http::query::fmt_string(&inner_8));
+                query.push_kv("clientToken", &aws_smithy_http::query::fmt_string(&inner_8));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::CreateProfilingGroupInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -842,10 +1046,10 @@ impl CreateProfilingGroupInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateProfilingGroupInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -855,17 +1059,17 @@ impl CreateProfilingGroupInput {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_profiling_group(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -888,15 +1092,15 @@ impl CreateProfilingGroupInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateProfilingGroup::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateProfilingGroup",
             "codeguruprofiler",
         ));
@@ -905,10 +1109,10 @@ impl CreateProfilingGroupInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -936,6 +1140,7 @@ pub mod delete_profiling_group_input {
             self.profiling_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the profiling group to delete.</p>
         pub fn set_profiling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -948,7 +1153,7 @@ pub mod delete_profiling_group_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteProfilingGroupInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteProfilingGroupInput {
                 profiling_group_name: self.profiling_group_name,
@@ -967,27 +1172,27 @@ impl DeleteProfilingGroupInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteProfilingGroup,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteProfilingGroupInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_9 = &_input.profiling_group_name;
             let input_9 =
                 input_9
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "profiling_group_name",
                         details: "cannot be empty or unset",
                     })?;
-            let profiling_group_name = smithy_http::label::fmt_string(input_9, false);
+            let profiling_group_name = aws_smithy_http::label::fmt_string(input_9, false);
             if profiling_group_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "profiling_group_name",
                     details: "cannot be empty or unset",
                 });
@@ -1004,7 +1209,7 @@ impl DeleteProfilingGroupInput {
         fn update_http_builder(
             input: &crate::input::DeleteProfilingGroupInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1013,23 +1218,23 @@ impl DeleteProfilingGroupInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteProfilingGroupInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1052,15 +1257,15 @@ impl DeleteProfilingGroupInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteProfilingGroup::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteProfilingGroup",
             "codeguruprofiler",
         ));
@@ -1069,10 +1274,10 @@ impl DeleteProfilingGroupInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1102,6 +1307,9 @@ pub mod describe_profiling_group_input {
             self.profiling_group_name = Some(input.into());
             self
         }
+        /// <p>
+        /// The name of the profiling group to get information about.
+        /// </p>
         pub fn set_profiling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1114,7 +1322,7 @@ pub mod describe_profiling_group_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeProfilingGroupInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeProfilingGroupInput {
                 profiling_group_name: self.profiling_group_name,
@@ -1133,27 +1341,27 @@ impl DescribeProfilingGroupInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeProfilingGroup,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeProfilingGroupInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_10 = &_input.profiling_group_name;
             let input_10 =
                 input_10
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "profiling_group_name",
                         details: "cannot be empty or unset",
                     })?;
-            let profiling_group_name = smithy_http::label::fmt_string(input_10, false);
+            let profiling_group_name = aws_smithy_http::label::fmt_string(input_10, false);
             if profiling_group_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "profiling_group_name",
                     details: "cannot be empty or unset",
                 });
@@ -1170,7 +1378,7 @@ impl DescribeProfilingGroupInput {
         fn update_http_builder(
             input: &crate::input::DescribeProfilingGroupInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1179,23 +1387,23 @@ impl DescribeProfilingGroupInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeProfilingGroupInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1218,15 +1426,15 @@ impl DescribeProfilingGroupInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeProfilingGroup::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeProfilingGroup",
             "codeguruprofiler",
         ));
@@ -1235,10 +1443,10 @@ impl DescribeProfilingGroupInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1275,6 +1483,14 @@ pub mod get_findings_report_account_summary_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>GetFindingsReportAccountSummary</code>
+        /// request where <code>maxResults</code> was used and the results exceeded the value of that parameter.
+        /// Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.
+        /// </p>
+        /// <note>
+        /// <p>This token should be treated as an opaque identifier that is only used to retrieve
+        /// the next items in a list and not for other programmatic purposes.</p>
+        /// </note>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1288,6 +1504,11 @@ pub mod get_findings_report_account_summary_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of results returned by <code> GetFindingsReportAccountSummary</code> in paginated output.
+        /// When this parameter is used, <code>GetFindingsReportAccountSummary</code> only returns <code>maxResults</code>
+        /// results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial
+        /// request can be seen by sending another <code>GetFindingsReportAccountSummary</code> request with the returned
+        /// <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1299,6 +1520,9 @@ pub mod get_findings_report_account_summary_input {
             self.daily_reports_only = Some(input);
             self
         }
+        /// <p>A <code>Boolean</code> value indicating whether to only return reports from daily profiles. If set
+        /// to <code>True</code>, only analysis data from daily profiles is returned. If set to <code>False</code>,
+        /// analysis data is returned from smaller time windows (for example, one hour).</p>
         pub fn set_daily_reports_only(mut self, input: std::option::Option<bool>) -> Self {
             self.daily_reports_only = input;
             self
@@ -1308,7 +1532,7 @@ pub mod get_findings_report_account_summary_input {
             self,
         ) -> std::result::Result<
             crate::input::GetFindingsReportAccountSummaryInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetFindingsReportAccountSummaryInput {
                 next_token: self.next_token,
@@ -1330,16 +1554,16 @@ impl GetFindingsReportAccountSummaryInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetFindingsReportAccountSummary,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetFindingsReportAccountSummaryInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/internal/findingsReports").expect("formatting should succeed");
             Ok(())
         }
@@ -1347,20 +1571,20 @@ impl GetFindingsReportAccountSummaryInput {
             _input: &crate::input::GetFindingsReportAccountSummaryInput,
             mut output: &mut String,
         ) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_11) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_11));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_11));
             }
             if let Some(inner_12) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(*inner_12).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_12).encode(),
                 );
             }
             if let Some(inner_13) = &_input.daily_reports_only {
                 query.push_kv(
                     "dailyReportsOnly",
-                    &smithy_types::primitive::Encoder::from(*inner_13).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_13).encode(),
                 );
             }
         }
@@ -1368,7 +1592,7 @@ impl GetFindingsReportAccountSummaryInput {
         fn update_http_builder(
             input: &crate::input::GetFindingsReportAccountSummaryInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1378,23 +1602,23 @@ impl GetFindingsReportAccountSummaryInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetFindingsReportAccountSummaryInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1417,15 +1641,15 @@ impl GetFindingsReportAccountSummaryInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetFindingsReportAccountSummary::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetFindingsReportAccountSummary",
             "codeguruprofiler",
         ));
@@ -1434,10 +1658,10 @@ impl GetFindingsReportAccountSummaryInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1465,6 +1689,7 @@ pub mod get_notification_configuration_input {
             self.profiling_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the profiling group we want to get the notification configuration for.</p>
         pub fn set_profiling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1477,7 +1702,7 @@ pub mod get_notification_configuration_input {
             self,
         ) -> std::result::Result<
             crate::input::GetNotificationConfigurationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetNotificationConfigurationInput {
                 profiling_group_name: self.profiling_group_name,
@@ -1497,27 +1722,27 @@ impl GetNotificationConfigurationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetNotificationConfiguration,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetNotificationConfigurationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_14 = &_input.profiling_group_name;
             let input_14 =
                 input_14
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "profiling_group_name",
                         details: "cannot be empty or unset",
                     })?;
-            let profiling_group_name = smithy_http::label::fmt_string(input_14, false);
+            let profiling_group_name = aws_smithy_http::label::fmt_string(input_14, false);
             if profiling_group_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "profiling_group_name",
                     details: "cannot be empty or unset",
                 });
@@ -1534,7 +1759,7 @@ impl GetNotificationConfigurationInput {
         fn update_http_builder(
             input: &crate::input::GetNotificationConfigurationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1543,23 +1768,23 @@ impl GetNotificationConfigurationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetNotificationConfigurationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1582,15 +1807,15 @@ impl GetNotificationConfigurationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetNotificationConfiguration::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetNotificationConfiguration",
             "codeguruprofiler",
         ));
@@ -1599,10 +1824,10 @@ impl GetNotificationConfigurationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1630,6 +1855,7 @@ pub mod get_policy_input {
             self.profiling_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the profiling group.</p>
         pub fn set_profiling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1640,7 +1866,7 @@ pub mod get_policy_input {
         /// Consumes the builder and constructs a [`GetPolicyInput`](crate::input::GetPolicyInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetPolicyInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::GetPolicyInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::GetPolicyInput {
                 profiling_group_name: self.profiling_group_name,
@@ -1659,27 +1885,27 @@ impl GetPolicyInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetPolicy,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetPolicyInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_15 = &_input.profiling_group_name;
             let input_15 =
                 input_15
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "profiling_group_name",
                         details: "cannot be empty or unset",
                     })?;
-            let profiling_group_name = smithy_http::label::fmt_string(input_15, false);
+            let profiling_group_name = aws_smithy_http::label::fmt_string(input_15, false);
             if profiling_group_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "profiling_group_name",
                     details: "cannot be empty or unset",
                 });
@@ -1696,7 +1922,7 @@ impl GetPolicyInput {
         fn update_http_builder(
             input: &crate::input::GetPolicyInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1705,23 +1931,23 @@ impl GetPolicyInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetPolicyInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1744,13 +1970,13 @@ impl GetPolicyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
         let op =
-            smithy_http::operation::Operation::new(request, crate::operation::GetPolicy::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
+            aws_smithy_http::operation::Operation::new(request, crate::operation::GetPolicy::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "GetPolicy",
                     "codeguruprofiler",
                 ));
@@ -1759,10 +1985,10 @@ impl GetPolicyInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1783,9 +2009,9 @@ pub mod get_profile_input {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profiling_group_name: std::option::Option<std::string::String>,
-        pub(crate) start_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) period: std::option::Option<std::string::String>,
-        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) max_depth: std::option::Option<i32>,
         pub(crate) accept: std::option::Option<std::string::String>,
     }
@@ -1795,6 +2021,7 @@ pub mod get_profile_input {
             self.profiling_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the profiling group to get.</p>
         pub fn set_profiling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1805,15 +2032,27 @@ pub mod get_profile_input {
         /// <p>The start time of the profile to get. Specify using
         /// the ISO 8601 format. For example,
         /// 2020-06-01T13:15:02.001Z  represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
+        ///
         /// <p>
         /// If you specify <code>startTime</code>, then you must also specify <code>period</code>
         /// or <code>endTime</code>, but not both.
         /// </p>
-        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The start time of the profile to get. Specify using
+        /// the ISO 8601 format. For example,
+        /// 2020-06-01T13:15:02.001Z  represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
+        ///
+        /// <p>
+        /// If you specify <code>startTime</code>, then you must also specify <code>period</code>
+        /// or <code>endTime</code>, but not both.
+        /// </p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.start_time = input;
             self
         }
@@ -1822,6 +2061,7 @@ pub mod get_profile_input {
         /// the time range for the returned aggregated profile. Specify using
         /// the ISO 8601 format. For example, <code>P1DT1H1M1S</code>.
         /// </p>
+        ///
         /// <p>
         /// To get the latest aggregated profile, specify only <code>period</code>.
         /// </p>
@@ -1829,6 +2069,15 @@ pub mod get_profile_input {
             self.period = Some(input.into());
             self
         }
+        /// <p>
+        /// Used with <code>startTime</code> or <code>endTime</code> to specify
+        /// the time range for the returned aggregated profile. Specify using
+        /// the ISO 8601 format. For example, <code>P1DT1H1M1S</code>.
+        /// </p>
+        ///
+        /// <p>
+        /// To get the latest aggregated profile, specify only <code>period</code>.
+        /// </p>
         pub fn set_period(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.period = input;
             self
@@ -1842,11 +2091,23 @@ pub mod get_profile_input {
         /// If you specify <code>endTime</code>, then you must also specify <code>period</code>
         /// or <code>startTime</code>, but not both.
         /// </p>
-        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>
+        /// The end time of the requested profile. Specify using
+        /// the ISO 8601 format. For example,
+        /// 2020-06-01T13:15:02.001Z  represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.
+        /// </p>
+        /// <p>
+        /// If you specify <code>endTime</code>, then you must also specify <code>period</code>
+        /// or <code>startTime</code>, but not both.
+        /// </p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.end_time = input;
             self
         }
@@ -1862,6 +2123,14 @@ pub mod get_profile_input {
             self.max_depth = Some(input);
             self
         }
+        /// <p>
+        /// The maximum depth of the stacks in the code that is represented in
+        /// the aggregated profile. For example, if CodeGuru Profiler finds a method <code>A</code>,
+        /// which calls method <code>B</code>, which calls method <code>C</code>, which
+        /// calls method <code>D</code>, then the depth is 4. If the <code>maxDepth</code> is
+        /// set to 2, then the aggregated profile contains representations of methods <code>A</code>
+        /// and <code>B</code>.
+        /// </p>
         pub fn set_max_depth(mut self, input: std::option::Option<i32>) -> Self {
             self.max_depth = input;
             self
@@ -1872,6 +2141,7 @@ pub mod get_profile_input {
         /// HTTP request. You can specify one of the following:
         /// or the default .
         /// </p>
+        ///
         /// <ul>
         /// <li>
         /// <p>
@@ -1889,6 +2159,26 @@ pub mod get_profile_input {
             self.accept = Some(input.into());
             self
         }
+        /// <p>
+        /// The format of the returned profiling data. The format maps to the
+        /// <code>Accept</code> and <code>Content-Type</code> headers of the
+        /// HTTP request. You can specify one of the following:
+        /// or the default .
+        /// </p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>application/json</code> — standard JSON format
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information,
+        /// see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>.
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_accept(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.accept = input;
             self
@@ -1896,8 +2186,10 @@ pub mod get_profile_input {
         /// Consumes the builder and constructs a [`GetProfileInput`](crate::input::GetProfileInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetProfileInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetProfileInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetProfileInput {
                 profiling_group_name: self.profiling_group_name,
                 start_time: self.start_time,
@@ -1920,27 +2212,27 @@ impl GetProfileInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetProfile,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetProfileInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_16 = &_input.profiling_group_name;
             let input_16 =
                 input_16
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "profiling_group_name",
                         details: "cannot be empty or unset",
                     })?;
-            let profiling_group_name = smithy_http::label::fmt_string(input_16, false);
+            let profiling_group_name = aws_smithy_http::label::fmt_string(input_16, false);
             if profiling_group_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "profiling_group_name",
                     details: "cannot be empty or unset",
                 });
@@ -1956,7 +2248,7 @@ impl GetProfileInput {
         fn add_headers(
             _input: &crate::input::GetProfileInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_17) = &_input.accept {
                 let formatted_18 = AsRef::<str>::as_ref(inner_17);
@@ -1964,7 +2256,7 @@ impl GetProfileInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_18;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "accept",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -1977,32 +2269,32 @@ impl GetProfileInput {
             Ok(builder)
         }
         fn uri_query(_input: &crate::input::GetProfileInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_19) = &_input.start_time {
                 query.push_kv(
                     "startTime",
-                    &smithy_http::query::fmt_timestamp(
+                    &aws_smithy_http::query::fmt_timestamp(
                         inner_19,
-                        smithy_types::instant::Format::DateTime,
+                        aws_smithy_types::instant::Format::DateTime,
                     ),
                 );
             }
             if let Some(inner_20) = &_input.period {
-                query.push_kv("period", &smithy_http::query::fmt_string(&inner_20));
+                query.push_kv("period", &aws_smithy_http::query::fmt_string(&inner_20));
             }
             if let Some(inner_21) = &_input.end_time {
                 query.push_kv(
                     "endTime",
-                    &smithy_http::query::fmt_timestamp(
+                    &aws_smithy_http::query::fmt_timestamp(
                         inner_21,
-                        smithy_types::instant::Format::DateTime,
+                        aws_smithy_types::instant::Format::DateTime,
                     ),
                 );
             }
             if let Some(inner_22) = &_input.max_depth {
                 query.push_kv(
                     "maxDepth",
-                    &smithy_types::primitive::Encoder::from(*inner_22).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_22).encode(),
                 );
             }
         }
@@ -2010,7 +2302,7 @@ impl GetProfileInput {
         fn update_http_builder(
             input: &crate::input::GetProfileInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2021,23 +2313,23 @@ impl GetProfileInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetProfileInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2060,25 +2352,27 @@ impl GetProfileInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::GetProfile::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "GetProfile",
-                    "codeguruprofiler",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetProfile::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetProfile",
+            "codeguruprofiler",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2099,8 +2393,8 @@ pub mod get_recommendations_input {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profiling_group_name: std::option::Option<std::string::String>,
-        pub(crate) start_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) locale: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2111,6 +2405,9 @@ pub mod get_recommendations_input {
             self.profiling_group_name = Some(input.into());
             self
         }
+        /// <p>
+        /// The name of the profiling group to get analysis data about.
+        /// </p>
         pub fn set_profiling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2124,11 +2421,20 @@ pub mod get_recommendations_input {
         /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
         /// millisecond past June 1, 2020 1:15:02 PM UTC.
         /// </p>
-        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>
+        /// The end time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>.
+        /// This is specified
+        /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
+        /// millisecond past June 1, 2020 1:15:02 PM UTC.
+        /// </p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.start_time = input;
             self
         }
@@ -2138,11 +2444,20 @@ pub mod get_recommendations_input {
         /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
         /// millisecond past June 1, 2020 1:15:02 PM UTC.
         /// </p>
-        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>
+        /// The start time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>.
+        /// This is specified
+        /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
+        /// millisecond past June 1, 2020 1:15:02 PM UTC.
+        /// </p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.end_time = input;
             self
         }
@@ -2211,6 +2526,67 @@ pub mod get_recommendations_input {
             self.locale = Some(input.into());
             self
         }
+        /// <p>
+        /// The language used to provide analysis. Specify using a string that is one
+        /// of the following <code>BCP 47</code> language codes.
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>de-DE</code> - German, Germany
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>en-GB</code> - English, United Kingdom
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>en-US</code> - English, United States
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>es-ES</code> - Spanish, Spain
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>fr-FR</code> - French, France
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>it-IT</code> - Italian, Italy
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ja-JP</code> - Japanese, Japan
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ko-KR</code> - Korean, Republic of Korea
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>pt-BR</code> - Portugese, Brazil
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh-CN</code> - Chinese, China
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>zh-TW</code> - Chinese, Taiwan
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_locale(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.locale = input;
             self
@@ -2220,7 +2596,7 @@ pub mod get_recommendations_input {
             self,
         ) -> std::result::Result<
             crate::input::GetRecommendationsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetRecommendationsInput {
                 profiling_group_name: self.profiling_group_name,
@@ -2242,27 +2618,27 @@ impl GetRecommendationsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetRecommendations,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetRecommendationsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_23 = &_input.profiling_group_name;
             let input_23 =
                 input_23
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "profiling_group_name",
                         details: "cannot be empty or unset",
                     })?;
-            let profiling_group_name = smithy_http::label::fmt_string(input_23, false);
+            let profiling_group_name = aws_smithy_http::label::fmt_string(input_23, false);
             if profiling_group_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "profiling_group_name",
                     details: "cannot be empty or unset",
                 });
@@ -2276,34 +2652,34 @@ impl GetRecommendationsInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::GetRecommendationsInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_24) = &_input.start_time {
                 query.push_kv(
                     "startTime",
-                    &smithy_http::query::fmt_timestamp(
+                    &aws_smithy_http::query::fmt_timestamp(
                         inner_24,
-                        smithy_types::instant::Format::DateTime,
+                        aws_smithy_types::instant::Format::DateTime,
                     ),
                 );
             }
             if let Some(inner_25) = &_input.end_time {
                 query.push_kv(
                     "endTime",
-                    &smithy_http::query::fmt_timestamp(
+                    &aws_smithy_http::query::fmt_timestamp(
                         inner_25,
-                        smithy_types::instant::Format::DateTime,
+                        aws_smithy_types::instant::Format::DateTime,
                     ),
                 );
             }
             if let Some(inner_26) = &_input.locale {
-                query.push_kv("locale", &smithy_http::query::fmt_string(&inner_26));
+                query.push_kv("locale", &aws_smithy_http::query::fmt_string(&inner_26));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::GetRecommendationsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2313,23 +2689,23 @@ impl GetRecommendationsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetRecommendationsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2352,15 +2728,15 @@ impl GetRecommendationsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetRecommendations::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetRecommendations",
             "codeguruprofiler",
         ));
@@ -2369,10 +2745,10 @@ impl GetRecommendationsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2393,8 +2769,8 @@ pub mod list_findings_reports_input {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profiling_group_name: std::option::Option<std::string::String>,
-        pub(crate) start_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) daily_reports_only: std::option::Option<bool>,
@@ -2405,6 +2781,7 @@ pub mod list_findings_reports_input {
             self.profiling_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the profiling group from which to search for analysis data.</p>
         pub fn set_profiling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2418,11 +2795,20 @@ pub mod list_findings_reports_input {
         /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
         /// millisecond past June 1, 2020 1:15:02 PM UTC.
         /// </p>
-        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>
+        /// The start time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>.
+        /// This is specified
+        /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
+        /// millisecond past June 1, 2020 1:15:02 PM UTC.
+        /// </p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.start_time = input;
             self
         }
@@ -2432,11 +2818,20 @@ pub mod list_findings_reports_input {
         /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
         /// millisecond past June 1, 2020 1:15:02 PM UTC.
         /// </p>
-        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>
+        /// The end time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>.
+        /// This is specified
+        /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
+        /// millisecond past June 1, 2020 1:15:02 PM UTC.
+        /// </p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.end_time = input;
             self
         }
@@ -2452,6 +2847,14 @@ pub mod list_findings_reports_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListFindingsReportsRequest</code>
+        /// request where <code>maxResults</code> was used and the results exceeded the value of that parameter.
+        /// Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.
+        /// </p>
+        /// <note>
+        /// <p>This token should be treated as an opaque identifier that is only used to retrieve
+        /// the next items in a list and not for other programmatic purposes.</p>
+        /// </note>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2466,6 +2869,12 @@ pub mod list_findings_reports_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of report results returned by <code>ListFindingsReports</code>
+        /// in paginated output. When this parameter is used, <code>ListFindingsReports</code> only returns
+        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code> response
+        /// element. The remaining results of the initial request
+        /// can be seen by sending another <code>ListFindingsReports</code> request with the returned
+        /// <code>nextToken</code> value.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -2477,6 +2886,9 @@ pub mod list_findings_reports_input {
             self.daily_reports_only = Some(input);
             self
         }
+        /// <p>A <code>Boolean</code> value indicating whether to only return reports from daily profiles. If set
+        /// to <code>True</code>, only analysis data from daily profiles is returned. If set to <code>False</code>,
+        /// analysis data is returned from smaller time windows (for example, one hour).</p>
         pub fn set_daily_reports_only(mut self, input: std::option::Option<bool>) -> Self {
             self.daily_reports_only = input;
             self
@@ -2486,7 +2898,7 @@ pub mod list_findings_reports_input {
             self,
         ) -> std::result::Result<
             crate::input::ListFindingsReportsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListFindingsReportsInput {
                 profiling_group_name: self.profiling_group_name,
@@ -2510,27 +2922,27 @@ impl ListFindingsReportsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListFindingsReports,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListFindingsReportsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_27 = &_input.profiling_group_name;
             let input_27 =
                 input_27
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "profiling_group_name",
                         details: "cannot be empty or unset",
                     })?;
-            let profiling_group_name = smithy_http::label::fmt_string(input_27, false);
+            let profiling_group_name = aws_smithy_http::label::fmt_string(input_27, false);
             if profiling_group_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "profiling_group_name",
                     details: "cannot be empty or unset",
                 });
@@ -2544,38 +2956,38 @@ impl ListFindingsReportsInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListFindingsReportsInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_28) = &_input.start_time {
                 query.push_kv(
                     "startTime",
-                    &smithy_http::query::fmt_timestamp(
+                    &aws_smithy_http::query::fmt_timestamp(
                         inner_28,
-                        smithy_types::instant::Format::DateTime,
+                        aws_smithy_types::instant::Format::DateTime,
                     ),
                 );
             }
             if let Some(inner_29) = &_input.end_time {
                 query.push_kv(
                     "endTime",
-                    &smithy_http::query::fmt_timestamp(
+                    &aws_smithy_http::query::fmt_timestamp(
                         inner_29,
-                        smithy_types::instant::Format::DateTime,
+                        aws_smithy_types::instant::Format::DateTime,
                     ),
                 );
             }
             if let Some(inner_30) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_30));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_30));
             }
             if let Some(inner_31) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(*inner_31).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_31).encode(),
                 );
             }
             if let Some(inner_32) = &_input.daily_reports_only {
                 query.push_kv(
                     "dailyReportsOnly",
-                    &smithy_types::primitive::Encoder::from(*inner_32).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_32).encode(),
                 );
             }
         }
@@ -2583,7 +2995,7 @@ impl ListFindingsReportsInput {
         fn update_http_builder(
             input: &crate::input::ListFindingsReportsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2593,23 +3005,23 @@ impl ListFindingsReportsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListFindingsReportsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2632,15 +3044,15 @@ impl ListFindingsReportsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListFindingsReports::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListFindingsReports",
             "codeguruprofiler",
         ));
@@ -2649,10 +3061,10 @@ impl ListFindingsReportsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2673,8 +3085,8 @@ pub mod list_profile_times_input {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profiling_group_name: std::option::Option<std::string::String>,
-        pub(crate) start_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) period: std::option::Option<crate::model::AggregationPeriod>,
         pub(crate) order_by: std::option::Option<crate::model::OrderBy>,
         pub(crate) max_results: std::option::Option<i32>,
@@ -2686,6 +3098,7 @@ pub mod list_profile_times_input {
             self.profiling_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the profiling group.</p>
         pub fn set_profiling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2694,20 +3107,28 @@ pub mod list_profile_times_input {
             self
         }
         /// <p>The start time of the time range from which to list the profiles.</p>
-        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The start time of the time range from which to list the profiles.</p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The end time of the time range from which to list the profiles.</p>
-        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The end time of the time range from which to list the profiles.</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.end_time = input;
             self
         }
@@ -2736,6 +3157,27 @@ pub mod list_profile_times_input {
             self.period = Some(input);
             self
         }
+        /// <p>
+        /// The aggregation period. This specifies the period during which an aggregation profile
+        /// collects posted agent profiles for a profiling group. There are 3 valid values.
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>P1D</code> — 1 day
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PT1H</code> — 1 hour
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PT5M</code> — 5 minutes
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_period(
             mut self,
             input: std::option::Option<crate::model::AggregationPeriod>,
@@ -2750,6 +3192,9 @@ pub mod list_profile_times_input {
             self.order_by = Some(input);
             self
         }
+        /// <p>The order (ascending or descending by start time of the profile) to
+        /// use when listing profiles. Defaults to <code>TIMESTAMP_DESCENDING</code>.
+        /// </p>
         pub fn set_order_by(mut self, input: std::option::Option<crate::model::OrderBy>) -> Self {
             self.order_by = input;
             self
@@ -2765,6 +3210,13 @@ pub mod list_profile_times_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of profile time results returned by <code>ListProfileTimes</code>
+        /// in paginated output. When this parameter is used, <code>ListProfileTimes</code> only returns
+        /// <code>maxResults</code> results in a single page with a <code>nextToken</code> response
+        /// element. The remaining results of the initial request
+        /// can be seen by sending another <code>ListProfileTimes</code> request with the returned
+        /// <code>nextToken</code> value.
+        /// </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -2782,6 +3234,15 @@ pub mod list_profile_times_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The <code>nextToken</code> value returned from a previous paginated
+        /// <code>ListProfileTimes</code> request where <code>maxResults</code> was used and the results
+        /// exceeded the value of that parameter. Pagination continues from the end of the previous results
+        /// that returned the <code>nextToken</code> value.
+        /// </p>
+        /// <note>
+        /// <p>This token should be treated as an opaque identifier that is only used to retrieve
+        /// the next items in a list and not for other programmatic purposes.</p>
+        /// </note>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2791,7 +3252,7 @@ pub mod list_profile_times_input {
             self,
         ) -> std::result::Result<
             crate::input::ListProfileTimesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListProfileTimesInput {
                 profiling_group_name: self.profiling_group_name,
@@ -2816,27 +3277,27 @@ impl ListProfileTimesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListProfileTimes,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListProfileTimesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_33 = &_input.profiling_group_name;
             let input_33 =
                 input_33
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "profiling_group_name",
                         details: "cannot be empty or unset",
                     })?;
-            let profiling_group_name = smithy_http::label::fmt_string(input_33, false);
+            let profiling_group_name = aws_smithy_http::label::fmt_string(input_33, false);
             if profiling_group_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "profiling_group_name",
                     details: "cannot be empty or unset",
                 });
@@ -2850,46 +3311,46 @@ impl ListProfileTimesInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListProfileTimesInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_34) = &_input.start_time {
                 query.push_kv(
                     "startTime",
-                    &smithy_http::query::fmt_timestamp(
+                    &aws_smithy_http::query::fmt_timestamp(
                         inner_34,
-                        smithy_types::instant::Format::DateTime,
+                        aws_smithy_types::instant::Format::DateTime,
                     ),
                 );
             }
             if let Some(inner_35) = &_input.end_time {
                 query.push_kv(
                     "endTime",
-                    &smithy_http::query::fmt_timestamp(
+                    &aws_smithy_http::query::fmt_timestamp(
                         inner_35,
-                        smithy_types::instant::Format::DateTime,
+                        aws_smithy_types::instant::Format::DateTime,
                     ),
                 );
             }
             if let Some(inner_36) = &_input.period {
-                query.push_kv("period", &smithy_http::query::fmt_string(&inner_36));
+                query.push_kv("period", &aws_smithy_http::query::fmt_string(&inner_36));
             }
             if let Some(inner_37) = &_input.order_by {
-                query.push_kv("orderBy", &smithy_http::query::fmt_string(&inner_37));
+                query.push_kv("orderBy", &aws_smithy_http::query::fmt_string(&inner_37));
             }
             if let Some(inner_38) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(*inner_38).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_38).encode(),
                 );
             }
             if let Some(inner_39) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_39));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_39));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::ListProfileTimesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2899,23 +3360,23 @@ impl ListProfileTimesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListProfileTimesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2938,15 +3399,15 @@ impl ListProfileTimesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListProfileTimes::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListProfileTimes",
             "codeguruprofiler",
         ));
@@ -2955,10 +3416,10 @@ impl ListProfileTimesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2996,6 +3457,15 @@ pub mod list_profiling_groups_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The <code>nextToken</code> value returned from a previous paginated
+        /// <code>ListProfilingGroups</code> request where <code>maxResults</code> was used and the results
+        /// exceeded the value of that parameter. Pagination continues from the end of the previous results
+        /// that returned the <code>nextToken</code> value.
+        /// </p>
+        /// <note>
+        /// <p>This token should be treated as an opaque identifier that is only used to retrieve
+        /// the next items in a list and not for other programmatic purposes.</p>
+        /// </note>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3011,6 +3481,13 @@ pub mod list_profiling_groups_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of profiling groups results returned by <code>ListProfilingGroups</code>
+        /// in paginated output. When this parameter is used, <code>ListProfilingGroups</code> only returns
+        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code> response
+        /// element. The remaining results of the initial request
+        /// can be seen by sending another <code>ListProfilingGroups</code> request with the returned
+        /// <code>nextToken</code> value.
+        /// </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3026,6 +3503,13 @@ pub mod list_profiling_groups_input {
             self.include_description = Some(input);
             self
         }
+        /// <p>A <code>Boolean</code> value indicating whether to include a description. If <code>true</code>,
+        /// then a list of
+        /// <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+        /// <code>ProfilingGroupDescription</code>
+        /// </a> objects
+        /// that contain detailed information about profiling groups is returned. If <code>false</code>, then
+        /// a list of profiling group names is returned.</p>
         pub fn set_include_description(mut self, input: std::option::Option<bool>) -> Self {
             self.include_description = input;
             self
@@ -3035,7 +3519,7 @@ pub mod list_profiling_groups_input {
             self,
         ) -> std::result::Result<
             crate::input::ListProfilingGroupsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListProfilingGroupsInput {
                 next_token: self.next_token,
@@ -3056,34 +3540,34 @@ impl ListProfilingGroupsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListProfilingGroups,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListProfilingGroupsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/profilingGroups").expect("formatting should succeed");
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListProfilingGroupsInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_40) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_40));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_40));
             }
             if let Some(inner_41) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(*inner_41).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_41).encode(),
                 );
             }
             if let Some(inner_42) = &_input.include_description {
                 query.push_kv(
                     "includeDescription",
-                    &smithy_types::primitive::Encoder::from(*inner_42).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_42).encode(),
                 );
             }
         }
@@ -3091,7 +3575,7 @@ impl ListProfilingGroupsInput {
         fn update_http_builder(
             input: &crate::input::ListProfilingGroupsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3101,23 +3585,23 @@ impl ListProfilingGroupsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListProfilingGroupsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3140,15 +3624,15 @@ impl ListProfilingGroupsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListProfilingGroups::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListProfilingGroups",
             "codeguruprofiler",
         ));
@@ -3157,10 +3641,10 @@ impl ListProfilingGroupsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3190,6 +3674,9 @@ pub mod list_tags_for_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>
+        /// The Amazon Resource Name (ARN) of the resource that contains the tags to return.
+        /// </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -3199,7 +3686,7 @@ pub mod list_tags_for_resource_input {
             self,
         ) -> std::result::Result<
             crate::input::ListTagsForResourceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListTagsForResourceInput {
                 resource_arn: self.resource_arn,
@@ -3218,27 +3705,27 @@ impl ListTagsForResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListTagsForResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_43 = &_input.resource_arn;
             let input_43 =
                 input_43
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = smithy_http::label::fmt_string(input_43, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_43, false);
             if resource_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 });
@@ -3251,7 +3738,7 @@ impl ListTagsForResourceInput {
         fn update_http_builder(
             input: &crate::input::ListTagsForResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3260,23 +3747,23 @@ impl ListTagsForResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListTagsForResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3299,15 +3786,15 @@ impl ListTagsForResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListTagsForResource::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListTagsForResource",
             "codeguruprofiler",
         ));
@@ -3316,10 +3803,10 @@ impl ListTagsForResourceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3340,7 +3827,7 @@ pub mod post_agent_profile_input {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) profiling_group_name: std::option::Option<std::string::String>,
-        pub(crate) agent_profile: std::option::Option<smithy_types::Blob>,
+        pub(crate) agent_profile: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) profile_token: std::option::Option<std::string::String>,
         pub(crate) content_type: std::option::Option<std::string::String>,
     }
@@ -3353,6 +3840,10 @@ pub mod post_agent_profile_input {
             self.profiling_group_name = Some(input.into());
             self
         }
+        /// <p>
+        /// The name of the profiling group with the aggregated profile that receives the
+        /// submitted profiling data.
+        /// </p>
         pub fn set_profiling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3363,11 +3854,17 @@ pub mod post_agent_profile_input {
         /// <p>
         /// The submitted profiling data.
         /// </p>
-        pub fn agent_profile(mut self, input: smithy_types::Blob) -> Self {
+        pub fn agent_profile(mut self, input: aws_smithy_types::Blob) -> Self {
             self.agent_profile = Some(input);
             self
         }
-        pub fn set_agent_profile(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+        /// <p>
+        /// The submitted profiling data.
+        /// </p>
+        pub fn set_agent_profile(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Blob>,
+        ) -> Self {
             self.agent_profile = input;
             self
         }
@@ -3377,6 +3874,8 @@ pub mod post_agent_profile_input {
             self.profile_token = Some(input.into());
             self
         }
+        /// <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the
+        /// accidental submission of duplicate profiling data if there are failures and retries. </p>
         pub fn set_profile_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3390,6 +3889,7 @@ pub mod post_agent_profile_input {
         /// HTTP request. You can specify one of the following:
         /// or the default .
         /// </p>
+        ///
         /// <ul>
         /// <li>
         /// <p>
@@ -3407,6 +3907,26 @@ pub mod post_agent_profile_input {
             self.content_type = Some(input.into());
             self
         }
+        /// <p>
+        /// The format of the submitted profiling data. The format maps to the
+        /// <code>Accept</code> and <code>Content-Type</code> headers of the
+        /// HTTP request. You can specify one of the following:
+        /// or the default .
+        /// </p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>application/json</code> — standard JSON format
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information,
+        /// see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>.
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_type = input;
             self
@@ -3416,7 +3936,7 @@ pub mod post_agent_profile_input {
             self,
         ) -> std::result::Result<
             crate::input::PostAgentProfileInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PostAgentProfileInput {
                 profiling_group_name: self.profiling_group_name,
@@ -3438,27 +3958,27 @@ impl PostAgentProfileInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::PostAgentProfile,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::PostAgentProfileInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_44 = &_input.profiling_group_name;
             let input_44 =
                 input_44
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "profiling_group_name",
                         details: "cannot be empty or unset",
                     })?;
-            let profiling_group_name = smithy_http::label::fmt_string(input_44, false);
+            let profiling_group_name = aws_smithy_http::label::fmt_string(input_44, false);
             if profiling_group_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "profiling_group_name",
                     details: "cannot be empty or unset",
                 });
@@ -3474,7 +3994,7 @@ impl PostAgentProfileInput {
         fn add_headers(
             _input: &crate::input::PostAgentProfileInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_45) = &_input.content_type {
                 let formatted_46 = AsRef::<str>::as_ref(inner_45);
@@ -3482,7 +4002,7 @@ impl PostAgentProfileInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_46;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "content_type",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -3495,16 +4015,19 @@ impl PostAgentProfileInput {
             Ok(builder)
         }
         fn uri_query(_input: &crate::input::PostAgentProfileInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_47) = &_input.profile_token {
-                query.push_kv("profileToken", &smithy_http::query::fmt_string(&inner_47));
+                query.push_kv(
+                    "profileToken",
+                    &aws_smithy_http::query::fmt_string(&inner_47),
+                );
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::PostAgentProfileInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3515,10 +4038,10 @@ impl PostAgentProfileInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::PostAgentProfileInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/octet-stream",
@@ -3528,13 +4051,13 @@ impl PostAgentProfileInput {
         if self.profile_token.is_none() {
             self.profile_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::ser_payload_post_agent_profile_input(self.agent_profile)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3557,15 +4080,15 @@ impl PostAgentProfileInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::PostAgentProfile::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "PostAgentProfile",
             "codeguruprofiler",
         ));
@@ -3574,10 +4097,10 @@ impl PostAgentProfileInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3608,6 +4131,7 @@ pub mod put_permission_input {
             self.profiling_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the profiling group to grant access to.</p>
         pub fn set_profiling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3625,6 +4149,12 @@ pub mod put_permission_input {
             self.action_group = Some(input);
             self
         }
+        /// <p>
+        /// Specifies an action group that contains permissions to add to
+        /// a profiling group resource. One action group is supported, <code>agentPermissions</code>, which
+        /// grants permission to perform actions required by the profiling agent, <code>ConfigureAgent</code>
+        /// and <code>PostAgentProfile</code> permissions.
+        /// </p>
         pub fn set_action_group(
             mut self,
             input: std::option::Option<crate::model::ActionGroup>,
@@ -3632,12 +4162,24 @@ pub mod put_permission_input {
             self.action_group = input;
             self
         }
+        /// Appends an item to `principals`.
+        ///
+        /// To override the contents of this collection use [`set_principals`](Self::set_principals).
+        ///
+        /// <p>
+        /// A list ARNs for the roles and users you want to grant access to the profiling group.
+        /// Wildcards are not are supported in the ARNs.
+        /// </p>
         pub fn principals(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.principals.unwrap_or_default();
             v.push(input.into());
             self.principals = Some(v);
             self
         }
+        /// <p>
+        /// A list ARNs for the roles and users you want to grant access to the profiling group.
+        /// Wildcards are not are supported in the ARNs.
+        /// </p>
         pub fn set_principals(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3655,6 +4197,12 @@ pub mod put_permission_input {
             self.revision_id = Some(input.into());
             self
         }
+        /// <p>
+        /// A universally unique identifier (UUID) for the revision of the policy you
+        /// are adding to the profiling group. Do not specify
+        /// this when you add permissions to a profiling group for the first time. If a policy already exists on the
+        /// profiling group, you must specify the <code>revisionId</code>.
+        /// </p>
         pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.revision_id = input;
             self
@@ -3662,8 +4210,10 @@ pub mod put_permission_input {
         /// Consumes the builder and constructs a [`PutPermissionInput`](crate::input::PutPermissionInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::PutPermissionInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::PutPermissionInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::PutPermissionInput {
                 profiling_group_name: self.profiling_group_name,
                 action_group: self.action_group,
@@ -3684,27 +4234,27 @@ impl PutPermissionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::PutPermission,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::PutPermissionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_48 = &_input.profiling_group_name;
             let input_48 =
                 input_48
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "profiling_group_name",
                         details: "cannot be empty or unset",
                     })?;
-            let profiling_group_name = smithy_http::label::fmt_string(input_48, false);
+            let profiling_group_name = aws_smithy_http::label::fmt_string(input_48, false);
             if profiling_group_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "profiling_group_name",
                     details: "cannot be empty or unset",
                 });
@@ -3713,13 +4263,13 @@ impl PutPermissionInput {
             let input_49 =
                 input_49
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "action_group",
                         details: "cannot be empty or unset",
                     })?;
-            let action_group = smithy_http::label::fmt_string(input_49, false);
+            let action_group = aws_smithy_http::label::fmt_string(input_49, false);
             if action_group.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "action_group",
                     details: "cannot be empty or unset",
                 });
@@ -3737,7 +4287,7 @@ impl PutPermissionInput {
         fn update_http_builder(
             input: &crate::input::PutPermissionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3746,24 +4296,26 @@ impl PutPermissionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::PutPermissionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_put_permission(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3786,25 +4338,27 @@ impl PutPermissionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::PutPermission::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "PutPermission",
-                    "codeguruprofiler",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::PutPermission::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "PutPermission",
+            "codeguruprofiler",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3833,6 +4387,7 @@ pub mod remove_notification_channel_input {
             self.profiling_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the profiling group we want to change notification configuration for.</p>
         pub fn set_profiling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3845,6 +4400,7 @@ pub mod remove_notification_channel_input {
             self.channel_id = Some(input.into());
             self
         }
+        /// <p>The id of the channel that we want to stop receiving notifications.</p>
         pub fn set_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.channel_id = input;
             self
@@ -3854,7 +4410,7 @@ pub mod remove_notification_channel_input {
             self,
         ) -> std::result::Result<
             crate::input::RemoveNotificationChannelInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::RemoveNotificationChannelInput {
                 profiling_group_name: self.profiling_group_name,
@@ -3875,27 +4431,27 @@ impl RemoveNotificationChannelInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RemoveNotificationChannel,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RemoveNotificationChannelInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_50 = &_input.profiling_group_name;
             let input_50 =
                 input_50
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "profiling_group_name",
                         details: "cannot be empty or unset",
                     })?;
-            let profiling_group_name = smithy_http::label::fmt_string(input_50, false);
+            let profiling_group_name = aws_smithy_http::label::fmt_string(input_50, false);
             if profiling_group_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "profiling_group_name",
                     details: "cannot be empty or unset",
                 });
@@ -3904,13 +4460,13 @@ impl RemoveNotificationChannelInput {
             let input_51 =
                 input_51
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "channel_id",
                         details: "cannot be empty or unset",
                     })?;
-            let channel_id = smithy_http::label::fmt_string(input_51, false);
+            let channel_id = aws_smithy_http::label::fmt_string(input_51, false);
             if channel_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "channel_id",
                     details: "cannot be empty or unset",
                 });
@@ -3928,7 +4484,7 @@ impl RemoveNotificationChannelInput {
         fn update_http_builder(
             input: &crate::input::RemoveNotificationChannelInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3937,23 +4493,23 @@ impl RemoveNotificationChannelInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RemoveNotificationChannelInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3976,15 +4532,15 @@ impl RemoveNotificationChannelInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::RemoveNotificationChannel::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "RemoveNotificationChannel",
             "codeguruprofiler",
         ));
@@ -3993,10 +4549,10 @@ impl RemoveNotificationChannelInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4026,6 +4582,7 @@ pub mod remove_permission_input {
             self.profiling_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the profiling group.</p>
         pub fn set_profiling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4042,6 +4599,11 @@ pub mod remove_permission_input {
             self.action_group = Some(input);
             self
         }
+        /// <p>
+        /// Specifies an action group that contains the permissions to remove from
+        /// a profiling group's resource-based policy. One action group is supported, <code>agentPermissions</code>, which
+        /// grants <code>ConfigureAgent</code> and <code>PostAgentProfile</code> permissions.
+        /// </p>
         pub fn set_action_group(
             mut self,
             input: std::option::Option<crate::model::ActionGroup>,
@@ -4057,6 +4619,10 @@ pub mod remove_permission_input {
             self.revision_id = Some(input.into());
             self
         }
+        /// <p>
+        /// A universally unique identifier (UUID) for the revision of the resource-based policy from which
+        /// you want to remove permissions.
+        /// </p>
         pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.revision_id = input;
             self
@@ -4066,7 +4632,7 @@ pub mod remove_permission_input {
             self,
         ) -> std::result::Result<
             crate::input::RemovePermissionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::RemovePermissionInput {
                 profiling_group_name: self.profiling_group_name,
@@ -4087,27 +4653,27 @@ impl RemovePermissionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RemovePermission,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RemovePermissionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_52 = &_input.profiling_group_name;
             let input_52 =
                 input_52
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "profiling_group_name",
                         details: "cannot be empty or unset",
                     })?;
-            let profiling_group_name = smithy_http::label::fmt_string(input_52, false);
+            let profiling_group_name = aws_smithy_http::label::fmt_string(input_52, false);
             if profiling_group_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "profiling_group_name",
                     details: "cannot be empty or unset",
                 });
@@ -4116,13 +4682,13 @@ impl RemovePermissionInput {
             let input_53 =
                 input_53
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "action_group",
                         details: "cannot be empty or unset",
                     })?;
-            let action_group = smithy_http::label::fmt_string(input_53, false);
+            let action_group = aws_smithy_http::label::fmt_string(input_53, false);
             if action_group.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "action_group",
                     details: "cannot be empty or unset",
                 });
@@ -4137,16 +4703,16 @@ impl RemovePermissionInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::RemovePermissionInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_54) = &_input.revision_id {
-                query.push_kv("revisionId", &smithy_http::query::fmt_string(&inner_54));
+                query.push_kv("revisionId", &aws_smithy_http::query::fmt_string(&inner_54));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::RemovePermissionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4156,23 +4722,23 @@ impl RemovePermissionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RemovePermissionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4195,15 +4761,15 @@ impl RemovePermissionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::RemovePermission::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "RemovePermission",
             "codeguruprofiler",
         ));
@@ -4212,10 +4778,10 @@ impl RemovePermissionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4246,6 +4812,7 @@ pub mod submit_feedback_input {
             self.profiling_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the profiling group that is associated with the analysis data.</p>
         pub fn set_profiling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4262,6 +4829,11 @@ pub mod submit_feedback_input {
             self.anomaly_instance_id = Some(input.into());
             self
         }
+        /// <p>The universally unique identifier (UUID) of the
+        /// <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AnomalyInstance.html">
+        /// <code>AnomalyInstance</code>
+        /// </a> object
+        /// that is included in the analysis data.</p>
         pub fn set_anomaly_instance_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4276,6 +4848,9 @@ pub mod submit_feedback_input {
             self.r#type = Some(input);
             self
         }
+        /// <p>
+        /// The feedback tpye. Thee are two valid values, <code>Positive</code> and <code>Negative</code>.
+        /// </p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::FeedbackType>) -> Self {
             self.r#type = input;
             self
@@ -4285,6 +4860,7 @@ pub mod submit_feedback_input {
             self.comment = Some(input.into());
             self
         }
+        /// <p>Optional feedback about this anomaly.</p>
         pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.comment = input;
             self
@@ -4294,7 +4870,7 @@ pub mod submit_feedback_input {
             self,
         ) -> std::result::Result<
             crate::input::SubmitFeedbackInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::SubmitFeedbackInput {
                 profiling_group_name: self.profiling_group_name,
@@ -4316,27 +4892,27 @@ impl SubmitFeedbackInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::SubmitFeedback,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SubmitFeedbackInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_55 = &_input.profiling_group_name;
             let input_55 =
                 input_55
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "profiling_group_name",
                         details: "cannot be empty or unset",
                     })?;
-            let profiling_group_name = smithy_http::label::fmt_string(input_55, false);
+            let profiling_group_name = aws_smithy_http::label::fmt_string(input_55, false);
             if profiling_group_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "profiling_group_name",
                     details: "cannot be empty or unset",
                 });
@@ -4345,13 +4921,13 @@ impl SubmitFeedbackInput {
             let input_56 =
                 input_56
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "anomaly_instance_id",
                         details: "cannot be empty or unset",
                     })?;
-            let anomaly_instance_id = smithy_http::label::fmt_string(input_56, false);
+            let anomaly_instance_id = aws_smithy_http::label::fmt_string(input_56, false);
             if anomaly_instance_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "anomaly_instance_id",
                     details: "cannot be empty or unset",
                 });
@@ -4363,7 +4939,7 @@ impl SubmitFeedbackInput {
         fn update_http_builder(
             input: &crate::input::SubmitFeedbackInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4372,24 +4948,26 @@ impl SubmitFeedbackInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SubmitFeedbackInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_submit_feedback(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4412,15 +4990,15 @@ impl SubmitFeedbackInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::SubmitFeedback::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "SubmitFeedback",
             "codeguruprofiler",
         ));
@@ -4429,10 +5007,10 @@ impl SubmitFeedbackInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4465,10 +5043,20 @@ pub mod tag_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>
+        /// The Amazon Resource Name (ARN) of the resource that the tags are added to.
+        /// </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>
+        /// The list of tags that are added to the specified resource.
+        /// </p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -4479,6 +5067,9 @@ pub mod tag_resource_input {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>
+        /// The list of tags that are added to the specified resource.
+        /// </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -4491,8 +5082,10 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::TagResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::TagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::TagResourceInput {
                 resource_arn: self.resource_arn,
                 tags: self.tags,
@@ -4511,27 +5104,27 @@ impl TagResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::TagResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_57 = &_input.resource_arn;
             let input_57 =
                 input_57
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = smithy_http::label::fmt_string(input_57, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_57, false);
             if resource_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 });
@@ -4544,7 +5137,7 @@ impl TagResourceInput {
         fn update_http_builder(
             input: &crate::input::TagResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4553,24 +5146,26 @@ impl TagResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::TagResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4593,25 +5188,27 @@ impl TagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::TagResource::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "TagResource",
-                    "codeguruprofiler",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::TagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "TagResource",
+            "codeguruprofiler",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4642,16 +5239,31 @@ pub mod untag_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>
+        /// The Amazon Resource Name (ARN) of the resource that contains the tags to remove.
+        /// </p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Appends an item to `tag_keys`.
+        ///
+        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
+        ///
+        /// <p>
+        /// A list of tag keys. Existing tags of resources with keys in this list are removed from
+        /// the specified resource.
+        /// </p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
+        /// <p>
+        /// A list of tag keys. Existing tags of resources with keys in this list are removed from
+        /// the specified resource.
+        /// </p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4662,8 +5274,10 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UntagResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UntagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UntagResourceInput {
                 resource_arn: self.resource_arn,
                 tag_keys: self.tag_keys,
@@ -4682,27 +5296,27 @@ impl UntagResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UntagResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_58 = &_input.resource_arn;
             let input_58 =
                 input_58
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = smithy_http::label::fmt_string(input_58, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_58, false);
             if resource_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 });
@@ -4712,10 +5326,10 @@ impl UntagResourceInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::UntagResourceInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_59) = &_input.tag_keys {
                 for inner_60 in inner_59 {
-                    query.push_kv("tagKeys", &smithy_http::query::fmt_string(&inner_60));
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_60));
                 }
             }
         }
@@ -4723,7 +5337,7 @@ impl UntagResourceInput {
         fn update_http_builder(
             input: &crate::input::UntagResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4733,23 +5347,23 @@ impl UntagResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UntagResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4772,25 +5386,27 @@ impl UntagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UntagResource::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UntagResource",
-                    "codeguruprofiler",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UntagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UntagResource",
+            "codeguruprofiler",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4820,6 +5436,7 @@ pub mod update_profiling_group_input {
             self.profiling_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the profiling group to update.</p>
         pub fn set_profiling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4837,6 +5454,9 @@ pub mod update_profiling_group_input {
             self.agent_orchestration_config = Some(input);
             self
         }
+        /// <p>
+        /// Specifies whether profiling is enabled or disabled for a profiling group.
+        /// </p>
         pub fn set_agent_orchestration_config(
             mut self,
             input: std::option::Option<crate::model::AgentOrchestrationConfig>,
@@ -4849,7 +5469,7 @@ pub mod update_profiling_group_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateProfilingGroupInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateProfilingGroupInput {
                 profiling_group_name: self.profiling_group_name,
@@ -4869,27 +5489,27 @@ impl UpdateProfilingGroupInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateProfilingGroup,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateProfilingGroupInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_61 = &_input.profiling_group_name;
             let input_61 =
                 input_61
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "profiling_group_name",
                         details: "cannot be empty or unset",
                     })?;
-            let profiling_group_name = smithy_http::label::fmt_string(input_61, false);
+            let profiling_group_name = aws_smithy_http::label::fmt_string(input_61, false);
             if profiling_group_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "profiling_group_name",
                     details: "cannot be empty or unset",
                 });
@@ -4906,7 +5526,7 @@ impl UpdateProfilingGroupInput {
         fn update_http_builder(
             input: &crate::input::UpdateProfilingGroupInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4915,27 +5535,27 @@ impl UpdateProfilingGroupInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateProfilingGroupInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_profiling_group(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4958,15 +5578,15 @@ impl UpdateProfilingGroupInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateProfilingGroup::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateProfilingGroup",
             "codeguruprofiler",
         ));
@@ -4975,10 +5595,10 @@ impl UpdateProfilingGroupInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5023,6 +5643,7 @@ impl std::fmt::Debug for SubmitFeedbackInput {
 }
 
 /// <p>
+///
 /// The structure representing the <code>removePermissionRequest</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -5118,7 +5739,7 @@ pub struct PostAgentProfileInput {
     /// <p>
     /// The submitted profiling data.
     /// </p>
-    pub agent_profile: std::option::Option<smithy_types::Blob>,
+    pub agent_profile: std::option::Option<aws_smithy_types::Blob>,
     /// <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the
     /// accidental submission of duplicate profiling data if there are failures and retries. </p>
     pub profile_token: std::option::Option<std::string::String>,
@@ -5128,6 +5749,7 @@ pub struct PostAgentProfileInput {
     /// HTTP request. You can specify one of the following:
     /// or the default .
     /// </p>
+    ///
     /// <ul>
     /// <li>
     /// <p>
@@ -5161,9 +5783,9 @@ pub struct ListProfileTimesInput {
     /// <p>The name of the profiling group.</p>
     pub profiling_group_name: std::option::Option<std::string::String>,
     /// <p>The start time of the time range from which to list the profiles.</p>
-    pub start_time: std::option::Option<smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The end time of the time range from which to list the profiles.</p>
-    pub end_time: std::option::Option<smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>
     /// The aggregation period. This specifies the period during which an aggregation profile
     /// collects posted agent profiles for a profiling group. There are 3 valid values.
@@ -5235,14 +5857,14 @@ pub struct ListFindingsReportsInput {
     /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
     /// millisecond past June 1, 2020 1:15:02 PM UTC.
     /// </p>
-    pub start_time: std::option::Option<smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>
     /// The end time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>.
     /// This is specified
     /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
     /// millisecond past June 1, 2020 1:15:02 PM UTC.
     /// </p>
-    pub end_time: std::option::Option<smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListFindingsReportsRequest</code>
     /// request where <code>maxResults</code> was used and the results exceeded the value of that parameter.
     /// Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.
@@ -5291,14 +5913,14 @@ pub struct GetRecommendationsInput {
     /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
     /// millisecond past June 1, 2020 1:15:02 PM UTC.
     /// </p>
-    pub start_time: std::option::Option<smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>
     /// The start time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>.
     /// This is specified
     /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
     /// millisecond past June 1, 2020 1:15:02 PM UTC.
     /// </p>
-    pub end_time: std::option::Option<smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>
     /// The language used to provide analysis. Specify using a string that is one
     /// of the following <code>BCP 47</code> language codes.
@@ -5382,16 +6004,18 @@ pub struct GetProfileInput {
     /// <p>The start time of the profile to get. Specify using
     /// the ISO 8601 format. For example,
     /// 2020-06-01T13:15:02.001Z  represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
+    ///
     /// <p>
     /// If you specify <code>startTime</code>, then you must also specify <code>period</code>
     /// or <code>endTime</code>, but not both.
     /// </p>
-    pub start_time: std::option::Option<smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>
     /// Used with <code>startTime</code> or <code>endTime</code> to specify
     /// the time range for the returned aggregated profile. Specify using
     /// the ISO 8601 format. For example, <code>P1DT1H1M1S</code>.
     /// </p>
+    ///
     /// <p>
     /// To get the latest aggregated profile, specify only <code>period</code>.
     /// </p>
@@ -5405,7 +6029,7 @@ pub struct GetProfileInput {
     /// If you specify <code>endTime</code>, then you must also specify <code>period</code>
     /// or <code>startTime</code>, but not both.
     /// </p>
-    pub end_time: std::option::Option<smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>
     /// The maximum depth of the stacks in the code that is represented in
     /// the aggregated profile. For example, if CodeGuru Profiler finds a method <code>A</code>,
@@ -5421,6 +6045,7 @@ pub struct GetProfileInput {
     /// HTTP request. You can specify one of the following:
     /// or the default .
     /// </p>
+    ///
     /// <ul>
     /// <li>
     /// <p>
@@ -5571,14 +6196,14 @@ pub struct BatchGetFrameMetricDataInput {
     /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
     /// millisecond past June 1, 2020 1:15:02 PM UTC.
     /// </p>
-    pub start_time: std::option::Option<smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>
     /// The end time of the time period for the returned time series values.
     /// This is specified
     /// using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1
     /// millisecond past June 1, 2020 1:15:02 PM UTC.
     /// </p>
-    pub end_time: std::option::Option<smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>
     /// The duration of the frame metrics used to return the time series values.
     /// Specify using the ISO 8601 format. The maximum period duration
@@ -5782,6 +6407,7 @@ impl std::fmt::Debug for DescribeProfilingGroupInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
@@ -5804,6 +6430,7 @@ impl std::fmt::Debug for UntagResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
@@ -5826,6 +6453,7 @@ impl std::fmt::Debug for TagResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {

@@ -143,12 +143,18 @@ pub mod register_instances_with_load_balancer_output {
         pub(crate) instances: std::option::Option<std::vec::Vec<crate::model::Instance>>,
     }
     impl Builder {
+        /// Appends an item to `instances`.
+        ///
+        /// To override the contents of this collection use [`set_instances`](Self::set_instances).
+        ///
+        /// <p>The updated list of instances for the load balancer.</p>
         pub fn instances(mut self, input: impl Into<crate::model::Instance>) -> Self {
             let mut v = self.instances.unwrap_or_default();
             v.push(input.into());
             self.instances = Some(v);
             self
         }
+        /// <p>The updated list of instances for the load balancer.</p>
         pub fn set_instances(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Instance>>,
@@ -204,6 +210,7 @@ pub mod modify_load_balancer_attributes_output {
             self.load_balancer_name = Some(input.into());
             self
         }
+        /// <p>The name of the load balancer.</p>
         pub fn set_load_balancer_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -219,6 +226,7 @@ pub mod modify_load_balancer_attributes_output {
             self.load_balancer_attributes = Some(input);
             self
         }
+        /// <p>Information about the load balancer attributes.</p>
         pub fn set_load_balancer_attributes(
             mut self,
             input: std::option::Option<crate::model::LoadBalancerAttributes>,
@@ -265,12 +273,18 @@ pub mod enable_availability_zones_for_load_balancer_output {
         pub(crate) availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `availability_zones`.
+        ///
+        /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
+        ///
+        /// <p>The updated list of Availability Zones for the load balancer.</p>
         pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.availability_zones.unwrap_or_default();
             v.push(input.into());
             self.availability_zones = Some(v);
             self
         }
+        /// <p>The updated list of Availability Zones for the load balancer.</p>
         pub fn set_availability_zones(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -316,12 +330,18 @@ pub mod disable_availability_zones_for_load_balancer_output {
         pub(crate) availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `availability_zones`.
+        ///
+        /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
+        ///
+        /// <p>The remaining Availability Zones for the load balancer.</p>
         pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.availability_zones.unwrap_or_default();
             v.push(input.into());
             self.availability_zones = Some(v);
             self
         }
+        /// <p>The remaining Availability Zones for the load balancer.</p>
         pub fn set_availability_zones(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -368,12 +388,18 @@ pub mod detach_load_balancer_from_subnets_output {
         pub(crate) subnets: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `subnets`.
+        ///
+        /// To override the contents of this collection use [`set_subnets`](Self::set_subnets).
+        ///
+        /// <p>The IDs of the remaining subnets for the load balancer.</p>
         pub fn subnets(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnets.unwrap_or_default();
             v.push(input.into());
             self.subnets = Some(v);
             self
         }
+        /// <p>The IDs of the remaining subnets for the load balancer.</p>
         pub fn set_subnets(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -420,12 +446,18 @@ pub mod describe_tags_output {
             std::option::Option<std::vec::Vec<crate::model::TagDescription>>,
     }
     impl Builder {
+        /// Appends an item to `tag_descriptions`.
+        ///
+        /// To override the contents of this collection use [`set_tag_descriptions`](Self::set_tag_descriptions).
+        ///
+        /// <p>Information about the tags.</p>
         pub fn tag_descriptions(mut self, input: impl Into<crate::model::TagDescription>) -> Self {
             let mut v = self.tag_descriptions.unwrap_or_default();
             v.push(input.into());
             self.tag_descriptions = Some(v);
             self
         }
+        /// <p>Information about the tags.</p>
         pub fn set_tag_descriptions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TagDescription>>,
@@ -480,6 +512,11 @@ pub mod describe_load_balancers_output {
         pub(crate) next_marker: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `load_balancer_descriptions`.
+        ///
+        /// To override the contents of this collection use [`set_load_balancer_descriptions`](Self::set_load_balancer_descriptions).
+        ///
+        /// <p>Information about the load balancers.</p>
         pub fn load_balancer_descriptions(
             mut self,
             input: impl Into<crate::model::LoadBalancerDescription>,
@@ -489,6 +526,7 @@ pub mod describe_load_balancers_output {
             self.load_balancer_descriptions = Some(v);
             self
         }
+        /// <p>Information about the load balancers.</p>
         pub fn set_load_balancer_descriptions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LoadBalancerDescription>>,
@@ -501,6 +539,7 @@ pub mod describe_load_balancers_output {
             self.next_marker = Some(input.into());
             self
         }
+        /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
@@ -546,6 +585,11 @@ pub mod describe_load_balancer_policy_types_output {
             std::option::Option<std::vec::Vec<crate::model::PolicyTypeDescription>>,
     }
     impl Builder {
+        /// Appends an item to `policy_type_descriptions`.
+        ///
+        /// To override the contents of this collection use [`set_policy_type_descriptions`](Self::set_policy_type_descriptions).
+        ///
+        /// <p>Information about the policy types.</p>
         pub fn policy_type_descriptions(
             mut self,
             input: impl Into<crate::model::PolicyTypeDescription>,
@@ -555,6 +599,7 @@ pub mod describe_load_balancer_policy_types_output {
             self.policy_type_descriptions = Some(v);
             self
         }
+        /// <p>Information about the policy types.</p>
         pub fn set_policy_type_descriptions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PolicyTypeDescription>>,
@@ -601,6 +646,11 @@ pub mod describe_load_balancer_policies_output {
             std::option::Option<std::vec::Vec<crate::model::PolicyDescription>>,
     }
     impl Builder {
+        /// Appends an item to `policy_descriptions`.
+        ///
+        /// To override the contents of this collection use [`set_policy_descriptions`](Self::set_policy_descriptions).
+        ///
+        /// <p>Information about the policies.</p>
         pub fn policy_descriptions(
             mut self,
             input: impl Into<crate::model::PolicyDescription>,
@@ -610,6 +660,7 @@ pub mod describe_load_balancer_policies_output {
             self.policy_descriptions = Some(v);
             self
         }
+        /// <p>Information about the policies.</p>
         pub fn set_policy_descriptions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PolicyDescription>>,
@@ -664,6 +715,7 @@ pub mod describe_load_balancer_attributes_output {
             self.load_balancer_attributes = Some(input);
             self
         }
+        /// <p>Information about the load balancer attributes.</p>
         pub fn set_load_balancer_attributes(
             mut self,
             input: std::option::Option<crate::model::LoadBalancerAttributes>,
@@ -709,12 +761,18 @@ pub mod describe_instance_health_output {
         pub(crate) instance_states: std::option::Option<std::vec::Vec<crate::model::InstanceState>>,
     }
     impl Builder {
+        /// Appends an item to `instance_states`.
+        ///
+        /// To override the contents of this collection use [`set_instance_states`](Self::set_instance_states).
+        ///
+        /// <p>Information about the health of the instances.</p>
         pub fn instance_states(mut self, input: impl Into<crate::model::InstanceState>) -> Self {
             let mut v = self.instance_states.unwrap_or_default();
             v.push(input.into());
             self.instance_states = Some(v);
             self
         }
+        /// <p>Information about the health of the instances.</p>
         pub fn set_instance_states(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InstanceState>>,
@@ -737,6 +795,7 @@ impl DescribeInstanceHealthOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccountLimitsOutput {
@@ -763,12 +822,18 @@ pub mod describe_account_limits_output {
         pub(crate) next_marker: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `limits`.
+        ///
+        /// To override the contents of this collection use [`set_limits`](Self::set_limits).
+        ///
+        /// <p>Information about the limits.</p>
         pub fn limits(mut self, input: impl Into<crate::model::Limit>) -> Self {
             let mut v = self.limits.unwrap_or_default();
             v.push(input.into());
             self.limits = Some(v);
             self
         }
+        /// <p>Information about the limits.</p>
         pub fn set_limits(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Limit>>,
@@ -781,6 +846,7 @@ pub mod describe_account_limits_output {
             self.next_marker = Some(input.into());
             self
         }
+        /// <p>The marker to use when requesting the next set of results. If there are no additional results, the string is empty.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
@@ -824,12 +890,18 @@ pub mod deregister_instances_from_load_balancer_output {
         pub(crate) instances: std::option::Option<std::vec::Vec<crate::model::Instance>>,
     }
     impl Builder {
+        /// Appends an item to `instances`.
+        ///
+        /// To override the contents of this collection use [`set_instances`](Self::set_instances).
+        ///
+        /// <p>The remaining instances registered with the load balancer.</p>
         pub fn instances(mut self, input: impl Into<crate::model::Instance>) -> Self {
             let mut v = self.instances.unwrap_or_default();
             v.push(input.into());
             self.instances = Some(v);
             self
         }
+        /// <p>The remaining instances registered with the load balancer.</p>
         pub fn set_instances(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Instance>>,
@@ -1030,6 +1102,7 @@ pub mod create_load_balancer_output {
             self.dns_name = Some(input.into());
             self
         }
+        /// <p>The DNS name of the load balancer.</p>
         pub fn set_dns_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.dns_name = input;
             self
@@ -1137,6 +1210,7 @@ pub mod configure_health_check_output {
             self.health_check = Some(input);
             self
         }
+        /// <p>The updated health check.</p>
         pub fn set_health_check(
             mut self,
             input: std::option::Option<crate::model::HealthCheck>,
@@ -1182,12 +1256,18 @@ pub mod attach_load_balancer_to_subnets_output {
         pub(crate) subnets: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `subnets`.
+        ///
+        /// To override the contents of this collection use [`set_subnets`](Self::set_subnets).
+        ///
+        /// <p>The IDs of the subnets attached to the load balancer.</p>
         pub fn subnets(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnets.unwrap_or_default();
             v.push(input.into());
             self.subnets = Some(v);
             self
         }
+        /// <p>The IDs of the subnets attached to the load balancer.</p>
         pub fn set_subnets(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1233,12 +1313,18 @@ pub mod apply_security_groups_to_load_balancer_output {
         pub(crate) security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `security_groups`.
+        ///
+        /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
+        ///
+        /// <p>The IDs of the security groups associated with the load balancer.</p>
         pub fn security_groups(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_groups.unwrap_or_default();
             v.push(input.into());
             self.security_groups = Some(v);
             self
         }
+        /// <p>The IDs of the security groups associated with the load balancer.</p>
         pub fn set_security_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,

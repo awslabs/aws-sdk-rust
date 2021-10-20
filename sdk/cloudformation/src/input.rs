@@ -25,6 +25,9 @@ pub mod activate_type_input {
             self.r#type = Some(input);
             self
         }
+        /// <p>The extension type.</p>
+        /// <p>Conditional: You must specify <code>PublicTypeArn</code>, or <code>TypeName</code>,
+        /// <code>Type</code>, and <code>PublisherId</code>.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::ThirdPartyType>,
@@ -39,6 +42,9 @@ pub mod activate_type_input {
             self.public_type_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Number (ARN) of the public extension.</p>
+        /// <p>Conditional: You must specify <code>PublicTypeArn</code>, or <code>TypeName</code>,
+        /// <code>Type</code>, and <code>PublisherId</code>.</p>
         pub fn set_public_type_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -53,6 +59,9 @@ pub mod activate_type_input {
             self.publisher_id = Some(input.into());
             self
         }
+        /// <p>The ID of the extension publisher.</p>
+        /// <p>Conditional: You must specify <code>PublicTypeArn</code>, or <code>TypeName</code>,
+        /// <code>Type</code>, and <code>PublisherId</code>.</p>
         pub fn set_publisher_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.publisher_id = input;
             self
@@ -64,6 +73,9 @@ pub mod activate_type_input {
             self.type_name = Some(input.into());
             self
         }
+        /// <p>The name of the extension.</p>
+        /// <p>Conditional: You must specify <code>PublicTypeArn</code>, or <code>TypeName</code>,
+        /// <code>Type</code>, and <code>PublisherId</code>.</p>
         pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.type_name = input;
             self
@@ -79,6 +91,13 @@ pub mod activate_type_input {
             self.type_name_alias = Some(input.into());
             self
         }
+        /// <p>An alias to assign to the public extension, in this account and region. If you specify
+        /// an alias for the extension, CloudFormation treats the alias as the extension type name
+        /// within this account and region. You must use the alias to refer to the extension in your
+        /// templates, API calls, and CloudFormation console.</p>
+        /// <p>An extension alias must be unique within a given account and region. You can activate
+        /// the same public resource multiple times in the same account and region, using different
+        /// type name aliases.</p>
         pub fn set_type_name_alias(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -94,6 +113,10 @@ pub mod activate_type_input {
             self.auto_update = Some(input);
             self
         }
+        /// <p>Whether to automatically update the extension in this account and region when a new
+        /// <i>minor</i> version is published by the extension publisher. Major
+        /// versions released by the publisher must be manually updated.</p>
+        /// <p>The default is <code>true</code>.</p>
         pub fn set_auto_update(mut self, input: std::option::Option<bool>) -> Self {
             self.auto_update = input;
             self
@@ -103,6 +126,7 @@ pub mod activate_type_input {
             self.logging_config = Some(input);
             self
         }
+        /// <p>Contains logging configuration information for an extension.</p>
         pub fn set_logging_config(
             mut self,
             input: std::option::Option<crate::model::LoggingConfig>,
@@ -115,6 +139,7 @@ pub mod activate_type_input {
             self.execution_role_arn = Some(input.into());
             self
         }
+        /// <p>The name of the IAM execution role to use to activate the extension.</p>
         pub fn set_execution_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -141,6 +166,21 @@ pub mod activate_type_input {
             self.version_bump = Some(input);
             self
         }
+        /// <p>Manually updates a previously-activated type to a new major or minor version, if
+        /// available. You can also use this parameter to update the value of
+        /// <code>AutoUpdate</code>.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>MAJOR</code>: CloudFormation updates the extension to the newest major
+        /// version, if one is available.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MINOR</code>: CloudFormation updates the extension to the newest minor
+        /// version, if one is available.</p>
+        /// </li>
+        /// </ul>
         pub fn set_version_bump(
             mut self,
             input: std::option::Option<crate::model::VersionBump>,
@@ -157,6 +197,11 @@ pub mod activate_type_input {
             self.major_version = Some(input);
             self
         }
+        /// <p>The major version of this extension you want to activate, if multiple major versions are
+        /// available. The default is the latest major version. CloudFormation uses the latest
+        /// available <i>minor</i> version of the major version selected.</p>
+        /// <p>You can specify <code>MajorVersion</code> or <code>VersionBump</code>, but not
+        /// both.</p>
         pub fn set_major_version(mut self, input: std::option::Option<i64>) -> Self {
             self.major_version = input;
             self
@@ -164,8 +209,10 @@ pub mod activate_type_input {
         /// Consumes the builder and constructs a [`ActivateTypeInput`](crate::input::ActivateTypeInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ActivateTypeInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ActivateTypeInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ActivateTypeInput {
                 r#type: self.r#type,
                 public_type_arn: self.public_type_arn,
@@ -192,16 +239,16 @@ impl ActivateTypeInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ActivateType,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ActivateTypeInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -209,7 +256,7 @@ impl ActivateTypeInput {
         fn update_http_builder(
             input: &crate::input::ActivateTypeInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -218,26 +265,26 @@ impl ActivateTypeInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ActivateTypeInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_activate_type(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -260,25 +307,27 @@ impl ActivateTypeInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ActivateType::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ActivateType",
-                    "cloudformation",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ActivateType::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ActivateType",
+            "cloudformation",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -302,6 +351,11 @@ pub mod batch_describe_type_configurations_input {
             std::option::Option<std::vec::Vec<crate::model::TypeConfigurationIdentifier>>,
     }
     impl Builder {
+        /// Appends an item to `type_configuration_identifiers`.
+        ///
+        /// To override the contents of this collection use [`set_type_configuration_identifiers`](Self::set_type_configuration_identifiers).
+        ///
+        /// <p>The list of identifiers for the desired extension configurations.</p>
         pub fn type_configuration_identifiers(
             mut self,
             input: impl Into<crate::model::TypeConfigurationIdentifier>,
@@ -311,6 +365,7 @@ pub mod batch_describe_type_configurations_input {
             self.type_configuration_identifiers = Some(v);
             self
         }
+        /// <p>The list of identifiers for the desired extension configurations.</p>
         pub fn set_type_configuration_identifiers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TypeConfigurationIdentifier>>,
@@ -323,7 +378,7 @@ pub mod batch_describe_type_configurations_input {
             self,
         ) -> std::result::Result<
             crate::input::BatchDescribeTypeConfigurationsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::BatchDescribeTypeConfigurationsInput {
                 type_configuration_identifiers: self.type_configuration_identifiers,
@@ -343,16 +398,16 @@ impl BatchDescribeTypeConfigurationsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::BatchDescribeTypeConfigurations,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::BatchDescribeTypeConfigurationsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -360,7 +415,7 @@ impl BatchDescribeTypeConfigurationsInput {
         fn update_http_builder(
             input: &crate::input::BatchDescribeTypeConfigurationsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -369,25 +424,25 @@ impl BatchDescribeTypeConfigurationsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::BatchDescribeTypeConfigurationsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_describe_type_configurations(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_batch_describe_type_configurations(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -410,15 +465,15 @@ impl BatchDescribeTypeConfigurationsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::BatchDescribeTypeConfigurations::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "BatchDescribeTypeConfigurations",
             "cloudformation",
         ));
@@ -427,10 +482,10 @@ impl BatchDescribeTypeConfigurationsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -459,6 +514,7 @@ pub mod cancel_update_stack_input {
             self.stack_name = Some(input.into());
             self
         }
+        /// <p>The name or the unique stack ID that is associated with the stack.</p>
         pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_name = input;
             self
@@ -472,6 +528,11 @@ pub mod cancel_update_stack_input {
             self.client_request_token = Some(input.into());
             self
         }
+        /// <p>A unique identifier for this <code>CancelUpdateStack</code> request. Specify this
+        /// token if you plan to retry requests so that CloudFormation knows that you're not
+        /// attempting to cancel an update on a stack with the same name. You might retry
+        /// <code>CancelUpdateStack</code> requests to ensure that CloudFormation successfully
+        /// received them.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -484,7 +545,7 @@ pub mod cancel_update_stack_input {
             self,
         ) -> std::result::Result<
             crate::input::CancelUpdateStackInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CancelUpdateStackInput {
                 stack_name: self.stack_name,
@@ -504,16 +565,16 @@ impl CancelUpdateStackInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CancelUpdateStack,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CancelUpdateStackInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -521,7 +582,7 @@ impl CancelUpdateStackInput {
         fn update_http_builder(
             input: &crate::input::CancelUpdateStackInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -530,27 +591,27 @@ impl CancelUpdateStackInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CancelUpdateStackInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_cancel_update_stack(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -573,15 +634,15 @@ impl CancelUpdateStackInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CancelUpdateStack::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CancelUpdateStack",
             "cloudformation",
         ));
@@ -590,10 +651,10 @@ impl CancelUpdateStackInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -631,6 +692,14 @@ pub mod continue_update_rollback_input {
             self.stack_name = Some(input.into());
             self
         }
+        /// <p>The name or the unique ID of the stack that you want to continue rolling
+        /// back.</p>
+        /// <note>
+        /// <p>Don't specify the name of a nested stack (a stack that was created by using the
+        /// <code>AWS::CloudFormation::Stack</code> resource). Instead, use this operation on the
+        /// parent stack (the stack that contains the <code>AWS::CloudFormation::Stack</code>
+        /// resource).</p>
+        /// </note>
         pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_name = input;
             self
@@ -648,16 +717,87 @@ pub mod continue_update_rollback_input {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role
+        /// that CloudFormation assumes to roll back the stack. CloudFormation uses the role's
+        /// credentials to make calls on your behalf. CloudFormation always uses this role for all
+        /// future operations on the stack. As long as users have permission to operate on the stack,
+        /// CloudFormation uses this role even if the users don't have permission to pass it.
+        /// Ensure that the role grants least privilege.</p>
+        /// <p>If you don't specify a value, CloudFormation uses the role that was previously
+        /// associated with the stack. If no role is available, CloudFormation uses a temporary
+        /// session that is generated from your user credentials.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
         }
+        /// Appends an item to `resources_to_skip`.
+        ///
+        /// To override the contents of this collection use [`set_resources_to_skip`](Self::set_resources_to_skip).
+        ///
+        /// <p>A list of the logical IDs of the resources that CloudFormation skips during the
+        /// continue update rollback operation. You can specify only resources that are in the
+        /// <code>UPDATE_FAILED</code> state because a rollback failed. You can't specify resources
+        /// that are in the <code>UPDATE_FAILED</code> state for other reasons, for example, because an
+        /// update was cancelled. To check why a resource update failed, use the <a>DescribeStackResources</a> action, and view the resource status reason. </p>
+        /// <important>
+        /// <p>Specify this property to skip rolling back resources that CloudFormation
+        /// can't successfully roll back. We recommend that you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed"> troubleshoot</a> resources before skipping them. CloudFormation sets
+        /// the status of the specified resources to <code>UPDATE_COMPLETE</code> and continues to
+        /// roll back the stack. After the rollback is complete, the state of the skipped resources
+        /// will be inconsistent with the state of the resources in the stack template. Before
+        /// performing another stack update, you must update the stack or resources to be consistent
+        /// with each other. If you don't, subsequent stack updates might fail, and the stack will
+        /// become unrecoverable.</p>
+        /// </important>
+        /// <p>Specify the minimum number of resources required to successfully roll back your stack.
+        /// For example, a failed resource update might cause dependent resources to fail. In this
+        /// case, it might not be necessary to skip the dependent resources.</p>
+        /// <p>To skip resources that are part of nested stacks, use the following format:
+        /// <code>NestedStackName.ResourceLogicalID</code>. If you want to specify the logical ID of
+        /// a stack resource (<code>Type: AWS::CloudFormation::Stack</code>) in the
+        /// <code>ResourcesToSkip</code> list, then its corresponding embedded stack must be in one
+        /// of the following states: <code>DELETE_IN_PROGRESS</code>, <code>DELETE_COMPLETE</code>, or
+        /// <code>DELETE_FAILED</code>.</p>
+        /// <note>
+        /// <p>Don't confuse a child stack's name with its corresponding logical ID defined in the
+        /// parent stack. For an example of a continue update rollback operation with nested stacks,
+        /// see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html#nested-stacks">Using ResourcesToSkip to recover a nested stacks hierarchy</a>.</p>
+        /// </note>
         pub fn resources_to_skip(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resources_to_skip.unwrap_or_default();
             v.push(input.into());
             self.resources_to_skip = Some(v);
             self
         }
+        /// <p>A list of the logical IDs of the resources that CloudFormation skips during the
+        /// continue update rollback operation. You can specify only resources that are in the
+        /// <code>UPDATE_FAILED</code> state because a rollback failed. You can't specify resources
+        /// that are in the <code>UPDATE_FAILED</code> state for other reasons, for example, because an
+        /// update was cancelled. To check why a resource update failed, use the <a>DescribeStackResources</a> action, and view the resource status reason. </p>
+        /// <important>
+        /// <p>Specify this property to skip rolling back resources that CloudFormation
+        /// can't successfully roll back. We recommend that you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed"> troubleshoot</a> resources before skipping them. CloudFormation sets
+        /// the status of the specified resources to <code>UPDATE_COMPLETE</code> and continues to
+        /// roll back the stack. After the rollback is complete, the state of the skipped resources
+        /// will be inconsistent with the state of the resources in the stack template. Before
+        /// performing another stack update, you must update the stack or resources to be consistent
+        /// with each other. If you don't, subsequent stack updates might fail, and the stack will
+        /// become unrecoverable.</p>
+        /// </important>
+        /// <p>Specify the minimum number of resources required to successfully roll back your stack.
+        /// For example, a failed resource update might cause dependent resources to fail. In this
+        /// case, it might not be necessary to skip the dependent resources.</p>
+        /// <p>To skip resources that are part of nested stacks, use the following format:
+        /// <code>NestedStackName.ResourceLogicalID</code>. If you want to specify the logical ID of
+        /// a stack resource (<code>Type: AWS::CloudFormation::Stack</code>) in the
+        /// <code>ResourcesToSkip</code> list, then its corresponding embedded stack must be in one
+        /// of the following states: <code>DELETE_IN_PROGRESS</code>, <code>DELETE_COMPLETE</code>, or
+        /// <code>DELETE_FAILED</code>.</p>
+        /// <note>
+        /// <p>Don't confuse a child stack's name with its corresponding logical ID defined in the
+        /// parent stack. For an example of a continue update rollback operation with nested stacks,
+        /// see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-continueupdaterollback.html#nested-stacks">Using ResourcesToSkip to recover a nested stacks hierarchy</a>.</p>
+        /// </note>
         pub fn set_resources_to_skip(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -674,6 +814,11 @@ pub mod continue_update_rollback_input {
             self.client_request_token = Some(input.into());
             self
         }
+        /// <p>A unique identifier for this <code>ContinueUpdateRollback</code> request. Specify
+        /// this token if you plan to retry requests so that CloudFormationknows that you're not
+        /// attempting to continue the rollback to a stack with the same name. You might retry
+        /// <code>ContinueUpdateRollback</code> requests to ensure that CloudFormation
+        /// successfully received them.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -686,7 +831,7 @@ pub mod continue_update_rollback_input {
             self,
         ) -> std::result::Result<
             crate::input::ContinueUpdateRollbackInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ContinueUpdateRollbackInput {
                 stack_name: self.stack_name,
@@ -708,16 +853,16 @@ impl ContinueUpdateRollbackInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ContinueUpdateRollback,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ContinueUpdateRollbackInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -725,7 +870,7 @@ impl ContinueUpdateRollbackInput {
         fn update_http_builder(
             input: &crate::input::ContinueUpdateRollbackInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -734,27 +879,29 @@ impl ContinueUpdateRollbackInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ContinueUpdateRollbackInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_continue_update_rollback(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -777,15 +924,15 @@ impl ContinueUpdateRollbackInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ContinueUpdateRollback::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ContinueUpdateRollback",
             "cloudformation",
         ));
@@ -794,10 +941,10 @@ impl ContinueUpdateRollbackInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -845,6 +992,10 @@ pub mod create_change_set_input {
             self.stack_name = Some(input.into());
             self
         }
+        /// <p>The name or the unique ID of the stack for which you are creating a change set.
+        /// CloudFormation generates the change set by comparing this stack's information with the
+        /// information that you submit, such as a modified template or different parameter input
+        /// values.</p>
         pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_name = input;
             self
@@ -858,6 +1009,11 @@ pub mod create_change_set_input {
             self.template_body = Some(input.into());
             self
         }
+        /// <p>A structure that contains the body of the revised template, with a minimum length of
+        /// 1 byte and a maximum length of 51,200 bytes. CloudFormation generates the change set by
+        /// comparing this template with the template of the stack that you specified.</p>
+        /// <p>Conditional: You must specify only <code>TemplateBody</code> or
+        /// <code>TemplateURL</code>.</p>
         pub fn set_template_body(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -875,6 +1031,12 @@ pub mod create_change_set_input {
             self.template_url = Some(input.into());
             self
         }
+        /// <p>The location of the file that contains the revised template. The URL must point to a
+        /// template (max size: 460,800 bytes) that is located in an S3 bucket or a Systems Manager
+        /// document. CloudFormation generates the change set by comparing this template with the
+        /// stack that you specified.</p>
+        /// <p>Conditional: You must specify only <code>TemplateBody</code> or
+        /// <code>TemplateURL</code>.</p>
         pub fn set_template_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.template_url = input;
             self
@@ -885,16 +1047,26 @@ pub mod create_change_set_input {
             self.use_previous_template = Some(input);
             self
         }
+        /// <p>Whether to reuse the template that is associated with the stack to create the change
+        /// set.</p>
         pub fn set_use_previous_template(mut self, input: std::option::Option<bool>) -> Self {
             self.use_previous_template = input;
             self
         }
+        /// Appends an item to `parameters`.
+        ///
+        /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
+        ///
+        /// <p>A list of <code>Parameter</code> structures that specify input parameters for the
+        /// change set. For more information, see the <a>Parameter</a> data type.</p>
         pub fn parameters(mut self, input: impl Into<crate::model::Parameter>) -> Self {
             let mut v = self.parameters.unwrap_or_default();
             v.push(input.into());
             self.parameters = Some(v);
             self
         }
+        /// <p>A list of <code>Parameter</code> structures that specify input parameters for the
+        /// change set. For more information, see the <a>Parameter</a> data type.</p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
@@ -902,12 +1074,214 @@ pub mod create_change_set_input {
             self.parameters = input;
             self
         }
+        /// Appends an item to `capabilities`.
+        ///
+        /// To override the contents of this collection use [`set_capabilities`](Self::set_capabilities).
+        ///
+        /// <p>In some cases, you must explicitly acknowledge that your stack template contains certain
+        /// capabilities in order for CloudFormation to create the stack.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code>
+        /// </p>
+        /// <p>Some stack templates might include resources that can affect permissions in
+        /// your Amazon Web Services account; for example, by creating new Identity and Access Management
+        /// (IAM) users. For those stacks, you must explicitly acknowledge this by specifying one
+        /// of these capabilities.</p>
+        /// <p>The following IAM resources require you to specify either the
+        /// <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code>
+        /// capability.</p>
+        /// <ul>
+        /// <li>
+        /// <p>If you have IAM resources, you can specify either
+        /// capability.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you have IAM resources with custom names, you
+        /// <i>must</i> specify <code>CAPABILITY_NAMED_IAM</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you don't specify either of these capabilities, CloudFormation returns an
+        /// <code>InsufficientCapabilities</code> error.</p>
+        /// </li>
+        /// </ul>
+        /// <p>If your stack template contains these resources, we recommend that you review
+        /// all permissions associated with them and edit their permissions if
+        /// necessary.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
+        /// AWS::IAM::AccessKey</a>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
+        /// AWS::IAM::Group</a>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html"> AWS::IAM::InstanceProfile</a>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
+        /// AWS::IAM::Policy</a>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
+        /// AWS::IAM::Role</a>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
+        /// AWS::IAM::User</a>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html"> AWS::IAM::UserToGroupAddition</a>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM
+        /// Resources in CloudFormation Templates</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CAPABILITY_AUTO_EXPAND</code>
+        /// </p>
+        /// <p>Some template contain macros. Macros perform custom processing on templates; this
+        /// can include simple actions like find-and-replace operations, all the way to extensive
+        /// transformations of entire templates. Because of this, users typically create a change
+        /// set from the processed template, so that they can review the changes resulting from
+        /// the macros before actually creating the stack. If your stack template contains one or
+        /// more macros, and you choose to create a stack directly from the processed template,
+        /// without first reviewing the resulting changes in a change set, you must acknowledge
+        /// this capability. This includes the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a> and <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.</p>
+        /// <note>
+        /// <p>This capacity does not apply to creating change sets, and specifying it when
+        /// creating change sets has no effect.</p>
+        /// <p>If you want to create a stack from a stack template that contains macros
+        /// <i>and</i> nested stacks, you must create or update the stack
+        /// directly from the template using the <a>CreateStack</a> or <a>UpdateStack</a> action, and specifying this capability.</p>
+        /// </note>
+        /// <p>For more information on macros, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using CloudFormation Macros to
+        /// Perform Custom Processing on Templates</a>.</p>
+        /// </li>
+        /// </ul>
         pub fn capabilities(mut self, input: impl Into<crate::model::Capability>) -> Self {
             let mut v = self.capabilities.unwrap_or_default();
             v.push(input.into());
             self.capabilities = Some(v);
             self
         }
+        /// <p>In some cases, you must explicitly acknowledge that your stack template contains certain
+        /// capabilities in order for CloudFormation to create the stack.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code>
+        /// </p>
+        /// <p>Some stack templates might include resources that can affect permissions in
+        /// your Amazon Web Services account; for example, by creating new Identity and Access Management
+        /// (IAM) users. For those stacks, you must explicitly acknowledge this by specifying one
+        /// of these capabilities.</p>
+        /// <p>The following IAM resources require you to specify either the
+        /// <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code>
+        /// capability.</p>
+        /// <ul>
+        /// <li>
+        /// <p>If you have IAM resources, you can specify either
+        /// capability.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you have IAM resources with custom names, you
+        /// <i>must</i> specify <code>CAPABILITY_NAMED_IAM</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you don't specify either of these capabilities, CloudFormation returns an
+        /// <code>InsufficientCapabilities</code> error.</p>
+        /// </li>
+        /// </ul>
+        /// <p>If your stack template contains these resources, we recommend that you review
+        /// all permissions associated with them and edit their permissions if
+        /// necessary.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
+        /// AWS::IAM::AccessKey</a>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
+        /// AWS::IAM::Group</a>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html"> AWS::IAM::InstanceProfile</a>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
+        /// AWS::IAM::Policy</a>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
+        /// AWS::IAM::Role</a>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
+        /// AWS::IAM::User</a>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html"> AWS::IAM::UserToGroupAddition</a>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM
+        /// Resources in CloudFormation Templates</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CAPABILITY_AUTO_EXPAND</code>
+        /// </p>
+        /// <p>Some template contain macros. Macros perform custom processing on templates; this
+        /// can include simple actions like find-and-replace operations, all the way to extensive
+        /// transformations of entire templates. Because of this, users typically create a change
+        /// set from the processed template, so that they can review the changes resulting from
+        /// the macros before actually creating the stack. If your stack template contains one or
+        /// more macros, and you choose to create a stack directly from the processed template,
+        /// without first reviewing the resulting changes in a change set, you must acknowledge
+        /// this capability. This includes the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a> and <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.</p>
+        /// <note>
+        /// <p>This capacity does not apply to creating change sets, and specifying it when
+        /// creating change sets has no effect.</p>
+        /// <p>If you want to create a stack from a stack template that contains macros
+        /// <i>and</i> nested stacks, you must create or update the stack
+        /// directly from the template using the <a>CreateStack</a> or <a>UpdateStack</a> action, and specifying this capability.</p>
+        /// </note>
+        /// <p>For more information on macros, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using CloudFormation Macros to
+        /// Perform Custom Processing on Templates</a>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_capabilities(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Capability>>,
@@ -915,12 +1289,34 @@ pub mod create_change_set_input {
             self.capabilities = input;
             self
         }
+        /// Appends an item to `resource_types`.
+        ///
+        /// To override the contents of this collection use [`set_resource_types`](Self::set_resource_types).
+        ///
+        /// <p>The template resource types that you have permissions to work with if you execute
+        /// this change set, such as <code>AWS::EC2::Instance</code>, <code>AWS::EC2::*</code>, or
+        /// <code>Custom::MyCustomInstance</code>.</p>
+        /// <p>If the list of resource types doesn't include a resource type that you're updating,
+        /// the stack update fails. By default, CloudFormation grants permissions to all resource
+        /// types. Identity and Access Management (IAM) uses this parameter for condition keys in
+        /// IAM policies for CloudFormation. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling Access with
+        /// Identity and Access Management</a> in the CloudFormation User
+        /// Guide.</p>
         pub fn resource_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_types.unwrap_or_default();
             v.push(input.into());
             self.resource_types = Some(v);
             self
         }
+        /// <p>The template resource types that you have permissions to work with if you execute
+        /// this change set, such as <code>AWS::EC2::Instance</code>, <code>AWS::EC2::*</code>, or
+        /// <code>Custom::MyCustomInstance</code>.</p>
+        /// <p>If the list of resource types doesn't include a resource type that you're updating,
+        /// the stack update fails. By default, CloudFormation grants permissions to all resource
+        /// types. Identity and Access Management (IAM) uses this parameter for condition keys in
+        /// IAM policies for CloudFormation. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling Access with
+        /// Identity and Access Management</a> in the CloudFormation User
+        /// Guide.</p>
         pub fn set_resource_types(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -941,6 +1337,15 @@ pub mod create_change_set_input {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role
+        /// that CloudFormation assumes when executing the change set. CloudFormation uses the
+        /// role's credentials to make calls on your behalf. CloudFormation uses this role for all
+        /// future operations on the stack. As long as users have permission to operate on the stack,
+        /// CloudFormation uses this role even if the users don't have permission to pass it.
+        /// Ensure that the role grants least privilege.</p>
+        /// <p>If you don't specify a value, CloudFormation uses the role that was previously
+        /// associated with the stack. If no role is available, CloudFormation uses a temporary
+        /// session that is generated from your user credentials.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -954,6 +1359,8 @@ pub mod create_change_set_input {
             self.rollback_configuration = Some(input);
             self
         }
+        /// <p>The rollback triggers for CloudFormation to monitor during stack creation and
+        /// updating operations, and for the specified monitoring period afterwards.</p>
         pub fn set_rollback_configuration(
             mut self,
             input: std::option::Option<crate::model::RollbackConfiguration>,
@@ -961,12 +1368,22 @@ pub mod create_change_set_input {
             self.rollback_configuration = input;
             self
         }
+        /// Appends an item to `notification_ar_ns`.
+        ///
+        /// To override the contents of this collection use [`set_notification_ar_ns`](Self::set_notification_ar_ns).
+        ///
+        /// <p>The Amazon Resource Names (ARNs) of Amazon Simple Notification Service (Amazon SNS)
+        /// topics that CloudFormation associates with the stack. To remove all associated
+        /// notification topics, specify an empty list.</p>
         pub fn notification_ar_ns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.notification_ar_ns.unwrap_or_default();
             v.push(input.into());
             self.notification_ar_ns = Some(v);
             self
         }
+        /// <p>The Amazon Resource Names (ARNs) of Amazon Simple Notification Service (Amazon SNS)
+        /// topics that CloudFormation associates with the stack. To remove all associated
+        /// notification topics, specify an empty list.</p>
         pub fn set_notification_ar_ns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -974,12 +1391,20 @@ pub mod create_change_set_input {
             self.notification_ar_ns = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Key-value pairs to associate with this stack. CloudFormation also propagates
+        /// these tags to resources in the stack. You can specify a maximum of 50 tags.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>Key-value pairs to associate with this stack. CloudFormation also propagates
+        /// these tags to resources in the stack. You can specify a maximum of 50 tags.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -996,6 +1421,11 @@ pub mod create_change_set_input {
             self.change_set_name = Some(input.into());
             self
         }
+        /// <p>The name of the change set. The name must be unique among all change sets that are
+        /// associated with the specified stack.</p>
+        /// <p>A change set name can contain only alphanumeric, case sensitive characters and
+        /// hyphens. It must start with an alphabetic character and cannot exceed 128
+        /// characters.</p>
         pub fn set_change_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1012,6 +1442,11 @@ pub mod create_change_set_input {
             self.client_token = Some(input.into());
             self
         }
+        /// <p>A unique identifier for this <code>CreateChangeSet</code> request. Specify this token
+        /// if you plan to retry requests so that CloudFormation knows that you're not attempting
+        /// to create another change set with the same name. You might retry
+        /// <code>CreateChangeSet</code> requests to ensure that CloudFormation successfully
+        /// received them.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -1021,6 +1456,7 @@ pub mod create_change_set_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description to help you identify this change set.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -1041,6 +1477,18 @@ pub mod create_change_set_input {
             self.change_set_type = Some(input);
             self
         }
+        /// <p>The type of change set operation. To create a change set for a new stack, specify
+        /// <code>CREATE</code>. To create a change set for an existing stack, specify
+        /// <code>UPDATE</code>. To create a change set for an import operation, specify
+        /// <code>IMPORT</code>.</p>
+        /// <p>If you create a change set for a new stack, CloudFormation creates a stack with a
+        /// unique stack ID, but no template or resources. The stack will be in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995">
+        /// <code>REVIEW_IN_PROGRESS</code>
+        /// </a> state until you execute the change
+        /// set.</p>
+        /// <p>By default, CloudFormation specifies <code>UPDATE</code>. You can't use the
+        /// <code>UPDATE</code> type to create a change set for a new stack or the
+        /// <code>CREATE</code> type to create a change set for an existing stack.</p>
         pub fn set_change_set_type(
             mut self,
             input: std::option::Option<crate::model::ChangeSetType>,
@@ -1048,6 +1496,11 @@ pub mod create_change_set_input {
             self.change_set_type = input;
             self
         }
+        /// Appends an item to `resources_to_import`.
+        ///
+        /// To override the contents of this collection use [`set_resources_to_import`](Self::set_resources_to_import).
+        ///
+        /// <p>The resources to import into your stack.</p>
         pub fn resources_to_import(
             mut self,
             input: impl Into<crate::model::ResourceToImport>,
@@ -1057,6 +1510,7 @@ pub mod create_change_set_input {
             self.resources_to_import = Some(v);
             self
         }
+        /// <p>The resources to import into your stack.</p>
         pub fn set_resources_to_import(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourceToImport>>,
@@ -1071,6 +1525,9 @@ pub mod create_change_set_input {
             self.include_nested_stacks = Some(input);
             self
         }
+        /// <p>Creates a change set for the all nested stacks specified in the template. The default
+        /// behavior of this action is set to <code>False</code>. To include nested sets in a change
+        /// set, specify <code>True</code>.</p>
         pub fn set_include_nested_stacks(mut self, input: std::option::Option<bool>) -> Self {
             self.include_nested_stacks = input;
             self
@@ -1080,7 +1537,7 @@ pub mod create_change_set_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateChangeSetInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateChangeSetInput {
                 stack_name: self.stack_name,
@@ -1115,16 +1572,16 @@ impl CreateChangeSetInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateChangeSet,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateChangeSetInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1132,7 +1589,7 @@ impl CreateChangeSetInput {
         fn update_http_builder(
             input: &crate::input::CreateChangeSetInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1141,27 +1598,27 @@ impl CreateChangeSetInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateChangeSetInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_change_set(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1184,15 +1641,15 @@ impl CreateChangeSetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateChangeSet::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateChangeSet",
             "cloudformation",
         ));
@@ -1201,10 +1658,10 @@ impl CreateChangeSetInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1254,6 +1711,13 @@ pub mod create_stack_input {
             self.stack_name = Some(input.into());
             self
         }
+        /// <p>The name that is associated with the stack. The name must be unique in the Region in
+        /// which you are creating the stack.</p>
+        /// <note>
+        /// <p>A stack name can contain only alphanumeric characters (case sensitive) and hyphens.
+        /// It must start with an alphabetical character and cannot be longer than 128
+        /// characters.</p>
+        /// </note>
         pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_name = input;
             self
@@ -1267,6 +1731,11 @@ pub mod create_stack_input {
             self.template_body = Some(input.into());
             self
         }
+        /// <p>Structure containing the template body with a minimum length of 1 byte and a maximum
+        /// length of 51,200 bytes. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
+        /// in the CloudFormation User Guide.</p>
+        /// <p>Conditional: You must specify either the <code>TemplateBody</code> or the
+        /// <code>TemplateURL</code> parameter, but not both.</p>
         pub fn set_template_body(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1284,16 +1753,32 @@ pub mod create_stack_input {
             self.template_url = Some(input.into());
             self
         }
+        /// <p>Location of file containing the template body. The URL must point to a template (max
+        /// size: 460,800 bytes) that is located in an Amazon S3 bucket or a Systems Manager document.
+        /// For more information, go to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
+        /// in the CloudFormation User Guide.</p>
+        /// <p>Conditional: You must specify either the <code>TemplateBody</code> or the
+        /// <code>TemplateURL</code> parameter, but not both.</p>
         pub fn set_template_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.template_url = input;
             self
         }
+        /// Appends an item to `parameters`.
+        ///
+        /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
+        ///
+        /// <p>A list of <code>Parameter</code> structures that specify input parameters for the
+        /// stack. For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data
+        /// type.</p>
         pub fn parameters(mut self, input: impl Into<crate::model::Parameter>) -> Self {
             let mut v = self.parameters.unwrap_or_default();
             v.push(input.into());
             self.parameters = Some(v);
             self
         }
+        /// <p>A list of <code>Parameter</code> structures that specify input parameters for the
+        /// stack. For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data
+        /// type.</p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
@@ -1310,6 +1795,11 @@ pub mod create_stack_input {
             self.disable_rollback = Some(input);
             self
         }
+        /// <p>Set to <code>true</code> to disable rollback of the stack if stack creation failed.
+        /// You can specify either <code>DisableRollback</code> or <code>OnFailure</code>, but not
+        /// both.</p>
+        /// <p>Default: <code>false</code>
+        /// </p>
         pub fn set_disable_rollback(mut self, input: std::option::Option<bool>) -> Self {
             self.disable_rollback = input;
             self
@@ -1323,6 +1813,8 @@ pub mod create_stack_input {
             self.rollback_configuration = Some(input);
             self
         }
+        /// <p>The rollback triggers for CloudFormation to monitor during stack creation and
+        /// updating operations, and for the specified monitoring period afterwards.</p>
         pub fn set_rollback_configuration(
             mut self,
             input: std::option::Option<crate::model::RollbackConfiguration>,
@@ -1337,16 +1829,29 @@ pub mod create_stack_input {
             self.timeout_in_minutes = Some(input);
             self
         }
+        /// <p>The amount of time that can pass before the stack status becomes CREATE_FAILED; if
+        /// <code>DisableRollback</code> is not set or is set to <code>false</code>, the stack will
+        /// be rolled back.</p>
         pub fn set_timeout_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.timeout_in_minutes = input;
             self
         }
+        /// Appends an item to `notification_ar_ns`.
+        ///
+        /// To override the contents of this collection use [`set_notification_ar_ns`](Self::set_notification_ar_ns).
+        ///
+        /// <p>The Simple Notification Service (SNS) topic ARNs to publish stack related events. You
+        /// can find your SNS topic ARNs using the SNS console or your Command Line Interface
+        /// (CLI).</p>
         pub fn notification_ar_ns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.notification_ar_ns.unwrap_or_default();
             v.push(input.into());
             self.notification_ar_ns = Some(v);
             self
         }
+        /// <p>The Simple Notification Service (SNS) topic ARNs to publish stack related events. You
+        /// can find your SNS topic ARNs using the SNS console or your Command Line Interface
+        /// (CLI).</p>
         pub fn set_notification_ar_ns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1354,12 +1859,220 @@ pub mod create_stack_input {
             self.notification_ar_ns = input;
             self
         }
+        /// Appends an item to `capabilities`.
+        ///
+        /// To override the contents of this collection use [`set_capabilities`](Self::set_capabilities).
+        ///
+        /// <p>In some cases, you must explicitly acknowledge that your stack template contains certain
+        /// capabilities in order for CloudFormation to create the stack.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code>
+        /// </p>
+        /// <p>Some stack templates might include resources that can affect permissions in
+        /// your Amazon Web Services account; for example, by creating new Identity and Access Management
+        /// (IAM) users. For those stacks, you must explicitly acknowledge this by specifying one
+        /// of these capabilities.</p>
+        /// <p>The following IAM resources require you to specify either the
+        /// <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code>
+        /// capability.</p>
+        /// <ul>
+        /// <li>
+        /// <p>If you have IAM resources, you can specify either capability.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you have IAM resources with custom names, you <i>must</i>
+        /// specify <code>CAPABILITY_NAMED_IAM</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you don't specify either of these capabilities, CloudFormation returns an
+        /// <code>InsufficientCapabilities</code> error.</p>
+        /// </li>
+        /// </ul>
+        /// <p>If your stack template contains these resources, we recommend that you review
+        /// all permissions associated with them and edit their permissions if
+        /// necessary.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
+        /// AWS::IAM::AccessKey</a>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
+        /// AWS::IAM::Group</a>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html"> AWS::IAM::InstanceProfile</a>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
+        /// AWS::IAM::Policy</a>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
+        /// AWS::IAM::Role</a>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
+        /// AWS::IAM::User</a>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html"> AWS::IAM::UserToGroupAddition</a>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM
+        /// Resources in CloudFormation Templates</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CAPABILITY_AUTO_EXPAND</code>
+        /// </p>
+        /// <p>Some template contain macros. Macros perform custom processing on templates; this
+        /// can include simple actions like find-and-replace operations, all the way to extensive
+        /// transformations of entire templates. Because of this, users typically create a change
+        /// set from the processed template, so that they can review the changes resulting from
+        /// the macros before actually creating the stack. If your stack template contains one or
+        /// more macros, and you choose to create a stack directly from the processed template,
+        /// without first reviewing the resulting changes in a change set, you must acknowledge
+        /// this capability. This includes the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a> and <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.</p>
+        /// <p>If you want to create a stack from a stack template that contains macros
+        /// <i>and</i> nested stacks, you must create the stack directly from
+        /// the template using this capability.</p>
+        /// <important>
+        /// <p>You should only create stacks directly from a stack template that contains
+        /// macros if you know what processing the macro performs.</p>
+        /// <p>Each macro relies on an underlying Lambda service function for processing stack
+        /// templates. Be aware that the Lambda function owner can update the function
+        /// operation without CloudFormation being notified.</p>
+        /// </important>
+        /// <p>For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
+        /// CloudFormation Macros to Perform Custom Processing on
+        /// Templates</a>.</p>
+        /// </li>
+        /// </ul>
         pub fn capabilities(mut self, input: impl Into<crate::model::Capability>) -> Self {
             let mut v = self.capabilities.unwrap_or_default();
             v.push(input.into());
             self.capabilities = Some(v);
             self
         }
+        /// <p>In some cases, you must explicitly acknowledge that your stack template contains certain
+        /// capabilities in order for CloudFormation to create the stack.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code>
+        /// </p>
+        /// <p>Some stack templates might include resources that can affect permissions in
+        /// your Amazon Web Services account; for example, by creating new Identity and Access Management
+        /// (IAM) users. For those stacks, you must explicitly acknowledge this by specifying one
+        /// of these capabilities.</p>
+        /// <p>The following IAM resources require you to specify either the
+        /// <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code>
+        /// capability.</p>
+        /// <ul>
+        /// <li>
+        /// <p>If you have IAM resources, you can specify either capability.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you have IAM resources with custom names, you <i>must</i>
+        /// specify <code>CAPABILITY_NAMED_IAM</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you don't specify either of these capabilities, CloudFormation returns an
+        /// <code>InsufficientCapabilities</code> error.</p>
+        /// </li>
+        /// </ul>
+        /// <p>If your stack template contains these resources, we recommend that you review
+        /// all permissions associated with them and edit their permissions if
+        /// necessary.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
+        /// AWS::IAM::AccessKey</a>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
+        /// AWS::IAM::Group</a>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html"> AWS::IAM::InstanceProfile</a>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
+        /// AWS::IAM::Policy</a>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
+        /// AWS::IAM::Role</a>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
+        /// AWS::IAM::User</a>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html"> AWS::IAM::UserToGroupAddition</a>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM
+        /// Resources in CloudFormation Templates</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CAPABILITY_AUTO_EXPAND</code>
+        /// </p>
+        /// <p>Some template contain macros. Macros perform custom processing on templates; this
+        /// can include simple actions like find-and-replace operations, all the way to extensive
+        /// transformations of entire templates. Because of this, users typically create a change
+        /// set from the processed template, so that they can review the changes resulting from
+        /// the macros before actually creating the stack. If your stack template contains one or
+        /// more macros, and you choose to create a stack directly from the processed template,
+        /// without first reviewing the resulting changes in a change set, you must acknowledge
+        /// this capability. This includes the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a> and <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.</p>
+        /// <p>If you want to create a stack from a stack template that contains macros
+        /// <i>and</i> nested stacks, you must create the stack directly from
+        /// the template using this capability.</p>
+        /// <important>
+        /// <p>You should only create stacks directly from a stack template that contains
+        /// macros if you know what processing the macro performs.</p>
+        /// <p>Each macro relies on an underlying Lambda service function for processing stack
+        /// templates. Be aware that the Lambda function owner can update the function
+        /// operation without CloudFormation being notified.</p>
+        /// </important>
+        /// <p>For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
+        /// CloudFormation Macros to Perform Custom Processing on
+        /// Templates</a>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_capabilities(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Capability>>,
@@ -1367,12 +2080,44 @@ pub mod create_stack_input {
             self.capabilities = input;
             self
         }
+        /// Appends an item to `resource_types`.
+        ///
+        /// To override the contents of this collection use [`set_resource_types`](Self::set_resource_types).
+        ///
+        /// <p>The template resource types that you have permissions to work with for this create
+        /// stack action, such as <code>AWS::EC2::Instance</code>, <code>AWS::EC2::*</code>, or
+        /// <code>Custom::MyCustomInstance</code>. Use the following syntax to describe template
+        /// resource types: <code>AWS::*</code> (for all Amazon Web Services resources),
+        /// <code>Custom::*</code> (for all custom resources),
+        /// <code>Custom::<i>logical_ID</i>
+        /// </code> (for a specific custom resource),
+        /// <code>AWS::<i>service_name</i>::*</code> (for all resources of a
+        /// particular Amazon Web Services service), and
+        /// <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i>
+        /// </code> (for a specific Amazon Web Services resource).</p>
+        /// <p>If the list of resource types doesn't include a resource that you're creating, the
+        /// stack creation fails. By default, CloudFormation grants permissions to all resource
+        /// types. Identity and Access Management (IAM) uses this parameter for CloudFormation-specific condition keys in IAM policies. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling Access with Identity and Access Management</a>.</p>
         pub fn resource_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_types.unwrap_or_default();
             v.push(input.into());
             self.resource_types = Some(v);
             self
         }
+        /// <p>The template resource types that you have permissions to work with for this create
+        /// stack action, such as <code>AWS::EC2::Instance</code>, <code>AWS::EC2::*</code>, or
+        /// <code>Custom::MyCustomInstance</code>. Use the following syntax to describe template
+        /// resource types: <code>AWS::*</code> (for all Amazon Web Services resources),
+        /// <code>Custom::*</code> (for all custom resources),
+        /// <code>Custom::<i>logical_ID</i>
+        /// </code> (for a specific custom resource),
+        /// <code>AWS::<i>service_name</i>::*</code> (for all resources of a
+        /// particular Amazon Web Services service), and
+        /// <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i>
+        /// </code> (for a specific Amazon Web Services resource).</p>
+        /// <p>If the list of resource types doesn't include a resource that you're creating, the
+        /// stack creation fails. By default, CloudFormation grants permissions to all resource
+        /// types. Identity and Access Management (IAM) uses this parameter for CloudFormation-specific condition keys in IAM policies. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling Access with Identity and Access Management</a>.</p>
         pub fn set_resource_types(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1393,6 +2138,15 @@ pub mod create_stack_input {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role
+        /// that CloudFormation assumes to create the stack. CloudFormation uses the role's
+        /// credentials to make calls on your behalf. CloudFormation always uses this role for all
+        /// future operations on the stack. As long as users have permission to operate on the stack,
+        /// CloudFormation uses this role even if the users don't have permission to pass it.
+        /// Ensure that the role grants least privilege.</p>
+        /// <p>If you don't specify a value, CloudFormation uses the role that was previously
+        /// associated with the stack. If no role is available, CloudFormation uses a temporary
+        /// session that is generated from your user credentials.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -1406,6 +2160,11 @@ pub mod create_stack_input {
             self.on_failure = Some(input);
             self
         }
+        /// <p>Determines what action will be taken if stack creation fails. This must be one of:
+        /// DO_NOTHING, ROLLBACK, or DELETE. You can specify either <code>OnFailure</code> or
+        /// <code>DisableRollback</code>, but not both.</p>
+        /// <p>Default: <code>ROLLBACK</code>
+        /// </p>
         pub fn set_on_failure(
             mut self,
             input: std::option::Option<crate::model::OnFailure>,
@@ -1421,6 +2180,10 @@ pub mod create_stack_input {
             self.stack_policy_body = Some(input.into());
             self
         }
+        /// <p>Structure containing the stack policy body. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent Updates
+        /// to Stack Resources</a> in the <i>CloudFormation User Guide</i>.
+        /// You can specify either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code>
+        /// parameter, but not both.</p>
         pub fn set_stack_policy_body(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1436,6 +2199,10 @@ pub mod create_stack_input {
             self.stack_policy_url = Some(input.into());
             self
         }
+        /// <p>Location of a file containing the stack policy. The URL must point to a policy
+        /// (maximum size: 16 KB) located in an S3 bucket in the same
+        /// Region as the stack. You can specify either the <code>StackPolicyBody</code> or the
+        /// <code>StackPolicyURL</code> parameter, but not both.</p>
         pub fn set_stack_policy_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1443,12 +2210,22 @@ pub mod create_stack_input {
             self.stack_policy_url = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Key-value pairs to associate with this stack. CloudFormation also propagates
+        /// these tags to the resources created in the stack. A maximum number of 50 tags can be
+        /// specified.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>Key-value pairs to associate with this stack. CloudFormation also propagates
+        /// these tags to the resources created in the stack. A maximum number of 50 tags can be
+        /// specified.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1475,6 +2252,21 @@ pub mod create_stack_input {
             self.client_request_token = Some(input.into());
             self
         }
+        /// <p>A unique identifier for this <code>CreateStack</code> request. Specify this token if
+        /// you plan to retry requests so that CloudFormation knows that you're not attempting to
+        /// create a stack with the same name. You might retry <code>CreateStack</code> requests to
+        /// ensure that CloudFormation successfully received them.</p>
+        /// <p>All events triggered by a given stack operation are assigned the same client request
+        /// token, which you can use to track operations. For example, if you execute a
+        /// <code>CreateStack</code> operation with the token <code>token1</code>, then all the
+        /// <code>StackEvents</code> generated by that operation will have
+        /// <code>ClientRequestToken</code> set as <code>token1</code>.</p>
+        /// <p>In the console, stack operations display the client request token on the Events tab.
+        /// Stack operations that are initiated from the console use the token format
+        /// <i>Console-StackOperation-ID</i>, which helps you easily identify the
+        /// stack operation . For example, if you create a stack using the console, each stack event
+        /// would be assigned the same token in the following format:
+        /// <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>. </p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1494,6 +2286,14 @@ pub mod create_stack_input {
             self.enable_termination_protection = Some(input);
             self
         }
+        /// <p>Whether to enable termination protection on the specified stack. If a user attempts to
+        /// delete a stack with termination protection enabled, the operation fails and the stack
+        /// remains unchanged. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting a Stack From Being
+        /// Deleted</a> in the <i>CloudFormation User Guide</i>. Termination protection is
+        /// disabled on stacks by default.</p>
+        /// <p>For <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested stacks</a>,
+        /// termination protection is set on the root stack and cannot be changed directly on the
+        /// nested stack.</p>
         pub fn set_enable_termination_protection(
             mut self,
             input: std::option::Option<bool>,
@@ -1504,8 +2304,10 @@ pub mod create_stack_input {
         /// Consumes the builder and constructs a [`CreateStackInput`](crate::input::CreateStackInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreateStackInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateStackInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateStackInput {
                 stack_name: self.stack_name,
                 template_body: self.template_body,
@@ -1539,16 +2341,16 @@ impl CreateStackInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateStack,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateStackInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1556,7 +2358,7 @@ impl CreateStackInput {
         fn update_http_builder(
             input: &crate::input::CreateStackInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1565,24 +2367,26 @@ impl CreateStackInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateStackInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_stack(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1605,25 +2409,27 @@ impl CreateStackInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreateStack::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "CreateStack",
-                    "cloudformation",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateStack::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateStack",
+            "cloudformation",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1660,6 +2466,8 @@ pub mod create_stack_instances_input {
             self.stack_set_name = Some(input.into());
             self
         }
+        /// <p>The name or unique ID of the stack set that you want to create stack instances
+        /// from.</p>
         pub fn set_stack_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1667,12 +2475,22 @@ pub mod create_stack_instances_input {
             self.stack_set_name = input;
             self
         }
+        /// Appends an item to `accounts`.
+        ///
+        /// To override the contents of this collection use [`set_accounts`](Self::set_accounts).
+        ///
+        /// <p>[Self-managed permissions] The names of one or more Amazon Web Services accounts that you want to create stack instances in the
+        /// specified Region(s) for.</p>
+        /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
         pub fn accounts(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.accounts.unwrap_or_default();
             v.push(input.into());
             self.accounts = Some(v);
             self
         }
+        /// <p>[Self-managed permissions] The names of one or more Amazon Web Services accounts that you want to create stack instances in the
+        /// specified Region(s) for.</p>
+        /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
         pub fn set_accounts(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1688,6 +2506,10 @@ pub mod create_stack_instances_input {
             self.deployment_targets = Some(input);
             self
         }
+        /// <p>[Service-managed permissions] The Organizations accounts for which to create
+        /// stack instances in the specified Regions.</p>
+        /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not
+        /// both.</p>
         pub fn set_deployment_targets(
             mut self,
             input: std::option::Option<crate::model::DeploymentTargets>,
@@ -1695,12 +2517,20 @@ pub mod create_stack_instances_input {
             self.deployment_targets = input;
             self
         }
+        /// Appends an item to `regions`.
+        ///
+        /// To override the contents of this collection use [`set_regions`](Self::set_regions).
+        ///
+        /// <p>The names of one or more Regions where you want to create stack instances using the
+        /// specified Amazon Web Services accounts.</p>
         pub fn regions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.regions.unwrap_or_default();
             v.push(input.into());
             self.regions = Some(v);
             self
         }
+        /// <p>The names of one or more Regions where you want to create stack instances using the
+        /// specified Amazon Web Services accounts.</p>
         pub fn set_regions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1708,12 +2538,72 @@ pub mod create_stack_instances_input {
             self.regions = input;
             self
         }
+        /// Appends an item to `parameter_overrides`.
+        ///
+        /// To override the contents of this collection use [`set_parameter_overrides`](Self::set_parameter_overrides).
+        ///
+        /// <p>A list of stack set parameters whose values you want to override in the selected
+        /// stack instances.</p>
+        /// <p>Any overridden parameter values will be applied to all stack instances in the
+        /// specified accounts and Regions. When specifying parameters and their values, be aware of
+        /// how CloudFormation sets parameter values during stack instance operations:</p>
+        /// <ul>
+        /// <li>
+        /// <p>To override the current value for a parameter, include the parameter and
+        /// specify its value.</p>
+        /// </li>
+        /// <li>
+        /// <p>To leave an overridden parameter set to its present value, include the parameter and specify <code>UsePreviousValue</code> as
+        /// <code>true</code>. (You cannot specify both a value and set
+        /// <code>UsePreviousValue</code> to <code>true</code>.)</p>
+        /// </li>
+        /// <li>
+        /// <p>To set an overridden parameter back to the value specified in the stack set,
+        /// specify a parameter list but do not include the parameter in the list.</p>
+        /// </li>
+        /// <li>
+        /// <p>To leave all parameters set to their present values, do not specify this
+        /// property at all.</p>
+        /// </li>
+        /// </ul>
+        /// <p>During stack set updates, any parameter values overridden for a stack instance are
+        /// not updated, but retain their overridden value.</p>
+        /// <p>You can only override the parameter <i>values</i> that are specified in
+        /// the stack set; to add or delete a parameter itself, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a> to update the stack set template.</p>
         pub fn parameter_overrides(mut self, input: impl Into<crate::model::Parameter>) -> Self {
             let mut v = self.parameter_overrides.unwrap_or_default();
             v.push(input.into());
             self.parameter_overrides = Some(v);
             self
         }
+        /// <p>A list of stack set parameters whose values you want to override in the selected
+        /// stack instances.</p>
+        /// <p>Any overridden parameter values will be applied to all stack instances in the
+        /// specified accounts and Regions. When specifying parameters and their values, be aware of
+        /// how CloudFormation sets parameter values during stack instance operations:</p>
+        /// <ul>
+        /// <li>
+        /// <p>To override the current value for a parameter, include the parameter and
+        /// specify its value.</p>
+        /// </li>
+        /// <li>
+        /// <p>To leave an overridden parameter set to its present value, include the parameter and specify <code>UsePreviousValue</code> as
+        /// <code>true</code>. (You cannot specify both a value and set
+        /// <code>UsePreviousValue</code> to <code>true</code>.)</p>
+        /// </li>
+        /// <li>
+        /// <p>To set an overridden parameter back to the value specified in the stack set,
+        /// specify a parameter list but do not include the parameter in the list.</p>
+        /// </li>
+        /// <li>
+        /// <p>To leave all parameters set to their present values, do not specify this
+        /// property at all.</p>
+        /// </li>
+        /// </ul>
+        /// <p>During stack set updates, any parameter values overridden for a stack instance are
+        /// not updated, but retain their overridden value.</p>
+        /// <p>You can only override the parameter <i>values</i> that are specified in
+        /// the stack set; to add or delete a parameter itself, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a> to update the stack set template.</p>
         pub fn set_parameter_overrides(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
@@ -1729,6 +2619,7 @@ pub mod create_stack_instances_input {
             self.operation_preferences = Some(input);
             self
         }
+        /// <p>Preferences for how CloudFormation performs this stack set operation.</p>
         pub fn set_operation_preferences(
             mut self,
             input: std::option::Option<crate::model::StackSetOperationPreferences>,
@@ -1749,6 +2640,15 @@ pub mod create_stack_instances_input {
             self.operation_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for this stack set operation.</p>
+        /// <p>The operation ID also functions as an idempotency token, to ensure that
+        /// CloudFormation performs the stack set operation only once, even if you retry the request
+        /// multiple times. You might retry stack set operation requests to ensure that
+        /// CloudFormation successfully received them.</p>
+        /// <p>If you don't specify an operation ID, the SDK generates one
+        /// automatically.</p>
+        /// <p>Repeating this stack set operation with a new operation ID retries all stack instances
+        /// whose status is <code>OUTDATED</code>.</p>
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.operation_id = input;
             self
@@ -1768,6 +2668,17 @@ pub mod create_stack_instances_input {
             self.call_as = Some(input);
             self
         }
+        /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
+        /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+        /// <ul>
+        /// <li>
+        /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p>
+        /// <p>Your Amazon Web Services account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_call_as(mut self, input: std::option::Option<crate::model::CallAs>) -> Self {
             self.call_as = input;
             self
@@ -1777,7 +2688,7 @@ pub mod create_stack_instances_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateStackInstancesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateStackInstancesInput {
                 stack_set_name: self.stack_set_name,
@@ -1803,16 +2714,16 @@ impl CreateStackInstancesInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateStackInstances,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateStackInstancesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1820,7 +2731,7 @@ impl CreateStackInstancesInput {
         fn update_http_builder(
             input: &crate::input::CreateStackInstancesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1829,10 +2740,10 @@ impl CreateStackInstancesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateStackInstancesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
@@ -1842,17 +2753,17 @@ impl CreateStackInstancesInput {
         if self.operation_id.is_none() {
             self.operation_id = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_stack_instances(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1875,15 +2786,15 @@ impl CreateStackInstancesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateStackInstances::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateStackInstances",
             "cloudformation",
         ));
@@ -1892,10 +2803,10 @@ impl CreateStackInstancesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1942,6 +2853,13 @@ pub mod create_stack_set_input {
             self.stack_set_name = Some(input.into());
             self
         }
+        /// <p>The name to associate with the stack set. The name must be unique in the Region where
+        /// you create your stack set.</p>
+        /// <note>
+        /// <p>A stack name can contain only alphanumeric characters (case-sensitive) and
+        /// hyphens. It must start with an alphabetic character and can't be longer than 128
+        /// characters.</p>
+        /// </note>
         pub fn set_stack_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1955,6 +2873,8 @@ pub mod create_stack_set_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description of the stack set. You can use the description to identify the stack
+        /// set's purpose or other important information.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -1968,6 +2888,11 @@ pub mod create_stack_set_input {
             self.template_body = Some(input.into());
             self
         }
+        /// <p>The structure that contains the template body, with a minimum length of 1 byte and a
+        /// maximum length of 51,200 bytes. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
+        /// in the CloudFormation User Guide.</p>
+        /// <p>Conditional: You must specify either the TemplateBody or the TemplateURL parameter,
+        /// but not both.</p>
         pub fn set_template_body(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1985,6 +2910,12 @@ pub mod create_stack_set_input {
             self.template_url = Some(input.into());
             self
         }
+        /// <p>The location of the file that contains the template body. The URL must point to a
+        /// template (maximum size: 460,800 bytes) that's located in an Amazon S3 bucket or a Systems
+        /// Manager document. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
+        /// in the CloudFormation User Guide.</p>
+        /// <p>Conditional: You must specify either the TemplateBody or the TemplateURL parameter,
+        /// but not both.</p>
         pub fn set_template_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.template_url = input;
             self
@@ -1995,16 +2926,24 @@ pub mod create_stack_set_input {
             self.stack_id = Some(input.into());
             self
         }
+        /// <p>The stack ID you are importing into a new stack set. Specify the Amazon Resource Number
+        /// (ARN) of the stack.</p>
         pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_id = input;
             self
         }
+        /// Appends an item to `parameters`.
+        ///
+        /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
+        ///
+        /// <p>The input parameters for the stack set template.</p>
         pub fn parameters(mut self, input: impl Into<crate::model::Parameter>) -> Self {
             let mut v = self.parameters.unwrap_or_default();
             v.push(input.into());
             self.parameters = Some(v);
             self
         }
+        /// <p>The input parameters for the stack set template.</p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
@@ -2012,12 +2951,204 @@ pub mod create_stack_set_input {
             self.parameters = input;
             self
         }
+        /// Appends an item to `capabilities`.
+        ///
+        /// To override the contents of this collection use [`set_capabilities`](Self::set_capabilities).
+        ///
+        /// <p>In some cases, you must explicitly acknowledge that your stack set template contains
+        /// certain capabilities in order for CloudFormation to create the stack set and related stack
+        /// instances.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code>
+        /// </p>
+        /// <p>Some stack templates might include resources that can affect permissions in
+        /// your Amazon Web Services account; for example, by creating new Identity and Access Management
+        /// (IAM) users. For those stack sets, you must explicitly acknowledge this by specifying
+        /// one of these capabilities.</p>
+        /// <p>The following IAM resources require you to specify either the
+        /// <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code>
+        /// capability.</p>
+        /// <ul>
+        /// <li>
+        /// <p>If you have IAM resources, you can specify either capability.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you have IAM resources with custom names, you <i>must</i>
+        /// specify <code>CAPABILITY_NAMED_IAM</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you don't specify either of these capabilities, CloudFormation returns an
+        /// <code>InsufficientCapabilities</code> error.</p>
+        /// </li>
+        /// </ul>
+        /// <p>If your stack template contains these resources, we recommend that you review
+        /// all permissions associated with them and edit their permissions if
+        /// necessary.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
+        /// AWS::IAM::AccessKey</a>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
+        /// AWS::IAM::Group</a>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html"> AWS::IAM::InstanceProfile</a>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
+        /// AWS::IAM::Policy</a>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
+        /// AWS::IAM::Role</a>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
+        /// AWS::IAM::User</a>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html"> AWS::IAM::UserToGroupAddition</a>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM
+        /// Resources in CloudFormation Templates</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CAPABILITY_AUTO_EXPAND</code>
+        /// </p>
+        /// <p>Some templates reference macros. If your stack set template references one or more
+        /// macros, you must create the stack set directly from the processed template, without
+        /// first reviewing the resulting changes in a change set. To create the stack set
+        /// directly, you must acknowledge this capability. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using CloudFormation Macros to
+        /// Perform Custom Processing on Templates</a>.</p>
+        /// <important>
+        /// <p>Stack sets with service-managed permissions do not currently support the use of
+        /// macros in templates. (This includes the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a> and <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
+        /// transforms, which are macros hosted by CloudFormation.) Even if you specify this capability
+        /// for a stack set with service-managed permissions, if you reference a macro in your
+        /// template the stack set operation will fail.</p>
+        /// </important>
+        /// </li>
+        /// </ul>
         pub fn capabilities(mut self, input: impl Into<crate::model::Capability>) -> Self {
             let mut v = self.capabilities.unwrap_or_default();
             v.push(input.into());
             self.capabilities = Some(v);
             self
         }
+        /// <p>In some cases, you must explicitly acknowledge that your stack set template contains
+        /// certain capabilities in order for CloudFormation to create the stack set and related stack
+        /// instances.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code>
+        /// </p>
+        /// <p>Some stack templates might include resources that can affect permissions in
+        /// your Amazon Web Services account; for example, by creating new Identity and Access Management
+        /// (IAM) users. For those stack sets, you must explicitly acknowledge this by specifying
+        /// one of these capabilities.</p>
+        /// <p>The following IAM resources require you to specify either the
+        /// <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code>
+        /// capability.</p>
+        /// <ul>
+        /// <li>
+        /// <p>If you have IAM resources, you can specify either capability.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you have IAM resources with custom names, you <i>must</i>
+        /// specify <code>CAPABILITY_NAMED_IAM</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you don't specify either of these capabilities, CloudFormation returns an
+        /// <code>InsufficientCapabilities</code> error.</p>
+        /// </li>
+        /// </ul>
+        /// <p>If your stack template contains these resources, we recommend that you review
+        /// all permissions associated with them and edit their permissions if
+        /// necessary.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
+        /// AWS::IAM::AccessKey</a>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
+        /// AWS::IAM::Group</a>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html"> AWS::IAM::InstanceProfile</a>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
+        /// AWS::IAM::Policy</a>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
+        /// AWS::IAM::Role</a>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
+        /// AWS::IAM::User</a>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html"> AWS::IAM::UserToGroupAddition</a>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM
+        /// Resources in CloudFormation Templates</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CAPABILITY_AUTO_EXPAND</code>
+        /// </p>
+        /// <p>Some templates reference macros. If your stack set template references one or more
+        /// macros, you must create the stack set directly from the processed template, without
+        /// first reviewing the resulting changes in a change set. To create the stack set
+        /// directly, you must acknowledge this capability. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using CloudFormation Macros to
+        /// Perform Custom Processing on Templates</a>.</p>
+        /// <important>
+        /// <p>Stack sets with service-managed permissions do not currently support the use of
+        /// macros in templates. (This includes the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a> and <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
+        /// transforms, which are macros hosted by CloudFormation.) Even if you specify this capability
+        /// for a stack set with service-managed permissions, if you reference a macro in your
+        /// template the stack set operation will fail.</p>
+        /// </important>
+        /// </li>
+        /// </ul>
         pub fn set_capabilities(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Capability>>,
@@ -2025,12 +3156,30 @@ pub mod create_stack_set_input {
             self.capabilities = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The key-value pairs to associate with this stack set and the stacks created from it.
+        /// CloudFormation also propagates these tags to supported resources that are created in
+        /// the stacks. A maximum number of 50 tags can be specified.</p>
+        /// <p>If you specify tags as part of a <code>CreateStackSet</code> action,
+        /// CloudFormation checks to see if you have the required IAM permission to tag resources. If
+        /// you don't, the entire <code>CreateStackSet</code> action fails with an <code>access
+        /// denied</code> error, and the stack set is not created.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The key-value pairs to associate with this stack set and the stacks created from it.
+        /// CloudFormation also propagates these tags to supported resources that are created in
+        /// the stacks. A maximum number of 50 tags can be specified.</p>
+        /// <p>If you specify tags as part of a <code>CreateStackSet</code> action,
+        /// CloudFormation checks to see if you have the required IAM permission to tag resources. If
+        /// you don't, the entire <code>CreateStackSet</code> action fails with an <code>access
+        /// denied</code> error, and the stack set is not created.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2048,6 +3197,12 @@ pub mod create_stack_set_input {
             self.administration_role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Number (ARN) of the IAM role to use to create this stack set. </p>
+        /// <p>Specify an IAM role only if you are using customized administrator roles to control
+        /// which users or groups can manage specific stack sets within the same administrator account.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites:
+        /// Granting Permissions for Stack Set Operations</a> in the
+        /// <i>CloudFormation User Guide</i>.</p>
         pub fn set_administration_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2060,11 +3215,19 @@ pub mod create_stack_set_input {
         /// for the stack set operation.</p>
         /// <p>Specify an IAM role only if you are using customized execution roles to control which
         /// stack resources users and groups can include in their stack sets.
+        ///
         /// </p>
         pub fn execution_role_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.execution_role_name = Some(input.into());
             self
         }
+        /// <p>The name of the IAM execution role to use to create the stack set. If you do not specify
+        /// an execution role, CloudFormation uses the <code>AWSCloudFormationStackSetExecutionRole</code> role
+        /// for the stack set operation.</p>
+        /// <p>Specify an IAM role only if you are using customized execution roles to control which
+        /// stack resources users and groups can include in their stack sets.
+        ///
+        /// </p>
         pub fn set_execution_role_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2091,6 +3254,21 @@ pub mod create_stack_set_input {
             self.permission_model = Some(input);
             self
         }
+        /// <p>Describes how the IAM roles required for stack set operations are created. By default,
+        /// <code>SELF-MANAGED</code> is specified.</p>
+        /// <ul>
+        /// <li>
+        /// <p>With <code>self-managed</code> permissions, you must create the administrator and
+        /// execution roles required to deploy to target accounts. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
+        /// Self-Managed Stack Set Permissions</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>With <code>service-managed</code> permissions, StackSets automatically creates the
+        /// IAM roles required to deploy to accounts managed by Organizations. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant Service-Managed Stack Set Permissions</a>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_permission_model(
             mut self,
             input: std::option::Option<crate::model::PermissionModels>,
@@ -2105,6 +3283,9 @@ pub mod create_stack_set_input {
             self.auto_deployment = Some(input);
             self
         }
+        /// <p>Describes whether StackSets automatically deploys to Organizations accounts that
+        /// are added to the target organization or organizational unit (OU). Specify only if
+        /// <code>PermissionModel</code> is <code>SERVICE_MANAGED</code>.</p>
         pub fn set_auto_deployment(
             mut self,
             input: std::option::Option<crate::model::AutoDeployment>,
@@ -2135,6 +3316,25 @@ pub mod create_stack_set_input {
             self.call_as = Some(input);
             self
         }
+        /// <p>[Service-managed permissions] Specifies whether you are acting as an account
+        /// administrator in the organization's management account or as a delegated administrator in a
+        /// member account.</p>
+        /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
+        /// self-managed permissions.</p>
+        /// <ul>
+        /// <li>
+        /// <p>To create a stack set with service-managed permissions while signed in to the
+        /// management account, specify <code>SELF</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>To create a stack set with service-managed permissions while signed in to a
+        /// delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p>
+        /// <p>Your Amazon Web Services account must be registered as a delegated admin in the
+        /// management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p>
+        /// </li>
+        /// </ul>
+        /// <p>Stack sets with service-managed permissions are created in the management account,
+        /// including stack sets that are created by delegated administrators.</p>
         pub fn set_call_as(mut self, input: std::option::Option<crate::model::CallAs>) -> Self {
             self.call_as = input;
             self
@@ -2149,6 +3349,12 @@ pub mod create_stack_set_input {
             self.client_request_token = Some(input.into());
             self
         }
+        /// <p>A unique identifier for this <code>CreateStackSet</code> request. Specify this token
+        /// if you plan to retry requests so that CloudFormation knows that you're not attempting
+        /// to create another stack set with the same name. You might retry <code>CreateStackSet</code>
+        /// requests to ensure that CloudFormation successfully received them.</p>
+        /// <p>If you don't specify an operation ID, the SDK generates one
+        /// automatically.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2161,7 +3367,7 @@ pub mod create_stack_set_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateStackSetInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateStackSetInput {
                 stack_set_name: self.stack_set_name,
@@ -2193,16 +3399,16 @@ impl CreateStackSetInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateStackSet,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateStackSetInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2210,7 +3416,7 @@ impl CreateStackSetInput {
         fn update_http_builder(
             input: &crate::input::CreateStackSetInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2219,10 +3425,10 @@ impl CreateStackSetInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateStackSetInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
@@ -2232,17 +3438,17 @@ impl CreateStackSetInput {
         if self.client_request_token.is_none() {
             self.client_request_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_stack_set(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2265,15 +3471,15 @@ impl CreateStackSetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateStackSet::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateStackSet",
             "cloudformation",
         ));
@@ -2282,10 +3488,10 @@ impl CreateStackSetInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2318,6 +3524,10 @@ pub mod deactivate_type_input {
             self.type_name = Some(input.into());
             self
         }
+        /// <p>The type name of the extension, in this account and region. If you specified a type name
+        /// alias when enabling the extension, use the type name alias.</p>
+        /// <p>Conditional: You must specify either <code>Arn</code>, or <code>TypeName</code> and
+        /// <code>Type</code>.</p>
         pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.type_name = input;
             self
@@ -2329,6 +3539,9 @@ pub mod deactivate_type_input {
             self.r#type = Some(input);
             self
         }
+        /// <p>The extension type.</p>
+        /// <p>Conditional: You must specify either <code>Arn</code>, or <code>TypeName</code> and
+        /// <code>Type</code>.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::ThirdPartyType>,
@@ -2343,6 +3556,9 @@ pub mod deactivate_type_input {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) for the extension, in this account and region.</p>
+        /// <p>Conditional: You must specify either <code>Arn</code>, or <code>TypeName</code> and
+        /// <code>Type</code>.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -2352,7 +3568,7 @@ pub mod deactivate_type_input {
             self,
         ) -> std::result::Result<
             crate::input::DeactivateTypeInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeactivateTypeInput {
                 type_name: self.type_name,
@@ -2373,16 +3589,16 @@ impl DeactivateTypeInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeactivateType,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeactivateTypeInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2390,7 +3606,7 @@ impl DeactivateTypeInput {
         fn update_http_builder(
             input: &crate::input::DeactivateTypeInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2399,24 +3615,26 @@ impl DeactivateTypeInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeactivateTypeInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_deactivate_type(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2439,15 +3657,15 @@ impl DeactivateTypeInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeactivateType::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeactivateType",
             "cloudformation",
         ));
@@ -2456,10 +3674,10 @@ impl DeactivateTypeInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2489,6 +3707,8 @@ pub mod delete_change_set_input {
             self.change_set_name = Some(input.into());
             self
         }
+        /// <p>The name or Amazon Resource Name (ARN) of the change set that you want to
+        /// delete.</p>
         pub fn set_change_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2502,6 +3722,8 @@ pub mod delete_change_set_input {
             self.stack_name = Some(input.into());
             self
         }
+        /// <p>If you specified the name of a change set to delete, specify the stack name or ID
+        /// (ARN) that is associated with it.</p>
         pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_name = input;
             self
@@ -2511,7 +3733,7 @@ pub mod delete_change_set_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteChangeSetInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteChangeSetInput {
                 change_set_name: self.change_set_name,
@@ -2531,16 +3753,16 @@ impl DeleteChangeSetInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteChangeSet,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteChangeSetInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2548,7 +3770,7 @@ impl DeleteChangeSetInput {
         fn update_http_builder(
             input: &crate::input::DeleteChangeSetInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2557,27 +3779,27 @@ impl DeleteChangeSetInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteChangeSetInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_change_set(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2600,15 +3822,15 @@ impl DeleteChangeSetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteChangeSet::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteChangeSet",
             "cloudformation",
         ));
@@ -2617,10 +3839,10 @@ impl DeleteChangeSetInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2651,16 +3873,31 @@ pub mod delete_stack_input {
             self.stack_name = Some(input.into());
             self
         }
+        /// <p>The name or the unique stack ID that is associated with the stack.</p>
         pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_name = input;
             self
         }
+        /// Appends an item to `retain_resources`.
+        ///
+        /// To override the contents of this collection use [`set_retain_resources`](Self::set_retain_resources).
+        ///
+        /// <p>For stacks in the <code>DELETE_FAILED</code> state, a list of resource logical IDs
+        /// that are associated with the resources you want to retain. During deletion,
+        /// CloudFormation deletes the stack but does not delete the retained resources.</p>
+        /// <p>Retaining resources is useful when you cannot delete a resource, such as a non-empty
+        /// S3 bucket, but you want to delete the stack.</p>
         pub fn retain_resources(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.retain_resources.unwrap_or_default();
             v.push(input.into());
             self.retain_resources = Some(v);
             self
         }
+        /// <p>For stacks in the <code>DELETE_FAILED</code> state, a list of resource logical IDs
+        /// that are associated with the resources you want to retain. During deletion,
+        /// CloudFormation deletes the stack but does not delete the retained resources.</p>
+        /// <p>Retaining resources is useful when you cannot delete a resource, such as a non-empty
+        /// S3 bucket, but you want to delete the stack.</p>
         pub fn set_retain_resources(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2678,6 +3915,12 @@ pub mod delete_stack_input {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role
+        /// that CloudFormation assumes to delete the stack. CloudFormation uses the role's
+        /// credentials to make calls on your behalf.</p>
+        /// <p>If you don't specify a value, CloudFormation uses the role that was previously
+        /// associated with the stack. If no role is available, CloudFormation uses a temporary
+        /// session that is generated from your user credentials.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -2701,6 +3944,21 @@ pub mod delete_stack_input {
             self.client_request_token = Some(input.into());
             self
         }
+        /// <p>A unique identifier for this <code>DeleteStack</code> request. Specify this token if
+        /// you plan to retry requests so that CloudFormation knows that you're not attempting to
+        /// delete a stack with the same name. You might retry <code>DeleteStack</code> requests to
+        /// ensure that CloudFormation successfully received them.</p>
+        /// <p>All events triggered by a given stack operation are assigned the same client request
+        /// token, which you can use to track operations. For example, if you execute a
+        /// <code>CreateStack</code> operation with the token <code>token1</code>, then all the
+        /// <code>StackEvents</code> generated by that operation will have
+        /// <code>ClientRequestToken</code> set as <code>token1</code>.</p>
+        /// <p>In the console, stack operations display the client request token on the Events tab.
+        /// Stack operations that are initiated from the console use the token format
+        /// <i>Console-StackOperation-ID</i>, which helps you easily identify the
+        /// stack operation . For example, if you create a stack using the console, each stack event
+        /// would be assigned the same token in the following format:
+        /// <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2711,8 +3969,10 @@ pub mod delete_stack_input {
         /// Consumes the builder and constructs a [`DeleteStackInput`](crate::input::DeleteStackInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeleteStackInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteStackInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteStackInput {
                 stack_name: self.stack_name,
                 retain_resources: self.retain_resources,
@@ -2733,16 +3993,16 @@ impl DeleteStackInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteStack,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteStackInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2750,7 +4010,7 @@ impl DeleteStackInput {
         fn update_http_builder(
             input: &crate::input::DeleteStackInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2759,24 +4019,26 @@ impl DeleteStackInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteStackInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_delete_stack(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2799,25 +4061,27 @@ impl DeleteStackInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeleteStack::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DeleteStack",
-                    "cloudformation",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteStack::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteStack",
+            "cloudformation",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2854,6 +4118,8 @@ pub mod delete_stack_instances_input {
             self.stack_set_name = Some(input.into());
             self
         }
+        /// <p>The name or unique ID of the stack set that you want to delete stack instances
+        /// for.</p>
         pub fn set_stack_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2861,12 +4127,20 @@ pub mod delete_stack_instances_input {
             self.stack_set_name = input;
             self
         }
+        /// Appends an item to `accounts`.
+        ///
+        /// To override the contents of this collection use [`set_accounts`](Self::set_accounts).
+        ///
+        /// <p>[Self-managed permissions] The names of the Amazon Web Services accounts that you want to delete stack instances for.</p>
+        /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
         pub fn accounts(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.accounts.unwrap_or_default();
             v.push(input.into());
             self.accounts = Some(v);
             self
         }
+        /// <p>[Self-managed permissions] The names of the Amazon Web Services accounts that you want to delete stack instances for.</p>
+        /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
         pub fn set_accounts(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2882,6 +4156,10 @@ pub mod delete_stack_instances_input {
             self.deployment_targets = Some(input);
             self
         }
+        /// <p>[Service-managed permissions] The Organizations accounts from which to delete
+        /// stack instances.</p>
+        /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not
+        /// both.</p>
         pub fn set_deployment_targets(
             mut self,
             input: std::option::Option<crate::model::DeploymentTargets>,
@@ -2889,12 +4167,18 @@ pub mod delete_stack_instances_input {
             self.deployment_targets = input;
             self
         }
+        /// Appends an item to `regions`.
+        ///
+        /// To override the contents of this collection use [`set_regions`](Self::set_regions).
+        ///
+        /// <p>The Regions where you want to delete stack set instances.</p>
         pub fn regions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.regions.unwrap_or_default();
             v.push(input.into());
             self.regions = Some(v);
             self
         }
+        /// <p>The Regions where you want to delete stack set instances.</p>
         pub fn set_regions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2910,6 +4194,7 @@ pub mod delete_stack_instances_input {
             self.operation_preferences = Some(input);
             self
         }
+        /// <p>Preferences for how CloudFormation performs this stack set operation.</p>
         pub fn set_operation_preferences(
             mut self,
             input: std::option::Option<crate::model::StackSetOperationPreferences>,
@@ -2925,6 +4210,10 @@ pub mod delete_stack_instances_input {
             self.retain_stacks = Some(input);
             self
         }
+        /// <p>Removes the stack instances from the specified stack set, but doesn't delete the
+        /// stacks. You can't reassociate a retained stack or add an existing, saved stack to a new
+        /// stack set.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p>
         pub fn set_retain_stacks(mut self, input: std::option::Option<bool>) -> Self {
             self.retain_stacks = input;
             self
@@ -2942,6 +4231,15 @@ pub mod delete_stack_instances_input {
             self.operation_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for this stack set operation.</p>
+        /// <p>If you don't specify an operation ID, the SDK generates one
+        /// automatically.</p>
+        /// <p>The operation ID also functions as an idempotency token, to ensure that
+        /// CloudFormation performs the stack set operation only once, even if you retry the request
+        /// multiple times. You can retry stack set operation requests to ensure that
+        /// CloudFormation successfully received them.</p>
+        /// <p>Repeating this stack set operation with a new operation ID retries all stack instances
+        /// whose status is <code>OUTDATED</code>.</p>
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.operation_id = input;
             self
@@ -2966,6 +4264,22 @@ pub mod delete_stack_instances_input {
             self.call_as = Some(input);
             self
         }
+        /// <p>[Service-managed permissions] Specifies whether you are acting as an account
+        /// administrator in the organization's management account or as a delegated administrator in a
+        /// member account.</p>
+        /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
+        /// self-managed permissions.</p>
+        /// <ul>
+        /// <li>
+        /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you are signed in to a delegated administrator account, specify
+        /// <code>DELEGATED_ADMIN</code>.</p>
+        /// <p>Your Amazon Web Services account must be registered as a delegated administrator in
+        /// the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_call_as(mut self, input: std::option::Option<crate::model::CallAs>) -> Self {
             self.call_as = input;
             self
@@ -2975,7 +4289,7 @@ pub mod delete_stack_instances_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteStackInstancesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteStackInstancesInput {
                 stack_set_name: self.stack_set_name,
@@ -3001,16 +4315,16 @@ impl DeleteStackInstancesInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteStackInstances,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteStackInstancesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3018,7 +4332,7 @@ impl DeleteStackInstancesInput {
         fn update_http_builder(
             input: &crate::input::DeleteStackInstancesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3027,10 +4341,10 @@ impl DeleteStackInstancesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteStackInstancesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
@@ -3040,17 +4354,17 @@ impl DeleteStackInstancesInput {
         if self.operation_id.is_none() {
             self.operation_id = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_stack_instances(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3073,15 +4387,15 @@ impl DeleteStackInstancesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteStackInstances::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteStackInstances",
             "cloudformation",
         ));
@@ -3090,10 +4404,10 @@ impl DeleteStackInstancesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3123,6 +4437,8 @@ pub mod delete_stack_set_input {
             self.stack_set_name = Some(input.into());
             self
         }
+        /// <p>The name or unique ID of the stack set that you're deleting. You can obtain this
+        /// value by running <a>ListStackSets</a>.</p>
         pub fn set_stack_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3150,6 +4466,22 @@ pub mod delete_stack_set_input {
             self.call_as = Some(input);
             self
         }
+        /// <p>[Service-managed permissions] Specifies whether you are acting as an account
+        /// administrator in the organization's management account or as a delegated administrator in a
+        /// member account.</p>
+        /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
+        /// self-managed permissions.</p>
+        /// <ul>
+        /// <li>
+        /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you are signed in to a delegated administrator account, specify
+        /// <code>DELEGATED_ADMIN</code>.</p>
+        /// <p>Your Amazon Web Services account must be registered as a delegated administrator in
+        /// the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_call_as(mut self, input: std::option::Option<crate::model::CallAs>) -> Self {
             self.call_as = input;
             self
@@ -3159,7 +4491,7 @@ pub mod delete_stack_set_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteStackSetInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteStackSetInput {
                 stack_set_name: self.stack_set_name,
@@ -3179,16 +4511,16 @@ impl DeleteStackSetInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteStackSet,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteStackSetInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3196,7 +4528,7 @@ impl DeleteStackSetInput {
         fn update_http_builder(
             input: &crate::input::DeleteStackSetInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3205,27 +4537,27 @@ impl DeleteStackSetInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteStackSetInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_stack_set(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3248,15 +4580,15 @@ impl DeleteStackSetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteStackSet::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteStackSet",
             "cloudformation",
         ));
@@ -3265,10 +4597,10 @@ impl DeleteStackSetInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3301,6 +4633,9 @@ pub mod deregister_type_input {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the extension.</p>
+        /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or
+        /// <code>Arn</code>.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -3312,6 +4647,9 @@ pub mod deregister_type_input {
             self.r#type = Some(input);
             self
         }
+        /// <p>The kind of extension.</p>
+        /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or
+        /// <code>Arn</code>.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::RegistryType>) -> Self {
             self.r#type = input;
             self
@@ -3323,6 +4661,9 @@ pub mod deregister_type_input {
             self.type_name = Some(input.into());
             self
         }
+        /// <p>The name of the extension.</p>
+        /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or
+        /// <code>Arn</code>.</p>
         pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.type_name = input;
             self
@@ -3334,6 +4675,9 @@ pub mod deregister_type_input {
             self.version_id = Some(input.into());
             self
         }
+        /// <p>The ID of a specific version of the extension. The version ID is the value at the end of
+        /// the Amazon Resource Name (ARN) assigned to the extension version when it is
+        /// registered.</p>
         pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version_id = input;
             self
@@ -3343,7 +4687,7 @@ pub mod deregister_type_input {
             self,
         ) -> std::result::Result<
             crate::input::DeregisterTypeInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeregisterTypeInput {
                 arn: self.arn,
@@ -3365,16 +4709,16 @@ impl DeregisterTypeInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeregisterType,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeregisterTypeInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3382,7 +4726,7 @@ impl DeregisterTypeInput {
         fn update_http_builder(
             input: &crate::input::DeregisterTypeInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3391,24 +4735,26 @@ impl DeregisterTypeInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeregisterTypeInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_deregister_type(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3431,15 +4777,15 @@ impl DeregisterTypeInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeregisterType::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeregisterType",
             "cloudformation",
         ));
@@ -3448,10 +4794,10 @@ impl DeregisterTypeInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3479,6 +4825,7 @@ pub mod describe_account_limits_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A string that identifies the next page of limits that you want to retrieve.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3488,7 +4835,7 @@ pub mod describe_account_limits_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeAccountLimitsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeAccountLimitsInput {
                 next_token: self.next_token,
@@ -3507,16 +4854,16 @@ impl DescribeAccountLimitsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeAccountLimits,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeAccountLimitsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3524,7 +4871,7 @@ impl DescribeAccountLimitsInput {
         fn update_http_builder(
             input: &crate::input::DescribeAccountLimitsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3533,27 +4880,29 @@ impl DescribeAccountLimitsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeAccountLimitsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_account_limits(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3576,15 +4925,15 @@ impl DescribeAccountLimitsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeAccountLimits::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeAccountLimits",
             "cloudformation",
         ));
@@ -3593,10 +4942,10 @@ impl DescribeAccountLimitsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3627,6 +4976,8 @@ pub mod describe_change_set_input {
             self.change_set_name = Some(input.into());
             self
         }
+        /// <p>The name or Amazon Resource Name (ARN) of the change set that you want to
+        /// describe.</p>
         pub fn set_change_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3640,6 +4991,8 @@ pub mod describe_change_set_input {
             self.stack_name = Some(input.into());
             self
         }
+        /// <p>If you specified the name of a change set, specify the stack name or ID (ARN) of the
+        /// change set you want to describe.</p>
         pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_name = input;
             self
@@ -3650,6 +5003,8 @@ pub mod describe_change_set_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A string (provided by the <a>DescribeChangeSet</a> response output) that
+        /// identifies the next page of information that you want to retrieve.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3659,7 +5014,7 @@ pub mod describe_change_set_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeChangeSetInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeChangeSetInput {
                 change_set_name: self.change_set_name,
@@ -3680,16 +5035,16 @@ impl DescribeChangeSetInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeChangeSet,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeChangeSetInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3697,7 +5052,7 @@ impl DescribeChangeSetInput {
         fn update_http_builder(
             input: &crate::input::DescribeChangeSetInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3706,27 +5061,27 @@ impl DescribeChangeSetInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeChangeSetInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_change_set(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3749,15 +5104,15 @@ impl DescribeChangeSetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeChangeSet::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeChangeSet",
             "cloudformation",
         ));
@@ -3766,10 +5121,10 @@ impl DescribeChangeSetInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3800,6 +5155,10 @@ pub mod describe_publisher_input {
             self.publisher_id = Some(input.into());
             self
         }
+        /// <p>The ID of the extension publisher.</p>
+        /// <p>If you do not supply a <code>PublisherId</code>, and you have registered as an extension
+        /// publisher, <code>DescribePublisher</code> returns information about your own publisher
+        /// account.</p>
         pub fn set_publisher_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.publisher_id = input;
             self
@@ -3809,7 +5168,7 @@ pub mod describe_publisher_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribePublisherInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribePublisherInput {
                 publisher_id: self.publisher_id,
@@ -3828,16 +5187,16 @@ impl DescribePublisherInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribePublisher,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribePublisherInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3845,7 +5204,7 @@ impl DescribePublisherInput {
         fn update_http_builder(
             input: &crate::input::DescribePublisherInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3854,27 +5213,27 @@ impl DescribePublisherInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribePublisherInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_publisher(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3897,15 +5256,15 @@ impl DescribePublisherInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribePublisher::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribePublisher",
             "cloudformation",
         ));
@@ -3914,10 +5273,10 @@ impl DescribePublisherInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3948,6 +5307,10 @@ pub mod describe_stack_drift_detection_status_input {
             self.stack_drift_detection_id = Some(input.into());
             self
         }
+        /// <p>The ID of the drift detection results of this operation.</p>
+        /// <p>CloudFormation generates new results, with a new drift detection ID, each time this operation is
+        /// run. However, the number of drift results CloudFormation retains for any given stack, and for how
+        /// long, may vary.</p>
         pub fn set_stack_drift_detection_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3960,7 +5323,7 @@ pub mod describe_stack_drift_detection_status_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeStackDriftDetectionStatusInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeStackDriftDetectionStatusInput {
                 stack_drift_detection_id: self.stack_drift_detection_id,
@@ -3980,16 +5343,16 @@ impl DescribeStackDriftDetectionStatusInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeStackDriftDetectionStatus,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeStackDriftDetectionStatusInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3997,7 +5360,7 @@ impl DescribeStackDriftDetectionStatusInput {
         fn update_http_builder(
             input: &crate::input::DescribeStackDriftDetectionStatusInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4006,25 +5369,25 @@ impl DescribeStackDriftDetectionStatusInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeStackDriftDetectionStatusInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_stack_drift_detection_status(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_stack_drift_detection_status(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4047,15 +5410,15 @@ impl DescribeStackDriftDetectionStatusInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeStackDriftDetectionStatus::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeStackDriftDetectionStatus",
             "cloudformation",
         ));
@@ -4064,10 +5427,10 @@ impl DescribeStackDriftDetectionStatusInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4107,6 +5470,18 @@ pub mod describe_stack_events_input {
             self.stack_name = Some(input.into());
             self
         }
+        /// <p>The name or the unique stack ID that is associated with the stack, which are not
+        /// always interchangeable:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Running stacks: You can specify either the stack's name or its unique stack
+        /// ID.</p>
+        /// </li>
+        /// <li>
+        /// <p>Deleted stacks: You must specify the unique stack ID.</p>
+        /// </li>
+        /// </ul>
+        /// <p>Default: There is no default value.</p>
         pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_name = input;
             self
@@ -4116,6 +5491,7 @@ pub mod describe_stack_events_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A string that identifies the next page of events that you want to retrieve.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4125,7 +5501,7 @@ pub mod describe_stack_events_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeStackEventsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeStackEventsInput {
                 stack_name: self.stack_name,
@@ -4145,16 +5521,16 @@ impl DescribeStackEventsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeStackEvents,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeStackEventsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4162,7 +5538,7 @@ impl DescribeStackEventsInput {
         fn update_http_builder(
             input: &crate::input::DescribeStackEventsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4171,27 +5547,27 @@ impl DescribeStackEventsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeStackEventsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_stack_events(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4214,15 +5590,15 @@ impl DescribeStackEventsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeStackEvents::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeStackEvents",
             "cloudformation",
         ));
@@ -4231,10 +5607,10 @@ impl DescribeStackEventsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4266,6 +5642,8 @@ pub mod describe_stack_instance_input {
             self.stack_set_name = Some(input.into());
             self
         }
+        /// <p>The name or the unique stack ID of the stack set that you want to get stack instance
+        /// information for.</p>
         pub fn set_stack_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4278,6 +5656,7 @@ pub mod describe_stack_instance_input {
             self.stack_instance_account = Some(input.into());
             self
         }
+        /// <p>The ID of an Amazon Web Services account that's associated with this stack instance.</p>
         pub fn set_stack_instance_account(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4290,6 +5669,7 @@ pub mod describe_stack_instance_input {
             self.stack_instance_region = Some(input.into());
             self
         }
+        /// <p>The name of a Region that's associated with this stack instance.</p>
         pub fn set_stack_instance_region(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4317,6 +5697,22 @@ pub mod describe_stack_instance_input {
             self.call_as = Some(input);
             self
         }
+        /// <p>[Service-managed permissions] Specifies whether you are acting as an account
+        /// administrator in the organization's management account or as a delegated administrator in a
+        /// member account.</p>
+        /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
+        /// self-managed permissions.</p>
+        /// <ul>
+        /// <li>
+        /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you are signed in to a delegated administrator account, specify
+        /// <code>DELEGATED_ADMIN</code>.</p>
+        /// <p>Your Amazon Web Services account must be registered as a delegated administrator in
+        /// the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_call_as(mut self, input: std::option::Option<crate::model::CallAs>) -> Self {
             self.call_as = input;
             self
@@ -4326,7 +5722,7 @@ pub mod describe_stack_instance_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeStackInstanceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeStackInstanceInput {
                 stack_set_name: self.stack_set_name,
@@ -4348,16 +5744,16 @@ impl DescribeStackInstanceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeStackInstance,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeStackInstanceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4365,7 +5761,7 @@ impl DescribeStackInstanceInput {
         fn update_http_builder(
             input: &crate::input::DescribeStackInstanceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4374,27 +5770,29 @@ impl DescribeStackInstanceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeStackInstanceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_stack_instance(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4417,15 +5815,15 @@ impl DescribeStackInstanceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeStackInstance::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeStackInstance",
             "cloudformation",
         ));
@@ -4434,10 +5832,10 @@ impl DescribeStackInstanceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4477,6 +5875,18 @@ pub mod describe_stack_resource_input {
             self.stack_name = Some(input.into());
             self
         }
+        /// <p>The name or the unique stack ID that is associated with the stack, which are not
+        /// always interchangeable:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Running stacks: You can specify either the stack's name or its unique stack
+        /// ID.</p>
+        /// </li>
+        /// <li>
+        /// <p>Deleted stacks: You must specify the unique stack ID.</p>
+        /// </li>
+        /// </ul>
+        /// <p>Default: There is no default value.</p>
         pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_name = input;
             self
@@ -4487,6 +5897,8 @@ pub mod describe_stack_resource_input {
             self.logical_resource_id = Some(input.into());
             self
         }
+        /// <p>The logical name of the resource as specified in the template.</p>
+        /// <p>Default: There is no default value.</p>
         pub fn set_logical_resource_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4499,7 +5911,7 @@ pub mod describe_stack_resource_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeStackResourceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeStackResourceInput {
                 stack_name: self.stack_name,
@@ -4519,16 +5931,16 @@ impl DescribeStackResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeStackResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeStackResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4536,7 +5948,7 @@ impl DescribeStackResourceInput {
         fn update_http_builder(
             input: &crate::input::DescribeStackResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4545,27 +5957,29 @@ impl DescribeStackResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeStackResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_stack_resource(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4588,15 +6002,15 @@ impl DescribeStackResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeStackResource::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeStackResource",
             "cloudformation",
         ));
@@ -4605,10 +6019,10 @@ impl DescribeStackResourceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4640,10 +6054,38 @@ pub mod describe_stack_resource_drifts_input {
             self.stack_name = Some(input.into());
             self
         }
+        /// <p>The name of the stack for which you want drift information.</p>
         pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_name = input;
             self
         }
+        /// Appends an item to `stack_resource_drift_status_filters`.
+        ///
+        /// To override the contents of this collection use [`set_stack_resource_drift_status_filters`](Self::set_stack_resource_drift_status_filters).
+        ///
+        /// <p>The resource drift status values to use as filters for the resource drift results
+        /// returned.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>DELETED</code>: The resource differs from its expected template
+        /// configuration in that the resource has been deleted.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MODIFIED</code>: One or more resource properties differ from their
+        /// expected template values.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>IN_SYNC</code>: The resources's actual configuration matches its expected
+        /// template configuration.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NOT_CHECKED</code>: CloudFormation does not currently return this value.</p>
+        /// </li>
+        /// </ul>
         pub fn stack_resource_drift_status_filters(
             mut self,
             input: impl Into<crate::model::StackResourceDriftStatus>,
@@ -4653,6 +6095,29 @@ pub mod describe_stack_resource_drifts_input {
             self.stack_resource_drift_status_filters = Some(v);
             self
         }
+        /// <p>The resource drift status values to use as filters for the resource drift results
+        /// returned.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>DELETED</code>: The resource differs from its expected template
+        /// configuration in that the resource has been deleted.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MODIFIED</code>: One or more resource properties differ from their
+        /// expected template values.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>IN_SYNC</code>: The resources's actual configuration matches its expected
+        /// template configuration.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NOT_CHECKED</code>: CloudFormation does not currently return this value.</p>
+        /// </li>
+        /// </ul>
         pub fn set_stack_resource_drift_status_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::StackResourceDriftStatus>>,
@@ -4665,6 +6130,7 @@ pub mod describe_stack_resource_drifts_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A string that identifies the next page of stack resource drift results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4677,6 +6143,10 @@ pub mod describe_stack_resource_drifts_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of results to be returned with a single call. If the number of
+        /// available results exceeds this maximum, the response includes a <code>NextToken</code>
+        /// value that you can assign to the <code>NextToken</code> request parameter to get the next
+        /// set of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -4686,7 +6156,7 @@ pub mod describe_stack_resource_drifts_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeStackResourceDriftsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeStackResourceDriftsInput {
                 stack_name: self.stack_name,
@@ -4709,16 +6179,16 @@ impl DescribeStackResourceDriftsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeStackResourceDrifts,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeStackResourceDriftsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4726,7 +6196,7 @@ impl DescribeStackResourceDriftsInput {
         fn update_http_builder(
             input: &crate::input::DescribeStackResourceDriftsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4735,25 +6205,25 @@ impl DescribeStackResourceDriftsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeStackResourceDriftsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_stack_resource_drifts(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_stack_resource_drifts(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4776,15 +6246,15 @@ impl DescribeStackResourceDriftsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeStackResourceDrifts::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeStackResourceDrifts",
             "cloudformation",
         ));
@@ -4793,10 +6263,10 @@ impl DescribeStackResourceDriftsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4839,6 +6309,20 @@ pub mod describe_stack_resources_input {
             self.stack_name = Some(input.into());
             self
         }
+        /// <p>The name or the unique stack ID that is associated with the stack, which are not
+        /// always interchangeable:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Running stacks: You can specify either the stack's name or its unique stack
+        /// ID.</p>
+        /// </li>
+        /// <li>
+        /// <p>Deleted stacks: You must specify the unique stack ID.</p>
+        /// </li>
+        /// </ul>
+        /// <p>Default: There is no default value.</p>
+        /// <p>Required: Conditional. If you do not specify <code>StackName</code>, you must specify
+        /// <code>PhysicalResourceId</code>.</p>
         pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_name = input;
             self
@@ -4849,6 +6333,8 @@ pub mod describe_stack_resources_input {
             self.logical_resource_id = Some(input.into());
             self
         }
+        /// <p>The logical name of the resource as specified in the template.</p>
+        /// <p>Default: There is no default value.</p>
         pub fn set_logical_resource_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4869,6 +6355,15 @@ pub mod describe_stack_resources_input {
             self.physical_resource_id = Some(input.into());
             self
         }
+        /// <p>The name or unique identifier that corresponds to a physical instance ID of a
+        /// resource supported by CloudFormation.</p>
+        /// <p>For example, for an Amazon Elastic Compute Cloud (EC2) instance,
+        /// <code>PhysicalResourceId</code> corresponds to the <code>InstanceId</code>. You can pass
+        /// the EC2 <code>InstanceId</code> to <code>DescribeStackResources</code> to find which stack
+        /// the instance belongs to and what other resources are part of the stack.</p>
+        /// <p>Required: Conditional. If you do not specify <code>PhysicalResourceId</code>, you
+        /// must specify <code>StackName</code>.</p>
+        /// <p>Default: There is no default value.</p>
         pub fn set_physical_resource_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4881,7 +6376,7 @@ pub mod describe_stack_resources_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeStackResourcesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeStackResourcesInput {
                 stack_name: self.stack_name,
@@ -4902,16 +6397,16 @@ impl DescribeStackResourcesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeStackResources,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeStackResourcesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4919,7 +6414,7 @@ impl DescribeStackResourcesInput {
         fn update_http_builder(
             input: &crate::input::DescribeStackResourcesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4928,27 +6423,29 @@ impl DescribeStackResourcesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeStackResourcesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_stack_resources(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4971,15 +6468,15 @@ impl DescribeStackResourcesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeStackResources::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeStackResources",
             "cloudformation",
         ));
@@ -4988,10 +6485,10 @@ impl DescribeStackResourcesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5031,6 +6528,18 @@ pub mod describe_stacks_input {
             self.stack_name = Some(input.into());
             self
         }
+        /// <p>The name or the unique stack ID that is associated with the stack, which are not
+        /// always interchangeable:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Running stacks: You can specify either the stack's name or its unique stack
+        /// ID.</p>
+        /// </li>
+        /// <li>
+        /// <p>Deleted stacks: You must specify the unique stack ID.</p>
+        /// </li>
+        /// </ul>
+        /// <p>Default: There is no default value.</p>
         pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_name = input;
             self
@@ -5040,6 +6549,7 @@ pub mod describe_stacks_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A string that identifies the next page of stacks that you want to retrieve.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5049,7 +6559,7 @@ pub mod describe_stacks_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeStacksInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeStacksInput {
                 stack_name: self.stack_name,
@@ -5069,16 +6579,16 @@ impl DescribeStacksInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeStacks,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeStacksInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5086,7 +6596,7 @@ impl DescribeStacksInput {
         fn update_http_builder(
             input: &crate::input::DescribeStacksInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5095,24 +6605,26 @@ impl DescribeStacksInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeStacksInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_describe_stacks(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5135,15 +6647,15 @@ impl DescribeStacksInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeStacks::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeStacks",
             "cloudformation",
         ));
@@ -5152,10 +6664,10 @@ impl DescribeStacksInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5184,6 +6696,7 @@ pub mod describe_stack_set_input {
             self.stack_set_name = Some(input.into());
             self
         }
+        /// <p>The name or unique ID of the stack set whose description you want.</p>
         pub fn set_stack_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5211,6 +6724,22 @@ pub mod describe_stack_set_input {
             self.call_as = Some(input);
             self
         }
+        /// <p>[Service-managed permissions] Specifies whether you are acting as an account
+        /// administrator in the organization's management account or as a delegated administrator in a
+        /// member account.</p>
+        /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
+        /// self-managed permissions.</p>
+        /// <ul>
+        /// <li>
+        /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you are signed in to a delegated administrator account, specify
+        /// <code>DELEGATED_ADMIN</code>.</p>
+        /// <p>Your Amazon Web Services account must be registered as a delegated administrator in
+        /// the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_call_as(mut self, input: std::option::Option<crate::model::CallAs>) -> Self {
             self.call_as = input;
             self
@@ -5220,7 +6749,7 @@ pub mod describe_stack_set_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeStackSetInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeStackSetInput {
                 stack_set_name: self.stack_set_name,
@@ -5240,16 +6769,16 @@ impl DescribeStackSetInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeStackSet,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeStackSetInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5257,7 +6786,7 @@ impl DescribeStackSetInput {
         fn update_http_builder(
             input: &crate::input::DescribeStackSetInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5266,27 +6795,27 @@ impl DescribeStackSetInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeStackSetInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_stack_set(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5309,15 +6838,15 @@ impl DescribeStackSetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeStackSet::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeStackSet",
             "cloudformation",
         ));
@@ -5326,10 +6855,10 @@ impl DescribeStackSetInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5359,6 +6888,7 @@ pub mod describe_stack_set_operation_input {
             self.stack_set_name = Some(input.into());
             self
         }
+        /// <p>The name or the unique stack ID of the stack set for the stack operation.</p>
         pub fn set_stack_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5371,6 +6901,7 @@ pub mod describe_stack_set_operation_input {
             self.operation_id = Some(input.into());
             self
         }
+        /// <p>The unique ID of the stack set operation. </p>
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.operation_id = input;
             self
@@ -5395,6 +6926,22 @@ pub mod describe_stack_set_operation_input {
             self.call_as = Some(input);
             self
         }
+        /// <p>[Service-managed permissions] Specifies whether you are acting as an account
+        /// administrator in the organization's management account or as a delegated administrator in a
+        /// member account.</p>
+        /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
+        /// self-managed permissions.</p>
+        /// <ul>
+        /// <li>
+        /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you are signed in to a delegated administrator account, specify
+        /// <code>DELEGATED_ADMIN</code>.</p>
+        /// <p>Your Amazon Web Services account must be registered as a delegated administrator in
+        /// the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_call_as(mut self, input: std::option::Option<crate::model::CallAs>) -> Self {
             self.call_as = input;
             self
@@ -5404,7 +6951,7 @@ pub mod describe_stack_set_operation_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeStackSetOperationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeStackSetOperationInput {
                 stack_set_name: self.stack_set_name,
@@ -5426,16 +6973,16 @@ impl DescribeStackSetOperationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeStackSetOperation,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeStackSetOperationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5443,7 +6990,7 @@ impl DescribeStackSetOperationInput {
         fn update_http_builder(
             input: &crate::input::DescribeStackSetOperationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5452,27 +6999,29 @@ impl DescribeStackSetOperationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeStackSetOperationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_stack_set_operation(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5495,15 +7044,15 @@ impl DescribeStackSetOperationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeStackSetOperation::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeStackSetOperation",
             "cloudformation",
         ));
@@ -5512,10 +7061,10 @@ impl DescribeStackSetOperationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5550,6 +7099,9 @@ pub mod describe_type_input {
             self.r#type = Some(input);
             self
         }
+        /// <p>The kind of extension. </p>
+        /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or
+        /// <code>Arn</code>.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::RegistryType>) -> Self {
             self.r#type = input;
             self
@@ -5561,6 +7113,9 @@ pub mod describe_type_input {
             self.type_name = Some(input.into());
             self
         }
+        /// <p>The name of the extension.</p>
+        /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or
+        /// <code>Arn</code>.</p>
         pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.type_name = input;
             self
@@ -5572,6 +7127,9 @@ pub mod describe_type_input {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the extension.</p>
+        /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or
+        /// <code>Arn</code>.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -5586,6 +7144,12 @@ pub mod describe_type_input {
             self.version_id = Some(input.into());
             self
         }
+        /// <p>The ID of a specific version of the extension. The version ID is the value at the end of
+        /// the Amazon Resource Name (ARN) assigned to the extension version when it is
+        /// registered.</p>
+        /// <p>If you specify a <code>VersionId</code>, <code>DescribeType</code> returns information
+        /// about that specific extension version. Otherwise, it returns information about the default
+        /// extension version.</p>
         pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version_id = input;
             self
@@ -5596,6 +7160,8 @@ pub mod describe_type_input {
             self.publisher_id = Some(input.into());
             self
         }
+        /// <p>The publisher ID of the extension publisher.</p>
+        /// <p>Extensions provided by Amazon are not assigned a publisher ID.</p>
         pub fn set_publisher_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.publisher_id = input;
             self
@@ -5605,6 +7171,7 @@ pub mod describe_type_input {
             self.public_version_number = Some(input.into());
             self
         }
+        /// <p>The version number of a public third-party extension.</p>
         pub fn set_public_version_number(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5615,8 +7182,10 @@ pub mod describe_type_input {
         /// Consumes the builder and constructs a [`DescribeTypeInput`](crate::input::DescribeTypeInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DescribeTypeInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeTypeInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeTypeInput {
                 r#type: self.r#type,
                 type_name: self.type_name,
@@ -5639,16 +7208,16 @@ impl DescribeTypeInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeType,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeTypeInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5656,7 +7225,7 @@ impl DescribeTypeInput {
         fn update_http_builder(
             input: &crate::input::DescribeTypeInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5665,26 +7234,26 @@ impl DescribeTypeInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeTypeInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_describe_type(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5707,25 +7276,27 @@ impl DescribeTypeInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DescribeType::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DescribeType",
-                    "cloudformation",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeType::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeType",
+            "cloudformation",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5757,6 +7328,11 @@ pub mod describe_type_registration_input {
             self.registration_token = Some(input.into());
             self
         }
+        /// <p>The identifier for this registration request.</p>
+        /// <p>This registration token is generated by CloudFormation when you initiate a
+        /// registration request using <code>
+        /// <a>RegisterType</a>
+        /// </code>.</p>
         pub fn set_registration_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5769,7 +7345,7 @@ pub mod describe_type_registration_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeTypeRegistrationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeTypeRegistrationInput {
                 registration_token: self.registration_token,
@@ -5789,16 +7365,16 @@ impl DescribeTypeRegistrationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeTypeRegistration,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeTypeRegistrationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5806,7 +7382,7 @@ impl DescribeTypeRegistrationInput {
         fn update_http_builder(
             input: &crate::input::DescribeTypeRegistrationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5815,27 +7391,29 @@ impl DescribeTypeRegistrationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeTypeRegistrationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_type_registration(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5858,15 +7436,15 @@ impl DescribeTypeRegistrationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeTypeRegistration::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeTypeRegistration",
             "cloudformation",
         ));
@@ -5875,10 +7453,10 @@ impl DescribeTypeRegistrationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5907,16 +7485,23 @@ pub mod detect_stack_drift_input {
             self.stack_name = Some(input.into());
             self
         }
+        /// <p>The name of the stack for which you want to detect drift.</p>
         pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_name = input;
             self
         }
+        /// Appends an item to `logical_resource_ids`.
+        ///
+        /// To override the contents of this collection use [`set_logical_resource_ids`](Self::set_logical_resource_ids).
+        ///
+        /// <p>The logical names of any resources you want to use as filters.</p>
         pub fn logical_resource_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.logical_resource_ids.unwrap_or_default();
             v.push(input.into());
             self.logical_resource_ids = Some(v);
             self
         }
+        /// <p>The logical names of any resources you want to use as filters.</p>
         pub fn set_logical_resource_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5929,7 +7514,7 @@ pub mod detect_stack_drift_input {
             self,
         ) -> std::result::Result<
             crate::input::DetectStackDriftInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DetectStackDriftInput {
                 stack_name: self.stack_name,
@@ -5949,16 +7534,16 @@ impl DetectStackDriftInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DetectStackDrift,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DetectStackDriftInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5966,7 +7551,7 @@ impl DetectStackDriftInput {
         fn update_http_builder(
             input: &crate::input::DetectStackDriftInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5975,27 +7560,27 @@ impl DetectStackDriftInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DetectStackDriftInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_detect_stack_drift(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6018,15 +7603,15 @@ impl DetectStackDriftInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DetectStackDrift::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DetectStackDrift",
             "cloudformation",
         ));
@@ -6035,10 +7620,10 @@ impl DetectStackDriftInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6067,6 +7652,7 @@ pub mod detect_stack_resource_drift_input {
             self.stack_name = Some(input.into());
             self
         }
+        /// <p>The name of the stack to which the resource belongs.</p>
         pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_name = input;
             self
@@ -6076,6 +7662,7 @@ pub mod detect_stack_resource_drift_input {
             self.logical_resource_id = Some(input.into());
             self
         }
+        /// <p>The logical name of the resource for which to return drift information.</p>
         pub fn set_logical_resource_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6088,7 +7675,7 @@ pub mod detect_stack_resource_drift_input {
             self,
         ) -> std::result::Result<
             crate::input::DetectStackResourceDriftInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DetectStackResourceDriftInput {
                 stack_name: self.stack_name,
@@ -6109,16 +7696,16 @@ impl DetectStackResourceDriftInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DetectStackResourceDrift,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DetectStackResourceDriftInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6126,7 +7713,7 @@ impl DetectStackResourceDriftInput {
         fn update_http_builder(
             input: &crate::input::DetectStackResourceDriftInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6135,27 +7722,29 @@ impl DetectStackResourceDriftInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DetectStackResourceDriftInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_detect_stack_resource_drift(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6178,15 +7767,15 @@ impl DetectStackResourceDriftInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DetectStackResourceDrift::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DetectStackResourceDrift",
             "cloudformation",
         ));
@@ -6195,10 +7784,10 @@ impl DetectStackResourceDriftInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6230,6 +7819,7 @@ pub mod detect_stack_set_drift_input {
             self.stack_set_name = Some(input.into());
             self
         }
+        /// <p>The name of the stack set on which to perform the drift detection operation.</p>
         pub fn set_stack_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6247,6 +7837,9 @@ pub mod detect_stack_set_drift_input {
             self.operation_preferences = Some(input);
             self
         }
+        /// <p>The user-specified preferences for how CloudFormation performs a stack set
+        /// operation. </p>
+        /// <p>For more information on maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p>
         pub fn set_operation_preferences(
             mut self,
             input: std::option::Option<crate::model::StackSetOperationPreferences>,
@@ -6261,6 +7854,9 @@ pub mod detect_stack_set_drift_input {
             self.operation_id = Some(input.into());
             self
         }
+        /// <p>
+        /// <i>The ID of the stack set operation.</i>
+        /// </p>
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.operation_id = input;
             self
@@ -6285,6 +7881,22 @@ pub mod detect_stack_set_drift_input {
             self.call_as = Some(input);
             self
         }
+        /// <p>[Service-managed permissions] Specifies whether you are acting as an account
+        /// administrator in the organization's management account or as a delegated administrator in a
+        /// member account.</p>
+        /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
+        /// self-managed permissions.</p>
+        /// <ul>
+        /// <li>
+        /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you are signed in to a delegated administrator account, specify
+        /// <code>DELEGATED_ADMIN</code>.</p>
+        /// <p>Your Amazon Web Services account must be registered as a delegated administrator in
+        /// the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_call_as(mut self, input: std::option::Option<crate::model::CallAs>) -> Self {
             self.call_as = input;
             self
@@ -6294,7 +7906,7 @@ pub mod detect_stack_set_drift_input {
             self,
         ) -> std::result::Result<
             crate::input::DetectStackSetDriftInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DetectStackSetDriftInput {
                 stack_set_name: self.stack_set_name,
@@ -6316,16 +7928,16 @@ impl DetectStackSetDriftInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DetectStackSetDrift,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DetectStackSetDriftInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6333,7 +7945,7 @@ impl DetectStackSetDriftInput {
         fn update_http_builder(
             input: &crate::input::DetectStackSetDriftInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6342,10 +7954,10 @@ impl DetectStackSetDriftInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DetectStackSetDriftInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
@@ -6355,17 +7967,17 @@ impl DetectStackSetDriftInput {
         if self.operation_id.is_none() {
             self.operation_id = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_detect_stack_set_drift(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6388,15 +8000,15 @@ impl DetectStackSetDriftInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DetectStackSetDrift::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DetectStackSetDrift",
             "cloudformation",
         ));
@@ -6405,10 +8017,10 @@ impl DetectStackSetDriftInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6442,6 +8054,11 @@ pub mod estimate_template_cost_input {
             self.template_body = Some(input.into());
             self
         }
+        /// <p>Structure containing the template body with a minimum length of 1 byte and a maximum
+        /// length of 51,200 bytes. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
+        /// in the CloudFormation User Guide.)</p>
+        /// <p>Conditional: You must pass <code>TemplateBody</code> or <code>TemplateURL</code>. If
+        /// both are passed, only <code>TemplateBody</code> is used.</p>
         pub fn set_template_body(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6459,16 +8076,28 @@ pub mod estimate_template_cost_input {
             self.template_url = Some(input.into());
             self
         }
+        /// <p>Location of file containing the template body. The URL must point to a template that
+        /// is located in an Amazon S3 bucket or a Systems Manager document. For more information, go to
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
+        /// in the CloudFormation User Guide.</p>
+        /// <p>Conditional: You must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If
+        /// both are passed, only <code>TemplateBody</code> is used.</p>
         pub fn set_template_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.template_url = input;
             self
         }
+        /// Appends an item to `parameters`.
+        ///
+        /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
+        ///
+        /// <p>A list of <code>Parameter</code> structures that specify input parameters.</p>
         pub fn parameters(mut self, input: impl Into<crate::model::Parameter>) -> Self {
             let mut v = self.parameters.unwrap_or_default();
             v.push(input.into());
             self.parameters = Some(v);
             self
         }
+        /// <p>A list of <code>Parameter</code> structures that specify input parameters.</p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
@@ -6481,7 +8110,7 @@ pub mod estimate_template_cost_input {
             self,
         ) -> std::result::Result<
             crate::input::EstimateTemplateCostInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::EstimateTemplateCostInput {
                 template_body: self.template_body,
@@ -6502,16 +8131,16 @@ impl EstimateTemplateCostInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::EstimateTemplateCost,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::EstimateTemplateCostInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6519,7 +8148,7 @@ impl EstimateTemplateCostInput {
         fn update_http_builder(
             input: &crate::input::EstimateTemplateCostInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6528,27 +8157,27 @@ impl EstimateTemplateCostInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::EstimateTemplateCostInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_estimate_template_cost(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6571,15 +8200,15 @@ impl EstimateTemplateCostInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::EstimateTemplateCost::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "EstimateTemplateCost",
             "cloudformation",
         ));
@@ -6588,10 +8217,10 @@ impl EstimateTemplateCostInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6623,6 +8252,8 @@ pub mod execute_change_set_input {
             self.change_set_name = Some(input.into());
             self
         }
+        /// <p>The name or ARN of the change set that you want use to update the specified
+        /// stack.</p>
         pub fn set_change_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6636,6 +8267,8 @@ pub mod execute_change_set_input {
             self.stack_name = Some(input.into());
             self
         }
+        /// <p>If you specified the name of a change set, specify the stack name or ID (ARN) that is
+        /// associated with the change set you want to execute.</p>
         pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_name = input;
             self
@@ -6649,6 +8282,11 @@ pub mod execute_change_set_input {
             self.client_request_token = Some(input.into());
             self
         }
+        /// <p>A unique identifier for this <code>ExecuteChangeSet</code> request. Specify this
+        /// token if you plan to retry requests so that CloudFormation knows that you're not
+        /// attempting to execute a change set to update a stack with the same name. You might retry
+        /// <code>ExecuteChangeSet</code> requests to ensure that CloudFormation successfully
+        /// received them.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6663,6 +8301,9 @@ pub mod execute_change_set_input {
             self.disable_rollback = Some(input);
             self
         }
+        /// <p>Preserves the state of previously provisioned resources when an operation fails.</p>
+        /// <p>Default: <code>True</code>
+        /// </p>
         pub fn set_disable_rollback(mut self, input: std::option::Option<bool>) -> Self {
             self.disable_rollback = input;
             self
@@ -6672,7 +8313,7 @@ pub mod execute_change_set_input {
             self,
         ) -> std::result::Result<
             crate::input::ExecuteChangeSetInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ExecuteChangeSetInput {
                 change_set_name: self.change_set_name,
@@ -6694,16 +8335,16 @@ impl ExecuteChangeSetInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ExecuteChangeSet,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ExecuteChangeSetInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6711,7 +8352,7 @@ impl ExecuteChangeSetInput {
         fn update_http_builder(
             input: &crate::input::ExecuteChangeSetInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6720,27 +8361,27 @@ impl ExecuteChangeSetInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ExecuteChangeSetInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_execute_change_set(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6763,15 +8404,15 @@ impl ExecuteChangeSetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ExecuteChangeSet::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ExecuteChangeSet",
             "cloudformation",
         ));
@@ -6780,10 +8421,10 @@ impl ExecuteChangeSetInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6812,6 +8453,8 @@ pub mod get_stack_policy_input {
             self.stack_name = Some(input.into());
             self
         }
+        /// <p>The name or unique stack ID that is associated with the stack whose policy you want
+        /// to get.</p>
         pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_name = input;
             self
@@ -6821,7 +8464,7 @@ pub mod get_stack_policy_input {
             self,
         ) -> std::result::Result<
             crate::input::GetStackPolicyInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetStackPolicyInput {
                 stack_name: self.stack_name,
@@ -6840,16 +8483,16 @@ impl GetStackPolicyInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetStackPolicy,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetStackPolicyInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6857,7 +8500,7 @@ impl GetStackPolicyInput {
         fn update_http_builder(
             input: &crate::input::GetStackPolicyInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6866,27 +8509,27 @@ impl GetStackPolicyInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetStackPolicyInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_stack_policy(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6909,15 +8552,15 @@ impl GetStackPolicyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetStackPolicy::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetStackPolicy",
             "cloudformation",
         ));
@@ -6926,10 +8569,10 @@ impl GetStackPolicyInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6970,6 +8613,18 @@ pub mod get_template_input {
             self.stack_name = Some(input.into());
             self
         }
+        /// <p>The name or the unique stack ID that is associated with the stack, which are not
+        /// always interchangeable:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Running stacks: You can specify either the stack's name or its unique stack
+        /// ID.</p>
+        /// </li>
+        /// <li>
+        /// <p>Deleted stacks: You must specify the unique stack ID.</p>
+        /// </li>
+        /// </ul>
+        /// <p>Default: There is no default value.</p>
         pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_name = input;
             self
@@ -6981,6 +8636,9 @@ pub mod get_template_input {
             self.change_set_name = Some(input.into());
             self
         }
+        /// <p>The name or Amazon Resource Name (ARN) of a change set for which CloudFormation
+        /// returns the associated template. If you specify a name, you must also specify the
+        /// <code>StackName</code>.</p>
         pub fn set_change_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6998,6 +8656,12 @@ pub mod get_template_input {
             self.template_stage = Some(input);
             self
         }
+        /// <p>For templates that include transforms, the stage of the template that CloudFormation returns. To get the user-submitted template, specify
+        /// <code>Original</code>. To get the template after CloudFormation has processed
+        /// all transforms, specify <code>Processed</code>.</p>
+        /// <p>If the template doesn't include transforms, <code>Original</code> and
+        /// <code>Processed</code> return the same template. By default, CloudFormation
+        /// specifies <code>Processed</code>.</p>
         pub fn set_template_stage(
             mut self,
             input: std::option::Option<crate::model::TemplateStage>,
@@ -7008,8 +8672,10 @@ pub mod get_template_input {
         /// Consumes the builder and constructs a [`GetTemplateInput`](crate::input::GetTemplateInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetTemplateInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetTemplateInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetTemplateInput {
                 stack_name: self.stack_name,
                 change_set_name: self.change_set_name,
@@ -7029,16 +8695,16 @@ impl GetTemplateInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetTemplate,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetTemplateInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7046,7 +8712,7 @@ impl GetTemplateInput {
         fn update_http_builder(
             input: &crate::input::GetTemplateInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7055,24 +8721,26 @@ impl GetTemplateInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetTemplateInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_get_template(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7095,25 +8763,27 @@ impl GetTemplateInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::GetTemplate::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "GetTemplate",
-                    "cloudformation",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetTemplate::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetTemplate",
+            "cloudformation",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7149,6 +8819,11 @@ pub mod get_template_summary_input {
             self.template_body = Some(input.into());
             self
         }
+        /// <p>Structure containing the template body with a minimum length of 1 byte and a maximum
+        /// length of 51,200 bytes. For more information about templates, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the CloudFormation User Guide.</p>
+        /// <p>Conditional: You must specify only one of the following parameters:
+        /// <code>StackName</code>, <code>StackSetName</code>, <code>TemplateBody</code>, or
+        /// <code>TemplateURL</code>.</p>
         pub fn set_template_body(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7167,6 +8842,13 @@ pub mod get_template_summary_input {
             self.template_url = Some(input.into());
             self
         }
+        /// <p>Location of file containing the template body. The URL must point to a template (max
+        /// size: 460,800 bytes) that is located in an Amazon S3 bucket or a Systems Manager document.
+        /// For more information about templates, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
+        /// in the CloudFormation User Guide.</p>
+        /// <p>Conditional: You must specify only one of the following parameters:
+        /// <code>StackName</code>, <code>StackSetName</code>, <code>TemplateBody</code>, or
+        /// <code>TemplateURL</code>.</p>
         pub fn set_template_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.template_url = input;
             self
@@ -7181,6 +8863,12 @@ pub mod get_template_summary_input {
             self.stack_name = Some(input.into());
             self
         }
+        /// <p>The name or the stack ID that is associated with the stack, which are not always
+        /// interchangeable. For running stacks, you can specify either the stack's name or its unique
+        /// stack ID. For deleted stack, you must specify the unique stack ID.</p>
+        /// <p>Conditional: You must specify only one of the following parameters:
+        /// <code>StackName</code>, <code>StackSetName</code>, <code>TemplateBody</code>, or
+        /// <code>TemplateURL</code>.</p>
         pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_name = input;
             self
@@ -7193,6 +8881,10 @@ pub mod get_template_summary_input {
             self.stack_set_name = Some(input.into());
             self
         }
+        /// <p>The name or unique ID of the stack set from which the stack was created.</p>
+        /// <p>Conditional: You must specify only one of the following parameters:
+        /// <code>StackName</code>, <code>StackSetName</code>, <code>TemplateBody</code>, or
+        /// <code>TemplateURL</code>.</p>
         pub fn set_stack_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7220,6 +8912,22 @@ pub mod get_template_summary_input {
             self.call_as = Some(input);
             self
         }
+        /// <p>[Service-managed permissions] Specifies whether you are acting as an account
+        /// administrator in the organization's management account or as a delegated administrator in a
+        /// member account.</p>
+        /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
+        /// self-managed permissions.</p>
+        /// <ul>
+        /// <li>
+        /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you are signed in to a delegated administrator account, specify
+        /// <code>DELEGATED_ADMIN</code>.</p>
+        /// <p>Your Amazon Web Services account must be registered as a delegated administrator in
+        /// the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_call_as(mut self, input: std::option::Option<crate::model::CallAs>) -> Self {
             self.call_as = input;
             self
@@ -7229,7 +8937,7 @@ pub mod get_template_summary_input {
             self,
         ) -> std::result::Result<
             crate::input::GetTemplateSummaryInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetTemplateSummaryInput {
                 template_body: self.template_body,
@@ -7252,16 +8960,16 @@ impl GetTemplateSummaryInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetTemplateSummary,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetTemplateSummaryInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7269,7 +8977,7 @@ impl GetTemplateSummaryInput {
         fn update_http_builder(
             input: &crate::input::GetTemplateSummaryInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7278,25 +8986,27 @@ impl GetTemplateSummaryInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetTemplateSummaryInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_template_summary(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7319,15 +9029,15 @@ impl GetTemplateSummaryInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetTemplateSummary::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetTemplateSummary",
             "cloudformation",
         ));
@@ -7336,10 +9046,10 @@ impl GetTemplateSummaryInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7373,6 +9083,8 @@ pub mod import_stacks_to_stack_set_input {
             self.stack_set_name = Some(input.into());
             self
         }
+        /// <p>The name of the stack set. The name must be unique in the Region where you create your
+        /// stack set.</p>
         pub fn set_stack_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7380,12 +9092,20 @@ pub mod import_stacks_to_stack_set_input {
             self.stack_set_name = input;
             self
         }
+        /// Appends an item to `stack_ids`.
+        ///
+        /// To override the contents of this collection use [`set_stack_ids`](Self::set_stack_ids).
+        ///
+        /// <p>The IDs of the stacks you are importing into a stack set. You import up to 10 stacks per
+        /// stack set at a time.</p>
         pub fn stack_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.stack_ids.unwrap_or_default();
             v.push(input.into());
             self.stack_ids = Some(v);
             self
         }
+        /// <p>The IDs of the stacks you are importing into a stack set. You import up to 10 stacks per
+        /// stack set at a time.</p>
         pub fn set_stack_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7403,6 +9123,9 @@ pub mod import_stacks_to_stack_set_input {
             self.operation_preferences = Some(input);
             self
         }
+        /// <p>The user-specified preferences for how CloudFormation performs a stack set
+        /// operation. </p>
+        /// <p>For more information on maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p>
         pub fn set_operation_preferences(
             mut self,
             input: std::option::Option<crate::model::StackSetOperationPreferences>,
@@ -7415,6 +9138,7 @@ pub mod import_stacks_to_stack_set_input {
             self.operation_id = Some(input.into());
             self
         }
+        /// <p>A unique, user defined, identifier for the stack set operation.</p>
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.operation_id = input;
             self
@@ -7433,6 +9157,16 @@ pub mod import_stacks_to_stack_set_input {
             self.call_as = Some(input);
             self
         }
+        /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
+        /// self-managed permissions.</p>
+        /// <ul>
+        /// <li>
+        /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>For service managed stack sets, specify <code>DELEGATED_ADMIN</code>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_call_as(mut self, input: std::option::Option<crate::model::CallAs>) -> Self {
             self.call_as = input;
             self
@@ -7442,7 +9176,7 @@ pub mod import_stacks_to_stack_set_input {
             self,
         ) -> std::result::Result<
             crate::input::ImportStacksToStackSetInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ImportStacksToStackSetInput {
                 stack_set_name: self.stack_set_name,
@@ -7465,16 +9199,16 @@ impl ImportStacksToStackSetInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ImportStacksToStackSet,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ImportStacksToStackSetInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7482,7 +9216,7 @@ impl ImportStacksToStackSetInput {
         fn update_http_builder(
             input: &crate::input::ImportStacksToStackSetInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7491,10 +9225,10 @@ impl ImportStacksToStackSetInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ImportStacksToStackSetInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
@@ -7504,17 +9238,19 @@ impl ImportStacksToStackSetInput {
         if self.operation_id.is_none() {
             self.operation_id = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_import_stacks_to_stack_set(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7537,15 +9273,15 @@ impl ImportStacksToStackSetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ImportStacksToStackSet::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ImportStacksToStackSet",
             "cloudformation",
         ));
@@ -7554,10 +9290,10 @@ impl ImportStacksToStackSetInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7587,6 +9323,8 @@ pub mod list_change_sets_input {
             self.stack_name = Some(input.into());
             self
         }
+        /// <p>The name or the Amazon Resource Name (ARN) of the stack for which you want to list
+        /// change sets.</p>
         pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_name = input;
             self
@@ -7597,6 +9335,8 @@ pub mod list_change_sets_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A string (provided by the <a>ListChangeSets</a> response output) that
+        /// identifies the next page of change sets that you want to retrieve.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7606,7 +9346,7 @@ pub mod list_change_sets_input {
             self,
         ) -> std::result::Result<
             crate::input::ListChangeSetsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListChangeSetsInput {
                 stack_name: self.stack_name,
@@ -7626,16 +9366,16 @@ impl ListChangeSetsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListChangeSets,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListChangeSetsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7643,7 +9383,7 @@ impl ListChangeSetsInput {
         fn update_http_builder(
             input: &crate::input::ListChangeSetsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7652,27 +9392,27 @@ impl ListChangeSetsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListChangeSetsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_change_sets(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7695,15 +9435,15 @@ impl ListChangeSetsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListChangeSets::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListChangeSets",
             "cloudformation",
         ));
@@ -7712,10 +9452,10 @@ impl ListChangeSetsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7744,6 +9484,8 @@ pub mod list_exports_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A string (provided by the <a>ListExports</a> response output) that
+        /// identifies the next page of exported output values that you asked to retrieve.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7751,8 +9493,10 @@ pub mod list_exports_input {
         /// Consumes the builder and constructs a [`ListExportsInput`](crate::input::ListExportsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListExportsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListExportsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListExportsInput {
                 next_token: self.next_token,
             })
@@ -7770,16 +9514,16 @@ impl ListExportsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListExports,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListExportsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7787,7 +9531,7 @@ impl ListExportsInput {
         fn update_http_builder(
             input: &crate::input::ListExportsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7796,24 +9540,26 @@ impl ListExportsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListExportsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_exports(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7836,25 +9582,27 @@ impl ListExportsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListExports::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ListExports",
-                    "cloudformation",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListExports::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListExports",
+            "cloudformation",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7884,6 +9632,8 @@ pub mod list_imports_input {
             self.export_name = Some(input.into());
             self
         }
+        /// <p>The name of the exported output value. CloudFormation returns the stack names
+        /// that are importing this value.</p>
         pub fn set_export_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.export_name = input;
             self
@@ -7894,6 +9644,8 @@ pub mod list_imports_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A string (provided by the <a>ListImports</a> response output) that identifies
+        /// the next page of stacks that are importing the specified exported output value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7901,8 +9653,10 @@ pub mod list_imports_input {
         /// Consumes the builder and constructs a [`ListImportsInput`](crate::input::ListImportsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListImportsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListImportsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListImportsInput {
                 export_name: self.export_name,
                 next_token: self.next_token,
@@ -7921,16 +9675,16 @@ impl ListImportsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListImports,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListImportsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7938,7 +9692,7 @@ impl ListImportsInput {
         fn update_http_builder(
             input: &crate::input::ListImportsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7947,24 +9701,26 @@ impl ListImportsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListImportsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_imports(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7987,25 +9743,27 @@ impl ListImportsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListImports::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ListImports",
-                    "cloudformation",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListImports::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListImports",
+            "cloudformation",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8040,6 +9798,8 @@ pub mod list_stack_instances_input {
             self.stack_set_name = Some(input.into());
             self
         }
+        /// <p>The name or unique ID of the stack set that you want to list stack instances
+        /// for.</p>
         pub fn set_stack_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8056,6 +9816,11 @@ pub mod list_stack_instances_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the previous request didn't return all of the remaining results, the response's
+        /// <code>NextToken</code> parameter value is set to a token. To retrieve the next set of
+        /// results, call <code>ListStackInstances</code> again and assign that token to the request
+        /// object's <code>NextToken</code> parameter. If there are no remaining results, the previous
+        /// response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8068,16 +9833,26 @@ pub mod list_stack_instances_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of results to be returned with a single call. If the number of
+        /// available results exceeds this maximum, the response includes a <code>NextToken</code>
+        /// value that you can assign to the <code>NextToken</code> request parameter to get the next
+        /// set of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>The status that stack instances are filtered by.</p>
         pub fn filters(mut self, input: impl Into<crate::model::StackInstanceFilter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input.into());
             self.filters = Some(v);
             self
         }
+        /// <p>The status that stack instances are filtered by.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::StackInstanceFilter>>,
@@ -8090,6 +9865,7 @@ pub mod list_stack_instances_input {
             self.stack_instance_account = Some(input.into());
             self
         }
+        /// <p>The name of the Amazon Web Services account that you want to list stack instances for.</p>
         pub fn set_stack_instance_account(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8102,6 +9878,7 @@ pub mod list_stack_instances_input {
             self.stack_instance_region = Some(input.into());
             self
         }
+        /// <p>The name of the Region where you want to list stack instances. </p>
         pub fn set_stack_instance_region(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8129,6 +9906,22 @@ pub mod list_stack_instances_input {
             self.call_as = Some(input);
             self
         }
+        /// <p>[Service-managed permissions] Specifies whether you are acting as an account
+        /// administrator in the organization's management account or as a delegated administrator in a
+        /// member account.</p>
+        /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
+        /// self-managed permissions.</p>
+        /// <ul>
+        /// <li>
+        /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you are signed in to a delegated administrator account, specify
+        /// <code>DELEGATED_ADMIN</code>.</p>
+        /// <p>Your Amazon Web Services account must be registered as a delegated administrator in
+        /// the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_call_as(mut self, input: std::option::Option<crate::model::CallAs>) -> Self {
             self.call_as = input;
             self
@@ -8138,7 +9931,7 @@ pub mod list_stack_instances_input {
             self,
         ) -> std::result::Result<
             crate::input::ListStackInstancesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListStackInstancesInput {
                 stack_set_name: self.stack_set_name,
@@ -8163,16 +9956,16 @@ impl ListStackInstancesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListStackInstances,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListStackInstancesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8180,7 +9973,7 @@ impl ListStackInstancesInput {
         fn update_http_builder(
             input: &crate::input::ListStackInstancesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8189,25 +9982,27 @@ impl ListStackInstancesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListStackInstancesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_stack_instances(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8230,15 +10025,15 @@ impl ListStackInstancesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListStackInstances::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListStackInstances",
             "cloudformation",
         ));
@@ -8247,10 +10042,10 @@ impl ListStackInstancesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8290,6 +10085,18 @@ pub mod list_stack_resources_input {
             self.stack_name = Some(input.into());
             self
         }
+        /// <p>The name or the unique stack ID that is associated with the stack, which are not
+        /// always interchangeable:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Running stacks: You can specify either the stack's name or its unique stack
+        /// ID.</p>
+        /// </li>
+        /// <li>
+        /// <p>Deleted stacks: You must specify the unique stack ID.</p>
+        /// </li>
+        /// </ul>
+        /// <p>Default: There is no default value.</p>
         pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_name = input;
             self
@@ -8300,6 +10107,8 @@ pub mod list_stack_resources_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A string that identifies the next page of stack resources that you want to
+        /// retrieve.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8309,7 +10118,7 @@ pub mod list_stack_resources_input {
             self,
         ) -> std::result::Result<
             crate::input::ListStackResourcesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListStackResourcesInput {
                 stack_name: self.stack_name,
@@ -8329,16 +10138,16 @@ impl ListStackResourcesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListStackResources,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListStackResourcesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8346,7 +10155,7 @@ impl ListStackResourcesInput {
         fn update_http_builder(
             input: &crate::input::ListStackResourcesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8355,25 +10164,27 @@ impl ListStackResourcesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListStackResourcesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_stack_resources(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8396,15 +10207,15 @@ impl ListStackResourcesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListStackResources::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListStackResources",
             "cloudformation",
         ));
@@ -8413,10 +10224,10 @@ impl ListStackResourcesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8446,16 +10257,27 @@ pub mod list_stacks_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A string that identifies the next page of stacks that you want to retrieve.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
+        /// Appends an item to `stack_status_filter`.
+        ///
+        /// To override the contents of this collection use [`set_stack_status_filter`](Self::set_stack_status_filter).
+        ///
+        /// <p>Stack status to use as a filter. Specify one or more stack status codes to list only
+        /// stacks with the specified status codes. For a complete list of stack status codes, see the
+        /// <code>StackStatus</code> parameter of the <a>Stack</a> data type.</p>
         pub fn stack_status_filter(mut self, input: impl Into<crate::model::StackStatus>) -> Self {
             let mut v = self.stack_status_filter.unwrap_or_default();
             v.push(input.into());
             self.stack_status_filter = Some(v);
             self
         }
+        /// <p>Stack status to use as a filter. Specify one or more stack status codes to list only
+        /// stacks with the specified status codes. For a complete list of stack status codes, see the
+        /// <code>StackStatus</code> parameter of the <a>Stack</a> data type.</p>
         pub fn set_stack_status_filter(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::StackStatus>>,
@@ -8466,8 +10288,10 @@ pub mod list_stacks_input {
         /// Consumes the builder and constructs a [`ListStacksInput`](crate::input::ListStacksInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListStacksInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListStacksInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListStacksInput {
                 next_token: self.next_token,
                 stack_status_filter: self.stack_status_filter,
@@ -8486,16 +10310,16 @@ impl ListStacksInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListStacks,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListStacksInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8503,7 +10327,7 @@ impl ListStacksInput {
         fn update_http_builder(
             input: &crate::input::ListStacksInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8512,24 +10336,26 @@ impl ListStacksInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListStacksInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_stacks(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8552,25 +10378,27 @@ impl ListStacksInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListStacks::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ListStacks",
-                    "cloudformation",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListStacks::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListStacks",
+            "cloudformation",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8603,6 +10431,8 @@ pub mod list_stack_set_operation_results_input {
             self.stack_set_name = Some(input.into());
             self
         }
+        /// <p>The name or unique ID of the stack set that you want to get operation results
+        /// for.</p>
         pub fn set_stack_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8615,6 +10445,7 @@ pub mod list_stack_set_operation_results_input {
             self.operation_id = Some(input.into());
             self
         }
+        /// <p>The ID of the stack set operation.</p>
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.operation_id = input;
             self
@@ -8629,6 +10460,12 @@ pub mod list_stack_set_operation_results_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the previous request didn't return all of the remaining results, the response
+        /// object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set
+        /// of results, call <code>ListStackSetOperationResults</code> again and assign that token to
+        /// the request object's <code>NextToken</code> parameter. If there are no remaining results,
+        /// the previous response object's <code>NextToken</code> parameter is set to
+        /// <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8641,6 +10478,10 @@ pub mod list_stack_set_operation_results_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of results to be returned with a single call. If the number of
+        /// available results exceeds this maximum, the response includes a <code>NextToken</code>
+        /// value that you can assign to the <code>NextToken</code> request parameter to get the next
+        /// set of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -8665,6 +10506,22 @@ pub mod list_stack_set_operation_results_input {
             self.call_as = Some(input);
             self
         }
+        /// <p>[Service-managed permissions] Specifies whether you are acting as an account
+        /// administrator in the organization's management account or as a delegated administrator in a
+        /// member account.</p>
+        /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
+        /// self-managed permissions.</p>
+        /// <ul>
+        /// <li>
+        /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you are signed in to a delegated administrator account, specify
+        /// <code>DELEGATED_ADMIN</code>.</p>
+        /// <p>Your Amazon Web Services account must be registered as a delegated administrator in
+        /// the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_call_as(mut self, input: std::option::Option<crate::model::CallAs>) -> Self {
             self.call_as = input;
             self
@@ -8674,7 +10531,7 @@ pub mod list_stack_set_operation_results_input {
             self,
         ) -> std::result::Result<
             crate::input::ListStackSetOperationResultsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListStackSetOperationResultsInput {
                 stack_set_name: self.stack_set_name,
@@ -8698,16 +10555,16 @@ impl ListStackSetOperationResultsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListStackSetOperationResults,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListStackSetOperationResultsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8715,7 +10572,7 @@ impl ListStackSetOperationResultsInput {
         fn update_http_builder(
             input: &crate::input::ListStackSetOperationResultsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8724,25 +10581,25 @@ impl ListStackSetOperationResultsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListStackSetOperationResultsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_stack_set_operation_results(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_stack_set_operation_results(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8765,15 +10622,15 @@ impl ListStackSetOperationResultsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListStackSetOperationResults::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListStackSetOperationResults",
             "cloudformation",
         ));
@@ -8782,10 +10639,10 @@ impl ListStackSetOperationResultsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8817,6 +10674,8 @@ pub mod list_stack_set_operations_input {
             self.stack_set_name = Some(input.into());
             self
         }
+        /// <p>The name or unique ID of the stack set that you want to get operation summaries
+        /// for.</p>
         pub fn set_stack_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8834,6 +10693,12 @@ pub mod list_stack_set_operations_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the previous paginated request didn't return all of the remaining results, the
+        /// response object's <code>NextToken</code> parameter value is set to a token. To retrieve the
+        /// next set of results, call <code>ListStackSetOperations</code> again and assign that token
+        /// to the request object's <code>NextToken</code> parameter. If there are no remaining
+        /// results, the previous response object's <code>NextToken</code> parameter is set to
+        /// <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8846,6 +10711,10 @@ pub mod list_stack_set_operations_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of results to be returned with a single call. If the number of
+        /// available results exceeds this maximum, the response includes a <code>NextToken</code>
+        /// value that you can assign to the <code>NextToken</code> request parameter to get the next
+        /// set of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -8870,6 +10739,22 @@ pub mod list_stack_set_operations_input {
             self.call_as = Some(input);
             self
         }
+        /// <p>[Service-managed permissions] Specifies whether you are acting as an account
+        /// administrator in the organization's management account or as a delegated administrator in a
+        /// member account.</p>
+        /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
+        /// self-managed permissions.</p>
+        /// <ul>
+        /// <li>
+        /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you are signed in to a delegated administrator account, specify
+        /// <code>DELEGATED_ADMIN</code>.</p>
+        /// <p>Your Amazon Web Services account must be registered as a delegated administrator in
+        /// the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_call_as(mut self, input: std::option::Option<crate::model::CallAs>) -> Self {
             self.call_as = input;
             self
@@ -8879,7 +10764,7 @@ pub mod list_stack_set_operations_input {
             self,
         ) -> std::result::Result<
             crate::input::ListStackSetOperationsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListStackSetOperationsInput {
                 stack_set_name: self.stack_set_name,
@@ -8901,16 +10786,16 @@ impl ListStackSetOperationsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListStackSetOperations,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListStackSetOperationsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8918,7 +10803,7 @@ impl ListStackSetOperationsInput {
         fn update_http_builder(
             input: &crate::input::ListStackSetOperationsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8927,27 +10812,29 @@ impl ListStackSetOperationsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListStackSetOperationsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_stack_set_operations(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8970,15 +10857,15 @@ impl ListStackSetOperationsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListStackSetOperations::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListStackSetOperations",
             "cloudformation",
         ));
@@ -8987,10 +10874,10 @@ impl ListStackSetOperationsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9026,6 +10913,12 @@ pub mod list_stack_sets_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the previous paginated request didn't return all of the remaining results, the
+        /// response object's <code>NextToken</code> parameter value is set to a token. To retrieve the
+        /// next set of results, call <code>ListStackSets</code> again and assign that token to the
+        /// request object's <code>NextToken</code> parameter. If there are no remaining results, the
+        /// previous response object's <code>NextToken</code> parameter is set to
+        /// <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -9038,6 +10931,10 @@ pub mod list_stack_sets_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of results to be returned with a single call. If the number of
+        /// available results exceeds this maximum, the response includes a <code>NextToken</code>
+        /// value that you can assign to the <code>NextToken</code> request parameter to get the next
+        /// set of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -9048,6 +10945,8 @@ pub mod list_stack_sets_input {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the stack sets that you want to get summary information
+        /// about.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::StackSetStatus>,
@@ -9075,6 +10974,22 @@ pub mod list_stack_sets_input {
             self.call_as = Some(input);
             self
         }
+        /// <p>[Service-managed permissions] Specifies whether you are acting as an account
+        /// administrator in the management account or as a delegated administrator in a member
+        /// account.</p>
+        /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
+        /// self-managed permissions.</p>
+        /// <ul>
+        /// <li>
+        /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you are signed in to a delegated administrator account, specify
+        /// <code>DELEGATED_ADMIN</code>.</p>
+        /// <p>Your Amazon Web Services account must be registered as a delegated administrator in
+        /// the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_call_as(mut self, input: std::option::Option<crate::model::CallAs>) -> Self {
             self.call_as = input;
             self
@@ -9082,8 +10997,10 @@ pub mod list_stack_sets_input {
         /// Consumes the builder and constructs a [`ListStackSetsInput`](crate::input::ListStackSetsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListStackSetsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListStackSetsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListStackSetsInput {
                 next_token: self.next_token,
                 max_results: self.max_results,
@@ -9104,16 +11021,16 @@ impl ListStackSetsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListStackSets,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListStackSetsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -9121,7 +11038,7 @@ impl ListStackSetsInput {
         fn update_http_builder(
             input: &crate::input::ListStackSetsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9130,24 +11047,26 @@ impl ListStackSetsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListStackSetsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_stack_sets(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9170,25 +11089,27 @@ impl ListStackSetsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListStackSets::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ListStackSets",
-                    "cloudformation",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListStackSets::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListStackSets",
+            "cloudformation",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9224,6 +11145,9 @@ pub mod list_type_registrations_input {
             self.r#type = Some(input);
             self
         }
+        /// <p>The kind of extension.</p>
+        /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or
+        /// <code>Arn</code>.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::RegistryType>) -> Self {
             self.r#type = input;
             self
@@ -9235,6 +11159,9 @@ pub mod list_type_registrations_input {
             self.type_name = Some(input.into());
             self
         }
+        /// <p>The name of the extension.</p>
+        /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or
+        /// <code>Arn</code>.</p>
         pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.type_name = input;
             self
@@ -9246,6 +11173,9 @@ pub mod list_type_registrations_input {
             self.type_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the extension.</p>
+        /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or
+        /// <code>Arn</code>.</p>
         pub fn set_type_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.type_arn = input;
             self
@@ -9259,6 +11189,8 @@ pub mod list_type_registrations_input {
             self.registration_status_filter = Some(input);
             self
         }
+        /// <p>The current status of the extension registration request.</p>
+        /// <p>The default is <code>IN_PROGRESS</code>.</p>
         pub fn set_registration_status_filter(
             mut self,
             input: std::option::Option<crate::model::RegistrationStatus>,
@@ -9274,6 +11206,10 @@ pub mod list_type_registrations_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of results to be returned with a single call. If the number of
+        /// available results exceeds this maximum, the response includes a <code>NextToken</code>
+        /// value that you can assign to the <code>NextToken</code> request parameter to get the next
+        /// set of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -9287,6 +11223,11 @@ pub mod list_type_registrations_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the previous paginated request didn't return all of the remaining results, the
+        /// response object's <code>NextToken</code> parameter value is set to a token. To retrieve the
+        /// next set of results, call this action again and assign that token to the request object's
+        /// <code>NextToken</code> parameter. If there are no remaining results, the previous
+        /// response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -9296,7 +11237,7 @@ pub mod list_type_registrations_input {
             self,
         ) -> std::result::Result<
             crate::input::ListTypeRegistrationsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListTypeRegistrationsInput {
                 r#type: self.r#type,
@@ -9320,16 +11261,16 @@ impl ListTypeRegistrationsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListTypeRegistrations,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListTypeRegistrationsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -9337,7 +11278,7 @@ impl ListTypeRegistrationsInput {
         fn update_http_builder(
             input: &crate::input::ListTypeRegistrationsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9346,27 +11287,29 @@ impl ListTypeRegistrationsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListTypeRegistrationsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_type_registrations(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9389,15 +11332,15 @@ impl ListTypeRegistrationsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListTypeRegistrations::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListTypeRegistrations",
             "cloudformation",
         ));
@@ -9406,10 +11349,10 @@ impl ListTypeRegistrationsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9467,6 +11410,31 @@ pub mod list_types_input {
             self.visibility = Some(input);
             self
         }
+        /// <p>The scope at which the extensions are visible and usable in CloudFormation
+        /// operations.</p>
+        /// <p>Valid values include:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>PRIVATE</code>: Extensions that are visible and usable within this account
+        /// and region. This includes:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Private extensions you have registered in this account and region.</p>
+        /// </li>
+        /// <li>
+        /// <p>Public extensions that you have activated in this account and region.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PUBLIC</code>: Extensions that are publicly visible and available to be
+        /// activated within any Amazon account. This includes extensions from Amazon, as well as
+        /// third-party publishers.</p>
+        /// </li>
+        /// </ul>
+        /// <p>The default is <code>PRIVATE</code>.</p>
         pub fn set_visibility(
             mut self,
             input: std::option::Option<crate::model::Visibility>,
@@ -9501,6 +11469,29 @@ pub mod list_types_input {
             self.provisioning_type = Some(input);
             self
         }
+        /// <p>For resource types, the provisioning behavior of the resource type. CloudFormation determines the
+        /// provisioning type during registration, based on the types of handlers in the schema handler
+        /// package submitted.</p>
+        /// <p>Valid values include:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>FULLY_MUTABLE</code>: The resource type includes an update handler to
+        /// process updates to the type during stack update operations.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>IMMUTABLE</code>: The resource type does not include an update handler, so
+        /// the type cannot be updated and must instead be replaced during stack update
+        /// operations.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NON_PROVISIONABLE</code>: The resource type does not include create, read,
+        /// and delete handlers, and therefore cannot actually be provisioned.</p>
+        /// </li>
+        /// </ul>
+        /// <p>The default is <code>FULLY_MUTABLE</code>.</p>
         pub fn set_provisioning_type(
             mut self,
             input: std::option::Option<crate::model::ProvisioningType>,
@@ -9527,6 +11518,21 @@ pub mod list_types_input {
             self.deprecated_status = Some(input);
             self
         }
+        /// <p>The deprecation status of the extension that you want to get summary information
+        /// about.</p>
+        /// <p>Valid values include:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>LIVE</code>: The extension is registered for use in CloudFormation
+        /// operations.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DEPRECATED</code>: The extension has been deregistered and can no longer be
+        /// used in CloudFormation operations. </p>
+        /// </li>
+        /// </ul>
         pub fn set_deprecated_status(
             mut self,
             input: std::option::Option<crate::model::DeprecatedStatus>,
@@ -9539,6 +11545,7 @@ pub mod list_types_input {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of extension.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::RegistryType>) -> Self {
             self.r#type = input;
             self
@@ -9550,6 +11557,9 @@ pub mod list_types_input {
             self.filters = Some(input);
             self
         }
+        /// <p>Filter criteria to use in determining which extensions to return.</p>
+        /// <p>If you specify a filter, CloudFormation ignores any specified <code>Visibility</code>
+        /// value when returning the list of types.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<crate::model::TypeFilters>,
@@ -9565,6 +11575,10 @@ pub mod list_types_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of results to be returned with a single call. If the number of
+        /// available results exceeds this maximum, the response includes a <code>NextToken</code>
+        /// value that you can assign to the <code>NextToken</code> request parameter to get the next
+        /// set of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -9578,6 +11592,11 @@ pub mod list_types_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the previous paginated request didn't return all of the remaining results, the
+        /// response object's <code>NextToken</code> parameter value is set to a token. To retrieve the
+        /// next set of results, call this action again and assign that token to the request object's
+        /// <code>NextToken</code> parameter. If there are no remaining results, the previous
+        /// response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -9585,7 +11604,7 @@ pub mod list_types_input {
         /// Consumes the builder and constructs a [`ListTypesInput`](crate::input::ListTypesInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListTypesInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::ListTypesInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::ListTypesInput {
                 visibility: self.visibility,
@@ -9610,16 +11629,16 @@ impl ListTypesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListTypes,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListTypesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -9627,7 +11646,7 @@ impl ListTypesInput {
         fn update_http_builder(
             input: &crate::input::ListTypesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9636,24 +11655,26 @@ impl ListTypesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListTypesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_types(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9676,13 +11697,13 @@ impl ListTypesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
         let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListTypes::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
+            aws_smithy_http::operation::Operation::new(request, crate::operation::ListTypes::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "ListTypes",
                     "cloudformation",
                 ));
@@ -9691,10 +11712,10 @@ impl ListTypesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9730,6 +11751,9 @@ pub mod list_type_versions_input {
             self.r#type = Some(input);
             self
         }
+        /// <p>The kind of the extension.</p>
+        /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or
+        /// <code>Arn</code>.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::RegistryType>) -> Self {
             self.r#type = input;
             self
@@ -9741,6 +11765,9 @@ pub mod list_type_versions_input {
             self.type_name = Some(input.into());
             self
         }
+        /// <p>The name of the extension for which you want version summary information.</p>
+        /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or
+        /// <code>Arn</code>.</p>
         pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.type_name = input;
             self
@@ -9753,6 +11780,10 @@ pub mod list_type_versions_input {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the extension for which you want version summary
+        /// information.</p>
+        /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or
+        /// <code>Arn</code>.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -9765,6 +11796,10 @@ pub mod list_type_versions_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of results to be returned with a single call. If the number of
+        /// available results exceeds this maximum, the response includes a <code>NextToken</code>
+        /// value that you can assign to the <code>NextToken</code> request parameter to get the next
+        /// set of results.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -9778,6 +11813,11 @@ pub mod list_type_versions_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the previous paginated request didn't return all of the remaining results, the
+        /// response object's <code>NextToken</code> parameter value is set to a token. To retrieve the
+        /// next set of results, call this action again and assign that token to the request object's
+        /// <code>NextToken</code> parameter. If there are no remaining results, the previous
+        /// response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -9802,6 +11842,22 @@ pub mod list_type_versions_input {
             self.deprecated_status = Some(input);
             self
         }
+        /// <p>The deprecation status of the extension versions that you want to get summary
+        /// information about.</p>
+        /// <p>Valid values include:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>LIVE</code>: The extension version is registered and can be used in CloudFormation operations, dependent on its provisioning behavior and visibility
+        /// scope.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DEPRECATED</code>: The extension version has been deregistered and can no
+        /// longer be used in CloudFormation operations. </p>
+        /// </li>
+        /// </ul>
+        /// <p>The default is <code>LIVE</code>.</p>
         pub fn set_deprecated_status(
             mut self,
             input: std::option::Option<crate::model::DeprecatedStatus>,
@@ -9815,6 +11871,8 @@ pub mod list_type_versions_input {
             self.publisher_id = Some(input.into());
             self
         }
+        /// <p>The publisher ID of the extension publisher.</p>
+        /// <p>Extensions published by Amazon are not assigned a publisher ID.</p>
         pub fn set_publisher_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.publisher_id = input;
             self
@@ -9824,7 +11882,7 @@ pub mod list_type_versions_input {
             self,
         ) -> std::result::Result<
             crate::input::ListTypeVersionsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListTypeVersionsInput {
                 r#type: self.r#type,
@@ -9849,16 +11907,16 @@ impl ListTypeVersionsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListTypeVersions,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListTypeVersionsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -9866,7 +11924,7 @@ impl ListTypeVersionsInput {
         fn update_http_builder(
             input: &crate::input::ListTypeVersionsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9875,27 +11933,27 @@ impl ListTypeVersionsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListTypeVersionsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_type_versions(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9918,15 +11976,15 @@ impl ListTypeVersionsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListTypeVersions::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListTypeVersions",
             "cloudformation",
         ));
@@ -9935,10 +11993,10 @@ impl ListTypeVersionsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9971,6 +12029,9 @@ pub mod publish_type_input {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of the extension.</p>
+        /// <p>Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and
+        /// <code>Type</code>.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::ThirdPartyType>,
@@ -9985,6 +12046,9 @@ pub mod publish_type_input {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Number (ARN) of the extension.</p>
+        /// <p>Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and
+        /// <code>Type</code>.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -9996,6 +12060,9 @@ pub mod publish_type_input {
             self.type_name = Some(input.into());
             self
         }
+        /// <p>The name of the extension.</p>
+        /// <p>Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and
+        /// <code>Type</code>.</p>
         pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.type_name = input;
             self
@@ -10016,6 +12083,18 @@ pub mod publish_type_input {
             self.public_version_number = Some(input.into());
             self
         }
+        /// <p>The version number to assign to this version of the extension.</p>
+        /// <p>Use the following format, and adhere to semantic versioning when assigning a version
+        /// number to your extension: </p>
+        /// <p>
+        /// <code>MAJOR.MINOR.PATCH</code>
+        /// </p>
+        /// <p>For more information, see <a href="https://semver.org/">Semantic Versioning
+        /// 2.0.0</a>.</p>
+        /// <p>If you do not specify a version number, CloudFormation increments the version number by
+        /// one minor version release.</p>
+        /// <p>The first time you publish a type, CloudFormation sets the version number to <code>1.0.0</code>,
+        /// regardless of the value you specify.</p>
         pub fn set_public_version_number(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10026,8 +12105,10 @@ pub mod publish_type_input {
         /// Consumes the builder and constructs a [`PublishTypeInput`](crate::input::PublishTypeInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::PublishTypeInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::PublishTypeInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::PublishTypeInput {
                 r#type: self.r#type,
                 arn: self.arn,
@@ -10048,16 +12129,16 @@ impl PublishTypeInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::PublishType,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::PublishTypeInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -10065,7 +12146,7 @@ impl PublishTypeInput {
         fn update_http_builder(
             input: &crate::input::PublishTypeInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10074,24 +12155,26 @@ impl PublishTypeInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::PublishTypeInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_publish_type(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -10114,25 +12197,27 @@ impl PublishTypeInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::PublishType::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "PublishType",
-                    "cloudformation",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::PublishType::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "PublishType",
+            "cloudformation",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10166,6 +12251,7 @@ pub mod record_handler_progress_input {
             self.bearer_token = Some(input.into());
             self
         }
+        /// <p>Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>.</p>
         pub fn set_bearer_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bearer_token = input;
             self
@@ -10175,6 +12261,7 @@ pub mod record_handler_progress_input {
             self.operation_status = Some(input);
             self
         }
+        /// <p>Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>.</p>
         pub fn set_operation_status(
             mut self,
             input: std::option::Option<crate::model::OperationStatus>,
@@ -10187,6 +12274,7 @@ pub mod record_handler_progress_input {
             self.current_operation_status = Some(input);
             self
         }
+        /// <p>Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>.</p>
         pub fn set_current_operation_status(
             mut self,
             input: std::option::Option<crate::model::OperationStatus>,
@@ -10199,6 +12287,7 @@ pub mod record_handler_progress_input {
             self.status_message = Some(input.into());
             self
         }
+        /// <p>Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>.</p>
         pub fn set_status_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10211,6 +12300,7 @@ pub mod record_handler_progress_input {
             self.error_code = Some(input);
             self
         }
+        /// <p>Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>.</p>
         pub fn set_error_code(
             mut self,
             input: std::option::Option<crate::model::HandlerErrorCode>,
@@ -10223,6 +12313,7 @@ pub mod record_handler_progress_input {
             self.resource_model = Some(input.into());
             self
         }
+        /// <p>Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>.</p>
         pub fn set_resource_model(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10235,6 +12326,7 @@ pub mod record_handler_progress_input {
             self.client_request_token = Some(input.into());
             self
         }
+        /// <p>Reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10247,7 +12339,7 @@ pub mod record_handler_progress_input {
             self,
         ) -> std::result::Result<
             crate::input::RecordHandlerProgressInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::RecordHandlerProgressInput {
                 bearer_token: self.bearer_token,
@@ -10272,16 +12364,16 @@ impl RecordHandlerProgressInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RecordHandlerProgress,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RecordHandlerProgressInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -10289,7 +12381,7 @@ impl RecordHandlerProgressInput {
         fn update_http_builder(
             input: &crate::input::RecordHandlerProgressInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10298,27 +12390,29 @@ impl RecordHandlerProgressInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RecordHandlerProgressInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_record_handler_progress(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -10341,15 +12435,15 @@ impl RecordHandlerProgressInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::RecordHandlerProgress::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "RecordHandlerProgress",
             "cloudformation",
         ));
@@ -10358,10 +12452,10 @@ impl RecordHandlerProgressInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10393,6 +12487,10 @@ pub mod register_publisher_input {
             self.accept_terms_and_conditions = Some(input);
             self
         }
+        /// <p>Whether you accept the <a href="https://cloudformation-registry-documents.s3.amazonaws.com/Terms_and_Conditions_for_AWS_CloudFormation_Registry_Publishers.pdf">Terms and Conditions</a> for publishing extensions in the CloudFormation registry.
+        /// You must accept the terms and conditions in order to register to publish public extensions
+        /// to the CloudFormation registry.</p>
+        /// <p>The default is <code>false</code>.</p>
         pub fn set_accept_terms_and_conditions(mut self, input: std::option::Option<bool>) -> Self {
             self.accept_terms_and_conditions = input;
             self
@@ -10405,6 +12503,10 @@ pub mod register_publisher_input {
             self.connection_arn = Some(input.into());
             self
         }
+        /// <p>If you are using a Bitbucket or GitHub account for identity verification, the Amazon
+        /// Resource Name (ARN) for your connection to that account.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html#publish-extension-prereqs">Registering your account to publish CloudFormation
+        /// extensions</a> in the <i>CloudFormation CLI User Guide</i>.</p>
         pub fn set_connection_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10417,7 +12519,7 @@ pub mod register_publisher_input {
             self,
         ) -> std::result::Result<
             crate::input::RegisterPublisherInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::RegisterPublisherInput {
                 accept_terms_and_conditions: self.accept_terms_and_conditions,
@@ -10437,16 +12539,16 @@ impl RegisterPublisherInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RegisterPublisher,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RegisterPublisherInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -10454,7 +12556,7 @@ impl RegisterPublisherInput {
         fn update_http_builder(
             input: &crate::input::RegisterPublisherInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10463,27 +12565,27 @@ impl RegisterPublisherInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RegisterPublisherInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_register_publisher(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -10506,15 +12608,15 @@ impl RegisterPublisherInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::RegisterPublisher::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "RegisterPublisher",
             "cloudformation",
         ));
@@ -10523,10 +12625,10 @@ impl RegisterPublisherInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10559,6 +12661,7 @@ pub mod register_type_input {
             self.r#type = Some(input);
             self
         }
+        /// <p>The kind of extension.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::RegistryType>) -> Self {
             self.r#type = input;
             self
@@ -10575,6 +12678,7 @@ pub mod register_type_input {
         /// <i>company_or_organization</i>::<i>service</i>::<i>type</i>::MODULE.</p>
         /// </li>
         /// </ul>
+        ///
         /// <note>
         /// <p>The following organization namespaces are reserved and cannot be used in your
         /// extension names:</p>
@@ -10615,6 +12719,55 @@ pub mod register_type_input {
             self.type_name = Some(input.into());
             self
         }
+        /// <p>The name of the extension being registered.</p>
+        /// <p>We recommend that extension names adhere to the following patterns: </p>
+        /// <ul>
+        /// <li>
+        /// <p>For resource types,
+        /// <i>company_or_organization</i>::<i>service</i>::<i>type</i>.</p>
+        /// </li>
+        /// <li>
+        /// <p>For modules,
+        /// <i>company_or_organization</i>::<i>service</i>::<i>type</i>::MODULE.</p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <note>
+        /// <p>The following organization namespaces are reserved and cannot be used in your
+        /// extension names:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Alexa</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AMZN</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Amazon</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AWS</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Custom</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Dev</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// </note>
         pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.type_name = input;
             self
@@ -10635,6 +12788,18 @@ pub mod register_type_input {
             self.schema_handler_package = Some(input.into());
             self
         }
+        /// <p>A url to the S3 bucket containing the extension project package that contains the
+        /// neccessary files for the extension you want to register.</p>
+        /// <p>For information on generating a schema handler package for the extension you want to
+        /// register, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html">submit</a>
+        /// in the <i>CloudFormation CLI User Guide</i>.</p>
+        /// <note>
+        /// <p>The user registering the extension must be able to access the package in the S3
+        /// bucket. That is, the user needs to have <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a> permissions for the
+        /// schema handler package. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazons3.html">Actions, Resources, and Condition Keys
+        /// for Amazon S3</a> in the <i>Identity and Access Management User
+        /// Guide</i>.</p>
+        /// </note>
         pub fn set_schema_handler_package(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10647,6 +12812,7 @@ pub mod register_type_input {
             self.logging_config = Some(input);
             self
         }
+        /// <p>Specifies logging configuration information for an extension.</p>
         pub fn set_logging_config(
             mut self,
             input: std::option::Option<crate::model::LoggingConfig>,
@@ -10674,6 +12840,22 @@ pub mod register_type_input {
             self.execution_role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the IAM role for CloudFormation to assume
+        /// when invoking the extension.</p>
+        /// <p>For CloudFormation to assume the specified execution role, the role must contain a trust
+        /// relationship with the CloudFormation service principle
+        /// (<code>resources.cloudformation.amazonaws.com</code>). For more information on adding
+        /// trust relationships, see <a href="IAM/latest/UserGuide/roles-managingrole-editing-console.html#roles-managingrole_edit-trust-policy">Modifying a role trust policy</a> in the <i>Identity and Access Management User
+        /// Guide</i>.</p>
+        /// <p>If your extension calls Amazon Web Services APIs in any of its handlers, you must create
+        /// an <i>
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
+        /// execution role</a>
+        /// </i> that includes the necessary permissions to call
+        /// those Amazon Web Services APIs, and provision that execution role in your account. When
+        /// CloudFormation needs to invoke the resource type handler, CloudFormation assumes this
+        /// execution role to create a temporary session token, which it then passes to the resource
+        /// type handler, thereby supplying your resource type with the appropriate credentials.</p>
         pub fn set_execution_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10689,6 +12871,10 @@ pub mod register_type_input {
             self.client_request_token = Some(input.into());
             self
         }
+        /// <p>A unique identifier that acts as an idempotency key for this registration request.
+        /// Specifying a client request token prevents CloudFormation from generating more
+        /// than one version of an extension from the same registeration request, even if the request
+        /// is submitted multiple times. </p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10699,8 +12885,10 @@ pub mod register_type_input {
         /// Consumes the builder and constructs a [`RegisterTypeInput`](crate::input::RegisterTypeInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::RegisterTypeInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::RegisterTypeInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::RegisterTypeInput {
                 r#type: self.r#type,
                 type_name: self.type_name,
@@ -10723,16 +12911,16 @@ impl RegisterTypeInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RegisterType,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RegisterTypeInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -10740,7 +12928,7 @@ impl RegisterTypeInput {
         fn update_http_builder(
             input: &crate::input::RegisterTypeInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10749,26 +12937,26 @@ impl RegisterTypeInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RegisterTypeInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_register_type(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -10791,25 +12979,27 @@ impl RegisterTypeInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::RegisterType::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "RegisterType",
-                    "cloudformation",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::RegisterType::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "RegisterType",
+            "cloudformation",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10839,6 +13029,7 @@ pub mod rollback_stack_input {
             self.stack_name = Some(input.into());
             self
         }
+        /// <p>The name that is associated with the stack.</p>
         pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_name = input;
             self
@@ -10848,6 +13039,7 @@ pub mod rollback_stack_input {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management role that CloudFormation assumes to rollback the stack.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -10857,6 +13049,7 @@ pub mod rollback_stack_input {
             self.client_request_token = Some(input.into());
             self
         }
+        /// <p>A unique identifier for this <code>RollbackStack</code> request.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10867,8 +13060,10 @@ pub mod rollback_stack_input {
         /// Consumes the builder and constructs a [`RollbackStackInput`](crate::input::RollbackStackInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::RollbackStackInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::RollbackStackInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::RollbackStackInput {
                 stack_name: self.stack_name,
                 role_arn: self.role_arn,
@@ -10888,16 +13083,16 @@ impl RollbackStackInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RollbackStack,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RollbackStackInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -10905,7 +13100,7 @@ impl RollbackStackInput {
         fn update_http_builder(
             input: &crate::input::RollbackStackInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10914,24 +13109,26 @@ impl RollbackStackInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RollbackStackInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_rollback_stack(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -10954,25 +13151,27 @@ impl RollbackStackInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::RollbackStack::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "RollbackStack",
-                    "cloudformation",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::RollbackStack::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "RollbackStack",
+            "cloudformation",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -11002,6 +13201,7 @@ pub mod set_stack_policy_input {
             self.stack_name = Some(input.into());
             self
         }
+        /// <p>The name or unique stack ID that you want to associate a policy with.</p>
         pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_name = input;
             self
@@ -11014,6 +13214,10 @@ pub mod set_stack_policy_input {
             self.stack_policy_body = Some(input.into());
             self
         }
+        /// <p>Structure containing the stack policy body. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent Updates
+        /// to Stack Resources</a> in the CloudFormation User Guide. You can specify either
+        /// the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not
+        /// both.</p>
         pub fn set_stack_policy_body(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11029,6 +13233,10 @@ pub mod set_stack_policy_input {
             self.stack_policy_url = Some(input.into());
             self
         }
+        /// <p>Location of a file containing the stack policy. The URL must point to a policy
+        /// (maximum size: 16 KB) located in an S3 bucket in the same
+        /// Region as the stack. You can specify either the <code>StackPolicyBody</code> or the
+        /// <code>StackPolicyURL</code> parameter, but not both.</p>
         pub fn set_stack_policy_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11041,7 +13249,7 @@ pub mod set_stack_policy_input {
             self,
         ) -> std::result::Result<
             crate::input::SetStackPolicyInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::SetStackPolicyInput {
                 stack_name: self.stack_name,
@@ -11062,16 +13270,16 @@ impl SetStackPolicyInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::SetStackPolicy,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SetStackPolicyInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -11079,7 +13287,7 @@ impl SetStackPolicyInput {
         fn update_http_builder(
             input: &crate::input::SetStackPolicyInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -11088,27 +13296,27 @@ impl SetStackPolicyInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SetStackPolicyInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_set_stack_policy(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -11131,15 +13339,15 @@ impl SetStackPolicyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::SetStackPolicy::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "SetStackPolicy",
             "cloudformation",
         ));
@@ -11148,10 +13356,10 @@ impl SetStackPolicyInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -11187,6 +13395,11 @@ pub mod set_type_configuration_input {
             self.type_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) for the extension, in this account and region.</p>
+        /// <p>For public extensions, this will be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate the type</a> in this account and region. For private extensions, this will
+        /// be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register the type</a> in this account and region. </p>
+        /// <p>Do not include the extension versions suffix at the end of the ARN. You can set the
+        /// configuration for an extension, but not for a specific extension version.</p>
         pub fn set_type_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.type_arn = input;
             self
@@ -11199,6 +13412,10 @@ pub mod set_type_configuration_input {
             self.configuration = Some(input.into());
             self
         }
+        /// <p>The configuration data for the extension, in this account and region. </p>
+        /// <p>The configuration data must be formatted as JSON, and validate against the schema
+        /// returned in the <code>ConfigurationSchema</code> response element of <a href="AWSCloudFormation/latest/APIReference/API_DescribeType.html">API_DescribeType</a>. For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-model.html#resource-type-howto-configuration">Defining account-level configuration data for an extension</a> in the
+        /// <i>CloudFormation CLI User Guide</i>.</p>
         pub fn set_configuration(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11213,6 +13430,9 @@ pub mod set_type_configuration_input {
             self.configuration_alias = Some(input.into());
             self
         }
+        /// <p>An alias by which to refer to this extension configuration data.</p>
+        /// <p>Conditional: Specifying a configuration alias is required when setting a configuration
+        /// for a resource type extension.</p>
         pub fn set_configuration_alias(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11227,6 +13447,9 @@ pub mod set_type_configuration_input {
             self.type_name = Some(input.into());
             self
         }
+        /// <p>The name of the extension.</p>
+        /// <p>Conditional: You must specify <code>ConfigurationArn</code>, or <code>Type</code> and
+        /// <code>TypeName</code>.</p>
         pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.type_name = input;
             self
@@ -11238,6 +13461,9 @@ pub mod set_type_configuration_input {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of extension.</p>
+        /// <p>Conditional: You must specify <code>ConfigurationArn</code>, or <code>Type</code> and
+        /// <code>TypeName</code>.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::ThirdPartyType>,
@@ -11250,7 +13476,7 @@ pub mod set_type_configuration_input {
             self,
         ) -> std::result::Result<
             crate::input::SetTypeConfigurationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::SetTypeConfigurationInput {
                 type_arn: self.type_arn,
@@ -11273,16 +13499,16 @@ impl SetTypeConfigurationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::SetTypeConfiguration,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SetTypeConfigurationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -11290,7 +13516,7 @@ impl SetTypeConfigurationInput {
         fn update_http_builder(
             input: &crate::input::SetTypeConfigurationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -11299,27 +13525,27 @@ impl SetTypeConfigurationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SetTypeConfigurationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_set_type_configuration(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -11342,15 +13568,15 @@ impl SetTypeConfigurationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::SetTypeConfiguration::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "SetTypeConfiguration",
             "cloudformation",
         ));
@@ -11359,10 +13585,10 @@ impl SetTypeConfigurationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -11396,6 +13622,10 @@ pub mod set_type_default_version_input {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the extension for which you want version summary
+        /// information.</p>
+        /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or
+        /// <code>Arn</code>.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -11407,6 +13637,9 @@ pub mod set_type_default_version_input {
             self.r#type = Some(input);
             self
         }
+        /// <p>The kind of extension.</p>
+        /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or
+        /// <code>Arn</code>.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::RegistryType>) -> Self {
             self.r#type = input;
             self
@@ -11418,6 +13651,9 @@ pub mod set_type_default_version_input {
             self.type_name = Some(input.into());
             self
         }
+        /// <p>The name of the extension.</p>
+        /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or
+        /// <code>Arn</code>.</p>
         pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.type_name = input;
             self
@@ -11429,6 +13665,9 @@ pub mod set_type_default_version_input {
             self.version_id = Some(input.into());
             self
         }
+        /// <p>The ID of a specific version of the extension. The version ID is the value at the end of
+        /// the Amazon Resource Name (ARN) assigned to the extension version when it is
+        /// registered.</p>
         pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version_id = input;
             self
@@ -11438,7 +13677,7 @@ pub mod set_type_default_version_input {
             self,
         ) -> std::result::Result<
             crate::input::SetTypeDefaultVersionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::SetTypeDefaultVersionInput {
                 arn: self.arn,
@@ -11460,16 +13699,16 @@ impl SetTypeDefaultVersionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::SetTypeDefaultVersion,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SetTypeDefaultVersionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -11477,7 +13716,7 @@ impl SetTypeDefaultVersionInput {
         fn update_http_builder(
             input: &crate::input::SetTypeDefaultVersionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -11486,27 +13725,29 @@ impl SetTypeDefaultVersionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SetTypeDefaultVersionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_set_type_default_version(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -11529,15 +13770,15 @@ impl SetTypeDefaultVersionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::SetTypeDefaultVersion::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "SetTypeDefaultVersion",
             "cloudformation",
         ));
@@ -11546,10 +13787,10 @@ impl SetTypeDefaultVersionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -11581,6 +13822,8 @@ pub mod signal_resource_input {
             self.stack_name = Some(input.into());
             self
         }
+        /// <p>The stack name or unique stack ID that includes the resource that you want to
+        /// signal.</p>
         pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_name = input;
             self
@@ -11591,6 +13834,8 @@ pub mod signal_resource_input {
             self.logical_resource_id = Some(input.into());
             self
         }
+        /// <p>The logical ID of the resource that you want to signal. The logical ID is the name of
+        /// the resource that given in the template.</p>
         pub fn set_logical_resource_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11606,6 +13851,10 @@ pub mod signal_resource_input {
             self.unique_id = Some(input.into());
             self
         }
+        /// <p>A unique ID of the signal. When you signal Amazon EC2 instances or Auto Scaling
+        /// groups, specify the instance ID that you are signaling as the unique ID. If you send
+        /// multiple signals to a single resource (such as signaling a wait condition), each signal
+        /// requires a different unique ID.</p>
         pub fn set_unique_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.unique_id = input;
             self
@@ -11616,6 +13865,8 @@ pub mod signal_resource_input {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the signal, which is either success or failure. A failure signal causes
+        /// CloudFormation to immediately fail the stack creation or update.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ResourceSignalStatus>,
@@ -11628,7 +13879,7 @@ pub mod signal_resource_input {
             self,
         ) -> std::result::Result<
             crate::input::SignalResourceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::SignalResourceInput {
                 stack_name: self.stack_name,
@@ -11650,16 +13901,16 @@ impl SignalResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::SignalResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SignalResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -11667,7 +13918,7 @@ impl SignalResourceInput {
         fn update_http_builder(
             input: &crate::input::SignalResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -11676,24 +13927,26 @@ impl SignalResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SignalResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_signal_resource(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -11716,15 +13969,15 @@ impl SignalResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::SignalResource::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "SignalResource",
             "cloudformation",
         ));
@@ -11733,10 +13986,10 @@ impl SignalResourceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -11767,6 +14020,8 @@ pub mod stop_stack_set_operation_input {
             self.stack_set_name = Some(input.into());
             self
         }
+        /// <p>The name or unique ID of the stack set that you want to stop the operation
+        /// for.</p>
         pub fn set_stack_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11779,6 +14034,7 @@ pub mod stop_stack_set_operation_input {
             self.operation_id = Some(input.into());
             self
         }
+        /// <p>The ID of the stack operation. </p>
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.operation_id = input;
             self
@@ -11803,6 +14059,22 @@ pub mod stop_stack_set_operation_input {
             self.call_as = Some(input);
             self
         }
+        /// <p>[Service-managed permissions] Specifies whether you are acting as an account
+        /// administrator in the organization's management account or as a delegated administrator in a
+        /// member account.</p>
+        /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
+        /// self-managed permissions.</p>
+        /// <ul>
+        /// <li>
+        /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you are signed in to a delegated administrator account, specify
+        /// <code>DELEGATED_ADMIN</code>.</p>
+        /// <p>Your Amazon Web Services account must be registered as a delegated administrator in
+        /// the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_call_as(mut self, input: std::option::Option<crate::model::CallAs>) -> Self {
             self.call_as = input;
             self
@@ -11812,7 +14084,7 @@ pub mod stop_stack_set_operation_input {
             self,
         ) -> std::result::Result<
             crate::input::StopStackSetOperationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::StopStackSetOperationInput {
                 stack_set_name: self.stack_set_name,
@@ -11833,16 +14105,16 @@ impl StopStackSetOperationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::StopStackSetOperation,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::StopStackSetOperationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -11850,7 +14122,7 @@ impl StopStackSetOperationInput {
         fn update_http_builder(
             input: &crate::input::StopStackSetOperationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -11859,27 +14131,29 @@ impl StopStackSetOperationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::StopStackSetOperationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_stop_stack_set_operation(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -11902,15 +14176,15 @@ impl StopStackSetOperationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::StopStackSetOperation::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "StopStackSetOperation",
             "cloudformation",
         ));
@@ -11919,10 +14193,10 @@ impl StopStackSetOperationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -11956,6 +14230,9 @@ pub mod test_type_input {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Number (ARN) of the extension.</p>
+        /// <p>Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and
+        /// <code>Type</code>.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -11967,6 +14244,9 @@ pub mod test_type_input {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of the extension to test.</p>
+        /// <p>Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and
+        /// <code>Type</code>.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::ThirdPartyType>,
@@ -11981,6 +14261,9 @@ pub mod test_type_input {
             self.type_name = Some(input.into());
             self
         }
+        /// <p>The name of the extension to test.</p>
+        /// <p>Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and
+        /// <code>Type</code>.</p>
         pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.type_name = input;
             self
@@ -11994,6 +14277,11 @@ pub mod test_type_input {
             self.version_id = Some(input.into());
             self
         }
+        /// <p>The version of the extension to test.</p>
+        /// <p>You can specify the version id with either <code>Arn</code>, or with
+        /// <code>TypeName</code> and <code>Type</code>.</p>
+        /// <p>If you do not specify a version, CloudFormation uses the default version of the
+        /// extension in this account and region for testing.</p>
         pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version_id = input;
             self
@@ -12019,6 +14307,23 @@ pub mod test_type_input {
             self.log_delivery_bucket = Some(input.into());
             self
         }
+        /// <p>The S3 bucket to which CloudFormation delivers the contract test execution logs.</p>
+        /// <p>CloudFormation delivers the logs by the time contract testing has completed and the
+        /// extension has been assigned a test type status of <code>PASSED</code> or
+        /// <code>FAILED</code>.</p>
+        /// <p>The user calling <code>TestType</code> must be able to access items in the specified S3
+        /// bucket. Specifically, the user needs the following permissions:</p>
+        /// <ul>
+        /// <li>
+        /// <p>GetObject</p>
+        /// </li>
+        /// <li>
+        /// <p>PutObject</p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html">Actions, Resources, and
+        /// Condition Keys for Amazon S3</a> in the <i>Amazon Web Services Identity and
+        /// Access Management User Guide</i>.</p>
         pub fn set_log_delivery_bucket(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12029,7 +14334,7 @@ pub mod test_type_input {
         /// Consumes the builder and constructs a [`TestTypeInput`](crate::input::TestTypeInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::TestTypeInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::TestTypeInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::TestTypeInput {
                 arn: self.arn,
@@ -12052,16 +14357,16 @@ impl TestTypeInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::TestType,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::TestTypeInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -12069,7 +14374,7 @@ impl TestTypeInput {
         fn update_http_builder(
             input: &crate::input::TestTypeInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -12078,24 +14383,26 @@ impl TestTypeInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::TestTypeInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_test_type(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -12118,24 +14425,25 @@ impl TestTypeInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(request, crate::operation::TestType::new())
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "TestType",
-                "cloudformation",
-            ));
+        let op =
+            aws_smithy_http::operation::Operation::new(request, crate::operation::TestType::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "TestType",
+                    "cloudformation",
+                ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -12179,6 +14487,7 @@ pub mod update_stack_input {
             self.stack_name = Some(input.into());
             self
         }
+        /// <p>The name or unique stack ID of the stack to update.</p>
         pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_name = input;
             self
@@ -12193,6 +14502,12 @@ pub mod update_stack_input {
             self.template_body = Some(input.into());
             self
         }
+        /// <p>Structure containing the template body with a minimum length of 1 byte and a maximum
+        /// length of 51,200 bytes. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
+        /// in the CloudFormation User Guide.)</p>
+        /// <p>Conditional: You must specify only one of the following parameters:
+        /// <code>TemplateBody</code>, <code>TemplateURL</code>, or set the
+        /// <code>UsePreviousTemplate</code> to <code>true</code>.</p>
         pub fn set_template_body(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12211,6 +14526,13 @@ pub mod update_stack_input {
             self.template_url = Some(input.into());
             self
         }
+        /// <p>Location of file containing the template body. The URL must point to a template that
+        /// is located in an Amazon S3 bucket or a Systems Manager document. For more information, go to
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
+        /// in the CloudFormation User Guide.</p>
+        /// <p>Conditional: You must specify only one of the following parameters:
+        /// <code>TemplateBody</code>, <code>TemplateURL</code>, or set the
+        /// <code>UsePreviousTemplate</code> to <code>true</code>.</p>
         pub fn set_template_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.template_url = input;
             self
@@ -12224,6 +14546,11 @@ pub mod update_stack_input {
             self.use_previous_template = Some(input);
             self
         }
+        /// <p>Reuse the existing template that is associated with the stack that you are
+        /// updating.</p>
+        /// <p>Conditional: You must specify only one of the following parameters:
+        /// <code>TemplateBody</code>, <code>TemplateURL</code>, or set the
+        /// <code>UsePreviousTemplate</code> to <code>true</code>.</p>
         pub fn set_use_previous_template(mut self, input: std::option::Option<bool>) -> Self {
             self.use_previous_template = input;
             self
@@ -12241,6 +14568,12 @@ pub mod update_stack_input {
             self.stack_policy_during_update_body = Some(input.into());
             self
         }
+        /// <p>Structure containing the temporary overriding stack policy body. You can specify
+        /// either the <code>StackPolicyDuringUpdateBody</code> or the
+        /// <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p>
+        /// <p>If you want to update protected resources, specify a temporary overriding stack
+        /// policy during this update. If you do not specify a stack policy, the current policy that is
+        /// associated with the stack will be used.</p>
         pub fn set_stack_policy_during_update_body(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12263,6 +14596,14 @@ pub mod update_stack_input {
             self.stack_policy_during_update_url = Some(input.into());
             self
         }
+        /// <p>Location of a file containing the temporary overriding stack policy. The URL must
+        /// point to a policy (max size: 16KB) located in an S3 bucket in
+        /// the same Region as the stack. You can specify either the
+        /// <code>StackPolicyDuringUpdateBody</code> or the <code>StackPolicyDuringUpdateURL</code>
+        /// parameter, but not both.</p>
+        /// <p>If you want to update protected resources, specify a temporary overriding stack
+        /// policy during this update. If you do not specify a stack policy, the current policy that is
+        /// associated with the stack will be used.</p>
         pub fn set_stack_policy_during_update_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12270,12 +14611,22 @@ pub mod update_stack_input {
             self.stack_policy_during_update_url = input;
             self
         }
+        /// Appends an item to `parameters`.
+        ///
+        /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
+        ///
+        /// <p>A list of <code>Parameter</code> structures that specify input parameters for the
+        /// stack. For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data
+        /// type.</p>
         pub fn parameters(mut self, input: impl Into<crate::model::Parameter>) -> Self {
             let mut v = self.parameters.unwrap_or_default();
             v.push(input.into());
             self.parameters = Some(v);
             self
         }
+        /// <p>A list of <code>Parameter</code> structures that specify input parameters for the
+        /// stack. For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a> data
+        /// type.</p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
@@ -12283,12 +14634,220 @@ pub mod update_stack_input {
             self.parameters = input;
             self
         }
+        /// Appends an item to `capabilities`.
+        ///
+        /// To override the contents of this collection use [`set_capabilities`](Self::set_capabilities).
+        ///
+        /// <p>In some cases, you must explicitly acknowledge that your stack template contains certain
+        /// capabilities in order for CloudFormation to update the stack.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code>
+        /// </p>
+        /// <p>Some stack templates might include resources that can affect permissions in
+        /// your Amazon Web Services account; for example, by creating new Identity and Access Management
+        /// (IAM) users. For those stacks, you must explicitly acknowledge this by specifying one
+        /// of these capabilities.</p>
+        /// <p>The following IAM resources require you to specify either the
+        /// <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code>
+        /// capability.</p>
+        /// <ul>
+        /// <li>
+        /// <p>If you have IAM resources, you can specify either capability.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you have IAM resources with custom names, you <i>must</i>
+        /// specify <code>CAPABILITY_NAMED_IAM</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you don't specify either of these capabilities, CloudFormation returns an
+        /// <code>InsufficientCapabilities</code> error.</p>
+        /// </li>
+        /// </ul>
+        /// <p>If your stack template contains these resources, we recommend that you review
+        /// all permissions associated with them and edit their permissions if
+        /// necessary.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
+        /// AWS::IAM::AccessKey</a>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
+        /// AWS::IAM::Group</a>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html"> AWS::IAM::InstanceProfile</a>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
+        /// AWS::IAM::Policy</a>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
+        /// AWS::IAM::Role</a>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
+        /// AWS::IAM::User</a>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html"> AWS::IAM::UserToGroupAddition</a>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM
+        /// Resources in CloudFormation Templates</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CAPABILITY_AUTO_EXPAND</code>
+        /// </p>
+        /// <p>Some template contain macros. Macros perform custom processing on templates; this
+        /// can include simple actions like find-and-replace operations, all the way to extensive
+        /// transformations of entire templates. Because of this, users typically create a change
+        /// set from the processed template, so that they can review the changes resulting from
+        /// the macros before actually updating the stack. If your stack template contains one or
+        /// more macros, and you choose to update a stack directly from the processed template,
+        /// without first reviewing the resulting changes in a change set, you must acknowledge
+        /// this capability. This includes the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a> and <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.</p>
+        /// <p>If you want to update a stack from a stack template that contains macros
+        /// <i>and</i> nested stacks, you must update the stack directly from
+        /// the template using this capability.</p>
+        /// <important>
+        /// <p>You should only update stacks directly from a stack template that contains
+        /// macros if you know what processing the macro performs.</p>
+        /// <p>Each macro relies on an underlying Lambda service function for processing stack
+        /// templates. Be aware that the Lambda function owner can update the function
+        /// operation without CloudFormation being notified.</p>
+        /// </important>
+        /// <p>For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
+        /// CloudFormation Macros to Perform Custom Processing on
+        /// Templates</a>.</p>
+        /// </li>
+        /// </ul>
         pub fn capabilities(mut self, input: impl Into<crate::model::Capability>) -> Self {
             let mut v = self.capabilities.unwrap_or_default();
             v.push(input.into());
             self.capabilities = Some(v);
             self
         }
+        /// <p>In some cases, you must explicitly acknowledge that your stack template contains certain
+        /// capabilities in order for CloudFormation to update the stack.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code>
+        /// </p>
+        /// <p>Some stack templates might include resources that can affect permissions in
+        /// your Amazon Web Services account; for example, by creating new Identity and Access Management
+        /// (IAM) users. For those stacks, you must explicitly acknowledge this by specifying one
+        /// of these capabilities.</p>
+        /// <p>The following IAM resources require you to specify either the
+        /// <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code>
+        /// capability.</p>
+        /// <ul>
+        /// <li>
+        /// <p>If you have IAM resources, you can specify either capability.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you have IAM resources with custom names, you <i>must</i>
+        /// specify <code>CAPABILITY_NAMED_IAM</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you don't specify either of these capabilities, CloudFormation returns an
+        /// <code>InsufficientCapabilities</code> error.</p>
+        /// </li>
+        /// </ul>
+        /// <p>If your stack template contains these resources, we recommend that you review
+        /// all permissions associated with them and edit their permissions if
+        /// necessary.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
+        /// AWS::IAM::AccessKey</a>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
+        /// AWS::IAM::Group</a>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html"> AWS::IAM::InstanceProfile</a>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
+        /// AWS::IAM::Policy</a>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
+        /// AWS::IAM::Role</a>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
+        /// AWS::IAM::User</a>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html"> AWS::IAM::UserToGroupAddition</a>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM
+        /// Resources in CloudFormation Templates</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CAPABILITY_AUTO_EXPAND</code>
+        /// </p>
+        /// <p>Some template contain macros. Macros perform custom processing on templates; this
+        /// can include simple actions like find-and-replace operations, all the way to extensive
+        /// transformations of entire templates. Because of this, users typically create a change
+        /// set from the processed template, so that they can review the changes resulting from
+        /// the macros before actually updating the stack. If your stack template contains one or
+        /// more macros, and you choose to update a stack directly from the processed template,
+        /// without first reviewing the resulting changes in a change set, you must acknowledge
+        /// this capability. This includes the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a> and <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.</p>
+        /// <p>If you want to update a stack from a stack template that contains macros
+        /// <i>and</i> nested stacks, you must update the stack directly from
+        /// the template using this capability.</p>
+        /// <important>
+        /// <p>You should only update stacks directly from a stack template that contains
+        /// macros if you know what processing the macro performs.</p>
+        /// <p>Each macro relies on an underlying Lambda service function for processing stack
+        /// templates. Be aware that the Lambda function owner can update the function
+        /// operation without CloudFormation being notified.</p>
+        /// </important>
+        /// <p>For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
+        /// CloudFormation Macros to Perform Custom Processing on
+        /// Templates</a>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_capabilities(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Capability>>,
@@ -12296,12 +14855,28 @@ pub mod update_stack_input {
             self.capabilities = input;
             self
         }
+        /// Appends an item to `resource_types`.
+        ///
+        /// To override the contents of this collection use [`set_resource_types`](Self::set_resource_types).
+        ///
+        /// <p>The template resource types that you have permissions to work with for this update
+        /// stack action, such as <code>AWS::EC2::Instance</code>, <code>AWS::EC2::*</code>, or
+        /// <code>Custom::MyCustomInstance</code>.</p>
+        /// <p>If the list of resource types doesn't include a resource that you're updating, the
+        /// stack update fails. By default, CloudFormation grants permissions to all resource
+        /// types. Identity and Access Management (IAM) uses this parameter for CloudFormation-specific condition keys in IAM policies. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling Access with Identity and Access Management</a>.</p>
         pub fn resource_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_types.unwrap_or_default();
             v.push(input.into());
             self.resource_types = Some(v);
             self
         }
+        /// <p>The template resource types that you have permissions to work with for this update
+        /// stack action, such as <code>AWS::EC2::Instance</code>, <code>AWS::EC2::*</code>, or
+        /// <code>Custom::MyCustomInstance</code>.</p>
+        /// <p>If the list of resource types doesn't include a resource that you're updating, the
+        /// stack update fails. By default, CloudFormation grants permissions to all resource
+        /// types. Identity and Access Management (IAM) uses this parameter for CloudFormation-specific condition keys in IAM policies. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling Access with Identity and Access Management</a>.</p>
         pub fn set_resource_types(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -12322,6 +14897,15 @@ pub mod update_stack_input {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role
+        /// that CloudFormation assumes to update the stack. CloudFormation uses the role's
+        /// credentials to make calls on your behalf. CloudFormation always uses this role for all
+        /// future operations on the stack. As long as users have permission to operate on the stack,
+        /// CloudFormation uses this role even if the users don't have permission to pass it.
+        /// Ensure that the role grants least privilege.</p>
+        /// <p>If you don't specify a value, CloudFormation uses the role that was previously
+        /// associated with the stack. If no role is available, CloudFormation uses a temporary
+        /// session that is generated from your user credentials.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -12335,6 +14919,8 @@ pub mod update_stack_input {
             self.rollback_configuration = Some(input);
             self
         }
+        /// <p>The rollback triggers for CloudFormation to monitor during stack creation and
+        /// updating operations, and for the specified monitoring period afterwards.</p>
         pub fn set_rollback_configuration(
             mut self,
             input: std::option::Option<crate::model::RollbackConfiguration>,
@@ -12352,6 +14938,12 @@ pub mod update_stack_input {
             self.stack_policy_body = Some(input.into());
             self
         }
+        /// <p>Structure containing a new stack policy body. You can specify either the
+        /// <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not
+        /// both.</p>
+        /// <p>You might update the stack policy, for example, in order to protect a new resource
+        /// that you created during a stack update. If you do not specify a stack policy, the current
+        /// policy that is associated with the stack is unchanged.</p>
         pub fn set_stack_policy_body(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12370,6 +14962,13 @@ pub mod update_stack_input {
             self.stack_policy_url = Some(input.into());
             self
         }
+        /// <p>Location of a file containing the updated stack policy. The URL must point to a
+        /// policy (max size: 16KB) located in an S3 bucket in the same
+        /// Region as the stack. You can specify either the <code>StackPolicyBody</code> or the
+        /// <code>StackPolicyURL</code> parameter, but not both.</p>
+        /// <p>You might update the stack policy, for example, in order to protect a new resource
+        /// that you created during a stack update. If you do not specify a stack policy, the current
+        /// policy that is associated with the stack is unchanged.</p>
         pub fn set_stack_policy_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12377,12 +14976,22 @@ pub mod update_stack_input {
             self.stack_policy_url = input;
             self
         }
+        /// Appends an item to `notification_ar_ns`.
+        ///
+        /// To override the contents of this collection use [`set_notification_ar_ns`](Self::set_notification_ar_ns).
+        ///
+        /// <p>Amazon Simple Notification Service topic Amazon Resource Names (ARNs) that
+        /// CloudFormation associates with the stack. Specify an empty list to remove all notification
+        /// topics.</p>
         pub fn notification_ar_ns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.notification_ar_ns.unwrap_or_default();
             v.push(input.into());
             self.notification_ar_ns = Some(v);
             self
         }
+        /// <p>Amazon Simple Notification Service topic Amazon Resource Names (ARNs) that
+        /// CloudFormation associates with the stack. Specify an empty list to remove all notification
+        /// topics.</p>
         pub fn set_notification_ar_ns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -12390,12 +14999,28 @@ pub mod update_stack_input {
             self.notification_ar_ns = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Key-value pairs to associate with this stack. CloudFormation also propagates
+        /// these tags to supported resources in the stack. You can specify a maximum number of 50
+        /// tags.</p>
+        /// <p>If you don't specify this parameter, CloudFormation doesn't modify the stack's
+        /// tags. If you specify an empty value, CloudFormation removes all associated
+        /// tags.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>Key-value pairs to associate with this stack. CloudFormation also propagates
+        /// these tags to supported resources in the stack. You can specify a maximum number of 50
+        /// tags.</p>
+        /// <p>If you don't specify this parameter, CloudFormation doesn't modify the stack's
+        /// tags. If you specify an empty value, CloudFormation removes all associated
+        /// tags.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -12410,6 +15035,9 @@ pub mod update_stack_input {
             self.disable_rollback = Some(input);
             self
         }
+        /// <p>Preserve the state of previously provisioned resources when an operation fails.</p>
+        /// <p>Default: <code>False</code>
+        /// </p>
         pub fn set_disable_rollback(mut self, input: std::option::Option<bool>) -> Self {
             self.disable_rollback = input;
             self
@@ -12433,6 +15061,21 @@ pub mod update_stack_input {
             self.client_request_token = Some(input.into());
             self
         }
+        /// <p>A unique identifier for this <code>UpdateStack</code> request. Specify this token if
+        /// you plan to retry requests so that CloudFormation knows that you're not attempting to
+        /// update a stack with the same name. You might retry <code>UpdateStack</code> requests to
+        /// ensure that CloudFormation successfully received them.</p>
+        /// <p>All events triggered by a given stack operation are assigned the same client request
+        /// token, which you can use to track operations. For example, if you execute a
+        /// <code>CreateStack</code> operation with the token <code>token1</code>, then all the
+        /// <code>StackEvents</code> generated by that operation will have
+        /// <code>ClientRequestToken</code> set as <code>token1</code>.</p>
+        /// <p>In the console, stack operations display the client request token on the Events tab.
+        /// Stack operations that are initiated from the console use the token format
+        /// <i>Console-StackOperation-ID</i>, which helps you easily identify the
+        /// stack operation . For example, if you create a stack using the console, each stack event
+        /// would be assigned the same token in the following format:
+        /// <code>Console-CreateStack-7f59c3cf-00d2-40c7-b2ff-e75db0987002</code>.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12443,8 +15086,10 @@ pub mod update_stack_input {
         /// Consumes the builder and constructs a [`UpdateStackInput`](crate::input::UpdateStackInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UpdateStackInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateStackInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateStackInput {
                 stack_name: self.stack_name,
                 template_body: self.template_body,
@@ -12478,16 +15123,16 @@ impl UpdateStackInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateStack,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateStackInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -12495,7 +15140,7 @@ impl UpdateStackInput {
         fn update_http_builder(
             input: &crate::input::UpdateStackInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -12504,24 +15149,26 @@ impl UpdateStackInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateStackInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_update_stack(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -12544,25 +15191,27 @@ impl UpdateStackInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UpdateStack::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UpdateStack",
-                    "cloudformation",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateStack::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateStack",
+            "cloudformation",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -12598,6 +15247,7 @@ pub mod update_stack_instances_input {
             self.stack_set_name = Some(input.into());
             self
         }
+        /// <p>The name or unique ID of the stack set associated with the stack instances.</p>
         pub fn set_stack_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12605,12 +15255,24 @@ pub mod update_stack_instances_input {
             self.stack_set_name = input;
             self
         }
+        /// Appends an item to `accounts`.
+        ///
+        /// To override the contents of this collection use [`set_accounts`](Self::set_accounts).
+        ///
+        /// <p>[Self-managed permissions] The names of one or more Amazon Web Services accounts for which you want to update parameter values
+        /// for stack instances. The overridden parameter values will be applied to all stack instances
+        /// in the specified accounts and Regions.</p>
+        /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
         pub fn accounts(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.accounts.unwrap_or_default();
             v.push(input.into());
             self.accounts = Some(v);
             self
         }
+        /// <p>[Self-managed permissions] The names of one or more Amazon Web Services accounts for which you want to update parameter values
+        /// for stack instances. The overridden parameter values will be applied to all stack instances
+        /// in the specified accounts and Regions.</p>
+        /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
         pub fn set_accounts(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -12629,6 +15291,13 @@ pub mod update_stack_instances_input {
             self.deployment_targets = Some(input);
             self
         }
+        /// <p>[Service-managed permissions] The Organizations accounts for which you want to
+        /// update parameter values for stack instances. If your update targets OUs, the overridden
+        /// parameter values only apply to the accounts that are currently in the target OUs and their
+        /// child OUs. Accounts added to the target OUs and their child OUs in the future won't use the
+        /// overridden values.</p>
+        /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not
+        /// both.</p>
         pub fn set_deployment_targets(
             mut self,
             input: std::option::Option<crate::model::DeploymentTargets>,
@@ -12636,12 +15305,22 @@ pub mod update_stack_instances_input {
             self.deployment_targets = input;
             self
         }
+        /// Appends an item to `regions`.
+        ///
+        /// To override the contents of this collection use [`set_regions`](Self::set_regions).
+        ///
+        /// <p>The names of one or more Regions in which you want to update parameter values for
+        /// stack instances. The overridden parameter values will be applied to all stack instances in
+        /// the specified accounts and Regions.</p>
         pub fn regions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.regions.unwrap_or_default();
             v.push(input.into());
             self.regions = Some(v);
             self
         }
+        /// <p>The names of one or more Regions in which you want to update parameter values for
+        /// stack instances. The overridden parameter values will be applied to all stack instances in
+        /// the specified accounts and Regions.</p>
         pub fn set_regions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -12649,12 +15328,84 @@ pub mod update_stack_instances_input {
             self.regions = input;
             self
         }
+        /// Appends an item to `parameter_overrides`.
+        ///
+        /// To override the contents of this collection use [`set_parameter_overrides`](Self::set_parameter_overrides).
+        ///
+        /// <p> A list of input parameters whose values you want to update for the specified stack
+        /// instances. </p>
+        /// <p>Any overridden parameter values will be applied to all stack instances in the
+        /// specified accounts and Regions. When specifying parameters and their values, be aware of
+        /// how CloudFormation sets parameter values during stack instance update
+        /// operations:</p>
+        /// <ul>
+        /// <li>
+        /// <p>To override the current value for a parameter, include the parameter and
+        /// specify its value.</p>
+        /// </li>
+        /// <li>
+        /// <p>To leave an overridden parameter set to its present value, include the parameter and specify <code>UsePreviousValue</code> as
+        /// <code>true</code>. (You cannot specify both a value and set
+        /// <code>UsePreviousValue</code> to <code>true</code>.)</p>
+        /// </li>
+        /// <li>
+        /// <p>To set an overridden parameter back to the value specified in the stack set,
+        /// specify a parameter list but do not include the parameter in the list.</p>
+        /// </li>
+        /// <li>
+        /// <p>To leave all parameters set to their present values, do not specify this
+        /// property at all.</p>
+        /// </li>
+        /// </ul>
+        /// <p>During stack set updates, any parameter values overridden for a stack instance are
+        /// not updated, but retain their overridden value.</p>
+        /// <p>You can only override the parameter <i>values</i> that are specified in
+        /// the stack set; to add or delete a parameter itself, use <code>UpdateStackSet</code> to
+        /// update the stack set template. If you add a parameter to a template, before you can
+        /// override the parameter value specified in the stack set you must first use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a> to update all stack instances with the updated template and
+        /// parameter value specified in the stack set. Once a stack instance has been updated with the
+        /// new parameter, you can then override the parameter value using
+        /// <code>UpdateStackInstances</code>.</p>
         pub fn parameter_overrides(mut self, input: impl Into<crate::model::Parameter>) -> Self {
             let mut v = self.parameter_overrides.unwrap_or_default();
             v.push(input.into());
             self.parameter_overrides = Some(v);
             self
         }
+        /// <p> A list of input parameters whose values you want to update for the specified stack
+        /// instances. </p>
+        /// <p>Any overridden parameter values will be applied to all stack instances in the
+        /// specified accounts and Regions. When specifying parameters and their values, be aware of
+        /// how CloudFormation sets parameter values during stack instance update
+        /// operations:</p>
+        /// <ul>
+        /// <li>
+        /// <p>To override the current value for a parameter, include the parameter and
+        /// specify its value.</p>
+        /// </li>
+        /// <li>
+        /// <p>To leave an overridden parameter set to its present value, include the parameter and specify <code>UsePreviousValue</code> as
+        /// <code>true</code>. (You cannot specify both a value and set
+        /// <code>UsePreviousValue</code> to <code>true</code>.)</p>
+        /// </li>
+        /// <li>
+        /// <p>To set an overridden parameter back to the value specified in the stack set,
+        /// specify a parameter list but do not include the parameter in the list.</p>
+        /// </li>
+        /// <li>
+        /// <p>To leave all parameters set to their present values, do not specify this
+        /// property at all.</p>
+        /// </li>
+        /// </ul>
+        /// <p>During stack set updates, any parameter values overridden for a stack instance are
+        /// not updated, but retain their overridden value.</p>
+        /// <p>You can only override the parameter <i>values</i> that are specified in
+        /// the stack set; to add or delete a parameter itself, use <code>UpdateStackSet</code> to
+        /// update the stack set template. If you add a parameter to a template, before you can
+        /// override the parameter value specified in the stack set you must first use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a> to update all stack instances with the updated template and
+        /// parameter value specified in the stack set. Once a stack instance has been updated with the
+        /// new parameter, you can then override the parameter value using
+        /// <code>UpdateStackInstances</code>.</p>
         pub fn set_parameter_overrides(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
@@ -12670,6 +15421,7 @@ pub mod update_stack_instances_input {
             self.operation_preferences = Some(input);
             self
         }
+        /// <p>Preferences for how CloudFormation performs this stack set operation.</p>
         pub fn set_operation_preferences(
             mut self,
             input: std::option::Option<crate::model::StackSetOperationPreferences>,
@@ -12688,6 +15440,13 @@ pub mod update_stack_instances_input {
             self.operation_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for this stack set operation. </p>
+        /// <p>The operation ID also functions as an idempotency token, to ensure that
+        /// CloudFormation performs the stack set operation only once, even if you retry the request
+        /// multiple times. You might retry stack set operation requests to ensure that
+        /// CloudFormation successfully received them.</p>
+        /// <p>If you don't specify an operation ID, the SDK generates one automatically.
+        /// </p>
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.operation_id = input;
             self
@@ -12712,6 +15471,22 @@ pub mod update_stack_instances_input {
             self.call_as = Some(input);
             self
         }
+        /// <p>[Service-managed permissions] Specifies whether you are acting as an account
+        /// administrator in the organization's management account or as a delegated administrator in a
+        /// member account.</p>
+        /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
+        /// self-managed permissions.</p>
+        /// <ul>
+        /// <li>
+        /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you are signed in to a delegated administrator account, specify
+        /// <code>DELEGATED_ADMIN</code>.</p>
+        /// <p>Your Amazon Web Services account must be registered as a delegated administrator in
+        /// the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_call_as(mut self, input: std::option::Option<crate::model::CallAs>) -> Self {
             self.call_as = input;
             self
@@ -12721,7 +15496,7 @@ pub mod update_stack_instances_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateStackInstancesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateStackInstancesInput {
                 stack_set_name: self.stack_set_name,
@@ -12747,16 +15522,16 @@ impl UpdateStackInstancesInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateStackInstances,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateStackInstancesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -12764,7 +15539,7 @@ impl UpdateStackInstancesInput {
         fn update_http_builder(
             input: &crate::input::UpdateStackInstancesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -12773,10 +15548,10 @@ impl UpdateStackInstancesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateStackInstancesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
@@ -12786,17 +15561,17 @@ impl UpdateStackInstancesInput {
         if self.operation_id.is_none() {
             self.operation_id = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_stack_instances(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -12819,15 +15594,15 @@ impl UpdateStackInstancesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateStackInstances::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateStackInstances",
             "cloudformation",
         ));
@@ -12836,10 +15611,10 @@ impl UpdateStackInstancesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -12885,6 +15660,7 @@ pub mod update_stack_set_input {
             self.stack_set_name = Some(input.into());
             self
         }
+        /// <p>The name or unique ID of the stack set that you want to update.</p>
         pub fn set_stack_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12897,6 +15673,7 @@ pub mod update_stack_set_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>A brief description of updates that you are making.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -12911,6 +15688,12 @@ pub mod update_stack_set_input {
             self.template_body = Some(input.into());
             self
         }
+        /// <p>The structure that contains the template body, with a minimum length of 1 byte and a
+        /// maximum length of 51,200 bytes. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
+        /// in the CloudFormation User Guide.</p>
+        /// <p>Conditional: You must specify only one of the following parameters:
+        /// <code>TemplateBody</code> or <code>TemplateURL</code>—or set
+        /// <code>UsePreviousTemplate</code> to true.</p>
         pub fn set_template_body(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12929,6 +15712,13 @@ pub mod update_stack_set_input {
             self.template_url = Some(input.into());
             self
         }
+        /// <p>The location of the file that contains the template body. The URL must point to a
+        /// template (maximum size: 460,800 bytes) that is located in an Amazon S3 bucket or a Systems
+        /// Manager document. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
+        /// in the CloudFormation User Guide.</p>
+        /// <p>Conditional: You must specify only one of the following parameters:
+        /// <code>TemplateBody</code> or <code>TemplateURL</code>—or set
+        /// <code>UsePreviousTemplate</code> to true. </p>
         pub fn set_template_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.template_url = input;
             self
@@ -12942,16 +15732,27 @@ pub mod update_stack_set_input {
             self.use_previous_template = Some(input);
             self
         }
+        /// <p>Use the existing template that's associated with the stack set that you're
+        /// updating.</p>
+        /// <p>Conditional: You must specify only one of the following parameters:
+        /// <code>TemplateBody</code> or <code>TemplateURL</code>—or set
+        /// <code>UsePreviousTemplate</code> to true. </p>
         pub fn set_use_previous_template(mut self, input: std::option::Option<bool>) -> Self {
             self.use_previous_template = input;
             self
         }
+        /// Appends an item to `parameters`.
+        ///
+        /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
+        ///
+        /// <p>A list of input parameters for the stack set template. </p>
         pub fn parameters(mut self, input: impl Into<crate::model::Parameter>) -> Self {
             let mut v = self.parameters.unwrap_or_default();
             v.push(input.into());
             self.parameters = Some(v);
             self
         }
+        /// <p>A list of input parameters for the stack set template. </p>
         pub fn set_parameters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
@@ -12959,12 +15760,204 @@ pub mod update_stack_set_input {
             self.parameters = input;
             self
         }
+        /// Appends an item to `capabilities`.
+        ///
+        /// To override the contents of this collection use [`set_capabilities`](Self::set_capabilities).
+        ///
+        /// <p>In some cases, you must explicitly acknowledge that your stack template contains certain
+        /// capabilities in order for CloudFormation to update the stack set and its associated stack
+        /// instances.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code>
+        /// </p>
+        /// <p>Some stack templates might include resources that can affect permissions in
+        /// your Amazon Web Services account; for example, by creating new Identity and Access Management
+        /// (IAM) users. For those stacks sets, you must explicitly acknowledge this by
+        /// specifying one of these capabilities.</p>
+        /// <p>The following IAM resources require you to specify either the
+        /// <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code>
+        /// capability.</p>
+        /// <ul>
+        /// <li>
+        /// <p>If you have IAM resources, you can specify either capability. </p>
+        /// </li>
+        /// <li>
+        /// <p>If you have IAM resources with custom names, you <i>must</i>
+        /// specify <code>CAPABILITY_NAMED_IAM</code>. </p>
+        /// </li>
+        /// <li>
+        /// <p>If you don't specify either of these capabilities, CloudFormation returns an
+        /// <code>InsufficientCapabilities</code> error.</p>
+        /// </li>
+        /// </ul>
+        /// <p>If your stack template contains these resources, we recommend that you review
+        /// all permissions associated with them and edit their permissions if
+        /// necessary.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
+        /// AWS::IAM::AccessKey</a>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
+        /// AWS::IAM::Group</a>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html"> AWS::IAM::InstanceProfile</a>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
+        /// AWS::IAM::Policy</a>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
+        /// AWS::IAM::Role</a>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
+        /// AWS::IAM::User</a>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html"> AWS::IAM::UserToGroupAddition</a>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM
+        /// Resources in CloudFormation Templates</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CAPABILITY_AUTO_EXPAND</code>
+        /// </p>
+        /// <p>Some templates reference macros. If your stack set template references one or more
+        /// macros, you must update the stack set directly from the processed template, without
+        /// first reviewing the resulting changes in a change set. To update the stack set
+        /// directly, you must acknowledge this capability. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using CloudFormation Macros to
+        /// Perform Custom Processing on Templates</a>.</p>
+        /// <important>
+        /// <p>Stack sets with service-managed permissions do not currently support the use of
+        /// macros in templates. (This includes the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a> and <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
+        /// transforms, which are macros hosted by CloudFormation.) Even if you specify this capability
+        /// for a stack set with service-managed permissions, if you reference a macro in your
+        /// template the stack set operation will fail.</p>
+        /// </important>
+        /// </li>
+        /// </ul>
         pub fn capabilities(mut self, input: impl Into<crate::model::Capability>) -> Self {
             let mut v = self.capabilities.unwrap_or_default();
             v.push(input.into());
             self.capabilities = Some(v);
             self
         }
+        /// <p>In some cases, you must explicitly acknowledge that your stack template contains certain
+        /// capabilities in order for CloudFormation to update the stack set and its associated stack
+        /// instances.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code>
+        /// </p>
+        /// <p>Some stack templates might include resources that can affect permissions in
+        /// your Amazon Web Services account; for example, by creating new Identity and Access Management
+        /// (IAM) users. For those stacks sets, you must explicitly acknowledge this by
+        /// specifying one of these capabilities.</p>
+        /// <p>The following IAM resources require you to specify either the
+        /// <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code>
+        /// capability.</p>
+        /// <ul>
+        /// <li>
+        /// <p>If you have IAM resources, you can specify either capability. </p>
+        /// </li>
+        /// <li>
+        /// <p>If you have IAM resources with custom names, you <i>must</i>
+        /// specify <code>CAPABILITY_NAMED_IAM</code>. </p>
+        /// </li>
+        /// <li>
+        /// <p>If you don't specify either of these capabilities, CloudFormation returns an
+        /// <code>InsufficientCapabilities</code> error.</p>
+        /// </li>
+        /// </ul>
+        /// <p>If your stack template contains these resources, we recommend that you review
+        /// all permissions associated with them and edit their permissions if
+        /// necessary.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
+        /// AWS::IAM::AccessKey</a>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
+        /// AWS::IAM::Group</a>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html"> AWS::IAM::InstanceProfile</a>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
+        /// AWS::IAM::Policy</a>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
+        /// AWS::IAM::Role</a>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
+        /// AWS::IAM::User</a>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html"> AWS::IAM::UserToGroupAddition</a>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM
+        /// Resources in CloudFormation Templates</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CAPABILITY_AUTO_EXPAND</code>
+        /// </p>
+        /// <p>Some templates reference macros. If your stack set template references one or more
+        /// macros, you must update the stack set directly from the processed template, without
+        /// first reviewing the resulting changes in a change set. To update the stack set
+        /// directly, you must acknowledge this capability. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using CloudFormation Macros to
+        /// Perform Custom Processing on Templates</a>.</p>
+        /// <important>
+        /// <p>Stack sets with service-managed permissions do not currently support the use of
+        /// macros in templates. (This includes the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a> and <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
+        /// transforms, which are macros hosted by CloudFormation.) Even if you specify this capability
+        /// for a stack set with service-managed permissions, if you reference a macro in your
+        /// template the stack set operation will fail.</p>
+        /// </important>
+        /// </li>
+        /// </ul>
         pub fn set_capabilities(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Capability>>,
@@ -12972,12 +15965,76 @@ pub mod update_stack_set_input {
             self.capabilities = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The key-value pairs to associate with this stack set and the stacks created from it.
+        /// CloudFormation also propagates these tags to supported resources that are created in
+        /// the stacks. You can specify a maximum number of 50 tags.</p>
+        /// <p>If you specify tags for this parameter, those tags replace any list of tags that are
+        /// currently associated with this stack set. This means:</p>
+        /// <ul>
+        /// <li>
+        /// <p>If you don't specify this parameter, CloudFormation doesn't modify the
+        /// stack's tags. </p>
+        /// </li>
+        /// <li>
+        /// <p>If you specify <i>any</i> tags using this parameter, you must
+        /// specify <i>all</i> the tags that you want associated with this stack
+        /// set, even tags you've specifed before (for example, when creating the stack set or
+        /// during a previous update of the stack set.). Any tags that you don't include in the
+        /// updated list of tags are removed from the stack set, and therefore from the stacks
+        /// and resources as well. </p>
+        /// </li>
+        /// <li>
+        /// <p>If you specify an empty value, CloudFormation removes all currently
+        /// associated tags.</p>
+        /// </li>
+        /// </ul>
+        /// <p>If you specify new tags as part of an <code>UpdateStackSet</code> action,
+        /// CloudFormation checks to see if you have the required IAM permission to tag resources. If
+        /// you omit tags that are currently associated with the stack set from the list of tags you
+        /// specify, CloudFormation assumes that you want to remove those tags from the stack set,
+        /// and checks to see if you have permission to untag resources. If you don't have the
+        /// necessary permission(s), the entire <code>UpdateStackSet</code> action fails with an
+        /// <code>access denied</code> error, and the stack set is not updated.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The key-value pairs to associate with this stack set and the stacks created from it.
+        /// CloudFormation also propagates these tags to supported resources that are created in
+        /// the stacks. You can specify a maximum number of 50 tags.</p>
+        /// <p>If you specify tags for this parameter, those tags replace any list of tags that are
+        /// currently associated with this stack set. This means:</p>
+        /// <ul>
+        /// <li>
+        /// <p>If you don't specify this parameter, CloudFormation doesn't modify the
+        /// stack's tags. </p>
+        /// </li>
+        /// <li>
+        /// <p>If you specify <i>any</i> tags using this parameter, you must
+        /// specify <i>all</i> the tags that you want associated with this stack
+        /// set, even tags you've specifed before (for example, when creating the stack set or
+        /// during a previous update of the stack set.). Any tags that you don't include in the
+        /// updated list of tags are removed from the stack set, and therefore from the stacks
+        /// and resources as well. </p>
+        /// </li>
+        /// <li>
+        /// <p>If you specify an empty value, CloudFormation removes all currently
+        /// associated tags.</p>
+        /// </li>
+        /// </ul>
+        /// <p>If you specify new tags as part of an <code>UpdateStackSet</code> action,
+        /// CloudFormation checks to see if you have the required IAM permission to tag resources. If
+        /// you omit tags that are currently associated with the stack set from the list of tags you
+        /// specify, CloudFormation assumes that you want to remove those tags from the stack set,
+        /// and checks to see if you have permission to untag resources. If you don't have the
+        /// necessary permission(s), the entire <code>UpdateStackSet</code> action fails with an
+        /// <code>access denied</code> error, and the stack set is not updated.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -12993,6 +16050,7 @@ pub mod update_stack_set_input {
             self.operation_preferences = Some(input);
             self
         }
+        /// <p>Preferences for how CloudFormation performs this stack set operation.</p>
         pub fn set_operation_preferences(
             mut self,
             input: std::option::Option<crate::model::StackSetOperationPreferences>,
@@ -13013,6 +16071,15 @@ pub mod update_stack_set_input {
             self.administration_role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Number (ARN) of the IAM role to use to update this stack set.</p>
+        /// <p>Specify an IAM role only if you are using customized administrator roles to control
+        /// which users or groups can manage specific stack sets within the same administrator account.
+        /// For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Granting
+        /// Permissions for Stack Set Operations</a> in the
+        /// <i>CloudFormation User Guide</i>.</p>
+        /// <p>If you specified a customized administrator role when you created the stack set, you
+        /// must specify a customized administrator role, even if it is the same customized
+        /// administrator role used with this stack set previously.</p>
         pub fn set_administration_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13033,6 +16100,15 @@ pub mod update_stack_set_input {
             self.execution_role_name = Some(input.into());
             self
         }
+        /// <p>The name of the IAM execution role to use to update the stack set. If you do not specify
+        /// an execution role, CloudFormation uses the <code>AWSCloudFormationStackSetExecutionRole</code> role
+        /// for the stack set operation.</p>
+        /// <p>Specify an IAM role only if you are using customized execution roles to control which
+        /// stack resources users and groups can include in their stack sets. </p>
+        /// <p> If you specify a customized execution role, CloudFormation uses that role to update the stack.
+        /// If you do not specify a customized execution role, CloudFormation performs the update using the role
+        /// previously associated with the stack set, so long as you have permissions to perform
+        /// operations on the stack set.</p>
         pub fn set_execution_role_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13056,6 +16132,18 @@ pub mod update_stack_set_input {
             self.deployment_targets = Some(input);
             self
         }
+        /// <p>[Service-managed permissions] The Organizations accounts in which to update
+        /// associated stack instances.</p>
+        /// <p>To update all the stack instances associated with this stack set, do not specify
+        /// <code>DeploymentTargets</code> or <code>Regions</code>.</p>
+        /// <p>If the stack set update includes changes to the template (that is, if
+        /// <code>TemplateBody</code> or <code>TemplateURL</code> is specified), or the
+        /// <code>Parameters</code>, CloudFormation marks all stack instances with a status
+        /// of <code>OUTDATED</code> prior to updating the stack instances in the specified accounts
+        /// and Regions. If the stack set update does not include changes to the template or
+        /// parameters, CloudFormation updates the stack instances in the specified accounts
+        /// and Regions, while leaving all other stack instances with their existing stack instance
+        /// status.</p>
         pub fn set_deployment_targets(
             mut self,
             input: std::option::Option<crate::model::DeploymentTargets>,
@@ -13083,6 +16171,22 @@ pub mod update_stack_set_input {
             self.permission_model = Some(input);
             self
         }
+        /// <p>Describes how the IAM roles required for stack set operations are created. You cannot
+        /// modify <code>PermissionModel</code> if there are stack instances associated with your stack
+        /// set.</p>
+        /// <ul>
+        /// <li>
+        /// <p>With <code>self-managed</code> permissions, you must create the administrator and
+        /// execution roles required to deploy to target accounts. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
+        /// Self-Managed Stack Set Permissions</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>With <code>service-managed</code> permissions, StackSets automatically creates the
+        /// IAM roles required to deploy to accounts managed by Organizations. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant Service-Managed Stack Set Permissions</a>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_permission_model(
             mut self,
             input: std::option::Option<crate::model::PermissionModels>,
@@ -13099,6 +16203,11 @@ pub mod update_stack_set_input {
             self.auto_deployment = Some(input);
             self
         }
+        /// <p>[Service-managed permissions] Describes whether StackSets automatically deploys to
+        /// Organizations accounts that are added to a target organization or organizational
+        /// unit (OU).</p>
+        /// <p>If you specify <code>AutoDeployment</code>, do not specify
+        /// <code>DeploymentTargets</code> or <code>Regions</code>.</p>
         pub fn set_auto_deployment(
             mut self,
             input: std::option::Option<crate::model::AutoDeployment>,
@@ -13119,16 +16228,53 @@ pub mod update_stack_set_input {
             self.operation_id = Some(input.into());
             self
         }
+        /// <p>The unique ID for this stack set operation. </p>
+        /// <p>The operation ID also functions as an idempotency token, to ensure that
+        /// CloudFormation performs the stack set operation only once, even if you retry the request
+        /// multiple times. You might retry stack set operation requests to ensure that
+        /// CloudFormation successfully received them.</p>
+        /// <p>If you don't specify an operation ID, CloudFormation generates one
+        /// automatically.</p>
+        /// <p>Repeating this stack set operation with a new operation ID retries all stack
+        /// instances whose status is <code>OUTDATED</code>. </p>
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.operation_id = input;
             self
         }
+        /// Appends an item to `accounts`.
+        ///
+        /// To override the contents of this collection use [`set_accounts`](Self::set_accounts).
+        ///
+        /// <p>[Self-managed permissions] The accounts in which to update associated stack instances.
+        /// If you specify accounts, you must also specify the Regions in which to update stack set
+        /// instances.</p>
+        /// <p>To update <i>all</i> the stack instances associated with this stack set,
+        /// do not specify the <code>Accounts</code> or <code>Regions</code> properties.</p>
+        /// <p>If the stack set update includes changes to the template (that is, if the
+        /// <code>TemplateBody</code> or <code>TemplateURL</code> properties are specified), or the
+        /// <code>Parameters</code> property, CloudFormation marks all stack instances with a status of
+        /// <code>OUTDATED</code> prior to updating the stack instances in the specified accounts
+        /// and Regions. If the stack set update does not include changes to the template or
+        /// parameters, CloudFormation updates the stack instances in the specified accounts and Regions, while
+        /// leaving all other stack instances with their existing stack instance status. </p>
         pub fn accounts(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.accounts.unwrap_or_default();
             v.push(input.into());
             self.accounts = Some(v);
             self
         }
+        /// <p>[Self-managed permissions] The accounts in which to update associated stack instances.
+        /// If you specify accounts, you must also specify the Regions in which to update stack set
+        /// instances.</p>
+        /// <p>To update <i>all</i> the stack instances associated with this stack set,
+        /// do not specify the <code>Accounts</code> or <code>Regions</code> properties.</p>
+        /// <p>If the stack set update includes changes to the template (that is, if the
+        /// <code>TemplateBody</code> or <code>TemplateURL</code> properties are specified), or the
+        /// <code>Parameters</code> property, CloudFormation marks all stack instances with a status of
+        /// <code>OUTDATED</code> prior to updating the stack instances in the specified accounts
+        /// and Regions. If the stack set update does not include changes to the template or
+        /// parameters, CloudFormation updates the stack instances in the specified accounts and Regions, while
+        /// leaving all other stack instances with their existing stack instance status. </p>
         pub fn set_accounts(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13136,12 +16282,38 @@ pub mod update_stack_set_input {
             self.accounts = input;
             self
         }
+        /// Appends an item to `regions`.
+        ///
+        /// To override the contents of this collection use [`set_regions`](Self::set_regions).
+        ///
+        /// <p>The Regions in which to update associated stack instances. If you specify Regions, you
+        /// must also specify accounts in which to update stack set instances.</p>
+        /// <p>To update <i>all</i> the stack instances associated with this stack set,
+        /// do not specify the <code>Accounts</code> or <code>Regions</code> properties.</p>
+        /// <p>If the stack set update includes changes to the template (that is, if the
+        /// <code>TemplateBody</code> or <code>TemplateURL</code> properties are specified), or the
+        /// <code>Parameters</code> property, CloudFormation marks all stack instances with a status of
+        /// <code>OUTDATED</code> prior to updating the stack instances in the specified accounts
+        /// and Regions. If the stack set update does not include changes to the template or
+        /// parameters, CloudFormation updates the stack instances in the specified accounts and Regions, while
+        /// leaving all other stack instances with their existing stack instance status. </p>
         pub fn regions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.regions.unwrap_or_default();
             v.push(input.into());
             self.regions = Some(v);
             self
         }
+        /// <p>The Regions in which to update associated stack instances. If you specify Regions, you
+        /// must also specify accounts in which to update stack set instances.</p>
+        /// <p>To update <i>all</i> the stack instances associated with this stack set,
+        /// do not specify the <code>Accounts</code> or <code>Regions</code> properties.</p>
+        /// <p>If the stack set update includes changes to the template (that is, if the
+        /// <code>TemplateBody</code> or <code>TemplateURL</code> properties are specified), or the
+        /// <code>Parameters</code> property, CloudFormation marks all stack instances with a status of
+        /// <code>OUTDATED</code> prior to updating the stack instances in the specified accounts
+        /// and Regions. If the stack set update does not include changes to the template or
+        /// parameters, CloudFormation updates the stack instances in the specified accounts and Regions, while
+        /// leaving all other stack instances with their existing stack instance status. </p>
         pub fn set_regions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13169,6 +16341,22 @@ pub mod update_stack_set_input {
             self.call_as = Some(input);
             self
         }
+        /// <p>[Service-managed permissions] Specifies whether you are acting as an account
+        /// administrator in the organization's management account or as a delegated administrator in a
+        /// member account.</p>
+        /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
+        /// self-managed permissions.</p>
+        /// <ul>
+        /// <li>
+        /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you are signed in to a delegated administrator account, specify
+        /// <code>DELEGATED_ADMIN</code>.</p>
+        /// <p>Your Amazon Web Services account must be registered as a delegated administrator in
+        /// the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_call_as(mut self, input: std::option::Option<crate::model::CallAs>) -> Self {
             self.call_as = input;
             self
@@ -13178,7 +16366,7 @@ pub mod update_stack_set_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateStackSetInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateStackSetInput {
                 stack_set_name: self.stack_set_name,
@@ -13214,16 +16402,16 @@ impl UpdateStackSetInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateStackSet,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateStackSetInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -13231,7 +16419,7 @@ impl UpdateStackSetInput {
         fn update_http_builder(
             input: &crate::input::UpdateStackSetInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -13240,10 +16428,10 @@ impl UpdateStackSetInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateStackSetInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
@@ -13253,17 +16441,17 @@ impl UpdateStackSetInput {
         if self.operation_id.is_none() {
             self.operation_id = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_stack_set(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -13286,15 +16474,15 @@ impl UpdateStackSetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateStackSet::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateStackSet",
             "cloudformation",
         ));
@@ -13303,10 +16491,10 @@ impl UpdateStackSetInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -13335,6 +16523,7 @@ pub mod update_termination_protection_input {
             self.enable_termination_protection = Some(input);
             self
         }
+        /// <p>Whether to enable termination protection on the specified stack.</p>
         pub fn set_enable_termination_protection(
             mut self,
             input: std::option::Option<bool>,
@@ -13348,6 +16537,8 @@ pub mod update_termination_protection_input {
             self.stack_name = Some(input.into());
             self
         }
+        /// <p>The name or unique ID of the stack for which you want to set termination
+        /// protection.</p>
         pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stack_name = input;
             self
@@ -13357,7 +16548,7 @@ pub mod update_termination_protection_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateTerminationProtectionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateTerminationProtectionInput {
                 enable_termination_protection: self.enable_termination_protection,
@@ -13378,16 +16569,16 @@ impl UpdateTerminationProtectionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateTerminationProtection,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateTerminationProtectionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -13395,7 +16586,7 @@ impl UpdateTerminationProtectionInput {
         fn update_http_builder(
             input: &crate::input::UpdateTerminationProtectionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -13404,25 +16595,25 @@ impl UpdateTerminationProtectionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateTerminationProtectionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_termination_protection(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_termination_protection(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -13445,15 +16636,15 @@ impl UpdateTerminationProtectionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateTerminationProtection::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateTerminationProtection",
             "cloudformation",
         ));
@@ -13462,10 +16653,10 @@ impl UpdateTerminationProtectionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -13498,6 +16689,11 @@ pub mod validate_template_input {
             self.template_body = Some(input.into());
             self
         }
+        /// <p>Structure containing the template body with a minimum length of 1 byte and a maximum
+        /// length of 51,200 bytes. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
+        /// in the CloudFormation User Guide.</p>
+        /// <p>Conditional: You must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If
+        /// both are passed, only <code>TemplateBody</code> is used.</p>
         pub fn set_template_body(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13515,6 +16711,12 @@ pub mod validate_template_input {
             self.template_url = Some(input.into());
             self
         }
+        /// <p>Location of file containing the template body. The URL must point to a template (max
+        /// size: 460,800 bytes) that is located in an Amazon S3 bucket or a Systems Manager document.
+        /// For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
+        /// in the CloudFormation User Guide.</p>
+        /// <p>Conditional: You must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If
+        /// both are passed, only <code>TemplateBody</code> is used.</p>
         pub fn set_template_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.template_url = input;
             self
@@ -13524,7 +16726,7 @@ pub mod validate_template_input {
             self,
         ) -> std::result::Result<
             crate::input::ValidateTemplateInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ValidateTemplateInput {
                 template_body: self.template_body,
@@ -13544,16 +16746,16 @@ impl ValidateTemplateInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ValidateTemplate,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ValidateTemplateInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -13561,7 +16763,7 @@ impl ValidateTemplateInput {
         fn update_http_builder(
             input: &crate::input::ValidateTemplateInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -13570,27 +16772,27 @@ impl ValidateTemplateInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ValidateTemplateInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_validate_template(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -13613,15 +16815,15 @@ impl ValidateTemplateInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ValidateTemplate::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ValidateTemplate",
             "cloudformation",
         ));
@@ -13630,10 +16832,10 @@ impl ValidateTemplateInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -13674,6 +16876,7 @@ impl std::fmt::Debug for ValidateTemplateInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTerminationProtectionInput {
@@ -13695,6 +16898,7 @@ impl std::fmt::Debug for UpdateTerminationProtectionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateStackSetInput {
@@ -13987,6 +17191,7 @@ impl std::fmt::Debug for UpdateStackSetInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateStackInstancesInput {
@@ -14334,6 +17539,7 @@ impl std::fmt::Debug for UpdateStackInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestTypeInput {
@@ -14386,6 +17592,7 @@ impl std::fmt::Debug for TestTypeInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopStackSetOperationInput {
@@ -14452,6 +17659,7 @@ impl std::fmt::Debug for SignalResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetTypeDefaultVersionInput {
@@ -14484,6 +17692,7 @@ impl std::fmt::Debug for SetTypeDefaultVersionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetTypeConfigurationInput {
@@ -14550,6 +17759,7 @@ impl std::fmt::Debug for SetStackPolicyInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RollbackStackInput {
@@ -14570,6 +17780,7 @@ impl std::fmt::Debug for RollbackStackInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterTypeInput {
@@ -14587,6 +17798,7 @@ pub struct RegisterTypeInput {
     /// <i>company_or_organization</i>::<i>service</i>::<i>type</i>::MODULE.</p>
     /// </li>
     /// </ul>
+    ///
     /// <note>
     /// <p>The following organization namespaces are reserved and cannot be used in your
     /// extension names:</p>
@@ -14675,6 +17887,7 @@ impl std::fmt::Debug for RegisterTypeInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterPublisherInput {
@@ -14701,6 +17914,7 @@ impl std::fmt::Debug for RegisterPublisherInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecordHandlerProgressInput {
@@ -14733,6 +17947,7 @@ impl std::fmt::Debug for RecordHandlerProgressInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PublishTypeInput {
@@ -14773,6 +17988,7 @@ impl std::fmt::Debug for PublishTypeInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTypeVersionsInput {
@@ -14835,6 +18051,7 @@ impl std::fmt::Debug for ListTypeVersionsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTypesInput {
@@ -14936,6 +18153,7 @@ impl std::fmt::Debug for ListTypesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTypeRegistrationsInput {
@@ -14982,6 +18200,7 @@ impl std::fmt::Debug for ListTypeRegistrationsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStackSetsInput {
@@ -15029,6 +18248,7 @@ impl std::fmt::Debug for ListStackSetsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStackSetOperationsInput {
@@ -15076,6 +18296,7 @@ impl std::fmt::Debug for ListStackSetOperationsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStackSetOperationResultsInput {
@@ -15176,6 +18397,7 @@ impl std::fmt::Debug for ListStackResourcesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStackInstancesInput {
@@ -15231,6 +18453,7 @@ impl std::fmt::Debug for ListStackInstancesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListImportsInput {
@@ -15250,6 +18473,7 @@ impl std::fmt::Debug for ListImportsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListExportsInput {
@@ -15285,6 +18509,7 @@ impl std::fmt::Debug for ListChangeSetsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportStacksToStackSetInput {
@@ -15501,6 +18726,7 @@ impl std::fmt::Debug for EstimateTemplateCostInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectStackSetDriftInput {
@@ -15543,6 +18769,7 @@ impl std::fmt::Debug for DetectStackSetDriftInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectStackResourceDriftInput {
@@ -15560,6 +18787,7 @@ impl std::fmt::Debug for DetectStackResourceDriftInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetectStackDriftInput {
@@ -15577,6 +18805,7 @@ impl std::fmt::Debug for DetectStackDriftInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTypeRegistrationInput {
@@ -15595,6 +18824,7 @@ impl std::fmt::Debug for DescribeTypeRegistrationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTypeInput {
@@ -15636,6 +18866,7 @@ impl std::fmt::Debug for DescribeTypeInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeStackSetOperationInput {
@@ -15671,6 +18902,7 @@ impl std::fmt::Debug for DescribeStackSetOperationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeStackSetInput {
@@ -15775,6 +19007,7 @@ impl std::fmt::Debug for DescribeStackResourcesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeStackResourceDriftsInput {
@@ -15857,6 +19090,7 @@ impl std::fmt::Debug for DescribeStackResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeStackInstanceInput {
@@ -15925,6 +19159,7 @@ impl std::fmt::Debug for DescribeStackEventsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeStackDriftDetectionStatusInput {
@@ -15942,6 +19177,7 @@ impl std::fmt::Debug for DescribeStackDriftDetectionStatusInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePublisherInput {
@@ -15998,6 +19234,7 @@ impl std::fmt::Debug for DescribeAccountLimitsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeregisterTypeInput {
@@ -16029,6 +19266,7 @@ impl std::fmt::Debug for DeregisterTypeInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteStackSetInput {
@@ -16062,6 +19300,7 @@ impl std::fmt::Debug for DeleteStackSetInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteStackInstancesInput {
@@ -16195,6 +19434,7 @@ impl std::fmt::Debug for DeleteChangeSetInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeactivateTypeInput {
@@ -16222,6 +19462,7 @@ impl std::fmt::Debug for DeactivateTypeInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateStackSetInput {
@@ -16369,6 +19610,7 @@ pub struct CreateStackSetInput {
     /// for the stack set operation.</p>
     /// <p>Specify an IAM role only if you are using customized execution roles to control which
     /// stack resources users and groups can include in their stack sets.
+    ///
     /// </p>
     pub execution_role_name: std::option::Option<std::string::String>,
     /// <p>Describes how the IAM roles required for stack set operations are created. By default,
@@ -16440,6 +19682,7 @@ impl std::fmt::Debug for CreateStackSetInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateStackInstancesInput {
@@ -17083,6 +20326,7 @@ impl std::fmt::Debug for CancelUpdateStackInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDescribeTypeConfigurationsInput {
@@ -17101,6 +20345,7 @@ impl std::fmt::Debug for BatchDescribeTypeConfigurationsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActivateTypeInput {

@@ -15,6 +15,7 @@ pub mod associate_tracker_consumer_input {
             self.tracker_name = Some(input.into());
             self
         }
+        /// <p>The name of the tracker resource to be associated with a geofence collection.</p>
         pub fn set_tracker_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.tracker_name = input;
             self
@@ -32,6 +33,15 @@ pub mod associate_tracker_consumer_input {
             self.consumer_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) for the geofence collection to be associated to tracker
+        /// resource. Used when you need to specify a resource across all AWS.</p>
+        /// <ul>
+        /// <li>
+        /// <p>Format example:
+        /// <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_consumer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.consumer_arn = input;
             self
@@ -41,7 +51,7 @@ pub mod associate_tracker_consumer_input {
             self,
         ) -> std::result::Result<
             crate::input::AssociateTrackerConsumerInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::AssociateTrackerConsumerInput {
                 tracker_name: self.tracker_name,
@@ -62,27 +72,27 @@ impl AssociateTrackerConsumerInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AssociateTrackerConsumer,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AssociateTrackerConsumerInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_1 = &_input.tracker_name;
             let input_1 =
                 input_1
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "tracker_name",
                         details: "cannot be empty or unset",
                     })?;
-            let tracker_name = smithy_http::label::fmt_string(input_1, false);
+            let tracker_name = aws_smithy_http::label::fmt_string(input_1, false);
             if tracker_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "tracker_name",
                     details: "cannot be empty or unset",
                 });
@@ -99,7 +109,7 @@ impl AssociateTrackerConsumerInput {
         fn update_http_builder(
             input: &crate::input::AssociateTrackerConsumerInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -108,36 +118,38 @@ impl AssociateTrackerConsumerInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AssociateTrackerConsumerInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_associate_tracker_consumer(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("tracking.");
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("tracking.");
         match endpoint_prefix {
             Ok(prefix) => {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -162,15 +174,15 @@ impl AssociateTrackerConsumerInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::AssociateTrackerConsumer::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "AssociateTrackerConsumer",
             "location",
         ));
@@ -179,10 +191,10 @@ impl AssociateTrackerConsumerInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -211,16 +223,37 @@ pub mod batch_delete_device_position_history_input {
             self.tracker_name = Some(input.into());
             self
         }
+        /// <p>The name of the tracker resource to delete the device position history from.</p>
         pub fn set_tracker_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.tracker_name = input;
             self
         }
+        /// Appends an item to `device_ids`.
+        ///
+        /// To override the contents of this collection use [`set_device_ids`](Self::set_device_ids).
+        ///
+        /// <p>Devices whose position history you want to delete.</p>
+        /// <ul>
+        /// <li>
+        /// <p>For example, for two devices:
+        /// <code>“DeviceIds” : [DeviceId1,DeviceId2]</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn device_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.device_ids.unwrap_or_default();
             v.push(input.into());
             self.device_ids = Some(v);
             self
         }
+        /// <p>Devices whose position history you want to delete.</p>
+        /// <ul>
+        /// <li>
+        /// <p>For example, for two devices:
+        /// <code>“DeviceIds” : [DeviceId1,DeviceId2]</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_device_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -233,7 +266,7 @@ pub mod batch_delete_device_position_history_input {
             self,
         ) -> std::result::Result<
             crate::input::BatchDeleteDevicePositionHistoryInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::BatchDeleteDevicePositionHistoryInput {
                 tracker_name: self.tracker_name,
@@ -254,27 +287,27 @@ impl BatchDeleteDevicePositionHistoryInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::BatchDeleteDevicePositionHistory,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::BatchDeleteDevicePositionHistoryInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_2 = &_input.tracker_name;
             let input_2 =
                 input_2
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "tracker_name",
                         details: "cannot be empty or unset",
                     })?;
-            let tracker_name = smithy_http::label::fmt_string(input_2, false);
+            let tracker_name = aws_smithy_http::label::fmt_string(input_2, false);
             if tracker_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "tracker_name",
                     details: "cannot be empty or unset",
                 });
@@ -291,7 +324,7 @@ impl BatchDeleteDevicePositionHistoryInput {
         fn update_http_builder(
             input: &crate::input::BatchDeleteDevicePositionHistoryInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -300,34 +333,34 @@ impl BatchDeleteDevicePositionHistoryInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::BatchDeleteDevicePositionHistoryInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_delete_device_position_history(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_batch_delete_device_position_history(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("tracking.");
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("tracking.");
         match endpoint_prefix {
             Ok(prefix) => {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -352,15 +385,15 @@ impl BatchDeleteDevicePositionHistoryInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::BatchDeleteDevicePositionHistory::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "BatchDeleteDevicePositionHistory",
             "location",
         ));
@@ -369,10 +402,10 @@ impl BatchDeleteDevicePositionHistoryInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -401,6 +434,7 @@ pub mod batch_delete_geofence_input {
             self.collection_name = Some(input.into());
             self
         }
+        /// <p>The geofence collection storing the geofences to be deleted.</p>
         pub fn set_collection_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -408,12 +442,18 @@ pub mod batch_delete_geofence_input {
             self.collection_name = input;
             self
         }
+        /// Appends an item to `geofence_ids`.
+        ///
+        /// To override the contents of this collection use [`set_geofence_ids`](Self::set_geofence_ids).
+        ///
+        /// <p>The batch of geofences to be deleted.</p>
         pub fn geofence_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.geofence_ids.unwrap_or_default();
             v.push(input.into());
             self.geofence_ids = Some(v);
             self
         }
+        /// <p>The batch of geofences to be deleted.</p>
         pub fn set_geofence_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -426,7 +466,7 @@ pub mod batch_delete_geofence_input {
             self,
         ) -> std::result::Result<
             crate::input::BatchDeleteGeofenceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::BatchDeleteGeofenceInput {
                 collection_name: self.collection_name,
@@ -446,27 +486,27 @@ impl BatchDeleteGeofenceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::BatchDeleteGeofence,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::BatchDeleteGeofenceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_3 = &_input.collection_name;
             let input_3 =
                 input_3
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "collection_name",
                         details: "cannot be empty or unset",
                     })?;
-            let collection_name = smithy_http::label::fmt_string(input_3, false);
+            let collection_name = aws_smithy_http::label::fmt_string(input_3, false);
             if collection_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "collection_name",
                     details: "cannot be empty or unset",
                 });
@@ -483,7 +523,7 @@ impl BatchDeleteGeofenceInput {
         fn update_http_builder(
             input: &crate::input::BatchDeleteGeofenceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -492,36 +532,36 @@ impl BatchDeleteGeofenceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::BatchDeleteGeofenceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_batch_delete_geofence(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("geofencing.");
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("geofencing.");
         match endpoint_prefix {
             Ok(prefix) => {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -546,15 +586,15 @@ impl BatchDeleteGeofenceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::BatchDeleteGeofence::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "BatchDeleteGeofence",
             "location",
         ));
@@ -563,10 +603,10 @@ impl BatchDeleteGeofenceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -597,6 +637,8 @@ pub mod batch_evaluate_geofences_input {
             self.collection_name = Some(input.into());
             self
         }
+        /// <p>The geofence collection used in evaluating the position of devices against its
+        /// geofences.</p>
         pub fn set_collection_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -604,6 +646,12 @@ pub mod batch_evaluate_geofences_input {
             self.collection_name = input;
             self
         }
+        /// Appends an item to `device_position_updates`.
+        ///
+        /// To override the contents of this collection use [`set_device_position_updates`](Self::set_device_position_updates).
+        ///
+        /// <p>Contains device details for each device to be evaluated against the given geofence
+        /// collection.</p>
         pub fn device_position_updates(
             mut self,
             input: impl Into<crate::model::DevicePositionUpdate>,
@@ -613,6 +661,8 @@ pub mod batch_evaluate_geofences_input {
             self.device_position_updates = Some(v);
             self
         }
+        /// <p>Contains device details for each device to be evaluated against the given geofence
+        /// collection.</p>
         pub fn set_device_position_updates(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DevicePositionUpdate>>,
@@ -625,7 +675,7 @@ pub mod batch_evaluate_geofences_input {
             self,
         ) -> std::result::Result<
             crate::input::BatchEvaluateGeofencesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::BatchEvaluateGeofencesInput {
                 collection_name: self.collection_name,
@@ -645,27 +695,27 @@ impl BatchEvaluateGeofencesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::BatchEvaluateGeofences,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::BatchEvaluateGeofencesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_4 = &_input.collection_name;
             let input_4 =
                 input_4
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "collection_name",
                         details: "cannot be empty or unset",
                     })?;
-            let collection_name = smithy_http::label::fmt_string(input_4, false);
+            let collection_name = aws_smithy_http::label::fmt_string(input_4, false);
             if collection_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "collection_name",
                     details: "cannot be empty or unset",
                 });
@@ -682,7 +732,7 @@ impl BatchEvaluateGeofencesInput {
         fn update_http_builder(
             input: &crate::input::BatchEvaluateGeofencesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -691,36 +741,38 @@ impl BatchEvaluateGeofencesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::BatchEvaluateGeofencesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_batch_evaluate_geofences(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("geofencing.");
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("geofencing.");
         match endpoint_prefix {
             Ok(prefix) => {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -746,15 +798,15 @@ impl BatchEvaluateGeofencesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::BatchEvaluateGeofences::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "BatchEvaluateGeofences",
             "location",
         ));
@@ -763,10 +815,10 @@ impl BatchEvaluateGeofencesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -795,16 +847,37 @@ pub mod batch_get_device_position_input {
             self.tracker_name = Some(input.into());
             self
         }
+        /// <p>The tracker resource retrieving the device position.</p>
         pub fn set_tracker_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.tracker_name = input;
             self
         }
+        /// Appends an item to `device_ids`.
+        ///
+        /// To override the contents of this collection use [`set_device_ids`](Self::set_device_ids).
+        ///
+        /// <p>Devices whose position you want to retrieve.</p>
+        /// <ul>
+        /// <li>
+        /// <p>For example, for two devices:
+        /// <code>device-ids=DeviceId1&amp;device-ids=DeviceId2</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn device_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.device_ids.unwrap_or_default();
             v.push(input.into());
             self.device_ids = Some(v);
             self
         }
+        /// <p>Devices whose position you want to retrieve.</p>
+        /// <ul>
+        /// <li>
+        /// <p>For example, for two devices:
+        /// <code>device-ids=DeviceId1&amp;device-ids=DeviceId2</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_device_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -817,7 +890,7 @@ pub mod batch_get_device_position_input {
             self,
         ) -> std::result::Result<
             crate::input::BatchGetDevicePositionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::BatchGetDevicePositionInput {
                 tracker_name: self.tracker_name,
@@ -837,27 +910,27 @@ impl BatchGetDevicePositionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::BatchGetDevicePosition,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::BatchGetDevicePositionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_5 = &_input.tracker_name;
             let input_5 =
                 input_5
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "tracker_name",
                         details: "cannot be empty or unset",
                     })?;
-            let tracker_name = smithy_http::label::fmt_string(input_5, false);
+            let tracker_name = aws_smithy_http::label::fmt_string(input_5, false);
             if tracker_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "tracker_name",
                     details: "cannot be empty or unset",
                 });
@@ -874,7 +947,7 @@ impl BatchGetDevicePositionInput {
         fn update_http_builder(
             input: &crate::input::BatchGetDevicePositionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -883,36 +956,38 @@ impl BatchGetDevicePositionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::BatchGetDevicePositionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_batch_get_device_position(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("tracking.");
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("tracking.");
         match endpoint_prefix {
             Ok(prefix) => {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -937,15 +1012,15 @@ impl BatchGetDevicePositionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::BatchGetDevicePosition::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "BatchGetDevicePosition",
             "location",
         ));
@@ -954,10 +1029,10 @@ impl BatchGetDevicePositionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -987,6 +1062,7 @@ pub mod batch_put_geofence_input {
             self.collection_name = Some(input.into());
             self
         }
+        /// <p>The geofence collection storing the geofences.</p>
         pub fn set_collection_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -994,6 +1070,11 @@ pub mod batch_put_geofence_input {
             self.collection_name = input;
             self
         }
+        /// Appends an item to `entries`.
+        ///
+        /// To override the contents of this collection use [`set_entries`](Self::set_entries).
+        ///
+        /// <p>The batch of geofences to be stored in a geofence collection.</p>
         pub fn entries(
             mut self,
             input: impl Into<crate::model::BatchPutGeofenceRequestEntry>,
@@ -1003,6 +1084,7 @@ pub mod batch_put_geofence_input {
             self.entries = Some(v);
             self
         }
+        /// <p>The batch of geofences to be stored in a geofence collection.</p>
         pub fn set_entries(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BatchPutGeofenceRequestEntry>>,
@@ -1015,7 +1097,7 @@ pub mod batch_put_geofence_input {
             self,
         ) -> std::result::Result<
             crate::input::BatchPutGeofenceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::BatchPutGeofenceInput {
                 collection_name: self.collection_name,
@@ -1035,27 +1117,27 @@ impl BatchPutGeofenceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::BatchPutGeofence,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::BatchPutGeofenceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_6 = &_input.collection_name;
             let input_6 =
                 input_6
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "collection_name",
                         details: "cannot be empty or unset",
                     })?;
-            let collection_name = smithy_http::label::fmt_string(input_6, false);
+            let collection_name = aws_smithy_http::label::fmt_string(input_6, false);
             if collection_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "collection_name",
                     details: "cannot be empty or unset",
                 });
@@ -1072,7 +1154,7 @@ impl BatchPutGeofenceInput {
         fn update_http_builder(
             input: &crate::input::BatchPutGeofenceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1081,36 +1163,36 @@ impl BatchPutGeofenceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::BatchPutGeofenceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_batch_put_geofence(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("geofencing.");
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("geofencing.");
         match endpoint_prefix {
             Ok(prefix) => {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -1135,15 +1217,15 @@ impl BatchPutGeofenceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::BatchPutGeofence::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "BatchPutGeofence",
             "location",
         ));
@@ -1152,10 +1234,10 @@ impl BatchPutGeofenceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1184,16 +1266,23 @@ pub mod batch_update_device_position_input {
             self.tracker_name = Some(input.into());
             self
         }
+        /// <p>The name of the tracker resource to update.</p>
         pub fn set_tracker_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.tracker_name = input;
             self
         }
+        /// Appends an item to `updates`.
+        ///
+        /// To override the contents of this collection use [`set_updates`](Self::set_updates).
+        ///
+        /// <p>Contains the position update details for each device.</p>
         pub fn updates(mut self, input: impl Into<crate::model::DevicePositionUpdate>) -> Self {
             let mut v = self.updates.unwrap_or_default();
             v.push(input.into());
             self.updates = Some(v);
             self
         }
+        /// <p>Contains the position update details for each device.</p>
         pub fn set_updates(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DevicePositionUpdate>>,
@@ -1206,7 +1295,7 @@ pub mod batch_update_device_position_input {
             self,
         ) -> std::result::Result<
             crate::input::BatchUpdateDevicePositionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::BatchUpdateDevicePositionInput {
                 tracker_name: self.tracker_name,
@@ -1227,27 +1316,27 @@ impl BatchUpdateDevicePositionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::BatchUpdateDevicePosition,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::BatchUpdateDevicePositionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_7 = &_input.tracker_name;
             let input_7 =
                 input_7
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "tracker_name",
                         details: "cannot be empty or unset",
                     })?;
-            let tracker_name = smithy_http::label::fmt_string(input_7, false);
+            let tracker_name = aws_smithy_http::label::fmt_string(input_7, false);
             if tracker_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "tracker_name",
                     details: "cannot be empty or unset",
                 });
@@ -1264,7 +1353,7 @@ impl BatchUpdateDevicePositionInput {
         fn update_http_builder(
             input: &crate::input::BatchUpdateDevicePositionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1273,36 +1362,38 @@ impl BatchUpdateDevicePositionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::BatchUpdateDevicePositionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_batch_update_device_position(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("tracking.");
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("tracking.");
         match endpoint_prefix {
             Ok(prefix) => {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -1327,15 +1418,15 @@ impl BatchUpdateDevicePositionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::BatchUpdateDevicePosition::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "BatchUpdateDevicePosition",
             "location",
         ));
@@ -1344,10 +1435,10 @@ impl BatchUpdateDevicePositionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1372,7 +1463,7 @@ pub mod calculate_route_input {
         pub(crate) destination_position: std::option::Option<std::vec::Vec<f64>>,
         pub(crate) waypoint_positions: std::option::Option<std::vec::Vec<std::vec::Vec<f64>>>,
         pub(crate) travel_mode: std::option::Option<crate::model::TravelMode>,
-        pub(crate) departure_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) departure_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) depart_now: std::option::Option<bool>,
         pub(crate) distance_unit: std::option::Option<crate::model::DistanceUnit>,
         pub(crate) include_leg_geometry: std::option::Option<bool>,
@@ -1387,6 +1478,7 @@ pub mod calculate_route_input {
             self.calculator_name = Some(input.into());
             self
         }
+        /// <p>The name of the route calculator resource that you want to use to calculate a route. </p>
         pub fn set_calculator_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1394,12 +1486,46 @@ pub mod calculate_route_input {
             self.calculator_name = input;
             self
         }
+        /// Appends an item to `departure_position`.
+        ///
+        /// To override the contents of this collection use [`set_departure_position`](Self::set_departure_position).
+        ///
+        /// <p>The start position for the route. Defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format:
+        /// <code>[longitude, latitude]</code>.</p>
+        /// <ul>
+        /// <li>
+        /// <p>For example, <code>[-123.115, 49.285]</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>If you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves the
+        /// position to the nearest road</a>. If Esri is the provider for your route calculator,
+        /// specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
+        /// </note>
+        /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code>
+        /// </p>
         pub fn departure_position(mut self, input: impl Into<f64>) -> Self {
             let mut v = self.departure_position.unwrap_or_default();
             v.push(input.into());
             self.departure_position = Some(v);
             self
         }
+        /// <p>The start position for the route. Defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format:
+        /// <code>[longitude, latitude]</code>.</p>
+        /// <ul>
+        /// <li>
+        /// <p>For example, <code>[-123.115, 49.285]</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>If you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves the
+        /// position to the nearest road</a>. If Esri is the provider for your route calculator,
+        /// specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
+        /// </note>
+        /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code>
+        /// </p>
         pub fn set_departure_position(
             mut self,
             input: std::option::Option<std::vec::Vec<f64>>,
@@ -1407,12 +1533,42 @@ pub mod calculate_route_input {
             self.departure_position = input;
             self
         }
+        /// Appends an item to `destination_position`.
+        ///
+        /// To override the contents of this collection use [`set_destination_position`](Self::set_destination_position).
+        ///
+        /// <p>The finish position for the route. Defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format:
+        /// <code>[longitude, latitude]</code>.</p>
+        /// <ul>
+        /// <li>
+        /// <p> For example, <code>[-122.339, 47.615]</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>If you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves the position to the nearest road</a>. </p>
+        /// </note>
+        /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code>
+        /// </p>
         pub fn destination_position(mut self, input: impl Into<f64>) -> Self {
             let mut v = self.destination_position.unwrap_or_default();
             v.push(input.into());
             self.destination_position = Some(v);
             self
         }
+        /// <p>The finish position for the route. Defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format:
+        /// <code>[longitude, latitude]</code>.</p>
+        /// <ul>
+        /// <li>
+        /// <p> For example, <code>[-122.339, 47.615]</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>If you specify a destination that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves the position to the nearest road</a>. </p>
+        /// </note>
+        /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code>
+        /// </p>
         pub fn set_destination_position(
             mut self,
             input: std::option::Option<std::vec::Vec<f64>>,
@@ -1420,12 +1576,54 @@ pub mod calculate_route_input {
             self.destination_position = input;
             self
         }
+        /// Appends an item to `waypoint_positions`.
+        ///
+        /// To override the contents of this collection use [`set_waypoint_positions`](Self::set_waypoint_positions).
+        ///
+        /// <p>Specifies an ordered list of up to 23 intermediate positions to include along a route
+        /// between the departure position and destination position. </p>
+        /// <ul>
+        /// <li>
+        /// <p>For example, from the <code>DeparturePosition</code>
+        /// <code>[-123.115, 49.285]</code>, the route follows the order that the waypoint
+        /// positions are given <code>[[-122.757, 49.0021],[-122.349, 47.620]]</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>If you specify a waypoint position that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves the position to the nearest road</a>. </p>
+        /// <p>Specifying more than 23 waypoints returns a <code>400 ValidationException</code>
+        /// error.</p>
+        /// <p>If Esri is the provider for your route calculator, specifying a
+        /// route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
+        /// </note>
+        /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code>
+        /// </p>
         pub fn waypoint_positions(mut self, input: impl Into<std::vec::Vec<f64>>) -> Self {
             let mut v = self.waypoint_positions.unwrap_or_default();
             v.push(input.into());
             self.waypoint_positions = Some(v);
             self
         }
+        /// <p>Specifies an ordered list of up to 23 intermediate positions to include along a route
+        /// between the departure position and destination position. </p>
+        /// <ul>
+        /// <li>
+        /// <p>For example, from the <code>DeparturePosition</code>
+        /// <code>[-123.115, 49.285]</code>, the route follows the order that the waypoint
+        /// positions are given <code>[[-122.757, 49.0021],[-122.349, 47.620]]</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>If you specify a waypoint position that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">moves the position to the nearest road</a>. </p>
+        /// <p>Specifying more than 23 waypoints returns a <code>400 ValidationException</code>
+        /// error.</p>
+        /// <p>If Esri is the provider for your route calculator, specifying a
+        /// route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
+        /// </note>
+        /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code>
+        /// </p>
         pub fn set_waypoint_positions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::vec::Vec<f64>>>,
@@ -1452,6 +1650,21 @@ pub mod calculate_route_input {
             self.travel_mode = Some(input);
             self
         }
+        /// <p>Specifies the mode of transport when calculating a route. Used in estimating the speed
+        /// of travel and road compatibility.</p>
+        /// <p>The <code>TravelMode</code> you specify determines how you specify route preferences: </p>
+        /// <ul>
+        /// <li>
+        /// <p>If traveling by <code>Car</code> use the <code>CarModeOptions</code>
+        /// parameter.</p>
+        /// </li>
+        /// <li>
+        /// <p>If traveling by <code>Truck</code> use the <code>TruckModeOptions</code>
+        /// parameter.</p>
+        /// </li>
+        /// </ul>
+        /// <p>Default Value: <code>Car</code>
+        /// </p>
         pub fn set_travel_mode(
             mut self,
             input: std::option::Option<crate::model::TravelMode>,
@@ -1474,13 +1687,28 @@ pub mod calculate_route_input {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn departure_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn departure_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.departure_time = Some(input);
             self
         }
+        /// <p>Specifies the desired time of departure. Uses the given time to calculate a route.
+        /// Otherwise, the best time of day to travel with the best traffic conditions is used to
+        /// calculate the route.</p>
+        /// <note>
+        /// <p>Setting a departure time in the past returns a <code>400
+        /// ValidationException</code> error.</p>
+        /// </note>
+        /// <ul>
+        /// <li>
+        /// <p>In <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO
+        /// 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. For example,
+        /// <code>2020–07-2T12:15:20.000Z+01:00</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_departure_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.departure_time = input;
             self
@@ -1496,6 +1724,13 @@ pub mod calculate_route_input {
             self.depart_now = Some(input);
             self
         }
+        /// <p>Sets the time of departure as the current time. Uses the current time to calculate a
+        /// route. Otherwise, the best time of day to travel with the best traffic conditions is
+        /// used to calculate the route.</p>
+        /// <p>Default Value: <code>false</code>
+        /// </p>
+        /// <p>Valid Values: <code>false</code> | <code>true</code>
+        /// </p>
         pub fn set_depart_now(mut self, input: std::option::Option<bool>) -> Self {
             self.depart_now = input;
             self
@@ -1507,6 +1742,9 @@ pub mod calculate_route_input {
             self.distance_unit = Some(input);
             self
         }
+        /// <p>Set the unit system to specify the distance.</p>
+        /// <p>Default Value: <code>Kilometers</code>
+        /// </p>
         pub fn set_distance_unit(
             mut self,
             input: std::option::Option<crate::model::DistanceUnit>,
@@ -1524,6 +1762,12 @@ pub mod calculate_route_input {
             self.include_leg_geometry = Some(input);
             self
         }
+        /// <p>Set to include the geometry details in the result for each path between a pair of
+        /// positions.</p>
+        /// <p>Default Value: <code>false</code>
+        /// </p>
+        /// <p>Valid Values: <code>false</code> | <code>true</code>
+        /// </p>
         pub fn set_include_leg_geometry(mut self, input: std::option::Option<bool>) -> Self {
             self.include_leg_geometry = input;
             self
@@ -1538,6 +1782,9 @@ pub mod calculate_route_input {
             self.car_mode_options = Some(input);
             self
         }
+        /// <p>Specifies route preferences when traveling by <code>Car</code>, such as avoiding
+        /// routes that use ferries or tolls.</p>
+        /// <p>Requirements: <code>TravelMode</code> must be specified as <code>Car</code>.</p>
         pub fn set_car_mode_options(
             mut self,
             input: std::option::Option<crate::model::CalculateRouteCarModeOptions>,
@@ -1556,6 +1803,10 @@ pub mod calculate_route_input {
             self.truck_mode_options = Some(input);
             self
         }
+        /// <p>Specifies route preferences when traveling by <code>Truck</code>, such as avoiding
+        /// routes that use ferries or tolls, and truck specifications to consider when choosing an
+        /// optimal road.</p>
+        /// <p>Requirements: <code>TravelMode</code> must be specified as <code>Truck</code>.</p>
         pub fn set_truck_mode_options(
             mut self,
             input: std::option::Option<crate::model::CalculateRouteTruckModeOptions>,
@@ -1568,7 +1819,7 @@ pub mod calculate_route_input {
             self,
         ) -> std::result::Result<
             crate::input::CalculateRouteInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CalculateRouteInput {
                 calculator_name: self.calculator_name,
@@ -1597,27 +1848,27 @@ impl CalculateRouteInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CalculateRoute,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CalculateRouteInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_8 = &_input.calculator_name;
             let input_8 =
                 input_8
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "calculator_name",
                         details: "cannot be empty or unset",
                     })?;
-            let calculator_name = smithy_http::label::fmt_string(input_8, false);
+            let calculator_name = aws_smithy_http::label::fmt_string(input_8, false);
             if calculator_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "calculator_name",
                     details: "cannot be empty or unset",
                 });
@@ -1634,7 +1885,7 @@ impl CalculateRouteInput {
         fn update_http_builder(
             input: &crate::input::CalculateRouteInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1643,33 +1894,35 @@ impl CalculateRouteInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CalculateRouteInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_calculate_route(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("routes.");
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("routes.");
         match endpoint_prefix {
             Ok(prefix) => {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -1694,15 +1947,15 @@ impl CalculateRouteInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CalculateRoute::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CalculateRoute",
             "location",
         ));
@@ -1711,10 +1964,10 @@ impl CalculateRouteInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1762,6 +2015,20 @@ pub mod create_geofence_collection_input {
             self.collection_name = Some(input.into());
             self
         }
+        /// <p>A custom name for the geofence collection.</p>
+        /// <p>Requirements:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods
+        /// (.), and underscores (_). </p>
+        /// </li>
+        /// <li>
+        /// <p>Must be a unique geofence collection name.</p>
+        /// </li>
+        /// <li>
+        /// <p>No spaces allowed. For example, <code>ExampleGeofenceCollection</code>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_collection_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1776,6 +2043,9 @@ pub mod create_geofence_collection_input {
             self.pricing_plan = Some(input);
             self
         }
+        /// <p>Specifies the pricing plan for the geofence collection.</p>
+        /// <p>For additional details and restrictions on each pricing plan option, see the <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
+        /// page</a>.</p>
         pub fn set_pricing_plan(
             mut self,
             input: std::option::Option<crate::model::PricingPlan>,
@@ -1804,6 +2074,23 @@ pub mod create_geofence_collection_input {
             self.pricing_plan_data_source = Some(input.into());
             self
         }
+        /// <p>Specifies the data provider for the geofence collection.</p>
+        /// <ul>
+        /// <li>
+        /// <p>Required value for the following pricing plans: <code>MobileAssetTracking
+        /// </code>| <code>MobileAssetManagement</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">Data Providers</a>, and <a href="https://aws.amazon.com/location/pricing/">Pricing plans</a>, see the Amazon Location
+        /// Service product page.</p>
+        /// <note>
+        /// <p>Amazon Location Service only uses <code>PricingPlanDataSource</code> to calculate billing for
+        /// your geofence collection. Your data won't be shared with the data provider, and will
+        /// remain in your AWS account or Region unless you move it.</p>
+        /// </note>
+        /// <p>Valid Values: <code>Esri </code>| <code>Here</code>
+        /// </p>
         pub fn set_pricing_plan_data_source(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1816,10 +2103,38 @@ pub mod create_geofence_collection_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>An optional description for the geofence collection.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Applies one or more tags to the geofence collection. A tag is a key-value pair helps
+        /// manage, identify, search, and filter your resources by labelling them.</p>
+        /// <p>Format: <code>"key" : "value"</code>
+        /// </p>
+        /// <p>Restrictions:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Maximum 50 tags per resource</p>
+        /// </li>
+        /// <li>
+        /// <p>Each resource tag must be unique with a maximum of one value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum key length: 128 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum value length: 256 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters:
+        /// + - = . _ : / @. </p>
+        /// </li>
+        /// </ul>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1830,6 +2145,29 @@ pub mod create_geofence_collection_input {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>Applies one or more tags to the geofence collection. A tag is a key-value pair helps
+        /// manage, identify, search, and filter your resources by labelling them.</p>
+        /// <p>Format: <code>"key" : "value"</code>
+        /// </p>
+        /// <p>Restrictions:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Maximum 50 tags per resource</p>
+        /// </li>
+        /// <li>
+        /// <p>Each resource tag must be unique with a maximum of one value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum key length: 128 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum value length: 256 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters:
+        /// + - = . _ : / @. </p>
+        /// </li>
+        /// </ul>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1845,6 +2183,8 @@ pub mod create_geofence_collection_input {
             self.kms_key_id = Some(input.into());
             self
         }
+        /// <p>A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS customer managed key</a>. Enter a key ID, key ARN, alias name, or alias ARN.
+        /// </p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -1854,7 +2194,7 @@ pub mod create_geofence_collection_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateGeofenceCollectionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateGeofenceCollectionInput {
                 collection_name: self.collection_name,
@@ -1879,16 +2219,16 @@ impl CreateGeofenceCollectionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateGeofenceCollection,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateGeofenceCollectionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/geofencing/v0/collections").expect("formatting should succeed");
             Ok(())
         }
@@ -1896,7 +2236,7 @@ impl CreateGeofenceCollectionInput {
         fn update_http_builder(
             input: &crate::input::CreateGeofenceCollectionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1905,36 +2245,38 @@ impl CreateGeofenceCollectionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateGeofenceCollectionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_geofence_collection(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("geofencing.");
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("geofencing.");
         match endpoint_prefix {
             Ok(prefix) => {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -1959,15 +2301,15 @@ impl CreateGeofenceCollectionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateGeofenceCollection::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateGeofenceCollection",
             "location",
         ));
@@ -1976,10 +2318,10 @@ impl CreateGeofenceCollectionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2025,6 +2367,19 @@ pub mod create_map_input {
             self.map_name = Some(input.into());
             self
         }
+        /// <p>The name for the map resource.</p>
+        /// <p>Requirements:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Must contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_). </p>
+        /// </li>
+        /// <li>
+        /// <p>Must be a unique map resource name. </p>
+        /// </li>
+        /// <li>
+        /// <p>No spaces allowed. For example, <code>ExampleMap</code>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_map_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.map_name = input;
             self
@@ -2034,6 +2389,7 @@ pub mod create_map_input {
             self.configuration = Some(input);
             self
         }
+        /// <p>Specifies the map style selected from an available data provider.</p>
         pub fn set_configuration(
             mut self,
             input: std::option::Option<crate::model::MapConfiguration>,
@@ -2047,6 +2403,8 @@ pub mod create_map_input {
             self.pricing_plan = Some(input);
             self
         }
+        /// <p>Specifies the pricing plan for your map resource.</p>
+        /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
         pub fn set_pricing_plan(
             mut self,
             input: std::option::Option<crate::model::PricingPlan>,
@@ -2059,10 +2417,38 @@ pub mod create_map_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>An optional description for the map resource.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Applies one or more tags to the map resource. A tag is a key-value pair helps manage,
+        /// identify, search, and filter your resources by labelling them.</p>
+        /// <p>Format: <code>"key" : "value"</code>
+        /// </p>
+        /// <p>Restrictions:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Maximum 50 tags per resource</p>
+        /// </li>
+        /// <li>
+        /// <p>Each resource tag must be unique with a maximum of one value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum key length: 128 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum value length:  256 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : /
+        /// @. </p>
+        /// </li>
+        /// </ul>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2073,6 +2459,29 @@ pub mod create_map_input {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>Applies one or more tags to the map resource. A tag is a key-value pair helps manage,
+        /// identify, search, and filter your resources by labelling them.</p>
+        /// <p>Format: <code>"key" : "value"</code>
+        /// </p>
+        /// <p>Restrictions:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Maximum 50 tags per resource</p>
+        /// </li>
+        /// <li>
+        /// <p>Each resource tag must be unique with a maximum of one value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum key length: 128 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum value length:  256 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : /
+        /// @. </p>
+        /// </li>
+        /// </ul>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2085,7 +2494,7 @@ pub mod create_map_input {
         /// Consumes the builder and constructs a [`CreateMapInput`](crate::input::CreateMapInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreateMapInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::CreateMapInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::CreateMapInput {
                 map_name: self.map_name,
@@ -2108,16 +2517,16 @@ impl CreateMapInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateMap,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateMapInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/maps/v0/maps").expect("formatting should succeed");
             Ok(())
         }
@@ -2125,7 +2534,7 @@ impl CreateMapInput {
         fn update_http_builder(
             input: &crate::input::CreateMapInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2134,33 +2543,35 @@ impl CreateMapInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateMapInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_map(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("maps.");
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("maps.");
         match endpoint_prefix {
             Ok(prefix) => {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -2185,13 +2596,13 @@ impl CreateMapInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
         let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreateMap::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
+            aws_smithy_http::operation::Operation::new(request, crate::operation::CreateMap::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "CreateMap",
                     "location",
                 ));
@@ -2200,10 +2611,10 @@ impl CreateMapInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2252,6 +2663,20 @@ pub mod create_place_index_input {
             self.index_name = Some(input.into());
             self
         }
+        /// <p>The name of the place index resource. </p>
+        /// <p>Requirements:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and
+        /// underscores (_).</p>
+        /// </li>
+        /// <li>
+        /// <p>Must be a unique place index resource name.</p>
+        /// </li>
+        /// <li>
+        /// <p>No spaces allowed. For example, <code>ExamplePlaceIndex</code>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.index_name = input;
             self
@@ -2285,6 +2710,31 @@ pub mod create_place_index_input {
             self.data_source = Some(input.into());
             self
         }
+        /// <p>Specifies the data provider of geospatial data.</p>
+        /// <note>
+        /// <p>This field is case-sensitive. Enter the valid values as shown. For example, entering
+        /// <code>HERE</code> returns an error.</p>
+        /// </note>
+        /// <p>Valid values include:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Esri</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s coverage in your
+        /// region of interest, see <a href="https://developers.arcgis.com/rest/geocode/api-reference/geocode-coverage.htm">Esri details on geocoding coverage</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Here</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>'
+        /// coverage in your region of interest, see <a href="https://developer.here.com/documentation/geocoder/dev_guide/topics/coverage-geocoder.html">HERE details on goecoding coverage</a>.</p>
+        /// <important>
+        /// <p>Place index resources using HERE Technologies as a data provider can't <a href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store results</a> for locations in Japan. For more information, see the
+        /// <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a>
+        /// for Amazon Location Service.</p>
+        /// </important>
+        /// </li>
+        /// </ul>
+        /// <p>For additional information , see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data providers</a>
+        /// on the <i>Amazon Location Service Developer Guide</i>.</p>
         pub fn set_data_source(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.data_source = input;
             self
@@ -2295,6 +2745,8 @@ pub mod create_place_index_input {
             self.pricing_plan = Some(input);
             self
         }
+        /// <p>Specifies the pricing plan for your place index resource.</p>
+        /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
         pub fn set_pricing_plan(
             mut self,
             input: std::option::Option<crate::model::PricingPlan>,
@@ -2307,6 +2759,7 @@ pub mod create_place_index_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>The optional description for the place index resource.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -2319,6 +2772,7 @@ pub mod create_place_index_input {
             self.data_source_configuration = Some(input);
             self
         }
+        /// <p>Specifies the data storage option requesting Places.</p>
         pub fn set_data_source_configuration(
             mut self,
             input: std::option::Option<crate::model::DataSourceConfiguration>,
@@ -2326,6 +2780,33 @@ pub mod create_place_index_input {
             self.data_source_configuration = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Applies one or more tags to the place index resource. A tag is a key-value pair helps
+        /// manage, identify, search, and filter your resources by labelling them.</p>
+        /// <p>Format: <code>"key" : "value"</code>
+        /// </p>
+        /// <p>Restrictions:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Maximum 50 tags per resource</p>
+        /// </li>
+        /// <li>
+        /// <p>Each resource tag must be unique with a maximum of one value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum key length: 128 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum value length: 256 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + -
+        /// = . _ : / @. </p>
+        /// </li>
+        /// </ul>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2336,6 +2817,29 @@ pub mod create_place_index_input {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>Applies one or more tags to the place index resource. A tag is a key-value pair helps
+        /// manage, identify, search, and filter your resources by labelling them.</p>
+        /// <p>Format: <code>"key" : "value"</code>
+        /// </p>
+        /// <p>Restrictions:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Maximum 50 tags per resource</p>
+        /// </li>
+        /// <li>
+        /// <p>Each resource tag must be unique with a maximum of one value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum key length: 128 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum value length: 256 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + -
+        /// = . _ : / @. </p>
+        /// </li>
+        /// </ul>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2350,7 +2854,7 @@ pub mod create_place_index_input {
             self,
         ) -> std::result::Result<
             crate::input::CreatePlaceIndexInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreatePlaceIndexInput {
                 index_name: self.index_name,
@@ -2374,16 +2878,16 @@ impl CreatePlaceIndexInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreatePlaceIndex,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreatePlaceIndexInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/places/v0/indexes").expect("formatting should succeed");
             Ok(())
         }
@@ -2391,7 +2895,7 @@ impl CreatePlaceIndexInput {
         fn update_http_builder(
             input: &crate::input::CreatePlaceIndexInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2400,36 +2904,36 @@ impl CreatePlaceIndexInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreatePlaceIndexInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_place_index(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("places.");
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("places.");
         match endpoint_prefix {
             Ok(prefix) => {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -2454,15 +2958,15 @@ impl CreatePlaceIndexInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreatePlaceIndex::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreatePlaceIndex",
             "location",
         ));
@@ -2471,10 +2975,10 @@ impl CreatePlaceIndexInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2521,6 +3025,20 @@ pub mod create_route_calculator_input {
             self.calculator_name = Some(input.into());
             self
         }
+        /// <p>The name of the route calculator resource. </p>
+        /// <p>Requirements:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9) , hyphens (-), periods (.), and underscores
+        /// (_).</p>
+        /// </li>
+        /// <li>
+        /// <p>Must be a unique Route calculator resource name.</p>
+        /// </li>
+        /// <li>
+        /// <p>No spaces allowed. For example, <code>ExampleRouteCalculator</code>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_calculator_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2552,6 +3070,26 @@ pub mod create_route_calculator_input {
             self.data_source = Some(input.into());
             self
         }
+        /// <p>Specifies the data provider of traffic and road network data.</p>
+        /// <note>
+        /// <p>This field is case-sensitive. Enter the valid values as shown. For example,
+        /// entering <code>HERE</code> returns an error. Route calculators that use Esri as a data source
+        /// only calculate routes that are shorter than 400 km.</p>
+        /// </note>
+        /// <p>Valid values include:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Esri</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s coverage in your region of interest, see <a href="https://doc.arcgis.com/en/arcgis-online/reference/network-coverage.htm">Esri details on street networks and traffic coverage</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Here</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
+        /// Technologies</a>' coverage in your region of interest, see <a href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/car-routing.html">HERE car routing coverage</a> and <a href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/truck-routing.html">HERE truck routing coverage</a>.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For additional information , see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data
+        /// providers</a> on the <i>Amazon Location Service Developer Guide</i>.</p>
         pub fn set_data_source(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.data_source = input;
             self
@@ -2562,6 +3100,8 @@ pub mod create_route_calculator_input {
             self.pricing_plan = Some(input);
             self
         }
+        /// <p>Specifies the pricing plan for your route calculator resource.</p>
+        /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
         pub fn set_pricing_plan(
             mut self,
             input: std::option::Option<crate::model::PricingPlan>,
@@ -2574,10 +3114,44 @@ pub mod create_route_calculator_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>The optional description for the route calculator resource.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Applies one or more tags to the route calculator resource. A tag is a key-value pair
+        /// helps manage, identify, search, and filter your resources by labelling them.</p>
+        /// <ul>
+        /// <li>
+        /// <p>For example: { <code>"tag1" : "value1"</code>, <code>"tag2" :
+        /// "value2"</code>}</p>
+        /// </li>
+        /// </ul>
+        /// <p>Format: <code>"key" : "value"</code>
+        /// </p>
+        /// <p>Restrictions:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Maximum 50 tags per resource</p>
+        /// </li>
+        /// <li>
+        /// <p>Each resource tag must be unique with a maximum of one value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum key length: 128 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum value length: 256 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters:
+        /// + - = . _ : / @. </p>
+        /// </li>
+        /// </ul>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2588,6 +3162,35 @@ pub mod create_route_calculator_input {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>Applies one or more tags to the route calculator resource. A tag is a key-value pair
+        /// helps manage, identify, search, and filter your resources by labelling them.</p>
+        /// <ul>
+        /// <li>
+        /// <p>For example: { <code>"tag1" : "value1"</code>, <code>"tag2" :
+        /// "value2"</code>}</p>
+        /// </li>
+        /// </ul>
+        /// <p>Format: <code>"key" : "value"</code>
+        /// </p>
+        /// <p>Restrictions:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Maximum 50 tags per resource</p>
+        /// </li>
+        /// <li>
+        /// <p>Each resource tag must be unique with a maximum of one value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum key length: 128 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum value length: 256 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters:
+        /// + - = . _ : / @. </p>
+        /// </li>
+        /// </ul>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2602,7 +3205,7 @@ pub mod create_route_calculator_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateRouteCalculatorInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateRouteCalculatorInput {
                 calculator_name: self.calculator_name,
@@ -2625,16 +3228,16 @@ impl CreateRouteCalculatorInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateRouteCalculator,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateRouteCalculatorInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/routes/v0/calculators").expect("formatting should succeed");
             Ok(())
         }
@@ -2642,7 +3245,7 @@ impl CreateRouteCalculatorInput {
         fn update_http_builder(
             input: &crate::input::CreateRouteCalculatorInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2651,36 +3254,38 @@ impl CreateRouteCalculatorInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateRouteCalculatorInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_route_calculator(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("routes.");
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("routes.");
         match endpoint_prefix {
             Ok(prefix) => {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -2705,15 +3310,15 @@ impl CreateRouteCalculatorInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateRouteCalculator::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateRouteCalculator",
             "location",
         ));
@@ -2722,10 +3327,10 @@ impl CreateRouteCalculatorInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2773,6 +3378,19 @@ pub mod create_tracker_input {
             self.tracker_name = Some(input.into());
             self
         }
+        /// <p>The name for the tracker resource.</p>
+        /// <p>Requirements:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Contain only alphanumeric characters (A-Z, a-z, 0-9) , hyphens (-), periods (.), and underscores (_).</p>
+        /// </li>
+        /// <li>
+        /// <p>Must be a unique tracker resource name.</p>
+        /// </li>
+        /// <li>
+        /// <p>No spaces allowed. For example, <code>ExampleTracker</code>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_tracker_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.tracker_name = input;
             self
@@ -2783,6 +3401,8 @@ pub mod create_tracker_input {
             self.pricing_plan = Some(input);
             self
         }
+        /// <p>Specifies the pricing plan for the tracker resource.</p>
+        /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
         pub fn set_pricing_plan(
             mut self,
             input: std::option::Option<crate::model::PricingPlan>,
@@ -2795,6 +3415,7 @@ pub mod create_tracker_input {
             self.kms_key_id = Some(input.into());
             self
         }
+        /// <p>A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS customer managed key</a>. Enter a key ID, key ARN, alias name, or alias ARN.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -2818,6 +3439,21 @@ pub mod create_tracker_input {
             self.pricing_plan_data_source = Some(input.into());
             self
         }
+        /// <p>Specifies the data provider for the tracker resource.</p>
+        /// <ul>
+        /// <li>
+        /// <p>Required value for the following pricing plans: <code>MobileAssetTracking
+        /// </code>| <code>MobileAssetManagement</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">Data Providers</a>, and <a href="https://aws.amazon.com/location/pricing/">Pricing plans</a>, see the Amazon Location
+        /// Service product page.</p>
+        /// <note>
+        /// <p>Amazon Location Service only uses <code>PricingPlanDataSource</code> to calculate billing for your tracker resource. Your data will not be shared with the data provider, and will remain in your AWS account or Region unless you move it.</p>
+        /// </note>
+        /// <p>Valid values: <code>Esri</code> | <code>Here</code>
+        /// </p>
         pub fn set_pricing_plan_data_source(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2830,10 +3466,38 @@ pub mod create_tracker_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>An optional description for the tracker resource.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Applies one or more tags to the tracker resource. A tag is a key-value pair helps
+        /// manage, identify, search, and filter your resources by labelling them.</p>
+        /// <p>Format: <code>"key" : "value"</code>
+        /// </p>
+        /// <p>Restrictions:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Maximum 50 tags per resource</p>
+        /// </li>
+        /// <li>
+        /// <p>Each resource tag must be unique with a maximum of one value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum key length: 128 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum value length: 256 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters:
+        /// + - = . _ : / @. </p>
+        /// </li>
+        /// </ul>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2844,6 +3508,29 @@ pub mod create_tracker_input {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>Applies one or more tags to the tracker resource. A tag is a key-value pair helps
+        /// manage, identify, search, and filter your resources by labelling them.</p>
+        /// <p>Format: <code>"key" : "value"</code>
+        /// </p>
+        /// <p>Restrictions:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Maximum 50 tags per resource</p>
+        /// </li>
+        /// <li>
+        /// <p>Each resource tag must be unique with a maximum of one value.</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum key length: 128 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>Maximum value length: 256 Unicode characters in UTF-8</p>
+        /// </li>
+        /// <li>
+        /// <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters:
+        /// + - = . _ : / @. </p>
+        /// </li>
+        /// </ul>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2877,6 +3564,26 @@ pub mod create_tracker_input {
             self.position_filtering = Some(input);
             self
         }
+        /// <p>Specifies the position filtering for the tracker resource.</p>
+        /// <p>Valid values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>TimeBased</code> - Location updates are evaluated against linked geofence collections,
+        /// but not every location update is stored. If your update frequency is more often than 30 seconds,
+        /// only one update per 30 seconds is stored for each unique device ID.
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DistanceBased</code> - If the device has moved less than 30 m (98.4 ft), location updates are
+        /// ignored. Location updates within this distance are neither evaluated against linked geofence collections, nor stored.
+        /// This helps control costs by reducing the number of geofence evaluations and device positions to retrieve.
+        /// Distance-based filtering can also reduce the jitter effect when displaying device trajectory on a map.
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>This field is optional. If not specified, the default value is <code>TimeBased</code>.</p>
         pub fn set_position_filtering(
             mut self,
             input: std::option::Option<crate::model::PositionFiltering>,
@@ -2887,8 +3594,10 @@ pub mod create_tracker_input {
         /// Consumes the builder and constructs a [`CreateTrackerInput`](crate::input::CreateTrackerInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreateTrackerInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateTrackerInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateTrackerInput {
                 tracker_name: self.tracker_name,
                 pricing_plan: self.pricing_plan,
@@ -2912,16 +3621,16 @@ impl CreateTrackerInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateTracker,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateTrackerInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/tracking/v0/trackers").expect("formatting should succeed");
             Ok(())
         }
@@ -2929,7 +3638,7 @@ impl CreateTrackerInput {
         fn update_http_builder(
             input: &crate::input::CreateTrackerInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2938,33 +3647,35 @@ impl CreateTrackerInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateTrackerInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_tracker(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("tracking.");
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("tracking.");
         match endpoint_prefix {
             Ok(prefix) => {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -2989,25 +3700,27 @@ impl CreateTrackerInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreateTracker::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "CreateTracker",
-                    "location",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateTracker::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateTracker",
+            "location",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3035,6 +3748,7 @@ pub mod delete_geofence_collection_input {
             self.collection_name = Some(input.into());
             self
         }
+        /// <p>The name of the geofence collection to be deleted.</p>
         pub fn set_collection_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3047,7 +3761,7 @@ pub mod delete_geofence_collection_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteGeofenceCollectionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteGeofenceCollectionInput {
                 collection_name: self.collection_name,
@@ -3067,27 +3781,27 @@ impl DeleteGeofenceCollectionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteGeofenceCollection,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteGeofenceCollectionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_9 = &_input.collection_name;
             let input_9 =
                 input_9
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "collection_name",
                         details: "cannot be empty or unset",
                     })?;
-            let collection_name = smithy_http::label::fmt_string(input_9, false);
+            let collection_name = aws_smithy_http::label::fmt_string(input_9, false);
             if collection_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "collection_name",
                     details: "cannot be empty or unset",
                 });
@@ -3104,7 +3818,7 @@ impl DeleteGeofenceCollectionInput {
         fn update_http_builder(
             input: &crate::input::DeleteGeofenceCollectionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3113,32 +3827,32 @@ impl DeleteGeofenceCollectionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteGeofenceCollectionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("geofencing.");
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("geofencing.");
         match endpoint_prefix {
             Ok(prefix) => {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -3163,15 +3877,15 @@ impl DeleteGeofenceCollectionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteGeofenceCollection::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteGeofenceCollection",
             "location",
         ));
@@ -3180,10 +3894,10 @@ impl DeleteGeofenceCollectionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3211,6 +3925,7 @@ pub mod delete_map_input {
             self.map_name = Some(input.into());
             self
         }
+        /// <p>The name of the map resource to be deleted.</p>
         pub fn set_map_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.map_name = input;
             self
@@ -3218,7 +3933,7 @@ pub mod delete_map_input {
         /// Consumes the builder and constructs a [`DeleteMapInput`](crate::input::DeleteMapInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeleteMapInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::DeleteMapInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::DeleteMapInput {
                 map_name: self.map_name,
@@ -3237,27 +3952,27 @@ impl DeleteMapInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteMap,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteMapInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_10 = &_input.map_name;
             let input_10 =
                 input_10
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "map_name",
                         details: "cannot be empty or unset",
                     })?;
-            let map_name = smithy_http::label::fmt_string(input_10, false);
+            let map_name = aws_smithy_http::label::fmt_string(input_10, false);
             if map_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "map_name",
                     details: "cannot be empty or unset",
                 });
@@ -3270,7 +3985,7 @@ impl DeleteMapInput {
         fn update_http_builder(
             input: &crate::input::DeleteMapInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3279,32 +3994,32 @@ impl DeleteMapInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteMapInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("maps.");
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("maps.");
         match endpoint_prefix {
             Ok(prefix) => {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -3329,13 +4044,13 @@ impl DeleteMapInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
         let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeleteMap::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
+            aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteMap::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "DeleteMap",
                     "location",
                 ));
@@ -3344,10 +4059,10 @@ impl DeleteMapInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3375,6 +4090,7 @@ pub mod delete_place_index_input {
             self.index_name = Some(input.into());
             self
         }
+        /// <p>The name of the place index resource to be deleted.</p>
         pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.index_name = input;
             self
@@ -3384,7 +4100,7 @@ pub mod delete_place_index_input {
             self,
         ) -> std::result::Result<
             crate::input::DeletePlaceIndexInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeletePlaceIndexInput {
                 index_name: self.index_name,
@@ -3403,27 +4119,27 @@ impl DeletePlaceIndexInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeletePlaceIndex,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeletePlaceIndexInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_11 = &_input.index_name;
             let input_11 =
                 input_11
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "index_name",
                         details: "cannot be empty or unset",
                     })?;
-            let index_name = smithy_http::label::fmt_string(input_11, false);
+            let index_name = aws_smithy_http::label::fmt_string(input_11, false);
             if index_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "index_name",
                     details: "cannot be empty or unset",
                 });
@@ -3440,7 +4156,7 @@ impl DeletePlaceIndexInput {
         fn update_http_builder(
             input: &crate::input::DeletePlaceIndexInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3449,32 +4165,32 @@ impl DeletePlaceIndexInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeletePlaceIndexInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("places.");
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("places.");
         match endpoint_prefix {
             Ok(prefix) => {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -3499,15 +4215,15 @@ impl DeletePlaceIndexInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeletePlaceIndex::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeletePlaceIndex",
             "location",
         ));
@@ -3516,10 +4232,10 @@ impl DeletePlaceIndexInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3547,6 +4263,7 @@ pub mod delete_route_calculator_input {
             self.calculator_name = Some(input.into());
             self
         }
+        /// <p>The name of the route calculator resource to be deleted.</p>
         pub fn set_calculator_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3559,7 +4276,7 @@ pub mod delete_route_calculator_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteRouteCalculatorInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteRouteCalculatorInput {
                 calculator_name: self.calculator_name,
@@ -3578,27 +4295,27 @@ impl DeleteRouteCalculatorInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteRouteCalculator,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteRouteCalculatorInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_12 = &_input.calculator_name;
             let input_12 =
                 input_12
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "calculator_name",
                         details: "cannot be empty or unset",
                     })?;
-            let calculator_name = smithy_http::label::fmt_string(input_12, false);
+            let calculator_name = aws_smithy_http::label::fmt_string(input_12, false);
             if calculator_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "calculator_name",
                     details: "cannot be empty or unset",
                 });
@@ -3615,7 +4332,7 @@ impl DeleteRouteCalculatorInput {
         fn update_http_builder(
             input: &crate::input::DeleteRouteCalculatorInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3624,32 +4341,32 @@ impl DeleteRouteCalculatorInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteRouteCalculatorInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("routes.");
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("routes.");
         match endpoint_prefix {
             Ok(prefix) => {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -3674,15 +4391,15 @@ impl DeleteRouteCalculatorInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteRouteCalculator::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteRouteCalculator",
             "location",
         ));
@@ -3691,10 +4408,10 @@ impl DeleteRouteCalculatorInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3722,6 +4439,7 @@ pub mod delete_tracker_input {
             self.tracker_name = Some(input.into());
             self
         }
+        /// <p>The name of the tracker resource to be deleted.</p>
         pub fn set_tracker_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.tracker_name = input;
             self
@@ -3729,8 +4447,10 @@ pub mod delete_tracker_input {
         /// Consumes the builder and constructs a [`DeleteTrackerInput`](crate::input::DeleteTrackerInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeleteTrackerInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteTrackerInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteTrackerInput {
                 tracker_name: self.tracker_name,
             })
@@ -3748,27 +4468,27 @@ impl DeleteTrackerInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteTracker,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteTrackerInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_13 = &_input.tracker_name;
             let input_13 =
                 input_13
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "tracker_name",
                         details: "cannot be empty or unset",
                     })?;
-            let tracker_name = smithy_http::label::fmt_string(input_13, false);
+            let tracker_name = aws_smithy_http::label::fmt_string(input_13, false);
             if tracker_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "tracker_name",
                     details: "cannot be empty or unset",
                 });
@@ -3785,7 +4505,7 @@ impl DeleteTrackerInput {
         fn update_http_builder(
             input: &crate::input::DeleteTrackerInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3794,32 +4514,32 @@ impl DeleteTrackerInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteTrackerInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("tracking.");
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("tracking.");
         match endpoint_prefix {
             Ok(prefix) => {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -3844,25 +4564,27 @@ impl DeleteTrackerInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeleteTracker::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DeleteTracker",
-                    "location",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteTracker::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteTracker",
+            "location",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3890,6 +4612,7 @@ pub mod describe_geofence_collection_input {
             self.collection_name = Some(input.into());
             self
         }
+        /// <p>The name of the geofence collection.</p>
         pub fn set_collection_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3902,7 +4625,7 @@ pub mod describe_geofence_collection_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeGeofenceCollectionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeGeofenceCollectionInput {
                 collection_name: self.collection_name,
@@ -3922,27 +4645,27 @@ impl DescribeGeofenceCollectionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeGeofenceCollection,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeGeofenceCollectionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_14 = &_input.collection_name;
             let input_14 =
                 input_14
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "collection_name",
                         details: "cannot be empty or unset",
                     })?;
-            let collection_name = smithy_http::label::fmt_string(input_14, false);
+            let collection_name = aws_smithy_http::label::fmt_string(input_14, false);
             if collection_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "collection_name",
                     details: "cannot be empty or unset",
                 });
@@ -3959,7 +4682,7 @@ impl DescribeGeofenceCollectionInput {
         fn update_http_builder(
             input: &crate::input::DescribeGeofenceCollectionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3968,32 +4691,32 @@ impl DescribeGeofenceCollectionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeGeofenceCollectionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("geofencing.");
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("geofencing.");
         match endpoint_prefix {
             Ok(prefix) => {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -4019,15 +4742,15 @@ impl DescribeGeofenceCollectionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeGeofenceCollection::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeGeofenceCollection",
             "location",
         ));
@@ -4036,10 +4759,10 @@ impl DescribeGeofenceCollectionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4067,6 +4790,7 @@ pub mod describe_map_input {
             self.map_name = Some(input.into());
             self
         }
+        /// <p>The name of the map resource.</p>
         pub fn set_map_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.map_name = input;
             self
@@ -4074,8 +4798,10 @@ pub mod describe_map_input {
         /// Consumes the builder and constructs a [`DescribeMapInput`](crate::input::DescribeMapInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DescribeMapInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeMapInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeMapInput {
                 map_name: self.map_name,
             })
@@ -4093,27 +4819,27 @@ impl DescribeMapInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeMap,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeMapInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_15 = &_input.map_name;
             let input_15 =
                 input_15
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "map_name",
                         details: "cannot be empty or unset",
                     })?;
-            let map_name = smithy_http::label::fmt_string(input_15, false);
+            let map_name = aws_smithy_http::label::fmt_string(input_15, false);
             if map_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "map_name",
                     details: "cannot be empty or unset",
                 });
@@ -4126,7 +4852,7 @@ impl DescribeMapInput {
         fn update_http_builder(
             input: &crate::input::DescribeMapInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4135,32 +4861,32 @@ impl DescribeMapInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeMapInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("maps.");
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("maps.");
         match endpoint_prefix {
             Ok(prefix) => {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -4186,25 +4912,27 @@ impl DescribeMapInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DescribeMap::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DescribeMap",
-                    "location",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeMap::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeMap",
+            "location",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4232,6 +4960,7 @@ pub mod describe_place_index_input {
             self.index_name = Some(input.into());
             self
         }
+        /// <p>The name of the place index resource.</p>
         pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.index_name = input;
             self
@@ -4241,7 +4970,7 @@ pub mod describe_place_index_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribePlaceIndexInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribePlaceIndexInput {
                 index_name: self.index_name,
@@ -4260,27 +4989,27 @@ impl DescribePlaceIndexInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribePlaceIndex,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribePlaceIndexInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_16 = &_input.index_name;
             let input_16 =
                 input_16
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "index_name",
                         details: "cannot be empty or unset",
                     })?;
-            let index_name = smithy_http::label::fmt_string(input_16, false);
+            let index_name = aws_smithy_http::label::fmt_string(input_16, false);
             if index_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "index_name",
                     details: "cannot be empty or unset",
                 });
@@ -4297,7 +5026,7 @@ impl DescribePlaceIndexInput {
         fn update_http_builder(
             input: &crate::input::DescribePlaceIndexInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4306,32 +5035,32 @@ impl DescribePlaceIndexInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribePlaceIndexInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("places.");
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("places.");
         match endpoint_prefix {
             Ok(prefix) => {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -4357,15 +5086,15 @@ impl DescribePlaceIndexInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribePlaceIndex::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribePlaceIndex",
             "location",
         ));
@@ -4374,10 +5103,10 @@ impl DescribePlaceIndexInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4405,6 +5134,7 @@ pub mod describe_route_calculator_input {
             self.calculator_name = Some(input.into());
             self
         }
+        /// <p>The name of the route calculator resource.</p>
         pub fn set_calculator_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4417,7 +5147,7 @@ pub mod describe_route_calculator_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeRouteCalculatorInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeRouteCalculatorInput {
                 calculator_name: self.calculator_name,
@@ -4437,27 +5167,27 @@ impl DescribeRouteCalculatorInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeRouteCalculator,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeRouteCalculatorInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_17 = &_input.calculator_name;
             let input_17 =
                 input_17
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "calculator_name",
                         details: "cannot be empty or unset",
                     })?;
-            let calculator_name = smithy_http::label::fmt_string(input_17, false);
+            let calculator_name = aws_smithy_http::label::fmt_string(input_17, false);
             if calculator_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "calculator_name",
                     details: "cannot be empty or unset",
                 });
@@ -4474,7 +5204,7 @@ impl DescribeRouteCalculatorInput {
         fn update_http_builder(
             input: &crate::input::DescribeRouteCalculatorInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4483,32 +5213,32 @@ impl DescribeRouteCalculatorInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeRouteCalculatorInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("routes.");
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("routes.");
         match endpoint_prefix {
             Ok(prefix) => {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -4534,15 +5264,15 @@ impl DescribeRouteCalculatorInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeRouteCalculator::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeRouteCalculator",
             "location",
         ));
@@ -4551,10 +5281,10 @@ impl DescribeRouteCalculatorInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4582,6 +5312,7 @@ pub mod describe_tracker_input {
             self.tracker_name = Some(input.into());
             self
         }
+        /// <p>The name of the tracker resource.</p>
         pub fn set_tracker_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.tracker_name = input;
             self
@@ -4591,7 +5322,7 @@ pub mod describe_tracker_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeTrackerInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeTrackerInput {
                 tracker_name: self.tracker_name,
@@ -4610,27 +5341,27 @@ impl DescribeTrackerInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeTracker,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeTrackerInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_18 = &_input.tracker_name;
             let input_18 =
                 input_18
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "tracker_name",
                         details: "cannot be empty or unset",
                     })?;
-            let tracker_name = smithy_http::label::fmt_string(input_18, false);
+            let tracker_name = aws_smithy_http::label::fmt_string(input_18, false);
             if tracker_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "tracker_name",
                     details: "cannot be empty or unset",
                 });
@@ -4647,7 +5378,7 @@ impl DescribeTrackerInput {
         fn update_http_builder(
             input: &crate::input::DescribeTrackerInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4656,32 +5387,32 @@ impl DescribeTrackerInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeTrackerInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("tracking.");
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("tracking.");
         match endpoint_prefix {
             Ok(prefix) => {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -4707,15 +5438,15 @@ impl DescribeTrackerInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeTracker::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeTracker",
             "location",
         ));
@@ -4724,10 +5455,10 @@ impl DescribeTrackerInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4756,6 +5487,7 @@ pub mod disassociate_tracker_consumer_input {
             self.tracker_name = Some(input.into());
             self
         }
+        /// <p>The name of the tracker resource to be dissociated from the consumer.</p>
         pub fn set_tracker_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.tracker_name = input;
             self
@@ -4773,6 +5505,15 @@ pub mod disassociate_tracker_consumer_input {
             self.consumer_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) for the geofence collection to be disassociated from
+        /// the tracker resource. Used when you need to specify a resource across all AWS. </p>
+        /// <ul>
+        /// <li>
+        /// <p>Format example:
+        /// <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_consumer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.consumer_arn = input;
             self
@@ -4782,7 +5523,7 @@ pub mod disassociate_tracker_consumer_input {
             self,
         ) -> std::result::Result<
             crate::input::DisassociateTrackerConsumerInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DisassociateTrackerConsumerInput {
                 tracker_name: self.tracker_name,
@@ -4803,27 +5544,27 @@ impl DisassociateTrackerConsumerInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DisassociateTrackerConsumer,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DisassociateTrackerConsumerInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_19 = &_input.tracker_name;
             let input_19 =
                 input_19
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "tracker_name",
                         details: "cannot be empty or unset",
                     })?;
-            let tracker_name = smithy_http::label::fmt_string(input_19, false);
+            let tracker_name = aws_smithy_http::label::fmt_string(input_19, false);
             if tracker_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "tracker_name",
                     details: "cannot be empty or unset",
                 });
@@ -4832,13 +5573,13 @@ impl DisassociateTrackerConsumerInput {
             let input_20 =
                 input_20
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "consumer_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let consumer_arn = smithy_http::label::fmt_string(input_20, false);
+            let consumer_arn = aws_smithy_http::label::fmt_string(input_20, false);
             if consumer_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "consumer_arn",
                     details: "cannot be empty or unset",
                 });
@@ -4856,7 +5597,7 @@ impl DisassociateTrackerConsumerInput {
         fn update_http_builder(
             input: &crate::input::DisassociateTrackerConsumerInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4865,32 +5606,32 @@ impl DisassociateTrackerConsumerInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DisassociateTrackerConsumerInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("tracking.");
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("tracking.");
         match endpoint_prefix {
             Ok(prefix) => {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -4915,15 +5656,15 @@ impl DisassociateTrackerConsumerInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DisassociateTrackerConsumer::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DisassociateTrackerConsumer",
             "location",
         ));
@@ -4932,10 +5673,10 @@ impl DisassociateTrackerConsumerInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4964,6 +5705,7 @@ pub mod get_device_position_input {
             self.tracker_name = Some(input.into());
             self
         }
+        /// <p>The tracker resource receiving the position update.</p>
         pub fn set_tracker_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.tracker_name = input;
             self
@@ -4973,6 +5715,7 @@ pub mod get_device_position_input {
             self.device_id = Some(input.into());
             self
         }
+        /// <p>The device whose position you want to retrieve.</p>
         pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.device_id = input;
             self
@@ -4982,7 +5725,7 @@ pub mod get_device_position_input {
             self,
         ) -> std::result::Result<
             crate::input::GetDevicePositionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetDevicePositionInput {
                 tracker_name: self.tracker_name,
@@ -5002,27 +5745,27 @@ impl GetDevicePositionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetDevicePosition,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetDevicePositionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_21 = &_input.tracker_name;
             let input_21 =
                 input_21
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "tracker_name",
                         details: "cannot be empty or unset",
                     })?;
-            let tracker_name = smithy_http::label::fmt_string(input_21, false);
+            let tracker_name = aws_smithy_http::label::fmt_string(input_21, false);
             if tracker_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "tracker_name",
                     details: "cannot be empty or unset",
                 });
@@ -5031,13 +5774,13 @@ impl GetDevicePositionInput {
             let input_22 =
                 input_22
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "device_id",
                         details: "cannot be empty or unset",
                     })?;
-            let device_id = smithy_http::label::fmt_string(input_22, false);
+            let device_id = aws_smithy_http::label::fmt_string(input_22, false);
             if device_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "device_id",
                     details: "cannot be empty or unset",
                 });
@@ -5055,7 +5798,7 @@ impl GetDevicePositionInput {
         fn update_http_builder(
             input: &crate::input::GetDevicePositionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5064,32 +5807,32 @@ impl GetDevicePositionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetDevicePositionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("tracking.");
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("tracking.");
         match endpoint_prefix {
             Ok(prefix) => {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -5114,15 +5857,15 @@ impl GetDevicePositionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetDevicePosition::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetDevicePosition",
             "location",
         ));
@@ -5131,10 +5874,10 @@ impl GetDevicePositionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5157,8 +5900,8 @@ pub mod get_device_position_history_input {
         pub(crate) tracker_name: std::option::Option<std::string::String>,
         pub(crate) device_id: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) start_time_inclusive: std::option::Option<smithy_types::Instant>,
-        pub(crate) end_time_exclusive: std::option::Option<smithy_types::Instant>,
+        pub(crate) start_time_inclusive: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) end_time_exclusive: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The tracker resource receiving the request for the device position history.</p>
@@ -5166,6 +5909,7 @@ pub mod get_device_position_history_input {
             self.tracker_name = Some(input.into());
             self
         }
+        /// <p>The tracker resource receiving the request for the device position history.</p>
         pub fn set_tracker_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.tracker_name = input;
             self
@@ -5175,6 +5919,7 @@ pub mod get_device_position_history_input {
             self.device_id = Some(input.into());
             self
         }
+        /// <p>The device whose position history you want to retrieve.</p>
         pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.device_id = input;
             self
@@ -5187,6 +5932,10 @@ pub mod get_device_position_history_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The pagination token specifying which page of results to return in the response. If no
+        /// token is provided, the default page is the first page. </p>
+        /// <p>Default value: <code>null</code>
+        /// </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5201,13 +5950,23 @@ pub mod get_device_position_history_input {
         /// <code>EndTimeExclusive</code>.</p>
         /// </li>
         /// </ul>
-        pub fn start_time_inclusive(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_time_inclusive(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_time_inclusive = Some(input);
             self
         }
+        /// <p>Specify the start time for the position history in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
+        /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. By default, the value will be 24 hours
+        /// prior to the time that the request is made.</p>
+        /// <p>Requirement:</p>
+        /// <ul>
+        /// <li>
+        /// <p>The time specified for <code>StartTimeInclusive</code> must be before
+        /// <code>EndTimeExclusive</code>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_start_time_inclusive(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.start_time_inclusive = input;
             self
@@ -5222,13 +5981,23 @@ pub mod get_device_position_history_input {
         /// <code>StartTimeInclusive</code>.</p>
         /// </li>
         /// </ul>
-        pub fn end_time_exclusive(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_time_exclusive(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_time_exclusive = Some(input);
             self
         }
+        /// <p>Specify the end time for the position history in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
+        /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. By default, the value will be the time
+        /// that the request is made.</p>
+        /// <p>Requirement:</p>
+        /// <ul>
+        /// <li>
+        /// <p>The time specified for <code>EndTimeExclusive</code> must be after the time for
+        /// <code>StartTimeInclusive</code>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_end_time_exclusive(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.end_time_exclusive = input;
             self
@@ -5238,7 +6007,7 @@ pub mod get_device_position_history_input {
             self,
         ) -> std::result::Result<
             crate::input::GetDevicePositionHistoryInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetDevicePositionHistoryInput {
                 tracker_name: self.tracker_name,
@@ -5262,27 +6031,27 @@ impl GetDevicePositionHistoryInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetDevicePositionHistory,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetDevicePositionHistoryInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_23 = &_input.tracker_name;
             let input_23 =
                 input_23
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "tracker_name",
                         details: "cannot be empty or unset",
                     })?;
-            let tracker_name = smithy_http::label::fmt_string(input_23, false);
+            let tracker_name = aws_smithy_http::label::fmt_string(input_23, false);
             if tracker_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "tracker_name",
                     details: "cannot be empty or unset",
                 });
@@ -5291,13 +6060,13 @@ impl GetDevicePositionHistoryInput {
             let input_24 =
                 input_24
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "device_id",
                         details: "cannot be empty or unset",
                     })?;
-            let device_id = smithy_http::label::fmt_string(input_24, false);
+            let device_id = aws_smithy_http::label::fmt_string(input_24, false);
             if device_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "device_id",
                     details: "cannot be empty or unset",
                 });
@@ -5315,7 +6084,7 @@ impl GetDevicePositionHistoryInput {
         fn update_http_builder(
             input: &crate::input::GetDevicePositionHistoryInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5324,36 +6093,38 @@ impl GetDevicePositionHistoryInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetDevicePositionHistoryInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_device_position_history(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("tracking.");
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("tracking.");
         match endpoint_prefix {
             Ok(prefix) => {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -5378,15 +6149,15 @@ impl GetDevicePositionHistoryInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetDevicePositionHistory::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetDevicePositionHistory",
             "location",
         ));
@@ -5395,10 +6166,10 @@ impl GetDevicePositionHistoryInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5427,6 +6198,7 @@ pub mod get_geofence_input {
             self.collection_name = Some(input.into());
             self
         }
+        /// <p>The geofence collection storing the target geofence.</p>
         pub fn set_collection_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5439,6 +6211,7 @@ pub mod get_geofence_input {
             self.geofence_id = Some(input.into());
             self
         }
+        /// <p>The geofence you're retrieving details for.</p>
         pub fn set_geofence_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.geofence_id = input;
             self
@@ -5446,8 +6219,10 @@ pub mod get_geofence_input {
         /// Consumes the builder and constructs a [`GetGeofenceInput`](crate::input::GetGeofenceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetGeofenceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetGeofenceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetGeofenceInput {
                 collection_name: self.collection_name,
                 geofence_id: self.geofence_id,
@@ -5466,27 +6241,27 @@ impl GetGeofenceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetGeofence,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetGeofenceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_25 = &_input.collection_name;
             let input_25 =
                 input_25
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "collection_name",
                         details: "cannot be empty or unset",
                     })?;
-            let collection_name = smithy_http::label::fmt_string(input_25, false);
+            let collection_name = aws_smithy_http::label::fmt_string(input_25, false);
             if collection_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "collection_name",
                     details: "cannot be empty or unset",
                 });
@@ -5495,13 +6270,13 @@ impl GetGeofenceInput {
             let input_26 =
                 input_26
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "geofence_id",
                         details: "cannot be empty or unset",
                     })?;
-            let geofence_id = smithy_http::label::fmt_string(input_26, false);
+            let geofence_id = aws_smithy_http::label::fmt_string(input_26, false);
             if geofence_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "geofence_id",
                     details: "cannot be empty or unset",
                 });
@@ -5519,7 +6294,7 @@ impl GetGeofenceInput {
         fn update_http_builder(
             input: &crate::input::GetGeofenceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5528,32 +6303,32 @@ impl GetGeofenceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetGeofenceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("geofencing.");
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("geofencing.");
         match endpoint_prefix {
             Ok(prefix) => {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -5578,25 +6353,27 @@ impl GetGeofenceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::GetGeofence::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "GetGeofence",
-                    "location",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetGeofence::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetGeofence",
+            "location",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5626,6 +6403,7 @@ pub mod get_map_glyphs_input {
             self.map_name = Some(input.into());
             self
         }
+        /// <p>The map resource associated with the glyph ﬁle.</p>
         pub fn set_map_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.map_name = input;
             self
@@ -5674,6 +6452,46 @@ pub mod get_map_glyphs_input {
             self.font_stack = Some(input.into());
             self
         }
+        /// <p>A comma-separated list of fonts to load glyphs from in order of preference. For
+        /// example, <code>Noto Sans Regular, Arial Unicode</code>.</p>
+        /// <p>Valid fonts stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a> styles: </p>
+        /// <ul>
+        /// <li>
+        /// <p>VectorEsriDarkGrayCanvas – <code>Ubuntu Medium Italic</code> | <code>Ubuntu
+        /// Medium</code> | <code>Ubuntu Italic</code> | <code>Ubuntu Regular</code> |
+        /// <code>Ubuntu Bold</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>VectorEsriLightGrayCanvas – <code>Ubuntu Italic</code> | <code>Ubuntu
+        /// Regular</code> | <code>Ubuntu Light</code> | <code>Ubuntu Bold</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>VectorEsriTopographic – <code>Noto Sans Italic</code> | <code>Noto Sans
+        /// Regular</code> | <code>Noto Sans Bold</code> | <code>Noto Serif
+        /// Regular</code> | <code>Roboto Condensed Light Italic</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>VectorEsriStreets – <code>Arial Regular</code> | <code>Arial Italic</code> |
+        /// <code>Arial Bold</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>VectorEsriNavigation – <code>Arial Regular</code> | <code>Arial Italic</code>
+        /// | <code>Arial Bold</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>Valid font stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a> styles: </p>
+        /// <ul>
+        /// <li>
+        /// <p>VectorHereBerlin – <code>Fira GO Regular</code> | <code>Fira GO
+        /// Bold</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_font_stack(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.font_stack = input;
             self
@@ -5685,6 +6503,9 @@ pub mod get_map_glyphs_input {
             self.font_unicode_range = Some(input.into());
             self
         }
+        /// <p>A Unicode range of characters to download glyphs for. Each response will contain 256
+        /// characters. For example, 0–255 includes all characters from range <code>U+0000</code> to
+        /// <code>00FF</code>. Must be aligned to multiples of 256.</p>
         pub fn set_font_unicode_range(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5695,8 +6516,10 @@ pub mod get_map_glyphs_input {
         /// Consumes the builder and constructs a [`GetMapGlyphsInput`](crate::input::GetMapGlyphsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetMapGlyphsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetMapGlyphsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetMapGlyphsInput {
                 map_name: self.map_name,
                 font_stack: self.font_stack,
@@ -5716,27 +6539,27 @@ impl GetMapGlyphsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetMapGlyphs,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetMapGlyphsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_27 = &_input.map_name;
             let input_27 =
                 input_27
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "map_name",
                         details: "cannot be empty or unset",
                     })?;
-            let map_name = smithy_http::label::fmt_string(input_27, false);
+            let map_name = aws_smithy_http::label::fmt_string(input_27, false);
             if map_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "map_name",
                     details: "cannot be empty or unset",
                 });
@@ -5745,13 +6568,13 @@ impl GetMapGlyphsInput {
             let input_28 =
                 input_28
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "font_stack",
                         details: "cannot be empty or unset",
                     })?;
-            let font_stack = smithy_http::label::fmt_string(input_28, false);
+            let font_stack = aws_smithy_http::label::fmt_string(input_28, false);
             if font_stack.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "font_stack",
                     details: "cannot be empty or unset",
                 });
@@ -5760,13 +6583,13 @@ impl GetMapGlyphsInput {
             let input_29 =
                 input_29
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "font_unicode_range",
                         details: "cannot be empty or unset",
                     })?;
-            let font_unicode_range = smithy_http::label::fmt_string(input_29, false);
+            let font_unicode_range = aws_smithy_http::label::fmt_string(input_29, false);
             if font_unicode_range.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "font_unicode_range",
                     details: "cannot be empty or unset",
                 });
@@ -5785,7 +6608,7 @@ impl GetMapGlyphsInput {
         fn update_http_builder(
             input: &crate::input::GetMapGlyphsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5794,32 +6617,32 @@ impl GetMapGlyphsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetMapGlyphsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("maps.");
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("maps.");
         match endpoint_prefix {
             Ok(prefix) => {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -5844,25 +6667,27 @@ impl GetMapGlyphsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::GetMapGlyphs::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "GetMapGlyphs",
-                    "location",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetMapGlyphs::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetMapGlyphs",
+            "location",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5891,6 +6716,7 @@ pub mod get_map_sprites_input {
             self.map_name = Some(input.into());
             self
         }
+        /// <p>The map resource associated with the sprite ﬁle.</p>
         pub fn set_map_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.map_name = input;
             self
@@ -5923,6 +6749,30 @@ pub mod get_map_sprites_input {
             self.file_name = Some(input.into());
             self
         }
+        /// <p>The name of the sprite ﬁle. Use the following ﬁle names for the sprite sheet:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>sprites.png</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>sprites@2x.png</code> for high pixel density displays</p>
+        /// </li>
+        /// </ul>
+        /// <p>For the JSON document contain image offsets. Use the following ﬁle names:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>sprites.json</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>sprites@2x.json</code> for high pixel density displays</p>
+        /// </li>
+        /// </ul>
         pub fn set_file_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.file_name = input;
             self
@@ -5930,8 +6780,10 @@ pub mod get_map_sprites_input {
         /// Consumes the builder and constructs a [`GetMapSpritesInput`](crate::input::GetMapSpritesInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetMapSpritesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetMapSpritesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetMapSpritesInput {
                 map_name: self.map_name,
                 file_name: self.file_name,
@@ -5950,27 +6802,27 @@ impl GetMapSpritesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetMapSprites,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetMapSpritesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_30 = &_input.map_name;
             let input_30 =
                 input_30
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "map_name",
                         details: "cannot be empty or unset",
                     })?;
-            let map_name = smithy_http::label::fmt_string(input_30, false);
+            let map_name = aws_smithy_http::label::fmt_string(input_30, false);
             if map_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "map_name",
                     details: "cannot be empty or unset",
                 });
@@ -5979,13 +6831,13 @@ impl GetMapSpritesInput {
             let input_31 =
                 input_31
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "file_name",
                         details: "cannot be empty or unset",
                     })?;
-            let file_name = smithy_http::label::fmt_string(input_31, false);
+            let file_name = aws_smithy_http::label::fmt_string(input_31, false);
             if file_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "file_name",
                     details: "cannot be empty or unset",
                 });
@@ -6003,7 +6855,7 @@ impl GetMapSpritesInput {
         fn update_http_builder(
             input: &crate::input::GetMapSpritesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6012,32 +6864,32 @@ impl GetMapSpritesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetMapSpritesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("maps.");
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("maps.");
         match endpoint_prefix {
             Ok(prefix) => {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -6062,25 +6914,27 @@ impl GetMapSpritesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::GetMapSprites::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "GetMapSprites",
-                    "location",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetMapSprites::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetMapSprites",
+            "location",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6108,6 +6962,7 @@ pub mod get_map_style_descriptor_input {
             self.map_name = Some(input.into());
             self
         }
+        /// <p>The map resource to retrieve the style descriptor from.</p>
         pub fn set_map_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.map_name = input;
             self
@@ -6117,7 +6972,7 @@ pub mod get_map_style_descriptor_input {
             self,
         ) -> std::result::Result<
             crate::input::GetMapStyleDescriptorInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetMapStyleDescriptorInput {
                 map_name: self.map_name,
@@ -6136,27 +6991,27 @@ impl GetMapStyleDescriptorInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetMapStyleDescriptor,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetMapStyleDescriptorInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_32 = &_input.map_name;
             let input_32 =
                 input_32
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "map_name",
                         details: "cannot be empty or unset",
                     })?;
-            let map_name = smithy_http::label::fmt_string(input_32, false);
+            let map_name = aws_smithy_http::label::fmt_string(input_32, false);
             if map_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "map_name",
                     details: "cannot be empty or unset",
                 });
@@ -6173,7 +7028,7 @@ impl GetMapStyleDescriptorInput {
         fn update_http_builder(
             input: &crate::input::GetMapStyleDescriptorInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6182,32 +7037,32 @@ impl GetMapStyleDescriptorInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetMapStyleDescriptorInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("maps.");
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("maps.");
         match endpoint_prefix {
             Ok(prefix) => {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -6232,15 +7087,15 @@ impl GetMapStyleDescriptorInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetMapStyleDescriptor::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetMapStyleDescriptor",
             "location",
         ));
@@ -6249,10 +7104,10 @@ impl GetMapStyleDescriptorInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6283,6 +7138,7 @@ pub mod get_map_tile_input {
             self.map_name = Some(input.into());
             self
         }
+        /// <p>The map resource to retrieve the map tiles from.</p>
         pub fn set_map_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.map_name = input;
             self
@@ -6292,6 +7148,7 @@ pub mod get_map_tile_input {
             self.z = Some(input.into());
             self
         }
+        /// <p>The zoom value for the map tile.</p>
         pub fn set_z(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.z = input;
             self
@@ -6301,6 +7158,7 @@ pub mod get_map_tile_input {
             self.x = Some(input.into());
             self
         }
+        /// <p>The X axis value for the map tile.</p>
         pub fn set_x(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.x = input;
             self
@@ -6310,6 +7168,7 @@ pub mod get_map_tile_input {
             self.y = Some(input.into());
             self
         }
+        /// <p>The Y axis value for the map tile. </p>
         pub fn set_y(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.y = input;
             self
@@ -6317,8 +7176,10 @@ pub mod get_map_tile_input {
         /// Consumes the builder and constructs a [`GetMapTileInput`](crate::input::GetMapTileInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetMapTileInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetMapTileInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetMapTileInput {
                 map_name: self.map_name,
                 z: self.z,
@@ -6339,27 +7200,27 @@ impl GetMapTileInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetMapTile,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetMapTileInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_33 = &_input.map_name;
             let input_33 =
                 input_33
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "map_name",
                         details: "cannot be empty or unset",
                     })?;
-            let map_name = smithy_http::label::fmt_string(input_33, false);
+            let map_name = aws_smithy_http::label::fmt_string(input_33, false);
             if map_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "map_name",
                     details: "cannot be empty or unset",
                 });
@@ -6368,13 +7229,13 @@ impl GetMapTileInput {
             let input_34 =
                 input_34
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "z",
                         details: "cannot be empty or unset",
                     })?;
-            let z = smithy_http::label::fmt_string(input_34, false);
+            let z = aws_smithy_http::label::fmt_string(input_34, false);
             if z.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "z",
                     details: "cannot be empty or unset",
                 });
@@ -6383,13 +7244,13 @@ impl GetMapTileInput {
             let input_35 =
                 input_35
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "x",
                         details: "cannot be empty or unset",
                     })?;
-            let x = smithy_http::label::fmt_string(input_35, false);
+            let x = aws_smithy_http::label::fmt_string(input_35, false);
             if x.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "x",
                     details: "cannot be empty or unset",
                 });
@@ -6398,13 +7259,13 @@ impl GetMapTileInput {
             let input_36 =
                 input_36
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "y",
                         details: "cannot be empty or unset",
                     })?;
-            let y = smithy_http::label::fmt_string(input_36, false);
+            let y = aws_smithy_http::label::fmt_string(input_36, false);
             if y.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "y",
                     details: "cannot be empty or unset",
                 });
@@ -6424,7 +7285,7 @@ impl GetMapTileInput {
         fn update_http_builder(
             input: &crate::input::GetMapTileInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6433,32 +7294,32 @@ impl GetMapTileInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetMapTileInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("maps.");
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("maps.");
         match endpoint_prefix {
             Ok(prefix) => {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -6483,25 +7344,27 @@ impl GetMapTileInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::GetMapTile::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "GetMapTile",
-                    "location",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetMapTile::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetMapTile",
+            "location",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6531,6 +7394,7 @@ pub mod list_device_positions_input {
             self.tracker_name = Some(input.into());
             self
         }
+        /// <p>The tracker resource containing the requested devices.</p>
         pub fn set_tracker_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.tracker_name = input;
             self
@@ -6542,6 +7406,9 @@ pub mod list_device_positions_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>An optional limit for the number of entries returned in a single call.</p>
+        /// <p>Default value: <code>100</code>
+        /// </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -6554,6 +7421,10 @@ pub mod list_device_positions_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The pagination token specifying which page of results to return in the response. If no
+        /// token is provided, the default page is the first page.</p>
+        /// <p>Default value: <code>null</code>
+        /// </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6563,7 +7434,7 @@ pub mod list_device_positions_input {
             self,
         ) -> std::result::Result<
             crate::input::ListDevicePositionsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListDevicePositionsInput {
                 tracker_name: self.tracker_name,
@@ -6584,27 +7455,27 @@ impl ListDevicePositionsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListDevicePositions,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListDevicePositionsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_37 = &_input.tracker_name;
             let input_37 =
                 input_37
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "tracker_name",
                         details: "cannot be empty or unset",
                     })?;
-            let tracker_name = smithy_http::label::fmt_string(input_37, false);
+            let tracker_name = aws_smithy_http::label::fmt_string(input_37, false);
             if tracker_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "tracker_name",
                     details: "cannot be empty or unset",
                 });
@@ -6621,7 +7492,7 @@ impl ListDevicePositionsInput {
         fn update_http_builder(
             input: &crate::input::ListDevicePositionsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6630,36 +7501,36 @@ impl ListDevicePositionsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListDevicePositionsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_device_positions(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("tracking.");
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("tracking.");
         match endpoint_prefix {
             Ok(prefix) => {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -6684,15 +7555,15 @@ impl ListDevicePositionsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListDevicePositions::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListDevicePositions",
             "location",
         ));
@@ -6701,10 +7572,10 @@ impl ListDevicePositionsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6735,6 +7606,9 @@ pub mod list_geofence_collections_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>An optional limit for the number of resources returned in a single call. </p>
+        /// <p>Default value: <code>100</code>
+        /// </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -6747,6 +7621,10 @@ pub mod list_geofence_collections_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The pagination token specifying which page of results to return in the response. If no
+        /// token is provided, the default page is the first page. </p>
+        /// <p>Default value: <code>null</code>
+        /// </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6756,7 +7634,7 @@ pub mod list_geofence_collections_input {
             self,
         ) -> std::result::Result<
             crate::input::ListGeofenceCollectionsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListGeofenceCollectionsInput {
                 max_results: self.max_results,
@@ -6777,16 +7655,16 @@ impl ListGeofenceCollectionsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListGeofenceCollections,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListGeofenceCollectionsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/geofencing/v0/list-collections").expect("formatting should succeed");
             Ok(())
         }
@@ -6794,7 +7672,7 @@ impl ListGeofenceCollectionsInput {
         fn update_http_builder(
             input: &crate::input::ListGeofenceCollectionsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6803,36 +7681,38 @@ impl ListGeofenceCollectionsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListGeofenceCollectionsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_geofence_collections(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("geofencing.");
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("geofencing.");
         match endpoint_prefix {
             Ok(prefix) => {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -6857,15 +7737,15 @@ impl ListGeofenceCollectionsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListGeofenceCollections::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListGeofenceCollections",
             "location",
         ));
@@ -6874,10 +7754,10 @@ impl ListGeofenceCollectionsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6906,6 +7786,7 @@ pub mod list_geofences_input {
             self.collection_name = Some(input.into());
             self
         }
+        /// <p>The name of the geofence collection storing the list of geofences.</p>
         pub fn set_collection_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6921,6 +7802,10 @@ pub mod list_geofences_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The pagination token specifying which page of results to return in the response. If no
+        /// token is provided, the default page is the first page. </p>
+        /// <p>Default value: <code>null</code>
+        /// </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6928,8 +7813,10 @@ pub mod list_geofences_input {
         /// Consumes the builder and constructs a [`ListGeofencesInput`](crate::input::ListGeofencesInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListGeofencesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListGeofencesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListGeofencesInput {
                 collection_name: self.collection_name,
                 next_token: self.next_token,
@@ -6948,27 +7835,27 @@ impl ListGeofencesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListGeofences,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListGeofencesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_38 = &_input.collection_name;
             let input_38 =
                 input_38
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "collection_name",
                         details: "cannot be empty or unset",
                     })?;
-            let collection_name = smithy_http::label::fmt_string(input_38, false);
+            let collection_name = aws_smithy_http::label::fmt_string(input_38, false);
             if collection_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "collection_name",
                     details: "cannot be empty or unset",
                 });
@@ -6985,7 +7872,7 @@ impl ListGeofencesInput {
         fn update_http_builder(
             input: &crate::input::ListGeofencesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6994,33 +7881,35 @@ impl ListGeofencesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListGeofencesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_geofences(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("geofencing.");
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("geofencing.");
         match endpoint_prefix {
             Ok(prefix) => {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -7045,25 +7934,27 @@ impl ListGeofencesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListGeofences::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ListGeofences",
-                    "location",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListGeofences::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListGeofences",
+            "location",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7094,6 +7985,9 @@ pub mod list_maps_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>An optional limit for the number of resources returned in a single call. </p>
+        /// <p>Default value: <code>100</code>
+        /// </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -7106,6 +8000,10 @@ pub mod list_maps_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The pagination token specifying which page of results to return in the response. If no
+        /// token is provided, the default page is the first page.</p>
+        /// <p>Default value: <code>null</code>
+        /// </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7113,7 +8011,7 @@ pub mod list_maps_input {
         /// Consumes the builder and constructs a [`ListMapsInput`](crate::input::ListMapsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListMapsInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::ListMapsInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::ListMapsInput {
                 max_results: self.max_results,
@@ -7133,16 +8031,16 @@ impl ListMapsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListMaps,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListMapsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/maps/v0/list-maps").expect("formatting should succeed");
             Ok(())
         }
@@ -7150,7 +8048,7 @@ impl ListMapsInput {
         fn update_http_builder(
             input: &crate::input::ListMapsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7159,33 +8057,35 @@ impl ListMapsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListMapsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_maps(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("maps.");
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("maps.");
         match endpoint_prefix {
             Ok(prefix) => {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -7210,23 +8110,24 @@ impl ListMapsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(request, crate::operation::ListMaps::new())
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "ListMaps", "location",
-            ));
+        let op =
+            aws_smithy_http::operation::Operation::new(request, crate::operation::ListMaps::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "ListMaps", "location",
+                ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7257,6 +8158,9 @@ pub mod list_place_indexes_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>An optional limit for the maximum number of results returned in a single call.</p>
+        /// <p>Default value: <code>100</code>
+        /// </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -7269,6 +8173,10 @@ pub mod list_place_indexes_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The pagination token specifying which page of results to return in the response. If no
+        /// token is provided, the default page is the first page.</p>
+        /// <p>Default value: <code>null</code>
+        /// </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7278,7 +8186,7 @@ pub mod list_place_indexes_input {
             self,
         ) -> std::result::Result<
             crate::input::ListPlaceIndexesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListPlaceIndexesInput {
                 max_results: self.max_results,
@@ -7298,16 +8206,16 @@ impl ListPlaceIndexesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListPlaceIndexes,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListPlaceIndexesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/places/v0/list-indexes").expect("formatting should succeed");
             Ok(())
         }
@@ -7315,7 +8223,7 @@ impl ListPlaceIndexesInput {
         fn update_http_builder(
             input: &crate::input::ListPlaceIndexesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7324,36 +8232,36 @@ impl ListPlaceIndexesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListPlaceIndexesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_place_indexes(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("places.");
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("places.");
         match endpoint_prefix {
             Ok(prefix) => {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -7378,15 +8286,15 @@ impl ListPlaceIndexesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListPlaceIndexes::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListPlaceIndexes",
             "location",
         ));
@@ -7395,10 +8303,10 @@ impl ListPlaceIndexesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7429,6 +8337,9 @@ pub mod list_route_calculators_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>An optional maximum number of results returned in a single call.</p>
+        /// <p>Default Value: <code>100</code>
+        /// </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -7441,6 +8352,10 @@ pub mod list_route_calculators_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The pagination token specifying which page of results to return in the response. If no
+        /// token is provided, the default page is the first page.</p>
+        /// <p>Default Value: <code>null</code>
+        /// </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7450,7 +8365,7 @@ pub mod list_route_calculators_input {
             self,
         ) -> std::result::Result<
             crate::input::ListRouteCalculatorsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListRouteCalculatorsInput {
                 max_results: self.max_results,
@@ -7470,16 +8385,16 @@ impl ListRouteCalculatorsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListRouteCalculators,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListRouteCalculatorsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/routes/v0/list-calculators").expect("formatting should succeed");
             Ok(())
         }
@@ -7487,7 +8402,7 @@ impl ListRouteCalculatorsInput {
         fn update_http_builder(
             input: &crate::input::ListRouteCalculatorsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7496,36 +8411,36 @@ impl ListRouteCalculatorsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListRouteCalculatorsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_route_calculators(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("routes.");
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("routes.");
         match endpoint_prefix {
             Ok(prefix) => {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -7550,15 +8465,15 @@ impl ListRouteCalculatorsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListRouteCalculators::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListRouteCalculators",
             "location",
         ));
@@ -7567,10 +8482,10 @@ impl ListRouteCalculatorsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7604,6 +8519,13 @@ pub mod list_tags_for_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the resource whose tags you want to retrieve.</p>
+        /// <ul>
+        /// <li>
+        /// <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -7613,7 +8535,7 @@ pub mod list_tags_for_resource_input {
             self,
         ) -> std::result::Result<
             crate::input::ListTagsForResourceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListTagsForResourceInput {
                 resource_arn: self.resource_arn,
@@ -7632,27 +8554,27 @@ impl ListTagsForResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListTagsForResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_39 = &_input.resource_arn;
             let input_39 =
                 input_39
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = smithy_http::label::fmt_string(input_39, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_39, false);
             if resource_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 });
@@ -7665,7 +8587,7 @@ impl ListTagsForResourceInput {
         fn update_http_builder(
             input: &crate::input::ListTagsForResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7674,32 +8596,32 @@ impl ListTagsForResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListTagsForResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("metadata.");
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("metadata.");
         match endpoint_prefix {
             Ok(prefix) => {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -7724,15 +8646,15 @@ impl ListTagsForResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListTagsForResource::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListTagsForResource",
             "location",
         ));
@@ -7741,10 +8663,10 @@ impl ListTagsForResourceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7774,6 +8696,7 @@ pub mod list_tracker_consumers_input {
             self.tracker_name = Some(input.into());
             self
         }
+        /// <p>The tracker resource whose associated geofence collections you want to list.</p>
         pub fn set_tracker_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.tracker_name = input;
             self
@@ -7785,6 +8708,9 @@ pub mod list_tracker_consumers_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>An optional limit for the number of resources returned in a single call. </p>
+        /// <p>Default value: <code>100</code>
+        /// </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -7797,6 +8723,10 @@ pub mod list_tracker_consumers_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The pagination token specifying which page of results to return in the response. If no
+        /// token is provided, the default page is the first page. </p>
+        /// <p>Default value: <code>null</code>
+        /// </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7806,7 +8736,7 @@ pub mod list_tracker_consumers_input {
             self,
         ) -> std::result::Result<
             crate::input::ListTrackerConsumersInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListTrackerConsumersInput {
                 tracker_name: self.tracker_name,
@@ -7827,27 +8757,27 @@ impl ListTrackerConsumersInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListTrackerConsumers,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListTrackerConsumersInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_40 = &_input.tracker_name;
             let input_40 =
                 input_40
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "tracker_name",
                         details: "cannot be empty or unset",
                     })?;
-            let tracker_name = smithy_http::label::fmt_string(input_40, false);
+            let tracker_name = aws_smithy_http::label::fmt_string(input_40, false);
             if tracker_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "tracker_name",
                     details: "cannot be empty or unset",
                 });
@@ -7864,7 +8794,7 @@ impl ListTrackerConsumersInput {
         fn update_http_builder(
             input: &crate::input::ListTrackerConsumersInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7873,36 +8803,36 @@ impl ListTrackerConsumersInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListTrackerConsumersInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_tracker_consumers(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("tracking.");
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("tracking.");
         match endpoint_prefix {
             Ok(prefix) => {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -7927,15 +8857,15 @@ impl ListTrackerConsumersInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListTrackerConsumers::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListTrackerConsumers",
             "location",
         ));
@@ -7944,10 +8874,10 @@ impl ListTrackerConsumersInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7978,6 +8908,9 @@ pub mod list_trackers_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>An optional limit for the number of resources returned in a single call. </p>
+        /// <p>Default value: <code>100</code>
+        /// </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -7990,6 +8923,10 @@ pub mod list_trackers_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The pagination token specifying which page of results to return in the response. If no
+        /// token is provided, the default page is the first page. </p>
+        /// <p>Default value: <code>null</code>
+        /// </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7997,8 +8934,10 @@ pub mod list_trackers_input {
         /// Consumes the builder and constructs a [`ListTrackersInput`](crate::input::ListTrackersInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListTrackersInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListTrackersInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListTrackersInput {
                 max_results: self.max_results,
                 next_token: self.next_token,
@@ -8017,16 +8956,16 @@ impl ListTrackersInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListTrackers,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListTrackersInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/tracking/v0/list-trackers").expect("formatting should succeed");
             Ok(())
         }
@@ -8034,7 +8973,7 @@ impl ListTrackersInput {
         fn update_http_builder(
             input: &crate::input::ListTrackersInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8043,35 +8982,35 @@ impl ListTrackersInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListTrackersInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_trackers(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("tracking.");
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("tracking.");
         match endpoint_prefix {
             Ok(prefix) => {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -8096,25 +9035,27 @@ impl ListTrackersInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListTrackers::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ListTrackers",
-                    "location",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListTrackers::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListTrackers",
+            "location",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8144,6 +9085,7 @@ pub mod put_geofence_input {
             self.collection_name = Some(input.into());
             self
         }
+        /// <p>The geofence collection to store the geofence in.</p>
         pub fn set_collection_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8156,6 +9098,7 @@ pub mod put_geofence_input {
             self.geofence_id = Some(input.into());
             self
         }
+        /// <p>An identifier for the geofence. For example, <code>ExampleGeofence-1</code>.</p>
         pub fn set_geofence_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.geofence_id = input;
             self
@@ -8168,6 +9111,10 @@ pub mod put_geofence_input {
             self.geometry = Some(input);
             self
         }
+        /// <p>Contains the polygon details to specify the position of the geofence.</p>
+        /// <note>
+        /// <p>Each <a href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html">geofence polygon</a> can have a maximum of 1,000 vertices.</p>
+        /// </note>
         pub fn set_geometry(
             mut self,
             input: std::option::Option<crate::model::GeofenceGeometry>,
@@ -8178,8 +9125,10 @@ pub mod put_geofence_input {
         /// Consumes the builder and constructs a [`PutGeofenceInput`](crate::input::PutGeofenceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::PutGeofenceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::PutGeofenceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::PutGeofenceInput {
                 collection_name: self.collection_name,
                 geofence_id: self.geofence_id,
@@ -8199,27 +9148,27 @@ impl PutGeofenceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::PutGeofence,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::PutGeofenceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_41 = &_input.collection_name;
             let input_41 =
                 input_41
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "collection_name",
                         details: "cannot be empty or unset",
                     })?;
-            let collection_name = smithy_http::label::fmt_string(input_41, false);
+            let collection_name = aws_smithy_http::label::fmt_string(input_41, false);
             if collection_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "collection_name",
                     details: "cannot be empty or unset",
                 });
@@ -8228,13 +9177,13 @@ impl PutGeofenceInput {
             let input_42 =
                 input_42
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "geofence_id",
                         details: "cannot be empty or unset",
                     })?;
-            let geofence_id = smithy_http::label::fmt_string(input_42, false);
+            let geofence_id = aws_smithy_http::label::fmt_string(input_42, false);
             if geofence_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "geofence_id",
                     details: "cannot be empty or unset",
                 });
@@ -8252,7 +9201,7 @@ impl PutGeofenceInput {
         fn update_http_builder(
             input: &crate::input::PutGeofenceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8261,33 +9210,35 @@ impl PutGeofenceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::PutGeofenceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_put_geofence(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("geofencing.");
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("geofencing.");
         match endpoint_prefix {
             Ok(prefix) => {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -8312,25 +9263,27 @@ impl PutGeofenceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::PutGeofence::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "PutGeofence",
-                    "location",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::PutGeofence::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "PutGeofence",
+            "location",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8360,16 +9313,41 @@ pub mod search_place_index_for_position_input {
             self.index_name = Some(input.into());
             self
         }
+        /// <p>The name of the place index resource you want to use for the search.</p>
         pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.index_name = input;
             self
         }
+        /// Appends an item to `position`.
+        ///
+        /// To override the contents of this collection use [`set_position`](Self::set_position).
+        ///
+        /// <p>Specifies a coordinate for the query defined by a longitude, and latitude.</p>
+        /// <ul>
+        /// <li>
+        /// <p>The first position is the X coordinate, or longitude.</p>
+        /// </li>
+        /// <li>
+        /// <p>The second position is the Y coordinate, or latitude. </p>
+        /// </li>
+        /// </ul>
+        /// <p>For example, <code>position=xLongitude&amp;position=yLatitude</code> .</p>
         pub fn position(mut self, input: impl Into<f64>) -> Self {
             let mut v = self.position.unwrap_or_default();
             v.push(input.into());
             self.position = Some(v);
             self
         }
+        /// <p>Specifies a coordinate for the query defined by a longitude, and latitude.</p>
+        /// <ul>
+        /// <li>
+        /// <p>The first position is the X coordinate, or longitude.</p>
+        /// </li>
+        /// <li>
+        /// <p>The second position is the Y coordinate, or latitude. </p>
+        /// </li>
+        /// </ul>
+        /// <p>For example, <code>position=xLongitude&amp;position=yLatitude</code> .</p>
         pub fn set_position(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
             self.position = input;
             self
@@ -8381,6 +9359,9 @@ pub mod search_place_index_for_position_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>An optional paramer. The maximum number of results returned per request. </p>
+        /// <p>Default value: <code>50</code>
+        /// </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -8390,7 +9371,7 @@ pub mod search_place_index_for_position_input {
             self,
         ) -> std::result::Result<
             crate::input::SearchPlaceIndexForPositionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::SearchPlaceIndexForPositionInput {
                 index_name: self.index_name,
@@ -8412,27 +9393,27 @@ impl SearchPlaceIndexForPositionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::SearchPlaceIndexForPosition,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SearchPlaceIndexForPositionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_43 = &_input.index_name;
             let input_43 =
                 input_43
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "index_name",
                         details: "cannot be empty or unset",
                     })?;
-            let index_name = smithy_http::label::fmt_string(input_43, false);
+            let index_name = aws_smithy_http::label::fmt_string(input_43, false);
             if index_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "index_name",
                     details: "cannot be empty or unset",
                 });
@@ -8449,7 +9430,7 @@ impl SearchPlaceIndexForPositionInput {
         fn update_http_builder(
             input: &crate::input::SearchPlaceIndexForPositionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8458,34 +9439,34 @@ impl SearchPlaceIndexForPositionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SearchPlaceIndexForPositionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_search_place_index_for_position(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_search_place_index_for_position(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("places.");
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("places.");
         match endpoint_prefix {
             Ok(prefix) => {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -8510,15 +9491,15 @@ impl SearchPlaceIndexForPositionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::SearchPlaceIndexForPosition::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "SearchPlaceIndexForPosition",
             "location",
         ));
@@ -8527,10 +9508,10 @@ impl SearchPlaceIndexForPositionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8563,6 +9544,7 @@ pub mod search_place_index_for_text_input {
             self.index_name = Some(input.into());
             self
         }
+        /// <p>The name of the place index resource you want to use for the search.</p>
         pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.index_name = input;
             self
@@ -8574,36 +9556,145 @@ pub mod search_place_index_for_text_input {
             self.text = Some(input.into());
             self
         }
+        /// <p>The address, name,
+        /// city, or region to be used in the search. In free-form text format. For example, <code>123 Any
+        /// Street</code>.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.text = input;
             self
         }
+        /// Appends an item to `bias_position`.
+        ///
+        /// To override the contents of this collection use [`set_bias_position`](Self::set_bias_position).
+        ///
+        /// <p>Searches for results closest to the given position. An optional parameter defined by
+        /// longitude, and latitude.</p>
+        /// <ul>
+        /// <li>
+        /// <p>The first <code>bias</code> position is the X coordinate, or longitude.</p>
+        /// </li>
+        /// <li>
+        /// <p>The second <code>bias</code> position is the Y coordinate, or latitude. </p>
+        /// </li>
+        /// </ul>
+        /// <p>For example, <code>bias=xLongitude&amp;bias=yLatitude</code>.</p>
         pub fn bias_position(mut self, input: impl Into<f64>) -> Self {
             let mut v = self.bias_position.unwrap_or_default();
             v.push(input.into());
             self.bias_position = Some(v);
             self
         }
+        /// <p>Searches for results closest to the given position. An optional parameter defined by
+        /// longitude, and latitude.</p>
+        /// <ul>
+        /// <li>
+        /// <p>The first <code>bias</code> position is the X coordinate, or longitude.</p>
+        /// </li>
+        /// <li>
+        /// <p>The second <code>bias</code> position is the Y coordinate, or latitude. </p>
+        /// </li>
+        /// </ul>
+        /// <p>For example, <code>bias=xLongitude&amp;bias=yLatitude</code>.</p>
         pub fn set_bias_position(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
             self.bias_position = input;
             self
         }
+        /// Appends an item to `filter_b_box`.
+        ///
+        /// To override the contents of this collection use [`set_filter_b_box`](Self::set_filter_b_box).
+        ///
+        /// <p>Filters the results by returning only Places within the provided bounding box. An
+        /// optional parameter.</p>
+        /// <p>The first 2 <code>bbox</code> parameters describe the lower southwest corner:</p>
+        /// <ul>
+        /// <li>
+        /// <p>The first <code>bbox</code> position is the X coordinate or longitude of the lower
+        /// southwest corner.</p>
+        /// </li>
+        /// <li>
+        /// <p>The second <code>bbox</code> position is the Y coordinate or latitude of the lower
+        /// southwest corner.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For example, <code>bbox=xLongitudeSW&amp;bbox=yLatitudeSW</code>.</p>
+        /// <p>The next <code>bbox</code> parameters describe the upper northeast corner:</p>
+        /// <ul>
+        /// <li>
+        /// <p>The third <code>bbox</code> position is the X coordinate, or longitude of the
+        /// upper northeast corner.</p>
+        /// </li>
+        /// <li>
+        /// <p>The fourth <code>bbox</code> position is the Y coordinate, or longitude of the
+        /// upper northeast corner.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For example, <code>bbox=xLongitudeNE&amp;bbox=yLatitudeNE</code>
+        /// </p>
         pub fn filter_b_box(mut self, input: impl Into<f64>) -> Self {
             let mut v = self.filter_b_box.unwrap_or_default();
             v.push(input.into());
             self.filter_b_box = Some(v);
             self
         }
+        /// <p>Filters the results by returning only Places within the provided bounding box. An
+        /// optional parameter.</p>
+        /// <p>The first 2 <code>bbox</code> parameters describe the lower southwest corner:</p>
+        /// <ul>
+        /// <li>
+        /// <p>The first <code>bbox</code> position is the X coordinate or longitude of the lower
+        /// southwest corner.</p>
+        /// </li>
+        /// <li>
+        /// <p>The second <code>bbox</code> position is the Y coordinate or latitude of the lower
+        /// southwest corner.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For example, <code>bbox=xLongitudeSW&amp;bbox=yLatitudeSW</code>.</p>
+        /// <p>The next <code>bbox</code> parameters describe the upper northeast corner:</p>
+        /// <ul>
+        /// <li>
+        /// <p>The third <code>bbox</code> position is the X coordinate, or longitude of the
+        /// upper northeast corner.</p>
+        /// </li>
+        /// <li>
+        /// <p>The fourth <code>bbox</code> position is the Y coordinate, or longitude of the
+        /// upper northeast corner.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For example, <code>bbox=xLongitudeNE&amp;bbox=yLatitudeNE</code>
+        /// </p>
         pub fn set_filter_b_box(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
             self.filter_b_box = input;
             self
         }
+        /// Appends an item to `filter_countries`.
+        ///
+        /// To override the contents of this collection use [`set_filter_countries`](Self::set_filter_countries).
+        ///
+        /// <p>Limits the search to the given a list of countries/regions. An optional
+        /// parameter.</p>
+        /// <ul>
+        /// <li>
+        /// <p>Use the <a href="https://www.iso.org/iso-3166-country-codes.html">ISO 3166</a> 3-digit
+        /// country code. For example, Australia uses three upper-case characters:
+        /// <code>AUS</code>.</p>
+        /// </li>
+        /// </ul>
         pub fn filter_countries(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.filter_countries.unwrap_or_default();
             v.push(input.into());
             self.filter_countries = Some(v);
             self
         }
+        /// <p>Limits the search to the given a list of countries/regions. An optional
+        /// parameter.</p>
+        /// <ul>
+        /// <li>
+        /// <p>Use the <a href="https://www.iso.org/iso-3166-country-codes.html">ISO 3166</a> 3-digit
+        /// country code. For example, Australia uses three upper-case characters:
+        /// <code>AUS</code>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_filter_countries(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8618,6 +9709,9 @@ pub mod search_place_index_for_text_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>An optional parameter. The maximum number of results returned per request. </p>
+        /// <p>The default: <code>50</code>
+        /// </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -8627,7 +9721,7 @@ pub mod search_place_index_for_text_input {
             self,
         ) -> std::result::Result<
             crate::input::SearchPlaceIndexForTextInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::SearchPlaceIndexForTextInput {
                 index_name: self.index_name,
@@ -8652,27 +9746,27 @@ impl SearchPlaceIndexForTextInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::SearchPlaceIndexForText,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SearchPlaceIndexForTextInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_44 = &_input.index_name;
             let input_44 =
                 input_44
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "index_name",
                         details: "cannot be empty or unset",
                     })?;
-            let index_name = smithy_http::label::fmt_string(input_44, false);
+            let index_name = aws_smithy_http::label::fmt_string(input_44, false);
             if index_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "index_name",
                     details: "cannot be empty or unset",
                 });
@@ -8689,7 +9783,7 @@ impl SearchPlaceIndexForTextInput {
         fn update_http_builder(
             input: &crate::input::SearchPlaceIndexForTextInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8698,36 +9792,38 @@ impl SearchPlaceIndexForTextInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SearchPlaceIndexForTextInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_search_place_index_for_text(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("places.");
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("places.");
         match endpoint_prefix {
             Ok(prefix) => {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -8752,15 +9848,15 @@ impl SearchPlaceIndexForTextInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::SearchPlaceIndexForText::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "SearchPlaceIndexForText",
             "location",
         ));
@@ -8769,10 +9865,10 @@ impl SearchPlaceIndexForTextInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8809,10 +9905,28 @@ pub mod tag_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the resource whose tags you want to update.</p>
+        /// <ul>
+        /// <li>
+        /// <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Tags that have been applied to the specified resource. Tags are mapped from the tag key to the tag value: <code>"TagKey" : "TagValue"</code>.</p>
+        /// <ul>
+        /// <li>
+        /// <p>Format example: <code>{"tag1" : "value1", "tag2" : "value2"} </code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -8823,6 +9937,13 @@ pub mod tag_resource_input {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>Tags that have been applied to the specified resource. Tags are mapped from the tag key to the tag value: <code>"TagKey" : "TagValue"</code>.</p>
+        /// <ul>
+        /// <li>
+        /// <p>Format example: <code>{"tag1" : "value1", "tag2" : "value2"} </code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -8835,8 +9956,10 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::TagResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::TagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::TagResourceInput {
                 resource_arn: self.resource_arn,
                 tags: self.tags,
@@ -8855,27 +9978,27 @@ impl TagResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::TagResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_45 = &_input.resource_arn;
             let input_45 =
                 input_45
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = smithy_http::label::fmt_string(input_45, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_45, false);
             if resource_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 });
@@ -8888,7 +10011,7 @@ impl TagResourceInput {
         fn update_http_builder(
             input: &crate::input::TagResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8897,33 +10020,35 @@ impl TagResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::TagResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("metadata.");
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("metadata.");
         match endpoint_prefix {
             Ok(prefix) => {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -8948,25 +10073,27 @@ impl TagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::TagResource::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "TagResource",
-                    "location",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::TagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "TagResource",
+            "location",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9001,16 +10128,29 @@ pub mod untag_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the resource from which you want to remove tags.</p>
+        /// <ul>
+        /// <li>
+        /// <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Appends an item to `tag_keys`.
+        ///
+        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
+        ///
+        /// <p>The list of tag keys to remove from the specified resource.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
+        /// <p>The list of tag keys to remove from the specified resource.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9021,8 +10161,10 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UntagResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UntagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UntagResourceInput {
                 resource_arn: self.resource_arn,
                 tag_keys: self.tag_keys,
@@ -9041,27 +10183,27 @@ impl UntagResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UntagResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_46 = &_input.resource_arn;
             let input_46 =
                 input_46
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = smithy_http::label::fmt_string(input_46, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_46, false);
             if resource_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 });
@@ -9071,10 +10213,10 @@ impl UntagResourceInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::UntagResourceInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_47) = &_input.tag_keys {
                 for inner_48 in inner_47 {
-                    query.push_kv("tagKeys", &smithy_http::query::fmt_string(&inner_48));
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_48));
                 }
             }
         }
@@ -9082,7 +10224,7 @@ impl UntagResourceInput {
         fn update_http_builder(
             input: &crate::input::UntagResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9092,32 +10234,32 @@ impl UntagResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UntagResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("metadata.");
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("metadata.");
         match endpoint_prefix {
             Ok(prefix) => {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -9142,25 +10284,27 @@ impl UntagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UntagResource::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UntagResource",
-                    "location",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UntagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UntagResource",
+            "location",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9191,6 +10335,7 @@ pub mod update_geofence_collection_input {
             self.collection_name = Some(input.into());
             self
         }
+        /// <p>The name of the geofence collection to update.</p>
         pub fn set_collection_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9205,6 +10350,9 @@ pub mod update_geofence_collection_input {
             self.pricing_plan = Some(input);
             self
         }
+        /// <p>Updates the pricing plan for the geofence collection.</p>
+        /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service
+        /// pricing</a>.</p>
         pub fn set_pricing_plan(
             mut self,
             input: std::option::Option<crate::model::PricingPlan>,
@@ -9230,6 +10378,20 @@ pub mod update_geofence_collection_input {
             self.pricing_plan_data_source = Some(input.into());
             self
         }
+        /// <p>Updates the data provider for the geofence collection. </p>
+        /// <p>A required value for the following pricing plans: <code>MobileAssetTracking</code>|
+        /// <code>MobileAssetManagement</code>
+        /// </p>
+        /// <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">data providers</a> and
+        /// <a href="https://aws.amazon.com/location/pricing/">pricing plans</a>, see the
+        /// Amazon Location Service product page.</p>
+        /// <note>
+        /// <p>This can only be updated when updating the <code>PricingPlan</code> in the same
+        /// request.</p>
+        /// <p>Amazon Location Service uses <code>PricingPlanDataSource</code> to calculate
+        /// billing for your geofence collection. Your data won't be shared with the data
+        /// provider, and will remain in your AWS account and Region unless you move it.</p>
+        /// </note>
         pub fn set_pricing_plan_data_source(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9242,6 +10404,7 @@ pub mod update_geofence_collection_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>Updates the description for the geofence collection.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -9251,7 +10414,7 @@ pub mod update_geofence_collection_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateGeofenceCollectionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateGeofenceCollectionInput {
                 collection_name: self.collection_name,
@@ -9274,27 +10437,27 @@ impl UpdateGeofenceCollectionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateGeofenceCollection,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateGeofenceCollectionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_49 = &_input.collection_name;
             let input_49 =
                 input_49
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "collection_name",
                         details: "cannot be empty or unset",
                     })?;
-            let collection_name = smithy_http::label::fmt_string(input_49, false);
+            let collection_name = aws_smithy_http::label::fmt_string(input_49, false);
             if collection_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "collection_name",
                     details: "cannot be empty or unset",
                 });
@@ -9311,7 +10474,7 @@ impl UpdateGeofenceCollectionInput {
         fn update_http_builder(
             input: &crate::input::UpdateGeofenceCollectionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9320,36 +10483,38 @@ impl UpdateGeofenceCollectionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateGeofenceCollectionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_geofence_collection(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("geofencing.");
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("geofencing.");
         match endpoint_prefix {
             Ok(prefix) => {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -9374,15 +10539,15 @@ impl UpdateGeofenceCollectionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateGeofenceCollection::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateGeofenceCollection",
             "location",
         ));
@@ -9391,10 +10556,10 @@ impl UpdateGeofenceCollectionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9424,6 +10589,7 @@ pub mod update_map_input {
             self.map_name = Some(input.into());
             self
         }
+        /// <p>The name of the map resource to update.</p>
         pub fn set_map_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.map_name = input;
             self
@@ -9434,6 +10600,8 @@ pub mod update_map_input {
             self.pricing_plan = Some(input);
             self
         }
+        /// <p>Updates the pricing plan for the map resource.</p>
+        /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
         pub fn set_pricing_plan(
             mut self,
             input: std::option::Option<crate::model::PricingPlan>,
@@ -9446,6 +10614,7 @@ pub mod update_map_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>Updates the description for the map resource.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -9453,7 +10622,7 @@ pub mod update_map_input {
         /// Consumes the builder and constructs a [`UpdateMapInput`](crate::input::UpdateMapInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UpdateMapInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::UpdateMapInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::UpdateMapInput {
                 map_name: self.map_name,
@@ -9474,27 +10643,27 @@ impl UpdateMapInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateMap,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateMapInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_50 = &_input.map_name;
             let input_50 =
                 input_50
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "map_name",
                         details: "cannot be empty or unset",
                     })?;
-            let map_name = smithy_http::label::fmt_string(input_50, false);
+            let map_name = aws_smithy_http::label::fmt_string(input_50, false);
             if map_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "map_name",
                     details: "cannot be empty or unset",
                 });
@@ -9507,7 +10676,7 @@ impl UpdateMapInput {
         fn update_http_builder(
             input: &crate::input::UpdateMapInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9516,33 +10685,35 @@ impl UpdateMapInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateMapInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_update_map(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("maps.");
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("maps.");
         match endpoint_prefix {
             Ok(prefix) => {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -9567,13 +10738,13 @@ impl UpdateMapInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
         let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UpdateMap::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
+            aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateMap::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "UpdateMap",
                     "location",
                 ));
@@ -9582,10 +10753,10 @@ impl UpdateMapInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9617,6 +10788,7 @@ pub mod update_place_index_input {
             self.index_name = Some(input.into());
             self
         }
+        /// <p>The name of the place index resource to update.</p>
         pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.index_name = input;
             self
@@ -9627,6 +10799,8 @@ pub mod update_place_index_input {
             self.pricing_plan = Some(input);
             self
         }
+        /// <p>Updates the pricing plan for the place index resource.</p>
+        /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
         pub fn set_pricing_plan(
             mut self,
             input: std::option::Option<crate::model::PricingPlan>,
@@ -9639,6 +10813,7 @@ pub mod update_place_index_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>Updates the description for the place index resource.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -9651,6 +10826,7 @@ pub mod update_place_index_input {
             self.data_source_configuration = Some(input);
             self
         }
+        /// <p>Updates the data storage option for the place index resource.</p>
         pub fn set_data_source_configuration(
             mut self,
             input: std::option::Option<crate::model::DataSourceConfiguration>,
@@ -9663,7 +10839,7 @@ pub mod update_place_index_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdatePlaceIndexInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdatePlaceIndexInput {
                 index_name: self.index_name,
@@ -9685,27 +10861,27 @@ impl UpdatePlaceIndexInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdatePlaceIndex,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdatePlaceIndexInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_51 = &_input.index_name;
             let input_51 =
                 input_51
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "index_name",
                         details: "cannot be empty or unset",
                     })?;
-            let index_name = smithy_http::label::fmt_string(input_51, false);
+            let index_name = aws_smithy_http::label::fmt_string(input_51, false);
             if index_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "index_name",
                     details: "cannot be empty or unset",
                 });
@@ -9722,7 +10898,7 @@ impl UpdatePlaceIndexInput {
         fn update_http_builder(
             input: &crate::input::UpdatePlaceIndexInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9731,36 +10907,36 @@ impl UpdatePlaceIndexInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdatePlaceIndexInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_place_index(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("places.");
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("places.");
         match endpoint_prefix {
             Ok(prefix) => {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -9785,15 +10961,15 @@ impl UpdatePlaceIndexInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdatePlaceIndex::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdatePlaceIndex",
             "location",
         ));
@@ -9802,10 +10978,10 @@ impl UpdatePlaceIndexInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9835,6 +11011,7 @@ pub mod update_route_calculator_input {
             self.calculator_name = Some(input.into());
             self
         }
+        /// <p>The name of the route calculator resource to update.</p>
         pub fn set_calculator_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9849,6 +11026,9 @@ pub mod update_route_calculator_input {
             self.pricing_plan = Some(input);
             self
         }
+        /// <p>Updates the pricing plan for the route calculator resource.</p>
+        /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location
+        /// Service pricing</a>.</p>
         pub fn set_pricing_plan(
             mut self,
             input: std::option::Option<crate::model::PricingPlan>,
@@ -9861,6 +11041,7 @@ pub mod update_route_calculator_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>Updates the description for the route calculator resource.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -9870,7 +11051,7 @@ pub mod update_route_calculator_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateRouteCalculatorInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateRouteCalculatorInput {
                 calculator_name: self.calculator_name,
@@ -9891,27 +11072,27 @@ impl UpdateRouteCalculatorInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateRouteCalculator,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateRouteCalculatorInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_52 = &_input.calculator_name;
             let input_52 =
                 input_52
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "calculator_name",
                         details: "cannot be empty or unset",
                     })?;
-            let calculator_name = smithy_http::label::fmt_string(input_52, false);
+            let calculator_name = aws_smithy_http::label::fmt_string(input_52, false);
             if calculator_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "calculator_name",
                     details: "cannot be empty or unset",
                 });
@@ -9928,7 +11109,7 @@ impl UpdateRouteCalculatorInput {
         fn update_http_builder(
             input: &crate::input::UpdateRouteCalculatorInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9937,36 +11118,38 @@ impl UpdateRouteCalculatorInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateRouteCalculatorInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_route_calculator(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("routes.");
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("routes.");
         match endpoint_prefix {
             Ok(prefix) => {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -9991,15 +11174,15 @@ impl UpdateRouteCalculatorInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateRouteCalculator::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateRouteCalculator",
             "location",
         ));
@@ -10008,10 +11191,10 @@ impl UpdateRouteCalculatorInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10043,6 +11226,7 @@ pub mod update_tracker_input {
             self.tracker_name = Some(input.into());
             self
         }
+        /// <p>The name of the tracker resource to update.</p>
         pub fn set_tracker_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.tracker_name = input;
             self
@@ -10054,6 +11238,9 @@ pub mod update_tracker_input {
             self.pricing_plan = Some(input);
             self
         }
+        /// <p>Updates the pricing plan for the tracker resource.</p>
+        /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service
+        /// pricing</a>.</p>
         pub fn set_pricing_plan(
             mut self,
             input: std::option::Option<crate::model::PricingPlan>,
@@ -10077,6 +11264,18 @@ pub mod update_tracker_input {
             self.pricing_plan_data_source = Some(input.into());
             self
         }
+        /// <p>Updates the data provider for the tracker resource. </p>
+        /// <p>A required value for the following pricing plans: <code>MobileAssetTracking</code>| <code>MobileAssetManagement</code>
+        /// </p>
+        /// <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">data providers</a> and <a href="https://aws.amazon.com/location/pricing/">pricing plans</a>, see the Amazon Location Service product
+        /// page</p>
+        /// <note>
+        /// <p>This can only be updated when updating the <code>PricingPlan</code> in the same
+        /// request.</p>
+        /// <p>Amazon Location Service uses <code>PricingPlanDataSource</code> to calculate
+        /// billing for your tracker resource. Your data won't be shared with the data provider,
+        /// and will remain in your AWS account and Region unless you move it.</p>
+        /// </note>
         pub fn set_pricing_plan_data_source(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10089,6 +11288,7 @@ pub mod update_tracker_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>Updates the description for the tracker resource.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -10116,6 +11316,25 @@ pub mod update_tracker_input {
             self.position_filtering = Some(input);
             self
         }
+        /// <p>Updates the position filtering for the tracker resource.</p>
+        /// <p>Valid values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>TimeBased</code> - Location updates are evaluated against linked geofence collections,
+        /// but not every location update is stored. If your update frequency is more often than 30 seconds,
+        /// only one update per 30 seconds is stored for each unique device ID.
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DistanceBased</code> - If the device has moved less than 30 m (98.4 ft), location updates are
+        /// ignored. Location updates within this distance are neither evaluated against linked geofence collections, nor stored.
+        /// This helps control costs by reducing the number of geofence evaluations and device positions to retrieve.
+        /// Distance-based filtering can also reduce the jitter effect when displaying device trajectory on a map.
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_position_filtering(
             mut self,
             input: std::option::Option<crate::model::PositionFiltering>,
@@ -10126,8 +11345,10 @@ pub mod update_tracker_input {
         /// Consumes the builder and constructs a [`UpdateTrackerInput`](crate::input::UpdateTrackerInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UpdateTrackerInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateTrackerInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateTrackerInput {
                 tracker_name: self.tracker_name,
                 pricing_plan: self.pricing_plan,
@@ -10149,27 +11370,27 @@ impl UpdateTrackerInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateTracker,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateTrackerInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_53 = &_input.tracker_name;
             let input_53 =
                 input_53
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "tracker_name",
                         details: "cannot be empty or unset",
                     })?;
-            let tracker_name = smithy_http::label::fmt_string(input_53, false);
+            let tracker_name = aws_smithy_http::label::fmt_string(input_53, false);
             if tracker_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "tracker_name",
                     details: "cannot be empty or unset",
                 });
@@ -10186,7 +11407,7 @@ impl UpdateTrackerInput {
         fn update_http_builder(
             input: &crate::input::UpdateTrackerInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10195,33 +11416,35 @@ impl UpdateTrackerInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateTrackerInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_update_tracker(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
-        let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("tracking.");
+        let endpoint_prefix = aws_smithy_http::endpoint::EndpointPrefix::new("tracking.");
         match endpoint_prefix {
             Ok(prefix) => {
                 request.properties_mut().insert(prefix);
             }
             Err(err) => {
-                return Err(smithy_http::operation::BuildError::SerializationError(
+                return Err(aws_smithy_http::operation::BuildError::SerializationError(
                     err.into(),
                 ))
             }
@@ -10246,25 +11469,27 @@ impl UpdateTrackerInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UpdateTracker::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UpdateTracker",
-                    "location",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateTracker::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateTracker",
+            "location",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10278,6 +11503,7 @@ impl UpdateTrackerInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTrackerConsumersInput {
@@ -10303,6 +11529,7 @@ impl std::fmt::Debug for ListTrackerConsumersInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDevicePositionsInput {
@@ -10328,6 +11555,7 @@ impl std::fmt::Debug for ListDevicePositionsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDevicePositionHistoryInput {
@@ -10350,7 +11578,7 @@ pub struct GetDevicePositionHistoryInput {
     /// <code>EndTimeExclusive</code>.</p>
     /// </li>
     /// </ul>
-    pub start_time_inclusive: std::option::Option<smithy_types::Instant>,
+    pub start_time_inclusive: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Specify the end time for the position history in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. By default, the value will be the time
     /// that the request is made.</p>
@@ -10361,7 +11589,7 @@ pub struct GetDevicePositionHistoryInput {
     /// <code>StartTimeInclusive</code>.</p>
     /// </li>
     /// </ul>
-    pub end_time_exclusive: std::option::Option<smithy_types::Instant>,
+    pub end_time_exclusive: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for GetDevicePositionHistoryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10375,6 +11603,7 @@ impl std::fmt::Debug for GetDevicePositionHistoryInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDevicePositionInput {
@@ -10392,6 +11621,7 @@ impl std::fmt::Debug for GetDevicePositionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateTrackerConsumerInput {
@@ -10417,6 +11647,7 @@ impl std::fmt::Debug for DisassociateTrackerConsumerInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchUpdateDevicePositionInput {
@@ -10434,6 +11665,7 @@ impl std::fmt::Debug for BatchUpdateDevicePositionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetDevicePositionInput {
@@ -10458,6 +11690,7 @@ impl std::fmt::Debug for BatchGetDevicePositionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDeleteDevicePositionHistoryInput {
@@ -10482,6 +11715,7 @@ impl std::fmt::Debug for BatchDeleteDevicePositionHistoryInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateTrackerConsumerInput {
@@ -10507,6 +11741,7 @@ impl std::fmt::Debug for AssociateTrackerConsumerInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTrackersInput {
@@ -10529,6 +11764,7 @@ impl std::fmt::Debug for ListTrackersInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTrackerInput {
@@ -10630,6 +11866,7 @@ impl std::fmt::Debug for CreateTrackerInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTrackerInput {
@@ -10644,6 +11881,7 @@ impl std::fmt::Debug for DeleteTrackerInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTrackerInput {
@@ -10701,6 +11939,7 @@ impl std::fmt::Debug for UpdateTrackerInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTrackerInput {
@@ -10715,6 +11954,7 @@ impl std::fmt::Debug for DescribeTrackerInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CalculateRouteInput {
@@ -10801,7 +12041,7 @@ pub struct CalculateRouteInput {
     /// </p>
     /// </li>
     /// </ul>
-    pub departure_time: std::option::Option<smithy_types::Instant>,
+    pub departure_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Sets the time of departure as the current time. Uses the current time to calculate a
     /// route. Otherwise, the best time of day to travel with the best traffic conditions is
     /// used to calculate the route.</p>
@@ -10849,6 +12089,7 @@ impl std::fmt::Debug for CalculateRouteInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRouteCalculatorsInput {
@@ -10871,6 +12112,7 @@ impl std::fmt::Debug for ListRouteCalculatorsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRouteCalculatorInput {
@@ -10959,6 +12201,7 @@ impl std::fmt::Debug for CreateRouteCalculatorInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRouteCalculatorInput {
@@ -10973,6 +12216,7 @@ impl std::fmt::Debug for DeleteRouteCalculatorInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRouteCalculatorInput {
@@ -10995,6 +12239,7 @@ impl std::fmt::Debug for UpdateRouteCalculatorInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRouteCalculatorInput {
@@ -11009,6 +12254,7 @@ impl std::fmt::Debug for DescribeRouteCalculatorInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchPlaceIndexForTextInput {
@@ -11086,6 +12332,7 @@ impl std::fmt::Debug for SearchPlaceIndexForTextInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchPlaceIndexForPositionInput {
@@ -11117,6 +12364,7 @@ impl std::fmt::Debug for SearchPlaceIndexForPositionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPlaceIndexesInput {
@@ -11139,6 +12387,7 @@ impl std::fmt::Debug for ListPlaceIndexesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePlaceIndexInput {
@@ -11229,6 +12478,7 @@ impl std::fmt::Debug for CreatePlaceIndexInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePlaceIndexInput {
@@ -11243,6 +12493,7 @@ impl std::fmt::Debug for DeletePlaceIndexInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePlaceIndexInput {
@@ -11267,6 +12518,7 @@ impl std::fmt::Debug for UpdatePlaceIndexInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePlaceIndexInput {
@@ -11281,6 +12533,7 @@ impl std::fmt::Debug for DescribePlaceIndexInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMapTileInput {
@@ -11304,6 +12557,7 @@ impl std::fmt::Debug for GetMapTileInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMapStyleDescriptorInput {
@@ -11318,6 +12572,7 @@ impl std::fmt::Debug for GetMapStyleDescriptorInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMapSpritesInput {
@@ -11358,6 +12613,7 @@ impl std::fmt::Debug for GetMapSpritesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMapGlyphsInput {
@@ -11419,6 +12675,7 @@ impl std::fmt::Debug for GetMapGlyphsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMapsInput {
@@ -11441,6 +12698,7 @@ impl std::fmt::Debug for ListMapsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMapInput {
@@ -11503,6 +12761,7 @@ impl std::fmt::Debug for CreateMapInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMapInput {
@@ -11517,6 +12776,7 @@ impl std::fmt::Debug for DeleteMapInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateMapInput {
@@ -11538,6 +12798,7 @@ impl std::fmt::Debug for UpdateMapInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMapInput {
@@ -11552,6 +12813,7 @@ impl std::fmt::Debug for DescribeMapInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutGeofenceInput {
@@ -11575,6 +12837,7 @@ impl std::fmt::Debug for PutGeofenceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGeofencesInput {
@@ -11595,6 +12858,7 @@ impl std::fmt::Debug for ListGeofencesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetGeofenceInput {
@@ -11612,6 +12876,7 @@ impl std::fmt::Debug for GetGeofenceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchPutGeofenceInput {
@@ -11629,6 +12894,7 @@ impl std::fmt::Debug for BatchPutGeofenceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchEvaluateGeofencesInput {
@@ -11649,6 +12915,7 @@ impl std::fmt::Debug for BatchEvaluateGeofencesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDeleteGeofenceInput {
@@ -11666,6 +12933,7 @@ impl std::fmt::Debug for BatchDeleteGeofenceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGeofenceCollectionsInput {
@@ -11688,6 +12956,7 @@ impl std::fmt::Debug for ListGeofenceCollectionsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGeofenceCollectionInput {
@@ -11772,6 +13041,7 @@ impl std::fmt::Debug for CreateGeofenceCollectionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteGeofenceCollectionInput {
@@ -11786,6 +13056,7 @@ impl std::fmt::Debug for DeleteGeofenceCollectionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGeofenceCollectionInput {
@@ -11824,6 +13095,7 @@ impl std::fmt::Debug for UpdateGeofenceCollectionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeGeofenceCollectionInput {
@@ -11838,6 +13110,7 @@ impl std::fmt::Debug for DescribeGeofenceCollectionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
@@ -11861,6 +13134,7 @@ impl std::fmt::Debug for UntagResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
@@ -11891,6 +13165,7 @@ impl std::fmt::Debug for TagResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {

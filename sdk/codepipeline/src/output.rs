@@ -27,6 +27,7 @@ pub mod update_pipeline_output {
             self.pipeline = Some(input);
             self
         }
+        /// <p>The structure of the updated pipeline.</p>
         pub fn set_pipeline(
             mut self,
             input: std::option::Option<crate::model::PipelineDeclaration>,
@@ -49,6 +50,7 @@ impl UpdatePipelineOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateActionTypeOutput {}
@@ -78,6 +80,7 @@ impl UpdateActionTypeOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceOutput {}
@@ -107,6 +110,7 @@ impl UntagResourceOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceOutput {}
@@ -136,6 +140,7 @@ impl TagResourceOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopPipelineExecutionOutput {
@@ -163,6 +168,7 @@ pub mod stop_pipeline_execution_output {
             self.pipeline_execution_id = Some(input.into());
             self
         }
+        /// <p>The unique system-generated ID of the pipeline execution that was stopped.</p>
         pub fn set_pipeline_execution_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -215,6 +221,8 @@ pub mod start_pipeline_execution_output {
             self.pipeline_execution_id = Some(input.into());
             self
         }
+        /// <p>The unique system-generated ID of the pipeline execution that was
+        /// started.</p>
         pub fn set_pipeline_execution_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -265,6 +273,7 @@ pub mod retry_stage_execution_output {
             self.pipeline_execution_id = Some(input.into());
             self
         }
+        /// <p>The ID of the current workflow execution in the failed stage.</p>
         pub fn set_pipeline_execution_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -287,6 +296,7 @@ impl RetryStageExecutionOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterWebhookWithThirdPartyOutput {}
@@ -316,6 +326,7 @@ impl RegisterWebhookWithThirdPartyOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutWebhookOutput {
@@ -345,6 +356,8 @@ pub mod put_webhook_output {
             self.webhook = Some(input);
             self
         }
+        /// <p>The detail returned from creating the webhook, such as the webhook name, webhook
+        /// URL, and webhook ARN.</p>
         pub fn set_webhook(
             mut self,
             input: std::option::Option<crate::model::ListWebhookItem>,
@@ -367,6 +380,7 @@ impl PutWebhookOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutThirdPartyJobSuccessResultOutput {}
@@ -396,6 +410,7 @@ impl PutThirdPartyJobSuccessResultOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutThirdPartyJobFailureResultOutput {}
@@ -425,6 +440,7 @@ impl PutThirdPartyJobFailureResultOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutJobSuccessResultOutput {}
@@ -454,6 +470,7 @@ impl PutJobSuccessResultOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutJobFailureResultOutput {}
@@ -488,7 +505,7 @@ impl PutJobFailureResultOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutApprovalResultOutput {
     /// <p>The timestamp showing when the approval or rejection was submitted.</p>
-    pub approved_at: std::option::Option<smithy_types::Instant>,
+    pub approved_at: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for PutApprovalResultOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -503,17 +520,18 @@ pub mod put_approval_result_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) approved_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) approved_at: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The timestamp showing when the approval or rejection was submitted.</p>
-        pub fn approved_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn approved_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.approved_at = Some(input);
             self
         }
+        /// <p>The timestamp showing when the approval or rejection was submitted.</p>
         pub fn set_approved_at(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.approved_at = input;
             self
@@ -567,6 +585,8 @@ pub mod put_action_revision_output {
             self.new_revision = Some(input);
             self
         }
+        /// <p>Indicates whether the artifact revision was previously used in an execution of the
+        /// specified pipeline.</p>
         pub fn set_new_revision(mut self, input: std::option::Option<bool>) -> Self {
             self.new_revision = input;
             self
@@ -576,6 +596,7 @@ pub mod put_action_revision_output {
             self.pipeline_execution_id = Some(input.into());
             self
         }
+        /// <p>The ID of the current workflow state of the pipeline.</p>
         pub fn set_pipeline_execution_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -622,12 +643,18 @@ pub mod poll_for_third_party_jobs_output {
         pub(crate) jobs: std::option::Option<std::vec::Vec<crate::model::ThirdPartyJob>>,
     }
     impl Builder {
+        /// Appends an item to `jobs`.
+        ///
+        /// To override the contents of this collection use [`set_jobs`](Self::set_jobs).
+        ///
+        /// <p>Information about the jobs to take action on.</p>
         pub fn jobs(mut self, input: impl Into<crate::model::ThirdPartyJob>) -> Self {
             let mut v = self.jobs.unwrap_or_default();
             v.push(input.into());
             self.jobs = Some(v);
             self
         }
+        /// <p>Information about the jobs to take action on.</p>
         pub fn set_jobs(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ThirdPartyJob>>,
@@ -671,12 +698,18 @@ pub mod poll_for_jobs_output {
         pub(crate) jobs: std::option::Option<std::vec::Vec<crate::model::Job>>,
     }
     impl Builder {
+        /// Appends an item to `jobs`.
+        ///
+        /// To override the contents of this collection use [`set_jobs`](Self::set_jobs).
+        ///
+        /// <p>Information about the jobs to take action on.</p>
         pub fn jobs(mut self, input: impl Into<crate::model::Job>) -> Self {
             let mut v = self.jobs.unwrap_or_default();
             v.push(input.into());
             self.jobs = Some(v);
             self
         }
+        /// <p>Information about the jobs to take action on.</p>
         pub fn set_jobs(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Job>>,
@@ -697,6 +730,7 @@ impl PollForJobsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListWebhooksOutput {
@@ -726,12 +760,20 @@ pub mod list_webhooks_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `webhooks`.
+        ///
+        /// To override the contents of this collection use [`set_webhooks`](Self::set_webhooks).
+        ///
+        /// <p>The JSON detail returned for each webhook in the list output for the ListWebhooks
+        /// call.</p>
         pub fn webhooks(mut self, input: impl Into<crate::model::ListWebhookItem>) -> Self {
             let mut v = self.webhooks.unwrap_or_default();
             v.push(input.into());
             self.webhooks = Some(v);
             self
         }
+        /// <p>The JSON detail returned for each webhook in the list output for the ListWebhooks
+        /// call.</p>
         pub fn set_webhooks(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ListWebhookItem>>,
@@ -746,6 +788,9 @@ pub mod list_webhooks_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the amount of returned information is significantly large, an identifier is also
+        /// returned and can be used in a subsequent ListWebhooks call to return the next set of
+        /// webhooks in the list. </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -766,6 +811,7 @@ impl ListWebhooksOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
@@ -795,12 +841,18 @@ pub mod list_tags_for_resource_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags for the resource.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The tags for the resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -816,6 +868,10 @@ pub mod list_tags_for_resource_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the amount of returned information is significantly large, an identifier is also
+        /// returned and can be used in a subsequent API call to return the next page of the list.
+        /// The ListTagsforResource call lists all available tags in one call and does not use
+        /// pagination.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -865,12 +921,18 @@ pub mod list_pipelines_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `pipelines`.
+        ///
+        /// To override the contents of this collection use [`set_pipelines`](Self::set_pipelines).
+        ///
+        /// <p>The list of pipelines.</p>
         pub fn pipelines(mut self, input: impl Into<crate::model::PipelineSummary>) -> Self {
             let mut v = self.pipelines.unwrap_or_default();
             v.push(input.into());
             self.pipelines = Some(v);
             self
         }
+        /// <p>The list of pipelines.</p>
         pub fn set_pipelines(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PipelineSummary>>,
@@ -885,6 +947,9 @@ pub mod list_pipelines_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the amount of returned information is significantly large, an identifier is also
+        /// returned. It can be used in a subsequent list pipelines call to return the next set of
+        /// pipelines in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -939,6 +1004,11 @@ pub mod list_pipeline_executions_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `pipeline_execution_summaries`.
+        ///
+        /// To override the contents of this collection use [`set_pipeline_execution_summaries`](Self::set_pipeline_execution_summaries).
+        ///
+        /// <p>A list of executions in the history of a pipeline.</p>
         pub fn pipeline_execution_summaries(
             mut self,
             input: impl Into<crate::model::PipelineExecutionSummary>,
@@ -948,6 +1018,7 @@ pub mod list_pipeline_executions_output {
             self.pipeline_execution_summaries = Some(v);
             self
         }
+        /// <p>A list of executions in the history of a pipeline.</p>
         pub fn set_pipeline_execution_summaries(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PipelineExecutionSummary>>,
@@ -962,6 +1033,9 @@ pub mod list_pipeline_executions_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A token that can be used in the next <code>ListPipelineExecutions</code> call. To
+        /// view all items in the list, continue to call this operation with each subsequent token
+        /// until no more nextToken values are returned.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1011,12 +1085,18 @@ pub mod list_action_types_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `action_types`.
+        ///
+        /// To override the contents of this collection use [`set_action_types`](Self::set_action_types).
+        ///
+        /// <p>Provides details of the action types.</p>
         pub fn action_types(mut self, input: impl Into<crate::model::ActionType>) -> Self {
             let mut v = self.action_types.unwrap_or_default();
             v.push(input.into());
             self.action_types = Some(v);
             self
         }
+        /// <p>Provides details of the action types.</p>
         pub fn set_action_types(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ActionType>>,
@@ -1031,6 +1111,9 @@ pub mod list_action_types_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the amount of returned information is significantly large, an identifier is also
+        /// returned. It can be used in a subsequent list action types call to return the next set
+        /// of action types in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1051,6 +1134,7 @@ impl ListActionTypesOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListActionExecutionsOutput {
@@ -1081,6 +1165,11 @@ pub mod list_action_executions_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `action_execution_details`.
+        ///
+        /// To override the contents of this collection use [`set_action_execution_details`](Self::set_action_execution_details).
+        ///
+        /// <p>The details for a list of recent executions, such as action execution ID.</p>
         pub fn action_execution_details(
             mut self,
             input: impl Into<crate::model::ActionExecutionDetail>,
@@ -1090,6 +1179,7 @@ pub mod list_action_executions_output {
             self.action_execution_details = Some(v);
             self
         }
+        /// <p>The details for a list of recent executions, such as action execution ID.</p>
         pub fn set_action_execution_details(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ActionExecutionDetail>>,
@@ -1104,6 +1194,9 @@ pub mod list_action_executions_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the amount of returned information is significantly large, an identifier is also
+        /// returned and can be used in a subsequent <code>ListActionExecutions</code> call to
+        /// return the next set of action executions in the list.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1154,6 +1247,8 @@ pub mod get_third_party_job_details_output {
             self.job_details = Some(input);
             self
         }
+        /// <p>The details of the job, including any protected values defined for the
+        /// job.</p>
         pub fn set_job_details(
             mut self,
             input: std::option::Option<crate::model::ThirdPartyJobDetails>,
@@ -1192,9 +1287,9 @@ pub struct GetPipelineStateOutput {
     /// recent run details, whether the stage is disabled, and other data.</p>
     pub stage_states: std::option::Option<std::vec::Vec<crate::model::StageState>>,
     /// <p>The date and time the pipeline was created, in timestamp format.</p>
-    pub created: std::option::Option<smithy_types::Instant>,
+    pub created: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time the pipeline was last updated, in timestamp format.</p>
-    pub updated: std::option::Option<smithy_types::Instant>,
+    pub updated: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for GetPipelineStateOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1216,8 +1311,8 @@ pub mod get_pipeline_state_output {
         pub(crate) pipeline_name: std::option::Option<std::string::String>,
         pub(crate) pipeline_version: std::option::Option<i32>,
         pub(crate) stage_states: std::option::Option<std::vec::Vec<crate::model::StageState>>,
-        pub(crate) created: std::option::Option<smithy_types::Instant>,
-        pub(crate) updated: std::option::Option<smithy_types::Instant>,
+        pub(crate) created: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) updated: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The name of the pipeline for which you want to get the state.</p>
@@ -1225,6 +1320,7 @@ pub mod get_pipeline_state_output {
             self.pipeline_name = Some(input.into());
             self
         }
+        /// <p>The name of the pipeline for which you want to get the state.</p>
         pub fn set_pipeline_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1241,16 +1337,29 @@ pub mod get_pipeline_state_output {
             self.pipeline_version = Some(input);
             self
         }
+        /// <p>The version number of the pipeline.</p>
+        /// <note>
+        /// <p>A newly created pipeline is always assigned a version number of
+        /// <code>1</code>.</p>
+        /// </note>
         pub fn set_pipeline_version(mut self, input: std::option::Option<i32>) -> Self {
             self.pipeline_version = input;
             self
         }
+        /// Appends an item to `stage_states`.
+        ///
+        /// To override the contents of this collection use [`set_stage_states`](Self::set_stage_states).
+        ///
+        /// <p>A list of the pipeline stage output information, including stage name, state, most
+        /// recent run details, whether the stage is disabled, and other data.</p>
         pub fn stage_states(mut self, input: impl Into<crate::model::StageState>) -> Self {
             let mut v = self.stage_states.unwrap_or_default();
             v.push(input.into());
             self.stage_states = Some(v);
             self
         }
+        /// <p>A list of the pipeline stage output information, including stage name, state, most
+        /// recent run details, whether the stage is disabled, and other data.</p>
         pub fn set_stage_states(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::StageState>>,
@@ -1259,20 +1368,28 @@ pub mod get_pipeline_state_output {
             self
         }
         /// <p>The date and time the pipeline was created, in timestamp format.</p>
-        pub fn created(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created = Some(input);
             self
         }
-        pub fn set_created(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date and time the pipeline was created, in timestamp format.</p>
+        pub fn set_created(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created = input;
             self
         }
         /// <p>The date and time the pipeline was last updated, in timestamp format.</p>
-        pub fn updated(mut self, input: smithy_types::Instant) -> Self {
+        pub fn updated(mut self, input: aws_smithy_types::Instant) -> Self {
             self.updated = Some(input);
             self
         }
-        pub fn set_updated(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date and time the pipeline was last updated, in timestamp format.</p>
+        pub fn set_updated(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.updated = input;
             self
         }
@@ -1323,6 +1440,7 @@ pub mod get_pipeline_execution_output {
             self.pipeline_execution = Some(input);
             self
         }
+        /// <p>Represents information about the execution of a pipeline.</p>
         pub fn set_pipeline_execution(
             mut self,
             input: std::option::Option<crate::model::PipelineExecution>,
@@ -1380,6 +1498,8 @@ pub mod get_pipeline_output {
             self.pipeline = Some(input);
             self
         }
+        /// <p>Represents the structure of actions and stages to be performed in the pipeline.
+        /// </p>
         pub fn set_pipeline(
             mut self,
             input: std::option::Option<crate::model::PipelineDeclaration>,
@@ -1393,6 +1513,8 @@ pub mod get_pipeline_output {
             self.metadata = Some(input);
             self
         }
+        /// <p>Represents the pipeline metadata information returned as part of the output of a
+        /// <code>GetPipeline</code> action.</p>
         pub fn set_metadata(
             mut self,
             input: std::option::Option<crate::model::PipelineMetadata>,
@@ -1452,6 +1574,11 @@ pub mod get_job_details_output {
             self.job_details = Some(input);
             self
         }
+        /// <p>The details of the job.</p>
+        /// <note>
+        /// <p>If AWSSessionCredentials is used, a long-running job can call
+        /// <code>GetJobDetails</code> again to obtain new credentials.</p>
+        /// </note>
         pub fn set_job_details(
             mut self,
             input: std::option::Option<crate::model::JobDetails>,
@@ -1474,6 +1601,7 @@ impl GetJobDetailsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetActionTypeOutput {
@@ -1503,6 +1631,8 @@ pub mod get_action_type_output {
             self.action_type = Some(input);
             self
         }
+        /// <p>The action type information for the requested action type, such as the action type
+        /// ID.</p>
         pub fn set_action_type(
             mut self,
             input: std::option::Option<crate::model::ActionTypeDeclaration>,
@@ -1525,6 +1655,7 @@ impl GetActionTypeOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableStageTransitionOutput {}
@@ -1554,6 +1685,7 @@ impl EnableStageTransitionOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableStageTransitionOutput {}
@@ -1583,6 +1715,7 @@ impl DisableStageTransitionOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeregisterWebhookWithThirdPartyOutput {}
@@ -1612,6 +1745,7 @@ impl DeregisterWebhookWithThirdPartyOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteWebhookOutput {}
@@ -1641,6 +1775,7 @@ impl DeleteWebhookOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePipelineOutput {}
@@ -1670,6 +1805,7 @@ impl DeletePipelineOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCustomActionTypeOutput {}
@@ -1733,6 +1869,8 @@ pub mod create_pipeline_output {
             self.pipeline = Some(input);
             self
         }
+        /// <p>Represents the structure of actions and stages to be performed in the pipeline.
+        /// </p>
         pub fn set_pipeline(
             mut self,
             input: std::option::Option<crate::model::PipelineDeclaration>,
@@ -1740,12 +1878,18 @@ pub mod create_pipeline_output {
             self.pipeline = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Specifies the tags applied to the pipeline.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>Specifies the tags applied to the pipeline.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1801,6 +1945,7 @@ pub mod create_custom_action_type_output {
             self.action_type = Some(input);
             self
         }
+        /// <p>Returns information about the details of an action type.</p>
         pub fn set_action_type(
             mut self,
             input: std::option::Option<crate::model::ActionType>,
@@ -1808,12 +1953,18 @@ pub mod create_custom_action_type_output {
             self.action_type = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Specifies the tags applied to the custom action.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>Specifies the tags applied to the custom action.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1865,6 +2016,7 @@ pub mod acknowledge_third_party_job_output {
             self.status = Some(input);
             self
         }
+        /// <p>The status information for the third party job, if any.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::JobStatus>) -> Self {
             self.status = input;
             self
@@ -1912,6 +2064,7 @@ pub mod acknowledge_job_output {
             self.status = Some(input);
             self
         }
+        /// <p>Whether the job worker has received the specified job.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::JobStatus>) -> Self {
             self.status = input;
             self

@@ -50,6 +50,7 @@ pub mod site {
             self.site_id = Some(input.into());
             self
         }
+        /// <p>The ID of the site.</p>
         pub fn set_site_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.site_id = input;
             self
@@ -59,6 +60,7 @@ pub mod site {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The ID of the AWS account.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -68,6 +70,7 @@ pub mod site {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the site.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -77,10 +80,16 @@ pub mod site {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the site.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The site tags.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -91,6 +100,7 @@ pub mod site {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The site tags.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -105,6 +115,7 @@ pub mod site {
             self.site_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the site.</p>
         pub fn set_site_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.site_arn = input;
             self
@@ -204,6 +215,9 @@ pub mod outpost {
             self.outpost_id = Some(input.into());
             self
         }
+        /// <p>
+        /// The ID of the Outpost.
+        /// </p>
         pub fn set_outpost_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.outpost_id = input;
             self
@@ -213,6 +227,7 @@ pub mod outpost {
             self.owner_id = Some(input.into());
             self
         }
+        /// <p>The AWS account ID of the Outpost owner.</p>
         pub fn set_owner_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.owner_id = input;
             self
@@ -222,6 +237,7 @@ pub mod outpost {
             self.outpost_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
         pub fn set_outpost_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.outpost_arn = input;
             self
@@ -231,6 +247,7 @@ pub mod outpost {
             self.site_id = Some(input.into());
             self
         }
+        /// <p>The ID of the site.</p>
         pub fn set_site_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.site_id = input;
             self
@@ -240,6 +257,7 @@ pub mod outpost {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the Outpost.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -249,6 +267,7 @@ pub mod outpost {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the Outpost.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -258,6 +277,7 @@ pub mod outpost {
             self.life_cycle_status = Some(input.into());
             self
         }
+        /// <p>The life cycle status.</p>
         pub fn set_life_cycle_status(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -270,6 +290,7 @@ pub mod outpost {
             self.availability_zone = Some(input.into());
             self
         }
+        /// <p>The Availability Zone.</p>
         pub fn set_availability_zone(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -282,6 +303,7 @@ pub mod outpost {
             self.availability_zone_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Availability Zone.</p>
         pub fn set_availability_zone_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -289,6 +311,11 @@ pub mod outpost {
             self.availability_zone_id = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The Outpost tags.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -299,6 +326,7 @@ pub mod outpost {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The Outpost tags.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -313,6 +341,7 @@ pub mod outpost {
             self.site_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the site.</p>
         pub fn set_site_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.site_arn = input;
             self
@@ -370,6 +399,7 @@ pub mod instance_type_item {
             self.instance_type = Some(input.into());
             self
         }
+        /// <p>The instance type.</p>
         pub fn set_instance_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -392,6 +422,7 @@ impl InstanceTypeItem {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -403,6 +434,7 @@ impl InstanceTypeItem {
     std::hash::Hash,
 )]
 pub enum ResourceType {
+    #[allow(missing_docs)] // documentation missing in model
     Outpost,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -423,12 +455,14 @@ impl std::str::FromStr for ResourceType {
     }
 }
 impl ResourceType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ResourceType::Outpost => "OUTPOST",
             ResourceType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["OUTPOST"]
     }
@@ -456,9 +490,9 @@ pub struct Order {
     /// <p>The payment option for the order.</p>
     pub payment_option: std::option::Option<crate::model::PaymentOption>,
     /// <p>The submission date for the order.</p>
-    pub order_submission_date: std::option::Option<smithy_types::Instant>,
+    pub order_submission_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The fulfillment date of the order.</p>
-    pub order_fulfilled_date: std::option::Option<smithy_types::Instant>,
+    pub order_fulfilled_date: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for Order {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -484,8 +518,8 @@ pub mod order {
         pub(crate) status: std::option::Option<crate::model::OrderStatus>,
         pub(crate) line_items: std::option::Option<std::vec::Vec<crate::model::LineItem>>,
         pub(crate) payment_option: std::option::Option<crate::model::PaymentOption>,
-        pub(crate) order_submission_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) order_fulfilled_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) order_submission_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) order_fulfilled_date: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>
@@ -495,6 +529,9 @@ pub mod order {
             self.outpost_id = Some(input.into());
             self
         }
+        /// <p>
+        /// The ID of the Outpost.
+        /// </p>
         pub fn set_outpost_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.outpost_id = input;
             self
@@ -504,6 +541,7 @@ pub mod order {
             self.order_id = Some(input.into());
             self
         }
+        /// <p>The ID of the order.</p>
         pub fn set_order_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.order_id = input;
             self
@@ -513,16 +551,23 @@ pub mod order {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the order</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::OrderStatus>) -> Self {
             self.status = input;
             self
         }
+        /// Appends an item to `line_items`.
+        ///
+        /// To override the contents of this collection use [`set_line_items`](Self::set_line_items).
+        ///
+        /// <p>The line items for the order</p>
         pub fn line_items(mut self, input: impl Into<crate::model::LineItem>) -> Self {
             let mut v = self.line_items.unwrap_or_default();
             v.push(input.into());
             self.line_items = Some(v);
             self
         }
+        /// <p>The line items for the order</p>
         pub fn set_line_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LineItem>>,
@@ -535,6 +580,7 @@ pub mod order {
             self.payment_option = Some(input);
             self
         }
+        /// <p>The payment option for the order.</p>
         pub fn set_payment_option(
             mut self,
             input: std::option::Option<crate::model::PaymentOption>,
@@ -543,25 +589,27 @@ pub mod order {
             self
         }
         /// <p>The submission date for the order.</p>
-        pub fn order_submission_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn order_submission_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.order_submission_date = Some(input);
             self
         }
+        /// <p>The submission date for the order.</p>
         pub fn set_order_submission_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.order_submission_date = input;
             self
         }
         /// <p>The fulfillment date of the order.</p>
-        pub fn order_fulfilled_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn order_fulfilled_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.order_fulfilled_date = Some(input);
             self
         }
+        /// <p>The fulfillment date of the order.</p>
         pub fn set_order_fulfilled_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.order_fulfilled_date = input;
             self
@@ -587,6 +635,7 @@ impl Order {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -598,8 +647,11 @@ impl Order {
     std::hash::Hash,
 )]
 pub enum PaymentOption {
+    #[allow(missing_docs)] // documentation missing in model
     AllUpfront,
+    #[allow(missing_docs)] // documentation missing in model
     NoUpfront,
+    #[allow(missing_docs)] // documentation missing in model
     PartialUpfront,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -622,6 +674,7 @@ impl std::str::FromStr for PaymentOption {
     }
 }
 impl PaymentOption {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PaymentOption::AllUpfront => "ALL_UPFRONT",
@@ -630,6 +683,7 @@ impl PaymentOption {
             PaymentOption::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ALL_UPFRONT", "NO_UPFRONT", "PARTIAL_UPFRONT"]
     }
@@ -684,6 +738,9 @@ pub mod line_item {
             self.catalog_item_id = Some(input.into());
             self
         }
+        /// <p>
+        /// The ID of the catalog item.
+        /// </p>
         pub fn set_catalog_item_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -696,6 +753,7 @@ pub mod line_item {
             self.line_item_id = Some(input.into());
             self
         }
+        /// <p>The ID of the line item.</p>
         pub fn set_line_item_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.line_item_id = input;
             self
@@ -705,6 +763,7 @@ pub mod line_item {
             self.quantity = Some(input);
             self
         }
+        /// <p>The quantity of the line item.</p>
         pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
             self.quantity = input;
             self
@@ -714,6 +773,7 @@ pub mod line_item {
             self.status = Some(input.into());
             self
         }
+        /// <p>The status of the line item.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -736,6 +796,7 @@ impl LineItem {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -747,11 +808,17 @@ impl LineItem {
     std::hash::Hash,
 )]
 pub enum OrderStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Cancelled,
+    #[allow(missing_docs)] // documentation missing in model
     Fulfilled,
+    #[allow(missing_docs)] // documentation missing in model
     Installing,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
+    #[allow(missing_docs)] // documentation missing in model
     Processing,
+    #[allow(missing_docs)] // documentation missing in model
     Received,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -777,6 +844,7 @@ impl std::str::FromStr for OrderStatus {
     }
 }
 impl OrderStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             OrderStatus::Cancelled => "CANCELLED",
@@ -788,6 +856,7 @@ impl OrderStatus {
             OrderStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CANCELLED",
@@ -805,6 +874,7 @@ impl AsRef<str> for OrderStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -816,6 +886,7 @@ impl AsRef<str> for OrderStatus {
     std::hash::Hash,
 )]
 pub enum PaymentTerm {
+    #[allow(missing_docs)] // documentation missing in model
     ThreeYears,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -836,12 +907,14 @@ impl std::str::FromStr for PaymentTerm {
     }
 }
 impl PaymentTerm {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PaymentTerm::ThreeYears => "THREE_YEARS",
             PaymentTerm::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["THREE_YEARS"]
     }
@@ -884,6 +957,7 @@ pub mod line_item_request {
             self.catalog_item_id = Some(input.into());
             self
         }
+        /// <p>The ID of the catalog item.</p>
         pub fn set_catalog_item_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -896,6 +970,7 @@ pub mod line_item_request {
             self.quantity = Some(input);
             self
         }
+        /// <p>The quantity of a line item request.</p>
         pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
             self.quantity = input;
             self

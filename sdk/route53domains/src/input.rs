@@ -18,6 +18,10 @@ pub mod accept_domain_transfer_from_another_aws_account_input {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The name of the domain that was specified when another AWS account submitted a
+        /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a>
+        /// request.
+        /// </p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -30,6 +34,10 @@ pub mod accept_domain_transfer_from_another_aws_account_input {
             self.password = Some(input.into());
             self
         }
+        /// <p>The password that was returned by the
+        /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a>
+        /// request.
+        /// </p>
         pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.password = input;
             self
@@ -39,7 +47,7 @@ pub mod accept_domain_transfer_from_another_aws_account_input {
             self,
         ) -> std::result::Result<
             crate::input::AcceptDomainTransferFromAnotherAwsAccountInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(
                 crate::input::AcceptDomainTransferFromAnotherAwsAccountInput {
@@ -63,16 +71,16 @@ impl AcceptDomainTransferFromAnotherAwsAccountInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AcceptDomainTransferFromAnotherAwsAccount,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AcceptDomainTransferFromAnotherAwsAccountInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -80,7 +88,7 @@ impl AcceptDomainTransferFromAnotherAwsAccountInput {
         fn update_http_builder(
             input: &crate::input::AcceptDomainTransferFromAnotherAwsAccountInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -89,30 +97,30 @@ impl AcceptDomainTransferFromAnotherAwsAccountInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AcceptDomainTransferFromAnotherAwsAccountInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Route53Domains_v20140515.AcceptDomainTransferFromAnotherAwsAccount",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_accept_domain_transfer_from_another_aws_account(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_accept_domain_transfer_from_another_aws_account(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -135,15 +143,15 @@ impl AcceptDomainTransferFromAnotherAwsAccountInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::AcceptDomainTransferFromAnotherAwsAccount::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "AcceptDomainTransferFromAnotherAwsAccount",
             "route53domains",
         ));
@@ -152,10 +160,10 @@ impl AcceptDomainTransferFromAnotherAwsAccountInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -184,6 +192,7 @@ pub mod cancel_domain_transfer_to_another_aws_account_input {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The name of the domain for which you want to cancel the transfer to another AWS account.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -193,7 +202,7 @@ pub mod cancel_domain_transfer_to_another_aws_account_input {
             self,
         ) -> std::result::Result<
             crate::input::CancelDomainTransferToAnotherAwsAccountInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CancelDomainTransferToAnotherAwsAccountInput {
                 domain_name: self.domain_name,
@@ -214,16 +223,16 @@ impl CancelDomainTransferToAnotherAwsAccountInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CancelDomainTransferToAnotherAwsAccount,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CancelDomainTransferToAnotherAwsAccountInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -231,7 +240,7 @@ impl CancelDomainTransferToAnotherAwsAccountInput {
         fn update_http_builder(
             input: &crate::input::CancelDomainTransferToAnotherAwsAccountInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -240,30 +249,30 @@ impl CancelDomainTransferToAnotherAwsAccountInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CancelDomainTransferToAnotherAwsAccountInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Route53Domains_v20140515.CancelDomainTransferToAnotherAwsAccount",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_cancel_domain_transfer_to_another_aws_account(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_cancel_domain_transfer_to_another_aws_account(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -286,15 +295,15 @@ impl CancelDomainTransferToAnotherAwsAccountInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CancelDomainTransferToAnotherAwsAccount::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CancelDomainTransferToAnotherAwsAccount",
             "route53domains",
         ));
@@ -303,10 +312,10 @@ impl CancelDomainTransferToAnotherAwsAccountInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -359,6 +368,31 @@ pub mod check_domain_availability_input {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The name of the domain that you want to get availability for. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports.
+        /// For a list of supported TLDs, see
+        /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the
+        /// <i>Amazon Route 53 Developer Guide</i>.</p>
+        /// <p>The domain name can contain only the following characters:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Letters a through z. Domain names are not case sensitive.</p>
+        /// </li>
+        /// <li>
+        /// <p>Numbers 0 through 9.</p>
+        /// </li>
+        /// <li>
+        /// <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p>
+        /// </li>
+        /// <li>
+        /// <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p>
+        /// </li>
+        /// </ul>
+        /// <p>Internationalized domain names are not supported for some top-level domains. To determine whether the TLD that you want to use supports
+        /// internationalized domain names, see
+        /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a>.
+        /// For more information, see
+        /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html#domain-name-format-idns">Formatting Internationalized Domain Names</a>.
+        /// </p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -368,6 +402,7 @@ pub mod check_domain_availability_input {
             self.idn_lang_code = Some(input.into());
             self
         }
+        /// <p>Reserved for future use.</p>
         pub fn set_idn_lang_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -380,7 +415,7 @@ pub mod check_domain_availability_input {
             self,
         ) -> std::result::Result<
             crate::input::CheckDomainAvailabilityInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CheckDomainAvailabilityInput {
                 domain_name: self.domain_name,
@@ -401,16 +436,16 @@ impl CheckDomainAvailabilityInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CheckDomainAvailability,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CheckDomainAvailabilityInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -418,7 +453,7 @@ impl CheckDomainAvailabilityInput {
         fn update_http_builder(
             input: &crate::input::CheckDomainAvailabilityInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -427,32 +462,34 @@ impl CheckDomainAvailabilityInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CheckDomainAvailabilityInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Route53Domains_v20140515.CheckDomainAvailability",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_check_domain_availability(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -475,15 +512,15 @@ impl CheckDomainAvailabilityInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CheckDomainAvailability::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CheckDomainAvailability",
             "route53domains",
         ));
@@ -492,10 +529,10 @@ impl CheckDomainAvailabilityInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -542,6 +579,25 @@ pub mod check_domain_transferability_input {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The name of the domain that you want to transfer to Route 53. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports.
+        /// For a list of supported TLDs, see
+        /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the
+        /// <i>Amazon Route 53 Developer Guide</i>.</p>
+        /// <p>The domain name can contain only the following characters:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Letters a through z. Domain names are not case sensitive.</p>
+        /// </li>
+        /// <li>
+        /// <p>Numbers 0 through 9.</p>
+        /// </li>
+        /// <li>
+        /// <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p>
+        /// </li>
+        /// <li>
+        /// <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -552,6 +608,8 @@ pub mod check_domain_transferability_input {
             self.auth_code = Some(input.into());
             self
         }
+        /// <p>If the registrar for the top-level domain (TLD) requires an authorization code to transfer the domain,
+        /// the code that you got from the current registrar for the domain.</p>
         pub fn set_auth_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.auth_code = input;
             self
@@ -561,7 +619,7 @@ pub mod check_domain_transferability_input {
             self,
         ) -> std::result::Result<
             crate::input::CheckDomainTransferabilityInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CheckDomainTransferabilityInput {
                 domain_name: self.domain_name,
@@ -582,16 +640,16 @@ impl CheckDomainTransferabilityInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CheckDomainTransferability,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CheckDomainTransferabilityInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -599,7 +657,7 @@ impl CheckDomainTransferabilityInput {
         fn update_http_builder(
             input: &crate::input::CheckDomainTransferabilityInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -608,32 +666,34 @@ impl CheckDomainTransferabilityInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CheckDomainTransferabilityInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Route53Domains_v20140515.CheckDomainTransferability",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_check_domain_transferability(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -656,15 +716,15 @@ impl CheckDomainTransferabilityInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CheckDomainTransferability::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CheckDomainTransferability",
             "route53domains",
         ));
@@ -673,10 +733,10 @@ impl CheckDomainTransferabilityInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -705,16 +765,23 @@ pub mod delete_tags_for_domain_input {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The domain for which you want to delete one or more tags.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
         }
+        /// Appends an item to `tags_to_delete`.
+        ///
+        /// To override the contents of this collection use [`set_tags_to_delete`](Self::set_tags_to_delete).
+        ///
+        /// <p>A list of tag keys to delete.</p>
         pub fn tags_to_delete(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tags_to_delete.unwrap_or_default();
             v.push(input.into());
             self.tags_to_delete = Some(v);
             self
         }
+        /// <p>A list of tag keys to delete.</p>
         pub fn set_tags_to_delete(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -727,7 +794,7 @@ pub mod delete_tags_for_domain_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteTagsForDomainInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteTagsForDomainInput {
                 domain_name: self.domain_name,
@@ -747,16 +814,16 @@ impl DeleteTagsForDomainInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteTagsForDomain,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteTagsForDomainInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -764,7 +831,7 @@ impl DeleteTagsForDomainInput {
         fn update_http_builder(
             input: &crate::input::DeleteTagsForDomainInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -773,32 +840,32 @@ impl DeleteTagsForDomainInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteTagsForDomainInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Route53Domains_v20140515.DeleteTagsForDomain",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_tags_for_domain(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -821,15 +888,15 @@ impl DeleteTagsForDomainInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteTagsForDomain::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteTagsForDomain",
             "route53domains",
         ));
@@ -838,10 +905,10 @@ impl DeleteTagsForDomainInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -869,6 +936,7 @@ pub mod disable_domain_auto_renew_input {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The name of the domain that you want to disable automatic renewal for.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -878,7 +946,7 @@ pub mod disable_domain_auto_renew_input {
             self,
         ) -> std::result::Result<
             crate::input::DisableDomainAutoRenewInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DisableDomainAutoRenewInput {
                 domain_name: self.domain_name,
@@ -897,16 +965,16 @@ impl DisableDomainAutoRenewInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DisableDomainAutoRenew,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DisableDomainAutoRenewInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -914,7 +982,7 @@ impl DisableDomainAutoRenewInput {
         fn update_http_builder(
             input: &crate::input::DisableDomainAutoRenewInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -923,32 +991,34 @@ impl DisableDomainAutoRenewInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DisableDomainAutoRenewInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Route53Domains_v20140515.DisableDomainAutoRenew",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_disable_domain_auto_renew(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -971,15 +1041,15 @@ impl DisableDomainAutoRenewInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DisableDomainAutoRenew::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DisableDomainAutoRenew",
             "route53domains",
         ));
@@ -988,10 +1058,10 @@ impl DisableDomainAutoRenewInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1019,6 +1089,7 @@ pub mod disable_domain_transfer_lock_input {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The name of the domain that you want to remove the transfer lock for.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -1028,7 +1099,7 @@ pub mod disable_domain_transfer_lock_input {
             self,
         ) -> std::result::Result<
             crate::input::DisableDomainTransferLockInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DisableDomainTransferLockInput {
                 domain_name: self.domain_name,
@@ -1048,16 +1119,16 @@ impl DisableDomainTransferLockInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DisableDomainTransferLock,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DisableDomainTransferLockInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1065,7 +1136,7 @@ impl DisableDomainTransferLockInput {
         fn update_http_builder(
             input: &crate::input::DisableDomainTransferLockInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1074,32 +1145,34 @@ impl DisableDomainTransferLockInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DisableDomainTransferLockInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Route53Domains_v20140515.DisableDomainTransferLock",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_disable_domain_transfer_lock(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1122,15 +1195,15 @@ impl DisableDomainTransferLockInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DisableDomainTransferLock::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DisableDomainTransferLock",
             "route53domains",
         ));
@@ -1139,10 +1212,10 @@ impl DisableDomainTransferLockInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1170,6 +1243,7 @@ pub mod enable_domain_auto_renew_input {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The name of the domain that you want to enable automatic renewal for.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -1179,7 +1253,7 @@ pub mod enable_domain_auto_renew_input {
             self,
         ) -> std::result::Result<
             crate::input::EnableDomainAutoRenewInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::EnableDomainAutoRenewInput {
                 domain_name: self.domain_name,
@@ -1198,16 +1272,16 @@ impl EnableDomainAutoRenewInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::EnableDomainAutoRenew,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::EnableDomainAutoRenewInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1215,7 +1289,7 @@ impl EnableDomainAutoRenewInput {
         fn update_http_builder(
             input: &crate::input::EnableDomainAutoRenewInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1224,32 +1298,34 @@ impl EnableDomainAutoRenewInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::EnableDomainAutoRenewInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Route53Domains_v20140515.EnableDomainAutoRenew",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_enable_domain_auto_renew(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1272,15 +1348,15 @@ impl EnableDomainAutoRenewInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::EnableDomainAutoRenew::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "EnableDomainAutoRenew",
             "route53domains",
         ));
@@ -1289,10 +1365,10 @@ impl EnableDomainAutoRenewInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1320,6 +1396,7 @@ pub mod enable_domain_transfer_lock_input {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The name of the domain that you want to set the transfer lock for.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -1329,7 +1406,7 @@ pub mod enable_domain_transfer_lock_input {
             self,
         ) -> std::result::Result<
             crate::input::EnableDomainTransferLockInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::EnableDomainTransferLockInput {
                 domain_name: self.domain_name,
@@ -1349,16 +1426,16 @@ impl EnableDomainTransferLockInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::EnableDomainTransferLock,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::EnableDomainTransferLockInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1366,7 +1443,7 @@ impl EnableDomainTransferLockInput {
         fn update_http_builder(
             input: &crate::input::EnableDomainTransferLockInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1375,32 +1452,34 @@ impl EnableDomainTransferLockInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::EnableDomainTransferLockInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Route53Domains_v20140515.EnableDomainTransferLock",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_enable_domain_transfer_lock(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1423,15 +1502,15 @@ impl EnableDomainTransferLockInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::EnableDomainTransferLock::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "EnableDomainTransferLock",
             "route53domains",
         ));
@@ -1440,10 +1519,10 @@ impl EnableDomainTransferLockInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1471,6 +1550,7 @@ pub mod get_contact_reachability_status_input {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The name of the domain for which you want to know whether the registrant contact has confirmed that the email address is valid.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -1480,7 +1560,7 @@ pub mod get_contact_reachability_status_input {
             self,
         ) -> std::result::Result<
             crate::input::GetContactReachabilityStatusInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetContactReachabilityStatusInput {
                 domain_name: self.domain_name,
@@ -1500,16 +1580,16 @@ impl GetContactReachabilityStatusInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetContactReachabilityStatus,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetContactReachabilityStatusInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1517,7 +1597,7 @@ impl GetContactReachabilityStatusInput {
         fn update_http_builder(
             input: &crate::input::GetContactReachabilityStatusInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1526,30 +1606,30 @@ impl GetContactReachabilityStatusInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetContactReachabilityStatusInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Route53Domains_v20140515.GetContactReachabilityStatus",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_contact_reachability_status(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_contact_reachability_status(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1572,15 +1652,15 @@ impl GetContactReachabilityStatusInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetContactReachabilityStatus::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetContactReachabilityStatus",
             "route53domains",
         ));
@@ -1589,10 +1669,10 @@ impl GetContactReachabilityStatusInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1620,6 +1700,7 @@ pub mod get_domain_detail_input {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The name of the domain that you want to get detailed information about.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -1629,7 +1710,7 @@ pub mod get_domain_detail_input {
             self,
         ) -> std::result::Result<
             crate::input::GetDomainDetailInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetDomainDetailInput {
                 domain_name: self.domain_name,
@@ -1648,16 +1729,16 @@ impl GetDomainDetailInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetDomainDetail,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetDomainDetailInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1665,7 +1746,7 @@ impl GetDomainDetailInput {
         fn update_http_builder(
             input: &crate::input::GetDomainDetailInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1674,32 +1755,32 @@ impl GetDomainDetailInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetDomainDetailInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Route53Domains_v20140515.GetDomainDetail",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_domain_detail(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1722,15 +1803,15 @@ impl GetDomainDetailInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetDomainDetail::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetDomainDetail",
             "route53domains",
         ));
@@ -1739,10 +1820,10 @@ impl GetDomainDetailInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1794,6 +1875,29 @@ pub mod get_domain_suggestions_input {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>A domain name that you want to use as the basis for a list of possible domain names. The top-level domain (TLD), such as .com,
+        /// must be a TLD that Route 53 supports. For a list of supported TLDs, see
+        /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the
+        /// <i>Amazon Route 53 Developer Guide</i>.</p>
+        /// <p>The domain name can contain only the following characters:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Letters a through z. Domain names are not case sensitive.</p>
+        /// </li>
+        /// <li>
+        /// <p>Numbers 0 through 9.</p>
+        /// </li>
+        /// <li>
+        /// <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p>
+        /// </li>
+        /// <li>
+        /// <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p>
+        /// </li>
+        /// </ul>
+        /// <p>Internationalized domain names are not supported for some top-level domains. To determine whether the TLD that you want to use
+        /// supports internationalized domain names, see
+        /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a>.
+        /// </p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -1803,6 +1907,7 @@ pub mod get_domain_suggestions_input {
             self.suggestion_count = Some(input);
             self
         }
+        /// <p>The number of suggested domain names that you want Route 53 to return. Specify a value between 1 and 50.</p>
         pub fn set_suggestion_count(mut self, input: std::option::Option<i32>) -> Self {
             self.suggestion_count = input;
             self
@@ -1815,6 +1920,10 @@ pub mod get_domain_suggestions_input {
             self.only_available = Some(input);
             self
         }
+        /// <p>If <code>OnlyAvailable</code> is <code>true</code>, Route 53 returns only domain names that are available.
+        /// If <code>OnlyAvailable</code> is <code>false</code>, Route 53 returns domain names without checking whether they're
+        /// available to be registered. To determine whether the domain is available, you can call <code>checkDomainAvailability</code>
+        /// for each suggestion.</p>
         pub fn set_only_available(mut self, input: std::option::Option<bool>) -> Self {
             self.only_available = input;
             self
@@ -1824,7 +1933,7 @@ pub mod get_domain_suggestions_input {
             self,
         ) -> std::result::Result<
             crate::input::GetDomainSuggestionsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetDomainSuggestionsInput {
                 domain_name: self.domain_name,
@@ -1845,16 +1954,16 @@ impl GetDomainSuggestionsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetDomainSuggestions,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetDomainSuggestionsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1862,7 +1971,7 @@ impl GetDomainSuggestionsInput {
         fn update_http_builder(
             input: &crate::input::GetDomainSuggestionsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1871,32 +1980,32 @@ impl GetDomainSuggestionsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetDomainSuggestionsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Route53Domains_v20140515.GetDomainSuggestions",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_domain_suggestions(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1919,15 +2028,15 @@ impl GetDomainSuggestionsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetDomainSuggestions::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetDomainSuggestions",
             "route53domains",
         ));
@@ -1936,10 +2045,10 @@ impl GetDomainSuggestionsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1968,6 +2077,8 @@ pub mod get_operation_detail_input {
             self.operation_id = Some(input.into());
             self
         }
+        /// <p>The identifier for the operation for which you want to get the status. Route 53 returned the identifier
+        /// in the response to the original request.</p>
         pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.operation_id = input;
             self
@@ -1977,7 +2088,7 @@ pub mod get_operation_detail_input {
             self,
         ) -> std::result::Result<
             crate::input::GetOperationDetailInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetOperationDetailInput {
                 operation_id: self.operation_id,
@@ -1996,16 +2107,16 @@ impl GetOperationDetailInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetOperationDetail,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetOperationDetailInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2013,7 +2124,7 @@ impl GetOperationDetailInput {
         fn update_http_builder(
             input: &crate::input::GetOperationDetailInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2022,30 +2133,32 @@ impl GetOperationDetailInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetOperationDetailInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Route53Domains_v20140515.GetOperationDetail",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_operation_detail(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2068,15 +2181,15 @@ impl GetOperationDetailInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetOperationDetail::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetOperationDetail",
             "route53domains",
         ));
@@ -2085,10 +2198,10 @@ impl GetOperationDetailInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2122,6 +2235,12 @@ pub mod list_domains_input {
             self.marker = Some(input.into());
             self
         }
+        /// <p>For an initial request for a list of domains, omit this element. If the number of domains
+        /// that are associated with the current AWS account is greater than the value that you specified for
+        /// <code>MaxItems</code>, you can use <code>Marker</code> to return additional domains. Get the value of
+        /// <code>NextPageMarker</code> from the previous response, and submit another request that includes the
+        /// value of <code>NextPageMarker</code> in the <code>Marker</code> element.</p>
+        /// <p>Constraints: The marker must match the value specified in the previous request.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -2132,6 +2251,8 @@ pub mod list_domains_input {
             self.max_items = Some(input);
             self
         }
+        /// <p>Number of domains to be returned.</p>
+        /// <p>Default: 20</p>
         pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
             self.max_items = input;
             self
@@ -2139,8 +2260,10 @@ pub mod list_domains_input {
         /// Consumes the builder and constructs a [`ListDomainsInput`](crate::input::ListDomainsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListDomainsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListDomainsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListDomainsInput {
                 marker: self.marker,
                 max_items: self.max_items,
@@ -2159,16 +2282,16 @@ impl ListDomainsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListDomains,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListDomainsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2176,7 +2299,7 @@ impl ListDomainsInput {
         fn update_http_builder(
             input: &crate::input::ListDomainsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2185,29 +2308,31 @@ impl ListDomainsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListDomainsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Route53Domains_v20140515.ListDomains",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_domains(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2230,25 +2355,27 @@ impl ListDomainsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListDomains::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ListDomains",
-                    "route53domains",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListDomains::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListDomains",
+            "route53domains",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2268,20 +2395,22 @@ pub mod list_operations_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) submitted_since: std::option::Option<smithy_types::Instant>,
+        pub(crate) submitted_since: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) marker: std::option::Option<std::string::String>,
         pub(crate) max_items: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>An optional parameter that lets you get information about all the operations that you submitted after a specified date and time.
         /// Specify the date and time in Unix time format and Coordinated Universal time (UTC).</p>
-        pub fn submitted_since(mut self, input: smithy_types::Instant) -> Self {
+        pub fn submitted_since(mut self, input: aws_smithy_types::Instant) -> Self {
             self.submitted_since = Some(input);
             self
         }
+        /// <p>An optional parameter that lets you get information about all the operations that you submitted after a specified date and time.
+        /// Specify the date and time in Unix time format and Coordinated Universal time (UTC).</p>
         pub fn set_submitted_since(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.submitted_since = input;
             self
@@ -2294,6 +2423,10 @@ pub mod list_operations_input {
             self.marker = Some(input.into());
             self
         }
+        /// <p>For an initial request for a list of operations, omit this element. If the number of operations that are
+        /// not yet complete is greater than the value that you specified for <code>MaxItems</code>, you can use <code>Marker</code>
+        /// to return additional operations. Get the value of <code>NextPageMarker</code> from the previous response,
+        /// and submit another request that includes the value of <code>NextPageMarker</code> in the <code>Marker</code> element.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -2304,6 +2437,8 @@ pub mod list_operations_input {
             self.max_items = Some(input);
             self
         }
+        /// <p>Number of domains to be returned.</p>
+        /// <p>Default: 20</p>
         pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
             self.max_items = input;
             self
@@ -2313,7 +2448,7 @@ pub mod list_operations_input {
             self,
         ) -> std::result::Result<
             crate::input::ListOperationsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListOperationsInput {
                 submitted_since: self.submitted_since,
@@ -2334,16 +2469,16 @@ impl ListOperationsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListOperations,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListOperationsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2351,7 +2486,7 @@ impl ListOperationsInput {
         fn update_http_builder(
             input: &crate::input::ListOperationsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2360,29 +2495,31 @@ impl ListOperationsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListOperationsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Route53Domains_v20140515.ListOperations",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_operations(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2405,15 +2542,15 @@ impl ListOperationsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListOperations::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListOperations",
             "route53domains",
         ));
@@ -2422,10 +2559,10 @@ impl ListOperationsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2453,6 +2590,7 @@ pub mod list_tags_for_domain_input {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The domain for which you want to get a list of tags.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -2462,7 +2600,7 @@ pub mod list_tags_for_domain_input {
             self,
         ) -> std::result::Result<
             crate::input::ListTagsForDomainInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListTagsForDomainInput {
                 domain_name: self.domain_name,
@@ -2481,16 +2619,16 @@ impl ListTagsForDomainInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForDomain,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListTagsForDomainInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2498,7 +2636,7 @@ impl ListTagsForDomainInput {
         fn update_http_builder(
             input: &crate::input::ListTagsForDomainInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2507,30 +2645,32 @@ impl ListTagsForDomainInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListTagsForDomainInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Route53Domains_v20140515.ListTagsForDomain",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_tags_for_domain(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2553,15 +2693,15 @@ impl ListTagsForDomainInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListTagsForDomain::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListTagsForDomain",
             "route53domains",
         ));
@@ -2570,10 +2710,10 @@ impl ListTagsForDomainInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2634,6 +2774,31 @@ pub mod register_domain_input {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The domain name that you want to register. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports.
+        /// For a list of supported TLDs, see
+        /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the
+        /// <i>Amazon Route 53 Developer Guide</i>.</p>
+        /// <p>The domain name can contain only the following characters:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Letters a through z. Domain names are not case sensitive.</p>
+        /// </li>
+        /// <li>
+        /// <p>Numbers 0 through 9.</p>
+        /// </li>
+        /// <li>
+        /// <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p>
+        /// </li>
+        /// <li>
+        /// <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p>
+        /// </li>
+        /// </ul>
+        /// <p>Internationalized domain names are not supported for some top-level domains. To determine whether the TLD that you want to use supports
+        /// internationalized domain names, see
+        /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a>.
+        /// For more information, see
+        /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html#domain-name-format-idns">Formatting Internationalized Domain Names</a>.
+        /// </p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -2643,6 +2808,7 @@ pub mod register_domain_input {
             self.idn_lang_code = Some(input.into());
             self
         }
+        /// <p>Reserved for future use.</p>
         pub fn set_idn_lang_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2659,6 +2825,11 @@ pub mod register_domain_input {
             self.duration_in_years = Some(input);
             self
         }
+        /// <p>The number of years that you want to register the domain for. Domains are registered for a minimum of one year.
+        /// The maximum period depends on the top-level domain. For the range of valid values for your domain, see
+        /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the
+        /// <i>Amazon Route 53 Developer Guide</i>.</p>
+        /// <p>Default: 1</p>
         pub fn set_duration_in_years(mut self, input: std::option::Option<i32>) -> Self {
             self.duration_in_years = input;
             self
@@ -2671,6 +2842,10 @@ pub mod register_domain_input {
             self.auto_renew = Some(input);
             self
         }
+        /// <p>Indicates whether the domain will be automatically renewed (<code>true</code>) or not (<code>false</code>).
+        /// Autorenewal only takes effect after the account is charged.</p>
+        /// <p>Default: <code>true</code>
+        /// </p>
         pub fn set_auto_renew(mut self, input: std::option::Option<bool>) -> Self {
             self.auto_renew = input;
             self
@@ -2681,6 +2856,8 @@ pub mod register_domain_input {
             self.admin_contact = Some(input);
             self
         }
+        /// <p>Provides detailed contact information. For information about the values that you specify for each element, see
+        /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
         pub fn set_admin_contact(
             mut self,
             input: std::option::Option<crate::model::ContactDetail>,
@@ -2694,6 +2871,8 @@ pub mod register_domain_input {
             self.registrant_contact = Some(input);
             self
         }
+        /// <p>Provides detailed contact information. For information about the values that you specify for each element, see
+        /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
         pub fn set_registrant_contact(
             mut self,
             input: std::option::Option<crate::model::ContactDetail>,
@@ -2707,6 +2886,8 @@ pub mod register_domain_input {
             self.tech_contact = Some(input);
             self
         }
+        /// <p>Provides detailed contact information. For information about the values that you specify for each element, see
+        /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
         pub fn set_tech_contact(
             mut self,
             input: std::option::Option<crate::model::ContactDetail>,
@@ -2724,6 +2905,12 @@ pub mod register_domain_input {
             self.privacy_protect_admin_contact = Some(input);
             self
         }
+        /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
+        /// WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains)
+        /// or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>,
+        /// WHOIS queries return the information that you entered for the admin contact.</p>
+        /// <p>Default: <code>true</code>
+        /// </p>
         pub fn set_privacy_protect_admin_contact(
             mut self,
             input: std::option::Option<bool>,
@@ -2741,6 +2928,12 @@ pub mod register_domain_input {
             self.privacy_protect_registrant_contact = Some(input);
             self
         }
+        /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
+        /// WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains)
+        /// or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>,
+        /// WHOIS queries return the information that you entered for the registrant contact (the domain owner).</p>
+        /// <p>Default: <code>true</code>
+        /// </p>
         pub fn set_privacy_protect_registrant_contact(
             mut self,
             input: std::option::Option<bool>,
@@ -2758,6 +2951,12 @@ pub mod register_domain_input {
             self.privacy_protect_tech_contact = Some(input);
             self
         }
+        /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
+        /// WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains)
+        /// or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>,
+        /// WHOIS queries return the information that you entered for the technical contact.</p>
+        /// <p>Default: <code>true</code>
+        /// </p>
         pub fn set_privacy_protect_tech_contact(
             mut self,
             input: std::option::Option<bool>,
@@ -2770,7 +2969,7 @@ pub mod register_domain_input {
             self,
         ) -> std::result::Result<
             crate::input::RegisterDomainInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::RegisterDomainInput {
                 domain_name: self.domain_name,
@@ -2798,16 +2997,16 @@ impl RegisterDomainInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RegisterDomain,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RegisterDomainInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2815,7 +3014,7 @@ impl RegisterDomainInput {
         fn update_http_builder(
             input: &crate::input::RegisterDomainInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2824,29 +3023,31 @@ impl RegisterDomainInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RegisterDomainInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Route53Domains_v20140515.RegisterDomain",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_register_domain(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2869,15 +3070,15 @@ impl RegisterDomainInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::RegisterDomain::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "RegisterDomain",
             "route53domains",
         ));
@@ -2886,10 +3087,10 @@ impl RegisterDomainInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2920,6 +3121,10 @@ pub mod reject_domain_transfer_from_another_aws_account_input {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The name of the domain that was specified when another AWS account submitted a
+        /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a>
+        /// request.
+        /// </p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -2929,7 +3134,7 @@ pub mod reject_domain_transfer_from_another_aws_account_input {
             self,
         ) -> std::result::Result<
             crate::input::RejectDomainTransferFromAnotherAwsAccountInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(
                 crate::input::RejectDomainTransferFromAnotherAwsAccountInput {
@@ -2952,16 +3157,16 @@ impl RejectDomainTransferFromAnotherAwsAccountInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RejectDomainTransferFromAnotherAwsAccount,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RejectDomainTransferFromAnotherAwsAccountInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2969,7 +3174,7 @@ impl RejectDomainTransferFromAnotherAwsAccountInput {
         fn update_http_builder(
             input: &crate::input::RejectDomainTransferFromAnotherAwsAccountInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2978,30 +3183,30 @@ impl RejectDomainTransferFromAnotherAwsAccountInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RejectDomainTransferFromAnotherAwsAccountInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Route53Domains_v20140515.RejectDomainTransferFromAnotherAwsAccount",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_reject_domain_transfer_from_another_aws_account(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_reject_domain_transfer_from_another_aws_account(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3024,15 +3229,15 @@ impl RejectDomainTransferFromAnotherAwsAccountInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::RejectDomainTransferFromAnotherAwsAccount::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "RejectDomainTransferFromAnotherAwsAccount",
             "route53domains",
         ));
@@ -3041,10 +3246,10 @@ impl RejectDomainTransferFromAnotherAwsAccountInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3075,6 +3280,7 @@ pub mod renew_domain_input {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The name of the domain that you want to renew.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -3088,6 +3294,11 @@ pub mod renew_domain_input {
             self.duration_in_years = Some(input);
             self
         }
+        /// <p>The number of years that you want to renew the domain for. The maximum number of years depends on the top-level domain.
+        /// For the range of valid values for your domain, see
+        /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the
+        /// <i>Amazon Route 53 Developer Guide</i>.</p>
+        /// <p>Default: 1</p>
         pub fn set_duration_in_years(mut self, input: std::option::Option<i32>) -> Self {
             self.duration_in_years = input;
             self
@@ -3097,6 +3308,7 @@ pub mod renew_domain_input {
             self.current_expiry_year = Some(input);
             self
         }
+        /// <p>The year when the registration for the domain is set to expire. This value must match the current expiration date for the domain.</p>
         pub fn set_current_expiry_year(mut self, input: std::option::Option<i32>) -> Self {
             self.current_expiry_year = input;
             self
@@ -3104,8 +3316,10 @@ pub mod renew_domain_input {
         /// Consumes the builder and constructs a [`RenewDomainInput`](crate::input::RenewDomainInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::RenewDomainInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::RenewDomainInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::RenewDomainInput {
                 domain_name: self.domain_name,
                 duration_in_years: self.duration_in_years,
@@ -3125,16 +3339,16 @@ impl RenewDomainInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RenewDomain,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RenewDomainInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3142,7 +3356,7 @@ impl RenewDomainInput {
         fn update_http_builder(
             input: &crate::input::RenewDomainInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3151,29 +3365,31 @@ impl RenewDomainInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RenewDomainInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Route53Domains_v20140515.RenewDomain",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_renew_domain(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3196,25 +3412,27 @@ impl RenewDomainInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::RenewDomain::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "RenewDomain",
-                    "route53domains",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::RenewDomain::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "RenewDomain",
+            "route53domains",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3242,6 +3460,7 @@ pub mod resend_contact_reachability_email_input {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The name of the domain for which you want Route 53 to resend a confirmation email to the registrant contact.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -3251,7 +3470,7 @@ pub mod resend_contact_reachability_email_input {
             self,
         ) -> std::result::Result<
             crate::input::ResendContactReachabilityEmailInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ResendContactReachabilityEmailInput {
                 domain_name: self.domain_name,
@@ -3271,16 +3490,16 @@ impl ResendContactReachabilityEmailInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ResendContactReachabilityEmail,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ResendContactReachabilityEmailInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3288,7 +3507,7 @@ impl ResendContactReachabilityEmailInput {
         fn update_http_builder(
             input: &crate::input::ResendContactReachabilityEmailInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3297,30 +3516,30 @@ impl ResendContactReachabilityEmailInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ResendContactReachabilityEmailInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Route53Domains_v20140515.ResendContactReachabilityEmail",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_resend_contact_reachability_email(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_resend_contact_reachability_email(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3343,15 +3562,15 @@ impl ResendContactReachabilityEmailInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ResendContactReachabilityEmail::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ResendContactReachabilityEmail",
             "route53domains",
         ));
@@ -3360,10 +3579,10 @@ impl ResendContactReachabilityEmailInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3391,6 +3610,7 @@ pub mod retrieve_domain_auth_code_input {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The name of the domain that you want to get an authorization code for.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -3400,7 +3620,7 @@ pub mod retrieve_domain_auth_code_input {
             self,
         ) -> std::result::Result<
             crate::input::RetrieveDomainAuthCodeInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::RetrieveDomainAuthCodeInput {
                 domain_name: self.domain_name,
@@ -3419,16 +3639,16 @@ impl RetrieveDomainAuthCodeInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RetrieveDomainAuthCode,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RetrieveDomainAuthCodeInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3436,7 +3656,7 @@ impl RetrieveDomainAuthCodeInput {
         fn update_http_builder(
             input: &crate::input::RetrieveDomainAuthCodeInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3445,32 +3665,34 @@ impl RetrieveDomainAuthCodeInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RetrieveDomainAuthCodeInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Route53Domains_v20140515.RetrieveDomainAuthCode",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_retrieve_domain_auth_code(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3493,15 +3715,15 @@ impl RetrieveDomainAuthCodeInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::RetrieveDomainAuthCode::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "RetrieveDomainAuthCode",
             "route53domains",
         ));
@@ -3510,10 +3732,10 @@ impl RetrieveDomainAuthCodeInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3570,6 +3792,25 @@ pub mod transfer_domain_input {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The name of the domain that you want to transfer to Route 53. The top-level domain (TLD), such as .com, must be a TLD that Route 53 supports.
+        /// For a list of supported TLDs, see
+        /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/registrar-tld-list.html">Domains that You Can Register with Amazon Route 53</a> in the
+        /// <i>Amazon Route 53 Developer Guide</i>.</p>
+        /// <p>The domain name can contain only the following characters:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Letters a through z. Domain names are not case sensitive.</p>
+        /// </li>
+        /// <li>
+        /// <p>Numbers 0 through 9.</p>
+        /// </li>
+        /// <li>
+        /// <p>Hyphen (-). You can't specify a hyphen at the beginning or end of a label. </p>
+        /// </li>
+        /// <li>
+        /// <p>Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -3579,6 +3820,7 @@ pub mod transfer_domain_input {
             self.idn_lang_code = Some(input.into());
             self
         }
+        /// <p>Reserved for future use.</p>
         pub fn set_idn_lang_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3593,16 +3835,25 @@ pub mod transfer_domain_input {
             self.duration_in_years = Some(input);
             self
         }
+        /// <p>The number of years that you want to register the domain for. Domains are registered for a minimum of one year.
+        /// The maximum period depends on the top-level domain.</p>
+        /// <p>Default: 1</p>
         pub fn set_duration_in_years(mut self, input: std::option::Option<i32>) -> Self {
             self.duration_in_years = input;
             self
         }
+        /// Appends an item to `nameservers`.
+        ///
+        /// To override the contents of this collection use [`set_nameservers`](Self::set_nameservers).
+        ///
+        /// <p>Contains details for the host and glue IP addresses.</p>
         pub fn nameservers(mut self, input: impl Into<crate::model::Nameserver>) -> Self {
             let mut v = self.nameservers.unwrap_or_default();
             v.push(input.into());
             self.nameservers = Some(v);
             self
         }
+        /// <p>Contains details for the host and glue IP addresses.</p>
         pub fn set_nameservers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Nameserver>>,
@@ -3615,6 +3866,7 @@ pub mod transfer_domain_input {
             self.auth_code = Some(input.into());
             self
         }
+        /// <p>The authorization code for the domain. You get this value from the current registrar.</p>
         pub fn set_auth_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.auth_code = input;
             self
@@ -3626,6 +3878,9 @@ pub mod transfer_domain_input {
             self.auto_renew = Some(input);
             self
         }
+        /// <p>Indicates whether the domain will be automatically renewed (true) or not (false). Autorenewal only takes effect
+        /// after the account is charged.</p>
+        /// <p>Default: true</p>
         pub fn set_auto_renew(mut self, input: std::option::Option<bool>) -> Self {
             self.auto_renew = input;
             self
@@ -3635,6 +3890,7 @@ pub mod transfer_domain_input {
             self.admin_contact = Some(input);
             self
         }
+        /// <p>Provides detailed contact information.</p>
         pub fn set_admin_contact(
             mut self,
             input: std::option::Option<crate::model::ContactDetail>,
@@ -3647,6 +3903,7 @@ pub mod transfer_domain_input {
             self.registrant_contact = Some(input);
             self
         }
+        /// <p>Provides detailed contact information.</p>
         pub fn set_registrant_contact(
             mut self,
             input: std::option::Option<crate::model::ContactDetail>,
@@ -3659,6 +3916,7 @@ pub mod transfer_domain_input {
             self.tech_contact = Some(input);
             self
         }
+        /// <p>Provides detailed contact information.</p>
         pub fn set_tech_contact(
             mut self,
             input: std::option::Option<crate::model::ContactDetail>,
@@ -3676,6 +3934,12 @@ pub mod transfer_domain_input {
             self.privacy_protect_admin_contact = Some(input);
             self
         }
+        /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
+        /// WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains)
+        /// or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>,
+        /// WHOIS queries return the information that you entered for the admin contact.</p>
+        /// <p>Default: <code>true</code>
+        /// </p>
         pub fn set_privacy_protect_admin_contact(
             mut self,
             input: std::option::Option<bool>,
@@ -3693,6 +3957,12 @@ pub mod transfer_domain_input {
             self.privacy_protect_registrant_contact = Some(input);
             self
         }
+        /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
+        /// WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains)
+        /// or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>,
+        /// WHOIS queries return the information that you entered for the registrant contact (domain owner).</p>
+        /// <p>Default: <code>true</code>
+        /// </p>
         pub fn set_privacy_protect_registrant_contact(
             mut self,
             input: std::option::Option<bool>,
@@ -3710,6 +3980,12 @@ pub mod transfer_domain_input {
             self.privacy_protect_tech_contact = Some(input);
             self
         }
+        /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
+        /// WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains)
+        /// or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>,
+        /// WHOIS queries return the information that you entered for the technical contact.</p>
+        /// <p>Default: <code>true</code>
+        /// </p>
         pub fn set_privacy_protect_tech_contact(
             mut self,
             input: std::option::Option<bool>,
@@ -3722,7 +3998,7 @@ pub mod transfer_domain_input {
             self,
         ) -> std::result::Result<
             crate::input::TransferDomainInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::TransferDomainInput {
                 domain_name: self.domain_name,
@@ -3752,16 +4028,16 @@ impl TransferDomainInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::TransferDomain,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::TransferDomainInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3769,7 +4045,7 @@ impl TransferDomainInput {
         fn update_http_builder(
             input: &crate::input::TransferDomainInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3778,29 +4054,31 @@ impl TransferDomainInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::TransferDomainInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Route53Domains_v20140515.TransferDomain",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_transfer_domain(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3823,15 +4101,15 @@ impl TransferDomainInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::TransferDomain::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "TransferDomain",
             "route53domains",
         ));
@@ -3840,10 +4118,10 @@ impl TransferDomainInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3872,6 +4150,7 @@ pub mod transfer_domain_to_another_aws_account_input {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The name of the domain that you want to transfer from the current AWS account to another account.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -3881,6 +4160,7 @@ pub mod transfer_domain_to_another_aws_account_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The account ID of the AWS account that you want to transfer the domain to, for example, <code>111122223333</code>.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -3890,7 +4170,7 @@ pub mod transfer_domain_to_another_aws_account_input {
             self,
         ) -> std::result::Result<
             crate::input::TransferDomainToAnotherAwsAccountInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::TransferDomainToAnotherAwsAccountInput {
                 domain_name: self.domain_name,
@@ -3911,16 +4191,16 @@ impl TransferDomainToAnotherAwsAccountInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::TransferDomainToAnotherAwsAccount,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::TransferDomainToAnotherAwsAccountInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3928,7 +4208,7 @@ impl TransferDomainToAnotherAwsAccountInput {
         fn update_http_builder(
             input: &crate::input::TransferDomainToAnotherAwsAccountInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3937,30 +4217,30 @@ impl TransferDomainToAnotherAwsAccountInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::TransferDomainToAnotherAwsAccountInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Route53Domains_v20140515.TransferDomainToAnotherAwsAccount",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_transfer_domain_to_another_aws_account(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_transfer_domain_to_another_aws_account(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3983,15 +4263,15 @@ impl TransferDomainToAnotherAwsAccountInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::TransferDomainToAnotherAwsAccount::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "TransferDomainToAnotherAwsAccount",
             "route53domains",
         ));
@@ -4000,10 +4280,10 @@ impl TransferDomainToAnotherAwsAccountInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4034,6 +4314,7 @@ pub mod update_domain_contact_input {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The name of the domain that you want to update contact information for.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -4043,6 +4324,7 @@ pub mod update_domain_contact_input {
             self.admin_contact = Some(input);
             self
         }
+        /// <p>Provides detailed contact information.</p>
         pub fn set_admin_contact(
             mut self,
             input: std::option::Option<crate::model::ContactDetail>,
@@ -4055,6 +4337,7 @@ pub mod update_domain_contact_input {
             self.registrant_contact = Some(input);
             self
         }
+        /// <p>Provides detailed contact information.</p>
         pub fn set_registrant_contact(
             mut self,
             input: std::option::Option<crate::model::ContactDetail>,
@@ -4067,6 +4350,7 @@ pub mod update_domain_contact_input {
             self.tech_contact = Some(input);
             self
         }
+        /// <p>Provides detailed contact information.</p>
         pub fn set_tech_contact(
             mut self,
             input: std::option::Option<crate::model::ContactDetail>,
@@ -4079,7 +4363,7 @@ pub mod update_domain_contact_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateDomainContactInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateDomainContactInput {
                 domain_name: self.domain_name,
@@ -4101,16 +4385,16 @@ impl UpdateDomainContactInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateDomainContact,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateDomainContactInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4118,7 +4402,7 @@ impl UpdateDomainContactInput {
         fn update_http_builder(
             input: &crate::input::UpdateDomainContactInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4127,32 +4411,32 @@ impl UpdateDomainContactInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateDomainContactInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Route53Domains_v20140515.UpdateDomainContact",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_domain_contact(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4175,15 +4459,15 @@ impl UpdateDomainContactInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateDomainContact::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateDomainContact",
             "route53domains",
         ));
@@ -4192,10 +4476,10 @@ impl UpdateDomainContactInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4226,6 +4510,7 @@ pub mod update_domain_contact_privacy_input {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The name of the domain that you want to update the privacy setting for.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -4238,6 +4523,10 @@ pub mod update_domain_contact_privacy_input {
             self.admin_privacy = Some(input);
             self
         }
+        /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
+        /// WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains)
+        /// or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>,
+        /// WHOIS queries return the information that you entered for the admin contact.</p>
         pub fn set_admin_privacy(mut self, input: std::option::Option<bool>) -> Self {
             self.admin_privacy = input;
             self
@@ -4250,6 +4539,10 @@ pub mod update_domain_contact_privacy_input {
             self.registrant_privacy = Some(input);
             self
         }
+        /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
+        /// WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains)
+        /// or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>,
+        /// WHOIS queries return the information that you entered for the registrant contact (domain owner).</p>
         pub fn set_registrant_privacy(mut self, input: std::option::Option<bool>) -> Self {
             self.registrant_privacy = input;
             self
@@ -4262,6 +4555,10 @@ pub mod update_domain_contact_privacy_input {
             self.tech_privacy = Some(input);
             self
         }
+        /// <p>Whether you want to conceal contact information from WHOIS queries. If you specify <code>true</code>,
+        /// WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains)
+        /// or for our registrar associate, Gandi (for all other TLDs). If you specify <code>false</code>,
+        /// WHOIS queries return the information that you entered for the technical contact.</p>
         pub fn set_tech_privacy(mut self, input: std::option::Option<bool>) -> Self {
             self.tech_privacy = input;
             self
@@ -4271,7 +4568,7 @@ pub mod update_domain_contact_privacy_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateDomainContactPrivacyInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateDomainContactPrivacyInput {
                 domain_name: self.domain_name,
@@ -4294,16 +4591,16 @@ impl UpdateDomainContactPrivacyInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateDomainContactPrivacy,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateDomainContactPrivacyInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4311,7 +4608,7 @@ impl UpdateDomainContactPrivacyInput {
         fn update_http_builder(
             input: &crate::input::UpdateDomainContactPrivacyInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4320,30 +4617,30 @@ impl UpdateDomainContactPrivacyInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateDomainContactPrivacyInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Route53Domains_v20140515.UpdateDomainContactPrivacy",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_domain_contact_privacy(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_domain_contact_privacy(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4366,15 +4663,15 @@ impl UpdateDomainContactPrivacyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateDomainContactPrivacy::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateDomainContactPrivacy",
             "route53domains",
         ));
@@ -4383,10 +4680,10 @@ impl UpdateDomainContactPrivacyInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4416,6 +4713,7 @@ pub mod update_domain_nameservers_input {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The name of the domain that you want to change name servers for.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -4425,16 +4723,23 @@ pub mod update_domain_nameservers_input {
             self.fi_auth_key = Some(input.into());
             self
         }
+        /// <p>The authorization key for .fi domains</p>
         pub fn set_fi_auth_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fi_auth_key = input;
             self
         }
+        /// Appends an item to `nameservers`.
+        ///
+        /// To override the contents of this collection use [`set_nameservers`](Self::set_nameservers).
+        ///
+        /// <p>A list of new name servers for the domain.</p>
         pub fn nameservers(mut self, input: impl Into<crate::model::Nameserver>) -> Self {
             let mut v = self.nameservers.unwrap_or_default();
             v.push(input.into());
             self.nameservers = Some(v);
             self
         }
+        /// <p>A list of new name servers for the domain.</p>
         pub fn set_nameservers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Nameserver>>,
@@ -4447,7 +4752,7 @@ pub mod update_domain_nameservers_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateDomainNameserversInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateDomainNameserversInput {
                 domain_name: self.domain_name,
@@ -4469,16 +4774,16 @@ impl UpdateDomainNameserversInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateDomainNameservers,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateDomainNameserversInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4486,7 +4791,7 @@ impl UpdateDomainNameserversInput {
         fn update_http_builder(
             input: &crate::input::UpdateDomainNameserversInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4495,32 +4800,34 @@ impl UpdateDomainNameserversInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateDomainNameserversInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Route53Domains_v20140515.UpdateDomainNameservers",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_domain_nameservers(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4543,15 +4850,15 @@ impl UpdateDomainNameserversInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateDomainNameservers::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateDomainNameservers",
             "route53domains",
         ));
@@ -4560,10 +4867,10 @@ impl UpdateDomainNameserversInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4592,16 +4899,25 @@ pub mod update_tags_for_domain_input {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The domain for which you want to add or update tags.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
         }
+        /// Appends an item to `tags_to_update`.
+        ///
+        /// To override the contents of this collection use [`set_tags_to_update`](Self::set_tags_to_update).
+        ///
+        /// <p>A list of the tag keys and values that you want to add or update. If you specify a key
+        /// that already exists, the corresponding value will be replaced.</p>
         pub fn tags_to_update(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags_to_update.unwrap_or_default();
             v.push(input.into());
             self.tags_to_update = Some(v);
             self
         }
+        /// <p>A list of the tag keys and values that you want to add or update. If you specify a key
+        /// that already exists, the corresponding value will be replaced.</p>
         pub fn set_tags_to_update(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -4614,7 +4930,7 @@ pub mod update_tags_for_domain_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateTagsForDomainInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateTagsForDomainInput {
                 domain_name: self.domain_name,
@@ -4634,16 +4950,16 @@ impl UpdateTagsForDomainInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateTagsForDomain,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateTagsForDomainInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4651,7 +4967,7 @@ impl UpdateTagsForDomainInput {
         fn update_http_builder(
             input: &crate::input::UpdateTagsForDomainInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4660,32 +4976,32 @@ impl UpdateTagsForDomainInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateTagsForDomainInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Route53Domains_v20140515.UpdateTagsForDomain",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_tags_for_domain(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4708,15 +5024,15 @@ impl UpdateTagsForDomainInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateTagsForDomain::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateTagsForDomain",
             "route53domains",
         ));
@@ -4725,10 +5041,10 @@ impl UpdateTagsForDomainInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4748,29 +5064,33 @@ pub mod view_billing_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) start: std::option::Option<smithy_types::Instant>,
-        pub(crate) end: std::option::Option<smithy_types::Instant>,
+        pub(crate) start: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) end: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) marker: std::option::Option<std::string::String>,
         pub(crate) max_items: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>The beginning date and time for the time period for which you want a list of billing records. Specify the date and time
         /// in Unix time format and Coordinated Universal time (UTC).</p>
-        pub fn start(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start = Some(input);
             self
         }
-        pub fn set_start(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The beginning date and time for the time period for which you want a list of billing records. Specify the date and time
+        /// in Unix time format and Coordinated Universal time (UTC).</p>
+        pub fn set_start(mut self, input: std::option::Option<aws_smithy_types::Instant>) -> Self {
             self.start = input;
             self
         }
         /// <p>The end date and time for the time period for which you want a list of billing records. Specify the date and time
         /// in Unix time format and Coordinated Universal time (UTC).</p>
-        pub fn end(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end = Some(input);
             self
         }
-        pub fn set_end(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The end date and time for the time period for which you want a list of billing records. Specify the date and time
+        /// in Unix time format and Coordinated Universal time (UTC).</p>
+        pub fn set_end(mut self, input: std::option::Option<aws_smithy_types::Instant>) -> Self {
             self.end = input;
             self
         }
@@ -4785,6 +5105,13 @@ pub mod view_billing_input {
             self.marker = Some(input.into());
             self
         }
+        /// <p>For an initial request for a list of billing records, omit this element. If the number of billing records
+        /// that are associated with the current AWS account during the specified period is greater than the value that
+        /// you specified for <code>MaxItems</code>, you can use <code>Marker</code> to return additional billing records.
+        /// Get the value of <code>NextPageMarker</code> from the previous response, and submit another request that includes
+        /// the value of <code>NextPageMarker</code> in the <code>Marker</code> element.
+        /// </p>
+        /// <p>Constraints: The marker must match the value of <code>NextPageMarker</code> that was returned in the previous response.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -4795,6 +5122,8 @@ pub mod view_billing_input {
             self.max_items = Some(input);
             self
         }
+        /// <p>The number of billing records to be returned.</p>
+        /// <p>Default: 20</p>
         pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
             self.max_items = input;
             self
@@ -4802,8 +5131,10 @@ pub mod view_billing_input {
         /// Consumes the builder and constructs a [`ViewBillingInput`](crate::input::ViewBillingInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ViewBillingInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ViewBillingInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ViewBillingInput {
                 start: self.start,
                 end: self.end,
@@ -4824,16 +5155,16 @@ impl ViewBillingInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ViewBilling,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ViewBillingInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4841,7 +5172,7 @@ impl ViewBillingInput {
         fn update_http_builder(
             input: &crate::input::ViewBillingInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4850,29 +5181,31 @@ impl ViewBillingInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ViewBillingInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Route53Domains_v20140515.ViewBilling",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_view_billing(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4895,25 +5228,27 @@ impl ViewBillingInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ViewBilling::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ViewBilling",
-                    "route53domains",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ViewBilling::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ViewBilling",
+            "route53domains",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4933,10 +5268,10 @@ impl ViewBillingInput {
 pub struct ViewBillingInput {
     /// <p>The beginning date and time for the time period for which you want a list of billing records. Specify the date and time
     /// in Unix time format and Coordinated Universal time (UTC).</p>
-    pub start: std::option::Option<smithy_types::Instant>,
+    pub start: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The end date and time for the time period for which you want a list of billing records. Specify the date and time
     /// in Unix time format and Coordinated Universal time (UTC).</p>
-    pub end: std::option::Option<smithy_types::Instant>,
+    pub end: std::option::Option<aws_smithy_types::Instant>,
     /// <p>For an initial request for a list of billing records, omit this element. If the number of billing records
     /// that are associated with the current AWS account during the specified period is greater than the value that
     /// you specified for <code>MaxItems</code>, you can use <code>Marker</code> to return additional billing records.
@@ -5188,6 +5523,7 @@ impl std::fmt::Debug for RetrieveDomainAuthCodeInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResendContactReachabilityEmailInput {
@@ -5366,7 +5702,7 @@ impl std::fmt::Debug for ListTagsForDomainInput {
 pub struct ListOperationsInput {
     /// <p>An optional parameter that lets you get information about all the operations that you submitted after a specified date and time.
     /// Specify the date and time in Unix time format and Coordinated Universal time (UTC).</p>
-    pub submitted_since: std::option::Option<smithy_types::Instant>,
+    pub submitted_since: std::option::Option<aws_smithy_types::Instant>,
     /// <p>For an initial request for a list of operations, omit this element. If the number of operations that are
     /// not yet complete is greater than the value that you specified for <code>MaxItems</code>, you can use <code>Marker</code>
     /// to return additional operations. Get the value of <code>NextPageMarker</code> from the previous response,
@@ -5428,6 +5764,7 @@ impl std::fmt::Debug for GetOperationDetailInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDomainSuggestionsInput {
@@ -5488,6 +5825,7 @@ impl std::fmt::Debug for GetDomainDetailInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetContactReachabilityStatusInput {
@@ -5517,6 +5855,7 @@ impl std::fmt::Debug for EnableDomainTransferLockInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableDomainAutoRenewInput {
@@ -5546,6 +5885,7 @@ impl std::fmt::Debug for DisableDomainTransferLockInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableDomainAutoRenewInput {

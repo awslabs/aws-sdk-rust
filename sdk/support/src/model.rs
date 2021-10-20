@@ -65,6 +65,7 @@ pub mod trusted_advisor_check_refresh_status {
             self.check_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the Trusted Advisor check.</p>
         pub fn set_check_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.check_id = input;
             self
@@ -100,6 +101,33 @@ pub mod trusted_advisor_check_refresh_status {
             self.status = Some(input.into());
             self
         }
+        /// <p>The status of the Trusted Advisor check for which a refresh has been requested:
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>none</code> - The check is not refreshed or the non-success status
+        /// exceeds the timeout</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>enqueued</code> - The check refresh requests has entered the refresh
+        /// queue</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>processing</code> - The check refresh request is picked up by the rule
+        /// processing engine</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>success</code> - The check is successfully refreshed</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>abandoned</code> - The check refresh has failed</p>
+        /// </li>
+        /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -110,6 +138,8 @@ pub mod trusted_advisor_check_refresh_status {
             self.millis_until_next_refreshable = Some(input);
             self
         }
+        /// <p>The amount of time, in milliseconds, until the Trusted Advisor check is eligible for
+        /// refresh.</p>
         pub fn set_millis_until_next_refreshable(
             mut self,
             input: std::option::Option<i64>,
@@ -190,6 +220,7 @@ pub mod trusted_advisor_check_summary {
             self.check_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the Trusted Advisor check.</p>
         pub fn set_check_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.check_id = input;
             self
@@ -199,6 +230,7 @@ pub mod trusted_advisor_check_summary {
             self.timestamp = Some(input.into());
             self
         }
+        /// <p>The time of the last refresh of the check.</p>
         pub fn set_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.timestamp = input;
             self
@@ -209,6 +241,8 @@ pub mod trusted_advisor_check_summary {
             self.status = Some(input.into());
             self
         }
+        /// <p>The alert status of the check: "ok" (green), "warning" (yellow), "error" (red), or
+        /// "not_available".</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -218,6 +252,7 @@ pub mod trusted_advisor_check_summary {
             self.has_flagged_resources = Some(input);
             self
         }
+        /// <p>Specifies whether the Trusted Advisor check has flagged resources.</p>
         pub fn set_has_flagged_resources(mut self, input: std::option::Option<bool>) -> Self {
             self.has_flagged_resources = input;
             self
@@ -230,6 +265,7 @@ pub mod trusted_advisor_check_summary {
             self.resources_summary = Some(input);
             self
         }
+        /// <p>Details about AWS resources that were analyzed in a call to Trusted Advisor <a>DescribeTrustedAdvisorCheckSummaries</a>.</p>
         pub fn set_resources_summary(
             mut self,
             input: std::option::Option<crate::model::TrustedAdvisorResourcesSummary>,
@@ -246,6 +282,8 @@ pub mod trusted_advisor_check_summary {
             self.category_specific_summary = Some(input);
             self
         }
+        /// <p>Summary information that relates to the category of the check. Cost Optimizing is the
+        /// only category that is currently supported.</p>
         pub fn set_category_specific_summary(
             mut self,
             input: std::option::Option<crate::model::TrustedAdvisorCategorySpecificSummary>,
@@ -307,6 +345,8 @@ pub mod trusted_advisor_category_specific_summary {
             self.cost_optimizing = Some(input);
             self
         }
+        /// <p>The summary information about cost savings for a Trusted Advisor check that is in the
+        /// Cost Optimizing category.</p>
         pub fn set_cost_optimizing(
             mut self,
             input: std::option::Option<crate::model::TrustedAdvisorCostOptimizingSummary>,
@@ -368,6 +408,8 @@ pub mod trusted_advisor_cost_optimizing_summary {
             self.estimated_monthly_savings = Some(input);
             self
         }
+        /// <p>The estimated monthly savings that might be realized if the recommended operations are
+        /// taken.</p>
         pub fn set_estimated_monthly_savings(mut self, input: std::option::Option<f64>) -> Self {
             self.estimated_monthly_savings = input;
             self
@@ -378,6 +420,8 @@ pub mod trusted_advisor_cost_optimizing_summary {
             self.estimated_percent_monthly_savings = Some(input);
             self
         }
+        /// <p>The estimated percentage of savings that might be realized if the recommended
+        /// operations are taken.</p>
         pub fn set_estimated_percent_monthly_savings(
             mut self,
             input: std::option::Option<f64>,
@@ -446,6 +490,7 @@ pub mod trusted_advisor_resources_summary {
             self.resources_processed = Some(input);
             self
         }
+        /// <p>The number of AWS resources that were analyzed by the Trusted Advisor check.</p>
         pub fn set_resources_processed(mut self, input: std::option::Option<i64>) -> Self {
             self.resources_processed = input;
             self
@@ -456,6 +501,8 @@ pub mod trusted_advisor_resources_summary {
             self.resources_flagged = Some(input);
             self
         }
+        /// <p>The number of AWS resources that were flagged (listed) by the Trusted Advisor
+        /// check.</p>
         pub fn set_resources_flagged(mut self, input: std::option::Option<i64>) -> Self {
             self.resources_flagged = input;
             self
@@ -466,6 +513,8 @@ pub mod trusted_advisor_resources_summary {
             self.resources_ignored = Some(input);
             self
         }
+        /// <p>The number of AWS resources ignored by Trusted Advisor because information was
+        /// unavailable.</p>
         pub fn set_resources_ignored(mut self, input: std::option::Option<i64>) -> Self {
             self.resources_ignored = input;
             self
@@ -476,6 +525,8 @@ pub mod trusted_advisor_resources_summary {
             self.resources_suppressed = Some(input);
             self
         }
+        /// <p>The number of AWS resources ignored by Trusted Advisor because they were marked as
+        /// suppressed by the user.</p>
         pub fn set_resources_suppressed(mut self, input: std::option::Option<i64>) -> Self {
             self.resources_suppressed = input;
             self
@@ -547,6 +598,7 @@ pub mod trusted_advisor_check_description {
             self.id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the Trusted Advisor check.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -556,6 +608,7 @@ pub mod trusted_advisor_check_description {
             self.name = Some(input.into());
             self
         }
+        /// <p>The display name for the Trusted Advisor check.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -566,6 +619,8 @@ pub mod trusted_advisor_check_description {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the Trusted Advisor check, which includes the alert criteria and
+        /// recommended operations (contains HTML markup).</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -575,16 +630,31 @@ pub mod trusted_advisor_check_description {
             self.category = Some(input.into());
             self
         }
+        /// <p>The category of the Trusted Advisor check.</p>
         pub fn set_category(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.category = input;
             self
         }
+        /// Appends an item to `metadata`.
+        ///
+        /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
+        ///
+        /// <p>The column headings for the data returned by the Trusted Advisor check. The order of
+        /// the headings corresponds to the order of the data in the <b>Metadata</b> element of the <a>TrustedAdvisorResourceDetail</a>
+        /// for the check. <b>Metadata</b> contains all the data that is
+        /// shown in the Excel download, even in those cases where the UI shows just summary data.
+        /// </p>
         pub fn metadata(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.metadata.unwrap_or_default();
             v.push(input.into());
             self.metadata = Some(v);
             self
         }
+        /// <p>The column headings for the data returned by the Trusted Advisor check. The order of
+        /// the headings corresponds to the order of the data in the <b>Metadata</b> element of the <a>TrustedAdvisorResourceDetail</a>
+        /// for the check. <b>Metadata</b> contains all the data that is
+        /// shown in the Excel download, even in those cases where the UI shows just summary data.
+        /// </p>
         pub fn set_metadata(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -666,6 +736,7 @@ pub mod trusted_advisor_check_result {
             self.check_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the Trusted Advisor check.</p>
         pub fn set_check_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.check_id = input;
             self
@@ -675,6 +746,7 @@ pub mod trusted_advisor_check_result {
             self.timestamp = Some(input.into());
             self
         }
+        /// <p>The time of the last refresh of the check.</p>
         pub fn set_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.timestamp = input;
             self
@@ -685,6 +757,8 @@ pub mod trusted_advisor_check_result {
             self.status = Some(input.into());
             self
         }
+        /// <p>The alert status of the check: "ok" (green), "warning" (yellow), "error" (red), or
+        /// "not_available".</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -697,6 +771,7 @@ pub mod trusted_advisor_check_result {
             self.resources_summary = Some(input);
             self
         }
+        /// <p>Details about AWS resources that were analyzed in a call to Trusted Advisor <a>DescribeTrustedAdvisorCheckSummaries</a>.</p>
         pub fn set_resources_summary(
             mut self,
             input: std::option::Option<crate::model::TrustedAdvisorResourcesSummary>,
@@ -713,6 +788,8 @@ pub mod trusted_advisor_check_result {
             self.category_specific_summary = Some(input);
             self
         }
+        /// <p>Summary information that relates to the category of the check. Cost Optimizing is the
+        /// only category that is currently supported.</p>
         pub fn set_category_specific_summary(
             mut self,
             input: std::option::Option<crate::model::TrustedAdvisorCategorySpecificSummary>,
@@ -720,6 +797,11 @@ pub mod trusted_advisor_check_result {
             self.category_specific_summary = input;
             self
         }
+        /// Appends an item to `flagged_resources`.
+        ///
+        /// To override the contents of this collection use [`set_flagged_resources`](Self::set_flagged_resources).
+        ///
+        /// <p>The details about each resource listed in the check result.</p>
         pub fn flagged_resources(
             mut self,
             input: impl Into<crate::model::TrustedAdvisorResourceDetail>,
@@ -729,6 +811,7 @@ pub mod trusted_advisor_check_result {
             self.flagged_resources = Some(v);
             self
         }
+        /// <p>The details about each resource listed in the check result.</p>
         pub fn set_flagged_resources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TrustedAdvisorResourceDetail>>,
@@ -804,6 +887,7 @@ pub mod trusted_advisor_resource_detail {
             self.status = Some(input.into());
             self
         }
+        /// <p>The status code for the resource identified in the Trusted Advisor check.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -813,6 +897,7 @@ pub mod trusted_advisor_resource_detail {
             self.region = Some(input.into());
             self
         }
+        /// <p>The AWS Region in which the identified resource is located.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
@@ -822,6 +907,7 @@ pub mod trusted_advisor_resource_detail {
             self.resource_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the identified resource.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
@@ -832,16 +918,30 @@ pub mod trusted_advisor_resource_detail {
             self.is_suppressed = Some(input);
             self
         }
+        /// <p>Specifies whether the AWS resource was ignored by Trusted Advisor because it was
+        /// marked as suppressed by the user.</p>
         pub fn set_is_suppressed(mut self, input: std::option::Option<bool>) -> Self {
             self.is_suppressed = input;
             self
         }
+        /// Appends an item to `metadata`.
+        ///
+        /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
+        ///
+        /// <p>Additional information about the identified resource. The exact metadata and its order
+        /// can be obtained by inspecting the <a>TrustedAdvisorCheckDescription</a>
+        /// object returned by the call to <a>DescribeTrustedAdvisorChecks</a>. <b>Metadata</b> contains all the data that is shown in the Excel
+        /// download, even in those cases where the UI shows just summary data.</p>
         pub fn metadata(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.metadata.unwrap_or_default();
             v.push(input.into());
             self.metadata = Some(v);
             self
         }
+        /// <p>Additional information about the identified resource. The exact metadata and its order
+        /// can be obtained by inspecting the <a>TrustedAdvisorCheckDescription</a>
+        /// object returned by the call to <a>DescribeTrustedAdvisorChecks</a>. <b>Metadata</b> contains all the data that is shown in the Excel
+        /// download, even in those cases where the UI shows just summary data.</p>
         pub fn set_metadata(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -939,6 +1039,10 @@ pub mod severity_level {
             self.code = Some(input.into());
             self
         }
+        /// <p>The code for case severity level.</p>
+        /// <p>Valid values: <code>low</code> | <code>normal</code> | <code>high</code> |
+        /// <code>urgent</code> | <code>critical</code>
+        /// </p>
         pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.code = input;
             self
@@ -978,6 +1082,37 @@ pub mod severity_level {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the severity level that corresponds to the severity level code.</p>
+        /// <note>
+        /// <p>The values returned by the API are different from the values that appear in the
+        /// AWS Support Center. For example, the API uses the code <code>low</code>, but the name
+        /// appears as General guidance in Support Center. </p>
+        /// <p>The following are the API code names and how they appear in the console:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>low</code> - General guidance</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>normal</code> - System impaired</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>high</code> - Production system impaired</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>urgent</code> - Production system down</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>critical</code> - Business-critical system down</p>
+        /// </li>
+        /// </ul>
+        /// </note>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/case-management.html#choosing-severity">Choosing a
+        /// severity</a> in the <i>AWS Support User Guide</i>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1040,6 +1175,8 @@ pub mod service {
             self.code = Some(input.into());
             self
         }
+        /// <p>The code for an AWS service returned by the <a>DescribeServices</a>
+        /// response. The <code>name</code> element contains the corresponding friendly name.</p>
         pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.code = input;
             self
@@ -1050,16 +1187,28 @@ pub mod service {
             self.name = Some(input.into());
             self
         }
+        /// <p>The friendly name for an AWS service. The <code>code</code> element contains the
+        /// corresponding code.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
+        /// Appends an item to `categories`.
+        ///
+        /// To override the contents of this collection use [`set_categories`](Self::set_categories).
+        ///
+        /// <p>A list of categories that describe the type of support issue a case describes.
+        /// Categories consist of a category name and a category code. Category names and codes are
+        /// passed to AWS Support when you call <a>CreateCase</a>.</p>
         pub fn categories(mut self, input: impl Into<crate::model::Category>) -> Self {
             let mut v = self.categories.unwrap_or_default();
             v.push(input.into());
             self.categories = Some(v);
             self
         }
+        /// <p>A list of categories that describe the type of support issue a case describes.
+        /// Categories consist of a category name and a category code. Category names and codes are
+        /// passed to AWS Support when you call <a>CreateCase</a>.</p>
         pub fn set_categories(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Category>>,
@@ -1118,6 +1267,7 @@ pub mod category {
             self.code = Some(input.into());
             self
         }
+        /// <p>The category code for the support case.</p>
         pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.code = input;
             self
@@ -1127,6 +1277,7 @@ pub mod category {
             self.name = Some(input.into());
             self
         }
+        /// <p>The category name for the support case.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1204,6 +1355,10 @@ pub mod communication {
             self.case_id = Some(input.into());
             self
         }
+        /// <p>The support case ID requested or returned in the call. The case ID is an
+        /// alphanumeric string formatted as shown in this example:
+        /// case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
+        /// </p>
         pub fn set_case_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.case_id = input;
             self
@@ -1213,6 +1368,7 @@ pub mod communication {
             self.body = Some(input.into());
             self
         }
+        /// <p>The text of the communication between the customer and AWS Support.</p>
         pub fn set_body(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.body = input;
             self
@@ -1226,6 +1382,11 @@ pub mod communication {
             self.submitted_by = Some(input.into());
             self
         }
+        /// <p>The identity of the account that submitted, or responded to, the support case.
+        /// Customer entries include the role or IAM user as well as the email address. For example,
+        /// "AdminRole (Role) <janedoe@example.com>. Entries from the AWS Support team display
+        /// "Amazon Web Services," and don't show an email address.
+        /// </p>
         pub fn set_submitted_by(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.submitted_by = input;
             self
@@ -1235,16 +1396,23 @@ pub mod communication {
             self.time_created = Some(input.into());
             self
         }
+        /// <p>The time the communication was created.</p>
         pub fn set_time_created(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.time_created = input;
             self
         }
+        /// Appends an item to `attachment_set`.
+        ///
+        /// To override the contents of this collection use [`set_attachment_set`](Self::set_attachment_set).
+        ///
+        /// <p>Information about the attachments to the case communication.</p>
         pub fn attachment_set(mut self, input: impl Into<crate::model::AttachmentDetails>) -> Self {
             let mut v = self.attachment_set.unwrap_or_default();
             v.push(input.into());
             self.attachment_set = Some(v);
             self
         }
+        /// <p>Information about the attachments to the case communication.</p>
         pub fn set_attachment_set(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AttachmentDetails>>,
@@ -1304,6 +1472,7 @@ pub mod attachment_details {
             self.attachment_id = Some(input.into());
             self
         }
+        /// <p>The ID of the attachment.</p>
         pub fn set_attachment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1316,6 +1485,7 @@ pub mod attachment_details {
             self.file_name = Some(input.into());
             self
         }
+        /// <p>The file name of the attachment.</p>
         pub fn set_file_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.file_name = input;
             self
@@ -1555,6 +1725,10 @@ pub mod case_details {
             self.case_id = Some(input.into());
             self
         }
+        /// <p>The support case ID requested or returned in the call. The case ID is an
+        /// alphanumeric string formatted as shown in this example:
+        /// case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
+        /// </p>
         pub fn set_case_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.case_id = input;
             self
@@ -1565,6 +1739,8 @@ pub mod case_details {
             self.display_id = Some(input.into());
             self
         }
+        /// <p>The ID displayed for the case in the AWS Support Center. This is a numeric
+        /// string.</p>
         pub fn set_display_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.display_id = input;
             self
@@ -1574,6 +1750,7 @@ pub mod case_details {
             self.subject = Some(input.into());
             self
         }
+        /// <p>The subject line for the case in the AWS Support Center.</p>
         pub fn set_subject(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.subject = input;
             self
@@ -1616,6 +1793,40 @@ pub mod case_details {
             self.status = Some(input.into());
             self
         }
+        /// <p>The status of the case.</p>
+        /// <p>Valid values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>opened</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>pending-customer-action</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>reopened</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>resolved</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>unassigned</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>work-in-progress</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -1626,6 +1837,8 @@ pub mod case_details {
             self.service_code = Some(input.into());
             self
         }
+        /// <p>The code for the AWS service. You can get a list of codes and the corresponding
+        /// service names by calling <a>DescribeServices</a>.</p>
         pub fn set_service_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service_code = input;
             self
@@ -1635,6 +1848,7 @@ pub mod case_details {
             self.category_code = Some(input.into());
             self
         }
+        /// <p>The category of problem for the support case.</p>
         pub fn set_category_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1647,6 +1861,7 @@ pub mod case_details {
             self.severity_code = Some(input.into());
             self
         }
+        /// <p>The code for the severity level returned by the call to <a>DescribeSeverityLevels</a>.</p>
         pub fn set_severity_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1659,6 +1874,7 @@ pub mod case_details {
             self.submitted_by = Some(input.into());
             self
         }
+        /// <p>The email address of the account that submitted the case.</p>
         pub fn set_submitted_by(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.submitted_by = input;
             self
@@ -1668,6 +1884,7 @@ pub mod case_details {
             self.time_created = Some(input.into());
             self
         }
+        /// <p>The time that the case was created in the AWS Support Center.</p>
         pub fn set_time_created(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.time_created = input;
             self
@@ -1682,6 +1899,9 @@ pub mod case_details {
             self.recent_communications = Some(input);
             self
         }
+        /// <p>The five most recent communications between you and AWS Support Center, including the
+        /// IDs of any attachments to the communications. Also includes a <code>nextToken</code>
+        /// that you can use to retrieve earlier communications.</p>
         pub fn set_recent_communications(
             mut self,
             input: std::option::Option<crate::model::RecentCaseCommunications>,
@@ -1689,12 +1909,18 @@ pub mod case_details {
             self.recent_communications = input;
             self
         }
+        /// Appends an item to `cc_email_addresses`.
+        ///
+        /// To override the contents of this collection use [`set_cc_email_addresses`](Self::set_cc_email_addresses).
+        ///
+        /// <p>The email addresses that receive copies of communication about the case.</p>
         pub fn cc_email_addresses(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.cc_email_addresses.unwrap_or_default();
             v.push(input.into());
             self.cc_email_addresses = Some(v);
             self
         }
+        /// <p>The email addresses that receive copies of communication about the case.</p>
         pub fn set_cc_email_addresses(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1709,6 +1935,9 @@ pub mod case_details {
             self.language = Some(input.into());
             self
         }
+        /// <p>The ISO 639-1 code for the language in which AWS provides support. AWS Support
+        /// currently supports English ("en") and Japanese ("ja"). Language parameters must be
+        /// passed explicitly for operations that take them.</p>
         pub fn set_language(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.language = input;
             self
@@ -1766,12 +1995,18 @@ pub mod recent_case_communications {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `communications`.
+        ///
+        /// To override the contents of this collection use [`set_communications`](Self::set_communications).
+        ///
+        /// <p>The five most recent communications associated with the case.</p>
         pub fn communications(mut self, input: impl Into<crate::model::Communication>) -> Self {
             let mut v = self.communications.unwrap_or_default();
             v.push(input.into());
             self.communications = Some(v);
             self
         }
+        /// <p>The five most recent communications associated with the case.</p>
         pub fn set_communications(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Communication>>,
@@ -1784,6 +2019,7 @@ pub mod recent_case_communications {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A resumption point for pagination.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1812,7 +2048,7 @@ pub struct Attachment {
     /// <p>The name of the attachment file.</p>
     pub file_name: std::option::Option<std::string::String>,
     /// <p>The content of the attachment file.</p>
-    pub data: std::option::Option<smithy_types::Blob>,
+    pub data: std::option::Option<aws_smithy_types::Blob>,
 }
 impl std::fmt::Debug for Attachment {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1829,7 +2065,7 @@ pub mod attachment {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_name: std::option::Option<std::string::String>,
-        pub(crate) data: std::option::Option<smithy_types::Blob>,
+        pub(crate) data: std::option::Option<aws_smithy_types::Blob>,
     }
     impl Builder {
         /// <p>The name of the attachment file.</p>
@@ -1837,16 +2073,18 @@ pub mod attachment {
             self.file_name = Some(input.into());
             self
         }
+        /// <p>The name of the attachment file.</p>
         pub fn set_file_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.file_name = input;
             self
         }
         /// <p>The content of the attachment file.</p>
-        pub fn data(mut self, input: smithy_types::Blob) -> Self {
+        pub fn data(mut self, input: aws_smithy_types::Blob) -> Self {
             self.data = Some(input);
             self
         }
-        pub fn set_data(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+        /// <p>The content of the attachment file.</p>
+        pub fn set_data(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.data = input;
             self
         }

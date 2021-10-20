@@ -15,6 +15,8 @@ pub mod delete_object_input {
             self.path = Some(input.into());
             self
         }
+        /// <p>The path (including the file name) where the object is stored in the container.
+        /// Format: <folder name>/<folder name>/<file name></p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.path = input;
             self
@@ -22,8 +24,10 @@ pub mod delete_object_input {
         /// Consumes the builder and constructs a [`DeleteObjectInput`](crate::input::DeleteObjectInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeleteObjectInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteObjectInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteObjectInput { path: self.path })
         }
     }
@@ -39,27 +43,27 @@ impl DeleteObjectInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteObject,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteObjectInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_1 = &_input.path;
             let input_1 =
                 input_1
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "path",
                         details: "cannot be empty or unset",
                     })?;
-            let path = smithy_http::label::fmt_string(input_1, true);
+            let path = aws_smithy_http::label::fmt_string(input_1, true);
             if path.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "path",
                     details: "cannot be empty or unset",
                 });
@@ -71,7 +75,7 @@ impl DeleteObjectInput {
         fn update_http_builder(
             input: &crate::input::DeleteObjectInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -80,23 +84,23 @@ impl DeleteObjectInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteObjectInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -119,25 +123,27 @@ impl DeleteObjectInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeleteObject::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DeleteObject",
-                    "mediastoredata",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteObject::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteObject",
+            "mediastoredata",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -166,6 +172,8 @@ pub mod describe_object_input {
             self.path = Some(input.into());
             self
         }
+        /// <p>The path (including the file name) where the object is stored in the container.
+        /// Format: <folder name>/<folder name>/<file name></p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.path = input;
             self
@@ -175,7 +183,7 @@ pub mod describe_object_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeObjectInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeObjectInput { path: self.path })
         }
@@ -192,27 +200,27 @@ impl DescribeObjectInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeObject,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeObjectInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_2 = &_input.path;
             let input_2 =
                 input_2
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "path",
                         details: "cannot be empty or unset",
                     })?;
-            let path = smithy_http::label::fmt_string(input_2, true);
+            let path = aws_smithy_http::label::fmt_string(input_2, true);
             if path.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "path",
                     details: "cannot be empty or unset",
                 });
@@ -224,7 +232,7 @@ impl DescribeObjectInput {
         fn update_http_builder(
             input: &crate::input::DescribeObjectInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -233,23 +241,23 @@ impl DescribeObjectInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeObjectInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -272,15 +280,15 @@ impl DescribeObjectInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeObject::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeObject",
             "mediastoredata",
         ));
@@ -289,10 +297,10 @@ impl DescribeObjectInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -338,6 +346,24 @@ pub mod get_object_input {
             self.path = Some(input.into());
             self
         }
+        /// <p>The path (including the file name) where the object is stored in the container.
+        /// Format: <folder name>/<folder name>/<file name></p>
+        /// <p>For example, to upload the file <code>mlaw.avi</code> to the folder path
+        /// <code>premium\canada</code> in the container <code>movies</code>, enter the path
+        /// <code>premium/canada/mlaw.avi</code>.</p>
+        /// <p>Do not include the container name in this path.</p>
+        /// <p>If the path includes any folders that don't exist yet, the service creates them. For
+        /// example, suppose you have an existing <code>premium/usa</code> subfolder. If you specify
+        /// <code>premium/canada</code>, the service creates a <code>canada</code> subfolder in the
+        /// <code>premium</code> folder. You then have two subfolders, <code>usa</code> and
+        /// <code>canada</code>, in the <code>premium</code> folder. </p>
+        /// <p>There is no correlation between the path to the source and the path (folders) in the
+        /// container in AWS Elemental MediaStore.</p>
+        /// <p>For more information about folders and how they exist in a container, see the <a href="http://docs.aws.amazon.com/mediastore/latest/ug/">AWS Elemental MediaStore User
+        /// Guide</a>.</p>
+        /// <p>The file name is the name that is assigned to the file that you upload. The file can
+        /// have the same name inside and outside of AWS Elemental MediaStore, or it can have the same
+        /// name. The file name can include or omit an extension. </p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.path = input;
             self
@@ -348,6 +374,8 @@ pub mod get_object_input {
             self.range = Some(input.into());
             self
         }
+        /// <p>The range bytes of an object to retrieve. For more information about the
+        /// <code>Range</code> header, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>. AWS Elemental MediaStore ignores this header for partially uploaded objects that have streaming upload availability.</p>
         pub fn set_range(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.range = input;
             self
@@ -355,7 +383,7 @@ pub mod get_object_input {
         /// Consumes the builder and constructs a [`GetObjectInput`](crate::input::GetObjectInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetObjectInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::GetObjectInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::GetObjectInput {
                 path: self.path,
@@ -375,27 +403,27 @@ impl GetObjectInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetObject,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetObjectInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_3 = &_input.path;
             let input_3 =
                 input_3
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "path",
                         details: "cannot be empty or unset",
                     })?;
-            let path = smithy_http::label::fmt_string(input_3, true);
+            let path = aws_smithy_http::label::fmt_string(input_3, true);
             if path.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "path",
                     details: "cannot be empty or unset",
                 });
@@ -406,7 +434,7 @@ impl GetObjectInput {
         fn add_headers(
             _input: &crate::input::GetObjectInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_4) = &_input.range {
                 let formatted_5 = AsRef::<str>::as_ref(inner_4);
@@ -414,7 +442,7 @@ impl GetObjectInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_5;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "range",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -430,7 +458,7 @@ impl GetObjectInput {
         fn update_http_builder(
             input: &crate::input::GetObjectInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -440,23 +468,23 @@ impl GetObjectInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetObjectInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -479,13 +507,13 @@ impl GetObjectInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
         let op =
-            smithy_http::operation::Operation::new(request, crate::operation::GetObject::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
+            aws_smithy_http::operation::Operation::new(request, crate::operation::GetObject::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "GetObject",
                     "mediastoredata",
                 ));
@@ -494,10 +522,10 @@ impl GetObjectInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -528,6 +556,8 @@ pub mod list_items_input {
             self.path = Some(input.into());
             self
         }
+        /// <p>The path in the container from which to retrieve items. Format: <folder
+        /// name>/<folder name>/<file name></p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.path = input;
             self
@@ -544,6 +574,14 @@ pub mod list_items_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of results to return per API request. For example, you submit a
+        /// <code>ListItems</code> request with <code>MaxResults</code> set at 500. Although 2,000
+        /// items match your request, the service returns no more than the first 500 items. (The
+        /// service also returns a <code>NextToken</code> value that you can use to fetch the next
+        /// batch of results.) The service might return fewer results than the <code>MaxResults</code>
+        /// value.</p>
+        /// <p>If <code>MaxResults</code> is not included in the request, the service defaults to
+        /// pagination with a maximum of 1,000 results per page.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -558,6 +596,12 @@ pub mod list_items_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token that identifies which batch of results that you want to see. For example,
+        /// you submit a <code>ListItems</code> request with <code>MaxResults</code> set at 500. The
+        /// service returns the first batch of results (up to 500) and a <code>NextToken</code> value.
+        /// To see the next batch of results, you can submit the <code>ListItems</code> request a
+        /// second time and specify the <code>NextToken</code> value.</p>
+        /// <p>Tokens expire after 15 minutes.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -565,7 +609,7 @@ pub mod list_items_input {
         /// Consumes the builder and constructs a [`ListItemsInput`](crate::input::ListItemsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListItemsInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::ListItemsInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::ListItemsInput {
                 path: self.path,
@@ -586,39 +630,39 @@ impl ListItemsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListItems,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListItemsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListItemsInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_6) = &_input.path {
-                query.push_kv("Path", &smithy_http::query::fmt_string(&inner_6));
+                query.push_kv("Path", &aws_smithy_http::query::fmt_string(&inner_6));
             }
             if let Some(inner_7) = &_input.max_results {
                 query.push_kv(
                     "MaxResults",
-                    &smithy_types::primitive::Encoder::from(*inner_7).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_7).encode(),
                 );
             }
             if let Some(inner_8) = &_input.next_token {
-                query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_8));
+                query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_8));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::ListItemsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -628,23 +672,23 @@ impl ListItemsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListItemsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -667,13 +711,13 @@ impl ListItemsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
         let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListItems::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
+            aws_smithy_http::operation::Operation::new(request, crate::operation::ListItems::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "ListItems",
                     "mediastoredata",
                 ));
@@ -682,10 +726,10 @@ impl ListItemsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -705,7 +749,7 @@ pub mod put_object_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) body: std::option::Option<smithy_http::byte_stream::ByteStream>,
+        pub(crate) body: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
         pub(crate) path: std::option::Option<std::string::String>,
         pub(crate) content_type: std::option::Option<std::string::String>,
         pub(crate) cache_control: std::option::Option<std::string::String>,
@@ -714,13 +758,14 @@ pub mod put_object_input {
     }
     impl Builder {
         /// <p>The bytes to be stored. </p>
-        pub fn body(mut self, input: smithy_http::byte_stream::ByteStream) -> Self {
+        pub fn body(mut self, input: aws_smithy_http::byte_stream::ByteStream) -> Self {
             self.body = Some(input);
             self
         }
+        /// <p>The bytes to be stored. </p>
         pub fn set_body(
             mut self,
-            input: std::option::Option<smithy_http::byte_stream::ByteStream>,
+            input: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
         ) -> Self {
             self.body = input;
             self
@@ -747,6 +792,24 @@ pub mod put_object_input {
             self.path = Some(input.into());
             self
         }
+        /// <p>The path (including the file name) where the object is stored in the container.
+        /// Format: <folder name>/<folder name>/<file name></p>
+        /// <p>For example, to upload the file <code>mlaw.avi</code> to the folder path
+        /// <code>premium\canada</code> in the container <code>movies</code>, enter the path
+        /// <code>premium/canada/mlaw.avi</code>.</p>
+        /// <p>Do not include the container name in this path.</p>
+        /// <p>If the path includes any folders that don't exist yet, the service creates them. For
+        /// example, suppose you have an existing <code>premium/usa</code> subfolder. If you specify
+        /// <code>premium/canada</code>, the service creates a <code>canada</code> subfolder in the
+        /// <code>premium</code> folder. You then have two subfolders, <code>usa</code> and
+        /// <code>canada</code>, in the <code>premium</code> folder. </p>
+        /// <p>There is no correlation between the path to the source and the path (folders) in the
+        /// container in AWS Elemental MediaStore.</p>
+        /// <p>For more information about folders and how they exist in a container, see the <a href="http://docs.aws.amazon.com/mediastore/latest/ug/">AWS Elemental MediaStore User
+        /// Guide</a>.</p>
+        /// <p>The file name is the name that is assigned to the file that you upload. The file can
+        /// have the same name inside and outside of AWS Elemental MediaStore, or it can have the same
+        /// name. The file name can include or omit an extension. </p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.path = input;
             self
@@ -756,6 +819,7 @@ pub mod put_object_input {
             self.content_type = Some(input.into());
             self
         }
+        /// <p>The content type of the object.</p>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_type = input;
             self
@@ -767,6 +831,9 @@ pub mod put_object_input {
             self.cache_control = Some(input.into());
             self
         }
+        /// <p>An optional <code>CacheControl</code> header that allows the caller to control the
+        /// object's cache behavior. Headers can be passed in as specified in the HTTP at <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
+        /// <p>Headers with a custom user-defined value are also accepted.</p>
         pub fn set_cache_control(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -781,6 +848,9 @@ pub mod put_object_input {
             self.storage_class = Some(input);
             self
         }
+        /// <p>Indicates the storage class of a <code>Put</code> request. Defaults to
+        /// high-performance temporal storage class, and objects are persisted into durable storage
+        /// shortly after being received.</p>
         pub fn set_storage_class(
             mut self,
             input: std::option::Option<crate::model::StorageClass>,
@@ -796,6 +866,10 @@ pub mod put_object_input {
             self.upload_availability = Some(input);
             self
         }
+        /// <p>Indicates the availability of an object while it is still uploading. If the value is set to <code>streaming</code>, the object is available for
+        /// downloading after some initial buffering but before the object is uploaded completely. If the value is set to <code>standard</code>, the object is
+        /// available for downloading only when it is uploaded completely. The default value for this header is <code>standard</code>.</p>
+        /// <p>To use this header, you must also set the HTTP <code>Transfer-Encoding</code> header to <code>chunked</code>.</p>
         pub fn set_upload_availability(
             mut self,
             input: std::option::Option<crate::model::UploadAvailability>,
@@ -806,7 +880,7 @@ pub mod put_object_input {
         /// Consumes the builder and constructs a [`PutObjectInput`](crate::input::PutObjectInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::PutObjectInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::PutObjectInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::PutObjectInput {
                 body: self.body.unwrap_or_default(),
@@ -830,27 +904,27 @@ impl PutObjectInput {
         self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::PutObject,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::PutObjectInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_9 = &_input.path;
             let input_9 =
                 input_9
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "path",
                         details: "cannot be empty or unset",
                     })?;
-            let path = smithy_http::label::fmt_string(input_9, true);
+            let path = aws_smithy_http::label::fmt_string(input_9, true);
             if path.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "path",
                     details: "cannot be empty or unset",
                 });
@@ -861,7 +935,7 @@ impl PutObjectInput {
         fn add_headers(
             _input: &crate::input::PutObjectInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_10) = &_input.content_type {
                 let formatted_11 = AsRef::<str>::as_ref(inner_10);
@@ -869,7 +943,7 @@ impl PutObjectInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_11;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "content_type",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -885,7 +959,7 @@ impl PutObjectInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_13;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "cache_control",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -901,7 +975,7 @@ impl PutObjectInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_15;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "storage_class",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -917,7 +991,7 @@ impl PutObjectInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_17;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "upload_availability",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -933,7 +1007,7 @@ impl PutObjectInput {
         fn update_http_builder(
             input: &crate::input::PutObjectInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -943,23 +1017,23 @@ impl PutObjectInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::PutObjectInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/octet-stream",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::ser_payload_put_object_input(self.body)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -986,13 +1060,13 @@ impl PutObjectInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
         let op =
-            smithy_http::operation::Operation::new(request, crate::operation::PutObject::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
+            aws_smithy_http::operation::Operation::new(request, crate::operation::PutObject::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "PutObject",
                     "mediastoredata",
                 ));
@@ -1001,10 +1075,10 @@ impl PutObjectInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1018,10 +1092,11 @@ impl PutObjectInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 pub struct PutObjectInput {
     /// <p>The bytes to be stored. </p>
-    pub body: smithy_http::byte_stream::ByteStream,
+    pub body: aws_smithy_http::byte_stream::ByteStream,
     /// <p>The path (including the file name) where the object is stored in the container.
     /// Format: <folder name>/<folder name>/<file name></p>
     /// <p>For example, to upload the file <code>mlaw.avi</code> to the folder path
@@ -1070,6 +1145,7 @@ impl std::fmt::Debug for PutObjectInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListItemsInput {
@@ -1103,6 +1179,7 @@ impl std::fmt::Debug for ListItemsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetObjectInput {
@@ -1138,6 +1215,7 @@ impl std::fmt::Debug for GetObjectInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeObjectInput {
@@ -1153,6 +1231,7 @@ impl std::fmt::Debug for DescribeObjectInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteObjectInput {

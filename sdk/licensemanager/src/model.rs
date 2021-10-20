@@ -27,6 +27,7 @@ pub mod organization_configuration {
             self.enable_integration = Some(input);
             self
         }
+        /// <p>Enables Organizations integration.</p>
         pub fn set_enable_integration(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_integration = input;
             self
@@ -78,6 +79,7 @@ pub mod license_specification {
             self.license_configuration_arn = Some(input.into());
             self
         }
+        /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
         pub fn set_license_configuration_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -90,6 +92,7 @@ pub mod license_specification {
             self.ami_association_scope = Some(input.into());
             self
         }
+        /// <p>Scope of AMI associations. The possible value is <code>cross-account</code>.</p>
         pub fn set_ami_association_scope(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -147,6 +150,8 @@ pub mod report_frequency {
             self.value = Some(input);
             self
         }
+        /// <p>Number of times within the frequency period that a report is generated.  
+        /// The only supported value is <code>1</code>.</p>
         pub fn set_value(mut self, input: std::option::Option<i32>) -> Self {
             self.value = input;
             self
@@ -156,6 +161,7 @@ pub mod report_frequency {
             self.period = Some(input);
             self
         }
+        /// <p>Time period between each report. The period can be daily, weekly, or monthly.</p>
         pub fn set_period(
             mut self,
             input: std::option::Option<crate::model::ReportFrequencyType>,
@@ -179,6 +185,7 @@ impl ReportFrequency {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -190,8 +197,11 @@ impl ReportFrequency {
     std::hash::Hash,
 )]
 pub enum ReportFrequencyType {
+    #[allow(missing_docs)] // documentation missing in model
     Day,
+    #[allow(missing_docs)] // documentation missing in model
     Month,
+    #[allow(missing_docs)] // documentation missing in model
     Week,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -214,6 +224,7 @@ impl std::str::FromStr for ReportFrequencyType {
     }
 }
 impl ReportFrequencyType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ReportFrequencyType::Day => "DAY",
@@ -222,6 +233,7 @@ impl ReportFrequencyType {
             ReportFrequencyType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DAY", "MONTH", "WEEK"]
     }
@@ -259,12 +271,18 @@ pub mod report_context {
             std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `license_configuration_arns`.
+        ///
+        /// To override the contents of this collection use [`set_license_configuration_arns`](Self::set_license_configuration_arns).
+        ///
+        /// <p>Amazon Resource Name (ARN) of the license configuration that this generator reports on.</p>
         pub fn license_configuration_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.license_configuration_arns.unwrap_or_default();
             v.push(input.into());
             self.license_configuration_arns = Some(v);
             self
         }
+        /// <p>Amazon Resource Name (ARN) of the license configuration that this generator reports on.</p>
         pub fn set_license_configuration_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -287,6 +305,7 @@ impl ReportContext {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -298,7 +317,9 @@ impl ReportContext {
     std::hash::Hash,
 )]
 pub enum ReportType {
+    #[allow(missing_docs)] // documentation missing in model
     LicenseConfigurationSummaryReport,
+    #[allow(missing_docs)] // documentation missing in model
     LicenseConfigurationUsageReport,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -320,6 +341,7 @@ impl std::str::FromStr for ReportType {
     }
 }
 impl ReportType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ReportType::LicenseConfigurationSummaryReport => "LicenseConfigurationSummaryReport",
@@ -327,6 +349,7 @@ impl ReportType {
             ReportType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "LicenseConfigurationSummaryReport",
@@ -446,6 +469,7 @@ pub mod product_information {
             self.resource_type = Some(input.into());
             self
         }
+        /// <p>Resource type. The possible values are <code>SSM_MANAGED</code> | <code>RDS</code>.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -453,6 +477,80 @@ pub mod product_information {
             self.resource_type = input;
             self
         }
+        /// Appends an item to `product_information_filter_list`.
+        ///
+        /// To override the contents of this collection use [`set_product_information_filter_list`](Self::set_product_information_filter_list).
+        ///
+        /// <p>A Product information filter consists of a <code>ProductInformationFilterComparator</code> which is a logical operator, a <code>ProductInformationFilterName</code> which specifies the type of filter being declared, and a <code>ProductInformationFilterValue</code> that specifies the value to filter on. </p>
+        /// <p>Accepted values for <code>ProductInformationFilterName</code> are listed here along with descriptions and valid options for <code>ProductInformationFilterComparator</code>. </p>
+        /// <p>The following filters and are supported when the resource type
+        /// is <code>SSM_MANAGED</code>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Application Name</code> - The name of the application.
+        /// Logical operator is <code>EQUALS</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Application Publisher</code> - The publisher of the application.
+        /// Logical operator is <code>EQUALS</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Application Version</code> - The version of the application.
+        /// Logical operator is <code>EQUALS</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Platform Name</code> - The name of the platform.
+        /// Logical operator is <code>EQUALS</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Platform Type</code> - The platform type.
+        /// Logical operator is <code>EQUALS</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Tag:key</code> - The key of a tag attached to an Amazon Web Services resource you wish to exclude from automated discovery. Logical operator is <code>NOT_EQUALS</code>.  The key for your tag must be appended to <code>Tag:</code> following the example: <code>Tag:name-of-your-key</code>. <code>ProductInformationFilterValue</code> is optional if you are not using values for the key.
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AccountId</code> - The 12-digit ID of an Amazon Web Services account you wish to exclude from automated discovery.
+        /// Logical operator is <code>NOT_EQUALS</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>License Included</code> - The type of license included.
+        /// Logical operators are <code>EQUALS</code> and <code>NOT_EQUALS</code>.
+        /// Possible values are: <code>sql-server-enterprise</code> |
+        /// <code>sql-server-standard</code> |
+        /// <code>sql-server-web</code> |  
+        /// <code>windows-server-datacenter</code>.</p>
+        /// </li>
+        /// </ul>
+        /// <p>The following filters and logical operators are supported when the resource type
+        /// is <code>RDS</code>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Engine Edition</code> - The edition of the database engine.
+        /// Logical operator is <code>EQUALS</code>.
+        /// Possible values are: <code>oracle-ee</code> | <code>oracle-se</code> | <code>oracle-se1</code> | <code>oracle-se2</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>License Pack</code> - The license pack.
+        /// Logical operator is <code>EQUALS</code>.
+        /// Possible values are: <code>data guard</code> |
+        /// <code>diagnostic pack sqlt</code> |
+        /// <code>tuning pack sqlt</code> |
+        /// <code>ols</code> |
+        /// <code>olap</code>.</p>
+        /// </li>
+        /// </ul>
         pub fn product_information_filter_list(
             mut self,
             input: impl Into<crate::model::ProductInformationFilter>,
@@ -462,6 +560,76 @@ pub mod product_information {
             self.product_information_filter_list = Some(v);
             self
         }
+        /// <p>A Product information filter consists of a <code>ProductInformationFilterComparator</code> which is a logical operator, a <code>ProductInformationFilterName</code> which specifies the type of filter being declared, and a <code>ProductInformationFilterValue</code> that specifies the value to filter on. </p>
+        /// <p>Accepted values for <code>ProductInformationFilterName</code> are listed here along with descriptions and valid options for <code>ProductInformationFilterComparator</code>. </p>
+        /// <p>The following filters and are supported when the resource type
+        /// is <code>SSM_MANAGED</code>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Application Name</code> - The name of the application.
+        /// Logical operator is <code>EQUALS</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Application Publisher</code> - The publisher of the application.
+        /// Logical operator is <code>EQUALS</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Application Version</code> - The version of the application.
+        /// Logical operator is <code>EQUALS</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Platform Name</code> - The name of the platform.
+        /// Logical operator is <code>EQUALS</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Platform Type</code> - The platform type.
+        /// Logical operator is <code>EQUALS</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Tag:key</code> - The key of a tag attached to an Amazon Web Services resource you wish to exclude from automated discovery. Logical operator is <code>NOT_EQUALS</code>.  The key for your tag must be appended to <code>Tag:</code> following the example: <code>Tag:name-of-your-key</code>. <code>ProductInformationFilterValue</code> is optional if you are not using values for the key.
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AccountId</code> - The 12-digit ID of an Amazon Web Services account you wish to exclude from automated discovery.
+        /// Logical operator is <code>NOT_EQUALS</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>License Included</code> - The type of license included.
+        /// Logical operators are <code>EQUALS</code> and <code>NOT_EQUALS</code>.
+        /// Possible values are: <code>sql-server-enterprise</code> |
+        /// <code>sql-server-standard</code> |
+        /// <code>sql-server-web</code> |  
+        /// <code>windows-server-datacenter</code>.</p>
+        /// </li>
+        /// </ul>
+        /// <p>The following filters and logical operators are supported when the resource type
+        /// is <code>RDS</code>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Engine Edition</code> - The edition of the database engine.
+        /// Logical operator is <code>EQUALS</code>.
+        /// Possible values are: <code>oracle-ee</code> | <code>oracle-se</code> | <code>oracle-se1</code> | <code>oracle-se2</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>License Pack</code> - The license pack.
+        /// Logical operator is <code>EQUALS</code>.
+        /// Possible values are: <code>data guard</code> |
+        /// <code>diagnostic pack sqlt</code> |
+        /// <code>tuning pack sqlt</code> |
+        /// <code>ols</code> |
+        /// <code>olap</code>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_product_information_filter_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ProductInformationFilter>>,
@@ -534,6 +702,7 @@ pub mod product_information_filter {
             self.product_information_filter_name = Some(input.into());
             self
         }
+        /// <p>Filter name.</p>
         pub fn set_product_information_filter_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -541,6 +710,11 @@ pub mod product_information_filter {
             self.product_information_filter_name = input;
             self
         }
+        /// Appends an item to `product_information_filter_value`.
+        ///
+        /// To override the contents of this collection use [`set_product_information_filter_value`](Self::set_product_information_filter_value).
+        ///
+        /// <p>Filter value.</p>
         pub fn product_information_filter_value(
             mut self,
             input: impl Into<std::string::String>,
@@ -550,6 +724,7 @@ pub mod product_information_filter {
             self.product_information_filter_value = Some(v);
             self
         }
+        /// <p>Filter value.</p>
         pub fn set_product_information_filter_value(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -565,6 +740,7 @@ pub mod product_information_filter {
             self.product_information_filter_comparator = Some(input.into());
             self
         }
+        /// <p>Logical operator.</p>
         pub fn set_product_information_filter_comparator(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -589,6 +765,7 @@ impl ProductInformationFilter {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -600,7 +777,9 @@ impl ProductInformationFilter {
     std::hash::Hash,
 )]
 pub enum LicenseConfigurationStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Available,
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -622,6 +801,7 @@ impl std::str::FromStr for LicenseConfigurationStatus {
     }
 }
 impl LicenseConfigurationStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LicenseConfigurationStatus::Available => "AVAILABLE",
@@ -629,6 +809,7 @@ impl LicenseConfigurationStatus {
             LicenseConfigurationStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AVAILABLE", "DISABLED"]
     }
@@ -671,6 +852,7 @@ pub mod tag {
             self.key = Some(input.into());
             self
         }
+        /// <p>Tag key.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -680,6 +862,7 @@ pub mod tag {
             self.value = Some(input.into());
             self
         }
+        /// <p>Tag value.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -700,6 +883,7 @@ impl Tag {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -711,14 +895,23 @@ impl Tag {
     std::hash::Hash,
 )]
 pub enum GrantStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     Deleted,
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     FailedWorkflow,
+    #[allow(missing_docs)] // documentation missing in model
     PendingAccept,
+    #[allow(missing_docs)] // documentation missing in model
     PendingDelete,
+    #[allow(missing_docs)] // documentation missing in model
     PendingWorkflow,
+    #[allow(missing_docs)] // documentation missing in model
     Rejected,
+    #[allow(missing_docs)] // documentation missing in model
     WorkflowCompleted,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -747,6 +940,7 @@ impl std::str::FromStr for GrantStatus {
     }
 }
 impl GrantStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             GrantStatus::Active => "ACTIVE",
@@ -761,6 +955,7 @@ impl GrantStatus {
             GrantStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
@@ -794,7 +989,7 @@ pub struct LicenseConfigurationUsage {
     /// <p>ID of the account that owns the resource.</p>
     pub resource_owner_id: std::option::Option<std::string::String>,
     /// <p>Time when the license configuration was initially associated with the resource.</p>
-    pub association_time: std::option::Option<smithy_types::Instant>,
+    pub association_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Number of licenses consumed by the resource.</p>
     pub consumed_licenses: std::option::Option<i64>,
 }
@@ -820,7 +1015,7 @@ pub mod license_configuration_usage {
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
         pub(crate) resource_status: std::option::Option<std::string::String>,
         pub(crate) resource_owner_id: std::option::Option<std::string::String>,
-        pub(crate) association_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) association_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) consumed_licenses: std::option::Option<i64>,
     }
     impl Builder {
@@ -829,6 +1024,7 @@ pub mod license_configuration_usage {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>Amazon Resource Name (ARN) of the resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -838,6 +1034,7 @@ pub mod license_configuration_usage {
             self.resource_type = Some(input);
             self
         }
+        /// <p>Type of resource.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::ResourceType>,
@@ -850,6 +1047,7 @@ pub mod license_configuration_usage {
             self.resource_status = Some(input.into());
             self
         }
+        /// <p>Status of the resource.</p>
         pub fn set_resource_status(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -862,6 +1060,7 @@ pub mod license_configuration_usage {
             self.resource_owner_id = Some(input.into());
             self
         }
+        /// <p>ID of the account that owns the resource.</p>
         pub fn set_resource_owner_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -870,13 +1069,14 @@ pub mod license_configuration_usage {
             self
         }
         /// <p>Time when the license configuration was initially associated with the resource.</p>
-        pub fn association_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn association_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.association_time = Some(input);
             self
         }
+        /// <p>Time when the license configuration was initially associated with the resource.</p>
         pub fn set_association_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.association_time = input;
             self
@@ -886,6 +1086,7 @@ pub mod license_configuration_usage {
             self.consumed_licenses = Some(input);
             self
         }
+        /// <p>Number of licenses consumed by the resource.</p>
         pub fn set_consumed_licenses(mut self, input: std::option::Option<i64>) -> Self {
             self.consumed_licenses = input;
             self
@@ -910,6 +1111,7 @@ impl LicenseConfigurationUsage {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -921,10 +1123,15 @@ impl LicenseConfigurationUsage {
     std::hash::Hash,
 )]
 pub enum ResourceType {
+    #[allow(missing_docs)] // documentation missing in model
     Ec2Ami,
+    #[allow(missing_docs)] // documentation missing in model
     Ec2Host,
+    #[allow(missing_docs)] // documentation missing in model
     Ec2Instance,
+    #[allow(missing_docs)] // documentation missing in model
     Rds,
+    #[allow(missing_docs)] // documentation missing in model
     SystemsManagerManagedInstance,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -949,6 +1156,7 @@ impl std::str::FromStr for ResourceType {
     }
 }
 impl ResourceType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ResourceType::Ec2Ami => "EC2_AMI",
@@ -959,6 +1167,7 @@ impl ResourceType {
             ResourceType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "EC2_AMI",
@@ -1009,16 +1218,23 @@ pub mod filter {
             self.name = Some(input.into());
             self
         }
+        /// <p>Name of the filter. Filter names are case-sensitive.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>Filter values. Filter values are case-sensitive.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
+        /// <p>Filter values. Filter values are case-sensitive.</p>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1094,6 +1310,7 @@ pub mod token_data {
             self.token_id = Some(input.into());
             self
         }
+        /// <p>Token ID.</p>
         pub fn set_token_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.token_id = input;
             self
@@ -1103,6 +1320,7 @@ pub mod token_data {
             self.token_type = Some(input.into());
             self
         }
+        /// <p>Type of token generated. The supported value is <code>REFRESH_TOKEN</code>.</p>
         pub fn set_token_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.token_type = input;
             self
@@ -1112,6 +1330,7 @@ pub mod token_data {
             self.license_arn = Some(input.into());
             self
         }
+        /// <p>Amazon Resource Name (ARN) of the license.</p>
         pub fn set_license_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.license_arn = input;
             self
@@ -1121,6 +1340,7 @@ pub mod token_data {
             self.expiration_time = Some(input.into());
             self
         }
+        /// <p>Token expiration time, in ISO8601-UTC format.</p>
         pub fn set_expiration_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1128,12 +1348,18 @@ pub mod token_data {
             self.expiration_time = input;
             self
         }
+        /// Appends an item to `token_properties`.
+        ///
+        /// To override the contents of this collection use [`set_token_properties`](Self::set_token_properties).
+        ///
+        /// <p>Data specified by the caller.</p>
         pub fn token_properties(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.token_properties.unwrap_or_default();
             v.push(input.into());
             self.token_properties = Some(v);
             self
         }
+        /// <p>Data specified by the caller.</p>
         pub fn set_token_properties(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1141,12 +1367,18 @@ pub mod token_data {
             self.token_properties = input;
             self
         }
+        /// Appends an item to `role_arns`.
+        ///
+        /// To override the contents of this collection use [`set_role_arns`](Self::set_role_arns).
+        ///
+        /// <p>Amazon Resource Names (ARN) of the roles included in the token.</p>
         pub fn role_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.role_arns.unwrap_or_default();
             v.push(input.into());
             self.role_arns = Some(v);
             self
         }
+        /// <p>Amazon Resource Names (ARN) of the roles included in the token.</p>
         pub fn set_role_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1159,6 +1391,7 @@ pub mod token_data {
             self.status = Some(input.into());
             self
         }
+        /// <p>Token status. The possible values are <code>AVAILABLE</code> and <code>DELETED</code>.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -1235,6 +1468,7 @@ pub mod resource_inventory {
             self.resource_id = Some(input.into());
             self
         }
+        /// <p>ID of the resource.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
@@ -1244,6 +1478,7 @@ pub mod resource_inventory {
             self.resource_type = Some(input);
             self
         }
+        /// <p>Type of resource.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::ResourceType>,
@@ -1256,6 +1491,7 @@ pub mod resource_inventory {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>Amazon Resource Name (ARN) of the resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -1265,6 +1501,7 @@ pub mod resource_inventory {
             self.platform = Some(input.into());
             self
         }
+        /// <p>Platform of the resource.</p>
         pub fn set_platform(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.platform = input;
             self
@@ -1274,6 +1511,7 @@ pub mod resource_inventory {
             self.platform_version = Some(input.into());
             self
         }
+        /// <p>Platform version of the resource in the inventory.</p>
         pub fn set_platform_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1286,6 +1524,7 @@ pub mod resource_inventory {
             self.resource_owning_account_id = Some(input.into());
             self
         }
+        /// <p>ID of the account that owns the resource.</p>
         pub fn set_resource_owning_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1349,6 +1588,7 @@ pub mod inventory_filter {
             self.name = Some(input.into());
             self
         }
+        /// <p>Name of the filter.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1358,6 +1598,7 @@ pub mod inventory_filter {
             self.condition = Some(input);
             self
         }
+        /// <p>Condition of the filter.</p>
         pub fn set_condition(
             mut self,
             input: std::option::Option<crate::model::InventoryFilterCondition>,
@@ -1370,6 +1611,7 @@ pub mod inventory_filter {
             self.value = Some(input.into());
             self
         }
+        /// <p>Value of the filter.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -1391,6 +1633,7 @@ impl InventoryFilter {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1402,9 +1645,13 @@ impl InventoryFilter {
     std::hash::Hash,
 )]
 pub enum InventoryFilterCondition {
+    #[allow(missing_docs)] // documentation missing in model
     BeginsWith,
+    #[allow(missing_docs)] // documentation missing in model
     Contains,
+    #[allow(missing_docs)] // documentation missing in model
     Equals,
+    #[allow(missing_docs)] // documentation missing in model
     NotEquals,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1428,6 +1675,7 @@ impl std::str::FromStr for InventoryFilterCondition {
     }
 }
 impl InventoryFilterCondition {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             InventoryFilterCondition::BeginsWith => "BEGINS_WITH",
@@ -1437,6 +1685,7 @@ impl InventoryFilterCondition {
             InventoryFilterCondition::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["BEGINS_WITH", "CONTAINS", "EQUALS", "NOT_EQUALS"]
     }
@@ -1532,6 +1781,7 @@ pub mod granted_license {
             self.license_arn = Some(input.into());
             self
         }
+        /// <p>Amazon Resource Name (ARN) of the license.</p>
         pub fn set_license_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.license_arn = input;
             self
@@ -1541,6 +1791,7 @@ pub mod granted_license {
             self.license_name = Some(input.into());
             self
         }
+        /// <p>License name.</p>
         pub fn set_license_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.license_name = input;
             self
@@ -1550,6 +1801,7 @@ pub mod granted_license {
             self.product_name = Some(input.into());
             self
         }
+        /// <p>Product name.</p>
         pub fn set_product_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.product_name = input;
             self
@@ -1559,6 +1811,7 @@ pub mod granted_license {
             self.product_sku = Some(input.into());
             self
         }
+        /// <p>Product SKU.</p>
         pub fn set_product_sku(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.product_sku = input;
             self
@@ -1568,6 +1821,7 @@ pub mod granted_license {
             self.issuer = Some(input);
             self
         }
+        /// <p>Granted license issuer.</p>
         pub fn set_issuer(
             mut self,
             input: std::option::Option<crate::model::IssuerDetails>,
@@ -1580,6 +1834,7 @@ pub mod granted_license {
             self.home_region = Some(input.into());
             self
         }
+        /// <p>Home Region of the granted license.</p>
         pub fn set_home_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.home_region = input;
             self
@@ -1589,6 +1844,7 @@ pub mod granted_license {
             self.status = Some(input);
             self
         }
+        /// <p>Granted license status.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::LicenseStatus>,
@@ -1601,6 +1857,7 @@ pub mod granted_license {
             self.validity = Some(input);
             self
         }
+        /// <p>Date and time range during which the granted license is valid, in ISO8601-UTC format.</p>
         pub fn set_validity(
             mut self,
             input: std::option::Option<crate::model::DatetimeRange>,
@@ -1613,16 +1870,23 @@ pub mod granted_license {
             self.beneficiary = Some(input.into());
             self
         }
+        /// <p>Granted license beneficiary.</p>
         pub fn set_beneficiary(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.beneficiary = input;
             self
         }
+        /// Appends an item to `entitlements`.
+        ///
+        /// To override the contents of this collection use [`set_entitlements`](Self::set_entitlements).
+        ///
+        /// <p>License entitlements.</p>
         pub fn entitlements(mut self, input: impl Into<crate::model::Entitlement>) -> Self {
             let mut v = self.entitlements.unwrap_or_default();
             v.push(input.into());
             self.entitlements = Some(v);
             self
         }
+        /// <p>License entitlements.</p>
         pub fn set_entitlements(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Entitlement>>,
@@ -1638,6 +1902,7 @@ pub mod granted_license {
             self.consumption_configuration = Some(input);
             self
         }
+        /// <p>Configuration for consumption of the license.</p>
         pub fn set_consumption_configuration(
             mut self,
             input: std::option::Option<crate::model::ConsumptionConfiguration>,
@@ -1645,12 +1910,18 @@ pub mod granted_license {
             self.consumption_configuration = input;
             self
         }
+        /// Appends an item to `license_metadata`.
+        ///
+        /// To override the contents of this collection use [`set_license_metadata`](Self::set_license_metadata).
+        ///
+        /// <p>Granted license metadata.</p>
         pub fn license_metadata(mut self, input: impl Into<crate::model::Metadata>) -> Self {
             let mut v = self.license_metadata.unwrap_or_default();
             v.push(input.into());
             self.license_metadata = Some(v);
             self
         }
+        /// <p>Granted license metadata.</p>
         pub fn set_license_metadata(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Metadata>>,
@@ -1663,6 +1934,7 @@ pub mod granted_license {
             self.create_time = Some(input.into());
             self
         }
+        /// <p>Creation time of the granted license.</p>
         pub fn set_create_time(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.create_time = input;
             self
@@ -1672,6 +1944,7 @@ pub mod granted_license {
             self.version = Some(input.into());
             self
         }
+        /// <p>Version of the granted license.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -1681,6 +1954,7 @@ pub mod granted_license {
             self.received_metadata = Some(input);
             self
         }
+        /// <p>Granted license received metadata.</p>
         pub fn set_received_metadata(
             mut self,
             input: std::option::Option<crate::model::ReceivedMetadata>,
@@ -1754,6 +2028,7 @@ pub mod received_metadata {
             self.received_status = Some(input);
             self
         }
+        /// <p>Received status.</p>
         pub fn set_received_status(
             mut self,
             input: std::option::Option<crate::model::ReceivedStatus>,
@@ -1766,6 +2041,7 @@ pub mod received_metadata {
             self.received_status_reason = Some(input.into());
             self
         }
+        /// <p>Received status reason.</p>
         pub fn set_received_status_reason(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1773,6 +2049,11 @@ pub mod received_metadata {
             self.received_status_reason = input;
             self
         }
+        /// Appends an item to `allowed_operations`.
+        ///
+        /// To override the contents of this collection use [`set_allowed_operations`](Self::set_allowed_operations).
+        ///
+        /// <p>Allowed operations.</p>
         pub fn allowed_operations(
             mut self,
             input: impl Into<crate::model::AllowedOperation>,
@@ -1782,6 +2063,7 @@ pub mod received_metadata {
             self.allowed_operations = Some(v);
             self
         }
+        /// <p>Allowed operations.</p>
         pub fn set_allowed_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AllowedOperation>>,
@@ -1806,6 +2088,7 @@ impl ReceivedMetadata {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1817,12 +2100,19 @@ impl ReceivedMetadata {
     std::hash::Hash,
 )]
 pub enum AllowedOperation {
+    #[allow(missing_docs)] // documentation missing in model
     CheckInLicense,
+    #[allow(missing_docs)] // documentation missing in model
     CheckoutBorrowLicense,
+    #[allow(missing_docs)] // documentation missing in model
     CheckoutLicense,
+    #[allow(missing_docs)] // documentation missing in model
     CreateGrant,
+    #[allow(missing_docs)] // documentation missing in model
     CreateToken,
+    #[allow(missing_docs)] // documentation missing in model
     ExtendConsumptionLicense,
+    #[allow(missing_docs)] // documentation missing in model
     ListPurchasedLicenses,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1849,6 +2139,7 @@ impl std::str::FromStr for AllowedOperation {
     }
 }
 impl AllowedOperation {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AllowedOperation::CheckInLicense => "CheckInLicense",
@@ -1861,6 +2152,7 @@ impl AllowedOperation {
             AllowedOperation::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CheckInLicense",
@@ -1879,6 +2171,7 @@ impl AsRef<str> for AllowedOperation {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1890,13 +2183,21 @@ impl AsRef<str> for AllowedOperation {
     std::hash::Hash,
 )]
 pub enum ReceivedStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     Deleted,
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     FailedWorkflow,
+    #[allow(missing_docs)] // documentation missing in model
     PendingAccept,
+    #[allow(missing_docs)] // documentation missing in model
     PendingWorkflow,
+    #[allow(missing_docs)] // documentation missing in model
     Rejected,
+    #[allow(missing_docs)] // documentation missing in model
     WorkflowCompleted,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1924,6 +2225,7 @@ impl std::str::FromStr for ReceivedStatus {
     }
 }
 impl ReceivedStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ReceivedStatus::Active => "ACTIVE",
@@ -1937,6 +2239,7 @@ impl ReceivedStatus {
             ReceivedStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
@@ -1988,6 +2291,7 @@ pub mod metadata {
             self.name = Some(input.into());
             self
         }
+        /// <p>The key name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1997,6 +2301,7 @@ pub mod metadata {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -2054,6 +2359,7 @@ pub mod consumption_configuration {
             self.renew_type = Some(input);
             self
         }
+        /// <p>Renewal frequency.</p>
         pub fn set_renew_type(
             mut self,
             input: std::option::Option<crate::model::RenewType>,
@@ -2069,6 +2375,7 @@ pub mod consumption_configuration {
             self.provisional_configuration = Some(input);
             self
         }
+        /// <p>Details about a provisional configuration.</p>
         pub fn set_provisional_configuration(
             mut self,
             input: std::option::Option<crate::model::ProvisionalConfiguration>,
@@ -2081,6 +2388,7 @@ pub mod consumption_configuration {
             self.borrow_configuration = Some(input);
             self
         }
+        /// <p>Details about a borrow configuration.</p>
         pub fn set_borrow_configuration(
             mut self,
             input: std::option::Option<crate::model::BorrowConfiguration>,
@@ -2140,6 +2448,7 @@ pub mod borrow_configuration {
             self.allow_early_check_in = Some(input);
             self
         }
+        /// <p>Indicates whether early check-ins are allowed.</p>
         pub fn set_allow_early_check_in(mut self, input: std::option::Option<bool>) -> Self {
             self.allow_early_check_in = input;
             self
@@ -2149,6 +2458,7 @@ pub mod borrow_configuration {
             self.max_time_to_live_in_minutes = Some(input);
             self
         }
+        /// <p>Maximum time for the borrow configuration, in minutes.</p>
         pub fn set_max_time_to_live_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.max_time_to_live_in_minutes = input;
             self
@@ -2200,6 +2510,7 @@ pub mod provisional_configuration {
             self.max_time_to_live_in_minutes = Some(input);
             self
         }
+        /// <p>Maximum time for the provisional configuration, in minutes.</p>
         pub fn set_max_time_to_live_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.max_time_to_live_in_minutes = input;
             self
@@ -2219,6 +2530,7 @@ impl ProvisionalConfiguration {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2230,8 +2542,11 @@ impl ProvisionalConfiguration {
     std::hash::Hash,
 )]
 pub enum RenewType {
+    #[allow(missing_docs)] // documentation missing in model
     Monthly,
+    #[allow(missing_docs)] // documentation missing in model
     None,
+    #[allow(missing_docs)] // documentation missing in model
     Weekly,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2254,6 +2569,7 @@ impl std::str::FromStr for RenewType {
     }
 }
 impl RenewType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RenewType::Monthly => "Monthly",
@@ -2262,6 +2578,7 @@ impl RenewType {
             RenewType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Monthly", "None", "Weekly"]
     }
@@ -2320,6 +2637,7 @@ pub mod entitlement {
             self.name = Some(input.into());
             self
         }
+        /// <p>Entitlement name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2329,6 +2647,7 @@ pub mod entitlement {
             self.value = Some(input.into());
             self
         }
+        /// <p>Entitlement resource. Use only if the unit is None.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -2338,6 +2657,7 @@ pub mod entitlement {
             self.max_count = Some(input);
             self
         }
+        /// <p>Maximum entitlement count. Use if the unit is not None.</p>
         pub fn set_max_count(mut self, input: std::option::Option<i64>) -> Self {
             self.max_count = input;
             self
@@ -2347,6 +2667,7 @@ pub mod entitlement {
             self.overage = Some(input);
             self
         }
+        /// <p>Indicates whether overages are allowed.</p>
         pub fn set_overage(mut self, input: std::option::Option<bool>) -> Self {
             self.overage = input;
             self
@@ -2356,6 +2677,7 @@ pub mod entitlement {
             self.unit = Some(input);
             self
         }
+        /// <p>Entitlement unit.</p>
         pub fn set_unit(
             mut self,
             input: std::option::Option<crate::model::EntitlementUnit>,
@@ -2368,6 +2690,7 @@ pub mod entitlement {
             self.allow_check_in = Some(input);
             self
         }
+        /// <p>Indicates whether check-ins are allowed.</p>
         pub fn set_allow_check_in(mut self, input: std::option::Option<bool>) -> Self {
             self.allow_check_in = input;
             self
@@ -2392,6 +2715,7 @@ impl Entitlement {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2403,32 +2727,59 @@ impl Entitlement {
     std::hash::Hash,
 )]
 pub enum EntitlementUnit {
+    #[allow(missing_docs)] // documentation missing in model
     Bits,
+    #[allow(missing_docs)] // documentation missing in model
     BitsPerSecond,
+    #[allow(missing_docs)] // documentation missing in model
     Bytes,
+    #[allow(missing_docs)] // documentation missing in model
     BytesPerSecond,
+    #[allow(missing_docs)] // documentation missing in model
     Count,
+    #[allow(missing_docs)] // documentation missing in model
     CountPerSecond,
+    #[allow(missing_docs)] // documentation missing in model
     Gigabits,
+    #[allow(missing_docs)] // documentation missing in model
     GigabitsPerSecond,
+    #[allow(missing_docs)] // documentation missing in model
     Gigabytes,
+    #[allow(missing_docs)] // documentation missing in model
     GigabytesPerSecond,
+    #[allow(missing_docs)] // documentation missing in model
     Kilobits,
+    #[allow(missing_docs)] // documentation missing in model
     KilobitsPerSecond,
+    #[allow(missing_docs)] // documentation missing in model
     Kilobytes,
+    #[allow(missing_docs)] // documentation missing in model
     KilobytesPerSecond,
+    #[allow(missing_docs)] // documentation missing in model
     Megabits,
+    #[allow(missing_docs)] // documentation missing in model
     MegabitsPerSecond,
+    #[allow(missing_docs)] // documentation missing in model
     Megabytes,
+    #[allow(missing_docs)] // documentation missing in model
     MegabytesPerSecond,
+    #[allow(missing_docs)] // documentation missing in model
     Microseconds,
+    #[allow(missing_docs)] // documentation missing in model
     Milliseconds,
+    #[allow(missing_docs)] // documentation missing in model
     None,
+    #[allow(missing_docs)] // documentation missing in model
     Percent,
+    #[allow(missing_docs)] // documentation missing in model
     Seconds,
+    #[allow(missing_docs)] // documentation missing in model
     Terabits,
+    #[allow(missing_docs)] // documentation missing in model
     TerabitsPerSecond,
+    #[allow(missing_docs)] // documentation missing in model
     Terabytes,
+    #[allow(missing_docs)] // documentation missing in model
     TerabytesPerSecond,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2475,6 +2826,7 @@ impl std::str::FromStr for EntitlementUnit {
     }
 }
 impl EntitlementUnit {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EntitlementUnit::Bits => "Bits",
@@ -2507,6 +2859,7 @@ impl EntitlementUnit {
             EntitlementUnit::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "Bits",
@@ -2577,6 +2930,7 @@ pub mod datetime_range {
             self.begin = Some(input.into());
             self
         }
+        /// <p>Start of the time range.</p>
         pub fn set_begin(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.begin = input;
             self
@@ -2586,6 +2940,7 @@ pub mod datetime_range {
             self.end = Some(input.into());
             self
         }
+        /// <p>End of the time range.</p>
         pub fn set_end(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.end = input;
             self
@@ -2606,6 +2961,7 @@ impl DatetimeRange {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2617,12 +2973,19 @@ impl DatetimeRange {
     std::hash::Hash,
 )]
 pub enum LicenseStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Available,
+    #[allow(missing_docs)] // documentation missing in model
     Deactivated,
+    #[allow(missing_docs)] // documentation missing in model
     Deleted,
+    #[allow(missing_docs)] // documentation missing in model
     Expired,
+    #[allow(missing_docs)] // documentation missing in model
     PendingAvailable,
+    #[allow(missing_docs)] // documentation missing in model
     PendingDelete,
+    #[allow(missing_docs)] // documentation missing in model
     Suspended,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2649,6 +3012,7 @@ impl std::str::FromStr for LicenseStatus {
     }
 }
 impl LicenseStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LicenseStatus::Available => "AVAILABLE",
@@ -2661,6 +3025,7 @@ impl LicenseStatus {
             LicenseStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "AVAILABLE",
@@ -2716,6 +3081,7 @@ pub mod issuer_details {
             self.name = Some(input.into());
             self
         }
+        /// <p>Issuer name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2726,6 +3092,8 @@ pub mod issuer_details {
             self.sign_key = Some(input.into());
             self
         }
+        /// <p>Asymmetric KMS key from Key Management Service. The KMS key must have a key usage of sign and verify,
+        /// and support the RSASSA-PSS SHA-256 signing algorithm.</p>
         pub fn set_sign_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.sign_key = input;
             self
@@ -2735,6 +3103,7 @@ pub mod issuer_details {
             self.key_fingerprint = Some(input.into());
             self
         }
+        /// <p>Issuer key fingerprint.</p>
         pub fn set_key_fingerprint(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2824,6 +3193,7 @@ pub mod grant {
             self.grant_arn = Some(input.into());
             self
         }
+        /// <p>Amazon Resource Name (ARN) of the grant.</p>
         pub fn set_grant_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.grant_arn = input;
             self
@@ -2833,6 +3203,7 @@ pub mod grant {
             self.grant_name = Some(input.into());
             self
         }
+        /// <p>Grant name.</p>
         pub fn set_grant_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.grant_name = input;
             self
@@ -2842,6 +3213,7 @@ pub mod grant {
             self.parent_arn = Some(input.into());
             self
         }
+        /// <p>Parent ARN.</p>
         pub fn set_parent_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.parent_arn = input;
             self
@@ -2851,6 +3223,7 @@ pub mod grant {
             self.license_arn = Some(input.into());
             self
         }
+        /// <p>License ARN.</p>
         pub fn set_license_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.license_arn = input;
             self
@@ -2860,6 +3233,7 @@ pub mod grant {
             self.grantee_principal_arn = Some(input.into());
             self
         }
+        /// <p>The grantee principal ARN.</p>
         pub fn set_grantee_principal_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2872,6 +3246,7 @@ pub mod grant {
             self.home_region = Some(input.into());
             self
         }
+        /// <p>Home Region of the grant.</p>
         pub fn set_home_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.home_region = input;
             self
@@ -2881,6 +3256,7 @@ pub mod grant {
             self.grant_status = Some(input);
             self
         }
+        /// <p>Grant status.</p>
         pub fn set_grant_status(
             mut self,
             input: std::option::Option<crate::model::GrantStatus>,
@@ -2893,6 +3269,7 @@ pub mod grant {
             self.status_reason = Some(input.into());
             self
         }
+        /// <p>Grant status reason.</p>
         pub fn set_status_reason(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2905,10 +3282,16 @@ pub mod grant {
             self.version = Some(input.into());
             self
         }
+        /// <p>Grant version.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
         }
+        /// Appends an item to `granted_operations`.
+        ///
+        /// To override the contents of this collection use [`set_granted_operations`](Self::set_granted_operations).
+        ///
+        /// <p>Granted operations.</p>
         pub fn granted_operations(
             mut self,
             input: impl Into<crate::model::AllowedOperation>,
@@ -2918,6 +3301,7 @@ pub mod grant {
             self.granted_operations = Some(v);
             self
         }
+        /// <p>Granted operations.</p>
         pub fn set_granted_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AllowedOperation>>,
@@ -3030,6 +3414,7 @@ pub mod license {
             self.license_arn = Some(input.into());
             self
         }
+        /// <p>Amazon Resource Name (ARN) of the license.</p>
         pub fn set_license_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.license_arn = input;
             self
@@ -3039,6 +3424,7 @@ pub mod license {
             self.license_name = Some(input.into());
             self
         }
+        /// <p>License name.</p>
         pub fn set_license_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.license_name = input;
             self
@@ -3048,6 +3434,7 @@ pub mod license {
             self.product_name = Some(input.into());
             self
         }
+        /// <p>Product name.</p>
         pub fn set_product_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.product_name = input;
             self
@@ -3057,6 +3444,7 @@ pub mod license {
             self.product_sku = Some(input.into());
             self
         }
+        /// <p>Product SKU.</p>
         pub fn set_product_sku(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.product_sku = input;
             self
@@ -3066,6 +3454,7 @@ pub mod license {
             self.issuer = Some(input);
             self
         }
+        /// <p>License issuer.</p>
         pub fn set_issuer(
             mut self,
             input: std::option::Option<crate::model::IssuerDetails>,
@@ -3078,6 +3467,7 @@ pub mod license {
             self.home_region = Some(input.into());
             self
         }
+        /// <p>Home Region of the license.</p>
         pub fn set_home_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.home_region = input;
             self
@@ -3087,6 +3477,7 @@ pub mod license {
             self.status = Some(input);
             self
         }
+        /// <p>License status.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::LicenseStatus>,
@@ -3099,6 +3490,7 @@ pub mod license {
             self.validity = Some(input);
             self
         }
+        /// <p>Date and time range during which the license is valid, in ISO8601-UTC format.</p>
         pub fn set_validity(
             mut self,
             input: std::option::Option<crate::model::DatetimeRange>,
@@ -3111,16 +3503,23 @@ pub mod license {
             self.beneficiary = Some(input.into());
             self
         }
+        /// <p>License beneficiary.</p>
         pub fn set_beneficiary(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.beneficiary = input;
             self
         }
+        /// Appends an item to `entitlements`.
+        ///
+        /// To override the contents of this collection use [`set_entitlements`](Self::set_entitlements).
+        ///
+        /// <p>License entitlements.</p>
         pub fn entitlements(mut self, input: impl Into<crate::model::Entitlement>) -> Self {
             let mut v = self.entitlements.unwrap_or_default();
             v.push(input.into());
             self.entitlements = Some(v);
             self
         }
+        /// <p>License entitlements.</p>
         pub fn set_entitlements(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Entitlement>>,
@@ -3136,6 +3535,7 @@ pub mod license {
             self.consumption_configuration = Some(input);
             self
         }
+        /// <p>Configuration for consumption of the license.</p>
         pub fn set_consumption_configuration(
             mut self,
             input: std::option::Option<crate::model::ConsumptionConfiguration>,
@@ -3143,12 +3543,18 @@ pub mod license {
             self.consumption_configuration = input;
             self
         }
+        /// Appends an item to `license_metadata`.
+        ///
+        /// To override the contents of this collection use [`set_license_metadata`](Self::set_license_metadata).
+        ///
+        /// <p>License metadata.</p>
         pub fn license_metadata(mut self, input: impl Into<crate::model::Metadata>) -> Self {
             let mut v = self.license_metadata.unwrap_or_default();
             v.push(input.into());
             self.license_metadata = Some(v);
             self
         }
+        /// <p>License metadata.</p>
         pub fn set_license_metadata(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Metadata>>,
@@ -3161,6 +3567,7 @@ pub mod license {
             self.create_time = Some(input.into());
             self
         }
+        /// <p>License creation time.</p>
         pub fn set_create_time(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.create_time = input;
             self
@@ -3170,6 +3577,7 @@ pub mod license {
             self.version = Some(input.into());
             self
         }
+        /// <p>License version.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -3284,6 +3692,7 @@ pub mod report_generator {
             self.report_generator_name = Some(input.into());
             self
         }
+        /// <p>Name of the report generator.</p>
         pub fn set_report_generator_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3291,12 +3700,18 @@ pub mod report_generator {
             self.report_generator_name = input;
             self
         }
+        /// Appends an item to `report_type`.
+        ///
+        /// To override the contents of this collection use [`set_report_type`](Self::set_report_type).
+        ///
+        /// <p>Type of reports that are generated.</p>
         pub fn report_type(mut self, input: impl Into<crate::model::ReportType>) -> Self {
             let mut v = self.report_type.unwrap_or_default();
             v.push(input.into());
             self.report_type = Some(v);
             self
         }
+        /// <p>Type of reports that are generated.</p>
         pub fn set_report_type(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ReportType>>,
@@ -3309,6 +3724,7 @@ pub mod report_generator {
             self.report_context = Some(input);
             self
         }
+        /// <p>License configuration type for this generator.</p>
         pub fn set_report_context(
             mut self,
             input: std::option::Option<crate::model::ReportContext>,
@@ -3321,6 +3737,7 @@ pub mod report_generator {
             self.report_frequency = Some(input);
             self
         }
+        /// <p>Details about how frequently reports are generated.</p>
         pub fn set_report_frequency(
             mut self,
             input: std::option::Option<crate::model::ReportFrequency>,
@@ -3336,6 +3753,7 @@ pub mod report_generator {
             self.license_manager_report_generator_arn = Some(input.into());
             self
         }
+        /// <p>Amazon Resource Name (ARN) of the report generator.</p>
         pub fn set_license_manager_report_generator_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3348,6 +3766,7 @@ pub mod report_generator {
             self.last_run_status = Some(input.into());
             self
         }
+        /// <p>Status of the last report generation attempt.</p>
         pub fn set_last_run_status(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3360,6 +3779,7 @@ pub mod report_generator {
             self.last_run_failure_reason = Some(input.into());
             self
         }
+        /// <p>Failure message for the last report generation attempt.</p>
         pub fn set_last_run_failure_reason(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3375,6 +3795,7 @@ pub mod report_generator {
             self.last_report_generation_time = Some(input.into());
             self
         }
+        /// <p>Time the last report was generated at.</p>
         pub fn set_last_report_generation_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3387,6 +3808,7 @@ pub mod report_generator {
             self.report_creator_account = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services account ID used to create the report generator.</p>
         pub fn set_report_creator_account(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3399,6 +3821,7 @@ pub mod report_generator {
             self.description = Some(input.into());
             self
         }
+        /// <p>Description of the report generator.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -3408,6 +3831,7 @@ pub mod report_generator {
             self.s3_location = Some(input);
             self
         }
+        /// <p>Details of the S3 bucket that report generator reports are published to.</p>
         pub fn set_s3_location(
             mut self,
             input: std::option::Option<crate::model::S3Location>,
@@ -3420,16 +3844,23 @@ pub mod report_generator {
             self.create_time = Some(input.into());
             self
         }
+        /// <p>Time the report was created.</p>
         pub fn set_create_time(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.create_time = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Tags associated with the report generator.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>Tags associated with the report generator.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -3496,6 +3927,7 @@ pub mod s3_location {
             self.bucket = Some(input.into());
             self
         }
+        /// <p>Name of the S3 bucket reports are published to.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -3505,6 +3937,7 @@ pub mod s3_location {
             self.key_prefix = Some(input.into());
             self
         }
+        /// <p>Prefix of the S3 bucket reports are published to.</p>
         pub fn set_key_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_prefix = input;
             self
@@ -3543,11 +3976,11 @@ pub struct LicenseConversionTask {
     /// <p>The status message for the conversion task.</p>
     pub status_message: std::option::Option<std::string::String>,
     /// <p>The time the conversion task was started at.</p>
-    pub start_time: std::option::Option<smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time the usage operation value of the resource was changed.</p>
-    pub license_conversion_time: std::option::Option<smithy_types::Instant>,
+    pub license_conversion_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time the conversion task was completed.</p>
-    pub end_time: std::option::Option<smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for LicenseConversionTask {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3584,9 +4017,9 @@ pub mod license_conversion_task {
             std::option::Option<crate::model::LicenseConversionContext>,
         pub(crate) status: std::option::Option<crate::model::LicenseConversionTaskStatus>,
         pub(crate) status_message: std::option::Option<std::string::String>,
-        pub(crate) start_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) license_conversion_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) license_conversion_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The ID of the license type conversion task.</p>
@@ -3594,6 +4027,7 @@ pub mod license_conversion_task {
             self.license_conversion_task_id = Some(input.into());
             self
         }
+        /// <p>The ID of the license type conversion task.</p>
         pub fn set_license_conversion_task_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3607,6 +4041,8 @@ pub mod license_conversion_task {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the resource associated with the license type
+        /// conversion task.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -3619,6 +4055,7 @@ pub mod license_conversion_task {
             self.source_license_context = Some(input);
             self
         }
+        /// <p>Information about the license type this conversion task converted from.</p>
         pub fn set_source_license_context(
             mut self,
             input: std::option::Option<crate::model::LicenseConversionContext>,
@@ -3634,6 +4071,7 @@ pub mod license_conversion_task {
             self.destination_license_context = Some(input);
             self
         }
+        /// <p>Information about the license type this conversion task converted to.</p>
         pub fn set_destination_license_context(
             mut self,
             input: std::option::Option<crate::model::LicenseConversionContext>,
@@ -3646,6 +4084,7 @@ pub mod license_conversion_task {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the conversion task.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::LicenseConversionTaskStatus>,
@@ -3658,6 +4097,7 @@ pub mod license_conversion_task {
             self.status_message = Some(input.into());
             self
         }
+        /// <p>The status message for the conversion task.</p>
         pub fn set_status_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3666,32 +4106,41 @@ pub mod license_conversion_task {
             self
         }
         /// <p>The time the conversion task was started at.</p>
-        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time the conversion task was started at.</p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The time the usage operation value of the resource was changed.</p>
-        pub fn license_conversion_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn license_conversion_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.license_conversion_time = Some(input);
             self
         }
+        /// <p>The time the usage operation value of the resource was changed.</p>
         pub fn set_license_conversion_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.license_conversion_time = input;
             self
         }
         /// <p>The time the conversion task was completed.</p>
-        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time the conversion task was completed.</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.end_time = input;
             self
         }
@@ -3718,6 +4167,7 @@ impl LicenseConversionTask {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3729,8 +4179,11 @@ impl LicenseConversionTask {
     std::hash::Hash,
 )]
 pub enum LicenseConversionTaskStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     InProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Succeeded,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3753,6 +4206,7 @@ impl std::str::FromStr for LicenseConversionTaskStatus {
     }
 }
 impl LicenseConversionTaskStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LicenseConversionTaskStatus::Failed => "FAILED",
@@ -3761,6 +4215,7 @@ impl LicenseConversionTaskStatus {
             LicenseConversionTaskStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FAILED", "IN_PROGRESS", "SUCCEEDED"]
     }
@@ -3803,6 +4258,9 @@ pub mod license_conversion_context {
             self.usage_operation = Some(input.into());
             self
         }
+        /// <p>The Usage operation value that corresponds to the license type you are converting your resource from.  For more information about which platforms correspond to which usage operation values see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/billing-info-fields.html#billing-info">Sample data: usage operation by platform
+        /// </a>
+        /// </p>
         pub fn set_usage_operation(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3937,6 +4395,7 @@ pub mod license_configuration {
             self.license_configuration_id = Some(input.into());
             self
         }
+        /// <p>Unique ID of the license configuration.</p>
         pub fn set_license_configuration_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3949,6 +4408,7 @@ pub mod license_configuration {
             self.license_configuration_arn = Some(input.into());
             self
         }
+        /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
         pub fn set_license_configuration_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3961,6 +4421,7 @@ pub mod license_configuration {
             self.name = Some(input.into());
             self
         }
+        /// <p>Name of the license configuration.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -3970,6 +4431,7 @@ pub mod license_configuration {
             self.description = Some(input.into());
             self
         }
+        /// <p>Description of the license configuration.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -3979,6 +4441,7 @@ pub mod license_configuration {
             self.license_counting_type = Some(input);
             self
         }
+        /// <p>Dimension to use to track the license inventory.</p>
         pub fn set_license_counting_type(
             mut self,
             input: std::option::Option<crate::model::LicenseCountingType>,
@@ -3986,12 +4449,18 @@ pub mod license_configuration {
             self.license_counting_type = input;
             self
         }
+        /// Appends an item to `license_rules`.
+        ///
+        /// To override the contents of this collection use [`set_license_rules`](Self::set_license_rules).
+        ///
+        /// <p>License rules.</p>
         pub fn license_rules(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.license_rules.unwrap_or_default();
             v.push(input.into());
             self.license_rules = Some(v);
             self
         }
+        /// <p>License rules.</p>
         pub fn set_license_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4004,6 +4473,7 @@ pub mod license_configuration {
             self.license_count = Some(input);
             self
         }
+        /// <p>Number of licenses managed by the license configuration.</p>
         pub fn set_license_count(mut self, input: std::option::Option<i64>) -> Self {
             self.license_count = input;
             self
@@ -4013,6 +4483,7 @@ pub mod license_configuration {
             self.license_count_hard_limit = Some(input);
             self
         }
+        /// <p>Number of available licenses as a hard limit.</p>
         pub fn set_license_count_hard_limit(mut self, input: std::option::Option<bool>) -> Self {
             self.license_count_hard_limit = input;
             self
@@ -4022,6 +4493,7 @@ pub mod license_configuration {
             self.disassociate_when_not_found = Some(input);
             self
         }
+        /// <p>When true, disassociates a resource when software is uninstalled.</p>
         pub fn set_disassociate_when_not_found(mut self, input: std::option::Option<bool>) -> Self {
             self.disassociate_when_not_found = input;
             self
@@ -4031,6 +4503,7 @@ pub mod license_configuration {
             self.consumed_licenses = Some(input);
             self
         }
+        /// <p>Number of licenses consumed. </p>
         pub fn set_consumed_licenses(mut self, input: std::option::Option<i64>) -> Self {
             self.consumed_licenses = input;
             self
@@ -4040,6 +4513,7 @@ pub mod license_configuration {
             self.status = Some(input.into());
             self
         }
+        /// <p>Status of the license configuration.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -4049,6 +4523,7 @@ pub mod license_configuration {
             self.owner_account_id = Some(input.into());
             self
         }
+        /// <p>Account ID of the license configuration's owner.</p>
         pub fn set_owner_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4056,6 +4531,11 @@ pub mod license_configuration {
             self.owner_account_id = input;
             self
         }
+        /// Appends an item to `consumed_license_summary_list`.
+        ///
+        /// To override the contents of this collection use [`set_consumed_license_summary_list`](Self::set_consumed_license_summary_list).
+        ///
+        /// <p>Summaries for licenses consumed by various resources.</p>
         pub fn consumed_license_summary_list(
             mut self,
             input: impl Into<crate::model::ConsumedLicenseSummary>,
@@ -4065,6 +4545,7 @@ pub mod license_configuration {
             self.consumed_license_summary_list = Some(v);
             self
         }
+        /// <p>Summaries for licenses consumed by various resources.</p>
         pub fn set_consumed_license_summary_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ConsumedLicenseSummary>>,
@@ -4072,6 +4553,11 @@ pub mod license_configuration {
             self.consumed_license_summary_list = input;
             self
         }
+        /// Appends an item to `managed_resource_summary_list`.
+        ///
+        /// To override the contents of this collection use [`set_managed_resource_summary_list`](Self::set_managed_resource_summary_list).
+        ///
+        /// <p>Summaries for managed resources.</p>
         pub fn managed_resource_summary_list(
             mut self,
             input: impl Into<crate::model::ManagedResourceSummary>,
@@ -4081,6 +4567,7 @@ pub mod license_configuration {
             self.managed_resource_summary_list = Some(v);
             self
         }
+        /// <p>Summaries for managed resources.</p>
         pub fn set_managed_resource_summary_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ManagedResourceSummary>>,
@@ -4088,6 +4575,11 @@ pub mod license_configuration {
             self.managed_resource_summary_list = input;
             self
         }
+        /// Appends an item to `product_information_list`.
+        ///
+        /// To override the contents of this collection use [`set_product_information_list`](Self::set_product_information_list).
+        ///
+        /// <p>Product information.</p>
         pub fn product_information_list(
             mut self,
             input: impl Into<crate::model::ProductInformation>,
@@ -4097,6 +4589,7 @@ pub mod license_configuration {
             self.product_information_list = Some(v);
             self
         }
+        /// <p>Product information.</p>
         pub fn set_product_information_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ProductInformation>>,
@@ -4112,6 +4605,7 @@ pub mod license_configuration {
             self.automated_discovery_information = Some(input);
             self
         }
+        /// <p>Automated discovery information.</p>
         pub fn set_automated_discovery_information(
             mut self,
             input: std::option::Option<crate::model::AutomatedDiscoveryInformation>,
@@ -4154,7 +4648,7 @@ impl LicenseConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutomatedDiscoveryInformation {
     /// <p>Time that automated discovery last ran.</p>
-    pub last_run_time: std::option::Option<smithy_types::Instant>,
+    pub last_run_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for AutomatedDiscoveryInformation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4169,17 +4663,18 @@ pub mod automated_discovery_information {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) last_run_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_run_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>Time that automated discovery last ran.</p>
-        pub fn last_run_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_run_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_run_time = Some(input);
             self
         }
+        /// <p>Time that automated discovery last ran.</p>
         pub fn set_last_run_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_run_time = input;
             self
@@ -4231,6 +4726,7 @@ pub mod managed_resource_summary {
             self.resource_type = Some(input);
             self
         }
+        /// <p>Type of resource associated with a license.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::ResourceType>,
@@ -4243,6 +4739,7 @@ pub mod managed_resource_summary {
             self.association_count = Some(input);
             self
         }
+        /// <p>Number of resources associated with licenses.</p>
         pub fn set_association_count(mut self, input: std::option::Option<i64>) -> Self {
             self.association_count = input;
             self
@@ -4295,6 +4792,7 @@ pub mod consumed_license_summary {
             self.resource_type = Some(input);
             self
         }
+        /// <p>Resource type of the resource consuming a license.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::ResourceType>,
@@ -4307,6 +4805,7 @@ pub mod consumed_license_summary {
             self.consumed_licenses = Some(input);
             self
         }
+        /// <p>Number of licenses consumed by the resource.</p>
         pub fn set_consumed_licenses(mut self, input: std::option::Option<i64>) -> Self {
             self.consumed_licenses = input;
             self
@@ -4327,6 +4826,7 @@ impl ConsumedLicenseSummary {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4338,9 +4838,13 @@ impl ConsumedLicenseSummary {
     std::hash::Hash,
 )]
 pub enum LicenseCountingType {
+    #[allow(missing_docs)] // documentation missing in model
     Core,
+    #[allow(missing_docs)] // documentation missing in model
     Instance,
+    #[allow(missing_docs)] // documentation missing in model
     Socket,
+    #[allow(missing_docs)] // documentation missing in model
     Vcpu,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4364,6 +4868,7 @@ impl std::str::FromStr for LicenseCountingType {
     }
 }
 impl LicenseCountingType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LicenseCountingType::Core => "Core",
@@ -4373,6 +4878,7 @@ impl LicenseCountingType {
             LicenseCountingType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Core", "Instance", "Socket", "vCPU"]
     }
@@ -4394,7 +4900,7 @@ pub struct LicenseOperationFailure {
     /// <p>Error message.</p>
     pub error_message: std::option::Option<std::string::String>,
     /// <p>Failure time.</p>
-    pub failure_time: std::option::Option<smithy_types::Instant>,
+    pub failure_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Name of the operation.</p>
     pub operation_name: std::option::Option<std::string::String>,
     /// <p>ID of the Amazon Web Services account that owns the resource.</p>
@@ -4427,7 +4933,7 @@ pub mod license_operation_failure {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
         pub(crate) error_message: std::option::Option<std::string::String>,
-        pub(crate) failure_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) failure_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) operation_name: std::option::Option<std::string::String>,
         pub(crate) resource_owner_id: std::option::Option<std::string::String>,
         pub(crate) operation_requested_by: std::option::Option<std::string::String>,
@@ -4439,6 +4945,7 @@ pub mod license_operation_failure {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>Amazon Resource Name (ARN) of the resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -4448,6 +4955,7 @@ pub mod license_operation_failure {
             self.resource_type = Some(input);
             self
         }
+        /// <p>Resource type.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::ResourceType>,
@@ -4460,6 +4968,7 @@ pub mod license_operation_failure {
             self.error_message = Some(input.into());
             self
         }
+        /// <p>Error message.</p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4468,13 +4977,14 @@ pub mod license_operation_failure {
             self
         }
         /// <p>Failure time.</p>
-        pub fn failure_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn failure_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.failure_time = Some(input);
             self
         }
+        /// <p>Failure time.</p>
         pub fn set_failure_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.failure_time = input;
             self
@@ -4484,6 +4994,7 @@ pub mod license_operation_failure {
             self.operation_name = Some(input.into());
             self
         }
+        /// <p>Name of the operation.</p>
         pub fn set_operation_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4496,6 +5007,7 @@ pub mod license_operation_failure {
             self.resource_owner_id = Some(input.into());
             self
         }
+        /// <p>ID of the Amazon Web Services account that owns the resource.</p>
         pub fn set_resource_owner_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4508,6 +5020,7 @@ pub mod license_operation_failure {
             self.operation_requested_by = Some(input.into());
             self
         }
+        /// <p>The requester is "License Manager Automated Discovery".</p>
         pub fn set_operation_requested_by(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4515,12 +5028,18 @@ pub mod license_operation_failure {
             self.operation_requested_by = input;
             self
         }
+        /// Appends an item to `metadata_list`.
+        ///
+        /// To override the contents of this collection use [`set_metadata_list`](Self::set_metadata_list).
+        ///
+        /// <p>Reserved.</p>
         pub fn metadata_list(mut self, input: impl Into<crate::model::Metadata>) -> Self {
             let mut v = self.metadata_list.unwrap_or_default();
             v.push(input.into());
             self.metadata_list = Some(v);
             self
         }
+        /// <p>Reserved.</p>
         pub fn set_metadata_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Metadata>>,
@@ -4561,7 +5080,7 @@ pub struct LicenseConfigurationAssociation {
     /// <p>ID of the Amazon Web Services account that owns the resource consuming licenses.</p>
     pub resource_owner_id: std::option::Option<std::string::String>,
     /// <p>Time when the license configuration was associated with the resource.</p>
-    pub association_time: std::option::Option<smithy_types::Instant>,
+    pub association_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Scope of AMI associations. The possible value is <code>cross-account</code>.</p>
     pub ami_association_scope: std::option::Option<std::string::String>,
 }
@@ -4585,7 +5104,7 @@ pub mod license_configuration_association {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) resource_type: std::option::Option<crate::model::ResourceType>,
         pub(crate) resource_owner_id: std::option::Option<std::string::String>,
-        pub(crate) association_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) association_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) ami_association_scope: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -4594,6 +5113,7 @@ pub mod license_configuration_association {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>Amazon Resource Name (ARN) of the resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -4603,6 +5123,7 @@ pub mod license_configuration_association {
             self.resource_type = Some(input);
             self
         }
+        /// <p>Type of server resource.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::ResourceType>,
@@ -4615,6 +5136,7 @@ pub mod license_configuration_association {
             self.resource_owner_id = Some(input.into());
             self
         }
+        /// <p>ID of the Amazon Web Services account that owns the resource consuming licenses.</p>
         pub fn set_resource_owner_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4623,13 +5145,14 @@ pub mod license_configuration_association {
             self
         }
         /// <p>Time when the license configuration was associated with the resource.</p>
-        pub fn association_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn association_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.association_time = Some(input);
             self
         }
+        /// <p>Time when the license configuration was associated with the resource.</p>
         pub fn set_association_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.association_time = input;
             self
@@ -4639,6 +5162,7 @@ pub mod license_configuration_association {
             self.ami_association_scope = Some(input.into());
             self
         }
+        /// <p>Scope of AMI associations. The possible value is <code>cross-account</code>.</p>
         pub fn set_ami_association_scope(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4689,6 +5213,11 @@ pub mod license_usage {
             std::option::Option<std::vec::Vec<crate::model::EntitlementUsage>>,
     }
     impl Builder {
+        /// Appends an item to `entitlement_usages`.
+        ///
+        /// To override the contents of this collection use [`set_entitlement_usages`](Self::set_entitlement_usages).
+        ///
+        /// <p>License entitlement usages.</p>
         pub fn entitlement_usages(
             mut self,
             input: impl Into<crate::model::EntitlementUsage>,
@@ -4698,6 +5227,7 @@ pub mod license_usage {
             self.entitlement_usages = Some(v);
             self
         }
+        /// <p>License entitlement usages.</p>
         pub fn set_entitlement_usages(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EntitlementUsage>>,
@@ -4760,6 +5290,7 @@ pub mod entitlement_usage {
             self.name = Some(input.into());
             self
         }
+        /// <p>Entitlement usage name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -4769,6 +5300,7 @@ pub mod entitlement_usage {
             self.consumed_value = Some(input.into());
             self
         }
+        /// <p>Resource usage consumed.</p>
         pub fn set_consumed_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4781,6 +5313,7 @@ pub mod entitlement_usage {
             self.max_count = Some(input.into());
             self
         }
+        /// <p>Maximum entitlement usage count.</p>
         pub fn set_max_count(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.max_count = input;
             self
@@ -4790,6 +5323,7 @@ pub mod entitlement_usage {
             self.unit = Some(input);
             self
         }
+        /// <p>Entitlement usage unit.</p>
         pub fn set_unit(
             mut self,
             input: std::option::Option<crate::model::EntitlementDataUnit>,
@@ -4815,6 +5349,7 @@ impl EntitlementUsage {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4826,32 +5361,59 @@ impl EntitlementUsage {
     std::hash::Hash,
 )]
 pub enum EntitlementDataUnit {
+    #[allow(missing_docs)] // documentation missing in model
     Bits,
+    #[allow(missing_docs)] // documentation missing in model
     BitsPerSecond,
+    #[allow(missing_docs)] // documentation missing in model
     Bytes,
+    #[allow(missing_docs)] // documentation missing in model
     BytesPerSecond,
+    #[allow(missing_docs)] // documentation missing in model
     Count,
+    #[allow(missing_docs)] // documentation missing in model
     CountPerSecond,
+    #[allow(missing_docs)] // documentation missing in model
     Gigabits,
+    #[allow(missing_docs)] // documentation missing in model
     GigabitsPerSecond,
+    #[allow(missing_docs)] // documentation missing in model
     Gigabytes,
+    #[allow(missing_docs)] // documentation missing in model
     GigabytesPerSecond,
+    #[allow(missing_docs)] // documentation missing in model
     Kilobits,
+    #[allow(missing_docs)] // documentation missing in model
     KilobitsPerSecond,
+    #[allow(missing_docs)] // documentation missing in model
     Kilobytes,
+    #[allow(missing_docs)] // documentation missing in model
     KilobytesPerSecond,
+    #[allow(missing_docs)] // documentation missing in model
     Megabits,
+    #[allow(missing_docs)] // documentation missing in model
     MegabitsPerSecond,
+    #[allow(missing_docs)] // documentation missing in model
     Megabytes,
+    #[allow(missing_docs)] // documentation missing in model
     MegabytesPerSecond,
+    #[allow(missing_docs)] // documentation missing in model
     Microseconds,
+    #[allow(missing_docs)] // documentation missing in model
     Milliseconds,
+    #[allow(missing_docs)] // documentation missing in model
     None,
+    #[allow(missing_docs)] // documentation missing in model
     Percent,
+    #[allow(missing_docs)] // documentation missing in model
     Seconds,
+    #[allow(missing_docs)] // documentation missing in model
     Terabits,
+    #[allow(missing_docs)] // documentation missing in model
     TerabitsPerSecond,
+    #[allow(missing_docs)] // documentation missing in model
     Terabytes,
+    #[allow(missing_docs)] // documentation missing in model
     TerabytesPerSecond,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4898,6 +5460,7 @@ impl std::str::FromStr for EntitlementDataUnit {
     }
 }
 impl EntitlementDataUnit {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EntitlementDataUnit::Bits => "Bits",
@@ -4930,6 +5493,7 @@ impl EntitlementDataUnit {
             EntitlementDataUnit::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "Bits",
@@ -4968,6 +5532,7 @@ impl AsRef<str> for EntitlementDataUnit {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4979,7 +5544,9 @@ impl AsRef<str> for EntitlementDataUnit {
     std::hash::Hash,
 )]
 pub enum LicenseDeletionStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Deleted,
+    #[allow(missing_docs)] // documentation missing in model
     PendingDelete,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5001,6 +5568,7 @@ impl std::str::FromStr for LicenseDeletionStatus {
     }
 }
 impl LicenseDeletionStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LicenseDeletionStatus::Deleted => "DELETED",
@@ -5008,6 +5576,7 @@ impl LicenseDeletionStatus {
             LicenseDeletionStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DELETED", "PENDING_DELETE"]
     }
@@ -5018,6 +5587,7 @@ impl AsRef<str> for LicenseDeletionStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5029,6 +5599,7 @@ impl AsRef<str> for LicenseDeletionStatus {
     std::hash::Hash,
 )]
 pub enum TokenType {
+    #[allow(missing_docs)] // documentation missing in model
     RefreshToken,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5049,12 +5620,14 @@ impl std::str::FromStr for TokenType {
     }
 }
 impl TokenType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TokenType::RefreshToken => "REFRESH_TOKEN",
             TokenType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["REFRESH_TOKEN"]
     }
@@ -5098,6 +5671,7 @@ pub mod issuer {
             self.name = Some(input.into());
             self
         }
+        /// <p>Issuer name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -5108,6 +5682,8 @@ pub mod issuer {
             self.sign_key = Some(input.into());
             self
         }
+        /// <p>Asymmetric KMS key from Key Management Service. The KMS key must have a key usage of sign and verify,
+        /// and support the RSASSA-PSS SHA-256 signing algorithm.</p>
         pub fn set_sign_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.sign_key = input;
             self
@@ -5164,6 +5740,7 @@ pub mod entitlement_data {
             self.name = Some(input.into());
             self
         }
+        /// <p>Entitlement data name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -5173,6 +5750,7 @@ pub mod entitlement_data {
             self.value = Some(input.into());
             self
         }
+        /// <p>Entitlement data value.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -5182,6 +5760,7 @@ pub mod entitlement_data {
             self.unit = Some(input);
             self
         }
+        /// <p>Entitlement data unit.</p>
         pub fn set_unit(
             mut self,
             input: std::option::Option<crate::model::EntitlementDataUnit>,
@@ -5206,6 +5785,7 @@ impl EntitlementData {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5217,7 +5797,9 @@ impl EntitlementData {
     std::hash::Hash,
 )]
 pub enum CheckoutType {
+    #[allow(missing_docs)] // documentation missing in model
     Perpetual,
+    #[allow(missing_docs)] // documentation missing in model
     Provisional,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5239,6 +5821,7 @@ impl std::str::FromStr for CheckoutType {
     }
 }
 impl CheckoutType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CheckoutType::Perpetual => "PERPETUAL",
@@ -5246,6 +5829,7 @@ impl CheckoutType {
             CheckoutType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["PERPETUAL", "PROVISIONAL"]
     }
@@ -5256,6 +5840,7 @@ impl AsRef<str> for CheckoutType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5267,6 +5852,7 @@ impl AsRef<str> for CheckoutType {
     std::hash::Hash,
 )]
 pub enum DigitalSignatureMethod {
+    #[allow(missing_docs)] // documentation missing in model
     JwtPs384,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5287,12 +5873,14 @@ impl std::str::FromStr for DigitalSignatureMethod {
     }
 }
 impl DigitalSignatureMethod {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DigitalSignatureMethod::JwtPs384 => "JWT_PS384",
             DigitalSignatureMethod::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["JWT_PS384"]
     }

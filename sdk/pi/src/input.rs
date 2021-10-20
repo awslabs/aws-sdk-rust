@@ -8,8 +8,8 @@ pub mod describe_dimension_keys_input {
     pub struct Builder {
         pub(crate) service_type: std::option::Option<crate::model::ServiceType>,
         pub(crate) identifier: std::option::Option<std::string::String>,
-        pub(crate) start_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) metric: std::option::Option<std::string::String>,
         pub(crate) period_in_seconds: std::option::Option<i32>,
         pub(crate) group_by: std::option::Option<crate::model::DimensionGroup>,
@@ -27,6 +27,8 @@ pub mod describe_dimension_keys_input {
             self.service_type = Some(input);
             self
         }
+        /// <p>The AWS service for which Performance Insights will return metrics. The only valid value for <i>ServiceType</i> is
+        /// <code>RDS</code>.</p>
         pub fn set_service_type(
             mut self,
             input: std::option::Option<crate::model::ServiceType>,
@@ -43,6 +45,11 @@ pub mod describe_dimension_keys_input {
             self.identifier = Some(input.into());
             self
         }
+        /// <p>An immutable, AWS Region-unique identifier for a data source. Performance Insights gathers metrics from
+        /// this data source.</p>
+        /// <p>To use an Amazon RDS instance as a data source, you specify its <code>DbiResourceId</code> value. For example,
+        /// specify <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code>
+        /// </p>
         pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identifier = input;
             self
@@ -52,11 +59,19 @@ pub mod describe_dimension_keys_input {
         /// that data points equal to or greater than <code>StartTime</code> are returned.</p>
         /// <p>The value for <code>StartTime</code> must be earlier than the value for
         /// <code>EndTime</code>.</p>
-        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date and time specifying the beginning of the requested time series data. You must specify a
+        /// <code>StartTime</code> within the past 7 days. The value specified is <i>inclusive</i>, which means
+        /// that data points equal to or greater than <code>StartTime</code> are returned.</p>
+        /// <p>The value for <code>StartTime</code> must be earlier than the value for
+        /// <code>EndTime</code>.</p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.start_time = input;
             self
         }
@@ -65,16 +80,25 @@ pub mod describe_dimension_keys_input {
         /// returned.</p>
         /// <p>The value for <code>EndTime</code> must be later than the value for
         /// <code>StartTime</code>.</p>
-        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date and time specifying the end of the requested time series data. The value specified is
+        /// <i>exclusive</i>, which means that data points less than (but not equal to) <code>EndTime</code> are
+        /// returned.</p>
+        /// <p>The value for <code>EndTime</code> must be later than the value for
+        /// <code>StartTime</code>.</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.end_time = input;
             self
         }
         /// <p>The name of a Performance Insights metric to be measured.</p>
         /// <p>Valid values for <code>Metric</code> are:</p>
+        ///
         /// <ul>
         /// <li>
         /// <p>
@@ -95,12 +119,32 @@ pub mod describe_dimension_keys_input {
             self.metric = Some(input.into());
             self
         }
+        /// <p>The name of a Performance Insights metric to be measured.</p>
+        /// <p>Valid values for <code>Metric</code> are:</p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>db.load.avg</code> - a scaled representation of the number of active sessions
+        /// for the database engine.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>db.sampledload.avg</code> - the raw number of active sessions for the
+        /// database engine.</p>
+        /// </li>
+        /// </ul>
+        /// <p>If the number of active sessions is less than an internal Performance Insights threshold, <code>db.load.avg</code> and <code>db.sampledload.avg</code>
+        /// are the same value. If the number of active sessions is greater than the internal threshold, Performance Insights samples the active sessions, with <code>db.load.avg</code>
+        /// showing the scaled values, <code>db.sampledload.avg</code> showing the raw values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>.
+        /// For most use cases, you can query <code>db.load.avg</code> only. </p>
         pub fn set_metric(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.metric = input;
             self
         }
         /// <p>The granularity, in seconds, of the data points returned from Performance Insights. A period can be as short as
         /// one second, or as long as one day (86400 seconds).  Valid values are:</p>
+        ///
         /// <ul>
         /// <li>
         /// <p>
@@ -123,12 +167,41 @@ pub mod describe_dimension_keys_input {
         /// <code>86400</code> (twenty-four hours)</p>
         /// </li>
         /// </ul>
+        ///
         /// <p>If you don't specify <code>PeriodInSeconds</code>, then Performance Insights chooses a value for you, with a goal of returning
         /// roughly 100-200 data points in the response.</p>
         pub fn period_in_seconds(mut self, input: i32) -> Self {
             self.period_in_seconds = Some(input);
             self
         }
+        /// <p>The granularity, in seconds, of the data points returned from Performance Insights. A period can be as short as
+        /// one second, or as long as one day (86400 seconds).  Valid values are:</p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>1</code> (one second)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>60</code> (one minute)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>300</code> (five minutes)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>3600</code> (one hour)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>86400</code> (twenty-four hours)</p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>If you don't specify <code>PeriodInSeconds</code>, then Performance Insights chooses a value for you, with a goal of returning
+        /// roughly 100-200 data points in the response.</p>
         pub fn set_period_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.period_in_seconds = input;
             self
@@ -140,6 +213,9 @@ pub mod describe_dimension_keys_input {
             self.group_by = Some(input);
             self
         }
+        /// <p>A specification for how to aggregate the data points from a query result. You must specify a valid dimension group.
+        /// Performance Insights returns all dimensions within this group, unless you provide the names of specific dimensions within this group.
+        /// You can also request that Performance Insights return a limited number of values for a dimension.</p>
         pub fn set_group_by(
             mut self,
             input: std::option::Option<crate::model::DimensionGroup>,
@@ -153,6 +229,8 @@ pub mod describe_dimension_keys_input {
             self.partition_by = Some(input);
             self
         }
+        /// <p>For each dimension specified in
+        /// <code>GroupBy</code>, specify a secondary dimension to further subdivide the partition keys in the response.</p>
         pub fn set_partition_by(
             mut self,
             input: std::option::Option<crate::model::DimensionGroup>,
@@ -160,6 +238,20 @@ pub mod describe_dimension_keys_input {
             self.partition_by = input;
             self
         }
+        /// Adds a key-value pair to `filter`.
+        ///
+        /// To override the contents of this collection use [`set_filter`](Self::set_filter).
+        ///
+        /// <p>One or more filters to apply in the request.  Restrictions:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Any number of filters by the same dimension, as specified in the <code>GroupBy</code> or
+        /// <code>Partition</code> parameters.</p>
+        /// </li>
+        /// <li>
+        /// <p>A single filter for any other dimension in this dimension group.</p>
+        /// </li>
+        /// </ul>
         pub fn filter(
             mut self,
             k: impl Into<std::string::String>,
@@ -170,6 +262,16 @@ pub mod describe_dimension_keys_input {
             self.filter = Some(hash_map);
             self
         }
+        /// <p>One or more filters to apply in the request.  Restrictions:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Any number of filters by the same dimension, as specified in the <code>GroupBy</code> or
+        /// <code>Partition</code> parameters.</p>
+        /// </li>
+        /// <li>
+        /// <p>A single filter for any other dimension in this dimension group.</p>
+        /// </li>
+        /// </ul>
         pub fn set_filter(
             mut self,
             input: std::option::Option<
@@ -188,6 +290,11 @@ pub mod describe_dimension_keys_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of items to return in the response.
+        /// If more items exist than the specified <code>MaxRecords</code> value, a pagination
+        /// token is included in the response so that the remaining
+        /// results can be retrieved.
+        /// </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -199,6 +306,9 @@ pub mod describe_dimension_keys_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>An optional pagination token provided by a previous request. If
+        /// this parameter is specified, the response includes only records beyond the token, up to the
+        /// value specified by <code>MaxRecords</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -208,7 +318,7 @@ pub mod describe_dimension_keys_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeDimensionKeysInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeDimensionKeysInput {
                 service_type: self.service_type,
@@ -237,16 +347,16 @@ impl DescribeDimensionKeysInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeDimensionKeys,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeDimensionKeysInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -254,7 +364,7 @@ impl DescribeDimensionKeysInput {
         fn update_http_builder(
             input: &crate::input::DescribeDimensionKeysInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -263,32 +373,34 @@ impl DescribeDimensionKeysInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeDimensionKeysInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "PerformanceInsightsv20180227.DescribeDimensionKeys",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_dimension_keys(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -311,15 +423,15 @@ impl DescribeDimensionKeysInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeDimensionKeys::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeDimensionKeys",
             "pi",
         ));
@@ -328,10 +440,10 @@ impl DescribeDimensionKeysInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -363,6 +475,7 @@ pub mod get_dimension_key_details_input {
             self.service_type = Some(input);
             self
         }
+        /// <p>The AWS service for which Performance Insights returns data. The only valid value is <code>RDS</code>.</p>
         pub fn set_service_type(
             mut self,
             input: std::option::Option<crate::model::ServiceType>,
@@ -377,6 +490,9 @@ pub mod get_dimension_key_details_input {
             self.identifier = Some(input.into());
             self
         }
+        /// <p>The ID for a data source from which to gather dimension data. This ID must be immutable and unique within an AWS
+        /// Region. When a DB instance is the data source, specify its <code>DbiResourceId</code> value. For example, specify
+        /// <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>. </p>
         pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identifier = input;
             self
@@ -387,6 +503,8 @@ pub mod get_dimension_key_details_input {
             self.group = Some(input.into());
             self
         }
+        /// <p>The name of the dimension group. The only valid value is <code>db.sql</code>. Performance Insights searches the
+        /// specified group for the dimension group ID.</p>
         pub fn set_group(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.group = input;
             self
@@ -397,6 +515,8 @@ pub mod get_dimension_key_details_input {
             self.group_identifier = Some(input.into());
             self
         }
+        /// <p>The ID of the dimension group from which to retrieve dimension details. For dimension group <code>db.sql</code>,
+        /// the group ID is <code>db.sql.id</code>.</p>
         pub fn set_group_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -404,12 +524,24 @@ pub mod get_dimension_key_details_input {
             self.group_identifier = input;
             self
         }
+        /// Appends an item to `requested_dimensions`.
+        ///
+        /// To override the contents of this collection use [`set_requested_dimensions`](Self::set_requested_dimensions).
+        ///
+        /// <p>A list of dimensions to retrieve the detail data for within the given dimension group. For the dimension group
+        /// <code>db.sql</code>, specify either the full dimension name <code>db.sql.statement</code> or the short
+        /// dimension name <code>statement</code>. If you don't specify this parameter, Performance Insights returns all
+        /// dimension data within the specified dimension group.</p>
         pub fn requested_dimensions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.requested_dimensions.unwrap_or_default();
             v.push(input.into());
             self.requested_dimensions = Some(v);
             self
         }
+        /// <p>A list of dimensions to retrieve the detail data for within the given dimension group. For the dimension group
+        /// <code>db.sql</code>, specify either the full dimension name <code>db.sql.statement</code> or the short
+        /// dimension name <code>statement</code>. If you don't specify this parameter, Performance Insights returns all
+        /// dimension data within the specified dimension group.</p>
         pub fn set_requested_dimensions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -422,7 +554,7 @@ pub mod get_dimension_key_details_input {
             self,
         ) -> std::result::Result<
             crate::input::GetDimensionKeyDetailsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetDimensionKeyDetailsInput {
                 service_type: self.service_type,
@@ -445,16 +577,16 @@ impl GetDimensionKeyDetailsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetDimensionKeyDetails,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetDimensionKeyDetailsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -462,7 +594,7 @@ impl GetDimensionKeyDetailsInput {
         fn update_http_builder(
             input: &crate::input::GetDimensionKeyDetailsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -471,32 +603,34 @@ impl GetDimensionKeyDetailsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetDimensionKeyDetailsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "PerformanceInsightsv20180227.GetDimensionKeyDetails",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_dimension_key_details(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -519,15 +653,15 @@ impl GetDimensionKeyDetailsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetDimensionKeyDetails::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetDimensionKeyDetails",
             "pi",
         ));
@@ -536,10 +670,10 @@ impl GetDimensionKeyDetailsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -562,8 +696,8 @@ pub mod get_resource_metrics_input {
         pub(crate) service_type: std::option::Option<crate::model::ServiceType>,
         pub(crate) identifier: std::option::Option<std::string::String>,
         pub(crate) metric_queries: std::option::Option<std::vec::Vec<crate::model::MetricQuery>>,
-        pub(crate) start_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) period_in_seconds: std::option::Option<i32>,
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
@@ -575,6 +709,8 @@ pub mod get_resource_metrics_input {
             self.service_type = Some(input);
             self
         }
+        /// <p>The AWS service for which Performance Insights returns metrics. The only valid value for <i>ServiceType</i> is
+        /// <code>RDS</code>.</p>
         pub fn set_service_type(
             mut self,
             input: std::option::Option<crate::model::ServiceType>,
@@ -590,16 +726,28 @@ pub mod get_resource_metrics_input {
             self.identifier = Some(input.into());
             self
         }
+        /// <p>An immutable, AWS Region-unique identifier for a data source. Performance Insights gathers metrics from
+        /// this data source.</p>
+        /// <p>To use a DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify
+        /// <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code>.</p>
         pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identifier = input;
             self
         }
+        /// Appends an item to `metric_queries`.
+        ///
+        /// To override the contents of this collection use [`set_metric_queries`](Self::set_metric_queries).
+        ///
+        /// <p>An array of one or more queries to perform. Each query must specify a Performance Insights metric, and
+        /// can optionally specify aggregation and filtering criteria.</p>
         pub fn metric_queries(mut self, input: impl Into<crate::model::MetricQuery>) -> Self {
             let mut v = self.metric_queries.unwrap_or_default();
             v.push(input.into());
             self.metric_queries = Some(v);
             self
         }
+        /// <p>An array of one or more queries to perform. Each query must specify a Performance Insights metric, and
+        /// can optionally specify aggregation and filtering criteria.</p>
         pub fn set_metric_queries(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MetricQuery>>,
@@ -612,27 +760,42 @@ pub mod get_resource_metrics_input {
         /// <i>inclusive</i> - data points equal to or greater than <code>StartTime</code>
         /// will be returned.</p>
         /// <p>The value for <code>StartTime</code> must be earlier than the value for <code>EndTime</code>.</p>
-        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date and time specifying the beginning of the requested time series data. You can't
+        /// specify a <code>StartTime</code> that's earlier than 7 days ago. The value specified is
+        /// <i>inclusive</i> - data points equal to or greater than <code>StartTime</code>
+        /// will be returned.</p>
+        /// <p>The value for <code>StartTime</code> must be earlier than the value for <code>EndTime</code>.</p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The date and time specifying the end of the requested time series data.  The value specified is
         /// <i>exclusive</i> - data points less than (but not equal to) <code>EndTime</code> will be returned.</p>
         /// <p>The value for <code>EndTime</code> must be later than the value for <code>StartTime</code>.</p>
-        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date and time specifying the end of the requested time series data.  The value specified is
+        /// <i>exclusive</i> - data points less than (but not equal to) <code>EndTime</code> will be returned.</p>
+        /// <p>The value for <code>EndTime</code> must be later than the value for <code>StartTime</code>.</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.end_time = input;
             self
         }
         /// <p>The granularity, in seconds, of the data points returned from Performance Insights. A period can be as short as
         /// one second, or as long as one day (86400 seconds).  Valid values are:</p>
+        ///
         /// <ul>
         /// <li>
         /// <p>
@@ -655,12 +818,41 @@ pub mod get_resource_metrics_input {
         /// <code>86400</code> (twenty-four hours)</p>
         /// </li>
         /// </ul>
+        ///
         /// <p>If you don't specify <code>PeriodInSeconds</code>, then Performance Insights will choose a value for
         /// you, with a goal of returning roughly 100-200 data points in the response.</p>
         pub fn period_in_seconds(mut self, input: i32) -> Self {
             self.period_in_seconds = Some(input);
             self
         }
+        /// <p>The granularity, in seconds, of the data points returned from Performance Insights. A period can be as short as
+        /// one second, or as long as one day (86400 seconds).  Valid values are:</p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>1</code> (one second)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>60</code> (one minute)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>300</code> (five minutes)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>3600</code> (one hour)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>86400</code> (twenty-four hours)</p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>If you don't specify <code>PeriodInSeconds</code>, then Performance Insights will choose a value for
+        /// you, with a goal of returning roughly 100-200 data points in the response.</p>
         pub fn set_period_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.period_in_seconds = input;
             self
@@ -674,6 +866,11 @@ pub mod get_resource_metrics_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of items to return in the response.
+        /// If more items exist than the specified <code>MaxRecords</code> value, a pagination
+        /// token is included in the response so that the remaining
+        /// results can be retrieved.
+        /// </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -685,6 +882,9 @@ pub mod get_resource_metrics_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>An optional pagination token provided by a previous request. If
+        /// this parameter is specified, the response includes only records beyond the token, up to the
+        /// value specified by <code>MaxRecords</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -694,7 +894,7 @@ pub mod get_resource_metrics_input {
             self,
         ) -> std::result::Result<
             crate::input::GetResourceMetricsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetResourceMetricsInput {
                 service_type: self.service_type,
@@ -720,16 +920,16 @@ impl GetResourceMetricsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetResourceMetrics,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetResourceMetricsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -737,7 +937,7 @@ impl GetResourceMetricsInput {
         fn update_http_builder(
             input: &crate::input::GetResourceMetricsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -746,30 +946,32 @@ impl GetResourceMetricsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetResourceMetricsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "PerformanceInsightsv20180227.GetResourceMetrics",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_resource_metrics(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -792,15 +994,15 @@ impl GetResourceMetricsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetResourceMetrics::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetResourceMetrics",
             "pi",
         ));
@@ -809,10 +1011,10 @@ impl GetResourceMetricsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -826,6 +1028,7 @@ impl GetResourceMetricsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetResourceMetricsInput {
@@ -845,13 +1048,14 @@ pub struct GetResourceMetricsInput {
     /// <i>inclusive</i> - data points equal to or greater than <code>StartTime</code>
     /// will be returned.</p>
     /// <p>The value for <code>StartTime</code> must be earlier than the value for <code>EndTime</code>.</p>
-    pub start_time: std::option::Option<smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time specifying the end of the requested time series data.  The value specified is
     /// <i>exclusive</i> - data points less than (but not equal to) <code>EndTime</code> will be returned.</p>
     /// <p>The value for <code>EndTime</code> must be later than the value for <code>StartTime</code>.</p>
-    pub end_time: std::option::Option<smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The granularity, in seconds, of the data points returned from Performance Insights. A period can be as short as
     /// one second, or as long as one day (86400 seconds).  Valid values are:</p>
+    ///
     /// <ul>
     /// <li>
     /// <p>
@@ -874,6 +1078,7 @@ pub struct GetResourceMetricsInput {
     /// <code>86400</code> (twenty-four hours)</p>
     /// </li>
     /// </ul>
+    ///
     /// <p>If you don't specify <code>PeriodInSeconds</code>, then Performance Insights will choose a value for
     /// you, with a goal of returning roughly 100-200 data points in the response.</p>
     pub period_in_seconds: std::option::Option<i32>,
@@ -903,6 +1108,7 @@ impl std::fmt::Debug for GetResourceMetricsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDimensionKeyDetailsInput {
@@ -936,6 +1142,7 @@ impl std::fmt::Debug for GetDimensionKeyDetailsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDimensionKeysInput {
@@ -953,15 +1160,16 @@ pub struct DescribeDimensionKeysInput {
     /// that data points equal to or greater than <code>StartTime</code> are returned.</p>
     /// <p>The value for <code>StartTime</code> must be earlier than the value for
     /// <code>EndTime</code>.</p>
-    pub start_time: std::option::Option<smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time specifying the end of the requested time series data. The value specified is
     /// <i>exclusive</i>, which means that data points less than (but not equal to) <code>EndTime</code> are
     /// returned.</p>
     /// <p>The value for <code>EndTime</code> must be later than the value for
     /// <code>StartTime</code>.</p>
-    pub end_time: std::option::Option<smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The name of a Performance Insights metric to be measured.</p>
     /// <p>Valid values for <code>Metric</code> are:</p>
+    ///
     /// <ul>
     /// <li>
     /// <p>
@@ -981,6 +1189,7 @@ pub struct DescribeDimensionKeysInput {
     pub metric: std::option::Option<std::string::String>,
     /// <p>The granularity, in seconds, of the data points returned from Performance Insights. A period can be as short as
     /// one second, or as long as one day (86400 seconds).  Valid values are:</p>
+    ///
     /// <ul>
     /// <li>
     /// <p>
@@ -1003,6 +1212,7 @@ pub struct DescribeDimensionKeysInput {
     /// <code>86400</code> (twenty-four hours)</p>
     /// </li>
     /// </ul>
+    ///
     /// <p>If you don't specify <code>PeriodInSeconds</code>, then Performance Insights chooses a value for you, with a goal of returning
     /// roughly 100-200 data points in the response.</p>
     pub period_in_seconds: std::option::Option<i32>,

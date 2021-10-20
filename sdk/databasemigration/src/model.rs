@@ -76,6 +76,7 @@ pub mod connection {
             self.replication_instance_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the replication instance.</p>
         pub fn set_replication_instance_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -88,6 +89,7 @@ pub mod connection {
             self.endpoint_arn = Some(input.into());
             self
         }
+        /// <p>The ARN string that uniquely identifies the endpoint.</p>
         pub fn set_endpoint_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.endpoint_arn = input;
             self
@@ -119,6 +121,29 @@ pub mod connection {
             self.status = Some(input.into());
             self
         }
+        /// <p>The connection status. This parameter can return one of the following values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>"successful"</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>"testing"</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>"failed"</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>"deleting"</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -128,6 +153,7 @@ pub mod connection {
             self.last_failure_message = Some(input.into());
             self
         }
+        /// <p>The error message when the connection last failed.</p>
         pub fn set_last_failure_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -142,6 +168,9 @@ pub mod connection {
             self.endpoint_identifier = Some(input.into());
             self
         }
+        /// <p>The identifier of the endpoint. Identifiers must begin with a letter and must contain only
+        /// ASCII letters, digits, and hyphens. They can't end with a hyphen or contain two
+        /// consecutive hyphens.</p>
         pub fn set_endpoint_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -158,6 +187,8 @@ pub mod connection {
             self.replication_instance_identifier = Some(input.into());
             self
         }
+        /// <p>The replication instance identifier. This parameter is stored as a lowercase
+        /// string.</p>
         pub fn set_replication_instance_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -356,9 +387,9 @@ pub struct ReplicationTask {
     /// </ul>
     pub stop_reason: std::option::Option<std::string::String>,
     /// <p>The date the replication task was created.</p>
-    pub replication_task_creation_date: std::option::Option<smithy_types::Instant>,
+    pub replication_task_creation_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date the replication task is scheduled to start.</p>
-    pub replication_task_start_date: std::option::Option<smithy_types::Instant>,
+    pub replication_task_start_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either
     /// <code>CdcStartPosition</code> or <code>CdcStartTime</code> to specify when you want the CDC operation to start.
     /// Specifying both values results in an error.</p>
@@ -447,8 +478,8 @@ pub mod replication_task {
         pub(crate) status: std::option::Option<std::string::String>,
         pub(crate) last_failure_message: std::option::Option<std::string::String>,
         pub(crate) stop_reason: std::option::Option<std::string::String>,
-        pub(crate) replication_task_creation_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) replication_task_start_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) replication_task_creation_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) replication_task_start_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) cdc_start_position: std::option::Option<std::string::String>,
         pub(crate) cdc_stop_position: std::option::Option<std::string::String>,
         pub(crate) recovery_checkpoint: std::option::Option<std::string::String>,
@@ -478,6 +509,19 @@ pub mod replication_task {
             self.replication_task_identifier = Some(input.into());
             self
         }
+        /// <p>The user-assigned replication task identifier or name.</p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Must contain 1-255 alphanumeric characters or hyphens.</p>
+        /// </li>
+        /// <li>
+        /// <p>First character must be a letter.</p>
+        /// </li>
+        /// <li>
+        /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
+        /// </li>
+        /// </ul>
         pub fn set_replication_task_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -490,6 +534,7 @@ pub mod replication_task {
             self.source_endpoint_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) that uniquely identifies the endpoint.</p>
         pub fn set_source_endpoint_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -502,6 +547,7 @@ pub mod replication_task {
             self.target_endpoint_arn = Some(input.into());
             self
         }
+        /// <p>The ARN that uniquely identifies the endpoint.</p>
         pub fn set_target_endpoint_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -514,6 +560,7 @@ pub mod replication_task {
             self.replication_instance_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the replication instance.</p>
         pub fn set_replication_instance_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -526,6 +573,7 @@ pub mod replication_task {
             self.migration_type = Some(input);
             self
         }
+        /// <p>The type of migration.</p>
         pub fn set_migration_type(
             mut self,
             input: std::option::Option<crate::model::MigrationTypeValue>,
@@ -538,6 +586,7 @@ pub mod replication_task {
             self.table_mappings = Some(input.into());
             self
         }
+        /// <p>Table mappings specified in the task.</p>
         pub fn set_table_mappings(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -550,6 +599,7 @@ pub mod replication_task {
             self.replication_task_settings = Some(input.into());
             self
         }
+        /// <p>The settings for the replication task.</p>
         pub fn set_replication_task_settings(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -671,6 +721,116 @@ pub mod replication_task {
             self.status = Some(input.into());
             self
         }
+        /// <p>The status of the replication task. This response parameter can return one of
+        /// the following values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>"moving"</code> – The task is being moved in response to running the
+        /// <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_MoveReplicationTask.html">
+        /// <code>MoveReplicationTask</code>
+        /// </a> operation.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>"creating"</code> – The task is being created in response to running
+        /// the <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationTask.html">
+        /// <code>CreateReplicationTask</code>
+        /// </a> operation.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>"deleting"</code> – The task is being deleted in response to running
+        /// the <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteReplicationTask.html">
+        /// <code>DeleteReplicationTask</code>
+        /// </a> operation.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>"failed"</code> – The task failed to successfully complete the database
+        /// migration in response to running the <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">
+        /// <code>StartReplicationTask</code>
+        /// </a> operation.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>"failed-move"</code> – The task failed to move in response to running
+        /// the <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_MoveReplicationTask.html">
+        /// <code>MoveReplicationTask</code>
+        /// </a> operation.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>"modifying"</code> – The task definition is being modified in response
+        /// to running the <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyReplicationTask.html">
+        /// <code>ModifyReplicationTask</code>
+        /// </a> operation.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>"ready"</code> – The task is in a <code>ready</code> state where it can
+        /// respond to other task operations, such as <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">
+        /// <code>StartReplicationTask</code>
+        /// </a> or <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteReplicationTask.html">
+        /// <code>DeleteReplicationTask</code>
+        /// </a>. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>"running"</code> – The task is performing a database migration in
+        /// response to running the <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">
+        /// <code>StartReplicationTask</code>
+        /// </a> operation.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>"starting"</code> – The task is preparing to perform a database
+        /// migration in response to running the <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">
+        /// <code>StartReplicationTask</code>
+        /// </a> operation.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>"stopped"</code> – The task has stopped in response to running the
+        /// <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StopReplicationTask.html">
+        /// <code>StopReplicationTask</code>
+        /// </a> operation.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>"stopping"</code> – The task is preparing to stop in response to
+        /// running the <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StopReplicationTask.html">
+        /// <code>StopReplicationTask</code>
+        /// </a> operation.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>"testing"</code> – The database migration specified for this task is
+        /// being tested in response to running either the <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTaskAssessmentRun.html">
+        /// <code>StartReplicationTaskAssessmentRun</code>
+        /// </a> or the
+        /// <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTaskAssessment.html">
+        /// <code>StartReplicationTaskAssessment</code>
+        /// </a>
+        /// operation.</p>
+        /// <note>
+        /// <p>
+        /// <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTaskAssessmentRun.html">
+        /// <code>StartReplicationTaskAssessmentRun</code>
+        /// </a> is
+        /// an improved premigration task assessment operation. The <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTaskAssessment.html">
+        /// <code>StartReplicationTaskAssessment</code>
+        /// </a>
+        /// operation assesses data type compatibility only between the source and target
+        /// database of a given migration task. In contrast, <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTaskAssessmentRun.html">
+        /// <code>StartReplicationTaskAssessmentRun</code>
+        /// </a>
+        /// enables you to specify a variety of premigration task assessments in addition to
+        /// data type compatibility. These assessments include ones for the validity of primary key definitions and
+        /// likely issues with database migration performance, among others.</p>
+        /// </note>
+        /// </li>
+        /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -680,6 +840,7 @@ pub mod replication_task {
             self.last_failure_message = Some(input.into());
             self
         }
+        /// <p>The last error (failure) message generated for the replication task.</p>
         pub fn set_last_failure_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -716,30 +877,57 @@ pub mod replication_task {
             self.stop_reason = Some(input.into());
             self
         }
+        /// <p>The reason the replication task was stopped. This response parameter can return one of
+        /// the following values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>"STOP_REASON_FULL_LOAD_COMPLETED"</code> – Full-load migration
+        /// completed.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>"STOP_REASON_CACHED_CHANGES_APPLIED"</code> – Change data capture (CDC)
+        /// load completed.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>"STOP_REASON_CACHED_CHANGES_NOT_APPLIED"</code> – In a
+        /// full-load and CDC migration, the full load stopped as specified before starting the
+        /// CDC migration.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>"STOP_REASON_SERVER_TIME"</code> – The migration stopped at the
+        /// specified server time.</p>
+        /// </li>
+        /// </ul>
         pub fn set_stop_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stop_reason = input;
             self
         }
         /// <p>The date the replication task was created.</p>
-        pub fn replication_task_creation_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn replication_task_creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.replication_task_creation_date = Some(input);
             self
         }
+        /// <p>The date the replication task was created.</p>
         pub fn set_replication_task_creation_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.replication_task_creation_date = input;
             self
         }
         /// <p>The date the replication task is scheduled to start.</p>
-        pub fn replication_task_start_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn replication_task_start_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.replication_task_start_date = Some(input);
             self
         }
+        /// <p>The date the replication task is scheduled to start.</p>
         pub fn set_replication_task_start_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.replication_task_start_date = input;
             self
@@ -756,6 +944,14 @@ pub mod replication_task {
             self.cdc_start_position = Some(input.into());
             self
         }
+        /// <p>Indicates when you want a change data capture (CDC) operation to start. Use either
+        /// <code>CdcStartPosition</code> or <code>CdcStartTime</code> to specify when you want the CDC operation to start.
+        /// Specifying both values results in an error.</p>
+        /// <p>The value can be in date, checkpoint, or LSN/SCN format.</p>
+        /// <p>Date Example: --cdc-start-position “2018-03-08T12:12:12”</p>
+        /// <p>Checkpoint Example: --cdc-start-position
+        /// "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
+        /// <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p>
         pub fn set_cdc_start_position(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -771,6 +967,10 @@ pub mod replication_task {
             self.cdc_stop_position = Some(input.into());
             self
         }
+        /// <p>Indicates when you want a change data capture (CDC) operation to stop. The value can be
+        /// either server time or commit time.</p>
+        /// <p>Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”</p>
+        /// <p>Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “</p>
         pub fn set_cdc_stop_position(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -785,6 +985,9 @@ pub mod replication_task {
             self.recovery_checkpoint = Some(input.into());
             self
         }
+        /// <p>Indicates the last checkpoint that occurred during a change data capture (CDC)
+        /// operation. You can provide this value to the <code>CdcStartPosition</code> parameter to
+        /// start a CDC operation that begins at that checkpoint.</p>
         pub fn set_recovery_checkpoint(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -797,6 +1000,7 @@ pub mod replication_task {
             self.replication_task_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the replication task.</p>
         pub fn set_replication_task_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -810,6 +1014,8 @@ pub mod replication_task {
             self.replication_task_stats = Some(input);
             self
         }
+        /// <p>The statistics for the task, including elapsed time, tables loaded, and table
+        /// errors.</p>
         pub fn set_replication_task_stats(
             mut self,
             input: std::option::Option<crate::model::ReplicationTaskStats>,
@@ -825,6 +1031,10 @@ pub mod replication_task {
             self.task_data = Some(input.into());
             self
         }
+        /// <p>Supplemental information that the task requires to migrate the data for certain source and target endpoints.
+        /// For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for Task Settings</a> in the
+        /// <i>Database Migration Service User Guide.</i>
+        /// </p>
         pub fn set_task_data(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.task_data = input;
             self
@@ -841,6 +1051,11 @@ pub mod replication_task {
             self.target_replication_instance_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the replication instance to which this task is moved in response to running
+        /// the <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_MoveReplicationTask.html">
+        /// <code>MoveReplicationTask</code>
+        /// </a> operation. Otherwise, this response
+        /// parameter isn't a member of the <code>ReplicationTask</code> object.</p>
         pub fn set_target_replication_instance_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -899,16 +1114,16 @@ pub struct ReplicationTaskStats {
     /// <p>The number of errors that have occurred during this task.</p>
     pub tables_errored: i32,
     /// <p>The date the replication task was started either with a fresh start or a target reload.</p>
-    pub fresh_start_date: std::option::Option<smithy_types::Instant>,
+    pub fresh_start_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date the replication task was started either with a fresh start or a resume. For more information, see
     /// <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html#DMS-StartReplicationTask-request-StartReplicationTaskType">StartReplicationTaskType</a>.</p>
-    pub start_date: std::option::Option<smithy_types::Instant>,
+    pub start_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date the replication task was stopped.</p>
-    pub stop_date: std::option::Option<smithy_types::Instant>,
+    pub stop_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date the replication task full load was started.</p>
-    pub full_load_start_date: std::option::Option<smithy_types::Instant>,
+    pub full_load_start_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date the replication task full load was completed.</p>
-    pub full_load_finish_date: std::option::Option<smithy_types::Instant>,
+    pub full_load_finish_date: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for ReplicationTaskStats {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -942,11 +1157,11 @@ pub mod replication_task_stats {
         pub(crate) tables_loading: std::option::Option<i32>,
         pub(crate) tables_queued: std::option::Option<i32>,
         pub(crate) tables_errored: std::option::Option<i32>,
-        pub(crate) fresh_start_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) start_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) stop_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) full_load_start_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) full_load_finish_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) fresh_start_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) stop_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) full_load_start_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) full_load_finish_date: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The percent complete for the full load migration task.</p>
@@ -954,6 +1169,7 @@ pub mod replication_task_stats {
             self.full_load_progress_percent = Some(input);
             self
         }
+        /// <p>The percent complete for the full load migration task.</p>
         pub fn set_full_load_progress_percent(mut self, input: std::option::Option<i32>) -> Self {
             self.full_load_progress_percent = input;
             self
@@ -963,6 +1179,7 @@ pub mod replication_task_stats {
             self.elapsed_time_millis = Some(input);
             self
         }
+        /// <p>The elapsed time of the task, in milliseconds.</p>
         pub fn set_elapsed_time_millis(mut self, input: std::option::Option<i64>) -> Self {
             self.elapsed_time_millis = input;
             self
@@ -972,6 +1189,7 @@ pub mod replication_task_stats {
             self.tables_loaded = Some(input);
             self
         }
+        /// <p>The number of tables loaded for this task.</p>
         pub fn set_tables_loaded(mut self, input: std::option::Option<i32>) -> Self {
             self.tables_loaded = input;
             self
@@ -981,6 +1199,7 @@ pub mod replication_task_stats {
             self.tables_loading = Some(input);
             self
         }
+        /// <p>The number of tables currently loading for this task.</p>
         pub fn set_tables_loading(mut self, input: std::option::Option<i32>) -> Self {
             self.tables_loading = input;
             self
@@ -990,6 +1209,7 @@ pub mod replication_task_stats {
             self.tables_queued = Some(input);
             self
         }
+        /// <p>The number of tables queued for this task.</p>
         pub fn set_tables_queued(mut self, input: std::option::Option<i32>) -> Self {
             self.tables_queued = input;
             self
@@ -999,61 +1219,74 @@ pub mod replication_task_stats {
             self.tables_errored = Some(input);
             self
         }
+        /// <p>The number of errors that have occurred during this task.</p>
         pub fn set_tables_errored(mut self, input: std::option::Option<i32>) -> Self {
             self.tables_errored = input;
             self
         }
         /// <p>The date the replication task was started either with a fresh start or a target reload.</p>
-        pub fn fresh_start_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn fresh_start_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.fresh_start_date = Some(input);
             self
         }
+        /// <p>The date the replication task was started either with a fresh start or a target reload.</p>
         pub fn set_fresh_start_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.fresh_start_date = input;
             self
         }
         /// <p>The date the replication task was started either with a fresh start or a resume. For more information, see
         /// <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html#DMS-StartReplicationTask-request-StartReplicationTaskType">StartReplicationTaskType</a>.</p>
-        pub fn start_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_date = Some(input);
             self
         }
-        pub fn set_start_date(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date the replication task was started either with a fresh start or a resume. For more information, see
+        /// <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html#DMS-StartReplicationTask-request-StartReplicationTaskType">StartReplicationTaskType</a>.</p>
+        pub fn set_start_date(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.start_date = input;
             self
         }
         /// <p>The date the replication task was stopped.</p>
-        pub fn stop_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn stop_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.stop_date = Some(input);
             self
         }
-        pub fn set_stop_date(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date the replication task was stopped.</p>
+        pub fn set_stop_date(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.stop_date = input;
             self
         }
         /// <p>The date the replication task full load was started.</p>
-        pub fn full_load_start_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn full_load_start_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.full_load_start_date = Some(input);
             self
         }
+        /// <p>The date the replication task full load was started.</p>
         pub fn set_full_load_start_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.full_load_start_date = input;
             self
         }
         /// <p>The date the replication task full load was completed.</p>
-        pub fn full_load_finish_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn full_load_finish_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.full_load_finish_date = Some(input);
             self
         }
+        /// <p>The date the replication task full load was completed.</p>
         pub fn set_full_load_finish_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.full_load_finish_date = input;
             self
@@ -1083,6 +1316,7 @@ impl ReplicationTaskStats {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1094,8 +1328,11 @@ impl ReplicationTaskStats {
     std::hash::Hash,
 )]
 pub enum MigrationTypeValue {
+    #[allow(missing_docs)] // documentation missing in model
     Cdc,
+    #[allow(missing_docs)] // documentation missing in model
     FullLoad,
+    #[allow(missing_docs)] // documentation missing in model
     FullLoadAndCdc,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1118,6 +1355,7 @@ impl std::str::FromStr for MigrationTypeValue {
     }
 }
 impl MigrationTypeValue {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MigrationTypeValue::Cdc => "cdc",
@@ -1126,6 +1364,7 @@ impl MigrationTypeValue {
             MigrationTypeValue::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["cdc", "full-load", "full-load-and-cdc"]
     }
@@ -1203,7 +1442,8 @@ pub struct ReplicationTaskAssessmentRun {
     pub status: std::option::Option<std::string::String>,
     /// <p>Date on which the assessment run was created using the
     /// <code>StartReplicationTaskAssessmentRun</code> operation.</p>
-    pub replication_task_assessment_run_creation_date: std::option::Option<smithy_types::Instant>,
+    pub replication_task_assessment_run_creation_date:
+        std::option::Option<aws_smithy_types::Instant>,
     /// <p>Indication of the completion progress for the individual assessments specified to
     /// run.</p>
     pub assessment_progress:
@@ -1259,7 +1499,7 @@ pub mod replication_task_assessment_run {
         pub(crate) replication_task_arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
         pub(crate) replication_task_assessment_run_creation_date:
-            std::option::Option<smithy_types::Instant>,
+            std::option::Option<aws_smithy_types::Instant>,
         pub(crate) assessment_progress:
             std::option::Option<crate::model::ReplicationTaskAssessmentRunProgress>,
         pub(crate) last_failure_message: std::option::Option<std::string::String>,
@@ -1279,6 +1519,7 @@ pub mod replication_task_assessment_run {
             self.replication_task_assessment_run_arn = Some(input.into());
             self
         }
+        /// <p>Amazon Resource Name (ARN) of this assessment run.</p>
         pub fn set_replication_task_assessment_run_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1292,6 +1533,8 @@ pub mod replication_task_assessment_run {
             self.replication_task_arn = Some(input.into());
             self
         }
+        /// <p>ARN of the migration task associated with this premigration
+        /// assessment run.</p>
         pub fn set_replication_task_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1355,6 +1598,58 @@ pub mod replication_task_assessment_run {
             self.status = Some(input.into());
             self
         }
+        /// <p>Assessment run status. </p>
+        /// <p>This status can have one of the following values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>"cancelling"</code> – The assessment run was canceled by the
+        /// <code>CancelReplicationTaskAssessmentRun</code> operation.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>"deleting"</code> – The assessment run was deleted by the
+        /// <code>DeleteReplicationTaskAssessmentRun</code> operation.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>"failed"</code> – At least one individual assessment completed with a
+        /// <code>failed</code> status.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>"error-provisioning"</code> – An internal error occurred while
+        /// resources were provisioned (during <code>provisioning</code> status).</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>"error-executing"</code> – An internal error occurred while
+        /// individual assessments ran (during <code>running</code> status).</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>"invalid state"</code> – The assessment run is in an unknown state.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>"passed"</code> – All individual assessments have completed, and none
+        /// has a <code>failed</code> status.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>"provisioning"</code> – Resources required to run individual
+        /// assessments are being provisioned.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>"running"</code> – Individual assessments are being run.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>"starting"</code> – The assessment run is starting, but resources are not yet
+        /// being provisioned for individual assessments.</p>
+        /// </li>
+        /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -1363,14 +1658,16 @@ pub mod replication_task_assessment_run {
         /// <code>StartReplicationTaskAssessmentRun</code> operation.</p>
         pub fn replication_task_assessment_run_creation_date(
             mut self,
-            input: smithy_types::Instant,
+            input: aws_smithy_types::Instant,
         ) -> Self {
             self.replication_task_assessment_run_creation_date = Some(input);
             self
         }
+        /// <p>Date on which the assessment run was created using the
+        /// <code>StartReplicationTaskAssessmentRun</code> operation.</p>
         pub fn set_replication_task_assessment_run_creation_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.replication_task_assessment_run_creation_date = input;
             self
@@ -1384,6 +1681,8 @@ pub mod replication_task_assessment_run {
             self.assessment_progress = Some(input);
             self
         }
+        /// <p>Indication of the completion progress for the individual assessments specified to
+        /// run.</p>
         pub fn set_assessment_progress(
             mut self,
             input: std::option::Option<crate::model::ReplicationTaskAssessmentRunProgress>,
@@ -1396,6 +1695,7 @@ pub mod replication_task_assessment_run {
             self.last_failure_message = Some(input.into());
             self
         }
+        /// <p>Last message generated by an individual assessment failure.</p>
         pub fn set_last_failure_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1409,6 +1709,8 @@ pub mod replication_task_assessment_run {
             self.service_access_role_arn = Some(input.into());
             self
         }
+        /// <p>ARN of the service role used to start the assessment run using the
+        /// <code>StartReplicationTaskAssessmentRun</code> operation. The role must allow the <code>iam:PassRole</code> action.</p>
         pub fn set_service_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1421,6 +1723,7 @@ pub mod replication_task_assessment_run {
             self.result_location_bucket = Some(input.into());
             self
         }
+        /// <p>Amazon S3 bucket where DMS stores the results of this assessment run.</p>
         pub fn set_result_location_bucket(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1434,6 +1737,8 @@ pub mod replication_task_assessment_run {
             self.result_location_folder = Some(input.into());
             self
         }
+        /// <p>Folder in an Amazon S3 bucket where DMS stores the results of this assessment
+        /// run.</p>
         pub fn set_result_location_folder(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1446,6 +1751,7 @@ pub mod replication_task_assessment_run {
             self.result_encryption_mode = Some(input.into());
             self
         }
+        /// <p>Encryption mode used to encrypt the assessment run results.</p>
         pub fn set_result_encryption_mode(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1458,6 +1764,7 @@ pub mod replication_task_assessment_run {
             self.result_kms_key_arn = Some(input.into());
             self
         }
+        /// <p>ARN of the KMS encryption key used to encrypt the assessment run results.</p>
         pub fn set_result_kms_key_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1470,6 +1777,7 @@ pub mod replication_task_assessment_run {
             self.assessment_run_name = Some(input.into());
             self
         }
+        /// <p>Unique name of the assessment run.</p>
         pub fn set_assessment_run_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1543,6 +1851,7 @@ pub mod replication_task_assessment_run_progress {
             self.individual_assessment_count = Some(input);
             self
         }
+        /// <p>The number of individual assessments that are specified to run.</p>
         pub fn set_individual_assessment_count(mut self, input: std::option::Option<i32>) -> Self {
             self.individual_assessment_count = input;
             self
@@ -1552,6 +1861,7 @@ pub mod replication_task_assessment_run_progress {
             self.individual_assessment_completed_count = Some(input);
             self
         }
+        /// <p>The number of individual assessments that have completed, successfully or not.</p>
         pub fn set_individual_assessment_completed_count(
             mut self,
             input: std::option::Option<i32>,
@@ -1577,6 +1887,7 @@ impl ReplicationTaskAssessmentRunProgress {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1588,8 +1899,11 @@ impl ReplicationTaskAssessmentRunProgress {
     std::hash::Hash,
 )]
 pub enum StartReplicationTaskTypeValue {
+    #[allow(missing_docs)] // documentation missing in model
     ReloadTarget,
+    #[allow(missing_docs)] // documentation missing in model
     ResumeProcessing,
+    #[allow(missing_docs)] // documentation missing in model
     StartReplication,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1612,6 +1926,7 @@ impl std::str::FromStr for StartReplicationTaskTypeValue {
     }
 }
 impl StartReplicationTaskTypeValue {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StartReplicationTaskTypeValue::ReloadTarget => "reload-target",
@@ -1620,6 +1935,7 @@ impl StartReplicationTaskTypeValue {
             StartReplicationTaskTypeValue::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["reload-target", "resume-processing", "start-replication"]
     }
@@ -1630,6 +1946,7 @@ impl AsRef<str> for StartReplicationTaskTypeValue {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1641,7 +1958,9 @@ impl AsRef<str> for StartReplicationTaskTypeValue {
     std::hash::Hash,
 )]
 pub enum ReloadOptionValue {
+    #[allow(missing_docs)] // documentation missing in model
     DataReload,
+    #[allow(missing_docs)] // documentation missing in model
     ValidateOnly,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1663,6 +1982,7 @@ impl std::str::FromStr for ReloadOptionValue {
     }
 }
 impl ReloadOptionValue {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ReloadOptionValue::DataReload => "data-reload",
@@ -1670,6 +1990,7 @@ impl ReloadOptionValue {
             ReloadOptionValue::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["data-reload", "validate-only"]
     }
@@ -1712,6 +2033,7 @@ pub mod table_to_reload {
             self.schema_name = Some(input.into());
             self
         }
+        /// <p>The schema name of the table to be reloaded.</p>
         pub fn set_schema_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.schema_name = input;
             self
@@ -1721,6 +2043,7 @@ pub mod table_to_reload {
             self.table_name = Some(input.into());
             self
         }
+        /// <p>The table name of the table to be reloaded.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.table_name = input;
             self
@@ -1753,7 +2076,7 @@ pub struct RefreshSchemasStatus {
     /// <p>The status of the schema.</p>
     pub status: std::option::Option<crate::model::RefreshSchemasStatusTypeValue>,
     /// <p>The date the schema was last refreshed.</p>
-    pub last_refresh_date: std::option::Option<smithy_types::Instant>,
+    pub last_refresh_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The last failure message for the schema.</p>
     pub last_failure_message: std::option::Option<std::string::String>,
 }
@@ -1777,7 +2100,7 @@ pub mod refresh_schemas_status {
         pub(crate) endpoint_arn: std::option::Option<std::string::String>,
         pub(crate) replication_instance_arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::RefreshSchemasStatusTypeValue>,
-        pub(crate) last_refresh_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_refresh_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) last_failure_message: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1786,6 +2109,7 @@ pub mod refresh_schemas_status {
             self.endpoint_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
         pub fn set_endpoint_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.endpoint_arn = input;
             self
@@ -1795,6 +2119,7 @@ pub mod refresh_schemas_status {
             self.replication_instance_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
         pub fn set_replication_instance_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1807,6 +2132,7 @@ pub mod refresh_schemas_status {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the schema.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::RefreshSchemasStatusTypeValue>,
@@ -1815,13 +2141,14 @@ pub mod refresh_schemas_status {
             self
         }
         /// <p>The date the schema was last refreshed.</p>
-        pub fn last_refresh_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_refresh_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_refresh_date = Some(input);
             self
         }
+        /// <p>The date the schema was last refreshed.</p>
         pub fn set_last_refresh_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_refresh_date = input;
             self
@@ -1831,6 +2158,7 @@ pub mod refresh_schemas_status {
             self.last_failure_message = Some(input.into());
             self
         }
+        /// <p>The last failure message for the schema.</p>
         pub fn set_last_failure_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1857,6 +2185,7 @@ impl RefreshSchemasStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1868,8 +2197,11 @@ impl RefreshSchemasStatus {
     std::hash::Hash,
 )]
 pub enum RefreshSchemasStatusTypeValue {
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Refreshing,
+    #[allow(missing_docs)] // documentation missing in model
     Successful,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1892,6 +2224,7 @@ impl std::str::FromStr for RefreshSchemasStatusTypeValue {
     }
 }
 impl RefreshSchemasStatusTypeValue {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RefreshSchemasStatusTypeValue::Failed => "failed",
@@ -1900,6 +2233,7 @@ impl RefreshSchemasStatusTypeValue {
             RefreshSchemasStatusTypeValue::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["failed", "refreshing", "successful"]
     }
@@ -1940,6 +2274,7 @@ pub struct ReplicationInstance {
     /// </p>
     pub replication_instance_class: std::option::Option<std::string::String>,
     /// <p>The status of the replication instance. The possible return values include:</p>
+    ///
     /// <ul>
     /// <li>
     /// <p>
@@ -2012,7 +2347,7 @@ pub struct ReplicationInstance {
     /// instance.</p>
     pub allocated_storage: i32,
     /// <p>The time the replication instance was created.</p>
-    pub instance_create_time: std::option::Option<smithy_types::Instant>,
+    pub instance_create_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The VPC security group for the instance.</p>
     pub vpc_security_groups:
         std::option::Option<std::vec::Vec<crate::model::VpcSecurityGroupMembership>>,
@@ -2068,7 +2403,7 @@ pub struct ReplicationInstance {
     pub secondary_availability_zone: std::option::Option<std::string::String>,
     /// <p> The expiration date of the free replication instance that is part of the Free DMS
     /// program. </p>
-    pub free_until: std::option::Option<smithy_types::Instant>,
+    pub free_until: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The DNS name servers supported for the replication instance to access your on-premise source or target database.</p>
     pub dns_name_servers: std::option::Option<std::string::String>,
 }
@@ -2141,7 +2476,7 @@ pub mod replication_instance {
         pub(crate) replication_instance_class: std::option::Option<std::string::String>,
         pub(crate) replication_instance_status: std::option::Option<std::string::String>,
         pub(crate) allocated_storage: std::option::Option<i32>,
-        pub(crate) instance_create_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) instance_create_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) vpc_security_groups:
             std::option::Option<std::vec::Vec<crate::model::VpcSecurityGroupMembership>>,
         pub(crate) availability_zone: std::option::Option<std::string::String>,
@@ -2164,7 +2499,7 @@ pub mod replication_instance {
             std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) publicly_accessible: std::option::Option<bool>,
         pub(crate) secondary_availability_zone: std::option::Option<std::string::String>,
-        pub(crate) free_until: std::option::Option<smithy_types::Instant>,
+        pub(crate) free_until: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) dns_name_servers: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2191,6 +2526,22 @@ pub mod replication_instance {
             self.replication_instance_identifier = Some(input.into());
             self
         }
+        /// <p>The replication instance identifier is a required parameter. This parameter is stored as
+        /// a lowercase string.</p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Must contain 1-63 alphanumeric characters or hyphens.</p>
+        /// </li>
+        /// <li>
+        /// <p>First character must be a letter.</p>
+        /// </li>
+        /// <li>
+        /// <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
+        /// </li>
+        /// </ul>
+        /// <p>Example: <code>myrepinstance</code>
+        /// </p>
         pub fn set_replication_instance_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2209,6 +2560,13 @@ pub mod replication_instance {
             self.replication_instance_class = Some(input.into());
             self
         }
+        /// <p>The compute and memory capacity of the replication instance as defined for the specified
+        /// replication instance class. It is a required parameter, although a default value is
+        /// pre-selected in the DMS console.</p>
+        /// <p>For more information on the settings and capacities for the available replication instance classes, see
+        /// <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
+        /// Selecting the right DMS replication instance for your migration</a>.
+        /// </p>
         pub fn set_replication_instance_class(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2217,6 +2575,7 @@ pub mod replication_instance {
             self
         }
         /// <p>The status of the replication instance. The possible return values include:</p>
+        ///
         /// <ul>
         /// <li>
         /// <p>
@@ -2291,6 +2650,75 @@ pub mod replication_instance {
             self.replication_instance_status = Some(input.into());
             self
         }
+        /// <p>The status of the replication instance. The possible return values include:</p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>"available"</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>"creating"</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>"deleted"</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>"deleting"</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>"failed"</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>"modifying"</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>"upgrading"</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>"rebooting"</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>"resetting-master-credentials"</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>"storage-full"</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>"incompatible-credentials"</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>"incompatible-network"</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>"maintenance"</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_replication_instance_status(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2304,22 +2732,30 @@ pub mod replication_instance {
             self.allocated_storage = Some(input);
             self
         }
+        /// <p>The amount of storage (in gigabytes) that is allocated for the replication
+        /// instance.</p>
         pub fn set_allocated_storage(mut self, input: std::option::Option<i32>) -> Self {
             self.allocated_storage = input;
             self
         }
         /// <p>The time the replication instance was created.</p>
-        pub fn instance_create_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn instance_create_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.instance_create_time = Some(input);
             self
         }
+        /// <p>The time the replication instance was created.</p>
         pub fn set_instance_create_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.instance_create_time = input;
             self
         }
+        /// Appends an item to `vpc_security_groups`.
+        ///
+        /// To override the contents of this collection use [`set_vpc_security_groups`](Self::set_vpc_security_groups).
+        ///
+        /// <p>The VPC security group for the instance.</p>
         pub fn vpc_security_groups(
             mut self,
             input: impl Into<crate::model::VpcSecurityGroupMembership>,
@@ -2329,6 +2765,7 @@ pub mod replication_instance {
             self.vpc_security_groups = Some(v);
             self
         }
+        /// <p>The VPC security group for the instance.</p>
         pub fn set_vpc_security_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::VpcSecurityGroupMembership>>,
@@ -2341,6 +2778,7 @@ pub mod replication_instance {
             self.availability_zone = Some(input.into());
             self
         }
+        /// <p>The Availability Zone for the instance.</p>
         pub fn set_availability_zone(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2356,6 +2794,7 @@ pub mod replication_instance {
             self.replication_subnet_group = Some(input);
             self
         }
+        /// <p>The subnet group for the replication instance.</p>
         pub fn set_replication_subnet_group(
             mut self,
             input: std::option::Option<crate::model::ReplicationSubnetGroup>,
@@ -2372,6 +2811,8 @@ pub mod replication_instance {
             self.preferred_maintenance_window = Some(input.into());
             self
         }
+        /// <p>The maintenance window times for the replication instance. Any pending upgrades to the
+        /// replication instance are performed during this time.</p>
         pub fn set_preferred_maintenance_window(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2387,6 +2828,7 @@ pub mod replication_instance {
             self.pending_modified_values = Some(input);
             self
         }
+        /// <p>The pending modification values.</p>
         pub fn set_pending_modified_values(
             mut self,
             input: std::option::Option<crate::model::ReplicationPendingModifiedValues>,
@@ -2401,6 +2843,9 @@ pub mod replication_instance {
             self.multi_az = Some(input);
             self
         }
+        /// <p> Specifies whether the replication instance is a Multi-AZ deployment. You can't set the
+        /// <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to
+        /// <code>true</code>. </p>
         pub fn set_multi_az(mut self, input: std::option::Option<bool>) -> Self {
             self.multi_az = input;
             self
@@ -2414,6 +2859,11 @@ pub mod replication_instance {
             self.engine_version = Some(input.into());
             self
         }
+        /// <p>The engine version number of the replication instance.</p>
+        /// <p>If an engine version number is not specified when a replication
+        /// instance is created, the default is the latest engine version available.</p>
+        /// <p>When modifying a major engine version of an instance, also set  
+        /// <code>AllowMajorVersionUpgrade</code> to <code>true</code>.</p>
         pub fn set_engine_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2427,6 +2877,8 @@ pub mod replication_instance {
             self.auto_minor_version_upgrade = Some(input);
             self
         }
+        /// <p>Boolean value indicating if minor version upgrades will be automatically applied to the
+        /// instance.</p>
         pub fn set_auto_minor_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
             self.auto_minor_version_upgrade = input;
             self
@@ -2441,6 +2893,12 @@ pub mod replication_instance {
             self.kms_key_id = Some(input.into());
             self
         }
+        /// <p>An KMS key identifier that is used to encrypt the data on the replication
+        /// instance.</p>
+        /// <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, then
+        /// DMS uses your default encryption key.</p>
+        /// <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a
+        /// different default encryption key for each Amazon Web Services Region.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -2450,6 +2908,7 @@ pub mod replication_instance {
             self.replication_instance_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
         pub fn set_replication_instance_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2465,6 +2924,7 @@ pub mod replication_instance {
             self.replication_instance_public_ip_address = Some(input.into());
             self
         }
+        /// <p>The public IP address of the replication instance.</p>
         pub fn set_replication_instance_public_ip_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2480,6 +2940,7 @@ pub mod replication_instance {
             self.replication_instance_private_ip_address = Some(input.into());
             self
         }
+        /// <p>The private IP address of the replication instance.</p>
         pub fn set_replication_instance_private_ip_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2487,6 +2948,11 @@ pub mod replication_instance {
             self.replication_instance_private_ip_address = input;
             self
         }
+        /// Appends an item to `replication_instance_public_ip_addresses`.
+        ///
+        /// To override the contents of this collection use [`set_replication_instance_public_ip_addresses`](Self::set_replication_instance_public_ip_addresses).
+        ///
+        /// <p>One or more public IP addresses for the replication instance.</p>
         pub fn replication_instance_public_ip_addresses(
             mut self,
             input: impl Into<std::string::String>,
@@ -2498,6 +2964,7 @@ pub mod replication_instance {
             self.replication_instance_public_ip_addresses = Some(v);
             self
         }
+        /// <p>One or more public IP addresses for the replication instance.</p>
         pub fn set_replication_instance_public_ip_addresses(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2505,6 +2972,11 @@ pub mod replication_instance {
             self.replication_instance_public_ip_addresses = input;
             self
         }
+        /// Appends an item to `replication_instance_private_ip_addresses`.
+        ///
+        /// To override the contents of this collection use [`set_replication_instance_private_ip_addresses`](Self::set_replication_instance_private_ip_addresses).
+        ///
+        /// <p>One or more private IP addresses for the replication instance.</p>
         pub fn replication_instance_private_ip_addresses(
             mut self,
             input: impl Into<std::string::String>,
@@ -2516,6 +2988,7 @@ pub mod replication_instance {
             self.replication_instance_private_ip_addresses = Some(v);
             self
         }
+        /// <p>One or more private IP addresses for the replication instance.</p>
         pub fn set_replication_instance_private_ip_addresses(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2531,6 +3004,10 @@ pub mod replication_instance {
             self.publicly_accessible = Some(input);
             self
         }
+        /// <p> Specifies the accessibility options for the replication instance. A value of
+        /// <code>true</code> represents an instance with a public IP address. A value of
+        /// <code>false</code> represents an instance with a private IP address. The default value
+        /// is <code>true</code>. </p>
         pub fn set_publicly_accessible(mut self, input: std::option::Option<bool>) -> Self {
             self.publicly_accessible = input;
             self
@@ -2544,6 +3021,8 @@ pub mod replication_instance {
             self.secondary_availability_zone = Some(input.into());
             self
         }
+        /// <p>The Availability Zone of the standby replication instance in a Multi-AZ
+        /// deployment.</p>
         pub fn set_secondary_availability_zone(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2553,11 +3032,16 @@ pub mod replication_instance {
         }
         /// <p> The expiration date of the free replication instance that is part of the Free DMS
         /// program. </p>
-        pub fn free_until(mut self, input: smithy_types::Instant) -> Self {
+        pub fn free_until(mut self, input: aws_smithy_types::Instant) -> Self {
             self.free_until = Some(input);
             self
         }
-        pub fn set_free_until(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p> The expiration date of the free replication instance that is part of the Free DMS
+        /// program. </p>
+        pub fn set_free_until(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.free_until = input;
             self
         }
@@ -2566,6 +3050,7 @@ pub mod replication_instance {
             self.dns_name_servers = Some(input.into());
             self
         }
+        /// <p>The DNS name servers supported for the replication instance to access your on-premise source or target database.</p>
         pub fn set_dns_name_servers(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2674,6 +3159,12 @@ pub mod replication_pending_modified_values {
             self.replication_instance_class = Some(input.into());
             self
         }
+        /// <p>The compute and memory capacity of the replication instance as defined for the specified
+        /// replication instance class.</p>
+        /// <p>For more information on the settings and capacities for the available replication instance classes, see
+        /// <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
+        /// Selecting the right DMS replication instance for your migration</a>.
+        /// </p>
         pub fn set_replication_instance_class(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2687,6 +3178,8 @@ pub mod replication_pending_modified_values {
             self.allocated_storage = Some(input);
             self
         }
+        /// <p>The amount of storage (in gigabytes) that is allocated for the replication
+        /// instance.</p>
         pub fn set_allocated_storage(mut self, input: std::option::Option<i32>) -> Self {
             self.allocated_storage = input;
             self
@@ -2698,6 +3191,9 @@ pub mod replication_pending_modified_values {
             self.multi_az = Some(input);
             self
         }
+        /// <p> Specifies whether the replication instance is a Multi-AZ deployment. You can't set the
+        /// <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to
+        /// <code>true</code>. </p>
         pub fn set_multi_az(mut self, input: std::option::Option<bool>) -> Self {
             self.multi_az = input;
             self
@@ -2707,6 +3203,7 @@ pub mod replication_pending_modified_values {
             self.engine_version = Some(input.into());
             self
         }
+        /// <p>The engine version number of the replication instance.</p>
         pub fn set_engine_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2786,6 +3283,7 @@ pub mod replication_subnet_group {
             self.replication_subnet_group_identifier = Some(input.into());
             self
         }
+        /// <p>The identifier of the replication instance subnet group.</p>
         pub fn set_replication_subnet_group_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2801,6 +3299,7 @@ pub mod replication_subnet_group {
             self.replication_subnet_group_description = Some(input.into());
             self
         }
+        /// <p>A description for the replication subnet group.</p>
         pub fn set_replication_subnet_group_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2813,6 +3312,7 @@ pub mod replication_subnet_group {
             self.vpc_id = Some(input.into());
             self
         }
+        /// <p>The ID of the VPC.</p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.vpc_id = input;
             self
@@ -2822,6 +3322,7 @@ pub mod replication_subnet_group {
             self.subnet_group_status = Some(input.into());
             self
         }
+        /// <p>The status of the subnet group.</p>
         pub fn set_subnet_group_status(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2829,12 +3330,18 @@ pub mod replication_subnet_group {
             self.subnet_group_status = input;
             self
         }
+        /// Appends an item to `subnets`.
+        ///
+        /// To override the contents of this collection use [`set_subnets`](Self::set_subnets).
+        ///
+        /// <p>The subnets that are in the subnet group.</p>
         pub fn subnets(mut self, input: impl Into<crate::model::Subnet>) -> Self {
             let mut v = self.subnets.unwrap_or_default();
             v.push(input.into());
             self.subnets = Some(v);
             self
         }
+        /// <p>The subnets that are in the subnet group.</p>
         pub fn set_subnets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Subnet>>,
@@ -2899,6 +3406,7 @@ pub mod subnet {
             self.subnet_identifier = Some(input.into());
             self
         }
+        /// <p>The subnet identifier.</p>
         pub fn set_subnet_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2911,6 +3419,7 @@ pub mod subnet {
             self.subnet_availability_zone = Some(input);
             self
         }
+        /// <p>The Availability Zone of the subnet.</p>
         pub fn set_subnet_availability_zone(
             mut self,
             input: std::option::Option<crate::model::AvailabilityZone>,
@@ -2923,6 +3432,7 @@ pub mod subnet {
             self.subnet_status = Some(input.into());
             self
         }
+        /// <p>The status of the subnet.</p>
         pub fn set_subnet_status(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2980,6 +3490,7 @@ pub mod availability_zone {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the Availability Zone.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -3030,6 +3541,7 @@ pub mod vpc_security_group_membership {
             self.vpc_security_group_id = Some(input.into());
             self
         }
+        /// <p>The VPC security group ID.</p>
         pub fn set_vpc_security_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3042,6 +3554,7 @@ pub mod vpc_security_group_membership {
             self.status = Some(input.into());
             self
         }
+        /// <p>The status of the VPC security group.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -3136,6 +3649,8 @@ pub mod event_subscription {
             self.customer_aws_id = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services customer account associated with the DMS event notification
+        /// subscription.</p>
         pub fn set_customer_aws_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3148,6 +3663,7 @@ pub mod event_subscription {
             self.cust_subscription_id = Some(input.into());
             self
         }
+        /// <p>The DMS event notification subscription Id.</p>
         pub fn set_cust_subscription_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3160,6 +3676,7 @@ pub mod event_subscription {
             self.sns_topic_arn = Some(input.into());
             self
         }
+        /// <p>The topic ARN of the DMS event notification subscription.</p>
         pub fn set_sns_topic_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3178,6 +3695,13 @@ pub mod event_subscription {
             self.status = Some(input.into());
             self
         }
+        /// <p>The status of the DMS event notification subscription.</p>
+        /// <p>Constraints:</p>
+        /// <p>Can be one of the following: creating | modifying | deleting | active | no-permission |
+        /// topic-not-exist</p>
+        /// <p>The status "no-permission" indicates that DMS no longer has permission to post to
+        /// the SNS topic. The status "topic-not-exist" indicates that the topic was deleted after the
+        /// subscription was created.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -3187,6 +3711,7 @@ pub mod event_subscription {
             self.subscription_creation_time = Some(input.into());
             self
         }
+        /// <p>The time the DMS event notification subscription was created.</p>
         pub fn set_subscription_creation_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3201,16 +3726,25 @@ pub mod event_subscription {
             self.source_type = Some(input.into());
             self
         }
+        /// <p> The type of DMS resource that generates events. </p>
+        /// <p>Valid values: replication-instance | replication-server | security-group |
+        /// replication-task</p>
         pub fn set_source_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source_type = input;
             self
         }
+        /// Appends an item to `source_ids_list`.
+        ///
+        /// To override the contents of this collection use [`set_source_ids_list`](Self::set_source_ids_list).
+        ///
+        /// <p>A list of source Ids for the event subscription.</p>
         pub fn source_ids_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.source_ids_list.unwrap_or_default();
             v.push(input.into());
             self.source_ids_list = Some(v);
             self
         }
+        /// <p>A list of source Ids for the event subscription.</p>
         pub fn set_source_ids_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3218,12 +3752,18 @@ pub mod event_subscription {
             self.source_ids_list = input;
             self
         }
+        /// Appends an item to `event_categories_list`.
+        ///
+        /// To override the contents of this collection use [`set_event_categories_list`](Self::set_event_categories_list).
+        ///
+        /// <p>A lists of event categories.</p>
         pub fn event_categories_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.event_categories_list.unwrap_or_default();
             v.push(input.into());
             self.event_categories_list = Some(v);
             self
         }
+        /// <p>A lists of event categories.</p>
         pub fn set_event_categories_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3236,6 +3776,7 @@ pub mod event_subscription {
             self.enabled = Some(input);
             self
         }
+        /// <p>Boolean value that indicates if the event subscription is enabled.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -3500,6 +4041,9 @@ pub mod endpoint {
             self.endpoint_identifier = Some(input.into());
             self
         }
+        /// <p>The database endpoint identifier. Identifiers must begin with a letter and must contain
+        /// only ASCII letters, digits, and hyphens. They can't end with a hyphen or contain two
+        /// consecutive hyphens.</p>
         pub fn set_endpoint_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3512,6 +4056,7 @@ pub mod endpoint {
             self.endpoint_type = Some(input);
             self
         }
+        /// <p>The type of endpoint.  Valid values are <code>source</code> and <code>target</code>.</p>
         pub fn set_endpoint_type(
             mut self,
             input: std::option::Option<crate::model::ReplicationEndpointTypeValue>,
@@ -3530,6 +4075,13 @@ pub mod endpoint {
             self.engine_name = Some(input.into());
             self
         }
+        /// <p>The database engine name. Valid values, depending on the EndpointType, include
+        /// <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>,
+        /// <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>,
+        /// <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>, <code>"azuredb"</code>,
+        /// <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
+        /// <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>,
+        /// <code>"documentdb"</code>, <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
         pub fn set_engine_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.engine_name = input;
             self
@@ -3540,6 +4092,8 @@ pub mod endpoint {
             self.engine_display_name = Some(input.into());
             self
         }
+        /// <p>The expanded name for the engine name. For example, if the <code>EngineName</code>
+        /// parameter is "aurora," this value would be "Amazon Aurora MySQL."</p>
         pub fn set_engine_display_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3552,6 +4106,7 @@ pub mod endpoint {
             self.username = Some(input.into());
             self
         }
+        /// <p>The user name used to connect to the endpoint.</p>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.username = input;
             self
@@ -3561,6 +4116,7 @@ pub mod endpoint {
             self.server_name = Some(input.into());
             self
         }
+        /// <p>The name of the server at the endpoint.</p>
         pub fn set_server_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_name = input;
             self
@@ -3570,6 +4126,7 @@ pub mod endpoint {
             self.port = Some(input);
             self
         }
+        /// <p>The port value used to access the endpoint.</p>
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
             self.port = input;
             self
@@ -3579,6 +4136,7 @@ pub mod endpoint {
             self.database_name = Some(input.into());
             self
         }
+        /// <p>The name of the database at the endpoint.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3594,6 +4152,7 @@ pub mod endpoint {
             self.extra_connection_attributes = Some(input.into());
             self
         }
+        /// <p>Additional connection attributes used to connect to the endpoint.</p>
         pub fn set_extra_connection_attributes(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3606,6 +4165,7 @@ pub mod endpoint {
             self.status = Some(input.into());
             self
         }
+        /// <p>The status of the endpoint.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -3619,6 +4179,11 @@ pub mod endpoint {
             self.kms_key_id = Some(input.into());
             self
         }
+        /// <p>An KMS key identifier that is used to encrypt the connection parameters for the endpoint.</p>
+        /// <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, then
+        /// DMS uses your default encryption key.</p>
+        /// <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a
+        /// different default encryption key for each Amazon Web Services Region.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -3628,6 +4193,7 @@ pub mod endpoint {
             self.endpoint_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
         pub fn set_endpoint_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.endpoint_arn = input;
             self
@@ -3637,6 +4203,7 @@ pub mod endpoint {
             self.certificate_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) used for SSL connection to the endpoint.</p>
         pub fn set_certificate_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3649,6 +4216,7 @@ pub mod endpoint {
             self.ssl_mode = Some(input);
             self
         }
+        /// <p>The SSL mode used to connect to the endpoint. The default value is <code>none</code>.</p>
         pub fn set_ssl_mode(
             mut self,
             input: std::option::Option<crate::model::DmsSslModeValue>,
@@ -3662,6 +4230,8 @@ pub mod endpoint {
             self.service_access_role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) used by the service to access the IAM role.
+        /// The role must allow the <code>iam:PassRole</code> action.</p>
         pub fn set_service_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3674,6 +4244,7 @@ pub mod endpoint {
             self.external_table_definition = Some(input.into());
             self
         }
+        /// <p>The external table definition.</p>
         pub fn set_external_table_definition(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3688,6 +4259,9 @@ pub mod endpoint {
             self.external_id = Some(input.into());
             self
         }
+        /// <p> Value returned by a call to CreateEndpoint that can be used for cross-account
+        /// validation. Use it on a subsequent call to CreateEndpoint to create the endpoint with a
+        /// cross-account. </p>
         pub fn set_external_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.external_id = input;
             self
@@ -3698,6 +4272,8 @@ pub mod endpoint {
             self.dynamo_db_settings = Some(input);
             self
         }
+        /// <p>The settings for the DynamoDB target endpoint. For more information, see the
+        /// <code>DynamoDBSettings</code> structure.</p>
         pub fn set_dynamo_db_settings(
             mut self,
             input: std::option::Option<crate::model::DynamoDbSettings>,
@@ -3711,6 +4287,8 @@ pub mod endpoint {
             self.s3_settings = Some(input);
             self
         }
+        /// <p>The settings for the S3 target endpoint. For more information, see the
+        /// <code>S3Settings</code> structure.</p>
         pub fn set_s3_settings(
             mut self,
             input: std::option::Option<crate::model::S3Settings>,
@@ -3741,6 +4319,25 @@ pub mod endpoint {
             self.dms_transfer_settings = Some(input);
             self
         }
+        /// <p>The settings in JSON format for the DMS transfer type of source endpoint. </p>
+        /// <p>Possible settings include the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ServiceAccessRoleArn</code> -  - The Amazon Resource Name (ARN) used by the service access IAM role.
+        /// The role must allow the <code>iam:PassRole</code> action.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>BucketName</code> - The name of the S3 bucket to use.</p>
+        /// </li>
+        /// </ul>
+        /// <p>Shorthand syntax for these settings is as follows:
+        /// <code>ServiceAccessRoleArn=string,BucketName=string,</code>
+        /// </p>
+        /// <p>JSON syntax for these settings is as follows: <code>{ "ServiceAccessRoleArn":
+        /// "string", "BucketName": "string"} </code>
+        /// </p>
         pub fn set_dms_transfer_settings(
             mut self,
             input: std::option::Option<crate::model::DmsTransferSettings>,
@@ -3754,6 +4351,8 @@ pub mod endpoint {
             self.mongo_db_settings = Some(input);
             self
         }
+        /// <p>The settings for the MongoDB source endpoint. For more information, see the
+        /// <code>MongoDbSettings</code> structure.</p>
         pub fn set_mongo_db_settings(
             mut self,
             input: std::option::Option<crate::model::MongoDbSettings>,
@@ -3767,6 +4366,8 @@ pub mod endpoint {
             self.kinesis_settings = Some(input);
             self
         }
+        /// <p>The settings for the Amazon Kinesis target endpoint. For more information, see the
+        /// <code>KinesisSettings</code> structure.</p>
         pub fn set_kinesis_settings(
             mut self,
             input: std::option::Option<crate::model::KinesisSettings>,
@@ -3780,6 +4381,8 @@ pub mod endpoint {
             self.kafka_settings = Some(input);
             self
         }
+        /// <p>The settings for the Apache Kafka target endpoint. For more information, see the
+        /// <code>KafkaSettings</code> structure.</p>
         pub fn set_kafka_settings(
             mut self,
             input: std::option::Option<crate::model::KafkaSettings>,
@@ -3796,6 +4399,8 @@ pub mod endpoint {
             self.elasticsearch_settings = Some(input);
             self
         }
+        /// <p>The settings for the Elasticsearch source endpoint. For more information, see the
+        /// <code>ElasticsearchSettings</code> structure.</p>
         pub fn set_elasticsearch_settings(
             mut self,
             input: std::option::Option<crate::model::ElasticsearchSettings>,
@@ -3809,6 +4414,8 @@ pub mod endpoint {
             self.neptune_settings = Some(input);
             self
         }
+        /// <p>The settings for the Amazon Neptune target endpoint. For more information, see the
+        /// <code>NeptuneSettings</code> structure.</p>
         pub fn set_neptune_settings(
             mut self,
             input: std::option::Option<crate::model::NeptuneSettings>,
@@ -3821,6 +4428,7 @@ pub mod endpoint {
             self.redshift_settings = Some(input);
             self
         }
+        /// <p>Settings for the Amazon Redshift endpoint.</p>
         pub fn set_redshift_settings(
             mut self,
             input: std::option::Option<crate::model::RedshiftSettings>,
@@ -3834,6 +4442,8 @@ pub mod endpoint {
             self.postgre_sql_settings = Some(input);
             self
         }
+        /// <p>The settings for the PostgreSQL source and target endpoint. For more information, see
+        /// the <code>PostgreSQLSettings</code> structure.</p>
         pub fn set_postgre_sql_settings(
             mut self,
             input: std::option::Option<crate::model::PostgreSqlSettings>,
@@ -3847,6 +4457,8 @@ pub mod endpoint {
             self.my_sql_settings = Some(input);
             self
         }
+        /// <p>The settings for the MySQL source and target endpoint. For more information, see the
+        /// <code>MySQLSettings</code> structure.</p>
         pub fn set_my_sql_settings(
             mut self,
             input: std::option::Option<crate::model::MySqlSettings>,
@@ -3860,6 +4472,8 @@ pub mod endpoint {
             self.oracle_settings = Some(input);
             self
         }
+        /// <p>The settings for the Oracle source and target endpoint. For more information, see the
+        /// <code>OracleSettings</code> structure.</p>
         pub fn set_oracle_settings(
             mut self,
             input: std::option::Option<crate::model::OracleSettings>,
@@ -3873,6 +4487,8 @@ pub mod endpoint {
             self.sybase_settings = Some(input);
             self
         }
+        /// <p>The settings for the SAP ASE source and target endpoint. For more information, see the
+        /// <code>SybaseSettings</code> structure.</p>
         pub fn set_sybase_settings(
             mut self,
             input: std::option::Option<crate::model::SybaseSettings>,
@@ -3889,6 +4505,8 @@ pub mod endpoint {
             self.microsoft_sql_server_settings = Some(input);
             self
         }
+        /// <p>The settings for the Microsoft SQL Server source and target endpoint. For more
+        /// information, see the <code>MicrosoftSQLServerSettings</code> structure.</p>
         pub fn set_microsoft_sql_server_settings(
             mut self,
             input: std::option::Option<crate::model::MicrosoftSqlServerSettings>,
@@ -3903,6 +4521,9 @@ pub mod endpoint {
             self.ibm_db2_settings = Some(input);
             self
         }
+        /// <p>The settings for the IBM Db2 LUW source endpoint. For more information, see the
+        /// <code>IBMDb2Settings</code> structure.
+        /// </p>
         pub fn set_ibm_db2_settings(
             mut self,
             input: std::option::Option<crate::model::IbmDb2Settings>,
@@ -3915,6 +4536,7 @@ pub mod endpoint {
             self.doc_db_settings = Some(input);
             self
         }
+        /// <p>Provides information that defines a DocumentDB endpoint.</p>
         pub fn set_doc_db_settings(
             mut self,
             input: std::option::Option<crate::model::DocDbSettings>,
@@ -3928,6 +4550,8 @@ pub mod endpoint {
             self.redis_settings = Some(input);
             self
         }
+        /// <p>The settings for the Redis target endpoint. For more information, see the
+        /// <code>RedisSettings</code> structure.</p>
         pub fn set_redis_settings(
             mut self,
             input: std::option::Option<crate::model::RedisSettings>,
@@ -4051,6 +4675,7 @@ pub mod redis_settings {
             self.server_name = Some(input.into());
             self
         }
+        /// <p>Fully qualified domain name of the endpoint.</p>
         pub fn set_server_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_name = input;
             self
@@ -4060,6 +4685,7 @@ pub mod redis_settings {
             self.port = Some(input);
             self
         }
+        /// <p>Transmission Control Protocol (TCP) port for the endpoint.</p>
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
             self.port = input;
             self
@@ -4079,6 +4705,14 @@ pub mod redis_settings {
             self.ssl_security_protocol = Some(input);
             self
         }
+        /// <p>The connection to a Redis target endpoint using Transport Layer Security (TLS). Valid
+        /// values include <code>plaintext</code> and <code>ssl-encryption</code>. The default is
+        /// <code>ssl-encryption</code>. The <code>ssl-encryption</code> option makes an encrypted
+        /// connection. Optionally, you can identify an Amazon Resource Name (ARN) for an SSL certificate authority (CA)
+        /// using the <code>SslCaCertificateArn </code>setting. If an ARN isn't given for a CA, DMS
+        /// uses the Amazon root CA.</p>
+        /// <p>The <code>plaintext</code> option doesn't provide Transport Layer Security (TLS)
+        /// encryption for traffic between endpoint and database.</p>
         pub fn set_ssl_security_protocol(
             mut self,
             input: std::option::Option<crate::model::SslSecurityProtocolValue>,
@@ -4095,6 +4729,11 @@ pub mod redis_settings {
             self.auth_type = Some(input);
             self
         }
+        /// <p>The type of authentication to perform when connecting to a Redis target. Options include
+        /// <code>none</code>, <code>auth-token</code>, and <code>auth-role</code>. The
+        /// <code>auth-token</code> option requires an <code>AuthPassword</code> value to be provided. The
+        /// <code>auth-role</code> option requires <code>AuthUserName</code> and <code>AuthPassword</code> values
+        /// to be provided.</p>
         pub fn set_auth_type(
             mut self,
             input: std::option::Option<crate::model::RedisAuthTypeValue>,
@@ -4108,6 +4747,8 @@ pub mod redis_settings {
             self.auth_user_name = Some(input.into());
             self
         }
+        /// <p>The user name provided with the <code>auth-role</code> option of the
+        /// <code>AuthType</code> setting for a Redis target endpoint.</p>
         pub fn set_auth_user_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4122,6 +4763,9 @@ pub mod redis_settings {
             self.auth_password = Some(input.into());
             self
         }
+        /// <p>The password provided with the <code>auth-role</code> and
+        /// <code>auth-token</code> options of the <code>AuthType</code> setting for a Redis
+        /// target endpoint.</p>
         pub fn set_auth_password(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4135,6 +4779,8 @@ pub mod redis_settings {
             self.ssl_ca_certificate_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) for the certificate authority (CA) that DMS uses to
+        /// connect to your Redis target endpoint.</p>
         pub fn set_ssl_ca_certificate_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4163,6 +4809,7 @@ impl RedisSettings {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4174,8 +4821,11 @@ impl RedisSettings {
     std::hash::Hash,
 )]
 pub enum RedisAuthTypeValue {
+    #[allow(missing_docs)] // documentation missing in model
     AuthRole,
+    #[allow(missing_docs)] // documentation missing in model
     AuthToken,
+    #[allow(missing_docs)] // documentation missing in model
     None,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4198,6 +4848,7 @@ impl std::str::FromStr for RedisAuthTypeValue {
     }
 }
 impl RedisAuthTypeValue {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RedisAuthTypeValue::AuthRole => "auth-role",
@@ -4206,6 +4857,7 @@ impl RedisAuthTypeValue {
             RedisAuthTypeValue::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["auth-role", "auth-token", "none"]
     }
@@ -4216,6 +4868,7 @@ impl AsRef<str> for RedisAuthTypeValue {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4227,7 +4880,9 @@ impl AsRef<str> for RedisAuthTypeValue {
     std::hash::Hash,
 )]
 pub enum SslSecurityProtocolValue {
+    #[allow(missing_docs)] // documentation missing in model
     Plaintext,
+    #[allow(missing_docs)] // documentation missing in model
     SslEncryption,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4249,6 +4904,7 @@ impl std::str::FromStr for SslSecurityProtocolValue {
     }
 }
 impl SslSecurityProtocolValue {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SslSecurityProtocolValue::Plaintext => "plaintext",
@@ -4256,6 +4912,7 @@ impl SslSecurityProtocolValue {
             SslSecurityProtocolValue::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["plaintext", "ssl-encryption"]
     }
@@ -4363,6 +5020,7 @@ pub mod doc_db_settings {
             self.username = Some(input.into());
             self
         }
+        /// <p>The user name you use to access the DocumentDB source endpoint. </p>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.username = input;
             self
@@ -4373,6 +5031,8 @@ pub mod doc_db_settings {
             self.password = Some(input.into());
             self
         }
+        /// <p> The password for the user account you use to access the DocumentDB source endpoint.
+        /// </p>
         pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.password = input;
             self
@@ -4382,6 +5042,7 @@ pub mod doc_db_settings {
             self.server_name = Some(input.into());
             self
         }
+        /// <p> The name of the server on the DocumentDB source endpoint. </p>
         pub fn set_server_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_name = input;
             self
@@ -4391,6 +5052,7 @@ pub mod doc_db_settings {
             self.port = Some(input);
             self
         }
+        /// <p> The port value for the DocumentDB source endpoint. </p>
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
             self.port = input;
             self
@@ -4400,6 +5062,7 @@ pub mod doc_db_settings {
             self.database_name = Some(input.into());
             self
         }
+        /// <p> The database name on the DocumentDB source endpoint. </p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4414,6 +5077,9 @@ pub mod doc_db_settings {
             self.nesting_level = Some(input);
             self
         }
+        /// <p> Specifies either document or table mode. </p>
+        /// <p>Default value is <code>"none"</code>. Specify <code>"none"</code> to use document mode.
+        /// Specify <code>"one"</code> to use table mode.</p>
         pub fn set_nesting_level(
             mut self,
             input: std::option::Option<crate::model::NestingLevelValue>,
@@ -4428,6 +5094,9 @@ pub mod doc_db_settings {
             self.extract_doc_id = Some(input);
             self
         }
+        /// <p> Specifies the document ID. Use this setting when <code>NestingLevel</code> is set to
+        /// <code>"none"</code>. </p>
+        /// <p>Default value is <code>"false"</code>. </p>
         pub fn set_extract_doc_id(mut self, input: std::option::Option<bool>) -> Self {
             self.extract_doc_id = input;
             self
@@ -4440,6 +5109,10 @@ pub mod doc_db_settings {
             self.docs_to_investigate = Some(input);
             self
         }
+        /// <p> Indicates the number of documents to preview to determine the document organization.
+        /// Use this setting when <code>NestingLevel</code> is set to <code>"one"</code>. </p>
+        /// <p>Must be a positive value greater than <code>0</code>. Default value is
+        /// <code>1000</code>.</p>
         pub fn set_docs_to_investigate(mut self, input: std::option::Option<i32>) -> Self {
             self.docs_to_investigate = input;
             self
@@ -4452,6 +5125,10 @@ pub mod doc_db_settings {
             self.kms_key_id = Some(input.into());
             self
         }
+        /// <p>The KMS key identifier that is used to encrypt the content on the replication
+        /// instance. If you don't specify a value for the <code>KmsKeyId</code> parameter, then
+        /// DMS uses your default encryption key. KMS creates the default encryption key for
+        /// your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Region.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -4478,6 +5155,21 @@ pub mod doc_db_settings {
             self.secrets_manager_access_role_arn = Some(input.into());
             self
         }
+        /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the
+        /// trusted entity and grants the required permissions to access the value in
+        /// <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action.
+        /// <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the DocumentDB endpoint.</p>
+        /// <note>
+        /// <p>You can specify one of two sets of values for these permissions. You can specify the
+        /// values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify
+        /// clear-text values for <code>UserName</code>, <code>Password</code>,
+        /// <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more
+        /// information on creating this <code>SecretsManagerSecret</code> and the
+        /// <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code>
+        /// required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service
+        /// resources</a> in the <i>Database Migration Service User
+        /// Guide</i>.</p>
+        /// </note>
         pub fn set_secrets_manager_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4491,6 +5183,8 @@ pub mod doc_db_settings {
             self.secrets_manager_secret_id = Some(input.into());
             self
         }
+        /// <p>The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code>
+        /// that contains the DocumentDB endpoint connection details.</p>
         pub fn set_secrets_manager_secret_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4523,6 +5217,7 @@ impl DocDbSettings {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4534,7 +5229,9 @@ impl DocDbSettings {
     std::hash::Hash,
 )]
 pub enum NestingLevelValue {
+    #[allow(missing_docs)] // documentation missing in model
     None,
+    #[allow(missing_docs)] // documentation missing in model
     One,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4556,6 +5253,7 @@ impl std::str::FromStr for NestingLevelValue {
     }
 }
 impl NestingLevelValue {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             NestingLevelValue::None => "none",
@@ -4563,6 +5261,7 @@ impl NestingLevelValue {
             NestingLevelValue::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["none", "one"]
     }
@@ -4659,6 +5358,7 @@ pub mod ibm_db2_settings {
             self.database_name = Some(input.into());
             self
         }
+        /// <p>Database name for the endpoint.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4671,6 +5371,7 @@ pub mod ibm_db2_settings {
             self.password = Some(input.into());
             self
         }
+        /// <p>Endpoint connection password.</p>
         pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.password = input;
             self
@@ -4680,6 +5381,7 @@ pub mod ibm_db2_settings {
             self.port = Some(input);
             self
         }
+        /// <p>Endpoint TCP port. The default value is 50000.</p>
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
             self.port = input;
             self
@@ -4689,6 +5391,7 @@ pub mod ibm_db2_settings {
             self.server_name = Some(input.into());
             self
         }
+        /// <p>Fully qualified domain name of the endpoint.</p>
         pub fn set_server_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_name = input;
             self
@@ -4699,6 +5402,8 @@ pub mod ibm_db2_settings {
             self.set_data_capture_changes = Some(input);
             self
         }
+        /// <p>Enables ongoing replication (CDC) as a BOOLEAN value. The
+        /// default is true.</p>
         pub fn set_set_data_capture_changes(mut self, input: std::option::Option<bool>) -> Self {
             self.set_data_capture_changes = input;
             self
@@ -4710,6 +5415,9 @@ pub mod ibm_db2_settings {
             self.current_lsn = Some(input.into());
             self
         }
+        /// <p>For ongoing replication (CDC), use CurrentLSN to specify a
+        /// log sequence number (LSN) where you want the replication
+        /// to start.</p>
         pub fn set_current_lsn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.current_lsn = input;
             self
@@ -4720,6 +5428,8 @@ pub mod ibm_db2_settings {
             self.max_k_bytes_per_read = Some(input);
             self
         }
+        /// <p>Maximum number of bytes per read, as a NUMBER value.
+        /// The default is 64 KB.</p>
         pub fn set_max_k_bytes_per_read(mut self, input: std::option::Option<i32>) -> Self {
             self.max_k_bytes_per_read = input;
             self
@@ -4729,6 +5439,7 @@ pub mod ibm_db2_settings {
             self.username = Some(input.into());
             self
         }
+        /// <p>Endpoint connection user name.</p>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.username = input;
             self
@@ -4756,6 +5467,22 @@ pub mod ibm_db2_settings {
             self.secrets_manager_access_role_arn = Some(input.into());
             self
         }
+        /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the
+        /// trusted entity and grants the required permissions to access the value in
+        /// <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action.
+        /// <code>SecretsManagerSecret</code> has the value of
+        /// the Amazon Web Services Secrets Manager secret that allows access to the Db2 LUW endpoint. </p>
+        /// <note>
+        /// <p>You can specify one of two sets of values for these permissions. You can specify the
+        /// values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify
+        /// clear-text values for <code>UserName</code>, <code>Password</code>,
+        /// <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more
+        /// information on creating this <code>SecretsManagerSecret</code> and the
+        /// <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code>
+        /// required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service
+        /// resources</a> in the <i>Database Migration Service User
+        /// Guide</i>.</p>
+        /// </note>
         pub fn set_secrets_manager_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4768,6 +5495,7 @@ pub mod ibm_db2_settings {
             self.secrets_manager_secret_id = Some(input.into());
             self
         }
+        /// <p>The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the Db2 LUW endpoint connection details.</p>
         pub fn set_secrets_manager_secret_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4939,6 +5667,7 @@ pub mod microsoft_sql_server_settings {
             self.port = Some(input);
             self
         }
+        /// <p>Endpoint TCP port.</p>
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
             self.port = input;
             self
@@ -4949,6 +5678,8 @@ pub mod microsoft_sql_server_settings {
             self.bcp_packet_size = Some(input);
             self
         }
+        /// <p>The maximum size of the packets (in bytes) used to transfer
+        /// data using BCP.</p>
         pub fn set_bcp_packet_size(mut self, input: std::option::Option<i32>) -> Self {
             self.bcp_packet_size = input;
             self
@@ -4958,6 +5689,7 @@ pub mod microsoft_sql_server_settings {
             self.database_name = Some(input.into());
             self
         }
+        /// <p>Database name for the endpoint.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4972,6 +5704,9 @@ pub mod microsoft_sql_server_settings {
             self.control_tables_file_group = Some(input.into());
             self
         }
+        /// <p>Specifies a file group for the DMS internal tables. When the replication task
+        /// starts, all the internal DMS control tables (awsdms_ apply_exception, awsdms_apply,
+        /// awsdms_changes) are created for the specified file group.</p>
         pub fn set_control_tables_file_group(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4984,6 +5719,7 @@ pub mod microsoft_sql_server_settings {
             self.password = Some(input.into());
             self
         }
+        /// <p>Endpoint connection password.</p>
         pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.password = input;
             self
@@ -4996,6 +5732,10 @@ pub mod microsoft_sql_server_settings {
             self.query_single_always_on_node = Some(input);
             self
         }
+        /// <p>Cleans and recreates table metadata information on the replication instance when
+        /// a mismatch occurs. An example is a situation where running an alter DDL statement on
+        /// a table might result in different information about the table cached in the replication
+        /// instance.</p>
         pub fn set_query_single_always_on_node(mut self, input: std::option::Option<bool>) -> Self {
             self.query_single_always_on_node = input;
             self
@@ -5011,6 +5751,13 @@ pub mod microsoft_sql_server_settings {
             self.read_backup_only = Some(input);
             self
         }
+        /// <p>When this attribute is set to <code>Y</code>, DMS only reads changes
+        /// from transaction log backups and doesn't read from the
+        /// active transaction log file during ongoing replication. Setting
+        /// this parameter to <code>Y</code> enables you to control active transaction
+        /// log file growth during full load and ongoing replication
+        /// tasks. However, it can add some source latency to ongoing
+        /// replication.</p>
         pub fn set_read_backup_only(mut self, input: std::option::Option<bool>) -> Self {
             self.read_backup_only = input;
             self
@@ -5040,6 +5787,27 @@ pub mod microsoft_sql_server_settings {
             self.safeguard_policy = Some(input);
             self
         }
+        /// <p>Use this attribute to minimize the need to access the
+        /// backup log and enable DMS to prevent truncation using one of the
+        /// following two methods.</p>
+        /// <p>
+        /// <i>Start transactions in the database:</i> This is the default
+        /// method. When this method is used, DMS prevents
+        /// TLOG truncation by mimicking a transaction in the database.
+        /// As long as such a transaction is open, changes that appear
+        /// after the transaction started aren't truncated. If you need
+        /// Microsoft Replication to be enabled in your database, then
+        /// you must choose this method.</p>
+        /// <p>
+        /// <i>Exclusively use sp_repldone within a single task</i>: When
+        /// this method is used, DMS reads the changes and then
+        /// uses sp_repldone to mark the TLOG transactions as ready
+        /// for truncation. Although this method doesn't involve any
+        /// transactional activities, it can only be used when Microsoft
+        /// Replication isn't running. Also, when using this method, only
+        /// one DMS task can access the database at any given
+        /// time. Therefore, if you need to run parallel DMS tasks
+        /// against the same database, use the default method.</p>
         pub fn set_safeguard_policy(
             mut self,
             input: std::option::Option<crate::model::SafeguardPolicy>,
@@ -5052,6 +5820,7 @@ pub mod microsoft_sql_server_settings {
             self.server_name = Some(input.into());
             self
         }
+        /// <p>Fully qualified domain name of the endpoint.</p>
         pub fn set_server_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_name = input;
             self
@@ -5061,6 +5830,7 @@ pub mod microsoft_sql_server_settings {
             self.username = Some(input.into());
             self
         }
+        /// <p>Endpoint connection user name.</p>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.username = input;
             self
@@ -5073,6 +5843,10 @@ pub mod microsoft_sql_server_settings {
             self.use_bcp_full_load = Some(input);
             self
         }
+        /// <p>Use this to attribute to transfer data for full-load operations
+        /// using BCP. When the target table contains an identity
+        /// column that does not exist in the source table, you must
+        /// disable the use BCP for loading table option.</p>
         pub fn set_use_bcp_full_load(mut self, input: std::option::Option<bool>) -> Self {
             self.use_bcp_full_load = input;
             self
@@ -5083,6 +5857,8 @@ pub mod microsoft_sql_server_settings {
             self.use_third_party_backup_device = Some(input);
             self
         }
+        /// <p>When this attribute is set to <code>Y</code>, DMS processes third-party
+        /// transaction log backups if they are created in native format.</p>
         pub fn set_use_third_party_backup_device(
             mut self,
             input: std::option::Option<bool>,
@@ -5113,6 +5889,22 @@ pub mod microsoft_sql_server_settings {
             self.secrets_manager_access_role_arn = Some(input.into());
             self
         }
+        /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the
+        /// trusted entity and grants the required permissions to access the value in
+        /// <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action.
+        /// <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager
+        /// secret that allows access to the SQL Server endpoint.</p>
+        /// <note>
+        /// <p>You can specify one of two sets of values for these permissions. You can specify the
+        /// values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify
+        /// clear-text values for <code>UserName</code>, <code>Password</code>,
+        /// <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more
+        /// information on creating this <code>SecretsManagerSecret</code> and the
+        /// <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code>
+        /// required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service
+        /// resources</a> in the <i>Database Migration Service User
+        /// Guide</i>.</p>
+        /// </note>
         pub fn set_secrets_manager_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5125,6 +5917,7 @@ pub mod microsoft_sql_server_settings {
             self.secrets_manager_secret_id = Some(input.into());
             self
         }
+        /// <p>The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the SQL Server endpoint connection details.</p>
         pub fn set_secrets_manager_secret_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5160,6 +5953,7 @@ impl MicrosoftSqlServerSettings {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5171,8 +5965,11 @@ impl MicrosoftSqlServerSettings {
     std::hash::Hash,
 )]
 pub enum SafeguardPolicy {
+    #[allow(missing_docs)] // documentation missing in model
     ExclusiveAutomaticTruncation,
+    #[allow(missing_docs)] // documentation missing in model
     RelyOnSqlServerReplicationAgent,
+    #[allow(missing_docs)] // documentation missing in model
     SharedAutomaticTruncation,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5197,6 +5994,7 @@ impl std::str::FromStr for SafeguardPolicy {
     }
 }
 impl SafeguardPolicy {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SafeguardPolicy::ExclusiveAutomaticTruncation => "exclusive-automatic-truncation",
@@ -5207,6 +6005,7 @@ impl SafeguardPolicy {
             SafeguardPolicy::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "exclusive-automatic-truncation",
@@ -5291,6 +6090,7 @@ pub mod sybase_settings {
             self.database_name = Some(input.into());
             self
         }
+        /// <p>Database name for the endpoint.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5303,6 +6103,7 @@ pub mod sybase_settings {
             self.password = Some(input.into());
             self
         }
+        /// <p>Endpoint connection password.</p>
         pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.password = input;
             self
@@ -5312,6 +6113,7 @@ pub mod sybase_settings {
             self.port = Some(input);
             self
         }
+        /// <p>Endpoint TCP port.</p>
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
             self.port = input;
             self
@@ -5321,6 +6123,7 @@ pub mod sybase_settings {
             self.server_name = Some(input.into());
             self
         }
+        /// <p>Fully qualified domain name of the endpoint.</p>
         pub fn set_server_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_name = input;
             self
@@ -5330,6 +6133,7 @@ pub mod sybase_settings {
             self.username = Some(input.into());
             self
         }
+        /// <p>Endpoint connection user name.</p>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.username = input;
             self
@@ -5357,6 +6161,22 @@ pub mod sybase_settings {
             self.secrets_manager_access_role_arn = Some(input.into());
             self
         }
+        /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the
+        /// trusted entity and grants the required permissions to access the value in
+        /// <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action.
+        /// <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager
+        /// secret that allows access to the SAP ASE endpoint.</p>
+        /// <note>
+        /// <p>You can specify one of two sets of values for these permissions. You can specify the
+        /// values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify
+        /// clear-text values for <code>UserName</code>, <code>Password</code>,
+        /// <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more
+        /// information on creating this <code>SecretsManagerSecret</code> and the
+        /// <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code>
+        /// required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service
+        /// resources</a> in the <i>Database Migration Service User
+        /// Guide</i>.</p>
+        /// </note>
         pub fn set_secrets_manager_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5369,6 +6189,7 @@ pub mod sybase_settings {
             self.secrets_manager_secret_id = Some(input.into());
             self
         }
+        /// <p>The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the SAP SAE endpoint connection details.</p>
         pub fn set_secrets_manager_secret_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5794,6 +6615,12 @@ pub mod oracle_settings {
             self.add_supplemental_logging = Some(input);
             self
         }
+        /// <p>Set this attribute to set up table-level supplemental logging
+        /// for the Oracle database. This attribute enables PRIMARY KEY
+        /// supplemental logging on all tables selected for a migration
+        /// task.</p>
+        /// <p>If you use this option, you still need to enable
+        /// database-level supplemental logging.</p>
         pub fn set_add_supplemental_logging(mut self, input: std::option::Option<bool>) -> Self {
             self.add_supplemental_logging = input;
             self
@@ -5808,6 +6635,12 @@ pub mod oracle_settings {
             self.archived_log_dest_id = Some(input);
             self
         }
+        /// <p>Specifies the ID of the destination for the archived redo logs. This value
+        /// should be the same as a number in the dest_id column of the v$archived_log
+        /// view. If you work with an additional redo log destination, use the
+        /// <code>AdditionalArchivedLogDestId</code> option to specify the additional
+        /// destination ID. Doing this improves performance by ensuring that the correct
+        /// logs are accessed from the outset.</p>
         pub fn set_archived_log_dest_id(mut self, input: std::option::Option<i32>) -> Self {
             self.archived_log_dest_id = input;
             self
@@ -5827,6 +6660,17 @@ pub mod oracle_settings {
             self.additional_archived_log_dest_id = Some(input);
             self
         }
+        /// <p>Set this attribute with <code>ArchivedLogDestId</code> in a primary/
+        /// standby setup. This attribute is useful in the case of a
+        /// switchover. In this case, DMS needs to know which
+        /// destination to get archive redo logs from to read changes.
+        /// This need arises because the previous primary instance is
+        /// now a standby instance after switchover.</p>
+        /// <p>Although DMS supports the use of the Oracle
+        /// <code>RESETLOGS</code> option to open the database, never
+        /// use <code>RESETLOGS</code> unless necessary. For additional
+        /// information about <code>RESETLOGS</code>, see <a href="https://docs.oracle.com/en/database/oracle/oracle-database/19/bradv/rman-data-repair-concepts.html#GUID-1805CCF7-4AF2-482D-B65A-998192F89C2B">RMAN Data Repair Concepts</a> in the
+        /// <i>Oracle Database Backup and Recovery User's Guide</i>.</p>
         pub fn set_additional_archived_log_dest_id(
             mut self,
             input: std::option::Option<i32>,
@@ -5834,12 +6678,56 @@ pub mod oracle_settings {
             self.additional_archived_log_dest_id = input;
             self
         }
+        /// Appends an item to `extra_archived_log_dest_ids`.
+        ///
+        /// To override the contents of this collection use [`set_extra_archived_log_dest_ids`](Self::set_extra_archived_log_dest_ids).
+        ///
+        /// <p>Specifies the IDs of one more destinations for one or more archived redo logs. These IDs
+        /// are the values of the <code>dest_id</code> column in the <code>v$archived_log</code> view.
+        /// Use this setting with the <code>archivedLogDestId</code> extra connection attribute in a
+        /// primary-to-single setup or a primary-to-multiple-standby setup. </p>
+        /// <p>This setting is useful in a switchover when you use an Oracle Data Guard database as a
+        /// source. In this case, DMS needs information about what destination to get archive redo
+        /// logs from to read changes. DMS needs this because after the switchover the previous
+        /// primary is a standby instance. For example, in a primary-to-single standby setup you might
+        /// apply the following settings. </p>
+        /// <p>
+        /// <code>archivedLogDestId=1; ExtraArchivedLogDestIds=[2]</code>
+        /// </p>
+        /// <p>In a primary-to-multiple-standby setup, you might apply the following settings.</p>
+        /// <p>
+        /// <code>archivedLogDestId=1; ExtraArchivedLogDestIds=[2,3,4]</code>
+        /// </p>
+        /// <p>Although DMS supports the use of the Oracle <code>RESETLOGS</code> option to open the
+        /// database, never use <code>RESETLOGS</code> unless it's necessary. For more information
+        /// about <code>RESETLOGS</code>, see <a href="https://docs.oracle.com/en/database/oracle/oracle-database/19/bradv/rman-data-repair-concepts.html#GUID-1805CCF7-4AF2-482D-B65A-998192F89C2B"> RMAN Data Repair Concepts</a> in the <i>Oracle Database Backup and Recovery
+        /// User's Guide</i>.</p>
         pub fn extra_archived_log_dest_ids(mut self, input: impl Into<i32>) -> Self {
             let mut v = self.extra_archived_log_dest_ids.unwrap_or_default();
             v.push(input.into());
             self.extra_archived_log_dest_ids = Some(v);
             self
         }
+        /// <p>Specifies the IDs of one more destinations for one or more archived redo logs. These IDs
+        /// are the values of the <code>dest_id</code> column in the <code>v$archived_log</code> view.
+        /// Use this setting with the <code>archivedLogDestId</code> extra connection attribute in a
+        /// primary-to-single setup or a primary-to-multiple-standby setup. </p>
+        /// <p>This setting is useful in a switchover when you use an Oracle Data Guard database as a
+        /// source. In this case, DMS needs information about what destination to get archive redo
+        /// logs from to read changes. DMS needs this because after the switchover the previous
+        /// primary is a standby instance. For example, in a primary-to-single standby setup you might
+        /// apply the following settings. </p>
+        /// <p>
+        /// <code>archivedLogDestId=1; ExtraArchivedLogDestIds=[2]</code>
+        /// </p>
+        /// <p>In a primary-to-multiple-standby setup, you might apply the following settings.</p>
+        /// <p>
+        /// <code>archivedLogDestId=1; ExtraArchivedLogDestIds=[2,3,4]</code>
+        /// </p>
+        /// <p>Although DMS supports the use of the Oracle <code>RESETLOGS</code> option to open the
+        /// database, never use <code>RESETLOGS</code> unless it's necessary. For more information
+        /// about <code>RESETLOGS</code>, see <a href="https://docs.oracle.com/en/database/oracle/oracle-database/19/bradv/rman-data-repair-concepts.html#GUID-1805CCF7-4AF2-482D-B65A-998192F89C2B"> RMAN Data Repair Concepts</a> in the <i>Oracle Database Backup and Recovery
+        /// User's Guide</i>.</p>
         pub fn set_extra_archived_log_dest_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<i32>>,
@@ -5854,6 +6742,9 @@ pub mod oracle_settings {
             self.allow_select_nested_tables = Some(input);
             self
         }
+        /// <p>Set this attribute to <code>true</code> to enable replication of Oracle
+        /// tables containing columns that are nested tables or defined
+        /// types.</p>
         pub fn set_allow_select_nested_tables(mut self, input: std::option::Option<bool>) -> Self {
             self.allow_select_nested_tables = input;
             self
@@ -5866,6 +6757,10 @@ pub mod oracle_settings {
             self.parallel_asm_read_threads = Some(input);
             self
         }
+        /// <p>Set this attribute to change the number of threads that DMS configures to perform a
+        /// change data capture (CDC) load using Oracle Automatic Storage Management (ASM). You can
+        /// specify an integer value between 2 (the default) and 8 (the maximum). Use this attribute
+        /// together with the <code>readAheadBlocks</code> attribute.</p>
         pub fn set_parallel_asm_read_threads(mut self, input: std::option::Option<i32>) -> Self {
             self.parallel_asm_read_threads = input;
             self
@@ -5878,6 +6773,10 @@ pub mod oracle_settings {
             self.read_ahead_blocks = Some(input);
             self
         }
+        /// <p>Set this attribute to change the number of read-ahead blocks that DMS configures to
+        /// perform a change data capture (CDC) load using Oracle Automatic Storage Management (ASM).
+        /// You can specify an integer value between 1000 (the default) and 200,000 (the
+        /// maximum).</p>
         pub fn set_read_ahead_blocks(mut self, input: std::option::Option<i32>) -> Self {
             self.read_ahead_blocks = input;
             self
@@ -5891,6 +6790,11 @@ pub mod oracle_settings {
             self.access_alternate_directly = Some(input);
             self
         }
+        /// <p>Set this attribute to <code>false</code> in order to use the Binary Reader
+        /// to capture change data for an Amazon RDS for Oracle as the
+        /// source. This tells the DMS instance to not access redo logs
+        /// through any specified path prefix replacement using direct
+        /// file access.</p>
         pub fn set_access_alternate_directly(mut self, input: std::option::Option<bool>) -> Self {
             self.access_alternate_directly = input;
             self
@@ -5903,6 +6807,10 @@ pub mod oracle_settings {
             self.use_alternate_folder_for_online = Some(input);
             self
         }
+        /// <p>Set this attribute to <code>true</code> in order to use the Binary Reader
+        /// to capture change data for an Amazon RDS for Oracle as
+        /// the source. This tells the DMS instance to use any specified
+        /// prefix replacement to access all online redo logs.</p>
         pub fn set_use_alternate_folder_for_online(
             mut self,
             input: std::option::Option<bool>,
@@ -5918,6 +6826,10 @@ pub mod oracle_settings {
             self.oracle_path_prefix = Some(input.into());
             self
         }
+        /// <p>Set this string attribute to the required value in order to use
+        /// the Binary Reader to capture change data for an Amazon
+        /// RDS for Oracle as the source. This value specifies the
+        /// default Oracle root used to access the redo logs.</p>
         pub fn set_oracle_path_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5934,6 +6846,11 @@ pub mod oracle_settings {
             self.use_path_prefix = Some(input.into());
             self
         }
+        /// <p>Set this string attribute to the required value in order to use
+        /// the Binary Reader to capture change data for an Amazon
+        /// RDS for Oracle as the source. This value specifies the path
+        /// prefix used to replace the default Oracle root to access the
+        /// redo logs.</p>
         pub fn set_use_path_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5950,6 +6867,11 @@ pub mod oracle_settings {
             self.replace_path_prefix = Some(input);
             self
         }
+        /// <p>Set this attribute to true in order to use the Binary Reader
+        /// to capture change data for an Amazon RDS for Oracle as the
+        /// source. This setting tells DMS instance to replace the default
+        /// Oracle root with the specified <code>usePathPrefix</code> setting to
+        /// access the redo logs.</p>
         pub fn set_replace_path_prefix(mut self, input: std::option::Option<bool>) -> Self {
             self.replace_path_prefix = input;
             self
@@ -5961,6 +6883,9 @@ pub mod oracle_settings {
             self.enable_homogenous_tablespace = Some(input);
             self
         }
+        /// <p>Set this attribute to enable homogenous tablespace
+        /// replication and create existing tables or indexes under the
+        /// same tablespace on the target.</p>
         pub fn set_enable_homogenous_tablespace(
             mut self,
             input: std::option::Option<bool>,
@@ -5975,6 +6900,9 @@ pub mod oracle_settings {
             self.direct_path_no_log = Some(input);
             self
         }
+        /// <p>When set to <code>true</code>, this attribute helps to increase the
+        /// commit rate on the Oracle target database by writing
+        /// directly to tables and not writing a trail to database logs.</p>
         pub fn set_direct_path_no_log(mut self, input: std::option::Option<bool>) -> Self {
             self.direct_path_no_log = input;
             self
@@ -5987,6 +6915,10 @@ pub mod oracle_settings {
             self.archived_logs_only = Some(input);
             self
         }
+        /// <p>When this field is set to <code>Y</code>, DMS only accesses the
+        /// archived redo logs. If the archived redo logs are stored on
+        /// Oracle ASM only, the DMS user account needs to be
+        /// granted ASM privileges.</p>
         pub fn set_archived_logs_only(mut self, input: std::option::Option<bool>) -> Self {
             self.archived_logs_only = input;
             self
@@ -6003,6 +6935,14 @@ pub mod oracle_settings {
             self.asm_password = Some(input.into());
             self
         }
+        /// <p>For an Oracle source endpoint, your Oracle Automatic Storage Management (ASM) password.
+        /// You can set this value from the <code>
+        /// <i>asm_user_password</i>
+        /// </code> value.
+        /// You set this value as part of the comma-separated value that you set to the
+        /// <code>Password</code> request parameter when you create the endpoint to access
+        /// transaction logs using Binary Reader. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC.Configuration">Configuration for change data capture (CDC) on an Oracle source
+        /// database</a>.</p>
         pub fn set_asm_password(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.asm_password = input;
             self
@@ -6016,6 +6956,11 @@ pub mod oracle_settings {
             self.asm_server = Some(input.into());
             self
         }
+        /// <p>For an Oracle source endpoint, your ASM server address. You can set this value from the
+        /// <code>asm_server</code> value. You set <code>asm_server</code> as part of the extra
+        /// connection attribute string to access an Oracle server with Binary Reader that uses ASM.
+        /// For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC.Configuration">Configuration for change data capture (CDC) on an Oracle source
+        /// database</a>.</p>
         pub fn set_asm_server(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.asm_server = input;
             self
@@ -6029,6 +6974,11 @@ pub mod oracle_settings {
             self.asm_user = Some(input.into());
             self
         }
+        /// <p>For an Oracle source endpoint, your ASM user name. You can set this value from the
+        /// <code>asm_user</code> value. You set <code>asm_user</code> as part of the extra
+        /// connection attribute string to access an Oracle server with Binary Reader that uses ASM.
+        /// For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC.Configuration">Configuration for change data capture (CDC) on an Oracle source
+        /// database</a>.</p>
         pub fn set_asm_user(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.asm_user = input;
             self
@@ -6043,6 +6993,12 @@ pub mod oracle_settings {
             self.char_length_semantics = Some(input);
             self
         }
+        /// <p>Specifies whether the length of a character column is in
+        /// bytes or in characters. To indicate that the character column
+        /// length is in characters, set this attribute to <code>CHAR</code>. Otherwise,
+        /// the character column length is in bytes.</p>
+        /// <p>Example: <code>charLengthSemantics=CHAR;</code>
+        /// </p>
         pub fn set_char_length_semantics(
             mut self,
             input: std::option::Option<crate::model::CharLengthSemantics>,
@@ -6055,6 +7011,7 @@ pub mod oracle_settings {
             self.database_name = Some(input.into());
             self
         }
+        /// <p>Database name for the endpoint.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6070,6 +7027,10 @@ pub mod oracle_settings {
             self.direct_path_parallel_load = Some(input);
             self
         }
+        /// <p>When set to <code>true</code>, this attribute specifies a parallel load
+        /// when <code>useDirectPathFullLoad</code> is set to <code>Y</code>. This attribute
+        /// also only applies when you use the DMS parallel load
+        /// feature.  Note that the target table cannot have any constraints or indexes.</p>
         pub fn set_direct_path_parallel_load(mut self, input: std::option::Option<bool>) -> Self {
             self.direct_path_parallel_load = input;
             self
@@ -6083,6 +7044,11 @@ pub mod oracle_settings {
             self.fail_tasks_on_lob_truncation = Some(input);
             self
         }
+        /// <p>When set to <code>true</code>, this attribute causes a task to fail if the
+        /// actual size of an LOB column is greater than the specified
+        /// <code>LobMaxSize</code>.</p>
+        /// <p>If a task is set to limited LOB mode and this option is set to
+        /// <code>true</code>, the task fails instead of truncating the LOB data.</p>
         pub fn set_fail_tasks_on_lob_truncation(
             mut self,
             input: std::option::Option<bool>,
@@ -6099,6 +7065,11 @@ pub mod oracle_settings {
             self.number_datatype_scale = Some(input);
             self
         }
+        /// <p>Specifies the number scale. You can select a scale up to 38,
+        /// or you can select FLOAT. By default, the NUMBER data type
+        /// is converted to precision 38, scale 10.</p>
+        /// <p>Example: <code>numberDataTypeScale=12</code>
+        /// </p>
         pub fn set_number_datatype_scale(mut self, input: std::option::Option<i32>) -> Self {
             self.number_datatype_scale = input;
             self
@@ -6108,6 +7079,7 @@ pub mod oracle_settings {
             self.password = Some(input.into());
             self
         }
+        /// <p>Endpoint connection password.</p>
         pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.password = input;
             self
@@ -6117,6 +7089,7 @@ pub mod oracle_settings {
             self.port = Some(input);
             self
         }
+        /// <p>Endpoint TCP port.</p>
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
             self.port = input;
             self
@@ -6127,6 +7100,8 @@ pub mod oracle_settings {
             self.read_table_space_name = Some(input);
             self
         }
+        /// <p>When set to <code>true</code>, this attribute supports tablespace
+        /// replication.</p>
         pub fn set_read_table_space_name(mut self, input: std::option::Option<bool>) -> Self {
             self.read_table_space_name = input;
             self
@@ -6139,6 +7114,10 @@ pub mod oracle_settings {
             self.retry_interval = Some(input);
             self
         }
+        /// <p>Specifies the number of seconds that the system waits
+        /// before resending a query.</p>
+        /// <p>Example: <code>retryInterval=6;</code>
+        /// </p>
         pub fn set_retry_interval(mut self, input: std::option::Option<i32>) -> Self {
             self.retry_interval = input;
             self
@@ -6156,6 +7135,15 @@ pub mod oracle_settings {
             self.security_db_encryption = Some(input.into());
             self
         }
+        /// <p>For an Oracle source endpoint, the transparent data encryption (TDE) password required
+        /// by AWM DMS to access Oracle redo logs encrypted by TDE using Binary Reader. It is also the
+        /// <code>
+        /// <i>TDE_Password</i>
+        /// </code> part of the comma-separated value you
+        /// set to the <code>Password</code> request parameter when you create the endpoint. The
+        /// <code>SecurityDbEncryptian</code> setting is related to this
+        /// <code>SecurityDbEncryptionName</code> setting. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.Encryption"> Supported encryption methods for using Oracle as a source for DMS
+        /// </a> in the <i>Database Migration Service User Guide</i>. </p>
         pub fn set_security_db_encryption(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6178,6 +7166,14 @@ pub mod oracle_settings {
             self.security_db_encryption_name = Some(input.into());
             self
         }
+        /// <p>For an Oracle source endpoint, the name of a key used for the transparent data
+        /// encryption (TDE) of the columns and tablespaces in an Oracle source database that is
+        /// encrypted using TDE. The key value is the value of the <code>SecurityDbEncryption</code>
+        /// setting. For more information on setting the key name value of
+        /// <code>SecurityDbEncryptionName</code>, see the information and example for setting the
+        /// <code>securityDbEncryptionName</code> extra connection attribute in <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.Encryption"> Supported encryption methods for using Oracle as a source for DMS
+        /// </a> in the <i>Database Migration Service User
+        /// Guide</i>.</p>
         pub fn set_security_db_encryption_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6190,6 +7186,7 @@ pub mod oracle_settings {
             self.server_name = Some(input.into());
             self
         }
+        /// <p>Fully qualified domain name of the endpoint.</p>
         pub fn set_server_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_name = input;
             self
@@ -6207,6 +7204,12 @@ pub mod oracle_settings {
             self.spatial_data_option_to_geo_json_function_name = Some(input.into());
             self
         }
+        /// <p>Use this attribute to convert <code>SDO_GEOMETRY</code> to
+        /// <code>GEOJSON</code> format. By default, DMS calls the
+        /// <code>SDO2GEOJSON</code> custom function if present and accessible.
+        /// Or you can create your own custom function that mimics the operation of
+        /// <code>SDOGEOJSON</code> and set
+        /// <code>SpatialDataOptionToGeoJsonFunctionName</code> to call it instead. </p>
         pub fn set_spatial_data_option_to_geo_json_function_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6224,6 +7227,12 @@ pub mod oracle_settings {
             self.standby_delay_time = Some(input);
             self
         }
+        /// <p>Use this attribute to specify a time in minutes for the delay in standby sync. If the
+        /// source is an Oracle Active Data Guard standby database, use this attribute to specify the
+        /// time lag between primary and standby databases.</p>
+        /// <p>In DMS, you can create an Oracle CDC task that uses an Active Data Guard standby
+        /// instance as a source for replicating ongoing changes. Doing this eliminates the need to connect
+        /// to an active database that might be in production.</p>
         pub fn set_standby_delay_time(mut self, input: std::option::Option<i32>) -> Self {
             self.standby_delay_time = input;
             self
@@ -6233,6 +7242,7 @@ pub mod oracle_settings {
             self.username = Some(input.into());
             self
         }
+        /// <p>Endpoint connection user name.</p>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.username = input;
             self
@@ -6246,6 +7256,11 @@ pub mod oracle_settings {
             self.use_b_file = Some(input);
             self
         }
+        /// <p>Set this attribute to Y to capture change data using the Binary Reader utility. Set
+        /// <code>UseLogminerReader</code> to N to set this attribute to Y. To use Binary Reader
+        /// with Amazon RDS for Oracle as the source, you set additional attributes. For more information
+        /// about using this setting with Oracle Automatic Storage Management (ASM), see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC"> Using Oracle LogMiner or DMS Binary Reader for
+        /// CDC</a>.</p>
         pub fn set_use_b_file(mut self, input: std::option::Option<bool>) -> Self {
             self.use_b_file = input;
             self
@@ -6257,6 +7272,9 @@ pub mod oracle_settings {
             self.use_direct_path_full_load = Some(input);
             self
         }
+        /// <p>Set this attribute to Y to have DMS use a direct path full load.
+        /// Specify this value to use the direct path protocol in the Oracle Call Interface (OCI).
+        /// By using this OCI protocol, you can bulk-load Oracle target tables during a full load.</p>
         pub fn set_use_direct_path_full_load(mut self, input: std::option::Option<bool>) -> Self {
             self.use_direct_path_full_load = input;
             self
@@ -6270,6 +7288,11 @@ pub mod oracle_settings {
             self.use_logminer_reader = Some(input);
             self
         }
+        /// <p>Set this attribute to Y to capture change data using the Oracle LogMiner utility (the
+        /// default). Set this attribute to N if you want to access the redo logs as a binary file.
+        /// When you set <code>UseLogminerReader</code> to N, also set <code>UseBfile</code> to Y. For
+        /// more information on this setting and using Oracle ASM, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC"> Using Oracle LogMiner or DMS Binary Reader for CDC</a> in
+        /// the <i>DMS User Guide</i>.</p>
         pub fn set_use_logminer_reader(mut self, input: std::option::Option<bool>) -> Self {
             self.use_logminer_reader = input;
             self
@@ -6297,6 +7320,22 @@ pub mod oracle_settings {
             self.secrets_manager_access_role_arn = Some(input.into());
             self
         }
+        /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the
+        /// trusted entity and grants the required permissions to access the value in
+        /// <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action.
+        /// <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager
+        /// secret that allows access to the Oracle endpoint.</p>
+        /// <note>
+        /// <p>You can specify one of two sets of values for these permissions. You can specify the
+        /// values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify
+        /// clear-text values for <code>UserName</code>, <code>Password</code>,
+        /// <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more
+        /// information on creating this <code>SecretsManagerSecret</code> and the
+        /// <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code>
+        /// required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service
+        /// resources</a> in the <i>Database Migration Service User
+        /// Guide</i>.</p>
+        /// </note>
         pub fn set_secrets_manager_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6309,6 +7348,7 @@ pub mod oracle_settings {
             self.secrets_manager_secret_id = Some(input.into());
             self
         }
+        /// <p>The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the Oracle endpoint connection details.</p>
         pub fn set_secrets_manager_secret_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6339,6 +7379,22 @@ pub mod oracle_settings {
             self.secrets_manager_oracle_asm_access_role_arn = Some(input.into());
             self
         }
+        /// <p>Required only if your Oracle endpoint uses Advanced Storage Manager (ASM). The full ARN
+        /// of the IAM role that specifies DMS as the trusted entity and grants the required
+        /// permissions to access the <code>SecretsManagerOracleAsmSecret</code>. This
+        /// <code>SecretsManagerOracleAsmSecret</code> has the secret value that allows access to
+        /// the Oracle ASM of the endpoint.</p>
+        /// <note>
+        /// <p>You can specify one of two sets of values for these permissions. You can specify the
+        /// values for this setting and <code>SecretsManagerOracleAsmSecretId</code>. Or you can
+        /// specify clear-text values for <code>AsmUserName</code>, <code>AsmPassword</code>, and
+        /// <code>AsmServerName</code>. You can't specify both. For more information on
+        /// creating this <code>SecretsManagerOracleAsmSecret</code> and the
+        /// <code>SecretsManagerOracleAsmAccessRoleArn</code> and
+        /// <code>SecretsManagerOracleAsmSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service
+        /// resources</a> in the <i>Database Migration Service User
+        /// Guide</i>.</p>
+        /// </note>
         pub fn set_secrets_manager_oracle_asm_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6355,6 +7411,8 @@ pub mod oracle_settings {
             self.secrets_manager_oracle_asm_secret_id = Some(input.into());
             self
         }
+        /// <p>Required only if your Oracle endpoint uses Advanced Storage Manager (ASM). The full ARN, partial ARN, or friendly name of the <code>SecretsManagerOracleAsmSecret</code>
+        /// that contains the Oracle ASM connection details for the Oracle endpoint.</p>
         pub fn set_secrets_manager_oracle_asm_secret_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6418,6 +7476,7 @@ impl OracleSettings {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -6429,8 +7488,11 @@ impl OracleSettings {
     std::hash::Hash,
 )]
 pub enum CharLengthSemantics {
+    #[allow(missing_docs)] // documentation missing in model
     Byte,
+    #[allow(missing_docs)] // documentation missing in model
     Char,
+    #[allow(missing_docs)] // documentation missing in model
     Default,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -6453,6 +7515,7 @@ impl std::str::FromStr for CharLengthSemantics {
     }
 }
 impl CharLengthSemantics {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CharLengthSemantics::Byte => "byte",
@@ -6461,6 +7524,7 @@ impl CharLengthSemantics {
             CharLengthSemantics::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["byte", "char", "default"]
     }
@@ -6607,6 +7671,11 @@ pub mod my_sql_settings {
             self.after_connect_script = Some(input.into());
             self
         }
+        /// <p>Specifies a script to run immediately after DMS
+        /// connects to the endpoint. The migration task continues
+        /// running regardless if the SQL statement succeeds or fails.</p>
+        /// <p>For this parameter, provide the code of the script itself, not the name of a file
+        /// containing the script.</p>
         pub fn set_after_connect_script(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6622,6 +7691,10 @@ pub mod my_sql_settings {
             self.clean_source_metadata_on_mismatch = Some(input);
             self
         }
+        /// <p>Adjusts the behavior of DMS when migrating from an SQL Server source database
+        /// that is hosted as part of an Always On availability group cluster.  If you need DMS to poll
+        /// all the nodes in the Always On cluster for transaction backups, set this attribute to
+        /// <code>false</code>.</p>
         pub fn set_clean_source_metadata_on_mismatch(
             mut self,
             input: std::option::Option<bool>,
@@ -6639,6 +7712,12 @@ pub mod my_sql_settings {
             self.database_name = Some(input.into());
             self
         }
+        /// <p>Database name for the endpoint. For a MySQL source or target endpoint, don't explicitly
+        /// specify the database using the <code>DatabaseName</code> request parameter on either the
+        /// <code>CreateEndpoint</code> or <code>ModifyEndpoint</code> API call. Specifying
+        /// <code>DatabaseName</code> when you create or modify a MySQL endpoint replicates all the
+        /// task tables to this single database. For MySQL endpoints, you specify the database only when
+        /// you specify the schema in the table-mapping rules of the DMS task.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6656,6 +7735,12 @@ pub mod my_sql_settings {
             self.events_poll_interval = Some(input);
             self
         }
+        /// <p>Specifies how often to check the binary log for new
+        /// changes/events when the database is idle.</p>
+        /// <p>Example: <code>eventsPollInterval=5;</code>
+        /// </p>
+        /// <p>In the example, DMS checks for changes in the binary
+        /// logs every five seconds.</p>
         pub fn set_events_poll_interval(mut self, input: std::option::Option<i32>) -> Self {
             self.events_poll_interval = input;
             self
@@ -6668,6 +7753,10 @@ pub mod my_sql_settings {
             self.target_db_type = Some(input);
             self
         }
+        /// <p>Specifies where to migrate source tables on the target, either
+        /// to a single database or multiple databases.</p>
+        /// <p>Example: <code>targetDbType=MULTIPLE_DATABASES</code>
+        /// </p>
         pub fn set_target_db_type(
             mut self,
             input: std::option::Option<crate::model::TargetDbType>,
@@ -6683,6 +7772,10 @@ pub mod my_sql_settings {
             self.max_file_size = Some(input);
             self
         }
+        /// <p>Specifies the maximum size (in KB) of any .csv file used to
+        /// transfer data to a MySQL-compatible database.</p>
+        /// <p>Example: <code>maxFileSize=512</code>
+        /// </p>
         pub fn set_max_file_size(mut self, input: std::option::Option<i32>) -> Self {
             self.max_file_size = input;
             self
@@ -6697,6 +7790,12 @@ pub mod my_sql_settings {
             self.parallel_load_threads = Some(input);
             self
         }
+        /// <p>Improves performance when loading data into the MySQL-compatible target database.
+        /// Specifies how many threads to use to load the data into the MySQL-compatible target
+        /// database. Setting a large number of threads can have an adverse effect on database
+        /// performance, because a separate connection is required for each thread.</p>
+        /// <p>Example: <code>parallelLoadThreads=1</code>
+        /// </p>
         pub fn set_parallel_load_threads(mut self, input: std::option::Option<i32>) -> Self {
             self.parallel_load_threads = input;
             self
@@ -6706,6 +7805,7 @@ pub mod my_sql_settings {
             self.password = Some(input.into());
             self
         }
+        /// <p>Endpoint connection password.</p>
         pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.password = input;
             self
@@ -6715,6 +7815,7 @@ pub mod my_sql_settings {
             self.port = Some(input);
             self
         }
+        /// <p>Endpoint TCP port.</p>
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
             self.port = input;
             self
@@ -6724,6 +7825,7 @@ pub mod my_sql_settings {
             self.server_name = Some(input.into());
             self
         }
+        /// <p>Fully qualified domain name of the endpoint.</p>
         pub fn set_server_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_name = input;
             self
@@ -6736,6 +7838,10 @@ pub mod my_sql_settings {
             self.server_timezone = Some(input.into());
             self
         }
+        /// <p>Specifies the time zone for the source MySQL database.</p>
+        /// <p>Example: <code>serverTimezone=US/Pacific;</code>
+        /// </p>
+        /// <p>Note: Do not enclose time zones in single quotes.</p>
         pub fn set_server_timezone(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6748,6 +7854,7 @@ pub mod my_sql_settings {
             self.username = Some(input.into());
             self
         }
+        /// <p>Endpoint connection user name.</p>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.username = input;
             self
@@ -6775,6 +7882,22 @@ pub mod my_sql_settings {
             self.secrets_manager_access_role_arn = Some(input.into());
             self
         }
+        /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the
+        /// trusted entity and grants the required permissions to access the value in
+        /// <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action.
+        /// <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager
+        /// secret that allows access to the MySQL endpoint.</p>
+        /// <note>
+        /// <p>You can specify one of two sets of values for these permissions. You can specify the
+        /// values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify
+        /// clear-text values for <code>UserName</code>, <code>Password</code>,
+        /// <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more
+        /// information on creating this <code>SecretsManagerSecret</code> and the
+        /// <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code>
+        /// required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service
+        /// resources</a> in the <i>Database Migration Service User
+        /// Guide</i>.</p>
+        /// </note>
         pub fn set_secrets_manager_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6787,6 +7910,7 @@ pub mod my_sql_settings {
             self.secrets_manager_secret_id = Some(input.into());
             self
         }
+        /// <p>The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the MySQL endpoint connection details.</p>
         pub fn set_secrets_manager_secret_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6822,6 +7946,7 @@ impl MySqlSettings {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -6833,7 +7958,9 @@ impl MySqlSettings {
     std::hash::Hash,
 )]
 pub enum TargetDbType {
+    #[allow(missing_docs)] // documentation missing in model
     MultipleDatabases,
+    #[allow(missing_docs)] // documentation missing in model
     SpecificDatabase,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -6855,6 +7982,7 @@ impl std::str::FromStr for TargetDbType {
     }
 }
 impl TargetDbType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TargetDbType::MultipleDatabases => "multiple-databases",
@@ -6862,6 +7990,7 @@ impl TargetDbType {
             TargetDbType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["multiple-databases", "specific-database"]
     }
@@ -7033,6 +8162,12 @@ pub mod postgre_sql_settings {
             self.after_connect_script = Some(input.into());
             self
         }
+        /// <p>For use with change data capture (CDC) only, this attribute
+        /// has DMS bypass foreign keys and user triggers to
+        /// reduce the time it takes to bulk load data.</p>
+        /// <p>Example: <code>afterConnectScript=SET
+        /// session_replication_role='replica'</code>
+        /// </p>
         pub fn set_after_connect_script(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7049,6 +8184,11 @@ pub mod postgre_sql_settings {
             self.capture_ddls = Some(input);
             self
         }
+        /// <p>To capture DDL events, DMS creates various artifacts in
+        /// the PostgreSQL database when the task starts. You can later
+        /// remove these artifacts.</p>
+        /// <p>If this value is set to <code>N</code>, you don't have to create tables or
+        /// triggers on the source database.</p>
         pub fn set_capture_ddls(mut self, input: std::option::Option<bool>) -> Self {
             self.capture_ddls = input;
             self
@@ -7061,6 +8201,10 @@ pub mod postgre_sql_settings {
             self.max_file_size = Some(input);
             self
         }
+        /// <p>Specifies the maximum size (in KB) of any .csv file used to
+        /// transfer data to PostgreSQL.</p>
+        /// <p>Example: <code>maxFileSize=512</code>
+        /// </p>
         pub fn set_max_file_size(mut self, input: std::option::Option<i32>) -> Self {
             self.max_file_size = input;
             self
@@ -7070,6 +8214,7 @@ pub mod postgre_sql_settings {
             self.database_name = Some(input.into());
             self
         }
+        /// <p>Database name for the endpoint.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7085,6 +8230,10 @@ pub mod postgre_sql_settings {
             self.ddl_artifacts_schema = Some(input.into());
             self
         }
+        /// <p>The schema in which the operational DDL database artifacts
+        /// are created.</p>
+        /// <p>Example: <code>ddlArtifactsSchema=xyzddlschema;</code>
+        /// </p>
         pub fn set_ddl_artifacts_schema(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7100,6 +8249,10 @@ pub mod postgre_sql_settings {
             self.execute_timeout = Some(input);
             self
         }
+        /// <p>Sets the client statement timeout for the PostgreSQL
+        /// instance, in seconds. The default value is 60 seconds.</p>
+        /// <p>Example: <code>executeTimeout=100;</code>
+        /// </p>
         pub fn set_execute_timeout(mut self, input: std::option::Option<i32>) -> Self {
             self.execute_timeout = input;
             self
@@ -7113,6 +8266,11 @@ pub mod postgre_sql_settings {
             self.fail_tasks_on_lob_truncation = Some(input);
             self
         }
+        /// <p>When set to <code>true</code>, this value causes a task to fail if the
+        /// actual size of a LOB column is greater than the specified
+        /// <code>LobMaxSize</code>.</p>
+        /// <p>If task is set to Limited LOB mode and this option is set to
+        /// true, the task fails instead of truncating the LOB data.</p>
         pub fn set_fail_tasks_on_lob_truncation(
             mut self,
             input: std::option::Option<bool>,
@@ -7128,6 +8286,10 @@ pub mod postgre_sql_settings {
             self.heartbeat_enable = Some(input);
             self
         }
+        /// <p>The write-ahead log (WAL) heartbeat feature mimics a dummy transaction. By doing this,
+        /// it prevents idle logical replication slots from holding onto old WAL logs, which can result in
+        /// storage full situations on the source. This heartbeat keeps <code>restart_lsn</code> moving
+        /// and prevents storage full scenarios.</p>
         pub fn set_heartbeat_enable(mut self, input: std::option::Option<bool>) -> Self {
             self.heartbeat_enable = input;
             self
@@ -7137,6 +8299,7 @@ pub mod postgre_sql_settings {
             self.heartbeat_schema = Some(input.into());
             self
         }
+        /// <p>Sets the schema in which the heartbeat artifacts are created.</p>
         pub fn set_heartbeat_schema(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7149,6 +8312,7 @@ pub mod postgre_sql_settings {
             self.heartbeat_frequency = Some(input);
             self
         }
+        /// <p>Sets the WAL heartbeat frequency (in minutes).</p>
         pub fn set_heartbeat_frequency(mut self, input: std::option::Option<i32>) -> Self {
             self.heartbeat_frequency = input;
             self
@@ -7158,6 +8322,7 @@ pub mod postgre_sql_settings {
             self.password = Some(input.into());
             self
         }
+        /// <p>Endpoint connection password.</p>
         pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.password = input;
             self
@@ -7167,6 +8332,7 @@ pub mod postgre_sql_settings {
             self.port = Some(input);
             self
         }
+        /// <p>Endpoint TCP port.</p>
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
             self.port = input;
             self
@@ -7176,6 +8342,7 @@ pub mod postgre_sql_settings {
             self.server_name = Some(input.into());
             self
         }
+        /// <p>Fully qualified domain name of the endpoint.</p>
         pub fn set_server_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_name = input;
             self
@@ -7185,6 +8352,7 @@ pub mod postgre_sql_settings {
             self.username = Some(input.into());
             self
         }
+        /// <p>Endpoint connection user name.</p>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.username = input;
             self
@@ -7208,6 +8376,21 @@ pub mod postgre_sql_settings {
             self.slot_name = Some(input.into());
             self
         }
+        /// <p>Sets the name of a previously created logical replication slot
+        /// for a change data capture (CDC) load of the PostgreSQL source instance. </p>
+        /// <p>When used with the <code>CdcStartPosition</code>
+        /// request parameter for the DMS API , this attribute also makes it possible to use native CDC
+        /// start points. DMS verifies that the specified logical
+        /// replication slot exists before starting the CDC load task. It
+        /// also verifies that the task was created with a valid setting of
+        /// <code>CdcStartPosition</code>. If the specified slot
+        /// doesn't exist or the task doesn't have a valid
+        /// <code>CdcStartPosition</code> setting, DMS raises an
+        /// error.</p>
+        /// <p>For more information about setting the <code>CdcStartPosition</code> request parameter,
+        /// see <a href="dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining a CDC native start point</a> in the <i>Database Migration Service User
+        /// Guide</i>. For more information about using <code>CdcStartPosition</code>, see
+        /// <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationTask.html">CreateReplicationTask</a>, <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">StartReplicationTask</a>, and <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyReplicationTask.html">ModifyReplicationTask</a>.</p>
         pub fn set_slot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.slot_name = input;
             self
@@ -7217,6 +8400,7 @@ pub mod postgre_sql_settings {
             self.plugin_name = Some(input);
             self
         }
+        /// <p>Specifies the plugin to use to create a replication slot.</p>
         pub fn set_plugin_name(
             mut self,
             input: std::option::Option<crate::model::PluginNameValue>,
@@ -7247,6 +8431,22 @@ pub mod postgre_sql_settings {
             self.secrets_manager_access_role_arn = Some(input.into());
             self
         }
+        /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the
+        /// trusted entity and grants the required permissions to access the value in
+        /// <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action.
+        /// <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager
+        /// secret that allows access to the PostgreSQL endpoint.</p>
+        /// <note>
+        /// <p>You can specify one of two sets of values for these permissions. You can specify the
+        /// values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify
+        /// clear-text values for <code>UserName</code>, <code>Password</code>,
+        /// <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more
+        /// information on creating this <code>SecretsManagerSecret</code> and the
+        /// <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code>
+        /// required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service
+        /// resources</a> in the <i>Database Migration Service User
+        /// Guide</i>.</p>
+        /// </note>
         pub fn set_secrets_manager_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7259,6 +8459,7 @@ pub mod postgre_sql_settings {
             self.secrets_manager_secret_id = Some(input.into());
             self
         }
+        /// <p>The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the PostgreSQL endpoint connection details.</p>
         pub fn set_secrets_manager_secret_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7298,6 +8499,7 @@ impl PostgreSqlSettings {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -7309,8 +8511,11 @@ impl PostgreSqlSettings {
     std::hash::Hash,
 )]
 pub enum PluginNameValue {
+    #[allow(missing_docs)] // documentation missing in model
     NoPreference,
+    #[allow(missing_docs)] // documentation missing in model
     Pglogical,
+    #[allow(missing_docs)] // documentation missing in model
     TestDecoding,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -7333,6 +8538,7 @@ impl std::str::FromStr for PluginNameValue {
     }
 }
 impl PluginNameValue {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PluginNameValue::NoPreference => "no-preference",
@@ -7341,6 +8547,7 @@ impl PluginNameValue {
             PluginNameValue::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["no-preference", "pglogical", "test-decoding"]
     }
@@ -7598,6 +8805,12 @@ pub mod redshift_settings {
             self.accept_any_date = Some(input);
             self
         }
+        /// <p>A value that indicates to allow any date format, including invalid formats such as
+        /// 00/00/00 00:00:00, to be loaded without generating an error. You can choose
+        /// <code>true</code> or <code>false</code> (the default).</p>
+        /// <p>This parameter applies only to TIMESTAMP and DATE columns. Always use ACCEPTANYDATE with
+        /// the DATEFORMAT parameter. If the date format for the data doesn't match the DATEFORMAT
+        /// specification, Amazon Redshift inserts a NULL value into that field. </p>
         pub fn set_accept_any_date(mut self, input: std::option::Option<bool>) -> Self {
             self.accept_any_date = input;
             self
@@ -7608,6 +8821,8 @@ pub mod redshift_settings {
             self.after_connect_script = Some(input.into());
             self
         }
+        /// <p>Code to run after connecting. This parameter should contain the code itself, not the
+        /// name of a file containing the code.</p>
         pub fn set_after_connect_script(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7628,6 +8843,15 @@ pub mod redshift_settings {
             self.bucket_folder = Some(input.into());
             self
         }
+        /// <p>An S3 folder where the comma-separated-value (.csv) files are stored before being
+        /// uploaded to the target Redshift cluster. </p>
+        /// <p>For full load mode, DMS converts source records into .csv files and loads them to
+        /// the <i>BucketFolder/TableID</i> path. DMS uses the Redshift
+        /// <code>COPY</code> command to upload the .csv files to the target table. The files are
+        /// deleted once the <code>COPY</code> operation has finished. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">COPY</a> in the
+        /// <i>Amazon Redshift Database Developer Guide</i>.</p>
+        /// <p>For change-data-capture (CDC) mode, DMS creates a <i>NetChanges</i> table,
+        /// and loads the .csv files to this <i>BucketFolder/NetChangesTableID</i> path.</p>
         pub fn set_bucket_folder(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7640,6 +8864,7 @@ pub mod redshift_settings {
             self.bucket_name = Some(input.into());
             self
         }
+        /// <p>The name of the intermediate S3 bucket used to store .csv files before uploading data to Redshift.</p>
         pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket_name = input;
             self
@@ -7651,6 +8876,9 @@ pub mod redshift_settings {
             self.case_sensitive_names = Some(input);
             self
         }
+        /// <p>If Amazon Redshift is configured to support case sensitive schema names, set
+        /// <code>CaseSensitiveNames</code> to <code>true</code>. The default is
+        /// <code>false</code>.</p>
         pub fn set_case_sensitive_names(mut self, input: std::option::Option<bool>) -> Self {
             self.case_sensitive_names = input;
             self
@@ -7664,6 +8892,11 @@ pub mod redshift_settings {
             self.comp_update = Some(input);
             self
         }
+        /// <p>If you set <code>CompUpdate</code> to <code>true</code> Amazon Redshift applies
+        /// automatic compression if the table is empty. This applies even if the table columns already
+        /// have encodings other than <code>RAW</code>. If you set <code>CompUpdate</code> to
+        /// <code>false</code>, automatic compression is disabled and existing column encodings
+        /// aren't changed. The default is <code>true</code>.</p>
         pub fn set_comp_update(mut self, input: std::option::Option<bool>) -> Self {
             self.comp_update = input;
             self
@@ -7674,6 +8907,8 @@ pub mod redshift_settings {
             self.connection_timeout = Some(input);
             self
         }
+        /// <p>A value that sets the amount of time to wait (in milliseconds) before timing out,
+        /// beginning from when you initially establish a connection.</p>
         pub fn set_connection_timeout(mut self, input: std::option::Option<i32>) -> Self {
             self.connection_timeout = input;
             self
@@ -7684,6 +8919,8 @@ pub mod redshift_settings {
             self.database_name = Some(input.into());
             self
         }
+        /// <p>The name of the Amazon Redshift data warehouse (service) that you are working
+        /// with.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7701,6 +8938,12 @@ pub mod redshift_settings {
             self.date_format = Some(input.into());
             self
         }
+        /// <p>The date format that you are using. Valid values are <code>auto</code> (case-sensitive),
+        /// your date format string enclosed in quotes, or NULL. If this parameter is left unset
+        /// (NULL), it defaults to a format of 'YYYY-MM-DD'. Using <code>auto</code> recognizes most
+        /// strings, even some that aren't supported when you use a date format string. </p>
+        /// <p>If your date and time values use formats different from each other, set this to
+        /// <code>auto</code>. </p>
         pub fn set_date_format(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.date_format = input;
             self
@@ -7712,6 +8955,9 @@ pub mod redshift_settings {
             self.empty_as_null = Some(input);
             self
         }
+        /// <p>A value that specifies whether DMS should migrate empty CHAR and VARCHAR fields as
+        /// NULL. A value of <code>true</code> sets empty CHAR and VARCHAR fields to null. The default
+        /// is <code>false</code>.</p>
         pub fn set_empty_as_null(mut self, input: std::option::Option<bool>) -> Self {
             self.empty_as_null = input;
             self
@@ -7733,6 +8979,19 @@ pub mod redshift_settings {
             self.encryption_mode = Some(input);
             self
         }
+        /// <p>The type of server-side encryption that you want to use for your data. This encryption
+        /// type is part of the endpoint settings or the extra connections attributes for Amazon S3.
+        /// You can choose either <code>SSE_S3</code> (the default) or <code>SSE_KMS</code>. </p>
+        /// <note>
+        /// <p>For the <code>ModifyEndpoint</code> operation, you can change the existing value of the
+        /// <code>EncryptionMode</code> parameter from <code>SSE_KMS</code> to
+        /// <code>SSE_S3</code>. But you can’t change the existing value from <code>SSE_S3</code>
+        /// to <code>SSE_KMS</code>.</p>
+        /// </note>
+        /// <p>To use <code>SSE_S3</code>, create an Identity and Access Management (IAM) role with
+        /// a policy that allows <code>"arn:aws:s3:::*"</code> to use the following actions:
+        /// <code>"s3:PutObject", "s3:ListBucket"</code>
+        /// </p>
         pub fn set_encryption_mode(
             mut self,
             input: std::option::Option<crate::model::EncryptionModeValue>,
@@ -7748,6 +9007,10 @@ pub mod redshift_settings {
             self.explicit_ids = Some(input);
             self
         }
+        /// <p>This setting is only valid for a full-load migration task. Set <code>ExplicitIds</code>
+        /// to <code>true</code> to have tables with <code>IDENTITY</code> columns override their
+        /// auto-generated values with explicit values loaded from the source data files used to
+        /// populate the tables. The default is <code>false</code>.</p>
         pub fn set_explicit_ids(mut self, input: std::option::Option<bool>) -> Self {
             self.explicit_ids = input;
             self
@@ -7764,6 +9027,14 @@ pub mod redshift_settings {
             self.file_transfer_upload_streams = Some(input);
             self
         }
+        /// <p>The number of threads used to upload a single file. This parameter accepts a value from
+        /// 1 through 64. It defaults to 10.</p>
+        /// <p>The number of parallel streams used to upload a single .csv file to an S3 bucket using
+        /// S3 Multipart Upload. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html">Multipart upload
+        /// overview</a>. </p>
+        /// <p>
+        /// <code>FileTransferUploadStreams</code> accepts a value from 1 through 64. It
+        /// defaults to 10.</p>
         pub fn set_file_transfer_upload_streams(mut self, input: std::option::Option<i32>) -> Self {
             self.file_transfer_upload_streams = input;
             self
@@ -7774,6 +9045,8 @@ pub mod redshift_settings {
             self.load_timeout = Some(input);
             self
         }
+        /// <p>The amount of time to wait (in milliseconds) before timing out of operations performed
+        /// by DMS on a Redshift cluster, such as Redshift COPY, INSERT, DELETE, and UPDATE.</p>
         pub fn set_load_timeout(mut self, input: std::option::Option<i32>) -> Self {
             self.load_timeout = input;
             self
@@ -7784,6 +9057,8 @@ pub mod redshift_settings {
             self.max_file_size = Some(input);
             self
         }
+        /// <p>The maximum size (in KB) of any .csv file used to load data on an S3 bucket and transfer
+        /// data to Amazon Redshift. It defaults to 1048576KB (1 GB).</p>
         pub fn set_max_file_size(mut self, input: std::option::Option<i32>) -> Self {
             self.max_file_size = input;
             self
@@ -7793,6 +9068,7 @@ pub mod redshift_settings {
             self.password = Some(input.into());
             self
         }
+        /// <p>The password for the user named in the <code>username</code> property.</p>
         pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.password = input;
             self
@@ -7802,6 +9078,7 @@ pub mod redshift_settings {
             self.port = Some(input);
             self
         }
+        /// <p>The port number for Amazon Redshift. The default value is 5439.</p>
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
             self.port = input;
             self
@@ -7814,6 +9091,10 @@ pub mod redshift_settings {
             self.remove_quotes = Some(input);
             self
         }
+        /// <p>A value that specifies to remove surrounding quotation marks from strings in the
+        /// incoming data. All characters within the quotation marks, including delimiters, are
+        /// retained. Choose <code>true</code> to remove quotation marks. The default is
+        /// <code>false</code>.</p>
         pub fn set_remove_quotes(mut self, input: std::option::Option<bool>) -> Self {
             self.remove_quotes = input;
             self
@@ -7824,6 +9105,8 @@ pub mod redshift_settings {
             self.replace_invalid_chars = Some(input.into());
             self
         }
+        /// <p>A list of characters that you want to replace. Use with
+        /// <code>ReplaceChars</code>.</p>
         pub fn set_replace_invalid_chars(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7838,6 +9121,9 @@ pub mod redshift_settings {
             self.replace_chars = Some(input.into());
             self
         }
+        /// <p>A value that specifies to replaces the invalid characters specified in
+        /// <code>ReplaceInvalidChars</code>, substituting the specified characters instead. The
+        /// default is <code>"?"</code>.</p>
         pub fn set_replace_chars(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7850,6 +9136,7 @@ pub mod redshift_settings {
             self.server_name = Some(input.into());
             self
         }
+        /// <p>The name of the Amazon Redshift cluster you are using.</p>
         pub fn set_server_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_name = input;
             self
@@ -7860,6 +9147,8 @@ pub mod redshift_settings {
             self.service_access_role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the IAM role that has access to the Amazon Redshift
+        /// service. The role must allow the <code>iam:PassRole</code> action.</p>
         pub fn set_service_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7877,6 +9166,9 @@ pub mod redshift_settings {
             self.server_side_encryption_kms_key_id = Some(input.into());
             self
         }
+        /// <p>The KMS key ID. If you are using <code>SSE_KMS</code> for the <code>EncryptionMode</code>,
+        /// provide this key ID. The key that you use needs an attached policy that enables IAM user
+        /// permissions and allows use of the key.</p>
         pub fn set_server_side_encryption_kms_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7894,6 +9186,12 @@ pub mod redshift_settings {
             self.time_format = Some(input.into());
             self
         }
+        /// <p>The time format that you want to use. Valid values are <code>auto</code>
+        /// (case-sensitive), <code>'timeformat_string'</code>, <code>'epochsecs'</code>, or
+        /// <code>'epochmillisecs'</code>. It defaults to 10. Using <code>auto</code> recognizes
+        /// most strings, even some that aren't supported when you use a time format string. </p>
+        /// <p>If your date and time values use formats different from each other, set this parameter
+        /// to <code>auto</code>. </p>
         pub fn set_time_format(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.time_format = input;
             self
@@ -7906,6 +9204,10 @@ pub mod redshift_settings {
             self.trim_blanks = Some(input);
             self
         }
+        /// <p>A value that specifies to remove the trailing white space characters from a VARCHAR
+        /// string. This parameter applies only to columns with a VARCHAR data type. Choose
+        /// <code>true</code> to remove unneeded white space. The default is
+        /// <code>false</code>.</p>
         pub fn set_trim_blanks(mut self, input: std::option::Option<bool>) -> Self {
             self.trim_blanks = input;
             self
@@ -7918,6 +9220,10 @@ pub mod redshift_settings {
             self.truncate_columns = Some(input);
             self
         }
+        /// <p>A value that specifies to truncate data in columns to the appropriate number of
+        /// characters, so that the data fits in the column. This parameter applies only to columns
+        /// with a VARCHAR or CHAR data type, and rows with a size of 4 MB or less. Choose
+        /// <code>true</code> to truncate data. The default is <code>false</code>.</p>
         pub fn set_truncate_columns(mut self, input: std::option::Option<bool>) -> Self {
             self.truncate_columns = input;
             self
@@ -7927,6 +9233,7 @@ pub mod redshift_settings {
             self.username = Some(input.into());
             self
         }
+        /// <p>An Amazon Redshift user name for a registered user.</p>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.username = input;
             self
@@ -7938,6 +9245,9 @@ pub mod redshift_settings {
             self.write_buffer_size = Some(input);
             self
         }
+        /// <p>The size (in KB) of the in-memory file write buffer used when generating .csv files
+        /// on the local disk at the DMS replication instance. The default value is 1000
+        /// (buffer size is 1000KB).</p>
         pub fn set_write_buffer_size(mut self, input: std::option::Option<i32>) -> Self {
             self.write_buffer_size = input;
             self
@@ -7964,6 +9274,21 @@ pub mod redshift_settings {
             self.secrets_manager_access_role_arn = Some(input.into());
             self
         }
+        /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the
+        /// trusted entity and grants the required permissions to access the value in
+        /// <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action.
+        /// <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the Amazon Redshift endpoint.</p>
+        /// <note>
+        /// <p>You can specify one of two sets of values for these permissions. You can specify the
+        /// values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify
+        /// clear-text values for <code>UserName</code>, <code>Password</code>,
+        /// <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more
+        /// information on creating this <code>SecretsManagerSecret</code> and the
+        /// <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code>
+        /// required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service
+        /// resources</a> in the <i>Database Migration Service User
+        /// Guide</i>.</p>
+        /// </note>
         pub fn set_secrets_manager_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7976,6 +9301,7 @@ pub mod redshift_settings {
             self.secrets_manager_secret_id = Some(input.into());
             self
         }
+        /// <p>The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the Amazon Redshift endpoint connection details.</p>
         pub fn set_secrets_manager_secret_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8027,6 +9353,7 @@ impl RedshiftSettings {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -8038,7 +9365,9 @@ impl RedshiftSettings {
     std::hash::Hash,
 )]
 pub enum EncryptionModeValue {
+    #[allow(missing_docs)] // documentation missing in model
     SseKms,
+    #[allow(missing_docs)] // documentation missing in model
     SseS3,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -8060,6 +9389,7 @@ impl std::str::FromStr for EncryptionModeValue {
     }
 }
 impl EncryptionModeValue {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EncryptionModeValue::SseKms => "sse-kms",
@@ -8067,6 +9397,7 @@ impl EncryptionModeValue {
             EncryptionModeValue::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["sse-kms", "sse-s3"]
     }
@@ -8149,6 +9480,11 @@ pub mod neptune_settings {
             self.service_access_role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the service role that you created for the Neptune
+        /// target endpoint. The role must allow the <code>iam:PassRole</code> action.
+        /// For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.ServiceRole">Creating an IAM Service Role for Accessing Amazon Neptune as a Target</a> in the <i>Database Migration Service User
+        /// Guide. </i>
+        /// </p>
         pub fn set_service_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8163,6 +9499,9 @@ pub mod neptune_settings {
             self.s3_bucket_name = Some(input.into());
             self
         }
+        /// <p>The name of the Amazon S3 bucket where DMS can temporarily store migrated graph data
+        /// in .csv files before bulk-loading it to the Neptune target database. DMS maps the SQL
+        /// source data to graph data before storing it in these .csv files.</p>
         pub fn set_s3_bucket_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8177,6 +9516,9 @@ pub mod neptune_settings {
             self.s3_bucket_folder = Some(input.into());
             self
         }
+        /// <p>A folder path where you want DMS to store migrated graph data in the S3 bucket
+        /// specified by <code>S3BucketName</code>
+        /// </p>
         pub fn set_s3_bucket_folder(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8190,6 +9532,8 @@ pub mod neptune_settings {
             self.error_retry_duration = Some(input);
             self
         }
+        /// <p>The number of milliseconds for DMS to wait to retry a bulk-load of migrated graph
+        /// data to the Neptune target database before raising an error. The default is 250.</p>
         pub fn set_error_retry_duration(mut self, input: std::option::Option<i32>) -> Self {
             self.error_retry_duration = input;
             self
@@ -8202,6 +9546,10 @@ pub mod neptune_settings {
             self.max_file_size = Some(input);
             self
         }
+        /// <p>The maximum size in kilobytes of migrated graph data stored in a .csv file before DMS
+        /// bulk-loads the data to the Neptune target database. The default is 1,048,576 KB. If the
+        /// bulk load is successful, DMS clears the bucket, ready to store the next batch of
+        /// migrated graph data.</p>
         pub fn set_max_file_size(mut self, input: std::option::Option<i32>) -> Self {
             self.max_file_size = input;
             self
@@ -8212,6 +9560,8 @@ pub mod neptune_settings {
             self.max_retry_count = Some(input);
             self
         }
+        /// <p>The number of times for DMS to retry a bulk load of migrated graph data to the
+        /// Neptune target database before raising an error. The default is 5.</p>
         pub fn set_max_retry_count(mut self, input: std::option::Option<i32>) -> Self {
             self.max_retry_count = input;
             self
@@ -8224,6 +9574,10 @@ pub mod neptune_settings {
             self.iam_auth_enabled = Some(input);
             self
         }
+        /// <p>If you want Identity and Access Management (IAM) authorization enabled for this
+        /// endpoint, set this parameter to <code>true</code>. Then attach the appropriate IAM policy
+        /// document to your service role specified by <code>ServiceAccessRoleArn</code>. The default
+        /// is <code>false</code>.</p>
         pub fn set_iam_auth_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.iam_auth_enabled = input;
             self
@@ -8301,6 +9655,8 @@ pub mod elasticsearch_settings {
             self.service_access_role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) used by the service to access the IAM role.
+        /// The role must allow the <code>iam:PassRole</code> action.</p>
         pub fn set_service_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8314,6 +9670,8 @@ pub mod elasticsearch_settings {
             self.endpoint_uri = Some(input.into());
             self
         }
+        /// <p>The endpoint for the Elasticsearch cluster. DMS uses HTTPS if a transport
+        /// protocol (http/https) is not specified.</p>
         pub fn set_endpoint_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.endpoint_uri = input;
             self
@@ -8328,6 +9686,12 @@ pub mod elasticsearch_settings {
             self.full_load_error_percentage = Some(input);
             self
         }
+        /// <p>The maximum percentage of records that can fail to be written before a full load
+        /// operation stops.</p>
+        /// <p>To avoid early failure, this counter is only effective after 1000 records
+        /// are transferred. Elasticsearch also has the concept of error monitoring during the
+        /// last 10 minutes of an Observation Window. If transfer of all records fail in the
+        /// last 10 minutes, the full load operation stops. </p>
         pub fn set_full_load_error_percentage(mut self, input: std::option::Option<i32>) -> Self {
             self.full_load_error_percentage = input;
             self
@@ -8338,6 +9702,8 @@ pub mod elasticsearch_settings {
             self.error_retry_duration = Some(input);
             self
         }
+        /// <p>The maximum number of seconds for which DMS retries failed API requests to the
+        /// Elasticsearch cluster.</p>
         pub fn set_error_retry_duration(mut self, input: std::option::Option<i32>) -> Self {
             self.error_retry_duration = input;
             self
@@ -8513,6 +9879,14 @@ pub mod kafka_settings {
             self.broker = Some(input.into());
             self
         }
+        /// <p>A comma-separated list of one or more broker locations in your Kafka cluster that host your Kafka instance. Specify each broker location
+        /// in the form <code>
+        /// <i>broker-hostname-or-ip</i>:<i>port</i>
+        /// </code>. For example, <code>"ec2-12-345-678-901.compute-1.amazonaws.com:2345"</code>.
+        /// For more information and examples of specifying a list of broker locations,
+        /// see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using Apache Kafka as a target for Database Migration Service</a>
+        /// in the <i>Database Migration Service User Guide</i>.
+        /// </p>
         pub fn set_broker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.broker = input;
             self
@@ -8523,6 +9897,8 @@ pub mod kafka_settings {
             self.topic = Some(input.into());
             self
         }
+        /// <p>The topic to which you migrate the data. If you don't specify a topic, DMS
+        /// specifies <code>"kafka-default-topic"</code> as the migration topic.</p>
         pub fn set_topic(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.topic = input;
             self
@@ -8534,6 +9910,9 @@ pub mod kafka_settings {
             self.message_format = Some(input);
             self
         }
+        /// <p>The output format for the records created on the endpoint. The message format is
+        /// <code>JSON</code> (default) or <code>JSON_UNFORMATTED</code> (a single line with no
+        /// tab).</p>
         pub fn set_message_format(
             mut self,
             input: std::option::Option<crate::model::MessageFormatValue>,
@@ -8549,6 +9928,10 @@ pub mod kafka_settings {
             self.include_transaction_details = Some(input);
             self
         }
+        /// <p>Provides detailed transaction information from the source database. This information
+        /// includes a commit timestamp, a log position, and values for <code>transaction_id</code>,
+        /// previous <code>transaction_id</code>, and <code>transaction_record_id</code> (the record
+        /// offset within a transaction). The default is <code>false</code>.</p>
         pub fn set_include_transaction_details(mut self, input: std::option::Option<bool>) -> Self {
             self.include_transaction_details = input;
             self
@@ -8559,6 +9942,8 @@ pub mod kafka_settings {
             self.include_partition_value = Some(input);
             self
         }
+        /// <p>Shows the partition value within the Kafka message output unless the partition type is
+        /// <code>schema-table-type</code>. The default is <code>false</code>.</p>
         pub fn set_include_partition_value(mut self, input: std::option::Option<bool>) -> Self {
             self.include_partition_value = input;
             self
@@ -8573,6 +9958,12 @@ pub mod kafka_settings {
             self.partition_include_schema_table = Some(input);
             self
         }
+        /// <p>Prefixes schema and table names to partition values, when the partition type is
+        /// <code>primary-key-type</code>. Doing this increases data distribution among Kafka
+        /// partitions. For example, suppose that a SysBench schema has thousands of tables and each
+        /// table has only limited range for a primary key. In this case, the same primary key is sent
+        /// from thousands of tables to the same partition, which causes throttling. The default is
+        /// <code>false</code>.</p>
         pub fn set_partition_include_schema_table(
             mut self,
             input: std::option::Option<bool>,
@@ -8588,6 +9979,10 @@ pub mod kafka_settings {
             self.include_table_alter_operations = Some(input);
             self
         }
+        /// <p>Includes any data definition language (DDL) operations that change the table in the
+        /// control data, such as <code>rename-table</code>, <code>drop-table</code>,
+        /// <code>add-column</code>, <code>drop-column</code>, and <code>rename-column</code>. The
+        /// default is <code>false</code>.</p>
         pub fn set_include_table_alter_operations(
             mut self,
             input: std::option::Option<bool>,
@@ -8601,6 +9996,8 @@ pub mod kafka_settings {
             self.include_control_details = Some(input);
             self
         }
+        /// <p>Shows detailed control information for table definition, column definition, and table
+        /// and column changes in the Kafka message output. The default is <code>false</code>.</p>
         pub fn set_include_control_details(mut self, input: std::option::Option<bool>) -> Self {
             self.include_control_details = input;
             self
@@ -8610,6 +10007,7 @@ pub mod kafka_settings {
             self.message_max_bytes = Some(input);
             self
         }
+        /// <p>The maximum size in bytes for records created on the endpoint The default is 1,000,000.</p>
         pub fn set_message_max_bytes(mut self, input: std::option::Option<i32>) -> Self {
             self.message_max_bytes = input;
             self
@@ -8619,6 +10017,7 @@ pub mod kafka_settings {
             self.include_null_and_empty = Some(input);
             self
         }
+        /// <p>Include NULL and empty columns for records migrated to the endpoint. The default is <code>false</code>.</p>
         pub fn set_include_null_and_empty(mut self, input: std::option::Option<bool>) -> Self {
             self.include_null_and_empty = input;
             self
@@ -8630,6 +10029,9 @@ pub mod kafka_settings {
             self.security_protocol = Some(input);
             self
         }
+        /// <p>Set secure connection to a Kafka target endpoint using Transport Layer Security (TLS). Options include
+        /// <code>ssl-encryption</code>, <code>ssl-authentication</code>, and <code>sasl-ssl</code>.
+        /// <code>sasl-ssl</code> requires <code>SaslUsername</code> and <code>SaslPassword</code>.</p>
         pub fn set_security_protocol(
             mut self,
             input: std::option::Option<crate::model::KafkaSecurityProtocol>,
@@ -8642,6 +10044,7 @@ pub mod kafka_settings {
             self.ssl_client_certificate_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the client certificate used to securely connect to a Kafka target endpoint.</p>
         pub fn set_ssl_client_certificate_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8654,6 +10057,7 @@ pub mod kafka_settings {
             self.ssl_client_key_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) for the client private key used to securely connect to a Kafka target endpoint.</p>
         pub fn set_ssl_client_key_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8666,6 +10070,7 @@ pub mod kafka_settings {
             self.ssl_client_key_password = Some(input.into());
             self
         }
+        /// <p> The password for the client private key used to securely connect to a Kafka target endpoint.</p>
         pub fn set_ssl_client_key_password(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8679,6 +10084,8 @@ pub mod kafka_settings {
             self.ssl_ca_certificate_arn = Some(input.into());
             self
         }
+        /// <p> The Amazon Resource Name (ARN) for the private certificate authority (CA) cert that DMS uses
+        /// to securely connect to your Kafka target endpoint.</p>
         pub fn set_ssl_ca_certificate_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8693,6 +10100,9 @@ pub mod kafka_settings {
             self.sasl_username = Some(input.into());
             self
         }
+        /// <p> The secure user name you created when you first set up your MSK cluster to validate a
+        /// client identity and make an encrypted connection between server and client using SASL-SSL
+        /// authentication.</p>
         pub fn set_sasl_username(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8706,6 +10116,8 @@ pub mod kafka_settings {
             self.sasl_password = Some(input.into());
             self
         }
+        /// <p>The secure password you created when you first set up your MSK cluster to validate a client identity and
+        /// make an encrypted connection between server and client using SASL-SSL authentication.</p>
         pub fn set_sasl_password(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8722,6 +10134,11 @@ pub mod kafka_settings {
             self.no_hex_prefix = Some(input);
             self
         }
+        /// <p>Set this optional parameter to <code>true</code> to avoid adding a '0x' prefix
+        /// to raw data in hexadecimal format. For example, by default, DMS adds a '0x'
+        /// prefix to the LOB column type in hexadecimal format moving from an Oracle source to a Kafka
+        /// target. Use the <code>NoHexPrefix</code> endpoint setting to enable migration of RAW data
+        /// type columns without adding the '0x' prefix.</p>
         pub fn set_no_hex_prefix(mut self, input: std::option::Option<bool>) -> Self {
             self.no_hex_prefix = input;
             self
@@ -8758,6 +10175,7 @@ impl KafkaSettings {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -8769,9 +10187,13 @@ impl KafkaSettings {
     std::hash::Hash,
 )]
 pub enum KafkaSecurityProtocol {
+    #[allow(missing_docs)] // documentation missing in model
     Plaintext,
+    #[allow(missing_docs)] // documentation missing in model
     SaslSsl,
+    #[allow(missing_docs)] // documentation missing in model
     SslAuthentication,
+    #[allow(missing_docs)] // documentation missing in model
     SslEncryption,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -8795,6 +10217,7 @@ impl std::str::FromStr for KafkaSecurityProtocol {
     }
 }
 impl KafkaSecurityProtocol {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             KafkaSecurityProtocol::Plaintext => "plaintext",
@@ -8804,6 +10227,7 @@ impl KafkaSecurityProtocol {
             KafkaSecurityProtocol::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "plaintext",
@@ -8819,6 +10243,7 @@ impl AsRef<str> for KafkaSecurityProtocol {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -8830,7 +10255,9 @@ impl AsRef<str> for KafkaSecurityProtocol {
     std::hash::Hash,
 )]
 pub enum MessageFormatValue {
+    #[allow(missing_docs)] // documentation missing in model
     Json,
+    #[allow(missing_docs)] // documentation missing in model
     JsonUnformatted,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -8852,6 +10279,7 @@ impl std::str::FromStr for MessageFormatValue {
     }
 }
 impl MessageFormatValue {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MessageFormatValue::Json => "json",
@@ -8859,6 +10287,7 @@ impl MessageFormatValue {
             MessageFormatValue::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["json", "json-unformatted"]
     }
@@ -8963,6 +10392,7 @@ pub mod kinesis_settings {
             self.stream_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) for the Amazon Kinesis Data Streams endpoint.</p>
         pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_arn = input;
             self
@@ -8973,6 +10403,8 @@ pub mod kinesis_settings {
             self.message_format = Some(input);
             self
         }
+        /// <p>The output format for the records created on the endpoint. The message format is
+        /// <code>JSON</code> (default) or <code>JSON_UNFORMATTED</code> (a single line with no tab).</p>
         pub fn set_message_format(
             mut self,
             input: std::option::Option<crate::model::MessageFormatValue>,
@@ -8987,6 +10419,9 @@ pub mod kinesis_settings {
             self.service_access_role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) for the IAM role
+        /// that DMS uses to write to the Kinesis data stream.
+        /// The role must allow the <code>iam:PassRole</code> action.</p>
         pub fn set_service_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9002,6 +10437,10 @@ pub mod kinesis_settings {
             self.include_transaction_details = Some(input);
             self
         }
+        /// <p>Provides detailed transaction information from the source database. This information
+        /// includes a commit timestamp, a log position, and values for <code>transaction_id</code>,
+        /// previous <code>transaction_id</code>, and <code>transaction_record_id</code> (the record
+        /// offset within a transaction). The default is <code>false</code>.</p>
         pub fn set_include_transaction_details(mut self, input: std::option::Option<bool>) -> Self {
             self.include_transaction_details = input;
             self
@@ -9012,6 +10451,8 @@ pub mod kinesis_settings {
             self.include_partition_value = Some(input);
             self
         }
+        /// <p>Shows the partition value within the Kinesis message output, unless the partition type
+        /// is <code>schema-table-type</code>. The default is <code>false</code>.</p>
         pub fn set_include_partition_value(mut self, input: std::option::Option<bool>) -> Self {
             self.include_partition_value = input;
             self
@@ -9025,6 +10466,11 @@ pub mod kinesis_settings {
             self.partition_include_schema_table = Some(input);
             self
         }
+        /// <p>Prefixes schema and table names to partition values, when the partition type is
+        /// <code>primary-key-type</code>. Doing this increases data distribution among Kinesis
+        /// shards. For example, suppose that a SysBench schema has thousands of tables and each table
+        /// has only limited range for a primary key. In this case, the same primary key is sent from
+        /// thousands of tables to the same shard, which causes throttling. The default is <code>false</code>.</p>
         pub fn set_partition_include_schema_table(
             mut self,
             input: std::option::Option<bool>,
@@ -9040,6 +10486,10 @@ pub mod kinesis_settings {
             self.include_table_alter_operations = Some(input);
             self
         }
+        /// <p>Includes any data definition language (DDL) operations that change the table in the
+        /// control data, such as <code>rename-table</code>, <code>drop-table</code>,
+        /// <code>add-column</code>, <code>drop-column</code>, and <code>rename-column</code>. The
+        /// default is <code>false</code>.</p>
         pub fn set_include_table_alter_operations(
             mut self,
             input: std::option::Option<bool>,
@@ -9053,6 +10503,8 @@ pub mod kinesis_settings {
             self.include_control_details = Some(input);
             self
         }
+        /// <p>Shows detailed control information for table definition, column definition, and table
+        /// and column changes in the Kinesis message output. The default is <code>false</code>.</p>
         pub fn set_include_control_details(mut self, input: std::option::Option<bool>) -> Self {
             self.include_control_details = input;
             self
@@ -9062,6 +10514,7 @@ pub mod kinesis_settings {
             self.include_null_and_empty = Some(input);
             self
         }
+        /// <p>Include NULL and empty columns for records migrated to the endpoint. The default is <code>false</code>.</p>
         pub fn set_include_null_and_empty(mut self, input: std::option::Option<bool>) -> Self {
             self.include_null_and_empty = input;
             self
@@ -9075,6 +10528,11 @@ pub mod kinesis_settings {
             self.no_hex_prefix = Some(input);
             self
         }
+        /// <p>Set this optional parameter to <code>true</code> to avoid adding a '0x' prefix
+        /// to raw data in hexadecimal format. For example, by default, DMS adds a '0x'
+        /// prefix to the LOB column type in hexadecimal format moving from an Oracle source to an
+        /// Amazon Kinesis target. Use the <code>NoHexPrefix</code> endpoint setting to enable
+        /// migration of RAW data type columns without adding the '0x' prefix.</p>
         pub fn set_no_hex_prefix(mut self, input: std::option::Option<bool>) -> Self {
             self.no_hex_prefix = input;
             self
@@ -9219,6 +10677,7 @@ pub mod mongo_db_settings {
             self.username = Some(input.into());
             self
         }
+        /// <p>The user name you use to access the MongoDB source endpoint. </p>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.username = input;
             self
@@ -9229,6 +10688,8 @@ pub mod mongo_db_settings {
             self.password = Some(input.into());
             self
         }
+        /// <p> The password for the user account you use to access the MongoDB source endpoint.
+        /// </p>
         pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.password = input;
             self
@@ -9238,6 +10699,7 @@ pub mod mongo_db_settings {
             self.server_name = Some(input.into());
             self
         }
+        /// <p> The name of the server on the MongoDB source endpoint. </p>
         pub fn set_server_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_name = input;
             self
@@ -9247,6 +10709,7 @@ pub mod mongo_db_settings {
             self.port = Some(input);
             self
         }
+        /// <p> The port value for the MongoDB source endpoint. </p>
         pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
             self.port = input;
             self
@@ -9256,6 +10719,7 @@ pub mod mongo_db_settings {
             self.database_name = Some(input.into());
             self
         }
+        /// <p> The database name on the MongoDB source endpoint. </p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9270,6 +10734,9 @@ pub mod mongo_db_settings {
             self.auth_type = Some(input);
             self
         }
+        /// <p> The authentication type you use to access the MongoDB source endpoint.</p>
+        /// <p>When when set to <code>"no"</code>, user name and password parameters are not used and
+        /// can be empty. </p>
         pub fn set_auth_type(
             mut self,
             input: std::option::Option<crate::model::AuthTypeValue>,
@@ -9286,6 +10753,11 @@ pub mod mongo_db_settings {
             self.auth_mechanism = Some(input);
             self
         }
+        /// <p> The authentication mechanism you use to access the MongoDB source endpoint.</p>
+        /// <p>For the default value, in MongoDB version 2.x, <code>"default"</code> is
+        /// <code>"mongodb_cr"</code>. For MongoDB version 3.x or later, <code>"default"</code> is
+        /// <code>"scram_sha_1"</code>. This setting isn't used when <code>AuthType</code> is
+        /// set to <code>"no"</code>.</p>
         pub fn set_auth_mechanism(
             mut self,
             input: std::option::Option<crate::model::AuthMechanismValue>,
@@ -9300,6 +10772,9 @@ pub mod mongo_db_settings {
             self.nesting_level = Some(input);
             self
         }
+        /// <p> Specifies either document or table mode. </p>
+        /// <p>Default value is <code>"none"</code>. Specify <code>"none"</code> to use document mode.
+        /// Specify <code>"one"</code> to use table mode.</p>
         pub fn set_nesting_level(
             mut self,
             input: std::option::Option<crate::model::NestingLevelValue>,
@@ -9314,6 +10789,9 @@ pub mod mongo_db_settings {
             self.extract_doc_id = Some(input.into());
             self
         }
+        /// <p> Specifies the document ID. Use this setting when <code>NestingLevel</code> is set to
+        /// <code>"none"</code>. </p>
+        /// <p>Default value is <code>"false"</code>. </p>
         pub fn set_extract_doc_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9329,6 +10807,10 @@ pub mod mongo_db_settings {
             self.docs_to_investigate = Some(input.into());
             self
         }
+        /// <p> Indicates the number of documents to preview to determine the document organization.
+        /// Use this setting when <code>NestingLevel</code> is set to <code>"one"</code>. </p>
+        /// <p>Must be a positive value greater than <code>0</code>. Default value is
+        /// <code>1000</code>.</p>
         pub fn set_docs_to_investigate(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9343,6 +10825,9 @@ pub mod mongo_db_settings {
             self.auth_source = Some(input.into());
             self
         }
+        /// <p> The MongoDB database name. This setting isn't used when <code>AuthType</code> is
+        /// set to <code>"no"</code>. </p>
+        /// <p>The default is <code>"admin"</code>.</p>
         pub fn set_auth_source(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.auth_source = input;
             self
@@ -9355,6 +10840,10 @@ pub mod mongo_db_settings {
             self.kms_key_id = Some(input.into());
             self
         }
+        /// <p>The KMS key identifier that is used to encrypt the content on the replication
+        /// instance. If you don't specify a value for the <code>KmsKeyId</code> parameter, then
+        /// DMS uses your default encryption key. KMS creates the default encryption key for
+        /// your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Region.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -9381,6 +10870,21 @@ pub mod mongo_db_settings {
             self.secrets_manager_access_role_arn = Some(input.into());
             self
         }
+        /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the
+        /// trusted entity and grants the required permissions to access the value in
+        /// <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action.
+        /// <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the MongoDB endpoint.</p>
+        /// <note>
+        /// <p>You can specify one of two sets of values for these permissions. You can specify the
+        /// values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify
+        /// clear-text values for <code>UserName</code>, <code>Password</code>,
+        /// <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more
+        /// information on creating this <code>SecretsManagerSecret</code> and the
+        /// <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code>
+        /// required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service
+        /// resources</a> in the <i>Database Migration Service User
+        /// Guide</i>.</p>
+        /// </note>
         pub fn set_secrets_manager_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9393,6 +10897,7 @@ pub mod mongo_db_settings {
             self.secrets_manager_secret_id = Some(input.into());
             self
         }
+        /// <p>The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the MongoDB endpoint connection details.</p>
         pub fn set_secrets_manager_secret_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9428,6 +10933,7 @@ impl MongoDbSettings {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -9439,8 +10945,11 @@ impl MongoDbSettings {
     std::hash::Hash,
 )]
 pub enum AuthMechanismValue {
+    #[allow(missing_docs)] // documentation missing in model
     Default,
+    #[allow(missing_docs)] // documentation missing in model
     MongodbCr,
+    #[allow(missing_docs)] // documentation missing in model
     ScramSha1,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -9463,6 +10972,7 @@ impl std::str::FromStr for AuthMechanismValue {
     }
 }
 impl AuthMechanismValue {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AuthMechanismValue::Default => "default",
@@ -9471,6 +10981,7 @@ impl AuthMechanismValue {
             AuthMechanismValue::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["default", "mongodb_cr", "scram_sha_1"]
     }
@@ -9481,6 +10992,7 @@ impl AsRef<str> for AuthMechanismValue {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -9492,7 +11004,9 @@ impl AsRef<str> for AuthMechanismValue {
     std::hash::Hash,
 )]
 pub enum AuthTypeValue {
+    #[allow(missing_docs)] // documentation missing in model
     No,
+    #[allow(missing_docs)] // documentation missing in model
     Password,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -9514,6 +11028,7 @@ impl std::str::FromStr for AuthTypeValue {
     }
 }
 impl AuthTypeValue {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AuthTypeValue::No => "no",
@@ -9521,6 +11036,7 @@ impl AuthTypeValue {
             AuthTypeValue::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["no", "password"]
     }
@@ -9563,6 +11079,7 @@ pub mod dms_transfer_settings {
             self.service_access_role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) used by the service access IAM role. The role must allow the <code>iam:PassRole</code> action.</p>
         pub fn set_service_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9575,6 +11092,7 @@ pub mod dms_transfer_settings {
             self.bucket_name = Some(input.into());
             self
         }
+        /// <p> The name of the S3 bucket to use. </p>
         pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket_name = input;
             self
@@ -9796,15 +11314,19 @@ pub struct S3Settings {
     /// <code>false</code>, every CDC record is written without a first field to indicate the
     /// INSERT operation at the source. For more information about how these settings work
     /// together, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps">Indicating Source DB Operations in Migrated S3 Data</a> in the <i>Database Migration Service User Guide.</i>.</p>
+    ///
     /// <note>
+    ///
     /// <p>DMS supports the interaction described preceding between the
     /// <code>CdcInsertsOnly</code> and <code>IncludeOpForFullLoad</code> parameters in
     /// versions 3.1.4 and later. </p>
+    ///
     /// <p>
     /// <code>CdcInsertsOnly</code> and <code>CdcInsertsAndUpdates</code> can't
     /// both be set to <code>true</code> for the same endpoint. Set either
     /// <code>CdcInsertsOnly</code> or <code>CdcInsertsAndUpdates</code> to <code>true</code>
     /// for the same endpoint, but not both.</p>
+    ///
     /// </note>
     pub cdc_inserts_only: std::option::Option<bool>,
     /// <p>A value that when nonblank causes DMS to add a column with timestamp information to
@@ -9848,6 +11370,7 @@ pub struct S3Settings {
     /// <p>DMS writes any <code>TIMESTAMP</code> column
     /// values written to an S3 file in .csv format with
     /// microsecond precision.</p>
+    ///
     /// <p>Setting <code>ParquetTimestampInMillisecond</code> has no effect on the string
     /// format of the timestamp column value that is inserted by setting the
     /// <code>TimestampColumnName</code> parameter.</p>
@@ -9867,13 +11390,16 @@ pub struct S3Settings {
     /// operations at the source. For more information about how these settings work together, see
     /// <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps">Indicating Source DB Operations in Migrated S3 Data</a> in the <i>Database Migration Service User Guide.</i>.</p>
     /// <note>
+    ///
     /// <p>DMS supports the use of the <code>CdcInsertsAndUpdates</code> parameter in
     /// versions 3.3.1 and later.</p>
+    ///
     /// <p>
     /// <code>CdcInsertsOnly</code> and <code>CdcInsertsAndUpdates</code> can't
     /// both be set to <code>true</code> for the same endpoint. Set either
     /// <code>CdcInsertsOnly</code> or <code>CdcInsertsAndUpdates</code> to <code>true</code>
     /// for the same endpoint, but not both.</p>
+    ///
     /// </note>
     pub cdc_inserts_and_updates: std::option::Option<bool>,
     /// <p>When set to <code>true</code>, this parameter partitions S3 bucket folders based on
@@ -10110,6 +11636,9 @@ pub mod s3_settings {
             self.service_access_role_arn = Some(input.into());
             self
         }
+        /// <p> The Amazon Resource Name (ARN) used by the service to access the IAM role.
+        /// The role must allow the <code>iam:PassRole</code> action. It is a required
+        /// parameter that enables DMS to write and read objects from an S3 bucket.</p>
         pub fn set_service_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10122,6 +11651,7 @@ pub mod s3_settings {
             self.external_table_definition = Some(input.into());
             self
         }
+        /// <p> Specifies how tables are defined in the S3 source files only. </p>
         pub fn set_external_table_definition(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10135,6 +11665,8 @@ pub mod s3_settings {
             self.csv_row_delimiter = Some(input.into());
             self
         }
+        /// <p> The delimiter used to separate rows in the .csv file for both source and target. The default is a carriage
+        /// return (<code>\n</code>). </p>
         pub fn set_csv_row_delimiter(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10148,6 +11680,8 @@ pub mod s3_settings {
             self.csv_delimiter = Some(input.into());
             self
         }
+        /// <p> The delimiter used to separate columns in the .csv file for both source and target. The default is a comma.
+        /// </p>
         pub fn set_csv_delimiter(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10166,6 +11700,13 @@ pub mod s3_settings {
             self.bucket_folder = Some(input.into());
             self
         }
+        /// <p> An optional parameter to set a folder name in the S3 bucket. If provided, tables are
+        /// created in the path
+        /// <code>
+        /// <i>bucketFolder</i>/<i>schema_name</i>/<i>table_name</i>/</code>.
+        /// If this parameter isn't specified, then the path used is
+        /// <code>
+        /// <i>schema_name</i>/<i>table_name</i>/</code>. </p>
         pub fn set_bucket_folder(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10178,6 +11719,7 @@ pub mod s3_settings {
             self.bucket_name = Some(input.into());
             self
         }
+        /// <p> The name of the S3 bucket. </p>
         pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket_name = input;
             self
@@ -10189,6 +11731,9 @@ pub mod s3_settings {
             self.compression_type = Some(input);
             self
         }
+        /// <p>An optional parameter to use GZIP to compress the target files. Set to GZIP to compress
+        /// the target files. Either set this parameter to NONE (the default) or don't use it to leave the files uncompressed.
+        /// This parameter applies to both .csv and .parquet file formats. </p>
         pub fn set_compression_type(
             mut self,
             input: std::option::Option<crate::model::CompressionTypeValue>,
@@ -10269,6 +11814,75 @@ pub mod s3_settings {
             self.encryption_mode = Some(input);
             self
         }
+        /// <p>The type of server-side encryption that you want to use for your data. This encryption
+        /// type is part of the endpoint settings or the extra connections attributes for Amazon S3.
+        /// You can choose either <code>SSE_S3</code> (the default) or <code>SSE_KMS</code>. </p>
+        /// <note>
+        /// <p>For the <code>ModifyEndpoint</code> operation, you can change the existing value of
+        /// the <code>EncryptionMode</code> parameter from <code>SSE_KMS</code> to
+        /// <code>SSE_S3</code>. But you can’t change the existing value from <code>SSE_S3</code>
+        /// to <code>SSE_KMS</code>.</p>
+        /// </note>
+        /// <p>To use <code>SSE_S3</code>, you need an Identity and Access Management (IAM) role
+        /// with permission to allow <code>"arn:aws:s3:::dms-*"</code> to use the following
+        /// actions:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>s3:CreateBucket</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>s3:ListBucket</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>s3:DeleteBucket</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>s3:GetBucketLocation</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>s3:GetObject</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>s3:PutObject</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>s3:DeleteObject</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>s3:GetObjectVersion</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>s3:GetBucketPolicy</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>s3:PutBucketPolicy</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>s3:DeleteBucketPolicy</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_encryption_mode(
             mut self,
             input: std::option::Option<crate::model::EncryptionModeValue>,
@@ -10291,6 +11905,14 @@ pub mod s3_settings {
             self.server_side_encryption_kms_key_id = Some(input.into());
             self
         }
+        /// <p>If you are using <code>SSE_KMS</code> for the <code>EncryptionMode</code>, provide the
+        /// KMS key ID. The key that you use needs an attached policy that enables Identity and Access Management
+        /// (IAM) user permissions and allows use of the key.</p>
+        /// <p>Here is a CLI example: <code>aws dms create-endpoint --endpoint-identifier
+        /// <i>value</i> --endpoint-type target --engine-name s3 --s3-settings
+        /// ServiceAccessRoleArn=<i>value</i>,BucketFolder=<i>value</i>,BucketName=<i>value</i>,EncryptionMode=SSE_KMS,ServerSideEncryptionKmsKeyId=<i>value</i>
+        /// </code>
+        /// </p>
         pub fn set_server_side_encryption_kms_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10316,6 +11938,20 @@ pub mod s3_settings {
             self.data_format = Some(input);
             self
         }
+        /// <p>The format of the data that you want to use for output. You can choose one of the
+        /// following: </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>csv</code> : This is a row-based file format with comma-separated values
+        /// (.csv). </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>parquet</code> : Apache Parquet (.parquet) is a columnar storage file format
+        /// that features efficient compression and provides faster query response. </p>
+        /// </li>
+        /// </ul>
         pub fn set_data_format(
             mut self,
             input: std::option::Option<crate::model::DataFormatValue>,
@@ -10346,6 +11982,25 @@ pub mod s3_settings {
             self.encoding_type = Some(input);
             self
         }
+        /// <p>The type of encoding you are using: </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>RLE_DICTIONARY</code> uses a combination of bit-packing and run-length
+        /// encoding to store repeated values more efficiently. This is the default.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PLAIN</code> doesn't use encoding at all. Values are stored as they
+        /// are.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PLAIN_DICTIONARY</code> builds a dictionary of the values encountered in a
+        /// given column. The dictionary is stored in a dictionary page for each column
+        /// chunk.</p>
+        /// </li>
+        /// </ul>
         pub fn set_encoding_type(
             mut self,
             input: std::option::Option<crate::model::EncodingTypeValue>,
@@ -10362,6 +12017,11 @@ pub mod s3_settings {
             self.dict_page_size_limit = Some(input);
             self
         }
+        /// <p>The maximum size of an encoded dictionary page of a column. If the dictionary page
+        /// exceeds this, this column is stored using an encoding type of <code>PLAIN</code>. This
+        /// parameter defaults to 1024 * 1024 bytes (1 MiB), the maximum size of a dictionary page
+        /// before it reverts to <code>PLAIN</code> encoding. This size is used for
+        /// .parquet file format only. </p>
         pub fn set_dict_page_size_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.dict_page_size_limit = input;
             self
@@ -10375,6 +12035,11 @@ pub mod s3_settings {
             self.row_group_length = Some(input);
             self
         }
+        /// <p>The number of rows in a row group. A smaller row group size provides faster reads. But
+        /// as the number of row groups grows, the slower writes become. This parameter defaults to
+        /// 10,000 rows. This number is used for .parquet file format only. </p>
+        /// <p>If you choose a value larger than the maximum, <code>RowGroupLength</code> is set to the
+        /// max row group length in bytes (64 * 1024 * 1024). </p>
         pub fn set_row_group_length(mut self, input: std::option::Option<i32>) -> Self {
             self.row_group_length = input;
             self
@@ -10385,6 +12050,8 @@ pub mod s3_settings {
             self.data_page_size = Some(input);
             self
         }
+        /// <p>The size of one data page in bytes. This parameter defaults to 1024 * 1024 bytes (1 MiB).
+        /// This number is used for .parquet file format only. </p>
         pub fn set_data_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.data_page_size = input;
             self
@@ -10395,6 +12062,8 @@ pub mod s3_settings {
             self.parquet_version = Some(input);
             self
         }
+        /// <p>The version of the Apache Parquet format that you want to use: <code>parquet_1_0</code>
+        /// (the default) or <code>parquet_2_0</code>.</p>
         pub fn set_parquet_version(
             mut self,
             input: std::option::Option<crate::model::ParquetVersionValue>,
@@ -10411,6 +12080,11 @@ pub mod s3_settings {
             self.enable_statistics = Some(input);
             self
         }
+        /// <p>A value that enables statistics for Parquet pages and row groups. Choose
+        /// <code>true</code> to enable statistics, <code>false</code> to disable. Statistics
+        /// include <code>NULL</code>, <code>DISTINCT</code>, <code>MAX</code>, and <code>MIN</code>
+        /// values. This parameter defaults to <code>true</code>. This value is used for
+        /// .parquet file format only.</p>
         pub fn set_enable_statistics(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_statistics = input;
             self
@@ -10437,6 +12111,24 @@ pub mod s3_settings {
             self.include_op_for_full_load = Some(input);
             self
         }
+        /// <p>A value that enables a full load to write INSERT operations to the comma-separated value
+        /// (.csv) output files only to indicate how the rows were added to the source database.</p>
+        /// <note>
+        /// <p>DMS supports the <code>IncludeOpForFullLoad</code> parameter in versions 3.1.4 and
+        /// later.</p>
+        /// </note>
+        /// <p>For full load, records can only be inserted. By default (the <code>false</code>
+        /// setting), no information is recorded in these output files for a full load to indicate that
+        /// the rows were inserted at the source database. If <code>IncludeOpForFullLoad</code> is set
+        /// to <code>true</code> or <code>y</code>, the INSERT is recorded as an I annotation in the
+        /// first field of the .csv file. This allows the format of your target records from a full
+        /// load to be consistent with the target records from a CDC load.</p>
+        /// <note>
+        /// <p>This setting works together with the <code>CdcInsertsOnly</code> and the
+        /// <code>CdcInsertsAndUpdates</code> parameters for output to .csv files only. For more
+        /// information about how these settings work together, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps">Indicating Source DB Operations in Migrated S3 Data</a> in the <i>Database Migration Service
+        /// User Guide.</i>.</p>
+        /// </note>
         pub fn set_include_op_for_full_load(mut self, input: std::option::Option<bool>) -> Self {
             self.include_op_for_full_load = input;
             self
@@ -10455,20 +12147,52 @@ pub mod s3_settings {
         /// <code>false</code>, every CDC record is written without a first field to indicate the
         /// INSERT operation at the source. For more information about how these settings work
         /// together, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps">Indicating Source DB Operations in Migrated S3 Data</a> in the <i>Database Migration Service User Guide.</i>.</p>
+        ///
         /// <note>
+        ///
         /// <p>DMS supports the interaction described preceding between the
         /// <code>CdcInsertsOnly</code> and <code>IncludeOpForFullLoad</code> parameters in
         /// versions 3.1.4 and later. </p>
+        ///
         /// <p>
         /// <code>CdcInsertsOnly</code> and <code>CdcInsertsAndUpdates</code> can't
         /// both be set to <code>true</code> for the same endpoint. Set either
         /// <code>CdcInsertsOnly</code> or <code>CdcInsertsAndUpdates</code> to <code>true</code>
         /// for the same endpoint, but not both.</p>
+        ///
         /// </note>
         pub fn cdc_inserts_only(mut self, input: bool) -> Self {
             self.cdc_inserts_only = Some(input);
             self
         }
+        /// <p>A value that enables a change data capture (CDC) load to write only INSERT operations to
+        /// .csv or columnar storage (.parquet) output files. By default (the
+        /// <code>false</code> setting), the first field in a .csv or .parquet record contains the
+        /// letter I (INSERT), U (UPDATE), or D (DELETE). These values indicate whether the row was
+        /// inserted, updated, or deleted at the source database for a CDC load to the target.</p>
+        /// <p>If <code>CdcInsertsOnly</code> is set to <code>true</code> or <code>y</code>, only
+        /// INSERTs from the source database are migrated to the .csv or .parquet file. For .csv format
+        /// only, how these INSERTs are recorded depends on the value of
+        /// <code>IncludeOpForFullLoad</code>. If <code>IncludeOpForFullLoad</code> is set to
+        /// <code>true</code>, the first field of every CDC record is set to I to indicate the
+        /// INSERT operation at the source. If <code>IncludeOpForFullLoad</code> is set to
+        /// <code>false</code>, every CDC record is written without a first field to indicate the
+        /// INSERT operation at the source. For more information about how these settings work
+        /// together, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps">Indicating Source DB Operations in Migrated S3 Data</a> in the <i>Database Migration Service User Guide.</i>.</p>
+        ///
+        /// <note>
+        ///
+        /// <p>DMS supports the interaction described preceding between the
+        /// <code>CdcInsertsOnly</code> and <code>IncludeOpForFullLoad</code> parameters in
+        /// versions 3.1.4 and later. </p>
+        ///
+        /// <p>
+        /// <code>CdcInsertsOnly</code> and <code>CdcInsertsAndUpdates</code> can't
+        /// both be set to <code>true</code> for the same endpoint. Set either
+        /// <code>CdcInsertsOnly</code> or <code>CdcInsertsAndUpdates</code> to <code>true</code>
+        /// for the same endpoint, but not both.</p>
+        ///
+        /// </note>
         pub fn set_cdc_inserts_only(mut self, input: std::option::Option<bool>) -> Self {
             self.cdc_inserts_only = input;
             self
@@ -10499,6 +12223,28 @@ pub mod s3_settings {
             self.timestamp_column_name = Some(input.into());
             self
         }
+        /// <p>A value that when nonblank causes DMS to add a column with timestamp information to
+        /// the endpoint data for an Amazon S3 target.</p>
+        /// <note>
+        /// <p>DMS supports the <code>TimestampColumnName</code> parameter in versions 3.1.4 and later.</p>
+        /// </note>
+        /// <p>DMS includes an additional <code>STRING</code> column in the
+        /// .csv or .parquet object files of your migrated data when you set
+        /// <code>TimestampColumnName</code> to a nonblank value.</p>
+        /// <p>For a full load, each row of this timestamp column contains a
+        /// timestamp for when the data was transferred from the source to
+        /// the target by DMS. </p>
+        /// <p>For a change data capture (CDC) load, each row of the timestamp column contains the
+        /// timestamp for the commit of that row in the source
+        /// database.</p>
+        /// <p>The string format for this timestamp column value is
+        /// <code>yyyy-MM-dd HH:mm:ss.SSSSSS</code>. By default, the
+        /// precision of this value is in microseconds. For a CDC load, the
+        /// rounding of the precision depends on the commit timestamp
+        /// supported by DMS for the source database.</p>
+        /// <p>When the <code>AddColumnName</code> parameter is set to <code>true</code>, DMS also
+        /// includes a name for the timestamp column that you set with
+        /// <code>TimestampColumnName</code>.</p>
         pub fn set_timestamp_column_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10524,6 +12270,7 @@ pub mod s3_settings {
         /// <p>DMS writes any <code>TIMESTAMP</code> column
         /// values written to an S3 file in .csv format with
         /// microsecond precision.</p>
+        ///
         /// <p>Setting <code>ParquetTimestampInMillisecond</code> has no effect on the string
         /// format of the timestamp column value that is inserted by setting the
         /// <code>TimestampColumnName</code> parameter.</p>
@@ -10532,6 +12279,29 @@ pub mod s3_settings {
             self.parquet_timestamp_in_millisecond = Some(input);
             self
         }
+        /// <p>A value that specifies the precision of any <code>TIMESTAMP</code> column values that
+        /// are written to an Amazon S3 object file in .parquet format.</p>
+        /// <note>
+        /// <p>DMS supports the <code>ParquetTimestampInMillisecond</code> parameter in versions
+        /// 3.1.4 and later.</p>
+        /// </note>
+        /// <p>When <code>ParquetTimestampInMillisecond</code> is set to <code>true</code> or
+        /// <code>y</code>, DMS writes all <code>TIMESTAMP</code> columns in a .parquet
+        /// formatted file with millisecond precision. Otherwise, DMS writes them with microsecond
+        /// precision.</p>
+        /// <p>Currently, Amazon Athena and Glue can handle only
+        /// millisecond precision for <code>TIMESTAMP</code> values. Set
+        /// this parameter to <code>true</code> for S3 endpoint object
+        /// files that are .parquet formatted only if you plan to query or process the data with Athena or Glue.</p>
+        /// <note>
+        /// <p>DMS writes any <code>TIMESTAMP</code> column
+        /// values written to an S3 file in .csv format with
+        /// microsecond precision.</p>
+        ///
+        /// <p>Setting <code>ParquetTimestampInMillisecond</code> has no effect on the string
+        /// format of the timestamp column value that is inserted by setting the
+        /// <code>TimestampColumnName</code> parameter.</p>
+        /// </note>
         pub fn set_parquet_timestamp_in_millisecond(
             mut self,
             input: std::option::Option<bool>,
@@ -10553,18 +12323,46 @@ pub mod s3_settings {
         /// operations at the source. For more information about how these settings work together, see
         /// <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps">Indicating Source DB Operations in Migrated S3 Data</a> in the <i>Database Migration Service User Guide.</i>.</p>
         /// <note>
+        ///
         /// <p>DMS supports the use of the <code>CdcInsertsAndUpdates</code> parameter in
         /// versions 3.3.1 and later.</p>
+        ///
         /// <p>
         /// <code>CdcInsertsOnly</code> and <code>CdcInsertsAndUpdates</code> can't
         /// both be set to <code>true</code> for the same endpoint. Set either
         /// <code>CdcInsertsOnly</code> or <code>CdcInsertsAndUpdates</code> to <code>true</code>
         /// for the same endpoint, but not both.</p>
+        ///
         /// </note>
         pub fn cdc_inserts_and_updates(mut self, input: bool) -> Self {
             self.cdc_inserts_and_updates = Some(input);
             self
         }
+        /// <p>A value that enables a change data capture (CDC) load to write INSERT and UPDATE
+        /// operations to .csv or .parquet (columnar storage) output files. The default setting is
+        /// <code>false</code>, but when <code>CdcInsertsAndUpdates</code> is set to
+        /// <code>true</code> or <code>y</code>, only INSERTs and UPDATEs from the source database
+        /// are migrated to the .csv or .parquet file. </p>      
+        /// <p>For .csv file format only, how these INSERTs and UPDATEs are recorded depends on the
+        /// value of the <code>IncludeOpForFullLoad</code> parameter. If
+        /// <code>IncludeOpForFullLoad</code> is set to <code>true</code>, the first field of every
+        /// CDC record is set to either <code>I</code> or <code>U</code> to indicate INSERT and UPDATE
+        /// operations at the source. But if <code>IncludeOpForFullLoad</code> is set to
+        /// <code>false</code>, CDC records are written without an indication of INSERT or UPDATE
+        /// operations at the source. For more information about how these settings work together, see
+        /// <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring.InsertOps">Indicating Source DB Operations in Migrated S3 Data</a> in the <i>Database Migration Service User Guide.</i>.</p>
+        /// <note>
+        ///
+        /// <p>DMS supports the use of the <code>CdcInsertsAndUpdates</code> parameter in
+        /// versions 3.3.1 and later.</p>
+        ///
+        /// <p>
+        /// <code>CdcInsertsOnly</code> and <code>CdcInsertsAndUpdates</code> can't
+        /// both be set to <code>true</code> for the same endpoint. Set either
+        /// <code>CdcInsertsOnly</code> or <code>CdcInsertsAndUpdates</code> to <code>true</code>
+        /// for the same endpoint, but not both.</p>
+        ///
+        /// </note>
         pub fn set_cdc_inserts_and_updates(mut self, input: std::option::Option<bool>) -> Self {
             self.cdc_inserts_and_updates = input;
             self
@@ -10576,6 +12374,9 @@ pub mod s3_settings {
             self.date_partition_enabled = Some(input);
             self
         }
+        /// <p>When set to <code>true</code>, this parameter partitions S3 bucket folders based on
+        /// transaction commit dates. The default value is <code>false</code>. For more information
+        /// about date-based folder partitioning, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.DatePartitioning">Using date-based folder partitioning</a>.</p>
         pub fn set_date_partition_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.date_partition_enabled = input;
             self
@@ -10589,6 +12390,8 @@ pub mod s3_settings {
             self.date_partition_sequence = Some(input);
             self
         }
+        /// <p>Identifies the sequence of the date format to use during folder partitioning. The default value is
+        /// <code>YYYYMMDD</code>. Use this parameter when <code>DatePartitionedEnabled</code> is set to <code>true</code>.</p>
         pub fn set_date_partition_sequence(
             mut self,
             input: std::option::Option<crate::model::DatePartitionSequenceValue>,
@@ -10605,6 +12408,8 @@ pub mod s3_settings {
             self.date_partition_delimiter = Some(input);
             self
         }
+        /// <p>Specifies a date separating delimiter to use during folder partitioning. The default value is
+        /// <code>SLASH</code>. Use this parameter when <code>DatePartitionedEnabled</code> is set to <code>true</code>.</p>
         pub fn set_date_partition_delimiter(
             mut self,
             input: std::option::Option<crate::model::DatePartitionDelimiterValue>,
@@ -10625,6 +12430,15 @@ pub mod s3_settings {
             self.use_csv_no_sup_value = Some(input);
             self
         }
+        /// <p>This setting applies if the S3 output files during a change data capture (CDC) load are
+        /// written in .csv format. If set to <code>true</code> for columns not included in the
+        /// supplemental log, DMS uses the value specified by <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CsvNoSupValue">
+        /// <code>CsvNoSupValue</code>
+        /// </a>. If not set or set to
+        /// <code>false</code>, DMS uses the null value for these columns.</p>
+        /// <note>
+        /// <p>This setting is supported in DMS versions 3.4.1 and later.</p>
+        /// </note>
         pub fn set_use_csv_no_sup_value(mut self, input: std::option::Option<bool>) -> Self {
             self.use_csv_no_sup_value = input;
             self
@@ -10643,6 +12457,16 @@ pub mod s3_settings {
             self.csv_no_sup_value = Some(input.into());
             self
         }
+        /// <p>This setting only applies if your Amazon S3 output files during a change data capture
+        /// (CDC) load are written in .csv format. If <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-UseCsvNoSupValue">
+        /// <code>UseCsvNoSupValue</code>
+        /// </a> is set to true, specify a
+        /// string value that you want DMS to use for all columns not included in the supplemental
+        /// log. If you do not specify a string value, DMS uses the null value for these columns
+        /// regardless of the <code>UseCsvNoSupValue</code> setting.</p>
+        /// <note>
+        /// <p>This setting is supported in DMS versions 3.4.1 and later.</p>
+        /// </note>
         pub fn set_csv_no_sup_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10662,6 +12486,14 @@ pub mod s3_settings {
             self.preserve_transactions = Some(input);
             self
         }
+        /// <p>If set to <code>true</code>, DMS saves the transaction order for a change data
+        /// capture (CDC) load on the Amazon S3 target specified by <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CdcPath">
+        /// <code>CdcPath</code>
+        /// </a>. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.EndpointSettings.CdcPath">Capturing data changes (CDC) including transaction order on the S3
+        /// target</a>.</p>
+        /// <note>
+        /// <p>This setting is supported in DMS versions 3.4.2 and later.</p>
+        /// </note>
         pub fn set_preserve_transactions(mut self, input: std::option::Option<bool>) -> Self {
             self.preserve_transactions = input;
             self
@@ -10696,6 +12528,32 @@ pub mod s3_settings {
             self.cdc_path = Some(input.into());
             self
         }
+        /// <p>Specifies the folder path of CDC files. For an S3 source, this setting is required if a
+        /// task captures change data; otherwise, it's optional. If <code>CdcPath</code> is set, DMS
+        /// reads CDC files from this path and replicates the data changes to the target endpoint.
+        /// For an S3 target if you set <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-PreserveTransactions">
+        /// <code>PreserveTransactions</code>
+        /// </a> to <code>true</code>, DMS
+        /// verifies that you have set this parameter to a folder path on your S3 target where DMS
+        /// can save the transaction order for the CDC load. DMS creates this CDC folder path
+        /// in either your S3 target working directory or the S3 target location specified by <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketFolder">
+        /// <code>BucketFolder</code>
+        /// </a> and <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketName">
+        /// <code>BucketName</code>
+        /// </a>.</p>
+        /// <p>For example, if you specify <code>CdcPath</code> as <code>MyChangedData</code>, and you
+        /// specify <code>BucketName</code> as <code>MyTargetBucket</code> but do not specify
+        /// <code>BucketFolder</code>, DMS creates the CDC folder path following:
+        /// <code>MyTargetBucket/MyChangedData</code>.</p>
+        /// <p>If you specify the same <code>CdcPath</code>, and you specify <code>BucketName</code> as
+        /// <code>MyTargetBucket</code> and <code>BucketFolder</code> as <code>MyTargetData</code>,
+        /// DMS creates the CDC folder path following:
+        /// <code>MyTargetBucket/MyTargetData/MyChangedData</code>.</p>
+        /// <p>For more information on CDC including transaction order on an S3 target, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.EndpointSettings.CdcPath">Capturing data changes (CDC) including transaction order on the S3
+        /// target</a>.</p>
+        /// <note>
+        /// <p>This setting is supported in DMS versions 3.4.2 and later.</p>
+        /// </note>
         pub fn set_cdc_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cdc_path = input;
             self
@@ -10716,6 +12574,15 @@ pub mod s3_settings {
             self.canned_acl_for_objects = Some(input);
             self
         }
+        /// <p>A value that enables DMS to specify a predefined (canned) access control list for
+        /// objects created in an Amazon S3 bucket as .csv or .parquet files. For more information
+        /// about Amazon S3 canned ACLs, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">Canned
+        /// ACL</a> in the <i>Amazon S3 Developer Guide.</i>
+        /// </p>
+        /// <p>The default value is NONE. Valid values include NONE, PRIVATE,
+        /// PUBLIC_READ, PUBLIC_READ_WRITE, AUTHENTICATED_READ,
+        /// AWS_EXEC_READ, BUCKET_OWNER_READ, and
+        /// BUCKET_OWNER_FULL_CONTROL.</p>
         pub fn set_canned_acl_for_objects(
             mut self,
             input: std::option::Option<crate::model::CannedAclForObjectsValue>,
@@ -10731,6 +12598,10 @@ pub mod s3_settings {
             self.add_column_name = Some(input);
             self
         }
+        /// <p>An optional parameter that, when set to <code>true</code> or <code>y</code>, you can use
+        /// to add column name information to the .csv output file.</p>
+        /// <p>The default value is <code>false</code>. Valid values are <code>true</code>, <code>false</code>,
+        /// <code>y</code>, and <code>n</code>.</p>
         pub fn set_add_column_name(mut self, input: std::option::Option<bool>) -> Self {
             self.add_column_name = input;
             self
@@ -10744,6 +12615,11 @@ pub mod s3_settings {
             self.cdc_max_batch_interval = Some(input);
             self
         }
+        /// <p>Maximum length of the interval, defined in seconds, after which to output a file to Amazon S3.</p>
+        /// <p>When <code>CdcMaxBatchInterval</code> and <code>CdcMinFileSize</code> are both specified, the
+        /// file write is triggered by whichever parameter condition is met first within an DMS
+        /// CloudFormation template.</p>
+        /// <p>The default value is 60 seconds.</p>
         pub fn set_cdc_max_batch_interval(mut self, input: std::option::Option<i32>) -> Self {
             self.cdc_max_batch_interval = input;
             self
@@ -10757,6 +12633,11 @@ pub mod s3_settings {
             self.cdc_min_file_size = Some(input);
             self
         }
+        /// <p>Minimum file size, defined in megabytes, to reach for a file output to Amazon S3.</p>
+        /// <p>When <code>CdcMinFileSize</code> and <code>CdcMaxBatchInterval</code> are both specified, the file
+        /// write is triggered by whichever parameter condition is met first within an DMS
+        /// CloudFormation template.</p>
+        /// <p>The default value is 32 MB.</p>
         pub fn set_cdc_min_file_size(mut self, input: std::option::Option<i32>) -> Self {
             self.cdc_min_file_size = input;
             self
@@ -10774,6 +12655,15 @@ pub mod s3_settings {
             self.csv_null_value = Some(input.into());
             self
         }
+        /// <p>An optional parameter that specifies how DMS treats null
+        /// values. While handling the null value, you can use this
+        /// parameter to pass a user-defined string as null when writing to
+        /// the target. For example, when target columns are not nullable,
+        /// you can use this option to differentiate between the empty
+        /// string value and the null value. So, if you set this parameter
+        /// value to the empty string ("" or ''), DMS treats the empty
+        /// string as the null value instead of <code>NULL</code>.</p>
+        /// <p>The default value is <code>NULL</code>. Valid values include any valid string.</p>
         pub fn set_csv_null_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10788,6 +12678,9 @@ pub mod s3_settings {
             self.ignore_header_rows = Some(input);
             self
         }
+        /// <p>When this value is set to 1, DMS ignores the first row header in a .csv file. A value
+        /// of 1 turns on the feature; a value of 0 turns off the feature.</p>
+        /// <p>The default is 0.</p>
         pub fn set_ignore_header_rows(mut self, input: std::option::Option<i32>) -> Self {
             self.ignore_header_rows = input;
             self
@@ -10800,6 +12693,10 @@ pub mod s3_settings {
             self.max_file_size = Some(input);
             self
         }
+        /// <p>A value that specifies the maximum size (in KB) of any .csv
+        /// file to be created while migrating to an S3 target during full
+        /// load.</p>
+        /// <p>The default value is 1,048,576 KB (1 GB). Valid values include 1 to 1,048,576.</p>
         pub fn set_max_file_size(mut self, input: std::option::Option<i32>) -> Self {
             self.max_file_size = input;
             self
@@ -10825,6 +12722,23 @@ pub mod s3_settings {
             self.rfc4180 = Some(input);
             self
         }
+        /// <p>For an S3 source, when this value is set to <code>true</code> or <code>y</code>,
+        /// each leading double quotation mark has to be followed by an
+        /// ending double quotation mark. This formatting complies with RFC
+        /// 4180. When this value is set to <code>false</code> or
+        /// <code>n</code>, string literals are copied to the target as
+        /// is. In this case, a delimiter (row or column) signals the end of
+        /// the field. Thus, you can't use a delimiter as part of the
+        /// string, because it signals the end of the value.</p>
+        /// <p>For an S3 target, an optional parameter used to set behavior to comply with RFC
+        /// 4180 for data migrated to Amazon S3 using .csv file format only. When this
+        /// value is set to <code>true</code> or <code>y</code> using Amazon
+        /// S3 as a target, if the data has quotation marks or newline
+        /// characters in it, DMS encloses the entire column with an
+        /// additional pair of double quotation marks ("). Every quotation
+        /// mark within the data is repeated twice.</p>
+        /// <p>The default value is <code>true</code>. Valid values include <code>true</code>, <code>false</code>,
+        /// <code>y</code>, and <code>n</code>.</p>
         pub fn set_rfc4180(mut self, input: std::option::Option<bool>) -> Self {
             self.rfc4180 = input;
             self
@@ -10879,6 +12793,7 @@ impl S3Settings {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -10890,13 +12805,21 @@ impl S3Settings {
     std::hash::Hash,
 )]
 pub enum CannedAclForObjectsValue {
+    #[allow(missing_docs)] // documentation missing in model
     AuthenticatedRead,
+    #[allow(missing_docs)] // documentation missing in model
     AwsExecRead,
+    #[allow(missing_docs)] // documentation missing in model
     BucketOwnerFullControl,
+    #[allow(missing_docs)] // documentation missing in model
     BucketOwnerRead,
+    #[allow(missing_docs)] // documentation missing in model
     None,
+    #[allow(missing_docs)] // documentation missing in model
     Private,
+    #[allow(missing_docs)] // documentation missing in model
     PublicRead,
+    #[allow(missing_docs)] // documentation missing in model
     PublicReadWrite,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -10924,6 +12847,7 @@ impl std::str::FromStr for CannedAclForObjectsValue {
     }
 }
 impl CannedAclForObjectsValue {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CannedAclForObjectsValue::AuthenticatedRead => "authenticated-read",
@@ -10937,6 +12861,7 @@ impl CannedAclForObjectsValue {
             CannedAclForObjectsValue::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "authenticated-read",
@@ -10956,6 +12881,7 @@ impl AsRef<str> for CannedAclForObjectsValue {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -10967,9 +12893,13 @@ impl AsRef<str> for CannedAclForObjectsValue {
     std::hash::Hash,
 )]
 pub enum DatePartitionDelimiterValue {
+    #[allow(missing_docs)] // documentation missing in model
     Dash,
+    #[allow(missing_docs)] // documentation missing in model
     None,
+    #[allow(missing_docs)] // documentation missing in model
     Slash,
+    #[allow(missing_docs)] // documentation missing in model
     Underscore,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -10993,6 +12923,7 @@ impl std::str::FromStr for DatePartitionDelimiterValue {
     }
 }
 impl DatePartitionDelimiterValue {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DatePartitionDelimiterValue::Dash => "DASH",
@@ -11002,6 +12933,7 @@ impl DatePartitionDelimiterValue {
             DatePartitionDelimiterValue::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DASH", "NONE", "SLASH", "UNDERSCORE"]
     }
@@ -11012,6 +12944,7 @@ impl AsRef<str> for DatePartitionDelimiterValue {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -11023,10 +12956,15 @@ impl AsRef<str> for DatePartitionDelimiterValue {
     std::hash::Hash,
 )]
 pub enum DatePartitionSequenceValue {
+    #[allow(missing_docs)] // documentation missing in model
     Ddmmyyyy,
+    #[allow(missing_docs)] // documentation missing in model
     Mmyyyydd,
+    #[allow(missing_docs)] // documentation missing in model
     Yyyymm,
+    #[allow(missing_docs)] // documentation missing in model
     Yyyymmdd,
+    #[allow(missing_docs)] // documentation missing in model
     Yyyymmddhh,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -11051,6 +12989,7 @@ impl std::str::FromStr for DatePartitionSequenceValue {
     }
 }
 impl DatePartitionSequenceValue {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DatePartitionSequenceValue::Ddmmyyyy => "DDMMYYYY",
@@ -11061,6 +13000,7 @@ impl DatePartitionSequenceValue {
             DatePartitionSequenceValue::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DDMMYYYY", "MMYYYYDD", "YYYYMM", "YYYYMMDD", "YYYYMMDDHH"]
     }
@@ -11071,6 +13011,7 @@ impl AsRef<str> for DatePartitionSequenceValue {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -11082,7 +13023,9 @@ impl AsRef<str> for DatePartitionSequenceValue {
     std::hash::Hash,
 )]
 pub enum ParquetVersionValue {
+    #[allow(missing_docs)] // documentation missing in model
     Parquet10,
+    #[allow(missing_docs)] // documentation missing in model
     Parquet20,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -11104,6 +13047,7 @@ impl std::str::FromStr for ParquetVersionValue {
     }
 }
 impl ParquetVersionValue {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ParquetVersionValue::Parquet10 => "parquet-1-0",
@@ -11111,6 +13055,7 @@ impl ParquetVersionValue {
             ParquetVersionValue::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["parquet-1-0", "parquet-2-0"]
     }
@@ -11121,6 +13066,7 @@ impl AsRef<str> for ParquetVersionValue {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -11132,8 +13078,11 @@ impl AsRef<str> for ParquetVersionValue {
     std::hash::Hash,
 )]
 pub enum EncodingTypeValue {
+    #[allow(missing_docs)] // documentation missing in model
     Plain,
+    #[allow(missing_docs)] // documentation missing in model
     PlainDictionary,
+    #[allow(missing_docs)] // documentation missing in model
     RleDictionary,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -11156,6 +13105,7 @@ impl std::str::FromStr for EncodingTypeValue {
     }
 }
 impl EncodingTypeValue {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EncodingTypeValue::Plain => "plain",
@@ -11164,6 +13114,7 @@ impl EncodingTypeValue {
             EncodingTypeValue::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["plain", "plain-dictionary", "rle-dictionary"]
     }
@@ -11174,6 +13125,7 @@ impl AsRef<str> for EncodingTypeValue {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -11185,7 +13137,9 @@ impl AsRef<str> for EncodingTypeValue {
     std::hash::Hash,
 )]
 pub enum DataFormatValue {
+    #[allow(missing_docs)] // documentation missing in model
     Csv,
+    #[allow(missing_docs)] // documentation missing in model
     Parquet,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -11207,6 +13161,7 @@ impl std::str::FromStr for DataFormatValue {
     }
 }
 impl DataFormatValue {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DataFormatValue::Csv => "csv",
@@ -11214,6 +13169,7 @@ impl DataFormatValue {
             DataFormatValue::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["csv", "parquet"]
     }
@@ -11224,6 +13180,7 @@ impl AsRef<str> for DataFormatValue {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -11235,7 +13192,9 @@ impl AsRef<str> for DataFormatValue {
     std::hash::Hash,
 )]
 pub enum CompressionTypeValue {
+    #[allow(missing_docs)] // documentation missing in model
     Gzip,
+    #[allow(missing_docs)] // documentation missing in model
     None,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -11257,6 +13216,7 @@ impl std::str::FromStr for CompressionTypeValue {
     }
 }
 impl CompressionTypeValue {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CompressionTypeValue::Gzip => "gzip",
@@ -11264,6 +13224,7 @@ impl CompressionTypeValue {
             CompressionTypeValue::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["gzip", "none"]
     }
@@ -11303,6 +13264,7 @@ pub mod dynamo_db_settings {
             self.service_access_role_arn = Some(input.into());
             self
         }
+        /// <p> The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the <code>iam:PassRole</code> action.</p>
         pub fn set_service_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11325,6 +13287,7 @@ impl DynamoDbSettings {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -11336,9 +13299,13 @@ impl DynamoDbSettings {
     std::hash::Hash,
 )]
 pub enum DmsSslModeValue {
+    #[allow(missing_docs)] // documentation missing in model
     None,
+    #[allow(missing_docs)] // documentation missing in model
     Require,
+    #[allow(missing_docs)] // documentation missing in model
     VerifyCa,
+    #[allow(missing_docs)] // documentation missing in model
     VerifyFull,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -11362,6 +13329,7 @@ impl std::str::FromStr for DmsSslModeValue {
     }
 }
 impl DmsSslModeValue {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DmsSslModeValue::None => "none",
@@ -11371,6 +13339,7 @@ impl DmsSslModeValue {
             DmsSslModeValue::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["none", "require", "verify-ca", "verify-full"]
     }
@@ -11381,6 +13350,7 @@ impl AsRef<str> for DmsSslModeValue {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -11392,7 +13362,9 @@ impl AsRef<str> for DmsSslModeValue {
     std::hash::Hash,
 )]
 pub enum ReplicationEndpointTypeValue {
+    #[allow(missing_docs)] // documentation missing in model
     Source,
+    #[allow(missing_docs)] // documentation missing in model
     Target,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -11414,6 +13386,7 @@ impl std::str::FromStr for ReplicationEndpointTypeValue {
     }
 }
 impl ReplicationEndpointTypeValue {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ReplicationEndpointTypeValue::Source => "source",
@@ -11421,6 +13394,7 @@ impl ReplicationEndpointTypeValue {
             ReplicationEndpointTypeValue::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["source", "target"]
     }
@@ -11494,6 +13468,10 @@ pub mod tag {
             self.key = Some(input.into());
             self
         }
+        /// <p>A key is the required name of the tag. The string value can be 1-128 Unicode characters
+        /// in length and can't be prefixed with "aws:" or "dms:". The string can only contain
+        /// only the set of Unicode letters, digits, white-space, '_', '.', '/', '=', '+', '-' (Java
+        /// regular expressions: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -11506,6 +13484,10 @@ pub mod tag {
             self.value = Some(input.into());
             self
         }
+        /// <p>A value is the optional value of the tag. The string value can be 1-256 Unicode
+        /// characters in length and can't be prefixed with "aws:" or "dms:". The string can only
+        /// contain only the set of Unicode letters, digits, white-space, '_', '.', '/', '=', '+', '-'
+        /// (Java regular expressions: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -11515,6 +13497,7 @@ pub mod tag {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the resource for which the tag is created.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -11546,19 +13529,19 @@ pub struct Certificate {
     /// contain two consecutive hyphens.</p>
     pub certificate_identifier: std::option::Option<std::string::String>,
     /// <p>The date that the certificate was created.</p>
-    pub certificate_creation_date: std::option::Option<smithy_types::Instant>,
+    pub certificate_creation_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The contents of a <code>.pem</code> file, which contains an X.509 certificate.</p>
     pub certificate_pem: std::option::Option<std::string::String>,
     /// <p>The location of an imported Oracle Wallet certificate for use with SSL.</p>
-    pub certificate_wallet: std::option::Option<smithy_types::Blob>,
+    pub certificate_wallet: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The Amazon Resource Name (ARN) for the certificate.</p>
     pub certificate_arn: std::option::Option<std::string::String>,
     /// <p>The owner of the certificate.</p>
     pub certificate_owner: std::option::Option<std::string::String>,
     /// <p>The beginning date that the certificate is valid.</p>
-    pub valid_from_date: std::option::Option<smithy_types::Instant>,
+    pub valid_from_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The final date that the certificate is valid.</p>
-    pub valid_to_date: std::option::Option<smithy_types::Instant>,
+    pub valid_to_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The signing algorithm for the certificate.</p>
     pub signing_algorithm: std::option::Option<std::string::String>,
     /// <p>The key length of the cryptographic algorithm being used.</p>
@@ -11587,13 +13570,13 @@ pub mod certificate {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_identifier: std::option::Option<std::string::String>,
-        pub(crate) certificate_creation_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) certificate_creation_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) certificate_pem: std::option::Option<std::string::String>,
-        pub(crate) certificate_wallet: std::option::Option<smithy_types::Blob>,
+        pub(crate) certificate_wallet: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) certificate_arn: std::option::Option<std::string::String>,
         pub(crate) certificate_owner: std::option::Option<std::string::String>,
-        pub(crate) valid_from_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) valid_to_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) valid_from_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) valid_to_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) signing_algorithm: std::option::Option<std::string::String>,
         pub(crate) key_length: std::option::Option<i32>,
     }
@@ -11605,6 +13588,9 @@ pub mod certificate {
             self.certificate_identifier = Some(input.into());
             self
         }
+        /// <p>A customer-assigned name for the certificate. Identifiers must begin with a letter and
+        /// must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or
+        /// contain two consecutive hyphens.</p>
         pub fn set_certificate_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11613,13 +13599,14 @@ pub mod certificate {
             self
         }
         /// <p>The date that the certificate was created.</p>
-        pub fn certificate_creation_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn certificate_creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.certificate_creation_date = Some(input);
             self
         }
+        /// <p>The date that the certificate was created.</p>
         pub fn set_certificate_creation_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.certificate_creation_date = input;
             self
@@ -11629,6 +13616,7 @@ pub mod certificate {
             self.certificate_pem = Some(input.into());
             self
         }
+        /// <p>The contents of a <code>.pem</code> file, which contains an X.509 certificate.</p>
         pub fn set_certificate_pem(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11637,13 +13625,14 @@ pub mod certificate {
             self
         }
         /// <p>The location of an imported Oracle Wallet certificate for use with SSL.</p>
-        pub fn certificate_wallet(mut self, input: smithy_types::Blob) -> Self {
+        pub fn certificate_wallet(mut self, input: aws_smithy_types::Blob) -> Self {
             self.certificate_wallet = Some(input);
             self
         }
+        /// <p>The location of an imported Oracle Wallet certificate for use with SSL.</p>
         pub fn set_certificate_wallet(
             mut self,
-            input: std::option::Option<smithy_types::Blob>,
+            input: std::option::Option<aws_smithy_types::Blob>,
         ) -> Self {
             self.certificate_wallet = input;
             self
@@ -11653,6 +13642,7 @@ pub mod certificate {
             self.certificate_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) for the certificate.</p>
         pub fn set_certificate_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11665,6 +13655,7 @@ pub mod certificate {
             self.certificate_owner = Some(input.into());
             self
         }
+        /// <p>The owner of the certificate.</p>
         pub fn set_certificate_owner(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11673,25 +13664,27 @@ pub mod certificate {
             self
         }
         /// <p>The beginning date that the certificate is valid.</p>
-        pub fn valid_from_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn valid_from_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.valid_from_date = Some(input);
             self
         }
+        /// <p>The beginning date that the certificate is valid.</p>
         pub fn set_valid_from_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.valid_from_date = input;
             self
         }
         /// <p>The final date that the certificate is valid.</p>
-        pub fn valid_to_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn valid_to_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.valid_to_date = Some(input);
             self
         }
+        /// <p>The final date that the certificate is valid.</p>
         pub fn set_valid_to_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.valid_to_date = input;
             self
@@ -11701,6 +13694,7 @@ pub mod certificate {
             self.signing_algorithm = Some(input.into());
             self
         }
+        /// <p>The signing algorithm for the certificate.</p>
         pub fn set_signing_algorithm(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11713,6 +13707,7 @@ pub mod certificate {
             self.key_length = Some(input);
             self
         }
+        /// <p>The key length of the cryptographic algorithm being used.</p>
         pub fn set_key_length(mut self, input: std::option::Option<i32>) -> Self {
             self.key_length = input;
             self
@@ -11767,14 +13762,14 @@ pub struct TableStatistics {
     /// migrations where DynamoDB is the target).</p>
     pub full_load_error_rows: i64,
     /// <p>The time when the full load operation started.</p>
-    pub full_load_start_time: std::option::Option<smithy_types::Instant>,
+    pub full_load_start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time when the full load operation completed.</p>
-    pub full_load_end_time: std::option::Option<smithy_types::Instant>,
+    pub full_load_end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A value that indicates if the table was reloaded (<code>true</code>)
     /// or loaded as part of a new full load operation (<code>false</code>).</p>
     pub full_load_reloaded: std::option::Option<bool>,
     /// <p>The last time a table was updated.</p>
-    pub last_update_time: std::option::Option<smithy_types::Instant>,
+    pub last_update_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The state of the tables described.</p>
     /// <p>Valid states: Table does not exist | Before load | Full load | Table completed | Table
     /// cancelled | Table error | Table all | Table updates | Table is being reloaded</p>
@@ -11881,10 +13876,10 @@ pub mod table_statistics {
         pub(crate) full_load_rows: std::option::Option<i64>,
         pub(crate) full_load_condtnl_chk_failed_rows: std::option::Option<i64>,
         pub(crate) full_load_error_rows: std::option::Option<i64>,
-        pub(crate) full_load_start_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) full_load_end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) full_load_start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) full_load_end_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) full_load_reloaded: std::option::Option<bool>,
-        pub(crate) last_update_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_update_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) table_state: std::option::Option<std::string::String>,
         pub(crate) validation_pending_records: std::option::Option<i64>,
         pub(crate) validation_failed_records: std::option::Option<i64>,
@@ -11898,6 +13893,7 @@ pub mod table_statistics {
             self.schema_name = Some(input.into());
             self
         }
+        /// <p>The schema name.</p>
         pub fn set_schema_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.schema_name = input;
             self
@@ -11907,6 +13903,7 @@ pub mod table_statistics {
             self.table_name = Some(input.into());
             self
         }
+        /// <p>The name of the table.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.table_name = input;
             self
@@ -11916,6 +13913,7 @@ pub mod table_statistics {
             self.inserts = Some(input);
             self
         }
+        /// <p>The number of insert actions performed on a table.</p>
         pub fn set_inserts(mut self, input: std::option::Option<i64>) -> Self {
             self.inserts = input;
             self
@@ -11925,6 +13923,7 @@ pub mod table_statistics {
             self.deletes = Some(input);
             self
         }
+        /// <p>The number of delete actions performed on a table.</p>
         pub fn set_deletes(mut self, input: std::option::Option<i64>) -> Self {
             self.deletes = input;
             self
@@ -11934,6 +13933,7 @@ pub mod table_statistics {
             self.updates = Some(input);
             self
         }
+        /// <p>The number of update actions performed on a table.</p>
         pub fn set_updates(mut self, input: std::option::Option<i64>) -> Self {
             self.updates = input;
             self
@@ -11943,6 +13943,7 @@ pub mod table_statistics {
             self.ddls = Some(input);
             self
         }
+        /// <p>The data definition language (DDL) used to build and modify the structure of your tables.</p>
         pub fn set_ddls(mut self, input: std::option::Option<i64>) -> Self {
             self.ddls = input;
             self
@@ -11952,6 +13953,7 @@ pub mod table_statistics {
             self.full_load_rows = Some(input);
             self
         }
+        /// <p>The number of rows added during the full load operation.</p>
         pub fn set_full_load_rows(mut self, input: std::option::Option<i64>) -> Self {
             self.full_load_rows = input;
             self
@@ -11962,6 +13964,8 @@ pub mod table_statistics {
             self.full_load_condtnl_chk_failed_rows = Some(input);
             self
         }
+        /// <p>The number of rows that failed conditional checks during the full load operation (valid
+        /// only for migrations where DynamoDB is the target).</p>
         pub fn set_full_load_condtnl_chk_failed_rows(
             mut self,
             input: std::option::Option<i64>,
@@ -11975,30 +13979,34 @@ pub mod table_statistics {
             self.full_load_error_rows = Some(input);
             self
         }
+        /// <p>The number of rows that failed to load during the full load operation (valid only for
+        /// migrations where DynamoDB is the target).</p>
         pub fn set_full_load_error_rows(mut self, input: std::option::Option<i64>) -> Self {
             self.full_load_error_rows = input;
             self
         }
         /// <p>The time when the full load operation started.</p>
-        pub fn full_load_start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn full_load_start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.full_load_start_time = Some(input);
             self
         }
+        /// <p>The time when the full load operation started.</p>
         pub fn set_full_load_start_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.full_load_start_time = input;
             self
         }
         /// <p>The time when the full load operation completed.</p>
-        pub fn full_load_end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn full_load_end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.full_load_end_time = Some(input);
             self
         }
+        /// <p>The time when the full load operation completed.</p>
         pub fn set_full_load_end_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.full_load_end_time = input;
             self
@@ -12009,18 +14017,21 @@ pub mod table_statistics {
             self.full_load_reloaded = Some(input);
             self
         }
+        /// <p>A value that indicates if the table was reloaded (<code>true</code>)
+        /// or loaded as part of a new full load operation (<code>false</code>).</p>
         pub fn set_full_load_reloaded(mut self, input: std::option::Option<bool>) -> Self {
             self.full_load_reloaded = input;
             self
         }
         /// <p>The last time a table was updated.</p>
-        pub fn last_update_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_update_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_update_time = Some(input);
             self
         }
+        /// <p>The last time a table was updated.</p>
         pub fn set_last_update_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_update_time = input;
             self
@@ -12032,6 +14043,9 @@ pub mod table_statistics {
             self.table_state = Some(input.into());
             self
         }
+        /// <p>The state of the tables described.</p>
+        /// <p>Valid states: Table does not exist | Before load | Full load | Table completed | Table
+        /// cancelled | Table error | Table all | Table updates | Table is being reloaded</p>
         pub fn set_table_state(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.table_state = input;
             self
@@ -12041,6 +14055,7 @@ pub mod table_statistics {
             self.validation_pending_records = Some(input);
             self
         }
+        /// <p>The number of records that have yet to be validated.</p>
         pub fn set_validation_pending_records(mut self, input: std::option::Option<i64>) -> Self {
             self.validation_pending_records = input;
             self
@@ -12050,6 +14065,7 @@ pub mod table_statistics {
             self.validation_failed_records = Some(input);
             self
         }
+        /// <p>The number of records that failed validation.</p>
         pub fn set_validation_failed_records(mut self, input: std::option::Option<i64>) -> Self {
             self.validation_failed_records = input;
             self
@@ -12059,6 +14075,7 @@ pub mod table_statistics {
             self.validation_suspended_records = Some(input);
             self
         }
+        /// <p>The number of records that couldn't be validated.</p>
         pub fn set_validation_suspended_records(mut self, input: std::option::Option<i64>) -> Self {
             self.validation_suspended_records = input;
             self
@@ -12110,6 +14127,49 @@ pub mod table_statistics {
             self.validation_state = Some(input.into());
             self
         }
+        /// <p>The validation state of the table.</p>
+        /// <p>This parameter can have the following values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Not enabled – Validation isn't enabled for the table in the migration
+        /// task.</p>
+        /// </li>
+        /// <li>
+        /// <p>Pending records – Some records in the table are waiting for validation.</p>
+        /// </li>
+        /// <li>
+        /// <p>Mismatched records – Some records in the table don't match between the source
+        /// and target.</p>
+        /// </li>
+        /// <li>
+        /// <p>Suspended records – Some records in the table couldn't be validated.</p>
+        /// </li>
+        /// <li>
+        /// <p>No primary key  –The table couldn't be validated because it has no primary
+        /// key.</p>
+        /// </li>
+        /// <li>
+        /// <p>Table error – The table wasn't validated because it's in an error state
+        /// and some data wasn't migrated.</p>
+        /// </li>
+        /// <li>
+        /// <p>Validated – All rows in the table are validated. If the table is updated, the
+        /// status can change from Validated.</p>
+        /// </li>
+        /// <li>
+        /// <p>Error – The table couldn't be validated because of an unexpected
+        /// error.</p>
+        /// </li>
+        /// <li>
+        /// <p>Pending validation – The table is waiting validation.</p>
+        /// </li>
+        /// <li>
+        /// <p>Preparing table – Preparing the table enabled in the migration task for validation.</p>
+        /// </li>
+        /// <li>
+        /// <p>Pending revalidation – All rows in the table are pending validation after the table was updated.</p>
+        /// </li>
+        /// </ul>
         pub fn set_validation_state(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12122,6 +14182,7 @@ pub mod table_statistics {
             self.validation_state_details = Some(input.into());
             self
         }
+        /// <p>Additional details about the state of validation.</p>
         pub fn set_validation_state_details(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12201,16 +14262,24 @@ pub mod filter {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the filter as specified for a <code>Describe*</code> or similar
+        /// operation.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>The filter value, which can specify one or more values used to narrow the returned results.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
+        /// <p>The filter value, which can specify one or more values used to narrow the returned results.</p>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -12284,7 +14353,7 @@ pub struct ReplicationTaskIndividualAssessment {
     /// <p>Date when this individual assessment was started as part of running the
     /// <code>StartReplicationTaskAssessmentRun</code> operation.</p>
     pub replication_task_individual_assessment_start_date:
-        std::option::Option<smithy_types::Instant>,
+        std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for ReplicationTaskIndividualAssessment {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12321,7 +14390,7 @@ pub mod replication_task_individual_assessment {
         pub(crate) individual_assessment_name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
         pub(crate) replication_task_individual_assessment_start_date:
-            std::option::Option<smithy_types::Instant>,
+            std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>Amazon Resource Name (ARN) of this individual assessment.</p>
@@ -12332,6 +14401,7 @@ pub mod replication_task_individual_assessment {
             self.replication_task_individual_assessment_arn = Some(input.into());
             self
         }
+        /// <p>Amazon Resource Name (ARN) of this individual assessment.</p>
         pub fn set_replication_task_individual_assessment_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12348,6 +14418,8 @@ pub mod replication_task_individual_assessment {
             self.replication_task_assessment_run_arn = Some(input.into());
             self
         }
+        /// <p>ARN of the premigration assessment run that is created to run this individual
+        /// assessment.</p>
         pub fn set_replication_task_assessment_run_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12360,6 +14432,7 @@ pub mod replication_task_individual_assessment {
             self.individual_assessment_name = Some(input.into());
             self
         }
+        /// <p>Name of this individual assessment.</p>
         pub fn set_individual_assessment_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12405,6 +14478,40 @@ pub mod replication_task_individual_assessment {
             self.status = Some(input.into());
             self
         }
+        /// <p>Individual assessment status.</p>
+        /// <p>This status can have one of the following values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>"cancelled"</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>"error"</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>"failed"</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>"passed"</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>"pending"</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>"running"</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -12413,14 +14520,16 @@ pub mod replication_task_individual_assessment {
         /// <code>StartReplicationTaskAssessmentRun</code> operation.</p>
         pub fn replication_task_individual_assessment_start_date(
             mut self,
-            input: smithy_types::Instant,
+            input: aws_smithy_types::Instant,
         ) -> Self {
             self.replication_task_individual_assessment_start_date = Some(input);
             self
         }
+        /// <p>Date when this individual assessment was started as part of running the
+        /// <code>StartReplicationTaskAssessmentRun</code> operation.</p>
         pub fn set_replication_task_individual_assessment_start_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.replication_task_individual_assessment_start_date = input;
             self
@@ -12456,7 +14565,7 @@ pub struct ReplicationTaskAssessmentResult {
     /// <p>The Amazon Resource Name (ARN) of the replication task. </p>
     pub replication_task_arn: std::option::Option<std::string::String>,
     /// <p>The date the task assessment was completed. </p>
-    pub replication_task_last_assessment_date: std::option::Option<smithy_types::Instant>,
+    pub replication_task_last_assessment_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p> The status of the task assessment. </p>
     pub assessment_status: std::option::Option<std::string::String>,
     /// <p> The file containing the results of the task assessment. </p>
@@ -12498,7 +14607,7 @@ pub mod replication_task_assessment_result {
         pub(crate) replication_task_identifier: std::option::Option<std::string::String>,
         pub(crate) replication_task_arn: std::option::Option<std::string::String>,
         pub(crate) replication_task_last_assessment_date:
-            std::option::Option<smithy_types::Instant>,
+            std::option::Option<aws_smithy_types::Instant>,
         pub(crate) assessment_status: std::option::Option<std::string::String>,
         pub(crate) assessment_results_file: std::option::Option<std::string::String>,
         pub(crate) assessment_results: std::option::Option<std::string::String>,
@@ -12514,6 +14623,8 @@ pub mod replication_task_assessment_result {
             self.replication_task_identifier = Some(input.into());
             self
         }
+        /// <p> The replication task identifier of the task on which the task assessment was run.
+        /// </p>
         pub fn set_replication_task_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12526,6 +14637,7 @@ pub mod replication_task_assessment_result {
             self.replication_task_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the replication task. </p>
         pub fn set_replication_task_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12536,14 +14648,15 @@ pub mod replication_task_assessment_result {
         /// <p>The date the task assessment was completed. </p>
         pub fn replication_task_last_assessment_date(
             mut self,
-            input: smithy_types::Instant,
+            input: aws_smithy_types::Instant,
         ) -> Self {
             self.replication_task_last_assessment_date = Some(input);
             self
         }
+        /// <p>The date the task assessment was completed. </p>
         pub fn set_replication_task_last_assessment_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.replication_task_last_assessment_date = input;
             self
@@ -12553,6 +14666,7 @@ pub mod replication_task_assessment_result {
             self.assessment_status = Some(input.into());
             self
         }
+        /// <p> The status of the task assessment. </p>
         pub fn set_assessment_status(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12565,6 +14679,7 @@ pub mod replication_task_assessment_result {
             self.assessment_results_file = Some(input.into());
             self
         }
+        /// <p> The file containing the results of the task assessment. </p>
         pub fn set_assessment_results_file(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12579,6 +14694,9 @@ pub mod replication_task_assessment_result {
             self.assessment_results = Some(input.into());
             self
         }
+        /// <p> The task assessment results in JSON format. </p>
+        /// <p>The response object only contains this field if you provide <a>DescribeReplicationTaskAssessmentResultsMessage$ReplicationTaskArn</a>
+        /// in the request.</p>
         pub fn set_assessment_results(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12593,6 +14711,9 @@ pub mod replication_task_assessment_result {
             self.s3_object_url = Some(input.into());
             self
         }
+        /// <p> The URL of the S3 object containing the task assessment results. </p>
+        /// <p>The response object only contains this field if you provide <a>DescribeReplicationTaskAssessmentResultsMessage$ReplicationTaskArn</a>
+        /// in the request.</p>
         pub fn set_s3_object_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12660,6 +14781,7 @@ pub mod replication_instance_task_log {
             self.replication_task_name = Some(input.into());
             self
         }
+        /// <p>The name of the replication task.</p>
         pub fn set_replication_task_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12672,6 +14794,7 @@ pub mod replication_instance_task_log {
             self.replication_task_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the replication task.</p>
         pub fn set_replication_task_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12684,6 +14807,7 @@ pub mod replication_instance_task_log {
             self.replication_instance_task_log_size = Some(input);
             self
         }
+        /// <p>The size, in bytes, of the replication task log.</p>
         pub fn set_replication_instance_task_log_size(
             mut self,
             input: std::option::Option<i64>,
@@ -12751,6 +14875,9 @@ pub mod resource_pending_maintenance_actions {
             self.resource_identifier = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the DMS resource that the pending maintenance action
+        /// applies to. For information about creating an ARN, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Introduction.AWS.ARN.html"> Constructing an Amazon
+        /// Resource Name (ARN) for DMS</a> in the DMS documentation.</p>
         pub fn set_resource_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12758,6 +14885,11 @@ pub mod resource_pending_maintenance_actions {
             self.resource_identifier = input;
             self
         }
+        /// Appends an item to `pending_maintenance_action_details`.
+        ///
+        /// To override the contents of this collection use [`set_pending_maintenance_action_details`](Self::set_pending_maintenance_action_details).
+        ///
+        /// <p>Detailed information about the pending maintenance action.</p>
         pub fn pending_maintenance_action_details(
             mut self,
             input: impl Into<crate::model::PendingMaintenanceAction>,
@@ -12767,6 +14899,7 @@ pub mod resource_pending_maintenance_actions {
             self.pending_maintenance_action_details = Some(v);
             self
         }
+        /// <p>Detailed information about the pending maintenance action.</p>
         pub fn set_pending_maintenance_action_details(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PendingMaintenanceAction>>,
@@ -12802,12 +14935,12 @@ pub struct PendingMaintenanceAction {
     /// action is applied to the resource during its first maintenance window after this date. If
     /// this date is specified, any <code>next-maintenance</code> opt-in requests are
     /// ignored.</p>
-    pub auto_applied_after_date: std::option::Option<smithy_types::Instant>,
+    pub auto_applied_after_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date when the maintenance action will be automatically applied. The maintenance
     /// action is applied to the resource on this date regardless of the maintenance window for the
     /// resource. If this date is specified, any <code>immediate</code> opt-in requests are
     /// ignored.</p>
-    pub forced_apply_date: std::option::Option<smithy_types::Instant>,
+    pub forced_apply_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The type of opt-in request that has been received for the resource.</p>
     pub opt_in_status: std::option::Option<std::string::String>,
     /// <p>The effective date when the pending maintenance action will be applied to the resource.
@@ -12816,7 +14949,7 @@ pub struct PendingMaintenanceAction {
     /// <code>AutoAppliedAfterDate</code> and <code>ForcedApplyDate</code> parameter values.
     /// This value is blank if an opt-in request has not been received and nothing has been
     /// specified for <code>AutoAppliedAfterDate</code> or <code>ForcedApplyDate</code>.</p>
-    pub current_apply_date: std::option::Option<smithy_types::Instant>,
+    pub current_apply_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A description providing more detail about the maintenance action.</p>
     pub description: std::option::Option<std::string::String>,
 }
@@ -12839,10 +14972,10 @@ pub mod pending_maintenance_action {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) action: std::option::Option<std::string::String>,
-        pub(crate) auto_applied_after_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) forced_apply_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) auto_applied_after_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) forced_apply_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) opt_in_status: std::option::Option<std::string::String>,
-        pub(crate) current_apply_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) current_apply_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) description: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -12851,6 +14984,7 @@ pub mod pending_maintenance_action {
             self.action = Some(input.into());
             self
         }
+        /// <p>The type of pending maintenance action that is available for the resource.</p>
         pub fn set_action(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.action = input;
             self
@@ -12859,13 +14993,17 @@ pub mod pending_maintenance_action {
         /// action is applied to the resource during its first maintenance window after this date. If
         /// this date is specified, any <code>next-maintenance</code> opt-in requests are
         /// ignored.</p>
-        pub fn auto_applied_after_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn auto_applied_after_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.auto_applied_after_date = Some(input);
             self
         }
+        /// <p>The date of the maintenance window when the action is to be applied. The maintenance
+        /// action is applied to the resource during its first maintenance window after this date. If
+        /// this date is specified, any <code>next-maintenance</code> opt-in requests are
+        /// ignored.</p>
         pub fn set_auto_applied_after_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.auto_applied_after_date = input;
             self
@@ -12874,13 +15012,17 @@ pub mod pending_maintenance_action {
         /// action is applied to the resource on this date regardless of the maintenance window for the
         /// resource. If this date is specified, any <code>immediate</code> opt-in requests are
         /// ignored.</p>
-        pub fn forced_apply_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn forced_apply_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.forced_apply_date = Some(input);
             self
         }
+        /// <p>The date when the maintenance action will be automatically applied. The maintenance
+        /// action is applied to the resource on this date regardless of the maintenance window for the
+        /// resource. If this date is specified, any <code>immediate</code> opt-in requests are
+        /// ignored.</p>
         pub fn set_forced_apply_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.forced_apply_date = input;
             self
@@ -12890,6 +15032,7 @@ pub mod pending_maintenance_action {
             self.opt_in_status = Some(input.into());
             self
         }
+        /// <p>The type of opt-in request that has been received for the resource.</p>
         pub fn set_opt_in_status(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12903,13 +15046,19 @@ pub mod pending_maintenance_action {
         /// <code>AutoAppliedAfterDate</code> and <code>ForcedApplyDate</code> parameter values.
         /// This value is blank if an opt-in request has not been received and nothing has been
         /// specified for <code>AutoAppliedAfterDate</code> or <code>ForcedApplyDate</code>.</p>
-        pub fn current_apply_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn current_apply_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.current_apply_date = Some(input);
             self
         }
+        /// <p>The effective date when the pending maintenance action will be applied to the resource.
+        /// This date takes into account opt-in requests received from the
+        /// <code>ApplyPendingMaintenanceAction</code> API operation, and also the
+        /// <code>AutoAppliedAfterDate</code> and <code>ForcedApplyDate</code> parameter values.
+        /// This value is blank if an opt-in request has not been received and nothing has been
+        /// specified for <code>AutoAppliedAfterDate</code> or <code>ForcedApplyDate</code>.</p>
         pub fn set_current_apply_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.current_apply_date = input;
             self
@@ -12919,6 +15068,7 @@ pub mod pending_maintenance_action {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description providing more detail about the maintenance action.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -13024,6 +15174,7 @@ pub mod orderable_replication_instance {
             self.engine_version = Some(input.into());
             self
         }
+        /// <p>The version of the replication engine.</p>
         pub fn set_engine_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13041,6 +15192,12 @@ pub mod orderable_replication_instance {
             self.replication_instance_class = Some(input.into());
             self
         }
+        /// <p>The compute and memory capacity of the replication instance as defined for the specified
+        /// replication instance class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
+        /// <p>For more information on the settings and capacities for the available replication instance classes, see
+        /// <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
+        /// Selecting the right DMS replication instance for your migration</a>.
+        /// </p>
         pub fn set_replication_instance_class(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13053,6 +15210,7 @@ pub mod orderable_replication_instance {
             self.storage_type = Some(input.into());
             self
         }
+        /// <p>The type of storage used by the replication instance.</p>
         pub fn set_storage_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.storage_type = input;
             self
@@ -13063,6 +15221,8 @@ pub mod orderable_replication_instance {
             self.min_allocated_storage = Some(input);
             self
         }
+        /// <p>The minimum amount of storage (in gigabytes) that can be allocated for the replication
+        /// instance.</p>
         pub fn set_min_allocated_storage(mut self, input: std::option::Option<i32>) -> Self {
             self.min_allocated_storage = input;
             self
@@ -13073,6 +15233,8 @@ pub mod orderable_replication_instance {
             self.max_allocated_storage = Some(input);
             self
         }
+        /// <p>The minimum amount of storage (in gigabytes) that can be allocated for the replication
+        /// instance.</p>
         pub fn set_max_allocated_storage(mut self, input: std::option::Option<i32>) -> Self {
             self.max_allocated_storage = input;
             self
@@ -13083,6 +15245,8 @@ pub mod orderable_replication_instance {
             self.default_allocated_storage = Some(input);
             self
         }
+        /// <p>The default amount of storage (in gigabytes) that is allocated for the replication
+        /// instance.</p>
         pub fn set_default_allocated_storage(mut self, input: std::option::Option<i32>) -> Self {
             self.default_allocated_storage = input;
             self
@@ -13093,16 +15257,24 @@ pub mod orderable_replication_instance {
             self.included_allocated_storage = Some(input);
             self
         }
+        /// <p>The amount of storage (in gigabytes) that is allocated for the replication
+        /// instance.</p>
         pub fn set_included_allocated_storage(mut self, input: std::option::Option<i32>) -> Self {
             self.included_allocated_storage = input;
             self
         }
+        /// Appends an item to `availability_zones`.
+        ///
+        /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
+        ///
+        /// <p>List of Availability Zones for this replication instance.</p>
         pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.availability_zones.unwrap_or_default();
             v.push(input.into());
             self.availability_zones = Some(v);
             self
         }
+        /// <p>List of Availability Zones for this replication instance.</p>
         pub fn set_availability_zones(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13119,6 +15291,11 @@ pub mod orderable_replication_instance {
             self.release_status = Some(input);
             self
         }
+        /// <p>The value returned when the specified <code>EngineVersion</code> of the replication
+        /// instance is in Beta or test mode. This indicates some features might not work as expected.</p>
+        /// <note>
+        /// <p>DMS supports the <code>ReleaseStatus</code> parameter in versions 3.1.4 and later.</p>
+        /// </note>
         pub fn set_release_status(
             mut self,
             input: std::option::Option<crate::model::ReleaseStatusValues>,
@@ -13149,6 +15326,7 @@ impl OrderableReplicationInstance {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -13160,6 +15338,7 @@ impl OrderableReplicationInstance {
     std::hash::Hash,
 )]
 pub enum ReleaseStatusValues {
+    #[allow(missing_docs)] // documentation missing in model
     Beta,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -13180,12 +15359,14 @@ impl std::str::FromStr for ReleaseStatusValues {
     }
 }
 impl ReleaseStatusValues {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ReleaseStatusValues::Beta => "beta",
             ReleaseStatusValues::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["beta"]
     }
@@ -13212,7 +15393,7 @@ pub struct Event {
     /// <p>The event categories available for the specified source type.</p>
     pub event_categories: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The date of the event.</p>
-    pub date: std::option::Option<smithy_types::Instant>,
+    pub date: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for Event {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13235,7 +15416,7 @@ pub mod event {
         pub(crate) source_type: std::option::Option<crate::model::SourceType>,
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) event_categories: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) date: std::option::Option<smithy_types::Instant>,
+        pub(crate) date: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p> The identifier of an event source.</p>
@@ -13243,6 +15424,7 @@ pub mod event {
             self.source_identifier = Some(input.into());
             self
         }
+        /// <p> The identifier of an event source.</p>
         pub fn set_source_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13256,6 +15438,8 @@ pub mod event {
             self.source_type = Some(input);
             self
         }
+        /// <p> The type of DMS resource that generates events. </p>
+        /// <p>Valid values: replication-instance | endpoint | replication-task</p>
         pub fn set_source_type(
             mut self,
             input: std::option::Option<crate::model::SourceType>,
@@ -13268,16 +15452,23 @@ pub mod event {
             self.message = Some(input.into());
             self
         }
+        /// <p>The event message.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
         }
+        /// Appends an item to `event_categories`.
+        ///
+        /// To override the contents of this collection use [`set_event_categories`](Self::set_event_categories).
+        ///
+        /// <p>The event categories available for the specified source type.</p>
         pub fn event_categories(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.event_categories.unwrap_or_default();
             v.push(input.into());
             self.event_categories = Some(v);
             self
         }
+        /// <p>The event categories available for the specified source type.</p>
         pub fn set_event_categories(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13286,11 +15477,12 @@ pub mod event {
             self
         }
         /// <p>The date of the event.</p>
-        pub fn date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.date = Some(input);
             self
         }
-        pub fn set_date(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date of the event.</p>
+        pub fn set_date(mut self, input: std::option::Option<aws_smithy_types::Instant>) -> Self {
             self.date = input;
             self
         }
@@ -13313,6 +15505,7 @@ impl Event {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -13324,6 +15517,7 @@ impl Event {
     std::hash::Hash,
 )]
 pub enum SourceType {
+    #[allow(missing_docs)] // documentation missing in model
     ReplicationInstance,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -13344,12 +15538,14 @@ impl std::str::FromStr for SourceType {
     }
 }
 impl SourceType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SourceType::ReplicationInstance => "replication-instance",
             SourceType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["replication-instance"]
     }
@@ -13401,16 +15597,25 @@ pub mod event_category_group {
             self.source_type = Some(input.into());
             self
         }
+        /// <p> The type of DMS resource that generates events. </p>
+        /// <p>Valid values: replication-instance | replication-server | security-group |
+        /// replication-task</p>
         pub fn set_source_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source_type = input;
             self
         }
+        /// Appends an item to `event_categories`.
+        ///
+        /// To override the contents of this collection use [`set_event_categories`](Self::set_event_categories).
+        ///
+        /// <p> A list of event categories from a source type that you've chosen.</p>
         pub fn event_categories(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.event_categories.unwrap_or_default();
             v.push(input.into());
             self.event_categories = Some(v);
             self
         }
+        /// <p> A list of event categories from a source type that you've chosen.</p>
         pub fn set_event_categories(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13498,6 +15703,13 @@ pub mod supported_endpoint_type {
             self.engine_name = Some(input.into());
             self
         }
+        /// <p>The database engine name. Valid values, depending on the EndpointType,  include
+        /// <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>,
+        /// <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>,
+        /// <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>, <code>"azuredb"</code>,
+        /// <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
+        /// <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>,
+        /// <code>"documentdb"</code>, <code>"sqlserver"</code>, and <code>"neptune"</code>.</p>
         pub fn set_engine_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.engine_name = input;
             self
@@ -13507,6 +15719,7 @@ pub mod supported_endpoint_type {
             self.supports_cdc = Some(input);
             self
         }
+        /// <p>Indicates if change data capture (CDC) is supported.</p>
         pub fn set_supports_cdc(mut self, input: std::option::Option<bool>) -> Self {
             self.supports_cdc = input;
             self
@@ -13516,6 +15729,7 @@ pub mod supported_endpoint_type {
             self.endpoint_type = Some(input);
             self
         }
+        /// <p>The type of endpoint.  Valid values are <code>source</code> and <code>target</code>.</p>
         pub fn set_endpoint_type(
             mut self,
             input: std::option::Option<crate::model::ReplicationEndpointTypeValue>,
@@ -13531,6 +15745,7 @@ pub mod supported_endpoint_type {
             self.replication_instance_engine_minimum_version = Some(input.into());
             self
         }
+        /// <p>The earliest DMS engine version that supports this endpoint engine. Note that endpoint engines released with DMS versions earlier than 3.1.1 do not return a value for this parameter.</p>
         pub fn set_replication_instance_engine_minimum_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13544,6 +15759,8 @@ pub mod supported_endpoint_type {
             self.engine_display_name = Some(input.into());
             self
         }
+        /// <p>The expanded name for the engine name. For example, if the <code>EngineName</code>
+        /// parameter is "aurora," this value would be "Amazon Aurora MySQL."</p>
         pub fn set_engine_display_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13631,6 +15848,7 @@ pub mod endpoint_setting {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name that you want to give the endpoint settings.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -13640,6 +15858,7 @@ pub mod endpoint_setting {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of endpoint.  Valid values are <code>source</code> and <code>target</code>.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::EndpointSettingTypeValue>,
@@ -13647,12 +15866,18 @@ pub mod endpoint_setting {
             self.r#type = input;
             self
         }
+        /// Appends an item to `enum_values`.
+        ///
+        /// To override the contents of this collection use [`set_enum_values`](Self::set_enum_values).
+        ///
+        /// <p>Enumerated values to use for this endpoint.</p>
         pub fn enum_values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.enum_values.unwrap_or_default();
             v.push(input.into());
             self.enum_values = Some(v);
             self
         }
+        /// <p>Enumerated values to use for this endpoint.</p>
         pub fn set_enum_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13665,6 +15890,7 @@ pub mod endpoint_setting {
             self.sensitive = Some(input);
             self
         }
+        /// <p>A value that marks this endpoint setting as sensitive.</p>
         pub fn set_sensitive(mut self, input: std::option::Option<bool>) -> Self {
             self.sensitive = input;
             self
@@ -13674,6 +15900,7 @@ pub mod endpoint_setting {
             self.units = Some(input.into());
             self
         }
+        /// <p>The unit of measure for this endpoint setting.</p>
         pub fn set_units(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.units = input;
             self
@@ -13683,6 +15910,7 @@ pub mod endpoint_setting {
             self.applicability = Some(input.into());
             self
         }
+        /// <p>The relevance or validity of an endpoint setting for an engine name and its endpoint type.</p>
         pub fn set_applicability(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13695,6 +15923,7 @@ pub mod endpoint_setting {
             self.int_value_min = Some(input);
             self
         }
+        /// <p>The minimum value of an endpoint setting that is of type <code>int</code>.</p>
         pub fn set_int_value_min(mut self, input: std::option::Option<i32>) -> Self {
             self.int_value_min = input;
             self
@@ -13704,6 +15933,7 @@ pub mod endpoint_setting {
             self.int_value_max = Some(input);
             self
         }
+        /// <p>The maximum value of an endpoint setting that is of type <code>int</code>.</p>
         pub fn set_int_value_max(mut self, input: std::option::Option<i32>) -> Self {
             self.int_value_max = input;
             self
@@ -13713,6 +15943,7 @@ pub mod endpoint_setting {
             self.default_value = Some(input.into());
             self
         }
+        /// <p>The default value of the endpoint setting if no value is specified using <code>CreateEndpoint</code> or <code>ModifyEndpoint</code>.</p>
         pub fn set_default_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13743,6 +15974,7 @@ impl EndpointSetting {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -13754,9 +15986,13 @@ impl EndpointSetting {
     std::hash::Hash,
 )]
 pub enum EndpointSettingTypeValue {
+    #[allow(missing_docs)] // documentation missing in model
     Boolean,
+    #[allow(missing_docs)] // documentation missing in model
     Enum,
+    #[allow(missing_docs)] // documentation missing in model
     Integer,
+    #[allow(missing_docs)] // documentation missing in model
     String,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -13780,6 +16016,7 @@ impl std::str::FromStr for EndpointSettingTypeValue {
     }
 }
 impl EndpointSettingTypeValue {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EndpointSettingTypeValue::Boolean => "boolean",
@@ -13789,6 +16026,7 @@ impl EndpointSettingTypeValue {
             EndpointSettingTypeValue::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["boolean", "enum", "integer", "string"]
     }
@@ -13836,6 +16074,7 @@ pub mod account_quota {
             self.account_quota_name = Some(input.into());
             self
         }
+        /// <p>The name of the DMS quota for this Amazon Web Services account.</p>
         pub fn set_account_quota_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13848,6 +16087,7 @@ pub mod account_quota {
             self.used = Some(input);
             self
         }
+        /// <p>The amount currently used toward the quota maximum.</p>
         pub fn set_used(mut self, input: std::option::Option<i64>) -> Self {
             self.used = input;
             self
@@ -13857,6 +16097,7 @@ pub mod account_quota {
             self.max = Some(input);
             self
         }
+        /// <p>The maximum allowed value for the quota.</p>
         pub fn set_max(mut self, input: std::option::Option<i64>) -> Self {
             self.max = input;
             self

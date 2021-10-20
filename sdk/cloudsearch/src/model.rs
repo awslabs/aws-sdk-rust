@@ -31,6 +31,7 @@ pub mod access_policies_status {
             self.options = Some(input.into());
             self
         }
+        /// <p>Access rules for a domain's document or search service endpoints. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html" target="_blank">Configuring Access for a Search Domain</a> in the <i>Amazon CloudSearch Developer Guide</i>. The maximum size of a policy document is 100 KB.</p>
         pub fn set_options(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.options = input;
             self
@@ -40,6 +41,7 @@ pub mod access_policies_status {
             self.status = Some(input);
             self
         }
+        /// <p>The status of domain configuration option.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::OptionStatus>,
@@ -68,9 +70,9 @@ impl AccessPoliciesStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OptionStatus {
     /// <p>A timestamp for when this option was created.</p>
-    pub creation_date: std::option::Option<smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A timestamp for when this option was last updated.</p>
-    pub update_date: std::option::Option<smithy_types::Instant>,
+    pub update_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A unique integer that indicates when this option was last updated.</p>
     pub update_version: i32,
     /// <p>The state of processing a change to an option.  Possible values:</p><ul>
@@ -100,33 +102,35 @@ pub mod option_status {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) creation_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) update_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) update_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) update_version: std::option::Option<i32>,
         pub(crate) state: std::option::Option<crate::model::OptionState>,
         pub(crate) pending_deletion: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>A timestamp for when this option was created.</p>
-        pub fn creation_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_date = Some(input);
             self
         }
+        /// <p>A timestamp for when this option was created.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_date = input;
             self
         }
         /// <p>A timestamp for when this option was last updated.</p>
-        pub fn update_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn update_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.update_date = Some(input);
             self
         }
+        /// <p>A timestamp for when this option was last updated.</p>
         pub fn set_update_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.update_date = input;
             self
@@ -136,6 +140,7 @@ pub mod option_status {
             self.update_version = Some(input);
             self
         }
+        /// <p>A unique integer that indicates when this option was last updated.</p>
         pub fn set_update_version(mut self, input: std::option::Option<i32>) -> Self {
             self.update_version = input;
             self
@@ -150,6 +155,12 @@ pub mod option_status {
             self.state = Some(input);
             self
         }
+        /// <p>The state of processing a change to an option.  Possible values:</p><ul>
+        /// <li><code>RequiresIndexDocuments</code>: the option's latest value will not be deployed until  <a>IndexDocuments</a> has been called and indexing is complete.</li>
+        /// <li><code>Processing</code>: the option's latest value is in the process of being activated.  </li>
+        /// <li><code>Active</code>: the option's latest value is completely deployed.</li>
+        /// <li><code>FailedToValidate</code>: the option value is not compatible with the domain's data and cannot be used to index the data. You must either modify the option value or update or remove the incompatible documents.</li>
+        /// </ul>
         pub fn set_state(mut self, input: std::option::Option<crate::model::OptionState>) -> Self {
             self.state = input;
             self
@@ -159,6 +170,7 @@ pub mod option_status {
             self.pending_deletion = Some(input);
             self
         }
+        /// <p>Indicates that the option will be deleted once processing is complete.</p>
         pub fn set_pending_deletion(mut self, input: std::option::Option<bool>) -> Self {
             self.pending_deletion = input;
             self
@@ -200,9 +212,13 @@ impl OptionStatus {
     std::hash::Hash,
 )]
 pub enum OptionState {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     FailedToValidate,
+    #[allow(missing_docs)] // documentation missing in model
     Processing,
+    #[allow(missing_docs)] // documentation missing in model
     RequiresIndexDocuments,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -226,6 +242,7 @@ impl std::str::FromStr for OptionState {
     }
 }
 impl OptionState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             OptionState::Active => "Active",
@@ -235,6 +252,7 @@ impl OptionState {
             OptionState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "Active",
@@ -282,6 +300,7 @@ pub mod scaling_parameters_status {
             self.options = Some(input);
             self
         }
+        /// <p>The desired instance type and desired number of replicas of each index partition.</p>
         pub fn set_options(
             mut self,
             input: std::option::Option<crate::model::ScalingParameters>,
@@ -294,6 +313,7 @@ pub mod scaling_parameters_status {
             self.status = Some(input);
             self
         }
+        /// <p>The status of domain configuration option.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::OptionStatus>,
@@ -354,6 +374,7 @@ pub mod scaling_parameters {
             self.desired_instance_type = Some(input);
             self
         }
+        /// <p>The instance type that you want to preconfigure for your domain. For example, <code>search.m1.small</code>.</p>
         pub fn set_desired_instance_type(
             mut self,
             input: std::option::Option<crate::model::PartitionInstanceType>,
@@ -366,6 +387,7 @@ pub mod scaling_parameters {
             self.desired_replication_count = Some(input);
             self
         }
+        /// <p>The number of replicas you want to preconfigure for each index partition.</p>
         pub fn set_desired_replication_count(mut self, input: std::option::Option<i32>) -> Self {
             self.desired_replication_count = input;
             self
@@ -376,6 +398,8 @@ pub mod scaling_parameters {
             self.desired_partition_count = Some(input);
             self
         }
+        /// <p>The number of partitions you want to preconfigure for your domain. Only valid when
+        /// you select <code>m2.2xlarge</code> as the desired instance type.</p>
         pub fn set_desired_partition_count(mut self, input: std::option::Option<i32>) -> Self {
             self.desired_partition_count = input;
             self
@@ -409,22 +433,39 @@ impl ScalingParameters {
     std::hash::Hash,
 )]
 pub enum PartitionInstanceType {
+    #[allow(missing_docs)] // documentation missing in model
     Search2xlarge,
+    #[allow(missing_docs)] // documentation missing in model
     SearchLarge,
+    #[allow(missing_docs)] // documentation missing in model
     SearchM1Large,
+    #[allow(missing_docs)] // documentation missing in model
     SearchM1Small,
+    #[allow(missing_docs)] // documentation missing in model
     SearchM22xlarge,
+    #[allow(missing_docs)] // documentation missing in model
     SearchM2Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
     SearchM32xlarge,
+    #[allow(missing_docs)] // documentation missing in model
     SearchM3Large,
+    #[allow(missing_docs)] // documentation missing in model
     SearchM3Medium,
+    #[allow(missing_docs)] // documentation missing in model
     SearchM3Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
     SearchMedium,
+    #[allow(missing_docs)] // documentation missing in model
     SearchPreviousgeneration2xlarge,
+    #[allow(missing_docs)] // documentation missing in model
     SearchPreviousgenerationLarge,
+    #[allow(missing_docs)] // documentation missing in model
     SearchPreviousgenerationSmall,
+    #[allow(missing_docs)] // documentation missing in model
     SearchPreviousgenerationXlarge,
+    #[allow(missing_docs)] // documentation missing in model
     SearchSmall,
+    #[allow(missing_docs)] // documentation missing in model
     SearchXlarge,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -469,6 +510,7 @@ impl std::str::FromStr for PartitionInstanceType {
     }
 }
 impl PartitionInstanceType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PartitionInstanceType::Search2xlarge => "search.2xlarge",
@@ -499,6 +541,7 @@ impl PartitionInstanceType {
             PartitionInstanceType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "search.2xlarge",
@@ -559,6 +602,7 @@ pub mod domain_endpoint_options_status {
             self.options = Some(input);
             self
         }
+        /// <p>The domain endpoint options configured for the domain.</p>
         pub fn set_options(
             mut self,
             input: std::option::Option<crate::model::DomainEndpointOptions>,
@@ -571,6 +615,7 @@ pub mod domain_endpoint_options_status {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the configured domain endpoint options.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::OptionStatus>,
@@ -626,6 +671,7 @@ pub mod domain_endpoint_options {
             self.enforce_https = Some(input);
             self
         }
+        /// <p>Whether the domain is HTTPS only enabled.</p>
         pub fn set_enforce_https(mut self, input: std::option::Option<bool>) -> Self {
             self.enforce_https = input;
             self
@@ -635,6 +681,7 @@ pub mod domain_endpoint_options {
             self.tls_security_policy = Some(input);
             self
         }
+        /// <p>The minimum required TLS version</p>
         pub fn set_tls_security_policy(
             mut self,
             input: std::option::Option<crate::model::TlsSecurityPolicy>,
@@ -670,7 +717,9 @@ impl DomainEndpointOptions {
     std::hash::Hash,
 )]
 pub enum TlsSecurityPolicy {
+    #[allow(missing_docs)] // documentation missing in model
     PolicyMinTls10201907,
+    #[allow(missing_docs)] // documentation missing in model
     PolicyMinTls12201907,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -692,6 +741,7 @@ impl std::str::FromStr for TlsSecurityPolicy {
     }
 }
 impl TlsSecurityPolicy {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TlsSecurityPolicy::PolicyMinTls10201907 => "Policy-Min-TLS-1-0-2019-07",
@@ -699,6 +749,7 @@ impl TlsSecurityPolicy {
             TlsSecurityPolicy::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Policy-Min-TLS-1-0-2019-07", "Policy-Min-TLS-1-2-2019-07"]
     }
@@ -741,6 +792,7 @@ pub mod availability_options_status {
             self.options = Some(input);
             self
         }
+        /// <p>The availability options configured for the domain.</p>
         pub fn set_options(mut self, input: std::option::Option<bool>) -> Self {
             self.options = input;
             self
@@ -750,6 +802,7 @@ pub mod availability_options_status {
             self.status = Some(input);
             self
         }
+        /// <p>The status of domain configuration option.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::OptionStatus>,
@@ -805,6 +858,7 @@ pub mod suggester_status {
             self.options = Some(input);
             self
         }
+        /// <p>Configuration information for a search suggester. Each suggester has a unique name and specifies the text field you want to use for suggestions. The following options can be configured for a suggester: <code>FuzzyMatching</code>, <code>SortExpression</code>. </p>
         pub fn set_options(mut self, input: std::option::Option<crate::model::Suggester>) -> Self {
             self.options = input;
             self
@@ -814,6 +868,7 @@ pub mod suggester_status {
             self.status = Some(input);
             self
         }
+        /// <p>The status of domain configuration option.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::OptionStatus>,
@@ -875,6 +930,8 @@ pub mod suggester {
             self.suggester_name = Some(input.into());
             self
         }
+        /// <p>Names must begin with a letter and can contain the following characters:
+        /// a-z (lowercase), 0-9, and _ (underscore).</p>
         pub fn set_suggester_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -890,6 +947,7 @@ pub mod suggester {
             self.document_suggester_options = Some(input);
             self
         }
+        /// <p>Options for a search suggester.</p>
         pub fn set_document_suggester_options(
             mut self,
             input: std::option::Option<crate::model::DocumentSuggesterOptions>,
@@ -956,6 +1014,8 @@ pub mod document_suggester_options {
             self.source_field = Some(input.into());
             self
         }
+        /// <p>The name of the index field you want to use for suggestions.
+        /// </p>
         pub fn set_source_field(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source_field = input;
             self
@@ -965,6 +1025,7 @@ pub mod document_suggester_options {
             self.fuzzy_matching = Some(input);
             self
         }
+        /// <p>The level of fuzziness allowed when suggesting matches for a string: <code>none</code>, <code>low</code>, or <code>high</code>. With none, the specified string is treated as an exact prefix. With low, suggestions must differ from the specified string by no more than one character. With high, suggestions can differ by up to two characters. The default is none. </p>
         pub fn set_fuzzy_matching(
             mut self,
             input: std::option::Option<crate::model::SuggesterFuzzyMatching>,
@@ -982,6 +1043,12 @@ pub mod document_suggester_options {
             self.sort_expression = Some(input.into());
             self
         }
+        /// <p>An expression that computes a score for each suggestion to control how they are sorted. The scores are rounded to the nearest
+        /// integer, with a floor of 0 and a ceiling of 2^31-1. A document's relevance score is not computed
+        /// for suggestions, so sort expressions cannot reference the <code>_score</code> value.
+        /// To sort suggestions using a numeric field or existing expression, simply specify
+        /// the name of the field or expression. If no expression is configured for the suggester, the
+        /// suggestions are sorted with the closest matches listed first.</p>
         pub fn set_sort_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1006,6 +1073,7 @@ impl DocumentSuggesterOptions {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1017,8 +1085,11 @@ impl DocumentSuggesterOptions {
     std::hash::Hash,
 )]
 pub enum SuggesterFuzzyMatching {
+    #[allow(missing_docs)] // documentation missing in model
     High,
+    #[allow(missing_docs)] // documentation missing in model
     Low,
+    #[allow(missing_docs)] // documentation missing in model
     None,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1041,6 +1112,7 @@ impl std::str::FromStr for SuggesterFuzzyMatching {
     }
 }
 impl SuggesterFuzzyMatching {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SuggesterFuzzyMatching::High => "high",
@@ -1049,6 +1121,7 @@ impl SuggesterFuzzyMatching {
             SuggesterFuzzyMatching::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["high", "low", "none"]
     }
@@ -1091,6 +1164,7 @@ pub mod index_field_status {
             self.options = Some(input);
             self
         }
+        /// <p>Configuration information for a field in the index, including its name, type, and options. The supported options depend on the <code><a>IndexFieldType</a></code>.</p>
         pub fn set_options(mut self, input: std::option::Option<crate::model::IndexField>) -> Self {
             self.options = input;
             self
@@ -1100,6 +1174,7 @@ pub mod index_field_status {
             self.status = Some(input);
             self
         }
+        /// <p>The status of domain configuration option.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::OptionStatus>,
@@ -1225,6 +1300,20 @@ pub mod index_field {
             self.index_field_name = Some(input.into());
             self
         }
+        /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields.
+        /// A dynamic field's name defines a pattern that begins or ends with a wildcard.
+        /// Any document fields that don't map to a regular index field but do match a  
+        /// dynamic field's pattern are configured with the dynamic field's indexing options.
+        /// </p>
+        /// <p>Regular field names begin with a letter and can contain the following characters:
+        /// a-z (lowercase), 0-9, and _ (underscore).
+        /// Dynamic field names must begin or end with a wildcard (*).
+        /// The wildcard can also be the only character in a dynamic field name.
+        /// Multiple wildcards, and wildcards embedded within a string are not supported.
+        /// </p>
+        /// <p>The name <code>score</code> is reserved and cannot be used as a field name.
+        /// To reference a document's ID, you can use the name <code>_id</code>.
+        /// </p>
         pub fn set_index_field_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1237,6 +1326,7 @@ pub mod index_field {
             self.index_field_type = Some(input);
             self
         }
+        /// <p>The type of field. The valid options for a field depend on the field type. For more information about the supported field types, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html" target="_blank">Configuring Index Fields</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
         pub fn set_index_field_type(
             mut self,
             input: std::option::Option<crate::model::IndexFieldType>,
@@ -1249,6 +1339,7 @@ pub mod index_field {
             self.int_options = Some(input);
             self
         }
+        /// <p>Options for a 64-bit signed integer field.  Present if <code>IndexFieldType</code> specifies the field is of type <code>int</code>. All options are enabled by default.</p>
         pub fn set_int_options(
             mut self,
             input: std::option::Option<crate::model::IntOptions>,
@@ -1261,6 +1352,7 @@ pub mod index_field {
             self.double_options = Some(input);
             self
         }
+        /// <p>Options for a double-precision 64-bit floating point field.  Present if <code>IndexFieldType</code> specifies the field is of type <code>double</code>. All options are enabled by default.</p>
         pub fn set_double_options(
             mut self,
             input: std::option::Option<crate::model::DoubleOptions>,
@@ -1273,6 +1365,7 @@ pub mod index_field {
             self.literal_options = Some(input);
             self
         }
+        /// <p>Options for literal field.  Present if <code>IndexFieldType</code> specifies the field is of type <code>literal</code>. All options are enabled by default.</p>
         pub fn set_literal_options(
             mut self,
             input: std::option::Option<crate::model::LiteralOptions>,
@@ -1285,6 +1378,7 @@ pub mod index_field {
             self.text_options = Some(input);
             self
         }
+        /// <p>Options for text field.  Present if <code>IndexFieldType</code> specifies the field is of type <code>text</code>. A <code>text</code> field is always searchable. All options are enabled by default.</p>
         pub fn set_text_options(
             mut self,
             input: std::option::Option<crate::model::TextOptions>,
@@ -1297,6 +1391,7 @@ pub mod index_field {
             self.date_options = Some(input);
             self
         }
+        /// <p>Options for a date field. Dates and times are specified in UTC (Coordinated Universal Time) according to IETF RFC3339: yyyy-mm-ddT00:00:00Z.  Present if <code>IndexFieldType</code> specifies the field is of type <code>date</code>. All options are enabled by default.</p>
         pub fn set_date_options(
             mut self,
             input: std::option::Option<crate::model::DateOptions>,
@@ -1309,6 +1404,7 @@ pub mod index_field {
             self.lat_lon_options = Some(input);
             self
         }
+        /// <p>Options for a latlon field. A latlon field contains a location stored as a latitude and longitude value pair. Present if <code>IndexFieldType</code> specifies the field is of type <code>latlon</code>. All options are enabled by default.</p>
         pub fn set_lat_lon_options(
             mut self,
             input: std::option::Option<crate::model::LatLonOptions>,
@@ -1321,6 +1417,7 @@ pub mod index_field {
             self.int_array_options = Some(input);
             self
         }
+        /// <p>Options for a field that contains an array of 64-bit signed integers.  Present if <code>IndexFieldType</code> specifies the field is of type <code>int-array</code>. All options are enabled by default.</p>
         pub fn set_int_array_options(
             mut self,
             input: std::option::Option<crate::model::IntArrayOptions>,
@@ -1333,6 +1430,7 @@ pub mod index_field {
             self.double_array_options = Some(input);
             self
         }
+        /// <p>Options for a field that contains an array of double-precision 64-bit floating point values.  Present if <code>IndexFieldType</code> specifies the field is of type <code>double-array</code>.  All options are enabled by default.</p>
         pub fn set_double_array_options(
             mut self,
             input: std::option::Option<crate::model::DoubleArrayOptions>,
@@ -1345,6 +1443,7 @@ pub mod index_field {
             self.literal_array_options = Some(input);
             self
         }
+        /// <p>Options for a field that contains an array of literal strings.  Present if <code>IndexFieldType</code> specifies the field is of type <code>literal-array</code>. All options are enabled by default.</p>
         pub fn set_literal_array_options(
             mut self,
             input: std::option::Option<crate::model::LiteralArrayOptions>,
@@ -1357,6 +1456,7 @@ pub mod index_field {
             self.text_array_options = Some(input);
             self
         }
+        /// <p>Options for a field that contains an array of text strings.  Present if <code>IndexFieldType</code> specifies the field is of type <code>text-array</code>. A <code>text-array</code> field is always searchable. All options are enabled by default.</p>
         pub fn set_text_array_options(
             mut self,
             input: std::option::Option<crate::model::TextArrayOptions>,
@@ -1369,6 +1469,7 @@ pub mod index_field {
             self.date_array_options = Some(input);
             self
         }
+        /// <p>Options for a field that contains an array of dates.  Present if <code>IndexFieldType</code> specifies the field is of type <code>date-array</code>. All options are enabled by default.</p>
         pub fn set_date_array_options(
             mut self,
             input: std::option::Option<crate::model::DateArrayOptions>,
@@ -1447,6 +1548,7 @@ pub mod date_array_options {
             self.default_value = Some(input.into());
             self
         }
+        /// A value to use for the field if the field isn't specified for a document.
         pub fn set_default_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1459,6 +1561,7 @@ pub mod date_array_options {
             self.source_fields = Some(input.into());
             self
         }
+        /// <p>A list of source fields to map to the field. </p>
         pub fn set_source_fields(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1471,6 +1574,7 @@ pub mod date_array_options {
             self.facet_enabled = Some(input);
             self
         }
+        /// <p>Whether facet information can be returned for the field.</p>
         pub fn set_facet_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.facet_enabled = input;
             self
@@ -1480,6 +1584,7 @@ pub mod date_array_options {
             self.search_enabled = Some(input);
             self
         }
+        /// <p>Whether the contents of the field are searchable.</p>
         pub fn set_search_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.search_enabled = input;
             self
@@ -1489,6 +1594,7 @@ pub mod date_array_options {
             self.return_enabled = Some(input);
             self
         }
+        /// <p>Whether the contents of the field can be returned in the search results.</p>
         pub fn set_return_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.return_enabled = input;
             self
@@ -1556,6 +1662,7 @@ pub mod text_array_options {
             self.default_value = Some(input.into());
             self
         }
+        /// A value to use for the field if the field isn't specified for a document.
         pub fn set_default_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1568,6 +1675,7 @@ pub mod text_array_options {
             self.source_fields = Some(input.into());
             self
         }
+        /// <p>A list of source fields to map to the field. </p>
         pub fn set_source_fields(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1580,6 +1688,7 @@ pub mod text_array_options {
             self.return_enabled = Some(input);
             self
         }
+        /// <p>Whether the contents of the field can be returned in the search results.</p>
         pub fn set_return_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.return_enabled = input;
             self
@@ -1589,6 +1698,7 @@ pub mod text_array_options {
             self.highlight_enabled = Some(input);
             self
         }
+        /// <p>Whether highlights can be returned for the field.</p>
         pub fn set_highlight_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.highlight_enabled = input;
             self
@@ -1598,6 +1708,7 @@ pub mod text_array_options {
             self.analysis_scheme = Some(input.into());
             self
         }
+        /// <p>The name of an analysis scheme for a  <code>text-array</code> field.</p>
         pub fn set_analysis_scheme(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1668,6 +1779,7 @@ pub mod literal_array_options {
             self.default_value = Some(input.into());
             self
         }
+        /// A value to use for the field if the field isn't specified for a document.
         pub fn set_default_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1680,6 +1792,7 @@ pub mod literal_array_options {
             self.source_fields = Some(input.into());
             self
         }
+        /// <p>A list of source fields to map to the field. </p>
         pub fn set_source_fields(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1692,6 +1805,7 @@ pub mod literal_array_options {
             self.facet_enabled = Some(input);
             self
         }
+        /// <p>Whether facet information can be returned for the field.</p>
         pub fn set_facet_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.facet_enabled = input;
             self
@@ -1701,6 +1815,7 @@ pub mod literal_array_options {
             self.search_enabled = Some(input);
             self
         }
+        /// <p>Whether the contents of the field are searchable.</p>
         pub fn set_search_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.search_enabled = input;
             self
@@ -1710,6 +1825,7 @@ pub mod literal_array_options {
             self.return_enabled = Some(input);
             self
         }
+        /// <p>Whether the contents of the field can be returned in the search results.</p>
         pub fn set_return_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.return_enabled = input;
             self
@@ -1777,6 +1893,7 @@ pub mod double_array_options {
             self.default_value = Some(input);
             self
         }
+        /// A value to use for the field if the field isn't specified for a document.
         pub fn set_default_value(mut self, input: std::option::Option<f64>) -> Self {
             self.default_value = input;
             self
@@ -1786,6 +1903,7 @@ pub mod double_array_options {
             self.source_fields = Some(input.into());
             self
         }
+        /// <p>A list of source fields to map to the field. </p>
         pub fn set_source_fields(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1798,6 +1916,7 @@ pub mod double_array_options {
             self.facet_enabled = Some(input);
             self
         }
+        /// <p>Whether facet information can be returned for the field.</p>
         pub fn set_facet_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.facet_enabled = input;
             self
@@ -1807,6 +1926,7 @@ pub mod double_array_options {
             self.search_enabled = Some(input);
             self
         }
+        /// <p>Whether the contents of the field are searchable.</p>
         pub fn set_search_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.search_enabled = input;
             self
@@ -1816,6 +1936,7 @@ pub mod double_array_options {
             self.return_enabled = Some(input);
             self
         }
+        /// <p>Whether the contents of the field can be returned in the search results.</p>
         pub fn set_return_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.return_enabled = input;
             self
@@ -1883,6 +2004,7 @@ pub mod int_array_options {
             self.default_value = Some(input);
             self
         }
+        /// A value to use for the field if the field isn't specified for a document.
         pub fn set_default_value(mut self, input: std::option::Option<i64>) -> Self {
             self.default_value = input;
             self
@@ -1892,6 +2014,7 @@ pub mod int_array_options {
             self.source_fields = Some(input.into());
             self
         }
+        /// <p>A list of source fields to map to the field. </p>
         pub fn set_source_fields(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1904,6 +2027,7 @@ pub mod int_array_options {
             self.facet_enabled = Some(input);
             self
         }
+        /// <p>Whether facet information can be returned for the field.</p>
         pub fn set_facet_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.facet_enabled = input;
             self
@@ -1913,6 +2037,7 @@ pub mod int_array_options {
             self.search_enabled = Some(input);
             self
         }
+        /// <p>Whether the contents of the field are searchable.</p>
         pub fn set_search_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.search_enabled = input;
             self
@@ -1922,6 +2047,7 @@ pub mod int_array_options {
             self.return_enabled = Some(input);
             self
         }
+        /// <p>Whether the contents of the field can be returned in the search results.</p>
         pub fn set_return_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.return_enabled = input;
             self
@@ -2006,6 +2132,7 @@ pub mod lat_lon_options {
             self.default_value = Some(input.into());
             self
         }
+        /// A value to use for the field if the field isn't specified for a document.
         pub fn set_default_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2031,6 +2158,20 @@ pub mod lat_lon_options {
             self.source_field = Some(input.into());
             self
         }
+        /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields.
+        /// A dynamic field's name defines a pattern that begins or ends with a wildcard.
+        /// Any document fields that don't map to a regular index field but do match a  
+        /// dynamic field's pattern are configured with the dynamic field's indexing options.
+        /// </p>
+        /// <p>Regular field names begin with a letter and can contain the following characters:
+        /// a-z (lowercase), 0-9, and _ (underscore).
+        /// Dynamic field names must begin or end with a wildcard (*).
+        /// The wildcard can also be the only character in a dynamic field name.
+        /// Multiple wildcards, and wildcards embedded within a string are not supported.
+        /// </p>
+        /// <p>The name <code>score</code> is reserved and cannot be used as a field name.
+        /// To reference a document's ID, you can use the name <code>_id</code>.
+        /// </p>
         pub fn set_source_field(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source_field = input;
             self
@@ -2040,6 +2181,7 @@ pub mod lat_lon_options {
             self.facet_enabled = Some(input);
             self
         }
+        /// <p>Whether facet information can be returned for the field.</p>
         pub fn set_facet_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.facet_enabled = input;
             self
@@ -2049,6 +2191,7 @@ pub mod lat_lon_options {
             self.search_enabled = Some(input);
             self
         }
+        /// <p>Whether the contents of the field are searchable.</p>
         pub fn set_search_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.search_enabled = input;
             self
@@ -2058,6 +2201,7 @@ pub mod lat_lon_options {
             self.return_enabled = Some(input);
             self
         }
+        /// <p>Whether the contents of the field can be returned in the search results.</p>
         pub fn set_return_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.return_enabled = input;
             self
@@ -2067,6 +2211,7 @@ pub mod lat_lon_options {
             self.sort_enabled = Some(input);
             self
         }
+        /// <p>Whether the field can be used to sort the search results.</p>
         pub fn set_sort_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.sort_enabled = input;
             self
@@ -2152,6 +2297,7 @@ pub mod date_options {
             self.default_value = Some(input.into());
             self
         }
+        /// A value to use for the field if the field isn't specified for a document.
         pub fn set_default_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2177,6 +2323,20 @@ pub mod date_options {
             self.source_field = Some(input.into());
             self
         }
+        /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields.
+        /// A dynamic field's name defines a pattern that begins or ends with a wildcard.
+        /// Any document fields that don't map to a regular index field but do match a  
+        /// dynamic field's pattern are configured with the dynamic field's indexing options.
+        /// </p>
+        /// <p>Regular field names begin with a letter and can contain the following characters:
+        /// a-z (lowercase), 0-9, and _ (underscore).
+        /// Dynamic field names must begin or end with a wildcard (*).
+        /// The wildcard can also be the only character in a dynamic field name.
+        /// Multiple wildcards, and wildcards embedded within a string are not supported.
+        /// </p>
+        /// <p>The name <code>score</code> is reserved and cannot be used as a field name.
+        /// To reference a document's ID, you can use the name <code>_id</code>.
+        /// </p>
         pub fn set_source_field(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source_field = input;
             self
@@ -2186,6 +2346,7 @@ pub mod date_options {
             self.facet_enabled = Some(input);
             self
         }
+        /// <p>Whether facet information can be returned for the field.</p>
         pub fn set_facet_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.facet_enabled = input;
             self
@@ -2195,6 +2356,7 @@ pub mod date_options {
             self.search_enabled = Some(input);
             self
         }
+        /// <p>Whether the contents of the field are searchable.</p>
         pub fn set_search_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.search_enabled = input;
             self
@@ -2204,6 +2366,7 @@ pub mod date_options {
             self.return_enabled = Some(input);
             self
         }
+        /// <p>Whether the contents of the field can be returned in the search results.</p>
         pub fn set_return_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.return_enabled = input;
             self
@@ -2213,6 +2376,7 @@ pub mod date_options {
             self.sort_enabled = Some(input);
             self
         }
+        /// <p>Whether the field can be used to sort the search results.</p>
         pub fn set_sort_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.sort_enabled = input;
             self
@@ -2298,6 +2462,7 @@ pub mod text_options {
             self.default_value = Some(input.into());
             self
         }
+        /// A value to use for the field if the field isn't specified for a document.
         pub fn set_default_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2323,6 +2488,20 @@ pub mod text_options {
             self.source_field = Some(input.into());
             self
         }
+        /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields.
+        /// A dynamic field's name defines a pattern that begins or ends with a wildcard.
+        /// Any document fields that don't map to a regular index field but do match a  
+        /// dynamic field's pattern are configured with the dynamic field's indexing options.
+        /// </p>
+        /// <p>Regular field names begin with a letter and can contain the following characters:
+        /// a-z (lowercase), 0-9, and _ (underscore).
+        /// Dynamic field names must begin or end with a wildcard (*).
+        /// The wildcard can also be the only character in a dynamic field name.
+        /// Multiple wildcards, and wildcards embedded within a string are not supported.
+        /// </p>
+        /// <p>The name <code>score</code> is reserved and cannot be used as a field name.
+        /// To reference a document's ID, you can use the name <code>_id</code>.
+        /// </p>
         pub fn set_source_field(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source_field = input;
             self
@@ -2332,6 +2511,7 @@ pub mod text_options {
             self.return_enabled = Some(input);
             self
         }
+        /// <p>Whether the contents of the field can be returned in the search results.</p>
         pub fn set_return_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.return_enabled = input;
             self
@@ -2341,6 +2521,7 @@ pub mod text_options {
             self.sort_enabled = Some(input);
             self
         }
+        /// <p>Whether the field can be used to sort the search results.</p>
         pub fn set_sort_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.sort_enabled = input;
             self
@@ -2350,6 +2531,7 @@ pub mod text_options {
             self.highlight_enabled = Some(input);
             self
         }
+        /// <p>Whether highlights can be returned for the field.</p>
         pub fn set_highlight_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.highlight_enabled = input;
             self
@@ -2359,6 +2541,7 @@ pub mod text_options {
             self.analysis_scheme = Some(input.into());
             self
         }
+        /// <p>The name of an analysis scheme for a  <code>text</code> field.</p>
         pub fn set_analysis_scheme(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2447,6 +2630,7 @@ pub mod literal_options {
             self.default_value = Some(input.into());
             self
         }
+        /// A value to use for the field if the field isn't specified for a document.
         pub fn set_default_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2472,6 +2656,20 @@ pub mod literal_options {
             self.source_field = Some(input.into());
             self
         }
+        /// <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields.
+        /// A dynamic field's name defines a pattern that begins or ends with a wildcard.
+        /// Any document fields that don't map to a regular index field but do match a  
+        /// dynamic field's pattern are configured with the dynamic field's indexing options.
+        /// </p>
+        /// <p>Regular field names begin with a letter and can contain the following characters:
+        /// a-z (lowercase), 0-9, and _ (underscore).
+        /// Dynamic field names must begin or end with a wildcard (*).
+        /// The wildcard can also be the only character in a dynamic field name.
+        /// Multiple wildcards, and wildcards embedded within a string are not supported.
+        /// </p>
+        /// <p>The name <code>score</code> is reserved and cannot be used as a field name.
+        /// To reference a document's ID, you can use the name <code>_id</code>.
+        /// </p>
         pub fn set_source_field(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source_field = input;
             self
@@ -2481,6 +2679,7 @@ pub mod literal_options {
             self.facet_enabled = Some(input);
             self
         }
+        /// <p>Whether facet information can be returned for the field.</p>
         pub fn set_facet_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.facet_enabled = input;
             self
@@ -2490,6 +2689,7 @@ pub mod literal_options {
             self.search_enabled = Some(input);
             self
         }
+        /// <p>Whether the contents of the field are searchable.</p>
         pub fn set_search_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.search_enabled = input;
             self
@@ -2499,6 +2699,7 @@ pub mod literal_options {
             self.return_enabled = Some(input);
             self
         }
+        /// <p>Whether the contents of the field can be returned in the search results.</p>
         pub fn set_return_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.return_enabled = input;
             self
@@ -2508,6 +2709,7 @@ pub mod literal_options {
             self.sort_enabled = Some(input);
             self
         }
+        /// <p>Whether the field can be used to sort the search results.</p>
         pub fn set_sort_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.sort_enabled = input;
             self
@@ -2580,6 +2782,7 @@ pub mod double_options {
             self.default_value = Some(input);
             self
         }
+        /// <p>A value to use for the field if the field isn't specified for a document. This can be important if you are using the field in an expression and that field is not present in every document.</p>
         pub fn set_default_value(mut self, input: std::option::Option<f64>) -> Self {
             self.default_value = input;
             self
@@ -2589,6 +2792,7 @@ pub mod double_options {
             self.source_field = Some(input.into());
             self
         }
+        /// <p>The name of the source field to map to the field. </p>
         pub fn set_source_field(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source_field = input;
             self
@@ -2598,6 +2802,7 @@ pub mod double_options {
             self.facet_enabled = Some(input);
             self
         }
+        /// <p>Whether facet information can be returned for the field.</p>
         pub fn set_facet_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.facet_enabled = input;
             self
@@ -2607,6 +2812,7 @@ pub mod double_options {
             self.search_enabled = Some(input);
             self
         }
+        /// <p>Whether the contents of the field are searchable.</p>
         pub fn set_search_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.search_enabled = input;
             self
@@ -2616,6 +2822,7 @@ pub mod double_options {
             self.return_enabled = Some(input);
             self
         }
+        /// <p>Whether the contents of the field can be returned in the search results.</p>
         pub fn set_return_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.return_enabled = input;
             self
@@ -2625,6 +2832,7 @@ pub mod double_options {
             self.sort_enabled = Some(input);
             self
         }
+        /// <p>Whether the field can be used to sort the search results.</p>
         pub fn set_sort_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.sort_enabled = input;
             self
@@ -2697,6 +2905,7 @@ pub mod int_options {
             self.default_value = Some(input);
             self
         }
+        /// A value to use for the field if the field isn't specified for a document. This can be important if you are using the field in an expression and that field is not present in every document.
         pub fn set_default_value(mut self, input: std::option::Option<i64>) -> Self {
             self.default_value = input;
             self
@@ -2706,6 +2915,7 @@ pub mod int_options {
             self.source_field = Some(input.into());
             self
         }
+        /// <p>The name of the source field to map to the field. </p>
         pub fn set_source_field(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source_field = input;
             self
@@ -2715,6 +2925,7 @@ pub mod int_options {
             self.facet_enabled = Some(input);
             self
         }
+        /// <p>Whether facet information can be returned for the field.</p>
         pub fn set_facet_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.facet_enabled = input;
             self
@@ -2724,6 +2935,7 @@ pub mod int_options {
             self.search_enabled = Some(input);
             self
         }
+        /// <p>Whether the contents of the field are searchable.</p>
         pub fn set_search_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.search_enabled = input;
             self
@@ -2733,6 +2945,7 @@ pub mod int_options {
             self.return_enabled = Some(input);
             self
         }
+        /// <p>Whether the contents of the field can be returned in the search results.</p>
         pub fn set_return_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.return_enabled = input;
             self
@@ -2742,6 +2955,7 @@ pub mod int_options {
             self.sort_enabled = Some(input);
             self
         }
+        /// <p>Whether the field can be used to sort the search results.</p>
         pub fn set_sort_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.sort_enabled = input;
             self
@@ -2778,16 +2992,27 @@ impl IntOptions {
     std::hash::Hash,
 )]
 pub enum IndexFieldType {
+    #[allow(missing_docs)] // documentation missing in model
     Date,
+    #[allow(missing_docs)] // documentation missing in model
     DateArray,
+    #[allow(missing_docs)] // documentation missing in model
     Double,
+    #[allow(missing_docs)] // documentation missing in model
     DoubleArray,
+    #[allow(missing_docs)] // documentation missing in model
     Int,
+    #[allow(missing_docs)] // documentation missing in model
     IntArray,
+    #[allow(missing_docs)] // documentation missing in model
     Latlon,
+    #[allow(missing_docs)] // documentation missing in model
     Literal,
+    #[allow(missing_docs)] // documentation missing in model
     LiteralArray,
+    #[allow(missing_docs)] // documentation missing in model
     Text,
+    #[allow(missing_docs)] // documentation missing in model
     TextArray,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2818,6 +3043,7 @@ impl std::str::FromStr for IndexFieldType {
     }
 }
 impl IndexFieldType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             IndexFieldType::Date => "date",
@@ -2834,6 +3060,7 @@ impl IndexFieldType {
             IndexFieldType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "date",
@@ -2888,6 +3115,7 @@ pub mod expression_status {
             self.options = Some(input);
             self
         }
+        /// <p>The expression that is evaluated for sorting while processing a search request.</p>
         pub fn set_options(mut self, input: std::option::Option<crate::model::Expression>) -> Self {
             self.options = input;
             self
@@ -2897,6 +3125,7 @@ pub mod expression_status {
             self.status = Some(input);
             self
         }
+        /// <p>The status of domain configuration option.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::OptionStatus>,
@@ -2954,6 +3183,8 @@ pub mod expression {
             self.expression_name = Some(input.into());
             self
         }
+        /// <p>Names must begin with a letter and can contain the following characters:
+        /// a-z (lowercase), 0-9, and _ (underscore).</p>
         pub fn set_expression_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2966,6 +3197,7 @@ pub mod expression {
             self.expression_value = Some(input.into());
             self
         }
+        /// <p>The expression to evaluate for sorting while processing a search request.  The <code>Expression</code> syntax is based on JavaScript expressions. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html" target="_blank">Configuring Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
         pub fn set_expression_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3017,6 +3249,7 @@ pub struct DomainStatus {
     pub search_partition_count: i32,
     /// <p>The number of search instances that are available to process search requests.</p>
     pub search_instance_count: i32,
+    #[allow(missing_docs)] // documentation missing in model
     pub limits: std::option::Option<crate::model::Limits>,
 }
 impl std::fmt::Debug for DomainStatus {
@@ -3064,6 +3297,7 @@ pub mod domain_status {
             self.domain_id = Some(input.into());
             self
         }
+        /// <p>An internally generated unique identifier for a domain.</p>
         pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_id = input;
             self
@@ -3073,6 +3307,7 @@ pub mod domain_status {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -3082,6 +3317,7 @@ pub mod domain_status {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the search domain.  See <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access Management</i> for more information.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -3091,6 +3327,7 @@ pub mod domain_status {
             self.created = Some(input);
             self
         }
+        /// <p>True if the search domain is created. It can take several minutes to initialize a domain when <a>CreateDomain</a> is called. Newly created search domains are returned from <a>DescribeDomains</a> with a false value for Created until domain creation is complete.</p>
         pub fn set_created(mut self, input: std::option::Option<bool>) -> Self {
             self.created = input;
             self
@@ -3100,6 +3337,7 @@ pub mod domain_status {
             self.deleted = Some(input);
             self
         }
+        /// <p>True if the search domain has been deleted.  The system must clean up resources dedicated to the search domain when <a>DeleteDomain</a> is called.  Newly deleted search domains are returned from <a>DescribeDomains</a> with a true value for IsDeleted for several minutes until resource cleanup is complete.</p>
         pub fn set_deleted(mut self, input: std::option::Option<bool>) -> Self {
             self.deleted = input;
             self
@@ -3109,6 +3347,7 @@ pub mod domain_status {
             self.doc_service = Some(input);
             self
         }
+        /// <p>The service endpoint for updating documents in a search domain.</p>
         pub fn set_doc_service(
             mut self,
             input: std::option::Option<crate::model::ServiceEndpoint>,
@@ -3121,6 +3360,7 @@ pub mod domain_status {
             self.search_service = Some(input);
             self
         }
+        /// <p>The service endpoint for requesting search results from a search domain.</p>
         pub fn set_search_service(
             mut self,
             input: std::option::Option<crate::model::ServiceEndpoint>,
@@ -3133,6 +3373,7 @@ pub mod domain_status {
             self.requires_index_documents = Some(input);
             self
         }
+        /// <p>True if <a>IndexDocuments</a> needs to be called to activate the current domain configuration.</p>
         pub fn set_requires_index_documents(mut self, input: std::option::Option<bool>) -> Self {
             self.requires_index_documents = input;
             self
@@ -3142,6 +3383,7 @@ pub mod domain_status {
             self.processing = Some(input);
             self
         }
+        /// <p>True if processing is being done to activate the current domain configuration.</p>
         pub fn set_processing(mut self, input: std::option::Option<bool>) -> Self {
             self.processing = input;
             self
@@ -3151,6 +3393,7 @@ pub mod domain_status {
             self.search_instance_type = Some(input.into());
             self
         }
+        /// <p>The instance type that is being used to process search requests.</p>
         pub fn set_search_instance_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3163,6 +3406,7 @@ pub mod domain_status {
             self.search_partition_count = Some(input);
             self
         }
+        /// <p>The number of partitions across which the search index is spread.</p>
         pub fn set_search_partition_count(mut self, input: std::option::Option<i32>) -> Self {
             self.search_partition_count = input;
             self
@@ -3172,14 +3416,17 @@ pub mod domain_status {
             self.search_instance_count = Some(input);
             self
         }
+        /// <p>The number of search instances that are available to process search requests.</p>
         pub fn set_search_instance_count(mut self, input: std::option::Option<i32>) -> Self {
             self.search_instance_count = input;
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
         pub fn limits(mut self, input: crate::model::Limits) -> Self {
             self.limits = Some(input);
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
         pub fn set_limits(mut self, input: std::option::Option<crate::model::Limits>) -> Self {
             self.limits = input;
             self
@@ -3211,10 +3458,13 @@ impl DomainStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Limits {
+    #[allow(missing_docs)] // documentation missing in model
     pub maximum_replication_count: i32,
+    #[allow(missing_docs)] // documentation missing in model
     pub maximum_partition_count: i32,
 }
 impl std::fmt::Debug for Limits {
@@ -3235,18 +3485,22 @@ pub mod limits {
         pub(crate) maximum_partition_count: std::option::Option<i32>,
     }
     impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
         pub fn maximum_replication_count(mut self, input: i32) -> Self {
             self.maximum_replication_count = Some(input);
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
         pub fn set_maximum_replication_count(mut self, input: std::option::Option<i32>) -> Self {
             self.maximum_replication_count = input;
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
         pub fn maximum_partition_count(mut self, input: i32) -> Self {
             self.maximum_partition_count = Some(input);
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
         pub fn set_maximum_partition_count(mut self, input: std::option::Option<i32>) -> Self {
             self.maximum_partition_count = input;
             self
@@ -3295,6 +3549,7 @@ pub mod service_endpoint {
             self.endpoint = Some(input.into());
             self
         }
+        /// <p>The endpoint to which service requests can be submitted. For example, <code>search-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.cloudsearch.amazonaws.com</code> or <code>doc-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.cloudsearch.amazonaws.com</code>.</p>
         pub fn set_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.endpoint = input;
             self
@@ -3346,6 +3601,7 @@ pub mod analysis_scheme_status {
             self.options = Some(input);
             self
         }
+        /// <p>Configuration information for an analysis scheme. Each analysis scheme has a unique name and specifies the language of the text to be processed. The following options can be configured for an analysis scheme: <code>Synonyms</code>, <code>Stopwords</code>, <code>StemmingDictionary</code>, <code>JapaneseTokenizationDictionary</code> and <code>AlgorithmicStemming</code>.</p>
         pub fn set_options(
             mut self,
             input: std::option::Option<crate::model::AnalysisScheme>,
@@ -3358,6 +3614,7 @@ pub mod analysis_scheme_status {
             self.status = Some(input);
             self
         }
+        /// <p>The status of domain configuration option.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::OptionStatus>,
@@ -3420,6 +3677,8 @@ pub mod analysis_scheme {
             self.analysis_scheme_name = Some(input.into());
             self
         }
+        /// <p>Names must begin with a letter and can contain the following characters:
+        /// a-z (lowercase), 0-9, and _ (underscore).</p>
         pub fn set_analysis_scheme_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3435,6 +3694,7 @@ pub mod analysis_scheme {
             self.analysis_scheme_language = Some(input);
             self
         }
+        /// <p>An <a href="http://tools.ietf.org/html/rfc4646" target="_blank">IETF RFC 4646</a> language code or <code>mul</code>  for multiple languages.</p>
         pub fn set_analysis_scheme_language(
             mut self,
             input: std::option::Option<crate::model::AnalysisSchemeLanguage>,
@@ -3447,6 +3707,7 @@ pub mod analysis_scheme {
             self.analysis_options = Some(input);
             self
         }
+        /// <p>Synonyms, stopwords, and stemming options for an analysis scheme. Includes tokenization dictionary for Japanese.</p>
         pub fn set_analysis_options(
             mut self,
             input: std::option::Option<crate::model::AnalysisOptions>,
@@ -3518,6 +3779,7 @@ pub mod analysis_options {
             self.synonyms = Some(input.into());
             self
         }
+        /// <p>A JSON object that defines synonym groups and aliases. A synonym group is an array of arrays, where each sub-array is a group of terms where each term in the group is considered a synonym of every other term in the group. The aliases value is an object that contains a collection of string:value pairs where the string specifies a term and the array of values specifies each of the aliases for that term. An alias is considered a synonym of the specified term, but the term is not considered a synonym of the alias. For more information about specifying synonyms, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html#synonyms">Synonyms</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
         pub fn set_synonyms(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.synonyms = input;
             self
@@ -3527,6 +3789,7 @@ pub mod analysis_options {
             self.stopwords = Some(input.into());
             self
         }
+        /// <p>A  JSON array of terms to ignore during indexing and searching. For example, <code>["a", "an", "the", "of"]</code>. The stopwords dictionary must explicitly list each word you want to ignore. Wildcards and regular expressions are not supported. </p>
         pub fn set_stopwords(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stopwords = input;
             self
@@ -3536,6 +3799,7 @@ pub mod analysis_options {
             self.stemming_dictionary = Some(input.into());
             self
         }
+        /// <p>A JSON object that contains a collection of string:value pairs that each map a term to its stem. For example, <code>{"term1": "stem1", "term2": "stem2", "term3": "stem3"}</code>. The stemming dictionary is applied in addition to any algorithmic stemming. This enables you to override the results of the algorithmic stemming to correct specific cases of overstemming or understemming. The maximum size of a stemming dictionary is 500 KB.</p>
         pub fn set_stemming_dictionary(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3551,6 +3815,7 @@ pub mod analysis_options {
             self.japanese_tokenization_dictionary = Some(input.into());
             self
         }
+        /// <p>A JSON array that contains a collection of terms, tokens, readings and part of speech for Japanese Tokenizaiton. The Japanese tokenization dictionary enables you to override the default tokenization for selected terms. This is only valid for Japanese language fields.</p>
         pub fn set_japanese_tokenization_dictionary(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3563,6 +3828,7 @@ pub mod analysis_options {
             self.algorithmic_stemming = Some(input);
             self
         }
+        /// <p>The level of algorithmic stemming to perform: <code>none</code>, <code>minimal</code>, <code>light</code>, or <code>full</code>. The available levels vary depending on the language. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/text-processing.html#text-processing-settings" target="_blank">Language Specific Text Processing Settings</a> in the <i>Amazon CloudSearch Developer Guide</i> </p>
         pub fn set_algorithmic_stemming(
             mut self,
             input: std::option::Option<crate::model::AlgorithmicStemming>,
@@ -3589,6 +3855,7 @@ impl AnalysisOptions {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3600,9 +3867,13 @@ impl AnalysisOptions {
     std::hash::Hash,
 )]
 pub enum AlgorithmicStemming {
+    #[allow(missing_docs)] // documentation missing in model
     Full,
+    #[allow(missing_docs)] // documentation missing in model
     Light,
+    #[allow(missing_docs)] // documentation missing in model
     Minimal,
+    #[allow(missing_docs)] // documentation missing in model
     None,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3626,6 +3897,7 @@ impl std::str::FromStr for AlgorithmicStemming {
     }
 }
 impl AlgorithmicStemming {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AlgorithmicStemming::Full => "full",
@@ -3635,6 +3907,7 @@ impl AlgorithmicStemming {
             AlgorithmicStemming::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["full", "light", "minimal", "none"]
     }
@@ -3657,40 +3930,75 @@ impl AsRef<str> for AlgorithmicStemming {
     std::hash::Hash,
 )]
 pub enum AnalysisSchemeLanguage {
+    #[allow(missing_docs)] // documentation missing in model
     Ar,
+    #[allow(missing_docs)] // documentation missing in model
     Bg,
+    #[allow(missing_docs)] // documentation missing in model
     Ca,
+    #[allow(missing_docs)] // documentation missing in model
     Cs,
+    #[allow(missing_docs)] // documentation missing in model
     Da,
+    #[allow(missing_docs)] // documentation missing in model
     De,
+    #[allow(missing_docs)] // documentation missing in model
     El,
+    #[allow(missing_docs)] // documentation missing in model
     En,
+    #[allow(missing_docs)] // documentation missing in model
     Es,
+    #[allow(missing_docs)] // documentation missing in model
     Eu,
+    #[allow(missing_docs)] // documentation missing in model
     Fa,
+    #[allow(missing_docs)] // documentation missing in model
     Fi,
+    #[allow(missing_docs)] // documentation missing in model
     Fr,
+    #[allow(missing_docs)] // documentation missing in model
     Ga,
+    #[allow(missing_docs)] // documentation missing in model
     Gl,
+    #[allow(missing_docs)] // documentation missing in model
     He,
+    #[allow(missing_docs)] // documentation missing in model
     Hi,
+    #[allow(missing_docs)] // documentation missing in model
     Hu,
+    #[allow(missing_docs)] // documentation missing in model
     Hy,
+    #[allow(missing_docs)] // documentation missing in model
     Id,
+    #[allow(missing_docs)] // documentation missing in model
     It,
+    #[allow(missing_docs)] // documentation missing in model
     Ja,
+    #[allow(missing_docs)] // documentation missing in model
     Ko,
+    #[allow(missing_docs)] // documentation missing in model
     Lv,
+    #[allow(missing_docs)] // documentation missing in model
     Mul,
+    #[allow(missing_docs)] // documentation missing in model
     Nl,
+    #[allow(missing_docs)] // documentation missing in model
     No,
+    #[allow(missing_docs)] // documentation missing in model
     Pt,
+    #[allow(missing_docs)] // documentation missing in model
     Ro,
+    #[allow(missing_docs)] // documentation missing in model
     Ru,
+    #[allow(missing_docs)] // documentation missing in model
     Sv,
+    #[allow(missing_docs)] // documentation missing in model
     Th,
+    #[allow(missing_docs)] // documentation missing in model
     Tr,
+    #[allow(missing_docs)] // documentation missing in model
     ZhHans,
+    #[allow(missing_docs)] // documentation missing in model
     ZhHant,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3745,6 +4053,7 @@ impl std::str::FromStr for AnalysisSchemeLanguage {
     }
 }
 impl AnalysisSchemeLanguage {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AnalysisSchemeLanguage::Ar => "ar",
@@ -3785,6 +4094,7 @@ impl AnalysisSchemeLanguage {
             AnalysisSchemeLanguage::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ar", "bg", "ca", "cs", "da", "de", "el", "en", "es", "eu", "fa", "fi", "fr", "ga",

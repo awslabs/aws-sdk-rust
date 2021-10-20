@@ -43,16 +43,26 @@ pub mod vpc_configuration {
             self.vpc_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Amazon VPC connected to the infrastructure where your provider type is
+        /// installed.</p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.vpc_id = input;
             self
         }
+        /// Appends an item to `subnet_ids`.
+        ///
+        /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
+        ///
+        /// <p>The ID of the subnet or subnets associated with the Amazon VPC connected to the
+        /// infrastructure where your provider type is installed.</p>
         pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnet_ids.unwrap_or_default();
             v.push(input.into());
             self.subnet_ids = Some(v);
             self
         }
+        /// <p>The ID of the subnet or subnets associated with the Amazon VPC connected to the
+        /// infrastructure where your provider type is installed.</p>
         pub fn set_subnet_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -60,12 +70,20 @@ pub mod vpc_configuration {
             self.subnet_ids = input;
             self
         }
+        /// Appends an item to `security_group_ids`.
+        ///
+        /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
+        ///
+        /// <p>The ID of the security group or security groups associated with the Amazon VPC connected
+        /// to the infrastructure where your provider type is installed.</p>
         pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_ids.unwrap_or_default();
             v.push(input.into());
             self.security_group_ids = Some(v);
             self
         }
+        /// <p>The ID of the security group or security groups associated with the Amazon VPC connected
+        /// to the infrastructure where your provider type is installed.</p>
         pub fn set_security_group_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -78,6 +96,7 @@ pub mod vpc_configuration {
             self.tls_certificate = Some(input.into());
             self
         }
+        /// <p>The value of the Transport Layer Security (TLS) certificate associated with the infrastructure where your provider type is installed.</p>
         pub fn set_tls_certificate(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -136,6 +155,7 @@ pub mod tag {
             self.key = Some(input.into());
             self
         }
+        /// <p>The tag's key.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -145,6 +165,7 @@ pub mod tag {
             self.value = Some(input.into());
             self
         }
+        /// <p>The tag's value.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -225,6 +246,7 @@ pub mod host {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the host.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -234,6 +256,7 @@ pub mod host {
             self.host_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the host.</p>
         pub fn set_host_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.host_arn = input;
             self
@@ -245,6 +268,9 @@ pub mod host {
             self.provider_type = Some(input);
             self
         }
+        /// <p>The name of the installed provider to be associated with your connection. The host
+        /// resource represents the infrastructure where your provider type is installed. The valid
+        /// provider type is GitHub Enterprise Server.</p>
         pub fn set_provider_type(
             mut self,
             input: std::option::Option<crate::model::ProviderType>,
@@ -257,6 +283,7 @@ pub mod host {
             self.provider_endpoint = Some(input.into());
             self
         }
+        /// <p>The endpoint of the infrastructure where your provider type is installed.</p>
         pub fn set_provider_endpoint(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -269,6 +296,7 @@ pub mod host {
             self.vpc_configuration = Some(input);
             self
         }
+        /// <p>The VPC configuration provisioned for the host.</p>
         pub fn set_vpc_configuration(
             mut self,
             input: std::option::Option<crate::model::VpcConfiguration>,
@@ -281,6 +309,7 @@ pub mod host {
             self.status = Some(input.into());
             self
         }
+        /// <p>The status of the host, such as PENDING, AVAILABLE, VPC_CONFIG_DELETING, VPC_CONFIG_INITIALIZING, and VPC_CONFIG_FAILED_INITIALIZATION.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -290,6 +319,7 @@ pub mod host {
             self.status_message = Some(input.into());
             self
         }
+        /// <p>The status description for the host.</p>
         pub fn set_status_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -318,6 +348,7 @@ impl Host {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -329,8 +360,11 @@ impl Host {
     std::hash::Hash,
 )]
 pub enum ProviderType {
+    #[allow(missing_docs)] // documentation missing in model
     Bitbucket,
+    #[allow(missing_docs)] // documentation missing in model
     Github,
+    #[allow(missing_docs)] // documentation missing in model
     GithubEnterpriseServer,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -353,6 +387,7 @@ impl std::str::FromStr for ProviderType {
     }
 }
 impl ProviderType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ProviderType::Bitbucket => "Bitbucket",
@@ -361,6 +396,7 @@ impl ProviderType {
             ProviderType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Bitbucket", "GitHub", "GitHubEnterpriseServer"]
     }
@@ -427,6 +463,7 @@ pub mod connection {
             self.connection_name = Some(input.into());
             self
         }
+        /// <p>The name of the connection. Connection names must be unique in an AWS user account.</p>
         pub fn set_connection_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -443,6 +480,11 @@ pub mod connection {
             self.connection_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the connection. The ARN is used as the connection
+        /// reference when the connection is shared between AWS services.</p>
+        /// <note>
+        /// <p>The ARN is never reused if the connection is deleted.</p>
+        /// </note>
         pub fn set_connection_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -456,6 +498,8 @@ pub mod connection {
             self.provider_type = Some(input);
             self
         }
+        /// <p>The name of the external provider where your third-party code repository is
+        /// configured.</p>
         pub fn set_provider_type(
             mut self,
             input: std::option::Option<crate::model::ProviderType>,
@@ -469,6 +513,8 @@ pub mod connection {
             self.owner_account_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the external provider where your third-party code repository is configured.
+        /// For Bitbucket, this is the account ID of the owner of the Bitbucket repository.</p>
         pub fn set_owner_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -481,6 +527,7 @@ pub mod connection {
             self.connection_status = Some(input);
             self
         }
+        /// <p>The current status of the connection. </p>
         pub fn set_connection_status(
             mut self,
             input: std::option::Option<crate::model::ConnectionStatus>,
@@ -493,6 +540,7 @@ pub mod connection {
             self.host_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the host associated with the connection.</p>
         pub fn set_host_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.host_arn = input;
             self
@@ -517,6 +565,7 @@ impl Connection {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -528,8 +577,11 @@ impl Connection {
     std::hash::Hash,
 )]
 pub enum ConnectionStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Available,
+    #[allow(missing_docs)] // documentation missing in model
     Error,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -552,6 +604,7 @@ impl std::str::FromStr for ConnectionStatus {
     }
 }
 impl ConnectionStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ConnectionStatus::Available => "AVAILABLE",
@@ -560,6 +613,7 @@ impl ConnectionStatus {
             ConnectionStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AVAILABLE", "ERROR", "PENDING"]
     }

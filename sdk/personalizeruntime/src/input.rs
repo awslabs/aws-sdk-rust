@@ -24,16 +24,26 @@ pub mod get_personalized_ranking_input {
             self.campaign_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the campaign to use for generating the personalized
+        /// ranking.</p>
         pub fn set_campaign_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.campaign_arn = input;
             self
         }
+        /// Appends an item to `input_list`.
+        ///
+        /// To override the contents of this collection use [`set_input_list`](Self::set_input_list).
+        ///
+        /// <p>A list of items (by <code>itemId</code>) to rank. If an item was not included in the training dataset,
+        /// the item is appended to the end of the reranked list. The maximum is 500.</p>
         pub fn input_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.input_list.unwrap_or_default();
             v.push(input.into());
             self.input_list = Some(v);
             self
         }
+        /// <p>A list of items (by <code>itemId</code>) to rank. If an item was not included in the training dataset,
+        /// the item is appended to the end of the reranked list. The maximum is 500.</p>
         pub fn set_input_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -46,10 +56,18 @@ pub mod get_personalized_ranking_input {
             self.user_id = Some(input.into());
             self
         }
+        /// <p>The user for which you want the campaign to provide a personalized ranking.</p>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_id = input;
             self
         }
+        /// Adds a key-value pair to `context`.
+        ///
+        /// To override the contents of this collection use [`set_context`](Self::set_context).
+        ///
+        /// <p>The contextual metadata to use when getting recommendations. Contextual metadata includes
+        /// any interaction information that might be relevant when getting a user's recommendations, such
+        /// as the user's current location or device type.</p>
         pub fn context(
             mut self,
             k: impl Into<std::string::String>,
@@ -60,6 +78,9 @@ pub mod get_personalized_ranking_input {
             self.context = Some(hash_map);
             self
         }
+        /// <p>The contextual metadata to use when getting recommendations. Contextual metadata includes
+        /// any interaction information that might be relevant when getting a user's recommendations, such
+        /// as the user's current location or device type.</p>
         pub fn set_context(
             mut self,
             input: std::option::Option<
@@ -76,10 +97,27 @@ pub mod get_personalized_ranking_input {
             self.filter_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of a filter you created to include items or exclude items from recommendations for a given user.
+        /// For more information, see
+        /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering Recommendations</a>.</p>
         pub fn set_filter_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.filter_arn = input;
             self
         }
+        /// Adds a key-value pair to `filter_values`.
+        ///
+        /// To override the contents of this collection use [`set_filter_values`](Self::set_filter_values).
+        ///
+        /// <p>The values to use when filtering recommendations. For each placeholder parameter in your filter expression, provide the parameter name (in matching case)
+        /// as a key and the filter value(s) as the corresponding value. Separate multiple values for one parameter with a comma.
+        /// </p>
+        /// <p>For filter expressions that use an <code>INCLUDE</code> element to include items,
+        /// you must provide values for all parameters that are defined in the expression. For
+        /// filters with expressions that use an <code>EXCLUDE</code> element to exclude items, you
+        /// can omit the <code>filter-values</code>.In this case, Amazon Personalize doesn't use that portion of
+        /// the expression to filter recommendations.</p>
+        /// <p>For more information, see
+        /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering Recommendations</a>.</p>
         pub fn filter_values(
             mut self,
             k: impl Into<std::string::String>,
@@ -90,6 +128,16 @@ pub mod get_personalized_ranking_input {
             self.filter_values = Some(hash_map);
             self
         }
+        /// <p>The values to use when filtering recommendations. For each placeholder parameter in your filter expression, provide the parameter name (in matching case)
+        /// as a key and the filter value(s) as the corresponding value. Separate multiple values for one parameter with a comma.
+        /// </p>
+        /// <p>For filter expressions that use an <code>INCLUDE</code> element to include items,
+        /// you must provide values for all parameters that are defined in the expression. For
+        /// filters with expressions that use an <code>EXCLUDE</code> element to exclude items, you
+        /// can omit the <code>filter-values</code>.In this case, Amazon Personalize doesn't use that portion of
+        /// the expression to filter recommendations.</p>
+        /// <p>For more information, see
+        /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering Recommendations</a>.</p>
         pub fn set_filter_values(
             mut self,
             input: std::option::Option<
@@ -104,7 +152,7 @@ pub mod get_personalized_ranking_input {
             self,
         ) -> std::result::Result<
             crate::input::GetPersonalizedRankingInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetPersonalizedRankingInput {
                 campaign_arn: self.campaign_arn,
@@ -128,16 +176,16 @@ impl GetPersonalizedRankingInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetPersonalizedRanking,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetPersonalizedRankingInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/personalize-ranking").expect("formatting should succeed");
             Ok(())
         }
@@ -145,7 +193,7 @@ impl GetPersonalizedRankingInput {
         fn update_http_builder(
             input: &crate::input::GetPersonalizedRankingInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -154,27 +202,29 @@ impl GetPersonalizedRankingInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetPersonalizedRankingInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_personalized_ranking(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -197,15 +247,15 @@ impl GetPersonalizedRankingInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetPersonalizedRanking::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetPersonalizedRanking",
             "personalizeruntime",
         ));
@@ -214,10 +264,10 @@ impl GetPersonalizedRankingInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -255,6 +305,7 @@ pub mod get_recommendations_input {
             self.campaign_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the campaign to use for getting recommendations.</p>
         pub fn set_campaign_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.campaign_arn = input;
             self
@@ -265,6 +316,8 @@ pub mod get_recommendations_input {
             self.item_id = Some(input.into());
             self
         }
+        /// <p>The item ID to provide recommendations for.</p>
+        /// <p>Required for <code>RELATED_ITEMS</code> recipe type.</p>
         pub fn set_item_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.item_id = input;
             self
@@ -275,6 +328,8 @@ pub mod get_recommendations_input {
             self.user_id = Some(input.into());
             self
         }
+        /// <p>The user ID to provide recommendations for.</p>
+        /// <p>Required for <code>USER_PERSONALIZATION</code> recipe type.</p>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_id = input;
             self
@@ -284,10 +339,18 @@ pub mod get_recommendations_input {
             self.num_results = Some(input);
             self
         }
+        /// <p>The number of results to return. The default is 25. The maximum is 500.</p>
         pub fn set_num_results(mut self, input: std::option::Option<i32>) -> Self {
             self.num_results = input;
             self
         }
+        /// Adds a key-value pair to `context`.
+        ///
+        /// To override the contents of this collection use [`set_context`](Self::set_context).
+        ///
+        /// <p>The contextual metadata to use when getting recommendations. Contextual metadata includes
+        /// any interaction information that might be relevant when getting a user's recommendations, such
+        /// as the user's current location or device type.</p>
         pub fn context(
             mut self,
             k: impl Into<std::string::String>,
@@ -298,6 +361,9 @@ pub mod get_recommendations_input {
             self.context = Some(hash_map);
             self
         }
+        /// <p>The contextual metadata to use when getting recommendations. Contextual metadata includes
+        /// any interaction information that might be relevant when getting a user's recommendations, such
+        /// as the user's current location or device type.</p>
         pub fn set_context(
             mut self,
             input: std::option::Option<
@@ -314,10 +380,27 @@ pub mod get_recommendations_input {
             self.filter_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the filter to apply to the returned recommendations. For more information, see
+        /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering Recommendations</a>.</p>
+        /// <p>When using this parameter, be sure the filter resource is <code>ACTIVE</code>.</p>
         pub fn set_filter_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.filter_arn = input;
             self
         }
+        /// Adds a key-value pair to `filter_values`.
+        ///
+        /// To override the contents of this collection use [`set_filter_values`](Self::set_filter_values).
+        ///
+        /// <p>The values to use when filtering recommendations. For each placeholder parameter in your filter expression, provide the parameter name (in matching case)
+        /// as a key and the filter value(s) as the corresponding value. Separate multiple values for one parameter with a comma.
+        /// </p>
+        /// <p>For filter expressions that use an <code>INCLUDE</code> element to include items,
+        /// you must provide values for all parameters that are defined in the expression. For
+        /// filters with expressions that use an <code>EXCLUDE</code> element to exclude items, you
+        /// can omit the <code>filter-values</code>.In this case, Amazon Personalize doesn't use that portion of
+        /// the expression to filter recommendations.</p>
+        /// <p>For more information, see
+        /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering Recommendations</a>.</p>
         pub fn filter_values(
             mut self,
             k: impl Into<std::string::String>,
@@ -328,6 +411,16 @@ pub mod get_recommendations_input {
             self.filter_values = Some(hash_map);
             self
         }
+        /// <p>The values to use when filtering recommendations. For each placeholder parameter in your filter expression, provide the parameter name (in matching case)
+        /// as a key and the filter value(s) as the corresponding value. Separate multiple values for one parameter with a comma.
+        /// </p>
+        /// <p>For filter expressions that use an <code>INCLUDE</code> element to include items,
+        /// you must provide values for all parameters that are defined in the expression. For
+        /// filters with expressions that use an <code>EXCLUDE</code> element to exclude items, you
+        /// can omit the <code>filter-values</code>.In this case, Amazon Personalize doesn't use that portion of
+        /// the expression to filter recommendations.</p>
+        /// <p>For more information, see
+        /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering Recommendations</a>.</p>
         pub fn set_filter_values(
             mut self,
             input: std::option::Option<
@@ -342,7 +435,7 @@ pub mod get_recommendations_input {
             self,
         ) -> std::result::Result<
             crate::input::GetRecommendationsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetRecommendationsInput {
                 campaign_arn: self.campaign_arn,
@@ -367,16 +460,16 @@ impl GetRecommendationsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetRecommendations,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetRecommendationsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/recommendations").expect("formatting should succeed");
             Ok(())
         }
@@ -384,7 +477,7 @@ impl GetRecommendationsInput {
         fn update_http_builder(
             input: &crate::input::GetRecommendationsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -393,27 +486,27 @@ impl GetRecommendationsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetRecommendationsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_recommendations(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -436,15 +529,15 @@ impl GetRecommendationsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetRecommendations::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetRecommendations",
             "personalizeruntime",
         ));
@@ -453,10 +546,10 @@ impl GetRecommendationsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -470,6 +563,7 @@ impl GetRecommendationsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRecommendationsInput {
@@ -519,6 +613,7 @@ impl std::fmt::Debug for GetRecommendationsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPersonalizedRankingInput {

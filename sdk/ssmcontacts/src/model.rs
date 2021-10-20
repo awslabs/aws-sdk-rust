@@ -31,6 +31,7 @@ pub mod validation_exception_field {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the field that caused the exception.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -40,6 +41,7 @@ pub mod validation_exception_field {
             self.message = Some(input.into());
             self
         }
+        /// <p>Information about what caused the field to cause an exception.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -60,6 +62,7 @@ impl ValidationExceptionField {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -71,9 +74,13 @@ impl ValidationExceptionField {
     std::hash::Hash,
 )]
 pub enum ValidationExceptionReason {
+    #[allow(missing_docs)] // documentation missing in model
     CannotParse,
+    #[allow(missing_docs)] // documentation missing in model
     FieldValidationFailed,
+    #[allow(missing_docs)] // documentation missing in model
     Other,
+    #[allow(missing_docs)] // documentation missing in model
     UnknownOperation,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -97,6 +104,7 @@ impl std::str::FromStr for ValidationExceptionReason {
     }
 }
 impl ValidationExceptionReason {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ValidationExceptionReason::CannotParse => "CANNOT_PARSE",
@@ -106,6 +114,7 @@ impl ValidationExceptionReason {
             ValidationExceptionReason::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CANNOT_PARSE",
@@ -173,6 +182,19 @@ pub mod contact_channel_address {
             self.simple_address = Some(input.into());
             self
         }
+        /// <p>The format is dependent on the type of the contact channel. The following are the
+        /// expected formats:</p>
+        /// <ul>
+        /// <li>
+        /// <p>SMS - '+' followed by the country code and phone number</p>
+        /// </li>
+        /// <li>
+        /// <p>VOICE - '+' followed by the country code and phone number</p>
+        /// </li>
+        /// <li>
+        /// <p>EMAIL - any standard email format</p>
+        /// </li>
+        /// </ul>
         pub fn set_simple_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -220,12 +242,20 @@ pub mod plan {
         pub(crate) stages: std::option::Option<std::vec::Vec<crate::model::Stage>>,
     }
     impl Builder {
+        /// Appends an item to `stages`.
+        ///
+        /// To override the contents of this collection use [`set_stages`](Self::set_stages).
+        ///
+        /// <p>A list of stages that the escalation plan or engagement plan uses to engage contacts and
+        /// contact methods.</p>
         pub fn stages(mut self, input: impl Into<crate::model::Stage>) -> Self {
             let mut v = self.stages.unwrap_or_default();
             v.push(input.into());
             self.stages = Some(v);
             self
         }
+        /// <p>A list of stages that the escalation plan or engagement plan uses to engage contacts and
+        /// contact methods.</p>
         pub fn set_stages(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Stage>>,
@@ -284,16 +314,26 @@ pub mod stage {
             self.duration_in_minutes = Some(input);
             self
         }
+        /// <p>The time to wait until beginning the next stage. The duration can only be set to 0 if a
+        /// target is specified.</p>
         pub fn set_duration_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.duration_in_minutes = input;
             self
         }
+        /// Appends an item to `targets`.
+        ///
+        /// To override the contents of this collection use [`set_targets`](Self::set_targets).
+        ///
+        /// <p>The contacts or contact methods that the escalation plan or engagement plan is
+        /// engaging.</p>
         pub fn targets(mut self, input: impl Into<crate::model::Target>) -> Self {
             let mut v = self.targets.unwrap_or_default();
             v.push(input.into());
             self.targets = Some(v);
             self
         }
+        /// <p>The contacts or contact methods that the escalation plan or engagement plan is
+        /// engaging.</p>
         pub fn set_targets(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Target>>,
@@ -349,6 +389,7 @@ pub mod target {
             self.channel_target_info = Some(input);
             self
         }
+        /// <p>Information about the contact channel Incident Manager is engaging.</p>
         pub fn set_channel_target_info(
             mut self,
             input: std::option::Option<crate::model::ChannelTargetInfo>,
@@ -361,6 +402,7 @@ pub mod target {
             self.contact_target_info = Some(input);
             self
         }
+        /// <p>Information about the contact that Incident Manager is engaging.</p>
         pub fn set_contact_target_info(
             mut self,
             input: std::option::Option<crate::model::ContactTargetInfo>,
@@ -417,6 +459,7 @@ pub mod contact_target_info {
             self.contact_id = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the contact.</p>
         pub fn set_contact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.contact_id = input;
             self
@@ -427,6 +470,8 @@ pub mod contact_target_info {
             self.is_essential = Some(input);
             self
         }
+        /// <p>A Boolean value determining if the contact's acknowledgement stops the progress of
+        /// stages in the plan.</p>
         pub fn set_is_essential(mut self, input: std::option::Option<bool>) -> Self {
             self.is_essential = input;
             self
@@ -481,6 +526,7 @@ pub mod channel_target_info {
             self.contact_channel_id = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
         pub fn set_contact_channel_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -494,6 +540,8 @@ pub mod channel_target_info {
             self.retry_interval_in_minutes = Some(input);
             self
         }
+        /// <p>The number of minutes to wait to retry sending engagement in the case the engagement
+        /// initially fails.</p>
         pub fn set_retry_interval_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.retry_interval_in_minutes = input;
             self
@@ -550,6 +598,9 @@ pub mod tag {
             self.key = Some(input.into());
             self
         }
+        /// <p>Name of the
+        /// object
+        /// key.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -559,6 +610,7 @@ pub mod tag {
             self.value = Some(input.into());
             self
         }
+        /// <p>Value of the tag.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -594,11 +646,11 @@ pub struct Page {
     /// <p>The ARN of the incident that's engaging the contact channel.</p>
     pub incident_id: std::option::Option<std::string::String>,
     /// <p>The time that Incident Manager engaged the contact channel.</p>
-    pub sent_time: std::option::Option<smithy_types::Instant>,
+    pub sent_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time the message was delivered to the contact channel.</p>
-    pub delivery_time: std::option::Option<smithy_types::Instant>,
+    pub delivery_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time that the contact channel acknowledged engagement.</p>
-    pub read_time: std::option::Option<smithy_types::Instant>,
+    pub read_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for Page {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -625,9 +677,9 @@ pub mod page {
         pub(crate) contact_arn: std::option::Option<std::string::String>,
         pub(crate) sender: std::option::Option<std::string::String>,
         pub(crate) incident_id: std::option::Option<std::string::String>,
-        pub(crate) sent_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) delivery_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) read_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) sent_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) delivery_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) read_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the page to the contact channel.</p>
@@ -635,6 +687,7 @@ pub mod page {
             self.page_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the page to the contact channel.</p>
         pub fn set_page_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.page_arn = input;
             self
@@ -644,6 +697,7 @@ pub mod page {
             self.engagement_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the engagement that this page is part of.</p>
         pub fn set_engagement_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -656,6 +710,7 @@ pub mod page {
             self.contact_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the contact that Incident Manager is engaging.</p>
         pub fn set_contact_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.contact_arn = input;
             self
@@ -665,6 +720,7 @@ pub mod page {
             self.sender = Some(input.into());
             self
         }
+        /// <p>The user that started the engagement.</p>
         pub fn set_sender(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.sender = input;
             self
@@ -674,37 +730,47 @@ pub mod page {
             self.incident_id = Some(input.into());
             self
         }
+        /// <p>The ARN of the incident that's engaging the contact channel.</p>
         pub fn set_incident_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.incident_id = input;
             self
         }
         /// <p>The time that Incident Manager engaged the contact channel.</p>
-        pub fn sent_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn sent_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.sent_time = Some(input);
             self
         }
-        pub fn set_sent_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time that Incident Manager engaged the contact channel.</p>
+        pub fn set_sent_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.sent_time = input;
             self
         }
         /// <p>The time the message was delivered to the contact channel.</p>
-        pub fn delivery_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn delivery_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.delivery_time = Some(input);
             self
         }
+        /// <p>The time the message was delivered to the contact channel.</p>
         pub fn set_delivery_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.delivery_time = input;
             self
         }
         /// <p>The time that the contact channel acknowledged engagement.</p>
-        pub fn read_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn read_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.read_time = Some(input);
             self
         }
-        pub fn set_read_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time that the contact channel acknowledged engagement.</p>
+        pub fn set_read_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.read_time = input;
             self
         }
@@ -743,7 +809,7 @@ pub struct Receipt {
     pub receipt_info: std::option::Option<std::string::String>,
     /// <p>The time receipt was <code>SENT</code>, <code>DELIVERED</code>, or
     /// <code>READ</code>.</p>
-    pub receipt_time: std::option::Option<smithy_types::Instant>,
+    pub receipt_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for Receipt {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -764,7 +830,7 @@ pub mod receipt {
         pub(crate) contact_channel_arn: std::option::Option<std::string::String>,
         pub(crate) receipt_type: std::option::Option<crate::model::ReceiptType>,
         pub(crate) receipt_info: std::option::Option<std::string::String>,
-        pub(crate) receipt_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) receipt_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the contact channel Incident Manager engaged.</p>
@@ -772,6 +838,7 @@ pub mod receipt {
             self.contact_channel_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the contact channel Incident Manager engaged.</p>
         pub fn set_contact_channel_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -785,6 +852,8 @@ pub mod receipt {
             self.receipt_type = Some(input);
             self
         }
+        /// <p>The type follows the engagement cycle, <code>SENT</code>, <code>DELIVERED</code>, and
+        /// <code>READ</code>.</p>
         pub fn set_receipt_type(
             mut self,
             input: std::option::Option<crate::model::ReceiptType>,
@@ -797,19 +866,22 @@ pub mod receipt {
             self.receipt_info = Some(input.into());
             self
         }
+        /// <p>Information provided during the page acknowledgement.</p>
         pub fn set_receipt_info(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.receipt_info = input;
             self
         }
         /// <p>The time receipt was <code>SENT</code>, <code>DELIVERED</code>, or
         /// <code>READ</code>.</p>
-        pub fn receipt_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn receipt_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.receipt_time = Some(input);
             self
         }
+        /// <p>The time receipt was <code>SENT</code>, <code>DELIVERED</code>, or
+        /// <code>READ</code>.</p>
         pub fn set_receipt_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.receipt_time = input;
             self
@@ -832,6 +904,7 @@ impl Receipt {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -843,10 +916,15 @@ impl Receipt {
     std::hash::Hash,
 )]
 pub enum ReceiptType {
+    #[allow(missing_docs)] // documentation missing in model
     Delivered,
+    #[allow(missing_docs)] // documentation missing in model
     Error,
+    #[allow(missing_docs)] // documentation missing in model
     Read,
+    #[allow(missing_docs)] // documentation missing in model
     Sent,
+    #[allow(missing_docs)] // documentation missing in model
     Stop,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -871,6 +949,7 @@ impl std::str::FromStr for ReceiptType {
     }
 }
 impl ReceiptType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ReceiptType::Delivered => "DELIVERED",
@@ -881,6 +960,7 @@ impl ReceiptType {
             ReceiptType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DELIVERED", "ERROR", "READ", "SENT", "STOP"]
     }
@@ -905,9 +985,9 @@ pub struct Engagement {
     /// <p>The ARN of the incident that's engaging the contact.</p>
     pub incident_id: std::option::Option<std::string::String>,
     /// <p>The time that the engagement began.</p>
-    pub start_time: std::option::Option<smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time that the engagement ended.</p>
-    pub stop_time: std::option::Option<smithy_types::Instant>,
+    pub stop_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for Engagement {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -931,8 +1011,8 @@ pub mod engagement {
         pub(crate) contact_arn: std::option::Option<std::string::String>,
         pub(crate) sender: std::option::Option<std::string::String>,
         pub(crate) incident_id: std::option::Option<std::string::String>,
-        pub(crate) start_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) stop_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) stop_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the engagement.</p>
@@ -940,6 +1020,7 @@ pub mod engagement {
             self.engagement_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the engagement.</p>
         pub fn set_engagement_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -952,6 +1033,7 @@ pub mod engagement {
             self.contact_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the escalation plan or contact that Incident Manager is engaging.</p>
         pub fn set_contact_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.contact_arn = input;
             self
@@ -961,6 +1043,7 @@ pub mod engagement {
             self.sender = Some(input.into());
             self
         }
+        /// <p>The user that started the engagement.</p>
         pub fn set_sender(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.sender = input;
             self
@@ -970,25 +1053,34 @@ pub mod engagement {
             self.incident_id = Some(input.into());
             self
         }
+        /// <p>The ARN of the incident that's engaging the contact.</p>
         pub fn set_incident_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.incident_id = input;
             self
         }
         /// <p>The time that the engagement began.</p>
-        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time that the engagement began.</p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The time that the engagement ended.</p>
-        pub fn stop_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn stop_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.stop_time = Some(input);
             self
         }
-        pub fn set_stop_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time that the engagement ended.</p>
+        pub fn set_stop_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.stop_time = input;
             self
         }
@@ -1017,9 +1109,9 @@ impl Engagement {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TimeRange {
     /// <p>The start of the time range.</p>
-    pub start_time: std::option::Option<smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The end of the time range.</p>
-    pub end_time: std::option::Option<smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for TimeRange {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1035,25 +1127,33 @@ pub mod time_range {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) start_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The start of the time range.</p>
-        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The start of the time range.</p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The end of the time range.</p>
-        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The end of the time range.</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.end_time = input;
             self
         }
@@ -1115,6 +1215,7 @@ pub mod contact {
             self.contact_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the contact or escalation plan.</p>
         pub fn set_contact_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.contact_arn = input;
             self
@@ -1124,6 +1225,7 @@ pub mod contact {
             self.alias = Some(input.into());
             self
         }
+        /// <p>The unique and identifiable alias of the contact or escalation plan.</p>
         pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.alias = input;
             self
@@ -1133,6 +1235,7 @@ pub mod contact {
             self.display_name = Some(input.into());
             self
         }
+        /// <p>The full name of the contact or escalation plan.</p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.display_name = input;
             self
@@ -1143,6 +1246,8 @@ pub mod contact {
             self.r#type = Some(input);
             self
         }
+        /// <p>Refers to the type of contact. A single contact is type <code>PERSONAL</code> and an
+        /// escalation plan is type <code>ESCALATION</code>.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ContactType>) -> Self {
             self.r#type = input;
             self
@@ -1165,6 +1270,7 @@ impl Contact {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1176,7 +1282,9 @@ impl Contact {
     std::hash::Hash,
 )]
 pub enum ContactType {
+    #[allow(missing_docs)] // documentation missing in model
     Escalation,
+    #[allow(missing_docs)] // documentation missing in model
     Personal,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1198,6 +1306,7 @@ impl std::str::FromStr for ContactType {
     }
 }
 impl ContactType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ContactType::Escalation => "ESCALATION",
@@ -1205,6 +1314,7 @@ impl ContactType {
             ContactType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ESCALATION", "PERSONAL"]
     }
@@ -1275,6 +1385,7 @@ pub mod contact_channel {
             self.contact_channel_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the contact channel.</p>
         pub fn set_contact_channel_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1287,6 +1398,7 @@ pub mod contact_channel {
             self.contact_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the contact that contains the contact channel.</p>
         pub fn set_contact_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.contact_arn = input;
             self
@@ -1296,6 +1408,7 @@ pub mod contact_channel {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the contact channel.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1316,6 +1429,18 @@ pub mod contact_channel {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of the contact channel. Incident Manager supports three contact methods:</p>
+        /// <ul>
+        /// <li>
+        /// <p>SMS</p>
+        /// </li>
+        /// <li>
+        /// <p>VOICE</p>
+        /// </li>
+        /// <li>
+        /// <p>EMAIL</p>
+        /// </li>
+        /// </ul>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ChannelType>) -> Self {
             self.r#type = input;
             self
@@ -1325,6 +1450,7 @@ pub mod contact_channel {
             self.delivery_address = Some(input);
             self
         }
+        /// <p>The details that Incident Manager uses when trying to engage the contact channel.</p>
         pub fn set_delivery_address(
             mut self,
             input: std::option::Option<crate::model::ContactChannelAddress>,
@@ -1338,6 +1464,8 @@ pub mod contact_channel {
             self.activation_status = Some(input);
             self
         }
+        /// <p>A Boolean value describing if the contact channel has been activated or not. If the
+        /// contact channel isn't activated, Incident Manager can't engage the contact through it. </p>
         pub fn set_activation_status(
             mut self,
             input: std::option::Option<crate::model::ActivationStatus>,
@@ -1365,6 +1493,7 @@ impl ContactChannel {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1376,7 +1505,9 @@ impl ContactChannel {
     std::hash::Hash,
 )]
 pub enum ActivationStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Activated,
+    #[allow(missing_docs)] // documentation missing in model
     NotActivated,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1398,6 +1529,7 @@ impl std::str::FromStr for ActivationStatus {
     }
 }
 impl ActivationStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ActivationStatus::Activated => "ACTIVATED",
@@ -1405,6 +1537,7 @@ impl ActivationStatus {
             ActivationStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ACTIVATED", "NOT_ACTIVATED"]
     }
@@ -1415,6 +1548,7 @@ impl AsRef<str> for ActivationStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1426,8 +1560,11 @@ impl AsRef<str> for ActivationStatus {
     std::hash::Hash,
 )]
 pub enum ChannelType {
+    #[allow(missing_docs)] // documentation missing in model
     Email,
+    #[allow(missing_docs)] // documentation missing in model
     Sms,
+    #[allow(missing_docs)] // documentation missing in model
     Voice,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1450,6 +1587,7 @@ impl std::str::FromStr for ChannelType {
     }
 }
 impl ChannelType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ChannelType::Email => "EMAIL",
@@ -1458,6 +1596,7 @@ impl ChannelType {
             ChannelType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["EMAIL", "SMS", "VOICE"]
     }
@@ -1468,6 +1607,7 @@ impl AsRef<str> for ChannelType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1479,7 +1619,9 @@ impl AsRef<str> for ChannelType {
     std::hash::Hash,
 )]
 pub enum AcceptCodeValidation {
+    #[allow(missing_docs)] // documentation missing in model
     Enforce,
+    #[allow(missing_docs)] // documentation missing in model
     Ignore,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1501,6 +1643,7 @@ impl std::str::FromStr for AcceptCodeValidation {
     }
 }
 impl AcceptCodeValidation {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AcceptCodeValidation::Enforce => "ENFORCE",
@@ -1508,6 +1651,7 @@ impl AcceptCodeValidation {
             AcceptCodeValidation::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ENFORCE", "IGNORE"]
     }
@@ -1518,6 +1662,7 @@ impl AsRef<str> for AcceptCodeValidation {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1529,7 +1674,9 @@ impl AsRef<str> for AcceptCodeValidation {
     std::hash::Hash,
 )]
 pub enum AcceptType {
+    #[allow(missing_docs)] // documentation missing in model
     Delivered,
+    #[allow(missing_docs)] // documentation missing in model
     Read,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1551,6 +1698,7 @@ impl std::str::FromStr for AcceptType {
     }
 }
 impl AcceptType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AcceptType::Delivered => "DELIVERED",
@@ -1558,6 +1706,7 @@ impl AcceptType {
             AcceptType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DELIVERED", "READ"]
     }

@@ -7,8 +7,8 @@
 
 use std::str::FromStr;
 
+use aws_smithy_types::retry::{RetryConfigBuilder, RetryConfigErr, RetryMode};
 use aws_types::os_shim_internal::{Env, Fs};
-use smithy_types::retry::{RetryConfigBuilder, RetryConfigErr, RetryMode};
 
 use crate::provider_config::ProviderConfig;
 

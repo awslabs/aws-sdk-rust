@@ -7,7 +7,7 @@ pub mod invoke_endpoint_input {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint_name: std::option::Option<std::string::String>,
-        pub(crate) body: std::option::Option<smithy_types::Blob>,
+        pub(crate) body: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) content_type: std::option::Option<std::string::String>,
         pub(crate) accept: std::option::Option<std::string::String>,
         pub(crate) custom_attributes: std::option::Option<std::string::String>,
@@ -23,6 +23,8 @@ pub mod invoke_endpoint_input {
             self.endpoint_name = Some(input.into());
             self
         }
+        /// <p>The name of the endpoint that you specified when you created the endpoint using the
+        /// <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a> API. </p>
         pub fn set_endpoint_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -34,11 +36,15 @@ pub mod invoke_endpoint_input {
         /// request header. Amazon SageMaker passes all of the data in the body to the model. </p>
         /// <p>For information about the format of the request body, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data
         /// Formats-Inference</a>.</p>
-        pub fn body(mut self, input: smithy_types::Blob) -> Self {
+        pub fn body(mut self, input: aws_smithy_types::Blob) -> Self {
             self.body = Some(input);
             self
         }
-        pub fn set_body(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+        /// <p>Provides input data, in the format specified in the <code>ContentType</code>
+        /// request header. Amazon SageMaker passes all of the data in the body to the model. </p>
+        /// <p>For information about the format of the request body, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data
+        /// Formats-Inference</a>.</p>
+        pub fn set_body(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.body = input;
             self
         }
@@ -47,6 +53,7 @@ pub mod invoke_endpoint_input {
             self.content_type = Some(input.into());
             self
         }
+        /// <p>The MIME type of the input data in the request body.</p>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_type = input;
             self
@@ -56,6 +63,7 @@ pub mod invoke_endpoint_input {
             self.accept = Some(input.into());
             self
         }
+        /// <p>The desired MIME type of the inference in the response.</p>
         pub fn set_accept(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.accept = input;
             self
@@ -72,12 +80,28 @@ pub mod invoke_endpoint_input {
         /// returned. For example, if a custom attribute represents the trace ID, your model can
         /// prepend the custom attribute with <code>Trace ID:</code> in your post-processing
         /// function.</p>
+        ///
         /// <p>This feature is currently supported in the AWS SDKs but not in the Amazon SageMaker Python
         /// SDK.</p>
         pub fn custom_attributes(mut self, input: impl Into<std::string::String>) -> Self {
             self.custom_attributes = Some(input.into());
             self
         }
+        /// <p>Provides additional information about a request for an inference submitted to a model
+        /// hosted at an Amazon SageMaker endpoint. The information is an opaque value that is
+        /// forwarded verbatim. You could use this value, for example, to provide an ID that you can
+        /// use to track a request or to provide other metadata that a service endpoint was
+        /// programmed to process. The value must consist of no more than 1024 visible US-ASCII
+        /// characters as specified in <a href="https://tools.ietf.org/html/rfc7230#section-3.2.6">Section 3.3.6. Field Value
+        /// Components</a> of the Hypertext Transfer Protocol (HTTP/1.1). </p>
+        /// <p>The code in your model is responsible for setting or updating any custom attributes in
+        /// the response. If your code does not set this value in the response, an empty value is
+        /// returned. For example, if a custom attribute represents the trace ID, your model can
+        /// prepend the custom attribute with <code>Trace ID:</code> in your post-processing
+        /// function.</p>
+        ///
+        /// <p>This feature is currently supported in the AWS SDKs but not in the Amazon SageMaker Python
+        /// SDK.</p>
         pub fn set_custom_attributes(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -90,6 +114,7 @@ pub mod invoke_endpoint_input {
             self.target_model = Some(input.into());
             self
         }
+        /// <p>The model to request for inference when invoking a multi-model endpoint.</p>
         pub fn set_target_model(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.target_model = input;
             self
@@ -105,6 +130,13 @@ pub mod invoke_endpoint_input {
             self.target_variant = Some(input.into());
             self
         }
+        /// <p>Specify the production variant to send the inference request to when invoking an
+        /// endpoint that is running two or more variants. Note that this parameter overrides the
+        /// default behavior for the endpoint, which is to distribute the invocation traffic based
+        /// on the variant weights.</p>
+        /// <p>For information about how to use variant targeting to perform a/b testing, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-ab-testing.html">Test models in
+        /// production</a>
+        /// </p>
         pub fn set_target_variant(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -118,6 +150,8 @@ pub mod invoke_endpoint_input {
             self.target_container_hostname = Some(input.into());
             self
         }
+        /// <p>If the endpoint hosts multiple containers and is configured to use direct invocation,
+        /// this parameter specifies the host name of the container to invoke.</p>
         pub fn set_target_container_hostname(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -132,6 +166,9 @@ pub mod invoke_endpoint_input {
             self.inference_id = Some(input.into());
             self
         }
+        /// <p>If you provide a value, it is added to the captured data when you enable data capture
+        /// on the endpoint. For information about data capture, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-data-capture.html">Capture
+        /// Data</a>.</p>
         pub fn set_inference_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inference_id = input;
             self
@@ -141,7 +178,7 @@ pub mod invoke_endpoint_input {
             self,
         ) -> std::result::Result<
             crate::input::InvokeEndpointInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::InvokeEndpointInput {
                 endpoint_name: self.endpoint_name,
@@ -168,27 +205,27 @@ impl InvokeEndpointInput {
         self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::InvokeEndpoint,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::InvokeEndpointInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_1 = &_input.endpoint_name;
             let input_1 =
                 input_1
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "endpoint_name",
                         details: "cannot be empty or unset",
                     })?;
-            let endpoint_name = smithy_http::label::fmt_string(input_1, false);
+            let endpoint_name = aws_smithy_http::label::fmt_string(input_1, false);
             if endpoint_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "endpoint_name",
                     details: "cannot be empty or unset",
                 });
@@ -204,7 +241,7 @@ impl InvokeEndpointInput {
         fn add_headers(
             _input: &crate::input::InvokeEndpointInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_2) = &_input.content_type {
                 let formatted_3 = AsRef::<str>::as_ref(inner_2);
@@ -212,7 +249,7 @@ impl InvokeEndpointInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_3;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "content_type",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -228,7 +265,7 @@ impl InvokeEndpointInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_5;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "accept",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -244,7 +281,7 @@ impl InvokeEndpointInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_7;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "custom_attributes",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -260,7 +297,7 @@ impl InvokeEndpointInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_9;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "target_model",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -276,7 +313,7 @@ impl InvokeEndpointInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_11;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "target_variant",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -292,7 +329,7 @@ impl InvokeEndpointInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_13;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "target_container_hostname",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -309,7 +346,7 @@ impl InvokeEndpointInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_15;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "inference_id",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -325,7 +362,7 @@ impl InvokeEndpointInput {
         fn update_http_builder(
             input: &crate::input::InvokeEndpointInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -335,23 +372,23 @@ impl InvokeEndpointInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::InvokeEndpointInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/octet-stream",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::ser_payload_invoke_endpoint_input(self.body)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -374,15 +411,15 @@ impl InvokeEndpointInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::InvokeEndpoint::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "InvokeEndpoint",
             "sagemakerruntime",
         ));
@@ -391,10 +428,10 @@ impl InvokeEndpointInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -431,6 +468,10 @@ pub mod invoke_endpoint_async_input {
             self.endpoint_name = Some(input.into());
             self
         }
+        /// <p>The name of the endpoint that you specified when you created the endpoint using
+        /// the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">
+        /// <code>CreateEndpoint</code>
+        /// </a> API.</p>
         pub fn set_endpoint_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -443,6 +484,7 @@ pub mod invoke_endpoint_async_input {
             self.content_type = Some(input.into());
             self
         }
+        /// <p>The MIME type of the input data in the request body.</p>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_type = input;
             self
@@ -452,6 +494,7 @@ pub mod invoke_endpoint_async_input {
             self.accept = Some(input.into());
             self
         }
+        /// <p>The desired MIME type of the inference in the response.</p>
         pub fn set_accept(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.accept = input;
             self
@@ -464,15 +507,32 @@ pub mod invoke_endpoint_async_input {
         /// visible US-ASCII characters as specified in
         /// <a href="https://datatracker.ietf.org/doc/html/rfc7230#section-3.2.6">Section 3.3.6.
         /// Field Value Components</a> of the Hypertext Transfer Protocol (HTTP/1.1). </p>
+        ///
         /// <p>The code in your model is responsible for setting or updating any custom attributes
         /// in the response. If your code does not set this value in the response, an empty
         /// value is returned. For example, if a custom attribute represents the trace ID,
         /// your model can prepend the custom attribute with <code>Trace ID</code>: in your post-processing function. </p>
+        ///
         /// <p>This feature is currently supported in the AWS SDKs but not in the Amazon SageMaker Python SDK. </p>
         pub fn custom_attributes(mut self, input: impl Into<std::string::String>) -> Self {
             self.custom_attributes = Some(input.into());
             self
         }
+        /// <p>Provides additional information about a request for an inference submitted to
+        /// a model hosted at an Amazon SageMaker endpoint. The information is an opaque value that is
+        /// forwarded verbatim. You could use this value, for example, to provide an ID that you
+        /// can use to track a request or to provide other metadata that a service endpoint was
+        /// programmed to process. The value must consist of no more than 1024
+        /// visible US-ASCII characters as specified in
+        /// <a href="https://datatracker.ietf.org/doc/html/rfc7230#section-3.2.6">Section 3.3.6.
+        /// Field Value Components</a> of the Hypertext Transfer Protocol (HTTP/1.1). </p>
+        ///
+        /// <p>The code in your model is responsible for setting or updating any custom attributes
+        /// in the response. If your code does not set this value in the response, an empty
+        /// value is returned. For example, if a custom attribute represents the trace ID,
+        /// your model can prepend the custom attribute with <code>Trace ID</code>: in your post-processing function. </p>
+        ///
+        /// <p>This feature is currently supported in the AWS SDKs but not in the Amazon SageMaker Python SDK. </p>
         pub fn set_custom_attributes(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -486,6 +546,8 @@ pub mod invoke_endpoint_async_input {
             self.inference_id = Some(input.into());
             self
         }
+        /// <p>The identifier for the inference request. Amazon SageMaker will generate an identifier for you
+        /// if none is specified. </p>
         pub fn set_inference_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inference_id = input;
             self
@@ -495,6 +557,7 @@ pub mod invoke_endpoint_async_input {
             self.input_location = Some(input.into());
             self
         }
+        /// <p>The Amazon S3 URI where the inference request payload is stored.</p>
         pub fn set_input_location(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -507,6 +570,7 @@ pub mod invoke_endpoint_async_input {
             self.request_ttl_seconds = Some(input);
             self
         }
+        /// <p>Maximum age in seconds a request can be in the queue before it is marked as expired.</p>
         pub fn set_request_ttl_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.request_ttl_seconds = input;
             self
@@ -516,7 +580,7 @@ pub mod invoke_endpoint_async_input {
             self,
         ) -> std::result::Result<
             crate::input::InvokeEndpointAsyncInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::InvokeEndpointAsyncInput {
                 endpoint_name: self.endpoint_name,
@@ -541,27 +605,27 @@ impl InvokeEndpointAsyncInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::InvokeEndpointAsync,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::InvokeEndpointAsyncInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_16 = &_input.endpoint_name;
             let input_16 =
                 input_16
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "endpoint_name",
                         details: "cannot be empty or unset",
                     })?;
-            let endpoint_name = smithy_http::label::fmt_string(input_16, false);
+            let endpoint_name = aws_smithy_http::label::fmt_string(input_16, false);
             if endpoint_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "endpoint_name",
                     details: "cannot be empty or unset",
                 });
@@ -577,7 +641,7 @@ impl InvokeEndpointAsyncInput {
         fn add_headers(
             _input: &crate::input::InvokeEndpointAsyncInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_17) = &_input.content_type {
                 let formatted_18 = AsRef::<str>::as_ref(inner_17);
@@ -585,7 +649,7 @@ impl InvokeEndpointAsyncInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_18;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "content_type",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -601,7 +665,7 @@ impl InvokeEndpointAsyncInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_20;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "accept",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -617,7 +681,7 @@ impl InvokeEndpointAsyncInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_22;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "custom_attributes",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -633,7 +697,7 @@ impl InvokeEndpointAsyncInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_24;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "inference_id",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -649,7 +713,7 @@ impl InvokeEndpointAsyncInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_26;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "input_location",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -660,13 +724,13 @@ impl InvokeEndpointAsyncInput {
                 }
             }
             if let Some(inner_27) = &_input.request_ttl_seconds {
-                let mut encoder = smithy_types::primitive::Encoder::from(*inner_27);
+                let mut encoder = aws_smithy_types::primitive::Encoder::from(*inner_27);
                 let formatted_28 = encoder.encode();
                 if !formatted_28.is_empty() {
                     use std::convert::TryFrom;
                     let header_value = formatted_28;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "request_ttl_seconds",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -682,7 +746,7 @@ impl InvokeEndpointAsyncInput {
         fn update_http_builder(
             input: &crate::input::InvokeEndpointAsyncInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -692,23 +756,23 @@ impl InvokeEndpointAsyncInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::InvokeEndpointAsyncInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -731,15 +795,15 @@ impl InvokeEndpointAsyncInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::InvokeEndpointAsync::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "InvokeEndpointAsync",
             "sagemakerruntime",
         ));
@@ -748,10 +812,10 @@ impl InvokeEndpointAsyncInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -765,6 +829,7 @@ impl InvokeEndpointAsyncInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvokeEndpointAsyncInput {
@@ -785,10 +850,12 @@ pub struct InvokeEndpointAsyncInput {
     /// visible US-ASCII characters as specified in
     /// <a href="https://datatracker.ietf.org/doc/html/rfc7230#section-3.2.6">Section 3.3.6.
     /// Field Value Components</a> of the Hypertext Transfer Protocol (HTTP/1.1). </p>
+    ///
     /// <p>The code in your model is responsible for setting or updating any custom attributes
     /// in the response. If your code does not set this value in the response, an empty
     /// value is returned. For example, if a custom attribute represents the trace ID,
     /// your model can prepend the custom attribute with <code>Trace ID</code>: in your post-processing function. </p>
+    ///
     /// <p>This feature is currently supported in the AWS SDKs but not in the Amazon SageMaker Python SDK. </p>
     pub custom_attributes: std::option::Option<std::string::String>,
     /// <p>The identifier for the inference request. Amazon SageMaker will generate an identifier for you
@@ -813,6 +880,7 @@ impl std::fmt::Debug for InvokeEndpointAsyncInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvokeEndpointInput {
@@ -823,7 +891,7 @@ pub struct InvokeEndpointInput {
     /// request header. Amazon SageMaker passes all of the data in the body to the model. </p>
     /// <p>For information about the format of the request body, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data
     /// Formats-Inference</a>.</p>
-    pub body: std::option::Option<smithy_types::Blob>,
+    pub body: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The MIME type of the input data in the request body.</p>
     pub content_type: std::option::Option<std::string::String>,
     /// <p>The desired MIME type of the inference in the response.</p>
@@ -840,6 +908,7 @@ pub struct InvokeEndpointInput {
     /// returned. For example, if a custom attribute represents the trace ID, your model can
     /// prepend the custom attribute with <code>Trace ID:</code> in your post-processing
     /// function.</p>
+    ///
     /// <p>This feature is currently supported in the AWS SDKs but not in the Amazon SageMaker Python
     /// SDK.</p>
     pub custom_attributes: std::option::Option<std::string::String>,

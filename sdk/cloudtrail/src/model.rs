@@ -33,6 +33,8 @@ pub mod tag {
             self.key = Some(input.into());
             self
         }
+        /// <p>The key in a key-value pair. The key must be must be no longer than 128 Unicode characters.
+        /// The key must be unique for the resource to which it applies.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -42,6 +44,7 @@ pub mod tag {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value in a key-value pair of a tag. The value must be no longer than 256 Unicode characters.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -90,6 +93,7 @@ pub mod insight_selector {
             self.insight_type = Some(input);
             self
         }
+        /// <p>The type of Insights events to log on a trail. The valid Insights type in this release is <code>ApiCallRateInsight</code>.</p>
         pub fn set_insight_type(
             mut self,
             input: std::option::Option<crate::model::InsightType>,
@@ -112,6 +116,7 @@ impl InsightSelector {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -123,6 +128,7 @@ impl InsightSelector {
     std::hash::Hash,
 )]
 pub enum InsightType {
+    #[allow(missing_docs)] // documentation missing in model
     ApiCallRateInsight,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -143,12 +149,14 @@ impl std::str::FromStr for InsightType {
     }
 }
 impl InsightType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             InsightType::ApiCallRateInsight => "ApiCallRateInsight",
             InsightType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ApiCallRateInsight"]
     }
@@ -229,10 +237,17 @@ pub mod advanced_event_selector {
             self.name = Some(input.into());
             self
         }
+        /// <p>An optional, descriptive name for an advanced event selector, such as "Log data events
+        /// for only two S3 buckets".</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
+        /// Appends an item to `field_selectors`.
+        ///
+        /// To override the contents of this collection use [`set_field_selectors`](Self::set_field_selectors).
+        ///
+        /// <p>Contains all selector statements in an advanced event selector.</p>
         pub fn field_selectors(
             mut self,
             input: impl Into<crate::model::AdvancedFieldSelector>,
@@ -242,6 +257,7 @@ pub mod advanced_event_selector {
             self.field_selectors = Some(v);
             self
         }
+        /// <p>Contains all selector statements in an advanced event selector.</p>
         pub fn set_field_selectors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AdvancedFieldSelector>>,
@@ -632,16 +648,181 @@ pub mod advanced_field_selector {
             self.field = Some(input.into());
             self
         }
+        /// <p>
+        /// A field in an event record on which to filter events to be logged. Supported fields include <code>readOnly</code>, <code>eventCategory</code>,
+        /// <code>eventSource</code> (for management events), <code>eventName</code>, <code>resources.type</code>, and <code>resources.ARN</code>.
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>
+        /// <code>readOnly</code>
+        /// </b> - Optional. Can be set to <code>Equals</code> a value of <code>true</code>
+        /// or <code>false</code>. A value of <code>false</code> logs both <code>read</code> and
+        /// <code>write</code> events.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>
+        /// <code>eventSource</code>
+        /// </b> - For filtering management events only.
+        /// This can be set only to <code>NotEquals</code>
+        /// <code>kms.amazonaws.com</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>
+        /// <code>eventName</code>
+        /// </b> - Can use any operator. You can use it to ﬁlter in
+        /// or ﬁlter out any data event logged to CloudTrail, such as <code>PutBucket</code> or <code>GetSnapshotBlock</code>. You can have multiple values
+        /// for this ﬁeld, separated by commas.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>
+        /// <code>eventCategory</code>
+        /// </b> - This is required. It must be set to <code>Equals</code>, and
+        /// the value must be <code>Management</code> or <code>Data</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>
+        /// <code>resources.type</code>
+        /// </b> - This ﬁeld is required.
+        /// <code>resources.type</code> can only use the <code>Equals</code> operator, and the
+        /// value can be one of the following: <code>AWS::S3::Object</code>,
+        /// <code>AWS::S3::AccessPoint</code>,
+        /// <code>AWS::Lambda::Function</code>, <code>AWS::DynamoDB::Table</code>,
+        /// <code>AWS::S3Outposts::Object</code>, <code>AWS::ManagedBlockchain::Node</code>,
+        /// <code>AWS::S3ObjectLambda::AccessPoint</code>, or <code>AWS::EC2::Snapshot</code>.
+        /// You can have only one <code>resources.type</code> ﬁeld per selector. To log data
+        /// events on more than one resource type, add another selector.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>
+        /// <code>resources.ARN</code>
+        /// </b> - You can use any operator with
+        /// resources.ARN, but if you use <code>Equals</code> or <code>NotEquals</code>, the
+        /// value must exactly match the ARN of a valid resource of the type you've speciﬁed in
+        /// the template as the value of resources.type. For example, if resources.type equals
+        /// <code>AWS::S3::Object</code>, the ARN must be in one of the following formats. To
+        /// log all data events for all objects in a specific S3 bucket, use the
+        /// <code>StartsWith</code> operator, and include only the bucket ARN as the matching value.</p>
+        /// <p>The trailing slash is intentional; do not exclude it. Replace the text between
+        /// less than and greater than symbols (<>) with resource-specific information. </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>arn:<partition>:s3:::<bucket_name>/</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>arn:<partition>:s3:::<bucket_name>/<object_path>/</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>When <code>resources.type</code> equals <code>AWS::S3::AccessPoint</code>, and the
+        /// operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in
+        /// one of the following formats. To log events on all objects in an S3 access point, we
+        /// recommend that you use only the access point ARN, don’t include the object path, and
+        /// use the <code>StartsWith</code> or <code>NotStartsWith</code> operators.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>arn:<partition>:s3:<region>:<account_ID>:accesspoint/<access_point_name></code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>arn:<partition>:s3:<region>:<account_ID>:accesspoint/<access_point_name>/object/<object_path></code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>When resources.type equals <code>AWS::Lambda::Function</code>, and the operator is set
+        /// to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>arn:<partition>:lambda:<region>:<account_ID>:function:<function_name></code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>When resources.type equals <code>AWS::DynamoDB::Table</code>, and the operator is
+        /// set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the
+        /// following format:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>arn:<partition>:dynamodb:<region>:<account_ID>:table:<table_name></code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>When <code>resources.type</code> equals <code>AWS::S3Outposts::Object</code>, and the operator
+        /// is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following format:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>arn:<partition>:s3-outposts:<region>:<account_ID>:<object_path></code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>When <code>resources.type</code> equals <code>AWS::ManagedBlockchain::Node</code>,
+        /// and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN
+        /// must be in the following format:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>arn:<partition>:managedblockchain:<region>:<account_ID>:nodes/<node_ID></code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>When <code>resources.type</code> equals
+        /// <code>AWS::S3ObjectLambda::AccessPoint</code>, and the operator is set to
+        /// <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+        /// format:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>arn:<partition>:s3-object-lambda:<region>:<account_ID>:accesspoint/<access_point_name></code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>When <code>resources.type</code> equals <code>AWS::EC2::Snapshot</code>, and the
+        /// operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in
+        /// the following format:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>arn:<partition>:ec2:<region>::snapshot/<snapshot_ID></code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// </ul>
         pub fn set_field(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.field = input;
             self
         }
+        /// Appends an item to `equals`.
+        ///
+        /// To override the contents of this collection use [`set_equals`](Self::set_equals).
+        ///
+        /// <p> An operator that includes events that match the exact value of the event record field
+        /// specified as the value of <code>Field</code>. This is the only valid operator that you can
+        /// use with the <code>readOnly</code>, <code>eventCategory</code>, and
+        /// <code>resources.type</code> fields.</p>
         pub fn equals(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.equals.unwrap_or_default();
             v.push(input.into());
             self.equals = Some(v);
             self
         }
+        /// <p> An operator that includes events that match the exact value of the event record field
+        /// specified as the value of <code>Field</code>. This is the only valid operator that you can
+        /// use with the <code>readOnly</code>, <code>eventCategory</code>, and
+        /// <code>resources.type</code> fields.</p>
         pub fn set_equals(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -649,12 +830,20 @@ pub mod advanced_field_selector {
             self.equals = input;
             self
         }
+        /// Appends an item to `starts_with`.
+        ///
+        /// To override the contents of this collection use [`set_starts_with`](Self::set_starts_with).
+        ///
+        /// <p>An operator that includes events that match the first few characters of the event record
+        /// field specified as the value of <code>Field</code>.</p>
         pub fn starts_with(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.starts_with.unwrap_or_default();
             v.push(input.into());
             self.starts_with = Some(v);
             self
         }
+        /// <p>An operator that includes events that match the first few characters of the event record
+        /// field specified as the value of <code>Field</code>.</p>
         pub fn set_starts_with(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -662,12 +851,20 @@ pub mod advanced_field_selector {
             self.starts_with = input;
             self
         }
+        /// Appends an item to `ends_with`.
+        ///
+        /// To override the contents of this collection use [`set_ends_with`](Self::set_ends_with).
+        ///
+        /// <p>An operator that includes events that match the last few characters of the event record
+        /// field specified as the value of <code>Field</code>.</p>
         pub fn ends_with(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.ends_with.unwrap_or_default();
             v.push(input.into());
             self.ends_with = Some(v);
             self
         }
+        /// <p>An operator that includes events that match the last few characters of the event record
+        /// field specified as the value of <code>Field</code>.</p>
         pub fn set_ends_with(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -675,12 +872,22 @@ pub mod advanced_field_selector {
             self.ends_with = input;
             self
         }
+        /// Appends an item to `not_equals`.
+        ///
+        /// To override the contents of this collection use [`set_not_equals`](Self::set_not_equals).
+        ///
+        /// <p>
+        /// An operator that excludes events that match the exact value of the event record field specified as the value of <code>Field</code>.
+        /// </p>
         pub fn not_equals(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.not_equals.unwrap_or_default();
             v.push(input.into());
             self.not_equals = Some(v);
             self
         }
+        /// <p>
+        /// An operator that excludes events that match the exact value of the event record field specified as the value of <code>Field</code>.
+        /// </p>
         pub fn set_not_equals(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -688,12 +895,22 @@ pub mod advanced_field_selector {
             self.not_equals = input;
             self
         }
+        /// Appends an item to `not_starts_with`.
+        ///
+        /// To override the contents of this collection use [`set_not_starts_with`](Self::set_not_starts_with).
+        ///
+        /// <p>
+        /// An operator that excludes events that match the first few characters of the event record field specified as the value of <code>Field</code>.
+        /// </p>
         pub fn not_starts_with(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.not_starts_with.unwrap_or_default();
             v.push(input.into());
             self.not_starts_with = Some(v);
             self
         }
+        /// <p>
+        /// An operator that excludes events that match the first few characters of the event record field specified as the value of <code>Field</code>.
+        /// </p>
         pub fn set_not_starts_with(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -701,12 +918,22 @@ pub mod advanced_field_selector {
             self.not_starts_with = input;
             self
         }
+        /// Appends an item to `not_ends_with`.
+        ///
+        /// To override the contents of this collection use [`set_not_ends_with`](Self::set_not_ends_with).
+        ///
+        /// <p>
+        /// An operator that excludes events that match the last few characters of the event record field specified as the value of <code>Field</code>.
+        /// </p>
         pub fn not_ends_with(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.not_ends_with.unwrap_or_default();
             v.push(input.into());
             self.not_ends_with = Some(v);
             self
         }
+        /// <p>
+        /// An operator that excludes events that match the last few characters of the event record field specified as the value of <code>Field</code>.
+        /// </p>
         pub fn set_not_ends_with(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -754,6 +981,7 @@ pub struct EventSelector {
     /// <p>Specify if you want your event selector to include management events for your trail.</p>
     /// <p>
     /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-management-events">Management Events</a> in the <i>CloudTrail User Guide</i>.</p>
+    ///
     /// <p>By default, the value is <code>true</code>.</p>
     /// <p>The first copy of management events is free. You are charged for additional copies of management
     /// events that you are logging on any subsequent trail in the same region. For more information about
@@ -808,6 +1036,10 @@ pub mod event_selector {
             self.read_write_type = Some(input);
             self
         }
+        /// <p>Specify if you want your trail to log read-only events, write-only events, or all. For example,
+        /// the EC2 <code>GetConsoleOutput</code> is a read-only API operation and
+        /// <code>RunInstances</code> is a write-only API operation.</p>
+        /// <p> By default, the value is <code>All</code>.</p>
         pub fn set_read_write_type(
             mut self,
             input: std::option::Option<crate::model::ReadWriteType>,
@@ -818,6 +1050,7 @@ pub mod event_selector {
         /// <p>Specify if you want your event selector to include management events for your trail.</p>
         /// <p>
         /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-management-events">Management Events</a> in the <i>CloudTrail User Guide</i>.</p>
+        ///
         /// <p>By default, the value is <code>true</code>.</p>
         /// <p>The first copy of management events is free. You are charged for additional copies of management
         /// events that you are logging on any subsequent trail in the same region. For more information about
@@ -826,16 +1059,44 @@ pub mod event_selector {
             self.include_management_events = Some(input);
             self
         }
+        /// <p>Specify if you want your event selector to include management events for your trail.</p>
+        /// <p>
+        /// For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-management-events">Management Events</a> in the <i>CloudTrail User Guide</i>.</p>
+        ///
+        /// <p>By default, the value is <code>true</code>.</p>
+        /// <p>The first copy of management events is free. You are charged for additional copies of management
+        /// events that you are logging on any subsequent trail in the same region. For more information about
+        /// CloudTrail pricing, see <a href="http://aws.amazon.com/cloudtrail/pricing/">CloudTrail Pricing</a>.</p>
         pub fn set_include_management_events(mut self, input: std::option::Option<bool>) -> Self {
             self.include_management_events = input;
             self
         }
+        /// Appends an item to `data_resources`.
+        ///
+        /// To override the contents of this collection use [`set_data_resources`](Self::set_data_resources).
+        ///
+        /// <p>CloudTrail supports data event logging for Amazon S3 objects, Lambda functions,
+        /// and Amazon DynamoDB tables
+        /// with basic event selectors. You can specify up to 250 resources for an individual event
+        /// selector, but the total number of data resources cannot exceed 250 across all event
+        /// selectors in a trail. This limit does not apply if you configure resource logging for all
+        /// data events.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events">Data Events</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits in CloudTrail</a>
+        /// in the <i>CloudTrail User Guide</i>.</p>
         pub fn data_resources(mut self, input: impl Into<crate::model::DataResource>) -> Self {
             let mut v = self.data_resources.unwrap_or_default();
             v.push(input.into());
             self.data_resources = Some(v);
             self
         }
+        /// <p>CloudTrail supports data event logging for Amazon S3 objects, Lambda functions,
+        /// and Amazon DynamoDB tables
+        /// with basic event selectors. You can specify up to 250 resources for an individual event
+        /// selector, but the total number of data resources cannot exceed 250 across all event
+        /// selectors in a trail. This limit does not apply if you configure resource logging for all
+        /// data events.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events">Data Events</a> and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits in CloudTrail</a>
+        /// in the <i>CloudTrail User Guide</i>.</p>
         pub fn set_data_resources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DataResource>>,
@@ -843,6 +1104,14 @@ pub mod event_selector {
             self.data_resources = input;
             self
         }
+        /// Appends an item to `exclude_management_event_sources`.
+        ///
+        /// To override the contents of this collection use [`set_exclude_management_event_sources`](Self::set_exclude_management_event_sources).
+        ///
+        /// <p>An optional list of service event sources from which you do not want management events to be logged on your trail. In this release, the list can be empty (disables the filter),
+        /// or it can filter out Key Management Service or Amazon RDS Data API events by
+        /// containing <code>kms.amazonaws.com</code> or <code>rdsdata.amazonaws.com</code>. By default, <code>ExcludeManagementEventSources</code> is empty, and KMS and
+        /// Amazon RDS Data API events are logged to your trail.</p>
         pub fn exclude_management_event_sources(
             mut self,
             input: impl Into<std::string::String>,
@@ -852,6 +1121,10 @@ pub mod event_selector {
             self.exclude_management_event_sources = Some(v);
             self
         }
+        /// <p>An optional list of service event sources from which you do not want management events to be logged on your trail. In this release, the list can be empty (disables the filter),
+        /// or it can filter out Key Management Service or Amazon RDS Data API events by
+        /// containing <code>kms.amazonaws.com</code> or <code>rdsdata.amazonaws.com</code>. By default, <code>ExcludeManagementEventSources</code> is empty, and KMS and
+        /// Amazon RDS Data API events are logged to your trail.</p>
         pub fn set_exclude_management_event_sources(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1013,16 +1286,111 @@ pub mod data_resource {
             self.r#type = Some(input.into());
             self
         }
+        /// <p>The resource type in which you want to log data events. You can specify
+        /// <code>AWS::S3::Object</code>, <code>AWS::Lambda::Function</code>, or
+        /// <code>AWS::DynamoDB::Table</code> resources.</p>
+        /// <p>The <code>AWS::S3Outposts::Object</code>, <code>AWS::ManagedBlockchain::Node</code>,
+        /// <code>AWS::S3ObjectLambda::AccessPoint</code>, and <code>AWS::EC2::Snapshot</code> resource types are not valid in basic
+        /// event selectors. To log data events on these resource types, use advanced event
+        /// selectors.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
         }
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>An array of Amazon Resource Name (ARN) strings or partial ARN strings for the specified objects.</p>
+        /// <ul>
+        /// <li>
+        /// <p>To log data events for all objects in all S3 buckets in your Amazon Web Services account, specify the
+        /// prefix as <code>arn:aws:s3:::</code>.</p>
+        /// <note>
+        /// <p>This also enables logging of data event activity performed by any user or role in your Amazon Web Services account,
+        /// even if that activity is performed on a bucket that belongs to another Amazon Web Services account.</p>
+        /// </note>
+        /// </li>
+        /// <li>
+        /// <p>To log data events for all objects in an S3 bucket, specify the bucket and an empty
+        /// object prefix such as <code>arn:aws:s3:::bucket-1/</code>. The trail logs data events for
+        /// all objects in this S3 bucket.</p>
+        /// </li>
+        /// <li>
+        /// <p>To log data events for specific objects, specify the S3 bucket and object prefix such
+        /// as <code>arn:aws:s3:::bucket-1/example-images</code>. The trail logs data events for
+        /// objects in this S3 bucket that match the prefix.</p>
+        /// </li>
+        /// <li>
+        /// <p>To log data events for all Lambda functions in your Amazon Web Services account, specify the prefix as
+        /// <code>arn:aws:lambda</code>.</p>
+        /// <note>
+        /// <p>This also enables logging of <code>Invoke</code> activity performed by any user or role in your Amazon Web Services account,
+        /// even if that activity is performed on a function that belongs to another Amazon Web Services account. </p>
+        /// </note>
+        /// </li>
+        /// <li>
+        /// <p>To log data events for a specific Lambda function, specify the function ARN.</p>
+        /// <note>
+        /// <p>Lambda function ARNs are exact. For example, if you specify a
+        /// function ARN <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>, data events will
+        /// only be logged for <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>. They will
+        /// not be logged for <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld2</i>.</p>
+        /// </note>
+        /// </li>
+        /// <li>
+        /// <p>To log data events for all DynamoDB tables in your Amazon Web Services account, specify the prefix
+        /// as <code>arn:aws:dynamodb</code>.</p>
+        /// </li>
+        /// </ul>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
+        /// <p>An array of Amazon Resource Name (ARN) strings or partial ARN strings for the specified objects.</p>
+        /// <ul>
+        /// <li>
+        /// <p>To log data events for all objects in all S3 buckets in your Amazon Web Services account, specify the
+        /// prefix as <code>arn:aws:s3:::</code>.</p>
+        /// <note>
+        /// <p>This also enables logging of data event activity performed by any user or role in your Amazon Web Services account,
+        /// even if that activity is performed on a bucket that belongs to another Amazon Web Services account.</p>
+        /// </note>
+        /// </li>
+        /// <li>
+        /// <p>To log data events for all objects in an S3 bucket, specify the bucket and an empty
+        /// object prefix such as <code>arn:aws:s3:::bucket-1/</code>. The trail logs data events for
+        /// all objects in this S3 bucket.</p>
+        /// </li>
+        /// <li>
+        /// <p>To log data events for specific objects, specify the S3 bucket and object prefix such
+        /// as <code>arn:aws:s3:::bucket-1/example-images</code>. The trail logs data events for
+        /// objects in this S3 bucket that match the prefix.</p>
+        /// </li>
+        /// <li>
+        /// <p>To log data events for all Lambda functions in your Amazon Web Services account, specify the prefix as
+        /// <code>arn:aws:lambda</code>.</p>
+        /// <note>
+        /// <p>This also enables logging of <code>Invoke</code> activity performed by any user or role in your Amazon Web Services account,
+        /// even if that activity is performed on a function that belongs to another Amazon Web Services account. </p>
+        /// </note>
+        /// </li>
+        /// <li>
+        /// <p>To log data events for a specific Lambda function, specify the function ARN.</p>
+        /// <note>
+        /// <p>Lambda function ARNs are exact. For example, if you specify a
+        /// function ARN <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>, data events will
+        /// only be logged for <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld</i>. They will
+        /// not be logged for <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld2</i>.</p>
+        /// </note>
+        /// </li>
+        /// <li>
+        /// <p>To log data events for all DynamoDB tables in your Amazon Web Services account, specify the prefix
+        /// as <code>arn:aws:dynamodb</code>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1046,6 +1414,7 @@ impl DataResource {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1057,8 +1426,11 @@ impl DataResource {
     std::hash::Hash,
 )]
 pub enum ReadWriteType {
+    #[allow(missing_docs)] // documentation missing in model
     All,
+    #[allow(missing_docs)] // documentation missing in model
     ReadOnly,
+    #[allow(missing_docs)] // documentation missing in model
     WriteOnly,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1081,6 +1453,7 @@ impl std::str::FromStr for ReadWriteType {
     }
 }
 impl ReadWriteType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ReadWriteType::All => "All",
@@ -1089,6 +1462,7 @@ impl ReadWriteType {
             ReadWriteType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["All", "ReadOnly", "WriteOnly"]
     }
@@ -1113,7 +1487,7 @@ pub struct Event {
     /// with temporary security credentials, this is the access key ID of the temporary credentials.</p>
     pub access_key_id: std::option::Option<std::string::String>,
     /// <p>The date and time of the event returned.</p>
-    pub event_time: std::option::Option<smithy_types::Instant>,
+    pub event_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The Amazon Web Services service to which the request was made.</p>
     pub event_source: std::option::Option<std::string::String>,
     /// <p>A user name or role name of the requester that called the API in the event returned.</p>
@@ -1148,7 +1522,7 @@ pub mod event {
         pub(crate) event_name: std::option::Option<std::string::String>,
         pub(crate) read_only: std::option::Option<std::string::String>,
         pub(crate) access_key_id: std::option::Option<std::string::String>,
-        pub(crate) event_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) event_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) event_source: std::option::Option<std::string::String>,
         pub(crate) username: std::option::Option<std::string::String>,
         pub(crate) resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
@@ -1160,6 +1534,7 @@ pub mod event {
             self.event_id = Some(input.into());
             self
         }
+        /// <p>The CloudTrail ID of the event returned.</p>
         pub fn set_event_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.event_id = input;
             self
@@ -1169,6 +1544,7 @@ pub mod event {
             self.event_name = Some(input.into());
             self
         }
+        /// <p>The name of the event returned.</p>
         pub fn set_event_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.event_name = input;
             self
@@ -1178,6 +1554,7 @@ pub mod event {
             self.read_only = Some(input.into());
             self
         }
+        /// <p>Information about whether the event is a write event or a read event. </p>
         pub fn set_read_only(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.read_only = input;
             self
@@ -1188,6 +1565,8 @@ pub mod event {
             self.access_key_id = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services access key ID that was used to sign the request. If the request was made
+        /// with temporary security credentials, this is the access key ID of the temporary credentials.</p>
         pub fn set_access_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1196,11 +1575,15 @@ pub mod event {
             self
         }
         /// <p>The date and time of the event returned.</p>
-        pub fn event_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn event_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.event_time = Some(input);
             self
         }
-        pub fn set_event_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date and time of the event returned.</p>
+        pub fn set_event_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.event_time = input;
             self
         }
@@ -1209,6 +1592,7 @@ pub mod event {
             self.event_source = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services service to which the request was made.</p>
         pub fn set_event_source(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.event_source = input;
             self
@@ -1218,16 +1602,23 @@ pub mod event {
             self.username = Some(input.into());
             self
         }
+        /// <p>A user name or role name of the requester that called the API in the event returned.</p>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.username = input;
             self
         }
+        /// Appends an item to `resources`.
+        ///
+        /// To override the contents of this collection use [`set_resources`](Self::set_resources).
+        ///
+        /// <p>A list of resources referenced by the event returned.</p>
         pub fn resources(mut self, input: impl Into<crate::model::Resource>) -> Self {
             let mut v = self.resources.unwrap_or_default();
             v.push(input.into());
             self.resources = Some(v);
             self
         }
+        /// <p>A list of resources referenced by the event returned.</p>
         pub fn set_resources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Resource>>,
@@ -1240,6 +1631,7 @@ pub mod event {
             self.cloud_trail_event = Some(input.into());
             self
         }
+        /// <p>A JSON string that contains a representation of the event returned.</p>
         pub fn set_cloud_trail_event(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1308,6 +1700,10 @@ pub mod resource {
             self.resource_type = Some(input.into());
             self
         }
+        /// <p>The type of a resource referenced by the event returned. When the resource type cannot be
+        /// determined, null is returned. Some examples of resource types are: <b>Instance</b> for EC2,
+        /// <b>Trail</b> for CloudTrail, <b>DBInstance</b> for Amazon RDS, and <b>AccessKey</b> for IAM.
+        /// To learn more about how to look up and filter events by the resource types supported for a service, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/view-cloudtrail-events-console.html#filtering-cloudtrail-events">Filtering CloudTrail Events</a>.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1320,6 +1716,7 @@ pub mod resource {
             self.resource_name = Some(input.into());
             self
         }
+        /// <p>The name of the resource referenced by the event returned. These are user-created names whose values will depend on the environment. For example, the resource name might be "auto-scaling-test-group" for an Auto Scaling Group or "i-1234567" for an EC2 Instance.</p>
         pub fn set_resource_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1343,6 +1740,7 @@ impl Resource {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1354,6 +1752,7 @@ impl Resource {
     std::hash::Hash,
 )]
 pub enum EventCategory {
+    #[allow(missing_docs)] // documentation missing in model
     Insight,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1374,12 +1773,14 @@ impl std::str::FromStr for EventCategory {
     }
 }
 impl EventCategory {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EventCategory::Insight => "insight",
             EventCategory::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["insight"]
     }
@@ -1422,6 +1823,7 @@ pub mod lookup_attribute {
             self.attribute_key = Some(input);
             self
         }
+        /// <p>Specifies an attribute on which to filter the events returned.</p>
         pub fn set_attribute_key(
             mut self,
             input: std::option::Option<crate::model::LookupAttributeKey>,
@@ -1434,6 +1836,7 @@ pub mod lookup_attribute {
             self.attribute_value = Some(input.into());
             self
         }
+        /// <p>Specifies a value for the specified AttributeKey.</p>
         pub fn set_attribute_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1457,6 +1860,7 @@ impl LookupAttribute {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1468,13 +1872,21 @@ impl LookupAttribute {
     std::hash::Hash,
 )]
 pub enum LookupAttributeKey {
+    #[allow(missing_docs)] // documentation missing in model
     AccessKeyId,
+    #[allow(missing_docs)] // documentation missing in model
     EventId,
+    #[allow(missing_docs)] // documentation missing in model
     EventName,
+    #[allow(missing_docs)] // documentation missing in model
     EventSource,
+    #[allow(missing_docs)] // documentation missing in model
     ReadOnly,
+    #[allow(missing_docs)] // documentation missing in model
     ResourceName,
+    #[allow(missing_docs)] // documentation missing in model
     ResourceType,
+    #[allow(missing_docs)] // documentation missing in model
     Username,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1502,6 +1914,7 @@ impl std::str::FromStr for LookupAttributeKey {
     }
 }
 impl LookupAttributeKey {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LookupAttributeKey::AccessKeyId => "AccessKeyId",
@@ -1515,6 +1928,7 @@ impl LookupAttributeKey {
             LookupAttributeKey::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "AccessKeyId",
@@ -1570,6 +1984,7 @@ pub mod trail_info {
             self.trail_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of a trail.</p>
         pub fn set_trail_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.trail_arn = input;
             self
@@ -1579,6 +1994,7 @@ pub mod trail_info {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of a trail.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1588,6 +2004,7 @@ pub mod trail_info {
             self.home_region = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services Region in which a trail was created.</p>
         pub fn set_home_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.home_region = input;
             self
@@ -1641,16 +2058,23 @@ pub mod resource_tag {
             self.resource_id = Some(input.into());
             self
         }
+        /// <p>Specifies the ARN of the resource.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
         }
+        /// Appends an item to `tags_list`.
+        ///
+        /// To override the contents of this collection use [`set_tags_list`](Self::set_tags_list).
+        ///
+        /// <p>A list of tags.</p>
         pub fn tags_list(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags_list.unwrap_or_default();
             v.push(input.into());
             self.tags_list = Some(v);
             self
         }
+        /// <p>A list of tags.</p>
         pub fn set_tags_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1679,11 +2103,11 @@ impl ResourceTag {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PublicKey {
     /// <p>The DER encoded public key value in PKCS#1 format.</p>
-    pub value: std::option::Option<smithy_types::Blob>,
+    pub value: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The starting time of validity of the public key.</p>
-    pub validity_start_time: std::option::Option<smithy_types::Instant>,
+    pub validity_start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The ending time of validity of the public key.</p>
-    pub validity_end_time: std::option::Option<smithy_types::Instant>,
+    pub validity_end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The fingerprint of the public key.</p>
     pub fingerprint: std::option::Option<std::string::String>,
 }
@@ -1703,41 +2127,44 @@ pub mod public_key {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) value: std::option::Option<smithy_types::Blob>,
-        pub(crate) validity_start_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) validity_end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) value: std::option::Option<aws_smithy_types::Blob>,
+        pub(crate) validity_start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) validity_end_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) fingerprint: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The DER encoded public key value in PKCS#1 format.</p>
-        pub fn value(mut self, input: smithy_types::Blob) -> Self {
+        pub fn value(mut self, input: aws_smithy_types::Blob) -> Self {
             self.value = Some(input);
             self
         }
-        pub fn set_value(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+        /// <p>The DER encoded public key value in PKCS#1 format.</p>
+        pub fn set_value(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.value = input;
             self
         }
         /// <p>The starting time of validity of the public key.</p>
-        pub fn validity_start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn validity_start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.validity_start_time = Some(input);
             self
         }
+        /// <p>The starting time of validity of the public key.</p>
         pub fn set_validity_start_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.validity_start_time = input;
             self
         }
         /// <p>The ending time of validity of the public key.</p>
-        pub fn validity_end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn validity_end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.validity_end_time = Some(input);
             self
         }
+        /// <p>The ending time of validity of the public key.</p>
         pub fn set_validity_end_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.validity_end_time = input;
             self
@@ -1747,6 +2174,7 @@ pub mod public_key {
             self.fingerprint = Some(input.into());
             self
         }
+        /// <p>The fingerprint of the public key.</p>
         pub fn set_fingerprint(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fingerprint = input;
             self
@@ -1885,6 +2313,8 @@ pub mod trail {
             self.name = Some(input.into());
             self
         }
+        /// <p>Name of the trail set by calling <a>CreateTrail</a>. The maximum length is 128
+        /// characters.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1894,6 +2324,7 @@ pub mod trail {
             self.s3_bucket_name = Some(input.into());
             self
         }
+        /// <p>Name of the Amazon S3 bucket into which CloudTrail delivers your trail files. See <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/create_trail_naming_policy.html">Amazon S3 Bucket Naming Requirements</a>.</p>
         pub fn set_s3_bucket_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1908,6 +2339,9 @@ pub mod trail {
             self.s3_key_prefix = Some(input.into());
             self
         }
+        /// <p>Specifies the Amazon S3 key prefix that comes after the name of the bucket you have designated
+        /// for log file delivery. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html">Finding Your CloudTrail Log Files</a>.
+        /// The maximum length is 200 characters.</p>
         pub fn set_s3_key_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1920,6 +2354,7 @@ pub mod trail {
             self.sns_topic_name = Some(input.into());
             self
         }
+        /// <p>This field is no longer in use. Use SnsTopicARN.</p>
         pub fn set_sns_topic_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1936,6 +2371,11 @@ pub mod trail {
             self.sns_topic_arn = Some(input.into());
             self
         }
+        /// <p>Specifies the ARN of the Amazon SNS topic that CloudTrail uses to send notifications
+        /// when log files are delivered. The following is the format of a topic ARN.</p>
+        /// <p>
+        /// <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code>
+        /// </p>
         pub fn set_sns_topic_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1949,6 +2389,8 @@ pub mod trail {
             self.include_global_service_events = Some(input);
             self
         }
+        /// <p>Set to <b>True</b> to include Amazon Web Services API calls from Amazon Web Services global services such as IAM.
+        /// Otherwise, <b>False</b>.</p>
         pub fn set_include_global_service_events(
             mut self,
             input: std::option::Option<bool>,
@@ -1961,6 +2403,7 @@ pub mod trail {
             self.is_multi_region_trail = Some(input);
             self
         }
+        /// <p>Specifies whether the trail exists only in one region or exists in all regions.</p>
         pub fn set_is_multi_region_trail(mut self, input: std::option::Option<bool>) -> Self {
             self.is_multi_region_trail = input;
             self
@@ -1970,6 +2413,7 @@ pub mod trail {
             self.home_region = Some(input.into());
             self
         }
+        /// <p>The region in which the trail was created.</p>
         pub fn set_home_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.home_region = input;
             self
@@ -1982,6 +2426,10 @@ pub mod trail {
             self.trail_arn = Some(input.into());
             self
         }
+        /// <p>Specifies the ARN of the trail. The following is the format of a trail ARN.</p>
+        /// <p>
+        /// <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
+        /// </p>
         pub fn set_trail_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.trail_arn = input;
             self
@@ -1991,6 +2439,7 @@ pub mod trail {
             self.log_file_validation_enabled = Some(input);
             self
         }
+        /// <p>Specifies whether log file validation is enabled.</p>
         pub fn set_log_file_validation_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.log_file_validation_enabled = input;
             self
@@ -2003,6 +2452,7 @@ pub mod trail {
             self.cloud_watch_logs_log_group_arn = Some(input.into());
             self
         }
+        /// <p>Specifies an Amazon Resource Name (ARN), a unique identifier that represents the log group to which CloudTrail logs will be delivered.</p>
         pub fn set_cloud_watch_logs_log_group_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2015,6 +2465,7 @@ pub mod trail {
             self.cloud_watch_logs_role_arn = Some(input.into());
             self
         }
+        /// <p>Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's log group.</p>
         pub fn set_cloud_watch_logs_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2031,6 +2482,11 @@ pub mod trail {
             self.kms_key_id = Some(input.into());
             self
         }
+        /// <p>Specifies the KMS key ID that encrypts the logs delivered by CloudTrail.
+        /// The value is a fully specified ARN to a KMS key in the following format.</p>
+        /// <p>
+        /// <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+        /// </p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -2040,6 +2496,7 @@ pub mod trail {
             self.has_custom_event_selectors = Some(input);
             self
         }
+        /// <p>Specifies if the trail has custom event selectors.</p>
         pub fn set_has_custom_event_selectors(mut self, input: std::option::Option<bool>) -> Self {
             self.has_custom_event_selectors = input;
             self
@@ -2049,6 +2506,7 @@ pub mod trail {
             self.has_insight_selectors = Some(input);
             self
         }
+        /// <p>Specifies whether a trail has insight types specified in an <code>InsightSelector</code> list.</p>
         pub fn set_has_insight_selectors(mut self, input: std::option::Option<bool>) -> Self {
             self.has_insight_selectors = input;
             self
@@ -2058,6 +2516,7 @@ pub mod trail {
             self.is_organization_trail = Some(input);
             self
         }
+        /// <p>Specifies whether the trail is an organization trail.</p>
         pub fn set_is_organization_trail(mut self, input: std::option::Option<bool>) -> Self {
             self.is_organization_trail = input;
             self

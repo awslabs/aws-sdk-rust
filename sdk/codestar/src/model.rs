@@ -48,6 +48,7 @@ pub mod user_profile_summary {
             self.user_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the user in IAM.</p>
         pub fn set_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_arn = input;
             self
@@ -64,6 +65,14 @@ pub mod user_profile_summary {
             self.display_name = Some(input.into());
             self
         }
+        /// <p>The display name of a user in AWS CodeStar. For example, this could be set to both first and
+        /// last name ("Mary Major") or a single name ("Mary"). The display name is also used to generate
+        /// the initial icon associated with the user in AWS CodeStar projects. If spaces are included in the
+        /// display name, the first character that appears after the space will be used as the second
+        /// character in the user initial icon. The initial icon displays a maximum of two characters, so
+        /// a display name with more than one space (for example "Mary Jane Major") would generate an
+        /// initial icon using the first character and the first character after the space ("MJ", not
+        /// "MM").</p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.display_name = input;
             self
@@ -73,6 +82,7 @@ pub mod user_profile_summary {
             self.email_address = Some(input.into());
             self
         }
+        /// <p>The email address associated with the user.</p>
         pub fn set_email_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -87,6 +97,9 @@ pub mod user_profile_summary {
             self.ssh_public_key = Some(input.into());
             self
         }
+        /// <p>The SSH public key associated with the user in AWS CodeStar. If a project owner allows the
+        /// user remote access to project resources, this public key will be used along with the user's
+        /// private key for SSH access.</p>
         pub fn set_ssh_public_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -151,6 +164,7 @@ pub mod team_member {
             self.user_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the user in IAM.</p>
         pub fn set_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_arn = input;
             self
@@ -162,6 +176,9 @@ pub mod team_member {
             self.project_role = Some(input.into());
             self
         }
+        /// <p>The role assigned to the user in the project. Project roles have different levels of
+        /// access. For more information, see <a href="http://docs.aws.amazon.com/codestar/latest/userguide/working-with-teams.html">Working with
+        /// Teams</a> in the <i>AWS CodeStar User Guide</i>. </p>
         pub fn set_project_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.project_role = input;
             self
@@ -172,6 +189,8 @@ pub mod team_member {
             self.remote_access_allowed = Some(input);
             self
         }
+        /// <p>Whether the user is allowed to remotely access project resources using an SSH
+        /// public/private key pair.</p>
         pub fn set_remote_access_allowed(mut self, input: std::option::Option<bool>) -> Self {
             self.remote_access_allowed = input;
             self
@@ -221,6 +240,7 @@ pub mod resource {
             self.id = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the resource.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -270,6 +290,7 @@ pub mod project_summary {
             self.project_id = Some(input.into());
             self
         }
+        /// <p>The ID of the project.</p>
         pub fn set_project_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.project_id = input;
             self
@@ -279,6 +300,7 @@ pub mod project_summary {
             self.project_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the project.</p>
         pub fn set_project_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.project_arn = input;
             self
@@ -333,6 +355,7 @@ pub mod project_status {
             self.state = Some(input.into());
             self
         }
+        /// <p>The phase of completion for a project creation or deletion.</p>
         pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.state = input;
             self
@@ -343,6 +366,8 @@ pub mod project_status {
             self.reason = Some(input.into());
             self
         }
+        /// <p>In the case of a project creation or deletion failure, a reason for the
+        /// failure.</p>
         pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.reason = input;
             self
@@ -407,6 +432,8 @@ pub mod toolchain {
             self.source = Some(input);
             self
         }
+        /// <p>The Amazon S3 location where the toolchain template file provided with the
+        /// project request is stored. AWS CodeStar retrieves the file during project creation.</p>
         pub fn set_source(
             mut self,
             input: std::option::Option<crate::model::ToolchainSource>,
@@ -420,10 +447,18 @@ pub mod toolchain {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>The service role ARN for AWS CodeStar to use for the toolchain template during stack
+        /// provisioning.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
         }
+        /// Adds a key-value pair to `stack_parameters`.
+        ///
+        /// To override the contents of this collection use [`set_stack_parameters`](Self::set_stack_parameters).
+        ///
+        /// <p>The list of parameter overrides to be passed into the toolchain template during stack
+        /// provisioning, if any.</p>
         pub fn stack_parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -434,6 +469,8 @@ pub mod toolchain {
             self.stack_parameters = Some(hash_map);
             self
         }
+        /// <p>The list of parameter overrides to be passed into the toolchain template during stack
+        /// provisioning, if any.</p>
         pub fn set_stack_parameters(
             mut self,
             input: std::option::Option<
@@ -491,6 +528,8 @@ pub mod toolchain_source {
             self.s3 = Some(input);
             self
         }
+        /// <p>The Amazon S3 bucket where the toolchain template file provided with the project
+        /// request is stored.</p>
         pub fn set_s3(mut self, input: std::option::Option<crate::model::S3Location>) -> Self {
             self.s3 = input;
             self
@@ -544,6 +583,8 @@ pub mod s3_location {
             self.bucket_name = Some(input.into());
             self
         }
+        /// <p>The Amazon S3 bucket name where the source code files provided with the project
+        /// request are stored.</p>
         pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket_name = input;
             self
@@ -554,6 +595,8 @@ pub mod s3_location {
             self.bucket_key = Some(input.into());
             self
         }
+        /// <p>The Amazon S3 object key where the source code files provided with the project
+        /// request are stored.</p>
         pub fn set_bucket_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket_key = input;
             self
@@ -611,6 +654,8 @@ pub mod code {
             self.source = Some(input);
             self
         }
+        /// <p>The location where the source code files provided with the project request are
+        /// stored. AWS CodeStar retrieves the files during project creation.</p>
         pub fn set_source(mut self, input: std::option::Option<crate::model::CodeSource>) -> Self {
             self.source = input;
             self
@@ -621,6 +666,8 @@ pub mod code {
             self.destination = Some(input);
             self
         }
+        /// <p>The repository to be created in AWS CodeStar. Valid values are AWS CodeCommit or GitHub. After AWS CodeStar provisions the new repository, the
+        /// source code files provided with the project request are placed in the repository.</p>
         pub fn set_destination(
             mut self,
             input: std::option::Option<crate::model::CodeDestination>,
@@ -680,6 +727,8 @@ pub mod code_destination {
             self.code_commit = Some(input);
             self
         }
+        /// <p>Information about the AWS CodeCommit repository to be created in AWS CodeStar. This is where the source code files provided
+        /// with the project request will be uploaded after project creation.</p>
         pub fn set_code_commit(
             mut self,
             input: std::option::Option<crate::model::CodeCommitCodeDestination>,
@@ -693,6 +742,8 @@ pub mod code_destination {
             self.git_hub = Some(input);
             self
         }
+        /// <p>Information about the GitHub repository to be created in AWS CodeStar. This is where the source code files provided with the
+        /// project request will be uploaded after project creation.</p>
         pub fn set_git_hub(
             mut self,
             input: std::option::Option<crate::model::GitHubCodeDestination>,
@@ -771,6 +822,7 @@ pub mod git_hub_code_destination {
             self.name = Some(input.into());
             self
         }
+        /// <p>Name of the GitHub repository to be created in AWS CodeStar.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -781,6 +833,8 @@ pub mod git_hub_code_destination {
             self.description = Some(input.into());
             self
         }
+        /// <p>Description for the GitHub repository to be created in AWS CodeStar. This description displays in
+        /// GitHub after the repository is created.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -790,6 +844,7 @@ pub mod git_hub_code_destination {
             self.r#type = Some(input.into());
             self
         }
+        /// <p>The type of GitHub repository to be created in AWS CodeStar. Valid values are User or Organization.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
@@ -800,6 +855,8 @@ pub mod git_hub_code_destination {
             self.owner = Some(input.into());
             self
         }
+        /// <p>The GitHub username for the owner of the GitHub repository to be created in AWS CodeStar. If this repository should
+        /// be owned by a GitHub organization, provide its name.</p>
         pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.owner = input;
             self
@@ -809,6 +866,7 @@ pub mod git_hub_code_destination {
             self.private_repository = Some(input);
             self
         }
+        /// <p>Whether the GitHub repository is to be a private repository.</p>
         pub fn set_private_repository(mut self, input: std::option::Option<bool>) -> Self {
             self.private_repository = input;
             self
@@ -818,6 +876,7 @@ pub mod git_hub_code_destination {
             self.issues_enabled = Some(input);
             self
         }
+        /// <p>Whether to enable issues for the GitHub repository.</p>
         pub fn set_issues_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.issues_enabled = input;
             self
@@ -827,6 +886,7 @@ pub mod git_hub_code_destination {
             self.token = Some(input.into());
             self
         }
+        /// <p>The GitHub user's personal access token for the GitHub repository.</p>
         pub fn set_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.token = input;
             self
@@ -881,6 +941,7 @@ pub mod code_commit_code_destination {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the AWS CodeCommit repository to be created in AWS CodeStar.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -929,6 +990,8 @@ pub mod code_source {
             self.s3 = Some(input);
             self
         }
+        /// <p>Information about the Amazon S3 location where the source code files provided with the
+        /// project request are stored. </p>
         pub fn set_s3(mut self, input: std::option::Option<crate::model::S3Location>) -> Self {
             self.s3 = input;
             self

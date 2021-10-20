@@ -21,7 +21,7 @@ pub fn parse_search_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::search_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_search_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SearchError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_search_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SearchError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -74,7 +74,7 @@ pub fn parse_suggest_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::search_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_search_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::SuggestError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_search_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SuggestError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -126,7 +126,7 @@ pub fn parse_upload_documents_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::document_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_document_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UploadDocumentsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_document_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UploadDocumentsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {

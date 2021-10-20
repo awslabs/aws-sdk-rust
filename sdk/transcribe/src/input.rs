@@ -15,6 +15,7 @@ pub mod create_call_analytics_category_input {
             self.category_name = Some(input.into());
             self
         }
+        /// <p>The name that you choose for your category when you create it. </p>
         pub fn set_category_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -22,12 +23,22 @@ pub mod create_call_analytics_category_input {
             self.category_name = input;
             self
         }
+        /// Appends an item to `rules`.
+        ///
+        /// To override the contents of this collection use [`set_rules`](Self::set_rules).
+        ///
+        /// <p>To create a category, you must specify between 1 and 20 rules. For each rule, you specify a
+        /// filter to be applied to the attributes of the call. For example, you can specify a sentiment
+        /// filter to detect if the customer's sentiment was negative or neutral. </p>
         pub fn rules(mut self, input: impl Into<crate::model::Rule>) -> Self {
             let mut v = self.rules.unwrap_or_default();
             v.push(input.into());
             self.rules = Some(v);
             self
         }
+        /// <p>To create a category, you must specify between 1 and 20 rules. For each rule, you specify a
+        /// filter to be applied to the attributes of the call. For example, you can specify a sentiment
+        /// filter to detect if the customer's sentiment was negative or neutral. </p>
         pub fn set_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Rule>>,
@@ -40,7 +51,7 @@ pub mod create_call_analytics_category_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateCallAnalyticsCategoryInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateCallAnalyticsCategoryInput {
                 category_name: self.category_name,
@@ -61,16 +72,16 @@ impl CreateCallAnalyticsCategoryInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateCallAnalyticsCategory,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateCallAnalyticsCategoryInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -78,7 +89,7 @@ impl CreateCallAnalyticsCategoryInput {
         fn update_http_builder(
             input: &crate::input::CreateCallAnalyticsCategoryInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -87,30 +98,30 @@ impl CreateCallAnalyticsCategoryInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateCallAnalyticsCategoryInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Transcribe.CreateCallAnalyticsCategory",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_call_analytics_category(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_call_analytics_category(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -133,15 +144,15 @@ impl CreateCallAnalyticsCategoryInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateCallAnalyticsCategory::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateCallAnalyticsCategory",
             "transcribe",
         ));
@@ -150,10 +161,10 @@ impl CreateCallAnalyticsCategoryInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -186,6 +197,8 @@ pub mod create_language_model_input {
             self.language_code = Some(input);
             self
         }
+        /// <p>The language of the input text you're using to train your custom language
+        /// model.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::ClmLanguageCode>,
@@ -202,6 +215,11 @@ pub mod create_language_model_input {
             self.base_model_name = Some(input);
             self
         }
+        /// <p>The Amazon Transcribe standard language model, or base model used to create your custom language model.</p>
+        /// <p>If you want to use your custom language model to transcribe audio with a sample rate of 16,000 Hz or greater,
+        /// choose <code>Wideband</code>.</p>
+        /// <p>If you want to use your custom language model to transcribe audio with a sample rate that is less than
+        /// 16,000 Hz, choose <code>Narrowband</code>.</p>
         pub fn set_base_model_name(
             mut self,
             input: std::option::Option<crate::model::BaseModelName>,
@@ -214,6 +232,7 @@ pub mod create_language_model_input {
             self.model_name = Some(input.into());
             self
         }
+        /// <p>The name you choose for your custom language model when you create it.</p>
         pub fn set_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.model_name = input;
             self
@@ -224,6 +243,8 @@ pub mod create_language_model_input {
             self.input_data_config = Some(input);
             self
         }
+        /// <p>Contains the data access role and the Amazon S3 prefixes to read the required input files to create a custom
+        /// language model.</p>
         pub fn set_input_data_config(
             mut self,
             input: std::option::Option<crate::model::InputDataConfig>,
@@ -231,12 +252,20 @@ pub mod create_language_model_input {
             self.input_data_config = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Adds one or more tags, each in the form of a key:value pair, to a new language model at the time you create
+        /// this new model.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>Adds one or more tags, each in the form of a key:value pair, to a new language model at the time you create
+        /// this new model.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -249,7 +278,7 @@ pub mod create_language_model_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateLanguageModelInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateLanguageModelInput {
                 language_code: self.language_code,
@@ -272,16 +301,16 @@ impl CreateLanguageModelInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateLanguageModel,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateLanguageModelInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -289,7 +318,7 @@ impl CreateLanguageModelInput {
         fn update_http_builder(
             input: &crate::input::CreateLanguageModelInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -298,32 +327,32 @@ impl CreateLanguageModelInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateLanguageModelInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Transcribe.CreateLanguageModel",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_language_model(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -346,15 +375,15 @@ impl CreateLanguageModelInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateLanguageModel::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateLanguageModel",
             "transcribe",
         ));
@@ -363,10 +392,10 @@ impl CreateLanguageModelInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -399,6 +428,9 @@ pub mod create_medical_vocabulary_input {
             self.vocabulary_name = Some(input.into());
             self
         }
+        /// <p>The name of the custom vocabulary. This case-sensitive name must be unique within an Amazon Web Services
+        /// account. If you try to create a vocabulary with the same name as a previous vocabulary, you get a
+        /// <code>ConflictException</code> error.</p>
         pub fn set_vocabulary_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -413,6 +445,9 @@ pub mod create_medical_vocabulary_input {
             self.language_code = Some(input);
             self
         }
+        /// <p>The language code for the language used for the entries in your custom vocabulary. The language code of your
+        /// custom vocabulary must match the language code of your transcription job. US English (en-US) is the only language
+        /// code available for Amazon Transcribe Medical.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,
@@ -439,6 +474,21 @@ pub mod create_medical_vocabulary_input {
             self.vocabulary_file_uri = Some(input.into());
             self
         }
+        /// <p>The location in Amazon S3 of the text file you use to define your custom vocabulary. The URI must be in the same
+        /// Amazon Web Services Region as the resource that you're calling. Enter information about your
+        /// <code>VocabularyFileUri</code> in the following format:</p>
+        /// <p>
+        /// <code>
+        /// https://s3.<aws-region>.amazonaws.com/<bucket-name>/<keyprefix>/<objectkey>
+        /// </code>
+        /// </p>
+        /// <p>The following is an example URI for a vocabulary file that is stored in Amazon S3:</p>
+        /// <p>
+        /// <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code>
+        /// </p>
+        /// <p>For more information about Amazon S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the <i>Amazon S3
+        /// Developer Guide</i>.</p>
+        /// <p>For more information about custom vocabularies, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary-med">Medical Custom Vocabularies</a>.</p>
         pub fn set_vocabulary_file_uri(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -446,12 +496,20 @@ pub mod create_medical_vocabulary_input {
             self.vocabulary_file_uri = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Adds one or more tags, each in the form of a key:value pair, to a new medical vocabulary at the time you
+        /// create this new vocabulary.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>Adds one or more tags, each in the form of a key:value pair, to a new medical vocabulary at the time you
+        /// create this new vocabulary.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -464,7 +522,7 @@ pub mod create_medical_vocabulary_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateMedicalVocabularyInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateMedicalVocabularyInput {
                 vocabulary_name: self.vocabulary_name,
@@ -487,16 +545,16 @@ impl CreateMedicalVocabularyInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateMedicalVocabulary,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateMedicalVocabularyInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -504,7 +562,7 @@ impl CreateMedicalVocabularyInput {
         fn update_http_builder(
             input: &crate::input::CreateMedicalVocabularyInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -513,32 +571,34 @@ impl CreateMedicalVocabularyInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateMedicalVocabularyInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Transcribe.CreateMedicalVocabulary",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_medical_vocabulary(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -561,15 +621,15 @@ impl CreateMedicalVocabularyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateMedicalVocabulary::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateMedicalVocabulary",
             "transcribe",
         ));
@@ -578,10 +638,10 @@ impl CreateMedicalVocabularyInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -615,6 +675,9 @@ pub mod create_vocabulary_input {
             self.vocabulary_name = Some(input.into());
             self
         }
+        /// <p>The name of the vocabulary. The name must be unique within an Amazon Web Services account. The name
+        /// is case sensitive. If you try to create a vocabulary with the same name as a previous vocabulary you will receive a
+        /// <code>ConflictException</code> error.</p>
         pub fn set_vocabulary_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -628,6 +691,8 @@ pub mod create_vocabulary_input {
             self.language_code = Some(input);
             self
         }
+        /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language
+        /// codes, see <a>transcribe-whatis</a>.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,
@@ -635,12 +700,18 @@ pub mod create_vocabulary_input {
             self.language_code = input;
             self
         }
+        /// Appends an item to `phrases`.
+        ///
+        /// To override the contents of this collection use [`set_phrases`](Self::set_phrases).
+        ///
+        /// <p>An array of strings that contains the vocabulary entries. </p>
         pub fn phrases(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.phrases.unwrap_or_default();
             v.push(input.into());
             self.phrases = Some(v);
             self
         }
+        /// <p>An array of strings that contains the vocabulary entries. </p>
         pub fn set_phrases(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -650,6 +721,9 @@ pub mod create_vocabulary_input {
         }
         /// <p>The S3 location of the text file that contains the definition of the custom vocabulary. The URI must be in the
         /// same region as the API endpoint that you are calling. The general form is:</p>
+        ///
+        ///
+        ///
         /// <p>For more information about S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the
         /// <i>Amazon S3 Developer Guide</i>.</p>
         /// <p>For more information about custom vocabularies, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary">Custom vocabularies</a>.</p>
@@ -657,6 +731,14 @@ pub mod create_vocabulary_input {
             self.vocabulary_file_uri = Some(input.into());
             self
         }
+        /// <p>The S3 location of the text file that contains the definition of the custom vocabulary. The URI must be in the
+        /// same region as the API endpoint that you are calling. The general form is:</p>
+        ///
+        ///
+        ///
+        /// <p>For more information about S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the
+        /// <i>Amazon S3 Developer Guide</i>.</p>
+        /// <p>For more information about custom vocabularies, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary">Custom vocabularies</a>.</p>
         pub fn set_vocabulary_file_uri(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -664,12 +746,20 @@ pub mod create_vocabulary_input {
             self.vocabulary_file_uri = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Adds one or more tags, each in the form of a key:value pair, to a new Amazon Transcribe vocabulary at the time you create
+        /// this new vocabulary.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>Adds one or more tags, each in the form of a key:value pair, to a new Amazon Transcribe vocabulary at the time you create
+        /// this new vocabulary.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -682,7 +772,7 @@ pub mod create_vocabulary_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateVocabularyInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateVocabularyInput {
                 vocabulary_name: self.vocabulary_name,
@@ -705,16 +795,16 @@ impl CreateVocabularyInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateVocabulary,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateVocabularyInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -722,7 +812,7 @@ impl CreateVocabularyInput {
         fn update_http_builder(
             input: &crate::input::CreateVocabularyInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -731,32 +821,32 @@ impl CreateVocabularyInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateVocabularyInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Transcribe.CreateVocabulary",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_vocabulary(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -779,15 +869,15 @@ impl CreateVocabularyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateVocabulary::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateVocabulary",
             "transcribe",
         ));
@@ -796,10 +886,10 @@ impl CreateVocabularyInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -833,6 +923,9 @@ pub mod create_vocabulary_filter_input {
             self.vocabulary_filter_name = Some(input.into());
             self
         }
+        /// <p>The vocabulary filter name. The name must be unique within the account that contains it. If you try to create a
+        /// vocabulary filter with the same name as another vocabulary filter, you get a <code>ConflictException</code>
+        /// error.</p>
         pub fn set_vocabulary_filter_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -846,6 +939,8 @@ pub mod create_vocabulary_filter_input {
             self.language_code = Some(input);
             self
         }
+        /// <p>The language code of the words in the vocabulary filter. All words in the filter must be in the same language.
+        /// The vocabulary filter can only be used with transcription jobs in the specified language.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,
@@ -853,12 +948,24 @@ pub mod create_vocabulary_filter_input {
             self.language_code = input;
             self
         }
+        /// Appends an item to `words`.
+        ///
+        /// To override the contents of this collection use [`set_words`](Self::set_words).
+        ///
+        /// <p>The words to use in the vocabulary filter. Only use characters from the character set defined for custom
+        /// vocabularies. For a list of character sets, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary.html#charsets">Character Sets for Custom Vocabularies</a>.</p>
+        /// <p>If you provide a list of words in the <code>Words</code> parameter, you can't use the
+        /// <code>VocabularyFilterFileUri</code> parameter.</p>
         pub fn words(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.words.unwrap_or_default();
             v.push(input.into());
             self.words = Some(v);
             self
         }
+        /// <p>The words to use in the vocabulary filter. Only use characters from the character set defined for custom
+        /// vocabularies. For a list of character sets, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary.html#charsets">Character Sets for Custom Vocabularies</a>.</p>
+        /// <p>If you provide a list of words in the <code>Words</code> parameter, you can't use the
+        /// <code>VocabularyFilterFileUri</code> parameter.</p>
         pub fn set_words(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -875,6 +982,11 @@ pub mod create_vocabulary_filter_input {
             self.vocabulary_filter_file_uri = Some(input.into());
             self
         }
+        /// <p>The Amazon S3 location of a text file used as input to create the vocabulary filter. Only use characters from
+        /// the character set defined for custom vocabularies. For a list of character sets, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary.html#charsets">Character Sets for Custom Vocabularies</a>.</p>
+        /// <p>The specified file must be less than 50 KB of UTF-8 characters.</p>
+        /// <p>If you provide the location of a list of words in the <code>VocabularyFilterFileUri</code> parameter, you can't
+        /// use the <code>Words</code> parameter.</p>
         pub fn set_vocabulary_filter_file_uri(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -882,12 +994,20 @@ pub mod create_vocabulary_filter_input {
             self.vocabulary_filter_file_uri = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Adds one or more tags, each in the form of a key:value pair, to a new Amazon Transcribe vocabulary filter at the time you
+        /// create this new vocabulary filter.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>Adds one or more tags, each in the form of a key:value pair, to a new Amazon Transcribe vocabulary filter at the time you
+        /// create this new vocabulary filter.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -900,7 +1020,7 @@ pub mod create_vocabulary_filter_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateVocabularyFilterInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateVocabularyFilterInput {
                 vocabulary_filter_name: self.vocabulary_filter_name,
@@ -923,16 +1043,16 @@ impl CreateVocabularyFilterInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateVocabularyFilter,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateVocabularyFilterInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -940,7 +1060,7 @@ impl CreateVocabularyFilterInput {
         fn update_http_builder(
             input: &crate::input::CreateVocabularyFilterInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -949,32 +1069,34 @@ impl CreateVocabularyFilterInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateVocabularyFilterInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Transcribe.CreateVocabularyFilter",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_vocabulary_filter(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -997,15 +1119,15 @@ impl CreateVocabularyFilterInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateVocabularyFilter::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateVocabularyFilter",
             "transcribe",
         ));
@@ -1014,10 +1136,10 @@ impl CreateVocabularyFilterInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1046,6 +1168,8 @@ pub mod delete_call_analytics_category_input {
             self.category_name = Some(input.into());
             self
         }
+        /// <p>The name of the call analytics category that you're choosing to delete. The value is case
+        /// sensitive. </p>
         pub fn set_category_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1058,7 +1182,7 @@ pub mod delete_call_analytics_category_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteCallAnalyticsCategoryInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteCallAnalyticsCategoryInput {
                 category_name: self.category_name,
@@ -1078,16 +1202,16 @@ impl DeleteCallAnalyticsCategoryInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteCallAnalyticsCategory,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteCallAnalyticsCategoryInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1095,7 +1219,7 @@ impl DeleteCallAnalyticsCategoryInput {
         fn update_http_builder(
             input: &crate::input::DeleteCallAnalyticsCategoryInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1104,30 +1228,30 @@ impl DeleteCallAnalyticsCategoryInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteCallAnalyticsCategoryInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Transcribe.DeleteCallAnalyticsCategory",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_call_analytics_category(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_call_analytics_category(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1150,15 +1274,15 @@ impl DeleteCallAnalyticsCategoryInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteCallAnalyticsCategory::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteCallAnalyticsCategory",
             "transcribe",
         ));
@@ -1167,10 +1291,10 @@ impl DeleteCallAnalyticsCategoryInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1198,6 +1322,7 @@ pub mod delete_call_analytics_job_input {
             self.call_analytics_job_name = Some(input.into());
             self
         }
+        /// <p>The name of the call analytics job you want to delete.</p>
         pub fn set_call_analytics_job_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1210,7 +1335,7 @@ pub mod delete_call_analytics_job_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteCallAnalyticsJobInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteCallAnalyticsJobInput {
                 call_analytics_job_name: self.call_analytics_job_name,
@@ -1229,16 +1354,16 @@ impl DeleteCallAnalyticsJobInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteCallAnalyticsJob,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteCallAnalyticsJobInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1246,7 +1371,7 @@ impl DeleteCallAnalyticsJobInput {
         fn update_http_builder(
             input: &crate::input::DeleteCallAnalyticsJobInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1255,32 +1380,34 @@ impl DeleteCallAnalyticsJobInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteCallAnalyticsJobInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Transcribe.DeleteCallAnalyticsJob",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_call_analytics_job(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1303,15 +1430,15 @@ impl DeleteCallAnalyticsJobInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteCallAnalyticsJob::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteCallAnalyticsJob",
             "transcribe",
         ));
@@ -1320,10 +1447,10 @@ impl DeleteCallAnalyticsJobInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1351,6 +1478,7 @@ pub mod delete_language_model_input {
             self.model_name = Some(input.into());
             self
         }
+        /// <p>The name of the model you're choosing to delete.</p>
         pub fn set_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.model_name = input;
             self
@@ -1360,7 +1488,7 @@ pub mod delete_language_model_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteLanguageModelInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteLanguageModelInput {
                 model_name: self.model_name,
@@ -1379,16 +1507,16 @@ impl DeleteLanguageModelInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteLanguageModel,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteLanguageModelInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1396,7 +1524,7 @@ impl DeleteLanguageModelInput {
         fn update_http_builder(
             input: &crate::input::DeleteLanguageModelInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1405,32 +1533,32 @@ impl DeleteLanguageModelInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteLanguageModelInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Transcribe.DeleteLanguageModel",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_language_model(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1453,15 +1581,15 @@ impl DeleteLanguageModelInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteLanguageModel::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteLanguageModel",
             "transcribe",
         ));
@@ -1470,10 +1598,10 @@ impl DeleteLanguageModelInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1505,6 +1633,8 @@ pub mod delete_medical_transcription_job_input {
             self.medical_transcription_job_name = Some(input.into());
             self
         }
+        /// <p>The name you provide to the <code>DeleteMedicalTranscriptionJob</code> object to
+        /// delete a transcription job.</p>
         pub fn set_medical_transcription_job_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1517,7 +1647,7 @@ pub mod delete_medical_transcription_job_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteMedicalTranscriptionJobInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteMedicalTranscriptionJobInput {
                 medical_transcription_job_name: self.medical_transcription_job_name,
@@ -1537,16 +1667,16 @@ impl DeleteMedicalTranscriptionJobInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteMedicalTranscriptionJob,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteMedicalTranscriptionJobInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1554,7 +1684,7 @@ impl DeleteMedicalTranscriptionJobInput {
         fn update_http_builder(
             input: &crate::input::DeleteMedicalTranscriptionJobInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1563,30 +1693,30 @@ impl DeleteMedicalTranscriptionJobInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteMedicalTranscriptionJobInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Transcribe.DeleteMedicalTranscriptionJob",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_medical_transcription_job(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_medical_transcription_job(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1609,15 +1739,15 @@ impl DeleteMedicalTranscriptionJobInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteMedicalTranscriptionJob::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteMedicalTranscriptionJob",
             "transcribe",
         ));
@@ -1626,10 +1756,10 @@ impl DeleteMedicalTranscriptionJobInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1657,6 +1787,7 @@ pub mod delete_medical_vocabulary_input {
             self.vocabulary_name = Some(input.into());
             self
         }
+        /// <p>The name of the vocabulary that you want to delete.</p>
         pub fn set_vocabulary_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1669,7 +1800,7 @@ pub mod delete_medical_vocabulary_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteMedicalVocabularyInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteMedicalVocabularyInput {
                 vocabulary_name: self.vocabulary_name,
@@ -1689,16 +1820,16 @@ impl DeleteMedicalVocabularyInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteMedicalVocabulary,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteMedicalVocabularyInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1706,7 +1837,7 @@ impl DeleteMedicalVocabularyInput {
         fn update_http_builder(
             input: &crate::input::DeleteMedicalVocabularyInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1715,32 +1846,34 @@ impl DeleteMedicalVocabularyInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteMedicalVocabularyInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Transcribe.DeleteMedicalVocabulary",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_medical_vocabulary(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1763,15 +1896,15 @@ impl DeleteMedicalVocabularyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteMedicalVocabulary::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteMedicalVocabulary",
             "transcribe",
         ));
@@ -1780,10 +1913,10 @@ impl DeleteMedicalVocabularyInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1811,6 +1944,7 @@ pub mod delete_transcription_job_input {
             self.transcription_job_name = Some(input.into());
             self
         }
+        /// <p>The name of the transcription job to be deleted.</p>
         pub fn set_transcription_job_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1823,7 +1957,7 @@ pub mod delete_transcription_job_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteTranscriptionJobInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteTranscriptionJobInput {
                 transcription_job_name: self.transcription_job_name,
@@ -1842,16 +1976,16 @@ impl DeleteTranscriptionJobInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteTranscriptionJob,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteTranscriptionJobInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1859,7 +1993,7 @@ impl DeleteTranscriptionJobInput {
         fn update_http_builder(
             input: &crate::input::DeleteTranscriptionJobInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1868,32 +2002,34 @@ impl DeleteTranscriptionJobInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteTranscriptionJobInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Transcribe.DeleteTranscriptionJob",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_transcription_job(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1916,15 +2052,15 @@ impl DeleteTranscriptionJobInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteTranscriptionJob::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteTranscriptionJob",
             "transcribe",
         ));
@@ -1933,10 +2069,10 @@ impl DeleteTranscriptionJobInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1964,6 +2100,7 @@ pub mod delete_vocabulary_input {
             self.vocabulary_name = Some(input.into());
             self
         }
+        /// <p>The name of the vocabulary to delete. </p>
         pub fn set_vocabulary_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1976,7 +2113,7 @@ pub mod delete_vocabulary_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteVocabularyInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteVocabularyInput {
                 vocabulary_name: self.vocabulary_name,
@@ -1995,16 +2132,16 @@ impl DeleteVocabularyInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteVocabulary,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteVocabularyInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2012,7 +2149,7 @@ impl DeleteVocabularyInput {
         fn update_http_builder(
             input: &crate::input::DeleteVocabularyInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2021,32 +2158,32 @@ impl DeleteVocabularyInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteVocabularyInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Transcribe.DeleteVocabulary",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_vocabulary(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2069,15 +2206,15 @@ impl DeleteVocabularyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteVocabulary::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteVocabulary",
             "transcribe",
         ));
@@ -2086,10 +2223,10 @@ impl DeleteVocabularyInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2117,6 +2254,7 @@ pub mod delete_vocabulary_filter_input {
             self.vocabulary_filter_name = Some(input.into());
             self
         }
+        /// <p>The name of the vocabulary filter to remove.</p>
         pub fn set_vocabulary_filter_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2129,7 +2267,7 @@ pub mod delete_vocabulary_filter_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteVocabularyFilterInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteVocabularyFilterInput {
                 vocabulary_filter_name: self.vocabulary_filter_name,
@@ -2148,16 +2286,16 @@ impl DeleteVocabularyFilterInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteVocabularyFilter,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteVocabularyFilterInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2165,7 +2303,7 @@ impl DeleteVocabularyFilterInput {
         fn update_http_builder(
             input: &crate::input::DeleteVocabularyFilterInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2174,32 +2312,34 @@ impl DeleteVocabularyFilterInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteVocabularyFilterInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Transcribe.DeleteVocabularyFilter",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_vocabulary_filter(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2222,15 +2362,15 @@ impl DeleteVocabularyFilterInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteVocabularyFilter::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteVocabularyFilter",
             "transcribe",
         ));
@@ -2239,10 +2379,10 @@ impl DeleteVocabularyFilterInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2270,6 +2410,7 @@ pub mod describe_language_model_input {
             self.model_name = Some(input.into());
             self
         }
+        /// <p>The name of the custom language model you submit to get more information.</p>
         pub fn set_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.model_name = input;
             self
@@ -2279,7 +2420,7 @@ pub mod describe_language_model_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeLanguageModelInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeLanguageModelInput {
                 model_name: self.model_name,
@@ -2298,16 +2439,16 @@ impl DescribeLanguageModelInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeLanguageModel,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeLanguageModelInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2315,7 +2456,7 @@ impl DescribeLanguageModelInput {
         fn update_http_builder(
             input: &crate::input::DescribeLanguageModelInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2324,32 +2465,34 @@ impl DescribeLanguageModelInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeLanguageModelInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Transcribe.DescribeLanguageModel",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_language_model(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2372,15 +2515,15 @@ impl DescribeLanguageModelInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeLanguageModel::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeLanguageModel",
             "transcribe",
         ));
@@ -2389,10 +2532,10 @@ impl DescribeLanguageModelInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2420,6 +2563,7 @@ pub mod get_call_analytics_category_input {
             self.category_name = Some(input.into());
             self
         }
+        /// <p>The name of the category you want information about. This value is case sensitive.</p>
         pub fn set_category_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2432,7 +2576,7 @@ pub mod get_call_analytics_category_input {
             self,
         ) -> std::result::Result<
             crate::input::GetCallAnalyticsCategoryInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetCallAnalyticsCategoryInput {
                 category_name: self.category_name,
@@ -2452,16 +2596,16 @@ impl GetCallAnalyticsCategoryInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetCallAnalyticsCategory,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetCallAnalyticsCategoryInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2469,7 +2613,7 @@ impl GetCallAnalyticsCategoryInput {
         fn update_http_builder(
             input: &crate::input::GetCallAnalyticsCategoryInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2478,32 +2622,34 @@ impl GetCallAnalyticsCategoryInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetCallAnalyticsCategoryInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Transcribe.GetCallAnalyticsCategory",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_call_analytics_category(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2526,15 +2672,15 @@ impl GetCallAnalyticsCategoryInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetCallAnalyticsCategory::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetCallAnalyticsCategory",
             "transcribe",
         ));
@@ -2543,10 +2689,10 @@ impl GetCallAnalyticsCategoryInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2575,6 +2721,8 @@ pub mod get_call_analytics_job_input {
             self.call_analytics_job_name = Some(input.into());
             self
         }
+        /// <p>The name of the analytics job you want information about. This value is case
+        /// sensitive. </p>
         pub fn set_call_analytics_job_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2587,7 +2735,7 @@ pub mod get_call_analytics_job_input {
             self,
         ) -> std::result::Result<
             crate::input::GetCallAnalyticsJobInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetCallAnalyticsJobInput {
                 call_analytics_job_name: self.call_analytics_job_name,
@@ -2606,16 +2754,16 @@ impl GetCallAnalyticsJobInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetCallAnalyticsJob,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetCallAnalyticsJobInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2623,7 +2771,7 @@ impl GetCallAnalyticsJobInput {
         fn update_http_builder(
             input: &crate::input::GetCallAnalyticsJobInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2632,32 +2780,32 @@ impl GetCallAnalyticsJobInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetCallAnalyticsJobInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Transcribe.GetCallAnalyticsJob",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_call_analytics_job(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2680,15 +2828,15 @@ impl GetCallAnalyticsJobInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetCallAnalyticsJob::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetCallAnalyticsJob",
             "transcribe",
         ));
@@ -2697,10 +2845,10 @@ impl GetCallAnalyticsJobInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2731,6 +2879,7 @@ pub mod get_medical_transcription_job_input {
             self.medical_transcription_job_name = Some(input.into());
             self
         }
+        /// <p>The name of the medical transcription job.</p>
         pub fn set_medical_transcription_job_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2743,7 +2892,7 @@ pub mod get_medical_transcription_job_input {
             self,
         ) -> std::result::Result<
             crate::input::GetMedicalTranscriptionJobInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetMedicalTranscriptionJobInput {
                 medical_transcription_job_name: self.medical_transcription_job_name,
@@ -2763,16 +2912,16 @@ impl GetMedicalTranscriptionJobInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetMedicalTranscriptionJob,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetMedicalTranscriptionJobInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2780,7 +2929,7 @@ impl GetMedicalTranscriptionJobInput {
         fn update_http_builder(
             input: &crate::input::GetMedicalTranscriptionJobInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2789,30 +2938,30 @@ impl GetMedicalTranscriptionJobInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetMedicalTranscriptionJobInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Transcribe.GetMedicalTranscriptionJob",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_medical_transcription_job(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_medical_transcription_job(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2835,15 +2984,15 @@ impl GetMedicalTranscriptionJobInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetMedicalTranscriptionJob::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetMedicalTranscriptionJob",
             "transcribe",
         ));
@@ -2852,10 +3001,10 @@ impl GetMedicalTranscriptionJobInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2883,6 +3032,7 @@ pub mod get_medical_vocabulary_input {
             self.vocabulary_name = Some(input.into());
             self
         }
+        /// <p>The name of the vocabulary that you want information about. The value is case sensitive. </p>
         pub fn set_vocabulary_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2895,7 +3045,7 @@ pub mod get_medical_vocabulary_input {
             self,
         ) -> std::result::Result<
             crate::input::GetMedicalVocabularyInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetMedicalVocabularyInput {
                 vocabulary_name: self.vocabulary_name,
@@ -2914,16 +3064,16 @@ impl GetMedicalVocabularyInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetMedicalVocabulary,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetMedicalVocabularyInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2931,7 +3081,7 @@ impl GetMedicalVocabularyInput {
         fn update_http_builder(
             input: &crate::input::GetMedicalVocabularyInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2940,32 +3090,32 @@ impl GetMedicalVocabularyInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetMedicalVocabularyInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Transcribe.GetMedicalVocabulary",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_medical_vocabulary(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2988,15 +3138,15 @@ impl GetMedicalVocabularyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetMedicalVocabulary::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetMedicalVocabulary",
             "transcribe",
         ));
@@ -3005,10 +3155,10 @@ impl GetMedicalVocabularyInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3036,6 +3186,7 @@ pub mod get_transcription_job_input {
             self.transcription_job_name = Some(input.into());
             self
         }
+        /// <p>The name of the job.</p>
         pub fn set_transcription_job_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3048,7 +3199,7 @@ pub mod get_transcription_job_input {
             self,
         ) -> std::result::Result<
             crate::input::GetTranscriptionJobInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetTranscriptionJobInput {
                 transcription_job_name: self.transcription_job_name,
@@ -3067,16 +3218,16 @@ impl GetTranscriptionJobInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetTranscriptionJob,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetTranscriptionJobInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3084,7 +3235,7 @@ impl GetTranscriptionJobInput {
         fn update_http_builder(
             input: &crate::input::GetTranscriptionJobInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3093,32 +3244,32 @@ impl GetTranscriptionJobInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetTranscriptionJobInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Transcribe.GetTranscriptionJob",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_transcription_job(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3141,15 +3292,15 @@ impl GetTranscriptionJobInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetTranscriptionJob::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetTranscriptionJob",
             "transcribe",
         ));
@@ -3158,10 +3309,10 @@ impl GetTranscriptionJobInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3190,6 +3341,8 @@ pub mod get_vocabulary_input {
             self.vocabulary_name = Some(input.into());
             self
         }
+        /// <p>The name of the vocabulary to return information about. The name is case
+        /// sensitive.</p>
         pub fn set_vocabulary_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3200,8 +3353,10 @@ pub mod get_vocabulary_input {
         /// Consumes the builder and constructs a [`GetVocabularyInput`](crate::input::GetVocabularyInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetVocabularyInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetVocabularyInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetVocabularyInput {
                 vocabulary_name: self.vocabulary_name,
             })
@@ -3219,16 +3374,16 @@ impl GetVocabularyInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetVocabulary,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetVocabularyInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3236,7 +3391,7 @@ impl GetVocabularyInput {
         fn update_http_builder(
             input: &crate::input::GetVocabularyInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3245,29 +3400,31 @@ impl GetVocabularyInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetVocabularyInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Transcribe.GetVocabulary",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_get_vocabulary(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3290,25 +3447,27 @@ impl GetVocabularyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::GetVocabulary::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "GetVocabulary",
-                    "transcribe",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetVocabulary::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetVocabulary",
+            "transcribe",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3336,6 +3495,7 @@ pub mod get_vocabulary_filter_input {
             self.vocabulary_filter_name = Some(input.into());
             self
         }
+        /// <p>The name of the vocabulary filter for which to return information.</p>
         pub fn set_vocabulary_filter_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3348,7 +3508,7 @@ pub mod get_vocabulary_filter_input {
             self,
         ) -> std::result::Result<
             crate::input::GetVocabularyFilterInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetVocabularyFilterInput {
                 vocabulary_filter_name: self.vocabulary_filter_name,
@@ -3367,16 +3527,16 @@ impl GetVocabularyFilterInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetVocabularyFilter,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetVocabularyFilterInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3384,7 +3544,7 @@ impl GetVocabularyFilterInput {
         fn update_http_builder(
             input: &crate::input::GetVocabularyFilterInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3393,32 +3553,32 @@ impl GetVocabularyFilterInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetVocabularyFilterInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Transcribe.GetVocabularyFilter",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_vocabulary_filter(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3441,15 +3601,15 @@ impl GetVocabularyFilterInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetVocabularyFilter::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetVocabularyFilter",
             "transcribe",
         ));
@@ -3458,10 +3618,10 @@ impl GetVocabularyFilterInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3491,6 +3651,8 @@ pub mod list_call_analytics_categories_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>When included, <code>NextToken</code>fetches the next set of categories if the result
+        /// of the previous request was truncated.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3502,6 +3664,9 @@ pub mod list_call_analytics_categories_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of categories to return in each page of results. If there are fewer
+        /// results than the value you specify, only the actual results are returned. If you do not specify a
+        /// value, the default of 5 is used.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3511,7 +3676,7 @@ pub mod list_call_analytics_categories_input {
             self,
         ) -> std::result::Result<
             crate::input::ListCallAnalyticsCategoriesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListCallAnalyticsCategoriesInput {
                 next_token: self.next_token,
@@ -3532,16 +3697,16 @@ impl ListCallAnalyticsCategoriesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListCallAnalyticsCategories,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListCallAnalyticsCategoriesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3549,14 +3714,14 @@ impl ListCallAnalyticsCategoriesInput {
             _input: &crate::input::ListCallAnalyticsCategoriesInput,
             mut output: &mut String,
         ) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_1) = &_input.next_token {
-                query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_1));
+                query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_1));
             }
             if let Some(inner_2) = &_input.max_results {
                 query.push_kv(
                     "MaxResults",
-                    &smithy_types::primitive::Encoder::from(*inner_2).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_2).encode(),
                 );
             }
         }
@@ -3564,7 +3729,7 @@ impl ListCallAnalyticsCategoriesInput {
         fn update_http_builder(
             input: &crate::input::ListCallAnalyticsCategoriesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3574,30 +3739,30 @@ impl ListCallAnalyticsCategoriesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListCallAnalyticsCategoriesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Transcribe.ListCallAnalyticsCategories",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_call_analytics_categories(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_call_analytics_categories(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3620,15 +3785,15 @@ impl ListCallAnalyticsCategoriesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListCallAnalyticsCategories::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListCallAnalyticsCategories",
             "transcribe",
         ));
@@ -3637,10 +3802,10 @@ impl ListCallAnalyticsCategoriesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3673,6 +3838,9 @@ pub mod list_call_analytics_jobs_input {
             self.status = Some(input);
             self
         }
+        /// <p>When specified, returns only call analytics jobs with the specified status. Jobs are ordered
+        /// by creation date, with the most recent jobs returned first. If you don't specify a status, Amazon Transcribe
+        /// returns all analytics jobs ordered by creation date.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::CallAnalyticsJobStatus>,
@@ -3686,6 +3854,8 @@ pub mod list_call_analytics_jobs_input {
             self.job_name_contains = Some(input.into());
             self
         }
+        /// <p>When specified, the jobs returned in the list are limited to jobs whose name contains the
+        /// specified string.</p>
         pub fn set_job_name_contains(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3700,6 +3870,9 @@ pub mod list_call_analytics_jobs_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If you receive a truncated result in the previous request of
+        /// ,
+        /// include <code>NextToken</code> to fetch the next set of jobs.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3711,6 +3884,9 @@ pub mod list_call_analytics_jobs_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>  The maximum number of call analytics jobs to return in each page of results. If there are
+        /// fewer results than the value you specify, only the actual results are returned. If you do not
+        /// specify a value, the default of 5 is used. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3720,7 +3896,7 @@ pub mod list_call_analytics_jobs_input {
             self,
         ) -> std::result::Result<
             crate::input::ListCallAnalyticsJobsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListCallAnalyticsJobsInput {
                 status: self.status,
@@ -3742,34 +3918,37 @@ impl ListCallAnalyticsJobsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListCallAnalyticsJobs,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListCallAnalyticsJobsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListCallAnalyticsJobsInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_3) = &_input.status {
-                query.push_kv("Status", &smithy_http::query::fmt_string(&inner_3));
+                query.push_kv("Status", &aws_smithy_http::query::fmt_string(&inner_3));
             }
             if let Some(inner_4) = &_input.job_name_contains {
-                query.push_kv("JobNameContains", &smithy_http::query::fmt_string(&inner_4));
+                query.push_kv(
+                    "JobNameContains",
+                    &aws_smithy_http::query::fmt_string(&inner_4),
+                );
             }
             if let Some(inner_5) = &_input.next_token {
-                query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_5));
+                query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_5));
             }
             if let Some(inner_6) = &_input.max_results {
                 query.push_kv(
                     "MaxResults",
-                    &smithy_types::primitive::Encoder::from(*inner_6).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_6).encode(),
                 );
             }
         }
@@ -3777,7 +3956,7 @@ impl ListCallAnalyticsJobsInput {
         fn update_http_builder(
             input: &crate::input::ListCallAnalyticsJobsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3787,32 +3966,34 @@ impl ListCallAnalyticsJobsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListCallAnalyticsJobsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Transcribe.ListCallAnalyticsJobs",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_call_analytics_jobs(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3835,15 +4016,15 @@ impl ListCallAnalyticsJobsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListCallAnalyticsJobs::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListCallAnalyticsJobs",
             "transcribe",
         ));
@@ -3852,10 +4033,10 @@ impl ListCallAnalyticsJobsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3888,6 +4069,9 @@ pub mod list_language_models_input {
             self.status_equals = Some(input);
             self
         }
+        /// <p>When specified, returns only custom language models with the specified status. Language models are ordered
+        /// by creation date, with the newest models first. If you don't specify a status, Amazon Transcribe returns all custom language
+        /// models ordered by date.</p>
         pub fn set_status_equals(
             mut self,
             input: std::option::Option<crate::model::ModelStatus>,
@@ -3900,6 +4084,7 @@ pub mod list_language_models_input {
             self.name_contains = Some(input.into());
             self
         }
+        /// <p>When specified, the custom language model names returned contain the substring you've specified.</p>
         pub fn set_name_contains(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3912,6 +4097,7 @@ pub mod list_language_models_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>When included, fetches the next set of jobs if the result of the previous request was truncated.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3922,6 +4108,8 @@ pub mod list_language_models_input {
             self.max_results = Some(input);
             self
         }
+        /// <p> The maximum number of language models to return in each page of results. If there are fewer results than the
+        /// value you specify, only the actual results are returned. If you do not specify a value, the default of 5 is used.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3931,7 +4119,7 @@ pub mod list_language_models_input {
             self,
         ) -> std::result::Result<
             crate::input::ListLanguageModelsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListLanguageModelsInput {
                 status_equals: self.status_equals,
@@ -3953,37 +4141,40 @@ impl ListLanguageModelsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListLanguageModels,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListLanguageModelsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListLanguageModelsInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_7) = &_input.status_equals {
                 query.push_kv(
                     "         StatusEquals",
-                    &smithy_http::query::fmt_string(&inner_7),
+                    &aws_smithy_http::query::fmt_string(&inner_7),
                 );
             }
             if let Some(inner_8) = &_input.name_contains {
-                query.push_kv("NameContains", &smithy_http::query::fmt_string(&inner_8));
+                query.push_kv(
+                    "NameContains",
+                    &aws_smithy_http::query::fmt_string(&inner_8),
+                );
             }
             if let Some(inner_9) = &_input.next_token {
-                query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_9));
+                query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_9));
             }
             if let Some(inner_10) = &_input.max_results {
                 query.push_kv(
                     "MaxResults",
-                    &smithy_types::primitive::Encoder::from(*inner_10).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_10).encode(),
                 );
             }
         }
@@ -3991,7 +4182,7 @@ impl ListLanguageModelsInput {
         fn update_http_builder(
             input: &crate::input::ListLanguageModelsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4001,30 +4192,32 @@ impl ListLanguageModelsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListLanguageModelsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Transcribe.ListLanguageModels",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_language_models(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4047,15 +4240,15 @@ impl ListLanguageModelsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListLanguageModels::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListLanguageModels",
             "transcribe",
         ));
@@ -4064,10 +4257,10 @@ impl ListLanguageModelsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4100,6 +4293,9 @@ pub mod list_medical_transcription_jobs_input {
             self.status = Some(input);
             self
         }
+        /// <p>When specified, returns only medical transcription jobs with the specified status. Jobs are ordered by creation
+        /// date, with the newest jobs returned first. If you don't specify a status, Amazon Transcribe Medical returns all transcription jobs ordered
+        /// by creation date.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::TranscriptionJobStatus>,
@@ -4112,6 +4308,7 @@ pub mod list_medical_transcription_jobs_input {
             self.job_name_contains = Some(input.into());
             self
         }
+        /// <p>When specified, the jobs returned in the list are limited to jobs whose name contains the specified string.</p>
         pub fn set_job_name_contains(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4125,6 +4322,8 @@ pub mod list_medical_transcription_jobs_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If you a receive a truncated result in the previous request of <code>ListMedicalTranscriptionJobs</code>,
+        /// include <code>NextToken</code> to fetch the next set of jobs.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4136,6 +4335,9 @@ pub mod list_medical_transcription_jobs_input {
             self.max_results = Some(input);
             self
         }
+        /// <p> The maximum number of medical transcription jobs to return in each page of results. If there are fewer
+        /// results than the value you specify, only the actual results are returned. If you do not specify a value, the default of
+        /// 5 is used.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -4145,7 +4347,7 @@ pub mod list_medical_transcription_jobs_input {
             self,
         ) -> std::result::Result<
             crate::input::ListMedicalTranscriptionJobsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListMedicalTranscriptionJobsInput {
                 status: self.status,
@@ -4168,16 +4370,16 @@ impl ListMedicalTranscriptionJobsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListMedicalTranscriptionJobs,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListMedicalTranscriptionJobsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4185,23 +4387,23 @@ impl ListMedicalTranscriptionJobsInput {
             _input: &crate::input::ListMedicalTranscriptionJobsInput,
             mut output: &mut String,
         ) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_11) = &_input.status {
-                query.push_kv("Status", &smithy_http::query::fmt_string(&inner_11));
+                query.push_kv("Status", &aws_smithy_http::query::fmt_string(&inner_11));
             }
             if let Some(inner_12) = &_input.job_name_contains {
                 query.push_kv(
                     "JobNameContains",
-                    &smithy_http::query::fmt_string(&inner_12),
+                    &aws_smithy_http::query::fmt_string(&inner_12),
                 );
             }
             if let Some(inner_13) = &_input.next_token {
-                query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_13));
+                query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_13));
             }
             if let Some(inner_14) = &_input.max_results {
                 query.push_kv(
                     "MaxResults",
-                    &smithy_types::primitive::Encoder::from(*inner_14).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_14).encode(),
                 );
             }
         }
@@ -4209,7 +4411,7 @@ impl ListMedicalTranscriptionJobsInput {
         fn update_http_builder(
             input: &crate::input::ListMedicalTranscriptionJobsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4219,30 +4421,30 @@ impl ListMedicalTranscriptionJobsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListMedicalTranscriptionJobsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Transcribe.ListMedicalTranscriptionJobs",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_medical_transcription_jobs(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_medical_transcription_jobs(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4265,15 +4467,15 @@ impl ListMedicalTranscriptionJobsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListMedicalTranscriptionJobs::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListMedicalTranscriptionJobs",
             "transcribe",
         ));
@@ -4282,10 +4484,10 @@ impl ListMedicalTranscriptionJobsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4317,6 +4519,8 @@ pub mod list_medical_vocabularies_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the result of your previous request to <code>ListMedicalVocabularies</code> was truncated, include the
+        /// <code>NextToken</code> to fetch the next set of vocabularies.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4327,6 +4531,8 @@ pub mod list_medical_vocabularies_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of vocabularies to return in each page of results. If there are fewer results than the
+        /// value you specify, only the actual results are returned. If you do not specify a value, the default of 5 is used.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -4337,6 +4543,8 @@ pub mod list_medical_vocabularies_input {
             self.state_equals = Some(input);
             self
         }
+        /// <p>When specified, returns only vocabularies with the <code>VocabularyState</code> equal to the specified
+        /// vocabulary state. Use this field to see which vocabularies are ready for your medical transcription jobs.</p>
         pub fn set_state_equals(
             mut self,
             input: std::option::Option<crate::model::VocabularyState>,
@@ -4351,6 +4559,9 @@ pub mod list_medical_vocabularies_input {
             self.name_contains = Some(input.into());
             self
         }
+        /// <p>Returns vocabularies whose names contain the specified string. The search is not case sensitive.
+        /// <code>ListMedicalVocabularies</code> returns both "<code>vocabularyname</code>" and
+        /// "<code>VocabularyName</code>".</p>
         pub fn set_name_contains(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4363,7 +4574,7 @@ pub mod list_medical_vocabularies_input {
             self,
         ) -> std::result::Result<
             crate::input::ListMedicalVocabulariesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListMedicalVocabulariesInput {
                 next_token: self.next_token,
@@ -4386,42 +4597,48 @@ impl ListMedicalVocabulariesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListMedicalVocabularies,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListMedicalVocabulariesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListMedicalVocabulariesInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_15) = &_input.next_token {
-                query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_15));
+                query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_15));
             }
             if let Some(inner_16) = &_input.max_results {
                 query.push_kv(
                     "MaxResults",
-                    &smithy_types::primitive::Encoder::from(*inner_16).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_16).encode(),
                 );
             }
             if let Some(inner_17) = &_input.state_equals {
-                query.push_kv("StateEquals", &smithy_http::query::fmt_string(&inner_17));
+                query.push_kv(
+                    "StateEquals",
+                    &aws_smithy_http::query::fmt_string(&inner_17),
+                );
             }
             if let Some(inner_18) = &_input.name_contains {
-                query.push_kv("NameContains", &smithy_http::query::fmt_string(&inner_18));
+                query.push_kv(
+                    "NameContains",
+                    &aws_smithy_http::query::fmt_string(&inner_18),
+                );
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::ListMedicalVocabulariesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4431,32 +4648,34 @@ impl ListMedicalVocabulariesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListMedicalVocabulariesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Transcribe.ListMedicalVocabularies",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_medical_vocabularies(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4479,15 +4698,15 @@ impl ListMedicalVocabulariesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListMedicalVocabularies::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListMedicalVocabularies",
             "transcribe",
         ));
@@ -4496,10 +4715,10 @@ impl ListMedicalVocabulariesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4527,6 +4746,7 @@ pub mod list_tags_for_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>Lists all tags associated with a given Amazon Resource Name (ARN).</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -4536,7 +4756,7 @@ pub mod list_tags_for_resource_input {
             self,
         ) -> std::result::Result<
             crate::input::ListTagsForResourceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListTagsForResourceInput {
                 resource_arn: self.resource_arn,
@@ -4555,16 +4775,16 @@ impl ListTagsForResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListTagsForResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4572,7 +4792,7 @@ impl ListTagsForResourceInput {
         fn update_http_builder(
             input: &crate::input::ListTagsForResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4581,32 +4801,32 @@ impl ListTagsForResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListTagsForResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Transcribe.ListTagsForResource",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4629,15 +4849,15 @@ impl ListTagsForResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListTagsForResource::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListTagsForResource",
             "transcribe",
         ));
@@ -4646,10 +4866,10 @@ impl ListTagsForResourceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4682,6 +4902,9 @@ pub mod list_transcription_jobs_input {
             self.status = Some(input);
             self
         }
+        /// <p>When specified, returns only transcription jobs with the specified status. Jobs are ordered by creation date, with
+        /// the newest jobs returned first. If you don’t specify a status, Amazon Transcribe returns all transcription jobs ordered by creation
+        /// date.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::TranscriptionJobStatus>,
@@ -4694,6 +4917,7 @@ pub mod list_transcription_jobs_input {
             self.job_name_contains = Some(input.into());
             self
         }
+        /// <p>When specified, the jobs returned in the list are limited to jobs whose name contains the specified string.</p>
         pub fn set_job_name_contains(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4707,6 +4931,8 @@ pub mod list_transcription_jobs_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the result of the previous request to <code>ListTranscriptionJobs</code> is truncated, include the
+        /// <code>NextToken</code> to fetch the next set of jobs.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4717,6 +4943,8 @@ pub mod list_transcription_jobs_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of jobs to return in each page of results. If there are fewer results than the value you
+        /// specify, only the actual results are returned. If you do not specify a value, the default of 5 is used.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -4726,7 +4954,7 @@ pub mod list_transcription_jobs_input {
             self,
         ) -> std::result::Result<
             crate::input::ListTranscriptionJobsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListTranscriptionJobsInput {
                 status: self.status,
@@ -4748,37 +4976,37 @@ impl ListTranscriptionJobsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListTranscriptionJobs,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListTranscriptionJobsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListTranscriptionJobsInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_19) = &_input.status {
-                query.push_kv("Status", &smithy_http::query::fmt_string(&inner_19));
+                query.push_kv("Status", &aws_smithy_http::query::fmt_string(&inner_19));
             }
             if let Some(inner_20) = &_input.job_name_contains {
                 query.push_kv(
                     "JobNameContains",
-                    &smithy_http::query::fmt_string(&inner_20),
+                    &aws_smithy_http::query::fmt_string(&inner_20),
                 );
             }
             if let Some(inner_21) = &_input.next_token {
-                query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_21));
+                query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_21));
             }
             if let Some(inner_22) = &_input.max_results {
                 query.push_kv(
                     "MaxResults",
-                    &smithy_types::primitive::Encoder::from(*inner_22).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_22).encode(),
                 );
             }
         }
@@ -4786,7 +5014,7 @@ impl ListTranscriptionJobsInput {
         fn update_http_builder(
             input: &crate::input::ListTranscriptionJobsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4796,32 +5024,34 @@ impl ListTranscriptionJobsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListTranscriptionJobsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Transcribe.ListTranscriptionJobs",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_transcription_jobs(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4844,15 +5074,15 @@ impl ListTranscriptionJobsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListTranscriptionJobs::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListTranscriptionJobs",
             "transcribe",
         ));
@@ -4861,10 +5091,10 @@ impl ListTranscriptionJobsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4896,6 +5126,8 @@ pub mod list_vocabularies_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the result of the previous request to <code>ListVocabularies</code> was truncated, include the
+        /// <code>NextToken</code> to fetch the next set of jobs.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4906,6 +5138,8 @@ pub mod list_vocabularies_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of vocabularies to return in each page of results. If there are fewer results than the
+        /// value you specify, only the actual results are returned. If you do not specify a value, the default of 5 is used.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -4916,6 +5150,8 @@ pub mod list_vocabularies_input {
             self.state_equals = Some(input);
             self
         }
+        /// <p>When specified, only returns vocabularies with the <code>VocabularyState</code> field equal to the
+        /// specified state.</p>
         pub fn set_state_equals(
             mut self,
             input: std::option::Option<crate::model::VocabularyState>,
@@ -4930,6 +5166,9 @@ pub mod list_vocabularies_input {
             self.name_contains = Some(input.into());
             self
         }
+        /// <p>When specified, the vocabularies returned in the list are limited to vocabularies whose name contains the
+        /// specified string. The search is not case sensitive, <code>ListVocabularies</code> returns both "vocabularyname"
+        /// and "VocabularyName" in the response list.</p>
         pub fn set_name_contains(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4942,7 +5181,7 @@ pub mod list_vocabularies_input {
             self,
         ) -> std::result::Result<
             crate::input::ListVocabulariesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListVocabulariesInput {
                 next_token: self.next_token,
@@ -4964,42 +5203,48 @@ impl ListVocabulariesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListVocabularies,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListVocabulariesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListVocabulariesInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_23) = &_input.next_token {
-                query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_23));
+                query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_23));
             }
             if let Some(inner_24) = &_input.max_results {
                 query.push_kv(
                     "MaxResults",
-                    &smithy_types::primitive::Encoder::from(*inner_24).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_24).encode(),
                 );
             }
             if let Some(inner_25) = &_input.state_equals {
-                query.push_kv("StateEquals", &smithy_http::query::fmt_string(&inner_25));
+                query.push_kv(
+                    "StateEquals",
+                    &aws_smithy_http::query::fmt_string(&inner_25),
+                );
             }
             if let Some(inner_26) = &_input.name_contains {
-                query.push_kv("NameContains", &smithy_http::query::fmt_string(&inner_26));
+                query.push_kv(
+                    "NameContains",
+                    &aws_smithy_http::query::fmt_string(&inner_26),
+                );
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::ListVocabulariesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5009,32 +5254,32 @@ impl ListVocabulariesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListVocabulariesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Transcribe.ListVocabularies",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_vocabularies(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5057,15 +5302,15 @@ impl ListVocabulariesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListVocabularies::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListVocabularies",
             "transcribe",
         ));
@@ -5074,10 +5319,10 @@ impl ListVocabulariesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5108,6 +5353,8 @@ pub mod list_vocabulary_filters_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If the result of the previous request to <code>ListVocabularyFilters</code> was truncated, include the
+        /// <code>NextToken</code> to fetch the next set of collections.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5118,6 +5365,8 @@ pub mod list_vocabulary_filters_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of filters to return in each page of results. If there are fewer results than the value you
+        /// specify, only the actual results are returned. If you do not specify a value, the default of 5 is used.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -5127,6 +5376,7 @@ pub mod list_vocabulary_filters_input {
             self.name_contains = Some(input.into());
             self
         }
+        /// <p>Filters the response so that it only contains vocabulary filters whose name contains the specified string.</p>
         pub fn set_name_contains(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5139,7 +5389,7 @@ pub mod list_vocabulary_filters_input {
             self,
         ) -> std::result::Result<
             crate::input::ListVocabularyFiltersInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListVocabularyFiltersInput {
                 next_token: self.next_token,
@@ -5160,39 +5410,42 @@ impl ListVocabularyFiltersInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListVocabularyFilters,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListVocabularyFiltersInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListVocabularyFiltersInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_27) = &_input.next_token {
-                query.push_kv("NextToken", &smithy_http::query::fmt_string(&inner_27));
+                query.push_kv("NextToken", &aws_smithy_http::query::fmt_string(&inner_27));
             }
             if let Some(inner_28) = &_input.max_results {
                 query.push_kv(
                     "MaxResults",
-                    &smithy_types::primitive::Encoder::from(*inner_28).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_28).encode(),
                 );
             }
             if let Some(inner_29) = &_input.name_contains {
-                query.push_kv("NameContains", &smithy_http::query::fmt_string(&inner_29));
+                query.push_kv(
+                    "NameContains",
+                    &aws_smithy_http::query::fmt_string(&inner_29),
+                );
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::ListVocabularyFiltersInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5202,32 +5455,34 @@ impl ListVocabularyFiltersInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListVocabularyFiltersInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Transcribe.ListVocabularyFilters",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_vocabulary_filters(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5250,15 +5505,15 @@ impl ListVocabularyFiltersInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListVocabularyFilters::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListVocabularyFilters",
             "transcribe",
         ));
@@ -5267,10 +5522,10 @@ impl ListVocabularyFiltersInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5307,6 +5562,9 @@ pub mod start_call_analytics_job_input {
             self.call_analytics_job_name = Some(input.into());
             self
         }
+        /// <p>The name of the call analytics job. You can't use the string "." or ".." by themselves as the job name. The name
+        /// must also be unique within an Amazon Web Services account. If you try to create a call analytics job with the same
+        /// name as a previous call analytics job, you get a <code>ConflictException</code> error.</p>
         pub fn set_call_analytics_job_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5319,6 +5577,7 @@ pub mod start_call_analytics_job_input {
             self.media = Some(input);
             self
         }
+        /// <p>Describes the input media file in a transcription request.</p>
         pub fn set_media(mut self, input: std::option::Option<crate::model::Media>) -> Self {
             self.media = input;
             self
@@ -5351,6 +5610,30 @@ pub mod start_call_analytics_job_input {
             self.output_location = Some(input.into());
             self
         }
+        /// <p>The Amazon S3 location where the output of the call analytics job is stored. You can provide the following
+        /// location types to store the output of call analytics job:</p>
+        /// <ul>
+        /// <li>
+        /// <p>s3://DOC-EXAMPLE-BUCKET1</p>
+        /// <p> If you specify a bucket, Amazon Transcribe saves the output of the analytics job as a JSON file at the root level of the
+        /// bucket.</p>
+        /// </li>
+        /// <li>
+        /// <p>s3://DOC-EXAMPLE-BUCKET1/folder/</p>
+        /// <p>f you specify a path, Amazon Transcribe saves the output of the analytics job as
+        /// s3://DOC-EXAMPLE-BUCKET1/folder/your-transcription-job-name.json</p>
+        /// <p>If you specify a folder, you must provide a trailing slash.</p>
+        /// </li>
+        /// <li>
+        /// <p>s3://DOC-EXAMPLE-BUCKET1/folder/filename.json</p>
+        /// <p> If you provide a path that has the filename specified, Amazon Transcribe saves the output of the analytics job as
+        /// s3://DOC-EXAMPLEBUCKET1/folder/filename.json</p>
+        /// </li>
+        /// </ul>
+        /// <p>You can specify an Amazon Web Services Key Management Service (KMS) key to encrypt the output of our
+        /// analytics job using the <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key,
+        /// Amazon Transcribe uses the default Amazon S3 key for server-side encryption of the analytics job output that is placed in your
+        /// S3 bucket.</p>
         pub fn set_output_location(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5391,6 +5674,32 @@ pub mod start_call_analytics_job_input {
             self.output_encryption_kms_key_id = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Key Management Service key used to encrypt
+        /// the output of the call analytics job. The user calling the  operation must
+        /// have permission to use the specified KMS key.</p>
+        /// <p>You use either of the following to identify an Amazon Web Services KMS key in the current account:</p>
+        /// <ul>
+        /// <li>
+        /// <p>KMS Key ID: "1234abcd-12ab-34cd-56ef-1234567890ab"</p>
+        /// </li>
+        /// <li>
+        /// <p>KMS Key Alias: "alias/ExampleAlias"</p>
+        /// </li>
+        /// </ul>
+        /// <p> You can use either of the following to identify a KMS key in the current account or another account:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Amazon Resource Name (ARN) of a KMS key in the current account or another account:
+        /// "arn:aws:kms:region:account ID:key/1234abcd-12ab-34cd-56ef1234567890ab"</p>
+        /// </li>
+        /// <li>
+        /// <p>ARN of a KMS Key Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"</p>
+        /// </li>
+        /// </ul>
+        /// <p>If you don't specify an encryption key, the output of the call analytics job is encrypted with the default Amazon
+        /// S3 key (SSE-S3).</p>
+        /// <p>If you specify a KMS key to encrypt your output, you must also specify an output location in the
+        /// <code>OutputLocation</code> parameter. </p>
         pub fn set_output_encryption_kms_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5405,6 +5714,9 @@ pub mod start_call_analytics_job_input {
             self.data_access_role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of a role that has access to the S3 bucket that contains your input files.
+        /// Amazon Transcribe assumes this role to read queued audio files. If you have specified an output S3 bucket for your transcription
+        /// results, this role should have access to the output bucket as well.</p>
         pub fn set_data_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5417,6 +5729,7 @@ pub mod start_call_analytics_job_input {
             self.settings = Some(input);
             self
         }
+        /// <p>A <code>Settings</code> object that provides optional settings for a call analytics job. </p>
         pub fn set_settings(
             mut self,
             input: std::option::Option<crate::model::CallAnalyticsJobSettings>,
@@ -5424,6 +5737,13 @@ pub mod start_call_analytics_job_input {
             self.settings = input;
             self
         }
+        /// Appends an item to `channel_definitions`.
+        ///
+        /// To override the contents of this collection use [`set_channel_definitions`](Self::set_channel_definitions).
+        ///
+        /// <p>When you start a call analytics job, you must pass an array that maps the agent and the customer to specific
+        /// audio channels. The values you can assign to a channel are 0 and 1. The agent and the customer must each have
+        /// their own channel. You can't assign more than one channel to an agent or customer. </p>
         pub fn channel_definitions(
             mut self,
             input: impl Into<crate::model::ChannelDefinition>,
@@ -5433,6 +5753,9 @@ pub mod start_call_analytics_job_input {
             self.channel_definitions = Some(v);
             self
         }
+        /// <p>When you start a call analytics job, you must pass an array that maps the agent and the customer to specific
+        /// audio channels. The values you can assign to a channel are 0 and 1. The agent and the customer must each have
+        /// their own channel. You can't assign more than one channel to an agent or customer. </p>
         pub fn set_channel_definitions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ChannelDefinition>>,
@@ -5445,7 +5768,7 @@ pub mod start_call_analytics_job_input {
             self,
         ) -> std::result::Result<
             crate::input::StartCallAnalyticsJobInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::StartCallAnalyticsJobInput {
                 call_analytics_job_name: self.call_analytics_job_name,
@@ -5470,16 +5793,16 @@ impl StartCallAnalyticsJobInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::StartCallAnalyticsJob,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::StartCallAnalyticsJobInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5487,7 +5810,7 @@ impl StartCallAnalyticsJobInput {
         fn update_http_builder(
             input: &crate::input::StartCallAnalyticsJobInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5496,32 +5819,34 @@ impl StartCallAnalyticsJobInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::StartCallAnalyticsJobInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Transcribe.StartCallAnalyticsJob",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_call_analytics_job(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5544,15 +5869,15 @@ impl StartCallAnalyticsJobInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::StartCallAnalyticsJob::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "StartCallAnalyticsJob",
             "transcribe",
         ));
@@ -5561,10 +5886,10 @@ impl StartCallAnalyticsJobInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5614,6 +5939,10 @@ pub mod start_medical_transcription_job_input {
             self.medical_transcription_job_name = Some(input.into());
             self
         }
+        /// <p>The name of the medical transcription job. You can't use the strings "<code>.</code>" or "<code>..</code>"
+        /// by themselves as the job name. The name must also be unique within an Amazon Web Services account. If you try to
+        /// create a medical transcription job with the same name as a previous medical transcription job, you get a
+        /// <code>ConflictException</code> error.</p>
         pub fn set_medical_transcription_job_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5628,6 +5957,9 @@ pub mod start_medical_transcription_job_input {
             self.language_code = Some(input);
             self
         }
+        /// <p>The language code for the language spoken in the input media file. US English (en-US) is the valid value for
+        /// medical transcription jobs. Any other value you enter for language code results in a
+        /// <code>BadRequestException</code> error.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,
@@ -5643,6 +5975,10 @@ pub mod start_medical_transcription_job_input {
             self.media_sample_rate_hertz = Some(input);
             self
         }
+        /// <p>The sample rate, in Hertz, of the audio track in the input media file.</p>
+        /// <p>If you do not specify the media sample rate, Amazon Transcribe Medical determines the sample rate. If you specify the sample rate,
+        /// it must match the rate detected by Amazon Transcribe Medical. In most cases, you should leave the
+        /// <code>MediaSampleRateHertz</code> field blank and let Amazon Transcribe Medical determine the sample rate.</p>
         pub fn set_media_sample_rate_hertz(mut self, input: std::option::Option<i32>) -> Self {
             self.media_sample_rate_hertz = input;
             self
@@ -5652,6 +5988,7 @@ pub mod start_medical_transcription_job_input {
             self.media_format = Some(input);
             self
         }
+        /// <p>The audio format of the input media file.</p>
         pub fn set_media_format(
             mut self,
             input: std::option::Option<crate::model::MediaFormat>,
@@ -5664,6 +6001,7 @@ pub mod start_medical_transcription_job_input {
             self.media = Some(input);
             self
         }
+        /// <p>Describes the input media file in a transcription request.</p>
         pub fn set_media(mut self, input: std::option::Option<crate::model::Media>) -> Self {
             self.media = input;
             self
@@ -5681,6 +6019,15 @@ pub mod start_medical_transcription_job_input {
             self.output_bucket_name = Some(input.into());
             self
         }
+        /// <p>The Amazon S3 location where the transcription is stored.</p>
+        /// <p>You must set <code>OutputBucketName</code> for Amazon Transcribe Medical to store the transcription results. Your transcript
+        /// appears in the S3 location you specify. When you call the <a>GetMedicalTranscriptionJob</a>, the operation
+        /// returns this location in the <code>TranscriptFileUri</code> field. The S3 bucket must have permissions that allow
+        /// Amazon Transcribe Medical to put files in the bucket. For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user">Permissions Required for
+        /// IAM User Roles</a>.</p>
+        /// <p>You can specify an Amazon Web Services Key Management Service (KMS) key to encrypt the output of your
+        /// transcription using the <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key, Amazon Transcribe Medical
+        /// uses the default Amazon S3 key for server-side encryption of transcripts that are placed in your S3 bucket.</p>
         pub fn set_output_bucket_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5702,6 +6049,16 @@ pub mod start_medical_transcription_job_input {
             self.output_key = Some(input.into());
             self
         }
+        /// <p>You can specify a location in an Amazon S3 bucket to store the output of your medical transcription job.</p>
+        /// <p>If you don't specify an output key, Amazon Transcribe Medical stores the output of your transcription job in the Amazon S3 bucket you
+        /// specified. By default, the object key is "your-transcription-job-name.json".</p>
+        /// <p>You can use output keys to specify the Amazon S3 prefix and file name of the transcription output. For example,
+        /// specifying the Amazon S3 prefix, "folder1/folder2/", as an output key would lead to the output being stored as
+        /// "folder1/folder2/your-transcription-job-name.json". If you specify "my-other-job-name.json" as the output key, the object
+        /// key is changed to "my-other-job-name.json". You can use an output key to change both the prefix and the file name, for
+        /// example "folder/my-other-job-name.json".</p>
+        /// <p>If you specify an output key, you must also specify an S3 bucket in the <code>OutputBucketName</code>
+        /// parameter.</p>
         pub fn set_output_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.output_key = input;
             self
@@ -5739,6 +6096,32 @@ pub mod start_medical_transcription_job_input {
             self.output_encryption_kms_key_id = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Key Management Service (KMS) key used to
+        /// encrypt the output of the transcription job. The user calling the <a>StartMedicalTranscriptionJob</a>
+        /// operation must have permission to use the specified KMS key.</p>
+        /// <p>You use either of the following to identify a KMS key in the current account:</p>
+        /// <ul>
+        /// <li>
+        /// <p>KMS Key ID: "1234abcd-12ab-34cd-56ef-1234567890ab"</p>
+        /// </li>
+        /// <li>
+        /// <p>KMS Key Alias: "alias/ExampleAlias"</p>
+        /// </li>
+        /// </ul>
+        /// <p>You can use either of the following to identify a KMS key in the current account or another account:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Amazon Resource Name (ARN) of a KMS key in the current account or another
+        /// account: "arn:aws:kms:region:account ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p>
+        /// </li>
+        /// <li>
+        /// <p>ARN of a KMS Key Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"</p>
+        /// </li>
+        /// </ul>
+        /// <p>If you don't specify an encryption key, the output of the medical transcription job is encrypted with the default Amazon S3
+        /// key (SSE-S3).</p>
+        /// <p>If you specify a KMS key to encrypt your output, you must also specify an output location in the
+        /// <code>OutputBucketName</code> parameter.</p>
         pub fn set_output_encryption_kms_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5746,6 +6129,12 @@ pub mod start_medical_transcription_job_input {
             self.output_encryption_kms_key_id = input;
             self
         }
+        /// Adds a key-value pair to `kms_encryption_context`.
+        ///
+        /// To override the contents of this collection use [`set_kms_encryption_context`](Self::set_kms_encryption_context).
+        ///
+        /// <p>A map of plain text, non-secret key:value pairs, known as encryption context pairs, that provide an added
+        /// layer of security for your data.</p>
         pub fn kms_encryption_context(
             mut self,
             k: impl Into<std::string::String>,
@@ -5756,6 +6145,8 @@ pub mod start_medical_transcription_job_input {
             self.kms_encryption_context = Some(hash_map);
             self
         }
+        /// <p>A map of plain text, non-secret key:value pairs, known as encryption context pairs, that provide an added
+        /// layer of security for your data.</p>
         pub fn set_kms_encryption_context(
             mut self,
             input: std::option::Option<
@@ -5770,6 +6161,7 @@ pub mod start_medical_transcription_job_input {
             self.settings = Some(input);
             self
         }
+        /// <p>Optional settings for the medical transcription job.</p>
         pub fn set_settings(
             mut self,
             input: std::option::Option<crate::model::MedicalTranscriptionSetting>,
@@ -5786,6 +6178,8 @@ pub mod start_medical_transcription_job_input {
             self.content_identification_type = Some(input);
             self
         }
+        /// <p>You can configure Amazon Transcribe Medical to label content in the transcription output. If you specify <code>PHI</code>,
+        /// Amazon Transcribe Medical labels the personal health information (PHI) that it identifies in the transcription output.</p>
         pub fn set_content_identification_type(
             mut self,
             input: std::option::Option<crate::model::MedicalContentIdentificationType>,
@@ -5798,6 +6192,7 @@ pub mod start_medical_transcription_job_input {
             self.specialty = Some(input);
             self
         }
+        /// <p>The medical specialty of any clinician speaking in the input media.</p>
         pub fn set_specialty(
             mut self,
             input: std::option::Option<crate::model::Specialty>,
@@ -5812,16 +6207,25 @@ pub mod start_medical_transcription_job_input {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of speech in the input audio. <code>CONVERSATION</code> refers to conversations between two or
+        /// more speakers, e.g., a conversations between doctors and patients. <code>DICTATION</code> refers to
+        /// single-speaker dictated speech, such as clinical notes.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::Type>) -> Self {
             self.r#type = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Add tags to an Amazon Transcribe medical transcription job.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>Add tags to an Amazon Transcribe medical transcription job.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -5834,7 +6238,7 @@ pub mod start_medical_transcription_job_input {
             self,
         ) -> std::result::Result<
             crate::input::StartMedicalTranscriptionJobInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::StartMedicalTranscriptionJobInput {
                 medical_transcription_job_name: self.medical_transcription_job_name,
@@ -5867,16 +6271,16 @@ impl StartMedicalTranscriptionJobInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::StartMedicalTranscriptionJob,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::StartMedicalTranscriptionJobInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5884,7 +6288,7 @@ impl StartMedicalTranscriptionJobInput {
         fn update_http_builder(
             input: &crate::input::StartMedicalTranscriptionJobInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5893,30 +6297,30 @@ impl StartMedicalTranscriptionJobInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::StartMedicalTranscriptionJobInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Transcribe.StartMedicalTranscriptionJob",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_start_medical_transcription_job(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_start_medical_transcription_job(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5939,15 +6343,15 @@ impl StartMedicalTranscriptionJobInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::StartMedicalTranscriptionJob::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "StartMedicalTranscriptionJob",
             "transcribe",
         ));
@@ -5956,10 +6360,10 @@ impl StartMedicalTranscriptionJobInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6007,6 +6411,9 @@ pub mod start_transcription_job_input {
             self.transcription_job_name = Some(input.into());
             self
         }
+        /// <p>The name of the job. You can't use the strings "<code>.</code>" or "<code>..</code>" by themselves as the
+        /// job name. The name must also be unique within an Amazon Web Services account. If you try to create a transcription
+        /// job with the same name as a previous transcription job, you get a <code>ConflictException</code> error.</p>
         pub fn set_transcription_job_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6021,6 +6428,9 @@ pub mod start_transcription_job_input {
             self.language_code = Some(input);
             self
         }
+        /// <p>The language code for the language used in the input media file.</p>
+        /// <p>To transcribe speech in Modern Standard Arabic (ar-SA), your audio or video file must be encoded at a sample
+        /// rate of 16,000 Hz or higher.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,
@@ -6036,6 +6446,10 @@ pub mod start_transcription_job_input {
             self.media_sample_rate_hertz = Some(input);
             self
         }
+        /// <p>The sample rate, in Hertz, of the audio track in the input media file. </p>
+        /// <p>If you do not specify the media sample rate, Amazon Transcribe determines the sample rate. If you specify the sample rate, it
+        /// must match the sample rate detected by Amazon Transcribe. In most cases, you should leave the
+        /// <code>MediaSampleRateHertz</code> field blank and let Amazon Transcribe determine the sample rate.</p>
         pub fn set_media_sample_rate_hertz(mut self, input: std::option::Option<i32>) -> Self {
             self.media_sample_rate_hertz = input;
             self
@@ -6045,6 +6459,7 @@ pub mod start_transcription_job_input {
             self.media_format = Some(input);
             self
         }
+        /// <p>The format of the input media file.</p>
         pub fn set_media_format(
             mut self,
             input: std::option::Option<crate::model::MediaFormat>,
@@ -6057,6 +6472,7 @@ pub mod start_transcription_job_input {
             self.media = Some(input);
             self
         }
+        /// <p>An object that describes the input media for a transcription job.</p>
         pub fn set_media(mut self, input: std::option::Option<crate::model::Media>) -> Self {
             self.media = input;
             self
@@ -6079,6 +6495,20 @@ pub mod start_transcription_job_input {
             self.output_bucket_name = Some(input.into());
             self
         }
+        /// <p>The location where the transcription is stored.</p>
+        /// <p>If you set the <code>OutputBucketName</code>, Amazon Transcribe puts the transcript in the specified S3 bucket. When
+        /// you call the <a>GetTranscriptionJob</a> operation, the operation returns this location in the
+        /// <code>TranscriptFileUri</code> field. If you enable content redaction, the redacted transcript appears in
+        /// <code>RedactedTranscriptFileUri</code>. If you enable content redaction and choose to output an unredacted
+        /// transcript, that transcript's location still appears in the <code>TranscriptFileUri</code>. The S3 bucket must have
+        /// permissions that allow Amazon Transcribe to put files in the bucket. For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user">Permissions Required for
+        /// IAM User Roles</a>.</p>
+        /// <p>You can specify an Amazon Web Services Key Management Service (KMS) key to encrypt the output of your
+        /// transcription using the <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a KMS key, Amazon Transcribe
+        /// uses the default Amazon S3 key for server-side encryption of transcripts that are placed in your S3 bucket.</p>
+        /// <p>If you don't set the <code>OutputBucketName</code>, Amazon Transcribe generates a pre-signed URL, a shareable URL that
+        /// provides secure access to your transcription, and returns it in the <code>TranscriptFileUri</code> field. Use this URL
+        /// to download the transcription.</p>
         pub fn set_output_bucket_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6100,6 +6530,16 @@ pub mod start_transcription_job_input {
             self.output_key = Some(input.into());
             self
         }
+        /// <p>You can specify a location in an Amazon S3 bucket to store the output of your transcription job.</p>
+        /// <p>If you don't specify an output key, Amazon Transcribe stores the output of your transcription job in the Amazon S3 bucket you
+        /// specified. By default, the object key is "your-transcription-job-name.json".</p>
+        /// <p>You can use output keys to specify the Amazon S3 prefix and file name of the transcription output. For example,
+        /// specifying the Amazon S3 prefix, "folder1/folder2/", as an output key would lead to the output being stored as
+        /// "folder1/folder2/your-transcription-job-name.json". If you specify "my-other-job-name.json" as the output key, the
+        /// object key is changed to "my-other-job-name.json". You can use an output key to change both the prefix and the file
+        /// name, for example "folder/my-other-job-name.json".</p>
+        /// <p>If you specify an output key, you must also specify an S3 bucket in the <code>OutputBucketName</code>
+        /// parameter.</p>
         pub fn set_output_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.output_key = input;
             self
@@ -6137,6 +6577,32 @@ pub mod start_transcription_job_input {
             self.output_encryption_kms_key_id = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Key Management Service (KMS) key used to
+        /// encrypt the output of the transcription job. The user calling the <code>StartTranscriptionJob</code>
+        /// operation must have permission to use the specified KMS key.</p>
+        /// <p>You can use either of the following to identify a KMS key in the current account:</p>
+        /// <ul>
+        /// <li>
+        /// <p>KMS Key ID: "1234abcd-12ab-34cd-56ef-1234567890ab"</p>
+        /// </li>
+        /// <li>
+        /// <p>KMS Key Alias: "alias/ExampleAlias"</p>
+        /// </li>
+        /// </ul>
+        /// <p>You can use either of the following to identify a KMS key in the current account or another account:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Amazon Resource Name (ARN) of a KMS Key: "arn:aws:kms:region:account
+        /// ID:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p>
+        /// </li>
+        /// <li>
+        /// <p>ARN of a KMS Key Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"</p>
+        /// </li>
+        /// </ul>
+        /// <p>If you don't specify an encryption key, the output of the transcription job is encrypted with the default
+        /// Amazon S3 key (SSE-S3).</p>
+        /// <p>If you specify a KMS key to encrypt your output, you must also specify an output location in the
+        /// <code>OutputBucketName</code> parameter.</p>
         pub fn set_output_encryption_kms_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6144,6 +6610,12 @@ pub mod start_transcription_job_input {
             self.output_encryption_kms_key_id = input;
             self
         }
+        /// Adds a key-value pair to `kms_encryption_context`.
+        ///
+        /// To override the contents of this collection use [`set_kms_encryption_context`](Self::set_kms_encryption_context).
+        ///
+        /// <p>A map of plain text, non-secret key:value pairs, known as encryption context pairs, that provide an added
+        /// layer of security for your data.</p>
         pub fn kms_encryption_context(
             mut self,
             k: impl Into<std::string::String>,
@@ -6154,6 +6626,8 @@ pub mod start_transcription_job_input {
             self.kms_encryption_context = Some(hash_map);
             self
         }
+        /// <p>A map of plain text, non-secret key:value pairs, known as encryption context pairs, that provide an added
+        /// layer of security for your data.</p>
         pub fn set_kms_encryption_context(
             mut self,
             input: std::option::Option<
@@ -6168,6 +6642,7 @@ pub mod start_transcription_job_input {
             self.settings = Some(input);
             self
         }
+        /// <p>A <code>Settings</code> object that provides optional settings for a transcription job.</p>
         pub fn set_settings(mut self, input: std::option::Option<crate::model::Settings>) -> Self {
             self.settings = input;
             self
@@ -6177,6 +6652,7 @@ pub mod start_transcription_job_input {
             self.model_settings = Some(input);
             self
         }
+        /// <p>Choose the custom language model you use for your transcription job in this parameter.</p>
         pub fn set_model_settings(
             mut self,
             input: std::option::Option<crate::model::ModelSettings>,
@@ -6191,6 +6667,9 @@ pub mod start_transcription_job_input {
             self.job_execution_settings = Some(input);
             self
         }
+        /// <p>Provides information about how a transcription job is executed. Use this field to indicate that the job can be
+        /// queued for deferred execution if the concurrency limit is reached and there are no slots available to immediately run
+        /// the job.</p>
         pub fn set_job_execution_settings(
             mut self,
             input: std::option::Option<crate::model::JobExecutionSettings>,
@@ -6203,6 +6682,7 @@ pub mod start_transcription_job_input {
             self.content_redaction = Some(input);
             self
         }
+        /// <p>An object that contains the request parameters for content redaction.</p>
         pub fn set_content_redaction(
             mut self,
             input: std::option::Option<crate::model::ContentRedaction>,
@@ -6217,16 +6697,31 @@ pub mod start_transcription_job_input {
             self.identify_language = Some(input);
             self
         }
+        /// <p>Set this field to <code>true</code> to enable automatic language identification. Automatic language identification
+        /// is disabled by default. You receive a <code>BadRequestException</code> error if you enter a value for a
+        /// <code>LanguageCode</code>.</p>
         pub fn set_identify_language(mut self, input: std::option::Option<bool>) -> Self {
             self.identify_language = input;
             self
         }
+        /// Appends an item to `language_options`.
+        ///
+        /// To override the contents of this collection use [`set_language_options`](Self::set_language_options).
+        ///
+        /// <p>An object containing a list of languages that might be present in your collection of audio files. Automatic language
+        /// identification chooses a language that best matches the source audio from that list.</p>
+        /// <p>To transcribe speech in Modern Standard Arabic (ar-SA), your audio or video file must be encoded at a sample
+        /// rate of 16,000 Hz or higher.</p>
         pub fn language_options(mut self, input: impl Into<crate::model::LanguageCode>) -> Self {
             let mut v = self.language_options.unwrap_or_default();
             v.push(input.into());
             self.language_options = Some(v);
             self
         }
+        /// <p>An object containing a list of languages that might be present in your collection of audio files. Automatic language
+        /// identification chooses a language that best matches the source audio from that list.</p>
+        /// <p>To transcribe speech in Modern Standard Arabic (ar-SA), your audio or video file must be encoded at a sample
+        /// rate of 16,000 Hz or higher.</p>
         pub fn set_language_options(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LanguageCode>>,
@@ -6239,6 +6734,7 @@ pub mod start_transcription_job_input {
             self.subtitles = Some(input);
             self
         }
+        /// <p>Add subtitles to your batch transcription job.</p>
         pub fn set_subtitles(
             mut self,
             input: std::option::Option<crate::model::Subtitles>,
@@ -6246,12 +6742,18 @@ pub mod start_transcription_job_input {
             self.subtitles = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Add tags to an Amazon Transcribe transcription job.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>Add tags to an Amazon Transcribe transcription job.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -6264,7 +6766,7 @@ pub mod start_transcription_job_input {
             self,
         ) -> std::result::Result<
             crate::input::StartTranscriptionJobInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::StartTranscriptionJobInput {
                 transcription_job_name: self.transcription_job_name,
@@ -6299,16 +6801,16 @@ impl StartTranscriptionJobInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::StartTranscriptionJob,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::StartTranscriptionJobInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6316,7 +6818,7 @@ impl StartTranscriptionJobInput {
         fn update_http_builder(
             input: &crate::input::StartTranscriptionJobInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6325,32 +6827,34 @@ impl StartTranscriptionJobInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::StartTranscriptionJobInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Transcribe.StartTranscriptionJob",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_transcription_job(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6373,15 +6877,15 @@ impl StartTranscriptionJobInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::StartTranscriptionJob::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "StartTranscriptionJob",
             "transcribe",
         ));
@@ -6390,10 +6894,10 @@ impl StartTranscriptionJobInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6422,16 +6926,23 @@ pub mod tag_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the Amazon Transcribe resource you want to tag.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags you are assigning to a given Amazon Transcribe resource.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The tags you are assigning to a given Amazon Transcribe resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -6442,8 +6953,10 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::TagResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::TagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::TagResourceInput {
                 resource_arn: self.resource_arn,
                 tags: self.tags,
@@ -6462,16 +6975,16 @@ impl TagResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::TagResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6479,7 +6992,7 @@ impl TagResourceInput {
         fn update_http_builder(
             input: &crate::input::TagResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6488,29 +7001,31 @@ impl TagResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::TagResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Transcribe.TagResource",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6533,25 +7048,27 @@ impl TagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::TagResource::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "TagResource",
-                    "transcribe",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::TagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "TagResource",
+            "transcribe",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6580,16 +7097,23 @@ pub mod untag_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the Amazon Transcribe resource you want to remove tags from.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Appends an item to `tag_keys`.
+        ///
+        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
+        ///
+        /// <p>A list of tag keys you want to remove from a specified Amazon Transcribe resource.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
+        /// <p>A list of tag keys you want to remove from a specified Amazon Transcribe resource.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6600,8 +7124,10 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UntagResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UntagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UntagResourceInput {
                 resource_arn: self.resource_arn,
                 tag_keys: self.tag_keys,
@@ -6620,16 +7146,16 @@ impl UntagResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UntagResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6637,7 +7163,7 @@ impl UntagResourceInput {
         fn update_http_builder(
             input: &crate::input::UntagResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6646,29 +7172,31 @@ impl UntagResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UntagResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Transcribe.UntagResource",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6691,25 +7219,27 @@ impl UntagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UntagResource::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UntagResource",
-                    "transcribe",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UntagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UntagResource",
+            "transcribe",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6739,6 +7269,8 @@ pub mod update_call_analytics_category_input {
             self.category_name = Some(input.into());
             self
         }
+        /// <p>The name of the analytics category to update. The name is case sensitive. If you try to update a call analytics
+        /// category with the same name as a previous category you will receive a <code>ConflictException</code> error.</p>
         pub fn set_category_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6746,12 +7278,20 @@ pub mod update_call_analytics_category_input {
             self.category_name = input;
             self
         }
+        /// Appends an item to `rules`.
+        ///
+        /// To override the contents of this collection use [`set_rules`](Self::set_rules).
+        ///
+        /// <p>The rules used for the updated analytics category. The rules that you provide in this field replace the ones
+        /// that are currently being used. </p>
         pub fn rules(mut self, input: impl Into<crate::model::Rule>) -> Self {
             let mut v = self.rules.unwrap_or_default();
             v.push(input.into());
             self.rules = Some(v);
             self
         }
+        /// <p>The rules used for the updated analytics category. The rules that you provide in this field replace the ones
+        /// that are currently being used. </p>
         pub fn set_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Rule>>,
@@ -6764,7 +7304,7 @@ pub mod update_call_analytics_category_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateCallAnalyticsCategoryInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateCallAnalyticsCategoryInput {
                 category_name: self.category_name,
@@ -6785,16 +7325,16 @@ impl UpdateCallAnalyticsCategoryInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateCallAnalyticsCategory,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateCallAnalyticsCategoryInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6802,7 +7342,7 @@ impl UpdateCallAnalyticsCategoryInput {
         fn update_http_builder(
             input: &crate::input::UpdateCallAnalyticsCategoryInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6811,30 +7351,30 @@ impl UpdateCallAnalyticsCategoryInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateCallAnalyticsCategoryInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Transcribe.UpdateCallAnalyticsCategory",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_call_analytics_category(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_call_analytics_category(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6857,15 +7397,15 @@ impl UpdateCallAnalyticsCategoryInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateCallAnalyticsCategory::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateCallAnalyticsCategory",
             "transcribe",
         ));
@@ -6874,10 +7414,10 @@ impl UpdateCallAnalyticsCategoryInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6908,6 +7448,8 @@ pub mod update_medical_vocabulary_input {
             self.vocabulary_name = Some(input.into());
             self
         }
+        /// <p>The name of the vocabulary to update. The name is case sensitive. If you try to update a vocabulary with the
+        /// same name as a vocabulary you've already made, you get a <code>ConflictException</code> error.</p>
         pub fn set_vocabulary_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6921,6 +7463,8 @@ pub mod update_medical_vocabulary_input {
             self.language_code = Some(input);
             self
         }
+        /// <p>The language code of the language used for the entries in the updated vocabulary. US English (en-US) is the
+        /// only valid language code in Amazon Transcribe Medical.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,
@@ -6946,6 +7490,20 @@ pub mod update_medical_vocabulary_input {
             self.vocabulary_file_uri = Some(input.into());
             self
         }
+        /// <p>The location in Amazon S3 of the text file that contains your custom vocabulary. The URI must be in the same
+        /// Amazon Web Services Region as the resource that you are calling. The following is the format for a  URI:</p>
+        /// <p>
+        /// <code>
+        /// https://s3.<aws-region>.amazonaws.com/<bucket-name>/<keyprefix>/<objectkey>
+        /// </code>
+        /// </p>
+        /// <p>For example:</p>
+        /// <p>
+        /// <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code>
+        /// </p>
+        /// <p>For more information about Amazon S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the <i>Amazon S3
+        /// Developer Guide</i>.</p>
+        /// <p>For more information about custom vocabularies in Amazon Transcribe Medical, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary">Medical Custom Vocabularies</a>.</p>
         pub fn set_vocabulary_file_uri(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6958,7 +7516,7 @@ pub mod update_medical_vocabulary_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateMedicalVocabularyInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateMedicalVocabularyInput {
                 vocabulary_name: self.vocabulary_name,
@@ -6980,16 +7538,16 @@ impl UpdateMedicalVocabularyInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateMedicalVocabulary,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateMedicalVocabularyInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6997,7 +7555,7 @@ impl UpdateMedicalVocabularyInput {
         fn update_http_builder(
             input: &crate::input::UpdateMedicalVocabularyInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7006,32 +7564,34 @@ impl UpdateMedicalVocabularyInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateMedicalVocabularyInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Transcribe.UpdateMedicalVocabulary",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_medical_vocabulary(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7054,15 +7614,15 @@ impl UpdateMedicalVocabularyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateMedicalVocabulary::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateMedicalVocabulary",
             "transcribe",
         ));
@@ -7071,10 +7631,10 @@ impl UpdateMedicalVocabularyInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7106,6 +7666,8 @@ pub mod update_vocabulary_input {
             self.vocabulary_name = Some(input.into());
             self
         }
+        /// <p>The name of the vocabulary to update. The name is case sensitive. If you try to update a vocabulary with the
+        /// same name as a previous vocabulary you will receive a <code>ConflictException</code> error.</p>
         pub fn set_vocabulary_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7119,6 +7681,8 @@ pub mod update_vocabulary_input {
             self.language_code = Some(input);
             self
         }
+        /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes,
+        /// see <a>transcribe-whatis</a>.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCode>,
@@ -7126,12 +7690,18 @@ pub mod update_vocabulary_input {
             self.language_code = input;
             self
         }
+        /// Appends an item to `phrases`.
+        ///
+        /// To override the contents of this collection use [`set_phrases`](Self::set_phrases).
+        ///
+        /// <p>An array of strings containing the vocabulary entries.</p>
         pub fn phrases(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.phrases.unwrap_or_default();
             v.push(input.into());
             self.phrases = Some(v);
             self
         }
+        /// <p>An array of strings containing the vocabulary entries.</p>
         pub fn set_phrases(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7141,7 +7711,9 @@ pub mod update_vocabulary_input {
         }
         /// <p>The S3 location of the text file that contains the definition of the custom vocabulary. The URI must be in the
         /// same region as the API endpoint that you are calling. The general form is </p>
+        ///
         /// <p>For example:</p>
+        ///
         /// <p>For more information about S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the <i>Amazon S3
         /// Developer Guide</i>.</p>
         /// <p>For more information about custom vocabularies, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary">Custom Vocabularies</a>.</p>
@@ -7149,6 +7721,14 @@ pub mod update_vocabulary_input {
             self.vocabulary_file_uri = Some(input.into());
             self
         }
+        /// <p>The S3 location of the text file that contains the definition of the custom vocabulary. The URI must be in the
+        /// same region as the API endpoint that you are calling. The general form is </p>
+        ///
+        /// <p>For example:</p>
+        ///
+        /// <p>For more information about S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the <i>Amazon S3
+        /// Developer Guide</i>.</p>
+        /// <p>For more information about custom vocabularies, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary">Custom Vocabularies</a>.</p>
         pub fn set_vocabulary_file_uri(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7161,7 +7741,7 @@ pub mod update_vocabulary_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateVocabularyInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateVocabularyInput {
                 vocabulary_name: self.vocabulary_name,
@@ -7183,16 +7763,16 @@ impl UpdateVocabularyInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateVocabulary,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateVocabularyInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7200,7 +7780,7 @@ impl UpdateVocabularyInput {
         fn update_http_builder(
             input: &crate::input::UpdateVocabularyInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7209,32 +7789,32 @@ impl UpdateVocabularyInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateVocabularyInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Transcribe.UpdateVocabulary",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_vocabulary(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7257,15 +7837,15 @@ impl UpdateVocabularyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateVocabulary::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateVocabulary",
             "transcribe",
         ));
@@ -7274,10 +7854,10 @@ impl UpdateVocabularyInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7308,6 +7888,8 @@ pub mod update_vocabulary_filter_input {
             self.vocabulary_filter_name = Some(input.into());
             self
         }
+        /// <p>The name of the vocabulary filter to update. If you try to update a vocabulary filter with the same name as
+        /// another vocabulary filter, you get a <code>ConflictException</code> error.</p>
         pub fn set_vocabulary_filter_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7315,12 +7897,24 @@ pub mod update_vocabulary_filter_input {
             self.vocabulary_filter_name = input;
             self
         }
+        /// Appends an item to `words`.
+        ///
+        /// To override the contents of this collection use [`set_words`](Self::set_words).
+        ///
+        /// <p>The words to use in the vocabulary filter. Only use characters from the character set defined for custom
+        /// vocabularies. For a list of character sets, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary.html#charsets">Character Sets for Custom Vocabularies</a>.</p>
+        /// <p>If you provide a list of words in the <code>Words</code> parameter, you can't use the
+        /// <code>VocabularyFilterFileUri</code> parameter.</p>
         pub fn words(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.words.unwrap_or_default();
             v.push(input.into());
             self.words = Some(v);
             self
         }
+        /// <p>The words to use in the vocabulary filter. Only use characters from the character set defined for custom
+        /// vocabularies. For a list of character sets, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary.html#charsets">Character Sets for Custom Vocabularies</a>.</p>
+        /// <p>If you provide a list of words in the <code>Words</code> parameter, you can't use the
+        /// <code>VocabularyFilterFileUri</code> parameter.</p>
         pub fn set_words(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7338,6 +7932,12 @@ pub mod update_vocabulary_filter_input {
             self.vocabulary_filter_file_uri = Some(input.into());
             self
         }
+        /// <p>The Amazon S3 location of a text file used as input to create the vocabulary filter. Only use characters from
+        /// the character set defined for custom vocabularies. For a list of character sets, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary.html#charsets">Character Sets for Custom Vocabularies</a>.</p>
+        /// <p>The specified file must be less than 50 KB of UTF-8 characters.</p>
+        /// <p>If you provide the location of a list of words in the
+        /// <code>VocabularyFilterFileUri</code> parameter, you can't use the <code>Words</code>
+        /// parameter.</p>
         pub fn set_vocabulary_filter_file_uri(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7350,7 +7950,7 @@ pub mod update_vocabulary_filter_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateVocabularyFilterInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateVocabularyFilterInput {
                 vocabulary_filter_name: self.vocabulary_filter_name,
@@ -7371,16 +7971,16 @@ impl UpdateVocabularyFilterInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateVocabularyFilter,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateVocabularyFilterInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7388,7 +7988,7 @@ impl UpdateVocabularyFilterInput {
         fn update_http_builder(
             input: &crate::input::UpdateVocabularyFilterInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7397,32 +7997,34 @@ impl UpdateVocabularyFilterInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateVocabularyFilterInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "Transcribe.UpdateVocabularyFilter",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_vocabulary_filter(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7445,15 +8047,15 @@ impl UpdateVocabularyFilterInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateVocabularyFilter::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateVocabularyFilter",
             "transcribe",
         ));
@@ -7462,10 +8064,10 @@ impl UpdateVocabularyFilterInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7479,6 +8081,7 @@ impl UpdateVocabularyFilterInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateVocabularyFilterInput {
@@ -7511,6 +8114,7 @@ impl std::fmt::Debug for UpdateVocabularyFilterInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateVocabularyInput {
@@ -7524,7 +8128,9 @@ pub struct UpdateVocabularyInput {
     pub phrases: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The S3 location of the text file that contains the definition of the custom vocabulary. The URI must be in the
     /// same region as the API endpoint that you are calling. The general form is </p>
+    ///
     /// <p>For example:</p>
+    ///
     /// <p>For more information about S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the <i>Amazon S3
     /// Developer Guide</i>.</p>
     /// <p>For more information about custom vocabularies, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary">Custom Vocabularies</a>.</p>
@@ -7541,6 +8147,7 @@ impl std::fmt::Debug for UpdateVocabularyInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateMedicalVocabularyInput {
@@ -7576,6 +8183,7 @@ impl std::fmt::Debug for UpdateMedicalVocabularyInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateCallAnalyticsCategoryInput {
@@ -7595,6 +8203,7 @@ impl std::fmt::Debug for UpdateCallAnalyticsCategoryInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
@@ -7612,6 +8221,7 @@ impl std::fmt::Debug for UntagResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
@@ -7629,6 +8239,7 @@ impl std::fmt::Debug for TagResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartTranscriptionJobInput {
@@ -7757,6 +8368,7 @@ impl std::fmt::Debug for StartTranscriptionJobInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartMedicalTranscriptionJobInput {
@@ -7875,6 +8487,7 @@ impl std::fmt::Debug for StartMedicalTranscriptionJobInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartCallAnalyticsJobInput {
@@ -7964,6 +8577,7 @@ impl std::fmt::Debug for StartCallAnalyticsJobInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListVocabularyFiltersInput {
@@ -7986,6 +8600,7 @@ impl std::fmt::Debug for ListVocabularyFiltersInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListVocabulariesInput {
@@ -8014,6 +8629,7 @@ impl std::fmt::Debug for ListVocabulariesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTranscriptionJobsInput {
@@ -8041,6 +8657,7 @@ impl std::fmt::Debug for ListTranscriptionJobsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
@@ -8055,6 +8672,7 @@ impl std::fmt::Debug for ListTagsForResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMedicalVocabulariesInput {
@@ -8083,6 +8701,7 @@ impl std::fmt::Debug for ListMedicalVocabulariesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMedicalTranscriptionJobsInput {
@@ -8111,6 +8730,7 @@ impl std::fmt::Debug for ListMedicalTranscriptionJobsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLanguageModelsInput {
@@ -8137,6 +8757,7 @@ impl std::fmt::Debug for ListLanguageModelsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCallAnalyticsJobsInput {
@@ -8167,6 +8788,7 @@ impl std::fmt::Debug for ListCallAnalyticsJobsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCallAnalyticsCategoriesInput {
@@ -8187,6 +8809,7 @@ impl std::fmt::Debug for ListCallAnalyticsCategoriesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetVocabularyFilterInput {
@@ -8201,6 +8824,7 @@ impl std::fmt::Debug for GetVocabularyFilterInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetVocabularyInput {
@@ -8216,6 +8840,7 @@ impl std::fmt::Debug for GetVocabularyInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTranscriptionJobInput {
@@ -8230,6 +8855,7 @@ impl std::fmt::Debug for GetTranscriptionJobInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMedicalVocabularyInput {
@@ -8244,6 +8870,7 @@ impl std::fmt::Debug for GetMedicalVocabularyInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMedicalTranscriptionJobInput {
@@ -8261,6 +8888,7 @@ impl std::fmt::Debug for GetMedicalTranscriptionJobInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCallAnalyticsJobInput {
@@ -8276,6 +8904,7 @@ impl std::fmt::Debug for GetCallAnalyticsJobInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCallAnalyticsCategoryInput {
@@ -8290,6 +8919,7 @@ impl std::fmt::Debug for GetCallAnalyticsCategoryInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLanguageModelInput {
@@ -8304,6 +8934,7 @@ impl std::fmt::Debug for DescribeLanguageModelInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteVocabularyFilterInput {
@@ -8318,6 +8949,7 @@ impl std::fmt::Debug for DeleteVocabularyFilterInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteVocabularyInput {
@@ -8332,6 +8964,7 @@ impl std::fmt::Debug for DeleteVocabularyInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTranscriptionJobInput {
@@ -8346,6 +8979,7 @@ impl std::fmt::Debug for DeleteTranscriptionJobInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMedicalVocabularyInput {
@@ -8360,6 +8994,7 @@ impl std::fmt::Debug for DeleteMedicalVocabularyInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMedicalTranscriptionJobInput {
@@ -8378,6 +9013,7 @@ impl std::fmt::Debug for DeleteMedicalTranscriptionJobInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLanguageModelInput {
@@ -8392,6 +9028,7 @@ impl std::fmt::Debug for DeleteLanguageModelInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCallAnalyticsJobInput {
@@ -8406,6 +9043,7 @@ impl std::fmt::Debug for DeleteCallAnalyticsJobInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCallAnalyticsCategoryInput {
@@ -8421,6 +9059,7 @@ impl std::fmt::Debug for DeleteCallAnalyticsCategoryInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateVocabularyFilterInput {
@@ -8461,6 +9100,7 @@ impl std::fmt::Debug for CreateVocabularyFilterInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateVocabularyInput {
@@ -8475,6 +9115,9 @@ pub struct CreateVocabularyInput {
     pub phrases: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The S3 location of the text file that contains the definition of the custom vocabulary. The URI must be in the
     /// same region as the API endpoint that you are calling. The general form is:</p>
+    ///
+    ///
+    ///
     /// <p>For more information about S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the
     /// <i>Amazon S3 Developer Guide</i>.</p>
     /// <p>For more information about custom vocabularies, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary">Custom vocabularies</a>.</p>
@@ -8495,6 +9138,7 @@ impl std::fmt::Debug for CreateVocabularyInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMedicalVocabularyInput {
@@ -8537,6 +9181,7 @@ impl std::fmt::Debug for CreateMedicalVocabularyInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLanguageModelInput {
@@ -8570,6 +9215,7 @@ impl std::fmt::Debug for CreateLanguageModelInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCallAnalyticsCategoryInput {

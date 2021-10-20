@@ -21,7 +21,7 @@ pub fn parse_batch_get_record_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::access_forbidden::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_access_forbiddenjson_err(response.body().as_ref(), output).map_err(crate::error::BatchGetRecordError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_access_forbidden_json_err(response.body().as_ref(), output).map_err(crate::error::BatchGetRecordError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -40,7 +40,7 @@ pub fn parse_batch_get_record_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::internal_failure::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_internal_failurejson_err(response.body().as_ref(), output).map_err(crate::error::BatchGetRecordError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_internal_failure_json_err(response.body().as_ref(), output).map_err(crate::error::BatchGetRecordError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -50,25 +50,23 @@ pub fn parse_batch_get_record_error(
                 }),
             }
         }
-        "ServiceUnavailable" => {
-            crate::error::BatchGetRecordError {
-                meta: generic,
-                kind: crate::error::BatchGetRecordErrorKind::ServiceUnavailable({
+        "ServiceUnavailable" => crate::error::BatchGetRecordError {
+            meta: generic,
+            kind: crate::error::BatchGetRecordErrorKind::ServiceUnavailable({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::service_unavailable::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_unavailablejson_err(response.body().as_ref(), output).map_err(crate::error::BatchGetRecordError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::service_unavailable::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_json_err(response.body().as_ref(), output).map_err(crate::error::BatchGetRecordError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ValidationError" => {
             crate::error::BatchGetRecordError {
                 meta: generic,
@@ -78,7 +76,7 @@ pub fn parse_batch_get_record_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::validation_error::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_validation_errorjson_err(response.body().as_ref(), output).map_err(crate::error::BatchGetRecordError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_validation_error_json_err(response.body().as_ref(), output).map_err(crate::error::BatchGetRecordError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -131,7 +129,7 @@ pub fn parse_delete_record_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::access_forbidden::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_access_forbiddenjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteRecordError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_access_forbidden_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRecordError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -150,7 +148,7 @@ pub fn parse_delete_record_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::internal_failure::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_internal_failurejson_err(response.body().as_ref(), output).map_err(crate::error::DeleteRecordError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_internal_failure_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRecordError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -160,25 +158,23 @@ pub fn parse_delete_record_error(
                 }),
             }
         }
-        "ServiceUnavailable" => {
-            crate::error::DeleteRecordError {
-                meta: generic,
-                kind: crate::error::DeleteRecordErrorKind::ServiceUnavailable({
+        "ServiceUnavailable" => crate::error::DeleteRecordError {
+            meta: generic,
+            kind: crate::error::DeleteRecordErrorKind::ServiceUnavailable({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::service_unavailable::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_unavailablejson_err(response.body().as_ref(), output).map_err(crate::error::DeleteRecordError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::service_unavailable::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRecordError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ValidationError" => {
             crate::error::DeleteRecordError {
                 meta: generic,
@@ -188,7 +184,7 @@ pub fn parse_delete_record_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::validation_error::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_validation_errorjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteRecordError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_validation_error_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRecordError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -236,7 +232,7 @@ pub fn parse_get_record_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::access_forbidden::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_access_forbiddenjson_err(response.body().as_ref(), output).map_err(crate::error::GetRecordError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_access_forbidden_json_err(response.body().as_ref(), output).map_err(crate::error::GetRecordError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -255,7 +251,7 @@ pub fn parse_get_record_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::internal_failure::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_internal_failurejson_err(response.body().as_ref(), output).map_err(crate::error::GetRecordError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_internal_failure_json_err(response.body().as_ref(), output).map_err(crate::error::GetRecordError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -274,7 +270,7 @@ pub fn parse_get_record_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::resource_not_found::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_resource_not_foundjson_err(response.body().as_ref(), output).map_err(crate::error::GetRecordError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_resource_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::GetRecordError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -284,25 +280,23 @@ pub fn parse_get_record_error(
                 }),
             }
         }
-        "ServiceUnavailable" => {
-            crate::error::GetRecordError {
-                meta: generic,
-                kind: crate::error::GetRecordErrorKind::ServiceUnavailable({
+        "ServiceUnavailable" => crate::error::GetRecordError {
+            meta: generic,
+            kind: crate::error::GetRecordErrorKind::ServiceUnavailable({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::service_unavailable::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_unavailablejson_err(response.body().as_ref(), output).map_err(crate::error::GetRecordError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::service_unavailable::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_json_err(response.body().as_ref(), output).map_err(crate::error::GetRecordError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ValidationError" => {
             crate::error::GetRecordError {
                 meta: generic,
@@ -312,7 +306,7 @@ pub fn parse_get_record_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::validation_error::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_validation_errorjson_err(response.body().as_ref(), output).map_err(crate::error::GetRecordError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_validation_error_json_err(response.body().as_ref(), output).map_err(crate::error::GetRecordError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -365,7 +359,7 @@ pub fn parse_put_record_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::access_forbidden::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_access_forbiddenjson_err(response.body().as_ref(), output).map_err(crate::error::PutRecordError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_access_forbidden_json_err(response.body().as_ref(), output).map_err(crate::error::PutRecordError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -384,7 +378,7 @@ pub fn parse_put_record_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::internal_failure::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_internal_failurejson_err(response.body().as_ref(), output).map_err(crate::error::PutRecordError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_internal_failure_json_err(response.body().as_ref(), output).map_err(crate::error::PutRecordError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -394,25 +388,23 @@ pub fn parse_put_record_error(
                 }),
             }
         }
-        "ServiceUnavailable" => {
-            crate::error::PutRecordError {
-                meta: generic,
-                kind: crate::error::PutRecordErrorKind::ServiceUnavailable({
+        "ServiceUnavailable" => crate::error::PutRecordError {
+            meta: generic,
+            kind: crate::error::PutRecordErrorKind::ServiceUnavailable({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::service_unavailable::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_unavailablejson_err(response.body().as_ref(), output).map_err(crate::error::PutRecordError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
+                    let mut output = crate::error::service_unavailable::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_json_err(response.body().as_ref(), output).map_err(crate::error::PutRecordError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ValidationError" => {
             crate::error::PutRecordError {
                 meta: generic,
@@ -422,7 +414,7 @@ pub fn parse_put_record_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::validation_error::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_validation_errorjson_err(response.body().as_ref(), output).map_err(crate::error::PutRecordError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_validation_error_json_err(response.body().as_ref(), output).map_err(crate::error::PutRecordError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {

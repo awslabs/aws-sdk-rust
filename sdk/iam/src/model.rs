@@ -19,7 +19,7 @@ pub struct SshPublicKey {
     pub status: std::option::Option<crate::model::StatusType>,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
     /// format</a>, when the SSH public key was uploaded.</p>
-    pub upload_date: std::option::Option<smithy_types::Instant>,
+    pub upload_date: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for SshPublicKey {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -44,7 +44,7 @@ pub mod ssh_public_key {
         pub(crate) fingerprint: std::option::Option<std::string::String>,
         pub(crate) ssh_public_key_body: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::StatusType>,
-        pub(crate) upload_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) upload_date: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The name of the IAM user associated with the SSH public key.</p>
@@ -52,6 +52,7 @@ pub mod ssh_public_key {
             self.user_name = Some(input.into());
             self
         }
+        /// <p>The name of the IAM user associated with the SSH public key.</p>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_name = input;
             self
@@ -61,6 +62,7 @@ pub mod ssh_public_key {
             self.ssh_public_key_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the SSH public key.</p>
         pub fn set_ssh_public_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -73,6 +75,7 @@ pub mod ssh_public_key {
             self.fingerprint = Some(input.into());
             self
         }
+        /// <p>The MD5 message digest of the SSH public key.</p>
         pub fn set_fingerprint(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.fingerprint = input;
             self
@@ -82,6 +85,7 @@ pub mod ssh_public_key {
             self.ssh_public_key_body = Some(input.into());
             self
         }
+        /// <p>The SSH public key.</p>
         pub fn set_ssh_public_key_body(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -96,19 +100,24 @@ pub mod ssh_public_key {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the SSH public key. <code>Active</code> means that the key can be used for
+        /// authentication with an CodeCommit repository. <code>Inactive</code> means that the key
+        /// cannot be used.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::StatusType>) -> Self {
             self.status = input;
             self
         }
         /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
         /// format</a>, when the SSH public key was uploaded.</p>
-        pub fn upload_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn upload_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.upload_date = Some(input);
             self
         }
+        /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
+        /// format</a>, when the SSH public key was uploaded.</p>
         pub fn set_upload_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.upload_date = input;
             self
@@ -133,6 +142,7 @@ impl SshPublicKey {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -144,7 +154,9 @@ impl SshPublicKey {
     std::hash::Hash,
 )]
 pub enum StatusType {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     Inactive,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -166,6 +178,7 @@ impl std::str::FromStr for StatusType {
     }
 }
 impl StatusType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StatusType::Active => "Active",
@@ -173,6 +186,7 @@ impl StatusType {
             StatusType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Active", "Inactive"]
     }
@@ -199,7 +213,7 @@ pub struct SigningCertificate {
     /// for API calls, while <code>Inactive</code> means it is not.</p>
     pub status: std::option::Option<crate::model::StatusType>,
     /// <p>The date when the signing certificate was uploaded.</p>
-    pub upload_date: std::option::Option<smithy_types::Instant>,
+    pub upload_date: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for SigningCertificate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -222,7 +236,7 @@ pub mod signing_certificate {
         pub(crate) certificate_id: std::option::Option<std::string::String>,
         pub(crate) certificate_body: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::StatusType>,
-        pub(crate) upload_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) upload_date: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The name of the user the signing certificate is associated with.</p>
@@ -230,6 +244,7 @@ pub mod signing_certificate {
             self.user_name = Some(input.into());
             self
         }
+        /// <p>The name of the user the signing certificate is associated with.</p>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_name = input;
             self
@@ -239,6 +254,7 @@ pub mod signing_certificate {
             self.certificate_id = Some(input.into());
             self
         }
+        /// <p>The ID for the signing certificate.</p>
         pub fn set_certificate_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -251,6 +267,7 @@ pub mod signing_certificate {
             self.certificate_body = Some(input.into());
             self
         }
+        /// <p>The contents of the signing certificate.</p>
         pub fn set_certificate_body(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -264,18 +281,21 @@ pub mod signing_certificate {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the signing certificate. <code>Active</code> means that the key is valid
+        /// for API calls, while <code>Inactive</code> means it is not.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::StatusType>) -> Self {
             self.status = input;
             self
         }
         /// <p>The date when the signing certificate was uploaded.</p>
-        pub fn upload_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn upload_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.upload_date = Some(input);
             self
         }
+        /// <p>The date when the signing certificate was uploaded.</p>
         pub fn set_upload_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.upload_date = input;
             self
@@ -345,6 +365,8 @@ pub mod tag {
             self.key = Some(input.into());
             self
         }
+        /// <p>The key name that can be used to look up or retrieve the associated value. For example,
+        /// <code>Department</code> or <code>Cost Center</code> are common choices.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -364,6 +386,17 @@ pub mod tag {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value associated with this tag. For example, tags with a key name of
+        /// <code>Department</code> could have values such as <code>Human Resources</code>,
+        /// <code>Accounting</code>, and <code>Support</code>. Tags with a key name of <code>Cost
+        /// Center</code> might have values that consist of the number associated with the different
+        /// cost centers in your company. Typically, many resources have tags with the same key name but
+        /// with different values.</p>
+        /// <note>
+        /// <p>Amazon Web Services always interprets the tag <code>Value</code> as a single string. If you need to
+        /// store an array, you can store comma-separated values in the string. However, you must
+        /// interpret the value in your code.</p>
+        /// </note>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -404,9 +437,9 @@ pub struct ServerCertificateMetadata {
     /// <i>IAM User Guide</i>. </p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date when the server certificate was uploaded.</p>
-    pub upload_date: std::option::Option<smithy_types::Instant>,
+    pub upload_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date on which the certificate is set to expire.</p>
-    pub expiration: std::option::Option<smithy_types::Instant>,
+    pub expiration: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for ServerCertificateMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -430,8 +463,8 @@ pub mod server_certificate_metadata {
         pub(crate) server_certificate_name: std::option::Option<std::string::String>,
         pub(crate) server_certificate_id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) upload_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) expiration: std::option::Option<smithy_types::Instant>,
+        pub(crate) upload_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) expiration: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p> The path to the server certificate. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
@@ -440,6 +473,8 @@ pub mod server_certificate_metadata {
             self.path = Some(input.into());
             self
         }
+        /// <p> The path to the server certificate. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+        /// identifiers</a> in the <i>IAM User Guide</i>. </p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.path = input;
             self
@@ -449,6 +484,7 @@ pub mod server_certificate_metadata {
             self.server_certificate_name = Some(input.into());
             self
         }
+        /// <p>The name that identifies the server certificate.</p>
         pub fn set_server_certificate_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -462,6 +498,8 @@ pub mod server_certificate_metadata {
             self.server_certificate_id = Some(input.into());
             self
         }
+        /// <p> The stable and unique string identifying the server certificate. For more information
+        /// about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>. </p>
         pub fn set_server_certificate_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -476,28 +514,36 @@ pub mod server_certificate_metadata {
             self.arn = Some(input.into());
             self
         }
+        /// <p> The Amazon Resource Name (ARN) specifying the server certificate. For more information
+        /// about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
+        /// <i>IAM User Guide</i>. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
         /// <p>The date when the server certificate was uploaded.</p>
-        pub fn upload_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn upload_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.upload_date = Some(input);
             self
         }
+        /// <p>The date when the server certificate was uploaded.</p>
         pub fn set_upload_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.upload_date = input;
             self
         }
         /// <p>The date on which the certificate is set to expire.</p>
-        pub fn expiration(mut self, input: smithy_types::Instant) -> Self {
+        pub fn expiration(mut self, input: aws_smithy_types::Instant) -> Self {
             self.expiration = Some(input);
             self
         }
-        pub fn set_expiration(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date on which the certificate is set to expire.</p>
+        pub fn set_expiration(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.expiration = input;
             self
         }
@@ -541,7 +587,7 @@ pub struct Role {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
     /// format</a>, when the role was created.</p>
-    pub create_date: std::option::Option<smithy_types::Instant>,
+    pub create_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The policy that grants an entity permission to assume the role.</p>
     pub assume_role_policy_document: std::option::Option<std::string::String>,
     /// <p>A description of the role that you provide.</p>
@@ -596,7 +642,7 @@ pub mod role {
         pub(crate) role_name: std::option::Option<std::string::String>,
         pub(crate) role_id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) create_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) create_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) assume_role_policy_document: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) max_session_duration: std::option::Option<i32>,
@@ -612,6 +658,8 @@ pub mod role {
             self.path = Some(input.into());
             self
         }
+        /// <p> The path to the role. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
+        /// <i>IAM User Guide</i>. </p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.path = input;
             self
@@ -621,6 +669,7 @@ pub mod role {
             self.role_name = Some(input.into());
             self
         }
+        /// <p>The friendly name that identifies the role.</p>
         pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_name = input;
             self
@@ -632,6 +681,9 @@ pub mod role {
             self.role_id = Some(input.into());
             self
         }
+        /// <p> The stable and unique string identifying the role. For more information about IDs, see
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+        /// identifiers</a> in the <i>IAM User Guide</i>. </p>
         pub fn set_role_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_id = input;
             self
@@ -643,19 +695,24 @@ pub mod role {
             self.arn = Some(input.into());
             self
         }
+        /// <p> The Amazon Resource Name (ARN) specifying the role. For more information about ARNs and
+        /// how to use them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
+        /// <i>IAM User Guide</i> guide. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
         /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
         /// format</a>, when the role was created.</p>
-        pub fn create_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn create_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.create_date = Some(input);
             self
         }
+        /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
+        /// format</a>, when the role was created.</p>
         pub fn set_create_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.create_date = input;
             self
@@ -668,6 +725,7 @@ pub mod role {
             self.assume_role_policy_document = Some(input.into());
             self
         }
+        /// <p>The policy that grants an entity permission to assume the role.</p>
         pub fn set_assume_role_policy_document(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -680,6 +738,7 @@ pub mod role {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description of the role that you provide.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -692,6 +751,10 @@ pub mod role {
             self.max_session_duration = Some(input);
             self
         }
+        /// <p>The maximum session duration (in seconds) for the specified role. Anyone who uses the
+        /// CLI, or API to assume the role can specify the duration using the optional
+        /// <code>DurationSeconds</code> API parameter or <code>duration-seconds</code> CLI
+        /// parameter.</p>
         pub fn set_max_session_duration(mut self, input: std::option::Option<i32>) -> Self {
             self.max_session_duration = input;
             self
@@ -706,6 +769,9 @@ pub mod role {
             self.permissions_boundary = Some(input);
             self
         }
+        /// <p>The ARN of the policy used to set the permissions boundary for the role.</p>
+        /// <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM
+        /// identities </a> in the <i>IAM User Guide</i>.</p>
         pub fn set_permissions_boundary(
             mut self,
             input: std::option::Option<crate::model::AttachedPermissionsBoundary>,
@@ -713,12 +779,20 @@ pub mod role {
             self.permissions_boundary = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of tags that are attached to the role. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
+        /// <i>IAM User Guide</i>.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>A list of tags that are attached to the role. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
+        /// <i>IAM User Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -736,6 +810,12 @@ pub mod role {
             self.role_last_used = Some(input);
             self
         }
+        /// <p>Contains information about the last time that an IAM role was used. This includes the
+        /// date and time and the Region in which the role was last used. Activity is only reported for
+        /// the trailing 400 days. This period can be shorter if your Region began supporting these
+        /// features within the last year. The role might have been used more than 400 days ago. For
+        /// more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period">Regions where data is tracked</a> in the <i>IAM User
+        /// Guide</i>.</p>
         pub fn set_role_last_used(
             mut self,
             input: std::option::Option<crate::model::RoleLastUsed>,
@@ -783,7 +863,7 @@ pub struct RoleLastUsed {
     /// format</a> that the role was last used.</p>
     /// <p>This field is null if the role has not been used within the IAM tracking period. For
     /// more information about the tracking period, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period">Regions where data is tracked</a> in the <i>IAM User Guide</i>. </p>
-    pub last_used_date: std::option::Option<smithy_types::Instant>,
+    pub last_used_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The name of the Amazon Web Services Region in which the role was last used.</p>
     pub region: std::option::Option<std::string::String>,
 }
@@ -801,7 +881,7 @@ pub mod role_last_used {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) last_used_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_used_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) region: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -809,13 +889,17 @@ pub mod role_last_used {
         /// format</a> that the role was last used.</p>
         /// <p>This field is null if the role has not been used within the IAM tracking period. For
         /// more information about the tracking period, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period">Regions where data is tracked</a> in the <i>IAM User Guide</i>. </p>
-        pub fn last_used_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_used_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_used_date = Some(input);
             self
         }
+        /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
+        /// format</a> that the role was last used.</p>
+        /// <p>This field is null if the role has not been used within the IAM tracking period. For
+        /// more information about the tracking period, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period">Regions where data is tracked</a> in the <i>IAM User Guide</i>. </p>
         pub fn set_last_used_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_used_date = input;
             self
@@ -825,6 +909,7 @@ pub mod role_last_used {
             self.region = Some(input.into());
             self
         }
+        /// <p>The name of the Amazon Web Services Region in which the role was last used.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
@@ -890,6 +975,9 @@ pub mod attached_permissions_boundary {
             self.permissions_boundary_type = Some(input);
             self
         }
+        /// <p> The permissions boundary usage type that indicates what type of IAM resource is used
+        /// as the permissions boundary for an entity. This data type can only have a value of
+        /// <code>Policy</code>.</p>
         pub fn set_permissions_boundary_type(
             mut self,
             input: std::option::Option<crate::model::PermissionsBoundaryAttachmentType>,
@@ -902,6 +990,7 @@ pub mod attached_permissions_boundary {
             self.permissions_boundary_arn = Some(input.into());
             self
         }
+        /// <p> The ARN of the policy used to set the permissions boundary for the user or role.</p>
         pub fn set_permissions_boundary_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -925,6 +1014,7 @@ impl AttachedPermissionsBoundary {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -936,6 +1026,7 @@ impl AttachedPermissionsBoundary {
     std::hash::Hash,
 )]
 pub enum PermissionsBoundaryAttachmentType {
+    #[allow(missing_docs)] // documentation missing in model
     Policy,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -956,12 +1047,14 @@ impl std::str::FromStr for PermissionsBoundaryAttachmentType {
     }
 }
 impl PermissionsBoundaryAttachmentType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PermissionsBoundaryAttachmentType::Policy => "PermissionsBoundaryPolicy",
             PermissionsBoundaryAttachmentType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["PermissionsBoundaryPolicy"]
     }
@@ -1080,6 +1173,7 @@ pub mod evaluation_result {
             self.eval_action_name = Some(input.into());
             self
         }
+        /// <p>The name of the API operation tested on the indicated resource.</p>
         pub fn set_eval_action_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1092,6 +1186,7 @@ pub mod evaluation_result {
             self.eval_resource_name = Some(input.into());
             self
         }
+        /// <p>The ARN of the resource that the indicated API operation was tested on.</p>
         pub fn set_eval_resource_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1104,6 +1199,7 @@ pub mod evaluation_result {
             self.eval_decision = Some(input);
             self
         }
+        /// <p>The result of the simulation.</p>
         pub fn set_eval_decision(
             mut self,
             input: std::option::Option<crate::model::PolicyEvaluationDecisionType>,
@@ -1111,12 +1207,24 @@ pub mod evaluation_result {
             self.eval_decision = input;
             self
         }
+        /// Appends an item to `matched_statements`.
+        ///
+        /// To override the contents of this collection use [`set_matched_statements`](Self::set_matched_statements).
+        ///
+        /// <p>A list of the statements in the input policies that determine the result for this
+        /// scenario. Remember that even if multiple statements allow the operation on the resource, if
+        /// only one statement denies that operation, then the explicit deny overrides any allow. In
+        /// addition, the deny statement is the only entry included in the result.</p>
         pub fn matched_statements(mut self, input: impl Into<crate::model::Statement>) -> Self {
             let mut v = self.matched_statements.unwrap_or_default();
             v.push(input.into());
             self.matched_statements = Some(v);
             self
         }
+        /// <p>A list of the statements in the input policies that determine the result for this
+        /// scenario. Remember that even if multiple statements allow the operation on the resource, if
+        /// only one statement denies that operation, then the explicit deny overrides any allow. In
+        /// addition, the deny statement is the only entry included in the result.</p>
         pub fn set_matched_statements(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Statement>>,
@@ -1124,12 +1232,28 @@ pub mod evaluation_result {
             self.matched_statements = input;
             self
         }
+        /// Appends an item to `missing_context_values`.
+        ///
+        /// To override the contents of this collection use [`set_missing_context_values`](Self::set_missing_context_values).
+        ///
+        /// <p>A list of context keys that are required by the included input policies but that were
+        /// not provided by one of the input parameters. This list is used when the resource in a
+        /// simulation is "*", either explicitly, or when the <code>ResourceArns</code> parameter
+        /// blank. If you include a list of resources, then any missing context values are instead
+        /// included under the <code>ResourceSpecificResults</code> section. To discover the context
+        /// keys used by a set of policies, you can call <a>GetContextKeysForCustomPolicy</a> or <a>GetContextKeysForPrincipalPolicy</a>.</p>
         pub fn missing_context_values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.missing_context_values.unwrap_or_default();
             v.push(input.into());
             self.missing_context_values = Some(v);
             self
         }
+        /// <p>A list of context keys that are required by the included input policies but that were
+        /// not provided by one of the input parameters. This list is used when the resource in a
+        /// simulation is "*", either explicitly, or when the <code>ResourceArns</code> parameter
+        /// blank. If you include a list of resources, then any missing context values are instead
+        /// included under the <code>ResourceSpecificResults</code> section. To discover the context
+        /// keys used by a set of policies, you can call <a>GetContextKeysForCustomPolicy</a> or <a>GetContextKeysForPrincipalPolicy</a>.</p>
         pub fn set_missing_context_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1147,6 +1271,9 @@ pub mod evaluation_result {
             self.organizations_decision_detail = Some(input);
             self
         }
+        /// <p>A structure that details how Organizations and its service control policies affect the results of
+        /// the simulation. Only applies if the simulated user's account is part of an
+        /// organization.</p>
         pub fn set_organizations_decision_detail(
             mut self,
             input: std::option::Option<crate::model::OrganizationsDecisionDetail>,
@@ -1163,6 +1290,8 @@ pub mod evaluation_result {
             self.permissions_boundary_decision_detail = Some(input);
             self
         }
+        /// <p>Contains information about the effect that a permissions boundary has on a policy
+        /// simulation when the boundary is applied to an IAM entity.</p>
         pub fn set_permissions_boundary_decision_detail(
             mut self,
             input: std::option::Option<crate::model::PermissionsBoundaryDecisionDetail>,
@@ -1170,6 +1299,23 @@ pub mod evaluation_result {
             self.permissions_boundary_decision_detail = input;
             self
         }
+        /// Adds a key-value pair to `eval_decision_details`.
+        ///
+        /// To override the contents of this collection use [`set_eval_decision_details`](Self::set_eval_decision_details).
+        ///
+        /// <p>Additional details about the results of the cross-account evaluation decision. This
+        /// parameter is populated for only cross-account simulations. It contains a brief summary of
+        /// how each policy type contributes to the final evaluation decision.</p>
+        /// <p>If the simulation evaluates policies within the same account and includes a resource
+        /// ARN, then the parameter is present but the response is empty. If the simulation evaluates
+        /// policies within the same account and specifies all resources (<code>*</code>), then the
+        /// parameter is not returned.</p>
+        /// <p>When you make a cross-account request, Amazon Web Services evaluates the request in the trusting
+        /// account and the trusted account. The request is allowed only if both evaluations return
+        /// <code>true</code>. For more information about how policies are evaluated, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-basics">Evaluating policies within a single account</a>.</p>
+        /// <p>If an Organizations SCP included in the evaluation denies access, the simulation ends. In
+        /// this case, policy evaluation does not proceed any further and this parameter is not
+        /// returned.</p>
         pub fn eval_decision_details(
             mut self,
             k: impl Into<std::string::String>,
@@ -1180,6 +1326,19 @@ pub mod evaluation_result {
             self.eval_decision_details = Some(hash_map);
             self
         }
+        /// <p>Additional details about the results of the cross-account evaluation decision. This
+        /// parameter is populated for only cross-account simulations. It contains a brief summary of
+        /// how each policy type contributes to the final evaluation decision.</p>
+        /// <p>If the simulation evaluates policies within the same account and includes a resource
+        /// ARN, then the parameter is present but the response is empty. If the simulation evaluates
+        /// policies within the same account and specifies all resources (<code>*</code>), then the
+        /// parameter is not returned.</p>
+        /// <p>When you make a cross-account request, Amazon Web Services evaluates the request in the trusting
+        /// account and the trusted account. The request is allowed only if both evaluations return
+        /// <code>true</code>. For more information about how policies are evaluated, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-basics">Evaluating policies within a single account</a>.</p>
+        /// <p>If an Organizations SCP included in the evaluation denies access, the simulation ends. In
+        /// this case, policy evaluation does not proceed any further and this parameter is not
+        /// returned.</p>
         pub fn set_eval_decision_details(
             mut self,
             input: std::option::Option<
@@ -1192,6 +1351,12 @@ pub mod evaluation_result {
             self.eval_decision_details = input;
             self
         }
+        /// Appends an item to `resource_specific_results`.
+        ///
+        /// To override the contents of this collection use [`set_resource_specific_results`](Self::set_resource_specific_results).
+        ///
+        /// <p>The individual results of the simulation of the API operation specified in
+        /// EvalActionName on each resource.</p>
         pub fn resource_specific_results(
             mut self,
             input: impl Into<crate::model::ResourceSpecificResult>,
@@ -1201,6 +1366,8 @@ pub mod evaluation_result {
             self.resource_specific_results = Some(v);
             self
         }
+        /// <p>The individual results of the simulation of the API operation specified in
+        /// EvalActionName on each resource.</p>
         pub fn set_resource_specific_results(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourceSpecificResult>>,
@@ -1310,6 +1477,7 @@ pub mod resource_specific_result {
             self.eval_resource_name = Some(input.into());
             self
         }
+        /// <p>The name of the simulated resource, in Amazon Resource Name (ARN) format.</p>
         pub fn set_eval_resource_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1326,6 +1494,8 @@ pub mod resource_specific_result {
             self.eval_resource_decision = Some(input);
             self
         }
+        /// <p>The result of the simulation of the simulated API operation on the resource specified in
+        /// <code>EvalResourceName</code>.</p>
         pub fn set_eval_resource_decision(
             mut self,
             input: std::option::Option<crate::model::PolicyEvaluationDecisionType>,
@@ -1333,12 +1503,26 @@ pub mod resource_specific_result {
             self.eval_resource_decision = input;
             self
         }
+        /// Appends an item to `matched_statements`.
+        ///
+        /// To override the contents of this collection use [`set_matched_statements`](Self::set_matched_statements).
+        ///
+        /// <p>A list of the statements in the input policies that determine the result for this part
+        /// of the simulation. Remember that even if multiple statements allow the operation on the
+        /// resource, if <i>any</i> statement denies that operation, then the explicit
+        /// deny overrides any allow. In addition, the deny statement is the only entry included in the
+        /// result.</p>
         pub fn matched_statements(mut self, input: impl Into<crate::model::Statement>) -> Self {
             let mut v = self.matched_statements.unwrap_or_default();
             v.push(input.into());
             self.matched_statements = Some(v);
             self
         }
+        /// <p>A list of the statements in the input policies that determine the result for this part
+        /// of the simulation. Remember that even if multiple statements allow the operation on the
+        /// resource, if <i>any</i> statement denies that operation, then the explicit
+        /// deny overrides any allow. In addition, the deny statement is the only entry included in the
+        /// result.</p>
         pub fn set_matched_statements(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Statement>>,
@@ -1346,12 +1530,32 @@ pub mod resource_specific_result {
             self.matched_statements = input;
             self
         }
+        /// Appends an item to `missing_context_values`.
+        ///
+        /// To override the contents of this collection use [`set_missing_context_values`](Self::set_missing_context_values).
+        ///
+        /// <p>A list of context keys that are required by the included input policies but that were
+        /// not provided by one of the input parameters. This list is used when a list of ARNs is
+        /// included in the <code>ResourceArns</code> parameter instead of "*". If you do not specify
+        /// individual resources, by setting <code>ResourceArns</code> to "*" or by not including the
+        /// <code>ResourceArns</code> parameter, then any missing context values are instead
+        /// included under the <code>EvaluationResults</code> section. To discover the context keys
+        /// used by a set of policies, you can call <a>GetContextKeysForCustomPolicy</a> or
+        /// <a>GetContextKeysForPrincipalPolicy</a>.</p>
         pub fn missing_context_values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.missing_context_values.unwrap_or_default();
             v.push(input.into());
             self.missing_context_values = Some(v);
             self
         }
+        /// <p>A list of context keys that are required by the included input policies but that were
+        /// not provided by one of the input parameters. This list is used when a list of ARNs is
+        /// included in the <code>ResourceArns</code> parameter instead of "*". If you do not specify
+        /// individual resources, by setting <code>ResourceArns</code> to "*" or by not including the
+        /// <code>ResourceArns</code> parameter, then any missing context values are instead
+        /// included under the <code>EvaluationResults</code> section. To discover the context keys
+        /// used by a set of policies, you can call <a>GetContextKeysForCustomPolicy</a> or
+        /// <a>GetContextKeysForPrincipalPolicy</a>.</p>
         pub fn set_missing_context_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1359,6 +1563,13 @@ pub mod resource_specific_result {
             self.missing_context_values = input;
             self
         }
+        /// Adds a key-value pair to `eval_decision_details`.
+        ///
+        /// To override the contents of this collection use [`set_eval_decision_details`](Self::set_eval_decision_details).
+        ///
+        /// <p>Additional details about the results of the evaluation decision on a single resource.
+        /// This parameter is returned only for cross-account simulations. This parameter explains how
+        /// each policy type contributes to the resource-specific evaluation decision.</p>
         pub fn eval_decision_details(
             mut self,
             k: impl Into<std::string::String>,
@@ -1369,6 +1580,9 @@ pub mod resource_specific_result {
             self.eval_decision_details = Some(hash_map);
             self
         }
+        /// <p>Additional details about the results of the evaluation decision on a single resource.
+        /// This parameter is returned only for cross-account simulations. This parameter explains how
+        /// each policy type contributes to the resource-specific evaluation decision.</p>
         pub fn set_eval_decision_details(
             mut self,
             input: std::option::Option<
@@ -1390,6 +1604,8 @@ pub mod resource_specific_result {
             self.permissions_boundary_decision_detail = Some(input);
             self
         }
+        /// <p>Contains information about the effect that a permissions boundary has on a policy
+        /// simulation when that boundary is applied to an IAM entity.</p>
         pub fn set_permissions_boundary_decision_detail(
             mut self,
             input: std::option::Option<crate::model::PermissionsBoundaryDecisionDetail>,
@@ -1463,6 +1679,14 @@ pub mod permissions_boundary_decision_detail {
             self.allowed_by_permissions_boundary = Some(input);
             self
         }
+        /// <p>Specifies whether an action is allowed by a permissions boundary that is applied to an
+        /// IAM entity (user or role). A value of <code>true</code> means that the permissions
+        /// boundary does not deny the action. This means that the policy includes an
+        /// <code>Allow</code> statement that matches the request. In this case, if an
+        /// identity-based policy also allows the action, the request is allowed. A value of
+        /// <code>false</code> means that either the requested action is not allowed (implicitly
+        /// denied) or that the action is explicitly denied by the permissions boundary. In both of
+        /// these cases, the action is not allowed, regardless of the identity-based policy.</p>
         pub fn set_allowed_by_permissions_boundary(
             mut self,
             input: std::option::Option<bool>,
@@ -1487,6 +1711,7 @@ impl PermissionsBoundaryDecisionDetail {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1498,8 +1723,11 @@ impl PermissionsBoundaryDecisionDetail {
     std::hash::Hash,
 )]
 pub enum PolicyEvaluationDecisionType {
+    #[allow(missing_docs)] // documentation missing in model
     Allowed,
+    #[allow(missing_docs)] // documentation missing in model
     ExplicitDeny,
+    #[allow(missing_docs)] // documentation missing in model
     ImplicitDeny,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1522,6 +1750,7 @@ impl std::str::FromStr for PolicyEvaluationDecisionType {
     }
 }
 impl PolicyEvaluationDecisionType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PolicyEvaluationDecisionType::Allowed => "allowed",
@@ -1530,6 +1759,7 @@ impl PolicyEvaluationDecisionType {
             PolicyEvaluationDecisionType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["allowed", "explicitDeny", "implicitDeny"]
     }
@@ -1585,6 +1815,7 @@ pub mod statement {
             self.source_policy_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the policy that was provided as an input.</p>
         pub fn set_source_policy_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1597,6 +1828,7 @@ pub mod statement {
             self.source_policy_type = Some(input);
             self
         }
+        /// <p>The type of the policy.</p>
         pub fn set_source_policy_type(
             mut self,
             input: std::option::Option<crate::model::PolicySourceType>,
@@ -1610,6 +1842,8 @@ pub mod statement {
             self.start_position = Some(input);
             self
         }
+        /// <p>The row and column of the beginning of the <code>Statement</code> in an IAM
+        /// policy.</p>
         pub fn set_start_position(
             mut self,
             input: std::option::Option<crate::model::Position>,
@@ -1622,6 +1856,7 @@ pub mod statement {
             self.end_position = Some(input);
             self
         }
+        /// <p>The row and column of the end of a <code>Statement</code> in an IAM policy.</p>
         pub fn set_end_position(
             mut self,
             input: std::option::Option<crate::model::Position>,
@@ -1683,6 +1918,7 @@ pub mod position {
             self.line = Some(input);
             self
         }
+        /// <p>The line containing the specified position in the document.</p>
         pub fn set_line(mut self, input: std::option::Option<i32>) -> Self {
             self.line = input;
             self
@@ -1692,6 +1928,7 @@ pub mod position {
             self.column = Some(input);
             self
         }
+        /// <p>The column in the line containing the specified position in the document.</p>
         pub fn set_column(mut self, input: std::option::Option<i32>) -> Self {
             self.column = input;
             self
@@ -1712,6 +1949,7 @@ impl Position {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1723,12 +1961,19 @@ impl Position {
     std::hash::Hash,
 )]
 pub enum PolicySourceType {
+    #[allow(missing_docs)] // documentation missing in model
     AwsManaged,
+    #[allow(missing_docs)] // documentation missing in model
     Group,
+    #[allow(missing_docs)] // documentation missing in model
     None,
+    #[allow(missing_docs)] // documentation missing in model
     Resource,
+    #[allow(missing_docs)] // documentation missing in model
     Role,
+    #[allow(missing_docs)] // documentation missing in model
     User,
+    #[allow(missing_docs)] // documentation missing in model
     UserManaged,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1755,6 +2000,7 @@ impl std::str::FromStr for PolicySourceType {
     }
 }
 impl PolicySourceType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PolicySourceType::AwsManaged => "aws-managed",
@@ -1767,6 +2013,7 @@ impl PolicySourceType {
             PolicySourceType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "aws-managed",
@@ -1815,6 +2062,8 @@ pub mod organizations_decision_detail {
             self.allowed_by_organizations = Some(input);
             self
         }
+        /// <p>Specifies whether the simulated operation is allowed by the Organizations service control
+        /// policies that impact the simulated user's account.</p>
         pub fn set_allowed_by_organizations(mut self, input: std::option::Option<bool>) -> Self {
             self.allowed_by_organizations = input;
             self
@@ -1879,6 +2128,8 @@ pub mod context_entry {
             self.context_key_name = Some(input.into());
             self
         }
+        /// <p>The full name of a condition context key, including the service prefix. For example,
+        /// <code>aws:SourceIp</code> or <code>s3:VersionId</code>.</p>
         pub fn set_context_key_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1886,12 +2137,22 @@ pub mod context_entry {
             self.context_key_name = input;
             self
         }
+        /// Appends an item to `context_key_values`.
+        ///
+        /// To override the contents of this collection use [`set_context_key_values`](Self::set_context_key_values).
+        ///
+        /// <p>The value (or values, if the condition context key supports multiple values) to provide
+        /// to the simulation when the key is referenced by a <code>Condition</code> element in an
+        /// input policy.</p>
         pub fn context_key_values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.context_key_values.unwrap_or_default();
             v.push(input.into());
             self.context_key_values = Some(v);
             self
         }
+        /// <p>The value (or values, if the condition context key supports multiple values) to provide
+        /// to the simulation when the key is referenced by a <code>Condition</code> element in an
+        /// input policy.</p>
         pub fn set_context_key_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1905,6 +2166,8 @@ pub mod context_entry {
             self.context_key_type = Some(input);
             self
         }
+        /// <p>The data type of the value (or values) specified in the <code>ContextKeyValues</code>
+        /// parameter.</p>
         pub fn set_context_key_type(
             mut self,
             input: std::option::Option<crate::model::ContextKeyTypeEnum>,
@@ -1929,6 +2192,7 @@ impl ContextEntry {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1940,17 +2204,29 @@ impl ContextEntry {
     std::hash::Hash,
 )]
 pub enum ContextKeyTypeEnum {
+    #[allow(missing_docs)] // documentation missing in model
     Binary,
+    #[allow(missing_docs)] // documentation missing in model
     BinaryList,
+    #[allow(missing_docs)] // documentation missing in model
     Boolean,
+    #[allow(missing_docs)] // documentation missing in model
     BooleanList,
+    #[allow(missing_docs)] // documentation missing in model
     Date,
+    #[allow(missing_docs)] // documentation missing in model
     DateList,
+    #[allow(missing_docs)] // documentation missing in model
     Ip,
+    #[allow(missing_docs)] // documentation missing in model
     IpList,
+    #[allow(missing_docs)] // documentation missing in model
     Numeric,
+    #[allow(missing_docs)] // documentation missing in model
     NumericList,
+    #[allow(missing_docs)] // documentation missing in model
     String,
+    #[allow(missing_docs)] // documentation missing in model
     StringList,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1982,6 +2258,7 @@ impl std::str::FromStr for ContextKeyTypeEnum {
     }
 }
 impl ContextKeyTypeEnum {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ContextKeyTypeEnum::Binary => "binary",
@@ -1999,6 +2276,7 @@ impl ContextKeyTypeEnum {
             ContextKeyTypeEnum::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "binary",
@@ -2022,6 +2300,7 @@ impl AsRef<str> for ContextKeyTypeEnum {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2033,7 +2312,9 @@ impl AsRef<str> for ContextKeyTypeEnum {
     std::hash::Hash,
 )]
 pub enum GlobalEndpointTokenVersion {
+    #[allow(missing_docs)] // documentation missing in model
     V1Token,
+    #[allow(missing_docs)] // documentation missing in model
     V2Token,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2055,6 +2336,7 @@ impl std::str::FromStr for GlobalEndpointTokenVersion {
     }
 }
 impl GlobalEndpointTokenVersion {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             GlobalEndpointTokenVersion::V1Token => "v1Token",
@@ -2062,6 +2344,7 @@ impl GlobalEndpointTokenVersion {
             GlobalEndpointTokenVersion::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["v1Token", "v2Token"]
     }
@@ -2078,7 +2361,7 @@ impl AsRef<str> for GlobalEndpointTokenVersion {
 pub struct ServiceSpecificCredential {
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
     /// format</a>, when the service-specific credential were created.</p>
-    pub create_date: std::option::Option<smithy_types::Instant>,
+    pub create_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The name of the service associated with the service-specific credential.</p>
     pub service_name: std::option::Option<std::string::String>,
     /// <p>The generated user name for the service-specific credential. This value is generated by
@@ -2118,7 +2401,7 @@ pub mod service_specific_credential {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) create_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) create_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) service_name: std::option::Option<std::string::String>,
         pub(crate) service_user_name: std::option::Option<std::string::String>,
         pub(crate) service_password: std::option::Option<std::string::String>,
@@ -2129,13 +2412,15 @@ pub mod service_specific_credential {
     impl Builder {
         /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
         /// format</a>, when the service-specific credential were created.</p>
-        pub fn create_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn create_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.create_date = Some(input);
             self
         }
+        /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
+        /// format</a>, when the service-specific credential were created.</p>
         pub fn set_create_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.create_date = input;
             self
@@ -2145,6 +2430,7 @@ pub mod service_specific_credential {
             self.service_name = Some(input.into());
             self
         }
+        /// <p>The name of the service associated with the service-specific credential.</p>
         pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service_name = input;
             self
@@ -2157,6 +2443,10 @@ pub mod service_specific_credential {
             self.service_user_name = Some(input.into());
             self
         }
+        /// <p>The generated user name for the service-specific credential. This value is generated by
+        /// combining the IAM user's name combined with the ID number of the Amazon Web Services account, as in
+        /// <code>jane-at-123456789012</code>, for example. This value cannot be configured by the
+        /// user.</p>
         pub fn set_service_user_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2169,6 +2459,7 @@ pub mod service_specific_credential {
             self.service_password = Some(input.into());
             self
         }
+        /// <p>The generated password for the service-specific credential.</p>
         pub fn set_service_password(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2184,6 +2475,7 @@ pub mod service_specific_credential {
             self.service_specific_credential_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the service-specific credential.</p>
         pub fn set_service_specific_credential_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2196,6 +2488,7 @@ pub mod service_specific_credential {
             self.user_name = Some(input.into());
             self
         }
+        /// <p>The name of the IAM user associated with the service-specific credential.</p>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_name = input;
             self
@@ -2206,6 +2499,8 @@ pub mod service_specific_credential {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the service-specific credential. <code>Active</code> means that the key is
+        /// valid for API calls, while <code>Inactive</code> means it is not.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::StatusType>) -> Self {
             self.status = input;
             self
@@ -2238,18 +2533,18 @@ pub struct VirtualMfaDevice {
     /// <p>The serial number associated with <code>VirtualMFADevice</code>.</p>
     pub serial_number: std::option::Option<std::string::String>,
     /// <p> The base32 seed defined as specified in <a href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The <code>Base32StringSeed</code> is base64-encoded. </p>
-    pub base32_string_seed: std::option::Option<smithy_types::Blob>,
+    pub base32_string_seed: std::option::Option<aws_smithy_types::Blob>,
     /// <p> A QR code PNG image that encodes
     /// <code>otpauth://totp/$virtualMFADeviceName@$AccountName?secret=$Base32String</code>
     /// where <code>$virtualMFADeviceName</code> is one of the create call arguments.
     /// <code>AccountName</code> is the user name if set (otherwise, the account ID otherwise),
     /// and <code>Base32String</code> is the seed in base32 format. The <code>Base32String</code>
     /// value is base64-encoded. </p>
-    pub qr_code_png: std::option::Option<smithy_types::Blob>,
+    pub qr_code_png: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The IAM user associated with this virtual MFA device.</p>
     pub user: std::option::Option<crate::model::User>,
     /// <p>The date and time on which the virtual MFA device was enabled.</p>
-    pub enable_date: std::option::Option<smithy_types::Instant>,
+    pub enable_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A list of tags that are attached to the virtual MFA device. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
     /// <i>IAM User Guide</i>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2273,10 +2568,10 @@ pub mod virtual_mfa_device {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) serial_number: std::option::Option<std::string::String>,
-        pub(crate) base32_string_seed: std::option::Option<smithy_types::Blob>,
-        pub(crate) qr_code_png: std::option::Option<smithy_types::Blob>,
+        pub(crate) base32_string_seed: std::option::Option<aws_smithy_types::Blob>,
+        pub(crate) qr_code_png: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) user: std::option::Option<crate::model::User>,
-        pub(crate) enable_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) enable_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
@@ -2285,6 +2580,7 @@ pub mod virtual_mfa_device {
             self.serial_number = Some(input.into());
             self
         }
+        /// <p>The serial number associated with <code>VirtualMFADevice</code>.</p>
         pub fn set_serial_number(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2293,13 +2589,14 @@ pub mod virtual_mfa_device {
             self
         }
         /// <p> The base32 seed defined as specified in <a href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The <code>Base32StringSeed</code> is base64-encoded. </p>
-        pub fn base32_string_seed(mut self, input: smithy_types::Blob) -> Self {
+        pub fn base32_string_seed(mut self, input: aws_smithy_types::Blob) -> Self {
             self.base32_string_seed = Some(input);
             self
         }
+        /// <p> The base32 seed defined as specified in <a href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The <code>Base32StringSeed</code> is base64-encoded. </p>
         pub fn set_base32_string_seed(
             mut self,
-            input: std::option::Option<smithy_types::Blob>,
+            input: std::option::Option<aws_smithy_types::Blob>,
         ) -> Self {
             self.base32_string_seed = input;
             self
@@ -2310,11 +2607,20 @@ pub mod virtual_mfa_device {
         /// <code>AccountName</code> is the user name if set (otherwise, the account ID otherwise),
         /// and <code>Base32String</code> is the seed in base32 format. The <code>Base32String</code>
         /// value is base64-encoded. </p>
-        pub fn qr_code_png(mut self, input: smithy_types::Blob) -> Self {
+        pub fn qr_code_png(mut self, input: aws_smithy_types::Blob) -> Self {
             self.qr_code_png = Some(input);
             self
         }
-        pub fn set_qr_code_png(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+        /// <p> A QR code PNG image that encodes
+        /// <code>otpauth://totp/$virtualMFADeviceName@$AccountName?secret=$Base32String</code>
+        /// where <code>$virtualMFADeviceName</code> is one of the create call arguments.
+        /// <code>AccountName</code> is the user name if set (otherwise, the account ID otherwise),
+        /// and <code>Base32String</code> is the seed in base32 format. The <code>Base32String</code>
+        /// value is base64-encoded. </p>
+        pub fn set_qr_code_png(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Blob>,
+        ) -> Self {
             self.qr_code_png = input;
             self
         }
@@ -2323,28 +2629,38 @@ pub mod virtual_mfa_device {
             self.user = Some(input);
             self
         }
+        /// <p>The IAM user associated with this virtual MFA device.</p>
         pub fn set_user(mut self, input: std::option::Option<crate::model::User>) -> Self {
             self.user = input;
             self
         }
         /// <p>The date and time on which the virtual MFA device was enabled.</p>
-        pub fn enable_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn enable_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.enable_date = Some(input);
             self
         }
+        /// <p>The date and time on which the virtual MFA device was enabled.</p>
         pub fn set_enable_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.enable_date = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of tags that are attached to the virtual MFA device. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
+        /// <i>IAM User Guide</i>.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>A list of tags that are attached to the virtual MFA device. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
+        /// <i>IAM User Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2410,7 +2726,7 @@ pub struct User {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
     /// format</a>, when the user was created.</p>
-    pub create_date: std::option::Option<smithy_types::Instant>,
+    pub create_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
     /// format</a>, when the user's password was last used to sign in to an Amazon Web Services website. For
     /// a list of Amazon Web Services websites that capture a user's last sign-in time, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential
@@ -2431,7 +2747,7 @@ pub struct User {
     /// Also, if the user does not currently have a password but had one in the past, then this
     /// field contains the date and time the most recent password was used.</p>
     /// <p>This value is returned only in the <a>GetUser</a> and <a>ListUsers</a> operations. </p>
-    pub password_last_used: std::option::Option<smithy_types::Instant>,
+    pub password_last_used: std::option::Option<aws_smithy_types::Instant>,
     /// <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM
     /// identities </a> in the <i>IAM User Guide</i>.</p>
     pub permissions_boundary: std::option::Option<crate::model::AttachedPermissionsBoundary>,
@@ -2463,8 +2779,8 @@ pub mod user {
         pub(crate) user_name: std::option::Option<std::string::String>,
         pub(crate) user_id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) create_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) password_last_used: std::option::Option<smithy_types::Instant>,
+        pub(crate) create_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) password_last_used: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) permissions_boundary:
             std::option::Option<crate::model::AttachedPermissionsBoundary>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2477,6 +2793,9 @@ pub mod user {
             self.path = Some(input.into());
             self
         }
+        /// <p>The path to the user. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
+        /// <i>IAM User Guide</i>.</p>
+        /// <p>The ARN of the policy used to set the permissions boundary for the user.</p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.path = input;
             self
@@ -2486,6 +2805,7 @@ pub mod user {
             self.user_name = Some(input.into());
             self
         }
+        /// <p>The friendly name identifying the user.</p>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_name = input;
             self
@@ -2497,6 +2817,9 @@ pub mod user {
             self.user_id = Some(input.into());
             self
         }
+        /// <p>The stable and unique string identifying the user. For more information about IDs, see
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+        /// identifiers</a> in the <i>IAM User Guide</i>.</p>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_id = input;
             self
@@ -2508,19 +2831,24 @@ pub mod user {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) that identifies the user. For more information about ARNs
+        /// and how to use ARNs in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+        /// <i>IAM User Guide</i>. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
         /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
         /// format</a>, when the user was created.</p>
-        pub fn create_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn create_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.create_date = Some(input);
             self
         }
+        /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
+        /// format</a>, when the user was created.</p>
         pub fn set_create_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.create_date = input;
             self
@@ -2545,13 +2873,33 @@ pub mod user {
         /// Also, if the user does not currently have a password but had one in the past, then this
         /// field contains the date and time the most recent password was used.</p>
         /// <p>This value is returned only in the <a>GetUser</a> and <a>ListUsers</a> operations. </p>
-        pub fn password_last_used(mut self, input: smithy_types::Instant) -> Self {
+        pub fn password_last_used(mut self, input: aws_smithy_types::Instant) -> Self {
             self.password_last_used = Some(input);
             self
         }
+        /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
+        /// format</a>, when the user's password was last used to sign in to an Amazon Web Services website. For
+        /// a list of Amazon Web Services websites that capture a user's last sign-in time, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential
+        /// reports</a> topic in the <i>IAM User Guide</i>. If a password is
+        /// used more than once in a five-minute span, only the first use is returned in this field. If
+        /// the field is null (no value), then it indicates that they never signed in with a password.
+        /// This can be because:</p>
+        /// <ul>
+        /// <li>
+        /// <p>The user never had a password.</p>
+        /// </li>
+        /// <li>
+        /// <p>A password exists but has not been used since IAM started tracking this
+        /// information on October 20, 2014.</p>
+        /// </li>
+        /// </ul>
+        /// <p>A null value does not mean that the user <i>never</i> had a password.
+        /// Also, if the user does not currently have a password but had one in the past, then this
+        /// field contains the date and time the most recent password was used.</p>
+        /// <p>This value is returned only in the <a>GetUser</a> and <a>ListUsers</a> operations. </p>
         pub fn set_password_last_used(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.password_last_used = input;
             self
@@ -2565,6 +2913,8 @@ pub mod user {
             self.permissions_boundary = Some(input);
             self
         }
+        /// <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM
+        /// identities </a> in the <i>IAM User Guide</i>.</p>
         pub fn set_permissions_boundary(
             mut self,
             input: std::option::Option<crate::model::AttachedPermissionsBoundary>,
@@ -2572,12 +2922,20 @@ pub mod user {
             self.permissions_boundary = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of tags that are associated with the user. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
+        /// <i>IAM User Guide</i>.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>A list of tags that are associated with the user. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
+        /// <i>IAM User Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2607,6 +2965,7 @@ impl User {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2618,8 +2977,11 @@ impl User {
     std::hash::Hash,
 )]
 pub enum AssignmentStatusType {
+    #[allow(missing_docs)] // documentation missing in model
     Any,
+    #[allow(missing_docs)] // documentation missing in model
     Assigned,
+    #[allow(missing_docs)] // documentation missing in model
     Unassigned,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2642,6 +3004,7 @@ impl std::str::FromStr for AssignmentStatusType {
     }
 }
 impl AssignmentStatusType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AssignmentStatusType::Any => "Any",
@@ -2650,6 +3013,7 @@ impl AssignmentStatusType {
             AssignmentStatusType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Any", "Assigned", "Unassigned"]
     }
@@ -2677,7 +3041,7 @@ pub struct SshPublicKeyMetadata {
     pub status: std::option::Option<crate::model::StatusType>,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
     /// format</a>, when the SSH public key was uploaded.</p>
-    pub upload_date: std::option::Option<smithy_types::Instant>,
+    pub upload_date: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for SshPublicKeyMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2698,7 +3062,7 @@ pub mod ssh_public_key_metadata {
         pub(crate) user_name: std::option::Option<std::string::String>,
         pub(crate) ssh_public_key_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::StatusType>,
-        pub(crate) upload_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) upload_date: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The name of the IAM user associated with the SSH public key.</p>
@@ -2706,6 +3070,7 @@ pub mod ssh_public_key_metadata {
             self.user_name = Some(input.into());
             self
         }
+        /// <p>The name of the IAM user associated with the SSH public key.</p>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_name = input;
             self
@@ -2715,6 +3080,7 @@ pub mod ssh_public_key_metadata {
             self.ssh_public_key_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the SSH public key.</p>
         pub fn set_ssh_public_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2729,19 +3095,24 @@ pub mod ssh_public_key_metadata {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the SSH public key. <code>Active</code> means that the key can be used for
+        /// authentication with an CodeCommit repository. <code>Inactive</code> means that the key
+        /// cannot be used.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::StatusType>) -> Self {
             self.status = input;
             self
         }
         /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
         /// format</a>, when the SSH public key was uploaded.</p>
-        pub fn upload_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn upload_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.upload_date = Some(input);
             self
         }
+        /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
+        /// format</a>, when the SSH public key was uploaded.</p>
         pub fn set_upload_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.upload_date = input;
             self
@@ -2777,7 +3148,7 @@ pub struct ServiceSpecificCredentialMetadata {
     pub service_user_name: std::option::Option<std::string::String>,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
     /// format</a>, when the service-specific credential were created.</p>
-    pub create_date: std::option::Option<smithy_types::Instant>,
+    pub create_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The unique identifier for the service-specific credential.</p>
     pub service_specific_credential_id: std::option::Option<std::string::String>,
     /// <p>The name of the service associated with the service-specific credential.</p>
@@ -2807,7 +3178,7 @@ pub mod service_specific_credential_metadata {
         pub(crate) user_name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::StatusType>,
         pub(crate) service_user_name: std::option::Option<std::string::String>,
-        pub(crate) create_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) create_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) service_specific_credential_id: std::option::Option<std::string::String>,
         pub(crate) service_name: std::option::Option<std::string::String>,
     }
@@ -2817,6 +3188,7 @@ pub mod service_specific_credential_metadata {
             self.user_name = Some(input.into());
             self
         }
+        /// <p>The name of the IAM user associated with the service-specific credential.</p>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_name = input;
             self
@@ -2827,6 +3199,8 @@ pub mod service_specific_credential_metadata {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the service-specific credential. <code>Active</code> means that the key is
+        /// valid for API calls, while <code>Inactive</code> means it is not.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::StatusType>) -> Self {
             self.status = input;
             self
@@ -2836,6 +3210,7 @@ pub mod service_specific_credential_metadata {
             self.service_user_name = Some(input.into());
             self
         }
+        /// <p>The generated user name for the service-specific credential.</p>
         pub fn set_service_user_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2845,13 +3220,15 @@ pub mod service_specific_credential_metadata {
         }
         /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
         /// format</a>, when the service-specific credential were created.</p>
-        pub fn create_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn create_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.create_date = Some(input);
             self
         }
+        /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
+        /// format</a>, when the service-specific credential were created.</p>
         pub fn set_create_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.create_date = input;
             self
@@ -2864,6 +3241,7 @@ pub mod service_specific_credential_metadata {
             self.service_specific_credential_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the service-specific credential.</p>
         pub fn set_service_specific_credential_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2876,6 +3254,7 @@ pub mod service_specific_credential_metadata {
             self.service_name = Some(input.into());
             self
         }
+        /// <p>The name of the service associated with the service-specific credential.</p>
         pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service_name = input;
             self
@@ -2907,9 +3286,9 @@ pub struct SamlProviderListEntry {
     /// <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The expiration date and time for the SAML provider.</p>
-    pub valid_until: std::option::Option<smithy_types::Instant>,
+    pub valid_until: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time when the SAML provider was created.</p>
-    pub create_date: std::option::Option<smithy_types::Instant>,
+    pub create_date: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for SamlProviderListEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2927,8 +3306,8 @@ pub mod saml_provider_list_entry {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) valid_until: std::option::Option<smithy_types::Instant>,
-        pub(crate) create_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) valid_until: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) create_date: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
@@ -2936,30 +3315,33 @@ pub mod saml_provider_list_entry {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the SAML provider.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
         /// <p>The expiration date and time for the SAML provider.</p>
-        pub fn valid_until(mut self, input: smithy_types::Instant) -> Self {
+        pub fn valid_until(mut self, input: aws_smithy_types::Instant) -> Self {
             self.valid_until = Some(input);
             self
         }
+        /// <p>The expiration date and time for the SAML provider.</p>
         pub fn set_valid_until(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.valid_until = input;
             self
         }
         /// <p>The date and time when the SAML provider was created.</p>
-        pub fn create_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn create_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.create_date = Some(input);
             self
         }
+        /// <p>The date and time when the SAML provider was created.</p>
         pub fn set_create_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.create_date = input;
             self
@@ -3004,7 +3386,7 @@ pub struct PolicyVersion {
     pub is_default_version: bool,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
     /// format</a>, when the policy version was created.</p>
-    pub create_date: std::option::Option<smithy_types::Instant>,
+    pub create_date: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for PolicyVersion {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3025,7 +3407,7 @@ pub mod policy_version {
         pub(crate) document: std::option::Option<std::string::String>,
         pub(crate) version_id: std::option::Option<std::string::String>,
         pub(crate) is_default_version: std::option::Option<bool>,
-        pub(crate) create_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) create_date: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The policy document.</p>
@@ -3039,6 +3421,13 @@ pub mod policy_version {
             self.document = Some(input.into());
             self
         }
+        /// <p>The policy document.</p>
+        /// <p>The policy document is returned in the response to the <a>GetPolicyVersion</a> and <a>GetAccountAuthorizationDetails</a> operations. It is not returned in
+        /// the response to the <a>CreatePolicyVersion</a> or <a>ListPolicyVersions</a> operations. </p>
+        /// <p>The policy document returned in this structure is URL-encoded compliant with <a href="https://tools.ietf.org/html/rfc3986">RFC 3986</a>. You can use a URL decoding
+        /// method to convert the policy back to plain JSON text. For example, if you use Java, you can
+        /// use the <code>decode</code> method of the <code>java.net.URLDecoder</code> utility class in
+        /// the Java SDK. Other languages and SDKs provide similar functionality.</p>
         pub fn set_document(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.document = input;
             self
@@ -3050,6 +3439,9 @@ pub mod policy_version {
             self.version_id = Some(input.into());
             self
         }
+        /// <p>The identifier for the policy version.</p>
+        /// <p>Policy version identifiers always begin with <code>v</code> (always lowercase). When a
+        /// policy is created, the first policy version is <code>v1</code>. </p>
         pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version_id = input;
             self
@@ -3059,19 +3451,22 @@ pub mod policy_version {
             self.is_default_version = Some(input);
             self
         }
+        /// <p>Specifies whether the policy version is set as the policy's default version.</p>
         pub fn set_is_default_version(mut self, input: std::option::Option<bool>) -> Self {
             self.is_default_version = input;
             self
         }
         /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
         /// format</a>, when the policy version was created.</p>
-        pub fn create_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn create_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.create_date = Some(input);
             self
         }
+        /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
+        /// format</a>, when the policy version was created.</p>
         pub fn set_create_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.create_date = input;
             self
@@ -3142,6 +3537,13 @@ pub mod list_policies_granting_service_access_entry {
             self.service_namespace = Some(input.into());
             self
         }
+        /// <p>The namespace of the service that was accessed.</p>
+        /// <p>To learn the service namespace of a service, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions, resources, and condition keys for Amazon Web Services services</a> in the
+        /// <i>Service Authorization Reference</i>. Choose the name of the service to
+        /// view details for that service. In the first paragraph, find the service prefix. For
+        /// example, <code>(service prefix: a4b)</code>. For more information about service namespaces,
+        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon Web Services
+        /// service namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_service_namespace(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3149,6 +3551,12 @@ pub mod list_policies_granting_service_access_entry {
             self.service_namespace = input;
             self
         }
+        /// Appends an item to `policies`.
+        ///
+        /// To override the contents of this collection use [`set_policies`](Self::set_policies).
+        ///
+        /// <p>The <code>PoliciesGrantingServiceAccess</code> object that contains details about the
+        /// policy.</p>
         pub fn policies(
             mut self,
             input: impl Into<crate::model::PolicyGrantingServiceAccess>,
@@ -3158,6 +3566,8 @@ pub mod list_policies_granting_service_access_entry {
             self.policies = Some(v);
             self
         }
+        /// <p>The <code>PoliciesGrantingServiceAccess</code> object that contains details about the
+        /// policy.</p>
         pub fn set_policies(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PolicyGrantingServiceAccess>>,
@@ -3238,6 +3648,7 @@ pub mod policy_granting_service_access {
             self.policy_name = Some(input.into());
             self
         }
+        /// <p>The policy name.</p>
         pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_name = input;
             self
@@ -3249,6 +3660,9 @@ pub mod policy_granting_service_access {
             self.policy_type = Some(input);
             self
         }
+        /// <p>The policy type. For more information about these policy types, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed
+        /// policies and inline policies</a> in the
+        /// <i>IAM User Guide</i>.</p>
         pub fn set_policy_type(
             mut self,
             input: std::option::Option<crate::model::PolicyType>,
@@ -3263,6 +3677,9 @@ pub mod policy_granting_service_access {
             self.policy_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
+        /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in
+        /// the <i>Amazon Web Services General Reference</i>. </p>
         pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_arn = input;
             self
@@ -3276,6 +3693,11 @@ pub mod policy_granting_service_access {
             self.entity_type = Some(input);
             self
         }
+        /// <p>The type of entity (user or role) that used the policy to access the service to which
+        /// the inline policy is attached.</p>
+        /// <p>This field is null for managed policies. For more information about these policy types,
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed policies and inline policies</a> in the
+        /// <i>IAM User Guide</i>.</p>
         pub fn set_entity_type(
             mut self,
             input: std::option::Option<crate::model::PolicyOwnerEntityType>,
@@ -3291,6 +3713,10 @@ pub mod policy_granting_service_access {
             self.entity_name = Some(input.into());
             self
         }
+        /// <p>The name of the entity (user or role) to which the inline policy is attached.</p>
+        /// <p>This field is null for managed policies. For more information about these policy types,
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html">Managed policies and inline policies</a> in the
+        /// <i>IAM User Guide</i>.</p>
         pub fn set_entity_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.entity_name = input;
             self
@@ -3314,6 +3740,7 @@ impl PolicyGrantingServiceAccess {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3325,8 +3752,11 @@ impl PolicyGrantingServiceAccess {
     std::hash::Hash,
 )]
 pub enum PolicyOwnerEntityType {
+    #[allow(missing_docs)] // documentation missing in model
     Group,
+    #[allow(missing_docs)] // documentation missing in model
     Role,
+    #[allow(missing_docs)] // documentation missing in model
     User,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3349,6 +3779,7 @@ impl std::str::FromStr for PolicyOwnerEntityType {
     }
 }
 impl PolicyOwnerEntityType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PolicyOwnerEntityType::Group => "GROUP",
@@ -3357,6 +3788,7 @@ impl PolicyOwnerEntityType {
             PolicyOwnerEntityType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["GROUP", "ROLE", "USER"]
     }
@@ -3367,6 +3799,7 @@ impl AsRef<str> for PolicyOwnerEntityType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3378,7 +3811,9 @@ impl AsRef<str> for PolicyOwnerEntityType {
     std::hash::Hash,
 )]
 pub enum PolicyType {
+    #[allow(missing_docs)] // documentation missing in model
     Inline,
+    #[allow(missing_docs)] // documentation missing in model
     Managed,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3400,6 +3835,7 @@ impl std::str::FromStr for PolicyType {
     }
 }
 impl PolicyType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PolicyType::Inline => "INLINE",
@@ -3407,6 +3843,7 @@ impl PolicyType {
             PolicyType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["INLINE", "MANAGED"]
     }
@@ -3456,13 +3893,13 @@ pub struct Policy {
     pub description: std::option::Option<std::string::String>,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
     /// format</a>, when the policy was created.</p>
-    pub create_date: std::option::Option<smithy_types::Instant>,
+    pub create_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
     /// format</a>, when the policy was last updated.</p>
     /// <p>When a policy has only one version, this field contains the date and time when the
     /// policy was created. When a policy has more than one version, this field contains the date
     /// and time when the most recent policy version was created.</p>
-    pub update_date: std::option::Option<smithy_types::Instant>,
+    pub update_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A list of tags that are attached to the instance profile. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
     /// <i>IAM User Guide</i>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -3503,8 +3940,8 @@ pub mod policy {
         pub(crate) permissions_boundary_usage_count: std::option::Option<i32>,
         pub(crate) is_attachable: std::option::Option<bool>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) create_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) update_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) create_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) update_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
@@ -3513,6 +3950,7 @@ pub mod policy {
             self.policy_name = Some(input.into());
             self
         }
+        /// <p>The friendly name (not ARN) identifying the policy.</p>
         pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_name = input;
             self
@@ -3524,6 +3962,9 @@ pub mod policy {
             self.policy_id = Some(input.into());
             self
         }
+        /// <p>The stable and unique string identifying the policy.</p>
+        /// <p>For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
+        /// <i>IAM User Guide</i>.</p>
         pub fn set_policy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_id = input;
             self
@@ -3535,6 +3976,9 @@ pub mod policy {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
+        /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in
+        /// the <i>Amazon Web Services General Reference</i>. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -3546,6 +3990,9 @@ pub mod policy {
             self.path = Some(input.into());
             self
         }
+        /// <p>The path to the policy.</p>
+        /// <p>For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
+        /// <i>IAM User Guide</i>.</p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.path = input;
             self
@@ -3555,6 +4002,7 @@ pub mod policy {
             self.default_version_id = Some(input.into());
             self
         }
+        /// <p>The identifier for the version of the policy that is set as the default version.</p>
         pub fn set_default_version_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3567,6 +4015,7 @@ pub mod policy {
             self.attachment_count = Some(input);
             self
         }
+        /// <p>The number of entities (users, groups, and roles) that the policy is attached to.</p>
         pub fn set_attachment_count(mut self, input: std::option::Option<i32>) -> Self {
             self.attachment_count = input;
             self
@@ -3579,6 +4028,10 @@ pub mod policy {
             self.permissions_boundary_usage_count = Some(input);
             self
         }
+        /// <p>The number of entities (users and roles) for which the policy is used to set the
+        /// permissions boundary. </p>
+        /// <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM
+        /// identities </a> in the <i>IAM User Guide</i>.</p>
         pub fn set_permissions_boundary_usage_count(
             mut self,
             input: std::option::Option<i32>,
@@ -3591,6 +4044,7 @@ pub mod policy {
             self.is_attachable = Some(input);
             self
         }
+        /// <p>Specifies whether the policy can be attached to an IAM user, group, or role.</p>
         pub fn set_is_attachable(mut self, input: std::option::Option<bool>) -> Self {
             self.is_attachable = input;
             self
@@ -3602,19 +4056,24 @@ pub mod policy {
             self.description = Some(input.into());
             self
         }
+        /// <p>A friendly description of the policy.</p>
+        /// <p>This element is included in the response to the <a>GetPolicy</a> operation.
+        /// It is not included in the response to the <a>ListPolicies</a> operation. </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
         /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
         /// format</a>, when the policy was created.</p>
-        pub fn create_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn create_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.create_date = Some(input);
             self
         }
+        /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
+        /// format</a>, when the policy was created.</p>
         pub fn set_create_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.create_date = input;
             self
@@ -3624,23 +4083,36 @@ pub mod policy {
         /// <p>When a policy has only one version, this field contains the date and time when the
         /// policy was created. When a policy has more than one version, this field contains the date
         /// and time when the most recent policy version was created.</p>
-        pub fn update_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn update_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.update_date = Some(input);
             self
         }
+        /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
+        /// format</a>, when the policy was last updated.</p>
+        /// <p>When a policy has only one version, this field contains the date and time when the
+        /// policy was created. When a policy has more than one version, this field contains the date
+        /// and time when the most recent policy version was created.</p>
         pub fn set_update_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.update_date = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of tags that are attached to the instance profile. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
+        /// <i>IAM User Guide</i>.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>A list of tags that are attached to the instance profile. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
+        /// <i>IAM User Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -3689,7 +4161,9 @@ impl Policy {
     std::hash::Hash,
 )]
 pub enum PolicyUsageType {
+    #[allow(missing_docs)] // documentation missing in model
     PermissionsBoundary,
+    #[allow(missing_docs)] // documentation missing in model
     PermissionsPolicy,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3711,6 +4185,7 @@ impl std::str::FromStr for PolicyUsageType {
     }
 }
 impl PolicyUsageType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PolicyUsageType::PermissionsBoundary => "PermissionsBoundary",
@@ -3718,6 +4193,7 @@ impl PolicyUsageType {
             PolicyUsageType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["PermissionsBoundary", "PermissionsPolicy"]
     }
@@ -3728,6 +4204,7 @@ impl AsRef<str> for PolicyUsageType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3739,8 +4216,11 @@ impl AsRef<str> for PolicyUsageType {
     std::hash::Hash,
 )]
 pub enum PolicyScopeType {
+    #[allow(missing_docs)] // documentation missing in model
     Aws,
+    #[allow(missing_docs)] // documentation missing in model
     All,
+    #[allow(missing_docs)] // documentation missing in model
     Local,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3763,6 +4243,7 @@ impl std::str::FromStr for PolicyScopeType {
     }
 }
 impl PolicyScopeType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PolicyScopeType::Aws => "AWS",
@@ -3771,6 +4252,7 @@ impl PolicyScopeType {
             PolicyScopeType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AWS", "All", "Local"]
     }
@@ -3813,6 +4295,9 @@ pub mod open_id_connect_provider_list_entry {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
+        /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in
+        /// the <i>Amazon Web Services General Reference</i>. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -3842,7 +4327,7 @@ pub struct MfaDevice {
     /// serial number is the device ARN.</p>
     pub serial_number: std::option::Option<std::string::String>,
     /// <p>The date when the MFA device was enabled for the user.</p>
-    pub enable_date: std::option::Option<smithy_types::Instant>,
+    pub enable_date: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for MfaDevice {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3861,7 +4346,7 @@ pub mod mfa_device {
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
         pub(crate) serial_number: std::option::Option<std::string::String>,
-        pub(crate) enable_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) enable_date: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The user with whom the MFA device is associated.</p>
@@ -3869,6 +4354,7 @@ pub mod mfa_device {
             self.user_name = Some(input.into());
             self
         }
+        /// <p>The user with whom the MFA device is associated.</p>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_name = input;
             self
@@ -3879,6 +4365,8 @@ pub mod mfa_device {
             self.serial_number = Some(input.into());
             self
         }
+        /// <p>The serial number that uniquely identifies the MFA device. For virtual MFA devices, the
+        /// serial number is the device ARN.</p>
         pub fn set_serial_number(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3887,13 +4375,14 @@ pub mod mfa_device {
             self
         }
         /// <p>The date when the MFA device was enabled for the user.</p>
-        pub fn enable_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn enable_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.enable_date = Some(input);
             self
         }
+        /// <p>The date when the MFA device was enabled for the user.</p>
         pub fn set_enable_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.enable_date = input;
             self
@@ -3955,7 +4444,7 @@ pub struct InstanceProfile {
     /// <i>IAM User Guide</i>. </p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date when the instance profile was created.</p>
-    pub create_date: std::option::Option<smithy_types::Instant>,
+    pub create_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The role associated with the instance profile.</p>
     pub roles: std::option::Option<std::vec::Vec<crate::model::Role>>,
     /// <p>A list of tags that are attached to the instance profile. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
@@ -3985,7 +4474,7 @@ pub mod instance_profile {
         pub(crate) instance_profile_name: std::option::Option<std::string::String>,
         pub(crate) instance_profile_id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) create_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) create_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) roles: std::option::Option<std::vec::Vec<crate::model::Role>>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
@@ -3996,6 +4485,8 @@ pub mod instance_profile {
             self.path = Some(input.into());
             self
         }
+        /// <p> The path to the instance profile. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+        /// identifiers</a> in the <i>IAM User Guide</i>. </p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.path = input;
             self
@@ -4005,6 +4496,7 @@ pub mod instance_profile {
             self.instance_profile_name = Some(input.into());
             self
         }
+        /// <p>The name identifying the instance profile.</p>
         pub fn set_instance_profile_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4018,6 +4510,8 @@ pub mod instance_profile {
             self.instance_profile_id = Some(input.into());
             self
         }
+        /// <p> The stable and unique string identifying the instance profile. For more information
+        /// about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM User Guide</i>. </p>
         pub fn set_instance_profile_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4032,28 +4526,38 @@ pub mod instance_profile {
             self.arn = Some(input.into());
             self
         }
+        /// <p> The Amazon Resource Name (ARN) specifying the instance profile. For more information
+        /// about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
+        /// <i>IAM User Guide</i>. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
         /// <p>The date when the instance profile was created.</p>
-        pub fn create_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn create_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.create_date = Some(input);
             self
         }
+        /// <p>The date when the instance profile was created.</p>
         pub fn set_create_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.create_date = input;
             self
         }
+        /// Appends an item to `roles`.
+        ///
+        /// To override the contents of this collection use [`set_roles`](Self::set_roles).
+        ///
+        /// <p>The role associated with the instance profile.</p>
         pub fn roles(mut self, input: impl Into<crate::model::Role>) -> Self {
             let mut v = self.roles.unwrap_or_default();
             v.push(input.into());
             self.roles = Some(v);
             self
         }
+        /// <p>The role associated with the instance profile.</p>
         pub fn set_roles(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Role>>,
@@ -4061,12 +4565,20 @@ pub mod instance_profile {
             self.roles = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of tags that are attached to the instance profile. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
+        /// <i>IAM User Guide</i>.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>A list of tags that are attached to the instance profile. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
+        /// <i>IAM User Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -4132,7 +4644,7 @@ pub struct Group {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
     /// format</a>, when the group was created.</p>
-    pub create_date: std::option::Option<smithy_types::Instant>,
+    pub create_date: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for Group {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4155,7 +4667,7 @@ pub mod group {
         pub(crate) group_name: std::option::Option<std::string::String>,
         pub(crate) group_id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) create_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) create_date: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The path to the group. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
@@ -4164,6 +4676,8 @@ pub mod group {
             self.path = Some(input.into());
             self
         }
+        /// <p>The path to the group. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
+        /// <i>IAM User Guide</i>. </p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.path = input;
             self
@@ -4173,6 +4687,7 @@ pub mod group {
             self.group_name = Some(input.into());
             self
         }
+        /// <p>The friendly name that identifies the group.</p>
         pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.group_name = input;
             self
@@ -4184,6 +4699,9 @@ pub mod group {
             self.group_id = Some(input.into());
             self
         }
+        /// <p> The stable and unique string identifying the group. For more information about IDs, see
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+        /// identifiers</a> in the <i>IAM User Guide</i>. </p>
         pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.group_id = input;
             self
@@ -4195,19 +4713,24 @@ pub mod group {
             self.arn = Some(input.into());
             self
         }
+        /// <p> The Amazon Resource Name (ARN) specifying the group. For more information about ARNs
+        /// and how to use them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
+        /// <i>IAM User Guide</i>. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
         /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
         /// format</a>, when the group was created.</p>
-        pub fn create_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn create_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.create_date = Some(input);
             self
         }
+        /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
+        /// format</a>, when the group was created.</p>
         pub fn set_create_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.create_date = input;
             self
@@ -4268,6 +4791,7 @@ pub mod policy_role {
             self.role_name = Some(input.into());
             self
         }
+        /// <p>The name (friendly name, not ARN) identifying the role.</p>
         pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_name = input;
             self
@@ -4279,6 +4803,9 @@ pub mod policy_role {
             self.role_id = Some(input.into());
             self
         }
+        /// <p>The stable and unique string identifying the role. For more information about IDs, see
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
+        /// identifiers</a> in the <i>IAM User Guide</i>.</p>
         pub fn set_role_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_id = input;
             self
@@ -4336,6 +4863,7 @@ pub mod policy_user {
             self.user_name = Some(input.into());
             self
         }
+        /// <p>The name (friendly name, not ARN) identifying the user.</p>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_name = input;
             self
@@ -4347,6 +4875,9 @@ pub mod policy_user {
             self.user_id = Some(input.into());
             self
         }
+        /// <p>The stable and unique string identifying the user. For more information about IDs, see
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
+        /// identifiers</a> in the <i>IAM User Guide</i>.</p>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_id = input;
             self
@@ -4404,6 +4935,7 @@ pub mod policy_group {
             self.group_name = Some(input.into());
             self
         }
+        /// <p>The name (friendly name, not ARN) identifying the group.</p>
         pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.group_name = input;
             self
@@ -4415,6 +4947,9 @@ pub mod policy_group {
             self.group_id = Some(input.into());
             self
         }
+        /// <p>The stable and unique string identifying the group. For more information about IDs, see
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
+        /// identifiers</a> in the <i>IAM User Guide</i>.</p>
         pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.group_id = input;
             self
@@ -4435,6 +4970,7 @@ impl PolicyGroup {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4446,10 +4982,15 @@ impl PolicyGroup {
     std::hash::Hash,
 )]
 pub enum EntityType {
+    #[allow(missing_docs)] // documentation missing in model
     AwsManagedPolicy,
+    #[allow(missing_docs)] // documentation missing in model
     Group,
+    #[allow(missing_docs)] // documentation missing in model
     LocalManagedPolicy,
+    #[allow(missing_docs)] // documentation missing in model
     Role,
+    #[allow(missing_docs)] // documentation missing in model
     User,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4474,6 +5015,7 @@ impl std::str::FromStr for EntityType {
     }
 }
 impl EntityType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EntityType::AwsManagedPolicy => "AWSManagedPolicy",
@@ -4484,6 +5026,7 @@ impl EntityType {
             EntityType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "AWSManagedPolicy",
@@ -4538,6 +5081,7 @@ pub mod attached_policy {
             self.policy_name = Some(input.into());
             self
         }
+        /// <p>The friendly name of the attached policy.</p>
         pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_name = input;
             self
@@ -4549,6 +5093,9 @@ pub mod attached_policy {
             self.policy_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
+        /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in
+        /// the <i>Amazon Web Services General Reference</i>. </p>
         pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_arn = input;
             self
@@ -4583,7 +5130,7 @@ pub struct AccessKeyMetadata {
     /// calls; <code>Inactive</code> means it is not.</p>
     pub status: std::option::Option<crate::model::StatusType>,
     /// <p>The date when the access key was created.</p>
-    pub create_date: std::option::Option<smithy_types::Instant>,
+    pub create_date: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for AccessKeyMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4604,7 +5151,7 @@ pub mod access_key_metadata {
         pub(crate) user_name: std::option::Option<std::string::String>,
         pub(crate) access_key_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::StatusType>,
-        pub(crate) create_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) create_date: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The name of the IAM user that the key is associated with.</p>
@@ -4612,6 +5159,7 @@ pub mod access_key_metadata {
             self.user_name = Some(input.into());
             self
         }
+        /// <p>The name of the IAM user that the key is associated with.</p>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_name = input;
             self
@@ -4621,6 +5169,7 @@ pub mod access_key_metadata {
             self.access_key_id = Some(input.into());
             self
         }
+        /// <p>The ID for this access key.</p>
         pub fn set_access_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4634,18 +5183,21 @@ pub mod access_key_metadata {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the access key. <code>Active</code> means that the key is valid for API
+        /// calls; <code>Inactive</code> means it is not.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::StatusType>) -> Self {
             self.status = input;
             self
         }
         /// <p>The date when the access key was created.</p>
-        pub fn create_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn create_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.create_date = Some(input);
             self
         }
+        /// <p>The date when the access key was created.</p>
         pub fn set_create_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.create_date = input;
             self
@@ -4668,6 +5220,7 @@ impl AccessKeyMetadata {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4679,7 +5232,9 @@ impl AccessKeyMetadata {
     std::hash::Hash,
 )]
 pub enum EncodingType {
+    #[allow(missing_docs)] // documentation missing in model
     Pem,
+    #[allow(missing_docs)] // documentation missing in model
     Ssh,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4701,6 +5256,7 @@ impl std::str::FromStr for EncodingType {
     }
 }
 impl EncodingType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EncodingType::Pem => "PEM",
@@ -4708,6 +5264,7 @@ impl EncodingType {
             EncodingType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["PEM", "SSH"]
     }
@@ -4756,16 +5313,33 @@ pub mod deletion_task_failure_reason_type {
             self.reason = Some(input.into());
             self
         }
+        /// <p>A short description of the reason that the service-linked role deletion failed.</p>
         pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.reason = input;
             self
         }
+        /// Appends an item to `role_usage_list`.
+        ///
+        /// To override the contents of this collection use [`set_role_usage_list`](Self::set_role_usage_list).
+        ///
+        /// <p>A list of objects that contains details about the service-linked role deletion failure,
+        /// if that information is returned by the service. If the service-linked role has active
+        /// sessions or if any resources that were used by the role have not been deleted from the
+        /// linked service, the role can't be deleted. This parameter includes a list of the resources
+        /// that are associated with the role and the Region in which the resources are being
+        /// used.</p>
         pub fn role_usage_list(mut self, input: impl Into<crate::model::RoleUsageType>) -> Self {
             let mut v = self.role_usage_list.unwrap_or_default();
             v.push(input.into());
             self.role_usage_list = Some(v);
             self
         }
+        /// <p>A list of objects that contains details about the service-linked role deletion failure,
+        /// if that information is returned by the service. If the service-linked role has active
+        /// sessions or if any resources that were used by the role have not been deleted from the
+        /// linked service, the role can't be deleted. This parameter includes a list of the resources
+        /// that are associated with the role and the Region in which the resources are being
+        /// used.</p>
         pub fn set_role_usage_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RoleUsageType>>,
@@ -4823,16 +5397,23 @@ pub mod role_usage_type {
             self.region = Some(input.into());
             self
         }
+        /// <p>The name of the Region where the service-linked role is being used.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
         }
+        /// Appends an item to `resources`.
+        ///
+        /// To override the contents of this collection use [`set_resources`](Self::set_resources).
+        ///
+        /// <p>The name of the resource that is using the service-linked role.</p>
         pub fn resources(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resources.unwrap_or_default();
             v.push(input.into());
             self.resources = Some(v);
             self
         }
+        /// <p>The name of the resource that is using the service-linked role.</p>
         pub fn set_resources(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4856,6 +5437,7 @@ impl RoleUsageType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4867,9 +5449,13 @@ impl RoleUsageType {
     std::hash::Hash,
 )]
 pub enum DeletionTaskStatusType {
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     InProgress,
+    #[allow(missing_docs)] // documentation missing in model
     NotStarted,
+    #[allow(missing_docs)] // documentation missing in model
     Succeeded,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4893,6 +5479,7 @@ impl std::str::FromStr for DeletionTaskStatusType {
     }
 }
 impl DeletionTaskStatusType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DeletionTaskStatusType::Failed => "FAILED",
@@ -4902,6 +5489,7 @@ impl DeletionTaskStatusType {
             DeletionTaskStatusType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FAILED", "IN_PROGRESS", "NOT_STARTED", "SUCCEEDED"]
     }
@@ -4945,6 +5533,7 @@ pub mod error_details {
             self.message = Some(input.into());
             self
         }
+        /// <p>Detailed information about the reason that the operation failed.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -4954,6 +5543,7 @@ pub mod error_details {
             self.code = Some(input.into());
             self
         }
+        /// <p>The error code associated with the operation failure.</p>
         pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.code = input;
             self
@@ -4988,7 +5578,7 @@ pub struct EntityDetails {
     /// not report unauthenticated requests.</p>
     /// <p>This field is null if no IAM entities attempted to access the service within the
     /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
-    pub last_authenticated: std::option::Option<smithy_types::Instant>,
+    pub last_authenticated: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for EntityDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5005,7 +5595,7 @@ pub mod entity_details {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) entity_info: std::option::Option<crate::model::EntityInfo>,
-        pub(crate) last_authenticated: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_authenticated: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The <code>EntityInfo</code> object that contains details about the entity (user or
@@ -5014,6 +5604,8 @@ pub mod entity_details {
             self.entity_info = Some(input);
             self
         }
+        /// <p>The <code>EntityInfo</code> object that contains details about the entity (user or
+        /// role).</p>
         pub fn set_entity_info(
             mut self,
             input: std::option::Option<crate::model::EntityInfo>,
@@ -5026,13 +5618,18 @@ pub mod entity_details {
         /// not report unauthenticated requests.</p>
         /// <p>This field is null if no IAM entities attempted to access the service within the
         /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
-        pub fn last_authenticated(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_authenticated(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_authenticated = Some(input);
             self
         }
+        /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
+        /// format</a>, when the authenticated entity last attempted to access Amazon Web Services. Amazon Web Services does
+        /// not report unauthenticated requests.</p>
+        /// <p>This field is null if no IAM entities attempted to access the service within the
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
         pub fn set_last_authenticated(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_authenticated = input;
             self
@@ -5103,6 +5700,9 @@ pub mod entity_info {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
+        /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in
+        /// the <i>Amazon Web Services General Reference</i>. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -5112,6 +5712,7 @@ pub mod entity_info {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the entity (user or role).</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -5121,6 +5722,7 @@ pub mod entity_info {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of entity (user or role).</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::PolicyOwnerEntityType>,
@@ -5133,6 +5735,7 @@ pub mod entity_info {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier of the entity (user or role).</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -5143,6 +5746,8 @@ pub mod entity_info {
             self.path = Some(input.into());
             self
         }
+        /// <p>The path to the entity (user or role). For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+        /// identifiers</a> in the <i>IAM User Guide</i>. </p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.path = input;
             self
@@ -5166,6 +5771,7 @@ impl EntityInfo {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5177,8 +5783,11 @@ impl EntityInfo {
     std::hash::Hash,
 )]
 pub enum JobStatusType {
+    #[allow(missing_docs)] // documentation missing in model
     Completed,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     InProgress,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5201,6 +5810,7 @@ impl std::str::FromStr for JobStatusType {
     }
 }
 impl JobStatusType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             JobStatusType::Completed => "COMPLETED",
@@ -5209,6 +5819,7 @@ impl JobStatusType {
             JobStatusType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["COMPLETED", "FAILED", "IN_PROGRESS"]
     }
@@ -5231,7 +5842,7 @@ pub struct ServiceLastAccessed {
     /// service. Amazon Web Services does not report unauthenticated requests.</p>
     /// <p>This field is null if no IAM entities attempted to access the service within the
     /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
-    pub last_authenticated: std::option::Option<smithy_types::Instant>,
+    pub last_authenticated: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The namespace of the service in which access was attempted.</p>
     /// <p>To learn the service namespace of a service, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions, resources, and condition keys for Amazon Web Services services</a> in the
     /// <i>Service Authorization Reference</i>. Choose the name of the service to
@@ -5289,7 +5900,7 @@ pub mod service_last_accessed {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) service_name: std::option::Option<std::string::String>,
-        pub(crate) last_authenticated: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_authenticated: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) service_namespace: std::option::Option<std::string::String>,
         pub(crate) last_authenticated_entity: std::option::Option<std::string::String>,
         pub(crate) last_authenticated_region: std::option::Option<std::string::String>,
@@ -5303,6 +5914,7 @@ pub mod service_last_accessed {
             self.service_name = Some(input.into());
             self
         }
+        /// <p>The name of the service in which access was attempted.</p>
         pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service_name = input;
             self
@@ -5312,13 +5924,18 @@ pub mod service_last_accessed {
         /// service. Amazon Web Services does not report unauthenticated requests.</p>
         /// <p>This field is null if no IAM entities attempted to access the service within the
         /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
-        pub fn last_authenticated(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_authenticated(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_authenticated = Some(input);
             self
         }
+        /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
+        /// format</a>, when an authenticated entity most recently attempted to access the
+        /// service. Amazon Web Services does not report unauthenticated requests.</p>
+        /// <p>This field is null if no IAM entities attempted to access the service within the
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
         pub fn set_last_authenticated(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_authenticated = input;
             self
@@ -5334,6 +5951,13 @@ pub mod service_last_accessed {
             self.service_namespace = Some(input.into());
             self
         }
+        /// <p>The namespace of the service in which access was attempted.</p>
+        /// <p>To learn the service namespace of a service, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions, resources, and condition keys for Amazon Web Services services</a> in the
+        /// <i>Service Authorization Reference</i>. Choose the name of the service to
+        /// view details for that service. In the first paragraph, find the service prefix. For
+        /// example, <code>(service prefix: a4b)</code>. For more information about service namespaces,
+        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon Web Services
+        /// Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_service_namespace(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5349,6 +5973,10 @@ pub mod service_last_accessed {
             self.last_authenticated_entity = Some(input.into());
             self
         }
+        /// <p>The ARN of the authenticated entity (user or role) that last attempted to access the
+        /// service. Amazon Web Services does not report unauthenticated requests.</p>
+        /// <p>This field is null if no IAM entities attempted to access the service within the
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
         pub fn set_last_authenticated_entity(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5364,6 +5992,10 @@ pub mod service_last_accessed {
             self.last_authenticated_region = Some(input.into());
             self
         }
+        /// <p>The Region from which the authenticated entity (user or role) last attempted to access
+        /// the service. Amazon Web Services does not report unauthenticated requests.</p>
+        /// <p>This field is null if no IAM entities attempted to access the service within the
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
         pub fn set_last_authenticated_region(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5378,10 +6010,23 @@ pub mod service_last_accessed {
             self.total_authenticated_entities = Some(input);
             self
         }
+        /// <p>The total number of authenticated principals (root user, IAM users, or IAM roles)
+        /// that have attempted to access the service.</p>
+        /// <p>This field is null if no principals attempted to access the service within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
         pub fn set_total_authenticated_entities(mut self, input: std::option::Option<i32>) -> Self {
             self.total_authenticated_entities = input;
             self
         }
+        /// Appends an item to `tracked_actions_last_accessed`.
+        ///
+        /// To override the contents of this collection use [`set_tracked_actions_last_accessed`](Self::set_tracked_actions_last_accessed).
+        ///
+        /// <p>An object that contains details about the most recent attempt to access a tracked action
+        /// within the service.</p>
+        /// <p>This field is null if there no tracked actions or if the principal did not use the
+        /// tracked actions within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>. This field is also null if the report was generated at the
+        /// service level and not the action level. For more information, see the
+        /// <code>Granularity</code> field in <a>GenerateServiceLastAccessedDetails</a>.</p>
         pub fn tracked_actions_last_accessed(
             mut self,
             input: impl Into<crate::model::TrackedActionLastAccessed>,
@@ -5391,6 +6036,12 @@ pub mod service_last_accessed {
             self.tracked_actions_last_accessed = Some(v);
             self
         }
+        /// <p>An object that contains details about the most recent attempt to access a tracked action
+        /// within the service.</p>
+        /// <p>This field is null if there no tracked actions or if the principal did not use the
+        /// tracked actions within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>. This field is also null if the report was generated at the
+        /// service level and not the action level. For more information, see the
+        /// <code>Granularity</code> field in <a>GenerateServiceLastAccessedDetails</a>.</p>
         pub fn set_tracked_actions_last_accessed(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TrackedActionLastAccessed>>,
@@ -5436,7 +6087,7 @@ pub struct TrackedActionLastAccessed {
     /// tracked service. Amazon Web Services does not report unauthenticated requests.</p>
     /// <p>This field is null if no IAM entities attempted to access the service within the
     /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
-    pub last_accessed_time: std::option::Option<smithy_types::Instant>,
+    pub last_accessed_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The Region from which the authenticated entity (user or role) last attempted to access
     /// the tracked action. Amazon Web Services does not report unauthenticated requests.</p>
     /// <p>This field is null if no IAM entities attempted to access the service within the
@@ -5461,7 +6112,7 @@ pub mod tracked_action_last_accessed {
     pub struct Builder {
         pub(crate) action_name: std::option::Option<std::string::String>,
         pub(crate) last_accessed_entity: std::option::Option<std::string::String>,
-        pub(crate) last_accessed_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_accessed_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) last_accessed_region: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -5471,6 +6122,8 @@ pub mod tracked_action_last_accessed {
             self.action_name = Some(input.into());
             self
         }
+        /// <p>The name of the tracked action to which access was attempted. Tracked actions are
+        /// actions that report activity to IAM.</p>
         pub fn set_action_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.action_name = input;
             self
@@ -5482,6 +6135,9 @@ pub mod tracked_action_last_accessed {
             self.last_accessed_entity = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
+        /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in
+        /// the <i>Amazon Web Services General Reference</i>. </p>
         pub fn set_last_accessed_entity(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5494,13 +6150,18 @@ pub mod tracked_action_last_accessed {
         /// tracked service. Amazon Web Services does not report unauthenticated requests.</p>
         /// <p>This field is null if no IAM entities attempted to access the service within the
         /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
-        pub fn last_accessed_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_accessed_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_accessed_time = Some(input);
             self
         }
+        /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
+        /// format</a>, when an authenticated entity most recently attempted to access the
+        /// tracked service. Amazon Web Services does not report unauthenticated requests.</p>
+        /// <p>This field is null if no IAM entities attempted to access the service within the
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
         pub fn set_last_accessed_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_accessed_time = input;
             self
@@ -5513,6 +6174,10 @@ pub mod tracked_action_last_accessed {
             self.last_accessed_region = Some(input.into());
             self
         }
+        /// <p>The Region from which the authenticated entity (user or role) last attempted to access
+        /// the tracked action. Amazon Web Services does not report unauthenticated requests.</p>
+        /// <p>This field is null if no IAM entities attempted to access the service within the
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
         pub fn set_last_accessed_region(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5538,6 +6203,7 @@ impl TrackedActionLastAccessed {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5549,7 +6215,9 @@ impl TrackedActionLastAccessed {
     std::hash::Hash,
 )]
 pub enum AccessAdvisorUsageGranularityType {
+    #[allow(missing_docs)] // documentation missing in model
     ActionLevel,
+    #[allow(missing_docs)] // documentation missing in model
     ServiceLevel,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5571,6 +6239,7 @@ impl std::str::FromStr for AccessAdvisorUsageGranularityType {
     }
 }
 impl AccessAdvisorUsageGranularityType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AccessAdvisorUsageGranularityType::ActionLevel => "ACTION_LEVEL",
@@ -5578,6 +6247,7 @@ impl AccessAdvisorUsageGranularityType {
             AccessAdvisorUsageGranularityType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ACTION_LEVEL", "SERVICE_LEVEL"]
     }
@@ -5639,6 +6309,8 @@ pub mod server_certificate {
             self.server_certificate_metadata = Some(input);
             self
         }
+        /// <p>The meta information of the server certificate, such as its name, path, ID, and
+        /// ARN.</p>
         pub fn set_server_certificate_metadata(
             mut self,
             input: std::option::Option<crate::model::ServerCertificateMetadata>,
@@ -5651,6 +6323,7 @@ pub mod server_certificate {
             self.certificate_body = Some(input.into());
             self
         }
+        /// <p>The contents of the public key certificate.</p>
         pub fn set_certificate_body(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5663,6 +6336,7 @@ pub mod server_certificate {
             self.certificate_chain = Some(input.into());
             self
         }
+        /// <p>The contents of the public key certificate chain.</p>
         pub fn set_certificate_chain(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5670,12 +6344,20 @@ pub mod server_certificate {
             self.certificate_chain = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of tags that are attached to the server certificate. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
+        /// <i>IAM User Guide</i>.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>A list of tags that are attached to the server certificate. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
+        /// <i>IAM User Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -5733,7 +6415,7 @@ pub struct AccessDetail {
     /// service. Amazon Web Services does not report unauthenticated requests.</p>
     /// <p>This field is null if no principals in the reported Organizations entity attempted to access the
     /// service within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
-    pub last_authenticated_time: std::option::Option<smithy_types::Instant>,
+    pub last_authenticated_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The number of accounts with authenticated principals (root users, IAM users, and IAM
     /// roles) that attempted to access the service in the reporting period.</p>
     pub total_authenticated_entities: std::option::Option<i32>,
@@ -5763,7 +6445,7 @@ pub mod access_detail {
         pub(crate) service_namespace: std::option::Option<std::string::String>,
         pub(crate) region: std::option::Option<std::string::String>,
         pub(crate) entity_path: std::option::Option<std::string::String>,
-        pub(crate) last_authenticated_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_authenticated_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) total_authenticated_entities: std::option::Option<i32>,
     }
     impl Builder {
@@ -5772,6 +6454,7 @@ pub mod access_detail {
             self.service_name = Some(input.into());
             self
         }
+        /// <p>The name of the service in which access was attempted.</p>
         pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service_name = input;
             self
@@ -5787,6 +6470,13 @@ pub mod access_detail {
             self.service_namespace = Some(input.into());
             self
         }
+        /// <p>The namespace of the service in which access was attempted.</p>
+        /// <p>To learn the service namespace of a service, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions, resources, and condition keys for Amazon Web Services services</a> in the
+        /// <i>Service Authorization Reference</i>. Choose the name of the service to
+        /// view details for that service. In the first paragraph, find the service prefix. For
+        /// example, <code>(service prefix: a4b)</code>. For more information about service namespaces,
+        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon Web Services
+        /// service namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_service_namespace(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5801,6 +6491,9 @@ pub mod access_detail {
             self.region = Some(input.into());
             self
         }
+        /// <p>The Region where the last service access attempt occurred.</p>
+        /// <p>This field is null if no principals in the reported Organizations entity attempted to access the
+        /// service within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
@@ -5814,6 +6507,11 @@ pub mod access_detail {
             self.entity_path = Some(input.into());
             self
         }
+        /// <p>The path of the Organizations entity (root, organizational unit, or account) from which an
+        /// authenticated principal last attempted to access the service. Amazon Web Services does not report
+        /// unauthenticated requests.</p>
+        /// <p>This field is null if no principals (IAM users, IAM roles, or root users) in the
+        /// reported Organizations entity attempted to access the service within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
         pub fn set_entity_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.entity_path = input;
             self
@@ -5823,13 +6521,18 @@ pub mod access_detail {
         /// service. Amazon Web Services does not report unauthenticated requests.</p>
         /// <p>This field is null if no principals in the reported Organizations entity attempted to access the
         /// service within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
-        pub fn last_authenticated_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_authenticated_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_authenticated_time = Some(input);
             self
         }
+        /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
+        /// format</a>, when an authenticated principal most recently attempted to access the
+        /// service. Amazon Web Services does not report unauthenticated requests.</p>
+        /// <p>This field is null if no principals in the reported Organizations entity attempted to access the
+        /// service within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
         pub fn set_last_authenticated_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_authenticated_time = input;
             self
@@ -5840,6 +6543,8 @@ pub mod access_detail {
             self.total_authenticated_entities = Some(input);
             self
         }
+        /// <p>The number of accounts with authenticated principals (root users, IAM users, and IAM
+        /// roles) that attempted to access the service in the reporting period.</p>
         pub fn set_total_authenticated_entities(mut self, input: std::option::Option<i32>) -> Self {
             self.total_authenticated_entities = input;
             self
@@ -5864,6 +6569,7 @@ impl AccessDetail {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5875,9 +6581,13 @@ impl AccessDetail {
     std::hash::Hash,
 )]
 pub enum SortKeyType {
+    #[allow(missing_docs)] // documentation missing in model
     LastAuthenticatedTimeAscending,
+    #[allow(missing_docs)] // documentation missing in model
     LastAuthenticatedTimeDescending,
+    #[allow(missing_docs)] // documentation missing in model
     ServiceNamespaceAscending,
+    #[allow(missing_docs)] // documentation missing in model
     ServiceNamespaceDescending,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5901,6 +6611,7 @@ impl std::str::FromStr for SortKeyType {
     }
 }
 impl SortKeyType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SortKeyType::LastAuthenticatedTimeAscending => "LAST_AUTHENTICATED_TIME_ASCENDING",
@@ -5910,6 +6621,7 @@ impl SortKeyType {
             SortKeyType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "LAST_AUTHENTICATED_TIME_ASCENDING",
@@ -5933,7 +6645,7 @@ pub struct LoginProfile {
     /// <p>The name of the user, which can be used for signing in to the Amazon Web Services Management Console.</p>
     pub user_name: std::option::Option<std::string::String>,
     /// <p>The date when the password for the user was created.</p>
-    pub create_date: std::option::Option<smithy_types::Instant>,
+    pub create_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Specifies whether the user is required to set a new password on next sign-in.</p>
     pub password_reset_required: bool,
 }
@@ -5953,7 +6665,7 @@ pub mod login_profile {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_name: std::option::Option<std::string::String>,
-        pub(crate) create_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) create_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) password_reset_required: std::option::Option<bool>,
     }
     impl Builder {
@@ -5962,18 +6674,20 @@ pub mod login_profile {
             self.user_name = Some(input.into());
             self
         }
+        /// <p>The name of the user, which can be used for signing in to the Amazon Web Services Management Console.</p>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_name = input;
             self
         }
         /// <p>The date when the password for the user was created.</p>
-        pub fn create_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn create_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.create_date = Some(input);
             self
         }
+        /// <p>The date when the password for the user was created.</p>
         pub fn set_create_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.create_date = input;
             self
@@ -5983,6 +6697,7 @@ pub mod login_profile {
             self.password_reset_required = Some(input);
             self
         }
+        /// <p>Specifies whether the user is required to set a new password on next sign-in.</p>
         pub fn set_password_reset_required(mut self, input: std::option::Option<bool>) -> Self {
             self.password_reset_required = input;
             self
@@ -6004,6 +6719,7 @@ impl LoginProfile {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -6015,6 +6731,7 @@ impl LoginProfile {
     std::hash::Hash,
 )]
 pub enum ReportFormatType {
+    #[allow(missing_docs)] // documentation missing in model
     TextCsv,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -6035,12 +6752,14 @@ impl std::str::FromStr for ReportFormatType {
     }
 }
 impl ReportFormatType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ReportFormatType::TextCsv => "text/csv",
             ReportFormatType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["text/csv"]
     }
@@ -6051,6 +6770,7 @@ impl AsRef<str> for ReportFormatType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -6062,31 +6782,57 @@ impl AsRef<str> for ReportFormatType {
     std::hash::Hash,
 )]
 pub enum SummaryKeyType {
+    #[allow(missing_docs)] // documentation missing in model
     AccessKeysPerUserQuota,
+    #[allow(missing_docs)] // documentation missing in model
     AccountAccessKeysPresent,
+    #[allow(missing_docs)] // documentation missing in model
     AccountMfaEnabled,
+    #[allow(missing_docs)] // documentation missing in model
     AccountSigningCertificatesPresent,
+    #[allow(missing_docs)] // documentation missing in model
     AttachedPoliciesPerGroupQuota,
+    #[allow(missing_docs)] // documentation missing in model
     AttachedPoliciesPerRoleQuota,
+    #[allow(missing_docs)] // documentation missing in model
     AttachedPoliciesPerUserQuota,
+    #[allow(missing_docs)] // documentation missing in model
     GlobalEndpointTokenVersion,
+    #[allow(missing_docs)] // documentation missing in model
     GroupPolicySizeQuota,
+    #[allow(missing_docs)] // documentation missing in model
     Groups,
+    #[allow(missing_docs)] // documentation missing in model
     GroupsPerUserQuota,
+    #[allow(missing_docs)] // documentation missing in model
     GroupsQuota,
+    #[allow(missing_docs)] // documentation missing in model
     MfaDevices,
+    #[allow(missing_docs)] // documentation missing in model
     MfaDevicesInUse,
+    #[allow(missing_docs)] // documentation missing in model
     Policies,
+    #[allow(missing_docs)] // documentation missing in model
     PoliciesQuota,
+    #[allow(missing_docs)] // documentation missing in model
     PolicySizeQuota,
+    #[allow(missing_docs)] // documentation missing in model
     PolicyVersionsInUse,
+    #[allow(missing_docs)] // documentation missing in model
     PolicyVersionsInUseQuota,
+    #[allow(missing_docs)] // documentation missing in model
     ServerCertificates,
+    #[allow(missing_docs)] // documentation missing in model
     ServerCertificatesQuota,
+    #[allow(missing_docs)] // documentation missing in model
     SigningCertificatesPerUserQuota,
+    #[allow(missing_docs)] // documentation missing in model
     UserPolicySizeQuota,
+    #[allow(missing_docs)] // documentation missing in model
     Users,
+    #[allow(missing_docs)] // documentation missing in model
     UsersQuota,
+    #[allow(missing_docs)] // documentation missing in model
     VersionsPerPolicyQuota,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -6134,6 +6880,7 @@ impl std::str::FromStr for SummaryKeyType {
     }
 }
 impl SummaryKeyType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SummaryKeyType::AccessKeysPerUserQuota => "AccessKeysPerUserQuota",
@@ -6167,6 +6914,7 @@ impl SummaryKeyType {
             SummaryKeyType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "AccessKeysPerUserQuota",
@@ -6283,6 +7031,7 @@ pub mod password_policy {
             self.minimum_password_length = Some(input);
             self
         }
+        /// <p>Minimum length to require for IAM user passwords.</p>
         pub fn set_minimum_password_length(mut self, input: std::option::Option<i32>) -> Self {
             self.minimum_password_length = input;
             self
@@ -6293,6 +7042,8 @@ pub mod password_policy {
             self.require_symbols = Some(input);
             self
         }
+        /// <p>Specifies whether IAM user passwords must contain at least one of the following symbols:</p>
+        /// <p>! @ # $ % ^ & * ( ) _ + - = [ ] { } | '</p>
         pub fn set_require_symbols(mut self, input: std::option::Option<bool>) -> Self {
             self.require_symbols = input;
             self
@@ -6302,6 +7053,7 @@ pub mod password_policy {
             self.require_numbers = Some(input);
             self
         }
+        /// <p>Specifies whether IAM user passwords must contain at least one numeric character (0 to 9).</p>
         pub fn set_require_numbers(mut self, input: std::option::Option<bool>) -> Self {
             self.require_numbers = input;
             self
@@ -6311,6 +7063,7 @@ pub mod password_policy {
             self.require_uppercase_characters = Some(input);
             self
         }
+        /// <p>Specifies whether IAM user passwords must contain at least one uppercase character (A to Z).</p>
         pub fn set_require_uppercase_characters(
             mut self,
             input: std::option::Option<bool>,
@@ -6323,6 +7076,7 @@ pub mod password_policy {
             self.require_lowercase_characters = Some(input);
             self
         }
+        /// <p>Specifies whether IAM user passwords must contain at least one lowercase character (a to z).</p>
         pub fn set_require_lowercase_characters(
             mut self,
             input: std::option::Option<bool>,
@@ -6335,6 +7089,7 @@ pub mod password_policy {
             self.allow_users_to_change_password = Some(input);
             self
         }
+        /// <p>Specifies whether IAM users are allowed to change their own password.</p>
         pub fn set_allow_users_to_change_password(
             mut self,
             input: std::option::Option<bool>,
@@ -6349,6 +7104,9 @@ pub mod password_policy {
             self.expire_passwords = Some(input);
             self
         }
+        /// <p>Indicates whether passwords in the account expire. Returns true if
+        /// <code>MaxPasswordAge</code> contains a value greater than 0. Returns false if
+        /// MaxPasswordAge is 0 or not present.</p>
         pub fn set_expire_passwords(mut self, input: std::option::Option<bool>) -> Self {
             self.expire_passwords = input;
             self
@@ -6358,6 +7116,7 @@ pub mod password_policy {
             self.max_password_age = Some(input);
             self
         }
+        /// <p>The number of days that an IAM user password is valid.</p>
         pub fn set_max_password_age(mut self, input: std::option::Option<i32>) -> Self {
             self.max_password_age = input;
             self
@@ -6368,6 +7127,8 @@ pub mod password_policy {
             self.password_reuse_prevention = Some(input);
             self
         }
+        /// <p>Specifies the number of previous passwords that IAM users are prevented from
+        /// reusing.</p>
         pub fn set_password_reuse_prevention(mut self, input: std::option::Option<i32>) -> Self {
             self.password_reuse_prevention = input;
             self
@@ -6378,6 +7139,8 @@ pub mod password_policy {
             self.hard_expiry = Some(input);
             self
         }
+        /// <p>Specifies whether IAM users are prevented from setting a new password after their
+        /// password has expired.</p>
         pub fn set_hard_expiry(mut self, input: std::option::Option<bool>) -> Self {
             self.hard_expiry = input;
             self
@@ -6450,13 +7213,13 @@ pub struct ManagedPolicyDetail {
     pub description: std::option::Option<std::string::String>,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
     /// format</a>, when the policy was created.</p>
-    pub create_date: std::option::Option<smithy_types::Instant>,
+    pub create_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
     /// format</a>, when the policy was last updated.</p>
     /// <p>When a policy has only one version, this field contains the date and time when the
     /// policy was created. When a policy has more than one version, this field contains the date
     /// and time when the most recent policy version was created.</p>
-    pub update_date: std::option::Option<smithy_types::Instant>,
+    pub update_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A list containing information about the versions of the policy.</p>
     pub policy_version_list: std::option::Option<std::vec::Vec<crate::model::PolicyVersion>>,
 }
@@ -6496,8 +7259,8 @@ pub mod managed_policy_detail {
         pub(crate) permissions_boundary_usage_count: std::option::Option<i32>,
         pub(crate) is_attachable: std::option::Option<bool>,
         pub(crate) description: std::option::Option<std::string::String>,
-        pub(crate) create_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) update_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) create_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) update_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) policy_version_list:
             std::option::Option<std::vec::Vec<crate::model::PolicyVersion>>,
     }
@@ -6507,6 +7270,7 @@ pub mod managed_policy_detail {
             self.policy_name = Some(input.into());
             self
         }
+        /// <p>The friendly name (not ARN) identifying the policy.</p>
         pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_name = input;
             self
@@ -6518,6 +7282,9 @@ pub mod managed_policy_detail {
             self.policy_id = Some(input.into());
             self
         }
+        /// <p>The stable and unique string identifying the policy.</p>
+        /// <p>For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
+        /// <i>IAM User Guide</i>.</p>
         pub fn set_policy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_id = input;
             self
@@ -6529,6 +7296,9 @@ pub mod managed_policy_detail {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
+        /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in
+        /// the <i>Amazon Web Services General Reference</i>. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -6540,6 +7310,9 @@ pub mod managed_policy_detail {
             self.path = Some(input.into());
             self
         }
+        /// <p>The path to the policy.</p>
+        /// <p>For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
+        /// <i>IAM User Guide</i>.</p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.path = input;
             self
@@ -6552,6 +7325,10 @@ pub mod managed_policy_detail {
             self.default_version_id = Some(input.into());
             self
         }
+        /// <p>The identifier for the version of the policy that is set as the default (operative)
+        /// version.</p>
+        /// <p>For more information about policy versions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for managed
+        /// policies</a> in the <i>IAM User Guide</i>. </p>
         pub fn set_default_version_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6565,6 +7342,8 @@ pub mod managed_policy_detail {
             self.attachment_count = Some(input);
             self
         }
+        /// <p>The number of principal entities (users, groups, and roles) that the policy is attached
+        /// to.</p>
         pub fn set_attachment_count(mut self, input: std::option::Option<i32>) -> Self {
             self.attachment_count = input;
             self
@@ -6577,6 +7356,10 @@ pub mod managed_policy_detail {
             self.permissions_boundary_usage_count = Some(input);
             self
         }
+        /// <p>The number of entities (users and roles) for which the policy is used as the permissions
+        /// boundary. </p>
+        /// <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM
+        /// identities </a> in the <i>IAM User Guide</i>.</p>
         pub fn set_permissions_boundary_usage_count(
             mut self,
             input: std::option::Option<i32>,
@@ -6589,6 +7372,7 @@ pub mod managed_policy_detail {
             self.is_attachable = Some(input);
             self
         }
+        /// <p>Specifies whether the policy can be attached to an IAM user, group, or role.</p>
         pub fn set_is_attachable(mut self, input: std::option::Option<bool>) -> Self {
             self.is_attachable = input;
             self
@@ -6598,19 +7382,22 @@ pub mod managed_policy_detail {
             self.description = Some(input.into());
             self
         }
+        /// <p>A friendly description of the policy.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
         /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
         /// format</a>, when the policy was created.</p>
-        pub fn create_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn create_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.create_date = Some(input);
             self
         }
+        /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
+        /// format</a>, when the policy was created.</p>
         pub fn set_create_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.create_date = input;
             self
@@ -6620,17 +7407,27 @@ pub mod managed_policy_detail {
         /// <p>When a policy has only one version, this field contains the date and time when the
         /// policy was created. When a policy has more than one version, this field contains the date
         /// and time when the most recent policy version was created.</p>
-        pub fn update_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn update_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.update_date = Some(input);
             self
         }
+        /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
+        /// format</a>, when the policy was last updated.</p>
+        /// <p>When a policy has only one version, this field contains the date and time when the
+        /// policy was created. When a policy has more than one version, this field contains the date
+        /// and time when the most recent policy version was created.</p>
         pub fn set_update_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.update_date = input;
             self
         }
+        /// Appends an item to `policy_version_list`.
+        ///
+        /// To override the contents of this collection use [`set_policy_version_list`](Self::set_policy_version_list).
+        ///
+        /// <p>A list containing information about the versions of the policy.</p>
         pub fn policy_version_list(
             mut self,
             input: impl Into<crate::model::PolicyVersion>,
@@ -6640,6 +7437,7 @@ pub mod managed_policy_detail {
             self.policy_version_list = Some(v);
             self
         }
+        /// <p>A list containing information about the versions of the policy.</p>
         pub fn set_policy_version_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PolicyVersion>>,
@@ -6693,7 +7491,7 @@ pub struct RoleDetail {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
     /// format</a>, when the role was created.</p>
-    pub create_date: std::option::Option<smithy_types::Instant>,
+    pub create_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The trust policy that grants permission to assume the role.</p>
     pub assume_role_policy_document: std::option::Option<std::string::String>,
     /// <p>A list of instance profiles that contain this role.</p>
@@ -6750,7 +7548,7 @@ pub mod role_detail {
         pub(crate) role_name: std::option::Option<std::string::String>,
         pub(crate) role_id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) create_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) create_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) assume_role_policy_document: std::option::Option<std::string::String>,
         pub(crate) instance_profile_list:
             std::option::Option<std::vec::Vec<crate::model::InstanceProfile>>,
@@ -6769,6 +7567,8 @@ pub mod role_detail {
             self.path = Some(input.into());
             self
         }
+        /// <p>The path to the role. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
+        /// <i>IAM User Guide</i>.</p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.path = input;
             self
@@ -6778,6 +7578,7 @@ pub mod role_detail {
             self.role_name = Some(input.into());
             self
         }
+        /// <p>The friendly name that identifies the role.</p>
         pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_name = input;
             self
@@ -6789,6 +7590,9 @@ pub mod role_detail {
             self.role_id = Some(input.into());
             self
         }
+        /// <p>The stable and unique string identifying the role. For more information about IDs, see
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+        /// identifiers</a> in the <i>IAM User Guide</i>.</p>
         pub fn set_role_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_id = input;
             self
@@ -6800,19 +7604,24 @@ pub mod role_detail {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
+        /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in
+        /// the <i>Amazon Web Services General Reference</i>. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
         /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
         /// format</a>, when the role was created.</p>
-        pub fn create_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn create_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.create_date = Some(input);
             self
         }
+        /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
+        /// format</a>, when the role was created.</p>
         pub fn set_create_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.create_date = input;
             self
@@ -6825,6 +7634,7 @@ pub mod role_detail {
             self.assume_role_policy_document = Some(input.into());
             self
         }
+        /// <p>The trust policy that grants permission to assume the role.</p>
         pub fn set_assume_role_policy_document(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6832,6 +7642,11 @@ pub mod role_detail {
             self.assume_role_policy_document = input;
             self
         }
+        /// Appends an item to `instance_profile_list`.
+        ///
+        /// To override the contents of this collection use [`set_instance_profile_list`](Self::set_instance_profile_list).
+        ///
+        /// <p>A list of instance profiles that contain this role.</p>
         pub fn instance_profile_list(
             mut self,
             input: impl Into<crate::model::InstanceProfile>,
@@ -6841,6 +7656,7 @@ pub mod role_detail {
             self.instance_profile_list = Some(v);
             self
         }
+        /// <p>A list of instance profiles that contain this role.</p>
         pub fn set_instance_profile_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InstanceProfile>>,
@@ -6848,12 +7664,20 @@ pub mod role_detail {
             self.instance_profile_list = input;
             self
         }
+        /// Appends an item to `role_policy_list`.
+        ///
+        /// To override the contents of this collection use [`set_role_policy_list`](Self::set_role_policy_list).
+        ///
+        /// <p>A list of inline policies embedded in the role. These policies are the role's access
+        /// (permissions) policies.</p>
         pub fn role_policy_list(mut self, input: impl Into<crate::model::PolicyDetail>) -> Self {
             let mut v = self.role_policy_list.unwrap_or_default();
             v.push(input.into());
             self.role_policy_list = Some(v);
             self
         }
+        /// <p>A list of inline policies embedded in the role. These policies are the role's access
+        /// (permissions) policies.</p>
         pub fn set_role_policy_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PolicyDetail>>,
@@ -6861,6 +7685,12 @@ pub mod role_detail {
             self.role_policy_list = input;
             self
         }
+        /// Appends an item to `attached_managed_policies`.
+        ///
+        /// To override the contents of this collection use [`set_attached_managed_policies`](Self::set_attached_managed_policies).
+        ///
+        /// <p>A list of managed policies attached to the role. These policies are the role's access
+        /// (permissions) policies.</p>
         pub fn attached_managed_policies(
             mut self,
             input: impl Into<crate::model::AttachedPolicy>,
@@ -6870,6 +7700,8 @@ pub mod role_detail {
             self.attached_managed_policies = Some(v);
             self
         }
+        /// <p>A list of managed policies attached to the role. These policies are the role's access
+        /// (permissions) policies.</p>
         pub fn set_attached_managed_policies(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AttachedPolicy>>,
@@ -6887,6 +7719,9 @@ pub mod role_detail {
             self.permissions_boundary = Some(input);
             self
         }
+        /// <p>The ARN of the policy used to set the permissions boundary for the role.</p>
+        /// <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM
+        /// identities </a> in the <i>IAM User Guide</i>.</p>
         pub fn set_permissions_boundary(
             mut self,
             input: std::option::Option<crate::model::AttachedPermissionsBoundary>,
@@ -6894,12 +7729,20 @@ pub mod role_detail {
             self.permissions_boundary = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of tags that are attached to the role. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
+        /// <i>IAM User Guide</i>.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>A list of tags that are attached to the role. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
+        /// <i>IAM User Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -6917,6 +7760,12 @@ pub mod role_detail {
             self.role_last_used = Some(input);
             self
         }
+        /// <p>Contains information about the last time that an IAM role was used. This includes the
+        /// date and time and the Region in which the role was last used. Activity is only reported for
+        /// the trailing 400 days. This period can be shorter if your Region began supporting these
+        /// features within the last year. The role might have been used more than 400 days ago. For
+        /// more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period">Regions where data is tracked</a> in the <i>IAM User
+        /// Guide</i>.</p>
         pub fn set_role_last_used(
             mut self,
             input: std::option::Option<crate::model::RoleLastUsed>,
@@ -6983,6 +7832,7 @@ pub mod policy_detail {
             self.policy_name = Some(input.into());
             self
         }
+        /// <p>The name of the policy.</p>
         pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_name = input;
             self
@@ -6992,6 +7842,7 @@ pub mod policy_detail {
             self.policy_document = Some(input.into());
             self
         }
+        /// <p>The policy document.</p>
         pub fn set_policy_document(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7035,7 +7886,7 @@ pub struct GroupDetail {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
     /// format</a>, when the group was created.</p>
-    pub create_date: std::option::Option<smithy_types::Instant>,
+    pub create_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A list of the inline policies embedded in the group.</p>
     pub group_policy_list: std::option::Option<std::vec::Vec<crate::model::PolicyDetail>>,
     /// <p>A list of the managed policies attached to the group.</p>
@@ -7064,7 +7915,7 @@ pub mod group_detail {
         pub(crate) group_name: std::option::Option<std::string::String>,
         pub(crate) group_id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) create_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) create_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) group_policy_list:
             std::option::Option<std::vec::Vec<crate::model::PolicyDetail>>,
         pub(crate) attached_managed_policies:
@@ -7077,6 +7928,8 @@ pub mod group_detail {
             self.path = Some(input.into());
             self
         }
+        /// <p>The path to the group. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
+        /// <i>IAM User Guide</i>.</p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.path = input;
             self
@@ -7086,6 +7939,7 @@ pub mod group_detail {
             self.group_name = Some(input.into());
             self
         }
+        /// <p>The friendly name that identifies the group.</p>
         pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.group_name = input;
             self
@@ -7097,6 +7951,9 @@ pub mod group_detail {
             self.group_id = Some(input.into());
             self
         }
+        /// <p>The stable and unique string identifying the group. For more information about IDs, see
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+        /// identifiers</a> in the <i>IAM User Guide</i>.</p>
         pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.group_id = input;
             self
@@ -7108,29 +7965,40 @@ pub mod group_detail {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
+        /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in
+        /// the <i>Amazon Web Services General Reference</i>. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
         /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
         /// format</a>, when the group was created.</p>
-        pub fn create_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn create_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.create_date = Some(input);
             self
         }
+        /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
+        /// format</a>, when the group was created.</p>
         pub fn set_create_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.create_date = input;
             self
         }
+        /// Appends an item to `group_policy_list`.
+        ///
+        /// To override the contents of this collection use [`set_group_policy_list`](Self::set_group_policy_list).
+        ///
+        /// <p>A list of the inline policies embedded in the group.</p>
         pub fn group_policy_list(mut self, input: impl Into<crate::model::PolicyDetail>) -> Self {
             let mut v = self.group_policy_list.unwrap_or_default();
             v.push(input.into());
             self.group_policy_list = Some(v);
             self
         }
+        /// <p>A list of the inline policies embedded in the group.</p>
         pub fn set_group_policy_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PolicyDetail>>,
@@ -7138,6 +8006,11 @@ pub mod group_detail {
             self.group_policy_list = input;
             self
         }
+        /// Appends an item to `attached_managed_policies`.
+        ///
+        /// To override the contents of this collection use [`set_attached_managed_policies`](Self::set_attached_managed_policies).
+        ///
+        /// <p>A list of the managed policies attached to the group.</p>
         pub fn attached_managed_policies(
             mut self,
             input: impl Into<crate::model::AttachedPolicy>,
@@ -7147,6 +8020,7 @@ pub mod group_detail {
             self.attached_managed_policies = Some(v);
             self
         }
+        /// <p>A list of the managed policies attached to the group.</p>
         pub fn set_attached_managed_policies(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AttachedPolicy>>,
@@ -7196,7 +8070,7 @@ pub struct UserDetail {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
     /// format</a>, when the user was created.</p>
-    pub create_date: std::option::Option<smithy_types::Instant>,
+    pub create_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A list of the inline policies embedded in the user.</p>
     pub user_policy_list: std::option::Option<std::vec::Vec<crate::model::PolicyDetail>>,
     /// <p>A list of IAM groups that the user is in.</p>
@@ -7237,7 +8111,7 @@ pub mod user_detail {
         pub(crate) user_name: std::option::Option<std::string::String>,
         pub(crate) user_id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) create_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) create_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) user_policy_list: std::option::Option<std::vec::Vec<crate::model::PolicyDetail>>,
         pub(crate) group_list: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) attached_managed_policies:
@@ -7253,6 +8127,8 @@ pub mod user_detail {
             self.path = Some(input.into());
             self
         }
+        /// <p>The path to the user. For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
+        /// <i>IAM User Guide</i>.</p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.path = input;
             self
@@ -7262,6 +8138,7 @@ pub mod user_detail {
             self.user_name = Some(input.into());
             self
         }
+        /// <p>The friendly name identifying the user.</p>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_name = input;
             self
@@ -7273,6 +8150,9 @@ pub mod user_detail {
             self.user_id = Some(input.into());
             self
         }
+        /// <p>The stable and unique string identifying the user. For more information about IDs, see
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+        /// identifiers</a> in the <i>IAM User Guide</i>.</p>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_id = input;
             self
@@ -7284,29 +8164,40 @@ pub mod user_detail {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
+        /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in
+        /// the <i>Amazon Web Services General Reference</i>. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
         /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
         /// format</a>, when the user was created.</p>
-        pub fn create_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn create_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.create_date = Some(input);
             self
         }
+        /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
+        /// format</a>, when the user was created.</p>
         pub fn set_create_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.create_date = input;
             self
         }
+        /// Appends an item to `user_policy_list`.
+        ///
+        /// To override the contents of this collection use [`set_user_policy_list`](Self::set_user_policy_list).
+        ///
+        /// <p>A list of the inline policies embedded in the user.</p>
         pub fn user_policy_list(mut self, input: impl Into<crate::model::PolicyDetail>) -> Self {
             let mut v = self.user_policy_list.unwrap_or_default();
             v.push(input.into());
             self.user_policy_list = Some(v);
             self
         }
+        /// <p>A list of the inline policies embedded in the user.</p>
         pub fn set_user_policy_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PolicyDetail>>,
@@ -7314,12 +8205,18 @@ pub mod user_detail {
             self.user_policy_list = input;
             self
         }
+        /// Appends an item to `group_list`.
+        ///
+        /// To override the contents of this collection use [`set_group_list`](Self::set_group_list).
+        ///
+        /// <p>A list of IAM groups that the user is in.</p>
         pub fn group_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.group_list.unwrap_or_default();
             v.push(input.into());
             self.group_list = Some(v);
             self
         }
+        /// <p>A list of IAM groups that the user is in.</p>
         pub fn set_group_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7327,6 +8224,11 @@ pub mod user_detail {
             self.group_list = input;
             self
         }
+        /// Appends an item to `attached_managed_policies`.
+        ///
+        /// To override the contents of this collection use [`set_attached_managed_policies`](Self::set_attached_managed_policies).
+        ///
+        /// <p>A list of the managed policies attached to the user.</p>
         pub fn attached_managed_policies(
             mut self,
             input: impl Into<crate::model::AttachedPolicy>,
@@ -7336,6 +8238,7 @@ pub mod user_detail {
             self.attached_managed_policies = Some(v);
             self
         }
+        /// <p>A list of the managed policies attached to the user.</p>
         pub fn set_attached_managed_policies(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AttachedPolicy>>,
@@ -7353,6 +8256,9 @@ pub mod user_detail {
             self.permissions_boundary = Some(input);
             self
         }
+        /// <p>The ARN of the policy used to set the permissions boundary for the user.</p>
+        /// <p>For more information about permissions boundaries, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries for IAM
+        /// identities </a> in the <i>IAM User Guide</i>.</p>
         pub fn set_permissions_boundary(
             mut self,
             input: std::option::Option<crate::model::AttachedPermissionsBoundary>,
@@ -7360,12 +8266,20 @@ pub mod user_detail {
             self.permissions_boundary = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of tags that are associated with the user. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
+        /// <i>IAM User Guide</i>.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>A list of tags that are associated with the user. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
+        /// <i>IAM User Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -7418,7 +8332,7 @@ pub struct AccessKeyLastUsed {
     /// <p>There is no sign-in data associated with the user.</p>
     /// </li>
     /// </ul>
-    pub last_used_date: std::option::Option<smithy_types::Instant>,
+    pub last_used_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The name of the Amazon Web Services service with which this access key was most recently used. The value
     /// of this field is "N/A" in the following situations:</p>
     /// <ul>
@@ -7467,7 +8381,7 @@ pub mod access_key_last_used {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) last_used_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_used_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) service_name: std::option::Option<std::string::String>,
         pub(crate) region: std::option::Option<std::string::String>,
     }
@@ -7487,13 +8401,28 @@ pub mod access_key_last_used {
         /// <p>There is no sign-in data associated with the user.</p>
         /// </li>
         /// </ul>
-        pub fn last_used_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_used_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_used_date = Some(input);
             self
         }
+        /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
+        /// format</a>, when the access key was most recently used. This field is null in the
+        /// following situations:</p>
+        /// <ul>
+        /// <li>
+        /// <p>The user does not have an access key.</p>
+        /// </li>
+        /// <li>
+        /// <p>An access key exists but has not been used since IAM began tracking this
+        /// information.</p>
+        /// </li>
+        /// <li>
+        /// <p>There is no sign-in data associated with the user.</p>
+        /// </li>
+        /// </ul>
         pub fn set_last_used_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_used_date = input;
             self
@@ -7516,6 +8445,20 @@ pub mod access_key_last_used {
             self.service_name = Some(input.into());
             self
         }
+        /// <p>The name of the Amazon Web Services service with which this access key was most recently used. The value
+        /// of this field is "N/A" in the following situations:</p>
+        /// <ul>
+        /// <li>
+        /// <p>The user does not have an access key.</p>
+        /// </li>
+        /// <li>
+        /// <p>An access key exists but has not been used since IAM started tracking this
+        /// information.</p>
+        /// </li>
+        /// <li>
+        /// <p>There is no sign-in data associated with the user.</p>
+        /// </li>
+        /// </ul>
         pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service_name = input;
             self
@@ -7540,6 +8483,22 @@ pub mod access_key_last_used {
             self.region = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services Region where this access key was most recently used. The value for this field is
+        /// "N/A" in the following situations:</p>
+        /// <ul>
+        /// <li>
+        /// <p>The user does not have an access key.</p>
+        /// </li>
+        /// <li>
+        /// <p>An access key exists but has not been used since IAM began tracking this
+        /// information.</p>
+        /// </li>
+        /// <li>
+        /// <p>There is no sign-in data associated with the user.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information about Amazon Web Services Regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and endpoints</a> in the Amazon Web Services
+        /// General Reference.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
@@ -7561,6 +8520,7 @@ impl AccessKeyLastUsed {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -7572,8 +8532,11 @@ impl AccessKeyLastUsed {
     std::hash::Hash,
 )]
 pub enum ReportStateType {
+    #[allow(missing_docs)] // documentation missing in model
     Complete,
+    #[allow(missing_docs)] // documentation missing in model
     Inprogress,
+    #[allow(missing_docs)] // documentation missing in model
     Started,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -7596,6 +8559,7 @@ impl std::str::FromStr for ReportStateType {
     }
 }
 impl ReportStateType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ReportStateType::Complete => "COMPLETE",
@@ -7604,6 +8568,7 @@ impl ReportStateType {
             ReportStateType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["COMPLETE", "INPROGRESS", "STARTED"]
     }
@@ -7635,7 +8600,7 @@ pub struct AccessKey {
     /// <p>The secret key used to sign requests.</p>
     pub secret_access_key: std::option::Option<std::string::String>,
     /// <p>The date when the access key was created.</p>
-    pub create_date: std::option::Option<smithy_types::Instant>,
+    pub create_date: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for AccessKey {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7658,7 +8623,7 @@ pub mod access_key {
         pub(crate) access_key_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::StatusType>,
         pub(crate) secret_access_key: std::option::Option<std::string::String>,
-        pub(crate) create_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) create_date: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The name of the IAM user that the access key is associated with.</p>
@@ -7666,6 +8631,7 @@ pub mod access_key {
             self.user_name = Some(input.into());
             self
         }
+        /// <p>The name of the IAM user that the access key is associated with.</p>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_name = input;
             self
@@ -7675,6 +8641,7 @@ pub mod access_key {
             self.access_key_id = Some(input.into());
             self
         }
+        /// <p>The ID for this access key.</p>
         pub fn set_access_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7688,6 +8655,8 @@ pub mod access_key {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the access key. <code>Active</code> means that the key is valid for API
+        /// calls, while <code>Inactive</code> means it is not. </p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::StatusType>) -> Self {
             self.status = input;
             self
@@ -7697,6 +8666,7 @@ pub mod access_key {
             self.secret_access_key = Some(input.into());
             self
         }
+        /// <p>The secret key used to sign requests.</p>
         pub fn set_secret_access_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7705,13 +8675,14 @@ pub mod access_key {
             self
         }
         /// <p>The date when the access key was created.</p>
-        pub fn create_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn create_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.create_date = Some(input);
             self
         }
+        /// <p>The date when the access key was created.</p>
         pub fn set_create_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.create_date = input;
             self

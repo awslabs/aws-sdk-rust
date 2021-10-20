@@ -10,12 +10,20 @@ pub mod batch_meter_usage_input {
         pub(crate) product_code: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `usage_records`.
+        ///
+        /// To override the contents of this collection use [`set_usage_records`](Self::set_usage_records).
+        ///
+        /// <p>The set of UsageRecords to submit. BatchMeterUsage accepts up to 25 UsageRecords at
+        /// a time.</p>
         pub fn usage_records(mut self, input: impl Into<crate::model::UsageRecord>) -> Self {
             let mut v = self.usage_records.unwrap_or_default();
             v.push(input.into());
             self.usage_records = Some(v);
             self
         }
+        /// <p>The set of UsageRecords to submit. BatchMeterUsage accepts up to 25 UsageRecords at
+        /// a time.</p>
         pub fn set_usage_records(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UsageRecord>>,
@@ -30,6 +38,9 @@ pub mod batch_meter_usage_input {
             self.product_code = Some(input.into());
             self
         }
+        /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product
+        /// code should be the same as the one used during the publishing of a new
+        /// product.</p>
         pub fn set_product_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.product_code = input;
             self
@@ -39,7 +50,7 @@ pub mod batch_meter_usage_input {
             self,
         ) -> std::result::Result<
             crate::input::BatchMeterUsageInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::BatchMeterUsageInput {
                 usage_records: self.usage_records,
@@ -59,16 +70,16 @@ impl BatchMeterUsageInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::BatchMeterUsage,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::BatchMeterUsageInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -76,7 +87,7 @@ impl BatchMeterUsageInput {
         fn update_http_builder(
             input: &crate::input::BatchMeterUsageInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -85,32 +96,32 @@ impl BatchMeterUsageInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::BatchMeterUsageInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSMPMeteringService.BatchMeterUsage",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_batch_meter_usage(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -133,15 +144,15 @@ impl BatchMeterUsageInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::BatchMeterUsage::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "BatchMeterUsage",
             "marketplacemetering",
         ));
@@ -150,10 +161,10 @@ impl BatchMeterUsageInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -174,7 +185,7 @@ pub mod meter_usage_input {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) product_code: std::option::Option<std::string::String>,
-        pub(crate) timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) timestamp: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) usage_dimension: std::option::Option<std::string::String>,
         pub(crate) usage_quantity: std::option::Option<i32>,
         pub(crate) dry_run: std::option::Option<bool>,
@@ -189,6 +200,9 @@ pub mod meter_usage_input {
             self.product_code = Some(input.into());
             self
         }
+        /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product
+        /// code should be the same as the one used during the publishing of a new
+        /// product.</p>
         pub fn set_product_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.product_code = input;
             self
@@ -196,11 +210,17 @@ pub mod meter_usage_input {
         /// <p>Timestamp, in UTC, for which the usage is being reported. Your application can
         /// meter usage for up to one hour in the past. Make sure the timestamp value is not before
         /// the start of the software usage.</p>
-        pub fn timestamp(mut self, input: smithy_types::Instant) -> Self {
+        pub fn timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
             self.timestamp = Some(input);
             self
         }
-        pub fn set_timestamp(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>Timestamp, in UTC, for which the usage is being reported. Your application can
+        /// meter usage for up to one hour in the past. Make sure the timestamp value is not before
+        /// the start of the software usage.</p>
+        pub fn set_timestamp(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.timestamp = input;
             self
         }
@@ -210,6 +230,8 @@ pub mod meter_usage_input {
             self.usage_dimension = Some(input.into());
             self
         }
+        /// <p>It will be one of the fcp dimension name provided during the publishing of the
+        /// product.</p>
         pub fn set_usage_dimension(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -223,6 +245,8 @@ pub mod meter_usage_input {
             self.usage_quantity = Some(input);
             self
         }
+        /// <p>Consumption value for the hour. Defaults to <code>0</code> if not
+        /// specified.</p>
         pub fn set_usage_quantity(mut self, input: std::option::Option<i32>) -> Self {
             self.usage_quantity = input;
             self
@@ -235,10 +259,22 @@ pub mod meter_usage_input {
             self.dry_run = Some(input);
             self
         }
+        /// <p>Checks whether you have the permissions required for the action, but does not make
+        /// the request. If you have the permissions, the request returns DryRunOperation;
+        /// otherwise, it returns UnauthorizedException. Defaults to <code>false</code> if not
+        /// specified.</p>
         pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
             self.dry_run = input;
             self
         }
+        /// Appends an item to `usage_allocations`.
+        ///
+        /// To override the contents of this collection use [`set_usage_allocations`](Self::set_usage_allocations).
+        ///
+        /// <p>The set of UsageAllocations to submit.</p>
+        /// <p>The sum of all UsageAllocation quantities must equal the
+        /// UsageQuantity of the MeterUsage request, and each UsageAllocation must have a
+        /// unique set of tags (include no tags).</p>
         pub fn usage_allocations(
             mut self,
             input: impl Into<crate::model::UsageAllocation>,
@@ -248,6 +284,10 @@ pub mod meter_usage_input {
             self.usage_allocations = Some(v);
             self
         }
+        /// <p>The set of UsageAllocations to submit.</p>
+        /// <p>The sum of all UsageAllocation quantities must equal the
+        /// UsageQuantity of the MeterUsage request, and each UsageAllocation must have a
+        /// unique set of tags (include no tags).</p>
         pub fn set_usage_allocations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UsageAllocation>>,
@@ -258,8 +298,10 @@ pub mod meter_usage_input {
         /// Consumes the builder and constructs a [`MeterUsageInput`](crate::input::MeterUsageInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::MeterUsageInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::MeterUsageInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::MeterUsageInput {
                 product_code: self.product_code,
                 timestamp: self.timestamp,
@@ -282,16 +324,16 @@ impl MeterUsageInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::MeterUsage,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::MeterUsageInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -299,7 +341,7 @@ impl MeterUsageInput {
         fn update_http_builder(
             input: &crate::input::MeterUsageInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -308,29 +350,31 @@ impl MeterUsageInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::MeterUsageInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSMPMeteringService.MeterUsage",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_meter_usage(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -353,25 +397,27 @@ impl MeterUsageInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::MeterUsage::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "MeterUsage",
-                    "marketplacemetering",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::MeterUsage::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "MeterUsage",
+            "marketplacemetering",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -403,6 +449,9 @@ pub mod register_usage_input {
             self.product_code = Some(input.into());
             self
         }
+        /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product
+        /// code should be the same as the one used during the publishing of a new
+        /// product.</p>
         pub fn set_product_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.product_code = input;
             self
@@ -412,6 +461,7 @@ pub mod register_usage_input {
             self.public_key_version = Some(input);
             self
         }
+        /// <p>Public Key Version provided by AWS Marketplace</p>
         pub fn set_public_key_version(mut self, input: std::option::Option<i32>) -> Self {
             self.public_key_version = input;
             self
@@ -422,6 +472,8 @@ pub mod register_usage_input {
             self.nonce = Some(input.into());
             self
         }
+        /// <p>(Optional) To scope down the registration to a specific running software instance
+        /// and guard against replay attacks.</p>
         pub fn set_nonce(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.nonce = input;
             self
@@ -429,8 +481,10 @@ pub mod register_usage_input {
         /// Consumes the builder and constructs a [`RegisterUsageInput`](crate::input::RegisterUsageInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::RegisterUsageInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::RegisterUsageInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::RegisterUsageInput {
                 product_code: self.product_code,
                 public_key_version: self.public_key_version,
@@ -450,16 +504,16 @@ impl RegisterUsageInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RegisterUsage,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RegisterUsageInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -467,7 +521,7 @@ impl RegisterUsageInput {
         fn update_http_builder(
             input: &crate::input::RegisterUsageInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -476,29 +530,31 @@ impl RegisterUsageInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RegisterUsageInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSMPMeteringService.RegisterUsage",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_register_usage(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -521,25 +577,27 @@ impl RegisterUsageInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::RegisterUsage::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "RegisterUsage",
-                    "marketplacemetering",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::RegisterUsage::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "RegisterUsage",
+            "marketplacemetering",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -569,6 +627,9 @@ pub mod resolve_customer_input {
             self.registration_token = Some(input.into());
             self
         }
+        /// <p>When a buyer visits your website during the registration process, the buyer submits
+        /// a registration token through the browser. The registration token is resolved to obtain a
+        /// CustomerIdentifier and product code.</p>
         pub fn set_registration_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -581,7 +642,7 @@ pub mod resolve_customer_input {
             self,
         ) -> std::result::Result<
             crate::input::ResolveCustomerInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ResolveCustomerInput {
                 registration_token: self.registration_token,
@@ -600,16 +661,16 @@ impl ResolveCustomerInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ResolveCustomer,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ResolveCustomerInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -617,7 +678,7 @@ impl ResolveCustomerInput {
         fn update_http_builder(
             input: &crate::input::ResolveCustomerInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -626,32 +687,32 @@ impl ResolveCustomerInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ResolveCustomerInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSMPMeteringService.ResolveCustomer",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_resolve_customer(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -674,15 +735,15 @@ impl ResolveCustomerInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ResolveCustomer::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ResolveCustomer",
             "marketplacemetering",
         ));
@@ -691,10 +752,10 @@ impl ResolveCustomerInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -725,6 +786,7 @@ impl std::fmt::Debug for ResolveCustomerInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterUsageInput {
@@ -748,6 +810,7 @@ impl std::fmt::Debug for RegisterUsageInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MeterUsageInput {
@@ -758,7 +821,7 @@ pub struct MeterUsageInput {
     /// <p>Timestamp, in UTC, for which the usage is being reported. Your application can
     /// meter usage for up to one hour in the past. Make sure the timestamp value is not before
     /// the start of the software usage.</p>
-    pub timestamp: std::option::Option<smithy_types::Instant>,
+    pub timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>It will be one of the fcp dimension name provided during the publishing of the
     /// product.</p>
     pub usage_dimension: std::option::Option<std::string::String>,

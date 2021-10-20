@@ -26,12 +26,18 @@ pub mod list_workspaces_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `workspaces`.
+        ///
+        /// To override the contents of this collection use [`set_workspaces`](Self::set_workspaces).
+        ///
+        /// The list of existing workspaces, including those undergoing creation or deletion.
         pub fn workspaces(mut self, input: impl Into<crate::model::WorkspaceSummary>) -> Self {
             let mut v = self.workspaces.unwrap_or_default();
             v.push(input.into());
             self.workspaces = Some(v);
             self
         }
+        /// The list of existing workspaces, including those undergoing creation or deletion.
         pub fn set_workspaces(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::WorkspaceSummary>>,
@@ -44,6 +50,7 @@ pub mod list_workspaces_output {
             self.next_token = Some(input.into());
             self
         }
+        /// Pagination token to use when requesting the next page in this list.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -107,6 +114,7 @@ pub mod create_workspace_output {
             self.workspace_id = Some(input.into());
             self
         }
+        /// The generated ID of the workspace that was just created.
         pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workspace_id = input;
             self
@@ -116,6 +124,7 @@ pub mod create_workspace_output {
             self.arn = Some(input.into());
             self
         }
+        /// The ARN of the workspace that was just created.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -125,6 +134,7 @@ pub mod create_workspace_output {
             self.status = Some(input);
             self
         }
+        /// The status of the workspace that was just created (usually CREATING).
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::WorkspaceStatus>,
@@ -132,6 +142,11 @@ pub mod create_workspace_output {
             self.status = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// The tags of this workspace.
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -142,6 +157,7 @@ pub mod create_workspace_output {
             self.tags = Some(hash_map);
             self
         }
+        /// The tags of this workspace.
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -169,6 +185,7 @@ impl CreateWorkspaceOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteWorkspaceOutput {}
@@ -198,6 +215,7 @@ impl DeleteWorkspaceOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateWorkspaceAliasOutput {}
@@ -255,6 +273,7 @@ pub mod describe_workspace_output {
             self.workspace = Some(input);
             self
         }
+        /// The properties of the selected workspace.
         pub fn set_workspace(
             mut self,
             input: std::option::Option<crate::model::WorkspaceDescription>,
@@ -306,6 +325,11 @@ pub mod list_rule_groups_namespaces_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `rule_groups_namespaces`.
+        ///
+        /// To override the contents of this collection use [`set_rule_groups_namespaces`](Self::set_rule_groups_namespaces).
+        ///
+        /// The list of the selected rule groups namespaces.
         pub fn rule_groups_namespaces(
             mut self,
             input: impl Into<crate::model::RuleGroupsNamespaceSummary>,
@@ -315,6 +339,7 @@ pub mod list_rule_groups_namespaces_output {
             self.rule_groups_namespaces = Some(v);
             self
         }
+        /// The list of the selected rule groups namespaces.
         pub fn set_rule_groups_namespaces(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RuleGroupsNamespaceSummary>>,
@@ -327,6 +352,7 @@ pub mod list_rule_groups_namespaces_output {
             self.next_token = Some(input.into());
             self
         }
+        /// Pagination token to use when requesting the next page in this list.
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -390,6 +416,7 @@ pub mod create_rule_groups_namespace_output {
             self.name = Some(input.into());
             self
         }
+        /// The rule groups namespace name.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -399,6 +426,7 @@ pub mod create_rule_groups_namespace_output {
             self.arn = Some(input.into());
             self
         }
+        /// The Amazon Resource Name (ARN) of this rule groups namespace.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -408,6 +436,7 @@ pub mod create_rule_groups_namespace_output {
             self.status = Some(input);
             self
         }
+        /// The status of rule groups namespace.
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::RuleGroupsNamespaceStatus>,
@@ -415,6 +444,11 @@ pub mod create_rule_groups_namespace_output {
             self.status = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// The tags of this rule groups namespace.
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -425,6 +459,7 @@ pub mod create_rule_groups_namespace_output {
             self.tags = Some(hash_map);
             self
         }
+        /// The tags of this rule groups namespace.
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -452,6 +487,7 @@ impl CreateRuleGroupsNamespaceOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRuleGroupsNamespaceOutput {}
@@ -524,6 +560,7 @@ pub mod put_rule_groups_namespace_output {
             self.name = Some(input.into());
             self
         }
+        /// The rule groups namespace name.
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -533,6 +570,7 @@ pub mod put_rule_groups_namespace_output {
             self.arn = Some(input.into());
             self
         }
+        /// The Amazon Resource Name (ARN) of this rule groups namespace.
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -542,6 +580,7 @@ pub mod put_rule_groups_namespace_output {
             self.status = Some(input);
             self
         }
+        /// The status of rule groups namespace.
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::RuleGroupsNamespaceStatus>,
@@ -549,6 +588,11 @@ pub mod put_rule_groups_namespace_output {
             self.status = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// The tags of this rule groups namespace.
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -559,6 +603,7 @@ pub mod put_rule_groups_namespace_output {
             self.tags = Some(hash_map);
             self
         }
+        /// The tags of this rule groups namespace.
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -618,6 +663,7 @@ pub mod describe_rule_groups_namespace_output {
             self.rule_groups_namespace = Some(input);
             self
         }
+        /// The selected rule groups namespace.
         pub fn set_rule_groups_namespace(
             mut self,
             input: std::option::Option<crate::model::RuleGroupsNamespaceDescription>,
@@ -668,6 +714,7 @@ pub mod create_alert_manager_definition_output {
             self.status = Some(input);
             self
         }
+        /// The status of alert manager definition.
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::AlertManagerDefinitionStatus>,
@@ -690,6 +737,7 @@ impl CreateAlertManagerDefinitionOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAlertManagerDefinitionOutput {}
@@ -747,6 +795,7 @@ pub mod put_alert_manager_definition_output {
             self.status = Some(input);
             self
         }
+        /// The status of alert manager definition.
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::AlertManagerDefinitionStatus>,
@@ -802,6 +851,7 @@ pub mod describe_alert_manager_definition_output {
             self.alert_manager_definition = Some(input);
             self
         }
+        /// The properties of the selected workspace's alert manager definition.
         pub fn set_alert_manager_definition(
             mut self,
             input: std::option::Option<crate::model::AlertManagerDefinitionDescription>,
@@ -824,6 +874,7 @@ impl DescribeAlertManagerDefinitionOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceOutput {}
@@ -853,6 +904,7 @@ impl UntagResourceOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceOutput {}
@@ -882,6 +934,7 @@ impl TagResourceOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceOutput {
@@ -907,6 +960,11 @@ pub mod list_tags_for_resource_output {
         >,
     }
     impl Builder {
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// The list of tags assigned to the resource.
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -917,6 +975,7 @@ pub mod list_tags_for_resource_output {
             self.tags = Some(hash_map);
             self
         }
+        /// The list of tags assigned to the resource.
         pub fn set_tags(
             mut self,
             input: std::option::Option<

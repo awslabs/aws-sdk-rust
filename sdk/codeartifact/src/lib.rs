@@ -6,16 +6,19 @@
 #![allow(clippy::blacklisted_name)]
 #![allow(clippy::vec_init_then_push)]
 #![allow(rustdoc::bare_urls)]
+#![warn(missing_docs)]
 //! <p> AWS CodeArtifact is a fully managed artifact repository compatible with language-native
 //! package managers and build tools such as npm, Apache Maven, and pip. You can use CodeArtifact to
 //! share packages with development teams and pull packages. Packages can be pulled from both
 //! public and CodeArtifact repositories. You can also create an upstream relationship between a CodeArtifact
 //! repository and another repository, which effectively merges their contents from the point of
 //! view of a package manager client. </p>
+//!
 //! <p>
 //! <b>AWS CodeArtifact Components</b>
 //! </p>
 //! <p>Use the information in this guide to help you work with the following CodeArtifact components:</p>
+//!
 //! <ul>
 //! <li>
 //! <p>
@@ -91,6 +94,7 @@
 //! <code>.tgz</code> file or Maven POM and JAR files.</p>
 //! </li>
 //! </ul>
+//!
 //! <p>CodeArtifact supports these operations:</p>
 //! <ul>
 //! <li>
@@ -264,31 +268,39 @@ pub use error_meta::Error;
 pub use config::Config;
 
 mod aws_endpoint;
+/// Client and fluent builders for calling the service.
 #[cfg(feature = "client")]
 pub mod client;
+/// Configuration for the service.
 pub mod config;
+/// Errors that can occur when calling the service.
 pub mod error;
 mod error_meta;
 mod http_serde;
+/// Input structures for operations.
 pub mod input;
 mod json_deser;
 mod json_errors;
 mod json_ser;
+/// Data structures used by operation inputs/outputs.
 pub mod model;
 mod no_credentials;
+/// All operations that this crate can perform.
 pub mod operation;
 mod operation_deser;
 mod operation_ser;
+/// Output structures for operations.
 pub mod output;
+/// Crate version number.
 pub static PKG_VERSION: &str = env!("CARGO_PKG_VERSION");
-pub use smithy_http::byte_stream::ByteStream;
-pub use smithy_http::result::SdkError;
-pub use smithy_types::Blob;
+pub use aws_smithy_http::byte_stream::ByteStream;
+pub use aws_smithy_http::result::SdkError;
+pub use aws_smithy_types::Blob;
 static API_METADATA: aws_http::user_agent::ApiMetadata =
     aws_http::user_agent::ApiMetadata::new("codeartifact", PKG_VERSION);
+pub use aws_smithy_http::endpoint::Endpoint;
+pub use aws_smithy_types::retry::RetryConfig;
 pub use aws_types::region::Region;
 pub use aws_types::Credentials;
 #[cfg(feature = "client")]
 pub use client::Client;
-pub use smithy_http::endpoint::Endpoint;
-pub use smithy_types::retry::RetryConfig;

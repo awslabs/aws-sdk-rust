@@ -246,6 +246,7 @@ pub mod scaling_instruction {
             self.service_namespace = Some(input);
             self
         }
+        /// <p>The namespace of the AWS service.</p>
         pub fn set_service_namespace(
             mut self,
             input: std::option::Option<crate::model::ServiceNamespace>,
@@ -285,6 +286,34 @@ pub mod scaling_instruction {
             self.resource_id = Some(input.into());
             self
         }
+        /// <p>The ID of the resource. This string consists of the resource type and unique
+        /// identifier.</p>
+        /// <ul>
+        /// <li>
+        /// <p>Auto Scaling group - The resource type is <code>autoScalingGroup</code> and the unique identifier is the
+        /// name of the Auto Scaling group. Example: <code>autoScalingGroup/my-asg</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>ECS service - The resource type is <code>service</code> and the unique identifier is the cluster name  
+        /// and service name. Example: <code>service/default/sample-webapp</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
+        /// Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>DynamoDB table - The resource type is <code>table</code> and the unique identifier is the resource ID.
+        /// Example: <code>table/my-table</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is the resource ID.
+        /// Example: <code>table/my-table/index/my-table-index</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>Aurora DB cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name.
+        /// Example: <code>cluster:my-db-cluster</code>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
@@ -328,6 +357,41 @@ pub mod scaling_instruction {
             self.scalable_dimension = Some(input);
             self
         }
+        /// <p>The scalable dimension associated with the resource.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>autoscaling:autoScalingGroup:DesiredCapacity</code> - The desired capacity of an Auto Scaling group.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ecs:service:DesiredCount</code> - The desired task count of an ECS service.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB table.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB table.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>dynamodb:index:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB global secondary index.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB global secondary index.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora PostgreSQL-compatible edition.</p>
+        /// </li>
+        /// </ul>
         pub fn set_scalable_dimension(
             mut self,
             input: std::option::Option<crate::model::ScalableDimension>,
@@ -340,6 +404,7 @@ pub mod scaling_instruction {
             self.min_capacity = Some(input);
             self
         }
+        /// <p>The minimum capacity of the resource. </p>
         pub fn set_min_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.min_capacity = input;
             self
@@ -350,10 +415,18 @@ pub mod scaling_instruction {
             self.max_capacity = Some(input);
             self
         }
+        /// <p>The maximum capacity of the resource. The exception to this upper limit is if you
+        /// specify a non-default setting for <b>PredictiveScalingMaxCapacityBehavior</b>. </p>
         pub fn set_max_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.max_capacity = input;
             self
         }
+        /// Appends an item to `target_tracking_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_target_tracking_configurations`](Self::set_target_tracking_configurations).
+        ///
+        /// <p>The target tracking configurations (up to 10). Each of these structures must specify a
+        /// unique scaling metric and a target value for the metric. </p>
         pub fn target_tracking_configurations(
             mut self,
             input: impl Into<crate::model::TargetTrackingConfiguration>,
@@ -363,6 +436,8 @@ pub mod scaling_instruction {
             self.target_tracking_configurations = Some(v);
             self
         }
+        /// <p>The target tracking configurations (up to 10). Each of these structures must specify a
+        /// unique scaling metric and a target value for the metric. </p>
         pub fn set_target_tracking_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TargetTrackingConfiguration>>,
@@ -379,6 +454,8 @@ pub mod scaling_instruction {
             self.predefined_load_metric_specification = Some(input);
             self
         }
+        /// <p>The predefined load metric to use for predictive scaling. This parameter or a <b>CustomizedLoadMetricSpecification</b> is required when configuring
+        /// predictive scaling, and cannot be used otherwise. </p>
         pub fn set_predefined_load_metric_specification(
             mut self,
             input: std::option::Option<crate::model::PredefinedLoadMetricSpecification>,
@@ -395,6 +472,8 @@ pub mod scaling_instruction {
             self.customized_load_metric_specification = Some(input);
             self
         }
+        /// <p>The customized load metric to use for predictive scaling. This parameter or a <b>PredefinedLoadMetricSpecification</b> is required when configuring
+        /// predictive scaling, and cannot be used otherwise. </p>
         pub fn set_customized_load_metric_specification(
             mut self,
             input: std::option::Option<crate::model::CustomizedLoadMetricSpecification>,
@@ -416,6 +495,16 @@ pub mod scaling_instruction {
             self.scheduled_action_buffer_time = Some(input);
             self
         }
+        /// <p>The amount of time, in seconds, to buffer the run time of scheduled scaling actions when
+        /// scaling out. For example, if the forecast says to add capacity at 10:00 AM, and the buffer
+        /// time is 5 minutes, then the run time of the corresponding scheduled scaling action will be
+        /// 9:55 AM. The intention is to give resources time to be provisioned. For example, it can
+        /// take a few minutes to launch an EC2 instance. The actual amount of time required depends on
+        /// several factors, such as the size of the instance and whether there are startup scripts to
+        /// complete. </p>
+        /// <p>The value must be less than the forecast interval duration of 3600 seconds (60 minutes).
+        /// The default is 300 seconds. </p>
+        /// <p>Only valid when configuring predictive scaling. </p>
         pub fn set_scheduled_action_buffer_time(mut self, input: std::option::Option<i32>) -> Self {
             self.scheduled_action_buffer_time = input;
             self
@@ -453,6 +542,32 @@ pub mod scaling_instruction {
             self.predictive_scaling_max_capacity_behavior = Some(input);
             self
         }
+        /// <p>Defines the behavior that should be applied if the forecast capacity approaches or
+        /// exceeds the maximum capacity specified for the resource. The default value is
+        /// <code>SetForecastCapacityToMaxCapacity</code>.</p>
+        /// <p>The following are possible values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>SetForecastCapacityToMaxCapacity</code> - AWS Auto Scaling cannot scale resource
+        /// capacity higher than the maximum capacity. The maximum capacity is enforced as a hard
+        /// limit. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SetMaxCapacityToForecastCapacity</code> - AWS Auto Scaling may scale resource
+        /// capacity higher than the maximum capacity to equal but not exceed forecast
+        /// capacity.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SetMaxCapacityAboveForecastCapacity</code> - AWS Auto Scaling may scale resource
+        /// capacity higher than the maximum capacity by a specified buffer value. The intention
+        /// is to give the target tracking scaling policy extra capacity if unexpected traffic
+        /// occurs. </p>
+        /// </li>
+        /// </ul>
+        /// <p>Only valid when configuring predictive scaling.</p>
         pub fn set_predictive_scaling_max_capacity_behavior(
             mut self,
             input: std::option::Option<crate::model::PredictiveScalingMaxCapacityBehavior>,
@@ -472,6 +587,14 @@ pub mod scaling_instruction {
             self.predictive_scaling_max_capacity_buffer = Some(input);
             self
         }
+        /// <p>The size of the capacity buffer to use when the forecast capacity is close to or exceeds
+        /// the maximum capacity. The value is specified as a percentage relative to the forecast
+        /// capacity. For example, if the buffer is 10, this means a 10 percent buffer, such that if
+        /// the forecast capacity is 50, and the maximum capacity is 40, then the effective maximum
+        /// capacity is 55.</p>
+        /// <p>Only valid when configuring predictive scaling. Required if the <b>PredictiveScalingMaxCapacityBehavior</b> is set to
+        /// <code>SetMaxCapacityAboveForecastCapacity</code>, and cannot be used otherwise.</p>
+        /// <p>The range is 1-100.</p>
         pub fn set_predictive_scaling_max_capacity_buffer(
             mut self,
             input: std::option::Option<i32>,
@@ -489,6 +612,9 @@ pub mod scaling_instruction {
             self.predictive_scaling_mode = Some(input);
             self
         }
+        /// <p>The predictive scaling mode. The default value is <code>ForecastAndScale</code>.
+        /// Otherwise, AWS Auto Scaling forecasts capacity but does not create any scheduled scaling actions
+        /// based on the capacity forecast. </p>
         pub fn set_predictive_scaling_mode(
             mut self,
             input: std::option::Option<crate::model::PredictiveScalingMode>,
@@ -511,6 +637,14 @@ pub mod scaling_instruction {
             self.scaling_policy_update_behavior = Some(input);
             self
         }
+        /// <p>Controls whether a resource's externally created scaling policies are kept or replaced. </p>
+        /// <p>The default value is <code>KeepExternalPolicies</code>. If the parameter is set to
+        /// <code>ReplaceExternalPolicies</code>, any scaling policies that are external to AWS Auto Scaling
+        /// are deleted and new target tracking scaling policies created. </p>
+        /// <p>Only valid when configuring dynamic scaling. </p>
+        /// <p>Condition: The number of existing policies to be replaced must be less than or equal to
+        /// 50. If there are more than 50 policies to be replaced, AWS Auto Scaling keeps all existing policies
+        /// and does not create new ones.</p>
         pub fn set_scaling_policy_update_behavior(
             mut self,
             input: std::option::Option<crate::model::ScalingPolicyUpdateBehavior>,
@@ -526,6 +660,10 @@ pub mod scaling_instruction {
             self.disable_dynamic_scaling = Some(input);
             self
         }
+        /// <p>Controls whether dynamic scaling by AWS Auto Scaling is disabled. When dynamic scaling is
+        /// enabled, AWS Auto Scaling creates target tracking scaling policies based on the specified target
+        /// tracking configurations. </p>
+        /// <p>The default is enabled (<code>false</code>). </p>
         pub fn set_disable_dynamic_scaling(mut self, input: std::option::Option<bool>) -> Self {
             self.disable_dynamic_scaling = input;
             self
@@ -559,6 +697,7 @@ impl ScalingInstruction {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -570,7 +709,9 @@ impl ScalingInstruction {
     std::hash::Hash,
 )]
 pub enum ScalingPolicyUpdateBehavior {
+    #[allow(missing_docs)] // documentation missing in model
     KeepExternalPolicies,
+    #[allow(missing_docs)] // documentation missing in model
     ReplaceExternalPolicies,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -592,6 +733,7 @@ impl std::str::FromStr for ScalingPolicyUpdateBehavior {
     }
 }
 impl ScalingPolicyUpdateBehavior {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ScalingPolicyUpdateBehavior::KeepExternalPolicies => "KeepExternalPolicies",
@@ -599,6 +741,7 @@ impl ScalingPolicyUpdateBehavior {
             ScalingPolicyUpdateBehavior::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["KeepExternalPolicies", "ReplaceExternalPolicies"]
     }
@@ -609,6 +752,7 @@ impl AsRef<str> for ScalingPolicyUpdateBehavior {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -620,7 +764,9 @@ impl AsRef<str> for ScalingPolicyUpdateBehavior {
     std::hash::Hash,
 )]
 pub enum PredictiveScalingMode {
+    #[allow(missing_docs)] // documentation missing in model
     ForecastAndScale,
+    #[allow(missing_docs)] // documentation missing in model
     ForecastOnly,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -642,6 +788,7 @@ impl std::str::FromStr for PredictiveScalingMode {
     }
 }
 impl PredictiveScalingMode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PredictiveScalingMode::ForecastAndScale => "ForecastAndScale",
@@ -649,6 +796,7 @@ impl PredictiveScalingMode {
             PredictiveScalingMode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ForecastAndScale", "ForecastOnly"]
     }
@@ -659,6 +807,7 @@ impl AsRef<str> for PredictiveScalingMode {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -670,8 +819,11 @@ impl AsRef<str> for PredictiveScalingMode {
     std::hash::Hash,
 )]
 pub enum PredictiveScalingMaxCapacityBehavior {
+    #[allow(missing_docs)] // documentation missing in model
     SetForecastCapacityToMaxCapacity,
+    #[allow(missing_docs)] // documentation missing in model
     SetMaxCapacityAboveForecastCapacity,
+    #[allow(missing_docs)] // documentation missing in model
     SetMaxCapacityToForecastCapacity,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -700,6 +852,7 @@ impl std::str::FromStr for PredictiveScalingMaxCapacityBehavior {
     }
 }
 impl PredictiveScalingMaxCapacityBehavior {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PredictiveScalingMaxCapacityBehavior::SetForecastCapacityToMaxCapacity => {
@@ -714,6 +867,7 @@ impl PredictiveScalingMaxCapacityBehavior {
             PredictiveScalingMaxCapacityBehavior::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "SetForecastCapacityToMaxCapacity",
@@ -797,6 +951,7 @@ pub mod customized_load_metric_specification {
             self.metric_name = Some(input.into());
             self
         }
+        /// <p>The name of the metric.</p>
         pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.metric_name = input;
             self
@@ -806,16 +961,27 @@ pub mod customized_load_metric_specification {
             self.namespace = Some(input.into());
             self
         }
+        /// <p>The namespace of the metric.</p>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.namespace = input;
             self
         }
+        /// Appends an item to `dimensions`.
+        ///
+        /// To override the contents of this collection use [`set_dimensions`](Self::set_dimensions).
+        ///
+        /// <p>The dimensions of the metric.</p>
+        /// <p>Conditional: If you published your metric with dimensions, you must specify the same
+        /// dimensions in your customized load metric specification.</p>
         pub fn dimensions(mut self, input: impl Into<crate::model::MetricDimension>) -> Self {
             let mut v = self.dimensions.unwrap_or_default();
             v.push(input.into());
             self.dimensions = Some(v);
             self
         }
+        /// <p>The dimensions of the metric.</p>
+        /// <p>Conditional: If you published your metric with dimensions, you must specify the same
+        /// dimensions in your customized load metric specification.</p>
         pub fn set_dimensions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MetricDimension>>,
@@ -828,6 +994,7 @@ pub mod customized_load_metric_specification {
             self.statistic = Some(input);
             self
         }
+        /// <p>The statistic of the metric. The only valid value is <code>Sum</code>.</p>
         pub fn set_statistic(
             mut self,
             input: std::option::Option<crate::model::MetricStatistic>,
@@ -840,6 +1007,7 @@ pub mod customized_load_metric_specification {
             self.unit = Some(input.into());
             self
         }
+        /// <p>The unit of the metric.</p>
         pub fn set_unit(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.unit = input;
             self
@@ -863,6 +1031,7 @@ impl CustomizedLoadMetricSpecification {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -874,10 +1043,15 @@ impl CustomizedLoadMetricSpecification {
     std::hash::Hash,
 )]
 pub enum MetricStatistic {
+    #[allow(missing_docs)] // documentation missing in model
     Average,
+    #[allow(missing_docs)] // documentation missing in model
     Maximum,
+    #[allow(missing_docs)] // documentation missing in model
     Minimum,
+    #[allow(missing_docs)] // documentation missing in model
     SampleCount,
+    #[allow(missing_docs)] // documentation missing in model
     Sum,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -902,6 +1076,7 @@ impl std::str::FromStr for MetricStatistic {
     }
 }
 impl MetricStatistic {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MetricStatistic::Average => "Average",
@@ -912,6 +1087,7 @@ impl MetricStatistic {
             MetricStatistic::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Average", "Maximum", "Minimum", "SampleCount", "Sum"]
     }
@@ -954,6 +1130,7 @@ pub mod metric_dimension {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the dimension.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -963,6 +1140,7 @@ pub mod metric_dimension {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value of the dimension.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -1043,6 +1221,7 @@ pub mod predefined_load_metric_specification {
             self.predefined_load_metric_type = Some(input);
             self
         }
+        /// <p>The metric type.</p>
         pub fn set_predefined_load_metric_type(
             mut self,
             input: std::option::Option<crate::model::LoadMetricType>,
@@ -1076,6 +1255,28 @@ pub mod predefined_load_metric_specification {
             self.resource_label = Some(input.into());
             self
         }
+        /// <p>Identifies the resource associated with the metric type. You can't specify a resource
+        /// label unless the metric type is <code>ALBTargetGroupRequestCount</code> and there is a
+        /// target group for an Application Load Balancer attached to the Auto Scaling group.</p>
+        /// <p>You create the resource label by appending the final portion of the load balancer ARN
+        /// and the final portion of the target group ARN into a single value, separated by a forward
+        /// slash (/). The format is
+        /// app/<load-balancer-name>/<load-balancer-id>/targetgroup/<target-group-name>/<target-group-id>,
+        /// where:</p>
+        /// <ul>
+        /// <li>
+        /// <p>app/<load-balancer-name>/<load-balancer-id> is the final portion of
+        /// the load balancer ARN</p>
+        /// </li>
+        /// <li>
+        /// <p>targetgroup/<target-group-name>/<target-group-id> is the final portion
+        /// of the target group ARN.</p>
+        /// </li>
+        /// </ul>
+        /// <p>This is an example:
+        /// app/EC2Co-EcsEl-1TKLTMITMM0EO/f37c06a68c1748aa/targetgroup/EC2Co-Defau-LDNM7Q3ZH1ZN/6d4ea56ca2d6a18d.</p>
+        /// <p>To find the ARN for an Application Load Balancer, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> API operation. To find the ARN for the target group, use
+        /// the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>
         pub fn set_resource_label(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1099,6 +1300,7 @@ impl PredefinedLoadMetricSpecification {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1110,9 +1312,13 @@ impl PredefinedLoadMetricSpecification {
     std::hash::Hash,
 )]
 pub enum LoadMetricType {
+    #[allow(missing_docs)] // documentation missing in model
     AlbTargetGroupRequestCount,
+    #[allow(missing_docs)] // documentation missing in model
     AsgTotalCpuUtilization,
+    #[allow(missing_docs)] // documentation missing in model
     AsgTotalNetworkIn,
+    #[allow(missing_docs)] // documentation missing in model
     AsgTotalNetworkOut,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1136,6 +1342,7 @@ impl std::str::FromStr for LoadMetricType {
     }
 }
 impl LoadMetricType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LoadMetricType::AlbTargetGroupRequestCount => "ALBTargetGroupRequestCount",
@@ -1145,6 +1352,7 @@ impl LoadMetricType {
             LoadMetricType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ALBTargetGroupRequestCount",
@@ -1249,6 +1457,8 @@ pub mod target_tracking_configuration {
             self.predefined_scaling_metric_specification = Some(input);
             self
         }
+        /// <p>A predefined metric. You can specify either a predefined metric or a customized
+        /// metric.</p>
         pub fn set_predefined_scaling_metric_specification(
             mut self,
             input: std::option::Option<crate::model::PredefinedScalingMetricSpecification>,
@@ -1265,6 +1475,8 @@ pub mod target_tracking_configuration {
             self.customized_scaling_metric_specification = Some(input);
             self
         }
+        /// <p>A customized metric. You can specify either a predefined metric or a customized metric.
+        /// </p>
         pub fn set_customized_scaling_metric_specification(
             mut self,
             input: std::option::Option<crate::model::CustomizedScalingMetricSpecification>,
@@ -1279,6 +1491,9 @@ pub mod target_tracking_configuration {
             self.target_value = Some(input);
             self
         }
+        /// <p>The target value for the metric. Although this property accepts numbers of type Double,
+        /// it won't accept values that are either too small or too large. Values must be in the range
+        /// of -2^360 to 2^360.</p>
         pub fn set_target_value(mut self, input: std::option::Option<f64>) -> Self {
             self.target_value = input;
             self
@@ -1292,6 +1507,11 @@ pub mod target_tracking_configuration {
             self.disable_scale_in = Some(input);
             self
         }
+        /// <p>Indicates whether scale in by the target tracking scaling policy is disabled. If the
+        /// value is <code>true</code>, scale in is disabled and the target tracking scaling policy
+        /// doesn't remove capacity from the scalable resource. Otherwise, scale in is enabled and the
+        /// target tracking scaling policy can remove capacity from the scalable resource. </p>
+        /// <p>The default value is <code>false</code>.</p>
         pub fn set_disable_scale_in(mut self, input: std::option::Option<bool>) -> Self {
             self.disable_scale_in = input;
             self
@@ -1308,6 +1528,14 @@ pub mod target_tracking_configuration {
             self.scale_out_cooldown = Some(input);
             self
         }
+        /// <p>The amount of time, in seconds, to wait for a previous scale-out activity to take
+        /// effect. This property is not used if the scalable resource is an Auto Scaling
+        /// group.</p>
+        /// <p>With the <i>scale-out cooldown period</i>, the intention is to continuously
+        /// (but not excessively) scale out. After Auto Scaling successfully scales out using a target
+        /// tracking scaling policy, it starts to calculate the cooldown time. The scaling policy won't
+        /// increase the desired capacity again unless either a larger scale out is triggered or the
+        /// cooldown period ends.</p>
         pub fn set_scale_out_cooldown(mut self, input: std::option::Option<i32>) -> Self {
             self.scale_out_cooldown = input;
             self
@@ -1324,6 +1552,14 @@ pub mod target_tracking_configuration {
             self.scale_in_cooldown = Some(input);
             self
         }
+        /// <p>The amount of time, in seconds, after a scale-in activity completes before another
+        /// scale-in activity can start. This property is not used if the scalable resource is an Auto Scaling
+        /// group.</p>
+        /// <p>With the <i>scale-in cooldown period</i>, the intention is to scale in
+        /// conservatively to protect your application’s availability, so scale-in activities are blocked
+        /// until the cooldown period has expired. However, if another alarm triggers a scale-out activity
+        /// during the scale-in cooldown period, Auto Scaling scales out the target immediately. In this case,
+        /// the scale-in cooldown period stops and doesn't complete.</p>
         pub fn set_scale_in_cooldown(mut self, input: std::option::Option<i32>) -> Self {
             self.scale_in_cooldown = input;
             self
@@ -1334,6 +1570,8 @@ pub mod target_tracking_configuration {
             self.estimated_instance_warmup = Some(input);
             self
         }
+        /// <p>The estimated time, in seconds, until a newly launched instance can contribute to the
+        /// CloudWatch metrics. This value is used only if the resource is an Auto Scaling group.</p>
         pub fn set_estimated_instance_warmup(mut self, input: std::option::Option<i32>) -> Self {
             self.estimated_instance_warmup = input;
             self
@@ -1425,6 +1663,7 @@ pub mod customized_scaling_metric_specification {
             self.metric_name = Some(input.into());
             self
         }
+        /// <p>The name of the metric.</p>
         pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.metric_name = input;
             self
@@ -1434,16 +1673,27 @@ pub mod customized_scaling_metric_specification {
             self.namespace = Some(input.into());
             self
         }
+        /// <p>The namespace of the metric.</p>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.namespace = input;
             self
         }
+        /// Appends an item to `dimensions`.
+        ///
+        /// To override the contents of this collection use [`set_dimensions`](Self::set_dimensions).
+        ///
+        /// <p>The dimensions of the metric.</p>
+        /// <p>Conditional: If you published your metric with dimensions, you must specify the same
+        /// dimensions in your customized scaling metric specification.</p>
         pub fn dimensions(mut self, input: impl Into<crate::model::MetricDimension>) -> Self {
             let mut v = self.dimensions.unwrap_or_default();
             v.push(input.into());
             self.dimensions = Some(v);
             self
         }
+        /// <p>The dimensions of the metric.</p>
+        /// <p>Conditional: If you published your metric with dimensions, you must specify the same
+        /// dimensions in your customized scaling metric specification.</p>
         pub fn set_dimensions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MetricDimension>>,
@@ -1456,6 +1706,7 @@ pub mod customized_scaling_metric_specification {
             self.statistic = Some(input);
             self
         }
+        /// <p>The statistic of the metric.</p>
         pub fn set_statistic(
             mut self,
             input: std::option::Option<crate::model::MetricStatistic>,
@@ -1468,6 +1719,7 @@ pub mod customized_scaling_metric_specification {
             self.unit = Some(input.into());
             self
         }
+        /// <p>The unit of the metric. </p>
         pub fn set_unit(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.unit = input;
             self
@@ -1555,6 +1807,8 @@ pub mod predefined_scaling_metric_specification {
             self.predefined_scaling_metric_type = Some(input);
             self
         }
+        /// <p>The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to
+        /// Auto Scaling groups, Spot Fleet requests, and ECS services.</p>
         pub fn set_predefined_scaling_metric_type(
             mut self,
             input: std::option::Option<crate::model::ScalingMetricType>,
@@ -1589,6 +1843,29 @@ pub mod predefined_scaling_metric_specification {
             self.resource_label = Some(input.into());
             self
         }
+        /// <p>Identifies the resource associated with the metric type. You can't specify a resource
+        /// label unless the metric type is <code>ALBRequestCountPerTarget</code> and there is a target
+        /// group for an Application Load Balancer attached to the Auto Scaling group, Spot Fleet request, or
+        /// ECS service.</p>
+        /// <p>You create the resource label by appending the final portion of the load balancer ARN
+        /// and the final portion of the target group ARN into a single value, separated by a forward
+        /// slash (/). The format is
+        /// app/<load-balancer-name>/<load-balancer-id>/targetgroup/<target-group-name>/<target-group-id>,
+        /// where:</p>
+        /// <ul>
+        /// <li>
+        /// <p>app/<load-balancer-name>/<load-balancer-id> is the final portion of
+        /// the load balancer ARN</p>
+        /// </li>
+        /// <li>
+        /// <p>targetgroup/<target-group-name>/<target-group-id> is the final portion
+        /// of the target group ARN.</p>
+        /// </li>
+        /// </ul>
+        /// <p>This is an example:
+        /// app/EC2Co-EcsEl-1TKLTMITMM0EO/f37c06a68c1748aa/targetgroup/EC2Co-Defau-LDNM7Q3ZH1ZN/6d4ea56ca2d6a18d.</p>
+        /// <p>To find the ARN for an Application Load Balancer, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> API operation. To find the ARN for the target group, use
+        /// the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>
         pub fn set_resource_label(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1612,6 +1889,7 @@ impl PredefinedScalingMetricSpecification {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1623,18 +1901,31 @@ impl PredefinedScalingMetricSpecification {
     std::hash::Hash,
 )]
 pub enum ScalingMetricType {
+    #[allow(missing_docs)] // documentation missing in model
     AlbRequestCountPerTarget,
+    #[allow(missing_docs)] // documentation missing in model
     AsgAverageCpuUtilization,
+    #[allow(missing_docs)] // documentation missing in model
     AsgAverageNetworkIn,
+    #[allow(missing_docs)] // documentation missing in model
     AsgAverageNetworkOut,
+    #[allow(missing_docs)] // documentation missing in model
     DynamoDbReadCapacityUtilization,
+    #[allow(missing_docs)] // documentation missing in model
     DynamoDbWriteCapacityUtilization,
+    #[allow(missing_docs)] // documentation missing in model
     Ec2SpotFleetRequestAverageCpuUtilization,
+    #[allow(missing_docs)] // documentation missing in model
     Ec2SpotFleetRequestAverageNetworkIn,
+    #[allow(missing_docs)] // documentation missing in model
     Ec2SpotFleetRequestAverageNetworkOut,
+    #[allow(missing_docs)] // documentation missing in model
     EcsServiceAverageCpuUtilization,
+    #[allow(missing_docs)] // documentation missing in model
     EcsServiceAverageMemoryUtilization,
+    #[allow(missing_docs)] // documentation missing in model
     RdsReaderAverageCpuUtilization,
+    #[allow(missing_docs)] // documentation missing in model
     RdsReaderAverageDatabaseConnections,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1679,6 +1970,7 @@ impl std::str::FromStr for ScalingMetricType {
     }
 }
 impl ScalingMetricType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ScalingMetricType::AlbRequestCountPerTarget => "ALBRequestCountPerTarget",
@@ -1709,6 +2001,7 @@ impl ScalingMetricType {
             ScalingMetricType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ALBRequestCountPerTarget",
@@ -1733,6 +2026,7 @@ impl AsRef<str> for ScalingMetricType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1744,13 +2038,21 @@ impl AsRef<str> for ScalingMetricType {
     std::hash::Hash,
 )]
 pub enum ScalableDimension {
+    #[allow(missing_docs)] // documentation missing in model
     AutoScalingGroupDesiredCapacity,
+    #[allow(missing_docs)] // documentation missing in model
     DynamoDbIndexReadCapacityUnits,
+    #[allow(missing_docs)] // documentation missing in model
     DynamoDbIndexWriteCapacityUnits,
+    #[allow(missing_docs)] // documentation missing in model
     DynamoDbTableReadCapacityUnits,
+    #[allow(missing_docs)] // documentation missing in model
     DynamoDbTableWriteCapacityUnits,
+    #[allow(missing_docs)] // documentation missing in model
     Ec2SpotFleetRequestTargetCapacity,
+    #[allow(missing_docs)] // documentation missing in model
     EcsServiceDesiredCount,
+    #[allow(missing_docs)] // documentation missing in model
     RdsClusterReadReplicaCount,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1786,6 +2088,7 @@ impl std::str::FromStr for ScalableDimension {
     }
 }
 impl ScalableDimension {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ScalableDimension::AutoScalingGroupDesiredCapacity => {
@@ -1807,6 +2110,7 @@ impl ScalableDimension {
             ScalableDimension::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "autoscaling:autoScalingGroup:DesiredCapacity",
@@ -1826,6 +2130,7 @@ impl AsRef<str> for ScalableDimension {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1837,10 +2142,15 @@ impl AsRef<str> for ScalableDimension {
     std::hash::Hash,
 )]
 pub enum ServiceNamespace {
+    #[allow(missing_docs)] // documentation missing in model
     Autoscaling,
+    #[allow(missing_docs)] // documentation missing in model
     Dynamodb,
+    #[allow(missing_docs)] // documentation missing in model
     Ec2,
+    #[allow(missing_docs)] // documentation missing in model
     Ecs,
+    #[allow(missing_docs)] // documentation missing in model
     Rds,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1865,6 +2175,7 @@ impl std::str::FromStr for ServiceNamespace {
     }
 }
 impl ServiceNamespace {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ServiceNamespace::Autoscaling => "autoscaling",
@@ -1875,6 +2186,7 @@ impl ServiceNamespace {
             ServiceNamespace::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["autoscaling", "dynamodb", "ec2", "ecs", "rds"]
     }
@@ -1917,6 +2229,7 @@ pub mod application_source {
             self.cloud_formation_stack_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of a AWS CloudFormation stack.</p>
         pub fn set_cloud_formation_stack_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1924,12 +2237,18 @@ pub mod application_source {
             self.cloud_formation_stack_arn = input;
             self
         }
+        /// Appends an item to `tag_filters`.
+        ///
+        /// To override the contents of this collection use [`set_tag_filters`](Self::set_tag_filters).
+        ///
+        /// <p>A set of tags (up to 50).</p>
         pub fn tag_filters(mut self, input: impl Into<crate::model::TagFilter>) -> Self {
             let mut v = self.tag_filters.unwrap_or_default();
             v.push(input.into());
             self.tag_filters = Some(v);
             self
         }
+        /// <p>A set of tags (up to 50).</p>
         pub fn set_tag_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TagFilter>>,
@@ -1985,16 +2304,23 @@ pub mod tag_filter {
             self.key = Some(input.into());
             self
         }
+        /// <p>The tag key.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
         }
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>The tag values (0 to 20).</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
+        /// <p>The tag values (0 to 20).</p>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2023,7 +2349,7 @@ impl TagFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Datapoint {
     /// <p>The time stamp for the data point in UTC format.</p>
-    pub timestamp: std::option::Option<smithy_types::Instant>,
+    pub timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The value of the data point.</p>
     pub value: std::option::Option<f64>,
 }
@@ -2041,16 +2367,20 @@ pub mod datapoint {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) timestamp: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) value: std::option::Option<f64>,
     }
     impl Builder {
         /// <p>The time stamp for the data point in UTC format.</p>
-        pub fn timestamp(mut self, input: smithy_types::Instant) -> Self {
+        pub fn timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
             self.timestamp = Some(input);
             self
         }
-        pub fn set_timestamp(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time stamp for the data point in UTC format.</p>
+        pub fn set_timestamp(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.timestamp = input;
             self
         }
@@ -2059,6 +2389,7 @@ pub mod datapoint {
             self.value = Some(input);
             self
         }
+        /// <p>The value of the data point.</p>
         pub fn set_value(mut self, input: std::option::Option<f64>) -> Self {
             self.value = input;
             self
@@ -2079,6 +2410,7 @@ impl Datapoint {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2090,9 +2422,13 @@ impl Datapoint {
     std::hash::Hash,
 )]
 pub enum ForecastDataType {
+    #[allow(missing_docs)] // documentation missing in model
     CapacityForecast,
+    #[allow(missing_docs)] // documentation missing in model
     LoadForecast,
+    #[allow(missing_docs)] // documentation missing in model
     ScheduledActionMaxCapacity,
+    #[allow(missing_docs)] // documentation missing in model
     ScheduledActionMinCapacity,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2116,6 +2452,7 @@ impl std::str::FromStr for ForecastDataType {
     }
 }
 impl ForecastDataType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ForecastDataType::CapacityForecast => "CapacityForecast",
@@ -2125,6 +2462,7 @@ impl ForecastDataType {
             ForecastDataType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CapacityForecast",
@@ -2193,9 +2531,9 @@ pub struct ScalingPlan {
     /// <p>A simple message about the current status of the scaling plan.</p>
     pub status_message: std::option::Option<std::string::String>,
     /// <p>The Unix time stamp when the scaling plan entered the current status.</p>
-    pub status_start_time: std::option::Option<smithy_types::Instant>,
+    pub status_start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The Unix time stamp when the scaling plan was created.</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for ScalingPlan {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2224,8 +2562,8 @@ pub mod scaling_plan {
             std::option::Option<std::vec::Vec<crate::model::ScalingInstruction>>,
         pub(crate) status_code: std::option::Option<crate::model::ScalingPlanStatusCode>,
         pub(crate) status_message: std::option::Option<std::string::String>,
-        pub(crate) status_start_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) status_start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The name of the scaling plan.</p>
@@ -2233,6 +2571,7 @@ pub mod scaling_plan {
             self.scaling_plan_name = Some(input.into());
             self
         }
+        /// <p>The name of the scaling plan.</p>
         pub fn set_scaling_plan_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2245,6 +2584,7 @@ pub mod scaling_plan {
             self.scaling_plan_version = Some(input);
             self
         }
+        /// <p>The version number of the scaling plan.</p>
         pub fn set_scaling_plan_version(mut self, input: std::option::Option<i64>) -> Self {
             self.scaling_plan_version = input;
             self
@@ -2255,6 +2595,8 @@ pub mod scaling_plan {
             self.application_source = Some(input);
             self
         }
+        /// <p>A CloudFormation stack or a set of tags. You can create one scaling plan per application
+        /// source.</p>
         pub fn set_application_source(
             mut self,
             input: std::option::Option<crate::model::ApplicationSource>,
@@ -2262,6 +2604,11 @@ pub mod scaling_plan {
             self.application_source = input;
             self
         }
+        /// Appends an item to `scaling_instructions`.
+        ///
+        /// To override the contents of this collection use [`set_scaling_instructions`](Self::set_scaling_instructions).
+        ///
+        /// <p>The scaling instructions.</p>
         pub fn scaling_instructions(
             mut self,
             input: impl Into<crate::model::ScalingInstruction>,
@@ -2271,6 +2618,7 @@ pub mod scaling_plan {
             self.scaling_instructions = Some(v);
             self
         }
+        /// <p>The scaling instructions.</p>
         pub fn set_scaling_instructions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ScalingInstruction>>,
@@ -2318,6 +2666,42 @@ pub mod scaling_plan {
             self.status_code = Some(input);
             self
         }
+        /// <p>The status of the scaling plan.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Active</code> - The scaling plan is active.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ActiveWithProblems</code> - The scaling plan is active, but the scaling
+        /// configuration for one or more resources could not be applied.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CreationInProgress</code> - The scaling plan is being created.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CreationFailed</code> - The scaling plan could not be created.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DeletionInProgress</code> - The scaling plan is being deleted.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DeletionFailed</code> - The scaling plan could not be deleted.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>UpdateInProgress</code> - The scaling plan is being updated.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>UpdateFailed</code> - The scaling plan could not be updated.</p>
+        /// </li>
+        /// </ul>
         pub fn set_status_code(
             mut self,
             input: std::option::Option<crate::model::ScalingPlanStatusCode>,
@@ -2330,6 +2714,7 @@ pub mod scaling_plan {
             self.status_message = Some(input.into());
             self
         }
+        /// <p>A simple message about the current status of the scaling plan.</p>
         pub fn set_status_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2338,25 +2723,27 @@ pub mod scaling_plan {
             self
         }
         /// <p>The Unix time stamp when the scaling plan entered the current status.</p>
-        pub fn status_start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn status_start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.status_start_time = Some(input);
             self
         }
+        /// <p>The Unix time stamp when the scaling plan entered the current status.</p>
         pub fn set_status_start_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.status_start_time = input;
             self
         }
         /// <p>The Unix time stamp when the scaling plan was created.</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>The Unix time stamp when the scaling plan was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -2383,6 +2770,7 @@ impl ScalingPlan {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2394,13 +2782,21 @@ impl ScalingPlan {
     std::hash::Hash,
 )]
 pub enum ScalingPlanStatusCode {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     ActiveWithProblems,
+    #[allow(missing_docs)] // documentation missing in model
     CreationFailed,
+    #[allow(missing_docs)] // documentation missing in model
     CreationInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     DeletionFailed,
+    #[allow(missing_docs)] // documentation missing in model
     DeletionInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     UpdateFailed,
+    #[allow(missing_docs)] // documentation missing in model
     UpdateInProgress,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2428,6 +2824,7 @@ impl std::str::FromStr for ScalingPlanStatusCode {
     }
 }
 impl ScalingPlanStatusCode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ScalingPlanStatusCode::Active => "Active",
@@ -2441,6 +2838,7 @@ impl ScalingPlanStatusCode {
             ScalingPlanStatusCode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "Active",
@@ -2596,6 +2994,7 @@ pub mod scaling_plan_resource {
             self.scaling_plan_name = Some(input.into());
             self
         }
+        /// <p>The name of the scaling plan.</p>
         pub fn set_scaling_plan_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2608,6 +3007,7 @@ pub mod scaling_plan_resource {
             self.scaling_plan_version = Some(input);
             self
         }
+        /// <p>The version number of the scaling plan.</p>
         pub fn set_scaling_plan_version(mut self, input: std::option::Option<i64>) -> Self {
             self.scaling_plan_version = input;
             self
@@ -2617,6 +3017,7 @@ pub mod scaling_plan_resource {
             self.service_namespace = Some(input);
             self
         }
+        /// <p>The namespace of the AWS service.</p>
         pub fn set_service_namespace(
             mut self,
             input: std::option::Option<crate::model::ServiceNamespace>,
@@ -2656,6 +3057,34 @@ pub mod scaling_plan_resource {
             self.resource_id = Some(input.into());
             self
         }
+        /// <p>The ID of the resource. This string consists of the resource type and unique
+        /// identifier.</p>
+        /// <ul>
+        /// <li>
+        /// <p>Auto Scaling group - The resource type is <code>autoScalingGroup</code> and the unique identifier is the
+        /// name of the Auto Scaling group. Example: <code>autoScalingGroup/my-asg</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>ECS service - The resource type is <code>service</code> and the unique identifier is the cluster name  
+        /// and service name. Example: <code>service/default/sample-webapp</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
+        /// Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>DynamoDB table - The resource type is <code>table</code> and the unique identifier is the resource ID.
+        /// Example: <code>table/my-table</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is the resource ID.
+        /// Example: <code>table/my-table/index/my-table-index</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>Aurora DB cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name.
+        /// Example: <code>cluster:my-db-cluster</code>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
@@ -2699,6 +3128,41 @@ pub mod scaling_plan_resource {
             self.scalable_dimension = Some(input);
             self
         }
+        /// <p>The scalable dimension for the resource.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>autoscaling:autoScalingGroup:DesiredCapacity</code> - The desired capacity of an Auto Scaling group.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ecs:service:DesiredCount</code> - The desired task count of an ECS service.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet request.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB table.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB table.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>dynamodb:index:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB global secondary index.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB global secondary index.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora PostgreSQL-compatible edition.</p>
+        /// </li>
+        /// </ul>
         pub fn set_scalable_dimension(
             mut self,
             input: std::option::Option<crate::model::ScalableDimension>,
@@ -2706,12 +3170,18 @@ pub mod scaling_plan_resource {
             self.scalable_dimension = input;
             self
         }
+        /// Appends an item to `scaling_policies`.
+        ///
+        /// To override the contents of this collection use [`set_scaling_policies`](Self::set_scaling_policies).
+        ///
+        /// <p>The scaling policies.</p>
         pub fn scaling_policies(mut self, input: impl Into<crate::model::ScalingPolicy>) -> Self {
             let mut v = self.scaling_policies.unwrap_or_default();
             v.push(input.into());
             self.scaling_policies = Some(v);
             self
         }
+        /// <p>The scaling policies.</p>
         pub fn set_scaling_policies(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ScalingPolicy>>,
@@ -2742,6 +3212,25 @@ pub mod scaling_plan_resource {
             self.scaling_status_code = Some(input);
             self
         }
+        /// <p>The scaling status of the resource.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Active</code> - The scaling configuration is active.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Inactive</code> - The scaling configuration is not active because the
+        /// scaling plan is being created or the scaling configuration could not be applied.
+        /// Check the status message for more information.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PartiallyActive</code> - The scaling configuration is partially active
+        /// because the scaling plan is being created or deleted or the scaling configuration
+        /// could not be fully applied. Check the status message for more information.</p>
+        /// </li>
+        /// </ul>
         pub fn set_scaling_status_code(
             mut self,
             input: std::option::Option<crate::model::ScalingStatusCode>,
@@ -2754,6 +3243,7 @@ pub mod scaling_plan_resource {
             self.scaling_status_message = Some(input.into());
             self
         }
+        /// <p>A simple message about the current scaling status of the resource.</p>
         pub fn set_scaling_status_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2783,6 +3273,7 @@ impl ScalingPlanResource {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2794,8 +3285,11 @@ impl ScalingPlanResource {
     std::hash::Hash,
 )]
 pub enum ScalingStatusCode {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     Inactive,
+    #[allow(missing_docs)] // documentation missing in model
     PartiallyActive,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2818,6 +3312,7 @@ impl std::str::FromStr for ScalingStatusCode {
     }
 }
 impl ScalingStatusCode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ScalingStatusCode::Active => "Active",
@@ -2826,6 +3321,7 @@ impl ScalingStatusCode {
             ScalingStatusCode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Active", "Inactive", "PartiallyActive"]
     }
@@ -2878,6 +3374,7 @@ pub mod scaling_policy {
             self.policy_name = Some(input.into());
             self
         }
+        /// <p>The name of the scaling policy.</p>
         pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_name = input;
             self
@@ -2887,6 +3384,7 @@ pub mod scaling_policy {
             self.policy_type = Some(input);
             self
         }
+        /// <p>The type of scaling policy.</p>
         pub fn set_policy_type(
             mut self,
             input: std::option::Option<crate::model::PolicyType>,
@@ -2903,6 +3401,8 @@ pub mod scaling_policy {
             self.target_tracking_configuration = Some(input);
             self
         }
+        /// <p>The target tracking scaling policy. Includes support for predefined or customized
+        /// metrics.</p>
         pub fn set_target_tracking_configuration(
             mut self,
             input: std::option::Option<crate::model::TargetTrackingConfiguration>,
@@ -2927,6 +3427,7 @@ impl ScalingPolicy {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2938,6 +3439,7 @@ impl ScalingPolicy {
     std::hash::Hash,
 )]
 pub enum PolicyType {
+    #[allow(missing_docs)] // documentation missing in model
     TargetTrackingScaling,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2958,12 +3460,14 @@ impl std::str::FromStr for PolicyType {
     }
 }
 impl PolicyType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PolicyType::TargetTrackingScaling => "TargetTrackingScaling",
             PolicyType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["TargetTrackingScaling"]
     }

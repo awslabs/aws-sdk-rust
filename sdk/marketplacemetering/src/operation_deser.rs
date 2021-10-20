@@ -20,7 +20,7 @@ pub fn parse_batch_meter_usage_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::disabled_api_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_disabled_api_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::BatchMeterUsageError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_disabled_api_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchMeterUsageError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -38,7 +38,7 @@ pub fn parse_batch_meter_usage_error(
                     let mut output =
                         crate::error::internal_service_error_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_error_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::BatchMeterUsageError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchMeterUsageError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -56,7 +56,7 @@ pub fn parse_batch_meter_usage_error(
                     let mut output =
                         crate::error::invalid_customer_identifier_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_customer_identifier_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::BatchMeterUsageError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_customer_identifier_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchMeterUsageError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -74,7 +74,7 @@ pub fn parse_batch_meter_usage_error(
                     let mut output =
                         crate::error::invalid_product_code_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_product_code_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::BatchMeterUsageError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_product_code_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchMeterUsageError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -91,7 +91,7 @@ pub fn parse_batch_meter_usage_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_tag_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_tag_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::BatchMeterUsageError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_tag_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchMeterUsageError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -109,7 +109,7 @@ pub fn parse_batch_meter_usage_error(
                     let mut output =
                         crate::error::invalid_usage_allocations_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_usage_allocations_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::BatchMeterUsageError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_usage_allocations_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchMeterUsageError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -127,7 +127,7 @@ pub fn parse_batch_meter_usage_error(
                     let mut output =
                         crate::error::invalid_usage_dimension_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_usage_dimension_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::BatchMeterUsageError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_usage_dimension_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchMeterUsageError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -144,7 +144,7 @@ pub fn parse_batch_meter_usage_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::BatchMeterUsageError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchMeterUsageError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -162,7 +162,7 @@ pub fn parse_batch_meter_usage_error(
                     let mut output =
                         crate::error::timestamp_out_of_bounds_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_timestamp_out_of_bounds_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::BatchMeterUsageError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_timestamp_out_of_bounds_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchMeterUsageError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -214,7 +214,7 @@ pub fn parse_meter_usage_error(
                     let mut output =
                         crate::error::customer_not_entitled_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_customer_not_entitled_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::MeterUsageError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_customer_not_entitled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MeterUsageError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -231,7 +231,7 @@ pub fn parse_meter_usage_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::duplicate_request_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_duplicate_request_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::MeterUsageError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_duplicate_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MeterUsageError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -249,7 +249,7 @@ pub fn parse_meter_usage_error(
                     let mut output =
                         crate::error::internal_service_error_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_error_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::MeterUsageError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MeterUsageError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -267,7 +267,7 @@ pub fn parse_meter_usage_error(
                     let mut output =
                         crate::error::invalid_endpoint_region_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_endpoint_region_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::MeterUsageError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_endpoint_region_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MeterUsageError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -285,7 +285,7 @@ pub fn parse_meter_usage_error(
                     let mut output =
                         crate::error::invalid_product_code_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_product_code_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::MeterUsageError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_product_code_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MeterUsageError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -302,7 +302,7 @@ pub fn parse_meter_usage_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_tag_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_tag_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::MeterUsageError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_tag_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MeterUsageError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -320,7 +320,7 @@ pub fn parse_meter_usage_error(
                     let mut output =
                         crate::error::invalid_usage_allocations_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_usage_allocations_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::MeterUsageError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_usage_allocations_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MeterUsageError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -338,7 +338,7 @@ pub fn parse_meter_usage_error(
                     let mut output =
                         crate::error::invalid_usage_dimension_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_usage_dimension_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::MeterUsageError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_usage_dimension_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MeterUsageError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -355,7 +355,7 @@ pub fn parse_meter_usage_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::MeterUsageError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MeterUsageError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -373,7 +373,7 @@ pub fn parse_meter_usage_error(
                     let mut output =
                         crate::error::timestamp_out_of_bounds_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_timestamp_out_of_bounds_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::MeterUsageError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_timestamp_out_of_bounds_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MeterUsageError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -425,7 +425,7 @@ pub fn parse_register_usage_error(
                     let mut output =
                         crate::error::customer_not_entitled_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_customer_not_entitled_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RegisterUsageError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_customer_not_entitled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterUsageError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -442,7 +442,7 @@ pub fn parse_register_usage_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::disabled_api_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_disabled_api_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RegisterUsageError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_disabled_api_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterUsageError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -460,7 +460,7 @@ pub fn parse_register_usage_error(
                     let mut output =
                         crate::error::internal_service_error_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_error_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RegisterUsageError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterUsageError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -478,7 +478,7 @@ pub fn parse_register_usage_error(
                     let mut output =
                         crate::error::invalid_product_code_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_product_code_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RegisterUsageError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_product_code_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterUsageError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -496,7 +496,7 @@ pub fn parse_register_usage_error(
                     let mut output =
                         crate::error::invalid_public_key_version_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_public_key_version_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RegisterUsageError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_public_key_version_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterUsageError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -513,7 +513,7 @@ pub fn parse_register_usage_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_region_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_region_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RegisterUsageError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_region_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterUsageError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -531,7 +531,7 @@ pub fn parse_register_usage_error(
                     let mut output =
                         crate::error::platform_not_supported_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_platform_not_supported_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RegisterUsageError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_platform_not_supported_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterUsageError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -548,7 +548,7 @@ pub fn parse_register_usage_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RegisterUsageError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterUsageError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -599,7 +599,7 @@ pub fn parse_resolve_customer_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::disabled_api_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_disabled_api_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ResolveCustomerError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_disabled_api_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ResolveCustomerError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -616,7 +616,7 @@ pub fn parse_resolve_customer_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::expired_token_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_expired_token_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ResolveCustomerError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_expired_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ResolveCustomerError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -634,7 +634,7 @@ pub fn parse_resolve_customer_error(
                     let mut output =
                         crate::error::internal_service_error_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_error_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ResolveCustomerError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ResolveCustomerError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -651,7 +651,7 @@ pub fn parse_resolve_customer_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_token_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_token_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ResolveCustomerError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ResolveCustomerError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -668,7 +668,7 @@ pub fn parse_resolve_customer_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ResolveCustomerError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ResolveCustomerError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {

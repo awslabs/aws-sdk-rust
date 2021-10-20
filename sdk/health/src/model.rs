@@ -46,6 +46,7 @@ pub mod event_type {
             self.service = Some(input.into());
             self
         }
+        /// <p>The AWS service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
         pub fn set_service(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service = input;
             self
@@ -56,6 +57,8 @@ pub mod event_type {
             self.code = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the event type. The format is <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i>
+        /// </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.</p>
         pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.code = input;
             self
@@ -66,6 +69,8 @@ pub mod event_type {
             self.category = Some(input);
             self
         }
+        /// <p>A list of event type category codes (<code>issue</code>, <code>scheduledChange</code>,
+        /// or <code>accountNotification</code>).</p>
         pub fn set_category(
             mut self,
             input: std::option::Option<crate::model::EventTypeCategory>,
@@ -90,6 +95,7 @@ impl EventType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -101,9 +107,13 @@ impl EventType {
     std::hash::Hash,
 )]
 pub enum EventTypeCategory {
+    #[allow(missing_docs)] // documentation missing in model
     AccountNotification,
+    #[allow(missing_docs)] // documentation missing in model
     Investigation,
+    #[allow(missing_docs)] // documentation missing in model
     Issue,
+    #[allow(missing_docs)] // documentation missing in model
     ScheduledChange,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -127,6 +137,7 @@ impl std::str::FromStr for EventTypeCategory {
     }
 }
 impl EventTypeCategory {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EventTypeCategory::AccountNotification => "accountNotification",
@@ -136,6 +147,7 @@ impl EventTypeCategory {
             EventTypeCategory::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "accountNotification",
@@ -185,12 +197,18 @@ pub mod event_type_filter {
             std::option::Option<std::vec::Vec<crate::model::EventTypeCategory>>,
     }
     impl Builder {
+        /// Appends an item to `event_type_codes`.
+        ///
+        /// To override the contents of this collection use [`set_event_type_codes`](Self::set_event_type_codes).
+        ///
+        /// <p>A list of event type codes.</p>
         pub fn event_type_codes(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.event_type_codes.unwrap_or_default();
             v.push(input.into());
             self.event_type_codes = Some(v);
             self
         }
+        /// <p>A list of event type codes.</p>
         pub fn set_event_type_codes(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -198,12 +216,18 @@ pub mod event_type_filter {
             self.event_type_codes = input;
             self
         }
+        /// Appends an item to `services`.
+        ///
+        /// To override the contents of this collection use [`set_services`](Self::set_services).
+        ///
+        /// <p>The AWS services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
         pub fn services(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.services.unwrap_or_default();
             v.push(input.into());
             self.services = Some(v);
             self
         }
+        /// <p>The AWS services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
         pub fn set_services(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -211,6 +235,12 @@ pub mod event_type_filter {
             self.services = input;
             self
         }
+        /// Appends an item to `event_type_categories`.
+        ///
+        /// To override the contents of this collection use [`set_event_type_categories`](Self::set_event_type_categories).
+        ///
+        /// <p>A list of event type category codes (<code>issue</code>, <code>scheduledChange</code>,
+        /// or <code>accountNotification</code>).</p>
         pub fn event_type_categories(
             mut self,
             input: impl Into<crate::model::EventTypeCategory>,
@@ -220,6 +250,8 @@ pub mod event_type_filter {
             self.event_type_categories = Some(v);
             self
         }
+        /// <p>A list of event type category codes (<code>issue</code>, <code>scheduledChange</code>,
+        /// or <code>accountNotification</code>).</p>
         pub fn set_event_type_categories(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EventTypeCategory>>,
@@ -288,11 +320,11 @@ pub struct OrganizationEvent {
     /// <p>The AWS Region name of the event.</p>
     pub region: std::option::Option<std::string::String>,
     /// <p>The date and time that the event began.</p>
-    pub start_time: std::option::Option<smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time that the event ended.</p>
-    pub end_time: std::option::Option<smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The most recent date and time that the event was updated.</p>
-    pub last_updated_time: std::option::Option<smithy_types::Instant>,
+    pub last_updated_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The most recent status of the event. Possible values are <code>open</code>,
     /// <code>closed</code>, and <code>upcoming</code>.</p>
     pub status_code: std::option::Option<crate::model::EventStatusCode>,
@@ -325,9 +357,9 @@ pub mod organization_event {
         pub(crate) event_type_category: std::option::Option<crate::model::EventTypeCategory>,
         pub(crate) event_scope_code: std::option::Option<crate::model::EventScopeCode>,
         pub(crate) region: std::option::Option<std::string::String>,
-        pub(crate) start_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_updated_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) status_code: std::option::Option<crate::model::EventStatusCode>,
     }
     impl Builder {
@@ -343,6 +375,14 @@ pub mod organization_event {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the event. The event ARN has the
+        /// <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i>
+        /// </code>
+        /// format.</p>
+        /// <p>For example, an event ARN might look like the following:</p>
+        /// <p>
+        /// <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
+        /// </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -352,6 +392,7 @@ pub mod organization_event {
             self.service = Some(input.into());
             self
         }
+        /// <p>The AWS service that is affected by the event, such as EC2 and RDS.</p>
         pub fn set_service(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service = input;
             self
@@ -363,6 +404,9 @@ pub mod organization_event {
             self.event_type_code = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the event type. The format is
+        /// <code>AWS_SERVICE_DESCRIPTION</code>. For example,
+        /// <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.</p>
         pub fn set_event_type_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -375,6 +419,7 @@ pub mod organization_event {
             self.event_type_category = Some(input);
             self
         }
+        /// <p>The category of the event type.</p>
         pub fn set_event_type_category(
             mut self,
             input: std::option::Option<crate::model::EventTypeCategory>,
@@ -405,6 +450,25 @@ pub mod organization_event {
             self.event_scope_code = Some(input);
             self
         }
+        /// <p>This parameter specifies if the AWS Health event is a public AWS service event or an account-specific event.</p>
+        /// <ul>
+        /// <li>
+        /// <p>If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the
+        /// <code>affectedAccounts</code> value is always empty.</p>
+        /// </li>
+        /// <li>
+        /// <p>If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then
+        /// the <code>affectedAccounts</code> value lists the affected AWS accounts in your
+        /// organization. For example, if an event affects a service such as Amazon Elastic Compute Cloud and you
+        /// have AWS accounts that use that service, those account IDs appear in the
+        /// response.</p>
+        /// </li>
+        /// <li>
+        /// <p>If the <code>eventScopeCode</code> value is <code>NONE</code>, then the
+        /// <code>eventArn</code> that you specified in the request is invalid or doesn't
+        /// exist.</p>
+        /// </li>
+        /// </ul>
         pub fn set_event_scope_code(
             mut self,
             input: std::option::Option<crate::model::EventScopeCode>,
@@ -417,36 +481,46 @@ pub mod organization_event {
             self.region = Some(input.into());
             self
         }
+        /// <p>The AWS Region name of the event.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
         }
         /// <p>The date and time that the event began.</p>
-        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date and time that the event began.</p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The date and time that the event ended.</p>
-        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date and time that the event ended.</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.end_time = input;
             self
         }
         /// <p>The most recent date and time that the event was updated.</p>
-        pub fn last_updated_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_updated_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_updated_time = Some(input);
             self
         }
+        /// <p>The most recent date and time that the event was updated.</p>
         pub fn set_last_updated_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_updated_time = input;
             self
@@ -457,6 +531,8 @@ pub mod organization_event {
             self.status_code = Some(input);
             self
         }
+        /// <p>The most recent status of the event. Possible values are <code>open</code>,
+        /// <code>closed</code>, and <code>upcoming</code>.</p>
         pub fn set_status_code(
             mut self,
             input: std::option::Option<crate::model::EventStatusCode>,
@@ -488,6 +564,7 @@ impl OrganizationEvent {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -499,8 +576,11 @@ impl OrganizationEvent {
     std::hash::Hash,
 )]
 pub enum EventStatusCode {
+    #[allow(missing_docs)] // documentation missing in model
     Closed,
+    #[allow(missing_docs)] // documentation missing in model
     Open,
+    #[allow(missing_docs)] // documentation missing in model
     Upcoming,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -523,6 +603,7 @@ impl std::str::FromStr for EventStatusCode {
     }
 }
 impl EventStatusCode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EventStatusCode::Closed => "closed",
@@ -531,6 +612,7 @@ impl EventStatusCode {
             EventStatusCode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["closed", "open", "upcoming"]
     }
@@ -541,6 +623,7 @@ impl AsRef<str> for EventStatusCode {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -552,8 +635,11 @@ impl AsRef<str> for EventStatusCode {
     std::hash::Hash,
 )]
 pub enum EventScopeCode {
+    #[allow(missing_docs)] // documentation missing in model
     AccountSpecific,
+    #[allow(missing_docs)] // documentation missing in model
     None,
+    #[allow(missing_docs)] // documentation missing in model
     Public,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -576,6 +662,7 @@ impl std::str::FromStr for EventScopeCode {
     }
 }
 impl EventScopeCode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EventScopeCode::AccountSpecific => "ACCOUNT_SPECIFIC",
@@ -584,6 +671,7 @@ impl EventScopeCode {
             EventScopeCode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ACCOUNT_SPECIFIC", "NONE", "PUBLIC"]
     }
@@ -678,12 +766,20 @@ pub mod organization_event_filter {
             std::option::Option<std::vec::Vec<crate::model::EventStatusCode>>,
     }
     impl Builder {
+        /// Appends an item to `event_type_codes`.
+        ///
+        /// To override the contents of this collection use [`set_event_type_codes`](Self::set_event_type_codes).
+        ///
+        /// <p>A list of unique identifiers for event types. For example, <code>"AWS_EC2_SYSTEM_MAINTENANCE_EVENT","AWS_RDS_MAINTENANCE_SCHEDULED".</code>
+        /// </p>
         pub fn event_type_codes(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.event_type_codes.unwrap_or_default();
             v.push(input.into());
             self.event_type_codes = Some(v);
             self
         }
+        /// <p>A list of unique identifiers for event types. For example, <code>"AWS_EC2_SYSTEM_MAINTENANCE_EVENT","AWS_RDS_MAINTENANCE_SCHEDULED".</code>
+        /// </p>
         pub fn set_event_type_codes(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -691,12 +787,18 @@ pub mod organization_event_filter {
             self.event_type_codes = input;
             self
         }
+        /// Appends an item to `aws_account_ids`.
+        ///
+        /// To override the contents of this collection use [`set_aws_account_ids`](Self::set_aws_account_ids).
+        ///
+        /// <p>A list of 12-digit AWS account numbers that contains the affected entities.</p>
         pub fn aws_account_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.aws_account_ids.unwrap_or_default();
             v.push(input.into());
             self.aws_account_ids = Some(v);
             self
         }
+        /// <p>A list of 12-digit AWS account numbers that contains the affected entities.</p>
         pub fn set_aws_account_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -704,12 +806,18 @@ pub mod organization_event_filter {
             self.aws_account_ids = input;
             self
         }
+        /// Appends an item to `services`.
+        ///
+        /// To override the contents of this collection use [`set_services`](Self::set_services).
+        ///
+        /// <p>The AWS services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
         pub fn services(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.services.unwrap_or_default();
             v.push(input.into());
             self.services = Some(v);
             self
         }
+        /// <p>The AWS services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
         pub fn set_services(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -717,12 +825,18 @@ pub mod organization_event_filter {
             self.services = input;
             self
         }
+        /// Appends an item to `regions`.
+        ///
+        /// To override the contents of this collection use [`set_regions`](Self::set_regions).
+        ///
+        /// <p>A list of AWS Regions.</p>
         pub fn regions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.regions.unwrap_or_default();
             v.push(input.into());
             self.regions = Some(v);
             self
         }
+        /// <p>A list of AWS Regions.</p>
         pub fn set_regions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -741,6 +855,13 @@ pub mod organization_event_filter {
             self.start_time = Some(input);
             self
         }
+        /// <p>A range of dates and times that is used by the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EventFilter.html">EventFilter</a> and <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EntityFilter.html">EntityFilter</a> objects. If <code>from</code> is set and <code>to</code> is set:
+        /// match items where the timestamp (<code>startTime</code>, <code>endTime</code>, or
+        /// <code>lastUpdatedTime</code>) is between <code>from</code> and <code>to</code>
+        /// inclusive. If <code>from</code> is set and <code>to</code> is not set: match items where
+        /// the timestamp value is equal to or after <code>from</code>. If <code>from</code> is not set
+        /// and <code>to</code> is set: match items where the timestamp value is equal to or before
+        /// <code>to</code>.</p>
         pub fn set_start_time(
             mut self,
             input: std::option::Option<crate::model::DateTimeRange>,
@@ -759,6 +880,13 @@ pub mod organization_event_filter {
             self.end_time = Some(input);
             self
         }
+        /// <p>A range of dates and times that is used by the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EventFilter.html">EventFilter</a> and <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EntityFilter.html">EntityFilter</a> objects. If <code>from</code> is set and <code>to</code> is set:
+        /// match items where the timestamp (<code>startTime</code>, <code>endTime</code>, or
+        /// <code>lastUpdatedTime</code>) is between <code>from</code> and <code>to</code>
+        /// inclusive. If <code>from</code> is set and <code>to</code> is not set: match items where
+        /// the timestamp value is equal to or after <code>from</code>. If <code>from</code> is not set
+        /// and <code>to</code> is set: match items where the timestamp value is equal to or before
+        /// <code>to</code>.</p>
         pub fn set_end_time(
             mut self,
             input: std::option::Option<crate::model::DateTimeRange>,
@@ -777,6 +905,13 @@ pub mod organization_event_filter {
             self.last_updated_time = Some(input);
             self
         }
+        /// <p>A range of dates and times that is used by the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EventFilter.html">EventFilter</a> and <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EntityFilter.html">EntityFilter</a> objects. If <code>from</code> is set and <code>to</code> is set:
+        /// match items where the timestamp (<code>startTime</code>, <code>endTime</code>, or
+        /// <code>lastUpdatedTime</code>) is between <code>from</code> and <code>to</code>
+        /// inclusive. If <code>from</code> is set and <code>to</code> is not set: match items where
+        /// the timestamp value is equal to or after <code>from</code>. If <code>from</code> is not set
+        /// and <code>to</code> is set: match items where the timestamp value is equal to or before
+        /// <code>to</code>.</p>
         pub fn set_last_updated_time(
             mut self,
             input: std::option::Option<crate::model::DateTimeRange>,
@@ -784,12 +919,18 @@ pub mod organization_event_filter {
             self.last_updated_time = input;
             self
         }
+        /// Appends an item to `entity_arns`.
+        ///
+        /// To override the contents of this collection use [`set_entity_arns`](Self::set_entity_arns).
+        ///
+        /// <p>A list of entity ARNs (unique identifiers).</p>
         pub fn entity_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.entity_arns.unwrap_or_default();
             v.push(input.into());
             self.entity_arns = Some(v);
             self
         }
+        /// <p>A list of entity ARNs (unique identifiers).</p>
         pub fn set_entity_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -797,12 +938,18 @@ pub mod organization_event_filter {
             self.entity_arns = input;
             self
         }
+        /// Appends an item to `entity_values`.
+        ///
+        /// To override the contents of this collection use [`set_entity_values`](Self::set_entity_values).
+        ///
+        /// <p>A list of entity identifiers, such as EC2 instance IDs (i-34ab692e) or EBS volumes (vol-426ab23e).</p>
         pub fn entity_values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.entity_values.unwrap_or_default();
             v.push(input.into());
             self.entity_values = Some(v);
             self
         }
+        /// <p>A list of entity identifiers, such as EC2 instance IDs (i-34ab692e) or EBS volumes (vol-426ab23e).</p>
         pub fn set_entity_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -810,6 +957,11 @@ pub mod organization_event_filter {
             self.entity_values = input;
             self
         }
+        /// Appends an item to `event_type_categories`.
+        ///
+        /// To override the contents of this collection use [`set_event_type_categories`](Self::set_event_type_categories).
+        ///
+        /// <p>A list of event type category codes (issue, scheduledChange, or accountNotification).</p>
         pub fn event_type_categories(
             mut self,
             input: impl Into<crate::model::EventTypeCategory>,
@@ -819,6 +971,7 @@ pub mod organization_event_filter {
             self.event_type_categories = Some(v);
             self
         }
+        /// <p>A list of event type category codes (issue, scheduledChange, or accountNotification).</p>
         pub fn set_event_type_categories(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EventTypeCategory>>,
@@ -826,6 +979,11 @@ pub mod organization_event_filter {
             self.event_type_categories = input;
             self
         }
+        /// Appends an item to `event_status_codes`.
+        ///
+        /// To override the contents of this collection use [`set_event_status_codes`](Self::set_event_status_codes).
+        ///
+        /// <p>A list of event status codes.</p>
         pub fn event_status_codes(
             mut self,
             input: impl Into<crate::model::EventStatusCode>,
@@ -835,6 +993,7 @@ pub mod organization_event_filter {
             self.event_status_codes = Some(v);
             self
         }
+        /// <p>A list of event status codes.</p>
         pub fn set_event_status_codes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EventStatusCode>>,
@@ -878,9 +1037,9 @@ impl OrganizationEventFilter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DateTimeRange {
     /// <p>The starting date and time of a time range.</p>
-    pub from: std::option::Option<smithy_types::Instant>,
+    pub from: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The ending date and time of a time range.</p>
-    pub to: std::option::Option<smithy_types::Instant>,
+    pub to: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for DateTimeRange {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -896,25 +1055,27 @@ pub mod date_time_range {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) from: std::option::Option<smithy_types::Instant>,
-        pub(crate) to: std::option::Option<smithy_types::Instant>,
+        pub(crate) from: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) to: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The starting date and time of a time range.</p>
-        pub fn from(mut self, input: smithy_types::Instant) -> Self {
+        pub fn from(mut self, input: aws_smithy_types::Instant) -> Self {
             self.from = Some(input);
             self
         }
-        pub fn set_from(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The starting date and time of a time range.</p>
+        pub fn set_from(mut self, input: std::option::Option<aws_smithy_types::Instant>) -> Self {
             self.from = input;
             self
         }
         /// <p>The ending date and time of a time range.</p>
-        pub fn to(mut self, input: smithy_types::Instant) -> Self {
+        pub fn to(mut self, input: aws_smithy_types::Instant) -> Self {
             self.to = Some(input);
             self
         }
-        pub fn set_to(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The ending date and time of a time range.</p>
+        pub fn set_to(mut self, input: std::option::Option<aws_smithy_types::Instant>) -> Self {
             self.to = input;
             self
         }
@@ -979,11 +1140,11 @@ pub struct Event {
     /// <p>The AWS Availability Zone of the event. For example, us-east-1a.</p>
     pub availability_zone: std::option::Option<std::string::String>,
     /// <p>The date and time that the event began.</p>
-    pub start_time: std::option::Option<smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time that the event ended.</p>
-    pub end_time: std::option::Option<smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The most recent date and time that the event was updated.</p>
-    pub last_updated_time: std::option::Option<smithy_types::Instant>,
+    pub last_updated_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The most recent status of the event. Possible values are <code>open</code>,
     /// <code>closed</code>, and <code>upcoming</code>.</p>
     pub status_code: std::option::Option<crate::model::EventStatusCode>,
@@ -1037,9 +1198,9 @@ pub mod event {
         pub(crate) event_type_category: std::option::Option<crate::model::EventTypeCategory>,
         pub(crate) region: std::option::Option<std::string::String>,
         pub(crate) availability_zone: std::option::Option<std::string::String>,
-        pub(crate) start_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_updated_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) status_code: std::option::Option<crate::model::EventStatusCode>,
         pub(crate) event_scope_code: std::option::Option<crate::model::EventScopeCode>,
     }
@@ -1056,6 +1217,14 @@ pub mod event {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the event. The event ARN has the
+        /// <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i>
+        /// </code>
+        /// format.</p>
+        /// <p>For example, an event ARN might look like the following:</p>
+        /// <p>
+        /// <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
+        /// </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -1065,6 +1234,7 @@ pub mod event {
             self.service = Some(input.into());
             self
         }
+        /// <p>The AWS service that is affected by the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
         pub fn set_service(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service = input;
             self
@@ -1075,6 +1245,8 @@ pub mod event {
             self.event_type_code = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the event type. The format is <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i>
+        /// </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.</p>
         pub fn set_event_type_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1088,6 +1260,8 @@ pub mod event {
             self.event_type_category = Some(input);
             self
         }
+        /// <p>The category of the event. Possible values are <code>issue</code>,
+        /// <code>scheduledChange</code>, and <code>accountNotification</code>.</p>
         pub fn set_event_type_category(
             mut self,
             input: std::option::Option<crate::model::EventTypeCategory>,
@@ -1100,6 +1274,7 @@ pub mod event {
             self.region = Some(input.into());
             self
         }
+        /// <p>The AWS Region name of the event.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
@@ -1109,6 +1284,7 @@ pub mod event {
             self.availability_zone = Some(input.into());
             self
         }
+        /// <p>The AWS Availability Zone of the event. For example, us-east-1a.</p>
         pub fn set_availability_zone(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1117,31 +1293,40 @@ pub mod event {
             self
         }
         /// <p>The date and time that the event began.</p>
-        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date and time that the event began.</p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The date and time that the event ended.</p>
-        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date and time that the event ended.</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.end_time = input;
             self
         }
         /// <p>The most recent date and time that the event was updated.</p>
-        pub fn last_updated_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_updated_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_updated_time = Some(input);
             self
         }
+        /// <p>The most recent date and time that the event was updated.</p>
         pub fn set_last_updated_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_updated_time = input;
             self
@@ -1152,6 +1337,8 @@ pub mod event {
             self.status_code = Some(input);
             self
         }
+        /// <p>The most recent status of the event. Possible values are <code>open</code>,
+        /// <code>closed</code>, and <code>upcoming</code>.</p>
         pub fn set_status_code(
             mut self,
             input: std::option::Option<crate::model::EventStatusCode>,
@@ -1182,6 +1369,25 @@ pub mod event {
             self.event_scope_code = Some(input);
             self
         }
+        /// <p>This parameter specifies if the AWS Health event is a public AWS service event or an account-specific event.</p>
+        /// <ul>
+        /// <li>
+        /// <p>If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the
+        /// <code>affectedAccounts</code> value is always empty.</p>
+        /// </li>
+        /// <li>
+        /// <p>If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then
+        /// the <code>affectedAccounts</code> value lists the affected AWS accounts in your
+        /// organization. For example, if an event affects a service such as Amazon Elastic Compute Cloud and you
+        /// have AWS accounts that use that service, those account IDs appear in the
+        /// response.</p>
+        /// </li>
+        /// <li>
+        /// <p>If the <code>eventScopeCode</code> value is <code>NONE</code>, then the
+        /// <code>eventArn</code> that you specified in the request is invalid or doesn't
+        /// exist.</p>
+        /// </li>
+        /// </ul>
         pub fn set_event_scope_code(
             mut self,
             input: std::option::Option<crate::model::EventScopeCode>,
@@ -1300,12 +1506,20 @@ pub mod event_filter {
             std::option::Option<std::vec::Vec<crate::model::EventStatusCode>>,
     }
     impl Builder {
+        /// Appends an item to `event_arns`.
+        ///
+        /// To override the contents of this collection use [`set_event_arns`](Self::set_event_arns).
+        ///
+        /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code>
+        /// </p>
         pub fn event_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.event_arns.unwrap_or_default();
             v.push(input.into());
             self.event_arns = Some(v);
             self
         }
+        /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code>
+        /// </p>
         pub fn set_event_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1313,12 +1527,20 @@ pub mod event_filter {
             self.event_arns = input;
             self
         }
+        /// Appends an item to `event_type_codes`.
+        ///
+        /// To override the contents of this collection use [`set_event_type_codes`](Self::set_event_type_codes).
+        ///
+        /// <p>A list of unique identifiers for event types. For example, <code>"AWS_EC2_SYSTEM_MAINTENANCE_EVENT","AWS_RDS_MAINTENANCE_SCHEDULED".</code>
+        /// </p>
         pub fn event_type_codes(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.event_type_codes.unwrap_or_default();
             v.push(input.into());
             self.event_type_codes = Some(v);
             self
         }
+        /// <p>A list of unique identifiers for event types. For example, <code>"AWS_EC2_SYSTEM_MAINTENANCE_EVENT","AWS_RDS_MAINTENANCE_SCHEDULED".</code>
+        /// </p>
         pub fn set_event_type_codes(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1326,12 +1548,18 @@ pub mod event_filter {
             self.event_type_codes = input;
             self
         }
+        /// Appends an item to `services`.
+        ///
+        /// To override the contents of this collection use [`set_services`](Self::set_services).
+        ///
+        /// <p>The AWS services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
         pub fn services(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.services.unwrap_or_default();
             v.push(input.into());
             self.services = Some(v);
             self
         }
+        /// <p>The AWS services associated with the event. For example, <code>EC2</code>, <code>RDS</code>.</p>
         pub fn set_services(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1339,12 +1567,18 @@ pub mod event_filter {
             self.services = input;
             self
         }
+        /// Appends an item to `regions`.
+        ///
+        /// To override the contents of this collection use [`set_regions`](Self::set_regions).
+        ///
+        /// <p>A list of AWS Regions.</p>
         pub fn regions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.regions.unwrap_or_default();
             v.push(input.into());
             self.regions = Some(v);
             self
         }
+        /// <p>A list of AWS Regions.</p>
         pub fn set_regions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1352,12 +1586,18 @@ pub mod event_filter {
             self.regions = input;
             self
         }
+        /// Appends an item to `availability_zones`.
+        ///
+        /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
+        ///
+        /// <p>A list of AWS Availability Zones.</p>
         pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.availability_zones.unwrap_or_default();
             v.push(input.into());
             self.availability_zones = Some(v);
             self
         }
+        /// <p>A list of AWS Availability Zones.</p>
         pub fn set_availability_zones(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1365,12 +1605,18 @@ pub mod event_filter {
             self.availability_zones = input;
             self
         }
+        /// Appends an item to `start_times`.
+        ///
+        /// To override the contents of this collection use [`set_start_times`](Self::set_start_times).
+        ///
+        /// <p>A list of dates and times that the event began.</p>
         pub fn start_times(mut self, input: impl Into<crate::model::DateTimeRange>) -> Self {
             let mut v = self.start_times.unwrap_or_default();
             v.push(input.into());
             self.start_times = Some(v);
             self
         }
+        /// <p>A list of dates and times that the event began.</p>
         pub fn set_start_times(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DateTimeRange>>,
@@ -1378,12 +1624,18 @@ pub mod event_filter {
             self.start_times = input;
             self
         }
+        /// Appends an item to `end_times`.
+        ///
+        /// To override the contents of this collection use [`set_end_times`](Self::set_end_times).
+        ///
+        /// <p>A list of dates and times that the event ended.</p>
         pub fn end_times(mut self, input: impl Into<crate::model::DateTimeRange>) -> Self {
             let mut v = self.end_times.unwrap_or_default();
             v.push(input.into());
             self.end_times = Some(v);
             self
         }
+        /// <p>A list of dates and times that the event ended.</p>
         pub fn set_end_times(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DateTimeRange>>,
@@ -1391,12 +1643,18 @@ pub mod event_filter {
             self.end_times = input;
             self
         }
+        /// Appends an item to `last_updated_times`.
+        ///
+        /// To override the contents of this collection use [`set_last_updated_times`](Self::set_last_updated_times).
+        ///
+        /// <p>A list of dates and times that the event was last updated.</p>
         pub fn last_updated_times(mut self, input: impl Into<crate::model::DateTimeRange>) -> Self {
             let mut v = self.last_updated_times.unwrap_or_default();
             v.push(input.into());
             self.last_updated_times = Some(v);
             self
         }
+        /// <p>A list of dates and times that the event was last updated.</p>
         pub fn set_last_updated_times(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DateTimeRange>>,
@@ -1404,12 +1662,18 @@ pub mod event_filter {
             self.last_updated_times = input;
             self
         }
+        /// Appends an item to `entity_arns`.
+        ///
+        /// To override the contents of this collection use [`set_entity_arns`](Self::set_entity_arns).
+        ///
+        /// <p>A list of entity ARNs (unique identifiers).</p>
         pub fn entity_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.entity_arns.unwrap_or_default();
             v.push(input.into());
             self.entity_arns = Some(v);
             self
         }
+        /// <p>A list of entity ARNs (unique identifiers).</p>
         pub fn set_entity_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1417,12 +1681,20 @@ pub mod event_filter {
             self.entity_arns = input;
             self
         }
+        /// Appends an item to `entity_values`.
+        ///
+        /// To override the contents of this collection use [`set_entity_values`](Self::set_entity_values).
+        ///
+        /// <p>A list of entity identifiers, such as EC2 instance IDs (<code>i-34ab692e</code>) or EBS
+        /// volumes (<code>vol-426ab23e</code>).</p>
         pub fn entity_values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.entity_values.unwrap_or_default();
             v.push(input.into());
             self.entity_values = Some(v);
             self
         }
+        /// <p>A list of entity identifiers, such as EC2 instance IDs (<code>i-34ab692e</code>) or EBS
+        /// volumes (<code>vol-426ab23e</code>).</p>
         pub fn set_entity_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1430,6 +1702,12 @@ pub mod event_filter {
             self.entity_values = input;
             self
         }
+        /// Appends an item to `event_type_categories`.
+        ///
+        /// To override the contents of this collection use [`set_event_type_categories`](Self::set_event_type_categories).
+        ///
+        /// <p>A list of event type category codes (<code>issue</code>, <code>scheduledChange</code>,
+        /// or <code>accountNotification</code>).</p>
         pub fn event_type_categories(
             mut self,
             input: impl Into<crate::model::EventTypeCategory>,
@@ -1439,6 +1717,8 @@ pub mod event_filter {
             self.event_type_categories = Some(v);
             self
         }
+        /// <p>A list of event type category codes (<code>issue</code>, <code>scheduledChange</code>,
+        /// or <code>accountNotification</code>).</p>
         pub fn set_event_type_categories(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EventTypeCategory>>,
@@ -1446,6 +1726,14 @@ pub mod event_filter {
             self.event_type_categories = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A map of entity tags attached to the affected entity.</p>
+        /// <note>
+        /// <p>Currently, the <code>tags</code> property isn't supported.</p>
+        /// </note>
         pub fn tags(
             mut self,
             input: impl Into<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -1455,6 +1743,10 @@ pub mod event_filter {
             self.tags = Some(v);
             self
         }
+        /// <p>A map of entity tags attached to the affected entity.</p>
+        /// <note>
+        /// <p>Currently, the <code>tags</code> property isn't supported.</p>
+        /// </note>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1464,6 +1756,11 @@ pub mod event_filter {
             self.tags = input;
             self
         }
+        /// Appends an item to `event_status_codes`.
+        ///
+        /// To override the contents of this collection use [`set_event_status_codes`](Self::set_event_status_codes).
+        ///
+        /// <p>A list of event status codes.</p>
         pub fn event_status_codes(
             mut self,
             input: impl Into<crate::model::EventStatusCode>,
@@ -1473,6 +1770,7 @@ pub mod event_filter {
             self.event_status_codes = Some(v);
             self
         }
+        /// <p>A list of event status codes.</p>
         pub fn set_event_status_codes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EventStatusCode>>,
@@ -1570,6 +1868,8 @@ pub mod organization_event_details_error_item {
             self.aws_account_id = Some(input.into());
             self
         }
+        /// <p>Error information returned when a <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetailsForOrganization.html">DescribeEventDetailsForOrganization</a> operation can't find a specified
+        /// event.</p>
         pub fn set_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1589,6 +1889,14 @@ pub mod organization_event_details_error_item {
             self.event_arn = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the event. The event ARN has the
+        /// <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i>
+        /// </code>
+        /// format.</p>
+        /// <p>For example, an event ARN might look like the following:</p>
+        /// <p>
+        /// <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
+        /// </p>
         pub fn set_event_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.event_arn = input;
             self
@@ -1598,6 +1906,7 @@ pub mod organization_event_details_error_item {
             self.error_name = Some(input.into());
             self
         }
+        /// <p>The name of the error.</p>
         pub fn set_error_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_name = input;
             self
@@ -1620,6 +1929,20 @@ pub mod organization_event_details_error_item {
             self.error_message = Some(input.into());
             self
         }
+        /// <p>A message that describes the error.</p>
+        /// <p>If you call the <code>DescribeEventDetailsForOrganization</code>
+        /// operation and receive one of the following errors, follow the recommendations in the message:</p>
+        /// <ul>
+        /// <li>
+        /// <p>We couldn't find a public event that matches your request. To find an event that is account specific, you must enter an AWS account ID in the request.</p>
+        /// </li>
+        /// <li>
+        /// <p>We couldn't find an account specific event for the specified AWS account. To find an event that is public, you must enter a null value for the AWS account ID in the request.</p>
+        /// </li>
+        /// <li>
+        /// <p>Your AWS account doesn't include the AWS Support plan required to use the AWS Health API. You must have either a Business or Enterprise Support plan.</p>
+        /// </li>
+        /// </ul>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1709,6 +2032,7 @@ pub mod organization_event_details {
             self.aws_account_id = Some(input.into());
             self
         }
+        /// <p>The 12-digit AWS account numbers that contains the affected entities.</p>
         pub fn set_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1740,6 +2064,26 @@ pub mod organization_event_details {
             self.event = Some(input);
             self
         }
+        /// <p>Summary information about an AWS Health event.</p>
+        /// <p>AWS Health events can be public or account-specific:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <i>Public events</i> might be service events that are not specific
+        /// to an AWS account. For example, if there is an issue with an AWS Region,
+        /// AWS Health provides information about the event, even if you don't use services or
+        /// resources in that Region.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <i>Account-specific</i> events are specific to either your AWS
+        /// account or an account in your organization. For example, if there's an issue with
+        /// Amazon Elastic Compute Cloud in a Region that you use, AWS Health provides information about the event
+        /// and the affected resources in the account.</p>
+        /// </li>
+        /// </ul>
+        /// <p>You can determine if an event is public or account-specific by using the
+        /// <code>eventScopeCode</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_Event.html#AWSHealth-Type-Event-eventScopeCode">eventScopeCode</a>.</p>
         pub fn set_event(mut self, input: std::option::Option<crate::model::Event>) -> Self {
             self.event = input;
             self
@@ -1750,6 +2094,8 @@ pub mod organization_event_details {
             self.event_description = Some(input);
             self
         }
+        /// <p>The detailed description of the event. Included in the information returned by the
+        /// <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetails.html">DescribeEventDetails</a> operation.</p>
         pub fn set_event_description(
             mut self,
             input: std::option::Option<crate::model::EventDescription>,
@@ -1757,6 +2103,11 @@ pub mod organization_event_details {
             self.event_description = input;
             self
         }
+        /// Adds a key-value pair to `event_metadata`.
+        ///
+        /// To override the contents of this collection use [`set_event_metadata`](Self::set_event_metadata).
+        ///
+        /// <p>Additional metadata about the event.</p>
         pub fn event_metadata(
             mut self,
             k: impl Into<std::string::String>,
@@ -1767,6 +2118,7 @@ pub mod organization_event_details {
             self.event_metadata = Some(hash_map);
             self
         }
+        /// <p>Additional metadata about the event.</p>
         pub fn set_event_metadata(
             mut self,
             input: std::option::Option<
@@ -1823,6 +2175,7 @@ pub mod event_description {
             self.latest_description = Some(input.into());
             self
         }
+        /// <p>The most recent description of the event.</p>
         pub fn set_latest_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1891,6 +2244,14 @@ pub mod event_account_filter {
             self.event_arn = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the event. The event ARN has the
+        /// <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i>
+        /// </code>
+        /// format.</p>
+        /// <p>For example, an event ARN might look like the following:</p>
+        /// <p>
+        /// <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
+        /// </p>
         pub fn set_event_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.event_arn = input;
             self
@@ -1900,6 +2261,7 @@ pub mod event_account_filter {
             self.aws_account_id = Some(input.into());
             self
         }
+        /// <p>The 12-digit AWS account numbers that contains the affected entities.</p>
         pub fn set_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1973,6 +2335,14 @@ pub mod event_details_error_item {
             self.event_arn = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the event. The event ARN has the
+        /// <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i>
+        /// </code>
+        /// format.</p>
+        /// <p>For example, an event ARN might look like the following:</p>
+        /// <p>
+        /// <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
+        /// </p>
         pub fn set_event_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.event_arn = input;
             self
@@ -1982,6 +2352,7 @@ pub mod event_details_error_item {
             self.error_name = Some(input.into());
             self
         }
+        /// <p>The name of the error.</p>
         pub fn set_error_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_name = input;
             self
@@ -1991,6 +2362,7 @@ pub mod event_details_error_item {
             self.error_message = Some(input.into());
             self
         }
+        /// <p>A message that describes the error.</p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2055,6 +2427,7 @@ pub mod event_details {
             self.event = Some(input);
             self
         }
+        /// <p>Summary information about the event.</p>
         pub fn set_event(mut self, input: std::option::Option<crate::model::Event>) -> Self {
             self.event = input;
             self
@@ -2064,6 +2437,7 @@ pub mod event_details {
             self.event_description = Some(input);
             self
         }
+        /// <p>The most recent description of the event.</p>
         pub fn set_event_description(
             mut self,
             input: std::option::Option<crate::model::EventDescription>,
@@ -2071,6 +2445,11 @@ pub mod event_details {
             self.event_description = input;
             self
         }
+        /// Adds a key-value pair to `event_metadata`.
+        ///
+        /// To override the contents of this collection use [`set_event_metadata`](Self::set_event_metadata).
+        ///
+        /// <p>Additional metadata about the event.</p>
         pub fn event_metadata(
             mut self,
             k: impl Into<std::string::String>,
@@ -2081,6 +2460,7 @@ pub mod event_details {
             self.event_metadata = Some(hash_map);
             self
         }
+        /// <p>Additional metadata about the event.</p>
         pub fn set_event_metadata(
             mut self,
             input: std::option::Option<
@@ -2139,6 +2519,7 @@ pub mod event_aggregate {
             self.aggregate_value = Some(input.into());
             self
         }
+        /// <p>The issue type for the associated count.</p>
         pub fn set_aggregate_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2151,6 +2532,7 @@ pub mod event_aggregate {
             self.count = Some(input);
             self
         }
+        /// <p>The number of events of the associated issue type.</p>
         pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
             self.count = input;
             self
@@ -2171,6 +2553,7 @@ impl EventAggregate {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2182,6 +2565,7 @@ impl EventAggregate {
     std::hash::Hash,
 )]
 pub enum EventAggregateField {
+    #[allow(missing_docs)] // documentation missing in model
     EventTypeCategory,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2202,12 +2586,14 @@ impl std::str::FromStr for EventAggregateField {
     }
 }
 impl EventAggregateField {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EventAggregateField::EventTypeCategory => "eventTypeCategory",
             EventAggregateField::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["eventTypeCategory"]
     }
@@ -2264,6 +2650,14 @@ pub mod entity_aggregate {
             self.event_arn = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the event. The event ARN has the
+        /// <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i>
+        /// </code>
+        /// format.</p>
+        /// <p>For example, an event ARN might look like the following:</p>
+        /// <p>
+        /// <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
+        /// </p>
         pub fn set_event_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.event_arn = input;
             self
@@ -2273,6 +2667,7 @@ pub mod entity_aggregate {
             self.count = Some(input);
             self
         }
+        /// <p>The number of entities that match the criteria for the specified events.</p>
         pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
             self.count = input;
             self
@@ -2343,6 +2738,7 @@ pub mod organization_affected_entities_error_item {
             self.aws_account_id = Some(input.into());
             self
         }
+        /// <p>The 12-digit AWS account numbers that contains the affected entities.</p>
         pub fn set_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2362,6 +2758,14 @@ pub mod organization_affected_entities_error_item {
             self.event_arn = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the event. The event ARN has the
+        /// <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i>
+        /// </code>
+        /// format.</p>
+        /// <p>For example, an event ARN might look like the following:</p>
+        /// <p>
+        /// <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
+        /// </p>
         pub fn set_event_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.event_arn = input;
             self
@@ -2371,6 +2775,7 @@ pub mod organization_affected_entities_error_item {
             self.error_name = Some(input.into());
             self
         }
+        /// <p>The name of the error.</p>
         pub fn set_error_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_name = input;
             self
@@ -2382,6 +2787,9 @@ pub mod organization_affected_entities_error_item {
             self.error_message = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the event type. The format is
+        /// <code>AWS_SERVICE_DESCRIPTION</code>. For example,
+        /// <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.</p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2431,7 +2839,7 @@ pub struct AffectedEntity {
     /// <p>The 12-digit AWS account number that contains the affected entity.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The most recent time that the entity was updated.</p>
-    pub last_updated_time: std::option::Option<smithy_types::Instant>,
+    pub last_updated_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The most recent status of the entity affected by the event. The possible values are
     /// <code>IMPAIRED</code>, <code>UNIMPAIRED</code>, and <code>UNKNOWN</code>.</p>
     pub status_code: std::option::Option<crate::model::EntityStatusCode>,
@@ -2467,7 +2875,7 @@ pub mod affected_entity {
         pub(crate) entity_value: std::option::Option<std::string::String>,
         pub(crate) entity_url: std::option::Option<std::string::String>,
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
-        pub(crate) last_updated_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_updated_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) status_code: std::option::Option<crate::model::EntityStatusCode>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -2481,6 +2889,9 @@ pub mod affected_entity {
             self.entity_arn = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the entity. Format: <code>arn:aws:health:<i>entity-region</i>:<i>aws-account</i>:entity/<i>entity-id</i>
+        /// </code>. Example: <code>arn:aws:health:us-east-1:111222333444:entity/AVh5GGT7ul1arKr1sE1K</code>
+        /// </p>
         pub fn set_entity_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.entity_arn = input;
             self
@@ -2497,6 +2908,14 @@ pub mod affected_entity {
             self.event_arn = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the event. The event ARN has the
+        /// <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i>
+        /// </code>
+        /// format.</p>
+        /// <p>For example, an event ARN might look like the following:</p>
+        /// <p>
+        /// <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
+        /// </p>
         pub fn set_event_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.event_arn = input;
             self
@@ -2506,6 +2925,7 @@ pub mod affected_entity {
             self.entity_value = Some(input.into());
             self
         }
+        /// <p>The ID of the affected entity.</p>
         pub fn set_entity_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.entity_value = input;
             self
@@ -2515,6 +2935,7 @@ pub mod affected_entity {
             self.entity_url = Some(input.into());
             self
         }
+        /// <p>The URL of the affected entity.</p>
         pub fn set_entity_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.entity_url = input;
             self
@@ -2524,6 +2945,7 @@ pub mod affected_entity {
             self.aws_account_id = Some(input.into());
             self
         }
+        /// <p>The 12-digit AWS account number that contains the affected entity.</p>
         pub fn set_aws_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2532,13 +2954,14 @@ pub mod affected_entity {
             self
         }
         /// <p>The most recent time that the entity was updated.</p>
-        pub fn last_updated_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_updated_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_updated_time = Some(input);
             self
         }
+        /// <p>The most recent time that the entity was updated.</p>
         pub fn set_last_updated_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_updated_time = input;
             self
@@ -2549,6 +2972,8 @@ pub mod affected_entity {
             self.status_code = Some(input);
             self
         }
+        /// <p>The most recent status of the entity affected by the event. The possible values are
+        /// <code>IMPAIRED</code>, <code>UNIMPAIRED</code>, and <code>UNKNOWN</code>.</p>
         pub fn set_status_code(
             mut self,
             input: std::option::Option<crate::model::EntityStatusCode>,
@@ -2556,6 +2981,14 @@ pub mod affected_entity {
             self.status_code = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A map of entity tags attached to the affected entity.</p>
+        /// <note>
+        /// <p>Currently, the <code>tags</code> property isn't supported.</p>
+        /// </note>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2566,6 +2999,10 @@ pub mod affected_entity {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>A map of entity tags attached to the affected entity.</p>
+        /// <note>
+        /// <p>Currently, the <code>tags</code> property isn't supported.</p>
+        /// </note>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2597,7 +3034,7 @@ impl AffectedEntity {
     }
 }
 
-/// **NOTE:** `EntityStatusCode::Unknown` has been renamed to `::UnknownValue`.
+/// _Note: `EntityStatusCode::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2609,9 +3046,11 @@ impl AffectedEntity {
     std::hash::Hash,
 )]
 pub enum EntityStatusCode {
+    #[allow(missing_docs)] // documentation missing in model
     Impaired,
+    #[allow(missing_docs)] // documentation missing in model
     Unimpaired,
-    /// **NOTE:** `::Unknown` has been renamed to `::UnknownValue`.
+    /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
     UnknownValue,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2634,6 +3073,7 @@ impl std::str::FromStr for EntityStatusCode {
     }
 }
 impl EntityStatusCode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EntityStatusCode::Impaired => "IMPAIRED",
@@ -2642,6 +3082,7 @@ impl EntityStatusCode {
             EntityStatusCode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["IMPAIRED", "UNIMPAIRED", "UNKNOWN"]
     }
@@ -2706,12 +3147,20 @@ pub mod entity_filter {
         pub(crate) status_codes: std::option::Option<std::vec::Vec<crate::model::EntityStatusCode>>,
     }
     impl Builder {
+        /// Appends an item to `event_arns`.
+        ///
+        /// To override the contents of this collection use [`set_event_arns`](Self::set_event_arns).
+        ///
+        /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code>
+        /// </p>
         pub fn event_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.event_arns.unwrap_or_default();
             v.push(input.into());
             self.event_arns = Some(v);
             self
         }
+        /// <p>A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456", "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code>
+        /// </p>
         pub fn set_event_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2719,12 +3168,18 @@ pub mod entity_filter {
             self.event_arns = input;
             self
         }
+        /// Appends an item to `entity_arns`.
+        ///
+        /// To override the contents of this collection use [`set_entity_arns`](Self::set_entity_arns).
+        ///
+        /// <p>A list of entity ARNs (unique identifiers).</p>
         pub fn entity_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.entity_arns.unwrap_or_default();
             v.push(input.into());
             self.entity_arns = Some(v);
             self
         }
+        /// <p>A list of entity ARNs (unique identifiers).</p>
         pub fn set_entity_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2732,12 +3187,18 @@ pub mod entity_filter {
             self.entity_arns = input;
             self
         }
+        /// Appends an item to `entity_values`.
+        ///
+        /// To override the contents of this collection use [`set_entity_values`](Self::set_entity_values).
+        ///
+        /// <p>A list of IDs for affected entities.</p>
         pub fn entity_values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.entity_values.unwrap_or_default();
             v.push(input.into());
             self.entity_values = Some(v);
             self
         }
+        /// <p>A list of IDs for affected entities.</p>
         pub fn set_entity_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2745,12 +3206,18 @@ pub mod entity_filter {
             self.entity_values = input;
             self
         }
+        /// Appends an item to `last_updated_times`.
+        ///
+        /// To override the contents of this collection use [`set_last_updated_times`](Self::set_last_updated_times).
+        ///
+        /// <p>A list of the most recent dates and times that the entity was updated.</p>
         pub fn last_updated_times(mut self, input: impl Into<crate::model::DateTimeRange>) -> Self {
             let mut v = self.last_updated_times.unwrap_or_default();
             v.push(input.into());
             self.last_updated_times = Some(v);
             self
         }
+        /// <p>A list of the most recent dates and times that the entity was updated.</p>
         pub fn set_last_updated_times(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DateTimeRange>>,
@@ -2758,6 +3225,14 @@ pub mod entity_filter {
             self.last_updated_times = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A map of entity tags attached to the affected entity.</p>
+        /// <note>
+        /// <p>Currently, the <code>tags</code> property isn't supported.</p>
+        /// </note>
         pub fn tags(
             mut self,
             input: impl Into<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -2767,6 +3242,10 @@ pub mod entity_filter {
             self.tags = Some(v);
             self
         }
+        /// <p>A map of entity tags attached to the affected entity.</p>
+        /// <note>
+        /// <p>Currently, the <code>tags</code> property isn't supported.</p>
+        /// </note>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2776,12 +3255,20 @@ pub mod entity_filter {
             self.tags = input;
             self
         }
+        /// Appends an item to `status_codes`.
+        ///
+        /// To override the contents of this collection use [`set_status_codes`](Self::set_status_codes).
+        ///
+        /// <p>A list of entity status codes (<code>IMPAIRED</code>, <code>UNIMPAIRED</code>, or
+        /// <code>UNKNOWN</code>).</p>
         pub fn status_codes(mut self, input: impl Into<crate::model::EntityStatusCode>) -> Self {
             let mut v = self.status_codes.unwrap_or_default();
             v.push(input.into());
             self.status_codes = Some(v);
             self
         }
+        /// <p>A list of entity status codes (<code>IMPAIRED</code>, <code>UNIMPAIRED</code>, or
+        /// <code>UNKNOWN</code>).</p>
         pub fn set_status_codes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EntityStatusCode>>,

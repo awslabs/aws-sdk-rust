@@ -15,6 +15,7 @@ pub mod add_instance_fleet_input {
             self.cluster_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier of the cluster.</p>
         pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster_id = input;
             self
@@ -24,6 +25,7 @@ pub mod add_instance_fleet_input {
             self.instance_fleet = Some(input);
             self
         }
+        /// <p>Specifies the configuration of the instance fleet.</p>
         pub fn set_instance_fleet(
             mut self,
             input: std::option::Option<crate::model::InstanceFleetConfig>,
@@ -36,7 +38,7 @@ pub mod add_instance_fleet_input {
             self,
         ) -> std::result::Result<
             crate::input::AddInstanceFleetInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::AddInstanceFleetInput {
                 cluster_id: self.cluster_id,
@@ -56,16 +58,16 @@ impl AddInstanceFleetInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AddInstanceFleet,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AddInstanceFleetInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -73,7 +75,7 @@ impl AddInstanceFleetInput {
         fn update_http_builder(
             input: &crate::input::AddInstanceFleetInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -82,32 +84,32 @@ impl AddInstanceFleetInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AddInstanceFleetInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ElasticMapReduce.AddInstanceFleet",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_add_instance_fleet(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -130,15 +132,15 @@ impl AddInstanceFleetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::AddInstanceFleet::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "AddInstanceFleet",
             "emr",
         ));
@@ -147,10 +149,10 @@ impl AddInstanceFleetInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -175,6 +177,11 @@ pub mod add_instance_groups_input {
         pub(crate) job_flow_id: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `instance_groups`.
+        ///
+        /// To override the contents of this collection use [`set_instance_groups`](Self::set_instance_groups).
+        ///
+        /// <p>Instance groups to add.</p>
         pub fn instance_groups(
             mut self,
             input: impl Into<crate::model::InstanceGroupConfig>,
@@ -184,6 +191,7 @@ pub mod add_instance_groups_input {
             self.instance_groups = Some(v);
             self
         }
+        /// <p>Instance groups to add.</p>
         pub fn set_instance_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InstanceGroupConfig>>,
@@ -196,6 +204,7 @@ pub mod add_instance_groups_input {
             self.job_flow_id = Some(input.into());
             self
         }
+        /// <p>Job flow in which to add the instance groups.</p>
         pub fn set_job_flow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_flow_id = input;
             self
@@ -205,7 +214,7 @@ pub mod add_instance_groups_input {
             self,
         ) -> std::result::Result<
             crate::input::AddInstanceGroupsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::AddInstanceGroupsInput {
                 instance_groups: self.instance_groups,
@@ -225,16 +234,16 @@ impl AddInstanceGroupsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AddInstanceGroups,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AddInstanceGroupsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -242,7 +251,7 @@ impl AddInstanceGroupsInput {
         fn update_http_builder(
             input: &crate::input::AddInstanceGroupsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -251,32 +260,32 @@ impl AddInstanceGroupsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AddInstanceGroupsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ElasticMapReduce.AddInstanceGroups",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_add_instance_groups(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -299,15 +308,15 @@ impl AddInstanceGroupsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::AddInstanceGroups::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "AddInstanceGroups",
             "emr",
         ));
@@ -316,10 +325,10 @@ impl AddInstanceGroupsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -349,16 +358,24 @@ pub mod add_job_flow_steps_input {
             self.job_flow_id = Some(input.into());
             self
         }
+        /// <p>A string that uniquely identifies the job flow. This identifier is returned by <a>RunJobFlow</a> and can also be obtained from <a>ListClusters</a>.
+        /// </p>
         pub fn set_job_flow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_flow_id = input;
             self
         }
+        /// Appends an item to `steps`.
+        ///
+        /// To override the contents of this collection use [`set_steps`](Self::set_steps).
+        ///
+        /// <p> A list of <a>StepConfig</a> to be executed by the job flow. </p>
         pub fn steps(mut self, input: impl Into<crate::model::StepConfig>) -> Self {
             let mut v = self.steps.unwrap_or_default();
             v.push(input.into());
             self.steps = Some(v);
             self
         }
+        /// <p> A list of <a>StepConfig</a> to be executed by the job flow. </p>
         pub fn set_steps(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::StepConfig>>,
@@ -371,7 +388,7 @@ pub mod add_job_flow_steps_input {
             self,
         ) -> std::result::Result<
             crate::input::AddJobFlowStepsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::AddJobFlowStepsInput {
                 job_flow_id: self.job_flow_id,
@@ -391,16 +408,16 @@ impl AddJobFlowStepsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AddJobFlowSteps,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AddJobFlowStepsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -408,7 +425,7 @@ impl AddJobFlowStepsInput {
         fn update_http_builder(
             input: &crate::input::AddJobFlowStepsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -417,32 +434,32 @@ impl AddJobFlowStepsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AddJobFlowStepsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ElasticMapReduce.AddJobFlowSteps",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_add_job_flow_steps(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -465,15 +482,15 @@ impl AddJobFlowStepsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::AddJobFlowSteps::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "AddJobFlowSteps",
             "emr",
         ));
@@ -482,10 +499,10 @@ impl AddJobFlowStepsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -515,16 +532,28 @@ pub mod add_tags_input {
             self.resource_id = Some(input.into());
             self
         }
+        /// <p>The Amazon EMR resource identifier to which tags will be added. For example, a
+        /// cluster identifier or an Amazon EMR Studio ID.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of tags to associate with a resource. Tags are
+        /// user-defined key-value pairs that consist of a required key string with a maximum of 128
+        /// characters, and an optional value string with a maximum of 256 characters.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>A list of tags to associate with a resource. Tags are
+        /// user-defined key-value pairs that consist of a required key string with a maximum of 128
+        /// characters, and an optional value string with a maximum of 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -535,7 +564,7 @@ pub mod add_tags_input {
         /// Consumes the builder and constructs a [`AddTagsInput`](crate::input::AddTagsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::AddTagsInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::AddTagsInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::AddTagsInput {
                 resource_id: self.resource_id,
@@ -555,13 +584,16 @@ impl AddTagsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<crate::operation::AddTags, aws_http::AwsErrorRetryPolicy>,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::Operation<
+            crate::operation::AddTags,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AddTagsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -569,7 +601,7 @@ impl AddTagsInput {
         fn update_http_builder(
             input: &crate::input::AddTagsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -578,29 +610,31 @@ impl AddTagsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AddTagsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ElasticMapReduce.AddTags",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_add_tags(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -623,21 +657,22 @@ impl AddTagsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(request, crate::operation::AddTags::new())
-            .with_metadata(smithy_http::operation::Metadata::new("AddTags", "emr"));
+        let op =
+            aws_smithy_http::operation::Operation::new(request, crate::operation::AddTags::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new("AddTags", "emr"));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -668,16 +703,25 @@ pub mod cancel_steps_input {
             self.cluster_id = Some(input.into());
             self
         }
+        /// <p>The <code>ClusterID</code> for the specified steps that will be canceled. Use <a>RunJobFlow</a> and <a>ListClusters</a> to get ClusterIDs. </p>
         pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster_id = input;
             self
         }
+        /// Appends an item to `step_ids`.
+        ///
+        /// To override the contents of this collection use [`set_step_ids`](Self::set_step_ids).
+        ///
+        /// <p>The list of <code>StepIDs</code> to cancel. Use <a>ListSteps</a> to get steps
+        /// and their states for the specified cluster.</p>
         pub fn step_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.step_ids.unwrap_or_default();
             v.push(input.into());
             self.step_ids = Some(v);
             self
         }
+        /// <p>The list of <code>StepIDs</code> to cancel. Use <a>ListSteps</a> to get steps
+        /// and their states for the specified cluster.</p>
         pub fn set_step_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -694,6 +738,8 @@ pub mod cancel_steps_input {
             self.step_cancellation_option = Some(input);
             self
         }
+        /// <p>The option to choose to cancel <code>RUNNING</code> steps. By default, the value is
+        /// <code>SEND_INTERRUPT</code>.</p>
         pub fn set_step_cancellation_option(
             mut self,
             input: std::option::Option<crate::model::StepCancellationOption>,
@@ -704,8 +750,10 @@ pub mod cancel_steps_input {
         /// Consumes the builder and constructs a [`CancelStepsInput`](crate::input::CancelStepsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CancelStepsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CancelStepsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CancelStepsInput {
                 cluster_id: self.cluster_id,
                 step_ids: self.step_ids,
@@ -725,16 +773,16 @@ impl CancelStepsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CancelSteps,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CancelStepsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -742,7 +790,7 @@ impl CancelStepsInput {
         fn update_http_builder(
             input: &crate::input::CancelStepsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -751,29 +799,31 @@ impl CancelStepsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CancelStepsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ElasticMapReduce.CancelSteps",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_cancel_steps(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -796,22 +846,27 @@ impl CancelStepsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CancelSteps::new())
-                .with_metadata(smithy_http::operation::Metadata::new("CancelSteps", "emr"));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CancelSteps::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CancelSteps",
+            "emr",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -840,6 +895,7 @@ pub mod create_security_configuration_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the security configuration.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -852,6 +908,10 @@ pub mod create_security_configuration_input {
             self.security_configuration = Some(input.into());
             self
         }
+        /// <p>The security configuration details in JSON format. For JSON parameters and examples, see
+        /// <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-security-configurations.html">Use Security
+        /// Configurations to Set Up Cluster Security</a> in the <i>Amazon EMR Management
+        /// Guide</i>.</p>
         pub fn set_security_configuration(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -864,7 +924,7 @@ pub mod create_security_configuration_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateSecurityConfigurationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateSecurityConfigurationInput {
                 name: self.name,
@@ -885,16 +945,16 @@ impl CreateSecurityConfigurationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateSecurityConfiguration,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateSecurityConfigurationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -902,7 +962,7 @@ impl CreateSecurityConfigurationInput {
         fn update_http_builder(
             input: &crate::input::CreateSecurityConfigurationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -911,30 +971,30 @@ impl CreateSecurityConfigurationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateSecurityConfigurationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ElasticMapReduce.CreateSecurityConfiguration",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_security_configuration(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_security_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -957,15 +1017,15 @@ impl CreateSecurityConfigurationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateSecurityConfiguration::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateSecurityConfiguration",
             "emr",
         ));
@@ -974,10 +1034,10 @@ impl CreateSecurityConfigurationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1017,6 +1077,7 @@ pub mod create_studio_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>A descriptive name for the Amazon EMR Studio.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1026,6 +1087,7 @@ pub mod create_studio_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>A detailed description of the Amazon EMR Studio.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -1035,6 +1097,7 @@ pub mod create_studio_input {
             self.auth_mode = Some(input);
             self
         }
+        /// <p>Specifies whether the Studio authenticates users using IAM or Amazon Web Services SSO.</p>
         pub fn set_auth_mode(mut self, input: std::option::Option<crate::model::AuthMode>) -> Self {
             self.auth_mode = input;
             self
@@ -1045,16 +1108,28 @@ pub mod create_studio_input {
             self.vpc_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Amazon Virtual Private Cloud (Amazon VPC) to associate with the
+        /// Studio.</p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.vpc_id = input;
             self
         }
+        /// Appends an item to `subnet_ids`.
+        ///
+        /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
+        ///
+        /// <p>A list of subnet IDs to associate with the Amazon EMR Studio. A Studio can have a maximum of 5 subnets. The subnets must belong to the VPC
+        /// specified by <code>VpcId</code>. Studio users can create a Workspace in any of the
+        /// specified subnets.</p>
         pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnet_ids.unwrap_or_default();
             v.push(input.into());
             self.subnet_ids = Some(v);
             self
         }
+        /// <p>A list of subnet IDs to associate with the Amazon EMR Studio. A Studio can have a maximum of 5 subnets. The subnets must belong to the VPC
+        /// specified by <code>VpcId</code>. Studio users can create a Workspace in any of the
+        /// specified subnets.</p>
         pub fn set_subnet_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1068,6 +1143,8 @@ pub mod create_studio_input {
             self.service_role = Some(input.into());
             self
         }
+        /// <p>The IAM role that the Amazon EMR Studio assumes. The service role provides a
+        /// way for Amazon EMR Studio to interoperate with other Amazon Web Services services.</p>
         pub fn set_service_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service_role = input;
             self
@@ -1079,6 +1156,9 @@ pub mod create_studio_input {
             self.user_role = Some(input.into());
             self
         }
+        /// <p>The IAM user role that users and groups assume when logged in to an Amazon EMR Studio. Only specify a <code>UserRole</code> when you use Amazon Web Services SSO authentication. The
+        /// permissions attached to the <code>UserRole</code> can be scoped down for each user or group using
+        /// session policies.</p>
         pub fn set_user_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_role = input;
             self
@@ -1093,6 +1173,9 @@ pub mod create_studio_input {
             self.workspace_security_group_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Amazon EMR Studio Workspace security group. The Workspace security group
+        /// allows outbound network traffic to resources in the Engine security group, and it must be
+        /// in the same VPC specified by <code>VpcId</code>.</p>
         pub fn set_workspace_security_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1107,6 +1190,9 @@ pub mod create_studio_input {
             self.engine_security_group_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Amazon EMR Studio Engine security group. The Engine security group allows
+        /// inbound network traffic from the Workspace security group, and it must be in the same VPC
+        /// specified by <code>VpcId</code>.</p>
         pub fn set_engine_security_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1119,6 +1205,7 @@ pub mod create_studio_input {
             self.default_s3_location = Some(input.into());
             self
         }
+        /// <p>The Amazon S3 location to back up Amazon EMR Studio Workspaces and notebook files.</p>
         pub fn set_default_s3_location(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1131,6 +1218,7 @@ pub mod create_studio_input {
             self.idp_auth_url = Some(input.into());
             self
         }
+        /// <p>The authentication endpoint of your identity provider (IdP). Specify this value when you use IAM authentication and want to let federated users log in to a Studio with the Studio URL and credentials from your IdP. Amazon EMR Studio redirects users to this endpoint to enter credentials.</p>
         pub fn set_idp_auth_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.idp_auth_url = input;
             self
@@ -1143,6 +1231,7 @@ pub mod create_studio_input {
             self.idp_relay_state_parameter_name = Some(input.into());
             self
         }
+        /// <p>The name that your identity provider (IdP) uses for its <code>RelayState</code> parameter. For example, <code>RelayState</code> or <code>TargetSource</code>. Specify this value when you use IAM authentication and want to let federated users log in to a Studio using the Studio URL. The <code>RelayState</code> parameter differs by IdP.</p>
         pub fn set_idp_relay_state_parameter_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1150,12 +1239,22 @@ pub mod create_studio_input {
             self.idp_relay_state_parameter_name = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of tags to associate with the Amazon EMR Studio. Tags are user-defined key-value pairs that
+        /// consist of a required key string with a maximum of 128 characters, and an optional value
+        /// string with a maximum of 256 characters.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>A list of tags to associate with the Amazon EMR Studio. Tags are user-defined key-value pairs that
+        /// consist of a required key string with a maximum of 128 characters, and an optional value
+        /// string with a maximum of 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1166,8 +1265,10 @@ pub mod create_studio_input {
         /// Consumes the builder and constructs a [`CreateStudioInput`](crate::input::CreateStudioInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreateStudioInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateStudioInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateStudioInput {
                 name: self.name,
                 description: self.description,
@@ -1197,16 +1298,16 @@ impl CreateStudioInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateStudio,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateStudioInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1214,7 +1315,7 @@ impl CreateStudioInput {
         fn update_http_builder(
             input: &crate::input::CreateStudioInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1223,31 +1324,31 @@ impl CreateStudioInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateStudioInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ElasticMapReduce.CreateStudio",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_studio(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1270,22 +1371,27 @@ impl CreateStudioInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreateStudio::new())
-                .with_metadata(smithy_http::operation::Metadata::new("CreateStudio", "emr"));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateStudio::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateStudio",
+            "emr",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1317,6 +1423,7 @@ pub mod create_studio_session_mapping_input {
             self.studio_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Amazon EMR Studio to which the user or group will be mapped.</p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.studio_id = input;
             self
@@ -1328,6 +1435,9 @@ pub mod create_studio_session_mapping_input {
             self.identity_id = Some(input.into());
             self
         }
+        /// <p>The globally unique identifier (GUID) of the user or group from the Amazon Web Services SSO Identity
+        /// Store. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
+        /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not both.</p>
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identity_id = input;
             self
@@ -1338,6 +1448,8 @@ pub mod create_studio_session_mapping_input {
             self.identity_name = Some(input.into());
             self
         }
+        /// <p>The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
+        /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not both.</p>
         pub fn set_identity_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1350,6 +1462,7 @@ pub mod create_studio_session_mapping_input {
             self.identity_type = Some(input);
             self
         }
+        /// <p>Specifies whether the identity to map to the Amazon EMR Studio is a user or a group.</p>
         pub fn set_identity_type(
             mut self,
             input: std::option::Option<crate::model::IdentityType>,
@@ -1363,6 +1476,8 @@ pub mod create_studio_session_mapping_input {
             self.session_policy_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) for the session policy that will be applied to the user
+        /// or group. You should specify the ARN for the session policy that you want to apply, not the ARN of your user role. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-user-role.html">Create an EMR Studio User Role with Session Policies</a>.</p>
         pub fn set_session_policy_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1375,7 +1490,7 @@ pub mod create_studio_session_mapping_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateStudioSessionMappingInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateStudioSessionMappingInput {
                 studio_id: self.studio_id,
@@ -1399,16 +1514,16 @@ impl CreateStudioSessionMappingInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateStudioSessionMapping,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateStudioSessionMappingInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1416,7 +1531,7 @@ impl CreateStudioSessionMappingInput {
         fn update_http_builder(
             input: &crate::input::CreateStudioSessionMappingInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1425,30 +1540,30 @@ impl CreateStudioSessionMappingInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateStudioSessionMappingInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ElasticMapReduce.CreateStudioSessionMapping",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_studio_session_mapping(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_studio_session_mapping(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1471,15 +1586,15 @@ impl CreateStudioSessionMappingInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateStudioSessionMapping::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateStudioSessionMapping",
             "emr",
         ));
@@ -1488,10 +1603,10 @@ impl CreateStudioSessionMappingInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1519,6 +1634,7 @@ pub mod delete_security_configuration_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the security configuration.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1528,7 +1644,7 @@ pub mod delete_security_configuration_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteSecurityConfigurationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteSecurityConfigurationInput { name: self.name })
         }
@@ -1546,16 +1662,16 @@ impl DeleteSecurityConfigurationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteSecurityConfiguration,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteSecurityConfigurationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1563,7 +1679,7 @@ impl DeleteSecurityConfigurationInput {
         fn update_http_builder(
             input: &crate::input::DeleteSecurityConfigurationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1572,30 +1688,30 @@ impl DeleteSecurityConfigurationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteSecurityConfigurationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ElasticMapReduce.DeleteSecurityConfiguration",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_security_configuration(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_security_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1618,15 +1734,15 @@ impl DeleteSecurityConfigurationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteSecurityConfiguration::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteSecurityConfiguration",
             "emr",
         ));
@@ -1635,10 +1751,10 @@ impl DeleteSecurityConfigurationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1666,6 +1782,7 @@ pub mod delete_studio_input {
             self.studio_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Amazon EMR Studio.</p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.studio_id = input;
             self
@@ -1673,8 +1790,10 @@ pub mod delete_studio_input {
         /// Consumes the builder and constructs a [`DeleteStudioInput`](crate::input::DeleteStudioInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeleteStudioInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteStudioInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteStudioInput {
                 studio_id: self.studio_id,
             })
@@ -1692,16 +1811,16 @@ impl DeleteStudioInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteStudio,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteStudioInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1709,7 +1828,7 @@ impl DeleteStudioInput {
         fn update_http_builder(
             input: &crate::input::DeleteStudioInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1718,31 +1837,31 @@ impl DeleteStudioInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteStudioInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ElasticMapReduce.DeleteStudio",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_delete_studio(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1765,22 +1884,27 @@ impl DeleteStudioInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeleteStudio::new())
-                .with_metadata(smithy_http::operation::Metadata::new("DeleteStudio", "emr"));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteStudio::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteStudio",
+            "emr",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1811,6 +1935,7 @@ pub mod delete_studio_session_mapping_input {
             self.studio_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Amazon EMR Studio.</p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.studio_id = input;
             self
@@ -1822,6 +1947,9 @@ pub mod delete_studio_session_mapping_input {
             self.identity_id = Some(input.into());
             self
         }
+        /// <p>The globally unique identifier (GUID) of the user or group to remove from the Amazon EMR
+        /// Studio. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
+        /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identity_id = input;
             self
@@ -1833,6 +1961,9 @@ pub mod delete_studio_session_mapping_input {
             self.identity_name = Some(input.into());
             self
         }
+        /// <p>The name of the user name or group to remove from the Amazon EMR Studio. For more information, see
+        /// <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Store API Reference</i>.
+        /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
         pub fn set_identity_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1845,6 +1976,7 @@ pub mod delete_studio_session_mapping_input {
             self.identity_type = Some(input);
             self
         }
+        /// <p>Specifies whether the identity to delete from the Amazon EMR Studio is a user or a group.</p>
         pub fn set_identity_type(
             mut self,
             input: std::option::Option<crate::model::IdentityType>,
@@ -1857,7 +1989,7 @@ pub mod delete_studio_session_mapping_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteStudioSessionMappingInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteStudioSessionMappingInput {
                 studio_id: self.studio_id,
@@ -1880,16 +2012,16 @@ impl DeleteStudioSessionMappingInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteStudioSessionMapping,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteStudioSessionMappingInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1897,7 +2029,7 @@ impl DeleteStudioSessionMappingInput {
         fn update_http_builder(
             input: &crate::input::DeleteStudioSessionMappingInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1906,30 +2038,30 @@ impl DeleteStudioSessionMappingInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteStudioSessionMappingInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ElasticMapReduce.DeleteStudioSessionMapping",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_studio_session_mapping(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_studio_session_mapping(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1952,15 +2084,15 @@ impl DeleteStudioSessionMappingInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteStudioSessionMapping::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteStudioSessionMapping",
             "emr",
         ));
@@ -1969,10 +2101,10 @@ impl DeleteStudioSessionMappingInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2000,6 +2132,7 @@ pub mod describe_cluster_input {
             self.cluster_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the cluster to describe.</p>
         pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster_id = input;
             self
@@ -2009,7 +2142,7 @@ pub mod describe_cluster_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeClusterInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeClusterInput {
                 cluster_id: self.cluster_id,
@@ -2028,16 +2161,16 @@ impl DescribeClusterInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeCluster,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeClusterInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2045,7 +2178,7 @@ impl DescribeClusterInput {
         fn update_http_builder(
             input: &crate::input::DescribeClusterInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2054,32 +2187,32 @@ impl DescribeClusterInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeClusterInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ElasticMapReduce.DescribeCluster",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_cluster(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2102,15 +2235,15 @@ impl DescribeClusterInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeCluster::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeCluster",
             "emr",
         ));
@@ -2119,10 +2252,10 @@ impl DescribeClusterInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2142,43 +2275,51 @@ pub mod describe_job_flows_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) created_after: std::option::Option<smithy_types::Instant>,
-        pub(crate) created_before: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_after: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_before: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) job_flow_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) job_flow_states:
             std::option::Option<std::vec::Vec<crate::model::JobFlowExecutionState>>,
     }
     impl Builder {
         /// <p>Return only job flows created after this date and time.</p>
-        pub fn created_after(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_after(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_after = Some(input);
             self
         }
+        /// <p>Return only job flows created after this date and time.</p>
         pub fn set_created_after(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_after = input;
             self
         }
         /// <p>Return only job flows created before this date and time.</p>
-        pub fn created_before(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_before(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_before = Some(input);
             self
         }
+        /// <p>Return only job flows created before this date and time.</p>
         pub fn set_created_before(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_before = input;
             self
         }
+        /// Appends an item to `job_flow_ids`.
+        ///
+        /// To override the contents of this collection use [`set_job_flow_ids`](Self::set_job_flow_ids).
+        ///
+        /// <p>Return only job flows whose job flow ID is contained in this list.</p>
         pub fn job_flow_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.job_flow_ids.unwrap_or_default();
             v.push(input.into());
             self.job_flow_ids = Some(v);
             self
         }
+        /// <p>Return only job flows whose job flow ID is contained in this list.</p>
         pub fn set_job_flow_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2186,6 +2327,11 @@ pub mod describe_job_flows_input {
             self.job_flow_ids = input;
             self
         }
+        /// Appends an item to `job_flow_states`.
+        ///
+        /// To override the contents of this collection use [`set_job_flow_states`](Self::set_job_flow_states).
+        ///
+        /// <p>Return only job flows whose state is contained in this list.</p>
         pub fn job_flow_states(
             mut self,
             input: impl Into<crate::model::JobFlowExecutionState>,
@@ -2195,6 +2341,7 @@ pub mod describe_job_flows_input {
             self.job_flow_states = Some(v);
             self
         }
+        /// <p>Return only job flows whose state is contained in this list.</p>
         pub fn set_job_flow_states(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::JobFlowExecutionState>>,
@@ -2207,7 +2354,7 @@ pub mod describe_job_flows_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeJobFlowsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeJobFlowsInput {
                 created_after: self.created_after,
@@ -2229,16 +2376,16 @@ impl DescribeJobFlowsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeJobFlows,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeJobFlowsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2246,7 +2393,7 @@ impl DescribeJobFlowsInput {
         fn update_http_builder(
             input: &crate::input::DescribeJobFlowsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2255,32 +2402,32 @@ impl DescribeJobFlowsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeJobFlowsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ElasticMapReduce.DescribeJobFlows",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_job_flows(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2303,15 +2450,15 @@ impl DescribeJobFlowsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeJobFlows::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeJobFlows",
             "emr",
         ));
@@ -2320,10 +2467,10 @@ impl DescribeJobFlowsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2351,6 +2498,7 @@ pub mod describe_notebook_execution_input {
             self.notebook_execution_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier of the notebook execution.</p>
         pub fn set_notebook_execution_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2363,7 +2511,7 @@ pub mod describe_notebook_execution_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeNotebookExecutionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeNotebookExecutionInput {
                 notebook_execution_id: self.notebook_execution_id,
@@ -2383,16 +2531,16 @@ impl DescribeNotebookExecutionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeNotebookExecution,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeNotebookExecutionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2400,7 +2548,7 @@ impl DescribeNotebookExecutionInput {
         fn update_http_builder(
             input: &crate::input::DescribeNotebookExecutionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2409,32 +2557,34 @@ impl DescribeNotebookExecutionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeNotebookExecutionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ElasticMapReduce.DescribeNotebookExecution",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_notebook_execution(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2457,15 +2607,15 @@ impl DescribeNotebookExecutionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeNotebookExecution::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeNotebookExecution",
             "emr",
         ));
@@ -2474,10 +2624,10 @@ impl DescribeNotebookExecutionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2507,6 +2657,7 @@ pub mod describe_release_label_input {
             self.release_label = Some(input.into());
             self
         }
+        /// <p>The target release label to be described.</p>
         pub fn set_release_label(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2519,6 +2670,7 @@ pub mod describe_release_label_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The pagination token. Reserved for future use. Currently set to null.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2528,6 +2680,7 @@ pub mod describe_release_label_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>Reserved for future use. Currently set to null.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -2537,7 +2690,7 @@ pub mod describe_release_label_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeReleaseLabelInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeReleaseLabelInput {
                 release_label: self.release_label,
@@ -2558,16 +2711,16 @@ impl DescribeReleaseLabelInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeReleaseLabel,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeReleaseLabelInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2575,7 +2728,7 @@ impl DescribeReleaseLabelInput {
         fn update_http_builder(
             input: &crate::input::DescribeReleaseLabelInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2584,32 +2737,32 @@ impl DescribeReleaseLabelInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeReleaseLabelInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ElasticMapReduce.DescribeReleaseLabel",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_release_label(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2632,15 +2785,15 @@ impl DescribeReleaseLabelInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeReleaseLabel::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeReleaseLabel",
             "emr",
         ));
@@ -2649,10 +2802,10 @@ impl DescribeReleaseLabelInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2680,6 +2833,7 @@ pub mod describe_security_configuration_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the security configuration.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2689,7 +2843,7 @@ pub mod describe_security_configuration_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeSecurityConfigurationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeSecurityConfigurationInput { name: self.name })
         }
@@ -2707,16 +2861,16 @@ impl DescribeSecurityConfigurationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeSecurityConfiguration,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeSecurityConfigurationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2724,7 +2878,7 @@ impl DescribeSecurityConfigurationInput {
         fn update_http_builder(
             input: &crate::input::DescribeSecurityConfigurationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2733,30 +2887,30 @@ impl DescribeSecurityConfigurationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeSecurityConfigurationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ElasticMapReduce.DescribeSecurityConfiguration",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_security_configuration(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_security_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2779,15 +2933,15 @@ impl DescribeSecurityConfigurationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeSecurityConfiguration::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeSecurityConfiguration",
             "emr",
         ));
@@ -2796,10 +2950,10 @@ impl DescribeSecurityConfigurationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2828,6 +2982,7 @@ pub mod describe_step_input {
             self.cluster_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the cluster with steps to describe.</p>
         pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster_id = input;
             self
@@ -2837,6 +2992,7 @@ pub mod describe_step_input {
             self.step_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the step to describe.</p>
         pub fn set_step_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.step_id = input;
             self
@@ -2844,8 +3000,10 @@ pub mod describe_step_input {
         /// Consumes the builder and constructs a [`DescribeStepInput`](crate::input::DescribeStepInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DescribeStepInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeStepInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeStepInput {
                 cluster_id: self.cluster_id,
                 step_id: self.step_id,
@@ -2864,16 +3022,16 @@ impl DescribeStepInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeStep,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeStepInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2881,7 +3039,7 @@ impl DescribeStepInput {
         fn update_http_builder(
             input: &crate::input::DescribeStepInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2890,31 +3048,31 @@ impl DescribeStepInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeStepInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ElasticMapReduce.DescribeStep",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_describe_step(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2937,22 +3095,27 @@ impl DescribeStepInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DescribeStep::new())
-                .with_metadata(smithy_http::operation::Metadata::new("DescribeStep", "emr"));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeStep::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeStep",
+            "emr",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2980,6 +3143,7 @@ pub mod describe_studio_input {
             self.studio_id = Some(input.into());
             self
         }
+        /// <p>The Amazon EMR Studio ID.</p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.studio_id = input;
             self
@@ -2989,7 +3153,7 @@ pub mod describe_studio_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeStudioInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeStudioInput {
                 studio_id: self.studio_id,
@@ -3008,16 +3172,16 @@ impl DescribeStudioInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeStudio,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeStudioInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3025,7 +3189,7 @@ impl DescribeStudioInput {
         fn update_http_builder(
             input: &crate::input::DescribeStudioInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3034,29 +3198,31 @@ impl DescribeStudioInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeStudioInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ElasticMapReduce.DescribeStudio",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_describe_studio(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3079,15 +3245,15 @@ impl DescribeStudioInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeStudio::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeStudio",
             "emr",
         ));
@@ -3096,10 +3262,10 @@ impl DescribeStudioInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3127,6 +3293,7 @@ pub mod get_auto_termination_policy_input {
             self.cluster_id = Some(input.into());
             self
         }
+        /// <p>Specifies the ID of the Amazon EMR cluster for which the auto-termination policy will be fetched.</p>
         pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster_id = input;
             self
@@ -3136,7 +3303,7 @@ pub mod get_auto_termination_policy_input {
             self,
         ) -> std::result::Result<
             crate::input::GetAutoTerminationPolicyInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetAutoTerminationPolicyInput {
                 cluster_id: self.cluster_id,
@@ -3156,16 +3323,16 @@ impl GetAutoTerminationPolicyInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetAutoTerminationPolicy,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetAutoTerminationPolicyInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3173,7 +3340,7 @@ impl GetAutoTerminationPolicyInput {
         fn update_http_builder(
             input: &crate::input::GetAutoTerminationPolicyInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3182,32 +3349,34 @@ impl GetAutoTerminationPolicyInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetAutoTerminationPolicyInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ElasticMapReduce.GetAutoTerminationPolicy",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_auto_termination_policy(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3230,15 +3399,15 @@ impl GetAutoTerminationPolicyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetAutoTerminationPolicy::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetAutoTerminationPolicy",
             "emr",
         ));
@@ -3247,10 +3416,10 @@ impl GetAutoTerminationPolicyInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3276,7 +3445,7 @@ pub mod get_block_public_access_configuration_input {
             self,
         ) -> std::result::Result<
             crate::input::GetBlockPublicAccessConfigurationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetBlockPublicAccessConfigurationInput {})
         }
@@ -3294,16 +3463,16 @@ impl GetBlockPublicAccessConfigurationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetBlockPublicAccessConfiguration,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetBlockPublicAccessConfigurationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3311,7 +3480,7 @@ impl GetBlockPublicAccessConfigurationInput {
         fn update_http_builder(
             input: &crate::input::GetBlockPublicAccessConfigurationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3320,30 +3489,30 @@ impl GetBlockPublicAccessConfigurationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetBlockPublicAccessConfigurationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ElasticMapReduce.GetBlockPublicAccessConfiguration",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_block_public_access_configuration(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_block_public_access_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3366,15 +3535,15 @@ impl GetBlockPublicAccessConfigurationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetBlockPublicAccessConfiguration::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetBlockPublicAccessConfiguration",
             "emr",
         ));
@@ -3383,10 +3552,10 @@ impl GetBlockPublicAccessConfigurationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3415,6 +3584,8 @@ pub mod get_managed_scaling_policy_input {
             self.cluster_id = Some(input.into());
             self
         }
+        /// <p>Specifies the ID of the cluster for which the managed scaling policy will be fetched.
+        /// </p>
         pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster_id = input;
             self
@@ -3424,7 +3595,7 @@ pub mod get_managed_scaling_policy_input {
             self,
         ) -> std::result::Result<
             crate::input::GetManagedScalingPolicyInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetManagedScalingPolicyInput {
                 cluster_id: self.cluster_id,
@@ -3444,16 +3615,16 @@ impl GetManagedScalingPolicyInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetManagedScalingPolicy,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetManagedScalingPolicyInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3461,7 +3632,7 @@ impl GetManagedScalingPolicyInput {
         fn update_http_builder(
             input: &crate::input::GetManagedScalingPolicyInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3470,32 +3641,34 @@ impl GetManagedScalingPolicyInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetManagedScalingPolicyInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ElasticMapReduce.GetManagedScalingPolicy",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_managed_scaling_policy(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3518,15 +3691,15 @@ impl GetManagedScalingPolicyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetManagedScalingPolicy::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetManagedScalingPolicy",
             "emr",
         ));
@@ -3535,10 +3708,10 @@ impl GetManagedScalingPolicyInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3569,6 +3742,7 @@ pub mod get_studio_session_mapping_input {
             self.studio_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Amazon EMR Studio.</p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.studio_id = input;
             self
@@ -3580,6 +3754,9 @@ pub mod get_studio_session_mapping_input {
             self.identity_id = Some(input.into());
             self
         }
+        /// <p>The globally unique identifier (GUID) of the user or group. For more information, see
+        /// <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
+        /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identity_id = input;
             self
@@ -3590,6 +3767,8 @@ pub mod get_studio_session_mapping_input {
             self.identity_name = Some(input.into());
             self
         }
+        /// <p>The name of the user or group to fetch. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
+        /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
         pub fn set_identity_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3602,6 +3781,7 @@ pub mod get_studio_session_mapping_input {
             self.identity_type = Some(input);
             self
         }
+        /// <p>Specifies whether the identity to fetch is a user or a group.</p>
         pub fn set_identity_type(
             mut self,
             input: std::option::Option<crate::model::IdentityType>,
@@ -3614,7 +3794,7 @@ pub mod get_studio_session_mapping_input {
             self,
         ) -> std::result::Result<
             crate::input::GetStudioSessionMappingInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetStudioSessionMappingInput {
                 studio_id: self.studio_id,
@@ -3637,16 +3817,16 @@ impl GetStudioSessionMappingInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetStudioSessionMapping,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetStudioSessionMappingInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3654,7 +3834,7 @@ impl GetStudioSessionMappingInput {
         fn update_http_builder(
             input: &crate::input::GetStudioSessionMappingInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3663,32 +3843,34 @@ impl GetStudioSessionMappingInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetStudioSessionMappingInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ElasticMapReduce.GetStudioSessionMapping",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_studio_session_mapping(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3711,15 +3893,15 @@ impl GetStudioSessionMappingInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetStudioSessionMapping::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetStudioSessionMapping",
             "emr",
         ));
@@ -3728,10 +3910,10 @@ impl GetStudioSessionMappingInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3760,6 +3942,7 @@ pub mod list_bootstrap_actions_input {
             self.cluster_id = Some(input.into());
             self
         }
+        /// <p>The cluster identifier for the bootstrap actions to list.</p>
         pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster_id = input;
             self
@@ -3769,6 +3952,7 @@ pub mod list_bootstrap_actions_input {
             self.marker = Some(input.into());
             self
         }
+        /// <p>The pagination token that indicates the next set of results to retrieve.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -3778,7 +3962,7 @@ pub mod list_bootstrap_actions_input {
             self,
         ) -> std::result::Result<
             crate::input::ListBootstrapActionsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListBootstrapActionsInput {
                 cluster_id: self.cluster_id,
@@ -3798,16 +3982,16 @@ impl ListBootstrapActionsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListBootstrapActions,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListBootstrapActionsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3815,7 +3999,7 @@ impl ListBootstrapActionsInput {
         fn update_http_builder(
             input: &crate::input::ListBootstrapActionsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3824,32 +4008,32 @@ impl ListBootstrapActionsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListBootstrapActionsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ElasticMapReduce.ListBootstrapActions",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_bootstrap_actions(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3872,15 +4056,15 @@ impl ListBootstrapActionsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListBootstrapActions::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListBootstrapActions",
             "emr",
         ));
@@ -3889,10 +4073,10 @@ impl ListBootstrapActionsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3912,42 +4096,50 @@ pub mod list_clusters_input {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) created_after: std::option::Option<smithy_types::Instant>,
-        pub(crate) created_before: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_after: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) created_before: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) cluster_states: std::option::Option<std::vec::Vec<crate::model::ClusterState>>,
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The creation date and time beginning value filter for listing clusters.</p>
-        pub fn created_after(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_after(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_after = Some(input);
             self
         }
+        /// <p>The creation date and time beginning value filter for listing clusters.</p>
         pub fn set_created_after(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_after = input;
             self
         }
         /// <p>The creation date and time end value filter for listing clusters.</p>
-        pub fn created_before(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_before(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_before = Some(input);
             self
         }
+        /// <p>The creation date and time end value filter for listing clusters.</p>
         pub fn set_created_before(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_before = input;
             self
         }
+        /// Appends an item to `cluster_states`.
+        ///
+        /// To override the contents of this collection use [`set_cluster_states`](Self::set_cluster_states).
+        ///
+        /// <p>The cluster state filters to apply when listing clusters. Clusters that change state while this action runs may be not be returned as expected in the list of clusters.</p>
         pub fn cluster_states(mut self, input: impl Into<crate::model::ClusterState>) -> Self {
             let mut v = self.cluster_states.unwrap_or_default();
             v.push(input.into());
             self.cluster_states = Some(v);
             self
         }
+        /// <p>The cluster state filters to apply when listing clusters. Clusters that change state while this action runs may be not be returned as expected in the list of clusters.</p>
         pub fn set_cluster_states(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ClusterState>>,
@@ -3960,6 +4152,7 @@ pub mod list_clusters_input {
             self.marker = Some(input.into());
             self
         }
+        /// <p>The pagination token that indicates the next set of results to retrieve.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -3967,8 +4160,10 @@ pub mod list_clusters_input {
         /// Consumes the builder and constructs a [`ListClustersInput`](crate::input::ListClustersInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListClustersInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListClustersInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListClustersInput {
                 created_after: self.created_after,
                 created_before: self.created_before,
@@ -3989,16 +4184,16 @@ impl ListClustersInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListClusters,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListClustersInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4006,7 +4201,7 @@ impl ListClustersInput {
         fn update_http_builder(
             input: &crate::input::ListClustersInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4015,31 +4210,31 @@ impl ListClustersInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListClustersInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ElasticMapReduce.ListClusters",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_clusters(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4062,22 +4257,27 @@ impl ListClustersInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListClusters::new())
-                .with_metadata(smithy_http::operation::Metadata::new("ListClusters", "emr"));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListClusters::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListClusters",
+            "emr",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4106,6 +4306,7 @@ pub mod list_instance_fleets_input {
             self.cluster_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier of the cluster.</p>
         pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster_id = input;
             self
@@ -4115,6 +4316,7 @@ pub mod list_instance_fleets_input {
             self.marker = Some(input.into());
             self
         }
+        /// <p>The pagination token that indicates the next set of results to retrieve.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -4124,7 +4326,7 @@ pub mod list_instance_fleets_input {
             self,
         ) -> std::result::Result<
             crate::input::ListInstanceFleetsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListInstanceFleetsInput {
                 cluster_id: self.cluster_id,
@@ -4144,16 +4346,16 @@ impl ListInstanceFleetsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListInstanceFleets,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListInstanceFleetsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4161,7 +4363,7 @@ impl ListInstanceFleetsInput {
         fn update_http_builder(
             input: &crate::input::ListInstanceFleetsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4170,30 +4372,32 @@ impl ListInstanceFleetsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListInstanceFleetsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ElasticMapReduce.ListInstanceFleets",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_instance_fleets(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4216,15 +4420,15 @@ impl ListInstanceFleetsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListInstanceFleets::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListInstanceFleets",
             "emr",
         ));
@@ -4233,10 +4437,10 @@ impl ListInstanceFleetsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4265,6 +4469,7 @@ pub mod list_instance_groups_input {
             self.cluster_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the cluster for which to list the instance groups.</p>
         pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster_id = input;
             self
@@ -4274,6 +4479,7 @@ pub mod list_instance_groups_input {
             self.marker = Some(input.into());
             self
         }
+        /// <p>The pagination token that indicates the next set of results to retrieve.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -4283,7 +4489,7 @@ pub mod list_instance_groups_input {
             self,
         ) -> std::result::Result<
             crate::input::ListInstanceGroupsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListInstanceGroupsInput {
                 cluster_id: self.cluster_id,
@@ -4303,16 +4509,16 @@ impl ListInstanceGroupsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListInstanceGroups,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListInstanceGroupsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4320,7 +4526,7 @@ impl ListInstanceGroupsInput {
         fn update_http_builder(
             input: &crate::input::ListInstanceGroupsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4329,30 +4535,32 @@ impl ListInstanceGroupsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListInstanceGroupsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ElasticMapReduce.ListInstanceGroups",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_instance_groups(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4375,15 +4583,15 @@ impl ListInstanceGroupsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListInstanceGroups::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListInstanceGroups",
             "emr",
         ));
@@ -4392,10 +4600,10 @@ impl ListInstanceGroupsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4430,6 +4638,7 @@ pub mod list_instances_input {
             self.cluster_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the cluster for which to list the instances.</p>
         pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster_id = input;
             self
@@ -4439,6 +4648,7 @@ pub mod list_instances_input {
             self.instance_group_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the instance group for which to list the instances.</p>
         pub fn set_instance_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4446,6 +4656,11 @@ pub mod list_instances_input {
             self.instance_group_id = input;
             self
         }
+        /// Appends an item to `instance_group_types`.
+        ///
+        /// To override the contents of this collection use [`set_instance_group_types`](Self::set_instance_group_types).
+        ///
+        /// <p>The type of instance group for which to list the instances.</p>
         pub fn instance_group_types(
             mut self,
             input: impl Into<crate::model::InstanceGroupType>,
@@ -4455,6 +4670,7 @@ pub mod list_instances_input {
             self.instance_group_types = Some(v);
             self
         }
+        /// <p>The type of instance group for which to list the instances.</p>
         pub fn set_instance_group_types(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InstanceGroupType>>,
@@ -4467,6 +4683,7 @@ pub mod list_instances_input {
             self.instance_fleet_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier of the instance fleet.</p>
         pub fn set_instance_fleet_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4479,6 +4696,7 @@ pub mod list_instances_input {
             self.instance_fleet_type = Some(input);
             self
         }
+        /// <p>The node type of the instance fleet. For example MASTER, CORE, or TASK.</p>
         pub fn set_instance_fleet_type(
             mut self,
             input: std::option::Option<crate::model::InstanceFleetType>,
@@ -4486,12 +4704,20 @@ pub mod list_instances_input {
             self.instance_fleet_type = input;
             self
         }
+        /// Appends an item to `instance_states`.
+        ///
+        /// To override the contents of this collection use [`set_instance_states`](Self::set_instance_states).
+        ///
+        /// <p>A list of instance states that will filter the instances returned with this
+        /// request.</p>
         pub fn instance_states(mut self, input: impl Into<crate::model::InstanceState>) -> Self {
             let mut v = self.instance_states.unwrap_or_default();
             v.push(input.into());
             self.instance_states = Some(v);
             self
         }
+        /// <p>A list of instance states that will filter the instances returned with this
+        /// request.</p>
         pub fn set_instance_states(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InstanceState>>,
@@ -4504,6 +4730,7 @@ pub mod list_instances_input {
             self.marker = Some(input.into());
             self
         }
+        /// <p>The pagination token that indicates the next set of results to retrieve.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -4511,8 +4738,10 @@ pub mod list_instances_input {
         /// Consumes the builder and constructs a [`ListInstancesInput`](crate::input::ListInstancesInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListInstancesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListInstancesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListInstancesInput {
                 cluster_id: self.cluster_id,
                 instance_group_id: self.instance_group_id,
@@ -4536,16 +4765,16 @@ impl ListInstancesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListInstances,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListInstancesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4553,7 +4782,7 @@ impl ListInstancesInput {
         fn update_http_builder(
             input: &crate::input::ListInstancesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4562,29 +4791,31 @@ impl ListInstancesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListInstancesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ElasticMapReduce.ListInstances",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_instances(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4607,25 +4838,27 @@ impl ListInstancesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListInstances::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ListInstances",
-                    "emr",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListInstances::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListInstances",
+            "emr",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4647,8 +4880,8 @@ pub mod list_notebook_executions_input {
     pub struct Builder {
         pub(crate) editor_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::NotebookExecutionStatus>,
-        pub(crate) from: std::option::Option<smithy_types::Instant>,
-        pub(crate) to: std::option::Option<smithy_types::Instant>,
+        pub(crate) from: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) to: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -4657,6 +4890,7 @@ pub mod list_notebook_executions_input {
             self.editor_id = Some(input.into());
             self
         }
+        /// <p>The unique ID of the editor associated with the notebook execution.</p>
         pub fn set_editor_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.editor_id = input;
             self
@@ -4717,6 +4951,58 @@ pub mod list_notebook_executions_input {
             self.status = Some(input);
             self
         }
+        /// <p>The status filter for listing notebook executions.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>START_PENDING</code> indicates that the cluster has received the execution
+        /// request but execution has not begun.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>STARTING</code> indicates that the execution is starting on the
+        /// cluster.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>RUNNING</code> indicates that the execution is being processed by the
+        /// cluster.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FINISHING</code> indicates that execution processing is in the final
+        /// stages.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FINISHED</code> indicates that the execution has completed without
+        /// error.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FAILING</code> indicates that the execution is failing and will not finish
+        /// successfully.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FAILED</code> indicates that the execution failed.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>STOP_PENDING</code> indicates that the cluster has received a
+        /// <code>StopNotebookExecution</code> request and the stop is pending.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>STOPPING</code> indicates that the cluster is in the process of stopping the
+        /// execution as a result of a <code>StopNotebookExecution</code> request.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>STOPPED</code> indicates that the execution stopped because of a
+        /// <code>StopNotebookExecution</code> request.</p>
+        /// </li>
+        /// </ul>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::NotebookExecutionStatus>,
@@ -4726,21 +5012,25 @@ pub mod list_notebook_executions_input {
         }
         /// <p>The beginning of time range filter for listing notebook executions. The default is the
         /// timestamp of 30 days ago.</p>
-        pub fn from(mut self, input: smithy_types::Instant) -> Self {
+        pub fn from(mut self, input: aws_smithy_types::Instant) -> Self {
             self.from = Some(input);
             self
         }
-        pub fn set_from(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The beginning of time range filter for listing notebook executions. The default is the
+        /// timestamp of 30 days ago.</p>
+        pub fn set_from(mut self, input: std::option::Option<aws_smithy_types::Instant>) -> Self {
             self.from = input;
             self
         }
         /// <p>The end of time range filter for listing notebook executions. The default is the current
         /// timestamp.</p>
-        pub fn to(mut self, input: smithy_types::Instant) -> Self {
+        pub fn to(mut self, input: aws_smithy_types::Instant) -> Self {
             self.to = Some(input);
             self
         }
-        pub fn set_to(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The end of time range filter for listing notebook executions. The default is the current
+        /// timestamp.</p>
+        pub fn set_to(mut self, input: std::option::Option<aws_smithy_types::Instant>) -> Self {
             self.to = input;
             self
         }
@@ -4751,6 +5041,9 @@ pub mod list_notebook_executions_input {
             self.marker = Some(input.into());
             self
         }
+        /// <p>The pagination token, returned by a previous <code>ListNotebookExecutions</code> call,
+        /// that indicates the start of the list for this <code>ListNotebookExecutions</code>
+        /// call.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -4760,7 +5053,7 @@ pub mod list_notebook_executions_input {
             self,
         ) -> std::result::Result<
             crate::input::ListNotebookExecutionsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListNotebookExecutionsInput {
                 editor_id: self.editor_id,
@@ -4783,16 +5076,16 @@ impl ListNotebookExecutionsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListNotebookExecutions,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListNotebookExecutionsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4800,7 +5093,7 @@ impl ListNotebookExecutionsInput {
         fn update_http_builder(
             input: &crate::input::ListNotebookExecutionsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4809,32 +5102,34 @@ impl ListNotebookExecutionsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListNotebookExecutionsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ElasticMapReduce.ListNotebookExecutions",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_notebook_executions(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4857,15 +5152,15 @@ impl ListNotebookExecutionsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListNotebookExecutions::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListNotebookExecutions",
             "emr",
         ));
@@ -4874,10 +5169,10 @@ impl ListNotebookExecutionsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4907,6 +5202,7 @@ pub mod list_release_labels_input {
             self.filters = Some(input);
             self
         }
+        /// <p>Filters the results of the request. <code>Prefix</code> specifies the prefix of release labels to return. <code>Application</code> specifies the application (with/without version) of release labels to return.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<crate::model::ReleaseLabelFilter>,
@@ -4919,6 +5215,7 @@ pub mod list_release_labels_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>Specifies the next page of results. If <code>NextToken</code> is not specified, which is usually the case for the first request of ListReleaseLabels, the first page of results are determined by other filtering parameters or by the latest version. The <code>ListReleaseLabels</code> request fails if the identity (Amazon Web Services account ID) and all filtering parameters are different from the original request, or if the <code>NextToken</code> is expired or tampered with.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4928,6 +5225,7 @@ pub mod list_release_labels_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>Defines the maximum number of release labels to return in a single response. The default is <code>100</code>.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -4937,7 +5235,7 @@ pub mod list_release_labels_input {
             self,
         ) -> std::result::Result<
             crate::input::ListReleaseLabelsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListReleaseLabelsInput {
                 filters: self.filters,
@@ -4958,16 +5256,16 @@ impl ListReleaseLabelsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListReleaseLabels,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListReleaseLabelsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4975,7 +5273,7 @@ impl ListReleaseLabelsInput {
         fn update_http_builder(
             input: &crate::input::ListReleaseLabelsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4984,32 +5282,32 @@ impl ListReleaseLabelsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListReleaseLabelsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ElasticMapReduce.ListReleaseLabels",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_release_labels(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5032,15 +5330,15 @@ impl ListReleaseLabelsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListReleaseLabels::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListReleaseLabels",
             "emr",
         ));
@@ -5049,10 +5347,10 @@ impl ListReleaseLabelsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5080,6 +5378,7 @@ pub mod list_security_configurations_input {
             self.marker = Some(input.into());
             self
         }
+        /// <p>The pagination token that indicates the set of results to retrieve.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -5089,7 +5388,7 @@ pub mod list_security_configurations_input {
             self,
         ) -> std::result::Result<
             crate::input::ListSecurityConfigurationsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListSecurityConfigurationsInput {
                 marker: self.marker,
@@ -5109,16 +5408,16 @@ impl ListSecurityConfigurationsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListSecurityConfigurations,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListSecurityConfigurationsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5126,7 +5425,7 @@ impl ListSecurityConfigurationsInput {
         fn update_http_builder(
             input: &crate::input::ListSecurityConfigurationsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5135,32 +5434,34 @@ impl ListSecurityConfigurationsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListSecurityConfigurationsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ElasticMapReduce.ListSecurityConfigurations",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_security_configurations(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5183,15 +5484,15 @@ impl ListSecurityConfigurationsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListSecurityConfigurations::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListSecurityConfigurations",
             "emr",
         ));
@@ -5200,10 +5501,10 @@ impl ListSecurityConfigurationsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5234,16 +5535,23 @@ pub mod list_steps_input {
             self.cluster_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the cluster for which to list the steps.</p>
         pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster_id = input;
             self
         }
+        /// Appends an item to `step_states`.
+        ///
+        /// To override the contents of this collection use [`set_step_states`](Self::set_step_states).
+        ///
+        /// <p>The filter to limit the step list based on certain states.</p>
         pub fn step_states(mut self, input: impl Into<crate::model::StepState>) -> Self {
             let mut v = self.step_states.unwrap_or_default();
             v.push(input.into());
             self.step_states = Some(v);
             self
         }
+        /// <p>The filter to limit the step list based on certain states.</p>
         pub fn set_step_states(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::StepState>>,
@@ -5251,12 +5559,22 @@ pub mod list_steps_input {
             self.step_states = input;
             self
         }
+        /// Appends an item to `step_ids`.
+        ///
+        /// To override the contents of this collection use [`set_step_ids`](Self::set_step_ids).
+        ///
+        /// <p>The filter to limit the step list based on the identifier of the steps. You can specify
+        /// a maximum of ten Step IDs. The character constraint applies to the overall length of the
+        /// array.</p>
         pub fn step_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.step_ids.unwrap_or_default();
             v.push(input.into());
             self.step_ids = Some(v);
             self
         }
+        /// <p>The filter to limit the step list based on the identifier of the steps. You can specify
+        /// a maximum of ten Step IDs. The character constraint applies to the overall length of the
+        /// array.</p>
         pub fn set_step_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5269,6 +5587,7 @@ pub mod list_steps_input {
             self.marker = Some(input.into());
             self
         }
+        /// <p>The maximum number of steps that a single <code>ListSteps</code> action returns is 50. To return a longer list of steps, use multiple <code>ListSteps</code> actions along with the <code>Marker</code> parameter, which is a pagination token that indicates the next set of results to retrieve.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -5276,7 +5595,7 @@ pub mod list_steps_input {
         /// Consumes the builder and constructs a [`ListStepsInput`](crate::input::ListStepsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListStepsInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::ListStepsInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::ListStepsInput {
                 cluster_id: self.cluster_id,
@@ -5298,16 +5617,16 @@ impl ListStepsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListSteps,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListStepsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5315,7 +5634,7 @@ impl ListStepsInput {
         fn update_http_builder(
             input: &crate::input::ListStepsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5324,29 +5643,31 @@ impl ListStepsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListStepsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ElasticMapReduce.ListSteps",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_steps(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5369,22 +5690,25 @@ impl ListStepsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
         let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListSteps::new())
-                .with_metadata(smithy_http::operation::Metadata::new("ListSteps", "emr"));
+            aws_smithy_http::operation::Operation::new(request, crate::operation::ListSteps::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "ListSteps",
+                    "emr",
+                ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5412,6 +5736,7 @@ pub mod list_studios_input {
             self.marker = Some(input.into());
             self
         }
+        /// <p>The pagination token that indicates the set of results to retrieve.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -5419,8 +5744,10 @@ pub mod list_studios_input {
         /// Consumes the builder and constructs a [`ListStudiosInput`](crate::input::ListStudiosInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListStudiosInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListStudiosInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListStudiosInput {
                 marker: self.marker,
             })
@@ -5438,16 +5765,16 @@ impl ListStudiosInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListStudios,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListStudiosInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5455,7 +5782,7 @@ impl ListStudiosInput {
         fn update_http_builder(
             input: &crate::input::ListStudiosInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5464,29 +5791,31 @@ impl ListStudiosInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListStudiosInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ElasticMapReduce.ListStudios",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_studios(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5509,22 +5838,27 @@ impl ListStudiosInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListStudios::new())
-                .with_metadata(smithy_http::operation::Metadata::new("ListStudios", "emr"));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListStudios::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListStudios",
+            "emr",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5554,6 +5888,7 @@ pub mod list_studio_session_mappings_input {
             self.studio_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Amazon EMR Studio.</p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.studio_id = input;
             self
@@ -5564,6 +5899,8 @@ pub mod list_studio_session_mappings_input {
             self.identity_type = Some(input);
             self
         }
+        /// <p>Specifies whether to return session mappings for users or groups. If not specified, the
+        /// results include session mapping details for both users and groups.</p>
         pub fn set_identity_type(
             mut self,
             input: std::option::Option<crate::model::IdentityType>,
@@ -5576,6 +5913,7 @@ pub mod list_studio_session_mappings_input {
             self.marker = Some(input.into());
             self
         }
+        /// <p>The pagination token that indicates the set of results to retrieve.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -5585,7 +5923,7 @@ pub mod list_studio_session_mappings_input {
             self,
         ) -> std::result::Result<
             crate::input::ListStudioSessionMappingsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListStudioSessionMappingsInput {
                 studio_id: self.studio_id,
@@ -5607,16 +5945,16 @@ impl ListStudioSessionMappingsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListStudioSessionMappings,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListStudioSessionMappingsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5624,7 +5962,7 @@ impl ListStudioSessionMappingsInput {
         fn update_http_builder(
             input: &crate::input::ListStudioSessionMappingsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5633,32 +5971,34 @@ impl ListStudioSessionMappingsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListStudioSessionMappingsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ElasticMapReduce.ListStudioSessionMappings",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_studio_session_mappings(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5681,15 +6021,15 @@ impl ListStudioSessionMappingsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListStudioSessionMappings::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListStudioSessionMappings",
             "emr",
         ));
@@ -5698,10 +6038,10 @@ impl ListStudioSessionMappingsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5730,6 +6070,7 @@ pub mod modify_cluster_input {
             self.cluster_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier of the cluster.</p>
         pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster_id = input;
             self
@@ -5739,6 +6080,7 @@ pub mod modify_cluster_input {
             self.step_concurrency_level = Some(input);
             self
         }
+        /// <p>The number of steps that can be executed concurrently. You can specify a minimum of 1 step and a maximum of 256 steps. We recommend that you do not change this parameter while steps are running or the <code>ActionOnFailure</code> setting may not behave as expected. For more information see <a>Step$ActionOnFailure</a>.</p>
         pub fn set_step_concurrency_level(mut self, input: std::option::Option<i32>) -> Self {
             self.step_concurrency_level = input;
             self
@@ -5746,8 +6088,10 @@ pub mod modify_cluster_input {
         /// Consumes the builder and constructs a [`ModifyClusterInput`](crate::input::ModifyClusterInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ModifyClusterInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ModifyClusterInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ModifyClusterInput {
                 cluster_id: self.cluster_id,
                 step_concurrency_level: self.step_concurrency_level,
@@ -5766,16 +6110,16 @@ impl ModifyClusterInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ModifyCluster,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ModifyClusterInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5783,7 +6127,7 @@ impl ModifyClusterInput {
         fn update_http_builder(
             input: &crate::input::ModifyClusterInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5792,29 +6136,31 @@ impl ModifyClusterInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ModifyClusterInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ElasticMapReduce.ModifyCluster",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_modify_cluster(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5837,25 +6183,27 @@ impl ModifyClusterInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ModifyCluster::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ModifyCluster",
-                    "emr",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ModifyCluster::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ModifyCluster",
+            "emr",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5884,6 +6232,7 @@ pub mod modify_instance_fleet_input {
             self.cluster_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier of the cluster.</p>
         pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster_id = input;
             self
@@ -5893,6 +6242,7 @@ pub mod modify_instance_fleet_input {
             self.instance_fleet = Some(input);
             self
         }
+        /// <p>The configuration parameters of the instance fleet.</p>
         pub fn set_instance_fleet(
             mut self,
             input: std::option::Option<crate::model::InstanceFleetModifyConfig>,
@@ -5905,7 +6255,7 @@ pub mod modify_instance_fleet_input {
             self,
         ) -> std::result::Result<
             crate::input::ModifyInstanceFleetInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ModifyInstanceFleetInput {
                 cluster_id: self.cluster_id,
@@ -5925,16 +6275,16 @@ impl ModifyInstanceFleetInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ModifyInstanceFleet,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ModifyInstanceFleetInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5942,7 +6292,7 @@ impl ModifyInstanceFleetInput {
         fn update_http_builder(
             input: &crate::input::ModifyInstanceFleetInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5951,32 +6301,32 @@ impl ModifyInstanceFleetInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ModifyInstanceFleetInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ElasticMapReduce.ModifyInstanceFleet",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_modify_instance_fleet(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5999,15 +6349,15 @@ impl ModifyInstanceFleetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ModifyInstanceFleet::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ModifyInstanceFleet",
             "emr",
         ));
@@ -6016,10 +6366,10 @@ impl ModifyInstanceFleetInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6049,10 +6399,16 @@ pub mod modify_instance_groups_input {
             self.cluster_id = Some(input.into());
             self
         }
+        /// <p>The ID of the cluster to which the instance group belongs.</p>
         pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster_id = input;
             self
         }
+        /// Appends an item to `instance_groups`.
+        ///
+        /// To override the contents of this collection use [`set_instance_groups`](Self::set_instance_groups).
+        ///
+        /// <p>Instance groups to change.</p>
         pub fn instance_groups(
             mut self,
             input: impl Into<crate::model::InstanceGroupModifyConfig>,
@@ -6062,6 +6418,7 @@ pub mod modify_instance_groups_input {
             self.instance_groups = Some(v);
             self
         }
+        /// <p>Instance groups to change.</p>
         pub fn set_instance_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InstanceGroupModifyConfig>>,
@@ -6074,7 +6431,7 @@ pub mod modify_instance_groups_input {
             self,
         ) -> std::result::Result<
             crate::input::ModifyInstanceGroupsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ModifyInstanceGroupsInput {
                 cluster_id: self.cluster_id,
@@ -6094,16 +6451,16 @@ impl ModifyInstanceGroupsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ModifyInstanceGroups,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ModifyInstanceGroupsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6111,7 +6468,7 @@ impl ModifyInstanceGroupsInput {
         fn update_http_builder(
             input: &crate::input::ModifyInstanceGroupsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6120,32 +6477,32 @@ impl ModifyInstanceGroupsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ModifyInstanceGroupsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ElasticMapReduce.ModifyInstanceGroups",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_modify_instance_groups(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6168,15 +6525,15 @@ impl ModifyInstanceGroupsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ModifyInstanceGroups::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ModifyInstanceGroups",
             "emr",
         ));
@@ -6185,10 +6542,10 @@ impl ModifyInstanceGroupsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6219,6 +6576,8 @@ pub mod put_auto_scaling_policy_input {
             self.cluster_id = Some(input.into());
             self
         }
+        /// <p>Specifies the ID of a cluster. The instance group to which the automatic scaling policy
+        /// is applied is within this cluster.</p>
         pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster_id = input;
             self
@@ -6229,6 +6588,8 @@ pub mod put_auto_scaling_policy_input {
             self.instance_group_id = Some(input.into());
             self
         }
+        /// <p>Specifies the ID of the instance group to which the automatic scaling policy is
+        /// applied.</p>
         pub fn set_instance_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6241,6 +6602,7 @@ pub mod put_auto_scaling_policy_input {
             self.auto_scaling_policy = Some(input);
             self
         }
+        /// <p>Specifies the definition of the automatic scaling policy.</p>
         pub fn set_auto_scaling_policy(
             mut self,
             input: std::option::Option<crate::model::AutoScalingPolicy>,
@@ -6253,7 +6615,7 @@ pub mod put_auto_scaling_policy_input {
             self,
         ) -> std::result::Result<
             crate::input::PutAutoScalingPolicyInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutAutoScalingPolicyInput {
                 cluster_id: self.cluster_id,
@@ -6274,16 +6636,16 @@ impl PutAutoScalingPolicyInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::PutAutoScalingPolicy,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::PutAutoScalingPolicyInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6291,7 +6653,7 @@ impl PutAutoScalingPolicyInput {
         fn update_http_builder(
             input: &crate::input::PutAutoScalingPolicyInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6300,32 +6662,34 @@ impl PutAutoScalingPolicyInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::PutAutoScalingPolicyInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ElasticMapReduce.PutAutoScalingPolicy",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_put_auto_scaling_policy(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6348,15 +6712,15 @@ impl PutAutoScalingPolicyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::PutAutoScalingPolicy::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "PutAutoScalingPolicy",
             "emr",
         ));
@@ -6365,10 +6729,10 @@ impl PutAutoScalingPolicyInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6398,6 +6762,7 @@ pub mod put_auto_termination_policy_input {
             self.cluster_id = Some(input.into());
             self
         }
+        /// <p>Specifies the ID of the Amazon EMR cluster to which the auto-termination policy will be attached.</p>
         pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster_id = input;
             self
@@ -6410,6 +6775,7 @@ pub mod put_auto_termination_policy_input {
             self.auto_termination_policy = Some(input);
             self
         }
+        /// <p>Specifies the auto-termination policy to attach to the cluster.</p>
         pub fn set_auto_termination_policy(
             mut self,
             input: std::option::Option<crate::model::AutoTerminationPolicy>,
@@ -6422,7 +6788,7 @@ pub mod put_auto_termination_policy_input {
             self,
         ) -> std::result::Result<
             crate::input::PutAutoTerminationPolicyInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutAutoTerminationPolicyInput {
                 cluster_id: self.cluster_id,
@@ -6443,16 +6809,16 @@ impl PutAutoTerminationPolicyInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::PutAutoTerminationPolicy,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::PutAutoTerminationPolicyInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6460,7 +6826,7 @@ impl PutAutoTerminationPolicyInput {
         fn update_http_builder(
             input: &crate::input::PutAutoTerminationPolicyInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6469,32 +6835,34 @@ impl PutAutoTerminationPolicyInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::PutAutoTerminationPolicyInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ElasticMapReduce.PutAutoTerminationPolicy",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_put_auto_termination_policy(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6517,15 +6885,15 @@ impl PutAutoTerminationPolicyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::PutAutoTerminationPolicy::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "PutAutoTerminationPolicy",
             "emr",
         ));
@@ -6534,10 +6902,10 @@ impl PutAutoTerminationPolicyInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6583,6 +6951,21 @@ pub mod put_block_public_access_configuration_input {
             self.block_public_access_configuration = Some(input);
             self
         }
+        /// <p>A configuration for Amazon EMR block public access. The configuration applies to all
+        /// clusters created in your account for the current Region. The configuration specifies
+        /// whether block public access is enabled. If block public access is enabled, security groups
+        /// associated with the cluster cannot have rules that allow inbound traffic from 0.0.0.0/0 or
+        /// ::/0 on a port, unless the port is specified as an exception using
+        /// <code>PermittedPublicSecurityGroupRuleRanges</code> in the
+        /// <code>BlockPublicAccessConfiguration</code>. By default, Port 22 (SSH) is an exception,
+        /// and public access is allowed on this port. You can change this by updating
+        /// <code>BlockPublicSecurityGroupRules</code> to remove the exception.</p>
+        /// <note>
+        /// <p>For accounts that created clusters in a Region before November 25, 2019, block public
+        /// access is disabled by default in that Region. To use this feature, you must manually
+        /// enable and configure it. For accounts that did not create an EMR cluster in a Region
+        /// before this date, block public access is enabled by default in that Region.</p>
+        /// </note>
         pub fn set_block_public_access_configuration(
             mut self,
             input: std::option::Option<crate::model::BlockPublicAccessConfiguration>,
@@ -6595,7 +6978,7 @@ pub mod put_block_public_access_configuration_input {
             self,
         ) -> std::result::Result<
             crate::input::PutBlockPublicAccessConfigurationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutBlockPublicAccessConfigurationInput {
                 block_public_access_configuration: self.block_public_access_configuration,
@@ -6615,16 +6998,16 @@ impl PutBlockPublicAccessConfigurationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::PutBlockPublicAccessConfiguration,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::PutBlockPublicAccessConfigurationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6632,7 +7015,7 @@ impl PutBlockPublicAccessConfigurationInput {
         fn update_http_builder(
             input: &crate::input::PutBlockPublicAccessConfigurationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6641,30 +7024,30 @@ impl PutBlockPublicAccessConfigurationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::PutBlockPublicAccessConfigurationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ElasticMapReduce.PutBlockPublicAccessConfiguration",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_block_public_access_configuration(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_put_block_public_access_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6687,15 +7070,15 @@ impl PutBlockPublicAccessConfigurationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::PutBlockPublicAccessConfiguration::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "PutBlockPublicAccessConfiguration",
             "emr",
         ));
@@ -6704,10 +7087,10 @@ impl PutBlockPublicAccessConfigurationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6736,6 +7119,7 @@ pub mod put_managed_scaling_policy_input {
             self.cluster_id = Some(input.into());
             self
         }
+        /// <p>Specifies the ID of an EMR cluster where the managed scaling policy is attached. </p>
         pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster_id = input;
             self
@@ -6745,6 +7129,7 @@ pub mod put_managed_scaling_policy_input {
             self.managed_scaling_policy = Some(input);
             self
         }
+        /// <p>Specifies the constraints for the managed scaling policy. </p>
         pub fn set_managed_scaling_policy(
             mut self,
             input: std::option::Option<crate::model::ManagedScalingPolicy>,
@@ -6757,7 +7142,7 @@ pub mod put_managed_scaling_policy_input {
             self,
         ) -> std::result::Result<
             crate::input::PutManagedScalingPolicyInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutManagedScalingPolicyInput {
                 cluster_id: self.cluster_id,
@@ -6778,16 +7163,16 @@ impl PutManagedScalingPolicyInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::PutManagedScalingPolicy,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::PutManagedScalingPolicyInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6795,7 +7180,7 @@ impl PutManagedScalingPolicyInput {
         fn update_http_builder(
             input: &crate::input::PutManagedScalingPolicyInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6804,32 +7189,34 @@ impl PutManagedScalingPolicyInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::PutManagedScalingPolicyInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ElasticMapReduce.PutManagedScalingPolicy",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_put_managed_scaling_policy(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6852,15 +7239,15 @@ impl PutManagedScalingPolicyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::PutManagedScalingPolicy::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "PutManagedScalingPolicy",
             "emr",
         ));
@@ -6869,10 +7256,10 @@ impl PutManagedScalingPolicyInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6902,6 +7289,8 @@ pub mod remove_auto_scaling_policy_input {
             self.cluster_id = Some(input.into());
             self
         }
+        /// <p>Specifies the ID of a cluster. The instance group to which the automatic scaling policy
+        /// is applied is within this cluster.</p>
         pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster_id = input;
             self
@@ -6911,6 +7300,7 @@ pub mod remove_auto_scaling_policy_input {
             self.instance_group_id = Some(input.into());
             self
         }
+        /// <p>Specifies the ID of the instance group to which the scaling policy is applied.</p>
         pub fn set_instance_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6923,7 +7313,7 @@ pub mod remove_auto_scaling_policy_input {
             self,
         ) -> std::result::Result<
             crate::input::RemoveAutoScalingPolicyInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::RemoveAutoScalingPolicyInput {
                 cluster_id: self.cluster_id,
@@ -6944,16 +7334,16 @@ impl RemoveAutoScalingPolicyInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RemoveAutoScalingPolicy,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RemoveAutoScalingPolicyInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6961,7 +7351,7 @@ impl RemoveAutoScalingPolicyInput {
         fn update_http_builder(
             input: &crate::input::RemoveAutoScalingPolicyInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6970,32 +7360,34 @@ impl RemoveAutoScalingPolicyInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RemoveAutoScalingPolicyInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ElasticMapReduce.RemoveAutoScalingPolicy",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_remove_auto_scaling_policy(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7018,15 +7410,15 @@ impl RemoveAutoScalingPolicyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::RemoveAutoScalingPolicy::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "RemoveAutoScalingPolicy",
             "emr",
         ));
@@ -7035,10 +7427,10 @@ impl RemoveAutoScalingPolicyInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7066,6 +7458,7 @@ pub mod remove_auto_termination_policy_input {
             self.cluster_id = Some(input.into());
             self
         }
+        /// <p>Specifies the ID of the Amazon EMR cluster from which the auto-termination policy will be removed.</p>
         pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster_id = input;
             self
@@ -7075,7 +7468,7 @@ pub mod remove_auto_termination_policy_input {
             self,
         ) -> std::result::Result<
             crate::input::RemoveAutoTerminationPolicyInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::RemoveAutoTerminationPolicyInput {
                 cluster_id: self.cluster_id,
@@ -7095,16 +7488,16 @@ impl RemoveAutoTerminationPolicyInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RemoveAutoTerminationPolicy,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RemoveAutoTerminationPolicyInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7112,7 +7505,7 @@ impl RemoveAutoTerminationPolicyInput {
         fn update_http_builder(
             input: &crate::input::RemoveAutoTerminationPolicyInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7121,30 +7514,30 @@ impl RemoveAutoTerminationPolicyInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RemoveAutoTerminationPolicyInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ElasticMapReduce.RemoveAutoTerminationPolicy",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_remove_auto_termination_policy(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_remove_auto_termination_policy(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7167,15 +7560,15 @@ impl RemoveAutoTerminationPolicyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::RemoveAutoTerminationPolicy::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "RemoveAutoTerminationPolicy",
             "emr",
         ));
@@ -7184,10 +7577,10 @@ impl RemoveAutoTerminationPolicyInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7216,6 +7609,8 @@ pub mod remove_managed_scaling_policy_input {
             self.cluster_id = Some(input.into());
             self
         }
+        /// <p> Specifies the ID of the cluster from which the managed scaling policy will be removed.
+        /// </p>
         pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster_id = input;
             self
@@ -7225,7 +7620,7 @@ pub mod remove_managed_scaling_policy_input {
             self,
         ) -> std::result::Result<
             crate::input::RemoveManagedScalingPolicyInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::RemoveManagedScalingPolicyInput {
                 cluster_id: self.cluster_id,
@@ -7245,16 +7640,16 @@ impl RemoveManagedScalingPolicyInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RemoveManagedScalingPolicy,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RemoveManagedScalingPolicyInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7262,7 +7657,7 @@ impl RemoveManagedScalingPolicyInput {
         fn update_http_builder(
             input: &crate::input::RemoveManagedScalingPolicyInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7271,30 +7666,30 @@ impl RemoveManagedScalingPolicyInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RemoveManagedScalingPolicyInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ElasticMapReduce.RemoveManagedScalingPolicy",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_remove_managed_scaling_policy(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_remove_managed_scaling_policy(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7317,15 +7712,15 @@ impl RemoveManagedScalingPolicyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::RemoveManagedScalingPolicy::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "RemoveManagedScalingPolicy",
             "emr",
         ));
@@ -7334,10 +7729,10 @@ impl RemoveManagedScalingPolicyInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7367,16 +7762,24 @@ pub mod remove_tags_input {
             self.resource_id = Some(input.into());
             self
         }
+        /// <p>The Amazon EMR resource identifier from which tags will be removed. For example, a
+        /// cluster identifier or an Amazon EMR Studio ID.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
         }
+        /// Appends an item to `tag_keys`.
+        ///
+        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
+        ///
+        /// <p>A list of tag keys to remove from the resource.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
+        /// <p>A list of tag keys to remove from the resource.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7387,8 +7790,10 @@ pub mod remove_tags_input {
         /// Consumes the builder and constructs a [`RemoveTagsInput`](crate::input::RemoveTagsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::RemoveTagsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::RemoveTagsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::RemoveTagsInput {
                 resource_id: self.resource_id,
                 tag_keys: self.tag_keys,
@@ -7407,16 +7812,16 @@ impl RemoveTagsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RemoveTags,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RemoveTagsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7424,7 +7829,7 @@ impl RemoveTagsInput {
         fn update_http_builder(
             input: &crate::input::RemoveTagsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7433,29 +7838,31 @@ impl RemoveTagsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RemoveTagsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ElasticMapReduce.RemoveTags",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_remove_tags(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7478,22 +7885,27 @@ impl RemoveTagsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::RemoveTags::new())
-                .with_metadata(smithy_http::operation::Metadata::new("RemoveTags", "emr"));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::RemoveTags::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "RemoveTags",
+            "emr",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7552,6 +7964,7 @@ pub mod run_job_flow_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the job flow.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -7562,6 +7975,8 @@ pub mod run_job_flow_input {
             self.log_uri = Some(input.into());
             self
         }
+        /// <p>The location in Amazon S3 to write the log files of the job flow. If a value is not
+        /// provided, logs are not created.</p>
         pub fn set_log_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.log_uri = input;
             self
@@ -7573,6 +7988,9 @@ pub mod run_job_flow_input {
             self.log_encryption_kms_key_id = Some(input.into());
             self
         }
+        /// <p>The KMS key used for encrypting log files. If a value is not
+        /// provided, the logs remain encrypted by AES-256. This attribute is only available with
+        /// Amazon EMR version 5.30.0 and later, excluding Amazon EMR 6.0.0.</p>
         pub fn set_log_encryption_kms_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7585,6 +8003,7 @@ pub mod run_job_flow_input {
             self.additional_info = Some(input.into());
             self
         }
+        /// <p>A JSON string for selecting additional features.</p>
         pub fn set_additional_info(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7599,6 +8018,9 @@ pub mod run_job_flow_input {
             self.ami_version = Some(input.into());
             self
         }
+        /// <p>Applies only to Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases 4.0 and
+        /// later, <code>ReleaseLabel</code> is used. To specify a custom AMI, use
+        /// <code>CustomAmiID</code>.</p>
         pub fn set_ami_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ami_version = input;
             self
@@ -7614,6 +8036,13 @@ pub mod run_job_flow_input {
             self.release_label = Some(input.into());
             self
         }
+        /// <p>The Amazon EMR release label, which determines the version of open-source application
+        /// packages installed on the cluster. Release labels are in the form <code>emr-x.x.x</code>,
+        /// where x.x.x is an Amazon EMR release version such as <code>emr-5.14.0</code>. For more
+        /// information about Amazon EMR release versions and included application versions and
+        /// features, see <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>. The release
+        /// label applies only to Amazon EMR releases version 4.0 and later. Earlier versions use
+        /// <code>AmiVersion</code>.</p>
         pub fn set_release_label(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7626,6 +8055,7 @@ pub mod run_job_flow_input {
             self.instances = Some(input);
             self
         }
+        /// <p>A specification of the number and type of Amazon EC2 instances.</p>
         pub fn set_instances(
             mut self,
             input: std::option::Option<crate::model::JobFlowInstancesConfig>,
@@ -7633,12 +8063,18 @@ pub mod run_job_flow_input {
             self.instances = input;
             self
         }
+        /// Appends an item to `steps`.
+        ///
+        /// To override the contents of this collection use [`set_steps`](Self::set_steps).
+        ///
+        /// <p>A list of steps to run.</p>
         pub fn steps(mut self, input: impl Into<crate::model::StepConfig>) -> Self {
             let mut v = self.steps.unwrap_or_default();
             v.push(input.into());
             self.steps = Some(v);
             self
         }
+        /// <p>A list of steps to run.</p>
         pub fn set_steps(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::StepConfig>>,
@@ -7646,6 +8082,11 @@ pub mod run_job_flow_input {
             self.steps = input;
             self
         }
+        /// Appends an item to `bootstrap_actions`.
+        ///
+        /// To override the contents of this collection use [`set_bootstrap_actions`](Self::set_bootstrap_actions).
+        ///
+        /// <p>A list of bootstrap actions to run before Hadoop starts on the cluster nodes.</p>
         pub fn bootstrap_actions(
             mut self,
             input: impl Into<crate::model::BootstrapActionConfig>,
@@ -7655,6 +8096,7 @@ pub mod run_job_flow_input {
             self.bootstrap_actions = Some(v);
             self
         }
+        /// <p>A list of bootstrap actions to run before Hadoop starts on the cluster nodes.</p>
         pub fn set_bootstrap_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BootstrapActionConfig>>,
@@ -7662,12 +8104,46 @@ pub mod run_job_flow_input {
             self.bootstrap_actions = input;
             self
         }
+        /// Appends an item to `supported_products`.
+        ///
+        /// To override the contents of this collection use [`set_supported_products`](Self::set_supported_products).
+        ///
+        /// <note>
+        /// <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and later, use
+        /// Applications.</p>
+        /// </note>
+        /// <p>A list of strings that indicates third-party software to use. For more information, see
+        /// the <a href="https://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon EMR
+        /// Developer Guide</a>. Currently supported values are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>"mapr-m3" - launch the job flow using MapR M3 Edition.</p>
+        /// </li>
+        /// <li>
+        /// <p>"mapr-m5" - launch the job flow using MapR M5 Edition.</p>
+        /// </li>
+        /// </ul>
         pub fn supported_products(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.supported_products.unwrap_or_default();
             v.push(input.into());
             self.supported_products = Some(v);
             self
         }
+        /// <note>
+        /// <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and later, use
+        /// Applications.</p>
+        /// </note>
+        /// <p>A list of strings that indicates third-party software to use. For more information, see
+        /// the <a href="https://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon EMR
+        /// Developer Guide</a>. Currently supported values are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>"mapr-m3" - launch the job flow using MapR M3 Edition.</p>
+        /// </li>
+        /// <li>
+        /// <p>"mapr-m5" - launch the job flow using MapR M5 Edition.</p>
+        /// </li>
+        /// </ul>
         pub fn set_supported_products(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7675,6 +8151,47 @@ pub mod run_job_flow_input {
             self.supported_products = input;
             self
         }
+        /// Appends an item to `new_supported_products`.
+        ///
+        /// To override the contents of this collection use [`set_new_supported_products`](Self::set_new_supported_products).
+        ///
+        /// <note>
+        /// <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and later, use
+        /// Applications.</p>
+        /// </note>
+        /// <p>A list of strings that indicates third-party software to use with the job flow that
+        /// accepts a user argument list. EMR accepts and forwards the argument list to the
+        /// corresponding installation script as bootstrap action arguments. For more information, see
+        /// "Launch a Job Flow on the MapR Distribution for Hadoop" in the <a href="https://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon EMR Developer Guide</a>. Supported
+        /// values are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>"mapr-m3" - launch the cluster using MapR M3 Edition.</p>
+        /// </li>
+        /// <li>
+        /// <p>"mapr-m5" - launch the cluster using MapR M5 Edition.</p>
+        /// </li>
+        /// <li>
+        /// <p>"mapr" with the user arguments specifying "--edition,m3" or "--edition,m5" -
+        /// launch the job flow using MapR M3 or M5 Edition respectively.</p>
+        /// </li>
+        /// <li>
+        /// <p>"mapr-m7" - launch the cluster using MapR M7 Edition.</p>
+        /// </li>
+        /// <li>
+        /// <p>"hunk" - launch the cluster with the Hunk Big Data Analytics Platform.</p>
+        /// </li>
+        /// <li>
+        /// <p>"hue"- launch the cluster with Hue installed.</p>
+        /// </li>
+        /// <li>
+        /// <p>"spark" - launch the cluster with Apache Spark installed.</p>
+        /// </li>
+        /// <li>
+        /// <p>"ganglia" - launch the cluster with the Ganglia Monitoring System
+        /// installed.</p>
+        /// </li>
+        /// </ul>
         pub fn new_supported_products(
             mut self,
             input: impl Into<crate::model::SupportedProductConfig>,
@@ -7684,6 +8201,43 @@ pub mod run_job_flow_input {
             self.new_supported_products = Some(v);
             self
         }
+        /// <note>
+        /// <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and later, use
+        /// Applications.</p>
+        /// </note>
+        /// <p>A list of strings that indicates third-party software to use with the job flow that
+        /// accepts a user argument list. EMR accepts and forwards the argument list to the
+        /// corresponding installation script as bootstrap action arguments. For more information, see
+        /// "Launch a Job Flow on the MapR Distribution for Hadoop" in the <a href="https://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon EMR Developer Guide</a>. Supported
+        /// values are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>"mapr-m3" - launch the cluster using MapR M3 Edition.</p>
+        /// </li>
+        /// <li>
+        /// <p>"mapr-m5" - launch the cluster using MapR M5 Edition.</p>
+        /// </li>
+        /// <li>
+        /// <p>"mapr" with the user arguments specifying "--edition,m3" or "--edition,m5" -
+        /// launch the job flow using MapR M3 or M5 Edition respectively.</p>
+        /// </li>
+        /// <li>
+        /// <p>"mapr-m7" - launch the cluster using MapR M7 Edition.</p>
+        /// </li>
+        /// <li>
+        /// <p>"hunk" - launch the cluster with the Hunk Big Data Analytics Platform.</p>
+        /// </li>
+        /// <li>
+        /// <p>"hue"- launch the cluster with Hue installed.</p>
+        /// </li>
+        /// <li>
+        /// <p>"spark" - launch the cluster with Apache Spark installed.</p>
+        /// </li>
+        /// <li>
+        /// <p>"ganglia" - launch the cluster with the Ganglia Monitoring System
+        /// installed.</p>
+        /// </li>
+        /// </ul>
         pub fn set_new_supported_products(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SupportedProductConfig>>,
@@ -7691,12 +8245,24 @@ pub mod run_job_flow_input {
             self.new_supported_products = input;
             self
         }
+        /// Appends an item to `applications`.
+        ///
+        /// To override the contents of this collection use [`set_applications`](Self::set_applications).
+        ///
+        /// <p>Applies to Amazon EMR releases 4.0 and later. A case-insensitive list of applications
+        /// for Amazon EMR to install and configure when launching the cluster. For a list of
+        /// applications available for each Amazon EMR release version, see the <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">Amazon EMR Release
+        /// Guide</a>.</p>
         pub fn applications(mut self, input: impl Into<crate::model::Application>) -> Self {
             let mut v = self.applications.unwrap_or_default();
             v.push(input.into());
             self.applications = Some(v);
             self
         }
+        /// <p>Applies to Amazon EMR releases 4.0 and later. A case-insensitive list of applications
+        /// for Amazon EMR to install and configure when launching the cluster. For a list of
+        /// applications available for each Amazon EMR release version, see the <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">Amazon EMR Release
+        /// Guide</a>.</p>
         pub fn set_applications(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Application>>,
@@ -7704,12 +8270,20 @@ pub mod run_job_flow_input {
             self.applications = input;
             self
         }
+        /// Appends an item to `configurations`.
+        ///
+        /// To override the contents of this collection use [`set_configurations`](Self::set_configurations).
+        ///
+        /// <p>For Amazon EMR releases 4.0 and later. The list of configurations supplied for the EMR
+        /// cluster you are creating.</p>
         pub fn configurations(mut self, input: impl Into<crate::model::Configuration>) -> Self {
             let mut v = self.configurations.unwrap_or_default();
             v.push(input.into());
             self.configurations = Some(v);
             self
         }
+        /// <p>For Amazon EMR releases 4.0 and later. The list of configurations supplied for the EMR
+        /// cluster you are creating.</p>
         pub fn set_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Configuration>>,
@@ -7723,6 +8297,8 @@ pub mod run_job_flow_input {
             self.visible_to_all_users = Some(input);
             self
         }
+        /// <p>Set this value to <code>true</code> so that IAM principals in the Amazon Web Services account associated with the cluster can perform EMR actions on the cluster that their IAM policies allow. This value defaults to <code>true</code> for clusters created using the EMR API or the CLI <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command.</p>
+        /// <p>When set to <code>false</code>, only the IAM principal that created the cluster and the Amazon Web Services account root user can perform EMR actions for the cluster, regardless of the IAM permissions policies attached to other IAM principals. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMRManagement Guide</i>.</p>
         pub fn set_visible_to_all_users(mut self, input: std::option::Option<bool>) -> Self {
             self.visible_to_all_users = input;
             self
@@ -7735,6 +8311,10 @@ pub mod run_job_flow_input {
             self.job_flow_role = Some(input.into());
             self
         }
+        /// <p>Also called instance profile and EC2 role. An IAM role for an EMR cluster. The EC2
+        /// instances of the cluster assume this role. The default role is
+        /// <code>EMR_EC2_DefaultRole</code>. In order to use the default role, you must have
+        /// already created it using the CLI or console.</p>
         pub fn set_job_flow_role(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7748,16 +8328,24 @@ pub mod run_job_flow_input {
             self.service_role = Some(input.into());
             self
         }
+        /// <p>The IAM role that Amazon EMR assumes in order to access Amazon Web Services resources on
+        /// your behalf.</p>
         pub fn set_service_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service_role = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of tags to associate with a cluster and propagate to Amazon EC2 instances.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>A list of tags to associate with a cluster and propagate to Amazon EC2 instances.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -7770,6 +8358,7 @@ pub mod run_job_flow_input {
             self.security_configuration = Some(input.into());
             self
         }
+        /// <p>The name of a security configuration to apply to the cluster.</p>
         pub fn set_security_configuration(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7785,6 +8374,10 @@ pub mod run_job_flow_input {
             self.auto_scaling_role = Some(input.into());
             self
         }
+        /// <p>An IAM role for automatic scaling policies. The default role is
+        /// <code>EMR_AutoScaling_DefaultRole</code>. The IAM role provides permissions that the
+        /// automatic scaling feature requires to launch and terminate EC2 instances in an instance
+        /// group.</p>
         pub fn set_auto_scaling_role(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7808,6 +8401,18 @@ pub mod run_job_flow_input {
             self.scale_down_behavior = Some(input);
             self
         }
+        /// <p>Specifies the way that individual Amazon EC2 instances terminate when an automatic
+        /// scale-in activity occurs or an instance group is resized.
+        /// <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates nodes at
+        /// the instance-hour boundary, regardless of when the request to terminate the instance was
+        /// submitted. This option is only available with Amazon EMR 5.1.0 and later and is the default
+        /// for clusters created using that version. <code>TERMINATE_AT_TASK_COMPLETION</code>
+        /// indicates that Amazon EMR adds nodes to a deny list and drains tasks from nodes before
+        /// terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either
+        /// behavior, Amazon EMR removes the least active nodes first and blocks instance termination
+        /// if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> available
+        /// only in Amazon EMR version 4.1.0 and later, and is the default for versions of Amazon EMR
+        /// earlier than 5.1.0.</p>
         pub fn set_scale_down_behavior(
             mut self,
             input: std::option::Option<crate::model::ScaleDownBehavior>,
@@ -7829,6 +8434,16 @@ pub mod run_job_flow_input {
             self.custom_ami_id = Some(input.into());
             self
         }
+        /// <p>Available only in Amazon EMR version 5.7.0 and later. The ID of a custom Amazon
+        /// EBS-backed Linux AMI. If specified, Amazon EMR uses this AMI when it launches cluster EC2
+        /// instances. For more information about custom AMIs in Amazon EMR, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-custom-ami.html">Using a Custom
+        /// AMI</a> in the <i>Amazon EMR Management Guide</i>. If omitted, the
+        /// cluster uses the base Linux AMI for the <code>ReleaseLabel</code> specified. For Amazon EMR
+        /// versions 2.x and 3.x, use <code>AmiVersion</code> instead.</p>
+        /// <p>For information about creating a custom AMI, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Creating an Amazon EBS-Backed
+        /// Linux AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux
+        /// Instances</i>. For information about finding an AMI ID, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding a Linux
+        /// AMI</a>. </p>
         pub fn set_custom_ami_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7842,6 +8457,8 @@ pub mod run_job_flow_input {
             self.ebs_root_volume_size = Some(input);
             self
         }
+        /// <p>The size, in GiB, of the Amazon EBS root device volume of the Linux AMI that is used for
+        /// each EC2 instance. Available in Amazon EMR version 4.x and later.</p>
         pub fn set_ebs_root_volume_size(mut self, input: std::option::Option<i32>) -> Self {
             self.ebs_root_volume_size = input;
             self
@@ -7855,6 +8472,11 @@ pub mod run_job_flow_input {
             self.repo_upgrade_on_boot = Some(input);
             self
         }
+        /// <p>Applies only when <code>CustomAmiID</code> is used. Specifies which updates from the
+        /// Amazon Linux AMI package repositories to apply automatically when the instance boots using
+        /// the AMI. If omitted, the default is <code>SECURITY</code>, which indicates that only
+        /// security updates are applied. If <code>NONE</code> is specified, no updates are applied,
+        /// and all updates must be applied manually.</p>
         pub fn set_repo_upgrade_on_boot(
             mut self,
             input: std::option::Option<crate::model::RepoUpgradeOnBoot>,
@@ -7869,6 +8491,9 @@ pub mod run_job_flow_input {
             self.kerberos_attributes = Some(input);
             self
         }
+        /// <p>Attributes for Kerberos configuration when Kerberos authentication is enabled using a
+        /// security configuration. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use Kerberos Authentication</a>
+        /// in the <i>Amazon EMR Management Guide</i>.</p>
         pub fn set_kerberos_attributes(
             mut self,
             input: std::option::Option<crate::model::KerberosAttributes>,
@@ -7882,6 +8507,8 @@ pub mod run_job_flow_input {
             self.step_concurrency_level = Some(input);
             self
         }
+        /// <p>Specifies the number of steps that can be executed concurrently. The default value is
+        /// <code>1</code>. The maximum value is <code>256</code>.</p>
         pub fn set_step_concurrency_level(mut self, input: std::option::Option<i32>) -> Self {
             self.step_concurrency_level = input;
             self
@@ -7891,6 +8518,7 @@ pub mod run_job_flow_input {
             self.managed_scaling_policy = Some(input);
             self
         }
+        /// <p> The specified managed scaling policy for an Amazon EMR cluster. </p>
         pub fn set_managed_scaling_policy(
             mut self,
             input: std::option::Option<crate::model::ManagedScalingPolicy>,
@@ -7898,6 +8526,11 @@ pub mod run_job_flow_input {
             self.managed_scaling_policy = input;
             self
         }
+        /// Appends an item to `placement_group_configs`.
+        ///
+        /// To override the contents of this collection use [`set_placement_group_configs`](Self::set_placement_group_configs).
+        ///
+        /// <p>The specified placement group configuration for an Amazon EMR cluster.</p>
         pub fn placement_group_configs(
             mut self,
             input: impl Into<crate::model::PlacementGroupConfig>,
@@ -7907,6 +8540,7 @@ pub mod run_job_flow_input {
             self.placement_group_configs = Some(v);
             self
         }
+        /// <p>The specified placement group configuration for an Amazon EMR cluster.</p>
         pub fn set_placement_group_configs(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PlacementGroupConfig>>,
@@ -7922,6 +8556,7 @@ pub mod run_job_flow_input {
             self.auto_termination_policy = Some(input);
             self
         }
+        /// <p>An auto-termination policy for an Amazon EMR cluster. An auto-termination policy defines the amount of idle time in seconds after which a cluster automatically terminates. For alternative cluster termination options, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html">Control cluster termination</a>.</p>
         pub fn set_auto_termination_policy(
             mut self,
             input: std::option::Option<crate::model::AutoTerminationPolicy>,
@@ -7932,8 +8567,10 @@ pub mod run_job_flow_input {
         /// Consumes the builder and constructs a [`RunJobFlowInput`](crate::input::RunJobFlowInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::RunJobFlowInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::RunJobFlowInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::RunJobFlowInput {
                 name: self.name,
                 log_uri: self.log_uri,
@@ -7978,16 +8615,16 @@ impl RunJobFlowInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RunJobFlow,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RunJobFlowInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7995,7 +8632,7 @@ impl RunJobFlowInput {
         fn update_http_builder(
             input: &crate::input::RunJobFlowInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8004,29 +8641,31 @@ impl RunJobFlowInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RunJobFlowInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ElasticMapReduce.RunJobFlow",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_run_job_flow(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8049,22 +8688,27 @@ impl RunJobFlowInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::RunJobFlow::new())
-                .with_metadata(smithy_http::operation::Metadata::new("RunJobFlow", "emr"));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::RunJobFlow::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "RunJobFlow",
+            "emr",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8088,12 +8732,20 @@ pub mod set_termination_protection_input {
         pub(crate) termination_protected: std::option::Option<bool>,
     }
     impl Builder {
+        /// Appends an item to `job_flow_ids`.
+        ///
+        /// To override the contents of this collection use [`set_job_flow_ids`](Self::set_job_flow_ids).
+        ///
+        /// <p> A list of strings that uniquely identify the clusters to protect. This identifier is
+        /// returned by <a>RunJobFlow</a> and can also be obtained from <a>DescribeJobFlows</a> . </p>
         pub fn job_flow_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.job_flow_ids.unwrap_or_default();
             v.push(input.into());
             self.job_flow_ids = Some(v);
             self
         }
+        /// <p> A list of strings that uniquely identify the clusters to protect. This identifier is
+        /// returned by <a>RunJobFlow</a> and can also be obtained from <a>DescribeJobFlows</a> . </p>
         pub fn set_job_flow_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8108,6 +8760,9 @@ pub mod set_termination_protection_input {
             self.termination_protected = Some(input);
             self
         }
+        /// <p>A Boolean that indicates whether to protect the cluster and prevent the Amazon EC2
+        /// instances in the cluster from shutting down due to API calls, user intervention, or
+        /// job-flow error.</p>
         pub fn set_termination_protected(mut self, input: std::option::Option<bool>) -> Self {
             self.termination_protected = input;
             self
@@ -8117,7 +8772,7 @@ pub mod set_termination_protection_input {
             self,
         ) -> std::result::Result<
             crate::input::SetTerminationProtectionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::SetTerminationProtectionInput {
                 job_flow_ids: self.job_flow_ids,
@@ -8138,16 +8793,16 @@ impl SetTerminationProtectionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::SetTerminationProtection,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SetTerminationProtectionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8155,7 +8810,7 @@ impl SetTerminationProtectionInput {
         fn update_http_builder(
             input: &crate::input::SetTerminationProtectionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8164,32 +8819,34 @@ impl SetTerminationProtectionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SetTerminationProtectionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ElasticMapReduce.SetTerminationProtection",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_set_termination_protection(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8212,15 +8869,15 @@ impl SetTerminationProtectionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::SetTerminationProtection::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "SetTerminationProtection",
             "emr",
         ));
@@ -8229,10 +8886,10 @@ impl SetTerminationProtectionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8256,12 +8913,18 @@ pub mod set_visible_to_all_users_input {
         pub(crate) visible_to_all_users: std::option::Option<bool>,
     }
     impl Builder {
+        /// Appends an item to `job_flow_ids`.
+        ///
+        /// To override the contents of this collection use [`set_job_flow_ids`](Self::set_job_flow_ids).
+        ///
+        /// <p>The unique identifier of the job flow (cluster).</p>
         pub fn job_flow_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.job_flow_ids.unwrap_or_default();
             v.push(input.into());
             self.job_flow_ids = Some(v);
             self
         }
+        /// <p>The unique identifier of the job flow (cluster).</p>
         pub fn set_job_flow_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8276,6 +8939,9 @@ pub mod set_visible_to_all_users_input {
             self.visible_to_all_users = Some(input);
             self
         }
+        /// <p>A value of <code>true</code> indicates that an IAM principal in the Amazon Web Services account can perform
+        /// EMR actions on the cluster that the IAM policies attached to the principal allow. A
+        /// value of <code>false</code> indicates that only the IAM principal that created the cluster and the Amazon Web Services root user can perform EMR actions on the cluster.</p>
         pub fn set_visible_to_all_users(mut self, input: std::option::Option<bool>) -> Self {
             self.visible_to_all_users = input;
             self
@@ -8285,7 +8951,7 @@ pub mod set_visible_to_all_users_input {
             self,
         ) -> std::result::Result<
             crate::input::SetVisibleToAllUsersInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::SetVisibleToAllUsersInput {
                 job_flow_ids: self.job_flow_ids,
@@ -8305,16 +8971,16 @@ impl SetVisibleToAllUsersInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::SetVisibleToAllUsers,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SetVisibleToAllUsersInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8322,7 +8988,7 @@ impl SetVisibleToAllUsersInput {
         fn update_http_builder(
             input: &crate::input::SetVisibleToAllUsersInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8331,32 +8997,34 @@ impl SetVisibleToAllUsersInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SetVisibleToAllUsersInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ElasticMapReduce.SetVisibleToAllUsers",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_set_visible_to_all_users(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8379,15 +9047,15 @@ impl SetVisibleToAllUsersInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::SetVisibleToAllUsers::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "SetVisibleToAllUsers",
             "emr",
         ));
@@ -8396,10 +9064,10 @@ impl SetVisibleToAllUsersInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8434,6 +9102,7 @@ pub mod start_notebook_execution_input {
             self.editor_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier of the EMR Notebook to use for notebook execution.</p>
         pub fn set_editor_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.editor_id = input;
             self
@@ -8450,6 +9119,14 @@ pub mod start_notebook_execution_input {
             self.relative_path = Some(input.into());
             self
         }
+        /// <p>The path and file name of the notebook file for this execution, relative to the path
+        /// specified for the EMR Notebook. For example, if you specify a path of
+        /// <code>s3://MyBucket/MyNotebooks</code> when you create an EMR Notebook for a notebook
+        /// with an ID of <code>e-ABCDEFGHIJK1234567890ABCD</code> (the <code>EditorID</code> of this
+        /// request), and you specify a <code>RelativePath</code> of
+        /// <code>my_notebook_executions/notebook_execution.ipynb</code>, the location of the file
+        /// for the notebook execution is
+        /// <code>s3://MyBucket/MyNotebooks/e-ABCDEFGHIJK1234567890ABCD/my_notebook_executions/notebook_execution.ipynb</code>.</p>
         pub fn set_relative_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8462,6 +9139,7 @@ pub mod start_notebook_execution_input {
             self.notebook_execution_name = Some(input.into());
             self
         }
+        /// <p>An optional name for the notebook execution.</p>
         pub fn set_notebook_execution_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8475,6 +9153,8 @@ pub mod start_notebook_execution_input {
             self.notebook_params = Some(input.into());
             self
         }
+        /// <p>Input parameters in JSON format passed to the EMR Notebook at runtime for
+        /// execution.</p>
         pub fn set_notebook_params(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8487,6 +9167,7 @@ pub mod start_notebook_execution_input {
             self.execution_engine = Some(input);
             self
         }
+        /// <p>Specifies the execution engine (cluster) that runs the notebook execution.</p>
         pub fn set_execution_engine(
             mut self,
             input: std::option::Option<crate::model::ExecutionEngineConfig>,
@@ -8500,6 +9181,8 @@ pub mod start_notebook_execution_input {
             self.service_role = Some(input.into());
             self
         }
+        /// <p>The name or ARN of the IAM role that is used as the service role for Amazon EMR (the EMR
+        /// role) for the notebook execution.</p>
         pub fn set_service_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service_role = input;
             self
@@ -8513,6 +9196,8 @@ pub mod start_notebook_execution_input {
             self.notebook_instance_security_group_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier of the Amazon EC2 security group to associate with the EMR
+        /// Notebook for this notebook execution.</p>
         pub fn set_notebook_instance_security_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8520,12 +9205,22 @@ pub mod start_notebook_execution_input {
             self.notebook_instance_security_group_id = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of tags associated with a notebook execution. Tags are user-defined key-value
+        /// pairs that consist of a required key string with a maximum of 128 characters and an
+        /// optional value string with a maximum of 256 characters.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>A list of tags associated with a notebook execution. Tags are user-defined key-value
+        /// pairs that consist of a required key string with a maximum of 128 characters and an
+        /// optional value string with a maximum of 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -8538,7 +9233,7 @@ pub mod start_notebook_execution_input {
             self,
         ) -> std::result::Result<
             crate::input::StartNotebookExecutionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::StartNotebookExecutionInput {
                 editor_id: self.editor_id,
@@ -8564,16 +9259,16 @@ impl StartNotebookExecutionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::StartNotebookExecution,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::StartNotebookExecutionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8581,7 +9276,7 @@ impl StartNotebookExecutionInput {
         fn update_http_builder(
             input: &crate::input::StartNotebookExecutionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8590,32 +9285,34 @@ impl StartNotebookExecutionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::StartNotebookExecutionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ElasticMapReduce.StartNotebookExecution",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_notebook_execution(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8638,15 +9335,15 @@ impl StartNotebookExecutionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::StartNotebookExecution::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "StartNotebookExecution",
             "emr",
         ));
@@ -8655,10 +9352,10 @@ impl StartNotebookExecutionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8686,6 +9383,7 @@ pub mod stop_notebook_execution_input {
             self.notebook_execution_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier of the notebook execution.</p>
         pub fn set_notebook_execution_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8698,7 +9396,7 @@ pub mod stop_notebook_execution_input {
             self,
         ) -> std::result::Result<
             crate::input::StopNotebookExecutionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::StopNotebookExecutionInput {
                 notebook_execution_id: self.notebook_execution_id,
@@ -8717,16 +9415,16 @@ impl StopNotebookExecutionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::StopNotebookExecution,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::StopNotebookExecutionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8734,7 +9432,7 @@ impl StopNotebookExecutionInput {
         fn update_http_builder(
             input: &crate::input::StopNotebookExecutionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8743,32 +9441,34 @@ impl StopNotebookExecutionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::StopNotebookExecutionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ElasticMapReduce.StopNotebookExecution",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_stop_notebook_execution(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8791,15 +9491,15 @@ impl StopNotebookExecutionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::StopNotebookExecution::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "StopNotebookExecution",
             "emr",
         ));
@@ -8808,10 +9508,10 @@ impl StopNotebookExecutionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8834,12 +9534,18 @@ pub mod terminate_job_flows_input {
         pub(crate) job_flow_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `job_flow_ids`.
+        ///
+        /// To override the contents of this collection use [`set_job_flow_ids`](Self::set_job_flow_ids).
+        ///
+        /// <p>A list of job flows to be shut down.</p>
         pub fn job_flow_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.job_flow_ids.unwrap_or_default();
             v.push(input.into());
             self.job_flow_ids = Some(v);
             self
         }
+        /// <p>A list of job flows to be shut down.</p>
         pub fn set_job_flow_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8852,7 +9558,7 @@ pub mod terminate_job_flows_input {
             self,
         ) -> std::result::Result<
             crate::input::TerminateJobFlowsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::TerminateJobFlowsInput {
                 job_flow_ids: self.job_flow_ids,
@@ -8871,16 +9577,16 @@ impl TerminateJobFlowsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::TerminateJobFlows,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::TerminateJobFlowsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8888,7 +9594,7 @@ impl TerminateJobFlowsInput {
         fn update_http_builder(
             input: &crate::input::TerminateJobFlowsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8897,32 +9603,32 @@ impl TerminateJobFlowsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::TerminateJobFlowsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ElasticMapReduce.TerminateJobFlows",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_terminate_job_flows(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8945,15 +9651,15 @@ impl TerminateJobFlowsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::TerminateJobFlows::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "TerminateJobFlows",
             "emr",
         ));
@@ -8962,10 +9668,10 @@ impl TerminateJobFlowsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8997,6 +9703,7 @@ pub mod update_studio_input {
             self.studio_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Amazon EMR Studio to update.</p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.studio_id = input;
             self
@@ -9006,6 +9713,7 @@ pub mod update_studio_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>A descriptive name for the Amazon EMR Studio.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -9015,16 +9723,23 @@ pub mod update_studio_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>A detailed description to assign to the Amazon EMR Studio.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Appends an item to `subnet_ids`.
+        ///
+        /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
+        ///
+        /// <p>A list of subnet IDs to associate with the Amazon EMR Studio. The list can include new subnet IDs, but must also include all of the subnet IDs previously associated with the Studio. The list order does not matter. A Studio can have a maximum of 5 subnets. The subnets must belong to the same VPC as the Studio. </p>
         pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnet_ids.unwrap_or_default();
             v.push(input.into());
             self.subnet_ids = Some(v);
             self
         }
+        /// <p>A list of subnet IDs to associate with the Amazon EMR Studio. The list can include new subnet IDs, but must also include all of the subnet IDs previously associated with the Studio. The list order does not matter. A Studio can have a maximum of 5 subnets. The subnets must belong to the same VPC as the Studio. </p>
         pub fn set_subnet_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9037,6 +9752,7 @@ pub mod update_studio_input {
             self.default_s3_location = Some(input.into());
             self
         }
+        /// <p>The Amazon S3 location to back up Workspaces and notebook files for the Amazon EMR Studio.</p>
         pub fn set_default_s3_location(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9047,8 +9763,10 @@ pub mod update_studio_input {
         /// Consumes the builder and constructs a [`UpdateStudioInput`](crate::input::UpdateStudioInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UpdateStudioInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateStudioInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateStudioInput {
                 studio_id: self.studio_id,
                 name: self.name,
@@ -9070,16 +9788,16 @@ impl UpdateStudioInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateStudio,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateStudioInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -9087,7 +9805,7 @@ impl UpdateStudioInput {
         fn update_http_builder(
             input: &crate::input::UpdateStudioInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9096,31 +9814,31 @@ impl UpdateStudioInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateStudioInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ElasticMapReduce.UpdateStudio",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_update_studio(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9143,22 +9861,27 @@ impl UpdateStudioInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UpdateStudio::new())
-                .with_metadata(smithy_http::operation::Metadata::new("UpdateStudio", "emr"));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateStudio::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateStudio",
+            "emr",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9190,6 +9913,7 @@ pub mod update_studio_session_mapping_input {
             self.studio_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Amazon EMR Studio.</p>
         pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.studio_id = input;
             self
@@ -9201,6 +9925,9 @@ pub mod update_studio_session_mapping_input {
             self.identity_id = Some(input.into());
             self
         }
+        /// <p>The globally unique identifier (GUID) of the user or group. For more information, see
+        /// <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
+        /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
         pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identity_id = input;
             self
@@ -9211,6 +9938,8 @@ pub mod update_studio_session_mapping_input {
             self.identity_name = Some(input.into());
             self
         }
+        /// <p>The name of the user or group to update. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
+        /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
         pub fn set_identity_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9223,6 +9952,7 @@ pub mod update_studio_session_mapping_input {
             self.identity_type = Some(input);
             self
         }
+        /// <p>Specifies whether the identity to update is a user or a group.</p>
         pub fn set_identity_type(
             mut self,
             input: std::option::Option<crate::model::IdentityType>,
@@ -9236,6 +9966,8 @@ pub mod update_studio_session_mapping_input {
             self.session_policy_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the session policy to associate with the specified
+        /// user or group.</p>
         pub fn set_session_policy_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9248,7 +9980,7 @@ pub mod update_studio_session_mapping_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateStudioSessionMappingInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateStudioSessionMappingInput {
                 studio_id: self.studio_id,
@@ -9272,16 +10004,16 @@ impl UpdateStudioSessionMappingInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateStudioSessionMapping,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateStudioSessionMappingInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -9289,7 +10021,7 @@ impl UpdateStudioSessionMappingInput {
         fn update_http_builder(
             input: &crate::input::UpdateStudioSessionMappingInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9298,30 +10030,30 @@ impl UpdateStudioSessionMappingInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateStudioSessionMappingInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "ElasticMapReduce.UpdateStudioSessionMapping",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_studio_session_mapping(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_studio_session_mapping(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9344,15 +10076,15 @@ impl UpdateStudioSessionMappingInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateStudioSessionMapping::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateStudioSessionMapping",
             "emr",
         ));
@@ -9361,10 +10093,10 @@ impl UpdateStudioSessionMappingInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9378,6 +10110,7 @@ impl UpdateStudioSessionMappingInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateStudioSessionMappingInput {
@@ -9408,6 +10141,7 @@ impl std::fmt::Debug for UpdateStudioSessionMappingInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateStudioInput {
@@ -9449,6 +10183,7 @@ impl std::fmt::Debug for TerminateJobFlowsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StopNotebookExecutionInput {
@@ -9463,6 +10198,7 @@ impl std::fmt::Debug for StopNotebookExecutionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartNotebookExecutionInput {
@@ -9772,6 +10508,7 @@ impl std::fmt::Debug for RemoveTagsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveManagedScalingPolicyInput {
@@ -9787,6 +10524,7 @@ impl std::fmt::Debug for RemoveManagedScalingPolicyInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveAutoTerminationPolicyInput {
@@ -9801,6 +10539,7 @@ impl std::fmt::Debug for RemoveAutoTerminationPolicyInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveAutoScalingPolicyInput {
@@ -9819,6 +10558,7 @@ impl std::fmt::Debug for RemoveAutoScalingPolicyInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutManagedScalingPolicyInput {
@@ -9836,6 +10576,7 @@ impl std::fmt::Debug for PutManagedScalingPolicyInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutBlockPublicAccessConfigurationInput {
@@ -9868,6 +10609,7 @@ impl std::fmt::Debug for PutBlockPublicAccessConfigurationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutAutoTerminationPolicyInput {
@@ -9885,6 +10627,7 @@ impl std::fmt::Debug for PutAutoTerminationPolicyInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutAutoScalingPolicyInput {
@@ -9926,6 +10669,7 @@ impl std::fmt::Debug for ModifyInstanceGroupsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyInstanceFleetInput {
@@ -9943,6 +10687,7 @@ impl std::fmt::Debug for ModifyInstanceFleetInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyClusterInput {
@@ -9960,6 +10705,7 @@ impl std::fmt::Debug for ModifyClusterInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStudioSessionMappingsInput {
@@ -9981,6 +10727,7 @@ impl std::fmt::Debug for ListStudioSessionMappingsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListStudiosInput {
@@ -10021,6 +10768,7 @@ impl std::fmt::Debug for ListStepsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSecurityConfigurationsInput {
@@ -10035,6 +10783,7 @@ impl std::fmt::Debug for ListSecurityConfigurationsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListReleaseLabelsInput {
@@ -10055,6 +10804,7 @@ impl std::fmt::Debug for ListReleaseLabelsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListNotebookExecutionsInput {
@@ -10115,10 +10865,10 @@ pub struct ListNotebookExecutionsInput {
     pub status: std::option::Option<crate::model::NotebookExecutionStatus>,
     /// <p>The beginning of time range filter for listing notebook executions. The default is the
     /// timestamp of 30 days ago.</p>
-    pub from: std::option::Option<smithy_types::Instant>,
+    pub from: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The end of time range filter for listing notebook executions. The default is the current
     /// timestamp.</p>
-    pub to: std::option::Option<smithy_types::Instant>,
+    pub to: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The pagination token, returned by a previous <code>ListNotebookExecutions</code> call,
     /// that indicates the start of the list for this <code>ListNotebookExecutions</code>
     /// call.</p>
@@ -10188,6 +10938,7 @@ impl std::fmt::Debug for ListInstanceGroupsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInstanceFleetsInput {
@@ -10211,9 +10962,9 @@ impl std::fmt::Debug for ListInstanceFleetsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListClustersInput {
     /// <p>The creation date and time beginning value filter for listing clusters.</p>
-    pub created_after: std::option::Option<smithy_types::Instant>,
+    pub created_after: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The creation date and time end value filter for listing clusters.</p>
-    pub created_before: std::option::Option<smithy_types::Instant>,
+    pub created_before: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The cluster state filters to apply when listing clusters. Clusters that change state while this action runs may be not be returned as expected in the list of clusters.</p>
     pub cluster_states: std::option::Option<std::vec::Vec<crate::model::ClusterState>>,
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
@@ -10248,6 +10999,7 @@ impl std::fmt::Debug for ListBootstrapActionsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetStudioSessionMappingInput {
@@ -10274,6 +11026,7 @@ impl std::fmt::Debug for GetStudioSessionMappingInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetManagedScalingPolicyInput {
@@ -10289,6 +11042,7 @@ impl std::fmt::Debug for GetManagedScalingPolicyInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBlockPublicAccessConfigurationInput {}
@@ -10299,6 +11053,7 @@ impl std::fmt::Debug for GetBlockPublicAccessConfigurationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAutoTerminationPolicyInput {
@@ -10313,6 +11068,7 @@ impl std::fmt::Debug for GetAutoTerminationPolicyInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeStudioInput {
@@ -10345,6 +11101,7 @@ impl std::fmt::Debug for DescribeStepInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeSecurityConfigurationInput {
@@ -10359,6 +11116,7 @@ impl std::fmt::Debug for DescribeSecurityConfigurationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeReleaseLabelInput {
@@ -10379,6 +11137,7 @@ impl std::fmt::Debug for DescribeReleaseLabelInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeNotebookExecutionInput {
@@ -10398,9 +11157,9 @@ impl std::fmt::Debug for DescribeNotebookExecutionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeJobFlowsInput {
     /// <p>Return only job flows created after this date and time.</p>
-    pub created_after: std::option::Option<smithy_types::Instant>,
+    pub created_after: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Return only job flows created before this date and time.</p>
-    pub created_before: std::option::Option<smithy_types::Instant>,
+    pub created_before: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Return only job flows whose job flow ID is contained in this list.</p>
     pub job_flow_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Return only job flows whose state is contained in this list.</p>
@@ -10432,6 +11191,7 @@ impl std::fmt::Debug for DescribeClusterInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteStudioSessionMappingInput {
@@ -10459,6 +11219,7 @@ impl std::fmt::Debug for DeleteStudioSessionMappingInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteStudioInput {
@@ -10473,6 +11234,7 @@ impl std::fmt::Debug for DeleteStudioInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSecurityConfigurationInput {
@@ -10487,6 +11249,7 @@ impl std::fmt::Debug for DeleteSecurityConfigurationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateStudioSessionMappingInput {
@@ -10517,6 +11280,7 @@ impl std::fmt::Debug for CreateStudioSessionMappingInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateStudioInput {
@@ -10585,6 +11349,7 @@ impl std::fmt::Debug for CreateStudioInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSecurityConfigurationInput {
@@ -10686,6 +11451,7 @@ impl std::fmt::Debug for AddInstanceGroupsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddInstanceFleetInput {

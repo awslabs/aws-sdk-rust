@@ -20,6 +20,7 @@ pub mod create_gateway_route_input {
             self.gateway_route_name = Some(input.into());
             self
         }
+        /// <p>The name to use for the gateway route.</p>
         pub fn set_gateway_route_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -32,6 +33,7 @@ pub mod create_gateway_route_input {
             self.mesh_name = Some(input.into());
             self
         }
+        /// <p>The name of the service mesh to create the gateway route in.</p>
         pub fn set_mesh_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_name = input;
             self
@@ -43,6 +45,9 @@ pub mod create_gateway_route_input {
             self.virtual_gateway_name = Some(input.into());
             self
         }
+        /// <p>The name of the virtual gateway to associate the gateway route with. If the virtual
+        /// gateway is in a shared mesh, then you must be the owner of the virtual gateway
+        /// resource.</p>
         pub fn set_virtual_gateway_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -55,6 +60,7 @@ pub mod create_gateway_route_input {
             self.spec = Some(input);
             self
         }
+        /// <p>The gateway route specification to apply.</p>
         pub fn set_spec(
             mut self,
             input: std::option::Option<crate::model::GatewayRouteSpec>,
@@ -62,12 +68,24 @@ pub mod create_gateway_route_input {
             self.spec = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Optional metadata that you can apply to the gateway route to assist with categorization
+        /// and organization. Each tag consists of a key and an optional value, both of which you
+        /// define. Tag keys can have a maximum character length of 128 characters, and tag values can have
+        /// a maximum length of 256 characters.</p>
         pub fn tags(mut self, input: impl Into<crate::model::TagRef>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>Optional metadata that you can apply to the gateway route to assist with categorization
+        /// and organization. Each tag consists of a key and an optional value, both of which you
+        /// define. Tag keys can have a maximum character length of 128 characters, and tag values can have
+        /// a maximum length of 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TagRef>>,
@@ -81,6 +99,8 @@ pub mod create_gateway_route_input {
             self.client_token = Some(input.into());
             self
         }
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -92,6 +112,9 @@ pub mod create_gateway_route_input {
             self.mesh_owner = Some(input.into());
             self
         }
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then
+        /// the account that you specify must share the mesh with your account before you can create
+        /// the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
@@ -101,7 +124,7 @@ pub mod create_gateway_route_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateGatewayRouteInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateGatewayRouteInput {
                 gateway_route_name: self.gateway_route_name,
@@ -126,27 +149,27 @@ impl CreateGatewayRouteInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateGatewayRoute,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateGatewayRouteInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_1 = &_input.mesh_name;
             let input_1 =
                 input_1
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "mesh_name",
                         details: "cannot be empty or unset",
                     })?;
-            let mesh_name = smithy_http::label::fmt_string(input_1, false);
+            let mesh_name = aws_smithy_http::label::fmt_string(input_1, false);
             if mesh_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "mesh_name",
                     details: "cannot be empty or unset",
                 });
@@ -155,13 +178,13 @@ impl CreateGatewayRouteInput {
             let input_2 =
                 input_2
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "virtual_gateway_name",
                         details: "cannot be empty or unset",
                     })?;
-            let virtual_gateway_name = smithy_http::label::fmt_string(input_2, false);
+            let virtual_gateway_name = aws_smithy_http::label::fmt_string(input_2, false);
             if virtual_gateway_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "virtual_gateway_name",
                     details: "cannot be empty or unset",
                 });
@@ -176,16 +199,16 @@ impl CreateGatewayRouteInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::CreateGatewayRouteInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_3) = &_input.mesh_owner {
-                query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_3));
+                query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_3));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::CreateGatewayRouteInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -195,10 +218,10 @@ impl CreateGatewayRouteInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateGatewayRouteInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -208,15 +231,17 @@ impl CreateGatewayRouteInput {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_gateway_route(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -239,15 +264,15 @@ impl CreateGatewayRouteInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateGatewayRoute::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateGatewayRoute",
             "appmesh",
         ));
@@ -256,10 +281,10 @@ impl CreateGatewayRouteInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -290,6 +315,7 @@ pub mod create_mesh_input {
             self.mesh_name = Some(input.into());
             self
         }
+        /// <p>The name to use for the service mesh.</p>
         pub fn set_mesh_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_name = input;
             self
@@ -299,16 +325,29 @@ pub mod create_mesh_input {
             self.spec = Some(input);
             self
         }
+        /// <p>The service mesh specification to apply.</p>
         pub fn set_spec(mut self, input: std::option::Option<crate::model::MeshSpec>) -> Self {
             self.spec = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Optional metadata that you can apply to the service mesh to assist with categorization
+        /// and organization. Each tag consists of a key and an optional value, both of which you
+        /// define. Tag keys can have a maximum character length of 128 characters, and tag values can have
+        /// a maximum length of 256 characters.</p>
         pub fn tags(mut self, input: impl Into<crate::model::TagRef>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>Optional metadata that you can apply to the service mesh to assist with categorization
+        /// and organization. Each tag consists of a key and an optional value, both of which you
+        /// define. Tag keys can have a maximum character length of 128 characters, and tag values can have
+        /// a maximum length of 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TagRef>>,
@@ -322,6 +361,8 @@ pub mod create_mesh_input {
             self.client_token = Some(input.into());
             self
         }
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -329,8 +370,10 @@ pub mod create_mesh_input {
         /// Consumes the builder and constructs a [`CreateMeshInput`](crate::input::CreateMeshInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreateMeshInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateMeshInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateMeshInput {
                 mesh_name: self.mesh_name,
                 spec: self.spec,
@@ -351,16 +394,16 @@ impl CreateMeshInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateMesh,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateMeshInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/v20190125/meshes").expect("formatting should succeed");
             Ok(())
         }
@@ -368,7 +411,7 @@ impl CreateMeshInput {
         fn update_http_builder(
             input: &crate::input::CreateMeshInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -377,10 +420,10 @@ impl CreateMeshInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateMeshInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -390,14 +433,16 @@ impl CreateMeshInput {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_mesh(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -420,25 +465,27 @@ impl CreateMeshInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreateMesh::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "CreateMesh",
-                    "appmesh",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateMesh::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateMesh",
+            "appmesh",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -472,6 +519,7 @@ pub mod create_route_input {
             self.route_name = Some(input.into());
             self
         }
+        /// <p>The name to use for the route.</p>
         pub fn set_route_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.route_name = input;
             self
@@ -481,6 +529,7 @@ pub mod create_route_input {
             self.mesh_name = Some(input.into());
             self
         }
+        /// <p>The name of the service mesh to create the route in.</p>
         pub fn set_mesh_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_name = input;
             self
@@ -491,6 +540,8 @@ pub mod create_route_input {
             self.virtual_router_name = Some(input.into());
             self
         }
+        /// <p>The name of the virtual router in which to create the route. If the virtual router is in
+        /// a shared mesh, then you must be the owner of the virtual router resource.</p>
         pub fn set_virtual_router_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -503,16 +554,29 @@ pub mod create_route_input {
             self.spec = Some(input);
             self
         }
+        /// <p>The route specification to apply.</p>
         pub fn set_spec(mut self, input: std::option::Option<crate::model::RouteSpec>) -> Self {
             self.spec = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Optional metadata that you can apply to the route to assist with categorization and
+        /// organization. Each tag consists of a key and an optional value, both of which you define.
+        /// Tag keys can have a maximum character length of 128 characters, and tag values can have
+        /// a maximum length of 256 characters.</p>
         pub fn tags(mut self, input: impl Into<crate::model::TagRef>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>Optional metadata that you can apply to the route to assist with categorization and
+        /// organization. Each tag consists of a key and an optional value, both of which you define.
+        /// Tag keys can have a maximum character length of 128 characters, and tag values can have
+        /// a maximum length of 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TagRef>>,
@@ -526,6 +590,8 @@ pub mod create_route_input {
             self.client_token = Some(input.into());
             self
         }
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -537,6 +603,9 @@ pub mod create_route_input {
             self.mesh_owner = Some(input.into());
             self
         }
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then
+        /// the account that you specify must share the mesh with your account before you can create
+        /// the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
@@ -544,8 +613,10 @@ pub mod create_route_input {
         /// Consumes the builder and constructs a [`CreateRouteInput`](crate::input::CreateRouteInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreateRouteInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateRouteInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateRouteInput {
                 route_name: self.route_name,
                 mesh_name: self.mesh_name,
@@ -569,27 +640,27 @@ impl CreateRouteInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateRoute,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateRouteInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_4 = &_input.mesh_name;
             let input_4 =
                 input_4
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "mesh_name",
                         details: "cannot be empty or unset",
                     })?;
-            let mesh_name = smithy_http::label::fmt_string(input_4, false);
+            let mesh_name = aws_smithy_http::label::fmt_string(input_4, false);
             if mesh_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "mesh_name",
                     details: "cannot be empty or unset",
                 });
@@ -598,13 +669,13 @@ impl CreateRouteInput {
             let input_5 =
                 input_5
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "virtual_router_name",
                         details: "cannot be empty or unset",
                     })?;
-            let virtual_router_name = smithy_http::label::fmt_string(input_5, false);
+            let virtual_router_name = aws_smithy_http::label::fmt_string(input_5, false);
             if virtual_router_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "virtual_router_name",
                     details: "cannot be empty or unset",
                 });
@@ -619,16 +690,16 @@ impl CreateRouteInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::CreateRouteInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_6) = &_input.mesh_owner {
-                query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_6));
+                query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_6));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::CreateRouteInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -638,10 +709,10 @@ impl CreateRouteInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateRouteInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -651,14 +722,16 @@ impl CreateRouteInput {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_route(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -681,25 +754,27 @@ impl CreateRouteInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreateRoute::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "CreateRoute",
-                    "appmesh",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateRoute::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateRoute",
+            "appmesh",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -732,6 +807,7 @@ pub mod create_virtual_gateway_input {
             self.virtual_gateway_name = Some(input.into());
             self
         }
+        /// <p>The name to use for the virtual gateway.</p>
         pub fn set_virtual_gateway_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -744,6 +820,7 @@ pub mod create_virtual_gateway_input {
             self.mesh_name = Some(input.into());
             self
         }
+        /// <p>The name of the service mesh to create the virtual gateway in.</p>
         pub fn set_mesh_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_name = input;
             self
@@ -753,6 +830,7 @@ pub mod create_virtual_gateway_input {
             self.spec = Some(input);
             self
         }
+        /// <p>The virtual gateway specification to apply.</p>
         pub fn set_spec(
             mut self,
             input: std::option::Option<crate::model::VirtualGatewaySpec>,
@@ -760,12 +838,24 @@ pub mod create_virtual_gateway_input {
             self.spec = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Optional metadata that you can apply to the virtual gateway to assist with
+        /// categorization and organization. Each tag consists of a key and an optional value, both of
+        /// which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have
+        /// a maximum length of 256 characters.</p>
         pub fn tags(mut self, input: impl Into<crate::model::TagRef>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>Optional metadata that you can apply to the virtual gateway to assist with
+        /// categorization and organization. Each tag consists of a key and an optional value, both of
+        /// which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have
+        /// a maximum length of 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TagRef>>,
@@ -779,6 +869,8 @@ pub mod create_virtual_gateway_input {
             self.client_token = Some(input.into());
             self
         }
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -790,6 +882,9 @@ pub mod create_virtual_gateway_input {
             self.mesh_owner = Some(input.into());
             self
         }
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then
+        /// the account that you specify must share the mesh with your account before you can create
+        /// the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
@@ -799,7 +894,7 @@ pub mod create_virtual_gateway_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateVirtualGatewayInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateVirtualGatewayInput {
                 virtual_gateway_name: self.virtual_gateway_name,
@@ -823,27 +918,27 @@ impl CreateVirtualGatewayInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateVirtualGateway,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateVirtualGatewayInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_7 = &_input.mesh_name;
             let input_7 =
                 input_7
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "mesh_name",
                         details: "cannot be empty or unset",
                     })?;
-            let mesh_name = smithy_http::label::fmt_string(input_7, false);
+            let mesh_name = aws_smithy_http::label::fmt_string(input_7, false);
             if mesh_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "mesh_name",
                     details: "cannot be empty or unset",
                 });
@@ -857,16 +952,16 @@ impl CreateVirtualGatewayInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::CreateVirtualGatewayInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_8) = &_input.mesh_owner {
-                query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_8));
+                query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_8));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::CreateVirtualGatewayInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -876,10 +971,10 @@ impl CreateVirtualGatewayInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateVirtualGatewayInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -889,17 +984,17 @@ impl CreateVirtualGatewayInput {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_virtual_gateway(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -922,15 +1017,15 @@ impl CreateVirtualGatewayInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateVirtualGateway::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateVirtualGateway",
             "appmesh",
         ));
@@ -939,10 +1034,10 @@ impl CreateVirtualGatewayInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -975,6 +1070,7 @@ pub mod create_virtual_node_input {
             self.virtual_node_name = Some(input.into());
             self
         }
+        /// <p>The name to use for the virtual node.</p>
         pub fn set_virtual_node_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -987,6 +1083,7 @@ pub mod create_virtual_node_input {
             self.mesh_name = Some(input.into());
             self
         }
+        /// <p>The name of the service mesh to create the virtual node in.</p>
         pub fn set_mesh_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_name = input;
             self
@@ -996,6 +1093,7 @@ pub mod create_virtual_node_input {
             self.spec = Some(input);
             self
         }
+        /// <p>The virtual node specification to apply.</p>
         pub fn set_spec(
             mut self,
             input: std::option::Option<crate::model::VirtualNodeSpec>,
@@ -1003,12 +1101,24 @@ pub mod create_virtual_node_input {
             self.spec = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Optional metadata that you can apply to the virtual node to assist with categorization
+        /// and organization. Each tag consists of a key and an optional value, both of which you
+        /// define. Tag keys can have a maximum character length of 128 characters, and tag values can have
+        /// a maximum length of 256 characters.</p>
         pub fn tags(mut self, input: impl Into<crate::model::TagRef>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>Optional metadata that you can apply to the virtual node to assist with categorization
+        /// and organization. Each tag consists of a key and an optional value, both of which you
+        /// define. Tag keys can have a maximum character length of 128 characters, and tag values can have
+        /// a maximum length of 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TagRef>>,
@@ -1022,6 +1132,8 @@ pub mod create_virtual_node_input {
             self.client_token = Some(input.into());
             self
         }
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -1033,6 +1145,9 @@ pub mod create_virtual_node_input {
             self.mesh_owner = Some(input.into());
             self
         }
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then
+        /// the account that you specify must share the mesh with your account before you can create
+        /// the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
@@ -1042,7 +1157,7 @@ pub mod create_virtual_node_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateVirtualNodeInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateVirtualNodeInput {
                 virtual_node_name: self.virtual_node_name,
@@ -1066,27 +1181,27 @@ impl CreateVirtualNodeInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateVirtualNode,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateVirtualNodeInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_9 = &_input.mesh_name;
             let input_9 =
                 input_9
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "mesh_name",
                         details: "cannot be empty or unset",
                     })?;
-            let mesh_name = smithy_http::label::fmt_string(input_9, false);
+            let mesh_name = aws_smithy_http::label::fmt_string(input_9, false);
             if mesh_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "mesh_name",
                     details: "cannot be empty or unset",
                 });
@@ -1100,16 +1215,16 @@ impl CreateVirtualNodeInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::CreateVirtualNodeInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_10) = &_input.mesh_owner {
-                query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_10));
+                query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_10));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::CreateVirtualNodeInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1119,10 +1234,10 @@ impl CreateVirtualNodeInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateVirtualNodeInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -1132,17 +1247,17 @@ impl CreateVirtualNodeInput {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_virtual_node(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1165,15 +1280,15 @@ impl CreateVirtualNodeInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateVirtualNode::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateVirtualNode",
             "appmesh",
         ));
@@ -1182,10 +1297,10 @@ impl CreateVirtualNodeInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1218,6 +1333,7 @@ pub mod create_virtual_router_input {
             self.virtual_router_name = Some(input.into());
             self
         }
+        /// <p>The name to use for the virtual router.</p>
         pub fn set_virtual_router_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1230,6 +1346,7 @@ pub mod create_virtual_router_input {
             self.mesh_name = Some(input.into());
             self
         }
+        /// <p>The name of the service mesh to create the virtual router in.</p>
         pub fn set_mesh_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_name = input;
             self
@@ -1239,6 +1356,7 @@ pub mod create_virtual_router_input {
             self.spec = Some(input);
             self
         }
+        /// <p>The virtual router specification to apply.</p>
         pub fn set_spec(
             mut self,
             input: std::option::Option<crate::model::VirtualRouterSpec>,
@@ -1246,12 +1364,24 @@ pub mod create_virtual_router_input {
             self.spec = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Optional metadata that you can apply to the virtual router to assist with categorization
+        /// and organization. Each tag consists of a key and an optional value, both of which you
+        /// define. Tag keys can have a maximum character length of 128 characters, and tag values can have
+        /// a maximum length of 256 characters.</p>
         pub fn tags(mut self, input: impl Into<crate::model::TagRef>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>Optional metadata that you can apply to the virtual router to assist with categorization
+        /// and organization. Each tag consists of a key and an optional value, both of which you
+        /// define. Tag keys can have a maximum character length of 128 characters, and tag values can have
+        /// a maximum length of 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TagRef>>,
@@ -1265,6 +1395,8 @@ pub mod create_virtual_router_input {
             self.client_token = Some(input.into());
             self
         }
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -1276,6 +1408,9 @@ pub mod create_virtual_router_input {
             self.mesh_owner = Some(input.into());
             self
         }
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then
+        /// the account that you specify must share the mesh with your account before you can create
+        /// the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
@@ -1285,7 +1420,7 @@ pub mod create_virtual_router_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateVirtualRouterInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateVirtualRouterInput {
                 virtual_router_name: self.virtual_router_name,
@@ -1309,27 +1444,27 @@ impl CreateVirtualRouterInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateVirtualRouter,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateVirtualRouterInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_11 = &_input.mesh_name;
             let input_11 =
                 input_11
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "mesh_name",
                         details: "cannot be empty or unset",
                     })?;
-            let mesh_name = smithy_http::label::fmt_string(input_11, false);
+            let mesh_name = aws_smithy_http::label::fmt_string(input_11, false);
             if mesh_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "mesh_name",
                     details: "cannot be empty or unset",
                 });
@@ -1343,16 +1478,16 @@ impl CreateVirtualRouterInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::CreateVirtualRouterInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_12) = &_input.mesh_owner {
-                query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_12));
+                query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_12));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::CreateVirtualRouterInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1362,10 +1497,10 @@ impl CreateVirtualRouterInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateVirtualRouterInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -1375,17 +1510,17 @@ impl CreateVirtualRouterInput {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_virtual_router(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1408,15 +1543,15 @@ impl CreateVirtualRouterInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateVirtualRouter::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateVirtualRouter",
             "appmesh",
         ));
@@ -1425,10 +1560,10 @@ impl CreateVirtualRouterInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1461,6 +1596,7 @@ pub mod create_virtual_service_input {
             self.virtual_service_name = Some(input.into());
             self
         }
+        /// <p>The name to use for the virtual service.</p>
         pub fn set_virtual_service_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1473,6 +1609,7 @@ pub mod create_virtual_service_input {
             self.mesh_name = Some(input.into());
             self
         }
+        /// <p>The name of the service mesh to create the virtual service in.</p>
         pub fn set_mesh_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_name = input;
             self
@@ -1482,6 +1619,7 @@ pub mod create_virtual_service_input {
             self.spec = Some(input);
             self
         }
+        /// <p>The virtual service specification to apply.</p>
         pub fn set_spec(
             mut self,
             input: std::option::Option<crate::model::VirtualServiceSpec>,
@@ -1489,12 +1627,24 @@ pub mod create_virtual_service_input {
             self.spec = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Optional metadata that you can apply to the virtual service to assist with
+        /// categorization and organization. Each tag consists of a key and an optional value, both of
+        /// which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have
+        /// a maximum length of 256 characters.</p>
         pub fn tags(mut self, input: impl Into<crate::model::TagRef>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>Optional metadata that you can apply to the virtual service to assist with
+        /// categorization and organization. Each tag consists of a key and an optional value, both of
+        /// which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have
+        /// a maximum length of 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TagRef>>,
@@ -1508,6 +1658,8 @@ pub mod create_virtual_service_input {
             self.client_token = Some(input.into());
             self
         }
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -1519,6 +1671,9 @@ pub mod create_virtual_service_input {
             self.mesh_owner = Some(input.into());
             self
         }
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then
+        /// the account that you specify must share the mesh with your account before you can create
+        /// the resource in the service mesh. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
@@ -1528,7 +1683,7 @@ pub mod create_virtual_service_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateVirtualServiceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateVirtualServiceInput {
                 virtual_service_name: self.virtual_service_name,
@@ -1552,27 +1707,27 @@ impl CreateVirtualServiceInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateVirtualService,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateVirtualServiceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_13 = &_input.mesh_name;
             let input_13 =
                 input_13
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "mesh_name",
                         details: "cannot be empty or unset",
                     })?;
-            let mesh_name = smithy_http::label::fmt_string(input_13, false);
+            let mesh_name = aws_smithy_http::label::fmt_string(input_13, false);
             if mesh_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "mesh_name",
                     details: "cannot be empty or unset",
                 });
@@ -1586,16 +1741,16 @@ impl CreateVirtualServiceInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::CreateVirtualServiceInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_14) = &_input.mesh_owner {
-                query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_14));
+                query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_14));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::CreateVirtualServiceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1605,10 +1760,10 @@ impl CreateVirtualServiceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateVirtualServiceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -1618,17 +1773,17 @@ impl CreateVirtualServiceInput {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_virtual_service(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1651,15 +1806,15 @@ impl CreateVirtualServiceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateVirtualService::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateVirtualService",
             "appmesh",
         ));
@@ -1668,10 +1823,10 @@ impl CreateVirtualServiceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1702,6 +1857,7 @@ pub mod delete_gateway_route_input {
             self.gateway_route_name = Some(input.into());
             self
         }
+        /// <p>The name of the gateway route to delete.</p>
         pub fn set_gateway_route_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1714,6 +1870,7 @@ pub mod delete_gateway_route_input {
             self.mesh_name = Some(input.into());
             self
         }
+        /// <p>The name of the service mesh to delete the gateway route from.</p>
         pub fn set_mesh_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_name = input;
             self
@@ -1723,6 +1880,7 @@ pub mod delete_gateway_route_input {
             self.virtual_gateway_name = Some(input.into());
             self
         }
+        /// <p>The name of the virtual gateway to delete the route from.</p>
         pub fn set_virtual_gateway_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1736,6 +1894,8 @@ pub mod delete_gateway_route_input {
             self.mesh_owner = Some(input.into());
             self
         }
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
+        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
@@ -1745,7 +1905,7 @@ pub mod delete_gateway_route_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteGatewayRouteInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteGatewayRouteInput {
                 gateway_route_name: self.gateway_route_name,
@@ -1767,27 +1927,27 @@ impl DeleteGatewayRouteInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteGatewayRoute,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteGatewayRouteInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_15 = &_input.mesh_name;
             let input_15 =
                 input_15
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "mesh_name",
                         details: "cannot be empty or unset",
                     })?;
-            let mesh_name = smithy_http::label::fmt_string(input_15, false);
+            let mesh_name = aws_smithy_http::label::fmt_string(input_15, false);
             if mesh_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "mesh_name",
                     details: "cannot be empty or unset",
                 });
@@ -1796,13 +1956,13 @@ impl DeleteGatewayRouteInput {
             let input_16 =
                 input_16
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "virtual_gateway_name",
                         details: "cannot be empty or unset",
                     })?;
-            let virtual_gateway_name = smithy_http::label::fmt_string(input_16, false);
+            let virtual_gateway_name = aws_smithy_http::label::fmt_string(input_16, false);
             if virtual_gateway_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "virtual_gateway_name",
                     details: "cannot be empty or unset",
                 });
@@ -1811,13 +1971,13 @@ impl DeleteGatewayRouteInput {
             let input_17 =
                 input_17
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "gateway_route_name",
                         details: "cannot be empty or unset",
                     })?;
-            let gateway_route_name = smithy_http::label::fmt_string(input_17, false);
+            let gateway_route_name = aws_smithy_http::label::fmt_string(input_17, false);
             if gateway_route_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "gateway_route_name",
                     details: "cannot be empty or unset",
                 });
@@ -1826,16 +1986,16 @@ impl DeleteGatewayRouteInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::DeleteGatewayRouteInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_18) = &_input.mesh_owner {
-                query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_18));
+                query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_18));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::DeleteGatewayRouteInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1845,23 +2005,23 @@ impl DeleteGatewayRouteInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteGatewayRouteInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1884,15 +2044,15 @@ impl DeleteGatewayRouteInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteGatewayRoute::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteGatewayRoute",
             "appmesh",
         ));
@@ -1901,10 +2061,10 @@ impl DeleteGatewayRouteInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1932,6 +2092,7 @@ pub mod delete_mesh_input {
             self.mesh_name = Some(input.into());
             self
         }
+        /// <p>The name of the service mesh to delete.</p>
         pub fn set_mesh_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_name = input;
             self
@@ -1939,8 +2100,10 @@ pub mod delete_mesh_input {
         /// Consumes the builder and constructs a [`DeleteMeshInput`](crate::input::DeleteMeshInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeleteMeshInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteMeshInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteMeshInput {
                 mesh_name: self.mesh_name,
             })
@@ -1958,27 +2121,27 @@ impl DeleteMeshInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteMesh,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteMeshInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_19 = &_input.mesh_name;
             let input_19 =
                 input_19
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "mesh_name",
                         details: "cannot be empty or unset",
                     })?;
-            let mesh_name = smithy_http::label::fmt_string(input_19, false);
+            let mesh_name = aws_smithy_http::label::fmt_string(input_19, false);
             if mesh_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "mesh_name",
                     details: "cannot be empty or unset",
                 });
@@ -1991,7 +2154,7 @@ impl DeleteMeshInput {
         fn update_http_builder(
             input: &crate::input::DeleteMeshInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2000,23 +2163,23 @@ impl DeleteMeshInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteMeshInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2039,25 +2202,27 @@ impl DeleteMeshInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeleteMesh::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DeleteMesh",
-                    "appmesh",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteMesh::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteMesh",
+            "appmesh",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2088,6 +2253,7 @@ pub mod delete_route_input {
             self.route_name = Some(input.into());
             self
         }
+        /// <p>The name of the route to delete.</p>
         pub fn set_route_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.route_name = input;
             self
@@ -2097,6 +2263,7 @@ pub mod delete_route_input {
             self.mesh_name = Some(input.into());
             self
         }
+        /// <p>The name of the service mesh to delete the route in.</p>
         pub fn set_mesh_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_name = input;
             self
@@ -2106,6 +2273,7 @@ pub mod delete_route_input {
             self.virtual_router_name = Some(input.into());
             self
         }
+        /// <p>The name of the virtual router to delete the route in.</p>
         pub fn set_virtual_router_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2119,6 +2287,8 @@ pub mod delete_route_input {
             self.mesh_owner = Some(input.into());
             self
         }
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
+        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
@@ -2126,8 +2296,10 @@ pub mod delete_route_input {
         /// Consumes the builder and constructs a [`DeleteRouteInput`](crate::input::DeleteRouteInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeleteRouteInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteRouteInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteRouteInput {
                 route_name: self.route_name,
                 mesh_name: self.mesh_name,
@@ -2148,27 +2320,27 @@ impl DeleteRouteInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteRoute,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteRouteInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_20 = &_input.mesh_name;
             let input_20 =
                 input_20
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "mesh_name",
                         details: "cannot be empty or unset",
                     })?;
-            let mesh_name = smithy_http::label::fmt_string(input_20, false);
+            let mesh_name = aws_smithy_http::label::fmt_string(input_20, false);
             if mesh_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "mesh_name",
                     details: "cannot be empty or unset",
                 });
@@ -2177,13 +2349,13 @@ impl DeleteRouteInput {
             let input_21 =
                 input_21
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "virtual_router_name",
                         details: "cannot be empty or unset",
                     })?;
-            let virtual_router_name = smithy_http::label::fmt_string(input_21, false);
+            let virtual_router_name = aws_smithy_http::label::fmt_string(input_21, false);
             if virtual_router_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "virtual_router_name",
                     details: "cannot be empty or unset",
                 });
@@ -2192,13 +2364,13 @@ impl DeleteRouteInput {
             let input_22 =
                 input_22
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "route_name",
                         details: "cannot be empty or unset",
                     })?;
-            let route_name = smithy_http::label::fmt_string(input_22, false);
+            let route_name = aws_smithy_http::label::fmt_string(input_22, false);
             if route_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "route_name",
                     details: "cannot be empty or unset",
                 });
@@ -2214,16 +2386,16 @@ impl DeleteRouteInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::DeleteRouteInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_23) = &_input.mesh_owner {
-                query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_23));
+                query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_23));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::DeleteRouteInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2233,23 +2405,23 @@ impl DeleteRouteInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteRouteInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2272,25 +2444,27 @@ impl DeleteRouteInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeleteRoute::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DeleteRoute",
-                    "appmesh",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteRoute::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteRoute",
+            "appmesh",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2320,6 +2494,7 @@ pub mod delete_virtual_gateway_input {
             self.virtual_gateway_name = Some(input.into());
             self
         }
+        /// <p>The name of the virtual gateway to delete.</p>
         pub fn set_virtual_gateway_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2332,6 +2507,7 @@ pub mod delete_virtual_gateway_input {
             self.mesh_name = Some(input.into());
             self
         }
+        /// <p>The name of the service mesh to delete the virtual gateway from.</p>
         pub fn set_mesh_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_name = input;
             self
@@ -2342,6 +2518,8 @@ pub mod delete_virtual_gateway_input {
             self.mesh_owner = Some(input.into());
             self
         }
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
+        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
@@ -2351,7 +2529,7 @@ pub mod delete_virtual_gateway_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteVirtualGatewayInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteVirtualGatewayInput {
                 virtual_gateway_name: self.virtual_gateway_name,
@@ -2372,27 +2550,27 @@ impl DeleteVirtualGatewayInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteVirtualGateway,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteVirtualGatewayInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_24 = &_input.mesh_name;
             let input_24 =
                 input_24
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "mesh_name",
                         details: "cannot be empty or unset",
                     })?;
-            let mesh_name = smithy_http::label::fmt_string(input_24, false);
+            let mesh_name = aws_smithy_http::label::fmt_string(input_24, false);
             if mesh_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "mesh_name",
                     details: "cannot be empty or unset",
                 });
@@ -2401,13 +2579,13 @@ impl DeleteVirtualGatewayInput {
             let input_25 =
                 input_25
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "virtual_gateway_name",
                         details: "cannot be empty or unset",
                     })?;
-            let virtual_gateway_name = smithy_http::label::fmt_string(input_25, false);
+            let virtual_gateway_name = aws_smithy_http::label::fmt_string(input_25, false);
             if virtual_gateway_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "virtual_gateway_name",
                     details: "cannot be empty or unset",
                 });
@@ -2422,16 +2600,16 @@ impl DeleteVirtualGatewayInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::DeleteVirtualGatewayInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_26) = &_input.mesh_owner {
-                query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_26));
+                query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_26));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::DeleteVirtualGatewayInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2441,23 +2619,23 @@ impl DeleteVirtualGatewayInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteVirtualGatewayInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2480,15 +2658,15 @@ impl DeleteVirtualGatewayInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteVirtualGateway::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteVirtualGateway",
             "appmesh",
         ));
@@ -2497,10 +2675,10 @@ impl DeleteVirtualGatewayInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2530,6 +2708,7 @@ pub mod delete_virtual_node_input {
             self.virtual_node_name = Some(input.into());
             self
         }
+        /// <p>The name of the virtual node to delete.</p>
         pub fn set_virtual_node_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2542,6 +2721,7 @@ pub mod delete_virtual_node_input {
             self.mesh_name = Some(input.into());
             self
         }
+        /// <p>The name of the service mesh to delete the virtual node in.</p>
         pub fn set_mesh_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_name = input;
             self
@@ -2552,6 +2732,8 @@ pub mod delete_virtual_node_input {
             self.mesh_owner = Some(input.into());
             self
         }
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
+        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
@@ -2561,7 +2743,7 @@ pub mod delete_virtual_node_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteVirtualNodeInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteVirtualNodeInput {
                 virtual_node_name: self.virtual_node_name,
@@ -2582,27 +2764,27 @@ impl DeleteVirtualNodeInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteVirtualNode,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteVirtualNodeInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_27 = &_input.mesh_name;
             let input_27 =
                 input_27
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "mesh_name",
                         details: "cannot be empty or unset",
                     })?;
-            let mesh_name = smithy_http::label::fmt_string(input_27, false);
+            let mesh_name = aws_smithy_http::label::fmt_string(input_27, false);
             if mesh_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "mesh_name",
                     details: "cannot be empty or unset",
                 });
@@ -2611,13 +2793,13 @@ impl DeleteVirtualNodeInput {
             let input_28 =
                 input_28
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "virtual_node_name",
                         details: "cannot be empty or unset",
                     })?;
-            let virtual_node_name = smithy_http::label::fmt_string(input_28, false);
+            let virtual_node_name = aws_smithy_http::label::fmt_string(input_28, false);
             if virtual_node_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "virtual_node_name",
                     details: "cannot be empty or unset",
                 });
@@ -2632,16 +2814,16 @@ impl DeleteVirtualNodeInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::DeleteVirtualNodeInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_29) = &_input.mesh_owner {
-                query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_29));
+                query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_29));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::DeleteVirtualNodeInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2651,23 +2833,23 @@ impl DeleteVirtualNodeInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteVirtualNodeInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2690,15 +2872,15 @@ impl DeleteVirtualNodeInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteVirtualNode::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteVirtualNode",
             "appmesh",
         ));
@@ -2707,10 +2889,10 @@ impl DeleteVirtualNodeInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2740,6 +2922,7 @@ pub mod delete_virtual_router_input {
             self.virtual_router_name = Some(input.into());
             self
         }
+        /// <p>The name of the virtual router to delete.</p>
         pub fn set_virtual_router_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2752,6 +2935,7 @@ pub mod delete_virtual_router_input {
             self.mesh_name = Some(input.into());
             self
         }
+        /// <p>The name of the service mesh to delete the virtual router in.</p>
         pub fn set_mesh_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_name = input;
             self
@@ -2762,6 +2946,8 @@ pub mod delete_virtual_router_input {
             self.mesh_owner = Some(input.into());
             self
         }
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
+        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
@@ -2771,7 +2957,7 @@ pub mod delete_virtual_router_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteVirtualRouterInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteVirtualRouterInput {
                 virtual_router_name: self.virtual_router_name,
@@ -2792,27 +2978,27 @@ impl DeleteVirtualRouterInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteVirtualRouter,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteVirtualRouterInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_30 = &_input.mesh_name;
             let input_30 =
                 input_30
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "mesh_name",
                         details: "cannot be empty or unset",
                     })?;
-            let mesh_name = smithy_http::label::fmt_string(input_30, false);
+            let mesh_name = aws_smithy_http::label::fmt_string(input_30, false);
             if mesh_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "mesh_name",
                     details: "cannot be empty or unset",
                 });
@@ -2821,13 +3007,13 @@ impl DeleteVirtualRouterInput {
             let input_31 =
                 input_31
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "virtual_router_name",
                         details: "cannot be empty or unset",
                     })?;
-            let virtual_router_name = smithy_http::label::fmt_string(input_31, false);
+            let virtual_router_name = aws_smithy_http::label::fmt_string(input_31, false);
             if virtual_router_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "virtual_router_name",
                     details: "cannot be empty or unset",
                 });
@@ -2842,16 +3028,16 @@ impl DeleteVirtualRouterInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::DeleteVirtualRouterInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_32) = &_input.mesh_owner {
-                query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_32));
+                query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_32));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::DeleteVirtualRouterInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2861,23 +3047,23 @@ impl DeleteVirtualRouterInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteVirtualRouterInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2900,15 +3086,15 @@ impl DeleteVirtualRouterInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteVirtualRouter::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteVirtualRouter",
             "appmesh",
         ));
@@ -2917,10 +3103,10 @@ impl DeleteVirtualRouterInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2950,6 +3136,7 @@ pub mod delete_virtual_service_input {
             self.virtual_service_name = Some(input.into());
             self
         }
+        /// <p>The name of the virtual service to delete.</p>
         pub fn set_virtual_service_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2962,6 +3149,7 @@ pub mod delete_virtual_service_input {
             self.mesh_name = Some(input.into());
             self
         }
+        /// <p>The name of the service mesh to delete the virtual service in.</p>
         pub fn set_mesh_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_name = input;
             self
@@ -2972,6 +3160,8 @@ pub mod delete_virtual_service_input {
             self.mesh_owner = Some(input.into());
             self
         }
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
+        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
@@ -2981,7 +3171,7 @@ pub mod delete_virtual_service_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteVirtualServiceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteVirtualServiceInput {
                 virtual_service_name: self.virtual_service_name,
@@ -3002,27 +3192,27 @@ impl DeleteVirtualServiceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteVirtualService,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteVirtualServiceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_33 = &_input.mesh_name;
             let input_33 =
                 input_33
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "mesh_name",
                         details: "cannot be empty or unset",
                     })?;
-            let mesh_name = smithy_http::label::fmt_string(input_33, false);
+            let mesh_name = aws_smithy_http::label::fmt_string(input_33, false);
             if mesh_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "mesh_name",
                     details: "cannot be empty or unset",
                 });
@@ -3031,13 +3221,13 @@ impl DeleteVirtualServiceInput {
             let input_34 =
                 input_34
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "virtual_service_name",
                         details: "cannot be empty or unset",
                     })?;
-            let virtual_service_name = smithy_http::label::fmt_string(input_34, false);
+            let virtual_service_name = aws_smithy_http::label::fmt_string(input_34, false);
             if virtual_service_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "virtual_service_name",
                     details: "cannot be empty or unset",
                 });
@@ -3052,16 +3242,16 @@ impl DeleteVirtualServiceInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::DeleteVirtualServiceInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_35) = &_input.mesh_owner {
-                query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_35));
+                query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_35));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::DeleteVirtualServiceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3071,23 +3261,23 @@ impl DeleteVirtualServiceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteVirtualServiceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3110,15 +3300,15 @@ impl DeleteVirtualServiceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteVirtualService::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteVirtualService",
             "appmesh",
         ));
@@ -3127,10 +3317,10 @@ impl DeleteVirtualServiceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3161,6 +3351,7 @@ pub mod describe_gateway_route_input {
             self.gateway_route_name = Some(input.into());
             self
         }
+        /// <p>The name of the gateway route to describe.</p>
         pub fn set_gateway_route_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3173,6 +3364,7 @@ pub mod describe_gateway_route_input {
             self.mesh_name = Some(input.into());
             self
         }
+        /// <p>The name of the service mesh that the gateway route resides in.</p>
         pub fn set_mesh_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_name = input;
             self
@@ -3182,6 +3374,7 @@ pub mod describe_gateway_route_input {
             self.virtual_gateway_name = Some(input.into());
             self
         }
+        /// <p>The name of the virtual gateway that the gateway route is associated with.</p>
         pub fn set_virtual_gateway_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3195,6 +3388,8 @@ pub mod describe_gateway_route_input {
             self.mesh_owner = Some(input.into());
             self
         }
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
+        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
@@ -3204,7 +3399,7 @@ pub mod describe_gateway_route_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeGatewayRouteInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeGatewayRouteInput {
                 gateway_route_name: self.gateway_route_name,
@@ -3226,27 +3421,27 @@ impl DescribeGatewayRouteInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeGatewayRoute,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeGatewayRouteInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_36 = &_input.mesh_name;
             let input_36 =
                 input_36
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "mesh_name",
                         details: "cannot be empty or unset",
                     })?;
-            let mesh_name = smithy_http::label::fmt_string(input_36, false);
+            let mesh_name = aws_smithy_http::label::fmt_string(input_36, false);
             if mesh_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "mesh_name",
                     details: "cannot be empty or unset",
                 });
@@ -3255,13 +3450,13 @@ impl DescribeGatewayRouteInput {
             let input_37 =
                 input_37
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "virtual_gateway_name",
                         details: "cannot be empty or unset",
                     })?;
-            let virtual_gateway_name = smithy_http::label::fmt_string(input_37, false);
+            let virtual_gateway_name = aws_smithy_http::label::fmt_string(input_37, false);
             if virtual_gateway_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "virtual_gateway_name",
                     details: "cannot be empty or unset",
                 });
@@ -3270,13 +3465,13 @@ impl DescribeGatewayRouteInput {
             let input_38 =
                 input_38
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "gateway_route_name",
                         details: "cannot be empty or unset",
                     })?;
-            let gateway_route_name = smithy_http::label::fmt_string(input_38, false);
+            let gateway_route_name = aws_smithy_http::label::fmt_string(input_38, false);
             if gateway_route_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "gateway_route_name",
                     details: "cannot be empty or unset",
                 });
@@ -3285,16 +3480,16 @@ impl DescribeGatewayRouteInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::DescribeGatewayRouteInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_39) = &_input.mesh_owner {
-                query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_39));
+                query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_39));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::DescribeGatewayRouteInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3304,23 +3499,23 @@ impl DescribeGatewayRouteInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeGatewayRouteInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3343,15 +3538,15 @@ impl DescribeGatewayRouteInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeGatewayRoute::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeGatewayRoute",
             "appmesh",
         ));
@@ -3360,10 +3555,10 @@ impl DescribeGatewayRouteInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3392,6 +3587,7 @@ pub mod describe_mesh_input {
             self.mesh_name = Some(input.into());
             self
         }
+        /// <p>The name of the service mesh to describe.</p>
         pub fn set_mesh_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_name = input;
             self
@@ -3402,6 +3598,8 @@ pub mod describe_mesh_input {
             self.mesh_owner = Some(input.into());
             self
         }
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
+        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
@@ -3409,8 +3607,10 @@ pub mod describe_mesh_input {
         /// Consumes the builder and constructs a [`DescribeMeshInput`](crate::input::DescribeMeshInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DescribeMeshInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeMeshInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeMeshInput {
                 mesh_name: self.mesh_name,
                 mesh_owner: self.mesh_owner,
@@ -3429,27 +3629,27 @@ impl DescribeMeshInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeMesh,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeMeshInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_40 = &_input.mesh_name;
             let input_40 =
                 input_40
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "mesh_name",
                         details: "cannot be empty or unset",
                     })?;
-            let mesh_name = smithy_http::label::fmt_string(input_40, false);
+            let mesh_name = aws_smithy_http::label::fmt_string(input_40, false);
             if mesh_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "mesh_name",
                     details: "cannot be empty or unset",
                 });
@@ -3459,16 +3659,16 @@ impl DescribeMeshInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::DescribeMeshInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_41) = &_input.mesh_owner {
-                query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_41));
+                query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_41));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::DescribeMeshInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3478,23 +3678,23 @@ impl DescribeMeshInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeMeshInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3517,25 +3717,27 @@ impl DescribeMeshInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DescribeMesh::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DescribeMesh",
-                    "appmesh",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeMesh::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeMesh",
+            "appmesh",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3566,6 +3768,7 @@ pub mod describe_route_input {
             self.route_name = Some(input.into());
             self
         }
+        /// <p>The name of the route to describe.</p>
         pub fn set_route_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.route_name = input;
             self
@@ -3575,6 +3778,7 @@ pub mod describe_route_input {
             self.mesh_name = Some(input.into());
             self
         }
+        /// <p>The name of the service mesh that the route resides in.</p>
         pub fn set_mesh_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_name = input;
             self
@@ -3585,6 +3789,8 @@ pub mod describe_route_input {
             self.mesh_owner = Some(input.into());
             self
         }
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
+        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
@@ -3594,6 +3800,7 @@ pub mod describe_route_input {
             self.virtual_router_name = Some(input.into());
             self
         }
+        /// <p>The name of the virtual router that the route is associated with.</p>
         pub fn set_virtual_router_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3604,8 +3811,10 @@ pub mod describe_route_input {
         /// Consumes the builder and constructs a [`DescribeRouteInput`](crate::input::DescribeRouteInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DescribeRouteInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeRouteInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeRouteInput {
                 route_name: self.route_name,
                 mesh_name: self.mesh_name,
@@ -3626,27 +3835,27 @@ impl DescribeRouteInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeRoute,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeRouteInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_42 = &_input.mesh_name;
             let input_42 =
                 input_42
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "mesh_name",
                         details: "cannot be empty or unset",
                     })?;
-            let mesh_name = smithy_http::label::fmt_string(input_42, false);
+            let mesh_name = aws_smithy_http::label::fmt_string(input_42, false);
             if mesh_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "mesh_name",
                     details: "cannot be empty or unset",
                 });
@@ -3655,13 +3864,13 @@ impl DescribeRouteInput {
             let input_43 =
                 input_43
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "virtual_router_name",
                         details: "cannot be empty or unset",
                     })?;
-            let virtual_router_name = smithy_http::label::fmt_string(input_43, false);
+            let virtual_router_name = aws_smithy_http::label::fmt_string(input_43, false);
             if virtual_router_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "virtual_router_name",
                     details: "cannot be empty or unset",
                 });
@@ -3670,13 +3879,13 @@ impl DescribeRouteInput {
             let input_44 =
                 input_44
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "route_name",
                         details: "cannot be empty or unset",
                     })?;
-            let route_name = smithy_http::label::fmt_string(input_44, false);
+            let route_name = aws_smithy_http::label::fmt_string(input_44, false);
             if route_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "route_name",
                     details: "cannot be empty or unset",
                 });
@@ -3692,16 +3901,16 @@ impl DescribeRouteInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::DescribeRouteInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_45) = &_input.mesh_owner {
-                query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_45));
+                query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_45));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::DescribeRouteInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3711,23 +3920,23 @@ impl DescribeRouteInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeRouteInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3750,25 +3959,27 @@ impl DescribeRouteInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DescribeRoute::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DescribeRoute",
-                    "appmesh",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeRoute::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeRoute",
+            "appmesh",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3798,6 +4009,7 @@ pub mod describe_virtual_gateway_input {
             self.virtual_gateway_name = Some(input.into());
             self
         }
+        /// <p>The name of the virtual gateway to describe.</p>
         pub fn set_virtual_gateway_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3810,6 +4022,7 @@ pub mod describe_virtual_gateway_input {
             self.mesh_name = Some(input.into());
             self
         }
+        /// <p>The name of the service mesh that the gateway route resides in.</p>
         pub fn set_mesh_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_name = input;
             self
@@ -3820,6 +4033,8 @@ pub mod describe_virtual_gateway_input {
             self.mesh_owner = Some(input.into());
             self
         }
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
+        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
@@ -3829,7 +4044,7 @@ pub mod describe_virtual_gateway_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeVirtualGatewayInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeVirtualGatewayInput {
                 virtual_gateway_name: self.virtual_gateway_name,
@@ -3850,27 +4065,27 @@ impl DescribeVirtualGatewayInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeVirtualGateway,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeVirtualGatewayInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_46 = &_input.mesh_name;
             let input_46 =
                 input_46
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "mesh_name",
                         details: "cannot be empty or unset",
                     })?;
-            let mesh_name = smithy_http::label::fmt_string(input_46, false);
+            let mesh_name = aws_smithy_http::label::fmt_string(input_46, false);
             if mesh_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "mesh_name",
                     details: "cannot be empty or unset",
                 });
@@ -3879,13 +4094,13 @@ impl DescribeVirtualGatewayInput {
             let input_47 =
                 input_47
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "virtual_gateway_name",
                         details: "cannot be empty or unset",
                     })?;
-            let virtual_gateway_name = smithy_http::label::fmt_string(input_47, false);
+            let virtual_gateway_name = aws_smithy_http::label::fmt_string(input_47, false);
             if virtual_gateway_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "virtual_gateway_name",
                     details: "cannot be empty or unset",
                 });
@@ -3900,16 +4115,16 @@ impl DescribeVirtualGatewayInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::DescribeVirtualGatewayInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_48) = &_input.mesh_owner {
-                query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_48));
+                query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_48));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::DescribeVirtualGatewayInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3919,23 +4134,23 @@ impl DescribeVirtualGatewayInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeVirtualGatewayInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3958,15 +4173,15 @@ impl DescribeVirtualGatewayInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeVirtualGateway::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeVirtualGateway",
             "appmesh",
         ));
@@ -3975,10 +4190,10 @@ impl DescribeVirtualGatewayInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4008,6 +4223,7 @@ pub mod describe_virtual_node_input {
             self.virtual_node_name = Some(input.into());
             self
         }
+        /// <p>The name of the virtual node to describe.</p>
         pub fn set_virtual_node_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4020,6 +4236,7 @@ pub mod describe_virtual_node_input {
             self.mesh_name = Some(input.into());
             self
         }
+        /// <p>The name of the service mesh that the virtual node resides in.</p>
         pub fn set_mesh_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_name = input;
             self
@@ -4030,6 +4247,8 @@ pub mod describe_virtual_node_input {
             self.mesh_owner = Some(input.into());
             self
         }
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
+        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
@@ -4039,7 +4258,7 @@ pub mod describe_virtual_node_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeVirtualNodeInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeVirtualNodeInput {
                 virtual_node_name: self.virtual_node_name,
@@ -4060,27 +4279,27 @@ impl DescribeVirtualNodeInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeVirtualNode,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeVirtualNodeInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_49 = &_input.mesh_name;
             let input_49 =
                 input_49
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "mesh_name",
                         details: "cannot be empty or unset",
                     })?;
-            let mesh_name = smithy_http::label::fmt_string(input_49, false);
+            let mesh_name = aws_smithy_http::label::fmt_string(input_49, false);
             if mesh_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "mesh_name",
                     details: "cannot be empty or unset",
                 });
@@ -4089,13 +4308,13 @@ impl DescribeVirtualNodeInput {
             let input_50 =
                 input_50
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "virtual_node_name",
                         details: "cannot be empty or unset",
                     })?;
-            let virtual_node_name = smithy_http::label::fmt_string(input_50, false);
+            let virtual_node_name = aws_smithy_http::label::fmt_string(input_50, false);
             if virtual_node_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "virtual_node_name",
                     details: "cannot be empty or unset",
                 });
@@ -4110,16 +4329,16 @@ impl DescribeVirtualNodeInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::DescribeVirtualNodeInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_51) = &_input.mesh_owner {
-                query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_51));
+                query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_51));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::DescribeVirtualNodeInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4129,23 +4348,23 @@ impl DescribeVirtualNodeInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeVirtualNodeInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4168,15 +4387,15 @@ impl DescribeVirtualNodeInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeVirtualNode::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeVirtualNode",
             "appmesh",
         ));
@@ -4185,10 +4404,10 @@ impl DescribeVirtualNodeInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4218,6 +4437,7 @@ pub mod describe_virtual_router_input {
             self.virtual_router_name = Some(input.into());
             self
         }
+        /// <p>The name of the virtual router to describe.</p>
         pub fn set_virtual_router_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4230,6 +4450,7 @@ pub mod describe_virtual_router_input {
             self.mesh_name = Some(input.into());
             self
         }
+        /// <p>The name of the service mesh that the virtual router resides in.</p>
         pub fn set_mesh_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_name = input;
             self
@@ -4240,6 +4461,8 @@ pub mod describe_virtual_router_input {
             self.mesh_owner = Some(input.into());
             self
         }
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
+        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
@@ -4249,7 +4472,7 @@ pub mod describe_virtual_router_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeVirtualRouterInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeVirtualRouterInput {
                 virtual_router_name: self.virtual_router_name,
@@ -4270,27 +4493,27 @@ impl DescribeVirtualRouterInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeVirtualRouter,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeVirtualRouterInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_52 = &_input.mesh_name;
             let input_52 =
                 input_52
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "mesh_name",
                         details: "cannot be empty or unset",
                     })?;
-            let mesh_name = smithy_http::label::fmt_string(input_52, false);
+            let mesh_name = aws_smithy_http::label::fmt_string(input_52, false);
             if mesh_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "mesh_name",
                     details: "cannot be empty or unset",
                 });
@@ -4299,13 +4522,13 @@ impl DescribeVirtualRouterInput {
             let input_53 =
                 input_53
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "virtual_router_name",
                         details: "cannot be empty or unset",
                     })?;
-            let virtual_router_name = smithy_http::label::fmt_string(input_53, false);
+            let virtual_router_name = aws_smithy_http::label::fmt_string(input_53, false);
             if virtual_router_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "virtual_router_name",
                     details: "cannot be empty or unset",
                 });
@@ -4320,16 +4543,16 @@ impl DescribeVirtualRouterInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::DescribeVirtualRouterInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_54) = &_input.mesh_owner {
-                query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_54));
+                query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_54));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::DescribeVirtualRouterInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4339,23 +4562,23 @@ impl DescribeVirtualRouterInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeVirtualRouterInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4378,15 +4601,15 @@ impl DescribeVirtualRouterInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeVirtualRouter::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeVirtualRouter",
             "appmesh",
         ));
@@ -4395,10 +4618,10 @@ impl DescribeVirtualRouterInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4428,6 +4651,7 @@ pub mod describe_virtual_service_input {
             self.virtual_service_name = Some(input.into());
             self
         }
+        /// <p>The name of the virtual service to describe.</p>
         pub fn set_virtual_service_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4440,6 +4664,7 @@ pub mod describe_virtual_service_input {
             self.mesh_name = Some(input.into());
             self
         }
+        /// <p>The name of the service mesh that the virtual service resides in.</p>
         pub fn set_mesh_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_name = input;
             self
@@ -4450,6 +4675,8 @@ pub mod describe_virtual_service_input {
             self.mesh_owner = Some(input.into());
             self
         }
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
+        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
@@ -4459,7 +4686,7 @@ pub mod describe_virtual_service_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeVirtualServiceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeVirtualServiceInput {
                 virtual_service_name: self.virtual_service_name,
@@ -4480,27 +4707,27 @@ impl DescribeVirtualServiceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeVirtualService,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeVirtualServiceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_55 = &_input.mesh_name;
             let input_55 =
                 input_55
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "mesh_name",
                         details: "cannot be empty or unset",
                     })?;
-            let mesh_name = smithy_http::label::fmt_string(input_55, false);
+            let mesh_name = aws_smithy_http::label::fmt_string(input_55, false);
             if mesh_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "mesh_name",
                     details: "cannot be empty or unset",
                 });
@@ -4509,13 +4736,13 @@ impl DescribeVirtualServiceInput {
             let input_56 =
                 input_56
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "virtual_service_name",
                         details: "cannot be empty or unset",
                     })?;
-            let virtual_service_name = smithy_http::label::fmt_string(input_56, false);
+            let virtual_service_name = aws_smithy_http::label::fmt_string(input_56, false);
             if virtual_service_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "virtual_service_name",
                     details: "cannot be empty or unset",
                 });
@@ -4530,16 +4757,16 @@ impl DescribeVirtualServiceInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::DescribeVirtualServiceInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_57) = &_input.mesh_owner {
-                query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_57));
+                query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_57));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::DescribeVirtualServiceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4549,23 +4776,23 @@ impl DescribeVirtualServiceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeVirtualServiceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4588,15 +4815,15 @@ impl DescribeVirtualServiceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeVirtualService::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeVirtualService",
             "appmesh",
         ));
@@ -4605,10 +4832,10 @@ impl DescribeVirtualServiceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4640,6 +4867,7 @@ pub mod list_gateway_routes_input {
             self.mesh_name = Some(input.into());
             self
         }
+        /// <p>The name of the service mesh to list gateway routes in.</p>
         pub fn set_mesh_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_name = input;
             self
@@ -4649,6 +4877,7 @@ pub mod list_gateway_routes_input {
             self.virtual_gateway_name = Some(input.into());
             self
         }
+        /// <p>The name of the virtual gateway to list gateway routes in.</p>
         pub fn set_virtual_gateway_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4664,6 +4893,10 @@ pub mod list_gateway_routes_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The <code>nextToken</code> value returned from a previous paginated
+        /// <code>ListGatewayRoutes</code> request where <code>limit</code> was used and the results
+        /// exceeded the value of that parameter. Pagination continues from the end of the previous
+        /// results that returned the <code>nextToken</code> value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4680,6 +4913,14 @@ pub mod list_gateway_routes_input {
             self.limit = Some(input);
             self
         }
+        /// <p>The maximum number of results returned by <code>ListGatewayRoutes</code> in paginated
+        /// output. When you use this parameter, <code>ListGatewayRoutes</code> returns only
+        /// <code>limit</code> results in a single page along with a <code>nextToken</code> response
+        /// element. You can see the remaining results of the initial request by sending another
+        /// <code>ListGatewayRoutes</code> request with the returned <code>nextToken</code> value.
+        /// This value can be between 1 and 100. If you don't use this
+        /// parameter, <code>ListGatewayRoutes</code> returns up to 100 results and a
+        /// <code>nextToken</code> value if applicable.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -4690,6 +4931,8 @@ pub mod list_gateway_routes_input {
             self.mesh_owner = Some(input.into());
             self
         }
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
+        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
@@ -4699,7 +4942,7 @@ pub mod list_gateway_routes_input {
             self,
         ) -> std::result::Result<
             crate::input::ListGatewayRoutesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListGatewayRoutesInput {
                 mesh_name: self.mesh_name,
@@ -4722,27 +4965,27 @@ impl ListGatewayRoutesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListGatewayRoutes,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListGatewayRoutesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_58 = &_input.mesh_name;
             let input_58 =
                 input_58
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "mesh_name",
                         details: "cannot be empty or unset",
                     })?;
-            let mesh_name = smithy_http::label::fmt_string(input_58, false);
+            let mesh_name = aws_smithy_http::label::fmt_string(input_58, false);
             if mesh_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "mesh_name",
                     details: "cannot be empty or unset",
                 });
@@ -4751,13 +4994,13 @@ impl ListGatewayRoutesInput {
             let input_59 =
                 input_59
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "virtual_gateway_name",
                         details: "cannot be empty or unset",
                     })?;
-            let virtual_gateway_name = smithy_http::label::fmt_string(input_59, false);
+            let virtual_gateway_name = aws_smithy_http::label::fmt_string(input_59, false);
             if virtual_gateway_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "virtual_gateway_name",
                     details: "cannot be empty or unset",
                 });
@@ -4772,25 +5015,25 @@ impl ListGatewayRoutesInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListGatewayRoutesInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_60) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_60));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_60));
             }
             if let Some(inner_61) = &_input.limit {
                 query.push_kv(
                     "limit",
-                    &smithy_types::primitive::Encoder::from(*inner_61).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_61).encode(),
                 );
             }
             if let Some(inner_62) = &_input.mesh_owner {
-                query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_62));
+                query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_62));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::ListGatewayRoutesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4800,23 +5043,23 @@ impl ListGatewayRoutesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListGatewayRoutesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4839,15 +5082,15 @@ impl ListGatewayRoutesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListGatewayRoutes::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListGatewayRoutes",
             "appmesh",
         ));
@@ -4856,10 +5099,10 @@ impl ListGatewayRoutesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4895,6 +5138,14 @@ pub mod list_meshes_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The <code>nextToken</code> value returned from a previous paginated
+        /// <code>ListMeshes</code> request where <code>limit</code> was used and the results
+        /// exceeded the value of that parameter. Pagination continues from the end of the previous
+        /// results that returned the <code>nextToken</code> value.</p>
+        /// <note>
+        /// <p>This token should be treated as an opaque identifier that is used only to
+        /// retrieve the next items in a list and not for other programmatic purposes.</p>
+        /// </note>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4911,6 +5162,14 @@ pub mod list_meshes_input {
             self.limit = Some(input);
             self
         }
+        /// <p>The maximum number of results returned by <code>ListMeshes</code> in paginated output.
+        /// When you use this parameter, <code>ListMeshes</code> returns only <code>limit</code>
+        /// results in a single page along with a <code>nextToken</code> response element. You can see
+        /// the remaining results of the initial request by sending another <code>ListMeshes</code>
+        /// request with the returned <code>nextToken</code> value. This value can be between
+        /// 1 and 100. If you don't use this parameter,
+        /// <code>ListMeshes</code> returns up to 100 results and a
+        /// <code>nextToken</code> value if applicable.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -4918,8 +5177,10 @@ pub mod list_meshes_input {
         /// Consumes the builder and constructs a [`ListMeshesInput`](crate::input::ListMeshesInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListMeshesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListMeshesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListMeshesInput {
                 next_token: self.next_token,
                 limit: self.limit,
@@ -4938,28 +5199,28 @@ impl ListMeshesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListMeshes,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListMeshesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/v20190125/meshes").expect("formatting should succeed");
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListMeshesInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_63) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_63));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_63));
             }
             if let Some(inner_64) = &_input.limit {
                 query.push_kv(
                     "limit",
-                    &smithy_types::primitive::Encoder::from(*inner_64).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_64).encode(),
                 );
             }
         }
@@ -4967,7 +5228,7 @@ impl ListMeshesInput {
         fn update_http_builder(
             input: &crate::input::ListMeshesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4977,23 +5238,23 @@ impl ListMeshesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListMeshesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5016,25 +5277,27 @@ impl ListMeshesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListMeshes::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ListMeshes",
-                    "appmesh",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListMeshes::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListMeshes",
+            "appmesh",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5066,6 +5329,7 @@ pub mod list_routes_input {
             self.mesh_name = Some(input.into());
             self
         }
+        /// <p>The name of the service mesh to list routes in.</p>
         pub fn set_mesh_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_name = input;
             self
@@ -5075,6 +5339,7 @@ pub mod list_routes_input {
             self.virtual_router_name = Some(input.into());
             self
         }
+        /// <p>The name of the virtual router to list routes in.</p>
         pub fn set_virtual_router_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5090,6 +5355,10 @@ pub mod list_routes_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The <code>nextToken</code> value returned from a previous paginated
+        /// <code>ListRoutes</code> request where <code>limit</code> was used and the results
+        /// exceeded the value of that parameter. Pagination continues from the end of the previous
+        /// results that returned the <code>nextToken</code> value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5106,6 +5375,14 @@ pub mod list_routes_input {
             self.limit = Some(input);
             self
         }
+        /// <p>The maximum number of results returned by <code>ListRoutes</code> in paginated output.
+        /// When you use this parameter, <code>ListRoutes</code> returns only <code>limit</code>
+        /// results in a single page along with a <code>nextToken</code> response element. You can see
+        /// the remaining results of the initial request by sending another <code>ListRoutes</code>
+        /// request with the returned <code>nextToken</code> value. This value can be between
+        /// 1 and 100. If you don't use this parameter,
+        /// <code>ListRoutes</code> returns up to 100 results and a
+        /// <code>nextToken</code> value if applicable.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -5116,6 +5393,8 @@ pub mod list_routes_input {
             self.mesh_owner = Some(input.into());
             self
         }
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
+        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
@@ -5123,8 +5402,10 @@ pub mod list_routes_input {
         /// Consumes the builder and constructs a [`ListRoutesInput`](crate::input::ListRoutesInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListRoutesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListRoutesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListRoutesInput {
                 mesh_name: self.mesh_name,
                 virtual_router_name: self.virtual_router_name,
@@ -5146,27 +5427,27 @@ impl ListRoutesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListRoutes,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListRoutesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_65 = &_input.mesh_name;
             let input_65 =
                 input_65
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "mesh_name",
                         details: "cannot be empty or unset",
                     })?;
-            let mesh_name = smithy_http::label::fmt_string(input_65, false);
+            let mesh_name = aws_smithy_http::label::fmt_string(input_65, false);
             if mesh_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "mesh_name",
                     details: "cannot be empty or unset",
                 });
@@ -5175,13 +5456,13 @@ impl ListRoutesInput {
             let input_66 =
                 input_66
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "virtual_router_name",
                         details: "cannot be empty or unset",
                     })?;
-            let virtual_router_name = smithy_http::label::fmt_string(input_66, false);
+            let virtual_router_name = aws_smithy_http::label::fmt_string(input_66, false);
             if virtual_router_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "virtual_router_name",
                     details: "cannot be empty or unset",
                 });
@@ -5196,25 +5477,25 @@ impl ListRoutesInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListRoutesInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_67) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_67));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_67));
             }
             if let Some(inner_68) = &_input.limit {
                 query.push_kv(
                     "limit",
-                    &smithy_types::primitive::Encoder::from(*inner_68).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_68).encode(),
                 );
             }
             if let Some(inner_69) = &_input.mesh_owner {
-                query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_69));
+                query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_69));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::ListRoutesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5224,23 +5505,23 @@ impl ListRoutesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListRoutesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5263,25 +5544,27 @@ impl ListRoutesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListRoutes::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ListRoutes",
-                    "appmesh",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListRoutes::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListRoutes",
+            "appmesh",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5311,6 +5594,7 @@ pub mod list_tags_for_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) that identifies the resource to list the tags for.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -5323,6 +5607,10 @@ pub mod list_tags_for_resource_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The <code>nextToken</code> value returned from a previous paginated
+        /// <code>ListTagsForResource</code> request where <code>limit</code> was used and the
+        /// results exceeded the value of that parameter. Pagination continues from the end of the
+        /// previous results that returned the <code>nextToken</code> value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5339,6 +5627,14 @@ pub mod list_tags_for_resource_input {
             self.limit = Some(input);
             self
         }
+        /// <p>The maximum number of tag results returned by <code>ListTagsForResource</code> in
+        /// paginated output. When this parameter is used, <code>ListTagsForResource</code> returns
+        /// only <code>limit</code> results in a single page along with a <code>nextToken</code>
+        /// response element. You can see the remaining results of the initial request by sending
+        /// another <code>ListTagsForResource</code> request with the returned <code>nextToken</code>
+        /// value. This value can be between 1 and 100. If you don't use
+        /// this parameter, <code>ListTagsForResource</code> returns up to 100
+        /// results and a <code>nextToken</code> value if applicable.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -5348,7 +5644,7 @@ pub mod list_tags_for_resource_input {
             self,
         ) -> std::result::Result<
             crate::input::ListTagsForResourceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListTagsForResourceInput {
                 resource_arn: self.resource_arn,
@@ -5369,31 +5665,34 @@ impl ListTagsForResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListTagsForResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/v20190125/tags").expect("formatting should succeed");
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListTagsForResourceInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_70) = &_input.resource_arn {
-                query.push_kv("resourceArn", &smithy_http::query::fmt_string(&inner_70));
+                query.push_kv(
+                    "resourceArn",
+                    &aws_smithy_http::query::fmt_string(&inner_70),
+                );
             }
             if let Some(inner_71) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_71));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_71));
             }
             if let Some(inner_72) = &_input.limit {
                 query.push_kv(
                     "limit",
-                    &smithy_types::primitive::Encoder::from(*inner_72).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_72).encode(),
                 );
             }
         }
@@ -5401,7 +5700,7 @@ impl ListTagsForResourceInput {
         fn update_http_builder(
             input: &crate::input::ListTagsForResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5411,23 +5710,23 @@ impl ListTagsForResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListTagsForResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5450,15 +5749,15 @@ impl ListTagsForResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListTagsForResource::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListTagsForResource",
             "appmesh",
         ));
@@ -5467,10 +5766,10 @@ impl ListTagsForResourceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5501,6 +5800,7 @@ pub mod list_virtual_gateways_input {
             self.mesh_name = Some(input.into());
             self
         }
+        /// <p>The name of the service mesh to list virtual gateways in.</p>
         pub fn set_mesh_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_name = input;
             self
@@ -5513,6 +5813,10 @@ pub mod list_virtual_gateways_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The <code>nextToken</code> value returned from a previous paginated
+        /// <code>ListVirtualGateways</code> request where <code>limit</code> was used and the
+        /// results exceeded the value of that parameter. Pagination continues from the end of the
+        /// previous results that returned the <code>nextToken</code> value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5529,6 +5833,14 @@ pub mod list_virtual_gateways_input {
             self.limit = Some(input);
             self
         }
+        /// <p>The maximum number of results returned by <code>ListVirtualGateways</code> in paginated
+        /// output. When you use this parameter, <code>ListVirtualGateways</code> returns only
+        /// <code>limit</code> results in a single page along with a <code>nextToken</code> response
+        /// element. You can see the remaining results of the initial request by sending another
+        /// <code>ListVirtualGateways</code> request with the returned <code>nextToken</code> value.
+        /// This value can be between 1 and 100. If you don't use this
+        /// parameter, <code>ListVirtualGateways</code> returns up to 100 results and
+        /// a <code>nextToken</code> value if applicable.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -5539,6 +5851,8 @@ pub mod list_virtual_gateways_input {
             self.mesh_owner = Some(input.into());
             self
         }
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
+        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
@@ -5548,7 +5862,7 @@ pub mod list_virtual_gateways_input {
             self,
         ) -> std::result::Result<
             crate::input::ListVirtualGatewaysInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListVirtualGatewaysInput {
                 mesh_name: self.mesh_name,
@@ -5570,27 +5884,27 @@ impl ListVirtualGatewaysInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListVirtualGateways,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListVirtualGatewaysInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_73 = &_input.mesh_name;
             let input_73 =
                 input_73
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "mesh_name",
                         details: "cannot be empty or unset",
                     })?;
-            let mesh_name = smithy_http::label::fmt_string(input_73, false);
+            let mesh_name = aws_smithy_http::label::fmt_string(input_73, false);
             if mesh_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "mesh_name",
                     details: "cannot be empty or unset",
                 });
@@ -5604,25 +5918,25 @@ impl ListVirtualGatewaysInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListVirtualGatewaysInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_74) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_74));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_74));
             }
             if let Some(inner_75) = &_input.limit {
                 query.push_kv(
                     "limit",
-                    &smithy_types::primitive::Encoder::from(*inner_75).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_75).encode(),
                 );
             }
             if let Some(inner_76) = &_input.mesh_owner {
-                query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_76));
+                query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_76));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::ListVirtualGatewaysInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5632,23 +5946,23 @@ impl ListVirtualGatewaysInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListVirtualGatewaysInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5671,15 +5985,15 @@ impl ListVirtualGatewaysInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListVirtualGateways::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListVirtualGateways",
             "appmesh",
         ));
@@ -5688,10 +6002,10 @@ impl ListVirtualGatewaysInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5722,6 +6036,7 @@ pub mod list_virtual_nodes_input {
             self.mesh_name = Some(input.into());
             self
         }
+        /// <p>The name of the service mesh to list virtual nodes in.</p>
         pub fn set_mesh_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_name = input;
             self
@@ -5734,6 +6049,10 @@ pub mod list_virtual_nodes_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The <code>nextToken</code> value returned from a previous paginated
+        /// <code>ListVirtualNodes</code> request where <code>limit</code> was used and the results
+        /// exceeded the value of that parameter. Pagination continues from the end of the previous
+        /// results that returned the <code>nextToken</code> value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5750,6 +6069,14 @@ pub mod list_virtual_nodes_input {
             self.limit = Some(input);
             self
         }
+        /// <p>The maximum number of results returned by <code>ListVirtualNodes</code> in paginated
+        /// output. When you use this parameter, <code>ListVirtualNodes</code> returns only
+        /// <code>limit</code> results in a single page along with a <code>nextToken</code> response
+        /// element. You can see the remaining results of the initial request by sending another
+        /// <code>ListVirtualNodes</code> request with the returned <code>nextToken</code> value.
+        /// This value can be between 1 and 100. If you don't use this
+        /// parameter, <code>ListVirtualNodes</code> returns up to 100 results and a
+        /// <code>nextToken</code> value if applicable.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -5760,6 +6087,8 @@ pub mod list_virtual_nodes_input {
             self.mesh_owner = Some(input.into());
             self
         }
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
+        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
@@ -5769,7 +6098,7 @@ pub mod list_virtual_nodes_input {
             self,
         ) -> std::result::Result<
             crate::input::ListVirtualNodesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListVirtualNodesInput {
                 mesh_name: self.mesh_name,
@@ -5791,27 +6120,27 @@ impl ListVirtualNodesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListVirtualNodes,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListVirtualNodesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_77 = &_input.mesh_name;
             let input_77 =
                 input_77
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "mesh_name",
                         details: "cannot be empty or unset",
                     })?;
-            let mesh_name = smithy_http::label::fmt_string(input_77, false);
+            let mesh_name = aws_smithy_http::label::fmt_string(input_77, false);
             if mesh_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "mesh_name",
                     details: "cannot be empty or unset",
                 });
@@ -5825,25 +6154,25 @@ impl ListVirtualNodesInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListVirtualNodesInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_78) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_78));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_78));
             }
             if let Some(inner_79) = &_input.limit {
                 query.push_kv(
                     "limit",
-                    &smithy_types::primitive::Encoder::from(*inner_79).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_79).encode(),
                 );
             }
             if let Some(inner_80) = &_input.mesh_owner {
-                query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_80));
+                query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_80));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::ListVirtualNodesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5853,23 +6182,23 @@ impl ListVirtualNodesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListVirtualNodesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5892,15 +6221,15 @@ impl ListVirtualNodesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListVirtualNodes::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListVirtualNodes",
             "appmesh",
         ));
@@ -5909,10 +6238,10 @@ impl ListVirtualNodesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5943,6 +6272,7 @@ pub mod list_virtual_routers_input {
             self.mesh_name = Some(input.into());
             self
         }
+        /// <p>The name of the service mesh to list virtual routers in.</p>
         pub fn set_mesh_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_name = input;
             self
@@ -5955,6 +6285,10 @@ pub mod list_virtual_routers_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The <code>nextToken</code> value returned from a previous paginated
+        /// <code>ListVirtualRouters</code> request where <code>limit</code> was used and the
+        /// results exceeded the value of that parameter. Pagination continues from the end of the
+        /// previous results that returned the <code>nextToken</code> value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5971,6 +6305,14 @@ pub mod list_virtual_routers_input {
             self.limit = Some(input);
             self
         }
+        /// <p>The maximum number of results returned by <code>ListVirtualRouters</code> in paginated
+        /// output. When you use this parameter, <code>ListVirtualRouters</code> returns only
+        /// <code>limit</code> results in a single page along with a <code>nextToken</code> response
+        /// element. You can see the remaining results of the initial request by sending another
+        /// <code>ListVirtualRouters</code> request with the returned <code>nextToken</code> value.
+        /// This value can be between 1 and 100. If you don't use this
+        /// parameter, <code>ListVirtualRouters</code> returns up to 100 results and
+        /// a <code>nextToken</code> value if applicable.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -5981,6 +6323,8 @@ pub mod list_virtual_routers_input {
             self.mesh_owner = Some(input.into());
             self
         }
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
+        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
@@ -5990,7 +6334,7 @@ pub mod list_virtual_routers_input {
             self,
         ) -> std::result::Result<
             crate::input::ListVirtualRoutersInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListVirtualRoutersInput {
                 mesh_name: self.mesh_name,
@@ -6012,27 +6356,27 @@ impl ListVirtualRoutersInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListVirtualRouters,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListVirtualRoutersInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_81 = &_input.mesh_name;
             let input_81 =
                 input_81
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "mesh_name",
                         details: "cannot be empty or unset",
                     })?;
-            let mesh_name = smithy_http::label::fmt_string(input_81, false);
+            let mesh_name = aws_smithy_http::label::fmt_string(input_81, false);
             if mesh_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "mesh_name",
                     details: "cannot be empty or unset",
                 });
@@ -6046,25 +6390,25 @@ impl ListVirtualRoutersInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListVirtualRoutersInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_82) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_82));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_82));
             }
             if let Some(inner_83) = &_input.limit {
                 query.push_kv(
                     "limit",
-                    &smithy_types::primitive::Encoder::from(*inner_83).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_83).encode(),
                 );
             }
             if let Some(inner_84) = &_input.mesh_owner {
-                query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_84));
+                query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_84));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::ListVirtualRoutersInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6074,23 +6418,23 @@ impl ListVirtualRoutersInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListVirtualRoutersInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6113,15 +6457,15 @@ impl ListVirtualRoutersInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListVirtualRouters::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListVirtualRouters",
             "appmesh",
         ));
@@ -6130,10 +6474,10 @@ impl ListVirtualRoutersInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6164,6 +6508,7 @@ pub mod list_virtual_services_input {
             self.mesh_name = Some(input.into());
             self
         }
+        /// <p>The name of the service mesh to list virtual services in.</p>
         pub fn set_mesh_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_name = input;
             self
@@ -6176,6 +6521,10 @@ pub mod list_virtual_services_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The <code>nextToken</code> value returned from a previous paginated
+        /// <code>ListVirtualServices</code> request where <code>limit</code> was used and the
+        /// results exceeded the value of that parameter. Pagination continues from the end of the
+        /// previous results that returned the <code>nextToken</code> value.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6192,6 +6541,14 @@ pub mod list_virtual_services_input {
             self.limit = Some(input);
             self
         }
+        /// <p>The maximum number of results returned by <code>ListVirtualServices</code> in paginated
+        /// output. When you use this parameter, <code>ListVirtualServices</code> returns only
+        /// <code>limit</code> results in a single page along with a <code>nextToken</code> response
+        /// element. You can see the remaining results of the initial request by sending another
+        /// <code>ListVirtualServices</code> request with the returned <code>nextToken</code> value.
+        /// This value can be between 1 and 100. If you don't use this
+        /// parameter, <code>ListVirtualServices</code> returns up to 100 results and
+        /// a <code>nextToken</code> value if applicable.</p>
         pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.limit = input;
             self
@@ -6202,6 +6559,8 @@ pub mod list_virtual_services_input {
             self.mesh_owner = Some(input.into());
             self
         }
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
+        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
@@ -6211,7 +6570,7 @@ pub mod list_virtual_services_input {
             self,
         ) -> std::result::Result<
             crate::input::ListVirtualServicesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListVirtualServicesInput {
                 mesh_name: self.mesh_name,
@@ -6233,27 +6592,27 @@ impl ListVirtualServicesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListVirtualServices,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListVirtualServicesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_85 = &_input.mesh_name;
             let input_85 =
                 input_85
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "mesh_name",
                         details: "cannot be empty or unset",
                     })?;
-            let mesh_name = smithy_http::label::fmt_string(input_85, false);
+            let mesh_name = aws_smithy_http::label::fmt_string(input_85, false);
             if mesh_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "mesh_name",
                     details: "cannot be empty or unset",
                 });
@@ -6267,25 +6626,25 @@ impl ListVirtualServicesInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListVirtualServicesInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_86) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_86));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_86));
             }
             if let Some(inner_87) = &_input.limit {
                 query.push_kv(
                     "limit",
-                    &smithy_types::primitive::Encoder::from(*inner_87).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_87).encode(),
                 );
             }
             if let Some(inner_88) = &_input.mesh_owner {
-                query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_88));
+                query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_88));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::ListVirtualServicesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6295,23 +6654,23 @@ impl ListVirtualServicesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListVirtualServicesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6334,15 +6693,15 @@ impl ListVirtualServicesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListVirtualServices::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListVirtualServices",
             "appmesh",
         ));
@@ -6351,10 +6710,10 @@ impl ListVirtualServicesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6383,16 +6742,27 @@ pub mod tag_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the resource to add tags to.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags to add to the resource. A tag is an array of key-value pairs.
+        /// Tag keys can have a maximum character length of 128 characters, and tag values can have
+        /// a maximum length of 256 characters.</p>
         pub fn tags(mut self, input: impl Into<crate::model::TagRef>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The tags to add to the resource. A tag is an array of key-value pairs.
+        /// Tag keys can have a maximum character length of 128 characters, and tag values can have
+        /// a maximum length of 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TagRef>>,
@@ -6403,8 +6773,10 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::TagResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::TagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::TagResourceInput {
                 resource_arn: self.resource_arn,
                 tags: self.tags,
@@ -6423,30 +6795,33 @@ impl TagResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::TagResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/v20190125/tag").expect("formatting should succeed");
             Ok(())
         }
         fn uri_query(_input: &crate::input::TagResourceInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_89) = &_input.resource_arn {
-                query.push_kv("resourceArn", &smithy_http::query::fmt_string(&inner_89));
+                query.push_kv(
+                    "resourceArn",
+                    &aws_smithy_http::query::fmt_string(&inner_89),
+                );
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::TagResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6456,24 +6831,26 @@ impl TagResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::TagResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6496,25 +6873,27 @@ impl TagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::TagResource::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "TagResource",
-                    "appmesh",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::TagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "TagResource",
+            "appmesh",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6543,16 +6922,23 @@ pub mod untag_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the resource to delete tags from.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Appends an item to `tag_keys`.
+        ///
+        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
+        ///
+        /// <p>The keys of the tags to be removed.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
+        /// <p>The keys of the tags to be removed.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6563,8 +6949,10 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UntagResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UntagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UntagResourceInput {
                 resource_arn: self.resource_arn,
                 tag_keys: self.tag_keys,
@@ -6583,30 +6971,33 @@ impl UntagResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UntagResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/v20190125/untag").expect("formatting should succeed");
             Ok(())
         }
         fn uri_query(_input: &crate::input::UntagResourceInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_90) = &_input.resource_arn {
-                query.push_kv("resourceArn", &smithy_http::query::fmt_string(&inner_90));
+                query.push_kv(
+                    "resourceArn",
+                    &aws_smithy_http::query::fmt_string(&inner_90),
+                );
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::UntagResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6616,24 +7007,26 @@ impl UntagResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UntagResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6656,25 +7049,27 @@ impl UntagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UntagResource::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UntagResource",
-                    "appmesh",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UntagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UntagResource",
+            "appmesh",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6707,6 +7102,7 @@ pub mod update_gateway_route_input {
             self.gateway_route_name = Some(input.into());
             self
         }
+        /// <p>The name of the gateway route to update.</p>
         pub fn set_gateway_route_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6719,6 +7115,7 @@ pub mod update_gateway_route_input {
             self.mesh_name = Some(input.into());
             self
         }
+        /// <p>The name of the service mesh that the gateway route resides in.</p>
         pub fn set_mesh_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_name = input;
             self
@@ -6728,6 +7125,7 @@ pub mod update_gateway_route_input {
             self.virtual_gateway_name = Some(input.into());
             self
         }
+        /// <p>The name of the virtual gateway that the gateway route is associated with.</p>
         pub fn set_virtual_gateway_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6740,6 +7138,7 @@ pub mod update_gateway_route_input {
             self.spec = Some(input);
             self
         }
+        /// <p>The new gateway route specification to apply. This overwrites the existing data.</p>
         pub fn set_spec(
             mut self,
             input: std::option::Option<crate::model::GatewayRouteSpec>,
@@ -6753,6 +7152,8 @@ pub mod update_gateway_route_input {
             self.client_token = Some(input.into());
             self
         }
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -6763,6 +7164,8 @@ pub mod update_gateway_route_input {
             self.mesh_owner = Some(input.into());
             self
         }
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
+        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
@@ -6772,7 +7175,7 @@ pub mod update_gateway_route_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateGatewayRouteInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateGatewayRouteInput {
                 gateway_route_name: self.gateway_route_name,
@@ -6796,27 +7199,27 @@ impl UpdateGatewayRouteInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateGatewayRoute,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateGatewayRouteInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_91 = &_input.mesh_name;
             let input_91 =
                 input_91
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "mesh_name",
                         details: "cannot be empty or unset",
                     })?;
-            let mesh_name = smithy_http::label::fmt_string(input_91, false);
+            let mesh_name = aws_smithy_http::label::fmt_string(input_91, false);
             if mesh_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "mesh_name",
                     details: "cannot be empty or unset",
                 });
@@ -6825,13 +7228,13 @@ impl UpdateGatewayRouteInput {
             let input_92 =
                 input_92
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "virtual_gateway_name",
                         details: "cannot be empty or unset",
                     })?;
-            let virtual_gateway_name = smithy_http::label::fmt_string(input_92, false);
+            let virtual_gateway_name = aws_smithy_http::label::fmt_string(input_92, false);
             if virtual_gateway_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "virtual_gateway_name",
                     details: "cannot be empty or unset",
                 });
@@ -6840,13 +7243,13 @@ impl UpdateGatewayRouteInput {
             let input_93 =
                 input_93
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "gateway_route_name",
                         details: "cannot be empty or unset",
                     })?;
-            let gateway_route_name = smithy_http::label::fmt_string(input_93, false);
+            let gateway_route_name = aws_smithy_http::label::fmt_string(input_93, false);
             if gateway_route_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "gateway_route_name",
                     details: "cannot be empty or unset",
                 });
@@ -6855,16 +7258,16 @@ impl UpdateGatewayRouteInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::UpdateGatewayRouteInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_94) = &_input.mesh_owner {
-                query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_94));
+                query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_94));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::UpdateGatewayRouteInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6874,10 +7277,10 @@ impl UpdateGatewayRouteInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateGatewayRouteInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -6887,15 +7290,17 @@ impl UpdateGatewayRouteInput {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_gateway_route(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6918,15 +7323,15 @@ impl UpdateGatewayRouteInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateGatewayRoute::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateGatewayRoute",
             "appmesh",
         ));
@@ -6935,10 +7340,10 @@ impl UpdateGatewayRouteInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6968,6 +7373,7 @@ pub mod update_mesh_input {
             self.mesh_name = Some(input.into());
             self
         }
+        /// <p>The name of the service mesh to update.</p>
         pub fn set_mesh_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_name = input;
             self
@@ -6977,6 +7383,7 @@ pub mod update_mesh_input {
             self.spec = Some(input);
             self
         }
+        /// <p>The service mesh specification to apply.</p>
         pub fn set_spec(mut self, input: std::option::Option<crate::model::MeshSpec>) -> Self {
             self.spec = input;
             self
@@ -6987,6 +7394,8 @@ pub mod update_mesh_input {
             self.client_token = Some(input.into());
             self
         }
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -6994,8 +7403,10 @@ pub mod update_mesh_input {
         /// Consumes the builder and constructs a [`UpdateMeshInput`](crate::input::UpdateMeshInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UpdateMeshInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateMeshInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateMeshInput {
                 mesh_name: self.mesh_name,
                 spec: self.spec,
@@ -7015,27 +7426,27 @@ impl UpdateMeshInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateMesh,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateMeshInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_95 = &_input.mesh_name;
             let input_95 =
                 input_95
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "mesh_name",
                         details: "cannot be empty or unset",
                     })?;
-            let mesh_name = smithy_http::label::fmt_string(input_95, false);
+            let mesh_name = aws_smithy_http::label::fmt_string(input_95, false);
             if mesh_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "mesh_name",
                     details: "cannot be empty or unset",
                 });
@@ -7048,7 +7459,7 @@ impl UpdateMeshInput {
         fn update_http_builder(
             input: &crate::input::UpdateMeshInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7057,10 +7468,10 @@ impl UpdateMeshInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateMeshInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -7070,14 +7481,16 @@ impl UpdateMeshInput {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_update_mesh(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7100,25 +7513,27 @@ impl UpdateMeshInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UpdateMesh::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UpdateMesh",
-                    "appmesh",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateMesh::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateMesh",
+            "appmesh",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7151,6 +7566,7 @@ pub mod update_route_input {
             self.route_name = Some(input.into());
             self
         }
+        /// <p>The name of the route to update.</p>
         pub fn set_route_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.route_name = input;
             self
@@ -7160,6 +7576,7 @@ pub mod update_route_input {
             self.mesh_name = Some(input.into());
             self
         }
+        /// <p>The name of the service mesh that the route resides in.</p>
         pub fn set_mesh_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_name = input;
             self
@@ -7169,6 +7586,7 @@ pub mod update_route_input {
             self.virtual_router_name = Some(input.into());
             self
         }
+        /// <p>The name of the virtual router that the route is associated with.</p>
         pub fn set_virtual_router_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7181,6 +7599,7 @@ pub mod update_route_input {
             self.spec = Some(input);
             self
         }
+        /// <p>The new route specification to apply. This overwrites the existing data.</p>
         pub fn set_spec(mut self, input: std::option::Option<crate::model::RouteSpec>) -> Self {
             self.spec = input;
             self
@@ -7191,6 +7610,8 @@ pub mod update_route_input {
             self.client_token = Some(input.into());
             self
         }
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -7201,6 +7622,8 @@ pub mod update_route_input {
             self.mesh_owner = Some(input.into());
             self
         }
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
+        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
@@ -7208,8 +7631,10 @@ pub mod update_route_input {
         /// Consumes the builder and constructs a [`UpdateRouteInput`](crate::input::UpdateRouteInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UpdateRouteInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateRouteInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateRouteInput {
                 route_name: self.route_name,
                 mesh_name: self.mesh_name,
@@ -7232,27 +7657,27 @@ impl UpdateRouteInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateRoute,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateRouteInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_96 = &_input.mesh_name;
             let input_96 =
                 input_96
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "mesh_name",
                         details: "cannot be empty or unset",
                     })?;
-            let mesh_name = smithy_http::label::fmt_string(input_96, false);
+            let mesh_name = aws_smithy_http::label::fmt_string(input_96, false);
             if mesh_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "mesh_name",
                     details: "cannot be empty or unset",
                 });
@@ -7261,13 +7686,13 @@ impl UpdateRouteInput {
             let input_97 =
                 input_97
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "virtual_router_name",
                         details: "cannot be empty or unset",
                     })?;
-            let virtual_router_name = smithy_http::label::fmt_string(input_97, false);
+            let virtual_router_name = aws_smithy_http::label::fmt_string(input_97, false);
             if virtual_router_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "virtual_router_name",
                     details: "cannot be empty or unset",
                 });
@@ -7276,13 +7701,13 @@ impl UpdateRouteInput {
             let input_98 =
                 input_98
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "route_name",
                         details: "cannot be empty or unset",
                     })?;
-            let route_name = smithy_http::label::fmt_string(input_98, false);
+            let route_name = aws_smithy_http::label::fmt_string(input_98, false);
             if route_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "route_name",
                     details: "cannot be empty or unset",
                 });
@@ -7298,16 +7723,16 @@ impl UpdateRouteInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::UpdateRouteInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_99) = &_input.mesh_owner {
-                query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_99));
+                query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_99));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::UpdateRouteInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7317,10 +7742,10 @@ impl UpdateRouteInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateRouteInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -7330,14 +7755,16 @@ impl UpdateRouteInput {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_update_route(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7360,25 +7787,27 @@ impl UpdateRouteInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UpdateRoute::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UpdateRoute",
-                    "appmesh",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateRoute::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateRoute",
+            "appmesh",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7410,6 +7839,7 @@ pub mod update_virtual_gateway_input {
             self.virtual_gateway_name = Some(input.into());
             self
         }
+        /// <p>The name of the virtual gateway to update.</p>
         pub fn set_virtual_gateway_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7422,6 +7852,7 @@ pub mod update_virtual_gateway_input {
             self.mesh_name = Some(input.into());
             self
         }
+        /// <p>The name of the service mesh that the virtual gateway resides in.</p>
         pub fn set_mesh_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_name = input;
             self
@@ -7432,6 +7863,8 @@ pub mod update_virtual_gateway_input {
             self.spec = Some(input);
             self
         }
+        /// <p>The new virtual gateway specification to apply. This overwrites the existing
+        /// data.</p>
         pub fn set_spec(
             mut self,
             input: std::option::Option<crate::model::VirtualGatewaySpec>,
@@ -7445,6 +7878,8 @@ pub mod update_virtual_gateway_input {
             self.client_token = Some(input.into());
             self
         }
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -7455,6 +7890,8 @@ pub mod update_virtual_gateway_input {
             self.mesh_owner = Some(input.into());
             self
         }
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
+        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
@@ -7464,7 +7901,7 @@ pub mod update_virtual_gateway_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateVirtualGatewayInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateVirtualGatewayInput {
                 virtual_gateway_name: self.virtual_gateway_name,
@@ -7487,27 +7924,27 @@ impl UpdateVirtualGatewayInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateVirtualGateway,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateVirtualGatewayInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_100 = &_input.mesh_name;
             let input_100 =
                 input_100
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "mesh_name",
                         details: "cannot be empty or unset",
                     })?;
-            let mesh_name = smithy_http::label::fmt_string(input_100, false);
+            let mesh_name = aws_smithy_http::label::fmt_string(input_100, false);
             if mesh_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "mesh_name",
                     details: "cannot be empty or unset",
                 });
@@ -7516,13 +7953,13 @@ impl UpdateVirtualGatewayInput {
             let input_101 =
                 input_101
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "virtual_gateway_name",
                         details: "cannot be empty or unset",
                     })?;
-            let virtual_gateway_name = smithy_http::label::fmt_string(input_101, false);
+            let virtual_gateway_name = aws_smithy_http::label::fmt_string(input_101, false);
             if virtual_gateway_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "virtual_gateway_name",
                     details: "cannot be empty or unset",
                 });
@@ -7537,16 +7974,16 @@ impl UpdateVirtualGatewayInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::UpdateVirtualGatewayInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_102) = &_input.mesh_owner {
-                query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_102));
+                query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_102));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::UpdateVirtualGatewayInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7556,10 +7993,10 @@ impl UpdateVirtualGatewayInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateVirtualGatewayInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -7569,17 +8006,17 @@ impl UpdateVirtualGatewayInput {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_virtual_gateway(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7602,15 +8039,15 @@ impl UpdateVirtualGatewayInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateVirtualGateway::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateVirtualGateway",
             "appmesh",
         ));
@@ -7619,10 +8056,10 @@ impl UpdateVirtualGatewayInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7654,6 +8091,7 @@ pub mod update_virtual_node_input {
             self.virtual_node_name = Some(input.into());
             self
         }
+        /// <p>The name of the virtual node to update.</p>
         pub fn set_virtual_node_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7666,6 +8104,7 @@ pub mod update_virtual_node_input {
             self.mesh_name = Some(input.into());
             self
         }
+        /// <p>The name of the service mesh that the virtual node resides in.</p>
         pub fn set_mesh_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_name = input;
             self
@@ -7675,6 +8114,7 @@ pub mod update_virtual_node_input {
             self.spec = Some(input);
             self
         }
+        /// <p>The new virtual node specification to apply. This overwrites the existing data.</p>
         pub fn set_spec(
             mut self,
             input: std::option::Option<crate::model::VirtualNodeSpec>,
@@ -7688,6 +8128,8 @@ pub mod update_virtual_node_input {
             self.client_token = Some(input.into());
             self
         }
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -7698,6 +8140,8 @@ pub mod update_virtual_node_input {
             self.mesh_owner = Some(input.into());
             self
         }
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
+        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
@@ -7707,7 +8151,7 @@ pub mod update_virtual_node_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateVirtualNodeInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateVirtualNodeInput {
                 virtual_node_name: self.virtual_node_name,
@@ -7730,27 +8174,27 @@ impl UpdateVirtualNodeInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateVirtualNode,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateVirtualNodeInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_103 = &_input.mesh_name;
             let input_103 =
                 input_103
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "mesh_name",
                         details: "cannot be empty or unset",
                     })?;
-            let mesh_name = smithy_http::label::fmt_string(input_103, false);
+            let mesh_name = aws_smithy_http::label::fmt_string(input_103, false);
             if mesh_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "mesh_name",
                     details: "cannot be empty or unset",
                 });
@@ -7759,13 +8203,13 @@ impl UpdateVirtualNodeInput {
             let input_104 =
                 input_104
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "virtual_node_name",
                         details: "cannot be empty or unset",
                     })?;
-            let virtual_node_name = smithy_http::label::fmt_string(input_104, false);
+            let virtual_node_name = aws_smithy_http::label::fmt_string(input_104, false);
             if virtual_node_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "virtual_node_name",
                     details: "cannot be empty or unset",
                 });
@@ -7780,16 +8224,16 @@ impl UpdateVirtualNodeInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::UpdateVirtualNodeInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_105) = &_input.mesh_owner {
-                query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_105));
+                query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_105));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::UpdateVirtualNodeInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7799,10 +8243,10 @@ impl UpdateVirtualNodeInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateVirtualNodeInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -7812,17 +8256,17 @@ impl UpdateVirtualNodeInput {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_virtual_node(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7845,15 +8289,15 @@ impl UpdateVirtualNodeInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateVirtualNode::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateVirtualNode",
             "appmesh",
         ));
@@ -7862,10 +8306,10 @@ impl UpdateVirtualNodeInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7897,6 +8341,7 @@ pub mod update_virtual_router_input {
             self.virtual_router_name = Some(input.into());
             self
         }
+        /// <p>The name of the virtual router to update.</p>
         pub fn set_virtual_router_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7909,6 +8354,7 @@ pub mod update_virtual_router_input {
             self.mesh_name = Some(input.into());
             self
         }
+        /// <p>The name of the service mesh that the virtual router resides in.</p>
         pub fn set_mesh_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_name = input;
             self
@@ -7918,6 +8364,7 @@ pub mod update_virtual_router_input {
             self.spec = Some(input);
             self
         }
+        /// <p>The new virtual router specification to apply. This overwrites the existing data.</p>
         pub fn set_spec(
             mut self,
             input: std::option::Option<crate::model::VirtualRouterSpec>,
@@ -7931,6 +8378,8 @@ pub mod update_virtual_router_input {
             self.client_token = Some(input.into());
             self
         }
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -7941,6 +8390,8 @@ pub mod update_virtual_router_input {
             self.mesh_owner = Some(input.into());
             self
         }
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
+        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
@@ -7950,7 +8401,7 @@ pub mod update_virtual_router_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateVirtualRouterInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateVirtualRouterInput {
                 virtual_router_name: self.virtual_router_name,
@@ -7973,27 +8424,27 @@ impl UpdateVirtualRouterInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateVirtualRouter,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateVirtualRouterInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_106 = &_input.mesh_name;
             let input_106 =
                 input_106
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "mesh_name",
                         details: "cannot be empty or unset",
                     })?;
-            let mesh_name = smithy_http::label::fmt_string(input_106, false);
+            let mesh_name = aws_smithy_http::label::fmt_string(input_106, false);
             if mesh_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "mesh_name",
                     details: "cannot be empty or unset",
                 });
@@ -8002,13 +8453,13 @@ impl UpdateVirtualRouterInput {
             let input_107 =
                 input_107
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "virtual_router_name",
                         details: "cannot be empty or unset",
                     })?;
-            let virtual_router_name = smithy_http::label::fmt_string(input_107, false);
+            let virtual_router_name = aws_smithy_http::label::fmt_string(input_107, false);
             if virtual_router_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "virtual_router_name",
                     details: "cannot be empty or unset",
                 });
@@ -8023,16 +8474,16 @@ impl UpdateVirtualRouterInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::UpdateVirtualRouterInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_108) = &_input.mesh_owner {
-                query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_108));
+                query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_108));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::UpdateVirtualRouterInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8042,10 +8493,10 @@ impl UpdateVirtualRouterInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateVirtualRouterInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -8055,17 +8506,17 @@ impl UpdateVirtualRouterInput {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_virtual_router(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8088,15 +8539,15 @@ impl UpdateVirtualRouterInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateVirtualRouter::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateVirtualRouter",
             "appmesh",
         ));
@@ -8105,10 +8556,10 @@ impl UpdateVirtualRouterInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8140,6 +8591,7 @@ pub mod update_virtual_service_input {
             self.virtual_service_name = Some(input.into());
             self
         }
+        /// <p>The name of the virtual service to update.</p>
         pub fn set_virtual_service_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8152,6 +8604,7 @@ pub mod update_virtual_service_input {
             self.mesh_name = Some(input.into());
             self
         }
+        /// <p>The name of the service mesh that the virtual service resides in.</p>
         pub fn set_mesh_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_name = input;
             self
@@ -8162,6 +8615,8 @@ pub mod update_virtual_service_input {
             self.spec = Some(input);
             self
         }
+        /// <p>The new virtual service specification to apply. This overwrites the existing
+        /// data.</p>
         pub fn set_spec(
             mut self,
             input: std::option::Option<crate::model::VirtualServiceSpec>,
@@ -8175,6 +8630,8 @@ pub mod update_virtual_service_input {
             self.client_token = Some(input.into());
             self
         }
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -8185,6 +8642,8 @@ pub mod update_virtual_service_input {
             self.mesh_owner = Some(input.into());
             self
         }
+        /// <p>The AWS IAM account ID of the service mesh owner. If the account ID is not your own, then it's
+        /// the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
         pub fn set_mesh_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mesh_owner = input;
             self
@@ -8194,7 +8653,7 @@ pub mod update_virtual_service_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateVirtualServiceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateVirtualServiceInput {
                 virtual_service_name: self.virtual_service_name,
@@ -8217,27 +8676,27 @@ impl UpdateVirtualServiceInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateVirtualService,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateVirtualServiceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_109 = &_input.mesh_name;
             let input_109 =
                 input_109
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "mesh_name",
                         details: "cannot be empty or unset",
                     })?;
-            let mesh_name = smithy_http::label::fmt_string(input_109, false);
+            let mesh_name = aws_smithy_http::label::fmt_string(input_109, false);
             if mesh_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "mesh_name",
                     details: "cannot be empty or unset",
                 });
@@ -8246,13 +8705,13 @@ impl UpdateVirtualServiceInput {
             let input_110 =
                 input_110
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "virtual_service_name",
                         details: "cannot be empty or unset",
                     })?;
-            let virtual_service_name = smithy_http::label::fmt_string(input_110, false);
+            let virtual_service_name = aws_smithy_http::label::fmt_string(input_110, false);
             if virtual_service_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "virtual_service_name",
                     details: "cannot be empty or unset",
                 });
@@ -8267,16 +8726,16 @@ impl UpdateVirtualServiceInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::UpdateVirtualServiceInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_111) = &_input.mesh_owner {
-                query.push_kv("meshOwner", &smithy_http::query::fmt_string(&inner_111));
+                query.push_kv("meshOwner", &aws_smithy_http::query::fmt_string(&inner_111));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::UpdateVirtualServiceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8286,10 +8745,10 @@ impl UpdateVirtualServiceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateVirtualServiceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -8299,17 +8758,17 @@ impl UpdateVirtualServiceInput {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_virtual_service(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8332,15 +8791,15 @@ impl UpdateVirtualServiceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateVirtualService::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateVirtualService",
             "appmesh",
         ));
@@ -8349,10 +8808,10 @@ impl UpdateVirtualServiceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8366,7 +8825,7 @@ impl UpdateVirtualServiceInput {
     }
 }
 
-///
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMeshesInput {
@@ -8398,7 +8857,7 @@ impl std::fmt::Debug for ListMeshesInput {
     }
 }
 
-///
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMeshInput {
@@ -8426,7 +8885,7 @@ impl std::fmt::Debug for CreateMeshInput {
     }
 }
 
-///
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMeshInput {
@@ -8441,7 +8900,7 @@ impl std::fmt::Debug for DeleteMeshInput {
     }
 }
 
-///
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateMeshInput {
@@ -8463,7 +8922,7 @@ impl std::fmt::Debug for UpdateMeshInput {
     }
 }
 
-///
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMeshInput {
@@ -8482,7 +8941,7 @@ impl std::fmt::Debug for DescribeMeshInput {
     }
 }
 
-///
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListVirtualServicesInput {
@@ -8517,7 +8976,7 @@ impl std::fmt::Debug for ListVirtualServicesInput {
     }
 }
 
-///
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateVirtualServiceInput {
@@ -8553,7 +9012,7 @@ impl std::fmt::Debug for CreateVirtualServiceInput {
     }
 }
 
-///
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteVirtualServiceInput {
@@ -8575,7 +9034,7 @@ impl std::fmt::Debug for DeleteVirtualServiceInput {
     }
 }
 
-///
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateVirtualServiceInput {
@@ -8605,7 +9064,7 @@ impl std::fmt::Debug for UpdateVirtualServiceInput {
     }
 }
 
-///
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeVirtualServiceInput {
@@ -8627,7 +9086,7 @@ impl std::fmt::Debug for DescribeVirtualServiceInput {
     }
 }
 
-///
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListVirtualRoutersInput {
@@ -8662,7 +9121,7 @@ impl std::fmt::Debug for ListVirtualRoutersInput {
     }
 }
 
-///
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateVirtualRouterInput {
@@ -8698,7 +9157,7 @@ impl std::fmt::Debug for CreateVirtualRouterInput {
     }
 }
 
-///
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteVirtualRouterInput {
@@ -8720,7 +9179,7 @@ impl std::fmt::Debug for DeleteVirtualRouterInput {
     }
 }
 
-///
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateVirtualRouterInput {
@@ -8749,7 +9208,7 @@ impl std::fmt::Debug for UpdateVirtualRouterInput {
     }
 }
 
-///
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeVirtualRouterInput {
@@ -8771,7 +9230,7 @@ impl std::fmt::Debug for DescribeVirtualRouterInput {
     }
 }
 
-///
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRoutesInput {
@@ -8809,7 +9268,7 @@ impl std::fmt::Debug for ListRoutesInput {
     }
 }
 
-///
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRouteInput {
@@ -8849,7 +9308,7 @@ impl std::fmt::Debug for CreateRouteInput {
     }
 }
 
-///
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRouteInput {
@@ -8874,7 +9333,7 @@ impl std::fmt::Debug for DeleteRouteInput {
     }
 }
 
-///
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRouteInput {
@@ -8906,7 +9365,7 @@ impl std::fmt::Debug for UpdateRouteInput {
     }
 }
 
-///
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeRouteInput {
@@ -8931,7 +9390,7 @@ impl std::fmt::Debug for DescribeRouteInput {
     }
 }
 
-///
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListVirtualNodesInput {
@@ -8966,7 +9425,7 @@ impl std::fmt::Debug for ListVirtualNodesInput {
     }
 }
 
-///
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateVirtualNodeInput {
@@ -9024,7 +9483,7 @@ impl std::fmt::Debug for DeleteVirtualNodeInput {
     }
 }
 
-///
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateVirtualNodeInput {
@@ -9053,7 +9512,7 @@ impl std::fmt::Debug for UpdateVirtualNodeInput {
     }
 }
 
-///
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeVirtualNodeInput {
@@ -9075,6 +9534,7 @@ impl std::fmt::Debug for DescribeVirtualNodeInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListVirtualGatewaysInput {
@@ -9109,6 +9569,7 @@ impl std::fmt::Debug for ListVirtualGatewaysInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateVirtualGatewayInput {
@@ -9144,6 +9605,7 @@ impl std::fmt::Debug for CreateVirtualGatewayInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteVirtualGatewayInput {
@@ -9165,6 +9627,7 @@ impl std::fmt::Debug for DeleteVirtualGatewayInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateVirtualGatewayInput {
@@ -9194,6 +9657,7 @@ impl std::fmt::Debug for UpdateVirtualGatewayInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeVirtualGatewayInput {
@@ -9215,6 +9679,7 @@ impl std::fmt::Debug for DescribeVirtualGatewayInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGatewayRoutesInput {
@@ -9252,6 +9717,7 @@ impl std::fmt::Debug for ListGatewayRoutesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGatewayRouteInput {
@@ -9292,6 +9758,7 @@ impl std::fmt::Debug for CreateGatewayRouteInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteGatewayRouteInput {
@@ -9316,6 +9783,7 @@ impl std::fmt::Debug for DeleteGatewayRouteInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateGatewayRouteInput {
@@ -9347,6 +9815,7 @@ impl std::fmt::Debug for UpdateGatewayRouteInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeGatewayRouteInput {
@@ -9371,7 +9840,7 @@ impl std::fmt::Debug for DescribeGatewayRouteInput {
     }
 }
 
-///
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
@@ -9389,7 +9858,7 @@ impl std::fmt::Debug for UntagResourceInput {
     }
 }
 
-///
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
@@ -9409,7 +9878,7 @@ impl std::fmt::Debug for TagResourceInput {
     }
 }
 
-///
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {

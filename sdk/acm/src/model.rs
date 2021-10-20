@@ -43,6 +43,8 @@ pub mod certificate_options {
             self.certificate_transparency_logging_preference = Some(input);
             self
         }
+        /// <p>You can opt out of certificate transparency logging by specifying the
+        /// <code>DISABLED</code> option. Opt in by specifying <code>ENABLED</code>. </p>
         pub fn set_certificate_transparency_logging_preference(
             mut self,
             input: std::option::Option<crate::model::CertificateTransparencyLoggingPreference>,
@@ -66,6 +68,7 @@ impl CertificateOptions {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -77,7 +80,9 @@ impl CertificateOptions {
     std::hash::Hash,
 )]
 pub enum CertificateTransparencyLoggingPreference {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -99,6 +104,7 @@ impl std::str::FromStr for CertificateTransparencyLoggingPreference {
     }
 }
 impl CertificateTransparencyLoggingPreference {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CertificateTransparencyLoggingPreference::Disabled => "DISABLED",
@@ -106,6 +112,7 @@ impl CertificateTransparencyLoggingPreference {
             CertificateTransparencyLoggingPreference::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -148,6 +155,7 @@ pub mod tag {
             self.key = Some(input.into());
             self
         }
+        /// <p>The key of the tag.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -157,6 +165,7 @@ pub mod tag {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value of the tag.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -232,6 +241,7 @@ pub mod domain_validation_option {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>A fully qualified domain name (FQDN) in the certificate request.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -263,6 +273,29 @@ pub mod domain_validation_option {
             self.validation_domain = Some(input.into());
             self
         }
+        /// <p>The domain name that you want ACM to use to send you validation emails. This domain name
+        /// is the suffix of the email addresses that you want ACM to use. This must be the same as the
+        /// <code>DomainName</code> value or a superdomain of the <code>DomainName</code> value. For
+        /// example, if you request a certificate for <code>testing.example.com</code>, you can specify
+        /// <code>example.com</code> for this value. In that case, ACM sends domain validation emails
+        /// to the following five addresses:</p>
+        /// <ul>
+        /// <li>
+        /// <p>admin@example.com</p>
+        /// </li>
+        /// <li>
+        /// <p>administrator@example.com</p>
+        /// </li>
+        /// <li>
+        /// <p>hostmaster@example.com</p>
+        /// </li>
+        /// <li>
+        /// <p>postmaster@example.com</p>
+        /// </li>
+        /// <li>
+        /// <p>webmaster@example.com</p>
+        /// </li>
+        /// </ul>
         pub fn set_validation_domain(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -286,6 +319,7 @@ impl DomainValidationOption {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -297,7 +331,9 @@ impl DomainValidationOption {
     std::hash::Hash,
 )]
 pub enum ValidationMethod {
+    #[allow(missing_docs)] // documentation missing in model
     Dns,
+    #[allow(missing_docs)] // documentation missing in model
     Email,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -319,6 +355,7 @@ impl std::str::FromStr for ValidationMethod {
     }
 }
 impl ValidationMethod {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ValidationMethod::Dns => "DNS",
@@ -326,6 +363,7 @@ impl ValidationMethod {
             ValidationMethod::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DNS", "EMAIL"]
     }
@@ -371,6 +409,10 @@ pub mod expiry_events_configuration {
             self.days_before_expiry = Some(input);
             self
         }
+        /// <p>Specifies the number of days prior to certificate expiration when ACM starts generating
+        /// <code>EventBridge</code> events. ACM sends one event per day per certificate until the
+        /// certificate expires. By default, accounts receive events starting 45 days before certificate
+        /// expiration.</p>
         pub fn set_days_before_expiry(mut self, input: std::option::Option<i32>) -> Self {
             self.days_before_expiry = input;
             self
@@ -396,9 +438,11 @@ impl ExpiryEventsConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CertificateSummary {
     /// <p>Amazon Resource Name (ARN) of the certificate. This is of the form:</p>
+    ///
     /// <p>
     /// <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
     /// </p>
+    ///
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
     pub certificate_arn: std::option::Option<std::string::String>,
     /// <p>Fully qualified domain name (FQDN), such as www.example.com or example.com, for the
@@ -424,14 +468,23 @@ pub mod certificate_summary {
     }
     impl Builder {
         /// <p>Amazon Resource Name (ARN) of the certificate. This is of the form:</p>
+        ///
         /// <p>
         /// <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
         /// </p>
+        ///
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
         pub fn certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_arn = Some(input.into());
             self
         }
+        /// <p>Amazon Resource Name (ARN) of the certificate. This is of the form:</p>
+        ///
+        /// <p>
+        /// <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
+        /// </p>
+        ///
+        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
         pub fn set_certificate_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -445,6 +498,8 @@ pub mod certificate_summary {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>Fully qualified domain name (FQDN), such as www.example.com or example.com, for the
+        /// certificate.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -503,6 +558,11 @@ pub mod filters {
         pub(crate) key_types: std::option::Option<std::vec::Vec<crate::model::KeyAlgorithm>>,
     }
     impl Builder {
+        /// Appends an item to `extended_key_usage`.
+        ///
+        /// To override the contents of this collection use [`set_extended_key_usage`](Self::set_extended_key_usage).
+        ///
+        /// <p>Specify one or more <a>ExtendedKeyUsage</a> extension values.</p>
         pub fn extended_key_usage(
             mut self,
             input: impl Into<crate::model::ExtendedKeyUsageName>,
@@ -512,6 +572,7 @@ pub mod filters {
             self.extended_key_usage = Some(v);
             self
         }
+        /// <p>Specify one or more <a>ExtendedKeyUsage</a> extension values.</p>
         pub fn set_extended_key_usage(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ExtendedKeyUsageName>>,
@@ -519,12 +580,18 @@ pub mod filters {
             self.extended_key_usage = input;
             self
         }
+        /// Appends an item to `key_usage`.
+        ///
+        /// To override the contents of this collection use [`set_key_usage`](Self::set_key_usage).
+        ///
+        /// <p>Specify one or more <a>KeyUsage</a> extension values.</p>
         pub fn key_usage(mut self, input: impl Into<crate::model::KeyUsageName>) -> Self {
             let mut v = self.key_usage.unwrap_or_default();
             v.push(input.into());
             self.key_usage = Some(v);
             self
         }
+        /// <p>Specify one or more <a>KeyUsage</a> extension values.</p>
         pub fn set_key_usage(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::KeyUsageName>>,
@@ -532,12 +599,28 @@ pub mod filters {
             self.key_usage = input;
             self
         }
+        /// Appends an item to `key_types`.
+        ///
+        /// To override the contents of this collection use [`set_key_types`](Self::set_key_types).
+        ///
+        /// <p>Specify one or more algorithms that can be used to generate key pairs.</p>
+        /// <p>Default filtering returns only <code>RSA_1024</code> and <code>RSA_2048</code>
+        /// certificates that have at least one domain. To return other certificate types, provide the
+        /// desired type signatures in a comma-separated list. For example, <code>"keyTypes":
+        /// ["RSA_2048,RSA_4096"]</code> returns both <code>RSA_2048</code> and <code>RSA_4096</code>
+        /// certificates.</p>
         pub fn key_types(mut self, input: impl Into<crate::model::KeyAlgorithm>) -> Self {
             let mut v = self.key_types.unwrap_or_default();
             v.push(input.into());
             self.key_types = Some(v);
             self
         }
+        /// <p>Specify one or more algorithms that can be used to generate key pairs.</p>
+        /// <p>Default filtering returns only <code>RSA_1024</code> and <code>RSA_2048</code>
+        /// certificates that have at least one domain. To return other certificate types, provide the
+        /// desired type signatures in a comma-separated list. For example, <code>"keyTypes":
+        /// ["RSA_2048,RSA_4096"]</code> returns both <code>RSA_2048</code> and <code>RSA_4096</code>
+        /// certificates.</p>
         pub fn set_key_types(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::KeyAlgorithm>>,
@@ -562,6 +645,7 @@ impl Filters {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -573,12 +657,19 @@ impl Filters {
     std::hash::Hash,
 )]
 pub enum KeyAlgorithm {
+    #[allow(missing_docs)] // documentation missing in model
     EcPrime256v1,
+    #[allow(missing_docs)] // documentation missing in model
     EcSecp384r1,
+    #[allow(missing_docs)] // documentation missing in model
     EcSecp521r1,
+    #[allow(missing_docs)] // documentation missing in model
     Rsa1024,
+    #[allow(missing_docs)] // documentation missing in model
     Rsa2048,
+    #[allow(missing_docs)] // documentation missing in model
     Rsa3072,
+    #[allow(missing_docs)] // documentation missing in model
     Rsa4096,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -605,6 +696,7 @@ impl std::str::FromStr for KeyAlgorithm {
     }
 }
 impl KeyAlgorithm {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             KeyAlgorithm::EcPrime256v1 => "EC_prime256v1",
@@ -617,6 +709,7 @@ impl KeyAlgorithm {
             KeyAlgorithm::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "EC_prime256v1",
@@ -635,6 +728,7 @@ impl AsRef<str> for KeyAlgorithm {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -646,16 +740,27 @@ impl AsRef<str> for KeyAlgorithm {
     std::hash::Hash,
 )]
 pub enum KeyUsageName {
+    #[allow(missing_docs)] // documentation missing in model
     Any,
+    #[allow(missing_docs)] // documentation missing in model
     CertificateSigning,
+    #[allow(missing_docs)] // documentation missing in model
     CrlSigning,
+    #[allow(missing_docs)] // documentation missing in model
     Custom,
+    #[allow(missing_docs)] // documentation missing in model
     DataEncipherment,
+    #[allow(missing_docs)] // documentation missing in model
     DecipherOnly,
+    #[allow(missing_docs)] // documentation missing in model
     DigitalSignature,
+    #[allow(missing_docs)] // documentation missing in model
     EnchiperOnly,
+    #[allow(missing_docs)] // documentation missing in model
     KeyAgreement,
+    #[allow(missing_docs)] // documentation missing in model
     KeyEncipherment,
+    #[allow(missing_docs)] // documentation missing in model
     NonRepudation,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -686,6 +791,7 @@ impl std::str::FromStr for KeyUsageName {
     }
 }
 impl KeyUsageName {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             KeyUsageName::Any => "ANY",
@@ -702,6 +808,7 @@ impl KeyUsageName {
             KeyUsageName::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ANY",
@@ -724,6 +831,7 @@ impl AsRef<str> for KeyUsageName {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -735,17 +843,29 @@ impl AsRef<str> for KeyUsageName {
     std::hash::Hash,
 )]
 pub enum ExtendedKeyUsageName {
+    #[allow(missing_docs)] // documentation missing in model
     Any,
+    #[allow(missing_docs)] // documentation missing in model
     CodeSigning,
+    #[allow(missing_docs)] // documentation missing in model
     Custom,
+    #[allow(missing_docs)] // documentation missing in model
     EmailProtection,
+    #[allow(missing_docs)] // documentation missing in model
     IpsecEndSystem,
+    #[allow(missing_docs)] // documentation missing in model
     IpsecTunnel,
+    #[allow(missing_docs)] // documentation missing in model
     IpsecUser,
+    #[allow(missing_docs)] // documentation missing in model
     None,
+    #[allow(missing_docs)] // documentation missing in model
     OcspSigning,
+    #[allow(missing_docs)] // documentation missing in model
     TimeStamping,
+    #[allow(missing_docs)] // documentation missing in model
     TlsWebClientAuthentication,
+    #[allow(missing_docs)] // documentation missing in model
     TlsWebServerAuthentication,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -777,6 +897,7 @@ impl std::str::FromStr for ExtendedKeyUsageName {
     }
 }
 impl ExtendedKeyUsageName {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ExtendedKeyUsageName::Any => "ANY",
@@ -794,6 +915,7 @@ impl ExtendedKeyUsageName {
             ExtendedKeyUsageName::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ANY",
@@ -817,6 +939,7 @@ impl AsRef<str> for ExtendedKeyUsageName {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -828,12 +951,19 @@ impl AsRef<str> for ExtendedKeyUsageName {
     std::hash::Hash,
 )]
 pub enum CertificateStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Expired,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Inactive,
+    #[allow(missing_docs)] // documentation missing in model
     Issued,
+    #[allow(missing_docs)] // documentation missing in model
     PendingValidation,
+    #[allow(missing_docs)] // documentation missing in model
     Revoked,
+    #[allow(missing_docs)] // documentation missing in model
     ValidationTimedOut,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -860,6 +990,7 @@ impl std::str::FromStr for CertificateStatus {
     }
 }
 impl CertificateStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CertificateStatus::Expired => "EXPIRED",
@@ -872,6 +1003,7 @@ impl CertificateStatus {
             CertificateStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "EXPIRED",
@@ -920,25 +1052,25 @@ pub struct CertificateDetail {
     /// <p>The name of the certificate authority that issued and signed the certificate.</p>
     pub issuer: std::option::Option<std::string::String>,
     /// <p>The time at which the certificate was requested.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time at which the certificate was issued. This value exists only when the certificate
     /// type is <code>AMAZON_ISSUED</code>. </p>
-    pub issued_at: std::option::Option<smithy_types::Instant>,
+    pub issued_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time at which the certificate was imported. This value exists only when the
     /// certificate type is <code>IMPORTED</code>. </p>
-    pub imported_at: std::option::Option<smithy_types::Instant>,
+    pub imported_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The status of the certificate.</p>
     pub status: std::option::Option<crate::model::CertificateStatus>,
     /// <p>The time at which the certificate was revoked. This value exists only when the certificate
     /// status is <code>REVOKED</code>. </p>
-    pub revoked_at: std::option::Option<smithy_types::Instant>,
+    pub revoked_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The reason the certificate was revoked. This value exists only when the certificate status
     /// is <code>REVOKED</code>. </p>
     pub revocation_reason: std::option::Option<crate::model::RevocationReason>,
     /// <p>The time before which the certificate is not valid.</p>
-    pub not_before: std::option::Option<smithy_types::Instant>,
+    pub not_before: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time after which the certificate is not valid.</p>
-    pub not_after: std::option::Option<smithy_types::Instant>,
+    pub not_after: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The algorithm that was used to generate the public-private key pair.</p>
     pub key_algorithm: std::option::Option<crate::model::KeyAlgorithm>,
     /// <p>The algorithm that was used to sign the certificate.</p>
@@ -1031,14 +1163,14 @@ pub mod certificate_detail {
         pub(crate) serial: std::option::Option<std::string::String>,
         pub(crate) subject: std::option::Option<std::string::String>,
         pub(crate) issuer: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
-        pub(crate) issued_at: std::option::Option<smithy_types::Instant>,
-        pub(crate) imported_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) issued_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) imported_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) status: std::option::Option<crate::model::CertificateStatus>,
-        pub(crate) revoked_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) revoked_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) revocation_reason: std::option::Option<crate::model::RevocationReason>,
-        pub(crate) not_before: std::option::Option<smithy_types::Instant>,
-        pub(crate) not_after: std::option::Option<smithy_types::Instant>,
+        pub(crate) not_before: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) not_after: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) key_algorithm: std::option::Option<crate::model::KeyAlgorithm>,
         pub(crate) signature_algorithm: std::option::Option<std::string::String>,
         pub(crate) in_use_by: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1060,6 +1192,9 @@ pub mod certificate_detail {
             self.certificate_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the certificate. For more information about ARNs, see
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in
+        /// the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_certificate_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1073,16 +1208,30 @@ pub mod certificate_detail {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The fully qualified domain name for the certificate, such as www.example.com or
+        /// example.com.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
         }
+        /// Appends an item to `subject_alternative_names`.
+        ///
+        /// To override the contents of this collection use [`set_subject_alternative_names`](Self::set_subject_alternative_names).
+        ///
+        /// <p>One or more domain names (subject alternative names) included in the certificate. This
+        /// list contains the domain names that are bound to the public key that is contained in the
+        /// certificate. The subject alternative names include the canonical domain name (CN) of the
+        /// certificate and additional domain names that can be used to connect to the website. </p>
         pub fn subject_alternative_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subject_alternative_names.unwrap_or_default();
             v.push(input.into());
             self.subject_alternative_names = Some(v);
             self
         }
+        /// <p>One or more domain names (subject alternative names) included in the certificate. This
+        /// list contains the domain names that are bound to the public key that is contained in the
+        /// certificate. The subject alternative names include the canonical domain name (CN) of the
+        /// certificate and additional domain names that can be used to connect to the website. </p>
         pub fn set_subject_alternative_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1090,6 +1239,13 @@ pub mod certificate_detail {
             self.subject_alternative_names = input;
             self
         }
+        /// Appends an item to `domain_validation_options`.
+        ///
+        /// To override the contents of this collection use [`set_domain_validation_options`](Self::set_domain_validation_options).
+        ///
+        /// <p>Contains information about the initial validation of each domain name that occurs as a
+        /// result of the <a>RequestCertificate</a> request. This field exists only when the
+        /// certificate type is <code>AMAZON_ISSUED</code>. </p>
         pub fn domain_validation_options(
             mut self,
             input: impl Into<crate::model::DomainValidation>,
@@ -1099,6 +1255,9 @@ pub mod certificate_detail {
             self.domain_validation_options = Some(v);
             self
         }
+        /// <p>Contains information about the initial validation of each domain name that occurs as a
+        /// result of the <a>RequestCertificate</a> request. This field exists only when the
+        /// certificate type is <code>AMAZON_ISSUED</code>. </p>
         pub fn set_domain_validation_options(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DomainValidation>>,
@@ -1111,6 +1270,7 @@ pub mod certificate_detail {
             self.serial = Some(input.into());
             self
         }
+        /// <p>The serial number of the certificate.</p>
         pub fn set_serial(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.serial = input;
             self
@@ -1121,6 +1281,8 @@ pub mod certificate_detail {
             self.subject = Some(input.into());
             self
         }
+        /// <p>The name of the entity that is associated with the public key contained in the
+        /// certificate.</p>
         pub fn set_subject(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.subject = input;
             self
@@ -1130,38 +1292,50 @@ pub mod certificate_detail {
             self.issuer = Some(input.into());
             self
         }
+        /// <p>The name of the certificate authority that issued and signed the certificate.</p>
         pub fn set_issuer(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.issuer = input;
             self
         }
         /// <p>The time at which the certificate was requested.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time at which the certificate was requested.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The time at which the certificate was issued. This value exists only when the certificate
         /// type is <code>AMAZON_ISSUED</code>. </p>
-        pub fn issued_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn issued_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.issued_at = Some(input);
             self
         }
-        pub fn set_issued_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time at which the certificate was issued. This value exists only when the certificate
+        /// type is <code>AMAZON_ISSUED</code>. </p>
+        pub fn set_issued_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.issued_at = input;
             self
         }
         /// <p>The date and time at which the certificate was imported. This value exists only when the
         /// certificate type is <code>IMPORTED</code>. </p>
-        pub fn imported_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn imported_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.imported_at = Some(input);
             self
         }
+        /// <p>The date and time at which the certificate was imported. This value exists only when the
+        /// certificate type is <code>IMPORTED</code>. </p>
         pub fn set_imported_at(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.imported_at = input;
             self
@@ -1171,6 +1345,7 @@ pub mod certificate_detail {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the certificate.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::CertificateStatus>,
@@ -1180,11 +1355,16 @@ pub mod certificate_detail {
         }
         /// <p>The time at which the certificate was revoked. This value exists only when the certificate
         /// status is <code>REVOKED</code>. </p>
-        pub fn revoked_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn revoked_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.revoked_at = Some(input);
             self
         }
-        pub fn set_revoked_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time at which the certificate was revoked. This value exists only when the certificate
+        /// status is <code>REVOKED</code>. </p>
+        pub fn set_revoked_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.revoked_at = input;
             self
         }
@@ -1194,6 +1374,8 @@ pub mod certificate_detail {
             self.revocation_reason = Some(input);
             self
         }
+        /// <p>The reason the certificate was revoked. This value exists only when the certificate status
+        /// is <code>REVOKED</code>. </p>
         pub fn set_revocation_reason(
             mut self,
             input: std::option::Option<crate::model::RevocationReason>,
@@ -1202,20 +1384,28 @@ pub mod certificate_detail {
             self
         }
         /// <p>The time before which the certificate is not valid.</p>
-        pub fn not_before(mut self, input: smithy_types::Instant) -> Self {
+        pub fn not_before(mut self, input: aws_smithy_types::Instant) -> Self {
             self.not_before = Some(input);
             self
         }
-        pub fn set_not_before(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time before which the certificate is not valid.</p>
+        pub fn set_not_before(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.not_before = input;
             self
         }
         /// <p>The time after which the certificate is not valid.</p>
-        pub fn not_after(mut self, input: smithy_types::Instant) -> Self {
+        pub fn not_after(mut self, input: aws_smithy_types::Instant) -> Self {
             self.not_after = Some(input);
             self
         }
-        pub fn set_not_after(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time after which the certificate is not valid.</p>
+        pub fn set_not_after(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.not_after = input;
             self
         }
@@ -1224,6 +1414,7 @@ pub mod certificate_detail {
             self.key_algorithm = Some(input);
             self
         }
+        /// <p>The algorithm that was used to generate the public-private key pair.</p>
         pub fn set_key_algorithm(
             mut self,
             input: std::option::Option<crate::model::KeyAlgorithm>,
@@ -1236,6 +1427,7 @@ pub mod certificate_detail {
             self.signature_algorithm = Some(input.into());
             self
         }
+        /// <p>The algorithm that was used to sign the certificate.</p>
         pub fn set_signature_algorithm(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1243,12 +1435,20 @@ pub mod certificate_detail {
             self.signature_algorithm = input;
             self
         }
+        /// Appends an item to `in_use_by`.
+        ///
+        /// To override the contents of this collection use [`set_in_use_by`](Self::set_in_use_by).
+        ///
+        /// <p>A list of ARNs for the Amazon Web Services resources that are using the certificate. A certificate can
+        /// be used by multiple Amazon Web Services resources. </p>
         pub fn in_use_by(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.in_use_by.unwrap_or_default();
             v.push(input.into());
             self.in_use_by = Some(v);
             self
         }
+        /// <p>A list of ARNs for the Amazon Web Services resources that are using the certificate. A certificate can
+        /// be used by multiple Amazon Web Services resources. </p>
         pub fn set_in_use_by(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1263,6 +1463,9 @@ pub mod certificate_detail {
             self.failure_reason = Some(input);
             self
         }
+        /// <p>The reason the certificate request failed. This value exists only when the certificate
+        /// status is <code>FAILED</code>. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed">Certificate Request
+        /// Failed</a> in the <i>Amazon Web Services Certificate Manager User Guide</i>. </p>
         pub fn set_failure_reason(
             mut self,
             input: std::option::Option<crate::model::FailureReason>,
@@ -1280,6 +1483,12 @@ pub mod certificate_detail {
             self.r#type = Some(input);
             self
         }
+        /// <p>The source of the certificate. For certificates provided by ACM, this value is
+        /// <code>AMAZON_ISSUED</code>. For certificates that you imported with <a>ImportCertificate</a>, this value is <code>IMPORTED</code>. ACM does not provide
+        /// <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a> for
+        /// imported certificates. For more information about the differences between certificates that
+        /// you import and those that ACM provides, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing Certificates</a> in the
+        /// <i>Amazon Web Services Certificate Manager User Guide</i>. </p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::CertificateType>,
@@ -1293,6 +1502,8 @@ pub mod certificate_detail {
             self.renewal_summary = Some(input);
             self
         }
+        /// <p>Contains information about the status of ACM's <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a> for the certificate. This field
+        /// exists only when the certificate type is <code>AMAZON_ISSUED</code>.</p>
         pub fn set_renewal_summary(
             mut self,
             input: std::option::Option<crate::model::RenewalSummary>,
@@ -1300,12 +1511,22 @@ pub mod certificate_detail {
             self.renewal_summary = input;
             self
         }
+        /// Appends an item to `key_usages`.
+        ///
+        /// To override the contents of this collection use [`set_key_usages`](Self::set_key_usages).
+        ///
+        /// <p>A list of Key Usage X.509 v3 extension objects. Each object is a string value that
+        /// identifies the purpose of the public key contained in the certificate. Possible extension
+        /// values include DIGITAL_SIGNATURE, KEY_ENCHIPHERMENT, NON_REPUDIATION, and more.</p>
         pub fn key_usages(mut self, input: impl Into<crate::model::KeyUsage>) -> Self {
             let mut v = self.key_usages.unwrap_or_default();
             v.push(input.into());
             self.key_usages = Some(v);
             self
         }
+        /// <p>A list of Key Usage X.509 v3 extension objects. Each object is a string value that
+        /// identifies the purpose of the public key contained in the certificate. Possible extension
+        /// values include DIGITAL_SIGNATURE, KEY_ENCHIPHERMENT, NON_REPUDIATION, and more.</p>
         pub fn set_key_usages(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::KeyUsage>>,
@@ -1313,6 +1534,13 @@ pub mod certificate_detail {
             self.key_usages = input;
             self
         }
+        /// Appends an item to `extended_key_usages`.
+        ///
+        /// To override the contents of this collection use [`set_extended_key_usages`](Self::set_extended_key_usages).
+        ///
+        /// <p>Contains a list of Extended Key Usage X.509 v3 extension objects. Each object specifies a
+        /// purpose for which the certificate public key can be used and consists of a name and an object
+        /// identifier (OID). </p>
         pub fn extended_key_usages(
             mut self,
             input: impl Into<crate::model::ExtendedKeyUsage>,
@@ -1322,6 +1550,9 @@ pub mod certificate_detail {
             self.extended_key_usages = Some(v);
             self
         }
+        /// <p>Contains a list of Extended Key Usage X.509 v3 extension objects. Each object specifies a
+        /// purpose for which the certificate public key can be used and consists of a name and an object
+        /// identifier (OID). </p>
         pub fn set_extended_key_usages(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ExtendedKeyUsage>>,
@@ -1338,6 +1569,11 @@ pub mod certificate_detail {
             self.certificate_authority_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the ACM PCA private certificate authority (CA) that issued
+        /// the certificate. This has the following format: </p>
+        /// <p>
+        /// <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
+        /// </p>
         pub fn set_certificate_authority_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1352,6 +1588,9 @@ pub mod certificate_detail {
             self.renewal_eligibility = Some(input);
             self
         }
+        /// <p>Specifies whether the certificate is eligible for renewal. At this time, only exported
+        /// private certificates can be renewed with the <a>RenewCertificate</a>
+        /// command.</p>
         pub fn set_renewal_eligibility(
             mut self,
             input: std::option::Option<crate::model::RenewalEligibility>,
@@ -1367,6 +1606,10 @@ pub mod certificate_detail {
             self.options = Some(input);
             self
         }
+        /// <p>Value that specifies whether to add the certificate to a transparency log. Certificate
+        /// transparency makes it possible to detect SSL certificates that have been mistakenly or
+        /// maliciously issued. A browser might respond to certificate that has not been logged by showing
+        /// an error message. The logs are cryptographically secure. </p>
         pub fn set_options(
             mut self,
             input: std::option::Option<crate::model::CertificateOptions>,
@@ -1414,6 +1657,7 @@ impl CertificateDetail {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1425,7 +1669,9 @@ impl CertificateDetail {
     std::hash::Hash,
 )]
 pub enum RenewalEligibility {
+    #[allow(missing_docs)] // documentation missing in model
     Eligible,
+    #[allow(missing_docs)] // documentation missing in model
     Ineligible,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1447,6 +1693,7 @@ impl std::str::FromStr for RenewalEligibility {
     }
 }
 impl RenewalEligibility {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RenewalEligibility::Eligible => "ELIGIBLE",
@@ -1454,6 +1701,7 @@ impl RenewalEligibility {
             RenewalEligibility::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ELIGIBLE", "INELIGIBLE"]
     }
@@ -1474,6 +1722,7 @@ pub struct ExtendedKeyUsage {
     pub name: std::option::Option<crate::model::ExtendedKeyUsageName>,
     /// <p>An object identifier (OID) for the extension value. OIDs are strings of numbers separated
     /// by periods. The following OIDs are defined in RFC 3280 and RFC 5280. </p>
+    ///
     /// <ul>
     /// <li>
     /// <p>
@@ -1546,6 +1795,7 @@ pub mod extended_key_usage {
             self.name = Some(input);
             self
         }
+        /// <p>The name of an Extended Key Usage value.</p>
         pub fn set_name(
             mut self,
             input: std::option::Option<crate::model::ExtendedKeyUsageName>,
@@ -1555,6 +1805,7 @@ pub mod extended_key_usage {
         }
         /// <p>An object identifier (OID) for the extension value. OIDs are strings of numbers separated
         /// by periods. The following OIDs are defined in RFC 3280 and RFC 5280. </p>
+        ///
         /// <ul>
         /// <li>
         /// <p>
@@ -1606,6 +1857,56 @@ pub mod extended_key_usage {
             self.oid = Some(input.into());
             self
         }
+        /// <p>An object identifier (OID) for the extension value. OIDs are strings of numbers separated
+        /// by periods. The following OIDs are defined in RFC 3280 and RFC 5280. </p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>1.3.6.1.5.5.7.3.1 (TLS_WEB_SERVER_AUTHENTICATION)</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>1.3.6.1.5.5.7.3.2 (TLS_WEB_CLIENT_AUTHENTICATION)</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>1.3.6.1.5.5.7.3.3 (CODE_SIGNING)</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>1.3.6.1.5.5.7.3.4 (EMAIL_PROTECTION)</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>1.3.6.1.5.5.7.3.8 (TIME_STAMPING)</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>1.3.6.1.5.5.7.3.9 (OCSP_SIGNING)</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>1.3.6.1.5.5.7.3.5 (IPSEC_END_SYSTEM)</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>1.3.6.1.5.5.7.3.6 (IPSEC_TUNNEL)</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>1.3.6.1.5.5.7.3.7 (IPSEC_USER)</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_oid(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.oid = input;
             self
@@ -1655,6 +1956,7 @@ pub mod key_usage {
             self.name = Some(input);
             self
         }
+        /// <p>A string value that contains a Key Usage extension name.</p>
         pub fn set_name(mut self, input: std::option::Option<crate::model::KeyUsageName>) -> Self {
             self.name = input;
             self
@@ -1689,7 +1991,7 @@ pub struct RenewalSummary {
     /// <p>The reason that a renewal request was unsuccessful.</p>
     pub renewal_status_reason: std::option::Option<crate::model::FailureReason>,
     /// <p>The time at which the renewal summary was last updated.</p>
-    pub updated_at: std::option::Option<smithy_types::Instant>,
+    pub updated_at: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for RenewalSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1711,7 +2013,7 @@ pub mod renewal_summary {
         pub(crate) domain_validation_options:
             std::option::Option<std::vec::Vec<crate::model::DomainValidation>>,
         pub(crate) renewal_status_reason: std::option::Option<crate::model::FailureReason>,
-        pub(crate) updated_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) updated_at: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The status of ACM's <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a> of the certificate.</p>
@@ -1719,6 +2021,7 @@ pub mod renewal_summary {
             self.renewal_status = Some(input);
             self
         }
+        /// <p>The status of ACM's <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a> of the certificate.</p>
         pub fn set_renewal_status(
             mut self,
             input: std::option::Option<crate::model::RenewalStatus>,
@@ -1726,6 +2029,15 @@ pub mod renewal_summary {
             self.renewal_status = input;
             self
         }
+        /// Appends an item to `domain_validation_options`.
+        ///
+        /// To override the contents of this collection use [`set_domain_validation_options`](Self::set_domain_validation_options).
+        ///
+        /// <p>Contains information about the validation of each domain name in the certificate, as it
+        /// pertains to ACM's <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
+        /// renewal</a>. This is different from the initial validation that occurs as a result of
+        /// the <a>RequestCertificate</a> request. This field exists only when the certificate
+        /// type is <code>AMAZON_ISSUED</code>.</p>
         pub fn domain_validation_options(
             mut self,
             input: impl Into<crate::model::DomainValidation>,
@@ -1735,6 +2047,11 @@ pub mod renewal_summary {
             self.domain_validation_options = Some(v);
             self
         }
+        /// <p>Contains information about the validation of each domain name in the certificate, as it
+        /// pertains to ACM's <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
+        /// renewal</a>. This is different from the initial validation that occurs as a result of
+        /// the <a>RequestCertificate</a> request. This field exists only when the certificate
+        /// type is <code>AMAZON_ISSUED</code>.</p>
         pub fn set_domain_validation_options(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DomainValidation>>,
@@ -1747,6 +2064,7 @@ pub mod renewal_summary {
             self.renewal_status_reason = Some(input);
             self
         }
+        /// <p>The reason that a renewal request was unsuccessful.</p>
         pub fn set_renewal_status_reason(
             mut self,
             input: std::option::Option<crate::model::FailureReason>,
@@ -1755,11 +2073,15 @@ pub mod renewal_summary {
             self
         }
         /// <p>The time at which the renewal summary was last updated.</p>
-        pub fn updated_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn updated_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.updated_at = Some(input);
             self
         }
-        pub fn set_updated_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time at which the renewal summary was last updated.</p>
+        pub fn set_updated_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.updated_at = input;
             self
         }
@@ -1781,6 +2103,7 @@ impl RenewalSummary {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1792,22 +2115,39 @@ impl RenewalSummary {
     std::hash::Hash,
 )]
 pub enum FailureReason {
+    #[allow(missing_docs)] // documentation missing in model
     AdditionalVerificationRequired,
+    #[allow(missing_docs)] // documentation missing in model
     CaaError,
+    #[allow(missing_docs)] // documentation missing in model
     DomainNotAllowed,
+    #[allow(missing_docs)] // documentation missing in model
     DomainValidationDenied,
+    #[allow(missing_docs)] // documentation missing in model
     InvalidPublicDomain,
+    #[allow(missing_docs)] // documentation missing in model
     NoAvailableContacts,
+    #[allow(missing_docs)] // documentation missing in model
     Other,
+    #[allow(missing_docs)] // documentation missing in model
     PcaAccessDenied,
+    #[allow(missing_docs)] // documentation missing in model
     PcaInvalidArgs,
+    #[allow(missing_docs)] // documentation missing in model
     PcaInvalidArn,
+    #[allow(missing_docs)] // documentation missing in model
     PcaInvalidDuration,
+    #[allow(missing_docs)] // documentation missing in model
     PcaInvalidState,
+    #[allow(missing_docs)] // documentation missing in model
     PcaLimitExceeded,
+    #[allow(missing_docs)] // documentation missing in model
     PcaNameConstraintsValidation,
+    #[allow(missing_docs)] // documentation missing in model
     PcaRequestFailed,
+    #[allow(missing_docs)] // documentation missing in model
     PcaResourceNotFound,
+    #[allow(missing_docs)] // documentation missing in model
     SlrNotFound,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1844,6 +2184,7 @@ impl std::str::FromStr for FailureReason {
     }
 }
 impl FailureReason {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FailureReason::AdditionalVerificationRequired => "ADDITIONAL_VERIFICATION_REQUIRED",
@@ -1866,6 +2207,7 @@ impl FailureReason {
             FailureReason::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ADDITIONAL_VERIFICATION_REQUIRED",
@@ -1906,6 +2248,7 @@ pub struct DomainValidation {
     /// <p>The domain name that ACM used to send domain validation emails.</p>
     pub validation_domain: std::option::Option<std::string::String>,
     /// <p>The validation status of the domain name. This can be one of the following values:</p>
+    ///
     /// <ul>
     /// <li>
     /// <p>
@@ -1964,16 +2307,24 @@ pub mod domain_validation {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>A fully qualified domain name (FQDN) in the certificate. For example,
+        /// <code>www.example.com</code> or <code>example.com</code>. </p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
         }
+        /// Appends an item to `validation_emails`.
+        ///
+        /// To override the contents of this collection use [`set_validation_emails`](Self::set_validation_emails).
+        ///
+        /// <p>A list of email addresses that ACM used to send domain validation emails.</p>
         pub fn validation_emails(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.validation_emails.unwrap_or_default();
             v.push(input.into());
             self.validation_emails = Some(v);
             self
         }
+        /// <p>A list of email addresses that ACM used to send domain validation emails.</p>
         pub fn set_validation_emails(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1986,6 +2337,7 @@ pub mod domain_validation {
             self.validation_domain = Some(input.into());
             self
         }
+        /// <p>The domain name that ACM used to send domain validation emails.</p>
         pub fn set_validation_domain(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1994,6 +2346,7 @@ pub mod domain_validation {
             self
         }
         /// <p>The validation status of the domain name. This can be one of the following values:</p>
+        ///
         /// <ul>
         /// <li>
         /// <p>
@@ -2013,6 +2366,23 @@ pub mod domain_validation {
             self.validation_status = Some(input);
             self
         }
+        /// <p>The validation status of the domain name. This can be one of the following values:</p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>PENDING_VALIDATION</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code></code>SUCCESS</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code></code>FAILED</p>
+        /// </li>
+        /// </ul>
         pub fn set_validation_status(
             mut self,
             input: std::option::Option<crate::model::DomainStatus>,
@@ -2030,6 +2400,12 @@ pub mod domain_validation {
             self.resource_record = Some(input);
             self
         }
+        /// <p>Contains the CNAME record that you add to your DNS database for domain validation. For
+        /// more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">Use DNS to Validate Domain Ownership</a>.</p>
+        /// <p>Note: The CNAME information that you need does not include the name of your domain. If you
+        /// include  your domain name in the DNS database CNAME record, validation fails.  For example, if
+        /// the name is "_a79865eb4cd1a6ab990a45779b4e0b96.yourdomain.com", only
+        /// "_a79865eb4cd1a6ab990a45779b4e0b96" must be used.</p>
         pub fn set_resource_record(
             mut self,
             input: std::option::Option<crate::model::ResourceRecord>,
@@ -2042,6 +2418,7 @@ pub mod domain_validation {
             self.validation_method = Some(input);
             self
         }
+        /// <p>Specifies the domain validation method.</p>
         pub fn set_validation_method(
             mut self,
             input: std::option::Option<crate::model::ValidationMethod>,
@@ -2107,6 +2484,7 @@ pub mod resource_record {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the DNS record to create in your domain. This is supplied by ACM.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2116,6 +2494,7 @@ pub mod resource_record {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of DNS record. Currently this can be <code>CNAME</code>.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::RecordType>) -> Self {
             self.r#type = input;
             self
@@ -2126,6 +2505,8 @@ pub mod resource_record {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value of the CNAME record to add to your DNS database. This is supplied by
+        /// ACM.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -2147,6 +2528,7 @@ impl ResourceRecord {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2158,6 +2540,7 @@ impl ResourceRecord {
     std::hash::Hash,
 )]
 pub enum RecordType {
+    #[allow(missing_docs)] // documentation missing in model
     Cname,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2178,12 +2561,14 @@ impl std::str::FromStr for RecordType {
     }
 }
 impl RecordType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RecordType::Cname => "CNAME",
             RecordType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CNAME"]
     }
@@ -2194,6 +2579,7 @@ impl AsRef<str> for RecordType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2205,8 +2591,11 @@ impl AsRef<str> for RecordType {
     std::hash::Hash,
 )]
 pub enum DomainStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     PendingValidation,
+    #[allow(missing_docs)] // documentation missing in model
     Success,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2229,6 +2618,7 @@ impl std::str::FromStr for DomainStatus {
     }
 }
 impl DomainStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DomainStatus::Failed => "FAILED",
@@ -2237,6 +2627,7 @@ impl DomainStatus {
             DomainStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FAILED", "PENDING_VALIDATION", "SUCCESS"]
     }
@@ -2247,6 +2638,7 @@ impl AsRef<str> for DomainStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2258,9 +2650,13 @@ impl AsRef<str> for DomainStatus {
     std::hash::Hash,
 )]
 pub enum RenewalStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     PendingAutoRenewal,
+    #[allow(missing_docs)] // documentation missing in model
     PendingValidation,
+    #[allow(missing_docs)] // documentation missing in model
     Success,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2284,6 +2680,7 @@ impl std::str::FromStr for RenewalStatus {
     }
 }
 impl RenewalStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RenewalStatus::Failed => "FAILED",
@@ -2293,6 +2690,7 @@ impl RenewalStatus {
             RenewalStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "FAILED",
@@ -2308,6 +2706,7 @@ impl AsRef<str> for RenewalStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2319,8 +2718,11 @@ impl AsRef<str> for RenewalStatus {
     std::hash::Hash,
 )]
 pub enum CertificateType {
+    #[allow(missing_docs)] // documentation missing in model
     AmazonIssued,
+    #[allow(missing_docs)] // documentation missing in model
     Imported,
+    #[allow(missing_docs)] // documentation missing in model
     Private,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2343,6 +2745,7 @@ impl std::str::FromStr for CertificateType {
     }
 }
 impl CertificateType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CertificateType::AmazonIssued => "AMAZON_ISSUED",
@@ -2351,6 +2754,7 @@ impl CertificateType {
             CertificateType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AMAZON_ISSUED", "IMPORTED", "PRIVATE"]
     }
@@ -2361,6 +2765,7 @@ impl AsRef<str> for CertificateType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2372,15 +2777,25 @@ impl AsRef<str> for CertificateType {
     std::hash::Hash,
 )]
 pub enum RevocationReason {
+    #[allow(missing_docs)] // documentation missing in model
     AffiliationChanged,
+    #[allow(missing_docs)] // documentation missing in model
     AACompromise,
+    #[allow(missing_docs)] // documentation missing in model
     CaCompromise,
+    #[allow(missing_docs)] // documentation missing in model
     CertificateHold,
+    #[allow(missing_docs)] // documentation missing in model
     CessationOfOperation,
+    #[allow(missing_docs)] // documentation missing in model
     KeyCompromise,
+    #[allow(missing_docs)] // documentation missing in model
     PrivilegeWithdrawn,
+    #[allow(missing_docs)] // documentation missing in model
     RemoveFromCrl,
+    #[allow(missing_docs)] // documentation missing in model
     Superceded,
+    #[allow(missing_docs)] // documentation missing in model
     Unspecified,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2410,6 +2825,7 @@ impl std::str::FromStr for RevocationReason {
     }
 }
 impl RevocationReason {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RevocationReason::AffiliationChanged => "AFFILIATION_CHANGED",
@@ -2425,6 +2841,7 @@ impl RevocationReason {
             RevocationReason::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "AFFILIATION_CHANGED",

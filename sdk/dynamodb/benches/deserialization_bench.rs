@@ -4,9 +4,9 @@
  */
 
 use aws_sdk_dynamodb::operation::Query;
+use aws_smithy_http::response::ParseHttpResponse;
 use bytes::Bytes;
 use criterion::{criterion_group, criterion_main, Criterion};
-use smithy_http::response::ParseHttpResponse;
 
 fn do_bench() {
     let response = http::Response::builder()

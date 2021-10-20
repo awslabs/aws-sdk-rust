@@ -10,7 +10,7 @@
 //! ```rust
 //! use aws_sigv4::event_stream::{sign_message, SigningParams};
 //! use chrono::Utc;
-//! use smithy_eventstream::frame::{Header, HeaderValue, Message};
+//! use aws_smithy_eventstream::frame::{Header, HeaderValue, Message};
 //!
 //! // The `last_signature` argument is the previous message's signature, or
 //! // the signature of the initial HTTP request if a message hasn't been signed yet.
@@ -39,9 +39,9 @@
 use crate::date_fmt::{format_date, format_date_time};
 use crate::sign::{calculate_signature, generate_signing_key, sha256_hex_string};
 use crate::SigningOutput;
+use aws_smithy_eventstream::frame::{write_headers_to, Header, HeaderValue, Message};
 use bytes::Bytes;
 use chrono::{DateTime, SubsecRound, Utc};
-use smithy_eventstream::frame::{write_headers_to, Header, HeaderValue, Message};
 use std::io::Write;
 
 /// Event stream signing parameters

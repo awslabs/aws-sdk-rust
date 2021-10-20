@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-use smithy_xml::decode::{try_data, Document, ScopedDecoder, XmlError};
+use aws_smithy_xml::decode::{try_data, Document, ScopedDecoder, XmlError};
 use std::convert::TryFrom;
 
 #[allow(unused)]
@@ -14,10 +14,10 @@ pub fn body_is_error(body: &[u8]) -> Result<bool, XmlError> {
     Ok(scoped.start_el().matches("ErrorResponse"))
 }
 
-pub fn parse_generic_error(body: &[u8]) -> Result<smithy_types::Error, XmlError> {
+pub fn parse_generic_error(body: &[u8]) -> Result<aws_smithy_types::Error, XmlError> {
     let mut doc = Document::try_from(body)?;
     let mut root = doc.root_element()?;
-    let mut err_builder = smithy_types::Error::builder();
+    let mut err_builder = aws_smithy_types::Error::builder();
     while let Some(mut tag) = root.next_tag() {
         match tag.start_el().local() {
             "Error" => {
@@ -64,7 +64,7 @@ pub fn error_scope<'a, 'b>(doc: &'a mut Document<'b>) -> Result<ScopedDecoder<'b
 mod test {
     use super::{body_is_error, parse_generic_error};
     use crate::rest_xml_wrapped_errors::error_scope;
-    use smithy_xml::decode::Document;
+    use aws_smithy_xml::decode::Document;
     use std::convert::TryFrom;
 
     #[test]

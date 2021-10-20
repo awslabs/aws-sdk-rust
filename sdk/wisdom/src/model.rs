@@ -15,7 +15,7 @@ pub struct KnowledgeBaseData {
     pub status: std::option::Option<crate::model::KnowledgeBaseStatus>,
     /// <p>An epoch timestamp indicating the most recent content modification inside the knowledge
     /// base. If no content exists in a knowledge base, this value is unset.</p>
-    pub last_content_modification_time: std::option::Option<smithy_types::Instant>,
+    pub last_content_modification_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Source configuration information about the knowledge base.</p>
     pub source_configuration: std::option::Option<crate::model::SourceConfiguration>,
     /// <p>Information about how to render the content.</p>
@@ -63,7 +63,7 @@ pub mod knowledge_base_data {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) knowledge_base_type: std::option::Option<crate::model::KnowledgeBaseType>,
         pub(crate) status: std::option::Option<crate::model::KnowledgeBaseStatus>,
-        pub(crate) last_content_modification_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_content_modification_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) source_configuration: std::option::Option<crate::model::SourceConfiguration>,
         pub(crate) rendering_configuration:
             std::option::Option<crate::model::RenderingConfiguration>,
@@ -80,6 +80,7 @@ pub mod knowledge_base_data {
             self.knowledge_base_id = Some(input.into());
             self
         }
+        /// <p>The the identifier of the knowledge base.</p>
         pub fn set_knowledge_base_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -92,6 +93,7 @@ pub mod knowledge_base_data {
             self.knowledge_base_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
         pub fn set_knowledge_base_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -104,6 +106,7 @@ pub mod knowledge_base_data {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the knowledge base.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -113,6 +116,7 @@ pub mod knowledge_base_data {
             self.knowledge_base_type = Some(input);
             self
         }
+        /// <p>The type of knowledge base.</p>
         pub fn set_knowledge_base_type(
             mut self,
             input: std::option::Option<crate::model::KnowledgeBaseType>,
@@ -125,6 +129,7 @@ pub mod knowledge_base_data {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the knowledge base.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::KnowledgeBaseStatus>,
@@ -134,13 +139,15 @@ pub mod knowledge_base_data {
         }
         /// <p>An epoch timestamp indicating the most recent content modification inside the knowledge
         /// base. If no content exists in a knowledge base, this value is unset.</p>
-        pub fn last_content_modification_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_content_modification_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_content_modification_time = Some(input);
             self
         }
+        /// <p>An epoch timestamp indicating the most recent content modification inside the knowledge
+        /// base. If no content exists in a knowledge base, this value is unset.</p>
         pub fn set_last_content_modification_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_content_modification_time = input;
             self
@@ -150,6 +157,7 @@ pub mod knowledge_base_data {
             self.source_configuration = Some(input);
             self
         }
+        /// <p>Source configuration information about the knowledge base.</p>
         pub fn set_source_configuration(
             mut self,
             input: std::option::Option<crate::model::SourceConfiguration>,
@@ -165,6 +173,7 @@ pub mod knowledge_base_data {
             self.rendering_configuration = Some(input);
             self
         }
+        /// <p>Information about how to render the content.</p>
         pub fn set_rendering_configuration(
             mut self,
             input: std::option::Option<crate::model::RenderingConfiguration>,
@@ -180,6 +189,7 @@ pub mod knowledge_base_data {
             self.server_side_encryption_configuration = Some(input);
             self
         }
+        /// <p>The KMS key used for encryption.</p>
         pub fn set_server_side_encryption_configuration(
             mut self,
             input: std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
@@ -192,10 +202,16 @@ pub mod knowledge_base_data {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -206,6 +222,7 @@ pub mod knowledge_base_data {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -270,6 +287,8 @@ pub mod server_side_encryption_configuration {
             self.kms_key_id = Some(input.into());
             self
         }
+        /// <p>The KMS key. For information about valid ID values, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key identifiers (KeyId)</a> in the
+        /// <i>AWS Key Management Service Developer Guide</i>. </p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -308,6 +327,7 @@ pub struct RenderingConfiguration {
     /// </p>
     /// </li>
     /// </ul>
+    ///
     /// <p>The variable is replaced with the actual value for a piece of content when calling <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetContent.html">GetContent</a>. </p>
     pub template_uri: std::option::Option<std::string::String>,
 }
@@ -342,11 +362,29 @@ pub mod rendering_configuration {
         /// </p>
         /// </li>
         /// </ul>
+        ///
         /// <p>The variable is replaced with the actual value for a piece of content when calling <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetContent.html">GetContent</a>. </p>
         pub fn template_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_uri = Some(input.into());
             self
         }
+        /// <p>A URI template containing exactly one variable in <code>${variableName} </code>format.
+        /// This can only be set for <code>EXTERNAL</code> knowledge bases. For Salesforce and ServiceNow,
+        /// the variable must be one of the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Salesforce: <code>Id</code>, <code>ArticleNumber</code>, <code>VersionNumber</code>,
+        /// <code>Title</code>, <code>PublishStatus</code>, or <code>IsDeleted</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>ServiceNow: <code>number</code>, <code>short_description</code>,
+        /// <code>sys_mod_count</code>, <code>workflow_state</code>, or <code>active</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>The variable is replaced with the actual value for a piece of content when calling <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetContent.html">GetContent</a>. </p>
         pub fn set_template_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.template_uri = input;
             self
@@ -366,6 +404,7 @@ impl RenderingConfiguration {
     }
 }
 
+/// <p>Configuration information about the external data source.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum SourceConfiguration {
@@ -374,6 +413,8 @@ pub enum SourceConfiguration {
 }
 impl SourceConfiguration {
     #[allow(irrefutable_let_patterns)]
+    /// Tries to convert the enum instance into its [`SourceConfiguration`](crate::model::SourceConfiguration) variant.
+    /// Returns `Err(&Self) if it can't be converted.`
     pub fn as_app_integrations(
         &self,
     ) -> std::result::Result<&crate::model::AppIntegrationsConfiguration, &Self> {
@@ -383,6 +424,7 @@ impl SourceConfiguration {
             Err(&self)
         }
     }
+    /// Returns true if the enum instance is the `SourceConfiguration` variant.
     pub fn is_app_integrations(&self) -> bool {
         self.as_app_integrations().is_ok()
     }
@@ -434,6 +476,7 @@ pub mod app_integrations_configuration {
             self.app_integration_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the AppIntegrations DataIntegration to use for ingesting content.</p>
         pub fn set_app_integration_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -441,12 +484,46 @@ pub mod app_integrations_configuration {
             self.app_integration_arn = input;
             self
         }
+        /// Appends an item to `object_fields`.
+        ///
+        /// To override the contents of this collection use [`set_object_fields`](Self::set_object_fields).
+        ///
+        /// <p>The fields from the source that are made available to your agents in Wisdom. </p>
+        /// <ul>
+        /// <li>
+        /// <p> For <a href="https://developer.salesforce.com/docs/atlas.en-us.knowledge_dev.meta/knowledge_dev/sforce_api_objects_knowledge__kav.htm"> Salesforce</a>, you must include at least <code>Id</code>,
+        /// <code>ArticleNumber</code>, <code>VersionNumber</code>, <code>Title</code>,
+        /// <code>PublishStatus</code>, and <code>IsDeleted</code>. </p>
+        /// </li>
+        /// <li>
+        /// <p>For <a href="https://developer.servicenow.com/dev.do#!/reference/api/rome/rest/knowledge-management-api"> ServiceNow</a>, you must include at least <code>number</code>,
+        /// <code>short_description</code>, <code>sys_mod_count</code>, <code>workflow_state</code>,
+        /// and <code>active</code>. </p>
+        /// </li>
+        /// </ul>
+        /// <p>Make sure to include additional field(s); these are indexed and used to source
+        /// recommendations. </p>
         pub fn object_fields(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.object_fields.unwrap_or_default();
             v.push(input.into());
             self.object_fields = Some(v);
             self
         }
+        /// <p>The fields from the source that are made available to your agents in Wisdom. </p>
+        /// <ul>
+        /// <li>
+        /// <p> For <a href="https://developer.salesforce.com/docs/atlas.en-us.knowledge_dev.meta/knowledge_dev/sforce_api_objects_knowledge__kav.htm"> Salesforce</a>, you must include at least <code>Id</code>,
+        /// <code>ArticleNumber</code>, <code>VersionNumber</code>, <code>Title</code>,
+        /// <code>PublishStatus</code>, and <code>IsDeleted</code>. </p>
+        /// </li>
+        /// <li>
+        /// <p>For <a href="https://developer.servicenow.com/dev.do#!/reference/api/rome/rest/knowledge-management-api"> ServiceNow</a>, you must include at least <code>number</code>,
+        /// <code>short_description</code>, <code>sys_mod_count</code>, <code>workflow_state</code>,
+        /// and <code>active</code>. </p>
+        /// </li>
+        /// </ul>
+        /// <p>Make sure to include additional field(s); these are indexed and used to source
+        /// recommendations. </p>
         pub fn set_object_fields(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -470,6 +547,7 @@ impl AppIntegrationsConfiguration {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -481,11 +559,17 @@ impl AppIntegrationsConfiguration {
     std::hash::Hash,
 )]
 pub enum KnowledgeBaseStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     CreateFailed,
+    #[allow(missing_docs)] // documentation missing in model
     CreateInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Deleted,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteFailed,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteInProgress,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -511,6 +595,7 @@ impl std::str::FromStr for KnowledgeBaseStatus {
     }
 }
 impl KnowledgeBaseStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             KnowledgeBaseStatus::Active => "ACTIVE",
@@ -522,6 +607,7 @@ impl KnowledgeBaseStatus {
             KnowledgeBaseStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
@@ -539,6 +625,7 @@ impl AsRef<str> for KnowledgeBaseStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -550,7 +637,9 @@ impl AsRef<str> for KnowledgeBaseStatus {
     std::hash::Hash,
 )]
 pub enum KnowledgeBaseType {
+    #[allow(missing_docs)] // documentation missing in model
     Custom,
+    #[allow(missing_docs)] // documentation missing in model
     External,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -572,6 +661,7 @@ impl std::str::FromStr for KnowledgeBaseType {
     }
 }
 impl KnowledgeBaseType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             KnowledgeBaseType::Custom => "CUSTOM",
@@ -579,6 +669,7 @@ impl KnowledgeBaseType {
             KnowledgeBaseType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CUSTOM", "EXTERNAL"]
     }
@@ -664,6 +755,7 @@ pub mod content_summary {
             self.content_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the content.</p>
         pub fn set_content_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_arn = input;
             self
@@ -673,6 +765,7 @@ pub mod content_summary {
             self.content_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the content.</p>
         pub fn set_content_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_id = input;
             self
@@ -682,6 +775,7 @@ pub mod content_summary {
             self.knowledge_base_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
         pub fn set_knowledge_base_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -694,6 +788,7 @@ pub mod content_summary {
             self.knowledge_base_id = Some(input.into());
             self
         }
+        /// <p>The the identifier of the knowledge base.</p>
         pub fn set_knowledge_base_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -706,6 +801,7 @@ pub mod content_summary {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the content.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -715,6 +811,7 @@ pub mod content_summary {
             self.revision_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the revision of the content.</p>
         pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.revision_id = input;
             self
@@ -724,6 +821,7 @@ pub mod content_summary {
             self.title = Some(input.into());
             self
         }
+        /// <p>The title of the content.</p>
         pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.title = input;
             self
@@ -733,6 +831,7 @@ pub mod content_summary {
             self.content_type = Some(input.into());
             self
         }
+        /// <p>The media type of the content.</p>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_type = input;
             self
@@ -742,6 +841,7 @@ pub mod content_summary {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the content.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ContentStatus>,
@@ -749,6 +849,12 @@ pub mod content_summary {
             self.status = input;
             self
         }
+        /// Adds a key-value pair to `metadata`.
+        ///
+        /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
+        ///
+        /// <p>A key/value map to store attributes without affecting tagging or recommendations.
+        /// For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
         pub fn metadata(
             mut self,
             k: impl Into<std::string::String>,
@@ -759,6 +865,8 @@ pub mod content_summary {
             self.metadata = Some(hash_map);
             self
         }
+        /// <p>A key/value map to store attributes without affecting tagging or recommendations.
+        /// For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
         pub fn set_metadata(
             mut self,
             input: std::option::Option<
@@ -768,6 +876,11 @@ pub mod content_summary {
             self.metadata = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -778,6 +891,7 @@ pub mod content_summary {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -812,6 +926,7 @@ impl ContentSummary {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -823,12 +938,19 @@ impl ContentSummary {
     std::hash::Hash,
 )]
 pub enum ContentStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     CreateFailed,
+    #[allow(missing_docs)] // documentation missing in model
     CreateInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Deleted,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteFailed,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     UpdateFailed,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -855,6 +977,7 @@ impl std::str::FromStr for ContentStatus {
     }
 }
 impl ContentStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ContentStatus::Active => "ACTIVE",
@@ -867,6 +990,7 @@ impl ContentStatus {
             ContentStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
@@ -908,12 +1032,18 @@ pub mod search_expression {
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     }
     impl Builder {
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>The search expression filters.</p>
         pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input.into());
             self.filters = Some(v);
             self
         }
+        /// <p>The search expression filters.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -972,6 +1102,7 @@ pub mod filter {
             self.field = Some(input);
             self
         }
+        /// <p>The field on which to filter.</p>
         pub fn set_field(mut self, input: std::option::Option<crate::model::FilterField>) -> Self {
             self.field = input;
             self
@@ -981,6 +1112,7 @@ pub mod filter {
             self.operator = Some(input);
             self
         }
+        /// <p>The operator to use for comparing the field’s value with the provided value.</p>
         pub fn set_operator(
             mut self,
             input: std::option::Option<crate::model::FilterOperator>,
@@ -993,6 +1125,7 @@ pub mod filter {
             self.value = Some(input.into());
             self
         }
+        /// <p>The desired field value on which to filter.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -1014,6 +1147,7 @@ impl Filter {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1025,6 +1159,7 @@ impl Filter {
     std::hash::Hash,
 )]
 pub enum FilterOperator {
+    #[allow(missing_docs)] // documentation missing in model
     Equals,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1045,12 +1180,14 @@ impl std::str::FromStr for FilterOperator {
     }
 }
 impl FilterOperator {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FilterOperator::Equals => "EQUALS",
             FilterOperator::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["EQUALS"]
     }
@@ -1061,6 +1198,7 @@ impl AsRef<str> for FilterOperator {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1072,6 +1210,7 @@ impl AsRef<str> for FilterOperator {
     std::hash::Hash,
 )]
 pub enum FilterField {
+    #[allow(missing_docs)] // documentation missing in model
     Name,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1092,12 +1231,14 @@ impl std::str::FromStr for FilterField {
     }
 }
 impl FilterField {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FilterField::Name => "NAME",
             FilterField::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["NAME"]
     }
@@ -1181,6 +1322,7 @@ pub mod knowledge_base_summary {
             self.knowledge_base_id = Some(input.into());
             self
         }
+        /// <p>The the identifier of the knowledge base.</p>
         pub fn set_knowledge_base_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1193,6 +1335,7 @@ pub mod knowledge_base_summary {
             self.knowledge_base_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
         pub fn set_knowledge_base_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1205,6 +1348,7 @@ pub mod knowledge_base_summary {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the knowledge base.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1214,6 +1358,7 @@ pub mod knowledge_base_summary {
             self.knowledge_base_type = Some(input);
             self
         }
+        /// <p>The type of knowledge base.</p>
         pub fn set_knowledge_base_type(
             mut self,
             input: std::option::Option<crate::model::KnowledgeBaseType>,
@@ -1226,6 +1371,7 @@ pub mod knowledge_base_summary {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the knowledge base summary.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::KnowledgeBaseStatus>,
@@ -1238,6 +1384,7 @@ pub mod knowledge_base_summary {
             self.source_configuration = Some(input);
             self
         }
+        /// <p>[KEVIN]</p>
         pub fn set_source_configuration(
             mut self,
             input: std::option::Option<crate::model::SourceConfiguration>,
@@ -1253,6 +1400,7 @@ pub mod knowledge_base_summary {
             self.rendering_configuration = Some(input);
             self
         }
+        /// <p>Information about how to render the content.</p>
         pub fn set_rendering_configuration(
             mut self,
             input: std::option::Option<crate::model::RenderingConfiguration>,
@@ -1268,6 +1416,7 @@ pub mod knowledge_base_summary {
             self.server_side_encryption_configuration = Some(input);
             self
         }
+        /// <p>The KMS key used for encryption.</p>
         pub fn set_server_side_encryption_configuration(
             mut self,
             input: std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
@@ -1280,10 +1429,16 @@ pub mod knowledge_base_summary {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the knowledge base.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1294,6 +1449,7 @@ pub mod knowledge_base_summary {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1361,7 +1517,7 @@ pub struct ContentData {
     /// <p>The URL of the content.</p>
     pub url: std::option::Option<std::string::String>,
     /// <p>The expiration time of the URL as an epoch timestamp.</p>
-    pub url_expiry: std::option::Option<smithy_types::Instant>,
+    pub url_expiry: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for ContentData {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1406,7 +1562,7 @@ pub mod content_data {
         >,
         pub(crate) link_out_uri: std::option::Option<std::string::String>,
         pub(crate) url: std::option::Option<std::string::String>,
-        pub(crate) url_expiry: std::option::Option<smithy_types::Instant>,
+        pub(crate) url_expiry: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the content.</p>
@@ -1414,6 +1570,7 @@ pub mod content_data {
             self.content_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the content.</p>
         pub fn set_content_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_arn = input;
             self
@@ -1423,6 +1580,7 @@ pub mod content_data {
             self.content_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the content.</p>
         pub fn set_content_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_id = input;
             self
@@ -1432,6 +1590,7 @@ pub mod content_data {
             self.knowledge_base_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
         pub fn set_knowledge_base_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1444,6 +1603,7 @@ pub mod content_data {
             self.knowledge_base_id = Some(input.into());
             self
         }
+        /// <p>The the identifier of the knowledge base.</p>
         pub fn set_knowledge_base_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1456,6 +1616,7 @@ pub mod content_data {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the content.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1465,6 +1626,7 @@ pub mod content_data {
             self.revision_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the content revision.</p>
         pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.revision_id = input;
             self
@@ -1474,6 +1636,7 @@ pub mod content_data {
             self.title = Some(input.into());
             self
         }
+        /// <p>The title of the content.</p>
         pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.title = input;
             self
@@ -1483,6 +1646,7 @@ pub mod content_data {
             self.content_type = Some(input.into());
             self
         }
+        /// <p>The media type of the content.</p>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_type = input;
             self
@@ -1492,6 +1656,7 @@ pub mod content_data {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the content.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ContentStatus>,
@@ -1499,6 +1664,12 @@ pub mod content_data {
             self.status = input;
             self
         }
+        /// Adds a key-value pair to `metadata`.
+        ///
+        /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
+        ///
+        /// <p>A key/value map to store attributes without affecting tagging or recommendations.
+        /// For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
         pub fn metadata(
             mut self,
             k: impl Into<std::string::String>,
@@ -1509,6 +1680,8 @@ pub mod content_data {
             self.metadata = Some(hash_map);
             self
         }
+        /// <p>A key/value map to store attributes without affecting tagging or recommendations.
+        /// For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
         pub fn set_metadata(
             mut self,
             input: std::option::Option<
@@ -1518,6 +1691,11 @@ pub mod content_data {
             self.metadata = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1528,6 +1706,7 @@ pub mod content_data {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1542,6 +1721,7 @@ pub mod content_data {
             self.link_out_uri = Some(input.into());
             self
         }
+        /// <p>The URI of the content.</p>
         pub fn set_link_out_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.link_out_uri = input;
             self
@@ -1551,16 +1731,21 @@ pub mod content_data {
             self.url = Some(input.into());
             self
         }
+        /// <p>The URL of the content.</p>
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.url = input;
             self
         }
         /// <p>The expiration time of the URL as an epoch timestamp.</p>
-        pub fn url_expiry(mut self, input: smithy_types::Instant) -> Self {
+        pub fn url_expiry(mut self, input: aws_smithy_types::Instant) -> Self {
             self.url_expiry = Some(input);
             self
         }
-        pub fn set_url_expiry(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The expiration time of the URL as an epoch timestamp.</p>
+        pub fn set_url_expiry(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.url_expiry = input;
             self
         }
@@ -1632,6 +1817,7 @@ pub mod session_summary {
             self.session_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the session.</p>
         pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.session_id = input;
             self
@@ -1641,6 +1827,7 @@ pub mod session_summary {
             self.session_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the session.</p>
         pub fn set_session_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.session_arn = input;
             self
@@ -1650,6 +1837,7 @@ pub mod session_summary {
             self.assistant_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the Wisdom assistant.</p>
         pub fn set_assistant_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.assistant_id = input;
             self
@@ -1659,6 +1847,7 @@ pub mod session_summary {
             self.assistant_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant</p>
         pub fn set_assistant_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1720,6 +1909,7 @@ pub mod result_data {
             self.result_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the result data.</p>
         pub fn set_result_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.result_id = input;
             self
@@ -1729,6 +1919,7 @@ pub mod result_data {
             self.document = Some(input);
             self
         }
+        /// <p>The document.</p>
         pub fn set_document(mut self, input: std::option::Option<crate::model::Document>) -> Self {
             self.document = input;
             self
@@ -1738,6 +1929,7 @@ pub mod result_data {
             self.relevance_score = Some(input);
             self
         }
+        /// <p>The relevance score of the results.</p>
         pub fn set_relevance_score(mut self, input: std::option::Option<f64>) -> Self {
             self.relevance_score = input;
             self
@@ -1795,6 +1987,7 @@ pub mod document {
             self.content_reference = Some(input);
             self
         }
+        /// <p>A reference to the content resource.</p>
         pub fn set_content_reference(
             mut self,
             input: std::option::Option<crate::model::ContentReference>,
@@ -1807,6 +2000,7 @@ pub mod document {
             self.title = Some(input);
             self
         }
+        /// <p>The title of the document.</p>
         pub fn set_title(mut self, input: std::option::Option<crate::model::DocumentText>) -> Self {
             self.title = input;
             self
@@ -1816,6 +2010,7 @@ pub mod document {
             self.excerpt = Some(input);
             self
         }
+        /// <p>The excerpt from the document.</p>
         pub fn set_excerpt(
             mut self,
             input: std::option::Option<crate::model::DocumentText>,
@@ -1872,16 +2067,23 @@ pub mod document_text {
             self.text = Some(input.into());
             self
         }
+        /// <p>Text in the document.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.text = input;
             self
         }
+        /// Appends an item to `highlights`.
+        ///
+        /// To override the contents of this collection use [`set_highlights`](Self::set_highlights).
+        ///
+        /// <p>Highlights in the document text.</p>
         pub fn highlights(mut self, input: impl Into<crate::model::Highlight>) -> Self {
             let mut v = self.highlights.unwrap_or_default();
             v.push(input.into());
             self.highlights = Some(v);
             self
         }
+        /// <p>Highlights in the document text.</p>
         pub fn set_highlights(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Highlight>>,
@@ -1938,6 +2140,7 @@ pub mod highlight {
             self.begin_offset_inclusive = Some(input);
             self
         }
+        /// <p>The offset for the start of the highlight.</p>
         pub fn set_begin_offset_inclusive(mut self, input: std::option::Option<i32>) -> Self {
             self.begin_offset_inclusive = input;
             self
@@ -1947,6 +2150,7 @@ pub mod highlight {
             self.end_offset_exclusive = Some(input);
             self
         }
+        /// <p>The offset for the end of the highlight.</p>
         pub fn set_end_offset_exclusive(mut self, input: std::option::Option<i32>) -> Self {
             self.end_offset_exclusive = input;
             self
@@ -2007,6 +2211,7 @@ pub mod content_reference {
             self.knowledge_base_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
         pub fn set_knowledge_base_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2019,6 +2224,7 @@ pub mod content_reference {
             self.knowledge_base_id = Some(input.into());
             self
         }
+        /// <p>The the identifier of the knowledge base.</p>
         pub fn set_knowledge_base_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2031,6 +2237,7 @@ pub mod content_reference {
             self.content_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the content.</p>
         pub fn set_content_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_arn = input;
             self
@@ -2040,6 +2247,7 @@ pub mod content_reference {
             self.content_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the content.</p>
         pub fn set_content_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_id = input;
             self
@@ -2094,6 +2302,7 @@ pub mod notify_recommendations_received_error {
             self.recommendation_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the recommendation that is in error.</p>
         pub fn set_recommendation_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2106,6 +2315,7 @@ pub mod notify_recommendations_received_error {
             self.message = Some(input.into());
             self
         }
+        /// <p>A recommendation is causing an error.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -2166,6 +2376,7 @@ pub mod recommendation_data {
             self.recommendation_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the recommendation.</p>
         pub fn set_recommendation_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2178,6 +2389,7 @@ pub mod recommendation_data {
             self.document = Some(input);
             self
         }
+        /// <p>The recommended document.</p>
         pub fn set_document(mut self, input: std::option::Option<crate::model::Document>) -> Self {
             self.document = input;
             self
@@ -2187,6 +2399,7 @@ pub mod recommendation_data {
             self.relevance_score = Some(input);
             self
         }
+        /// <p>The relevance score of the recommendation.</p>
         pub fn set_relevance_score(mut self, input: std::option::Option<f64>) -> Self {
             self.relevance_score = input;
             self
@@ -2196,6 +2409,7 @@ pub mod recommendation_data {
             self.relevance_level = Some(input);
             self
         }
+        /// <p>The relevance level of the recommendation.</p>
         pub fn set_relevance_level(
             mut self,
             input: std::option::Option<crate::model::RelevanceLevel>,
@@ -2221,6 +2435,7 @@ impl RecommendationData {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2232,8 +2447,11 @@ impl RecommendationData {
     std::hash::Hash,
 )]
 pub enum RelevanceLevel {
+    #[allow(missing_docs)] // documentation missing in model
     High,
+    #[allow(missing_docs)] // documentation missing in model
     Low,
+    #[allow(missing_docs)] // documentation missing in model
     Medium,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2256,6 +2474,7 @@ impl std::str::FromStr for RelevanceLevel {
     }
 }
 impl RelevanceLevel {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RelevanceLevel::High => "HIGH",
@@ -2264,6 +2483,7 @@ impl RelevanceLevel {
             RelevanceLevel::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["HIGH", "LOW", "MEDIUM"]
     }
@@ -2338,6 +2558,7 @@ pub mod assistant_summary {
             self.assistant_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the Wisdom assistant.</p>
         pub fn set_assistant_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.assistant_id = input;
             self
@@ -2347,6 +2568,7 @@ pub mod assistant_summary {
             self.assistant_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant</p>
         pub fn set_assistant_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2359,6 +2581,7 @@ pub mod assistant_summary {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the assistant.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2368,6 +2591,7 @@ pub mod assistant_summary {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of the assistant.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::AssistantType>) -> Self {
             self.r#type = input;
             self
@@ -2377,6 +2601,7 @@ pub mod assistant_summary {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the assistant.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::AssistantStatus>,
@@ -2389,10 +2614,16 @@ pub mod assistant_summary {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the assistant.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2403,6 +2634,7 @@ pub mod assistant_summary {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2420,6 +2652,7 @@ pub mod assistant_summary {
             self.server_side_encryption_configuration = Some(input);
             self
         }
+        /// <p>The KMS key used for encryption.</p>
         pub fn set_server_side_encryption_configuration(
             mut self,
             input: std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
@@ -2449,6 +2682,7 @@ impl AssistantSummary {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2460,11 +2694,17 @@ impl AssistantSummary {
     std::hash::Hash,
 )]
 pub enum AssistantStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     CreateFailed,
+    #[allow(missing_docs)] // documentation missing in model
     CreateInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Deleted,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteFailed,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteInProgress,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2490,6 +2730,7 @@ impl std::str::FromStr for AssistantStatus {
     }
 }
 impl AssistantStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AssistantStatus::Active => "ACTIVE",
@@ -2501,6 +2742,7 @@ impl AssistantStatus {
             AssistantStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
@@ -2518,6 +2760,7 @@ impl AsRef<str> for AssistantStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2529,6 +2772,7 @@ impl AsRef<str> for AssistantStatus {
     std::hash::Hash,
 )]
 pub enum AssistantType {
+    #[allow(missing_docs)] // documentation missing in model
     Agent,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2549,12 +2793,14 @@ impl std::str::FromStr for AssistantType {
     }
 }
 impl AssistantType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AssistantType::Agent => "AGENT",
             AssistantType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AGENT"]
     }
@@ -2629,6 +2875,7 @@ pub mod assistant_data {
             self.assistant_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the Wisdom assistant.</p>
         pub fn set_assistant_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.assistant_id = input;
             self
@@ -2638,6 +2885,7 @@ pub mod assistant_data {
             self.assistant_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant</p>
         pub fn set_assistant_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2650,6 +2898,7 @@ pub mod assistant_data {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2659,6 +2908,7 @@ pub mod assistant_data {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of assistant.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::AssistantType>) -> Self {
             self.r#type = input;
             self
@@ -2668,6 +2918,7 @@ pub mod assistant_data {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the assistant.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::AssistantStatus>,
@@ -2680,10 +2931,16 @@ pub mod assistant_data {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2694,6 +2951,7 @@ pub mod assistant_data {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2711,6 +2969,7 @@ pub mod assistant_data {
             self.server_side_encryption_configuration = Some(input);
             self
         }
+        /// <p>The KMS key used for encryption.</p>
         pub fn set_server_side_encryption_configuration(
             mut self,
             input: std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
@@ -2787,6 +3046,7 @@ pub mod session_data {
             self.session_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the session.</p>
         pub fn set_session_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.session_arn = input;
             self
@@ -2796,6 +3056,7 @@ pub mod session_data {
             self.session_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the session.</p>
         pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.session_id = input;
             self
@@ -2805,6 +3066,7 @@ pub mod session_data {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the session.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2814,10 +3076,16 @@ pub mod session_data {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the session.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2828,6 +3096,7 @@ pub mod session_data {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2912,6 +3181,7 @@ pub mod assistant_association_summary {
             self.assistant_association_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the assistant association.</p>
         pub fn set_assistant_association_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2924,6 +3194,7 @@ pub mod assistant_association_summary {
             self.assistant_association_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the assistant association.</p>
         pub fn set_assistant_association_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2936,6 +3207,7 @@ pub mod assistant_association_summary {
             self.assistant_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the Wisdom assistant.</p>
         pub fn set_assistant_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.assistant_id = input;
             self
@@ -2945,6 +3217,7 @@ pub mod assistant_association_summary {
             self.assistant_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant</p>
         pub fn set_assistant_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2957,6 +3230,7 @@ pub mod assistant_association_summary {
             self.association_type = Some(input);
             self
         }
+        /// <p>The type of association.</p>
         pub fn set_association_type(
             mut self,
             input: std::option::Option<crate::model::AssociationType>,
@@ -2972,6 +3246,7 @@ pub mod assistant_association_summary {
             self.association_data = Some(input);
             self
         }
+        /// <p>The association data.</p>
         pub fn set_association_data(
             mut self,
             input: std::option::Option<crate::model::AssistantAssociationOutputData>,
@@ -2979,6 +3254,11 @@ pub mod assistant_association_summary {
             self.association_data = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2989,6 +3269,7 @@ pub mod assistant_association_summary {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -3019,6 +3300,7 @@ impl AssistantAssociationSummary {
     }
 }
 
+/// <p>The data that is output as a result of the assistant association.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum AssistantAssociationOutputData {
@@ -3027,6 +3309,8 @@ pub enum AssistantAssociationOutputData {
 }
 impl AssistantAssociationOutputData {
     #[allow(irrefutable_let_patterns)]
+    /// Tries to convert the enum instance into its [`AssistantAssociationOutputData`](crate::model::AssistantAssociationOutputData) variant.
+    /// Returns `Err(&Self) if it can't be converted.`
     pub fn as_knowledge_base_association(
         &self,
     ) -> std::result::Result<&crate::model::KnowledgeBaseAssociationData, &Self> {
@@ -3036,6 +3320,7 @@ impl AssistantAssociationOutputData {
             Err(&self)
         }
     }
+    /// Returns true if the enum instance is the `AssistantAssociationOutputData` variant.
     pub fn is_knowledge_base_association(&self) -> bool {
         self.as_knowledge_base_association().is_ok()
     }
@@ -3073,6 +3358,7 @@ pub mod knowledge_base_association_data {
             self.knowledge_base_id = Some(input.into());
             self
         }
+        /// <p>The the identifier of the knowledge base.</p>
         pub fn set_knowledge_base_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3085,6 +3371,7 @@ pub mod knowledge_base_association_data {
             self.knowledge_base_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the knowledge base.</p>
         pub fn set_knowledge_base_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3108,6 +3395,7 @@ impl KnowledgeBaseAssociationData {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3119,6 +3407,7 @@ impl KnowledgeBaseAssociationData {
     std::hash::Hash,
 )]
 pub enum AssociationType {
+    #[allow(missing_docs)] // documentation missing in model
     KnowledgeBase,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3139,12 +3428,14 @@ impl std::str::FromStr for AssociationType {
     }
 }
 impl AssociationType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AssociationType::KnowledgeBase => "KNOWLEDGE_BASE",
             AssociationType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["KNOWLEDGE_BASE"]
     }
@@ -3211,6 +3502,7 @@ pub mod assistant_association_data {
             self.assistant_association_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the assistant association.</p>
         pub fn set_assistant_association_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3223,6 +3515,7 @@ pub mod assistant_association_data {
             self.assistant_association_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the assistant association.</p>
         pub fn set_assistant_association_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3235,6 +3528,7 @@ pub mod assistant_association_data {
             self.assistant_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the Wisdom assistant.</p>
         pub fn set_assistant_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.assistant_id = input;
             self
@@ -3244,6 +3538,7 @@ pub mod assistant_association_data {
             self.assistant_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the Wisdom assistant</p>
         pub fn set_assistant_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3256,6 +3551,7 @@ pub mod assistant_association_data {
             self.association_type = Some(input);
             self
         }
+        /// <p>The type of association.</p>
         pub fn set_association_type(
             mut self,
             input: std::option::Option<crate::model::AssociationType>,
@@ -3271,6 +3567,7 @@ pub mod assistant_association_data {
             self.association_data = Some(input);
             self
         }
+        /// <p>A union type that currently has a single argument, the knowledge base ID.</p>
         pub fn set_association_data(
             mut self,
             input: std::option::Option<crate::model::AssistantAssociationOutputData>,
@@ -3278,6 +3575,11 @@ pub mod assistant_association_data {
             self.association_data = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -3288,6 +3590,7 @@ pub mod assistant_association_data {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The tags used to organize, track, or control access for this resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -3318,6 +3621,7 @@ impl AssistantAssociationData {
     }
 }
 
+/// <p>The data that is input into Wisdom as a result of the assistant association.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum AssistantAssociationInputData {
@@ -3326,6 +3630,8 @@ pub enum AssistantAssociationInputData {
 }
 impl AssistantAssociationInputData {
     #[allow(irrefutable_let_patterns)]
+    /// Tries to convert the enum instance into its [`AssistantAssociationInputData`](crate::model::AssistantAssociationInputData) variant.
+    /// Returns `Err(&Self) if it can't be converted.`
     pub fn as_knowledge_base_id(&self) -> std::result::Result<&std::string::String, &Self> {
         if let AssistantAssociationInputData::KnowledgeBaseId(val) = &self {
             Ok(&val)
@@ -3333,6 +3639,7 @@ impl AssistantAssociationInputData {
             Err(&self)
         }
     }
+    /// Returns true if the enum instance is the `AssistantAssociationInputData` variant.
     pub fn is_knowledge_base_id(&self) -> bool {
         self.as_knowledge_base_id().is_ok()
     }

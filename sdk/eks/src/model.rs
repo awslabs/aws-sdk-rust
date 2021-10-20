@@ -12,7 +12,7 @@ pub struct Update {
     /// <p>A key-value map that contains the parameters associated with the update.</p>
     pub params: std::option::Option<std::vec::Vec<crate::model::UpdateParam>>,
     /// <p>The Unix epoch timestamp in seconds for when the update was created.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Any errors associated with a <code>Failed</code> update.</p>
     pub errors: std::option::Option<std::vec::Vec<crate::model::ErrorDetail>>,
 }
@@ -38,7 +38,7 @@ pub mod update {
         pub(crate) status: std::option::Option<crate::model::UpdateStatus>,
         pub(crate) r#type: std::option::Option<crate::model::UpdateType>,
         pub(crate) params: std::option::Option<std::vec::Vec<crate::model::UpdateParam>>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) errors: std::option::Option<std::vec::Vec<crate::model::ErrorDetail>>,
     }
     impl Builder {
@@ -47,6 +47,7 @@ pub mod update {
             self.id = Some(input.into());
             self
         }
+        /// <p>A UUID that is used to track the update.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -56,6 +57,7 @@ pub mod update {
             self.status = Some(input);
             self
         }
+        /// <p>The current status of the update.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::UpdateStatus>,
@@ -68,16 +70,23 @@ pub mod update {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of the update.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::UpdateType>) -> Self {
             self.r#type = input;
             self
         }
+        /// Appends an item to `params`.
+        ///
+        /// To override the contents of this collection use [`set_params`](Self::set_params).
+        ///
+        /// <p>A key-value map that contains the parameters associated with the update.</p>
         pub fn params(mut self, input: impl Into<crate::model::UpdateParam>) -> Self {
             let mut v = self.params.unwrap_or_default();
             v.push(input.into());
             self.params = Some(v);
             self
         }
+        /// <p>A key-value map that contains the parameters associated with the update.</p>
         pub fn set_params(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UpdateParam>>,
@@ -86,20 +95,30 @@ pub mod update {
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the update was created.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The Unix epoch timestamp in seconds for when the update was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
+        /// Appends an item to `errors`.
+        ///
+        /// To override the contents of this collection use [`set_errors`](Self::set_errors).
+        ///
+        /// <p>Any errors associated with a <code>Failed</code> update.</p>
         pub fn errors(mut self, input: impl Into<crate::model::ErrorDetail>) -> Self {
             let mut v = self.errors.unwrap_or_default();
             v.push(input.into());
             self.errors = Some(v);
             self
         }
+        /// <p>Any errors associated with a <code>Failed</code> update.</p>
         pub fn set_errors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ErrorDetail>>,
@@ -239,6 +258,45 @@ pub mod error_detail {
             self.error_code = Some(input);
             self
         }
+        /// <p>A brief description of the error. </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>SubnetNotFound</b>: We couldn't find one of the
+        /// subnets associated with the cluster.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>SecurityGroupNotFound</b>: We couldn't find one
+        /// of the security groups associated with the cluster.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>EniLimitReached</b>: You have reached the elastic
+        /// network interface limit for your account.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>IpNotAvailable</b>: A subnet associated with the
+        /// cluster doesn't have any free IP addresses.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>AccessDenied</b>: You don't have permissions to
+        /// perform the specified operation.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>OperationNotPermitted</b>: The service role
+        /// associated with the cluster doesn't have the required access permissions for
+        /// Amazon EKS.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>VpcIdNotFound</b>: We couldn't find the VPC
+        /// associated with the cluster.</p>
+        /// </li>
+        /// </ul>
         pub fn set_error_code(
             mut self,
             input: std::option::Option<crate::model::ErrorCode>,
@@ -251,6 +309,7 @@ pub mod error_detail {
             self.error_message = Some(input.into());
             self
         }
+        /// <p>A more complete description of the error.</p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -258,12 +317,18 @@ pub mod error_detail {
             self.error_message = input;
             self
         }
+        /// Appends an item to `resource_ids`.
+        ///
+        /// To override the contents of this collection use [`set_resource_ids`](Self::set_resource_ids).
+        ///
+        /// <p>An optional field that contains the resource IDs associated with the error.</p>
         pub fn resource_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_ids.unwrap_or_default();
             v.push(input.into());
             self.resource_ids = Some(v);
             self
         }
+        /// <p>An optional field that contains the resource IDs associated with the error.</p>
         pub fn set_resource_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -288,7 +353,7 @@ impl ErrorDetail {
     }
 }
 
-/// **NOTE:** `ErrorCode::Unknown` has been renamed to `::UnknownValue`.
+/// _Note: `ErrorCode::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -300,23 +365,39 @@ impl ErrorDetail {
     std::hash::Hash,
 )]
 pub enum ErrorCode {
+    #[allow(missing_docs)] // documentation missing in model
     AccessDenied,
+    #[allow(missing_docs)] // documentation missing in model
     AdmissionRequestDenied,
+    #[allow(missing_docs)] // documentation missing in model
     ClusterUnreachable,
+    #[allow(missing_docs)] // documentation missing in model
     ConfigurationConflict,
+    #[allow(missing_docs)] // documentation missing in model
     EniLimitReached,
+    #[allow(missing_docs)] // documentation missing in model
     InsufficientFreeAddresses,
+    #[allow(missing_docs)] // documentation missing in model
     InsufficientNumberOfReplicas,
+    #[allow(missing_docs)] // documentation missing in model
     IpNotAvailable,
+    #[allow(missing_docs)] // documentation missing in model
     K8SResourceNotFound,
+    #[allow(missing_docs)] // documentation missing in model
     NodeCreationFailure,
+    #[allow(missing_docs)] // documentation missing in model
     OperationNotPermitted,
+    #[allow(missing_docs)] // documentation missing in model
     PodEvictionFailure,
+    #[allow(missing_docs)] // documentation missing in model
     SecurityGroupNotFound,
+    #[allow(missing_docs)] // documentation missing in model
     SubnetNotFound,
-    /// **NOTE:** `::Unknown` has been renamed to `::UnknownValue`.
+    /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
     UnknownValue,
+    #[allow(missing_docs)] // documentation missing in model
     UnsupportedAddonModification,
+    #[allow(missing_docs)] // documentation missing in model
     VpcIdNotFound,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -353,6 +434,7 @@ impl std::str::FromStr for ErrorCode {
     }
 }
 impl ErrorCode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ErrorCode::AccessDenied => "AccessDenied",
@@ -375,6 +457,7 @@ impl ErrorCode {
             ErrorCode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "AccessDenied",
@@ -435,6 +518,7 @@ pub mod update_param {
             self.r#type = Some(input);
             self
         }
+        /// <p>The keys associated with an update request.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::UpdateParamType>,
@@ -447,6 +531,7 @@ pub mod update_param {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value of the keys submitted as part of an update request.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -467,6 +552,7 @@ impl UpdateParam {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -478,28 +564,51 @@ impl UpdateParam {
     std::hash::Hash,
 )]
 pub enum UpdateParamType {
+    #[allow(missing_docs)] // documentation missing in model
     AddonVersion,
+    #[allow(missing_docs)] // documentation missing in model
     ClusterLogging,
+    #[allow(missing_docs)] // documentation missing in model
     DesiredSize,
+    #[allow(missing_docs)] // documentation missing in model
     EncryptionConfig,
+    #[allow(missing_docs)] // documentation missing in model
     EndpointPrivateAccess,
+    #[allow(missing_docs)] // documentation missing in model
     EndpointPublicAccess,
+    #[allow(missing_docs)] // documentation missing in model
     IdentityProviderConfig,
+    #[allow(missing_docs)] // documentation missing in model
     LabelsToAdd,
+    #[allow(missing_docs)] // documentation missing in model
     LabelsToRemove,
+    #[allow(missing_docs)] // documentation missing in model
     LaunchTemplateName,
+    #[allow(missing_docs)] // documentation missing in model
     LaunchTemplateVersion,
+    #[allow(missing_docs)] // documentation missing in model
     MaxSize,
+    #[allow(missing_docs)] // documentation missing in model
     MaxUnavailable,
+    #[allow(missing_docs)] // documentation missing in model
     MaxUnavailablePercentage,
+    #[allow(missing_docs)] // documentation missing in model
     MinSize,
+    #[allow(missing_docs)] // documentation missing in model
     PlatformVersion,
+    #[allow(missing_docs)] // documentation missing in model
     PublicAccessCidrs,
+    #[allow(missing_docs)] // documentation missing in model
     ReleaseVersion,
+    #[allow(missing_docs)] // documentation missing in model
     ResolveConflicts,
+    #[allow(missing_docs)] // documentation missing in model
     ServiceAccountRoleArn,
+    #[allow(missing_docs)] // documentation missing in model
     TaintsToAdd,
+    #[allow(missing_docs)] // documentation missing in model
     TaintsToRemove,
+    #[allow(missing_docs)] // documentation missing in model
     Version,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -542,6 +651,7 @@ impl std::str::FromStr for UpdateParamType {
     }
 }
 impl UpdateParamType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             UpdateParamType::AddonVersion => "AddonVersion",
@@ -570,6 +680,7 @@ impl UpdateParamType {
             UpdateParamType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "AddonVersion",
@@ -604,6 +715,7 @@ impl AsRef<str> for UpdateParamType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -615,13 +727,21 @@ impl AsRef<str> for UpdateParamType {
     std::hash::Hash,
 )]
 pub enum UpdateType {
+    #[allow(missing_docs)] // documentation missing in model
     AddonUpdate,
+    #[allow(missing_docs)] // documentation missing in model
     AssociateEncryptionConfig,
+    #[allow(missing_docs)] // documentation missing in model
     AssociateIdentityProviderConfig,
+    #[allow(missing_docs)] // documentation missing in model
     ConfigUpdate,
+    #[allow(missing_docs)] // documentation missing in model
     DisassociateIdentityProviderConfig,
+    #[allow(missing_docs)] // documentation missing in model
     EndpointAccessUpdate,
+    #[allow(missing_docs)] // documentation missing in model
     LoggingUpdate,
+    #[allow(missing_docs)] // documentation missing in model
     VersionUpdate,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -649,6 +769,7 @@ impl std::str::FromStr for UpdateType {
     }
 }
 impl UpdateType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             UpdateType::AddonUpdate => "AddonUpdate",
@@ -662,6 +783,7 @@ impl UpdateType {
             UpdateType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "AddonUpdate",
@@ -681,6 +803,7 @@ impl AsRef<str> for UpdateType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -692,9 +815,13 @@ impl AsRef<str> for UpdateType {
     std::hash::Hash,
 )]
 pub enum UpdateStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Cancelled,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     InProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Successful,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -718,6 +845,7 @@ impl std::str::FromStr for UpdateStatus {
     }
 }
 impl UpdateStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             UpdateStatus::Cancelled => "Cancelled",
@@ -727,6 +855,7 @@ impl UpdateStatus {
             UpdateStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Cancelled", "Failed", "InProgress", "Successful"]
     }
@@ -790,6 +919,7 @@ pub mod launch_template_specification {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the launch template.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -800,6 +930,8 @@ pub mod launch_template_specification {
             self.version = Some(input.into());
             self
         }
+        /// <p>The version of the launch template to use. If no version is specified, then the
+        /// template's default version is used.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -809,6 +941,7 @@ pub mod launch_template_specification {
             self.id = Some(input.into());
             self
         }
+        /// <p>The ID of the launch template.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -870,6 +1003,9 @@ pub mod nodegroup_update_config {
             self.max_unavailable = Some(input);
             self
         }
+        /// <p>The maximum number of nodes unavailable at once during a version update. Nodes will be updated in parallel.
+        /// This value or <code>maxUnavailablePercentage</code> is required to have a value.The maximum number
+        /// is 100.</p>
         pub fn set_max_unavailable(mut self, input: std::option::Option<i32>) -> Self {
             self.max_unavailable = input;
             self
@@ -880,6 +1016,8 @@ pub mod nodegroup_update_config {
             self.max_unavailable_percentage = Some(input);
             self
         }
+        /// <p>The maximum percentage of nodes unavailable during a version update. This percentage of nodes will be
+        /// updated in parallel, up to 100 nodes at once. This value or <code>maxUnavailable</code> is required to have a value.</p>
         pub fn set_max_unavailable_percentage(mut self, input: std::option::Option<i32>) -> Self {
             self.max_unavailable_percentage = input;
             self
@@ -941,6 +1079,7 @@ pub mod nodegroup_scaling_config {
             self.min_size = Some(input);
             self
         }
+        /// <p>The minimum number of nodes that the managed node group can scale in to.</p>
         pub fn set_min_size(mut self, input: std::option::Option<i32>) -> Self {
             self.min_size = input;
             self
@@ -952,6 +1091,9 @@ pub mod nodegroup_scaling_config {
             self.max_size = Some(input);
             self
         }
+        /// <p>The maximum number of nodes that the managed node group can scale out to. For
+        /// information about the maximum number that you can specify, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/service-quotas.html">Amazon EKS service
+        /// quotas</a> in the <i>Amazon EKS User Guide</i>.</p>
         pub fn set_max_size(mut self, input: std::option::Option<i32>) -> Self {
             self.max_size = input;
             self
@@ -961,6 +1103,7 @@ pub mod nodegroup_scaling_config {
             self.desired_size = Some(input);
             self
         }
+        /// <p>The current number of nodes that the managed node group should maintain.</p>
         pub fn set_desired_size(mut self, input: std::option::Option<i32>) -> Self {
             self.desired_size = input;
             self
@@ -1009,12 +1152,18 @@ pub mod update_taints_payload {
         pub(crate) remove_taints: std::option::Option<std::vec::Vec<crate::model::Taint>>,
     }
     impl Builder {
+        /// Appends an item to `add_or_update_taints`.
+        ///
+        /// To override the contents of this collection use [`set_add_or_update_taints`](Self::set_add_or_update_taints).
+        ///
+        /// <p>Kubernetes taints to be added or updated.</p>
         pub fn add_or_update_taints(mut self, input: impl Into<crate::model::Taint>) -> Self {
             let mut v = self.add_or_update_taints.unwrap_or_default();
             v.push(input.into());
             self.add_or_update_taints = Some(v);
             self
         }
+        /// <p>Kubernetes taints to be added or updated.</p>
         pub fn set_add_or_update_taints(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Taint>>,
@@ -1022,12 +1171,18 @@ pub mod update_taints_payload {
             self.add_or_update_taints = input;
             self
         }
+        /// Appends an item to `remove_taints`.
+        ///
+        /// To override the contents of this collection use [`set_remove_taints`](Self::set_remove_taints).
+        ///
+        /// <p>Kubernetes taints to be removed.</p>
         pub fn remove_taints(mut self, input: impl Into<crate::model::Taint>) -> Self {
             let mut v = self.remove_taints.unwrap_or_default();
             v.push(input.into());
             self.remove_taints = Some(v);
             self
         }
+        /// <p>Kubernetes taints to be removed.</p>
         pub fn set_remove_taints(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Taint>>,
@@ -1087,6 +1242,7 @@ pub mod taint {
             self.key = Some(input.into());
             self
         }
+        /// <p>The key of the taint.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -1096,6 +1252,7 @@ pub mod taint {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value of the taint.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -1105,6 +1262,7 @@ pub mod taint {
             self.effect = Some(input);
             self
         }
+        /// <p>The effect of the taint.</p>
         pub fn set_effect(mut self, input: std::option::Option<crate::model::TaintEffect>) -> Self {
             self.effect = input;
             self
@@ -1126,6 +1284,7 @@ impl Taint {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1137,8 +1296,11 @@ impl Taint {
     std::hash::Hash,
 )]
 pub enum TaintEffect {
+    #[allow(missing_docs)] // documentation missing in model
     NoExecute,
+    #[allow(missing_docs)] // documentation missing in model
     NoSchedule,
+    #[allow(missing_docs)] // documentation missing in model
     PreferNoSchedule,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1161,6 +1323,7 @@ impl std::str::FromStr for TaintEffect {
     }
 }
 impl TaintEffect {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TaintEffect::NoExecute => "NO_EXECUTE",
@@ -1169,6 +1332,7 @@ impl TaintEffect {
             TaintEffect::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["NO_EXECUTE", "NO_SCHEDULE", "PREFER_NO_SCHEDULE"]
     }
@@ -1209,6 +1373,11 @@ pub mod update_labels_payload {
         pub(crate) remove_labels: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Adds a key-value pair to `add_or_update_labels`.
+        ///
+        /// To override the contents of this collection use [`set_add_or_update_labels`](Self::set_add_or_update_labels).
+        ///
+        /// <p>Kubernetes labels to be added or updated.</p>
         pub fn add_or_update_labels(
             mut self,
             k: impl Into<std::string::String>,
@@ -1219,6 +1388,7 @@ pub mod update_labels_payload {
             self.add_or_update_labels = Some(hash_map);
             self
         }
+        /// <p>Kubernetes labels to be added or updated.</p>
         pub fn set_add_or_update_labels(
             mut self,
             input: std::option::Option<
@@ -1228,12 +1398,18 @@ pub mod update_labels_payload {
             self.add_or_update_labels = input;
             self
         }
+        /// Appends an item to `remove_labels`.
+        ///
+        /// To override the contents of this collection use [`set_remove_labels`](Self::set_remove_labels).
+        ///
+        /// <p>Kubernetes labels to be removed.</p>
         pub fn remove_labels(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.remove_labels.unwrap_or_default();
             v.push(input.into());
             self.remove_labels = Some(v);
             self
         }
+        /// <p>Kubernetes labels to be removed.</p>
         pub fn set_remove_labels(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1280,12 +1456,18 @@ pub mod logging {
         pub(crate) cluster_logging: std::option::Option<std::vec::Vec<crate::model::LogSetup>>,
     }
     impl Builder {
+        /// Appends an item to `cluster_logging`.
+        ///
+        /// To override the contents of this collection use [`set_cluster_logging`](Self::set_cluster_logging).
+        ///
+        /// <p>The cluster control plane logging configuration for your cluster.</p>
         pub fn cluster_logging(mut self, input: impl Into<crate::model::LogSetup>) -> Self {
             let mut v = self.cluster_logging.unwrap_or_default();
             v.push(input.into());
             self.cluster_logging = Some(v);
             self
         }
+        /// <p>The cluster control plane logging configuration for your cluster.</p>
         pub fn set_cluster_logging(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LogSetup>>,
@@ -1338,12 +1520,18 @@ pub mod log_setup {
         pub(crate) enabled: std::option::Option<bool>,
     }
     impl Builder {
+        /// Appends an item to `types`.
+        ///
+        /// To override the contents of this collection use [`set_types`](Self::set_types).
+        ///
+        /// <p>The available cluster control plane log types.</p>
         pub fn types(mut self, input: impl Into<crate::model::LogType>) -> Self {
             let mut v = self.types.unwrap_or_default();
             v.push(input.into());
             self.types = Some(v);
             self
         }
+        /// <p>The available cluster control plane log types.</p>
         pub fn set_types(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LogType>>,
@@ -1358,6 +1546,9 @@ pub mod log_setup {
             self.enabled = Some(input);
             self
         }
+        /// <p>If a log type is enabled, that log type exports its control plane logs to CloudWatch Logs. If a
+        /// log type isn't enabled, that log type doesn't export its control plane logs. Each
+        /// individual log type can be enabled or disabled independently.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -1378,6 +1569,7 @@ impl LogSetup {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1389,10 +1581,15 @@ impl LogSetup {
     std::hash::Hash,
 )]
 pub enum LogType {
+    #[allow(missing_docs)] // documentation missing in model
     Api,
+    #[allow(missing_docs)] // documentation missing in model
     Audit,
+    #[allow(missing_docs)] // documentation missing in model
     Authenticator,
+    #[allow(missing_docs)] // documentation missing in model
     ControllerManager,
+    #[allow(missing_docs)] // documentation missing in model
     Scheduler,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1417,6 +1614,7 @@ impl std::str::FromStr for LogType {
     }
 }
 impl LogType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LogType::Api => "api",
@@ -1427,6 +1625,7 @@ impl LogType {
             LogType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "api",
@@ -1522,12 +1721,22 @@ pub mod vpc_config_request {
         pub(crate) public_access_cidrs: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `subnet_ids`.
+        ///
+        /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
+        ///
+        /// <p>Specify subnets for your Amazon EKS nodes. Amazon EKS creates cross-account elastic network
+        /// interfaces in these subnets to allow communication between your nodes and the Kubernetes
+        /// control plane.</p>
         pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnet_ids.unwrap_or_default();
             v.push(input.into());
             self.subnet_ids = Some(v);
             self
         }
+        /// <p>Specify subnets for your Amazon EKS nodes. Amazon EKS creates cross-account elastic network
+        /// interfaces in these subnets to allow communication between your nodes and the Kubernetes
+        /// control plane.</p>
         pub fn set_subnet_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1535,12 +1744,48 @@ pub mod vpc_config_request {
             self.subnet_ids = input;
             self
         }
+        /// Appends an item to `security_group_ids`.
+        ///
+        /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
+        ///
+        /// <p>Specify one or more security groups for the cross-account elastic network interfaces
+        /// that Amazon EKS creates to use that allow communication between your nodes and the Kubernetes
+        /// control plane. If you don't specify any security groups, then familiarize yourself with
+        /// the difference between Amazon EKS defaults for clusters deployed with Kubernetes:</p>
+        /// <ul>
+        /// <li>
+        /// <p>1.14 Amazon EKS platform version <code>eks.2</code> and earlier</p>
+        /// </li>
+        /// <li>
+        /// <p>1.14 Amazon EKS platform version <code>eks.3</code> and later </p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Amazon EKS security group
+        /// considerations</a> in the <i>
+        /// <i>Amazon EKS User Guide</i>
+        /// </i>.</p>
         pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_ids.unwrap_or_default();
             v.push(input.into());
             self.security_group_ids = Some(v);
             self
         }
+        /// <p>Specify one or more security groups for the cross-account elastic network interfaces
+        /// that Amazon EKS creates to use that allow communication between your nodes and the Kubernetes
+        /// control plane. If you don't specify any security groups, then familiarize yourself with
+        /// the difference between Amazon EKS defaults for clusters deployed with Kubernetes:</p>
+        /// <ul>
+        /// <li>
+        /// <p>1.14 Amazon EKS platform version <code>eks.2</code> and earlier</p>
+        /// </li>
+        /// <li>
+        /// <p>1.14 Amazon EKS platform version <code>eks.3</code> and later </p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Amazon EKS security group
+        /// considerations</a> in the <i>
+        /// <i>Amazon EKS User Guide</i>
+        /// </i>.</p>
         pub fn set_security_group_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1560,6 +1805,14 @@ pub mod vpc_config_request {
             self.endpoint_public_access = Some(input);
             self
         }
+        /// <p>Set this value to <code>false</code> to disable public access to your cluster's
+        /// Kubernetes API server endpoint. If you disable public access, your cluster's Kubernetes
+        /// API server can only receive requests from within the cluster VPC. The default value for
+        /// this parameter is <code>true</code>, which enables public access for your Kubernetes API
+        /// server. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS cluster
+        /// endpoint access control</a> in the <i>
+        /// <i>Amazon EKS User Guide</i>
+        /// </i>.</p>
         pub fn set_endpoint_public_access(mut self, input: std::option::Option<bool>) -> Self {
             self.endpoint_public_access = input;
             self
@@ -1578,16 +1831,46 @@ pub mod vpc_config_request {
             self.endpoint_private_access = Some(input);
             self
         }
+        /// <p>Set this value to <code>true</code> to enable private access for your cluster's
+        /// Kubernetes API server endpoint. If you enable private access, Kubernetes API requests
+        /// from within your cluster's VPC use the private VPC endpoint. The default value for this
+        /// parameter is <code>false</code>, which disables private access for your Kubernetes API
+        /// server. If you disable private access and you have nodes or Fargate pods in the
+        /// cluster, then ensure that <code>publicAccessCidrs</code> includes the necessary CIDR
+        /// blocks for communication with the nodes or Fargate pods. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS cluster
+        /// endpoint access control</a> in the <i>
+        /// <i>Amazon EKS User Guide</i>
+        /// </i>.</p>
         pub fn set_endpoint_private_access(mut self, input: std::option::Option<bool>) -> Self {
             self.endpoint_private_access = input;
             self
         }
+        /// Appends an item to `public_access_cidrs`.
+        ///
+        /// To override the contents of this collection use [`set_public_access_cidrs`](Self::set_public_access_cidrs).
+        ///
+        /// <p>The CIDR blocks that are allowed access to your cluster's public Kubernetes API server
+        /// endpoint. Communication to the endpoint from addresses outside of the CIDR blocks that
+        /// you specify is denied. The default value is <code>0.0.0.0/0</code>. If you've disabled
+        /// private endpoint access and you have nodes or Fargate pods in the cluster, then ensure
+        /// that you specify the necessary CIDR blocks. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS cluster
+        /// endpoint access control</a> in the <i>
+        /// <i>Amazon EKS User Guide</i>
+        /// </i>.</p>
         pub fn public_access_cidrs(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.public_access_cidrs.unwrap_or_default();
             v.push(input.into());
             self.public_access_cidrs = Some(v);
             self
         }
+        /// <p>The CIDR blocks that are allowed access to your cluster's public Kubernetes API server
+        /// endpoint. Communication to the endpoint from addresses outside of the CIDR blocks that
+        /// you specify is denied. The default value is <code>0.0.0.0/0</code>. If you've disabled
+        /// private endpoint access and you have nodes or Fargate pods in the cluster, then ensure
+        /// that you specify the necessary CIDR blocks. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS cluster
+        /// endpoint access control</a> in the <i>
+        /// <i>Amazon EKS User Guide</i>
+        /// </i>.</p>
         pub fn set_public_access_cidrs(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1614,6 +1897,7 @@ impl VpcConfigRequest {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1625,7 +1909,9 @@ impl VpcConfigRequest {
     std::hash::Hash,
 )]
 pub enum ResolveConflicts {
+    #[allow(missing_docs)] // documentation missing in model
     None,
+    #[allow(missing_docs)] // documentation missing in model
     Overwrite,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1647,6 +1933,7 @@ impl std::str::FromStr for ResolveConflicts {
     }
 }
 impl ResolveConflicts {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ResolveConflicts::None => "NONE",
@@ -1654,6 +1941,7 @@ impl ResolveConflicts {
             ResolveConflicts::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["NONE", "OVERWRITE"]
     }
@@ -1673,7 +1961,7 @@ pub struct Cluster {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The Unix epoch timestamp in seconds for when the cluster was created.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The Kubernetes server version for the cluster.</p>
     pub version: std::option::Option<std::string::String>,
     /// <p>The endpoint for your Kubernetes API server.</p>
@@ -1747,7 +2035,7 @@ pub mod cluster {
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) version: std::option::Option<std::string::String>,
         pub(crate) endpoint: std::option::Option<std::string::String>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
@@ -1773,6 +2061,7 @@ pub mod cluster {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the cluster.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1782,16 +2071,21 @@ pub mod cluster {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the cluster was created.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The Unix epoch timestamp in seconds for when the cluster was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
@@ -1800,6 +2094,7 @@ pub mod cluster {
             self.version = Some(input.into());
             self
         }
+        /// <p>The Kubernetes server version for the cluster.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -1809,6 +2104,7 @@ pub mod cluster {
             self.endpoint = Some(input.into());
             self
         }
+        /// <p>The endpoint for your Kubernetes API server.</p>
         pub fn set_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.endpoint = input;
             self
@@ -1819,6 +2115,8 @@ pub mod cluster {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control
+        /// plane to make calls to Amazon Web Services API operations on your behalf.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -1831,6 +2129,10 @@ pub mod cluster {
             self.resources_vpc_config = Some(input);
             self
         }
+        /// <p>The VPC configuration used by the cluster control plane. Amazon EKS VPC resources have
+        /// specific requirements to work properly with Kubernetes. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC
+        /// Considerations</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group Considerations</a> in the
+        /// <i>Amazon EKS User Guide</i>.</p>
         pub fn set_resources_vpc_config(
             mut self,
             input: std::option::Option<crate::model::VpcConfigResponse>,
@@ -1846,6 +2148,7 @@ pub mod cluster {
             self.kubernetes_network_config = Some(input);
             self
         }
+        /// <p>The Kubernetes network configuration for the cluster.</p>
         pub fn set_kubernetes_network_config(
             mut self,
             input: std::option::Option<crate::model::KubernetesNetworkConfigResponse>,
@@ -1858,6 +2161,7 @@ pub mod cluster {
             self.logging = Some(input);
             self
         }
+        /// <p>The logging configuration for your cluster.</p>
         pub fn set_logging(mut self, input: std::option::Option<crate::model::Logging>) -> Self {
             self.logging = input;
             self
@@ -1867,6 +2171,7 @@ pub mod cluster {
             self.identity = Some(input);
             self
         }
+        /// <p>The identity provider information for the cluster.</p>
         pub fn set_identity(mut self, input: std::option::Option<crate::model::Identity>) -> Self {
             self.identity = input;
             self
@@ -1876,6 +2181,7 @@ pub mod cluster {
             self.status = Some(input);
             self
         }
+        /// <p>The current status of the cluster.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ClusterStatus>,
@@ -1888,6 +2194,7 @@ pub mod cluster {
             self.certificate_authority = Some(input);
             self
         }
+        /// <p>The <code>certificate-authority-data</code> for your cluster.</p>
         pub fn set_certificate_authority(
             mut self,
             input: std::option::Option<crate::model::Certificate>,
@@ -1901,6 +2208,8 @@ pub mod cluster {
             self.client_request_token = Some(input.into());
             self
         }
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1916,6 +2225,10 @@ pub mod cluster {
             self.platform_version = Some(input.into());
             self
         }
+        /// <p>The platform version of your Amazon EKS cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform
+        /// Versions</a> in the <i>
+        /// <i>Amazon EKS User Guide</i>
+        /// </i>.</p>
         pub fn set_platform_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1923,6 +2236,14 @@ pub mod cluster {
             self.platform_version = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The metadata that you apply to the cluster to assist with categorization and
+        /// organization. Each tag consists of a key and an optional value, both of which you
+        /// define. Cluster tags do not propagate to any other resources associated with the
+        /// cluster.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1933,6 +2254,10 @@ pub mod cluster {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The metadata that you apply to the cluster to assist with categorization and
+        /// organization. Each tag consists of a key and an optional value, both of which you
+        /// define. Cluster tags do not propagate to any other resources associated with the
+        /// cluster.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1942,6 +2267,11 @@ pub mod cluster {
             self.tags = input;
             self
         }
+        /// Appends an item to `encryption_config`.
+        ///
+        /// To override the contents of this collection use [`set_encryption_config`](Self::set_encryption_config).
+        ///
+        /// <p>The encryption configuration for the cluster.</p>
         pub fn encryption_config(
             mut self,
             input: impl Into<crate::model::EncryptionConfig>,
@@ -1951,6 +2281,7 @@ pub mod cluster {
             self.encryption_config = Some(v);
             self
         }
+        /// <p>The encryption configuration for the cluster.</p>
         pub fn set_encryption_config(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EncryptionConfig>>,
@@ -1963,6 +2294,7 @@ pub mod cluster {
             self.connector_config = Some(input);
             self
         }
+        /// <p>The configuration used to connect to a cluster for registration.</p>
         pub fn set_connector_config(
             mut self,
             input: std::option::Option<crate::model::ConnectorConfigResponse>,
@@ -2011,7 +2343,7 @@ pub struct ConnectorConfigResponse {
     pub activation_code: std::option::Option<std::string::String>,
     /// <p>The expiration time of the connected cluster. The cluster's YAML file must be applied through the native
     /// provider.</p>
-    pub activation_expiry: std::option::Option<smithy_types::Instant>,
+    pub activation_expiry: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The cluster's cloud service provider.</p>
     pub provider: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the role that is used by the EKS connector to communicate with AWS services from the connected Kubernetes cluster.</p>
@@ -2036,7 +2368,7 @@ pub mod connector_config_response {
     pub struct Builder {
         pub(crate) activation_id: std::option::Option<std::string::String>,
         pub(crate) activation_code: std::option::Option<std::string::String>,
-        pub(crate) activation_expiry: std::option::Option<smithy_types::Instant>,
+        pub(crate) activation_expiry: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) provider: std::option::Option<std::string::String>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
     }
@@ -2046,6 +2378,7 @@ pub mod connector_config_response {
             self.activation_id = Some(input.into());
             self
         }
+        /// <p>A unique ID associated with the cluster for registration purposes.</p>
         pub fn set_activation_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2058,6 +2391,7 @@ pub mod connector_config_response {
             self.activation_code = Some(input.into());
             self
         }
+        /// <p>A unique code associated with the cluster for registration purposes.</p>
         pub fn set_activation_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2067,13 +2401,15 @@ pub mod connector_config_response {
         }
         /// <p>The expiration time of the connected cluster. The cluster's YAML file must be applied through the native
         /// provider.</p>
-        pub fn activation_expiry(mut self, input: smithy_types::Instant) -> Self {
+        pub fn activation_expiry(mut self, input: aws_smithy_types::Instant) -> Self {
             self.activation_expiry = Some(input);
             self
         }
+        /// <p>The expiration time of the connected cluster. The cluster's YAML file must be applied through the native
+        /// provider.</p>
         pub fn set_activation_expiry(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.activation_expiry = input;
             self
@@ -2083,6 +2419,7 @@ pub mod connector_config_response {
             self.provider = Some(input.into());
             self
         }
+        /// <p>The cluster's cloud service provider.</p>
         pub fn set_provider(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.provider = input;
             self
@@ -2092,6 +2429,7 @@ pub mod connector_config_response {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the role that is used by the EKS connector to communicate with AWS services from the connected Kubernetes cluster.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -2142,12 +2480,18 @@ pub mod encryption_config {
         pub(crate) provider: std::option::Option<crate::model::Provider>,
     }
     impl Builder {
+        /// Appends an item to `resources`.
+        ///
+        /// To override the contents of this collection use [`set_resources`](Self::set_resources).
+        ///
+        /// <p>Specifies the resources to be encrypted. The only supported value is "secrets".</p>
         pub fn resources(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resources.unwrap_or_default();
             v.push(input.into());
             self.resources = Some(v);
             self
         }
+        /// <p>Specifies the resources to be encrypted. The only supported value is "secrets".</p>
         pub fn set_resources(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2160,6 +2504,7 @@ pub mod encryption_config {
             self.provider = Some(input);
             self
         }
+        /// <p>Key Management Service (KMS) key. Either the ARN or the alias can be used.</p>
         pub fn set_provider(mut self, input: std::option::Option<crate::model::Provider>) -> Self {
             self.provider = input;
             self
@@ -2216,6 +2561,11 @@ pub mod provider {
             self.key_arn = Some(input.into());
             self
         }
+        /// <p>Amazon Resource Name (ARN) or alias of the KMS key. The KMS key must be symmetric, created in the same
+        /// region as the cluster, and if the KMS key was created in a different account, the user
+        /// must have access to the KMS key. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-modifying-external-accounts.html">Allowing
+        /// Users in Other Accounts to Use a KMS key</a> in the <i>Key Management Service
+        /// Developer Guide</i>.</p>
         pub fn set_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_arn = input;
             self
@@ -2268,6 +2618,9 @@ pub mod certificate {
             self.data = Some(input.into());
             self
         }
+        /// <p>The Base64-encoded certificate data required to communicate with your cluster. Add
+        /// this to the <code>certificate-authority-data</code> section of the
+        /// <code>kubeconfig</code> file for your cluster.</p>
         pub fn set_data(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.data = input;
             self
@@ -2285,6 +2638,7 @@ impl Certificate {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2296,11 +2650,17 @@ impl Certificate {
     std::hash::Hash,
 )]
 pub enum ClusterStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     Creating,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
+    #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2326,6 +2686,7 @@ impl std::str::FromStr for ClusterStatus {
     }
 }
 impl ClusterStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ClusterStatus::Active => "ACTIVE",
@@ -2337,6 +2698,7 @@ impl ClusterStatus {
             ClusterStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ACTIVE", "CREATING", "DELETING", "FAILED", "PENDING", "UPDATING",
@@ -2379,6 +2741,8 @@ pub mod identity {
             self.oidc = Some(input);
             self
         }
+        /// <p>An object representing the <a href="https://openid.net/connect/">OpenID
+        /// Connect</a> identity provider information.</p>
         pub fn set_oidc(mut self, input: std::option::Option<crate::model::Oidc>) -> Self {
             self.oidc = input;
             self
@@ -2425,6 +2789,7 @@ pub mod oidc {
             self.issuer = Some(input.into());
             self
         }
+        /// <p>The issuer URL for the OIDC identity provider.</p>
         pub fn set_issuer(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.issuer = input;
             self
@@ -2478,6 +2843,10 @@ pub mod kubernetes_network_config_response {
             self.service_ipv4_cidr = Some(input.into());
             self
         }
+        /// <p>The CIDR block that Kubernetes service IP addresses are assigned from. If you didn't
+        /// specify a CIDR block when you created the cluster, then Kubernetes assigns addresses
+        /// from either the 10.100.0.0/16 or 172.20.0.0/16 CIDR blocks. If this was specified, then
+        /// it was specified when the cluster was created and it cannot be changed.</p>
         pub fn set_service_ipv4_cidr(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2567,12 +2936,18 @@ pub mod vpc_config_response {
         pub(crate) public_access_cidrs: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `subnet_ids`.
+        ///
+        /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
+        ///
+        /// <p>The subnets associated with your cluster.</p>
         pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnet_ids.unwrap_or_default();
             v.push(input.into());
             self.subnet_ids = Some(v);
             self
         }
+        /// <p>The subnets associated with your cluster.</p>
         pub fn set_subnet_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2580,12 +2955,22 @@ pub mod vpc_config_response {
             self.subnet_ids = input;
             self
         }
+        /// Appends an item to `security_group_ids`.
+        ///
+        /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
+        ///
+        /// <p>The security groups associated with the cross-account elastic network interfaces that
+        /// are used to allow communication between your nodes and the Kubernetes control
+        /// plane.</p>
         pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_ids.unwrap_or_default();
             v.push(input.into());
             self.security_group_ids = Some(v);
             self
         }
+        /// <p>The security groups associated with the cross-account elastic network interfaces that
+        /// are used to allow communication between your nodes and the Kubernetes control
+        /// plane.</p>
         pub fn set_security_group_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2599,6 +2984,8 @@ pub mod vpc_config_response {
             self.cluster_security_group_id = Some(input.into());
             self
         }
+        /// <p>The cluster security group that was created by Amazon EKS for the cluster. Managed node
+        /// groups use this security group for control-plane-to-data-plane communication.</p>
         pub fn set_cluster_security_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2611,6 +2998,7 @@ pub mod vpc_config_response {
             self.vpc_id = Some(input.into());
             self
         }
+        /// <p>The VPC associated with your cluster.</p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.vpc_id = input;
             self
@@ -2622,6 +3010,9 @@ pub mod vpc_config_response {
             self.endpoint_public_access = Some(input);
             self
         }
+        /// <p>This parameter indicates whether the Amazon EKS public API server endpoint is enabled. If
+        /// the Amazon EKS public API server endpoint is disabled, your cluster's Kubernetes API server
+        /// can only receive requests that originate from within the cluster VPC.</p>
         pub fn set_endpoint_public_access(mut self, input: std::option::Option<bool>) -> Self {
             self.endpoint_public_access = input;
             self
@@ -2639,16 +3030,45 @@ pub mod vpc_config_response {
             self.endpoint_private_access = Some(input);
             self
         }
+        /// <p>This parameter indicates whether the Amazon EKS private API server endpoint is enabled. If
+        /// the Amazon EKS private API server endpoint is enabled, Kubernetes API requests that originate
+        /// from within your cluster's VPC use the private VPC endpoint instead of traversing the
+        /// internet. If this value is disabled and you have nodes or Fargate pods in the cluster,
+        /// then ensure that <code>publicAccessCidrs</code> includes the necessary CIDR blocks for
+        /// communication with the nodes or Fargate pods. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS cluster
+        /// endpoint access control</a> in the <i>
+        /// <i>Amazon EKS User Guide</i>
+        /// </i>.</p>
         pub fn set_endpoint_private_access(mut self, input: std::option::Option<bool>) -> Self {
             self.endpoint_private_access = input;
             self
         }
+        /// Appends an item to `public_access_cidrs`.
+        ///
+        /// To override the contents of this collection use [`set_public_access_cidrs`](Self::set_public_access_cidrs).
+        ///
+        /// <p>The CIDR blocks that are allowed access to your cluster's public Kubernetes API server
+        /// endpoint. Communication to the endpoint from addresses outside of the listed CIDR blocks
+        /// is denied. The default value is <code>0.0.0.0/0</code>. If you've disabled private
+        /// endpoint access and you have nodes or Fargate pods in the cluster, then ensure that the
+        /// necessary CIDR blocks are listed. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS cluster
+        /// endpoint access control</a> in the <i>
+        /// <i>Amazon EKS User Guide</i>
+        /// </i>.</p>
         pub fn public_access_cidrs(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.public_access_cidrs.unwrap_or_default();
             v.push(input.into());
             self.public_access_cidrs = Some(v);
             self
         }
+        /// <p>The CIDR blocks that are allowed access to your cluster's public Kubernetes API server
+        /// endpoint. Communication to the endpoint from addresses outside of the listed CIDR blocks
+        /// is denied. The default value is <code>0.0.0.0/0</code>. If you've disabled private
+        /// endpoint access and you have nodes or Fargate pods in the cluster, then ensure that the
+        /// necessary CIDR blocks are listed. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS cluster
+        /// endpoint access control</a> in the <i>
+        /// <i>Amazon EKS User Guide</i>
+        /// </i>.</p>
         pub fn set_public_access_cidrs(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2709,6 +3129,7 @@ pub mod connector_config_request {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the role that is authorized to request the connector configuration.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -2718,6 +3139,7 @@ pub mod connector_config_request {
             self.provider = Some(input);
             self
         }
+        /// <p>The cloud provider for the target cluster to connect.</p>
         pub fn set_provider(
             mut self,
             input: std::option::Option<crate::model::ConnectorConfigProvider>,
@@ -2741,6 +3163,7 @@ impl ConnectorConfigRequest {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2752,14 +3175,23 @@ impl ConnectorConfigRequest {
     std::hash::Hash,
 )]
 pub enum ConnectorConfigProvider {
+    #[allow(missing_docs)] // documentation missing in model
     Aks,
+    #[allow(missing_docs)] // documentation missing in model
     Anthos,
+    #[allow(missing_docs)] // documentation missing in model
     Ec2,
+    #[allow(missing_docs)] // documentation missing in model
     EksAnywhere,
+    #[allow(missing_docs)] // documentation missing in model
     Gke,
+    #[allow(missing_docs)] // documentation missing in model
     Openshift,
+    #[allow(missing_docs)] // documentation missing in model
     Other,
+    #[allow(missing_docs)] // documentation missing in model
     Rancher,
+    #[allow(missing_docs)] // documentation missing in model
     Tanzu,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2788,6 +3220,7 @@ impl std::str::FromStr for ConnectorConfigProvider {
     }
 }
 impl ConnectorConfigProvider {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ConnectorConfigProvider::Aks => "AKS",
@@ -2802,6 +3235,7 @@ impl ConnectorConfigProvider {
             ConnectorConfigProvider::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "AKS",
@@ -2854,6 +3288,7 @@ pub mod identity_provider_config {
             self.r#type = Some(input.into());
             self
         }
+        /// <p>The type of the identity provider configuration.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
@@ -2863,6 +3298,7 @@ pub mod identity_provider_config {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the identity provider configuration.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2902,10 +3338,10 @@ pub struct Nodegroup {
     pub release_version: std::option::Option<std::string::String>,
     /// <p>The Unix epoch timestamp in seconds for when the managed node group was
     /// created.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The Unix epoch timestamp in seconds for when the managed node group was last
     /// modified.</p>
-    pub modified_at: std::option::Option<smithy_types::Instant>,
+    pub modified_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The current status of the managed node group.</p>
     pub status: std::option::Option<crate::model::NodegroupStatus>,
     /// <p>The capacity type of your managed node group.</p>
@@ -3006,8 +3442,8 @@ pub mod nodegroup {
         pub(crate) cluster_name: std::option::Option<std::string::String>,
         pub(crate) version: std::option::Option<std::string::String>,
         pub(crate) release_version: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
-        pub(crate) modified_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) modified_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) status: std::option::Option<crate::model::NodegroupStatus>,
         pub(crate) capacity_type: std::option::Option<crate::model::CapacityTypes>,
         pub(crate) scaling_config: std::option::Option<crate::model::NodegroupScalingConfig>,
@@ -3035,6 +3471,7 @@ pub mod nodegroup {
             self.nodegroup_name = Some(input.into());
             self
         }
+        /// <p>The name associated with an Amazon EKS managed node group.</p>
         pub fn set_nodegroup_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3047,6 +3484,7 @@ pub mod nodegroup {
             self.nodegroup_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) associated with the managed node group.</p>
         pub fn set_nodegroup_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3059,6 +3497,7 @@ pub mod nodegroup {
             self.cluster_name = Some(input.into());
             self
         }
+        /// <p>The name of the cluster that the managed node group resides in.</p>
         pub fn set_cluster_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster_name = input;
             self
@@ -3068,6 +3507,7 @@ pub mod nodegroup {
             self.version = Some(input.into());
             self
         }
+        /// <p>The Kubernetes version of the managed node group.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -3080,6 +3520,10 @@ pub mod nodegroup {
             self.release_version = Some(input.into());
             self
         }
+        /// <p>If the node group was deployed using a launch template with a custom AMI, then this is
+        /// the AMI ID that was specified in the launch template. For node groups that weren't
+        /// deployed using a launch template, this is the version of the Amazon EKS optimized AMI that
+        /// the node group was deployed with.</p>
         pub fn set_release_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3089,23 +3533,30 @@ pub mod nodegroup {
         }
         /// <p>The Unix epoch timestamp in seconds for when the managed node group was
         /// created.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The Unix epoch timestamp in seconds for when the managed node group was
+        /// created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the managed node group was last
         /// modified.</p>
-        pub fn modified_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn modified_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.modified_at = Some(input);
             self
         }
+        /// <p>The Unix epoch timestamp in seconds for when the managed node group was last
+        /// modified.</p>
         pub fn set_modified_at(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.modified_at = input;
             self
@@ -3115,6 +3566,7 @@ pub mod nodegroup {
             self.status = Some(input);
             self
         }
+        /// <p>The current status of the managed node group.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::NodegroupStatus>,
@@ -3127,6 +3579,7 @@ pub mod nodegroup {
             self.capacity_type = Some(input);
             self
         }
+        /// <p>The capacity type of your managed node group.</p>
         pub fn set_capacity_type(
             mut self,
             input: std::option::Option<crate::model::CapacityTypes>,
@@ -3140,6 +3593,8 @@ pub mod nodegroup {
             self.scaling_config = Some(input);
             self
         }
+        /// <p>The scaling configuration details for the Auto Scaling group that is associated with
+        /// your node group.</p>
         pub fn set_scaling_config(
             mut self,
             input: std::option::Option<crate::model::NodegroupScalingConfig>,
@@ -3147,12 +3602,22 @@ pub mod nodegroup {
             self.scaling_config = input;
             self
         }
+        /// Appends an item to `instance_types`.
+        ///
+        /// To override the contents of this collection use [`set_instance_types`](Self::set_instance_types).
+        ///
+        /// <p>If the node group wasn't deployed with a launch template, then this is the instance
+        /// type that is associated with the node group. If the node group was deployed with a
+        /// launch template, then this is <code>null</code>.</p>
         pub fn instance_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.instance_types.unwrap_or_default();
             v.push(input.into());
             self.instance_types = Some(v);
             self
         }
+        /// <p>If the node group wasn't deployed with a launch template, then this is the instance
+        /// type that is associated with the node group. If the node group was deployed with a
+        /// launch template, then this is <code>null</code>.</p>
         pub fn set_instance_types(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3160,12 +3625,20 @@ pub mod nodegroup {
             self.instance_types = input;
             self
         }
+        /// Appends an item to `subnets`.
+        ///
+        /// To override the contents of this collection use [`set_subnets`](Self::set_subnets).
+        ///
+        /// <p>The subnets that were specified for the Auto Scaling group that is associated with
+        /// your node group.</p>
         pub fn subnets(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnets.unwrap_or_default();
             v.push(input.into());
             self.subnets = Some(v);
             self
         }
+        /// <p>The subnets that were specified for the Auto Scaling group that is associated with
+        /// your node group.</p>
         pub fn set_subnets(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3180,6 +3653,9 @@ pub mod nodegroup {
             self.remote_access = Some(input);
             self
         }
+        /// <p>If the node group wasn't deployed with a launch template, then this is the remote
+        /// access configuration that is associated with the node group. If the node group was
+        /// deployed with a launch template, then this is <code>null</code>.</p>
         pub fn set_remote_access(
             mut self,
             input: std::option::Option<crate::model::RemoteAccessConfig>,
@@ -3194,6 +3670,9 @@ pub mod nodegroup {
             self.ami_type = Some(input);
             self
         }
+        /// <p>If the node group was deployed using a launch template with a custom AMI, then this is
+        /// <code>CUSTOM</code>. For node groups that weren't deployed using a launch template,
+        /// this is the AMI type that was specified in the node group configuration.</p>
         pub fn set_ami_type(mut self, input: std::option::Option<crate::model::AmiTypes>) -> Self {
             self.ami_type = input;
             self
@@ -3205,10 +3684,22 @@ pub mod nodegroup {
             self.node_role = Some(input.into());
             self
         }
+        /// <p>The IAM role associated with your node group. The Amazon EKS node <code>kubelet</code>
+        /// daemon makes calls to Amazon Web Services APIs on your behalf. Nodes receive permissions for these API
+        /// calls through an IAM instance profile and associated policies.</p>
         pub fn set_node_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.node_role = input;
             self
         }
+        /// Adds a key-value pair to `labels`.
+        ///
+        /// To override the contents of this collection use [`set_labels`](Self::set_labels).
+        ///
+        /// <p>The Kubernetes labels applied to the nodes in the node group.</p>
+        /// <note>
+        /// <p>Only labels that are applied with the Amazon EKS API are shown here. There may be other
+        /// Kubernetes labels applied to the nodes in this group.</p>
+        /// </note>
         pub fn labels(
             mut self,
             k: impl Into<std::string::String>,
@@ -3219,6 +3710,11 @@ pub mod nodegroup {
             self.labels = Some(hash_map);
             self
         }
+        /// <p>The Kubernetes labels applied to the nodes in the node group.</p>
+        /// <note>
+        /// <p>Only labels that are applied with the Amazon EKS API are shown here. There may be other
+        /// Kubernetes labels applied to the nodes in this group.</p>
+        /// </note>
         pub fn set_labels(
             mut self,
             input: std::option::Option<
@@ -3228,12 +3724,24 @@ pub mod nodegroup {
             self.labels = input;
             self
         }
+        /// Appends an item to `taints`.
+        ///
+        /// To override the contents of this collection use [`set_taints`](Self::set_taints).
+        ///
+        /// <p>The Kubernetes taints to be applied to the nodes in the node group when they are
+        /// created. Effect is one of <code>No_Schedule</code>, <code>Prefer_No_Schedule</code>, or <code>No_Execute</code>. Kubernetes taints
+        /// can be used together with tolerations to control how workloads are scheduled to your
+        /// nodes.</p>
         pub fn taints(mut self, input: impl Into<crate::model::Taint>) -> Self {
             let mut v = self.taints.unwrap_or_default();
             v.push(input.into());
             self.taints = Some(v);
             self
         }
+        /// <p>The Kubernetes taints to be applied to the nodes in the node group when they are
+        /// created. Effect is one of <code>No_Schedule</code>, <code>Prefer_No_Schedule</code>, or <code>No_Execute</code>. Kubernetes taints
+        /// can be used together with tolerations to control how workloads are scheduled to your
+        /// nodes.</p>
         pub fn set_taints(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Taint>>,
@@ -3247,6 +3755,8 @@ pub mod nodegroup {
             self.resources = Some(input);
             self
         }
+        /// <p>The resources associated with the node group, such as Auto Scaling groups and security
+        /// groups for remote access.</p>
         pub fn set_resources(
             mut self,
             input: std::option::Option<crate::model::NodegroupResources>,
@@ -3261,6 +3771,9 @@ pub mod nodegroup {
             self.disk_size = Some(input);
             self
         }
+        /// <p>If the node group wasn't deployed with a launch template, then this is the disk size
+        /// in the node group configuration. If the node group was deployed with a launch template,
+        /// then this is <code>null</code>.</p>
         pub fn set_disk_size(mut self, input: std::option::Option<i32>) -> Self {
             self.disk_size = input;
             self
@@ -3271,6 +3784,8 @@ pub mod nodegroup {
             self.health = Some(input);
             self
         }
+        /// <p>The health status of the node group. If there are issues with your node group's
+        /// health, they are listed here.</p>
         pub fn set_health(
             mut self,
             input: std::option::Option<crate::model::NodegroupHealth>,
@@ -3283,6 +3798,7 @@ pub mod nodegroup {
             self.update_config = Some(input);
             self
         }
+        /// <p>The node group update configuration.</p>
         pub fn set_update_config(
             mut self,
             input: std::option::Option<crate::model::NodegroupUpdateConfig>,
@@ -3296,6 +3812,8 @@ pub mod nodegroup {
             self.launch_template = Some(input);
             self
         }
+        /// <p>If a launch template was used to create the node group, then this is the launch
+        /// template that was used.</p>
         pub fn set_launch_template(
             mut self,
             input: std::option::Option<crate::model::LaunchTemplateSpecification>,
@@ -3303,6 +3821,14 @@ pub mod nodegroup {
             self.launch_template = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The metadata applied to the node group to assist with categorization and organization.
+        /// Each tag consists of a key and an optional value, both of which you define. Node group
+        /// tags do not propagate to any other resources associated with the node group, such as the
+        /// Amazon EC2 instances or subnets. </p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -3313,6 +3839,10 @@ pub mod nodegroup {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The metadata applied to the node group to assist with categorization and organization.
+        /// Each tag consists of a key and an optional value, both of which you define. Node group
+        /// tags do not propagate to any other resources associated with the node group, such as the
+        /// Amazon EC2 instances or subnets. </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -3382,12 +3912,18 @@ pub mod nodegroup_health {
         pub(crate) issues: std::option::Option<std::vec::Vec<crate::model::Issue>>,
     }
     impl Builder {
+        /// Appends an item to `issues`.
+        ///
+        /// To override the contents of this collection use [`set_issues`](Self::set_issues).
+        ///
+        /// <p>Any issues that are associated with the node group. </p>
         pub fn issues(mut self, input: impl Into<crate::model::Issue>) -> Self {
             let mut v = self.issues.unwrap_or_default();
             v.push(input.into());
             self.issues = Some(v);
             self
         }
+        /// <p>Any issues that are associated with the node group. </p>
         pub fn set_issues(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Issue>>,
@@ -3640,6 +4176,104 @@ pub mod issue {
             self.code = Some(input);
             self
         }
+        /// <p>A brief description of the error.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>AccessDenied</b>: Amazon EKS or one or more of your
+        /// managed nodes is failing to authenticate or authorize with your Kubernetes
+        /// cluster API server.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>AsgInstanceLaunchFailures</b>: Your Auto Scaling group is
+        /// experiencing failures while attempting to launch instances.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>AutoScalingGroupNotFound</b>: We couldn't find
+        /// the Auto Scaling group associated with the managed node group. You may be able to
+        /// recreate an Auto Scaling group with the same settings to recover.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>ClusterUnreachable</b>: Amazon EKS or one or more of
+        /// your managed nodes is unable to to communicate with your Kubernetes cluster API
+        /// server. This can happen if there are network disruptions or if API servers are
+        /// timing out processing requests. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>Ec2LaunchTemplateNotFound</b>: We couldn't find
+        /// the Amazon EC2 launch template for your managed node group. You may be able to
+        /// recreate a launch template with the same settings to recover.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>Ec2LaunchTemplateVersionMismatch</b>: The Amazon EC2
+        /// launch template version for your managed node group does not match the version
+        /// that Amazon EKS created. You may be able to revert to the version that Amazon EKS created
+        /// to recover.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>Ec2SecurityGroupDeletionFailure</b>: We could not
+        /// delete the remote access security group for your managed node group. Remove any
+        /// dependencies from the security group.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>Ec2SecurityGroupNotFound</b>: We couldn't find
+        /// the cluster security group for the cluster. You must recreate your
+        /// cluster.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>Ec2SubnetInvalidConfiguration</b>: One or more
+        /// Amazon EC2 subnets specified for a node group do not automatically assign public IP
+        /// addresses to instances launched into it. If you want your instances to be
+        /// assigned a public IP address, then you need to enable the <code>auto-assign
+        /// public IP address</code> setting for the subnet. See <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-ip-addressing.html#subnet-public-ip">Modifying
+        /// the public IPv4 addressing attribute for your subnet</a> in the Amazon
+        /// VPC User Guide.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>IamInstanceProfileNotFound</b>: We couldn't find
+        /// the IAM instance profile for your managed node group. You may be able to
+        /// recreate an instance profile with the same settings to recover.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>IamNodeRoleNotFound</b>: We couldn't find the
+        /// IAM role for your managed node group. You may be able to recreate an IAM role
+        /// with the same settings to recover.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>InstanceLimitExceeded</b>: Your Amazon Web Services account is
+        /// unable to launch any more instances of the specified instance type. You may be
+        /// able to request an Amazon EC2 instance limit increase to recover.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>InsufficientFreeAddresses</b>: One or more of the
+        /// subnets associated with your managed node group does not have enough available
+        /// IP addresses for new nodes.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>InternalFailure</b>: These errors are usually
+        /// caused by an Amazon EKS server-side issue.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>NodeCreationFailure</b>: Your launched instances
+        /// are unable to register with your Amazon EKS cluster. Common causes of this failure
+        /// are insufficient <a href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">node IAM role</a>
+        /// permissions or lack of outbound internet access for the nodes. </p>
+        /// </li>
+        /// </ul>
         pub fn set_code(
             mut self,
             input: std::option::Option<crate::model::NodegroupIssueCode>,
@@ -3652,16 +4286,23 @@ pub mod issue {
             self.message = Some(input.into());
             self
         }
+        /// <p>The error message associated with the issue.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
         }
+        /// Appends an item to `resource_ids`.
+        ///
+        /// To override the contents of this collection use [`set_resource_ids`](Self::set_resource_ids).
+        ///
+        /// <p>The Amazon Web Services resources that are afflicted by this issue.</p>
         pub fn resource_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_ids.unwrap_or_default();
             v.push(input.into());
             self.resource_ids = Some(v);
             self
         }
+        /// <p>The Amazon Web Services resources that are afflicted by this issue.</p>
         pub fn set_resource_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3686,6 +4327,7 @@ impl Issue {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3697,23 +4339,41 @@ impl Issue {
     std::hash::Hash,
 )]
 pub enum NodegroupIssueCode {
+    #[allow(missing_docs)] // documentation missing in model
     AccessDenied,
+    #[allow(missing_docs)] // documentation missing in model
     AsgInstanceLaunchFailures,
+    #[allow(missing_docs)] // documentation missing in model
     AutoScalingGroupInvalidConfiguration,
+    #[allow(missing_docs)] // documentation missing in model
     AutoScalingGroupNotFound,
+    #[allow(missing_docs)] // documentation missing in model
     ClusterUnreachable,
+    #[allow(missing_docs)] // documentation missing in model
     Ec2LaunchTemplateNotFound,
+    #[allow(missing_docs)] // documentation missing in model
     Ec2LaunchTemplateVersionMismatch,
+    #[allow(missing_docs)] // documentation missing in model
     Ec2SecurityGroupDeletionFailure,
+    #[allow(missing_docs)] // documentation missing in model
     Ec2SecurityGroupNotFound,
+    #[allow(missing_docs)] // documentation missing in model
     Ec2SubnetInvalidConfiguration,
+    #[allow(missing_docs)] // documentation missing in model
     Ec2SubnetNotFound,
+    #[allow(missing_docs)] // documentation missing in model
     IamInstanceProfileNotFound,
+    #[allow(missing_docs)] // documentation missing in model
     IamLimitExceeded,
+    #[allow(missing_docs)] // documentation missing in model
     IamNodeRoleNotFound,
+    #[allow(missing_docs)] // documentation missing in model
     InstanceLimitExceeded,
+    #[allow(missing_docs)] // documentation missing in model
     InsufficientFreeAddresses,
+    #[allow(missing_docs)] // documentation missing in model
     InternalFailure,
+    #[allow(missing_docs)] // documentation missing in model
     NodeCreationFailure,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3757,6 +4417,7 @@ impl std::str::FromStr for NodegroupIssueCode {
     }
 }
 impl NodegroupIssueCode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             NodegroupIssueCode::AccessDenied => "AccessDenied",
@@ -3786,6 +4447,7 @@ impl NodegroupIssueCode {
             NodegroupIssueCode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "AccessDenied",
@@ -3848,6 +4510,11 @@ pub mod nodegroup_resources {
         pub(crate) remote_access_security_group: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `auto_scaling_groups`.
+        ///
+        /// To override the contents of this collection use [`set_auto_scaling_groups`](Self::set_auto_scaling_groups).
+        ///
+        /// <p>The Auto Scaling groups associated with the node group.</p>
         pub fn auto_scaling_groups(
             mut self,
             input: impl Into<crate::model::AutoScalingGroup>,
@@ -3857,6 +4524,7 @@ pub mod nodegroup_resources {
             self.auto_scaling_groups = Some(v);
             self
         }
+        /// <p>The Auto Scaling groups associated with the node group.</p>
         pub fn set_auto_scaling_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AutoScalingGroup>>,
@@ -3873,6 +4541,8 @@ pub mod nodegroup_resources {
             self.remote_access_security_group = Some(input.into());
             self
         }
+        /// <p>The remote access security group associated with the node group. This security group
+        /// controls SSH access to the nodes.</p>
         pub fn set_remote_access_security_group(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3924,6 +4594,7 @@ pub mod auto_scaling_group {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the Auto Scaling group associated with an Amazon EKS managed node group.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -3941,6 +4612,7 @@ impl AutoScalingGroup {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3952,9 +4624,13 @@ impl AutoScalingGroup {
     std::hash::Hash,
 )]
 pub enum AmiTypes {
+    #[allow(missing_docs)] // documentation missing in model
     Al2Arm64,
+    #[allow(missing_docs)] // documentation missing in model
     Al2X8664,
+    #[allow(missing_docs)] // documentation missing in model
     Al2X8664Gpu,
+    #[allow(missing_docs)] // documentation missing in model
     Custom,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3978,6 +4654,7 @@ impl std::str::FromStr for AmiTypes {
     }
 }
 impl AmiTypes {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AmiTypes::Al2Arm64 => "AL2_ARM_64",
@@ -3987,6 +4664,7 @@ impl AmiTypes {
             AmiTypes::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AL2_ARM_64", "AL2_x86_64", "AL2_x86_64_GPU", "CUSTOM"]
     }
@@ -4038,16 +4716,33 @@ pub mod remote_access_config {
             self.ec2_ssh_key = Some(input.into());
             self
         }
+        /// <p>The Amazon EC2 SSH key that provides access for SSH communication with the nodes in the
+        /// managed node group. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2 key
+        /// pairs and Linux instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>.</p>
         pub fn set_ec2_ssh_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ec2_ssh_key = input;
             self
         }
+        /// Appends an item to `source_security_groups`.
+        ///
+        /// To override the contents of this collection use [`set_source_security_groups`](Self::set_source_security_groups).
+        ///
+        /// <p>The security groups that are allowed SSH access (port 22) to the nodes. If you specify
+        /// an Amazon EC2 SSH key but do not specify a source security group when you create a managed
+        /// node group, then port 22 on the nodes is opened to the internet (0.0.0.0/0). For more
+        /// information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Security Groups for Your VPC</a> in the
+        /// <i>Amazon Virtual Private Cloud User Guide</i>.</p>
         pub fn source_security_groups(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.source_security_groups.unwrap_or_default();
             v.push(input.into());
             self.source_security_groups = Some(v);
             self
         }
+        /// <p>The security groups that are allowed SSH access (port 22) to the nodes. If you specify
+        /// an Amazon EC2 SSH key but do not specify a source security group when you create a managed
+        /// node group, then port 22 on the nodes is opened to the internet (0.0.0.0/0). For more
+        /// information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Security Groups for Your VPC</a> in the
+        /// <i>Amazon Virtual Private Cloud User Guide</i>.</p>
         pub fn set_source_security_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4071,6 +4766,7 @@ impl RemoteAccessConfig {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4082,7 +4778,9 @@ impl RemoteAccessConfig {
     std::hash::Hash,
 )]
 pub enum CapacityTypes {
+    #[allow(missing_docs)] // documentation missing in model
     OnDemand,
+    #[allow(missing_docs)] // documentation missing in model
     Spot,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4104,6 +4802,7 @@ impl std::str::FromStr for CapacityTypes {
     }
 }
 impl CapacityTypes {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CapacityTypes::OnDemand => "ON_DEMAND",
@@ -4111,6 +4810,7 @@ impl CapacityTypes {
             CapacityTypes::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ON_DEMAND", "SPOT"]
     }
@@ -4121,6 +4821,7 @@ impl AsRef<str> for CapacityTypes {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4132,12 +4833,19 @@ impl AsRef<str> for CapacityTypes {
     std::hash::Hash,
 )]
 pub enum NodegroupStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     CreateFailed,
+    #[allow(missing_docs)] // documentation missing in model
     Creating,
+    #[allow(missing_docs)] // documentation missing in model
     Degraded,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteFailed,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
+    #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4164,6 +4872,7 @@ impl std::str::FromStr for NodegroupStatus {
     }
 }
 impl NodegroupStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             NodegroupStatus::Active => "ACTIVE",
@@ -4176,6 +4885,7 @@ impl NodegroupStatus {
             NodegroupStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
@@ -4224,6 +4934,8 @@ pub mod identity_provider_config_response {
             self.oidc = Some(input);
             self
         }
+        /// <p>An object that represents an OpenID Connect (OIDC) identity provider
+        /// configuration.</p>
         pub fn set_oidc(
             mut self,
             input: std::option::Option<crate::model::OidcIdentityProviderConfig>,
@@ -4343,6 +5055,7 @@ pub mod oidc_identity_provider_config {
             self.identity_provider_config_name = Some(input.into());
             self
         }
+        /// <p>The name of the configuration.</p>
         pub fn set_identity_provider_config_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4358,6 +5071,7 @@ pub mod oidc_identity_provider_config {
             self.identity_provider_config_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the configuration.</p>
         pub fn set_identity_provider_config_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4370,6 +5084,7 @@ pub mod oidc_identity_provider_config {
             self.cluster_name = Some(input.into());
             self
         }
+        /// <p>The cluster that the configuration is associated to.</p>
         pub fn set_cluster_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster_name = input;
             self
@@ -4380,6 +5095,8 @@ pub mod oidc_identity_provider_config {
             self.issuer_url = Some(input.into());
             self
         }
+        /// <p>The URL of the OIDC identity provider that allows the API server to discover public
+        /// signing keys for verifying tokens.</p>
         pub fn set_issuer_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.issuer_url = input;
             self
@@ -4390,6 +5107,8 @@ pub mod oidc_identity_provider_config {
             self.client_id = Some(input.into());
             self
         }
+        /// <p>This is also known as <i>audience</i>. The ID of the client application
+        /// that makes authentication requests to the OIDC identity provider.</p>
         pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_id = input;
             self
@@ -4399,6 +5118,7 @@ pub mod oidc_identity_provider_config {
             self.username_claim = Some(input.into());
             self
         }
+        /// <p>The JSON Web token (JWT) claim that is used as the username.</p>
         pub fn set_username_claim(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4413,6 +5133,9 @@ pub mod oidc_identity_provider_config {
             self.username_prefix = Some(input.into());
             self
         }
+        /// <p>The prefix that is prepended to username claims to prevent clashes with existing
+        /// names. The prefix can't contain <code>system:</code>
+        /// </p>
         pub fn set_username_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4425,6 +5148,7 @@ pub mod oidc_identity_provider_config {
             self.groups_claim = Some(input.into());
             self
         }
+        /// <p>The JSON web token (JWT) claim that the provider uses to return your groups.</p>
         pub fn set_groups_claim(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.groups_claim = input;
             self
@@ -4438,6 +5162,11 @@ pub mod oidc_identity_provider_config {
             self.groups_prefix = Some(input.into());
             self
         }
+        /// <p>The prefix that is prepended to group claims to prevent clashes with existing names
+        /// (such as <code>system:</code> groups). For example, the value<code> oidc:</code> creates
+        /// group names like <code>oidc:engineering</code> and <code>oidc:infra</code>. The prefix
+        /// can't contain <code>system:</code>
+        /// </p>
         pub fn set_groups_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4445,6 +5174,12 @@ pub mod oidc_identity_provider_config {
             self.groups_prefix = input;
             self
         }
+        /// Adds a key-value pair to `required_claims`.
+        ///
+        /// To override the contents of this collection use [`set_required_claims`](Self::set_required_claims).
+        ///
+        /// <p>The key-value pairs that describe required claims in the identity token. If set, each
+        /// claim is verified to be present in the token with a matching value.</p>
         pub fn required_claims(
             mut self,
             k: impl Into<std::string::String>,
@@ -4455,6 +5190,8 @@ pub mod oidc_identity_provider_config {
             self.required_claims = Some(hash_map);
             self
         }
+        /// <p>The key-value pairs that describe required claims in the identity token. If set, each
+        /// claim is verified to be present in the token with a matching value.</p>
         pub fn set_required_claims(
             mut self,
             input: std::option::Option<
@@ -4464,6 +5201,13 @@ pub mod oidc_identity_provider_config {
             self.required_claims = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The metadata to apply to the provider configuration to assist with categorization and
+        /// organization. Each tag consists of a key and an optional value, both of which you
+        /// defined.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -4474,6 +5218,9 @@ pub mod oidc_identity_provider_config {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The metadata to apply to the provider configuration to assist with categorization and
+        /// organization. Each tag consists of a key and an optional value, both of which you
+        /// defined.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -4488,6 +5235,7 @@ pub mod oidc_identity_provider_config {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the OIDC identity provider.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ConfigStatus>,
@@ -4521,6 +5269,7 @@ impl OidcIdentityProviderConfig {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4532,8 +5281,11 @@ impl OidcIdentityProviderConfig {
     std::hash::Hash,
 )]
 pub enum ConfigStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     Creating,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4556,6 +5308,7 @@ impl std::str::FromStr for ConfigStatus {
     }
 }
 impl ConfigStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ConfigStatus::Active => "ACTIVE",
@@ -4564,6 +5317,7 @@ impl ConfigStatus {
             ConfigStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ACTIVE", "CREATING", "DELETING"]
     }
@@ -4585,7 +5339,7 @@ pub struct FargateProfile {
     /// <p>The name of the Amazon EKS cluster that the Fargate profile belongs to.</p>
     pub cluster_name: std::option::Option<std::string::String>,
     /// <p>The Unix epoch timestamp in seconds for when the Fargate profile was created.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The Amazon Resource Name (ARN) of the pod execution role to use for pods that match the selectors in
     /// the Fargate profile. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">Pod
     /// Execution Role</a> in the <i>Amazon EKS User Guide</i>.</p>
@@ -4627,7 +5381,7 @@ pub mod fargate_profile {
         pub(crate) fargate_profile_name: std::option::Option<std::string::String>,
         pub(crate) fargate_profile_arn: std::option::Option<std::string::String>,
         pub(crate) cluster_name: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) pod_execution_role_arn: std::option::Option<std::string::String>,
         pub(crate) subnets: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) selectors:
@@ -4643,6 +5397,7 @@ pub mod fargate_profile {
             self.fargate_profile_name = Some(input.into());
             self
         }
+        /// <p>The name of the Fargate profile.</p>
         pub fn set_fargate_profile_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4655,6 +5410,7 @@ pub mod fargate_profile {
             self.fargate_profile_arn = Some(input.into());
             self
         }
+        /// <p>The full Amazon Resource Name (ARN) of the Fargate profile.</p>
         pub fn set_fargate_profile_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4667,16 +5423,21 @@ pub mod fargate_profile {
             self.cluster_name = Some(input.into());
             self
         }
+        /// <p>The name of the Amazon EKS cluster that the Fargate profile belongs to.</p>
         pub fn set_cluster_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster_name = input;
             self
         }
         /// <p>The Unix epoch timestamp in seconds for when the Fargate profile was created.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The Unix epoch timestamp in seconds for when the Fargate profile was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
@@ -4687,6 +5448,9 @@ pub mod fargate_profile {
             self.pod_execution_role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the pod execution role to use for pods that match the selectors in
+        /// the Fargate profile. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">Pod
+        /// Execution Role</a> in the <i>Amazon EKS User Guide</i>.</p>
         pub fn set_pod_execution_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4694,12 +5458,18 @@ pub mod fargate_profile {
             self.pod_execution_role_arn = input;
             self
         }
+        /// Appends an item to `subnets`.
+        ///
+        /// To override the contents of this collection use [`set_subnets`](Self::set_subnets).
+        ///
+        /// <p>The IDs of subnets to launch pods into.</p>
         pub fn subnets(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnets.unwrap_or_default();
             v.push(input.into());
             self.subnets = Some(v);
             self
         }
+        /// <p>The IDs of subnets to launch pods into.</p>
         pub fn set_subnets(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4707,12 +5477,18 @@ pub mod fargate_profile {
             self.subnets = input;
             self
         }
+        /// Appends an item to `selectors`.
+        ///
+        /// To override the contents of this collection use [`set_selectors`](Self::set_selectors).
+        ///
+        /// <p>The selectors to match for pods to use this Fargate profile.</p>
         pub fn selectors(mut self, input: impl Into<crate::model::FargateProfileSelector>) -> Self {
             let mut v = self.selectors.unwrap_or_default();
             v.push(input.into());
             self.selectors = Some(v);
             self
         }
+        /// <p>The selectors to match for pods to use this Fargate profile.</p>
         pub fn set_selectors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FargateProfileSelector>>,
@@ -4725,6 +5501,7 @@ pub mod fargate_profile {
             self.status = Some(input);
             self
         }
+        /// <p>The current status of the Fargate profile.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::FargateProfileStatus>,
@@ -4732,6 +5509,14 @@ pub mod fargate_profile {
             self.status = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The metadata applied to the Fargate profile to assist with categorization and
+        /// organization. Each tag consists of a key and an optional value, both of which you
+        /// define. Fargate profile tags do not propagate to any other resources associated with the
+        /// Fargate profile, such as the pods that are scheduled with it.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -4742,6 +5527,10 @@ pub mod fargate_profile {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The metadata applied to the Fargate profile to assist with categorization and
+        /// organization. Each tag consists of a key and an optional value, both of which you
+        /// define. Fargate profile tags do not propagate to any other resources associated with the
+        /// Fargate profile, such as the pods that are scheduled with it.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -4774,6 +5563,7 @@ impl FargateProfile {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4785,10 +5575,15 @@ impl FargateProfile {
     std::hash::Hash,
 )]
 pub enum FargateProfileStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     CreateFailed,
+    #[allow(missing_docs)] // documentation missing in model
     Creating,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteFailed,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4813,6 +5608,7 @@ impl std::str::FromStr for FargateProfileStatus {
     }
 }
 impl FargateProfileStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FargateProfileStatus::Active => "ACTIVE",
@@ -4823,6 +5619,7 @@ impl FargateProfileStatus {
             FargateProfileStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
@@ -4875,10 +5672,17 @@ pub mod fargate_profile_selector {
             self.namespace = Some(input.into());
             self
         }
+        /// <p>The Kubernetes namespace that the selector should match.</p>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.namespace = input;
             self
         }
+        /// Adds a key-value pair to `labels`.
+        ///
+        /// To override the contents of this collection use [`set_labels`](Self::set_labels).
+        ///
+        /// <p>The Kubernetes labels that the selector should match. A pod must contain all of the
+        /// labels that are specified in the selector for it to be considered a match.</p>
         pub fn labels(
             mut self,
             k: impl Into<std::string::String>,
@@ -4889,6 +5693,8 @@ pub mod fargate_profile_selector {
             self.labels = Some(hash_map);
             self
         }
+        /// <p>The Kubernetes labels that the selector should match. A pod must contain all of the
+        /// labels that are specified in the selector for it to be considered a match.</p>
         pub fn set_labels(
             mut self,
             input: std::option::Option<
@@ -4952,6 +5758,7 @@ pub mod addon_info {
             self.addon_name = Some(input.into());
             self
         }
+        /// <p>The name of the add-on.</p>
         pub fn set_addon_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.addon_name = input;
             self
@@ -4961,16 +5768,25 @@ pub mod addon_info {
             self.r#type = Some(input.into());
             self
         }
+        /// <p>The type of the add-on.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
         }
+        /// Appends an item to `addon_versions`.
+        ///
+        /// To override the contents of this collection use [`set_addon_versions`](Self::set_addon_versions).
+        ///
+        /// <p>An object that represents information about available add-on versions and compatible
+        /// Kubernetes versions.</p>
         pub fn addon_versions(mut self, input: impl Into<crate::model::AddonVersionInfo>) -> Self {
             let mut v = self.addon_versions.unwrap_or_default();
             v.push(input.into());
             self.addon_versions = Some(v);
             self
         }
+        /// <p>An object that represents information about available add-on versions and compatible
+        /// Kubernetes versions.</p>
         pub fn set_addon_versions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AddonVersionInfo>>,
@@ -5031,6 +5847,7 @@ pub mod addon_version_info {
             self.addon_version = Some(input.into());
             self
         }
+        /// <p>The version of the add-on.</p>
         pub fn set_addon_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5038,12 +5855,18 @@ pub mod addon_version_info {
             self.addon_version = input;
             self
         }
+        /// Appends an item to `architecture`.
+        ///
+        /// To override the contents of this collection use [`set_architecture`](Self::set_architecture).
+        ///
+        /// <p>The architectures that the version supports.</p>
         pub fn architecture(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.architecture.unwrap_or_default();
             v.push(input.into());
             self.architecture = Some(v);
             self
         }
+        /// <p>The architectures that the version supports.</p>
         pub fn set_architecture(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5051,12 +5874,18 @@ pub mod addon_version_info {
             self.architecture = input;
             self
         }
+        /// Appends an item to `compatibilities`.
+        ///
+        /// To override the contents of this collection use [`set_compatibilities`](Self::set_compatibilities).
+        ///
+        /// <p>An object that represents the compatibilities of a version.</p>
         pub fn compatibilities(mut self, input: impl Into<crate::model::Compatibility>) -> Self {
             let mut v = self.compatibilities.unwrap_or_default();
             v.push(input.into());
             self.compatibilities = Some(v);
             self
         }
+        /// <p>An object that represents the compatibilities of a version.</p>
         pub fn set_compatibilities(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Compatibility>>,
@@ -5117,6 +5946,7 @@ pub mod compatibility {
             self.cluster_version = Some(input.into());
             self
         }
+        /// <p>The supported Kubernetes version of the cluster.</p>
         pub fn set_cluster_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5124,12 +5954,18 @@ pub mod compatibility {
             self.cluster_version = input;
             self
         }
+        /// Appends an item to `platform_versions`.
+        ///
+        /// To override the contents of this collection use [`set_platform_versions`](Self::set_platform_versions).
+        ///
+        /// <p>The supported compute platform.</p>
         pub fn platform_versions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.platform_versions.unwrap_or_default();
             v.push(input.into());
             self.platform_versions = Some(v);
             self
         }
+        /// <p>The supported compute platform.</p>
         pub fn set_platform_versions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5142,6 +5978,7 @@ pub mod compatibility {
             self.default_version = Some(input);
             self
         }
+        /// <p>The supported default version.</p>
         pub fn set_default_version(mut self, input: std::option::Option<bool>) -> Self {
             self.default_version = input;
             self
@@ -5180,9 +6017,9 @@ pub struct Addon {
     /// <p>The Amazon Resource Name (ARN) of the add-on.</p>
     pub addon_arn: std::option::Option<std::string::String>,
     /// <p>The date and time that the add-on was created.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time that the add-on was last modified.</p>
-    pub modified_at: std::option::Option<smithy_types::Instant>,
+    pub modified_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role that is bound to the Kubernetes service account used
     /// by the add-on.</p>
     pub service_account_role_arn: std::option::Option<std::string::String>,
@@ -5221,8 +6058,8 @@ pub mod addon {
         pub(crate) addon_version: std::option::Option<std::string::String>,
         pub(crate) health: std::option::Option<crate::model::AddonHealth>,
         pub(crate) addon_arn: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
-        pub(crate) modified_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) modified_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) service_account_role_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -5234,6 +6071,7 @@ pub mod addon {
             self.addon_name = Some(input.into());
             self
         }
+        /// <p>The name of the add-on.</p>
         pub fn set_addon_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.addon_name = input;
             self
@@ -5243,6 +6081,7 @@ pub mod addon {
             self.cluster_name = Some(input.into());
             self
         }
+        /// <p>The name of the cluster.</p>
         pub fn set_cluster_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cluster_name = input;
             self
@@ -5252,6 +6091,7 @@ pub mod addon {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the add-on.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::AddonStatus>) -> Self {
             self.status = input;
             self
@@ -5261,6 +6101,7 @@ pub mod addon {
             self.addon_version = Some(input.into());
             self
         }
+        /// <p>The version of the add-on.</p>
         pub fn set_addon_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5273,6 +6114,7 @@ pub mod addon {
             self.health = Some(input);
             self
         }
+        /// <p>An object that represents the health of the add-on.</p>
         pub fn set_health(mut self, input: std::option::Option<crate::model::AddonHealth>) -> Self {
             self.health = input;
             self
@@ -5282,27 +6124,33 @@ pub mod addon {
             self.addon_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the add-on.</p>
         pub fn set_addon_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.addon_arn = input;
             self
         }
         /// <p>The date and time that the add-on was created.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date and time that the add-on was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>The date and time that the add-on was last modified.</p>
-        pub fn modified_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn modified_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.modified_at = Some(input);
             self
         }
+        /// <p>The date and time that the add-on was last modified.</p>
         pub fn set_modified_at(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.modified_at = input;
             self
@@ -5313,6 +6161,8 @@ pub mod addon {
             self.service_account_role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the IAM role that is bound to the Kubernetes service account used
+        /// by the add-on.</p>
         pub fn set_service_account_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5320,6 +6170,14 @@ pub mod addon {
             self.service_account_role_arn = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The metadata that you apply to the add-on to assist with categorization and
+        /// organization. Each tag consists of a key and an optional value, both of which you
+        /// define. Add-on tags do not propagate to any other resources associated with the cluster.
+        /// </p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -5330,6 +6188,10 @@ pub mod addon {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The metadata that you apply to the add-on to assist with categorization and
+        /// organization. Each tag consists of a key and an optional value, both of which you
+        /// define. Add-on tags do not propagate to any other resources associated with the cluster.
+        /// </p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -5386,12 +6248,18 @@ pub mod addon_health {
         pub(crate) issues: std::option::Option<std::vec::Vec<crate::model::AddonIssue>>,
     }
     impl Builder {
+        /// Appends an item to `issues`.
+        ///
+        /// To override the contents of this collection use [`set_issues`](Self::set_issues).
+        ///
+        /// <p>An object that represents the add-on's health issues.</p>
         pub fn issues(mut self, input: impl Into<crate::model::AddonIssue>) -> Self {
             let mut v = self.issues.unwrap_or_default();
             v.push(input.into());
             self.issues = Some(v);
             self
         }
+        /// <p>An object that represents the add-on's health issues.</p>
         pub fn set_issues(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AddonIssue>>,
@@ -5450,6 +6318,7 @@ pub mod addon_issue {
             self.code = Some(input);
             self
         }
+        /// <p>A code that describes the type of issue.</p>
         pub fn set_code(
             mut self,
             input: std::option::Option<crate::model::AddonIssueCode>,
@@ -5462,16 +6331,23 @@ pub mod addon_issue {
             self.message = Some(input.into());
             self
         }
+        /// <p>A message that provides details about the issue and what might cause it.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
         }
+        /// Appends an item to `resource_ids`.
+        ///
+        /// To override the contents of this collection use [`set_resource_ids`](Self::set_resource_ids).
+        ///
+        /// <p>The resource IDs of the issue.</p>
         pub fn resource_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resource_ids.unwrap_or_default();
             v.push(input.into());
             self.resource_ids = Some(v);
             self
         }
+        /// <p>The resource IDs of the issue.</p>
         pub fn set_resource_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5496,6 +6372,7 @@ impl AddonIssue {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5507,13 +6384,21 @@ impl AddonIssue {
     std::hash::Hash,
 )]
 pub enum AddonIssueCode {
+    #[allow(missing_docs)] // documentation missing in model
     AccessDenied,
+    #[allow(missing_docs)] // documentation missing in model
     AdmissionRequestDenied,
+    #[allow(missing_docs)] // documentation missing in model
     ClusterUnreachable,
+    #[allow(missing_docs)] // documentation missing in model
     ConfigurationConflict,
+    #[allow(missing_docs)] // documentation missing in model
     InsufficientNumberOfReplicas,
+    #[allow(missing_docs)] // documentation missing in model
     InternalFailure,
+    #[allow(missing_docs)] // documentation missing in model
     K8SResourceNotFound,
+    #[allow(missing_docs)] // documentation missing in model
     UnsupportedAddonModification,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5541,6 +6426,7 @@ impl std::str::FromStr for AddonIssueCode {
     }
 }
 impl AddonIssueCode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AddonIssueCode::AccessDenied => "AccessDenied",
@@ -5554,6 +6440,7 @@ impl AddonIssueCode {
             AddonIssueCode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "AccessDenied",
@@ -5573,6 +6460,7 @@ impl AsRef<str> for AddonIssueCode {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5584,12 +6472,19 @@ impl AsRef<str> for AddonIssueCode {
     std::hash::Hash,
 )]
 pub enum AddonStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     CreateFailed,
+    #[allow(missing_docs)] // documentation missing in model
     Creating,
+    #[allow(missing_docs)] // documentation missing in model
     Degraded,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteFailed,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
+    #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5616,6 +6511,7 @@ impl std::str::FromStr for AddonStatus {
     }
 }
 impl AddonStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AddonStatus::Active => "ACTIVE",
@@ -5628,6 +6524,7 @@ impl AddonStatus {
             AddonStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
@@ -5716,6 +6613,28 @@ pub mod kubernetes_network_config_request {
             self.service_ipv4_cidr = Some(input.into());
             self
         }
+        /// <p>The CIDR block to assign Kubernetes service IP addresses from. If you don't specify a
+        /// block, Kubernetes assigns addresses from either the 10.100.0.0/16 or 172.20.0.0/16 CIDR
+        /// blocks. We recommend that you specify a block that does not overlap with resources in
+        /// other networks that are peered or connected to your VPC. The block must meet the
+        /// following requirements:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Within one of the following private IP address blocks: 10.0.0.0/8,
+        /// 172.16.0.0.0/12, or 192.168.0.0/16.</p>
+        /// </li>
+        /// <li>
+        /// <p>Doesn't overlap with any CIDR block assigned to the VPC that you selected for
+        /// VPC.</p>
+        /// </li>
+        /// <li>
+        /// <p>Between /24 and /12.</p>
+        /// </li>
+        /// </ul>
+        /// <important>
+        /// <p>You can only specify a custom CIDR block when you create a cluster and can't
+        /// change this value once the cluster is created.</p>
+        /// </important>
         pub fn set_service_ipv4_cidr(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5827,6 +6746,7 @@ pub mod oidc_identity_provider_config_request {
             self.identity_provider_config_name = Some(input.into());
             self
         }
+        /// <p>The name of the OIDC provider configuration.</p>
         pub fn set_identity_provider_config_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5846,6 +6766,14 @@ pub mod oidc_identity_provider_config_request {
             self.issuer_url = Some(input.into());
             self
         }
+        /// <p>The URL of the OpenID identity provider that allows the API server to discover public
+        /// signing keys for verifying tokens. The URL must begin with <code>https://</code> and
+        /// should correspond to the <code>iss</code> claim in the provider's OIDC ID tokens. Per
+        /// the OIDC standard, path components are allowed but query parameters are not. Typically
+        /// the URL consists of only a hostname, like <code>https://server.example.org</code> or
+        /// <code>https://example.com</code>. This URL should point to the level below
+        /// <code>.well-known/openid-configuration</code> and must be publicly accessible over
+        /// the internet.</p>
         pub fn set_issuer_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.issuer_url = input;
             self
@@ -5856,6 +6784,8 @@ pub mod oidc_identity_provider_config_request {
             self.client_id = Some(input.into());
             self
         }
+        /// <p>This is also known as <i>audience</i>. The ID for the client application
+        /// that makes authentication requests to the OpenID identity provider.</p>
         pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_id = input;
             self
@@ -5869,6 +6799,11 @@ pub mod oidc_identity_provider_config_request {
             self.username_claim = Some(input.into());
             self
         }
+        /// <p>The JSON Web Token (JWT) claim to use as the username. The default is
+        /// <code>sub</code>, which is expected to be a unique identifier of the end user. You can
+        /// choose other claims, such as <code>email</code> or <code>name</code>, depending on the
+        /// OpenID identity provider. Claims other than <code>email</code> are prefixed with the
+        /// issuer URL to prevent naming clashes with other plug-ins.</p>
         pub fn set_username_claim(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5884,6 +6819,10 @@ pub mod oidc_identity_provider_config_request {
             self.username_prefix = Some(input.into());
             self
         }
+        /// <p>The prefix that is prepended to username claims to prevent clashes with existing
+        /// names. If you do not provide this field, and <code>username</code> is a value other than
+        /// <code>email</code>, the prefix defaults to <code>issuerurl#</code>. You can use the
+        /// value <code>-</code> to disable all prefixing.</p>
         pub fn set_username_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5896,6 +6835,7 @@ pub mod oidc_identity_provider_config_request {
             self.groups_claim = Some(input.into());
             self
         }
+        /// <p>The JWT claim that the provider uses to return your groups.</p>
         pub fn set_groups_claim(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.groups_claim = input;
             self
@@ -5908,6 +6848,10 @@ pub mod oidc_identity_provider_config_request {
             self.groups_prefix = Some(input.into());
             self
         }
+        /// <p>The prefix that is prepended to group claims to prevent clashes with existing names
+        /// (such as <code>system:</code> groups). For example, the value<code> oidc:</code> will
+        /// create group names like <code>oidc:engineering</code> and
+        /// <code>oidc:infra</code>.</p>
         pub fn set_groups_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5915,6 +6859,14 @@ pub mod oidc_identity_provider_config_request {
             self.groups_prefix = input;
             self
         }
+        /// Adds a key-value pair to `required_claims`.
+        ///
+        /// To override the contents of this collection use [`set_required_claims`](Self::set_required_claims).
+        ///
+        /// <p>The key value pairs that describe required claims in the identity token. If set, each
+        /// claim is verified to be present in the token with a matching value. For the maximum
+        /// number of claims that you can require, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/service-quotas.html">Amazon EKS service quotas</a> in the
+        /// <i>Amazon EKS User Guide</i>.</p>
         pub fn required_claims(
             mut self,
             k: impl Into<std::string::String>,
@@ -5925,6 +6877,10 @@ pub mod oidc_identity_provider_config_request {
             self.required_claims = Some(hash_map);
             self
         }
+        /// <p>The key value pairs that describe required claims in the identity token. If set, each
+        /// claim is verified to be present in the token with a matching value. For the maximum
+        /// number of claims that you can require, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/service-quotas.html">Amazon EKS service quotas</a> in the
+        /// <i>Amazon EKS User Guide</i>.</p>
         pub fn set_required_claims(
             mut self,
             input: std::option::Option<

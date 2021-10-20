@@ -37,6 +37,9 @@ pub mod tag {
             self.key = Some(input.into());
             self
         }
+        /// <p>A string that contains a tag key. The string length should be between 1 and 128
+        /// characters. Valid characters include a-z, A-Z, 0-9, space, and the special characters _ - . :
+        /// / = + @.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -48,6 +51,9 @@ pub mod tag {
             self.value = Some(input.into());
             self
         }
+        /// <p>A string that contains an optional tag value. The string length should be between 0 and
+        /// 256 characters. Valid characters include a-z, A-Z, 0-9, space, and the special characters _ -
+        /// . : / = + @.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -90,9 +96,9 @@ pub struct RequestedServiceQuotaChange {
     pub status: std::option::Option<crate::model::RequestStatus>,
     /// <p>The date and time when the quota increase request was received and the case ID was
     /// created.</p>
-    pub created: std::option::Option<smithy_types::Instant>,
+    pub created: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time of the most recent change.</p>
-    pub last_updated: std::option::Option<smithy_types::Instant>,
+    pub last_updated: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The IAM identity of the requester.</p>
     pub requester: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the quota.</p>
@@ -136,8 +142,8 @@ pub mod requested_service_quota_change {
         pub(crate) quota_name: std::option::Option<std::string::String>,
         pub(crate) desired_value: std::option::Option<f64>,
         pub(crate) status: std::option::Option<crate::model::RequestStatus>,
-        pub(crate) created: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_updated: std::option::Option<smithy_types::Instant>,
+        pub(crate) created: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_updated: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) requester: std::option::Option<std::string::String>,
         pub(crate) quota_arn: std::option::Option<std::string::String>,
         pub(crate) global_quota: std::option::Option<bool>,
@@ -149,6 +155,7 @@ pub mod requested_service_quota_change {
             self.id = Some(input.into());
             self
         }
+        /// <p>The unique identifier.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -158,6 +165,7 @@ pub mod requested_service_quota_change {
             self.case_id = Some(input.into());
             self
         }
+        /// <p>The case ID.</p>
         pub fn set_case_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.case_id = input;
             self
@@ -167,6 +175,7 @@ pub mod requested_service_quota_change {
             self.service_code = Some(input.into());
             self
         }
+        /// <p>The service identifier.</p>
         pub fn set_service_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service_code = input;
             self
@@ -176,6 +185,7 @@ pub mod requested_service_quota_change {
             self.service_name = Some(input.into());
             self
         }
+        /// <p>The service name.</p>
         pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service_name = input;
             self
@@ -185,6 +195,7 @@ pub mod requested_service_quota_change {
             self.quota_code = Some(input.into());
             self
         }
+        /// <p>The quota identifier.</p>
         pub fn set_quota_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.quota_code = input;
             self
@@ -194,6 +205,7 @@ pub mod requested_service_quota_change {
             self.quota_name = Some(input.into());
             self
         }
+        /// <p>The quota name.</p>
         pub fn set_quota_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.quota_name = input;
             self
@@ -203,6 +215,7 @@ pub mod requested_service_quota_change {
             self.desired_value = Some(input);
             self
         }
+        /// <p>The new, increased value for the quota.</p>
         pub fn set_desired_value(mut self, input: std::option::Option<f64>) -> Self {
             self.desired_value = input;
             self
@@ -212,6 +225,7 @@ pub mod requested_service_quota_change {
             self.status = Some(input);
             self
         }
+        /// <p>The state of the quota increase request.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::RequestStatus>,
@@ -221,22 +235,28 @@ pub mod requested_service_quota_change {
         }
         /// <p>The date and time when the quota increase request was received and the case ID was
         /// created.</p>
-        pub fn created(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created = Some(input);
             self
         }
-        pub fn set_created(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date and time when the quota increase request was received and the case ID was
+        /// created.</p>
+        pub fn set_created(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created = input;
             self
         }
         /// <p>The date and time of the most recent change.</p>
-        pub fn last_updated(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_updated(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_updated = Some(input);
             self
         }
+        /// <p>The date and time of the most recent change.</p>
         pub fn set_last_updated(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_updated = input;
             self
@@ -246,6 +266,7 @@ pub mod requested_service_quota_change {
             self.requester = Some(input.into());
             self
         }
+        /// <p>The IAM identity of the requester.</p>
         pub fn set_requester(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.requester = input;
             self
@@ -255,6 +276,7 @@ pub mod requested_service_quota_change {
             self.quota_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the quota.</p>
         pub fn set_quota_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.quota_arn = input;
             self
@@ -264,6 +286,7 @@ pub mod requested_service_quota_change {
             self.global_quota = Some(input);
             self
         }
+        /// <p>Indicates whether the quota is global.</p>
         pub fn set_global_quota(mut self, input: std::option::Option<bool>) -> Self {
             self.global_quota = input;
             self
@@ -273,6 +296,7 @@ pub mod requested_service_quota_change {
             self.unit = Some(input.into());
             self
         }
+        /// <p>The unit of measurement.</p>
         pub fn set_unit(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.unit = input;
             self
@@ -305,6 +329,7 @@ impl RequestedServiceQuotaChange {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -316,10 +341,15 @@ impl RequestedServiceQuotaChange {
     std::hash::Hash,
 )]
 pub enum RequestStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Approved,
+    #[allow(missing_docs)] // documentation missing in model
     CaseClosed,
+    #[allow(missing_docs)] // documentation missing in model
     CaseOpened,
+    #[allow(missing_docs)] // documentation missing in model
     Denied,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -344,6 +374,7 @@ impl std::str::FromStr for RequestStatus {
     }
 }
 impl RequestStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RequestStatus::Approved => "APPROVED",
@@ -354,6 +385,7 @@ impl RequestStatus {
             RequestStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "APPROVED",
@@ -426,6 +458,7 @@ pub mod service_quota_increase_request_in_template {
             self.service_code = Some(input.into());
             self
         }
+        /// <p>The service identifier.</p>
         pub fn set_service_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service_code = input;
             self
@@ -435,6 +468,7 @@ pub mod service_quota_increase_request_in_template {
             self.service_name = Some(input.into());
             self
         }
+        /// <p>The service name.</p>
         pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service_name = input;
             self
@@ -444,6 +478,7 @@ pub mod service_quota_increase_request_in_template {
             self.quota_code = Some(input.into());
             self
         }
+        /// <p>The quota identifier.</p>
         pub fn set_quota_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.quota_code = input;
             self
@@ -453,6 +488,7 @@ pub mod service_quota_increase_request_in_template {
             self.quota_name = Some(input.into());
             self
         }
+        /// <p>The quota name.</p>
         pub fn set_quota_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.quota_name = input;
             self
@@ -462,6 +498,7 @@ pub mod service_quota_increase_request_in_template {
             self.desired_value = Some(input);
             self
         }
+        /// <p>The new, increased value of the quota.</p>
         pub fn set_desired_value(mut self, input: std::option::Option<f64>) -> Self {
             self.desired_value = input;
             self
@@ -471,6 +508,7 @@ pub mod service_quota_increase_request_in_template {
             self.aws_region = Some(input.into());
             self
         }
+        /// <p>The AWS Region.</p>
         pub fn set_aws_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.aws_region = input;
             self
@@ -480,6 +518,7 @@ pub mod service_quota_increase_request_in_template {
             self.unit = Some(input.into());
             self
         }
+        /// <p>The unit of measurement.</p>
         pub fn set_unit(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.unit = input;
             self
@@ -489,6 +528,7 @@ pub mod service_quota_increase_request_in_template {
             self.global_quota = Some(input);
             self
         }
+        /// <p>Indicates whether the quota is global.</p>
         pub fn set_global_quota(mut self, input: std::option::Option<bool>) -> Self {
             self.global_quota = input;
             self
@@ -547,6 +587,7 @@ pub mod service_info {
             self.service_code = Some(input.into());
             self
         }
+        /// <p>The service identifier.</p>
         pub fn set_service_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service_code = input;
             self
@@ -556,6 +597,7 @@ pub mod service_info {
             self.service_name = Some(input.into());
             self
         }
+        /// <p>The service name.</p>
         pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service_name = input;
             self
@@ -648,6 +690,7 @@ pub mod service_quota {
             self.service_code = Some(input.into());
             self
         }
+        /// <p>The service identifier.</p>
         pub fn set_service_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service_code = input;
             self
@@ -657,6 +700,7 @@ pub mod service_quota {
             self.service_name = Some(input.into());
             self
         }
+        /// <p>The service name.</p>
         pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service_name = input;
             self
@@ -666,6 +710,7 @@ pub mod service_quota {
             self.quota_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the quota.</p>
         pub fn set_quota_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.quota_arn = input;
             self
@@ -675,6 +720,7 @@ pub mod service_quota {
             self.quota_code = Some(input.into());
             self
         }
+        /// <p>The quota identifier.</p>
         pub fn set_quota_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.quota_code = input;
             self
@@ -684,6 +730,7 @@ pub mod service_quota {
             self.quota_name = Some(input.into());
             self
         }
+        /// <p>The quota name.</p>
         pub fn set_quota_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.quota_name = input;
             self
@@ -693,6 +740,7 @@ pub mod service_quota {
             self.value = Some(input);
             self
         }
+        /// <p>The quota value.</p>
         pub fn set_value(mut self, input: std::option::Option<f64>) -> Self {
             self.value = input;
             self
@@ -702,6 +750,7 @@ pub mod service_quota {
             self.unit = Some(input.into());
             self
         }
+        /// <p>The unit of measurement.</p>
         pub fn set_unit(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.unit = input;
             self
@@ -711,6 +760,7 @@ pub mod service_quota {
             self.adjustable = Some(input);
             self
         }
+        /// <p>Indicates whether the quota value can be increased.</p>
         pub fn set_adjustable(mut self, input: std::option::Option<bool>) -> Self {
             self.adjustable = input;
             self
@@ -720,6 +770,7 @@ pub mod service_quota {
             self.global_quota = Some(input);
             self
         }
+        /// <p>Indicates whether the quota is global.</p>
         pub fn set_global_quota(mut self, input: std::option::Option<bool>) -> Self {
             self.global_quota = input;
             self
@@ -729,6 +780,7 @@ pub mod service_quota {
             self.usage_metric = Some(input);
             self
         }
+        /// <p>Information about the measurement.</p>
         pub fn set_usage_metric(
             mut self,
             input: std::option::Option<crate::model::MetricInfo>,
@@ -741,6 +793,7 @@ pub mod service_quota {
             self.period = Some(input);
             self
         }
+        /// <p>The period of time.</p>
         pub fn set_period(mut self, input: std::option::Option<crate::model::QuotaPeriod>) -> Self {
             self.period = input;
             self
@@ -750,6 +803,7 @@ pub mod service_quota {
             self.error_reason = Some(input);
             self
         }
+        /// <p>The error code and error reason.</p>
         pub fn set_error_reason(
             mut self,
             input: std::option::Option<crate::model::ErrorReason>,
@@ -859,6 +913,29 @@ pub mod error_reason {
             self.error_code = Some(input);
             self
         }
+        /// <p>Service Quotas returns the following error values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>DEPENDENCY_ACCESS_DENIED_ERROR</code> - The caller does not have the required
+        /// permissions to complete the action. To resolve the error, you must have permission to
+        /// access the service or quota.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DEPENDENCY_THROTTLING_ERROR</code> - The service is throttling Service
+        /// Quotas.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DEPENDENCY_SERVICE_ERROR</code> - The service is not available.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SERVICE_QUOTA_NOT_AVAILABLE_ERROR</code> - There was an error in Service
+        /// Quotas.</p>
+        /// </li>
+        /// </ul>
         pub fn set_error_code(
             mut self,
             input: std::option::Option<crate::model::ErrorCode>,
@@ -871,6 +948,7 @@ pub mod error_reason {
             self.error_message = Some(input.into());
             self
         }
+        /// <p>The error message.</p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -894,6 +972,7 @@ impl ErrorReason {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -905,9 +984,13 @@ impl ErrorReason {
     std::hash::Hash,
 )]
 pub enum ErrorCode {
+    #[allow(missing_docs)] // documentation missing in model
     DependencyAccessDeniedError,
+    #[allow(missing_docs)] // documentation missing in model
     DependencyServiceError,
+    #[allow(missing_docs)] // documentation missing in model
     DependencyThrottlingError,
+    #[allow(missing_docs)] // documentation missing in model
     ServiceQuotaNotAvailableError,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -931,6 +1014,7 @@ impl std::str::FromStr for ErrorCode {
     }
 }
 impl ErrorCode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ErrorCode::DependencyAccessDeniedError => "DEPENDENCY_ACCESS_DENIED_ERROR",
@@ -940,6 +1024,7 @@ impl ErrorCode {
             ErrorCode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "DEPENDENCY_ACCESS_DENIED_ERROR",
@@ -987,6 +1072,7 @@ pub mod quota_period {
             self.period_value = Some(input);
             self
         }
+        /// <p>The value.</p>
         pub fn set_period_value(mut self, input: std::option::Option<i32>) -> Self {
             self.period_value = input;
             self
@@ -996,6 +1082,7 @@ pub mod quota_period {
             self.period_unit = Some(input);
             self
         }
+        /// <p>The time unit.</p>
         pub fn set_period_unit(
             mut self,
             input: std::option::Option<crate::model::PeriodUnit>,
@@ -1019,6 +1106,7 @@ impl QuotaPeriod {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1030,12 +1118,19 @@ impl QuotaPeriod {
     std::hash::Hash,
 )]
 pub enum PeriodUnit {
+    #[allow(missing_docs)] // documentation missing in model
     Day,
+    #[allow(missing_docs)] // documentation missing in model
     Hour,
+    #[allow(missing_docs)] // documentation missing in model
     Microsecond,
+    #[allow(missing_docs)] // documentation missing in model
     Millisecond,
+    #[allow(missing_docs)] // documentation missing in model
     Minute,
+    #[allow(missing_docs)] // documentation missing in model
     Second,
+    #[allow(missing_docs)] // documentation missing in model
     Week,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1062,6 +1157,7 @@ impl std::str::FromStr for PeriodUnit {
     }
 }
 impl PeriodUnit {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PeriodUnit::Day => "DAY",
@@ -1074,6 +1170,7 @@ impl PeriodUnit {
             PeriodUnit::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "DAY",
@@ -1139,6 +1236,7 @@ pub mod metric_info {
             self.metric_namespace = Some(input.into());
             self
         }
+        /// <p>The namespace of the metric.</p>
         pub fn set_metric_namespace(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1151,10 +1249,17 @@ pub mod metric_info {
             self.metric_name = Some(input.into());
             self
         }
+        /// <p>The name of the metric.</p>
         pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.metric_name = input;
             self
         }
+        /// Adds a key-value pair to `metric_dimensions`.
+        ///
+        /// To override the contents of this collection use [`set_metric_dimensions`](Self::set_metric_dimensions).
+        ///
+        /// <p>The metric dimension. This is a name/value pair that is part of the identity of a
+        /// metric.</p>
         pub fn metric_dimensions(
             mut self,
             k: impl Into<std::string::String>,
@@ -1165,6 +1270,8 @@ pub mod metric_info {
             self.metric_dimensions = Some(hash_map);
             self
         }
+        /// <p>The metric dimension. This is a name/value pair that is part of the identity of a
+        /// metric.</p>
         pub fn set_metric_dimensions(
             mut self,
             input: std::option::Option<
@@ -1182,6 +1289,7 @@ pub mod metric_info {
             self.metric_statistic_recommendation = Some(input.into());
             self
         }
+        /// <p>The metric statistic that we recommend you use when determining quota usage.</p>
         pub fn set_metric_statistic_recommendation(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1207,6 +1315,7 @@ impl MetricInfo {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1218,7 +1327,9 @@ impl MetricInfo {
     std::hash::Hash,
 )]
 pub enum ServiceQuotaTemplateAssociationStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Associated,
+    #[allow(missing_docs)] // documentation missing in model
     Disassociated,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1240,6 +1351,7 @@ impl std::str::FromStr for ServiceQuotaTemplateAssociationStatus {
     }
 }
 impl ServiceQuotaTemplateAssociationStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ServiceQuotaTemplateAssociationStatus::Associated => "ASSOCIATED",
@@ -1247,6 +1359,7 @@ impl ServiceQuotaTemplateAssociationStatus {
             ServiceQuotaTemplateAssociationStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ASSOCIATED", "DISASSOCIATED"]
     }

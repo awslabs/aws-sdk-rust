@@ -45,6 +45,9 @@ pub mod accelerator_type {
             self.accelerator_type_name = Some(input.into());
             self
         }
+        /// <p>
+        /// The name of the Elastic Inference Accelerator type.
+        /// </p>
         pub fn set_accelerator_type_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -59,6 +62,9 @@ pub mod accelerator_type {
             self.memory_info = Some(input);
             self
         }
+        /// <p>
+        /// The memory information of the Elastic Inference Accelerator type.
+        /// </p>
         pub fn set_memory_info(
             mut self,
             input: std::option::Option<crate::model::MemoryInfo>,
@@ -66,12 +72,22 @@ pub mod accelerator_type {
             self.memory_info = input;
             self
         }
+        /// Appends an item to `throughput_info`.
+        ///
+        /// To override the contents of this collection use [`set_throughput_info`](Self::set_throughput_info).
+        ///
+        /// <p>
+        /// The throughput information of the Elastic Inference Accelerator type.
+        /// </p>
         pub fn throughput_info(mut self, input: impl Into<crate::model::KeyValuePair>) -> Self {
             let mut v = self.throughput_info.unwrap_or_default();
             v.push(input.into());
             self.throughput_info = Some(v);
             self
         }
+        /// <p>
+        /// The throughput information of the Elastic Inference Accelerator type.
+        /// </p>
         pub fn set_throughput_info(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::KeyValuePair>>,
@@ -140,6 +156,11 @@ pub mod key_value_pair {
             self.key = Some(input.into());
             self
         }
+        /// <p>
+        /// The throughput value of the Elastic Inference Accelerator type. It can assume the following values:
+        /// TFLOPS16bit: the throughput expressed in 16bit TeraFLOPS.
+        /// TFLOPS32bit: the throughput expressed in 32bit TeraFLOPS.
+        /// </p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -151,6 +172,9 @@ pub mod key_value_pair {
             self.value = Some(input);
             self
         }
+        /// <p>
+        /// The throughput value of the Elastic Inference Accelerator type.
+        /// </p>
         pub fn set_value(mut self, input: std::option::Option<i32>) -> Self {
             self.value = input;
             self
@@ -205,6 +229,9 @@ pub mod memory_info {
             self.size_in_mi_b = Some(input);
             self
         }
+        /// <p>
+        /// The size in mebibytes of the Elastic Inference Accelerator type.
+        /// </p>
         pub fn set_size_in_mi_b(mut self, input: std::option::Option<i32>) -> Self {
             self.size_in_mi_b = input;
             self
@@ -286,6 +313,9 @@ pub mod elastic_inference_accelerator {
             self.accelerator_health = Some(input);
             self
         }
+        /// <p>
+        /// The health of the Elastic Inference Accelerator.
+        /// </p>
         pub fn set_accelerator_health(
             mut self,
             input: std::option::Option<crate::model::ElasticInferenceAcceleratorHealth>,
@@ -300,6 +330,9 @@ pub mod elastic_inference_accelerator {
             self.accelerator_type = Some(input.into());
             self
         }
+        /// <p>
+        /// The type of the Elastic Inference Accelerator.
+        /// </p>
         pub fn set_accelerator_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -314,6 +347,9 @@ pub mod elastic_inference_accelerator {
             self.accelerator_id = Some(input.into());
             self
         }
+        /// <p>
+        /// The ID of the Elastic Inference Accelerator.
+        /// </p>
         pub fn set_accelerator_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -328,6 +364,9 @@ pub mod elastic_inference_accelerator {
             self.availability_zone = Some(input.into());
             self
         }
+        /// <p>
+        /// The availability zone where the Elastic Inference Accelerator is present.
+        /// </p>
         pub fn set_availability_zone(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -342,6 +381,9 @@ pub mod elastic_inference_accelerator {
             self.attached_resource = Some(input.into());
             self
         }
+        /// <p>
+        /// The ARN of the resource that the Elastic Inference Accelerator is attached to.
+        /// </p>
         pub fn set_attached_resource(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -402,6 +444,9 @@ pub mod elastic_inference_accelerator_health {
             self.status = Some(input.into());
             self
         }
+        /// <p>
+        /// The health status of the Elastic Inference Accelerator.
+        /// </p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -465,16 +510,31 @@ pub mod filter {
             self.name = Some(input.into());
             self
         }
+        /// <p>
+        /// The filter name for the Elastic Inference Accelerator list. It can assume the following values:
+        /// accelerator-type: the type of Elastic Inference Accelerator to filter for.
+        /// instance-id: an EC2 instance id to filter for.
+        /// </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>
+        /// The values for the filter of the Elastic Inference Accelerator list.
+        /// </p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
+        /// <p>
+        /// The values for the filter of the Elastic Inference Accelerator list.
+        /// </p>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -548,6 +608,9 @@ pub mod accelerator_type_offering {
             self.accelerator_type = Some(input.into());
             self
         }
+        /// <p>
+        /// The name of the Elastic Inference Accelerator type.
+        /// </p>
         pub fn set_accelerator_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -565,6 +628,12 @@ pub mod accelerator_type_offering {
             self.location_type = Some(input);
             self
         }
+        /// <p>
+        /// The location type for the offering. It can assume the following values:
+        /// region: defines that the offering is at the regional level.
+        /// availability-zone: defines that the offering is at the availability zone level.
+        /// availability-zone-id: defines that the offering is at the availability zone level, defined by the availability zone id.
+        /// </p>
         pub fn set_location_type(
             mut self,
             input: std::option::Option<crate::model::LocationType>,
@@ -580,6 +649,10 @@ pub mod accelerator_type_offering {
             self.location = Some(input.into());
             self
         }
+        /// <p>
+        /// The location for the offering.
+        /// It will return either the region, availability zone or availability zone id for the offering depending on the locationType value.
+        /// </p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -601,6 +674,7 @@ impl AcceleratorTypeOffering {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -612,8 +686,11 @@ impl AcceleratorTypeOffering {
     std::hash::Hash,
 )]
 pub enum LocationType {
+    #[allow(missing_docs)] // documentation missing in model
     AvailabilityZone,
+    #[allow(missing_docs)] // documentation missing in model
     AvailabilityZoneId,
+    #[allow(missing_docs)] // documentation missing in model
     Region,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -636,6 +713,7 @@ impl std::str::FromStr for LocationType {
     }
 }
 impl LocationType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LocationType::AvailabilityZone => "availability-zone",
@@ -644,6 +722,7 @@ impl LocationType {
             LocationType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["availability-zone", "availability-zone-id", "region"]
     }

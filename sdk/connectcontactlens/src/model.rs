@@ -31,6 +31,7 @@ pub mod realtime_contact_analysis_segment {
             self.transcript = Some(input);
             self
         }
+        /// <p>The analyzed transcript.</p>
         pub fn set_transcript(
             mut self,
             input: std::option::Option<crate::model::Transcript>,
@@ -43,6 +44,7 @@ pub mod realtime_contact_analysis_segment {
             self.categories = Some(input);
             self
         }
+        /// <p>The matched category rules.</p>
         pub fn set_categories(
             mut self,
             input: std::option::Option<crate::model::Categories>,
@@ -98,12 +100,18 @@ pub mod categories {
         >,
     }
     impl Builder {
+        /// Appends an item to `matched_categories`.
+        ///
+        /// To override the contents of this collection use [`set_matched_categories`](Self::set_matched_categories).
+        ///
+        /// <p>The category rules that have been matched in the analyzed segment.</p>
         pub fn matched_categories(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.matched_categories.unwrap_or_default();
             v.push(input.into());
             self.matched_categories = Some(v);
             self
         }
+        /// <p>The category rules that have been matched in the analyzed segment.</p>
         pub fn set_matched_categories(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -111,6 +119,11 @@ pub mod categories {
             self.matched_categories = input;
             self
         }
+        /// Adds a key-value pair to `matched_details`.
+        ///
+        /// To override the contents of this collection use [`set_matched_details`](Self::set_matched_details).
+        ///
+        /// <p>The category rule that was matched and when it occurred in the transcript.</p>
         pub fn matched_details(
             mut self,
             k: impl Into<std::string::String>,
@@ -121,6 +134,7 @@ pub mod categories {
             self.matched_details = Some(hash_map);
             self
         }
+        /// <p>The category rule that was matched and when it occurred in the transcript.</p>
         pub fn set_matched_details(
             mut self,
             input: std::option::Option<
@@ -170,6 +184,11 @@ pub mod category_details {
             std::option::Option<std::vec::Vec<crate::model::PointOfInterest>>,
     }
     impl Builder {
+        /// Appends an item to `points_of_interest`.
+        ///
+        /// To override the contents of this collection use [`set_points_of_interest`](Self::set_points_of_interest).
+        ///
+        /// <p>The section of audio where the category rule was detected.</p>
         pub fn points_of_interest(
             mut self,
             input: impl Into<crate::model::PointOfInterest>,
@@ -179,6 +198,7 @@ pub mod category_details {
             self.points_of_interest = Some(v);
             self
         }
+        /// <p>The section of audio where the category rule was detected.</p>
         pub fn set_points_of_interest(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PointOfInterest>>,
@@ -233,6 +253,7 @@ pub mod point_of_interest {
             self.begin_offset_millis = Some(input);
             self
         }
+        /// <p>The beginning offset in milliseconds where the category rule was detected.</p>
         pub fn set_begin_offset_millis(mut self, input: std::option::Option<i32>) -> Self {
             self.begin_offset_millis = input;
             self
@@ -242,6 +263,7 @@ pub mod point_of_interest {
             self.end_offset_millis = Some(input);
             self
         }
+        /// <p>The ending offset in milliseconds where the category rule was detected.</p>
         pub fn set_end_offset_millis(mut self, input: std::option::Option<i32>) -> Self {
             self.end_offset_millis = input;
             self
@@ -318,6 +340,7 @@ pub mod transcript {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier of the transcript.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -327,6 +350,7 @@ pub mod transcript {
             self.participant_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the participant.</p>
         pub fn set_participant_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -339,6 +363,7 @@ pub mod transcript {
             self.participant_role = Some(input.into());
             self
         }
+        /// <p>The role of participant. For example, is it a customer, agent, or system.</p>
         pub fn set_participant_role(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -351,6 +376,7 @@ pub mod transcript {
             self.content = Some(input.into());
             self
         }
+        /// <p>The content of the transcript.</p>
         pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content = input;
             self
@@ -360,6 +386,7 @@ pub mod transcript {
             self.begin_offset_millis = Some(input);
             self
         }
+        /// <p>The beginning offset in the contact for this transcript.</p>
         pub fn set_begin_offset_millis(mut self, input: std::option::Option<i32>) -> Self {
             self.begin_offset_millis = input;
             self
@@ -369,6 +396,7 @@ pub mod transcript {
             self.end_offset_millis = Some(input);
             self
         }
+        /// <p>The end offset in the contact for this transcript.</p>
         pub fn set_end_offset_millis(mut self, input: std::option::Option<i32>) -> Self {
             self.end_offset_millis = input;
             self
@@ -378,6 +406,7 @@ pub mod transcript {
             self.sentiment = Some(input);
             self
         }
+        /// <p>The sentiment of the detected for this piece of transcript.</p>
         pub fn set_sentiment(
             mut self,
             input: std::option::Option<crate::model::SentimentValue>,
@@ -385,12 +414,18 @@ pub mod transcript {
             self.sentiment = input;
             self
         }
+        /// Appends an item to `issues_detected`.
+        ///
+        /// To override the contents of this collection use [`set_issues_detected`](Self::set_issues_detected).
+        ///
+        /// <p>List of positions where issues were detected on the transcript.</p>
         pub fn issues_detected(mut self, input: impl Into<crate::model::IssueDetected>) -> Self {
             let mut v = self.issues_detected.unwrap_or_default();
             v.push(input.into());
             self.issues_detected = Some(v);
             self
         }
+        /// <p>List of positions where issues were detected on the transcript.</p>
         pub fn set_issues_detected(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::IssueDetected>>,
@@ -449,6 +484,7 @@ pub mod issue_detected {
             self.character_offsets = Some(input);
             self
         }
+        /// <p>The offset for when the issue was detected in the segment.</p>
         pub fn set_character_offsets(
             mut self,
             input: std::option::Option<crate::model::CharacterOffsets>,
@@ -503,6 +539,7 @@ pub mod character_offsets {
             self.begin_offset_char = Some(input);
             self
         }
+        /// <p>The beginning of the issue.</p>
         pub fn set_begin_offset_char(mut self, input: std::option::Option<i32>) -> Self {
             self.begin_offset_char = input;
             self
@@ -512,6 +549,7 @@ pub mod character_offsets {
             self.end_offset_char = Some(input);
             self
         }
+        /// <p>The end of the issue.</p>
         pub fn set_end_offset_char(mut self, input: std::option::Option<i32>) -> Self {
             self.end_offset_char = input;
             self
@@ -532,6 +570,7 @@ impl CharacterOffsets {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -543,8 +582,11 @@ impl CharacterOffsets {
     std::hash::Hash,
 )]
 pub enum SentimentValue {
+    #[allow(missing_docs)] // documentation missing in model
     Negative,
+    #[allow(missing_docs)] // documentation missing in model
     Neutral,
+    #[allow(missing_docs)] // documentation missing in model
     Positive,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -567,6 +609,7 @@ impl std::str::FromStr for SentimentValue {
     }
 }
 impl SentimentValue {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SentimentValue::Negative => "NEGATIVE",
@@ -575,6 +618,7 @@ impl SentimentValue {
             SentimentValue::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["NEGATIVE", "NEUTRAL", "POSITIVE"]
     }

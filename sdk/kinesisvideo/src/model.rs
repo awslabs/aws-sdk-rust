@@ -30,6 +30,8 @@ pub mod single_master_configuration {
             self.message_ttl_seconds = Some(input);
             self
         }
+        /// <p>The period of time a signaling channel retains underlivered messages before they are
+        /// discarded.</p>
         pub fn set_message_ttl_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.message_ttl_seconds = input;
             self
@@ -49,6 +51,7 @@ impl SingleMasterConfiguration {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -60,7 +63,9 @@ impl SingleMasterConfiguration {
     std::hash::Hash,
 )]
 pub enum UpdateDataRetentionOperation {
+    #[allow(missing_docs)] // documentation missing in model
     DecreaseDataRetention,
+    #[allow(missing_docs)] // documentation missing in model
     IncreaseDataRetention,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -82,6 +87,7 @@ impl std::str::FromStr for UpdateDataRetentionOperation {
     }
 }
 impl UpdateDataRetentionOperation {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             UpdateDataRetentionOperation::DecreaseDataRetention => "DECREASE_DATA_RETENTION",
@@ -89,6 +95,7 @@ impl UpdateDataRetentionOperation {
             UpdateDataRetentionOperation::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DECREASE_DATA_RETENTION", "INCREASE_DATA_RETENTION"]
     }
@@ -131,6 +138,7 @@ pub mod tag {
             self.key = Some(input.into());
             self
         }
+        /// <p>The key of the tag that is associated with the specified signaling channel.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -140,6 +148,7 @@ pub mod tag {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value of the tag that is associated with the specified signaling channel.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -180,7 +189,7 @@ pub struct StreamInfo {
     /// <p>The status of the stream.</p>
     pub status: std::option::Option<crate::model::Status>,
     /// <p>A time stamp that indicates when the stream was created.</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>How long the stream retains data, in hours.</p>
     pub data_retention_in_hours: std::option::Option<i32>,
 }
@@ -212,7 +221,7 @@ pub mod stream_info {
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
         pub(crate) version: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::Status>,
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) data_retention_in_hours: std::option::Option<i32>,
     }
     impl Builder {
@@ -221,6 +230,7 @@ pub mod stream_info {
             self.device_name = Some(input.into());
             self
         }
+        /// <p>The name of the device that is associated with the stream.</p>
         pub fn set_device_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.device_name = input;
             self
@@ -230,6 +240,7 @@ pub mod stream_info {
             self.stream_name = Some(input.into());
             self
         }
+        /// <p>The name of the stream.</p>
         pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_name = input;
             self
@@ -239,6 +250,7 @@ pub mod stream_info {
             self.stream_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the stream.</p>
         pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_arn = input;
             self
@@ -248,6 +260,7 @@ pub mod stream_info {
             self.media_type = Some(input.into());
             self
         }
+        /// <p>The <code>MediaType</code> of the stream. </p>
         pub fn set_media_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.media_type = input;
             self
@@ -258,6 +271,8 @@ pub mod stream_info {
             self.kms_key_id = Some(input.into());
             self
         }
+        /// <p>The ID of the AWS Key Management Service (AWS KMS) key that Kinesis Video Streams
+        /// uses to encrypt data on the stream.</p>
         pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_id = input;
             self
@@ -267,6 +282,7 @@ pub mod stream_info {
             self.version = Some(input.into());
             self
         }
+        /// <p>The version of the stream.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -276,18 +292,20 @@ pub mod stream_info {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the stream.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::Status>) -> Self {
             self.status = input;
             self
         }
         /// <p>A time stamp that indicates when the stream was created.</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>A time stamp that indicates when the stream was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -297,6 +315,7 @@ pub mod stream_info {
             self.data_retention_in_hours = Some(input);
             self
         }
+        /// <p>How long the stream retains data, in hours.</p>
         pub fn set_data_retention_in_hours(mut self, input: std::option::Option<i32>) -> Self {
             self.data_retention_in_hours = input;
             self
@@ -324,6 +343,7 @@ impl StreamInfo {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -335,9 +355,13 @@ impl StreamInfo {
     std::hash::Hash,
 )]
 pub enum Status {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     Creating,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
+    #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -361,6 +385,7 @@ impl std::str::FromStr for Status {
     }
 }
 impl Status {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Status::Active => "ACTIVE",
@@ -370,6 +395,7 @@ impl Status {
             Status::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ACTIVE", "CREATING", "DELETING", "UPDATING"]
     }
@@ -417,6 +443,8 @@ pub mod stream_name_condition {
             self.comparison_operator = Some(input);
             self
         }
+        /// <p>A comparison operator. Currently, you can specify only the <code>BEGINS_WITH</code>
+        /// operator, which finds streams whose names start with a given prefix.</p>
         pub fn set_comparison_operator(
             mut self,
             input: std::option::Option<crate::model::ComparisonOperator>,
@@ -429,6 +457,7 @@ pub mod stream_name_condition {
             self.comparison_value = Some(input.into());
             self
         }
+        /// <p>A value to compare.</p>
         pub fn set_comparison_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -452,6 +481,7 @@ impl StreamNameCondition {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -463,6 +493,7 @@ impl StreamNameCondition {
     std::hash::Hash,
 )]
 pub enum ComparisonOperator {
+    #[allow(missing_docs)] // documentation missing in model
     BeginsWith,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -483,12 +514,14 @@ impl std::str::FromStr for ComparisonOperator {
     }
 }
 impl ComparisonOperator {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ComparisonOperator::BeginsWith => "BEGINS_WITH",
             ComparisonOperator::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["BEGINS_WITH"]
     }
@@ -512,7 +545,7 @@ pub struct ChannelInfo {
     /// <p>Current status of the signaling channel.</p>
     pub channel_status: std::option::Option<crate::model::Status>,
     /// <p>The time at which the signaling channel was created.</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A structure that contains the configuration for the <code>SINGLE_MASTER</code> channel
     /// type.</p>
     pub single_master_configuration: std::option::Option<crate::model::SingleMasterConfiguration>,
@@ -545,7 +578,7 @@ pub mod channel_info {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
         pub(crate) channel_type: std::option::Option<crate::model::ChannelType>,
         pub(crate) channel_status: std::option::Option<crate::model::Status>,
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) single_master_configuration:
             std::option::Option<crate::model::SingleMasterConfiguration>,
         pub(crate) version: std::option::Option<std::string::String>,
@@ -556,6 +589,7 @@ pub mod channel_info {
             self.channel_name = Some(input.into());
             self
         }
+        /// <p>The name of the signaling channel.</p>
         pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.channel_name = input;
             self
@@ -565,6 +599,7 @@ pub mod channel_info {
             self.channel_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the signaling channel.</p>
         pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.channel_arn = input;
             self
@@ -574,6 +609,7 @@ pub mod channel_info {
             self.channel_type = Some(input);
             self
         }
+        /// <p>The type of the signaling channel.</p>
         pub fn set_channel_type(
             mut self,
             input: std::option::Option<crate::model::ChannelType>,
@@ -586,6 +622,7 @@ pub mod channel_info {
             self.channel_status = Some(input);
             self
         }
+        /// <p>Current status of the signaling channel.</p>
         pub fn set_channel_status(
             mut self,
             input: std::option::Option<crate::model::Status>,
@@ -594,13 +631,14 @@ pub mod channel_info {
             self
         }
         /// <p>The time at which the signaling channel was created.</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>The time at which the signaling channel was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -614,6 +652,8 @@ pub mod channel_info {
             self.single_master_configuration = Some(input);
             self
         }
+        /// <p>A structure that contains the configuration for the <code>SINGLE_MASTER</code> channel
+        /// type.</p>
         pub fn set_single_master_configuration(
             mut self,
             input: std::option::Option<crate::model::SingleMasterConfiguration>,
@@ -626,6 +666,7 @@ pub mod channel_info {
             self.version = Some(input.into());
             self
         }
+        /// <p>The current version of the signaling channel.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -651,6 +692,7 @@ impl ChannelInfo {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -662,6 +704,7 @@ impl ChannelInfo {
     std::hash::Hash,
 )]
 pub enum ChannelType {
+    #[allow(missing_docs)] // documentation missing in model
     SingleMaster,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -682,12 +725,14 @@ impl std::str::FromStr for ChannelType {
     }
 }
 impl ChannelType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ChannelType::SingleMaster => "SINGLE_MASTER",
             ChannelType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["SINGLE_MASTER"]
     }
@@ -735,6 +780,8 @@ pub mod channel_name_condition {
             self.comparison_operator = Some(input);
             self
         }
+        /// <p>A comparison operator. Currently, you can only specify the <code>BEGINS_WITH</code>
+        /// operator, which finds signaling channels whose names begin with a given prefix.</p>
         pub fn set_comparison_operator(
             mut self,
             input: std::option::Option<crate::model::ComparisonOperator>,
@@ -747,6 +794,7 @@ pub mod channel_name_condition {
             self.comparison_value = Some(input.into());
             self
         }
+        /// <p>A value to compare.</p>
         pub fn set_comparison_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -806,6 +854,8 @@ pub mod resource_endpoint_list_item {
             self.protocol = Some(input);
             self
         }
+        /// <p>The protocol of the signaling channel returned by the
+        /// <code>GetSignalingChannelEndpoint</code> API.</p>
         pub fn set_protocol(
             mut self,
             input: std::option::Option<crate::model::ChannelProtocol>,
@@ -819,6 +869,8 @@ pub mod resource_endpoint_list_item {
             self.resource_endpoint = Some(input.into());
             self
         }
+        /// <p>The endpoint of the signaling channel returned by the
+        /// <code>GetSignalingChannelEndpoint</code> API.</p>
         pub fn set_resource_endpoint(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -842,6 +894,7 @@ impl ResourceEndpointListItem {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -853,7 +906,9 @@ impl ResourceEndpointListItem {
     std::hash::Hash,
 )]
 pub enum ChannelProtocol {
+    #[allow(missing_docs)] // documentation missing in model
     Https,
+    #[allow(missing_docs)] // documentation missing in model
     Wss,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -875,6 +930,7 @@ impl std::str::FromStr for ChannelProtocol {
     }
 }
 impl ChannelProtocol {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ChannelProtocol::Https => "HTTPS",
@@ -882,6 +938,7 @@ impl ChannelProtocol {
             ChannelProtocol::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["HTTPS", "WSS"]
     }
@@ -928,12 +985,24 @@ pub mod single_master_channel_endpoint_configuration {
         pub(crate) role: std::option::Option<crate::model::ChannelRole>,
     }
     impl Builder {
+        /// Appends an item to `protocols`.
+        ///
+        /// To override the contents of this collection use [`set_protocols`](Self::set_protocols).
+        ///
+        /// <p>This property is used to determine the nature of communication over this
+        /// <code>SINGLE_MASTER</code> signaling channel. If <code>WSS</code> is specified, this
+        /// API returns a websocket endpoint. If <code>HTTPS</code> is specified, this API returns
+        /// an <code>HTTPS</code> endpoint.</p>
         pub fn protocols(mut self, input: impl Into<crate::model::ChannelProtocol>) -> Self {
             let mut v = self.protocols.unwrap_or_default();
             v.push(input.into());
             self.protocols = Some(v);
             self
         }
+        /// <p>This property is used to determine the nature of communication over this
+        /// <code>SINGLE_MASTER</code> signaling channel. If <code>WSS</code> is specified, this
+        /// API returns a websocket endpoint. If <code>HTTPS</code> is specified, this API returns
+        /// an <code>HTTPS</code> endpoint.</p>
         pub fn set_protocols(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ChannelProtocol>>,
@@ -951,6 +1020,12 @@ pub mod single_master_channel_endpoint_configuration {
             self.role = Some(input);
             self
         }
+        /// <p>This property is used to determine messaging permissions in this
+        /// <code>SINGLE_MASTER</code> signaling channel. If <code>MASTER</code> is specified,
+        /// this API returns an endpoint that a client can use to receive offers from and send
+        /// answers to any of the viewers on this signaling channel. If <code>VIEWER</code> is
+        /// specified, this API returns an endpoint that a client can use only to send offers to
+        /// another <code>MASTER</code> client on this signaling channel. </p>
         pub fn set_role(mut self, input: std::option::Option<crate::model::ChannelRole>) -> Self {
             self.role = input;
             self
@@ -971,6 +1046,7 @@ impl SingleMasterChannelEndpointConfiguration {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -982,7 +1058,9 @@ impl SingleMasterChannelEndpointConfiguration {
     std::hash::Hash,
 )]
 pub enum ChannelRole {
+    #[allow(missing_docs)] // documentation missing in model
     Master,
+    #[allow(missing_docs)] // documentation missing in model
     Viewer,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1004,6 +1082,7 @@ impl std::str::FromStr for ChannelRole {
     }
 }
 impl ChannelRole {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ChannelRole::Master => "MASTER",
@@ -1011,6 +1090,7 @@ impl ChannelRole {
             ChannelRole::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["MASTER", "VIEWER"]
     }
@@ -1021,6 +1101,7 @@ impl AsRef<str> for ChannelRole {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1032,12 +1113,19 @@ impl AsRef<str> for ChannelRole {
     std::hash::Hash,
 )]
 pub enum ApiName {
+    #[allow(missing_docs)] // documentation missing in model
     GetClip,
+    #[allow(missing_docs)] // documentation missing in model
     GetDashStreamingSessionUrl,
+    #[allow(missing_docs)] // documentation missing in model
     GetHlsStreamingSessionUrl,
+    #[allow(missing_docs)] // documentation missing in model
     GetMedia,
+    #[allow(missing_docs)] // documentation missing in model
     GetMediaForFragmentList,
+    #[allow(missing_docs)] // documentation missing in model
     ListFragments,
+    #[allow(missing_docs)] // documentation missing in model
     PutMedia,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1064,6 +1152,7 @@ impl std::str::FromStr for ApiName {
     }
 }
 impl ApiName {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ApiName::GetClip => "GET_CLIP",
@@ -1076,6 +1165,7 @@ impl ApiName {
             ApiName::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "GET_CLIP",

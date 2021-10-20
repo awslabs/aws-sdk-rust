@@ -22,7 +22,7 @@ pub fn parse_describe_recommendation_export_jobs_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeRecommendationExportJobsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeRecommendationExportJobsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -36,7 +36,7 @@ pub fn parse_describe_recommendation_export_jobs_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeRecommendationExportJobsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeRecommendationExportJobsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -50,7 +50,7 @@ pub fn parse_describe_recommendation_export_jobs_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeRecommendationExportJobsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeRecommendationExportJobsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -64,7 +64,7 @@ pub fn parse_describe_recommendation_export_jobs_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::missing_authentication_token::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_missing_authentication_tokenjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeRecommendationExportJobsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_missing_authentication_token_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeRecommendationExportJobsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -78,7 +78,7 @@ pub fn parse_describe_recommendation_export_jobs_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::opt_in_required_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_opt_in_required_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeRecommendationExportJobsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_opt_in_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeRecommendationExportJobsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -92,7 +92,7 @@ pub fn parse_describe_recommendation_export_jobs_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeRecommendationExportJobsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeRecommendationExportJobsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -106,7 +106,7 @@ pub fn parse_describe_recommendation_export_jobs_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeRecommendationExportJobsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeRecommendationExportJobsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -120,7 +120,7 @@ pub fn parse_describe_recommendation_export_jobs_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeRecommendationExportJobsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeRecommendationExportJobsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -180,7 +180,7 @@ pub fn parse_export_auto_scaling_group_recommendations_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ExportAutoScalingGroupRecommendationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportAutoScalingGroupRecommendationsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -194,7 +194,7 @@ pub fn parse_export_auto_scaling_group_recommendations_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ExportAutoScalingGroupRecommendationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportAutoScalingGroupRecommendationsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -208,7 +208,7 @@ pub fn parse_export_auto_scaling_group_recommendations_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ExportAutoScalingGroupRecommendationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportAutoScalingGroupRecommendationsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -222,7 +222,7 @@ pub fn parse_export_auto_scaling_group_recommendations_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ExportAutoScalingGroupRecommendationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportAutoScalingGroupRecommendationsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -236,7 +236,7 @@ pub fn parse_export_auto_scaling_group_recommendations_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::missing_authentication_token::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_missing_authentication_tokenjson_err(response.body().as_ref(), output).map_err(crate::error::ExportAutoScalingGroupRecommendationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_missing_authentication_token_json_err(response.body().as_ref(), output).map_err(crate::error::ExportAutoScalingGroupRecommendationsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -250,7 +250,7 @@ pub fn parse_export_auto_scaling_group_recommendations_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::opt_in_required_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_opt_in_required_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ExportAutoScalingGroupRecommendationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_opt_in_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportAutoScalingGroupRecommendationsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -264,7 +264,7 @@ pub fn parse_export_auto_scaling_group_recommendations_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ExportAutoScalingGroupRecommendationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportAutoScalingGroupRecommendationsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -278,7 +278,7 @@ pub fn parse_export_auto_scaling_group_recommendations_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ExportAutoScalingGroupRecommendationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportAutoScalingGroupRecommendationsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -329,7 +329,7 @@ pub fn parse_export_ebs_volume_recommendations_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ExportEBSVolumeRecommendationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportEBSVolumeRecommendationsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -343,7 +343,7 @@ pub fn parse_export_ebs_volume_recommendations_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ExportEBSVolumeRecommendationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportEBSVolumeRecommendationsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -357,7 +357,7 @@ pub fn parse_export_ebs_volume_recommendations_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ExportEBSVolumeRecommendationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportEBSVolumeRecommendationsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -371,7 +371,7 @@ pub fn parse_export_ebs_volume_recommendations_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ExportEBSVolumeRecommendationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportEBSVolumeRecommendationsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -385,7 +385,7 @@ pub fn parse_export_ebs_volume_recommendations_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::missing_authentication_token::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_missing_authentication_tokenjson_err(response.body().as_ref(), output).map_err(crate::error::ExportEBSVolumeRecommendationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_missing_authentication_token_json_err(response.body().as_ref(), output).map_err(crate::error::ExportEBSVolumeRecommendationsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -399,7 +399,7 @@ pub fn parse_export_ebs_volume_recommendations_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::opt_in_required_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_opt_in_required_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ExportEBSVolumeRecommendationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_opt_in_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportEBSVolumeRecommendationsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -413,7 +413,7 @@ pub fn parse_export_ebs_volume_recommendations_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ExportEBSVolumeRecommendationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportEBSVolumeRecommendationsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -427,7 +427,7 @@ pub fn parse_export_ebs_volume_recommendations_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ExportEBSVolumeRecommendationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportEBSVolumeRecommendationsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -485,7 +485,7 @@ pub fn parse_export_ec2_instance_recommendations_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ExportEC2InstanceRecommendationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportEC2InstanceRecommendationsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -499,7 +499,7 @@ pub fn parse_export_ec2_instance_recommendations_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ExportEC2InstanceRecommendationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportEC2InstanceRecommendationsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -513,7 +513,7 @@ pub fn parse_export_ec2_instance_recommendations_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ExportEC2InstanceRecommendationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportEC2InstanceRecommendationsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -527,7 +527,7 @@ pub fn parse_export_ec2_instance_recommendations_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ExportEC2InstanceRecommendationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportEC2InstanceRecommendationsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -541,7 +541,7 @@ pub fn parse_export_ec2_instance_recommendations_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::missing_authentication_token::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_missing_authentication_tokenjson_err(response.body().as_ref(), output).map_err(crate::error::ExportEC2InstanceRecommendationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_missing_authentication_token_json_err(response.body().as_ref(), output).map_err(crate::error::ExportEC2InstanceRecommendationsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -555,7 +555,7 @@ pub fn parse_export_ec2_instance_recommendations_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::opt_in_required_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_opt_in_required_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ExportEC2InstanceRecommendationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_opt_in_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportEC2InstanceRecommendationsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -569,7 +569,7 @@ pub fn parse_export_ec2_instance_recommendations_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ExportEC2InstanceRecommendationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportEC2InstanceRecommendationsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -583,7 +583,7 @@ pub fn parse_export_ec2_instance_recommendations_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ExportEC2InstanceRecommendationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportEC2InstanceRecommendationsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -641,7 +641,7 @@ pub fn parse_export_lambda_function_recommendations_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ExportLambdaFunctionRecommendationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportLambdaFunctionRecommendationsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -655,7 +655,7 @@ pub fn parse_export_lambda_function_recommendations_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ExportLambdaFunctionRecommendationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportLambdaFunctionRecommendationsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -669,7 +669,7 @@ pub fn parse_export_lambda_function_recommendations_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ExportLambdaFunctionRecommendationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportLambdaFunctionRecommendationsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -683,7 +683,7 @@ pub fn parse_export_lambda_function_recommendations_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ExportLambdaFunctionRecommendationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportLambdaFunctionRecommendationsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -697,7 +697,7 @@ pub fn parse_export_lambda_function_recommendations_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::missing_authentication_token::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_missing_authentication_tokenjson_err(response.body().as_ref(), output).map_err(crate::error::ExportLambdaFunctionRecommendationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_missing_authentication_token_json_err(response.body().as_ref(), output).map_err(crate::error::ExportLambdaFunctionRecommendationsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -711,7 +711,7 @@ pub fn parse_export_lambda_function_recommendations_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::opt_in_required_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_opt_in_required_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ExportLambdaFunctionRecommendationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_opt_in_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportLambdaFunctionRecommendationsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -725,7 +725,7 @@ pub fn parse_export_lambda_function_recommendations_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ExportLambdaFunctionRecommendationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportLambdaFunctionRecommendationsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -739,7 +739,7 @@ pub fn parse_export_lambda_function_recommendations_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ExportLambdaFunctionRecommendationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ExportLambdaFunctionRecommendationsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -792,7 +792,7 @@ pub fn parse_get_auto_scaling_group_recommendations_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetAutoScalingGroupRecommendationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAutoScalingGroupRecommendationsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -806,7 +806,7 @@ pub fn parse_get_auto_scaling_group_recommendations_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetAutoScalingGroupRecommendationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAutoScalingGroupRecommendationsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -820,7 +820,7 @@ pub fn parse_get_auto_scaling_group_recommendations_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetAutoScalingGroupRecommendationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAutoScalingGroupRecommendationsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -834,7 +834,7 @@ pub fn parse_get_auto_scaling_group_recommendations_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::missing_authentication_token::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_missing_authentication_tokenjson_err(response.body().as_ref(), output).map_err(crate::error::GetAutoScalingGroupRecommendationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_missing_authentication_token_json_err(response.body().as_ref(), output).map_err(crate::error::GetAutoScalingGroupRecommendationsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -848,7 +848,7 @@ pub fn parse_get_auto_scaling_group_recommendations_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::opt_in_required_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_opt_in_required_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetAutoScalingGroupRecommendationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_opt_in_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAutoScalingGroupRecommendationsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -862,7 +862,7 @@ pub fn parse_get_auto_scaling_group_recommendations_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetAutoScalingGroupRecommendationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAutoScalingGroupRecommendationsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -876,7 +876,7 @@ pub fn parse_get_auto_scaling_group_recommendations_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetAutoScalingGroupRecommendationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAutoScalingGroupRecommendationsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -890,7 +890,7 @@ pub fn parse_get_auto_scaling_group_recommendations_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetAutoScalingGroupRecommendationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAutoScalingGroupRecommendationsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -948,7 +948,7 @@ pub fn parse_get_ebs_volume_recommendations_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetEBSVolumeRecommendationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEBSVolumeRecommendationsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -965,7 +965,7 @@ pub fn parse_get_ebs_volume_recommendations_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetEBSVolumeRecommendationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEBSVolumeRecommendationsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -985,7 +985,7 @@ pub fn parse_get_ebs_volume_recommendations_error(
                             let mut output =
                                 crate::error::invalid_parameter_value_exception::Builder::default();
                             let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetEBSVolumeRecommendationsError::unhandled)?;
+                            output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEBSVolumeRecommendationsError::unhandled)?;
                             output.build()
                         };
                         if (&tmp.message).is_none() {
@@ -1003,7 +1003,7 @@ pub fn parse_get_ebs_volume_recommendations_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::missing_authentication_token::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_missing_authentication_tokenjson_err(response.body().as_ref(), output).map_err(crate::error::GetEBSVolumeRecommendationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_missing_authentication_token_json_err(response.body().as_ref(), output).map_err(crate::error::GetEBSVolumeRecommendationsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1020,7 +1020,7 @@ pub fn parse_get_ebs_volume_recommendations_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::opt_in_required_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_opt_in_required_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetEBSVolumeRecommendationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_opt_in_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEBSVolumeRecommendationsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1037,7 +1037,7 @@ pub fn parse_get_ebs_volume_recommendations_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetEBSVolumeRecommendationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEBSVolumeRecommendationsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1056,7 +1056,7 @@ pub fn parse_get_ebs_volume_recommendations_error(
                         let mut output =
                             crate::error::service_unavailable_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetEBSVolumeRecommendationsError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEBSVolumeRecommendationsError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -1074,7 +1074,7 @@ pub fn parse_get_ebs_volume_recommendations_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetEBSVolumeRecommendationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEBSVolumeRecommendationsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1135,7 +1135,7 @@ pub fn parse_get_ec2_instance_recommendations_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetEC2InstanceRecommendationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEC2InstanceRecommendationsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1152,7 +1152,7 @@ pub fn parse_get_ec2_instance_recommendations_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetEC2InstanceRecommendationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEC2InstanceRecommendationsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1172,7 +1172,7 @@ pub fn parse_get_ec2_instance_recommendations_error(
                             let mut output =
                                 crate::error::invalid_parameter_value_exception::Builder::default();
                             let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetEC2InstanceRecommendationsError::unhandled)?;
+                            output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEC2InstanceRecommendationsError::unhandled)?;
                             output.build()
                         };
                         if (&tmp.message).is_none() {
@@ -1192,7 +1192,7 @@ pub fn parse_get_ec2_instance_recommendations_error(
                         let mut output =
                             crate::error::missing_authentication_token::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_missing_authentication_tokenjson_err(response.body().as_ref(), output).map_err(crate::error::GetEC2InstanceRecommendationsError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_missing_authentication_token_json_err(response.body().as_ref(), output).map_err(crate::error::GetEC2InstanceRecommendationsError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -1210,7 +1210,7 @@ pub fn parse_get_ec2_instance_recommendations_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::opt_in_required_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_opt_in_required_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetEC2InstanceRecommendationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_opt_in_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEC2InstanceRecommendationsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1229,7 +1229,7 @@ pub fn parse_get_ec2_instance_recommendations_error(
                         let mut output =
                             crate::error::resource_not_found_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetEC2InstanceRecommendationsError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEC2InstanceRecommendationsError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -1249,7 +1249,7 @@ pub fn parse_get_ec2_instance_recommendations_error(
                         let mut output =
                             crate::error::service_unavailable_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetEC2InstanceRecommendationsError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEC2InstanceRecommendationsError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -1267,7 +1267,7 @@ pub fn parse_get_ec2_instance_recommendations_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetEC2InstanceRecommendationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEC2InstanceRecommendationsError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1324,7 +1324,7 @@ pub fn parse_get_ec2_recommendation_projected_metrics_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetEC2RecommendationProjectedMetricsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEC2RecommendationProjectedMetricsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1338,7 +1338,7 @@ pub fn parse_get_ec2_recommendation_projected_metrics_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetEC2RecommendationProjectedMetricsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEC2RecommendationProjectedMetricsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1352,7 +1352,7 @@ pub fn parse_get_ec2_recommendation_projected_metrics_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetEC2RecommendationProjectedMetricsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEC2RecommendationProjectedMetricsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1366,7 +1366,7 @@ pub fn parse_get_ec2_recommendation_projected_metrics_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::missing_authentication_token::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_missing_authentication_tokenjson_err(response.body().as_ref(), output).map_err(crate::error::GetEC2RecommendationProjectedMetricsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_missing_authentication_token_json_err(response.body().as_ref(), output).map_err(crate::error::GetEC2RecommendationProjectedMetricsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1380,7 +1380,7 @@ pub fn parse_get_ec2_recommendation_projected_metrics_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::opt_in_required_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_opt_in_required_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetEC2RecommendationProjectedMetricsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_opt_in_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEC2RecommendationProjectedMetricsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1394,7 +1394,7 @@ pub fn parse_get_ec2_recommendation_projected_metrics_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetEC2RecommendationProjectedMetricsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEC2RecommendationProjectedMetricsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1408,7 +1408,7 @@ pub fn parse_get_ec2_recommendation_projected_metrics_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetEC2RecommendationProjectedMetricsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEC2RecommendationProjectedMetricsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1422,7 +1422,7 @@ pub fn parse_get_ec2_recommendation_projected_metrics_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetEC2RecommendationProjectedMetricsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEC2RecommendationProjectedMetricsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1476,7 +1476,7 @@ pub fn parse_get_enrollment_status_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetEnrollmentStatusError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEnrollmentStatusError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1493,7 +1493,7 @@ pub fn parse_get_enrollment_status_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetEnrollmentStatusError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEnrollmentStatusError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1511,7 +1511,7 @@ pub fn parse_get_enrollment_status_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetEnrollmentStatusError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEnrollmentStatusError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1528,7 +1528,7 @@ pub fn parse_get_enrollment_status_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::missing_authentication_token::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_missing_authentication_tokenjson_err(response.body().as_ref(), output).map_err(crate::error::GetEnrollmentStatusError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_missing_authentication_token_json_err(response.body().as_ref(), output).map_err(crate::error::GetEnrollmentStatusError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1546,7 +1546,7 @@ pub fn parse_get_enrollment_status_error(
                     let mut output =
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetEnrollmentStatusError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEnrollmentStatusError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1563,7 +1563,7 @@ pub fn parse_get_enrollment_status_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetEnrollmentStatusError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEnrollmentStatusError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1619,7 +1619,7 @@ pub fn parse_get_enrollment_statuses_for_organization_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetEnrollmentStatusesForOrganizationError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEnrollmentStatusesForOrganizationError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1633,7 +1633,7 @@ pub fn parse_get_enrollment_statuses_for_organization_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetEnrollmentStatusesForOrganizationError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEnrollmentStatusesForOrganizationError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1647,7 +1647,7 @@ pub fn parse_get_enrollment_statuses_for_organization_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetEnrollmentStatusesForOrganizationError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEnrollmentStatusesForOrganizationError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1661,7 +1661,7 @@ pub fn parse_get_enrollment_statuses_for_organization_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::missing_authentication_token::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_missing_authentication_tokenjson_err(response.body().as_ref(), output).map_err(crate::error::GetEnrollmentStatusesForOrganizationError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_missing_authentication_token_json_err(response.body().as_ref(), output).map_err(crate::error::GetEnrollmentStatusesForOrganizationError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1675,7 +1675,7 @@ pub fn parse_get_enrollment_statuses_for_organization_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetEnrollmentStatusesForOrganizationError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEnrollmentStatusesForOrganizationError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1689,7 +1689,7 @@ pub fn parse_get_enrollment_statuses_for_organization_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetEnrollmentStatusesForOrganizationError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEnrollmentStatusesForOrganizationError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1742,7 +1742,7 @@ pub fn parse_get_lambda_function_recommendations_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetLambdaFunctionRecommendationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLambdaFunctionRecommendationsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1756,7 +1756,7 @@ pub fn parse_get_lambda_function_recommendations_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetLambdaFunctionRecommendationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLambdaFunctionRecommendationsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1770,7 +1770,7 @@ pub fn parse_get_lambda_function_recommendations_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetLambdaFunctionRecommendationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLambdaFunctionRecommendationsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1784,7 +1784,7 @@ pub fn parse_get_lambda_function_recommendations_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetLambdaFunctionRecommendationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLambdaFunctionRecommendationsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1798,7 +1798,7 @@ pub fn parse_get_lambda_function_recommendations_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::missing_authentication_token::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_missing_authentication_tokenjson_err(response.body().as_ref(), output).map_err(crate::error::GetLambdaFunctionRecommendationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_missing_authentication_token_json_err(response.body().as_ref(), output).map_err(crate::error::GetLambdaFunctionRecommendationsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1812,7 +1812,7 @@ pub fn parse_get_lambda_function_recommendations_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::opt_in_required_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_opt_in_required_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetLambdaFunctionRecommendationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_opt_in_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLambdaFunctionRecommendationsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1826,7 +1826,7 @@ pub fn parse_get_lambda_function_recommendations_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetLambdaFunctionRecommendationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLambdaFunctionRecommendationsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1840,7 +1840,7 @@ pub fn parse_get_lambda_function_recommendations_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetLambdaFunctionRecommendationsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLambdaFunctionRecommendationsError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1903,7 +1903,7 @@ pub fn parse_get_recommendation_summaries_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetRecommendationSummariesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRecommendationSummariesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1920,7 +1920,7 @@ pub fn parse_get_recommendation_summaries_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetRecommendationSummariesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRecommendationSummariesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1939,7 +1939,7 @@ pub fn parse_get_recommendation_summaries_error(
                         let mut output =
                             crate::error::invalid_parameter_value_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetRecommendationSummariesError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRecommendationSummariesError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -1957,7 +1957,7 @@ pub fn parse_get_recommendation_summaries_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::missing_authentication_token::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_missing_authentication_tokenjson_err(response.body().as_ref(), output).map_err(crate::error::GetRecommendationSummariesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_missing_authentication_token_json_err(response.body().as_ref(), output).map_err(crate::error::GetRecommendationSummariesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1974,7 +1974,7 @@ pub fn parse_get_recommendation_summaries_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::opt_in_required_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_opt_in_required_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetRecommendationSummariesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_opt_in_required_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRecommendationSummariesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1992,7 +1992,7 @@ pub fn parse_get_recommendation_summaries_error(
                     let mut output =
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetRecommendationSummariesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRecommendationSummariesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2009,7 +2009,7 @@ pub fn parse_get_recommendation_summaries_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetRecommendationSummariesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRecommendationSummariesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2070,7 +2070,7 @@ pub fn parse_update_enrollment_status_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateEnrollmentStatusError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEnrollmentStatusError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2087,7 +2087,7 @@ pub fn parse_update_enrollment_status_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateEnrollmentStatusError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEnrollmentStatusError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2105,7 +2105,7 @@ pub fn parse_update_enrollment_status_error(
                     let mut output =
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateEnrollmentStatusError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEnrollmentStatusError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2122,7 +2122,7 @@ pub fn parse_update_enrollment_status_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::missing_authentication_token::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_missing_authentication_tokenjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateEnrollmentStatusError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_missing_authentication_token_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEnrollmentStatusError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2140,7 +2140,7 @@ pub fn parse_update_enrollment_status_error(
                     let mut output =
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateEnrollmentStatusError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEnrollmentStatusError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2157,7 +2157,7 @@ pub fn parse_update_enrollment_status_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateEnrollmentStatusError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEnrollmentStatusError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {

@@ -5,8 +5,8 @@
 
 use aws_sdk_s3::operation::GetObject;
 use aws_sdk_s3::ErrorExt;
+use aws_smithy_http::response::ParseHttpResponse;
 use bytes::Bytes;
-use smithy_http::response::ParseHttpResponse;
 
 #[test]
 fn deserialize_extended_errors() {

@@ -69,6 +69,7 @@ pub mod failure_info {
             self.status_code = Some(input);
             self
         }
+        /// <p>The HTTP status code of the common error.</p>
         pub fn set_status_code(mut self, input: std::option::Option<i32>) -> Self {
             self.status_code = input;
             self
@@ -81,6 +82,10 @@ pub mod failure_info {
             self.error_code = Some(input);
             self
         }
+        /// <p>The code of the common error. Valid values include
+        /// <code>InternalServiceException</code>, <code>InvalidParameterException</code>, and
+        /// any valid error code returned by the AWS service that hosts the resource that you want
+        /// to tag.</p>
         pub fn set_error_code(
             mut self,
             input: std::option::Option<crate::model::ErrorCode>,
@@ -93,6 +98,7 @@ pub mod failure_info {
             self.error_message = Some(input.into());
             self
         }
+        /// <p>The message of the common error.</p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -117,6 +123,7 @@ impl FailureInfo {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -128,7 +135,9 @@ impl FailureInfo {
     std::hash::Hash,
 )]
 pub enum ErrorCode {
+    #[allow(missing_docs)] // documentation missing in model
     InternalServiceException,
+    #[allow(missing_docs)] // documentation missing in model
     InvalidParameterException,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -150,6 +159,7 @@ impl std::str::FromStr for ErrorCode {
     }
 }
 impl ErrorCode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ErrorCode::InternalServiceException => "InternalServiceException",
@@ -157,6 +167,7 @@ impl ErrorCode {
             ErrorCode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["InternalServiceException", "InvalidParameterException"]
     }
@@ -205,16 +216,23 @@ pub mod resource_tag_mapping {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags that have been applied to one or more AWS resources.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The tags that have been applied to one or more AWS resources.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -228,6 +246,8 @@ pub mod resource_tag_mapping {
             self.compliance_details = Some(input);
             self
         }
+        /// <p>Information that shows whether a resource is compliant with the effective tag policy,
+        /// including details on any noncompliant tag keys.</p>
         pub fn set_compliance_details(
             mut self,
             input: std::option::Option<crate::model::ComplianceDetails>,
@@ -289,12 +309,18 @@ pub mod compliance_details {
         pub(crate) compliance_status: std::option::Option<bool>,
     }
     impl Builder {
+        /// Appends an item to `noncompliant_keys`.
+        ///
+        /// To override the contents of this collection use [`set_noncompliant_keys`](Self::set_noncompliant_keys).
+        ///
+        /// <p>These tag keys on the resource are noncompliant with the effective tag policy.</p>
         pub fn noncompliant_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.noncompliant_keys.unwrap_or_default();
             v.push(input.into());
             self.noncompliant_keys = Some(v);
             self
         }
+        /// <p>These tag keys on the resource are noncompliant with the effective tag policy.</p>
         pub fn set_noncompliant_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -302,6 +328,12 @@ pub mod compliance_details {
             self.noncompliant_keys = input;
             self
         }
+        /// Appends an item to `keys_with_noncompliant_values`.
+        ///
+        /// To override the contents of this collection use [`set_keys_with_noncompliant_values`](Self::set_keys_with_noncompliant_values).
+        ///
+        /// <p>These are keys defined in the effective policy that are on the resource with either
+        /// incorrect case treatment or noncompliant values. </p>
         pub fn keys_with_noncompliant_values(
             mut self,
             input: impl Into<std::string::String>,
@@ -311,6 +343,8 @@ pub mod compliance_details {
             self.keys_with_noncompliant_values = Some(v);
             self
         }
+        /// <p>These are keys defined in the effective policy that are on the resource with either
+        /// incorrect case treatment or noncompliant values. </p>
         pub fn set_keys_with_noncompliant_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -323,6 +357,7 @@ pub mod compliance_details {
             self.compliance_status = Some(input);
             self
         }
+        /// <p>Whether a resource is compliant with the effective tag policy.</p>
         pub fn set_compliance_status(mut self, input: std::option::Option<bool>) -> Self {
             self.compliance_status = input;
             self
@@ -379,6 +414,7 @@ pub mod tag {
             self.key = Some(input.into());
             self
         }
+        /// <p>One part of a key-value pair that makes up a tag. A key is a general label that acts like a category for more specific tag values.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -388,6 +424,7 @@ pub mod tag {
             self.value = Some(input.into());
             self
         }
+        /// <p>One part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key). The value can be empty or null.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -441,16 +478,23 @@ pub mod tag_filter {
             self.key = Some(input.into());
             self
         }
+        /// <p>One part of a key-value pair that makes up a tag. A key is a general label that acts like a category for more specific tag values.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
         }
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>One part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key). The value can be empty or null.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
+        /// <p>One part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key). The value can be empty or null.</p>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -523,6 +567,7 @@ pub mod summary {
             self.last_updated = Some(input.into());
             self
         }
+        /// <p>The timestamp that shows when this summary was generated in this Region. </p>
         pub fn set_last_updated(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.last_updated = input;
             self
@@ -533,6 +578,8 @@ pub mod summary {
             self.target_id = Some(input.into());
             self
         }
+        /// <p>The account identifier or the root identifier of the organization. If you don't know
+        /// the root ID, you can call the AWS Organizations <a href="http://docs.aws.amazon.com/organizations/latest/APIReference/API_ListRoots.html">ListRoots</a> API.</p>
         pub fn set_target_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.target_id = input;
             self
@@ -542,6 +589,7 @@ pub mod summary {
             self.target_id_type = Some(input);
             self
         }
+        /// <p>Whether the target is an account, an OU, or the organization root.</p>
         pub fn set_target_id_type(
             mut self,
             input: std::option::Option<crate::model::TargetIdType>,
@@ -554,6 +602,7 @@ pub mod summary {
             self.region = Some(input.into());
             self
         }
+        /// <p>The AWS Region that the summary applies to.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
@@ -563,6 +612,7 @@ pub mod summary {
             self.resource_type = Some(input.into());
             self
         }
+        /// <p>The AWS resource type.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -575,6 +625,7 @@ pub mod summary {
             self.non_compliant_resources = Some(input);
             self
         }
+        /// <p>The count of noncompliant resources.</p>
         pub fn set_non_compliant_resources(mut self, input: std::option::Option<i64>) -> Self {
             self.non_compliant_resources = input;
             self
@@ -599,6 +650,7 @@ impl Summary {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -610,8 +662,11 @@ impl Summary {
     std::hash::Hash,
 )]
 pub enum TargetIdType {
+    #[allow(missing_docs)] // documentation missing in model
     Account,
+    #[allow(missing_docs)] // documentation missing in model
     Ou,
+    #[allow(missing_docs)] // documentation missing in model
     Root,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -634,6 +689,7 @@ impl std::str::FromStr for TargetIdType {
     }
 }
 impl TargetIdType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TargetIdType::Account => "ACCOUNT",
@@ -642,6 +698,7 @@ impl TargetIdType {
             TargetIdType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ACCOUNT", "OU", "ROOT"]
     }
@@ -652,6 +709,7 @@ impl AsRef<str> for TargetIdType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -663,8 +721,11 @@ impl AsRef<str> for TargetIdType {
     std::hash::Hash,
 )]
 pub enum GroupByAttribute {
+    #[allow(missing_docs)] // documentation missing in model
     Region,
+    #[allow(missing_docs)] // documentation missing in model
     ResourceType,
+    #[allow(missing_docs)] // documentation missing in model
     TargetId,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -687,6 +748,7 @@ impl std::str::FromStr for GroupByAttribute {
     }
 }
 impl GroupByAttribute {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             GroupByAttribute::Region => "REGION",
@@ -695,6 +757,7 @@ impl GroupByAttribute {
             GroupByAttribute::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["REGION", "RESOURCE_TYPE", "TARGET_ID"]
     }

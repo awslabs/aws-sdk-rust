@@ -12,14 +12,24 @@ pub mod add_tags_to_certificate_input {
     impl Builder {
         /// <p>String that contains the ARN of the ACM certificate to which the tag is to be applied.
         /// This must be of the form:</p>
+        ///
         /// <p>
         /// <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
         /// </p>
+        ///
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
         pub fn certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_arn = Some(input.into());
             self
         }
+        /// <p>String that contains the ARN of the ACM certificate to which the tag is to be applied.
+        /// This must be of the form:</p>
+        ///
+        /// <p>
+        /// <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
+        /// </p>
+        ///
+        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
         pub fn set_certificate_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -27,12 +37,18 @@ pub mod add_tags_to_certificate_input {
             self.certificate_arn = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The key-value pair that defines the tag. The tag value is optional.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The key-value pair that defines the tag. The tag value is optional.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -45,7 +61,7 @@ pub mod add_tags_to_certificate_input {
             self,
         ) -> std::result::Result<
             crate::input::AddTagsToCertificateInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::AddTagsToCertificateInput {
                 certificate_arn: self.certificate_arn,
@@ -65,16 +81,16 @@ impl AddTagsToCertificateInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AddTagsToCertificate,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AddTagsToCertificateInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -82,7 +98,7 @@ impl AddTagsToCertificateInput {
         fn update_http_builder(
             input: &crate::input::AddTagsToCertificateInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -91,32 +107,34 @@ impl AddTagsToCertificateInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AddTagsToCertificateInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "CertificateManager.AddTagsToCertificate",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_add_tags_to_certificate(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -139,15 +157,15 @@ impl AddTagsToCertificateInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::AddTagsToCertificate::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "AddTagsToCertificate",
             "acm",
         ));
@@ -156,10 +174,10 @@ impl AddTagsToCertificateInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -192,6 +210,12 @@ pub mod delete_certificate_input {
             self.certificate_arn = Some(input.into());
             self
         }
+        /// <p>String that contains the ARN of the ACM certificate to be deleted. This must be of the
+        /// form:</p>
+        /// <p>
+        /// <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
+        /// </p>
+        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
         pub fn set_certificate_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -204,7 +228,7 @@ pub mod delete_certificate_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteCertificateInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteCertificateInput {
                 certificate_arn: self.certificate_arn,
@@ -223,16 +247,16 @@ impl DeleteCertificateInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteCertificate,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteCertificateInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -240,7 +264,7 @@ impl DeleteCertificateInput {
         fn update_http_builder(
             input: &crate::input::DeleteCertificateInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -249,32 +273,32 @@ impl DeleteCertificateInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteCertificateInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "CertificateManager.DeleteCertificate",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_certificate(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -297,15 +321,15 @@ impl DeleteCertificateInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteCertificate::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteCertificate",
             "acm",
         ));
@@ -314,10 +338,10 @@ impl DeleteCertificateInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -350,6 +374,12 @@ pub mod describe_certificate_input {
             self.certificate_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the ACM certificate. The ARN must have the following
+        /// form:</p>
+        /// <p>
+        /// <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
+        /// </p>
+        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
         pub fn set_certificate_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -362,7 +392,7 @@ pub mod describe_certificate_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeCertificateInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeCertificateInput {
                 certificate_arn: self.certificate_arn,
@@ -381,16 +411,16 @@ impl DescribeCertificateInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeCertificate,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeCertificateInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -398,7 +428,7 @@ impl DescribeCertificateInput {
         fn update_http_builder(
             input: &crate::input::DescribeCertificateInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -407,30 +437,32 @@ impl DescribeCertificateInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeCertificateInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "CertificateManager.DescribeCertificate",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_certificate(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -453,15 +485,15 @@ impl DescribeCertificateInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeCertificate::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeCertificate",
             "acm",
         ));
@@ -470,10 +502,10 @@ impl DescribeCertificateInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -494,7 +526,7 @@ pub mod export_certificate_input {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_arn: std::option::Option<std::string::String>,
-        pub(crate) passphrase: std::option::Option<smithy_types::Blob>,
+        pub(crate) passphrase: std::option::Option<aws_smithy_types::Blob>,
     }
     impl Builder {
         /// <p>An Amazon Resource Name (ARN) of the issued certificate. This must be of the form:</p>
@@ -505,6 +537,10 @@ pub mod export_certificate_input {
             self.certificate_arn = Some(input.into());
             self
         }
+        /// <p>An Amazon Resource Name (ARN) of the issued certificate. This must be of the form:</p>
+        /// <p>
+        /// <code>arn:aws:acm:region:account:certificate/12345678-1234-1234-1234-123456789012</code>
+        /// </p>
         pub fn set_certificate_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -518,11 +554,20 @@ pub mod export_certificate_input {
         /// <p>
         /// <code>openssl rsa -in encrypted_key.pem -out decrypted_key.pem</code>
         /// </p>
-        pub fn passphrase(mut self, input: smithy_types::Blob) -> Self {
+        pub fn passphrase(mut self, input: aws_smithy_types::Blob) -> Self {
             self.passphrase = Some(input);
             self
         }
-        pub fn set_passphrase(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+        /// <p>Passphrase to associate with the encrypted exported private key. If you want to later
+        /// decrypt the private key, you must have the passphrase. You can use the following OpenSSL
+        /// command to decrypt a private key: </p>
+        /// <p>
+        /// <code>openssl rsa -in encrypted_key.pem -out decrypted_key.pem</code>
+        /// </p>
+        pub fn set_passphrase(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Blob>,
+        ) -> Self {
             self.passphrase = input;
             self
         }
@@ -531,7 +576,7 @@ pub mod export_certificate_input {
             self,
         ) -> std::result::Result<
             crate::input::ExportCertificateInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ExportCertificateInput {
                 certificate_arn: self.certificate_arn,
@@ -551,16 +596,16 @@ impl ExportCertificateInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ExportCertificate,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ExportCertificateInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -568,7 +613,7 @@ impl ExportCertificateInput {
         fn update_http_builder(
             input: &crate::input::ExportCertificateInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -577,32 +622,32 @@ impl ExportCertificateInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ExportCertificateInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "CertificateManager.ExportCertificate",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_export_certificate(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -625,15 +670,15 @@ impl ExportCertificateInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ExportCertificate::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ExportCertificate",
             "acm",
         ));
@@ -642,10 +687,10 @@ impl ExportCertificateInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -671,7 +716,7 @@ pub mod get_account_configuration_input {
             self,
         ) -> std::result::Result<
             crate::input::GetAccountConfigurationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetAccountConfigurationInput {})
         }
@@ -689,16 +734,16 @@ impl GetAccountConfigurationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetAccountConfiguration,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetAccountConfigurationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -706,7 +751,7 @@ impl GetAccountConfigurationInput {
         fn update_http_builder(
             input: &crate::input::GetAccountConfigurationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -715,32 +760,34 @@ impl GetAccountConfigurationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetAccountConfigurationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "CertificateManager.GetAccountConfiguration",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_account_configuration(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -763,15 +810,15 @@ impl GetAccountConfigurationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetAccountConfiguration::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetAccountConfiguration",
             "acm",
         ));
@@ -780,10 +827,10 @@ impl GetAccountConfigurationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -815,6 +862,11 @@ pub mod get_certificate_input {
             self.certificate_arn = Some(input.into());
             self
         }
+        /// <p>String that contains a certificate ARN in the following format:</p>
+        /// <p>
+        /// <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
+        /// </p>
+        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
         pub fn set_certificate_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -827,7 +879,7 @@ pub mod get_certificate_input {
             self,
         ) -> std::result::Result<
             crate::input::GetCertificateInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetCertificateInput {
                 certificate_arn: self.certificate_arn,
@@ -846,16 +898,16 @@ impl GetCertificateInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetCertificate,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetCertificateInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -863,7 +915,7 @@ impl GetCertificateInput {
         fn update_http_builder(
             input: &crate::input::GetCertificateInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -872,29 +924,31 @@ impl GetCertificateInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetCertificateInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "CertificateManager.GetCertificate",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_get_certificate(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -917,15 +971,15 @@ impl GetCertificateInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetCertificate::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetCertificate",
             "acm",
         ));
@@ -934,10 +988,10 @@ impl GetCertificateInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -958,9 +1012,9 @@ pub mod import_certificate_input {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) certificate_arn: std::option::Option<std::string::String>,
-        pub(crate) certificate: std::option::Option<smithy_types::Blob>,
-        pub(crate) private_key: std::option::Option<smithy_types::Blob>,
-        pub(crate) certificate_chain: std::option::Option<smithy_types::Blob>,
+        pub(crate) certificate: std::option::Option<aws_smithy_types::Blob>,
+        pub(crate) private_key: std::option::Option<aws_smithy_types::Blob>,
+        pub(crate) certificate_chain: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
@@ -971,6 +1025,9 @@ pub mod import_certificate_input {
             self.certificate_arn = Some(input.into());
             self
         }
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
+        /// (ARN)</a> of an imported certificate to replace. To import a new certificate, omit this
+        /// field. </p>
         pub fn set_certificate_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -979,41 +1036,58 @@ pub mod import_certificate_input {
             self
         }
         /// <p>The certificate to import.</p>
-        pub fn certificate(mut self, input: smithy_types::Blob) -> Self {
+        pub fn certificate(mut self, input: aws_smithy_types::Blob) -> Self {
             self.certificate = Some(input);
             self
         }
-        pub fn set_certificate(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+        /// <p>The certificate to import.</p>
+        pub fn set_certificate(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Blob>,
+        ) -> Self {
             self.certificate = input;
             self
         }
         /// <p>The private key that matches the public key in the certificate.</p>
-        pub fn private_key(mut self, input: smithy_types::Blob) -> Self {
+        pub fn private_key(mut self, input: aws_smithy_types::Blob) -> Self {
             self.private_key = Some(input);
             self
         }
-        pub fn set_private_key(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+        /// <p>The private key that matches the public key in the certificate.</p>
+        pub fn set_private_key(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Blob>,
+        ) -> Self {
             self.private_key = input;
             self
         }
         /// <p>The PEM encoded certificate chain.</p>
-        pub fn certificate_chain(mut self, input: smithy_types::Blob) -> Self {
+        pub fn certificate_chain(mut self, input: aws_smithy_types::Blob) -> Self {
             self.certificate_chain = Some(input);
             self
         }
+        /// <p>The PEM encoded certificate chain.</p>
         pub fn set_certificate_chain(
             mut self,
-            input: std::option::Option<smithy_types::Blob>,
+            input: std::option::Option<aws_smithy_types::Blob>,
         ) -> Self {
             self.certificate_chain = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>One or more resource tags to associate with the imported certificate. </p>
+        /// <p>Note: You cannot apply tags when reimporting a certificate.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>One or more resource tags to associate with the imported certificate. </p>
+        /// <p>Note: You cannot apply tags when reimporting a certificate.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1026,7 +1100,7 @@ pub mod import_certificate_input {
             self,
         ) -> std::result::Result<
             crate::input::ImportCertificateInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ImportCertificateInput {
                 certificate_arn: self.certificate_arn,
@@ -1049,16 +1123,16 @@ impl ImportCertificateInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ImportCertificate,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ImportCertificateInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1066,7 +1140,7 @@ impl ImportCertificateInput {
         fn update_http_builder(
             input: &crate::input::ImportCertificateInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1075,32 +1149,32 @@ impl ImportCertificateInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ImportCertificateInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "CertificateManager.ImportCertificate",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_import_certificate(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1123,15 +1197,15 @@ impl ImportCertificateInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ImportCertificate::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ImportCertificate",
             "acm",
         ));
@@ -1140,10 +1214,10 @@ impl ImportCertificateInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1170,6 +1244,11 @@ pub mod list_certificates_input {
         pub(crate) max_items: std::option::Option<i32>,
     }
     impl Builder {
+        /// Appends an item to `certificate_statuses`.
+        ///
+        /// To override the contents of this collection use [`set_certificate_statuses`](Self::set_certificate_statuses).
+        ///
+        /// <p>Filter the certificate list by status value.</p>
         pub fn certificate_statuses(
             mut self,
             input: impl Into<crate::model::CertificateStatus>,
@@ -1179,6 +1258,7 @@ pub mod list_certificates_input {
             self.certificate_statuses = Some(v);
             self
         }
+        /// <p>Filter the certificate list by status value.</p>
         pub fn set_certificate_statuses(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CertificateStatus>>,
@@ -1192,6 +1272,8 @@ pub mod list_certificates_input {
             self.includes = Some(input);
             self
         }
+        /// <p>Filter the certificate list. For more information, see the <a>Filters</a>
+        /// structure.</p>
         pub fn set_includes(mut self, input: std::option::Option<crate::model::Filters>) -> Self {
             self.includes = input;
             self
@@ -1203,6 +1285,9 @@ pub mod list_certificates_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>Use this parameter only when paginating results and only in a subsequent request after you
+        /// receive a response with truncated results. Set it to the value of <code>NextToken</code> from
+        /// the response you just received.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1215,6 +1300,10 @@ pub mod list_certificates_input {
             self.max_items = Some(input);
             self
         }
+        /// <p>Use this parameter when paginating results to specify the maximum number of items to
+        /// return in the response. If additional items exist beyond the number you specify, the
+        /// <code>NextToken</code> element is sent in the response. Use this <code>NextToken</code>
+        /// value in a subsequent request to retrieve additional items.</p>
         pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
             self.max_items = input;
             self
@@ -1224,7 +1313,7 @@ pub mod list_certificates_input {
             self,
         ) -> std::result::Result<
             crate::input::ListCertificatesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListCertificatesInput {
                 certificate_statuses: self.certificate_statuses,
@@ -1246,16 +1335,16 @@ impl ListCertificatesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListCertificates,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListCertificatesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1263,7 +1352,7 @@ impl ListCertificatesInput {
         fn update_http_builder(
             input: &crate::input::ListCertificatesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1272,32 +1361,32 @@ impl ListCertificatesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListCertificatesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "CertificateManager.ListCertificates",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_certificates(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1320,15 +1409,15 @@ impl ListCertificatesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListCertificates::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListCertificates",
             "acm",
         ));
@@ -1337,10 +1426,10 @@ impl ListCertificatesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1373,6 +1462,12 @@ pub mod list_tags_for_certificate_input {
             self.certificate_arn = Some(input.into());
             self
         }
+        /// <p>String that contains the ARN of the ACM certificate for which you want to list the tags.
+        /// This must have the following form:</p>
+        /// <p>
+        /// <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
+        /// </p>
+        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
         pub fn set_certificate_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1385,7 +1480,7 @@ pub mod list_tags_for_certificate_input {
             self,
         ) -> std::result::Result<
             crate::input::ListTagsForCertificateInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListTagsForCertificateInput {
                 certificate_arn: self.certificate_arn,
@@ -1404,16 +1499,16 @@ impl ListTagsForCertificateInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForCertificate,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListTagsForCertificateInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1421,7 +1516,7 @@ impl ListTagsForCertificateInput {
         fn update_http_builder(
             input: &crate::input::ListTagsForCertificateInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1430,32 +1525,34 @@ impl ListTagsForCertificateInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListTagsForCertificateInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "CertificateManager.ListTagsForCertificate",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_tags_for_certificate(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1478,15 +1575,15 @@ impl ListTagsForCertificateInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListTagsForCertificate::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListTagsForCertificate",
             "acm",
         ));
@@ -1495,10 +1592,10 @@ impl ListTagsForCertificateInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1528,6 +1625,8 @@ pub mod put_account_configuration_input {
             self.expiry_events = Some(input);
             self
         }
+        /// <p>Specifies expiration
+        /// events associated with an account.</p>
         pub fn set_expiry_events(
             mut self,
             input: std::option::Option<crate::model::ExpiryEventsConfiguration>,
@@ -1545,6 +1644,12 @@ pub mod put_account_configuration_input {
             self.idempotency_token = Some(input.into());
             self
         }
+        /// <p>Customer-chosen string
+        /// used to distinguish between calls to <code>PutAccountConfiguration</code>. Idempotency tokens
+        /// time out after one hour. If you call <code>PutAccountConfiguration</code> multiple times with
+        /// the same unexpired idempotency token, ACM treats it as the same request and returns the
+        /// original result. If you change the idempotency token for each call, ACM treats each call as
+        /// a new request.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1557,7 +1662,7 @@ pub mod put_account_configuration_input {
             self,
         ) -> std::result::Result<
             crate::input::PutAccountConfigurationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutAccountConfigurationInput {
                 expiry_events: self.expiry_events,
@@ -1578,16 +1683,16 @@ impl PutAccountConfigurationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::PutAccountConfiguration,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::PutAccountConfigurationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1595,7 +1700,7 @@ impl PutAccountConfigurationInput {
         fn update_http_builder(
             input: &crate::input::PutAccountConfigurationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1604,32 +1709,34 @@ impl PutAccountConfigurationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::PutAccountConfigurationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "CertificateManager.PutAccountConfiguration",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_put_account_configuration(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1652,15 +1759,15 @@ impl PutAccountConfigurationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::PutAccountConfiguration::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "PutAccountConfiguration",
             "acm",
         ));
@@ -1669,10 +1776,10 @@ impl PutAccountConfigurationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1698,14 +1805,24 @@ pub mod remove_tags_from_certificate_input {
     impl Builder {
         /// <p>String that contains the ARN of the ACM Certificate with one or more tags that you want
         /// to remove. This must be of the form:</p>
+        ///
         /// <p>
         /// <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
         /// </p>
+        ///
         /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
         pub fn certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.certificate_arn = Some(input.into());
             self
         }
+        /// <p>String that contains the ARN of the ACM Certificate with one or more tags that you want
+        /// to remove. This must be of the form:</p>
+        ///
+        /// <p>
+        /// <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
+        /// </p>
+        ///
+        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
         pub fn set_certificate_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1713,12 +1830,18 @@ pub mod remove_tags_from_certificate_input {
             self.certificate_arn = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The key-value pair that defines the tag to remove.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The key-value pair that defines the tag to remove.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1731,7 +1854,7 @@ pub mod remove_tags_from_certificate_input {
             self,
         ) -> std::result::Result<
             crate::input::RemoveTagsFromCertificateInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::RemoveTagsFromCertificateInput {
                 certificate_arn: self.certificate_arn,
@@ -1752,16 +1875,16 @@ impl RemoveTagsFromCertificateInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RemoveTagsFromCertificate,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RemoveTagsFromCertificateInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1769,7 +1892,7 @@ impl RemoveTagsFromCertificateInput {
         fn update_http_builder(
             input: &crate::input::RemoveTagsFromCertificateInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1778,32 +1901,34 @@ impl RemoveTagsFromCertificateInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RemoveTagsFromCertificateInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "CertificateManager.RemoveTagsFromCertificate",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_remove_tags_from_certificate(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1826,15 +1951,15 @@ impl RemoveTagsFromCertificateInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::RemoveTagsFromCertificate::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "RemoveTagsFromCertificate",
             "acm",
         ));
@@ -1843,10 +1968,10 @@ impl RemoveTagsFromCertificateInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1879,6 +2004,12 @@ pub mod renew_certificate_input {
             self.certificate_arn = Some(input.into());
             self
         }
+        /// <p>String that contains the ARN of the ACM certificate to be renewed. This must be of the
+        /// form:</p>
+        /// <p>
+        /// <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
+        /// </p>
+        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
         pub fn set_certificate_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1891,7 +2022,7 @@ pub mod renew_certificate_input {
             self,
         ) -> std::result::Result<
             crate::input::RenewCertificateInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::RenewCertificateInput {
                 certificate_arn: self.certificate_arn,
@@ -1910,16 +2041,16 @@ impl RenewCertificateInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RenewCertificate,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RenewCertificateInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1927,7 +2058,7 @@ impl RenewCertificateInput {
         fn update_http_builder(
             input: &crate::input::RenewCertificateInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1936,32 +2067,32 @@ impl RenewCertificateInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RenewCertificateInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "CertificateManager.RenewCertificate",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_renew_certificate(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1984,15 +2115,15 @@ impl RenewCertificateInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::RenewCertificate::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "RenewCertificate",
             "acm",
         ));
@@ -2001,10 +2132,10 @@ impl RenewCertificateInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2040,12 +2171,20 @@ pub mod request_certificate_input {
         /// an ACM certificate. Use an asterisk (*) to create a wildcard certificate that protects
         /// several sites in the same domain. For example, *.example.com protects www.example.com,
         /// site.example.com, and images.example.com. </p>
+        ///
         /// <p> The first domain name you enter cannot exceed 64 octets, including periods. Each
         /// subsequent Subject Alternative Name (SAN), however, can be up to 253 octets in length. </p>
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p> Fully qualified domain name (FQDN), such as www.example.com, that you want to secure with
+        /// an ACM certificate. Use an asterisk (*) to create a wildcard certificate that protects
+        /// several sites in the same domain. For example, *.example.com protects www.example.com,
+        /// site.example.com, and images.example.com. </p>
+        ///
+        /// <p> The first domain name you enter cannot exceed 64 octets, including periods. Each
+        /// subsequent Subject Alternative Name (SAN), however, can be up to 253 octets in length. </p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -2057,6 +2196,9 @@ pub mod request_certificate_input {
             self.validation_method = Some(input);
             self
         }
+        /// <p>The method you want to use if you are requesting a public certificate to validate that you
+        /// own or control domain. You can <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">validate with DNS</a> or <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">validate with
+        /// email</a>. We recommend that you use DNS validation. </p>
         pub fn set_validation_method(
             mut self,
             input: std::option::Option<crate::model::ValidationMethod>,
@@ -2064,12 +2206,74 @@ pub mod request_certificate_input {
             self.validation_method = input;
             self
         }
+        /// Appends an item to `subject_alternative_names`.
+        ///
+        /// To override the contents of this collection use [`set_subject_alternative_names`](Self::set_subject_alternative_names).
+        ///
+        /// <p>Additional FQDNs to be included in the Subject Alternative Name extension of the ACM
+        /// certificate. For example, add the name www.example.net to a certificate for which the
+        /// <code>DomainName</code> field is www.example.com if users can reach your site by using
+        /// either name. The maximum number of domain names that you can add to an ACM certificate is
+        /// 100. However, the initial quota is 10 domain names. If you need more than 10 names, you must
+        /// request a quota increase. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Quotas</a>.</p>
+        ///
+        /// <p> The maximum length of a SAN DNS name is 253 octets. The name is made up of multiple
+        /// labels separated by periods. No label can be longer than 63 octets. Consider the following
+        /// examples: </p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>(63 octets).(63 octets).(63 octets).(61 octets)</code> is legal because the
+        /// total length is 253 octets (63+1+63+1+63+1+61) and no label exceeds 63 octets.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>(64 octets).(63 octets).(63 octets).(61 octets)</code> is not legal because the
+        /// total length exceeds 253 octets (64+1+63+1+63+1+61) and the first label exceeds 63
+        /// octets.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>(63 octets).(63 octets).(63 octets).(62 octets)</code> is not legal because the
+        /// total length of the DNS name (63+1+63+1+63+1+62) exceeds 253 octets.</p>
+        /// </li>
+        /// </ul>
         pub fn subject_alternative_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subject_alternative_names.unwrap_or_default();
             v.push(input.into());
             self.subject_alternative_names = Some(v);
             self
         }
+        /// <p>Additional FQDNs to be included in the Subject Alternative Name extension of the ACM
+        /// certificate. For example, add the name www.example.net to a certificate for which the
+        /// <code>DomainName</code> field is www.example.com if users can reach your site by using
+        /// either name. The maximum number of domain names that you can add to an ACM certificate is
+        /// 100. However, the initial quota is 10 domain names. If you need more than 10 names, you must
+        /// request a quota increase. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Quotas</a>.</p>
+        ///
+        /// <p> The maximum length of a SAN DNS name is 253 octets. The name is made up of multiple
+        /// labels separated by periods. No label can be longer than 63 octets. Consider the following
+        /// examples: </p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>(63 octets).(63 octets).(63 octets).(61 octets)</code> is legal because the
+        /// total length is 253 octets (63+1+63+1+63+1+61) and no label exceeds 63 octets.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>(64 octets).(63 octets).(63 octets).(61 octets)</code> is not legal because the
+        /// total length exceeds 253 octets (64+1+63+1+63+1+61) and the first label exceeds 63
+        /// octets.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>(63 octets).(63 octets).(63 octets).(62 octets)</code> is not legal because the
+        /// total length of the DNS name (63+1+63+1+63+1+62) exceeds 253 octets.</p>
+        /// </li>
+        /// </ul>
         pub fn set_subject_alternative_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2087,6 +2291,12 @@ pub mod request_certificate_input {
             self.idempotency_token = Some(input.into());
             self
         }
+        /// <p>Customer chosen string that can be used to distinguish between calls to
+        /// <code>RequestCertificate</code>. Idempotency tokens time out after one hour. Therefore, if
+        /// you call <code>RequestCertificate</code> multiple times with the same idempotency token within
+        /// one hour, ACM recognizes that you are requesting only one certificate and will issue only
+        /// one. If you change the idempotency token for each call, ACM recognizes that you are
+        /// requesting multiple certificates.</p>
         pub fn set_idempotency_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2094,6 +2304,12 @@ pub mod request_certificate_input {
             self.idempotency_token = input;
             self
         }
+        /// Appends an item to `domain_validation_options`.
+        ///
+        /// To override the contents of this collection use [`set_domain_validation_options`](Self::set_domain_validation_options).
+        ///
+        /// <p>The domain name that you want ACM to use to send you emails so that you can validate
+        /// domain ownership.</p>
         pub fn domain_validation_options(
             mut self,
             input: impl Into<crate::model::DomainValidationOption>,
@@ -2103,6 +2319,8 @@ pub mod request_certificate_input {
             self.domain_validation_options = Some(v);
             self
         }
+        /// <p>The domain name that you want ACM to use to send you emails so that you can validate
+        /// domain ownership.</p>
         pub fn set_domain_validation_options(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DomainValidationOption>>,
@@ -2118,6 +2336,10 @@ pub mod request_certificate_input {
             self.options = Some(input);
             self
         }
+        /// <p>Currently, you can use this parameter to specify whether to add the certificate to a
+        /// certificate transparency log. Certificate transparency makes it possible to detect SSL/TLS
+        /// certificates that have been mistakenly or maliciously issued. Certificates that have not been
+        /// logged typically produce an error message in a browser. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-bestpractices.html#best-practices-transparency">Opting Out of Certificate Transparency Logging</a>.</p>
         pub fn set_options(
             mut self,
             input: std::option::Option<crate::model::CertificateOptions>,
@@ -2129,6 +2351,7 @@ pub mod request_certificate_input {
         /// to issue the certificate. If you do not provide an ARN and you are trying to request a private
         /// certificate, ACM will attempt to issue a public certificate. For more information about
         /// private CAs, see the <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Amazon Web Services Certificate Manager Private Certificate Authority (PCA)</a> user guide. The ARN must have the following form: </p>
+        ///
         /// <p>
         /// <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
         /// </p>
@@ -2136,6 +2359,14 @@ pub mod request_certificate_input {
             self.certificate_authority_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the private certificate authority (CA) that will be used
+        /// to issue the certificate. If you do not provide an ARN and you are trying to request a private
+        /// certificate, ACM will attempt to issue a public certificate. For more information about
+        /// private CAs, see the <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Amazon Web Services Certificate Manager Private Certificate Authority (PCA)</a> user guide. The ARN must have the following form: </p>
+        ///
+        /// <p>
+        /// <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
+        /// </p>
         pub fn set_certificate_authority_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2143,12 +2374,18 @@ pub mod request_certificate_input {
             self.certificate_authority_arn = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>One or more resource tags to associate with the certificate.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>One or more resource tags to associate with the certificate.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2161,7 +2398,7 @@ pub mod request_certificate_input {
             self,
         ) -> std::result::Result<
             crate::input::RequestCertificateInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::RequestCertificateInput {
                 domain_name: self.domain_name,
@@ -2187,16 +2424,16 @@ impl RequestCertificateInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RequestCertificate,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RequestCertificateInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2204,7 +2441,7 @@ impl RequestCertificateInput {
         fn update_http_builder(
             input: &crate::input::RequestCertificateInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2213,32 +2450,32 @@ impl RequestCertificateInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RequestCertificateInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "CertificateManager.RequestCertificate",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_request_certificate(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2261,15 +2498,15 @@ impl RequestCertificateInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::RequestCertificate::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "RequestCertificate",
             "acm",
         ));
@@ -2278,10 +2515,10 @@ impl RequestCertificateInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2310,6 +2547,7 @@ pub mod resend_validation_email_input {
         /// generated and returned by the <a>RequestCertificate</a> action as soon as the
         /// request is made. By default, using this parameter causes email to be sent to all top-level
         /// domains you specified in the certificate request. The ARN must be of the form: </p>
+        ///
         /// <p>
         /// <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
         /// </p>
@@ -2317,6 +2555,14 @@ pub mod resend_validation_email_input {
             self.certificate_arn = Some(input.into());
             self
         }
+        /// <p>String that contains the ARN of the requested certificate. The certificate ARN is
+        /// generated and returned by the <a>RequestCertificate</a> action as soon as the
+        /// request is made. By default, using this parameter causes email to be sent to all top-level
+        /// domains you specified in the certificate request. The ARN must be of the form: </p>
+        ///
+        /// <p>
+        /// <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
+        /// </p>
         pub fn set_certificate_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2330,6 +2576,8 @@ pub mod resend_validation_email_input {
             self.domain = Some(input.into());
             self
         }
+        /// <p>The fully qualified domain name (FQDN) of the certificate that needs to be
+        /// validated.</p>
         pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain = input;
             self
@@ -2361,6 +2609,29 @@ pub mod resend_validation_email_input {
             self.validation_domain = Some(input.into());
             self
         }
+        /// <p>The base validation domain that will act as the suffix of the email addresses that are
+        /// used to send the emails. This must be the same as the <code>Domain</code> value or a
+        /// superdomain of the <code>Domain</code> value. For example, if you requested a certificate for
+        /// <code>site.subdomain.example.com</code> and specify a <b>ValidationDomain</b> of <code>subdomain.example.com</code>, ACM sends email to the
+        /// domain registrant, technical contact, and administrative contact in WHOIS and the following
+        /// five addresses:</p>
+        /// <ul>
+        /// <li>
+        /// <p>admin@subdomain.example.com</p>
+        /// </li>
+        /// <li>
+        /// <p>administrator@subdomain.example.com</p>
+        /// </li>
+        /// <li>
+        /// <p>hostmaster@subdomain.example.com</p>
+        /// </li>
+        /// <li>
+        /// <p>postmaster@subdomain.example.com</p>
+        /// </li>
+        /// <li>
+        /// <p>webmaster@subdomain.example.com</p>
+        /// </li>
+        /// </ul>
         pub fn set_validation_domain(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2373,7 +2644,7 @@ pub mod resend_validation_email_input {
             self,
         ) -> std::result::Result<
             crate::input::ResendValidationEmailInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ResendValidationEmailInput {
                 certificate_arn: self.certificate_arn,
@@ -2394,16 +2665,16 @@ impl ResendValidationEmailInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ResendValidationEmail,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ResendValidationEmailInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2411,7 +2682,7 @@ impl ResendValidationEmailInput {
         fn update_http_builder(
             input: &crate::input::ResendValidationEmailInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2420,32 +2691,34 @@ impl ResendValidationEmailInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ResendValidationEmailInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "CertificateManager.ResendValidationEmail",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_resend_validation_email(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2468,15 +2741,15 @@ impl ResendValidationEmailInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ResendValidationEmail::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ResendValidationEmail",
             "acm",
         ));
@@ -2485,10 +2758,10 @@ impl ResendValidationEmailInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2521,6 +2794,11 @@ pub mod update_certificate_options_input {
             self.certificate_arn = Some(input.into());
             self
         }
+        /// <p>ARN of the requested certificate to update. This must be of the form:</p>
+        /// <p>
+        /// <code>arn:aws:acm:us-east-1:<i>account</i>:certificate/<i>12345678-1234-1234-1234-123456789012</i>
+        /// </code>
+        /// </p>
         pub fn set_certificate_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2536,6 +2814,10 @@ pub mod update_certificate_options_input {
             self.options = Some(input);
             self
         }
+        /// <p>Use to update the options for your certificate. Currently, you can specify whether to add
+        /// your certificate to a transparency log. Certificate transparency makes it possible to detect
+        /// SSL/TLS certificates that have been mistakenly or maliciously issued. Certificates that have
+        /// not been logged typically produce an error message in a browser. </p>
         pub fn set_options(
             mut self,
             input: std::option::Option<crate::model::CertificateOptions>,
@@ -2548,7 +2830,7 @@ pub mod update_certificate_options_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateCertificateOptionsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateCertificateOptionsInput {
                 certificate_arn: self.certificate_arn,
@@ -2569,16 +2851,16 @@ impl UpdateCertificateOptionsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateCertificateOptions,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateCertificateOptionsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2586,7 +2868,7 @@ impl UpdateCertificateOptionsInput {
         fn update_http_builder(
             input: &crate::input::UpdateCertificateOptionsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2595,32 +2877,34 @@ impl UpdateCertificateOptionsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateCertificateOptionsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "CertificateManager.UpdateCertificateOptions",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_certificate_options(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2643,15 +2927,15 @@ impl UpdateCertificateOptionsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateCertificateOptions::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateCertificateOptions",
             "acm",
         ));
@@ -2660,10 +2944,10 @@ impl UpdateCertificateOptionsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2677,6 +2961,7 @@ impl UpdateCertificateOptionsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateCertificateOptionsInput {
@@ -2701,6 +2986,7 @@ impl std::fmt::Debug for UpdateCertificateOptionsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResendValidationEmailInput {
@@ -2708,6 +2994,7 @@ pub struct ResendValidationEmailInput {
     /// generated and returned by the <a>RequestCertificate</a> action as soon as the
     /// request is made. By default, using this parameter causes email to be sent to all top-level
     /// domains you specified in the certificate request. The ARN must be of the form: </p>
+    ///
     /// <p>
     /// <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
     /// </p>
@@ -2750,6 +3037,7 @@ impl std::fmt::Debug for ResendValidationEmailInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RequestCertificateInput {
@@ -2757,6 +3045,7 @@ pub struct RequestCertificateInput {
     /// an ACM certificate. Use an asterisk (*) to create a wildcard certificate that protects
     /// several sites in the same domain. For example, *.example.com protects www.example.com,
     /// site.example.com, and images.example.com. </p>
+    ///
     /// <p> The first domain name you enter cannot exceed 64 octets, including periods. Each
     /// subsequent Subject Alternative Name (SAN), however, can be up to 253 octets in length. </p>
     pub domain_name: std::option::Option<std::string::String>,
@@ -2770,9 +3059,11 @@ pub struct RequestCertificateInput {
     /// either name. The maximum number of domain names that you can add to an ACM certificate is
     /// 100. However, the initial quota is 10 domain names. If you need more than 10 names, you must
     /// request a quota increase. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Quotas</a>.</p>
+    ///
     /// <p> The maximum length of a SAN DNS name is 253 octets. The name is made up of multiple
     /// labels separated by periods. No label can be longer than 63 octets. Consider the following
     /// examples: </p>
+    ///
     /// <ul>
     /// <li>
     /// <p>
@@ -2812,6 +3103,7 @@ pub struct RequestCertificateInput {
     /// to issue the certificate. If you do not provide an ARN and you are trying to request a private
     /// certificate, ACM will attempt to issue a public certificate. For more information about
     /// private CAs, see the <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Amazon Web Services Certificate Manager Private Certificate Authority (PCA)</a> user guide. The ARN must have the following form: </p>
+    ///
     /// <p>
     /// <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
     /// </p>
@@ -2834,6 +3126,7 @@ impl std::fmt::Debug for RequestCertificateInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RenewCertificateInput {
@@ -2853,14 +3146,17 @@ impl std::fmt::Debug for RenewCertificateInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveTagsFromCertificateInput {
     /// <p>String that contains the ARN of the ACM Certificate with one or more tags that you want
     /// to remove. This must be of the form:</p>
+    ///
     /// <p>
     /// <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
     /// </p>
+    ///
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
     pub certificate_arn: std::option::Option<std::string::String>,
     /// <p>The key-value pair that defines the tag to remove.</p>
@@ -2875,6 +3171,7 @@ impl std::fmt::Debug for RemoveTagsFromCertificateInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutAccountConfigurationInput {
@@ -2898,6 +3195,7 @@ impl std::fmt::Debug for PutAccountConfigurationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForCertificateInput {
@@ -2917,6 +3215,7 @@ impl std::fmt::Debug for ListTagsForCertificateInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCertificatesInput {
@@ -2946,6 +3245,7 @@ impl std::fmt::Debug for ListCertificatesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportCertificateInput {
@@ -2954,11 +3254,11 @@ pub struct ImportCertificateInput {
     /// field. </p>
     pub certificate_arn: std::option::Option<std::string::String>,
     /// <p>The certificate to import.</p>
-    pub certificate: std::option::Option<smithy_types::Blob>,
+    pub certificate: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The private key that matches the public key in the certificate.</p>
-    pub private_key: std::option::Option<smithy_types::Blob>,
+    pub private_key: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The PEM encoded certificate chain.</p>
-    pub certificate_chain: std::option::Option<smithy_types::Blob>,
+    pub certificate_chain: std::option::Option<aws_smithy_types::Blob>,
     /// <p>One or more resource tags to associate with the imported certificate. </p>
     /// <p>Note: You cannot apply tags when reimporting a certificate.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2975,6 +3275,7 @@ impl std::fmt::Debug for ImportCertificateInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCertificateInput {
@@ -2993,6 +3294,7 @@ impl std::fmt::Debug for GetCertificateInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAccountConfigurationInput {}
@@ -3003,6 +3305,7 @@ impl std::fmt::Debug for GetAccountConfigurationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportCertificateInput {
@@ -3017,7 +3320,7 @@ pub struct ExportCertificateInput {
     /// <p>
     /// <code>openssl rsa -in encrypted_key.pem -out decrypted_key.pem</code>
     /// </p>
-    pub passphrase: std::option::Option<smithy_types::Blob>,
+    pub passphrase: std::option::Option<aws_smithy_types::Blob>,
 }
 impl std::fmt::Debug for ExportCertificateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3028,6 +3331,7 @@ impl std::fmt::Debug for ExportCertificateInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCertificateInput {
@@ -3047,6 +3351,7 @@ impl std::fmt::Debug for DescribeCertificateInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCertificateInput {
@@ -3066,14 +3371,17 @@ impl std::fmt::Debug for DeleteCertificateInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddTagsToCertificateInput {
     /// <p>String that contains the ARN of the ACM certificate to which the tag is to be applied.
     /// This must be of the form:</p>
+    ///
     /// <p>
     /// <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
     /// </p>
+    ///
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
     pub certificate_arn: std::option::Option<std::string::String>,
     /// <p>The key-value pair that defines the tag. The tag value is optional.</p>

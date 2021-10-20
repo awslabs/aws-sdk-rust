@@ -55,7 +55,7 @@ pub struct StartSelector {
     /// <p>A timestamp value. This value is required if you choose the PRODUCER_TIMESTAMP or the
     /// SERVER_TIMESTAMP as the <code>startSelectorType</code>. The <code>GetMedia</code> API then
     /// starts with the chunk containing the fragment that has the specified timestamp.</p>
-    pub start_timestamp: std::option::Option<smithy_types::Instant>,
+    pub start_timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Continuation token that Kinesis Video Streams returned in the previous
     /// <code>GetMedia</code> response. The <code>GetMedia</code> API then starts with the chunk
     /// identified by the continuation token.</p>
@@ -79,7 +79,7 @@ pub mod start_selector {
     pub struct Builder {
         pub(crate) start_selector_type: std::option::Option<crate::model::StartSelectorType>,
         pub(crate) after_fragment_number: std::option::Option<std::string::String>,
-        pub(crate) start_timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) start_timestamp: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) continuation_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -114,6 +114,33 @@ pub mod start_selector {
             self.start_selector_type = Some(input);
             self
         }
+        /// <p>Identifies the fragment on the Kinesis video stream where you want to start getting the
+        /// data from.</p>
+        /// <ul>
+        /// <li>
+        /// <p>NOW - Start with the latest chunk on the stream.</p>
+        /// </li>
+        /// <li>
+        /// <p>EARLIEST - Start with earliest available chunk on the stream.</p>
+        /// </li>
+        /// <li>
+        /// <p>FRAGMENT_NUMBER - Start with the chunk after a specific fragment. You must also
+        /// specify the <code>AfterFragmentNumber</code> parameter.</p>
+        /// </li>
+        /// <li>
+        /// <p>PRODUCER_TIMESTAMP or SERVER_TIMESTAMP - Start with the chunk containing a fragment
+        /// with the specified producer or server timestamp. You specify the timestamp by adding
+        /// <code>StartTimestamp</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p> CONTINUATION_TOKEN - Read using the specified continuation token. </p>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>If you choose the NOW, EARLIEST, or CONTINUATION_TOKEN as the
+        /// <code>startSelectorType</code>, you don't provide any additional information in the
+        /// <code>startSelector</code>.</p>
+        /// </note>
         pub fn set_start_selector_type(
             mut self,
             input: std::option::Option<crate::model::StartSelectorType>,
@@ -127,6 +154,8 @@ pub mod start_selector {
             self.after_fragment_number = Some(input.into());
             self
         }
+        /// <p>Specifies the fragment number from where you want the <code>GetMedia</code> API to
+        /// start returning the fragments. </p>
         pub fn set_after_fragment_number(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -137,13 +166,16 @@ pub mod start_selector {
         /// <p>A timestamp value. This value is required if you choose the PRODUCER_TIMESTAMP or the
         /// SERVER_TIMESTAMP as the <code>startSelectorType</code>. The <code>GetMedia</code> API then
         /// starts with the chunk containing the fragment that has the specified timestamp.</p>
-        pub fn start_timestamp(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_timestamp = Some(input);
             self
         }
+        /// <p>A timestamp value. This value is required if you choose the PRODUCER_TIMESTAMP or the
+        /// SERVER_TIMESTAMP as the <code>startSelectorType</code>. The <code>GetMedia</code> API then
+        /// starts with the chunk containing the fragment that has the specified timestamp.</p>
         pub fn set_start_timestamp(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.start_timestamp = input;
             self
@@ -155,6 +187,9 @@ pub mod start_selector {
             self.continuation_token = Some(input.into());
             self
         }
+        /// <p>Continuation token that Kinesis Video Streams returned in the previous
+        /// <code>GetMedia</code> response. The <code>GetMedia</code> API then starts with the chunk
+        /// identified by the continuation token.</p>
         pub fn set_continuation_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -180,6 +215,7 @@ impl StartSelector {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -191,11 +227,17 @@ impl StartSelector {
     std::hash::Hash,
 )]
 pub enum StartSelectorType {
+    #[allow(missing_docs)] // documentation missing in model
     ContinuationToken,
+    #[allow(missing_docs)] // documentation missing in model
     Earliest,
+    #[allow(missing_docs)] // documentation missing in model
     FragmentNumber,
+    #[allow(missing_docs)] // documentation missing in model
     Now,
+    #[allow(missing_docs)] // documentation missing in model
     ProducerTimestamp,
+    #[allow(missing_docs)] // documentation missing in model
     ServerTimestamp,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -221,6 +263,7 @@ impl std::str::FromStr for StartSelectorType {
     }
 }
 impl StartSelectorType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StartSelectorType::ContinuationToken => "CONTINUATION_TOKEN",
@@ -232,6 +275,7 @@ impl StartSelectorType {
             StartSelectorType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CONTINUATION_TOKEN",

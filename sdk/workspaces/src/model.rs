@@ -31,6 +31,7 @@ pub mod ip_rule_item {
             self.ip_rule = Some(input.into());
             self
         }
+        /// <p>The IP address range, in CIDR notation.</p>
         pub fn set_ip_rule(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ip_rule = input;
             self
@@ -40,6 +41,7 @@ pub mod ip_rule_item {
             self.rule_desc = Some(input.into());
             self
         }
+        /// <p>The description.</p>
         pub fn set_rule_desc(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rule_desc = input;
             self
@@ -94,6 +96,7 @@ pub mod connection_alias_permission {
             self.shared_account_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the Amazon Web Services account that the connection alias is shared with.</p>
         pub fn set_shared_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -106,6 +109,7 @@ pub mod connection_alias_permission {
             self.allow_association = Some(input);
             self
         }
+        /// <p>Indicates whether the specified Amazon Web Services account is allowed to associate the connection alias with a directory.</p>
         pub fn set_allow_association(mut self, input: std::option::Option<bool>) -> Self {
             self.allow_association = input;
             self
@@ -165,6 +169,7 @@ pub mod failed_workspace_change_request {
             self.workspace_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the WorkSpace.</p>
         pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workspace_id = input;
             self
@@ -174,6 +179,7 @@ pub mod failed_workspace_change_request {
             self.error_code = Some(input.into());
             self
         }
+        /// <p>The error code that is returned if the WorkSpace cannot be rebooted.</p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_code = input;
             self
@@ -184,6 +190,8 @@ pub mod failed_workspace_change_request {
             self.error_message = Some(input.into());
             self
         }
+        /// <p>The text of the error message that is returned if the WorkSpace cannot be
+        /// rebooted.</p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -236,6 +244,7 @@ pub mod terminate_request {
             self.workspace_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the WorkSpace.</p>
         pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workspace_id = input;
             self
@@ -283,6 +292,7 @@ pub mod stop_request {
             self.workspace_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the WorkSpace.</p>
         pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workspace_id = input;
             self
@@ -330,6 +340,7 @@ pub mod start_request {
             self.workspace_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the WorkSpace.</p>
         pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workspace_id = input;
             self
@@ -381,6 +392,7 @@ pub mod tag {
             self.key = Some(input.into());
             self
         }
+        /// <p>The key of the tag.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -390,6 +402,7 @@ pub mod tag {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value of the tag.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -410,6 +423,7 @@ impl Tag {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -421,7 +435,9 @@ impl Tag {
     std::hash::Hash,
 )]
 pub enum Tenancy {
+    #[allow(missing_docs)] // documentation missing in model
     Dedicated,
+    #[allow(missing_docs)] // documentation missing in model
     Shared,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -443,6 +459,7 @@ impl std::str::FromStr for Tenancy {
     }
 }
 impl Tenancy {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Tenancy::Dedicated => "DEDICATED",
@@ -450,6 +467,7 @@ impl Tenancy {
             Tenancy::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DEDICATED", "SHARED"]
     }
@@ -488,6 +506,7 @@ pub mod rebuild_request {
             self.workspace_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the WorkSpace.</p>
         pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workspace_id = input;
             self
@@ -535,6 +554,7 @@ pub mod reboot_request {
             self.workspace_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the WorkSpace.</p>
         pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workspace_id = input;
             self
@@ -554,6 +574,7 @@ impl RebootRequest {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -565,7 +586,9 @@ impl RebootRequest {
     std::hash::Hash,
 )]
 pub enum TargetWorkspaceState {
+    #[allow(missing_docs)] // documentation missing in model
     AdminMaintenance,
+    #[allow(missing_docs)] // documentation missing in model
     Available,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -587,6 +610,7 @@ impl std::str::FromStr for TargetWorkspaceState {
     }
 }
 impl TargetWorkspaceState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TargetWorkspaceState::AdminMaintenance => "ADMIN_MAINTENANCE",
@@ -594,6 +618,7 @@ impl TargetWorkspaceState {
             TargetWorkspaceState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ADMIN_MAINTENANCE", "AVAILABLE"]
     }
@@ -656,6 +681,8 @@ pub mod workspace_properties {
             self.running_mode = Some(input);
             self
         }
+        /// <p>The running mode. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage the WorkSpace Running
+        /// Mode</a>.</p>
         pub fn set_running_mode(
             mut self,
             input: std::option::Option<crate::model::RunningMode>,
@@ -668,6 +695,7 @@ pub mod workspace_properties {
             self.running_mode_auto_stop_timeout_in_minutes = Some(input);
             self
         }
+        /// <p>The time after a user logs off when WorkSpaces are automatically stopped. Configured in 60-minute intervals.</p>
         pub fn set_running_mode_auto_stop_timeout_in_minutes(
             mut self,
             input: std::option::Option<i32>,
@@ -681,6 +709,8 @@ pub mod workspace_properties {
             self.root_volume_size_gib = Some(input);
             self
         }
+        /// <p>The size of the root volume. For important information about how to modify the size of the root and user volumes, see
+        /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">Modify a WorkSpace</a>.</p>
         pub fn set_root_volume_size_gib(mut self, input: std::option::Option<i32>) -> Self {
             self.root_volume_size_gib = input;
             self
@@ -691,6 +721,8 @@ pub mod workspace_properties {
             self.user_volume_size_gib = Some(input);
             self
         }
+        /// <p>The size of the user storage. For important information about how to modify the size of the root and user volumes, see
+        /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">Modify a WorkSpace</a>.</p>
         pub fn set_user_volume_size_gib(mut self, input: std::option::Option<i32>) -> Self {
             self.user_volume_size_gib = input;
             self
@@ -701,6 +733,8 @@ pub mod workspace_properties {
             self.compute_type_name = Some(input);
             self
         }
+        /// <p>The compute type. For more information, see <a href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon WorkSpaces
+        /// Bundles</a>.</p>
         pub fn set_compute_type_name(
             mut self,
             input: std::option::Option<crate::model::Compute>,
@@ -728,6 +762,7 @@ impl WorkspaceProperties {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -739,12 +774,19 @@ impl WorkspaceProperties {
     std::hash::Hash,
 )]
 pub enum Compute {
+    #[allow(missing_docs)] // documentation missing in model
     Graphics,
+    #[allow(missing_docs)] // documentation missing in model
     Graphicspro,
+    #[allow(missing_docs)] // documentation missing in model
     Performance,
+    #[allow(missing_docs)] // documentation missing in model
     Power,
+    #[allow(missing_docs)] // documentation missing in model
     Powerpro,
+    #[allow(missing_docs)] // documentation missing in model
     Standard,
+    #[allow(missing_docs)] // documentation missing in model
     Value,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -771,6 +813,7 @@ impl std::str::FromStr for Compute {
     }
 }
 impl Compute {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Compute::Graphics => "GRAPHICS",
@@ -783,6 +826,7 @@ impl Compute {
             Compute::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "GRAPHICS",
@@ -801,6 +845,7 @@ impl AsRef<str> for Compute {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -812,7 +857,9 @@ impl AsRef<str> for Compute {
     std::hash::Hash,
 )]
 pub enum RunningMode {
+    #[allow(missing_docs)] // documentation missing in model
     AlwaysOn,
+    #[allow(missing_docs)] // documentation missing in model
     AutoStop,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -834,6 +881,7 @@ impl std::str::FromStr for RunningMode {
     }
 }
 impl RunningMode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RunningMode::AlwaysOn => "ALWAYS_ON",
@@ -841,6 +889,7 @@ impl RunningMode {
             RunningMode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ALWAYS_ON", "AUTO_STOP"]
     }
@@ -858,6 +907,7 @@ impl AsRef<str> for RunningMode {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorkspaceCreationProperties {
     /// <p>Indicates whether Amazon WorkDocs is enabled for your WorkSpaces.</p>
+    ///
     /// <note>         
     /// <p>If WorkDocs is already enabled for a WorkSpaces directory and you disable it, new WorkSpaces launched in the
     /// directory will not have WorkDocs enabled. However, WorkDocs remains enabled for any existing WorkSpaces, unless
@@ -866,6 +916,7 @@ pub struct WorkspaceCreationProperties {
     /// <i>Amazon WorkDocs Administration Guide</i>. To delete a WorkDocs site, see
     /// <a href="https://docs.aws.amazon.com/workdocs/latest/adminguide/manage-sites.html">Deleting a Site</a> in the
     /// <i>Amazon WorkDocs Administration Guide</i>.</p>
+    ///
     /// <p>If you enable WorkDocs on a directory that already has existing WorkSpaces, the existing WorkSpaces and any
     /// new WorkSpaces that are launched in the directory will have WorkDocs enabled.</p>
     /// </note>
@@ -877,6 +928,7 @@ pub struct WorkspaceCreationProperties {
     /// <code>"OU=<i>value</i>,DC=<i>value</i>,DC=<i>value</i>"</code>,
     /// where <i>value</i> is any string of characters, and the number of domain components (DCs) is
     /// two or more. For example, <code>OU=WorkSpaces_machines,DC=machines,DC=example,DC=com</code>. </p>
+    ///
     /// <important>
     /// <ul>
     /// <li>
@@ -929,6 +981,7 @@ pub mod workspace_creation_properties {
     }
     impl Builder {
         /// <p>Indicates whether Amazon WorkDocs is enabled for your WorkSpaces.</p>
+        ///
         /// <note>         
         /// <p>If WorkDocs is already enabled for a WorkSpaces directory and you disable it, new WorkSpaces launched in the
         /// directory will not have WorkDocs enabled. However, WorkDocs remains enabled for any existing WorkSpaces, unless
@@ -937,6 +990,7 @@ pub mod workspace_creation_properties {
         /// <i>Amazon WorkDocs Administration Guide</i>. To delete a WorkDocs site, see
         /// <a href="https://docs.aws.amazon.com/workdocs/latest/adminguide/manage-sites.html">Deleting a Site</a> in the
         /// <i>Amazon WorkDocs Administration Guide</i>.</p>
+        ///
         /// <p>If you enable WorkDocs on a directory that already has existing WorkSpaces, the existing WorkSpaces and any
         /// new WorkSpaces that are launched in the directory will have WorkDocs enabled.</p>
         /// </note>
@@ -944,6 +998,20 @@ pub mod workspace_creation_properties {
             self.enable_work_docs = Some(input);
             self
         }
+        /// <p>Indicates whether Amazon WorkDocs is enabled for your WorkSpaces.</p>
+        ///
+        /// <note>         
+        /// <p>If WorkDocs is already enabled for a WorkSpaces directory and you disable it, new WorkSpaces launched in the
+        /// directory will not have WorkDocs enabled. However, WorkDocs remains enabled for any existing WorkSpaces, unless
+        /// you either disable users' access to WorkDocs or you delete the WorkDocs site. To disable users' access to WorkDocs,
+        /// see <a href="https://docs.aws.amazon.com/workdocs/latest/adminguide/inactive-user.html">Disabling Users</a> in the
+        /// <i>Amazon WorkDocs Administration Guide</i>. To delete a WorkDocs site, see
+        /// <a href="https://docs.aws.amazon.com/workdocs/latest/adminguide/manage-sites.html">Deleting a Site</a> in the
+        /// <i>Amazon WorkDocs Administration Guide</i>.</p>
+        ///
+        /// <p>If you enable WorkDocs on a directory that already has existing WorkSpaces, the existing WorkSpaces and any
+        /// new WorkSpaces that are launched in the directory will have WorkDocs enabled.</p>
+        /// </note>
         pub fn set_enable_work_docs(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_work_docs = input;
             self
@@ -953,6 +1021,7 @@ pub mod workspace_creation_properties {
             self.enable_internet_access = Some(input);
             self
         }
+        /// <p>Indicates whether internet access is enabled for your WorkSpaces.</p>
         pub fn set_enable_internet_access(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_internet_access = input;
             self
@@ -962,6 +1031,7 @@ pub mod workspace_creation_properties {
         /// <code>"OU=<i>value</i>,DC=<i>value</i>,DC=<i>value</i>"</code>,
         /// where <i>value</i> is any string of characters, and the number of domain components (DCs) is
         /// two or more. For example, <code>OU=WorkSpaces_machines,DC=machines,DC=example,DC=com</code>. </p>
+        ///
         /// <important>
         /// <ul>
         /// <li>
@@ -978,6 +1048,24 @@ pub mod workspace_creation_properties {
             self.default_ou = Some(input.into());
             self
         }
+        /// <p>The default organizational unit (OU) for your WorkSpaces directories. This string must be the full Lightweight
+        /// Directory Access Protocol (LDAP) distinguished name for the target domain and OU. It must be in the form
+        /// <code>"OU=<i>value</i>,DC=<i>value</i>,DC=<i>value</i>"</code>,
+        /// where <i>value</i> is any string of characters, and the number of domain components (DCs) is
+        /// two or more. For example, <code>OU=WorkSpaces_machines,DC=machines,DC=example,DC=com</code>. </p>
+        ///
+        /// <important>
+        /// <ul>
+        /// <li>
+        /// <p>To avoid errors, certain characters in the distinguished name must be escaped. For more information,
+        /// see <a href="https://docs.microsoft.com/previous-versions/windows/desktop/ldap/distinguished-names">
+        /// Distinguished Names</a> in the Microsoft documentation.</p>
+        /// </li>
+        /// <li>
+        /// <p>The API doesn't validate whether the OU exists.</p>
+        /// </li>
+        /// </ul>
+        /// </important>
         pub fn set_default_ou(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.default_ou = input;
             self
@@ -987,6 +1075,7 @@ pub mod workspace_creation_properties {
             self.custom_security_group_id = Some(input.into());
             self
         }
+        /// <p>The identifier of your custom security group.</p>
         pub fn set_custom_security_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -999,6 +1088,7 @@ pub mod workspace_creation_properties {
             self.user_enabled_as_local_administrator = Some(input);
             self
         }
+        /// <p>Indicates whether users are local administrators of their WorkSpaces.</p>
         pub fn set_user_enabled_as_local_administrator(
             mut self,
             input: std::option::Option<bool>,
@@ -1013,6 +1103,9 @@ pub mod workspace_creation_properties {
             self.enable_maintenance_mode = Some(input);
             self
         }
+        /// <p>Indicates whether maintenance mode is enabled for your WorkSpaces. For more information,
+        /// see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/workspace-maintenance.html">WorkSpace
+        /// Maintenance</a>. </p>
         pub fn set_enable_maintenance_mode(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_maintenance_mode = input;
             self
@@ -1096,6 +1189,7 @@ pub mod workspace_access_properties {
             self.device_type_windows = Some(input);
             self
         }
+        /// <p>Indicates whether users can use Windows clients to access their WorkSpaces.</p>
         pub fn set_device_type_windows(
             mut self,
             input: std::option::Option<crate::model::AccessPropertyValue>,
@@ -1108,6 +1202,7 @@ pub mod workspace_access_properties {
             self.device_type_osx = Some(input);
             self
         }
+        /// <p>Indicates whether users can use macOS clients to access their WorkSpaces.</p>
         pub fn set_device_type_osx(
             mut self,
             input: std::option::Option<crate::model::AccessPropertyValue>,
@@ -1120,6 +1215,7 @@ pub mod workspace_access_properties {
             self.device_type_web = Some(input);
             self
         }
+        /// <p>Indicates whether users can access their WorkSpaces through a web browser.</p>
         pub fn set_device_type_web(
             mut self,
             input: std::option::Option<crate::model::AccessPropertyValue>,
@@ -1132,6 +1228,7 @@ pub mod workspace_access_properties {
             self.device_type_ios = Some(input);
             self
         }
+        /// <p>Indicates whether users can use iOS devices to access their WorkSpaces.</p>
         pub fn set_device_type_ios(
             mut self,
             input: std::option::Option<crate::model::AccessPropertyValue>,
@@ -1145,6 +1242,8 @@ pub mod workspace_access_properties {
             self.device_type_android = Some(input);
             self
         }
+        /// <p>Indicates whether users can use Android and Android-compatible Chrome OS devices
+        /// to access their WorkSpaces.</p>
         pub fn set_device_type_android(
             mut self,
             input: std::option::Option<crate::model::AccessPropertyValue>,
@@ -1157,6 +1256,7 @@ pub mod workspace_access_properties {
             self.device_type_chrome_os = Some(input);
             self
         }
+        /// <p>Indicates whether users can use Chromebooks to access their WorkSpaces.</p>
         pub fn set_device_type_chrome_os(
             mut self,
             input: std::option::Option<crate::model::AccessPropertyValue>,
@@ -1169,6 +1269,7 @@ pub mod workspace_access_properties {
             self.device_type_zero_client = Some(input);
             self
         }
+        /// <p>Indicates whether users can use zero client devices to access their WorkSpaces.</p>
         pub fn set_device_type_zero_client(
             mut self,
             input: std::option::Option<crate::model::AccessPropertyValue>,
@@ -1181,6 +1282,7 @@ pub mod workspace_access_properties {
             self.device_type_linux = Some(input);
             self
         }
+        /// <p>Indicates whether users can use Linux clients to access their WorkSpaces.</p>
         pub fn set_device_type_linux(
             mut self,
             input: std::option::Option<crate::model::AccessPropertyValue>,
@@ -1210,6 +1312,7 @@ impl WorkspaceAccessProperties {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1221,7 +1324,9 @@ impl WorkspaceAccessProperties {
     std::hash::Hash,
 )]
 pub enum AccessPropertyValue {
+    #[allow(missing_docs)] // documentation missing in model
     Allow,
+    #[allow(missing_docs)] // documentation missing in model
     Deny,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1243,6 +1348,7 @@ impl std::str::FromStr for AccessPropertyValue {
     }
 }
 impl AccessPropertyValue {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AccessPropertyValue::Allow => "ALLOW",
@@ -1250,6 +1356,7 @@ impl AccessPropertyValue {
             AccessPropertyValue::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ALLOW", "DENY"]
     }
@@ -1306,6 +1413,7 @@ pub mod selfservice_permissions {
             self.restart_workspace = Some(input);
             self
         }
+        /// <p>Specifies whether users can restart their WorkSpace.</p>
         pub fn set_restart_workspace(
             mut self,
             input: std::option::Option<crate::model::ReconnectEnum>,
@@ -1319,6 +1427,8 @@ pub mod selfservice_permissions {
             self.increase_volume_size = Some(input);
             self
         }
+        /// <p>Specifies whether users can increase the volume size of the drives on their
+        /// WorkSpace.</p>
         pub fn set_increase_volume_size(
             mut self,
             input: std::option::Option<crate::model::ReconnectEnum>,
@@ -1331,6 +1441,7 @@ pub mod selfservice_permissions {
             self.change_compute_type = Some(input);
             self
         }
+        /// <p>Specifies whether users can change the compute type (bundle) for their WorkSpace.</p>
         pub fn set_change_compute_type(
             mut self,
             input: std::option::Option<crate::model::ReconnectEnum>,
@@ -1343,6 +1454,7 @@ pub mod selfservice_permissions {
             self.switch_running_mode = Some(input);
             self
         }
+        /// <p>Specifies whether users can switch the running mode of their WorkSpace.</p>
         pub fn set_switch_running_mode(
             mut self,
             input: std::option::Option<crate::model::ReconnectEnum>,
@@ -1356,6 +1468,8 @@ pub mod selfservice_permissions {
             self.rebuild_workspace = Some(input);
             self
         }
+        /// <p>Specifies whether users can rebuild the operating system of a WorkSpace to its original
+        /// state.</p>
         pub fn set_rebuild_workspace(
             mut self,
             input: std::option::Option<crate::model::ReconnectEnum>,
@@ -1382,6 +1496,7 @@ impl SelfservicePermissions {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1393,7 +1508,9 @@ impl SelfservicePermissions {
     std::hash::Hash,
 )]
 pub enum ReconnectEnum {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1415,6 +1532,7 @@ impl std::str::FromStr for ReconnectEnum {
     }
 }
 impl ReconnectEnum {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ReconnectEnum::Disabled => "DISABLED",
@@ -1422,6 +1540,7 @@ impl ReconnectEnum {
             ReconnectEnum::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -1464,6 +1583,9 @@ pub mod client_properties {
             self.reconnect_enabled = Some(input);
             self
         }
+        /// <p>Specifies whether users can cache their credentials on the Amazon WorkSpaces client.
+        /// When enabled, users can choose to reconnect to their WorkSpaces without re-entering their
+        /// credentials. </p>
         pub fn set_reconnect_enabled(
             mut self,
             input: std::option::Option<crate::model::ReconnectEnum>,
@@ -1486,6 +1608,7 @@ impl ClientProperties {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1497,6 +1620,7 @@ impl ClientProperties {
     std::hash::Hash,
 )]
 pub enum DedicatedTenancySupportEnum {
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1517,12 +1641,14 @@ impl std::str::FromStr for DedicatedTenancySupportEnum {
     }
 }
 impl DedicatedTenancySupportEnum {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DedicatedTenancySupportEnum::Enabled => "ENABLED",
             DedicatedTenancySupportEnum::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ENABLED"]
     }
@@ -1533,6 +1659,7 @@ impl AsRef<str> for DedicatedTenancySupportEnum {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1544,7 +1671,9 @@ impl AsRef<str> for DedicatedTenancySupportEnum {
     std::hash::Hash,
 )]
 pub enum Application {
+    #[allow(missing_docs)] // documentation missing in model
     MicrosoftOffice2016,
+    #[allow(missing_docs)] // documentation missing in model
     MicrosoftOffice2019,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1566,6 +1695,7 @@ impl std::str::FromStr for Application {
     }
 }
 impl Application {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Application::MicrosoftOffice2016 => "Microsoft_Office_2016",
@@ -1573,6 +1703,7 @@ impl Application {
             Application::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Microsoft_Office_2016", "Microsoft_Office_2019"]
     }
@@ -1583,6 +1714,7 @@ impl AsRef<str> for Application {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1594,9 +1726,13 @@ impl AsRef<str> for Application {
     std::hash::Hash,
 )]
 pub enum WorkspaceImageIngestionProcess {
+    #[allow(missing_docs)] // documentation missing in model
     ByolGraphics,
+    #[allow(missing_docs)] // documentation missing in model
     ByolGraphicspro,
+    #[allow(missing_docs)] // documentation missing in model
     ByolRegular,
+    #[allow(missing_docs)] // documentation missing in model
     ByolRegularWsp,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1620,6 +1756,7 @@ impl std::str::FromStr for WorkspaceImageIngestionProcess {
     }
 }
 impl WorkspaceImageIngestionProcess {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             WorkspaceImageIngestionProcess::ByolGraphics => "BYOL_GRAPHICS",
@@ -1629,6 +1766,7 @@ impl WorkspaceImageIngestionProcess {
             WorkspaceImageIngestionProcess::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "BYOL_GRAPHICS",
@@ -1649,7 +1787,7 @@ impl AsRef<str> for WorkspaceImageIngestionProcess {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Snapshot {
     /// <p>The time when the snapshot was created.</p>
-    pub snapshot_time: std::option::Option<smithy_types::Instant>,
+    pub snapshot_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for Snapshot {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1664,17 +1802,18 @@ pub mod snapshot {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) snapshot_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) snapshot_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The time when the snapshot was created.</p>
-        pub fn snapshot_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn snapshot_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.snapshot_time = Some(input);
             self
         }
+        /// <p>The time when the snapshot was created.</p>
         pub fn set_snapshot_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.snapshot_time = input;
             self
@@ -1704,9 +1843,9 @@ pub struct WorkspaceConnectionStatus {
     /// is stopped.</p>
     pub connection_state: std::option::Option<crate::model::ConnectionState>,
     /// <p>The timestamp of the connection status check.</p>
-    pub connection_state_check_timestamp: std::option::Option<smithy_types::Instant>,
+    pub connection_state_check_timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The timestamp of the last known user connection.</p>
-    pub last_known_user_connection_timestamp: std::option::Option<smithy_types::Instant>,
+    pub last_known_user_connection_timestamp: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for WorkspaceConnectionStatus {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1732,8 +1871,9 @@ pub mod workspace_connection_status {
     pub struct Builder {
         pub(crate) workspace_id: std::option::Option<std::string::String>,
         pub(crate) connection_state: std::option::Option<crate::model::ConnectionState>,
-        pub(crate) connection_state_check_timestamp: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_known_user_connection_timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) connection_state_check_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_known_user_connection_timestamp:
+            std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The identifier of the WorkSpace.</p>
@@ -1741,6 +1881,7 @@ pub mod workspace_connection_status {
             self.workspace_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the WorkSpace.</p>
         pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workspace_id = input;
             self
@@ -1751,6 +1892,8 @@ pub mod workspace_connection_status {
             self.connection_state = Some(input);
             self
         }
+        /// <p>The connection state of the WorkSpace. The connection state is unknown if the WorkSpace
+        /// is stopped.</p>
         pub fn set_connection_state(
             mut self,
             input: std::option::Option<crate::model::ConnectionState>,
@@ -1759,13 +1902,17 @@ pub mod workspace_connection_status {
             self
         }
         /// <p>The timestamp of the connection status check.</p>
-        pub fn connection_state_check_timestamp(mut self, input: smithy_types::Instant) -> Self {
+        pub fn connection_state_check_timestamp(
+            mut self,
+            input: aws_smithy_types::Instant,
+        ) -> Self {
             self.connection_state_check_timestamp = Some(input);
             self
         }
+        /// <p>The timestamp of the connection status check.</p>
         pub fn set_connection_state_check_timestamp(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.connection_state_check_timestamp = input;
             self
@@ -1773,14 +1920,15 @@ pub mod workspace_connection_status {
         /// <p>The timestamp of the last known user connection.</p>
         pub fn last_known_user_connection_timestamp(
             mut self,
-            input: smithy_types::Instant,
+            input: aws_smithy_types::Instant,
         ) -> Self {
             self.last_known_user_connection_timestamp = Some(input);
             self
         }
+        /// <p>The timestamp of the last known user connection.</p>
         pub fn set_last_known_user_connection_timestamp(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_known_user_connection_timestamp = input;
             self
@@ -1803,7 +1951,7 @@ impl WorkspaceConnectionStatus {
     }
 }
 
-/// **NOTE:** `ConnectionState::Unknown` has been renamed to `::UnknownValue`.
+/// _Note: `ConnectionState::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1815,9 +1963,11 @@ impl WorkspaceConnectionStatus {
     std::hash::Hash,
 )]
 pub enum ConnectionState {
+    #[allow(missing_docs)] // documentation missing in model
     Connected,
+    #[allow(missing_docs)] // documentation missing in model
     Disconnected,
-    /// **NOTE:** `::Unknown` has been renamed to `::UnknownValue`.
+    /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
     UnknownValue,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1840,6 +1990,7 @@ impl std::str::FromStr for ConnectionState {
     }
 }
 impl ConnectionState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ConnectionState::Connected => "CONNECTED",
@@ -1848,6 +1999,7 @@ impl ConnectionState {
             ConnectionState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CONNECTED", "DISCONNECTED", "UNKNOWN"]
     }
@@ -1871,6 +2023,7 @@ pub struct Workspace {
     /// <p>The IP address of the WorkSpace.</p>
     pub ip_address: std::option::Option<std::string::String>,
     /// <p>The operational state of the WorkSpace.</p>
+    ///
     /// <note>
     /// <p>After a WorkSpace is terminated, the <code>TERMINATED</code> state is returned
     /// only briefly before the WorkSpace directory metadata is cleaned up, so this state is rarely
@@ -1961,6 +2114,7 @@ pub mod workspace {
             self.workspace_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the WorkSpace.</p>
         pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.workspace_id = input;
             self
@@ -1970,6 +2124,7 @@ pub mod workspace {
             self.directory_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the Directory Service directory for the WorkSpace.</p>
         pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.directory_id = input;
             self
@@ -1979,6 +2134,7 @@ pub mod workspace {
             self.user_name = Some(input.into());
             self
         }
+        /// <p>The user for the WorkSpace.</p>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_name = input;
             self
@@ -1988,11 +2144,13 @@ pub mod workspace {
             self.ip_address = Some(input.into());
             self
         }
+        /// <p>The IP address of the WorkSpace.</p>
         pub fn set_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ip_address = input;
             self
         }
         /// <p>The operational state of the WorkSpace.</p>
+        ///
         /// <note>
         /// <p>After a WorkSpace is terminated, the <code>TERMINATED</code> state is returned
         /// only briefly before the WorkSpace directory metadata is cleaned up, so this state is rarely
@@ -2005,6 +2163,16 @@ pub mod workspace {
             self.state = Some(input);
             self
         }
+        /// <p>The operational state of the WorkSpace.</p>
+        ///
+        /// <note>
+        /// <p>After a WorkSpace is terminated, the <code>TERMINATED</code> state is returned
+        /// only briefly before the WorkSpace directory metadata is cleaned up, so this state is rarely
+        /// returned. To confirm that a WorkSpace is terminated, check for the WorkSpace ID by using
+        /// <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html">
+        /// DescribeWorkSpaces</a>. If the WorkSpace ID isn't returned, then the WorkSpace has
+        /// been successfully terminated.</p>
+        /// </note>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::WorkspaceState>,
@@ -2017,6 +2185,7 @@ pub mod workspace {
             self.bundle_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the bundle used to create the WorkSpace.</p>
         pub fn set_bundle_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bundle_id = input;
             self
@@ -2026,6 +2195,7 @@ pub mod workspace {
             self.subnet_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the subnet for the WorkSpace.</p>
         pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.subnet_id = input;
             self
@@ -2036,6 +2206,8 @@ pub mod workspace {
             self.error_message = Some(input.into());
             self
         }
+        /// <p>The text of the error message that is returned if the WorkSpace cannot be
+        /// created.</p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2048,6 +2220,7 @@ pub mod workspace {
             self.error_code = Some(input.into());
             self
         }
+        /// <p>The error code that is returned if the WorkSpace cannot be created.</p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_code = input;
             self
@@ -2059,6 +2232,9 @@ pub mod workspace {
             self.computer_name = Some(input.into());
             self
         }
+        /// <p>The name of the WorkSpace, as seen by the operating system. The format of this name varies.
+        /// For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/launch-workspaces-tutorials.html">
+        /// Launch a WorkSpace</a>. </p>
         pub fn set_computer_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2072,6 +2248,8 @@ pub mod workspace {
             self.volume_encryption_key = Some(input.into());
             self
         }
+        /// <p>The symmetric KMS key used to encrypt data stored on your WorkSpace.
+        /// Amazon WorkSpaces does not support asymmetric KMS keys.</p>
         pub fn set_volume_encryption_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2084,6 +2262,7 @@ pub mod workspace {
             self.user_volume_encryption_enabled = Some(input);
             self
         }
+        /// <p>Indicates whether the data stored on the user volume is encrypted.</p>
         pub fn set_user_volume_encryption_enabled(
             mut self,
             input: std::option::Option<bool>,
@@ -2096,6 +2275,7 @@ pub mod workspace {
             self.root_volume_encryption_enabled = Some(input);
             self
         }
+        /// <p>Indicates whether the data stored on the root volume is encrypted.</p>
         pub fn set_root_volume_encryption_enabled(
             mut self,
             input: std::option::Option<bool>,
@@ -2108,6 +2288,7 @@ pub mod workspace {
             self.workspace_properties = Some(input);
             self
         }
+        /// <p>The properties of the WorkSpace.</p>
         pub fn set_workspace_properties(
             mut self,
             input: std::option::Option<crate::model::WorkspaceProperties>,
@@ -2115,6 +2296,11 @@ pub mod workspace {
             self.workspace_properties = input;
             self
         }
+        /// Appends an item to `modification_states`.
+        ///
+        /// To override the contents of this collection use [`set_modification_states`](Self::set_modification_states).
+        ///
+        /// <p>The modification states of the WorkSpace.</p>
         pub fn modification_states(
             mut self,
             input: impl Into<crate::model::ModificationState>,
@@ -2124,6 +2310,7 @@ pub mod workspace {
             self.modification_states = Some(v);
             self
         }
+        /// <p>The modification states of the WorkSpace.</p>
         pub fn set_modification_states(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ModificationState>>,
@@ -2192,6 +2379,7 @@ pub mod modification_state {
             self.resource = Some(input);
             self
         }
+        /// <p>The resource.</p>
         pub fn set_resource(
             mut self,
             input: std::option::Option<crate::model::ModificationResourceEnum>,
@@ -2204,6 +2392,7 @@ pub mod modification_state {
             self.state = Some(input);
             self
         }
+        /// <p>The modification state.</p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::ModificationStateEnum>,
@@ -2227,6 +2416,7 @@ impl ModificationState {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2238,7 +2428,9 @@ impl ModificationState {
     std::hash::Hash,
 )]
 pub enum ModificationStateEnum {
+    #[allow(missing_docs)] // documentation missing in model
     UpdateInitiated,
+    #[allow(missing_docs)] // documentation missing in model
     UpdateInProgress,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2260,6 +2452,7 @@ impl std::str::FromStr for ModificationStateEnum {
     }
 }
 impl ModificationStateEnum {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ModificationStateEnum::UpdateInitiated => "UPDATE_INITIATED",
@@ -2267,6 +2460,7 @@ impl ModificationStateEnum {
             ModificationStateEnum::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["UPDATE_INITIATED", "UPDATE_IN_PROGRESS"]
     }
@@ -2277,6 +2471,7 @@ impl AsRef<str> for ModificationStateEnum {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2288,8 +2483,11 @@ impl AsRef<str> for ModificationStateEnum {
     std::hash::Hash,
 )]
 pub enum ModificationResourceEnum {
+    #[allow(missing_docs)] // documentation missing in model
     ComputeType,
+    #[allow(missing_docs)] // documentation missing in model
     RootVolume,
+    #[allow(missing_docs)] // documentation missing in model
     UserVolume,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2312,6 +2510,7 @@ impl std::str::FromStr for ModificationResourceEnum {
     }
 }
 impl ModificationResourceEnum {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ModificationResourceEnum::ComputeType => "COMPUTE_TYPE",
@@ -2320,6 +2519,7 @@ impl ModificationResourceEnum {
             ModificationResourceEnum::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["COMPUTE_TYPE", "ROOT_VOLUME", "USER_VOLUME"]
     }
@@ -2330,6 +2530,7 @@ impl AsRef<str> for ModificationResourceEnum {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2341,22 +2542,39 @@ impl AsRef<str> for ModificationResourceEnum {
     std::hash::Hash,
 )]
 pub enum WorkspaceState {
+    #[allow(missing_docs)] // documentation missing in model
     AdminMaintenance,
+    #[allow(missing_docs)] // documentation missing in model
     Available,
+    #[allow(missing_docs)] // documentation missing in model
     Error,
+    #[allow(missing_docs)] // documentation missing in model
     Impaired,
+    #[allow(missing_docs)] // documentation missing in model
     Maintenance,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
+    #[allow(missing_docs)] // documentation missing in model
     Rebooting,
+    #[allow(missing_docs)] // documentation missing in model
     Rebuilding,
+    #[allow(missing_docs)] // documentation missing in model
     Restoring,
+    #[allow(missing_docs)] // documentation missing in model
     Starting,
+    #[allow(missing_docs)] // documentation missing in model
     Stopped,
+    #[allow(missing_docs)] // documentation missing in model
     Stopping,
+    #[allow(missing_docs)] // documentation missing in model
     Suspended,
+    #[allow(missing_docs)] // documentation missing in model
     Terminated,
+    #[allow(missing_docs)] // documentation missing in model
     Terminating,
+    #[allow(missing_docs)] // documentation missing in model
     Unhealthy,
+    #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2393,6 +2611,7 @@ impl std::str::FromStr for WorkspaceState {
     }
 }
 impl WorkspaceState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             WorkspaceState::AdminMaintenance => "ADMIN_MAINTENANCE",
@@ -2415,6 +2634,7 @@ impl WorkspaceState {
             WorkspaceState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ADMIN_MAINTENANCE",
@@ -2468,7 +2688,7 @@ pub struct WorkspaceImage {
     pub error_message: std::option::Option<std::string::String>,
     /// <p>The date when the image was created. If the image has been shared, the Amazon Web Services account
     /// that the image has been shared with sees the original creation date of the image.</p>
-    pub created: std::option::Option<smithy_types::Instant>,
+    pub created: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The identifier of the Amazon Web Services account that owns the image.</p>
     pub owner_account_id: std::option::Option<std::string::String>,
     /// <p>The updates (if any) that are available for the specified image.</p>
@@ -2506,7 +2726,7 @@ pub mod workspace_image {
             std::option::Option<crate::model::WorkspaceImageRequiredTenancy>,
         pub(crate) error_code: std::option::Option<std::string::String>,
         pub(crate) error_message: std::option::Option<std::string::String>,
-        pub(crate) created: std::option::Option<smithy_types::Instant>,
+        pub(crate) created: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) owner_account_id: std::option::Option<std::string::String>,
         pub(crate) updates: std::option::Option<crate::model::UpdateResult>,
     }
@@ -2516,6 +2736,7 @@ pub mod workspace_image {
             self.image_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the image.</p>
         pub fn set_image_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.image_id = input;
             self
@@ -2525,6 +2746,7 @@ pub mod workspace_image {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the image.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2534,6 +2756,7 @@ pub mod workspace_image {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the image.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -2543,6 +2766,7 @@ pub mod workspace_image {
             self.operating_system = Some(input);
             self
         }
+        /// <p>The operating system that the image is running. </p>
         pub fn set_operating_system(
             mut self,
             input: std::option::Option<crate::model::OperatingSystem>,
@@ -2555,6 +2779,7 @@ pub mod workspace_image {
             self.state = Some(input);
             self
         }
+        /// <p>The status of the image.</p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::WorkspaceImageState>,
@@ -2573,6 +2798,10 @@ pub mod workspace_image {
             self.required_tenancy = Some(input);
             self
         }
+        /// <p>Specifies whether the image is running on dedicated hardware. When Bring Your Own
+        /// License (BYOL) is enabled, this value is set to <code>DEDICATED</code>. For more
+        /// information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring Your Own Windows
+        /// Desktop Images</a>.</p>
         pub fn set_required_tenancy(
             mut self,
             input: std::option::Option<crate::model::WorkspaceImageRequiredTenancy>,
@@ -2585,6 +2814,7 @@ pub mod workspace_image {
             self.error_code = Some(input.into());
             self
         }
+        /// <p>The error code that is returned for the image.</p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_code = input;
             self
@@ -2594,6 +2824,7 @@ pub mod workspace_image {
             self.error_message = Some(input.into());
             self
         }
+        /// <p>The text of the error message that is returned for the image.</p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2603,11 +2834,16 @@ pub mod workspace_image {
         }
         /// <p>The date when the image was created. If the image has been shared, the Amazon Web Services account
         /// that the image has been shared with sees the original creation date of the image.</p>
-        pub fn created(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created = Some(input);
             self
         }
-        pub fn set_created(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date when the image was created. If the image has been shared, the Amazon Web Services account
+        /// that the image has been shared with sees the original creation date of the image.</p>
+        pub fn set_created(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created = input;
             self
         }
@@ -2616,6 +2852,7 @@ pub mod workspace_image {
             self.owner_account_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the Amazon Web Services account that owns the image.</p>
         pub fn set_owner_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2628,6 +2865,7 @@ pub mod workspace_image {
             self.updates = Some(input);
             self
         }
+        /// <p>The updates (if any) that are available for the specified image.</p>
         pub fn set_updates(
             mut self,
             input: std::option::Option<crate::model::UpdateResult>,
@@ -2662,6 +2900,7 @@ impl WorkspaceImage {
 
 /// <p>Describes whether a WorkSpace image needs to be updated with the latest
 /// drivers and other components required by Amazon WorkSpaces.</p>
+///
 /// <note>
 /// <p>Only Windows 10 WorkSpace images can be programmatically updated at this time.</p>
 /// </note>
@@ -2696,6 +2935,7 @@ pub mod update_result {
             self.update_available = Some(input);
             self
         }
+        /// <p>Indicates whether updated drivers or other components are available for the specified WorkSpace image.</p>
         pub fn set_update_available(mut self, input: std::option::Option<bool>) -> Self {
             self.update_available = input;
             self
@@ -2705,6 +2945,7 @@ pub mod update_result {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description of whether updates for the WorkSpace image are pending or available.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -2725,6 +2966,7 @@ impl UpdateResult {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2736,7 +2978,9 @@ impl UpdateResult {
     std::hash::Hash,
 )]
 pub enum WorkspaceImageRequiredTenancy {
+    #[allow(missing_docs)] // documentation missing in model
     Dedicated,
+    #[allow(missing_docs)] // documentation missing in model
     Default,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2758,6 +3002,7 @@ impl std::str::FromStr for WorkspaceImageRequiredTenancy {
     }
 }
 impl WorkspaceImageRequiredTenancy {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             WorkspaceImageRequiredTenancy::Dedicated => "DEDICATED",
@@ -2765,6 +3010,7 @@ impl WorkspaceImageRequiredTenancy {
             WorkspaceImageRequiredTenancy::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DEDICATED", "DEFAULT"]
     }
@@ -2775,6 +3021,7 @@ impl AsRef<str> for WorkspaceImageRequiredTenancy {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2786,8 +3033,11 @@ impl AsRef<str> for WorkspaceImageRequiredTenancy {
     std::hash::Hash,
 )]
 pub enum WorkspaceImageState {
+    #[allow(missing_docs)] // documentation missing in model
     Available,
+    #[allow(missing_docs)] // documentation missing in model
     Error,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2810,6 +3060,7 @@ impl std::str::FromStr for WorkspaceImageState {
     }
 }
 impl WorkspaceImageState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             WorkspaceImageState::Available => "AVAILABLE",
@@ -2818,6 +3069,7 @@ impl WorkspaceImageState {
             WorkspaceImageState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AVAILABLE", "ERROR", "PENDING"]
     }
@@ -2856,6 +3108,7 @@ pub mod operating_system {
             self.r#type = Some(input);
             self
         }
+        /// <p>The operating system.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::OperatingSystemType>,
@@ -2878,6 +3131,7 @@ impl OperatingSystem {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2889,7 +3143,9 @@ impl OperatingSystem {
     std::hash::Hash,
 )]
 pub enum OperatingSystemType {
+    #[allow(missing_docs)] // documentation missing in model
     Linux,
+    #[allow(missing_docs)] // documentation missing in model
     Windows,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2911,6 +3167,7 @@ impl std::str::FromStr for OperatingSystemType {
     }
 }
 impl OperatingSystemType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             OperatingSystemType::Linux => "LINUX",
@@ -2918,6 +3175,7 @@ impl OperatingSystemType {
             OperatingSystemType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["LINUX", "WINDOWS"]
     }
@@ -2928,6 +3186,7 @@ impl AsRef<str> for OperatingSystemType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2939,7 +3198,9 @@ impl AsRef<str> for OperatingSystemType {
     std::hash::Hash,
 )]
 pub enum ImageType {
+    #[allow(missing_docs)] // documentation missing in model
     Owned,
+    #[allow(missing_docs)] // documentation missing in model
     Shared,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2961,6 +3222,7 @@ impl std::str::FromStr for ImageType {
     }
 }
 impl ImageType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ImageType::Owned => "OWNED",
@@ -2968,6 +3230,7 @@ impl ImageType {
             ImageType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["OWNED", "SHARED"]
     }
@@ -3009,6 +3272,7 @@ pub mod image_permission {
             self.shared_account_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the Amazon Web Services account that an image has been shared with.</p>
         pub fn set_shared_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3142,6 +3406,7 @@ pub mod workspace_directory {
             self.directory_id = Some(input.into());
             self
         }
+        /// <p>The directory identifier.</p>
         pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.directory_id = input;
             self
@@ -3151,6 +3416,7 @@ pub mod workspace_directory {
             self.alias = Some(input.into());
             self
         }
+        /// <p>The directory alias.</p>
         pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.alias = input;
             self
@@ -3160,6 +3426,7 @@ pub mod workspace_directory {
             self.directory_name = Some(input.into());
             self
         }
+        /// <p>The name of the directory.</p>
         pub fn set_directory_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3173,6 +3440,8 @@ pub mod workspace_directory {
             self.registration_code = Some(input.into());
             self
         }
+        /// <p>The registration code for the directory. This is the code that users enter in their
+        /// Amazon WorkSpaces client application to connect to the directory.</p>
         pub fn set_registration_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3180,12 +3449,18 @@ pub mod workspace_directory {
             self.registration_code = input;
             self
         }
+        /// Appends an item to `subnet_ids`.
+        ///
+        /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
+        ///
+        /// <p>The identifiers of the subnets used with the directory.</p>
         pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnet_ids.unwrap_or_default();
             v.push(input.into());
             self.subnet_ids = Some(v);
             self
         }
+        /// <p>The identifiers of the subnets used with the directory.</p>
         pub fn set_subnet_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3193,12 +3468,18 @@ pub mod workspace_directory {
             self.subnet_ids = input;
             self
         }
+        /// Appends an item to `dns_ip_addresses`.
+        ///
+        /// To override the contents of this collection use [`set_dns_ip_addresses`](Self::set_dns_ip_addresses).
+        ///
+        /// <p>The IP addresses of the DNS servers for the directory.</p>
         pub fn dns_ip_addresses(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.dns_ip_addresses.unwrap_or_default();
             v.push(input.into());
             self.dns_ip_addresses = Some(v);
             self
         }
+        /// <p>The IP addresses of the DNS servers for the directory.</p>
         pub fn set_dns_ip_addresses(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3211,6 +3492,7 @@ pub mod workspace_directory {
             self.customer_user_name = Some(input.into());
             self
         }
+        /// <p>The user name for the service account.</p>
         pub fn set_customer_user_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3224,6 +3506,8 @@ pub mod workspace_directory {
             self.iam_role_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the IAM role. This is the role that allows Amazon WorkSpaces to make
+        /// calls to other services, such as Amazon EC2, on your behalf.</p>
         pub fn set_iam_role_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.iam_role_id = input;
             self
@@ -3233,6 +3517,7 @@ pub mod workspace_directory {
             self.directory_type = Some(input);
             self
         }
+        /// <p>The directory type.</p>
         pub fn set_directory_type(
             mut self,
             input: std::option::Option<crate::model::WorkspaceDirectoryType>,
@@ -3248,6 +3533,7 @@ pub mod workspace_directory {
             self.workspace_security_group_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the security group that is assigned to new WorkSpaces.</p>
         pub fn set_workspace_security_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3266,6 +3552,13 @@ pub mod workspace_directory {
             self.state = Some(input);
             self
         }
+        /// <p>The state of the directory's registration with Amazon WorkSpaces. After a directory is
+        /// deregistered, the <code>DEREGISTERED</code> state is returned very briefly before the directory
+        /// metadata is cleaned up, so this state is rarely returned. To confirm that a directory is deregistered,
+        /// check for the directory ID by using
+        /// <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceDirectories.html">
+        /// DescribeWorkspaceDirectories</a>. If the directory ID isn't returned, then the directory has been
+        /// successfully deregistered.</p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::WorkspaceDirectoryState>,
@@ -3281,6 +3574,7 @@ pub mod workspace_directory {
             self.workspace_creation_properties = Some(input);
             self
         }
+        /// <p>The default creation properties for all WorkSpaces in the directory.</p>
         pub fn set_workspace_creation_properties(
             mut self,
             input: std::option::Option<crate::model::DefaultWorkspaceCreationProperties>,
@@ -3288,12 +3582,18 @@ pub mod workspace_directory {
             self.workspace_creation_properties = input;
             self
         }
+        /// Appends an item to `ip_group_ids`.
+        ///
+        /// To override the contents of this collection use [`set_ip_group_ids`](Self::set_ip_group_ids).
+        ///
+        /// <p>The identifiers of the IP access control groups associated with the directory.</p>
         pub fn ip_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.ip_group_ids.unwrap_or_default();
             v.push(input.into());
             self.ip_group_ids = Some(v);
             self
         }
+        /// <p>The identifiers of the IP access control groups associated with the directory.</p>
         pub fn set_ip_group_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3309,6 +3609,7 @@ pub mod workspace_directory {
             self.workspace_access_properties = Some(input);
             self
         }
+        /// <p>The devices and operating systems that users can use to access WorkSpaces.</p>
         pub fn set_workspace_access_properties(
             mut self,
             input: std::option::Option<crate::model::WorkspaceAccessProperties>,
@@ -3323,6 +3624,9 @@ pub mod workspace_directory {
             self.tenancy = Some(input);
             self
         }
+        /// <p>Specifies whether the directory is dedicated or shared. To use Bring Your Own License
+        /// (BYOL), this value must be set to <code>DEDICATED</code>. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring
+        /// Your Own Windows Desktop Images</a>.</p>
         pub fn set_tenancy(mut self, input: std::option::Option<crate::model::Tenancy>) -> Self {
             self.tenancy = input;
             self
@@ -3335,6 +3639,7 @@ pub mod workspace_directory {
             self.selfservice_permissions = Some(input);
             self
         }
+        /// <p>The default self-service permissions for WorkSpaces in the directory.</p>
         pub fn set_selfservice_permissions(
             mut self,
             input: std::option::Option<crate::model::SelfservicePermissions>,
@@ -3435,6 +3740,7 @@ pub mod default_workspace_creation_properties {
             self.enable_work_docs = Some(input);
             self
         }
+        /// <p>Specifies whether the directory is enabled for Amazon WorkDocs.</p>
         pub fn set_enable_work_docs(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_work_docs = input;
             self
@@ -3451,6 +3757,14 @@ pub mod default_workspace_creation_properties {
             self.enable_internet_access = Some(input);
             self
         }
+        /// <p>Specifies whether to automatically assign an Elastic public IP address to WorkSpaces in this directory by default.
+        /// If enabled, the Elastic public IP address allows outbound internet access from your WorkSpaces when you’re using an
+        /// internet gateway in the Amazon VPC in which your WorkSpaces are located. If you're using a Network Address
+        /// Translation (NAT) gateway for outbound internet access from your VPC, or if your WorkSpaces are in public
+        /// subnets and you manually assign them Elastic IP addresses, you should disable this setting. This setting
+        /// applies to new WorkSpaces that you launch or to existing WorkSpaces that you rebuild. For more information,
+        /// see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-vpc.html">
+        /// Configure a VPC for Amazon WorkSpaces</a>.</p>
         pub fn set_enable_internet_access(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_internet_access = input;
             self
@@ -3460,6 +3774,7 @@ pub mod default_workspace_creation_properties {
             self.default_ou = Some(input.into());
             self
         }
+        /// <p>The organizational unit (OU) in the directory for the WorkSpace machine accounts.</p>
         pub fn set_default_ou(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.default_ou = input;
             self
@@ -3472,6 +3787,10 @@ pub mod default_workspace_creation_properties {
             self.custom_security_group_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the default security group to apply to WorkSpaces when they are created.
+        /// For more information, see
+        /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-security-groups.html">
+        /// Security Groups for Your WorkSpaces</a>.</p>
         pub fn set_custom_security_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3484,6 +3803,7 @@ pub mod default_workspace_creation_properties {
             self.user_enabled_as_local_administrator = Some(input);
             self
         }
+        /// <p>Specifies whether WorkSpace users are local administrators on their WorkSpaces.</p>
         pub fn set_user_enabled_as_local_administrator(
             mut self,
             input: std::option::Option<bool>,
@@ -3498,6 +3818,9 @@ pub mod default_workspace_creation_properties {
             self.enable_maintenance_mode = Some(input);
             self
         }
+        /// <p>Specifies whether maintenance mode is enabled for WorkSpaces. For more information, see
+        /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/workspace-maintenance.html">WorkSpace
+        /// Maintenance</a>.</p>
         pub fn set_enable_maintenance_mode(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_maintenance_mode = input;
             self
@@ -3522,6 +3845,7 @@ impl DefaultWorkspaceCreationProperties {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3533,10 +3857,15 @@ impl DefaultWorkspaceCreationProperties {
     std::hash::Hash,
 )]
 pub enum WorkspaceDirectoryState {
+    #[allow(missing_docs)] // documentation missing in model
     Deregistered,
+    #[allow(missing_docs)] // documentation missing in model
     Deregistering,
+    #[allow(missing_docs)] // documentation missing in model
     Error,
+    #[allow(missing_docs)] // documentation missing in model
     Registered,
+    #[allow(missing_docs)] // documentation missing in model
     Registering,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3561,6 +3890,7 @@ impl std::str::FromStr for WorkspaceDirectoryState {
     }
 }
 impl WorkspaceDirectoryState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             WorkspaceDirectoryState::Deregistered => "DEREGISTERED",
@@ -3571,6 +3901,7 @@ impl WorkspaceDirectoryState {
             WorkspaceDirectoryState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "DEREGISTERED",
@@ -3587,6 +3918,7 @@ impl AsRef<str> for WorkspaceDirectoryState {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3598,7 +3930,9 @@ impl AsRef<str> for WorkspaceDirectoryState {
     std::hash::Hash,
 )]
 pub enum WorkspaceDirectoryType {
+    #[allow(missing_docs)] // documentation missing in model
     AdConnector,
+    #[allow(missing_docs)] // documentation missing in model
     SimpleAd,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3620,6 +3954,7 @@ impl std::str::FromStr for WorkspaceDirectoryType {
     }
 }
 impl WorkspaceDirectoryType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             WorkspaceDirectoryType::AdConnector => "AD_CONNECTOR",
@@ -3627,6 +3962,7 @@ impl WorkspaceDirectoryType {
             WorkspaceDirectoryType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AD_CONNECTOR", "SIMPLE_AD"]
     }
@@ -3660,9 +3996,9 @@ pub struct WorkspaceBundle {
     /// <a href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon WorkSpaces Bundles</a>.</p>
     pub compute_type: std::option::Option<crate::model::ComputeType>,
     /// <p>The last time that the bundle was updated.</p>
-    pub last_updated_time: std::option::Option<smithy_types::Instant>,
+    pub last_updated_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time when the bundle was created.</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for WorkspaceBundle {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3694,8 +4030,8 @@ pub mod workspace_bundle {
         pub(crate) root_storage: std::option::Option<crate::model::RootStorage>,
         pub(crate) user_storage: std::option::Option<crate::model::UserStorage>,
         pub(crate) compute_type: std::option::Option<crate::model::ComputeType>,
-        pub(crate) last_updated_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_updated_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The identifier of the bundle.</p>
@@ -3703,6 +4039,7 @@ pub mod workspace_bundle {
             self.bundle_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the bundle.</p>
         pub fn set_bundle_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bundle_id = input;
             self
@@ -3712,6 +4049,7 @@ pub mod workspace_bundle {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the bundle.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -3722,6 +4060,8 @@ pub mod workspace_bundle {
             self.owner = Some(input.into());
             self
         }
+        /// <p>The owner of the bundle. This is the account identifier of the owner, or
+        /// <code>AMAZON</code> if the bundle is provided by Amazon Web Services.</p>
         pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.owner = input;
             self
@@ -3731,6 +4071,7 @@ pub mod workspace_bundle {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the bundle.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -3740,6 +4081,7 @@ pub mod workspace_bundle {
             self.image_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the image that was used to create the bundle.</p>
         pub fn set_image_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.image_id = input;
             self
@@ -3749,6 +4091,7 @@ pub mod workspace_bundle {
             self.root_storage = Some(input);
             self
         }
+        /// <p>The size of the root volume.</p>
         pub fn set_root_storage(
             mut self,
             input: std::option::Option<crate::model::RootStorage>,
@@ -3761,6 +4104,7 @@ pub mod workspace_bundle {
             self.user_storage = Some(input);
             self
         }
+        /// <p>The size of the user volume.</p>
         pub fn set_user_storage(
             mut self,
             input: std::option::Option<crate::model::UserStorage>,
@@ -3774,6 +4118,8 @@ pub mod workspace_bundle {
             self.compute_type = Some(input);
             self
         }
+        /// <p>The compute type of the bundle. For more information, see
+        /// <a href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon WorkSpaces Bundles</a>.</p>
         pub fn set_compute_type(
             mut self,
             input: std::option::Option<crate::model::ComputeType>,
@@ -3782,25 +4128,27 @@ pub mod workspace_bundle {
             self
         }
         /// <p>The last time that the bundle was updated.</p>
-        pub fn last_updated_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_updated_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_updated_time = Some(input);
             self
         }
+        /// <p>The last time that the bundle was updated.</p>
         pub fn set_last_updated_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_updated_time = input;
             self
         }
         /// <p>The time when the bundle was created.</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>The time when the bundle was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -3857,6 +4205,7 @@ pub mod compute_type {
             self.name = Some(input);
             self
         }
+        /// <p>The compute type.</p>
         pub fn set_name(mut self, input: std::option::Option<crate::model::Compute>) -> Self {
             self.name = input;
             self
@@ -3902,6 +4251,7 @@ pub mod user_storage {
             self.capacity = Some(input.into());
             self
         }
+        /// <p>The size of the user volume.</p>
         pub fn set_capacity(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.capacity = input;
             self
@@ -3949,6 +4299,7 @@ pub mod root_storage {
             self.capacity = Some(input.into());
             self
         }
+        /// <p>The size of the root volume.</p>
         pub fn set_capacity(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.capacity = input;
             self
@@ -4008,6 +4359,7 @@ pub mod workspaces_ip_group {
             self.group_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the group.</p>
         pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.group_id = input;
             self
@@ -4017,6 +4369,7 @@ pub mod workspaces_ip_group {
             self.group_name = Some(input.into());
             self
         }
+        /// <p>The name of the group.</p>
         pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.group_name = input;
             self
@@ -4026,16 +4379,23 @@ pub mod workspaces_ip_group {
             self.group_desc = Some(input.into());
             self
         }
+        /// <p>The description of the group.</p>
         pub fn set_group_desc(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.group_desc = input;
             self
         }
+        /// Appends an item to `user_rules`.
+        ///
+        /// To override the contents of this collection use [`set_user_rules`](Self::set_user_rules).
+        ///
+        /// <p>The rules.</p>
         pub fn user_rules(mut self, input: impl Into<crate::model::IpRuleItem>) -> Self {
             let mut v = self.user_rules.unwrap_or_default();
             v.push(input.into());
             self.user_rules = Some(v);
             self
         }
+        /// <p>The rules.</p>
         pub fn set_user_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::IpRuleItem>>,
@@ -4110,6 +4470,8 @@ pub mod connection_alias {
             self.connection_string = Some(input.into());
             self
         }
+        /// <p>The connection string specified for the connection alias. The connection string must be in the form of
+        /// a fully qualified domain name (FQDN), such as <code>www.example.com</code>.</p>
         pub fn set_connection_string(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4122,6 +4484,7 @@ pub mod connection_alias {
             self.alias_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the connection alias.</p>
         pub fn set_alias_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.alias_id = input;
             self
@@ -4131,6 +4494,7 @@ pub mod connection_alias {
             self.state = Some(input);
             self
         }
+        /// <p>The current state of the connection alias.</p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::ConnectionAliasState>,
@@ -4143,6 +4507,7 @@ pub mod connection_alias {
             self.owner_account_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the Amazon Web Services account that owns the connection alias.</p>
         pub fn set_owner_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4150,6 +4515,11 @@ pub mod connection_alias {
             self.owner_account_id = input;
             self
         }
+        /// Appends an item to `associations`.
+        ///
+        /// To override the contents of this collection use [`set_associations`](Self::set_associations).
+        ///
+        /// <p>The association status of the connection alias.</p>
         pub fn associations(
             mut self,
             input: impl Into<crate::model::ConnectionAliasAssociation>,
@@ -4159,6 +4529,7 @@ pub mod connection_alias {
             self.associations = Some(v);
             self
         }
+        /// <p>The association status of the connection alias.</p>
         pub fn set_associations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ConnectionAliasAssociation>>,
@@ -4228,6 +4599,7 @@ pub mod connection_alias_association {
             self.association_status = Some(input);
             self
         }
+        /// <p>The association status of the connection alias.</p>
         pub fn set_association_status(
             mut self,
             input: std::option::Option<crate::model::AssociationStatus>,
@@ -4240,6 +4612,7 @@ pub mod connection_alias_association {
             self.associated_account_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the Amazon Web Services account that associated the connection alias with a directory.</p>
         pub fn set_associated_account_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4252,6 +4625,7 @@ pub mod connection_alias_association {
             self.resource_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the directory associated with a connection alias.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
@@ -4262,6 +4636,8 @@ pub mod connection_alias_association {
             self.connection_identifier = Some(input.into());
             self
         }
+        /// <p>The identifier of the connection alias association. You use the connection identifier in the DNS TXT record when
+        /// you're configuring your DNS routing policies.</p>
         pub fn set_connection_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4287,6 +4663,7 @@ impl ConnectionAliasAssociation {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4298,10 +4675,15 @@ impl ConnectionAliasAssociation {
     std::hash::Hash,
 )]
 pub enum AssociationStatus {
+    #[allow(missing_docs)] // documentation missing in model
     AssociatedWithOwnerAccount,
+    #[allow(missing_docs)] // documentation missing in model
     AssociatedWithSharedAccount,
+    #[allow(missing_docs)] // documentation missing in model
     NotAssociated,
+    #[allow(missing_docs)] // documentation missing in model
     PendingAssociation,
+    #[allow(missing_docs)] // documentation missing in model
     PendingDisassociation,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4326,6 +4708,7 @@ impl std::str::FromStr for AssociationStatus {
     }
 }
 impl AssociationStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AssociationStatus::AssociatedWithOwnerAccount => "ASSOCIATED_WITH_OWNER_ACCOUNT",
@@ -4336,6 +4719,7 @@ impl AssociationStatus {
             AssociationStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ASSOCIATED_WITH_OWNER_ACCOUNT",
@@ -4352,6 +4736,7 @@ impl AsRef<str> for AssociationStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4363,8 +4748,11 @@ impl AsRef<str> for AssociationStatus {
     std::hash::Hash,
 )]
 pub enum ConnectionAliasState {
+    #[allow(missing_docs)] // documentation missing in model
     Created,
+    #[allow(missing_docs)] // documentation missing in model
     Creating,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4387,6 +4775,7 @@ impl std::str::FromStr for ConnectionAliasState {
     }
 }
 impl ConnectionAliasState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ConnectionAliasState::Created => "CREATED",
@@ -4395,6 +4784,7 @@ impl ConnectionAliasState {
             ConnectionAliasState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CREATED", "CREATING", "DELETING"]
     }
@@ -4437,6 +4827,7 @@ pub mod client_properties_result {
             self.resource_id = Some(input.into());
             self
         }
+        /// <p>The resource identifier, in the form of a directory ID.</p>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
@@ -4446,6 +4837,7 @@ pub mod client_properties_result {
             self.client_properties = Some(input);
             self
         }
+        /// <p>Information about the Amazon WorkSpaces client.</p>
         pub fn set_client_properties(
             mut self,
             input: std::option::Option<crate::model::ClientProperties>,
@@ -4484,7 +4876,7 @@ pub struct AccountModification {
     /// interface used for the account.</p>
     pub dedicated_tenancy_management_cidr_range: std::option::Option<std::string::String>,
     /// <p>The timestamp when the modification of the BYOL configuration was started.</p>
-    pub start_time: std::option::Option<smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The error code that is returned if the configuration of BYOL cannot be modified.</p>
     pub error_code: std::option::Option<std::string::String>,
     /// <p>The text of the error message that is returned if the configuration of BYOL cannot be
@@ -4518,7 +4910,7 @@ pub mod account_modification {
             std::option::Option<crate::model::DedicatedTenancySupportResultEnum>,
         pub(crate) dedicated_tenancy_management_cidr_range:
             std::option::Option<std::string::String>,
-        pub(crate) start_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) error_code: std::option::Option<std::string::String>,
         pub(crate) error_message: std::option::Option<std::string::String>,
     }
@@ -4531,6 +4923,7 @@ pub mod account_modification {
             self.modification_state = Some(input);
             self
         }
+        /// <p>The state of the modification to the configuration of BYOL.</p>
         pub fn set_modification_state(
             mut self,
             input: std::option::Option<crate::model::DedicatedTenancyModificationStateEnum>,
@@ -4546,6 +4939,7 @@ pub mod account_modification {
             self.dedicated_tenancy_support = Some(input);
             self
         }
+        /// <p>The status of BYOL (whether BYOL is being enabled or disabled).</p>
         pub fn set_dedicated_tenancy_support(
             mut self,
             input: std::option::Option<crate::model::DedicatedTenancySupportResultEnum>,
@@ -4562,6 +4956,8 @@ pub mod account_modification {
             self.dedicated_tenancy_management_cidr_range = Some(input.into());
             self
         }
+        /// <p>The IP address range, specified as an IPv4 CIDR block, for the management network
+        /// interface used for the account.</p>
         pub fn set_dedicated_tenancy_management_cidr_range(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4570,11 +4966,15 @@ pub mod account_modification {
             self
         }
         /// <p>The timestamp when the modification of the BYOL configuration was started.</p>
-        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The timestamp when the modification of the BYOL configuration was started.</p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.start_time = input;
             self
         }
@@ -4583,6 +4983,7 @@ pub mod account_modification {
             self.error_code = Some(input.into());
             self
         }
+        /// <p>The error code that is returned if the configuration of BYOL cannot be modified.</p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_code = input;
             self
@@ -4593,6 +4994,8 @@ pub mod account_modification {
             self.error_message = Some(input.into());
             self
         }
+        /// <p>The text of the error message that is returned if the configuration of BYOL cannot be
+        /// modified.</p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4621,6 +5024,7 @@ impl AccountModification {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4632,7 +5036,9 @@ impl AccountModification {
     std::hash::Hash,
 )]
 pub enum DedicatedTenancySupportResultEnum {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4654,6 +5060,7 @@ impl std::str::FromStr for DedicatedTenancySupportResultEnum {
     }
 }
 impl DedicatedTenancySupportResultEnum {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DedicatedTenancySupportResultEnum::Disabled => "DISABLED",
@@ -4661,6 +5068,7 @@ impl DedicatedTenancySupportResultEnum {
             DedicatedTenancySupportResultEnum::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -4671,6 +5079,7 @@ impl AsRef<str> for DedicatedTenancySupportResultEnum {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4682,8 +5091,11 @@ impl AsRef<str> for DedicatedTenancySupportResultEnum {
     std::hash::Hash,
 )]
 pub enum DedicatedTenancyModificationStateEnum {
+    #[allow(missing_docs)] // documentation missing in model
     Completed,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4706,6 +5118,7 @@ impl std::str::FromStr for DedicatedTenancyModificationStateEnum {
     }
 }
 impl DedicatedTenancyModificationStateEnum {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DedicatedTenancyModificationStateEnum::Completed => "COMPLETED",
@@ -4714,6 +5127,7 @@ impl DedicatedTenancyModificationStateEnum {
             DedicatedTenancyModificationStateEnum::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["COMPLETED", "FAILED", "PENDING"]
     }
@@ -4761,6 +5175,7 @@ pub mod failed_create_workspace_request {
             self.workspace_request = Some(input);
             self
         }
+        /// <p>Information about the WorkSpace.</p>
         pub fn set_workspace_request(
             mut self,
             input: std::option::Option<crate::model::WorkspaceRequest>,
@@ -4773,6 +5188,7 @@ pub mod failed_create_workspace_request {
             self.error_code = Some(input.into());
             self
         }
+        /// <p>The error code that is returned if the WorkSpace cannot be created.</p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_code = input;
             self
@@ -4783,6 +5199,8 @@ pub mod failed_create_workspace_request {
             self.error_message = Some(input.into());
             self
         }
+        /// <p>The text of the error message that is returned if the WorkSpace cannot be
+        /// created.</p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4873,6 +5291,8 @@ pub mod workspace_request {
             self.directory_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the Directory Service directory for the WorkSpace. You can use
+        /// <a>DescribeWorkspaceDirectories</a> to list the available directories.</p>
         pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.directory_id = input;
             self
@@ -4883,6 +5303,8 @@ pub mod workspace_request {
             self.user_name = Some(input.into());
             self
         }
+        /// <p>The user name of the user for the WorkSpace. This user name must exist in the Directory Service
+        /// directory for the WorkSpace.</p>
         pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_name = input;
             self
@@ -4892,6 +5314,7 @@ pub mod workspace_request {
             self.bundle_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the bundle for the WorkSpace. You can use <a>DescribeWorkspaceBundles</a> to list the available bundles.</p>
         pub fn set_bundle_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bundle_id = input;
             self
@@ -4902,6 +5325,8 @@ pub mod workspace_request {
             self.volume_encryption_key = Some(input.into());
             self
         }
+        /// <p>The symmetric KMS key used to encrypt data stored on your WorkSpace.
+        /// Amazon WorkSpaces does not support asymmetric KMS keys.</p>
         pub fn set_volume_encryption_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4914,6 +5339,7 @@ pub mod workspace_request {
             self.user_volume_encryption_enabled = Some(input);
             self
         }
+        /// <p>Indicates whether the data stored on the user volume is encrypted.</p>
         pub fn set_user_volume_encryption_enabled(
             mut self,
             input: std::option::Option<bool>,
@@ -4926,6 +5352,7 @@ pub mod workspace_request {
             self.root_volume_encryption_enabled = Some(input);
             self
         }
+        /// <p>Indicates whether the data stored on the root volume is encrypted.</p>
         pub fn set_root_volume_encryption_enabled(
             mut self,
             input: std::option::Option<bool>,
@@ -4938,6 +5365,7 @@ pub mod workspace_request {
             self.workspace_properties = Some(input);
             self
         }
+        /// <p>The WorkSpace properties.</p>
         pub fn set_workspace_properties(
             mut self,
             input: std::option::Option<crate::model::WorkspaceProperties>,
@@ -4945,12 +5373,18 @@ pub mod workspace_request {
             self.workspace_properties = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags for the WorkSpace.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The tags for the WorkSpace.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,

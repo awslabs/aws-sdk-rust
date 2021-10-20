@@ -38,6 +38,9 @@ pub mod resolve_customer_output {
             self.customer_identifier = Some(input.into());
             self
         }
+        /// <p>The CustomerIdentifier is used to identify an individual customer in your
+        /// application. Calls to BatchMeterUsage require CustomerIdentifiers for each
+        /// UsageRecord.</p>
         pub fn set_customer_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -52,6 +55,9 @@ pub mod resolve_customer_output {
             self.product_code = Some(input.into());
             self
         }
+        /// <p>The product code is returned to confirm that the buyer is registering for your
+        /// product. Subsequent BatchMeterUsage calls should be made using this product
+        /// code.</p>
         pub fn set_product_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.product_code = input;
             self
@@ -72,11 +78,12 @@ impl ResolveCustomerOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterUsageOutput {
     /// <p>(Optional) Only included when public key version has expired</p>
-    pub public_key_rotation_timestamp: std::option::Option<smithy_types::Instant>,
+    pub public_key_rotation_timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>JWT Token</p>
     pub signature: std::option::Option<std::string::String>,
 }
@@ -97,18 +104,19 @@ pub mod register_usage_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) public_key_rotation_timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) public_key_rotation_timestamp: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) signature: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>(Optional) Only included when public key version has expired</p>
-        pub fn public_key_rotation_timestamp(mut self, input: smithy_types::Instant) -> Self {
+        pub fn public_key_rotation_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
             self.public_key_rotation_timestamp = Some(input);
             self
         }
+        /// <p>(Optional) Only included when public key version has expired</p>
         pub fn set_public_key_rotation_timestamp(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.public_key_rotation_timestamp = input;
             self
@@ -118,6 +126,7 @@ pub mod register_usage_output {
             self.signature = Some(input.into());
             self
         }
+        /// <p>JWT Token</p>
         pub fn set_signature(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.signature = input;
             self
@@ -138,6 +147,7 @@ impl RegisterUsageOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MeterUsageOutput {
@@ -165,6 +175,7 @@ pub mod meter_usage_output {
             self.metering_record_id = Some(input.into());
             self
         }
+        /// <p>Metering record id.</p>
         pub fn set_metering_record_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -219,12 +230,20 @@ pub mod batch_meter_usage_output {
             std::option::Option<std::vec::Vec<crate::model::UsageRecord>>,
     }
     impl Builder {
+        /// Appends an item to `results`.
+        ///
+        /// To override the contents of this collection use [`set_results`](Self::set_results).
+        ///
+        /// <p>Contains all UsageRecords processed by BatchMeterUsage. These records were either
+        /// honored by AWS Marketplace Metering Service or were invalid.</p>
         pub fn results(mut self, input: impl Into<crate::model::UsageRecordResult>) -> Self {
             let mut v = self.results.unwrap_or_default();
             v.push(input.into());
             self.results = Some(v);
             self
         }
+        /// <p>Contains all UsageRecords processed by BatchMeterUsage. These records were either
+        /// honored by AWS Marketplace Metering Service or were invalid.</p>
         pub fn set_results(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UsageRecordResult>>,
@@ -232,12 +251,22 @@ pub mod batch_meter_usage_output {
             self.results = input;
             self
         }
+        /// Appends an item to `unprocessed_records`.
+        ///
+        /// To override the contents of this collection use [`set_unprocessed_records`](Self::set_unprocessed_records).
+        ///
+        /// <p>Contains all UsageRecords that were not processed by BatchMeterUsage. This is a
+        /// list of UsageRecords. You can retry the failed request by making another BatchMeterUsage
+        /// call with this list as input in the BatchMeterUsageRequest.</p>
         pub fn unprocessed_records(mut self, input: impl Into<crate::model::UsageRecord>) -> Self {
             let mut v = self.unprocessed_records.unwrap_or_default();
             v.push(input.into());
             self.unprocessed_records = Some(v);
             self
         }
+        /// <p>Contains all UsageRecords that were not processed by BatchMeterUsage. This is a
+        /// list of UsageRecords. You can retry the failed request by making another BatchMeterUsage
+        /// call with this list as input in the BatchMeterUsageRequest.</p>
         pub fn set_unprocessed_records(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UsageRecord>>,

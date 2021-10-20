@@ -31,6 +31,7 @@ pub mod validation_exception_field {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the parameter that failed validation.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -40,6 +41,7 @@ pub mod validation_exception_field {
             self.message = Some(input.into());
             self
         }
+        /// <p>The message describing why the parameter failed validation.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -60,6 +62,7 @@ impl ValidationExceptionField {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -71,7 +74,9 @@ impl ValidationExceptionField {
     std::hash::Hash,
 )]
 pub enum ValidationExceptionReason {
+    #[allow(missing_docs)] // documentation missing in model
     FieldValidationFailed,
+    #[allow(missing_docs)] // documentation missing in model
     Other,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -93,6 +98,7 @@ impl std::str::FromStr for ValidationExceptionReason {
     }
 }
 impl ValidationExceptionReason {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ValidationExceptionReason::FieldValidationFailed => "FIELD_VALIDATION_FAILED",
@@ -100,6 +106,7 @@ impl ValidationExceptionReason {
             ValidationExceptionReason::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FIELD_VALIDATION_FAILED", "OTHER"]
     }
@@ -110,6 +117,7 @@ impl AsRef<str> for ValidationExceptionReason {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -121,7 +129,9 @@ impl AsRef<str> for ValidationExceptionReason {
     std::hash::Hash,
 )]
 pub enum AutoRenew {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -143,6 +153,7 @@ impl std::str::FromStr for AutoRenew {
     }
 }
 impl AutoRenew {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AutoRenew::Disabled => "DISABLED",
@@ -150,6 +161,7 @@ impl AutoRenew {
             AutoRenew::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -160,6 +172,7 @@ impl AsRef<str> for AutoRenew {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -171,11 +184,17 @@ impl AsRef<str> for AutoRenew {
     std::hash::Hash,
 )]
 pub enum ProtectedResourceType {
+    #[allow(missing_docs)] // documentation missing in model
     ApplicationLoadBalancer,
+    #[allow(missing_docs)] // documentation missing in model
     ClassicLoadBalancer,
+    #[allow(missing_docs)] // documentation missing in model
     CloudfrontDistribution,
+    #[allow(missing_docs)] // documentation missing in model
     ElasticIpAllocation,
+    #[allow(missing_docs)] // documentation missing in model
     GlobalAccelerator,
+    #[allow(missing_docs)] // documentation missing in model
     Route53HostedZone,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -201,6 +220,7 @@ impl std::str::FromStr for ProtectedResourceType {
     }
 }
 impl ProtectedResourceType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ProtectedResourceType::ApplicationLoadBalancer => "APPLICATION_LOAD_BALANCER",
@@ -212,6 +232,7 @@ impl ProtectedResourceType {
             ProtectedResourceType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "APPLICATION_LOAD_BALANCER",
@@ -229,6 +250,7 @@ impl AsRef<str> for ProtectedResourceType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -240,8 +262,11 @@ impl AsRef<str> for ProtectedResourceType {
     std::hash::Hash,
 )]
 pub enum ProtectionGroupPattern {
+    #[allow(missing_docs)] // documentation missing in model
     All,
+    #[allow(missing_docs)] // documentation missing in model
     Arbitrary,
+    #[allow(missing_docs)] // documentation missing in model
     ByResourceType,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -264,6 +289,7 @@ impl std::str::FromStr for ProtectionGroupPattern {
     }
 }
 impl ProtectionGroupPattern {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ProtectionGroupPattern::All => "ALL",
@@ -272,6 +298,7 @@ impl ProtectionGroupPattern {
             ProtectionGroupPattern::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ALL", "ARBITRARY", "BY_RESOURCE_TYPE"]
     }
@@ -282,6 +309,7 @@ impl AsRef<str> for ProtectionGroupPattern {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -293,8 +321,11 @@ impl AsRef<str> for ProtectionGroupPattern {
     std::hash::Hash,
 )]
 pub enum ProtectionGroupAggregation {
+    #[allow(missing_docs)] // documentation missing in model
     Max,
+    #[allow(missing_docs)] // documentation missing in model
     Mean,
+    #[allow(missing_docs)] // documentation missing in model
     Sum,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -317,6 +348,7 @@ impl std::str::FromStr for ProtectionGroupAggregation {
     }
 }
 impl ProtectionGroupAggregation {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ProtectionGroupAggregation::Max => "MAX",
@@ -325,6 +357,7 @@ impl ProtectionGroupAggregation {
             ProtectionGroupAggregation::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["MAX", "MEAN", "SUM"]
     }
@@ -371,6 +404,7 @@ pub mod emergency_contact {
             self.email_address = Some(input.into());
             self
         }
+        /// <p>The email address for the contact.</p>
         pub fn set_email_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -383,6 +417,7 @@ pub mod emergency_contact {
             self.phone_number = Some(input.into());
             self
         }
+        /// <p>The phone number for the contact.</p>
         pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.phone_number = input;
             self
@@ -392,6 +427,7 @@ pub mod emergency_contact {
             self.contact_notes = Some(input.into());
             self
         }
+        /// <p>Additional notes regarding the contact. </p>
         pub fn set_contact_notes(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -448,6 +484,7 @@ pub mod tag {
             self.key = Some(input.into());
             self
         }
+        /// <p>Part of the key:value pair that defines a tag. You can use a tag key to describe a category of information, such as "customer." Tag keys are case-sensitive.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -457,6 +494,7 @@ pub mod tag {
             self.value = Some(input.into());
             self
         }
+        /// <p>Part of the key:value pair that defines a tag. You can use a tag value to describe a specific value within a category, such as "companyA" or "companyB." Tag values are case-sensitive.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -521,6 +559,7 @@ pub mod protection {
             self.id = Some(input.into());
             self
         }
+        /// <p>The unique identifier (ID) of the protection.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -530,6 +569,7 @@ pub mod protection {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the protection. For example, <code>My CloudFront distributions</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -539,16 +579,23 @@ pub mod protection {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The ARN (Amazon Resource Name) of the Amazon Web Services resource that is protected.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Appends an item to `health_check_ids`.
+        ///
+        /// To override the contents of this collection use [`set_health_check_ids`](Self::set_health_check_ids).
+        ///
+        /// <p>The unique identifier (ID) for the Route 53 health check that's associated with the protection. </p>
         pub fn health_check_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.health_check_ids.unwrap_or_default();
             v.push(input.into());
             self.health_check_ids = Some(v);
             self
         }
+        /// <p>The unique identifier (ID) for the Route 53 health check that's associated with the protection. </p>
         pub fn set_health_check_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -561,6 +608,7 @@ pub mod protection {
             self.protection_arn = Some(input.into());
             self
         }
+        /// <p>The ARN (Amazon Resource Name) of the protection.</p>
         pub fn set_protection_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -647,6 +695,7 @@ pub mod protection_group {
             self.protection_group_id = Some(input.into());
             self
         }
+        /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
         pub fn set_protection_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -670,6 +719,18 @@ pub mod protection_group {
             self.aggregation = Some(input);
             self
         }
+        /// <p>Defines how Shield combines resource data for the group in order to detect, mitigate, and report events.</p>
+        /// <ul>
+        /// <li>
+        /// <p>Sum - Use the total traffic across the group. This is a good choice for most cases. Examples include Elastic IP addresses for EC2 instances that scale manually or automatically.</p>
+        /// </li>
+        /// <li>
+        /// <p>Mean - Use the average of the traffic across the group. This is a good choice for resources that share traffic uniformly. Examples include accelerators and load balancers.</p>
+        /// </li>
+        /// <li>
+        /// <p>Max - Use the highest traffic from each resource. This is useful for resources that don't share traffic and for resources that share that traffic in a non-uniform way. Examples include Amazon CloudFront distributions and origin resources for CloudFront distributions.</p>
+        /// </li>
+        /// </ul>
         pub fn set_aggregation(
             mut self,
             input: std::option::Option<crate::model::ProtectionGroupAggregation>,
@@ -682,6 +743,7 @@ pub mod protection_group {
             self.pattern = Some(input);
             self
         }
+        /// <p>The criteria to use to choose the protected resources for inclusion in the group. You can include all resources that have protections, provide a list of resource Amazon Resource Names (ARNs), or include all resources of a specified resource type.</p>
         pub fn set_pattern(
             mut self,
             input: std::option::Option<crate::model::ProtectionGroupPattern>,
@@ -695,6 +757,8 @@ pub mod protection_group {
             self.resource_type = Some(input);
             self
         }
+        /// <p>The resource type to include in the protection group. All protected resources of this type are included in the protection group.
+        /// You must set this when you set <code>Pattern</code> to <code>BY_RESOURCE_TYPE</code> and you must not set it for any other <code>Pattern</code> setting. </p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<crate::model::ProtectedResourceType>,
@@ -702,12 +766,18 @@ pub mod protection_group {
             self.resource_type = input;
             self
         }
+        /// Appends an item to `members`.
+        ///
+        /// To override the contents of this collection use [`set_members`](Self::set_members).
+        ///
+        /// <p>The Amazon Resource Names (ARNs) of the resources to include in the protection group. You must set this when you set <code>Pattern</code> to <code>ARBITRARY</code> and you must not set it for any other <code>Pattern</code> setting. </p>
         pub fn members(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.members.unwrap_or_default();
             v.push(input.into());
             self.members = Some(v);
             self
         }
+        /// <p>The Amazon Resource Names (ARNs) of the resources to include in the protection group. You must set this when you set <code>Pattern</code> to <code>ARBITRARY</code> and you must not set it for any other <code>Pattern</code> setting. </p>
         pub fn set_members(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -720,6 +790,7 @@ pub mod protection_group {
             self.protection_group_arn = Some(input.into());
             self
         }
+        /// <p>The ARN (Amazon Resource Name) of the protection group.</p>
         pub fn set_protection_group_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -756,9 +827,9 @@ pub struct AttackSummary {
     /// <p>The ARN (Amazon Resource Name) of the resource that was attacked.</p>
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The start time of the attack, in Unix time in seconds. For more information see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
-    pub start_time: std::option::Option<smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The end time of the attack, in Unix time in seconds. For more information see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
-    pub end_time: std::option::Option<smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The list of attacks for a specified time period.</p>
     pub attack_vectors: std::option::Option<std::vec::Vec<crate::model::AttackVectorDescription>>,
 }
@@ -781,8 +852,8 @@ pub mod attack_summary {
     pub struct Builder {
         pub(crate) attack_id: std::option::Option<std::string::String>,
         pub(crate) resource_arn: std::option::Option<std::string::String>,
-        pub(crate) start_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) attack_vectors:
             std::option::Option<std::vec::Vec<crate::model::AttackVectorDescription>>,
     }
@@ -792,6 +863,7 @@ pub mod attack_summary {
             self.attack_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier (ID) of the attack.</p>
         pub fn set_attack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.attack_id = input;
             self
@@ -801,28 +873,42 @@ pub mod attack_summary {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The ARN (Amazon Resource Name) of the resource that was attacked.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
         /// <p>The start time of the attack, in Unix time in seconds. For more information see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
-        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The start time of the attack, in Unix time in seconds. For more information see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The end time of the attack, in Unix time in seconds. For more information see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
-        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The end time of the attack, in Unix time in seconds. For more information see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.end_time = input;
             self
         }
+        /// Appends an item to `attack_vectors`.
+        ///
+        /// To override the contents of this collection use [`set_attack_vectors`](Self::set_attack_vectors).
+        ///
+        /// <p>The list of attacks for a specified time period.</p>
         pub fn attack_vectors(
             mut self,
             input: impl Into<crate::model::AttackVectorDescription>,
@@ -832,6 +918,7 @@ pub mod attack_summary {
             self.attack_vectors = Some(v);
             self
         }
+        /// <p>The list of attacks for a specified time period.</p>
         pub fn set_attack_vectors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AttackVectorDescription>>,
@@ -998,6 +1085,63 @@ pub mod attack_vector_description {
             self.vector_type = Some(input.into());
             self
         }
+        /// <p>The attack type. Valid values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>UDP_TRAFFIC</p>
+        /// </li>
+        /// <li>
+        /// <p>UDP_FRAGMENT</p>
+        /// </li>
+        /// <li>
+        /// <p>GENERIC_UDP_REFLECTION</p>
+        /// </li>
+        /// <li>
+        /// <p>DNS_REFLECTION</p>
+        /// </li>
+        /// <li>
+        /// <p>NTP_REFLECTION</p>
+        /// </li>
+        /// <li>
+        /// <p>CHARGEN_REFLECTION</p>
+        /// </li>
+        /// <li>
+        /// <p>SSDP_REFLECTION</p>
+        /// </li>
+        /// <li>
+        /// <p>PORT_MAPPER</p>
+        /// </li>
+        /// <li>
+        /// <p>RIP_REFLECTION</p>
+        /// </li>
+        /// <li>
+        /// <p>SNMP_REFLECTION</p>
+        /// </li>
+        /// <li>
+        /// <p>MSSQL_REFLECTION</p>
+        /// </li>
+        /// <li>
+        /// <p>NET_BIOS_REFLECTION</p>
+        /// </li>
+        /// <li>
+        /// <p>SYN_FLOOD</p>
+        /// </li>
+        /// <li>
+        /// <p>ACK_FLOOD</p>
+        /// </li>
+        /// <li>
+        /// <p>REQUEST_FLOOD</p>
+        /// </li>
+        /// <li>
+        /// <p>HTTP_REFLECTION</p>
+        /// </li>
+        /// <li>
+        /// <p>UDS_REFLECTION</p>
+        /// </li>
+        /// <li>
+        /// <p>MEMCACHED_REFLECTION</p>
+        /// </li>
+        /// </ul>
         pub fn set_vector_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.vector_type = input;
             self
@@ -1022,9 +1166,9 @@ impl AttackVectorDescription {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TimeRange {
     /// <p>The start time, in Unix time in seconds. For more information see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
-    pub from_inclusive: std::option::Option<smithy_types::Instant>,
+    pub from_inclusive: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The end time, in Unix time in seconds. For more information see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
-    pub to_exclusive: std::option::Option<smithy_types::Instant>,
+    pub to_exclusive: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for TimeRange {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1040,30 +1184,32 @@ pub mod time_range {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) from_inclusive: std::option::Option<smithy_types::Instant>,
-        pub(crate) to_exclusive: std::option::Option<smithy_types::Instant>,
+        pub(crate) from_inclusive: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) to_exclusive: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The start time, in Unix time in seconds. For more information see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
-        pub fn from_inclusive(mut self, input: smithy_types::Instant) -> Self {
+        pub fn from_inclusive(mut self, input: aws_smithy_types::Instant) -> Self {
             self.from_inclusive = Some(input);
             self
         }
+        /// <p>The start time, in Unix time in seconds. For more information see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
         pub fn set_from_inclusive(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.from_inclusive = input;
             self
         }
         /// <p>The end time, in Unix time in seconds. For more information see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
-        pub fn to_exclusive(mut self, input: smithy_types::Instant) -> Self {
+        pub fn to_exclusive(mut self, input: aws_smithy_types::Instant) -> Self {
             self.to_exclusive = Some(input);
             self
         }
+        /// <p>The end time, in Unix time in seconds. For more information see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
         pub fn set_to_exclusive(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.to_exclusive = input;
             self
@@ -1084,6 +1230,7 @@ impl TimeRange {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1095,7 +1242,9 @@ impl TimeRange {
     std::hash::Hash,
 )]
 pub enum SubscriptionState {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     Inactive,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1117,6 +1266,7 @@ impl std::str::FromStr for SubscriptionState {
     }
 }
 impl SubscriptionState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SubscriptionState::Active => "ACTIVE",
@@ -1124,6 +1274,7 @@ impl SubscriptionState {
             SubscriptionState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ACTIVE", "INACTIVE"]
     }
@@ -1139,9 +1290,9 @@ impl AsRef<str> for SubscriptionState {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Subscription {
     /// <p>The start time of the subscription, in Unix time in seconds. For more information see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
-    pub start_time: std::option::Option<smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time your subscription will end.</p>
-    pub end_time: std::option::Option<smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The length, in seconds, of the Shield Advanced subscription for the account.</p>
     pub time_commitment_in_seconds: i64,
     /// <p>If <code>ENABLED</code>, the subscription will be automatically renewed at the end of the existing subscription period.</p>
@@ -1184,8 +1335,8 @@ pub mod subscription {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) start_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) time_commitment_in_seconds: std::option::Option<i64>,
         pub(crate) auto_renew: std::option::Option<crate::model::AutoRenew>,
         pub(crate) limits: std::option::Option<std::vec::Vec<crate::model::Limit>>,
@@ -1196,20 +1347,28 @@ pub mod subscription {
     }
     impl Builder {
         /// <p>The start time of the subscription, in Unix time in seconds. For more information see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
-        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The start time of the subscription, in Unix time in seconds. For more information see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The date and time your subscription will end.</p>
-        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date and time your subscription will end.</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.end_time = input;
             self
         }
@@ -1218,6 +1377,7 @@ pub mod subscription {
             self.time_commitment_in_seconds = Some(input);
             self
         }
+        /// <p>The length, in seconds, of the Shield Advanced subscription for the account.</p>
         pub fn set_time_commitment_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
             self.time_commitment_in_seconds = input;
             self
@@ -1228,6 +1388,8 @@ pub mod subscription {
             self.auto_renew = Some(input);
             self
         }
+        /// <p>If <code>ENABLED</code>, the subscription will be automatically renewed at the end of the existing subscription period.</p>
+        /// <p>When you initally create a subscription, <code>AutoRenew</code> is set to <code>ENABLED</code>. You can change this by submitting an <code>UpdateSubscription</code> request. If the <code>UpdateSubscription</code> request does not included a value for <code>AutoRenew</code>, the existing value for <code>AutoRenew</code> remains unchanged.</p>
         pub fn set_auto_renew(
             mut self,
             input: std::option::Option<crate::model::AutoRenew>,
@@ -1235,12 +1397,18 @@ pub mod subscription {
             self.auto_renew = input;
             self
         }
+        /// Appends an item to `limits`.
+        ///
+        /// To override the contents of this collection use [`set_limits`](Self::set_limits).
+        ///
+        /// <p>Specifies how many protections of a given type you can create.</p>
         pub fn limits(mut self, input: impl Into<crate::model::Limit>) -> Self {
             let mut v = self.limits.unwrap_or_default();
             v.push(input.into());
             self.limits = Some(v);
             self
         }
+        /// <p>Specifies how many protections of a given type you can create.</p>
         pub fn set_limits(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Limit>>,
@@ -1258,6 +1426,9 @@ pub mod subscription {
             self.proactive_engagement_status = Some(input);
             self
         }
+        /// <p>If <code>ENABLED</code>, the Shield Response Team (SRT) will use email and phone to notify contacts about escalations to the SRT and to initiate proactive customer support.</p>
+        /// <p>If <code>PENDING</code>, you have requested proactive engagement and the request is pending. The status changes to <code>ENABLED</code> when your request is fully processed.</p>
+        /// <p>If <code>DISABLED</code>, the SRT will not proactively notify contacts about escalations or to initiate proactive customer support. </p>
         pub fn set_proactive_engagement_status(
             mut self,
             input: std::option::Option<crate::model::ProactiveEngagementStatus>,
@@ -1270,6 +1441,7 @@ pub mod subscription {
             self.subscription_limits = Some(input);
             self
         }
+        /// <p>Limits settings for your subscription. </p>
         pub fn set_subscription_limits(
             mut self,
             input: std::option::Option<crate::model::SubscriptionLimits>,
@@ -1282,6 +1454,7 @@ pub mod subscription {
             self.subscription_arn = Some(input.into());
             self
         }
+        /// <p>The ARN (Amazon Resource Name) of the subscription.</p>
         pub fn set_subscription_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1344,6 +1517,7 @@ pub mod subscription_limits {
             self.protection_limits = Some(input);
             self
         }
+        /// <p>Limits settings on protections for your subscription. </p>
         pub fn set_protection_limits(
             mut self,
             input: std::option::Option<crate::model::ProtectionLimits>,
@@ -1359,6 +1533,7 @@ pub mod subscription_limits {
             self.protection_group_limits = Some(input);
             self
         }
+        /// <p>Limits settings on protection groups for your subscription. </p>
         pub fn set_protection_group_limits(
             mut self,
             input: std::option::Option<crate::model::ProtectionGroupLimits>,
@@ -1415,6 +1590,7 @@ pub mod protection_group_limits {
             self.max_protection_groups = Some(input);
             self
         }
+        /// <p>The maximum number of protection groups that you can have at one time. </p>
         pub fn set_max_protection_groups(mut self, input: std::option::Option<i64>) -> Self {
             self.max_protection_groups = input;
             self
@@ -1427,6 +1603,7 @@ pub mod protection_group_limits {
             self.pattern_type_limits = Some(input);
             self
         }
+        /// <p>Limits settings by pattern type in the protection groups for your subscription. </p>
         pub fn set_pattern_type_limits(
             mut self,
             input: std::option::Option<crate::model::ProtectionGroupPatternTypeLimits>,
@@ -1483,6 +1660,7 @@ pub mod protection_group_pattern_type_limits {
             self.arbitrary_pattern_limits = Some(input);
             self
         }
+        /// <p>Limits settings on protection groups with arbitrary pattern type. </p>
         pub fn set_arbitrary_pattern_limits(
             mut self,
             input: std::option::Option<crate::model::ProtectionGroupArbitraryPatternLimits>,
@@ -1533,6 +1711,7 @@ pub mod protection_group_arbitrary_pattern_limits {
             self.max_members = Some(input);
             self
         }
+        /// <p>The maximum number of resources you can specify for a single arbitrary pattern in a protection group.</p>
         pub fn set_max_members(mut self, input: std::option::Option<i64>) -> Self {
             self.max_members = input;
             self
@@ -1579,6 +1758,11 @@ pub mod protection_limits {
             std::option::Option<std::vec::Vec<crate::model::Limit>>,
     }
     impl Builder {
+        /// Appends an item to `protected_resource_type_limits`.
+        ///
+        /// To override the contents of this collection use [`set_protected_resource_type_limits`](Self::set_protected_resource_type_limits).
+        ///
+        /// <p>The maximum number of resource types that you can specify in a protection.</p>
         pub fn protected_resource_type_limits(
             mut self,
             input: impl Into<crate::model::Limit>,
@@ -1588,6 +1772,7 @@ pub mod protection_limits {
             self.protected_resource_type_limits = Some(v);
             self
         }
+        /// <p>The maximum number of resource types that you can specify in a protection.</p>
         pub fn set_protected_resource_type_limits(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Limit>>,
@@ -1642,6 +1827,7 @@ pub mod limit {
             self.r#type = Some(input.into());
             self
         }
+        /// <p>The type of protection.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
@@ -1651,6 +1837,7 @@ pub mod limit {
             self.max = Some(input);
             self
         }
+        /// <p>The maximum number of protections that can be created for the specified <code>Type</code>.</p>
         pub fn set_max(mut self, input: std::option::Option<i64>) -> Self {
             self.max = input;
             self
@@ -1671,6 +1858,7 @@ impl Limit {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1682,8 +1870,11 @@ impl Limit {
     std::hash::Hash,
 )]
 pub enum ProactiveEngagementStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1706,6 +1897,7 @@ impl std::str::FromStr for ProactiveEngagementStatus {
     }
 }
 impl ProactiveEngagementStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ProactiveEngagementStatus::Disabled => "DISABLED",
@@ -1714,6 +1906,7 @@ impl ProactiveEngagementStatus {
             ProactiveEngagementStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED", "PENDING"]
     }
@@ -1756,6 +1949,7 @@ pub mod attack_statistics_data_item {
             self.attack_volume = Some(input);
             self
         }
+        /// <p>Information about the volume of attacks during the time period. If the accompanying <code>AttackCount</code> is zero, this setting might be empty.</p>
         pub fn set_attack_volume(
             mut self,
             input: std::option::Option<crate::model::AttackVolume>,
@@ -1768,6 +1962,7 @@ pub mod attack_statistics_data_item {
             self.attack_count = Some(input);
             self
         }
+        /// <p>The number of attacks detected during the time period. This is always present, but might be zero. </p>
         pub fn set_attack_count(mut self, input: std::option::Option<i64>) -> Self {
             self.attack_count = input;
             self
@@ -1824,6 +2019,7 @@ pub mod attack_volume {
             self.bits_per_second = Some(input);
             self
         }
+        /// <p>A statistics object that uses bits per second as the unit. This is included for network level attacks. </p>
         pub fn set_bits_per_second(
             mut self,
             input: std::option::Option<crate::model::AttackVolumeStatistics>,
@@ -1836,6 +2032,7 @@ pub mod attack_volume {
             self.packets_per_second = Some(input);
             self
         }
+        /// <p>A statistics object that uses packets per second as the unit. This is included for network level attacks. </p>
         pub fn set_packets_per_second(
             mut self,
             input: std::option::Option<crate::model::AttackVolumeStatistics>,
@@ -1848,6 +2045,7 @@ pub mod attack_volume {
             self.requests_per_second = Some(input);
             self
         }
+        /// <p>A statistics object that uses requests per second as the unit. This is included for application level attacks, and is only available for accounts that are subscribed to Shield Advanced.</p>
         pub fn set_requests_per_second(
             mut self,
             input: std::option::Option<crate::model::AttackVolumeStatistics>,
@@ -1900,6 +2098,7 @@ pub mod attack_volume_statistics {
             self.max = Some(input);
             self
         }
+        /// <p>The maximum attack volume observed for the given unit.</p>
         pub fn set_max(mut self, input: std::option::Option<f64>) -> Self {
             self.max = input;
             self
@@ -1930,9 +2129,9 @@ pub struct AttackDetail {
     /// <p>If applicable, additional detail about the resource being attacked, for example, IP address or URL.</p>
     pub sub_resources: std::option::Option<std::vec::Vec<crate::model::SubResourceSummary>>,
     /// <p>The time the attack started, in Unix time in seconds. For more information see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
-    pub start_time: std::option::Option<smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time the attack ended, in Unix time in seconds. For more information see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
-    pub end_time: std::option::Option<smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>List of counters that describe the attack for the specified time period.</p>
     pub attack_counters: std::option::Option<std::vec::Vec<crate::model::SummarizedCounter>>,
     /// <p>The array of objects that provide details of the Shield event. </p>
@@ -1968,8 +2167,8 @@ pub mod attack_detail {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) sub_resources:
             std::option::Option<std::vec::Vec<crate::model::SubResourceSummary>>,
-        pub(crate) start_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) attack_counters:
             std::option::Option<std::vec::Vec<crate::model::SummarizedCounter>>,
         pub(crate) attack_properties:
@@ -1982,6 +2181,7 @@ pub mod attack_detail {
             self.attack_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier (ID) of the attack.</p>
         pub fn set_attack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.attack_id = input;
             self
@@ -1991,16 +2191,23 @@ pub mod attack_detail {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The ARN (Amazon Resource Name) of the resource that was attacked.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Appends an item to `sub_resources`.
+        ///
+        /// To override the contents of this collection use [`set_sub_resources`](Self::set_sub_resources).
+        ///
+        /// <p>If applicable, additional detail about the resource being attacked, for example, IP address or URL.</p>
         pub fn sub_resources(mut self, input: impl Into<crate::model::SubResourceSummary>) -> Self {
             let mut v = self.sub_resources.unwrap_or_default();
             v.push(input.into());
             self.sub_resources = Some(v);
             self
         }
+        /// <p>If applicable, additional detail about the resource being attacked, for example, IP address or URL.</p>
         pub fn set_sub_resources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SubResourceSummary>>,
@@ -2009,23 +2216,36 @@ pub mod attack_detail {
             self
         }
         /// <p>The time the attack started, in Unix time in seconds. For more information see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
-        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time the attack started, in Unix time in seconds. For more information see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The time the attack ended, in Unix time in seconds. For more information see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
-        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time the attack ended, in Unix time in seconds. For more information see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#parameter-types">timestamp</a>.</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.end_time = input;
             self
         }
+        /// Appends an item to `attack_counters`.
+        ///
+        /// To override the contents of this collection use [`set_attack_counters`](Self::set_attack_counters).
+        ///
+        /// <p>List of counters that describe the attack for the specified time period.</p>
         pub fn attack_counters(
             mut self,
             input: impl Into<crate::model::SummarizedCounter>,
@@ -2035,6 +2255,7 @@ pub mod attack_detail {
             self.attack_counters = Some(v);
             self
         }
+        /// <p>List of counters that describe the attack for the specified time period.</p>
         pub fn set_attack_counters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SummarizedCounter>>,
@@ -2042,12 +2263,26 @@ pub mod attack_detail {
             self.attack_counters = input;
             self
         }
+        /// Appends an item to `attack_properties`.
+        ///
+        /// To override the contents of this collection use [`set_attack_properties`](Self::set_attack_properties).
+        ///
+        /// <p>The array of objects that provide details of the Shield event. </p>
+        /// <p>For infrastructure  
+        /// layer events (L3 and L4 events) after January 25, 2021, you can view metrics for top contributors in Amazon CloudWatch metrics.
+        /// For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a>
+        /// in the <i>WAF Developer Guide</i>. </p>
         pub fn attack_properties(mut self, input: impl Into<crate::model::AttackProperty>) -> Self {
             let mut v = self.attack_properties.unwrap_or_default();
             v.push(input.into());
             self.attack_properties = Some(v);
             self
         }
+        /// <p>The array of objects that provide details of the Shield event. </p>
+        /// <p>For infrastructure  
+        /// layer events (L3 and L4 events) after January 25, 2021, you can view metrics for top contributors in Amazon CloudWatch metrics.
+        /// For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a>
+        /// in the <i>WAF Developer Guide</i>. </p>
         pub fn set_attack_properties(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AttackProperty>>,
@@ -2055,12 +2290,18 @@ pub mod attack_detail {
             self.attack_properties = input;
             self
         }
+        /// Appends an item to `mitigations`.
+        ///
+        /// To override the contents of this collection use [`set_mitigations`](Self::set_mitigations).
+        ///
+        /// <p>List of mitigation actions taken for the attack.</p>
         pub fn mitigations(mut self, input: impl Into<crate::model::Mitigation>) -> Self {
             let mut v = self.mitigations.unwrap_or_default();
             v.push(input.into());
             self.mitigations = Some(v);
             self
         }
+        /// <p>List of mitigation actions taken for the attack.</p>
         pub fn set_mitigations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Mitigation>>,
@@ -2118,6 +2359,7 @@ pub mod mitigation {
             self.mitigation_name = Some(input.into());
             self
         }
+        /// <p>The name of the mitigation taken for this attack.</p>
         pub fn set_mitigation_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2201,6 +2443,12 @@ pub mod attack_property {
             self.attack_layer = Some(input);
             self
         }
+        /// <p>The type of Shield event that was observed. <code>NETWORK</code> indicates layer 3 and layer 4 events and <code>APPLICATION</code>
+        /// indicates layer 7 events.</p>
+        /// <p>For infrastructure  
+        /// layer events (L3 and L4 events) after January 25, 2021, you can view metrics for top contributors in Amazon CloudWatch metrics.
+        /// For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#set-ddos-alarms">Shield metrics and alarms</a>
+        /// in the <i>WAF Developer Guide</i>. </p>
         pub fn set_attack_layer(
             mut self,
             input: std::option::Option<crate::model::AttackLayer>,
@@ -2218,6 +2466,9 @@ pub mod attack_property {
             self.attack_property_identifier = Some(input);
             self
         }
+        /// <p>Defines the Shield event property information that is provided. The
+        /// <code>WORDPRESS_PINGBACK_REFLECTOR</code> and <code>WORDPRESS_PINGBACK_SOURCE</code>
+        /// values are valid only for WordPress reflective pingback events.</p>
         pub fn set_attack_property_identifier(
             mut self,
             input: std::option::Option<crate::model::AttackPropertyIdentifier>,
@@ -2225,12 +2476,18 @@ pub mod attack_property {
             self.attack_property_identifier = input;
             self
         }
+        /// Appends an item to `top_contributors`.
+        ///
+        /// To override the contents of this collection use [`set_top_contributors`](Self::set_top_contributors).
+        ///
+        /// <p>Contributor objects for the top five contributors to a Shield event. </p>
         pub fn top_contributors(mut self, input: impl Into<crate::model::Contributor>) -> Self {
             let mut v = self.top_contributors.unwrap_or_default();
             v.push(input.into());
             self.top_contributors = Some(v);
             self
         }
+        /// <p>Contributor objects for the top five contributors to a Shield event. </p>
         pub fn set_top_contributors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Contributor>>,
@@ -2244,6 +2501,8 @@ pub mod attack_property {
             self.unit = Some(input);
             self
         }
+        /// <p>The unit used for the <code>Contributor</code>
+        /// <code>Value</code> property. </p>
         pub fn set_unit(mut self, input: std::option::Option<crate::model::Unit>) -> Self {
             self.unit = input;
             self
@@ -2253,6 +2512,7 @@ pub mod attack_property {
             self.total = Some(input);
             self
         }
+        /// <p>The total contributions made to this Shield event by all contributors.</p>
         pub fn set_total(mut self, input: std::option::Option<i64>) -> Self {
             self.total = input;
             self
@@ -2276,6 +2536,7 @@ impl AttackProperty {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2287,9 +2548,13 @@ impl AttackProperty {
     std::hash::Hash,
 )]
 pub enum Unit {
+    #[allow(missing_docs)] // documentation missing in model
     Bits,
+    #[allow(missing_docs)] // documentation missing in model
     Bytes,
+    #[allow(missing_docs)] // documentation missing in model
     Packets,
+    #[allow(missing_docs)] // documentation missing in model
     Requests,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2313,6 +2578,7 @@ impl std::str::FromStr for Unit {
     }
 }
 impl Unit {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Unit::Bits => "BITS",
@@ -2322,6 +2588,7 @@ impl Unit {
             Unit::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["BITS", "BYTES", "PACKETS", "REQUESTS"]
     }
@@ -2364,6 +2631,7 @@ pub mod contributor {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the contributor. This is dependent on the <code>AttackPropertyIdentifier</code>. For example, if the <code>AttackPropertyIdentifier</code> is <code>SOURCE_COUNTRY</code>, the <code>Name</code> could be <code>United States</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2373,6 +2641,7 @@ pub mod contributor {
             self.value = Some(input);
             self
         }
+        /// <p>The contribution of this contributor expressed in <a>Protection</a> units. For example <code>10,000</code>.</p>
         pub fn set_value(mut self, input: std::option::Option<i64>) -> Self {
             self.value = input;
             self
@@ -2393,6 +2662,7 @@ impl Contributor {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2404,13 +2674,21 @@ impl Contributor {
     std::hash::Hash,
 )]
 pub enum AttackPropertyIdentifier {
+    #[allow(missing_docs)] // documentation missing in model
     DestinationUrl,
+    #[allow(missing_docs)] // documentation missing in model
     Referrer,
+    #[allow(missing_docs)] // documentation missing in model
     SourceAsn,
+    #[allow(missing_docs)] // documentation missing in model
     SourceCountry,
+    #[allow(missing_docs)] // documentation missing in model
     SourceIpAddress,
+    #[allow(missing_docs)] // documentation missing in model
     SourceUserAgent,
+    #[allow(missing_docs)] // documentation missing in model
     WordpressPingbackReflector,
+    #[allow(missing_docs)] // documentation missing in model
     WordpressPingbackSource,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2438,6 +2716,7 @@ impl std::str::FromStr for AttackPropertyIdentifier {
     }
 }
 impl AttackPropertyIdentifier {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AttackPropertyIdentifier::DestinationUrl => "DESTINATION_URL",
@@ -2451,6 +2730,7 @@ impl AttackPropertyIdentifier {
             AttackPropertyIdentifier::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "DESTINATION_URL",
@@ -2470,6 +2750,7 @@ impl AsRef<str> for AttackPropertyIdentifier {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2481,7 +2762,9 @@ impl AsRef<str> for AttackPropertyIdentifier {
     std::hash::Hash,
 )]
 pub enum AttackLayer {
+    #[allow(missing_docs)] // documentation missing in model
     Application,
+    #[allow(missing_docs)] // documentation missing in model
     Network,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2503,6 +2786,7 @@ impl std::str::FromStr for AttackLayer {
     }
 }
 impl AttackLayer {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AttackLayer::Application => "APPLICATION",
@@ -2510,6 +2794,7 @@ impl AttackLayer {
             AttackLayer::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["APPLICATION", "NETWORK"]
     }
@@ -2568,6 +2853,7 @@ pub mod summarized_counter {
             self.name = Some(input.into());
             self
         }
+        /// <p>The counter name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2577,6 +2863,7 @@ pub mod summarized_counter {
             self.max = Some(input);
             self
         }
+        /// <p>The maximum value of the counter for a specified time period.</p>
         pub fn set_max(mut self, input: std::option::Option<f64>) -> Self {
             self.max = input;
             self
@@ -2586,6 +2873,7 @@ pub mod summarized_counter {
             self.average = Some(input);
             self
         }
+        /// <p>The average value of the counter for a specified time period.</p>
         pub fn set_average(mut self, input: std::option::Option<f64>) -> Self {
             self.average = input;
             self
@@ -2595,6 +2883,7 @@ pub mod summarized_counter {
             self.sum = Some(input);
             self
         }
+        /// <p>The total of counter values for a specified time period.</p>
         pub fn set_sum(mut self, input: std::option::Option<f64>) -> Self {
             self.sum = input;
             self
@@ -2604,6 +2893,7 @@ pub mod summarized_counter {
             self.n = Some(input);
             self
         }
+        /// <p>The number of counters for a specified time period.</p>
         pub fn set_n(mut self, input: std::option::Option<i32>) -> Self {
             self.n = input;
             self
@@ -2613,6 +2903,7 @@ pub mod summarized_counter {
             self.unit = Some(input.into());
             self
         }
+        /// <p>The unit of the counters.</p>
         pub fn set_unit(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.unit = input;
             self
@@ -2678,6 +2969,7 @@ pub mod sub_resource_summary {
             self.r#type = Some(input);
             self
         }
+        /// <p>The <code>SubResource</code> type.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::SubResourceType>,
@@ -2690,10 +2982,16 @@ pub mod sub_resource_summary {
             self.id = Some(input.into());
             self
         }
+        /// <p>The unique identifier (ID) of the <code>SubResource</code>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
+        /// Appends an item to `attack_vectors`.
+        ///
+        /// To override the contents of this collection use [`set_attack_vectors`](Self::set_attack_vectors).
+        ///
+        /// <p>The list of attack types and associated counters.</p>
         pub fn attack_vectors(
             mut self,
             input: impl Into<crate::model::SummarizedAttackVector>,
@@ -2703,6 +3001,7 @@ pub mod sub_resource_summary {
             self.attack_vectors = Some(v);
             self
         }
+        /// <p>The list of attack types and associated counters.</p>
         pub fn set_attack_vectors(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SummarizedAttackVector>>,
@@ -2710,12 +3009,18 @@ pub mod sub_resource_summary {
             self.attack_vectors = input;
             self
         }
+        /// Appends an item to `counters`.
+        ///
+        /// To override the contents of this collection use [`set_counters`](Self::set_counters).
+        ///
+        /// <p>The counters that describe the details of the attack.</p>
         pub fn counters(mut self, input: impl Into<crate::model::SummarizedCounter>) -> Self {
             let mut v = self.counters.unwrap_or_default();
             v.push(input.into());
             self.counters = Some(v);
             self
         }
+        /// <p>The counters that describe the details of the attack.</p>
         pub fn set_counters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SummarizedCounter>>,
@@ -2774,10 +3079,16 @@ pub mod summarized_attack_vector {
             self.vector_type = Some(input.into());
             self
         }
+        /// <p>The attack type, for example, SNMP reflection or SYN flood.</p>
         pub fn set_vector_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.vector_type = input;
             self
         }
+        /// Appends an item to `vector_counters`.
+        ///
+        /// To override the contents of this collection use [`set_vector_counters`](Self::set_vector_counters).
+        ///
+        /// <p>The list of counters that describe the details of the attack.</p>
         pub fn vector_counters(
             mut self,
             input: impl Into<crate::model::SummarizedCounter>,
@@ -2787,6 +3098,7 @@ pub mod summarized_attack_vector {
             self.vector_counters = Some(v);
             self
         }
+        /// <p>The list of counters that describe the details of the attack.</p>
         pub fn set_vector_counters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SummarizedCounter>>,
@@ -2810,6 +3122,7 @@ impl SummarizedAttackVector {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2821,7 +3134,9 @@ impl SummarizedAttackVector {
     std::hash::Hash,
 )]
 pub enum SubResourceType {
+    #[allow(missing_docs)] // documentation missing in model
     Ip,
+    #[allow(missing_docs)] // documentation missing in model
     Url,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2843,6 +3158,7 @@ impl std::str::FromStr for SubResourceType {
     }
 }
 impl SubResourceType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SubResourceType::Ip => "IP",
@@ -2850,6 +3166,7 @@ impl SubResourceType {
             SubResourceType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["IP", "URL"]
     }

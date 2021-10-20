@@ -40,6 +40,7 @@ pub mod agent_configuration_status {
             self.agent_id = Some(input.into());
             self
         }
+        /// <p>The agent/connector ID.</p>
         pub fn set_agent_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.agent_id = input;
             self
@@ -52,6 +53,10 @@ pub mod agent_configuration_status {
             self.operation_succeeded = Some(input);
             self
         }
+        /// <p>Information about the status of the <code>StartDataCollection</code> and
+        /// <code>StopDataCollection</code> operations. The system has recorded the data collection
+        /// operation. The agent/connector receives this command the next time it polls for a new command.
+        /// </p>
         pub fn set_operation_succeeded(mut self, input: std::option::Option<bool>) -> Self {
             self.operation_succeeded = input;
             self
@@ -61,6 +66,7 @@ pub mod agent_configuration_status {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description of the operation performed.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -108,13 +114,13 @@ pub struct ImportTask {
     pub status: std::option::Option<crate::model::ImportStatus>,
     /// <p>The time that the import task request was made, presented in the Unix time stamp
     /// format.</p>
-    pub import_request_time: std::option::Option<smithy_types::Instant>,
+    pub import_request_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time that the import task request finished, presented in the Unix time stamp
     /// format.</p>
-    pub import_completion_time: std::option::Option<smithy_types::Instant>,
+    pub import_completion_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time that the import task request was deleted, presented in the Unix time stamp
     /// format.</p>
-    pub import_deleted_time: std::option::Option<smithy_types::Instant>,
+    pub import_deleted_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The total number of server records in the import file that were successfully
     /// imported.</p>
     pub server_import_success: i32,
@@ -130,8 +136,10 @@ pub struct ImportTask {
     /// file of failed records. You can use these two files to quickly identify records that failed,
     /// why they failed, and correct those records. Afterward, you can upload the corrected file to
     /// your Amazon S3 bucket and create another import task request.</p>
+    ///
     /// <p>This field also includes authorization information so you can confirm the authenticity of
     /// the compressed archive before you download it.</p>
+    ///
     /// <p>If some records failed to be imported we recommend that you correct the records in the
     /// failed entries file and then imports that failed entries file. This prevents you from having
     /// to correct and update the larger original file and attempt importing it again.</p>
@@ -176,9 +184,9 @@ pub mod import_task {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) import_url: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::ImportStatus>,
-        pub(crate) import_request_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) import_completion_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) import_deleted_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) import_request_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) import_completion_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) import_deleted_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) server_import_success: std::option::Option<i32>,
         pub(crate) server_import_failure: std::option::Option<i32>,
         pub(crate) application_import_success: std::option::Option<i32>,
@@ -192,6 +200,8 @@ pub mod import_task {
             self.import_task_id = Some(input.into());
             self
         }
+        /// <p>The unique ID for a specific import task. These IDs aren't globally unique, but they are
+        /// unique within an AWS account.</p>
         pub fn set_import_task_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -206,6 +216,9 @@ pub mod import_task {
             self.client_request_token = Some(input.into());
             self
         }
+        /// <p>A unique token used to prevent the same import request from occurring more than once. If
+        /// you didn't provide a token, a token was automatically generated when the import task request
+        /// was sent.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -220,6 +233,9 @@ pub mod import_task {
             self.name = Some(input.into());
             self
         }
+        /// <p>A descriptive name for an import task. You can use this name to filter future requests
+        /// related to this import task, such as identifying applications and servers that were included
+        /// in this import task. We recommend that you use a meaningful name for each import task.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -229,6 +245,7 @@ pub mod import_task {
             self.import_url = Some(input.into());
             self
         }
+        /// <p>The URL for your import file that you've uploaded to Amazon S3.</p>
         pub fn set_import_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.import_url = input;
             self
@@ -242,6 +259,11 @@ pub mod import_task {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the import task. An import can have the status of
+        /// <code>IMPORT_COMPLETE</code> and still have some records fail to import from the overall
+        /// request. More information can be found in the downloadable archive defined in the
+        /// <code>errorsAndFailedEntriesZip</code> field, or in the Migration Hub management
+        /// console.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ImportStatus>,
@@ -251,39 +273,45 @@ pub mod import_task {
         }
         /// <p>The time that the import task request was made, presented in the Unix time stamp
         /// format.</p>
-        pub fn import_request_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn import_request_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.import_request_time = Some(input);
             self
         }
+        /// <p>The time that the import task request was made, presented in the Unix time stamp
+        /// format.</p>
         pub fn set_import_request_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.import_request_time = input;
             self
         }
         /// <p>The time that the import task request finished, presented in the Unix time stamp
         /// format.</p>
-        pub fn import_completion_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn import_completion_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.import_completion_time = Some(input);
             self
         }
+        /// <p>The time that the import task request finished, presented in the Unix time stamp
+        /// format.</p>
         pub fn set_import_completion_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.import_completion_time = input;
             self
         }
         /// <p>The time that the import task request was deleted, presented in the Unix time stamp
         /// format.</p>
-        pub fn import_deleted_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn import_deleted_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.import_deleted_time = Some(input);
             self
         }
+        /// <p>The time that the import task request was deleted, presented in the Unix time stamp
+        /// format.</p>
         pub fn set_import_deleted_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.import_deleted_time = input;
             self
@@ -294,6 +322,8 @@ pub mod import_task {
             self.server_import_success = Some(input);
             self
         }
+        /// <p>The total number of server records in the import file that were successfully
+        /// imported.</p>
         pub fn set_server_import_success(mut self, input: std::option::Option<i32>) -> Self {
             self.server_import_success = input;
             self
@@ -303,6 +333,7 @@ pub mod import_task {
             self.server_import_failure = Some(input);
             self
         }
+        /// <p>The total number of server records in the import file that failed to be imported.</p>
         pub fn set_server_import_failure(mut self, input: std::option::Option<i32>) -> Self {
             self.server_import_failure = input;
             self
@@ -313,6 +344,8 @@ pub mod import_task {
             self.application_import_success = Some(input);
             self
         }
+        /// <p>The total number of application records in the import file that were successfully
+        /// imported.</p>
         pub fn set_application_import_success(mut self, input: std::option::Option<i32>) -> Self {
             self.application_import_success = input;
             self
@@ -323,6 +356,8 @@ pub mod import_task {
             self.application_import_failure = Some(input);
             self
         }
+        /// <p>The total number of application records in the import file that failed to be
+        /// imported.</p>
         pub fn set_application_import_failure(mut self, input: std::option::Option<i32>) -> Self {
             self.application_import_failure = input;
             self
@@ -331,8 +366,10 @@ pub mod import_task {
         /// file of failed records. You can use these two files to quickly identify records that failed,
         /// why they failed, and correct those records. Afterward, you can upload the corrected file to
         /// your Amazon S3 bucket and create another import task request.</p>
+        ///
         /// <p>This field also includes authorization information so you can confirm the authenticity of
         /// the compressed archive before you download it.</p>
+        ///
         /// <p>If some records failed to be imported we recommend that you correct the records in the
         /// failed entries file and then imports that failed entries file. This prevents you from having
         /// to correct and update the larger original file and attempt importing it again.</p>
@@ -343,6 +380,17 @@ pub mod import_task {
             self.errors_and_failed_entries_zip = Some(input.into());
             self
         }
+        /// <p>A link to a compressed archive folder (in the ZIP format) that contains an error log and a
+        /// file of failed records. You can use these two files to quickly identify records that failed,
+        /// why they failed, and correct those records. Afterward, you can upload the corrected file to
+        /// your Amazon S3 bucket and create another import task request.</p>
+        ///
+        /// <p>This field also includes authorization information so you can confirm the authenticity of
+        /// the compressed archive before you download it.</p>
+        ///
+        /// <p>If some records failed to be imported we recommend that you correct the records in the
+        /// failed entries file and then imports that failed entries file. This prevents you from having
+        /// to correct and update the larger original file and attempt importing it again.</p>
         pub fn set_errors_and_failed_entries_zip(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -377,6 +425,7 @@ impl ImportTask {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -388,16 +437,27 @@ impl ImportTask {
     std::hash::Hash,
 )]
 pub enum ImportStatus {
+    #[allow(missing_docs)] // documentation missing in model
     DeleteComplete,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteFailed,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteFailedLimitExceeded,
+    #[allow(missing_docs)] // documentation missing in model
     DeleteInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     ImportComplete,
+    #[allow(missing_docs)] // documentation missing in model
     ImportCompleteWithErrors,
+    #[allow(missing_docs)] // documentation missing in model
     ImportFailed,
+    #[allow(missing_docs)] // documentation missing in model
     ImportFailedRecordLimitExceeded,
+    #[allow(missing_docs)] // documentation missing in model
     ImportFailedServerLimitExceeded,
+    #[allow(missing_docs)] // documentation missing in model
     ImportInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     InternalError,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -428,6 +488,7 @@ impl std::str::FromStr for ImportStatus {
     }
 }
 impl ImportStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ImportStatus::DeleteComplete => "DELETE_COMPLETE",
@@ -444,6 +505,7 @@ impl ImportStatus {
             ImportStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "DELETE_COMPLETE",
@@ -508,16 +570,28 @@ pub mod export_filter {
             self.name = Some(input.into());
             self
         }
+        /// <p>A single <code>ExportFilter</code> name. Supported filters:
+        /// <code>agentId</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>A single <code>agentId</code> for a Discovery Agent. An <code>agentId</code> can be
+        /// found using the <a href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeExportTasks.html">DescribeAgents</a> action. Typically an ADS <code>agentId</code> is in the form
+        /// <code>o-0123456789abcdef0</code>.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
+        /// <p>A single <code>agentId</code> for a Discovery Agent. An <code>agentId</code> can be
+        /// found using the <a href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeExportTasks.html">DescribeAgents</a> action. Typically an ADS <code>agentId</code> is in the form
+        /// <code>o-0123456789abcdef0</code>.</p>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -531,6 +605,8 @@ pub mod export_filter {
             self.condition = Some(input.into());
             self
         }
+        /// <p>Supported condition: <code>EQUALS</code>
+        /// </p>
         pub fn set_condition(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.condition = input;
             self
@@ -552,6 +628,7 @@ impl ExportFilter {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -563,7 +640,9 @@ impl ExportFilter {
     std::hash::Hash,
 )]
 pub enum ExportDataFormat {
+    #[allow(missing_docs)] // documentation missing in model
     Csv,
+    #[allow(missing_docs)] // documentation missing in model
     Graphml,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -585,6 +664,7 @@ impl std::str::FromStr for ExportDataFormat {
     }
 }
 impl ExportDataFormat {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ExportDataFormat::Csv => "CSV",
@@ -592,6 +672,7 @@ impl ExportDataFormat {
             ExportDataFormat::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CSV", "GRAPHML"]
     }
@@ -602,6 +683,7 @@ impl AsRef<str> for ExportDataFormat {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -613,6 +695,7 @@ impl AsRef<str> for ExportDataFormat {
     std::hash::Hash,
 )]
 pub enum DataSource {
+    #[allow(missing_docs)] // documentation missing in model
     Agent,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -633,12 +716,14 @@ impl std::str::FromStr for DataSource {
     }
 }
 impl DataSource {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DataSource::Agent => "AGENT",
             DataSource::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AGENT"]
     }
@@ -693,6 +778,7 @@ pub mod neighbor_connection_detail {
             self.source_server_id = Some(input.into());
             self
         }
+        /// <p>The ID of the server that opened the network connection.</p>
         pub fn set_source_server_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -705,6 +791,7 @@ pub mod neighbor_connection_detail {
             self.destination_server_id = Some(input.into());
             self
         }
+        /// <p>The ID of the server that accepted the network connection.</p>
         pub fn set_destination_server_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -717,6 +804,7 @@ pub mod neighbor_connection_detail {
             self.destination_port = Some(input);
             self
         }
+        /// <p>The destination network port for the connection.</p>
         pub fn set_destination_port(mut self, input: std::option::Option<i32>) -> Self {
             self.destination_port = input;
             self
@@ -726,6 +814,7 @@ pub mod neighbor_connection_detail {
             self.transport_protocol = Some(input.into());
             self
         }
+        /// <p>The network protocol used for the connection.</p>
         pub fn set_transport_protocol(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -738,6 +827,7 @@ pub mod neighbor_connection_detail {
             self.connections_count = Some(input);
             self
         }
+        /// <p>The number of open network connections with the neighboring server.</p>
         pub fn set_connections_count(mut self, input: std::option::Option<i64>) -> Self {
             self.connections_count = input;
             self
@@ -793,6 +883,7 @@ pub mod order_by_element {
             self.field_name = Some(input.into());
             self
         }
+        /// <p>The field on which to order.</p>
         pub fn set_field_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.field_name = input;
             self
@@ -802,6 +893,7 @@ pub mod order_by_element {
             self.sort_order = Some(input);
             self
         }
+        /// <p>Ordering direction.</p>
         pub fn set_sort_order(
             mut self,
             input: std::option::Option<crate::model::OrderString>,
@@ -825,6 +917,7 @@ impl OrderByElement {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -836,7 +929,9 @@ impl OrderByElement {
     std::hash::Hash,
 )]
 pub enum OrderString {
+    #[allow(missing_docs)] // documentation missing in model
     Asc,
+    #[allow(missing_docs)] // documentation missing in model
     Desc,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -858,6 +953,7 @@ impl std::str::FromStr for OrderString {
     }
 }
 impl OrderString {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             OrderString::Asc => "ASC",
@@ -865,6 +961,7 @@ impl OrderString {
             OrderString::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ASC", "DESC"]
     }
@@ -921,16 +1018,27 @@ pub mod filter {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the filter.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>A string value on which to filter. For example, if you choose the
+        /// <code>destinationServer.osVersion</code> filter name, you could specify <code>Ubuntu</code>
+        /// for the value.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
+        /// <p>A string value on which to filter. For example, if you choose the
+        /// <code>destinationServer.osVersion</code> filter name, you could specify <code>Ubuntu</code>
+        /// for the value.</p>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -948,6 +1056,12 @@ pub mod filter {
             self.condition = Some(input.into());
             self
         }
+        /// <p>A conditional operator. The following operators are valid: EQUALS, NOT_EQUALS,
+        /// CONTAINS, NOT_CONTAINS. If you specify multiple filters, the system utilizes all filters as
+        /// though concatenated by <i>AND</i>. If you specify multiple values for a
+        /// particular filter, the system differentiates the values using <i>OR</i>. Calling
+        /// either <i>DescribeConfigurations</i> or <i>ListConfigurations</i>
+        /// returns attributes of matching configuration items.</p>
         pub fn set_condition(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.condition = input;
             self
@@ -969,6 +1083,7 @@ impl Filter {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -980,9 +1095,13 @@ impl Filter {
     std::hash::Hash,
 )]
 pub enum ConfigurationItemType {
+    #[allow(missing_docs)] // documentation missing in model
     Application,
+    #[allow(missing_docs)] // documentation missing in model
     Connections,
+    #[allow(missing_docs)] // documentation missing in model
     Process,
+    #[allow(missing_docs)] // documentation missing in model
     Server,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1006,6 +1125,7 @@ impl std::str::FromStr for ConfigurationItemType {
     }
 }
 impl ConfigurationItemType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ConfigurationItemType::Application => "APPLICATION",
@@ -1015,6 +1135,7 @@ impl ConfigurationItemType {
             ConfigurationItemType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["APPLICATION", "CONNECTION", "PROCESS", "SERVER"]
     }
@@ -1077,6 +1198,7 @@ pub mod customer_connector_info {
             self.active_connectors = Some(input);
             self
         }
+        /// <p>Number of active discovery connectors.</p>
         pub fn set_active_connectors(mut self, input: std::option::Option<i32>) -> Self {
             self.active_connectors = input;
             self
@@ -1086,6 +1208,7 @@ pub mod customer_connector_info {
             self.healthy_connectors = Some(input);
             self
         }
+        /// <p>Number of healthy discovery connectors.</p>
         pub fn set_healthy_connectors(mut self, input: std::option::Option<i32>) -> Self {
             self.healthy_connectors = input;
             self
@@ -1095,6 +1218,7 @@ pub mod customer_connector_info {
             self.black_listed_connectors = Some(input);
             self
         }
+        /// <p>Number of blacklisted discovery connectors.</p>
         pub fn set_black_listed_connectors(mut self, input: std::option::Option<i32>) -> Self {
             self.black_listed_connectors = input;
             self
@@ -1104,6 +1228,7 @@ pub mod customer_connector_info {
             self.shutdown_connectors = Some(input);
             self
         }
+        /// <p>Number of discovery connectors with status SHUTDOWN,</p>
         pub fn set_shutdown_connectors(mut self, input: std::option::Option<i32>) -> Self {
             self.shutdown_connectors = input;
             self
@@ -1113,6 +1238,7 @@ pub mod customer_connector_info {
             self.unhealthy_connectors = Some(input);
             self
         }
+        /// <p>Number of unhealthy discovery connectors.</p>
         pub fn set_unhealthy_connectors(mut self, input: std::option::Option<i32>) -> Self {
             self.unhealthy_connectors = input;
             self
@@ -1122,6 +1248,7 @@ pub mod customer_connector_info {
             self.total_connectors = Some(input);
             self
         }
+        /// <p>Total number of discovery connectors.</p>
         pub fn set_total_connectors(mut self, input: std::option::Option<i32>) -> Self {
             self.total_connectors = input;
             self
@@ -1131,6 +1258,7 @@ pub mod customer_connector_info {
             self.unknown_connectors = Some(input);
             self
         }
+        /// <p>Number of unknown discovery connectors.</p>
         pub fn set_unknown_connectors(mut self, input: std::option::Option<i32>) -> Self {
             self.unknown_connectors = input;
             self
@@ -1208,6 +1336,7 @@ pub mod customer_agent_info {
             self.active_agents = Some(input);
             self
         }
+        /// <p>Number of active discovery agents.</p>
         pub fn set_active_agents(mut self, input: std::option::Option<i32>) -> Self {
             self.active_agents = input;
             self
@@ -1217,6 +1346,7 @@ pub mod customer_agent_info {
             self.healthy_agents = Some(input);
             self
         }
+        /// <p>Number of healthy discovery agents</p>
         pub fn set_healthy_agents(mut self, input: std::option::Option<i32>) -> Self {
             self.healthy_agents = input;
             self
@@ -1226,6 +1356,7 @@ pub mod customer_agent_info {
             self.black_listed_agents = Some(input);
             self
         }
+        /// <p>Number of blacklisted discovery agents.</p>
         pub fn set_black_listed_agents(mut self, input: std::option::Option<i32>) -> Self {
             self.black_listed_agents = input;
             self
@@ -1235,6 +1366,7 @@ pub mod customer_agent_info {
             self.shutdown_agents = Some(input);
             self
         }
+        /// <p>Number of discovery agents with status SHUTDOWN.</p>
         pub fn set_shutdown_agents(mut self, input: std::option::Option<i32>) -> Self {
             self.shutdown_agents = input;
             self
@@ -1244,6 +1376,7 @@ pub mod customer_agent_info {
             self.unhealthy_agents = Some(input);
             self
         }
+        /// <p>Number of unhealthy discovery agents.</p>
         pub fn set_unhealthy_agents(mut self, input: std::option::Option<i32>) -> Self {
             self.unhealthy_agents = input;
             self
@@ -1253,6 +1386,7 @@ pub mod customer_agent_info {
             self.total_agents = Some(input);
             self
         }
+        /// <p>Total number of discovery agents.</p>
         pub fn set_total_agents(mut self, input: std::option::Option<i32>) -> Self {
             self.total_agents = input;
             self
@@ -1262,6 +1396,7 @@ pub mod customer_agent_info {
             self.unknown_agents = Some(input);
             self
         }
+        /// <p>Number of unknown discovery agents.</p>
         pub fn set_unknown_agents(mut self, input: std::option::Option<i32>) -> Self {
             self.unknown_agents = input;
             self
@@ -1305,7 +1440,7 @@ pub struct ConfigurationTag {
     pub value: std::option::Option<std::string::String>,
     /// <p>The time the configuration tag was created in Coordinated Universal Time
     /// (UTC).</p>
-    pub time_of_creation: std::option::Option<smithy_types::Instant>,
+    pub time_of_creation: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for ConfigurationTag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1328,7 +1463,7 @@ pub mod configuration_tag {
         pub(crate) configuration_id: std::option::Option<std::string::String>,
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
-        pub(crate) time_of_creation: std::option::Option<smithy_types::Instant>,
+        pub(crate) time_of_creation: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>A type of IT asset to tag.</p>
@@ -1336,6 +1471,7 @@ pub mod configuration_tag {
             self.configuration_type = Some(input);
             self
         }
+        /// <p>A type of IT asset to tag.</p>
         pub fn set_configuration_type(
             mut self,
             input: std::option::Option<crate::model::ConfigurationItemType>,
@@ -1349,6 +1485,8 @@ pub mod configuration_tag {
             self.configuration_id = Some(input.into());
             self
         }
+        /// <p>The configuration ID for the item to tag. You can specify a list of keys and
+        /// values.</p>
         pub fn set_configuration_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1362,6 +1500,8 @@ pub mod configuration_tag {
             self.key = Some(input.into());
             self
         }
+        /// <p>A type of tag on which to filter. For example,
+        /// <i>serverType</i>.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -1372,19 +1512,23 @@ pub mod configuration_tag {
             self.value = Some(input.into());
             self
         }
+        /// <p>A value on which to filter. For example <i>key = serverType</i> and
+        /// <i>value = web server</i>.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
         }
         /// <p>The time the configuration tag was created in Coordinated Universal Time
         /// (UTC).</p>
-        pub fn time_of_creation(mut self, input: smithy_types::Instant) -> Self {
+        pub fn time_of_creation(mut self, input: aws_smithy_types::Instant) -> Self {
             self.time_of_creation = Some(input);
             self
         }
+        /// <p>The time the configuration tag was created in Coordinated Universal Time
+        /// (UTC).</p>
         pub fn set_time_of_creation(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.time_of_creation = input;
             self
@@ -1441,16 +1585,23 @@ pub mod tag_filter {
             self.name = Some(input.into());
             self
         }
+        /// <p>A name of the tag filter.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>Values for the tag filter.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
+        /// <p>Values for the tag filter.</p>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1476,6 +1627,7 @@ impl TagFilter {
 
 /// <p>A name-values pair of elements you can use to filter the results when querying your import
 /// tasks. Currently, wildcards are not supported for filters.</p>
+///
 /// <note>
 /// <p>When filtering by import status, all other filter values are ignored.</p>
 /// </note>
@@ -1511,6 +1663,7 @@ pub mod import_task_filter {
             self.name = Some(input);
             self
         }
+        /// <p>The name, status, or import task ID for a specific import task.</p>
         pub fn set_name(
             mut self,
             input: std::option::Option<crate::model::ImportTaskFilterName>,
@@ -1518,12 +1671,20 @@ pub mod import_task_filter {
             self.name = input;
             self
         }
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>An array of strings that you can provide to match against a specific name, status, or
+        /// import task ID to filter the results for your import task queries.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
+        /// <p>An array of strings that you can provide to match against a specific name, status, or
+        /// import task ID to filter the results for your import task queries.</p>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1547,6 +1708,7 @@ impl ImportTaskFilter {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1558,8 +1720,11 @@ impl ImportTaskFilter {
     std::hash::Hash,
 )]
 pub enum ImportTaskFilterName {
+    #[allow(missing_docs)] // documentation missing in model
     ImportTaskId,
+    #[allow(missing_docs)] // documentation missing in model
     Name,
+    #[allow(missing_docs)] // documentation missing in model
     Status,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1582,6 +1747,7 @@ impl std::str::FromStr for ImportTaskFilterName {
     }
 }
 impl ImportTaskFilterName {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ImportTaskFilterName::ImportTaskId => "IMPORT_TASK_ID",
@@ -1590,6 +1756,7 @@ impl ImportTaskFilterName {
             ImportTaskFilterName::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["IMPORT_TASK_ID", "NAME", "STATUS"]
     }
@@ -1615,7 +1782,7 @@ pub struct ExportInfo {
     /// displayed only if the export succeeded.</p>
     pub configurations_download_url: std::option::Option<std::string::String>,
     /// <p>The time that the data export was initiated.</p>
-    pub export_request_time: std::option::Option<smithy_types::Instant>,
+    pub export_request_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>If true, the export of agent information exceeded the size limit for a single export
     /// and the exported data is incomplete for the requested time range. To address this, select a
     /// smaller time range for the export by using <code>startDate</code> and
@@ -1624,11 +1791,11 @@ pub struct ExportInfo {
     /// <p>The value of <code>startTime</code> parameter in the <code>StartExportTask</code>
     /// request. If no <code>startTime</code> was requested, this result does not appear in
     /// <code>ExportInfo</code>.</p>
-    pub requested_start_time: std::option::Option<smithy_types::Instant>,
+    pub requested_start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The <code>endTime</code> used in the <code>StartExportTask</code> request. If no
     /// <code>endTime</code> was requested, this result does not appear in
     /// <code>ExportInfo</code>.</p>
-    pub requested_end_time: std::option::Option<smithy_types::Instant>,
+    pub requested_end_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for ExportInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1657,10 +1824,10 @@ pub mod export_info {
         pub(crate) export_status: std::option::Option<crate::model::ExportStatus>,
         pub(crate) status_message: std::option::Option<std::string::String>,
         pub(crate) configurations_download_url: std::option::Option<std::string::String>,
-        pub(crate) export_request_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) export_request_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) is_truncated: std::option::Option<bool>,
-        pub(crate) requested_start_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) requested_end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) requested_start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) requested_end_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>A unique identifier used to query an export.</p>
@@ -1668,6 +1835,7 @@ pub mod export_info {
             self.export_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier used to query an export.</p>
         pub fn set_export_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.export_id = input;
             self
@@ -1677,6 +1845,7 @@ pub mod export_info {
             self.export_status = Some(input);
             self
         }
+        /// <p>The status of the data export job.</p>
         pub fn set_export_status(
             mut self,
             input: std::option::Option<crate::model::ExportStatus>,
@@ -1689,6 +1858,7 @@ pub mod export_info {
             self.status_message = Some(input.into());
             self
         }
+        /// <p>A status message provided for API callers.</p>
         pub fn set_status_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1705,6 +1875,8 @@ pub mod export_info {
             self.configurations_download_url = Some(input.into());
             self
         }
+        /// <p>A URL for an Amazon S3 bucket where you can review the exported data. The URL is
+        /// displayed only if the export succeeded.</p>
         pub fn set_configurations_download_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1713,13 +1885,14 @@ pub mod export_info {
             self
         }
         /// <p>The time that the data export was initiated.</p>
-        pub fn export_request_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn export_request_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.export_request_time = Some(input);
             self
         }
+        /// <p>The time that the data export was initiated.</p>
         pub fn set_export_request_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.export_request_time = input;
             self
@@ -1732,6 +1905,10 @@ pub mod export_info {
             self.is_truncated = Some(input);
             self
         }
+        /// <p>If true, the export of agent information exceeded the size limit for a single export
+        /// and the exported data is incomplete for the requested time range. To address this, select a
+        /// smaller time range for the export by using <code>startDate</code> and
+        /// <code>endDate</code>.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.is_truncated = input;
             self
@@ -1739,13 +1916,16 @@ pub mod export_info {
         /// <p>The value of <code>startTime</code> parameter in the <code>StartExportTask</code>
         /// request. If no <code>startTime</code> was requested, this result does not appear in
         /// <code>ExportInfo</code>.</p>
-        pub fn requested_start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn requested_start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.requested_start_time = Some(input);
             self
         }
+        /// <p>The value of <code>startTime</code> parameter in the <code>StartExportTask</code>
+        /// request. If no <code>startTime</code> was requested, this result does not appear in
+        /// <code>ExportInfo</code>.</p>
         pub fn set_requested_start_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.requested_start_time = input;
             self
@@ -1753,13 +1933,16 @@ pub mod export_info {
         /// <p>The <code>endTime</code> used in the <code>StartExportTask</code> request. If no
         /// <code>endTime</code> was requested, this result does not appear in
         /// <code>ExportInfo</code>.</p>
-        pub fn requested_end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn requested_end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.requested_end_time = Some(input);
             self
         }
+        /// <p>The <code>endTime</code> used in the <code>StartExportTask</code> request. If no
+        /// <code>endTime</code> was requested, this result does not appear in
+        /// <code>ExportInfo</code>.</p>
         pub fn set_requested_end_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.requested_end_time = input;
             self
@@ -1786,6 +1969,7 @@ impl ExportInfo {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1797,8 +1981,11 @@ impl ExportInfo {
     std::hash::Hash,
 )]
 pub enum ExportStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     InProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Succeeded,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1821,6 +2008,7 @@ impl std::str::FromStr for ExportStatus {
     }
 }
 impl ExportStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ExportStatus::Failed => "FAILED",
@@ -1829,6 +2017,7 @@ impl ExportStatus {
             ExportStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FAILED", "IN_PROGRESS", "SUCCEEDED"]
     }
@@ -1876,6 +2065,7 @@ pub struct ContinuousExportDescription {
     pub status: std::option::Option<crate::model::ContinuousExportStatus>,
     /// <p>Contains information about any errors that have occurred. This data type can have the
     /// following values:</p>
+    ///
     /// <ul>
     /// <li>
     /// <p>ACCESS_DENIED - You don’t have permission to start Data Exploration in Amazon
@@ -1920,9 +2110,9 @@ pub struct ContinuousExportDescription {
     /// <p>The name of the s3 bucket where the export data parquet files are stored.</p>
     pub s3_bucket: std::option::Option<std::string::String>,
     /// <p>The timestamp representing when the continuous export was started.</p>
-    pub start_time: std::option::Option<smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The timestamp that represents when this continuous export was stopped.</p>
-    pub stop_time: std::option::Option<smithy_types::Instant>,
+    pub stop_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The type of data collector used to gather this data (currently only offered for
     /// AGENT).</p>
     pub data_source: std::option::Option<crate::model::DataSource>,
@@ -1961,8 +2151,8 @@ pub mod continuous_export_description {
         pub(crate) status: std::option::Option<crate::model::ContinuousExportStatus>,
         pub(crate) status_detail: std::option::Option<std::string::String>,
         pub(crate) s3_bucket: std::option::Option<std::string::String>,
-        pub(crate) start_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) stop_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) stop_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) data_source: std::option::Option<crate::model::DataSource>,
         pub(crate) schema_storage_config: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
@@ -1974,6 +2164,7 @@ pub mod continuous_export_description {
             self.export_id = Some(input.into());
             self
         }
+        /// <p>The unique ID assigned to this export.</p>
         pub fn set_export_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.export_id = input;
             self
@@ -2010,6 +2201,34 @@ pub mod continuous_export_description {
             self.status = Some(input);
             self
         }
+        /// <p>Describes the status of the export. Can be one of the following values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>START_IN_PROGRESS - setting up resources to start continuous export.</p>
+        /// </li>
+        /// <li>
+        /// <p>START_FAILED - an error occurred setting up continuous export. To recover, call
+        /// start-continuous-export again.</p>
+        /// </li>
+        /// <li>
+        /// <p>ACTIVE - data is being exported to the customer bucket.</p>
+        /// </li>
+        /// <li>
+        /// <p>ERROR - an error occurred during export. To fix the issue, call
+        /// stop-continuous-export and start-continuous-export.</p>
+        /// </li>
+        /// <li>
+        /// <p>STOP_IN_PROGRESS - stopping the export.</p>
+        /// </li>
+        /// <li>
+        /// <p>STOP_FAILED - an error occurred stopping the export. To recover, call
+        /// stop-continuous-export again.</p>
+        /// </li>
+        /// <li>
+        /// <p>INACTIVE - the continuous export has been stopped. Data is no longer being exported
+        /// to the customer bucket.</p>
+        /// </li>
+        /// </ul>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ContinuousExportStatus>,
@@ -2019,6 +2238,7 @@ pub mod continuous_export_description {
         }
         /// <p>Contains information about any errors that have occurred. This data type can have the
         /// following values:</p>
+        ///
         /// <ul>
         /// <li>
         /// <p>ACCESS_DENIED - You don’t have permission to start Data Exploration in Amazon
@@ -2063,6 +2283,49 @@ pub mod continuous_export_description {
             self.status_detail = Some(input.into());
             self
         }
+        /// <p>Contains information about any errors that have occurred. This data type can have the
+        /// following values:</p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>ACCESS_DENIED - You don’t have permission to start Data Exploration in Amazon
+        /// Athena. Contact your AWS administrator for help. For more information, see <a href="http://docs.aws.amazon.com/application-discovery/latest/userguide/setting-up.html">Setting Up AWS Application Discovery Service</a> in the Application Discovery
+        /// Service User Guide.</p>
+        /// </li>
+        /// <li>
+        /// <p>DELIVERY_STREAM_LIMIT_FAILURE - You reached the limit for Amazon Kinesis Data
+        /// Firehose delivery streams. Reduce the number of streams or request a limit increase and
+        /// try again. For more information, see <a href="http://docs.aws.amazon.com/streams/latest/dev/service-sizes-and-limits.html">Kinesis Data Streams Limits</a> in the Amazon Kinesis Data Streams Developer
+        /// Guide.</p>
+        /// </li>
+        /// <li>
+        /// <p>FIREHOSE_ROLE_MISSING - The Data Exploration feature is in an error state because
+        /// your IAM User is missing the AWSApplicationDiscoveryServiceFirehose role. Turn on Data
+        /// Exploration in Amazon Athena and try again. For more information, see <a href="http://docs.aws.amazon.com/application-discovery/latest/userguide/setting-up.html#setting-up-user-policy">Step 3: Provide Application Discovery Service Access to Non-Administrator Users by
+        /// Attaching Policies</a> in the Application Discovery Service User Guide.</p>
+        /// </li>
+        /// <li>
+        /// <p>FIREHOSE_STREAM_DOES_NOT_EXIST - The Data Exploration feature is in an error state
+        /// because your IAM User is missing one or more of the Kinesis data delivery
+        /// streams.</p>
+        /// </li>
+        /// <li>
+        /// <p>INTERNAL_FAILURE - The Data Exploration feature is in an error state because of an
+        /// internal failure. Try again later. If this problem persists, contact AWS
+        /// Support.</p>
+        /// </li>
+        /// <li>
+        /// <p>S3_BUCKET_LIMIT_FAILURE - You reached the limit for Amazon S3 buckets. Reduce the
+        /// number of Amazon S3 buckets or request a limit increase and try again. For more
+        /// information, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket
+        /// Restrictions and Limitations</a> in the Amazon Simple Storage Service Developer
+        /// Guide.</p>
+        /// </li>
+        /// <li>
+        /// <p>S3_NOT_SIGNED_UP - Your account is not signed up for the Amazon S3 service. You
+        /// must sign up before you can use Amazon S3. You can sign up at the following URL: <a href="https://aws.amazon.com/s3">https://aws.amazon.com/s3</a>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_status_detail(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2075,25 +2338,34 @@ pub mod continuous_export_description {
             self.s3_bucket = Some(input.into());
             self
         }
+        /// <p>The name of the s3 bucket where the export data parquet files are stored.</p>
         pub fn set_s3_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.s3_bucket = input;
             self
         }
         /// <p>The timestamp representing when the continuous export was started.</p>
-        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The timestamp representing when the continuous export was started.</p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The timestamp that represents when this continuous export was stopped.</p>
-        pub fn stop_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn stop_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.stop_time = Some(input);
             self
         }
-        pub fn set_stop_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The timestamp that represents when this continuous export was stopped.</p>
+        pub fn set_stop_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.stop_time = input;
             self
         }
@@ -2103,6 +2375,8 @@ pub mod continuous_export_description {
             self.data_source = Some(input);
             self
         }
+        /// <p>The type of data collector used to gather this data (currently only offered for
+        /// AGENT).</p>
         pub fn set_data_source(
             mut self,
             input: std::option::Option<crate::model::DataSource>,
@@ -2110,6 +2384,18 @@ pub mod continuous_export_description {
             self.data_source = input;
             self
         }
+        /// Adds a key-value pair to `schema_storage_config`.
+        ///
+        /// To override the contents of this collection use [`set_schema_storage_config`](Self::set_schema_storage_config).
+        ///
+        /// <p>An object which describes how the data is stored.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>databaseName</code> - the name of the Glue database used to store the
+        /// schema.</p>
+        /// </li>
+        /// </ul>
         pub fn schema_storage_config(
             mut self,
             k: impl Into<std::string::String>,
@@ -2120,6 +2406,14 @@ pub mod continuous_export_description {
             self.schema_storage_config = Some(hash_map);
             self
         }
+        /// <p>An object which describes how the data is stored.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>databaseName</code> - the name of the Glue database used to store the
+        /// schema.</p>
+        /// </li>
+        /// </ul>
         pub fn set_schema_storage_config(
             mut self,
             input: std::option::Option<
@@ -2151,6 +2445,7 @@ impl ContinuousExportDescription {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2162,12 +2457,19 @@ impl ContinuousExportDescription {
     std::hash::Hash,
 )]
 pub enum ContinuousExportStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     Error,
+    #[allow(missing_docs)] // documentation missing in model
     Inactive,
+    #[allow(missing_docs)] // documentation missing in model
     StartFailed,
+    #[allow(missing_docs)] // documentation missing in model
     StartInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     StopFailed,
+    #[allow(missing_docs)] // documentation missing in model
     StopInProgress,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2194,6 +2496,7 @@ impl std::str::FromStr for ContinuousExportStatus {
     }
 }
 impl ContinuousExportStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ContinuousExportStatus::Active => "ACTIVE",
@@ -2206,6 +2509,7 @@ impl ContinuousExportStatus {
             ContinuousExportStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
@@ -2293,6 +2597,7 @@ pub mod agent_info {
             self.agent_id = Some(input.into());
             self
         }
+        /// <p>The agent or connector ID.</p>
         pub fn set_agent_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.agent_id = input;
             self
@@ -2303,10 +2608,17 @@ pub mod agent_info {
             self.host_name = Some(input.into());
             self
         }
+        /// <p>The name of the host where the agent or connector resides. The host can be a server or
+        /// virtual machine.</p>
         pub fn set_host_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.host_name = input;
             self
         }
+        /// Appends an item to `agent_network_info_list`.
+        ///
+        /// To override the contents of this collection use [`set_agent_network_info_list`](Self::set_agent_network_info_list).
+        ///
+        /// <p>Network details about the host where the agent or connector resides.</p>
         pub fn agent_network_info_list(
             mut self,
             input: impl Into<crate::model::AgentNetworkInfo>,
@@ -2316,6 +2628,7 @@ pub mod agent_info {
             self.agent_network_info_list = Some(v);
             self
         }
+        /// <p>Network details about the host where the agent or connector resides.</p>
         pub fn set_agent_network_info_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AgentNetworkInfo>>,
@@ -2328,6 +2641,7 @@ pub mod agent_info {
             self.connector_id = Some(input.into());
             self
         }
+        /// <p>The ID of the connector.</p>
         pub fn set_connector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.connector_id = input;
             self
@@ -2337,6 +2651,7 @@ pub mod agent_info {
             self.version = Some(input.into());
             self
         }
+        /// <p>The agent or connector version.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -2346,6 +2661,7 @@ pub mod agent_info {
             self.health = Some(input);
             self
         }
+        /// <p>The health of the agent or connector.</p>
         pub fn set_health(mut self, input: std::option::Option<crate::model::AgentStatus>) -> Self {
             self.health = input;
             self
@@ -2355,6 +2671,7 @@ pub mod agent_info {
             self.last_health_ping_time = Some(input.into());
             self
         }
+        /// <p>Time since agent or connector health was reported.</p>
         pub fn set_last_health_ping_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2367,6 +2684,7 @@ pub mod agent_info {
             self.collection_status = Some(input.into());
             self
         }
+        /// <p>Status of the collection process for an agent or connector.</p>
         pub fn set_collection_status(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2379,6 +2697,7 @@ pub mod agent_info {
             self.agent_type = Some(input.into());
             self
         }
+        /// <p>Type of agent.</p>
         pub fn set_agent_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.agent_type = input;
             self
@@ -2388,6 +2707,7 @@ pub mod agent_info {
             self.registered_time = Some(input.into());
             self
         }
+        /// <p>Agent's first registration timestamp in UTC.</p>
         pub fn set_registered_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2419,7 +2739,7 @@ impl AgentInfo {
     }
 }
 
-/// **NOTE:** `AgentStatus::Unknown` has been renamed to `::UnknownValue`.
+/// _Note: `AgentStatus::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2431,12 +2751,17 @@ impl AgentInfo {
     std::hash::Hash,
 )]
 pub enum AgentStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Blacklisted,
+    #[allow(missing_docs)] // documentation missing in model
     Healthy,
+    #[allow(missing_docs)] // documentation missing in model
     Running,
+    #[allow(missing_docs)] // documentation missing in model
     Shutdown,
+    #[allow(missing_docs)] // documentation missing in model
     Unhealthy,
-    /// **NOTE:** `::Unknown` has been renamed to `::UnknownValue`.
+    /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
     UnknownValue,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2462,6 +2787,7 @@ impl std::str::FromStr for AgentStatus {
     }
 }
 impl AgentStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AgentStatus::Blacklisted => "BLACKLISTED",
@@ -2473,6 +2799,7 @@ impl AgentStatus {
             AgentStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "BLACKLISTED",
@@ -2522,6 +2849,7 @@ pub mod agent_network_info {
             self.ip_address = Some(input.into());
             self
         }
+        /// <p>The IP address for the host where the agent/connector resides.</p>
         pub fn set_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ip_address = input;
             self
@@ -2531,6 +2859,7 @@ pub mod agent_network_info {
             self.mac_address = Some(input.into());
             self
         }
+        /// <p>The MAC address for the host where the agent/connector resides.</p>
         pub fn set_mac_address(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mac_address = input;
             self
@@ -2583,6 +2912,7 @@ pub mod tag {
             self.key = Some(input.into());
             self
         }
+        /// <p>The type of tag on which to filter.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -2592,6 +2922,7 @@ pub mod tag {
             self.value = Some(input.into());
             self
         }
+        /// <p>A value for a tag key on which to filter.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -2649,6 +2980,7 @@ pub mod batch_delete_import_data_error {
             self.import_task_id = Some(input.into());
             self
         }
+        /// <p>The unique import ID associated with the error that occurred.</p>
         pub fn set_import_task_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2661,6 +2993,7 @@ pub mod batch_delete_import_data_error {
             self.error_code = Some(input);
             self
         }
+        /// <p>The type of error that occurred for a specific import task.</p>
         pub fn set_error_code(
             mut self,
             input: std::option::Option<crate::model::BatchDeleteImportDataErrorCode>,
@@ -2673,6 +3006,7 @@ pub mod batch_delete_import_data_error {
             self.error_description = Some(input.into());
             self
         }
+        /// <p>The description of the error that occurred for a specific import task.</p>
         pub fn set_error_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2697,6 +3031,7 @@ impl BatchDeleteImportDataError {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2708,8 +3043,11 @@ impl BatchDeleteImportDataError {
     std::hash::Hash,
 )]
 pub enum BatchDeleteImportDataErrorCode {
+    #[allow(missing_docs)] // documentation missing in model
     InternalServerError,
+    #[allow(missing_docs)] // documentation missing in model
     NotFound,
+    #[allow(missing_docs)] // documentation missing in model
     OverLimit,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2732,6 +3070,7 @@ impl std::str::FromStr for BatchDeleteImportDataErrorCode {
     }
 }
 impl BatchDeleteImportDataErrorCode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             BatchDeleteImportDataErrorCode::InternalServerError => "INTERNAL_SERVER_ERROR",
@@ -2740,6 +3079,7 @@ impl BatchDeleteImportDataErrorCode {
             BatchDeleteImportDataErrorCode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["INTERNAL_SERVER_ERROR", "NOT_FOUND", "OVER_LIMIT"]
     }

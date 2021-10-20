@@ -29,6 +29,7 @@ impl PutReportDefinitionOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyReportDefinitionOutput {}
@@ -86,6 +87,11 @@ pub mod describe_report_definitions_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `report_definitions`.
+        ///
+        /// To override the contents of this collection use [`set_report_definitions`](Self::set_report_definitions).
+        ///
+        /// <p>A list of AWS Cost and Usage reports owned by the account.</p>
         pub fn report_definitions(
             mut self,
             input: impl Into<crate::model::ReportDefinition>,
@@ -95,6 +101,7 @@ pub mod describe_report_definitions_output {
             self.report_definitions = Some(v);
             self
         }
+        /// <p>A list of AWS Cost and Usage reports owned by the account.</p>
         pub fn set_report_definitions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ReportDefinition>>,
@@ -107,6 +114,7 @@ pub mod describe_report_definitions_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A generic string.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -155,6 +163,7 @@ pub mod delete_report_definition_output {
             self.response_message = Some(input.into());
             self
         }
+        /// <p>Whether the deletion was successful or not.</p>
         pub fn set_response_message(
             mut self,
             input: std::option::Option<std::string::String>,

@@ -14,6 +14,7 @@ pub mod accept_grant_input {
             self.grant_arn = Some(input.into());
             self
         }
+        /// <p>Amazon Resource Name (ARN) of the grant.</p>
         pub fn set_grant_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.grant_arn = input;
             self
@@ -21,8 +22,10 @@ pub mod accept_grant_input {
         /// Consumes the builder and constructs a [`AcceptGrantInput`](crate::input::AcceptGrantInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::AcceptGrantInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::AcceptGrantInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::AcceptGrantInput {
                 grant_arn: self.grant_arn,
             })
@@ -40,16 +43,16 @@ impl AcceptGrantInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AcceptGrant,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AcceptGrantInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -57,7 +60,7 @@ impl AcceptGrantInput {
         fn update_http_builder(
             input: &crate::input::AcceptGrantInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -66,29 +69,31 @@ impl AcceptGrantInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AcceptGrantInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSLicenseManager.AcceptGrant",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_accept_grant(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -111,25 +116,27 @@ impl AcceptGrantInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::AcceptGrant::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "AcceptGrant",
-                    "licensemanager",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::AcceptGrant::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "AcceptGrant",
+            "licensemanager",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -158,6 +165,7 @@ pub mod check_in_license_input {
             self.license_consumption_token = Some(input.into());
             self
         }
+        /// <p>License consumption token.</p>
         pub fn set_license_consumption_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -170,6 +178,7 @@ pub mod check_in_license_input {
             self.beneficiary = Some(input.into());
             self
         }
+        /// <p>License beneficiary.</p>
         pub fn set_beneficiary(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.beneficiary = input;
             self
@@ -179,7 +188,7 @@ pub mod check_in_license_input {
             self,
         ) -> std::result::Result<
             crate::input::CheckInLicenseInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CheckInLicenseInput {
                 license_consumption_token: self.license_consumption_token,
@@ -199,16 +208,16 @@ impl CheckInLicenseInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CheckInLicense,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CheckInLicenseInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -216,7 +225,7 @@ impl CheckInLicenseInput {
         fn update_http_builder(
             input: &crate::input::CheckInLicenseInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -225,32 +234,32 @@ impl CheckInLicenseInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CheckInLicenseInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSLicenseManager.CheckInLicense",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_check_in_license(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -273,15 +282,15 @@ impl CheckInLicenseInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CheckInLicense::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CheckInLicense",
             "licensemanager",
         ));
@@ -290,10 +299,10 @@ impl CheckInLicenseInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -327,16 +336,23 @@ pub mod checkout_borrow_license_input {
             self.license_arn = Some(input.into());
             self
         }
+        /// <p>Amazon Resource Name (ARN) of the license. The license must use the borrow consumption configuration.</p>
         pub fn set_license_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.license_arn = input;
             self
         }
+        /// Appends an item to `entitlements`.
+        ///
+        /// To override the contents of this collection use [`set_entitlements`](Self::set_entitlements).
+        ///
+        /// <p>License entitlements. Partial checkouts are not supported.</p>
         pub fn entitlements(mut self, input: impl Into<crate::model::EntitlementData>) -> Self {
             let mut v = self.entitlements.unwrap_or_default();
             v.push(input.into());
             self.entitlements = Some(v);
             self
         }
+        /// <p>License entitlements. Partial checkouts are not supported.</p>
         pub fn set_entitlements(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EntitlementData>>,
@@ -353,6 +369,8 @@ pub mod checkout_borrow_license_input {
             self.digital_signature_method = Some(input);
             self
         }
+        /// <p>Digital signature method. The possible value is JSON Web Signature (JWS) algorithm PS384.
+        /// For more information, see <a href="https://tools.ietf.org/html/rfc7518#section-3.5">RFC 7518 Digital Signature with RSASSA-PSS</a>.</p>
         pub fn set_digital_signature_method(
             mut self,
             input: std::option::Option<crate::model::DigitalSignatureMethod>,
@@ -365,16 +383,23 @@ pub mod checkout_borrow_license_input {
             self.node_id = Some(input.into());
             self
         }
+        /// <p>Node ID.</p>
         pub fn set_node_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.node_id = input;
             self
         }
+        /// Appends an item to `checkout_metadata`.
+        ///
+        /// To override the contents of this collection use [`set_checkout_metadata`](Self::set_checkout_metadata).
+        ///
+        /// <p>Information about constraints.</p>
         pub fn checkout_metadata(mut self, input: impl Into<crate::model::Metadata>) -> Self {
             let mut v = self.checkout_metadata.unwrap_or_default();
             v.push(input.into());
             self.checkout_metadata = Some(v);
             self
         }
+        /// <p>Information about constraints.</p>
         pub fn set_checkout_metadata(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Metadata>>,
@@ -387,6 +412,7 @@ pub mod checkout_borrow_license_input {
             self.client_token = Some(input.into());
             self
         }
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -396,7 +422,7 @@ pub mod checkout_borrow_license_input {
             self,
         ) -> std::result::Result<
             crate::input::CheckoutBorrowLicenseInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CheckoutBorrowLicenseInput {
                 license_arn: self.license_arn,
@@ -420,16 +446,16 @@ impl CheckoutBorrowLicenseInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CheckoutBorrowLicense,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CheckoutBorrowLicenseInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -437,7 +463,7 @@ impl CheckoutBorrowLicenseInput {
         fn update_http_builder(
             input: &crate::input::CheckoutBorrowLicenseInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -446,32 +472,34 @@ impl CheckoutBorrowLicenseInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CheckoutBorrowLicenseInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSLicenseManager.CheckoutBorrowLicense",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_checkout_borrow_license(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -494,15 +522,15 @@ impl CheckoutBorrowLicenseInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CheckoutBorrowLicense::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CheckoutBorrowLicense",
             "licensemanager",
         ));
@@ -511,10 +539,10 @@ impl CheckoutBorrowLicenseInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -548,6 +576,7 @@ pub mod checkout_license_input {
             self.product_sku = Some(input.into());
             self
         }
+        /// <p>Product SKU.</p>
         pub fn set_product_sku(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.product_sku = input;
             self
@@ -557,6 +586,7 @@ pub mod checkout_license_input {
             self.checkout_type = Some(input);
             self
         }
+        /// <p>Checkout type.</p>
         pub fn set_checkout_type(
             mut self,
             input: std::option::Option<crate::model::CheckoutType>,
@@ -569,6 +599,7 @@ pub mod checkout_license_input {
             self.key_fingerprint = Some(input.into());
             self
         }
+        /// <p>Key fingerprint identifying the license.</p>
         pub fn set_key_fingerprint(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -576,12 +607,18 @@ pub mod checkout_license_input {
             self.key_fingerprint = input;
             self
         }
+        /// Appends an item to `entitlements`.
+        ///
+        /// To override the contents of this collection use [`set_entitlements`](Self::set_entitlements).
+        ///
+        /// <p>License entitlements.</p>
         pub fn entitlements(mut self, input: impl Into<crate::model::EntitlementData>) -> Self {
             let mut v = self.entitlements.unwrap_or_default();
             v.push(input.into());
             self.entitlements = Some(v);
             self
         }
+        /// <p>License entitlements.</p>
         pub fn set_entitlements(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EntitlementData>>,
@@ -594,6 +631,7 @@ pub mod checkout_license_input {
             self.client_token = Some(input.into());
             self
         }
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -603,6 +641,7 @@ pub mod checkout_license_input {
             self.beneficiary = Some(input.into());
             self
         }
+        /// <p>License beneficiary.</p>
         pub fn set_beneficiary(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.beneficiary = input;
             self
@@ -612,6 +651,7 @@ pub mod checkout_license_input {
             self.node_id = Some(input.into());
             self
         }
+        /// <p>Node ID.</p>
         pub fn set_node_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.node_id = input;
             self
@@ -621,7 +661,7 @@ pub mod checkout_license_input {
             self,
         ) -> std::result::Result<
             crate::input::CheckoutLicenseInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CheckoutLicenseInput {
                 product_sku: self.product_sku,
@@ -646,16 +686,16 @@ impl CheckoutLicenseInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CheckoutLicense,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CheckoutLicenseInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -663,7 +703,7 @@ impl CheckoutLicenseInput {
         fn update_http_builder(
             input: &crate::input::CheckoutLicenseInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -672,32 +712,32 @@ impl CheckoutLicenseInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CheckoutLicenseInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSLicenseManager.CheckoutLicense",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_checkout_license(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -720,15 +760,15 @@ impl CheckoutLicenseInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CheckoutLicense::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CheckoutLicense",
             "licensemanager",
         ));
@@ -737,10 +777,10 @@ impl CheckoutLicenseInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -774,6 +814,7 @@ pub mod create_grant_input {
             self.client_token = Some(input.into());
             self
         }
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -783,6 +824,7 @@ pub mod create_grant_input {
             self.grant_name = Some(input.into());
             self
         }
+        /// <p>Grant name.</p>
         pub fn set_grant_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.grant_name = input;
             self
@@ -792,16 +834,23 @@ pub mod create_grant_input {
             self.license_arn = Some(input.into());
             self
         }
+        /// <p>Amazon Resource Name (ARN) of the license.</p>
         pub fn set_license_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.license_arn = input;
             self
         }
+        /// Appends an item to `principals`.
+        ///
+        /// To override the contents of this collection use [`set_principals`](Self::set_principals).
+        ///
+        /// <p>The grant principals.</p>
         pub fn principals(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.principals.unwrap_or_default();
             v.push(input.into());
             self.principals = Some(v);
             self
         }
+        /// <p>The grant principals.</p>
         pub fn set_principals(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -814,10 +863,16 @@ pub mod create_grant_input {
             self.home_region = Some(input.into());
             self
         }
+        /// <p>Home Region of the grant.</p>
         pub fn set_home_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.home_region = input;
             self
         }
+        /// Appends an item to `allowed_operations`.
+        ///
+        /// To override the contents of this collection use [`set_allowed_operations`](Self::set_allowed_operations).
+        ///
+        /// <p>Allowed operations for the grant.</p>
         pub fn allowed_operations(
             mut self,
             input: impl Into<crate::model::AllowedOperation>,
@@ -827,6 +882,7 @@ pub mod create_grant_input {
             self.allowed_operations = Some(v);
             self
         }
+        /// <p>Allowed operations for the grant.</p>
         pub fn set_allowed_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AllowedOperation>>,
@@ -837,8 +893,10 @@ pub mod create_grant_input {
         /// Consumes the builder and constructs a [`CreateGrantInput`](crate::input::CreateGrantInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreateGrantInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateGrantInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateGrantInput {
                 client_token: self.client_token,
                 grant_name: self.grant_name,
@@ -861,16 +919,16 @@ impl CreateGrantInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateGrant,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateGrantInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -878,7 +936,7 @@ impl CreateGrantInput {
         fn update_http_builder(
             input: &crate::input::CreateGrantInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -887,29 +945,31 @@ impl CreateGrantInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateGrantInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSLicenseManager.CreateGrant",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_grant(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -932,25 +992,27 @@ impl CreateGrantInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreateGrant::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "CreateGrant",
-                    "licensemanager",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateGrant::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateGrant",
+            "licensemanager",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -985,6 +1047,7 @@ pub mod create_grant_version_input {
             self.client_token = Some(input.into());
             self
         }
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -994,6 +1057,7 @@ pub mod create_grant_version_input {
             self.grant_arn = Some(input.into());
             self
         }
+        /// <p>Amazon Resource Name (ARN) of the grant.</p>
         pub fn set_grant_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.grant_arn = input;
             self
@@ -1003,10 +1067,16 @@ pub mod create_grant_version_input {
             self.grant_name = Some(input.into());
             self
         }
+        /// <p>Grant name.</p>
         pub fn set_grant_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.grant_name = input;
             self
         }
+        /// Appends an item to `allowed_operations`.
+        ///
+        /// To override the contents of this collection use [`set_allowed_operations`](Self::set_allowed_operations).
+        ///
+        /// <p>Allowed operations for the grant.</p>
         pub fn allowed_operations(
             mut self,
             input: impl Into<crate::model::AllowedOperation>,
@@ -1016,6 +1086,7 @@ pub mod create_grant_version_input {
             self.allowed_operations = Some(v);
             self
         }
+        /// <p>Allowed operations for the grant.</p>
         pub fn set_allowed_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AllowedOperation>>,
@@ -1028,6 +1099,7 @@ pub mod create_grant_version_input {
             self.status = Some(input);
             self
         }
+        /// <p>Grant status.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::GrantStatus>) -> Self {
             self.status = input;
             self
@@ -1037,6 +1109,7 @@ pub mod create_grant_version_input {
             self.status_reason = Some(input.into());
             self
         }
+        /// <p>Grant status reason.</p>
         pub fn set_status_reason(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1049,6 +1122,7 @@ pub mod create_grant_version_input {
             self.source_version = Some(input.into());
             self
         }
+        /// <p>Current version of the grant.</p>
         pub fn set_source_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1061,7 +1135,7 @@ pub mod create_grant_version_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateGrantVersionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateGrantVersionInput {
                 client_token: self.client_token,
@@ -1086,16 +1160,16 @@ impl CreateGrantVersionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateGrantVersion,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateGrantVersionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1103,7 +1177,7 @@ impl CreateGrantVersionInput {
         fn update_http_builder(
             input: &crate::input::CreateGrantVersionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1112,30 +1186,32 @@ impl CreateGrantVersionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateGrantVersionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSLicenseManager.CreateGrantVersion",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_grant_version(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1158,15 +1234,15 @@ impl CreateGrantVersionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateGrantVersion::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateGrantVersion",
             "licensemanager",
         ));
@@ -1175,10 +1251,10 @@ impl CreateGrantVersionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1217,6 +1293,7 @@ pub mod create_license_input {
             self.license_name = Some(input.into());
             self
         }
+        /// <p>License name.</p>
         pub fn set_license_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.license_name = input;
             self
@@ -1226,6 +1303,7 @@ pub mod create_license_input {
             self.product_name = Some(input.into());
             self
         }
+        /// <p>Product name.</p>
         pub fn set_product_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.product_name = input;
             self
@@ -1235,6 +1313,7 @@ pub mod create_license_input {
             self.product_sku = Some(input.into());
             self
         }
+        /// <p>Product SKU.</p>
         pub fn set_product_sku(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.product_sku = input;
             self
@@ -1244,6 +1323,7 @@ pub mod create_license_input {
             self.issuer = Some(input);
             self
         }
+        /// <p>License issuer.</p>
         pub fn set_issuer(mut self, input: std::option::Option<crate::model::Issuer>) -> Self {
             self.issuer = input;
             self
@@ -1253,6 +1333,7 @@ pub mod create_license_input {
             self.home_region = Some(input.into());
             self
         }
+        /// <p>Home Region for the license.</p>
         pub fn set_home_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.home_region = input;
             self
@@ -1262,6 +1343,7 @@ pub mod create_license_input {
             self.validity = Some(input);
             self
         }
+        /// <p>Date and time range during which the license is valid, in ISO8601-UTC format.</p>
         pub fn set_validity(
             mut self,
             input: std::option::Option<crate::model::DatetimeRange>,
@@ -1269,12 +1351,18 @@ pub mod create_license_input {
             self.validity = input;
             self
         }
+        /// Appends an item to `entitlements`.
+        ///
+        /// To override the contents of this collection use [`set_entitlements`](Self::set_entitlements).
+        ///
+        /// <p>License entitlements.</p>
         pub fn entitlements(mut self, input: impl Into<crate::model::Entitlement>) -> Self {
             let mut v = self.entitlements.unwrap_or_default();
             v.push(input.into());
             self.entitlements = Some(v);
             self
         }
+        /// <p>License entitlements.</p>
         pub fn set_entitlements(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Entitlement>>,
@@ -1287,6 +1375,7 @@ pub mod create_license_input {
             self.beneficiary = Some(input.into());
             self
         }
+        /// <p>License beneficiary.</p>
         pub fn set_beneficiary(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.beneficiary = input;
             self
@@ -1301,6 +1390,9 @@ pub mod create_license_input {
             self.consumption_configuration = Some(input);
             self
         }
+        /// <p>Configuration for consumption of the license. Choose a provisional configuration for workloads
+        /// running with continuous connectivity. Choose a borrow configuration for workloads with offline
+        /// usage.</p>
         pub fn set_consumption_configuration(
             mut self,
             input: std::option::Option<crate::model::ConsumptionConfiguration>,
@@ -1308,12 +1400,18 @@ pub mod create_license_input {
             self.consumption_configuration = input;
             self
         }
+        /// Appends an item to `license_metadata`.
+        ///
+        /// To override the contents of this collection use [`set_license_metadata`](Self::set_license_metadata).
+        ///
+        /// <p>Information about the license.</p>
         pub fn license_metadata(mut self, input: impl Into<crate::model::Metadata>) -> Self {
             let mut v = self.license_metadata.unwrap_or_default();
             v.push(input.into());
             self.license_metadata = Some(v);
             self
         }
+        /// <p>Information about the license.</p>
         pub fn set_license_metadata(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Metadata>>,
@@ -1326,6 +1424,7 @@ pub mod create_license_input {
             self.client_token = Some(input.into());
             self
         }
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -1333,8 +1432,10 @@ pub mod create_license_input {
         /// Consumes the builder and constructs a [`CreateLicenseInput`](crate::input::CreateLicenseInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreateLicenseInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateLicenseInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateLicenseInput {
                 license_name: self.license_name,
                 product_name: self.product_name,
@@ -1362,16 +1463,16 @@ impl CreateLicenseInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateLicense,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateLicenseInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1379,7 +1480,7 @@ impl CreateLicenseInput {
         fn update_http_builder(
             input: &crate::input::CreateLicenseInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1388,29 +1489,31 @@ impl CreateLicenseInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateLicenseInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSLicenseManager.CreateLicense",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_license(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1433,25 +1536,27 @@ impl CreateLicenseInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreateLicense::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "CreateLicense",
-                    "licensemanager",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateLicense::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateLicense",
+            "licensemanager",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1488,6 +1593,7 @@ pub mod create_license_configuration_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>Name of the license configuration.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1497,6 +1603,7 @@ pub mod create_license_configuration_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>Description of the license configuration.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -1506,6 +1613,7 @@ pub mod create_license_configuration_input {
             self.license_counting_type = Some(input);
             self
         }
+        /// <p>Dimension used to track the license inventory.</p>
         pub fn set_license_counting_type(
             mut self,
             input: std::option::Option<crate::model::LicenseCountingType>,
@@ -1518,6 +1626,7 @@ pub mod create_license_configuration_input {
             self.license_count = Some(input);
             self
         }
+        /// <p>Number of licenses managed by the license configuration.</p>
         pub fn set_license_count(mut self, input: std::option::Option<i64>) -> Self {
             self.license_count = input;
             self
@@ -1528,16 +1637,96 @@ pub mod create_license_configuration_input {
             self.license_count_hard_limit = Some(input);
             self
         }
+        /// <p>Indicates whether hard or soft license enforcement is used. Exceeding a hard limit
+        /// blocks the launch of new instances.</p>
         pub fn set_license_count_hard_limit(mut self, input: std::option::Option<bool>) -> Self {
             self.license_count_hard_limit = input;
             self
         }
+        /// Appends an item to `license_rules`.
+        ///
+        /// To override the contents of this collection use [`set_license_rules`](Self::set_license_rules).
+        ///
+        /// <p>License rules. The syntax is #name=value (for example, #allowedTenancy=EC2-DedicatedHost). The available rules
+        /// vary by dimension, as follows.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Cores</code> dimension: <code>allowedTenancy</code> |
+        /// <code>licenseAffinityToHost</code> |
+        /// <code>maximumCores</code> | <code>minimumCores</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Instances</code> dimension: <code>allowedTenancy</code> |
+        /// <code>maximumCores</code> | <code>minimumCores</code> |
+        /// <code>maximumSockets</code> | <code>minimumSockets</code> |
+        /// <code>maximumVcpus</code> | <code>minimumVcpus</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Sockets</code> dimension: <code>allowedTenancy</code> |
+        /// <code>licenseAffinityToHost</code> |
+        /// <code>maximumSockets</code> | <code>minimumSockets</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>vCPUs</code> dimension: <code>allowedTenancy</code> |
+        /// <code>honorVcpuOptimization</code> |
+        /// <code>maximumVcpus</code> | <code>minimumVcpus</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>The unit for <code>licenseAffinityToHost</code> is days and the range is 1 to 180. The possible
+        /// values for <code>allowedTenancy</code> are <code>EC2-Default</code>, <code>EC2-DedicatedHost</code>, and
+        /// <code>EC2-DedicatedInstance</code>. The possible values for <code>honorVcpuOptimization</code> are
+        /// <code>True</code> and <code>False</code>.</p>
         pub fn license_rules(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.license_rules.unwrap_or_default();
             v.push(input.into());
             self.license_rules = Some(v);
             self
         }
+        /// <p>License rules. The syntax is #name=value (for example, #allowedTenancy=EC2-DedicatedHost). The available rules
+        /// vary by dimension, as follows.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Cores</code> dimension: <code>allowedTenancy</code> |
+        /// <code>licenseAffinityToHost</code> |
+        /// <code>maximumCores</code> | <code>minimumCores</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Instances</code> dimension: <code>allowedTenancy</code> |
+        /// <code>maximumCores</code> | <code>minimumCores</code> |
+        /// <code>maximumSockets</code> | <code>minimumSockets</code> |
+        /// <code>maximumVcpus</code> | <code>minimumVcpus</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Sockets</code> dimension: <code>allowedTenancy</code> |
+        /// <code>licenseAffinityToHost</code> |
+        /// <code>maximumSockets</code> | <code>minimumSockets</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>vCPUs</code> dimension: <code>allowedTenancy</code> |
+        /// <code>honorVcpuOptimization</code> |
+        /// <code>maximumVcpus</code> | <code>minimumVcpus</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>The unit for <code>licenseAffinityToHost</code> is days and the range is 1 to 180. The possible
+        /// values for <code>allowedTenancy</code> are <code>EC2-Default</code>, <code>EC2-DedicatedHost</code>, and
+        /// <code>EC2-DedicatedInstance</code>. The possible values for <code>honorVcpuOptimization</code> are
+        /// <code>True</code> and <code>False</code>.</p>
         pub fn set_license_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1545,12 +1734,18 @@ pub mod create_license_configuration_input {
             self.license_rules = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Tags to add to the license configuration.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>Tags to add to the license configuration.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1563,10 +1758,16 @@ pub mod create_license_configuration_input {
             self.disassociate_when_not_found = Some(input);
             self
         }
+        /// <p>When true, disassociates a resource when software is uninstalled.</p>
         pub fn set_disassociate_when_not_found(mut self, input: std::option::Option<bool>) -> Self {
             self.disassociate_when_not_found = input;
             self
         }
+        /// Appends an item to `product_information_list`.
+        ///
+        /// To override the contents of this collection use [`set_product_information_list`](Self::set_product_information_list).
+        ///
+        /// <p>Product information.</p>
         pub fn product_information_list(
             mut self,
             input: impl Into<crate::model::ProductInformation>,
@@ -1576,6 +1777,7 @@ pub mod create_license_configuration_input {
             self.product_information_list = Some(v);
             self
         }
+        /// <p>Product information.</p>
         pub fn set_product_information_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ProductInformation>>,
@@ -1588,7 +1790,7 @@ pub mod create_license_configuration_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateLicenseConfigurationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateLicenseConfigurationInput {
                 name: self.name,
@@ -1616,16 +1818,16 @@ impl CreateLicenseConfigurationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateLicenseConfiguration,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateLicenseConfigurationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1633,7 +1835,7 @@ impl CreateLicenseConfigurationInput {
         fn update_http_builder(
             input: &crate::input::CreateLicenseConfigurationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1642,32 +1844,34 @@ impl CreateLicenseConfigurationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateLicenseConfigurationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSLicenseManager.CreateLicenseConfiguration",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_license_configuration(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1690,15 +1894,15 @@ impl CreateLicenseConfigurationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateLicenseConfiguration::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateLicenseConfiguration",
             "licensemanager",
         ));
@@ -1707,10 +1911,10 @@ impl CreateLicenseConfigurationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1742,6 +1946,7 @@ pub mod create_license_conversion_task_for_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>Amazon Resource Name (ARN) of the resource you are converting the license type for.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -1755,6 +1960,8 @@ pub mod create_license_conversion_task_for_resource_input {
             self.source_license_context = Some(input);
             self
         }
+        /// <p>Information that identifies the license type you are converting from.
+        /// For the structure of the source license, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert a license type using the AWS CLI</a> in the <i>License Manager User Guide</i>.</p>
         pub fn set_source_license_context(
             mut self,
             input: std::option::Option<crate::model::LicenseConversionContext>,
@@ -1770,6 +1977,7 @@ pub mod create_license_conversion_task_for_resource_input {
             self.destination_license_context = Some(input);
             self
         }
+        /// <p>Information that identifies the license type you are converting to. For the structure of the destination license, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert a license type using the AWS CLI</a> in the <i>License Manager User Guide</i>.</p>
         pub fn set_destination_license_context(
             mut self,
             input: std::option::Option<crate::model::LicenseConversionContext>,
@@ -1782,7 +1990,7 @@ pub mod create_license_conversion_task_for_resource_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateLicenseConversionTaskForResourceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateLicenseConversionTaskForResourceInput {
                 resource_arn: self.resource_arn,
@@ -1805,16 +2013,16 @@ impl CreateLicenseConversionTaskForResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateLicenseConversionTaskForResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateLicenseConversionTaskForResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1822,7 +2030,7 @@ impl CreateLicenseConversionTaskForResourceInput {
         fn update_http_builder(
             input: &crate::input::CreateLicenseConversionTaskForResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1831,30 +2039,30 @@ impl CreateLicenseConversionTaskForResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateLicenseConversionTaskForResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSLicenseManager.CreateLicenseConversionTaskForResource",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_license_conversion_task_for_resource(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_license_conversion_task_for_resource(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1877,15 +2085,15 @@ impl CreateLicenseConversionTaskForResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateLicenseConversionTaskForResource::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateLicenseConversionTaskForResource",
             "licensemanager",
         ));
@@ -1894,10 +2102,10 @@ impl CreateLicenseConversionTaskForResourceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1931,6 +2139,7 @@ pub mod create_license_manager_report_generator_input {
             self.report_generator_name = Some(input.into());
             self
         }
+        /// <p>Name of the report generator.</p>
         pub fn set_report_generator_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1938,12 +2147,34 @@ pub mod create_license_manager_report_generator_input {
             self.report_generator_name = input;
             self
         }
+        /// Appends an item to `r#type`.
+        ///
+        /// To override the contents of this collection use [`set_type`](Self::set_type).
+        ///
+        /// <p>Type of reports to generate. The following report types an be generated:</p>
+        /// <ul>
+        /// <li>
+        /// <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p>
+        /// </li>
+        /// <li>
+        /// <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p>
+        /// </li>
+        /// </ul>
         pub fn r#type(mut self, input: impl Into<crate::model::ReportType>) -> Self {
             let mut v = self.r#type.unwrap_or_default();
             v.push(input.into());
             self.r#type = Some(v);
             self
         }
+        /// <p>Type of reports to generate. The following report types an be generated:</p>
+        /// <ul>
+        /// <li>
+        /// <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p>
+        /// </li>
+        /// <li>
+        /// <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p>
+        /// </li>
+        /// </ul>
         pub fn set_type(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ReportType>>,
@@ -1956,6 +2187,7 @@ pub mod create_license_manager_report_generator_input {
             self.report_context = Some(input);
             self
         }
+        /// <p>Defines the type of license configuration the report generator tracks.</p>
         pub fn set_report_context(
             mut self,
             input: std::option::Option<crate::model::ReportContext>,
@@ -1968,6 +2200,7 @@ pub mod create_license_manager_report_generator_input {
             self.report_frequency = Some(input);
             self
         }
+        /// <p>Frequency by which reports are generated.  Reports can be generated daily, monthly, or weekly.</p>
         pub fn set_report_frequency(
             mut self,
             input: std::option::Option<crate::model::ReportFrequency>,
@@ -1980,6 +2213,7 @@ pub mod create_license_manager_report_generator_input {
             self.client_token = Some(input.into());
             self
         }
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -1989,16 +2223,23 @@ pub mod create_license_manager_report_generator_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>Description of the report generator.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Tags to add to the report generator.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>Tags to add to the report generator.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2011,7 +2252,7 @@ pub mod create_license_manager_report_generator_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateLicenseManagerReportGeneratorInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateLicenseManagerReportGeneratorInput {
                 report_generator_name: self.report_generator_name,
@@ -2038,16 +2279,16 @@ impl CreateLicenseManagerReportGeneratorInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateLicenseManagerReportGenerator,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateLicenseManagerReportGeneratorInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2055,7 +2296,7 @@ impl CreateLicenseManagerReportGeneratorInput {
         fn update_http_builder(
             input: &crate::input::CreateLicenseManagerReportGeneratorInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2064,30 +2305,30 @@ impl CreateLicenseManagerReportGeneratorInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateLicenseManagerReportGeneratorInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSLicenseManager.CreateLicenseManagerReportGenerator",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_license_manager_report_generator(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_license_manager_report_generator(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2110,15 +2351,15 @@ impl CreateLicenseManagerReportGeneratorInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateLicenseManagerReportGenerator::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateLicenseManagerReportGenerator",
             "licensemanager",
         ));
@@ -2127,10 +2368,10 @@ impl CreateLicenseManagerReportGeneratorInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2170,6 +2411,7 @@ pub mod create_license_version_input {
             self.license_arn = Some(input.into());
             self
         }
+        /// <p>Amazon Resource Name (ARN) of the license.</p>
         pub fn set_license_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.license_arn = input;
             self
@@ -2179,6 +2421,7 @@ pub mod create_license_version_input {
             self.license_name = Some(input.into());
             self
         }
+        /// <p>License name.</p>
         pub fn set_license_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.license_name = input;
             self
@@ -2188,6 +2431,7 @@ pub mod create_license_version_input {
             self.product_name = Some(input.into());
             self
         }
+        /// <p>Product name.</p>
         pub fn set_product_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.product_name = input;
             self
@@ -2197,6 +2441,7 @@ pub mod create_license_version_input {
             self.issuer = Some(input);
             self
         }
+        /// <p>License issuer.</p>
         pub fn set_issuer(mut self, input: std::option::Option<crate::model::Issuer>) -> Self {
             self.issuer = input;
             self
@@ -2206,6 +2451,7 @@ pub mod create_license_version_input {
             self.home_region = Some(input.into());
             self
         }
+        /// <p>Home Region of the license.</p>
         pub fn set_home_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.home_region = input;
             self
@@ -2215,6 +2461,7 @@ pub mod create_license_version_input {
             self.validity = Some(input);
             self
         }
+        /// <p>Date and time range during which the license is valid, in ISO8601-UTC format.</p>
         pub fn set_validity(
             mut self,
             input: std::option::Option<crate::model::DatetimeRange>,
@@ -2222,12 +2469,18 @@ pub mod create_license_version_input {
             self.validity = input;
             self
         }
+        /// Appends an item to `license_metadata`.
+        ///
+        /// To override the contents of this collection use [`set_license_metadata`](Self::set_license_metadata).
+        ///
+        /// <p>Information about the license.</p>
         pub fn license_metadata(mut self, input: impl Into<crate::model::Metadata>) -> Self {
             let mut v = self.license_metadata.unwrap_or_default();
             v.push(input.into());
             self.license_metadata = Some(v);
             self
         }
+        /// <p>Information about the license.</p>
         pub fn set_license_metadata(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Metadata>>,
@@ -2235,12 +2488,18 @@ pub mod create_license_version_input {
             self.license_metadata = input;
             self
         }
+        /// Appends an item to `entitlements`.
+        ///
+        /// To override the contents of this collection use [`set_entitlements`](Self::set_entitlements).
+        ///
+        /// <p>License entitlements.</p>
         pub fn entitlements(mut self, input: impl Into<crate::model::Entitlement>) -> Self {
             let mut v = self.entitlements.unwrap_or_default();
             v.push(input.into());
             self.entitlements = Some(v);
             self
         }
+        /// <p>License entitlements.</p>
         pub fn set_entitlements(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Entitlement>>,
@@ -2258,6 +2517,9 @@ pub mod create_license_version_input {
             self.consumption_configuration = Some(input);
             self
         }
+        /// <p>Configuration for consumption of the license. Choose a provisional configuration for workloads
+        /// running with continuous connectivity. Choose a borrow configuration for workloads with offline
+        /// usage.</p>
         pub fn set_consumption_configuration(
             mut self,
             input: std::option::Option<crate::model::ConsumptionConfiguration>,
@@ -2270,6 +2532,7 @@ pub mod create_license_version_input {
             self.status = Some(input);
             self
         }
+        /// <p>License status.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::LicenseStatus>,
@@ -2282,6 +2545,7 @@ pub mod create_license_version_input {
             self.client_token = Some(input.into());
             self
         }
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -2291,6 +2555,7 @@ pub mod create_license_version_input {
             self.source_version = Some(input.into());
             self
         }
+        /// <p>Current version of the license.</p>
         pub fn set_source_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2303,7 +2568,7 @@ pub mod create_license_version_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateLicenseVersionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateLicenseVersionInput {
                 license_arn: self.license_arn,
@@ -2333,16 +2598,16 @@ impl CreateLicenseVersionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateLicenseVersion,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateLicenseVersionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2350,7 +2615,7 @@ impl CreateLicenseVersionInput {
         fn update_http_builder(
             input: &crate::input::CreateLicenseVersionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2359,32 +2624,32 @@ impl CreateLicenseVersionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateLicenseVersionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSLicenseManager.CreateLicenseVersion",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_license_version(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2407,15 +2672,15 @@ impl CreateLicenseVersionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateLicenseVersion::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateLicenseVersion",
             "licensemanager",
         ));
@@ -2424,10 +2689,10 @@ impl CreateLicenseVersionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2460,16 +2725,26 @@ pub mod create_token_input {
             self.license_arn = Some(input.into());
             self
         }
+        /// <p>Amazon Resource Name (ARN) of the license. The ARN is mapped to the aud claim of the
+        /// JWT token.</p>
         pub fn set_license_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.license_arn = input;
             self
         }
+        /// Appends an item to `role_arns`.
+        ///
+        /// To override the contents of this collection use [`set_role_arns`](Self::set_role_arns).
+        ///
+        /// <p>Amazon Resource Name (ARN) of the IAM roles to embed in the token.
+        /// License Manager does not check whether the roles are in use.</p>
         pub fn role_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.role_arns.unwrap_or_default();
             v.push(input.into());
             self.role_arns = Some(v);
             self
         }
+        /// <p>Amazon Resource Name (ARN) of the IAM roles to embed in the token.
+        /// License Manager does not check whether the roles are in use.</p>
         pub fn set_role_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2482,16 +2757,25 @@ pub mod create_token_input {
             self.expiration_in_days = Some(input);
             self
         }
+        /// <p>Token expiration, in days, counted from token creation. The default is 365 days.</p>
         pub fn set_expiration_in_days(mut self, input: std::option::Option<i32>) -> Self {
             self.expiration_in_days = input;
             self
         }
+        /// Appends an item to `token_properties`.
+        ///
+        /// To override the contents of this collection use [`set_token_properties`](Self::set_token_properties).
+        ///
+        /// <p>Data specified by the caller to be included in the JWT token. The data is mapped
+        /// to the amr claim of the JWT token.</p>
         pub fn token_properties(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.token_properties.unwrap_or_default();
             v.push(input.into());
             self.token_properties = Some(v);
             self
         }
+        /// <p>Data specified by the caller to be included in the JWT token. The data is mapped
+        /// to the amr claim of the JWT token.</p>
         pub fn set_token_properties(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2504,6 +2788,7 @@ pub mod create_token_input {
             self.client_token = Some(input.into());
             self
         }
+        /// <p>Idempotency token, valid for 10 minutes.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -2511,8 +2796,10 @@ pub mod create_token_input {
         /// Consumes the builder and constructs a [`CreateTokenInput`](crate::input::CreateTokenInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreateTokenInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateTokenInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateTokenInput {
                 license_arn: self.license_arn,
                 role_arns: self.role_arns,
@@ -2534,16 +2821,16 @@ impl CreateTokenInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateToken,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateTokenInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2551,7 +2838,7 @@ impl CreateTokenInput {
         fn update_http_builder(
             input: &crate::input::CreateTokenInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2560,29 +2847,31 @@ impl CreateTokenInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateTokenInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSLicenseManager.CreateToken",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_token(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2605,25 +2894,27 @@ impl CreateTokenInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreateToken::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "CreateToken",
-                    "licensemanager",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateToken::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateToken",
+            "licensemanager",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2653,6 +2944,7 @@ pub mod delete_grant_input {
             self.grant_arn = Some(input.into());
             self
         }
+        /// <p>Amazon Resource Name (ARN) of the grant.</p>
         pub fn set_grant_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.grant_arn = input;
             self
@@ -2662,6 +2954,7 @@ pub mod delete_grant_input {
             self.status_reason = Some(input.into());
             self
         }
+        /// <p>The Status reason for the delete request.</p>
         pub fn set_status_reason(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2674,6 +2967,7 @@ pub mod delete_grant_input {
             self.version = Some(input.into());
             self
         }
+        /// <p>Current version of the grant.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -2681,8 +2975,10 @@ pub mod delete_grant_input {
         /// Consumes the builder and constructs a [`DeleteGrantInput`](crate::input::DeleteGrantInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeleteGrantInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteGrantInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteGrantInput {
                 grant_arn: self.grant_arn,
                 status_reason: self.status_reason,
@@ -2702,16 +2998,16 @@ impl DeleteGrantInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteGrant,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteGrantInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2719,7 +3015,7 @@ impl DeleteGrantInput {
         fn update_http_builder(
             input: &crate::input::DeleteGrantInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2728,29 +3024,31 @@ impl DeleteGrantInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteGrantInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSLicenseManager.DeleteGrant",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_delete_grant(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2773,25 +3071,27 @@ impl DeleteGrantInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeleteGrant::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DeleteGrant",
-                    "licensemanager",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteGrant::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteGrant",
+            "licensemanager",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2820,6 +3120,7 @@ pub mod delete_license_input {
             self.license_arn = Some(input.into());
             self
         }
+        /// <p>Amazon Resource Name (ARN) of the license.</p>
         pub fn set_license_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.license_arn = input;
             self
@@ -2829,6 +3130,7 @@ pub mod delete_license_input {
             self.source_version = Some(input.into());
             self
         }
+        /// <p>Current version of the license.</p>
         pub fn set_source_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2839,8 +3141,10 @@ pub mod delete_license_input {
         /// Consumes the builder and constructs a [`DeleteLicenseInput`](crate::input::DeleteLicenseInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeleteLicenseInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteLicenseInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteLicenseInput {
                 license_arn: self.license_arn,
                 source_version: self.source_version,
@@ -2859,16 +3163,16 @@ impl DeleteLicenseInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteLicense,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteLicenseInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2876,7 +3180,7 @@ impl DeleteLicenseInput {
         fn update_http_builder(
             input: &crate::input::DeleteLicenseInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2885,29 +3189,31 @@ impl DeleteLicenseInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteLicenseInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSLicenseManager.DeleteLicense",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_delete_license(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2930,25 +3236,27 @@ impl DeleteLicenseInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeleteLicense::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DeleteLicense",
-                    "licensemanager",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteLicense::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteLicense",
+            "licensemanager",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2976,6 +3284,7 @@ pub mod delete_license_configuration_input {
             self.license_configuration_arn = Some(input.into());
             self
         }
+        /// <p>ID of the license configuration.</p>
         pub fn set_license_configuration_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2988,7 +3297,7 @@ pub mod delete_license_configuration_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteLicenseConfigurationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteLicenseConfigurationInput {
                 license_configuration_arn: self.license_configuration_arn,
@@ -3008,16 +3317,16 @@ impl DeleteLicenseConfigurationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteLicenseConfiguration,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteLicenseConfigurationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3025,7 +3334,7 @@ impl DeleteLicenseConfigurationInput {
         fn update_http_builder(
             input: &crate::input::DeleteLicenseConfigurationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3034,32 +3343,34 @@ impl DeleteLicenseConfigurationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteLicenseConfigurationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSLicenseManager.DeleteLicenseConfiguration",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_license_configuration(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3082,15 +3393,15 @@ impl DeleteLicenseConfigurationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteLicenseConfiguration::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteLicenseConfiguration",
             "licensemanager",
         ));
@@ -3099,10 +3410,10 @@ impl DeleteLicenseConfigurationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3133,6 +3444,7 @@ pub mod delete_license_manager_report_generator_input {
             self.license_manager_report_generator_arn = Some(input.into());
             self
         }
+        /// <p>Amazon Resource Name (ARN) of the report generator to be deleted.</p>
         pub fn set_license_manager_report_generator_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3145,7 +3457,7 @@ pub mod delete_license_manager_report_generator_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteLicenseManagerReportGeneratorInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteLicenseManagerReportGeneratorInput {
                 license_manager_report_generator_arn: self.license_manager_report_generator_arn,
@@ -3166,16 +3478,16 @@ impl DeleteLicenseManagerReportGeneratorInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteLicenseManagerReportGenerator,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteLicenseManagerReportGeneratorInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3183,7 +3495,7 @@ impl DeleteLicenseManagerReportGeneratorInput {
         fn update_http_builder(
             input: &crate::input::DeleteLicenseManagerReportGeneratorInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3192,30 +3504,30 @@ impl DeleteLicenseManagerReportGeneratorInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteLicenseManagerReportGeneratorInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSLicenseManager.DeleteLicenseManagerReportGenerator",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_license_manager_report_generator(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_license_manager_report_generator(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3238,15 +3550,15 @@ impl DeleteLicenseManagerReportGeneratorInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteLicenseManagerReportGenerator::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteLicenseManagerReportGenerator",
             "licensemanager",
         ));
@@ -3255,10 +3567,10 @@ impl DeleteLicenseManagerReportGeneratorInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3286,6 +3598,7 @@ pub mod delete_token_input {
             self.token_id = Some(input.into());
             self
         }
+        /// <p>Token ID.</p>
         pub fn set_token_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.token_id = input;
             self
@@ -3293,8 +3606,10 @@ pub mod delete_token_input {
         /// Consumes the builder and constructs a [`DeleteTokenInput`](crate::input::DeleteTokenInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeleteTokenInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteTokenInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteTokenInput {
                 token_id: self.token_id,
             })
@@ -3312,16 +3627,16 @@ impl DeleteTokenInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteToken,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteTokenInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3329,7 +3644,7 @@ impl DeleteTokenInput {
         fn update_http_builder(
             input: &crate::input::DeleteTokenInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3338,29 +3653,31 @@ impl DeleteTokenInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteTokenInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSLicenseManager.DeleteToken",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_delete_token(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3383,25 +3700,27 @@ impl DeleteTokenInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeleteToken::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DeleteToken",
-                    "licensemanager",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteToken::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteToken",
+            "licensemanager",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3430,6 +3749,7 @@ pub mod extend_license_consumption_input {
             self.license_consumption_token = Some(input.into());
             self
         }
+        /// <p>License consumption token.</p>
         pub fn set_license_consumption_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3442,6 +3762,7 @@ pub mod extend_license_consumption_input {
             self.dry_run = Some(input);
             self
         }
+        /// <p>Checks whether you have the required permissions for the action, without actually making the request. Provides an error response if you do not have the required permissions.</p>
         pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
             self.dry_run = input;
             self
@@ -3451,7 +3772,7 @@ pub mod extend_license_consumption_input {
             self,
         ) -> std::result::Result<
             crate::input::ExtendLicenseConsumptionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ExtendLicenseConsumptionInput {
                 license_consumption_token: self.license_consumption_token,
@@ -3472,16 +3793,16 @@ impl ExtendLicenseConsumptionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ExtendLicenseConsumption,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ExtendLicenseConsumptionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3489,7 +3810,7 @@ impl ExtendLicenseConsumptionInput {
         fn update_http_builder(
             input: &crate::input::ExtendLicenseConsumptionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3498,32 +3819,34 @@ impl ExtendLicenseConsumptionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ExtendLicenseConsumptionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSLicenseManager.ExtendLicenseConsumption",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_extend_license_consumption(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3546,15 +3869,15 @@ impl ExtendLicenseConsumptionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ExtendLicenseConsumption::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ExtendLicenseConsumption",
             "licensemanager",
         ));
@@ -3563,10 +3886,10 @@ impl ExtendLicenseConsumptionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3595,16 +3918,23 @@ pub mod get_access_token_input {
             self.token = Some(input.into());
             self
         }
+        /// <p>Refresh token, encoded as a JWT token.</p>
         pub fn set_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.token = input;
             self
         }
+        /// Appends an item to `token_properties`.
+        ///
+        /// To override the contents of this collection use [`set_token_properties`](Self::set_token_properties).
+        ///
+        /// <p>Token properties to validate against those present in the JWT token.</p>
         pub fn token_properties(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.token_properties.unwrap_or_default();
             v.push(input.into());
             self.token_properties = Some(v);
             self
         }
+        /// <p>Token properties to validate against those present in the JWT token.</p>
         pub fn set_token_properties(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3617,7 +3947,7 @@ pub mod get_access_token_input {
             self,
         ) -> std::result::Result<
             crate::input::GetAccessTokenInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetAccessTokenInput {
                 token: self.token,
@@ -3637,16 +3967,16 @@ impl GetAccessTokenInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetAccessToken,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetAccessTokenInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3654,7 +3984,7 @@ impl GetAccessTokenInput {
         fn update_http_builder(
             input: &crate::input::GetAccessTokenInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3663,32 +3993,32 @@ impl GetAccessTokenInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetAccessTokenInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSLicenseManager.GetAccessToken",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_access_token(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3711,15 +4041,15 @@ impl GetAccessTokenInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetAccessToken::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetAccessToken",
             "licensemanager",
         ));
@@ -3728,10 +4058,10 @@ impl GetAccessTokenInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3760,6 +4090,7 @@ pub mod get_grant_input {
             self.grant_arn = Some(input.into());
             self
         }
+        /// <p>Amazon Resource Name (ARN) of the grant.</p>
         pub fn set_grant_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.grant_arn = input;
             self
@@ -3769,6 +4100,7 @@ pub mod get_grant_input {
             self.version = Some(input.into());
             self
         }
+        /// <p>Grant version.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -3776,7 +4108,7 @@ pub mod get_grant_input {
         /// Consumes the builder and constructs a [`GetGrantInput`](crate::input::GetGrantInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetGrantInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::GetGrantInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::GetGrantInput {
                 grant_arn: self.grant_arn,
@@ -3796,16 +4128,16 @@ impl GetGrantInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetGrant,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetGrantInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3813,7 +4145,7 @@ impl GetGrantInput {
         fn update_http_builder(
             input: &crate::input::GetGrantInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3822,29 +4154,31 @@ impl GetGrantInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetGrantInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSLicenseManager.GetGrant",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_get_grant(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3867,24 +4201,25 @@ impl GetGrantInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(request, crate::operation::GetGrant::new())
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "GetGrant",
-                "licensemanager",
-            ));
+        let op =
+            aws_smithy_http::operation::Operation::new(request, crate::operation::GetGrant::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "GetGrant",
+                    "licensemanager",
+                ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3913,6 +4248,7 @@ pub mod get_license_input {
             self.license_arn = Some(input.into());
             self
         }
+        /// <p>Amazon Resource Name (ARN) of the license.</p>
         pub fn set_license_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.license_arn = input;
             self
@@ -3922,6 +4258,7 @@ pub mod get_license_input {
             self.version = Some(input.into());
             self
         }
+        /// <p>License version.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -3929,8 +4266,10 @@ pub mod get_license_input {
         /// Consumes the builder and constructs a [`GetLicenseInput`](crate::input::GetLicenseInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetLicenseInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetLicenseInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetLicenseInput {
                 license_arn: self.license_arn,
                 version: self.version,
@@ -3949,16 +4288,16 @@ impl GetLicenseInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetLicense,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetLicenseInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3966,7 +4305,7 @@ impl GetLicenseInput {
         fn update_http_builder(
             input: &crate::input::GetLicenseInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3975,29 +4314,31 @@ impl GetLicenseInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetLicenseInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSLicenseManager.GetLicense",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_get_license(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4020,25 +4361,27 @@ impl GetLicenseInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::GetLicense::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "GetLicense",
-                    "licensemanager",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetLicense::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetLicense",
+            "licensemanager",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4066,6 +4409,7 @@ pub mod get_license_configuration_input {
             self.license_configuration_arn = Some(input.into());
             self
         }
+        /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
         pub fn set_license_configuration_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4078,7 +4422,7 @@ pub mod get_license_configuration_input {
             self,
         ) -> std::result::Result<
             crate::input::GetLicenseConfigurationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetLicenseConfigurationInput {
                 license_configuration_arn: self.license_configuration_arn,
@@ -4098,16 +4442,16 @@ impl GetLicenseConfigurationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetLicenseConfiguration,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetLicenseConfigurationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4115,7 +4459,7 @@ impl GetLicenseConfigurationInput {
         fn update_http_builder(
             input: &crate::input::GetLicenseConfigurationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4124,32 +4468,34 @@ impl GetLicenseConfigurationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetLicenseConfigurationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSLicenseManager.GetLicenseConfiguration",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_license_configuration(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4172,15 +4518,15 @@ impl GetLicenseConfigurationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetLicenseConfiguration::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetLicenseConfiguration",
             "licensemanager",
         ));
@@ -4189,10 +4535,10 @@ impl GetLicenseConfigurationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4220,6 +4566,7 @@ pub mod get_license_conversion_task_input {
             self.license_conversion_task_id = Some(input.into());
             self
         }
+        /// <p>ID of the license type conversion task to retrieve information on.</p>
         pub fn set_license_conversion_task_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4232,7 +4579,7 @@ pub mod get_license_conversion_task_input {
             self,
         ) -> std::result::Result<
             crate::input::GetLicenseConversionTaskInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetLicenseConversionTaskInput {
                 license_conversion_task_id: self.license_conversion_task_id,
@@ -4252,16 +4599,16 @@ impl GetLicenseConversionTaskInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetLicenseConversionTask,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetLicenseConversionTaskInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4269,7 +4616,7 @@ impl GetLicenseConversionTaskInput {
         fn update_http_builder(
             input: &crate::input::GetLicenseConversionTaskInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4278,32 +4625,34 @@ impl GetLicenseConversionTaskInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetLicenseConversionTaskInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSLicenseManager.GetLicenseConversionTask",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_license_conversion_task(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4326,15 +4675,15 @@ impl GetLicenseConversionTaskInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetLicenseConversionTask::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetLicenseConversionTask",
             "licensemanager",
         ));
@@ -4343,10 +4692,10 @@ impl GetLicenseConversionTaskInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4377,6 +4726,7 @@ pub mod get_license_manager_report_generator_input {
             self.license_manager_report_generator_arn = Some(input.into());
             self
         }
+        /// <p>Amazon Resource Name (ARN) of the report generator.</p>
         pub fn set_license_manager_report_generator_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4389,7 +4739,7 @@ pub mod get_license_manager_report_generator_input {
             self,
         ) -> std::result::Result<
             crate::input::GetLicenseManagerReportGeneratorInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetLicenseManagerReportGeneratorInput {
                 license_manager_report_generator_arn: self.license_manager_report_generator_arn,
@@ -4409,16 +4759,16 @@ impl GetLicenseManagerReportGeneratorInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetLicenseManagerReportGenerator,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetLicenseManagerReportGeneratorInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4426,7 +4776,7 @@ impl GetLicenseManagerReportGeneratorInput {
         fn update_http_builder(
             input: &crate::input::GetLicenseManagerReportGeneratorInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4435,30 +4785,30 @@ impl GetLicenseManagerReportGeneratorInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetLicenseManagerReportGeneratorInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSLicenseManager.GetLicenseManagerReportGenerator",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_license_manager_report_generator(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_license_manager_report_generator(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4481,15 +4831,15 @@ impl GetLicenseManagerReportGeneratorInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetLicenseManagerReportGenerator::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetLicenseManagerReportGenerator",
             "licensemanager",
         ));
@@ -4498,10 +4848,10 @@ impl GetLicenseManagerReportGeneratorInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4529,6 +4879,7 @@ pub mod get_license_usage_input {
             self.license_arn = Some(input.into());
             self
         }
+        /// <p>Amazon Resource Name (ARN) of the license.</p>
         pub fn set_license_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.license_arn = input;
             self
@@ -4538,7 +4889,7 @@ pub mod get_license_usage_input {
             self,
         ) -> std::result::Result<
             crate::input::GetLicenseUsageInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetLicenseUsageInput {
                 license_arn: self.license_arn,
@@ -4557,16 +4908,16 @@ impl GetLicenseUsageInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetLicenseUsage,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetLicenseUsageInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4574,7 +4925,7 @@ impl GetLicenseUsageInput {
         fn update_http_builder(
             input: &crate::input::GetLicenseUsageInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4583,32 +4934,32 @@ impl GetLicenseUsageInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetLicenseUsageInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSLicenseManager.GetLicenseUsage",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_license_usage(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4631,15 +4982,15 @@ impl GetLicenseUsageInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetLicenseUsage::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetLicenseUsage",
             "licensemanager",
         ));
@@ -4648,10 +4999,10 @@ impl GetLicenseUsageInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4677,7 +5028,7 @@ pub mod get_service_settings_input {
             self,
         ) -> std::result::Result<
             crate::input::GetServiceSettingsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetServiceSettingsInput {})
         }
@@ -4694,16 +5045,16 @@ impl GetServiceSettingsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetServiceSettings,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetServiceSettingsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4711,7 +5062,7 @@ impl GetServiceSettingsInput {
         fn update_http_builder(
             input: &crate::input::GetServiceSettingsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4720,30 +5071,32 @@ impl GetServiceSettingsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetServiceSettingsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSLicenseManager.GetServiceSettings",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_service_settings(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4766,15 +5119,15 @@ impl GetServiceSettingsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetServiceSettings::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetServiceSettings",
             "licensemanager",
         ));
@@ -4783,10 +5136,10 @@ impl GetServiceSettingsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4816,6 +5169,7 @@ pub mod list_associations_for_license_configuration_input {
             self.license_configuration_arn = Some(input.into());
             self
         }
+        /// <p>Amazon Resource Name (ARN) of a license configuration.</p>
         pub fn set_license_configuration_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4828,6 +5182,7 @@ pub mod list_associations_for_license_configuration_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>Maximum number of results to return in a single call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -4837,6 +5192,7 @@ pub mod list_associations_for_license_configuration_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>Token for the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4846,7 +5202,7 @@ pub mod list_associations_for_license_configuration_input {
             self,
         ) -> std::result::Result<
             crate::input::ListAssociationsForLicenseConfigurationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListAssociationsForLicenseConfigurationInput {
                 license_configuration_arn: self.license_configuration_arn,
@@ -4869,16 +5225,16 @@ impl ListAssociationsForLicenseConfigurationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListAssociationsForLicenseConfiguration,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListAssociationsForLicenseConfigurationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4886,7 +5242,7 @@ impl ListAssociationsForLicenseConfigurationInput {
         fn update_http_builder(
             input: &crate::input::ListAssociationsForLicenseConfigurationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4895,30 +5251,30 @@ impl ListAssociationsForLicenseConfigurationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListAssociationsForLicenseConfigurationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSLicenseManager.ListAssociationsForLicenseConfiguration",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_associations_for_license_configuration(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_associations_for_license_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4941,15 +5297,15 @@ impl ListAssociationsForLicenseConfigurationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListAssociationsForLicenseConfiguration::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListAssociationsForLicenseConfiguration",
             "licensemanager",
         ));
@@ -4958,10 +5314,10 @@ impl ListAssociationsForLicenseConfigurationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4987,12 +5343,18 @@ pub mod list_distributed_grants_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
+        /// Appends an item to `grant_arns`.
+        ///
+        /// To override the contents of this collection use [`set_grant_arns`](Self::set_grant_arns).
+        ///
+        /// <p>Amazon Resource Names (ARNs) of the grants.</p>
         pub fn grant_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.grant_arns.unwrap_or_default();
             v.push(input.into());
             self.grant_arns = Some(v);
             self
         }
+        /// <p>Amazon Resource Names (ARNs) of the grants.</p>
         pub fn set_grant_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5000,12 +5362,72 @@ pub mod list_distributed_grants_input {
             self.grant_arns = input;
             self
         }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>Filters to scope the results. The following filters are supported:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>LicenseArn</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GrantStatus</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GranteePrincipalARN</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ProductSKU</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>LicenseIssuerName</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input.into());
             self.filters = Some(v);
             self
         }
+        /// <p>Filters to scope the results. The following filters are supported:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>LicenseArn</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GrantStatus</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GranteePrincipalARN</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ProductSKU</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>LicenseIssuerName</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -5018,6 +5440,7 @@ pub mod list_distributed_grants_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>Token for the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5027,6 +5450,7 @@ pub mod list_distributed_grants_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>Maximum number of results to return in a single call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -5036,7 +5460,7 @@ pub mod list_distributed_grants_input {
             self,
         ) -> std::result::Result<
             crate::input::ListDistributedGrantsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListDistributedGrantsInput {
                 grant_arns: self.grant_arns,
@@ -5058,16 +5482,16 @@ impl ListDistributedGrantsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListDistributedGrants,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListDistributedGrantsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5075,7 +5499,7 @@ impl ListDistributedGrantsInput {
         fn update_http_builder(
             input: &crate::input::ListDistributedGrantsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5084,32 +5508,34 @@ impl ListDistributedGrantsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListDistributedGrantsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSLicenseManager.ListDistributedGrants",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_distributed_grants(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5132,15 +5558,15 @@ impl ListDistributedGrantsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListDistributedGrants::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListDistributedGrants",
             "licensemanager",
         ));
@@ -5149,10 +5575,10 @@ impl ListDistributedGrantsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5182,6 +5608,7 @@ pub mod list_failures_for_license_configuration_operations_input {
             self.license_configuration_arn = Some(input.into());
             self
         }
+        /// <p>Amazon Resource Name of the license configuration.</p>
         pub fn set_license_configuration_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5194,6 +5621,7 @@ pub mod list_failures_for_license_configuration_operations_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>Maximum number of results to return in a single call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -5203,6 +5631,7 @@ pub mod list_failures_for_license_configuration_operations_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>Token for the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5212,7 +5641,7 @@ pub mod list_failures_for_license_configuration_operations_input {
             self,
         ) -> std::result::Result<
             crate::input::ListFailuresForLicenseConfigurationOperationsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(
                 crate::input::ListFailuresForLicenseConfigurationOperationsInput {
@@ -5237,16 +5666,16 @@ impl ListFailuresForLicenseConfigurationOperationsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListFailuresForLicenseConfigurationOperations,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListFailuresForLicenseConfigurationOperationsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5254,7 +5683,7 @@ impl ListFailuresForLicenseConfigurationOperationsInput {
         fn update_http_builder(
             input: &crate::input::ListFailuresForLicenseConfigurationOperationsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5263,30 +5692,30 @@ impl ListFailuresForLicenseConfigurationOperationsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListFailuresForLicenseConfigurationOperationsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSLicenseManager.ListFailuresForLicenseConfigurationOperations",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_failures_for_license_configuration_operations(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_failures_for_license_configuration_operations(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5309,15 +5738,15 @@ impl ListFailuresForLicenseConfigurationOperationsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListFailuresForLicenseConfigurationOperations::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListFailuresForLicenseConfigurationOperations",
             "licensemanager",
         ));
@@ -5326,10 +5755,10 @@ impl ListFailuresForLicenseConfigurationOperationsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5357,12 +5786,18 @@ pub mod list_license_configurations_input {
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     }
     impl Builder {
+        /// Appends an item to `license_configuration_arns`.
+        ///
+        /// To override the contents of this collection use [`set_license_configuration_arns`](Self::set_license_configuration_arns).
+        ///
+        /// <p>Amazon Resource Names (ARN) of the license configurations.</p>
         pub fn license_configuration_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.license_configuration_arns.unwrap_or_default();
             v.push(input.into());
             self.license_configuration_arns = Some(v);
             self
         }
+        /// <p>Amazon Resource Names (ARN) of the license configurations.</p>
         pub fn set_license_configuration_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5375,6 +5810,7 @@ pub mod list_license_configurations_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>Maximum number of results to return in a single call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -5384,16 +5820,61 @@ pub mod list_license_configurations_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>Token for the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>Filters to scope the results. The following filters and logical operators
+        /// are supported:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>licenseCountingType</code> - The dimension for which licenses are counted.
+        /// Possible values are <code>vCPU</code> | <code>Instance</code> | <code>Core</code> | <code>Socket</code>.
+        /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>enforceLicenseCount</code> - A Boolean value that indicates whether hard license enforcement is used.
+        /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>usagelimitExceeded</code> - A Boolean value that indicates whether the available licenses have been exceeded.
+        /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
+        /// </li>
+        /// </ul>
         pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input.into());
             self.filters = Some(v);
             self
         }
+        /// <p>Filters to scope the results. The following filters and logical operators
+        /// are supported:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>licenseCountingType</code> - The dimension for which licenses are counted.
+        /// Possible values are <code>vCPU</code> | <code>Instance</code> | <code>Core</code> | <code>Socket</code>.
+        /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>enforceLicenseCount</code> - A Boolean value that indicates whether hard license enforcement is used.
+        /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>usagelimitExceeded</code> - A Boolean value that indicates whether the available licenses have been exceeded.
+        /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -5406,7 +5887,7 @@ pub mod list_license_configurations_input {
             self,
         ) -> std::result::Result<
             crate::input::ListLicenseConfigurationsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListLicenseConfigurationsInput {
                 license_configuration_arns: self.license_configuration_arns,
@@ -5429,16 +5910,16 @@ impl ListLicenseConfigurationsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListLicenseConfigurations,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListLicenseConfigurationsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5446,7 +5927,7 @@ impl ListLicenseConfigurationsInput {
         fn update_http_builder(
             input: &crate::input::ListLicenseConfigurationsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5455,32 +5936,34 @@ impl ListLicenseConfigurationsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListLicenseConfigurationsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSLicenseManager.ListLicenseConfigurations",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_license_configurations(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5503,15 +5986,15 @@ impl ListLicenseConfigurationsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListLicenseConfigurations::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListLicenseConfigurations",
             "licensemanager",
         ));
@@ -5520,10 +6003,10 @@ impl ListLicenseConfigurationsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5553,6 +6036,7 @@ pub mod list_license_conversion_tasks_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>Token for the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5562,16 +6046,27 @@ pub mod list_license_conversion_tasks_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>Maximum number of results to return in a single call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>
+        /// Filters to scope the results. Valid filters are <code>ResourceArns</code> and <code>Status</code>.
+        /// </p>
         pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input.into());
             self.filters = Some(v);
             self
         }
+        /// <p>
+        /// Filters to scope the results. Valid filters are <code>ResourceArns</code> and <code>Status</code>.
+        /// </p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -5584,7 +6079,7 @@ pub mod list_license_conversion_tasks_input {
             self,
         ) -> std::result::Result<
             crate::input::ListLicenseConversionTasksInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListLicenseConversionTasksInput {
                 next_token: self.next_token,
@@ -5606,16 +6101,16 @@ impl ListLicenseConversionTasksInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListLicenseConversionTasks,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListLicenseConversionTasksInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5623,7 +6118,7 @@ impl ListLicenseConversionTasksInput {
         fn update_http_builder(
             input: &crate::input::ListLicenseConversionTasksInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5632,30 +6127,30 @@ impl ListLicenseConversionTasksInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListLicenseConversionTasksInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSLicenseManager.ListLicenseConversionTasks",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_license_conversion_tasks(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_license_conversion_tasks(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5678,15 +6173,15 @@ impl ListLicenseConversionTasksInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListLicenseConversionTasks::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListLicenseConversionTasks",
             "licensemanager",
         ));
@@ -5695,10 +6190,10 @@ impl ListLicenseConversionTasksInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5723,12 +6218,32 @@ pub mod list_license_manager_report_generators_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>Filters to scope the results. The following filters are supported: </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>LicenseConfigurationArn</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input.into());
             self.filters = Some(v);
             self
         }
+        /// <p>Filters to scope the results. The following filters are supported: </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>LicenseConfigurationArn</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -5741,6 +6256,7 @@ pub mod list_license_manager_report_generators_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>Token for the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5750,6 +6266,7 @@ pub mod list_license_manager_report_generators_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>Maximum number of results to return in a single call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -5759,7 +6276,7 @@ pub mod list_license_manager_report_generators_input {
             self,
         ) -> std::result::Result<
             crate::input::ListLicenseManagerReportGeneratorsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListLicenseManagerReportGeneratorsInput {
                 filters: self.filters,
@@ -5781,16 +6298,16 @@ impl ListLicenseManagerReportGeneratorsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListLicenseManagerReportGenerators,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListLicenseManagerReportGeneratorsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5798,7 +6315,7 @@ impl ListLicenseManagerReportGeneratorsInput {
         fn update_http_builder(
             input: &crate::input::ListLicenseManagerReportGeneratorsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5807,30 +6324,30 @@ impl ListLicenseManagerReportGeneratorsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListLicenseManagerReportGeneratorsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSLicenseManager.ListLicenseManagerReportGenerators",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_license_manager_report_generators(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_license_manager_report_generators(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5853,15 +6370,15 @@ impl ListLicenseManagerReportGeneratorsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListLicenseManagerReportGenerators::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListLicenseManagerReportGenerators",
             "licensemanager",
         ));
@@ -5870,10 +6387,10 @@ impl ListLicenseManagerReportGeneratorsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5899,12 +6416,18 @@ pub mod list_licenses_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
+        /// Appends an item to `license_arns`.
+        ///
+        /// To override the contents of this collection use [`set_license_arns`](Self::set_license_arns).
+        ///
+        /// <p>Amazon Resource Names (ARNs) of the licenses.</p>
         pub fn license_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.license_arns.unwrap_or_default();
             v.push(input.into());
             self.license_arns = Some(v);
             self
         }
+        /// <p>Amazon Resource Names (ARNs) of the licenses.</p>
         pub fn set_license_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5912,12 +6435,62 @@ pub mod list_licenses_input {
             self.license_arns = input;
             self
         }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>Filters to scope the results. The following filters are supported:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Beneficiary</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ProductSKU</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Fingerprint</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Status</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input.into());
             self.filters = Some(v);
             self
         }
+        /// <p>Filters to scope the results. The following filters are supported:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Beneficiary</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ProductSKU</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Fingerprint</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Status</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -5930,6 +6503,7 @@ pub mod list_licenses_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>Token for the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5939,6 +6513,7 @@ pub mod list_licenses_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>Maximum number of results to return in a single call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -5946,8 +6521,10 @@ pub mod list_licenses_input {
         /// Consumes the builder and constructs a [`ListLicensesInput`](crate::input::ListLicensesInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListLicensesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListLicensesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListLicensesInput {
                 license_arns: self.license_arns,
                 filters: self.filters,
@@ -5968,16 +6545,16 @@ impl ListLicensesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListLicenses,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListLicensesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5985,7 +6562,7 @@ impl ListLicensesInput {
         fn update_http_builder(
             input: &crate::input::ListLicensesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5994,31 +6571,31 @@ impl ListLicensesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListLicensesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSLicenseManager.ListLicenses",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_licenses(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6041,25 +6618,27 @@ impl ListLicensesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListLicenses::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ListLicenses",
-                    "licensemanager",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListLicenses::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListLicenses",
+            "licensemanager",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6089,6 +6668,7 @@ pub mod list_license_specifications_for_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>Amazon Resource Name (ARN) of a resource that has an associated license configuration.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -6098,6 +6678,7 @@ pub mod list_license_specifications_for_resource_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>Maximum number of results to return in a single call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -6107,6 +6688,7 @@ pub mod list_license_specifications_for_resource_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>Token for the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6116,7 +6698,7 @@ pub mod list_license_specifications_for_resource_input {
             self,
         ) -> std::result::Result<
             crate::input::ListLicenseSpecificationsForResourceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListLicenseSpecificationsForResourceInput {
                 resource_arn: self.resource_arn,
@@ -6139,16 +6721,16 @@ impl ListLicenseSpecificationsForResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListLicenseSpecificationsForResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListLicenseSpecificationsForResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6156,7 +6738,7 @@ impl ListLicenseSpecificationsForResourceInput {
         fn update_http_builder(
             input: &crate::input::ListLicenseSpecificationsForResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6165,30 +6747,30 @@ impl ListLicenseSpecificationsForResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListLicenseSpecificationsForResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSLicenseManager.ListLicenseSpecificationsForResource",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_license_specifications_for_resource(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_license_specifications_for_resource(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6211,15 +6793,15 @@ impl ListLicenseSpecificationsForResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListLicenseSpecificationsForResource::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListLicenseSpecificationsForResource",
             "licensemanager",
         ));
@@ -6228,10 +6810,10 @@ impl ListLicenseSpecificationsForResourceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6261,6 +6843,7 @@ pub mod list_license_versions_input {
             self.license_arn = Some(input.into());
             self
         }
+        /// <p>Amazon Resource Name (ARN) of the license.</p>
         pub fn set_license_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.license_arn = input;
             self
@@ -6270,6 +6853,7 @@ pub mod list_license_versions_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>Token for the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6279,6 +6863,7 @@ pub mod list_license_versions_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>Maximum number of results to return in a single call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -6288,7 +6873,7 @@ pub mod list_license_versions_input {
             self,
         ) -> std::result::Result<
             crate::input::ListLicenseVersionsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListLicenseVersionsInput {
                 license_arn: self.license_arn,
@@ -6309,16 +6894,16 @@ impl ListLicenseVersionsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListLicenseVersions,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListLicenseVersionsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6326,7 +6911,7 @@ impl ListLicenseVersionsInput {
         fn update_http_builder(
             input: &crate::input::ListLicenseVersionsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6335,32 +6920,32 @@ impl ListLicenseVersionsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListLicenseVersionsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSLicenseManager.ListLicenseVersions",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_license_versions(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6383,15 +6968,15 @@ impl ListLicenseVersionsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListLicenseVersions::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListLicenseVersions",
             "licensemanager",
         ));
@@ -6400,10 +6985,10 @@ impl ListLicenseVersionsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6429,12 +7014,18 @@ pub mod list_received_grants_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
+        /// Appends an item to `grant_arns`.
+        ///
+        /// To override the contents of this collection use [`set_grant_arns`](Self::set_grant_arns).
+        ///
+        /// <p>Amazon Resource Names (ARNs) of the grants.</p>
         pub fn grant_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.grant_arns.unwrap_or_default();
             v.push(input.into());
             self.grant_arns = Some(v);
             self
         }
+        /// <p>Amazon Resource Names (ARNs) of the grants.</p>
         pub fn set_grant_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6442,12 +7033,72 @@ pub mod list_received_grants_input {
             self.grant_arns = input;
             self
         }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>Filters to scope the results. The following filters are supported:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ProductSKU</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>LicenseIssuerName</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>LicenseArn</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GrantStatus</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GranterAccountId</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input.into());
             self.filters = Some(v);
             self
         }
+        /// <p>Filters to scope the results. The following filters are supported:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ProductSKU</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>LicenseIssuerName</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>LicenseArn</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GrantStatus</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GranterAccountId</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -6460,6 +7111,7 @@ pub mod list_received_grants_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>Token for the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6469,6 +7121,7 @@ pub mod list_received_grants_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>Maximum number of results to return in a single call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -6478,7 +7131,7 @@ pub mod list_received_grants_input {
             self,
         ) -> std::result::Result<
             crate::input::ListReceivedGrantsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListReceivedGrantsInput {
                 grant_arns: self.grant_arns,
@@ -6500,16 +7153,16 @@ impl ListReceivedGrantsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListReceivedGrants,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListReceivedGrantsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6517,7 +7170,7 @@ impl ListReceivedGrantsInput {
         fn update_http_builder(
             input: &crate::input::ListReceivedGrantsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6526,30 +7179,32 @@ impl ListReceivedGrantsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListReceivedGrantsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSLicenseManager.ListReceivedGrants",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_received_grants(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6572,15 +7227,15 @@ impl ListReceivedGrantsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListReceivedGrants::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListReceivedGrants",
             "licensemanager",
         ));
@@ -6589,10 +7244,10 @@ impl ListReceivedGrantsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6618,12 +7273,18 @@ pub mod list_received_licenses_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
+        /// Appends an item to `license_arns`.
+        ///
+        /// To override the contents of this collection use [`set_license_arns`](Self::set_license_arns).
+        ///
+        /// <p>Amazon Resource Names (ARNs) of the licenses.</p>
         pub fn license_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.license_arns.unwrap_or_default();
             v.push(input.into());
             self.license_arns = Some(v);
             self
         }
+        /// <p>Amazon Resource Names (ARNs) of the licenses.</p>
         pub fn set_license_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6631,12 +7292,72 @@ pub mod list_received_licenses_input {
             self.license_arns = input;
             self
         }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>Filters to scope the results. The following filters are supported:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ProductSKU</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Status</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Fingerprint</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>IssuerName</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Beneficiary</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input.into());
             self.filters = Some(v);
             self
         }
+        /// <p>Filters to scope the results. The following filters are supported:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ProductSKU</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Status</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Fingerprint</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>IssuerName</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Beneficiary</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -6649,6 +7370,7 @@ pub mod list_received_licenses_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>Token for the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6658,6 +7380,7 @@ pub mod list_received_licenses_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>Maximum number of results to return in a single call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -6667,7 +7390,7 @@ pub mod list_received_licenses_input {
             self,
         ) -> std::result::Result<
             crate::input::ListReceivedLicensesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListReceivedLicensesInput {
                 license_arns: self.license_arns,
@@ -6689,16 +7412,16 @@ impl ListReceivedLicensesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListReceivedLicenses,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListReceivedLicensesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6706,7 +7429,7 @@ impl ListReceivedLicensesInput {
         fn update_http_builder(
             input: &crate::input::ListReceivedLicensesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6715,32 +7438,32 @@ impl ListReceivedLicensesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListReceivedLicensesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSLicenseManager.ListReceivedLicenses",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_received_licenses(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6763,15 +7486,15 @@ impl ListReceivedLicensesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListReceivedLicenses::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListReceivedLicenses",
             "licensemanager",
         ));
@@ -6780,10 +7503,10 @@ impl ListReceivedLicensesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6813,6 +7536,7 @@ pub mod list_resource_inventory_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>Maximum number of results to return in a single call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -6822,16 +7546,99 @@ pub mod list_resource_inventory_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>Token for the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>Filters to scope the results. The following filters and logical operators
+        /// are supported:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>account_id</code> - The ID of the Amazon Web Services account that owns the resource.
+        /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>application_name</code> - The name of the application.
+        /// Logical operators are <code>EQUALS</code> | <code>BEGINS_WITH</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>license_included</code> - The type of license included.
+        /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+        /// Possible values are <code>sql-server-enterprise</code> |
+        /// <code>sql-server-standard</code> |
+        /// <code>sql-server-web</code> |  
+        /// <code>windows-server-datacenter</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>platform</code> - The platform of the resource.
+        /// Logical operators are <code>EQUALS</code> | <code>BEGINS_WITH</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>resource_id</code> - The ID of the resource.
+        /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>tag:<key></code> - The key/value combination of a tag assigned
+        /// to the resource. Logical operators are <code>EQUALS</code> (single account) or
+        /// <code>EQUALS</code> | <code>NOT_EQUALS</code> (cross account).</p>
+        /// </li>
+        /// </ul>
         pub fn filters(mut self, input: impl Into<crate::model::InventoryFilter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input.into());
             self.filters = Some(v);
             self
         }
+        /// <p>Filters to scope the results. The following filters and logical operators
+        /// are supported:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>account_id</code> - The ID of the Amazon Web Services account that owns the resource.
+        /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>application_name</code> - The name of the application.
+        /// Logical operators are <code>EQUALS</code> | <code>BEGINS_WITH</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>license_included</code> - The type of license included.
+        /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+        /// Possible values are <code>sql-server-enterprise</code> |
+        /// <code>sql-server-standard</code> |
+        /// <code>sql-server-web</code> |  
+        /// <code>windows-server-datacenter</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>platform</code> - The platform of the resource.
+        /// Logical operators are <code>EQUALS</code> | <code>BEGINS_WITH</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>resource_id</code> - The ID of the resource.
+        /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>tag:<key></code> - The key/value combination of a tag assigned
+        /// to the resource. Logical operators are <code>EQUALS</code> (single account) or
+        /// <code>EQUALS</code> | <code>NOT_EQUALS</code> (cross account).</p>
+        /// </li>
+        /// </ul>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InventoryFilter>>,
@@ -6844,7 +7651,7 @@ pub mod list_resource_inventory_input {
             self,
         ) -> std::result::Result<
             crate::input::ListResourceInventoryInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListResourceInventoryInput {
                 max_results: self.max_results,
@@ -6865,16 +7672,16 @@ impl ListResourceInventoryInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListResourceInventory,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListResourceInventoryInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6882,7 +7689,7 @@ impl ListResourceInventoryInput {
         fn update_http_builder(
             input: &crate::input::ListResourceInventoryInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6891,32 +7698,34 @@ impl ListResourceInventoryInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListResourceInventoryInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSLicenseManager.ListResourceInventory",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_resource_inventory(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6939,15 +7748,15 @@ impl ListResourceInventoryInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListResourceInventory::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListResourceInventory",
             "licensemanager",
         ));
@@ -6956,10 +7765,10 @@ impl ListResourceInventoryInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6987,6 +7796,7 @@ pub mod list_tags_for_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -6996,7 +7806,7 @@ pub mod list_tags_for_resource_input {
             self,
         ) -> std::result::Result<
             crate::input::ListTagsForResourceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListTagsForResourceInput {
                 resource_arn: self.resource_arn,
@@ -7015,16 +7825,16 @@ impl ListTagsForResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListTagsForResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7032,7 +7842,7 @@ impl ListTagsForResourceInput {
         fn update_http_builder(
             input: &crate::input::ListTagsForResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7041,32 +7851,32 @@ impl ListTagsForResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListTagsForResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSLicenseManager.ListTagsForResource",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7089,15 +7899,15 @@ impl ListTagsForResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListTagsForResource::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListTagsForResource",
             "licensemanager",
         ));
@@ -7106,10 +7916,10 @@ impl ListTagsForResourceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7135,12 +7945,18 @@ pub mod list_tokens_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
+        /// Appends an item to `token_ids`.
+        ///
+        /// To override the contents of this collection use [`set_token_ids`](Self::set_token_ids).
+        ///
+        /// <p>Token IDs.</p>
         pub fn token_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.token_ids.unwrap_or_default();
             v.push(input.into());
             self.token_ids = Some(v);
             self
         }
+        /// <p>Token IDs.</p>
         pub fn set_token_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7148,12 +7964,32 @@ pub mod list_tokens_input {
             self.token_ids = input;
             self
         }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>Filters to scope the results. The following filter is supported:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>LicenseArns</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input.into());
             self.filters = Some(v);
             self
         }
+        /// <p>Filters to scope the results. The following filter is supported:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>LicenseArns</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -7166,6 +8002,7 @@ pub mod list_tokens_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>Token for the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7175,6 +8012,7 @@ pub mod list_tokens_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>Maximum number of results to return in a single call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -7182,8 +8020,10 @@ pub mod list_tokens_input {
         /// Consumes the builder and constructs a [`ListTokensInput`](crate::input::ListTokensInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListTokensInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListTokensInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListTokensInput {
                 token_ids: self.token_ids,
                 filters: self.filters,
@@ -7204,16 +8044,16 @@ impl ListTokensInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListTokens,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListTokensInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7221,7 +8061,7 @@ impl ListTokensInput {
         fn update_http_builder(
             input: &crate::input::ListTokensInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7230,29 +8070,31 @@ impl ListTokensInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListTokensInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSLicenseManager.ListTokens",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_tokens(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7275,25 +8117,27 @@ impl ListTokensInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListTokens::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ListTokens",
-                    "licensemanager",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListTokens::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListTokens",
+            "licensemanager",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7324,6 +8168,7 @@ pub mod list_usage_for_license_configuration_input {
             self.license_configuration_arn = Some(input.into());
             self
         }
+        /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
         pub fn set_license_configuration_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7336,6 +8181,7 @@ pub mod list_usage_for_license_configuration_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>Maximum number of results to return in a single call.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -7345,16 +8191,59 @@ pub mod list_usage_for_license_configuration_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>Token for the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>Filters to scope the results. The following filters and logical operators
+        /// are supported:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>resourceArn</code> - The ARN of the license configuration resource.
+        /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>resourceType</code> - The resource type (<code>EC2_INSTANCE</code> | <code>EC2_HOST</code> | <code>EC2_AMI</code> | <code>SYSTEMS_MANAGER_MANAGED_INSTANCE</code>).
+        /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>resourceAccount</code> - The ID of the account that owns the resource.
+        /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
+        /// </li>
+        /// </ul>
         pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input.into());
             self.filters = Some(v);
             self
         }
+        /// <p>Filters to scope the results. The following filters and logical operators
+        /// are supported:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>resourceArn</code> - The ARN of the license configuration resource.
+        /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>resourceType</code> - The resource type (<code>EC2_INSTANCE</code> | <code>EC2_HOST</code> | <code>EC2_AMI</code> | <code>SYSTEMS_MANAGER_MANAGED_INSTANCE</code>).
+        /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>resourceAccount</code> - The ID of the account that owns the resource.
+        /// Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -7367,7 +8256,7 @@ pub mod list_usage_for_license_configuration_input {
             self,
         ) -> std::result::Result<
             crate::input::ListUsageForLicenseConfigurationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListUsageForLicenseConfigurationInput {
                 license_configuration_arn: self.license_configuration_arn,
@@ -7390,16 +8279,16 @@ impl ListUsageForLicenseConfigurationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListUsageForLicenseConfiguration,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListUsageForLicenseConfigurationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7407,7 +8296,7 @@ impl ListUsageForLicenseConfigurationInput {
         fn update_http_builder(
             input: &crate::input::ListUsageForLicenseConfigurationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7416,30 +8305,30 @@ impl ListUsageForLicenseConfigurationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListUsageForLicenseConfigurationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSLicenseManager.ListUsageForLicenseConfiguration",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_usage_for_license_configuration(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_usage_for_license_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7462,15 +8351,15 @@ impl ListUsageForLicenseConfigurationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListUsageForLicenseConfiguration::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListUsageForLicenseConfiguration",
             "licensemanager",
         ));
@@ -7479,10 +8368,10 @@ impl ListUsageForLicenseConfigurationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7510,6 +8399,7 @@ pub mod reject_grant_input {
             self.grant_arn = Some(input.into());
             self
         }
+        /// <p>Amazon Resource Name (ARN) of the grant.</p>
         pub fn set_grant_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.grant_arn = input;
             self
@@ -7517,8 +8407,10 @@ pub mod reject_grant_input {
         /// Consumes the builder and constructs a [`RejectGrantInput`](crate::input::RejectGrantInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::RejectGrantInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::RejectGrantInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::RejectGrantInput {
                 grant_arn: self.grant_arn,
             })
@@ -7536,16 +8428,16 @@ impl RejectGrantInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RejectGrant,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RejectGrantInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7553,7 +8445,7 @@ impl RejectGrantInput {
         fn update_http_builder(
             input: &crate::input::RejectGrantInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7562,29 +8454,31 @@ impl RejectGrantInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RejectGrantInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSLicenseManager.RejectGrant",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_reject_grant(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7607,25 +8501,27 @@ impl RejectGrantInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::RejectGrant::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "RejectGrant",
-                    "licensemanager",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::RejectGrant::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "RejectGrant",
+            "licensemanager",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7654,16 +8550,23 @@ pub mod tag_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>One or more tags.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>One or more tags.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -7674,8 +8577,10 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::TagResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::TagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::TagResourceInput {
                 resource_arn: self.resource_arn,
                 tags: self.tags,
@@ -7694,16 +8599,16 @@ impl TagResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::TagResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7711,7 +8616,7 @@ impl TagResourceInput {
         fn update_http_builder(
             input: &crate::input::TagResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7720,29 +8625,31 @@ impl TagResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::TagResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSLicenseManager.TagResource",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7765,25 +8672,27 @@ impl TagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::TagResource::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "TagResource",
-                    "licensemanager",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::TagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "TagResource",
+            "licensemanager",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7812,16 +8721,23 @@ pub mod untag_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Appends an item to `tag_keys`.
+        ///
+        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
+        ///
+        /// <p>Keys identifying the tags to remove.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
+        /// <p>Keys identifying the tags to remove.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7832,8 +8748,10 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UntagResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UntagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UntagResourceInput {
                 resource_arn: self.resource_arn,
                 tag_keys: self.tag_keys,
@@ -7852,16 +8770,16 @@ impl UntagResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UntagResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7869,7 +8787,7 @@ impl UntagResourceInput {
         fn update_http_builder(
             input: &crate::input::UntagResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7878,29 +8796,31 @@ impl UntagResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UntagResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSLicenseManager.UntagResource",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7923,25 +8843,27 @@ impl UntagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UntagResource::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UntagResource",
-                    "licensemanager",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UntagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UntagResource",
+            "licensemanager",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7979,6 +8901,7 @@ pub mod update_license_configuration_input {
             self.license_configuration_arn = Some(input.into());
             self
         }
+        /// <p>Amazon Resource Name (ARN) of the license configuration.</p>
         pub fn set_license_configuration_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7994,6 +8917,7 @@ pub mod update_license_configuration_input {
             self.license_configuration_status = Some(input);
             self
         }
+        /// <p>New status of the license configuration.</p>
         pub fn set_license_configuration_status(
             mut self,
             input: std::option::Option<crate::model::LicenseConfigurationStatus>,
@@ -8001,12 +8925,20 @@ pub mod update_license_configuration_input {
             self.license_configuration_status = input;
             self
         }
+        /// Appends an item to `license_rules`.
+        ///
+        /// To override the contents of this collection use [`set_license_rules`](Self::set_license_rules).
+        ///
+        /// <p>New license rule. The only rule that you can add after you create a license
+        /// configuration is licenseAffinityToHost.</p>
         pub fn license_rules(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.license_rules.unwrap_or_default();
             v.push(input.into());
             self.license_rules = Some(v);
             self
         }
+        /// <p>New license rule. The only rule that you can add after you create a license
+        /// configuration is licenseAffinityToHost.</p>
         pub fn set_license_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8019,6 +8951,7 @@ pub mod update_license_configuration_input {
             self.license_count = Some(input);
             self
         }
+        /// <p>New number of licenses managed by the license configuration.</p>
         pub fn set_license_count(mut self, input: std::option::Option<i64>) -> Self {
             self.license_count = input;
             self
@@ -8028,6 +8961,7 @@ pub mod update_license_configuration_input {
             self.license_count_hard_limit = Some(input);
             self
         }
+        /// <p>New hard limit of the number of available licenses.</p>
         pub fn set_license_count_hard_limit(mut self, input: std::option::Option<bool>) -> Self {
             self.license_count_hard_limit = input;
             self
@@ -8037,6 +8971,7 @@ pub mod update_license_configuration_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>New name of the license configuration.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -8046,10 +8981,16 @@ pub mod update_license_configuration_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>New description of the license configuration.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Appends an item to `product_information_list`.
+        ///
+        /// To override the contents of this collection use [`set_product_information_list`](Self::set_product_information_list).
+        ///
+        /// <p>New product information.</p>
         pub fn product_information_list(
             mut self,
             input: impl Into<crate::model::ProductInformation>,
@@ -8059,6 +9000,7 @@ pub mod update_license_configuration_input {
             self.product_information_list = Some(v);
             self
         }
+        /// <p>New product information.</p>
         pub fn set_product_information_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ProductInformation>>,
@@ -8071,6 +9013,7 @@ pub mod update_license_configuration_input {
             self.disassociate_when_not_found = Some(input);
             self
         }
+        /// <p>When true, disassociates a resource when software is uninstalled.</p>
         pub fn set_disassociate_when_not_found(mut self, input: std::option::Option<bool>) -> Self {
             self.disassociate_when_not_found = input;
             self
@@ -8080,7 +9023,7 @@ pub mod update_license_configuration_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateLicenseConfigurationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateLicenseConfigurationInput {
                 license_configuration_arn: self.license_configuration_arn,
@@ -8108,16 +9051,16 @@ impl UpdateLicenseConfigurationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateLicenseConfiguration,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateLicenseConfigurationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8125,7 +9068,7 @@ impl UpdateLicenseConfigurationInput {
         fn update_http_builder(
             input: &crate::input::UpdateLicenseConfigurationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8134,32 +9077,34 @@ impl UpdateLicenseConfigurationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateLicenseConfigurationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSLicenseManager.UpdateLicenseConfiguration",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_license_configuration(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8182,15 +9127,15 @@ impl UpdateLicenseConfigurationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateLicenseConfiguration::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateLicenseConfiguration",
             "licensemanager",
         ));
@@ -8199,10 +9144,10 @@ impl UpdateLicenseConfigurationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8239,6 +9184,7 @@ pub mod update_license_manager_report_generator_input {
             self.license_manager_report_generator_arn = Some(input.into());
             self
         }
+        /// <p>Amazon Resource Name (ARN) of the report generator to update.</p>
         pub fn set_license_manager_report_generator_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8251,6 +9197,7 @@ pub mod update_license_manager_report_generator_input {
             self.report_generator_name = Some(input.into());
             self
         }
+        /// <p>Name of the report generator.</p>
         pub fn set_report_generator_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8258,12 +9205,34 @@ pub mod update_license_manager_report_generator_input {
             self.report_generator_name = input;
             self
         }
+        /// Appends an item to `r#type`.
+        ///
+        /// To override the contents of this collection use [`set_type`](Self::set_type).
+        ///
+        /// <p>Type of reports to generate. The following report types are supported:</p>
+        /// <ul>
+        /// <li>
+        /// <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p>
+        /// </li>
+        /// <li>
+        /// <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p>
+        /// </li>
+        /// </ul>
         pub fn r#type(mut self, input: impl Into<crate::model::ReportType>) -> Self {
             let mut v = self.r#type.unwrap_or_default();
             v.push(input.into());
             self.r#type = Some(v);
             self
         }
+        /// <p>Type of reports to generate. The following report types are supported:</p>
+        /// <ul>
+        /// <li>
+        /// <p>License configuration report - Reports the number and details of consumed licenses for a license configuration.</p>
+        /// </li>
+        /// <li>
+        /// <p>Resource report - Reports the tracked licenses and resource consumption for a license configuration.</p>
+        /// </li>
+        /// </ul>
         pub fn set_type(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ReportType>>,
@@ -8276,6 +9245,7 @@ pub mod update_license_manager_report_generator_input {
             self.report_context = Some(input);
             self
         }
+        /// <p>The report context.</p>
         pub fn set_report_context(
             mut self,
             input: std::option::Option<crate::model::ReportContext>,
@@ -8288,6 +9258,7 @@ pub mod update_license_manager_report_generator_input {
             self.report_frequency = Some(input);
             self
         }
+        /// <p>Frequency by which reports are generated.</p>
         pub fn set_report_frequency(
             mut self,
             input: std::option::Option<crate::model::ReportFrequency>,
@@ -8300,6 +9271,7 @@ pub mod update_license_manager_report_generator_input {
             self.client_token = Some(input.into());
             self
         }
+        /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -8309,6 +9281,7 @@ pub mod update_license_manager_report_generator_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>Description of the report generator.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -8318,7 +9291,7 @@ pub mod update_license_manager_report_generator_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateLicenseManagerReportGeneratorInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateLicenseManagerReportGeneratorInput {
                 license_manager_report_generator_arn: self.license_manager_report_generator_arn,
@@ -8345,16 +9318,16 @@ impl UpdateLicenseManagerReportGeneratorInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateLicenseManagerReportGenerator,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateLicenseManagerReportGeneratorInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8362,7 +9335,7 @@ impl UpdateLicenseManagerReportGeneratorInput {
         fn update_http_builder(
             input: &crate::input::UpdateLicenseManagerReportGeneratorInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8371,30 +9344,30 @@ impl UpdateLicenseManagerReportGeneratorInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateLicenseManagerReportGeneratorInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSLicenseManager.UpdateLicenseManagerReportGenerator",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_license_manager_report_generator(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_license_manager_report_generator(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8417,15 +9390,15 @@ impl UpdateLicenseManagerReportGeneratorInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateLicenseManagerReportGenerator::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateLicenseManagerReportGenerator",
             "licensemanager",
         ));
@@ -8434,10 +9407,10 @@ impl UpdateLicenseManagerReportGeneratorInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8469,10 +9442,16 @@ pub mod update_license_specifications_for_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>Amazon Resource Name (ARN) of the Amazon Web Services resource.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Appends an item to `add_license_specifications`.
+        ///
+        /// To override the contents of this collection use [`set_add_license_specifications`](Self::set_add_license_specifications).
+        ///
+        /// <p>ARNs of the license configurations to add.</p>
         pub fn add_license_specifications(
             mut self,
             input: impl Into<crate::model::LicenseSpecification>,
@@ -8482,6 +9461,7 @@ pub mod update_license_specifications_for_resource_input {
             self.add_license_specifications = Some(v);
             self
         }
+        /// <p>ARNs of the license configurations to add.</p>
         pub fn set_add_license_specifications(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LicenseSpecification>>,
@@ -8489,6 +9469,11 @@ pub mod update_license_specifications_for_resource_input {
             self.add_license_specifications = input;
             self
         }
+        /// Appends an item to `remove_license_specifications`.
+        ///
+        /// To override the contents of this collection use [`set_remove_license_specifications`](Self::set_remove_license_specifications).
+        ///
+        /// <p>ARNs of the license configurations to remove.</p>
         pub fn remove_license_specifications(
             mut self,
             input: impl Into<crate::model::LicenseSpecification>,
@@ -8498,6 +9483,7 @@ pub mod update_license_specifications_for_resource_input {
             self.remove_license_specifications = Some(v);
             self
         }
+        /// <p>ARNs of the license configurations to remove.</p>
         pub fn set_remove_license_specifications(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LicenseSpecification>>,
@@ -8510,7 +9496,7 @@ pub mod update_license_specifications_for_resource_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateLicenseSpecificationsForResourceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateLicenseSpecificationsForResourceInput {
                 resource_arn: self.resource_arn,
@@ -8533,16 +9519,16 @@ impl UpdateLicenseSpecificationsForResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateLicenseSpecificationsForResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateLicenseSpecificationsForResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8550,7 +9536,7 @@ impl UpdateLicenseSpecificationsForResourceInput {
         fn update_http_builder(
             input: &crate::input::UpdateLicenseSpecificationsForResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8559,30 +9545,30 @@ impl UpdateLicenseSpecificationsForResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateLicenseSpecificationsForResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSLicenseManager.UpdateLicenseSpecificationsForResource",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_license_specifications_for_resource(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_license_specifications_for_resource(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8605,15 +9591,15 @@ impl UpdateLicenseSpecificationsForResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateLicenseSpecificationsForResource::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateLicenseSpecificationsForResource",
             "licensemanager",
         ));
@@ -8622,10 +9608,10 @@ impl UpdateLicenseSpecificationsForResourceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8657,6 +9643,7 @@ pub mod update_service_settings_input {
             self.s3_bucket_arn = Some(input.into());
             self
         }
+        /// <p>Amazon Resource Name (ARN) of the Amazon S3 bucket where the License Manager information is stored.</p>
         pub fn set_s3_bucket_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8669,6 +9656,7 @@ pub mod update_service_settings_input {
             self.sns_topic_arn = Some(input.into());
             self
         }
+        /// <p>Amazon Resource Name (ARN) of the Amazon SNS topic used for License Manager alerts.</p>
         pub fn set_sns_topic_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8684,6 +9672,7 @@ pub mod update_service_settings_input {
             self.organization_configuration = Some(input);
             self
         }
+        /// <p>Enables integration with Organizations for cross-account discovery.</p>
         pub fn set_organization_configuration(
             mut self,
             input: std::option::Option<crate::model::OrganizationConfiguration>,
@@ -8696,6 +9685,7 @@ pub mod update_service_settings_input {
             self.enable_cross_accounts_discovery = Some(input);
             self
         }
+        /// <p>Activates cross-account discovery.</p>
         pub fn set_enable_cross_accounts_discovery(
             mut self,
             input: std::option::Option<bool>,
@@ -8708,7 +9698,7 @@ pub mod update_service_settings_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateServiceSettingsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateServiceSettingsInput {
                 s3_bucket_arn: self.s3_bucket_arn,
@@ -8730,16 +9720,16 @@ impl UpdateServiceSettingsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateServiceSettings,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateServiceSettingsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8747,7 +9737,7 @@ impl UpdateServiceSettingsInput {
         fn update_http_builder(
             input: &crate::input::UpdateServiceSettingsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8756,32 +9746,34 @@ impl UpdateServiceSettingsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateServiceSettingsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSLicenseManager.UpdateServiceSettings",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_service_settings(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8804,15 +9796,15 @@ impl UpdateServiceSettingsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateServiceSettings::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateServiceSettings",
             "licensemanager",
         ));
@@ -8821,10 +9813,10 @@ impl UpdateServiceSettingsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8838,6 +9830,7 @@ impl UpdateServiceSettingsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateServiceSettingsInput {
@@ -8867,6 +9860,7 @@ impl std::fmt::Debug for UpdateServiceSettingsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateLicenseSpecificationsForResourceInput {
@@ -8895,6 +9889,7 @@ impl std::fmt::Debug for UpdateLicenseSpecificationsForResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateLicenseManagerReportGeneratorInput {
@@ -8938,6 +9933,7 @@ impl std::fmt::Debug for UpdateLicenseManagerReportGeneratorInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateLicenseConfigurationInput {
@@ -8984,6 +9980,7 @@ impl std::fmt::Debug for UpdateLicenseConfigurationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
@@ -9001,6 +9998,7 @@ impl std::fmt::Debug for UntagResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
@@ -9018,6 +10016,7 @@ impl std::fmt::Debug for TagResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RejectGrantInput {
@@ -9032,6 +10031,7 @@ impl std::fmt::Debug for RejectGrantInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListUsageForLicenseConfigurationInput {
@@ -9073,6 +10073,7 @@ impl std::fmt::Debug for ListUsageForLicenseConfigurationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTokensInput {
@@ -9103,6 +10104,7 @@ impl std::fmt::Debug for ListTokensInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
@@ -9117,6 +10119,7 @@ impl std::fmt::Debug for ListTagsForResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResourceInventoryInput {
@@ -9175,6 +10178,7 @@ impl std::fmt::Debug for ListResourceInventoryInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListReceivedLicensesInput {
@@ -9225,6 +10229,7 @@ impl std::fmt::Debug for ListReceivedLicensesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListReceivedGrantsInput {
@@ -9275,6 +10280,7 @@ impl std::fmt::Debug for ListReceivedGrantsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLicenseVersionsInput {
@@ -9295,6 +10301,7 @@ impl std::fmt::Debug for ListLicenseVersionsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLicenseSpecificationsForResourceInput {
@@ -9315,6 +10322,7 @@ impl std::fmt::Debug for ListLicenseSpecificationsForResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLicensesInput {
@@ -9360,6 +10368,7 @@ impl std::fmt::Debug for ListLicensesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLicenseManagerReportGeneratorsInput {
@@ -9387,6 +10396,7 @@ impl std::fmt::Debug for ListLicenseManagerReportGeneratorsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLicenseConversionTasksInput {
@@ -9409,6 +10419,7 @@ impl std::fmt::Debug for ListLicenseConversionTasksInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLicenseConfigurationsInput {
@@ -9454,6 +10465,7 @@ impl std::fmt::Debug for ListLicenseConfigurationsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFailuresForLicenseConfigurationOperationsInput {
@@ -9474,6 +10486,7 @@ impl std::fmt::Debug for ListFailuresForLicenseConfigurationOperationsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDistributedGrantsInput {
@@ -9524,6 +10537,7 @@ impl std::fmt::Debug for ListDistributedGrantsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAssociationsForLicenseConfigurationInput {
@@ -9544,6 +10558,7 @@ impl std::fmt::Debug for ListAssociationsForLicenseConfigurationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetServiceSettingsInput {}
@@ -9554,6 +10569,7 @@ impl std::fmt::Debug for GetServiceSettingsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLicenseUsageInput {
@@ -9568,6 +10584,7 @@ impl std::fmt::Debug for GetLicenseUsageInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLicenseManagerReportGeneratorInput {
@@ -9585,6 +10602,7 @@ impl std::fmt::Debug for GetLicenseManagerReportGeneratorInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLicenseConversionTaskInput {
@@ -9602,6 +10620,7 @@ impl std::fmt::Debug for GetLicenseConversionTaskInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLicenseConfigurationInput {
@@ -9616,6 +10635,7 @@ impl std::fmt::Debug for GetLicenseConfigurationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetLicenseInput {
@@ -9633,6 +10653,7 @@ impl std::fmt::Debug for GetLicenseInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetGrantInput {
@@ -9650,6 +10671,7 @@ impl std::fmt::Debug for GetGrantInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAccessTokenInput {
@@ -9667,6 +10689,7 @@ impl std::fmt::Debug for GetAccessTokenInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExtendLicenseConsumptionInput {
@@ -9684,6 +10707,7 @@ impl std::fmt::Debug for ExtendLicenseConsumptionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTokenInput {
@@ -9698,6 +10722,7 @@ impl std::fmt::Debug for DeleteTokenInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLicenseManagerReportGeneratorInput {
@@ -9715,6 +10740,7 @@ impl std::fmt::Debug for DeleteLicenseManagerReportGeneratorInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLicenseConfigurationInput {
@@ -9729,6 +10755,7 @@ impl std::fmt::Debug for DeleteLicenseConfigurationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLicenseInput {
@@ -9746,6 +10773,7 @@ impl std::fmt::Debug for DeleteLicenseInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteGrantInput {
@@ -9766,6 +10794,7 @@ impl std::fmt::Debug for DeleteGrantInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTokenInput {
@@ -9795,6 +10824,7 @@ impl std::fmt::Debug for CreateTokenInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLicenseVersionInput {
@@ -9844,6 +10874,7 @@ impl std::fmt::Debug for CreateLicenseVersionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLicenseManagerReportGeneratorInput {
@@ -9884,6 +10915,7 @@ impl std::fmt::Debug for CreateLicenseManagerReportGeneratorInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLicenseConversionTaskForResourceInput {
@@ -9908,6 +10940,7 @@ impl std::fmt::Debug for CreateLicenseConversionTaskForResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLicenseConfigurationInput {
@@ -9987,6 +11020,7 @@ impl std::fmt::Debug for CreateLicenseConfigurationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLicenseInput {
@@ -10033,6 +11067,7 @@ impl std::fmt::Debug for CreateLicenseInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGrantVersionInput {
@@ -10065,6 +11100,7 @@ impl std::fmt::Debug for CreateGrantVersionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGrantInput {
@@ -10094,6 +11130,7 @@ impl std::fmt::Debug for CreateGrantInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CheckoutLicenseInput {
@@ -10126,6 +11163,7 @@ impl std::fmt::Debug for CheckoutLicenseInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CheckoutBorrowLicenseInput {
@@ -10156,6 +11194,7 @@ impl std::fmt::Debug for CheckoutBorrowLicenseInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CheckInLicenseInput {
@@ -10173,6 +11212,7 @@ impl std::fmt::Debug for CheckInLicenseInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AcceptGrantInput {

@@ -31,16 +31,23 @@ pub mod list_satellites_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>Next token that can be supplied in the next call to get the next page of satellites.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
+        /// Appends an item to `satellites`.
+        ///
+        /// To override the contents of this collection use [`set_satellites`](Self::set_satellites).
+        ///
+        /// <p>List of satellites.</p>
         pub fn satellites(mut self, input: impl Into<crate::model::SatelliteListItem>) -> Self {
             let mut v = self.satellites.unwrap_or_default();
             v.push(input.into());
             self.satellites = Some(v);
             self
         }
+        /// <p>List of satellites.</p>
         pub fn set_satellites(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SatelliteListItem>>,
@@ -104,6 +111,7 @@ pub mod get_satellite_output {
             self.satellite_id = Some(input.into());
             self
         }
+        /// <p>UUID of a satellite.</p>
         pub fn set_satellite_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.satellite_id = input;
             self
@@ -113,6 +121,7 @@ pub mod get_satellite_output {
             self.satellite_arn = Some(input.into());
             self
         }
+        /// <p>ARN of a satellite.</p>
         pub fn set_satellite_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -125,16 +134,23 @@ pub mod get_satellite_output {
             self.norad_satellite_id = Some(input);
             self
         }
+        /// <p>NORAD satellite ID number.</p>
         pub fn set_norad_satellite_id(mut self, input: std::option::Option<i32>) -> Self {
             self.norad_satellite_id = input;
             self
         }
+        /// Appends an item to `ground_stations`.
+        ///
+        /// To override the contents of this collection use [`set_ground_stations`](Self::set_ground_stations).
+        ///
+        /// <p>A list of ground stations to which the satellite is on-boarded.</p>
         pub fn ground_stations(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.ground_stations.unwrap_or_default();
             v.push(input.into());
             self.ground_stations = Some(v);
             self
         }
+        /// <p>A list of ground stations to which the satellite is on-boarded.</p>
         pub fn set_ground_stations(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -194,10 +210,16 @@ pub mod list_mission_profiles_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>Next token returned in the response of a previous <code>ListMissionProfiles</code> call. Used to get the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
+        /// Appends an item to `mission_profile_list`.
+        ///
+        /// To override the contents of this collection use [`set_mission_profile_list`](Self::set_mission_profile_list).
+        ///
+        /// <p>List of mission profiles.</p>
         pub fn mission_profile_list(
             mut self,
             input: impl Into<crate::model::MissionProfileListItem>,
@@ -207,6 +229,7 @@ pub mod list_mission_profiles_output {
             self.mission_profile_list = Some(v);
             self
         }
+        /// <p>List of mission profiles.</p>
         pub fn set_mission_profile_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MissionProfileListItem>>,
@@ -258,6 +281,7 @@ pub mod create_mission_profile_output {
             self.mission_profile_id = Some(input.into());
             self
         }
+        /// <p>UUID of a mission profile.</p>
         pub fn set_mission_profile_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -308,6 +332,7 @@ pub mod delete_mission_profile_output {
             self.mission_profile_id = Some(input.into());
             self
         }
+        /// <p>UUID of a mission profile.</p>
         pub fn set_mission_profile_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -358,6 +383,7 @@ pub mod update_mission_profile_output {
             self.mission_profile_id = Some(input.into());
             self
         }
+        /// <p>UUID of a mission profile.</p>
         pub fn set_mission_profile_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -459,6 +485,7 @@ pub mod get_mission_profile_output {
             self.mission_profile_id = Some(input.into());
             self
         }
+        /// <p>UUID of a mission profile.</p>
         pub fn set_mission_profile_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -471,6 +498,7 @@ pub mod get_mission_profile_output {
             self.mission_profile_arn = Some(input.into());
             self
         }
+        /// <p>ARN of a mission profile.</p>
         pub fn set_mission_profile_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -483,6 +511,7 @@ pub mod get_mission_profile_output {
             self.name = Some(input.into());
             self
         }
+        /// <p>Name of a mission profile.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -492,6 +521,7 @@ pub mod get_mission_profile_output {
             self.region = Some(input.into());
             self
         }
+        /// <p>Region of a mission profile.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
@@ -501,6 +531,7 @@ pub mod get_mission_profile_output {
             self.contact_pre_pass_duration_seconds = Some(input);
             self
         }
+        /// <p>Amount of time prior to contact start you’d like to receive a CloudWatch event indicating an upcoming pass.</p>
         pub fn set_contact_pre_pass_duration_seconds(
             mut self,
             input: std::option::Option<i32>,
@@ -513,6 +544,7 @@ pub mod get_mission_profile_output {
             self.contact_post_pass_duration_seconds = Some(input);
             self
         }
+        /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
         pub fn set_contact_post_pass_duration_seconds(
             mut self,
             input: std::option::Option<i32>,
@@ -525,6 +557,7 @@ pub mod get_mission_profile_output {
             self.minimum_viable_contact_duration_seconds = Some(input);
             self
         }
+        /// <p>Smallest amount of time in seconds that you’d like to see for an available contact. AWS Ground Station will not present you with contacts shorter than this duration.</p>
         pub fn set_minimum_viable_contact_duration_seconds(
             mut self,
             input: std::option::Option<i32>,
@@ -532,6 +565,13 @@ pub mod get_mission_profile_output {
             self.minimum_viable_contact_duration_seconds = input;
             self
         }
+        /// Appends an item to `dataflow_edges`.
+        ///
+        /// To override the contents of this collection use [`set_dataflow_edges`](Self::set_dataflow_edges).
+        ///
+        /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i>
+        /// <code>Config</code> and a <i>to</i>
+        /// <code>Config</code>.</p>
         pub fn dataflow_edges(
             mut self,
             input: impl Into<std::vec::Vec<std::string::String>>,
@@ -541,6 +581,9 @@ pub mod get_mission_profile_output {
             self.dataflow_edges = Some(v);
             self
         }
+        /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i>
+        /// <code>Config</code> and a <i>to</i>
+        /// <code>Config</code>.</p>
         pub fn set_dataflow_edges(
             mut self,
             input: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
@@ -553,6 +596,7 @@ pub mod get_mission_profile_output {
             self.tracking_config_arn = Some(input.into());
             self
         }
+        /// <p>ARN of a tracking <code>Config</code>.</p>
         pub fn set_tracking_config_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -560,6 +604,11 @@ pub mod get_mission_profile_output {
             self.tracking_config_arn = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Tags assigned to a mission profile.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -570,6 +619,7 @@ pub mod get_mission_profile_output {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>Tags assigned to a mission profile.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -637,10 +687,16 @@ pub mod list_ground_stations_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>Next token that can be supplied in the next call to get the next page of ground stations.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
+        /// Appends an item to `ground_station_list`.
+        ///
+        /// To override the contents of this collection use [`set_ground_station_list`](Self::set_ground_station_list).
+        ///
+        /// <p>List of ground stations.</p>
         pub fn ground_station_list(
             mut self,
             input: impl Into<crate::model::GroundStationData>,
@@ -650,6 +706,7 @@ pub mod list_ground_stations_output {
             self.ground_station_list = Some(v);
             self
         }
+        /// <p>List of ground stations.</p>
         pub fn set_ground_station_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GroundStationData>>,
@@ -710,10 +767,16 @@ pub mod list_dataflow_endpoint_groups_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>Next token returned in the response of a previous <code>ListDataflowEndpointGroups</code> call. Used to get the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
+        /// Appends an item to `dataflow_endpoint_group_list`.
+        ///
+        /// To override the contents of this collection use [`set_dataflow_endpoint_group_list`](Self::set_dataflow_endpoint_group_list).
+        ///
+        /// <p>A list of dataflow endpoint groups.</p>
         pub fn dataflow_endpoint_group_list(
             mut self,
             input: impl Into<crate::model::DataflowEndpointListItem>,
@@ -723,6 +786,7 @@ pub mod list_dataflow_endpoint_groups_output {
             self.dataflow_endpoint_group_list = Some(v);
             self
         }
+        /// <p>A list of dataflow endpoint groups.</p>
         pub fn set_dataflow_endpoint_group_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DataflowEndpointListItem>>,
@@ -777,6 +841,7 @@ pub mod create_dataflow_endpoint_group_output {
             self.dataflow_endpoint_group_id = Some(input.into());
             self
         }
+        /// <p>UUID of a dataflow endpoint group.</p>
         pub fn set_dataflow_endpoint_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -830,6 +895,7 @@ pub mod delete_dataflow_endpoint_group_output {
             self.dataflow_endpoint_group_id = Some(input.into());
             self
         }
+        /// <p>UUID of a dataflow endpoint group.</p>
         pub fn set_dataflow_endpoint_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -902,6 +968,7 @@ pub mod get_dataflow_endpoint_group_output {
             self.dataflow_endpoint_group_id = Some(input.into());
             self
         }
+        /// <p>UUID of a dataflow endpoint group.</p>
         pub fn set_dataflow_endpoint_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -917,6 +984,7 @@ pub mod get_dataflow_endpoint_group_output {
             self.dataflow_endpoint_group_arn = Some(input.into());
             self
         }
+        /// <p>ARN of a dataflow endpoint group.</p>
         pub fn set_dataflow_endpoint_group_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -924,6 +992,11 @@ pub mod get_dataflow_endpoint_group_output {
             self.dataflow_endpoint_group_arn = input;
             self
         }
+        /// Appends an item to `endpoints_details`.
+        ///
+        /// To override the contents of this collection use [`set_endpoints_details`](Self::set_endpoints_details).
+        ///
+        /// <p>Details of a dataflow endpoint.</p>
         pub fn endpoints_details(
             mut self,
             input: impl Into<crate::model::EndpointDetails>,
@@ -933,6 +1006,7 @@ pub mod get_dataflow_endpoint_group_output {
             self.endpoints_details = Some(v);
             self
         }
+        /// <p>Details of a dataflow endpoint.</p>
         pub fn set_endpoints_details(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EndpointDetails>>,
@@ -940,6 +1014,11 @@ pub mod get_dataflow_endpoint_group_output {
             self.endpoints_details = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Tags assigned to a dataflow endpoint group.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -950,6 +1029,7 @@ pub mod get_dataflow_endpoint_group_output {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>Tags assigned to a dataflow endpoint group.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1009,16 +1089,23 @@ pub mod list_contacts_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>Next token returned in the response of a previous <code>ListContacts</code> call. Used to get the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
+        /// Appends an item to `contact_list`.
+        ///
+        /// To override the contents of this collection use [`set_contact_list`](Self::set_contact_list).
+        ///
+        /// <p>List of contacts.</p>
         pub fn contact_list(mut self, input: impl Into<crate::model::ContactData>) -> Self {
             let mut v = self.contact_list.unwrap_or_default();
             v.push(input.into());
             self.contact_list = Some(v);
             self
         }
+        /// <p>List of contacts.</p>
         pub fn set_contact_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ContactData>>,
@@ -1070,6 +1157,7 @@ pub mod reserve_contact_output {
             self.contact_id = Some(input.into());
             self
         }
+        /// <p>UUID of a contact.</p>
         pub fn set_contact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.contact_id = input;
             self
@@ -1117,6 +1205,7 @@ pub mod cancel_contact_output {
             self.contact_id = Some(input.into());
             self
         }
+        /// <p>UUID of a contact.</p>
         pub fn set_contact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.contact_id = input;
             self
@@ -1147,13 +1236,13 @@ pub struct DescribeContactOutput {
     /// <p>ARN of a satellite.</p>
     pub satellite_arn: std::option::Option<std::string::String>,
     /// <p>Start time of a contact.</p>
-    pub start_time: std::option::Option<smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>End time of a contact.</p>
-    pub end_time: std::option::Option<smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Amount of time prior to contact start you’d like to receive a CloudWatch event indicating an upcoming pass.</p>
-    pub pre_pass_start_time: std::option::Option<smithy_types::Instant>,
+    pub pre_pass_start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
-    pub post_pass_end_time: std::option::Option<smithy_types::Instant>,
+    pub post_pass_end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Ground station for a contact.</p>
     pub ground_station: std::option::Option<std::string::String>,
     /// <p>Status of a contact.</p>
@@ -1199,10 +1288,10 @@ pub mod describe_contact_output {
         pub(crate) contact_id: std::option::Option<std::string::String>,
         pub(crate) mission_profile_arn: std::option::Option<std::string::String>,
         pub(crate) satellite_arn: std::option::Option<std::string::String>,
-        pub(crate) start_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) pre_pass_start_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) post_pass_end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) pre_pass_start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) post_pass_end_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) ground_station: std::option::Option<std::string::String>,
         pub(crate) contact_status: std::option::Option<crate::model::ContactStatus>,
         pub(crate) error_message: std::option::Option<std::string::String>,
@@ -1219,6 +1308,7 @@ pub mod describe_contact_output {
             self.contact_id = Some(input.into());
             self
         }
+        /// <p>UUID of a contact.</p>
         pub fn set_contact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.contact_id = input;
             self
@@ -1228,6 +1318,7 @@ pub mod describe_contact_output {
             self.mission_profile_arn = Some(input.into());
             self
         }
+        /// <p>ARN of a mission profile.</p>
         pub fn set_mission_profile_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1240,6 +1331,7 @@ pub mod describe_contact_output {
             self.satellite_arn = Some(input.into());
             self
         }
+        /// <p>ARN of a satellite.</p>
         pub fn set_satellite_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1248,43 +1340,53 @@ pub mod describe_contact_output {
             self
         }
         /// <p>Start time of a contact.</p>
-        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>Start time of a contact.</p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>End time of a contact.</p>
-        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>End time of a contact.</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.end_time = input;
             self
         }
         /// <p>Amount of time prior to contact start you’d like to receive a CloudWatch event indicating an upcoming pass.</p>
-        pub fn pre_pass_start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn pre_pass_start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.pre_pass_start_time = Some(input);
             self
         }
+        /// <p>Amount of time prior to contact start you’d like to receive a CloudWatch event indicating an upcoming pass.</p>
         pub fn set_pre_pass_start_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.pre_pass_start_time = input;
             self
         }
         /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
-        pub fn post_pass_end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn post_pass_end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.post_pass_end_time = Some(input);
             self
         }
+        /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
         pub fn set_post_pass_end_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.post_pass_end_time = input;
             self
@@ -1294,6 +1396,7 @@ pub mod describe_contact_output {
             self.ground_station = Some(input.into());
             self
         }
+        /// <p>Ground station for a contact.</p>
         pub fn set_ground_station(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1306,6 +1409,7 @@ pub mod describe_contact_output {
             self.contact_status = Some(input);
             self
         }
+        /// <p>Status of a contact.</p>
         pub fn set_contact_status(
             mut self,
             input: std::option::Option<crate::model::ContactStatus>,
@@ -1318,6 +1422,7 @@ pub mod describe_contact_output {
             self.error_message = Some(input.into());
             self
         }
+        /// <p>Error message for a contact.</p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1330,6 +1435,7 @@ pub mod describe_contact_output {
             self.maximum_elevation = Some(input);
             self
         }
+        /// <p>Maximum elevation angle of a contact.</p>
         pub fn set_maximum_elevation(
             mut self,
             input: std::option::Option<crate::model::Elevation>,
@@ -1337,6 +1443,11 @@ pub mod describe_contact_output {
             self.maximum_elevation = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Tags assigned to a contact.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1347,6 +1458,7 @@ pub mod describe_contact_output {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>Tags assigned to a contact.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1361,16 +1473,23 @@ pub mod describe_contact_output {
             self.region = Some(input.into());
             self
         }
+        /// <p>Region of a contact.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
         }
+        /// Appends an item to `dataflow_list`.
+        ///
+        /// To override the contents of this collection use [`set_dataflow_list`](Self::set_dataflow_list).
+        ///
+        /// <p>List describing source and destination details for each dataflow edge.</p>
         pub fn dataflow_list(mut self, input: impl Into<crate::model::DataflowDetail>) -> Self {
             let mut v = self.dataflow_list.unwrap_or_default();
             v.push(input.into());
             self.dataflow_list = Some(v);
             self
         }
+        /// <p>List describing source and destination details for each dataflow edge.</p>
         pub fn set_dataflow_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DataflowDetail>>,
@@ -1438,16 +1557,23 @@ pub mod list_configs_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>Next token returned in the response of a previous <code>ListConfigs</code> call. Used to get the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
+        /// Appends an item to `config_list`.
+        ///
+        /// To override the contents of this collection use [`set_config_list`](Self::set_config_list).
+        ///
+        /// <p>List of <code>Config</code> items.</p>
         pub fn config_list(mut self, input: impl Into<crate::model::ConfigListItem>) -> Self {
             let mut v = self.config_list.unwrap_or_default();
             v.push(input.into());
             self.config_list = Some(v);
             self
         }
+        /// <p>List of <code>Config</code> items.</p>
         pub fn set_config_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ConfigListItem>>,
@@ -1507,6 +1633,7 @@ pub mod create_config_output {
             self.config_id = Some(input.into());
             self
         }
+        /// <p>UUID of a <code>Config</code>.</p>
         pub fn set_config_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.config_id = input;
             self
@@ -1516,6 +1643,7 @@ pub mod create_config_output {
             self.config_type = Some(input);
             self
         }
+        /// <p>Type of a <code>Config</code>.</p>
         pub fn set_config_type(
             mut self,
             input: std::option::Option<crate::model::ConfigCapabilityType>,
@@ -1528,6 +1656,7 @@ pub mod create_config_output {
             self.config_arn = Some(input.into());
             self
         }
+        /// <p>ARN of a <code>Config</code>.</p>
         pub fn set_config_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.config_arn = input;
             self
@@ -1585,6 +1714,7 @@ pub mod delete_config_output {
             self.config_id = Some(input.into());
             self
         }
+        /// <p>UUID of a <code>Config</code>.</p>
         pub fn set_config_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.config_id = input;
             self
@@ -1594,6 +1724,7 @@ pub mod delete_config_output {
             self.config_type = Some(input);
             self
         }
+        /// <p>Type of a <code>Config</code>.</p>
         pub fn set_config_type(
             mut self,
             input: std::option::Option<crate::model::ConfigCapabilityType>,
@@ -1606,6 +1737,7 @@ pub mod delete_config_output {
             self.config_arn = Some(input.into());
             self
         }
+        /// <p>ARN of a <code>Config</code>.</p>
         pub fn set_config_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.config_arn = input;
             self
@@ -1663,6 +1795,7 @@ pub mod update_config_output {
             self.config_id = Some(input.into());
             self
         }
+        /// <p>UUID of a <code>Config</code>.</p>
         pub fn set_config_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.config_id = input;
             self
@@ -1672,6 +1805,7 @@ pub mod update_config_output {
             self.config_type = Some(input);
             self
         }
+        /// <p>Type of a <code>Config</code>.</p>
         pub fn set_config_type(
             mut self,
             input: std::option::Option<crate::model::ConfigCapabilityType>,
@@ -1684,6 +1818,7 @@ pub mod update_config_output {
             self.config_arn = Some(input.into());
             self
         }
+        /// <p>ARN of a <code>Config</code>.</p>
         pub fn set_config_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.config_arn = input;
             self
@@ -1757,6 +1892,7 @@ pub mod get_config_output {
             self.config_id = Some(input.into());
             self
         }
+        /// <p>UUID of a <code>Config</code>.</p>
         pub fn set_config_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.config_id = input;
             self
@@ -1767,6 +1903,8 @@ pub mod get_config_output {
             self.config_arn = Some(input.into());
             self
         }
+        /// <p>ARN of a <code>Config</code>
+        /// </p>
         pub fn set_config_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.config_arn = input;
             self
@@ -1776,6 +1914,7 @@ pub mod get_config_output {
             self.name = Some(input.into());
             self
         }
+        /// <p>Name of a <code>Config</code>.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1785,6 +1924,7 @@ pub mod get_config_output {
             self.config_type = Some(input);
             self
         }
+        /// <p>Type of a <code>Config</code>.</p>
         pub fn set_config_type(
             mut self,
             input: std::option::Option<crate::model::ConfigCapabilityType>,
@@ -1797,6 +1937,7 @@ pub mod get_config_output {
             self.config_data = Some(input);
             self
         }
+        /// <p>Data elements in a <code>Config</code>.</p>
         pub fn set_config_data(
             mut self,
             input: std::option::Option<crate::model::ConfigTypeData>,
@@ -1804,6 +1945,11 @@ pub mod get_config_output {
             self.config_data = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Tags assigned to a <code>Config</code>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1814,6 +1960,7 @@ pub mod get_config_output {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>Tags assigned to a <code>Config</code>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1929,6 +2076,11 @@ pub mod list_tags_for_resource_output {
         >,
     }
     impl Builder {
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Tags assigned to a resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1939,6 +2091,7 @@ pub mod list_tags_for_resource_output {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>Tags assigned to a resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2017,6 +2170,7 @@ pub mod get_minute_usage_output {
             self.is_reserved_minutes_customer = Some(input);
             self
         }
+        /// <p>Returns whether or not an account has signed up for the reserved minutes pricing plan, specific to the month being requested.</p>
         pub fn set_is_reserved_minutes_customer(
             mut self,
             input: std::option::Option<bool>,
@@ -2029,6 +2183,7 @@ pub mod get_minute_usage_output {
             self.total_reserved_minute_allocation = Some(input);
             self
         }
+        /// <p>Total number of reserved minutes allocated, specific to the month being requested.</p>
         pub fn set_total_reserved_minute_allocation(
             mut self,
             input: std::option::Option<i32>,
@@ -2041,6 +2196,7 @@ pub mod get_minute_usage_output {
             self.upcoming_minutes_scheduled = Some(input);
             self
         }
+        /// <p>Upcoming minutes scheduled for an account, specific to the month being requested.</p>
         pub fn set_upcoming_minutes_scheduled(mut self, input: std::option::Option<i32>) -> Self {
             self.upcoming_minutes_scheduled = input;
             self
@@ -2050,6 +2206,7 @@ pub mod get_minute_usage_output {
             self.total_scheduled_minutes = Some(input);
             self
         }
+        /// <p>Total scheduled minutes for an account, specific to the month being requested.</p>
         pub fn set_total_scheduled_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.total_scheduled_minutes = input;
             self
@@ -2059,6 +2216,7 @@ pub mod get_minute_usage_output {
             self.estimated_minutes_remaining = Some(input);
             self
         }
+        /// <p>Estimated number of minutes remaining for an account, specific to the month being requested.</p>
         pub fn set_estimated_minutes_remaining(mut self, input: std::option::Option<i32>) -> Self {
             self.estimated_minutes_remaining = input;
             self

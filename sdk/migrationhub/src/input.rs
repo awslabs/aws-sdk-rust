@@ -17,6 +17,7 @@ pub mod associate_created_artifact_input {
             self.progress_update_stream = Some(input.into());
             self
         }
+        /// <p>The name of the ProgressUpdateStream. </p>
         pub fn set_progress_update_stream(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -31,6 +32,9 @@ pub mod associate_created_artifact_input {
             self.migration_task_name = Some(input.into());
             self
         }
+        /// <p>Unique identifier that references the migration task. <i>Do not store personal
+        /// data in this field.</i>
+        /// </p>
         pub fn set_migration_task_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -44,6 +48,8 @@ pub mod associate_created_artifact_input {
             self.created_artifact = Some(input);
             self
         }
+        /// <p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS
+        /// instance, etc.) </p>
         pub fn set_created_artifact(
             mut self,
             input: std::option::Option<crate::model::CreatedArtifact>,
@@ -57,6 +63,8 @@ pub mod associate_created_artifact_input {
             self.dry_run = Some(input);
             self
         }
+        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
+        /// the caller has permission to make the call.</p>
         pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
             self.dry_run = input;
             self
@@ -66,7 +74,7 @@ pub mod associate_created_artifact_input {
             self,
         ) -> std::result::Result<
             crate::input::AssociateCreatedArtifactInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::AssociateCreatedArtifactInput {
                 progress_update_stream: self.progress_update_stream,
@@ -89,16 +97,16 @@ impl AssociateCreatedArtifactInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AssociateCreatedArtifact,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AssociateCreatedArtifactInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -106,7 +114,7 @@ impl AssociateCreatedArtifactInput {
         fn update_http_builder(
             input: &crate::input::AssociateCreatedArtifactInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -115,32 +123,34 @@ impl AssociateCreatedArtifactInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AssociateCreatedArtifactInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSMigrationHub.AssociateCreatedArtifact",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_associate_created_artifact(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -163,15 +173,15 @@ impl AssociateCreatedArtifactInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::AssociateCreatedArtifact::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "AssociateCreatedArtifact",
             "migrationhub",
         ));
@@ -180,10 +190,10 @@ impl AssociateCreatedArtifactInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -214,6 +224,7 @@ pub mod associate_discovered_resource_input {
             self.progress_update_stream = Some(input.into());
             self
         }
+        /// <p>The name of the ProgressUpdateStream.</p>
         pub fn set_progress_update_stream(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -228,6 +239,9 @@ pub mod associate_discovered_resource_input {
             self.migration_task_name = Some(input.into());
             self
         }
+        /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this
+        /// field.</i>
+        /// </p>
         pub fn set_migration_task_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -240,6 +254,7 @@ pub mod associate_discovered_resource_input {
             self.discovered_resource = Some(input);
             self
         }
+        /// <p>Object representing a Resource.</p>
         pub fn set_discovered_resource(
             mut self,
             input: std::option::Option<crate::model::DiscoveredResource>,
@@ -253,6 +268,8 @@ pub mod associate_discovered_resource_input {
             self.dry_run = Some(input);
             self
         }
+        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
+        /// the caller has permission to make the call.</p>
         pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
             self.dry_run = input;
             self
@@ -262,7 +279,7 @@ pub mod associate_discovered_resource_input {
             self,
         ) -> std::result::Result<
             crate::input::AssociateDiscoveredResourceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::AssociateDiscoveredResourceInput {
                 progress_update_stream: self.progress_update_stream,
@@ -285,16 +302,16 @@ impl AssociateDiscoveredResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AssociateDiscoveredResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AssociateDiscoveredResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -302,7 +319,7 @@ impl AssociateDiscoveredResourceInput {
         fn update_http_builder(
             input: &crate::input::AssociateDiscoveredResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -311,30 +328,30 @@ impl AssociateDiscoveredResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AssociateDiscoveredResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSMigrationHub.AssociateDiscoveredResource",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_associate_discovered_resource(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_associate_discovered_resource(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -357,15 +374,15 @@ impl AssociateDiscoveredResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::AssociateDiscoveredResource::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "AssociateDiscoveredResource",
             "migrationhub",
         ));
@@ -374,10 +391,10 @@ impl AssociateDiscoveredResourceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -411,6 +428,9 @@ pub mod create_progress_update_stream_input {
             self.progress_update_stream_name = Some(input.into());
             self
         }
+        /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this
+        /// field.</i>
+        /// </p>
         pub fn set_progress_update_stream_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -424,6 +444,8 @@ pub mod create_progress_update_stream_input {
             self.dry_run = Some(input);
             self
         }
+        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
+        /// the caller has permission to make the call.</p>
         pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
             self.dry_run = input;
             self
@@ -433,7 +455,7 @@ pub mod create_progress_update_stream_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateProgressUpdateStreamInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateProgressUpdateStreamInput {
                 progress_update_stream_name: self.progress_update_stream_name,
@@ -454,16 +476,16 @@ impl CreateProgressUpdateStreamInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateProgressUpdateStream,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateProgressUpdateStreamInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -471,7 +493,7 @@ impl CreateProgressUpdateStreamInput {
         fn update_http_builder(
             input: &crate::input::CreateProgressUpdateStreamInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -480,30 +502,30 @@ impl CreateProgressUpdateStreamInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateProgressUpdateStreamInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSMigrationHub.CreateProgressUpdateStream",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_progress_update_stream(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_progress_update_stream(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -526,15 +548,15 @@ impl CreateProgressUpdateStreamInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateProgressUpdateStream::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateProgressUpdateStream",
             "migrationhub",
         ));
@@ -543,10 +565,10 @@ impl CreateProgressUpdateStreamInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -580,6 +602,9 @@ pub mod delete_progress_update_stream_input {
             self.progress_update_stream_name = Some(input.into());
             self
         }
+        /// <p>The name of the ProgressUpdateStream. <i>Do not store personal data in this
+        /// field.</i>
+        /// </p>
         pub fn set_progress_update_stream_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -593,6 +618,8 @@ pub mod delete_progress_update_stream_input {
             self.dry_run = Some(input);
             self
         }
+        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
+        /// the caller has permission to make the call.</p>
         pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
             self.dry_run = input;
             self
@@ -602,7 +629,7 @@ pub mod delete_progress_update_stream_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteProgressUpdateStreamInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteProgressUpdateStreamInput {
                 progress_update_stream_name: self.progress_update_stream_name,
@@ -623,16 +650,16 @@ impl DeleteProgressUpdateStreamInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteProgressUpdateStream,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteProgressUpdateStreamInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -640,7 +667,7 @@ impl DeleteProgressUpdateStreamInput {
         fn update_http_builder(
             input: &crate::input::DeleteProgressUpdateStreamInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -649,30 +676,30 @@ impl DeleteProgressUpdateStreamInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteProgressUpdateStreamInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSMigrationHub.DeleteProgressUpdateStream",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_progress_update_stream(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_progress_update_stream(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -695,15 +722,15 @@ impl DeleteProgressUpdateStreamInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteProgressUpdateStream::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteProgressUpdateStream",
             "migrationhub",
         ));
@@ -712,10 +739,10 @@ impl DeleteProgressUpdateStreamInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -744,6 +771,8 @@ pub mod describe_application_state_input {
             self.application_id = Some(input.into());
             self
         }
+        /// <p>The configurationId in Application Discovery Service that uniquely identifies the
+        /// grouped application.</p>
         pub fn set_application_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -756,7 +785,7 @@ pub mod describe_application_state_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeApplicationStateInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeApplicationStateInput {
                 application_id: self.application_id,
@@ -776,16 +805,16 @@ impl DescribeApplicationStateInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeApplicationState,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeApplicationStateInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -793,7 +822,7 @@ impl DescribeApplicationStateInput {
         fn update_http_builder(
             input: &crate::input::DescribeApplicationStateInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -802,32 +831,34 @@ impl DescribeApplicationStateInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeApplicationStateInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSMigrationHub.DescribeApplicationState",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_application_state(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -850,15 +881,15 @@ impl DescribeApplicationStateInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeApplicationState::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeApplicationState",
             "migrationhub",
         ));
@@ -867,10 +898,10 @@ impl DescribeApplicationStateInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -899,6 +930,7 @@ pub mod describe_migration_task_input {
             self.progress_update_stream = Some(input.into());
             self
         }
+        /// <p>The name of the ProgressUpdateStream. </p>
         pub fn set_progress_update_stream(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -913,6 +945,9 @@ pub mod describe_migration_task_input {
             self.migration_task_name = Some(input.into());
             self
         }
+        /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this
+        /// field.</i>
+        /// </p>
         pub fn set_migration_task_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -925,7 +960,7 @@ pub mod describe_migration_task_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeMigrationTaskInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeMigrationTaskInput {
                 progress_update_stream: self.progress_update_stream,
@@ -945,16 +980,16 @@ impl DescribeMigrationTaskInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeMigrationTask,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeMigrationTaskInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -962,7 +997,7 @@ impl DescribeMigrationTaskInput {
         fn update_http_builder(
             input: &crate::input::DescribeMigrationTaskInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -971,32 +1006,34 @@ impl DescribeMigrationTaskInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeMigrationTaskInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSMigrationHub.DescribeMigrationTask",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_migration_task(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1019,15 +1056,15 @@ impl DescribeMigrationTaskInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeMigrationTask::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeMigrationTask",
             "migrationhub",
         ));
@@ -1036,10 +1073,10 @@ impl DescribeMigrationTaskInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1070,6 +1107,7 @@ pub mod disassociate_created_artifact_input {
             self.progress_update_stream = Some(input.into());
             self
         }
+        /// <p>The name of the ProgressUpdateStream. </p>
         pub fn set_progress_update_stream(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1084,6 +1122,9 @@ pub mod disassociate_created_artifact_input {
             self.migration_task_name = Some(input.into());
             self
         }
+        /// <p>Unique identifier that references the migration task to be disassociated with the
+        /// artifact. <i>Do not store personal data in this field.</i>
+        /// </p>
         pub fn set_migration_task_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1097,6 +1138,8 @@ pub mod disassociate_created_artifact_input {
             self.created_artifact_name = Some(input.into());
             self
         }
+        /// <p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance, RDS
+        /// instance, etc.)</p>
         pub fn set_created_artifact_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1110,6 +1153,8 @@ pub mod disassociate_created_artifact_input {
             self.dry_run = Some(input);
             self
         }
+        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
+        /// the caller has permission to make the call.</p>
         pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
             self.dry_run = input;
             self
@@ -1119,7 +1164,7 @@ pub mod disassociate_created_artifact_input {
             self,
         ) -> std::result::Result<
             crate::input::DisassociateCreatedArtifactInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DisassociateCreatedArtifactInput {
                 progress_update_stream: self.progress_update_stream,
@@ -1142,16 +1187,16 @@ impl DisassociateCreatedArtifactInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DisassociateCreatedArtifact,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DisassociateCreatedArtifactInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1159,7 +1204,7 @@ impl DisassociateCreatedArtifactInput {
         fn update_http_builder(
             input: &crate::input::DisassociateCreatedArtifactInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1168,30 +1213,30 @@ impl DisassociateCreatedArtifactInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DisassociateCreatedArtifactInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSMigrationHub.DisassociateCreatedArtifact",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_disassociate_created_artifact(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_disassociate_created_artifact(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1214,15 +1259,15 @@ impl DisassociateCreatedArtifactInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DisassociateCreatedArtifact::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DisassociateCreatedArtifact",
             "migrationhub",
         ));
@@ -1231,10 +1276,10 @@ impl DisassociateCreatedArtifactInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1265,6 +1310,7 @@ pub mod disassociate_discovered_resource_input {
             self.progress_update_stream = Some(input.into());
             self
         }
+        /// <p>The name of the ProgressUpdateStream.</p>
         pub fn set_progress_update_stream(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1279,6 +1325,9 @@ pub mod disassociate_discovered_resource_input {
             self.migration_task_name = Some(input.into());
             self
         }
+        /// <p>The identifier given to the MigrationTask. <i>Do not store personal data in this
+        /// field.</i>
+        /// </p>
         pub fn set_migration_task_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1292,6 +1341,8 @@ pub mod disassociate_discovered_resource_input {
             self.configuration_id = Some(input.into());
             self
         }
+        /// <p>ConfigurationId of the Application Discovery Service resource to be
+        /// disassociated.</p>
         pub fn set_configuration_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1305,6 +1356,8 @@ pub mod disassociate_discovered_resource_input {
             self.dry_run = Some(input);
             self
         }
+        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
+        /// the caller has permission to make the call.</p>
         pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
             self.dry_run = input;
             self
@@ -1314,7 +1367,7 @@ pub mod disassociate_discovered_resource_input {
             self,
         ) -> std::result::Result<
             crate::input::DisassociateDiscoveredResourceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DisassociateDiscoveredResourceInput {
                 progress_update_stream: self.progress_update_stream,
@@ -1337,16 +1390,16 @@ impl DisassociateDiscoveredResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DisassociateDiscoveredResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DisassociateDiscoveredResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1354,7 +1407,7 @@ impl DisassociateDiscoveredResourceInput {
         fn update_http_builder(
             input: &crate::input::DisassociateDiscoveredResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1363,30 +1416,30 @@ impl DisassociateDiscoveredResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DisassociateDiscoveredResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSMigrationHub.DisassociateDiscoveredResource",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_disassociate_discovered_resource(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_disassociate_discovered_resource(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1409,15 +1462,15 @@ impl DisassociateDiscoveredResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DisassociateDiscoveredResource::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DisassociateDiscoveredResource",
             "migrationhub",
         ));
@@ -1426,10 +1479,10 @@ impl DisassociateDiscoveredResourceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1459,6 +1512,7 @@ pub mod import_migration_task_input {
             self.progress_update_stream = Some(input.into());
             self
         }
+        /// <p>The name of the ProgressUpdateStream. ></p>
         pub fn set_progress_update_stream(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1473,6 +1527,9 @@ pub mod import_migration_task_input {
             self.migration_task_name = Some(input.into());
             self
         }
+        /// <p>Unique identifier that references the migration task. <i>Do not store personal
+        /// data in this field.</i>
+        /// </p>
         pub fn set_migration_task_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1486,6 +1543,8 @@ pub mod import_migration_task_input {
             self.dry_run = Some(input);
             self
         }
+        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
+        /// the caller has permission to make the call.</p>
         pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
             self.dry_run = input;
             self
@@ -1495,7 +1554,7 @@ pub mod import_migration_task_input {
             self,
         ) -> std::result::Result<
             crate::input::ImportMigrationTaskInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ImportMigrationTaskInput {
                 progress_update_stream: self.progress_update_stream,
@@ -1516,16 +1575,16 @@ impl ImportMigrationTaskInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ImportMigrationTask,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ImportMigrationTaskInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1533,7 +1592,7 @@ impl ImportMigrationTaskInput {
         fn update_http_builder(
             input: &crate::input::ImportMigrationTaskInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1542,32 +1601,32 @@ impl ImportMigrationTaskInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ImportMigrationTaskInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSMigrationHub.ImportMigrationTask",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_import_migration_task(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1590,15 +1649,15 @@ impl ImportMigrationTaskInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ImportMigrationTask::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ImportMigrationTask",
             "migrationhub",
         ));
@@ -1607,10 +1666,10 @@ impl ImportMigrationTaskInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1635,12 +1694,20 @@ pub mod list_application_states_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
+        /// Appends an item to `application_ids`.
+        ///
+        /// To override the contents of this collection use [`set_application_ids`](Self::set_application_ids).
+        ///
+        /// <p>The configurationIds from the Application Discovery Service that uniquely identifies
+        /// your applications.</p>
         pub fn application_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.application_ids.unwrap_or_default();
             v.push(input.into());
             self.application_ids = Some(v);
             self
         }
+        /// <p>The configurationIds from the Application Discovery Service that uniquely identifies
+        /// your applications.</p>
         pub fn set_application_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1655,6 +1722,9 @@ pub mod list_application_states_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results
+        /// available. To retrieve the next page of results, make the call again using the returned
+        /// token in <code>NextToken</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1664,6 +1734,7 @@ pub mod list_application_states_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>Maximum number of results to be returned per page.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1673,7 +1744,7 @@ pub mod list_application_states_input {
             self,
         ) -> std::result::Result<
             crate::input::ListApplicationStatesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListApplicationStatesInput {
                 application_ids: self.application_ids,
@@ -1694,16 +1765,16 @@ impl ListApplicationStatesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListApplicationStates,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListApplicationStatesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1711,7 +1782,7 @@ impl ListApplicationStatesInput {
         fn update_http_builder(
             input: &crate::input::ListApplicationStatesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1720,32 +1791,34 @@ impl ListApplicationStatesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListApplicationStatesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSMigrationHub.ListApplicationStates",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_application_states(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1768,15 +1841,15 @@ impl ListApplicationStatesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListApplicationStates::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListApplicationStates",
             "migrationhub",
         ));
@@ -1785,10 +1858,10 @@ impl ListApplicationStatesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1819,6 +1892,7 @@ pub mod list_created_artifacts_input {
             self.progress_update_stream = Some(input.into());
             self
         }
+        /// <p>The name of the ProgressUpdateStream. </p>
         pub fn set_progress_update_stream(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1833,6 +1907,9 @@ pub mod list_created_artifacts_input {
             self.migration_task_name = Some(input.into());
             self
         }
+        /// <p>Unique identifier that references the migration task. <i>Do not store personal
+        /// data in this field.</i>
+        /// </p>
         pub fn set_migration_task_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1847,6 +1924,9 @@ pub mod list_created_artifacts_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results
+        /// available. To retrieve the next page of results, make the call again using the returned
+        /// token in <code>NextToken</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1856,6 +1936,7 @@ pub mod list_created_artifacts_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>Maximum number of results to be returned per page.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1865,7 +1946,7 @@ pub mod list_created_artifacts_input {
             self,
         ) -> std::result::Result<
             crate::input::ListCreatedArtifactsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListCreatedArtifactsInput {
                 progress_update_stream: self.progress_update_stream,
@@ -1887,16 +1968,16 @@ impl ListCreatedArtifactsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListCreatedArtifacts,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListCreatedArtifactsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1904,7 +1985,7 @@ impl ListCreatedArtifactsInput {
         fn update_http_builder(
             input: &crate::input::ListCreatedArtifactsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1913,32 +1994,32 @@ impl ListCreatedArtifactsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListCreatedArtifactsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSMigrationHub.ListCreatedArtifacts",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_created_artifacts(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1961,15 +2042,15 @@ impl ListCreatedArtifactsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListCreatedArtifacts::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListCreatedArtifacts",
             "migrationhub",
         ));
@@ -1978,10 +2059,10 @@ impl ListCreatedArtifactsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2012,6 +2093,7 @@ pub mod list_discovered_resources_input {
             self.progress_update_stream = Some(input.into());
             self
         }
+        /// <p>The name of the ProgressUpdateStream.</p>
         pub fn set_progress_update_stream(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2026,6 +2108,9 @@ pub mod list_discovered_resources_input {
             self.migration_task_name = Some(input.into());
             self
         }
+        /// <p>The name of the MigrationTask. <i>Do not store personal data in this
+        /// field.</i>
+        /// </p>
         pub fn set_migration_task_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2040,6 +2125,9 @@ pub mod list_discovered_resources_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results
+        /// available. To retrieve the next page of results, make the call again using the returned
+        /// token in <code>NextToken</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2049,6 +2137,7 @@ pub mod list_discovered_resources_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of results returned per page.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -2058,7 +2147,7 @@ pub mod list_discovered_resources_input {
             self,
         ) -> std::result::Result<
             crate::input::ListDiscoveredResourcesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListDiscoveredResourcesInput {
                 progress_update_stream: self.progress_update_stream,
@@ -2081,16 +2170,16 @@ impl ListDiscoveredResourcesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListDiscoveredResources,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListDiscoveredResourcesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2098,7 +2187,7 @@ impl ListDiscoveredResourcesInput {
         fn update_http_builder(
             input: &crate::input::ListDiscoveredResourcesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2107,32 +2196,34 @@ impl ListDiscoveredResourcesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListDiscoveredResourcesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSMigrationHub.ListDiscoveredResources",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_discovered_resources(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2155,15 +2246,15 @@ impl ListDiscoveredResourcesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListDiscoveredResources::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListDiscoveredResources",
             "migrationhub",
         ));
@@ -2172,10 +2263,10 @@ impl ListDiscoveredResourcesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2207,6 +2298,9 @@ pub mod list_migration_tasks_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results
+        /// available. To retrieve the next page of results, make the call again using the returned
+        /// token in <code>NextToken</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2216,6 +2310,7 @@ pub mod list_migration_tasks_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>Value to specify how many results are returned per page.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -2225,6 +2320,7 @@ pub mod list_migration_tasks_input {
             self.resource_name = Some(input.into());
             self
         }
+        /// <p>Filter migration tasks by discovered resource name.</p>
         pub fn set_resource_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2237,7 +2333,7 @@ pub mod list_migration_tasks_input {
             self,
         ) -> std::result::Result<
             crate::input::ListMigrationTasksInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListMigrationTasksInput {
                 next_token: self.next_token,
@@ -2258,16 +2354,16 @@ impl ListMigrationTasksInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListMigrationTasks,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListMigrationTasksInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2275,7 +2371,7 @@ impl ListMigrationTasksInput {
         fn update_http_builder(
             input: &crate::input::ListMigrationTasksInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2284,30 +2380,32 @@ impl ListMigrationTasksInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListMigrationTasksInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSMigrationHub.ListMigrationTasks",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_migration_tasks(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2330,15 +2428,15 @@ impl ListMigrationTasksInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListMigrationTasks::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListMigrationTasks",
             "migrationhub",
         ));
@@ -2347,10 +2445,10 @@ impl ListMigrationTasksInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2381,6 +2479,9 @@ pub mod list_progress_update_streams_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results
+        /// available. To retrieve the next page of results, make the call again using the returned
+        /// token in <code>NextToken</code>.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2390,6 +2491,7 @@ pub mod list_progress_update_streams_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>Filter to limit the maximum number of results to list per page.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -2399,7 +2501,7 @@ pub mod list_progress_update_streams_input {
             self,
         ) -> std::result::Result<
             crate::input::ListProgressUpdateStreamsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListProgressUpdateStreamsInput {
                 next_token: self.next_token,
@@ -2420,16 +2522,16 @@ impl ListProgressUpdateStreamsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListProgressUpdateStreams,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListProgressUpdateStreamsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2437,7 +2539,7 @@ impl ListProgressUpdateStreamsInput {
         fn update_http_builder(
             input: &crate::input::ListProgressUpdateStreamsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2446,32 +2548,34 @@ impl ListProgressUpdateStreamsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListProgressUpdateStreamsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSMigrationHub.ListProgressUpdateStreams",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_progress_update_streams(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2494,15 +2598,15 @@ impl ListProgressUpdateStreamsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListProgressUpdateStreams::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListProgressUpdateStreams",
             "migrationhub",
         ));
@@ -2511,10 +2615,10 @@ impl ListProgressUpdateStreamsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2536,7 +2640,7 @@ pub mod notify_application_state_input {
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::ApplicationStatus>,
-        pub(crate) update_date_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) update_date_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) dry_run: std::option::Option<bool>,
     }
     impl Builder {
@@ -2546,6 +2650,8 @@ pub mod notify_application_state_input {
             self.application_id = Some(input.into());
             self
         }
+        /// <p>The configurationId in Application Discovery Service that uniquely identifies the
+        /// grouped application.</p>
         pub fn set_application_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2558,6 +2664,7 @@ pub mod notify_application_state_input {
             self.status = Some(input);
             self
         }
+        /// <p>Status of the application - Not Started, In-Progress, Complete.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ApplicationStatus>,
@@ -2566,13 +2673,14 @@ pub mod notify_application_state_input {
             self
         }
         /// <p>The timestamp when the application state changed.</p>
-        pub fn update_date_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn update_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.update_date_time = Some(input);
             self
         }
+        /// <p>The timestamp when the application state changed.</p>
         pub fn set_update_date_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.update_date_time = input;
             self
@@ -2583,6 +2691,8 @@ pub mod notify_application_state_input {
             self.dry_run = Some(input);
             self
         }
+        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
+        /// the caller has permission to make the call.</p>
         pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
             self.dry_run = input;
             self
@@ -2592,7 +2702,7 @@ pub mod notify_application_state_input {
             self,
         ) -> std::result::Result<
             crate::input::NotifyApplicationStateInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::NotifyApplicationStateInput {
                 application_id: self.application_id,
@@ -2614,16 +2724,16 @@ impl NotifyApplicationStateInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::NotifyApplicationState,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::NotifyApplicationStateInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2631,7 +2741,7 @@ impl NotifyApplicationStateInput {
         fn update_http_builder(
             input: &crate::input::NotifyApplicationStateInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2640,32 +2750,34 @@ impl NotifyApplicationStateInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::NotifyApplicationStateInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSMigrationHub.NotifyApplicationState",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_notify_application_state(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2688,15 +2800,15 @@ impl NotifyApplicationStateInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::NotifyApplicationState::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "NotifyApplicationState",
             "migrationhub",
         ));
@@ -2705,10 +2817,10 @@ impl NotifyApplicationStateInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2731,7 +2843,7 @@ pub mod notify_migration_task_state_input {
         pub(crate) progress_update_stream: std::option::Option<std::string::String>,
         pub(crate) migration_task_name: std::option::Option<std::string::String>,
         pub(crate) task: std::option::Option<crate::model::Task>,
-        pub(crate) update_date_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) update_date_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) next_update_seconds: std::option::Option<i32>,
         pub(crate) dry_run: std::option::Option<bool>,
     }
@@ -2741,6 +2853,7 @@ pub mod notify_migration_task_state_input {
             self.progress_update_stream = Some(input.into());
             self
         }
+        /// <p>The name of the ProgressUpdateStream. </p>
         pub fn set_progress_update_stream(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2755,6 +2868,9 @@ pub mod notify_migration_task_state_input {
             self.migration_task_name = Some(input.into());
             self
         }
+        /// <p>Unique identifier that references the migration task. <i>Do not store personal
+        /// data in this field.</i>
+        /// </p>
         pub fn set_migration_task_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2767,18 +2883,20 @@ pub mod notify_migration_task_state_input {
             self.task = Some(input);
             self
         }
+        /// <p>Information about the task's progress and status.</p>
         pub fn set_task(mut self, input: std::option::Option<crate::model::Task>) -> Self {
             self.task = input;
             self
         }
         /// <p>The timestamp when the task was gathered.</p>
-        pub fn update_date_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn update_date_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.update_date_time = Some(input);
             self
         }
+        /// <p>The timestamp when the task was gathered.</p>
         pub fn set_update_date_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.update_date_time = input;
             self
@@ -2790,6 +2908,9 @@ pub mod notify_migration_task_state_input {
             self.next_update_seconds = Some(input);
             self
         }
+        /// <p>Number of seconds after the UpdateDateTime within which the Migration Hub can expect an
+        /// update. If Migration Hub does not receive an update within the specified interval, then the
+        /// migration task will be considered stale.</p>
         pub fn set_next_update_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.next_update_seconds = input;
             self
@@ -2800,6 +2921,8 @@ pub mod notify_migration_task_state_input {
             self.dry_run = Some(input);
             self
         }
+        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
+        /// the caller has permission to make the call.</p>
         pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
             self.dry_run = input;
             self
@@ -2809,7 +2932,7 @@ pub mod notify_migration_task_state_input {
             self,
         ) -> std::result::Result<
             crate::input::NotifyMigrationTaskStateInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::NotifyMigrationTaskStateInput {
                 progress_update_stream: self.progress_update_stream,
@@ -2834,16 +2957,16 @@ impl NotifyMigrationTaskStateInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::NotifyMigrationTaskState,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::NotifyMigrationTaskStateInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2851,7 +2974,7 @@ impl NotifyMigrationTaskStateInput {
         fn update_http_builder(
             input: &crate::input::NotifyMigrationTaskStateInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2860,32 +2983,34 @@ impl NotifyMigrationTaskStateInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::NotifyMigrationTaskStateInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSMigrationHub.NotifyMigrationTaskState",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_notify_migration_task_state(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2908,15 +3033,15 @@ impl NotifyMigrationTaskStateInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::NotifyMigrationTaskState::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "NotifyMigrationTaskState",
             "migrationhub",
         ));
@@ -2925,10 +3050,10 @@ impl NotifyMigrationTaskStateInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2960,6 +3085,7 @@ pub mod put_resource_attributes_input {
             self.progress_update_stream = Some(input.into());
             self
         }
+        /// <p>The name of the ProgressUpdateStream. </p>
         pub fn set_progress_update_stream(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2974,6 +3100,9 @@ pub mod put_resource_attributes_input {
             self.migration_task_name = Some(input.into());
             self
         }
+        /// <p>Unique identifier that references the migration task. <i>Do not store personal
+        /// data in this field.</i>
+        /// </p>
         pub fn set_migration_task_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2981,6 +3110,38 @@ pub mod put_resource_attributes_input {
             self.migration_task_name = input;
             self
         }
+        /// Appends an item to `resource_attribute_list`.
+        ///
+        /// To override the contents of this collection use [`set_resource_attribute_list`](Self::set_resource_attribute_list).
+        ///
+        /// <p>Information about the resource that is being migrated. This data will be used to map the
+        /// task to a resource in the Application Discovery Service repository.</p>
+        /// <note>
+        /// <p>Takes the object array of <code>ResourceAttribute</code> where the <code>Type</code>
+        /// field is reserved for the following values: <code>IPV4_ADDRESS | IPV6_ADDRESS |
+        /// MAC_ADDRESS | FQDN | VM_MANAGER_ID | VM_MANAGED_OBJECT_REFERENCE | VM_NAME | VM_PATH
+        /// | BIOS_ID | MOTHERBOARD_SERIAL_NUMBER</code> where the identifying value can be a
+        /// string up to 256 characters.</p>
+        /// </note>
+        /// <important>
+        /// <ul>
+        /// <li>
+        ///
+        /// <p>If any "VM" related value is set for a <code>ResourceAttribute</code> object,
+        /// it is required that <code>VM_MANAGER_ID</code>, as a minimum, is always set. If
+        /// <code>VM_MANAGER_ID</code> is not set, then all "VM" fields will be discarded
+        /// and "VM" fields will not be used for matching the migration task to a server in
+        /// Application Discovery Service repository. See the <a href="https://docs.aws.amazon.com/migrationhub/latest/ug/API_PutResourceAttributes.html#API_PutResourceAttributes_Examples">Example</a> section below for a use case of specifying "VM" related
+        /// values.</p>
+        /// </li>
+        /// <li>
+        /// <p> If a server you are trying to match has multiple IP or MAC addresses, you
+        /// should provide as many as you know in separate type/value pairs passed to the
+        /// <code>ResourceAttributeList</code> parameter to maximize the chances of
+        /// matching.</p>
+        /// </li>
+        /// </ul>
+        /// </important>
         pub fn resource_attribute_list(
             mut self,
             input: impl Into<crate::model::ResourceAttribute>,
@@ -2990,6 +3151,34 @@ pub mod put_resource_attributes_input {
             self.resource_attribute_list = Some(v);
             self
         }
+        /// <p>Information about the resource that is being migrated. This data will be used to map the
+        /// task to a resource in the Application Discovery Service repository.</p>
+        /// <note>
+        /// <p>Takes the object array of <code>ResourceAttribute</code> where the <code>Type</code>
+        /// field is reserved for the following values: <code>IPV4_ADDRESS | IPV6_ADDRESS |
+        /// MAC_ADDRESS | FQDN | VM_MANAGER_ID | VM_MANAGED_OBJECT_REFERENCE | VM_NAME | VM_PATH
+        /// | BIOS_ID | MOTHERBOARD_SERIAL_NUMBER</code> where the identifying value can be a
+        /// string up to 256 characters.</p>
+        /// </note>
+        /// <important>
+        /// <ul>
+        /// <li>
+        ///
+        /// <p>If any "VM" related value is set for a <code>ResourceAttribute</code> object,
+        /// it is required that <code>VM_MANAGER_ID</code>, as a minimum, is always set. If
+        /// <code>VM_MANAGER_ID</code> is not set, then all "VM" fields will be discarded
+        /// and "VM" fields will not be used for matching the migration task to a server in
+        /// Application Discovery Service repository. See the <a href="https://docs.aws.amazon.com/migrationhub/latest/ug/API_PutResourceAttributes.html#API_PutResourceAttributes_Examples">Example</a> section below for a use case of specifying "VM" related
+        /// values.</p>
+        /// </li>
+        /// <li>
+        /// <p> If a server you are trying to match has multiple IP or MAC addresses, you
+        /// should provide as many as you know in separate type/value pairs passed to the
+        /// <code>ResourceAttributeList</code> parameter to maximize the chances of
+        /// matching.</p>
+        /// </li>
+        /// </ul>
+        /// </important>
         pub fn set_resource_attribute_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourceAttribute>>,
@@ -3003,6 +3192,8 @@ pub mod put_resource_attributes_input {
             self.dry_run = Some(input);
             self
         }
+        /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
+        /// the caller has permission to make the call.</p>
         pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
             self.dry_run = input;
             self
@@ -3012,7 +3203,7 @@ pub mod put_resource_attributes_input {
             self,
         ) -> std::result::Result<
             crate::input::PutResourceAttributesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutResourceAttributesInput {
                 progress_update_stream: self.progress_update_stream,
@@ -3034,16 +3225,16 @@ impl PutResourceAttributesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::PutResourceAttributes,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::PutResourceAttributesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3051,7 +3242,7 @@ impl PutResourceAttributesInput {
         fn update_http_builder(
             input: &crate::input::PutResourceAttributesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3060,32 +3251,34 @@ impl PutResourceAttributesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::PutResourceAttributesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSMigrationHub.PutResourceAttributes",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_put_resource_attributes(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3108,15 +3301,15 @@ impl PutResourceAttributesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::PutResourceAttributes::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "PutResourceAttributes",
             "migrationhub",
         ));
@@ -3125,10 +3318,10 @@ impl PutResourceAttributesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3142,6 +3335,7 @@ impl PutResourceAttributesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutResourceAttributesInput {
@@ -3163,6 +3357,7 @@ pub struct PutResourceAttributesInput {
     /// <important>
     /// <ul>
     /// <li>
+    ///
     /// <p>If any "VM" related value is set for a <code>ResourceAttribute</code> object,
     /// it is required that <code>VM_MANAGER_ID</code>, as a minimum, is always set. If
     /// <code>VM_MANAGER_ID</code> is not set, then all "VM" fields will be discarded
@@ -3195,6 +3390,7 @@ impl std::fmt::Debug for PutResourceAttributesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotifyMigrationTaskStateInput {
@@ -3207,7 +3403,7 @@ pub struct NotifyMigrationTaskStateInput {
     /// <p>Information about the task's progress and status.</p>
     pub task: std::option::Option<crate::model::Task>,
     /// <p>The timestamp when the task was gathered.</p>
-    pub update_date_time: std::option::Option<smithy_types::Instant>,
+    pub update_date_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Number of seconds after the UpdateDateTime within which the Migration Hub can expect an
     /// update. If Migration Hub does not receive an update within the specified interval, then the
     /// migration task will be considered stale.</p>
@@ -3229,6 +3425,7 @@ impl std::fmt::Debug for NotifyMigrationTaskStateInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotifyApplicationStateInput {
@@ -3238,7 +3435,7 @@ pub struct NotifyApplicationStateInput {
     /// <p>Status of the application - Not Started, In-Progress, Complete.</p>
     pub status: std::option::Option<crate::model::ApplicationStatus>,
     /// <p>The timestamp when the application state changed.</p>
-    pub update_date_time: std::option::Option<smithy_types::Instant>,
+    pub update_date_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Optional boolean flag to indicate whether any effect should take place. Used to test if
     /// the caller has permission to make the call.</p>
     pub dry_run: bool,
@@ -3254,6 +3451,7 @@ impl std::fmt::Debug for NotifyApplicationStateInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProgressUpdateStreamsInput {
@@ -3273,6 +3471,7 @@ impl std::fmt::Debug for ListProgressUpdateStreamsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMigrationTasksInput {
@@ -3295,6 +3494,7 @@ impl std::fmt::Debug for ListMigrationTasksInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDiscoveredResourcesInput {
@@ -3322,6 +3522,7 @@ impl std::fmt::Debug for ListDiscoveredResourcesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCreatedArtifactsInput {
@@ -3349,6 +3550,7 @@ impl std::fmt::Debug for ListCreatedArtifactsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListApplicationStatesInput {
@@ -3372,6 +3574,7 @@ impl std::fmt::Debug for ListApplicationStatesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportMigrationTaskInput {
@@ -3395,6 +3598,7 @@ impl std::fmt::Debug for ImportMigrationTaskInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateDiscoveredResourceInput {
@@ -3422,6 +3626,7 @@ impl std::fmt::Debug for DisassociateDiscoveredResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateCreatedArtifactInput {
@@ -3449,6 +3654,7 @@ impl std::fmt::Debug for DisassociateCreatedArtifactInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMigrationTaskInput {
@@ -3468,6 +3674,7 @@ impl std::fmt::Debug for DescribeMigrationTaskInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeApplicationStateInput {
@@ -3483,6 +3690,7 @@ impl std::fmt::Debug for DescribeApplicationStateInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteProgressUpdateStreamInput {
@@ -3506,6 +3714,7 @@ impl std::fmt::Debug for DeleteProgressUpdateStreamInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateProgressUpdateStreamInput {
@@ -3529,6 +3738,7 @@ impl std::fmt::Debug for CreateProgressUpdateStreamInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateDiscoveredResourceInput {
@@ -3555,6 +3765,7 @@ impl std::fmt::Debug for AssociateDiscoveredResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateCreatedArtifactInput {

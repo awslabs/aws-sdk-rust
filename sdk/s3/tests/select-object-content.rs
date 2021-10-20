@@ -8,7 +8,7 @@ use aws_sdk_s3::model::{
     OutputSerialization, SelectObjectContentEventStream,
 };
 use aws_sdk_s3::{Client, Config, Credentials, Region};
-use smithy_client::dvr::{Event, ReplayingConnection};
+use aws_smithy_client::dvr::{Event, ReplayingConnection};
 use std::error::Error as StdError;
 
 #[tokio::test]

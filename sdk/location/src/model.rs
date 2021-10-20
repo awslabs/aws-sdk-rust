@@ -32,6 +32,7 @@ pub mod validation_exception_field {
             self.name = Some(input.into());
             self
         }
+        /// <p>The field name where the invalid entry was detected.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -41,6 +42,7 @@ pub mod validation_exception_field {
             self.message = Some(input.into());
             self
         }
+        /// <p>A message with the reason for the validation exception error.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -61,6 +63,7 @@ impl ValidationExceptionField {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -73,9 +76,11 @@ impl ValidationExceptionField {
 )]
 pub struct ValidationExceptionReason(String);
 impl ValidationExceptionReason {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         &self.0
     }
+    /// Returns all the `&str` representations of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CannotParse",
@@ -103,7 +108,7 @@ pub struct ListDevicePositionsResponseEntry {
     pub device_id: std::option::Option<std::string::String>,
     /// <p>The timestamp at which the device position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
-    pub sample_time: std::option::Option<smithy_types::Instant>,
+    pub sample_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The last known device position. Empty if no positions currently stored.</p>
     pub position: std::option::Option<std::vec::Vec<f64>>,
 }
@@ -123,7 +128,7 @@ pub mod list_device_positions_response_entry {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_id: std::option::Option<std::string::String>,
-        pub(crate) sample_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) sample_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) position: std::option::Option<std::vec::Vec<f64>>,
     }
     impl Builder {
@@ -132,29 +137,38 @@ pub mod list_device_positions_response_entry {
             self.device_id = Some(input.into());
             self
         }
+        /// <p>The ID of the device for this position.</p>
         pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.device_id = input;
             self
         }
         /// <p>The timestamp at which the device position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
         /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
-        pub fn sample_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn sample_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.sample_time = Some(input);
             self
         }
+        /// <p>The timestamp at which the device position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
+        /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
         pub fn set_sample_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.sample_time = input;
             self
         }
+        /// Appends an item to `position`.
+        ///
+        /// To override the contents of this collection use [`set_position`](Self::set_position).
+        ///
+        /// <p>The last known device position. Empty if no positions currently stored.</p>
         pub fn position(mut self, input: impl Into<f64>) -> Self {
             let mut v = self.position.unwrap_or_default();
             v.push(input.into());
             self.position = Some(v);
             self
         }
+        /// <p>The last known device position. Empty if no positions currently stored.</p>
         pub fn set_position(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
             self.position = input;
             self
@@ -184,10 +198,10 @@ pub struct DevicePosition {
     pub device_id: std::option::Option<std::string::String>,
     /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub sample_time: std::option::Option<smithy_types::Instant>,
+    pub sample_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The timestamp for when the tracker resource received the device position in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub received_time: std::option::Option<smithy_types::Instant>,
+    pub received_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The last known device position.</p>
     pub position: std::option::Option<std::vec::Vec<f64>>,
 }
@@ -208,8 +222,8 @@ pub mod device_position {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_id: std::option::Option<std::string::String>,
-        pub(crate) sample_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) received_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) sample_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) received_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) position: std::option::Option<std::vec::Vec<f64>>,
     }
     impl Builder {
@@ -218,42 +232,53 @@ pub mod device_position {
             self.device_id = Some(input.into());
             self
         }
+        /// <p>The device whose position you retrieved.</p>
         pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.device_id = input;
             self
         }
         /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
         /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-        pub fn sample_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn sample_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.sample_time = Some(input);
             self
         }
+        /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
+        /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         pub fn set_sample_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.sample_time = input;
             self
         }
         /// <p>The timestamp for when the tracker resource received the device position in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
         /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-        pub fn received_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn received_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.received_time = Some(input);
             self
         }
+        /// <p>The timestamp for when the tracker resource received the device position in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
+        /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         pub fn set_received_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.received_time = input;
             self
         }
+        /// Appends an item to `position`.
+        ///
+        /// To override the contents of this collection use [`set_position`](Self::set_position).
+        ///
+        /// <p>The last known device position.</p>
         pub fn position(mut self, input: impl Into<f64>) -> Self {
             let mut v = self.position.unwrap_or_default();
             v.push(input.into());
             self.position = Some(v);
             self
         }
+        /// <p>The last known device position.</p>
         pub fn set_position(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
             self.position = input;
             self
@@ -284,7 +309,7 @@ pub struct BatchUpdateDevicePositionError {
     pub device_id: std::option::Option<std::string::String>,
     /// <p>The timestamp at which the device position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub sample_time: std::option::Option<smithy_types::Instant>,
+    pub sample_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Contains details related to the error code such as the error code and error
     /// message.</p>
     pub error: std::option::Option<crate::model::BatchItemError>,
@@ -305,7 +330,7 @@ pub mod batch_update_device_position_error {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_id: std::option::Option<std::string::String>,
-        pub(crate) sample_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) sample_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) error: std::option::Option<crate::model::BatchItemError>,
     }
     impl Builder {
@@ -314,19 +339,22 @@ pub mod batch_update_device_position_error {
             self.device_id = Some(input.into());
             self
         }
+        /// <p>The device associated with the failed location update.</p>
         pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.device_id = input;
             self
         }
         /// <p>The timestamp at which the device position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
         /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-        pub fn sample_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn sample_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.sample_time = Some(input);
             self
         }
+        /// <p>The timestamp at which the device position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
+        /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         pub fn set_sample_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.sample_time = input;
             self
@@ -337,6 +365,8 @@ pub mod batch_update_device_position_error {
             self.error = Some(input);
             self
         }
+        /// <p>Contains details related to the error code such as the error code and error
+        /// message.</p>
         pub fn set_error(
             mut self,
             input: std::option::Option<crate::model::BatchItemError>,
@@ -393,6 +423,7 @@ pub mod batch_item_error {
             self.code = Some(input);
             self
         }
+        /// <p>The error code associated with the batch request error.</p>
         pub fn set_code(
             mut self,
             input: std::option::Option<crate::model::BatchItemErrorCode>,
@@ -405,6 +436,7 @@ pub mod batch_item_error {
             self.message = Some(input.into());
             self
         }
+        /// <p>A message with the reason for the batch request error.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -425,6 +457,7 @@ impl BatchItemError {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -437,9 +470,11 @@ impl BatchItemError {
 )]
 pub struct BatchItemErrorCode(String);
 impl BatchItemErrorCode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         &self.0
     }
+    /// Returns all the `&str` representations of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "AccessDeniedError",
@@ -469,7 +504,7 @@ pub struct DevicePositionUpdate {
     /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
     /// </p>
-    pub sample_time: std::option::Option<smithy_types::Instant>,
+    pub sample_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The latest device position defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format:
     /// <code>[X or longitude, Y or latitude]</code>.</p>
     pub position: std::option::Option<std::vec::Vec<f64>>,
@@ -490,7 +525,7 @@ pub mod device_position_update {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_id: std::option::Option<std::string::String>,
-        pub(crate) sample_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) sample_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) position: std::option::Option<std::vec::Vec<f64>>,
     }
     impl Builder {
@@ -499,6 +534,7 @@ pub mod device_position_update {
             self.device_id = Some(input.into());
             self
         }
+        /// <p>The device associated to the position update.</p>
         pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.device_id = input;
             self
@@ -506,23 +542,34 @@ pub mod device_position_update {
         /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
         /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
         /// </p>
-        pub fn sample_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn sample_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.sample_time = Some(input);
             self
         }
+        /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+        /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
+        /// </p>
         pub fn set_sample_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.sample_time = input;
             self
         }
+        /// Appends an item to `position`.
+        ///
+        /// To override the contents of this collection use [`set_position`](Self::set_position).
+        ///
+        /// <p>The latest device position defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format:
+        /// <code>[X or longitude, Y or latitude]</code>.</p>
         pub fn position(mut self, input: impl Into<f64>) -> Self {
             let mut v = self.position.unwrap_or_default();
             v.push(input.into());
             self.position = Some(v);
             self
         }
+        /// <p>The latest device position defined in <a href="https://earth-info.nga.mil/GandG/wgs84/index.html">WGS 84</a> format:
+        /// <code>[X or longitude, Y or latitude]</code>.</p>
         pub fn set_position(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
             self.position = input;
             self
@@ -576,6 +623,7 @@ pub mod batch_get_device_position_error {
             self.device_id = Some(input.into());
             self
         }
+        /// <p>The ID of the device that didn't return a position.</p>
         pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.device_id = input;
             self
@@ -585,6 +633,7 @@ pub mod batch_get_device_position_error {
             self.error = Some(input);
             self
         }
+        /// <p>Contains details related to the error code.</p>
         pub fn set_error(
             mut self,
             input: std::option::Option<crate::model::BatchItemError>,
@@ -640,6 +689,7 @@ pub mod batch_delete_device_position_history_error {
             self.device_id = Some(input.into());
             self
         }
+        /// <p>The ID of the device for this position.</p>
         pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.device_id = input;
             self
@@ -649,6 +699,7 @@ pub mod batch_delete_device_position_history_error {
             self.error = Some(input);
             self
         }
+        /// <p>Contains the batch request error details associated with the request.</p>
         pub fn set_error(
             mut self,
             input: std::option::Option<crate::model::BatchItemError>,
@@ -687,10 +738,10 @@ pub struct ListTrackersResponseEntry {
     pub pricing_plan_data_source: std::option::Option<std::string::String>,
     /// <p>The timestamp for when the tracker resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub create_time: std::option::Option<smithy_types::Instant>,
+    pub create_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub update_time: std::option::Option<smithy_types::Instant>,
+    pub update_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for ListTrackersResponseEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -714,8 +765,8 @@ pub mod list_trackers_response_entry {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) pricing_plan: std::option::Option<crate::model::PricingPlan>,
         pub(crate) pricing_plan_data_source: std::option::Option<std::string::String>,
-        pub(crate) create_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) update_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) create_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) update_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The name of the tracker resource.</p>
@@ -723,6 +774,7 @@ pub mod list_trackers_response_entry {
             self.tracker_name = Some(input.into());
             self
         }
+        /// <p>The name of the tracker resource.</p>
         pub fn set_tracker_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.tracker_name = input;
             self
@@ -732,6 +784,7 @@ pub mod list_trackers_response_entry {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description for the tracker resource.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -742,6 +795,8 @@ pub mod list_trackers_response_entry {
             self.pricing_plan = Some(input);
             self
         }
+        /// <p>The pricing plan for the specified tracker resource.</p>
+        /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
         pub fn set_pricing_plan(
             mut self,
             input: std::option::Option<crate::model::PricingPlan>,
@@ -754,6 +809,7 @@ pub mod list_trackers_response_entry {
             self.pricing_plan_data_source = Some(input.into());
             self
         }
+        /// <p>The specified data provider for the tracker resource.</p>
         pub fn set_pricing_plan_data_source(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -763,26 +819,30 @@ pub mod list_trackers_response_entry {
         }
         /// <p>The timestamp for when the tracker resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
         /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-        pub fn create_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn create_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.create_time = Some(input);
             self
         }
+        /// <p>The timestamp for when the tracker resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
+        /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         pub fn set_create_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.create_time = input;
             self
         }
         /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
         /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-        pub fn update_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn update_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.update_time = Some(input);
             self
         }
+        /// <p>The timestamp at which the device's position was determined. Uses <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a>
+        /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         pub fn set_update_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.update_time = input;
             self
@@ -807,6 +867,7 @@ impl ListTrackersResponseEntry {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -819,9 +880,11 @@ impl ListTrackersResponseEntry {
 )]
 pub struct PricingPlan(String);
 impl PricingPlan {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         &self.0
     }
+    /// Returns all the `&str` representations of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "MobileAssetManagement",
@@ -839,6 +902,7 @@ where
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -851,9 +915,11 @@ where
 )]
 pub struct PositionFiltering(String);
 impl PositionFiltering {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         &self.0
     }
+    /// Returns all the `&str` representations of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DistanceBased", "TimeBased"]
     }
@@ -951,12 +1017,64 @@ pub mod calculate_route_summary {
         pub(crate) distance_unit: std::option::Option<crate::model::DistanceUnit>,
     }
     impl Builder {
+        /// Appends an item to `route_b_box`.
+        ///
+        /// To override the contents of this collection use [`set_route_b_box`](Self::set_route_b_box).
+        ///
+        /// <p>Specifies a geographical box surrounding a route. Used to zoom into a route when
+        /// displaying it in a map. For example, <code>[min x, min y, max x, max y]</code>.</p>
+        /// <p>The first 2 <code>bbox</code> parameters describe the lower southwest corner: </p>
+        /// <ul>
+        /// <li>
+        /// <p>The first <code>bbox</code> position is the X coordinate or longitude of the
+        /// lower southwest corner. </p>
+        /// </li>
+        /// <li>
+        /// <p>The second <code>bbox</code> position is the Y coordinate or latitude of the
+        /// lower southwest corner. </p>
+        /// </li>
+        /// </ul>
+        /// <p>The next 2 <code>bbox</code> parameters describe the upper northeast corner: </p>
+        /// <ul>
+        /// <li>
+        /// <p>The third <code>bbox</code> position is the X coordinate, or longitude of the
+        /// upper northeast corner. </p>
+        /// </li>
+        /// <li>
+        /// <p>The fourth <code>bbox</code> position is the Y coordinate, or latitude of the
+        /// upper northeast corner. </p>
+        /// </li>
+        /// </ul>
         pub fn route_b_box(mut self, input: impl Into<f64>) -> Self {
             let mut v = self.route_b_box.unwrap_or_default();
             v.push(input.into());
             self.route_b_box = Some(v);
             self
         }
+        /// <p>Specifies a geographical box surrounding a route. Used to zoom into a route when
+        /// displaying it in a map. For example, <code>[min x, min y, max x, max y]</code>.</p>
+        /// <p>The first 2 <code>bbox</code> parameters describe the lower southwest corner: </p>
+        /// <ul>
+        /// <li>
+        /// <p>The first <code>bbox</code> position is the X coordinate or longitude of the
+        /// lower southwest corner. </p>
+        /// </li>
+        /// <li>
+        /// <p>The second <code>bbox</code> position is the Y coordinate or latitude of the
+        /// lower southwest corner. </p>
+        /// </li>
+        /// </ul>
+        /// <p>The next 2 <code>bbox</code> parameters describe the upper northeast corner: </p>
+        /// <ul>
+        /// <li>
+        /// <p>The third <code>bbox</code> position is the X coordinate, or longitude of the
+        /// upper northeast corner. </p>
+        /// </li>
+        /// <li>
+        /// <p>The fourth <code>bbox</code> position is the Y coordinate, or latitude of the
+        /// upper northeast corner. </p>
+        /// </li>
+        /// </ul>
         pub fn set_route_b_box(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
             self.route_b_box = input;
             self
@@ -980,6 +1098,21 @@ pub mod calculate_route_summary {
             self.data_source = Some(input.into());
             self
         }
+        /// <p>The data provider of traffic and road network data used to calculate the route.
+        /// Indicates one of the available providers:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Esri</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Here</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
         pub fn set_data_source(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.data_source = input;
             self
@@ -995,6 +1128,13 @@ pub mod calculate_route_summary {
             self.distance = Some(input);
             self
         }
+        /// <p>The total distance covered by the route. The sum of the distance travelled between
+        /// every stop on the route.</p>
+        /// <note>
+        /// <p>If Esri is the data source for the route calculator, the route distance can’t
+        /// be greater than 400 km. If the route exceeds 400 km, the response is a
+        /// <code>400 RoutesValidationException</code> error.</p>
+        /// </note>
         pub fn set_distance(mut self, input: std::option::Option<f64>) -> Self {
             self.distance = input;
             self
@@ -1006,6 +1146,9 @@ pub mod calculate_route_summary {
             self.duration_seconds = Some(input);
             self
         }
+        /// <p>The total travel time for the route measured in seconds. The sum of the travel time
+        /// between every stop on the
+        /// route.</p>
         pub fn set_duration_seconds(mut self, input: std::option::Option<f64>) -> Self {
             self.duration_seconds = input;
             self
@@ -1015,6 +1158,7 @@ pub mod calculate_route_summary {
             self.distance_unit = Some(input);
             self
         }
+        /// <p>The unit of measurement for the distance.</p>
         pub fn set_distance_unit(
             mut self,
             input: std::option::Option<crate::model::DistanceUnit>,
@@ -1041,6 +1185,7 @@ impl CalculateRouteSummary {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1053,9 +1198,11 @@ impl CalculateRouteSummary {
 )]
 pub struct DistanceUnit(String);
 impl DistanceUnit {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         &self.0
     }
+    /// Returns all the `&str` representations of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Kilometers", "Miles"]
     }
@@ -1155,12 +1302,26 @@ pub mod leg {
         pub(crate) steps: std::option::Option<std::vec::Vec<crate::model::Step>>,
     }
     impl Builder {
+        /// Appends an item to `start_position`.
+        ///
+        /// To override the contents of this collection use [`set_start_position`](Self::set_start_position).
+        ///
+        /// <p>The starting position of the leg. Follows the format
+        /// <code>[longitude,latitude]</code>.</p>
+        /// <note>
+        /// <p>If the <code>StartPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">snapped to a nearby road</a>. </p>
+        /// </note>
         pub fn start_position(mut self, input: impl Into<f64>) -> Self {
             let mut v = self.start_position.unwrap_or_default();
             v.push(input.into());
             self.start_position = Some(v);
             self
         }
+        /// <p>The starting position of the leg. Follows the format
+        /// <code>[longitude,latitude]</code>.</p>
+        /// <note>
+        /// <p>If the <code>StartPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">snapped to a nearby road</a>. </p>
+        /// </note>
         pub fn set_start_position(
             mut self,
             input: std::option::Option<std::vec::Vec<f64>>,
@@ -1168,12 +1329,26 @@ pub mod leg {
             self.start_position = input;
             self
         }
+        /// Appends an item to `end_position`.
+        ///
+        /// To override the contents of this collection use [`set_end_position`](Self::set_end_position).
+        ///
+        /// <p>The terminating position of the leg. Follows the format
+        /// <code>[longitude,latitude]</code>.</p>
+        /// <note>
+        /// <p>If the <code>EndPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">snapped to a nearby road</a>. </p>
+        /// </note>
         pub fn end_position(mut self, input: impl Into<f64>) -> Self {
             let mut v = self.end_position.unwrap_or_default();
             v.push(input.into());
             self.end_position = Some(v);
             self
         }
+        /// <p>The terminating position of the leg. Follows the format
+        /// <code>[longitude,latitude]</code>.</p>
+        /// <note>
+        /// <p>If the <code>EndPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">snapped to a nearby road</a>. </p>
+        /// </note>
         pub fn set_end_position(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
             self.end_position = input;
             self
@@ -1190,6 +1365,14 @@ pub mod leg {
             self.distance = Some(input);
             self
         }
+        /// <p>The distance between the leg's <code>StartPosition</code> and <code>EndPosition</code>
+        /// along a calculated route. </p>
+        /// <ul>
+        /// <li>
+        /// <p>The default measurement is <code>Kilometers</code> unless the request
+        /// specifies a <code>DistanceUnit</code> of <code>Miles</code>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_distance(mut self, input: std::option::Option<f64>) -> Self {
             self.distance = input;
             self
@@ -1201,6 +1384,9 @@ pub mod leg {
             self.duration_seconds = Some(input);
             self
         }
+        /// <p>The estimated travel time between the leg's <code>StartPosition</code> and
+        /// <code>EndPosition</code>. The travel mode and departure time that you specify in the
+        /// request determines the calculated time.</p>
         pub fn set_duration_seconds(mut self, input: std::option::Option<f64>) -> Self {
             self.duration_seconds = input;
             self
@@ -1210,6 +1396,7 @@ pub mod leg {
             self.geometry = Some(input);
             self
         }
+        /// <p>Contains the calculated route's path as a linestring geometry.</p>
         pub fn set_geometry(
             mut self,
             input: std::option::Option<crate::model::LegGeometry>,
@@ -1217,12 +1404,22 @@ pub mod leg {
             self.geometry = input;
             self
         }
+        /// Appends an item to `steps`.
+        ///
+        /// To override the contents of this collection use [`set_steps`](Self::set_steps).
+        ///
+        /// <p>Contains a list of steps, which represent subsections of a leg. Each step provides
+        /// instructions for how to move to the next step in the leg such as the step's start
+        /// position, end position, travel distance, travel duration, and geometry offset.</p>
         pub fn steps(mut self, input: impl Into<crate::model::Step>) -> Self {
             let mut v = self.steps.unwrap_or_default();
             v.push(input.into());
             self.steps = Some(v);
             self
         }
+        /// <p>Contains a list of steps, which represent subsections of a leg. Each step provides
+        /// instructions for how to move to the next step in the leg such as the step's start
+        /// position, end position, travel distance, travel duration, and geometry offset.</p>
         pub fn set_steps(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Step>>,
@@ -1299,12 +1496,20 @@ pub mod step {
         pub(crate) geometry_offset: std::option::Option<i32>,
     }
     impl Builder {
+        /// Appends an item to `start_position`.
+        ///
+        /// To override the contents of this collection use [`set_start_position`](Self::set_start_position).
+        ///
+        /// <p>The starting position of a step. If the position is the first step in the leg, this
+        /// position is the same as the start position of the leg.</p>
         pub fn start_position(mut self, input: impl Into<f64>) -> Self {
             let mut v = self.start_position.unwrap_or_default();
             v.push(input.into());
             self.start_position = Some(v);
             self
         }
+        /// <p>The starting position of a step. If the position is the first step in the leg, this
+        /// position is the same as the start position of the leg.</p>
         pub fn set_start_position(
             mut self,
             input: std::option::Option<std::vec::Vec<f64>>,
@@ -1312,12 +1517,20 @@ pub mod step {
             self.start_position = input;
             self
         }
+        /// Appends an item to `end_position`.
+        ///
+        /// To override the contents of this collection use [`set_end_position`](Self::set_end_position).
+        ///
+        /// <p>The end position of a step. If the position the last step in the leg, this position is
+        /// the same as the end position of the leg.</p>
         pub fn end_position(mut self, input: impl Into<f64>) -> Self {
             let mut v = self.end_position.unwrap_or_default();
             v.push(input.into());
             self.end_position = Some(v);
             self
         }
+        /// <p>The end position of a step. If the position the last step in the leg, this position is
+        /// the same as the end position of the leg.</p>
         pub fn set_end_position(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
             self.end_position = input;
             self
@@ -1328,6 +1541,8 @@ pub mod step {
             self.distance = Some(input);
             self
         }
+        /// <p>The travel distance between the step's <code>StartPosition</code> and
+        /// <code>EndPosition</code>.</p>
         pub fn set_distance(mut self, input: std::option::Option<f64>) -> Self {
             self.distance = input;
             self
@@ -1339,6 +1554,9 @@ pub mod step {
             self.duration_seconds = Some(input);
             self
         }
+        /// <p>The estimated travel time, in seconds, from the step's <code>StartPosition</code> to
+        /// the <code>EndPosition</code>. . The travel mode and departure time that you specify in
+        /// the request determines the calculated time.</p>
         pub fn set_duration_seconds(mut self, input: std::option::Option<f64>) -> Self {
             self.duration_seconds = input;
             self
@@ -1352,6 +1570,11 @@ pub mod step {
             self.geometry_offset = Some(input);
             self
         }
+        /// <p>Represents the start position, or index, in a sequence of steps within the leg's line
+        /// string geometry. For example, the index of the first step in a leg geometry is
+        /// <code>0</code>. </p>
+        /// <p>Included in the response for queries that set <code>IncludeLegGeometry</code> to
+        /// <code>True</code>. </p>
         pub fn set_geometry_offset(mut self, input: std::option::Option<i32>) -> Self {
             self.geometry_offset = input;
             self
@@ -1408,12 +1631,36 @@ pub mod leg_geometry {
         pub(crate) line_string: std::option::Option<std::vec::Vec<std::vec::Vec<f64>>>,
     }
     impl Builder {
+        /// Appends an item to `line_string`.
+        ///
+        /// To override the contents of this collection use [`set_line_string`](Self::set_line_string).
+        ///
+        /// <p>An ordered list of positions used to plot a route on a map. </p>
+        /// <p>The first position is closest to the start position for the leg, and the last position
+        /// is the closest to the end position for the leg.</p>
+        /// <ul>
+        /// <li>
+        /// <p>For example, <code>[[-123.117, 49.284],[-123.115, 49.285],[-123.115,
+        /// 49.285]]</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn line_string(mut self, input: impl Into<std::vec::Vec<f64>>) -> Self {
             let mut v = self.line_string.unwrap_or_default();
             v.push(input.into());
             self.line_string = Some(v);
             self
         }
+        /// <p>An ordered list of positions used to plot a route on a map. </p>
+        /// <p>The first position is closest to the start position for the leg, and the last position
+        /// is the closest to the end position for the leg.</p>
+        /// <ul>
+        /// <li>
+        /// <p>For example, <code>[[-123.117, 49.284],[-123.115, 49.285],[-123.115,
+        /// 49.285]]</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_line_string(
             mut self,
             input: std::option::Option<std::vec::Vec<std::vec::Vec<f64>>>,
@@ -1492,6 +1739,11 @@ pub mod calculate_route_truck_mode_options {
             self.avoid_ferries = Some(input);
             self
         }
+        /// <p>Avoids ferries when calculating routes.</p>
+        /// <p>Default Value: <code>false</code>
+        /// </p>
+        /// <p>Valid Values: <code>false</code> | <code>true</code>
+        /// </p>
         pub fn set_avoid_ferries(mut self, input: std::option::Option<bool>) -> Self {
             self.avoid_ferries = input;
             self
@@ -1505,6 +1757,11 @@ pub mod calculate_route_truck_mode_options {
             self.avoid_tolls = Some(input);
             self
         }
+        /// <p>Avoids ferries when calculating routes.</p>
+        /// <p>Default Value: <code>false</code>
+        /// </p>
+        /// <p>Valid Values: <code>false</code> | <code>true</code>
+        /// </p>
         pub fn set_avoid_tolls(mut self, input: std::option::Option<bool>) -> Self {
             self.avoid_tolls = input;
             self
@@ -1516,6 +1773,9 @@ pub mod calculate_route_truck_mode_options {
             self.dimensions = Some(input);
             self
         }
+        /// <p>Specifies the truck's dimension specifications including length, height, width, and
+        /// unit of measurement. Used to avoid roads that can't support the truck's
+        /// dimensions.</p>
         pub fn set_dimensions(
             mut self,
             input: std::option::Option<crate::model::TruckDimensions>,
@@ -1529,6 +1789,8 @@ pub mod calculate_route_truck_mode_options {
             self.weight = Some(input);
             self
         }
+        /// <p>Specifies the truck's weight specifications including total weight and unit of
+        /// measurement. Used to avoid roads that can't support the truck's weight.</p>
         pub fn set_weight(mut self, input: std::option::Option<crate::model::TruckWeight>) -> Self {
             self.weight = input;
             self
@@ -1597,6 +1859,12 @@ pub mod truck_weight {
             self.total = Some(input);
             self
         }
+        /// <p>The total weight of the truck. </p>
+        /// <ul>
+        /// <li>
+        /// <p>For example, <code>3500</code>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_total(mut self, input: std::option::Option<f64>) -> Self {
             self.total = input;
             self
@@ -1608,6 +1876,9 @@ pub mod truck_weight {
             self.unit = Some(input);
             self
         }
+        /// <p>The unit of measurement to use for the truck weight.</p>
+        /// <p>Default Value: <code>Kilograms</code>
+        /// </p>
         pub fn set_unit(
             mut self,
             input: std::option::Option<crate::model::VehicleWeightUnit>,
@@ -1631,6 +1902,7 @@ impl TruckWeight {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1643,9 +1915,11 @@ impl TruckWeight {
 )]
 pub struct VehicleWeightUnit(String);
 impl VehicleWeightUnit {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         &self.0
     }
+    /// Returns all the `&str` representations of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Kilograms", "Pounds"]
     }
@@ -1723,6 +1997,12 @@ pub mod truck_dimensions {
             self.length = Some(input);
             self
         }
+        /// <p>The length of the truck.</p>
+        /// <ul>
+        /// <li>
+        /// <p>For example, <code>15.5</code>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_length(mut self, input: std::option::Option<f64>) -> Self {
             self.length = input;
             self
@@ -1737,6 +2017,12 @@ pub mod truck_dimensions {
             self.height = Some(input);
             self
         }
+        /// <p>The height of the truck.</p>
+        /// <ul>
+        /// <li>
+        /// <p>For example, <code>4.5</code>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_height(mut self, input: std::option::Option<f64>) -> Self {
             self.height = input;
             self
@@ -1751,6 +2037,12 @@ pub mod truck_dimensions {
             self.width = Some(input);
             self
         }
+        /// <p>The width of the truck.</p>
+        /// <ul>
+        /// <li>
+        /// <p>For example, <code>4.5</code>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_width(mut self, input: std::option::Option<f64>) -> Self {
             self.width = input;
             self
@@ -1762,6 +2054,9 @@ pub mod truck_dimensions {
             self.unit = Some(input);
             self
         }
+        /// <p> Specifies the unit of measurement for the truck dimensions.</p>
+        /// <p>Default Value: <code>Meters</code>
+        /// </p>
         pub fn set_unit(mut self, input: std::option::Option<crate::model::DimensionUnit>) -> Self {
             self.unit = input;
             self
@@ -1784,6 +2079,7 @@ impl TruckDimensions {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1796,9 +2092,11 @@ impl TruckDimensions {
 )]
 pub struct DimensionUnit(String);
 impl DimensionUnit {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         &self.0
     }
+    /// Returns all the `&str` representations of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Feet", "Meters"]
     }
@@ -1857,6 +2155,11 @@ pub mod calculate_route_car_mode_options {
             self.avoid_ferries = Some(input);
             self
         }
+        /// <p>Avoids ferries when calculating routes.</p>
+        /// <p>Default Value: <code>false</code>
+        /// </p>
+        /// <p>Valid Values: <code>false</code> | <code>true</code>
+        /// </p>
         pub fn set_avoid_ferries(mut self, input: std::option::Option<bool>) -> Self {
             self.avoid_ferries = input;
             self
@@ -1870,6 +2173,11 @@ pub mod calculate_route_car_mode_options {
             self.avoid_tolls = Some(input);
             self
         }
+        /// <p>Avoids tolls when calculating routes.</p>
+        /// <p>Default Value: <code>false</code>
+        /// </p>
+        /// <p>Valid Values: <code>false</code> | <code>true</code>
+        /// </p>
         pub fn set_avoid_tolls(mut self, input: std::option::Option<bool>) -> Self {
             self.avoid_tolls = input;
             self
@@ -1890,6 +2198,7 @@ impl CalculateRouteCarModeOptions {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1902,9 +2211,11 @@ impl CalculateRouteCarModeOptions {
 )]
 pub struct TravelMode(String);
 impl TravelMode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         &self.0
     }
+    /// Returns all the `&str` representations of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Car", "Truck", "Walking"]
     }
@@ -1953,7 +2264,7 @@ pub struct ListRouteCalculatorsResponseEntry {
     /// </p>
     /// </li>
     /// </ul>
-    pub create_time: std::option::Option<smithy_types::Instant>,
+    pub create_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The timestamp when the route calculator resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     /// <ul>
@@ -1962,7 +2273,7 @@ pub struct ListRouteCalculatorsResponseEntry {
     /// </p>
     /// </li>
     /// </ul>
-    pub update_time: std::option::Option<smithy_types::Instant>,
+    pub update_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for ListRouteCalculatorsResponseEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1986,8 +2297,8 @@ pub mod list_route_calculators_response_entry {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) data_source: std::option::Option<std::string::String>,
         pub(crate) pricing_plan: std::option::Option<crate::model::PricingPlan>,
-        pub(crate) create_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) update_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) create_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) update_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The name of the route calculator resource.</p>
@@ -1995,6 +2306,7 @@ pub mod list_route_calculators_response_entry {
             self.calculator_name = Some(input.into());
             self
         }
+        /// <p>The name of the route calculator resource.</p>
         pub fn set_calculator_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2007,6 +2319,7 @@ pub mod list_route_calculators_response_entry {
             self.description = Some(input.into());
             self
         }
+        /// <p>The optional description of the route calculator resource.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -2030,6 +2343,21 @@ pub mod list_route_calculators_response_entry {
             self.data_source = Some(input.into());
             self
         }
+        /// <p>The data provider of traffic and road network data. Indicates one of the available
+        /// providers:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Esri</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Here</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
         pub fn set_data_source(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.data_source = input;
             self
@@ -2040,6 +2368,8 @@ pub mod list_route_calculators_response_entry {
             self.pricing_plan = Some(input);
             self
         }
+        /// <p>The pricing plan for the specified route calculator resource.</p>
+        /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
         pub fn set_pricing_plan(
             mut self,
             input: std::option::Option<crate::model::PricingPlan>,
@@ -2055,13 +2385,21 @@ pub mod list_route_calculators_response_entry {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn create_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn create_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.create_time = Some(input);
             self
         }
+        /// <p>The timestamp when the route calculator resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+        /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+        /// <ul>
+        /// <li>
+        /// <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_create_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.create_time = input;
             self
@@ -2074,13 +2412,21 @@ pub mod list_route_calculators_response_entry {
         /// </p>
         /// </li>
         /// </ul>
-        pub fn update_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn update_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.update_time = Some(input);
             self
         }
+        /// <p>The timestamp when the route calculator resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+        /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
+        /// <ul>
+        /// <li>
+        /// <p>For example, <code>2020–07-2T12:15:20.000Z+01:00</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_update_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.update_time = input;
             self
@@ -2134,6 +2480,7 @@ pub mod search_for_text_result {
             self.place = Some(input);
             self
         }
+        /// <p>Contains details about the relevant point of interest.</p>
         pub fn set_place(mut self, input: std::option::Option<crate::model::Place>) -> Self {
             self.place = input;
             self
@@ -2224,6 +2571,8 @@ pub mod place {
             self.label = Some(input.into());
             self
         }
+        /// <p>The full name and address of the point of interest such as a city,
+        /// region, or country. For example, <code>123 Any Street, Any Town, USA</code>.</p>
         pub fn set_label(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.label = input;
             self
@@ -2233,6 +2582,7 @@ pub mod place {
             self.geometry = Some(input);
             self
         }
+        /// <p>Places uses a point geometry to specify a location or a Place.</p>
         pub fn set_geometry(
             mut self,
             input: std::option::Option<crate::model::PlaceGeometry>,
@@ -2245,6 +2595,7 @@ pub mod place {
             self.address_number = Some(input.into());
             self
         }
+        /// <p>The numerical portion of an address, such as a building number. </p>
         pub fn set_address_number(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2258,6 +2609,8 @@ pub mod place {
             self.street = Some(input.into());
             self
         }
+        /// <p>The name for a street or a road to identify a location. For example, <code>Main
+        /// Street</code>.</p>
         pub fn set_street(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.street = input;
             self
@@ -2267,6 +2620,7 @@ pub mod place {
             self.neighborhood = Some(input.into());
             self
         }
+        /// <p>The name of a community district. For example, <code>Downtown</code>.</p>
         pub fn set_neighborhood(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.neighborhood = input;
             self
@@ -2277,6 +2631,8 @@ pub mod place {
             self.municipality = Some(input.into());
             self
         }
+        /// <p>A name for a local area, such as a city or town name. For example,
+        /// <code>Toronto</code>.</p>
         pub fn set_municipality(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.municipality = input;
             self
@@ -2287,6 +2643,8 @@ pub mod place {
             self.sub_region = Some(input.into());
             self
         }
+        /// <p>A country, or an area that's part of a larger region .  For example, <code>Metro
+        /// Vancouver</code>.</p>
         pub fn set_sub_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.sub_region = input;
             self
@@ -2297,6 +2655,8 @@ pub mod place {
             self.region = Some(input.into());
             self
         }
+        /// <p>A name for an area or geographical division, such as a province or state name. For
+        /// example, <code>British Columbia</code>.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
@@ -2307,6 +2667,8 @@ pub mod place {
             self.country = Some(input.into());
             self
         }
+        /// <p>A country/region specified using <a href="https://www.iso.org/iso-3166-country-codes.html">ISO 3166</a> 3-digit
+        /// country/region code. For example, <code>CAN</code>.</p>
         pub fn set_country(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.country = input;
             self
@@ -2317,6 +2679,8 @@ pub mod place {
             self.postal_code = Some(input.into());
             self
         }
+        /// <p>A group of numbers and letters in a country-specific format, which accompanies the
+        /// address for the purpose of identifying a location. </p>
         pub fn set_postal_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.postal_code = input;
             self
@@ -2379,12 +2743,40 @@ pub mod place_geometry {
         pub(crate) point: std::option::Option<std::vec::Vec<f64>>,
     }
     impl Builder {
+        /// Appends an item to `point`.
+        ///
+        /// To override the contents of this collection use [`set_point`](Self::set_point).
+        ///
+        /// <p>A single point geometry specifies a location for a Place using <a href="https://gisgeography.com/wgs84-world-geodetic-system/">WGS 84</a>
+        /// coordinates:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <i>x</i> — Specifies the x coordinate or longitude. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <i>y</i> — Specifies the y coordinate or latitude. </p>
+        /// </li>
+        /// </ul>
         pub fn point(mut self, input: impl Into<f64>) -> Self {
             let mut v = self.point.unwrap_or_default();
             v.push(input.into());
             self.point = Some(v);
             self
         }
+        /// <p>A single point geometry specifies a location for a Place using <a href="https://gisgeography.com/wgs84-world-geodetic-system/">WGS 84</a>
+        /// coordinates:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <i>x</i> — Specifies the x coordinate or longitude. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <i>y</i> — Specifies the y coordinate or latitude. </p>
+        /// </li>
+        /// </ul>
         pub fn set_point(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
             self.point = input;
             self
@@ -2468,36 +2860,58 @@ pub mod search_place_index_for_text_summary {
             self.text = Some(input.into());
             self
         }
+        /// <p>The address, name, city or region to be used in the geocoding request. In free-form text
+        /// format. For example, <code>Vancouver</code>.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.text = input;
             self
         }
+        /// Appends an item to `bias_position`.
+        ///
+        /// To override the contents of this collection use [`set_bias_position`](Self::set_bias_position).
+        ///
+        /// <p>Contains the coordinates for the bias position entered in the geocoding request.</p>
         pub fn bias_position(mut self, input: impl Into<f64>) -> Self {
             let mut v = self.bias_position.unwrap_or_default();
             v.push(input.into());
             self.bias_position = Some(v);
             self
         }
+        /// <p>Contains the coordinates for the bias position entered in the geocoding request.</p>
         pub fn set_bias_position(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
             self.bias_position = input;
             self
         }
+        /// Appends an item to `filter_b_box`.
+        ///
+        /// To override the contents of this collection use [`set_filter_b_box`](Self::set_filter_b_box).
+        ///
+        /// <p>Contains the coordinates for the optional bounding box coordinated entered in the
+        /// geocoding request.</p>
         pub fn filter_b_box(mut self, input: impl Into<f64>) -> Self {
             let mut v = self.filter_b_box.unwrap_or_default();
             v.push(input.into());
             self.filter_b_box = Some(v);
             self
         }
+        /// <p>Contains the coordinates for the optional bounding box coordinated entered in the
+        /// geocoding request.</p>
         pub fn set_filter_b_box(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
             self.filter_b_box = input;
             self
         }
+        /// Appends an item to `filter_countries`.
+        ///
+        /// To override the contents of this collection use [`set_filter_countries`](Self::set_filter_countries).
+        ///
+        /// <p>Contains the country filter entered in the geocoding request.</p>
         pub fn filter_countries(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.filter_countries.unwrap_or_default();
             v.push(input.into());
             self.filter_countries = Some(v);
             self
         }
+        /// <p>Contains the country filter entered in the geocoding request.</p>
         pub fn set_filter_countries(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2510,16 +2924,27 @@ pub mod search_place_index_for_text_summary {
             self.max_results = Some(input);
             self
         }
+        /// <p>Contains the maximum number of results indicated for the request.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
+        /// Appends an item to `result_b_box`.
+        ///
+        /// To override the contents of this collection use [`set_result_b_box`](Self::set_result_b_box).
+        ///
+        /// <p>A bounding box that contains the search results within the specified area indicated by
+        /// <code>FilterBBox</code>. A subset of bounding box specified using
+        /// <code>FilterBBox</code>.</p>
         pub fn result_b_box(mut self, input: impl Into<f64>) -> Self {
             let mut v = self.result_b_box.unwrap_or_default();
             v.push(input.into());
             self.result_b_box = Some(v);
             self
         }
+        /// <p>A bounding box that contains the search results within the specified area indicated by
+        /// <code>FilterBBox</code>. A subset of bounding box specified using
+        /// <code>FilterBBox</code>.</p>
         pub fn set_result_b_box(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
             self.result_b_box = input;
             self
@@ -2538,6 +2963,16 @@ pub mod search_place_index_for_text_summary {
             self.data_source = Some(input.into());
             self
         }
+        /// <p>The data provider of geospatial data. Indicates one of the available providers:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Esri</p>
+        /// </li>
+        /// <li>
+        /// <p>HERE</p>
+        /// </li>
+        /// </ul>
+        /// <p>For additional details on data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
         pub fn set_data_source(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.data_source = input;
             self
@@ -2592,6 +3027,7 @@ pub mod search_for_position_result {
             self.place = Some(input);
             self
         }
+        /// <p>Contains details about the relevant point of interest.</p>
         pub fn set_place(mut self, input: std::option::Option<crate::model::Place>) -> Self {
             self.place = input;
             self
@@ -2651,12 +3087,18 @@ pub mod search_place_index_for_position_summary {
         pub(crate) data_source: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `position`.
+        ///
+        /// To override the contents of this collection use [`set_position`](Self::set_position).
+        ///
+        /// <p>The position given in the reverse geocoding request.</p>
         pub fn position(mut self, input: impl Into<f64>) -> Self {
             let mut v = self.position.unwrap_or_default();
             v.push(input.into());
             self.position = Some(v);
             self
         }
+        /// <p>The position given in the reverse geocoding request.</p>
         pub fn set_position(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
             self.position = input;
             self
@@ -2668,6 +3110,9 @@ pub mod search_place_index_for_position_summary {
             self.max_results = Some(input);
             self
         }
+        /// <p>An optional parameter. The maximum number of results returned per request. </p>
+        /// <p>Default value: <code>50</code>
+        /// </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -2686,6 +3131,16 @@ pub mod search_place_index_for_position_summary {
             self.data_source = Some(input.into());
             self
         }
+        /// <p>The data provider of geospatial data. Indicates one of the available providers:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Esri</p>
+        /// </li>
+        /// <li>
+        /// <p>HERE</p>
+        /// </li>
+        /// </ul>
+        /// <p>For additional details on data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
         pub fn set_data_source(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.data_source = input;
             self
@@ -2735,10 +3190,10 @@ pub struct ListPlaceIndexesResponseEntry {
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
     /// <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub create_time: std::option::Option<smithy_types::Instant>,
+    pub create_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
     /// <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub update_time: std::option::Option<smithy_types::Instant>,
+    pub update_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for ListPlaceIndexesResponseEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2762,8 +3217,8 @@ pub mod list_place_indexes_response_entry {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) data_source: std::option::Option<std::string::String>,
         pub(crate) pricing_plan: std::option::Option<crate::model::PricingPlan>,
-        pub(crate) create_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) update_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) create_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) update_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The name of the place index resource.</p>
@@ -2771,6 +3226,7 @@ pub mod list_place_indexes_response_entry {
             self.index_name = Some(input.into());
             self
         }
+        /// <p>The name of the place index resource.</p>
         pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.index_name = input;
             self
@@ -2780,6 +3236,7 @@ pub mod list_place_indexes_response_entry {
             self.description = Some(input.into());
             self
         }
+        /// <p>The optional description for the place index resource.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -2802,6 +3259,20 @@ pub mod list_place_indexes_response_entry {
             self.data_source = Some(input.into());
             self
         }
+        /// <p>The data provider of geospatial data. Indicates one of the available providers:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Esri</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Here</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>For additional details on data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
         pub fn set_data_source(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.data_source = input;
             self
@@ -2812,6 +3283,8 @@ pub mod list_place_indexes_response_entry {
             self.pricing_plan = Some(input);
             self
         }
+        /// <p>The pricing plan for the specified place index resource.</p>
+        /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
         pub fn set_pricing_plan(
             mut self,
             input: std::option::Option<crate::model::PricingPlan>,
@@ -2821,26 +3294,30 @@ pub mod list_place_indexes_response_entry {
         }
         /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
         /// <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-        pub fn create_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn create_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.create_time = Some(input);
             self
         }
+        /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
+        /// <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         pub fn set_create_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.create_time = input;
             self
         }
         /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
         /// <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-        pub fn update_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn update_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.update_time = Some(input);
             self
         }
+        /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
+        /// <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
         pub fn set_update_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.update_time = input;
             self
@@ -2936,6 +3413,20 @@ pub mod data_source_configuration {
             self.intended_use = Some(input);
             self
         }
+        /// <p>Specifies how the results of an operation will be stored by the caller. </p>
+        /// <p>Valid values include:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>SingleUse</code> specifies that the results won't be stored. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Storage</code> specifies that the result can be cached or stored in a database.</p>
+        /// </li>
+        /// </ul>
+        /// <p>Default value:  <code>SingleUse</code>
+        /// </p>
         pub fn set_intended_use(
             mut self,
             input: std::option::Option<crate::model::IntendedUse>,
@@ -2958,6 +3449,7 @@ impl DataSourceConfiguration {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2970,9 +3462,11 @@ impl DataSourceConfiguration {
 )]
 pub struct IntendedUse(String);
 impl IntendedUse {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         &self.0
     }
+    /// Returns all the `&str` representations of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["SingleUse", "Storage"]
     }
@@ -3001,10 +3495,10 @@ pub struct ListMapsResponseEntry {
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
-    pub create_time: std::option::Option<smithy_types::Instant>,
+    pub create_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The timestamp for when the map resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
-    pub update_time: std::option::Option<smithy_types::Instant>,
+    pub update_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for ListMapsResponseEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3028,8 +3522,8 @@ pub mod list_maps_response_entry {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) data_source: std::option::Option<std::string::String>,
         pub(crate) pricing_plan: std::option::Option<crate::model::PricingPlan>,
-        pub(crate) create_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) update_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) create_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) update_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The name of the associated map resource.</p>
@@ -3037,6 +3531,7 @@ pub mod list_maps_response_entry {
             self.map_name = Some(input.into());
             self
         }
+        /// <p>The name of the associated map resource.</p>
         pub fn set_map_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.map_name = input;
             self
@@ -3046,6 +3541,7 @@ pub mod list_maps_response_entry {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description for the map resource.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -3055,6 +3551,7 @@ pub mod list_maps_response_entry {
             self.data_source = Some(input.into());
             self
         }
+        /// <p>Specifies the data provider for the associated map tiles.</p>
         pub fn set_data_source(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.data_source = input;
             self
@@ -3065,6 +3562,8 @@ pub mod list_maps_response_entry {
             self.pricing_plan = Some(input);
             self
         }
+        /// <p>The pricing plan for the specified map resource.</p>
+        /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
         pub fn set_pricing_plan(
             mut self,
             input: std::option::Option<crate::model::PricingPlan>,
@@ -3074,26 +3573,30 @@ pub mod list_maps_response_entry {
         }
         /// <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
         /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
-        pub fn create_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn create_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.create_time = Some(input);
             self
         }
+        /// <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+        /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
         pub fn set_create_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.create_time = input;
             self
         }
         /// <p>The timestamp for when the map resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
         /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
-        pub fn update_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn update_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.update_time = Some(input);
             self
         }
+        /// <p>The timestamp for when the map resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+        /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
         pub fn set_update_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.update_time = input;
             self
@@ -3256,6 +3759,62 @@ pub mod map_configuration {
             self.style = Some(input.into());
             self
         }
+        /// <p>Specifies the map style selected from an available data provider.</p>
+        /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri map styles</a>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>VectorEsriDarkGrayCanvas</code> – The Esri Dark Gray Canvas map style. A
+        /// vector basemap with a dark gray, neutral background with minimal colors, labels,
+        /// and features that's designed to draw attention to your thematic content. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>RasterEsriImagery</code> – The Esri Imagery map style. A raster basemap
+        /// that provides one meter or better satellite and aerial imagery in many parts of
+        /// the world and lower resolution satellite imagery worldwide. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>VectorEsriLightGrayCanvas</code> – The Esri Light Gray Canvas map style,
+        /// which provides a detailed vector basemap with a light gray, neutral background
+        /// style with minimal colors, labels, and features that's designed to draw
+        /// attention to your thematic content. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>VectorEsriTopographic</code> – The Esri Light map style, which provides
+        /// a detailed vector basemap with a classic Esri map style.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>VectorEsriStreets</code> – The Esri World Streets map style, which
+        /// provides a detailed vector basemap for the world symbolized with a classic Esri
+        /// street map style. The vector tile layer is similar in content and style to the
+        /// World Street Map raster map.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>VectorEsriNavigation</code> – The Esri World Navigation map style, which
+        /// provides a detailed basemap for the world symbolized with a custom navigation
+        /// map style that's designed for use during the day in mobile devices.</p>
+        /// </li>
+        /// </ul>
+        /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
+        /// Technologies map styles</a>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>VectorHereBerlin</code> – The HERE Berlin map style is a high contrast
+        /// detailed base map of the world that blends 3D and 2D rendering.</p>
+        /// <note>
+        /// <p>When using HERE as your data provider, and selecting the Style
+        /// <code>VectorHereBerlin</code>, you may not use HERE Technologies maps
+        /// for Asset Management. See the <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a>
+        /// for Amazon Location Service.</p>
+        /// </note>
+        /// </li>
+        /// </ul>
         pub fn set_style(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.style = input;
             self
@@ -3307,12 +3866,32 @@ pub mod geofence_geometry {
         pub(crate) polygon: std::option::Option<std::vec::Vec<std::vec::Vec<std::vec::Vec<f64>>>>,
     }
     impl Builder {
+        /// Appends an item to `polygon`.
+        ///
+        /// To override the contents of this collection use [`set_polygon`](Self::set_polygon).
+        ///
+        /// <p>An array of 1 or more linear rings. A linear ring is an array of 4 or more vertices,
+        /// where the first and last vertex are the same to form a closed boundary. Each vertex is a
+        /// 2-dimensional point of the form: <code>[longitude, latitude]</code>. </p>
+        /// <p>The first linear ring is an outer ring, describing the polygon's boundary. Subsequent
+        /// linear rings may be inner or outer rings to describe holes and islands. Outer rings must
+        /// list their vertices in counter-clockwise order around the ring's center, where the left
+        /// side is the polygon's exterior. Inner rings must list their vertices in clockwise order,
+        /// where the left side is the polygon's interior.</p>
         pub fn polygon(mut self, input: impl Into<std::vec::Vec<std::vec::Vec<f64>>>) -> Self {
             let mut v = self.polygon.unwrap_or_default();
             v.push(input.into());
             self.polygon = Some(v);
             self
         }
+        /// <p>An array of 1 or more linear rings. A linear ring is an array of 4 or more vertices,
+        /// where the first and last vertex are the same to form a closed boundary. Each vertex is a
+        /// 2-dimensional point of the form: <code>[longitude, latitude]</code>. </p>
+        /// <p>The first linear ring is an outer ring, describing the polygon's boundary. Subsequent
+        /// linear rings may be inner or outer rings to describe holes and islands. Outer rings must
+        /// list their vertices in counter-clockwise order around the ring's center, where the left
+        /// side is the polygon's exterior. Inner rings must list their vertices in clockwise order,
+        /// where the left side is the polygon's interior.</p>
         pub fn set_polygon(
             mut self,
             input: std::option::Option<std::vec::Vec<std::vec::Vec<std::vec::Vec<f64>>>>,
@@ -3373,11 +3952,11 @@ pub struct ListGeofenceResponseEntry {
     /// <p>The timestamp for when the geofence was stored in a geofence collection in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
     /// </p>
-    pub create_time: std::option::Option<smithy_types::Instant>,
+    pub create_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The timestamp for when the geofence was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
     /// </p>
-    pub update_time: std::option::Option<smithy_types::Instant>,
+    pub update_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for ListGeofenceResponseEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3399,8 +3978,8 @@ pub mod list_geofence_response_entry {
         pub(crate) geofence_id: std::option::Option<std::string::String>,
         pub(crate) geometry: std::option::Option<crate::model::GeofenceGeometry>,
         pub(crate) status: std::option::Option<std::string::String>,
-        pub(crate) create_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) update_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) create_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) update_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The geofence identifier.</p>
@@ -3408,6 +3987,7 @@ pub mod list_geofence_response_entry {
             self.geofence_id = Some(input.into());
             self
         }
+        /// <p>The geofence identifier.</p>
         pub fn set_geofence_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.geofence_id = input;
             self
@@ -3417,6 +3997,7 @@ pub mod list_geofence_response_entry {
             self.geometry = Some(input);
             self
         }
+        /// <p>Contains the geofence geometry details describing a polygon.</p>
         pub fn set_geometry(
             mut self,
             input: std::option::Option<crate::model::GeofenceGeometry>,
@@ -3454,6 +4035,32 @@ pub mod list_geofence_response_entry {
             self.status = Some(input.into());
             self
         }
+        /// <p>Identifies the state of the geofence. A geofence will hold one of the following
+        /// states:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ACTIVE</code> — The geofence has been indexed by the system. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PENDING</code> — The geofence is being processed by the system.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FAILED</code> — The geofence failed to be indexed by the system.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DELETED</code> — The geofence has been deleted from the system
+        /// index.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DELETING</code> — The geofence is being deleted from the system
+        /// index.</p>
+        /// </li>
+        /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -3461,13 +4068,16 @@ pub mod list_geofence_response_entry {
         /// <p>The timestamp for when the geofence was stored in a geofence collection in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
         /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
         /// </p>
-        pub fn create_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn create_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.create_time = Some(input);
             self
         }
+        /// <p>The timestamp for when the geofence was stored in a geofence collection in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+        /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
+        /// </p>
         pub fn set_create_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.create_time = input;
             self
@@ -3475,13 +4085,16 @@ pub mod list_geofence_response_entry {
         /// <p>The timestamp for when the geofence was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
         /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
         /// </p>
-        pub fn update_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn update_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.update_time = Some(input);
             self
         }
+        /// <p>The timestamp for when the geofence was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+        /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
+        /// </p>
         pub fn set_update_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.update_time = input;
             self
@@ -3538,6 +4151,7 @@ pub mod batch_put_geofence_error {
             self.geofence_id = Some(input.into());
             self
         }
+        /// <p>The geofence associated with the error message.</p>
         pub fn set_geofence_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.geofence_id = input;
             self
@@ -3547,6 +4161,7 @@ pub mod batch_put_geofence_error {
             self.error = Some(input);
             self
         }
+        /// <p>Contains details associated to the batch error.</p>
         pub fn set_error(
             mut self,
             input: std::option::Option<crate::model::BatchItemError>,
@@ -3580,11 +4195,11 @@ pub struct BatchPutGeofenceSuccess {
     /// <p>The timestamp for when the geofence was stored in a geofence collection in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
     /// </p>
-    pub create_time: std::option::Option<smithy_types::Instant>,
+    pub create_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The timestamp for when the geofence was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
     /// </p>
-    pub update_time: std::option::Option<smithy_types::Instant>,
+    pub update_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for BatchPutGeofenceSuccess {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3602,8 +4217,8 @@ pub mod batch_put_geofence_success {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) geofence_id: std::option::Option<std::string::String>,
-        pub(crate) create_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) update_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) create_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) update_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The geofence successfully stored in a geofence collection.</p>
@@ -3611,6 +4226,7 @@ pub mod batch_put_geofence_success {
             self.geofence_id = Some(input.into());
             self
         }
+        /// <p>The geofence successfully stored in a geofence collection.</p>
         pub fn set_geofence_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.geofence_id = input;
             self
@@ -3618,13 +4234,16 @@ pub mod batch_put_geofence_success {
         /// <p>The timestamp for when the geofence was stored in a geofence collection in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
         /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
         /// </p>
-        pub fn create_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn create_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.create_time = Some(input);
             self
         }
+        /// <p>The timestamp for when the geofence was stored in a geofence collection in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+        /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
+        /// </p>
         pub fn set_create_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.create_time = input;
             self
@@ -3632,13 +4251,16 @@ pub mod batch_put_geofence_success {
         /// <p>The timestamp for when the geofence was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
         /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
         /// </p>
-        pub fn update_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn update_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.update_time = Some(input);
             self
         }
+        /// <p>The timestamp for when the geofence was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+        /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
+        /// </p>
         pub fn set_update_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.update_time = input;
             self
@@ -3695,6 +4317,7 @@ pub mod batch_put_geofence_request_entry {
             self.geofence_id = Some(input.into());
             self
         }
+        /// <p>The identifier for the geofence to be stored in a given geofence collection.</p>
         pub fn set_geofence_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.geofence_id = input;
             self
@@ -3707,6 +4330,10 @@ pub mod batch_put_geofence_request_entry {
             self.geometry = Some(input);
             self
         }
+        /// <p>Contains the polygon details to specify the position of the geofence.</p>
+        /// <note>
+        /// <p>Each <a href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html">geofence polygon</a> can have a maximum of 1,000 vertices.</p>
+        /// </note>
         pub fn set_geometry(
             mut self,
             input: std::option::Option<crate::model::GeofenceGeometry>,
@@ -3740,7 +4367,7 @@ pub struct BatchEvaluateGeofencesError {
     /// <p>Specifies a timestamp for when the error occurred in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
     /// </p>
-    pub sample_time: std::option::Option<smithy_types::Instant>,
+    pub sample_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Contains details associated to the batch error.</p>
     pub error: std::option::Option<crate::model::BatchItemError>,
 }
@@ -3760,7 +4387,7 @@ pub mod batch_evaluate_geofences_error {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_id: std::option::Option<std::string::String>,
-        pub(crate) sample_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) sample_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) error: std::option::Option<crate::model::BatchItemError>,
     }
     impl Builder {
@@ -3769,6 +4396,7 @@ pub mod batch_evaluate_geofences_error {
             self.device_id = Some(input.into());
             self
         }
+        /// <p>The device associated with the position evaluation error.</p>
         pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.device_id = input;
             self
@@ -3776,13 +4404,16 @@ pub mod batch_evaluate_geofences_error {
         /// <p>Specifies a timestamp for when the error occurred in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
         /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
         /// </p>
-        pub fn sample_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn sample_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.sample_time = Some(input);
             self
         }
+        /// <p>Specifies a timestamp for when the error occurred in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+        /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
+        /// </p>
         pub fn set_sample_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.sample_time = input;
             self
@@ -3792,6 +4423,7 @@ pub mod batch_evaluate_geofences_error {
             self.error = Some(input);
             self
         }
+        /// <p>Contains details associated to the batch error.</p>
         pub fn set_error(
             mut self,
             input: std::option::Option<crate::model::BatchItemError>,
@@ -3849,6 +4481,7 @@ pub mod batch_delete_geofence_error {
             self.geofence_id = Some(input.into());
             self
         }
+        /// <p>The geofence associated with the error message.</p>
         pub fn set_geofence_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.geofence_id = input;
             self
@@ -3858,6 +4491,7 @@ pub mod batch_delete_geofence_error {
             self.error = Some(input);
             self
         }
+        /// <p>Contains details associated to the batch error.</p>
         pub fn set_error(
             mut self,
             input: std::option::Option<crate::model::BatchItemError>,
@@ -3898,11 +4532,11 @@ pub struct ListGeofenceCollectionsResponseEntry {
     /// <p>The timestamp for when the geofence collection was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
     /// </p>
-    pub create_time: std::option::Option<smithy_types::Instant>,
+    pub create_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Specifies a timestamp for when the resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
     /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
     /// </p>
-    pub update_time: std::option::Option<smithy_types::Instant>,
+    pub update_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for ListGeofenceCollectionsResponseEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3926,8 +4560,8 @@ pub mod list_geofence_collections_response_entry {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) pricing_plan: std::option::Option<crate::model::PricingPlan>,
         pub(crate) pricing_plan_data_source: std::option::Option<std::string::String>,
-        pub(crate) create_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) update_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) create_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) update_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The name of the geofence collection.</p>
@@ -3935,6 +4569,7 @@ pub mod list_geofence_collections_response_entry {
             self.collection_name = Some(input.into());
             self
         }
+        /// <p>The name of the geofence collection.</p>
         pub fn set_collection_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3947,6 +4582,7 @@ pub mod list_geofence_collections_response_entry {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description for the geofence collection</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -3958,6 +4594,9 @@ pub mod list_geofence_collections_response_entry {
             self.pricing_plan = Some(input);
             self
         }
+        /// <p>The pricing plan for the specified geofence collection.</p>
+        /// <p>For additional details and restrictions on each pricing plan option, see the <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
+        /// page</a>.</p>
         pub fn set_pricing_plan(
             mut self,
             input: std::option::Option<crate::model::PricingPlan>,
@@ -3970,6 +4609,7 @@ pub mod list_geofence_collections_response_entry {
             self.pricing_plan_data_source = Some(input.into());
             self
         }
+        /// <p>The specified data provider for the geofence collection.</p>
         pub fn set_pricing_plan_data_source(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3980,13 +4620,16 @@ pub mod list_geofence_collections_response_entry {
         /// <p>The timestamp for when the geofence collection was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
         /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
         /// </p>
-        pub fn create_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn create_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.create_time = Some(input);
             self
         }
+        /// <p>The timestamp for when the geofence collection was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+        /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
+        /// </p>
         pub fn set_create_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.create_time = input;
             self
@@ -3994,13 +4637,16 @@ pub mod list_geofence_collections_response_entry {
         /// <p>Specifies a timestamp for when the resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
         /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
         /// </p>
-        pub fn update_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn update_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.update_time = Some(input);
             self
         }
+        /// <p>Specifies a timestamp for when the resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
+        /// format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>
+        /// </p>
         pub fn set_update_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.update_time = input;
             self

@@ -19,6 +19,7 @@ pub mod complete_snapshot_input {
             self.snapshot_id = Some(input.into());
             self
         }
+        /// <p>The ID of the snapshot.</p>
         pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.snapshot_id = input;
             self
@@ -28,6 +29,7 @@ pub mod complete_snapshot_input {
             self.changed_blocks_count = Some(input);
             self
         }
+        /// <p>The number of blocks that were written to the snapshot.</p>
         pub fn set_changed_blocks_count(mut self, input: std::option::Option<i32>) -> Self {
             self.changed_blocks_count = input;
             self
@@ -42,6 +44,12 @@ pub mod complete_snapshot_input {
             self.checksum = Some(input.into());
             self
         }
+        /// <p>An aggregated Base-64 SHA256 checksum based on the checksums of each written
+        /// block.</p>
+        /// <p>To generate the aggregated checksum using the linear aggregation method, arrange the
+        /// checksums for each written block in ascending order of their block index, concatenate
+        /// them to form a single string, and then generate the checksum on the entire string using
+        /// the SHA256 algorithm.</p>
         pub fn set_checksum(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.checksum = input;
             self
@@ -52,6 +60,8 @@ pub mod complete_snapshot_input {
             self.checksum_algorithm = Some(input);
             self
         }
+        /// <p>The algorithm used to generate the checksum. Currently, the only supported algorithm
+        /// is <code>SHA256</code>.</p>
         pub fn set_checksum_algorithm(
             mut self,
             input: std::option::Option<crate::model::ChecksumAlgorithm>,
@@ -68,6 +78,8 @@ pub mod complete_snapshot_input {
             self.checksum_aggregation_method = Some(input);
             self
         }
+        /// <p>The aggregation method used to generate the checksum. Currently, the only supported
+        /// aggregation method is <code>LINEAR</code>.</p>
         pub fn set_checksum_aggregation_method(
             mut self,
             input: std::option::Option<crate::model::ChecksumAggregationMethod>,
@@ -80,7 +92,7 @@ pub mod complete_snapshot_input {
             self,
         ) -> std::result::Result<
             crate::input::CompleteSnapshotInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CompleteSnapshotInput {
                 snapshot_id: self.snapshot_id,
@@ -103,27 +115,27 @@ impl CompleteSnapshotInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CompleteSnapshot,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CompleteSnapshotInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_1 = &_input.snapshot_id;
             let input_1 =
                 input_1
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "snapshot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let snapshot_id = smithy_http::label::fmt_string(input_1, false);
+            let snapshot_id = aws_smithy_http::label::fmt_string(input_1, false);
             if snapshot_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "snapshot_id",
                     details: "cannot be empty or unset",
                 });
@@ -139,16 +151,16 @@ impl CompleteSnapshotInput {
         fn add_headers(
             _input: &crate::input::CompleteSnapshotInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_2) = &_input.changed_blocks_count {
-                let mut encoder = smithy_types::primitive::Encoder::from(*inner_2);
+                let mut encoder = aws_smithy_types::primitive::Encoder::from(*inner_2);
                 let formatted_3 = encoder.encode();
                 if !formatted_3.is_empty() {
                     use std::convert::TryFrom;
                     let header_value = formatted_3;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "changed_blocks_count",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -164,7 +176,7 @@ impl CompleteSnapshotInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_5;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "checksum",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -180,7 +192,7 @@ impl CompleteSnapshotInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_7;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "checksum_algorithm",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -196,7 +208,7 @@ impl CompleteSnapshotInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_9;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "checksum_aggregation_method",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -212,7 +224,7 @@ impl CompleteSnapshotInput {
         fn update_http_builder(
             input: &crate::input::CompleteSnapshotInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -222,23 +234,23 @@ impl CompleteSnapshotInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CompleteSnapshotInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -261,15 +273,15 @@ impl CompleteSnapshotInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CompleteSnapshot::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CompleteSnapshot",
             "ebs",
         ));
@@ -278,10 +290,10 @@ impl CompleteSnapshotInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -311,28 +323,43 @@ pub mod get_snapshot_block_input {
             self.snapshot_id = Some(input.into());
             self
         }
+        /// <p>The ID of the snapshot containing the block from which to get data.</p>
         pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.snapshot_id = input;
             self
         }
         /// <p>The block index of the block from which to get data.</p>
+        ///
+        ///
         /// <p>Obtain the <code>BlockIndex</code> by running the <code>ListChangedBlocks</code> or
         /// <code>ListSnapshotBlocks</code> operations.</p>
         pub fn block_index(mut self, input: i32) -> Self {
             self.block_index = Some(input);
             self
         }
+        /// <p>The block index of the block from which to get data.</p>
+        ///
+        ///
+        /// <p>Obtain the <code>BlockIndex</code> by running the <code>ListChangedBlocks</code> or
+        /// <code>ListSnapshotBlocks</code> operations.</p>
         pub fn set_block_index(mut self, input: std::option::Option<i32>) -> Self {
             self.block_index = input;
             self
         }
         /// <p>The block token of the block from which to get data.</p>
+        ///
+        ///
         /// <p>Obtain the <code>BlockToken</code> by running the <code>ListChangedBlocks</code> or
         /// <code>ListSnapshotBlocks</code> operations.</p>
         pub fn block_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.block_token = Some(input.into());
             self
         }
+        /// <p>The block token of the block from which to get data.</p>
+        ///
+        ///
+        /// <p>Obtain the <code>BlockToken</code> by running the <code>ListChangedBlocks</code> or
+        /// <code>ListSnapshotBlocks</code> operations.</p>
         pub fn set_block_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.block_token = input;
             self
@@ -342,7 +369,7 @@ pub mod get_snapshot_block_input {
             self,
         ) -> std::result::Result<
             crate::input::GetSnapshotBlockInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetSnapshotBlockInput {
                 snapshot_id: self.snapshot_id,
@@ -363,27 +390,27 @@ impl GetSnapshotBlockInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetSnapshotBlock,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetSnapshotBlockInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_10 = &_input.snapshot_id;
             let input_10 =
                 input_10
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "snapshot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let snapshot_id = smithy_http::label::fmt_string(input_10, false);
+            let snapshot_id = aws_smithy_http::label::fmt_string(input_10, false);
             if snapshot_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "snapshot_id",
                     details: "cannot be empty or unset",
                 });
@@ -392,14 +419,14 @@ impl GetSnapshotBlockInput {
             let input_11 =
                 input_11
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "block_index",
                         details: "cannot be empty or unset",
                     })?;
-            let mut block_index_encoder = smithy_types::primitive::Encoder::from(*input_11);
+            let mut block_index_encoder = aws_smithy_types::primitive::Encoder::from(*input_11);
             let block_index = block_index_encoder.encode();
             if block_index.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "block_index",
                     details: "cannot be empty or unset",
                 });
@@ -414,16 +441,16 @@ impl GetSnapshotBlockInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::GetSnapshotBlockInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_12) = &_input.block_token {
-                query.push_kv("blockToken", &smithy_http::query::fmt_string(&inner_12));
+                query.push_kv("blockToken", &aws_smithy_http::query::fmt_string(&inner_12));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::GetSnapshotBlockInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -433,23 +460,23 @@ impl GetSnapshotBlockInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetSnapshotBlockInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -472,15 +499,15 @@ impl GetSnapshotBlockInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetSnapshotBlock::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetSnapshotBlock",
             "ebs",
         ));
@@ -489,10 +516,10 @@ impl GetSnapshotBlockInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -528,6 +555,11 @@ pub mod list_changed_blocks_input {
             self.first_snapshot_id = Some(input.into());
             self
         }
+        /// <p>The ID of the first snapshot to use for the comparison.</p>
+        /// <important>
+        /// <p>The <code>FirstSnapshotID</code> parameter must be specified with a
+        /// <code>SecondSnapshotId</code> parameter; otherwise, an error occurs.</p>
+        /// </important>
         pub fn set_first_snapshot_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -544,6 +576,11 @@ pub mod list_changed_blocks_input {
             self.second_snapshot_id = Some(input.into());
             self
         }
+        /// <p>The ID of the second snapshot to use for the comparison.</p>
+        /// <important>
+        /// <p>The <code>SecondSnapshotId</code> parameter must be specified with a
+        /// <code>FirstSnapshotID</code> parameter; otherwise, an error occurs.</p>
+        /// </important>
         pub fn set_second_snapshot_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -556,6 +593,7 @@ pub mod list_changed_blocks_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token to request the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -565,6 +603,7 @@ pub mod list_changed_blocks_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The number of results to return.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -576,6 +615,9 @@ pub mod list_changed_blocks_input {
             self.starting_block_index = Some(input);
             self
         }
+        /// <p>The block index from which the comparison should start.</p>
+        /// <p>The list in the response will start from this block index or the next valid block
+        /// index in the snapshots.</p>
         pub fn set_starting_block_index(mut self, input: std::option::Option<i32>) -> Self {
             self.starting_block_index = input;
             self
@@ -585,7 +627,7 @@ pub mod list_changed_blocks_input {
             self,
         ) -> std::result::Result<
             crate::input::ListChangedBlocksInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListChangedBlocksInput {
                 first_snapshot_id: self.first_snapshot_id,
@@ -608,27 +650,27 @@ impl ListChangedBlocksInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListChangedBlocks,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListChangedBlocksInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_13 = &_input.second_snapshot_id;
             let input_13 =
                 input_13
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "second_snapshot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let second_snapshot_id = smithy_http::label::fmt_string(input_13, false);
+            let second_snapshot_id = aws_smithy_http::label::fmt_string(input_13, false);
             if second_snapshot_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "second_snapshot_id",
                     details: "cannot be empty or unset",
                 });
@@ -642,26 +684,26 @@ impl ListChangedBlocksInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListChangedBlocksInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_14) = &_input.first_snapshot_id {
                 query.push_kv(
                     "firstSnapshotId",
-                    &smithy_http::query::fmt_string(&inner_14),
+                    &aws_smithy_http::query::fmt_string(&inner_14),
                 );
             }
             if let Some(inner_15) = &_input.next_token {
-                query.push_kv("pageToken", &smithy_http::query::fmt_string(&inner_15));
+                query.push_kv("pageToken", &aws_smithy_http::query::fmt_string(&inner_15));
             }
             if let Some(inner_16) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(*inner_16).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_16).encode(),
                 );
             }
             if let Some(inner_17) = &_input.starting_block_index {
                 query.push_kv(
                     "startingBlockIndex",
-                    &smithy_types::primitive::Encoder::from(*inner_17).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_17).encode(),
                 );
             }
         }
@@ -669,7 +711,7 @@ impl ListChangedBlocksInput {
         fn update_http_builder(
             input: &crate::input::ListChangedBlocksInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -679,23 +721,23 @@ impl ListChangedBlocksInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListChangedBlocksInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -718,15 +760,15 @@ impl ListChangedBlocksInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListChangedBlocks::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListChangedBlocks",
             "ebs",
         ));
@@ -735,10 +777,10 @@ impl ListChangedBlocksInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -769,6 +811,7 @@ pub mod list_snapshot_blocks_input {
             self.snapshot_id = Some(input.into());
             self
         }
+        /// <p>The ID of the snapshot from which to get block indexes and block tokens.</p>
         pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.snapshot_id = input;
             self
@@ -778,6 +821,7 @@ pub mod list_snapshot_blocks_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token to request the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -787,6 +831,7 @@ pub mod list_snapshot_blocks_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The number of results to return.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -797,6 +842,8 @@ pub mod list_snapshot_blocks_input {
             self.starting_block_index = Some(input);
             self
         }
+        /// <p>The block index from which the list should start. The list in the response will start
+        /// from this block index or the next valid block index in the snapshot.</p>
         pub fn set_starting_block_index(mut self, input: std::option::Option<i32>) -> Self {
             self.starting_block_index = input;
             self
@@ -806,7 +853,7 @@ pub mod list_snapshot_blocks_input {
             self,
         ) -> std::result::Result<
             crate::input::ListSnapshotBlocksInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListSnapshotBlocksInput {
                 snapshot_id: self.snapshot_id,
@@ -828,27 +875,27 @@ impl ListSnapshotBlocksInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListSnapshotBlocks,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListSnapshotBlocksInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_18 = &_input.snapshot_id;
             let input_18 =
                 input_18
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "snapshot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let snapshot_id = smithy_http::label::fmt_string(input_18, false);
+            let snapshot_id = aws_smithy_http::label::fmt_string(input_18, false);
             if snapshot_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "snapshot_id",
                     details: "cannot be empty or unset",
                 });
@@ -862,20 +909,20 @@ impl ListSnapshotBlocksInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListSnapshotBlocksInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_19) = &_input.next_token {
-                query.push_kv("pageToken", &smithy_http::query::fmt_string(&inner_19));
+                query.push_kv("pageToken", &aws_smithy_http::query::fmt_string(&inner_19));
             }
             if let Some(inner_20) = &_input.max_results {
                 query.push_kv(
                     "maxResults",
-                    &smithy_types::primitive::Encoder::from(*inner_20).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_20).encode(),
                 );
             }
             if let Some(inner_21) = &_input.starting_block_index {
                 query.push_kv(
                     "startingBlockIndex",
-                    &smithy_types::primitive::Encoder::from(*inner_21).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(*inner_21).encode(),
                 );
             }
         }
@@ -883,7 +930,7 @@ impl ListSnapshotBlocksInput {
         fn update_http_builder(
             input: &crate::input::ListSnapshotBlocksInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -893,23 +940,23 @@ impl ListSnapshotBlocksInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListSnapshotBlocksInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -932,15 +979,15 @@ impl ListSnapshotBlocksInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListSnapshotBlocks::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListSnapshotBlocks",
             "ebs",
         ));
@@ -949,10 +996,10 @@ impl ListSnapshotBlocksInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -974,7 +1021,7 @@ pub mod put_snapshot_block_input {
     pub struct Builder {
         pub(crate) snapshot_id: std::option::Option<std::string::String>,
         pub(crate) block_index: std::option::Option<i32>,
-        pub(crate) block_data: std::option::Option<smithy_http::byte_stream::ByteStream>,
+        pub(crate) block_data: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
         pub(crate) data_length: std::option::Option<i32>,
         pub(crate) progress: std::option::Option<i32>,
         pub(crate) checksum: std::option::Option<std::string::String>,
@@ -986,6 +1033,7 @@ pub mod put_snapshot_block_input {
             self.snapshot_id = Some(input.into());
             self
         }
+        /// <p>The ID of the snapshot.</p>
         pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.snapshot_id = input;
             self
@@ -999,6 +1047,11 @@ pub mod put_snapshot_block_input {
             self.block_index = Some(input);
             self
         }
+        /// <p>The block index of the block in which to write the data. A block index is a logical
+        /// index in units of <code>512</code> KiB blocks. To identify the block index, divide
+        /// the logical offset of the data in the logical volume by the block size (logical offset of
+        /// data/<code>524288</code>). The logical offset of the data must be <code>512</code>
+        /// KiB aligned.</p>
         pub fn set_block_index(mut self, input: std::option::Option<i32>) -> Self {
             self.block_index = input;
             self
@@ -1014,13 +1067,24 @@ pub mod put_snapshot_block_input {
         /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-accessing-snapshot.html#ebsapis-using-checksums">
         /// Using checksums with the EBS direct APIs</a> in the <i>Amazon Elastic Compute Cloud User
         /// Guide</i>.</p>
-        pub fn block_data(mut self, input: smithy_http::byte_stream::ByteStream) -> Self {
+        pub fn block_data(mut self, input: aws_smithy_http::byte_stream::ByteStream) -> Self {
             self.block_data = Some(input);
             self
         }
+        /// <p>The data to write to the block.</p>
+        /// <p>The block data is not signed as part of the Signature Version 4 signing process. As a
+        /// result, you must generate and provide a Base64-encoded SHA256 checksum for the block
+        /// data using the <b>x-amz-Checksum</b> header. Also, you
+        /// must specify the checksum algorithm using the <b>x-amz-Checksum-Algorithm</b>
+        /// header. The checksum that you provide is part of the Signature Version 4 signing process.
+        /// It is validated against a checksum generated by Amazon EBS to ensure the validity and authenticity
+        /// of the data. If the checksums do not correspond, the request fails. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-accessing-snapshot.html#ebsapis-using-checksums">
+        /// Using checksums with the EBS direct APIs</a> in the <i>Amazon Elastic Compute Cloud User
+        /// Guide</i>.</p>
         pub fn set_block_data(
             mut self,
-            input: std::option::Option<smithy_http::byte_stream::ByteStream>,
+            input: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
         ) -> Self {
             self.block_data = input;
             self
@@ -1033,6 +1097,10 @@ pub mod put_snapshot_block_input {
             self.data_length = Some(input);
             self
         }
+        /// <p>The size of the data to write to the block, in bytes. Currently, the only supported
+        /// size is <code>524288</code> bytes.</p>
+        /// <p>Valid values: <code>524288</code>
+        /// </p>
         pub fn set_data_length(mut self, input: std::option::Option<i32>) -> Self {
             self.data_length = input;
             self
@@ -1042,6 +1110,7 @@ pub mod put_snapshot_block_input {
             self.progress = Some(input);
             self
         }
+        /// <p>The progress of the write process, as a percentage.</p>
         pub fn set_progress(mut self, input: std::option::Option<i32>) -> Self {
             self.progress = input;
             self
@@ -1052,6 +1121,8 @@ pub mod put_snapshot_block_input {
             self.checksum = Some(input.into());
             self
         }
+        /// <p>A Base64-encoded SHA256 checksum of the data. Only SHA256 checksums are
+        /// supported.</p>
         pub fn set_checksum(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.checksum = input;
             self
@@ -1062,6 +1133,8 @@ pub mod put_snapshot_block_input {
             self.checksum_algorithm = Some(input);
             self
         }
+        /// <p>The algorithm used to generate the checksum. Currently, the only supported algorithm
+        /// is <code>SHA256</code>.</p>
         pub fn set_checksum_algorithm(
             mut self,
             input: std::option::Option<crate::model::ChecksumAlgorithm>,
@@ -1074,7 +1147,7 @@ pub mod put_snapshot_block_input {
             self,
         ) -> std::result::Result<
             crate::input::PutSnapshotBlockInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutSnapshotBlockInput {
                 snapshot_id: self.snapshot_id,
@@ -1099,27 +1172,27 @@ impl PutSnapshotBlockInput {
         self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::PutSnapshotBlock,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::PutSnapshotBlockInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_22 = &_input.snapshot_id;
             let input_22 =
                 input_22
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "snapshot_id",
                         details: "cannot be empty or unset",
                     })?;
-            let snapshot_id = smithy_http::label::fmt_string(input_22, false);
+            let snapshot_id = aws_smithy_http::label::fmt_string(input_22, false);
             if snapshot_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "snapshot_id",
                     details: "cannot be empty or unset",
                 });
@@ -1128,14 +1201,14 @@ impl PutSnapshotBlockInput {
             let input_23 =
                 input_23
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "block_index",
                         details: "cannot be empty or unset",
                     })?;
-            let mut block_index_encoder = smithy_types::primitive::Encoder::from(*input_23);
+            let mut block_index_encoder = aws_smithy_types::primitive::Encoder::from(*input_23);
             let block_index = block_index_encoder.encode();
             if block_index.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "block_index",
                     details: "cannot be empty or unset",
                 });
@@ -1152,16 +1225,16 @@ impl PutSnapshotBlockInput {
         fn add_headers(
             _input: &crate::input::PutSnapshotBlockInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_24) = &_input.data_length {
-                let mut encoder = smithy_types::primitive::Encoder::from(*inner_24);
+                let mut encoder = aws_smithy_types::primitive::Encoder::from(*inner_24);
                 let formatted_25 = encoder.encode();
                 if !formatted_25.is_empty() {
                     use std::convert::TryFrom;
                     let header_value = formatted_25;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "data_length",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -1172,13 +1245,13 @@ impl PutSnapshotBlockInput {
                 }
             }
             if let Some(inner_26) = &_input.progress {
-                let mut encoder = smithy_types::primitive::Encoder::from(*inner_26);
+                let mut encoder = aws_smithy_types::primitive::Encoder::from(*inner_26);
                 let formatted_27 = encoder.encode();
                 if !formatted_27.is_empty() {
                     use std::convert::TryFrom;
                     let header_value = formatted_27;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "progress",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -1194,7 +1267,7 @@ impl PutSnapshotBlockInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_29;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "checksum",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -1210,7 +1283,7 @@ impl PutSnapshotBlockInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_31;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "checksum_algorithm",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -1226,7 +1299,7 @@ impl PutSnapshotBlockInput {
         fn update_http_builder(
             input: &crate::input::PutSnapshotBlockInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1236,23 +1309,23 @@ impl PutSnapshotBlockInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::PutSnapshotBlockInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/octet-stream",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::ser_payload_put_snapshot_block_input(self.block_data)?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1279,15 +1352,15 @@ impl PutSnapshotBlockInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::PutSnapshotBlock::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "PutSnapshotBlock",
             "ebs",
         ));
@@ -1296,10 +1369,10 @@ impl PutSnapshotBlockInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1335,6 +1408,8 @@ pub mod start_snapshot_input {
             self.volume_size = Some(input);
             self
         }
+        /// <p>The size of the volume, in GiB. The maximum size is <code>65536</code> GiB (64
+        /// TiB).</p>
         pub fn set_volume_size(mut self, input: std::option::Option<i64>) -> Self {
             self.volume_size = input;
             self
@@ -1348,6 +1423,11 @@ pub mod start_snapshot_input {
             self.parent_snapshot_id = Some(input.into());
             self
         }
+        /// <p>The ID of the parent snapshot. If there is no parent snapshot, or if you are creating
+        /// the first snapshot for an on-premises volume, omit this parameter.</p>
+        /// <p>If your account is enabled for encryption by default, you cannot use an unencrypted
+        /// snapshot as a parent snapshot. You must first create an encrypted copy of the parent
+        /// snapshot using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CopySnapshot.html">CopySnapshot</a>.</p>
         pub fn set_parent_snapshot_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1355,12 +1435,18 @@ pub mod start_snapshot_input {
             self.parent_snapshot_id = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags to apply to the snapshot.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The tags to apply to the snapshot.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1373,6 +1459,7 @@ pub mod start_snapshot_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description for the snapshot.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -1389,6 +1476,14 @@ pub mod start_snapshot_input {
             self.client_token = Some(input.into());
             self
         }
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request. Idempotency ensures that an API request completes only once. With an idempotent
+        /// request, if the original request completes successfully. The subsequent retries with the same
+        /// client token return the result from the original successful request and they have no additional
+        /// effect.</p>
+        /// <p>If you do not specify a client token, one is automatically generated by the Amazon Web Services SDK.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-direct-api-idempotency.html">
+        /// Idempotency for StartSnapshot API</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -1405,12 +1500,28 @@ pub mod start_snapshot_input {
         /// ModifyEbsDefaultKmsKeyId</a>.</p>
         /// <p>If your account is enabled for encryption by default, you cannot set this parameter to
         /// <code>false</code>. In this case, you can omit this parameter.</p>
+        ///
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-accessing-snapshot.html#ebsapis-using-encryption">
         /// Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
         pub fn encrypted(mut self, input: bool) -> Self {
             self.encrypted = Some(input);
             self
         }
+        /// <p>Indicates whether to encrypt the snapshot. To create an encrypted snapshot, specify
+        /// <code>true</code>. To create an unencrypted snapshot, omit this parameter.</p>
+        /// <p>If you specify a value for <b>ParentSnapshotId</b>, omit
+        /// this parameter.</p>
+        /// <p>If you specify <code>true</code>, the snapshot is encrypted using the KMS key specified
+        /// using the <b>KmsKeyArn</b> parameter. If no value is specified
+        /// for <b>KmsKeyArn</b>, the default KMS key for your account is
+        /// used. If no default KMS key has been specified for your account, the Amazon Web Services managed KMS key is used.
+        /// To set a default KMS key for your account, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyEbsDefaultKmsKeyId.html">
+        /// ModifyEbsDefaultKmsKeyId</a>.</p>
+        /// <p>If your account is enabled for encryption by default, you cannot set this parameter to
+        /// <code>false</code>. In this case, you can omit this parameter.</p>
+        ///
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-accessing-snapshot.html#ebsapis-using-encryption">
+        /// Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
         pub fn set_encrypted(mut self, input: std::option::Option<bool>) -> Self {
             self.encrypted = input;
             self
@@ -1427,6 +1538,14 @@ pub mod start_snapshot_input {
             self.kms_key_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS)
+        /// key to be used to encrypt the snapshot. If you do not specify a
+        /// KMS key, the default Amazon Web Services managed KMS key is used.</p>
+        /// <p>If you specify a <b>ParentSnapshotId</b>, omit this
+        /// parameter; the snapshot will be encrypted using the same KMS key that was used to encrypt
+        /// the parent snapshot.</p>
+        /// <p>If <b>Encrypted</b> is set to <code>true</code>,
+        /// you must specify a KMS key ARN. </p>
         pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kms_key_arn = input;
             self
@@ -1446,6 +1565,17 @@ pub mod start_snapshot_input {
             self.timeout = Some(input);
             self
         }
+        /// <p>The amount of time (in minutes) after which the snapshot is automatically cancelled
+        /// if:</p>
+        /// <ul>
+        /// <li>
+        /// <p>No blocks are written to the snapshot.</p>
+        /// </li>
+        /// <li>
+        /// <p>The snapshot is not completed after writing the last block of data.</p>
+        /// </li>
+        /// </ul>
+        /// <p>If no value is specified, the timeout defaults to <code>60</code> minutes.</p>
         pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
             self.timeout = input;
             self
@@ -1453,8 +1583,10 @@ pub mod start_snapshot_input {
         /// Consumes the builder and constructs a [`StartSnapshotInput`](crate::input::StartSnapshotInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::StartSnapshotInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::StartSnapshotInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::StartSnapshotInput {
                 volume_size: self.volume_size,
                 parent_snapshot_id: self.parent_snapshot_id,
@@ -1479,16 +1611,16 @@ impl StartSnapshotInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::StartSnapshot,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::StartSnapshotInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/snapshots").expect("formatting should succeed");
             Ok(())
         }
@@ -1496,7 +1628,7 @@ impl StartSnapshotInput {
         fn update_http_builder(
             input: &crate::input::StartSnapshotInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1505,10 +1637,10 @@ impl StartSnapshotInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::StartSnapshotInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -1518,14 +1650,16 @@ impl StartSnapshotInput {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_start_snapshot(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1548,25 +1682,27 @@ impl StartSnapshotInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::StartSnapshot::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "StartSnapshot",
-                    "ebs",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::StartSnapshot::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "StartSnapshot",
+            "ebs",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1580,6 +1716,7 @@ impl StartSnapshotInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartSnapshotInput {
@@ -1617,6 +1754,7 @@ pub struct StartSnapshotInput {
     /// ModifyEbsDefaultKmsKeyId</a>.</p>
     /// <p>If your account is enabled for encryption by default, you cannot set this parameter to
     /// <code>false</code>. In this case, you can omit this parameter.</p>
+    ///
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-accessing-snapshot.html#ebsapis-using-encryption">
     /// Using encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub encrypted: std::option::Option<bool>,
@@ -1657,6 +1795,7 @@ impl std::fmt::Debug for StartSnapshotInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 pub struct PutSnapshotBlockInput {
     /// <p>The ID of the snapshot.</p>
@@ -1678,7 +1817,7 @@ pub struct PutSnapshotBlockInput {
     /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-accessing-snapshot.html#ebsapis-using-checksums">
     /// Using checksums with the EBS direct APIs</a> in the <i>Amazon Elastic Compute Cloud User
     /// Guide</i>.</p>
-    pub block_data: smithy_http::byte_stream::ByteStream,
+    pub block_data: aws_smithy_http::byte_stream::ByteStream,
     /// <p>The size of the data to write to the block, in bytes. Currently, the only supported
     /// size is <code>524288</code> bytes.</p>
     /// <p>Valid values: <code>524288</code>
@@ -1707,6 +1846,7 @@ impl std::fmt::Debug for PutSnapshotBlockInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSnapshotBlocksInput {
@@ -1731,6 +1871,7 @@ impl std::fmt::Debug for ListSnapshotBlocksInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListChangedBlocksInput {
@@ -1767,16 +1908,21 @@ impl std::fmt::Debug for ListChangedBlocksInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSnapshotBlockInput {
     /// <p>The ID of the snapshot containing the block from which to get data.</p>
     pub snapshot_id: std::option::Option<std::string::String>,
     /// <p>The block index of the block from which to get data.</p>
+    ///
+    ///
     /// <p>Obtain the <code>BlockIndex</code> by running the <code>ListChangedBlocks</code> or
     /// <code>ListSnapshotBlocks</code> operations.</p>
     pub block_index: std::option::Option<i32>,
     /// <p>The block token of the block from which to get data.</p>
+    ///
+    ///
     /// <p>Obtain the <code>BlockToken</code> by running the <code>ListChangedBlocks</code> or
     /// <code>ListSnapshotBlocks</code> operations.</p>
     pub block_token: std::option::Option<std::string::String>,
@@ -1791,6 +1937,7 @@ impl std::fmt::Debug for GetSnapshotBlockInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CompleteSnapshotInput {

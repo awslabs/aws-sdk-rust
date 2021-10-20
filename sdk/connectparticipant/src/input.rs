@@ -11,12 +11,18 @@ pub mod complete_attachment_upload_input {
         pub(crate) connection_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `attachment_ids`.
+        ///
+        /// To override the contents of this collection use [`set_attachment_ids`](Self::set_attachment_ids).
+        ///
+        /// <p>A list of unique identifiers for the attachments.</p>
         pub fn attachment_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.attachment_ids.unwrap_or_default();
             v.push(input.into());
             self.attachment_ids = Some(v);
             self
         }
+        /// <p>A list of unique identifiers for the attachments.</p>
         pub fn set_attachment_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -30,6 +36,8 @@ pub mod complete_attachment_upload_input {
             self.client_token = Some(input.into());
             self
         }
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -39,6 +47,7 @@ pub mod complete_attachment_upload_input {
             self.connection_token = Some(input.into());
             self
         }
+        /// <p>The authentication token associated with the participant's connection.</p>
         pub fn set_connection_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -51,7 +60,7 @@ pub mod complete_attachment_upload_input {
             self,
         ) -> std::result::Result<
             crate::input::CompleteAttachmentUploadInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CompleteAttachmentUploadInput {
                 attachment_ids: self.attachment_ids,
@@ -73,16 +82,16 @@ impl CompleteAttachmentUploadInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CompleteAttachmentUpload,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CompleteAttachmentUploadInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/participant/complete-attachment-upload")
                 .expect("formatting should succeed");
             Ok(())
@@ -90,7 +99,7 @@ impl CompleteAttachmentUploadInput {
         fn add_headers(
             _input: &crate::input::CompleteAttachmentUploadInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_1) = &_input.connection_token {
                 let formatted_2 = AsRef::<str>::as_ref(inner_1);
@@ -98,7 +107,7 @@ impl CompleteAttachmentUploadInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_2;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "connection_token",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -114,7 +123,7 @@ impl CompleteAttachmentUploadInput {
         fn update_http_builder(
             input: &crate::input::CompleteAttachmentUploadInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -124,10 +133,10 @@ impl CompleteAttachmentUploadInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CompleteAttachmentUploadInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -137,17 +146,19 @@ impl CompleteAttachmentUploadInput {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_complete_attachment_upload(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -170,15 +181,15 @@ impl CompleteAttachmentUploadInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CompleteAttachmentUpload::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CompleteAttachmentUpload",
             "connectparticipant",
         ));
@@ -187,10 +198,10 @@ impl CompleteAttachmentUploadInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -214,12 +225,18 @@ pub mod create_participant_connection_input {
         pub(crate) participant_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `r#type`.
+        ///
+        /// To override the contents of this collection use [`set_type`](Self::set_type).
+        ///
+        /// <p>Type of connection information required.</p>
         pub fn r#type(mut self, input: impl Into<crate::model::ConnectionType>) -> Self {
             let mut v = self.r#type.unwrap_or_default();
             v.push(input.into());
             self.r#type = Some(v);
             self
         }
+        /// <p>Type of connection information required.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ConnectionType>>,
@@ -234,6 +251,9 @@ pub mod create_participant_connection_input {
             self.participant_token = Some(input.into());
             self
         }
+        /// <p>This is a header parameter.</p>
+        /// <p>The Participant Token as obtained from <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html">StartChatContact</a>
+        /// API response.</p>
         pub fn set_participant_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -246,7 +266,7 @@ pub mod create_participant_connection_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateParticipantConnectionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateParticipantConnectionInput {
                 r#type: self.r#type,
@@ -267,23 +287,23 @@ impl CreateParticipantConnectionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateParticipantConnection,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateParticipantConnectionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/participant/connection").expect("formatting should succeed");
             Ok(())
         }
         fn add_headers(
             _input: &crate::input::CreateParticipantConnectionInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_3) = &_input.participant_token {
                 let formatted_4 = AsRef::<str>::as_ref(inner_3);
@@ -291,7 +311,7 @@ impl CreateParticipantConnectionInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_4;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "participant_token",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -307,7 +327,7 @@ impl CreateParticipantConnectionInput {
         fn update_http_builder(
             input: &crate::input::CreateParticipantConnectionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -317,25 +337,25 @@ impl CreateParticipantConnectionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateParticipantConnectionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_participant_connection(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_participant_connection(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -358,15 +378,15 @@ impl CreateParticipantConnectionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateParticipantConnection::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateParticipantConnection",
             "connectparticipant",
         ));
@@ -375,10 +395,10 @@ impl CreateParticipantConnectionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -408,6 +428,8 @@ pub mod disconnect_participant_input {
             self.client_token = Some(input.into());
             self
         }
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -417,6 +439,7 @@ pub mod disconnect_participant_input {
             self.connection_token = Some(input.into());
             self
         }
+        /// <p>The authentication token associated with the participant's connection.</p>
         pub fn set_connection_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -429,7 +452,7 @@ pub mod disconnect_participant_input {
             self,
         ) -> std::result::Result<
             crate::input::DisconnectParticipantInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DisconnectParticipantInput {
                 client_token: self.client_token,
@@ -449,23 +472,23 @@ impl DisconnectParticipantInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DisconnectParticipant,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DisconnectParticipantInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/participant/disconnect").expect("formatting should succeed");
             Ok(())
         }
         fn add_headers(
             _input: &crate::input::DisconnectParticipantInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_5) = &_input.connection_token {
                 let formatted_6 = AsRef::<str>::as_ref(inner_5);
@@ -473,7 +496,7 @@ impl DisconnectParticipantInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_6;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "connection_token",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -489,7 +512,7 @@ impl DisconnectParticipantInput {
         fn update_http_builder(
             input: &crate::input::DisconnectParticipantInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -499,10 +522,10 @@ impl DisconnectParticipantInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DisconnectParticipantInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -512,17 +535,17 @@ impl DisconnectParticipantInput {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_disconnect_participant(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -545,15 +568,15 @@ impl DisconnectParticipantInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DisconnectParticipant::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DisconnectParticipant",
             "connectparticipant",
         ));
@@ -562,10 +585,10 @@ impl DisconnectParticipantInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -594,6 +617,7 @@ pub mod get_attachment_input {
             self.attachment_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the attachment.</p>
         pub fn set_attachment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -606,6 +630,7 @@ pub mod get_attachment_input {
             self.connection_token = Some(input.into());
             self
         }
+        /// <p>The authentication token associated with the participant's connection.</p>
         pub fn set_connection_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -616,8 +641,10 @@ pub mod get_attachment_input {
         /// Consumes the builder and constructs a [`GetAttachmentInput`](crate::input::GetAttachmentInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetAttachmentInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetAttachmentInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetAttachmentInput {
                 attachment_id: self.attachment_id,
                 connection_token: self.connection_token,
@@ -636,23 +663,23 @@ impl GetAttachmentInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetAttachment,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetAttachmentInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/participant/attachment").expect("formatting should succeed");
             Ok(())
         }
         fn add_headers(
             _input: &crate::input::GetAttachmentInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_7) = &_input.connection_token {
                 let formatted_8 = AsRef::<str>::as_ref(inner_7);
@@ -660,7 +687,7 @@ impl GetAttachmentInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_8;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "connection_token",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -676,7 +703,7 @@ impl GetAttachmentInput {
         fn update_http_builder(
             input: &crate::input::GetAttachmentInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -686,24 +713,26 @@ impl GetAttachmentInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetAttachmentInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_get_attachment(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -726,25 +755,27 @@ impl GetAttachmentInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::GetAttachment::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "GetAttachment",
-                    "connectparticipant",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetAttachment::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetAttachment",
+            "connectparticipant",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -778,6 +809,7 @@ pub mod get_transcript_input {
             self.contact_id = Some(input.into());
             self
         }
+        /// <p>The contactId from the current contact chain for which transcript is needed.</p>
         pub fn set_contact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.contact_id = input;
             self
@@ -787,6 +819,7 @@ pub mod get_transcript_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of results to return in the page. Default: 10. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -797,6 +830,8 @@ pub mod get_transcript_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The pagination token. Use the value returned previously in the next subsequent request
+        /// to retrieve the next set of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -807,6 +842,8 @@ pub mod get_transcript_input {
             self.scan_direction = Some(input);
             self
         }
+        /// <p>The direction from StartPosition from which to retrieve message. Default: BACKWARD
+        /// when no StartPosition is provided, FORWARD with StartPosition. </p>
         pub fn set_scan_direction(
             mut self,
             input: std::option::Option<crate::model::ScanDirection>,
@@ -819,6 +856,7 @@ pub mod get_transcript_input {
             self.sort_order = Some(input);
             self
         }
+        /// <p>The sort order for the records. Default: DESCENDING.</p>
         pub fn set_sort_order(mut self, input: std::option::Option<crate::model::SortKey>) -> Self {
             self.sort_order = input;
             self
@@ -828,6 +866,7 @@ pub mod get_transcript_input {
             self.start_position = Some(input);
             self
         }
+        /// <p>A filtering option for where to start.</p>
         pub fn set_start_position(
             mut self,
             input: std::option::Option<crate::model::StartPosition>,
@@ -840,6 +879,7 @@ pub mod get_transcript_input {
             self.connection_token = Some(input.into());
             self
         }
+        /// <p>The authentication token associated with the participant's connection.</p>
         pub fn set_connection_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -850,8 +890,10 @@ pub mod get_transcript_input {
         /// Consumes the builder and constructs a [`GetTranscriptInput`](crate::input::GetTranscriptInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetTranscriptInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetTranscriptInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetTranscriptInput {
                 contact_id: self.contact_id,
                 max_results: self.max_results,
@@ -875,23 +917,23 @@ impl GetTranscriptInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetTranscript,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetTranscriptInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/participant/transcript").expect("formatting should succeed");
             Ok(())
         }
         fn add_headers(
             _input: &crate::input::GetTranscriptInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_9) = &_input.connection_token {
                 let formatted_10 = AsRef::<str>::as_ref(inner_9);
@@ -899,7 +941,7 @@ impl GetTranscriptInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_10;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "connection_token",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -915,7 +957,7 @@ impl GetTranscriptInput {
         fn update_http_builder(
             input: &crate::input::GetTranscriptInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -925,24 +967,26 @@ impl GetTranscriptInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetTranscriptInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_get_transcript(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -965,25 +1009,27 @@ impl GetTranscriptInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::GetTranscript::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "GetTranscript",
-                    "connectparticipant",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetTranscript::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetTranscript",
+            "connectparticipant",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1010,6 +1056,7 @@ pub mod send_event_input {
     }
     impl Builder {
         /// <p>The content type of the request. Supported types are:</p>
+        ///
         /// <ul>
         /// <li>
         /// <p>application/vnd.amazonaws.connect.event.typing</p>
@@ -1022,6 +1069,16 @@ pub mod send_event_input {
             self.content_type = Some(input.into());
             self
         }
+        /// <p>The content type of the request. Supported types are:</p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>application/vnd.amazonaws.connect.event.typing</p>
+        /// </li>
+        /// <li>
+        /// <p>application/vnd.amazonaws.connect.event.connection.acknowledged</p>
+        /// </li>
+        /// </ul>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_type = input;
             self
@@ -1032,6 +1089,8 @@ pub mod send_event_input {
             self.content = Some(input.into());
             self
         }
+        /// <p>The content of the event to be sent (for example, message text). This is not yet
+        /// supported.</p>
         pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content = input;
             self
@@ -1042,6 +1101,8 @@ pub mod send_event_input {
             self.client_token = Some(input.into());
             self
         }
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -1051,6 +1112,7 @@ pub mod send_event_input {
             self.connection_token = Some(input.into());
             self
         }
+        /// <p>The authentication token associated with the participant's connection.</p>
         pub fn set_connection_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1061,7 +1123,7 @@ pub mod send_event_input {
         /// Consumes the builder and constructs a [`SendEventInput`](crate::input::SendEventInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::SendEventInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::SendEventInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::SendEventInput {
                 content_type: self.content_type,
@@ -1083,23 +1145,23 @@ impl SendEventInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::SendEvent,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SendEventInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/participant/event").expect("formatting should succeed");
             Ok(())
         }
         fn add_headers(
             _input: &crate::input::SendEventInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_11) = &_input.connection_token {
                 let formatted_12 = AsRef::<str>::as_ref(inner_11);
@@ -1107,7 +1169,7 @@ impl SendEventInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_12;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "connection_token",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -1123,7 +1185,7 @@ impl SendEventInput {
         fn update_http_builder(
             input: &crate::input::SendEventInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1133,10 +1195,10 @@ impl SendEventInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SendEventInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -1146,14 +1208,16 @@ impl SendEventInput {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_send_event(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1176,13 +1240,13 @@ impl SendEventInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
         let op =
-            smithy_http::operation::Operation::new(request, crate::operation::SendEvent::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
+            aws_smithy_http::operation::Operation::new(request, crate::operation::SendEvent::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "SendEvent",
                     "connectparticipant",
                 ));
@@ -1191,10 +1255,10 @@ impl SendEventInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1225,6 +1289,7 @@ pub mod send_message_input {
             self.content_type = Some(input.into());
             self
         }
+        /// <p>The type of the content. Supported types are text/plain.</p>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_type = input;
             self
@@ -1234,6 +1299,7 @@ pub mod send_message_input {
             self.content = Some(input.into());
             self
         }
+        /// <p>The content of the message.</p>
         pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content = input;
             self
@@ -1244,6 +1310,8 @@ pub mod send_message_input {
             self.client_token = Some(input.into());
             self
         }
+        /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the
+        /// request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -1253,6 +1321,7 @@ pub mod send_message_input {
             self.connection_token = Some(input.into());
             self
         }
+        /// <p>The authentication token associated with the connection.</p>
         pub fn set_connection_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1263,8 +1332,10 @@ pub mod send_message_input {
         /// Consumes the builder and constructs a [`SendMessageInput`](crate::input::SendMessageInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::SendMessageInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::SendMessageInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::SendMessageInput {
                 content_type: self.content_type,
                 content: self.content,
@@ -1285,23 +1356,23 @@ impl SendMessageInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::SendMessage,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SendMessageInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/participant/message").expect("formatting should succeed");
             Ok(())
         }
         fn add_headers(
             _input: &crate::input::SendMessageInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_13) = &_input.connection_token {
                 let formatted_14 = AsRef::<str>::as_ref(inner_13);
@@ -1309,7 +1380,7 @@ impl SendMessageInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_14;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "connection_token",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -1325,7 +1396,7 @@ impl SendMessageInput {
         fn update_http_builder(
             input: &crate::input::SendMessageInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1335,10 +1406,10 @@ impl SendMessageInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SendMessageInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -1348,14 +1419,16 @@ impl SendMessageInput {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_send_message(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1378,25 +1451,27 @@ impl SendMessageInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::SendMessage::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "SendMessage",
-                    "connectparticipant",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::SendMessage::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "SendMessage",
+            "connectparticipant",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1428,6 +1503,7 @@ pub mod start_attachment_upload_input {
             self.content_type = Some(input.into());
             self
         }
+        /// <p>Describes the MIME file type of the attachment. For a list of supported file types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits">Feature specifications</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_type = input;
             self
@@ -1437,6 +1513,7 @@ pub mod start_attachment_upload_input {
             self.attachment_size_in_bytes = Some(input);
             self
         }
+        /// <p>The size of the attachment in bytes.</p>
         pub fn set_attachment_size_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
             self.attachment_size_in_bytes = input;
             self
@@ -1446,6 +1523,7 @@ pub mod start_attachment_upload_input {
             self.attachment_name = Some(input.into());
             self
         }
+        /// <p>A case-sensitive name of the attachment being uploaded.</p>
         pub fn set_attachment_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1458,6 +1536,7 @@ pub mod start_attachment_upload_input {
             self.client_token = Some(input.into());
             self
         }
+        /// <p>A unique case sensitive identifier to support idempotency of request.</p>
         pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_token = input;
             self
@@ -1467,6 +1546,7 @@ pub mod start_attachment_upload_input {
             self.connection_token = Some(input.into());
             self
         }
+        /// <p>The authentication token associated with the participant's connection.</p>
         pub fn set_connection_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1479,7 +1559,7 @@ pub mod start_attachment_upload_input {
             self,
         ) -> std::result::Result<
             crate::input::StartAttachmentUploadInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::StartAttachmentUploadInput {
                 content_type: self.content_type,
@@ -1502,16 +1582,16 @@ impl StartAttachmentUploadInput {
         mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::StartAttachmentUpload,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::StartAttachmentUploadInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/participant/start-attachment-upload")
                 .expect("formatting should succeed");
             Ok(())
@@ -1519,7 +1599,7 @@ impl StartAttachmentUploadInput {
         fn add_headers(
             _input: &crate::input::StartAttachmentUploadInput,
             mut builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             if let Some(inner_15) = &_input.connection_token {
                 let formatted_16 = AsRef::<str>::as_ref(inner_15);
@@ -1527,7 +1607,7 @@ impl StartAttachmentUploadInput {
                     use std::convert::TryFrom;
                     let header_value = formatted_16;
                     let header_value = http::header::HeaderValue::try_from(&*header_value)
-                        .map_err(|err| smithy_http::operation::BuildError::InvalidField {
+                        .map_err(|err| aws_smithy_http::operation::BuildError::InvalidField {
                             field: "connection_token",
                             details: format!(
                                 "`{}` cannot be used as a header value: {}",
@@ -1543,7 +1623,7 @@ impl StartAttachmentUploadInput {
         fn update_http_builder(
             input: &crate::input::StartAttachmentUploadInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1553,10 +1633,10 @@ impl StartAttachmentUploadInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::StartAttachmentUploadInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
@@ -1566,17 +1646,19 @@ impl StartAttachmentUploadInput {
         if self.client_token.is_none() {
             self.client_token = Some(_config.make_token.make_idempotency_token());
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_attachment_upload(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1599,15 +1681,15 @@ impl StartAttachmentUploadInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::StartAttachmentUpload::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "StartAttachmentUpload",
             "connectparticipant",
         ));
@@ -1616,10 +1698,10 @@ impl StartAttachmentUploadInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1633,6 +1715,7 @@ impl StartAttachmentUploadInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartAttachmentUploadInput {
@@ -1659,6 +1742,7 @@ impl std::fmt::Debug for StartAttachmentUploadInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendMessageInput {
@@ -1683,10 +1767,12 @@ impl std::fmt::Debug for SendMessageInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendEventInput {
     /// <p>The content type of the request. Supported types are:</p>
+    ///
     /// <ul>
     /// <li>
     /// <p>application/vnd.amazonaws.connect.event.typing</p>
@@ -1716,6 +1802,7 @@ impl std::fmt::Debug for SendEventInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTranscriptInput {
@@ -1750,6 +1837,7 @@ impl std::fmt::Debug for GetTranscriptInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAttachmentInput {
@@ -1767,6 +1855,7 @@ impl std::fmt::Debug for GetAttachmentInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisconnectParticipantInput {
@@ -1785,6 +1874,7 @@ impl std::fmt::Debug for DisconnectParticipantInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateParticipantConnectionInput {
@@ -1804,6 +1894,7 @@ impl std::fmt::Debug for CreateParticipantConnectionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CompleteAttachmentUploadInput {

@@ -9,6 +9,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpgradeDomainOutput {
+    #[allow(missing_docs)] // documentation missing in model
     pub upgrade_id: std::option::Option<std::string::String>,
     /// <p>The name of an domain. Domain names are unique across the domains owned by an account within an AWS
     /// region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9,
@@ -67,10 +68,12 @@ pub mod upgrade_domain_output {
         >,
     }
     impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
         pub fn upgrade_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.upgrade_id = Some(input.into());
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
         pub fn set_upgrade_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.upgrade_id = input;
             self
@@ -83,6 +86,10 @@ pub mod upgrade_domain_output {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The name of an domain. Domain names are unique across the domains owned by an account within an AWS
+        /// region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9,
+        /// and - (hyphen).
+        /// </p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -92,6 +99,7 @@ pub mod upgrade_domain_output {
             self.target_version = Some(input.into());
             self
         }
+        /// <p>The version of OpenSearch that you intend to upgrade the domain to.</p>
         pub fn set_target_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -107,10 +115,34 @@ pub mod upgrade_domain_output {
             self.perform_check_only = Some(input);
             self
         }
+        /// <p>
+        /// When true, indicates that an upgrade eligibility check needs to be performed.
+        /// Does not actually perform the upgrade.
+        /// </p>
         pub fn set_perform_check_only(mut self, input: std::option::Option<bool>) -> Self {
             self.perform_check_only = input;
             self
         }
+        /// Adds a key-value pair to `advanced_options`.
+        ///
+        /// To override the contents of this collection use [`set_advanced_options`](Self::set_advanced_options).
+        ///
+        /// <p>Exposes select native OpenSearch configuration values from <code>opensearch.yml</code>. Currently, the
+        /// following advanced options are available:
+        /// </p>
+        /// <ul>
+        /// <li>Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring
+        /// access to individual sub-resources. By default, the value is <code>true</code>.
+        /// See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options" target="_blank">Advanced cluster parameters
+        /// </a> for more information.
+        /// </li>
+        /// <li>Option to specify the percentage of heap space allocated to field data. By default, this setting is
+        /// unbounded.
+        /// </li>
+        /// </ul>
+        /// <p>For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options">
+        /// Advanced cluster parameters</a>.
+        /// </p>
         pub fn advanced_options(
             mut self,
             k: impl Into<std::string::String>,
@@ -121,6 +153,22 @@ pub mod upgrade_domain_output {
             self.advanced_options = Some(hash_map);
             self
         }
+        /// <p>Exposes select native OpenSearch configuration values from <code>opensearch.yml</code>. Currently, the
+        /// following advanced options are available:
+        /// </p>
+        /// <ul>
+        /// <li>Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring
+        /// access to individual sub-resources. By default, the value is <code>true</code>.
+        /// See <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options" target="_blank">Advanced cluster parameters
+        /// </a> for more information.
+        /// </li>
+        /// <li>Option to specify the percentage of heap space allocated to field data. By default, this setting is
+        /// unbounded.
+        /// </li>
+        /// </ul>
+        /// <p>For more information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options">
+        /// Advanced cluster parameters</a>.
+        /// </p>
         pub fn set_advanced_options(
             mut self,
             input: std::option::Option<
@@ -185,6 +233,8 @@ pub mod update_package_output {
             self.package_details = Some(input);
             self
         }
+        /// <p>Information about the package.
+        /// </p>
         pub fn set_package_details(
             mut self,
             input: std::option::Option<crate::model::PackageDetails>,
@@ -237,6 +287,7 @@ pub mod update_domain_config_output {
             self.domain_config = Some(input);
             self
         }
+        /// <p>The status of the updated domain.</p>
         pub fn set_domain_config(
             mut self,
             input: std::option::Option<crate::model::DomainConfig>,
@@ -293,6 +344,7 @@ pub mod start_service_software_update_output {
             self.service_software_options = Some(input);
             self
         }
+        /// <p>The current status of the OpenSearch service software update.</p>
         pub fn set_service_software_options(
             mut self,
             input: std::option::Option<crate::model::ServiceSoftwareOptions>,
@@ -315,6 +367,7 @@ impl StartServiceSoftwareUpdateOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveTagsOutput {}
@@ -387,6 +440,12 @@ pub mod reject_inbound_connection_output {
             self.connection = Some(input);
             self
         }
+        /// <p>The
+        /// <code>
+        /// <a>InboundConnection</a>
+        /// </code>
+        /// of the rejected inbound connection.
+        /// </p>
         pub fn set_connection(
             mut self,
             input: std::option::Option<crate::model::InboundConnection>,
@@ -442,6 +501,7 @@ pub mod purchase_reserved_instance_offering_output {
             self.reserved_instance_id = Some(input.into());
             self
         }
+        /// <p>Details of the reserved OpenSearch instance which was purchased.</p>
         pub fn set_reserved_instance_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -454,6 +514,7 @@ pub mod purchase_reserved_instance_offering_output {
             self.reservation_name = Some(input.into());
             self
         }
+        /// <p>The customer-specified identifier used to track this reservation.</p>
         pub fn set_reservation_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -514,12 +575,20 @@ pub mod list_versions_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `versions`.
+        ///
+        /// To override the contents of this collection use [`set_versions`](Self::set_versions).
+        ///
+        /// <p>List of supported OpenSearch versions.
+        /// </p>
         pub fn versions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.versions.unwrap_or_default();
             v.push(input.into());
             self.versions = Some(v);
             self
         }
+        /// <p>List of supported OpenSearch versions.
+        /// </p>
         pub fn set_versions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -535,6 +604,10 @@ pub mod list_versions_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>
+        /// Paginated APIs accept the NextToken input to return the next page of results and provide
+        /// a NextToken output in the response, which you can use to retrieve more results.
+        /// </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -580,12 +653,20 @@ pub mod list_tags_output {
         pub(crate) tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
+        /// Appends an item to `tag_list`.
+        ///
+        /// To override the contents of this collection use [`set_tag_list`](Self::set_tag_list).
+        ///
+        /// <p>List of <code>Tag</code> for the requested domain.
+        /// </p>
         pub fn tag_list(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tag_list.unwrap_or_default();
             v.push(input.into());
             self.tag_list = Some(v);
             self
         }
+        /// <p>List of <code>Tag</code> for the requested domain.
+        /// </p>
         pub fn set_tag_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -647,6 +728,12 @@ pub mod list_packages_for_domain_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `domain_package_details_list`.
+        ///
+        /// To override the contents of this collection use [`set_domain_package_details_list`](Self::set_domain_package_details_list).
+        ///
+        /// <p>List of <code>DomainPackageDetails</code> objects.
+        /// </p>
         pub fn domain_package_details_list(
             mut self,
             input: impl Into<crate::model::DomainPackageDetails>,
@@ -656,6 +743,8 @@ pub mod list_packages_for_domain_output {
             self.domain_package_details_list = Some(v);
             self
         }
+        /// <p>List of <code>DomainPackageDetails</code> objects.
+        /// </p>
         pub fn set_domain_package_details_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DomainPackageDetails>>,
@@ -668,6 +757,7 @@ pub mod list_packages_for_domain_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>Pagination token to supply to the next call to get the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -688,9 +778,11 @@ impl ListPackagesForDomainOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInstanceTypeDetailsOutput {
+    #[allow(missing_docs)] // documentation missing in model
     pub instance_type_details:
         std::option::Option<std::vec::Vec<crate::model::InstanceTypeDetails>>,
     /// <p>
@@ -718,6 +810,10 @@ pub mod list_instance_type_details_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `instance_type_details`.
+        ///
+        /// To override the contents of this collection use [`set_instance_type_details`](Self::set_instance_type_details).
+        ///
         pub fn instance_type_details(
             mut self,
             input: impl Into<crate::model::InstanceTypeDetails>,
@@ -727,6 +823,7 @@ pub mod list_instance_type_details_output {
             self.instance_type_details = Some(v);
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
         pub fn set_instance_type_details(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InstanceTypeDetails>>,
@@ -742,6 +839,10 @@ pub mod list_instance_type_details_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>
+        /// Paginated APIs accept the NextToken input to return the next page of results and provide
+        /// a NextToken output in the response, which you can use to retrieve more results.
+        /// </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -776,6 +877,7 @@ pub struct ListDomainsForPackageOutput {
     /// </p>
     pub domain_package_details_list:
         std::option::Option<std::vec::Vec<crate::model::DomainPackageDetails>>,
+    #[allow(missing_docs)] // documentation missing in model
     pub next_token: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ListDomainsForPackageOutput {
@@ -800,6 +902,12 @@ pub mod list_domains_for_package_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `domain_package_details_list`.
+        ///
+        /// To override the contents of this collection use [`set_domain_package_details_list`](Self::set_domain_package_details_list).
+        ///
+        /// <p>List of <code>DomainPackageDetails</code> objects.
+        /// </p>
         pub fn domain_package_details_list(
             mut self,
             input: impl Into<crate::model::DomainPackageDetails>,
@@ -809,6 +917,8 @@ pub mod list_domains_for_package_output {
             self.domain_package_details_list = Some(v);
             self
         }
+        /// <p>List of <code>DomainPackageDetails</code> objects.
+        /// </p>
         pub fn set_domain_package_details_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DomainPackageDetails>>,
@@ -816,10 +926,12 @@ pub mod list_domains_for_package_output {
             self.domain_package_details_list = input;
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -863,12 +975,18 @@ pub mod list_domain_names_output {
         pub(crate) domain_names: std::option::Option<std::vec::Vec<crate::model::DomainInfo>>,
     }
     impl Builder {
+        /// Appends an item to `domain_names`.
+        ///
+        /// To override the contents of this collection use [`set_domain_names`](Self::set_domain_names).
+        ///
+        /// <p>List of domain names and respective engine types.</p>
         pub fn domain_names(mut self, input: impl Into<crate::model::DomainInfo>) -> Self {
             let mut v = self.domain_names.unwrap_or_default();
             v.push(input.into());
             self.domain_names = Some(v);
             self
         }
+        /// <p>List of domain names and respective engine types.</p>
         pub fn set_domain_names(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DomainInfo>>,
@@ -959,6 +1077,14 @@ pub mod get_upgrade_status_output {
             self.upgrade_step = Some(input);
             self
         }
+        /// <p>
+        /// One of three steps an upgrade or upgrade eligibility check goes through:
+        /// <ul>
+        /// <li>PreUpgradeCheck</li>
+        /// <li>Snapshot</li>
+        /// <li>Upgrade</li>
+        /// </ul>
+        /// </p>
         pub fn set_upgrade_step(
             mut self,
             input: std::option::Option<crate::model::UpgradeStep>,
@@ -983,6 +1109,19 @@ pub mod get_upgrade_status_output {
             self.step_status = Some(input);
             self
         }
+        /// <p>
+        /// One of four statuses an upgrade have, returned as part of the
+        /// <code>
+        /// <a>GetUpgradeStatusResponse</a>
+        /// </code>
+        /// object. The status can take one of the following values:
+        /// <ul>
+        /// <li>In Progress</li>
+        /// <li>Succeeded</li>
+        /// <li>Succeeded with Issues</li>
+        /// <li>Failed</li>
+        /// </ul>
+        /// </p>
         pub fn set_step_status(
             mut self,
             input: std::option::Option<crate::model::UpgradeStatus>,
@@ -995,6 +1134,7 @@ pub mod get_upgrade_status_output {
             self.upgrade_name = Some(input.into());
             self
         }
+        /// <p>A string that briefly describes the update.</p>
         pub fn set_upgrade_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.upgrade_name = input;
             self
@@ -1060,12 +1200,38 @@ pub mod get_upgrade_history_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `upgrade_histories`.
+        ///
+        /// To override the contents of this collection use [`set_upgrade_histories`](Self::set_upgrade_histories).
+        ///
+        /// <p>
+        /// A list of
+        /// <code>
+        /// <a>UpgradeHistory</a>
+        /// </code>
+        /// objects corresponding to each upgrade or upgrade eligibility check performed on a domain returned as part of the
+        /// <code>
+        /// <a>GetUpgradeHistoryResponse</a>
+        /// </code>
+        /// object.
+        /// </p>
         pub fn upgrade_histories(mut self, input: impl Into<crate::model::UpgradeHistory>) -> Self {
             let mut v = self.upgrade_histories.unwrap_or_default();
             v.push(input.into());
             self.upgrade_histories = Some(v);
             self
         }
+        /// <p>
+        /// A list of
+        /// <code>
+        /// <a>UpgradeHistory</a>
+        /// </code>
+        /// objects corresponding to each upgrade or upgrade eligibility check performed on a domain returned as part of the
+        /// <code>
+        /// <a>GetUpgradeHistoryResponse</a>
+        /// </code>
+        /// object.
+        /// </p>
         pub fn set_upgrade_histories(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UpgradeHistory>>,
@@ -1078,6 +1244,7 @@ pub mod get_upgrade_history_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>Pagination token that needs to be supplied to the next call to get the next page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1108,11 +1275,13 @@ impl GetUpgradeHistoryOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPackageVersionHistoryOutput {
+    #[allow(missing_docs)] // documentation missing in model
     pub package_id: std::option::Option<std::string::String>,
     /// <p>List of <code>PackageVersionHistory</code> objects.
     /// </p>
     pub package_version_history_list:
         std::option::Option<std::vec::Vec<crate::model::PackageVersionHistory>>,
+    #[allow(missing_docs)] // documentation missing in model
     pub next_token: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetPackageVersionHistoryOutput {
@@ -1139,14 +1308,22 @@ pub mod get_package_version_history_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        #[allow(missing_docs)] // documentation missing in model
         pub fn package_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.package_id = Some(input.into());
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
         pub fn set_package_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.package_id = input;
             self
         }
+        /// Appends an item to `package_version_history_list`.
+        ///
+        /// To override the contents of this collection use [`set_package_version_history_list`](Self::set_package_version_history_list).
+        ///
+        /// <p>List of <code>PackageVersionHistory</code> objects.
+        /// </p>
         pub fn package_version_history_list(
             mut self,
             input: impl Into<crate::model::PackageVersionHistory>,
@@ -1156,6 +1333,8 @@ pub mod get_package_version_history_output {
             self.package_version_history_list = Some(v);
             self
         }
+        /// <p>List of <code>PackageVersionHistory</code> objects.
+        /// </p>
         pub fn set_package_version_history_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PackageVersionHistory>>,
@@ -1163,10 +1342,12 @@ pub mod get_package_version_history_output {
             self.package_version_history_list = input;
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1225,6 +1406,17 @@ pub mod get_compatible_versions_output {
             std::option::Option<std::vec::Vec<crate::model::CompatibleVersionsMap>>,
     }
     impl Builder {
+        /// Appends an item to `compatible_versions`.
+        ///
+        /// To override the contents of this collection use [`set_compatible_versions`](Self::set_compatible_versions).
+        ///
+        /// <p>
+        /// A map of compatible OpenSearch versions returned as part of the
+        /// <code>
+        /// <a>GetCompatibleVersions</a>
+        /// </code>
+        /// operation.
+        /// </p>
         pub fn compatible_versions(
             mut self,
             input: impl Into<crate::model::CompatibleVersionsMap>,
@@ -1234,6 +1426,13 @@ pub mod get_compatible_versions_output {
             self.compatible_versions = Some(v);
             self
         }
+        /// <p>
+        /// A map of compatible OpenSearch versions returned as part of the
+        /// <code>
+        /// <a>GetCompatibleVersions</a>
+        /// </code>
+        /// operation.
+        /// </p>
         pub fn set_compatible_versions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CompatibleVersionsMap>>,
@@ -1294,6 +1493,9 @@ pub mod dissociate_package_output {
             self.domain_package_details = Some(input);
             self
         }
+        /// <p>
+        /// <code>DomainPackageDetails</code>
+        /// </p>
         pub fn set_domain_package_details(
             mut self,
             input: std::option::Option<crate::model::DomainPackageDetails>,
@@ -1351,10 +1553,16 @@ pub mod describe_reserved_instances_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>Provides an identifier to allow retrieval of paginated results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
+        /// Appends an item to `reserved_instances`.
+        ///
+        /// To override the contents of this collection use [`set_reserved_instances`](Self::set_reserved_instances).
+        ///
+        /// <p>List of reserved OpenSearch instances.</p>
         pub fn reserved_instances(
             mut self,
             input: impl Into<crate::model::ReservedInstance>,
@@ -1364,6 +1572,7 @@ pub mod describe_reserved_instances_output {
             self.reserved_instances = Some(v);
             self
         }
+        /// <p>List of reserved OpenSearch instances.</p>
         pub fn set_reserved_instances(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ReservedInstance>>,
@@ -1426,10 +1635,16 @@ pub mod describe_reserved_instance_offerings_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>Provides an identifier to allow retrieval of paginated results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
+        /// Appends an item to `reserved_instance_offerings`.
+        ///
+        /// To override the contents of this collection use [`set_reserved_instance_offerings`](Self::set_reserved_instance_offerings).
+        ///
+        /// <p>List of reserved OpenSearch instance offerings</p>
         pub fn reserved_instance_offerings(
             mut self,
             input: impl Into<crate::model::ReservedInstanceOffering>,
@@ -1439,6 +1654,7 @@ pub mod describe_reserved_instance_offerings_output {
             self.reserved_instance_offerings = Some(v);
             self
         }
+        /// <p>List of reserved OpenSearch instance offerings</p>
         pub fn set_reserved_instance_offerings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ReservedInstanceOffering>>,
@@ -1475,6 +1691,7 @@ pub struct DescribePackagesOutput {
     /// <p>List of <code>PackageDetails</code> objects.
     /// </p>
     pub package_details_list: std::option::Option<std::vec::Vec<crate::model::PackageDetails>>,
+    #[allow(missing_docs)] // documentation missing in model
     pub next_token: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribePackagesOutput {
@@ -1496,6 +1713,12 @@ pub mod describe_packages_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `package_details_list`.
+        ///
+        /// To override the contents of this collection use [`set_package_details_list`](Self::set_package_details_list).
+        ///
+        /// <p>List of <code>PackageDetails</code> objects.
+        /// </p>
         pub fn package_details_list(
             mut self,
             input: impl Into<crate::model::PackageDetails>,
@@ -1505,6 +1728,8 @@ pub mod describe_packages_output {
             self.package_details_list = Some(v);
             self
         }
+        /// <p>List of <code>PackageDetails</code> objects.
+        /// </p>
         pub fn set_package_details_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PackageDetails>>,
@@ -1512,10 +1737,12 @@ pub mod describe_packages_output {
             self.package_details_list = input;
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1576,12 +1803,28 @@ pub mod describe_outbound_connections_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `connections`.
+        ///
+        /// To override the contents of this collection use [`set_connections`](Self::set_connections).
+        ///
+        /// <p>A list of
+        /// <code>
+        /// <a>OutboundConnection</a>
+        /// </code>
+        /// matching the specified filter criteria.
+        /// </p>
         pub fn connections(mut self, input: impl Into<crate::model::OutboundConnection>) -> Self {
             let mut v = self.connections.unwrap_or_default();
             v.push(input.into());
             self.connections = Some(v);
             self
         }
+        /// <p>A list of
+        /// <code>
+        /// <a>OutboundConnection</a>
+        /// </code>
+        /// matching the specified filter criteria.
+        /// </p>
         pub fn set_connections(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::OutboundConnection>>,
@@ -1596,6 +1839,9 @@ pub mod describe_outbound_connections_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If more results are available and NextToken is present, make the next request to the same API with the received
+        /// NextToken to paginate the remaining results.
+        /// </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1657,6 +1903,20 @@ pub mod describe_instance_type_limits_output {
         >,
     }
     impl Builder {
+        /// Adds a key-value pair to `limits_by_role`.
+        ///
+        /// To override the contents of this collection use [`set_limits_by_role`](Self::set_limits_by_role).
+        ///
+        /// <p>
+        /// The role of a given instance and all applicable limits.
+        /// The role performed by a given OpenSearch instance
+        /// can be one of the following:
+        /// <ul>
+        /// <li>data: If the given InstanceType is used as a data node</li>
+        /// <li>master: If the given InstanceType is used as a master node</li>
+        /// <li>ultra_warm: If the given InstanceType is used as a warm node</li>
+        /// </ul>
+        /// </p>
         pub fn limits_by_role(
             mut self,
             k: impl Into<std::string::String>,
@@ -1667,6 +1927,16 @@ pub mod describe_instance_type_limits_output {
             self.limits_by_role = Some(hash_map);
             self
         }
+        /// <p>
+        /// The role of a given instance and all applicable limits.
+        /// The role performed by a given OpenSearch instance
+        /// can be one of the following:
+        /// <ul>
+        /// <li>data: If the given InstanceType is used as a data node</li>
+        /// <li>master: If the given InstanceType is used as a master node</li>
+        /// <li>ultra_warm: If the given InstanceType is used as a warm node</li>
+        /// </ul>
+        /// </p>
         pub fn set_limits_by_role(
             mut self,
             input: std::option::Option<
@@ -1730,12 +2000,28 @@ pub mod describe_inbound_connections_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `connections`.
+        ///
+        /// To override the contents of this collection use [`set_connections`](Self::set_connections).
+        ///
+        /// <p>A list of
+        /// <code>
+        /// <a>InboundConnection</a>
+        /// </code>
+        /// matching the specified filter criteria.
+        /// </p>
         pub fn connections(mut self, input: impl Into<crate::model::InboundConnection>) -> Self {
             let mut v = self.connections.unwrap_or_default();
             v.push(input.into());
             self.connections = Some(v);
             self
         }
+        /// <p>A list of
+        /// <code>
+        /// <a>InboundConnection</a>
+        /// </code>
+        /// matching the specified filter criteria.
+        /// </p>
         pub fn set_connections(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InboundConnection>>,
@@ -1750,6 +2036,9 @@ pub mod describe_inbound_connections_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>If more results are available and NextToken is present, make the next request to the same API with the received
+        /// NextToken to paginate the remaining results.
+        /// </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1797,12 +2086,20 @@ pub mod describe_domains_output {
             std::option::Option<std::vec::Vec<crate::model::DomainStatus>>,
     }
     impl Builder {
+        /// Appends an item to `domain_status_list`.
+        ///
+        /// To override the contents of this collection use [`set_domain_status_list`](Self::set_domain_status_list).
+        ///
+        /// <p>The status of the domains requested in the <code>DescribeDomains</code> request.
+        /// </p>
         pub fn domain_status_list(mut self, input: impl Into<crate::model::DomainStatus>) -> Self {
             let mut v = self.domain_status_list.unwrap_or_default();
             v.push(input.into());
             self.domain_status_list = Some(v);
             self
         }
+        /// <p>The status of the domains requested in the <code>DescribeDomains</code> request.
+        /// </p>
         pub fn set_domain_status_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DomainStatus>>,
@@ -1857,6 +2154,8 @@ pub mod describe_domain_config_output {
             self.domain_config = Some(input);
             self
         }
+        /// <p>The configuration information of the domain requested in the <code>DescribeDomainConfig</code> request.
+        /// </p>
         pub fn set_domain_config(
             mut self,
             input: std::option::Option<crate::model::DomainConfig>,
@@ -1912,12 +2211,24 @@ pub mod describe_domain_auto_tunes_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `auto_tunes`.
+        ///
+        /// To override the contents of this collection use [`set_auto_tunes`](Self::set_auto_tunes).
+        ///
+        /// <p>The list of setting adjustments that Auto-Tune has made to the domain. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
+        /// Auto-Tune for Amazon OpenSearch Service
+        /// </a> for more information.
+        /// </p>
         pub fn auto_tunes(mut self, input: impl Into<crate::model::AutoTune>) -> Self {
             let mut v = self.auto_tunes.unwrap_or_default();
             v.push(input.into());
             self.auto_tunes = Some(v);
             self
         }
+        /// <p>The list of setting adjustments that Auto-Tune has made to the domain. See <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
+        /// Auto-Tune for Amazon OpenSearch Service
+        /// </a> for more information.
+        /// </p>
         pub fn set_auto_tunes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AutoTune>>,
@@ -1930,6 +2241,7 @@ pub mod describe_domain_auto_tunes_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>An identifier to allow retrieval of paginated results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -1980,6 +2292,7 @@ pub mod describe_domain_output {
             self.domain_status = Some(input);
             self
         }
+        /// <p>The current status of the domain.</p>
         pub fn set_domain_status(
             mut self,
             input: std::option::Option<crate::model::DomainStatus>,
@@ -2040,6 +2353,9 @@ pub mod delete_package_output {
             self.package_details = Some(input);
             self
         }
+        /// <p>
+        /// <code>PackageDetails</code>
+        /// </p>
         pub fn set_package_details(
             mut self,
             input: std::option::Option<crate::model::PackageDetails>,
@@ -2105,6 +2421,12 @@ pub mod delete_outbound_connection_output {
             self.connection = Some(input);
             self
         }
+        /// <p>The
+        /// <code>
+        /// <a>OutboundConnection</a>
+        /// </code>
+        /// of the deleted outbound connection.
+        /// </p>
         pub fn set_connection(
             mut self,
             input: std::option::Option<crate::model::OutboundConnection>,
@@ -2170,6 +2492,12 @@ pub mod delete_inbound_connection_output {
             self.connection = Some(input);
             self
         }
+        /// <p>The
+        /// <code>
+        /// <a>InboundConnection</a>
+        /// </code>
+        /// of the deleted inbound connection.
+        /// </p>
         pub fn set_connection(
             mut self,
             input: std::option::Option<crate::model::InboundConnection>,
@@ -2222,6 +2550,7 @@ pub mod delete_domain_output {
             self.domain_status = Some(input);
             self
         }
+        /// <p>The status of the domain being deleted.</p>
         pub fn set_domain_status(
             mut self,
             input: std::option::Option<crate::model::DomainStatus>,
@@ -2280,6 +2609,8 @@ pub mod create_package_output {
             self.package_details = Some(input);
             self
         }
+        /// <p>Information about the package.
+        /// </p>
         pub fn set_package_details(
             mut self,
             input: std::option::Option<crate::model::PackageDetails>,
@@ -2375,6 +2706,12 @@ pub mod create_outbound_connection_output {
             self.local_domain_info = Some(input);
             self
         }
+        /// <p>The
+        /// <code>
+        /// <a>AWSDomainInformation</a>
+        /// </code>
+        /// for the local OpenSearch domain.
+        /// </p>
         pub fn set_local_domain_info(
             mut self,
             input: std::option::Option<crate::model::DomainInformationContainer>,
@@ -2395,6 +2732,12 @@ pub mod create_outbound_connection_output {
             self.remote_domain_info = Some(input);
             self
         }
+        /// <p>The
+        /// <code>
+        /// <a>AWSDomainInformation</a>
+        /// </code>
+        /// for the remote OpenSearch domain.
+        /// </p>
         pub fn set_remote_domain_info(
             mut self,
             input: std::option::Option<crate::model::DomainInformationContainer>,
@@ -2407,6 +2750,7 @@ pub mod create_outbound_connection_output {
             self.connection_alias = Some(input.into());
             self
         }
+        /// <p>The connection alias provided during the create connection request.</p>
         pub fn set_connection_alias(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2424,6 +2768,12 @@ pub mod create_outbound_connection_output {
             self.connection_status = Some(input);
             self
         }
+        /// <p>The
+        /// <code>
+        /// <a>OutboundConnectionStatus</a>
+        /// </code>
+        /// for the newly created connection.
+        /// </p>
         pub fn set_connection_status(
             mut self,
             input: std::option::Option<crate::model::OutboundConnectionStatus>,
@@ -2436,6 +2786,7 @@ pub mod create_outbound_connection_output {
             self.connection_id = Some(input.into());
             self
         }
+        /// <p>The unique ID for the created outbound connection, which is used for subsequent operations on the connection.</p>
         pub fn set_connection_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2492,6 +2843,7 @@ pub mod create_domain_output {
             self.domain_status = Some(input);
             self
         }
+        /// <p>The status of the newly created domain.</p>
         pub fn set_domain_status(
             mut self,
             input: std::option::Option<crate::model::DomainStatus>,
@@ -2548,6 +2900,7 @@ pub mod cancel_service_software_update_output {
             self.service_software_options = Some(input);
             self
         }
+        /// <p>The current status of the OpenSearch service software update.</p>
         pub fn set_service_software_options(
             mut self,
             input: std::option::Option<crate::model::ServiceSoftwareOptions>,
@@ -2608,6 +2961,9 @@ pub mod associate_package_output {
             self.domain_package_details = Some(input);
             self
         }
+        /// <p>
+        /// <code>DomainPackageDetails</code>
+        /// </p>
         pub fn set_domain_package_details(
             mut self,
             input: std::option::Option<crate::model::DomainPackageDetails>,
@@ -2630,6 +2986,7 @@ impl AssociatePackageOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddTagsOutput {}
@@ -2702,6 +3059,12 @@ pub mod accept_inbound_connection_output {
             self.connection = Some(input);
             self
         }
+        /// <p>The
+        /// <code>
+        /// <a>InboundConnection</a>
+        /// </code>
+        /// of the accepted inbound connection.
+        /// </p>
         pub fn set_connection(
             mut self,
             input: std::option::Option<crate::model::InboundConnection>,

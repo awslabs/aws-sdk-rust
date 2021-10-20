@@ -16,6 +16,9 @@ pub mod cancel_job_input {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier of the job that you want to cancel.</p>
+        /// <p>To get a list of the jobs (including their <code>jobId</code>) that have a status of
+        /// <code>Submitted</code>, use the <a>ListJobsByStatus</a> API action.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -23,7 +26,7 @@ pub mod cancel_job_input {
         /// Consumes the builder and constructs a [`CancelJobInput`](crate::input::CancelJobInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CancelJobInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::CancelJobInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::CancelJobInput { id: self.id })
         }
@@ -40,27 +43,27 @@ impl CancelJobInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CancelJob,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CancelJobInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_1 = &_input.id;
             let input_1 =
                 input_1
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = smithy_http::label::fmt_string(input_1, false);
+            let id = aws_smithy_http::label::fmt_string(input_1, false);
             if id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
                     details: "cannot be empty or unset",
                 });
@@ -72,7 +75,7 @@ impl CancelJobInput {
         fn update_http_builder(
             input: &crate::input::CancelJobInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -81,23 +84,23 @@ impl CancelJobInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CancelJobInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -120,13 +123,13 @@ impl CancelJobInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
         let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CancelJob::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
+            aws_smithy_http::operation::Operation::new(request, crate::operation::CancelJob::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "CancelJob",
                     "elastictranscoder",
                 ));
@@ -135,10 +138,10 @@ impl CancelJobInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -178,6 +181,10 @@ pub mod create_job_input {
             self.pipeline_id = Some(input.into());
             self
         }
+        /// <p>The <code>Id</code> of the pipeline that you want Elastic Transcoder to use for
+        /// transcoding. The pipeline determines several settings, including the Amazon S3 bucket
+        /// from which Elastic Transcoder gets the files to transcode and the bucket into which
+        /// Elastic Transcoder puts the transcoded files.</p>
         pub fn set_pipeline_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.pipeline_id = input;
             self
@@ -188,16 +195,26 @@ pub mod create_job_input {
             self.input = Some(input);
             self
         }
+        /// <p>A section of the request body that provides information about the file that is being
+        /// transcoded.</p>
         pub fn set_input(mut self, input: std::option::Option<crate::model::JobInput>) -> Self {
             self.input = input;
             self
         }
+        /// Appends an item to `inputs`.
+        ///
+        /// To override the contents of this collection use [`set_inputs`](Self::set_inputs).
+        ///
+        /// <p>A section of the request body that provides information about the files that are being
+        /// transcoded.</p>
         pub fn inputs(mut self, input: impl Into<crate::model::JobInput>) -> Self {
             let mut v = self.inputs.unwrap_or_default();
             v.push(input.into());
             self.inputs = Some(v);
             self
         }
+        /// <p>A section of the request body that provides information about the files that are being
+        /// transcoded.</p>
         pub fn set_inputs(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::JobInput>>,
@@ -212,6 +229,9 @@ pub mod create_job_input {
             self.output = Some(input);
             self
         }
+        /// <p> A section of the request body that provides information about the transcoded (target)
+        /// file. We strongly recommend that you use the <code>Outputs</code> syntax instead of the
+        /// <code>Output</code> syntax. </p>
         pub fn set_output(
             mut self,
             input: std::option::Option<crate::model::CreateJobOutput>,
@@ -219,12 +239,22 @@ pub mod create_job_input {
             self.output = input;
             self
         }
+        /// Appends an item to `outputs`.
+        ///
+        /// To override the contents of this collection use [`set_outputs`](Self::set_outputs).
+        ///
+        /// <p> A section of the request body that provides information about the transcoded (target)
+        /// files. We recommend that you use the <code>Outputs</code> syntax instead of the
+        /// <code>Output</code> syntax. </p>
         pub fn outputs(mut self, input: impl Into<crate::model::CreateJobOutput>) -> Self {
             let mut v = self.outputs.unwrap_or_default();
             v.push(input.into());
             self.outputs = Some(v);
             self
         }
+        /// <p> A section of the request body that provides information about the transcoded (target)
+        /// files. We recommend that you use the <code>Outputs</code> syntax instead of the
+        /// <code>Output</code> syntax. </p>
         pub fn set_outputs(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CreateJobOutput>>,
@@ -238,6 +268,8 @@ pub mod create_job_input {
             self.output_key_prefix = Some(input.into());
             self
         }
+        /// <p>The value, if any, that you want Elastic Transcoder to prepend to the names of all files that this
+        /// job creates, including output files, thumbnails, and playlists.</p>
         pub fn set_output_key_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -245,12 +277,24 @@ pub mod create_job_input {
             self.output_key_prefix = input;
             self
         }
+        /// Appends an item to `playlists`.
+        ///
+        /// To override the contents of this collection use [`set_playlists`](Self::set_playlists).
+        ///
+        /// <p>If you specify a preset in <code>PresetId</code> for which the value of
+        /// <code>Container</code> is fmp4 (Fragmented MP4) or ts (MPEG-TS), Playlists contains
+        /// information about the master playlists that you want Elastic Transcoder to create.</p>
+        /// <p>The maximum number of master playlists in a job is 30.</p>
         pub fn playlists(mut self, input: impl Into<crate::model::CreateJobPlaylist>) -> Self {
             let mut v = self.playlists.unwrap_or_default();
             v.push(input.into());
             self.playlists = Some(v);
             self
         }
+        /// <p>If you specify a preset in <code>PresetId</code> for which the value of
+        /// <code>Container</code> is fmp4 (Fragmented MP4) or ts (MPEG-TS), Playlists contains
+        /// information about the master playlists that you want Elastic Transcoder to create.</p>
+        /// <p>The maximum number of master playlists in a job is 30.</p>
         pub fn set_playlists(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CreateJobPlaylist>>,
@@ -258,6 +302,14 @@ pub mod create_job_input {
             self.playlists = input;
             self
         }
+        /// Adds a key-value pair to `user_metadata`.
+        ///
+        /// To override the contents of this collection use [`set_user_metadata`](Self::set_user_metadata).
+        ///
+        /// <p>User-defined metadata that you want to associate with an Elastic Transcoder job. You specify metadata in
+        /// <code>key/value</code> pairs, and you can add up to 10 <code>key/value</code> pairs per job.
+        /// Elastic Transcoder does not guarantee that <code>key/value</code> pairs are returned in the same
+        /// order in which you specify them.</p>
         pub fn user_metadata(
             mut self,
             k: impl Into<std::string::String>,
@@ -268,6 +320,10 @@ pub mod create_job_input {
             self.user_metadata = Some(hash_map);
             self
         }
+        /// <p>User-defined metadata that you want to associate with an Elastic Transcoder job. You specify metadata in
+        /// <code>key/value</code> pairs, and you can add up to 10 <code>key/value</code> pairs per job.
+        /// Elastic Transcoder does not guarantee that <code>key/value</code> pairs are returned in the same
+        /// order in which you specify them.</p>
         pub fn set_user_metadata(
             mut self,
             input: std::option::Option<
@@ -280,7 +336,7 @@ pub mod create_job_input {
         /// Consumes the builder and constructs a [`CreateJobInput`](crate::input::CreateJobInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreateJobInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::CreateJobInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::CreateJobInput {
                 pipeline_id: self.pipeline_id,
@@ -306,16 +362,16 @@ impl CreateJobInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateJob,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateJobInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/2012-09-25/jobs").expect("formatting should succeed");
             Ok(())
         }
@@ -323,7 +379,7 @@ impl CreateJobInput {
         fn update_http_builder(
             input: &crate::input::CreateJobInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -332,24 +388,26 @@ impl CreateJobInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateJobInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_job(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -372,13 +430,13 @@ impl CreateJobInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
         let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreateJob::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
+            aws_smithy_http::operation::Operation::new(request, crate::operation::CreateJob::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "CreateJob",
                     "elastictranscoder",
                 ));
@@ -387,10 +445,10 @@ impl CreateJobInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -427,6 +485,9 @@ pub mod create_pipeline_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the pipeline. We recommend that the name be unique within the AWS account,
+        /// but uniqueness is not enforced.</p>
+        /// <p>Constraints: Maximum 40 characters.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -436,6 +497,7 @@ pub mod create_pipeline_input {
             self.input_bucket = Some(input.into());
             self
         }
+        /// <p>The Amazon S3 bucket in which you saved the media files that you want to transcode.</p>
         pub fn set_input_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.input_bucket = input;
             self
@@ -454,6 +516,7 @@ pub mod create_pipeline_input {
         /// </li>
         /// <li>
         /// <p>You do not want to specify the permissions that Elastic Transcoder grants to the   
+        ///
         /// files. </p>
         /// <important>
         /// <p>When Elastic Transcoder saves files in
@@ -467,6 +530,7 @@ pub mod create_pipeline_input {
         /// Standard storage class.</p>
         /// </li>
         /// </ul>
+        ///
         /// <p>If you want to save transcoded files and playlists in one bucket and thumbnails in
         /// another bucket, specify which users can access the transcoded files or the permissions
         /// the users have, or change the Amazon S3 storage class, omit <code>OutputBucket</code>
@@ -476,6 +540,40 @@ pub mod create_pipeline_input {
             self.output_bucket = Some(input.into());
             self
         }
+        /// <p>The Amazon S3 bucket in which you want Elastic Transcoder to save the transcoded files. (Use
+        /// this, or use ContentConfig:Bucket plus ThumbnailConfig:Bucket.)</p>
+        /// <p>Specify this value when all of the following are true:</p>
+        /// <ul>
+        /// <li>
+        /// <p>You want to save transcoded files, thumbnails (if any), and playlists (if any)
+        /// together in one bucket.</p>
+        /// </li>
+        /// <li>
+        /// <p>You do not want to specify the users or groups who have access to the transcoded
+        /// files, thumbnails, and playlists.</p>
+        /// </li>
+        /// <li>
+        /// <p>You do not want to specify the permissions that Elastic Transcoder grants to the   
+        ///
+        /// files. </p>
+        /// <important>
+        /// <p>When Elastic Transcoder saves files in
+        /// <code>OutputBucket</code>, it grants full control over the files only to
+        /// the AWS account that owns the role that is specified by
+        /// <code>Role</code>.</p>
+        /// </important>
+        /// </li>
+        /// <li>
+        /// <p>You want to associate the transcoded files and thumbnails with the Amazon S3
+        /// Standard storage class.</p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>If you want to save transcoded files and playlists in one bucket and thumbnails in
+        /// another bucket, specify which users can access the transcoded files or the permissions
+        /// the users have, or change the Amazon S3 storage class, omit <code>OutputBucket</code>
+        /// and specify values for <code>ContentConfig</code> and <code>ThumbnailConfig</code>
+        /// instead.</p>
         pub fn set_output_bucket(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -488,6 +586,7 @@ pub mod create_pipeline_input {
             self.role = Some(input.into());
             self
         }
+        /// <p>The IAM Amazon Resource Name (ARN) for the role that you want Elastic Transcoder to use to create the pipeline.</p>
         pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role = input;
             self
@@ -503,6 +602,13 @@ pub mod create_pipeline_input {
             self.aws_kms_key_arn = Some(input.into());
             self
         }
+        /// <p>The AWS Key Management Service (AWS KMS) key that you want to use with this pipeline.</p>
+        /// <p>If you use either <code>s3</code> or <code>s3-aws-kms</code> as your
+        /// <code>Encryption:Mode</code>, you don't need to provide a key with
+        /// your job because a default key, known as an AWS-KMS key, is created for you automatically.
+        /// You need to provide an AWS-KMS key only if you want to use a non-default AWS-KMS key, or if you are
+        /// using an <code>Encryption:Mode</code> of <code>aes-cbc-pkcs7</code>, <code>aes-ctr</code>,
+        /// or <code>aes-gcm</code>.</p>
         pub fn set_aws_kms_key_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -545,6 +651,37 @@ pub mod create_pipeline_input {
             self.notifications = Some(input);
             self
         }
+        /// <p>The Amazon Simple Notification Service (Amazon SNS) topic that you want to notify to report job status.</p>
+        /// <important>
+        /// <p>To receive notifications, you must also subscribe to the new topic in the Amazon SNS console.</p>
+        /// </important>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>Progressing</b>: The topic ARN for the Amazon Simple Notification Service (Amazon SNS) topic that you want to
+        /// notify when Elastic Transcoder has started to process a job in this pipeline. This is the ARN that
+        /// Amazon SNS returned when you created the topic. For more information, see Create a
+        /// Topic in the Amazon Simple Notification Service Developer Guide.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>Complete</b>: The topic ARN for the Amazon SNS topic that you want to notify when
+        /// Elastic Transcoder has finished processing a job in this pipeline. This is the ARN that Amazon SNS
+        /// returned when you created the topic.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>Warning</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder
+        /// encounters a warning condition while processing a job in this pipeline. This is the
+        /// ARN that Amazon SNS returned when you created the topic.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>Error</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder
+        /// encounters an error condition while processing a job in this pipeline. This is the
+        /// ARN that Amazon SNS returned when you created the topic.</p>
+        /// </li>
+        /// </ul>
         pub fn set_notifications(
             mut self,
             input: std::option::Option<crate::model::Notifications>,
@@ -655,6 +792,105 @@ pub mod create_pipeline_input {
             self.content_config = Some(input);
             self
         }
+        /// <p>The optional <code>ContentConfig</code> object specifies information about the Amazon S3
+        /// bucket in which you want Elastic Transcoder to save transcoded files and playlists:
+        /// which bucket to use, which users you want to have access to the files, the type of
+        /// access you want users to have, and the storage class that you want to assign to the
+        /// files.</p>
+        /// <p>If you specify values for <code>ContentConfig</code>, you must also specify values for
+        /// <code>ThumbnailConfig</code>.</p>
+        /// <p>If you specify values for <code>ContentConfig</code> and <code>ThumbnailConfig</code>,
+        /// omit the <code>OutputBucket</code> object.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>Bucket</b>: The Amazon S3 bucket in which you want Elastic Transcoder to save
+        /// transcoded files and playlists.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>Permissions</b> (Optional): The Permissions object specifies which users you want
+        /// to have access to transcoded files and the type of access you want them to have. You
+        /// can grant permissions to a maximum of 30 users and/or predefined Amazon S3
+        /// groups.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>Grantee Type</b>: Specify the type of value that appears in the
+        /// <code>Grantee</code> object: </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>Canonical</b>: The value in the <code>Grantee</code> object is either the
+        /// canonical user ID for an AWS account or an origin access identity for an
+        /// Amazon CloudFront distribution. For more information about canonical user
+        /// IDs, see Access Control List (ACL) Overview in the Amazon Simple Storage
+        /// Service Developer Guide. For more information about using CloudFront origin
+        /// access identities to require that users use CloudFront URLs instead of
+        /// Amazon S3 URLs, see Using an Origin Access Identity to Restrict Access to
+        /// Your Amazon S3 Content.</p>
+        /// <important>
+        /// <p>A canonical user ID is not the same as an
+        /// AWS account number.</p>
+        /// </important>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>Email</b>: The value in the <code>Grantee</code> object is the registered
+        /// email address of an AWS account.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>Group</b>: The value in the <code>Grantee</code> object is one of the
+        /// following predefined Amazon S3 groups: <code>AllUsers</code>,
+        /// <code>AuthenticatedUsers</code>, or <code>LogDelivery</code>.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>Grantee</b>: The AWS user or group that you want to have access to transcoded
+        /// files and playlists. To identify the user or group, you can specify the canonical
+        /// user ID for an AWS account, an origin access identity for a CloudFront distribution,
+        /// the registered email address of an AWS account, or a predefined Amazon S3 group </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>Access</b>: The permission that you want to give to the AWS user that you
+        /// specified in <code>Grantee</code>. Permissions are granted on the files that Elastic
+        /// Transcoder adds to the bucket, including playlists and video files. Valid values
+        /// include: </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>READ</code>: The grantee can read the objects and metadata for objects
+        /// that Elastic Transcoder adds to the Amazon S3 bucket.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>READ_ACP</code>: The grantee can read the object ACL for objects that
+        /// Elastic Transcoder adds to the Amazon S3 bucket.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>WRITE_ACP</code>: The grantee can write the ACL for the objects that
+        /// Elastic Transcoder adds to the Amazon S3 bucket.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FULL_CONTROL</code>: The grantee has <code>READ</code>,
+        /// <code>READ_ACP</code>, and <code>WRITE_ACP</code> permissions for the
+        /// objects that Elastic Transcoder adds to the Amazon S3 bucket.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>StorageClass</b>: The Amazon S3 storage class, <code>Standard</code> or
+        /// <code>ReducedRedundancy</code>, that you want Elastic Transcoder to assign to
+        /// the video files and playlists that it stores in your Amazon S3 bucket.</p>
+        /// </li>
+        /// </ul>
         pub fn set_content_config(
             mut self,
             input: std::option::Option<crate::model::PipelineOutputConfig>,
@@ -757,6 +993,97 @@ pub mod create_pipeline_input {
             self.thumbnail_config = Some(input);
             self
         }
+        /// <p>The <code>ThumbnailConfig</code> object specifies several values, including the Amazon S3
+        /// bucket in which you want Elastic Transcoder to save thumbnail files, which users you want to have
+        /// access to the files, the type of access you want users to have, and the storage class
+        /// that you want to assign to the files.</p>
+        /// <p>If you specify values for <code>ContentConfig</code>, you must also specify values for
+        /// <code>ThumbnailConfig</code> even if you don't want to create thumbnails.</p>
+        /// <p>If you specify values for <code>ContentConfig</code> and <code>ThumbnailConfig</code>,
+        /// omit the <code>OutputBucket</code> object.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>Bucket</b>: The Amazon S3 bucket in which you want Elastic Transcoder to save
+        /// thumbnail files.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>Permissions</b> (Optional): The <code>Permissions</code> object specifies which
+        /// users and/or predefined Amazon S3 groups you want to have access to thumbnail files,
+        /// and the type of access you want them to have. You can grant permissions to a maximum
+        /// of 30 users and/or predefined Amazon S3 groups.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>GranteeType</b>: Specify the type of value that appears in the Grantee object: </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>Canonical</b>: The value in the <code>Grantee</code> object is either the
+        /// canonical user ID for an AWS account or an origin access identity for an
+        /// Amazon CloudFront distribution.</p>
+        /// <important>
+        /// <p>A canonical user ID is not the
+        /// same as an AWS account number.</p>
+        /// </important>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>Email</b>: The value in the <code>Grantee</code> object is the registered
+        /// email address of an AWS account. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>Group</b>: The value in the <code>Grantee</code> object is one of the
+        /// following predefined Amazon S3 groups: <code>AllUsers</code>,
+        /// <code>AuthenticatedUsers</code>, or <code>LogDelivery</code>.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>Grantee</b>: The AWS user or group that you want to have access to thumbnail
+        /// files. To identify the user or group, you can specify the canonical user ID for an
+        /// AWS account, an origin access identity for a CloudFront distribution, the registered
+        /// email address of an AWS account, or a predefined Amazon S3 group. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>Access</b>: The permission that you want to give to the AWS user that you
+        /// specified in <code>Grantee</code>. Permissions are granted on the thumbnail files
+        /// that Elastic Transcoder adds to the bucket. Valid values include: </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>READ</code>: The grantee can read the thumbnails and metadata for
+        /// objects that Elastic Transcoder adds to the Amazon S3 bucket.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>READ_ACP</code>: The grantee can read the object ACL for thumbnails
+        /// that Elastic Transcoder adds to the Amazon S3 bucket.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>WRITE_ACP</code>: The grantee can write the ACL for the thumbnails
+        /// that Elastic Transcoder adds to the Amazon S3 bucket.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FULL_CONTROL</code>: The grantee has <code>READ</code>,
+        /// <code>READ_ACP</code>, and <code>WRITE_ACP</code> permissions for the
+        /// thumbnails that Elastic Transcoder adds to the Amazon S3 bucket.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>StorageClass</b>: The Amazon S3 storage class, <code>Standard</code> or
+        /// <code>ReducedRedundancy</code>, that you want Elastic Transcoder to assign to
+        /// the thumbnails that it stores in your Amazon S3 bucket.</p>
+        /// </li>
+        /// </ul>
         pub fn set_thumbnail_config(
             mut self,
             input: std::option::Option<crate::model::PipelineOutputConfig>,
@@ -769,7 +1096,7 @@ pub mod create_pipeline_input {
             self,
         ) -> std::result::Result<
             crate::input::CreatePipelineInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreatePipelineInput {
                 name: self.name,
@@ -795,16 +1122,16 @@ impl CreatePipelineInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreatePipeline,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreatePipelineInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/2012-09-25/pipelines").expect("formatting should succeed");
             Ok(())
         }
@@ -812,7 +1139,7 @@ impl CreatePipelineInput {
         fn update_http_builder(
             input: &crate::input::CreatePipelineInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -821,24 +1148,26 @@ impl CreatePipelineInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreatePipelineInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_pipeline(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -861,15 +1190,15 @@ impl CreatePipelineInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreatePipeline::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreatePipeline",
             "elastictranscoder",
         ));
@@ -878,10 +1207,10 @@ impl CreatePipelineInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -914,6 +1243,7 @@ pub mod create_preset_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the preset. We recommend that the name be unique within the AWS account, but uniqueness is not enforced.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -923,6 +1253,7 @@ pub mod create_preset_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description of the preset.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -936,6 +1267,11 @@ pub mod create_preset_input {
             self.container = Some(input.into());
             self
         }
+        /// <p>The container type for the output file. Valid values include <code>flac</code>,
+        /// <code>flv</code>, <code>fmp4</code>,
+        /// <code>gif</code>, <code>mp3</code>,
+        /// <code>mp4</code>, <code>mpg</code>, <code>mxf</code>, <code>oga</code>,
+        /// <code>ogg</code>, <code>ts</code>, and <code>webm</code>.</p>
         pub fn set_container(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.container = input;
             self
@@ -945,6 +1281,7 @@ pub mod create_preset_input {
             self.video = Some(input);
             self
         }
+        /// <p>A section of the request body that specifies the video parameters.</p>
         pub fn set_video(
             mut self,
             input: std::option::Option<crate::model::VideoParameters>,
@@ -957,6 +1294,7 @@ pub mod create_preset_input {
             self.audio = Some(input);
             self
         }
+        /// <p>A section of the request body that specifies the audio parameters.</p>
         pub fn set_audio(
             mut self,
             input: std::option::Option<crate::model::AudioParameters>,
@@ -969,6 +1307,7 @@ pub mod create_preset_input {
             self.thumbnails = Some(input);
             self
         }
+        /// <p>A section of the request body that specifies the thumbnail parameters, if any.</p>
         pub fn set_thumbnails(
             mut self,
             input: std::option::Option<crate::model::Thumbnails>,
@@ -979,8 +1318,10 @@ pub mod create_preset_input {
         /// Consumes the builder and constructs a [`CreatePresetInput`](crate::input::CreatePresetInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreatePresetInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreatePresetInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreatePresetInput {
                 name: self.name,
                 description: self.description,
@@ -1003,16 +1344,16 @@ impl CreatePresetInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreatePreset,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreatePresetInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/2012-09-25/presets").expect("formatting should succeed");
             Ok(())
         }
@@ -1020,7 +1361,7 @@ impl CreatePresetInput {
         fn update_http_builder(
             input: &crate::input::CreatePresetInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1029,26 +1370,26 @@ impl CreatePresetInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreatePresetInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_preset(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1071,25 +1412,27 @@ impl CreatePresetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreatePreset::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "CreatePreset",
-                    "elastictranscoder",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreatePreset::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreatePreset",
+            "elastictranscoder",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1117,6 +1460,7 @@ pub mod delete_pipeline_input {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier of the pipeline that you want to delete.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -1126,7 +1470,7 @@ pub mod delete_pipeline_input {
             self,
         ) -> std::result::Result<
             crate::input::DeletePipelineInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeletePipelineInput { id: self.id })
         }
@@ -1143,27 +1487,27 @@ impl DeletePipelineInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeletePipeline,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeletePipelineInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_2 = &_input.id;
             let input_2 =
                 input_2
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = smithy_http::label::fmt_string(input_2, false);
+            let id = aws_smithy_http::label::fmt_string(input_2, false);
             if id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
                     details: "cannot be empty or unset",
                 });
@@ -1176,7 +1520,7 @@ impl DeletePipelineInput {
         fn update_http_builder(
             input: &crate::input::DeletePipelineInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1185,23 +1529,23 @@ impl DeletePipelineInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeletePipelineInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1224,15 +1568,15 @@ impl DeletePipelineInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeletePipeline::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeletePipeline",
             "elastictranscoder",
         ));
@@ -1241,10 +1585,10 @@ impl DeletePipelineInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1272,6 +1616,7 @@ pub mod delete_preset_input {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier of the preset for which you want to get detailed information.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -1279,8 +1624,10 @@ pub mod delete_preset_input {
         /// Consumes the builder and constructs a [`DeletePresetInput`](crate::input::DeletePresetInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeletePresetInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeletePresetInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeletePresetInput { id: self.id })
         }
     }
@@ -1296,27 +1643,27 @@ impl DeletePresetInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeletePreset,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeletePresetInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_3 = &_input.id;
             let input_3 =
                 input_3
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = smithy_http::label::fmt_string(input_3, false);
+            let id = aws_smithy_http::label::fmt_string(input_3, false);
             if id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
                     details: "cannot be empty or unset",
                 });
@@ -1328,7 +1675,7 @@ impl DeletePresetInput {
         fn update_http_builder(
             input: &crate::input::DeletePresetInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1337,23 +1684,23 @@ impl DeletePresetInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeletePresetInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1376,25 +1723,27 @@ impl DeletePresetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeletePreset::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DeletePreset",
-                    "elastictranscoder",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeletePreset::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeletePreset",
+            "elastictranscoder",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1424,6 +1773,7 @@ pub mod list_jobs_by_pipeline_input {
             self.pipeline_id = Some(input.into());
             self
         }
+        /// <p>The ID of the pipeline for which you want to get job information.</p>
         pub fn set_pipeline_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.pipeline_id = input;
             self
@@ -1435,6 +1785,9 @@ pub mod list_jobs_by_pipeline_input {
             self.ascending = Some(input.into());
             self
         }
+        /// <p> To list jobs in chronological order by the date and time that they were submitted, enter
+        /// <code>true</code>. To list jobs in reverse chronological order, enter
+        /// <code>false</code>. </p>
         pub fn set_ascending(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ascending = input;
             self
@@ -1445,6 +1798,8 @@ pub mod list_jobs_by_pipeline_input {
             self.page_token = Some(input.into());
             self
         }
+        /// <p> When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in
+        /// subsequent <code>GET</code> requests to get each successive page of results. </p>
         pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.page_token = input;
             self
@@ -1454,7 +1809,7 @@ pub mod list_jobs_by_pipeline_input {
             self,
         ) -> std::result::Result<
             crate::input::ListJobsByPipelineInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListJobsByPipelineInput {
                 pipeline_id: self.pipeline_id,
@@ -1475,27 +1830,27 @@ impl ListJobsByPipelineInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListJobsByPipeline,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListJobsByPipelineInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_4 = &_input.pipeline_id;
             let input_4 =
                 input_4
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "pipeline_id",
                         details: "cannot be empty or unset",
                     })?;
-            let pipeline_id = smithy_http::label::fmt_string(input_4, false);
+            let pipeline_id = aws_smithy_http::label::fmt_string(input_4, false);
             if pipeline_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "pipeline_id",
                     details: "cannot be empty or unset",
                 });
@@ -1509,19 +1864,19 @@ impl ListJobsByPipelineInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListJobsByPipelineInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_5) = &_input.ascending {
-                query.push_kv("Ascending", &smithy_http::query::fmt_string(&inner_5));
+                query.push_kv("Ascending", &aws_smithy_http::query::fmt_string(&inner_5));
             }
             if let Some(inner_6) = &_input.page_token {
-                query.push_kv("PageToken", &smithy_http::query::fmt_string(&inner_6));
+                query.push_kv("PageToken", &aws_smithy_http::query::fmt_string(&inner_6));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::ListJobsByPipelineInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1531,23 +1886,23 @@ impl ListJobsByPipelineInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListJobsByPipelineInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1570,15 +1925,15 @@ impl ListJobsByPipelineInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListJobsByPipeline::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListJobsByPipeline",
             "elastictranscoder",
         ));
@@ -1587,10 +1942,10 @@ impl ListJobsByPipelineInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1623,6 +1978,10 @@ pub mod list_jobs_by_status_input {
             self.status = Some(input.into());
             self
         }
+        /// <p>To get information about all of the jobs associated with the current AWS account that
+        /// have a given status, specify the following status: <code>Submitted</code>,
+        /// <code>Progressing</code>, <code>Complete</code>, <code>Canceled</code>, or
+        /// <code>Error</code>.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -1634,6 +1993,9 @@ pub mod list_jobs_by_status_input {
             self.ascending = Some(input.into());
             self
         }
+        /// <p> To list jobs in chronological order by the date and time that they were submitted, enter
+        /// <code>true</code>. To list jobs in reverse chronological order, enter
+        /// <code>false</code>. </p>
         pub fn set_ascending(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ascending = input;
             self
@@ -1644,6 +2006,8 @@ pub mod list_jobs_by_status_input {
             self.page_token = Some(input.into());
             self
         }
+        /// <p> When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in
+        /// subsequent <code>GET</code> requests to get each successive page of results. </p>
         pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.page_token = input;
             self
@@ -1653,7 +2017,7 @@ pub mod list_jobs_by_status_input {
             self,
         ) -> std::result::Result<
             crate::input::ListJobsByStatusInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListJobsByStatusInput {
                 status: self.status,
@@ -1674,27 +2038,27 @@ impl ListJobsByStatusInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListJobsByStatus,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListJobsByStatusInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_7 = &_input.status;
             let input_7 =
                 input_7
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "status",
                         details: "cannot be empty or unset",
                     })?;
-            let status = smithy_http::label::fmt_string(input_7, false);
+            let status = aws_smithy_http::label::fmt_string(input_7, false);
             if status.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "status",
                     details: "cannot be empty or unset",
                 });
@@ -1704,19 +2068,19 @@ impl ListJobsByStatusInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListJobsByStatusInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_8) = &_input.ascending {
-                query.push_kv("Ascending", &smithy_http::query::fmt_string(&inner_8));
+                query.push_kv("Ascending", &aws_smithy_http::query::fmt_string(&inner_8));
             }
             if let Some(inner_9) = &_input.page_token {
-                query.push_kv("PageToken", &smithy_http::query::fmt_string(&inner_9));
+                query.push_kv("PageToken", &aws_smithy_http::query::fmt_string(&inner_9));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::ListJobsByStatusInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1726,23 +2090,23 @@ impl ListJobsByStatusInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListJobsByStatusInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1765,15 +2129,15 @@ impl ListJobsByStatusInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListJobsByStatus::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListJobsByStatus",
             "elastictranscoder",
         ));
@@ -1782,10 +2146,10 @@ impl ListJobsByStatusInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1816,6 +2180,9 @@ pub mod list_pipelines_input {
             self.ascending = Some(input.into());
             self
         }
+        /// <p>To list pipelines in chronological order by the date and time that they were created, enter
+        /// <code>true</code>. To list pipelines in reverse chronological order, enter
+        /// <code>false</code>.</p>
         pub fn set_ascending(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ascending = input;
             self
@@ -1826,6 +2193,8 @@ pub mod list_pipelines_input {
             self.page_token = Some(input.into());
             self
         }
+        /// <p>When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in
+        /// subsequent <code>GET</code> requests to get each successive page of results. </p>
         pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.page_token = input;
             self
@@ -1833,8 +2202,10 @@ pub mod list_pipelines_input {
         /// Consumes the builder and constructs a [`ListPipelinesInput`](crate::input::ListPipelinesInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListPipelinesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListPipelinesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListPipelinesInput {
                 ascending: self.ascending,
                 page_token: self.page_token,
@@ -1853,33 +2224,33 @@ impl ListPipelinesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListPipelines,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListPipelinesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/2012-09-25/pipelines").expect("formatting should succeed");
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListPipelinesInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_10) = &_input.ascending {
-                query.push_kv("Ascending", &smithy_http::query::fmt_string(&inner_10));
+                query.push_kv("Ascending", &aws_smithy_http::query::fmt_string(&inner_10));
             }
             if let Some(inner_11) = &_input.page_token {
-                query.push_kv("PageToken", &smithy_http::query::fmt_string(&inner_11));
+                query.push_kv("PageToken", &aws_smithy_http::query::fmt_string(&inner_11));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::ListPipelinesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1889,23 +2260,23 @@ impl ListPipelinesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListPipelinesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1928,25 +2299,27 @@ impl ListPipelinesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListPipelines::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ListPipelines",
-                    "elastictranscoder",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListPipelines::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListPipelines",
+            "elastictranscoder",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1977,6 +2350,9 @@ pub mod list_presets_input {
             self.ascending = Some(input.into());
             self
         }
+        /// <p>To list presets in chronological order by the date and time that they were created, enter
+        /// <code>true</code>. To list presets in reverse chronological order, enter
+        /// <code>false</code>.</p>
         pub fn set_ascending(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ascending = input;
             self
@@ -1987,6 +2363,8 @@ pub mod list_presets_input {
             self.page_token = Some(input.into());
             self
         }
+        /// <p>When Elastic Transcoder returns more than one page of results, use <code>pageToken</code> in
+        /// subsequent <code>GET</code> requests to get each successive page of results. </p>
         pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.page_token = input;
             self
@@ -1994,8 +2372,10 @@ pub mod list_presets_input {
         /// Consumes the builder and constructs a [`ListPresetsInput`](crate::input::ListPresetsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListPresetsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListPresetsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListPresetsInput {
                 ascending: self.ascending,
                 page_token: self.page_token,
@@ -2014,33 +2394,33 @@ impl ListPresetsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListPresets,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListPresetsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/2012-09-25/presets").expect("formatting should succeed");
             Ok(())
         }
         fn uri_query(_input: &crate::input::ListPresetsInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_12) = &_input.ascending {
-                query.push_kv("Ascending", &smithy_http::query::fmt_string(&inner_12));
+                query.push_kv("Ascending", &aws_smithy_http::query::fmt_string(&inner_12));
             }
             if let Some(inner_13) = &_input.page_token {
-                query.push_kv("PageToken", &smithy_http::query::fmt_string(&inner_13));
+                query.push_kv("PageToken", &aws_smithy_http::query::fmt_string(&inner_13));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::ListPresetsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2050,23 +2430,23 @@ impl ListPresetsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListPresetsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2089,25 +2469,27 @@ impl ListPresetsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListPresets::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ListPresets",
-                    "elastictranscoder",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListPresets::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListPresets",
+            "elastictranscoder",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2135,6 +2517,7 @@ pub mod read_job_input {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier of the job for which you want to get detailed information.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -2142,7 +2525,7 @@ pub mod read_job_input {
         /// Consumes the builder and constructs a [`ReadJobInput`](crate::input::ReadJobInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ReadJobInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::ReadJobInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::ReadJobInput { id: self.id })
         }
@@ -2159,24 +2542,27 @@ impl ReadJobInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<crate::operation::ReadJob, aws_http::AwsErrorRetryPolicy>,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::Operation<
+            crate::operation::ReadJob,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ReadJobInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_14 = &_input.id;
             let input_14 =
                 input_14
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = smithy_http::label::fmt_string(input_14, false);
+            let id = aws_smithy_http::label::fmt_string(input_14, false);
             if id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
                     details: "cannot be empty or unset",
                 });
@@ -2188,7 +2574,7 @@ impl ReadJobInput {
         fn update_http_builder(
             input: &crate::input::ReadJobInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2197,23 +2583,23 @@ impl ReadJobInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ReadJobInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2236,24 +2622,25 @@ impl ReadJobInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(request, crate::operation::ReadJob::new())
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "ReadJob",
-                "elastictranscoder",
-            ));
+        let op =
+            aws_smithy_http::operation::Operation::new(request, crate::operation::ReadJob::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "ReadJob",
+                    "elastictranscoder",
+                ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2281,6 +2668,7 @@ pub mod read_pipeline_input {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier of the pipeline to read.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -2288,8 +2676,10 @@ pub mod read_pipeline_input {
         /// Consumes the builder and constructs a [`ReadPipelineInput`](crate::input::ReadPipelineInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ReadPipelineInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ReadPipelineInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ReadPipelineInput { id: self.id })
         }
     }
@@ -2305,27 +2695,27 @@ impl ReadPipelineInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ReadPipeline,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ReadPipelineInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_15 = &_input.id;
             let input_15 =
                 input_15
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = smithy_http::label::fmt_string(input_15, false);
+            let id = aws_smithy_http::label::fmt_string(input_15, false);
             if id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
                     details: "cannot be empty or unset",
                 });
@@ -2338,7 +2728,7 @@ impl ReadPipelineInput {
         fn update_http_builder(
             input: &crate::input::ReadPipelineInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2347,23 +2737,23 @@ impl ReadPipelineInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ReadPipelineInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2386,25 +2776,27 @@ impl ReadPipelineInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ReadPipeline::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ReadPipeline",
-                    "elastictranscoder",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ReadPipeline::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ReadPipeline",
+            "elastictranscoder",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2432,6 +2824,7 @@ pub mod read_preset_input {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier of the preset for which you want to get detailed information.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -2439,8 +2832,10 @@ pub mod read_preset_input {
         /// Consumes the builder and constructs a [`ReadPresetInput`](crate::input::ReadPresetInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ReadPresetInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ReadPresetInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ReadPresetInput { id: self.id })
         }
     }
@@ -2456,27 +2851,27 @@ impl ReadPresetInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ReadPreset,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ReadPresetInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_16 = &_input.id;
             let input_16 =
                 input_16
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = smithy_http::label::fmt_string(input_16, false);
+            let id = aws_smithy_http::label::fmt_string(input_16, false);
             if id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
                     details: "cannot be empty or unset",
                 });
@@ -2488,7 +2883,7 @@ impl ReadPresetInput {
         fn update_http_builder(
             input: &crate::input::ReadPresetInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2497,23 +2892,23 @@ impl ReadPresetInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ReadPresetInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2536,25 +2931,27 @@ impl ReadPresetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ReadPreset::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ReadPreset",
-                    "elastictranscoder",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ReadPreset::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ReadPreset",
+            "elastictranscoder",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2585,6 +2982,7 @@ pub mod test_role_input {
             self.role = Some(input.into());
             self
         }
+        /// <p>The IAM Amazon Resource Name (ARN) for the role that you want Elastic Transcoder to test.</p>
         pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role = input;
             self
@@ -2594,6 +2992,7 @@ pub mod test_role_input {
             self.input_bucket = Some(input.into());
             self
         }
+        /// <p>The Amazon S3 bucket that contains media files to be transcoded. The action attempts to read from this bucket.</p>
         pub fn set_input_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.input_bucket = input;
             self
@@ -2603,6 +3002,7 @@ pub mod test_role_input {
             self.output_bucket = Some(input.into());
             self
         }
+        /// <p>The Amazon S3 bucket that Elastic Transcoder writes transcoded media files to. The action attempts to read from this bucket.</p>
         pub fn set_output_bucket(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2610,12 +3010,18 @@ pub mod test_role_input {
             self.output_bucket = input;
             self
         }
+        /// Appends an item to `topics`.
+        ///
+        /// To override the contents of this collection use [`set_topics`](Self::set_topics).
+        ///
+        /// <p>The ARNs of one or more Amazon Simple Notification Service (Amazon SNS) topics that you want the action to send a test notification to.</p>
         pub fn topics(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.topics.unwrap_or_default();
             v.push(input.into());
             self.topics = Some(v);
             self
         }
+        /// <p>The ARNs of one or more Amazon Simple Notification Service (Amazon SNS) topics that you want the action to send a test notification to.</p>
         pub fn set_topics(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2626,7 +3032,7 @@ pub mod test_role_input {
         /// Consumes the builder and constructs a [`TestRoleInput`](crate::input::TestRoleInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::TestRoleInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::TestRoleInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::TestRoleInput {
                 role: self.role,
@@ -2648,16 +3054,16 @@ impl TestRoleInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::TestRole,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::TestRoleInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/2012-09-25/roleTests").expect("formatting should succeed");
             Ok(())
         }
@@ -2665,7 +3071,7 @@ impl TestRoleInput {
         fn update_http_builder(
             input: &crate::input::TestRoleInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2674,24 +3080,26 @@ impl TestRoleInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::TestRoleInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_test_role(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2714,24 +3122,25 @@ impl TestRoleInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(request, crate::operation::TestRole::new())
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "TestRole",
-                "elastictranscoder",
-            ));
+        let op =
+            aws_smithy_http::operation::Operation::new(request, crate::operation::TestRole::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "TestRole",
+                    "elastictranscoder",
+                ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2766,6 +3175,7 @@ pub mod update_pipeline_input {
             self.id = Some(input.into());
             self
         }
+        /// <p>The ID of the pipeline that you want to update.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -2777,6 +3187,9 @@ pub mod update_pipeline_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the pipeline. We recommend that the name be unique within the AWS account, but
+        /// uniqueness is not enforced.</p>
+        /// <p>Constraints: Maximum 40 characters</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2787,6 +3200,8 @@ pub mod update_pipeline_input {
             self.input_bucket = Some(input.into());
             self
         }
+        /// <p>The Amazon S3 bucket in which you saved the media files that you want to transcode and the graphics
+        /// that you want to use as watermarks.</p>
         pub fn set_input_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.input_bucket = input;
             self
@@ -2797,6 +3212,8 @@ pub mod update_pipeline_input {
             self.role = Some(input.into());
             self
         }
+        /// <p>The IAM Amazon Resource Name (ARN) for the role that you want Elastic Transcoder to use to transcode jobs for
+        /// this pipeline.</p>
         pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role = input;
             self
@@ -2811,6 +3228,12 @@ pub mod update_pipeline_input {
             self.aws_kms_key_arn = Some(input.into());
             self
         }
+        /// <p>The AWS Key Management Service (AWS KMS) key that you want to use with this pipeline.</p>
+        /// <p>If you use either <code>s3</code> or <code>s3-aws-kms</code> as your <code>Encryption:Mode</code>,
+        /// you don't need to provide a key with your job because a default key, known as an AWS-KMS key, is
+        /// created for you automatically. You need to provide an AWS-KMS key only if you want to use a non-default
+        /// AWS-KMS key, or if you are using an <code>Encryption:Mode</code> of <code>aes-cbc-pkcs7</code>, <code>aes-ctr</code>,
+        /// or <code>aes-gcm</code>.</p>
         pub fn set_aws_kms_key_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2852,6 +3275,36 @@ pub mod update_pipeline_input {
             self.notifications = Some(input);
             self
         }
+        /// <p>The topic ARN for the Amazon Simple Notification Service (Amazon SNS) topic that you want to notify to report job status.</p>
+        /// <important>
+        /// <p>To receive notifications, you must also subscribe to the new topic in the Amazon SNS console.</p>
+        /// </important>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>Progressing</b>: The topic ARN for the Amazon Simple Notification Service (Amazon SNS) topic that you want to
+        /// notify when Elastic Transcoder has started to process jobs that are added to this pipeline. This
+        /// is the ARN that Amazon SNS returned when you created the topic.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>Complete</b>: The topic ARN for the Amazon SNS topic that you want to notify when
+        /// Elastic Transcoder has finished processing a job. This is the ARN that Amazon SNS returned when
+        /// you created the topic.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>Warning</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder
+        /// encounters a warning condition. This is the ARN that Amazon SNS returned when you
+        /// created the topic.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>Error</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder
+        /// encounters an error condition. This is the ARN that Amazon SNS returned when you
+        /// created the topic.</p>
+        /// </li>
+        /// </ul>
         pub fn set_notifications(
             mut self,
             input: std::option::Option<crate::model::Notifications>,
@@ -2962,6 +3415,105 @@ pub mod update_pipeline_input {
             self.content_config = Some(input);
             self
         }
+        /// <p>The optional <code>ContentConfig</code> object specifies information about the Amazon S3
+        /// bucket in which you want Elastic Transcoder to save transcoded files and playlists:
+        /// which bucket to use, which users you want to have access to the files, the type of
+        /// access you want users to have, and the storage class that you want to assign to the
+        /// files.</p>
+        /// <p>If you specify values for <code>ContentConfig</code>, you must also specify values for
+        /// <code>ThumbnailConfig</code>.</p>
+        /// <p>If you specify values for <code>ContentConfig</code> and <code>ThumbnailConfig</code>,
+        /// omit the <code>OutputBucket</code> object.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>Bucket</b>: The Amazon S3 bucket in which you want Elastic Transcoder to save
+        /// transcoded files and playlists.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>Permissions</b> (Optional): The Permissions object specifies which users you want
+        /// to have access to transcoded files and the type of access you want them to have. You
+        /// can grant permissions to a maximum of 30 users and/or predefined Amazon S3
+        /// groups.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>Grantee Type</b>: Specify the type of value that appears in the
+        /// <code>Grantee</code> object:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>Canonical</b>: The value in the <code>Grantee</code> object is either the
+        /// canonical user ID for an AWS account or an origin access identity for an
+        /// Amazon CloudFront distribution. For more information about canonical user
+        /// IDs, see Access Control List (ACL) Overview in the Amazon Simple Storage
+        /// Service Developer Guide. For more information about using CloudFront origin
+        /// access identities to require that users use CloudFront URLs instead of
+        /// Amazon S3 URLs, see Using an Origin Access Identity to Restrict Access to
+        /// Your Amazon S3 Content.</p>
+        /// <important>
+        /// <p>A canonical user ID is not the same as an
+        /// AWS account number.</p>
+        /// </important>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>Email</b>: The value in the <code>Grantee</code> object is the registered
+        /// email address of an AWS account.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>Group</b>: The value in the <code>Grantee</code> object is one of the
+        /// following predefined Amazon S3 groups: <code>AllUsers</code>,
+        /// <code>AuthenticatedUsers</code>, or <code>LogDelivery</code>.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>Grantee</b>: The AWS user or group that you want to have access to transcoded
+        /// files and playlists. To identify the user or group, you can specify the canonical
+        /// user ID for an AWS account, an origin access identity for a CloudFront distribution,
+        /// the registered email address of an AWS account, or a predefined Amazon S3 group </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>Access</b>: The permission that you want to give to the AWS user that you
+        /// specified in <code>Grantee</code>. Permissions are granted on the files that Elastic
+        /// Transcoder adds to the bucket, including playlists and video files. Valid values
+        /// include: </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>READ</code>: The grantee can read the objects and metadata for objects
+        /// that Elastic Transcoder adds to the Amazon S3 bucket.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>READ_ACP</code>: The grantee can read the object ACL for objects that
+        /// Elastic Transcoder adds to the Amazon S3 bucket. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>WRITE_ACP</code>: The grantee can write the ACL for the objects that
+        /// Elastic Transcoder adds to the Amazon S3 bucket.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FULL_CONTROL</code>: The grantee has <code>READ</code>,
+        /// <code>READ_ACP</code>, and <code>WRITE_ACP</code> permissions for the
+        /// objects that Elastic Transcoder adds to the Amazon S3 bucket.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>StorageClass</b>: The Amazon S3 storage class, <code>Standard</code> or
+        /// <code>ReducedRedundancy</code>, that you want Elastic Transcoder to assign to
+        /// the video files and playlists that it stores in your Amazon S3 bucket.</p>
+        /// </li>
+        /// </ul>
         pub fn set_content_config(
             mut self,
             input: std::option::Option<crate::model::PipelineOutputConfig>,
@@ -3064,6 +3616,97 @@ pub mod update_pipeline_input {
             self.thumbnail_config = Some(input);
             self
         }
+        /// <p>The <code>ThumbnailConfig</code> object specifies several values, including the Amazon S3
+        /// bucket in which you want Elastic Transcoder to save thumbnail files, which users you want to have
+        /// access to the files, the type of access you want users to have, and the storage class
+        /// that you want to assign to the files.</p>
+        /// <p>If you specify values for <code>ContentConfig</code>, you must also specify values for
+        /// <code>ThumbnailConfig</code> even if you don't want to create thumbnails.</p>
+        /// <p>If you specify values for <code>ContentConfig</code> and <code>ThumbnailConfig</code>,
+        /// omit the <code>OutputBucket</code> object.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>Bucket</b>: The Amazon S3 bucket in which you want Elastic Transcoder to save
+        /// thumbnail files.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>Permissions</b> (Optional): The <code>Permissions</code> object specifies which
+        /// users and/or predefined Amazon S3 groups you want to have access to thumbnail files,
+        /// and the type of access you want them to have. You can grant permissions to a maximum
+        /// of 30 users and/or predefined Amazon S3 groups.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>GranteeType</b>: Specify the type of value that appears in the Grantee object:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>Canonical</b>: The value in the <code>Grantee</code> object is either the
+        /// canonical user ID for an AWS account or an origin access identity for an
+        /// Amazon CloudFront distribution.</p>
+        /// <important>
+        /// <p>A canonical user ID is not the
+        /// same as an AWS account number.</p>
+        /// </important>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>Email</b>: The value in the <code>Grantee</code> object is the registered
+        /// email address of an AWS account.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>Group</b>: The value in the <code>Grantee</code> object is one of the
+        /// following predefined Amazon S3 groups: <code>AllUsers</code>,
+        /// <code>AuthenticatedUsers</code>, or <code>LogDelivery</code>.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>Grantee</b>: The AWS user or group that you want to have access to thumbnail
+        /// files. To identify the user or group, you can specify the canonical user ID for an
+        /// AWS account, an origin access identity for a CloudFront distribution, the registered
+        /// email address of an AWS account, or a predefined Amazon S3 group. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>Access</b>: The permission that you want to give to the AWS user that you
+        /// specified in <code>Grantee</code>. Permissions are granted on the thumbnail files
+        /// that Elastic Transcoder adds to the bucket. Valid values include: </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>READ</code>: The grantee can read the thumbnails and metadata for
+        /// objects that Elastic Transcoder adds to the Amazon S3 bucket.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>READ_ACP</code>: The grantee can read the object ACL for thumbnails
+        /// that Elastic Transcoder adds to the Amazon S3 bucket.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>WRITE_ACP</code>: The grantee can write the ACL for the thumbnails
+        /// that Elastic Transcoder adds to the Amazon S3 bucket.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FULL_CONTROL</code>: The grantee has <code>READ</code>,
+        /// <code>READ_ACP</code>, and <code>WRITE_ACP</code> permissions for the
+        /// thumbnails that Elastic Transcoder adds to the Amazon S3 bucket. </p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>StorageClass</b>: The Amazon S3 storage class, <code>Standard</code> or
+        /// <code>ReducedRedundancy</code>, that you want Elastic Transcoder to assign to
+        /// the thumbnails that it stores in your Amazon S3 bucket.</p>
+        /// </li>
+        /// </ul>
         pub fn set_thumbnail_config(
             mut self,
             input: std::option::Option<crate::model::PipelineOutputConfig>,
@@ -3076,7 +3719,7 @@ pub mod update_pipeline_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdatePipelineInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdatePipelineInput {
                 id: self.id,
@@ -3102,27 +3745,27 @@ impl UpdatePipelineInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdatePipeline,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdatePipelineInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_17 = &_input.id;
             let input_17 =
                 input_17
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = smithy_http::label::fmt_string(input_17, false);
+            let id = aws_smithy_http::label::fmt_string(input_17, false);
             if id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
                     details: "cannot be empty or unset",
                 });
@@ -3135,7 +3778,7 @@ impl UpdatePipelineInput {
         fn update_http_builder(
             input: &crate::input::UpdatePipelineInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3144,24 +3787,26 @@ impl UpdatePipelineInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdatePipelineInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_update_pipeline(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3184,15 +3829,15 @@ impl UpdatePipelineInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdatePipeline::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdatePipeline",
             "elastictranscoder",
         ));
@@ -3201,10 +3846,10 @@ impl UpdatePipelineInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3233,6 +3878,7 @@ pub mod update_pipeline_notifications_input {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier of the pipeline for which you want to change notification settings.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -3271,6 +3917,36 @@ pub mod update_pipeline_notifications_input {
             self.notifications = Some(input);
             self
         }
+        /// <p>The topic ARN for the Amazon Simple Notification Service (Amazon SNS) topic that you want to notify to report job status.</p>
+        /// <important>
+        /// <p>To receive notifications, you must also subscribe to the new topic in the Amazon SNS console.</p>
+        /// </important>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>Progressing</b>: The topic ARN for the Amazon Simple Notification Service (Amazon SNS) topic that you want to
+        /// notify when Elastic Transcoder has started to process jobs that are added to this pipeline. This
+        /// is the ARN that Amazon SNS returned when you created the topic.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>Complete</b>: The topic ARN for the Amazon SNS topic that you want to notify when
+        /// Elastic Transcoder has finished processing a job. This is the ARN that Amazon SNS returned when
+        /// you created the topic.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>Warning</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder
+        /// encounters a warning condition. This is the ARN that Amazon SNS returned when you
+        /// created the topic.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>Error</b>: The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder
+        /// encounters an error condition. This is the ARN that Amazon SNS returned when you
+        /// created the topic.</p>
+        /// </li>
+        /// </ul>
         pub fn set_notifications(
             mut self,
             input: std::option::Option<crate::model::Notifications>,
@@ -3283,7 +3959,7 @@ pub mod update_pipeline_notifications_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdatePipelineNotificationsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdatePipelineNotificationsInput {
                 id: self.id,
@@ -3304,27 +3980,27 @@ impl UpdatePipelineNotificationsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdatePipelineNotifications,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdatePipelineNotificationsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_18 = &_input.id;
             let input_18 =
                 input_18
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = smithy_http::label::fmt_string(input_18, false);
+            let id = aws_smithy_http::label::fmt_string(input_18, false);
             if id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
                     details: "cannot be empty or unset",
                 });
@@ -3337,7 +4013,7 @@ impl UpdatePipelineNotificationsInput {
         fn update_http_builder(
             input: &crate::input::UpdatePipelineNotificationsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3346,25 +4022,25 @@ impl UpdatePipelineNotificationsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdatePipelineNotificationsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_pipeline_notifications(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_pipeline_notifications(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3387,15 +4063,15 @@ impl UpdatePipelineNotificationsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdatePipelineNotifications::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdatePipelineNotifications",
             "elastictranscoder",
         ));
@@ -3404,10 +4080,10 @@ impl UpdatePipelineNotificationsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3436,6 +4112,7 @@ pub mod update_pipeline_status_input {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier of the pipeline to update.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -3455,6 +4132,17 @@ pub mod update_pipeline_status_input {
             self.status = Some(input.into());
             self
         }
+        /// <p>The desired status of the pipeline:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Active</code>: The pipeline is processing jobs.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Paused</code>: The pipeline is not currently processing jobs.</p>
+        /// </li>
+        /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -3464,7 +4152,7 @@ pub mod update_pipeline_status_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdatePipelineStatusInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdatePipelineStatusInput {
                 id: self.id,
@@ -3484,27 +4172,27 @@ impl UpdatePipelineStatusInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdatePipelineStatus,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdatePipelineStatusInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_19 = &_input.id;
             let input_19 =
                 input_19
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "id",
                         details: "cannot be empty or unset",
                     })?;
-            let id = smithy_http::label::fmt_string(input_19, false);
+            let id = aws_smithy_http::label::fmt_string(input_19, false);
             if id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "id",
                     details: "cannot be empty or unset",
                 });
@@ -3517,7 +4205,7 @@ impl UpdatePipelineStatusInput {
         fn update_http_builder(
             input: &crate::input::UpdatePipelineStatusInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3526,27 +4214,27 @@ impl UpdatePipelineStatusInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdatePipelineStatusInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_pipeline_status(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3569,15 +4257,15 @@ impl UpdatePipelineStatusInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdatePipelineStatus::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdatePipelineStatus",
             "elastictranscoder",
         ));
@@ -3586,10 +4274,10 @@ impl UpdatePipelineStatusInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4190,6 +4878,7 @@ pub struct CreatePipelineInput {
     /// </li>
     /// <li>
     /// <p>You do not want to specify the permissions that Elastic Transcoder grants to the   
+    ///
     /// files. </p>
     /// <important>
     /// <p>When Elastic Transcoder saves files in
@@ -4203,6 +4892,7 @@ pub struct CreatePipelineInput {
     /// Standard storage class.</p>
     /// </li>
     /// </ul>
+    ///
     /// <p>If you want to save transcoded files and playlists in one bucket and thumbnails in
     /// another bucket, specify which users can access the transcoded files or the permissions
     /// the users have, or change the Amazon S3 storage class, omit <code>OutputBucket</code>

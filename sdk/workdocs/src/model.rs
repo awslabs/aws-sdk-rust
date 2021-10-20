@@ -24,9 +24,9 @@ pub struct User {
     /// <p>The type of user.</p>
     pub r#type: std::option::Option<crate::model::UserType>,
     /// <p>The time when the user was created.</p>
-    pub created_timestamp: std::option::Option<smithy_types::Instant>,
+    pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time when the user was modified.</p>
-    pub modified_timestamp: std::option::Option<smithy_types::Instant>,
+    pub modified_timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time zone ID of the user.</p>
     pub time_zone_id: std::option::Option<std::string::String>,
     /// <p>The locale of the user.</p>
@@ -71,8 +71,8 @@ pub mod user {
         pub(crate) recycle_bin_folder_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::UserStatusType>,
         pub(crate) r#type: std::option::Option<crate::model::UserType>,
-        pub(crate) created_timestamp: std::option::Option<smithy_types::Instant>,
-        pub(crate) modified_timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) modified_timestamp: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) time_zone_id: std::option::Option<std::string::String>,
         pub(crate) locale: std::option::Option<crate::model::LocaleType>,
         pub(crate) storage: std::option::Option<crate::model::UserStorageMetadata>,
@@ -83,6 +83,7 @@ pub mod user {
             self.id = Some(input.into());
             self
         }
+        /// <p>The ID of the user.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -92,6 +93,7 @@ pub mod user {
             self.username = Some(input.into());
             self
         }
+        /// <p>The login name of the user.</p>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.username = input;
             self
@@ -101,6 +103,7 @@ pub mod user {
             self.email_address = Some(input.into());
             self
         }
+        /// <p>The email address of the user.</p>
         pub fn set_email_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -113,6 +116,7 @@ pub mod user {
             self.given_name = Some(input.into());
             self
         }
+        /// <p>The given name of the user.</p>
         pub fn set_given_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.given_name = input;
             self
@@ -122,6 +126,7 @@ pub mod user {
             self.surname = Some(input.into());
             self
         }
+        /// <p>The surname of the user.</p>
         pub fn set_surname(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.surname = input;
             self
@@ -131,6 +136,7 @@ pub mod user {
             self.organization_id = Some(input.into());
             self
         }
+        /// <p>The ID of the organization.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -143,6 +149,7 @@ pub mod user {
             self.root_folder_id = Some(input.into());
             self
         }
+        /// <p>The ID of the root folder.</p>
         pub fn set_root_folder_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -155,6 +162,7 @@ pub mod user {
             self.recycle_bin_folder_id = Some(input.into());
             self
         }
+        /// <p>The ID of the recycle bin folder.</p>
         pub fn set_recycle_bin_folder_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -167,6 +175,7 @@ pub mod user {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the user.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::UserStatusType>,
@@ -179,30 +188,33 @@ pub mod user {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of user.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::UserType>) -> Self {
             self.r#type = input;
             self
         }
         /// <p>The time when the user was created.</p>
-        pub fn created_timestamp(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_timestamp = Some(input);
             self
         }
+        /// <p>The time when the user was created.</p>
         pub fn set_created_timestamp(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_timestamp = input;
             self
         }
         /// <p>The time when the user was modified.</p>
-        pub fn modified_timestamp(mut self, input: smithy_types::Instant) -> Self {
+        pub fn modified_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
             self.modified_timestamp = Some(input);
             self
         }
+        /// <p>The time when the user was modified.</p>
         pub fn set_modified_timestamp(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.modified_timestamp = input;
             self
@@ -212,6 +224,7 @@ pub mod user {
             self.time_zone_id = Some(input.into());
             self
         }
+        /// <p>The time zone ID of the user.</p>
         pub fn set_time_zone_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.time_zone_id = input;
             self
@@ -221,6 +234,7 @@ pub mod user {
             self.locale = Some(input);
             self
         }
+        /// <p>The locale of the user.</p>
         pub fn set_locale(mut self, input: std::option::Option<crate::model::LocaleType>) -> Self {
             self.locale = input;
             self
@@ -230,6 +244,7 @@ pub mod user {
             self.storage = Some(input);
             self
         }
+        /// <p>The storage for the user.</p>
         pub fn set_storage(
             mut self,
             input: std::option::Option<crate::model::UserStorageMetadata>,
@@ -298,6 +313,7 @@ pub mod user_storage_metadata {
             self.storage_utilized_in_bytes = Some(input);
             self
         }
+        /// <p>The amount of storage used, in bytes.</p>
         pub fn set_storage_utilized_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
             self.storage_utilized_in_bytes = input;
             self
@@ -307,6 +323,7 @@ pub mod user_storage_metadata {
             self.storage_rule = Some(input);
             self
         }
+        /// <p>The storage for a user.</p>
         pub fn set_storage_rule(
             mut self,
             input: std::option::Option<crate::model::StorageRuleType>,
@@ -365,6 +382,7 @@ pub mod storage_rule_type {
             self.storage_allocated_in_bytes = Some(input);
             self
         }
+        /// <p>The amount of storage allocated, in bytes.</p>
         pub fn set_storage_allocated_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
             self.storage_allocated_in_bytes = input;
             self
@@ -374,6 +392,7 @@ pub mod storage_rule_type {
             self.storage_type = Some(input);
             self
         }
+        /// <p>The type of storage.</p>
         pub fn set_storage_type(
             mut self,
             input: std::option::Option<crate::model::StorageType>,
@@ -397,6 +416,7 @@ impl StorageRuleType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -408,7 +428,9 @@ impl StorageRuleType {
     std::hash::Hash,
 )]
 pub enum StorageType {
+    #[allow(missing_docs)] // documentation missing in model
     Quota,
+    #[allow(missing_docs)] // documentation missing in model
     Unlimited,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -430,6 +452,7 @@ impl std::str::FromStr for StorageType {
     }
 }
 impl StorageType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StorageType::Quota => "QUOTA",
@@ -437,6 +460,7 @@ impl StorageType {
             StorageType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["QUOTA", "UNLIMITED"]
     }
@@ -447,6 +471,7 @@ impl AsRef<str> for StorageType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -458,16 +483,27 @@ impl AsRef<str> for StorageType {
     std::hash::Hash,
 )]
 pub enum LocaleType {
+    #[allow(missing_docs)] // documentation missing in model
     De,
+    #[allow(missing_docs)] // documentation missing in model
     Default,
+    #[allow(missing_docs)] // documentation missing in model
     En,
+    #[allow(missing_docs)] // documentation missing in model
     Es,
+    #[allow(missing_docs)] // documentation missing in model
     Fr,
+    #[allow(missing_docs)] // documentation missing in model
     Ja,
+    #[allow(missing_docs)] // documentation missing in model
     Ko,
+    #[allow(missing_docs)] // documentation missing in model
     PtBr,
+    #[allow(missing_docs)] // documentation missing in model
     Ru,
+    #[allow(missing_docs)] // documentation missing in model
     ZhCn,
+    #[allow(missing_docs)] // documentation missing in model
     ZhTw,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -498,6 +534,7 @@ impl std::str::FromStr for LocaleType {
     }
 }
 impl LocaleType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LocaleType::De => "de",
@@ -514,6 +551,7 @@ impl LocaleType {
             LocaleType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "de", "default", "en", "es", "fr", "ja", "ko", "pt_BR", "ru", "zh_CN", "zh_TW",
@@ -526,6 +564,7 @@ impl AsRef<str> for LocaleType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -537,10 +576,15 @@ impl AsRef<str> for LocaleType {
     std::hash::Hash,
 )]
 pub enum UserType {
+    #[allow(missing_docs)] // documentation missing in model
     Admin,
+    #[allow(missing_docs)] // documentation missing in model
     Minimaluser,
+    #[allow(missing_docs)] // documentation missing in model
     Poweruser,
+    #[allow(missing_docs)] // documentation missing in model
     User,
+    #[allow(missing_docs)] // documentation missing in model
     Workspacesuser,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -565,6 +609,7 @@ impl std::str::FromStr for UserType {
     }
 }
 impl UserType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             UserType::Admin => "ADMIN",
@@ -575,6 +620,7 @@ impl UserType {
             UserType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ADMIN",
@@ -591,6 +637,7 @@ impl AsRef<str> for UserType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -602,8 +649,11 @@ impl AsRef<str> for UserType {
     std::hash::Hash,
 )]
 pub enum UserStatusType {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     Inactive,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -626,6 +676,7 @@ impl std::str::FromStr for UserStatusType {
     }
 }
 impl UserStatusType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             UserStatusType::Active => "ACTIVE",
@@ -634,6 +685,7 @@ impl UserStatusType {
             UserStatusType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ACTIVE", "INACTIVE", "PENDING"]
     }
@@ -644,6 +696,7 @@ impl AsRef<str> for UserStatusType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -655,7 +708,9 @@ impl AsRef<str> for UserStatusType {
     std::hash::Hash,
 )]
 pub enum BooleanEnumType {
+    #[allow(missing_docs)] // documentation missing in model
     False,
+    #[allow(missing_docs)] // documentation missing in model
     True,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -677,6 +732,7 @@ impl std::str::FromStr for BooleanEnumType {
     }
 }
 impl BooleanEnumType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             BooleanEnumType::False => "FALSE",
@@ -684,6 +740,7 @@ impl BooleanEnumType {
             BooleanEnumType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FALSE", "TRUE"]
     }
@@ -694,6 +751,7 @@ impl AsRef<str> for BooleanEnumType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -705,9 +763,13 @@ impl AsRef<str> for BooleanEnumType {
     std::hash::Hash,
 )]
 pub enum ResourceStateType {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     Recycled,
+    #[allow(missing_docs)] // documentation missing in model
     Recycling,
+    #[allow(missing_docs)] // documentation missing in model
     Restoring,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -731,6 +793,7 @@ impl std::str::FromStr for ResourceStateType {
     }
 }
 impl ResourceStateType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ResourceStateType::Active => "ACTIVE",
@@ -740,6 +803,7 @@ impl ResourceStateType {
             ResourceStateType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ACTIVE", "RECYCLED", "RECYCLING", "RESTORING"]
     }
@@ -750,6 +814,7 @@ impl AsRef<str> for ResourceStateType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -761,6 +826,7 @@ impl AsRef<str> for ResourceStateType {
     std::hash::Hash,
 )]
 pub enum DocumentVersionStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -781,12 +847,14 @@ impl std::str::FromStr for DocumentVersionStatus {
     }
 }
 impl DocumentVersionStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DocumentVersionStatus::Active => "ACTIVE",
             DocumentVersionStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ACTIVE"]
     }
@@ -797,6 +865,7 @@ impl AsRef<str> for DocumentVersionStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -808,10 +877,15 @@ impl AsRef<str> for DocumentVersionStatus {
     std::hash::Hash,
 )]
 pub enum PrincipalType {
+    #[allow(missing_docs)] // documentation missing in model
     Anonymous,
+    #[allow(missing_docs)] // documentation missing in model
     Group,
+    #[allow(missing_docs)] // documentation missing in model
     Invite,
+    #[allow(missing_docs)] // documentation missing in model
     Organization,
+    #[allow(missing_docs)] // documentation missing in model
     User,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -836,6 +910,7 @@ impl std::str::FromStr for PrincipalType {
     }
 }
 impl PrincipalType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PrincipalType::Anonymous => "ANONYMOUS",
@@ -846,6 +921,7 @@ impl PrincipalType {
             PrincipalType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ANONYMOUS", "GROUP", "INVITE", "ORGANIZATION", "USER"]
     }
@@ -891,10 +967,16 @@ pub mod upload_metadata {
             self.upload_url = Some(input.into());
             self
         }
+        /// <p>The URL of the upload.</p>
         pub fn set_upload_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.upload_url = input;
             self
         }
+        /// Adds a key-value pair to `signed_headers`.
+        ///
+        /// To override the contents of this collection use [`set_signed_headers`](Self::set_signed_headers).
+        ///
+        /// <p>The signed headers.</p>
         pub fn signed_headers(
             mut self,
             k: impl Into<std::string::String>,
@@ -905,6 +987,7 @@ pub mod upload_metadata {
             self.signed_headers = Some(hash_map);
             self
         }
+        /// <p>The signed headers.</p>
         pub fn set_signed_headers(
             mut self,
             input: std::option::Option<
@@ -941,9 +1024,9 @@ pub struct DocumentMetadata {
     /// <p>The ID of the parent folder.</p>
     pub parent_folder_id: std::option::Option<std::string::String>,
     /// <p>The time when the document was created.</p>
-    pub created_timestamp: std::option::Option<smithy_types::Instant>,
+    pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time when the document was updated.</p>
-    pub modified_timestamp: std::option::Option<smithy_types::Instant>,
+    pub modified_timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The latest version of the document.</p>
     pub latest_version_metadata: std::option::Option<crate::model::DocumentVersionMetadata>,
     /// <p>The resource state.</p>
@@ -974,8 +1057,8 @@ pub mod document_metadata {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) creator_id: std::option::Option<std::string::String>,
         pub(crate) parent_folder_id: std::option::Option<std::string::String>,
-        pub(crate) created_timestamp: std::option::Option<smithy_types::Instant>,
-        pub(crate) modified_timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) modified_timestamp: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) latest_version_metadata:
             std::option::Option<crate::model::DocumentVersionMetadata>,
         pub(crate) resource_state: std::option::Option<crate::model::ResourceStateType>,
@@ -987,6 +1070,7 @@ pub mod document_metadata {
             self.id = Some(input.into());
             self
         }
+        /// <p>The ID of the document.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -996,6 +1080,7 @@ pub mod document_metadata {
             self.creator_id = Some(input.into());
             self
         }
+        /// <p>The ID of the creator.</p>
         pub fn set_creator_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.creator_id = input;
             self
@@ -1005,6 +1090,7 @@ pub mod document_metadata {
             self.parent_folder_id = Some(input.into());
             self
         }
+        /// <p>The ID of the parent folder.</p>
         pub fn set_parent_folder_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1013,25 +1099,27 @@ pub mod document_metadata {
             self
         }
         /// <p>The time when the document was created.</p>
-        pub fn created_timestamp(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_timestamp = Some(input);
             self
         }
+        /// <p>The time when the document was created.</p>
         pub fn set_created_timestamp(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_timestamp = input;
             self
         }
         /// <p>The time when the document was updated.</p>
-        pub fn modified_timestamp(mut self, input: smithy_types::Instant) -> Self {
+        pub fn modified_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
             self.modified_timestamp = Some(input);
             self
         }
+        /// <p>The time when the document was updated.</p>
         pub fn set_modified_timestamp(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.modified_timestamp = input;
             self
@@ -1044,6 +1132,7 @@ pub mod document_metadata {
             self.latest_version_metadata = Some(input);
             self
         }
+        /// <p>The latest version of the document.</p>
         pub fn set_latest_version_metadata(
             mut self,
             input: std::option::Option<crate::model::DocumentVersionMetadata>,
@@ -1056,6 +1145,7 @@ pub mod document_metadata {
             self.resource_state = Some(input);
             self
         }
+        /// <p>The resource state.</p>
         pub fn set_resource_state(
             mut self,
             input: std::option::Option<crate::model::ResourceStateType>,
@@ -1063,12 +1153,18 @@ pub mod document_metadata {
             self.resource_state = input;
             self
         }
+        /// Appends an item to `labels`.
+        ///
+        /// To override the contents of this collection use [`set_labels`](Self::set_labels).
+        ///
+        /// <p>List of labels on the document.</p>
         pub fn labels(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.labels.unwrap_or_default();
             v.push(input.into());
             self.labels = Some(v);
             self
         }
+        /// <p>List of labels on the document.</p>
         pub fn set_labels(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1115,13 +1211,13 @@ pub struct DocumentVersionMetadata {
     /// <p>The status of the document.</p>
     pub status: std::option::Option<crate::model::DocumentStatusType>,
     /// <p>The timestamp when the document was first uploaded.</p>
-    pub created_timestamp: std::option::Option<smithy_types::Instant>,
+    pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The timestamp when the document was last uploaded.</p>
-    pub modified_timestamp: std::option::Option<smithy_types::Instant>,
+    pub modified_timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The timestamp when the content of the document was originally created.</p>
-    pub content_created_timestamp: std::option::Option<smithy_types::Instant>,
+    pub content_created_timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The timestamp when the content of the document was modified.</p>
-    pub content_modified_timestamp: std::option::Option<smithy_types::Instant>,
+    pub content_modified_timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The ID of the creator.</p>
     pub creator_id: std::option::Option<std::string::String>,
     /// <p>The thumbnail of the document.</p>
@@ -1167,10 +1263,10 @@ pub mod document_version_metadata {
         pub(crate) size: std::option::Option<i64>,
         pub(crate) signature: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::DocumentStatusType>,
-        pub(crate) created_timestamp: std::option::Option<smithy_types::Instant>,
-        pub(crate) modified_timestamp: std::option::Option<smithy_types::Instant>,
-        pub(crate) content_created_timestamp: std::option::Option<smithy_types::Instant>,
-        pub(crate) content_modified_timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) modified_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) content_created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) content_modified_timestamp: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) creator_id: std::option::Option<std::string::String>,
         pub(crate) thumbnail: std::option::Option<
             std::collections::HashMap<crate::model::DocumentThumbnailType, std::string::String>,
@@ -1185,6 +1281,7 @@ pub mod document_version_metadata {
             self.id = Some(input.into());
             self
         }
+        /// <p>The ID of the version.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -1194,6 +1291,7 @@ pub mod document_version_metadata {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the version.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1203,6 +1301,7 @@ pub mod document_version_metadata {
             self.content_type = Some(input.into());
             self
         }
+        /// <p>The content type of the document.</p>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_type = input;
             self
@@ -1212,6 +1311,7 @@ pub mod document_version_metadata {
             self.size = Some(input);
             self
         }
+        /// <p>The size of the document, in bytes.</p>
         pub fn set_size(mut self, input: std::option::Option<i64>) -> Self {
             self.size = input;
             self
@@ -1221,6 +1321,7 @@ pub mod document_version_metadata {
             self.signature = Some(input.into());
             self
         }
+        /// <p>The signature of the document.</p>
         pub fn set_signature(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.signature = input;
             self
@@ -1230,6 +1331,7 @@ pub mod document_version_metadata {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the document.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::DocumentStatusType>,
@@ -1238,49 +1340,53 @@ pub mod document_version_metadata {
             self
         }
         /// <p>The timestamp when the document was first uploaded.</p>
-        pub fn created_timestamp(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_timestamp = Some(input);
             self
         }
+        /// <p>The timestamp when the document was first uploaded.</p>
         pub fn set_created_timestamp(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_timestamp = input;
             self
         }
         /// <p>The timestamp when the document was last uploaded.</p>
-        pub fn modified_timestamp(mut self, input: smithy_types::Instant) -> Self {
+        pub fn modified_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
             self.modified_timestamp = Some(input);
             self
         }
+        /// <p>The timestamp when the document was last uploaded.</p>
         pub fn set_modified_timestamp(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.modified_timestamp = input;
             self
         }
         /// <p>The timestamp when the content of the document was originally created.</p>
-        pub fn content_created_timestamp(mut self, input: smithy_types::Instant) -> Self {
+        pub fn content_created_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
             self.content_created_timestamp = Some(input);
             self
         }
+        /// <p>The timestamp when the content of the document was originally created.</p>
         pub fn set_content_created_timestamp(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.content_created_timestamp = input;
             self
         }
         /// <p>The timestamp when the content of the document was modified.</p>
-        pub fn content_modified_timestamp(mut self, input: smithy_types::Instant) -> Self {
+        pub fn content_modified_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
             self.content_modified_timestamp = Some(input);
             self
         }
+        /// <p>The timestamp when the content of the document was modified.</p>
         pub fn set_content_modified_timestamp(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.content_modified_timestamp = input;
             self
@@ -1290,10 +1396,16 @@ pub mod document_version_metadata {
             self.creator_id = Some(input.into());
             self
         }
+        /// <p>The ID of the creator.</p>
         pub fn set_creator_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.creator_id = input;
             self
         }
+        /// Adds a key-value pair to `thumbnail`.
+        ///
+        /// To override the contents of this collection use [`set_thumbnail`](Self::set_thumbnail).
+        ///
+        /// <p>The thumbnail of the document.</p>
         pub fn thumbnail(
             mut self,
             k: impl Into<crate::model::DocumentThumbnailType>,
@@ -1304,6 +1416,7 @@ pub mod document_version_metadata {
             self.thumbnail = Some(hash_map);
             self
         }
+        /// <p>The thumbnail of the document.</p>
         pub fn set_thumbnail(
             mut self,
             input: std::option::Option<
@@ -1313,6 +1426,11 @@ pub mod document_version_metadata {
             self.thumbnail = input;
             self
         }
+        /// Adds a key-value pair to `source`.
+        ///
+        /// To override the contents of this collection use [`set_source`](Self::set_source).
+        ///
+        /// <p>The source of the document.</p>
         pub fn source(
             mut self,
             k: impl Into<crate::model::DocumentSourceType>,
@@ -1323,6 +1441,7 @@ pub mod document_version_metadata {
             self.source = Some(hash_map);
             self
         }
+        /// <p>The source of the document.</p>
         pub fn set_source(
             mut self,
             input: std::option::Option<
@@ -1359,6 +1478,7 @@ impl DocumentVersionMetadata {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1370,7 +1490,9 @@ impl DocumentVersionMetadata {
     std::hash::Hash,
 )]
 pub enum DocumentSourceType {
+    #[allow(missing_docs)] // documentation missing in model
     Original,
+    #[allow(missing_docs)] // documentation missing in model
     WithComments,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1392,6 +1514,7 @@ impl std::str::FromStr for DocumentSourceType {
     }
 }
 impl DocumentSourceType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DocumentSourceType::Original => "ORIGINAL",
@@ -1399,6 +1522,7 @@ impl DocumentSourceType {
             DocumentSourceType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ORIGINAL", "WITH_COMMENTS"]
     }
@@ -1409,6 +1533,7 @@ impl AsRef<str> for DocumentSourceType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1420,8 +1545,11 @@ impl AsRef<str> for DocumentSourceType {
     std::hash::Hash,
 )]
 pub enum DocumentThumbnailType {
+    #[allow(missing_docs)] // documentation missing in model
     Large,
+    #[allow(missing_docs)] // documentation missing in model
     Small,
+    #[allow(missing_docs)] // documentation missing in model
     SmallHq,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1444,6 +1572,7 @@ impl std::str::FromStr for DocumentThumbnailType {
     }
 }
 impl DocumentThumbnailType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DocumentThumbnailType::Large => "LARGE",
@@ -1452,6 +1581,7 @@ impl DocumentThumbnailType {
             DocumentThumbnailType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["LARGE", "SMALL", "SMALL_HQ"]
     }
@@ -1462,6 +1592,7 @@ impl AsRef<str> for DocumentThumbnailType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1473,7 +1604,9 @@ impl AsRef<str> for DocumentThumbnailType {
     std::hash::Hash,
 )]
 pub enum DocumentStatusType {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     Initialized,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1495,6 +1628,7 @@ impl std::str::FromStr for DocumentStatusType {
     }
 }
 impl DocumentStatusType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DocumentStatusType::Active => "ACTIVE",
@@ -1502,6 +1636,7 @@ impl DocumentStatusType {
             DocumentStatusType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ACTIVE", "INITIALIZED"]
     }
@@ -1525,9 +1660,9 @@ pub struct FolderMetadata {
     /// <p>The ID of the parent folder.</p>
     pub parent_folder_id: std::option::Option<std::string::String>,
     /// <p>The time when the folder was created.</p>
-    pub created_timestamp: std::option::Option<smithy_types::Instant>,
+    pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time when the folder was updated.</p>
-    pub modified_timestamp: std::option::Option<smithy_types::Instant>,
+    pub modified_timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The resource state of the folder.</p>
     pub resource_state: std::option::Option<crate::model::ResourceStateType>,
     /// <p>The unique identifier created from the subfolders and documents of the
@@ -1567,8 +1702,8 @@ pub mod folder_metadata {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) creator_id: std::option::Option<std::string::String>,
         pub(crate) parent_folder_id: std::option::Option<std::string::String>,
-        pub(crate) created_timestamp: std::option::Option<smithy_types::Instant>,
-        pub(crate) modified_timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) modified_timestamp: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) resource_state: std::option::Option<crate::model::ResourceStateType>,
         pub(crate) signature: std::option::Option<std::string::String>,
         pub(crate) labels: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1581,6 +1716,7 @@ pub mod folder_metadata {
             self.id = Some(input.into());
             self
         }
+        /// <p>The ID of the folder.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -1590,6 +1726,7 @@ pub mod folder_metadata {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the folder.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1599,6 +1736,7 @@ pub mod folder_metadata {
             self.creator_id = Some(input.into());
             self
         }
+        /// <p>The ID of the creator.</p>
         pub fn set_creator_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.creator_id = input;
             self
@@ -1608,6 +1746,7 @@ pub mod folder_metadata {
             self.parent_folder_id = Some(input.into());
             self
         }
+        /// <p>The ID of the parent folder.</p>
         pub fn set_parent_folder_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1616,25 +1755,27 @@ pub mod folder_metadata {
             self
         }
         /// <p>The time when the folder was created.</p>
-        pub fn created_timestamp(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_timestamp = Some(input);
             self
         }
+        /// <p>The time when the folder was created.</p>
         pub fn set_created_timestamp(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_timestamp = input;
             self
         }
         /// <p>The time when the folder was updated.</p>
-        pub fn modified_timestamp(mut self, input: smithy_types::Instant) -> Self {
+        pub fn modified_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
             self.modified_timestamp = Some(input);
             self
         }
+        /// <p>The time when the folder was updated.</p>
         pub fn set_modified_timestamp(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.modified_timestamp = input;
             self
@@ -1644,6 +1785,7 @@ pub mod folder_metadata {
             self.resource_state = Some(input);
             self
         }
+        /// <p>The resource state of the folder.</p>
         pub fn set_resource_state(
             mut self,
             input: std::option::Option<crate::model::ResourceStateType>,
@@ -1657,16 +1799,24 @@ pub mod folder_metadata {
             self.signature = Some(input.into());
             self
         }
+        /// <p>The unique identifier created from the subfolders and documents of the
+        /// folder.</p>
         pub fn set_signature(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.signature = input;
             self
         }
+        /// Appends an item to `labels`.
+        ///
+        /// To override the contents of this collection use [`set_labels`](Self::set_labels).
+        ///
+        /// <p>List of labels on the folder.</p>
         pub fn labels(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.labels.unwrap_or_default();
             v.push(input.into());
             self.labels = Some(v);
             self
         }
+        /// <p>List of labels on the folder.</p>
         pub fn set_labels(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1679,6 +1829,7 @@ pub mod folder_metadata {
             self.size = Some(input);
             self
         }
+        /// <p>The size of the folder metadata.</p>
         pub fn set_size(mut self, input: std::option::Option<i64>) -> Self {
             self.size = input;
             self
@@ -1688,6 +1839,7 @@ pub mod folder_metadata {
             self.latest_version_size = Some(input);
             self
         }
+        /// <p>The size of the latest version of the folder metadata.</p>
         pub fn set_latest_version_size(mut self, input: std::option::Option<i64>) -> Self {
             self.latest_version_size = input;
             self
@@ -1717,6 +1869,7 @@ impl FolderMetadata {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1728,6 +1881,7 @@ impl FolderMetadata {
     std::hash::Hash,
 )]
 pub enum ResourceCollectionType {
+    #[allow(missing_docs)] // documentation missing in model
     SharedWithMe,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1748,12 +1902,14 @@ impl std::str::FromStr for ResourceCollectionType {
     }
 }
 impl ResourceCollectionType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ResourceCollectionType::SharedWithMe => "SHARED_WITH_ME",
             ResourceCollectionType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["SHARED_WITH_ME"]
     }
@@ -1788,12 +1944,18 @@ pub mod resource_path {
             std::option::Option<std::vec::Vec<crate::model::ResourcePathComponent>>,
     }
     impl Builder {
+        /// Appends an item to `components`.
+        ///
+        /// To override the contents of this collection use [`set_components`](Self::set_components).
+        ///
+        /// <p>The components of the resource path.</p>
         pub fn components(mut self, input: impl Into<crate::model::ResourcePathComponent>) -> Self {
             let mut v = self.components.unwrap_or_default();
             v.push(input.into());
             self.components = Some(v);
             self
         }
+        /// <p>The components of the resource path.</p>
         pub fn set_components(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResourcePathComponent>>,
@@ -1848,6 +2010,7 @@ pub mod resource_path_component {
             self.id = Some(input.into());
             self
         }
+        /// <p>The ID of the resource path.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -1857,6 +2020,7 @@ pub mod resource_path_component {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the resource path.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1877,6 +2041,7 @@ impl ResourcePathComponent {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1888,10 +2053,15 @@ impl ResourcePathComponent {
     std::hash::Hash,
 )]
 pub enum UserSortType {
+    #[allow(missing_docs)] // documentation missing in model
     FullName,
+    #[allow(missing_docs)] // documentation missing in model
     StorageLimit,
+    #[allow(missing_docs)] // documentation missing in model
     StorageUsed,
+    #[allow(missing_docs)] // documentation missing in model
     UserName,
+    #[allow(missing_docs)] // documentation missing in model
     UserStatus,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1916,6 +2086,7 @@ impl std::str::FromStr for UserSortType {
     }
 }
 impl UserSortType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             UserSortType::FullName => "FULL_NAME",
@@ -1926,6 +2097,7 @@ impl UserSortType {
             UserSortType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "FULL_NAME",
@@ -1942,6 +2114,7 @@ impl AsRef<str> for UserSortType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1953,7 +2126,9 @@ impl AsRef<str> for UserSortType {
     std::hash::Hash,
 )]
 pub enum OrderType {
+    #[allow(missing_docs)] // documentation missing in model
     Ascending,
+    #[allow(missing_docs)] // documentation missing in model
     Descending,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1975,6 +2150,7 @@ impl std::str::FromStr for OrderType {
     }
 }
 impl OrderType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             OrderType::Ascending => "ASCENDING",
@@ -1982,6 +2158,7 @@ impl OrderType {
             OrderType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ASCENDING", "DESCENDING"]
     }
@@ -1992,6 +2169,7 @@ impl AsRef<str> for OrderType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2003,7 +2181,9 @@ impl AsRef<str> for OrderType {
     std::hash::Hash,
 )]
 pub enum UserFilterType {
+    #[allow(missing_docs)] // documentation missing in model
     ActivePending,
+    #[allow(missing_docs)] // documentation missing in model
     All,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2025,6 +2205,7 @@ impl std::str::FromStr for UserFilterType {
     }
 }
 impl UserFilterType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             UserFilterType::ActivePending => "ACTIVE_PENDING",
@@ -2032,6 +2213,7 @@ impl UserFilterType {
             UserFilterType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ACTIVE_PENDING", "ALL"]
     }
@@ -2078,6 +2260,7 @@ pub mod principal {
             self.id = Some(input.into());
             self
         }
+        /// <p>The ID of the resource.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -2087,16 +2270,23 @@ pub mod principal {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of resource.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::PrincipalType>) -> Self {
             self.r#type = input;
             self
         }
+        /// Appends an item to `roles`.
+        ///
+        /// To override the contents of this collection use [`set_roles`](Self::set_roles).
+        ///
+        /// <p>The permission information for the resource.</p>
         pub fn roles(mut self, input: impl Into<crate::model::PermissionInfo>) -> Self {
             let mut v = self.roles.unwrap_or_default();
             v.push(input.into());
             self.roles = Some(v);
             self
         }
+        /// <p>The permission information for the resource.</p>
         pub fn set_roles(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PermissionInfo>>,
@@ -2153,6 +2343,7 @@ pub mod permission_info {
             self.role = Some(input);
             self
         }
+        /// <p>The role of the user.</p>
         pub fn set_role(mut self, input: std::option::Option<crate::model::RoleType>) -> Self {
             self.role = input;
             self
@@ -2162,6 +2353,7 @@ pub mod permission_info {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of permissions.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::RolePermissionType>,
@@ -2185,6 +2377,7 @@ impl PermissionInfo {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2196,7 +2389,9 @@ impl PermissionInfo {
     std::hash::Hash,
 )]
 pub enum RolePermissionType {
+    #[allow(missing_docs)] // documentation missing in model
     Direct,
+    #[allow(missing_docs)] // documentation missing in model
     Inherited,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2218,6 +2413,7 @@ impl std::str::FromStr for RolePermissionType {
     }
 }
 impl RolePermissionType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RolePermissionType::Direct => "DIRECT",
@@ -2225,6 +2421,7 @@ impl RolePermissionType {
             RolePermissionType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DIRECT", "INHERITED"]
     }
@@ -2235,6 +2432,7 @@ impl AsRef<str> for RolePermissionType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2246,9 +2444,13 @@ impl AsRef<str> for RolePermissionType {
     std::hash::Hash,
 )]
 pub enum RoleType {
+    #[allow(missing_docs)] // documentation missing in model
     Contributor,
+    #[allow(missing_docs)] // documentation missing in model
     Coowner,
+    #[allow(missing_docs)] // documentation missing in model
     Owner,
+    #[allow(missing_docs)] // documentation missing in model
     Viewer,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2272,6 +2474,7 @@ impl std::str::FromStr for RoleType {
     }
 }
 impl RoleType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RoleType::Contributor => "CONTRIBUTOR",
@@ -2281,6 +2484,7 @@ impl RoleType {
             RoleType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CONTRIBUTOR", "COOWNER", "OWNER", "VIEWER"]
     }
@@ -2327,6 +2531,7 @@ pub mod subscription {
             self.subscription_id = Some(input.into());
             self
         }
+        /// <p>The ID of the subscription.</p>
         pub fn set_subscription_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2339,6 +2544,7 @@ pub mod subscription {
             self.end_point = Some(input.into());
             self
         }
+        /// <p>The endpoint of the subscription.</p>
         pub fn set_end_point(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.end_point = input;
             self
@@ -2348,6 +2554,7 @@ pub mod subscription {
             self.protocol = Some(input);
             self
         }
+        /// <p>The protocol of the subscription.</p>
         pub fn set_protocol(
             mut self,
             input: std::option::Option<crate::model::SubscriptionProtocolType>,
@@ -2372,6 +2579,7 @@ impl Subscription {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2383,6 +2591,7 @@ impl Subscription {
     std::hash::Hash,
 )]
 pub enum SubscriptionProtocolType {
+    #[allow(missing_docs)] // documentation missing in model
     Https,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2403,12 +2612,14 @@ impl std::str::FromStr for SubscriptionProtocolType {
     }
 }
 impl SubscriptionProtocolType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SubscriptionProtocolType::Https => "HTTPS",
             SubscriptionProtocolType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["HTTPS"]
     }
@@ -2451,6 +2662,7 @@ pub mod group_metadata {
             self.id = Some(input.into());
             self
         }
+        /// <p>The ID of the user group.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -2460,6 +2672,7 @@ pub mod group_metadata {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the group.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2480,6 +2693,7 @@ impl GroupMetadata {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2491,8 +2705,11 @@ impl GroupMetadata {
     std::hash::Hash,
 )]
 pub enum FolderContentType {
+    #[allow(missing_docs)] // documentation missing in model
     All,
+    #[allow(missing_docs)] // documentation missing in model
     Document,
+    #[allow(missing_docs)] // documentation missing in model
     Folder,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2515,6 +2732,7 @@ impl std::str::FromStr for FolderContentType {
     }
 }
 impl FolderContentType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FolderContentType::All => "ALL",
@@ -2523,6 +2741,7 @@ impl FolderContentType {
             FolderContentType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ALL", "DOCUMENT", "FOLDER"]
     }
@@ -2533,6 +2752,7 @@ impl AsRef<str> for FolderContentType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2544,7 +2764,9 @@ impl AsRef<str> for FolderContentType {
     std::hash::Hash,
 )]
 pub enum ResourceSortType {
+    #[allow(missing_docs)] // documentation missing in model
     Date,
+    #[allow(missing_docs)] // documentation missing in model
     Name,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2566,6 +2788,7 @@ impl std::str::FromStr for ResourceSortType {
     }
 }
 impl ResourceSortType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ResourceSortType::Date => "DATE",
@@ -2573,6 +2796,7 @@ impl ResourceSortType {
             ResourceSortType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DATE", "NAME"]
     }
@@ -2598,7 +2822,7 @@ pub struct Comment {
     /// <p>The details of the user who made the comment.</p>
     pub contributor: std::option::Option<crate::model::User>,
     /// <p>The time that the comment was created.</p>
-    pub created_timestamp: std::option::Option<smithy_types::Instant>,
+    pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The status of the comment.</p>
     pub status: std::option::Option<crate::model::CommentStatusType>,
     /// <p>The visibility of the comment. Options are either PRIVATE, where the comment is
@@ -2635,7 +2859,7 @@ pub mod comment {
         pub(crate) thread_id: std::option::Option<std::string::String>,
         pub(crate) text: std::option::Option<std::string::String>,
         pub(crate) contributor: std::option::Option<crate::model::User>,
-        pub(crate) created_timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) status: std::option::Option<crate::model::CommentStatusType>,
         pub(crate) visibility: std::option::Option<crate::model::CommentVisibilityType>,
         pub(crate) recipient_id: std::option::Option<std::string::String>,
@@ -2646,6 +2870,7 @@ pub mod comment {
             self.comment_id = Some(input.into());
             self
         }
+        /// <p>The ID of the comment.</p>
         pub fn set_comment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.comment_id = input;
             self
@@ -2655,6 +2880,7 @@ pub mod comment {
             self.parent_id = Some(input.into());
             self
         }
+        /// <p>The ID of the parent comment.</p>
         pub fn set_parent_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.parent_id = input;
             self
@@ -2664,6 +2890,7 @@ pub mod comment {
             self.thread_id = Some(input.into());
             self
         }
+        /// <p>The ID of the root comment in the thread.</p>
         pub fn set_thread_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.thread_id = input;
             self
@@ -2673,6 +2900,7 @@ pub mod comment {
             self.text = Some(input.into());
             self
         }
+        /// <p>The text of the comment.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.text = input;
             self
@@ -2682,18 +2910,20 @@ pub mod comment {
             self.contributor = Some(input);
             self
         }
+        /// <p>The details of the user who made the comment.</p>
         pub fn set_contributor(mut self, input: std::option::Option<crate::model::User>) -> Self {
             self.contributor = input;
             self
         }
         /// <p>The time that the comment was created.</p>
-        pub fn created_timestamp(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_timestamp = Some(input);
             self
         }
+        /// <p>The time that the comment was created.</p>
         pub fn set_created_timestamp(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_timestamp = input;
             self
@@ -2703,6 +2933,7 @@ pub mod comment {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the comment.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::CommentStatusType>,
@@ -2717,6 +2948,9 @@ pub mod comment {
             self.visibility = Some(input);
             self
         }
+        /// <p>The visibility of the comment. Options are either PRIVATE, where the comment is
+        /// visible only to the comment author and document owner and co-owners, or PUBLIC, where
+        /// the comment is visible to document owners, co-owners, and contributors.</p>
         pub fn set_visibility(
             mut self,
             input: std::option::Option<crate::model::CommentVisibilityType>,
@@ -2730,6 +2964,8 @@ pub mod comment {
             self.recipient_id = Some(input.into());
             self
         }
+        /// <p>If the comment is a reply to another user's comment, this field contains the user
+        /// ID of the user being replied to.</p>
         pub fn set_recipient_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.recipient_id = input;
             self
@@ -2757,6 +2993,7 @@ impl Comment {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2768,7 +3005,9 @@ impl Comment {
     std::hash::Hash,
 )]
 pub enum CommentVisibilityType {
+    #[allow(missing_docs)] // documentation missing in model
     Private,
+    #[allow(missing_docs)] // documentation missing in model
     Public,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2790,6 +3029,7 @@ impl std::str::FromStr for CommentVisibilityType {
     }
 }
 impl CommentVisibilityType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CommentVisibilityType::Private => "PRIVATE",
@@ -2797,6 +3037,7 @@ impl CommentVisibilityType {
             CommentVisibilityType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["PRIVATE", "PUBLIC"]
     }
@@ -2807,6 +3048,7 @@ impl AsRef<str> for CommentVisibilityType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2818,8 +3060,11 @@ impl AsRef<str> for CommentVisibilityType {
     std::hash::Hash,
 )]
 pub enum CommentStatusType {
+    #[allow(missing_docs)] // documentation missing in model
     Deleted,
+    #[allow(missing_docs)] // documentation missing in model
     Draft,
+    #[allow(missing_docs)] // documentation missing in model
     Published,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2842,6 +3087,7 @@ impl std::str::FromStr for CommentStatusType {
     }
 }
 impl CommentStatusType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CommentStatusType::Deleted => "DELETED",
@@ -2850,6 +3096,7 @@ impl CommentStatusType {
             CommentStatusType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DELETED", "DRAFT", "PUBLISHED"]
     }
@@ -2867,7 +3114,7 @@ pub struct Activity {
     /// <p>The activity type.</p>
     pub r#type: std::option::Option<crate::model::ActivityType>,
     /// <p>The timestamp when the action was performed.</p>
-    pub time_stamp: std::option::Option<smithy_types::Instant>,
+    pub time_stamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Indicates whether an activity is indirect or direct. An indirect activity results
     /// from a direct activity performed on a parent resource. For example, sharing a parent
     /// folder (the direct activity) shares all of the subfolders and documents within the
@@ -2912,7 +3159,7 @@ pub mod activity {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) r#type: std::option::Option<crate::model::ActivityType>,
-        pub(crate) time_stamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) time_stamp: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) is_indirect_activity: std::option::Option<bool>,
         pub(crate) organization_id: std::option::Option<std::string::String>,
         pub(crate) initiator: std::option::Option<crate::model::UserMetadata>,
@@ -2927,16 +3174,21 @@ pub mod activity {
             self.r#type = Some(input);
             self
         }
+        /// <p>The activity type.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ActivityType>) -> Self {
             self.r#type = input;
             self
         }
         /// <p>The timestamp when the action was performed.</p>
-        pub fn time_stamp(mut self, input: smithy_types::Instant) -> Self {
+        pub fn time_stamp(mut self, input: aws_smithy_types::Instant) -> Self {
             self.time_stamp = Some(input);
             self
         }
-        pub fn set_time_stamp(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The timestamp when the action was performed.</p>
+        pub fn set_time_stamp(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.time_stamp = input;
             self
         }
@@ -2948,6 +3200,10 @@ pub mod activity {
             self.is_indirect_activity = Some(input);
             self
         }
+        /// <p>Indicates whether an activity is indirect or direct. An indirect activity results
+        /// from a direct activity performed on a parent resource. For example, sharing a parent
+        /// folder (the direct activity) shares all of the subfolders and documents within the
+        /// parent folder (the indirect activity).</p>
         pub fn set_is_indirect_activity(mut self, input: std::option::Option<bool>) -> Self {
             self.is_indirect_activity = input;
             self
@@ -2957,6 +3213,7 @@ pub mod activity {
             self.organization_id = Some(input.into());
             self
         }
+        /// <p>The ID of the organization.</p>
         pub fn set_organization_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2969,6 +3226,7 @@ pub mod activity {
             self.initiator = Some(input);
             self
         }
+        /// <p>The user who performed the action.</p>
         pub fn set_initiator(
             mut self,
             input: std::option::Option<crate::model::UserMetadata>,
@@ -2983,6 +3241,9 @@ pub mod activity {
             self.participants = Some(input);
             self
         }
+        /// <p>The list of users or groups impacted by this action. This is an optional field and
+        /// is filled for the following sharing activities: DOCUMENT_SHARED, DOCUMENT_SHARED,
+        /// DOCUMENT_UNSHARED, FOLDER_SHARED, FOLDER_UNSHARED.</p>
         pub fn set_participants(
             mut self,
             input: std::option::Option<crate::model::Participants>,
@@ -2995,6 +3256,7 @@ pub mod activity {
             self.resource_metadata = Some(input);
             self
         }
+        /// <p>The metadata of the resource involved in the user action.</p>
         pub fn set_resource_metadata(
             mut self,
             input: std::option::Option<crate::model::ResourceMetadata>,
@@ -3008,6 +3270,8 @@ pub mod activity {
             self.original_parent = Some(input);
             self
         }
+        /// <p>The original parent of the resource. This is an optional field and is filled for
+        /// move activities.</p>
         pub fn set_original_parent(
             mut self,
             input: std::option::Option<crate::model::ResourceMetadata>,
@@ -3021,6 +3285,8 @@ pub mod activity {
             self.comment_metadata = Some(input);
             self
         }
+        /// <p>Metadata of the commenting activity. This is an optional field and is filled for
+        /// commenting activities.</p>
         pub fn set_comment_metadata(
             mut self,
             input: std::option::Option<crate::model::CommentMetadata>,
@@ -3060,7 +3326,7 @@ pub struct CommentMetadata {
     /// <p>The user who made the comment.</p>
     pub contributor: std::option::Option<crate::model::User>,
     /// <p>The timestamp that the comment was created.</p>
-    pub created_timestamp: std::option::Option<smithy_types::Instant>,
+    pub created_timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The status of the comment.</p>
     pub comment_status: std::option::Option<crate::model::CommentStatusType>,
     /// <p>The ID of the user being replied to.</p>
@@ -3085,7 +3351,7 @@ pub mod comment_metadata {
     pub struct Builder {
         pub(crate) comment_id: std::option::Option<std::string::String>,
         pub(crate) contributor: std::option::Option<crate::model::User>,
-        pub(crate) created_timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_timestamp: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) comment_status: std::option::Option<crate::model::CommentStatusType>,
         pub(crate) recipient_id: std::option::Option<std::string::String>,
     }
@@ -3095,6 +3361,7 @@ pub mod comment_metadata {
             self.comment_id = Some(input.into());
             self
         }
+        /// <p>The ID of the comment.</p>
         pub fn set_comment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.comment_id = input;
             self
@@ -3104,18 +3371,20 @@ pub mod comment_metadata {
             self.contributor = Some(input);
             self
         }
+        /// <p>The user who made the comment.</p>
         pub fn set_contributor(mut self, input: std::option::Option<crate::model::User>) -> Self {
             self.contributor = input;
             self
         }
         /// <p>The timestamp that the comment was created.</p>
-        pub fn created_timestamp(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_timestamp = Some(input);
             self
         }
+        /// <p>The timestamp that the comment was created.</p>
         pub fn set_created_timestamp(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_timestamp = input;
             self
@@ -3125,6 +3394,7 @@ pub mod comment_metadata {
             self.comment_status = Some(input);
             self
         }
+        /// <p>The status of the comment.</p>
         pub fn set_comment_status(
             mut self,
             input: std::option::Option<crate::model::CommentStatusType>,
@@ -3137,6 +3407,7 @@ pub mod comment_metadata {
             self.recipient_id = Some(input.into());
             self
         }
+        /// <p>The ID of the user being replied to.</p>
         pub fn set_recipient_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.recipient_id = input;
             self
@@ -3213,6 +3484,7 @@ pub mod resource_metadata {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of resource.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ResourceType>) -> Self {
             self.r#type = input;
             self
@@ -3222,6 +3494,7 @@ pub mod resource_metadata {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the resource.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -3231,6 +3504,7 @@ pub mod resource_metadata {
             self.original_name = Some(input.into());
             self
         }
+        /// <p>The original name of the resource before a rename operation.</p>
         pub fn set_original_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3243,6 +3517,7 @@ pub mod resource_metadata {
             self.id = Some(input.into());
             self
         }
+        /// <p>The ID of the resource.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -3253,6 +3528,8 @@ pub mod resource_metadata {
             self.version_id = Some(input.into());
             self
         }
+        /// <p>The version ID of the resource. This is an optional field and is filled for action
+        /// on document version.</p>
         pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version_id = input;
             self
@@ -3262,6 +3539,7 @@ pub mod resource_metadata {
             self.owner = Some(input);
             self
         }
+        /// <p>The owner of the resource.</p>
         pub fn set_owner(mut self, input: std::option::Option<crate::model::UserMetadata>) -> Self {
             self.owner = input;
             self
@@ -3271,6 +3549,7 @@ pub mod resource_metadata {
             self.parent_id = Some(input.into());
             self
         }
+        /// <p>The parent ID of the resource before a rename operation.</p>
         pub fn set_parent_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.parent_id = input;
             self
@@ -3340,6 +3619,7 @@ pub mod user_metadata {
             self.id = Some(input.into());
             self
         }
+        /// <p>The ID of the user.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -3349,6 +3629,7 @@ pub mod user_metadata {
             self.username = Some(input.into());
             self
         }
+        /// <p>The name of the user.</p>
         pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.username = input;
             self
@@ -3358,6 +3639,7 @@ pub mod user_metadata {
             self.given_name = Some(input.into());
             self
         }
+        /// <p>The given name of the user before a rename operation.</p>
         pub fn set_given_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.given_name = input;
             self
@@ -3367,6 +3649,7 @@ pub mod user_metadata {
             self.surname = Some(input.into());
             self
         }
+        /// <p>The surname of the user.</p>
         pub fn set_surname(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.surname = input;
             self
@@ -3376,6 +3659,7 @@ pub mod user_metadata {
             self.email_address = Some(input.into());
             self
         }
+        /// <p>The email address of the user.</p>
         pub fn set_email_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3402,6 +3686,7 @@ impl UserMetadata {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3413,7 +3698,9 @@ impl UserMetadata {
     std::hash::Hash,
 )]
 pub enum ResourceType {
+    #[allow(missing_docs)] // documentation missing in model
     Document,
+    #[allow(missing_docs)] // documentation missing in model
     Folder,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3435,6 +3722,7 @@ impl std::str::FromStr for ResourceType {
     }
 }
 impl ResourceType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ResourceType::Document => "DOCUMENT",
@@ -3442,6 +3730,7 @@ impl ResourceType {
             ResourceType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DOCUMENT", "FOLDER"]
     }
@@ -3479,12 +3768,18 @@ pub mod participants {
         pub(crate) groups: std::option::Option<std::vec::Vec<crate::model::GroupMetadata>>,
     }
     impl Builder {
+        /// Appends an item to `users`.
+        ///
+        /// To override the contents of this collection use [`set_users`](Self::set_users).
+        ///
+        /// <p>The list of users.</p>
         pub fn users(mut self, input: impl Into<crate::model::UserMetadata>) -> Self {
             let mut v = self.users.unwrap_or_default();
             v.push(input.into());
             self.users = Some(v);
             self
         }
+        /// <p>The list of users.</p>
         pub fn set_users(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::UserMetadata>>,
@@ -3492,12 +3787,18 @@ pub mod participants {
             self.users = input;
             self
         }
+        /// Appends an item to `groups`.
+        ///
+        /// To override the contents of this collection use [`set_groups`](Self::set_groups).
+        ///
+        /// <p>The list of user groups.</p>
         pub fn groups(mut self, input: impl Into<crate::model::GroupMetadata>) -> Self {
             let mut v = self.groups.unwrap_or_default();
             v.push(input.into());
             self.groups = Some(v);
             self
         }
+        /// <p>The list of user groups.</p>
         pub fn set_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GroupMetadata>>,
@@ -3521,6 +3822,7 @@ impl Participants {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3532,38 +3834,71 @@ impl Participants {
     std::hash::Hash,
 )]
 pub enum ActivityType {
+    #[allow(missing_docs)] // documentation missing in model
     DocumentAnnotationAdded,
+    #[allow(missing_docs)] // documentation missing in model
     DocumentAnnotationDeleted,
+    #[allow(missing_docs)] // documentation missing in model
     DocumentCheckedIn,
+    #[allow(missing_docs)] // documentation missing in model
     DocumentCheckedOut,
+    #[allow(missing_docs)] // documentation missing in model
     DocumentCommentAdded,
+    #[allow(missing_docs)] // documentation missing in model
     DocumentCommentDeleted,
+    #[allow(missing_docs)] // documentation missing in model
     DocumentMoved,
+    #[allow(missing_docs)] // documentation missing in model
     DocumentRecycled,
+    #[allow(missing_docs)] // documentation missing in model
     DocumentRenamed,
+    #[allow(missing_docs)] // documentation missing in model
     DocumentRestored,
+    #[allow(missing_docs)] // documentation missing in model
     DocumentReverted,
+    #[allow(missing_docs)] // documentation missing in model
     DocumentShareableLinkCreated,
+    #[allow(missing_docs)] // documentation missing in model
     DocumentShareableLinkPermissionChanged,
+    #[allow(missing_docs)] // documentation missing in model
     DocumentShareableLinkRemoved,
+    #[allow(missing_docs)] // documentation missing in model
     DocumentShared,
+    #[allow(missing_docs)] // documentation missing in model
     DocumentSharePermissionChanged,
+    #[allow(missing_docs)] // documentation missing in model
     DocumentUnshared,
+    #[allow(missing_docs)] // documentation missing in model
     DocumentVersionDeleted,
+    #[allow(missing_docs)] // documentation missing in model
     DocumentVersionDownloaded,
+    #[allow(missing_docs)] // documentation missing in model
     DocumentVersionUploaded,
+    #[allow(missing_docs)] // documentation missing in model
     DocumentVersionViewed,
+    #[allow(missing_docs)] // documentation missing in model
     FolderCreated,
+    #[allow(missing_docs)] // documentation missing in model
     FolderDeleted,
+    #[allow(missing_docs)] // documentation missing in model
     FolderMoved,
+    #[allow(missing_docs)] // documentation missing in model
     FolderRecycled,
+    #[allow(missing_docs)] // documentation missing in model
     FolderRenamed,
+    #[allow(missing_docs)] // documentation missing in model
     FolderRestored,
+    #[allow(missing_docs)] // documentation missing in model
     FolderShareableLinkCreated,
+    #[allow(missing_docs)] // documentation missing in model
     FolderShareableLinkPermissionChanged,
+    #[allow(missing_docs)] // documentation missing in model
     FolderShareableLinkRemoved,
+    #[allow(missing_docs)] // documentation missing in model
     FolderShared,
+    #[allow(missing_docs)] // documentation missing in model
     FolderSharePermissionChanged,
+    #[allow(missing_docs)] // documentation missing in model
     FolderUnshared,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3620,6 +3955,7 @@ impl std::str::FromStr for ActivityType {
     }
 }
 impl ActivityType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ActivityType::DocumentAnnotationAdded => "DOCUMENT_ANNOTATION_ADDED",
@@ -3662,6 +3998,7 @@ impl ActivityType {
             ActivityType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "DOCUMENT_ANNOTATION_ADDED",
@@ -3706,6 +4043,7 @@ impl AsRef<str> for ActivityType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3717,6 +4055,7 @@ impl AsRef<str> for ActivityType {
     std::hash::Hash,
 )]
 pub enum SubscriptionType {
+    #[allow(missing_docs)] // documentation missing in model
     All,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3737,12 +4076,14 @@ impl std::str::FromStr for SubscriptionType {
     }
 }
 impl SubscriptionType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SubscriptionType::All => "ALL",
             SubscriptionType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ALL"]
     }
@@ -3801,6 +4142,7 @@ pub mod share_result {
             self.principal_id = Some(input.into());
             self
         }
+        /// <p>The ID of the principal.</p>
         pub fn set_principal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.principal_id = input;
             self
@@ -3810,6 +4152,7 @@ pub mod share_result {
             self.invitee_principal_id = Some(input.into());
             self
         }
+        /// <p>The ID of the invited user.</p>
         pub fn set_invitee_principal_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3822,6 +4165,7 @@ pub mod share_result {
             self.role = Some(input);
             self
         }
+        /// <p>The role.</p>
         pub fn set_role(mut self, input: std::option::Option<crate::model::RoleType>) -> Self {
             self.role = input;
             self
@@ -3831,6 +4175,7 @@ pub mod share_result {
             self.status = Some(input);
             self
         }
+        /// <p>The status.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ShareStatusType>,
@@ -3843,6 +4188,7 @@ pub mod share_result {
             self.share_id = Some(input.into());
             self
         }
+        /// <p>The ID of the resource that was shared.</p>
         pub fn set_share_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.share_id = input;
             self
@@ -3852,6 +4198,7 @@ pub mod share_result {
             self.status_message = Some(input.into());
             self
         }
+        /// <p>The status message.</p>
         pub fn set_status_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3879,6 +4226,7 @@ impl ShareResult {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3890,7 +4238,9 @@ impl ShareResult {
     std::hash::Hash,
 )]
 pub enum ShareStatusType {
+    #[allow(missing_docs)] // documentation missing in model
     Failure,
+    #[allow(missing_docs)] // documentation missing in model
     Success,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3912,6 +4262,7 @@ impl std::str::FromStr for ShareStatusType {
     }
 }
 impl ShareStatusType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ShareStatusType::Failure => "FAILURE",
@@ -3919,6 +4270,7 @@ impl ShareStatusType {
             ShareStatusType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FAILURE", "SUCCESS"]
     }
@@ -3963,6 +4315,8 @@ pub mod notification_options {
             self.send_email = Some(input);
             self
         }
+        /// <p>Boolean value to indicate an email notification should be sent to the
+        /// receipients.</p>
         pub fn set_send_email(mut self, input: std::option::Option<bool>) -> Self {
             self.send_email = input;
             self
@@ -3972,6 +4326,7 @@ pub mod notification_options {
             self.email_message = Some(input.into());
             self
         }
+        /// <p>Text value to be included in the email body.</p>
         pub fn set_email_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4031,6 +4386,7 @@ pub mod share_principal {
             self.id = Some(input.into());
             self
         }
+        /// <p>The ID of the recipient.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -4040,6 +4396,7 @@ pub mod share_principal {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of the recipient.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::PrincipalType>) -> Self {
             self.r#type = input;
             self
@@ -4049,6 +4406,7 @@ pub mod share_principal {
             self.role = Some(input);
             self
         }
+        /// <p>The role of the recipient.</p>
         pub fn set_role(mut self, input: std::option::Option<crate::model::RoleType>) -> Self {
             self.role = input;
             self

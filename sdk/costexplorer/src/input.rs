@@ -14,6 +14,7 @@ pub mod create_anomaly_monitor_input {
             self.anomaly_monitor = Some(input);
             self
         }
+        /// <p>The cost anomaly detection monitor object that you want to create.</p>
         pub fn set_anomaly_monitor(
             mut self,
             input: std::option::Option<crate::model::AnomalyMonitor>,
@@ -26,7 +27,7 @@ pub mod create_anomaly_monitor_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateAnomalyMonitorInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateAnomalyMonitorInput {
                 anomaly_monitor: self.anomaly_monitor,
@@ -45,16 +46,16 @@ impl CreateAnomalyMonitorInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateAnomalyMonitor,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateAnomalyMonitorInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -62,7 +63,7 @@ impl CreateAnomalyMonitorInput {
         fn update_http_builder(
             input: &crate::input::CreateAnomalyMonitorInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -71,32 +72,32 @@ impl CreateAnomalyMonitorInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateAnomalyMonitorInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSInsightsIndexService.CreateAnomalyMonitor",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_anomaly_monitor(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -119,15 +120,15 @@ impl CreateAnomalyMonitorInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateAnomalyMonitor::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateAnomalyMonitor",
             "costexplorer",
         ));
@@ -136,10 +137,10 @@ impl CreateAnomalyMonitorInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -167,6 +168,7 @@ pub mod create_anomaly_subscription_input {
             self.anomaly_subscription = Some(input);
             self
         }
+        /// <p>The cost anomaly subscription object that you want to create. </p>
         pub fn set_anomaly_subscription(
             mut self,
             input: std::option::Option<crate::model::AnomalySubscription>,
@@ -179,7 +181,7 @@ pub mod create_anomaly_subscription_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateAnomalySubscriptionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateAnomalySubscriptionInput {
                 anomaly_subscription: self.anomaly_subscription,
@@ -199,16 +201,16 @@ impl CreateAnomalySubscriptionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateAnomalySubscription,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateAnomalySubscriptionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -216,7 +218,7 @@ impl CreateAnomalySubscriptionInput {
         fn update_http_builder(
             input: &crate::input::CreateAnomalySubscriptionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -225,32 +227,34 @@ impl CreateAnomalySubscriptionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateAnomalySubscriptionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSInsightsIndexService.CreateAnomalySubscription",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_anomaly_subscription(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -273,15 +277,15 @@ impl CreateAnomalySubscriptionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateAnomalySubscription::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateAnomalySubscription",
             "costexplorer",
         ));
@@ -290,10 +294,10 @@ impl CreateAnomalySubscriptionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -326,6 +330,7 @@ pub mod create_cost_category_definition_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The unique name of the Cost Category.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -335,6 +340,7 @@ pub mod create_cost_category_definition_input {
             self.rule_version = Some(input);
             self
         }
+        /// <p>The rule schema version in this particular Cost Category.</p>
         pub fn set_rule_version(
             mut self,
             input: std::option::Option<crate::model::CostCategoryRuleVersion>,
@@ -342,12 +348,20 @@ pub mod create_cost_category_definition_input {
             self.rule_version = input;
             self
         }
+        /// Appends an item to `rules`.
+        ///
+        /// To override the contents of this collection use [`set_rules`](Self::set_rules).
+        ///
+        /// <p>The Cost Category rules used to categorize costs. For more information, see
+        /// <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule</a>.</p>
         pub fn rules(mut self, input: impl Into<crate::model::CostCategoryRule>) -> Self {
             let mut v = self.rules.unwrap_or_default();
             v.push(input.into());
             self.rules = Some(v);
             self
         }
+        /// <p>The Cost Category rules used to categorize costs. For more information, see
+        /// <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule</a>.</p>
         pub fn set_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CostCategoryRule>>,
@@ -361,6 +375,8 @@ pub mod create_cost_category_definition_input {
             self.default_value = Some(input.into());
             self
         }
+        /// <p>The
+        /// default value for the cost category.</p>
         pub fn set_default_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -368,6 +384,13 @@ pub mod create_cost_category_definition_input {
             self.default_value = input;
             self
         }
+        /// Appends an item to `split_charge_rules`.
+        ///
+        /// To override the contents of this collection use [`set_split_charge_rules`](Self::set_split_charge_rules).
+        ///
+        /// <p>
+        /// The split charge rules used to allocate your charges between your Cost Category values.
+        /// </p>
         pub fn split_charge_rules(
             mut self,
             input: impl Into<crate::model::CostCategorySplitChargeRule>,
@@ -377,6 +400,9 @@ pub mod create_cost_category_definition_input {
             self.split_charge_rules = Some(v);
             self
         }
+        /// <p>
+        /// The split charge rules used to allocate your charges between your Cost Category values.
+        /// </p>
         pub fn set_split_charge_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CostCategorySplitChargeRule>>,
@@ -389,7 +415,7 @@ pub mod create_cost_category_definition_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateCostCategoryDefinitionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateCostCategoryDefinitionInput {
                 name: self.name,
@@ -413,16 +439,16 @@ impl CreateCostCategoryDefinitionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateCostCategoryDefinition,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateCostCategoryDefinitionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -430,7 +456,7 @@ impl CreateCostCategoryDefinitionInput {
         fn update_http_builder(
             input: &crate::input::CreateCostCategoryDefinitionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -439,30 +465,30 @@ impl CreateCostCategoryDefinitionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateCostCategoryDefinitionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSInsightsIndexService.CreateCostCategoryDefinition",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_cost_category_definition(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_cost_category_definition(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -485,15 +511,15 @@ impl CreateCostCategoryDefinitionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateCostCategoryDefinition::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateCostCategoryDefinition",
             "costexplorer",
         ));
@@ -502,10 +528,10 @@ impl CreateCostCategoryDefinitionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -533,6 +559,7 @@ pub mod delete_anomaly_monitor_input {
             self.monitor_arn = Some(input.into());
             self
         }
+        /// <p>The unique identifier of the cost anomaly monitor that you want to delete. </p>
         pub fn set_monitor_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.monitor_arn = input;
             self
@@ -542,7 +569,7 @@ pub mod delete_anomaly_monitor_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteAnomalyMonitorInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteAnomalyMonitorInput {
                 monitor_arn: self.monitor_arn,
@@ -561,16 +588,16 @@ impl DeleteAnomalyMonitorInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteAnomalyMonitor,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteAnomalyMonitorInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -578,7 +605,7 @@ impl DeleteAnomalyMonitorInput {
         fn update_http_builder(
             input: &crate::input::DeleteAnomalyMonitorInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -587,32 +614,32 @@ impl DeleteAnomalyMonitorInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteAnomalyMonitorInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSInsightsIndexService.DeleteAnomalyMonitor",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_anomaly_monitor(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -635,15 +662,15 @@ impl DeleteAnomalyMonitorInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteAnomalyMonitor::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteAnomalyMonitor",
             "costexplorer",
         ));
@@ -652,10 +679,10 @@ impl DeleteAnomalyMonitorInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -683,6 +710,7 @@ pub mod delete_anomaly_subscription_input {
             self.subscription_arn = Some(input.into());
             self
         }
+        /// <p>The unique identifier of the cost anomaly subscription that you want to delete. </p>
         pub fn set_subscription_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -695,7 +723,7 @@ pub mod delete_anomaly_subscription_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteAnomalySubscriptionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteAnomalySubscriptionInput {
                 subscription_arn: self.subscription_arn,
@@ -715,16 +743,16 @@ impl DeleteAnomalySubscriptionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteAnomalySubscription,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteAnomalySubscriptionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -732,7 +760,7 @@ impl DeleteAnomalySubscriptionInput {
         fn update_http_builder(
             input: &crate::input::DeleteAnomalySubscriptionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -741,32 +769,34 @@ impl DeleteAnomalySubscriptionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteAnomalySubscriptionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSInsightsIndexService.DeleteAnomalySubscription",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_anomaly_subscription(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -789,15 +819,15 @@ impl DeleteAnomalySubscriptionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteAnomalySubscription::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteAnomalySubscription",
             "costexplorer",
         ));
@@ -806,10 +836,10 @@ impl DeleteAnomalySubscriptionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -839,6 +869,9 @@ pub mod delete_cost_category_definition_input {
             self.cost_category_arn = Some(input.into());
             self
         }
+        /// <p>
+        /// The unique identifier for your Cost Category.
+        /// </p>
         pub fn set_cost_category_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -851,7 +884,7 @@ pub mod delete_cost_category_definition_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteCostCategoryDefinitionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteCostCategoryDefinitionInput {
                 cost_category_arn: self.cost_category_arn,
@@ -871,16 +904,16 @@ impl DeleteCostCategoryDefinitionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteCostCategoryDefinition,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteCostCategoryDefinitionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -888,7 +921,7 @@ impl DeleteCostCategoryDefinitionInput {
         fn update_http_builder(
             input: &crate::input::DeleteCostCategoryDefinitionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -897,30 +930,30 @@ impl DeleteCostCategoryDefinitionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteCostCategoryDefinitionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSInsightsIndexService.DeleteCostCategoryDefinition",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_cost_category_definition(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_cost_category_definition(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -943,15 +976,15 @@ impl DeleteCostCategoryDefinitionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteCostCategoryDefinition::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteCostCategoryDefinition",
             "costexplorer",
         ));
@@ -960,10 +993,10 @@ impl DeleteCostCategoryDefinitionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -994,6 +1027,9 @@ pub mod describe_cost_category_definition_input {
             self.cost_category_arn = Some(input.into());
             self
         }
+        /// <p>
+        /// The unique identifier for your Cost Category.
+        /// </p>
         pub fn set_cost_category_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1008,6 +1044,9 @@ pub mod describe_cost_category_definition_input {
             self.effective_on = Some(input.into());
             self
         }
+        /// <p>
+        /// The date when the Cost Category was effective.
+        /// </p>
         pub fn set_effective_on(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.effective_on = input;
             self
@@ -1017,7 +1056,7 @@ pub mod describe_cost_category_definition_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeCostCategoryDefinitionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeCostCategoryDefinitionInput {
                 cost_category_arn: self.cost_category_arn,
@@ -1038,16 +1077,16 @@ impl DescribeCostCategoryDefinitionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeCostCategoryDefinition,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeCostCategoryDefinitionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1055,7 +1094,7 @@ impl DescribeCostCategoryDefinitionInput {
         fn update_http_builder(
             input: &crate::input::DescribeCostCategoryDefinitionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1064,30 +1103,30 @@ impl DescribeCostCategoryDefinitionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeCostCategoryDefinitionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSInsightsIndexService.DescribeCostCategoryDefinition",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_cost_category_definition(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_cost_category_definition(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1110,15 +1149,15 @@ impl DescribeCostCategoryDefinitionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeCostCategoryDefinition::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeCostCategoryDefinition",
             "costexplorer",
         ));
@@ -1127,10 +1166,10 @@ impl DescribeCostCategoryDefinitionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1164,6 +1203,8 @@ pub mod get_anomalies_input {
             self.monitor_arn = Some(input.into());
             self
         }
+        /// <p>Retrieves all of the cost anomalies detected for a specific cost anomaly monitor Amazon
+        /// Resource Name (ARN). </p>
         pub fn set_monitor_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.monitor_arn = input;
             self
@@ -1174,6 +1215,8 @@ pub mod get_anomalies_input {
             self.date_interval = Some(input);
             self
         }
+        /// <p>Assigns the start and end dates for retrieving cost anomalies. The returned anomaly object
+        /// will have an <code>AnomalyEndDate</code> in the specified time range. </p>
         pub fn set_date_interval(
             mut self,
             input: std::option::Option<crate::model::AnomalyDateInterval>,
@@ -1186,6 +1229,7 @@ pub mod get_anomalies_input {
             self.feedback = Some(input);
             self
         }
+        /// <p>Filters anomaly results by the feedback field on the anomaly object. </p>
         pub fn set_feedback(
             mut self,
             input: std::option::Option<crate::model::AnomalyFeedbackType>,
@@ -1200,6 +1244,9 @@ pub mod get_anomalies_input {
             self.total_impact = Some(input);
             self
         }
+        /// <p>Filters anomaly results by the total impact field on the anomaly object. For example, you
+        /// can filter anomalies <code>GREATER_THAN 200.00</code> to retrieve anomalies, with an estimated
+        /// dollar impact greater than 200. </p>
         pub fn set_total_impact(
             mut self,
             input: std::option::Option<crate::model::TotalImpactFilter>,
@@ -1213,6 +1260,8 @@ pub mod get_anomalies_input {
             self.next_page_token = Some(input.into());
             self
         }
+        /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when
+        /// the response from a previous call has more results than the maximum page size. </p>
         pub fn set_next_page_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1225,6 +1274,7 @@ pub mod get_anomalies_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The number of entries a paginated response contains. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1232,8 +1282,10 @@ pub mod get_anomalies_input {
         /// Consumes the builder and constructs a [`GetAnomaliesInput`](crate::input::GetAnomaliesInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetAnomaliesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetAnomaliesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetAnomaliesInput {
                 monitor_arn: self.monitor_arn,
                 date_interval: self.date_interval,
@@ -1256,16 +1308,16 @@ impl GetAnomaliesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetAnomalies,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetAnomaliesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1273,7 +1325,7 @@ impl GetAnomaliesInput {
         fn update_http_builder(
             input: &crate::input::GetAnomaliesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1282,31 +1334,31 @@ impl GetAnomaliesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetAnomaliesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSInsightsIndexService.GetAnomalies",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_get_anomalies(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1329,25 +1381,27 @@ impl GetAnomaliesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::GetAnomalies::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "GetAnomalies",
-                    "costexplorer",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetAnomalies::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetAnomalies",
+            "costexplorer",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1372,12 +1426,18 @@ pub mod get_anomaly_monitors_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
+        /// Appends an item to `monitor_arn_list`.
+        ///
+        /// To override the contents of this collection use [`set_monitor_arn_list`](Self::set_monitor_arn_list).
+        ///
+        /// <p>A list of cost anomaly monitor ARNs. </p>
         pub fn monitor_arn_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.monitor_arn_list.unwrap_or_default();
             v.push(input.into());
             self.monitor_arn_list = Some(v);
             self
         }
+        /// <p>A list of cost anomaly monitor ARNs. </p>
         pub fn set_monitor_arn_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1391,6 +1451,8 @@ pub mod get_anomaly_monitors_input {
             self.next_page_token = Some(input.into());
             self
         }
+        /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when
+        /// the response from a previous call has more results than the maximum page size. </p>
         pub fn set_next_page_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1403,6 +1465,7 @@ pub mod get_anomaly_monitors_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The number of entries that a paginated response contains. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1412,7 +1475,7 @@ pub mod get_anomaly_monitors_input {
             self,
         ) -> std::result::Result<
             crate::input::GetAnomalyMonitorsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetAnomalyMonitorsInput {
                 monitor_arn_list: self.monitor_arn_list,
@@ -1433,16 +1496,16 @@ impl GetAnomalyMonitorsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetAnomalyMonitors,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetAnomalyMonitorsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1450,7 +1513,7 @@ impl GetAnomalyMonitorsInput {
         fn update_http_builder(
             input: &crate::input::GetAnomalyMonitorsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1459,30 +1522,32 @@ impl GetAnomalyMonitorsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetAnomalyMonitorsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSInsightsIndexService.GetAnomalyMonitors",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_anomaly_monitors(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1505,15 +1570,15 @@ impl GetAnomalyMonitorsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetAnomalyMonitors::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetAnomalyMonitors",
             "costexplorer",
         ));
@@ -1522,10 +1587,10 @@ impl GetAnomalyMonitorsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1551,12 +1616,18 @@ pub mod get_anomaly_subscriptions_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
+        /// Appends an item to `subscription_arn_list`.
+        ///
+        /// To override the contents of this collection use [`set_subscription_arn_list`](Self::set_subscription_arn_list).
+        ///
+        /// <p>A list of cost anomaly subscription ARNs. </p>
         pub fn subscription_arn_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subscription_arn_list.unwrap_or_default();
             v.push(input.into());
             self.subscription_arn_list = Some(v);
             self
         }
+        /// <p>A list of cost anomaly subscription ARNs. </p>
         pub fn set_subscription_arn_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1569,6 +1640,7 @@ pub mod get_anomaly_subscriptions_input {
             self.monitor_arn = Some(input.into());
             self
         }
+        /// <p>Cost anomaly monitor ARNs. </p>
         pub fn set_monitor_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.monitor_arn = input;
             self
@@ -1579,6 +1651,8 @@ pub mod get_anomaly_subscriptions_input {
             self.next_page_token = Some(input.into());
             self
         }
+        /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when
+        /// the response from a previous call has more results than the maximum page size. </p>
         pub fn set_next_page_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1591,6 +1665,7 @@ pub mod get_anomaly_subscriptions_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The number of entries a paginated response contains. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -1600,7 +1675,7 @@ pub mod get_anomaly_subscriptions_input {
             self,
         ) -> std::result::Result<
             crate::input::GetAnomalySubscriptionsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetAnomalySubscriptionsInput {
                 subscription_arn_list: self.subscription_arn_list,
@@ -1623,16 +1698,16 @@ impl GetAnomalySubscriptionsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetAnomalySubscriptions,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetAnomalySubscriptionsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1640,7 +1715,7 @@ impl GetAnomalySubscriptionsInput {
         fn update_http_builder(
             input: &crate::input::GetAnomalySubscriptionsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1649,32 +1724,34 @@ impl GetAnomalySubscriptionsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetAnomalySubscriptionsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSInsightsIndexService.GetAnomalySubscriptions",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_anomaly_subscriptions(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1697,15 +1774,15 @@ impl GetAnomalySubscriptionsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetAnomalySubscriptions::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetAnomalySubscriptions",
             "costexplorer",
         ));
@@ -1714,10 +1791,10 @@ impl GetAnomalySubscriptionsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1754,6 +1831,11 @@ pub mod get_cost_and_usage_input {
             self.time_period = Some(input);
             self
         }
+        /// <p>Sets the start date and end date for retrieving Amazon Web Services costs. The start date
+        /// is inclusive, but the end date is exclusive. For example, if <code>start</code> is
+        /// <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and
+        /// usage data is retrieved from <code>2017-01-01</code> up to and including
+        /// <code>2017-04-30</code> but not including <code>2017-05-01</code>.</p>
         pub fn set_time_period(
             mut self,
             input: std::option::Option<crate::model::DateInterval>,
@@ -1767,6 +1849,8 @@ pub mod get_cost_and_usage_input {
             self.granularity = Some(input);
             self
         }
+        /// <p>Sets the Amazon Web Services cost granularity to <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>. If <code>Granularity</code> isn't set,
+        /// the response object doesn't include the <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>. </p>
         pub fn set_granularity(
             mut self,
             input: std::option::Option<crate::model::Granularity>,
@@ -1782,16 +1866,54 @@ pub mod get_cost_and_usage_input {
             self.filter = Some(input);
             self
         }
+        /// <p>Filters Amazon Web Services costs by different dimensions. For example, you can specify <code>SERVICE</code> and <code>LINKED_ACCOUNT</code>
+        /// and get the costs that are associated with that account's usage of that service. You can nest <code>Expression</code> objects
+        /// to define any combination of dimension filters. For more information, see
+        /// <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>. </p>
         pub fn set_filter(mut self, input: std::option::Option<crate::model::Expression>) -> Self {
             self.filter = input;
             self
         }
+        /// Appends an item to `metrics`.
+        ///
+        /// To override the contents of this collection use [`set_metrics`](Self::set_metrics).
+        ///
+        /// <p>Which metrics are returned in the query. For more information about blended and unblended rates, see
+        /// <a href="http://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why does the "blended" annotation
+        /// appear on some line items in my bill?</a>. </p>
+        /// <p>Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>, <code>NetAmortizedCost</code>,
+        /// <code>NetUnblendedCost</code>, <code>NormalizedUsageAmount</code>, <code>UnblendedCost</code>, and <code>UsageQuantity</code>. </p>
+        /// <note>
+        /// <p>If you return the <code>UsageQuantity</code> metric, the service aggregates all usage
+        /// numbers without taking into account the units. For example, if you aggregate
+        /// <code>usageQuantity</code> across all of Amazon EC2, the results aren't meaningful because
+        /// Amazon EC2 compute hours and data transfer are measured in different units (for example,
+        /// hours and GB). To get more meaningful <code>UsageQuantity</code> metrics, filter by
+        /// <code>UsageType</code> or <code>UsageTypeGroups</code>. </p>
+        /// </note>
+        /// <p>
+        /// <code>Metrics</code> is required for <code>GetCostAndUsage</code> requests.</p>
         pub fn metrics(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.metrics.unwrap_or_default();
             v.push(input.into());
             self.metrics = Some(v);
             self
         }
+        /// <p>Which metrics are returned in the query. For more information about blended and unblended rates, see
+        /// <a href="http://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why does the "blended" annotation
+        /// appear on some line items in my bill?</a>. </p>
+        /// <p>Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>, <code>NetAmortizedCost</code>,
+        /// <code>NetUnblendedCost</code>, <code>NormalizedUsageAmount</code>, <code>UnblendedCost</code>, and <code>UsageQuantity</code>. </p>
+        /// <note>
+        /// <p>If you return the <code>UsageQuantity</code> metric, the service aggregates all usage
+        /// numbers without taking into account the units. For example, if you aggregate
+        /// <code>usageQuantity</code> across all of Amazon EC2, the results aren't meaningful because
+        /// Amazon EC2 compute hours and data transfer are measured in different units (for example,
+        /// hours and GB). To get more meaningful <code>UsageQuantity</code> metrics, filter by
+        /// <code>UsageType</code> or <code>UsageTypeGroups</code>. </p>
+        /// </note>
+        /// <p>
+        /// <code>Metrics</code> is required for <code>GetCostAndUsage</code> requests.</p>
         pub fn set_metrics(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1799,12 +1921,28 @@ pub mod get_cost_and_usage_input {
             self.metrics = input;
             self
         }
+        /// Appends an item to `group_by`.
+        ///
+        /// To override the contents of this collection use [`set_group_by`](Self::set_group_by).
+        ///
+        /// <p>You can group Amazon Web Services costs using up to two different groups, either dimensions, tag keys,
+        /// cost categories, or any two group by types.</p>
+        /// <p>Valid values for the <code>DIMENSION</code> type are <code>AZ</code>, <code>INSTANCE_TYPE</code>, <code>LEGAL_ENTITY_NAME</code>, <code>LINKED_ACCOUNT</code>,
+        /// <code>OPERATION</code>, <code>PLATFORM</code>, <code>PURCHASE_TYPE</code>, <code>SERVICE</code>,
+        /// <code>TENANCY</code>, <code>RECORD_TYPE</code>, and <code>USAGE_TYPE</code>.</p>
+        /// <p>When you group by the <code>TAG</code>  type and include a valid tag key, you get all tag values, including empty strings.</p>
         pub fn group_by(mut self, input: impl Into<crate::model::GroupDefinition>) -> Self {
             let mut v = self.group_by.unwrap_or_default();
             v.push(input.into());
             self.group_by = Some(v);
             self
         }
+        /// <p>You can group Amazon Web Services costs using up to two different groups, either dimensions, tag keys,
+        /// cost categories, or any two group by types.</p>
+        /// <p>Valid values for the <code>DIMENSION</code> type are <code>AZ</code>, <code>INSTANCE_TYPE</code>, <code>LEGAL_ENTITY_NAME</code>, <code>LINKED_ACCOUNT</code>,
+        /// <code>OPERATION</code>, <code>PLATFORM</code>, <code>PURCHASE_TYPE</code>, <code>SERVICE</code>,
+        /// <code>TENANCY</code>, <code>RECORD_TYPE</code>, and <code>USAGE_TYPE</code>.</p>
+        /// <p>When you group by the <code>TAG</code>  type and include a valid tag key, you get all tag values, including empty strings.</p>
         pub fn set_group_by(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GroupDefinition>>,
@@ -1817,6 +1955,7 @@ pub mod get_cost_and_usage_input {
             self.next_page_token = Some(input.into());
             self
         }
+        /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
         pub fn set_next_page_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1829,7 +1968,7 @@ pub mod get_cost_and_usage_input {
             self,
         ) -> std::result::Result<
             crate::input::GetCostAndUsageInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetCostAndUsageInput {
                 time_period: self.time_period,
@@ -1853,16 +1992,16 @@ impl GetCostAndUsageInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetCostAndUsage,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetCostAndUsageInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1870,7 +2009,7 @@ impl GetCostAndUsageInput {
         fn update_http_builder(
             input: &crate::input::GetCostAndUsageInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1879,32 +2018,32 @@ impl GetCostAndUsageInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetCostAndUsageInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSInsightsIndexService.GetCostAndUsage",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_cost_and_usage(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1927,15 +2066,15 @@ impl GetCostAndUsageInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetCostAndUsage::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetCostAndUsage",
             "costexplorer",
         ));
@@ -1944,10 +2083,10 @@ impl GetCostAndUsageInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1981,6 +2120,8 @@ pub mod get_cost_and_usage_with_resources_input {
             self.time_period = Some(input);
             self
         }
+        /// <p>Sets the start and end dates for retrieving Amazon Web Services costs. The range must be within the last 14 days (the start date cannot be earlier than 14 days ago). The start date is inclusive,  but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is  
+        /// retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>.</p>
         pub fn set_time_period(
             mut self,
             input: std::option::Option<crate::model::DateInterval>,
@@ -1995,6 +2136,9 @@ pub mod get_cost_and_usage_with_resources_input {
             self.granularity = Some(input);
             self
         }
+        /// <p>Sets the Amazon Web Services cost granularity to <code>MONTHLY</code>, <code>DAILY</code>, or <code>HOURLY</code>. If
+        /// <code>Granularity</code> isn't set, the response object doesn't include the
+        /// <code>Granularity</code>, <code>MONTHLY</code>, <code>DAILY</code>, or <code>HOURLY</code>. </p>
         pub fn set_granularity(
             mut self,
             input: std::option::Option<crate::model::Granularity>,
@@ -2013,16 +2157,61 @@ pub mod get_cost_and_usage_with_resources_input {
             self.filter = Some(input);
             self
         }
+        /// <p>Filters Amazon Web Services costs by different dimensions. For example, you can specify
+        /// <code>SERVICE</code> and <code>LINKED_ACCOUNT</code> and get the costs that are associated
+        /// with that account's usage of that service. You can nest <code>Expression</code> objects to
+        /// define any combination of dimension filters. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>. </p>
+        /// <p>The <code>GetCostAndUsageWithResources</code> operation requires that you either group by or filter by a
+        /// <code>ResourceId</code>. It requires the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+        /// <code>"SERVICE = Amazon Elastic Compute Cloud - Compute"</code> in the filter.</p>
         pub fn set_filter(mut self, input: std::option::Option<crate::model::Expression>) -> Self {
             self.filter = input;
             self
         }
+        /// Appends an item to `metrics`.
+        ///
+        /// To override the contents of this collection use [`set_metrics`](Self::set_metrics).
+        ///
+        /// <p>Which metrics are returned in the query. For more information about blended and
+        /// unblended rates, see <a href="http://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why does
+        /// the "blended" annotation appear on some line items in my bill?</a>. </p>
+        /// <p>Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>,
+        /// <code>NetAmortizedCost</code>, <code>NetUnblendedCost</code>,
+        /// <code>NormalizedUsageAmount</code>, <code>UnblendedCost</code>, and
+        /// <code>UsageQuantity</code>. </p>
+        /// <note>
+        /// <p>If you return the <code>UsageQuantity</code> metric, the service aggregates all usage
+        /// numbers without taking the units into account. For example, if you aggregate
+        /// <code>usageQuantity</code> across all of Amazon EC2, the results aren't meaningful because
+        /// Amazon EC2 compute hours and data transfer are measured in different units (for example, hours
+        /// vs. GB). To get more meaningful <code>UsageQuantity</code> metrics, filter by
+        /// <code>UsageType</code> or <code>UsageTypeGroups</code>. </p>
+        /// </note>
+        /// <p>
+        /// <code>Metrics</code> is required for <code>GetCostAndUsageWithResources</code> requests.</p>
         pub fn metrics(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.metrics.unwrap_or_default();
             v.push(input.into());
             self.metrics = Some(v);
             self
         }
+        /// <p>Which metrics are returned in the query. For more information about blended and
+        /// unblended rates, see <a href="http://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why does
+        /// the "blended" annotation appear on some line items in my bill?</a>. </p>
+        /// <p>Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>,
+        /// <code>NetAmortizedCost</code>, <code>NetUnblendedCost</code>,
+        /// <code>NormalizedUsageAmount</code>, <code>UnblendedCost</code>, and
+        /// <code>UsageQuantity</code>. </p>
+        /// <note>
+        /// <p>If you return the <code>UsageQuantity</code> metric, the service aggregates all usage
+        /// numbers without taking the units into account. For example, if you aggregate
+        /// <code>usageQuantity</code> across all of Amazon EC2, the results aren't meaningful because
+        /// Amazon EC2 compute hours and data transfer are measured in different units (for example, hours
+        /// vs. GB). To get more meaningful <code>UsageQuantity</code> metrics, filter by
+        /// <code>UsageType</code> or <code>UsageTypeGroups</code>. </p>
+        /// </note>
+        /// <p>
+        /// <code>Metrics</code> is required for <code>GetCostAndUsageWithResources</code> requests.</p>
         pub fn set_metrics(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2030,12 +2219,18 @@ pub mod get_cost_and_usage_with_resources_input {
             self.metrics = input;
             self
         }
+        /// Appends an item to `group_by`.
+        ///
+        /// To override the contents of this collection use [`set_group_by`](Self::set_group_by).
+        ///
+        /// <p>You can group Amazon Web Services costs using up to two different groups: <code>DIMENSION</code>, <code>TAG</code>, <code>COST_CATEGORY</code>.</p>
         pub fn group_by(mut self, input: impl Into<crate::model::GroupDefinition>) -> Self {
             let mut v = self.group_by.unwrap_or_default();
             v.push(input.into());
             self.group_by = Some(v);
             self
         }
+        /// <p>You can group Amazon Web Services costs using up to two different groups: <code>DIMENSION</code>, <code>TAG</code>, <code>COST_CATEGORY</code>.</p>
         pub fn set_group_by(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GroupDefinition>>,
@@ -2048,6 +2243,7 @@ pub mod get_cost_and_usage_with_resources_input {
             self.next_page_token = Some(input.into());
             self
         }
+        /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
         pub fn set_next_page_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2060,7 +2256,7 @@ pub mod get_cost_and_usage_with_resources_input {
             self,
         ) -> std::result::Result<
             crate::input::GetCostAndUsageWithResourcesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetCostAndUsageWithResourcesInput {
                 time_period: self.time_period,
@@ -2085,16 +2281,16 @@ impl GetCostAndUsageWithResourcesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetCostAndUsageWithResources,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetCostAndUsageWithResourcesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2102,7 +2298,7 @@ impl GetCostAndUsageWithResourcesInput {
         fn update_http_builder(
             input: &crate::input::GetCostAndUsageWithResourcesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2111,30 +2307,30 @@ impl GetCostAndUsageWithResourcesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetCostAndUsageWithResourcesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSInsightsIndexService.GetCostAndUsageWithResources",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_cost_and_usage_with_resources(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_cost_and_usage_with_resources(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2157,15 +2353,15 @@ impl GetCostAndUsageWithResourcesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetCostAndUsageWithResources::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetCostAndUsageWithResources",
             "costexplorer",
         ));
@@ -2174,10 +2370,10 @@ impl GetCostAndUsageWithResourcesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2212,6 +2408,8 @@ pub mod get_cost_categories_input {
             self.search_string = Some(input.into());
             self
         }
+        /// <p>The value that you want to search the filter values for.</p>
+        /// <p>If you do not specify a <code>CostCategoryName</code>, <code>SearchString</code> will be used to filter Cost Category names that match the <code>SearchString</code> pattern. If you do specifiy a <code>CostCategoryName</code>, <code>SearchString</code> will be used to filter Cost Category values that match the <code>SearchString</code> pattern.</p>
         pub fn set_search_string(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2224,6 +2422,7 @@ pub mod get_cost_categories_input {
             self.time_period = Some(input);
             self
         }
+        /// <p>The time period of the request. </p>
         pub fn set_time_period(
             mut self,
             input: std::option::Option<crate::model::DateInterval>,
@@ -2236,6 +2435,7 @@ pub mod get_cost_categories_input {
             self.cost_category_name = Some(input.into());
             self
         }
+        /// <p>The unique name of the Cost Category.</p>
         pub fn set_cost_category_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2302,16 +2502,157 @@ pub mod get_cost_categories_input {
             self.filter = Some(input);
             self
         }
+        /// <p>Use <code>Expression</code> to filter by cost or by usage. There are two patterns: </p>
+        /// <ul>
+        /// <li>
+        /// <p>Simple dimension values - You can set the dimension name and values for the
+        /// filters that you plan to use. For example, you can filter for
+        /// <code>REGION==us-east-1 OR REGION==us-west-1</code>. For
+        /// <code>GetRightsizingRecommendation</code>, the Region is a full name (for
+        /// example, <code>REGION==US East (N. Virginia)</code>. The <code>Expression</code>
+        /// example is as follows:</p>
+        /// <p>
+        /// <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ]
+        /// } }</code>
+        /// </p>
+        /// <p>The list of dimension values are OR'd together to retrieve cost or usage data.
+        /// You can create <code>Expression</code> and <code>DimensionValues</code> objects
+        /// using either <code>with*</code> methods or <code>set*</code> methods in multiple
+        /// lines. </p>
+        /// </li>
+        /// <li>
+        /// <p>Compound dimension values with logical operations - You can use multiple
+        /// <code>Expression</code> types and the logical operators
+        /// <code>AND/OR/NOT</code> to create a list of one or more
+        /// <code>Expression</code> objects. By doing this, you can filter on more
+        /// advanced options. For example, you can filter on <code>((REGION == us-east-1 OR
+        /// REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE !=
+        /// DataTransfer)</code>. The <code>Expression</code> for that is as
+        /// follows:</p>
+        /// <p>
+        /// <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [
+        /// "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values":
+        /// ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values":
+        /// ["DataTransfer"] }}} ] } </code>
+        /// </p>
+        /// <note>
+        /// <p>Because each <code>Expression</code> can have only one operator, the
+        /// service returns an error if more than one is specified. The following
+        /// example shows an <code>Expression</code> object that creates an
+        /// error.</p>
+        /// </note>
+        /// <p>
+        /// <code> { "And": [ ... ], "DimensionValues": { "Dimension": "USAGE_TYPE",
+        /// "Values": [ "DataTransfer" ] } } </code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and
+        /// NOT isn't supported. OR isn't supported between different dimensions, or dimensions
+        /// and tags. NOT operators aren't supported. Dimensions are also limited to
+        /// <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or
+        /// <code>RIGHTSIZING_TYPE</code>.</p>
+        /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is
+        /// supported. AND and OR aren't supported. Dimensions are limited to
+        /// <code>LINKED_ACCOUNT</code>.</p>
+        /// </note>
         pub fn set_filter(mut self, input: std::option::Option<crate::model::Expression>) -> Self {
             self.filter = input;
             self
         }
+        /// Appends an item to `sort_by`.
+        ///
+        /// To override the contents of this collection use [`set_sort_by`](Self::set_sort_by).
+        ///
+        /// <p>The value by which you want to sort the data.</p>
+        /// <p>The key represents cost and usage metrics. The following values are supported:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>BlendedCost</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>UnblendedCost</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AmortizedCost</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NetAmortizedCost</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NetUnblendedCost</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>UsageQuantity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NormalizedUsageAmount</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
+        /// <p>When using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> are not supported.</p>
         pub fn sort_by(mut self, input: impl Into<crate::model::SortDefinition>) -> Self {
             let mut v = self.sort_by.unwrap_or_default();
             v.push(input.into());
             self.sort_by = Some(v);
             self
         }
+        /// <p>The value by which you want to sort the data.</p>
+        /// <p>The key represents cost and usage metrics. The following values are supported:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>BlendedCost</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>UnblendedCost</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AmortizedCost</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NetAmortizedCost</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NetUnblendedCost</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>UsageQuantity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NormalizedUsageAmount</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
+        /// <p>When using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> are not supported.</p>
         pub fn set_sort_by(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SortDefinition>>,
@@ -2326,6 +2667,9 @@ pub mod get_cost_categories_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>This field is only used when <code>SortBy</code> is provided in the request.</p>
+        /// <p>The maximum number of objects that to be returned for this request.  If <code>MaxResults</code> is not specified with <code>SortBy</code>, the request will return 1000 results as the default value for this parameter.</p>
+        /// <p>For <code>GetCostCategories</code>, MaxResults has an upper limit of 1000.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -2335,6 +2679,7 @@ pub mod get_cost_categories_input {
             self.next_page_token = Some(input.into());
             self
         }
+        /// <p>If the number of objects that are still available for retrieval exceeds the limit, Amazon Web Services returns a NextPageToken value in the response. To retrieve the next batch of objects, provide the NextPageToken from the prior call in your next request.</p>
         pub fn set_next_page_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2347,7 +2692,7 @@ pub mod get_cost_categories_input {
             self,
         ) -> std::result::Result<
             crate::input::GetCostCategoriesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetCostCategoriesInput {
                 search_string: self.search_string,
@@ -2372,16 +2717,16 @@ impl GetCostCategoriesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetCostCategories,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetCostCategoriesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2389,7 +2734,7 @@ impl GetCostCategoriesInput {
         fn update_http_builder(
             input: &crate::input::GetCostCategoriesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2398,32 +2743,32 @@ impl GetCostCategoriesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetCostCategoriesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSInsightsIndexService.GetCostCategories",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_cost_categories(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2446,15 +2791,15 @@ impl GetCostCategoriesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetCostCategories::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetCostCategories",
             "costexplorer",
         ));
@@ -2463,10 +2808,10 @@ impl GetCostCategoriesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2498,6 +2843,7 @@ pub mod get_cost_forecast_input {
             self.time_period = Some(input);
             self
         }
+        /// <p>The period of time that you want the forecast to cover. The start date must be equal to or no later than the current date to avoid a validation error.</p>
         pub fn set_time_period(
             mut self,
             input: std::option::Option<crate::model::DateInterval>,
@@ -2530,6 +2876,27 @@ pub mod get_cost_forecast_input {
             self.metric = Some(input);
             self
         }
+        /// <p>Which metric Cost Explorer uses to create your forecast. For more information about blended and unblended rates, see
+        /// <a href="http://aws.amazon.com/premiumsupport/knowledge-center/blended-rates-intro/">Why does the "blended" annotation
+        /// appear on some line items in my bill?</a>. </p>
+        /// <p>Valid values for a <code>GetCostForecast</code> call are the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>AMORTIZED_COST</p>
+        /// </li>
+        /// <li>
+        /// <p>BLENDED_COST</p>
+        /// </li>
+        /// <li>
+        /// <p>NET_AMORTIZED_COST</p>
+        /// </li>
+        /// <li>
+        /// <p>NET_UNBLENDED_COST</p>
+        /// </li>
+        /// <li>
+        /// <p>UNBLENDED_COST</p>
+        /// </li>
+        /// </ul>
         pub fn set_metric(mut self, input: std::option::Option<crate::model::Metric>) -> Self {
             self.metric = input;
             self
@@ -2540,6 +2907,8 @@ pub mod get_cost_forecast_input {
             self.granularity = Some(input);
             self
         }
+        /// <p>How granular you want the forecast to be. You can get 3 months of <code>DAILY</code> forecasts or 12 months of <code>MONTHLY</code> forecasts.</p>
+        /// <p>The <code>GetCostForecast</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
         pub fn set_granularity(
             mut self,
             input: std::option::Option<crate::model::Granularity>,
@@ -2548,6 +2917,7 @@ pub mod get_cost_forecast_input {
             self
         }
         /// <p>The filters that you want to use to filter your forecast. The <code>GetCostForecast</code> API supports filtering by the following dimensions:</p>
+        ///
         /// <ul>
         /// <li>
         /// <p>
@@ -2669,6 +3039,125 @@ pub mod get_cost_forecast_input {
             self.filter = Some(input);
             self
         }
+        /// <p>The filters that you want to use to filter your forecast. The <code>GetCostForecast</code> API supports filtering by the following dimensions:</p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>AZ</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>INSTANCE_TYPE</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>LINKED_ACCOUNT</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>LINKED_ACCOUNT_NAME</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>OPERATION</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PURCHASE_TYPE</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>REGION</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SERVICE</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>USAGE_TYPE</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>USAGE_TYPE_GROUP</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>RECORD_TYPE</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>OPERATING_SYSTEM</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TENANCY</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SCOPE</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PLATFORM</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SUBSCRIPTION_ID</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>LEGAL_ENTITY_NAME</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DEPLOYMENT_OPTION</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DATABASE_ENGINE</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>INSTANCE_TYPE_FAMILY</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>BILLING_ENTITY</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>RESERVATION_ID</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SAVINGS_PLAN_ARN</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_filter(mut self, input: std::option::Option<crate::model::Expression>) -> Self {
             self.filter = input;
             self
@@ -2680,6 +3169,9 @@ pub mod get_cost_forecast_input {
             self.prediction_interval_level = Some(input);
             self
         }
+        /// <p>Cost Explorer always returns the mean forecast as a single point. You can request a prediction interval around the mean
+        /// by specifying a confidence level. The higher the confidence level, the more confident Cost Explorer is about the actual value
+        /// falling in the prediction interval. Higher confidence levels result in wider prediction intervals.</p>
         pub fn set_prediction_interval_level(mut self, input: std::option::Option<i32>) -> Self {
             self.prediction_interval_level = input;
             self
@@ -2689,7 +3181,7 @@ pub mod get_cost_forecast_input {
             self,
         ) -> std::result::Result<
             crate::input::GetCostForecastInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetCostForecastInput {
                 time_period: self.time_period,
@@ -2712,16 +3204,16 @@ impl GetCostForecastInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetCostForecast,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetCostForecastInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2729,7 +3221,7 @@ impl GetCostForecastInput {
         fn update_http_builder(
             input: &crate::input::GetCostForecastInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2738,32 +3230,32 @@ impl GetCostForecastInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetCostForecastInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSInsightsIndexService.GetCostForecast",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_cost_forecast(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2786,15 +3278,15 @@ impl GetCostForecastInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetCostForecast::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetCostForecast",
             "costexplorer",
         ));
@@ -2803,10 +3295,10 @@ impl GetCostForecastInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2841,6 +3333,7 @@ pub mod get_dimension_values_input {
             self.search_string = Some(input.into());
             self
         }
+        /// <p>The value that you want to search the filter values for.</p>
         pub fn set_search_string(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2857,6 +3350,11 @@ pub mod get_dimension_values_input {
             self.time_period = Some(input);
             self
         }
+        /// <p>The start date and end date for retrieving the dimension values. The start date is
+        /// inclusive, but the end date is exclusive. For example, if <code>start</code> is
+        /// <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and
+        /// usage data is retrieved from <code>2017-01-01</code> up to and including
+        /// <code>2017-04-30</code> but not including <code>2017-05-01</code>.</p>
         pub fn set_time_period(
             mut self,
             input: std::option::Option<crate::model::DateInterval>,
@@ -2866,11 +3364,16 @@ pub mod get_dimension_values_input {
         }
         /// <p>The name of the dimension. Each <code>Dimension</code> is available for a different <code>Context</code>.
         /// For more information, see <code>Context</code>.
+        ///
         /// </p>
         pub fn dimension(mut self, input: crate::model::Dimension) -> Self {
             self.dimension = Some(input);
             self
         }
+        /// <p>The name of the dimension. Each <code>Dimension</code> is available for a different <code>Context</code>.
+        /// For more information, see <code>Context</code>.
+        ///
+        /// </p>
         pub fn set_dimension(
             mut self,
             input: std::option::Option<crate::model::Dimension>,
@@ -2996,6 +3499,120 @@ pub mod get_dimension_values_input {
             self.context = Some(input);
             self
         }
+        /// <p>The context for the call to <code>GetDimensionValues</code>. This can be <code>RESERVATIONS</code> or <code>COST_AND_USAGE</code>.
+        /// The default value is <code>COST_AND_USAGE</code>. If the context is set to <code>RESERVATIONS</code>, the resulting dimension values
+        /// can be used in the <code>GetReservationUtilization</code> operation. If the context is set to <code>COST_AND_USAGE</code>,
+        /// the resulting dimension values can be used in the <code>GetCostAndUsage</code> operation.</p>
+        /// <p>If you set the context to <code>COST_AND_USAGE</code>, you can use the following
+        /// dimensions for searching:</p>
+        /// <ul>
+        /// <li>
+        /// <p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>DATABASE_ENGINE - The Amazon Relational Database Service database. Examples are Aurora or MySQL.</p>
+        /// </li>
+        /// <li>
+        /// <p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>LEGAL_ENTITY_NAME - The name of the organization that sells you Amazon Web Services services, such as Amazon Web Services.</p>
+        /// </li>
+        /// <li>
+        /// <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value
+        /// field contains the Amazon Web Services ID of the member account.</p>
+        /// </li>
+        /// <li>
+        /// <p>OPERATING_SYSTEM - The operating system. Examples are Windows or Linux.</p>
+        /// </li>
+        /// <li>
+        /// <p>OPERATION - The action performed. Examples include <code>RunInstance</code> and <code>CreateBucket</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p>
+        /// </li>
+        /// <li>
+        /// <p>PURCHASE_TYPE - The reservation type of the purchase to which this usage is related. Examples include On-Demand
+        /// Instances and Standard Reserved Instances.</p>
+        /// </li>
+        /// <li>
+        /// <p>SERVICE - The Amazon Web Services service such as Amazon DynamoDB.</p>
+        /// </li>
+        /// <li>
+        /// <p>USAGE_TYPE - The type of usage. An example is DataTransfer-In-Bytes. The response for the <code>GetDimensionValues</code> operation
+        /// includes a unit attribute. Examples include GB and Hrs.</p>
+        /// </li>
+        /// <li>
+        /// <p>USAGE_TYPE_GROUP - The grouping of common usage types. An example is Amazon EC2: CloudWatch – Alarms. The response for this
+        /// operation includes a unit attribute.</p>
+        /// </li>
+        /// <li>
+        /// <p>REGION - The Amazon Web Services Region.</p>
+        /// </li>
+        /// <li>
+        /// <p>RECORD_TYPE - The different types of charges such as RI fees, usage costs, tax refunds, and credits.</p>
+        /// </li>
+        /// <li>
+        /// <p>RESOURCE_ID - The unique identifier of the resource. ResourceId is an opt-in feature only available for last 14 days for EC2-Compute Service.</p>
+        /// </li>
+        /// </ul>
+        /// <p>If you set the context to <code>RESERVATIONS</code>, you can use the following
+        /// dimensions for searching:</p>
+        /// <ul>
+        /// <li>
+        /// <p>AZ - The Availability Zone. An example is <code>us-east-1a</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows or Linux.</p>
+        /// </li>
+        /// <li>
+        /// <p>DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service deployments. Valid values are <code>SingleAZ</code> and <code>MultiAZ</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value
+        /// field contains the Amazon Web Services ID of the member account.</p>
+        /// </li>
+        /// <li>
+        /// <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p>
+        /// </li>
+        /// <li>
+        /// <p>REGION - The Amazon Web Services Region.</p>
+        /// </li>
+        /// <li>
+        /// <p>SCOPE (Utilization only) - The scope of a Reserved Instance (RI). Values are regional or a single Availability Zone.</p>
+        /// </li>
+        /// <li>
+        /// <p>TAG (Coverage only) - The tags that are associated with a Reserved Instance (RI).</p>
+        /// </li>
+        /// <li>
+        /// <p>TENANCY - The tenancy of a resource. Examples are shared or dedicated.</p>
+        /// </li>
+        /// </ul>
+        /// <p>If you set the context to <code>SAVINGS_PLANS</code>, you can use the following dimensions for searching:</p>
+        /// <ul>
+        /// <li>
+        /// <p>SAVINGS_PLANS_TYPE - Type of Savings Plans (EC2 Instance or Compute)</p>
+        /// </li>
+        /// <li>
+        /// <p>PAYMENT_OPTION - Payment option for the given Savings Plans (for example, All Upfront)</p>
+        /// </li>
+        /// <li>
+        /// <p>REGION - The Amazon Web Services Region.</p>
+        /// </li>
+        /// <li>
+        /// <p>INSTANCE_TYPE_FAMILY - The family of instances (For example, <code>m5</code>)</p>
+        /// </li>
+        /// <li>
+        /// <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value
+        /// field contains the Amazon Web Services ID of the member account.</p>
+        /// </li>
+        /// <li>
+        /// <p>SAVINGS_PLAN_ARN - The unique identifier for your Savings Plan</p>
+        /// </li>
+        /// </ul>
         pub fn set_context(mut self, input: std::option::Option<crate::model::Context>) -> Self {
             self.context = input;
             self
@@ -3059,16 +3676,157 @@ pub mod get_dimension_values_input {
             self.filter = Some(input);
             self
         }
+        /// <p>Use <code>Expression</code> to filter by cost or by usage. There are two patterns: </p>
+        /// <ul>
+        /// <li>
+        /// <p>Simple dimension values - You can set the dimension name and values for the
+        /// filters that you plan to use. For example, you can filter for
+        /// <code>REGION==us-east-1 OR REGION==us-west-1</code>. For
+        /// <code>GetRightsizingRecommendation</code>, the Region is a full name (for
+        /// example, <code>REGION==US East (N. Virginia)</code>. The <code>Expression</code>
+        /// example is as follows:</p>
+        /// <p>
+        /// <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ]
+        /// } }</code>
+        /// </p>
+        /// <p>The list of dimension values are OR'd together to retrieve cost or usage data.
+        /// You can create <code>Expression</code> and <code>DimensionValues</code> objects
+        /// using either <code>with*</code> methods or <code>set*</code> methods in multiple
+        /// lines. </p>
+        /// </li>
+        /// <li>
+        /// <p>Compound dimension values with logical operations - You can use multiple
+        /// <code>Expression</code> types and the logical operators
+        /// <code>AND/OR/NOT</code> to create a list of one or more
+        /// <code>Expression</code> objects. By doing this, you can filter on more
+        /// advanced options. For example, you can filter on <code>((REGION == us-east-1 OR
+        /// REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE !=
+        /// DataTransfer)</code>. The <code>Expression</code> for that is as
+        /// follows:</p>
+        /// <p>
+        /// <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [
+        /// "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values":
+        /// ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values":
+        /// ["DataTransfer"] }}} ] } </code>
+        /// </p>
+        /// <note>
+        /// <p>Because each <code>Expression</code> can have only one operator, the
+        /// service returns an error if more than one is specified. The following
+        /// example shows an <code>Expression</code> object that creates an
+        /// error.</p>
+        /// </note>
+        /// <p>
+        /// <code> { "And": [ ... ], "DimensionValues": { "Dimension": "USAGE_TYPE",
+        /// "Values": [ "DataTransfer" ] } } </code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and
+        /// NOT isn't supported. OR isn't supported between different dimensions, or dimensions
+        /// and tags. NOT operators aren't supported. Dimensions are also limited to
+        /// <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or
+        /// <code>RIGHTSIZING_TYPE</code>.</p>
+        /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is
+        /// supported. AND and OR aren't supported. Dimensions are limited to
+        /// <code>LINKED_ACCOUNT</code>.</p>
+        /// </note>
         pub fn set_filter(mut self, input: std::option::Option<crate::model::Expression>) -> Self {
             self.filter = input;
             self
         }
+        /// Appends an item to `sort_by`.
+        ///
+        /// To override the contents of this collection use [`set_sort_by`](Self::set_sort_by).
+        ///
+        /// <p>The value by which you want to sort the data.</p>
+        /// <p>The key represents cost and usage metrics. The following values are supported:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>BlendedCost</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>UnblendedCost</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AmortizedCost</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NetAmortizedCost</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NetUnblendedCost</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>UsageQuantity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NormalizedUsageAmount</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
+        /// <p>When you specify a <code>SortBy</code> paramater, the context must be <code>COST_AND_USAGE</code>. Further, when using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> are not supported.</p>
         pub fn sort_by(mut self, input: impl Into<crate::model::SortDefinition>) -> Self {
             let mut v = self.sort_by.unwrap_or_default();
             v.push(input.into());
             self.sort_by = Some(v);
             self
         }
+        /// <p>The value by which you want to sort the data.</p>
+        /// <p>The key represents cost and usage metrics. The following values are supported:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>BlendedCost</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>UnblendedCost</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AmortizedCost</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NetAmortizedCost</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NetUnblendedCost</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>UsageQuantity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NormalizedUsageAmount</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
+        /// <p>When you specify a <code>SortBy</code> paramater, the context must be <code>COST_AND_USAGE</code>. Further, when using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> are not supported.</p>
         pub fn set_sort_by(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SortDefinition>>,
@@ -3082,6 +3840,8 @@ pub mod get_dimension_values_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>This field is only used when SortBy is provided in the request. The maximum number of objects that to be returned for this request. If MaxResults is not specified with SortBy, the request will return 1000 results as the default value for this parameter.</p>
+        /// <p>For <code>GetDimensionValues</code>, MaxResults has an upper limit of 1000.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3091,6 +3851,7 @@ pub mod get_dimension_values_input {
             self.next_page_token = Some(input.into());
             self
         }
+        /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
         pub fn set_next_page_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3103,7 +3864,7 @@ pub mod get_dimension_values_input {
             self,
         ) -> std::result::Result<
             crate::input::GetDimensionValuesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetDimensionValuesInput {
                 search_string: self.search_string,
@@ -3129,16 +3890,16 @@ impl GetDimensionValuesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetDimensionValues,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetDimensionValuesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3146,7 +3907,7 @@ impl GetDimensionValuesInput {
         fn update_http_builder(
             input: &crate::input::GetDimensionValuesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3155,30 +3916,32 @@ impl GetDimensionValuesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetDimensionValuesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSInsightsIndexService.GetDimensionValues",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_dimension_values(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3201,15 +3964,15 @@ impl GetDimensionValuesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetDimensionValues::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetDimensionValues",
             "costexplorer",
         ));
@@ -3218,10 +3981,10 @@ impl GetDimensionValuesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3258,6 +4021,9 @@ pub mod get_reservation_coverage_input {
             self.time_period = Some(input);
             self
         }
+        /// <p>The start and end dates of the period that you want to retrieve data about reservation coverage for. You can retrieve data
+        /// for a maximum of 13 months: the last 12 months and the current month. The start date is inclusive,  but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is  
+        /// retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>. </p>
         pub fn set_time_period(
             mut self,
             input: std::option::Option<crate::model::DateInterval>,
@@ -3265,12 +4031,82 @@ pub mod get_reservation_coverage_input {
             self.time_period = input;
             self
         }
+        /// Appends an item to `group_by`.
+        ///
+        /// To override the contents of this collection use [`set_group_by`](Self::set_group_by).
+        ///
+        /// <p>You can group the data by the following attributes:</p>
+        /// <ul>
+        /// <li>
+        /// <p>AZ</p>
+        /// </li>
+        /// <li>
+        /// <p>CACHE_ENGINE</p>
+        /// </li>
+        /// <li>
+        /// <p>DATABASE_ENGINE</p>
+        /// </li>
+        /// <li>
+        /// <p>DEPLOYMENT_OPTION</p>
+        /// </li>
+        /// <li>
+        /// <p>INSTANCE_TYPE</p>
+        /// </li>
+        /// <li>
+        /// <p>LINKED_ACCOUNT</p>
+        /// </li>
+        /// <li>
+        /// <p>OPERATING_SYSTEM</p>
+        /// </li>
+        /// <li>
+        /// <p>PLATFORM</p>
+        /// </li>
+        /// <li>
+        /// <p>REGION</p>
+        /// </li>
+        /// <li>
+        /// <p>TENANCY</p>
+        /// </li>
+        /// </ul>
         pub fn group_by(mut self, input: impl Into<crate::model::GroupDefinition>) -> Self {
             let mut v = self.group_by.unwrap_or_default();
             v.push(input.into());
             self.group_by = Some(v);
             self
         }
+        /// <p>You can group the data by the following attributes:</p>
+        /// <ul>
+        /// <li>
+        /// <p>AZ</p>
+        /// </li>
+        /// <li>
+        /// <p>CACHE_ENGINE</p>
+        /// </li>
+        /// <li>
+        /// <p>DATABASE_ENGINE</p>
+        /// </li>
+        /// <li>
+        /// <p>DEPLOYMENT_OPTION</p>
+        /// </li>
+        /// <li>
+        /// <p>INSTANCE_TYPE</p>
+        /// </li>
+        /// <li>
+        /// <p>LINKED_ACCOUNT</p>
+        /// </li>
+        /// <li>
+        /// <p>OPERATING_SYSTEM</p>
+        /// </li>
+        /// <li>
+        /// <p>PLATFORM</p>
+        /// </li>
+        /// <li>
+        /// <p>REGION</p>
+        /// </li>
+        /// <li>
+        /// <p>TENANCY</p>
+        /// </li>
+        /// </ul>
         pub fn set_group_by(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GroupDefinition>>,
@@ -3286,6 +4122,10 @@ pub mod get_reservation_coverage_input {
             self.granularity = Some(input);
             self
         }
+        /// <p>The granularity of the Amazon Web Services cost data for the reservation. Valid values are <code>MONTHLY</code> and <code>DAILY</code>.</p>
+        /// <p>If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't set,
+        /// the response object doesn't include <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>.</p>
+        /// <p>The <code>GetReservationCoverage</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
         pub fn set_granularity(
             mut self,
             input: std::option::Option<crate::model::Granularity>,
@@ -3343,16 +4183,70 @@ pub mod get_reservation_coverage_input {
             self.filter = Some(input);
             self
         }
+        /// <p>Filters utilization data by dimensions. You can filter by the following dimensions:</p>
+        /// <ul>
+        /// <li>
+        /// <p>AZ</p>
+        /// </li>
+        /// <li>
+        /// <p>CACHE_ENGINE</p>
+        /// </li>
+        /// <li>
+        /// <p>DATABASE_ENGINE</p>
+        /// </li>
+        /// <li>
+        /// <p>DEPLOYMENT_OPTION</p>
+        /// </li>
+        /// <li>
+        /// <p>INSTANCE_TYPE</p>
+        /// </li>
+        /// <li>
+        /// <p>LINKED_ACCOUNT</p>
+        /// </li>
+        /// <li>
+        /// <p>OPERATING_SYSTEM</p>
+        /// </li>
+        /// <li>
+        /// <p>PLATFORM</p>
+        /// </li>
+        /// <li>
+        /// <p>REGION</p>
+        /// </li>
+        /// <li>
+        /// <p>SERVICE</p>
+        /// </li>
+        /// <li>
+        /// <p>TAG</p>
+        /// </li>
+        /// <li>
+        /// <p>TENANCY</p>
+        /// </li>
+        /// </ul>
+        /// <p>
+        /// <code>GetReservationCoverage</code> uses the same
+        /// <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object
+        /// as the other operations, but only <code>AND</code> is supported among each dimension. You can nest only one level deep.
+        /// If there are multiple values for a dimension, they are OR'd together.</p>
+        /// <p>If you don't provide a <code>SERVICE</code> filter, Cost Explorer defaults to EC2.</p>
+        /// <p>Cost category is also supported.</p>
         pub fn set_filter(mut self, input: std::option::Option<crate::model::Expression>) -> Self {
             self.filter = input;
             self
         }
+        /// Appends an item to `metrics`.
+        ///
+        /// To override the contents of this collection use [`set_metrics`](Self::set_metrics).
+        ///
+        /// <p>The measurement that you want your reservation coverage reported in.</p>
+        /// <p>Valid values are <code>Hour</code>, <code>Unit</code>, and <code>Cost</code>. You can use multiple values in a request.</p>
         pub fn metrics(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.metrics.unwrap_or_default();
             v.push(input.into());
             self.metrics = Some(v);
             self
         }
+        /// <p>The measurement that you want your reservation coverage reported in.</p>
+        /// <p>Valid values are <code>Hour</code>, <code>Unit</code>, and <code>Cost</code>. You can use multiple values in a request.</p>
         pub fn set_metrics(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3365,6 +4259,7 @@ pub mod get_reservation_coverage_input {
             self.next_page_token = Some(input.into());
             self
         }
+        /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
         pub fn set_next_page_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3426,11 +4321,68 @@ pub mod get_reservation_coverage_input {
         /// </p>
         /// </li>
         /// </ul>
+        ///
         /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
         pub fn sort_by(mut self, input: crate::model::SortDefinition) -> Self {
             self.sort_by = Some(input);
             self
         }
+        /// <p>The value by which you want to sort the data.</p>
+        /// <p>The following values are supported for <code>Key</code>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>OnDemandCost</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CoverageHoursPercentage</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>OnDemandHours</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ReservedHours</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TotalRunningHours</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CoverageNormalizedUnitsPercentage</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>OnDemandNormalizedUnits</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ReservedNormalizedUnits</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TotalRunningNormalizedUnits</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Time</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
         pub fn set_sort_by(
             mut self,
             input: std::option::Option<crate::model::SortDefinition>,
@@ -3443,6 +4395,7 @@ pub mod get_reservation_coverage_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of objects that you returned for this request. If more objects are available, in the response, Amazon Web Services provides a NextPageToken value that you can use in a subsequent call to get the next batch of objects.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3452,7 +4405,7 @@ pub mod get_reservation_coverage_input {
             self,
         ) -> std::result::Result<
             crate::input::GetReservationCoverageInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetReservationCoverageInput {
                 time_period: self.time_period,
@@ -3478,16 +4431,16 @@ impl GetReservationCoverageInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetReservationCoverage,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetReservationCoverageInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3495,7 +4448,7 @@ impl GetReservationCoverageInput {
         fn update_http_builder(
             input: &crate::input::GetReservationCoverageInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3504,32 +4457,34 @@ impl GetReservationCoverageInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetReservationCoverageInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSInsightsIndexService.GetReservationCoverage",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_reservation_coverage(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3552,15 +4507,15 @@ impl GetReservationCoverageInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetReservationCoverage::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetReservationCoverage",
             "costexplorer",
         ));
@@ -3569,10 +4524,10 @@ impl GetReservationCoverageInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3609,6 +4564,7 @@ pub mod get_reservation_purchase_recommendation_input {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The account ID that is associated with the recommendation. </p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -3618,6 +4574,7 @@ pub mod get_reservation_purchase_recommendation_input {
             self.service = Some(input.into());
             self
         }
+        /// <p>The specific service that you want recommendations for.</p>
         pub fn set_service(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service = input;
             self
@@ -3681,6 +4638,61 @@ pub mod get_reservation_purchase_recommendation_input {
             self.filter = Some(input);
             self
         }
+        /// <p>Use <code>Expression</code> to filter by cost or by usage. There are two patterns: </p>
+        /// <ul>
+        /// <li>
+        /// <p>Simple dimension values - You can set the dimension name and values for the
+        /// filters that you plan to use. For example, you can filter for
+        /// <code>REGION==us-east-1 OR REGION==us-west-1</code>. For
+        /// <code>GetRightsizingRecommendation</code>, the Region is a full name (for
+        /// example, <code>REGION==US East (N. Virginia)</code>. The <code>Expression</code>
+        /// example is as follows:</p>
+        /// <p>
+        /// <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ]
+        /// } }</code>
+        /// </p>
+        /// <p>The list of dimension values are OR'd together to retrieve cost or usage data.
+        /// You can create <code>Expression</code> and <code>DimensionValues</code> objects
+        /// using either <code>with*</code> methods or <code>set*</code> methods in multiple
+        /// lines. </p>
+        /// </li>
+        /// <li>
+        /// <p>Compound dimension values with logical operations - You can use multiple
+        /// <code>Expression</code> types and the logical operators
+        /// <code>AND/OR/NOT</code> to create a list of one or more
+        /// <code>Expression</code> objects. By doing this, you can filter on more
+        /// advanced options. For example, you can filter on <code>((REGION == us-east-1 OR
+        /// REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE !=
+        /// DataTransfer)</code>. The <code>Expression</code> for that is as
+        /// follows:</p>
+        /// <p>
+        /// <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [
+        /// "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values":
+        /// ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values":
+        /// ["DataTransfer"] }}} ] } </code>
+        /// </p>
+        /// <note>
+        /// <p>Because each <code>Expression</code> can have only one operator, the
+        /// service returns an error if more than one is specified. The following
+        /// example shows an <code>Expression</code> object that creates an
+        /// error.</p>
+        /// </note>
+        /// <p>
+        /// <code> { "And": [ ... ], "DimensionValues": { "Dimension": "USAGE_TYPE",
+        /// "Values": [ "DataTransfer" ] } } </code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and
+        /// NOT isn't supported. OR isn't supported between different dimensions, or dimensions
+        /// and tags. NOT operators aren't supported. Dimensions are also limited to
+        /// <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or
+        /// <code>RIGHTSIZING_TYPE</code>.</p>
+        /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is
+        /// supported. AND and OR aren't supported. Dimensions are limited to
+        /// <code>LINKED_ACCOUNT</code>.</p>
+        /// </note>
         pub fn set_filter(mut self, input: std::option::Option<crate::model::Expression>) -> Self {
             self.filter = input;
             self
@@ -3690,6 +4702,7 @@ pub mod get_reservation_purchase_recommendation_input {
             self.account_scope = Some(input);
             self
         }
+        /// <p>The account scope that you want your recommendations for. Amazon Web Services calculates recommendations including the management account and member accounts if the value is set to <code>PAYER</code>. If the value is <code>LINKED</code>, recommendations are calculated for individual member accounts only.</p>
         pub fn set_account_scope(
             mut self,
             input: std::option::Option<crate::model::AccountScope>,
@@ -3705,6 +4718,7 @@ pub mod get_reservation_purchase_recommendation_input {
             self.lookback_period_in_days = Some(input);
             self
         }
+        /// <p>The number of previous days that you want Amazon Web Services to consider when it calculates your recommendations.</p>
         pub fn set_lookback_period_in_days(
             mut self,
             input: std::option::Option<crate::model::LookbackPeriodInDays>,
@@ -3717,6 +4731,7 @@ pub mod get_reservation_purchase_recommendation_input {
             self.term_in_years = Some(input);
             self
         }
+        /// <p>The reservation term that you want recommendations for.</p>
         pub fn set_term_in_years(
             mut self,
             input: std::option::Option<crate::model::TermInYears>,
@@ -3729,6 +4744,7 @@ pub mod get_reservation_purchase_recommendation_input {
             self.payment_option = Some(input);
             self
         }
+        /// <p>The reservation purchase option that you want recommendations for.</p>
         pub fn set_payment_option(
             mut self,
             input: std::option::Option<crate::model::PaymentOption>,
@@ -3741,6 +4757,7 @@ pub mod get_reservation_purchase_recommendation_input {
             self.service_specification = Some(input);
             self
         }
+        /// <p>The hardware specifications for the service instances that you want recommendations for, such as standard or convertible Amazon EC2 instances.</p>
         pub fn set_service_specification(
             mut self,
             input: std::option::Option<crate::model::ServiceSpecification>,
@@ -3753,6 +4770,7 @@ pub mod get_reservation_purchase_recommendation_input {
             self.page_size = Some(input);
             self
         }
+        /// <p>The number of recommendations that you want returned in a single response object.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.page_size = input;
             self
@@ -3762,6 +4780,7 @@ pub mod get_reservation_purchase_recommendation_input {
             self.next_page_token = Some(input.into());
             self
         }
+        /// <p>The pagination token that indicates the next set of results that you want to retrieve.</p>
         pub fn set_next_page_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3774,7 +4793,7 @@ pub mod get_reservation_purchase_recommendation_input {
             self,
         ) -> std::result::Result<
             crate::input::GetReservationPurchaseRecommendationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetReservationPurchaseRecommendationInput {
                 account_id: self.account_id,
@@ -3804,16 +4823,16 @@ impl GetReservationPurchaseRecommendationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetReservationPurchaseRecommendation,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetReservationPurchaseRecommendationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3821,7 +4840,7 @@ impl GetReservationPurchaseRecommendationInput {
         fn update_http_builder(
             input: &crate::input::GetReservationPurchaseRecommendationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3830,30 +4849,30 @@ impl GetReservationPurchaseRecommendationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetReservationPurchaseRecommendationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSInsightsIndexService.GetReservationPurchaseRecommendation",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_reservation_purchase_recommendation(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_reservation_purchase_recommendation(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3876,15 +4895,15 @@ impl GetReservationPurchaseRecommendationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetReservationPurchaseRecommendation::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetReservationPurchaseRecommendation",
             "costexplorer",
         ));
@@ -3893,10 +4912,10 @@ impl GetReservationPurchaseRecommendationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3931,6 +4950,8 @@ pub mod get_reservation_utilization_input {
             self.time_period = Some(input);
             self
         }
+        /// <p>Sets the start and end dates for retrieving RI utilization. The start date is inclusive,  but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is  
+        /// retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>. </p>
         pub fn set_time_period(
             mut self,
             input: std::option::Option<crate::model::DateInterval>,
@@ -3938,12 +4959,18 @@ pub mod get_reservation_utilization_input {
             self.time_period = input;
             self
         }
+        /// Appends an item to `group_by`.
+        ///
+        /// To override the contents of this collection use [`set_group_by`](Self::set_group_by).
+        ///
+        /// <p>Groups only by <code>SUBSCRIPTION_ID</code>. Metadata is included.</p>
         pub fn group_by(mut self, input: impl Into<crate::model::GroupDefinition>) -> Self {
             let mut v = self.group_by.unwrap_or_default();
             v.push(input.into());
             self.group_by = Some(v);
             self
         }
+        /// <p>Groups only by <code>SUBSCRIPTION_ID</code>. Metadata is included.</p>
         pub fn set_group_by(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GroupDefinition>>,
@@ -3959,6 +4986,10 @@ pub mod get_reservation_utilization_input {
             self.granularity = Some(input);
             self
         }
+        /// <p>If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't set,
+        /// the response object doesn't include <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>.
+        /// If both <code>GroupBy</code> and <code>Granularity</code> aren't set, <code>GetReservationUtilization</code> defaults to <code>DAILY</code>.</p>
+        /// <p>The <code>GetReservationUtilization</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
         pub fn set_granularity(
             mut self,
             input: std::option::Option<crate::model::Granularity>,
@@ -4011,11 +5042,53 @@ pub mod get_reservation_utilization_input {
             self.filter = Some(input);
             self
         }
+        /// <p>Filters utilization data by dimensions. You can filter by the following dimensions:</p>
+        /// <ul>
+        /// <li>
+        /// <p>AZ</p>
+        /// </li>
+        /// <li>
+        /// <p>CACHE_ENGINE</p>
+        /// </li>
+        /// <li>
+        /// <p>DEPLOYMENT_OPTION</p>
+        /// </li>
+        /// <li>
+        /// <p>INSTANCE_TYPE</p>
+        /// </li>
+        /// <li>
+        /// <p>LINKED_ACCOUNT</p>
+        /// </li>
+        /// <li>
+        /// <p>OPERATING_SYSTEM</p>
+        /// </li>
+        /// <li>
+        /// <p>PLATFORM</p>
+        /// </li>
+        /// <li>
+        /// <p>REGION</p>
+        /// </li>
+        /// <li>
+        /// <p>SERVICE</p>
+        /// </li>
+        /// <li>
+        /// <p>SCOPE</p>
+        /// </li>
+        /// <li>
+        /// <p>TENANCY</p>
+        /// </li>
+        /// </ul>
+        /// <p>
+        /// <code>GetReservationUtilization</code> uses the same
+        /// <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object
+        /// as the other operations, but only <code>AND</code> is supported among each dimension, and nesting is supported up to
+        /// only one level deep. If there are multiple values for a dimension, they are OR'd together.</p>
         pub fn set_filter(mut self, input: std::option::Option<crate::model::Expression>) -> Self {
             self.filter = input;
             self
         }
         /// <p>The value by which you want to sort the data.</p>
+        ///
         /// <p>The following values are supported for <code>Key</code>:</p>
         /// <ul>
         /// <li>
@@ -4104,11 +5177,104 @@ pub mod get_reservation_utilization_input {
         /// </p>
         /// </li>
         /// </ul>
+        ///
         /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
         pub fn sort_by(mut self, input: crate::model::SortDefinition) -> Self {
             self.sort_by = Some(input);
             self
         }
+        /// <p>The value by which you want to sort the data.</p>
+        ///
+        /// <p>The following values are supported for <code>Key</code>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>UtilizationPercentage</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>UtilizationPercentageInUnits</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PurchasedHours</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PurchasedUnits</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TotalActualHours</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TotalActualUnits</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>UnusedHours</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>UnusedUnits</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>OnDemandCostOfRIHoursUsed</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NetRISavings</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TotalPotentialRISavings</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AmortizedUpfrontFee</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AmortizedRecurringFee</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TotalAmortizedFee</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>RICostForUnusedHours</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>RealizedSavings</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>UnrealizedSavings</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
         pub fn set_sort_by(
             mut self,
             input: std::option::Option<crate::model::SortDefinition>,
@@ -4121,6 +5287,7 @@ pub mod get_reservation_utilization_input {
             self.next_page_token = Some(input.into());
             self
         }
+        /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
         pub fn set_next_page_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4133,6 +5300,7 @@ pub mod get_reservation_utilization_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of objects that you returned for this request. If more objects are available, in the response, Amazon Web Services provides a NextPageToken value that you can use in a subsequent call to get the next batch of objects.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -4142,7 +5310,7 @@ pub mod get_reservation_utilization_input {
             self,
         ) -> std::result::Result<
             crate::input::GetReservationUtilizationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetReservationUtilizationInput {
                 time_period: self.time_period,
@@ -4168,16 +5336,16 @@ impl GetReservationUtilizationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetReservationUtilization,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetReservationUtilizationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4185,7 +5353,7 @@ impl GetReservationUtilizationInput {
         fn update_http_builder(
             input: &crate::input::GetReservationUtilizationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4194,32 +5362,34 @@ impl GetReservationUtilizationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetReservationUtilizationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSInsightsIndexService.GetReservationUtilization",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_reservation_utilization(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4242,15 +5412,15 @@ impl GetReservationUtilizationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetReservationUtilization::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetReservationUtilization",
             "costexplorer",
         ));
@@ -4259,10 +5429,10 @@ impl GetReservationUtilizationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4349,6 +5519,61 @@ pub mod get_rightsizing_recommendation_input {
             self.filter = Some(input);
             self
         }
+        /// <p>Use <code>Expression</code> to filter by cost or by usage. There are two patterns: </p>
+        /// <ul>
+        /// <li>
+        /// <p>Simple dimension values - You can set the dimension name and values for the
+        /// filters that you plan to use. For example, you can filter for
+        /// <code>REGION==us-east-1 OR REGION==us-west-1</code>. For
+        /// <code>GetRightsizingRecommendation</code>, the Region is a full name (for
+        /// example, <code>REGION==US East (N. Virginia)</code>. The <code>Expression</code>
+        /// example is as follows:</p>
+        /// <p>
+        /// <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ]
+        /// } }</code>
+        /// </p>
+        /// <p>The list of dimension values are OR'd together to retrieve cost or usage data.
+        /// You can create <code>Expression</code> and <code>DimensionValues</code> objects
+        /// using either <code>with*</code> methods or <code>set*</code> methods in multiple
+        /// lines. </p>
+        /// </li>
+        /// <li>
+        /// <p>Compound dimension values with logical operations - You can use multiple
+        /// <code>Expression</code> types and the logical operators
+        /// <code>AND/OR/NOT</code> to create a list of one or more
+        /// <code>Expression</code> objects. By doing this, you can filter on more
+        /// advanced options. For example, you can filter on <code>((REGION == us-east-1 OR
+        /// REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE !=
+        /// DataTransfer)</code>. The <code>Expression</code> for that is as
+        /// follows:</p>
+        /// <p>
+        /// <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [
+        /// "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values":
+        /// ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values":
+        /// ["DataTransfer"] }}} ] } </code>
+        /// </p>
+        /// <note>
+        /// <p>Because each <code>Expression</code> can have only one operator, the
+        /// service returns an error if more than one is specified. The following
+        /// example shows an <code>Expression</code> object that creates an
+        /// error.</p>
+        /// </note>
+        /// <p>
+        /// <code> { "And": [ ... ], "DimensionValues": { "Dimension": "USAGE_TYPE",
+        /// "Values": [ "DataTransfer" ] } } </code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and
+        /// NOT isn't supported. OR isn't supported between different dimensions, or dimensions
+        /// and tags. NOT operators aren't supported. Dimensions are also limited to
+        /// <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or
+        /// <code>RIGHTSIZING_TYPE</code>.</p>
+        /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is
+        /// supported. AND and OR aren't supported. Dimensions are limited to
+        /// <code>LINKED_ACCOUNT</code>.</p>
+        /// </note>
         pub fn set_filter(mut self, input: std::option::Option<crate::model::Expression>) -> Self {
             self.filter = input;
             self
@@ -4365,6 +5590,11 @@ pub mod get_rightsizing_recommendation_input {
             self.configuration = Some(input);
             self
         }
+        /// <p> Enables you to customize recommendations across two attributes. You can choose to view
+        /// recommendations for instances within the same instance families or across different instance
+        /// families. You can also choose to view your estimated savings associated with recommendations
+        /// with consideration of existing Savings Plans or RI benefits, or
+        /// neither. </p>
         pub fn set_configuration(
             mut self,
             input: std::option::Option<crate::model::RightsizingRecommendationConfiguration>,
@@ -4378,6 +5608,8 @@ pub mod get_rightsizing_recommendation_input {
             self.service = Some(input.into());
             self
         }
+        /// <p>The specific service that you want recommendations for. The only valid value for <code>GetRightsizingRecommendation</code> is
+        /// "<code>AmazonEC2</code>".</p>
         pub fn set_service(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service = input;
             self
@@ -4387,6 +5619,7 @@ pub mod get_rightsizing_recommendation_input {
             self.page_size = Some(input);
             self
         }
+        /// <p>The number of recommendations that you want returned in a single response object.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.page_size = input;
             self
@@ -4396,6 +5629,7 @@ pub mod get_rightsizing_recommendation_input {
             self.next_page_token = Some(input.into());
             self
         }
+        /// <p>The pagination token that indicates the next set of results that you want to retrieve.</p>
         pub fn set_next_page_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4408,7 +5642,7 @@ pub mod get_rightsizing_recommendation_input {
             self,
         ) -> std::result::Result<
             crate::input::GetRightsizingRecommendationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetRightsizingRecommendationInput {
                 filter: self.filter,
@@ -4432,16 +5666,16 @@ impl GetRightsizingRecommendationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetRightsizingRecommendation,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetRightsizingRecommendationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4449,7 +5683,7 @@ impl GetRightsizingRecommendationInput {
         fn update_http_builder(
             input: &crate::input::GetRightsizingRecommendationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4458,30 +5692,30 @@ impl GetRightsizingRecommendationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetRightsizingRecommendationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSInsightsIndexService.GetRightsizingRecommendation",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_rightsizing_recommendation(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_rightsizing_recommendation(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4504,15 +5738,15 @@ impl GetRightsizingRecommendationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetRightsizingRecommendation::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetRightsizingRecommendation",
             "costexplorer",
         ));
@@ -4521,10 +5755,10 @@ impl GetRightsizingRecommendationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4559,6 +5793,7 @@ pub mod get_savings_plans_coverage_input {
             self.time_period = Some(input);
             self
         }
+        /// <p>The time period that you want the usage and costs for. The <code>Start</code> date must be within 13 months. The <code>End</code> date must be after the <code>Start</code> date, and before the current date. Future dates can't be used as an <code>End</code> date.</p>
         pub fn set_time_period(
             mut self,
             input: std::option::Option<crate::model::DateInterval>,
@@ -4566,12 +5801,18 @@ pub mod get_savings_plans_coverage_input {
             self.time_period = input;
             self
         }
+        /// Appends an item to `group_by`.
+        ///
+        /// To override the contents of this collection use [`set_group_by`](Self::set_group_by).
+        ///
+        /// <p>You can group the data using the attributes <code>INSTANCE_FAMILY</code>, <code>REGION</code>, or <code>SERVICE</code>.</p>
         pub fn group_by(mut self, input: impl Into<crate::model::GroupDefinition>) -> Self {
             let mut v = self.group_by.unwrap_or_default();
             v.push(input.into());
             self.group_by = Some(v);
             self
         }
+        /// <p>You can group the data using the attributes <code>INSTANCE_FAMILY</code>, <code>REGION</code>, or <code>SERVICE</code>.</p>
         pub fn set_group_by(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GroupDefinition>>,
@@ -4585,6 +5826,8 @@ pub mod get_savings_plans_coverage_input {
             self.granularity = Some(input);
             self
         }
+        /// <p>The granularity of the Amazon Web Services cost data for your Savings Plans. <code>Granularity</code> can't be set if <code>GroupBy</code> is set.</p>
+        /// <p>The <code>GetSavingsPlansCoverage</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
         pub fn set_granularity(
             mut self,
             input: std::option::Option<crate::model::Granularity>,
@@ -4624,16 +5867,50 @@ pub mod get_savings_plans_coverage_input {
             self.filter = Some(input);
             self
         }
+        /// <p>Filters Savings Plans coverage data by dimensions. You can filter data for Savings Plans usage with the following dimensions:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>LINKED_ACCOUNT</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>REGION</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SERVICE</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>INSTANCE_FAMILY</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>
+        /// <code>GetSavingsPlansCoverage</code> uses the same
+        /// <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object
+        /// as the other operations, but only <code>AND</code> is supported among each dimension. If there are multiple values for a dimension, they are OR'd together.</p>
+        /// <p>Cost category is also supported.</p>
         pub fn set_filter(mut self, input: std::option::Option<crate::model::Expression>) -> Self {
             self.filter = input;
             self
         }
+        /// Appends an item to `metrics`.
+        ///
+        /// To override the contents of this collection use [`set_metrics`](Self::set_metrics).
+        ///
+        /// <p>The measurement that you want your Savings Plans coverage reported in. The only valid value is <code>SpendCoveredBySavingsPlans</code>.</p>
         pub fn metrics(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.metrics.unwrap_or_default();
             v.push(input.into());
             self.metrics = Some(v);
             self
         }
+        /// <p>The measurement that you want your Savings Plans coverage reported in. The only valid value is <code>SpendCoveredBySavingsPlans</code>.</p>
         pub fn set_metrics(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4646,6 +5923,7 @@ pub mod get_savings_plans_coverage_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4655,6 +5933,7 @@ pub mod get_savings_plans_coverage_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The number of items to be returned in a response. The default is <code>20</code>, with a minimum value of <code>1</code>.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -4698,11 +5977,53 @@ pub mod get_savings_plans_coverage_input {
         /// </p>
         /// </li>
         /// </ul>
+        ///
         /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
         pub fn sort_by(mut self, input: crate::model::SortDefinition) -> Self {
             self.sort_by = Some(input);
             self
         }
+        /// <p>The value by which you want to sort the data.</p>
+        /// <p>The following values are supported for <code>Key</code>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>SpendCoveredBySavingsPlan</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>OnDemandCost</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CoveragePercentage</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TotalCost</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>InstanceFamily</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Region</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Service</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
         pub fn set_sort_by(
             mut self,
             input: std::option::Option<crate::model::SortDefinition>,
@@ -4715,7 +6036,7 @@ pub mod get_savings_plans_coverage_input {
             self,
         ) -> std::result::Result<
             crate::input::GetSavingsPlansCoverageInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetSavingsPlansCoverageInput {
                 time_period: self.time_period,
@@ -4742,16 +6063,16 @@ impl GetSavingsPlansCoverageInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetSavingsPlansCoverage,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetSavingsPlansCoverageInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4759,7 +6080,7 @@ impl GetSavingsPlansCoverageInput {
         fn update_http_builder(
             input: &crate::input::GetSavingsPlansCoverageInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4768,32 +6089,34 @@ impl GetSavingsPlansCoverageInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetSavingsPlansCoverageInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSInsightsIndexService.GetSavingsPlansCoverage",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_savings_plans_coverage(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4816,15 +6139,15 @@ impl GetSavingsPlansCoverageInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetSavingsPlansCoverage::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetSavingsPlansCoverage",
             "costexplorer",
         ));
@@ -4833,10 +6156,10 @@ impl GetSavingsPlansCoverageInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4874,6 +6197,7 @@ pub mod get_savings_plans_purchase_recommendation_input {
             self.savings_plans_type = Some(input);
             self
         }
+        /// <p>The Savings Plans recommendation type requested.</p>
         pub fn set_savings_plans_type(
             mut self,
             input: std::option::Option<crate::model::SupportedSavingsPlansType>,
@@ -4888,6 +6212,9 @@ pub mod get_savings_plans_purchase_recommendation_input {
             self.term_in_years = Some(input);
             self
         }
+        /// <p>The savings plan recommendation term used to
+        /// generate these
+        /// recommendations.</p>
         pub fn set_term_in_years(
             mut self,
             input: std::option::Option<crate::model::TermInYears>,
@@ -4900,6 +6227,7 @@ pub mod get_savings_plans_purchase_recommendation_input {
             self.payment_option = Some(input);
             self
         }
+        /// <p>The payment option used to generate these recommendations.</p>
         pub fn set_payment_option(
             mut self,
             input: std::option::Option<crate::model::PaymentOption>,
@@ -4912,6 +6240,7 @@ pub mod get_savings_plans_purchase_recommendation_input {
             self.account_scope = Some(input);
             self
         }
+        /// <p>The account scope that you want your recommendations for. Amazon Web Services calculates recommendations including the management account and member accounts if the value is set to <code>PAYER</code>. If the value is <code>LINKED</code>, recommendations are calculated for individual member accounts only.</p>
         pub fn set_account_scope(
             mut self,
             input: std::option::Option<crate::model::AccountScope>,
@@ -4924,6 +6253,7 @@ pub mod get_savings_plans_purchase_recommendation_input {
             self.next_page_token = Some(input.into());
             self
         }
+        /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
         pub fn set_next_page_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4936,6 +6266,7 @@ pub mod get_savings_plans_purchase_recommendation_input {
             self.page_size = Some(input);
             self
         }
+        /// <p>The number of recommendations that you want returned in a single response object.</p>
         pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
             self.page_size = input;
             self
@@ -4948,6 +6279,7 @@ pub mod get_savings_plans_purchase_recommendation_input {
             self.lookback_period_in_days = Some(input);
             self
         }
+        /// <p>The lookback period used to generate the recommendation.</p>
         pub fn set_lookback_period_in_days(
             mut self,
             input: std::option::Option<crate::model::LookbackPeriodInDays>,
@@ -4969,6 +6301,16 @@ pub mod get_savings_plans_purchase_recommendation_input {
             self.filter = Some(input);
             self
         }
+        /// <p>You can filter your recommendations by Account ID with the <code>LINKED_ACCOUNT</code>
+        /// dimension. To filter your recommendations by Account ID, specify <code>Key</code> as
+        /// <code>LINKED_ACCOUNT</code> and <code>Value</code> as the comma-separated Acount ID(s) for
+        /// which you want to see Savings Plans purchase recommendations.</p>
+        /// <p>For GetSavingsPlansPurchaseRecommendation, the <code>Filter</code> does not include
+        /// <code>CostCategories</code> or <code>Tags</code>. It only includes <code>Dimensions</code>.
+        /// With <code>Dimensions</code>, <code>Key</code> must be <code>LINKED_ACCOUNT</code> and
+        /// <code>Value</code> can be a single Account ID or multiple comma-separated Account IDs for
+        /// which you want to see Savings Plans Purchase Recommendations. <code>AND</code> and
+        /// <code>OR</code> operators are not supported.</p>
         pub fn set_filter(mut self, input: std::option::Option<crate::model::Expression>) -> Self {
             self.filter = input;
             self
@@ -4978,7 +6320,7 @@ pub mod get_savings_plans_purchase_recommendation_input {
             self,
         ) -> std::result::Result<
             crate::input::GetSavingsPlansPurchaseRecommendationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetSavingsPlansPurchaseRecommendationInput {
                 savings_plans_type: self.savings_plans_type,
@@ -5006,16 +6348,16 @@ impl GetSavingsPlansPurchaseRecommendationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetSavingsPlansPurchaseRecommendation,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetSavingsPlansPurchaseRecommendationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5023,7 +6365,7 @@ impl GetSavingsPlansPurchaseRecommendationInput {
         fn update_http_builder(
             input: &crate::input::GetSavingsPlansPurchaseRecommendationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5032,30 +6374,30 @@ impl GetSavingsPlansPurchaseRecommendationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetSavingsPlansPurchaseRecommendationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSInsightsIndexService.GetSavingsPlansPurchaseRecommendation",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_savings_plans_purchase_recommendation(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_savings_plans_purchase_recommendation(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5078,15 +6420,15 @@ impl GetSavingsPlansPurchaseRecommendationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetSavingsPlansPurchaseRecommendation::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetSavingsPlansPurchaseRecommendation",
             "costexplorer",
         ));
@@ -5095,10 +6437,10 @@ impl GetSavingsPlansPurchaseRecommendationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5129,6 +6471,7 @@ pub mod get_savings_plans_utilization_input {
             self.time_period = Some(input);
             self
         }
+        /// <p>The time period that you want the usage and costs for. The <code>Start</code> date must be within 13 months. The <code>End</code> date must be after the <code>Start</code> date, and before the current date. Future dates can't be used as an <code>End</code> date.</p>
         pub fn set_time_period(
             mut self,
             input: std::option::Option<crate::model::DateInterval>,
@@ -5142,6 +6485,8 @@ pub mod get_savings_plans_utilization_input {
             self.granularity = Some(input);
             self
         }
+        /// <p>The granularity of the Amazon Web Services utillization data for your Savings Plans.</p>
+        /// <p>The <code>GetSavingsPlansUtilization</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
         pub fn set_granularity(
             mut self,
             input: std::option::Option<crate::model::Granularity>,
@@ -5190,6 +6535,43 @@ pub mod get_savings_plans_utilization_input {
             self.filter = Some(input);
             self
         }
+        /// <p>Filters Savings Plans utilization coverage data for active Savings Plans dimensions.  You can filter data with the following dimensions:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>LINKED_ACCOUNT</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SAVINGS_PLAN_ARN</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SAVINGS_PLANS_TYPE</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>REGION</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PAYMENT_OPTION</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>INSTANCE_TYPE_FAMILY</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>
+        /// <code>GetSavingsPlansUtilization</code> uses the same
+        /// <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object
+        /// as the other operations, but only <code>AND</code> is supported among each dimension.</p>
         pub fn set_filter(mut self, input: std::option::Option<crate::model::Expression>) -> Self {
             self.filter = input;
             self
@@ -5223,11 +6605,43 @@ pub mod get_savings_plans_utilization_input {
         /// </p>
         /// </li>
         /// </ul>
+        ///
         /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
         pub fn sort_by(mut self, input: crate::model::SortDefinition) -> Self {
             self.sort_by = Some(input);
             self
         }
+        /// <p>The value by which you want to sort the data.</p>
+        /// <p>The following values are supported for <code>Key</code>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>UtilizationPercentage</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TotalCommitment</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>UsedCommitment</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>UnusedCommitment</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NetSavings</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
         pub fn set_sort_by(
             mut self,
             input: std::option::Option<crate::model::SortDefinition>,
@@ -5240,7 +6654,7 @@ pub mod get_savings_plans_utilization_input {
             self,
         ) -> std::result::Result<
             crate::input::GetSavingsPlansUtilizationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetSavingsPlansUtilizationInput {
                 time_period: self.time_period,
@@ -5263,16 +6677,16 @@ impl GetSavingsPlansUtilizationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetSavingsPlansUtilization,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetSavingsPlansUtilizationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5280,7 +6694,7 @@ impl GetSavingsPlansUtilizationInput {
         fn update_http_builder(
             input: &crate::input::GetSavingsPlansUtilizationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5289,30 +6703,30 @@ impl GetSavingsPlansUtilizationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetSavingsPlansUtilizationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSInsightsIndexService.GetSavingsPlansUtilization",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_savings_plans_utilization(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_savings_plans_utilization(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5335,15 +6749,15 @@ impl GetSavingsPlansUtilizationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetSavingsPlansUtilization::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetSavingsPlansUtilization",
             "costexplorer",
         ));
@@ -5352,10 +6766,10 @@ impl GetSavingsPlansUtilizationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5389,6 +6803,7 @@ pub mod get_savings_plans_utilization_details_input {
             self.time_period = Some(input);
             self
         }
+        /// <p>The time period that you want the usage and costs for. The <code>Start</code> date must be within 13 months. The <code>End</code> date must be after the <code>Start</code> date, and before the current date. Future dates can't be used as an <code>End</code> date.</p>
         pub fn set_time_period(
             mut self,
             input: std::option::Option<crate::model::DateInterval>,
@@ -5432,16 +6847,54 @@ pub mod get_savings_plans_utilization_details_input {
             self.filter = Some(input);
             self
         }
+        /// <p>Filters Savings Plans utilization coverage data for active Savings Plans dimensions.  You can filter data with the following dimensions:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>LINKED_ACCOUNT</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SAVINGS_PLAN_ARN</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>REGION</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PAYMENT_OPTION</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>INSTANCE_TYPE_FAMILY</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>
+        /// <code>GetSavingsPlansUtilizationDetails</code> uses the same
+        /// <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a> object
+        /// as the other operations, but only <code>AND</code> is supported among each dimension.</p>
         pub fn set_filter(mut self, input: std::option::Option<crate::model::Expression>) -> Self {
             self.filter = input;
             self
         }
+        /// Appends an item to `data_type`.
+        ///
+        /// To override the contents of this collection use [`set_data_type`](Self::set_data_type).
+        ///
+        /// <p>The data type.</p>
         pub fn data_type(mut self, input: impl Into<crate::model::SavingsPlansDataType>) -> Self {
             let mut v = self.data_type.unwrap_or_default();
             v.push(input.into());
             self.data_type = Some(v);
             self
         }
+        /// <p>The data type.</p>
         pub fn set_data_type(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SavingsPlansDataType>>,
@@ -5454,6 +6907,7 @@ pub mod get_savings_plans_utilization_details_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5463,11 +6917,13 @@ pub mod get_savings_plans_utilization_details_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The number of items to be returned in a response. The default is <code>20</code>, with a minimum value of <code>1</code>.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
         }
         /// <p>The value by which you want to sort the data.</p>
+        ///
         /// <p>The following values are supported for <code>Key</code>:</p>
         /// <ul>
         /// <li>
@@ -5506,11 +6962,54 @@ pub mod get_savings_plans_utilization_details_input {
         /// </p>
         /// </li>
         /// </ul>
+        ///
         /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
         pub fn sort_by(mut self, input: crate::model::SortDefinition) -> Self {
             self.sort_by = Some(input);
             self
         }
+        /// <p>The value by which you want to sort the data.</p>
+        ///
+        /// <p>The following values are supported for <code>Key</code>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>UtilizationPercentage</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TotalCommitment</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>UsedCommitment</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>UnusedCommitment</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NetSavings</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AmortizedRecurringCommitment</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AmortizedUpfrontCommitment</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
         pub fn set_sort_by(
             mut self,
             input: std::option::Option<crate::model::SortDefinition>,
@@ -5523,7 +7022,7 @@ pub mod get_savings_plans_utilization_details_input {
             self,
         ) -> std::result::Result<
             crate::input::GetSavingsPlansUtilizationDetailsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetSavingsPlansUtilizationDetailsInput {
                 time_period: self.time_period,
@@ -5548,16 +7047,16 @@ impl GetSavingsPlansUtilizationDetailsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetSavingsPlansUtilizationDetails,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetSavingsPlansUtilizationDetailsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5565,7 +7064,7 @@ impl GetSavingsPlansUtilizationDetailsInput {
         fn update_http_builder(
             input: &crate::input::GetSavingsPlansUtilizationDetailsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5574,30 +7073,30 @@ impl GetSavingsPlansUtilizationDetailsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetSavingsPlansUtilizationDetailsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSInsightsIndexService.GetSavingsPlansUtilizationDetails",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_savings_plans_utilization_details(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_savings_plans_utilization_details(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5620,15 +7119,15 @@ impl GetSavingsPlansUtilizationDetailsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetSavingsPlansUtilizationDetails::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetSavingsPlansUtilizationDetails",
             "costexplorer",
         ));
@@ -5637,10 +7136,10 @@ impl GetSavingsPlansUtilizationDetailsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5674,6 +7173,7 @@ pub mod get_tags_input {
             self.search_string = Some(input.into());
             self
         }
+        /// <p>The value that you want to search for.</p>
         pub fn set_search_string(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5687,6 +7187,8 @@ pub mod get_tags_input {
             self.time_period = Some(input);
             self
         }
+        /// <p>The start and end dates for retrieving the dimension values. The start date is inclusive,  but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is  
+        /// retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>.</p>
         pub fn set_time_period(
             mut self,
             input: std::option::Option<crate::model::DateInterval>,
@@ -5699,6 +7201,7 @@ pub mod get_tags_input {
             self.tag_key = Some(input.into());
             self
         }
+        /// <p>The key of the tag that you want to return values for.</p>
         pub fn set_tag_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.tag_key = input;
             self
@@ -5762,16 +7265,157 @@ pub mod get_tags_input {
             self.filter = Some(input);
             self
         }
+        /// <p>Use <code>Expression</code> to filter by cost or by usage. There are two patterns: </p>
+        /// <ul>
+        /// <li>
+        /// <p>Simple dimension values - You can set the dimension name and values for the
+        /// filters that you plan to use. For example, you can filter for
+        /// <code>REGION==us-east-1 OR REGION==us-west-1</code>. For
+        /// <code>GetRightsizingRecommendation</code>, the Region is a full name (for
+        /// example, <code>REGION==US East (N. Virginia)</code>. The <code>Expression</code>
+        /// example is as follows:</p>
+        /// <p>
+        /// <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ]
+        /// } }</code>
+        /// </p>
+        /// <p>The list of dimension values are OR'd together to retrieve cost or usage data.
+        /// You can create <code>Expression</code> and <code>DimensionValues</code> objects
+        /// using either <code>with*</code> methods or <code>set*</code> methods in multiple
+        /// lines. </p>
+        /// </li>
+        /// <li>
+        /// <p>Compound dimension values with logical operations - You can use multiple
+        /// <code>Expression</code> types and the logical operators
+        /// <code>AND/OR/NOT</code> to create a list of one or more
+        /// <code>Expression</code> objects. By doing this, you can filter on more
+        /// advanced options. For example, you can filter on <code>((REGION == us-east-1 OR
+        /// REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE !=
+        /// DataTransfer)</code>. The <code>Expression</code> for that is as
+        /// follows:</p>
+        /// <p>
+        /// <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [
+        /// "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values":
+        /// ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values":
+        /// ["DataTransfer"] }}} ] } </code>
+        /// </p>
+        /// <note>
+        /// <p>Because each <code>Expression</code> can have only one operator, the
+        /// service returns an error if more than one is specified. The following
+        /// example shows an <code>Expression</code> object that creates an
+        /// error.</p>
+        /// </note>
+        /// <p>
+        /// <code> { "And": [ ... ], "DimensionValues": { "Dimension": "USAGE_TYPE",
+        /// "Values": [ "DataTransfer" ] } } </code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and
+        /// NOT isn't supported. OR isn't supported between different dimensions, or dimensions
+        /// and tags. NOT operators aren't supported. Dimensions are also limited to
+        /// <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or
+        /// <code>RIGHTSIZING_TYPE</code>.</p>
+        /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is
+        /// supported. AND and OR aren't supported. Dimensions are limited to
+        /// <code>LINKED_ACCOUNT</code>.</p>
+        /// </note>
         pub fn set_filter(mut self, input: std::option::Option<crate::model::Expression>) -> Self {
             self.filter = input;
             self
         }
+        /// Appends an item to `sort_by`.
+        ///
+        /// To override the contents of this collection use [`set_sort_by`](Self::set_sort_by).
+        ///
+        /// <p>The value by which you want to sort the data.</p>
+        /// <p>The key represents cost and usage metrics. The following values are supported:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>BlendedCost</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>UnblendedCost</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AmortizedCost</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NetAmortizedCost</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NetUnblendedCost</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>UsageQuantity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NormalizedUsageAmount</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
+        /// <p>When using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> are not supported.</p>
         pub fn sort_by(mut self, input: impl Into<crate::model::SortDefinition>) -> Self {
             let mut v = self.sort_by.unwrap_or_default();
             v.push(input.into());
             self.sort_by = Some(v);
             self
         }
+        /// <p>The value by which you want to sort the data.</p>
+        /// <p>The key represents cost and usage metrics. The following values are supported:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>BlendedCost</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>UnblendedCost</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AmortizedCost</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NetAmortizedCost</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NetUnblendedCost</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>UsageQuantity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NormalizedUsageAmount</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
+        /// <p>When using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> are not supported.</p>
         pub fn set_sort_by(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SortDefinition>>,
@@ -5785,6 +7429,8 @@ pub mod get_tags_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>This field is only used when SortBy is provided in the request. The maximum number of objects that to be returned for this request. If MaxResults is not specified with SortBy, the request will return 1000 results as the default value for this parameter.</p>
+        /// <p>For <code>GetTags</code>, MaxResults has an upper limit of 1000.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -5794,6 +7440,7 @@ pub mod get_tags_input {
             self.next_page_token = Some(input.into());
             self
         }
+        /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
         pub fn set_next_page_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5804,7 +7451,7 @@ pub mod get_tags_input {
         /// Consumes the builder and constructs a [`GetTagsInput`](crate::input::GetTagsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetTagsInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::GetTagsInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::GetTagsInput {
                 search_string: self.search_string,
@@ -5829,13 +7476,16 @@ impl GetTagsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<crate::operation::GetTags, aws_http::AwsErrorRetryPolicy>,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetTags,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetTagsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5843,7 +7493,7 @@ impl GetTagsInput {
         fn update_http_builder(
             input: &crate::input::GetTagsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5852,29 +7502,31 @@ impl GetTagsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetTagsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSInsightsIndexService.GetTags",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_get_tags(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5897,24 +7549,25 @@ impl GetTagsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(request, crate::operation::GetTags::new())
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "GetTags",
-                "costexplorer",
-            ));
+        let op =
+            aws_smithy_http::operation::Operation::new(request, crate::operation::GetTags::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "GetTags",
+                    "costexplorer",
+                ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5947,6 +7600,8 @@ pub mod get_usage_forecast_input {
             self.time_period = Some(input);
             self
         }
+        /// <p>The start and end dates of the period that you want to retrieve usage forecast for. The start date is inclusive,  but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is  
+        /// retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>. The start date must be equal to or later than the current date to avoid a validation error.</p>
         pub fn set_time_period(
             mut self,
             input: std::option::Option<crate::model::DateInterval>,
@@ -5968,6 +7623,16 @@ pub mod get_usage_forecast_input {
             self.metric = Some(input);
             self
         }
+        /// <p>Which metric Cost Explorer uses to create your forecast.</p>
+        /// <p>Valid values for a <code>GetUsageForecast</code> call are the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>USAGE_QUANTITY</p>
+        /// </li>
+        /// <li>
+        /// <p>NORMALIZED_USAGE_AMOUNT</p>
+        /// </li>
+        /// </ul>
         pub fn set_metric(mut self, input: std::option::Option<crate::model::Metric>) -> Self {
             self.metric = input;
             self
@@ -5978,6 +7643,8 @@ pub mod get_usage_forecast_input {
             self.granularity = Some(input);
             self
         }
+        /// <p>How granular you want the forecast to be. You can get 3 months of <code>DAILY</code> forecasts or 12 months of <code>MONTHLY</code> forecasts.</p>
+        /// <p>The <code>GetUsageForecast</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
         pub fn set_granularity(
             mut self,
             input: std::option::Option<crate::model::Granularity>,
@@ -5986,6 +7653,7 @@ pub mod get_usage_forecast_input {
             self
         }
         /// <p>The filters that you want to use to filter your forecast. The <code>GetUsageForecast</code> API supports filtering by the following dimensions:</p>
+        ///
         /// <ul>
         /// <li>
         /// <p>
@@ -6107,6 +7775,125 @@ pub mod get_usage_forecast_input {
             self.filter = Some(input);
             self
         }
+        /// <p>The filters that you want to use to filter your forecast. The <code>GetUsageForecast</code> API supports filtering by the following dimensions:</p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>AZ</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>INSTANCE_TYPE</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>LINKED_ACCOUNT</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>LINKED_ACCOUNT_NAME</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>OPERATION</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PURCHASE_TYPE</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>REGION</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SERVICE</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>USAGE_TYPE</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>USAGE_TYPE_GROUP</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>RECORD_TYPE</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>OPERATING_SYSTEM</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TENANCY</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SCOPE</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PLATFORM</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SUBSCRIPTION_ID</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>LEGAL_ENTITY_NAME</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DEPLOYMENT_OPTION</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DATABASE_ENGINE</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>INSTANCE_TYPE_FAMILY</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>BILLING_ENTITY</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>RESERVATION_ID</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SAVINGS_PLAN_ARN</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_filter(mut self, input: std::option::Option<crate::model::Expression>) -> Self {
             self.filter = input;
             self
@@ -6118,6 +7905,9 @@ pub mod get_usage_forecast_input {
             self.prediction_interval_level = Some(input);
             self
         }
+        /// <p>Cost Explorer always returns the mean forecast as a single point. You can request a prediction interval around the mean
+        /// by specifying a confidence level. The higher the confidence level, the more confident Cost Explorer is about the actual value
+        /// falling in the prediction interval. Higher confidence levels result in wider prediction intervals.</p>
         pub fn set_prediction_interval_level(mut self, input: std::option::Option<i32>) -> Self {
             self.prediction_interval_level = input;
             self
@@ -6127,7 +7917,7 @@ pub mod get_usage_forecast_input {
             self,
         ) -> std::result::Result<
             crate::input::GetUsageForecastInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetUsageForecastInput {
                 time_period: self.time_period,
@@ -6150,16 +7940,16 @@ impl GetUsageForecastInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetUsageForecast,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetUsageForecastInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6167,7 +7957,7 @@ impl GetUsageForecastInput {
         fn update_http_builder(
             input: &crate::input::GetUsageForecastInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6176,32 +7966,32 @@ impl GetUsageForecastInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetUsageForecastInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSInsightsIndexService.GetUsageForecast",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_usage_forecast(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6224,15 +8014,15 @@ impl GetUsageForecastInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetUsageForecast::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetUsageForecast",
             "costexplorer",
         ));
@@ -6241,10 +8031,10 @@ impl GetUsageForecastInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6276,6 +8066,9 @@ pub mod list_cost_category_definitions_input {
             self.effective_on = Some(input.into());
             self
         }
+        /// <p>
+        /// The date when the Cost Category was effective.
+        /// </p>
         pub fn set_effective_on(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.effective_on = input;
             self
@@ -6287,6 +8080,9 @@ pub mod list_cost_category_definitions_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>
+        /// The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.
+        /// </p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6296,6 +8092,7 @@ pub mod list_cost_category_definitions_input {
             self.max_results = Some(input);
             self
         }
+        /// <p> The number of entries a paginated response contains. </p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -6305,7 +8102,7 @@ pub mod list_cost_category_definitions_input {
             self,
         ) -> std::result::Result<
             crate::input::ListCostCategoryDefinitionsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListCostCategoryDefinitionsInput {
                 effective_on: self.effective_on,
@@ -6327,16 +8124,16 @@ impl ListCostCategoryDefinitionsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListCostCategoryDefinitions,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListCostCategoryDefinitionsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6344,7 +8141,7 @@ impl ListCostCategoryDefinitionsInput {
         fn update_http_builder(
             input: &crate::input::ListCostCategoryDefinitionsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6353,30 +8150,30 @@ impl ListCostCategoryDefinitionsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListCostCategoryDefinitionsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSInsightsIndexService.ListCostCategoryDefinitions",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_cost_category_definitions(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_cost_category_definitions(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6399,15 +8196,15 @@ impl ListCostCategoryDefinitionsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListCostCategoryDefinitions::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListCostCategoryDefinitions",
             "costexplorer",
         ));
@@ -6416,10 +8213,10 @@ impl ListCostCategoryDefinitionsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6448,6 +8245,7 @@ pub mod provide_anomaly_feedback_input {
             self.anomaly_id = Some(input.into());
             self
         }
+        /// <p>A cost anomaly ID. </p>
         pub fn set_anomaly_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.anomaly_id = input;
             self
@@ -6457,6 +8255,7 @@ pub mod provide_anomaly_feedback_input {
             self.feedback = Some(input);
             self
         }
+        /// <p>Describes whether the cost anomaly was a planned activity or you considered it an anomaly. </p>
         pub fn set_feedback(
             mut self,
             input: std::option::Option<crate::model::AnomalyFeedbackType>,
@@ -6469,7 +8268,7 @@ pub mod provide_anomaly_feedback_input {
             self,
         ) -> std::result::Result<
             crate::input::ProvideAnomalyFeedbackInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ProvideAnomalyFeedbackInput {
                 anomaly_id: self.anomaly_id,
@@ -6489,16 +8288,16 @@ impl ProvideAnomalyFeedbackInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ProvideAnomalyFeedback,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ProvideAnomalyFeedbackInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6506,7 +8305,7 @@ impl ProvideAnomalyFeedbackInput {
         fn update_http_builder(
             input: &crate::input::ProvideAnomalyFeedbackInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6515,32 +8314,34 @@ impl ProvideAnomalyFeedbackInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ProvideAnomalyFeedbackInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSInsightsIndexService.ProvideAnomalyFeedback",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_provide_anomaly_feedback(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6563,15 +8364,15 @@ impl ProvideAnomalyFeedbackInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ProvideAnomalyFeedback::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ProvideAnomalyFeedback",
             "costexplorer",
         ));
@@ -6580,10 +8381,10 @@ impl ProvideAnomalyFeedbackInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6612,6 +8413,7 @@ pub mod update_anomaly_monitor_input {
             self.monitor_arn = Some(input.into());
             self
         }
+        /// <p>Cost anomaly monitor Amazon Resource Names (ARNs). </p>
         pub fn set_monitor_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.monitor_arn = input;
             self
@@ -6621,6 +8423,7 @@ pub mod update_anomaly_monitor_input {
             self.monitor_name = Some(input.into());
             self
         }
+        /// <p>The new name for the cost anomaly monitor. </p>
         pub fn set_monitor_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.monitor_name = input;
             self
@@ -6630,7 +8433,7 @@ pub mod update_anomaly_monitor_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateAnomalyMonitorInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateAnomalyMonitorInput {
                 monitor_arn: self.monitor_arn,
@@ -6650,16 +8453,16 @@ impl UpdateAnomalyMonitorInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateAnomalyMonitor,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateAnomalyMonitorInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6667,7 +8470,7 @@ impl UpdateAnomalyMonitorInput {
         fn update_http_builder(
             input: &crate::input::UpdateAnomalyMonitorInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6676,32 +8479,32 @@ impl UpdateAnomalyMonitorInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateAnomalyMonitorInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSInsightsIndexService.UpdateAnomalyMonitor",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_anomaly_monitor(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6724,15 +8527,15 @@ impl UpdateAnomalyMonitorInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateAnomalyMonitor::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateAnomalyMonitor",
             "costexplorer",
         ));
@@ -6741,10 +8544,10 @@ impl UpdateAnomalyMonitorInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6777,6 +8580,7 @@ pub mod update_anomaly_subscription_input {
             self.subscription_arn = Some(input.into());
             self
         }
+        /// <p>A cost anomaly subscription Amazon Resource Name (ARN). </p>
         pub fn set_subscription_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6789,6 +8593,7 @@ pub mod update_anomaly_subscription_input {
             self.threshold = Some(input);
             self
         }
+        /// <p>The update to the threshold value for receiving notifications. </p>
         pub fn set_threshold(mut self, input: std::option::Option<f64>) -> Self {
             self.threshold = input;
             self
@@ -6798,6 +8603,7 @@ pub mod update_anomaly_subscription_input {
             self.frequency = Some(input);
             self
         }
+        /// <p>The update to the frequency value that subscribers receive notifications. </p>
         pub fn set_frequency(
             mut self,
             input: std::option::Option<crate::model::AnomalySubscriptionFrequency>,
@@ -6805,12 +8611,18 @@ pub mod update_anomaly_subscription_input {
             self.frequency = input;
             self
         }
+        /// Appends an item to `monitor_arn_list`.
+        ///
+        /// To override the contents of this collection use [`set_monitor_arn_list`](Self::set_monitor_arn_list).
+        ///
+        /// <p>A list of cost anomaly monitor ARNs. </p>
         pub fn monitor_arn_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.monitor_arn_list.unwrap_or_default();
             v.push(input.into());
             self.monitor_arn_list = Some(v);
             self
         }
+        /// <p>A list of cost anomaly monitor ARNs. </p>
         pub fn set_monitor_arn_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6818,12 +8630,18 @@ pub mod update_anomaly_subscription_input {
             self.monitor_arn_list = input;
             self
         }
+        /// Appends an item to `subscribers`.
+        ///
+        /// To override the contents of this collection use [`set_subscribers`](Self::set_subscribers).
+        ///
+        /// <p>The update to the subscriber list. </p>
         pub fn subscribers(mut self, input: impl Into<crate::model::Subscriber>) -> Self {
             let mut v = self.subscribers.unwrap_or_default();
             v.push(input.into());
             self.subscribers = Some(v);
             self
         }
+        /// <p>The update to the subscriber list. </p>
         pub fn set_subscribers(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Subscriber>>,
@@ -6836,6 +8654,7 @@ pub mod update_anomaly_subscription_input {
             self.subscription_name = Some(input.into());
             self
         }
+        /// <p>The new name of the subscription. </p>
         pub fn set_subscription_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6848,7 +8667,7 @@ pub mod update_anomaly_subscription_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateAnomalySubscriptionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateAnomalySubscriptionInput {
                 subscription_arn: self.subscription_arn,
@@ -6873,16 +8692,16 @@ impl UpdateAnomalySubscriptionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateAnomalySubscription,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateAnomalySubscriptionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6890,7 +8709,7 @@ impl UpdateAnomalySubscriptionInput {
         fn update_http_builder(
             input: &crate::input::UpdateAnomalySubscriptionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6899,32 +8718,34 @@ impl UpdateAnomalySubscriptionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateAnomalySubscriptionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSInsightsIndexService.UpdateAnomalySubscription",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_anomaly_subscription(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6947,15 +8768,15 @@ impl UpdateAnomalySubscriptionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateAnomalySubscription::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateAnomalySubscription",
             "costexplorer",
         ));
@@ -6964,10 +8785,10 @@ impl UpdateAnomalySubscriptionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7000,6 +8821,7 @@ pub mod update_cost_category_definition_input {
             self.cost_category_arn = Some(input.into());
             self
         }
+        /// <p>The unique identifier for your Cost Category.</p>
         pub fn set_cost_category_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7012,6 +8834,7 @@ pub mod update_cost_category_definition_input {
             self.rule_version = Some(input);
             self
         }
+        /// <p>The rule schema version in this particular Cost Category.</p>
         pub fn set_rule_version(
             mut self,
             input: std::option::Option<crate::model::CostCategoryRuleVersion>,
@@ -7019,12 +8842,20 @@ pub mod update_cost_category_definition_input {
             self.rule_version = input;
             self
         }
+        /// Appends an item to `rules`.
+        ///
+        /// To override the contents of this collection use [`set_rules`](Self::set_rules).
+        ///
+        /// <p>The <code>Expression</code> object used to categorize costs. For more information, see
+        /// <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule </a>. </p>
         pub fn rules(mut self, input: impl Into<crate::model::CostCategoryRule>) -> Self {
             let mut v = self.rules.unwrap_or_default();
             v.push(input.into());
             self.rules = Some(v);
             self
         }
+        /// <p>The <code>Expression</code> object used to categorize costs. For more information, see
+        /// <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule </a>. </p>
         pub fn set_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CostCategoryRule>>,
@@ -7038,6 +8869,8 @@ pub mod update_cost_category_definition_input {
             self.default_value = Some(input.into());
             self
         }
+        /// <p>The
+        /// default value for the cost category.</p>
         pub fn set_default_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7045,6 +8878,13 @@ pub mod update_cost_category_definition_input {
             self.default_value = input;
             self
         }
+        /// Appends an item to `split_charge_rules`.
+        ///
+        /// To override the contents of this collection use [`set_split_charge_rules`](Self::set_split_charge_rules).
+        ///
+        /// <p>
+        /// The split charge rules used to allocate your charges between your Cost Category values.
+        /// </p>
         pub fn split_charge_rules(
             mut self,
             input: impl Into<crate::model::CostCategorySplitChargeRule>,
@@ -7054,6 +8894,9 @@ pub mod update_cost_category_definition_input {
             self.split_charge_rules = Some(v);
             self
         }
+        /// <p>
+        /// The split charge rules used to allocate your charges between your Cost Category values.
+        /// </p>
         pub fn set_split_charge_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CostCategorySplitChargeRule>>,
@@ -7066,7 +8909,7 @@ pub mod update_cost_category_definition_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateCostCategoryDefinitionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateCostCategoryDefinitionInput {
                 cost_category_arn: self.cost_category_arn,
@@ -7090,16 +8933,16 @@ impl UpdateCostCategoryDefinitionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateCostCategoryDefinition,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateCostCategoryDefinitionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7107,7 +8950,7 @@ impl UpdateCostCategoryDefinitionInput {
         fn update_http_builder(
             input: &crate::input::UpdateCostCategoryDefinitionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7116,30 +8959,30 @@ impl UpdateCostCategoryDefinitionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateCostCategoryDefinitionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-amz-json-1.1",
             );
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("x-amz-target"),
                 "AWSInsightsIndexService.UpdateCostCategoryDefinition",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_update_cost_category_definition(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_update_cost_category_definition(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7162,15 +9005,15 @@ impl UpdateCostCategoryDefinitionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateCostCategoryDefinition::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateCostCategoryDefinition",
             "costexplorer",
         ));
@@ -7179,10 +9022,10 @@ impl UpdateCostCategoryDefinitionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7196,6 +9039,7 @@ impl UpdateCostCategoryDefinitionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateCostCategoryDefinitionInput {
@@ -7227,6 +9071,7 @@ impl std::fmt::Debug for UpdateCostCategoryDefinitionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAnomalySubscriptionInput {
@@ -7256,6 +9101,7 @@ impl std::fmt::Debug for UpdateAnomalySubscriptionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAnomalyMonitorInput {
@@ -7273,6 +9119,7 @@ impl std::fmt::Debug for UpdateAnomalyMonitorInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProvideAnomalyFeedbackInput {
@@ -7290,6 +9137,7 @@ impl std::fmt::Debug for ProvideAnomalyFeedbackInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCostCategoryDefinitionsInput {
@@ -7314,6 +9162,7 @@ impl std::fmt::Debug for ListCostCategoryDefinitionsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetUsageForecastInput {
@@ -7335,6 +9184,7 @@ pub struct GetUsageForecastInput {
     /// <p>The <code>GetUsageForecast</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
     pub granularity: std::option::Option<crate::model::Granularity>,
     /// <p>The filters that you want to use to filter your forecast. The <code>GetUsageForecast</code> API supports filtering by the following dimensions:</p>
+    ///
     /// <ul>
     /// <li>
     /// <p>
@@ -7470,6 +9320,7 @@ impl std::fmt::Debug for GetUsageForecastInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTagsInput {
@@ -7598,6 +9449,7 @@ impl std::fmt::Debug for GetTagsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSavingsPlansUtilizationDetailsInput {
@@ -7643,6 +9495,7 @@ pub struct GetSavingsPlansUtilizationDetailsInput {
     /// <p>The number of items to be returned in a response. The default is <code>20</code>, with a minimum value of <code>1</code>.</p>
     pub max_results: std::option::Option<i32>,
     /// <p>The value by which you want to sort the data.</p>
+    ///
     /// <p>The following values are supported for <code>Key</code>:</p>
     /// <ul>
     /// <li>
@@ -7681,6 +9534,7 @@ pub struct GetSavingsPlansUtilizationDetailsInput {
     /// </p>
     /// </li>
     /// </ul>
+    ///
     /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
     pub sort_by: std::option::Option<crate::model::SortDefinition>,
 }
@@ -7697,6 +9551,7 @@ impl std::fmt::Debug for GetSavingsPlansUtilizationDetailsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSavingsPlansUtilizationInput {
@@ -7772,6 +9627,7 @@ pub struct GetSavingsPlansUtilizationInput {
     /// </p>
     /// </li>
     /// </ul>
+    ///
     /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
     pub sort_by: std::option::Option<crate::model::SortDefinition>,
 }
@@ -7786,6 +9642,7 @@ impl std::fmt::Debug for GetSavingsPlansUtilizationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSavingsPlansPurchaseRecommendationInput {
@@ -7832,6 +9689,7 @@ impl std::fmt::Debug for GetSavingsPlansPurchaseRecommendationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSavingsPlansCoverageInput {
@@ -7916,6 +9774,7 @@ pub struct GetSavingsPlansCoverageInput {
     /// </p>
     /// </li>
     /// </ul>
+    ///
     /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
     pub sort_by: std::option::Option<crate::model::SortDefinition>,
 }
@@ -7934,6 +9793,7 @@ impl std::fmt::Debug for GetSavingsPlansCoverageInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRightsizingRecommendationInput {
@@ -8019,6 +9879,7 @@ impl std::fmt::Debug for GetRightsizingRecommendationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetReservationUtilizationInput {
@@ -8075,6 +9936,7 @@ pub struct GetReservationUtilizationInput {
     /// only one level deep. If there are multiple values for a dimension, they are OR'd together.</p>
     pub filter: std::option::Option<crate::model::Expression>,
     /// <p>The value by which you want to sort the data.</p>
+    ///
     /// <p>The following values are supported for <code>Key</code>:</p>
     /// <ul>
     /// <li>
@@ -8163,6 +10025,7 @@ pub struct GetReservationUtilizationInput {
     /// </p>
     /// </li>
     /// </ul>
+    ///
     /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
     pub sort_by: std::option::Option<crate::model::SortDefinition>,
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
@@ -8184,6 +10047,7 @@ impl std::fmt::Debug for GetReservationUtilizationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetReservationPurchaseRecommendationInput {
@@ -8432,6 +10296,7 @@ pub struct GetReservationCoverageInput {
     /// </p>
     /// </li>
     /// </ul>
+    ///
     /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
     pub sort_by: std::option::Option<crate::model::SortDefinition>,
     /// <p>The maximum number of objects that you returned for this request. If more objects are available, in the response, Amazon Web Services provides a NextPageToken value that you can use in a subsequent call to get the next batch of objects.</p>
@@ -8452,6 +10317,7 @@ impl std::fmt::Debug for GetReservationCoverageInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDimensionValuesInput {
@@ -8465,6 +10331,7 @@ pub struct GetDimensionValuesInput {
     pub time_period: std::option::Option<crate::model::DateInterval>,
     /// <p>The name of the dimension. Each <code>Dimension</code> is available for a different <code>Context</code>.
     /// For more information, see <code>Context</code>.
+    ///
     /// </p>
     pub dimension: std::option::Option<crate::model::Dimension>,
     /// <p>The context for the call to <code>GetDimensionValues</code>. This can be <code>RESERVATIONS</code> or <code>COST_AND_USAGE</code>.
@@ -8701,6 +10568,7 @@ impl std::fmt::Debug for GetDimensionValuesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCostForecastInput {
@@ -8732,6 +10600,7 @@ pub struct GetCostForecastInput {
     /// <p>The <code>GetCostForecast</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
     pub granularity: std::option::Option<crate::model::Granularity>,
     /// <p>The filters that you want to use to filter your forecast. The <code>GetCostForecast</code> API supports filtering by the following dimensions:</p>
+    ///
     /// <ul>
     /// <li>
     /// <p>
@@ -8867,6 +10736,7 @@ impl std::fmt::Debug for GetCostForecastInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCostCategoriesInput {
@@ -8996,6 +10866,7 @@ impl std::fmt::Debug for GetCostCategoriesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCostAndUsageWithResourcesInput {
@@ -9050,6 +10921,7 @@ impl std::fmt::Debug for GetCostAndUsageWithResourcesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCostAndUsageInput {
@@ -9106,6 +10978,7 @@ impl std::fmt::Debug for GetCostAndUsageInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAnomalySubscriptionsInput {
@@ -9130,6 +11003,7 @@ impl std::fmt::Debug for GetAnomalySubscriptionsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAnomalyMonitorsInput {
@@ -9151,6 +11025,7 @@ impl std::fmt::Debug for GetAnomalyMonitorsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAnomaliesInput {
@@ -9185,6 +11060,7 @@ impl std::fmt::Debug for GetAnomaliesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCostCategoryDefinitionInput {
@@ -9206,6 +11082,7 @@ impl std::fmt::Debug for DescribeCostCategoryDefinitionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCostCategoryDefinitionInput {
@@ -9222,6 +11099,7 @@ impl std::fmt::Debug for DeleteCostCategoryDefinitionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAnomalySubscriptionInput {
@@ -9236,6 +11114,7 @@ impl std::fmt::Debug for DeleteAnomalySubscriptionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAnomalyMonitorInput {
@@ -9250,6 +11129,7 @@ impl std::fmt::Debug for DeleteAnomalyMonitorInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCostCategoryDefinitionInput {
@@ -9281,6 +11161,7 @@ impl std::fmt::Debug for CreateCostCategoryDefinitionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAnomalySubscriptionInput {
@@ -9295,6 +11176,7 @@ impl std::fmt::Debug for CreateAnomalySubscriptionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAnomalyMonitorInput {

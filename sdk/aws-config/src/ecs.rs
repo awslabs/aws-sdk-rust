@@ -51,12 +51,12 @@ use std::io::ErrorKind;
 use std::net::{IpAddr, ToSocketAddrs};
 use std::task::{Context, Poll};
 
+use aws_smithy_client::erase::boxclone::{BoxCloneService, BoxFuture};
+use aws_smithy_http::endpoint::Endpoint;
 use aws_types::credentials;
 use aws_types::credentials::{future, CredentialsError, ProvideCredentials};
 use http::uri::{InvalidUri, Scheme};
 use http::{HeaderValue, Uri};
-use smithy_client::erase::boxclone::{BoxCloneService, BoxFuture};
-use smithy_http::endpoint::Endpoint;
 use tower::{Service, ServiceExt};
 
 use crate::http_provider::HttpCredentialProvider;
@@ -95,17 +95,20 @@ impl EcsCredentialsProvider {
         let auth = match self.env.get(ENV_AUTHORIZATION).ok() {
             Some(auth) => Some(HeaderValue::from_str(&auth).map_err(|err| {
                 tracing::warn!(token = %auth, "invalid auth token");
-                CredentialsError::InvalidConfiguration(
-                    EcsConfigurationErr::InvalidAuthToken { err, value: auth }.into(),
-                )
+                CredentialsError::invalid_configuration(EcsConfigurationErr::InvalidAuthToken {
+                    err,
+                    value: auth,
+                })
             })?),
             None => None,
         };
         match self.provider().await {
-            Provider::NotConfigured => Err(CredentialsError::CredentialsNotLoaded),
-            Provider::InvalidConfiguration(err) => Err(CredentialsError::InvalidConfiguration(
-                format!("{}", err).into(),
-            )),
+            Provider::NotConfigured => {
+                Err(CredentialsError::not_loaded("ECS provider not configured"))
+            }
+            Provider::InvalidConfiguration(err) => {
+                Err(CredentialsError::invalid_configuration(format!("{}", err)))
+            }
             Provider::Configured(provider) => provider.credentials(auth).await,
         }
     }
@@ -425,11 +428,11 @@ fn tokio_dns() -> Option<DnsService> {
 
 #[cfg(test)]
 mod test {
+    use aws_smithy_client::erase::boxclone::BoxCloneService;
+    use aws_smithy_client::never::NeverService;
     use futures_util::FutureExt;
     use http::Uri;
     use serde::Deserialize;
-    use smithy_client::erase::boxclone::BoxCloneService;
-    use smithy_client::never::NeverService;
     use tracing_test::traced_test;
 
     use crate::ecs::{
@@ -444,9 +447,9 @@ mod test {
     use aws_types::os_shim_internal::Env;
     use aws_types::Credentials;
 
+    use aws_smithy_client::test_connection::TestConnection;
+    use aws_smithy_http::body::SdkBody;
     use http::header::AUTHORIZATION;
-    use smithy_client::test_connection::TestConnection;
-    use smithy_http::body::SdkBody;
     use std::collections::HashMap;
     use std::error::Error;
     use std::future::Ready;
@@ -459,7 +462,7 @@ mod test {
     fn provider(env: Env, connector: DynConnector) -> EcsCredentialsProvider {
         let provider_config = ProviderConfig::empty()
             .with_env(env)
-            .with_connector(connector);
+            .with_http_connector(connector);
         Builder::default().configure(&provider_config).build()
     }
 

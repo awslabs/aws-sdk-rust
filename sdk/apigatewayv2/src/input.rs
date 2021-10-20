@@ -31,6 +31,7 @@ pub mod create_api_input {
             self.api_key_selection_expression = Some(input.into());
             self
         }
+        /// <p>An API key selection expression. Supported only for WebSocket APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">API Key Selection Expressions</a>.</p>
         pub fn set_api_key_selection_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -43,6 +44,7 @@ pub mod create_api_input {
             self.cors_configuration = Some(input);
             self
         }
+        /// <p>A CORS configuration. Supported only for HTTP APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-cors.html">Configuring CORS</a> for more information.</p>
         pub fn set_cors_configuration(
             mut self,
             input: std::option::Option<crate::model::Cors>,
@@ -55,6 +57,7 @@ pub mod create_api_input {
             self.credentials_arn = Some(input.into());
             self
         }
+        /// <p>This property is part of quick create. It specifies the credentials required for the integration, if any. For a Lambda integration, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services, specify null. Currently, this property is not used for HTTP integrations. Supported only for HTTP APIs.</p>
         pub fn set_credentials_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -67,6 +70,7 @@ pub mod create_api_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the API.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -76,6 +80,7 @@ pub mod create_api_input {
             self.disable_schema_validation = Some(input);
             self
         }
+        /// <p>Avoid validating models when creating a deployment. Supported only for WebSocket APIs.</p>
         pub fn set_disable_schema_validation(mut self, input: std::option::Option<bool>) -> Self {
             self.disable_schema_validation = input;
             self
@@ -85,6 +90,7 @@ pub mod create_api_input {
             self.disable_execute_api_endpoint = Some(input);
             self
         }
+        /// <p>Specifies whether clients can invoke your API by using the default execute-api endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
         pub fn set_disable_execute_api_endpoint(
             mut self,
             input: std::option::Option<bool>,
@@ -97,6 +103,7 @@ pub mod create_api_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the API.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -106,6 +113,7 @@ pub mod create_api_input {
             self.protocol_type = Some(input);
             self
         }
+        /// <p>The API protocol.</p>
         pub fn set_protocol_type(
             mut self,
             input: std::option::Option<crate::model::ProtocolType>,
@@ -118,6 +126,7 @@ pub mod create_api_input {
             self.route_key = Some(input.into());
             self
         }
+        /// <p>This property is part of quick create. If you don't specify a routeKey, a default route of $default is created. The $default route acts as a catch-all for any request made to your API, for a particular stage. The $default route key can't be modified. You can add routes after creating the API, and you can update the route keys of additional routes. Supported only for HTTP APIs.</p>
         pub fn set_route_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.route_key = input;
             self
@@ -127,6 +136,7 @@ pub mod create_api_input {
             self.route_selection_expression = Some(input.into());
             self
         }
+        /// <p>The route selection expression for the API. For HTTP APIs, the routeSelectionExpression must be ${request.method} ${request.path}. If not provided, this will be the default for HTTP APIs. This property is required for WebSocket APIs.</p>
         pub fn set_route_selection_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -134,6 +144,11 @@ pub mod create_api_input {
             self.route_selection_expression = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -144,6 +159,7 @@ pub mod create_api_input {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -158,6 +174,7 @@ pub mod create_api_input {
             self.target = Some(input.into());
             self
         }
+        /// <p>This property is part of quick create. Quick create produces an API with an integration, a default catch-all route, and a default stage which is configured to automatically deploy changes. For HTTP integrations, specify a fully qualified URL. For Lambda integrations, specify a function ARN. The type of the integration will be HTTP_PROXY or AWS_PROXY, respectively. Supported only for HTTP APIs.</p>
         pub fn set_target(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.target = input;
             self
@@ -167,6 +184,7 @@ pub mod create_api_input {
             self.version = Some(input.into());
             self
         }
+        /// <p>A version identifier for the API.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -174,7 +192,7 @@ pub mod create_api_input {
         /// Consumes the builder and constructs a [`CreateApiInput`](crate::input::CreateApiInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreateApiInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::CreateApiInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::CreateApiInput {
                 api_key_selection_expression: self.api_key_selection_expression,
@@ -205,16 +223,16 @@ impl CreateApiInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateApi,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateApiInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/v2/apis").expect("formatting should succeed");
             Ok(())
         }
@@ -222,7 +240,7 @@ impl CreateApiInput {
         fn update_http_builder(
             input: &crate::input::CreateApiInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -231,24 +249,26 @@ impl CreateApiInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateApiInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_api(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -271,13 +291,13 @@ impl CreateApiInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
         let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreateApi::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
+            aws_smithy_http::operation::Operation::new(request, crate::operation::CreateApi::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "CreateApi",
                     "apigatewayv2",
                 ));
@@ -286,10 +306,10 @@ impl CreateApiInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -320,6 +340,7 @@ pub mod create_api_mapping_input {
             self.api_id = Some(input.into());
             self
         }
+        /// <p>The API identifier.</p>
         pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.api_id = input;
             self
@@ -329,6 +350,7 @@ pub mod create_api_mapping_input {
             self.api_mapping_key = Some(input.into());
             self
         }
+        /// The API mapping key.
         pub fn set_api_mapping_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -341,6 +363,7 @@ pub mod create_api_mapping_input {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The domain name.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -350,6 +373,7 @@ pub mod create_api_mapping_input {
             self.stage = Some(input.into());
             self
         }
+        /// <p>The API stage.</p>
         pub fn set_stage(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stage = input;
             self
@@ -359,7 +383,7 @@ pub mod create_api_mapping_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateApiMappingInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateApiMappingInput {
                 api_id: self.api_id,
@@ -381,27 +405,27 @@ impl CreateApiMappingInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateApiMapping,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateApiMappingInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_1 = &_input.domain_name;
             let input_1 =
                 input_1
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
                         details: "cannot be empty or unset",
                     })?;
-            let domain_name = smithy_http::label::fmt_string(input_1, false);
+            let domain_name = aws_smithy_http::label::fmt_string(input_1, false);
             if domain_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "domain_name",
                     details: "cannot be empty or unset",
                 });
@@ -418,7 +442,7 @@ impl CreateApiMappingInput {
         fn update_http_builder(
             input: &crate::input::CreateApiMappingInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -427,27 +451,27 @@ impl CreateApiMappingInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateApiMappingInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_api_mapping(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -470,15 +494,15 @@ impl CreateApiMappingInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateApiMapping::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateApiMapping",
             "apigatewayv2",
         ));
@@ -487,10 +511,10 @@ impl CreateApiMappingInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -528,6 +552,7 @@ pub mod create_authorizer_input {
             self.api_id = Some(input.into());
             self
         }
+        /// <p>The API identifier.</p>
         pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.api_id = input;
             self
@@ -537,6 +562,7 @@ pub mod create_authorizer_input {
             self.authorizer_credentials_arn = Some(input.into());
             self
         }
+        /// <p>Specifies the required credentials as an IAM role for API Gateway to invoke the authorizer. To specify an IAM role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based permissions on the Lambda function, don't specify this parameter. Supported only for REQUEST authorizers.</p>
         pub fn set_authorizer_credentials_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -552,6 +578,7 @@ pub mod create_authorizer_input {
             self.authorizer_payload_format_version = Some(input.into());
             self
         }
+        /// <p>Specifies the format of the payload sent to an HTTP API Lambda authorizer. Required for HTTP API Lambda authorizers. Supported values are 1.0 and 2.0. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a>.</p>
         pub fn set_authorizer_payload_format_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -564,6 +591,7 @@ pub mod create_authorizer_input {
             self.authorizer_result_ttl_in_seconds = Some(input);
             self
         }
+        /// <p>The time to live (TTL) for cached authorizer results, in seconds. If it equals 0, authorization caching is disabled. If it is greater than 0, API Gateway caches authorizer responses. The maximum value is 3600, or 1 hour. Supported only for HTTP API Lambda authorizers.</p>
         pub fn set_authorizer_result_ttl_in_seconds(
             mut self,
             input: std::option::Option<i32>,
@@ -576,6 +604,7 @@ pub mod create_authorizer_input {
             self.authorizer_type = Some(input);
             self
         }
+        /// <p>The authorizer type. Specify REQUEST for a Lambda function using incoming request parameters. Specify JWT to use JSON Web Tokens (supported only for HTTP APIs).</p>
         pub fn set_authorizer_type(
             mut self,
             input: std::option::Option<crate::model::AuthorizerType>,
@@ -589,6 +618,8 @@ pub mod create_authorizer_input {
             self.authorizer_uri = Some(input.into());
             self
         }
+        /// <p>The authorizer's Uniform Resource Identifier (URI). For REQUEST authorizers, this must be a well-formed Lambda function URI, for example, arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:<replaceable>{account_id}</replaceable>:function:<replaceable>{lambda_function_name}</replaceable>/invocations. In general, the URI has this form: arn:aws:apigateway:<replaceable>{region}</replaceable>:lambda:path/<replaceable>{service_api}</replaceable>
+        /// , where <replaceable></replaceable>{region} is the same as the region hosting the Lambda function, path indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial /. For Lambda functions, this is usually of the form /2015-03-31/functions/[FunctionARN]/invocations. Supported only for REQUEST authorizers.</p>
         pub fn set_authorizer_uri(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -601,16 +632,23 @@ pub mod create_authorizer_input {
             self.enable_simple_responses = Some(input);
             self
         }
+        /// <p>Specifies whether a Lambda authorizer returns a response in a simple format. By default, a Lambda authorizer must return an IAM policy. If enabled, the Lambda authorizer can return a boolean value instead of an IAM policy. Supported only for HTTP APIs. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a></p>
         pub fn set_enable_simple_responses(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_simple_responses = input;
             self
         }
+        /// Appends an item to `identity_source`.
+        ///
+        /// To override the contents of this collection use [`set_identity_source`](Self::set_identity_source).
+        ///
+        /// <p>The identity source for which authorization is requested.</p> <p>For a REQUEST authorizer, this is optional. The value is a set of one or more mapping expressions of the specified request parameters. The identity source can be headers, query string parameters, stage variables, and context parameters. For example, if an Auth header and a Name query string parameter are defined as identity sources, this value is route.request.header.Auth, route.request.querystring.Name for WebSocket APIs. For HTTP APIs, use selection expressions prefixed with $, for example, $request.header.Auth, $request.querystring.Name. These parameters are used to perform runtime validation for Lambda-based authorizers by verifying all of the identity-related request parameters are present in the request, not null, and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function. Otherwise, it returns a 401 Unauthorized response without calling the Lambda function. For HTTP APIs, identity sources are also used as the cache key when caching is enabled. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a>.</p> <p>For JWT, a single entry that specifies where to extract the JSON Web Token (JWT) from inbound requests. Currently only header-based and query parameter-based selections are supported, for example $request.header.Authorization.</p>
         pub fn identity_source(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.identity_source.unwrap_or_default();
             v.push(input.into());
             self.identity_source = Some(v);
             self
         }
+        /// <p>The identity source for which authorization is requested.</p> <p>For a REQUEST authorizer, this is optional. The value is a set of one or more mapping expressions of the specified request parameters. The identity source can be headers, query string parameters, stage variables, and context parameters. For example, if an Auth header and a Name query string parameter are defined as identity sources, this value is route.request.header.Auth, route.request.querystring.Name for WebSocket APIs. For HTTP APIs, use selection expressions prefixed with $, for example, $request.header.Auth, $request.querystring.Name. These parameters are used to perform runtime validation for Lambda-based authorizers by verifying all of the identity-related request parameters are present in the request, not null, and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function. Otherwise, it returns a 401 Unauthorized response without calling the Lambda function. For HTTP APIs, identity sources are also used as the cache key when caching is enabled. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a>.</p> <p>For JWT, a single entry that specifies where to extract the JSON Web Token (JWT) from inbound requests. Currently only header-based and query parameter-based selections are supported, for example $request.header.Authorization.</p>
         pub fn set_identity_source(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -626,6 +664,7 @@ pub mod create_authorizer_input {
             self.identity_validation_expression = Some(input.into());
             self
         }
+        /// <p>This parameter is not used.</p>
         pub fn set_identity_validation_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -638,6 +677,7 @@ pub mod create_authorizer_input {
             self.jwt_configuration = Some(input);
             self
         }
+        /// <p>Represents the configuration of a JWT authorizer. Required for the JWT authorizer type. Supported only for HTTP APIs.</p>
         pub fn set_jwt_configuration(
             mut self,
             input: std::option::Option<crate::model::JwtConfiguration>,
@@ -650,6 +690,7 @@ pub mod create_authorizer_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the authorizer.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -659,7 +700,7 @@ pub mod create_authorizer_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateAuthorizerInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateAuthorizerInput {
                 api_id: self.api_id,
@@ -690,27 +731,27 @@ impl CreateAuthorizerInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateAuthorizer,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateAuthorizerInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_2 = &_input.api_id;
             let input_2 =
                 input_2
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "api_id",
                         details: "cannot be empty or unset",
                     })?;
-            let api_id = smithy_http::label::fmt_string(input_2, false);
+            let api_id = aws_smithy_http::label::fmt_string(input_2, false);
             if api_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "api_id",
                     details: "cannot be empty or unset",
                 });
@@ -723,7 +764,7 @@ impl CreateAuthorizerInput {
         fn update_http_builder(
             input: &crate::input::CreateAuthorizerInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -732,27 +773,27 @@ impl CreateAuthorizerInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateAuthorizerInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_authorizer(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -775,15 +816,15 @@ impl CreateAuthorizerInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateAuthorizer::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateAuthorizer",
             "apigatewayv2",
         ));
@@ -792,10 +833,10 @@ impl CreateAuthorizerInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -825,6 +866,7 @@ pub mod create_deployment_input {
             self.api_id = Some(input.into());
             self
         }
+        /// <p>The API identifier.</p>
         pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.api_id = input;
             self
@@ -834,6 +876,7 @@ pub mod create_deployment_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description for the deployment resource.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -843,6 +886,7 @@ pub mod create_deployment_input {
             self.stage_name = Some(input.into());
             self
         }
+        /// <p>The name of the Stage resource for the Deployment resource to create.</p>
         pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stage_name = input;
             self
@@ -852,7 +896,7 @@ pub mod create_deployment_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateDeploymentInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateDeploymentInput {
                 api_id: self.api_id,
@@ -873,27 +917,27 @@ impl CreateDeploymentInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateDeployment,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateDeploymentInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_3 = &_input.api_id;
             let input_3 =
                 input_3
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "api_id",
                         details: "cannot be empty or unset",
                     })?;
-            let api_id = smithy_http::label::fmt_string(input_3, false);
+            let api_id = aws_smithy_http::label::fmt_string(input_3, false);
             if api_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "api_id",
                     details: "cannot be empty or unset",
                 });
@@ -906,7 +950,7 @@ impl CreateDeploymentInput {
         fn update_http_builder(
             input: &crate::input::CreateDeploymentInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -915,27 +959,27 @@ impl CreateDeploymentInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateDeploymentInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_deployment(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -958,15 +1002,15 @@ impl CreateDeploymentInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateDeployment::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateDeployment",
             "apigatewayv2",
         ));
@@ -975,10 +1019,10 @@ impl CreateDeploymentInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1013,10 +1057,16 @@ pub mod create_domain_name_input {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The domain name.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
         }
+        /// Appends an item to `domain_name_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_domain_name_configurations`](Self::set_domain_name_configurations).
+        ///
+        /// <p>The domain name configurations.</p>
         pub fn domain_name_configurations(
             mut self,
             input: impl Into<crate::model::DomainNameConfiguration>,
@@ -1026,6 +1076,7 @@ pub mod create_domain_name_input {
             self.domain_name_configurations = Some(v);
             self
         }
+        /// <p>The domain name configurations.</p>
         pub fn set_domain_name_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DomainNameConfiguration>>,
@@ -1041,6 +1092,7 @@ pub mod create_domain_name_input {
             self.mutual_tls_authentication = Some(input);
             self
         }
+        /// <p>The mutual TLS authentication configuration for a custom domain name.</p>
         pub fn set_mutual_tls_authentication(
             mut self,
             input: std::option::Option<crate::model::MutualTlsAuthenticationInput>,
@@ -1048,6 +1100,11 @@ pub mod create_domain_name_input {
             self.mutual_tls_authentication = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The collection of tags associated with a domain name.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1058,6 +1115,7 @@ pub mod create_domain_name_input {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The collection of tags associated with a domain name.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1072,7 +1130,7 @@ pub mod create_domain_name_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateDomainNameInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateDomainNameInput {
                 domain_name: self.domain_name,
@@ -1094,16 +1152,16 @@ impl CreateDomainNameInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateDomainName,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateDomainNameInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/v2/domainnames").expect("formatting should succeed");
             Ok(())
         }
@@ -1111,7 +1169,7 @@ impl CreateDomainNameInput {
         fn update_http_builder(
             input: &crate::input::CreateDomainNameInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1120,27 +1178,27 @@ impl CreateDomainNameInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateDomainNameInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_domain_name(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1163,15 +1221,15 @@ impl CreateDomainNameInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateDomainName::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateDomainName",
             "apigatewayv2",
         ));
@@ -1180,10 +1238,10 @@ impl CreateDomainNameInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1238,6 +1296,7 @@ pub mod create_integration_input {
             self.api_id = Some(input.into());
             self
         }
+        /// <p>The API identifier.</p>
         pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.api_id = input;
             self
@@ -1247,6 +1306,7 @@ pub mod create_integration_input {
             self.connection_id = Some(input.into());
             self
         }
+        /// <p>The ID of the VPC link for a private integration. Supported only for HTTP APIs.</p>
         pub fn set_connection_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1259,6 +1319,7 @@ pub mod create_integration_input {
             self.connection_type = Some(input);
             self
         }
+        /// <p>The type of the network connection to the integration endpoint. Specify INTERNET for connections through the public routable internet or VPC_LINK for private connections between API Gateway and resources in a VPC. The default value is INTERNET.</p>
         pub fn set_connection_type(
             mut self,
             input: std::option::Option<crate::model::ConnectionType>,
@@ -1274,6 +1335,7 @@ pub mod create_integration_input {
             self.content_handling_strategy = Some(input);
             self
         }
+        /// <p>Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p> <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p> <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p> <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
         pub fn set_content_handling_strategy(
             mut self,
             input: std::option::Option<crate::model::ContentHandlingStrategy>,
@@ -1286,6 +1348,7 @@ pub mod create_integration_input {
             self.credentials_arn = Some(input.into());
             self
         }
+        /// <p>Specifies the credentials required for the integration, if any. For AWS integrations, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify the string arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services, specify null.</p>
         pub fn set_credentials_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1298,6 +1361,7 @@ pub mod create_integration_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the integration.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -1307,6 +1371,7 @@ pub mod create_integration_input {
             self.integration_method = Some(input.into());
             self
         }
+        /// <p>Specifies the integration's HTTP method type.</p>
         pub fn set_integration_method(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1319,6 +1384,7 @@ pub mod create_integration_input {
             self.integration_subtype = Some(input.into());
             self
         }
+        /// <p>Supported only for HTTP API AWS_PROXY integrations. Specifies the AWS service action to invoke. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services-reference.html">Integration subtype reference</a>.</p>
         pub fn set_integration_subtype(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1331,6 +1397,7 @@ pub mod create_integration_input {
             self.integration_type = Some(input);
             self
         }
+        /// <p>The integration type of an integration. One of the following:</p> <p>AWS: for integrating the route or method request with an AWS service action, including the Lambda function-invoking action. With the Lambda function-invoking action, this is referred to as the Lambda custom integration. With any other AWS service action, this is known as AWS integration. Supported only for WebSocket APIs.</p> <p>AWS_PROXY: for integrating the route or method request with a Lambda function or other AWS service action. This integration is also referred to as a Lambda proxy integration.</p> <p>HTTP: for integrating the route or method request with an HTTP endpoint. This integration is also referred to as the HTTP custom integration. Supported only for WebSocket APIs.</p> <p>HTTP_PROXY: for integrating the route or method request with an HTTP endpoint, with the client request passed through as-is. This is also referred to as HTTP proxy integration. For HTTP API private integrations, use an HTTP_PROXY integration.</p> <p>MOCK: for integrating the route or method request with API Gateway as a "loopback" endpoint without invoking any backend. Supported only for WebSocket APIs.</p>
         pub fn set_integration_type(
             mut self,
             input: std::option::Option<crate::model::IntegrationType>,
@@ -1343,6 +1410,7 @@ pub mod create_integration_input {
             self.integration_uri = Some(input.into());
             self
         }
+        /// <p>For a Lambda integration, specify the URI of a Lambda function.</p> <p>For an HTTP integration, specify a fully-qualified URL.</p> <p>For an HTTP API private integration, specify the ARN of an Application Load Balancer listener, Network Load Balancer listener, or AWS Cloud Map service. If you specify the ARN of an AWS Cloud Map service, API Gateway uses DiscoverInstances to identify resources. You can use query parameters to target specific resources. To learn more, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a>. For private integrations, all resources must be owned by the same AWS account.</p>
         pub fn set_integration_uri(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1355,6 +1423,7 @@ pub mod create_integration_input {
             self.passthrough_behavior = Some(input);
             self
         }
+        /// <p>Specifies the pass-through behavior for incoming requests based on the Content-Type header in the request, and the available mapping templates specified as the requestTemplates property on the Integration resource. There are three valid values: WHEN_NO_MATCH, WHEN_NO_TEMPLATES, and NEVER. Supported only for WebSocket APIs.</p> <p>WHEN_NO_MATCH passes the request body for unmapped content types through to the integration backend without transformation.</p> <p>NEVER rejects unmapped content types with an HTTP 415 Unsupported Media Type response.</p> <p>WHEN_NO_TEMPLATES allows pass-through when the integration has no content types mapped to templates. However, if there is at least one content type defined, unmapped content types will be rejected with the same HTTP 415 Unsupported Media Type response.</p>
         pub fn set_passthrough_behavior(
             mut self,
             input: std::option::Option<crate::model::PassthroughBehavior>,
@@ -1367,6 +1436,7 @@ pub mod create_integration_input {
             self.payload_format_version = Some(input.into());
             self
         }
+        /// <p>Specifies the format of the payload sent to an integration. Required for HTTP APIs.</p>
         pub fn set_payload_format_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1374,6 +1444,16 @@ pub mod create_integration_input {
             self.payload_format_version = input;
             self
         }
+        /// Adds a key-value pair to `request_parameters`.
+        ///
+        /// To override the contents of this collection use [`set_request_parameters`](Self::set_request_parameters).
+        ///
+        /// <p>For WebSocket APIs, a key-value map specifying request parameters that are passed from the method request to the backend. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the backend. The method request parameter value must match the pattern of method.request.<replaceable>{location}</replaceable>.<replaceable>{name}</replaceable>
+        /// , where
+        /// <replaceable>{location}</replaceable>
+        /// is querystring, path, or header; and
+        /// <replaceable>{name}</replaceable>
+        /// must be a valid and unique method request parameter name.</p> <p>For HTTP API integrations with a specified integrationSubtype, request parameters are a key-value map specifying parameters that are passed to AWS_PROXY integrations. You can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working with AWS service integrations for HTTP APIs</a>.</p> <p>For HTTP API integrations without a specified integrationSubtype request parameters are a key-value map specifying how to transform HTTP requests before sending them to the backend. The key should follow the pattern &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt; where action can be append, overwrite or remove. For values, you can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming API requests and responses</a>.</p>
         pub fn request_parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -1384,6 +1464,12 @@ pub mod create_integration_input {
             self.request_parameters = Some(hash_map);
             self
         }
+        /// <p>For WebSocket APIs, a key-value map specifying request parameters that are passed from the method request to the backend. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the backend. The method request parameter value must match the pattern of method.request.<replaceable>{location}</replaceable>.<replaceable>{name}</replaceable>
+        /// , where
+        /// <replaceable>{location}</replaceable>
+        /// is querystring, path, or header; and
+        /// <replaceable>{name}</replaceable>
+        /// must be a valid and unique method request parameter name.</p> <p>For HTTP API integrations with a specified integrationSubtype, request parameters are a key-value map specifying parameters that are passed to AWS_PROXY integrations. You can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working with AWS service integrations for HTTP APIs</a>.</p> <p>For HTTP API integrations without a specified integrationSubtype request parameters are a key-value map specifying how to transform HTTP requests before sending them to the backend. The key should follow the pattern &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt; where action can be append, overwrite or remove. For values, you can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming API requests and responses</a>.</p>
         pub fn set_request_parameters(
             mut self,
             input: std::option::Option<
@@ -1393,6 +1479,11 @@ pub mod create_integration_input {
             self.request_parameters = input;
             self
         }
+        /// Adds a key-value pair to `request_templates`.
+        ///
+        /// To override the contents of this collection use [`set_request_templates`](Self::set_request_templates).
+        ///
+        /// <p>Represents a map of Velocity templates that are applied on the request payload based on the value of the Content-Type header sent by the client. The content type value is the key in this map, and the template (as a String) is the value. Supported only for WebSocket APIs.</p>
         pub fn request_templates(
             mut self,
             k: impl Into<std::string::String>,
@@ -1403,6 +1494,7 @@ pub mod create_integration_input {
             self.request_templates = Some(hash_map);
             self
         }
+        /// <p>Represents a map of Velocity templates that are applied on the request payload based on the value of the Content-Type header sent by the client. The content type value is the key in this map, and the template (as a String) is the value. Supported only for WebSocket APIs.</p>
         pub fn set_request_templates(
             mut self,
             input: std::option::Option<
@@ -1412,6 +1504,11 @@ pub mod create_integration_input {
             self.request_templates = input;
             self
         }
+        /// Adds a key-value pair to `response_parameters`.
+        ///
+        /// To override the contents of this collection use [`set_response_parameters`](Self::set_response_parameters).
+        ///
+        /// <p>Supported only for HTTP APIs. You use response parameters to transform the HTTP response from a backend integration before returning the response to clients. Specify a key-value map from a selection key to response parameters. The selection key must be a valid HTTP status code within the range of 200-599. Response parameters are a key-value map. The key must match pattern &lt;action&gt;:&lt;header&gt;.&lt;location&gt; or overwrite.statuscode. The action can be append, overwrite or remove. The value can be a static value, or map to response data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming API requests and responses</a>.</p>
         pub fn response_parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -1422,6 +1519,7 @@ pub mod create_integration_input {
             self.response_parameters = Some(hash_map);
             self
         }
+        /// <p>Supported only for HTTP APIs. You use response parameters to transform the HTTP response from a backend integration before returning the response to clients. Specify a key-value map from a selection key to response parameters. The selection key must be a valid HTTP status code within the range of 200-599. Response parameters are a key-value map. The key must match pattern &lt;action&gt;:&lt;header&gt;.&lt;location&gt; or overwrite.statuscode. The action can be append, overwrite or remove. The value can be a static value, or map to response data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming API requests and responses</a>.</p>
         pub fn set_response_parameters(
             mut self,
             input: std::option::Option<
@@ -1442,6 +1540,7 @@ pub mod create_integration_input {
             self.template_selection_expression = Some(input.into());
             self
         }
+        /// <p>The template selection expression for the integration.</p>
         pub fn set_template_selection_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1454,6 +1553,7 @@ pub mod create_integration_input {
             self.timeout_in_millis = Some(input);
             self
         }
+        /// <p>Custom timeout between 50 and 29,000 milliseconds for WebSocket APIs and between 50 and 30,000 milliseconds for HTTP APIs. The default timeout is 29 seconds for WebSocket APIs and 30 seconds for HTTP APIs.</p>
         pub fn set_timeout_in_millis(mut self, input: std::option::Option<i32>) -> Self {
             self.timeout_in_millis = input;
             self
@@ -1463,6 +1563,7 @@ pub mod create_integration_input {
             self.tls_config = Some(input);
             self
         }
+        /// <p>The TLS configuration for a private integration. If you specify a TLS configuration, private integration traffic uses the HTTPS protocol. Supported only for HTTP APIs.</p>
         pub fn set_tls_config(
             mut self,
             input: std::option::Option<crate::model::TlsConfigInput>,
@@ -1475,7 +1576,7 @@ pub mod create_integration_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateIntegrationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateIntegrationInput {
                 api_id: self.api_id,
@@ -1511,27 +1612,27 @@ impl CreateIntegrationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateIntegration,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateIntegrationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_4 = &_input.api_id;
             let input_4 =
                 input_4
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "api_id",
                         details: "cannot be empty or unset",
                     })?;
-            let api_id = smithy_http::label::fmt_string(input_4, false);
+            let api_id = aws_smithy_http::label::fmt_string(input_4, false);
             if api_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "api_id",
                     details: "cannot be empty or unset",
                 });
@@ -1544,7 +1645,7 @@ impl CreateIntegrationInput {
         fn update_http_builder(
             input: &crate::input::CreateIntegrationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1553,27 +1654,27 @@ impl CreateIntegrationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateIntegrationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_integration(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1596,15 +1697,15 @@ impl CreateIntegrationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateIntegration::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateIntegration",
             "apigatewayv2",
         ));
@@ -1613,10 +1714,10 @@ impl CreateIntegrationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1655,6 +1756,7 @@ pub mod create_integration_response_input {
             self.api_id = Some(input.into());
             self
         }
+        /// <p>The API identifier.</p>
         pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.api_id = input;
             self
@@ -1667,6 +1769,7 @@ pub mod create_integration_response_input {
             self.content_handling_strategy = Some(input);
             self
         }
+        /// <p>Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p> <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p> <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p> <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
         pub fn set_content_handling_strategy(
             mut self,
             input: std::option::Option<crate::model::ContentHandlingStrategy>,
@@ -1679,6 +1782,7 @@ pub mod create_integration_response_input {
             self.integration_id = Some(input.into());
             self
         }
+        /// <p>The integration ID.</p>
         pub fn set_integration_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1691,6 +1795,7 @@ pub mod create_integration_response_input {
             self.integration_response_key = Some(input.into());
             self
         }
+        /// <p>The integration response key.</p>
         pub fn set_integration_response_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1698,6 +1803,11 @@ pub mod create_integration_response_input {
             self.integration_response_key = input;
             self
         }
+        /// Adds a key-value pair to `response_parameters`.
+        ///
+        /// To override the contents of this collection use [`set_response_parameters`](Self::set_response_parameters).
+        ///
+        /// <p>A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.{name}, where {name} is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.{name} or integration.response.body.{JSON-expression}, where {name} is a valid and unique response header name and {JSON-expression} is a valid JSON expression without the $ prefix.</p>
         pub fn response_parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -1708,6 +1818,7 @@ pub mod create_integration_response_input {
             self.response_parameters = Some(hash_map);
             self
         }
+        /// <p>A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.{name}, where {name} is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.{name} or integration.response.body.{JSON-expression}, where {name} is a valid and unique response header name and {JSON-expression} is a valid JSON expression without the $ prefix.</p>
         pub fn set_response_parameters(
             mut self,
             input: std::option::Option<
@@ -1717,6 +1828,11 @@ pub mod create_integration_response_input {
             self.response_parameters = input;
             self
         }
+        /// Adds a key-value pair to `response_templates`.
+        ///
+        /// To override the contents of this collection use [`set_response_templates`](Self::set_response_templates).
+        ///
+        /// <p>The collection of response templates for the integration response as a string-to-string map of key-value pairs. Response templates are represented as a key/value map, with a content-type as the key and a template as the value.</p>
         pub fn response_templates(
             mut self,
             k: impl Into<std::string::String>,
@@ -1727,6 +1843,7 @@ pub mod create_integration_response_input {
             self.response_templates = Some(hash_map);
             self
         }
+        /// <p>The collection of response templates for the integration response as a string-to-string map of key-value pairs. Response templates are represented as a key/value map, with a content-type as the key and a template as the value.</p>
         pub fn set_response_templates(
             mut self,
             input: std::option::Option<
@@ -1744,6 +1861,7 @@ pub mod create_integration_response_input {
             self.template_selection_expression = Some(input.into());
             self
         }
+        /// <p>The template selection expression for the integration response. Supported only for WebSocket APIs.</p>
         pub fn set_template_selection_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1756,7 +1874,7 @@ pub mod create_integration_response_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateIntegrationResponseInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateIntegrationResponseInput {
                 api_id: self.api_id,
@@ -1782,27 +1900,27 @@ impl CreateIntegrationResponseInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateIntegrationResponse,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateIntegrationResponseInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_5 = &_input.api_id;
             let input_5 =
                 input_5
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "api_id",
                         details: "cannot be empty or unset",
                     })?;
-            let api_id = smithy_http::label::fmt_string(input_5, false);
+            let api_id = aws_smithy_http::label::fmt_string(input_5, false);
             if api_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "api_id",
                     details: "cannot be empty or unset",
                 });
@@ -1811,13 +1929,13 @@ impl CreateIntegrationResponseInput {
             let input_6 =
                 input_6
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "integration_id",
                         details: "cannot be empty or unset",
                     })?;
-            let integration_id = smithy_http::label::fmt_string(input_6, false);
+            let integration_id = aws_smithy_http::label::fmt_string(input_6, false);
             if integration_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "integration_id",
                     details: "cannot be empty or unset",
                 });
@@ -1835,7 +1953,7 @@ impl CreateIntegrationResponseInput {
         fn update_http_builder(
             input: &crate::input::CreateIntegrationResponseInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1844,27 +1962,29 @@ impl CreateIntegrationResponseInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateIntegrationResponseInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_integration_response(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1887,15 +2007,15 @@ impl CreateIntegrationResponseInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateIntegrationResponse::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateIntegrationResponse",
             "apigatewayv2",
         ));
@@ -1904,10 +2024,10 @@ impl CreateIntegrationResponseInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1939,6 +2059,7 @@ pub mod create_model_input {
             self.api_id = Some(input.into());
             self
         }
+        /// <p>The API identifier.</p>
         pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.api_id = input;
             self
@@ -1948,6 +2069,7 @@ pub mod create_model_input {
             self.content_type = Some(input.into());
             self
         }
+        /// <p>The content-type for the model, for example, "application/json".</p>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_type = input;
             self
@@ -1957,6 +2079,7 @@ pub mod create_model_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the model.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -1966,6 +2089,7 @@ pub mod create_model_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the model. Must be alphanumeric.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1975,6 +2099,7 @@ pub mod create_model_input {
             self.schema = Some(input.into());
             self
         }
+        /// <p>The schema for the model. For application/json models, this should be JSON schema draft 4 model.</p>
         pub fn set_schema(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.schema = input;
             self
@@ -1982,8 +2107,10 @@ pub mod create_model_input {
         /// Consumes the builder and constructs a [`CreateModelInput`](crate::input::CreateModelInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreateModelInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateModelInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateModelInput {
                 api_id: self.api_id,
                 content_type: self.content_type,
@@ -2005,27 +2132,27 @@ impl CreateModelInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateModel,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateModelInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_7 = &_input.api_id;
             let input_7 =
                 input_7
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "api_id",
                         details: "cannot be empty or unset",
                     })?;
-            let api_id = smithy_http::label::fmt_string(input_7, false);
+            let api_id = aws_smithy_http::label::fmt_string(input_7, false);
             if api_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "api_id",
                     details: "cannot be empty or unset",
                 });
@@ -2038,7 +2165,7 @@ impl CreateModelInput {
         fn update_http_builder(
             input: &crate::input::CreateModelInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2047,24 +2174,26 @@ impl CreateModelInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateModelInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_model(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2087,25 +2216,27 @@ impl CreateModelInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreateModel::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "CreateModel",
-                    "apigatewayv2",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateModel::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateModel",
+            "apigatewayv2",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2148,6 +2279,7 @@ pub mod create_route_input {
             self.api_id = Some(input.into());
             self
         }
+        /// <p>The API identifier.</p>
         pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.api_id = input;
             self
@@ -2157,16 +2289,23 @@ pub mod create_route_input {
             self.api_key_required = Some(input);
             self
         }
+        /// <p>Specifies whether an API key is required for the route. Supported only for WebSocket APIs.</p>
         pub fn set_api_key_required(mut self, input: std::option::Option<bool>) -> Self {
             self.api_key_required = input;
             self
         }
+        /// Appends an item to `authorization_scopes`.
+        ///
+        /// To override the contents of this collection use [`set_authorization_scopes`](Self::set_authorization_scopes).
+        ///
+        /// <p>The authorization scopes supported by this route.</p>
         pub fn authorization_scopes(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.authorization_scopes.unwrap_or_default();
             v.push(input.into());
             self.authorization_scopes = Some(v);
             self
         }
+        /// <p>The authorization scopes supported by this route.</p>
         pub fn set_authorization_scopes(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2179,6 +2318,7 @@ pub mod create_route_input {
             self.authorization_type = Some(input);
             self
         }
+        /// <p>The authorization type for the route. For WebSocket APIs, valid values are NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer For HTTP APIs, valid values are NONE for open access, JWT for using JSON Web Tokens, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer.</p>
         pub fn set_authorization_type(
             mut self,
             input: std::option::Option<crate::model::AuthorizationType>,
@@ -2191,6 +2331,7 @@ pub mod create_route_input {
             self.authorizer_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the Authorizer resource to be associated with this route. The authorizer identifier is generated by API Gateway when you created the authorizer.</p>
         pub fn set_authorizer_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2203,6 +2344,7 @@ pub mod create_route_input {
             self.model_selection_expression = Some(input.into());
             self
         }
+        /// <p>The model selection expression for the route. Supported only for WebSocket APIs.</p>
         pub fn set_model_selection_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2215,6 +2357,7 @@ pub mod create_route_input {
             self.operation_name = Some(input.into());
             self
         }
+        /// <p>The operation name for the route.</p>
         pub fn set_operation_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2222,6 +2365,11 @@ pub mod create_route_input {
             self.operation_name = input;
             self
         }
+        /// Adds a key-value pair to `request_models`.
+        ///
+        /// To override the contents of this collection use [`set_request_models`](Self::set_request_models).
+        ///
+        /// <p>The request models for the route. Supported only for WebSocket APIs.</p>
         pub fn request_models(
             mut self,
             k: impl Into<std::string::String>,
@@ -2232,6 +2380,7 @@ pub mod create_route_input {
             self.request_models = Some(hash_map);
             self
         }
+        /// <p>The request models for the route. Supported only for WebSocket APIs.</p>
         pub fn set_request_models(
             mut self,
             input: std::option::Option<
@@ -2241,6 +2390,11 @@ pub mod create_route_input {
             self.request_models = input;
             self
         }
+        /// Adds a key-value pair to `request_parameters`.
+        ///
+        /// To override the contents of this collection use [`set_request_parameters`](Self::set_request_parameters).
+        ///
+        /// <p>The request parameters for the route. Supported only for WebSocket APIs.</p>
         pub fn request_parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -2251,6 +2405,7 @@ pub mod create_route_input {
             self.request_parameters = Some(hash_map);
             self
         }
+        /// <p>The request parameters for the route. Supported only for WebSocket APIs.</p>
         pub fn set_request_parameters(
             mut self,
             input: std::option::Option<
@@ -2265,6 +2420,7 @@ pub mod create_route_input {
             self.route_key = Some(input.into());
             self
         }
+        /// <p>The route key for the route.</p>
         pub fn set_route_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.route_key = input;
             self
@@ -2277,6 +2433,7 @@ pub mod create_route_input {
             self.route_response_selection_expression = Some(input.into());
             self
         }
+        /// <p>The route response selection expression for the route. Supported only for WebSocket APIs.</p>
         pub fn set_route_response_selection_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2289,6 +2446,7 @@ pub mod create_route_input {
             self.target = Some(input.into());
             self
         }
+        /// <p>The target for the route.</p>
         pub fn set_target(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.target = input;
             self
@@ -2296,8 +2454,10 @@ pub mod create_route_input {
         /// Consumes the builder and constructs a [`CreateRouteInput`](crate::input::CreateRouteInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreateRouteInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateRouteInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateRouteInput {
                 api_id: self.api_id,
                 api_key_required: self.api_key_required.unwrap_or_default(),
@@ -2326,27 +2486,27 @@ impl CreateRouteInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateRoute,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateRouteInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_8 = &_input.api_id;
             let input_8 =
                 input_8
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "api_id",
                         details: "cannot be empty or unset",
                     })?;
-            let api_id = smithy_http::label::fmt_string(input_8, false);
+            let api_id = aws_smithy_http::label::fmt_string(input_8, false);
             if api_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "api_id",
                     details: "cannot be empty or unset",
                 });
@@ -2359,7 +2519,7 @@ impl CreateRouteInput {
         fn update_http_builder(
             input: &crate::input::CreateRouteInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2368,24 +2528,26 @@ impl CreateRouteInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateRouteInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_route(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2408,25 +2570,27 @@ impl CreateRouteInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreateRoute::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "CreateRoute",
-                    "apigatewayv2",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateRoute::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateRoute",
+            "apigatewayv2",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2463,6 +2627,7 @@ pub mod create_route_response_input {
             self.api_id = Some(input.into());
             self
         }
+        /// <p>The API identifier.</p>
         pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.api_id = input;
             self
@@ -2472,6 +2637,7 @@ pub mod create_route_response_input {
             self.model_selection_expression = Some(input.into());
             self
         }
+        /// <p>The model selection expression for the route response. Supported only for WebSocket APIs.</p>
         pub fn set_model_selection_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2479,6 +2645,11 @@ pub mod create_route_response_input {
             self.model_selection_expression = input;
             self
         }
+        /// Adds a key-value pair to `response_models`.
+        ///
+        /// To override the contents of this collection use [`set_response_models`](Self::set_response_models).
+        ///
+        /// <p>The response models for the route response.</p>
         pub fn response_models(
             mut self,
             k: impl Into<std::string::String>,
@@ -2489,6 +2660,7 @@ pub mod create_route_response_input {
             self.response_models = Some(hash_map);
             self
         }
+        /// <p>The response models for the route response.</p>
         pub fn set_response_models(
             mut self,
             input: std::option::Option<
@@ -2498,6 +2670,11 @@ pub mod create_route_response_input {
             self.response_models = input;
             self
         }
+        /// Adds a key-value pair to `response_parameters`.
+        ///
+        /// To override the contents of this collection use [`set_response_parameters`](Self::set_response_parameters).
+        ///
+        /// <p>The route response parameters.</p>
         pub fn response_parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -2508,6 +2685,7 @@ pub mod create_route_response_input {
             self.response_parameters = Some(hash_map);
             self
         }
+        /// <p>The route response parameters.</p>
         pub fn set_response_parameters(
             mut self,
             input: std::option::Option<
@@ -2522,6 +2700,7 @@ pub mod create_route_response_input {
             self.route_id = Some(input.into());
             self
         }
+        /// <p>The route ID.</p>
         pub fn set_route_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.route_id = input;
             self
@@ -2531,6 +2710,7 @@ pub mod create_route_response_input {
             self.route_response_key = Some(input.into());
             self
         }
+        /// <p>The route response key.</p>
         pub fn set_route_response_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2543,7 +2723,7 @@ pub mod create_route_response_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateRouteResponseInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateRouteResponseInput {
                 api_id: self.api_id,
@@ -2567,27 +2747,27 @@ impl CreateRouteResponseInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateRouteResponse,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateRouteResponseInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_9 = &_input.api_id;
             let input_9 =
                 input_9
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "api_id",
                         details: "cannot be empty or unset",
                     })?;
-            let api_id = smithy_http::label::fmt_string(input_9, false);
+            let api_id = aws_smithy_http::label::fmt_string(input_9, false);
             if api_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "api_id",
                     details: "cannot be empty or unset",
                 });
@@ -2596,13 +2776,13 @@ impl CreateRouteResponseInput {
             let input_10 =
                 input_10
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "route_id",
                         details: "cannot be empty or unset",
                     })?;
-            let route_id = smithy_http::label::fmt_string(input_10, false);
+            let route_id = aws_smithy_http::label::fmt_string(input_10, false);
             if route_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "route_id",
                     details: "cannot be empty or unset",
                 });
@@ -2620,7 +2800,7 @@ impl CreateRouteResponseInput {
         fn update_http_builder(
             input: &crate::input::CreateRouteResponseInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2629,27 +2809,27 @@ impl CreateRouteResponseInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateRouteResponseInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_route_response(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2672,15 +2852,15 @@ impl CreateRouteResponseInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateRouteResponse::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateRouteResponse",
             "apigatewayv2",
         ));
@@ -2689,10 +2869,10 @@ impl CreateRouteResponseInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2736,6 +2916,7 @@ pub mod create_stage_input {
             self.access_log_settings = Some(input);
             self
         }
+        /// <p>Settings for logging access in this stage.</p>
         pub fn set_access_log_settings(
             mut self,
             input: std::option::Option<crate::model::AccessLogSettings>,
@@ -2748,6 +2929,7 @@ pub mod create_stage_input {
             self.api_id = Some(input.into());
             self
         }
+        /// <p>The API identifier.</p>
         pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.api_id = input;
             self
@@ -2757,6 +2939,7 @@ pub mod create_stage_input {
             self.auto_deploy = Some(input);
             self
         }
+        /// <p>Specifies whether updates to an API automatically trigger a new deployment. The default value is false.</p>
         pub fn set_auto_deploy(mut self, input: std::option::Option<bool>) -> Self {
             self.auto_deploy = input;
             self
@@ -2766,6 +2949,7 @@ pub mod create_stage_input {
             self.client_certificate_id = Some(input.into());
             self
         }
+        /// <p>The identifier of a client certificate for a Stage. Supported only for WebSocket APIs.</p>
         pub fn set_client_certificate_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2778,6 +2962,7 @@ pub mod create_stage_input {
             self.default_route_settings = Some(input);
             self
         }
+        /// <p>The default route settings for the stage.</p>
         pub fn set_default_route_settings(
             mut self,
             input: std::option::Option<crate::model::RouteSettings>,
@@ -2790,6 +2975,7 @@ pub mod create_stage_input {
             self.deployment_id = Some(input.into());
             self
         }
+        /// <p>The deployment identifier of the API stage.</p>
         pub fn set_deployment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2802,10 +2988,16 @@ pub mod create_stage_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description for the API stage.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Adds a key-value pair to `route_settings`.
+        ///
+        /// To override the contents of this collection use [`set_route_settings`](Self::set_route_settings).
+        ///
+        /// <p>Route settings for the stage, by routeKey.</p>
         pub fn route_settings(
             mut self,
             k: impl Into<std::string::String>,
@@ -2816,6 +3008,7 @@ pub mod create_stage_input {
             self.route_settings = Some(hash_map);
             self
         }
+        /// <p>Route settings for the stage, by routeKey.</p>
         pub fn set_route_settings(
             mut self,
             input: std::option::Option<
@@ -2830,10 +3023,16 @@ pub mod create_stage_input {
             self.stage_name = Some(input.into());
             self
         }
+        /// <p>The name of the stage.</p>
         pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stage_name = input;
             self
         }
+        /// Adds a key-value pair to `stage_variables`.
+        ///
+        /// To override the contents of this collection use [`set_stage_variables`](Self::set_stage_variables).
+        ///
+        /// <p>A map that defines the stage variables for a Stage. Variable names can have alphanumeric and underscore characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+.</p>
         pub fn stage_variables(
             mut self,
             k: impl Into<std::string::String>,
@@ -2844,6 +3043,7 @@ pub mod create_stage_input {
             self.stage_variables = Some(hash_map);
             self
         }
+        /// <p>A map that defines the stage variables for a Stage. Variable names can have alphanumeric and underscore characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+.</p>
         pub fn set_stage_variables(
             mut self,
             input: std::option::Option<
@@ -2853,6 +3053,11 @@ pub mod create_stage_input {
             self.stage_variables = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2863,6 +3068,7 @@ pub mod create_stage_input {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -2875,8 +3081,10 @@ pub mod create_stage_input {
         /// Consumes the builder and constructs a [`CreateStageInput`](crate::input::CreateStageInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreateStageInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateStageInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateStageInput {
                 access_log_settings: self.access_log_settings,
                 api_id: self.api_id,
@@ -2904,27 +3112,27 @@ impl CreateStageInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateStage,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateStageInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_11 = &_input.api_id;
             let input_11 =
                 input_11
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "api_id",
                         details: "cannot be empty or unset",
                     })?;
-            let api_id = smithy_http::label::fmt_string(input_11, false);
+            let api_id = aws_smithy_http::label::fmt_string(input_11, false);
             if api_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "api_id",
                     details: "cannot be empty or unset",
                 });
@@ -2937,7 +3145,7 @@ impl CreateStageInput {
         fn update_http_builder(
             input: &crate::input::CreateStageInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2946,24 +3154,26 @@ impl CreateStageInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateStageInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_stage(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2986,25 +3196,27 @@ impl CreateStageInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreateStage::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "CreateStage",
-                    "apigatewayv2",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateStage::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateStage",
+            "apigatewayv2",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3037,16 +3249,23 @@ pub mod create_vpc_link_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the VPC link.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
+        /// Appends an item to `security_group_ids`.
+        ///
+        /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
+        ///
+        /// <p>A list of security group IDs for the VPC link.</p>
         pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_ids.unwrap_or_default();
             v.push(input.into());
             self.security_group_ids = Some(v);
             self
         }
+        /// <p>A list of security group IDs for the VPC link.</p>
         pub fn set_security_group_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3054,12 +3273,18 @@ pub mod create_vpc_link_input {
             self.security_group_ids = input;
             self
         }
+        /// Appends an item to `subnet_ids`.
+        ///
+        /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
+        ///
+        /// <p>A list of subnet IDs to include in the VPC link.</p>
         pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnet_ids.unwrap_or_default();
             v.push(input.into());
             self.subnet_ids = Some(v);
             self
         }
+        /// <p>A list of subnet IDs to include in the VPC link.</p>
         pub fn set_subnet_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3067,6 +3292,11 @@ pub mod create_vpc_link_input {
             self.subnet_ids = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of tags.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -3077,6 +3307,7 @@ pub mod create_vpc_link_input {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>A list of tags.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -3089,8 +3320,10 @@ pub mod create_vpc_link_input {
         /// Consumes the builder and constructs a [`CreateVpcLinkInput`](crate::input::CreateVpcLinkInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreateVpcLinkInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateVpcLinkInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateVpcLinkInput {
                 name: self.name,
                 security_group_ids: self.security_group_ids,
@@ -3111,16 +3344,16 @@ impl CreateVpcLinkInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateVpcLink,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateVpcLinkInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/v2/vpclinks").expect("formatting should succeed");
             Ok(())
         }
@@ -3128,7 +3361,7 @@ impl CreateVpcLinkInput {
         fn update_http_builder(
             input: &crate::input::CreateVpcLinkInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3137,24 +3370,26 @@ impl CreateVpcLinkInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateVpcLinkInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_vpc_link(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3177,25 +3412,27 @@ impl CreateVpcLinkInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreateVpcLink::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "CreateVpcLink",
-                    "apigatewayv2",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateVpcLink::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateVpcLink",
+            "apigatewayv2",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3224,6 +3461,7 @@ pub mod delete_access_log_settings_input {
             self.api_id = Some(input.into());
             self
         }
+        /// <p>The API identifier.</p>
         pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.api_id = input;
             self
@@ -3233,6 +3471,7 @@ pub mod delete_access_log_settings_input {
             self.stage_name = Some(input.into());
             self
         }
+        /// <p>The stage name. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
         pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stage_name = input;
             self
@@ -3242,7 +3481,7 @@ pub mod delete_access_log_settings_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteAccessLogSettingsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteAccessLogSettingsInput {
                 api_id: self.api_id,
@@ -3263,27 +3502,27 @@ impl DeleteAccessLogSettingsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteAccessLogSettings,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteAccessLogSettingsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_12 = &_input.api_id;
             let input_12 =
                 input_12
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "api_id",
                         details: "cannot be empty or unset",
                     })?;
-            let api_id = smithy_http::label::fmt_string(input_12, false);
+            let api_id = aws_smithy_http::label::fmt_string(input_12, false);
             if api_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "api_id",
                     details: "cannot be empty or unset",
                 });
@@ -3292,13 +3531,13 @@ impl DeleteAccessLogSettingsInput {
             let input_13 =
                 input_13
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "stage_name",
                         details: "cannot be empty or unset",
                     })?;
-            let stage_name = smithy_http::label::fmt_string(input_13, false);
+            let stage_name = aws_smithy_http::label::fmt_string(input_13, false);
             if stage_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "stage_name",
                     details: "cannot be empty or unset",
                 });
@@ -3316,7 +3555,7 @@ impl DeleteAccessLogSettingsInput {
         fn update_http_builder(
             input: &crate::input::DeleteAccessLogSettingsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3325,23 +3564,23 @@ impl DeleteAccessLogSettingsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteAccessLogSettingsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3364,15 +3603,15 @@ impl DeleteAccessLogSettingsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteAccessLogSettings::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteAccessLogSettings",
             "apigatewayv2",
         ));
@@ -3381,10 +3620,10 @@ impl DeleteAccessLogSettingsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3412,6 +3651,7 @@ pub mod delete_api_input {
             self.api_id = Some(input.into());
             self
         }
+        /// <p>The API identifier.</p>
         pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.api_id = input;
             self
@@ -3419,7 +3659,7 @@ pub mod delete_api_input {
         /// Consumes the builder and constructs a [`DeleteApiInput`](crate::input::DeleteApiInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeleteApiInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::DeleteApiInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::DeleteApiInput {
                 api_id: self.api_id,
@@ -3438,27 +3678,27 @@ impl DeleteApiInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteApi,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteApiInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_14 = &_input.api_id;
             let input_14 =
                 input_14
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "api_id",
                         details: "cannot be empty or unset",
                     })?;
-            let api_id = smithy_http::label::fmt_string(input_14, false);
+            let api_id = aws_smithy_http::label::fmt_string(input_14, false);
             if api_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "api_id",
                     details: "cannot be empty or unset",
                 });
@@ -3470,7 +3710,7 @@ impl DeleteApiInput {
         fn update_http_builder(
             input: &crate::input::DeleteApiInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3479,23 +3719,23 @@ impl DeleteApiInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteApiInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3518,13 +3758,13 @@ impl DeleteApiInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
         let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeleteApi::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
+            aws_smithy_http::operation::Operation::new(request, crate::operation::DeleteApi::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "DeleteApi",
                     "apigatewayv2",
                 ));
@@ -3533,10 +3773,10 @@ impl DeleteApiInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3565,6 +3805,7 @@ pub mod delete_api_mapping_input {
             self.api_mapping_id = Some(input.into());
             self
         }
+        /// <p>The API mapping identifier.</p>
         pub fn set_api_mapping_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3577,6 +3818,7 @@ pub mod delete_api_mapping_input {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The domain name.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -3586,7 +3828,7 @@ pub mod delete_api_mapping_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteApiMappingInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteApiMappingInput {
                 api_mapping_id: self.api_mapping_id,
@@ -3606,27 +3848,27 @@ impl DeleteApiMappingInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteApiMapping,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteApiMappingInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_15 = &_input.domain_name;
             let input_15 =
                 input_15
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
                         details: "cannot be empty or unset",
                     })?;
-            let domain_name = smithy_http::label::fmt_string(input_15, false);
+            let domain_name = aws_smithy_http::label::fmt_string(input_15, false);
             if domain_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "domain_name",
                     details: "cannot be empty or unset",
                 });
@@ -3635,13 +3877,13 @@ impl DeleteApiMappingInput {
             let input_16 =
                 input_16
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "api_mapping_id",
                         details: "cannot be empty or unset",
                     })?;
-            let api_mapping_id = smithy_http::label::fmt_string(input_16, false);
+            let api_mapping_id = aws_smithy_http::label::fmt_string(input_16, false);
             if api_mapping_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "api_mapping_id",
                     details: "cannot be empty or unset",
                 });
@@ -3659,7 +3901,7 @@ impl DeleteApiMappingInput {
         fn update_http_builder(
             input: &crate::input::DeleteApiMappingInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3668,23 +3910,23 @@ impl DeleteApiMappingInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteApiMappingInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3707,15 +3949,15 @@ impl DeleteApiMappingInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteApiMapping::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteApiMapping",
             "apigatewayv2",
         ));
@@ -3724,10 +3966,10 @@ impl DeleteApiMappingInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3756,6 +3998,7 @@ pub mod delete_authorizer_input {
             self.api_id = Some(input.into());
             self
         }
+        /// <p>The API identifier.</p>
         pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.api_id = input;
             self
@@ -3765,6 +4008,7 @@ pub mod delete_authorizer_input {
             self.authorizer_id = Some(input.into());
             self
         }
+        /// <p>The authorizer identifier.</p>
         pub fn set_authorizer_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3777,7 +4021,7 @@ pub mod delete_authorizer_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteAuthorizerInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteAuthorizerInput {
                 api_id: self.api_id,
@@ -3797,27 +4041,27 @@ impl DeleteAuthorizerInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteAuthorizer,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteAuthorizerInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_17 = &_input.api_id;
             let input_17 =
                 input_17
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "api_id",
                         details: "cannot be empty or unset",
                     })?;
-            let api_id = smithy_http::label::fmt_string(input_17, false);
+            let api_id = aws_smithy_http::label::fmt_string(input_17, false);
             if api_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "api_id",
                     details: "cannot be empty or unset",
                 });
@@ -3826,13 +4070,13 @@ impl DeleteAuthorizerInput {
             let input_18 =
                 input_18
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "authorizer_id",
                         details: "cannot be empty or unset",
                     })?;
-            let authorizer_id = smithy_http::label::fmt_string(input_18, false);
+            let authorizer_id = aws_smithy_http::label::fmt_string(input_18, false);
             if authorizer_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "authorizer_id",
                     details: "cannot be empty or unset",
                 });
@@ -3850,7 +4094,7 @@ impl DeleteAuthorizerInput {
         fn update_http_builder(
             input: &crate::input::DeleteAuthorizerInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3859,23 +4103,23 @@ impl DeleteAuthorizerInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteAuthorizerInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3898,15 +4142,15 @@ impl DeleteAuthorizerInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteAuthorizer::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteAuthorizer",
             "apigatewayv2",
         ));
@@ -3915,10 +4159,10 @@ impl DeleteAuthorizerInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3946,6 +4190,7 @@ pub mod delete_cors_configuration_input {
             self.api_id = Some(input.into());
             self
         }
+        /// <p>The API identifier.</p>
         pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.api_id = input;
             self
@@ -3955,7 +4200,7 @@ pub mod delete_cors_configuration_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteCorsConfigurationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteCorsConfigurationInput {
                 api_id: self.api_id,
@@ -3975,27 +4220,27 @@ impl DeleteCorsConfigurationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteCorsConfiguration,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteCorsConfigurationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_19 = &_input.api_id;
             let input_19 =
                 input_19
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "api_id",
                         details: "cannot be empty or unset",
                     })?;
-            let api_id = smithy_http::label::fmt_string(input_19, false);
+            let api_id = aws_smithy_http::label::fmt_string(input_19, false);
             if api_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "api_id",
                     details: "cannot be empty or unset",
                 });
@@ -4008,7 +4253,7 @@ impl DeleteCorsConfigurationInput {
         fn update_http_builder(
             input: &crate::input::DeleteCorsConfigurationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4017,23 +4262,23 @@ impl DeleteCorsConfigurationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteCorsConfigurationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4056,15 +4301,15 @@ impl DeleteCorsConfigurationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteCorsConfiguration::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteCorsConfiguration",
             "apigatewayv2",
         ));
@@ -4073,10 +4318,10 @@ impl DeleteCorsConfigurationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4105,6 +4350,7 @@ pub mod delete_deployment_input {
             self.api_id = Some(input.into());
             self
         }
+        /// <p>The API identifier.</p>
         pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.api_id = input;
             self
@@ -4114,6 +4360,7 @@ pub mod delete_deployment_input {
             self.deployment_id = Some(input.into());
             self
         }
+        /// <p>The deployment ID.</p>
         pub fn set_deployment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4126,7 +4373,7 @@ pub mod delete_deployment_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteDeploymentInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteDeploymentInput {
                 api_id: self.api_id,
@@ -4146,27 +4393,27 @@ impl DeleteDeploymentInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteDeployment,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteDeploymentInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_20 = &_input.api_id;
             let input_20 =
                 input_20
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "api_id",
                         details: "cannot be empty or unset",
                     })?;
-            let api_id = smithy_http::label::fmt_string(input_20, false);
+            let api_id = aws_smithy_http::label::fmt_string(input_20, false);
             if api_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "api_id",
                     details: "cannot be empty or unset",
                 });
@@ -4175,13 +4422,13 @@ impl DeleteDeploymentInput {
             let input_21 =
                 input_21
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "deployment_id",
                         details: "cannot be empty or unset",
                     })?;
-            let deployment_id = smithy_http::label::fmt_string(input_21, false);
+            let deployment_id = aws_smithy_http::label::fmt_string(input_21, false);
             if deployment_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "deployment_id",
                     details: "cannot be empty or unset",
                 });
@@ -4199,7 +4446,7 @@ impl DeleteDeploymentInput {
         fn update_http_builder(
             input: &crate::input::DeleteDeploymentInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4208,23 +4455,23 @@ impl DeleteDeploymentInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteDeploymentInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4247,15 +4494,15 @@ impl DeleteDeploymentInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteDeployment::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteDeployment",
             "apigatewayv2",
         ));
@@ -4264,10 +4511,10 @@ impl DeleteDeploymentInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4295,6 +4542,7 @@ pub mod delete_domain_name_input {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The domain name.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -4304,7 +4552,7 @@ pub mod delete_domain_name_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteDomainNameInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteDomainNameInput {
                 domain_name: self.domain_name,
@@ -4323,27 +4571,27 @@ impl DeleteDomainNameInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteDomainName,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteDomainNameInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_22 = &_input.domain_name;
             let input_22 =
                 input_22
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
                         details: "cannot be empty or unset",
                     })?;
-            let domain_name = smithy_http::label::fmt_string(input_22, false);
+            let domain_name = aws_smithy_http::label::fmt_string(input_22, false);
             if domain_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "domain_name",
                     details: "cannot be empty or unset",
                 });
@@ -4360,7 +4608,7 @@ impl DeleteDomainNameInput {
         fn update_http_builder(
             input: &crate::input::DeleteDomainNameInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4369,23 +4617,23 @@ impl DeleteDomainNameInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteDomainNameInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4408,15 +4656,15 @@ impl DeleteDomainNameInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteDomainName::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteDomainName",
             "apigatewayv2",
         ));
@@ -4425,10 +4673,10 @@ impl DeleteDomainNameInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4457,6 +4705,7 @@ pub mod delete_integration_input {
             self.api_id = Some(input.into());
             self
         }
+        /// <p>The API identifier.</p>
         pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.api_id = input;
             self
@@ -4466,6 +4715,7 @@ pub mod delete_integration_input {
             self.integration_id = Some(input.into());
             self
         }
+        /// <p>The integration ID.</p>
         pub fn set_integration_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4478,7 +4728,7 @@ pub mod delete_integration_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteIntegrationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteIntegrationInput {
                 api_id: self.api_id,
@@ -4498,27 +4748,27 @@ impl DeleteIntegrationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteIntegration,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteIntegrationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_23 = &_input.api_id;
             let input_23 =
                 input_23
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "api_id",
                         details: "cannot be empty or unset",
                     })?;
-            let api_id = smithy_http::label::fmt_string(input_23, false);
+            let api_id = aws_smithy_http::label::fmt_string(input_23, false);
             if api_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "api_id",
                     details: "cannot be empty or unset",
                 });
@@ -4527,13 +4777,13 @@ impl DeleteIntegrationInput {
             let input_24 =
                 input_24
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "integration_id",
                         details: "cannot be empty or unset",
                     })?;
-            let integration_id = smithy_http::label::fmt_string(input_24, false);
+            let integration_id = aws_smithy_http::label::fmt_string(input_24, false);
             if integration_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "integration_id",
                     details: "cannot be empty or unset",
                 });
@@ -4551,7 +4801,7 @@ impl DeleteIntegrationInput {
         fn update_http_builder(
             input: &crate::input::DeleteIntegrationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4560,23 +4810,23 @@ impl DeleteIntegrationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteIntegrationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4599,15 +4849,15 @@ impl DeleteIntegrationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteIntegration::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteIntegration",
             "apigatewayv2",
         ));
@@ -4616,10 +4866,10 @@ impl DeleteIntegrationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4649,6 +4899,7 @@ pub mod delete_integration_response_input {
             self.api_id = Some(input.into());
             self
         }
+        /// <p>The API identifier.</p>
         pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.api_id = input;
             self
@@ -4658,6 +4909,7 @@ pub mod delete_integration_response_input {
             self.integration_id = Some(input.into());
             self
         }
+        /// <p>The integration ID.</p>
         pub fn set_integration_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4670,6 +4922,7 @@ pub mod delete_integration_response_input {
             self.integration_response_id = Some(input.into());
             self
         }
+        /// <p>The integration response ID.</p>
         pub fn set_integration_response_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4682,7 +4935,7 @@ pub mod delete_integration_response_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteIntegrationResponseInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteIntegrationResponseInput {
                 api_id: self.api_id,
@@ -4704,27 +4957,27 @@ impl DeleteIntegrationResponseInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteIntegrationResponse,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteIntegrationResponseInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_25 = &_input.api_id;
             let input_25 =
                 input_25
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "api_id",
                         details: "cannot be empty or unset",
                     })?;
-            let api_id = smithy_http::label::fmt_string(input_25, false);
+            let api_id = aws_smithy_http::label::fmt_string(input_25, false);
             if api_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "api_id",
                     details: "cannot be empty or unset",
                 });
@@ -4733,13 +4986,13 @@ impl DeleteIntegrationResponseInput {
             let input_26 =
                 input_26
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "integration_id",
                         details: "cannot be empty or unset",
                     })?;
-            let integration_id = smithy_http::label::fmt_string(input_26, false);
+            let integration_id = aws_smithy_http::label::fmt_string(input_26, false);
             if integration_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "integration_id",
                     details: "cannot be empty or unset",
                 });
@@ -4748,13 +5001,13 @@ impl DeleteIntegrationResponseInput {
             let input_27 =
                 input_27
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "integration_response_id",
                         details: "cannot be empty or unset",
                     })?;
-            let integration_response_id = smithy_http::label::fmt_string(input_27, false);
+            let integration_response_id = aws_smithy_http::label::fmt_string(input_27, false);
             if integration_response_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "integration_response_id",
                     details: "cannot be empty or unset",
                 });
@@ -4766,7 +5019,7 @@ impl DeleteIntegrationResponseInput {
         fn update_http_builder(
             input: &crate::input::DeleteIntegrationResponseInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4775,23 +5028,23 @@ impl DeleteIntegrationResponseInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteIntegrationResponseInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4814,15 +5067,15 @@ impl DeleteIntegrationResponseInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteIntegrationResponse::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteIntegrationResponse",
             "apigatewayv2",
         ));
@@ -4831,10 +5084,10 @@ impl DeleteIntegrationResponseInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4863,6 +5116,7 @@ pub mod delete_model_input {
             self.api_id = Some(input.into());
             self
         }
+        /// <p>The API identifier.</p>
         pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.api_id = input;
             self
@@ -4872,6 +5126,7 @@ pub mod delete_model_input {
             self.model_id = Some(input.into());
             self
         }
+        /// <p>The model ID.</p>
         pub fn set_model_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.model_id = input;
             self
@@ -4879,8 +5134,10 @@ pub mod delete_model_input {
         /// Consumes the builder and constructs a [`DeleteModelInput`](crate::input::DeleteModelInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeleteModelInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteModelInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteModelInput {
                 api_id: self.api_id,
                 model_id: self.model_id,
@@ -4899,27 +5156,27 @@ impl DeleteModelInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteModel,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteModelInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_28 = &_input.api_id;
             let input_28 =
                 input_28
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "api_id",
                         details: "cannot be empty or unset",
                     })?;
-            let api_id = smithy_http::label::fmt_string(input_28, false);
+            let api_id = aws_smithy_http::label::fmt_string(input_28, false);
             if api_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "api_id",
                     details: "cannot be empty or unset",
                 });
@@ -4928,13 +5185,13 @@ impl DeleteModelInput {
             let input_29 =
                 input_29
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "model_id",
                         details: "cannot be empty or unset",
                     })?;
-            let model_id = smithy_http::label::fmt_string(input_29, false);
+            let model_id = aws_smithy_http::label::fmt_string(input_29, false);
             if model_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "model_id",
                     details: "cannot be empty or unset",
                 });
@@ -4952,7 +5209,7 @@ impl DeleteModelInput {
         fn update_http_builder(
             input: &crate::input::DeleteModelInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4961,23 +5218,23 @@ impl DeleteModelInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteModelInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5000,25 +5257,27 @@ impl DeleteModelInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeleteModel::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DeleteModel",
-                    "apigatewayv2",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteModel::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteModel",
+            "apigatewayv2",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5047,6 +5306,7 @@ pub mod delete_route_input {
             self.api_id = Some(input.into());
             self
         }
+        /// <p>The API identifier.</p>
         pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.api_id = input;
             self
@@ -5056,6 +5316,7 @@ pub mod delete_route_input {
             self.route_id = Some(input.into());
             self
         }
+        /// <p>The route ID.</p>
         pub fn set_route_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.route_id = input;
             self
@@ -5063,8 +5324,10 @@ pub mod delete_route_input {
         /// Consumes the builder and constructs a [`DeleteRouteInput`](crate::input::DeleteRouteInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeleteRouteInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteRouteInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteRouteInput {
                 api_id: self.api_id,
                 route_id: self.route_id,
@@ -5083,27 +5346,27 @@ impl DeleteRouteInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteRoute,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteRouteInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_30 = &_input.api_id;
             let input_30 =
                 input_30
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "api_id",
                         details: "cannot be empty or unset",
                     })?;
-            let api_id = smithy_http::label::fmt_string(input_30, false);
+            let api_id = aws_smithy_http::label::fmt_string(input_30, false);
             if api_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "api_id",
                     details: "cannot be empty or unset",
                 });
@@ -5112,13 +5375,13 @@ impl DeleteRouteInput {
             let input_31 =
                 input_31
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "route_id",
                         details: "cannot be empty or unset",
                     })?;
-            let route_id = smithy_http::label::fmt_string(input_31, false);
+            let route_id = aws_smithy_http::label::fmt_string(input_31, false);
             if route_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "route_id",
                     details: "cannot be empty or unset",
                 });
@@ -5136,7 +5399,7 @@ impl DeleteRouteInput {
         fn update_http_builder(
             input: &crate::input::DeleteRouteInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5145,23 +5408,23 @@ impl DeleteRouteInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteRouteInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5184,25 +5447,27 @@ impl DeleteRouteInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeleteRoute::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DeleteRoute",
-                    "apigatewayv2",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteRoute::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteRoute",
+            "apigatewayv2",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5232,6 +5497,7 @@ pub mod delete_route_request_parameter_input {
             self.api_id = Some(input.into());
             self
         }
+        /// <p>The API identifier.</p>
         pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.api_id = input;
             self
@@ -5241,6 +5507,7 @@ pub mod delete_route_request_parameter_input {
             self.request_parameter_key = Some(input.into());
             self
         }
+        /// <p>The route request parameter key.</p>
         pub fn set_request_parameter_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5253,6 +5520,7 @@ pub mod delete_route_request_parameter_input {
             self.route_id = Some(input.into());
             self
         }
+        /// <p>The route ID.</p>
         pub fn set_route_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.route_id = input;
             self
@@ -5262,7 +5530,7 @@ pub mod delete_route_request_parameter_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteRouteRequestParameterInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteRouteRequestParameterInput {
                 api_id: self.api_id,
@@ -5284,27 +5552,27 @@ impl DeleteRouteRequestParameterInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteRouteRequestParameter,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteRouteRequestParameterInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_32 = &_input.api_id;
             let input_32 =
                 input_32
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "api_id",
                         details: "cannot be empty or unset",
                     })?;
-            let api_id = smithy_http::label::fmt_string(input_32, false);
+            let api_id = aws_smithy_http::label::fmt_string(input_32, false);
             if api_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "api_id",
                     details: "cannot be empty or unset",
                 });
@@ -5313,13 +5581,13 @@ impl DeleteRouteRequestParameterInput {
             let input_33 =
                 input_33
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "route_id",
                         details: "cannot be empty or unset",
                     })?;
-            let route_id = smithy_http::label::fmt_string(input_33, false);
+            let route_id = aws_smithy_http::label::fmt_string(input_33, false);
             if route_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "route_id",
                     details: "cannot be empty or unset",
                 });
@@ -5328,13 +5596,13 @@ impl DeleteRouteRequestParameterInput {
             let input_34 =
                 input_34
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "request_parameter_key",
                         details: "cannot be empty or unset",
                     })?;
-            let request_parameter_key = smithy_http::label::fmt_string(input_34, false);
+            let request_parameter_key = aws_smithy_http::label::fmt_string(input_34, false);
             if request_parameter_key.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "request_parameter_key",
                     details: "cannot be empty or unset",
                 });
@@ -5353,7 +5621,7 @@ impl DeleteRouteRequestParameterInput {
         fn update_http_builder(
             input: &crate::input::DeleteRouteRequestParameterInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5362,23 +5630,23 @@ impl DeleteRouteRequestParameterInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteRouteRequestParameterInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5401,15 +5669,15 @@ impl DeleteRouteRequestParameterInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteRouteRequestParameter::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteRouteRequestParameter",
             "apigatewayv2",
         ));
@@ -5418,10 +5686,10 @@ impl DeleteRouteRequestParameterInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5451,6 +5719,7 @@ pub mod delete_route_response_input {
             self.api_id = Some(input.into());
             self
         }
+        /// <p>The API identifier.</p>
         pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.api_id = input;
             self
@@ -5460,6 +5729,7 @@ pub mod delete_route_response_input {
             self.route_id = Some(input.into());
             self
         }
+        /// <p>The route ID.</p>
         pub fn set_route_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.route_id = input;
             self
@@ -5469,6 +5739,7 @@ pub mod delete_route_response_input {
             self.route_response_id = Some(input.into());
             self
         }
+        /// <p>The route response ID.</p>
         pub fn set_route_response_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5481,7 +5752,7 @@ pub mod delete_route_response_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteRouteResponseInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteRouteResponseInput {
                 api_id: self.api_id,
@@ -5502,27 +5773,27 @@ impl DeleteRouteResponseInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteRouteResponse,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteRouteResponseInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_35 = &_input.api_id;
             let input_35 =
                 input_35
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "api_id",
                         details: "cannot be empty or unset",
                     })?;
-            let api_id = smithy_http::label::fmt_string(input_35, false);
+            let api_id = aws_smithy_http::label::fmt_string(input_35, false);
             if api_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "api_id",
                     details: "cannot be empty or unset",
                 });
@@ -5531,13 +5802,13 @@ impl DeleteRouteResponseInput {
             let input_36 =
                 input_36
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "route_id",
                         details: "cannot be empty or unset",
                     })?;
-            let route_id = smithy_http::label::fmt_string(input_36, false);
+            let route_id = aws_smithy_http::label::fmt_string(input_36, false);
             if route_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "route_id",
                     details: "cannot be empty or unset",
                 });
@@ -5546,13 +5817,13 @@ impl DeleteRouteResponseInput {
             let input_37 =
                 input_37
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "route_response_id",
                         details: "cannot be empty or unset",
                     })?;
-            let route_response_id = smithy_http::label::fmt_string(input_37, false);
+            let route_response_id = aws_smithy_http::label::fmt_string(input_37, false);
             if route_response_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "route_response_id",
                     details: "cannot be empty or unset",
                 });
@@ -5571,7 +5842,7 @@ impl DeleteRouteResponseInput {
         fn update_http_builder(
             input: &crate::input::DeleteRouteResponseInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5580,23 +5851,23 @@ impl DeleteRouteResponseInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteRouteResponseInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5619,15 +5890,15 @@ impl DeleteRouteResponseInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteRouteResponse::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteRouteResponse",
             "apigatewayv2",
         ));
@@ -5636,10 +5907,10 @@ impl DeleteRouteResponseInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5669,6 +5940,7 @@ pub mod delete_route_settings_input {
             self.api_id = Some(input.into());
             self
         }
+        /// <p>The API identifier.</p>
         pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.api_id = input;
             self
@@ -5678,6 +5950,7 @@ pub mod delete_route_settings_input {
             self.route_key = Some(input.into());
             self
         }
+        /// <p>The route key.</p>
         pub fn set_route_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.route_key = input;
             self
@@ -5687,6 +5960,7 @@ pub mod delete_route_settings_input {
             self.stage_name = Some(input.into());
             self
         }
+        /// <p>The stage name. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
         pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stage_name = input;
             self
@@ -5696,7 +5970,7 @@ pub mod delete_route_settings_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteRouteSettingsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteRouteSettingsInput {
                 api_id: self.api_id,
@@ -5717,27 +5991,27 @@ impl DeleteRouteSettingsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteRouteSettings,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteRouteSettingsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_38 = &_input.api_id;
             let input_38 =
                 input_38
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "api_id",
                         details: "cannot be empty or unset",
                     })?;
-            let api_id = smithy_http::label::fmt_string(input_38, false);
+            let api_id = aws_smithy_http::label::fmt_string(input_38, false);
             if api_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "api_id",
                     details: "cannot be empty or unset",
                 });
@@ -5746,13 +6020,13 @@ impl DeleteRouteSettingsInput {
             let input_39 =
                 input_39
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "stage_name",
                         details: "cannot be empty or unset",
                     })?;
-            let stage_name = smithy_http::label::fmt_string(input_39, false);
+            let stage_name = aws_smithy_http::label::fmt_string(input_39, false);
             if stage_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "stage_name",
                     details: "cannot be empty or unset",
                 });
@@ -5761,13 +6035,13 @@ impl DeleteRouteSettingsInput {
             let input_40 =
                 input_40
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "route_key",
                         details: "cannot be empty or unset",
                     })?;
-            let route_key = smithy_http::label::fmt_string(input_40, false);
+            let route_key = aws_smithy_http::label::fmt_string(input_40, false);
             if route_key.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "route_key",
                     details: "cannot be empty or unset",
                 });
@@ -5786,7 +6060,7 @@ impl DeleteRouteSettingsInput {
         fn update_http_builder(
             input: &crate::input::DeleteRouteSettingsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5795,23 +6069,23 @@ impl DeleteRouteSettingsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteRouteSettingsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5834,15 +6108,15 @@ impl DeleteRouteSettingsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteRouteSettings::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteRouteSettings",
             "apigatewayv2",
         ));
@@ -5851,10 +6125,10 @@ impl DeleteRouteSettingsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5883,6 +6157,7 @@ pub mod delete_stage_input {
             self.api_id = Some(input.into());
             self
         }
+        /// <p>The API identifier.</p>
         pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.api_id = input;
             self
@@ -5892,6 +6167,7 @@ pub mod delete_stage_input {
             self.stage_name = Some(input.into());
             self
         }
+        /// <p>The stage name. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
         pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stage_name = input;
             self
@@ -5899,8 +6175,10 @@ pub mod delete_stage_input {
         /// Consumes the builder and constructs a [`DeleteStageInput`](crate::input::DeleteStageInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeleteStageInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteStageInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteStageInput {
                 api_id: self.api_id,
                 stage_name: self.stage_name,
@@ -5919,27 +6197,27 @@ impl DeleteStageInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteStage,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteStageInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_41 = &_input.api_id;
             let input_41 =
                 input_41
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "api_id",
                         details: "cannot be empty or unset",
                     })?;
-            let api_id = smithy_http::label::fmt_string(input_41, false);
+            let api_id = aws_smithy_http::label::fmt_string(input_41, false);
             if api_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "api_id",
                     details: "cannot be empty or unset",
                 });
@@ -5948,13 +6226,13 @@ impl DeleteStageInput {
             let input_42 =
                 input_42
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "stage_name",
                         details: "cannot be empty or unset",
                     })?;
-            let stage_name = smithy_http::label::fmt_string(input_42, false);
+            let stage_name = aws_smithy_http::label::fmt_string(input_42, false);
             if stage_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "stage_name",
                     details: "cannot be empty or unset",
                 });
@@ -5972,7 +6250,7 @@ impl DeleteStageInput {
         fn update_http_builder(
             input: &crate::input::DeleteStageInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5981,23 +6259,23 @@ impl DeleteStageInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteStageInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6020,25 +6298,27 @@ impl DeleteStageInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeleteStage::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DeleteStage",
-                    "apigatewayv2",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteStage::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteStage",
+            "apigatewayv2",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6066,6 +6346,7 @@ pub mod delete_vpc_link_input {
             self.vpc_link_id = Some(input.into());
             self
         }
+        /// <p>The ID of the VPC link.</p>
         pub fn set_vpc_link_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.vpc_link_id = input;
             self
@@ -6073,8 +6354,10 @@ pub mod delete_vpc_link_input {
         /// Consumes the builder and constructs a [`DeleteVpcLinkInput`](crate::input::DeleteVpcLinkInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeleteVpcLinkInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteVpcLinkInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteVpcLinkInput {
                 vpc_link_id: self.vpc_link_id,
             })
@@ -6092,27 +6375,27 @@ impl DeleteVpcLinkInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteVpcLink,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteVpcLinkInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_43 = &_input.vpc_link_id;
             let input_43 =
                 input_43
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "vpc_link_id",
                         details: "cannot be empty or unset",
                     })?;
-            let vpc_link_id = smithy_http::label::fmt_string(input_43, false);
+            let vpc_link_id = aws_smithy_http::label::fmt_string(input_43, false);
             if vpc_link_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "vpc_link_id",
                     details: "cannot be empty or unset",
                 });
@@ -6125,7 +6408,7 @@ impl DeleteVpcLinkInput {
         fn update_http_builder(
             input: &crate::input::DeleteVpcLinkInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6134,23 +6417,23 @@ impl DeleteVpcLinkInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteVpcLinkInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6173,25 +6456,27 @@ impl DeleteVpcLinkInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeleteVpcLink::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DeleteVpcLink",
-                    "apigatewayv2",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteVpcLink::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteVpcLink",
+            "apigatewayv2",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6224,6 +6509,7 @@ pub mod export_api_input {
             self.api_id = Some(input.into());
             self
         }
+        /// <p>The API identifier.</p>
         pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.api_id = input;
             self
@@ -6233,6 +6519,7 @@ pub mod export_api_input {
             self.export_version = Some(input.into());
             self
         }
+        /// <p>The version of the API Gateway export algorithm. API Gateway uses the latest version by default. Currently, the only supported version is 1.0.</p>
         pub fn set_export_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6245,6 +6532,7 @@ pub mod export_api_input {
             self.include_extensions = Some(input);
             self
         }
+        /// <p>Specifies whether to include <a href="https://docs.aws.amazon.com//apigateway/latest/developerguide/api-gateway-swagger-extensions.html">API Gateway extensions</a> in the exported API definition. API Gateway extensions are included by default.</p>
         pub fn set_include_extensions(mut self, input: std::option::Option<bool>) -> Self {
             self.include_extensions = input;
             self
@@ -6254,6 +6542,7 @@ pub mod export_api_input {
             self.output_type = Some(input.into());
             self
         }
+        /// <p>The output type of the exported definition file. Valid values are JSON and YAML.</p>
         pub fn set_output_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.output_type = input;
             self
@@ -6263,6 +6552,7 @@ pub mod export_api_input {
             self.specification = Some(input.into());
             self
         }
+        /// <p>The version of the API specification to use. OAS30, for OpenAPI 3.0, is the only supported value.</p>
         pub fn set_specification(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6275,6 +6565,7 @@ pub mod export_api_input {
             self.stage_name = Some(input.into());
             self
         }
+        /// <p>The name of the API stage to export. If you don't specify this property, a representation of the latest API configuration is exported.</p>
         pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stage_name = input;
             self
@@ -6282,7 +6573,7 @@ pub mod export_api_input {
         /// Consumes the builder and constructs a [`ExportApiInput`](crate::input::ExportApiInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ExportApiInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::ExportApiInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::ExportApiInput {
                 api_id: self.api_id,
@@ -6306,27 +6597,27 @@ impl ExportApiInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ExportApi,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ExportApiInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_44 = &_input.api_id;
             let input_44 =
                 input_44
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "api_id",
                         details: "cannot be empty or unset",
                     })?;
-            let api_id = smithy_http::label::fmt_string(input_44, false);
+            let api_id = aws_smithy_http::label::fmt_string(input_44, false);
             if api_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "api_id",
                     details: "cannot be empty or unset",
                 });
@@ -6335,13 +6626,13 @@ impl ExportApiInput {
             let input_45 =
                 input_45
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "specification",
                         details: "cannot be empty or unset",
                     })?;
-            let specification = smithy_http::label::fmt_string(input_45, false);
+            let specification = aws_smithy_http::label::fmt_string(input_45, false);
             if specification.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "specification",
                     details: "cannot be empty or unset",
                 });
@@ -6356,28 +6647,31 @@ impl ExportApiInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::ExportApiInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_46) = &_input.export_version {
-                query.push_kv("exportVersion", &smithy_http::query::fmt_string(&inner_46));
+                query.push_kv(
+                    "exportVersion",
+                    &aws_smithy_http::query::fmt_string(&inner_46),
+                );
             }
             if _input.include_extensions {
                 query.push_kv(
                     "includeExtensions",
-                    &smithy_types::primitive::Encoder::from(_input.include_extensions).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(_input.include_extensions).encode(),
                 );
             }
             if let Some(inner_47) = &_input.output_type {
-                query.push_kv("outputType", &smithy_http::query::fmt_string(&inner_47));
+                query.push_kv("outputType", &aws_smithy_http::query::fmt_string(&inner_47));
             }
             if let Some(inner_48) = &_input.stage_name {
-                query.push_kv("stageName", &smithy_http::query::fmt_string(&inner_48));
+                query.push_kv("stageName", &aws_smithy_http::query::fmt_string(&inner_48));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::ExportApiInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6387,23 +6681,23 @@ impl ExportApiInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ExportApiInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6426,13 +6720,13 @@ impl ExportApiInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
         let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ExportApi::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
+            aws_smithy_http::operation::Operation::new(request, crate::operation::ExportApi::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "ExportApi",
                     "apigatewayv2",
                 ));
@@ -6441,10 +6735,10 @@ impl ExportApiInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6472,6 +6766,7 @@ pub mod get_api_input {
             self.api_id = Some(input.into());
             self
         }
+        /// <p>The API identifier.</p>
         pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.api_id = input;
             self
@@ -6479,7 +6774,7 @@ pub mod get_api_input {
         /// Consumes the builder and constructs a [`GetApiInput`](crate::input::GetApiInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetApiInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::GetApiInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::GetApiInput {
                 api_id: self.api_id,
@@ -6498,24 +6793,27 @@ impl GetApiInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<crate::operation::GetApi, aws_http::AwsErrorRetryPolicy>,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetApi,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetApiInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_49 = &_input.api_id;
             let input_49 =
                 input_49
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "api_id",
                         details: "cannot be empty or unset",
                     })?;
-            let api_id = smithy_http::label::fmt_string(input_49, false);
+            let api_id = aws_smithy_http::label::fmt_string(input_49, false);
             if api_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "api_id",
                     details: "cannot be empty or unset",
                 });
@@ -6527,7 +6825,7 @@ impl GetApiInput {
         fn update_http_builder(
             input: &crate::input::GetApiInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6536,23 +6834,23 @@ impl GetApiInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetApiInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6575,24 +6873,25 @@ impl GetApiInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(request, crate::operation::GetApi::new())
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "GetApi",
-                "apigatewayv2",
-            ));
+        let op =
+            aws_smithy_http::operation::Operation::new(request, crate::operation::GetApi::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "GetApi",
+                    "apigatewayv2",
+                ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6621,6 +6920,7 @@ pub mod get_api_mapping_input {
             self.api_mapping_id = Some(input.into());
             self
         }
+        /// <p>The API mapping identifier.</p>
         pub fn set_api_mapping_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6633,6 +6933,7 @@ pub mod get_api_mapping_input {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The domain name.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -6640,8 +6941,10 @@ pub mod get_api_mapping_input {
         /// Consumes the builder and constructs a [`GetApiMappingInput`](crate::input::GetApiMappingInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetApiMappingInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetApiMappingInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetApiMappingInput {
                 api_mapping_id: self.api_mapping_id,
                 domain_name: self.domain_name,
@@ -6660,27 +6963,27 @@ impl GetApiMappingInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetApiMapping,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetApiMappingInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_50 = &_input.domain_name;
             let input_50 =
                 input_50
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
                         details: "cannot be empty or unset",
                     })?;
-            let domain_name = smithy_http::label::fmt_string(input_50, false);
+            let domain_name = aws_smithy_http::label::fmt_string(input_50, false);
             if domain_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "domain_name",
                     details: "cannot be empty or unset",
                 });
@@ -6689,13 +6992,13 @@ impl GetApiMappingInput {
             let input_51 =
                 input_51
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "api_mapping_id",
                         details: "cannot be empty or unset",
                     })?;
-            let api_mapping_id = smithy_http::label::fmt_string(input_51, false);
+            let api_mapping_id = aws_smithy_http::label::fmt_string(input_51, false);
             if api_mapping_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "api_mapping_id",
                     details: "cannot be empty or unset",
                 });
@@ -6713,7 +7016,7 @@ impl GetApiMappingInput {
         fn update_http_builder(
             input: &crate::input::GetApiMappingInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6722,23 +7025,23 @@ impl GetApiMappingInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetApiMappingInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6761,25 +7064,27 @@ impl GetApiMappingInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::GetApiMapping::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "GetApiMapping",
-                    "apigatewayv2",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetApiMapping::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetApiMapping",
+            "apigatewayv2",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6809,6 +7114,7 @@ pub mod get_api_mappings_input {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The domain name.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -6818,6 +7124,7 @@ pub mod get_api_mappings_input {
             self.max_results = Some(input.into());
             self
         }
+        /// <p>The maximum number of elements to be returned for this resource.</p>
         pub fn set_max_results(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.max_results = input;
             self
@@ -6827,6 +7134,7 @@ pub mod get_api_mappings_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6836,7 +7144,7 @@ pub mod get_api_mappings_input {
             self,
         ) -> std::result::Result<
             crate::input::GetApiMappingsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetApiMappingsInput {
                 domain_name: self.domain_name,
@@ -6857,27 +7165,27 @@ impl GetApiMappingsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetApiMappings,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetApiMappingsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_52 = &_input.domain_name;
             let input_52 =
                 input_52
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
                         details: "cannot be empty or unset",
                     })?;
-            let domain_name = smithy_http::label::fmt_string(input_52, false);
+            let domain_name = aws_smithy_http::label::fmt_string(input_52, false);
             if domain_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "domain_name",
                     details: "cannot be empty or unset",
                 });
@@ -6891,19 +7199,19 @@ impl GetApiMappingsInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::GetApiMappingsInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_53) = &_input.max_results {
-                query.push_kv("maxResults", &smithy_http::query::fmt_string(&inner_53));
+                query.push_kv("maxResults", &aws_smithy_http::query::fmt_string(&inner_53));
             }
             if let Some(inner_54) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_54));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_54));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::GetApiMappingsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6913,23 +7221,23 @@ impl GetApiMappingsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetApiMappingsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6952,15 +7260,15 @@ impl GetApiMappingsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetApiMappings::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetApiMappings",
             "apigatewayv2",
         ));
@@ -6969,10 +7277,10 @@ impl GetApiMappingsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7001,6 +7309,7 @@ pub mod get_apis_input {
             self.max_results = Some(input.into());
             self
         }
+        /// <p>The maximum number of elements to be returned for this resource.</p>
         pub fn set_max_results(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.max_results = input;
             self
@@ -7010,6 +7319,7 @@ pub mod get_apis_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7017,7 +7327,7 @@ pub mod get_apis_input {
         /// Consumes the builder and constructs a [`GetApisInput`](crate::input::GetApisInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetApisInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::GetApisInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::GetApisInput {
                 max_results: self.max_results,
@@ -7037,30 +7347,33 @@ impl GetApisInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<crate::operation::GetApis, aws_http::AwsErrorRetryPolicy>,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetApis,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetApisInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/v2/apis").expect("formatting should succeed");
             Ok(())
         }
         fn uri_query(_input: &crate::input::GetApisInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_55) = &_input.max_results {
-                query.push_kv("maxResults", &smithy_http::query::fmt_string(&inner_55));
+                query.push_kv("maxResults", &aws_smithy_http::query::fmt_string(&inner_55));
             }
             if let Some(inner_56) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_56));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_56));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::GetApisInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7070,23 +7383,23 @@ impl GetApisInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetApisInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7109,24 +7422,25 @@ impl GetApisInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(request, crate::operation::GetApis::new())
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "GetApis",
-                "apigatewayv2",
-            ));
+        let op =
+            aws_smithy_http::operation::Operation::new(request, crate::operation::GetApis::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "GetApis",
+                    "apigatewayv2",
+                ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7155,6 +7469,7 @@ pub mod get_authorizer_input {
             self.api_id = Some(input.into());
             self
         }
+        /// <p>The API identifier.</p>
         pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.api_id = input;
             self
@@ -7164,6 +7479,7 @@ pub mod get_authorizer_input {
             self.authorizer_id = Some(input.into());
             self
         }
+        /// <p>The authorizer identifier.</p>
         pub fn set_authorizer_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7174,8 +7490,10 @@ pub mod get_authorizer_input {
         /// Consumes the builder and constructs a [`GetAuthorizerInput`](crate::input::GetAuthorizerInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetAuthorizerInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetAuthorizerInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetAuthorizerInput {
                 api_id: self.api_id,
                 authorizer_id: self.authorizer_id,
@@ -7194,27 +7512,27 @@ impl GetAuthorizerInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetAuthorizer,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetAuthorizerInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_57 = &_input.api_id;
             let input_57 =
                 input_57
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "api_id",
                         details: "cannot be empty or unset",
                     })?;
-            let api_id = smithy_http::label::fmt_string(input_57, false);
+            let api_id = aws_smithy_http::label::fmt_string(input_57, false);
             if api_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "api_id",
                     details: "cannot be empty or unset",
                 });
@@ -7223,13 +7541,13 @@ impl GetAuthorizerInput {
             let input_58 =
                 input_58
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "authorizer_id",
                         details: "cannot be empty or unset",
                     })?;
-            let authorizer_id = smithy_http::label::fmt_string(input_58, false);
+            let authorizer_id = aws_smithy_http::label::fmt_string(input_58, false);
             if authorizer_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "authorizer_id",
                     details: "cannot be empty or unset",
                 });
@@ -7247,7 +7565,7 @@ impl GetAuthorizerInput {
         fn update_http_builder(
             input: &crate::input::GetAuthorizerInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7256,23 +7574,23 @@ impl GetAuthorizerInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetAuthorizerInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7295,25 +7613,27 @@ impl GetAuthorizerInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::GetAuthorizer::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "GetAuthorizer",
-                    "apigatewayv2",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetAuthorizer::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetAuthorizer",
+            "apigatewayv2",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7343,6 +7663,7 @@ pub mod get_authorizers_input {
             self.api_id = Some(input.into());
             self
         }
+        /// <p>The API identifier.</p>
         pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.api_id = input;
             self
@@ -7352,6 +7673,7 @@ pub mod get_authorizers_input {
             self.max_results = Some(input.into());
             self
         }
+        /// <p>The maximum number of elements to be returned for this resource.</p>
         pub fn set_max_results(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.max_results = input;
             self
@@ -7361,6 +7683,7 @@ pub mod get_authorizers_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7370,7 +7693,7 @@ pub mod get_authorizers_input {
             self,
         ) -> std::result::Result<
             crate::input::GetAuthorizersInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetAuthorizersInput {
                 api_id: self.api_id,
@@ -7391,27 +7714,27 @@ impl GetAuthorizersInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetAuthorizers,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetAuthorizersInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_59 = &_input.api_id;
             let input_59 =
                 input_59
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "api_id",
                         details: "cannot be empty or unset",
                     })?;
-            let api_id = smithy_http::label::fmt_string(input_59, false);
+            let api_id = aws_smithy_http::label::fmt_string(input_59, false);
             if api_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "api_id",
                     details: "cannot be empty or unset",
                 });
@@ -7421,19 +7744,19 @@ impl GetAuthorizersInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::GetAuthorizersInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_60) = &_input.max_results {
-                query.push_kv("maxResults", &smithy_http::query::fmt_string(&inner_60));
+                query.push_kv("maxResults", &aws_smithy_http::query::fmt_string(&inner_60));
             }
             if let Some(inner_61) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_61));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_61));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::GetAuthorizersInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7443,23 +7766,23 @@ impl GetAuthorizersInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetAuthorizersInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7482,15 +7805,15 @@ impl GetAuthorizersInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetAuthorizers::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetAuthorizers",
             "apigatewayv2",
         ));
@@ -7499,10 +7822,10 @@ impl GetAuthorizersInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7531,6 +7854,7 @@ pub mod get_deployment_input {
             self.api_id = Some(input.into());
             self
         }
+        /// <p>The API identifier.</p>
         pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.api_id = input;
             self
@@ -7540,6 +7864,7 @@ pub mod get_deployment_input {
             self.deployment_id = Some(input.into());
             self
         }
+        /// <p>The deployment ID.</p>
         pub fn set_deployment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7550,8 +7875,10 @@ pub mod get_deployment_input {
         /// Consumes the builder and constructs a [`GetDeploymentInput`](crate::input::GetDeploymentInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetDeploymentInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetDeploymentInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetDeploymentInput {
                 api_id: self.api_id,
                 deployment_id: self.deployment_id,
@@ -7570,27 +7897,27 @@ impl GetDeploymentInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetDeployment,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetDeploymentInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_62 = &_input.api_id;
             let input_62 =
                 input_62
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "api_id",
                         details: "cannot be empty or unset",
                     })?;
-            let api_id = smithy_http::label::fmt_string(input_62, false);
+            let api_id = aws_smithy_http::label::fmt_string(input_62, false);
             if api_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "api_id",
                     details: "cannot be empty or unset",
                 });
@@ -7599,13 +7926,13 @@ impl GetDeploymentInput {
             let input_63 =
                 input_63
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "deployment_id",
                         details: "cannot be empty or unset",
                     })?;
-            let deployment_id = smithy_http::label::fmt_string(input_63, false);
+            let deployment_id = aws_smithy_http::label::fmt_string(input_63, false);
             if deployment_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "deployment_id",
                     details: "cannot be empty or unset",
                 });
@@ -7623,7 +7950,7 @@ impl GetDeploymentInput {
         fn update_http_builder(
             input: &crate::input::GetDeploymentInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7632,23 +7959,23 @@ impl GetDeploymentInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetDeploymentInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7671,25 +7998,27 @@ impl GetDeploymentInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::GetDeployment::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "GetDeployment",
-                    "apigatewayv2",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetDeployment::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetDeployment",
+            "apigatewayv2",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7719,6 +8048,7 @@ pub mod get_deployments_input {
             self.api_id = Some(input.into());
             self
         }
+        /// <p>The API identifier.</p>
         pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.api_id = input;
             self
@@ -7728,6 +8058,7 @@ pub mod get_deployments_input {
             self.max_results = Some(input.into());
             self
         }
+        /// <p>The maximum number of elements to be returned for this resource.</p>
         pub fn set_max_results(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.max_results = input;
             self
@@ -7737,6 +8068,7 @@ pub mod get_deployments_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -7746,7 +8078,7 @@ pub mod get_deployments_input {
             self,
         ) -> std::result::Result<
             crate::input::GetDeploymentsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetDeploymentsInput {
                 api_id: self.api_id,
@@ -7767,27 +8099,27 @@ impl GetDeploymentsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetDeployments,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetDeploymentsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_64 = &_input.api_id;
             let input_64 =
                 input_64
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "api_id",
                         details: "cannot be empty or unset",
                     })?;
-            let api_id = smithy_http::label::fmt_string(input_64, false);
+            let api_id = aws_smithy_http::label::fmt_string(input_64, false);
             if api_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "api_id",
                     details: "cannot be empty or unset",
                 });
@@ -7797,19 +8129,19 @@ impl GetDeploymentsInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::GetDeploymentsInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_65) = &_input.max_results {
-                query.push_kv("maxResults", &smithy_http::query::fmt_string(&inner_65));
+                query.push_kv("maxResults", &aws_smithy_http::query::fmt_string(&inner_65));
             }
             if let Some(inner_66) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_66));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_66));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::GetDeploymentsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7819,23 +8151,23 @@ impl GetDeploymentsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetDeploymentsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7858,15 +8190,15 @@ impl GetDeploymentsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetDeployments::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetDeployments",
             "apigatewayv2",
         ));
@@ -7875,10 +8207,10 @@ impl GetDeploymentsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7906,6 +8238,7 @@ pub mod get_domain_name_input {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The domain name.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -7913,8 +8246,10 @@ pub mod get_domain_name_input {
         /// Consumes the builder and constructs a [`GetDomainNameInput`](crate::input::GetDomainNameInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetDomainNameInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetDomainNameInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetDomainNameInput {
                 domain_name: self.domain_name,
             })
@@ -7932,27 +8267,27 @@ impl GetDomainNameInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetDomainName,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetDomainNameInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_67 = &_input.domain_name;
             let input_67 =
                 input_67
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
                         details: "cannot be empty or unset",
                     })?;
-            let domain_name = smithy_http::label::fmt_string(input_67, false);
+            let domain_name = aws_smithy_http::label::fmt_string(input_67, false);
             if domain_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "domain_name",
                     details: "cannot be empty or unset",
                 });
@@ -7969,7 +8304,7 @@ impl GetDomainNameInput {
         fn update_http_builder(
             input: &crate::input::GetDomainNameInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7978,23 +8313,23 @@ impl GetDomainNameInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetDomainNameInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8017,25 +8352,27 @@ impl GetDomainNameInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::GetDomainName::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "GetDomainName",
-                    "apigatewayv2",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetDomainName::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetDomainName",
+            "apigatewayv2",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8064,6 +8401,7 @@ pub mod get_domain_names_input {
             self.max_results = Some(input.into());
             self
         }
+        /// <p>The maximum number of elements to be returned for this resource.</p>
         pub fn set_max_results(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.max_results = input;
             self
@@ -8073,6 +8411,7 @@ pub mod get_domain_names_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8082,7 +8421,7 @@ pub mod get_domain_names_input {
             self,
         ) -> std::result::Result<
             crate::input::GetDomainNamesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetDomainNamesInput {
                 max_results: self.max_results,
@@ -8102,33 +8441,33 @@ impl GetDomainNamesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetDomainNames,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetDomainNamesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/v2/domainnames").expect("formatting should succeed");
             Ok(())
         }
         fn uri_query(_input: &crate::input::GetDomainNamesInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_68) = &_input.max_results {
-                query.push_kv("maxResults", &smithy_http::query::fmt_string(&inner_68));
+                query.push_kv("maxResults", &aws_smithy_http::query::fmt_string(&inner_68));
             }
             if let Some(inner_69) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_69));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_69));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::GetDomainNamesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8138,23 +8477,23 @@ impl GetDomainNamesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetDomainNamesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8177,15 +8516,15 @@ impl GetDomainNamesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetDomainNames::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetDomainNames",
             "apigatewayv2",
         ));
@@ -8194,10 +8533,10 @@ impl GetDomainNamesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8226,6 +8565,7 @@ pub mod get_integration_input {
             self.api_id = Some(input.into());
             self
         }
+        /// <p>The API identifier.</p>
         pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.api_id = input;
             self
@@ -8235,6 +8575,7 @@ pub mod get_integration_input {
             self.integration_id = Some(input.into());
             self
         }
+        /// <p>The integration ID.</p>
         pub fn set_integration_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8247,7 +8588,7 @@ pub mod get_integration_input {
             self,
         ) -> std::result::Result<
             crate::input::GetIntegrationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetIntegrationInput {
                 api_id: self.api_id,
@@ -8267,27 +8608,27 @@ impl GetIntegrationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetIntegration,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetIntegrationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_70 = &_input.api_id;
             let input_70 =
                 input_70
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "api_id",
                         details: "cannot be empty or unset",
                     })?;
-            let api_id = smithy_http::label::fmt_string(input_70, false);
+            let api_id = aws_smithy_http::label::fmt_string(input_70, false);
             if api_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "api_id",
                     details: "cannot be empty or unset",
                 });
@@ -8296,13 +8637,13 @@ impl GetIntegrationInput {
             let input_71 =
                 input_71
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "integration_id",
                         details: "cannot be empty or unset",
                     })?;
-            let integration_id = smithy_http::label::fmt_string(input_71, false);
+            let integration_id = aws_smithy_http::label::fmt_string(input_71, false);
             if integration_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "integration_id",
                     details: "cannot be empty or unset",
                 });
@@ -8320,7 +8661,7 @@ impl GetIntegrationInput {
         fn update_http_builder(
             input: &crate::input::GetIntegrationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8329,23 +8670,23 @@ impl GetIntegrationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetIntegrationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8368,15 +8709,15 @@ impl GetIntegrationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetIntegration::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetIntegration",
             "apigatewayv2",
         ));
@@ -8385,10 +8726,10 @@ impl GetIntegrationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8418,6 +8759,7 @@ pub mod get_integration_response_input {
             self.api_id = Some(input.into());
             self
         }
+        /// <p>The API identifier.</p>
         pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.api_id = input;
             self
@@ -8427,6 +8769,7 @@ pub mod get_integration_response_input {
             self.integration_id = Some(input.into());
             self
         }
+        /// <p>The integration ID.</p>
         pub fn set_integration_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8439,6 +8782,7 @@ pub mod get_integration_response_input {
             self.integration_response_id = Some(input.into());
             self
         }
+        /// <p>The integration response ID.</p>
         pub fn set_integration_response_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8451,7 +8795,7 @@ pub mod get_integration_response_input {
             self,
         ) -> std::result::Result<
             crate::input::GetIntegrationResponseInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetIntegrationResponseInput {
                 api_id: self.api_id,
@@ -8472,27 +8816,27 @@ impl GetIntegrationResponseInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetIntegrationResponse,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetIntegrationResponseInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_72 = &_input.api_id;
             let input_72 =
                 input_72
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "api_id",
                         details: "cannot be empty or unset",
                     })?;
-            let api_id = smithy_http::label::fmt_string(input_72, false);
+            let api_id = aws_smithy_http::label::fmt_string(input_72, false);
             if api_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "api_id",
                     details: "cannot be empty or unset",
                 });
@@ -8501,13 +8845,13 @@ impl GetIntegrationResponseInput {
             let input_73 =
                 input_73
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "integration_id",
                         details: "cannot be empty or unset",
                     })?;
-            let integration_id = smithy_http::label::fmt_string(input_73, false);
+            let integration_id = aws_smithy_http::label::fmt_string(input_73, false);
             if integration_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "integration_id",
                     details: "cannot be empty or unset",
                 });
@@ -8516,13 +8860,13 @@ impl GetIntegrationResponseInput {
             let input_74 =
                 input_74
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "integration_response_id",
                         details: "cannot be empty or unset",
                     })?;
-            let integration_response_id = smithy_http::label::fmt_string(input_74, false);
+            let integration_response_id = aws_smithy_http::label::fmt_string(input_74, false);
             if integration_response_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "integration_response_id",
                     details: "cannot be empty or unset",
                 });
@@ -8534,7 +8878,7 @@ impl GetIntegrationResponseInput {
         fn update_http_builder(
             input: &crate::input::GetIntegrationResponseInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8543,23 +8887,23 @@ impl GetIntegrationResponseInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetIntegrationResponseInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8582,15 +8926,15 @@ impl GetIntegrationResponseInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetIntegrationResponse::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetIntegrationResponse",
             "apigatewayv2",
         ));
@@ -8599,10 +8943,10 @@ impl GetIntegrationResponseInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8633,6 +8977,7 @@ pub mod get_integration_responses_input {
             self.api_id = Some(input.into());
             self
         }
+        /// <p>The API identifier.</p>
         pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.api_id = input;
             self
@@ -8642,6 +8987,7 @@ pub mod get_integration_responses_input {
             self.integration_id = Some(input.into());
             self
         }
+        /// <p>The integration ID.</p>
         pub fn set_integration_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8654,6 +9000,7 @@ pub mod get_integration_responses_input {
             self.max_results = Some(input.into());
             self
         }
+        /// <p>The maximum number of elements to be returned for this resource.</p>
         pub fn set_max_results(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.max_results = input;
             self
@@ -8663,6 +9010,7 @@ pub mod get_integration_responses_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8672,7 +9020,7 @@ pub mod get_integration_responses_input {
             self,
         ) -> std::result::Result<
             crate::input::GetIntegrationResponsesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetIntegrationResponsesInput {
                 api_id: self.api_id,
@@ -8695,27 +9043,27 @@ impl GetIntegrationResponsesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetIntegrationResponses,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetIntegrationResponsesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_75 = &_input.api_id;
             let input_75 =
                 input_75
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "api_id",
                         details: "cannot be empty or unset",
                     })?;
-            let api_id = smithy_http::label::fmt_string(input_75, false);
+            let api_id = aws_smithy_http::label::fmt_string(input_75, false);
             if api_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "api_id",
                     details: "cannot be empty or unset",
                 });
@@ -8724,13 +9072,13 @@ impl GetIntegrationResponsesInput {
             let input_76 =
                 input_76
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "integration_id",
                         details: "cannot be empty or unset",
                     })?;
-            let integration_id = smithy_http::label::fmt_string(input_76, false);
+            let integration_id = aws_smithy_http::label::fmt_string(input_76, false);
             if integration_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "integration_id",
                     details: "cannot be empty or unset",
                 });
@@ -8745,19 +9093,19 @@ impl GetIntegrationResponsesInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::GetIntegrationResponsesInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_77) = &_input.max_results {
-                query.push_kv("maxResults", &smithy_http::query::fmt_string(&inner_77));
+                query.push_kv("maxResults", &aws_smithy_http::query::fmt_string(&inner_77));
             }
             if let Some(inner_78) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_78));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_78));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::GetIntegrationResponsesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8767,23 +9115,23 @@ impl GetIntegrationResponsesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetIntegrationResponsesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8806,15 +9154,15 @@ impl GetIntegrationResponsesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetIntegrationResponses::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetIntegrationResponses",
             "apigatewayv2",
         ));
@@ -8823,10 +9171,10 @@ impl GetIntegrationResponsesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8856,6 +9204,7 @@ pub mod get_integrations_input {
             self.api_id = Some(input.into());
             self
         }
+        /// <p>The API identifier.</p>
         pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.api_id = input;
             self
@@ -8865,6 +9214,7 @@ pub mod get_integrations_input {
             self.max_results = Some(input.into());
             self
         }
+        /// <p>The maximum number of elements to be returned for this resource.</p>
         pub fn set_max_results(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.max_results = input;
             self
@@ -8874,6 +9224,7 @@ pub mod get_integrations_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -8883,7 +9234,7 @@ pub mod get_integrations_input {
             self,
         ) -> std::result::Result<
             crate::input::GetIntegrationsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetIntegrationsInput {
                 api_id: self.api_id,
@@ -8904,27 +9255,27 @@ impl GetIntegrationsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetIntegrations,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetIntegrationsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_79 = &_input.api_id;
             let input_79 =
                 input_79
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "api_id",
                         details: "cannot be empty or unset",
                     })?;
-            let api_id = smithy_http::label::fmt_string(input_79, false);
+            let api_id = aws_smithy_http::label::fmt_string(input_79, false);
             if api_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "api_id",
                     details: "cannot be empty or unset",
                 });
@@ -8934,19 +9285,19 @@ impl GetIntegrationsInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::GetIntegrationsInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_80) = &_input.max_results {
-                query.push_kv("maxResults", &smithy_http::query::fmt_string(&inner_80));
+                query.push_kv("maxResults", &aws_smithy_http::query::fmt_string(&inner_80));
             }
             if let Some(inner_81) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_81));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_81));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::GetIntegrationsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8956,23 +9307,23 @@ impl GetIntegrationsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetIntegrationsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8995,15 +9346,15 @@ impl GetIntegrationsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetIntegrations::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetIntegrations",
             "apigatewayv2",
         ));
@@ -9012,10 +9363,10 @@ impl GetIntegrationsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9044,6 +9395,7 @@ pub mod get_model_input {
             self.api_id = Some(input.into());
             self
         }
+        /// <p>The API identifier.</p>
         pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.api_id = input;
             self
@@ -9053,6 +9405,7 @@ pub mod get_model_input {
             self.model_id = Some(input.into());
             self
         }
+        /// <p>The model ID.</p>
         pub fn set_model_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.model_id = input;
             self
@@ -9060,7 +9413,7 @@ pub mod get_model_input {
         /// Consumes the builder and constructs a [`GetModelInput`](crate::input::GetModelInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetModelInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::GetModelInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::GetModelInput {
                 api_id: self.api_id,
@@ -9080,27 +9433,27 @@ impl GetModelInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetModel,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetModelInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_82 = &_input.api_id;
             let input_82 =
                 input_82
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "api_id",
                         details: "cannot be empty or unset",
                     })?;
-            let api_id = smithy_http::label::fmt_string(input_82, false);
+            let api_id = aws_smithy_http::label::fmt_string(input_82, false);
             if api_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "api_id",
                     details: "cannot be empty or unset",
                 });
@@ -9109,13 +9462,13 @@ impl GetModelInput {
             let input_83 =
                 input_83
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "model_id",
                         details: "cannot be empty or unset",
                     })?;
-            let model_id = smithy_http::label::fmt_string(input_83, false);
+            let model_id = aws_smithy_http::label::fmt_string(input_83, false);
             if model_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "model_id",
                     details: "cannot be empty or unset",
                 });
@@ -9133,7 +9486,7 @@ impl GetModelInput {
         fn update_http_builder(
             input: &crate::input::GetModelInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9142,23 +9495,23 @@ impl GetModelInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetModelInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9181,24 +9534,25 @@ impl GetModelInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(request, crate::operation::GetModel::new())
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "GetModel",
-                "apigatewayv2",
-            ));
+        let op =
+            aws_smithy_http::operation::Operation::new(request, crate::operation::GetModel::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "GetModel",
+                    "apigatewayv2",
+                ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9228,6 +9582,7 @@ pub mod get_models_input {
             self.api_id = Some(input.into());
             self
         }
+        /// <p>The API identifier.</p>
         pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.api_id = input;
             self
@@ -9237,6 +9592,7 @@ pub mod get_models_input {
             self.max_results = Some(input.into());
             self
         }
+        /// <p>The maximum number of elements to be returned for this resource.</p>
         pub fn set_max_results(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.max_results = input;
             self
@@ -9246,6 +9602,7 @@ pub mod get_models_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -9253,7 +9610,7 @@ pub mod get_models_input {
         /// Consumes the builder and constructs a [`GetModelsInput`](crate::input::GetModelsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetModelsInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::GetModelsInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::GetModelsInput {
                 api_id: self.api_id,
@@ -9274,27 +9631,27 @@ impl GetModelsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetModels,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetModelsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_84 = &_input.api_id;
             let input_84 =
                 input_84
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "api_id",
                         details: "cannot be empty or unset",
                     })?;
-            let api_id = smithy_http::label::fmt_string(input_84, false);
+            let api_id = aws_smithy_http::label::fmt_string(input_84, false);
             if api_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "api_id",
                     details: "cannot be empty or unset",
                 });
@@ -9304,19 +9661,19 @@ impl GetModelsInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::GetModelsInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_85) = &_input.max_results {
-                query.push_kv("maxResults", &smithy_http::query::fmt_string(&inner_85));
+                query.push_kv("maxResults", &aws_smithy_http::query::fmt_string(&inner_85));
             }
             if let Some(inner_86) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_86));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_86));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::GetModelsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9326,23 +9683,23 @@ impl GetModelsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetModelsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9365,13 +9722,13 @@ impl GetModelsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
         let op =
-            smithy_http::operation::Operation::new(request, crate::operation::GetModels::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
+            aws_smithy_http::operation::Operation::new(request, crate::operation::GetModels::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "GetModels",
                     "apigatewayv2",
                 ));
@@ -9380,10 +9737,10 @@ impl GetModelsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9412,6 +9769,7 @@ pub mod get_model_template_input {
             self.api_id = Some(input.into());
             self
         }
+        /// <p>The API identifier.</p>
         pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.api_id = input;
             self
@@ -9421,6 +9779,7 @@ pub mod get_model_template_input {
             self.model_id = Some(input.into());
             self
         }
+        /// <p>The model ID.</p>
         pub fn set_model_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.model_id = input;
             self
@@ -9430,7 +9789,7 @@ pub mod get_model_template_input {
             self,
         ) -> std::result::Result<
             crate::input::GetModelTemplateInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetModelTemplateInput {
                 api_id: self.api_id,
@@ -9450,27 +9809,27 @@ impl GetModelTemplateInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetModelTemplate,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetModelTemplateInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_87 = &_input.api_id;
             let input_87 =
                 input_87
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "api_id",
                         details: "cannot be empty or unset",
                     })?;
-            let api_id = smithy_http::label::fmt_string(input_87, false);
+            let api_id = aws_smithy_http::label::fmt_string(input_87, false);
             if api_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "api_id",
                     details: "cannot be empty or unset",
                 });
@@ -9479,13 +9838,13 @@ impl GetModelTemplateInput {
             let input_88 =
                 input_88
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "model_id",
                         details: "cannot be empty or unset",
                     })?;
-            let model_id = smithy_http::label::fmt_string(input_88, false);
+            let model_id = aws_smithy_http::label::fmt_string(input_88, false);
             if model_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "model_id",
                     details: "cannot be empty or unset",
                 });
@@ -9503,7 +9862,7 @@ impl GetModelTemplateInput {
         fn update_http_builder(
             input: &crate::input::GetModelTemplateInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9512,23 +9871,23 @@ impl GetModelTemplateInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetModelTemplateInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9551,15 +9910,15 @@ impl GetModelTemplateInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetModelTemplate::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetModelTemplate",
             "apigatewayv2",
         ));
@@ -9568,10 +9927,10 @@ impl GetModelTemplateInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9600,6 +9959,7 @@ pub mod get_route_input {
             self.api_id = Some(input.into());
             self
         }
+        /// <p>The API identifier.</p>
         pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.api_id = input;
             self
@@ -9609,6 +9969,7 @@ pub mod get_route_input {
             self.route_id = Some(input.into());
             self
         }
+        /// <p>The route ID.</p>
         pub fn set_route_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.route_id = input;
             self
@@ -9616,7 +9977,7 @@ pub mod get_route_input {
         /// Consumes the builder and constructs a [`GetRouteInput`](crate::input::GetRouteInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetRouteInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::GetRouteInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::GetRouteInput {
                 api_id: self.api_id,
@@ -9636,27 +9997,27 @@ impl GetRouteInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetRoute,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetRouteInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_89 = &_input.api_id;
             let input_89 =
                 input_89
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "api_id",
                         details: "cannot be empty or unset",
                     })?;
-            let api_id = smithy_http::label::fmt_string(input_89, false);
+            let api_id = aws_smithy_http::label::fmt_string(input_89, false);
             if api_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "api_id",
                     details: "cannot be empty or unset",
                 });
@@ -9665,13 +10026,13 @@ impl GetRouteInput {
             let input_90 =
                 input_90
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "route_id",
                         details: "cannot be empty or unset",
                     })?;
-            let route_id = smithy_http::label::fmt_string(input_90, false);
+            let route_id = aws_smithy_http::label::fmt_string(input_90, false);
             if route_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "route_id",
                     details: "cannot be empty or unset",
                 });
@@ -9689,7 +10050,7 @@ impl GetRouteInput {
         fn update_http_builder(
             input: &crate::input::GetRouteInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9698,23 +10059,23 @@ impl GetRouteInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetRouteInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9737,24 +10098,25 @@ impl GetRouteInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(request, crate::operation::GetRoute::new())
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "GetRoute",
-                "apigatewayv2",
-            ));
+        let op =
+            aws_smithy_http::operation::Operation::new(request, crate::operation::GetRoute::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "GetRoute",
+                    "apigatewayv2",
+                ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9784,6 +10146,7 @@ pub mod get_route_response_input {
             self.api_id = Some(input.into());
             self
         }
+        /// <p>The API identifier.</p>
         pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.api_id = input;
             self
@@ -9793,6 +10156,7 @@ pub mod get_route_response_input {
             self.route_id = Some(input.into());
             self
         }
+        /// <p>The route ID.</p>
         pub fn set_route_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.route_id = input;
             self
@@ -9802,6 +10166,7 @@ pub mod get_route_response_input {
             self.route_response_id = Some(input.into());
             self
         }
+        /// <p>The route response ID.</p>
         pub fn set_route_response_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9814,7 +10179,7 @@ pub mod get_route_response_input {
             self,
         ) -> std::result::Result<
             crate::input::GetRouteResponseInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetRouteResponseInput {
                 api_id: self.api_id,
@@ -9835,27 +10200,27 @@ impl GetRouteResponseInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetRouteResponse,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetRouteResponseInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_91 = &_input.api_id;
             let input_91 =
                 input_91
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "api_id",
                         details: "cannot be empty or unset",
                     })?;
-            let api_id = smithy_http::label::fmt_string(input_91, false);
+            let api_id = aws_smithy_http::label::fmt_string(input_91, false);
             if api_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "api_id",
                     details: "cannot be empty or unset",
                 });
@@ -9864,13 +10229,13 @@ impl GetRouteResponseInput {
             let input_92 =
                 input_92
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "route_id",
                         details: "cannot be empty or unset",
                     })?;
-            let route_id = smithy_http::label::fmt_string(input_92, false);
+            let route_id = aws_smithy_http::label::fmt_string(input_92, false);
             if route_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "route_id",
                     details: "cannot be empty or unset",
                 });
@@ -9879,13 +10244,13 @@ impl GetRouteResponseInput {
             let input_93 =
                 input_93
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "route_response_id",
                         details: "cannot be empty or unset",
                     })?;
-            let route_response_id = smithy_http::label::fmt_string(input_93, false);
+            let route_response_id = aws_smithy_http::label::fmt_string(input_93, false);
             if route_response_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "route_response_id",
                     details: "cannot be empty or unset",
                 });
@@ -9904,7 +10269,7 @@ impl GetRouteResponseInput {
         fn update_http_builder(
             input: &crate::input::GetRouteResponseInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9913,23 +10278,23 @@ impl GetRouteResponseInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetRouteResponseInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9952,15 +10317,15 @@ impl GetRouteResponseInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetRouteResponse::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetRouteResponse",
             "apigatewayv2",
         ));
@@ -9969,10 +10334,10 @@ impl GetRouteResponseInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10003,6 +10368,7 @@ pub mod get_route_responses_input {
             self.api_id = Some(input.into());
             self
         }
+        /// <p>The API identifier.</p>
         pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.api_id = input;
             self
@@ -10012,6 +10378,7 @@ pub mod get_route_responses_input {
             self.max_results = Some(input.into());
             self
         }
+        /// <p>The maximum number of elements to be returned for this resource.</p>
         pub fn set_max_results(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.max_results = input;
             self
@@ -10021,6 +10388,7 @@ pub mod get_route_responses_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -10030,6 +10398,7 @@ pub mod get_route_responses_input {
             self.route_id = Some(input.into());
             self
         }
+        /// <p>The route ID.</p>
         pub fn set_route_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.route_id = input;
             self
@@ -10039,7 +10408,7 @@ pub mod get_route_responses_input {
             self,
         ) -> std::result::Result<
             crate::input::GetRouteResponsesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetRouteResponsesInput {
                 api_id: self.api_id,
@@ -10061,27 +10430,27 @@ impl GetRouteResponsesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetRouteResponses,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetRouteResponsesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_94 = &_input.api_id;
             let input_94 =
                 input_94
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "api_id",
                         details: "cannot be empty or unset",
                     })?;
-            let api_id = smithy_http::label::fmt_string(input_94, false);
+            let api_id = aws_smithy_http::label::fmt_string(input_94, false);
             if api_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "api_id",
                     details: "cannot be empty or unset",
                 });
@@ -10090,13 +10459,13 @@ impl GetRouteResponsesInput {
             let input_95 =
                 input_95
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "route_id",
                         details: "cannot be empty or unset",
                     })?;
-            let route_id = smithy_http::label::fmt_string(input_95, false);
+            let route_id = aws_smithy_http::label::fmt_string(input_95, false);
             if route_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "route_id",
                     details: "cannot be empty or unset",
                 });
@@ -10111,19 +10480,19 @@ impl GetRouteResponsesInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::GetRouteResponsesInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_96) = &_input.max_results {
-                query.push_kv("maxResults", &smithy_http::query::fmt_string(&inner_96));
+                query.push_kv("maxResults", &aws_smithy_http::query::fmt_string(&inner_96));
             }
             if let Some(inner_97) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_97));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_97));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::GetRouteResponsesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10133,23 +10502,23 @@ impl GetRouteResponsesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetRouteResponsesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -10172,15 +10541,15 @@ impl GetRouteResponsesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetRouteResponses::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetRouteResponses",
             "apigatewayv2",
         ));
@@ -10189,10 +10558,10 @@ impl GetRouteResponsesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10222,6 +10591,7 @@ pub mod get_routes_input {
             self.api_id = Some(input.into());
             self
         }
+        /// <p>The API identifier.</p>
         pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.api_id = input;
             self
@@ -10231,6 +10601,7 @@ pub mod get_routes_input {
             self.max_results = Some(input.into());
             self
         }
+        /// <p>The maximum number of elements to be returned for this resource.</p>
         pub fn set_max_results(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.max_results = input;
             self
@@ -10240,6 +10611,7 @@ pub mod get_routes_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -10247,7 +10619,7 @@ pub mod get_routes_input {
         /// Consumes the builder and constructs a [`GetRoutesInput`](crate::input::GetRoutesInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetRoutesInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::GetRoutesInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::GetRoutesInput {
                 api_id: self.api_id,
@@ -10268,27 +10640,27 @@ impl GetRoutesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetRoutes,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetRoutesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_98 = &_input.api_id;
             let input_98 =
                 input_98
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "api_id",
                         details: "cannot be empty or unset",
                     })?;
-            let api_id = smithy_http::label::fmt_string(input_98, false);
+            let api_id = aws_smithy_http::label::fmt_string(input_98, false);
             if api_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "api_id",
                     details: "cannot be empty or unset",
                 });
@@ -10298,19 +10670,19 @@ impl GetRoutesInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::GetRoutesInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_99) = &_input.max_results {
-                query.push_kv("maxResults", &smithy_http::query::fmt_string(&inner_99));
+                query.push_kv("maxResults", &aws_smithy_http::query::fmt_string(&inner_99));
             }
             if let Some(inner_100) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_100));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_100));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::GetRoutesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10320,23 +10692,23 @@ impl GetRoutesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetRoutesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -10359,13 +10731,13 @@ impl GetRoutesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
         let op =
-            smithy_http::operation::Operation::new(request, crate::operation::GetRoutes::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
+            aws_smithy_http::operation::Operation::new(request, crate::operation::GetRoutes::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "GetRoutes",
                     "apigatewayv2",
                 ));
@@ -10374,10 +10746,10 @@ impl GetRoutesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10406,6 +10778,7 @@ pub mod get_stage_input {
             self.api_id = Some(input.into());
             self
         }
+        /// <p>The API identifier.</p>
         pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.api_id = input;
             self
@@ -10415,6 +10788,7 @@ pub mod get_stage_input {
             self.stage_name = Some(input.into());
             self
         }
+        /// <p>The stage name. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.</p>
         pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stage_name = input;
             self
@@ -10422,7 +10796,7 @@ pub mod get_stage_input {
         /// Consumes the builder and constructs a [`GetStageInput`](crate::input::GetStageInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetStageInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::GetStageInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::GetStageInput {
                 api_id: self.api_id,
@@ -10442,27 +10816,27 @@ impl GetStageInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetStage,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetStageInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_101 = &_input.api_id;
             let input_101 =
                 input_101
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "api_id",
                         details: "cannot be empty or unset",
                     })?;
-            let api_id = smithy_http::label::fmt_string(input_101, false);
+            let api_id = aws_smithy_http::label::fmt_string(input_101, false);
             if api_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "api_id",
                     details: "cannot be empty or unset",
                 });
@@ -10471,13 +10845,13 @@ impl GetStageInput {
             let input_102 =
                 input_102
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "stage_name",
                         details: "cannot be empty or unset",
                     })?;
-            let stage_name = smithy_http::label::fmt_string(input_102, false);
+            let stage_name = aws_smithy_http::label::fmt_string(input_102, false);
             if stage_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "stage_name",
                     details: "cannot be empty or unset",
                 });
@@ -10495,7 +10869,7 @@ impl GetStageInput {
         fn update_http_builder(
             input: &crate::input::GetStageInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10504,23 +10878,23 @@ impl GetStageInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetStageInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -10543,24 +10917,25 @@ impl GetStageInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(request, crate::operation::GetStage::new())
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "GetStage",
-                "apigatewayv2",
-            ));
+        let op =
+            aws_smithy_http::operation::Operation::new(request, crate::operation::GetStage::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "GetStage",
+                    "apigatewayv2",
+                ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10590,6 +10965,7 @@ pub mod get_stages_input {
             self.api_id = Some(input.into());
             self
         }
+        /// <p>The API identifier.</p>
         pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.api_id = input;
             self
@@ -10599,6 +10975,7 @@ pub mod get_stages_input {
             self.max_results = Some(input.into());
             self
         }
+        /// <p>The maximum number of elements to be returned for this resource.</p>
         pub fn set_max_results(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.max_results = input;
             self
@@ -10608,6 +10985,7 @@ pub mod get_stages_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -10615,7 +10993,7 @@ pub mod get_stages_input {
         /// Consumes the builder and constructs a [`GetStagesInput`](crate::input::GetStagesInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetStagesInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::GetStagesInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::GetStagesInput {
                 api_id: self.api_id,
@@ -10636,27 +11014,27 @@ impl GetStagesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetStages,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetStagesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_103 = &_input.api_id;
             let input_103 =
                 input_103
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "api_id",
                         details: "cannot be empty or unset",
                     })?;
-            let api_id = smithy_http::label::fmt_string(input_103, false);
+            let api_id = aws_smithy_http::label::fmt_string(input_103, false);
             if api_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "api_id",
                     details: "cannot be empty or unset",
                 });
@@ -10666,19 +11044,22 @@ impl GetStagesInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::GetStagesInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_104) = &_input.max_results {
-                query.push_kv("maxResults", &smithy_http::query::fmt_string(&inner_104));
+                query.push_kv(
+                    "maxResults",
+                    &aws_smithy_http::query::fmt_string(&inner_104),
+                );
             }
             if let Some(inner_105) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_105));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_105));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::GetStagesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10688,23 +11069,23 @@ impl GetStagesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetStagesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -10727,13 +11108,13 @@ impl GetStagesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
         let op =
-            smithy_http::operation::Operation::new(request, crate::operation::GetStages::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
+            aws_smithy_http::operation::Operation::new(request, crate::operation::GetStages::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "GetStages",
                     "apigatewayv2",
                 ));
@@ -10742,10 +11123,10 @@ impl GetStagesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10773,6 +11154,7 @@ pub mod get_tags_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The resource ARN for the tag.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -10780,7 +11162,7 @@ pub mod get_tags_input {
         /// Consumes the builder and constructs a [`GetTagsInput`](crate::input::GetTagsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetTagsInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::GetTagsInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::GetTagsInput {
                 resource_arn: self.resource_arn,
@@ -10799,24 +11181,27 @@ impl GetTagsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<crate::operation::GetTags, aws_http::AwsErrorRetryPolicy>,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::Operation<
+            crate::operation::GetTags,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetTagsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_106 = &_input.resource_arn;
             let input_106 =
                 input_106
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = smithy_http::label::fmt_string(input_106, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_106, false);
             if resource_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 });
@@ -10829,7 +11214,7 @@ impl GetTagsInput {
         fn update_http_builder(
             input: &crate::input::GetTagsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10838,23 +11223,23 @@ impl GetTagsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetTagsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -10877,24 +11262,25 @@ impl GetTagsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(request, crate::operation::GetTags::new())
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "GetTags",
-                "apigatewayv2",
-            ));
+        let op =
+            aws_smithy_http::operation::Operation::new(request, crate::operation::GetTags::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "GetTags",
+                    "apigatewayv2",
+                ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10922,6 +11308,7 @@ pub mod get_vpc_link_input {
             self.vpc_link_id = Some(input.into());
             self
         }
+        /// <p>The ID of the VPC link.</p>
         pub fn set_vpc_link_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.vpc_link_id = input;
             self
@@ -10929,8 +11316,10 @@ pub mod get_vpc_link_input {
         /// Consumes the builder and constructs a [`GetVpcLinkInput`](crate::input::GetVpcLinkInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetVpcLinkInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetVpcLinkInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetVpcLinkInput {
                 vpc_link_id: self.vpc_link_id,
             })
@@ -10948,27 +11337,27 @@ impl GetVpcLinkInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetVpcLink,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetVpcLinkInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_107 = &_input.vpc_link_id;
             let input_107 =
                 input_107
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "vpc_link_id",
                         details: "cannot be empty or unset",
                     })?;
-            let vpc_link_id = smithy_http::label::fmt_string(input_107, false);
+            let vpc_link_id = aws_smithy_http::label::fmt_string(input_107, false);
             if vpc_link_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "vpc_link_id",
                     details: "cannot be empty or unset",
                 });
@@ -10981,7 +11370,7 @@ impl GetVpcLinkInput {
         fn update_http_builder(
             input: &crate::input::GetVpcLinkInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10990,23 +11379,23 @@ impl GetVpcLinkInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetVpcLinkInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -11029,25 +11418,27 @@ impl GetVpcLinkInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::GetVpcLink::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "GetVpcLink",
-                    "apigatewayv2",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetVpcLink::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetVpcLink",
+            "apigatewayv2",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -11076,6 +11467,7 @@ pub mod get_vpc_links_input {
             self.max_results = Some(input.into());
             self
         }
+        /// <p>The maximum number of elements to be returned for this resource.</p>
         pub fn set_max_results(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.max_results = input;
             self
@@ -11085,6 +11477,7 @@ pub mod get_vpc_links_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The next page of elements from this collection. Not valid for the last element of the collection.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -11092,8 +11485,10 @@ pub mod get_vpc_links_input {
         /// Consumes the builder and constructs a [`GetVpcLinksInput`](crate::input::GetVpcLinksInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetVpcLinksInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::GetVpcLinksInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::GetVpcLinksInput {
                 max_results: self.max_results,
                 next_token: self.next_token,
@@ -11112,33 +11507,36 @@ impl GetVpcLinksInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetVpcLinks,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetVpcLinksInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/v2/vpclinks").expect("formatting should succeed");
             Ok(())
         }
         fn uri_query(_input: &crate::input::GetVpcLinksInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_108) = &_input.max_results {
-                query.push_kv("maxResults", &smithy_http::query::fmt_string(&inner_108));
+                query.push_kv(
+                    "maxResults",
+                    &aws_smithy_http::query::fmt_string(&inner_108),
+                );
             }
             if let Some(inner_109) = &_input.next_token {
-                query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_109));
+                query.push_kv("nextToken", &aws_smithy_http::query::fmt_string(&inner_109));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::GetVpcLinksInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -11148,23 +11546,23 @@ impl GetVpcLinksInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetVpcLinksInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -11187,25 +11585,27 @@ impl GetVpcLinksInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::GetVpcLinks::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "GetVpcLinks",
-                    "apigatewayv2",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::GetVpcLinks::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "GetVpcLinks",
+            "apigatewayv2",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -11235,6 +11635,7 @@ pub mod import_api_input {
             self.basepath = Some(input.into());
             self
         }
+        /// <p>Specifies how to interpret the base path of the API during import. Valid values are ignore, prepend, and split. The default value is ignore. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-import-api-basePath.html">Set the OpenAPI basePath Property</a>. Supported only for HTTP APIs.</p>
         pub fn set_basepath(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.basepath = input;
             self
@@ -11244,6 +11645,7 @@ pub mod import_api_input {
             self.body = Some(input.into());
             self
         }
+        /// <p>The OpenAPI definition. Supported only for HTTP APIs.</p>
         pub fn set_body(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.body = input;
             self
@@ -11253,6 +11655,7 @@ pub mod import_api_input {
             self.fail_on_warnings = Some(input);
             self
         }
+        /// <p>Specifies whether to rollback the API creation when a warning is encountered. By default, API creation continues if a warning is encountered.</p>
         pub fn set_fail_on_warnings(mut self, input: std::option::Option<bool>) -> Self {
             self.fail_on_warnings = input;
             self
@@ -11260,7 +11663,7 @@ pub mod import_api_input {
         /// Consumes the builder and constructs a [`ImportApiInput`](crate::input::ImportApiInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ImportApiInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::ImportApiInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::ImportApiInput {
                 basepath: self.basepath,
@@ -11281,28 +11684,28 @@ impl ImportApiInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ImportApi,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ImportApiInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/v2/apis").expect("formatting should succeed");
             Ok(())
         }
         fn uri_query(_input: &crate::input::ImportApiInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_110) = &_input.basepath {
-                query.push_kv("basepath", &smithy_http::query::fmt_string(&inner_110));
+                query.push_kv("basepath", &aws_smithy_http::query::fmt_string(&inner_110));
             }
             if _input.fail_on_warnings {
                 query.push_kv(
                     "failOnWarnings",
-                    &smithy_types::primitive::Encoder::from(_input.fail_on_warnings).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(_input.fail_on_warnings).encode(),
                 );
             }
         }
@@ -11310,7 +11713,7 @@ impl ImportApiInput {
         fn update_http_builder(
             input: &crate::input::ImportApiInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -11320,24 +11723,26 @@ impl ImportApiInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ImportApiInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_import_api(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -11360,13 +11765,13 @@ impl ImportApiInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
         let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ImportApi::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
+            aws_smithy_http::operation::Operation::new(request, crate::operation::ImportApi::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "ImportApi",
                     "apigatewayv2",
                 ));
@@ -11375,10 +11780,10 @@ impl ImportApiInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -11409,6 +11814,7 @@ pub mod reimport_api_input {
             self.api_id = Some(input.into());
             self
         }
+        /// <p>The API identifier.</p>
         pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.api_id = input;
             self
@@ -11418,6 +11824,7 @@ pub mod reimport_api_input {
             self.basepath = Some(input.into());
             self
         }
+        /// <p>Specifies how to interpret the base path of the API during import. Valid values are ignore, prepend, and split. The default value is ignore. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-import-api-basePath.html">Set the OpenAPI basePath Property</a>. Supported only for HTTP APIs.</p>
         pub fn set_basepath(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.basepath = input;
             self
@@ -11427,6 +11834,7 @@ pub mod reimport_api_input {
             self.body = Some(input.into());
             self
         }
+        /// <p>The OpenAPI definition. Supported only for HTTP APIs.</p>
         pub fn set_body(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.body = input;
             self
@@ -11436,6 +11844,7 @@ pub mod reimport_api_input {
             self.fail_on_warnings = Some(input);
             self
         }
+        /// <p>Specifies whether to rollback the API creation when a warning is encountered. By default, API creation continues if a warning is encountered.</p>
         pub fn set_fail_on_warnings(mut self, input: std::option::Option<bool>) -> Self {
             self.fail_on_warnings = input;
             self
@@ -11443,8 +11852,10 @@ pub mod reimport_api_input {
         /// Consumes the builder and constructs a [`ReimportApiInput`](crate::input::ReimportApiInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ReimportApiInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ReimportApiInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ReimportApiInput {
                 api_id: self.api_id,
                 basepath: self.basepath,
@@ -11465,27 +11876,27 @@ impl ReimportApiInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ReimportApi,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ReimportApiInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_111 = &_input.api_id;
             let input_111 =
                 input_111
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "api_id",
                         details: "cannot be empty or unset",
                     })?;
-            let api_id = smithy_http::label::fmt_string(input_111, false);
+            let api_id = aws_smithy_http::label::fmt_string(input_111, false);
             if api_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "api_id",
                     details: "cannot be empty or unset",
                 });
@@ -11494,14 +11905,14 @@ impl ReimportApiInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::ReimportApiInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_112) = &_input.basepath {
-                query.push_kv("basepath", &smithy_http::query::fmt_string(&inner_112));
+                query.push_kv("basepath", &aws_smithy_http::query::fmt_string(&inner_112));
             }
             if _input.fail_on_warnings {
                 query.push_kv(
                     "failOnWarnings",
-                    &smithy_types::primitive::Encoder::from(_input.fail_on_warnings).encode(),
+                    &aws_smithy_types::primitive::Encoder::from(_input.fail_on_warnings).encode(),
                 );
             }
         }
@@ -11509,7 +11920,7 @@ impl ReimportApiInput {
         fn update_http_builder(
             input: &crate::input::ReimportApiInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -11519,24 +11930,26 @@ impl ReimportApiInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ReimportApiInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_reimport_api(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -11559,25 +11972,27 @@ impl ReimportApiInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ReimportApi::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ReimportApi",
-                    "apigatewayv2",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ReimportApi::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ReimportApi",
+            "apigatewayv2",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -11606,6 +12021,7 @@ pub mod reset_authorizers_cache_input {
             self.api_id = Some(input.into());
             self
         }
+        /// <p>The API identifier.</p>
         pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.api_id = input;
             self
@@ -11615,6 +12031,7 @@ pub mod reset_authorizers_cache_input {
             self.stage_name = Some(input.into());
             self
         }
+        /// <p>The stage name. Stage names can contain only alphanumeric characters, hyphens, and underscores, or be $default. Maximum length is 128 characters.</p>
         pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stage_name = input;
             self
@@ -11624,7 +12041,7 @@ pub mod reset_authorizers_cache_input {
             self,
         ) -> std::result::Result<
             crate::input::ResetAuthorizersCacheInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ResetAuthorizersCacheInput {
                 api_id: self.api_id,
@@ -11644,27 +12061,27 @@ impl ResetAuthorizersCacheInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ResetAuthorizersCache,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ResetAuthorizersCacheInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_113 = &_input.api_id;
             let input_113 =
                 input_113
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "api_id",
                         details: "cannot be empty or unset",
                     })?;
-            let api_id = smithy_http::label::fmt_string(input_113, false);
+            let api_id = aws_smithy_http::label::fmt_string(input_113, false);
             if api_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "api_id",
                     details: "cannot be empty or unset",
                 });
@@ -11673,13 +12090,13 @@ impl ResetAuthorizersCacheInput {
             let input_114 =
                 input_114
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "stage_name",
                         details: "cannot be empty or unset",
                     })?;
-            let stage_name = smithy_http::label::fmt_string(input_114, false);
+            let stage_name = aws_smithy_http::label::fmt_string(input_114, false);
             if stage_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "stage_name",
                     details: "cannot be empty or unset",
                 });
@@ -11697,7 +12114,7 @@ impl ResetAuthorizersCacheInput {
         fn update_http_builder(
             input: &crate::input::ResetAuthorizersCacheInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -11706,23 +12123,23 @@ impl ResetAuthorizersCacheInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ResetAuthorizersCacheInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -11745,15 +12162,15 @@ impl ResetAuthorizersCacheInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ResetAuthorizersCache::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ResetAuthorizersCache",
             "apigatewayv2",
         ));
@@ -11762,10 +12179,10 @@ impl ResetAuthorizersCacheInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -11796,10 +12213,16 @@ pub mod tag_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The resource ARN for the tag.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -11810,6 +12233,7 @@ pub mod tag_resource_input {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -11822,8 +12246,10 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::TagResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::TagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::TagResourceInput {
                 resource_arn: self.resource_arn,
                 tags: self.tags,
@@ -11842,27 +12268,27 @@ impl TagResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::TagResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_115 = &_input.resource_arn;
             let input_115 =
                 input_115
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = smithy_http::label::fmt_string(input_115, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_115, false);
             if resource_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 });
@@ -11875,7 +12301,7 @@ impl TagResourceInput {
         fn update_http_builder(
             input: &crate::input::TagResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -11884,24 +12310,26 @@ impl TagResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::TagResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -11924,25 +12352,27 @@ impl TagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::TagResource::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "TagResource",
-                    "apigatewayv2",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::TagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "TagResource",
+            "apigatewayv2",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -11971,16 +12401,23 @@ pub mod untag_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The resource ARN for the tag.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Appends an item to `tag_keys`.
+        ///
+        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
+        ///
+        /// <p>The Tag keys to delete</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
+        /// <p>The Tag keys to delete</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -11991,8 +12428,10 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UntagResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UntagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UntagResourceInput {
                 resource_arn: self.resource_arn,
                 tag_keys: self.tag_keys,
@@ -12011,27 +12450,27 @@ impl UntagResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UntagResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_116 = &_input.resource_arn;
             let input_116 =
                 input_116
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "resource_arn",
                         details: "cannot be empty or unset",
                     })?;
-            let resource_arn = smithy_http::label::fmt_string(input_116, false);
+            let resource_arn = aws_smithy_http::label::fmt_string(input_116, false);
             if resource_arn.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "resource_arn",
                     details: "cannot be empty or unset",
                 });
@@ -12041,10 +12480,10 @@ impl UntagResourceInput {
             Ok(())
         }
         fn uri_query(_input: &crate::input::UntagResourceInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_117) = &_input.tag_keys {
                 for inner_118 in inner_117 {
-                    query.push_kv("tagKeys", &smithy_http::query::fmt_string(&inner_118));
+                    query.push_kv("tagKeys", &aws_smithy_http::query::fmt_string(&inner_118));
                 }
             }
         }
@@ -12052,7 +12491,7 @@ impl UntagResourceInput {
         fn update_http_builder(
             input: &crate::input::UntagResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -12062,23 +12501,23 @@ impl UntagResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UntagResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -12101,25 +12540,27 @@ impl UntagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UntagResource::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UntagResource",
-                    "apigatewayv2",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UntagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UntagResource",
+            "apigatewayv2",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -12158,6 +12599,7 @@ pub mod update_api_input {
             self.api_id = Some(input.into());
             self
         }
+        /// <p>The API identifier.</p>
         pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.api_id = input;
             self
@@ -12170,6 +12612,7 @@ pub mod update_api_input {
             self.api_key_selection_expression = Some(input.into());
             self
         }
+        /// <p>An API key selection expression. Supported only for WebSocket APIs. See <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">API Key Selection Expressions</a>.</p>
         pub fn set_api_key_selection_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12182,6 +12625,7 @@ pub mod update_api_input {
             self.cors_configuration = Some(input);
             self
         }
+        /// <p>A CORS configuration. Supported only for HTTP APIs.</p>
         pub fn set_cors_configuration(
             mut self,
             input: std::option::Option<crate::model::Cors>,
@@ -12194,6 +12638,7 @@ pub mod update_api_input {
             self.credentials_arn = Some(input.into());
             self
         }
+        /// <p>This property is part of quick create. It specifies the credentials required for the integration, if any. For a Lambda integration, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services, don't specify this parameter. Currently, this property is not used for HTTP integrations. If provided, this value replaces the credentials associated with the quick create integration. Supported only for HTTP APIs.</p>
         pub fn set_credentials_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12206,6 +12651,7 @@ pub mod update_api_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the API.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -12215,6 +12661,7 @@ pub mod update_api_input {
             self.disable_schema_validation = Some(input);
             self
         }
+        /// <p>Avoid validating models when creating a deployment. Supported only for WebSocket APIs.</p>
         pub fn set_disable_schema_validation(mut self, input: std::option::Option<bool>) -> Self {
             self.disable_schema_validation = input;
             self
@@ -12224,6 +12671,7 @@ pub mod update_api_input {
             self.disable_execute_api_endpoint = Some(input);
             self
         }
+        /// <p>Specifies whether clients can invoke your API by using the default execute-api endpoint. By default, clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that clients use a custom domain name to invoke your API, disable the default endpoint.</p>
         pub fn set_disable_execute_api_endpoint(
             mut self,
             input: std::option::Option<bool>,
@@ -12236,6 +12684,7 @@ pub mod update_api_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the API.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -12245,6 +12694,7 @@ pub mod update_api_input {
             self.route_key = Some(input.into());
             self
         }
+        /// <p>This property is part of quick create. If not specified, the route created using quick create is kept. Otherwise, this value replaces the route key of the quick create route. Additional routes may still be added after the API is updated. Supported only for HTTP APIs.</p>
         pub fn set_route_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.route_key = input;
             self
@@ -12254,6 +12704,7 @@ pub mod update_api_input {
             self.route_selection_expression = Some(input.into());
             self
         }
+        /// <p>The route selection expression for the API. For HTTP APIs, the routeSelectionExpression must be ${request.method} ${request.path}. If not provided, this will be the default for HTTP APIs. This property is required for WebSocket APIs.</p>
         pub fn set_route_selection_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12266,6 +12717,7 @@ pub mod update_api_input {
             self.target = Some(input.into());
             self
         }
+        /// <p>This property is part of quick create. For HTTP integrations, specify a fully qualified URL. For Lambda integrations, specify a function ARN. The type of the integration will be HTTP_PROXY or AWS_PROXY, respectively. The value provided updates the integration URI and integration type. You can update a quick-created target, but you can't remove it from an API. Supported only for HTTP APIs.</p>
         pub fn set_target(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.target = input;
             self
@@ -12275,6 +12727,7 @@ pub mod update_api_input {
             self.version = Some(input.into());
             self
         }
+        /// <p>A version identifier for the API.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -12282,7 +12735,7 @@ pub mod update_api_input {
         /// Consumes the builder and constructs a [`UpdateApiInput`](crate::input::UpdateApiInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UpdateApiInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::UpdateApiInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::UpdateApiInput {
                 api_id: self.api_id,
@@ -12312,27 +12765,27 @@ impl UpdateApiInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateApi,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateApiInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_119 = &_input.api_id;
             let input_119 =
                 input_119
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "api_id",
                         details: "cannot be empty or unset",
                     })?;
-            let api_id = smithy_http::label::fmt_string(input_119, false);
+            let api_id = aws_smithy_http::label::fmt_string(input_119, false);
             if api_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "api_id",
                     details: "cannot be empty or unset",
                 });
@@ -12344,7 +12797,7 @@ impl UpdateApiInput {
         fn update_http_builder(
             input: &crate::input::UpdateApiInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -12353,24 +12806,26 @@ impl UpdateApiInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateApiInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_update_api(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -12393,13 +12848,13 @@ impl UpdateApiInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
         let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UpdateApi::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
+            aws_smithy_http::operation::Operation::new(request, crate::operation::UpdateApi::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
                     "UpdateApi",
                     "apigatewayv2",
                 ));
@@ -12408,10 +12863,10 @@ impl UpdateApiInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -12443,6 +12898,7 @@ pub mod update_api_mapping_input {
             self.api_id = Some(input.into());
             self
         }
+        /// <p>The API identifier.</p>
         pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.api_id = input;
             self
@@ -12452,6 +12908,7 @@ pub mod update_api_mapping_input {
             self.api_mapping_id = Some(input.into());
             self
         }
+        /// <p>The API mapping identifier.</p>
         pub fn set_api_mapping_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12464,6 +12921,7 @@ pub mod update_api_mapping_input {
             self.api_mapping_key = Some(input.into());
             self
         }
+        /// <p>The API mapping key.</p>
         pub fn set_api_mapping_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12476,6 +12934,7 @@ pub mod update_api_mapping_input {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The domain name.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -12485,6 +12944,7 @@ pub mod update_api_mapping_input {
             self.stage = Some(input.into());
             self
         }
+        /// <p>The API stage.</p>
         pub fn set_stage(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stage = input;
             self
@@ -12494,7 +12954,7 @@ pub mod update_api_mapping_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateApiMappingInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateApiMappingInput {
                 api_id: self.api_id,
@@ -12517,27 +12977,27 @@ impl UpdateApiMappingInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateApiMapping,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateApiMappingInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_120 = &_input.domain_name;
             let input_120 =
                 input_120
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
                         details: "cannot be empty or unset",
                     })?;
-            let domain_name = smithy_http::label::fmt_string(input_120, false);
+            let domain_name = aws_smithy_http::label::fmt_string(input_120, false);
             if domain_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "domain_name",
                     details: "cannot be empty or unset",
                 });
@@ -12546,13 +13006,13 @@ impl UpdateApiMappingInput {
             let input_121 =
                 input_121
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "api_mapping_id",
                         details: "cannot be empty or unset",
                     })?;
-            let api_mapping_id = smithy_http::label::fmt_string(input_121, false);
+            let api_mapping_id = aws_smithy_http::label::fmt_string(input_121, false);
             if api_mapping_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "api_mapping_id",
                     details: "cannot be empty or unset",
                 });
@@ -12570,7 +13030,7 @@ impl UpdateApiMappingInput {
         fn update_http_builder(
             input: &crate::input::UpdateApiMappingInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -12579,27 +13039,27 @@ impl UpdateApiMappingInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateApiMappingInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_api_mapping(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -12622,15 +13082,15 @@ impl UpdateApiMappingInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateApiMapping::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateApiMapping",
             "apigatewayv2",
         ));
@@ -12639,10 +13099,10 @@ impl UpdateApiMappingInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -12681,6 +13141,7 @@ pub mod update_authorizer_input {
             self.api_id = Some(input.into());
             self
         }
+        /// <p>The API identifier.</p>
         pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.api_id = input;
             self
@@ -12690,6 +13151,7 @@ pub mod update_authorizer_input {
             self.authorizer_credentials_arn = Some(input.into());
             self
         }
+        /// <p>Specifies the required credentials as an IAM role for API Gateway to invoke the authorizer. To specify an IAM role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based permissions on the Lambda function, don't specify this parameter.</p>
         pub fn set_authorizer_credentials_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12702,6 +13164,7 @@ pub mod update_authorizer_input {
             self.authorizer_id = Some(input.into());
             self
         }
+        /// <p>The authorizer identifier.</p>
         pub fn set_authorizer_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12717,6 +13180,7 @@ pub mod update_authorizer_input {
             self.authorizer_payload_format_version = Some(input.into());
             self
         }
+        /// <p>Specifies the format of the payload sent to an HTTP API Lambda authorizer. Required for HTTP API Lambda authorizers. Supported values are 1.0 and 2.0. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a>.</p>
         pub fn set_authorizer_payload_format_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12729,6 +13193,7 @@ pub mod update_authorizer_input {
             self.authorizer_result_ttl_in_seconds = Some(input);
             self
         }
+        /// <p>The time to live (TTL) for cached authorizer results, in seconds. If it equals 0, authorization caching is disabled. If it is greater than 0, API Gateway caches authorizer responses. The maximum value is 3600, or 1 hour. Supported only for HTTP API Lambda authorizers.</p>
         pub fn set_authorizer_result_ttl_in_seconds(
             mut self,
             input: std::option::Option<i32>,
@@ -12741,6 +13206,7 @@ pub mod update_authorizer_input {
             self.authorizer_type = Some(input);
             self
         }
+        /// <p>The authorizer type. Specify REQUEST for a Lambda function using incoming request parameters. Specify JWT to use JSON Web Tokens (supported only for HTTP APIs).</p>
         pub fn set_authorizer_type(
             mut self,
             input: std::option::Option<crate::model::AuthorizerType>,
@@ -12754,6 +13220,8 @@ pub mod update_authorizer_input {
             self.authorizer_uri = Some(input.into());
             self
         }
+        /// <p>The authorizer's Uniform Resource Identifier (URI). For REQUEST authorizers, this must be a well-formed Lambda function URI, for example, arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:<replaceable>{account_id}</replaceable>:function:<replaceable>{lambda_function_name}</replaceable>/invocations. In general, the URI has this form: arn:aws:apigateway:<replaceable>{region}</replaceable>:lambda:path/<replaceable>{service_api}</replaceable>
+        /// , where <replaceable></replaceable>{region} is the same as the region hosting the Lambda function, path indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial /. For Lambda functions, this is usually of the form /2015-03-31/functions/[FunctionARN]/invocations. Supported only for REQUEST authorizers.</p>
         pub fn set_authorizer_uri(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12766,16 +13234,23 @@ pub mod update_authorizer_input {
             self.enable_simple_responses = Some(input);
             self
         }
+        /// <p>Specifies whether a Lambda authorizer returns a response in a simple format. By default, a Lambda authorizer must return an IAM policy. If enabled, the Lambda authorizer can return a boolean value instead of an IAM policy. Supported only for HTTP APIs. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a></p>
         pub fn set_enable_simple_responses(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_simple_responses = input;
             self
         }
+        /// Appends an item to `identity_source`.
+        ///
+        /// To override the contents of this collection use [`set_identity_source`](Self::set_identity_source).
+        ///
+        /// <p>The identity source for which authorization is requested.</p> <p>For a REQUEST authorizer, this is optional. The value is a set of one or more mapping expressions of the specified request parameters. The identity source can be headers, query string parameters, stage variables, and context parameters. For example, if an Auth header and a Name query string parameter are defined as identity sources, this value is route.request.header.Auth, route.request.querystring.Name for WebSocket APIs. For HTTP APIs, use selection expressions prefixed with $, for example, $request.header.Auth, $request.querystring.Name. These parameters are used to perform runtime validation for Lambda-based authorizers by verifying all of the identity-related request parameters are present in the request, not null, and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function. Otherwise, it returns a 401 Unauthorized response without calling the Lambda function. For HTTP APIs, identity sources are also used as the cache key when caching is enabled. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a>.</p> <p>For JWT, a single entry that specifies where to extract the JSON Web Token (JWT) from inbound requests. Currently only header-based and query parameter-based selections are supported, for example $request.header.Authorization.</p>
         pub fn identity_source(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.identity_source.unwrap_or_default();
             v.push(input.into());
             self.identity_source = Some(v);
             self
         }
+        /// <p>The identity source for which authorization is requested.</p> <p>For a REQUEST authorizer, this is optional. The value is a set of one or more mapping expressions of the specified request parameters. The identity source can be headers, query string parameters, stage variables, and context parameters. For example, if an Auth header and a Name query string parameter are defined as identity sources, this value is route.request.header.Auth, route.request.querystring.Name for WebSocket APIs. For HTTP APIs, use selection expressions prefixed with $, for example, $request.header.Auth, $request.querystring.Name. These parameters are used to perform runtime validation for Lambda-based authorizers by verifying all of the identity-related request parameters are present in the request, not null, and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function. Otherwise, it returns a 401 Unauthorized response without calling the Lambda function. For HTTP APIs, identity sources are also used as the cache key when caching is enabled. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a>.</p> <p>For JWT, a single entry that specifies where to extract the JSON Web Token (JWT) from inbound requests. Currently only header-based and query parameter-based selections are supported, for example $request.header.Authorization.</p>
         pub fn set_identity_source(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -12791,6 +13266,7 @@ pub mod update_authorizer_input {
             self.identity_validation_expression = Some(input.into());
             self
         }
+        /// <p>This parameter is not used.</p>
         pub fn set_identity_validation_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12803,6 +13279,7 @@ pub mod update_authorizer_input {
             self.jwt_configuration = Some(input);
             self
         }
+        /// <p>Represents the configuration of a JWT authorizer. Required for the JWT authorizer type. Supported only for HTTP APIs.</p>
         pub fn set_jwt_configuration(
             mut self,
             input: std::option::Option<crate::model::JwtConfiguration>,
@@ -12815,6 +13292,7 @@ pub mod update_authorizer_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the authorizer.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -12824,7 +13302,7 @@ pub mod update_authorizer_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateAuthorizerInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateAuthorizerInput {
                 api_id: self.api_id,
@@ -12856,27 +13334,27 @@ impl UpdateAuthorizerInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateAuthorizer,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateAuthorizerInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_122 = &_input.api_id;
             let input_122 =
                 input_122
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "api_id",
                         details: "cannot be empty or unset",
                     })?;
-            let api_id = smithy_http::label::fmt_string(input_122, false);
+            let api_id = aws_smithy_http::label::fmt_string(input_122, false);
             if api_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "api_id",
                     details: "cannot be empty or unset",
                 });
@@ -12885,13 +13363,13 @@ impl UpdateAuthorizerInput {
             let input_123 =
                 input_123
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "authorizer_id",
                         details: "cannot be empty or unset",
                     })?;
-            let authorizer_id = smithy_http::label::fmt_string(input_123, false);
+            let authorizer_id = aws_smithy_http::label::fmt_string(input_123, false);
             if authorizer_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "authorizer_id",
                     details: "cannot be empty or unset",
                 });
@@ -12909,7 +13387,7 @@ impl UpdateAuthorizerInput {
         fn update_http_builder(
             input: &crate::input::UpdateAuthorizerInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -12918,27 +13396,27 @@ impl UpdateAuthorizerInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateAuthorizerInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_authorizer(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -12961,15 +13439,15 @@ impl UpdateAuthorizerInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateAuthorizer::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateAuthorizer",
             "apigatewayv2",
         ));
@@ -12978,10 +13456,10 @@ impl UpdateAuthorizerInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -13011,6 +13489,7 @@ pub mod update_deployment_input {
             self.api_id = Some(input.into());
             self
         }
+        /// <p>The API identifier.</p>
         pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.api_id = input;
             self
@@ -13020,6 +13499,7 @@ pub mod update_deployment_input {
             self.deployment_id = Some(input.into());
             self
         }
+        /// <p>The deployment ID.</p>
         pub fn set_deployment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13032,6 +13512,7 @@ pub mod update_deployment_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description for the deployment resource.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -13041,7 +13522,7 @@ pub mod update_deployment_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateDeploymentInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateDeploymentInput {
                 api_id: self.api_id,
@@ -13062,27 +13543,27 @@ impl UpdateDeploymentInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateDeployment,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateDeploymentInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_124 = &_input.api_id;
             let input_124 =
                 input_124
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "api_id",
                         details: "cannot be empty or unset",
                     })?;
-            let api_id = smithy_http::label::fmt_string(input_124, false);
+            let api_id = aws_smithy_http::label::fmt_string(input_124, false);
             if api_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "api_id",
                     details: "cannot be empty or unset",
                 });
@@ -13091,13 +13572,13 @@ impl UpdateDeploymentInput {
             let input_125 =
                 input_125
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "deployment_id",
                         details: "cannot be empty or unset",
                     })?;
-            let deployment_id = smithy_http::label::fmt_string(input_125, false);
+            let deployment_id = aws_smithy_http::label::fmt_string(input_125, false);
             if deployment_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "deployment_id",
                     details: "cannot be empty or unset",
                 });
@@ -13115,7 +13596,7 @@ impl UpdateDeploymentInput {
         fn update_http_builder(
             input: &crate::input::UpdateDeploymentInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -13124,27 +13605,27 @@ impl UpdateDeploymentInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateDeploymentInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_deployment(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -13167,15 +13648,15 @@ impl UpdateDeploymentInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateDeployment::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateDeployment",
             "apigatewayv2",
         ));
@@ -13184,10 +13665,10 @@ impl UpdateDeploymentInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -13219,10 +13700,16 @@ pub mod update_domain_name_input {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The domain name.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
         }
+        /// Appends an item to `domain_name_configurations`.
+        ///
+        /// To override the contents of this collection use [`set_domain_name_configurations`](Self::set_domain_name_configurations).
+        ///
+        /// <p>The domain name configurations.</p>
         pub fn domain_name_configurations(
             mut self,
             input: impl Into<crate::model::DomainNameConfiguration>,
@@ -13232,6 +13719,7 @@ pub mod update_domain_name_input {
             self.domain_name_configurations = Some(v);
             self
         }
+        /// <p>The domain name configurations.</p>
         pub fn set_domain_name_configurations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DomainNameConfiguration>>,
@@ -13247,6 +13735,7 @@ pub mod update_domain_name_input {
             self.mutual_tls_authentication = Some(input);
             self
         }
+        /// <p>The mutual TLS authentication configuration for a custom domain name.</p>
         pub fn set_mutual_tls_authentication(
             mut self,
             input: std::option::Option<crate::model::MutualTlsAuthenticationInput>,
@@ -13259,7 +13748,7 @@ pub mod update_domain_name_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateDomainNameInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateDomainNameInput {
                 domain_name: self.domain_name,
@@ -13280,27 +13769,27 @@ impl UpdateDomainNameInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateDomainName,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateDomainNameInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_126 = &_input.domain_name;
             let input_126 =
                 input_126
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "domain_name",
                         details: "cannot be empty or unset",
                     })?;
-            let domain_name = smithy_http::label::fmt_string(input_126, false);
+            let domain_name = aws_smithy_http::label::fmt_string(input_126, false);
             if domain_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "domain_name",
                     details: "cannot be empty or unset",
                 });
@@ -13317,7 +13806,7 @@ impl UpdateDomainNameInput {
         fn update_http_builder(
             input: &crate::input::UpdateDomainNameInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -13326,27 +13815,27 @@ impl UpdateDomainNameInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateDomainNameInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_domain_name(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -13369,15 +13858,15 @@ impl UpdateDomainNameInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateDomainName::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateDomainName",
             "apigatewayv2",
         ));
@@ -13386,10 +13875,10 @@ impl UpdateDomainNameInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -13445,6 +13934,7 @@ pub mod update_integration_input {
             self.api_id = Some(input.into());
             self
         }
+        /// <p>The API identifier.</p>
         pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.api_id = input;
             self
@@ -13454,6 +13944,7 @@ pub mod update_integration_input {
             self.connection_id = Some(input.into());
             self
         }
+        /// <p>The ID of the VPC link for a private integration. Supported only for HTTP APIs.</p>
         pub fn set_connection_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13466,6 +13957,7 @@ pub mod update_integration_input {
             self.connection_type = Some(input);
             self
         }
+        /// <p>The type of the network connection to the integration endpoint. Specify INTERNET for connections through the public routable internet or VPC_LINK for private connections between API Gateway and resources in a VPC. The default value is INTERNET.</p>
         pub fn set_connection_type(
             mut self,
             input: std::option::Option<crate::model::ConnectionType>,
@@ -13481,6 +13973,7 @@ pub mod update_integration_input {
             self.content_handling_strategy = Some(input);
             self
         }
+        /// <p>Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p> <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p> <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p> <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
         pub fn set_content_handling_strategy(
             mut self,
             input: std::option::Option<crate::model::ContentHandlingStrategy>,
@@ -13493,6 +13986,7 @@ pub mod update_integration_input {
             self.credentials_arn = Some(input.into());
             self
         }
+        /// <p>Specifies the credentials required for the integration, if any. For AWS integrations, three options are available. To specify an IAM Role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify the string arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services, specify null.</p>
         pub fn set_credentials_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13505,6 +13999,7 @@ pub mod update_integration_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the integration</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -13514,6 +14009,7 @@ pub mod update_integration_input {
             self.integration_id = Some(input.into());
             self
         }
+        /// <p>The integration ID.</p>
         pub fn set_integration_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13526,6 +14022,7 @@ pub mod update_integration_input {
             self.integration_method = Some(input.into());
             self
         }
+        /// <p>Specifies the integration's HTTP method type.</p>
         pub fn set_integration_method(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13538,6 +14035,7 @@ pub mod update_integration_input {
             self.integration_subtype = Some(input.into());
             self
         }
+        /// <p>Supported only for HTTP API AWS_PROXY integrations. Specifies the AWS service action to invoke. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services-reference.html">Integration subtype reference</a>.</p>
         pub fn set_integration_subtype(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13550,6 +14048,7 @@ pub mod update_integration_input {
             self.integration_type = Some(input);
             self
         }
+        /// <p>The integration type of an integration. One of the following:</p> <p>AWS: for integrating the route or method request with an AWS service action, including the Lambda function-invoking action. With the Lambda function-invoking action, this is referred to as the Lambda custom integration. With any other AWS service action, this is known as AWS integration. Supported only for WebSocket APIs.</p> <p>AWS_PROXY: for integrating the route or method request with a Lambda function or other AWS service action. This integration is also referred to as a Lambda proxy integration.</p> <p>HTTP: for integrating the route or method request with an HTTP endpoint. This integration is also referred to as the HTTP custom integration. Supported only for WebSocket APIs.</p> <p>HTTP_PROXY: for integrating the route or method request with an HTTP endpoint, with the client request passed through as-is. This is also referred to as HTTP proxy integration. For HTTP API private integrations, use an HTTP_PROXY integration.</p> <p>MOCK: for integrating the route or method request with API Gateway as a "loopback" endpoint without invoking any backend. Supported only for WebSocket APIs.</p>
         pub fn set_integration_type(
             mut self,
             input: std::option::Option<crate::model::IntegrationType>,
@@ -13562,6 +14061,7 @@ pub mod update_integration_input {
             self.integration_uri = Some(input.into());
             self
         }
+        /// <p>For a Lambda integration, specify the URI of a Lambda function.</p> <p>For an HTTP integration, specify a fully-qualified URL.</p> <p>For an HTTP API private integration, specify the ARN of an Application Load Balancer listener, Network Load Balancer listener, or AWS Cloud Map service. If you specify the ARN of an AWS Cloud Map service, API Gateway uses DiscoverInstances to identify resources. You can use query parameters to target specific resources. To learn more, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a>. For private integrations, all resources must be owned by the same AWS account.</p>
         pub fn set_integration_uri(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13574,6 +14074,7 @@ pub mod update_integration_input {
             self.passthrough_behavior = Some(input);
             self
         }
+        /// <p>Specifies the pass-through behavior for incoming requests based on the Content-Type header in the request, and the available mapping templates specified as the requestTemplates property on the Integration resource. There are three valid values: WHEN_NO_MATCH, WHEN_NO_TEMPLATES, and NEVER. Supported only for WebSocket APIs.</p> <p>WHEN_NO_MATCH passes the request body for unmapped content types through to the integration backend without transformation.</p> <p>NEVER rejects unmapped content types with an HTTP 415 Unsupported Media Type response.</p> <p>WHEN_NO_TEMPLATES allows pass-through when the integration has no content types mapped to templates. However, if there is at least one content type defined, unmapped content types will be rejected with the same HTTP 415 Unsupported Media Type response.</p>
         pub fn set_passthrough_behavior(
             mut self,
             input: std::option::Option<crate::model::PassthroughBehavior>,
@@ -13586,6 +14087,7 @@ pub mod update_integration_input {
             self.payload_format_version = Some(input.into());
             self
         }
+        /// <p>Specifies the format of the payload sent to an integration. Required for HTTP APIs.</p>
         pub fn set_payload_format_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13593,6 +14095,16 @@ pub mod update_integration_input {
             self.payload_format_version = input;
             self
         }
+        /// Adds a key-value pair to `request_parameters`.
+        ///
+        /// To override the contents of this collection use [`set_request_parameters`](Self::set_request_parameters).
+        ///
+        /// <p>For WebSocket APIs, a key-value map specifying request parameters that are passed from the method request to the backend. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the backend. The method request parameter value must match the pattern of method.request.<replaceable>{location}</replaceable>.<replaceable>{name}</replaceable>
+        /// , where
+        /// <replaceable>{location}</replaceable>
+        /// is querystring, path, or header; and
+        /// <replaceable>{name}</replaceable>
+        /// must be a valid and unique method request parameter name.</p> <p>For HTTP API integrations with a specified integrationSubtype, request parameters are a key-value map specifying parameters that are passed to AWS_PROXY integrations. You can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working with AWS service integrations for HTTP APIs</a>.</p> <p>For HTTP API integrations, without a specified integrationSubtype request parameters are a key-value map specifying how to transform HTTP requests before sending them to the backend. The key should follow the pattern &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt; where action can be append, overwrite or remove. For values, you can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.">Transforming API requests and responses</a>.</p>
         pub fn request_parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -13603,6 +14115,12 @@ pub mod update_integration_input {
             self.request_parameters = Some(hash_map);
             self
         }
+        /// <p>For WebSocket APIs, a key-value map specifying request parameters that are passed from the method request to the backend. The key is an integration request parameter name and the associated value is a method request parameter value or static value that must be enclosed within single quotes and pre-encoded as required by the backend. The method request parameter value must match the pattern of method.request.<replaceable>{location}</replaceable>.<replaceable>{name}</replaceable>
+        /// , where
+        /// <replaceable>{location}</replaceable>
+        /// is querystring, path, or header; and
+        /// <replaceable>{name}</replaceable>
+        /// must be a valid and unique method request parameter name.</p> <p>For HTTP API integrations with a specified integrationSubtype, request parameters are a key-value map specifying parameters that are passed to AWS_PROXY integrations. You can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-develop-integrations-aws-services.html">Working with AWS service integrations for HTTP APIs</a>.</p> <p>For HTTP API integrations, without a specified integrationSubtype request parameters are a key-value map specifying how to transform HTTP requests before sending them to the backend. The key should follow the pattern &lt;action&gt;:&lt;header|querystring|path&gt;.&lt;location&gt; where action can be append, overwrite or remove. For values, you can provide static values, or map request data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.">Transforming API requests and responses</a>.</p>
         pub fn set_request_parameters(
             mut self,
             input: std::option::Option<
@@ -13612,6 +14130,11 @@ pub mod update_integration_input {
             self.request_parameters = input;
             self
         }
+        /// Adds a key-value pair to `request_templates`.
+        ///
+        /// To override the contents of this collection use [`set_request_templates`](Self::set_request_templates).
+        ///
+        /// <p>Represents a map of Velocity templates that are applied on the request payload based on the value of the Content-Type header sent by the client. The content type value is the key in this map, and the template (as a String) is the value. Supported only for WebSocket APIs.</p>
         pub fn request_templates(
             mut self,
             k: impl Into<std::string::String>,
@@ -13622,6 +14145,7 @@ pub mod update_integration_input {
             self.request_templates = Some(hash_map);
             self
         }
+        /// <p>Represents a map of Velocity templates that are applied on the request payload based on the value of the Content-Type header sent by the client. The content type value is the key in this map, and the template (as a String) is the value. Supported only for WebSocket APIs.</p>
         pub fn set_request_templates(
             mut self,
             input: std::option::Option<
@@ -13631,6 +14155,11 @@ pub mod update_integration_input {
             self.request_templates = input;
             self
         }
+        /// Adds a key-value pair to `response_parameters`.
+        ///
+        /// To override the contents of this collection use [`set_response_parameters`](Self::set_response_parameters).
+        ///
+        /// <p>Supported only for HTTP APIs. You use response parameters to transform the HTTP response from a backend integration before returning the response to clients. Specify a key-value map from a selection key to response parameters. The selection key must be a valid HTTP status code within the range of 200-599. Response parameters are a key-value map. The key must match pattern &lt;action&gt;:&lt;header&gt;.&lt;location&gt; or overwrite.statuscode. The action can be append, overwrite or remove. The value can be a static value, or map to response data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming API requests and responses</a>.</p>
         pub fn response_parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -13641,6 +14170,7 @@ pub mod update_integration_input {
             self.response_parameters = Some(hash_map);
             self
         }
+        /// <p>Supported only for HTTP APIs. You use response parameters to transform the HTTP response from a backend integration before returning the response to clients. Specify a key-value map from a selection key to response parameters. The selection key must be a valid HTTP status code within the range of 200-599. Response parameters are a key-value map. The key must match pattern &lt;action&gt;:&lt;header&gt;.&lt;location&gt; or overwrite.statuscode. The action can be append, overwrite or remove. The value can be a static value, or map to response data, stage variables, or context variables that are evaluated at runtime. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-parameter-mapping.html">Transforming API requests and responses</a>.</p>
         pub fn set_response_parameters(
             mut self,
             input: std::option::Option<
@@ -13661,6 +14191,7 @@ pub mod update_integration_input {
             self.template_selection_expression = Some(input.into());
             self
         }
+        /// <p>The template selection expression for the integration.</p>
         pub fn set_template_selection_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13673,6 +14204,7 @@ pub mod update_integration_input {
             self.timeout_in_millis = Some(input);
             self
         }
+        /// <p>Custom timeout between 50 and 29,000 milliseconds for WebSocket APIs and between 50 and 30,000 milliseconds for HTTP APIs. The default timeout is 29 seconds for WebSocket APIs and 30 seconds for HTTP APIs.</p>
         pub fn set_timeout_in_millis(mut self, input: std::option::Option<i32>) -> Self {
             self.timeout_in_millis = input;
             self
@@ -13682,6 +14214,7 @@ pub mod update_integration_input {
             self.tls_config = Some(input);
             self
         }
+        /// <p>The TLS configuration for a private integration. If you specify a TLS configuration, private integration traffic uses the HTTPS protocol. Supported only for HTTP APIs.</p>
         pub fn set_tls_config(
             mut self,
             input: std::option::Option<crate::model::TlsConfigInput>,
@@ -13694,7 +14227,7 @@ pub mod update_integration_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateIntegrationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateIntegrationInput {
                 api_id: self.api_id,
@@ -13731,27 +14264,27 @@ impl UpdateIntegrationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateIntegration,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateIntegrationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_127 = &_input.api_id;
             let input_127 =
                 input_127
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "api_id",
                         details: "cannot be empty or unset",
                     })?;
-            let api_id = smithy_http::label::fmt_string(input_127, false);
+            let api_id = aws_smithy_http::label::fmt_string(input_127, false);
             if api_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "api_id",
                     details: "cannot be empty or unset",
                 });
@@ -13760,13 +14293,13 @@ impl UpdateIntegrationInput {
             let input_128 =
                 input_128
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "integration_id",
                         details: "cannot be empty or unset",
                     })?;
-            let integration_id = smithy_http::label::fmt_string(input_128, false);
+            let integration_id = aws_smithy_http::label::fmt_string(input_128, false);
             if integration_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "integration_id",
                     details: "cannot be empty or unset",
                 });
@@ -13784,7 +14317,7 @@ impl UpdateIntegrationInput {
         fn update_http_builder(
             input: &crate::input::UpdateIntegrationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -13793,27 +14326,27 @@ impl UpdateIntegrationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateIntegrationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_integration(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -13836,15 +14369,15 @@ impl UpdateIntegrationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateIntegration::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateIntegration",
             "apigatewayv2",
         ));
@@ -13853,10 +14386,10 @@ impl UpdateIntegrationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -13896,6 +14429,7 @@ pub mod update_integration_response_input {
             self.api_id = Some(input.into());
             self
         }
+        /// <p>The API identifier.</p>
         pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.api_id = input;
             self
@@ -13908,6 +14442,7 @@ pub mod update_integration_response_input {
             self.content_handling_strategy = Some(input);
             self
         }
+        /// <p>Supported only for WebSocket APIs. Specifies how to handle response payload content type conversions. Supported values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the following behaviors:</p> <p>CONVERT_TO_BINARY: Converts a response payload from a Base64-encoded string to the corresponding binary blob.</p> <p>CONVERT_TO_TEXT: Converts a response payload from a binary blob to a Base64-encoded string.</p> <p>If this property is not defined, the response payload will be passed through from the integration response to the route response or method response without modification.</p>
         pub fn set_content_handling_strategy(
             mut self,
             input: std::option::Option<crate::model::ContentHandlingStrategy>,
@@ -13920,6 +14455,7 @@ pub mod update_integration_response_input {
             self.integration_id = Some(input.into());
             self
         }
+        /// <p>The integration ID.</p>
         pub fn set_integration_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13932,6 +14468,7 @@ pub mod update_integration_response_input {
             self.integration_response_id = Some(input.into());
             self
         }
+        /// <p>The integration response ID.</p>
         pub fn set_integration_response_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13944,6 +14481,7 @@ pub mod update_integration_response_input {
             self.integration_response_key = Some(input.into());
             self
         }
+        /// <p>The integration response key.</p>
         pub fn set_integration_response_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13951,6 +14489,18 @@ pub mod update_integration_response_input {
             self.integration_response_key = input;
             self
         }
+        /// Adds a key-value pair to `response_parameters`.
+        ///
+        /// To override the contents of this collection use [`set_response_parameters`](Self::set_response_parameters).
+        ///
+        /// <p>A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.<replaceable>{name}</replaceable>
+        /// , where name is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.<replaceable>{name}</replaceable>
+        /// or integration.response.body.<replaceable>{JSON-expression}</replaceable>
+        /// , where
+        /// <replaceable>{name}</replaceable>
+        /// is a valid and unique response header name and
+        /// <replaceable>{JSON-expression}</replaceable>
+        /// is a valid JSON expression without the $ prefix.</p>
         pub fn response_parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -13961,6 +14511,14 @@ pub mod update_integration_response_input {
             self.response_parameters = Some(hash_map);
             self
         }
+        /// <p>A key-value map specifying response parameters that are passed to the method response from the backend. The key is a method response header parameter name and the mapped value is an integration response header value, a static value enclosed within a pair of single quotes, or a JSON expression from the integration response body. The mapping key must match the pattern of method.response.header.<replaceable>{name}</replaceable>
+        /// , where name is a valid and unique header name. The mapped non-static value must match the pattern of integration.response.header.<replaceable>{name}</replaceable>
+        /// or integration.response.body.<replaceable>{JSON-expression}</replaceable>
+        /// , where
+        /// <replaceable>{name}</replaceable>
+        /// is a valid and unique response header name and
+        /// <replaceable>{JSON-expression}</replaceable>
+        /// is a valid JSON expression without the $ prefix.</p>
         pub fn set_response_parameters(
             mut self,
             input: std::option::Option<
@@ -13970,6 +14528,11 @@ pub mod update_integration_response_input {
             self.response_parameters = input;
             self
         }
+        /// Adds a key-value pair to `response_templates`.
+        ///
+        /// To override the contents of this collection use [`set_response_templates`](Self::set_response_templates).
+        ///
+        /// <p>The collection of response templates for the integration response as a string-to-string map of key-value pairs. Response templates are represented as a key/value map, with a content-type as the key and a template as the value.</p>
         pub fn response_templates(
             mut self,
             k: impl Into<std::string::String>,
@@ -13980,6 +14543,7 @@ pub mod update_integration_response_input {
             self.response_templates = Some(hash_map);
             self
         }
+        /// <p>The collection of response templates for the integration response as a string-to-string map of key-value pairs. Response templates are represented as a key/value map, with a content-type as the key and a template as the value.</p>
         pub fn set_response_templates(
             mut self,
             input: std::option::Option<
@@ -13997,6 +14561,7 @@ pub mod update_integration_response_input {
             self.template_selection_expression = Some(input.into());
             self
         }
+        /// <p>The template selection expression for the integration response. Supported only for WebSocket APIs.</p>
         pub fn set_template_selection_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14009,7 +14574,7 @@ pub mod update_integration_response_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateIntegrationResponseInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateIntegrationResponseInput {
                 api_id: self.api_id,
@@ -14036,27 +14601,27 @@ impl UpdateIntegrationResponseInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateIntegrationResponse,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateIntegrationResponseInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_129 = &_input.api_id;
             let input_129 =
                 input_129
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "api_id",
                         details: "cannot be empty or unset",
                     })?;
-            let api_id = smithy_http::label::fmt_string(input_129, false);
+            let api_id = aws_smithy_http::label::fmt_string(input_129, false);
             if api_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "api_id",
                     details: "cannot be empty or unset",
                 });
@@ -14065,13 +14630,13 @@ impl UpdateIntegrationResponseInput {
             let input_130 =
                 input_130
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "integration_id",
                         details: "cannot be empty or unset",
                     })?;
-            let integration_id = smithy_http::label::fmt_string(input_130, false);
+            let integration_id = aws_smithy_http::label::fmt_string(input_130, false);
             if integration_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "integration_id",
                     details: "cannot be empty or unset",
                 });
@@ -14080,13 +14645,13 @@ impl UpdateIntegrationResponseInput {
             let input_131 =
                 input_131
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "integration_response_id",
                         details: "cannot be empty or unset",
                     })?;
-            let integration_response_id = smithy_http::label::fmt_string(input_131, false);
+            let integration_response_id = aws_smithy_http::label::fmt_string(input_131, false);
             if integration_response_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "integration_response_id",
                     details: "cannot be empty or unset",
                 });
@@ -14098,7 +14663,7 @@ impl UpdateIntegrationResponseInput {
         fn update_http_builder(
             input: &crate::input::UpdateIntegrationResponseInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -14107,27 +14672,29 @@ impl UpdateIntegrationResponseInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateIntegrationResponseInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_integration_response(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -14150,15 +14717,15 @@ impl UpdateIntegrationResponseInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateIntegrationResponse::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateIntegrationResponse",
             "apigatewayv2",
         ));
@@ -14167,10 +14734,10 @@ impl UpdateIntegrationResponseInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -14203,6 +14770,7 @@ pub mod update_model_input {
             self.api_id = Some(input.into());
             self
         }
+        /// <p>The API identifier.</p>
         pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.api_id = input;
             self
@@ -14212,6 +14780,7 @@ pub mod update_model_input {
             self.content_type = Some(input.into());
             self
         }
+        /// <p>The content-type for the model, for example, "application/json".</p>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_type = input;
             self
@@ -14221,6 +14790,7 @@ pub mod update_model_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the model.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -14230,6 +14800,7 @@ pub mod update_model_input {
             self.model_id = Some(input.into());
             self
         }
+        /// <p>The model ID.</p>
         pub fn set_model_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.model_id = input;
             self
@@ -14239,6 +14810,7 @@ pub mod update_model_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the model.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -14248,6 +14820,7 @@ pub mod update_model_input {
             self.schema = Some(input.into());
             self
         }
+        /// <p>The schema for the model. For application/json models, this should be JSON schema draft 4 model.</p>
         pub fn set_schema(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.schema = input;
             self
@@ -14255,8 +14828,10 @@ pub mod update_model_input {
         /// Consumes the builder and constructs a [`UpdateModelInput`](crate::input::UpdateModelInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UpdateModelInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateModelInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateModelInput {
                 api_id: self.api_id,
                 content_type: self.content_type,
@@ -14279,27 +14854,27 @@ impl UpdateModelInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateModel,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateModelInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_132 = &_input.api_id;
             let input_132 =
                 input_132
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "api_id",
                         details: "cannot be empty or unset",
                     })?;
-            let api_id = smithy_http::label::fmt_string(input_132, false);
+            let api_id = aws_smithy_http::label::fmt_string(input_132, false);
             if api_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "api_id",
                     details: "cannot be empty or unset",
                 });
@@ -14308,13 +14883,13 @@ impl UpdateModelInput {
             let input_133 =
                 input_133
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "model_id",
                         details: "cannot be empty or unset",
                     })?;
-            let model_id = smithy_http::label::fmt_string(input_133, false);
+            let model_id = aws_smithy_http::label::fmt_string(input_133, false);
             if model_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "model_id",
                     details: "cannot be empty or unset",
                 });
@@ -14332,7 +14907,7 @@ impl UpdateModelInput {
         fn update_http_builder(
             input: &crate::input::UpdateModelInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -14341,24 +14916,26 @@ impl UpdateModelInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateModelInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_update_model(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -14381,25 +14958,27 @@ impl UpdateModelInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UpdateModel::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UpdateModel",
-                    "apigatewayv2",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateModel::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateModel",
+            "apigatewayv2",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -14443,6 +15022,7 @@ pub mod update_route_input {
             self.api_id = Some(input.into());
             self
         }
+        /// <p>The API identifier.</p>
         pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.api_id = input;
             self
@@ -14452,16 +15032,23 @@ pub mod update_route_input {
             self.api_key_required = Some(input);
             self
         }
+        /// <p>Specifies whether an API key is required for the route. Supported only for WebSocket APIs.</p>
         pub fn set_api_key_required(mut self, input: std::option::Option<bool>) -> Self {
             self.api_key_required = input;
             self
         }
+        /// Appends an item to `authorization_scopes`.
+        ///
+        /// To override the contents of this collection use [`set_authorization_scopes`](Self::set_authorization_scopes).
+        ///
+        /// <p>The authorization scopes supported by this route.</p>
         pub fn authorization_scopes(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.authorization_scopes.unwrap_or_default();
             v.push(input.into());
             self.authorization_scopes = Some(v);
             self
         }
+        /// <p>The authorization scopes supported by this route.</p>
         pub fn set_authorization_scopes(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -14474,6 +15061,7 @@ pub mod update_route_input {
             self.authorization_type = Some(input);
             self
         }
+        /// <p>The authorization type for the route. For WebSocket APIs, valid values are NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer For HTTP APIs, valid values are NONE for open access, JWT for using JSON Web Tokens, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer.</p>
         pub fn set_authorization_type(
             mut self,
             input: std::option::Option<crate::model::AuthorizationType>,
@@ -14486,6 +15074,7 @@ pub mod update_route_input {
             self.authorizer_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the Authorizer resource to be associated with this route. The authorizer identifier is generated by API Gateway when you created the authorizer.</p>
         pub fn set_authorizer_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14498,6 +15087,7 @@ pub mod update_route_input {
             self.model_selection_expression = Some(input.into());
             self
         }
+        /// <p>The model selection expression for the route. Supported only for WebSocket APIs.</p>
         pub fn set_model_selection_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14510,6 +15100,7 @@ pub mod update_route_input {
             self.operation_name = Some(input.into());
             self
         }
+        /// <p>The operation name for the route.</p>
         pub fn set_operation_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14517,6 +15108,11 @@ pub mod update_route_input {
             self.operation_name = input;
             self
         }
+        /// Adds a key-value pair to `request_models`.
+        ///
+        /// To override the contents of this collection use [`set_request_models`](Self::set_request_models).
+        ///
+        /// <p>The request models for the route. Supported only for WebSocket APIs.</p>
         pub fn request_models(
             mut self,
             k: impl Into<std::string::String>,
@@ -14527,6 +15123,7 @@ pub mod update_route_input {
             self.request_models = Some(hash_map);
             self
         }
+        /// <p>The request models for the route. Supported only for WebSocket APIs.</p>
         pub fn set_request_models(
             mut self,
             input: std::option::Option<
@@ -14536,6 +15133,11 @@ pub mod update_route_input {
             self.request_models = input;
             self
         }
+        /// Adds a key-value pair to `request_parameters`.
+        ///
+        /// To override the contents of this collection use [`set_request_parameters`](Self::set_request_parameters).
+        ///
+        /// <p>The request parameters for the route. Supported only for WebSocket APIs.</p>
         pub fn request_parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -14546,6 +15148,7 @@ pub mod update_route_input {
             self.request_parameters = Some(hash_map);
             self
         }
+        /// <p>The request parameters for the route. Supported only for WebSocket APIs.</p>
         pub fn set_request_parameters(
             mut self,
             input: std::option::Option<
@@ -14560,6 +15163,7 @@ pub mod update_route_input {
             self.route_id = Some(input.into());
             self
         }
+        /// <p>The route ID.</p>
         pub fn set_route_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.route_id = input;
             self
@@ -14569,6 +15173,7 @@ pub mod update_route_input {
             self.route_key = Some(input.into());
             self
         }
+        /// <p>The route key for the route.</p>
         pub fn set_route_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.route_key = input;
             self
@@ -14581,6 +15186,7 @@ pub mod update_route_input {
             self.route_response_selection_expression = Some(input.into());
             self
         }
+        /// <p>The route response selection expression for the route. Supported only for WebSocket APIs.</p>
         pub fn set_route_response_selection_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14593,6 +15199,7 @@ pub mod update_route_input {
             self.target = Some(input.into());
             self
         }
+        /// <p>The target for the route.</p>
         pub fn set_target(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.target = input;
             self
@@ -14600,8 +15207,10 @@ pub mod update_route_input {
         /// Consumes the builder and constructs a [`UpdateRouteInput`](crate::input::UpdateRouteInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UpdateRouteInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateRouteInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateRouteInput {
                 api_id: self.api_id,
                 api_key_required: self.api_key_required.unwrap_or_default(),
@@ -14631,27 +15240,27 @@ impl UpdateRouteInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateRoute,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateRouteInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_134 = &_input.api_id;
             let input_134 =
                 input_134
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "api_id",
                         details: "cannot be empty or unset",
                     })?;
-            let api_id = smithy_http::label::fmt_string(input_134, false);
+            let api_id = aws_smithy_http::label::fmt_string(input_134, false);
             if api_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "api_id",
                     details: "cannot be empty or unset",
                 });
@@ -14660,13 +15269,13 @@ impl UpdateRouteInput {
             let input_135 =
                 input_135
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "route_id",
                         details: "cannot be empty or unset",
                     })?;
-            let route_id = smithy_http::label::fmt_string(input_135, false);
+            let route_id = aws_smithy_http::label::fmt_string(input_135, false);
             if route_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "route_id",
                     details: "cannot be empty or unset",
                 });
@@ -14684,7 +15293,7 @@ impl UpdateRouteInput {
         fn update_http_builder(
             input: &crate::input::UpdateRouteInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -14693,24 +15302,26 @@ impl UpdateRouteInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateRouteInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_update_route(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -14733,25 +15344,27 @@ impl UpdateRouteInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UpdateRoute::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UpdateRoute",
-                    "apigatewayv2",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateRoute::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateRoute",
+            "apigatewayv2",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -14789,6 +15402,7 @@ pub mod update_route_response_input {
             self.api_id = Some(input.into());
             self
         }
+        /// <p>The API identifier.</p>
         pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.api_id = input;
             self
@@ -14798,6 +15412,7 @@ pub mod update_route_response_input {
             self.model_selection_expression = Some(input.into());
             self
         }
+        /// <p>The model selection expression for the route response. Supported only for WebSocket APIs.</p>
         pub fn set_model_selection_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14805,6 +15420,11 @@ pub mod update_route_response_input {
             self.model_selection_expression = input;
             self
         }
+        /// Adds a key-value pair to `response_models`.
+        ///
+        /// To override the contents of this collection use [`set_response_models`](Self::set_response_models).
+        ///
+        /// <p>The response models for the route response.</p>
         pub fn response_models(
             mut self,
             k: impl Into<std::string::String>,
@@ -14815,6 +15435,7 @@ pub mod update_route_response_input {
             self.response_models = Some(hash_map);
             self
         }
+        /// <p>The response models for the route response.</p>
         pub fn set_response_models(
             mut self,
             input: std::option::Option<
@@ -14824,6 +15445,11 @@ pub mod update_route_response_input {
             self.response_models = input;
             self
         }
+        /// Adds a key-value pair to `response_parameters`.
+        ///
+        /// To override the contents of this collection use [`set_response_parameters`](Self::set_response_parameters).
+        ///
+        /// <p>The route response parameters.</p>
         pub fn response_parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -14834,6 +15460,7 @@ pub mod update_route_response_input {
             self.response_parameters = Some(hash_map);
             self
         }
+        /// <p>The route response parameters.</p>
         pub fn set_response_parameters(
             mut self,
             input: std::option::Option<
@@ -14848,6 +15475,7 @@ pub mod update_route_response_input {
             self.route_id = Some(input.into());
             self
         }
+        /// <p>The route ID.</p>
         pub fn set_route_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.route_id = input;
             self
@@ -14857,6 +15485,7 @@ pub mod update_route_response_input {
             self.route_response_id = Some(input.into());
             self
         }
+        /// <p>The route response ID.</p>
         pub fn set_route_response_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14869,6 +15498,7 @@ pub mod update_route_response_input {
             self.route_response_key = Some(input.into());
             self
         }
+        /// <p>The route response key.</p>
         pub fn set_route_response_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14881,7 +15511,7 @@ pub mod update_route_response_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateRouteResponseInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateRouteResponseInput {
                 api_id: self.api_id,
@@ -14906,27 +15536,27 @@ impl UpdateRouteResponseInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateRouteResponse,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateRouteResponseInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_136 = &_input.api_id;
             let input_136 =
                 input_136
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "api_id",
                         details: "cannot be empty or unset",
                     })?;
-            let api_id = smithy_http::label::fmt_string(input_136, false);
+            let api_id = aws_smithy_http::label::fmt_string(input_136, false);
             if api_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "api_id",
                     details: "cannot be empty or unset",
                 });
@@ -14935,13 +15565,13 @@ impl UpdateRouteResponseInput {
             let input_137 =
                 input_137
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "route_id",
                         details: "cannot be empty or unset",
                     })?;
-            let route_id = smithy_http::label::fmt_string(input_137, false);
+            let route_id = aws_smithy_http::label::fmt_string(input_137, false);
             if route_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "route_id",
                     details: "cannot be empty or unset",
                 });
@@ -14950,13 +15580,13 @@ impl UpdateRouteResponseInput {
             let input_138 =
                 input_138
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "route_response_id",
                         details: "cannot be empty or unset",
                     })?;
-            let route_response_id = smithy_http::label::fmt_string(input_138, false);
+            let route_response_id = aws_smithy_http::label::fmt_string(input_138, false);
             if route_response_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "route_response_id",
                     details: "cannot be empty or unset",
                 });
@@ -14975,7 +15605,7 @@ impl UpdateRouteResponseInput {
         fn update_http_builder(
             input: &crate::input::UpdateRouteResponseInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -14984,27 +15614,27 @@ impl UpdateRouteResponseInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateRouteResponseInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_route_response(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -15027,15 +15657,15 @@ impl UpdateRouteResponseInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateRouteResponse::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateRouteResponse",
             "apigatewayv2",
         ));
@@ -15044,10 +15674,10 @@ impl UpdateRouteResponseInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -15088,6 +15718,7 @@ pub mod update_stage_input {
             self.access_log_settings = Some(input);
             self
         }
+        /// <p>Settings for logging access in this stage.</p>
         pub fn set_access_log_settings(
             mut self,
             input: std::option::Option<crate::model::AccessLogSettings>,
@@ -15100,6 +15731,7 @@ pub mod update_stage_input {
             self.api_id = Some(input.into());
             self
         }
+        /// <p>The API identifier.</p>
         pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.api_id = input;
             self
@@ -15109,6 +15741,7 @@ pub mod update_stage_input {
             self.auto_deploy = Some(input);
             self
         }
+        /// <p>Specifies whether updates to an API automatically trigger a new deployment. The default value is false.</p>
         pub fn set_auto_deploy(mut self, input: std::option::Option<bool>) -> Self {
             self.auto_deploy = input;
             self
@@ -15118,6 +15751,7 @@ pub mod update_stage_input {
             self.client_certificate_id = Some(input.into());
             self
         }
+        /// <p>The identifier of a client certificate for a Stage.</p>
         pub fn set_client_certificate_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15130,6 +15764,7 @@ pub mod update_stage_input {
             self.default_route_settings = Some(input);
             self
         }
+        /// <p>The default route settings for the stage.</p>
         pub fn set_default_route_settings(
             mut self,
             input: std::option::Option<crate::model::RouteSettings>,
@@ -15142,6 +15777,7 @@ pub mod update_stage_input {
             self.deployment_id = Some(input.into());
             self
         }
+        /// <p>The deployment identifier for the API stage. Can't be updated if autoDeploy is enabled.</p>
         pub fn set_deployment_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15154,10 +15790,16 @@ pub mod update_stage_input {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description for the API stage.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Adds a key-value pair to `route_settings`.
+        ///
+        /// To override the contents of this collection use [`set_route_settings`](Self::set_route_settings).
+        ///
+        /// <p>Route settings for the stage.</p>
         pub fn route_settings(
             mut self,
             k: impl Into<std::string::String>,
@@ -15168,6 +15810,7 @@ pub mod update_stage_input {
             self.route_settings = Some(hash_map);
             self
         }
+        /// <p>Route settings for the stage.</p>
         pub fn set_route_settings(
             mut self,
             input: std::option::Option<
@@ -15182,10 +15825,16 @@ pub mod update_stage_input {
             self.stage_name = Some(input.into());
             self
         }
+        /// <p>The stage name. Stage names can contain only alphanumeric characters, hyphens, and underscores, or be $default. Maximum length is 128 characters.</p>
         pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stage_name = input;
             self
         }
+        /// Adds a key-value pair to `stage_variables`.
+        ///
+        /// To override the contents of this collection use [`set_stage_variables`](Self::set_stage_variables).
+        ///
+        /// <p>A map that defines the stage variables for a Stage. Variable names can have alphanumeric and underscore characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+.</p>
         pub fn stage_variables(
             mut self,
             k: impl Into<std::string::String>,
@@ -15196,6 +15845,7 @@ pub mod update_stage_input {
             self.stage_variables = Some(hash_map);
             self
         }
+        /// <p>A map that defines the stage variables for a Stage. Variable names can have alphanumeric and underscore characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+.</p>
         pub fn set_stage_variables(
             mut self,
             input: std::option::Option<
@@ -15208,8 +15858,10 @@ pub mod update_stage_input {
         /// Consumes the builder and constructs a [`UpdateStageInput`](crate::input::UpdateStageInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UpdateStageInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateStageInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateStageInput {
                 access_log_settings: self.access_log_settings,
                 api_id: self.api_id,
@@ -15236,27 +15888,27 @@ impl UpdateStageInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateStage,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateStageInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_139 = &_input.api_id;
             let input_139 =
                 input_139
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "api_id",
                         details: "cannot be empty or unset",
                     })?;
-            let api_id = smithy_http::label::fmt_string(input_139, false);
+            let api_id = aws_smithy_http::label::fmt_string(input_139, false);
             if api_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "api_id",
                     details: "cannot be empty or unset",
                 });
@@ -15265,13 +15917,13 @@ impl UpdateStageInput {
             let input_140 =
                 input_140
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "stage_name",
                         details: "cannot be empty or unset",
                     })?;
-            let stage_name = smithy_http::label::fmt_string(input_140, false);
+            let stage_name = aws_smithy_http::label::fmt_string(input_140, false);
             if stage_name.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "stage_name",
                     details: "cannot be empty or unset",
                 });
@@ -15289,7 +15941,7 @@ impl UpdateStageInput {
         fn update_http_builder(
             input: &crate::input::UpdateStageInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -15298,24 +15950,26 @@ impl UpdateStageInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateStageInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_update_stage(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -15338,25 +15992,27 @@ impl UpdateStageInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UpdateStage::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UpdateStage",
-                    "apigatewayv2",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateStage::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateStage",
+            "apigatewayv2",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -15385,6 +16041,7 @@ pub mod update_vpc_link_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the VPC link.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -15394,6 +16051,7 @@ pub mod update_vpc_link_input {
             self.vpc_link_id = Some(input.into());
             self
         }
+        /// <p>The ID of the VPC link.</p>
         pub fn set_vpc_link_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.vpc_link_id = input;
             self
@@ -15401,8 +16059,10 @@ pub mod update_vpc_link_input {
         /// Consumes the builder and constructs a [`UpdateVpcLinkInput`](crate::input::UpdateVpcLinkInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UpdateVpcLinkInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UpdateVpcLinkInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UpdateVpcLinkInput {
                 name: self.name,
                 vpc_link_id: self.vpc_link_id,
@@ -15421,27 +16081,27 @@ impl UpdateVpcLinkInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateVpcLink,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateVpcLinkInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             let input_141 = &_input.vpc_link_id;
             let input_141 =
                 input_141
                     .as_ref()
-                    .ok_or(smithy_http::operation::BuildError::MissingField {
+                    .ok_or(aws_smithy_http::operation::BuildError::MissingField {
                         field: "vpc_link_id",
                         details: "cannot be empty or unset",
                     })?;
-            let vpc_link_id = smithy_http::label::fmt_string(input_141, false);
+            let vpc_link_id = aws_smithy_http::label::fmt_string(input_141, false);
             if vpc_link_id.is_empty() {
-                return Err(smithy_http::operation::BuildError::MissingField {
+                return Err(aws_smithy_http::operation::BuildError::MissingField {
                     field: "vpc_link_id",
                     details: "cannot be empty or unset",
                 });
@@ -15454,7 +16114,7 @@ impl UpdateVpcLinkInput {
         fn update_http_builder(
             input: &crate::input::UpdateVpcLinkInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -15463,24 +16123,26 @@ impl UpdateVpcLinkInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateVpcLinkInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_update_vpc_link(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -15503,25 +16165,27 @@ impl UpdateVpcLinkInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UpdateVpcLink::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UpdateVpcLink",
-                    "apigatewayv2",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UpdateVpcLink::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateVpcLink",
+            "apigatewayv2",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -16050,6 +16714,7 @@ impl std::fmt::Debug for UpdateApiInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
@@ -16086,6 +16751,7 @@ impl std::fmt::Debug for TagResourceInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResetAuthorizersCacheInput {
@@ -16148,6 +16814,7 @@ impl std::fmt::Debug for ImportApiInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetVpcLinksInput {
@@ -16165,6 +16832,7 @@ impl std::fmt::Debug for GetVpcLinksInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetVpcLinkInput {
@@ -16179,6 +16847,7 @@ impl std::fmt::Debug for GetVpcLinkInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTagsInput {
@@ -16193,6 +16862,7 @@ impl std::fmt::Debug for GetTagsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetStagesInput {
@@ -16213,6 +16883,7 @@ impl std::fmt::Debug for GetStagesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetStageInput {
@@ -16230,6 +16901,7 @@ impl std::fmt::Debug for GetStageInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRoutesInput {
@@ -16250,6 +16922,7 @@ impl std::fmt::Debug for GetRoutesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRouteResponsesInput {
@@ -16273,6 +16946,7 @@ impl std::fmt::Debug for GetRouteResponsesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRouteResponseInput {
@@ -16293,6 +16967,7 @@ impl std::fmt::Debug for GetRouteResponseInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRouteInput {
@@ -16310,6 +16985,7 @@ impl std::fmt::Debug for GetRouteInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetModelTemplateInput {
@@ -16327,6 +17003,7 @@ impl std::fmt::Debug for GetModelTemplateInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetModelsInput {
@@ -16347,6 +17024,7 @@ impl std::fmt::Debug for GetModelsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetModelInput {
@@ -16364,6 +17042,7 @@ impl std::fmt::Debug for GetModelInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetIntegrationsInput {
@@ -16384,6 +17063,7 @@ impl std::fmt::Debug for GetIntegrationsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetIntegrationResponsesInput {
@@ -16407,6 +17087,7 @@ impl std::fmt::Debug for GetIntegrationResponsesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetIntegrationResponseInput {
@@ -16427,6 +17108,7 @@ impl std::fmt::Debug for GetIntegrationResponseInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetIntegrationInput {
@@ -16444,6 +17126,7 @@ impl std::fmt::Debug for GetIntegrationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDomainNamesInput {
@@ -16461,6 +17144,7 @@ impl std::fmt::Debug for GetDomainNamesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDomainNameInput {
@@ -16475,6 +17159,7 @@ impl std::fmt::Debug for GetDomainNameInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDeploymentsInput {
@@ -16495,6 +17180,7 @@ impl std::fmt::Debug for GetDeploymentsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDeploymentInput {
@@ -16512,6 +17198,7 @@ impl std::fmt::Debug for GetDeploymentInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAuthorizersInput {
@@ -16532,6 +17219,7 @@ impl std::fmt::Debug for GetAuthorizersInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAuthorizerInput {
@@ -16549,6 +17237,7 @@ impl std::fmt::Debug for GetAuthorizerInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetApisInput {
@@ -16566,6 +17255,7 @@ impl std::fmt::Debug for GetApisInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetApiMappingsInput {
@@ -16586,6 +17276,7 @@ impl std::fmt::Debug for GetApiMappingsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetApiMappingInput {
@@ -16603,6 +17294,7 @@ impl std::fmt::Debug for GetApiMappingInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetApiInput {
@@ -16617,6 +17309,7 @@ impl std::fmt::Debug for GetApiInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExportApiInput {
@@ -16646,6 +17339,7 @@ impl std::fmt::Debug for ExportApiInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteVpcLinkInput {
@@ -16660,6 +17354,7 @@ impl std::fmt::Debug for DeleteVpcLinkInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteStageInput {
@@ -16677,6 +17372,7 @@ impl std::fmt::Debug for DeleteStageInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRouteSettingsInput {
@@ -16697,6 +17393,7 @@ impl std::fmt::Debug for DeleteRouteSettingsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRouteResponseInput {
@@ -16717,6 +17414,7 @@ impl std::fmt::Debug for DeleteRouteResponseInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRouteRequestParameterInput {
@@ -16737,6 +17435,7 @@ impl std::fmt::Debug for DeleteRouteRequestParameterInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRouteInput {
@@ -16754,6 +17453,7 @@ impl std::fmt::Debug for DeleteRouteInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteModelInput {
@@ -16771,6 +17471,7 @@ impl std::fmt::Debug for DeleteModelInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteIntegrationResponseInput {
@@ -16791,6 +17492,7 @@ impl std::fmt::Debug for DeleteIntegrationResponseInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteIntegrationInput {
@@ -16808,6 +17510,7 @@ impl std::fmt::Debug for DeleteIntegrationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDomainNameInput {
@@ -16822,6 +17525,7 @@ impl std::fmt::Debug for DeleteDomainNameInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDeploymentInput {
@@ -16839,6 +17543,7 @@ impl std::fmt::Debug for DeleteDeploymentInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCorsConfigurationInput {
@@ -16853,6 +17558,7 @@ impl std::fmt::Debug for DeleteCorsConfigurationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAuthorizerInput {
@@ -16870,6 +17576,7 @@ impl std::fmt::Debug for DeleteAuthorizerInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteApiMappingInput {
@@ -16887,6 +17594,7 @@ impl std::fmt::Debug for DeleteApiMappingInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteApiInput {
@@ -16901,6 +17609,7 @@ impl std::fmt::Debug for DeleteApiInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAccessLogSettingsInput {

@@ -28,6 +28,7 @@ pub mod tracing_configuration {
             self.enabled = Some(input);
             self
         }
+        /// <p>When set to <code>true</code>, AWS X-Ray tracing is enabled.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -86,6 +87,7 @@ pub mod logging_configuration {
             self.level = Some(input);
             self
         }
+        /// <p>Defines which category of execution history events are logged.</p>
         pub fn set_level(mut self, input: std::option::Option<crate::model::LogLevel>) -> Self {
             self.level = input;
             self
@@ -96,16 +98,26 @@ pub mod logging_configuration {
             self.include_execution_data = Some(input);
             self
         }
+        /// <p>Determines whether execution data is included in your log. When set to <code>false</code>,
+        /// data is excluded.</p>
         pub fn set_include_execution_data(mut self, input: std::option::Option<bool>) -> Self {
             self.include_execution_data = input;
             self
         }
+        /// Appends an item to `destinations`.
+        ///
+        /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
+        ///
+        /// <p>An array of objects that describes where your execution history events will be logged.
+        /// Limited to size 1. Required, if your log level is not set to <code>OFF</code>.</p>
         pub fn destinations(mut self, input: impl Into<crate::model::LogDestination>) -> Self {
             let mut v = self.destinations.unwrap_or_default();
             v.push(input.into());
             self.destinations = Some(v);
             self
         }
+        /// <p>An array of objects that describes where your execution history events will be logged.
+        /// Limited to size 1. Required, if your log level is not set to <code>OFF</code>.</p>
         pub fn set_destinations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LogDestination>>,
@@ -165,6 +177,7 @@ pub mod log_destination {
             self.cloud_watch_logs_log_group = Some(input);
             self
         }
+        /// <p>An object describing a CloudWatch log group. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-loggroup.html">AWS::Logs::LogGroup</a> in the AWS CloudFormation User Guide.</p>
         pub fn set_cloud_watch_logs_log_group(
             mut self,
             input: std::option::Option<crate::model::CloudWatchLogsLogGroup>,
@@ -219,6 +232,9 @@ pub mod cloud_watch_logs_log_group {
             self.log_group_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the the CloudWatch log group to which you want your logs emitted to. The ARN
+        /// must end with <code>:*</code>
+        /// </p>
         pub fn set_log_group_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -241,6 +257,7 @@ impl CloudWatchLogsLogGroup {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -252,9 +269,13 @@ impl CloudWatchLogsLogGroup {
     std::hash::Hash,
 )]
 pub enum LogLevel {
+    #[allow(missing_docs)] // documentation missing in model
     All,
+    #[allow(missing_docs)] // documentation missing in model
     Error,
+    #[allow(missing_docs)] // documentation missing in model
     Fatal,
+    #[allow(missing_docs)] // documentation missing in model
     Off,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -278,6 +299,7 @@ impl std::str::FromStr for LogLevel {
     }
 }
 impl LogLevel {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LogLevel::All => "ALL",
@@ -287,6 +309,7 @@ impl LogLevel {
             LogLevel::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ALL", "ERROR", "FATAL", "OFF"]
     }
@@ -335,6 +358,7 @@ pub mod tag {
             self.key = Some(input.into());
             self
         }
+        /// <p>The key of a tag.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -344,6 +368,7 @@ pub mod tag {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value of a tag.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -399,6 +424,7 @@ pub mod billing_details {
             self.billed_memory_used_in_mb = Some(input);
             self
         }
+        /// <p>Billed memory consumption of your workflow, in MB.</p>
         pub fn set_billed_memory_used_in_mb(mut self, input: std::option::Option<i64>) -> Self {
             self.billed_memory_used_in_mb = input;
             self
@@ -408,6 +434,7 @@ pub mod billing_details {
             self.billed_duration_in_milliseconds = Some(input);
             self
         }
+        /// <p>Billed duration of your workflow, in milliseconds.</p>
         pub fn set_billed_duration_in_milliseconds(
             mut self,
             input: std::option::Option<i64>,
@@ -463,6 +490,8 @@ pub mod cloud_watch_events_execution_data_details {
             self.included = Some(input);
             self
         }
+        /// <p>Indicates whether input or output was included in the response. Always <code>true</code>
+        /// for API calls. </p>
         pub fn set_included(mut self, input: std::option::Option<bool>) -> Self {
             self.included = input;
             self
@@ -482,6 +511,7 @@ impl CloudWatchEventsExecutionDataDetails {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -493,8 +523,11 @@ impl CloudWatchEventsExecutionDataDetails {
     std::hash::Hash,
 )]
 pub enum SyncExecutionStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Succeeded,
+    #[allow(missing_docs)] // documentation missing in model
     TimedOut,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -517,6 +550,7 @@ impl std::str::FromStr for SyncExecutionStatus {
     }
 }
 impl SyncExecutionStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SyncExecutionStatus::Failed => "FAILED",
@@ -525,6 +559,7 @@ impl SyncExecutionStatus {
             SyncExecutionStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FAILED", "SUCCEEDED", "TIMED_OUT"]
     }
@@ -568,7 +603,7 @@ pub struct StateMachineListItem {
     /// <p></p>
     pub r#type: std::option::Option<crate::model::StateMachineType>,
     /// <p>The date the state machine is created.</p>
-    pub creation_date: std::option::Option<smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for StateMachineListItem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -589,7 +624,7 @@ pub mod state_machine_list_item {
         pub(crate) state_machine_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::StateMachineType>,
-        pub(crate) creation_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) that identifies the state machine.</p>
@@ -597,6 +632,7 @@ pub mod state_machine_list_item {
             self.state_machine_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) that identifies the state machine.</p>
         pub fn set_state_machine_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -631,6 +667,29 @@ pub mod state_machine_list_item {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the state machine.</p>
+        /// <p>A name must <i>not</i> contain:</p>
+        /// <ul>
+        /// <li>
+        /// <p>white space</p>
+        /// </li>
+        /// <li>
+        /// <p>brackets <code>< > { } [ ]</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>wildcard characters <code>? *</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>special characters <code>" # % \ ^ | ~ ` $ & , ; : /</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
+        /// </li>
+        /// </ul>
+        /// <p>To enable logging with CloudWatch Logs, the name should only contain  0-9, A-Z, a-z, - and _.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -640,6 +699,7 @@ pub mod state_machine_list_item {
             self.r#type = Some(input);
             self
         }
+        /// <p></p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::StateMachineType>,
@@ -648,13 +708,14 @@ pub mod state_machine_list_item {
             self
         }
         /// <p>The date the state machine is created.</p>
-        pub fn creation_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_date = Some(input);
             self
         }
+        /// <p>The date the state machine is created.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_date = input;
             self
@@ -677,6 +738,7 @@ impl StateMachineListItem {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -688,7 +750,9 @@ impl StateMachineListItem {
     std::hash::Hash,
 )]
 pub enum StateMachineType {
+    #[allow(missing_docs)] // documentation missing in model
     Express,
+    #[allow(missing_docs)] // documentation missing in model
     Standard,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -710,6 +774,7 @@ impl std::str::FromStr for StateMachineType {
     }
 }
 impl StateMachineType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StateMachineType::Express => "EXPRESS",
@@ -717,6 +782,7 @@ impl StateMachineType {
             StateMachineType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["EXPRESS", "STANDARD"]
     }
@@ -762,9 +828,9 @@ pub struct ExecutionListItem {
     /// <p>The current status of the execution.</p>
     pub status: std::option::Option<crate::model::ExecutionStatus>,
     /// <p>The date the execution started.</p>
-    pub start_date: std::option::Option<smithy_types::Instant>,
+    pub start_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>If the execution already ended, the date the execution stopped.</p>
-    pub stop_date: std::option::Option<smithy_types::Instant>,
+    pub stop_date: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for ExecutionListItem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -788,8 +854,8 @@ pub mod execution_list_item {
         pub(crate) state_machine_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::ExecutionStatus>,
-        pub(crate) start_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) stop_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) start_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) stop_date: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
@@ -797,6 +863,7 @@ pub mod execution_list_item {
             self.execution_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
         pub fn set_execution_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -809,6 +876,7 @@ pub mod execution_list_item {
             self.state_machine_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the executed state machine.</p>
         pub fn set_state_machine_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -843,6 +911,29 @@ pub mod execution_list_item {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the execution.</p>
+        /// <p>A name must <i>not</i> contain:</p>
+        /// <ul>
+        /// <li>
+        /// <p>white space</p>
+        /// </li>
+        /// <li>
+        /// <p>brackets <code>< > { } [ ]</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>wildcard characters <code>? *</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>special characters <code>" # % \ ^ | ~ ` $ & , ; : /</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
+        /// </li>
+        /// </ul>
+        /// <p>To enable logging with CloudWatch Logs, the name should only contain  0-9, A-Z, a-z, - and _.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -852,6 +943,7 @@ pub mod execution_list_item {
             self.status = Some(input);
             self
         }
+        /// <p>The current status of the execution.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ExecutionStatus>,
@@ -860,20 +952,28 @@ pub mod execution_list_item {
             self
         }
         /// <p>The date the execution started.</p>
-        pub fn start_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_date = Some(input);
             self
         }
-        pub fn set_start_date(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date the execution started.</p>
+        pub fn set_start_date(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.start_date = input;
             self
         }
         /// <p>If the execution already ended, the date the execution stopped.</p>
-        pub fn stop_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn stop_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.stop_date = Some(input);
             self
         }
-        pub fn set_stop_date(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>If the execution already ended, the date the execution stopped.</p>
+        pub fn set_stop_date(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.stop_date = input;
             self
         }
@@ -897,6 +997,7 @@ impl ExecutionListItem {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -908,10 +1009,15 @@ impl ExecutionListItem {
     std::hash::Hash,
 )]
 pub enum ExecutionStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Aborted,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Running,
+    #[allow(missing_docs)] // documentation missing in model
     Succeeded,
+    #[allow(missing_docs)] // documentation missing in model
     TimedOut,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -936,6 +1042,7 @@ impl std::str::FromStr for ExecutionStatus {
     }
 }
 impl ExecutionStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ExecutionStatus::Aborted => "ABORTED",
@@ -946,6 +1053,7 @@ impl ExecutionStatus {
             ExecutionStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ABORTED", "FAILED", "RUNNING", "SUCCEEDED", "TIMED_OUT"]
     }
@@ -987,7 +1095,7 @@ pub struct ActivityListItem {
     /// <p>To enable logging with CloudWatch Logs, the name should only contain  0-9, A-Z, a-z, - and _.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The date the activity is created.</p>
-    pub creation_date: std::option::Option<smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for ActivityListItem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1006,7 +1114,7 @@ pub mod activity_list_item {
     pub struct Builder {
         pub(crate) activity_arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) creation_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) that identifies the activity.</p>
@@ -1014,6 +1122,7 @@ pub mod activity_list_item {
             self.activity_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) that identifies the activity.</p>
         pub fn set_activity_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.activity_arn = input;
             self
@@ -1045,18 +1154,42 @@ pub mod activity_list_item {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the activity.</p>
+        /// <p>A name must <i>not</i> contain:</p>
+        /// <ul>
+        /// <li>
+        /// <p>white space</p>
+        /// </li>
+        /// <li>
+        /// <p>brackets <code>< > { } [ ]</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>wildcard characters <code>? *</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>special characters <code>" # % \ ^ | ~ ` $ & , ; : /</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
+        /// </li>
+        /// </ul>
+        /// <p>To enable logging with CloudWatch Logs, the name should only contain  0-9, A-Z, a-z, - and _.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
         /// <p>The date the activity is created.</p>
-        pub fn creation_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_date = Some(input);
             self
         }
+        /// <p>The date the activity is created.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_date = input;
             self
@@ -1083,7 +1216,7 @@ impl ActivityListItem {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HistoryEvent {
     /// <p>The date and time the event occurred.</p>
-    pub timestamp: std::option::Option<smithy_types::Instant>,
+    pub timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The type of the event.</p>
     pub r#type: std::option::Option<crate::model::HistoryEventType>,
     /// <p>The id of the event. Events are numbered sequentially, starting at one.</p>
@@ -1323,7 +1456,7 @@ pub mod history_event {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) timestamp: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) r#type: std::option::Option<crate::model::HistoryEventType>,
         pub(crate) id: std::option::Option<i64>,
         pub(crate) previous_event_id: std::option::Option<i64>,
@@ -1394,11 +1527,15 @@ pub mod history_event {
     }
     impl Builder {
         /// <p>The date and time the event occurred.</p>
-        pub fn timestamp(mut self, input: smithy_types::Instant) -> Self {
+        pub fn timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
             self.timestamp = Some(input);
             self
         }
-        pub fn set_timestamp(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date and time the event occurred.</p>
+        pub fn set_timestamp(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.timestamp = input;
             self
         }
@@ -1407,6 +1544,7 @@ pub mod history_event {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of the event.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::HistoryEventType>,
@@ -1419,6 +1557,7 @@ pub mod history_event {
             self.id = Some(input);
             self
         }
+        /// <p>The id of the event. Events are numbered sequentially, starting at one.</p>
         pub fn set_id(mut self, input: std::option::Option<i64>) -> Self {
             self.id = input;
             self
@@ -1428,6 +1567,7 @@ pub mod history_event {
             self.previous_event_id = Some(input);
             self
         }
+        /// <p>The id of the previous event.</p>
         pub fn set_previous_event_id(mut self, input: std::option::Option<i64>) -> Self {
             self.previous_event_id = input;
             self
@@ -1440,6 +1580,7 @@ pub mod history_event {
             self.activity_failed_event_details = Some(input);
             self
         }
+        /// <p>Contains details about an activity that failed during an execution.</p>
         pub fn set_activity_failed_event_details(
             mut self,
             input: std::option::Option<crate::model::ActivityFailedEventDetails>,
@@ -1455,6 +1596,7 @@ pub mod history_event {
             self.activity_schedule_failed_event_details = Some(input);
             self
         }
+        /// <p>Contains details about an activity schedule event that failed during an execution.</p>
         pub fn set_activity_schedule_failed_event_details(
             mut self,
             input: std::option::Option<crate::model::ActivityScheduleFailedEventDetails>,
@@ -1470,6 +1612,7 @@ pub mod history_event {
             self.activity_scheduled_event_details = Some(input);
             self
         }
+        /// <p>Contains details about an activity scheduled during an execution.</p>
         pub fn set_activity_scheduled_event_details(
             mut self,
             input: std::option::Option<crate::model::ActivityScheduledEventDetails>,
@@ -1485,6 +1628,7 @@ pub mod history_event {
             self.activity_started_event_details = Some(input);
             self
         }
+        /// <p>Contains details about the start of an activity during an execution.</p>
         pub fn set_activity_started_event_details(
             mut self,
             input: std::option::Option<crate::model::ActivityStartedEventDetails>,
@@ -1501,6 +1645,8 @@ pub mod history_event {
             self.activity_succeeded_event_details = Some(input);
             self
         }
+        /// <p>Contains details about an activity that successfully terminated during an
+        /// execution.</p>
         pub fn set_activity_succeeded_event_details(
             mut self,
             input: std::option::Option<crate::model::ActivitySucceededEventDetails>,
@@ -1516,6 +1662,7 @@ pub mod history_event {
             self.activity_timed_out_event_details = Some(input);
             self
         }
+        /// <p>Contains details about an activity timeout that occurred during an execution.</p>
         pub fn set_activity_timed_out_event_details(
             mut self,
             input: std::option::Option<crate::model::ActivityTimedOutEventDetails>,
@@ -1531,6 +1678,7 @@ pub mod history_event {
             self.task_failed_event_details = Some(input);
             self
         }
+        /// <p>Contains details about the failure of a task.</p>
         pub fn set_task_failed_event_details(
             mut self,
             input: std::option::Option<crate::model::TaskFailedEventDetails>,
@@ -1546,6 +1694,7 @@ pub mod history_event {
             self.task_scheduled_event_details = Some(input);
             self
         }
+        /// <p>Contains details about a task that was scheduled.</p>
         pub fn set_task_scheduled_event_details(
             mut self,
             input: std::option::Option<crate::model::TaskScheduledEventDetails>,
@@ -1561,6 +1710,7 @@ pub mod history_event {
             self.task_start_failed_event_details = Some(input);
             self
         }
+        /// <p>Contains details about a task that failed to start.</p>
         pub fn set_task_start_failed_event_details(
             mut self,
             input: std::option::Option<crate::model::TaskStartFailedEventDetails>,
@@ -1576,6 +1726,7 @@ pub mod history_event {
             self.task_started_event_details = Some(input);
             self
         }
+        /// <p>Contains details about a task that was started.</p>
         pub fn set_task_started_event_details(
             mut self,
             input: std::option::Option<crate::model::TaskStartedEventDetails>,
@@ -1591,6 +1742,7 @@ pub mod history_event {
             self.task_submit_failed_event_details = Some(input);
             self
         }
+        /// <p>Contains details about a task that where the submit failed.</p>
         pub fn set_task_submit_failed_event_details(
             mut self,
             input: std::option::Option<crate::model::TaskSubmitFailedEventDetails>,
@@ -1606,6 +1758,7 @@ pub mod history_event {
             self.task_submitted_event_details = Some(input);
             self
         }
+        /// <p>Contains details about a submitted task.</p>
         pub fn set_task_submitted_event_details(
             mut self,
             input: std::option::Option<crate::model::TaskSubmittedEventDetails>,
@@ -1621,6 +1774,7 @@ pub mod history_event {
             self.task_succeeded_event_details = Some(input);
             self
         }
+        /// <p>Contains details about a task that succeeded.</p>
         pub fn set_task_succeeded_event_details(
             mut self,
             input: std::option::Option<crate::model::TaskSucceededEventDetails>,
@@ -1636,6 +1790,7 @@ pub mod history_event {
             self.task_timed_out_event_details = Some(input);
             self
         }
+        /// <p>Contains details about a task that timed out.</p>
         pub fn set_task_timed_out_event_details(
             mut self,
             input: std::option::Option<crate::model::TaskTimedOutEventDetails>,
@@ -1651,6 +1806,7 @@ pub mod history_event {
             self.execution_failed_event_details = Some(input);
             self
         }
+        /// <p>Contains details about an execution failure event.</p>
         pub fn set_execution_failed_event_details(
             mut self,
             input: std::option::Option<crate::model::ExecutionFailedEventDetails>,
@@ -1666,6 +1822,7 @@ pub mod history_event {
             self.execution_started_event_details = Some(input);
             self
         }
+        /// <p>Contains details about the start of the execution.</p>
         pub fn set_execution_started_event_details(
             mut self,
             input: std::option::Option<crate::model::ExecutionStartedEventDetails>,
@@ -1681,6 +1838,7 @@ pub mod history_event {
             self.execution_succeeded_event_details = Some(input);
             self
         }
+        /// <p>Contains details about the successful termination of the execution.</p>
         pub fn set_execution_succeeded_event_details(
             mut self,
             input: std::option::Option<crate::model::ExecutionSucceededEventDetails>,
@@ -1696,6 +1854,7 @@ pub mod history_event {
             self.execution_aborted_event_details = Some(input);
             self
         }
+        /// <p>Contains details about an abort of an execution.</p>
         pub fn set_execution_aborted_event_details(
             mut self,
             input: std::option::Option<crate::model::ExecutionAbortedEventDetails>,
@@ -1711,6 +1870,7 @@ pub mod history_event {
             self.execution_timed_out_event_details = Some(input);
             self
         }
+        /// <p>Contains details about the execution timeout that occurred during the execution.</p>
         pub fn set_execution_timed_out_event_details(
             mut self,
             input: std::option::Option<crate::model::ExecutionTimedOutEventDetails>,
@@ -1726,6 +1886,7 @@ pub mod history_event {
             self.map_state_started_event_details = Some(input);
             self
         }
+        /// <p>Contains details about Map state that was started.</p>
         pub fn set_map_state_started_event_details(
             mut self,
             input: std::option::Option<crate::model::MapStateStartedEventDetails>,
@@ -1741,6 +1902,7 @@ pub mod history_event {
             self.map_iteration_started_event_details = Some(input);
             self
         }
+        /// <p>Contains details about an iteration of a Map state that was started.</p>
         pub fn set_map_iteration_started_event_details(
             mut self,
             input: std::option::Option<crate::model::MapIterationEventDetails>,
@@ -1756,6 +1918,7 @@ pub mod history_event {
             self.map_iteration_succeeded_event_details = Some(input);
             self
         }
+        /// <p>Contains details about an iteration of a Map state that succeeded.</p>
         pub fn set_map_iteration_succeeded_event_details(
             mut self,
             input: std::option::Option<crate::model::MapIterationEventDetails>,
@@ -1771,6 +1934,7 @@ pub mod history_event {
             self.map_iteration_failed_event_details = Some(input);
             self
         }
+        /// <p>Contains details about an iteration of a Map state that failed.</p>
         pub fn set_map_iteration_failed_event_details(
             mut self,
             input: std::option::Option<crate::model::MapIterationEventDetails>,
@@ -1786,6 +1950,7 @@ pub mod history_event {
             self.map_iteration_aborted_event_details = Some(input);
             self
         }
+        /// <p>Contains details about an iteration of a Map state that was aborted.</p>
         pub fn set_map_iteration_aborted_event_details(
             mut self,
             input: std::option::Option<crate::model::MapIterationEventDetails>,
@@ -1801,6 +1966,7 @@ pub mod history_event {
             self.lambda_function_failed_event_details = Some(input);
             self
         }
+        /// <p>Contains details about a lambda function that failed during an execution.</p>
         pub fn set_lambda_function_failed_event_details(
             mut self,
             input: std::option::Option<crate::model::LambdaFunctionFailedEventDetails>,
@@ -1817,6 +1983,8 @@ pub mod history_event {
             self.lambda_function_schedule_failed_event_details = Some(input);
             self
         }
+        /// <p>Contains details about a failed lambda function schedule event that occurred during an
+        /// execution.</p>
         pub fn set_lambda_function_schedule_failed_event_details(
             mut self,
             input: std::option::Option<crate::model::LambdaFunctionScheduleFailedEventDetails>,
@@ -1832,6 +2000,7 @@ pub mod history_event {
             self.lambda_function_scheduled_event_details = Some(input);
             self
         }
+        /// <p>Contains details about a lambda function scheduled during an execution.</p>
         pub fn set_lambda_function_scheduled_event_details(
             mut self,
             input: std::option::Option<crate::model::LambdaFunctionScheduledEventDetails>,
@@ -1847,6 +2016,7 @@ pub mod history_event {
             self.lambda_function_start_failed_event_details = Some(input);
             self
         }
+        /// <p>Contains details about a lambda function that failed to start during an execution.</p>
         pub fn set_lambda_function_start_failed_event_details(
             mut self,
             input: std::option::Option<crate::model::LambdaFunctionStartFailedEventDetails>,
@@ -1863,6 +2033,8 @@ pub mod history_event {
             self.lambda_function_succeeded_event_details = Some(input);
             self
         }
+        /// <p>Contains details about a lambda function that terminated successfully during an
+        /// execution.</p>
         pub fn set_lambda_function_succeeded_event_details(
             mut self,
             input: std::option::Option<crate::model::LambdaFunctionSucceededEventDetails>,
@@ -1878,6 +2050,7 @@ pub mod history_event {
             self.lambda_function_timed_out_event_details = Some(input);
             self
         }
+        /// <p>Contains details about a lambda function timeout that occurred during an execution.</p>
         pub fn set_lambda_function_timed_out_event_details(
             mut self,
             input: std::option::Option<crate::model::LambdaFunctionTimedOutEventDetails>,
@@ -1893,6 +2066,7 @@ pub mod history_event {
             self.state_entered_event_details = Some(input);
             self
         }
+        /// <p>Contains details about a state entered during an execution.</p>
         pub fn set_state_entered_event_details(
             mut self,
             input: std::option::Option<crate::model::StateEnteredEventDetails>,
@@ -1908,6 +2082,7 @@ pub mod history_event {
             self.state_exited_event_details = Some(input);
             self
         }
+        /// <p>Contains details about an exit from a state during an execution.</p>
         pub fn set_state_exited_event_details(
             mut self,
             input: std::option::Option<crate::model::StateExitedEventDetails>,
@@ -2051,6 +2226,29 @@ pub mod state_exited_event_details {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the state.</p>
+        /// <p>A name must <i>not</i> contain:</p>
+        /// <ul>
+        /// <li>
+        /// <p>white space</p>
+        /// </li>
+        /// <li>
+        /// <p>brackets <code>< > { } [ ]</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>wildcard characters <code>? *</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>special characters <code>" # % \ ^ | ~ ` $ & , ; : /</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
+        /// </li>
+        /// </ul>
+        /// <p>To enable logging with CloudWatch Logs, the name should only contain  0-9, A-Z, a-z, - and _.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2060,6 +2258,7 @@ pub mod state_exited_event_details {
             self.output = Some(input.into());
             self
         }
+        /// <p>The JSON output data of the state. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
         pub fn set_output(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.output = input;
             self
@@ -2072,6 +2271,7 @@ pub mod state_exited_event_details {
             self.output_details = Some(input);
             self
         }
+        /// <p>Contains details about the output of an execution history event.</p>
         pub fn set_output_details(
             mut self,
             input: std::option::Option<crate::model::HistoryEventExecutionDataDetails>,
@@ -2126,6 +2326,8 @@ pub mod history_event_execution_data_details {
             self.truncated = Some(input);
             self
         }
+        /// <p>Indicates whether input or output was truncated in the response. Always
+        /// <code>false</code> for API calls.</p>
         pub fn set_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.truncated = input;
             self
@@ -2182,6 +2384,7 @@ pub mod state_entered_event_details {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the state.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2191,6 +2394,7 @@ pub mod state_entered_event_details {
             self.input = Some(input.into());
             self
         }
+        /// <p>The string that contains the JSON input data for the state. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
         pub fn set_input(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.input = input;
             self
@@ -2203,6 +2407,7 @@ pub mod state_entered_event_details {
             self.input_details = Some(input);
             self
         }
+        /// <p>Contains details about the input for an execution history event.</p>
         pub fn set_input_details(
             mut self,
             input: std::option::Option<crate::model::HistoryEventExecutionDataDetails>,
@@ -2259,6 +2464,7 @@ pub mod lambda_function_timed_out_event_details {
             self.error = Some(input.into());
             self
         }
+        /// <p>The error code of the failure.</p>
         pub fn set_error(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error = input;
             self
@@ -2268,6 +2474,7 @@ pub mod lambda_function_timed_out_event_details {
             self.cause = Some(input.into());
             self
         }
+        /// <p>A more detailed explanation of the cause of the timeout.</p>
         pub fn set_cause(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cause = input;
             self
@@ -2322,6 +2529,7 @@ pub mod lambda_function_succeeded_event_details {
             self.output = Some(input.into());
             self
         }
+        /// <p>The JSON data output by the lambda function. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
         pub fn set_output(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.output = input;
             self
@@ -2334,6 +2542,7 @@ pub mod lambda_function_succeeded_event_details {
             self.output_details = Some(input);
             self
         }
+        /// <p>Contains details about the output of an execution history event.</p>
         pub fn set_output_details(
             mut self,
             input: std::option::Option<crate::model::HistoryEventExecutionDataDetails>,
@@ -2389,6 +2598,7 @@ pub mod lambda_function_start_failed_event_details {
             self.error = Some(input.into());
             self
         }
+        /// <p>The error code of the failure.</p>
         pub fn set_error(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error = input;
             self
@@ -2398,6 +2608,7 @@ pub mod lambda_function_start_failed_event_details {
             self.cause = Some(input.into());
             self
         }
+        /// <p>A more detailed explanation of the cause of the failure.</p>
         pub fn set_cause(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cause = input;
             self
@@ -2459,6 +2670,7 @@ pub mod lambda_function_scheduled_event_details {
             self.resource = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the scheduled lambda function.</p>
         pub fn set_resource(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource = input;
             self
@@ -2468,6 +2680,7 @@ pub mod lambda_function_scheduled_event_details {
             self.input = Some(input.into());
             self
         }
+        /// <p>The JSON data input to the lambda function. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
         pub fn set_input(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.input = input;
             self
@@ -2480,6 +2693,7 @@ pub mod lambda_function_scheduled_event_details {
             self.input_details = Some(input);
             self
         }
+        /// <p>Contains details about input for an execution history event.</p>
         pub fn set_input_details(
             mut self,
             input: std::option::Option<crate::model::HistoryEventExecutionDataDetails>,
@@ -2492,6 +2706,7 @@ pub mod lambda_function_scheduled_event_details {
             self.timeout_in_seconds = Some(input);
             self
         }
+        /// <p>The maximum allowed duration of the lambda function.</p>
         pub fn set_timeout_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
             self.timeout_in_seconds = input;
             self
@@ -2547,6 +2762,7 @@ pub mod lambda_function_schedule_failed_event_details {
             self.error = Some(input.into());
             self
         }
+        /// <p>The error code of the failure.</p>
         pub fn set_error(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error = input;
             self
@@ -2556,6 +2772,7 @@ pub mod lambda_function_schedule_failed_event_details {
             self.cause = Some(input.into());
             self
         }
+        /// <p>A more detailed explanation of the cause of the failure.</p>
         pub fn set_cause(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cause = input;
             self
@@ -2608,6 +2825,7 @@ pub mod lambda_function_failed_event_details {
             self.error = Some(input.into());
             self
         }
+        /// <p>The error code of the failure.</p>
         pub fn set_error(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error = input;
             self
@@ -2617,6 +2835,7 @@ pub mod lambda_function_failed_event_details {
             self.cause = Some(input.into());
             self
         }
+        /// <p>A more detailed explanation of the cause of the failure.</p>
         pub fn set_cause(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cause = input;
             self
@@ -2669,6 +2888,7 @@ pub mod map_iteration_event_details {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the iteration’s parent Map state.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2678,6 +2898,7 @@ pub mod map_iteration_event_details {
             self.index = Some(input);
             self
         }
+        /// <p>The index of the array belonging to the Map state iteration.</p>
         pub fn set_index(mut self, input: std::option::Option<i32>) -> Self {
             self.index = input;
             self
@@ -2726,6 +2947,7 @@ pub mod map_state_started_event_details {
             self.length = Some(input);
             self
         }
+        /// <p>The size of the array for Map state iterations.</p>
         pub fn set_length(mut self, input: std::option::Option<i32>) -> Self {
             self.length = input;
             self
@@ -2777,6 +2999,7 @@ pub mod execution_timed_out_event_details {
             self.error = Some(input.into());
             self
         }
+        /// <p>The error code of the failure.</p>
         pub fn set_error(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error = input;
             self
@@ -2786,6 +3009,7 @@ pub mod execution_timed_out_event_details {
             self.cause = Some(input.into());
             self
         }
+        /// <p>A more detailed explanation of the cause of the timeout.</p>
         pub fn set_cause(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cause = input;
             self
@@ -2838,6 +3062,7 @@ pub mod execution_aborted_event_details {
             self.error = Some(input.into());
             self
         }
+        /// <p>The error code of the failure.</p>
         pub fn set_error(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error = input;
             self
@@ -2847,6 +3072,7 @@ pub mod execution_aborted_event_details {
             self.cause = Some(input.into());
             self
         }
+        /// <p>A more detailed explanation of the cause of the failure.</p>
         pub fn set_cause(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cause = input;
             self
@@ -2900,6 +3126,7 @@ pub mod execution_succeeded_event_details {
             self.output = Some(input.into());
             self
         }
+        /// <p>The JSON data output by the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
         pub fn set_output(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.output = input;
             self
@@ -2912,6 +3139,7 @@ pub mod execution_succeeded_event_details {
             self.output_details = Some(input);
             self
         }
+        /// <p>Contains details about the output of an execution history event.</p>
         pub fn set_output_details(
             mut self,
             input: std::option::Option<crate::model::HistoryEventExecutionDataDetails>,
@@ -2972,6 +3200,7 @@ pub mod execution_started_event_details {
             self.input = Some(input.into());
             self
         }
+        /// <p>The JSON data input to the execution. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
         pub fn set_input(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.input = input;
             self
@@ -2984,6 +3213,7 @@ pub mod execution_started_event_details {
             self.input_details = Some(input);
             self
         }
+        /// <p>Contains details about the input for an execution history event.</p>
         pub fn set_input_details(
             mut self,
             input: std::option::Option<crate::model::HistoryEventExecutionDataDetails>,
@@ -2996,6 +3226,7 @@ pub mod execution_started_event_details {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the IAM role used for executing AWS Lambda tasks.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -3049,6 +3280,7 @@ pub mod execution_failed_event_details {
             self.error = Some(input.into());
             self
         }
+        /// <p>The error code of the failure.</p>
         pub fn set_error(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error = input;
             self
@@ -3058,6 +3290,7 @@ pub mod execution_failed_event_details {
             self.cause = Some(input.into());
             self
         }
+        /// <p>A more detailed explanation of the cause of the failure.</p>
         pub fn set_cause(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cause = input;
             self
@@ -3118,6 +3351,7 @@ pub mod task_timed_out_event_details {
             self.resource_type = Some(input.into());
             self
         }
+        /// <p>The action of the resource called by a task state.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3130,6 +3364,7 @@ pub mod task_timed_out_event_details {
             self.resource = Some(input.into());
             self
         }
+        /// <p>The service name of the resource in a task state.</p>
         pub fn set_resource(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource = input;
             self
@@ -3139,6 +3374,7 @@ pub mod task_timed_out_event_details {
             self.error = Some(input.into());
             self
         }
+        /// <p>The error code of the failure.</p>
         pub fn set_error(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error = input;
             self
@@ -3148,6 +3384,7 @@ pub mod task_timed_out_event_details {
             self.cause = Some(input.into());
             self
         }
+        /// <p>A more detailed explanation of the cause of the failure.</p>
         pub fn set_cause(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cause = input;
             self
@@ -3212,6 +3449,7 @@ pub mod task_succeeded_event_details {
             self.resource_type = Some(input.into());
             self
         }
+        /// <p>The action of the resource called by a task state.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3224,6 +3462,7 @@ pub mod task_succeeded_event_details {
             self.resource = Some(input.into());
             self
         }
+        /// <p>The service name of the resource in a task state.</p>
         pub fn set_resource(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource = input;
             self
@@ -3234,6 +3473,8 @@ pub mod task_succeeded_event_details {
             self.output = Some(input.into());
             self
         }
+        /// <p>The full JSON response from a resource when a task has succeeded. This response becomes
+        /// the output of the related task. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
         pub fn set_output(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.output = input;
             self
@@ -3246,6 +3487,7 @@ pub mod task_succeeded_event_details {
             self.output_details = Some(input);
             self
         }
+        /// <p>Contains details about the output of an execution history event.</p>
         pub fn set_output_details(
             mut self,
             input: std::option::Option<crate::model::HistoryEventExecutionDataDetails>,
@@ -3312,6 +3554,7 @@ pub mod task_submitted_event_details {
             self.resource_type = Some(input.into());
             self
         }
+        /// <p>The action of the resource called by a task state.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3324,6 +3567,7 @@ pub mod task_submitted_event_details {
             self.resource = Some(input.into());
             self
         }
+        /// <p>The service name of the resource in a task state.</p>
         pub fn set_resource(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource = input;
             self
@@ -3333,6 +3577,7 @@ pub mod task_submitted_event_details {
             self.output = Some(input.into());
             self
         }
+        /// <p>The response from a resource when a task has started. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
         pub fn set_output(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.output = input;
             self
@@ -3345,6 +3590,7 @@ pub mod task_submitted_event_details {
             self.output_details = Some(input);
             self
         }
+        /// <p>Contains details about the output of an execution history event.</p>
         pub fn set_output_details(
             mut self,
             input: std::option::Option<crate::model::HistoryEventExecutionDataDetails>,
@@ -3410,6 +3656,7 @@ pub mod task_submit_failed_event_details {
             self.resource_type = Some(input.into());
             self
         }
+        /// <p>The action of the resource called by a task state.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3422,6 +3669,7 @@ pub mod task_submit_failed_event_details {
             self.resource = Some(input.into());
             self
         }
+        /// <p>The service name of the resource in a task state.</p>
         pub fn set_resource(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource = input;
             self
@@ -3431,6 +3679,7 @@ pub mod task_submit_failed_event_details {
             self.error = Some(input.into());
             self
         }
+        /// <p>The error code of the failure.</p>
         pub fn set_error(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error = input;
             self
@@ -3440,6 +3689,7 @@ pub mod task_submit_failed_event_details {
             self.cause = Some(input.into());
             self
         }
+        /// <p>A more detailed explanation of the cause of the failure.</p>
         pub fn set_cause(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cause = input;
             self
@@ -3494,6 +3744,7 @@ pub mod task_started_event_details {
             self.resource_type = Some(input.into());
             self
         }
+        /// <p>The action of the resource called by a task state.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3506,6 +3757,7 @@ pub mod task_started_event_details {
             self.resource = Some(input.into());
             self
         }
+        /// <p>The service name of the resource in a task state.</p>
         pub fn set_resource(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource = input;
             self
@@ -3566,6 +3818,7 @@ pub mod task_start_failed_event_details {
             self.resource_type = Some(input.into());
             self
         }
+        /// <p>The action of the resource called by a task state.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3578,6 +3831,7 @@ pub mod task_start_failed_event_details {
             self.resource = Some(input.into());
             self
         }
+        /// <p>The service name of the resource in a task state.</p>
         pub fn set_resource(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource = input;
             self
@@ -3587,6 +3841,7 @@ pub mod task_start_failed_event_details {
             self.error = Some(input.into());
             self
         }
+        /// <p>The error code of the failure.</p>
         pub fn set_error(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error = input;
             self
@@ -3596,6 +3851,7 @@ pub mod task_start_failed_event_details {
             self.cause = Some(input.into());
             self
         }
+        /// <p>A more detailed explanation of the cause of the failure.</p>
         pub fn set_cause(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cause = input;
             self
@@ -3667,6 +3923,7 @@ pub mod task_scheduled_event_details {
             self.resource_type = Some(input.into());
             self
         }
+        /// <p>The action of the resource called by a task state.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3679,6 +3936,7 @@ pub mod task_scheduled_event_details {
             self.resource = Some(input.into());
             self
         }
+        /// <p>The service name of the resource in a task state.</p>
         pub fn set_resource(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource = input;
             self
@@ -3688,6 +3946,7 @@ pub mod task_scheduled_event_details {
             self.region = Some(input.into());
             self
         }
+        /// <p>The region of the scheduled task</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
@@ -3698,6 +3957,8 @@ pub mod task_scheduled_event_details {
             self.parameters = Some(input.into());
             self
         }
+        /// <p>The JSON data passed to the resource referenced in a task state.
+        /// Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
         pub fn set_parameters(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.parameters = input;
             self
@@ -3707,6 +3968,7 @@ pub mod task_scheduled_event_details {
             self.timeout_in_seconds = Some(input);
             self
         }
+        /// <p>The maximum allowed duration of the task.</p>
         pub fn set_timeout_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
             self.timeout_in_seconds = input;
             self
@@ -3716,6 +3978,7 @@ pub mod task_scheduled_event_details {
             self.heartbeat_in_seconds = Some(input);
             self
         }
+        /// <p>The maximum allowed duration between two heartbeats for the task.</p>
         pub fn set_heartbeat_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
             self.heartbeat_in_seconds = input;
             self
@@ -3780,6 +4043,7 @@ pub mod task_failed_event_details {
             self.resource_type = Some(input.into());
             self
         }
+        /// <p>The action of the resource called by a task state.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3792,6 +4056,7 @@ pub mod task_failed_event_details {
             self.resource = Some(input.into());
             self
         }
+        /// <p>The service name of the resource in a task state.</p>
         pub fn set_resource(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource = input;
             self
@@ -3801,6 +4066,7 @@ pub mod task_failed_event_details {
             self.error = Some(input.into());
             self
         }
+        /// <p>The error code of the failure.</p>
         pub fn set_error(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error = input;
             self
@@ -3810,6 +4076,7 @@ pub mod task_failed_event_details {
             self.cause = Some(input.into());
             self
         }
+        /// <p>A more detailed explanation of the cause of the failure.</p>
         pub fn set_cause(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cause = input;
             self
@@ -3864,6 +4131,7 @@ pub mod activity_timed_out_event_details {
             self.error = Some(input.into());
             self
         }
+        /// <p>The error code of the failure.</p>
         pub fn set_error(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error = input;
             self
@@ -3873,6 +4141,7 @@ pub mod activity_timed_out_event_details {
             self.cause = Some(input.into());
             self
         }
+        /// <p>A more detailed explanation of the cause of the timeout.</p>
         pub fn set_cause(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cause = input;
             self
@@ -3927,6 +4196,7 @@ pub mod activity_succeeded_event_details {
             self.output = Some(input.into());
             self
         }
+        /// <p>The JSON data output by the activity task. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
         pub fn set_output(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.output = input;
             self
@@ -3939,6 +4209,7 @@ pub mod activity_succeeded_event_details {
             self.output_details = Some(input);
             self
         }
+        /// <p>Contains details about the output of an execution history event.</p>
         pub fn set_output_details(
             mut self,
             input: std::option::Option<crate::model::HistoryEventExecutionDataDetails>,
@@ -3992,6 +4263,8 @@ pub mod activity_started_event_details {
             self.worker_name = Some(input.into());
             self
         }
+        /// <p>The name of the worker that the task is assigned to. These names are provided by the
+        /// workers when calling <a>GetActivityTask</a>.</p>
         pub fn set_worker_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.worker_name = input;
             self
@@ -4056,6 +4329,7 @@ pub mod activity_scheduled_event_details {
             self.resource = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the scheduled activity.</p>
         pub fn set_resource(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource = input;
             self
@@ -4065,6 +4339,7 @@ pub mod activity_scheduled_event_details {
             self.input = Some(input.into());
             self
         }
+        /// <p>The JSON data input to the activity task. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
         pub fn set_input(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.input = input;
             self
@@ -4077,6 +4352,7 @@ pub mod activity_scheduled_event_details {
             self.input_details = Some(input);
             self
         }
+        /// <p>Contains details about the input for an execution history event.</p>
         pub fn set_input_details(
             mut self,
             input: std::option::Option<crate::model::HistoryEventExecutionDataDetails>,
@@ -4089,6 +4365,7 @@ pub mod activity_scheduled_event_details {
             self.timeout_in_seconds = Some(input);
             self
         }
+        /// <p>The maximum allowed duration of the activity task.</p>
         pub fn set_timeout_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
             self.timeout_in_seconds = input;
             self
@@ -4098,6 +4375,7 @@ pub mod activity_scheduled_event_details {
             self.heartbeat_in_seconds = Some(input);
             self
         }
+        /// <p>The maximum allowed duration between two heartbeats for the activity task.</p>
         pub fn set_heartbeat_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
             self.heartbeat_in_seconds = input;
             self
@@ -4154,6 +4432,7 @@ pub mod activity_schedule_failed_event_details {
             self.error = Some(input.into());
             self
         }
+        /// <p>The error code of the failure.</p>
         pub fn set_error(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error = input;
             self
@@ -4163,6 +4442,7 @@ pub mod activity_schedule_failed_event_details {
             self.cause = Some(input.into());
             self
         }
+        /// <p>A more detailed explanation of the cause of the failure.</p>
         pub fn set_cause(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cause = input;
             self
@@ -4215,6 +4495,7 @@ pub mod activity_failed_event_details {
             self.error = Some(input.into());
             self
         }
+        /// <p>The error code of the failure.</p>
         pub fn set_error(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error = input;
             self
@@ -4224,6 +4505,7 @@ pub mod activity_failed_event_details {
             self.cause = Some(input.into());
             self
         }
+        /// <p>A more detailed explanation of the cause of the failure.</p>
         pub fn set_cause(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cause = input;
             self
@@ -4244,6 +4526,7 @@ impl ActivityFailedEventDetails {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4255,60 +4538,115 @@ impl ActivityFailedEventDetails {
     std::hash::Hash,
 )]
 pub enum HistoryEventType {
+    #[allow(missing_docs)] // documentation missing in model
     ActivityFailed,
+    #[allow(missing_docs)] // documentation missing in model
     ActivityScheduleFailed,
+    #[allow(missing_docs)] // documentation missing in model
     ActivityScheduled,
+    #[allow(missing_docs)] // documentation missing in model
     ActivityStarted,
+    #[allow(missing_docs)] // documentation missing in model
     ActivitySucceeded,
+    #[allow(missing_docs)] // documentation missing in model
     ActivityTimedOut,
+    #[allow(missing_docs)] // documentation missing in model
     ChoiceStateEntered,
+    #[allow(missing_docs)] // documentation missing in model
     ChoiceStateExited,
+    #[allow(missing_docs)] // documentation missing in model
     ExecutionAborted,
+    #[allow(missing_docs)] // documentation missing in model
     ExecutionFailed,
+    #[allow(missing_docs)] // documentation missing in model
     ExecutionStarted,
+    #[allow(missing_docs)] // documentation missing in model
     ExecutionSucceeded,
+    #[allow(missing_docs)] // documentation missing in model
     ExecutionTimedOut,
+    #[allow(missing_docs)] // documentation missing in model
     FailStateEntered,
+    #[allow(missing_docs)] // documentation missing in model
     LambdaFunctionFailed,
+    #[allow(missing_docs)] // documentation missing in model
     LambdaFunctionScheduleFailed,
+    #[allow(missing_docs)] // documentation missing in model
     LambdaFunctionScheduled,
+    #[allow(missing_docs)] // documentation missing in model
     LambdaFunctionStartFailed,
+    #[allow(missing_docs)] // documentation missing in model
     LambdaFunctionStarted,
+    #[allow(missing_docs)] // documentation missing in model
     LambdaFunctionSucceeded,
+    #[allow(missing_docs)] // documentation missing in model
     LambdaFunctionTimedOut,
+    #[allow(missing_docs)] // documentation missing in model
     MapIterationAborted,
+    #[allow(missing_docs)] // documentation missing in model
     MapIterationFailed,
+    #[allow(missing_docs)] // documentation missing in model
     MapIterationStarted,
+    #[allow(missing_docs)] // documentation missing in model
     MapIterationSucceeded,
+    #[allow(missing_docs)] // documentation missing in model
     MapStateAborted,
+    #[allow(missing_docs)] // documentation missing in model
     MapStateEntered,
+    #[allow(missing_docs)] // documentation missing in model
     MapStateExited,
+    #[allow(missing_docs)] // documentation missing in model
     MapStateFailed,
+    #[allow(missing_docs)] // documentation missing in model
     MapStateStarted,
+    #[allow(missing_docs)] // documentation missing in model
     MapStateSucceeded,
+    #[allow(missing_docs)] // documentation missing in model
     ParallelStateAborted,
+    #[allow(missing_docs)] // documentation missing in model
     ParallelStateEntered,
+    #[allow(missing_docs)] // documentation missing in model
     ParallelStateExited,
+    #[allow(missing_docs)] // documentation missing in model
     ParallelStateFailed,
+    #[allow(missing_docs)] // documentation missing in model
     ParallelStateStarted,
+    #[allow(missing_docs)] // documentation missing in model
     ParallelStateSucceeded,
+    #[allow(missing_docs)] // documentation missing in model
     PassStateEntered,
+    #[allow(missing_docs)] // documentation missing in model
     PassStateExited,
+    #[allow(missing_docs)] // documentation missing in model
     SucceedStateEntered,
+    #[allow(missing_docs)] // documentation missing in model
     SucceedStateExited,
+    #[allow(missing_docs)] // documentation missing in model
     TaskFailed,
+    #[allow(missing_docs)] // documentation missing in model
     TaskScheduled,
+    #[allow(missing_docs)] // documentation missing in model
     TaskStartFailed,
+    #[allow(missing_docs)] // documentation missing in model
     TaskStarted,
+    #[allow(missing_docs)] // documentation missing in model
     TaskStateAborted,
+    #[allow(missing_docs)] // documentation missing in model
     TaskStateEntered,
+    #[allow(missing_docs)] // documentation missing in model
     TaskStateExited,
+    #[allow(missing_docs)] // documentation missing in model
     TaskSubmitFailed,
+    #[allow(missing_docs)] // documentation missing in model
     TaskSubmitted,
+    #[allow(missing_docs)] // documentation missing in model
     TaskSucceeded,
+    #[allow(missing_docs)] // documentation missing in model
     TaskTimedOut,
+    #[allow(missing_docs)] // documentation missing in model
     WaitStateAborted,
+    #[allow(missing_docs)] // documentation missing in model
     WaitStateEntered,
+    #[allow(missing_docs)] // documentation missing in model
     WaitStateExited,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4383,6 +4721,7 @@ impl std::str::FromStr for HistoryEventType {
     }
 }
 impl HistoryEventType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             HistoryEventType::ActivityFailed => "ActivityFailed",
@@ -4443,6 +4782,7 @@ impl HistoryEventType {
             HistoryEventType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ActivityFailed",
@@ -4509,6 +4849,7 @@ impl AsRef<str> for HistoryEventType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4520,7 +4861,9 @@ impl AsRef<str> for HistoryEventType {
     std::hash::Hash,
 )]
 pub enum StateMachineStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4542,6 +4885,7 @@ impl std::str::FromStr for StateMachineStatus {
     }
 }
 impl StateMachineStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StateMachineStatus::Active => "ACTIVE",
@@ -4549,6 +4893,7 @@ impl StateMachineStatus {
             StateMachineStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ACTIVE", "DELETING"]
     }

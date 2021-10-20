@@ -17,6 +17,7 @@ pub mod add_permission_input {
             self.topic_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the topic whose access control policy you wish to modify.</p>
         pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.topic_arn = input;
             self
@@ -26,16 +27,27 @@ pub mod add_permission_input {
             self.label = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the new policy statement.</p>
         pub fn set_label(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.label = input;
             self
         }
+        /// Appends an item to `aws_account_id`.
+        ///
+        /// To override the contents of this collection use [`set_aws_account_id`](Self::set_aws_account_id).
+        ///
+        /// <p>The account IDs of the users (principals) who will be given access to the
+        /// specified actions. The users must have account, but do not need to be signed up for
+        /// this service.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.aws_account_id.unwrap_or_default();
             v.push(input.into());
             self.aws_account_id = Some(v);
             self
         }
+        /// <p>The account IDs of the users (principals) who will be given access to the
+        /// specified actions. The users must have account, but do not need to be signed up for
+        /// this service.</p>
         pub fn set_aws_account_id(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -43,12 +55,20 @@ pub mod add_permission_input {
             self.aws_account_id = input;
             self
         }
+        /// Appends an item to `action_name`.
+        ///
+        /// To override the contents of this collection use [`set_action_name`](Self::set_action_name).
+        ///
+        /// <p>The action you want to allow for the specified principal(s).</p>
+        /// <p>Valid values: Any Amazon SNS action name, for example <code>Publish</code>.</p>
         pub fn action_name(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.action_name.unwrap_or_default();
             v.push(input.into());
             self.action_name = Some(v);
             self
         }
+        /// <p>The action you want to allow for the specified principal(s).</p>
+        /// <p>Valid values: Any Amazon SNS action name, for example <code>Publish</code>.</p>
         pub fn set_action_name(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -59,8 +79,10 @@ pub mod add_permission_input {
         /// Consumes the builder and constructs a [`AddPermissionInput`](crate::input::AddPermissionInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::AddPermissionInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::AddPermissionInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::AddPermissionInput {
                 topic_arn: self.topic_arn,
                 label: self.label,
@@ -81,16 +103,16 @@ impl AddPermissionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AddPermission,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AddPermissionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -98,7 +120,7 @@ impl AddPermissionInput {
         fn update_http_builder(
             input: &crate::input::AddPermissionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -107,24 +129,26 @@ impl AddPermissionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AddPermissionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_add_permission(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -147,25 +171,27 @@ impl AddPermissionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::AddPermission::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "AddPermission",
-                    "sns",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::AddPermission::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "AddPermission",
+            "sns",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -193,6 +219,7 @@ pub mod check_if_phone_number_is_opted_out_input {
             self.phone_number = Some(input.into());
             self
         }
+        /// <p>The phone number for which you want to check the opt out status.</p>
         pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.phone_number = input;
             self
@@ -202,7 +229,7 @@ pub mod check_if_phone_number_is_opted_out_input {
             self,
         ) -> std::result::Result<
             crate::input::CheckIfPhoneNumberIsOptedOutInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CheckIfPhoneNumberIsOptedOutInput {
                 phone_number: self.phone_number,
@@ -222,16 +249,16 @@ impl CheckIfPhoneNumberIsOptedOutInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CheckIfPhoneNumberIsOptedOut,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CheckIfPhoneNumberIsOptedOutInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -239,7 +266,7 @@ impl CheckIfPhoneNumberIsOptedOutInput {
         fn update_http_builder(
             input: &crate::input::CheckIfPhoneNumberIsOptedOutInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -248,25 +275,25 @@ impl CheckIfPhoneNumberIsOptedOutInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CheckIfPhoneNumberIsOptedOutInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_check_if_phone_number_is_opted_out(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_check_if_phone_number_is_opted_out(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -289,15 +316,15 @@ impl CheckIfPhoneNumberIsOptedOutInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CheckIfPhoneNumberIsOptedOut::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CheckIfPhoneNumberIsOptedOut",
             "sns",
         ));
@@ -306,10 +333,10 @@ impl CheckIfPhoneNumberIsOptedOutInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -339,6 +366,7 @@ pub mod confirm_subscription_input {
             self.topic_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the topic for which you wish to confirm a subscription.</p>
         pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.topic_arn = input;
             self
@@ -348,6 +376,7 @@ pub mod confirm_subscription_input {
             self.token = Some(input.into());
             self
         }
+        /// <p>Short-lived token sent to an endpoint during the <code>Subscribe</code> action.</p>
         pub fn set_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.token = input;
             self
@@ -363,6 +392,10 @@ pub mod confirm_subscription_input {
             self.authenticate_on_unsubscribe = Some(input.into());
             self
         }
+        /// <p>Disallows unauthenticated unsubscribes of the subscription. If the value of this
+        /// parameter is <code>true</code> and the request has an Amazon Web Services signature, then only the topic
+        /// owner and the subscription owner can unsubscribe the endpoint. The unsubscribe action
+        /// requires Amazon Web Services authentication. </p>
         pub fn set_authenticate_on_unsubscribe(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -375,7 +408,7 @@ pub mod confirm_subscription_input {
             self,
         ) -> std::result::Result<
             crate::input::ConfirmSubscriptionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ConfirmSubscriptionInput {
                 topic_arn: self.topic_arn,
@@ -396,16 +429,16 @@ impl ConfirmSubscriptionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ConfirmSubscription,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ConfirmSubscriptionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -413,7 +446,7 @@ impl ConfirmSubscriptionInput {
         fn update_http_builder(
             input: &crate::input::ConfirmSubscriptionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -422,25 +455,27 @@ impl ConfirmSubscriptionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ConfirmSubscriptionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_confirm_subscription(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -463,15 +498,15 @@ impl ConfirmSubscriptionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ConfirmSubscription::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ConfirmSubscription",
             "sns",
         ));
@@ -480,10 +515,10 @@ impl ConfirmSubscriptionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -517,6 +552,9 @@ pub mod create_platform_application_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>Application names must be made up of only uppercase and lowercase ASCII letters,
+        /// numbers, underscores, hyphens, and periods, and must be between 1 and 256 characters
+        /// long.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -527,10 +565,17 @@ pub mod create_platform_application_input {
             self.platform = Some(input.into());
             self
         }
+        /// <p>The following platforms are supported: ADM (Amazon Device Messaging), APNS (Apple Push
+        /// Notification Service), APNS_SANDBOX, and GCM (Firebase Cloud Messaging).</p>
         pub fn set_platform(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.platform = input;
             self
         }
+        /// Adds a key-value pair to `attributes`.
+        ///
+        /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
+        ///
+        /// <p>For a list of attributes, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html">SetPlatformApplicationAttributes</a>.</p>
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -541,6 +586,7 @@ pub mod create_platform_application_input {
             self.attributes = Some(hash_map);
             self
         }
+        /// <p>For a list of attributes, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html">SetPlatformApplicationAttributes</a>.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -555,7 +601,7 @@ pub mod create_platform_application_input {
             self,
         ) -> std::result::Result<
             crate::input::CreatePlatformApplicationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreatePlatformApplicationInput {
                 name: self.name,
@@ -577,16 +623,16 @@ impl CreatePlatformApplicationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreatePlatformApplication,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreatePlatformApplicationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -594,7 +640,7 @@ impl CreatePlatformApplicationInput {
         fn update_http_builder(
             input: &crate::input::CreatePlatformApplicationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -603,27 +649,29 @@ impl CreatePlatformApplicationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreatePlatformApplicationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_platform_application(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -646,15 +694,15 @@ impl CreatePlatformApplicationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreatePlatformApplication::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreatePlatformApplication",
             "sns",
         ));
@@ -663,10 +711,10 @@ impl CreatePlatformApplicationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -700,6 +748,8 @@ pub mod create_platform_endpoint_input {
             self.platform_application_arn = Some(input.into());
             self
         }
+        /// <p>PlatformApplicationArn returned from CreatePlatformApplication is used to create a an
+        /// endpoint.</p>
         pub fn set_platform_application_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -716,6 +766,11 @@ pub mod create_platform_endpoint_input {
             self.token = Some(input.into());
             self
         }
+        /// <p>Unique identifier created by the notification service for an app on a device. The
+        /// specific name for Token will vary, depending on which notification service is being
+        /// used. For example, when using APNS as the notification service, you need the device
+        /// token. Alternatively, when using GCM (Firebase Cloud Messaging) or ADM, the device token
+        /// equivalent is called the registration ID.</p>
         pub fn set_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.token = input;
             self
@@ -726,6 +781,8 @@ pub mod create_platform_endpoint_input {
             self.custom_user_data = Some(input.into());
             self
         }
+        /// <p>Arbitrary user data to associate with the endpoint. Amazon SNS does not use this data. The
+        /// data must be in UTF-8 format and less than 2KB.</p>
         pub fn set_custom_user_data(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -733,6 +790,11 @@ pub mod create_platform_endpoint_input {
             self.custom_user_data = input;
             self
         }
+        /// Adds a key-value pair to `attributes`.
+        ///
+        /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
+        ///
+        /// <p>For a list of attributes, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">SetEndpointAttributes</a>.</p>
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -743,6 +805,7 @@ pub mod create_platform_endpoint_input {
             self.attributes = Some(hash_map);
             self
         }
+        /// <p>For a list of attributes, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">SetEndpointAttributes</a>.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -757,7 +820,7 @@ pub mod create_platform_endpoint_input {
             self,
         ) -> std::result::Result<
             crate::input::CreatePlatformEndpointInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreatePlatformEndpointInput {
                 platform_application_arn: self.platform_application_arn,
@@ -779,16 +842,16 @@ impl CreatePlatformEndpointInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreatePlatformEndpoint,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreatePlatformEndpointInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -796,7 +859,7 @@ impl CreatePlatformEndpointInput {
         fn update_http_builder(
             input: &crate::input::CreatePlatformEndpointInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -805,27 +868,29 @@ impl CreatePlatformEndpointInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreatePlatformEndpointInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_platform_endpoint(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -848,15 +913,15 @@ impl CreatePlatformEndpointInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreatePlatformEndpoint::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreatePlatformEndpoint",
             "sns",
         ));
@@ -865,10 +930,10 @@ impl CreatePlatformEndpointInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -898,6 +963,8 @@ pub mod create_sms_sandbox_phone_number_input {
             self.phone_number = Some(input.into());
             self
         }
+        /// <p>The destination phone number to verify. On verification, Amazon SNS adds this phone number
+        /// to the list of verified phone numbers that you can send SMS messages to.</p>
         pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.phone_number = input;
             self
@@ -908,6 +975,8 @@ pub mod create_sms_sandbox_phone_number_input {
             self.language_code = Some(input);
             self
         }
+        /// <p>The language to use for sending the OTP. The default value is
+        /// <code>en-US</code>.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<crate::model::LanguageCodeString>,
@@ -920,7 +989,7 @@ pub mod create_sms_sandbox_phone_number_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateSmsSandboxPhoneNumberInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateSmsSandboxPhoneNumberInput {
                 phone_number: self.phone_number,
@@ -941,16 +1010,16 @@ impl CreateSmsSandboxPhoneNumberInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateSMSSandboxPhoneNumber,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateSmsSandboxPhoneNumberInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -958,7 +1027,7 @@ impl CreateSmsSandboxPhoneNumberInput {
         fn update_http_builder(
             input: &crate::input::CreateSmsSandboxPhoneNumberInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -967,25 +1036,25 @@ impl CreateSmsSandboxPhoneNumberInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateSmsSandboxPhoneNumberInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_create_sms_sandbox_phone_number(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_create_sms_sandbox_phone_number(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1008,15 +1077,15 @@ impl CreateSmsSandboxPhoneNumberInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateSMSSandboxPhoneNumber::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateSMSSandboxPhoneNumber",
             "sns",
         ));
@@ -1025,10 +1094,10 @@ impl CreateSmsSandboxPhoneNumberInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1065,10 +1134,89 @@ pub mod create_topic_input {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the topic you want to create.</p>
+        /// <p>Constraints: Topic names must be made up of only uppercase and lowercase ASCII
+        /// letters, numbers, underscores, and hyphens, and must be between 1 and 256 characters
+        /// long.</p>
+        /// <p>For a FIFO (first-in-first-out) topic, the name must end with the <code>.fifo</code>
+        /// suffix. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
+        /// Adds a key-value pair to `attributes`.
+        ///
+        /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
+        ///
+        /// <p>A map of attributes with their corresponding values.</p>
+        /// <p>The following lists the names, descriptions, and values of the special request
+        /// parameters that the <code>CreateTopic</code> action uses:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
+        /// failed deliveries to HTTP/S endpoints.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DisplayName</code> – The display name to use for a topic with SMS
+        /// subscriptions.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FifoTopic</code> – Set to true to create a FIFO topic.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Policy</code> – The policy that defines who can access your
+        /// topic. By default, only the topic owner can publish or subscribe to the
+        /// topic.</p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>The following attribute applies only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side
+        /// encryption</a>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>KmsMasterKeyId</code> – The ID of an Amazon Web Services managed customer master
+        /// key (CMK) for Amazon SNS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key
+        /// Terms</a>. For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a> in the <i>Key Management Service API
+        /// Reference</i>. </p>
+        /// </li>
+        /// </ul>
+        ///
+        ///
+        /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO topics</a>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>FifoTopic</code> – When this is set to <code>true</code>, a FIFO
+        /// topic is created.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ContentBasedDeduplication</code> – Enables content-based deduplication for
+        /// FIFO topics.</p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>By default, <code>ContentBasedDeduplication</code> is set to <code>false</code>.
+        /// If you create a FIFO topic and this attribute is <code>false</code>, you must
+        /// specify a value for the <code>MessageDeduplicationId</code> parameter for the
+        /// <a href="https://docs.aws.amazon.com/sns/latest/api/API_Publish.html">Publish</a> action. </p>
+        /// </li>
+        /// <li>
+        /// <p>When you set <code>ContentBasedDeduplication</code> to <code>true</code>,
+        /// Amazon SNS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using
+        /// the body of the message (but not the attributes of the message).</p>
+        /// <p>(Optional) To override the generated value, you can specify a value
+        /// for the <code>MessageDeduplicationId</code> parameter for the <code>Publish</code>
+        /// action.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// </ul>
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -1079,6 +1227,75 @@ pub mod create_topic_input {
             self.attributes = Some(hash_map);
             self
         }
+        /// <p>A map of attributes with their corresponding values.</p>
+        /// <p>The following lists the names, descriptions, and values of the special request
+        /// parameters that the <code>CreateTopic</code> action uses:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
+        /// failed deliveries to HTTP/S endpoints.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DisplayName</code> – The display name to use for a topic with SMS
+        /// subscriptions.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FifoTopic</code> – Set to true to create a FIFO topic.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Policy</code> – The policy that defines who can access your
+        /// topic. By default, only the topic owner can publish or subscribe to the
+        /// topic.</p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>The following attribute applies only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side
+        /// encryption</a>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>KmsMasterKeyId</code> – The ID of an Amazon Web Services managed customer master
+        /// key (CMK) for Amazon SNS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key
+        /// Terms</a>. For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a> in the <i>Key Management Service API
+        /// Reference</i>. </p>
+        /// </li>
+        /// </ul>
+        ///
+        ///
+        /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO topics</a>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>FifoTopic</code> – When this is set to <code>true</code>, a FIFO
+        /// topic is created.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ContentBasedDeduplication</code> – Enables content-based deduplication for
+        /// FIFO topics.</p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>By default, <code>ContentBasedDeduplication</code> is set to <code>false</code>.
+        /// If you create a FIFO topic and this attribute is <code>false</code>, you must
+        /// specify a value for the <code>MessageDeduplicationId</code> parameter for the
+        /// <a href="https://docs.aws.amazon.com/sns/latest/api/API_Publish.html">Publish</a> action. </p>
+        /// </li>
+        /// <li>
+        /// <p>When you set <code>ContentBasedDeduplication</code> to <code>true</code>,
+        /// Amazon SNS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using
+        /// the body of the message (but not the attributes of the message).</p>
+        /// <p>(Optional) To override the generated value, you can specify a value
+        /// for the <code>MessageDeduplicationId</code> parameter for the <code>Publish</code>
+        /// action.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// </ul>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -1088,12 +1305,28 @@ pub mod create_topic_input {
             self.attributes = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The list of tags to add to a new topic.</p>
+        /// <note>
+        /// <p>To be able to tag a topic on creation, you must have the
+        /// <code>sns:CreateTopic</code> and <code>sns:TagResource</code>
+        /// permissions.</p>
+        /// </note>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The list of tags to add to a new topic.</p>
+        /// <note>
+        /// <p>To be able to tag a topic on creation, you must have the
+        /// <code>sns:CreateTopic</code> and <code>sns:TagResource</code>
+        /// permissions.</p>
+        /// </note>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1104,8 +1337,10 @@ pub mod create_topic_input {
         /// Consumes the builder and constructs a [`CreateTopicInput`](crate::input::CreateTopicInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::CreateTopicInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::CreateTopicInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::CreateTopicInput {
                 name: self.name,
                 attributes: self.attributes,
@@ -1125,16 +1360,16 @@ impl CreateTopicInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateTopic,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateTopicInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1142,7 +1377,7 @@ impl CreateTopicInput {
         fn update_http_builder(
             input: &crate::input::CreateTopicInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1151,24 +1386,26 @@ impl CreateTopicInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateTopicInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_create_topic(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1191,22 +1428,27 @@ impl CreateTopicInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::CreateTopic::new())
-                .with_metadata(smithy_http::operation::Metadata::new("CreateTopic", "sns"));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::CreateTopic::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "CreateTopic",
+            "sns",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1234,6 +1476,7 @@ pub mod delete_endpoint_input {
             self.endpoint_arn = Some(input.into());
             self
         }
+        /// <p>EndpointArn of endpoint to delete.</p>
         pub fn set_endpoint_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.endpoint_arn = input;
             self
@@ -1243,7 +1486,7 @@ pub mod delete_endpoint_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteEndpointInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteEndpointInput {
                 endpoint_arn: self.endpoint_arn,
@@ -1262,16 +1505,16 @@ impl DeleteEndpointInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteEndpoint,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteEndpointInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1279,7 +1522,7 @@ impl DeleteEndpointInput {
         fn update_http_builder(
             input: &crate::input::DeleteEndpointInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1288,24 +1531,26 @@ impl DeleteEndpointInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteEndpointInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_delete_endpoint(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1328,15 +1573,15 @@ impl DeleteEndpointInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteEndpoint::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteEndpoint",
             "sns",
         ));
@@ -1345,10 +1590,10 @@ impl DeleteEndpointInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1376,6 +1621,7 @@ pub mod delete_platform_application_input {
             self.platform_application_arn = Some(input.into());
             self
         }
+        /// <p>PlatformApplicationArn of platform application object to delete.</p>
         pub fn set_platform_application_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1388,7 +1634,7 @@ pub mod delete_platform_application_input {
             self,
         ) -> std::result::Result<
             crate::input::DeletePlatformApplicationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeletePlatformApplicationInput {
                 platform_application_arn: self.platform_application_arn,
@@ -1408,16 +1654,16 @@ impl DeletePlatformApplicationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeletePlatformApplication,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeletePlatformApplicationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1425,7 +1671,7 @@ impl DeletePlatformApplicationInput {
         fn update_http_builder(
             input: &crate::input::DeletePlatformApplicationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1434,27 +1680,29 @@ impl DeletePlatformApplicationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeletePlatformApplicationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_platform_application(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1477,15 +1725,15 @@ impl DeletePlatformApplicationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeletePlatformApplication::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeletePlatformApplication",
             "sns",
         ));
@@ -1494,10 +1742,10 @@ impl DeletePlatformApplicationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1525,6 +1773,7 @@ pub mod delete_sms_sandbox_phone_number_input {
             self.phone_number = Some(input.into());
             self
         }
+        /// <p>The destination phone number to delete.</p>
         pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.phone_number = input;
             self
@@ -1534,7 +1783,7 @@ pub mod delete_sms_sandbox_phone_number_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteSmsSandboxPhoneNumberInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteSmsSandboxPhoneNumberInput {
                 phone_number: self.phone_number,
@@ -1554,16 +1803,16 @@ impl DeleteSmsSandboxPhoneNumberInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteSMSSandboxPhoneNumber,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteSmsSandboxPhoneNumberInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1571,7 +1820,7 @@ impl DeleteSmsSandboxPhoneNumberInput {
         fn update_http_builder(
             input: &crate::input::DeleteSmsSandboxPhoneNumberInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1580,25 +1829,25 @@ impl DeleteSmsSandboxPhoneNumberInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteSmsSandboxPhoneNumberInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_sms_sandbox_phone_number(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_sms_sandbox_phone_number(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1621,15 +1870,15 @@ impl DeleteSmsSandboxPhoneNumberInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteSMSSandboxPhoneNumber::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteSMSSandboxPhoneNumber",
             "sns",
         ));
@@ -1638,10 +1887,10 @@ impl DeleteSmsSandboxPhoneNumberInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1669,6 +1918,7 @@ pub mod delete_topic_input {
             self.topic_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the topic you want to delete.</p>
         pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.topic_arn = input;
             self
@@ -1676,8 +1926,10 @@ pub mod delete_topic_input {
         /// Consumes the builder and constructs a [`DeleteTopicInput`](crate::input::DeleteTopicInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeleteTopicInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteTopicInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteTopicInput {
                 topic_arn: self.topic_arn,
             })
@@ -1695,16 +1947,16 @@ impl DeleteTopicInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteTopic,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteTopicInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1712,7 +1964,7 @@ impl DeleteTopicInput {
         fn update_http_builder(
             input: &crate::input::DeleteTopicInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1721,24 +1973,26 @@ impl DeleteTopicInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteTopicInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_delete_topic(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1761,22 +2015,27 @@ impl DeleteTopicInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeleteTopic::new())
-                .with_metadata(smithy_http::operation::Metadata::new("DeleteTopic", "sns"));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteTopic::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteTopic",
+            "sns",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1804,6 +2063,7 @@ pub mod get_endpoint_attributes_input {
             self.endpoint_arn = Some(input.into());
             self
         }
+        /// <p>EndpointArn for GetEndpointAttributes input.</p>
         pub fn set_endpoint_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.endpoint_arn = input;
             self
@@ -1813,7 +2073,7 @@ pub mod get_endpoint_attributes_input {
             self,
         ) -> std::result::Result<
             crate::input::GetEndpointAttributesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetEndpointAttributesInput {
                 endpoint_arn: self.endpoint_arn,
@@ -1832,16 +2092,16 @@ impl GetEndpointAttributesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetEndpointAttributes,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetEndpointAttributesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1849,7 +2109,7 @@ impl GetEndpointAttributesInput {
         fn update_http_builder(
             input: &crate::input::GetEndpointAttributesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1858,27 +2118,29 @@ impl GetEndpointAttributesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetEndpointAttributesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_endpoint_attributes(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1901,15 +2163,15 @@ impl GetEndpointAttributesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetEndpointAttributes::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetEndpointAttributes",
             "sns",
         ));
@@ -1918,10 +2180,10 @@ impl GetEndpointAttributesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1949,6 +2211,7 @@ pub mod get_platform_application_attributes_input {
             self.platform_application_arn = Some(input.into());
             self
         }
+        /// <p>PlatformApplicationArn for GetPlatformApplicationAttributesInput.</p>
         pub fn set_platform_application_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1961,7 +2224,7 @@ pub mod get_platform_application_attributes_input {
             self,
         ) -> std::result::Result<
             crate::input::GetPlatformApplicationAttributesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetPlatformApplicationAttributesInput {
                 platform_application_arn: self.platform_application_arn,
@@ -1981,16 +2244,16 @@ impl GetPlatformApplicationAttributesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetPlatformApplicationAttributes,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetPlatformApplicationAttributesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1998,7 +2261,7 @@ impl GetPlatformApplicationAttributesInput {
         fn update_http_builder(
             input: &crate::input::GetPlatformApplicationAttributesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2007,25 +2270,25 @@ impl GetPlatformApplicationAttributesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetPlatformApplicationAttributesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_platform_application_attributes(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_platform_application_attributes(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2048,15 +2311,15 @@ impl GetPlatformApplicationAttributesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetPlatformApplicationAttributes::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetPlatformApplicationAttributes",
             "sns",
         ));
@@ -2065,10 +2328,10 @@ impl GetPlatformApplicationAttributesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2091,12 +2354,24 @@ pub mod get_sms_attributes_input {
         pub(crate) attributes: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `attributes`.
+        ///
+        /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
+        ///
+        /// <p>A list of the individual attribute names, such as <code>MonthlySpendLimit</code>, for
+        /// which you want values.</p>
+        /// <p>For all attribute names, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_SetSMSAttributes.html">SetSMSAttributes</a>.</p>
+        /// <p>If you don't use this parameter, Amazon SNS returns all SMS attributes.</p>
         pub fn attributes(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.attributes.unwrap_or_default();
             v.push(input.into());
             self.attributes = Some(v);
             self
         }
+        /// <p>A list of the individual attribute names, such as <code>MonthlySpendLimit</code>, for
+        /// which you want values.</p>
+        /// <p>For all attribute names, see <a href="https://docs.aws.amazon.com/sns/latest/api/API_SetSMSAttributes.html">SetSMSAttributes</a>.</p>
+        /// <p>If you don't use this parameter, Amazon SNS returns all SMS attributes.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2109,7 +2384,7 @@ pub mod get_sms_attributes_input {
             self,
         ) -> std::result::Result<
             crate::input::GetSmsAttributesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetSmsAttributesInput {
                 attributes: self.attributes,
@@ -2128,16 +2403,16 @@ impl GetSmsAttributesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetSMSAttributes,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetSmsAttributesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2145,7 +2420,7 @@ impl GetSmsAttributesInput {
         fn update_http_builder(
             input: &crate::input::GetSmsAttributesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2154,27 +2429,27 @@ impl GetSmsAttributesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetSmsAttributesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_sms_attributes(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2197,15 +2472,15 @@ impl GetSmsAttributesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetSMSAttributes::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetSMSAttributes",
             "sns",
         ));
@@ -2214,10 +2489,10 @@ impl GetSmsAttributesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2243,7 +2518,7 @@ pub mod get_sms_sandbox_account_status_input {
             self,
         ) -> std::result::Result<
             crate::input::GetSmsSandboxAccountStatusInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetSmsSandboxAccountStatusInput {})
         }
@@ -2261,16 +2536,16 @@ impl GetSmsSandboxAccountStatusInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetSMSSandboxAccountStatus,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetSmsSandboxAccountStatusInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2278,7 +2553,7 @@ impl GetSmsSandboxAccountStatusInput {
         fn update_http_builder(
             input: &crate::input::GetSmsSandboxAccountStatusInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2287,25 +2562,25 @@ impl GetSmsSandboxAccountStatusInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetSmsSandboxAccountStatusInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_sms_sandbox_account_status(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_sms_sandbox_account_status(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2328,15 +2603,15 @@ impl GetSmsSandboxAccountStatusInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetSMSSandboxAccountStatus::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetSMSSandboxAccountStatus",
             "sns",
         ));
@@ -2345,10 +2620,10 @@ impl GetSmsSandboxAccountStatusInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2376,6 +2651,7 @@ pub mod get_subscription_attributes_input {
             self.subscription_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the subscription whose properties you want to get.</p>
         pub fn set_subscription_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2388,7 +2664,7 @@ pub mod get_subscription_attributes_input {
             self,
         ) -> std::result::Result<
             crate::input::GetSubscriptionAttributesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetSubscriptionAttributesInput {
                 subscription_arn: self.subscription_arn,
@@ -2408,16 +2684,16 @@ impl GetSubscriptionAttributesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetSubscriptionAttributes,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetSubscriptionAttributesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2425,7 +2701,7 @@ impl GetSubscriptionAttributesInput {
         fn update_http_builder(
             input: &crate::input::GetSubscriptionAttributesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2434,27 +2710,29 @@ impl GetSubscriptionAttributesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetSubscriptionAttributesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_subscription_attributes(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2477,15 +2755,15 @@ impl GetSubscriptionAttributesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetSubscriptionAttributes::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetSubscriptionAttributes",
             "sns",
         ));
@@ -2494,10 +2772,10 @@ impl GetSubscriptionAttributesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2525,6 +2803,7 @@ pub mod get_topic_attributes_input {
             self.topic_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the topic whose properties you want to get.</p>
         pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.topic_arn = input;
             self
@@ -2534,7 +2813,7 @@ pub mod get_topic_attributes_input {
             self,
         ) -> std::result::Result<
             crate::input::GetTopicAttributesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetTopicAttributesInput {
                 topic_arn: self.topic_arn,
@@ -2553,16 +2832,16 @@ impl GetTopicAttributesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetTopicAttributes,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetTopicAttributesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2570,7 +2849,7 @@ impl GetTopicAttributesInput {
         fn update_http_builder(
             input: &crate::input::GetTopicAttributesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2579,25 +2858,27 @@ impl GetTopicAttributesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetTopicAttributesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_get_topic_attributes(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2620,15 +2901,15 @@ impl GetTopicAttributesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetTopicAttributes::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetTopicAttributes",
             "sns",
         ));
@@ -2637,10 +2918,10 @@ impl GetTopicAttributesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2669,6 +2950,7 @@ pub mod list_endpoints_by_platform_application_input {
             self.platform_application_arn = Some(input.into());
             self
         }
+        /// <p>PlatformApplicationArn for ListEndpointsByPlatformApplicationInput action.</p>
         pub fn set_platform_application_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2682,6 +2964,8 @@ pub mod list_endpoints_by_platform_application_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>NextToken string is used when calling ListEndpointsByPlatformApplication action to
+        /// retrieve additional records that are available after the first page results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2691,7 +2975,7 @@ pub mod list_endpoints_by_platform_application_input {
             self,
         ) -> std::result::Result<
             crate::input::ListEndpointsByPlatformApplicationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListEndpointsByPlatformApplicationInput {
                 platform_application_arn: self.platform_application_arn,
@@ -2712,16 +2996,16 @@ impl ListEndpointsByPlatformApplicationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListEndpointsByPlatformApplication,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListEndpointsByPlatformApplicationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2729,7 +3013,7 @@ impl ListEndpointsByPlatformApplicationInput {
         fn update_http_builder(
             input: &crate::input::ListEndpointsByPlatformApplicationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2738,25 +3022,25 @@ impl ListEndpointsByPlatformApplicationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListEndpointsByPlatformApplicationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_endpoints_by_platform_application(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_endpoints_by_platform_application(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2779,15 +3063,15 @@ impl ListEndpointsByPlatformApplicationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListEndpointsByPlatformApplication::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListEndpointsByPlatformApplication",
             "sns",
         ));
@@ -2796,10 +3080,10 @@ impl ListEndpointsByPlatformApplicationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2828,6 +3112,7 @@ pub mod list_origination_numbers_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>Token that the previous <code>ListOriginationNumbers</code> request returns.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2837,6 +3122,7 @@ pub mod list_origination_numbers_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of origination numbers to return.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -2846,7 +3132,7 @@ pub mod list_origination_numbers_input {
             self,
         ) -> std::result::Result<
             crate::input::ListOriginationNumbersInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListOriginationNumbersInput {
                 next_token: self.next_token,
@@ -2866,16 +3152,16 @@ impl ListOriginationNumbersInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListOriginationNumbers,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListOriginationNumbersInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2883,7 +3169,7 @@ impl ListOriginationNumbersInput {
         fn update_http_builder(
             input: &crate::input::ListOriginationNumbersInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2892,27 +3178,29 @@ impl ListOriginationNumbersInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListOriginationNumbersInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_origination_numbers(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2935,15 +3223,15 @@ impl ListOriginationNumbersInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListOriginationNumbers::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListOriginationNumbers",
             "sns",
         ));
@@ -2952,10 +3240,10 @@ impl ListOriginationNumbersInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2985,6 +3273,9 @@ pub mod list_phone_numbers_opted_out_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>A <code>NextToken</code> string is used when you call the
+        /// <code>ListPhoneNumbersOptedOut</code> action to retrieve additional records that are
+        /// available after the first page of results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -2994,7 +3285,7 @@ pub mod list_phone_numbers_opted_out_input {
             self,
         ) -> std::result::Result<
             crate::input::ListPhoneNumbersOptedOutInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListPhoneNumbersOptedOutInput {
                 next_token: self.next_token,
@@ -3014,16 +3305,16 @@ impl ListPhoneNumbersOptedOutInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListPhoneNumbersOptedOut,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListPhoneNumbersOptedOutInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3031,7 +3322,7 @@ impl ListPhoneNumbersOptedOutInput {
         fn update_http_builder(
             input: &crate::input::ListPhoneNumbersOptedOutInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3040,27 +3331,29 @@ impl ListPhoneNumbersOptedOutInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListPhoneNumbersOptedOutInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_phone_numbers_opted_out(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3083,15 +3376,15 @@ impl ListPhoneNumbersOptedOutInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListPhoneNumbersOptedOut::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListPhoneNumbersOptedOut",
             "sns",
         ));
@@ -3100,10 +3393,10 @@ impl ListPhoneNumbersOptedOutInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3132,6 +3425,8 @@ pub mod list_platform_applications_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>NextToken string is used when calling ListPlatformApplications action to retrieve
+        /// additional records that are available after the first page results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3141,7 +3436,7 @@ pub mod list_platform_applications_input {
             self,
         ) -> std::result::Result<
             crate::input::ListPlatformApplicationsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListPlatformApplicationsInput {
                 next_token: self.next_token,
@@ -3161,16 +3456,16 @@ impl ListPlatformApplicationsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListPlatformApplications,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListPlatformApplicationsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3178,7 +3473,7 @@ impl ListPlatformApplicationsInput {
         fn update_http_builder(
             input: &crate::input::ListPlatformApplicationsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3187,27 +3482,29 @@ impl ListPlatformApplicationsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListPlatformApplicationsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_platform_applications(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3230,15 +3527,15 @@ impl ListPlatformApplicationsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListPlatformApplications::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListPlatformApplications",
             "sns",
         ));
@@ -3247,10 +3544,10 @@ impl ListPlatformApplicationsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3280,6 +3577,8 @@ pub mod list_sms_sandbox_phone_numbers_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>Token that the previous <code>ListSMSSandboxPhoneNumbersInput</code> request
+        /// returns.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3289,6 +3588,7 @@ pub mod list_sms_sandbox_phone_numbers_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of phone numbers to return.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -3298,7 +3598,7 @@ pub mod list_sms_sandbox_phone_numbers_input {
             self,
         ) -> std::result::Result<
             crate::input::ListSmsSandboxPhoneNumbersInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListSmsSandboxPhoneNumbersInput {
                 next_token: self.next_token,
@@ -3319,16 +3619,16 @@ impl ListSmsSandboxPhoneNumbersInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListSMSSandboxPhoneNumbers,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListSmsSandboxPhoneNumbersInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3336,7 +3636,7 @@ impl ListSmsSandboxPhoneNumbersInput {
         fn update_http_builder(
             input: &crate::input::ListSmsSandboxPhoneNumbersInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3345,25 +3645,25 @@ impl ListSmsSandboxPhoneNumbersInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListSmsSandboxPhoneNumbersInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_list_sms_sandbox_phone_numbers(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_list_sms_sandbox_phone_numbers(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3386,15 +3686,15 @@ impl ListSmsSandboxPhoneNumbersInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListSMSSandboxPhoneNumbers::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListSMSSandboxPhoneNumbers",
             "sns",
         ));
@@ -3403,10 +3703,10 @@ impl ListSmsSandboxPhoneNumbersInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3434,6 +3734,7 @@ pub mod list_subscriptions_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>Token returned by the previous <code>ListSubscriptions</code> request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3443,7 +3744,7 @@ pub mod list_subscriptions_input {
             self,
         ) -> std::result::Result<
             crate::input::ListSubscriptionsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListSubscriptionsInput {
                 next_token: self.next_token,
@@ -3462,16 +3763,16 @@ impl ListSubscriptionsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListSubscriptions,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListSubscriptionsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3479,7 +3780,7 @@ impl ListSubscriptionsInput {
         fn update_http_builder(
             input: &crate::input::ListSubscriptionsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3488,27 +3789,27 @@ impl ListSubscriptionsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListSubscriptionsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_subscriptions(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3531,15 +3832,15 @@ impl ListSubscriptionsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListSubscriptions::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListSubscriptions",
             "sns",
         ));
@@ -3548,10 +3849,10 @@ impl ListSubscriptionsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3580,6 +3881,7 @@ pub mod list_subscriptions_by_topic_input {
             self.topic_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the topic for which you wish to find subscriptions.</p>
         pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.topic_arn = input;
             self
@@ -3589,6 +3891,7 @@ pub mod list_subscriptions_by_topic_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>Token returned by the previous <code>ListSubscriptionsByTopic</code> request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3598,7 +3901,7 @@ pub mod list_subscriptions_by_topic_input {
             self,
         ) -> std::result::Result<
             crate::input::ListSubscriptionsByTopicInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListSubscriptionsByTopicInput {
                 topic_arn: self.topic_arn,
@@ -3619,16 +3922,16 @@ impl ListSubscriptionsByTopicInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListSubscriptionsByTopic,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListSubscriptionsByTopicInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3636,7 +3939,7 @@ impl ListSubscriptionsByTopicInput {
         fn update_http_builder(
             input: &crate::input::ListSubscriptionsByTopicInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3645,27 +3948,29 @@ impl ListSubscriptionsByTopicInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListSubscriptionsByTopicInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_subscriptions_by_topic(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3688,15 +3993,15 @@ impl ListSubscriptionsByTopicInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListSubscriptionsByTopic::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListSubscriptionsByTopic",
             "sns",
         ));
@@ -3705,10 +4010,10 @@ impl ListSubscriptionsByTopicInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3736,6 +4041,7 @@ pub mod list_tags_for_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the topic for which to list tags.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -3745,7 +4051,7 @@ pub mod list_tags_for_resource_input {
             self,
         ) -> std::result::Result<
             crate::input::ListTagsForResourceInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListTagsForResourceInput {
                 resource_arn: self.resource_arn,
@@ -3764,16 +4070,16 @@ impl ListTagsForResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListTagsForResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListTagsForResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3781,7 +4087,7 @@ impl ListTagsForResourceInput {
         fn update_http_builder(
             input: &crate::input::ListTagsForResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3790,27 +4096,27 @@ impl ListTagsForResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListTagsForResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_tags_for_resource(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3833,15 +4139,15 @@ impl ListTagsForResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListTagsForResource::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListTagsForResource",
             "sns",
         ));
@@ -3850,10 +4156,10 @@ impl ListTagsForResourceInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3881,6 +4187,7 @@ pub mod list_topics_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>Token returned by the previous <code>ListTopics</code> request.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3888,8 +4195,10 @@ pub mod list_topics_input {
         /// Consumes the builder and constructs a [`ListTopicsInput`](crate::input::ListTopicsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListTopicsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListTopicsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListTopicsInput {
                 next_token: self.next_token,
             })
@@ -3907,16 +4216,16 @@ impl ListTopicsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListTopics,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListTopicsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3924,7 +4233,7 @@ impl ListTopicsInput {
         fn update_http_builder(
             input: &crate::input::ListTopicsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3933,24 +4242,26 @@ impl ListTopicsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListTopicsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_topics(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3973,22 +4284,27 @@ impl ListTopicsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListTopics::new())
-                .with_metadata(smithy_http::operation::Metadata::new("ListTopics", "sns"));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListTopics::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListTopics",
+            "sns",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4016,6 +4332,7 @@ pub mod opt_in_phone_number_input {
             self.phone_number = Some(input.into());
             self
         }
+        /// <p>The phone number to opt in. Use E.164 format.</p>
         pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.phone_number = input;
             self
@@ -4025,7 +4342,7 @@ pub mod opt_in_phone_number_input {
             self,
         ) -> std::result::Result<
             crate::input::OptInPhoneNumberInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::OptInPhoneNumberInput {
                 phone_number: self.phone_number,
@@ -4044,16 +4361,16 @@ impl OptInPhoneNumberInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::OptInPhoneNumber,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::OptInPhoneNumberInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4061,7 +4378,7 @@ impl OptInPhoneNumberInput {
         fn update_http_builder(
             input: &crate::input::OptInPhoneNumberInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4070,27 +4387,27 @@ impl OptInPhoneNumberInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::OptInPhoneNumberInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_opt_in_phone_number(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4113,15 +4430,15 @@ impl OptInPhoneNumberInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::OptInPhoneNumber::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "OptInPhoneNumber",
             "sns",
         ));
@@ -4130,10 +4447,10 @@ impl OptInPhoneNumberInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4173,6 +4490,9 @@ pub mod publish_input {
             self.topic_arn = Some(input.into());
             self
         }
+        /// <p>The topic you want to publish to.</p>
+        /// <p>If you don't specify a value for the <code>TopicArn</code> parameter, you must specify
+        /// a value for the <code>PhoneNumber</code> or <code>TargetArn</code> parameters.</p>
         pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.topic_arn = input;
             self
@@ -4184,6 +4504,9 @@ pub mod publish_input {
             self.target_arn = Some(input.into());
             self
         }
+        /// <p>If you don't specify a value for the <code>TargetArn</code> parameter, you must
+        /// specify a value for the <code>PhoneNumber</code> or <code>TopicArn</code>
+        /// parameters.</p>
         pub fn set_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.target_arn = input;
             self
@@ -4196,6 +4519,10 @@ pub mod publish_input {
             self.phone_number = Some(input.into());
             self
         }
+        /// <p>The phone number to which you want to deliver an SMS message. Use E.164 format.</p>
+        /// <p>If you don't specify a value for the <code>PhoneNumber</code> parameter, you must
+        /// specify a value for the <code>TargetArn</code> or <code>TopicArn</code>
+        /// parameters.</p>
         pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.phone_number = input;
             self
@@ -4265,6 +4592,67 @@ pub mod publish_input {
             self.message = Some(input.into());
             self
         }
+        /// <p>The message you want to send.</p>
+        /// <p>If you are publishing to a topic and you want to send the same message to all
+        /// transport protocols, include the text of the message as a String value. If you want to
+        /// send different messages for each transport protocol, set the value of the
+        /// <code>MessageStructure</code> parameter to <code>json</code> and use a JSON object
+        /// for the <code>Message</code> parameter.
+        /// </p>
+        /// <p></p>
+        /// <p>Constraints:</p>
+        /// <ul>
+        /// <li>
+        /// <p>With the exception of SMS, messages must be UTF-8 encoded strings and at most
+        /// 256 KB in size (262,144 bytes, not 262,144 characters).</p>
+        /// </li>
+        /// <li>
+        /// <p>For SMS, each message can contain up to 140 characters. This character limit
+        /// depends on the encoding schema. For example, an SMS message can contain 160 GSM
+        /// characters, 140 ASCII characters, or 70 UCS-2 characters.</p>
+        /// <p>If you publish a message that exceeds this size limit, Amazon SNS sends the message
+        /// as multiple messages, each fitting within the size limit. Messages aren't
+        /// truncated mid-word but are cut off at whole-word boundaries.</p>
+        /// <p>The total size limit for a single SMS <code>Publish</code> action is 1,600
+        /// characters.</p>
+        /// </li>
+        /// </ul>
+        /// <p>JSON-specific constraints:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Keys in the JSON object that correspond to supported transport protocols must
+        /// have simple JSON string values.</p>
+        /// </li>
+        /// <li>
+        /// <p>The values will be parsed (unescaped) before they are used in outgoing
+        /// messages.</p>
+        /// </li>
+        /// <li>
+        /// <p>Outbound notifications are JSON encoded (meaning that the characters will be
+        /// reescaped for sending).</p>
+        /// </li>
+        /// <li>
+        /// <p>Values have a minimum length of 0 (the empty string, "", is allowed).</p>
+        /// </li>
+        /// <li>
+        /// <p>Values have a maximum length bounded by the overall message size (so,
+        /// including multiple protocols may limit message sizes).</p>
+        /// </li>
+        /// <li>
+        /// <p>Non-string values will cause the key to be ignored.</p>
+        /// </li>
+        /// <li>
+        /// <p>Keys that do not correspond to supported transport protocols are
+        /// ignored.</p>
+        /// </li>
+        /// <li>
+        /// <p>Duplicate keys are not allowed.</p>
+        /// </li>
+        /// <li>
+        /// <p>Failure to parse or validate any key or value in the message will cause the
+        /// <code>Publish</code> call to return an error (no partial delivery).</p>
+        /// </li>
+        /// </ul>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -4279,6 +4667,12 @@ pub mod publish_input {
             self.subject = Some(input.into());
             self
         }
+        /// <p>Optional parameter to be used as the "Subject" line when the message is delivered to
+        /// email endpoints. This field will also be included, if present, in the standard JSON
+        /// messages delivered to other endpoints.</p>
+        /// <p>Constraints: Subjects must be ASCII text that begins with a letter, number, or
+        /// punctuation mark; must not include line breaks or control characters; and must be less
+        /// than 100 characters long.</p>
         pub fn set_subject(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.subject = input;
             self
@@ -4305,6 +4699,24 @@ pub mod publish_input {
             self.message_structure = Some(input.into());
             self
         }
+        /// <p>Set <code>MessageStructure</code> to <code>json</code> if you want to send a different
+        /// message for each protocol. For example, using one publish action, you can send a short
+        /// message to your SMS subscribers and a longer message to your email subscribers. If you
+        /// set <code>MessageStructure</code> to <code>json</code>, the value of the
+        /// <code>Message</code> parameter must: </p>
+        /// <ul>
+        /// <li>
+        /// <p>be a syntactically valid JSON object; and</p>
+        /// </li>
+        /// <li>
+        /// <p>contain at least a top-level JSON key of "default" with a value that is a
+        /// string.</p>
+        /// </li>
+        /// </ul>
+        /// <p>You can define other top-level keys that define the message you want to send to a
+        /// specific transport protocol (e.g., "http").</p>
+        /// <p>Valid value: <code>json</code>
+        /// </p>
         pub fn set_message_structure(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4312,6 +4724,11 @@ pub mod publish_input {
             self.message_structure = input;
             self
         }
+        /// Adds a key-value pair to `message_attributes`.
+        ///
+        /// To override the contents of this collection use [`set_message_attributes`](Self::set_message_attributes).
+        ///
+        /// <p>Message attributes for Publish action.</p>
         pub fn message_attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -4322,6 +4739,7 @@ pub mod publish_input {
             self.message_attributes = Some(hash_map);
             self
         }
+        /// <p>Message attributes for Publish action.</p>
         pub fn set_message_attributes(
             mut self,
             input: std::option::Option<
@@ -4347,6 +4765,18 @@ pub mod publish_input {
             self.message_deduplication_id = Some(input.into());
             self
         }
+        /// <p>This parameter applies only to FIFO (first-in-first-out) topics. The
+        /// <code>MessageDeduplicationId</code> can contain up to 128 alphanumeric characters
+        /// (a-z, A-Z, 0-9) and punctuation
+        /// <code>(!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)</code>.</p>
+        /// <p>Every message must have a unique <code>MessageDeduplicationId</code>, which is a token
+        /// used for deduplication of sent messages. If a message with a particular
+        /// <code>MessageDeduplicationId</code> is sent successfully, any message sent with the
+        /// same <code>MessageDeduplicationId</code> during the 5-minute deduplication interval is
+        /// treated as a duplicate. </p>
+        /// <p>If the topic has <code>ContentBasedDeduplication</code> set, the system generates a
+        /// <code>MessageDeduplicationId</code> based on the contents of the message. Your
+        /// <code>MessageDeduplicationId</code> overrides the generated one.</p>
         pub fn set_message_deduplication_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4365,6 +4795,13 @@ pub mod publish_input {
             self.message_group_id = Some(input.into());
             self
         }
+        /// <p>This parameter applies only to FIFO (first-in-first-out) topics. The
+        /// <code>MessageGroupId</code> can contain up to 128 alphanumeric characters (a-z, A-Z,
+        /// 0-9) and punctuation <code>(!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~)</code>.</p>
+        /// <p>The <code>MessageGroupId</code> is a tag that specifies that a message belongs to a
+        /// specific message group. Messages that belong to the same message group are processed in
+        /// a FIFO manner (however, messages in different message groups might be processed out of
+        /// order). Every message must include a <code>MessageGroupId</code>.</p>
         pub fn set_message_group_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4375,7 +4812,7 @@ pub mod publish_input {
         /// Consumes the builder and constructs a [`PublishInput`](crate::input::PublishInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::PublishInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::PublishInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::PublishInput {
                 topic_arn: self.topic_arn,
@@ -4402,13 +4839,16 @@ impl PublishInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<crate::operation::Publish, aws_http::AwsErrorRetryPolicy>,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::Operation<
+            crate::operation::Publish,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::PublishInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4416,7 +4856,7 @@ impl PublishInput {
         fn update_http_builder(
             input: &crate::input::PublishInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4425,24 +4865,26 @@ impl PublishInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::PublishInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_publish(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4465,21 +4907,22 @@ impl PublishInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(request, crate::operation::Publish::new())
-            .with_metadata(smithy_http::operation::Metadata::new("Publish", "sns"));
+        let op =
+            aws_smithy_http::operation::Operation::new(request, crate::operation::Publish::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new("Publish", "sns"));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4508,6 +4951,7 @@ pub mod remove_permission_input {
             self.topic_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the topic whose access control policy you wish to modify.</p>
         pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.topic_arn = input;
             self
@@ -4517,6 +4961,7 @@ pub mod remove_permission_input {
             self.label = Some(input.into());
             self
         }
+        /// <p>The unique label of the statement you want to remove.</p>
         pub fn set_label(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.label = input;
             self
@@ -4526,7 +4971,7 @@ pub mod remove_permission_input {
             self,
         ) -> std::result::Result<
             crate::input::RemovePermissionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::RemovePermissionInput {
                 topic_arn: self.topic_arn,
@@ -4546,16 +4991,16 @@ impl RemovePermissionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RemovePermission,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RemovePermissionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4563,7 +5008,7 @@ impl RemovePermissionInput {
         fn update_http_builder(
             input: &crate::input::RemovePermissionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4572,27 +5017,27 @@ impl RemovePermissionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RemovePermissionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_remove_permission(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4615,15 +5060,15 @@ impl RemovePermissionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::RemovePermission::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "RemovePermission",
             "sns",
         ));
@@ -4632,10 +5077,10 @@ impl RemovePermissionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4666,10 +5111,38 @@ pub mod set_endpoint_attributes_input {
             self.endpoint_arn = Some(input.into());
             self
         }
+        /// <p>EndpointArn used for SetEndpointAttributes action.</p>
         pub fn set_endpoint_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.endpoint_arn = input;
             self
         }
+        /// Adds a key-value pair to `attributes`.
+        ///
+        /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
+        ///
+        /// <p>A map of the endpoint attributes. Attributes in this map include the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>CustomUserData</code> – arbitrary user data to associate with the
+        /// endpoint. Amazon SNS does not use this data. The data must be in UTF-8 format and
+        /// less than 2KB.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Enabled</code> – flag that enables/disables delivery to the
+        /// endpoint. Amazon SNS will set this to false when a notification service indicates to
+        /// Amazon SNS that the endpoint is invalid. Users can set it back to true, typically
+        /// after updating Token.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Token</code> – device token, also referred to as a registration id,
+        /// for an app and mobile device. This is returned from the notification service
+        /// when an app and mobile device are registered with the notification
+        /// service.</p>
+        /// </li>
+        /// </ul>
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -4680,6 +5153,29 @@ pub mod set_endpoint_attributes_input {
             self.attributes = Some(hash_map);
             self
         }
+        /// <p>A map of the endpoint attributes. Attributes in this map include the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>CustomUserData</code> – arbitrary user data to associate with the
+        /// endpoint. Amazon SNS does not use this data. The data must be in UTF-8 format and
+        /// less than 2KB.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Enabled</code> – flag that enables/disables delivery to the
+        /// endpoint. Amazon SNS will set this to false when a notification service indicates to
+        /// Amazon SNS that the endpoint is invalid. Users can set it back to true, typically
+        /// after updating Token.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Token</code> – device token, also referred to as a registration id,
+        /// for an app and mobile device. This is returned from the notification service
+        /// when an app and mobile device are registered with the notification
+        /// service.</p>
+        /// </li>
+        /// </ul>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -4694,7 +5190,7 @@ pub mod set_endpoint_attributes_input {
             self,
         ) -> std::result::Result<
             crate::input::SetEndpointAttributesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::SetEndpointAttributesInput {
                 endpoint_arn: self.endpoint_arn,
@@ -4714,16 +5210,16 @@ impl SetEndpointAttributesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::SetEndpointAttributes,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SetEndpointAttributesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4731,7 +5227,7 @@ impl SetEndpointAttributesInput {
         fn update_http_builder(
             input: &crate::input::SetEndpointAttributesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4740,27 +5236,29 @@ impl SetEndpointAttributesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SetEndpointAttributesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_set_endpoint_attributes(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4783,15 +5281,15 @@ impl SetEndpointAttributesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::SetEndpointAttributes::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "SetEndpointAttributes",
             "sns",
         ));
@@ -4800,10 +5298,10 @@ impl SetEndpointAttributesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4834,6 +5332,7 @@ pub mod set_platform_application_attributes_input {
             self.platform_application_arn = Some(input.into());
             self
         }
+        /// <p>PlatformApplicationArn for SetPlatformApplicationAttributes action.</p>
         pub fn set_platform_application_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4841,6 +5340,69 @@ pub mod set_platform_application_attributes_input {
             self.platform_application_arn = input;
             self
         }
+        /// Adds a key-value pair to `attributes`.
+        ///
+        /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
+        ///
+        /// <p>A map of the platform application attributes. Attributes in this map include the
+        /// following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>PlatformCredential</code> – The credential received from the
+        /// notification service. For <code>APNS</code> and <code>APNS_SANDBOX</code>,
+        /// <code>PlatformCredential</code> is <code>private key</code>. For
+        /// <code>GCM</code> (Firebase Cloud Messaging), <code>PlatformCredential</code>
+        /// is <code>API key</code>. For <code>ADM</code>, <code>PlatformCredential</code>
+        /// is <code>client secret</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PlatformPrincipal</code> – The principal received from the
+        /// notification service. For <code>APNS</code> and <code>APNS_SANDBOX</code>,
+        /// <code>PlatformPrincipal</code> is <code>SSL certificate</code>. For
+        /// <code>GCM</code> (Firebase Cloud Messaging), there is no
+        /// <code>PlatformPrincipal</code>. For <code>ADM</code>,
+        /// <code>PlatformPrincipal</code> is <code>client id</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>EventEndpointCreated</code> – Topic ARN to which
+        /// <code>EndpointCreated</code> event notifications are sent.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>EventEndpointDeleted</code> – Topic ARN to which
+        /// <code>EndpointDeleted</code> event notifications are sent.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>EventEndpointUpdated</code> – Topic ARN to which
+        /// <code>EndpointUpdate</code> event notifications are sent.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>EventDeliveryFailure</code> – Topic ARN to which
+        /// <code>DeliveryFailure</code> event notifications are sent upon Direct
+        /// Publish delivery failure (permanent) to one of the application's
+        /// endpoints.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SuccessFeedbackRoleArn</code> – IAM role ARN used to give Amazon SNS
+        /// write access to use CloudWatch Logs on your behalf.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FailureFeedbackRoleArn</code> – IAM role ARN used to give Amazon SNS
+        /// write access to use CloudWatch Logs on your behalf.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SuccessFeedbackSampleRate</code> – Sample rate percentage (0-100)
+        /// of successfully delivered messages.</p>
+        /// </li>
+        /// </ul>
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -4851,6 +5413,65 @@ pub mod set_platform_application_attributes_input {
             self.attributes = Some(hash_map);
             self
         }
+        /// <p>A map of the platform application attributes. Attributes in this map include the
+        /// following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>PlatformCredential</code> – The credential received from the
+        /// notification service. For <code>APNS</code> and <code>APNS_SANDBOX</code>,
+        /// <code>PlatformCredential</code> is <code>private key</code>. For
+        /// <code>GCM</code> (Firebase Cloud Messaging), <code>PlatformCredential</code>
+        /// is <code>API key</code>. For <code>ADM</code>, <code>PlatformCredential</code>
+        /// is <code>client secret</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PlatformPrincipal</code> – The principal received from the
+        /// notification service. For <code>APNS</code> and <code>APNS_SANDBOX</code>,
+        /// <code>PlatformPrincipal</code> is <code>SSL certificate</code>. For
+        /// <code>GCM</code> (Firebase Cloud Messaging), there is no
+        /// <code>PlatformPrincipal</code>. For <code>ADM</code>,
+        /// <code>PlatformPrincipal</code> is <code>client id</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>EventEndpointCreated</code> – Topic ARN to which
+        /// <code>EndpointCreated</code> event notifications are sent.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>EventEndpointDeleted</code> – Topic ARN to which
+        /// <code>EndpointDeleted</code> event notifications are sent.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>EventEndpointUpdated</code> – Topic ARN to which
+        /// <code>EndpointUpdate</code> event notifications are sent.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>EventDeliveryFailure</code> – Topic ARN to which
+        /// <code>DeliveryFailure</code> event notifications are sent upon Direct
+        /// Publish delivery failure (permanent) to one of the application's
+        /// endpoints.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SuccessFeedbackRoleArn</code> – IAM role ARN used to give Amazon SNS
+        /// write access to use CloudWatch Logs on your behalf.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FailureFeedbackRoleArn</code> – IAM role ARN used to give Amazon SNS
+        /// write access to use CloudWatch Logs on your behalf.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SuccessFeedbackSampleRate</code> – Sample rate percentage (0-100)
+        /// of successfully delivered messages.</p>
+        /// </li>
+        /// </ul>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -4865,7 +5486,7 @@ pub mod set_platform_application_attributes_input {
             self,
         ) -> std::result::Result<
             crate::input::SetPlatformApplicationAttributesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::SetPlatformApplicationAttributesInput {
                 platform_application_arn: self.platform_application_arn,
@@ -4886,16 +5507,16 @@ impl SetPlatformApplicationAttributesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::SetPlatformApplicationAttributes,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SetPlatformApplicationAttributesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4903,7 +5524,7 @@ impl SetPlatformApplicationAttributesInput {
         fn update_http_builder(
             input: &crate::input::SetPlatformApplicationAttributesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4912,25 +5533,25 @@ impl SetPlatformApplicationAttributesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SetPlatformApplicationAttributesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_set_platform_application_attributes(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_set_platform_application_attributes(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4953,15 +5574,15 @@ impl SetPlatformApplicationAttributesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::SetPlatformApplicationAttributes::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "SetPlatformApplicationAttributes",
             "sns",
         ));
@@ -4970,10 +5591,10 @@ impl SetPlatformApplicationAttributesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4998,6 +5619,96 @@ pub mod set_sms_attributes_input {
         >,
     }
     impl Builder {
+        /// Adds a key-value pair to `attributes`.
+        ///
+        /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
+        ///
+        /// <p>The default settings for sending SMS messages from your account. You can set values
+        /// for the following attribute names:</p>
+        /// <p>
+        /// <code>MonthlySpendLimit</code> – The maximum amount in USD that you are willing to spend
+        /// each month to send SMS messages. When Amazon SNS determines that sending an SMS message would
+        /// incur a cost that exceeds this limit, it stops sending SMS messages within
+        /// minutes.</p>
+        /// <important>
+        /// <p>Amazon SNS stops sending SMS messages within minutes of the limit being crossed. During
+        /// that interval, if you continue to send SMS messages, you will incur costs that
+        /// exceed your limit.</p>
+        /// </important>
+        /// <p>By default, the spend limit is set to the maximum allowed by Amazon SNS. If you want to
+        /// raise the limit, submit an <a href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&limitType=service-code-sns">SNS Limit Increase case</a>. For <b>New limit
+        /// value</b>, enter your desired monthly spend limit. In the <b>Use Case Description</b> field, explain that you are requesting
+        /// an SMS monthly spend limit increase.</p>
+        /// <p>
+        /// <code>DeliveryStatusIAMRole</code> – The ARN of the IAM role that allows Amazon SNS to write
+        /// logs about SMS deliveries in CloudWatch Logs. For each SMS message that you send, Amazon SNS
+        /// writes a log that includes the message price, the success or failure status, the reason
+        /// for failure (if the message failed), the message dwell time, and other
+        /// information.</p>
+        /// <p>
+        /// <code>DeliveryStatusSuccessSamplingRate</code> – The percentage of successful SMS
+        /// deliveries for which Amazon SNS will write logs in CloudWatch Logs. The value can be an
+        /// integer from 0 - 100. For example, to write logs only for failed deliveries, set this
+        /// value to <code>0</code>. To write logs for 10% of your successful deliveries, set it to
+        /// <code>10</code>.</p>
+        /// <p>
+        /// <code>DefaultSenderID</code> – A string, such as your business brand, that is displayed
+        /// as the sender on the receiving device. Support for sender IDs varies by country. The
+        /// sender ID can be 1 - 11 alphanumeric characters, and it must contain at least one
+        /// letter.</p>
+        /// <p>
+        /// <code>DefaultSMSType</code> – The type of SMS message that you will send by default. You
+        /// can assign the following values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Promotional</code> – (Default) Noncritical messages, such as marketing
+        /// messages. Amazon SNS optimizes the message delivery to incur the lowest cost.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Transactional</code> – Critical messages that support customer
+        /// transactions, such as one-time passcodes for multi-factor authentication. Amazon
+        /// SNS optimizes the message delivery to achieve the highest reliability.</p>
+        /// </li>
+        /// </ul>
+        /// <p>
+        /// <code>UsageReportS3Bucket</code> – The name of the Amazon S3 bucket to receive daily SMS
+        /// usage reports from Amazon SNS. Each day, Amazon SNS will deliver a usage report as a CSV file to
+        /// the bucket. The report includes the following information for each SMS message that was
+        /// successfully delivered by your account:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Time that the message was published (in UTC)</p>
+        /// </li>
+        /// <li>
+        /// <p>Message ID</p>
+        /// </li>
+        /// <li>
+        /// <p>Destination phone number</p>
+        /// </li>
+        /// <li>
+        /// <p>Message type</p>
+        /// </li>
+        /// <li>
+        /// <p>Delivery status</p>
+        /// </li>
+        /// <li>
+        /// <p>Message price (in USD)</p>
+        /// </li>
+        /// <li>
+        /// <p>Part number (a message is split into multiple parts if it is too long for a
+        /// single message)</p>
+        /// </li>
+        /// <li>
+        /// <p>Total number of parts</p>
+        /// </li>
+        /// </ul>
+        /// <p>To receive the report, the bucket must have a policy that allows the Amazon SNS service
+        /// principal to perform the <code>s3:PutObject</code> and <code>s3:GetBucketLocation</code>
+        /// actions.</p>
+        /// <p>For an example bucket policy and usage report, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS Activity</a> in the
+        /// <i>Amazon SNS Developer Guide</i>.</p>
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -5008,6 +5719,92 @@ pub mod set_sms_attributes_input {
             self.attributes = Some(hash_map);
             self
         }
+        /// <p>The default settings for sending SMS messages from your account. You can set values
+        /// for the following attribute names:</p>
+        /// <p>
+        /// <code>MonthlySpendLimit</code> – The maximum amount in USD that you are willing to spend
+        /// each month to send SMS messages. When Amazon SNS determines that sending an SMS message would
+        /// incur a cost that exceeds this limit, it stops sending SMS messages within
+        /// minutes.</p>
+        /// <important>
+        /// <p>Amazon SNS stops sending SMS messages within minutes of the limit being crossed. During
+        /// that interval, if you continue to send SMS messages, you will incur costs that
+        /// exceed your limit.</p>
+        /// </important>
+        /// <p>By default, the spend limit is set to the maximum allowed by Amazon SNS. If you want to
+        /// raise the limit, submit an <a href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&limitType=service-code-sns">SNS Limit Increase case</a>. For <b>New limit
+        /// value</b>, enter your desired monthly spend limit. In the <b>Use Case Description</b> field, explain that you are requesting
+        /// an SMS monthly spend limit increase.</p>
+        /// <p>
+        /// <code>DeliveryStatusIAMRole</code> – The ARN of the IAM role that allows Amazon SNS to write
+        /// logs about SMS deliveries in CloudWatch Logs. For each SMS message that you send, Amazon SNS
+        /// writes a log that includes the message price, the success or failure status, the reason
+        /// for failure (if the message failed), the message dwell time, and other
+        /// information.</p>
+        /// <p>
+        /// <code>DeliveryStatusSuccessSamplingRate</code> – The percentage of successful SMS
+        /// deliveries for which Amazon SNS will write logs in CloudWatch Logs. The value can be an
+        /// integer from 0 - 100. For example, to write logs only for failed deliveries, set this
+        /// value to <code>0</code>. To write logs for 10% of your successful deliveries, set it to
+        /// <code>10</code>.</p>
+        /// <p>
+        /// <code>DefaultSenderID</code> – A string, such as your business brand, that is displayed
+        /// as the sender on the receiving device. Support for sender IDs varies by country. The
+        /// sender ID can be 1 - 11 alphanumeric characters, and it must contain at least one
+        /// letter.</p>
+        /// <p>
+        /// <code>DefaultSMSType</code> – The type of SMS message that you will send by default. You
+        /// can assign the following values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Promotional</code> – (Default) Noncritical messages, such as marketing
+        /// messages. Amazon SNS optimizes the message delivery to incur the lowest cost.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Transactional</code> – Critical messages that support customer
+        /// transactions, such as one-time passcodes for multi-factor authentication. Amazon
+        /// SNS optimizes the message delivery to achieve the highest reliability.</p>
+        /// </li>
+        /// </ul>
+        /// <p>
+        /// <code>UsageReportS3Bucket</code> – The name of the Amazon S3 bucket to receive daily SMS
+        /// usage reports from Amazon SNS. Each day, Amazon SNS will deliver a usage report as a CSV file to
+        /// the bucket. The report includes the following information for each SMS message that was
+        /// successfully delivered by your account:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Time that the message was published (in UTC)</p>
+        /// </li>
+        /// <li>
+        /// <p>Message ID</p>
+        /// </li>
+        /// <li>
+        /// <p>Destination phone number</p>
+        /// </li>
+        /// <li>
+        /// <p>Message type</p>
+        /// </li>
+        /// <li>
+        /// <p>Delivery status</p>
+        /// </li>
+        /// <li>
+        /// <p>Message price (in USD)</p>
+        /// </li>
+        /// <li>
+        /// <p>Part number (a message is split into multiple parts if it is too long for a
+        /// single message)</p>
+        /// </li>
+        /// <li>
+        /// <p>Total number of parts</p>
+        /// </li>
+        /// </ul>
+        /// <p>To receive the report, the bucket must have a policy that allows the Amazon SNS service
+        /// principal to perform the <code>s3:PutObject</code> and <code>s3:GetBucketLocation</code>
+        /// actions.</p>
+        /// <p>For an example bucket policy and usage report, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sms_stats.html">Monitoring SMS Activity</a> in the
+        /// <i>Amazon SNS Developer Guide</i>.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -5022,7 +5819,7 @@ pub mod set_sms_attributes_input {
             self,
         ) -> std::result::Result<
             crate::input::SetSmsAttributesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::SetSmsAttributesInput {
                 attributes: self.attributes,
@@ -5041,16 +5838,16 @@ impl SetSmsAttributesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::SetSMSAttributes,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SetSmsAttributesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5058,7 +5855,7 @@ impl SetSmsAttributesInput {
         fn update_http_builder(
             input: &crate::input::SetSmsAttributesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5067,27 +5864,27 @@ impl SetSmsAttributesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SetSmsAttributesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_set_sms_attributes(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5110,15 +5907,15 @@ impl SetSmsAttributesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::SetSMSAttributes::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "SetSMSAttributes",
             "sns",
         ));
@@ -5127,10 +5924,10 @@ impl SetSmsAttributesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5160,6 +5957,7 @@ pub mod set_subscription_attributes_input {
             self.subscription_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the subscription to modify.</p>
         pub fn set_subscription_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5197,6 +5995,8 @@ pub mod set_subscription_attributes_input {
         /// in the dead-letter queue for further analysis or reprocessing.</p>
         /// </li>
         /// </ul>
+        ///
+        ///
         /// <p>The following attribute applies only to Amazon Kinesis Data Firehose delivery stream subscriptions:</p>
         /// <ul>
         /// <li>
@@ -5219,6 +6019,56 @@ pub mod set_subscription_attributes_input {
             self.attribute_name = Some(input.into());
             self
         }
+        /// <p>A map of attributes with their corresponding values.</p>
+        /// <p>The following lists the names, descriptions, and values of the special request
+        /// parameters that this action uses:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
+        /// failed deliveries to HTTP/S endpoints.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FilterPolicy</code> – The simple JSON object that lets your
+        /// subscriber receive only a subset of messages, rather than receiving every
+        /// message published to the topic.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>RawMessageDelivery</code> – When set to <code>true</code>,
+        /// enables raw message delivery to Amazon SQS or HTTP/S endpoints. This eliminates the
+        /// need for the endpoints to process JSON formatting, which is otherwise created
+        /// for Amazon SNS metadata.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>RedrivePolicy</code> – When specified, sends undeliverable messages to the specified Amazon SQS dead-letter queue.
+        /// Messages that can't be delivered due to client errors (for example, when the subscribed endpoint is unreachable)
+        /// or server errors (for example, when the service that powers the subscribed endpoint becomes unavailable) are held
+        /// in the dead-letter queue for further analysis or reprocessing.</p>
+        /// </li>
+        /// </ul>
+        ///
+        ///
+        /// <p>The following attribute applies only to Amazon Kinesis Data Firehose delivery stream subscriptions:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>SubscriptionRoleArn</code> – The ARN of the IAM role that has the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Permission to write to the Kinesis Data Firehose delivery stream</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon SNS listed as a trusted entity</p>
+        /// </li>
+        /// </ul>
+        /// <p>Specifying a valid ARN for this attribute is required for Kinesis Data Firehose delivery stream subscriptions.
+        /// For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
+        /// to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_attribute_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5231,6 +6081,7 @@ pub mod set_subscription_attributes_input {
             self.attribute_value = Some(input.into());
             self
         }
+        /// <p>The new value for the attribute in JSON format.</p>
         pub fn set_attribute_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5243,7 +6094,7 @@ pub mod set_subscription_attributes_input {
             self,
         ) -> std::result::Result<
             crate::input::SetSubscriptionAttributesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::SetSubscriptionAttributesInput {
                 subscription_arn: self.subscription_arn,
@@ -5265,16 +6116,16 @@ impl SetSubscriptionAttributesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::SetSubscriptionAttributes,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SetSubscriptionAttributesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5282,7 +6133,7 @@ impl SetSubscriptionAttributesInput {
         fn update_http_builder(
             input: &crate::input::SetSubscriptionAttributesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5291,27 +6142,29 @@ impl SetSubscriptionAttributesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SetSubscriptionAttributesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_set_subscription_attributes(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5334,15 +6187,15 @@ impl SetSubscriptionAttributesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::SetSubscriptionAttributes::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "SetSubscriptionAttributes",
             "sns",
         ));
@@ -5351,10 +6204,10 @@ impl SetSubscriptionAttributesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5384,6 +6237,7 @@ pub mod set_topic_attributes_input {
             self.topic_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the topic to modify.</p>
         pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.topic_arn = input;
             self
@@ -5409,6 +6263,7 @@ pub mod set_topic_attributes_input {
         /// topic.</p>
         /// </li>
         /// </ul>
+        ///
         /// <p>The following attribute applies only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:</p>
         /// <ul>
         /// <li>
@@ -5419,12 +6274,15 @@ pub mod set_topic_attributes_input {
         /// Reference</i>. </p>
         /// </li>
         /// </ul>
+        ///
+        ///
         /// <p>The following attribute applies only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO topics</a>:</p>
         /// <ul>
         /// <li>
         /// <p>
         /// <code>ContentBasedDeduplication</code> – Enables content-based deduplication for
         /// FIFO topics.</p>
+        ///
         /// <ul>
         /// <li>
         /// <p>By default, <code>ContentBasedDeduplication</code> is set to <code>false</code>.
@@ -5447,6 +6305,65 @@ pub mod set_topic_attributes_input {
             self.attribute_name = Some(input.into());
             self
         }
+        /// <p>A map of attributes with their corresponding values.</p>
+        /// <p>The following lists the names, descriptions, and values of the special request
+        /// parameters that the <code>SetTopicAttributes</code> action uses:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
+        /// failed deliveries to HTTP/S endpoints.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DisplayName</code> – The display name to use for a topic with SMS
+        /// subscriptions.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Policy</code> – The policy that defines who can access your
+        /// topic. By default, only the topic owner can publish or subscribe to the
+        /// topic.</p>
+        /// </li>
+        /// </ul>
+        ///
+        /// <p>The following attribute applies only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>KmsMasterKeyId</code> – The ID of an Amazon Web Services managed customer master
+        /// key (CMK) for Amazon SNS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key
+        /// Terms</a>. For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a> in the <i>Key Management Service API
+        /// Reference</i>. </p>
+        /// </li>
+        /// </ul>
+        ///
+        ///
+        /// <p>The following attribute applies only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO topics</a>:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ContentBasedDeduplication</code> – Enables content-based deduplication for
+        /// FIFO topics.</p>
+        ///
+        /// <ul>
+        /// <li>
+        /// <p>By default, <code>ContentBasedDeduplication</code> is set to <code>false</code>.
+        /// If you create a FIFO topic and this attribute is <code>false</code>, you must
+        /// specify a value for the <code>MessageDeduplicationId</code> parameter for the
+        /// <a href="https://docs.aws.amazon.com/sns/latest/api/API_Publish.html">Publish</a> action. </p>
+        /// </li>
+        /// <li>
+        /// <p>When you set <code>ContentBasedDeduplication</code> to <code>true</code>,
+        /// Amazon SNS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using
+        /// the body of the message (but not the attributes of the message).</p>
+        /// <p>(Optional) To override the generated value, you can specify a value
+        /// for the <code>MessageDeduplicationId</code> parameter for the <code>Publish</code>
+        /// action.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// </ul>
         pub fn set_attribute_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5459,6 +6376,7 @@ pub mod set_topic_attributes_input {
             self.attribute_value = Some(input.into());
             self
         }
+        /// <p>The new value for the attribute.</p>
         pub fn set_attribute_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5471,7 +6389,7 @@ pub mod set_topic_attributes_input {
             self,
         ) -> std::result::Result<
             crate::input::SetTopicAttributesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::SetTopicAttributesInput {
                 topic_arn: self.topic_arn,
@@ -5492,16 +6410,16 @@ impl SetTopicAttributesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::SetTopicAttributes,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SetTopicAttributesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5509,7 +6427,7 @@ impl SetTopicAttributesInput {
         fn update_http_builder(
             input: &crate::input::SetTopicAttributesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5518,25 +6436,27 @@ impl SetTopicAttributesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SetTopicAttributesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_set_topic_attributes(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5559,15 +6479,15 @@ impl SetTopicAttributesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::SetTopicAttributes::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "SetTopicAttributes",
             "sns",
         ));
@@ -5576,10 +6496,10 @@ impl SetTopicAttributesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5613,6 +6533,7 @@ pub mod subscribe_input {
             self.topic_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the topic you want to subscribe to.</p>
         pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.topic_arn = input;
             self
@@ -5667,6 +6588,52 @@ pub mod subscribe_input {
             self.protocol = Some(input.into());
             self
         }
+        /// <p>The protocol that you want to use. Supported protocols include:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>http</code> – delivery of JSON-encoded message via HTTP
+        /// POST</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>https</code> – delivery of JSON-encoded message via HTTPS
+        /// POST</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>email</code> – delivery of message via SMTP</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>email-json</code> – delivery of JSON-encoded message via
+        /// SMTP</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>sms</code> – delivery of message via SMS</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>sqs</code> – delivery of JSON-encoded message to an Amazon SQS
+        /// queue</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>application</code> – delivery of JSON-encoded message to an
+        /// EndpointArn for a mobile app and device</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>lambda</code> – delivery of JSON-encoded message to an Lambda
+        /// function</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>firehose</code> – delivery of JSON-encoded message to an Amazon
+        /// Kinesis Data Firehose delivery stream.</p>
+        /// </li>
+        /// </ul>
         pub fn set_protocol(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.protocol = input;
             self
@@ -5714,10 +6681,103 @@ pub mod subscribe_input {
             self.endpoint = Some(input.into());
             self
         }
+        /// <p>The endpoint that you want to receive notifications. Endpoints vary by
+        /// protocol:</p>
+        /// <ul>
+        /// <li>
+        /// <p>For the <code>http</code> protocol, the (public) endpoint is a URL beginning
+        /// with <code>http://</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>For the <code>https</code> protocol, the (public) endpoint is a URL beginning
+        /// with <code>https://</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>For the <code>email</code> protocol, the endpoint is an email address.</p>
+        /// </li>
+        /// <li>
+        /// <p>For the <code>email-json</code> protocol, the endpoint is an email
+        /// address.</p>
+        /// </li>
+        /// <li>
+        /// <p>For the <code>sms</code> protocol, the endpoint is a phone number of an
+        /// SMS-enabled device.</p>
+        /// </li>
+        /// <li>
+        /// <p>For the <code>sqs</code> protocol, the endpoint is the ARN of an Amazon SQS
+        /// queue.</p>
+        /// </li>
+        /// <li>
+        /// <p>For the <code>application</code> protocol, the endpoint is the EndpointArn of
+        /// a mobile app and device.</p>
+        /// </li>
+        /// <li>
+        /// <p>For the <code>lambda</code> protocol, the endpoint is the ARN of an Lambda
+        /// function.</p>
+        /// </li>
+        /// <li>
+        /// <p>For the <code>firehose</code> protocol, the endpoint is the ARN of an Amazon
+        /// Kinesis Data Firehose delivery stream.</p>
+        /// </li>
+        /// </ul>
         pub fn set_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.endpoint = input;
             self
         }
+        /// Adds a key-value pair to `attributes`.
+        ///
+        /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
+        ///
+        /// <p>A map of attributes with their corresponding values.</p>
+        /// <p>The following lists the names, descriptions, and values of the special request
+        /// parameters that the <code>Subscribe</code> action uses:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
+        /// failed deliveries to HTTP/S endpoints.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FilterPolicy</code> – The simple JSON object that lets your
+        /// subscriber receive only a subset of messages, rather than receiving every
+        /// message published to the topic.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>RawMessageDelivery</code> – When set to <code>true</code>,
+        /// enables raw message delivery to Amazon SQS or HTTP/S endpoints. This eliminates the
+        /// need for the endpoints to process JSON formatting, which is otherwise created
+        /// for Amazon SNS metadata.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>RedrivePolicy</code> – When specified, sends undeliverable messages to the specified Amazon SQS dead-letter queue.
+        /// Messages that can't be delivered due to client errors (for example, when the subscribed endpoint is unreachable)
+        /// or server errors (for example, when the service that powers the subscribed endpoint becomes unavailable) are held
+        /// in the dead-letter queue for further analysis or reprocessing.</p>
+        /// </li>
+        /// </ul>
+        ///
+        ///
+        /// <p>The following attribute applies only to Amazon Kinesis Data Firehose delivery stream subscriptions:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>SubscriptionRoleArn</code> – The ARN of the IAM role that has the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Permission to write to the Kinesis Data Firehose delivery stream</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon SNS listed as a trusted entity</p>
+        /// </li>
+        /// </ul>
+        /// <p>Specifying a valid ARN for this attribute is required for Kinesis Data Firehose delivery stream subscriptions.
+        /// For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
+        /// to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p>
+        /// </li>
+        /// </ul>
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -5728,6 +6788,56 @@ pub mod subscribe_input {
             self.attributes = Some(hash_map);
             self
         }
+        /// <p>A map of attributes with their corresponding values.</p>
+        /// <p>The following lists the names, descriptions, and values of the special request
+        /// parameters that the <code>Subscribe</code> action uses:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
+        /// failed deliveries to HTTP/S endpoints.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FilterPolicy</code> – The simple JSON object that lets your
+        /// subscriber receive only a subset of messages, rather than receiving every
+        /// message published to the topic.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>RawMessageDelivery</code> – When set to <code>true</code>,
+        /// enables raw message delivery to Amazon SQS or HTTP/S endpoints. This eliminates the
+        /// need for the endpoints to process JSON formatting, which is otherwise created
+        /// for Amazon SNS metadata.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>RedrivePolicy</code> – When specified, sends undeliverable messages to the specified Amazon SQS dead-letter queue.
+        /// Messages that can't be delivered due to client errors (for example, when the subscribed endpoint is unreachable)
+        /// or server errors (for example, when the service that powers the subscribed endpoint becomes unavailable) are held
+        /// in the dead-letter queue for further analysis or reprocessing.</p>
+        /// </li>
+        /// </ul>
+        ///
+        ///
+        /// <p>The following attribute applies only to Amazon Kinesis Data Firehose delivery stream subscriptions:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>SubscriptionRoleArn</code> – The ARN of the IAM role that has the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Permission to write to the Kinesis Data Firehose delivery stream</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon SNS listed as a trusted entity</p>
+        /// </li>
+        /// </ul>
+        /// <p>Specifying a valid ARN for this attribute is required for Kinesis Data Firehose delivery stream subscriptions.
+        /// For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-firehose-as-subscriber.html">Fanout
+        /// to Kinesis Data Firehose delivery streams</a> in the <i>Amazon SNS Developer Guide</i>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -5751,6 +6861,16 @@ pub mod subscribe_input {
             self.return_subscription_arn = Some(input);
             self
         }
+        /// <p>Sets whether the response from the <code>Subscribe</code> request includes the
+        /// subscription ARN, even if the subscription is not yet confirmed.</p>
+        /// <p>If you set this parameter to <code>true</code>, the response includes the ARN in all
+        /// cases, even if the subscription is not yet confirmed. In addition to the ARN for
+        /// confirmed subscriptions, the response also includes the <code>pending
+        /// subscription</code> ARN value for subscriptions that aren't yet confirmed. A
+        /// subscription becomes confirmed when the subscriber calls the
+        /// <code>ConfirmSubscription</code> action with a confirmation token.</p>
+        /// <p></p>
+        /// <p>The default value is <code>false</code>.</p>
         pub fn set_return_subscription_arn(mut self, input: std::option::Option<bool>) -> Self {
             self.return_subscription_arn = input;
             self
@@ -5758,7 +6878,7 @@ pub mod subscribe_input {
         /// Consumes the builder and constructs a [`SubscribeInput`](crate::input::SubscribeInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::SubscribeInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::SubscribeInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::SubscribeInput {
                 topic_arn: self.topic_arn,
@@ -5781,16 +6901,16 @@ impl SubscribeInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::Subscribe,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SubscribeInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5798,7 +6918,7 @@ impl SubscribeInput {
         fn update_http_builder(
             input: &crate::input::SubscribeInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5807,24 +6927,26 @@ impl SubscribeInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SubscribeInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_subscribe(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5847,22 +6969,25 @@ impl SubscribeInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
         let op =
-            smithy_http::operation::Operation::new(request, crate::operation::Subscribe::new())
-                .with_metadata(smithy_http::operation::Metadata::new("Subscribe", "sns"));
+            aws_smithy_http::operation::Operation::new(request, crate::operation::Subscribe::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "Subscribe",
+                    "sns",
+                ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5891,16 +7016,25 @@ pub mod tag_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the topic to which to add tags.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags to be added to the specified topic. A tag consists of a required key and an
+        /// optional value.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>The tags to be added to the specified topic. A tag consists of a required key and an
+        /// optional value.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -5911,8 +7045,10 @@ pub mod tag_resource_input {
         /// Consumes the builder and constructs a [`TagResourceInput`](crate::input::TagResourceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::TagResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::TagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::TagResourceInput {
                 resource_arn: self.resource_arn,
                 tags: self.tags,
@@ -5931,16 +7067,16 @@ impl TagResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::TagResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::TagResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5948,7 +7084,7 @@ impl TagResourceInput {
         fn update_http_builder(
             input: &crate::input::TagResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5957,24 +7093,26 @@ impl TagResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::TagResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_tag_resource(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5997,22 +7135,27 @@ impl TagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::TagResource::new())
-                .with_metadata(smithy_http::operation::Metadata::new("TagResource", "sns"));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::TagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "TagResource",
+            "sns",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6040,6 +7183,7 @@ pub mod unsubscribe_input {
             self.subscription_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the subscription to be deleted.</p>
         pub fn set_subscription_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6050,8 +7194,10 @@ pub mod unsubscribe_input {
         /// Consumes the builder and constructs a [`UnsubscribeInput`](crate::input::UnsubscribeInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UnsubscribeInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UnsubscribeInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UnsubscribeInput {
                 subscription_arn: self.subscription_arn,
             })
@@ -6069,16 +7215,16 @@ impl UnsubscribeInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::Unsubscribe,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UnsubscribeInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6086,7 +7232,7 @@ impl UnsubscribeInput {
         fn update_http_builder(
             input: &crate::input::UnsubscribeInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6095,24 +7241,26 @@ impl UnsubscribeInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UnsubscribeInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_unsubscribe(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6135,22 +7283,27 @@ impl UnsubscribeInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::Unsubscribe::new())
-                .with_metadata(smithy_http::operation::Metadata::new("Unsubscribe", "sns"));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::Unsubscribe::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "Unsubscribe",
+            "sns",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6179,16 +7332,23 @@ pub mod untag_resource_input {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the topic from which to remove tags.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
         }
+        /// Appends an item to `tag_keys`.
+        ///
+        /// To override the contents of this collection use [`set_tag_keys`](Self::set_tag_keys).
+        ///
+        /// <p>The list of tag keys to remove from the specified topic.</p>
         pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.tag_keys.unwrap_or_default();
             v.push(input.into());
             self.tag_keys = Some(v);
             self
         }
+        /// <p>The list of tag keys to remove from the specified topic.</p>
         pub fn set_tag_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6199,8 +7359,10 @@ pub mod untag_resource_input {
         /// Consumes the builder and constructs a [`UntagResourceInput`](crate::input::UntagResourceInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::UntagResourceInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::UntagResourceInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::UntagResourceInput {
                 resource_arn: self.resource_arn,
                 tag_keys: self.tag_keys,
@@ -6219,16 +7381,16 @@ impl UntagResourceInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UntagResource,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UntagResourceInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6236,7 +7398,7 @@ impl UntagResourceInput {
         fn update_http_builder(
             input: &crate::input::UntagResourceInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6245,24 +7407,26 @@ impl UntagResourceInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UntagResourceInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_untag_resource(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6285,25 +7449,27 @@ impl UntagResourceInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::UntagResource::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "UntagResource",
-                    "sns",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::UntagResource::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UntagResource",
+            "sns",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6332,6 +7498,7 @@ pub mod verify_sms_sandbox_phone_number_input {
             self.phone_number = Some(input.into());
             self
         }
+        /// <p>The destination phone number to verify.</p>
         pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.phone_number = input;
             self
@@ -6342,6 +7509,8 @@ pub mod verify_sms_sandbox_phone_number_input {
             self.one_time_password = Some(input.into());
             self
         }
+        /// <p>The OTP sent to the destination number from the
+        /// <code>CreateSMSSandBoxPhoneNumber</code> call.</p>
         pub fn set_one_time_password(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6354,7 +7523,7 @@ pub mod verify_sms_sandbox_phone_number_input {
             self,
         ) -> std::result::Result<
             crate::input::VerifySmsSandboxPhoneNumberInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::VerifySmsSandboxPhoneNumberInput {
                 phone_number: self.phone_number,
@@ -6375,16 +7544,16 @@ impl VerifySmsSandboxPhoneNumberInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::VerifySMSSandboxPhoneNumber,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::VerifySmsSandboxPhoneNumberInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6392,7 +7561,7 @@ impl VerifySmsSandboxPhoneNumberInput {
         fn update_http_builder(
             input: &crate::input::VerifySmsSandboxPhoneNumberInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6401,25 +7570,25 @@ impl VerifySmsSandboxPhoneNumberInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::VerifySmsSandboxPhoneNumberInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_verify_sms_sandbox_phone_number(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_verify_sms_sandbox_phone_number(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6442,15 +7611,15 @@ impl VerifySmsSandboxPhoneNumberInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::VerifySMSSandboxPhoneNumber::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "VerifySMSSandboxPhoneNumber",
             "sns",
         ));
@@ -6459,10 +7628,10 @@ impl VerifySmsSandboxPhoneNumberInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6476,6 +7645,7 @@ impl VerifySmsSandboxPhoneNumberInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VerifySmsSandboxPhoneNumberInput {
@@ -6494,6 +7664,7 @@ impl std::fmt::Debug for VerifySmsSandboxPhoneNumberInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
@@ -6526,6 +7697,7 @@ impl std::fmt::Debug for UnsubscribeInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
@@ -6667,6 +7839,8 @@ pub struct SubscribeInput {
     /// in the dead-letter queue for further analysis or reprocessing.</p>
     /// </li>
     /// </ul>
+    ///
+    ///
     /// <p>The following attribute applies only to Amazon Kinesis Data Firehose delivery stream subscriptions:</p>
     /// <ul>
     /// <li>
@@ -6738,6 +7912,7 @@ pub struct SetTopicAttributesInput {
     /// topic.</p>
     /// </li>
     /// </ul>
+    ///
     /// <p>The following attribute applies only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side-encryption</a>:</p>
     /// <ul>
     /// <li>
@@ -6748,12 +7923,15 @@ pub struct SetTopicAttributesInput {
     /// Reference</i>. </p>
     /// </li>
     /// </ul>
+    ///
+    ///
     /// <p>The following attribute applies only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO topics</a>:</p>
     /// <ul>
     /// <li>
     /// <p>
     /// <code>ContentBasedDeduplication</code> – Enables content-based deduplication for
     /// FIFO topics.</p>
+    ///
     /// <ul>
     /// <li>
     /// <p>By default, <code>ContentBasedDeduplication</code> is set to <code>false</code>.
@@ -6822,6 +8000,8 @@ pub struct SetSubscriptionAttributesInput {
     /// in the dead-letter queue for further analysis or reprocessing.</p>
     /// </li>
     /// </ul>
+    ///
+    ///
     /// <p>The following attribute applies only to Amazon Kinesis Data Firehose delivery stream subscriptions:</p>
     /// <ul>
     /// <li>
@@ -7253,6 +8433,7 @@ impl std::fmt::Debug for OptInPhoneNumberInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTopicsInput {
@@ -7267,6 +8448,7 @@ impl std::fmt::Debug for ListTopicsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
@@ -7314,6 +8496,7 @@ impl std::fmt::Debug for ListSubscriptionsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSmsSandboxPhoneNumbersInput {
@@ -7365,6 +8548,7 @@ impl std::fmt::Debug for ListPhoneNumbersOptedOutInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOriginationNumbersInput {
@@ -7431,6 +8615,7 @@ impl std::fmt::Debug for GetSubscriptionAttributesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSmsSandboxAccountStatusInput {}
@@ -7489,6 +8674,7 @@ impl std::fmt::Debug for GetEndpointAttributesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTopicInput {
@@ -7503,6 +8689,7 @@ impl std::fmt::Debug for DeleteTopicInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteSmsSandboxPhoneNumberInput {
@@ -7583,6 +8770,7 @@ pub struct CreateTopicInput {
     /// topic.</p>
     /// </li>
     /// </ul>
+    ///
     /// <p>The following attribute applies only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html">server-side
     /// encryption</a>:</p>
     /// <ul>
@@ -7594,6 +8782,8 @@ pub struct CreateTopicInput {
     /// Reference</i>. </p>
     /// </li>
     /// </ul>
+    ///
+    ///
     /// <p>The following attributes apply only to <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">FIFO topics</a>:</p>
     /// <ul>
     /// <li>
@@ -7605,6 +8795,7 @@ pub struct CreateTopicInput {
     /// <p>
     /// <code>ContentBasedDeduplication</code> – Enables content-based deduplication for
     /// FIFO topics.</p>
+    ///
     /// <ul>
     /// <li>
     /// <p>By default, <code>ContentBasedDeduplication</code> is set to <code>false</code>.
@@ -7643,6 +8834,7 @@ impl std::fmt::Debug for CreateTopicInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSmsSandboxPhoneNumberInput {
@@ -7760,6 +8952,7 @@ impl std::fmt::Debug for CheckIfPhoneNumberIsOptedOutInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AddPermissionInput {

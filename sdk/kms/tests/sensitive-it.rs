@@ -5,17 +5,17 @@
 
 use aws_http::AwsErrorRetryPolicy;
 use aws_sdk_kms as kms;
+use aws_smithy_http::body::SdkBody;
+use aws_smithy_http::operation::{self, Parts};
+use aws_smithy_http::response::ParseStrictResponse;
+use aws_smithy_http::result::SdkError;
+use aws_smithy_http::retry::ClassifyResponse;
+use aws_smithy_types::retry::{ErrorKind, RetryKind};
 use bytes::Bytes;
 use kms::error::CreateAliasError;
 use kms::operation::{CreateAlias, GenerateRandom};
 use kms::output::GenerateRandomOutput;
 use kms::Blob;
-use smithy_http::body::SdkBody;
-use smithy_http::operation::{self, Parts};
-use smithy_http::response::ParseStrictResponse;
-use smithy_http::result::SdkError;
-use smithy_http::retry::ClassifyResponse;
-use smithy_types::retry::{ErrorKind, RetryKind};
 
 #[test]
 fn validate_sensitive_trait() {

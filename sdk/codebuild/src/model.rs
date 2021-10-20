@@ -33,7 +33,7 @@ pub struct Webhook {
     pub build_type: std::option::Option<crate::model::WebhookBuildType>,
     /// <p>A timestamp that indicates the last time a repository's secret token was modified.
     /// </p>
-    pub last_modified_secret: std::option::Option<smithy_types::Instant>,
+    pub last_modified_secret: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for Webhook {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -61,7 +61,7 @@ pub mod webhook {
         pub(crate) filter_groups:
             std::option::Option<std::vec::Vec<std::vec::Vec<crate::model::WebhookFilter>>>,
         pub(crate) build_type: std::option::Option<crate::model::WebhookBuildType>,
-        pub(crate) last_modified_secret: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_modified_secret: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The URL to the webhook.</p>
@@ -69,6 +69,7 @@ pub mod webhook {
             self.url = Some(input.into());
             self
         }
+        /// <p>The URL to the webhook.</p>
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.url = input;
             self
@@ -78,6 +79,7 @@ pub mod webhook {
             self.payload_url = Some(input.into());
             self
         }
+        /// <p>The CodeBuild endpoint where webhook events are sent.</p>
         pub fn set_payload_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.payload_url = input;
             self
@@ -90,6 +92,10 @@ pub mod webhook {
             self.secret = Some(input.into());
             self
         }
+        /// <p>The secret token of the associated repository. </p>
+        /// <note>
+        /// <p>A Bitbucket webhook does not support <code>secret</code>. </p>
+        /// </note>
         pub fn set_secret(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret = input;
             self
@@ -105,6 +111,13 @@ pub mod webhook {
             self.branch_filter = Some(input.into());
             self
         }
+        /// <p>A regular expression used to determine which repository branches are built when a
+        /// webhook is triggered. If the name of a branch matches the regular expression, then it is
+        /// built. If <code>branchFilter</code> is empty, then all branches are built.</p>
+        /// <note>
+        /// <p>It is recommended that you use <code>filterGroups</code> instead of
+        /// <code>branchFilter</code>. </p>
+        /// </note>
         pub fn set_branch_filter(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -112,6 +125,16 @@ pub mod webhook {
             self.branch_filter = input;
             self
         }
+        /// Appends an item to `filter_groups`.
+        ///
+        /// To override the contents of this collection use [`set_filter_groups`](Self::set_filter_groups).
+        ///
+        /// <p>An array of arrays of <code>WebhookFilter</code> objects used to determine which
+        /// webhooks are triggered. At least one <code>WebhookFilter</code> in the array must
+        /// specify <code>EVENT</code> as its <code>type</code>. </p>
+        /// <p>For a build to be triggered, at least one filter group in the
+        /// <code>filterGroups</code> array must pass. For a filter group to pass, each of its
+        /// filters must pass. </p>
         pub fn filter_groups(
             mut self,
             input: impl Into<std::vec::Vec<crate::model::WebhookFilter>>,
@@ -121,6 +144,12 @@ pub mod webhook {
             self.filter_groups = Some(v);
             self
         }
+        /// <p>An array of arrays of <code>WebhookFilter</code> objects used to determine which
+        /// webhooks are triggered. At least one <code>WebhookFilter</code> in the array must
+        /// specify <code>EVENT</code> as its <code>type</code>. </p>
+        /// <p>For a build to be triggered, at least one filter group in the
+        /// <code>filterGroups</code> array must pass. For a filter group to pass, each of its
+        /// filters must pass. </p>
         pub fn set_filter_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<std::vec::Vec<crate::model::WebhookFilter>>>,
@@ -133,6 +162,7 @@ pub mod webhook {
             self.build_type = Some(input);
             self
         }
+        /// <p>Specifies the type of build this webhook will trigger.</p>
         pub fn set_build_type(
             mut self,
             input: std::option::Option<crate::model::WebhookBuildType>,
@@ -142,13 +172,15 @@ pub mod webhook {
         }
         /// <p>A timestamp that indicates the last time a repository's secret token was modified.
         /// </p>
-        pub fn last_modified_secret(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_modified_secret(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_modified_secret = Some(input);
             self
         }
+        /// <p>A timestamp that indicates the last time a repository's secret token was modified.
+        /// </p>
         pub fn set_last_modified_secret(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_modified_secret = input;
             self
@@ -174,6 +206,7 @@ impl Webhook {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -185,7 +218,9 @@ impl Webhook {
     std::hash::Hash,
 )]
 pub enum WebhookBuildType {
+    #[allow(missing_docs)] // documentation missing in model
     Build,
+    #[allow(missing_docs)] // documentation missing in model
     BuildBatch,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -207,6 +242,7 @@ impl std::str::FromStr for WebhookBuildType {
     }
 }
 impl WebhookBuildType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             WebhookBuildType::Build => "BUILD",
@@ -214,6 +250,7 @@ impl WebhookBuildType {
             WebhookBuildType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["BUILD", "BUILD_BATCH"]
     }
@@ -417,6 +454,80 @@ pub mod webhook_filter {
             self.r#type = Some(input);
             self
         }
+        /// <p> The type of webhook filter. There are six webhook filter types: <code>EVENT</code>,
+        /// <code>ACTOR_ACCOUNT_ID</code>, <code>HEAD_REF</code>, <code>BASE_REF</code>,
+        /// <code>FILE_PATH</code>, and <code>COMMIT_MESSAGE</code>. </p>
+        /// <dl>
+        /// <dt>
+        /// EVENT
+        /// </dt>
+        /// <dd>
+        /// <p> A webhook event triggers a build when the provided <code>pattern</code>
+        /// matches one of five event types: <code>PUSH</code>,
+        /// <code>PULL_REQUEST_CREATED</code>, <code>PULL_REQUEST_UPDATED</code>,
+        /// <code>PULL_REQUEST_REOPENED</code>, and
+        /// <code>PULL_REQUEST_MERGED</code>. The <code>EVENT</code> patterns are
+        /// specified as a comma-separated string. For example, <code>PUSH,
+        /// PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED</code> filters all push, pull
+        /// request created, and pull request updated events. </p>
+        /// <note>
+        /// <p> The <code>PULL_REQUEST_REOPENED</code> works with GitHub and GitHub
+        /// Enterprise only. </p>
+        /// </note>
+        /// </dd>
+        /// <dt>
+        /// ACTOR_ACCOUNT_ID
+        /// </dt>
+        /// <dd>
+        /// <p> A webhook event triggers a build when a GitHub, GitHub Enterprise, or
+        /// Bitbucket account ID matches the regular expression <code>pattern</code>.
+        /// </p>
+        /// </dd>
+        /// <dt>
+        /// HEAD_REF
+        /// </dt>
+        /// <dd>
+        /// <p> A webhook event triggers a build when the head reference matches the
+        /// regular expression <code>pattern</code>. For example,
+        /// <code>refs/heads/branch-name</code> and <code>refs/tags/tag-name</code>. </p>
+        /// <p> Works with GitHub and GitHub Enterprise push, GitHub and GitHub
+        /// Enterprise pull request, Bitbucket push, and Bitbucket pull request events.
+        /// </p>
+        /// </dd>
+        /// <dt>
+        /// BASE_REF
+        /// </dt>
+        /// <dd>
+        /// <p> A webhook event triggers a build when the base reference matches the
+        /// regular expression <code>pattern</code>. For example,
+        /// <code>refs/heads/branch-name</code>. </p>
+        /// <note>
+        /// <p> Works with pull request events only. </p>
+        /// </note>
+        /// </dd>
+        /// <dt>
+        /// FILE_PATH
+        /// </dt>
+        /// <dd>
+        /// <p> A webhook triggers a build when the path of a changed file matches the
+        /// regular expression <code>pattern</code>. </p>
+        /// <note>
+        /// <p> Works with GitHub and Bitbucket events push and pull requests events.
+        /// Also works with GitHub Enterprise push events, but does not work with
+        /// GitHub Enterprise pull request events. </p>
+        /// </note>
+        /// </dd>
+        /// <dt>COMMIT_MESSAGE</dt>
+        /// <dd>
+        /// <p>A webhook triggers a build when the head commit message matches the
+        /// regular expression <code>pattern</code>.</p>
+        /// <note>
+        /// <p> Works with GitHub and Bitbucket events push and pull requests events.
+        /// Also works with GitHub Enterprise push events, but does not work with
+        /// GitHub Enterprise pull request events. </p>
+        /// </note>
+        /// </dd>
+        /// </dl>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::WebhookFilterType>,
@@ -437,6 +548,15 @@ pub mod webhook_filter {
             self.pattern = Some(input.into());
             self
         }
+        /// <p> For a <code>WebHookFilter</code> that uses <code>EVENT</code> type, a comma-separated
+        /// string that specifies one or more events. For example, the webhook filter <code>PUSH,
+        /// PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED</code> allows all push, pull request
+        /// created, and pull request updated events to trigger a build. </p>
+        /// <p> For a <code>WebHookFilter</code> that uses any of the other filter types, a regular
+        /// expression pattern. For example, a <code>WebHookFilter</code> that uses
+        /// <code>HEAD_REF</code> for its <code>type</code> and the pattern
+        /// <code>^refs/heads/</code> triggers a build when the head reference is a branch with
+        /// a reference name <code>refs/heads/branch-name</code>. </p>
         pub fn set_pattern(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.pattern = input;
             self
@@ -449,6 +569,10 @@ pub mod webhook_filter {
             self.exclude_matched_pattern = Some(input);
             self
         }
+        /// <p> Used to indicate that the <code>pattern</code> determines which webhook events do not
+        /// trigger a build. If true, then a webhook event that does not match the
+        /// <code>pattern</code> triggers a build. If false, then a webhook event that matches
+        /// the <code>pattern</code> triggers a build. </p>
         pub fn set_exclude_matched_pattern(mut self, input: std::option::Option<bool>) -> Self {
             self.exclude_matched_pattern = input;
             self
@@ -470,6 +594,7 @@ impl WebhookFilter {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -481,11 +606,17 @@ impl WebhookFilter {
     std::hash::Hash,
 )]
 pub enum WebhookFilterType {
+    #[allow(missing_docs)] // documentation missing in model
     ActorAccountId,
+    #[allow(missing_docs)] // documentation missing in model
     BaseRef,
+    #[allow(missing_docs)] // documentation missing in model
     CommitMessage,
+    #[allow(missing_docs)] // documentation missing in model
     Event,
+    #[allow(missing_docs)] // documentation missing in model
     FilePath,
+    #[allow(missing_docs)] // documentation missing in model
     HeadRef,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -511,6 +642,7 @@ impl std::str::FromStr for WebhookFilterType {
     }
 }
 impl WebhookFilterType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             WebhookFilterType::ActorAccountId => "ACTOR_ACCOUNT_ID",
@@ -522,6 +654,7 @@ impl WebhookFilterType {
             WebhookFilterType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ACTOR_ACCOUNT_ID",
@@ -568,9 +701,9 @@ pub struct ReportGroup {
     /// is exported. </p>
     pub export_config: std::option::Option<crate::model::ReportExportConfig>,
     /// <p>The date and time this <code>ReportGroup</code> was created. </p>
-    pub created: std::option::Option<smithy_types::Instant>,
+    pub created: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time this <code>ReportGroup</code> was last modified. </p>
-    pub last_modified: std::option::Option<smithy_types::Instant>,
+    pub last_modified: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A list of tag key and value pairs associated with this report group. </p>
     /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild report group
     /// tags.</p>
@@ -613,8 +746,8 @@ pub mod report_group {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::ReportType>,
         pub(crate) export_config: std::option::Option<crate::model::ReportExportConfig>,
-        pub(crate) created: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_modified: std::option::Option<smithy_types::Instant>,
+        pub(crate) created: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) status: std::option::Option<crate::model::ReportGroupStatusType>,
     }
@@ -625,6 +758,8 @@ pub mod report_group {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the <code>ReportGroup</code>.
+        /// </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -635,6 +770,8 @@ pub mod report_group {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the <code>ReportGroup</code>.
+        /// </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -655,6 +792,18 @@ pub mod report_group {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of the <code>ReportGroup</code>. This can be one of the following
+        /// values:</p>
+        /// <dl>
+        /// <dt>CODE_COVERAGE</dt>
+        /// <dd>
+        /// <p>The report group contains code coverage reports.</p>
+        /// </dd>
+        /// <dt>TEST</dt>
+        /// <dd>
+        /// <p>The report group contains test reports.</p>
+        /// </dd>
+        /// </dl>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ReportType>) -> Self {
             self.r#type = input;
             self
@@ -665,6 +814,8 @@ pub mod report_group {
             self.export_config = Some(input);
             self
         }
+        /// <p>Information about the destination where the raw data of this <code>ReportGroup</code>
+        /// is exported. </p>
         pub fn set_export_config(
             mut self,
             input: std::option::Option<crate::model::ReportExportConfig>,
@@ -673,32 +824,47 @@ pub mod report_group {
             self
         }
         /// <p>The date and time this <code>ReportGroup</code> was created. </p>
-        pub fn created(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created = Some(input);
             self
         }
-        pub fn set_created(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date and time this <code>ReportGroup</code> was created. </p>
+        pub fn set_created(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created = input;
             self
         }
         /// <p>The date and time this <code>ReportGroup</code> was last modified. </p>
-        pub fn last_modified(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_modified(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_modified = Some(input);
             self
         }
+        /// <p>The date and time this <code>ReportGroup</code> was last modified. </p>
         pub fn set_last_modified(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_modified = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of tag key and value pairs associated with this report group. </p>
+        /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild report group
+        /// tags.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>A list of tag key and value pairs associated with this report group. </p>
+        /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild report group
+        /// tags.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -722,6 +888,18 @@ pub mod report_group {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the report group. This property is read-only.</p>
+        /// <p>This can be one of the following values:</p>
+        /// <dl>
+        /// <dt>ACTIVE</dt>
+        /// <dd>
+        /// <p>The report group is active.</p>
+        /// </dd>
+        /// <dt>DELETING</dt>
+        /// <dd>
+        /// <p>The report group is in the process of being deleted.</p>
+        /// </dd>
+        /// </dl>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ReportGroupStatusType>,
@@ -751,6 +929,7 @@ impl ReportGroup {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -762,7 +941,9 @@ impl ReportGroup {
     std::hash::Hash,
 )]
 pub enum ReportGroupStatusType {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -784,6 +965,7 @@ impl std::str::FromStr for ReportGroupStatusType {
     }
 }
 impl ReportGroupStatusType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ReportGroupStatusType::Active => "ACTIVE",
@@ -791,6 +973,7 @@ impl ReportGroupStatusType {
             ReportGroupStatusType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ACTIVE", "DELETING"]
     }
@@ -834,6 +1017,7 @@ pub mod tag {
             self.key = Some(input.into());
             self
         }
+        /// <p>The tag's key.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -843,6 +1027,7 @@ pub mod tag {
             self.value = Some(input.into());
             self
         }
+        /// <p>The tag's value.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -916,6 +1101,17 @@ pub mod report_export_config {
             self.export_config_type = Some(input);
             self
         }
+        /// <p> The export configuration type. Valid values are: </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>S3</code>: The report results are exported to an S3 bucket. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NO_EXPORT</code>: The report results are not exported. </p>
+        /// </li>
+        /// </ul>
         pub fn set_export_config_type(
             mut self,
             input: std::option::Option<crate::model::ReportExportConfigType>,
@@ -929,6 +1125,8 @@ pub mod report_export_config {
             self.s3_destination = Some(input);
             self
         }
+        /// <p> A <code>S3ReportExportConfig</code> object that contains information about the S3
+        /// bucket where the run of a report is exported. </p>
         pub fn set_s3_destination(
             mut self,
             input: std::option::Option<crate::model::S3ReportExportConfig>,
@@ -1013,6 +1211,7 @@ pub mod s3_report_export_config {
             self.bucket = Some(input.into());
             self
         }
+        /// <p> The name of the S3 bucket where the raw data of a report are exported. </p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -1023,6 +1222,8 @@ pub mod s3_report_export_config {
             self.bucket_owner = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services account identifier of the owner of the Amazon S3 bucket. This allows report data to be exported to an Amazon S3 bucket
+        /// that is owned by an account other than the account running the build.</p>
         pub fn set_bucket_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket_owner = input;
             self
@@ -1032,6 +1233,7 @@ pub mod s3_report_export_config {
             self.path = Some(input.into());
             self
         }
+        /// <p> The path to the exported report's raw data results. </p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.path = input;
             self
@@ -1053,6 +1255,19 @@ pub mod s3_report_export_config {
             self.packaging = Some(input);
             self
         }
+        /// <p> The type of build output artifact to create. Valid values include: </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>NONE</code>: CodeBuild creates the raw data in the output bucket. This
+        /// is the default if packaging is not specified. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ZIP</code>: CodeBuild creates a ZIP file with the raw data in the
+        /// output bucket. </p>
+        /// </li>
+        /// </ul>
         pub fn set_packaging(
             mut self,
             input: std::option::Option<crate::model::ReportPackagingType>,
@@ -1065,6 +1280,7 @@ pub mod s3_report_export_config {
             self.encryption_key = Some(input.into());
             self
         }
+        /// <p> The encryption key for the report's encrypted raw data. </p>
         pub fn set_encryption_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1077,6 +1293,7 @@ pub mod s3_report_export_config {
             self.encryption_disabled = Some(input);
             self
         }
+        /// <p> A boolean value that specifies if the results of a report are encrypted. </p>
         pub fn set_encryption_disabled(mut self, input: std::option::Option<bool>) -> Self {
             self.encryption_disabled = input;
             self
@@ -1101,6 +1318,7 @@ impl S3ReportExportConfig {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1112,7 +1330,9 @@ impl S3ReportExportConfig {
     std::hash::Hash,
 )]
 pub enum ReportPackagingType {
+    #[allow(missing_docs)] // documentation missing in model
     None,
+    #[allow(missing_docs)] // documentation missing in model
     Zip,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1134,6 +1354,7 @@ impl std::str::FromStr for ReportPackagingType {
     }
 }
 impl ReportPackagingType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ReportPackagingType::None => "NONE",
@@ -1141,6 +1362,7 @@ impl ReportPackagingType {
             ReportPackagingType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["NONE", "ZIP"]
     }
@@ -1151,6 +1373,7 @@ impl AsRef<str> for ReportPackagingType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1162,7 +1385,9 @@ impl AsRef<str> for ReportPackagingType {
     std::hash::Hash,
 )]
 pub enum ReportExportConfigType {
+    #[allow(missing_docs)] // documentation missing in model
     NoExport,
+    #[allow(missing_docs)] // documentation missing in model
     S3,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1184,6 +1409,7 @@ impl std::str::FromStr for ReportExportConfigType {
     }
 }
 impl ReportExportConfigType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ReportExportConfigType::NoExport => "NO_EXPORT",
@@ -1191,6 +1417,7 @@ impl ReportExportConfigType {
             ReportExportConfigType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["NO_EXPORT", "S3"]
     }
@@ -1201,6 +1428,7 @@ impl AsRef<str> for ReportExportConfigType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1212,7 +1440,9 @@ impl AsRef<str> for ReportExportConfigType {
     std::hash::Hash,
 )]
 pub enum ReportType {
+    #[allow(missing_docs)] // documentation missing in model
     CodeCoverage,
+    #[allow(missing_docs)] // documentation missing in model
     Test,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1234,6 +1464,7 @@ impl std::str::FromStr for ReportType {
     }
 }
 impl ReportType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ReportType::CodeCoverage => "CODE_COVERAGE",
@@ -1241,6 +1472,7 @@ impl ReportType {
             ReportType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CODE_COVERAGE", "TEST"]
     }
@@ -1252,6 +1484,7 @@ impl AsRef<str> for ReportType {
 }
 
 /// <p>Specifies the visibility of the project's builds. Possible values are:</p>
+///
 /// <dl>
 /// <dt>PUBLIC_READ</dt>
 /// <dd>
@@ -1273,7 +1506,9 @@ impl AsRef<str> for ReportType {
     std::hash::Hash,
 )]
 pub enum ProjectVisibilityType {
+    #[allow(missing_docs)] // documentation missing in model
     Private,
+    #[allow(missing_docs)] // documentation missing in model
     PublicRead,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1295,6 +1530,7 @@ impl std::str::FromStr for ProjectVisibilityType {
     }
 }
 impl ProjectVisibilityType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ProjectVisibilityType::Private => "PRIVATE",
@@ -1302,6 +1538,7 @@ impl ProjectVisibilityType {
             ProjectVisibilityType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["PRIVATE", "PUBLIC_READ"]
     }
@@ -1394,10 +1631,10 @@ pub struct Project {
     /// tags.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>When the build project was created, expressed in Unix time format.</p>
-    pub created: std::option::Option<smithy_types::Instant>,
+    pub created: std::option::Option<aws_smithy_types::Instant>,
     /// <p>When the build project's settings were last modified, expressed in Unix time
     /// format.</p>
-    pub last_modified: std::option::Option<smithy_types::Instant>,
+    pub last_modified: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Information about a webhook that connects repository events to a build project in
     /// CodeBuild.</p>
     pub webhook: std::option::Option<crate::model::Webhook>,
@@ -1424,6 +1661,7 @@ pub struct Project {
     /// If the current build count meets this limit, new builds are throttled and are not run.</p>
     pub concurrent_build_limit: std::option::Option<i32>,
     /// <p>Specifies the visibility of the project's builds. Possible values are:</p>
+    ///
     /// <dl>
     /// <dt>PUBLIC_READ</dt>
     /// <dd>
@@ -1500,8 +1738,8 @@ pub mod project {
         pub(crate) queued_timeout_in_minutes: std::option::Option<i32>,
         pub(crate) encryption_key: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-        pub(crate) created: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_modified: std::option::Option<smithy_types::Instant>,
+        pub(crate) created: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) webhook: std::option::Option<crate::model::Webhook>,
         pub(crate) vpc_config: std::option::Option<crate::model::VpcConfig>,
         pub(crate) badge: std::option::Option<crate::model::ProjectBadge>,
@@ -1520,6 +1758,7 @@ pub mod project {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the build project.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1529,6 +1768,7 @@ pub mod project {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the build project.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -1538,6 +1778,7 @@ pub mod project {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description that makes the build project easy to identify.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -1547,6 +1788,7 @@ pub mod project {
             self.source = Some(input);
             self
         }
+        /// <p>Information about the build input source code for this build project.</p>
         pub fn set_source(
             mut self,
             input: std::option::Option<crate::model::ProjectSource>,
@@ -1554,12 +1796,18 @@ pub mod project {
             self.source = input;
             self
         }
+        /// Appends an item to `secondary_sources`.
+        ///
+        /// To override the contents of this collection use [`set_secondary_sources`](Self::set_secondary_sources).
+        ///
+        /// <p>An array of <code>ProjectSource</code> objects. </p>
         pub fn secondary_sources(mut self, input: impl Into<crate::model::ProjectSource>) -> Self {
             let mut v = self.secondary_sources.unwrap_or_default();
             v.push(input.into());
             self.secondary_sources = Some(v);
             self
         }
+        /// <p>An array of <code>ProjectSource</code> objects. </p>
         pub fn set_secondary_sources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ProjectSource>>,
@@ -1601,6 +1849,36 @@ pub mod project {
             self.source_version = Some(input.into());
             self
         }
+        /// <p>A version of the build input to be built for this project. If not specified, the
+        /// latest version is used. If specified, it must be one of:</p>
+        /// <ul>
+        /// <li>
+        /// <p>For CodeCommit: the commit ID, branch, or Git tag to use.</p>
+        /// </li>
+        /// <li>
+        /// <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that
+        /// corresponds to the version of the source code you want to build. If a pull
+        /// request ID is specified, it must use the format <code>pr/pull-request-ID</code>
+        /// (for example <code>pr/25</code>). If a branch name is specified, the branch's
+        /// HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is
+        /// used.</p>
+        /// </li>
+        /// <li>
+        /// <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the
+        /// version of the source code you want to build. If a branch name is specified, the
+        /// branch's HEAD commit ID is used. If not specified, the default branch's HEAD
+        /// commit ID is used.</p>
+        /// </li>
+        /// <li>
+        /// <p>For Amazon S3: the version ID of the object that represents the build input ZIP
+        /// file to use.</p>
+        /// </li>
+        /// </ul>
+        /// <p>If <code>sourceVersion</code> is specified at the build level, then that version
+        /// takes precedence over this <code>sourceVersion</code> (at the project level). </p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample
+        /// with CodeBuild</a> in the <i>CodeBuild User Guide</i>.
+        /// </p>
         pub fn set_source_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1608,6 +1886,13 @@ pub mod project {
             self.source_version = input;
             self
         }
+        /// Appends an item to `secondary_source_versions`.
+        ///
+        /// To override the contents of this collection use [`set_secondary_source_versions`](Self::set_secondary_source_versions).
+        ///
+        /// <p>An array of <code>ProjectSourceVersion</code> objects. If
+        /// <code>secondarySourceVersions</code> is specified at the build level, then they take
+        /// over these <code>secondarySourceVersions</code> (at the project level). </p>
         pub fn secondary_source_versions(
             mut self,
             input: impl Into<crate::model::ProjectSourceVersion>,
@@ -1617,6 +1902,9 @@ pub mod project {
             self.secondary_source_versions = Some(v);
             self
         }
+        /// <p>An array of <code>ProjectSourceVersion</code> objects. If
+        /// <code>secondarySourceVersions</code> is specified at the build level, then they take
+        /// over these <code>secondarySourceVersions</code> (at the project level). </p>
         pub fn set_secondary_source_versions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ProjectSourceVersion>>,
@@ -1629,6 +1917,7 @@ pub mod project {
             self.artifacts = Some(input);
             self
         }
+        /// <p>Information about the build output artifacts for the build project.</p>
         pub fn set_artifacts(
             mut self,
             input: std::option::Option<crate::model::ProjectArtifacts>,
@@ -1636,6 +1925,11 @@ pub mod project {
             self.artifacts = input;
             self
         }
+        /// Appends an item to `secondary_artifacts`.
+        ///
+        /// To override the contents of this collection use [`set_secondary_artifacts`](Self::set_secondary_artifacts).
+        ///
+        /// <p>An array of <code>ProjectArtifacts</code> objects. </p>
         pub fn secondary_artifacts(
             mut self,
             input: impl Into<crate::model::ProjectArtifacts>,
@@ -1645,6 +1939,7 @@ pub mod project {
             self.secondary_artifacts = Some(v);
             self
         }
+        /// <p>An array of <code>ProjectArtifacts</code> objects. </p>
         pub fn set_secondary_artifacts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ProjectArtifacts>>,
@@ -1657,6 +1952,7 @@ pub mod project {
             self.cache = Some(input);
             self
         }
+        /// <p>Information about the cache for the build project.</p>
         pub fn set_cache(mut self, input: std::option::Option<crate::model::ProjectCache>) -> Self {
             self.cache = input;
             self
@@ -1666,6 +1962,7 @@ pub mod project {
             self.environment = Some(input);
             self
         }
+        /// <p>Information about the build environment for this build project.</p>
         pub fn set_environment(
             mut self,
             input: std::option::Option<crate::model::ProjectEnvironment>,
@@ -1679,6 +1976,8 @@ pub mod project {
             self.service_role = Some(input.into());
             self
         }
+        /// <p>The ARN of the IAM role that enables CodeBuild to interact with dependent Amazon Web Services services
+        /// on behalf of the Amazon Web Services account.</p>
         pub fn set_service_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service_role = input;
             self
@@ -1689,6 +1988,8 @@ pub mod project {
             self.timeout_in_minutes = Some(input);
             self
         }
+        /// <p>How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before timing out any
+        /// related build that did not get marked as completed. The default is 60 minutes.</p>
         pub fn set_timeout_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.timeout_in_minutes = input;
             self
@@ -1698,6 +1999,7 @@ pub mod project {
             self.queued_timeout_in_minutes = Some(input);
             self
         }
+        /// <p>The number of minutes a build is allowed to be queued before it times out. </p>
         pub fn set_queued_timeout_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.queued_timeout_in_minutes = input;
             self
@@ -1716,6 +2018,16 @@ pub mod project {
             self.encryption_key = Some(input.into());
             self
         }
+        /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the build output
+        /// artifacts.</p>
+        /// <note>
+        /// <p>You can use a cross-account KMS key to encrypt the build output artifacts if your
+        /// service role has permission to that key. </p>
+        /// </note>
+        /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using
+        /// the format <code>alias/<alias-name></code>). If you don't specify a
+        /// value, CodeBuild uses the managed CMK for Amazon Simple Storage Service (Amazon S3).
+        /// </p>
         pub fn set_encryption_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1723,12 +2035,22 @@ pub mod project {
             self.encryption_key = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of tag key and value pairs associated with this build project.</p>
+        /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild build project
+        /// tags.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>A list of tag key and value pairs associated with this build project.</p>
+        /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild build project
+        /// tags.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1737,23 +2059,29 @@ pub mod project {
             self
         }
         /// <p>When the build project was created, expressed in Unix time format.</p>
-        pub fn created(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created = Some(input);
             self
         }
-        pub fn set_created(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>When the build project was created, expressed in Unix time format.</p>
+        pub fn set_created(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created = input;
             self
         }
         /// <p>When the build project's settings were last modified, expressed in Unix time
         /// format.</p>
-        pub fn last_modified(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_modified(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_modified = Some(input);
             self
         }
+        /// <p>When the build project's settings were last modified, expressed in Unix time
+        /// format.</p>
         pub fn set_last_modified(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_modified = input;
             self
@@ -1764,6 +2092,8 @@ pub mod project {
             self.webhook = Some(input);
             self
         }
+        /// <p>Information about a webhook that connects repository events to a build project in
+        /// CodeBuild.</p>
         pub fn set_webhook(mut self, input: std::option::Option<crate::model::Webhook>) -> Self {
             self.webhook = input;
             self
@@ -1773,6 +2103,7 @@ pub mod project {
             self.vpc_config = Some(input);
             self
         }
+        /// <p>Information about the VPC configuration that CodeBuild accesses.</p>
         pub fn set_vpc_config(
             mut self,
             input: std::option::Option<crate::model::VpcConfig>,
@@ -1785,6 +2116,7 @@ pub mod project {
             self.badge = Some(input);
             self
         }
+        /// <p>Information about the build badge for the build project.</p>
         pub fn set_badge(mut self, input: std::option::Option<crate::model::ProjectBadge>) -> Self {
             self.badge = input;
             self
@@ -1795,6 +2127,8 @@ pub mod project {
             self.logs_config = Some(input);
             self
         }
+        /// <p>Information about logs for the build project. A project can create logs in CloudWatch Logs, an
+        /// S3 bucket, or both. </p>
         pub fn set_logs_config(
             mut self,
             input: std::option::Option<crate::model::LogsConfig>,
@@ -1802,6 +2136,15 @@ pub mod project {
             self.logs_config = input;
             self
         }
+        /// Appends an item to `file_system_locations`.
+        ///
+        /// To override the contents of this collection use [`set_file_system_locations`](Self::set_file_system_locations).
+        ///
+        /// <p>
+        /// An array of <code>ProjectFileSystemLocation</code> objects for a CodeBuild build project. A <code>ProjectFileSystemLocation</code> object
+        /// specifies the <code>identifier</code>, <code>location</code>, <code>mountOptions</code>,
+        /// <code>mountPoint</code>, and <code>type</code> of a file system created using Amazon Elastic File System.
+        /// </p>
         pub fn file_system_locations(
             mut self,
             input: impl Into<crate::model::ProjectFileSystemLocation>,
@@ -1811,6 +2154,11 @@ pub mod project {
             self.file_system_locations = Some(v);
             self
         }
+        /// <p>
+        /// An array of <code>ProjectFileSystemLocation</code> objects for a CodeBuild build project. A <code>ProjectFileSystemLocation</code> object
+        /// specifies the <code>identifier</code>, <code>location</code>, <code>mountOptions</code>,
+        /// <code>mountPoint</code>, and <code>type</code> of a file system created using Amazon Elastic File System.
+        /// </p>
         pub fn set_file_system_locations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ProjectFileSystemLocation>>,
@@ -1825,6 +2173,9 @@ pub mod project {
             self.build_batch_config = Some(input);
             self
         }
+        /// <p>A <a>ProjectBuildBatchConfig</a>
+        /// object that defines the batch build
+        /// options for the project.</p>
         pub fn set_build_batch_config(
             mut self,
             input: std::option::Option<crate::model::ProjectBuildBatchConfig>,
@@ -1839,11 +2190,15 @@ pub mod project {
             self.concurrent_build_limit = Some(input);
             self
         }
+        /// <p>The maximum number of concurrent builds that are allowed for this project.</p>
+        /// <p>New builds are only started if the current number of builds is less than or equal to this limit.
+        /// If the current build count meets this limit, new builds are throttled and are not run.</p>
         pub fn set_concurrent_build_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.concurrent_build_limit = input;
             self
         }
         /// <p>Specifies the visibility of the project's builds. Possible values are:</p>
+        ///
         /// <dl>
         /// <dt>PUBLIC_READ</dt>
         /// <dd>
@@ -1858,6 +2213,18 @@ pub mod project {
             self.project_visibility = Some(input);
             self
         }
+        /// <p>Specifies the visibility of the project's builds. Possible values are:</p>
+        ///
+        /// <dl>
+        /// <dt>PUBLIC_READ</dt>
+        /// <dd>
+        /// <p>The project builds are visible to the public.</p>
+        /// </dd>
+        /// <dt>PRIVATE</dt>
+        /// <dd>
+        /// <p>The project builds are not visible to the public.</p>
+        /// </dd>
+        /// </dl>
         pub fn set_project_visibility(
             mut self,
             input: std::option::Option<crate::model::ProjectVisibilityType>,
@@ -1870,6 +2237,7 @@ pub mod project {
             self.public_project_alias = Some(input.into());
             self
         }
+        /// <p>Contains the project identifier used with the public build APIs. </p>
         pub fn set_public_project_alias(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1883,6 +2251,8 @@ pub mod project {
             self.resource_access_role = Some(input.into());
             self
         }
+        /// <p>The ARN of the IAM role that enables CodeBuild to access the CloudWatch Logs and Amazon S3 artifacts for
+        /// the project's builds.</p>
         pub fn set_resource_access_role(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1990,6 +2360,7 @@ pub mod project_build_batch_config {
             self.service_role = Some(input.into());
             self
         }
+        /// <p>Specifies the service role ARN for the batch build project.</p>
         pub fn set_service_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service_role = input;
             self
@@ -2000,6 +2371,8 @@ pub mod project_build_batch_config {
             self.combine_artifacts = Some(input);
             self
         }
+        /// <p>Specifies if the build artifacts for the batch build should be combined into a single
+        /// artifact location.</p>
         pub fn set_combine_artifacts(mut self, input: std::option::Option<bool>) -> Self {
             self.combine_artifacts = input;
             self
@@ -2010,6 +2383,8 @@ pub mod project_build_batch_config {
             self.restrictions = Some(input);
             self
         }
+        /// <p>A <code>BatchRestrictions</code> object that specifies the restrictions for the batch
+        /// build.</p>
         pub fn set_restrictions(
             mut self,
             input: std::option::Option<crate::model::BatchRestrictions>,
@@ -2022,6 +2397,7 @@ pub mod project_build_batch_config {
             self.timeout_in_mins = Some(input);
             self
         }
+        /// <p>Specifies the maximum amount of time, in minutes, that the batch build must be completed in.</p>
         pub fn set_timeout_in_mins(mut self, input: std::option::Option<i32>) -> Self {
             self.timeout_in_mins = input;
             self
@@ -2043,6 +2419,19 @@ pub mod project_build_batch_config {
             self.batch_report_mode = Some(input);
             self
         }
+        /// <p>Specifies how build status reports are sent to the source provider for the batch build. This property is only used
+        /// when the source provider for your project is Bitbucket, GitHub, or GitHub Enterprise,
+        /// and your project is configured to report build statuses to the source provider.</p>
+        /// <dl>
+        /// <dt>REPORT_AGGREGATED_BATCH</dt>
+        /// <dd>
+        /// <p>(Default) Aggregate all of the build statuses into a single status report.</p>
+        /// </dd>
+        /// <dt>REPORT_INDIVIDUAL_BUILDS</dt>
+        /// <dd>
+        /// <p>Send a separate status report for each individual build.</p>
+        /// </dd>
+        /// </dl>
         pub fn set_batch_report_mode(
             mut self,
             input: std::option::Option<crate::model::BatchReportModeType>,
@@ -2069,6 +2458,7 @@ impl ProjectBuildBatchConfig {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2080,7 +2470,9 @@ impl ProjectBuildBatchConfig {
     std::hash::Hash,
 )]
 pub enum BatchReportModeType {
+    #[allow(missing_docs)] // documentation missing in model
     ReportAggregatedBatch,
+    #[allow(missing_docs)] // documentation missing in model
     ReportIndividualBuilds,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2102,6 +2494,7 @@ impl std::str::FromStr for BatchReportModeType {
     }
 }
 impl BatchReportModeType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             BatchReportModeType::ReportAggregatedBatch => "REPORT_AGGREGATED_BATCH",
@@ -2109,6 +2502,7 @@ impl BatchReportModeType {
             BatchReportModeType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["REPORT_AGGREGATED_BATCH", "REPORT_INDIVIDUAL_BUILDS"]
     }
@@ -2154,16 +2548,29 @@ pub mod batch_restrictions {
             self.maximum_builds_allowed = Some(input);
             self
         }
+        /// <p>Specifies the maximum number of builds allowed.</p>
         pub fn set_maximum_builds_allowed(mut self, input: std::option::Option<i32>) -> Self {
             self.maximum_builds_allowed = input;
             self
         }
+        /// Appends an item to `compute_types_allowed`.
+        ///
+        /// To override the contents of this collection use [`set_compute_types_allowed`](Self::set_compute_types_allowed).
+        ///
+        /// <p>An array of strings that specify the compute types that are allowed for the batch
+        /// build. See <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build environment
+        /// compute types</a> in the <i>CodeBuild User Guide</i> for these values.
+        /// </p>
         pub fn compute_types_allowed(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.compute_types_allowed.unwrap_or_default();
             v.push(input.into());
             self.compute_types_allowed = Some(v);
             self
         }
+        /// <p>An array of strings that specify the compute types that are allowed for the batch
+        /// build. See <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build environment
+        /// compute types</a> in the <i>CodeBuild User Guide</i> for these values.
+        /// </p>
         pub fn set_compute_types_allowed(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2252,6 +2659,7 @@ pub mod project_file_system_location {
             self.r#type = Some(input);
             self
         }
+        /// <p> The type of the file system. The one supported type is <code>EFS</code>. </p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::FileSystemType>,
@@ -2273,6 +2681,16 @@ pub mod project_file_system_location {
             self.location = Some(input.into());
             self
         }
+        /// <p>A string that specifies the location of the file system created by Amazon EFS. Its
+        /// format is <code>efs-dns-name:/directory-path</code>. You can find the DNS name of file
+        /// system when you view it in the Amazon EFS console. The directory path is a path to a
+        /// directory in the file system that CodeBuild mounts. For example, if the DNS name of a
+        /// file system is <code>fs-abcd1234.efs.us-west-2.amazonaws.com</code>, and its mount
+        /// directory is <code>my-efs-mount-directory</code>, then the <code>location</code> is
+        /// <code>fs-abcd1234.efs.us-west-2.amazonaws.com:/my-efs-mount-directory</code>. </p>
+        /// <p>The directory path in the format <code>efs-dns-name:/directory-path</code> is
+        /// optional. If you do not specify a directory path, the location is only the DNS name and
+        /// CodeBuild mounts the entire file system. </p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -2282,6 +2700,7 @@ pub mod project_file_system_location {
             self.mount_point = Some(input.into());
             self
         }
+        /// <p>The location in the container where you mount the file system. </p>
         pub fn set_mount_point(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.mount_point = input;
             self
@@ -2296,6 +2715,12 @@ pub mod project_file_system_location {
             self.identifier = Some(input.into());
             self
         }
+        /// <p>The name used to access a file system created by Amazon EFS. CodeBuild creates an
+        /// environment variable by appending the <code>identifier</code> in all capital letters to
+        /// <code>CODEBUILD_</code>. For example, if you specify <code>my_efs</code> for
+        /// <code>identifier</code>, a new environment variable is create named
+        /// <code>CODEBUILD_MY_EFS</code>. </p>
+        /// <p> The <code>identifier</code> is used to mount your file system. </p>
         pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identifier = input;
             self
@@ -2309,6 +2734,11 @@ pub mod project_file_system_location {
             self.mount_options = Some(input.into());
             self
         }
+        /// <p> The mount options for a file system created by Amazon EFS. The default mount options
+        /// used by CodeBuild are
+        /// <code>nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2</code>. For
+        /// more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/mounting-fs-nfs-mount-settings.html">Recommended NFS Mount
+        /// Options</a>. </p>
         pub fn set_mount_options(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2335,6 +2765,7 @@ impl ProjectFileSystemLocation {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2346,6 +2777,7 @@ impl ProjectFileSystemLocation {
     std::hash::Hash,
 )]
 pub enum FileSystemType {
+    #[allow(missing_docs)] // documentation missing in model
     Efs,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2366,12 +2798,14 @@ impl std::str::FromStr for FileSystemType {
     }
 }
 impl FileSystemType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FileSystemType::Efs => "EFS",
             FileSystemType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["EFS"]
     }
@@ -2416,6 +2850,7 @@ pub mod logs_config {
             self.cloud_watch_logs = Some(input);
             self
         }
+        /// <p> Information about CloudWatch Logs for a build project. CloudWatch Logs are enabled by default. </p>
         pub fn set_cloud_watch_logs(
             mut self,
             input: std::option::Option<crate::model::CloudWatchLogsConfig>,
@@ -2429,6 +2864,8 @@ pub mod logs_config {
             self.s3_logs = Some(input);
             self
         }
+        /// <p> Information about logs built to an S3 bucket for a build project. S3 logs are not
+        /// enabled by default. </p>
         pub fn set_s3_logs(
             mut self,
             input: std::option::Option<crate::model::S3LogsConfig>,
@@ -2559,6 +2996,18 @@ pub mod s3_logs_config {
             self.status = Some(input);
             self
         }
+        /// <p>The current status of the S3 build logs. Valid values are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ENABLED</code>: S3 build logs are enabled for this build project.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DISABLED</code>: S3 build logs are not enabled for this build
+        /// project.</p>
+        /// </li>
+        /// </ul>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::LogsConfigStatusType>,
@@ -2574,6 +3023,10 @@ pub mod s3_logs_config {
             self.location = Some(input.into());
             self
         }
+        /// <p> The ARN of an S3 bucket and the path prefix for S3 logs. If your Amazon S3 bucket
+        /// name is <code>my-bucket</code>, and your path prefix is <code>build-log</code>, then
+        /// acceptable formats are <code>my-bucket/build-log</code> or
+        /// <code>arn:aws:s3:::my-bucket/build-log</code>. </p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -2584,6 +3037,8 @@ pub mod s3_logs_config {
             self.encryption_disabled = Some(input);
             self
         }
+        /// <p> Set to true if you do not want your S3 build log output encrypted. By default S3
+        /// build logs are encrypted. </p>
         pub fn set_encryption_disabled(mut self, input: std::option::Option<bool>) -> Self {
             self.encryption_disabled = input;
             self
@@ -2634,6 +3089,48 @@ pub mod s3_logs_config {
             self.bucket_owner_access = Some(input);
             self
         }
+        /// <p>Specifies the bucket owner's access for objects that another account uploads to their
+        /// Amazon S3 bucket. By default, only the account that uploads the objects to the bucket has
+        /// access to these objects. This property allows you to give the bucket owner access to
+        /// these objects.</p>
+        /// <note>
+        /// <p>To use this property, your CodeBuild service role must have the
+        /// <code>s3:PutBucketAcl</code> permission. This permission allows CodeBuild to modify
+        /// the access control list for the bucket.</p>
+        /// </note>
+        /// <p>This property can be one of the following values:</p>
+        /// <dl>
+        /// <dt>NONE</dt>
+        /// <dd>
+        /// <p>The bucket owner does not have access to the objects. This is the
+        /// default.</p>
+        /// </dd>
+        /// <dt>READ_ONLY</dt>
+        /// <dd>
+        /// <p>The bucket owner has read-only access to the objects. The uploading account
+        /// retains ownership of the objects.</p>
+        /// </dd>
+        /// <dt>FULL</dt>
+        /// <dd>
+        /// <p>The bucket owner has full access to the objects. Object ownership is determined
+        /// by the following criteria:</p>
+        /// <ul>
+        /// <li>
+        /// <p>If the bucket is configured with the <b>Bucket
+        /// owner preferred</b> setting, the bucket owner owns the
+        /// objects. The uploading account will have object access as specified
+        /// by the bucket's policy.</p>
+        /// </li>
+        /// <li>
+        /// <p>Otherwise, the uploading account retains ownership of the
+        /// objects.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information about Amazon S3 object ownership, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling ownership of uploaded objects using S3
+        /// Object Ownership</a> in the <i>Amazon Simple Storage Service User
+        /// Guide</i>.</p>
+        /// </dd>
+        /// </dl>
         pub fn set_bucket_owner_access(
             mut self,
             input: std::option::Option<crate::model::BucketOwnerAccess>,
@@ -2712,8 +3209,11 @@ impl S3LogsConfig {
     std::hash::Hash,
 )]
 pub enum BucketOwnerAccess {
+    #[allow(missing_docs)] // documentation missing in model
     Full,
+    #[allow(missing_docs)] // documentation missing in model
     None,
+    #[allow(missing_docs)] // documentation missing in model
     ReadOnly,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2736,6 +3236,7 @@ impl std::str::FromStr for BucketOwnerAccess {
     }
 }
 impl BucketOwnerAccess {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             BucketOwnerAccess::Full => "FULL",
@@ -2744,6 +3245,7 @@ impl BucketOwnerAccess {
             BucketOwnerAccess::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FULL", "NONE", "READ_ONLY"]
     }
@@ -2754,6 +3256,7 @@ impl AsRef<str> for BucketOwnerAccess {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2765,7 +3268,9 @@ impl AsRef<str> for BucketOwnerAccess {
     std::hash::Hash,
 )]
 pub enum LogsConfigStatusType {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2787,6 +3292,7 @@ impl std::str::FromStr for LogsConfigStatusType {
     }
 }
 impl LogsConfigStatusType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LogsConfigStatusType::Disabled => "DISABLED",
@@ -2794,6 +3300,7 @@ impl LogsConfigStatusType {
             LogsConfigStatusType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -2862,6 +3369,17 @@ pub mod cloud_watch_logs_config {
             self.status = Some(input);
             self
         }
+        /// <p>The current status of the logs in CloudWatch Logs for a build project. Valid values are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ENABLED</code>: CloudWatch Logs are enabled for this build project.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DISABLED</code>: CloudWatch Logs are not enabled for this build project.</p>
+        /// </li>
+        /// </ul>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::LogsConfigStatusType>,
@@ -2875,6 +3393,8 @@ pub mod cloud_watch_logs_config {
             self.group_name = Some(input.into());
             self
         }
+        /// <p> The group name of the logs in CloudWatch Logs. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working
+        /// with Log Groups and Log Streams</a>. </p>
         pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.group_name = input;
             self
@@ -2885,6 +3405,8 @@ pub mod cloud_watch_logs_config {
             self.stream_name = Some(input.into());
             self
         }
+        /// <p> The prefix of the stream name of the CloudWatch Logs. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working
+        /// with Log Groups and Log Streams</a>. </p>
         pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_name = input;
             self
@@ -2941,6 +3463,8 @@ pub mod project_badge {
             self.badge_enabled = Some(input);
             self
         }
+        /// <p>Set this to true to generate a publicly accessible URL for your project's build
+        /// badge.</p>
         pub fn set_badge_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.badge_enabled = input;
             self
@@ -2951,6 +3475,8 @@ pub mod project_badge {
             self.badge_request_url = Some(input.into());
             self
         }
+        /// <p>The publicly-accessible URL through which you can access the build badge for your
+        /// project. </p>
         pub fn set_badge_request_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3010,16 +3536,23 @@ pub mod vpc_config {
             self.vpc_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Amazon VPC.</p>
         pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.vpc_id = input;
             self
         }
+        /// Appends an item to `subnets`.
+        ///
+        /// To override the contents of this collection use [`set_subnets`](Self::set_subnets).
+        ///
+        /// <p>A list of one or more subnet IDs in your Amazon VPC.</p>
         pub fn subnets(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnets.unwrap_or_default();
             v.push(input.into());
             self.subnets = Some(v);
             self
         }
+        /// <p>A list of one or more subnet IDs in your Amazon VPC.</p>
         pub fn set_subnets(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3027,12 +3560,18 @@ pub mod vpc_config {
             self.subnets = input;
             self
         }
+        /// Appends an item to `security_group_ids`.
+        ///
+        /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
+        ///
+        /// <p>A list of one or more security groups IDs in your Amazon VPC.</p>
         pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_ids.unwrap_or_default();
             v.push(input.into());
             self.security_group_ids = Some(v);
             self
         }
+        /// <p>A list of one or more security groups IDs in your Amazon VPC.</p>
         pub fn set_security_group_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3286,6 +3825,42 @@ pub mod project_environment {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of build environment to use for related builds.</p>
+        /// <ul>
+        /// <li>
+        /// <p>The environment type <code>ARM_CONTAINER</code> is available only in regions
+        /// US East (N. Virginia), US East (Ohio), US West (Oregon), EU (Ireland),
+        /// Asia Pacific (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Sydney), and
+        /// EU (Frankfurt).</p>
+        /// </li>
+        /// <li>
+        /// <p>The environment type <code>LINUX_CONTAINER</code> with compute type
+        /// <code>build.general1.2xlarge</code> is available only in regions
+        /// US East (N. Virginia), US East (Ohio), US West (Oregon),
+        /// Canada (Central), EU (Ireland), EU (London),
+        /// EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul),
+        /// Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and
+        /// China (Ningxia).</p>
+        /// </li>
+        /// <li>
+        /// <p>The environment type <code>LINUX_GPU_CONTAINER</code> is available only in
+        /// regions US East (N. Virginia), US East (Ohio), US West (Oregon),
+        /// Canada (Central), EU (Ireland), EU (London),
+        /// EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific (Seoul),
+        /// Asia Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing), and
+        /// China (Ningxia).</p>
+        /// </li>
+        /// </ul>
+        /// <ul>
+        /// <li>
+        /// <p>The environment types <code>WINDOWS_CONTAINER</code> and
+        /// <code>WINDOWS_SERVER_2019_CONTAINER</code> are available only in regions
+        /// US East (N. Virginia), US East (Ohio), US West (Oregon), and
+        /// EU (Ireland).</p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build environment compute types</a> in the <i>CodeBuild
+        /// user guide</i>.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::EnvironmentType>,
@@ -3314,6 +3889,23 @@ pub mod project_environment {
             self.image = Some(input.into());
             self
         }
+        /// <p>The image tag or image digest that identifies the Docker image to use for this build
+        /// project. Use the following formats:</p>
+        /// <ul>
+        /// <li>
+        /// <p>For an image tag: <code><registry>/<repository>:<tag></code>. For
+        /// example, in the Docker repository that CodeBuild uses to manage its Docker
+        /// images, this would be <code>aws/codebuild/standard:4.0</code>. </p>
+        /// </li>
+        /// <li>
+        /// <p>For an image digest: <code><registry>/<repository>@<digest></code>.
+        /// For example, to specify an image with the digest
+        /// "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use
+        /// <code><registry>/<repository>@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-available.html">Docker images provided by CodeBuild</a> in the <i>CodeBuild user
+        /// guide</i>.</p>
         pub fn set_image(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.image = input;
             self
@@ -3365,6 +3957,49 @@ pub mod project_environment {
             self.compute_type = Some(input);
             self
         }
+        /// <p>Information about the compute resources the build project uses. Available values
+        /// include:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>BUILD_GENERAL1_SMALL</code>: Use up to 3 GB memory and 2 vCPUs for
+        /// builds.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>BUILD_GENERAL1_MEDIUM</code>: Use up to 7 GB memory and 4 vCPUs for
+        /// builds.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>BUILD_GENERAL1_LARGE</code>: Use up to 16 GB memory and 8 vCPUs for
+        /// builds, depending on your environment type.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>BUILD_GENERAL1_2XLARGE</code>: Use up to 145 GB memory, 72 vCPUs, and
+        /// 824 GB of SSD storage for builds. This compute type supports Docker images up to
+        /// 100 GB uncompressed.</p>
+        /// </li>
+        /// </ul>
+        /// <p> If you use <code>BUILD_GENERAL1_LARGE</code>: </p>
+        /// <ul>
+        /// <li>
+        /// <p> For environment type <code>LINUX_CONTAINER</code>, you can use up to 15 GB
+        /// memory and 8 vCPUs for builds. </p>
+        /// </li>
+        /// <li>
+        /// <p> For environment type <code>LINUX_GPU_CONTAINER</code>, you can use up to 255
+        /// GB memory, 32 vCPUs, and 4 NVIDIA Tesla V100 GPUs for builds.</p>
+        /// </li>
+        /// <li>
+        /// <p> For environment type <code>ARM_CONTAINER</code>, you can use up to 16 GB
+        /// memory and 8 vCPUs on ARM-based processors for builds.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build Environment
+        /// Compute Types</a> in the <i>CodeBuild User Guide.</i>
+        /// </p>
         pub fn set_compute_type(
             mut self,
             input: std::option::Option<crate::model::ComputeType>,
@@ -3372,6 +4007,12 @@ pub mod project_environment {
             self.compute_type = input;
             self
         }
+        /// Appends an item to `environment_variables`.
+        ///
+        /// To override the contents of this collection use [`set_environment_variables`](Self::set_environment_variables).
+        ///
+        /// <p>A set of environment variables to make available to builds for this build
+        /// project.</p>
         pub fn environment_variables(
             mut self,
             input: impl Into<crate::model::EnvironmentVariable>,
@@ -3381,6 +4022,8 @@ pub mod project_environment {
             self.environment_variables = Some(v);
             self
         }
+        /// <p>A set of environment variables to make available to builds for this build
+        /// project.</p>
         pub fn set_environment_variables(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EnvironmentVariable>>,
@@ -3413,6 +4056,27 @@ pub mod project_environment {
             self.privileged_mode = Some(input);
             self
         }
+        /// <p>Enables running the Docker daemon inside a Docker container. Set to true only if the
+        /// build project is used to build Docker images. Otherwise, a build that attempts to
+        /// interact with the Docker daemon fails. The default setting is <code>false</code>.</p>
+        /// <p>You can initialize the Docker daemon during the install phase of your build by adding
+        /// one of the following sets of commands to the install phase of your buildspec
+        /// file:</p>
+        /// <p>If the operating system's base image is Ubuntu Linux:</p>
+        /// <p>
+        /// <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&</code>
+        /// </p>
+        /// <p>
+        /// <code>- timeout 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
+        /// </p>
+        /// <p>If the operating system's base image is Alpine Linux and the previous command does not
+        /// work, add the <code>-t</code> argument to <code>timeout</code>:</p>
+        /// <p>
+        /// <code>- nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375 --storage-driver=overlay&</code>
+        /// </p>
+        /// <p>
+        /// <code>- timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"</code>
+        /// </p>
         pub fn set_privileged_mode(mut self, input: std::option::Option<bool>) -> Self {
             self.privileged_mode = input;
             self
@@ -3424,6 +4088,9 @@ pub mod project_environment {
             self.certificate = Some(input.into());
             self
         }
+        /// <p>The ARN of the Amazon S3 bucket, path prefix, and object key that contains the PEM-encoded
+        /// certificate for the build project. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/create-project-cli.html#cli.environment.certificate">certificate</a> in the
+        /// <i>CodeBuild User Guide</i>.</p>
         pub fn set_certificate(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.certificate = input;
             self
@@ -3433,6 +4100,7 @@ pub mod project_environment {
             self.registry_credential = Some(input);
             self
         }
+        /// <p> The credentials for access to a private registry.</p>
         pub fn set_registry_credential(
             mut self,
             input: std::option::Option<crate::model::RegistryCredential>,
@@ -3464,6 +4132,23 @@ pub mod project_environment {
             self.image_pull_credentials_type = Some(input);
             self
         }
+        /// <p> The type of credentials CodeBuild uses to pull images in your build. There are two valid
+        /// values: </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>CODEBUILD</code> specifies that CodeBuild uses its own credentials.
+        /// This requires that you modify your ECR repository policy to trust CodeBuild service principal. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SERVICE_ROLE</code> specifies that CodeBuild uses your build project's service
+        /// role. </p>
+        /// </li>
+        /// </ul>
+        /// <p> When you use a cross-account or private registry image, you must use SERVICE_ROLE
+        /// credentials. When you use an CodeBuild curated image, you must use CODEBUILD credentials.
+        /// </p>
         pub fn set_image_pull_credentials_type(
             mut self,
             input: std::option::Option<crate::model::ImagePullCredentialsType>,
@@ -3493,6 +4178,7 @@ impl ProjectEnvironment {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3504,7 +4190,9 @@ impl ProjectEnvironment {
     std::hash::Hash,
 )]
 pub enum ImagePullCredentialsType {
+    #[allow(missing_docs)] // documentation missing in model
     Codebuild,
+    #[allow(missing_docs)] // documentation missing in model
     ServiceRole,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3526,6 +4214,7 @@ impl std::str::FromStr for ImagePullCredentialsType {
     }
 }
 impl ImagePullCredentialsType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ImagePullCredentialsType::Codebuild => "CODEBUILD",
@@ -3533,6 +4222,7 @@ impl ImagePullCredentialsType {
             ImagePullCredentialsType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CODEBUILD", "SERVICE_ROLE"]
     }
@@ -3597,6 +4287,11 @@ pub mod registry_credential {
             self.credential = Some(input.into());
             self
         }
+        /// <p> The Amazon Resource Name (ARN) or name of credentials created using Secrets Manager. </p>
+        /// <note>
+        /// <p> The <code>credential</code> can use the name of the credentials only if they
+        /// exist in your current Amazon Web Services Region. </p>
+        /// </note>
         pub fn set_credential(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.credential = input;
             self
@@ -3607,6 +4302,8 @@ pub mod registry_credential {
             self.credential_provider = Some(input);
             self
         }
+        /// <p> The service that created the credentials to access a private Docker registry. The
+        /// valid value, SECRETS_MANAGER, is for Secrets Manager. </p>
         pub fn set_credential_provider(
             mut self,
             input: std::option::Option<crate::model::CredentialProviderType>,
@@ -3630,6 +4327,7 @@ impl RegistryCredential {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3641,6 +4339,7 @@ impl RegistryCredential {
     std::hash::Hash,
 )]
 pub enum CredentialProviderType {
+    #[allow(missing_docs)] // documentation missing in model
     SecretsManager,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3661,12 +4360,14 @@ impl std::str::FromStr for CredentialProviderType {
     }
 }
 impl CredentialProviderType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CredentialProviderType::SecretsManager => "SECRETS_MANAGER",
             CredentialProviderType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["SECRETS_MANAGER"]
     }
@@ -3741,6 +4442,7 @@ pub mod environment_variable {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name or key of the environment variable.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -3758,6 +4460,15 @@ pub mod environment_variable {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value of the environment variable.</p>
+        /// <important>
+        /// <p>We strongly discourage the use of <code>PLAINTEXT</code> environment variables to
+        /// store sensitive values, especially Amazon Web Services secret key IDs and secret access keys.
+        /// <code>PLAINTEXT</code> environment variables can be displayed in plain text
+        /// using the CodeBuild console and the CLI. For sensitive values, we recommend you use an
+        /// environment variable of type <code>PARAMETER_STORE</code> or
+        /// <code>SECRETS_MANAGER</code>. </p>
+        /// </important>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -3787,6 +4498,27 @@ pub mod environment_variable {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of environment variable. Valid values include:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>PARAMETER_STORE</code>: An environment variable stored in Systems Manager
+        /// Parameter Store. To learn how to specify a parameter store environment variable,
+        /// see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec.env.parameter-store">env/parameter-store</a> in the
+        /// <i>CodeBuild User Guide</i>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PLAINTEXT</code>: An environment variable in plain text format. This is
+        /// the default value.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SECRETS_MANAGER</code>: An environment variable stored in Secrets Manager. To learn how to specify a secrets manager environment variable, see
+        /// <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec.env.secrets-manager">env/secrets-manager</a> in the
+        /// <i>CodeBuild User Guide</i>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::EnvironmentVariableType>,
@@ -3811,6 +4543,7 @@ impl EnvironmentVariable {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3822,8 +4555,11 @@ impl EnvironmentVariable {
     std::hash::Hash,
 )]
 pub enum EnvironmentVariableType {
+    #[allow(missing_docs)] // documentation missing in model
     ParameterStore,
+    #[allow(missing_docs)] // documentation missing in model
     Plaintext,
+    #[allow(missing_docs)] // documentation missing in model
     SecretsManager,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3846,6 +4582,7 @@ impl std::str::FromStr for EnvironmentVariableType {
     }
 }
 impl EnvironmentVariableType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EnvironmentVariableType::ParameterStore => "PARAMETER_STORE",
@@ -3854,6 +4591,7 @@ impl EnvironmentVariableType {
             EnvironmentVariableType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["PARAMETER_STORE", "PLAINTEXT", "SECRETS_MANAGER"]
     }
@@ -3864,6 +4602,7 @@ impl AsRef<str> for EnvironmentVariableType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3875,9 +4614,13 @@ impl AsRef<str> for EnvironmentVariableType {
     std::hash::Hash,
 )]
 pub enum ComputeType {
+    #[allow(missing_docs)] // documentation missing in model
     BuildGeneral12Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
     BuildGeneral1Large,
+    #[allow(missing_docs)] // documentation missing in model
     BuildGeneral1Medium,
+    #[allow(missing_docs)] // documentation missing in model
     BuildGeneral1Small,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3901,6 +4644,7 @@ impl std::str::FromStr for ComputeType {
     }
 }
 impl ComputeType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ComputeType::BuildGeneral12Xlarge => "BUILD_GENERAL1_2XLARGE",
@@ -3910,6 +4654,7 @@ impl ComputeType {
             ComputeType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "BUILD_GENERAL1_2XLARGE",
@@ -3925,6 +4670,7 @@ impl AsRef<str> for ComputeType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3936,10 +4682,15 @@ impl AsRef<str> for ComputeType {
     std::hash::Hash,
 )]
 pub enum EnvironmentType {
+    #[allow(missing_docs)] // documentation missing in model
     ArmContainer,
+    #[allow(missing_docs)] // documentation missing in model
     LinuxContainer,
+    #[allow(missing_docs)] // documentation missing in model
     LinuxGpuContainer,
+    #[allow(missing_docs)] // documentation missing in model
     WindowsContainer,
+    #[allow(missing_docs)] // documentation missing in model
     WindowsServer2019Container,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3964,6 +4715,7 @@ impl std::str::FromStr for EnvironmentType {
     }
 }
 impl EnvironmentType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EnvironmentType::ArmContainer => "ARM_CONTAINER",
@@ -3974,6 +4726,7 @@ impl EnvironmentType {
             EnvironmentType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ARM_CONTAINER",
@@ -4123,6 +4876,22 @@ pub mod project_cache {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of cache used by the build project. Valid values include:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>NO_CACHE</code>: The build project does not use any cache.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>S3</code>: The build project reads and writes from and to S3.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>LOCAL</code>: The build project stores a cache locally on a build host
+        /// that is only available to that build host.</p>
+        /// </li>
+        /// </ul>
         pub fn set_type(mut self, input: std::option::Option<crate::model::CacheType>) -> Self {
             self.r#type = input;
             self
@@ -4142,16 +4911,147 @@ pub mod project_cache {
             self.location = Some(input.into());
             self
         }
+        /// <p>Information about the cache location: </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>NO_CACHE</code> or <code>LOCAL</code>: This value is ignored.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>S3</code>: This is the S3 bucket name/prefix.</p>
+        /// </li>
+        /// </ul>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
         }
+        /// Appends an item to `modes`.
+        ///
+        /// To override the contents of this collection use [`set_modes`](Self::set_modes).
+        ///
+        /// <p>An array of strings that specify the local cache modes. You can use one or more local
+        /// cache modes at the same time. This is only used for <code>LOCAL</code> cache
+        /// types.</p>
+        /// <p>Possible values are:</p>
+        /// <dl>
+        /// <dt>LOCAL_SOURCE_CACHE</dt>
+        /// <dd>
+        /// <p>Caches Git metadata for primary and secondary sources. After the cache is
+        /// created, subsequent builds pull only the change between commits. This mode
+        /// is a good choice for projects with a clean working directory and a source
+        /// that is a large Git repository. If you choose this option and your project
+        /// does not use a Git repository (GitHub, GitHub Enterprise, or Bitbucket), the
+        /// option is ignored. </p>
+        /// </dd>
+        /// <dt>LOCAL_DOCKER_LAYER_CACHE</dt>
+        /// <dd>
+        /// <p>Caches existing Docker layers. This mode is a good choice for projects
+        /// that build or pull large Docker images. It can prevent the performance
+        /// issues caused by pulling large Docker images down from the network. </p>
+        /// <note>
+        /// <ul>
+        /// <li>
+        /// <p>You can use a Docker layer cache in the Linux environment
+        /// only. </p>
+        /// </li>
+        /// <li>
+        /// <p>The <code>privileged</code> flag must be set so that your
+        /// project has the required Docker permissions. </p>
+        /// </li>
+        /// <li>
+        /// <p>You should consider the security implications before you use a
+        /// Docker layer cache. </p>
+        /// </li>
+        /// </ul>
+        /// </note>
+        /// </dd>
+        /// <dt>LOCAL_CUSTOM_CACHE</dt>
+        /// <dd>
+        /// <p>Caches directories you specify in the buildspec file. This mode is a good
+        /// choice if your build scenario is not suited to one of the other three local
+        /// cache modes. If you use a custom cache: </p>
+        /// <ul>
+        /// <li>
+        /// <p>Only directories can be specified for caching. You cannot specify
+        /// individual files. </p>
+        /// </li>
+        /// <li>
+        /// <p>Symlinks are used to reference cached directories. </p>
+        /// </li>
+        /// <li>
+        /// <p>Cached directories are linked to your build before it downloads
+        /// its project sources. Cached items are overridden if a source item
+        /// has the same name. Directories are specified using cache paths in
+        /// the buildspec file. </p>
+        /// </li>
+        /// </ul>
+        /// </dd>
+        /// </dl>
         pub fn modes(mut self, input: impl Into<crate::model::CacheMode>) -> Self {
             let mut v = self.modes.unwrap_or_default();
             v.push(input.into());
             self.modes = Some(v);
             self
         }
+        /// <p>An array of strings that specify the local cache modes. You can use one or more local
+        /// cache modes at the same time. This is only used for <code>LOCAL</code> cache
+        /// types.</p>
+        /// <p>Possible values are:</p>
+        /// <dl>
+        /// <dt>LOCAL_SOURCE_CACHE</dt>
+        /// <dd>
+        /// <p>Caches Git metadata for primary and secondary sources. After the cache is
+        /// created, subsequent builds pull only the change between commits. This mode
+        /// is a good choice for projects with a clean working directory and a source
+        /// that is a large Git repository. If you choose this option and your project
+        /// does not use a Git repository (GitHub, GitHub Enterprise, or Bitbucket), the
+        /// option is ignored. </p>
+        /// </dd>
+        /// <dt>LOCAL_DOCKER_LAYER_CACHE</dt>
+        /// <dd>
+        /// <p>Caches existing Docker layers. This mode is a good choice for projects
+        /// that build or pull large Docker images. It can prevent the performance
+        /// issues caused by pulling large Docker images down from the network. </p>
+        /// <note>
+        /// <ul>
+        /// <li>
+        /// <p>You can use a Docker layer cache in the Linux environment
+        /// only. </p>
+        /// </li>
+        /// <li>
+        /// <p>The <code>privileged</code> flag must be set so that your
+        /// project has the required Docker permissions. </p>
+        /// </li>
+        /// <li>
+        /// <p>You should consider the security implications before you use a
+        /// Docker layer cache. </p>
+        /// </li>
+        /// </ul>
+        /// </note>
+        /// </dd>
+        /// <dt>LOCAL_CUSTOM_CACHE</dt>
+        /// <dd>
+        /// <p>Caches directories you specify in the buildspec file. This mode is a good
+        /// choice if your build scenario is not suited to one of the other three local
+        /// cache modes. If you use a custom cache: </p>
+        /// <ul>
+        /// <li>
+        /// <p>Only directories can be specified for caching. You cannot specify
+        /// individual files. </p>
+        /// </li>
+        /// <li>
+        /// <p>Symlinks are used to reference cached directories. </p>
+        /// </li>
+        /// <li>
+        /// <p>Cached directories are linked to your build before it downloads
+        /// its project sources. Cached items are overridden if a source item
+        /// has the same name. Directories are specified using cache paths in
+        /// the buildspec file. </p>
+        /// </li>
+        /// </ul>
+        /// </dd>
+        /// </dl>
         pub fn set_modes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CacheMode>>,
@@ -4176,6 +5076,7 @@ impl ProjectCache {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4187,8 +5088,11 @@ impl ProjectCache {
     std::hash::Hash,
 )]
 pub enum CacheMode {
+    #[allow(missing_docs)] // documentation missing in model
     LocalCustomCache,
+    #[allow(missing_docs)] // documentation missing in model
     LocalDockerLayerCache,
+    #[allow(missing_docs)] // documentation missing in model
     LocalSourceCache,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4211,6 +5115,7 @@ impl std::str::FromStr for CacheMode {
     }
 }
 impl CacheMode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CacheMode::LocalCustomCache => "LOCAL_CUSTOM_CACHE",
@@ -4219,6 +5124,7 @@ impl CacheMode {
             CacheMode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "LOCAL_CUSTOM_CACHE",
@@ -4233,6 +5139,7 @@ impl AsRef<str> for CacheMode {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4244,8 +5151,11 @@ impl AsRef<str> for CacheMode {
     std::hash::Hash,
 )]
 pub enum CacheType {
+    #[allow(missing_docs)] // documentation missing in model
     Local,
+    #[allow(missing_docs)] // documentation missing in model
     NoCache,
+    #[allow(missing_docs)] // documentation missing in model
     S3,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4268,6 +5178,7 @@ impl std::str::FromStr for CacheType {
     }
 }
 impl CacheType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CacheType::Local => "LOCAL",
@@ -4276,6 +5187,7 @@ impl CacheType {
             CacheType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["LOCAL", "NO_CACHE", "S3"]
     }
@@ -4567,6 +5479,27 @@ pub mod project_artifacts {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of build output artifact. Valid values include:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>CODEPIPELINE</code>: The build project has build output generated
+        /// through CodePipeline. </p>
+        /// <note>
+        /// <p>The <code>CODEPIPELINE</code> type is not supported for
+        /// <code>secondaryArtifacts</code>.</p>
+        /// </note>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NO_ARTIFACTS</code>: The build project does not produce any build
+        /// output.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>S3</code>: The build project stores build output in Amazon S3.</p>
+        /// </li>
+        /// </ul>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ArtifactsType>) -> Self {
             self.r#type = input;
             self
@@ -4591,6 +5524,22 @@ pub mod project_artifacts {
             self.location = Some(input.into());
             self
         }
+        /// <p>Information about the build output artifact location:</p>
+        /// <ul>
+        /// <li>
+        /// <p>If <code>type</code> is set to <code>CODEPIPELINE</code>, CodePipeline ignores this
+        /// value if specified. This is because CodePipeline manages its build output locations
+        /// instead of CodeBuild.</p>
+        /// </li>
+        /// <li>
+        /// <p>If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is
+        /// ignored if specified, because no build output is produced.</p>
+        /// </li>
+        /// <li>
+        /// <p>If <code>type</code> is set to <code>S3</code>, this is the name of the output
+        /// bucket.</p>
+        /// </li>
+        /// </ul>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -4621,6 +5570,28 @@ pub mod project_artifacts {
             self.path = Some(input.into());
             self
         }
+        /// <p>Along with <code>namespaceType</code> and <code>name</code>, the pattern that CodeBuild
+        /// uses to name and store the output artifact:</p>
+        /// <ul>
+        /// <li>
+        /// <p>If <code>type</code> is set to <code>CODEPIPELINE</code>, CodePipeline ignores this
+        /// value if specified. This is because CodePipeline manages its build output names instead
+        /// of CodeBuild.</p>
+        /// </li>
+        /// <li>
+        /// <p>If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is
+        /// ignored if specified, because no build output is produced.</p>
+        /// </li>
+        /// <li>
+        /// <p>If <code>type</code> is set to <code>S3</code>, this is the path to the output
+        /// artifact. If <code>path</code> is not specified, <code>path</code> is not
+        /// used.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For example, if <code>path</code> is set to <code>MyArtifacts</code>,
+        /// <code>namespaceType</code> is set to <code>NONE</code>, and <code>name</code> is set
+        /// to <code>MyArtifact.zip</code>, the output artifact is stored in the output bucket at
+        /// <code>MyArtifacts/MyArtifact.zip</code>.</p>
         pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.path = input;
             self
@@ -4661,6 +5632,38 @@ pub mod project_artifacts {
             self.namespace_type = Some(input);
             self
         }
+        /// <p>Along with <code>path</code> and <code>name</code>, the pattern that CodeBuild uses to
+        /// determine the name and location to store the output artifact:</p>
+        /// <ul>
+        /// <li>
+        /// <p>If <code>type</code> is set to <code>CODEPIPELINE</code>, CodePipeline ignores this
+        /// value if specified. This is because CodePipeline manages its build output names instead
+        /// of CodeBuild.</p>
+        /// </li>
+        /// <li>
+        /// <p>If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is
+        /// ignored if specified, because no build output is produced.</p>
+        /// </li>
+        /// <li>
+        /// <p>If <code>type</code> is set to <code>S3</code>, valid values include:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>BUILD_ID</code>: Include the build ID in the location of the
+        /// build output artifact.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NONE</code>: Do not include the build ID. This is the default if
+        /// <code>namespaceType</code> is not specified.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// </ul>
+        /// <p>For example, if <code>path</code> is set to <code>MyArtifacts</code>,
+        /// <code>namespaceType</code> is set to <code>BUILD_ID</code>, and <code>name</code> is
+        /// set to <code>MyArtifact.zip</code>, the output artifact is stored in
+        /// <code>MyArtifacts/<build-ID>/MyArtifact.zip</code>.</p>
         pub fn set_namespace_type(
             mut self,
             input: std::option::Option<crate::model::ArtifactNamespace>,
@@ -4710,6 +5713,44 @@ pub mod project_artifacts {
             self.name = Some(input.into());
             self
         }
+        /// <p>Along with <code>path</code> and <code>namespaceType</code>, the pattern that CodeBuild
+        /// uses to name and store the output artifact:</p>
+        /// <ul>
+        /// <li>
+        /// <p>If <code>type</code> is set to <code>CODEPIPELINE</code>, CodePipeline ignores this
+        /// value if specified. This is because CodePipeline manages its build output names instead
+        /// of CodeBuild.</p>
+        /// </li>
+        /// <li>
+        /// <p>If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is
+        /// ignored if specified, because no build output is produced.</p>
+        /// </li>
+        /// <li>
+        /// <p>If <code>type</code> is set to <code>S3</code>, this is the name of the output
+        /// artifact object. If you set the name to be a forward slash ("/"), the artifact
+        /// is stored in the root of the output bucket.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For example:</p>
+        /// <ul>
+        /// <li>
+        /// <p> If <code>path</code> is set to <code>MyArtifacts</code>,
+        /// <code>namespaceType</code> is set to <code>BUILD_ID</code>, and
+        /// <code>name</code> is set to <code>MyArtifact.zip</code>, then the output
+        /// artifact is stored in <code>MyArtifacts/<build-ID>/MyArtifact.zip</code>. </p>
+        /// </li>
+        /// <li>
+        /// <p> If <code>path</code> is empty, <code>namespaceType</code> is set to
+        /// <code>NONE</code>, and <code>name</code> is set to "<code>/</code>", the
+        /// output artifact is stored in the root of the output bucket. </p>
+        /// </li>
+        /// <li>
+        /// <p> If <code>path</code> is set to <code>MyArtifacts</code>,
+        /// <code>namespaceType</code> is set to <code>BUILD_ID</code>, and
+        /// <code>name</code> is set to "<code>/</code>", the output artifact is stored
+        /// in <code>MyArtifacts/<build-ID></code>. </p>
+        /// </li>
+        /// </ul>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -4746,6 +5787,34 @@ pub mod project_artifacts {
             self.packaging = Some(input);
             self
         }
+        /// <p>The type of build output artifact to create:</p>
+        /// <ul>
+        /// <li>
+        /// <p>If <code>type</code> is set to <code>CODEPIPELINE</code>, CodePipeline ignores this
+        /// value if specified. This is because CodePipeline manages its build output artifacts
+        /// instead of CodeBuild.</p>
+        /// </li>
+        /// <li>
+        /// <p>If <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is
+        /// ignored if specified, because no build output is produced.</p>
+        /// </li>
+        /// <li>
+        /// <p>If <code>type</code> is set to <code>S3</code>, valid values include:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>NONE</code>: CodeBuild creates in the output bucket a folder that
+        /// contains the build output. This is the default if <code>packaging</code>
+        /// is not specified.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ZIP</code>: CodeBuild creates in the output bucket a ZIP file that
+        /// contains the build output.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// </ul>
         pub fn set_packaging(
             mut self,
             input: std::option::Option<crate::model::ArtifactPackaging>,
@@ -4761,6 +5830,10 @@ pub mod project_artifacts {
             self.override_artifact_name = Some(input);
             self
         }
+        /// <p> If this flag is set, a name specified in the buildspec file overrides the artifact
+        /// name. The name specified in a buildspec file is calculated at build time and uses the
+        /// Shell Command Language. For example, you can append a date and time to your artifact
+        /// name so that it is always unique. </p>
         pub fn set_override_artifact_name(mut self, input: std::option::Option<bool>) -> Self {
             self.override_artifact_name = input;
             self
@@ -4772,6 +5845,9 @@ pub mod project_artifacts {
             self.encryption_disabled = Some(input);
             self
         }
+        /// <p> Set to true if you do not want your output artifacts encrypted. This option is valid
+        /// only if your artifacts type is Amazon S3. If this is set with another artifacts type, an
+        /// invalidInputException is thrown. </p>
         pub fn set_encryption_disabled(mut self, input: std::option::Option<bool>) -> Self {
             self.encryption_disabled = input;
             self
@@ -4781,6 +5857,7 @@ pub mod project_artifacts {
             self.artifact_identifier = Some(input.into());
             self
         }
+        /// <p> An identifier for this artifact definition. </p>
         pub fn set_artifact_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4834,6 +5911,48 @@ pub mod project_artifacts {
             self.bucket_owner_access = Some(input);
             self
         }
+        /// <p>Specifies the bucket owner's access for objects that another account uploads to their
+        /// Amazon S3 bucket. By default, only the account that uploads the objects to the bucket has
+        /// access to these objects. This property allows you to give the bucket owner access to
+        /// these objects.</p>
+        /// <note>
+        /// <p>To use this property, your CodeBuild service role must have the
+        /// <code>s3:PutBucketAcl</code> permission. This permission allows CodeBuild to modify
+        /// the access control list for the bucket.</p>
+        /// </note>
+        /// <p>This property can be one of the following values:</p>
+        /// <dl>
+        /// <dt>NONE</dt>
+        /// <dd>
+        /// <p>The bucket owner does not have access to the objects. This is the
+        /// default.</p>
+        /// </dd>
+        /// <dt>READ_ONLY</dt>
+        /// <dd>
+        /// <p>The bucket owner has read-only access to the objects. The uploading account
+        /// retains ownership of the objects.</p>
+        /// </dd>
+        /// <dt>FULL</dt>
+        /// <dd>
+        /// <p>The bucket owner has full access to the objects. Object ownership is determined
+        /// by the following criteria:</p>
+        /// <ul>
+        /// <li>
+        /// <p>If the bucket is configured with the <b>Bucket
+        /// owner preferred</b> setting, the bucket owner owns the
+        /// objects. The uploading account will have object access as specified
+        /// by the bucket's policy.</p>
+        /// </li>
+        /// <li>
+        /// <p>Otherwise, the uploading account retains ownership of the
+        /// objects.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information about Amazon S3 object ownership, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling ownership of uploaded objects using S3
+        /// Object Ownership</a> in the <i>Amazon Simple Storage Service User
+        /// Guide</i>.</p>
+        /// </dd>
+        /// </dl>
         pub fn set_bucket_owner_access(
             mut self,
             input: std::option::Option<crate::model::BucketOwnerAccess>,
@@ -4865,6 +5984,7 @@ impl ProjectArtifacts {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4876,7 +5996,9 @@ impl ProjectArtifacts {
     std::hash::Hash,
 )]
 pub enum ArtifactPackaging {
+    #[allow(missing_docs)] // documentation missing in model
     None,
+    #[allow(missing_docs)] // documentation missing in model
     Zip,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4898,6 +6020,7 @@ impl std::str::FromStr for ArtifactPackaging {
     }
 }
 impl ArtifactPackaging {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ArtifactPackaging::None => "NONE",
@@ -4905,6 +6028,7 @@ impl ArtifactPackaging {
             ArtifactPackaging::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["NONE", "ZIP"]
     }
@@ -4915,6 +6039,7 @@ impl AsRef<str> for ArtifactPackaging {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4926,7 +6051,9 @@ impl AsRef<str> for ArtifactPackaging {
     std::hash::Hash,
 )]
 pub enum ArtifactNamespace {
+    #[allow(missing_docs)] // documentation missing in model
     BuildId,
+    #[allow(missing_docs)] // documentation missing in model
     None,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4948,6 +6075,7 @@ impl std::str::FromStr for ArtifactNamespace {
     }
 }
 impl ArtifactNamespace {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ArtifactNamespace::BuildId => "BUILD_ID",
@@ -4955,6 +6083,7 @@ impl ArtifactNamespace {
             ArtifactNamespace::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["BUILD_ID", "NONE"]
     }
@@ -4965,6 +6094,7 @@ impl AsRef<str> for ArtifactNamespace {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4976,8 +6106,11 @@ impl AsRef<str> for ArtifactNamespace {
     std::hash::Hash,
 )]
 pub enum ArtifactsType {
+    #[allow(missing_docs)] // documentation missing in model
     Codepipeline,
+    #[allow(missing_docs)] // documentation missing in model
     NoArtifacts,
+    #[allow(missing_docs)] // documentation missing in model
     S3,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5000,6 +6133,7 @@ impl std::str::FromStr for ArtifactsType {
     }
 }
 impl ArtifactsType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ArtifactsType::Codepipeline => "CODEPIPELINE",
@@ -5008,6 +6142,7 @@ impl ArtifactsType {
             ArtifactsType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CODEPIPELINE", "NO_ARTIFACTS", "S3"]
     }
@@ -5078,6 +6213,8 @@ pub mod project_source_version {
             self.source_identifier = Some(input.into());
             self
         }
+        /// <p>An identifier for a source in the build project. The identifier can only contain
+        /// alphanumeric characters and underscores, and must be less than 128 characters in length. </p>
         pub fn set_source_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5116,6 +6253,33 @@ pub mod project_source_version {
             self.source_version = Some(input.into());
             self
         }
+        /// <p>The source version for the corresponding source identifier. If specified, must be one
+        /// of:</p>
+        /// <ul>
+        /// <li>
+        /// <p>For CodeCommit: the commit ID, branch, or Git tag to use.</p>
+        /// </li>
+        /// <li>
+        /// <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that
+        /// corresponds to the version of the source code you want to build. If a pull
+        /// request ID is specified, it must use the format <code>pr/pull-request-ID</code>
+        /// (for example, <code>pr/25</code>). If a branch name is specified, the branch's
+        /// HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is
+        /// used.</p>
+        /// </li>
+        /// <li>
+        /// <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the
+        /// version of the source code you want to build. If a branch name is specified, the
+        /// branch's HEAD commit ID is used. If not specified, the default branch's HEAD
+        /// commit ID is used.</p>
+        /// </li>
+        /// <li>
+        /// <p>For Amazon S3: the version ID of the object that represents the build input ZIP
+        /// file to use.</p>
+        /// </li>
+        /// </ul>
+        /// <p> For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample
+        /// with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
         pub fn set_source_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5355,6 +6519,41 @@ pub mod project_source {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of repository that contains the source code to be built. Valid values
+        /// include:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>BITBUCKET</code>: The source code is in a Bitbucket repository.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CODECOMMIT</code>: The source code is in an CodeCommit repository.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CODEPIPELINE</code>: The source code settings are specified in the
+        /// source action of a pipeline in CodePipeline.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GITHUB</code>: The source code is in a GitHub or GitHub Enterprise Cloud
+        /// repository.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise
+        /// Server repository.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NO_SOURCE</code>: The project does not have input source code.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>S3</code>: The source code is in an Amazon S3 bucket.</p>
+        /// </li>
+        /// </ul>
         pub fn set_type(mut self, input: std::option::Option<crate::model::SourceType>) -> Self {
             self.r#type = input;
             self
@@ -5422,6 +6621,65 @@ pub mod project_source {
             self.location = Some(input.into());
             self
         }
+        /// <p>Information about the location of the source code to be built. Valid values
+        /// include:</p>
+        /// <ul>
+        /// <li>
+        /// <p>For source code settings that are specified in the source action of a pipeline
+        /// in CodePipeline, <code>location</code> should not be specified. If it is specified,
+        /// CodePipeline ignores it. This is because CodePipeline uses the settings in a pipeline's source
+        /// action instead of this value.</p>
+        /// </li>
+        /// <li>
+        /// <p>For source code in an CodeCommit repository, the HTTPS clone URL to the repository
+        /// that contains the source code and the buildspec file (for example,
+        /// <code>https://git-codecommit.<region-ID>.amazonaws.com/v1/repos/<repo-name></code>).</p>
+        /// </li>
+        /// <li>
+        /// <p>For source code in an Amazon S3 input bucket, one of the following. </p>
+        /// <ul>
+        /// <li>
+        /// <p>The path to the ZIP file that contains the source code (for example,
+        /// <code><bucket-name>/<path>/<object-name>.zip</code>). </p>
+        /// </li>
+        /// <li>
+        /// <p>The path to the folder that contains the source code (for example,
+        /// <code><bucket-name>/<path-to-source-code>/<folder>/</code>). </p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>For source code in a GitHub repository, the HTTPS clone URL to the repository
+        /// that contains the source and the buildspec file. You must connect your Amazon Web Services account
+        /// to your GitHub account. Use the CodeBuild console to start creating a build
+        /// project. When you use the console to connect (or reconnect) with GitHub, on the
+        /// GitHub <b>Authorize application</b> page, for
+        /// <b>Organization access</b>, choose <b>Request access</b> next to each repository you want to
+        /// allow CodeBuild to have access to, and then choose <b>Authorize
+        /// application</b>. (After you have connected to your GitHub account,
+        /// you do not need to finish creating the build project. You can leave the CodeBuild
+        /// console.) To instruct CodeBuild to use this connection, in the <code>source</code>
+        /// object, set the <code>auth</code> object's <code>type</code> value to
+        /// <code>OAUTH</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>For source code in a Bitbucket repository, the HTTPS clone URL to the
+        /// repository that contains the source and the buildspec file. You must connect
+        /// your Amazon Web Services account to your Bitbucket account. Use the CodeBuild console to start
+        /// creating a build project. When you use the console to connect (or reconnect)
+        /// with Bitbucket, on the Bitbucket <b>Confirm access to your
+        /// account</b> page, choose <b>Grant
+        /// access</b>. (After you have connected to your Bitbucket account, you
+        /// do not need to finish creating the build project. You can leave the CodeBuild
+        /// console.) To instruct CodeBuild to use this connection, in the <code>source</code>
+        /// object, set the <code>auth</code> object's <code>type</code> value to
+        /// <code>OAUTH</code>.</p>
+        /// </li>
+        /// </ul>
+        /// <p>
+        /// If you specify <code>CODEPIPELINE</code> for the <code>Type</code> property, don't specify this
+        /// property. For all of the other types, you must specify <code>Location</code>.
+        /// </p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -5431,6 +6689,7 @@ pub mod project_source {
             self.git_clone_depth = Some(input);
             self
         }
+        /// <p>Information about the Git clone depth for the build project.</p>
         pub fn set_git_clone_depth(mut self, input: std::option::Option<i32>) -> Self {
             self.git_clone_depth = input;
             self
@@ -5440,6 +6699,7 @@ pub mod project_source {
             self.git_submodules_config = Some(input);
             self
         }
+        /// <p> Information about the Git submodules configuration for the build project. </p>
         pub fn set_git_submodules_config(
             mut self,
             input: std::option::Option<crate::model::GitSubmodulesConfig>,
@@ -5460,6 +6720,15 @@ pub mod project_source {
             self.buildspec = Some(input.into());
             self
         }
+        /// <p>The buildspec file declaration to use for the builds in this build project.</p>
+        /// <p> If this value is set, it can be either an inline buildspec definition, the path to an
+        /// alternate buildspec file relative to the value of the built-in
+        /// <code>CODEBUILD_SRC_DIR</code> environment variable, or the path to an S3 bucket.
+        /// The bucket must be in the same Amazon Web Services Region as the build project. Specify the buildspec
+        /// file using its ARN (for example,
+        /// <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is not
+        /// provided or is set to an empty string, the source code must contain a buildspec file in
+        /// its root directory. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage">Buildspec File Name and Storage Location</a>. </p>
         pub fn set_buildspec(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.buildspec = input;
             self
@@ -5472,6 +6741,10 @@ pub mod project_source {
             self.auth = Some(input);
             self
         }
+        /// <p>Information about the authorization settings for CodeBuild to access the source code to be
+        /// built.</p>
+        /// <p>This information is for the CodeBuild console's use only. Your code should not get or set
+        /// this information directly.</p>
         pub fn set_auth(mut self, input: std::option::Option<crate::model::SourceAuth>) -> Self {
             self.auth = input;
             self
@@ -5491,6 +6764,17 @@ pub mod project_source {
             self.report_build_status = Some(input);
             self
         }
+        /// <p> Set to true to report the status of a build's start and finish to your source
+        /// provider. This option is valid only when your source provider is GitHub, GitHub
+        /// Enterprise, or Bitbucket. If this is set and you use a different source provider, an
+        /// <code>invalidInputException</code> is thrown. </p>
+        /// <p>To be able to report the build status to the source provider, the user associated with the source provider must
+        /// have write access to the repo. If the user does not have write access, the build status cannot be updated. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source provider access</a> in the <i>CodeBuild User Guide</i>.</p>
+        /// <p>The status of a build triggered by a webhook is always reported to your source
+        /// provider. </p>
+        /// <p>If your project's builds are triggered by a webhook, you must push a
+        /// new commit to the repo for a change to this property to take
+        /// effect.</p>
         pub fn set_report_build_status(mut self, input: std::option::Option<bool>) -> Self {
             self.report_build_status = input;
             self
@@ -5503,6 +6787,10 @@ pub mod project_source {
             self.build_status_config = Some(input);
             self
         }
+        /// <p>Contains information that defines how the build project reports the build status to
+        /// the source provider. This option is only used when the source provider is
+        /// <code>GITHUB</code>, <code>GITHUB_ENTERPRISE</code>, or
+        /// <code>BITBUCKET</code>.</p>
         pub fn set_build_status_config(
             mut self,
             input: std::option::Option<crate::model::BuildStatusConfig>,
@@ -5516,6 +6804,8 @@ pub mod project_source {
             self.insecure_ssl = Some(input);
             self
         }
+        /// <p>Enable this flag to ignore SSL warnings while connecting to the project source
+        /// code.</p>
         pub fn set_insecure_ssl(mut self, input: std::option::Option<bool>) -> Self {
             self.insecure_ssl = input;
             self
@@ -5526,6 +6816,8 @@ pub mod project_source {
             self.source_identifier = Some(input.into());
             self
         }
+        /// <p>An identifier for this project source. The identifier can only contain
+        /// alphanumeric characters and underscores, and must be less than 128 characters in length. </p>
         pub fn set_source_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5629,6 +6921,20 @@ pub mod build_status_config {
             self.context = Some(input.into());
             self
         }
+        /// <p>Specifies the context of the build status CodeBuild sends to the source provider. The
+        /// usage of this parameter depends on the source provider.</p>
+        /// <dl>
+        /// <dt>Bitbucket</dt>
+        /// <dd>
+        /// <p>This parameter is used for the <code>name</code> parameter in the
+        /// Bitbucket commit status. For more information, see <a href="https://developer.atlassian.com/bitbucket/api/2/reference/resource/repositories/%7Bworkspace%7D/%7Brepo_slug%7D/commit/%7Bnode%7D/statuses/build">build</a> in the Bitbucket API documentation.</p>
+        /// </dd>
+        /// <dt>GitHub/GitHub Enterprise Server</dt>
+        /// <dd>
+        /// <p>This parameter is used for the <code>context</code> parameter in the
+        /// GitHub commit status. For more information, see <a href="https://developer.github.com/v3/repos/statuses/#create-a-commit-status">Create a commit status</a> in the GitHub developer guide.</p>
+        /// </dd>
+        /// </dl>
         pub fn set_context(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.context = input;
             self
@@ -5651,6 +6957,20 @@ pub mod build_status_config {
             self.target_url = Some(input.into());
             self
         }
+        /// <p>Specifies the target url of the build status CodeBuild sends to the source provider. The
+        /// usage of this parameter depends on the source provider.</p>
+        /// <dl>
+        /// <dt>Bitbucket</dt>
+        /// <dd>
+        /// <p>This parameter is used for the <code>url</code> parameter in the Bitbucket
+        /// commit status. For more information, see <a href="https://developer.atlassian.com/bitbucket/api/2/reference/resource/repositories/%7Bworkspace%7D/%7Brepo_slug%7D/commit/%7Bnode%7D/statuses/build">build</a> in the Bitbucket API documentation.</p>
+        /// </dd>
+        /// <dt>GitHub/GitHub Enterprise Server</dt>
+        /// <dd>
+        /// <p>This parameter is used for the <code>target_url</code> parameter in the
+        /// GitHub commit status. For more information, see <a href="https://developer.github.com/v3/repos/statuses/#create-a-commit-status">Create a commit status</a> in the GitHub developer guide.</p>
+        /// </dd>
+        /// </dl>
         pub fn set_target_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.target_url = input;
             self
@@ -5714,6 +7034,11 @@ pub mod source_auth {
             self.r#type = Some(input);
             self
         }
+        /// <note>
+        /// <p> This data type is deprecated and is no longer accurate or used. </p>
+        /// </note>
+        /// <p>The authorization type to use. The only valid value is <code>OAUTH</code>, which
+        /// represents the OAuth authorization type.</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::SourceAuthType>,
@@ -5726,6 +7051,7 @@ pub mod source_auth {
             self.resource = Some(input.into());
             self
         }
+        /// <p>The resource value that applies to the specified authorization type.</p>
         pub fn set_resource(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource = input;
             self
@@ -5746,6 +7072,7 @@ impl SourceAuth {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5757,6 +7084,7 @@ impl SourceAuth {
     std::hash::Hash,
 )]
 pub enum SourceAuthType {
+    #[allow(missing_docs)] // documentation missing in model
     Oauth,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5777,12 +7105,14 @@ impl std::str::FromStr for SourceAuthType {
     }
 }
 impl SourceAuthType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SourceAuthType::Oauth => "OAUTH",
             SourceAuthType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["OAUTH"]
     }
@@ -5822,6 +7152,7 @@ pub mod git_submodules_config {
             self.fetch_submodules = Some(input);
             self
         }
+        /// <p> Set to true to fetch Git submodules for your CodeBuild build project. </p>
         pub fn set_fetch_submodules(mut self, input: std::option::Option<bool>) -> Self {
             self.fetch_submodules = input;
             self
@@ -5841,6 +7172,7 @@ impl GitSubmodulesConfig {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5852,12 +7184,19 @@ impl GitSubmodulesConfig {
     std::hash::Hash,
 )]
 pub enum SourceType {
+    #[allow(missing_docs)] // documentation missing in model
     Bitbucket,
+    #[allow(missing_docs)] // documentation missing in model
     Codecommit,
+    #[allow(missing_docs)] // documentation missing in model
     Codepipeline,
+    #[allow(missing_docs)] // documentation missing in model
     Github,
+    #[allow(missing_docs)] // documentation missing in model
     GithubEnterprise,
+    #[allow(missing_docs)] // documentation missing in model
     NoSource,
+    #[allow(missing_docs)] // documentation missing in model
     S3,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5884,6 +7223,7 @@ impl std::str::FromStr for SourceType {
     }
 }
 impl SourceType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SourceType::Bitbucket => "BITBUCKET",
@@ -5896,6 +7236,7 @@ impl SourceType {
             SourceType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "BITBUCKET",
@@ -5923,9 +7264,9 @@ pub struct BuildBatch {
     /// <p>The ARN of the batch build.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date and time that the batch build started.</p>
-    pub start_time: std::option::Option<smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time that the batch build ended.</p>
-    pub end_time: std::option::Option<smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The current phase of the batch build.</p>
     pub current_phase: std::option::Option<std::string::String>,
     /// <p>The status of the batch build.</p>
@@ -6095,8 +7436,8 @@ pub mod build_batch {
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) start_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) current_phase: std::option::Option<std::string::String>,
         pub(crate) build_batch_status: std::option::Option<crate::model::StatusType>,
         pub(crate) source_version: std::option::Option<std::string::String>,
@@ -6134,6 +7475,7 @@ pub mod build_batch {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier of the batch build.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -6143,25 +7485,34 @@ pub mod build_batch {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the batch build.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
         /// <p>The date and time that the batch build started.</p>
-        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date and time that the batch build started.</p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The date and time that the batch build ended.</p>
-        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date and time that the batch build ended.</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.end_time = input;
             self
         }
@@ -6170,6 +7521,7 @@ pub mod build_batch {
             self.current_phase = Some(input.into());
             self
         }
+        /// <p>The current phase of the batch build.</p>
         pub fn set_current_phase(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6182,6 +7534,7 @@ pub mod build_batch {
             self.build_batch_status = Some(input);
             self
         }
+        /// <p>The status of the batch build.</p>
         pub fn set_build_batch_status(
             mut self,
             input: std::option::Option<crate::model::StatusType>,
@@ -6194,6 +7547,7 @@ pub mod build_batch {
             self.source_version = Some(input.into());
             self
         }
+        /// <p>The identifier of the version of the source code to be built.</p>
         pub fn set_source_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6217,6 +7571,18 @@ pub mod build_batch {
             self.resolved_source_version = Some(input.into());
             self
         }
+        /// <p>The identifier of the resolved version of this batch build's source code.</p>
+        /// <ul>
+        /// <li>
+        /// <p>For CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the commit ID.</p>
+        /// </li>
+        /// <li>
+        /// <p>For CodePipeline, the source revision provided by CodePipeline.</p>
+        /// </li>
+        /// <li>
+        /// <p>For Amazon S3, this does not apply.</p>
+        /// </li>
+        /// </ul>
         pub fn set_resolved_source_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6229,16 +7595,25 @@ pub mod build_batch {
             self.project_name = Some(input.into());
             self
         }
+        /// <p>The name of the batch build project.</p>
         pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.project_name = input;
             self
         }
+        /// Appends an item to `phases`.
+        ///
+        /// To override the contents of this collection use [`set_phases`](Self::set_phases).
+        ///
+        /// <p>An array of <code>BuildBatchPhase</code> objects the specify the phases of the
+        /// batch build.</p>
         pub fn phases(mut self, input: impl Into<crate::model::BuildBatchPhase>) -> Self {
             let mut v = self.phases.unwrap_or_default();
             v.push(input.into());
             self.phases = Some(v);
             self
         }
+        /// <p>An array of <code>BuildBatchPhase</code> objects the specify the phases of the
+        /// batch build.</p>
         pub fn set_phases(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BuildBatchPhase>>,
@@ -6251,6 +7626,7 @@ pub mod build_batch {
             self.source = Some(input);
             self
         }
+        /// <p>Information about the build input source code for the build project.</p>
         pub fn set_source(
             mut self,
             input: std::option::Option<crate::model::ProjectSource>,
@@ -6258,12 +7634,20 @@ pub mod build_batch {
             self.source = input;
             self
         }
+        /// Appends an item to `secondary_sources`.
+        ///
+        /// To override the contents of this collection use [`set_secondary_sources`](Self::set_secondary_sources).
+        ///
+        /// <p>An array of <code>ProjectSource</code> objects that define the sources for the batch
+        /// build.</p>
         pub fn secondary_sources(mut self, input: impl Into<crate::model::ProjectSource>) -> Self {
             let mut v = self.secondary_sources.unwrap_or_default();
             v.push(input.into());
             self.secondary_sources = Some(v);
             self
         }
+        /// <p>An array of <code>ProjectSource</code> objects that define the sources for the batch
+        /// build.</p>
         pub fn set_secondary_sources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ProjectSource>>,
@@ -6271,6 +7655,35 @@ pub mod build_batch {
             self.secondary_sources = input;
             self
         }
+        /// Appends an item to `secondary_source_versions`.
+        ///
+        /// To override the contents of this collection use [`set_secondary_source_versions`](Self::set_secondary_source_versions).
+        ///
+        /// <p>An array of <code>ProjectSourceVersion</code> objects. Each
+        /// <code>ProjectSourceVersion</code> must be one of: </p>
+        /// <ul>
+        /// <li>
+        /// <p>For CodeCommit: the commit ID, branch, or Git tag to use.</p>
+        /// </li>
+        /// <li>
+        /// <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that
+        /// corresponds to the version of the source code you want to build. If a pull
+        /// request ID is specified, it must use the format <code>pr/pull-request-ID</code>
+        /// (for example, <code>pr/25</code>). If a branch name is specified, the branch's
+        /// HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is
+        /// used.</p>
+        /// </li>
+        /// <li>
+        /// <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the
+        /// version of the source code you want to build. If a branch name is specified, the
+        /// branch's HEAD commit ID is used. If not specified, the default branch's HEAD
+        /// commit ID is used.</p>
+        /// </li>
+        /// <li>
+        /// <p>For Amazon S3: the version ID of the object that represents the build input ZIP
+        /// file to use.</p>
+        /// </li>
+        /// </ul>
         pub fn secondary_source_versions(
             mut self,
             input: impl Into<crate::model::ProjectSourceVersion>,
@@ -6280,6 +7693,31 @@ pub mod build_batch {
             self.secondary_source_versions = Some(v);
             self
         }
+        /// <p>An array of <code>ProjectSourceVersion</code> objects. Each
+        /// <code>ProjectSourceVersion</code> must be one of: </p>
+        /// <ul>
+        /// <li>
+        /// <p>For CodeCommit: the commit ID, branch, or Git tag to use.</p>
+        /// </li>
+        /// <li>
+        /// <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that
+        /// corresponds to the version of the source code you want to build. If a pull
+        /// request ID is specified, it must use the format <code>pr/pull-request-ID</code>
+        /// (for example, <code>pr/25</code>). If a branch name is specified, the branch's
+        /// HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is
+        /// used.</p>
+        /// </li>
+        /// <li>
+        /// <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the
+        /// version of the source code you want to build. If a branch name is specified, the
+        /// branch's HEAD commit ID is used. If not specified, the default branch's HEAD
+        /// commit ID is used.</p>
+        /// </li>
+        /// <li>
+        /// <p>For Amazon S3: the version ID of the object that represents the build input ZIP
+        /// file to use.</p>
+        /// </li>
+        /// </ul>
         pub fn set_secondary_source_versions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ProjectSourceVersion>>,
@@ -6292,6 +7730,7 @@ pub mod build_batch {
             self.artifacts = Some(input);
             self
         }
+        /// <p>A <code>BuildArtifacts</code> object the defines the build artifacts for this batch build.</p>
         pub fn set_artifacts(
             mut self,
             input: std::option::Option<crate::model::BuildArtifacts>,
@@ -6299,6 +7738,12 @@ pub mod build_batch {
             self.artifacts = input;
             self
         }
+        /// Appends an item to `secondary_artifacts`.
+        ///
+        /// To override the contents of this collection use [`set_secondary_artifacts`](Self::set_secondary_artifacts).
+        ///
+        /// <p>An array of <code>BuildArtifacts</code> objects the define the build artifacts
+        /// for this batch build.</p>
         pub fn secondary_artifacts(
             mut self,
             input: impl Into<crate::model::BuildArtifacts>,
@@ -6308,6 +7753,8 @@ pub mod build_batch {
             self.secondary_artifacts = Some(v);
             self
         }
+        /// <p>An array of <code>BuildArtifacts</code> objects the define the build artifacts
+        /// for this batch build.</p>
         pub fn set_secondary_artifacts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BuildArtifacts>>,
@@ -6320,6 +7767,7 @@ pub mod build_batch {
             self.cache = Some(input);
             self
         }
+        /// <p>Information about the cache for the build project.</p>
         pub fn set_cache(mut self, input: std::option::Option<crate::model::ProjectCache>) -> Self {
             self.cache = input;
             self
@@ -6329,6 +7777,7 @@ pub mod build_batch {
             self.environment = Some(input);
             self
         }
+        /// <p>Information about the build environment of the build project.</p>
         pub fn set_environment(
             mut self,
             input: std::option::Option<crate::model::ProjectEnvironment>,
@@ -6341,6 +7790,7 @@ pub mod build_batch {
             self.service_role = Some(input.into());
             self
         }
+        /// <p>The name of a service role used for builds in the batch.</p>
         pub fn set_service_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service_role = input;
             self
@@ -6351,6 +7801,8 @@ pub mod build_batch {
             self.log_config = Some(input);
             self
         }
+        /// <p> Information about logs for a build project. These can be logs in CloudWatch Logs, built in a
+        /// specified S3 bucket, or both. </p>
         pub fn set_log_config(
             mut self,
             input: std::option::Option<crate::model::LogsConfig>,
@@ -6364,6 +7816,8 @@ pub mod build_batch {
             self.build_timeout_in_minutes = Some(input);
             self
         }
+        /// <p>Specifies the maximum amount of time, in minutes, that the build in a batch must be
+        /// completed in.</p>
         pub fn set_build_timeout_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.build_timeout_in_minutes = input;
             self
@@ -6374,6 +7828,8 @@ pub mod build_batch {
             self.queued_timeout_in_minutes = Some(input);
             self
         }
+        /// <p>Specifies the amount of time, in minutes, that the batch build is allowed to be queued
+        /// before it times out.</p>
         pub fn set_queued_timeout_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.queued_timeout_in_minutes = input;
             self
@@ -6383,6 +7839,7 @@ pub mod build_batch {
             self.complete = Some(input);
             self
         }
+        /// <p>Indicates if the batch build is complete.</p>
         pub fn set_complete(mut self, input: std::option::Option<bool>) -> Self {
             self.complete = input;
             self
@@ -6405,6 +7862,20 @@ pub mod build_batch {
             self.initiator = Some(input.into());
             self
         }
+        /// <p>The entity that started the batch build. Valid values include:</p>
+        /// <ul>
+        /// <li>
+        /// <p>If CodePipeline started the build, the pipeline's name (for example,
+        /// <code>codepipeline/my-demo-pipeline</code>).</p>
+        /// </li>
+        /// <li>
+        /// <p>If an IAM user started the build, the user's name.</p>
+        /// </li>
+        /// <li>
+        /// <p>If the Jenkins plugin for CodeBuild started the build, the string
+        /// <code>CodeBuild-Jenkins-Plugin</code>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_initiator(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.initiator = input;
             self
@@ -6414,6 +7885,7 @@ pub mod build_batch {
             self.vpc_config = Some(input);
             self
         }
+        /// <p>Information about the VPC configuration that CodeBuild accesses.</p>
         pub fn set_vpc_config(
             mut self,
             input: std::option::Option<crate::model::VpcConfig>,
@@ -6433,6 +7905,14 @@ pub mod build_batch {
             self.encryption_key = Some(input.into());
             self
         }
+        /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the batch build output
+        /// artifacts.</p>
+        /// <note>
+        /// <p>You can use a cross-account KMS key to encrypt the build output artifacts if your
+        /// service role has permission to that key. </p>
+        /// </note>
+        /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using
+        /// the format <code>alias/<alias-name></code>).</p>
         pub fn set_encryption_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6448,10 +7928,23 @@ pub mod build_batch {
             self.build_batch_number = Some(input);
             self
         }
+        /// <p>The number of the batch build. For each project, the <code>buildBatchNumber</code> of its
+        /// first batch build is <code>1</code>. The <code>buildBatchNumber</code> of each subsequent
+        /// batch build is incremented by <code>1</code>. If a batch build is deleted, the
+        /// <code>buildBatchNumber</code> of other batch builds does not change.</p>
         pub fn set_build_batch_number(mut self, input: std::option::Option<i64>) -> Self {
             self.build_batch_number = input;
             self
         }
+        /// Appends an item to `file_system_locations`.
+        ///
+        /// To override the contents of this collection use [`set_file_system_locations`](Self::set_file_system_locations).
+        ///
+        /// <p>An array of <code>ProjectFileSystemLocation</code> objects for the batch build
+        /// project. A <code>ProjectFileSystemLocation</code> object specifies the
+        /// <code>identifier</code>, <code>location</code>, <code>mountOptions</code>,
+        /// <code>mountPoint</code>, and <code>type</code> of a file system created using Amazon
+        /// Elastic File System. </p>
         pub fn file_system_locations(
             mut self,
             input: impl Into<crate::model::ProjectFileSystemLocation>,
@@ -6461,6 +7954,11 @@ pub mod build_batch {
             self.file_system_locations = Some(v);
             self
         }
+        /// <p>An array of <code>ProjectFileSystemLocation</code> objects for the batch build
+        /// project. A <code>ProjectFileSystemLocation</code> object specifies the
+        /// <code>identifier</code>, <code>location</code>, <code>mountOptions</code>,
+        /// <code>mountPoint</code>, and <code>type</code> of a file system created using Amazon
+        /// Elastic File System. </p>
         pub fn set_file_system_locations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ProjectFileSystemLocation>>,
@@ -6473,6 +7971,7 @@ pub mod build_batch {
             self.build_batch_config = Some(input);
             self
         }
+        /// <p>Contains configuration information about a batch build project.</p>
         pub fn set_build_batch_config(
             mut self,
             input: std::option::Option<crate::model::ProjectBuildBatchConfig>,
@@ -6480,12 +7979,20 @@ pub mod build_batch {
             self.build_batch_config = input;
             self
         }
+        /// Appends an item to `build_groups`.
+        ///
+        /// To override the contents of this collection use [`set_build_groups`](Self::set_build_groups).
+        ///
+        /// <p>An array of <code>BuildGroup</code> objects that define the build groups for the
+        /// batch build.</p>
         pub fn build_groups(mut self, input: impl Into<crate::model::BuildGroup>) -> Self {
             let mut v = self.build_groups.unwrap_or_default();
             v.push(input.into());
             self.build_groups = Some(v);
             self
         }
+        /// <p>An array of <code>BuildGroup</code> objects that define the build groups for the
+        /// batch build.</p>
         pub fn set_build_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BuildGroup>>,
@@ -6499,6 +8006,8 @@ pub mod build_batch {
             self.debug_session_enabled = Some(input);
             self
         }
+        /// <p>Specifies if session debugging is enabled for this batch build. For more information, see
+        /// <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running build in Session Manager</a>. Batch session debugging is not supported for matrix batch builds.</p>
         pub fn set_debug_session_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.debug_session_enabled = input;
             self
@@ -6597,16 +8106,25 @@ pub mod build_group {
             self.identifier = Some(input.into());
             self
         }
+        /// <p>Contains the identifier of the build group.</p>
         pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identifier = input;
             self
         }
+        /// Appends an item to `depends_on`.
+        ///
+        /// To override the contents of this collection use [`set_depends_on`](Self::set_depends_on).
+        ///
+        /// <p>An array of strings that contain the identifiers of the build groups that this build
+        /// group depends on.</p>
         pub fn depends_on(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.depends_on.unwrap_or_default();
             v.push(input.into());
             self.depends_on = Some(v);
             self
         }
+        /// <p>An array of strings that contain the identifiers of the build groups that this build
+        /// group depends on.</p>
         pub fn set_depends_on(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6619,6 +8137,7 @@ pub mod build_group {
             self.ignore_failure = Some(input);
             self
         }
+        /// <p>Specifies if failures in this build group can be ignored.</p>
         pub fn set_ignore_failure(mut self, input: std::option::Option<bool>) -> Self {
             self.ignore_failure = input;
             self
@@ -6629,6 +8148,8 @@ pub mod build_group {
             self.current_build_summary = Some(input);
             self
         }
+        /// <p>A <code>BuildSummary</code> object that contains a summary of the current build
+        /// group.</p>
         pub fn set_current_build_summary(
             mut self,
             input: std::option::Option<crate::model::BuildSummary>,
@@ -6636,6 +8157,12 @@ pub mod build_group {
             self.current_build_summary = input;
             self
         }
+        /// Appends an item to `prior_build_summary_list`.
+        ///
+        /// To override the contents of this collection use [`set_prior_build_summary_list`](Self::set_prior_build_summary_list).
+        ///
+        /// <p>An array of <code>BuildSummary</code> objects that contain summaries of previous
+        /// build groups.</p>
         pub fn prior_build_summary_list(
             mut self,
             input: impl Into<crate::model::BuildSummary>,
@@ -6645,6 +8172,8 @@ pub mod build_group {
             self.prior_build_summary_list = Some(v);
             self
         }
+        /// <p>An array of <code>BuildSummary</code> objects that contain summaries of previous
+        /// build groups.</p>
         pub fn set_prior_build_summary_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BuildSummary>>,
@@ -6678,7 +8207,7 @@ pub struct BuildSummary {
     /// <p>The batch build ARN.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>When the build was started, expressed in Unix time format.</p>
-    pub requested_on: std::option::Option<smithy_types::Instant>,
+    pub requested_on: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The status of the build group.</p>
     /// <dl>
     /// <dt>FAILED</dt>
@@ -6732,7 +8261,7 @@ pub mod build_summary {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) requested_on: std::option::Option<smithy_types::Instant>,
+        pub(crate) requested_on: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) build_status: std::option::Option<crate::model::StatusType>,
         pub(crate) primary_artifact: std::option::Option<crate::model::ResolvedArtifact>,
         pub(crate) secondary_artifacts:
@@ -6744,18 +8273,20 @@ pub mod build_summary {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The batch build ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
         /// <p>When the build was started, expressed in Unix time format.</p>
-        pub fn requested_on(mut self, input: smithy_types::Instant) -> Self {
+        pub fn requested_on(mut self, input: aws_smithy_types::Instant) -> Self {
             self.requested_on = Some(input);
             self
         }
+        /// <p>When the build was started, expressed in Unix time format.</p>
         pub fn set_requested_on(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.requested_on = input;
             self
@@ -6791,6 +8322,33 @@ pub mod build_summary {
             self.build_status = Some(input);
             self
         }
+        /// <p>The status of the build group.</p>
+        /// <dl>
+        /// <dt>FAILED</dt>
+        /// <dd>
+        /// <p>The build group failed.</p>
+        /// </dd>
+        /// <dt>FAULT</dt>
+        /// <dd>
+        /// <p>The build group faulted.</p>
+        /// </dd>
+        /// <dt>IN_PROGRESS</dt>
+        /// <dd>
+        /// <p>The build group is still in progress.</p>
+        /// </dd>
+        /// <dt>STOPPED</dt>
+        /// <dd>
+        /// <p>The build group stopped.</p>
+        /// </dd>
+        /// <dt>SUCCEEDED</dt>
+        /// <dd>
+        /// <p>The build group succeeded.</p>
+        /// </dd>
+        /// <dt>TIMED_OUT</dt>
+        /// <dd>
+        /// <p>The build group timed out.</p>
+        /// </dd>
+        /// </dl>
         pub fn set_build_status(
             mut self,
             input: std::option::Option<crate::model::StatusType>,
@@ -6804,6 +8362,8 @@ pub mod build_summary {
             self.primary_artifact = Some(input);
             self
         }
+        /// <p>A <code>ResolvedArtifact</code> object that represents the primary build artifacts for the
+        /// build group.</p>
         pub fn set_primary_artifact(
             mut self,
             input: std::option::Option<crate::model::ResolvedArtifact>,
@@ -6811,6 +8371,12 @@ pub mod build_summary {
             self.primary_artifact = input;
             self
         }
+        /// Appends an item to `secondary_artifacts`.
+        ///
+        /// To override the contents of this collection use [`set_secondary_artifacts`](Self::set_secondary_artifacts).
+        ///
+        /// <p>An array of <code>ResolvedArtifact</code> objects that represents the secondary build
+        /// artifacts for the build group.</p>
         pub fn secondary_artifacts(
             mut self,
             input: impl Into<crate::model::ResolvedArtifact>,
@@ -6820,6 +8386,8 @@ pub mod build_summary {
             self.secondary_artifacts = Some(v);
             self
         }
+        /// <p>An array of <code>ResolvedArtifact</code> objects that represents the secondary build
+        /// artifacts for the build group.</p>
         pub fn set_secondary_artifacts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResolvedArtifact>>,
@@ -6883,6 +8451,7 @@ pub mod resolved_artifact {
             self.r#type = Some(input);
             self
         }
+        /// <p>Specifies the type of artifact.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ArtifactsType>) -> Self {
             self.r#type = input;
             self
@@ -6892,6 +8461,7 @@ pub mod resolved_artifact {
             self.location = Some(input.into());
             self
         }
+        /// <p>The location of the artifact.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -6901,6 +8471,7 @@ pub mod resolved_artifact {
             self.identifier = Some(input.into());
             self
         }
+        /// <p>The identifier of the artifact.</p>
         pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identifier = input;
             self
@@ -6922,6 +8493,7 @@ impl ResolvedArtifact {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -6933,11 +8505,17 @@ impl ResolvedArtifact {
     std::hash::Hash,
 )]
 pub enum StatusType {
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Fault,
+    #[allow(missing_docs)] // documentation missing in model
     InProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Stopped,
+    #[allow(missing_docs)] // documentation missing in model
     Succeeded,
+    #[allow(missing_docs)] // documentation missing in model
     TimedOut,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -6963,6 +8541,7 @@ impl std::str::FromStr for StatusType {
     }
 }
 impl StatusType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StatusType::Failed => "FAILED",
@@ -6974,6 +8553,7 @@ impl StatusType {
             StatusType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "FAILED",
@@ -7099,6 +8679,7 @@ pub mod build_artifacts {
             self.location = Some(input.into());
             self
         }
+        /// <p>Information about the location of the build artifacts.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -7114,6 +8695,13 @@ pub mod build_artifacts {
             self.sha256sum = Some(input.into());
             self
         }
+        /// <p>The SHA-256 hash of the build artifact.</p>
+        /// <p>You can use this hash along with a checksum tool to confirm file integrity and
+        /// authenticity.</p>
+        /// <note>
+        /// <p>This value is available only if the build project's <code>packaging</code> value
+        /// is set to <code>ZIP</code>.</p>
+        /// </note>
         pub fn set_sha256sum(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.sha256sum = input;
             self
@@ -7129,6 +8717,13 @@ pub mod build_artifacts {
             self.md5sum = Some(input.into());
             self
         }
+        /// <p>The MD5 hash of the build artifact.</p>
+        /// <p>You can use this hash along with a checksum tool to confirm file integrity and
+        /// authenticity.</p>
+        /// <note>
+        /// <p>This value is available only if the build project's <code>packaging</code> value
+        /// is set to <code>ZIP</code>.</p>
+        /// </note>
         pub fn set_md5sum(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.md5sum = input;
             self
@@ -7141,6 +8736,10 @@ pub mod build_artifacts {
             self.override_artifact_name = Some(input);
             self
         }
+        /// <p> If this flag is set, a name specified in the buildspec file overrides the artifact
+        /// name. The name specified in a buildspec file is calculated at build time and uses the
+        /// Shell Command Language. For example, you can append a date and time to your artifact
+        /// name so that it is always unique. </p>
         pub fn set_override_artifact_name(mut self, input: std::option::Option<bool>) -> Self {
             self.override_artifact_name = input;
             self
@@ -7150,6 +8749,7 @@ pub mod build_artifacts {
             self.encryption_disabled = Some(input);
             self
         }
+        /// <p> Information that tells you if encryption for build artifacts is disabled. </p>
         pub fn set_encryption_disabled(mut self, input: std::option::Option<bool>) -> Self {
             self.encryption_disabled = input;
             self
@@ -7159,6 +8759,7 @@ pub mod build_artifacts {
             self.artifact_identifier = Some(input.into());
             self
         }
+        /// <p> An identifier for this artifact definition. </p>
         pub fn set_artifact_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7212,6 +8813,48 @@ pub mod build_artifacts {
             self.bucket_owner_access = Some(input);
             self
         }
+        /// <p>Specifies the bucket owner's access for objects that another account uploads to their
+        /// Amazon S3 bucket. By default, only the account that uploads the objects to the bucket has
+        /// access to these objects. This property allows you to give the bucket owner access to
+        /// these objects.</p>
+        /// <note>
+        /// <p>To use this property, your CodeBuild service role must have the
+        /// <code>s3:PutBucketAcl</code> permission. This permission allows CodeBuild to modify
+        /// the access control list for the bucket.</p>
+        /// </note>
+        /// <p>This property can be one of the following values:</p>
+        /// <dl>
+        /// <dt>NONE</dt>
+        /// <dd>
+        /// <p>The bucket owner does not have access to the objects. This is the
+        /// default.</p>
+        /// </dd>
+        /// <dt>READ_ONLY</dt>
+        /// <dd>
+        /// <p>The bucket owner has read-only access to the objects. The uploading account
+        /// retains ownership of the objects.</p>
+        /// </dd>
+        /// <dt>FULL</dt>
+        /// <dd>
+        /// <p>The bucket owner has full access to the objects. Object ownership is determined
+        /// by the following criteria:</p>
+        /// <ul>
+        /// <li>
+        /// <p>If the bucket is configured with the <b>Bucket
+        /// owner preferred</b> setting, the bucket owner owns the
+        /// objects. The uploading account will have object access as specified
+        /// by the bucket's policy.</p>
+        /// </li>
+        /// <li>
+        /// <p>Otherwise, the uploading account retains ownership of the
+        /// objects.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information about Amazon S3 object ownership, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling ownership of uploaded objects using S3
+        /// Object Ownership</a> in the <i>Amazon Simple Storage Service User
+        /// Guide</i>.</p>
+        /// </dd>
+        /// </dl>
         pub fn set_bucket_owner_access(
             mut self,
             input: std::option::Option<crate::model::BucketOwnerAccess>,
@@ -7306,9 +8949,9 @@ pub struct BuildBatchPhase {
     /// </dl>
     pub phase_status: std::option::Option<crate::model::StatusType>,
     /// <p>When the batch build phase started, expressed in Unix time format.</p>
-    pub start_time: std::option::Option<smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>When the batch build phase ended, expressed in Unix time format.</p>
-    pub end_time: std::option::Option<smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>How long, in seconds, between the starting and ending times of the batch build's
     /// phase.</p>
     pub duration_in_seconds: std::option::Option<i64>,
@@ -7336,8 +8979,8 @@ pub mod build_batch_phase {
     pub struct Builder {
         pub(crate) phase_type: std::option::Option<crate::model::BuildBatchPhaseType>,
         pub(crate) phase_status: std::option::Option<crate::model::StatusType>,
-        pub(crate) start_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) duration_in_seconds: std::option::Option<i64>,
         pub(crate) contexts: std::option::Option<std::vec::Vec<crate::model::PhaseContext>>,
     }
@@ -7378,6 +9021,38 @@ pub mod build_batch_phase {
             self.phase_type = Some(input);
             self
         }
+        /// <p>The name of the batch build phase. Valid values include:</p>
+        /// <dl>
+        /// <dt>COMBINE_ARTIFACTS</dt>
+        /// <dd>
+        /// <p>Build output artifacts are being combined and uploaded to the output
+        /// location.</p>
+        /// </dd>
+        /// <dt>DOWNLOAD_BATCHSPEC</dt>
+        /// <dd>
+        /// <p>The batch build specification is being downloaded.</p>
+        /// </dd>
+        /// <dt>FAILED</dt>
+        /// <dd>
+        /// <p>One or more of the builds failed.</p>
+        /// </dd>
+        /// <dt>IN_PROGRESS</dt>
+        /// <dd>
+        /// <p>The batch build is in progress.</p>
+        /// </dd>
+        /// <dt>STOPPED</dt>
+        /// <dd>
+        /// <p>The batch build was stopped.</p>
+        /// </dd>
+        /// <dt>SUBMITTED</dt>
+        /// <dd>
+        /// <p>The btach build has been submitted.</p>
+        /// </dd>
+        /// <dt>SUCCEEDED</dt>
+        /// <dd>
+        /// <p>The batch build succeeded.</p>
+        /// </dd>
+        /// </dl>
         pub fn set_phase_type(
             mut self,
             input: std::option::Option<crate::model::BuildBatchPhaseType>,
@@ -7416,6 +9091,33 @@ pub mod build_batch_phase {
             self.phase_status = Some(input);
             self
         }
+        /// <p>The current status of the batch build phase. Valid values include:</p>
+        /// <dl>
+        /// <dt>FAILED</dt>
+        /// <dd>
+        /// <p>The build phase failed.</p>
+        /// </dd>
+        /// <dt>FAULT</dt>
+        /// <dd>
+        /// <p>The build phase faulted.</p>
+        /// </dd>
+        /// <dt>IN_PROGRESS</dt>
+        /// <dd>
+        /// <p>The build phase is still in progress.</p>
+        /// </dd>
+        /// <dt>STOPPED</dt>
+        /// <dd>
+        /// <p>The build phase stopped.</p>
+        /// </dd>
+        /// <dt>SUCCEEDED</dt>
+        /// <dd>
+        /// <p>The build phase succeeded.</p>
+        /// </dd>
+        /// <dt>TIMED_OUT</dt>
+        /// <dd>
+        /// <p>The build phase timed out.</p>
+        /// </dd>
+        /// </dl>
         pub fn set_phase_status(
             mut self,
             input: std::option::Option<crate::model::StatusType>,
@@ -7424,20 +9126,28 @@ pub mod build_batch_phase {
             self
         }
         /// <p>When the batch build phase started, expressed in Unix time format.</p>
-        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>When the batch build phase started, expressed in Unix time format.</p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>When the batch build phase ended, expressed in Unix time format.</p>
-        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>When the batch build phase ended, expressed in Unix time format.</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.end_time = input;
             self
         }
@@ -7447,16 +9157,26 @@ pub mod build_batch_phase {
             self.duration_in_seconds = Some(input);
             self
         }
+        /// <p>How long, in seconds, between the starting and ending times of the batch build's
+        /// phase.</p>
         pub fn set_duration_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
             self.duration_in_seconds = input;
             self
         }
+        /// Appends an item to `contexts`.
+        ///
+        /// To override the contents of this collection use [`set_contexts`](Self::set_contexts).
+        ///
+        /// <p>Additional information about the batch build phase. Especially to help troubleshoot a
+        /// failed batch build.</p>
         pub fn contexts(mut self, input: impl Into<crate::model::PhaseContext>) -> Self {
             let mut v = self.contexts.unwrap_or_default();
             v.push(input.into());
             self.contexts = Some(v);
             self
         }
+        /// <p>Additional information about the batch build phase. Especially to help troubleshoot a
+        /// failed batch build.</p>
         pub fn set_contexts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PhaseContext>>,
@@ -7518,6 +9238,7 @@ pub mod phase_context {
             self.status_code = Some(input.into());
             self
         }
+        /// <p>The status code for the context of the build phase.</p>
         pub fn set_status_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status_code = input;
             self
@@ -7528,6 +9249,8 @@ pub mod phase_context {
             self.message = Some(input.into());
             self
         }
+        /// <p>An explanation of the build phase's context. This might include a command ID and an
+        /// exit code.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -7548,6 +9271,7 @@ impl PhaseContext {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -7559,12 +9283,19 @@ impl PhaseContext {
     std::hash::Hash,
 )]
 pub enum BuildBatchPhaseType {
+    #[allow(missing_docs)] // documentation missing in model
     CombineArtifacts,
+    #[allow(missing_docs)] // documentation missing in model
     DownloadBatchspec,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     InProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Stopped,
+    #[allow(missing_docs)] // documentation missing in model
     Submitted,
+    #[allow(missing_docs)] // documentation missing in model
     Succeeded,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -7591,6 +9322,7 @@ impl std::str::FromStr for BuildBatchPhaseType {
     }
 }
 impl BuildBatchPhaseType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             BuildBatchPhaseType::CombineArtifacts => "COMBINE_ARTIFACTS",
@@ -7603,6 +9335,7 @@ impl BuildBatchPhaseType {
             BuildBatchPhaseType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "COMBINE_ARTIFACTS",
@@ -7635,9 +9368,9 @@ pub struct Build {
     /// other builds does not change.</p>
     pub build_number: std::option::Option<i64>,
     /// <p>When the build process started, expressed in Unix time format.</p>
-    pub start_time: std::option::Option<smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>When the build process ended, expressed in Unix time format.</p>
-    pub end_time: std::option::Option<smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The current build phase.</p>
     pub current_phase: std::option::Option<std::string::String>,
     /// <p>The current status of the build. Valid values include:</p>
@@ -7844,8 +9577,8 @@ pub mod build {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) build_number: std::option::Option<i64>,
-        pub(crate) start_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) current_phase: std::option::Option<std::string::String>,
         pub(crate) build_status: std::option::Option<crate::model::StatusType>,
         pub(crate) source_version: std::option::Option<std::string::String>,
@@ -7885,6 +9618,7 @@ pub mod build {
             self.id = Some(input.into());
             self
         }
+        /// <p>The unique ID for the build.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -7894,6 +9628,7 @@ pub mod build {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the build.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -7906,25 +9641,37 @@ pub mod build {
             self.build_number = Some(input);
             self
         }
+        /// <p>The number of the build. For each project, the <code>buildNumber</code> of its first
+        /// build is <code>1</code>. The <code>buildNumber</code> of each subsequent build is
+        /// incremented by <code>1</code>. If a build is deleted, the <code>buildNumber</code> of
+        /// other builds does not change.</p>
         pub fn set_build_number(mut self, input: std::option::Option<i64>) -> Self {
             self.build_number = input;
             self
         }
         /// <p>When the build process started, expressed in Unix time format.</p>
-        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>When the build process started, expressed in Unix time format.</p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>When the build process ended, expressed in Unix time format.</p>
-        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>When the build process ended, expressed in Unix time format.</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.end_time = input;
             self
         }
@@ -7933,6 +9680,7 @@ pub mod build {
             self.current_phase = Some(input.into());
             self
         }
+        /// <p>The current build phase.</p>
         pub fn set_current_phase(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7971,6 +9719,33 @@ pub mod build {
             self.build_status = Some(input);
             self
         }
+        /// <p>The current status of the build. Valid values include:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>FAILED</code>: The build failed.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FAULT</code>: The build faulted.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>IN_PROGRESS</code>: The build is still in progress.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>STOPPED</code>: The build stopped.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SUCCEEDED</code>: The build succeeded.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>TIMED_OUT</code>: The build timed out.</p>
+        /// </li>
+        /// </ul>
         pub fn set_build_status(
             mut self,
             input: std::option::Option<crate::model::StatusType>,
@@ -7987,6 +9762,11 @@ pub mod build {
             self.source_version = Some(input.into());
             self
         }
+        /// <p>Any version identifier for the version of the source code to be built. If
+        /// <code>sourceVersion</code> is specified at the project level, then this
+        /// <code>sourceVersion</code> (at the build level) takes precedence. </p>
+        /// <p> For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample
+        /// with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
         pub fn set_source_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8010,6 +9790,18 @@ pub mod build {
             self.resolved_source_version = Some(input.into());
             self
         }
+        /// <p> An identifier for the version of this build's source code. </p>
+        /// <ul>
+        /// <li>
+        /// <p> For CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the commit ID. </p>
+        /// </li>
+        /// <li>
+        /// <p> For CodePipeline, the source revision provided by CodePipeline. </p>
+        /// </li>
+        /// <li>
+        /// <p> For Amazon S3, this does not apply. </p>
+        /// </li>
+        /// </ul>
         pub fn set_resolved_source_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8022,16 +9814,25 @@ pub mod build {
             self.project_name = Some(input.into());
             self
         }
+        /// <p>The name of the CodeBuild project.</p>
         pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.project_name = input;
             self
         }
+        /// Appends an item to `phases`.
+        ///
+        /// To override the contents of this collection use [`set_phases`](Self::set_phases).
+        ///
+        /// <p>Information about all previous build phases that are complete and information about
+        /// any current build phase that is not yet complete.</p>
         pub fn phases(mut self, input: impl Into<crate::model::BuildPhase>) -> Self {
             let mut v = self.phases.unwrap_or_default();
             v.push(input.into());
             self.phases = Some(v);
             self
         }
+        /// <p>Information about all previous build phases that are complete and information about
+        /// any current build phase that is not yet complete.</p>
         pub fn set_phases(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BuildPhase>>,
@@ -8044,6 +9845,7 @@ pub mod build {
             self.source = Some(input);
             self
         }
+        /// <p>Information about the source code to be built.</p>
         pub fn set_source(
             mut self,
             input: std::option::Option<crate::model::ProjectSource>,
@@ -8051,12 +9853,18 @@ pub mod build {
             self.source = input;
             self
         }
+        /// Appends an item to `secondary_sources`.
+        ///
+        /// To override the contents of this collection use [`set_secondary_sources`](Self::set_secondary_sources).
+        ///
+        /// <p> An array of <code>ProjectSource</code> objects. </p>
         pub fn secondary_sources(mut self, input: impl Into<crate::model::ProjectSource>) -> Self {
             let mut v = self.secondary_sources.unwrap_or_default();
             v.push(input.into());
             self.secondary_sources = Some(v);
             self
         }
+        /// <p> An array of <code>ProjectSource</code> objects. </p>
         pub fn set_secondary_sources(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ProjectSource>>,
@@ -8064,6 +9872,35 @@ pub mod build {
             self.secondary_sources = input;
             self
         }
+        /// Appends an item to `secondary_source_versions`.
+        ///
+        /// To override the contents of this collection use [`set_secondary_source_versions`](Self::set_secondary_source_versions).
+        ///
+        /// <p> An array of <code>ProjectSourceVersion</code> objects. Each
+        /// <code>ProjectSourceVersion</code> must be one of: </p>
+        /// <ul>
+        /// <li>
+        /// <p>For CodeCommit: the commit ID, branch, or Git tag to use.</p>
+        /// </li>
+        /// <li>
+        /// <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that
+        /// corresponds to the version of the source code you want to build. If a pull
+        /// request ID is specified, it must use the format <code>pr/pull-request-ID</code>
+        /// (for example, <code>pr/25</code>). If a branch name is specified, the branch's
+        /// HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is
+        /// used.</p>
+        /// </li>
+        /// <li>
+        /// <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the
+        /// version of the source code you want to build. If a branch name is specified, the
+        /// branch's HEAD commit ID is used. If not specified, the default branch's HEAD
+        /// commit ID is used.</p>
+        /// </li>
+        /// <li>
+        /// <p>For Amazon S3: the version ID of the object that represents the build input ZIP
+        /// file to use.</p>
+        /// </li>
+        /// </ul>
         pub fn secondary_source_versions(
             mut self,
             input: impl Into<crate::model::ProjectSourceVersion>,
@@ -8073,6 +9910,31 @@ pub mod build {
             self.secondary_source_versions = Some(v);
             self
         }
+        /// <p> An array of <code>ProjectSourceVersion</code> objects. Each
+        /// <code>ProjectSourceVersion</code> must be one of: </p>
+        /// <ul>
+        /// <li>
+        /// <p>For CodeCommit: the commit ID, branch, or Git tag to use.</p>
+        /// </li>
+        /// <li>
+        /// <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that
+        /// corresponds to the version of the source code you want to build. If a pull
+        /// request ID is specified, it must use the format <code>pr/pull-request-ID</code>
+        /// (for example, <code>pr/25</code>). If a branch name is specified, the branch's
+        /// HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is
+        /// used.</p>
+        /// </li>
+        /// <li>
+        /// <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the
+        /// version of the source code you want to build. If a branch name is specified, the
+        /// branch's HEAD commit ID is used. If not specified, the default branch's HEAD
+        /// commit ID is used.</p>
+        /// </li>
+        /// <li>
+        /// <p>For Amazon S3: the version ID of the object that represents the build input ZIP
+        /// file to use.</p>
+        /// </li>
+        /// </ul>
         pub fn set_secondary_source_versions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ProjectSourceVersion>>,
@@ -8085,6 +9947,7 @@ pub mod build {
             self.artifacts = Some(input);
             self
         }
+        /// <p>Information about the output artifacts for the build.</p>
         pub fn set_artifacts(
             mut self,
             input: std::option::Option<crate::model::BuildArtifacts>,
@@ -8092,6 +9955,11 @@ pub mod build {
             self.artifacts = input;
             self
         }
+        /// Appends an item to `secondary_artifacts`.
+        ///
+        /// To override the contents of this collection use [`set_secondary_artifacts`](Self::set_secondary_artifacts).
+        ///
+        /// <p> An array of <code>ProjectArtifacts</code> objects. </p>
         pub fn secondary_artifacts(
             mut self,
             input: impl Into<crate::model::BuildArtifacts>,
@@ -8101,6 +9969,7 @@ pub mod build {
             self.secondary_artifacts = Some(v);
             self
         }
+        /// <p> An array of <code>ProjectArtifacts</code> objects. </p>
         pub fn set_secondary_artifacts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BuildArtifacts>>,
@@ -8113,6 +9982,7 @@ pub mod build {
             self.cache = Some(input);
             self
         }
+        /// <p>Information about the cache for the build.</p>
         pub fn set_cache(mut self, input: std::option::Option<crate::model::ProjectCache>) -> Self {
             self.cache = input;
             self
@@ -8122,6 +9992,7 @@ pub mod build {
             self.environment = Some(input);
             self
         }
+        /// <p>Information about the build environment for this build.</p>
         pub fn set_environment(
             mut self,
             input: std::option::Option<crate::model::ProjectEnvironment>,
@@ -8134,6 +10005,7 @@ pub mod build {
             self.service_role = Some(input.into());
             self
         }
+        /// <p>The name of a service role used for this build.</p>
         pub fn set_service_role(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.service_role = input;
             self
@@ -8143,6 +10015,7 @@ pub mod build {
             self.logs = Some(input);
             self
         }
+        /// <p>Information about the build's logs in CloudWatch Logs.</p>
         pub fn set_logs(mut self, input: std::option::Option<crate::model::LogsLocation>) -> Self {
             self.logs = input;
             self
@@ -8153,6 +10026,8 @@ pub mod build {
             self.timeout_in_minutes = Some(input);
             self
         }
+        /// <p>How long, in minutes, for CodeBuild to wait before timing out this build if it does not
+        /// get marked as completed.</p>
         pub fn set_timeout_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.timeout_in_minutes = input;
             self
@@ -8162,6 +10037,7 @@ pub mod build {
             self.queued_timeout_in_minutes = Some(input);
             self
         }
+        /// <p> The number of minutes a build is allowed to be queued before it times out. </p>
         pub fn set_queued_timeout_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
             self.queued_timeout_in_minutes = input;
             self
@@ -8171,6 +10047,7 @@ pub mod build {
             self.build_complete = Some(input);
             self
         }
+        /// <p>Whether the build is complete. True if complete; otherwise, false.</p>
         pub fn set_build_complete(mut self, input: std::option::Option<bool>) -> Self {
             self.build_complete = input;
             self
@@ -8194,6 +10071,21 @@ pub mod build {
             self.initiator = Some(input.into());
             self
         }
+        /// <p>The entity that started the build. Valid values include:</p>
+        /// <ul>
+        /// <li>
+        /// <p>If CodePipeline started the build, the pipeline's name (for example,
+        /// <code>codepipeline/my-demo-pipeline</code>).</p>
+        /// </li>
+        /// <li>
+        /// <p>If an IAM user started the build, the user's name (for example,
+        /// <code>MyUserName</code>).</p>
+        /// </li>
+        /// <li>
+        /// <p>If the Jenkins plugin for CodeBuild started the build, the string
+        /// <code>CodeBuild-Jenkins-Plugin</code>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_initiator(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.initiator = input;
             self
@@ -8206,6 +10098,10 @@ pub mod build {
             self.vpc_config = Some(input);
             self
         }
+        /// <p>If your CodeBuild project accesses resources in an Amazon VPC, you provide this parameter
+        /// that identifies the VPC ID and the list of security group IDs and subnet IDs. The
+        /// security groups and subnets must belong to the same VPC. You must provide at least one
+        /// security group and one subnet ID.</p>
         pub fn set_vpc_config(
             mut self,
             input: std::option::Option<crate::model::VpcConfig>,
@@ -8218,6 +10114,7 @@ pub mod build {
             self.network_interface = Some(input);
             self
         }
+        /// <p>Describes a network interface.</p>
         pub fn set_network_interface(
             mut self,
             input: std::option::Option<crate::model::NetworkInterface>,
@@ -8237,6 +10134,14 @@ pub mod build {
             self.encryption_key = Some(input.into());
             self
         }
+        /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the build output
+        /// artifacts.</p>
+        /// <note>
+        /// <p> You can use a cross-account KMS key to encrypt the build output artifacts if your
+        /// service role has permission to that key. </p>
+        /// </note>
+        /// <p>You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using
+        /// the format <code>alias/<alias-name></code>).</p>
         pub fn set_encryption_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8244,6 +10149,14 @@ pub mod build {
             self.encryption_key = input;
             self
         }
+        /// Appends an item to `exported_environment_variables`.
+        ///
+        /// To override the contents of this collection use [`set_exported_environment_variables`](Self::set_exported_environment_variables).
+        ///
+        /// <p>A list of exported environment variables for this build.</p>
+        /// <p>Exported environment variables are used in conjunction with CodePipeline to export
+        /// environment variables from the current build stage to subsequent stages in the pipeline.
+        /// For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/actions-variables.html">Working with variables</a> in the <i>CodePipeline User Guide</i>.</p>
         pub fn exported_environment_variables(
             mut self,
             input: impl Into<crate::model::ExportedEnvironmentVariable>,
@@ -8253,6 +10166,10 @@ pub mod build {
             self.exported_environment_variables = Some(v);
             self
         }
+        /// <p>A list of exported environment variables for this build.</p>
+        /// <p>Exported environment variables are used in conjunction with CodePipeline to export
+        /// environment variables from the current build stage to subsequent stages in the pipeline.
+        /// For more information, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/actions-variables.html">Working with variables</a> in the <i>CodePipeline User Guide</i>.</p>
         pub fn set_exported_environment_variables(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ExportedEnvironmentVariable>>,
@@ -8260,12 +10177,18 @@ pub mod build {
             self.exported_environment_variables = input;
             self
         }
+        /// Appends an item to `report_arns`.
+        ///
+        /// To override the contents of this collection use [`set_report_arns`](Self::set_report_arns).
+        ///
+        /// <p> An array of the ARNs associated with this build's reports. </p>
         pub fn report_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.report_arns.unwrap_or_default();
             v.push(input.into());
             self.report_arns = Some(v);
             self
         }
+        /// <p> An array of the ARNs associated with this build's reports. </p>
         pub fn set_report_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8273,6 +10196,15 @@ pub mod build {
             self.report_arns = input;
             self
         }
+        /// Appends an item to `file_system_locations`.
+        ///
+        /// To override the contents of this collection use [`set_file_system_locations`](Self::set_file_system_locations).
+        ///
+        /// <p>
+        /// An array of <code>ProjectFileSystemLocation</code> objects for a CodeBuild build project. A <code>ProjectFileSystemLocation</code> object
+        /// specifies the <code>identifier</code>, <code>location</code>, <code>mountOptions</code>,
+        /// <code>mountPoint</code>, and <code>type</code> of a file system created using Amazon Elastic File System.
+        /// </p>
         pub fn file_system_locations(
             mut self,
             input: impl Into<crate::model::ProjectFileSystemLocation>,
@@ -8282,6 +10214,11 @@ pub mod build {
             self.file_system_locations = Some(v);
             self
         }
+        /// <p>
+        /// An array of <code>ProjectFileSystemLocation</code> objects for a CodeBuild build project. A <code>ProjectFileSystemLocation</code> object
+        /// specifies the <code>identifier</code>, <code>location</code>, <code>mountOptions</code>,
+        /// <code>mountPoint</code>, and <code>type</code> of a file system created using Amazon Elastic File System.
+        /// </p>
         pub fn set_file_system_locations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ProjectFileSystemLocation>>,
@@ -8294,6 +10231,7 @@ pub mod build {
             self.debug_session = Some(input);
             self
         }
+        /// <p>Contains information about the debug session for this build.</p>
         pub fn set_debug_session(
             mut self,
             input: std::option::Option<crate::model::DebugSession>,
@@ -8306,6 +10244,7 @@ pub mod build {
             self.build_batch_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the batch build that this build is a member of, if applicable.</p>
         pub fn set_build_batch_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8394,6 +10333,7 @@ pub mod debug_session {
             self.session_enabled = Some(input);
             self
         }
+        /// <p>Specifies if session debugging is enabled for this build.</p>
         pub fn set_session_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.session_enabled = input;
             self
@@ -8405,6 +10345,9 @@ pub mod debug_session {
             self.session_target = Some(input.into());
             self
         }
+        /// <p>Contains the identifier of the Session Manager session used for the build. To work with
+        /// the paused build, you open this session to examine, control, and resume the
+        /// build.</p>
         pub fn set_session_target(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8470,6 +10413,7 @@ pub mod exported_environment_variable {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the exported environment variable.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -8479,6 +10423,7 @@ pub mod exported_environment_variable {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value assigned to the exported environment variable.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -8531,6 +10476,7 @@ pub mod network_interface {
             self.subnet_id = Some(input.into());
             self
         }
+        /// <p>The ID of the subnet.</p>
         pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.subnet_id = input;
             self
@@ -8540,6 +10486,7 @@ pub mod network_interface {
             self.network_interface_id = Some(input.into());
             self
         }
+        /// <p>The ID of the network interface.</p>
         pub fn set_network_interface_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8623,6 +10570,7 @@ pub mod logs_location {
             self.group_name = Some(input.into());
             self
         }
+        /// <p>The name of the CloudWatch Logs group for the build logs.</p>
         pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.group_name = input;
             self
@@ -8632,6 +10580,7 @@ pub mod logs_location {
             self.stream_name = Some(input.into());
             self
         }
+        /// <p>The name of the CloudWatch Logs stream for the build logs.</p>
         pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_name = input;
             self
@@ -8641,6 +10590,7 @@ pub mod logs_location {
             self.deep_link = Some(input.into());
             self
         }
+        /// <p>The URL to an individual build log in CloudWatch Logs.</p>
         pub fn set_deep_link(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.deep_link = input;
             self
@@ -8650,6 +10600,7 @@ pub mod logs_location {
             self.s3_deep_link = Some(input.into());
             self
         }
+        /// <p> The URL to a build log in an S3 bucket. </p>
         pub fn set_s3_deep_link(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.s3_deep_link = input;
             self
@@ -8661,6 +10612,9 @@ pub mod logs_location {
             self.cloud_watch_logs_arn = Some(input.into());
             self
         }
+        /// <p> The ARN of CloudWatch Logs for a build project. Its format is
+        /// <code>arn:${Partition}:logs:${Region}:${Account}:log-group:${LogGroupName}:log-stream:${LogStreamName}</code>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatchlogs.html#amazoncloudwatchlogs-resources-for-iam-policies">Resources Defined by CloudWatch Logs</a>. </p>
         pub fn set_cloud_watch_logs_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8675,6 +10629,9 @@ pub mod logs_location {
             self.s3_logs_arn = Some(input.into());
             self
         }
+        /// <p> The ARN of S3 logs for a build project. Its format is
+        /// <code>arn:${Partition}:s3:::${BucketName}/${ObjectName}</code>. For more
+        /// information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazons3.html#amazons3-resources-for-iam-policies">Resources Defined by Amazon S3</a>. </p>
         pub fn set_s3_logs_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.s3_logs_arn = input;
             self
@@ -8684,6 +10641,7 @@ pub mod logs_location {
             self.cloud_watch_logs = Some(input);
             self
         }
+        /// <p> Information about CloudWatch Logs for a build project. </p>
         pub fn set_cloud_watch_logs(
             mut self,
             input: std::option::Option<crate::model::CloudWatchLogsConfig>,
@@ -8696,6 +10654,7 @@ pub mod logs_location {
             self.s3_logs = Some(input);
             self
         }
+        /// <p> Information about S3 logs for a build project. </p>
         pub fn set_s3_logs(
             mut self,
             input: std::option::Option<crate::model::S3LogsConfig>,
@@ -8807,9 +10766,9 @@ pub struct BuildPhase {
     /// </dl>
     pub phase_status: std::option::Option<crate::model::StatusType>,
     /// <p>When the build phase started, expressed in Unix time format.</p>
-    pub start_time: std::option::Option<smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>When the build phase ended, expressed in Unix time format.</p>
-    pub end_time: std::option::Option<smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>How long, in seconds, between the starting and ending times of the build's
     /// phase.</p>
     pub duration_in_seconds: std::option::Option<i64>,
@@ -8837,8 +10796,8 @@ pub mod build_phase {
     pub struct Builder {
         pub(crate) phase_type: std::option::Option<crate::model::BuildPhaseType>,
         pub(crate) phase_status: std::option::Option<crate::model::StatusType>,
-        pub(crate) start_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) duration_in_seconds: std::option::Option<i64>,
         pub(crate) contexts: std::option::Option<std::vec::Vec<crate::model::PhaseContext>>,
     }
@@ -8895,6 +10854,54 @@ pub mod build_phase {
             self.phase_type = Some(input);
             self
         }
+        /// <p>The name of the build phase. Valid values include:</p>
+        /// <dl>
+        /// <dt>BUILD</dt>
+        /// <dd>
+        /// <p>Core build activities typically occur in this build phase.</p>
+        /// </dd>
+        /// <dt>COMPLETED</dt>
+        /// <dd>
+        /// <p>The build has been completed.</p>
+        /// </dd>
+        /// <dt>DOWNLOAD_SOURCE</dt>
+        /// <dd>
+        /// <p>Source code is being downloaded in this build phase.</p>
+        /// </dd>
+        /// <dt>FINALIZING</dt>
+        /// <dd>
+        /// <p>The build process is completing in this build phase.</p>
+        /// </dd>
+        /// <dt>INSTALL</dt>
+        /// <dd>
+        /// <p>Installation activities typically occur in this build phase.</p>
+        /// </dd>
+        /// <dt>POST_BUILD</dt>
+        /// <dd>
+        /// <p>Post-build activities typically occur in this build phase.</p>
+        /// </dd>
+        /// <dt>PRE_BUILD</dt>
+        /// <dd>
+        /// <p>Pre-build activities typically occur in this build phase.</p>
+        /// </dd>
+        /// <dt>PROVISIONING</dt>
+        /// <dd>
+        /// <p>The build environment is being set up.</p>
+        /// </dd>
+        /// <dt>QUEUED</dt>
+        /// <dd>
+        /// <p>The build has been submitted and is queued behind other submitted
+        /// builds.</p>
+        /// </dd>
+        /// <dt>SUBMITTED</dt>
+        /// <dd>
+        /// <p>The build has been submitted.</p>
+        /// </dd>
+        /// <dt>UPLOAD_ARTIFACTS</dt>
+        /// <dd>
+        /// <p>Build output artifacts are being uploaded to the output location.</p>
+        /// </dd>
+        /// </dl>
         pub fn set_phase_type(
             mut self,
             input: std::option::Option<crate::model::BuildPhaseType>,
@@ -8933,6 +10940,33 @@ pub mod build_phase {
             self.phase_status = Some(input);
             self
         }
+        /// <p>The current status of the build phase. Valid values include:</p>
+        /// <dl>
+        /// <dt>FAILED</dt>
+        /// <dd>
+        /// <p>The build phase failed.</p>
+        /// </dd>
+        /// <dt>FAULT</dt>
+        /// <dd>
+        /// <p>The build phase faulted.</p>
+        /// </dd>
+        /// <dt>IN_PROGRESS</dt>
+        /// <dd>
+        /// <p>The build phase is still in progress.</p>
+        /// </dd>
+        /// <dt>STOPPED</dt>
+        /// <dd>
+        /// <p>The build phase stopped.</p>
+        /// </dd>
+        /// <dt>SUCCEEDED</dt>
+        /// <dd>
+        /// <p>The build phase succeeded.</p>
+        /// </dd>
+        /// <dt>TIMED_OUT</dt>
+        /// <dd>
+        /// <p>The build phase timed out.</p>
+        /// </dd>
+        /// </dl>
         pub fn set_phase_status(
             mut self,
             input: std::option::Option<crate::model::StatusType>,
@@ -8941,20 +10975,28 @@ pub mod build_phase {
             self
         }
         /// <p>When the build phase started, expressed in Unix time format.</p>
-        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>When the build phase started, expressed in Unix time format.</p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>When the build phase ended, expressed in Unix time format.</p>
-        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>When the build phase ended, expressed in Unix time format.</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.end_time = input;
             self
         }
@@ -8964,16 +11006,26 @@ pub mod build_phase {
             self.duration_in_seconds = Some(input);
             self
         }
+        /// <p>How long, in seconds, between the starting and ending times of the build's
+        /// phase.</p>
         pub fn set_duration_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
             self.duration_in_seconds = input;
             self
         }
+        /// Appends an item to `contexts`.
+        ///
+        /// To override the contents of this collection use [`set_contexts`](Self::set_contexts).
+        ///
+        /// <p>Additional information about a build phase, especially to help troubleshoot a failed
+        /// build.</p>
         pub fn contexts(mut self, input: impl Into<crate::model::PhaseContext>) -> Self {
             let mut v = self.contexts.unwrap_or_default();
             v.push(input.into());
             self.contexts = Some(v);
             self
         }
+        /// <p>Additional information about a build phase, especially to help troubleshoot a failed
+        /// build.</p>
         pub fn set_contexts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PhaseContext>>,
@@ -9001,6 +11053,7 @@ impl BuildPhase {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -9012,16 +11065,27 @@ impl BuildPhase {
     std::hash::Hash,
 )]
 pub enum BuildPhaseType {
+    #[allow(missing_docs)] // documentation missing in model
     Build,
+    #[allow(missing_docs)] // documentation missing in model
     Completed,
+    #[allow(missing_docs)] // documentation missing in model
     DownloadSource,
+    #[allow(missing_docs)] // documentation missing in model
     Finalizing,
+    #[allow(missing_docs)] // documentation missing in model
     Install,
+    #[allow(missing_docs)] // documentation missing in model
     PostBuild,
+    #[allow(missing_docs)] // documentation missing in model
     PreBuild,
+    #[allow(missing_docs)] // documentation missing in model
     Provisioning,
+    #[allow(missing_docs)] // documentation missing in model
     Queued,
+    #[allow(missing_docs)] // documentation missing in model
     Submitted,
+    #[allow(missing_docs)] // documentation missing in model
     UploadArtifacts,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -9052,6 +11116,7 @@ impl std::str::FromStr for BuildPhaseType {
     }
 }
 impl BuildPhaseType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             BuildPhaseType::Build => "BUILD",
@@ -9068,6 +11133,7 @@ impl BuildPhaseType {
             BuildPhaseType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "BUILD",
@@ -9090,6 +11156,7 @@ impl AsRef<str> for BuildPhaseType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -9101,7 +11168,9 @@ impl AsRef<str> for BuildPhaseType {
     std::hash::Hash,
 )]
 pub enum RetryBuildBatchType {
+    #[allow(missing_docs)] // documentation missing in model
     RetryAllBuilds,
+    #[allow(missing_docs)] // documentation missing in model
     RetryFailedBuilds,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -9123,6 +11192,7 @@ impl std::str::FromStr for RetryBuildBatchType {
     }
 }
 impl RetryBuildBatchType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RetryBuildBatchType::RetryAllBuilds => "RETRY_ALL_BUILDS",
@@ -9130,6 +11200,7 @@ impl RetryBuildBatchType {
             RetryBuildBatchType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["RETRY_ALL_BUILDS", "RETRY_FAILED_BUILDS"]
     }
@@ -9179,6 +11250,7 @@ pub mod source_credentials_info {
             self.arn = Some(input.into());
             self
         }
+        /// <p> The Amazon Resource Name (ARN) of the token. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -9189,6 +11261,8 @@ pub mod source_credentials_info {
             self.server_type = Some(input);
             self
         }
+        /// <p> The type of source provider. The valid options are GITHUB, GITHUB_ENTERPRISE, or
+        /// BITBUCKET. </p>
         pub fn set_server_type(
             mut self,
             input: std::option::Option<crate::model::ServerType>,
@@ -9202,6 +11276,8 @@ pub mod source_credentials_info {
             self.auth_type = Some(input);
             self
         }
+        /// <p> The type of authentication used by the credentials. Valid options are OAUTH,
+        /// BASIC_AUTH, or PERSONAL_ACCESS_TOKEN. </p>
         pub fn set_auth_type(mut self, input: std::option::Option<crate::model::AuthType>) -> Self {
             self.auth_type = input;
             self
@@ -9223,6 +11299,7 @@ impl SourceCredentialsInfo {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -9234,8 +11311,11 @@ impl SourceCredentialsInfo {
     std::hash::Hash,
 )]
 pub enum AuthType {
+    #[allow(missing_docs)] // documentation missing in model
     BasicAuth,
+    #[allow(missing_docs)] // documentation missing in model
     Oauth,
+    #[allow(missing_docs)] // documentation missing in model
     PersonalAccessToken,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -9258,6 +11338,7 @@ impl std::str::FromStr for AuthType {
     }
 }
 impl AuthType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AuthType::BasicAuth => "BASIC_AUTH",
@@ -9266,6 +11347,7 @@ impl AuthType {
             AuthType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["BASIC_AUTH", "OAUTH", "PERSONAL_ACCESS_TOKEN"]
     }
@@ -9276,6 +11358,7 @@ impl AsRef<str> for AuthType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -9287,8 +11370,11 @@ impl AsRef<str> for AuthType {
     std::hash::Hash,
 )]
 pub enum ServerType {
+    #[allow(missing_docs)] // documentation missing in model
     Bitbucket,
+    #[allow(missing_docs)] // documentation missing in model
     Github,
+    #[allow(missing_docs)] // documentation missing in model
     GithubEnterprise,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -9311,6 +11397,7 @@ impl std::str::FromStr for ServerType {
     }
 }
 impl ServerType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ServerType::Bitbucket => "BITBUCKET",
@@ -9319,6 +11406,7 @@ impl ServerType {
             ServerType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["BITBUCKET", "GITHUB", "GITHUB_ENTERPRISE"]
     }
@@ -9329,6 +11417,7 @@ impl AsRef<str> for ServerType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -9340,7 +11429,9 @@ impl AsRef<str> for ServerType {
     std::hash::Hash,
 )]
 pub enum SharedResourceSortByType {
+    #[allow(missing_docs)] // documentation missing in model
     Arn,
+    #[allow(missing_docs)] // documentation missing in model
     ModifiedTime,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -9362,6 +11453,7 @@ impl std::str::FromStr for SharedResourceSortByType {
     }
 }
 impl SharedResourceSortByType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SharedResourceSortByType::Arn => "ARN",
@@ -9369,6 +11461,7 @@ impl SharedResourceSortByType {
             SharedResourceSortByType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ARN", "MODIFIED_TIME"]
     }
@@ -9379,6 +11472,7 @@ impl AsRef<str> for SharedResourceSortByType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -9390,7 +11484,9 @@ impl AsRef<str> for SharedResourceSortByType {
     std::hash::Hash,
 )]
 pub enum SortOrderType {
+    #[allow(missing_docs)] // documentation missing in model
     Ascending,
+    #[allow(missing_docs)] // documentation missing in model
     Descending,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -9412,6 +11508,7 @@ impl std::str::FromStr for SortOrderType {
     }
 }
 impl SortOrderType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SortOrderType::Ascending => "ASCENDING",
@@ -9419,6 +11516,7 @@ impl SortOrderType {
             SortOrderType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ASCENDING", "DESCENDING"]
     }
@@ -9458,6 +11556,7 @@ pub mod report_filter {
             self.status = Some(input);
             self
         }
+        /// <p> The status used to filter reports. You can filter using one status only. </p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ReportStatusType>,
@@ -9480,6 +11579,7 @@ impl ReportFilter {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -9491,10 +11591,15 @@ impl ReportFilter {
     std::hash::Hash,
 )]
 pub enum ReportStatusType {
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Generating,
+    #[allow(missing_docs)] // documentation missing in model
     Incomplete,
+    #[allow(missing_docs)] // documentation missing in model
     Succeeded,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -9519,6 +11624,7 @@ impl std::str::FromStr for ReportStatusType {
     }
 }
 impl ReportStatusType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ReportStatusType::Deleting => "DELETING",
@@ -9529,6 +11635,7 @@ impl ReportStatusType {
             ReportStatusType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "DELETING",
@@ -9545,6 +11652,7 @@ impl AsRef<str> for ReportStatusType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -9556,8 +11664,11 @@ impl AsRef<str> for ReportStatusType {
     std::hash::Hash,
 )]
 pub enum ReportGroupSortByType {
+    #[allow(missing_docs)] // documentation missing in model
     CreatedTime,
+    #[allow(missing_docs)] // documentation missing in model
     LastModifiedTime,
+    #[allow(missing_docs)] // documentation missing in model
     Name,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -9580,6 +11691,7 @@ impl std::str::FromStr for ReportGroupSortByType {
     }
 }
 impl ReportGroupSortByType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ReportGroupSortByType::CreatedTime => "CREATED_TIME",
@@ -9588,6 +11700,7 @@ impl ReportGroupSortByType {
             ReportGroupSortByType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CREATED_TIME", "LAST_MODIFIED_TIME", "NAME"]
     }
@@ -9598,6 +11711,7 @@ impl AsRef<str> for ReportGroupSortByType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -9609,8 +11723,11 @@ impl AsRef<str> for ReportGroupSortByType {
     std::hash::Hash,
 )]
 pub enum ProjectSortByType {
+    #[allow(missing_docs)] // documentation missing in model
     CreatedTime,
+    #[allow(missing_docs)] // documentation missing in model
     LastModifiedTime,
+    #[allow(missing_docs)] // documentation missing in model
     Name,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -9633,6 +11750,7 @@ impl std::str::FromStr for ProjectSortByType {
     }
 }
 impl ProjectSortByType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ProjectSortByType::CreatedTime => "CREATED_TIME",
@@ -9641,6 +11759,7 @@ impl ProjectSortByType {
             ProjectSortByType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CREATED_TIME", "LAST_MODIFIED_TIME", "NAME"]
     }
@@ -9684,6 +11803,7 @@ pub mod environment_platform {
             self.platform = Some(input);
             self
         }
+        /// <p>The platform's name.</p>
         pub fn set_platform(
             mut self,
             input: std::option::Option<crate::model::PlatformType>,
@@ -9691,12 +11811,20 @@ pub mod environment_platform {
             self.platform = input;
             self
         }
+        /// Appends an item to `languages`.
+        ///
+        /// To override the contents of this collection use [`set_languages`](Self::set_languages).
+        ///
+        /// <p>The list of programming languages that are available for the specified
+        /// platform.</p>
         pub fn languages(mut self, input: impl Into<crate::model::EnvironmentLanguage>) -> Self {
             let mut v = self.languages.unwrap_or_default();
             v.push(input.into());
             self.languages = Some(v);
             self
         }
+        /// <p>The list of programming languages that are available for the specified
+        /// platform.</p>
         pub fn set_languages(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EnvironmentLanguage>>,
@@ -9754,6 +11882,7 @@ pub mod environment_language {
             self.language = Some(input);
             self
         }
+        /// <p>The programming language for the Docker images.</p>
         pub fn set_language(
             mut self,
             input: std::option::Option<crate::model::LanguageType>,
@@ -9761,12 +11890,20 @@ pub mod environment_language {
             self.language = input;
             self
         }
+        /// Appends an item to `images`.
+        ///
+        /// To override the contents of this collection use [`set_images`](Self::set_images).
+        ///
+        /// <p>The list of Docker images that are related by the specified programming
+        /// language.</p>
         pub fn images(mut self, input: impl Into<crate::model::EnvironmentImage>) -> Self {
             let mut v = self.images.unwrap_or_default();
             v.push(input.into());
             self.images = Some(v);
             self
         }
+        /// <p>The list of Docker images that are related by the specified programming
+        /// language.</p>
         pub fn set_images(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EnvironmentImage>>,
@@ -9826,6 +11963,7 @@ pub mod environment_image {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the Docker image.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -9835,16 +11973,23 @@ pub mod environment_image {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the Docker image.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
         }
+        /// Appends an item to `versions`.
+        ///
+        /// To override the contents of this collection use [`set_versions`](Self::set_versions).
+        ///
+        /// <p>A list of environment image versions.</p>
         pub fn versions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.versions.unwrap_or_default();
             v.push(input.into());
             self.versions = Some(v);
             self
         }
+        /// <p>A list of environment image versions.</p>
         pub fn set_versions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9869,6 +12014,7 @@ impl EnvironmentImage {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -9880,15 +12026,25 @@ impl EnvironmentImage {
     std::hash::Hash,
 )]
 pub enum LanguageType {
+    #[allow(missing_docs)] // documentation missing in model
     Android,
+    #[allow(missing_docs)] // documentation missing in model
     Base,
+    #[allow(missing_docs)] // documentation missing in model
     Docker,
+    #[allow(missing_docs)] // documentation missing in model
     Dotnet,
+    #[allow(missing_docs)] // documentation missing in model
     Golang,
+    #[allow(missing_docs)] // documentation missing in model
     Java,
+    #[allow(missing_docs)] // documentation missing in model
     NodeJs,
+    #[allow(missing_docs)] // documentation missing in model
     Php,
+    #[allow(missing_docs)] // documentation missing in model
     Python,
+    #[allow(missing_docs)] // documentation missing in model
     Ruby,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -9918,6 +12074,7 @@ impl std::str::FromStr for LanguageType {
     }
 }
 impl LanguageType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LanguageType::Android => "ANDROID",
@@ -9933,6 +12090,7 @@ impl LanguageType {
             LanguageType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ANDROID", "BASE", "DOCKER", "DOTNET", "GOLANG", "JAVA", "NODE_JS", "PHP", "PYTHON",
@@ -9946,6 +12104,7 @@ impl AsRef<str> for LanguageType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -9957,9 +12116,13 @@ impl AsRef<str> for LanguageType {
     std::hash::Hash,
 )]
 pub enum PlatformType {
+    #[allow(missing_docs)] // documentation missing in model
     AmazonLinux,
+    #[allow(missing_docs)] // documentation missing in model
     Debian,
+    #[allow(missing_docs)] // documentation missing in model
     Ubuntu,
+    #[allow(missing_docs)] // documentation missing in model
     WindowsServer,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -9983,6 +12146,7 @@ impl std::str::FromStr for PlatformType {
     }
 }
 impl PlatformType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PlatformType::AmazonLinux => "AMAZON_LINUX",
@@ -9992,6 +12156,7 @@ impl PlatformType {
             PlatformType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AMAZON_LINUX", "DEBIAN", "UBUNTU", "WINDOWS_SERVER"]
     }
@@ -10032,6 +12197,8 @@ pub mod build_batch_filter {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the batch builds to retrieve. Only batch builds that have this status will
+        /// be retrieved.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::StatusType>) -> Self {
             self.status = input;
             self
@@ -10083,6 +12250,7 @@ pub mod report_with_raw_data {
             self.report_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the report.</p>
         pub fn set_report_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.report_arn = input;
             self
@@ -10092,6 +12260,7 @@ pub mod report_with_raw_data {
             self.data = Some(input.into());
             self
         }
+        /// <p>The value of the requested data field from the report.</p>
         pub fn set_data(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.data = input;
             self
@@ -10149,6 +12318,7 @@ pub mod report_group_trend_stats {
             self.average = Some(input.into());
             self
         }
+        /// <p>Contains the average of all values analyzed.</p>
         pub fn set_average(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.average = input;
             self
@@ -10158,6 +12328,7 @@ pub mod report_group_trend_stats {
             self.max = Some(input.into());
             self
         }
+        /// <p>Contains the maximum value analyzed.</p>
         pub fn set_max(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.max = input;
             self
@@ -10167,6 +12338,7 @@ pub mod report_group_trend_stats {
             self.min = Some(input.into());
             self
         }
+        /// <p>Contains the minimum value analyzed.</p>
         pub fn set_min(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.min = input;
             self
@@ -10188,6 +12360,7 @@ impl ReportGroupTrendStats {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -10199,14 +12372,23 @@ impl ReportGroupTrendStats {
     std::hash::Hash,
 )]
 pub enum ReportGroupTrendFieldType {
+    #[allow(missing_docs)] // documentation missing in model
     BranchesCovered,
+    #[allow(missing_docs)] // documentation missing in model
     BranchesMissed,
+    #[allow(missing_docs)] // documentation missing in model
     BranchCoverage,
+    #[allow(missing_docs)] // documentation missing in model
     Duration,
+    #[allow(missing_docs)] // documentation missing in model
     LinesCovered,
+    #[allow(missing_docs)] // documentation missing in model
     LinesMissed,
+    #[allow(missing_docs)] // documentation missing in model
     LineCoverage,
+    #[allow(missing_docs)] // documentation missing in model
     PassRate,
+    #[allow(missing_docs)] // documentation missing in model
     Total,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -10235,6 +12417,7 @@ impl std::str::FromStr for ReportGroupTrendFieldType {
     }
 }
 impl ReportGroupTrendFieldType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ReportGroupTrendFieldType::BranchesCovered => "BRANCHES_COVERED",
@@ -10249,6 +12432,7 @@ impl ReportGroupTrendFieldType {
             ReportGroupTrendFieldType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "BRANCHES_COVERED",
@@ -10294,7 +12478,7 @@ pub struct TestCase {
     pub message: std::option::Option<std::string::String>,
     /// <p> The date and time a test case expires. A test case expires 30 days after it is
     /// created. An expired test case is not available to view in CodeBuild. </p>
-    pub expired: std::option::Option<smithy_types::Instant>,
+    pub expired: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for TestCase {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10323,7 +12507,7 @@ pub mod test_case {
         pub(crate) status: std::option::Option<std::string::String>,
         pub(crate) duration_in_nano_seconds: std::option::Option<i64>,
         pub(crate) message: std::option::Option<std::string::String>,
-        pub(crate) expired: std::option::Option<smithy_types::Instant>,
+        pub(crate) expired: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p> The ARN of the report to which the test case belongs. </p>
@@ -10331,6 +12515,7 @@ pub mod test_case {
             self.report_arn = Some(input.into());
             self
         }
+        /// <p> The ARN of the report to which the test case belongs. </p>
         pub fn set_report_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.report_arn = input;
             self
@@ -10340,6 +12525,7 @@ pub mod test_case {
             self.test_raw_data_path = Some(input.into());
             self
         }
+        /// <p> The path to the raw data file that contains the test result. </p>
         pub fn set_test_raw_data_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10353,6 +12539,8 @@ pub mod test_case {
             self.prefix = Some(input.into());
             self
         }
+        /// <p> A string that is applied to a series of related test cases. CodeBuild generates the
+        /// prefix. The prefix depends on the framework used to generate the tests. </p>
         pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.prefix = input;
             self
@@ -10362,6 +12550,7 @@ pub mod test_case {
             self.name = Some(input.into());
             self
         }
+        /// <p> The name of the test case. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -10373,6 +12562,9 @@ pub mod test_case {
             self.status = Some(input.into());
             self
         }
+        /// <p> The status returned by the test case after it was run. Valid statuses are
+        /// <code>SUCCEEDED</code>, <code>FAILED</code>, <code>ERROR</code>,
+        /// <code>SKIPPED</code>, and <code>UNKNOWN</code>. </p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -10382,6 +12574,7 @@ pub mod test_case {
             self.duration_in_nano_seconds = Some(input);
             self
         }
+        /// <p> The number of nanoseconds it took to run this test case. </p>
         pub fn set_duration_in_nano_seconds(mut self, input: std::option::Option<i64>) -> Self {
             self.duration_in_nano_seconds = input;
             self
@@ -10392,17 +12585,24 @@ pub mod test_case {
             self.message = Some(input.into());
             self
         }
+        /// <p> A message associated with a test case. For example, an error message or stack trace.
+        /// </p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
         }
         /// <p> The date and time a test case expires. A test case expires 30 days after it is
         /// created. An expired test case is not available to view in CodeBuild. </p>
-        pub fn expired(mut self, input: smithy_types::Instant) -> Self {
+        pub fn expired(mut self, input: aws_smithy_types::Instant) -> Self {
             self.expired = Some(input);
             self
         }
-        pub fn set_expired(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p> The date and time a test case expires. A test case expires 30 days after it is
+        /// created. An expired test case is not available to view in CodeBuild. </p>
+        pub fn set_expired(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.expired = input;
             self
         }
@@ -10519,6 +12719,35 @@ pub mod test_case_filter {
             self.status = Some(input.into());
             self
         }
+        /// <p>The status used to filter test cases. A <code>TestCaseFilter</code> can have one
+        /// status. Valid values are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>SUCCEEDED</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FAILED</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ERROR</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SKIPPED</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>UNKNOWN</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -10530,6 +12759,9 @@ pub mod test_case_filter {
             self.keyword = Some(input.into());
             self
         }
+        /// <p>A keyword that is used to filter on the <code>name</code> or the <code>prefix</code>
+        /// of the test cases. Only test cases where the keyword is a substring of the
+        /// <code>name</code> or the <code>prefix</code> will be returned.</p>
         pub fn set_keyword(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.keyword = input;
             self
@@ -10577,7 +12809,7 @@ pub struct CodeCoverage {
     /// <p>The number of conditional branches that are not covered by your tests.</p>
     pub branches_missed: std::option::Option<i32>,
     /// <p>The date and time that the tests were run.</p>
-    pub expired: std::option::Option<smithy_types::Instant>,
+    pub expired: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for CodeCoverage {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10613,7 +12845,7 @@ pub mod code_coverage {
         pub(crate) branch_coverage_percentage: std::option::Option<f64>,
         pub(crate) branches_covered: std::option::Option<i32>,
         pub(crate) branches_missed: std::option::Option<i32>,
-        pub(crate) expired: std::option::Option<smithy_types::Instant>,
+        pub(crate) expired: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The identifier of the code coverage report.</p>
@@ -10621,6 +12853,7 @@ pub mod code_coverage {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier of the code coverage report.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -10630,6 +12863,7 @@ pub mod code_coverage {
             self.report_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the report.</p>
         pub fn set_report_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.report_arn = input;
             self
@@ -10639,6 +12873,7 @@ pub mod code_coverage {
             self.file_path = Some(input.into());
             self
         }
+        /// <p>The path of the test report file.</p>
         pub fn set_file_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.file_path = input;
             self
@@ -10648,6 +12883,7 @@ pub mod code_coverage {
             self.line_coverage_percentage = Some(input);
             self
         }
+        /// <p>The percentage of lines that are covered by your tests.</p>
         pub fn set_line_coverage_percentage(mut self, input: std::option::Option<f64>) -> Self {
             self.line_coverage_percentage = input;
             self
@@ -10657,6 +12893,7 @@ pub mod code_coverage {
             self.lines_covered = Some(input);
             self
         }
+        /// <p>The number of lines that are covered by your tests.</p>
         pub fn set_lines_covered(mut self, input: std::option::Option<i32>) -> Self {
             self.lines_covered = input;
             self
@@ -10666,6 +12903,7 @@ pub mod code_coverage {
             self.lines_missed = Some(input);
             self
         }
+        /// <p>The number of lines that are not covered by your tests.</p>
         pub fn set_lines_missed(mut self, input: std::option::Option<i32>) -> Self {
             self.lines_missed = input;
             self
@@ -10675,6 +12913,7 @@ pub mod code_coverage {
             self.branch_coverage_percentage = Some(input);
             self
         }
+        /// <p>The percentage of branches that are covered by your tests.</p>
         pub fn set_branch_coverage_percentage(mut self, input: std::option::Option<f64>) -> Self {
             self.branch_coverage_percentage = input;
             self
@@ -10684,6 +12923,7 @@ pub mod code_coverage {
             self.branches_covered = Some(input);
             self
         }
+        /// <p>The number of conditional branches that are covered by your tests.</p>
         pub fn set_branches_covered(mut self, input: std::option::Option<i32>) -> Self {
             self.branches_covered = input;
             self
@@ -10693,16 +12933,21 @@ pub mod code_coverage {
             self.branches_missed = Some(input);
             self
         }
+        /// <p>The number of conditional branches that are not covered by your tests.</p>
         pub fn set_branches_missed(mut self, input: std::option::Option<i32>) -> Self {
             self.branches_missed = input;
             self
         }
         /// <p>The date and time that the tests were run.</p>
-        pub fn expired(mut self, input: smithy_types::Instant) -> Self {
+        pub fn expired(mut self, input: aws_smithy_types::Instant) -> Self {
             self.expired = Some(input);
             self
         }
-        pub fn set_expired(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date and time that the tests were run.</p>
+        pub fn set_expired(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.expired = input;
             self
         }
@@ -10730,6 +12975,7 @@ impl CodeCoverage {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -10741,7 +12987,9 @@ impl CodeCoverage {
     std::hash::Hash,
 )]
 pub enum ReportCodeCoverageSortByType {
+    #[allow(missing_docs)] // documentation missing in model
     FilePath,
+    #[allow(missing_docs)] // documentation missing in model
     LineCoveragePercentage,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -10763,6 +13011,7 @@ impl std::str::FromStr for ReportCodeCoverageSortByType {
     }
 }
 impl ReportCodeCoverageSortByType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ReportCodeCoverageSortByType::FilePath => "FILE_PATH",
@@ -10770,6 +13019,7 @@ impl ReportCodeCoverageSortByType {
             ReportCodeCoverageSortByType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FILE_PATH", "LINE_COVERAGE_PERCENTAGE"]
     }
@@ -10812,6 +13062,7 @@ pub mod build_not_deleted {
             self.id = Some(input.into());
             self
         }
+        /// <p>The ID of the build that could not be successfully deleted.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -10821,6 +13072,7 @@ pub mod build_not_deleted {
             self.status_code = Some(input.into());
             self
         }
+        /// <p>Additional information about the build that could not be successfully deleted.</p>
         pub fn set_status_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status_code = input;
             self
@@ -10871,10 +13123,10 @@ pub struct Report {
     /// <p> The status of this report. </p>
     pub status: std::option::Option<crate::model::ReportStatusType>,
     /// <p> The date and time this report run occurred. </p>
-    pub created: std::option::Option<smithy_types::Instant>,
+    pub created: std::option::Option<aws_smithy_types::Instant>,
     /// <p> The date and time a report expires. A report expires 30 days after it is created. An
     /// expired report is not available to view in CodeBuild. </p>
-    pub expired: std::option::Option<smithy_types::Instant>,
+    pub expired: std::option::Option<aws_smithy_types::Instant>,
     /// <p> Information about where the raw data used to generate this report was exported.
     /// </p>
     pub export_config: std::option::Option<crate::model::ReportExportConfig>,
@@ -10918,8 +13170,8 @@ pub mod report {
         pub(crate) report_group_arn: std::option::Option<std::string::String>,
         pub(crate) execution_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::ReportStatusType>,
-        pub(crate) created: std::option::Option<smithy_types::Instant>,
-        pub(crate) expired: std::option::Option<smithy_types::Instant>,
+        pub(crate) created: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) expired: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) export_config: std::option::Option<crate::model::ReportExportConfig>,
         pub(crate) truncated: std::option::Option<bool>,
         pub(crate) test_summary: std::option::Option<crate::model::TestReportSummary>,
@@ -10932,6 +13184,7 @@ pub mod report {
             self.arn = Some(input.into());
             self
         }
+        /// <p> The ARN of the report run. </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -10951,6 +13204,17 @@ pub mod report {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of the report that was run.</p>
+        /// <dl>
+        /// <dt>CODE_COVERAGE</dt>
+        /// <dd>
+        /// <p>A code coverage report.</p>
+        /// </dd>
+        /// <dt>TEST</dt>
+        /// <dd>
+        /// <p>A test report.</p>
+        /// </dd>
+        /// </dl>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ReportType>) -> Self {
             self.r#type = input;
             self
@@ -10960,6 +13224,7 @@ pub mod report {
             self.name = Some(input.into());
             self
         }
+        /// <p> The name of the report that was run. </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -10969,6 +13234,7 @@ pub mod report {
             self.report_group_arn = Some(input.into());
             self
         }
+        /// <p> The ARN of the report group associated with this report. </p>
         pub fn set_report_group_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10981,6 +13247,7 @@ pub mod report {
             self.execution_id = Some(input.into());
             self
         }
+        /// <p> The ARN of the build run that generated this report. </p>
         pub fn set_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.execution_id = input;
             self
@@ -10990,6 +13257,7 @@ pub mod report {
             self.status = Some(input);
             self
         }
+        /// <p> The status of this report. </p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ReportStatusType>,
@@ -10998,21 +13266,30 @@ pub mod report {
             self
         }
         /// <p> The date and time this report run occurred. </p>
-        pub fn created(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created = Some(input);
             self
         }
-        pub fn set_created(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p> The date and time this report run occurred. </p>
+        pub fn set_created(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created = input;
             self
         }
         /// <p> The date and time a report expires. A report expires 30 days after it is created. An
         /// expired report is not available to view in CodeBuild. </p>
-        pub fn expired(mut self, input: smithy_types::Instant) -> Self {
+        pub fn expired(mut self, input: aws_smithy_types::Instant) -> Self {
             self.expired = Some(input);
             self
         }
-        pub fn set_expired(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p> The date and time a report expires. A report expires 30 days after it is created. An
+        /// expired report is not available to view in CodeBuild. </p>
+        pub fn set_expired(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.expired = input;
             self
         }
@@ -11022,6 +13299,8 @@ pub mod report {
             self.export_config = Some(input);
             self
         }
+        /// <p> Information about where the raw data used to generate this report was exported.
+        /// </p>
         pub fn set_export_config(
             mut self,
             input: std::option::Option<crate::model::ReportExportConfig>,
@@ -11035,6 +13314,8 @@ pub mod report {
             self.truncated = Some(input);
             self
         }
+        /// <p> A boolean that specifies if this report run is truncated. The list of test cases is
+        /// truncated after the maximum number of test cases is reached. </p>
         pub fn set_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.truncated = input;
             self
@@ -11045,6 +13326,8 @@ pub mod report {
             self.test_summary = Some(input);
             self
         }
+        /// <p> A <code>TestReportSummary</code> object that contains information about this test
+        /// report. </p>
         pub fn set_test_summary(
             mut self,
             input: std::option::Option<crate::model::TestReportSummary>,
@@ -11061,6 +13344,8 @@ pub mod report {
             self.code_coverage_summary = Some(input);
             self
         }
+        /// <p>A <code>CodeCoverageReportSummary</code> object that contains a code coverage summary for
+        /// this report.</p>
         pub fn set_code_coverage_summary(
             mut self,
             input: std::option::Option<crate::model::CodeCoverageReportSummary>,
@@ -11149,6 +13434,7 @@ pub mod code_coverage_report_summary {
             self.line_coverage_percentage = Some(input);
             self
         }
+        /// <p>The percentage of lines that are covered by your tests.</p>
         pub fn set_line_coverage_percentage(mut self, input: std::option::Option<f64>) -> Self {
             self.line_coverage_percentage = input;
             self
@@ -11158,6 +13444,7 @@ pub mod code_coverage_report_summary {
             self.lines_covered = Some(input);
             self
         }
+        /// <p>The number of lines that are covered by your tests.</p>
         pub fn set_lines_covered(mut self, input: std::option::Option<i32>) -> Self {
             self.lines_covered = input;
             self
@@ -11167,6 +13454,7 @@ pub mod code_coverage_report_summary {
             self.lines_missed = Some(input);
             self
         }
+        /// <p>The number of lines that are not covered by your tests.</p>
         pub fn set_lines_missed(mut self, input: std::option::Option<i32>) -> Self {
             self.lines_missed = input;
             self
@@ -11176,6 +13464,7 @@ pub mod code_coverage_report_summary {
             self.branch_coverage_percentage = Some(input);
             self
         }
+        /// <p>The percentage of branches that are covered by your tests.</p>
         pub fn set_branch_coverage_percentage(mut self, input: std::option::Option<f64>) -> Self {
             self.branch_coverage_percentage = input;
             self
@@ -11185,6 +13474,7 @@ pub mod code_coverage_report_summary {
             self.branches_covered = Some(input);
             self
         }
+        /// <p>The number of conditional branches that are covered by your tests.</p>
         pub fn set_branches_covered(mut self, input: std::option::Option<i32>) -> Self {
             self.branches_covered = input;
             self
@@ -11194,6 +13484,7 @@ pub mod code_coverage_report_summary {
             self.branches_missed = Some(input);
             self
         }
+        /// <p>The number of conditional branches that are not covered by your tests.</p>
         pub fn set_branches_missed(mut self, input: std::option::Option<i32>) -> Self {
             self.branches_missed = input;
             self
@@ -11259,10 +13550,18 @@ pub mod test_report_summary {
             self.total = Some(input);
             self
         }
+        /// <p> The number of test cases in this <code>TestReportSummary</code>. The total includes
+        /// truncated test cases. </p>
         pub fn set_total(mut self, input: std::option::Option<i32>) -> Self {
             self.total = input;
             self
         }
+        /// Adds a key-value pair to `status_counts`.
+        ///
+        /// To override the contents of this collection use [`set_status_counts`](Self::set_status_counts).
+        ///
+        /// <p> A map that contains the number of each type of status returned by the test results in
+        /// this <code>TestReportSummary</code>. </p>
         pub fn status_counts(
             mut self,
             k: impl Into<std::string::String>,
@@ -11273,6 +13572,8 @@ pub mod test_report_summary {
             self.status_counts = Some(hash_map);
             self
         }
+        /// <p> A map that contains the number of each type of status returned by the test results in
+        /// this <code>TestReportSummary</code>. </p>
         pub fn set_status_counts(
             mut self,
             input: std::option::Option<std::collections::HashMap<std::string::String, i32>>,
@@ -11286,6 +13587,8 @@ pub mod test_report_summary {
             self.duration_in_nano_seconds = Some(input);
             self
         }
+        /// <p> The number of nanoseconds it took to run all of the test cases in this report.
+        /// </p>
         pub fn set_duration_in_nano_seconds(mut self, input: std::option::Option<i64>) -> Self {
             self.duration_in_nano_seconds = input;
             self

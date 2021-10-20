@@ -15,7 +15,7 @@ pub struct StreamingDistribution {
     /// the distribution's information is propagated to all CloudFront edge locations.</p>
     pub status: std::option::Option<std::string::String>,
     /// <p>The date and time that the distribution was last modified. </p>
-    pub last_modified_time: std::option::Option<smithy_types::Instant>,
+    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The domain name that corresponds to the streaming distribution, for example, <code>s5c39gqb8ow64r.cloudfront.net</code>. </p>
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>A complex type that lists the accounts, if any, that you included in the
@@ -58,7 +58,7 @@ pub mod streaming_distribution {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
-        pub(crate) last_modified_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) active_trusted_signers: std::option::Option<crate::model::ActiveTrustedSigners>,
         pub(crate) streaming_distribution_config:
@@ -71,6 +71,8 @@ pub mod streaming_distribution {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier for the RTMP distribution. For example:
+        /// <code>EGTXBD79EXAMPLE</code>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -82,6 +84,9 @@ pub mod streaming_distribution {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The ARN (Amazon Resource Name) for the distribution. For example:
+        /// <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where
+        /// <code>123456789012</code> is your account ID.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -92,18 +97,21 @@ pub mod streaming_distribution {
             self.status = Some(input.into());
             self
         }
+        /// <p>The current status of the RTMP distribution. When the status is <code>Deployed</code>,
+        /// the distribution's information is propagated to all CloudFront edge locations.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
         }
         /// <p>The date and time that the distribution was last modified. </p>
-        pub fn last_modified_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_modified_time = Some(input);
             self
         }
+        /// <p>The date and time that the distribution was last modified. </p>
         pub fn set_last_modified_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_modified_time = input;
             self
@@ -113,6 +121,7 @@ pub mod streaming_distribution {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The domain name that corresponds to the streaming distribution, for example, <code>s5c39gqb8ow64r.cloudfront.net</code>. </p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -131,6 +140,16 @@ pub mod streaming_distribution {
             self.active_trusted_signers = Some(input);
             self
         }
+        /// <p>A complex type that lists the accounts, if any, that you included in the
+        /// <code>TrustedSigners</code> complex type for this distribution. These are the accounts that
+        /// you want to allow to create signed URLs for private content.</p>
+        /// <p>The <code>Signer</code> complex type lists the account number of the trusted
+        /// signer or <code>self</code> if the signer is the account that created the distribution.
+        /// The <code>Signer</code> element also includes the IDs of any active CloudFront key pairs that are
+        /// associated with the trusted signer's account. If no <code>KeyPairId</code> element
+        /// appears for a <code>Signer</code>, that signer can't create signed URLs.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private
+        /// Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>. </p>
         pub fn set_active_trusted_signers(
             mut self,
             input: std::option::Option<crate::model::ActiveTrustedSigners>,
@@ -146,6 +165,7 @@ pub mod streaming_distribution {
             self.streaming_distribution_config = Some(input);
             self
         }
+        /// <p>The current configuration information for the RTMP distribution.</p>
         pub fn set_streaming_distribution_config(
             mut self,
             input: std::option::Option<crate::model::StreamingDistributionConfig>,
@@ -249,6 +269,12 @@ pub mod streaming_distribution_config {
             self.caller_reference = Some(input.into());
             self
         }
+        /// <p>A unique value (for example, a date-time stamp) that ensures that the request can't be
+        /// replayed.</p>
+        /// <p>If the value of <code>CallerReference</code> is new (regardless of the content of the
+        /// <code>StreamingDistributionConfig</code> object), CloudFront creates a new distribution.</p>
+        /// <p>If <code>CallerReference</code> is a value that you already sent in a previous request to
+        /// create a distribution, CloudFront returns a <code>DistributionAlreadyExists</code> error.</p>
         pub fn set_caller_reference(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -262,6 +288,8 @@ pub mod streaming_distribution_config {
             self.s3_origin = Some(input);
             self
         }
+        /// <p>A complex type that contains information about the Amazon S3 bucket from which you want
+        /// CloudFront to get your media files for distribution. </p>
         pub fn set_s3_origin(mut self, input: std::option::Option<crate::model::S3Origin>) -> Self {
             self.s3_origin = input;
             self
@@ -272,6 +300,8 @@ pub mod streaming_distribution_config {
             self.aliases = Some(input);
             self
         }
+        /// <p>A complex type that contains information about CNAMEs (alternate domain names), if any,
+        /// for this streaming distribution. </p>
         pub fn set_aliases(mut self, input: std::option::Option<crate::model::Aliases>) -> Self {
             self.aliases = input;
             self
@@ -281,6 +311,7 @@ pub mod streaming_distribution_config {
             self.comment = Some(input.into());
             self
         }
+        /// <p>Any comments you want to include about the streaming distribution. </p>
         pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.comment = input;
             self
@@ -291,6 +322,8 @@ pub mod streaming_distribution_config {
             self.logging = Some(input);
             self
         }
+        /// <p>A complex type that controls whether access logs are written for the streaming
+        /// distribution. </p>
         pub fn set_logging(
             mut self,
             input: std::option::Option<crate::model::StreamingLoggingConfig>,
@@ -307,6 +340,11 @@ pub mod streaming_distribution_config {
             self.trusted_signers = Some(input);
             self
         }
+        /// <p>A complex type that specifies any accounts that you want to permit to create signed
+        /// URLs for private content. If you want the distribution to use signed URLs, include this
+        /// element; if you want the distribution to use public URLs, remove this element. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private Content through
+        /// CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>. </p>
         pub fn set_trusted_signers(
             mut self,
             input: std::option::Option<crate::model::TrustedSigners>,
@@ -320,6 +358,8 @@ pub mod streaming_distribution_config {
             self.price_class = Some(input);
             self
         }
+        /// <p>A complex type that contains information about price class for this streaming
+        /// distribution. </p>
         pub fn set_price_class(
             mut self,
             input: std::option::Option<crate::model::PriceClass>,
@@ -333,6 +373,8 @@ pub mod streaming_distribution_config {
             self.enabled = Some(input);
             self
         }
+        /// <p>Whether the streaming distribution is enabled to accept user requests for
+        /// content.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -359,6 +401,7 @@ impl StreamingDistributionConfig {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -370,8 +413,11 @@ impl StreamingDistributionConfig {
     std::hash::Hash,
 )]
 pub enum PriceClass {
+    #[allow(missing_docs)] // documentation missing in model
     PriceClass100,
+    #[allow(missing_docs)] // documentation missing in model
     PriceClass200,
+    #[allow(missing_docs)] // documentation missing in model
     PriceClassAll,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -394,6 +440,7 @@ impl std::str::FromStr for PriceClass {
     }
 }
 impl PriceClass {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PriceClass::PriceClass100 => "PriceClass_100",
@@ -402,6 +449,7 @@ impl PriceClass {
             PriceClass::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["PriceClass_100", "PriceClass_200", "PriceClass_All"]
     }
@@ -453,6 +501,9 @@ pub mod trusted_signers {
             self.enabled = Some(input);
             self
         }
+        /// <p>This field is <code>true</code> if any of the accounts have public keys that CloudFront can
+        /// use to verify the signatures of signed URLs and signed cookies. If not, this field is
+        /// <code>false</code>.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -462,16 +513,23 @@ pub mod trusted_signers {
             self.quantity = Some(input);
             self
         }
+        /// <p>The number of accounts in the list.</p>
         pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
             self.quantity = input;
             self
         }
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>A list of account identifiers.</p>
         pub fn items(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.items.unwrap_or_default();
             v.push(input.into());
             self.items = Some(v);
             self
         }
+        /// <p>A list of account identifiers.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -546,6 +604,13 @@ pub mod streaming_logging_config {
             self.enabled = Some(input);
             self
         }
+        /// <p>Specifies whether you want CloudFront to save access logs to an Amazon S3 bucket. If you don't
+        /// want to enable logging when you create a streaming distribution or if you want to disable
+        /// logging for an existing streaming distribution, specify <code>false</code> for
+        /// <code>Enabled</code>, and specify <code>empty Bucket</code> and <code>Prefix</code>
+        /// elements. If you specify <code>false</code> for <code>Enabled</code> but you specify values
+        /// for <code>Bucket</code> and <code>Prefix</code>, the values are automatically deleted.
+        /// </p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -555,6 +620,7 @@ pub mod streaming_logging_config {
             self.bucket = Some(input.into());
             self
         }
+        /// <p>The Amazon S3 bucket to store the access logs in, for example, <code>myawslogbucket.s3.amazonaws.com</code>.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -566,6 +632,9 @@ pub mod streaming_logging_config {
             self.prefix = Some(input.into());
             self
         }
+        /// <p>An optional string that you want CloudFront to prefix to the access log filenames for this streaming distribution, for example,
+        /// <code>myprefix/</code>. If you want to enable logging, but you don't want to specify a prefix, you still must include
+        /// an empty <code>Prefix</code> element in the <code>Logging</code> element.</p>
         pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.prefix = input;
             self
@@ -623,16 +692,26 @@ pub mod aliases {
             self.quantity = Some(input);
             self
         }
+        /// <p>The number of CNAME aliases, if any, that you want to associate with this
+        /// distribution.</p>
         pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
             self.quantity = input;
             self
         }
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>A complex type that contains the CNAME aliases, if any, that you want to associate with
+        /// this distribution.</p>
         pub fn items(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.items.unwrap_or_default();
             v.push(input.into());
             self.items = Some(v);
             self
         }
+        /// <p>A complex type that contains the CNAME aliases, if any, that you want to associate with
+        /// this distribution.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -701,6 +780,7 @@ pub mod s3_origin {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The DNS name of the Amazon S3 origin. </p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -722,6 +802,19 @@ pub mod s3_origin {
             self.origin_access_identity = Some(input.into());
             self
         }
+        /// <p>The CloudFront origin access identity to associate with the distribution. Use an origin
+        /// access identity to configure the distribution so that end users can only access objects in an
+        /// Amazon S3 bucket through CloudFront.</p>
+        /// <p>If you want end users to be able to access objects using either the CloudFront URL or the
+        /// Amazon S3 URL, specify an empty <code>OriginAccessIdentity</code> element.</p>
+        /// <p>To delete the origin access identity from an existing distribution, update the
+        /// distribution configuration and include an empty <code>OriginAccessIdentity</code>
+        /// element.</p>
+        /// <p>To replace the origin access identity, update the distribution configuration and
+        /// specify the new origin access identity.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html">Using an Origin Access
+        /// Identity to Restrict Access to Your Amazon S3 Content</a> in the <i>
+        /// Amazon CloudFront Developer Guide</i>.</p>
         pub fn set_origin_access_identity(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -787,6 +880,9 @@ pub mod active_trusted_signers {
             self.enabled = Some(input);
             self
         }
+        /// <p>This field is <code>true</code> if any of the accounts in the list have active CloudFront
+        /// key pairs that CloudFront can use to verify the signatures of signed URLs and signed cookies.
+        /// If not, this field is <code>false</code>.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -796,16 +892,25 @@ pub mod active_trusted_signers {
             self.quantity = Some(input);
             self
         }
+        /// <p>The number of accounts in the list.</p>
         pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
             self.quantity = input;
             self
         }
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>A list of accounts and the identifiers of active CloudFront key pairs in each account that
+        /// CloudFront can use to verify the signatures of signed URLs and signed cookies.</p>
         pub fn items(mut self, input: impl Into<crate::model::Signer>) -> Self {
             let mut v = self.items.unwrap_or_default();
             v.push(input.into());
             self.items = Some(v);
             self
         }
+        /// <p>A list of accounts and the identifiers of active CloudFront key pairs in each account that
+        /// CloudFront can use to verify the signatures of signed URLs and signed cookies.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Signer>>,
@@ -869,6 +974,10 @@ pub mod signer {
             self.aws_account_number = Some(input.into());
             self
         }
+        /// <p>An account number that contains active CloudFront key pairs that CloudFront can use to verify the
+        /// signatures of signed URLs and signed cookies. If the account that owns the key pairs
+        /// is the same account that owns the CloudFront distribution, the value of this field is
+        /// <code>self</code>.</p>
         pub fn set_aws_account_number(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -881,6 +990,7 @@ pub mod signer {
             self.key_pair_ids = Some(input);
             self
         }
+        /// <p>A list of CloudFront key pair identifiers.</p>
         pub fn set_key_pair_ids(
             mut self,
             input: std::option::Option<crate::model::KeyPairIds>,
@@ -936,16 +1046,23 @@ pub mod key_pair_ids {
             self.quantity = Some(input);
             self
         }
+        /// <p>The number of key pair identifiers in the list.</p>
         pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
             self.quantity = input;
             self
         }
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>A list of CloudFront key pair identifiers.</p>
         pub fn items(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.items.unwrap_or_default();
             v.push(input.into());
             self.items = Some(v);
             self
         }
+        /// <p>A list of CloudFront key pair identifiers.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1020,6 +1137,7 @@ pub mod realtime_log_config {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of this real-time log configuration.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -1029,6 +1147,7 @@ pub mod realtime_log_config {
             self.name = Some(input.into());
             self
         }
+        /// <p>The unique name of this real-time log configuration.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1040,16 +1159,27 @@ pub mod realtime_log_config {
             self.sampling_rate = Some(input);
             self
         }
+        /// <p>The sampling rate for this real-time log configuration. The sampling rate determines the
+        /// percentage of viewer requests that are represented in the real-time log data. The
+        /// sampling rate is an integer between 1 and 100, inclusive.</p>
         pub fn set_sampling_rate(mut self, input: std::option::Option<i64>) -> Self {
             self.sampling_rate = input;
             self
         }
+        /// Appends an item to `end_points`.
+        ///
+        /// To override the contents of this collection use [`set_end_points`](Self::set_end_points).
+        ///
+        /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time
+        /// log data for this real-time log configuration.</p>
         pub fn end_points(mut self, input: impl Into<crate::model::EndPoint>) -> Self {
             let mut v = self.end_points.unwrap_or_default();
             v.push(input.into());
             self.end_points = Some(v);
             self
         }
+        /// <p>Contains information about the Amazon Kinesis data stream where you are sending real-time
+        /// log data for this real-time log configuration.</p>
         pub fn set_end_points(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EndPoint>>,
@@ -1057,12 +1187,26 @@ pub mod realtime_log_config {
             self.end_points = input;
             self
         }
+        /// Appends an item to `fields`.
+        ///
+        /// To override the contents of this collection use [`set_fields`](Self::set_fields).
+        ///
+        /// <p>A list of fields that are included in each real-time log record. In an API response, the
+        /// fields are provided in the same order in which they are sent to the Amazon Kinesis data
+        /// stream.</p>
+        /// <p>For more information about fields, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-fields">Real-time log configuration fields</a> in the
+        /// <i>Amazon CloudFront Developer Guide</i>.</p>
         pub fn fields(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.fields.unwrap_or_default();
             v.push(input.into());
             self.fields = Some(v);
             self
         }
+        /// <p>A list of fields that are included in each real-time log record. In an API response, the
+        /// fields are provided in the same order in which they are sent to the Amazon Kinesis data
+        /// stream.</p>
+        /// <p>For more information about fields, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-fields">Real-time log configuration fields</a> in the
+        /// <i>Amazon CloudFront Developer Guide</i>.</p>
         pub fn set_fields(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1125,6 +1269,8 @@ pub mod end_point {
             self.stream_type = Some(input.into());
             self
         }
+        /// <p>The type of data stream where you are sending real-time log data. The only valid value is
+        /// <code>Kinesis</code>.</p>
         pub fn set_stream_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_type = input;
             self
@@ -1135,6 +1281,8 @@ pub mod end_point {
             self.kinesis_stream_config = Some(input);
             self
         }
+        /// <p>Contains information about the Amazon Kinesis data stream where you are sending
+        /// real-time log data.</p>
         pub fn set_kinesis_stream_config(
             mut self,
             input: std::option::Option<crate::model::KinesisStreamConfig>,
@@ -1198,6 +1346,10 @@ pub mod kinesis_stream_config {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that
+        /// CloudFront can use to send real-time log data to your Kinesis data stream.</p>
+        /// <p>For more information the IAM role, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-iam-role">Real-time log configuration IAM role</a> in the
+        /// <i>Amazon CloudFront Developer Guide</i>.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -1208,6 +1360,8 @@ pub mod kinesis_stream_config {
             self.stream_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the Kinesis data stream where you are sending real-time
+        /// log data.</p>
         pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_arn = input;
             self
@@ -1235,7 +1389,7 @@ pub struct PublicKey {
     /// <p>The identifier of the public key.</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The date and time when the public key was uploaded.</p>
-    pub created_time: std::option::Option<smithy_types::Instant>,
+    pub created_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Configuration information about a public key that you can use with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed URLs and signed cookies</a>, or with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html">field-level encryption</a>.</p>
     pub public_key_config: std::option::Option<crate::model::PublicKeyConfig>,
 }
@@ -1255,7 +1409,7 @@ pub mod public_key {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
-        pub(crate) created_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) public_key_config: std::option::Option<crate::model::PublicKeyConfig>,
     }
     impl Builder {
@@ -1264,18 +1418,20 @@ pub mod public_key {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier of the public key.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
         /// <p>The date and time when the public key was uploaded.</p>
-        pub fn created_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_time = Some(input);
             self
         }
+        /// <p>The date and time when the public key was uploaded.</p>
         pub fn set_created_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_time = input;
             self
@@ -1285,6 +1441,7 @@ pub mod public_key {
             self.public_key_config = Some(input);
             self
         }
+        /// <p>Configuration information about a public key that you can use with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed URLs and signed cookies</a>, or with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html">field-level encryption</a>.</p>
         pub fn set_public_key_config(
             mut self,
             input: std::option::Option<crate::model::PublicKeyConfig>,
@@ -1352,6 +1509,8 @@ pub mod public_key_config {
             self.caller_reference = Some(input.into());
             self
         }
+        /// <p>A string included in the request to help make sure that the request can’t be
+        /// replayed.</p>
         pub fn set_caller_reference(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1364,6 +1523,7 @@ pub mod public_key_config {
             self.name = Some(input.into());
             self
         }
+        /// <p>A name to help identify the public key.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1373,6 +1533,7 @@ pub mod public_key_config {
             self.encoded_key = Some(input.into());
             self
         }
+        /// <p>The public key that you can use with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed URLs and signed cookies</a>, or with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html">field-level encryption</a>.</p>
         pub fn set_encoded_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.encoded_key = input;
             self
@@ -1383,6 +1544,8 @@ pub mod public_key_config {
             self.comment = Some(input.into());
             self
         }
+        /// <p>A comment to describe the public key. The comment cannot be longer than 128
+        /// characters.</p>
         pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.comment = input;
             self
@@ -1434,7 +1597,7 @@ pub struct OriginRequestPolicy {
     /// <p>The unique identifier for the origin request policy.</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The date and time when the origin request policy was last modified.</p>
-    pub last_modified_time: std::option::Option<smithy_types::Instant>,
+    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The origin request policy configuration.</p>
     pub origin_request_policy_config: std::option::Option<crate::model::OriginRequestPolicyConfig>,
 }
@@ -1457,7 +1620,7 @@ pub mod origin_request_policy {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
-        pub(crate) last_modified_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) origin_request_policy_config:
             std::option::Option<crate::model::OriginRequestPolicyConfig>,
     }
@@ -1467,18 +1630,20 @@ pub mod origin_request_policy {
             self.id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the origin request policy.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
         /// <p>The date and time when the origin request policy was last modified.</p>
-        pub fn last_modified_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_modified_time = Some(input);
             self
         }
+        /// <p>The date and time when the origin request policy was last modified.</p>
         pub fn set_last_modified_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_modified_time = input;
             self
@@ -1491,6 +1656,7 @@ pub mod origin_request_policy {
             self.origin_request_policy_config = Some(input);
             self
         }
+        /// <p>The origin request policy configuration.</p>
         pub fn set_origin_request_policy_config(
             mut self,
             input: std::option::Option<crate::model::OriginRequestPolicyConfig>,
@@ -1587,6 +1753,8 @@ pub mod origin_request_policy_config {
             self.comment = Some(input.into());
             self
         }
+        /// <p>A comment to describe the origin request policy. The comment cannot be longer than 128
+        /// characters.</p>
         pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.comment = input;
             self
@@ -1596,6 +1764,7 @@ pub mod origin_request_policy_config {
             self.name = Some(input.into());
             self
         }
+        /// <p>A unique name to identify the origin request policy.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1609,6 +1778,8 @@ pub mod origin_request_policy_config {
             self.headers_config = Some(input);
             self
         }
+        /// <p>The HTTP headers to include in origin requests. These can include headers from viewer
+        /// requests and additional headers added by CloudFront.</p>
         pub fn set_headers_config(
             mut self,
             input: std::option::Option<crate::model::OriginRequestPolicyHeadersConfig>,
@@ -1624,6 +1795,7 @@ pub mod origin_request_policy_config {
             self.cookies_config = Some(input);
             self
         }
+        /// <p>The cookies from viewer requests to include in origin requests.</p>
         pub fn set_cookies_config(
             mut self,
             input: std::option::Option<crate::model::OriginRequestPolicyCookiesConfig>,
@@ -1639,6 +1811,7 @@ pub mod origin_request_policy_config {
             self.query_strings_config = Some(input);
             self
         }
+        /// <p>The URL query strings from viewer requests to include in origin requests.</p>
         pub fn set_query_strings_config(
             mut self,
             input: std::option::Option<crate::model::OriginRequestPolicyQueryStringsConfig>,
@@ -1746,6 +1919,28 @@ pub mod origin_request_policy_query_strings_config {
             self.query_string_behavior = Some(input);
             self
         }
+        /// <p>Determines whether any URL query strings in viewer requests are included in requests that
+        /// CloudFront sends to the origin. Valid values are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>none</code> – Query strings in viewer requests are not included in requests that
+        /// CloudFront sends to the origin. Even when this field is set to <code>none</code>, any
+        /// query strings that are listed in a <code>CachePolicy</code>
+        /// <i>are</i> included in origin requests.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>whitelist</code> – The query strings in viewer requests that are listed in the
+        /// <code>QueryStringNames</code> type are included in requests that CloudFront sends to
+        /// the origin.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>all</code> – All query strings in viewer requests are included in requests that CloudFront
+        /// sends to the origin.</p>
+        /// </li>
+        /// </ul>
         pub fn set_query_string_behavior(
             mut self,
             input: std::option::Option<crate::model::OriginRequestPolicyQueryStringBehavior>,
@@ -1759,6 +1954,8 @@ pub mod origin_request_policy_query_strings_config {
             self.query_strings = Some(input);
             self
         }
+        /// <p>Contains a list of the query strings in viewer requests that are included in requests that
+        /// CloudFront sends to the origin.</p>
         pub fn set_query_strings(
             mut self,
             input: std::option::Option<crate::model::QueryStringNames>,
@@ -1814,16 +2011,23 @@ pub mod query_string_names {
             self.quantity = Some(input);
             self
         }
+        /// <p>The number of query string names in the <code>Items</code> list.</p>
         pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
             self.quantity = input;
             self
         }
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>A list of query string names.</p>
         pub fn items(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.items.unwrap_or_default();
             v.push(input.into());
             self.items = Some(v);
             self
         }
+        /// <p>A list of query string names.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1847,6 +2051,7 @@ impl QueryStringNames {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1858,8 +2063,11 @@ impl QueryStringNames {
     std::hash::Hash,
 )]
 pub enum OriginRequestPolicyQueryStringBehavior {
+    #[allow(missing_docs)] // documentation missing in model
     All,
+    #[allow(missing_docs)] // documentation missing in model
     None,
+    #[allow(missing_docs)] // documentation missing in model
     Whitelist,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1882,6 +2090,7 @@ impl std::str::FromStr for OriginRequestPolicyQueryStringBehavior {
     }
 }
 impl OriginRequestPolicyQueryStringBehavior {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             OriginRequestPolicyQueryStringBehavior::All => "all",
@@ -1890,6 +2099,7 @@ impl OriginRequestPolicyQueryStringBehavior {
             OriginRequestPolicyQueryStringBehavior::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["all", "none", "whitelist"]
     }
@@ -1981,6 +2191,29 @@ pub mod origin_request_policy_cookies_config {
             self.cookie_behavior = Some(input);
             self
         }
+        /// <p>Determines whether cookies in viewer requests are included in requests that CloudFront sends to
+        /// the origin. Valid values are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>none</code> – Cookies in viewer requests are not included in requests that CloudFront
+        /// sends to the origin. Even when this field is set to <code>none</code>, any
+        /// cookies that are listed in a <code>CachePolicy</code>
+        /// <i>are</i>
+        /// included in origin requests.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>whitelist</code> – The cookies in viewer requests that are listed in the
+        /// <code>CookieNames</code> type are included in requests that CloudFront sends to the
+        /// origin.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>all</code> – All cookies in viewer requests are included in requests that CloudFront sends
+        /// to the origin.</p>
+        /// </li>
+        /// </ul>
         pub fn set_cookie_behavior(
             mut self,
             input: std::option::Option<crate::model::OriginRequestPolicyCookieBehavior>,
@@ -1993,6 +2226,7 @@ pub mod origin_request_policy_cookies_config {
             self.cookies = Some(input);
             self
         }
+        /// <p>Contains a list of cookie names.</p>
         pub fn set_cookies(
             mut self,
             input: std::option::Option<crate::model::CookieNames>,
@@ -2048,16 +2282,23 @@ pub mod cookie_names {
             self.quantity = Some(input);
             self
         }
+        /// <p>The number of cookie names in the <code>Items</code> list.</p>
         pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
             self.quantity = input;
             self
         }
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>A list of cookie names.</p>
         pub fn items(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.items.unwrap_or_default();
             v.push(input.into());
             self.items = Some(v);
             self
         }
+        /// <p>A list of cookie names.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2081,6 +2322,7 @@ impl CookieNames {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2092,8 +2334,11 @@ impl CookieNames {
     std::hash::Hash,
 )]
 pub enum OriginRequestPolicyCookieBehavior {
+    #[allow(missing_docs)] // documentation missing in model
     All,
+    #[allow(missing_docs)] // documentation missing in model
     None,
+    #[allow(missing_docs)] // documentation missing in model
     Whitelist,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2116,6 +2361,7 @@ impl std::str::FromStr for OriginRequestPolicyCookieBehavior {
     }
 }
 impl OriginRequestPolicyCookieBehavior {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             OriginRequestPolicyCookieBehavior::All => "all",
@@ -2124,6 +2370,7 @@ impl OriginRequestPolicyCookieBehavior {
             OriginRequestPolicyCookieBehavior::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["all", "none", "whitelist"]
     }
@@ -2227,6 +2474,35 @@ pub mod origin_request_policy_headers_config {
             self.header_behavior = Some(input);
             self
         }
+        /// <p>Determines whether any HTTP headers are included in requests that CloudFront sends to the origin.
+        /// Valid values are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>none</code> – HTTP headers are not included in requests that CloudFront sends to the
+        /// origin. Even when this field is set to <code>none</code>, any headers that are
+        /// listed in a <code>CachePolicy</code>
+        /// <i>are</i> included in origin
+        /// requests.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>whitelist</code> – The HTTP headers that are listed in the <code>Headers</code> type
+        /// are included in requests that CloudFront sends to the origin.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>allViewer</code> – All HTTP headers in viewer requests are included in requests that
+        /// CloudFront sends to the origin.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>allViewerAndWhitelistCloudFront</code> – All HTTP headers in viewer requests and the
+        /// additional CloudFront headers that are listed in the <code>Headers</code> type are
+        /// included in requests that CloudFront sends to the origin. The additional headers are
+        /// added by CloudFront.</p>
+        /// </li>
+        /// </ul>
         pub fn set_header_behavior(
             mut self,
             input: std::option::Option<crate::model::OriginRequestPolicyHeaderBehavior>,
@@ -2239,6 +2515,7 @@ pub mod origin_request_policy_headers_config {
             self.headers = Some(input);
             self
         }
+        /// <p>Contains a list of HTTP header names.</p>
         pub fn set_headers(mut self, input: std::option::Option<crate::model::Headers>) -> Self {
             self.headers = input;
             self
@@ -2291,16 +2568,23 @@ pub mod headers {
             self.quantity = Some(input);
             self
         }
+        /// <p>The number of header names in the <code>Items</code> list.</p>
         pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
             self.quantity = input;
             self
         }
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>A list of HTTP header names.</p>
         pub fn items(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.items.unwrap_or_default();
             v.push(input.into());
             self.items = Some(v);
             self
         }
+        /// <p>A list of HTTP header names.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2324,6 +2608,7 @@ impl Headers {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2335,9 +2620,13 @@ impl Headers {
     std::hash::Hash,
 )]
 pub enum OriginRequestPolicyHeaderBehavior {
+    #[allow(missing_docs)] // documentation missing in model
     AllViewer,
+    #[allow(missing_docs)] // documentation missing in model
     AllViewerAndWhitelistCloudFront,
+    #[allow(missing_docs)] // documentation missing in model
     None,
+    #[allow(missing_docs)] // documentation missing in model
     Whitelist,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2363,6 +2652,7 @@ impl std::str::FromStr for OriginRequestPolicyHeaderBehavior {
     }
 }
 impl OriginRequestPolicyHeaderBehavior {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             OriginRequestPolicyHeaderBehavior::AllViewer => "allViewer",
@@ -2374,6 +2664,7 @@ impl OriginRequestPolicyHeaderBehavior {
             OriginRequestPolicyHeaderBehavior::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "allViewer",
@@ -2397,7 +2688,7 @@ pub struct KeyGroup {
     /// <p>The identifier for the key group.</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The date and time when the key group was last modified.</p>
-    pub last_modified_time: std::option::Option<smithy_types::Instant>,
+    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The key group configuration.</p>
     pub key_group_config: std::option::Option<crate::model::KeyGroupConfig>,
 }
@@ -2417,7 +2708,7 @@ pub mod key_group {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
-        pub(crate) last_modified_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) key_group_config: std::option::Option<crate::model::KeyGroupConfig>,
     }
     impl Builder {
@@ -2426,18 +2717,20 @@ pub mod key_group {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier for the key group.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
         /// <p>The date and time when the key group was last modified.</p>
-        pub fn last_modified_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_modified_time = Some(input);
             self
         }
+        /// <p>The date and time when the key group was last modified.</p>
         pub fn set_last_modified_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_modified_time = input;
             self
@@ -2447,6 +2740,7 @@ pub mod key_group {
             self.key_group_config = Some(input);
             self
         }
+        /// <p>The key group configuration.</p>
         pub fn set_key_group_config(
             mut self,
             input: std::option::Option<crate::model::KeyGroupConfig>,
@@ -2509,16 +2803,23 @@ pub mod key_group_config {
             self.name = Some(input.into());
             self
         }
+        /// <p>A name to identify the key group.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>A list of the identifiers of the public keys in the key group.</p>
         pub fn items(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.items.unwrap_or_default();
             v.push(input.into());
             self.items = Some(v);
             self
         }
+        /// <p>A list of the identifiers of the public keys in the key group.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2532,6 +2833,8 @@ pub mod key_group_config {
             self.comment = Some(input.into());
             self
         }
+        /// <p>A comment to describe the key group. The comment cannot be longer than 128
+        /// characters.</p>
         pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.comment = input;
             self
@@ -2593,6 +2896,7 @@ pub mod function_summary {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the CloudFront function.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2602,6 +2906,7 @@ pub mod function_summary {
             self.status = Some(input.into());
             self
         }
+        /// <p>The status of the CloudFront function.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -2611,6 +2916,7 @@ pub mod function_summary {
             self.function_config = Some(input);
             self
         }
+        /// <p>Contains configuration information about a CloudFront function.</p>
         pub fn set_function_config(
             mut self,
             input: std::option::Option<crate::model::FunctionConfig>,
@@ -2623,6 +2929,7 @@ pub mod function_summary {
             self.function_metadata = Some(input);
             self
         }
+        /// <p>Contains metadata about a CloudFront function.</p>
         pub fn set_function_metadata(
             mut self,
             input: std::option::Option<crate::model::FunctionMetadata>,
@@ -2663,9 +2970,9 @@ pub struct FunctionMetadata {
     /// distribution’s cache behavior, using the function’s ARN.</p>
     pub stage: std::option::Option<crate::model::FunctionStage>,
     /// <p>The date and time when the function was created.</p>
-    pub created_time: std::option::Option<smithy_types::Instant>,
+    pub created_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time when the function was most recently updated.</p>
-    pub last_modified_time: std::option::Option<smithy_types::Instant>,
+    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for FunctionMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2685,8 +2992,8 @@ pub mod function_metadata {
     pub struct Builder {
         pub(crate) function_arn: std::option::Option<std::string::String>,
         pub(crate) stage: std::option::Option<crate::model::FunctionStage>,
-        pub(crate) created_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_modified_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the function. The ARN uniquely identifies the
@@ -2695,6 +3002,8 @@ pub mod function_metadata {
             self.function_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the function. The ARN uniquely identifies the
+        /// function.</p>
         pub fn set_function_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.function_arn = input;
             self
@@ -2709,6 +3018,12 @@ pub mod function_metadata {
             self.stage = Some(input);
             self
         }
+        /// <p>The stage that the function is in, either <code>DEVELOPMENT</code> or
+        /// <code>LIVE</code>.</p>
+        /// <p>When a function is in the <code>DEVELOPMENT</code> stage, you can test the function with
+        /// <code>TestFunction</code>, and update it with <code>UpdateFunction</code>.</p>
+        /// <p>When a function is in the <code>LIVE</code> stage, you can attach the function to a
+        /// distribution’s cache behavior, using the function’s ARN.</p>
         pub fn set_stage(
             mut self,
             input: std::option::Option<crate::model::FunctionStage>,
@@ -2717,25 +3032,27 @@ pub mod function_metadata {
             self
         }
         /// <p>The date and time when the function was created.</p>
-        pub fn created_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_time = Some(input);
             self
         }
+        /// <p>The date and time when the function was created.</p>
         pub fn set_created_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_time = input;
             self
         }
         /// <p>The date and time when the function was most recently updated.</p>
-        pub fn last_modified_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_modified_time = Some(input);
             self
         }
+        /// <p>The date and time when the function was most recently updated.</p>
         pub fn set_last_modified_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_modified_time = input;
             self
@@ -2758,6 +3075,7 @@ impl FunctionMetadata {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2769,7 +3087,9 @@ impl FunctionMetadata {
     std::hash::Hash,
 )]
 pub enum FunctionStage {
+    #[allow(missing_docs)] // documentation missing in model
     Development,
+    #[allow(missing_docs)] // documentation missing in model
     Live,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2791,6 +3111,7 @@ impl std::str::FromStr for FunctionStage {
     }
 }
 impl FunctionStage {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FunctionStage::Development => "DEVELOPMENT",
@@ -2798,6 +3119,7 @@ impl FunctionStage {
             FunctionStage::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DEVELOPMENT", "LIVE"]
     }
@@ -2841,6 +3163,7 @@ pub mod function_config {
             self.comment = Some(input.into());
             self
         }
+        /// <p>A comment to describe the function.</p>
         pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.comment = input;
             self
@@ -2851,6 +3174,8 @@ pub mod function_config {
             self.runtime = Some(input);
             self
         }
+        /// <p>The function’s runtime environment. The only valid value is
+        /// <code>cloudfront-js-1.0</code>.</p>
         pub fn set_runtime(
             mut self,
             input: std::option::Option<crate::model::FunctionRuntime>,
@@ -2874,6 +3199,7 @@ impl FunctionConfig {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2885,6 +3211,7 @@ impl FunctionConfig {
     std::hash::Hash,
 )]
 pub enum FunctionRuntime {
+    #[allow(missing_docs)] // documentation missing in model
     CloudfrontJs10,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2905,12 +3232,14 @@ impl std::str::FromStr for FunctionRuntime {
     }
 }
 impl FunctionRuntime {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FunctionRuntime::CloudfrontJs10 => "cloudfront-js-1.0",
             FunctionRuntime::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["cloudfront-js-1.0"]
     }
@@ -2929,7 +3258,7 @@ pub struct FieldLevelEncryptionProfile {
     /// selected data fields to be encrypted by specific public keys.</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The last time the field-level encryption profile was updated.</p>
-    pub last_modified_time: std::option::Option<smithy_types::Instant>,
+    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A complex data type that includes the profile name and the encryption entities for the field-level encryption profile.</p>
     pub field_level_encryption_profile_config:
         std::option::Option<crate::model::FieldLevelEncryptionProfileConfig>,
@@ -2953,7 +3282,7 @@ pub mod field_level_encryption_profile {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
-        pub(crate) last_modified_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) field_level_encryption_profile_config:
             std::option::Option<crate::model::FieldLevelEncryptionProfileConfig>,
     }
@@ -2964,18 +3293,21 @@ pub mod field_level_encryption_profile {
             self.id = Some(input.into());
             self
         }
+        /// <p>The ID for a field-level encryption profile configuration which includes a set of profiles that specify certain
+        /// selected data fields to be encrypted by specific public keys.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
         /// <p>The last time the field-level encryption profile was updated.</p>
-        pub fn last_modified_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_modified_time = Some(input);
             self
         }
+        /// <p>The last time the field-level encryption profile was updated.</p>
         pub fn set_last_modified_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_modified_time = input;
             self
@@ -2988,6 +3320,7 @@ pub mod field_level_encryption_profile {
             self.field_level_encryption_profile_config = Some(input);
             self
         }
+        /// <p>A complex data type that includes the profile name and the encryption entities for the field-level encryption profile.</p>
         pub fn set_field_level_encryption_profile_config(
             mut self,
             input: std::option::Option<crate::model::FieldLevelEncryptionProfileConfig>,
@@ -3054,6 +3387,7 @@ pub mod field_level_encryption_profile_config {
             self.name = Some(input.into());
             self
         }
+        /// <p>Profile name for the field-level encryption profile.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -3063,6 +3397,7 @@ pub mod field_level_encryption_profile_config {
             self.caller_reference = Some(input.into());
             self
         }
+        /// <p>A unique number that ensures that the request can't be replayed.</p>
         pub fn set_caller_reference(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3076,6 +3411,8 @@ pub mod field_level_encryption_profile_config {
             self.comment = Some(input.into());
             self
         }
+        /// <p>An optional comment for the field-level encryption profile. The comment cannot be longer
+        /// than 128 characters.</p>
         pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.comment = input;
             self
@@ -3086,6 +3423,8 @@ pub mod field_level_encryption_profile_config {
             self.encryption_entities = Some(input);
             self
         }
+        /// <p>A complex data type of encryption entities for the field-level encryption profile that include the public key ID, provider, and
+        /// field patterns for specifying which fields to encrypt with this key.</p>
         pub fn set_encryption_entities(
             mut self,
             input: std::option::Option<crate::model::EncryptionEntities>,
@@ -3143,16 +3482,23 @@ pub mod encryption_entities {
             self.quantity = Some(input);
             self
         }
+        /// <p>Number of field pattern items in a field-level encryption content type-profile mapping. </p>
         pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
             self.quantity = input;
             self
         }
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>An array of field patterns in a field-level encryption content type-profile mapping. </p>
         pub fn items(mut self, input: impl Into<crate::model::EncryptionEntity>) -> Self {
             let mut v = self.items.unwrap_or_default();
             v.push(input.into());
             self.items = Some(v);
             self
         }
+        /// <p>An array of field patterns in a field-level encryption content type-profile mapping. </p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EncryptionEntity>>,
@@ -3217,6 +3563,8 @@ pub mod encryption_entity {
             self.public_key_id = Some(input.into());
             self
         }
+        /// <p>The public key associated with a set of field-level encryption patterns, to be used when encrypting the fields that match
+        /// the patterns. </p>
         pub fn set_public_key_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3230,6 +3578,8 @@ pub mod encryption_entity {
             self.provider_id = Some(input.into());
             self
         }
+        /// <p>The provider associated with the public key being used for encryption. This value must also be provided with the private key
+        /// for applications to be able to decrypt data.</p>
         pub fn set_provider_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.provider_id = input;
             self
@@ -3241,6 +3591,9 @@ pub mod encryption_entity {
             self.field_patterns = Some(input);
             self
         }
+        /// <p>Field patterns in a field-level encryption content type profile specify the fields that you want to be encrypted. You can provide the
+        /// full field name, or any beginning characters followed by a wildcard (*). You can't overlap field patterns. For example, you can't have
+        /// both ABC* and AB*. Note that field patterns are case-sensitive. </p>
         pub fn set_field_patterns(
             mut self,
             input: std::option::Option<crate::model::FieldPatterns>,
@@ -3297,16 +3650,23 @@ pub mod field_patterns {
             self.quantity = Some(input);
             self
         }
+        /// <p>The number of field-level encryption field patterns.</p>
         pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
             self.quantity = input;
             self
         }
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>An array of the field-level encryption field patterns.</p>
         pub fn items(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.items.unwrap_or_default();
             v.push(input.into());
             self.items = Some(v);
             self
         }
+        /// <p>An array of the field-level encryption field patterns.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3338,7 +3698,7 @@ pub struct FieldLevelEncryption {
     /// selected data fields to be encrypted by specific public keys.</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The last time the field-level encryption configuration was changed. </p>
-    pub last_modified_time: std::option::Option<smithy_types::Instant>,
+    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A complex data type that includes the profile configurations specified for field-level encryption. </p>
     pub field_level_encryption_config:
         std::option::Option<crate::model::FieldLevelEncryptionConfig>,
@@ -3362,7 +3722,7 @@ pub mod field_level_encryption {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
-        pub(crate) last_modified_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) field_level_encryption_config:
             std::option::Option<crate::model::FieldLevelEncryptionConfig>,
     }
@@ -3373,18 +3733,21 @@ pub mod field_level_encryption {
             self.id = Some(input.into());
             self
         }
+        /// <p>The configuration ID for a field-level encryption configuration which includes a set of profiles that specify certain
+        /// selected data fields to be encrypted by specific public keys.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
         /// <p>The last time the field-level encryption configuration was changed. </p>
-        pub fn last_modified_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_modified_time = Some(input);
             self
         }
+        /// <p>The last time the field-level encryption configuration was changed. </p>
         pub fn set_last_modified_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_modified_time = input;
             self
@@ -3397,6 +3760,7 @@ pub mod field_level_encryption {
             self.field_level_encryption_config = Some(input);
             self
         }
+        /// <p>A complex data type that includes the profile configurations specified for field-level encryption. </p>
         pub fn set_field_level_encryption_config(
             mut self,
             input: std::option::Option<crate::model::FieldLevelEncryptionConfig>,
@@ -3469,6 +3833,7 @@ pub mod field_level_encryption_config {
             self.caller_reference = Some(input.into());
             self
         }
+        /// <p>A unique number that ensures the request can't be replayed.</p>
         pub fn set_caller_reference(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3482,6 +3847,8 @@ pub mod field_level_encryption_config {
             self.comment = Some(input.into());
             self
         }
+        /// <p>An optional comment about the configuration. The comment cannot be longer than 128
+        /// characters.</p>
         pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.comment = input;
             self
@@ -3495,6 +3862,8 @@ pub mod field_level_encryption_config {
             self.query_arg_profile_config = Some(input);
             self
         }
+        /// <p>A complex data type that specifies when to forward content if a profile isn't found and the profile that can be provided as a
+        /// query argument in a request.</p>
         pub fn set_query_arg_profile_config(
             mut self,
             input: std::option::Option<crate::model::QueryArgProfileConfig>,
@@ -3511,6 +3880,8 @@ pub mod field_level_encryption_config {
             self.content_type_profile_config = Some(input);
             self
         }
+        /// <p>A complex data type that specifies when to forward content if a content type isn't recognized and profiles to use as by default
+        /// in a request if a query argument doesn't specify a profile to use.</p>
         pub fn set_content_type_profile_config(
             mut self,
             input: std::option::Option<crate::model::ContentTypeProfileConfig>,
@@ -3577,6 +3948,10 @@ pub mod content_type_profile_config {
             self.forward_when_content_type_is_unknown = Some(input);
             self
         }
+        /// <p>The setting in a field-level encryption content type-profile mapping that specifies what to do
+        /// when an unknown content type is provided for the profile. If true, content is
+        /// forwarded without being encrypted when the content type is unknown. If false (the
+        /// default), an error is returned when the content type is unknown. </p>
         pub fn set_forward_when_content_type_is_unknown(
             mut self,
             input: std::option::Option<bool>,
@@ -3589,6 +3964,7 @@ pub mod content_type_profile_config {
             self.content_type_profiles = Some(input);
             self
         }
+        /// <p>The configuration for a field-level encryption content type-profile. </p>
         pub fn set_content_type_profiles(
             mut self,
             input: std::option::Option<crate::model::ContentTypeProfiles>,
@@ -3644,16 +4020,23 @@ pub mod content_type_profiles {
             self.quantity = Some(input);
             self
         }
+        /// <p>The number of field-level encryption content type-profile mappings. </p>
         pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
             self.quantity = input;
             self
         }
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>Items in a field-level encryption content type-profile mapping. </p>
         pub fn items(mut self, input: impl Into<crate::model::ContentTypeProfile>) -> Self {
             let mut v = self.items.unwrap_or_default();
             v.push(input.into());
             self.items = Some(v);
             self
         }
+        /// <p>Items in a field-level encryption content type-profile mapping. </p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ContentTypeProfile>>,
@@ -3713,6 +4096,7 @@ pub mod content_type_profile {
             self.format = Some(input);
             self
         }
+        /// <p>The format for a field-level encryption content type-profile mapping. </p>
         pub fn set_format(mut self, input: std::option::Option<crate::model::Format>) -> Self {
             self.format = input;
             self
@@ -3722,6 +4106,7 @@ pub mod content_type_profile {
             self.profile_id = Some(input.into());
             self
         }
+        /// <p>The profile ID for a field-level encryption content type-profile mapping. </p>
         pub fn set_profile_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.profile_id = input;
             self
@@ -3731,6 +4116,7 @@ pub mod content_type_profile {
             self.content_type = Some(input.into());
             self
         }
+        /// <p>The content type for a field-level encryption content type-profile mapping. </p>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_type = input;
             self
@@ -3752,6 +4138,7 @@ impl ContentTypeProfile {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3763,6 +4150,7 @@ impl ContentTypeProfile {
     std::hash::Hash,
 )]
 pub enum Format {
+    #[allow(missing_docs)] // documentation missing in model
     UrlEncoded,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3783,12 +4171,14 @@ impl std::str::FromStr for Format {
     }
 }
 impl Format {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Format::UrlEncoded => "URLEncoded",
             Format::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["URLEncoded"]
     }
@@ -3836,6 +4226,8 @@ pub mod query_arg_profile_config {
             self.forward_when_query_arg_profile_is_unknown = Some(input);
             self
         }
+        /// <p>Flag to set if you want a request to be forwarded to the origin even if the profile specified by the field-level encryption query argument,
+        /// fle-profile, is unknown.</p>
         pub fn set_forward_when_query_arg_profile_is_unknown(
             mut self,
             input: std::option::Option<bool>,
@@ -3848,6 +4240,7 @@ pub mod query_arg_profile_config {
             self.query_arg_profiles = Some(input);
             self
         }
+        /// <p>Profiles specified for query argument-profile mapping for field-level encryption.</p>
         pub fn set_query_arg_profiles(
             mut self,
             input: std::option::Option<crate::model::QueryArgProfiles>,
@@ -3904,16 +4297,23 @@ pub mod query_arg_profiles {
             self.quantity = Some(input);
             self
         }
+        /// <p>Number of profiles for query argument-profile mapping for field-level encryption.</p>
         pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
             self.quantity = input;
             self
         }
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>Number of items for query argument-profile mapping for field-level encryption.</p>
         pub fn items(mut self, input: impl Into<crate::model::QueryArgProfile>) -> Self {
             let mut v = self.items.unwrap_or_default();
             v.push(input.into());
             self.items = Some(v);
             self
         }
+        /// <p>Number of items for query argument-profile mapping for field-level encryption.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::QueryArgProfile>>,
@@ -3969,6 +4369,7 @@ pub mod query_arg_profile {
             self.query_arg = Some(input.into());
             self
         }
+        /// <p>Query argument for field-level encryption query argument-profile mapping.</p>
         pub fn set_query_arg(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.query_arg = input;
             self
@@ -3978,6 +4379,7 @@ pub mod query_arg_profile {
             self.profile_id = Some(input.into());
             self
         }
+        /// <p>ID of profile to use for field-level encryption query argument-profile mapping</p>
         pub fn set_profile_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.profile_id = input;
             self
@@ -4015,7 +4417,7 @@ pub struct Distribution {
     /// locations. </p>
     pub status: std::option::Option<std::string::String>,
     /// <p>The date and time the distribution was last modified. </p>
-    pub last_modified_time: std::option::Option<smithy_types::Instant>,
+    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The number of invalidation batches currently in progress. </p>
     pub in_progress_invalidation_batches: std::option::Option<i32>,
     /// <p>The domain name corresponding to the distribution, for example, <code>d111111abcdef8.cloudfront.net</code>. </p>
@@ -4073,7 +4475,7 @@ pub mod distribution {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
-        pub(crate) last_modified_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) in_progress_invalidation_batches: std::option::Option<i32>,
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) active_trusted_signers: std::option::Option<crate::model::ActiveTrustedSigners>,
@@ -4090,6 +4492,8 @@ pub mod distribution {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier for the distribution. For example: <code>EDFDVBD632BHDS5</code>.
+        /// </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -4101,6 +4505,9 @@ pub mod distribution {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The ARN (Amazon Resource Name) for the distribution. For example:
+        /// <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where
+        /// <code>123456789012</code> is your account ID.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -4112,18 +4519,22 @@ pub mod distribution {
             self.status = Some(input.into());
             self
         }
+        /// <p>This response element indicates the current status of the distribution. When the status
+        /// is <code>Deployed</code>, the distribution's information is fully propagated to all CloudFront edge
+        /// locations. </p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
         }
         /// <p>The date and time the distribution was last modified. </p>
-        pub fn last_modified_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_modified_time = Some(input);
             self
         }
+        /// <p>The date and time the distribution was last modified. </p>
         pub fn set_last_modified_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_modified_time = input;
             self
@@ -4133,6 +4544,7 @@ pub mod distribution {
             self.in_progress_invalidation_batches = Some(input);
             self
         }
+        /// <p>The number of invalidation batches currently in progress. </p>
         pub fn set_in_progress_invalidation_batches(
             mut self,
             input: std::option::Option<i32>,
@@ -4145,6 +4557,7 @@ pub mod distribution {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The domain name corresponding to the distribution, for example, <code>d111111abcdef8.cloudfront.net</code>. </p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -4161,6 +4574,14 @@ pub mod distribution {
             self.active_trusted_signers = Some(input);
             self
         }
+        /// <important>
+        /// <p>We recommend using <code>TrustedKeyGroups</code> instead of
+        /// <code>TrustedSigners</code>.</p>
+        /// </important>
+        /// <p>CloudFront automatically adds this field to the response if you’ve configured a cache behavior in
+        /// this distribution to serve private content using trusted signers. This field contains a
+        /// list of account IDs and the active CloudFront key pairs in each account that CloudFront can use
+        /// to verify the signatures of signed URLs or signed cookies.</p>
         pub fn set_active_trusted_signers(
             mut self,
             input: std::option::Option<crate::model::ActiveTrustedSigners>,
@@ -4179,6 +4600,10 @@ pub mod distribution {
             self.active_trusted_key_groups = Some(input);
             self
         }
+        /// <p>CloudFront automatically adds this field to the response if you’ve configured a cache
+        /// behavior in this distribution to serve private content using key groups. This field
+        /// contains a list of key groups and the public keys in each key group that CloudFront can use to
+        /// verify the signatures of signed URLs or signed cookies.</p>
         pub fn set_active_trusted_key_groups(
             mut self,
             input: std::option::Option<crate::model::ActiveTrustedKeyGroups>,
@@ -4193,6 +4618,9 @@ pub mod distribution {
             self.distribution_config = Some(input);
             self
         }
+        /// <p>The current configuration information for the distribution. Send a <code>GET</code>
+        /// request to the <code>/<i>CloudFront API version</i>/distribution ID/config</code>
+        /// resource.</p>
         pub fn set_distribution_config(
             mut self,
             input: std::option::Option<crate::model::DistributionConfig>,
@@ -4200,6 +4628,15 @@ pub mod distribution {
             self.distribution_config = input;
             self
         }
+        /// Appends an item to `alias_icp_recordals`.
+        ///
+        /// To override the contents of this collection use [`set_alias_icp_recordals`](Self::set_alias_icp_recordals).
+        ///
+        /// <p>Amazon Web Services services in China customers must file for an Internet Content Provider (ICP) recordal if they want to serve content
+        /// publicly on an alternate domain name, also known as a CNAME, that they've added to CloudFront. AliasICPRecordal provides the ICP
+        /// recordal status for CNAMEs associated with distributions.</p>
+        /// <p>For more information about ICP recordals, see  <a href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html">
+        /// Signup, Accounts, and Credentials</a> in <i>Getting Started with Amazon Web Services services in China</i>.</p>
         pub fn alias_icp_recordals(
             mut self,
             input: impl Into<crate::model::AliasIcpRecordal>,
@@ -4209,6 +4646,11 @@ pub mod distribution {
             self.alias_icp_recordals = Some(v);
             self
         }
+        /// <p>Amazon Web Services services in China customers must file for an Internet Content Provider (ICP) recordal if they want to serve content
+        /// publicly on an alternate domain name, also known as a CNAME, that they've added to CloudFront. AliasICPRecordal provides the ICP
+        /// recordal status for CNAMEs associated with distributions.</p>
+        /// <p>For more information about ICP recordals, see  <a href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html">
+        /// Signup, Accounts, and Credentials</a> in <i>Getting Started with Amazon Web Services services in China</i>.</p>
         pub fn set_alias_icp_recordals(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AliasIcpRecordal>>,
@@ -4298,6 +4740,7 @@ pub mod alias_icp_recordal {
             self.cname = Some(input.into());
             self
         }
+        /// <p>A domain name associated with a distribution. </p>
         pub fn set_cname(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cname = input;
             self
@@ -4328,6 +4771,28 @@ pub mod alias_icp_recordal {
             self.icp_recordal_status = Some(input);
             self
         }
+        /// <p>The Internet Content Provider (ICP) recordal status for a CNAME. The ICPRecordalStatus is set to
+        /// APPROVED for all CNAMEs (aliases) in regions outside of China. </p>
+        /// <p>The status values returned are the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>APPROVED</b> indicates that the associated CNAME has a valid ICP recordal number.
+        /// Multiple CNAMEs can be associated with a distribution, and CNAMEs can correspond to different ICP recordals. To be marked as
+        /// APPROVED, that is, valid to use with China region, a CNAME must have one ICP recordal number associated with it.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>SUSPENDED</b> indicates that the associated CNAME does not have a valid ICP recordal
+        /// number.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>PENDING</b> indicates that CloudFront can't determine the ICP recordal status of the
+        /// CNAME associated with the distribution because there was an error in trying to determine the status. You can try again
+        /// to see if the error is resolved in which case CloudFront returns an APPROVED or SUSPENDED status.</p>
+        /// </li>
+        /// </ul>
         pub fn set_icp_recordal_status(
             mut self,
             input: std::option::Option<crate::model::IcpRecordalStatus>,
@@ -4351,6 +4816,7 @@ impl AliasIcpRecordal {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4362,8 +4828,11 @@ impl AliasIcpRecordal {
     std::hash::Hash,
 )]
 pub enum IcpRecordalStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Approved,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
+    #[allow(missing_docs)] // documentation missing in model
     Suspended,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4386,6 +4855,7 @@ impl std::str::FromStr for IcpRecordalStatus {
     }
 }
 impl IcpRecordalStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             IcpRecordalStatus::Approved => "APPROVED",
@@ -4394,6 +4864,7 @@ impl IcpRecordalStatus {
             IcpRecordalStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["APPROVED", "PENDING", "SUSPENDED"]
     }
@@ -4603,6 +5074,12 @@ pub mod distribution_config {
             self.caller_reference = Some(input.into());
             self
         }
+        /// <p>A unique value (for example, a date-time stamp) that ensures that the request can't be
+        /// replayed.</p>
+        /// <p>If the value of <code>CallerReference</code> is new (regardless of the content of the
+        /// <code>DistributionConfig</code> object), CloudFront creates a new distribution.</p>
+        /// <p>If <code>CallerReference</code> is a value that you already sent in a previous request to
+        /// create a distribution, CloudFront returns a <code>DistributionAlreadyExists</code> error.</p>
         pub fn set_caller_reference(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4616,6 +5093,8 @@ pub mod distribution_config {
             self.aliases = Some(input);
             self
         }
+        /// <p>A complex type that contains information about CNAMEs (alternate domain names), if any,
+        /// for this distribution.</p>
         pub fn set_aliases(mut self, input: std::option::Option<crate::model::Aliases>) -> Self {
             self.aliases = input;
             self
@@ -4640,6 +5119,22 @@ pub mod distribution_config {
             self.default_root_object = Some(input.into());
             self
         }
+        /// <p>The object that you want CloudFront to request from your origin (for example,
+        /// <code>index.html</code>) when a viewer requests the root URL for your distribution
+        /// (<code>http://www.example.com</code>) instead of an object in your distribution
+        /// (<code>http://www.example.com/product-description.html</code>). Specifying a default root
+        /// object avoids exposing the contents of your distribution.</p>
+        /// <p>Specify only the object name, for example, <code>index.html</code>. Don't add a
+        /// <code>/</code> before the object name.</p>
+        /// <p>If you don't want to specify a default root object when you create a distribution,
+        /// include an empty <code>DefaultRootObject</code> element.</p>
+        /// <p>To delete the default root object from an existing distribution, update the
+        /// distribution configuration and include an empty <code>DefaultRootObject</code>
+        /// element.</p>
+        /// <p>To replace the default root object, update the distribution configuration and specify
+        /// the new object.</p>
+        /// <p>For more information about the default root object, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DefaultRootObject.html">Creating a Default Root Object</a> in the
+        /// <i>Amazon CloudFront Developer Guide</i>.</p>
         pub fn set_default_root_object(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4653,6 +5148,8 @@ pub mod distribution_config {
             self.origins = Some(input);
             self
         }
+        /// <p>A complex type that contains information about origins for this distribution.
+        /// </p>
         pub fn set_origins(mut self, input: std::option::Option<crate::model::Origins>) -> Self {
             self.origins = input;
             self
@@ -4663,6 +5160,8 @@ pub mod distribution_config {
             self.origin_groups = Some(input);
             self
         }
+        /// <p> A complex type that contains information about origin groups for this
+        /// distribution.</p>
         pub fn set_origin_groups(
             mut self,
             input: std::option::Option<crate::model::OriginGroups>,
@@ -4678,6 +5177,10 @@ pub mod distribution_config {
             self.default_cache_behavior = Some(input);
             self
         }
+        /// <p>A complex type that describes the default cache behavior if you don't specify a
+        /// <code>CacheBehavior</code> element or if files don't match any of the values of
+        /// <code>PathPattern</code> in <code>CacheBehavior</code> elements. You must create exactly one
+        /// default cache behavior.</p>
         pub fn set_default_cache_behavior(
             mut self,
             input: std::option::Option<crate::model::DefaultCacheBehavior>,
@@ -4691,6 +5194,8 @@ pub mod distribution_config {
             self.cache_behaviors = Some(input);
             self
         }
+        /// <p>A complex type that contains zero or more <code>CacheBehavior</code> elements.
+        /// </p>
         pub fn set_cache_behaviors(
             mut self,
             input: std::option::Option<crate::model::CacheBehaviors>,
@@ -4714,6 +5219,18 @@ pub mod distribution_config {
             self.custom_error_responses = Some(input);
             self
         }
+        /// <p>A complex type that controls the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Whether CloudFront replaces HTTP status codes in the 4xx and 5xx range with custom error
+        /// messages before returning the response to the viewer.</p>
+        /// </li>
+        /// <li>
+        /// <p>How long CloudFront caches HTTP status codes in the 4xx and 5xx range.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information about custom error pages, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing Error Responses</a> in the
+        /// <i>Amazon CloudFront Developer Guide</i>.</p>
         pub fn set_custom_error_responses(
             mut self,
             input: std::option::Option<crate::model::CustomErrorResponses>,
@@ -4727,6 +5244,8 @@ pub mod distribution_config {
             self.comment = Some(input.into());
             self
         }
+        /// <p>An optional comment to describe the distribution. The comment cannot be longer than 128
+        /// characters.</p>
         pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.comment = input;
             self
@@ -4739,6 +5258,10 @@ pub mod distribution_config {
             self.logging = Some(input);
             self
         }
+        /// <p>A complex type that controls whether access logs are written for the
+        /// distribution.</p>
+        /// <p>For more information about logging, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html">Access
+        /// Logs</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
         pub fn set_logging(
             mut self,
             input: std::option::Option<crate::model::LoggingConfig>,
@@ -4762,6 +5285,18 @@ pub mod distribution_config {
             self.price_class = Some(input);
             self
         }
+        /// <p>The price class that corresponds with the maximum price that you want to pay for CloudFront
+        /// service. If you specify <code>PriceClass_All</code>, CloudFront responds to requests for your
+        /// objects from all CloudFront edge locations.</p>
+        /// <p>If you specify a price class other than <code>PriceClass_All</code>, CloudFront serves your
+        /// objects from the CloudFront edge location that has the lowest latency among the edge locations in
+        /// your price class. Viewers who are in or near regions that are excluded from your specified
+        /// price class may encounter slower performance.</p>
+        /// <p>For more information about price classes, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing the Price Class
+        /// for a CloudFront Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>. For
+        /// information about CloudFront pricing, including how price classes (such as Price Class 100)
+        /// map to CloudFront regions, see <a href="http://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront
+        /// Pricing</a>.</p>
         pub fn set_price_class(
             mut self,
             input: std::option::Option<crate::model::PriceClass>,
@@ -4774,6 +5309,7 @@ pub mod distribution_config {
             self.enabled = Some(input);
             self
         }
+        /// <p>From this field, you can enable or disable the selected distribution.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -4784,6 +5320,8 @@ pub mod distribution_config {
             self.viewer_certificate = Some(input);
             self
         }
+        /// <p>A complex type that determines the distribution’s SSL/TLS configuration for
+        /// communicating with viewers.</p>
         pub fn set_viewer_certificate(
             mut self,
             input: std::option::Option<crate::model::ViewerCertificate>,
@@ -4797,6 +5335,8 @@ pub mod distribution_config {
             self.restrictions = Some(input);
             self
         }
+        /// <p>A complex type that identifies ways in which you want to restrict distribution of your
+        /// content.</p>
         pub fn set_restrictions(
             mut self,
             input: std::option::Option<crate::model::Restrictions>,
@@ -4821,6 +5361,19 @@ pub mod distribution_config {
             self.web_acl_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier that specifies the WAF web ACL, if any, to associate
+        /// with this distribution. To specify a web ACL created using the latest version of
+        /// WAF, use the ACL ARN, for example
+        /// <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
+        /// To specify a web ACL created using WAF Classic, use the ACL ID, for example
+        /// <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.</p>
+        /// <p>WAF is a web application firewall that lets you monitor the HTTP and HTTPS
+        /// requests that are forwarded to CloudFront, and lets you control access to your content. Based on
+        /// conditions that you specify, such as the IP addresses that requests originate from or the
+        /// values of query strings, CloudFront responds to requests either with the requested content or with
+        /// an HTTP 403 status code (Forbidden). You can also configure CloudFront to return a custom error page
+        /// when a request is blocked. For more information about WAF, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html">WAF
+        /// Developer Guide</a>. </p>
         pub fn set_web_acl_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.web_acl_id = input;
             self
@@ -4837,6 +5390,14 @@ pub mod distribution_config {
             self.http_version = Some(input);
             self
         }
+        /// <p>(Optional) Specify the maximum HTTP version that you want viewers to use to communicate
+        /// with CloudFront. The default value for new web distributions is http2. Viewers that don't support
+        /// HTTP/2 automatically use an earlier HTTP version.</p>
+        /// <p>For viewers and CloudFront to use HTTP/2, viewers must support TLS 1.2 or later, and must
+        /// support Server Name Identification (SNI).</p>
+        /// <p>In general, configuring CloudFront to communicate with viewers using HTTP/2 reduces latency.
+        /// You can improve performance by optimizing for HTTP/2. For more information, do an Internet
+        /// search for "http/2 optimization." </p>
         pub fn set_http_version(
             mut self,
             input: std::option::Option<crate::model::HttpVersion>,
@@ -4877,6 +5438,35 @@ pub mod distribution_config {
             self.is_ipv6_enabled = Some(input);
             self
         }
+        /// <p>If you want CloudFront to respond to IPv6 DNS requests with an IPv6 address for your
+        /// distribution, specify <code>true</code>. If you specify <code>false</code>, CloudFront responds to
+        /// IPv6 DNS requests with the DNS response code <code>NOERROR</code> and with no IP addresses.
+        /// This allows viewers to submit a second request, for an IPv4 address for your distribution. </p>
+        /// <p>In general, you should enable IPv6 if you have users on IPv6 networks who want to
+        /// access your content. However, if you're using signed URLs or signed cookies to restrict access
+        /// to your content, and if you're using a custom policy that includes the <code>IpAddress</code>
+        /// parameter to restrict the IP addresses that can access your content, don't enable IPv6. If
+        /// you want to restrict access to some content by IP address and not restrict access to other
+        /// content (or restrict access but not by IP address), you can create two distributions. For more
+        /// information, see  
+        /// <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-creating-signed-url-custom-policy.html">Creating a Signed URL Using a Custom Policy</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+        /// <p>If you're using an Route 53 Amazon Web Services Integration alias resource record set to route traffic to your CloudFront
+        /// distribution, you need to create a second alias resource record set when both of the following
+        /// are true:</p>
+        /// <ul>
+        /// <li>
+        /// <p>You enable IPv6 for the distribution</p>
+        /// </li>
+        /// <li>
+        /// <p>You're using alternate domain names in the URLs for your objects</p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html">Routing Traffic
+        /// to an Amazon CloudFront Web Distribution by Using Your Domain Name</a> in the <i>Route 53 Amazon Web Services Integration
+        /// Developer Guide</i>.</p>
+        /// <p>If you created a CNAME resource record set, either with Route 53 Amazon Web Services Integration or with another DNS
+        /// service, you don't need to make any changes. A CNAME record will route traffic to your
+        /// distribution regardless of the IP address format of the viewer request.</p>
         pub fn set_is_ipv6_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.is_ipv6_enabled = input;
             self
@@ -4912,6 +5502,7 @@ impl DistributionConfig {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4923,7 +5514,9 @@ impl DistributionConfig {
     std::hash::Hash,
 )]
 pub enum HttpVersion {
+    #[allow(missing_docs)] // documentation missing in model
     Http11,
+    #[allow(missing_docs)] // documentation missing in model
     Http2,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4945,6 +5538,7 @@ impl std::str::FromStr for HttpVersion {
     }
 }
 impl HttpVersion {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             HttpVersion::Http11 => "http1.1",
@@ -4952,6 +5546,7 @@ impl HttpVersion {
             HttpVersion::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["http1.1", "http2"]
     }
@@ -4993,6 +5588,8 @@ pub mod restrictions {
             self.geo_restriction = Some(input);
             self
         }
+        /// <p>A complex type that controls the countries in which your content is distributed. CloudFront
+        /// determines the location of your users using <code>MaxMind</code> GeoIP databases.</p>
         pub fn set_geo_restriction(
             mut self,
             input: std::option::Option<crate::model::GeoRestriction>,
@@ -5100,6 +5697,25 @@ pub mod geo_restriction {
             self.restriction_type = Some(input);
             self
         }
+        /// <p>The method that you want to use to restrict distribution of your content by
+        /// country:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>none</code>: No geo restriction is enabled, meaning access to content is not
+        /// restricted by client geo location.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>blacklist</code>: The <code>Location</code> elements specify the countries in
+        /// which you don't want CloudFront to distribute your content.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>whitelist</code>: The <code>Location</code> elements specify the countries in
+        /// which you want CloudFront to distribute your content.</p>
+        /// </li>
+        /// </ul>
         pub fn set_restriction_type(
             mut self,
             input: std::option::Option<crate::model::GeoRestrictionType>,
@@ -5114,16 +5730,45 @@ pub mod geo_restriction {
             self.quantity = Some(input);
             self
         }
+        /// <p>When geo restriction is <code>enabled</code>, this is the number of countries in your
+        /// <code>whitelist</code> or <code>blacklist</code>. Otherwise, when it is not enabled,
+        /// <code>Quantity</code> is <code>0</code>, and you can omit <code>Items</code>.</p>
         pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
             self.quantity = input;
             self
         }
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p> A complex type that contains a <code>Location</code> element for each country in which
+        /// you want CloudFront either to distribute your content (<code>whitelist</code>) or not distribute
+        /// your content (<code>blacklist</code>).</p>
+        /// <p>The <code>Location</code> element is a two-letter, uppercase country code for a country
+        /// that you want to include in your <code>blacklist</code> or <code>whitelist</code>. Include one
+        /// <code>Location</code> element for each country.</p>
+        /// <p>CloudFront and <code>MaxMind</code> both use <code>ISO 3166</code> country codes. For the
+        /// current list of countries and the corresponding codes, see <code>ISO 3166-1-alpha-2</code>
+        /// code on the <i>International Organization for Standardization</i> website. You
+        /// can also refer to the country list on the CloudFront console, which includes both country names and
+        /// codes.</p>
         pub fn items(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.items.unwrap_or_default();
             v.push(input.into());
             self.items = Some(v);
             self
         }
+        /// <p> A complex type that contains a <code>Location</code> element for each country in which
+        /// you want CloudFront either to distribute your content (<code>whitelist</code>) or not distribute
+        /// your content (<code>blacklist</code>).</p>
+        /// <p>The <code>Location</code> element is a two-letter, uppercase country code for a country
+        /// that you want to include in your <code>blacklist</code> or <code>whitelist</code>. Include one
+        /// <code>Location</code> element for each country.</p>
+        /// <p>CloudFront and <code>MaxMind</code> both use <code>ISO 3166</code> country codes. For the
+        /// current list of countries and the corresponding codes, see <code>ISO 3166-1-alpha-2</code>
+        /// code on the <i>International Organization for Standardization</i> website. You
+        /// can also refer to the country list on the CloudFront console, which includes both country names and
+        /// codes.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5148,6 +5793,7 @@ impl GeoRestriction {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5159,8 +5805,11 @@ impl GeoRestriction {
     std::hash::Hash,
 )]
 pub enum GeoRestrictionType {
+    #[allow(missing_docs)] // documentation missing in model
     Blacklist,
+    #[allow(missing_docs)] // documentation missing in model
     None,
+    #[allow(missing_docs)] // documentation missing in model
     Whitelist,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5183,6 +5832,7 @@ impl std::str::FromStr for GeoRestrictionType {
     }
 }
 impl GeoRestrictionType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             GeoRestrictionType::Blacklist => "blacklist",
@@ -5191,6 +5841,7 @@ impl GeoRestrictionType {
             GeoRestrictionType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["blacklist", "none", "whitelist"]
     }
@@ -5275,6 +5926,7 @@ pub struct ViewerCertificate {
     /// <p>
     /// <code>ACMCertificateArn</code> or <code>IAMCertificateId</code> (specify a value for one,
     /// not both)</p>
+    ///
     /// </li>
     /// <li>
     /// <p>
@@ -5434,6 +6086,7 @@ pub mod viewer_certificate {
         /// <p>
         /// <code>ACMCertificateArn</code> or <code>IAMCertificateId</code> (specify a value for one,
         /// not both)</p>
+        ///
         /// </li>
         /// <li>
         /// <p>
@@ -5450,6 +6103,28 @@ pub mod viewer_certificate {
             self.cloud_front_default_certificate = Some(input);
             self
         }
+        /// <p>If the distribution uses the CloudFront domain name such as
+        /// <code>d111111abcdef8.cloudfront.net</code>, set this field to <code>true</code>.</p>
+        /// <p>If the distribution uses <code>Aliases</code> (alternate domain names or CNAMEs), set
+        /// this field to <code>false</code> and specify values for the following fields:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ACMCertificateArn</code> or <code>IAMCertificateId</code> (specify a value for one,
+        /// not both)</p>
+        ///
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MinimumProtocolVersion</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SSLSupportMethod</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_cloud_front_default_certificate(
             mut self,
             input: std::option::Option<bool>,
@@ -5466,6 +6141,11 @@ pub mod viewer_certificate {
             self.iam_certificate_id = Some(input.into());
             self
         }
+        /// <p>If the distribution uses <code>Aliases</code> (alternate domain names or CNAMEs) and
+        /// the SSL/TLS certificate is stored in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Identity and Access Management (IAM)</a>, provide the ID of the IAM
+        /// certificate.</p>
+        /// <p>If you specify an IAM certificate ID, you must also specify values for
+        /// <code>MinimumProtocolVersion</code> and <code>SSLSupportMethod</code>. </p>
         pub fn set_iam_certificate_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5483,6 +6163,12 @@ pub mod viewer_certificate {
             self.acm_certificate_arn = Some(input.into());
             self
         }
+        /// <p>If the distribution uses <code>Aliases</code> (alternate domain names or CNAMEs) and
+        /// the SSL/TLS certificate is stored in <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html">Certificate Manager (ACM)</a>, provide the Amazon Resource
+        /// Name (ARN) of the ACM certificate. CloudFront only supports ACM certificates in the US
+        /// East (N. Virginia) Region (<code>us-east-1</code>).</p>
+        /// <p>If you specify an ACM certificate ARN, you must also specify values for
+        /// <code>MinimumProtocolVersion</code> and <code>SSLSupportMethod</code>.</p>
         pub fn set_acm_certificate_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5519,6 +6205,31 @@ pub mod viewer_certificate {
             self.ssl_support_method = Some(input);
             self
         }
+        /// <p>If the distribution uses <code>Aliases</code> (alternate domain names or CNAMEs), specify
+        /// which viewers the distribution accepts HTTPS connections from.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>sni-only</code> – The distribution accepts HTTPS connections from only viewers that
+        /// support <a href="https://en.wikipedia.org/wiki/Server_Name_Indication">server
+        /// name indication (SNI)</a>. This is recommended. Most browsers and clients support SNI.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>vip</code> – The distribution accepts HTTPS connections from all viewers including
+        /// those that don’t support SNI. This is not recommended, and results in additional
+        /// monthly charges from CloudFront.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>static-ip</code> - Do not specify this value unless your distribution
+        /// has been enabled for this feature by the CloudFront team. If you have a use case
+        /// that requires static IP addresses for a distribution, contact CloudFront through
+        /// the <a href="https://console.aws.amazon.com/support/home">Amazon Web Services Support Center</a>.</p>
+        /// </li>
+        /// </ul>
+        /// <p>If the distribution uses the CloudFront domain name such as
+        /// <code>d111111abcdef8.cloudfront.net</code>, don’t set a value for this field.</p>
         pub fn set_ssl_support_method(
             mut self,
             input: std::option::Option<crate::model::SslSupportMethod>,
@@ -5559,6 +6270,32 @@ pub mod viewer_certificate {
             self.minimum_protocol_version = Some(input);
             self
         }
+        /// <p>If the distribution uses <code>Aliases</code> (alternate domain names or CNAMEs),
+        /// specify the security policy that you want CloudFront to use for HTTPS connections with
+        /// viewers. The security policy determines two settings:</p>
+        /// <ul>
+        /// <li>
+        /// <p>The minimum SSL/TLS protocol that CloudFront can use to communicate with
+        /// viewers.</p>
+        /// </li>
+        /// <li>
+        /// <p>The ciphers that CloudFront can use to encrypt the content that it returns to
+        /// viewers.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValues-security-policy">Security Policy</a> and <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html#secure-connections-supported-ciphers">Supported Protocols and Ciphers Between Viewers and
+        /// CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+        /// <note>
+        /// <p>On the CloudFront console, this setting is called <b>Security
+        /// Policy</b>.</p>
+        /// </note>
+        /// <p>When you’re using SNI only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>),
+        /// you must specify <code>TLSv1</code> or higher.</p>
+        /// <p>If the distribution uses the CloudFront domain name such as
+        /// <code>d111111abcdef8.cloudfront.net</code> (you set
+        /// <code>CloudFrontDefaultCertificate</code> to <code>true</code>), CloudFront automatically sets
+        /// the security policy to <code>TLSv1</code> regardless of the value that you set
+        /// here.</p>
         pub fn set_minimum_protocol_version(
             mut self,
             input: std::option::Option<crate::model::MinimumProtocolVersion>,
@@ -5588,6 +6325,24 @@ pub mod viewer_certificate {
             self.certificate = Some(input.into());
             self
         }
+        /// <p>This field is deprecated. Use one of the following fields instead:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ACMCertificateArn</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>IAMCertificateId</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CloudFrontDefaultCertificate</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_certificate(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.certificate = input;
             self
@@ -5614,6 +6369,24 @@ pub mod viewer_certificate {
             self.certificate_source = Some(input);
             self
         }
+        /// <p>This field is deprecated. Use one of the following fields instead:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ACMCertificateArn</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>IAMCertificateId</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CloudFrontDefaultCertificate</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_certificate_source(
             mut self,
             input: std::option::Option<crate::model::CertificateSource>,
@@ -5642,6 +6415,7 @@ impl ViewerCertificate {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5653,8 +6427,11 @@ impl ViewerCertificate {
     std::hash::Hash,
 )]
 pub enum CertificateSource {
+    #[allow(missing_docs)] // documentation missing in model
     Acm,
+    #[allow(missing_docs)] // documentation missing in model
     Cloudfront,
+    #[allow(missing_docs)] // documentation missing in model
     Iam,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5677,6 +6454,7 @@ impl std::str::FromStr for CertificateSource {
     }
 }
 impl CertificateSource {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CertificateSource::Acm => "acm",
@@ -5685,6 +6463,7 @@ impl CertificateSource {
             CertificateSource::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["acm", "cloudfront", "iam"]
     }
@@ -5695,6 +6474,7 @@ impl AsRef<str> for CertificateSource {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5706,12 +6486,19 @@ impl AsRef<str> for CertificateSource {
     std::hash::Hash,
 )]
 pub enum MinimumProtocolVersion {
+    #[allow(missing_docs)] // documentation missing in model
     SsLv3,
+    #[allow(missing_docs)] // documentation missing in model
     TlSv1,
+    #[allow(missing_docs)] // documentation missing in model
     TlSv112016,
+    #[allow(missing_docs)] // documentation missing in model
     TlSv122018,
+    #[allow(missing_docs)] // documentation missing in model
     TlSv122019,
+    #[allow(missing_docs)] // documentation missing in model
     TlSv122021,
+    #[allow(missing_docs)] // documentation missing in model
     TlSv12016,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5738,6 +6525,7 @@ impl std::str::FromStr for MinimumProtocolVersion {
     }
 }
 impl MinimumProtocolVersion {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MinimumProtocolVersion::SsLv3 => "SSLv3",
@@ -5750,6 +6538,7 @@ impl MinimumProtocolVersion {
             MinimumProtocolVersion::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "SSLv3",
@@ -5768,6 +6557,7 @@ impl AsRef<str> for MinimumProtocolVersion {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5779,8 +6569,11 @@ impl AsRef<str> for MinimumProtocolVersion {
     std::hash::Hash,
 )]
 pub enum SslSupportMethod {
+    #[allow(missing_docs)] // documentation missing in model
     SniOnly,
+    #[allow(missing_docs)] // documentation missing in model
     StaticIp,
+    #[allow(missing_docs)] // documentation missing in model
     Vip,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5803,6 +6596,7 @@ impl std::str::FromStr for SslSupportMethod {
     }
 }
 impl SslSupportMethod {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SslSupportMethod::SniOnly => "sni-only",
@@ -5811,6 +6605,7 @@ impl SslSupportMethod {
             SslSupportMethod::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["sni-only", "static-ip", "vip"]
     }
@@ -5881,6 +6676,12 @@ pub mod logging_config {
             self.enabled = Some(input);
             self
         }
+        /// <p>Specifies whether you want CloudFront to save access logs to an Amazon S3 bucket. If you don't
+        /// want to enable logging when you create a distribution or if you want to disable logging for an
+        /// existing distribution, specify <code>false</code> for <code>Enabled</code>, and specify empty
+        /// <code>Bucket</code> and <code>Prefix</code> elements. If you specify <code>false</code> for
+        /// <code>Enabled</code> but you specify values for <code>Bucket</code>, <code>prefix</code>,
+        /// and <code>IncludeCookies</code>, the values are automatically deleted.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -5895,6 +6696,12 @@ pub mod logging_config {
             self.include_cookies = Some(input);
             self
         }
+        /// <p>Specifies whether you want CloudFront to include cookies in access logs, specify
+        /// <code>true</code> for <code>IncludeCookies</code>. If you choose to include cookies in logs,
+        /// CloudFront logs all cookies regardless of how you configure the cache behaviors for this
+        /// distribution. If you don't want to include cookies when you create a distribution or if you
+        /// want to disable include cookies for an existing distribution, specify <code>false</code> for
+        /// <code>IncludeCookies</code>.</p>
         pub fn set_include_cookies(mut self, input: std::option::Option<bool>) -> Self {
             self.include_cookies = input;
             self
@@ -5905,6 +6712,8 @@ pub mod logging_config {
             self.bucket = Some(input.into());
             self
         }
+        /// <p>The Amazon S3 bucket to store the access logs in, for example,
+        /// <code>myawslogbucket.s3.amazonaws.com</code>.</p>
         pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket = input;
             self
@@ -5917,6 +6726,10 @@ pub mod logging_config {
             self.prefix = Some(input.into());
             self
         }
+        /// <p>An optional string that you want CloudFront to prefix to the access log
+        /// <code>filenames</code> for this distribution, for example, <code>myprefix/</code>. If you
+        /// want to enable logging, but you don't want to specify a prefix, you still must include an
+        /// empty <code>Prefix</code> element in the <code>Logging</code> element.</p>
         pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.prefix = input;
             self
@@ -5988,16 +6801,29 @@ pub mod custom_error_responses {
             self.quantity = Some(input);
             self
         }
+        /// <p>The number of HTTP status codes for which you want to specify a custom error page
+        /// and/or a caching duration. If <code>Quantity</code> is <code>0</code>, you can omit
+        /// <code>Items</code>.</p>
         pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
             self.quantity = input;
             self
         }
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>A complex type that contains a <code>CustomErrorResponse</code> element for each HTTP
+        /// status code for which you want to specify a custom error page and/or a caching duration.
+        /// </p>
         pub fn items(mut self, input: impl Into<crate::model::CustomErrorResponse>) -> Self {
             let mut v = self.items.unwrap_or_default();
             v.push(input.into());
             self.items = Some(v);
             self
         }
+        /// <p>A complex type that contains a <code>CustomErrorResponse</code> element for each HTTP
+        /// status code for which you want to specify a custom error page and/or a caching duration.
+        /// </p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CustomErrorResponse>>,
@@ -6121,6 +6947,8 @@ pub mod custom_error_response {
             self.error_code = Some(input);
             self
         }
+        /// <p>The HTTP status code for which you want to specify a custom error page and/or a caching
+        /// duration.</p>
         pub fn set_error_code(mut self, input: std::option::Option<i32>) -> Self {
             self.error_code = input;
             self
@@ -6152,6 +6980,29 @@ pub mod custom_error_response {
             self.response_page_path = Some(input.into());
             self
         }
+        /// <p>The path to the custom error page that you want CloudFront to return to a viewer when your
+        /// origin returns the HTTP status code specified by <code>ErrorCode</code>, for example,
+        /// <code>/4xx-errors/403-forbidden.html</code>. If you want to store your objects and your
+        /// custom error pages in different locations, your distribution must include a cache behavior for
+        /// which the following is true:</p>
+        /// <ul>
+        /// <li>
+        /// <p>The value of <code>PathPattern</code> matches the path to your custom error
+        /// messages. For example, suppose you saved custom error pages for 4xx errors in an Amazon S3
+        /// bucket in a directory named <code>/4xx-errors</code>. Your distribution must include a
+        /// cache behavior for which the path pattern routes requests for your custom error pages to
+        /// that location, for example, <code>/4xx-errors/*</code>. </p>
+        /// </li>
+        /// <li>
+        /// <p>The value of <code>TargetOriginId</code> specifies the value of the <code>ID</code>
+        /// element for the origin that contains your custom error pages.</p>
+        /// </li>
+        /// </ul>
+        /// <p>If you specify a value for <code>ResponsePagePath</code>, you must also specify a value
+        /// for <code>ResponseCode</code>.</p>
+        /// <p>We recommend that you store custom error pages in an Amazon S3 bucket. If you store custom
+        /// error pages on an HTTP server and the server starts to return 5xx errors, CloudFront can't get the
+        /// files that you want to return to viewers because the origin server is unavailable.</p>
         pub fn set_response_page_path(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6184,6 +7035,27 @@ pub mod custom_error_response {
             self.response_code = Some(input.into());
             self
         }
+        /// <p>The HTTP status code that you want CloudFront to return to the viewer along with the custom
+        /// error page. There are a variety of reasons that you might want CloudFront to return a status code
+        /// different from the status code that your origin returned to CloudFront, for example:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Some Internet devices (some firewalls and corporate proxies, for example) intercept
+        /// HTTP 4xx and 5xx and prevent the response from being returned to the viewer. If you
+        /// substitute <code>200</code>, the response typically won't be intercepted.</p>
+        /// </li>
+        /// <li>
+        /// <p>If you don't care about distinguishing among different client errors or server
+        /// errors, you can specify <code>400</code> or <code>500</code> as the
+        /// <code>ResponseCode</code> for all 4xx or 5xx errors.</p>
+        /// </li>
+        /// <li>
+        /// <p>You might want to return a <code>200</code> status code (OK) and static website so
+        /// your customers don't know that your website is down.</p>
+        /// </li>
+        /// </ul>
+        /// <p>If you specify a value for <code>ResponseCode</code>, you must also specify a value for
+        /// <code>ResponsePagePath</code>.</p>
         pub fn set_response_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6201,6 +7073,12 @@ pub mod custom_error_response {
             self.error_caching_min_ttl = Some(input);
             self
         }
+        /// <p>The minimum amount of time, in seconds, that you want CloudFront to cache the HTTP status
+        /// code specified in <code>ErrorCode</code>. When this time period has elapsed, CloudFront queries your
+        /// origin to see whether the problem that caused the error has been resolved and the requested
+        /// object is now available.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing
+        /// Error Responses</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
         pub fn set_error_caching_min_ttl(mut self, input: std::option::Option<i64>) -> Self {
             self.error_caching_min_ttl = input;
             self
@@ -6257,16 +7135,25 @@ pub mod cache_behaviors {
             self.quantity = Some(input);
             self
         }
+        /// <p>The number of cache behaviors for this distribution. </p>
         pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
             self.quantity = input;
             self
         }
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>Optional: A complex type that contains cache behaviors for this distribution. If
+        /// <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.</p>
         pub fn items(mut self, input: impl Into<crate::model::CacheBehavior>) -> Self {
             let mut v = self.items.unwrap_or_default();
             v.push(input.into());
             self.items = Some(v);
             self
         }
+        /// <p>Optional: A complex type that contains cache behaviors for this distribution. If
+        /// <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CacheBehavior>>,
@@ -6552,6 +7439,20 @@ pub mod cache_behavior {
             self.path_pattern = Some(input.into());
             self
         }
+        /// <p>The pattern (for example, <code>images/*.jpg</code>) that specifies which requests to
+        /// apply the behavior to. When CloudFront receives a viewer request, the requested path is compared
+        /// with path patterns in the order in which cache behaviors are listed in the
+        /// distribution.</p>
+        /// <note>
+        /// <p>You can optionally include a slash (<code>/</code>) at the beginning of the path
+        /// pattern. For example, <code>/images/*.jpg</code>. CloudFront behavior is the same with or without
+        /// the leading <code>/</code>.</p>
+        /// </note>
+        /// <p>The path pattern for the default cache behavior is <code>*</code> and cannot be
+        /// changed. If the request for an object does not match the path pattern for any cache behaviors,
+        /// CloudFront applies the behavior in the default cache behavior.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesPathPattern">Path
+        /// Pattern</a> in the <i> Amazon CloudFront Developer Guide</i>.</p>
         pub fn set_path_pattern(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.path_pattern = input;
             self
@@ -6562,6 +7463,8 @@ pub mod cache_behavior {
             self.target_origin_id = Some(input.into());
             self
         }
+        /// <p>The value of <code>ID</code> for the origin that you want CloudFront to route requests to
+        /// when they match this cache behavior.</p>
         pub fn set_target_origin_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6584,6 +7487,17 @@ pub mod cache_behavior {
             self.trusted_signers = Some(input);
             self
         }
+        /// <important>
+        /// <p>We recommend using <code>TrustedKeyGroups</code> instead of
+        /// <code>TrustedSigners</code>.</p>
+        /// </important>
+        /// <p>A list of account IDs whose public keys CloudFront can use to validate signed URLs or signed
+        /// cookies.</p>
+        /// <p>When a cache behavior contains trusted signers, CloudFront requires signed URLs or signed cookies
+        /// for all requests that match the cache behavior. The URLs or cookies must be signed with
+        /// the private key of a CloudFront key pair in the trusted signer’s account. The signed URL
+        /// or cookie contains information about which public key CloudFront should use to verify the
+        /// signature. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving private content</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
         pub fn set_trusted_signers(
             mut self,
             input: std::option::Option<crate::model::TrustedSigners>,
@@ -6601,6 +7515,12 @@ pub mod cache_behavior {
             self.trusted_key_groups = Some(input);
             self
         }
+        /// <p>A list of key groups that CloudFront can use to validate signed URLs or signed cookies.</p>
+        /// <p>When a cache behavior contains trusted key groups, CloudFront requires signed URLs or signed
+        /// cookies for all requests that match the cache behavior. The URLs or cookies must be
+        /// signed with a private key whose corresponding public key is in the key group. The signed
+        /// URL or cookie contains information about which public key CloudFront should use to verify the
+        /// signature. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving private content</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
         pub fn set_trusted_key_groups(
             mut self,
             input: std::option::Option<crate::model::TrustedKeyGroups>,
@@ -6643,6 +7563,37 @@ pub mod cache_behavior {
             self.viewer_protocol_policy = Some(input);
             self
         }
+        /// <p>The protocol that viewers can use to access the files in the origin specified by
+        /// <code>TargetOriginId</code> when a request matches the path pattern in
+        /// <code>PathPattern</code>. You can specify the following options:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>allow-all</code>: Viewers can use HTTP or HTTPS.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>redirect-to-https</code>: If a viewer submits an HTTP request, CloudFront returns
+        /// an HTTP status code of 301 (Moved Permanently) to the viewer along with the HTTPS URL. The
+        /// viewer then resubmits the request using the new URL. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>https-only</code>: If a viewer sends an HTTP request, CloudFront returns an HTTP
+        /// status code of 403 (Forbidden). </p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information about requiring the HTTPS protocol, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https-viewers-to-cloudfront.html">Requiring HTTPS Between Viewers and CloudFront</a> in the
+        /// <i>Amazon CloudFront Developer Guide</i>.</p>
+        /// <note>
+        /// <p>The only way to guarantee that viewers retrieve an object that was fetched from the origin
+        /// using HTTPS is never to use any other protocol to fetch the object. If you have
+        /// recently changed from HTTP to HTTPS, we recommend that you clear your objects’ cache
+        /// because cached objects are protocol agnostic. That means that an edge location will
+        /// return an object from the cache regardless of whether the current request protocol
+        /// matches the protocol used previously. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing Cache Expiration</a> in the
+        /// <i>Amazon CloudFront Developer Guide</i>.</p>
+        /// </note>
         pub fn set_viewer_protocol_policy(
             mut self,
             input: std::option::Option<crate::model::ViewerProtocolPolicy>,
@@ -6673,6 +7624,25 @@ pub mod cache_behavior {
             self.allowed_methods = Some(input);
             self
         }
+        /// <p>A complex type that controls which HTTP methods CloudFront processes and forwards to your
+        /// Amazon S3 bucket or your custom origin. There are three choices:</p>
+        /// <ul>
+        /// <li>
+        /// <p>CloudFront forwards only <code>GET</code> and <code>HEAD</code> requests.</p>
+        /// </li>
+        /// <li>
+        /// <p>CloudFront forwards only <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code>
+        /// requests.</p>
+        /// </li>
+        /// <li>
+        /// <p>CloudFront forwards <code>GET, HEAD, OPTIONS, PUT, PATCH, POST</code>, and
+        /// <code>DELETE</code> requests.</p>
+        /// </li>
+        /// </ul>
+        /// <p>If you pick the third choice, you may need to restrict access to your Amazon S3 bucket or
+        /// to your custom origin so users can't perform operations that you don't want them to. For
+        /// example, you might not want users to have permissions to delete objects from your
+        /// origin.</p>
         pub fn set_allowed_methods(
             mut self,
             input: std::option::Option<crate::model::AllowedMethods>,
@@ -6689,6 +7659,11 @@ pub mod cache_behavior {
             self.smooth_streaming = Some(input);
             self
         }
+        /// <p>Indicates whether you want to distribute media files in the Microsoft Smooth Streaming
+        /// format using the origin that is associated with this cache behavior. If so, specify
+        /// <code>true</code>; if not, specify <code>false</code>. If you specify <code>true</code> for
+        /// <code>SmoothStreaming</code>, you can still distribute other content using this cache
+        /// behavior if the content matches the value of <code>PathPattern</code>. </p>
         pub fn set_smooth_streaming(mut self, input: std::option::Option<bool>) -> Self {
             self.smooth_streaming = input;
             self
@@ -6700,6 +7675,9 @@ pub mod cache_behavior {
             self.compress = Some(input);
             self
         }
+        /// <p>Whether you want CloudFront to automatically compress certain files for this cache behavior.
+        /// If so, specify true; if not, specify false. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/ServingCompressedFiles.html">Serving Compressed Files</a> in the
+        /// <i>Amazon CloudFront Developer Guide</i>.</p>
         pub fn set_compress(mut self, input: std::option::Option<bool>) -> Self {
             self.compress = input;
             self
@@ -6713,6 +7691,8 @@ pub mod cache_behavior {
             self.lambda_function_associations = Some(input);
             self
         }
+        /// <p>A complex type that contains zero or more Lambda@Edge function associations for a cache
+        /// behavior.</p>
         pub fn set_lambda_function_associations(
             mut self,
             input: std::option::Option<crate::model::LambdaFunctionAssociations>,
@@ -6727,6 +7707,9 @@ pub mod cache_behavior {
             self.function_associations = Some(input);
             self
         }
+        /// <p>A list of CloudFront functions that are associated with this cache behavior. CloudFront functions must
+        /// be published to the <code>LIVE</code> stage to associate them with a cache
+        /// behavior.</p>
         pub fn set_function_associations(
             mut self,
             input: std::option::Option<crate::model::FunctionAssociations>,
@@ -6740,6 +7723,8 @@ pub mod cache_behavior {
             self.field_level_encryption_id = Some(input.into());
             self
         }
+        /// <p>The value of <code>ID</code> for the field-level encryption configuration that you want CloudFront
+        /// to use for encrypting specific fields of data for this cache behavior.</p>
         pub fn set_field_level_encryption_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6753,6 +7738,8 @@ pub mod cache_behavior {
             self.realtime_log_config_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the real-time log configuration that is attached to this
+        /// cache behavior. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html">Real-time logs</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
         pub fn set_realtime_log_config_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6770,6 +7757,12 @@ pub mod cache_behavior {
             self.cache_policy_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier of the cache policy that is attached to this cache behavior. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating cache policies</a> or <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using the managed cache policies</a> in the
+        /// <i>Amazon CloudFront Developer Guide</i>.</p>
+        /// <p>A <code>CacheBehavior</code> must include either a
+        /// <code>CachePolicyId</code> or <code>ForwardedValues</code>. We recommend that you
+        /// use a <code>CachePolicyId</code>.</p>
         pub fn set_cache_policy_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6784,6 +7777,9 @@ pub mod cache_behavior {
             self.origin_request_policy_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier of the origin request policy that is attached to this cache behavior.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating origin request policies</a> or <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-origin-request-policies.html">Using the managed origin request policies</a> in the
+        /// <i>Amazon CloudFront Developer Guide</i>.</p>
         pub fn set_origin_request_policy_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6808,6 +7804,19 @@ pub mod cache_behavior {
             self.forwarded_values = Some(input);
             self
         }
+        /// <p>This field is deprecated. We recommend that you use a cache policy or an origin
+        /// request policy instead of this field. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/working-with-policies.html">Working with policies</a> in the
+        /// <i>Amazon CloudFront Developer Guide</i>.</p>
+        /// <p>If you want to include values in the cache key, use a cache policy. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating cache policies</a> or <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using the managed cache policies</a> in the
+        /// <i>Amazon CloudFront Developer Guide</i>.</p>
+        /// <p>If you want to send values to the origin but not include them in the cache key, use an
+        /// origin request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating origin request policies</a> or <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-origin-request-policies.html">Using the managed origin request policies</a> in the
+        /// <i>Amazon CloudFront Developer Guide</i>.</p>
+        /// <p>A <code>CacheBehavior</code> must include either a
+        /// <code>CachePolicyId</code> or <code>ForwardedValues</code>. We recommend that you
+        /// use a <code>CachePolicyId</code>.</p>
+        /// <p>A complex type that specifies how CloudFront handles query strings, cookies, and HTTP headers.</p>
         pub fn set_forwarded_values(
             mut self,
             input: std::option::Option<crate::model::ForwardedValues>,
@@ -6830,6 +7839,17 @@ pub mod cache_behavior {
             self.min_ttl = Some(input);
             self
         }
+        /// <p>This field is deprecated. We recommend that you use the <code>MinTTL</code> field in a cache
+        /// policy instead of this field. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating cache policies</a> or <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using the managed cache policies</a> in the
+        /// <i>Amazon CloudFront Developer Guide</i>.</p>
+        /// <p>The minimum amount of time that you want objects to stay in CloudFront caches before CloudFront
+        /// forwards another request to your origin to determine whether the object has been updated. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">
+        /// Managing How Long Content Stays in an Edge Cache (Expiration)</a> in the <i>
+        /// Amazon CloudFront Developer Guide</i>.</p>
+        /// <p>You must specify <code>0</code> for <code>MinTTL</code> if you configure CloudFront to
+        /// forward all headers to your origin (under <code>Headers</code>, if you specify <code>1</code>
+        /// for <code>Quantity</code> and <code>*</code> for <code>Name</code>).</p>
         pub fn set_min_ttl(mut self, input: std::option::Option<i64>) -> Self {
             self.min_ttl = input;
             self
@@ -6847,6 +7867,15 @@ pub mod cache_behavior {
             self.default_ttl = Some(input);
             self
         }
+        /// <p>This field is deprecated. We recommend that you use the <code>DefaultTTL</code> field in a
+        /// cache policy instead of this field. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating cache policies</a> or <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using the managed cache policies</a> in the
+        /// <i>Amazon CloudFront Developer Guide</i>.</p>
+        /// <p>The default amount of time that you want objects to stay in CloudFront caches before CloudFront
+        /// forwards another request to your origin to determine whether the object has been updated. The
+        /// value that you specify applies only when your origin does not add HTTP headers such as
+        /// <code>Cache-Control max-age</code>, <code>Cache-Control s-maxage</code>, and
+        /// <code>Expires</code> to objects. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How Long Content Stays
+        /// in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
         pub fn set_default_ttl(mut self, input: std::option::Option<i64>) -> Self {
             self.default_ttl = input;
             self
@@ -6864,6 +7893,15 @@ pub mod cache_behavior {
             self.max_ttl = Some(input);
             self
         }
+        /// <p>This field is deprecated. We recommend that you use the <code>MaxTTL</code> field in a cache
+        /// policy instead of this field. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating cache policies</a> or <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using the managed cache policies</a> in the
+        /// <i>Amazon CloudFront Developer Guide</i>.</p>
+        /// <p>The maximum amount of time that you want objects to stay in CloudFront caches before CloudFront
+        /// forwards another request to your origin to determine whether the object has been updated. The
+        /// value that you specify applies only when your origin adds HTTP headers such as
+        /// <code>Cache-Control max-age</code>, <code>Cache-Control s-maxage</code>, and
+        /// <code>Expires</code> to objects. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How Long Content Stays
+        /// in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
         pub fn set_max_ttl(mut self, input: std::option::Option<i64>) -> Self {
             self.max_ttl = input;
             self
@@ -7020,6 +8058,29 @@ pub mod forwarded_values {
             self.query_string = Some(input);
             self
         }
+        /// <p>This field is deprecated. We recommend that you use a cache policy or an origin
+        /// request policy instead of this field.</p>
+        /// <p>If you want to include query strings in the cache key, use a cache policy. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+        /// <p>If you want to send query strings to the origin but not include them in the cache key, use
+        /// an origin request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating origin request policies</a> in the
+        /// <i>Amazon CloudFront Developer Guide</i>.</p>
+        /// <p>Indicates whether you want CloudFront to forward query strings to the origin that is
+        /// associated with this cache behavior and cache based on the query string parameters. CloudFront
+        /// behavior depends on the value of <code>QueryString</code> and on the values that you specify
+        /// for <code>QueryStringCacheKeys</code>, if any:</p>
+        /// <p>If you specify true for <code>QueryString</code> and you don't specify any values for
+        /// <code>QueryStringCacheKeys</code>, CloudFront forwards all query string parameters to the origin
+        /// and caches based on all query string parameters. Depending on how many query string parameters
+        /// and values you have, this can adversely affect performance because CloudFront must forward more
+        /// requests to the origin.</p>
+        /// <p>If you specify true for <code>QueryString</code> and you specify one or more values for
+        /// <code>QueryStringCacheKeys</code>, CloudFront forwards all query string parameters to the origin,
+        /// but it only caches based on the query string parameters that you specify.</p>
+        /// <p>If you specify false for <code>QueryString</code>, CloudFront doesn't forward any query
+        /// string parameters to the origin, and doesn't cache based on query string parameters.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/QueryStringParameters.html">Configuring CloudFront to Cache Based on Query String Parameters</a> in the
+        /// <i>Amazon CloudFront Developer Guide</i>.</p>
         pub fn set_query_string(mut self, input: std::option::Option<bool>) -> Self {
             self.query_string = input;
             self
@@ -7039,6 +8100,17 @@ pub mod forwarded_values {
             self.cookies = Some(input);
             self
         }
+        /// <p>This field is deprecated. We recommend that you use a cache policy or an origin
+        /// request policy instead of this field.</p>
+        /// <p>If you want to include cookies in the cache key, use a cache policy. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+        /// <p>If you want to send cookies to the origin but not include them in the cache key, use an
+        /// origin request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating origin request policies</a> in the
+        /// <i>Amazon CloudFront Developer Guide</i>.</p>
+        /// <p>A complex type that specifies whether you want CloudFront to forward cookies to the origin
+        /// and, if so, which ones. For more information about forwarding cookies to the origin, see
+        /// <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html">How CloudFront Forwards, Caches, and Logs Cookies</a> in the
+        /// <i>Amazon CloudFront Developer Guide</i>.</p>
         pub fn set_cookies(
             mut self,
             input: std::option::Option<crate::model::CookiePreference>,
@@ -7062,6 +8134,18 @@ pub mod forwarded_values {
             self.headers = Some(input);
             self
         }
+        /// <p>This field is deprecated. We recommend that you use a cache policy or an origin
+        /// request policy instead of this field.</p>
+        /// <p>If you want to include headers in the cache key, use a cache policy. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+        /// <p>If you want to send headers to the origin but not include them in the cache key, use an
+        /// origin request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating origin request policies</a> in the
+        /// <i>Amazon CloudFront Developer Guide</i>.</p>
+        /// <p>A complex type that specifies the <code>Headers</code>, if any, that you want CloudFront to forward to the
+        /// origin for this cache behavior (whitelisted headers). For the headers that you specify, CloudFront also caches
+        /// separate versions of a specified object that is based on the header values in viewer requests.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/header-caching.html">
+        /// Caching Content Based on Request Headers</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
         pub fn set_headers(mut self, input: std::option::Option<crate::model::Headers>) -> Self {
             self.headers = input;
             self
@@ -7082,6 +8166,15 @@ pub mod forwarded_values {
             self.query_string_cache_keys = Some(input);
             self
         }
+        /// <p>This field is deprecated. We recommend that you use a cache policy or an origin
+        /// request policy instead of this field.</p>
+        /// <p>If you want to include query strings in the cache key, use a cache policy. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+        /// <p>If you want to send query strings to the origin but not include them in the cache key, use
+        /// an origin request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating origin request policies</a> in the
+        /// <i>Amazon CloudFront Developer Guide</i>.</p>
+        /// <p>A complex type that contains information about the query string parameters that you
+        /// want CloudFront to use for caching for this cache behavior.</p>
         pub fn set_query_string_cache_keys(
             mut self,
             input: std::option::Option<crate::model::QueryStringCacheKeys>,
@@ -7153,16 +8246,28 @@ pub mod query_string_cache_keys {
             self.quantity = Some(input);
             self
         }
+        /// <p>The number of <code>whitelisted</code> query string parameters for a cache
+        /// behavior.</p>
         pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
             self.quantity = input;
             self
         }
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>A list that contains the query string parameters that you want CloudFront to use
+        /// as a basis for caching for a cache behavior. If <code>Quantity</code> is 0, you can omit
+        /// <code>Items</code>. </p>
         pub fn items(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.items.unwrap_or_default();
             v.push(input.into());
             self.items = Some(v);
             self
         }
+        /// <p>A list that contains the query string parameters that you want CloudFront to use
+        /// as a basis for caching for a cache behavior. If <code>Quantity</code> is 0, you can omit
+        /// <code>Items</code>. </p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7265,6 +8370,17 @@ pub mod cookie_preference {
             self.forward = Some(input);
             self
         }
+        /// <p>This field is deprecated. We recommend that you use a cache policy or an origin
+        /// request policy instead of this field.</p>
+        /// <p>If you want to include cookies in the cache key, use a cache policy. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+        /// <p>If you want to send cookies to the origin but not include them in the cache key, use origin
+        /// request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating origin request policies</a> in the
+        /// <i>Amazon CloudFront Developer Guide</i>.</p>
+        /// <p>Specifies which cookies to forward to the origin for this cache behavior: all, none, or
+        /// the list of cookies specified in the <code>WhitelistedNames</code> complex type.</p>
+        /// <p>Amazon S3 doesn't process cookies. When the cache behavior is forwarding requests to an
+        /// Amazon S3 origin, specify none for the <code>Forward</code> element.</p>
         pub fn set_forward(
             mut self,
             input: std::option::Option<crate::model::ItemSelection>,
@@ -7294,6 +8410,24 @@ pub mod cookie_preference {
             self.whitelisted_names = Some(input);
             self
         }
+        /// <p>This field is deprecated. We recommend that you use a cache policy or an origin
+        /// request policy instead of this field.</p>
+        /// <p>If you want to include cookies in the cache key, use a cache policy. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+        /// <p>If you want to send cookies to the origin but not include them in the cache key, use an
+        /// origin request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating origin request policies</a> in the
+        /// <i>Amazon CloudFront Developer Guide</i>.</p>
+        /// <p>Required if you specify <code>whitelist</code> for the value of <code>Forward</code>.
+        /// A complex type that specifies how many different cookies you want CloudFront to forward to the
+        /// origin for this cache behavior and, if you want to forward selected cookies, the names of
+        /// those cookies.</p>
+        /// <p>If you specify <code>all</code> or <code>none</code> for the value of <code>Forward</code>, omit
+        /// <code>WhitelistedNames</code>. If you change the value of <code>Forward</code> from
+        /// <code>whitelist</code> to <code>all</code> or <code>none</code> and you don't delete the <code>WhitelistedNames</code>
+        /// element and its child elements, CloudFront deletes them automatically.</p>
+        /// <p>For the current limit on the number of cookie names that you can whitelist for each
+        /// cache behavior, see <a href="https://docs.aws.amazon.com/general/latest/gr/xrefaws_service_limits.html#limits_cloudfront">
+        /// CloudFront Limits</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_whitelisted_names(
             mut self,
             input: std::option::Option<crate::model::CookieNames>,
@@ -7317,6 +8451,7 @@ impl CookiePreference {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -7328,8 +8463,11 @@ impl CookiePreference {
     std::hash::Hash,
 )]
 pub enum ItemSelection {
+    #[allow(missing_docs)] // documentation missing in model
     All,
+    #[allow(missing_docs)] // documentation missing in model
     None,
+    #[allow(missing_docs)] // documentation missing in model
     Whitelist,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -7352,6 +8490,7 @@ impl std::str::FromStr for ItemSelection {
     }
 }
 impl ItemSelection {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ItemSelection::All => "all",
@@ -7360,6 +8499,7 @@ impl ItemSelection {
             ItemSelection::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["all", "none", "whitelist"]
     }
@@ -7406,16 +8546,27 @@ pub mod function_associations {
             self.quantity = Some(input);
             self
         }
+        /// <p>The number of CloudFront functions in the list.</p>
         pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
             self.quantity = input;
             self
         }
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>The CloudFront functions that are associated with a cache behavior in a CloudFront distribution.  CloudFront
+        /// functions must be published to the <code>LIVE</code> stage to associate them with a
+        /// cache behavior.</p>
         pub fn items(mut self, input: impl Into<crate::model::FunctionAssociation>) -> Self {
             let mut v = self.items.unwrap_or_default();
             v.push(input.into());
             self.items = Some(v);
             self
         }
+        /// <p>The CloudFront functions that are associated with a cache behavior in a CloudFront distribution.  CloudFront
+        /// functions must be published to the <code>LIVE</code> stage to associate them with a
+        /// cache behavior.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FunctionAssociation>>,
@@ -7475,6 +8626,7 @@ pub mod function_association {
             self.function_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the function.</p>
         pub fn set_function_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.function_arn = input;
             self
@@ -7487,6 +8639,10 @@ pub mod function_association {
             self.event_type = Some(input);
             self
         }
+        /// <p>The event type of the function, either <code>viewer-request</code> or
+        /// <code>viewer-response</code>. You cannot use origin-facing event types
+        /// (<code>origin-request</code> and <code>origin-response</code>) with a CloudFront
+        /// function.</p>
         pub fn set_event_type(
             mut self,
             input: std::option::Option<crate::model::EventType>,
@@ -7510,6 +8666,7 @@ impl FunctionAssociation {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -7521,9 +8678,13 @@ impl FunctionAssociation {
     std::hash::Hash,
 )]
 pub enum EventType {
+    #[allow(missing_docs)] // documentation missing in model
     OriginRequest,
+    #[allow(missing_docs)] // documentation missing in model
     OriginResponse,
+    #[allow(missing_docs)] // documentation missing in model
     ViewerRequest,
+    #[allow(missing_docs)] // documentation missing in model
     ViewerResponse,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -7547,6 +8708,7 @@ impl std::str::FromStr for EventType {
     }
 }
 impl EventType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EventType::OriginRequest => "origin-request",
@@ -7556,6 +8718,7 @@ impl EventType {
             EventType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "origin-request",
@@ -7573,11 +8736,13 @@ impl AsRef<str> for EventType {
 
 /// <p>A complex type that specifies a list of Lambda@Edge functions associations for a cache
 /// behavior.</p>
+///
 /// <p>If you want to invoke one or more Lambda@Edge functions triggered by requests that match the
 /// <code>PathPattern</code> of the cache behavior, specify the applicable values for
 /// <code>Quantity</code> and <code>Items</code>. Note that there can be up to 4
 /// <code>LambdaFunctionAssociation</code> items in this list (one for each possible value of
 /// <code>EventType</code>) and each <code>EventType</code> can be associated with only one function.</p>
+///
 /// <p>If you don't want to invoke any Lambda@Edge functions for the requests that match
 /// <code>PathPattern</code>, specify <code>0</code> for <code>Quantity</code> and omit
 /// <code>Items</code>. </p>
@@ -7615,16 +8780,27 @@ pub mod lambda_function_associations {
             self.quantity = Some(input);
             self
         }
+        /// <p>The number of Lambda@Edge function associations for this cache behavior.</p>
         pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
             self.quantity = input;
             self
         }
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>
+        /// <b>Optional</b>: A complex type that contains <code>LambdaFunctionAssociation</code> items
+        /// for this cache behavior. If <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.</p>
         pub fn items(mut self, input: impl Into<crate::model::LambdaFunctionAssociation>) -> Self {
             let mut v = self.items.unwrap_or_default();
             v.push(input.into());
             self.items = Some(v);
             self
         }
+        /// <p>
+        /// <b>Optional</b>: A complex type that contains <code>LambdaFunctionAssociation</code> items
+        /// for this cache behavior. If <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LambdaFunctionAssociation>>,
@@ -7712,6 +8888,8 @@ pub mod lambda_function_association {
             self.lambda_function_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the Lambda@Edge function. You must specify the ARN of a function version; you can't specify an alias
+        /// or $LATEST.</p>
         pub fn set_lambda_function_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7748,6 +8926,31 @@ pub mod lambda_function_association {
             self.event_type = Some(input);
             self
         }
+        /// <p>Specifies the event type that triggers a Lambda@Edge function invocation. You can specify the following values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>viewer-request</code>: The function executes when CloudFront receives a request from a viewer
+        /// and before it checks to see whether the requested object is in the edge cache. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>origin-request</code>: The function executes only when CloudFront sends a request to your
+        /// origin. When the requested object is in the edge cache, the function doesn't
+        /// execute.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>origin-response</code>: The function executes after CloudFront receives a response from the origin and
+        /// before it caches the object in the response. When the requested object is in the edge cache, the function doesn't execute.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>viewer-response</code>: The function executes before CloudFront returns the requested object to the viewer.
+        /// The function executes regardless of whether the object was already in the edge cache.</p>
+        /// <p>If the origin returns an HTTP status code other than HTTP 200 (OK), the function doesn't execute.</p>
+        /// </li>
+        /// </ul>
         pub fn set_event_type(
             mut self,
             input: std::option::Option<crate::model::EventType>,
@@ -7762,6 +8965,9 @@ pub mod lambda_function_association {
             self.include_body = Some(input);
             self
         }
+        /// <p>A flag that allows a Lambda@Edge function to have read access to the body content. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-include-body-access.html">Accessing the Request Body by Choosing the
+        /// Include Body Option</a> in the Amazon CloudFront Developer Guide.</p>
         pub fn set_include_body(mut self, input: std::option::Option<bool>) -> Self {
             self.include_body = input;
             self
@@ -7857,16 +9063,28 @@ pub mod allowed_methods {
             self.quantity = Some(input);
             self
         }
+        /// <p>The number of HTTP methods that you want CloudFront to forward to your origin. Valid values
+        /// are 2 (for <code>GET</code> and <code>HEAD</code> requests), 3 (for <code>GET</code>,
+        /// <code>HEAD</code>, and <code>OPTIONS</code> requests) and 7 (for <code>GET, HEAD, OPTIONS,
+        /// PUT, PATCH, POST</code>, and <code>DELETE</code> requests).</p>
         pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
             self.quantity = input;
             self
         }
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>A complex type that contains the HTTP methods that you want CloudFront to process and forward
+        /// to your origin.</p>
         pub fn items(mut self, input: impl Into<crate::model::Method>) -> Self {
             let mut v = self.items.unwrap_or_default();
             v.push(input.into());
             self.items = Some(v);
             self
         }
+        /// <p>A complex type that contains the HTTP methods that you want CloudFront to process and forward
+        /// to your origin.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Method>>,
@@ -7892,6 +9110,20 @@ pub mod allowed_methods {
             self.cached_methods = Some(input);
             self
         }
+        /// <p>A complex type that controls whether CloudFront caches the response to requests using the
+        /// specified HTTP methods. There are two choices:</p>
+        /// <ul>
+        /// <li>
+        /// <p>CloudFront caches responses to <code>GET</code> and <code>HEAD</code> requests.</p>
+        /// </li>
+        /// <li>
+        /// <p>CloudFront caches responses to <code>GET</code>, <code>HEAD</code>, and
+        /// <code>OPTIONS</code> requests.</p>
+        /// </li>
+        /// </ul>
+        /// <p>If you pick the second choice for your Amazon S3 Origin, you may need to forward
+        /// Access-Control-Request-Method, Access-Control-Request-Headers, and Origin headers for the
+        /// responses to be cached correctly. </p>
         pub fn set_cached_methods(
             mut self,
             input: std::option::Option<crate::model::CachedMethods>,
@@ -7968,16 +9200,28 @@ pub mod cached_methods {
             self.quantity = Some(input);
             self
         }
+        /// <p>The number of HTTP methods for which you want CloudFront to cache responses. Valid values are
+        /// <code>2</code> (for caching responses to <code>GET</code> and <code>HEAD</code> requests)
+        /// and <code>3</code> (for caching responses to <code>GET</code>, <code>HEAD</code>, and
+        /// <code>OPTIONS</code> requests).</p>
         pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
             self.quantity = input;
             self
         }
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>A complex type that contains the HTTP methods that you want CloudFront to cache responses
+        /// to.</p>
         pub fn items(mut self, input: impl Into<crate::model::Method>) -> Self {
             let mut v = self.items.unwrap_or_default();
             v.push(input.into());
             self.items = Some(v);
             self
         }
+        /// <p>A complex type that contains the HTTP methods that you want CloudFront to cache responses
+        /// to.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Method>>,
@@ -8001,6 +9245,7 @@ impl CachedMethods {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -8012,12 +9257,19 @@ impl CachedMethods {
     std::hash::Hash,
 )]
 pub enum Method {
+    #[allow(missing_docs)] // documentation missing in model
     Delete,
+    #[allow(missing_docs)] // documentation missing in model
     Get,
+    #[allow(missing_docs)] // documentation missing in model
     Head,
+    #[allow(missing_docs)] // documentation missing in model
     Options,
+    #[allow(missing_docs)] // documentation missing in model
     Patch,
+    #[allow(missing_docs)] // documentation missing in model
     Post,
+    #[allow(missing_docs)] // documentation missing in model
     Put,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -8044,6 +9296,7 @@ impl std::str::FromStr for Method {
     }
 }
 impl Method {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Method::Delete => "DELETE",
@@ -8056,6 +9309,7 @@ impl Method {
             Method::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DELETE", "GET", "HEAD", "OPTIONS", "PATCH", "POST", "PUT"]
     }
@@ -8066,6 +9320,7 @@ impl AsRef<str> for Method {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -8077,8 +9332,11 @@ impl AsRef<str> for Method {
     std::hash::Hash,
 )]
 pub enum ViewerProtocolPolicy {
+    #[allow(missing_docs)] // documentation missing in model
     AllowAll,
+    #[allow(missing_docs)] // documentation missing in model
     HttpsOnly,
+    #[allow(missing_docs)] // documentation missing in model
     RedirectToHttps,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -8101,6 +9359,7 @@ impl std::str::FromStr for ViewerProtocolPolicy {
     }
 }
 impl ViewerProtocolPolicy {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ViewerProtocolPolicy::AllowAll => "allow-all",
@@ -8109,6 +9368,7 @@ impl ViewerProtocolPolicy {
             ViewerProtocolPolicy::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["allow-all", "https-only", "redirect-to-https"]
     }
@@ -8160,6 +9420,9 @@ pub mod trusted_key_groups {
             self.enabled = Some(input);
             self
         }
+        /// <p>This field is <code>true</code> if any of the key groups in the list have public keys that
+        /// CloudFront can use to verify the signatures of signed URLs and signed cookies. If not, this
+        /// field is <code>false</code>.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -8169,16 +9432,23 @@ pub mod trusted_key_groups {
             self.quantity = Some(input);
             self
         }
+        /// <p>The number of key groups in the list.</p>
         pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
             self.quantity = input;
             self
         }
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>A list of key groups identifiers.</p>
         pub fn items(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.items.unwrap_or_default();
             v.push(input.into());
             self.items = Some(v);
             self
         }
+        /// <p>A list of key groups identifiers.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8424,6 +9694,8 @@ pub mod default_cache_behavior {
             self.target_origin_id = Some(input.into());
             self
         }
+        /// <p>The value of <code>ID</code> for the origin that you want CloudFront to route requests to when
+        /// they use the default cache behavior.</p>
         pub fn set_target_origin_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8446,6 +9718,17 @@ pub mod default_cache_behavior {
             self.trusted_signers = Some(input);
             self
         }
+        /// <important>
+        /// <p>We recommend using <code>TrustedKeyGroups</code> instead of
+        /// <code>TrustedSigners</code>.</p>
+        /// </important>
+        /// <p>A list of account IDs whose public keys CloudFront can use to validate signed URLs or signed
+        /// cookies.</p>
+        /// <p>When a cache behavior contains trusted signers, CloudFront requires signed URLs or signed cookies
+        /// for all requests that match the cache behavior. The URLs or cookies must be signed with
+        /// the private key of a CloudFront key pair in a trusted signer’s account. The signed URL or
+        /// cookie contains information about which public key CloudFront should use to verify the
+        /// signature. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving private content</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
         pub fn set_trusted_signers(
             mut self,
             input: std::option::Option<crate::model::TrustedSigners>,
@@ -8463,6 +9746,12 @@ pub mod default_cache_behavior {
             self.trusted_key_groups = Some(input);
             self
         }
+        /// <p>A list of key groups that CloudFront can use to validate signed URLs or signed cookies.</p>
+        /// <p>When a cache behavior contains trusted key groups, CloudFront requires signed URLs or signed
+        /// cookies for all requests that match the cache behavior. The URLs or cookies must be
+        /// signed with a private key whose corresponding public key is in the key group. The signed
+        /// URL or cookie contains information about which public key CloudFront should use to verify the
+        /// signature. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving private content</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
         pub fn set_trusted_key_groups(
             mut self,
             input: std::option::Option<crate::model::TrustedKeyGroups>,
@@ -8506,6 +9795,38 @@ pub mod default_cache_behavior {
             self.viewer_protocol_policy = Some(input);
             self
         }
+        /// <p>The protocol that viewers can use to access the files in the origin specified by
+        /// <code>TargetOriginId</code> when a request matches the path pattern in
+        /// <code>PathPattern</code>. You can specify the following options:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>allow-all</code>: Viewers can use HTTP or HTTPS.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>redirect-to-https</code>: If a viewer submits an HTTP request, CloudFront returns
+        /// an HTTP status code of 301 (Moved Permanently) to the viewer along with the HTTPS URL. The
+        /// viewer then resubmits the request using the new URL.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>https-only</code>: If a viewer sends an HTTP request, CloudFront returns an HTTP
+        /// status code of 403 (Forbidden).</p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information about requiring the HTTPS protocol, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https-viewers-to-cloudfront.html">Requiring HTTPS Between Viewers and CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+        /// <note>
+        /// <p>The only way to guarantee that viewers retrieve an object that was fetched from
+        /// the origin using HTTPS is never to use any other protocol to fetch the object. If
+        /// you have recently changed from HTTP to HTTPS, we recommend that you clear your
+        /// objects’ cache because cached objects are protocol agnostic. That means that an edge
+        /// location will return an object from the cache regardless of whether the current
+        /// request protocol matches the protocol used previously. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing Cache
+        /// Expiration</a> in the
+        /// <i>Amazon CloudFront Developer Guide</i>.</p>
+        /// </note>
         pub fn set_viewer_protocol_policy(
             mut self,
             input: std::option::Option<crate::model::ViewerProtocolPolicy>,
@@ -8536,6 +9857,25 @@ pub mod default_cache_behavior {
             self.allowed_methods = Some(input);
             self
         }
+        /// <p>A complex type that controls which HTTP methods CloudFront processes and forwards to your
+        /// Amazon S3 bucket or your custom origin. There are three choices:</p>
+        /// <ul>
+        /// <li>
+        /// <p>CloudFront forwards only <code>GET</code> and <code>HEAD</code> requests.</p>
+        /// </li>
+        /// <li>
+        /// <p>CloudFront forwards only <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code>
+        /// requests.</p>
+        /// </li>
+        /// <li>
+        /// <p>CloudFront forwards <code>GET, HEAD, OPTIONS, PUT, PATCH, POST</code>, and
+        /// <code>DELETE</code> requests.</p>
+        /// </li>
+        /// </ul>
+        /// <p>If you pick the third choice, you may need to restrict access to your Amazon S3 bucket or
+        /// to your custom origin so users can't perform operations that you don't want them to. For
+        /// example, you might not want users to have permissions to delete objects from your
+        /// origin.</p>
         pub fn set_allowed_methods(
             mut self,
             input: std::option::Option<crate::model::AllowedMethods>,
@@ -8552,6 +9892,11 @@ pub mod default_cache_behavior {
             self.smooth_streaming = Some(input);
             self
         }
+        /// <p>Indicates whether you want to distribute media files in the Microsoft Smooth Streaming
+        /// format using the origin that is associated with this cache behavior. If so, specify
+        /// <code>true</code>; if not, specify <code>false</code>. If you specify <code>true</code> for
+        /// <code>SmoothStreaming</code>, you can still distribute other content using this cache
+        /// behavior if the content matches the value of <code>PathPattern</code>. </p>
         pub fn set_smooth_streaming(mut self, input: std::option::Option<bool>) -> Self {
             self.smooth_streaming = input;
             self
@@ -8564,6 +9909,10 @@ pub mod default_cache_behavior {
             self.compress = Some(input);
             self
         }
+        /// <p>Whether you want CloudFront to automatically compress certain files for this cache behavior.
+        /// If so, specify <code>true</code>; if not, specify <code>false</code>. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/ServingCompressedFiles.html">Serving Compressed Files</a> in
+        /// the <i>Amazon CloudFront Developer Guide</i>.</p>
         pub fn set_compress(mut self, input: std::option::Option<bool>) -> Self {
             self.compress = input;
             self
@@ -8577,6 +9926,8 @@ pub mod default_cache_behavior {
             self.lambda_function_associations = Some(input);
             self
         }
+        /// <p>A complex type that contains zero or more Lambda@Edge function associations for a cache
+        /// behavior.</p>
         pub fn set_lambda_function_associations(
             mut self,
             input: std::option::Option<crate::model::LambdaFunctionAssociations>,
@@ -8591,6 +9942,9 @@ pub mod default_cache_behavior {
             self.function_associations = Some(input);
             self
         }
+        /// <p>A list of CloudFront functions that are associated with this cache behavior. CloudFront functions must
+        /// be published to the <code>LIVE</code> stage to associate them with a cache
+        /// behavior.</p>
         pub fn set_function_associations(
             mut self,
             input: std::option::Option<crate::model::FunctionAssociations>,
@@ -8604,6 +9958,8 @@ pub mod default_cache_behavior {
             self.field_level_encryption_id = Some(input.into());
             self
         }
+        /// <p>The value of <code>ID</code> for the field-level encryption configuration that you want CloudFront
+        /// to use for encrypting specific fields of data for the default cache behavior.</p>
         pub fn set_field_level_encryption_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8617,6 +9973,8 @@ pub mod default_cache_behavior {
             self.realtime_log_config_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the real-time log configuration that is attached to this
+        /// cache behavior. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html">Real-time logs</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
         pub fn set_realtime_log_config_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8634,6 +9992,12 @@ pub mod default_cache_behavior {
             self.cache_policy_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier of the cache policy that is attached to the default cache behavior.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating cache policies</a> or <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using the managed cache policies</a> in the
+        /// <i>Amazon CloudFront Developer Guide</i>.</p>
+        /// <p>A <code>DefaultCacheBehavior</code> must include either a
+        /// <code>CachePolicyId</code> or <code>ForwardedValues</code>. We recommend that you
+        /// use a <code>CachePolicyId</code>.</p>
         pub fn set_cache_policy_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8648,6 +10012,9 @@ pub mod default_cache_behavior {
             self.origin_request_policy_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier of the origin request policy that is attached to the default cache
+        /// behavior. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating origin request policies</a> or <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-origin-request-policies.html">Using the managed origin request policies</a> in the
+        /// <i>Amazon CloudFront Developer Guide</i>.</p>
         pub fn set_origin_request_policy_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8672,6 +10039,19 @@ pub mod default_cache_behavior {
             self.forwarded_values = Some(input);
             self
         }
+        /// <p>This field is deprecated. We recommend that you use a cache policy or an origin request
+        /// policy instead of this field. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/working-with-policies.html">Working with policies</a> in the
+        /// <i>Amazon CloudFront Developer Guide</i>.</p>
+        /// <p>If you want to include values in the cache key, use a cache policy. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating cache policies</a> or <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using the managed cache policies</a> in the
+        /// <i>Amazon CloudFront Developer Guide</i>.</p>
+        /// <p>If you want to send values to the origin but not include them in the cache key, use an
+        /// origin request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy">Creating origin request policies</a> or <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-origin-request-policies.html">Using the managed origin request policies</a> in the
+        /// <i>Amazon CloudFront Developer Guide</i>.</p>
+        /// <p>A <code>DefaultCacheBehavior</code> must include either a
+        /// <code>CachePolicyId</code> or <code>ForwardedValues</code>. We recommend that you
+        /// use a <code>CachePolicyId</code>.</p>
+        /// <p>A complex type that specifies how CloudFront handles query strings, cookies, and HTTP headers.</p>
         pub fn set_forwarded_values(
             mut self,
             input: std::option::Option<crate::model::ForwardedValues>,
@@ -8693,6 +10073,16 @@ pub mod default_cache_behavior {
             self.min_ttl = Some(input);
             self
         }
+        /// <p>This field is deprecated. We recommend that you use the <code>MinTTL</code> field in a cache
+        /// policy instead of this field. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating cache policies</a> or <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using the managed cache policies</a> in the
+        /// <i>Amazon CloudFront Developer Guide</i>.</p>
+        /// <p>The minimum amount of time that you want objects to stay in CloudFront caches before CloudFront
+        /// forwards another request to your origin to determine whether the object has been updated. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How Long Content Stays
+        /// in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+        /// <p>You must specify <code>0</code> for <code>MinTTL</code> if you configure CloudFront to
+        /// forward all headers to your origin (under <code>Headers</code>, if you specify <code>1</code>
+        /// for <code>Quantity</code> and <code>*</code> for <code>Name</code>).</p>
         pub fn set_min_ttl(mut self, input: std::option::Option<i64>) -> Self {
             self.min_ttl = input;
             self
@@ -8710,6 +10100,15 @@ pub mod default_cache_behavior {
             self.default_ttl = Some(input);
             self
         }
+        /// <p>This field is deprecated. We recommend that you use the <code>DefaultTTL</code> field in a
+        /// cache policy instead of this field. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating cache policies</a> or <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using the managed cache policies</a> in the
+        /// <i>Amazon CloudFront Developer Guide</i>.</p>
+        /// <p>The default amount of time that you want objects to stay in CloudFront caches before CloudFront
+        /// forwards another request to your origin to determine whether the object has been updated. The
+        /// value that you specify applies only when your origin does not add HTTP headers such as
+        /// <code>Cache-Control max-age</code>, <code>Cache-Control s-maxage</code>, and
+        /// <code>Expires</code> to objects. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How Long Content Stays
+        /// in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
         pub fn set_default_ttl(mut self, input: std::option::Option<i64>) -> Self {
             self.default_ttl = input;
             self
@@ -8727,6 +10126,15 @@ pub mod default_cache_behavior {
             self.max_ttl = Some(input);
             self
         }
+        /// <p>This field is deprecated. We recommend that you use the <code>MaxTTL</code> field in a cache
+        /// policy instead of this field. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy">Creating cache policies</a> or <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using the managed cache policies</a> in the
+        /// <i>Amazon CloudFront Developer Guide</i>.</p>
+        /// <p>The maximum amount of time that you want objects to stay in CloudFront caches before CloudFront
+        /// forwards another request to your origin to determine whether the object has been updated. The
+        /// value that you specify applies only when your origin adds HTTP headers such as
+        /// <code>Cache-Control max-age</code>, <code>Cache-Control s-maxage</code>, and
+        /// <code>Expires</code> to objects. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How Long Content Stays
+        /// in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
         pub fn set_max_ttl(mut self, input: std::option::Option<i64>) -> Self {
             self.max_ttl = input;
             self
@@ -8794,16 +10202,23 @@ pub mod origin_groups {
             self.quantity = Some(input);
             self
         }
+        /// <p>The number of origin groups.</p>
         pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
             self.quantity = input;
             self
         }
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>The items (origin groups) in a distribution.</p>
         pub fn items(mut self, input: impl Into<crate::model::OriginGroup>) -> Self {
             let mut v = self.items.unwrap_or_default();
             v.push(input.into());
             self.items = Some(v);
             self
         }
+        /// <p>The items (origin groups) in a distribution.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::OriginGroup>>,
@@ -8867,6 +10282,7 @@ pub mod origin_group {
             self.id = Some(input.into());
             self
         }
+        /// <p>The origin group's ID.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -8879,6 +10295,7 @@ pub mod origin_group {
             self.failover_criteria = Some(input);
             self
         }
+        /// <p>A complex type that contains information about the failover criteria for an origin group.</p>
         pub fn set_failover_criteria(
             mut self,
             input: std::option::Option<crate::model::OriginGroupFailoverCriteria>,
@@ -8891,6 +10308,7 @@ pub mod origin_group {
             self.members = Some(input);
             self
         }
+        /// <p>A complex type that contains information about the origins in an origin group.</p>
         pub fn set_members(
             mut self,
             input: std::option::Option<crate::model::OriginGroupMembers>,
@@ -8947,16 +10365,23 @@ pub mod origin_group_members {
             self.quantity = Some(input);
             self
         }
+        /// <p>The number of origins in an origin group.</p>
         pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
             self.quantity = input;
             self
         }
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>Items (origins) in an origin group.</p>
         pub fn items(mut self, input: impl Into<crate::model::OriginGroupMember>) -> Self {
             let mut v = self.items.unwrap_or_default();
             v.push(input.into());
             self.items = Some(v);
             self
         }
+        /// <p>Items (origins) in an origin group.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::OriginGroupMember>>,
@@ -9008,6 +10433,7 @@ pub mod origin_group_member {
             self.origin_id = Some(input.into());
             self
         }
+        /// <p>The ID for an origin in an origin group.</p>
         pub fn set_origin_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.origin_id = input;
             self
@@ -9058,6 +10484,8 @@ pub mod origin_group_failover_criteria {
             self.status_codes = Some(input);
             self
         }
+        /// <p>The status codes that, when returned from the primary origin, will trigger CloudFront to failover
+        /// to the second origin.</p>
         pub fn set_status_codes(
             mut self,
             input: std::option::Option<crate::model::StatusCodes>,
@@ -9113,16 +10541,23 @@ pub mod status_codes {
             self.quantity = Some(input);
             self
         }
+        /// <p>The number of status codes.</p>
         pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
             self.quantity = input;
             self
         }
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>The items (status codes) for an origin group.</p>
         pub fn items(mut self, input: impl Into<i32>) -> Self {
             let mut v = self.items.unwrap_or_default();
             v.push(input.into());
             self.items = Some(v);
             self
         }
+        /// <p>The items (status codes) for an origin group.</p>
         pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<i32>>) -> Self {
             self.items = input;
             self
@@ -9175,16 +10610,23 @@ pub mod origins {
             self.quantity = Some(input);
             self
         }
+        /// <p>The number of origins for this distribution.</p>
         pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
             self.quantity = input;
             self
         }
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>A list of origins.</p>
         pub fn items(mut self, input: impl Into<crate::model::Origin>) -> Self {
             let mut v = self.items.unwrap_or_default();
             v.push(input.into());
             self.items = Some(v);
             self
         }
+        /// <p>A list of origins.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Origin>>,
@@ -9331,6 +10773,10 @@ pub mod origin {
             self.id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for the origin. This value must be unique within the
+        /// distribution.</p>
+        /// <p>Use this value to specify the <code>TargetOriginId</code> in a
+        /// <code>CacheBehavior</code> or <code>DefaultCacheBehavior</code>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -9341,6 +10787,8 @@ pub mod origin {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The domain name for the origin.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesDomainName">Origin Domain Name</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -9353,6 +10801,10 @@ pub mod origin {
             self.origin_path = Some(input.into());
             self
         }
+        /// <p>An optional path that CloudFront appends to the origin domain name when CloudFront requests content from
+        /// the origin.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginPath">Origin Path</a> in the
+        /// <i>Amazon CloudFront Developer Guide</i>.</p>
         pub fn set_origin_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.origin_path = input;
             self
@@ -9365,6 +10817,10 @@ pub mod origin {
             self.custom_headers = Some(input);
             self
         }
+        /// <p>A list of HTTP header names and values that CloudFront adds to the requests that it sends to
+        /// the origin.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/add-origin-custom-headers.html">Adding Custom Headers to Origin Requests</a> in the
+        /// <i>Amazon CloudFront Developer Guide</i>.</p>
         pub fn set_custom_headers(
             mut self,
             input: std::option::Option<crate::model::CustomHeaders>,
@@ -9380,6 +10836,10 @@ pub mod origin {
             self.s3_origin_config = Some(input);
             self
         }
+        /// <p>Use this type to specify an origin that is an Amazon S3 bucket that is not configured with static
+        /// website hosting. To specify any other type of origin, including an Amazon S3 bucket that is
+        /// configured with static website hosting, use the <code>CustomOriginConfig</code> type
+        /// instead.</p>
         pub fn set_s3_origin_config(
             mut self,
             input: std::option::Option<crate::model::S3OriginConfig>,
@@ -9395,6 +10855,10 @@ pub mod origin {
             self.custom_origin_config = Some(input);
             self
         }
+        /// <p>Use this type to specify an origin that is not an Amazon S3 bucket, with one exception. If the
+        /// Amazon S3 bucket is configured with static website hosting, use this type. If the Amazon S3 bucket
+        /// is not configured with static website hosting, use the <code>S3OriginConfig</code> type
+        /// instead.</p>
         pub fn set_custom_origin_config(
             mut self,
             input: std::option::Option<crate::model::CustomOriginConfig>,
@@ -9413,6 +10877,13 @@ pub mod origin {
             self.connection_attempts = Some(input);
             self
         }
+        /// <p>The number of times that CloudFront attempts to connect to the origin. The minimum number
+        /// is 1, the maximum is 3, and the default (if you don’t specify otherwise) is 3.</p>
+        /// <p>For a custom origin (including an Amazon S3 bucket that’s configured with static
+        /// website hosting), this value also specifies the number of times that CloudFront attempts to
+        /// get a response from the origin, in the case of an <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout">Origin Response Timeout</a>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#origin-connection-attempts">Origin Connection Attempts</a> in the
+        /// <i>Amazon CloudFront Developer Guide</i>.</p>
         pub fn set_connection_attempts(mut self, input: std::option::Option<i32>) -> Self {
             self.connection_attempts = input;
             self
@@ -9426,6 +10897,11 @@ pub mod origin {
             self.connection_timeout = Some(input);
             self
         }
+        /// <p>The number of seconds that CloudFront waits when trying to establish a connection to the origin.
+        /// The minimum timeout is 1 second, the maximum is 10 seconds, and the default (if you
+        /// don’t specify otherwise) is 10 seconds.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#origin-connection-timeout">Origin Connection Timeout</a> in the
+        /// <i>Amazon CloudFront Developer Guide</i>.</p>
         pub fn set_connection_timeout(mut self, input: std::option::Option<i32>) -> Self {
             self.connection_timeout = input;
             self
@@ -9437,6 +10913,9 @@ pub mod origin {
             self.origin_shield = Some(input);
             self
         }
+        /// <p>CloudFront Origin Shield. Using Origin Shield can help reduce the load on your
+        /// origin.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/origin-shield.html">Using Origin Shield</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
         pub fn set_origin_shield(
             mut self,
             input: std::option::Option<crate::model::OriginShield>,
@@ -9514,6 +10993,10 @@ pub mod origin_shield {
             self.enabled = Some(input);
             self
         }
+        /// <p>A flag that specifies whether Origin Shield is enabled.</p>
+        /// <p>When it’s enabled, CloudFront routes all requests through Origin Shield, which can
+        /// help protect your origin. When it’s disabled, CloudFront might send requests directly to
+        /// your origin from multiple edge locations or regional edge caches.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -9530,6 +11013,14 @@ pub mod origin_shield {
             self.origin_shield_region = Some(input.into());
             self
         }
+        /// <p>The Region for Origin Shield.</p>
+        /// <p>Specify the Region that has the lowest latency to your origin.
+        /// To specify a region, use the region code, not the region name.
+        /// For example, specify the US East (Ohio) region as <code>us-east-2</code>.</p>
+        /// <p>When you enable CloudFront Origin Shield, you must specify the Region for Origin
+        /// Shield. For the list of Regions that you can specify, and for help choosing the best
+        /// Region for your origin, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/origin-shield.html#choose-origin-shield-region">Choosing the Region for Origin Shield</a> in the
+        /// <i>Amazon CloudFront Developer Guide</i>.</p>
         pub fn set_origin_shield_region(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9638,6 +11129,8 @@ pub mod custom_origin_config {
             self.http_port = Some(input);
             self
         }
+        /// <p>The HTTP port that CloudFront uses to connect to the origin. Specify the HTTP port that the origin
+        /// listens on.</p>
         pub fn set_http_port(mut self, input: std::option::Option<i32>) -> Self {
             self.http_port = input;
             self
@@ -9648,6 +11141,8 @@ pub mod custom_origin_config {
             self.https_port = Some(input);
             self
         }
+        /// <p>The HTTPS port that CloudFront uses to connect to the origin. Specify the HTTPS port that the
+        /// origin listens on.</p>
         pub fn set_https_port(mut self, input: std::option::Option<i32>) -> Self {
             self.https_port = input;
             self
@@ -9675,6 +11170,25 @@ pub mod custom_origin_config {
             self.origin_protocol_policy = Some(input);
             self
         }
+        /// <p>Specifies the protocol (HTTP or HTTPS) that CloudFront uses to connect to the origin. Valid values
+        /// are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>http-only</code> – CloudFront always uses HTTP to connect to the
+        /// origin.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>match-viewer</code> – CloudFront connects to the origin using the same
+        /// protocol that the viewer used to connect to CloudFront.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>https-only</code> – CloudFront always uses HTTPS to connect to the
+        /// origin.</p>
+        /// </li>
+        /// </ul>
         pub fn set_origin_protocol_policy(
             mut self,
             input: std::option::Option<crate::model::OriginProtocolPolicy>,
@@ -9691,6 +11205,11 @@ pub mod custom_origin_config {
             self.origin_ssl_protocols = Some(input);
             self
         }
+        /// <p>Specifies the minimum SSL/TLS protocol that CloudFront uses when connecting to your origin over
+        /// HTTPS. Valid values include <code>SSLv3</code>, <code>TLSv1</code>,
+        /// <code>TLSv1.1</code>, and <code>TLSv1.2</code>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginSSLProtocols">Minimum Origin SSL Protocol</a> in the
+        /// <i>Amazon CloudFront Developer Guide</i>.</p>
         pub fn set_origin_ssl_protocols(
             mut self,
             input: std::option::Option<crate::model::OriginSslProtocols>,
@@ -9708,6 +11227,12 @@ pub mod custom_origin_config {
             self.origin_read_timeout = Some(input);
             self
         }
+        /// <p>Specifies how long, in seconds, CloudFront waits for a response from the origin. This is also
+        /// known as the <i>origin response timeout</i>. The minimum timeout is 1
+        /// second, the maximum is 60 seconds, and the default (if you don’t specify otherwise) is
+        /// 30 seconds.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout">Origin Response Timeout</a> in the
+        /// <i>Amazon CloudFront Developer Guide</i>.</p>
         pub fn set_origin_read_timeout(mut self, input: std::option::Option<i32>) -> Self {
             self.origin_read_timeout = input;
             self
@@ -9721,6 +11246,11 @@ pub mod custom_origin_config {
             self.origin_keepalive_timeout = Some(input);
             self
         }
+        /// <p>Specifies how long, in seconds, CloudFront persists its connection to the origin. The minimum
+        /// timeout is 1 second, the maximum is 60 seconds, and the default (if you don’t specify
+        /// otherwise) is 5 seconds.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginKeepaliveTimeout">Origin Keep-alive Timeout</a> in the
+        /// <i>Amazon CloudFront Developer Guide</i>.</p>
         pub fn set_origin_keepalive_timeout(mut self, input: std::option::Option<i32>) -> Self {
             self.origin_keepalive_timeout = input;
             self
@@ -9780,16 +11310,24 @@ pub mod origin_ssl_protocols {
             self.quantity = Some(input);
             self
         }
+        /// <p>The number of SSL/TLS protocols that you want to allow CloudFront to use when establishing an
+        /// HTTPS connection with this origin. </p>
         pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
             self.quantity = input;
             self
         }
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>A list that contains allowed SSL/TLS protocols for this distribution.</p>
         pub fn items(mut self, input: impl Into<crate::model::SslProtocol>) -> Self {
             let mut v = self.items.unwrap_or_default();
             v.push(input.into());
             self.items = Some(v);
             self
         }
+        /// <p>A list that contains allowed SSL/TLS protocols for this distribution.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SslProtocol>>,
@@ -9813,6 +11351,7 @@ impl OriginSslProtocols {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -9824,9 +11363,13 @@ impl OriginSslProtocols {
     std::hash::Hash,
 )]
 pub enum SslProtocol {
+    #[allow(missing_docs)] // documentation missing in model
     SsLv3,
+    #[allow(missing_docs)] // documentation missing in model
     TlSv1,
+    #[allow(missing_docs)] // documentation missing in model
     TlSv11,
+    #[allow(missing_docs)] // documentation missing in model
     TlSv12,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -9850,6 +11393,7 @@ impl std::str::FromStr for SslProtocol {
     }
 }
 impl SslProtocol {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SslProtocol::SsLv3 => "SSLv3",
@@ -9859,6 +11403,7 @@ impl SslProtocol {
             SslProtocol::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["SSLv3", "TLSv1", "TLSv1.1", "TLSv1.2"]
     }
@@ -9869,6 +11414,7 @@ impl AsRef<str> for SslProtocol {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -9880,8 +11426,11 @@ impl AsRef<str> for SslProtocol {
     std::hash::Hash,
 )]
 pub enum OriginProtocolPolicy {
+    #[allow(missing_docs)] // documentation missing in model
     HttpOnly,
+    #[allow(missing_docs)] // documentation missing in model
     HttpsOnly,
+    #[allow(missing_docs)] // documentation missing in model
     MatchViewer,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -9904,6 +11453,7 @@ impl std::str::FromStr for OriginProtocolPolicy {
     }
 }
 impl OriginProtocolPolicy {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             OriginProtocolPolicy::HttpOnly => "http-only",
@@ -9912,6 +11462,7 @@ impl OriginProtocolPolicy {
             OriginProtocolPolicy::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["http-only", "https-only", "match-viewer"]
     }
@@ -9988,6 +11539,25 @@ pub mod s3_origin_config {
             self.origin_access_identity = Some(input.into());
             self
         }
+        /// <p>The CloudFront origin access identity to associate with the origin. Use an origin access
+        /// identity to configure the origin so that viewers can <i>only</i> access objects
+        /// in an Amazon S3 bucket through CloudFront. The format of the value is:</p>
+        /// <p>origin-access-identity/cloudfront/<i>ID-of-origin-access-identity</i>
+        /// </p>
+        /// <p>where <code>
+        /// <i>ID-of-origin-access-identity</i>
+        /// </code> is the value that
+        /// CloudFront returned in the <code>ID</code> element when you created the origin access
+        /// identity.</p>
+        /// <p>If you want viewers to be able to access objects using either the CloudFront URL or the Amazon S3
+        /// URL, specify an empty <code>OriginAccessIdentity</code> element.</p>
+        /// <p>To delete the origin access identity from an existing distribution, update the
+        /// distribution configuration and include an empty <code>OriginAccessIdentity</code>
+        /// element.</p>
+        /// <p>To replace the origin access identity, update the distribution configuration and
+        /// specify the new origin access identity.</p>
+        /// <p>For more information about the origin access identity, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private Content through CloudFront</a> in the
+        /// <i>Amazon CloudFront Developer Guide</i>.</p>
         pub fn set_origin_access_identity(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10045,16 +11615,29 @@ pub mod custom_headers {
             self.quantity = Some(input);
             self
         }
+        /// <p>The number of custom headers, if any, for this distribution.</p>
         pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
             self.quantity = input;
             self
         }
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>
+        /// <b>Optional</b>: A list that contains one
+        /// <code>OriginCustomHeader</code> element for each custom header that you want CloudFront to forward
+        /// to the origin. If Quantity is <code>0</code>, omit <code>Items</code>.</p>
         pub fn items(mut self, input: impl Into<crate::model::OriginCustomHeader>) -> Self {
             let mut v = self.items.unwrap_or_default();
             v.push(input.into());
             self.items = Some(v);
             self
         }
+        /// <p>
+        /// <b>Optional</b>: A list that contains one
+        /// <code>OriginCustomHeader</code> element for each custom header that you want CloudFront to forward
+        /// to the origin. If Quantity is <code>0</code>, omit <code>Items</code>.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::OriginCustomHeader>>,
@@ -10116,6 +11699,9 @@ pub mod origin_custom_header {
             self.header_name = Some(input.into());
             self
         }
+        /// <p>The name of a header that you want CloudFront to send to your origin. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/forward-custom-headers.html">Adding Custom
+        /// Headers to Origin Requests</a> in the <i> Amazon CloudFront Developer Guide</i>.</p>
         pub fn set_header_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.header_name = input;
             self
@@ -10126,6 +11712,8 @@ pub mod origin_custom_header {
             self.header_value = Some(input.into());
             self
         }
+        /// <p>The value for the header that you specified in the <code>HeaderName</code>
+        /// field.</p>
         pub fn set_header_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.header_value = input;
             self
@@ -10188,6 +11776,9 @@ pub mod active_trusted_key_groups {
             self.enabled = Some(input);
             self
         }
+        /// <p>This field is <code>true</code> if any of the key groups have public keys that CloudFront can use
+        /// to verify the signatures of signed URLs and signed cookies. If not, this field is
+        /// <code>false</code>.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -10197,16 +11788,25 @@ pub mod active_trusted_key_groups {
             self.quantity = Some(input);
             self
         }
+        /// <p>The number of key groups in the list.</p>
         pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
             self.quantity = input;
             self
         }
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>A list of key groups, including the identifiers of the public keys in each key group that
+        /// CloudFront can use to verify the signatures of signed URLs and signed cookies.</p>
         pub fn items(mut self, input: impl Into<crate::model::KgKeyPairIds>) -> Self {
             let mut v = self.items.unwrap_or_default();
             v.push(input.into());
             self.items = Some(v);
             self
         }
+        /// <p>A list of key groups, including the identifiers of the public keys in each key group that
+        /// CloudFront can use to verify the signatures of signed URLs and signed cookies.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::KgKeyPairIds>>,
@@ -10264,6 +11864,7 @@ pub mod kg_key_pair_ids {
             self.key_group_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the key group that contains the public keys.</p>
         pub fn set_key_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_group_id = input;
             self
@@ -10273,6 +11874,7 @@ pub mod kg_key_pair_ids {
             self.key_pair_ids = Some(input);
             self
         }
+        /// <p>A list of CloudFront key pair identifiers.</p>
         pub fn set_key_pair_ids(
             mut self,
             input: std::option::Option<crate::model::KeyPairIds>,
@@ -10340,6 +11942,8 @@ pub mod cloud_front_origin_access_identity {
             self.id = Some(input.into());
             self
         }
+        /// <p>The ID for the origin access identity, for example, <code>E74FTE3AJFJ256A</code>.
+        /// </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -10350,6 +11954,8 @@ pub mod cloud_front_origin_access_identity {
             self.s3_canonical_user_id = Some(input.into());
             self
         }
+        /// <p>The Amazon S3 canonical user ID for the origin access identity, used when giving the origin
+        /// access identity read permission to an object in Amazon S3. </p>
         pub fn set_s3_canonical_user_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10365,6 +11971,7 @@ pub mod cloud_front_origin_access_identity {
             self.cloud_front_origin_access_identity_config = Some(input);
             self
         }
+        /// <p>The current configuration information for the identity. </p>
         pub fn set_cloud_front_origin_access_identity_config(
             mut self,
             input: std::option::Option<crate::model::CloudFrontOriginAccessIdentityConfig>,
@@ -10447,6 +12054,18 @@ pub mod cloud_front_origin_access_identity_config {
             self.caller_reference = Some(input.into());
             self
         }
+        /// <p>A unique value (for example, a date-time stamp) that ensures that the request can't be replayed.</p>
+        /// <p>If the value of <code>CallerReference</code> is new (regardless of the content of the
+        /// <code>CloudFrontOriginAccessIdentityConfig</code> object), a new origin access identity is
+        /// created.</p>
+        /// <p>If the <code>CallerReference</code> is a value already sent in a previous identity
+        /// request, and the content of the <code>CloudFrontOriginAccessIdentityConfig</code> is identical
+        /// to the original request (ignoring white space), the response includes the same information
+        /// returned to the original request. </p>
+        /// <p>If the <code>CallerReference</code> is a value you already sent in a previous request
+        /// to create an identity, but the content of the
+        /// <code>CloudFrontOriginAccessIdentityConfig</code> is different from the original request,
+        /// CloudFront returns a <code>CloudFrontOriginAccessIdentityAlreadyExists</code> error. </p>
         pub fn set_caller_reference(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10460,6 +12079,8 @@ pub mod cloud_front_origin_access_identity_config {
             self.comment = Some(input.into());
             self
         }
+        /// <p>A comment to describe the origin access identity. The comment cannot be longer
+        /// than 128 characters.</p>
         pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.comment = input;
             self
@@ -10505,7 +12126,7 @@ pub struct CachePolicy {
     /// <p>The unique identifier for the cache policy.</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The date and time when the cache policy was last modified.</p>
-    pub last_modified_time: std::option::Option<smithy_types::Instant>,
+    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The cache policy configuration.</p>
     pub cache_policy_config: std::option::Option<crate::model::CachePolicyConfig>,
 }
@@ -10525,7 +12146,7 @@ pub mod cache_policy {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
-        pub(crate) last_modified_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) cache_policy_config: std::option::Option<crate::model::CachePolicyConfig>,
     }
     impl Builder {
@@ -10534,18 +12155,20 @@ pub mod cache_policy {
             self.id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the cache policy.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
         /// <p>The date and time when the cache policy was last modified.</p>
-        pub fn last_modified_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_modified_time = Some(input);
             self
         }
+        /// <p>The date and time when the cache policy was last modified.</p>
         pub fn set_last_modified_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_modified_time = input;
             self
@@ -10555,6 +12178,7 @@ pub mod cache_policy {
             self.cache_policy_config = Some(input);
             self
         }
+        /// <p>The cache policy configuration.</p>
         pub fn set_cache_policy_config(
             mut self,
             input: std::option::Option<crate::model::CachePolicyConfig>,
@@ -10671,6 +12295,8 @@ pub mod cache_policy_config {
             self.comment = Some(input.into());
             self
         }
+        /// <p>A comment to describe the cache policy. The comment cannot be longer than 128
+        /// characters.</p>
         pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.comment = input;
             self
@@ -10680,6 +12306,7 @@ pub mod cache_policy_config {
             self.name = Some(input.into());
             self
         }
+        /// <p>A unique name to identify the cache policy.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -10697,6 +12324,15 @@ pub mod cache_policy_config {
             self.default_ttl = Some(input);
             self
         }
+        /// <p>The default amount of time, in seconds, that you want objects to stay in the CloudFront
+        /// cache before CloudFront sends another request to the origin to see if the object has been
+        /// updated. CloudFront uses this value as the object’s time to live (TTL) only when the origin
+        /// does <i>not</i> send <code>Cache-Control</code> or <code>Expires</code>
+        /// headers with the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How Long Content Stays in an Edge Cache (Expiration)</a> in the
+        /// <i>Amazon CloudFront Developer Guide</i>.</p>
+        /// <p>The default value for this field is 86400 seconds (one day). If the value of
+        /// <code>MinTTL</code> is more than 86400 seconds, then the default value for this field is
+        /// the same as the value of <code>MinTTL</code>.</p>
         pub fn set_default_ttl(mut self, input: std::option::Option<i64>) -> Self {
             self.default_ttl = input;
             self
@@ -10713,6 +12349,14 @@ pub mod cache_policy_config {
             self.max_ttl = Some(input);
             self
         }
+        /// <p>The maximum amount of time, in seconds, that objects stay in the CloudFront cache
+        /// before CloudFront sends another request to the origin to see if the object has been updated.
+        /// CloudFront uses this value only when the origin sends <code>Cache-Control</code> or
+        /// <code>Expires</code> headers with the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How Long Content Stays in an Edge Cache (Expiration)</a> in the
+        /// <i>Amazon CloudFront Developer Guide</i>.</p>
+        /// <p>The default value for this field is 31536000 seconds (one year). If the value of
+        /// <code>MinTTL</code> or <code>DefaultTTL</code> is more than 31536000 seconds, then the
+        /// default value for this field is the same as the value of <code>DefaultTTL</code>.</p>
         pub fn set_max_ttl(mut self, input: std::option::Option<i64>) -> Self {
             self.max_ttl = input;
             self
@@ -10725,6 +12369,10 @@ pub mod cache_policy_config {
             self.min_ttl = Some(input);
             self
         }
+        /// <p>The minimum amount of time, in seconds, that you want objects to stay in the CloudFront
+        /// cache before CloudFront sends another request to the origin to see if the object has been
+        /// updated. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How Long Content Stays in an Edge Cache (Expiration)</a> in the
+        /// <i>Amazon CloudFront Developer Guide</i>.</p>
         pub fn set_min_ttl(mut self, input: std::option::Option<i64>) -> Self {
             self.min_ttl = input;
             self
@@ -10739,6 +12387,9 @@ pub mod cache_policy_config {
             self.parameters_in_cache_key_and_forwarded_to_origin = Some(input);
             self
         }
+        /// <p>The HTTP headers, cookies, and URL query strings to include in the cache key. The
+        /// values included in the cache key are automatically included in requests that CloudFront sends
+        /// to the origin.</p>
         pub fn set_parameters_in_cache_key_and_forwarded_to_origin(
             mut self,
             input: std::option::Option<crate::model::ParametersInCacheKeyAndForwardedToOrigin>,
@@ -10918,6 +12569,36 @@ pub mod parameters_in_cache_key_and_forwarded_to_origin {
             self.enable_accept_encoding_gzip = Some(input);
             self
         }
+        /// <p>A flag that can affect whether the <code>Accept-Encoding</code> HTTP header is
+        /// included in the cache key and included in requests that CloudFront sends to the origin.</p>
+        /// <p>This field is related to the <code>EnableAcceptEncodingBrotli</code> field. If one or
+        /// both of these fields is <code>true</code>
+        /// <i>and</i> the viewer request
+        /// includes the <code>Accept-Encoding</code> header, then CloudFront does the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Normalizes the value of the viewer’s <code>Accept-Encoding</code>
+        /// header</p>
+        /// </li>
+        /// <li>
+        /// <p>Includes the normalized header in the cache key</p>
+        /// </li>
+        /// <li>
+        /// <p>Includes the normalized header in the request to the origin, if a request is necessary</p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-policy-compressed-objects">Compression support</a> in the
+        /// <i>Amazon CloudFront Developer Guide</i>.</p>
+        /// <p>If you set this value to <code>true</code>, and this cache behavior also has an origin
+        /// request policy attached, do not include the <code>Accept-Encoding</code> header in the
+        /// origin request policy. CloudFront always includes the <code>Accept-Encoding</code> header in
+        /// origin requests when the value of this field is <code>true</code>, so including this
+        /// header in an origin request policy has no effect.</p>
+        /// <p>If both of these fields are <code>false</code>, then CloudFront treats the
+        /// <code>Accept-Encoding</code> header the same as any other HTTP header in the viewer
+        /// request. By default, it’s not included in the cache key and it’s not included in origin
+        /// requests. In this case, you can manually add <code>Accept-Encoding</code> to the headers
+        /// whitelist like any other HTTP header.</p>
         pub fn set_enable_accept_encoding_gzip(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_accept_encoding_gzip = input;
             self
@@ -10956,6 +12637,36 @@ pub mod parameters_in_cache_key_and_forwarded_to_origin {
             self.enable_accept_encoding_brotli = Some(input);
             self
         }
+        /// <p>A flag that can affect whether the <code>Accept-Encoding</code> HTTP header is
+        /// included in the cache key and included in requests that CloudFront sends to the origin.</p>
+        /// <p>This field is related to the <code>EnableAcceptEncodingGzip</code> field. If one or
+        /// both of these fields is <code>true</code>
+        /// <i>and</i> the viewer request
+        /// includes the <code>Accept-Encoding</code> header, then CloudFront does the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Normalizes the value of the viewer’s <code>Accept-Encoding</code>
+        /// header</p>
+        /// </li>
+        /// <li>
+        /// <p>Includes the normalized header in the cache key</p>
+        /// </li>
+        /// <li>
+        /// <p>Includes the normalized header in the request to the origin, if a request is necessary</p>
+        /// </li>
+        /// </ul>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-policy-compressed-objects">Compression support</a> in the
+        /// <i>Amazon CloudFront Developer Guide</i>.</p>
+        /// <p>If you set this value to <code>true</code>, and this cache behavior also has an origin
+        /// request policy attached, do not include the <code>Accept-Encoding</code> header in the
+        /// origin request policy. CloudFront always includes the <code>Accept-Encoding</code> header in
+        /// origin requests when the value of this field is <code>true</code>, so including this
+        /// header in an origin request policy has no effect.</p>
+        /// <p>If both of these fields are <code>false</code>, then CloudFront treats the
+        /// <code>Accept-Encoding</code> header the same as any other HTTP header in the viewer
+        /// request. By default, it’s not included in the cache key and it’s not included in origin
+        /// requests. In this case, you can manually add <code>Accept-Encoding</code> to the headers
+        /// whitelist like any other HTTP header.</p>
         pub fn set_enable_accept_encoding_brotli(
             mut self,
             input: std::option::Option<bool>,
@@ -10970,6 +12681,9 @@ pub mod parameters_in_cache_key_and_forwarded_to_origin {
             self.headers_config = Some(input);
             self
         }
+        /// <p>An object that determines whether any HTTP headers (and if so, which headers) are
+        /// included in the cache key and automatically included in requests that CloudFront sends to the
+        /// origin.</p>
         pub fn set_headers_config(
             mut self,
             input: std::option::Option<crate::model::CachePolicyHeadersConfig>,
@@ -10984,6 +12698,9 @@ pub mod parameters_in_cache_key_and_forwarded_to_origin {
             self.cookies_config = Some(input);
             self
         }
+        /// <p>An object that determines whether any cookies in viewer requests (and if so, which cookies)
+        /// are included in the cache key and automatically included in requests that CloudFront sends to
+        /// the origin.</p>
         pub fn set_cookies_config(
             mut self,
             input: std::option::Option<crate::model::CachePolicyCookiesConfig>,
@@ -11001,6 +12718,9 @@ pub mod parameters_in_cache_key_and_forwarded_to_origin {
             self.query_strings_config = Some(input);
             self
         }
+        /// <p>An object that determines whether any URL query strings in viewer requests (and if so, which
+        /// query strings) are included in the cache key and automatically included in requests that
+        /// CloudFront sends to the origin.</p>
         pub fn set_query_strings_config(
             mut self,
             input: std::option::Option<crate::model::CachePolicyQueryStringsConfig>,
@@ -11143,6 +12863,39 @@ pub mod cache_policy_query_strings_config {
             self.query_string_behavior = Some(input);
             self
         }
+        /// <p>Determines whether any URL query strings in viewer requests are included in the cache key
+        /// and automatically included in requests that CloudFront sends to the origin. Valid values
+        /// are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>none</code> – Query strings in viewer requests are not included in the cache key and
+        /// are not automatically included in requests that CloudFront sends to the origin. Even
+        /// when this field is set to <code>none</code>, any query strings that are listed
+        /// in an <code>OriginRequestPolicy</code>
+        /// <i>are</i> included in
+        /// origin requests.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>whitelist</code> – The query strings in viewer requests that are listed in the
+        /// <code>QueryStringNames</code> type are included in the cache key and
+        /// automatically included in requests that CloudFront sends to the origin.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>allExcept</code> – All query strings in viewer requests that are <i>
+        /// <b>not</b>
+        /// </i> listed in the
+        /// <code>QueryStringNames</code> type are included in the cache key and
+        /// automatically included in requests that CloudFront sends to the origin.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>all</code> – All query strings in viewer requests are included in the cache key and
+        /// are automatically included in requests that CloudFront sends to the origin.</p>
+        /// </li>
+        /// </ul>
         pub fn set_query_string_behavior(
             mut self,
             input: std::option::Option<crate::model::CachePolicyQueryStringBehavior>,
@@ -11169,6 +12922,21 @@ pub mod cache_policy_query_strings_config {
             self.query_strings = Some(input);
             self
         }
+        /// <p>Contains the specific query strings in viewer requests that either <i>
+        /// <b>are</b>
+        /// </i> or <i>
+        /// <b>are
+        /// not</b>
+        /// </i> included in the cache key and automatically included in
+        /// requests that CloudFront sends to the origin. The behavior depends on whether the
+        /// <code>QueryStringBehavior</code> field in the <code>CachePolicyQueryStringsConfig</code>
+        /// type is set to <code>whitelist</code> (the listed query strings <i>
+        /// <b>are</b>
+        /// </i> included) or <code>allExcept</code> (the listed
+        /// query strings <i>
+        /// <b>are not</b>
+        /// </i> included,
+        /// but all other query strings are).</p>
         pub fn set_query_strings(
             mut self,
             input: std::option::Option<crate::model::QueryStringNames>,
@@ -11192,6 +12960,7 @@ impl CachePolicyQueryStringsConfig {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -11203,9 +12972,13 @@ impl CachePolicyQueryStringsConfig {
     std::hash::Hash,
 )]
 pub enum CachePolicyQueryStringBehavior {
+    #[allow(missing_docs)] // documentation missing in model
     All,
+    #[allow(missing_docs)] // documentation missing in model
     AllExcept,
+    #[allow(missing_docs)] // documentation missing in model
     None,
+    #[allow(missing_docs)] // documentation missing in model
     Whitelist,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -11229,6 +13002,7 @@ impl std::str::FromStr for CachePolicyQueryStringBehavior {
     }
 }
 impl CachePolicyQueryStringBehavior {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CachePolicyQueryStringBehavior::All => "all",
@@ -11238,6 +13012,7 @@ impl CachePolicyQueryStringBehavior {
             CachePolicyQueryStringBehavior::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["all", "allExcept", "none", "whitelist"]
     }
@@ -11346,6 +13121,39 @@ pub mod cache_policy_cookies_config {
             self.cookie_behavior = Some(input);
             self
         }
+        /// <p>Determines whether any cookies in viewer requests are included in the cache key and
+        /// automatically included in requests that CloudFront sends to the origin. Valid values
+        /// are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>none</code> – Cookies in viewer requests are not included in the cache key and are
+        /// not automatically included in requests that CloudFront sends to the origin. Even when
+        /// this field is set to <code>none</code>, any cookies that are listed in an
+        /// <code>OriginRequestPolicy</code>
+        /// <i>are</i> included in origin
+        /// requests.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>whitelist</code> – The cookies in viewer requests that are listed in the
+        /// <code>CookieNames</code> type are included in the cache key and automatically
+        /// included in requests that CloudFront sends to the origin.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>allExcept</code> – All cookies in viewer requests that are <i>
+        /// <b>not</b>
+        /// </i> listed in the <code>CookieNames</code>
+        /// type are included in the cache key and automatically included in requests that
+        /// CloudFront sends to the origin.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>all</code> – All cookies in viewer requests are included in the cache key and are
+        /// automatically included in requests that CloudFront sends to the origin.</p>
+        /// </li>
+        /// </ul>
         pub fn set_cookie_behavior(
             mut self,
             input: std::option::Option<crate::model::CachePolicyCookieBehavior>,
@@ -11358,6 +13166,7 @@ pub mod cache_policy_cookies_config {
             self.cookies = Some(input);
             self
         }
+        /// <p>Contains a list of cookie names.</p>
         pub fn set_cookies(
             mut self,
             input: std::option::Option<crate::model::CookieNames>,
@@ -11381,6 +13190,7 @@ impl CachePolicyCookiesConfig {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -11392,9 +13202,13 @@ impl CachePolicyCookiesConfig {
     std::hash::Hash,
 )]
 pub enum CachePolicyCookieBehavior {
+    #[allow(missing_docs)] // documentation missing in model
     All,
+    #[allow(missing_docs)] // documentation missing in model
     AllExcept,
+    #[allow(missing_docs)] // documentation missing in model
     None,
+    #[allow(missing_docs)] // documentation missing in model
     Whitelist,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -11418,6 +13232,7 @@ impl std::str::FromStr for CachePolicyCookieBehavior {
     }
 }
 impl CachePolicyCookieBehavior {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CachePolicyCookieBehavior::All => "all",
@@ -11427,6 +13242,7 @@ impl CachePolicyCookieBehavior {
             CachePolicyCookieBehavior::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["all", "allExcept", "none", "whitelist"]
     }
@@ -11507,6 +13323,25 @@ pub mod cache_policy_headers_config {
             self.header_behavior = Some(input);
             self
         }
+        /// <p>Determines whether any HTTP headers are included in the cache key and automatically
+        /// included in requests that CloudFront sends to the origin. Valid values are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>none</code> – HTTP headers are not included in the cache key and are not
+        /// automatically included in requests that CloudFront sends to the origin. Even when this
+        /// field is set to <code>none</code>, any headers that are listed in an
+        /// <code>OriginRequestPolicy</code>
+        /// <i>are</i> included in origin
+        /// requests.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>whitelist</code> – The HTTP headers that are listed in the <code>Headers</code> type
+        /// are included in the cache key and are automatically included in requests that
+        /// CloudFront sends to the origin.</p>
+        /// </li>
+        /// </ul>
         pub fn set_header_behavior(
             mut self,
             input: std::option::Option<crate::model::CachePolicyHeaderBehavior>,
@@ -11519,6 +13354,7 @@ pub mod cache_policy_headers_config {
             self.headers = Some(input);
             self
         }
+        /// <p>Contains a list of HTTP header names.</p>
         pub fn set_headers(mut self, input: std::option::Option<crate::model::Headers>) -> Self {
             self.headers = input;
             self
@@ -11539,6 +13375,7 @@ impl CachePolicyHeadersConfig {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -11550,7 +13387,9 @@ impl CachePolicyHeadersConfig {
     std::hash::Hash,
 )]
 pub enum CachePolicyHeaderBehavior {
+    #[allow(missing_docs)] // documentation missing in model
     None,
+    #[allow(missing_docs)] // documentation missing in model
     Whitelist,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -11572,6 +13411,7 @@ impl std::str::FromStr for CachePolicyHeaderBehavior {
     }
 }
 impl CachePolicyHeaderBehavior {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CachePolicyHeaderBehavior::None => "none",
@@ -11579,6 +13419,7 @@ impl CachePolicyHeaderBehavior {
             CachePolicyHeaderBehavior::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["none", "whitelist"]
     }
@@ -11612,12 +13453,18 @@ pub mod tag_keys {
         pub(crate) items: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p> A complex type that contains <code>Tag</code> key elements.</p>
         pub fn items(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.items.unwrap_or_default();
             v.push(input.into());
             self.items = Some(v);
             self
         }
+        /// <p> A complex type that contains <code>Tag</code> key elements.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -11689,6 +13536,8 @@ pub mod test_result {
             self.function_summary = Some(input);
             self
         }
+        /// <p>Contains configuration information and metadata about the CloudFront function that was
+        /// tested.</p>
         pub fn set_function_summary(
             mut self,
             input: std::option::Option<crate::model::FunctionSummary>,
@@ -11703,6 +13552,9 @@ pub mod test_result {
             self.compute_utilization = Some(input.into());
             self
         }
+        /// <p>The amount of time that the function took to run as a percentage of the maximum
+        /// allowed time. For example, a compute utilization of 35 means that the function completed
+        /// in 35% of the maximum allowed time.</p>
         pub fn set_compute_utilization(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11710,12 +13562,18 @@ pub mod test_result {
             self.compute_utilization = input;
             self
         }
+        /// Appends an item to `function_execution_logs`.
+        ///
+        /// To override the contents of this collection use [`set_function_execution_logs`](Self::set_function_execution_logs).
+        ///
+        /// <p>Contains the log lines that the function wrote (if any) when running the test.</p>
         pub fn function_execution_logs(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.function_execution_logs.unwrap_or_default();
             v.push(input.into());
             self.function_execution_logs = Some(v);
             self
         }
+        /// <p>Contains the log lines that the function wrote (if any) when running the test.</p>
         pub fn set_function_execution_logs(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -11729,6 +13587,8 @@ pub mod test_result {
             self.function_error_message = Some(input.into());
             self
         }
+        /// <p>If the result of testing the function was an error, this field contains the error
+        /// message.</p>
         pub fn set_function_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11743,6 +13603,9 @@ pub mod test_result {
             self.function_output = Some(input.into());
             self
         }
+        /// <p>The event object returned by the function. For more information about the structure of the
+        /// event object, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/functions-event-structure.html">Event object
+        /// structure</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
         pub fn set_function_output(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11792,12 +13655,18 @@ pub mod tags {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p> A complex type that contains <code>Tag</code> elements.</p>
         pub fn items(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.items.unwrap_or_default();
             v.push(input.into());
             self.items = Some(v);
             self
         }
+        /// <p> A complex type that contains <code>Tag</code> elements.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -11859,6 +13728,10 @@ pub mod tag {
             self.key = Some(input.into());
             self
         }
+        /// <p> A string that contains <code>Tag</code> key.</p>
+        /// <p>The string length should be between 1 and 128 characters. Valid characters include
+        /// <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>, space, and the special characters
+        /// <code>_ - . : / = + @</code>.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -11871,6 +13744,10 @@ pub mod tag {
             self.value = Some(input.into());
             self
         }
+        /// <p> A string that contains an optional <code>Tag</code> value.</p>
+        /// <p>The string length should be between 0 and 256 characters. Valid characters include
+        /// <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>, space, and the special characters
+        /// <code>_ - . : / = + @</code>.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -11946,6 +13823,7 @@ pub mod streaming_distribution_list {
             self.marker = Some(input.into());
             self
         }
+        /// <p>The value you provided for the <code>Marker</code> request parameter. </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -11957,6 +13835,9 @@ pub mod streaming_distribution_list {
             self.next_marker = Some(input.into());
             self
         }
+        /// <p>If <code>IsTruncated</code> is <code>true</code>, this element is present and contains
+        /// the value you can use for the <code>Marker</code> request parameter to continue listing your
+        /// RTMP distributions where they left off. </p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
@@ -11966,6 +13847,7 @@ pub mod streaming_distribution_list {
             self.max_items = Some(input);
             self
         }
+        /// <p>The value you provided for the <code>MaxItems</code> request parameter. </p>
         pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
             self.max_items = input;
             self
@@ -11977,6 +13859,9 @@ pub mod streaming_distribution_list {
             self.is_truncated = Some(input);
             self
         }
+        /// <p>A flag that indicates whether more streaming distributions remain to be listed. If your
+        /// results were truncated, you can make a follow-up pagination request using the
+        /// <code>Marker</code> request parameter to retrieve more distributions in the list. </p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.is_truncated = input;
             self
@@ -11987,10 +13872,18 @@ pub mod streaming_distribution_list {
             self.quantity = Some(input);
             self
         }
+        /// <p>The number of streaming distributions that were created by the current account.
+        /// </p>
         pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
             self.quantity = input;
             self
         }
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>A complex type that contains one <code>StreamingDistributionSummary</code> element for
+        /// each distribution that was created by the current account.</p>
         pub fn items(
             mut self,
             input: impl Into<crate::model::StreamingDistributionSummary>,
@@ -12000,6 +13893,8 @@ pub mod streaming_distribution_list {
             self.items = Some(v);
             self
         }
+        /// <p>A complex type that contains one <code>StreamingDistributionSummary</code> element for
+        /// each distribution that was created by the current account.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::StreamingDistributionSummary>>,
@@ -12042,7 +13937,7 @@ pub struct StreamingDistributionSummary {
     /// Amazon CloudFront system.</p>
     pub status: std::option::Option<std::string::String>,
     /// <p>The date and time the distribution was last modified.</p>
-    pub last_modified_time: std::option::Option<smithy_types::Instant>,
+    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The domain name corresponding to the distribution, for example, <code>d111111abcdef8.cloudfront.net</code>.</p>
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>A complex type that contains information about the Amazon S3 bucket from which you want
@@ -12099,7 +13994,7 @@ pub mod streaming_distribution_summary {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
-        pub(crate) last_modified_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) s3_origin: std::option::Option<crate::model::S3Origin>,
         pub(crate) aliases: std::option::Option<crate::model::Aliases>,
@@ -12114,6 +14009,7 @@ pub mod streaming_distribution_summary {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier for the distribution, for example, <code>EDFDVBD632BHDS5</code>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -12125,6 +14021,9 @@ pub mod streaming_distribution_summary {
             self.arn = Some(input.into());
             self
         }
+        /// <p> The ARN (Amazon Resource Name) for the streaming distribution. For example:
+        /// <code>arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5</code>, where
+        /// <code>123456789012</code> is your account ID.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -12136,18 +14035,22 @@ pub mod streaming_distribution_summary {
             self.status = Some(input.into());
             self
         }
+        /// <p> Indicates the current status of the distribution. When the status is
+        /// <code>Deployed</code>, the distribution's information is fully propagated throughout the
+        /// Amazon CloudFront system.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
         }
         /// <p>The date and time the distribution was last modified.</p>
-        pub fn last_modified_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_modified_time = Some(input);
             self
         }
+        /// <p>The date and time the distribution was last modified.</p>
         pub fn set_last_modified_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_modified_time = input;
             self
@@ -12157,6 +14060,7 @@ pub mod streaming_distribution_summary {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The domain name corresponding to the distribution, for example, <code>d111111abcdef8.cloudfront.net</code>.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -12167,6 +14071,8 @@ pub mod streaming_distribution_summary {
             self.s3_origin = Some(input);
             self
         }
+        /// <p>A complex type that contains information about the Amazon S3 bucket from which you want
+        /// CloudFront to get your media files for distribution.</p>
         pub fn set_s3_origin(mut self, input: std::option::Option<crate::model::S3Origin>) -> Self {
             self.s3_origin = input;
             self
@@ -12177,6 +14083,8 @@ pub mod streaming_distribution_summary {
             self.aliases = Some(input);
             self
         }
+        /// <p>A complex type that contains information about CNAMEs (alternate domain names), if any,
+        /// for this streaming distribution.</p>
         pub fn set_aliases(mut self, input: std::option::Option<crate::model::Aliases>) -> Self {
             self.aliases = input;
             self
@@ -12198,6 +14106,19 @@ pub mod streaming_distribution_summary {
             self.trusted_signers = Some(input);
             self
         }
+        /// <p>A complex type that specifies the accounts, if any, that you want to allow to
+        /// create signed URLs for private content. If you want to require signed URLs in requests for
+        /// objects in the target origin that match the <code>PathPattern</code> for this cache behavior,
+        /// specify <code>true</code> for <code>Enabled</code>, and specify the applicable values for
+        /// <code>Quantity</code> and <code>Items</code>.If you don't want to require signed URLs in
+        /// requests for objects that match <code>PathPattern</code>, specify <code>false</code> for
+        /// <code>Enabled</code> and <code>0</code> for <code>Quantity</code>. Omit <code>Items</code>.
+        /// To add, change, or remove one or more trusted signers, change <code>Enabled</code> to
+        /// <code>true</code> (if it's currently <code>false</code>), change <code>Quantity</code> as
+        /// applicable, and specify all of the trusted signers that you want to include in the updated
+        /// distribution.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private
+        /// Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>. </p>
         pub fn set_trusted_signers(
             mut self,
             input: std::option::Option<crate::model::TrustedSigners>,
@@ -12210,6 +14131,7 @@ pub mod streaming_distribution_summary {
             self.comment = Some(input.into());
             self
         }
+        /// <p>The comment originally specified when this distribution was created.</p>
         pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.comment = input;
             self
@@ -12220,6 +14142,8 @@ pub mod streaming_distribution_summary {
             self.price_class = Some(input);
             self
         }
+        /// <p>A complex type that contains information about price class for this streaming
+        /// distribution. </p>
         pub fn set_price_class(
             mut self,
             input: std::option::Option<crate::model::PriceClass>,
@@ -12232,6 +14156,7 @@ pub mod streaming_distribution_summary {
             self.enabled = Some(input);
             self
         }
+        /// <p>Whether the distribution is enabled to accept end user requests for content.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -12309,16 +14234,23 @@ pub mod realtime_log_configs {
             self.max_items = Some(input);
             self
         }
+        /// <p>The maximum number of real-time log configurations requested.</p>
         pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
             self.max_items = input;
             self
         }
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>Contains the list of real-time log configurations.</p>
         pub fn items(mut self, input: impl Into<crate::model::RealtimeLogConfig>) -> Self {
             let mut v = self.items.unwrap_or_default();
             v.push(input.into());
             self.items = Some(v);
             self
         }
+        /// <p>Contains the list of real-time log configurations.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RealtimeLogConfig>>,
@@ -12332,6 +14264,8 @@ pub mod realtime_log_configs {
             self.is_truncated = Some(input);
             self
         }
+        /// <p>A flag that indicates whether there are more real-time log configurations than are contained
+        /// in this list.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.is_truncated = input;
             self
@@ -12342,6 +14276,8 @@ pub mod realtime_log_configs {
             self.marker = Some(input.into());
             self
         }
+        /// <p>This parameter indicates where this list of real-time log configurations begins. This list
+        /// includes real-time log configurations that occur after the marker.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -12353,6 +14289,9 @@ pub mod realtime_log_configs {
             self.next_marker = Some(input.into());
             self
         }
+        /// <p>If there are more items in the list than are in this response, this element is present. It
+        /// contains the value that you should use in the <code>Marker</code> field of a subsequent
+        /// request to continue listing real-time log configurations where you left off. </p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
@@ -12420,6 +14359,9 @@ pub mod public_key_list {
             self.next_marker = Some(input.into());
             self
         }
+        /// <p>If there are more elements to be listed, this element is present and contains
+        /// the value that you can use for the <code>Marker</code> request parameter to continue
+        /// listing your public keys where you left off.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
@@ -12429,6 +14371,7 @@ pub mod public_key_list {
             self.max_items = Some(input);
             self
         }
+        /// <p>The maximum number of public keys you want in the response.</p>
         pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
             self.max_items = input;
             self
@@ -12438,16 +14381,23 @@ pub mod public_key_list {
             self.quantity = Some(input);
             self
         }
+        /// <p>The number of public keys in the list.</p>
         pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
             self.quantity = input;
             self
         }
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>A list of public keys.</p>
         pub fn items(mut self, input: impl Into<crate::model::PublicKeySummary>) -> Self {
             let mut v = self.items.unwrap_or_default();
             v.push(input.into());
             self.items = Some(v);
             self
         }
+        /// <p>A list of public keys.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::PublicKeySummary>>,
@@ -12482,7 +14432,7 @@ pub struct PublicKeySummary {
     /// <p>A name to help identify the public key.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The date and time when the public key was uploaded.</p>
-    pub created_time: std::option::Option<smithy_types::Instant>,
+    pub created_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The public key.</p>
     pub encoded_key: std::option::Option<std::string::String>,
     /// <p>A comment to describe the public key. The comment cannot be longer than 128
@@ -12508,7 +14458,7 @@ pub mod public_key_summary {
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
-        pub(crate) created_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) encoded_key: std::option::Option<std::string::String>,
         pub(crate) comment: std::option::Option<std::string::String>,
     }
@@ -12518,6 +14468,7 @@ pub mod public_key_summary {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier of the public key.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -12527,18 +14478,20 @@ pub mod public_key_summary {
             self.name = Some(input.into());
             self
         }
+        /// <p>A name to help identify the public key.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
         /// <p>The date and time when the public key was uploaded.</p>
-        pub fn created_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_time = Some(input);
             self
         }
+        /// <p>The date and time when the public key was uploaded.</p>
         pub fn set_created_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_time = input;
             self
@@ -12548,6 +14501,7 @@ pub mod public_key_summary {
             self.encoded_key = Some(input.into());
             self
         }
+        /// <p>The public key.</p>
         pub fn set_encoded_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.encoded_key = input;
             self
@@ -12558,6 +14512,8 @@ pub mod public_key_summary {
             self.comment = Some(input.into());
             self
         }
+        /// <p>A comment to describe the public key. The comment cannot be longer than 128
+        /// characters.</p>
         pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.comment = input;
             self
@@ -12628,6 +14584,10 @@ pub mod origin_request_policy_list {
             self.next_marker = Some(input.into());
             self
         }
+        /// <p>If there are more items in the list than are in this response, this element is
+        /// present. It contains the value that you should use in the <code>Marker</code> field of a
+        /// subsequent request to continue listing origin request policies where you left
+        /// off.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
@@ -12637,6 +14597,7 @@ pub mod origin_request_policy_list {
             self.max_items = Some(input);
             self
         }
+        /// <p>The maximum number of origin request policies requested.</p>
         pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
             self.max_items = input;
             self
@@ -12646,16 +14607,23 @@ pub mod origin_request_policy_list {
             self.quantity = Some(input);
             self
         }
+        /// <p>The total number of origin request policies returned in the response.</p>
         pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
             self.quantity = input;
             self
         }
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>Contains the origin request policies in the list.</p>
         pub fn items(mut self, input: impl Into<crate::model::OriginRequestPolicySummary>) -> Self {
             let mut v = self.items.unwrap_or_default();
             v.push(input.into());
             self.items = Some(v);
             self
         }
+        /// <p>Contains the origin request policies in the list.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::OriginRequestPolicySummary>>,
@@ -12715,6 +14683,8 @@ pub mod origin_request_policy_summary {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of origin request policy, either <code>managed</code> (created by Amazon Web Services) or
+        /// <code>custom</code> (created in this account).</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::OriginRequestPolicyType>,
@@ -12727,6 +14697,7 @@ pub mod origin_request_policy_summary {
             self.origin_request_policy = Some(input);
             self
         }
+        /// <p>The origin request policy.</p>
         pub fn set_origin_request_policy(
             mut self,
             input: std::option::Option<crate::model::OriginRequestPolicy>,
@@ -12750,6 +14721,7 @@ impl OriginRequestPolicySummary {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -12761,7 +14733,9 @@ impl OriginRequestPolicySummary {
     std::hash::Hash,
 )]
 pub enum OriginRequestPolicyType {
+    #[allow(missing_docs)] // documentation missing in model
     Custom,
+    #[allow(missing_docs)] // documentation missing in model
     Managed,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -12783,6 +14757,7 @@ impl std::str::FromStr for OriginRequestPolicyType {
     }
 }
 impl OriginRequestPolicyType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             OriginRequestPolicyType::Custom => "custom",
@@ -12790,6 +14765,7 @@ impl OriginRequestPolicyType {
             OriginRequestPolicyType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["custom", "managed"]
     }
@@ -12844,6 +14820,9 @@ pub mod key_group_list {
             self.next_marker = Some(input.into());
             self
         }
+        /// <p>If there are more items in the list than are in this response, this element is present. It
+        /// contains the value that you should use in the <code>Marker</code> field of a subsequent
+        /// request to continue listing key groups.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
@@ -12853,6 +14832,7 @@ pub mod key_group_list {
             self.max_items = Some(input);
             self
         }
+        /// <p>The maximum number of key groups requested.</p>
         pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
             self.max_items = input;
             self
@@ -12862,16 +14842,23 @@ pub mod key_group_list {
             self.quantity = Some(input);
             self
         }
+        /// <p>The number of key groups returned in the response.</p>
         pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
             self.quantity = input;
             self
         }
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>A list of key groups.</p>
         pub fn items(mut self, input: impl Into<crate::model::KeyGroupSummary>) -> Self {
             let mut v = self.items.unwrap_or_default();
             v.push(input.into());
             self.items = Some(v);
             self
         }
+        /// <p>A list of key groups.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::KeyGroupSummary>>,
@@ -12925,6 +14912,7 @@ pub mod key_group_summary {
             self.key_group = Some(input);
             self
         }
+        /// <p>A key group.</p>
         pub fn set_key_group(mut self, input: std::option::Option<crate::model::KeyGroup>) -> Self {
             self.key_group = input;
             self
@@ -13001,6 +14989,7 @@ pub mod invalidation_list {
             self.marker = Some(input.into());
             self
         }
+        /// <p>The value that you provided for the <code>Marker</code> request parameter.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -13012,6 +15001,9 @@ pub mod invalidation_list {
             self.next_marker = Some(input.into());
             self
         }
+        /// <p>If <code>IsTruncated</code> is <code>true</code>, this element is present and contains
+        /// the value that you can use for the <code>Marker</code> request parameter to continue listing
+        /// your invalidation batches where they left off.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
@@ -13021,6 +15013,7 @@ pub mod invalidation_list {
             self.max_items = Some(input);
             self
         }
+        /// <p>The value that you provided for the <code>MaxItems</code> request parameter.</p>
         pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
             self.max_items = input;
             self
@@ -13033,6 +15026,10 @@ pub mod invalidation_list {
             self.is_truncated = Some(input);
             self
         }
+        /// <p>A flag that indicates whether more invalidation batch requests remain to be listed. If
+        /// your results were truncated, you can make a follow-up pagination request using the
+        /// <code>Marker</code> request parameter to retrieve more invalidation batches in the
+        /// list.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.is_truncated = input;
             self
@@ -13043,16 +15040,26 @@ pub mod invalidation_list {
             self.quantity = Some(input);
             self
         }
+        /// <p>The number of invalidation batches that were created by the current account.
+        /// </p>
         pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
             self.quantity = input;
             self
         }
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>A complex type that contains one <code>InvalidationSummary</code> element for each
+        /// invalidation batch created by the current account.</p>
         pub fn items(mut self, input: impl Into<crate::model::InvalidationSummary>) -> Self {
             let mut v = self.items.unwrap_or_default();
             v.push(input.into());
             self.items = Some(v);
             self
         }
+        /// <p>A complex type that contains one <code>InvalidationSummary</code> element for each
+        /// invalidation batch created by the current account.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InvalidationSummary>>,
@@ -13087,7 +15094,7 @@ pub struct InvalidationSummary {
     /// <p>The unique ID for an invalidation request.</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The time that an invalidation request was created.</p>
-    pub create_time: std::option::Option<smithy_types::Instant>,
+    pub create_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The status of an invalidation request.</p>
     pub status: std::option::Option<std::string::String>,
 }
@@ -13107,7 +15114,7 @@ pub mod invalidation_summary {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
-        pub(crate) create_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) create_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) status: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -13116,18 +15123,20 @@ pub mod invalidation_summary {
             self.id = Some(input.into());
             self
         }
+        /// <p>The unique ID for an invalidation request.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
         /// <p>The time that an invalidation request was created.</p>
-        pub fn create_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn create_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.create_time = Some(input);
             self
         }
+        /// <p>The time that an invalidation request was created.</p>
         pub fn set_create_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.create_time = input;
             self
@@ -13137,6 +15146,7 @@ pub mod invalidation_summary {
             self.status = Some(input.into());
             self
         }
+        /// <p>The status of an invalidation request.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -13202,6 +15212,9 @@ pub mod function_list {
             self.next_marker = Some(input.into());
             self
         }
+        /// <p>If there are more items in the list than are in this response, this element is
+        /// present. It contains the value that you should use in the <code>Marker</code> field of a
+        /// subsequent request to continue listing functions where you left off.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
@@ -13211,6 +15224,7 @@ pub mod function_list {
             self.max_items = Some(input);
             self
         }
+        /// <p>The maximum number of functions requested.</p>
         pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
             self.max_items = input;
             self
@@ -13220,16 +15234,23 @@ pub mod function_list {
             self.quantity = Some(input);
             self
         }
+        /// <p>The number of functions returned in the response.</p>
         pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
             self.quantity = input;
             self
         }
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>Contains the functions in the list.</p>
         pub fn items(mut self, input: impl Into<crate::model::FunctionSummary>) -> Self {
             let mut v = self.items.unwrap_or_default();
             v.push(input.into());
             self.items = Some(v);
             self
         }
+        /// <p>Contains the functions in the list.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FunctionSummary>>,
@@ -13300,6 +15321,9 @@ pub mod field_level_encryption_profile_list {
             self.next_marker = Some(input.into());
             self
         }
+        /// <p>If there are more elements to be listed, this element is present and contains
+        /// the value that you can use for the <code>Marker</code> request parameter to continue
+        /// listing your profiles where you left off.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
@@ -13309,6 +15333,7 @@ pub mod field_level_encryption_profile_list {
             self.max_items = Some(input);
             self
         }
+        /// <p>The maximum number of field-level encryption profiles you want in the response body. </p>
         pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
             self.max_items = input;
             self
@@ -13318,10 +15343,16 @@ pub mod field_level_encryption_profile_list {
             self.quantity = Some(input);
             self
         }
+        /// <p>The number of field-level encryption profiles.</p>
         pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
             self.quantity = input;
             self
         }
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>The field-level encryption profile items.</p>
         pub fn items(
             mut self,
             input: impl Into<crate::model::FieldLevelEncryptionProfileSummary>,
@@ -13331,6 +15362,7 @@ pub mod field_level_encryption_profile_list {
             self.items = Some(v);
             self
         }
+        /// <p>The field-level encryption profile items.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<
@@ -13365,7 +15397,7 @@ pub struct FieldLevelEncryptionProfileSummary {
     /// <p>ID for the field-level encryption profile summary.</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The time when the the field-level encryption profile summary was last updated.</p>
-    pub last_modified_time: std::option::Option<smithy_types::Instant>,
+    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Name for the field-level encryption profile summary.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>A complex data type of encryption entities for the field-level encryption profile that include the public key ID, provider, and
@@ -13393,7 +15425,7 @@ pub mod field_level_encryption_profile_summary {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
-        pub(crate) last_modified_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) encryption_entities: std::option::Option<crate::model::EncryptionEntities>,
         pub(crate) comment: std::option::Option<std::string::String>,
@@ -13404,18 +15436,20 @@ pub mod field_level_encryption_profile_summary {
             self.id = Some(input.into());
             self
         }
+        /// <p>ID for the field-level encryption profile summary.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
         /// <p>The time when the the field-level encryption profile summary was last updated.</p>
-        pub fn last_modified_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_modified_time = Some(input);
             self
         }
+        /// <p>The time when the the field-level encryption profile summary was last updated.</p>
         pub fn set_last_modified_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_modified_time = input;
             self
@@ -13425,6 +15459,7 @@ pub mod field_level_encryption_profile_summary {
             self.name = Some(input.into());
             self
         }
+        /// <p>Name for the field-level encryption profile summary.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -13435,6 +15470,8 @@ pub mod field_level_encryption_profile_summary {
             self.encryption_entities = Some(input);
             self
         }
+        /// <p>A complex data type of encryption entities for the field-level encryption profile that include the public key ID, provider, and
+        /// field patterns for specifying which fields to encrypt with this key.</p>
         pub fn set_encryption_entities(
             mut self,
             input: std::option::Option<crate::model::EncryptionEntities>,
@@ -13448,6 +15485,8 @@ pub mod field_level_encryption_profile_summary {
             self.comment = Some(input.into());
             self
         }
+        /// <p>An optional comment for the field-level encryption profile summary. The comment cannot be
+        /// longer than 128 characters.</p>
         pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.comment = input;
             self
@@ -13516,6 +15555,9 @@ pub mod field_level_encryption_list {
             self.next_marker = Some(input.into());
             self
         }
+        /// <p>If there are more elements to be listed, this element is present and contains
+        /// the value that you can use for the <code>Marker</code> request parameter to continue
+        /// listing your configurations where you left off.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
@@ -13525,6 +15567,7 @@ pub mod field_level_encryption_list {
             self.max_items = Some(input);
             self
         }
+        /// <p>The maximum number of elements you want in the response body. </p>
         pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
             self.max_items = input;
             self
@@ -13534,10 +15577,16 @@ pub mod field_level_encryption_list {
             self.quantity = Some(input);
             self
         }
+        /// <p>The number of field-level encryption items.</p>
         pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
             self.quantity = input;
             self
         }
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>An array of field-level encryption items.</p>
         pub fn items(
             mut self,
             input: impl Into<crate::model::FieldLevelEncryptionSummary>,
@@ -13547,6 +15596,7 @@ pub mod field_level_encryption_list {
             self.items = Some(v);
             self
         }
+        /// <p>An array of field-level encryption items.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::FieldLevelEncryptionSummary>>,
@@ -13579,7 +15629,7 @@ pub struct FieldLevelEncryptionSummary {
     /// <p>The unique ID of a field-level encryption item.</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The last time that the summary of field-level encryption items was modified.</p>
-    pub last_modified_time: std::option::Option<smithy_types::Instant>,
+    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>An optional comment about the field-level encryption item. The comment cannot be longer than
     /// 128 characters.</p>
     pub comment: std::option::Option<std::string::String>,
@@ -13613,7 +15663,7 @@ pub mod field_level_encryption_summary {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
-        pub(crate) last_modified_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) comment: std::option::Option<std::string::String>,
         pub(crate) query_arg_profile_config:
             std::option::Option<crate::model::QueryArgProfileConfig>,
@@ -13626,18 +15676,20 @@ pub mod field_level_encryption_summary {
             self.id = Some(input.into());
             self
         }
+        /// <p>The unique ID of a field-level encryption item.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
         }
         /// <p>The last time that the summary of field-level encryption items was modified.</p>
-        pub fn last_modified_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_modified_time = Some(input);
             self
         }
+        /// <p>The last time that the summary of field-level encryption items was modified.</p>
         pub fn set_last_modified_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_modified_time = input;
             self
@@ -13648,6 +15700,8 @@ pub mod field_level_encryption_summary {
             self.comment = Some(input.into());
             self
         }
+        /// <p>An optional comment about the field-level encryption item. The comment cannot be longer than
+        /// 128 characters.</p>
         pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.comment = input;
             self
@@ -13662,6 +15716,9 @@ pub mod field_level_encryption_summary {
             self.query_arg_profile_config = Some(input);
             self
         }
+        /// <p>
+        /// A summary of a query argument-profile mapping.
+        /// </p>
         pub fn set_query_arg_profile_config(
             mut self,
             input: std::option::Option<crate::model::QueryArgProfileConfig>,
@@ -13679,6 +15736,9 @@ pub mod field_level_encryption_summary {
             self.content_type_profile_config = Some(input);
             self
         }
+        /// <p>
+        /// A summary of a content type-profile mapping.
+        /// </p>
         pub fn set_content_type_profile_config(
             mut self,
             input: std::option::Option<crate::model::ContentTypeProfileConfig>,
@@ -13758,6 +15818,7 @@ pub mod distribution_list {
             self.marker = Some(input.into());
             self
         }
+        /// <p>The value you provided for the <code>Marker</code> request parameter.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -13769,6 +15830,9 @@ pub mod distribution_list {
             self.next_marker = Some(input.into());
             self
         }
+        /// <p>If <code>IsTruncated</code> is <code>true</code>, this element is present and contains
+        /// the value you can use for the <code>Marker</code> request parameter to continue listing your
+        /// distributions where they left off. </p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
@@ -13778,6 +15842,7 @@ pub mod distribution_list {
             self.max_items = Some(input);
             self
         }
+        /// <p>The value you provided for the <code>MaxItems</code> request parameter.</p>
         pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
             self.max_items = input;
             self
@@ -13789,6 +15854,9 @@ pub mod distribution_list {
             self.is_truncated = Some(input);
             self
         }
+        /// <p>A flag that indicates whether more distributions remain to be listed. If your results
+        /// were truncated, you can make a follow-up pagination request using the <code>Marker</code>
+        /// request parameter to retrieve more distributions in the list.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.is_truncated = input;
             self
@@ -13798,16 +15866,25 @@ pub mod distribution_list {
             self.quantity = Some(input);
             self
         }
+        /// <p>The number of distributions that were created by the current account.</p>
         pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
             self.quantity = input;
             self
         }
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>A complex type that contains one <code>DistributionSummary</code> element for each
+        /// distribution that was created by the current account.</p>
         pub fn items(mut self, input: impl Into<crate::model::DistributionSummary>) -> Self {
             let mut v = self.items.unwrap_or_default();
             v.push(input.into());
             self.items = Some(v);
             self
         }
+        /// <p>A complex type that contains one <code>DistributionSummary</code> element for each
+        /// distribution that was created by the current account.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DistributionSummary>>,
@@ -13850,7 +15927,7 @@ pub struct DistributionSummary {
     /// distribution's information is propagated to all CloudFront edge locations.</p>
     pub status: std::option::Option<std::string::String>,
     /// <p>The date and time the distribution was last modified.</p>
-    pub last_modified_time: std::option::Option<smithy_types::Instant>,
+    pub last_modified_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The domain name that corresponds to the distribution, for example, <code>d111111abcdef8.cloudfront.net</code>.</p>
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>A complex type that contains information about CNAMEs (alternate domain names), if any,
@@ -13936,7 +16013,7 @@ pub mod distribution_summary {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
-        pub(crate) last_modified_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_modified_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) aliases: std::option::Option<crate::model::Aliases>,
         pub(crate) origins: std::option::Option<crate::model::Origins>,
@@ -13962,6 +16039,8 @@ pub mod distribution_summary {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier for the distribution. For example:
+        /// <code>EDFDVBD632BHDS5</code>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -13973,6 +16052,9 @@ pub mod distribution_summary {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The ARN (Amazon Resource Name) for the distribution. For example:
+        /// <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where
+        /// <code>123456789012</code> is your account ID.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -13983,18 +16065,21 @@ pub mod distribution_summary {
             self.status = Some(input.into());
             self
         }
+        /// <p>The current status of the distribution. When the status is <code>Deployed</code>, the
+        /// distribution's information is propagated to all CloudFront edge locations.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
         }
         /// <p>The date and time the distribution was last modified.</p>
-        pub fn last_modified_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_modified_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_modified_time = Some(input);
             self
         }
+        /// <p>The date and time the distribution was last modified.</p>
         pub fn set_last_modified_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_modified_time = input;
             self
@@ -14004,6 +16089,7 @@ pub mod distribution_summary {
             self.domain_name = Some(input.into());
             self
         }
+        /// <p>The domain name that corresponds to the distribution, for example, <code>d111111abcdef8.cloudfront.net</code>.</p>
         pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.domain_name = input;
             self
@@ -14014,6 +16100,8 @@ pub mod distribution_summary {
             self.aliases = Some(input);
             self
         }
+        /// <p>A complex type that contains information about CNAMEs (alternate domain names), if any,
+        /// for this distribution.</p>
         pub fn set_aliases(mut self, input: std::option::Option<crate::model::Aliases>) -> Self {
             self.aliases = input;
             self
@@ -14023,6 +16111,7 @@ pub mod distribution_summary {
             self.origins = Some(input);
             self
         }
+        /// <p>A complex type that contains information about origins for this distribution.</p>
         pub fn set_origins(mut self, input: std::option::Option<crate::model::Origins>) -> Self {
             self.origins = input;
             self
@@ -14033,6 +16122,8 @@ pub mod distribution_summary {
             self.origin_groups = Some(input);
             self
         }
+        /// <p> A complex type that contains information about origin groups for this
+        /// distribution.</p>
         pub fn set_origin_groups(
             mut self,
             input: std::option::Option<crate::model::OriginGroups>,
@@ -14048,6 +16139,10 @@ pub mod distribution_summary {
             self.default_cache_behavior = Some(input);
             self
         }
+        /// <p>A complex type that describes the default cache behavior if you don't specify a
+        /// <code>CacheBehavior</code> element or if files don't match any of the values of
+        /// <code>PathPattern</code> in <code>CacheBehavior</code> elements. You must create exactly one
+        /// default cache behavior.</p>
         pub fn set_default_cache_behavior(
             mut self,
             input: std::option::Option<crate::model::DefaultCacheBehavior>,
@@ -14061,6 +16156,8 @@ pub mod distribution_summary {
             self.cache_behaviors = Some(input);
             self
         }
+        /// <p>A complex type that contains zero or more <code>CacheBehavior</code>
+        /// elements.</p>
         pub fn set_cache_behaviors(
             mut self,
             input: std::option::Option<crate::model::CacheBehaviors>,
@@ -14074,6 +16171,8 @@ pub mod distribution_summary {
             self.custom_error_responses = Some(input);
             self
         }
+        /// <p>A complex type that contains zero or more <code>CustomErrorResponses</code>
+        /// elements.</p>
         pub fn set_custom_error_responses(
             mut self,
             input: std::option::Option<crate::model::CustomErrorResponses>,
@@ -14086,6 +16185,7 @@ pub mod distribution_summary {
             self.comment = Some(input.into());
             self
         }
+        /// <p>The comment originally specified when this distribution was created.</p>
         pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.comment = input;
             self
@@ -14096,6 +16196,8 @@ pub mod distribution_summary {
             self.price_class = Some(input);
             self
         }
+        /// <p>A complex type that contains information about price class for this streaming
+        /// distribution. </p>
         pub fn set_price_class(
             mut self,
             input: std::option::Option<crate::model::PriceClass>,
@@ -14108,6 +16210,7 @@ pub mod distribution_summary {
             self.enabled = Some(input);
             self
         }
+        /// <p>Whether the distribution is enabled to accept user requests for content.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -14118,6 +16221,8 @@ pub mod distribution_summary {
             self.viewer_certificate = Some(input);
             self
         }
+        /// <p>A complex type that determines the distribution’s SSL/TLS configuration for
+        /// communicating with viewers.</p>
         pub fn set_viewer_certificate(
             mut self,
             input: std::option::Option<crate::model::ViewerCertificate>,
@@ -14131,6 +16236,8 @@ pub mod distribution_summary {
             self.restrictions = Some(input);
             self
         }
+        /// <p>A complex type that identifies ways in which you want to restrict distribution of your
+        /// content.</p>
         pub fn set_restrictions(
             mut self,
             input: std::option::Option<crate::model::Restrictions>,
@@ -14143,6 +16250,7 @@ pub mod distribution_summary {
             self.web_acl_id = Some(input.into());
             self
         }
+        /// <p>The Web ACL Id (if any) associated with the distribution.</p>
         pub fn set_web_acl_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.web_acl_id = input;
             self
@@ -14154,6 +16262,9 @@ pub mod distribution_summary {
             self.http_version = Some(input);
             self
         }
+        /// <p> Specify the maximum HTTP version that you want viewers to use to communicate with
+        /// CloudFront. The default value for new web distributions is <code>http2</code>. Viewers that don't
+        /// support <code>HTTP/2</code> will automatically use an earlier version.</p>
         pub fn set_http_version(
             mut self,
             input: std::option::Option<crate::model::HttpVersion>,
@@ -14167,10 +16278,21 @@ pub mod distribution_summary {
             self.is_ipv6_enabled = Some(input);
             self
         }
+        /// <p>Whether CloudFront responds to IPv6 DNS requests with an IPv6 address for your
+        /// distribution.</p>
         pub fn set_is_ipv6_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.is_ipv6_enabled = input;
             self
         }
+        /// Appends an item to `alias_icp_recordals`.
+        ///
+        /// To override the contents of this collection use [`set_alias_icp_recordals`](Self::set_alias_icp_recordals).
+        ///
+        /// <p>Amazon Web Services services in China customers must file for an Internet Content Provider (ICP) recordal if they want to serve content
+        /// publicly on an alternate domain name, also known as a CNAME, that they've added to CloudFront. AliasICPRecordal provides the ICP
+        /// recordal status for CNAMEs associated with distributions.</p>
+        /// <p>For more information about ICP recordals, see  <a href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html">
+        /// Signup, Accounts, and Credentials</a> in <i>Getting Started with Amazon Web Services services in China</i>.</p>
         pub fn alias_icp_recordals(
             mut self,
             input: impl Into<crate::model::AliasIcpRecordal>,
@@ -14180,6 +16302,11 @@ pub mod distribution_summary {
             self.alias_icp_recordals = Some(v);
             self
         }
+        /// <p>Amazon Web Services services in China customers must file for an Internet Content Provider (ICP) recordal if they want to serve content
+        /// publicly on an alternate domain name, also known as a CNAME, that they've added to CloudFront. AliasICPRecordal provides the ICP
+        /// recordal status for CNAMEs associated with distributions.</p>
+        /// <p>For more information about ICP recordals, see  <a href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html">
+        /// Signup, Accounts, and Credentials</a> in <i>Getting Started with Amazon Web Services services in China</i>.</p>
         pub fn set_alias_icp_recordals(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AliasIcpRecordal>>,
@@ -14272,6 +16399,7 @@ pub mod distribution_id_list {
             self.marker = Some(input.into());
             self
         }
+        /// <p>The value provided in the <code>Marker</code> request field.</p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -14282,6 +16410,8 @@ pub mod distribution_id_list {
             self.next_marker = Some(input.into());
             self
         }
+        /// <p>Contains the value that you should use in the <code>Marker</code> field of a
+        /// subsequent request to continue listing distribution IDs where you left off.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
@@ -14291,6 +16421,7 @@ pub mod distribution_id_list {
             self.max_items = Some(input);
             self
         }
+        /// <p>The maximum number of distribution IDs requested.</p>
         pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
             self.max_items = input;
             self
@@ -14302,6 +16433,9 @@ pub mod distribution_id_list {
             self.is_truncated = Some(input);
             self
         }
+        /// <p>A flag that indicates whether more distribution IDs remain to be listed. If your
+        /// results were truncated, you can make a subsequent request using the <code>Marker</code>
+        /// request field to retrieve more distribution IDs in the list.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.is_truncated = input;
             self
@@ -14311,16 +16445,23 @@ pub mod distribution_id_list {
             self.quantity = Some(input);
             self
         }
+        /// <p>The total number of distribution IDs returned in the response.</p>
         pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
             self.quantity = input;
             self
         }
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>Contains the distribution IDs in the list.</p>
         pub fn items(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.items.unwrap_or_default();
             v.push(input.into());
             self.items = Some(v);
             self
         }
+        /// <p>Contains the distribution IDs in the list.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -14395,6 +16536,9 @@ pub mod conflicting_aliases_list {
             self.next_marker = Some(input.into());
             self
         }
+        /// <p>If there are more items in the list than are in this response, this element is present. It
+        /// contains the value that you should use in the <code>Marker</code> field of a subsequent
+        /// request to continue listing conflicting aliases where you left off.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
@@ -14404,6 +16548,7 @@ pub mod conflicting_aliases_list {
             self.max_items = Some(input);
             self
         }
+        /// <p>The maximum number of conflicting aliases requested.</p>
         pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
             self.max_items = input;
             self
@@ -14413,16 +16558,23 @@ pub mod conflicting_aliases_list {
             self.quantity = Some(input);
             self
         }
+        /// <p>The number of conflicting aliases returned in the response.</p>
         pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
             self.quantity = input;
             self
         }
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>Contains the conflicting aliases in the list.</p>
         pub fn items(mut self, input: impl Into<crate::model::ConflictingAlias>) -> Self {
             let mut v = self.items.unwrap_or_default();
             v.push(input.into());
             self.items = Some(v);
             self
         }
+        /// <p>Contains the conflicting aliases in the list.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ConflictingAlias>>,
@@ -14488,6 +16640,7 @@ pub mod conflicting_alias {
             self.alias = Some(input.into());
             self
         }
+        /// <p>An alias (also called a CNAME).</p>
         pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.alias = input;
             self
@@ -14497,6 +16650,7 @@ pub mod conflicting_alias {
             self.distribution_id = Some(input.into());
             self
         }
+        /// <p>The (partially hidden) ID of the CloudFront distribution associated with the alias.</p>
         pub fn set_distribution_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14510,6 +16664,8 @@ pub mod conflicting_alias {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The (partially hidden) ID of the Amazon Web Services account that owns the distribution that’s
+        /// associated with the alias.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -14601,6 +16757,11 @@ pub mod cloud_front_origin_access_identity_list {
             self.marker = Some(input.into());
             self
         }
+        /// <p>Use this when paginating results to indicate where to begin in your list of origin
+        /// access identities. The results include identities in the list that occur after the marker. To
+        /// get the next page of results, set the <code>Marker</code> to the value of the
+        /// <code>NextMarker</code> from the current page's response (which is also the ID of the last
+        /// identity on that page). </p>
         pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.marker = input;
             self
@@ -14612,6 +16773,9 @@ pub mod cloud_front_origin_access_identity_list {
             self.next_marker = Some(input.into());
             self
         }
+        /// <p>If <code>IsTruncated</code> is <code>true</code>, this element is present and contains
+        /// the value you can use for the <code>Marker</code> request parameter to continue listing your
+        /// origin access identities where they left off. </p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
@@ -14622,6 +16786,8 @@ pub mod cloud_front_origin_access_identity_list {
             self.max_items = Some(input);
             self
         }
+        /// <p>The maximum number of origin access identities you want in the response body.
+        /// </p>
         pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
             self.max_items = input;
             self
@@ -14633,6 +16799,9 @@ pub mod cloud_front_origin_access_identity_list {
             self.is_truncated = Some(input);
             self
         }
+        /// <p>A flag that indicates whether more origin access identities remain to be listed. If
+        /// your results were truncated, you can make a follow-up pagination request using the
+        /// <code>Marker</code> request parameter to retrieve more items in the list.</p>
         pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
             self.is_truncated = input;
             self
@@ -14642,10 +16811,17 @@ pub mod cloud_front_origin_access_identity_list {
             self.quantity = Some(input);
             self
         }
+        /// <p>The number of CloudFront origin access identities that were created by the current account.</p>
         pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
             self.quantity = input;
             self
         }
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>A complex type that contains one <code>CloudFrontOriginAccessIdentitySummary</code>
+        /// element for each origin access identity that was created by the current account.</p>
         pub fn items(
             mut self,
             input: impl Into<crate::model::CloudFrontOriginAccessIdentitySummary>,
@@ -14655,6 +16831,8 @@ pub mod cloud_front_origin_access_identity_list {
             self.items = Some(v);
             self
         }
+        /// <p>A complex type that contains one <code>CloudFrontOriginAccessIdentitySummary</code>
+        /// element for each origin access identity that was created by the current account.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<
@@ -14724,6 +16902,8 @@ pub mod cloud_front_origin_access_identity_summary {
             self.id = Some(input.into());
             self
         }
+        /// <p>The ID for the origin access identity. For example:
+        /// <code>E74FTE3AJFJ256A</code>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -14734,6 +16914,8 @@ pub mod cloud_front_origin_access_identity_summary {
             self.s3_canonical_user_id = Some(input.into());
             self
         }
+        /// <p>The Amazon S3 canonical user ID for the origin access identity, which you use when giving
+        /// the origin access identity read permission to an object in Amazon S3.</p>
         pub fn set_s3_canonical_user_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14747,6 +16929,8 @@ pub mod cloud_front_origin_access_identity_summary {
             self.comment = Some(input.into());
             self
         }
+        /// <p>The comment for this origin access identity, as originally specified when
+        /// created.</p>
         pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.comment = input;
             self
@@ -14812,6 +16996,9 @@ pub mod cache_policy_list {
             self.next_marker = Some(input.into());
             self
         }
+        /// <p>If there are more items in the list than are in this response, this element is
+        /// present. It contains the value that you should use in the <code>Marker</code> field of a
+        /// subsequent request to continue listing cache policies where you left off.</p>
         pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_marker = input;
             self
@@ -14821,6 +17008,7 @@ pub mod cache_policy_list {
             self.max_items = Some(input);
             self
         }
+        /// <p>The maximum number of cache policies requested.</p>
         pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
             self.max_items = input;
             self
@@ -14830,16 +17018,23 @@ pub mod cache_policy_list {
             self.quantity = Some(input);
             self
         }
+        /// <p>The total number of cache policies returned in the response.</p>
         pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
             self.quantity = input;
             self
         }
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>Contains the cache policies in the list.</p>
         pub fn items(mut self, input: impl Into<crate::model::CachePolicySummary>) -> Self {
             let mut v = self.items.unwrap_or_default();
             v.push(input.into());
             self.items = Some(v);
             self
         }
+        /// <p>Contains the cache policies in the list.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CachePolicySummary>>,
@@ -14899,6 +17094,8 @@ pub mod cache_policy_summary {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of cache policy, either <code>managed</code> (created by Amazon Web Services) or
+        /// <code>custom</code> (created in this account).</p>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::CachePolicyType>,
@@ -14911,6 +17108,7 @@ pub mod cache_policy_summary {
             self.cache_policy = Some(input);
             self
         }
+        /// <p>The cache policy.</p>
         pub fn set_cache_policy(
             mut self,
             input: std::option::Option<crate::model::CachePolicy>,
@@ -14934,6 +17132,7 @@ impl CachePolicySummary {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -14945,7 +17144,9 @@ impl CachePolicySummary {
     std::hash::Hash,
 )]
 pub enum CachePolicyType {
+    #[allow(missing_docs)] // documentation missing in model
     Custom,
+    #[allow(missing_docs)] // documentation missing in model
     Managed,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -14967,6 +17168,7 @@ impl std::str::FromStr for CachePolicyType {
     }
 }
 impl CachePolicyType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CachePolicyType::Custom => "custom",
@@ -14974,6 +17176,7 @@ impl CachePolicyType {
             CachePolicyType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["custom", "managed"]
     }
@@ -15021,6 +17224,7 @@ pub mod monitoring_subscription {
             self.realtime_metrics_subscription_config = Some(input);
             self
         }
+        /// <p>A subscription configuration for additional CloudWatch metrics.</p>
         pub fn set_realtime_metrics_subscription_config(
             mut self,
             input: std::option::Option<crate::model::RealtimeMetricsSubscriptionConfig>,
@@ -15081,6 +17285,8 @@ pub mod realtime_metrics_subscription_config {
             self.realtime_metrics_subscription_status = Some(input);
             self
         }
+        /// <p>A flag that indicates whether additional CloudWatch metrics are enabled for a given
+        /// CloudFront distribution.</p>
         pub fn set_realtime_metrics_subscription_status(
             mut self,
             input: std::option::Option<crate::model::RealtimeMetricsSubscriptionStatus>,
@@ -15103,6 +17309,7 @@ impl RealtimeMetricsSubscriptionConfig {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -15114,7 +17321,9 @@ impl RealtimeMetricsSubscriptionConfig {
     std::hash::Hash,
 )]
 pub enum RealtimeMetricsSubscriptionStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -15136,6 +17345,7 @@ impl std::str::FromStr for RealtimeMetricsSubscriptionStatus {
     }
 }
 impl RealtimeMetricsSubscriptionStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RealtimeMetricsSubscriptionStatus::Disabled => "Disabled",
@@ -15143,6 +17353,7 @@ impl RealtimeMetricsSubscriptionStatus {
             RealtimeMetricsSubscriptionStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Disabled", "Enabled"]
     }
@@ -15164,7 +17375,7 @@ pub struct Invalidation {
     /// status is <code>Completed</code>.</p>
     pub status: std::option::Option<std::string::String>,
     /// <p>The date and time the invalidation request was first made. </p>
-    pub create_time: std::option::Option<smithy_types::Instant>,
+    pub create_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The current invalidation information for the batch request. </p>
     pub invalidation_batch: std::option::Option<crate::model::InvalidationBatch>,
 }
@@ -15186,7 +17397,7 @@ pub mod invalidation {
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
-        pub(crate) create_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) create_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) invalidation_batch: std::option::Option<crate::model::InvalidationBatch>,
     }
     impl Builder {
@@ -15196,6 +17407,8 @@ pub mod invalidation {
             self.id = Some(input.into());
             self
         }
+        /// <p>The identifier for the invalidation request. For example:
+        /// <code>IDFDVBD632BHDS5</code>.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -15206,18 +17419,21 @@ pub mod invalidation {
             self.status = Some(input.into());
             self
         }
+        /// <p>The status of the invalidation request. When the invalidation batch is finished, the
+        /// status is <code>Completed</code>.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
         }
         /// <p>The date and time the invalidation request was first made. </p>
-        pub fn create_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn create_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.create_time = Some(input);
             self
         }
+        /// <p>The date and time the invalidation request was first made. </p>
         pub fn set_create_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.create_time = input;
             self
@@ -15227,6 +17443,7 @@ pub mod invalidation {
             self.invalidation_batch = Some(input);
             self
         }
+        /// <p>The current invalidation information for the batch request. </p>
         pub fn set_invalidation_batch(
             mut self,
             input: std::option::Option<crate::model::InvalidationBatch>,
@@ -15300,6 +17517,9 @@ pub mod invalidation_batch {
             self.paths = Some(input);
             self
         }
+        /// <p>A complex type that contains information about the objects that you want to invalidate.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html#invalidation-specifying-objects">Specifying the Objects
+        /// to Invalidate</a> in the <i>Amazon CloudFront Developer Guide</i>. </p>
         pub fn set_paths(mut self, input: std::option::Option<crate::model::Paths>) -> Self {
             self.paths = input;
             self
@@ -15321,6 +17541,19 @@ pub mod invalidation_batch {
             self.caller_reference = Some(input.into());
             self
         }
+        /// <p>A value that you specify to uniquely identify an invalidation request. CloudFront uses the
+        /// value to prevent you from accidentally resubmitting an identical request. Whenever you create
+        /// a new invalidation request, you must specify a new value for <code>CallerReference</code> and
+        /// change other values in the request as applicable. One way to ensure that the value of
+        /// <code>CallerReference</code> is unique is to use a <code>timestamp</code>, for example,
+        /// <code>20120301090000</code>.</p>
+        /// <p>If you make a second invalidation request with the same value for
+        /// <code>CallerReference</code>, and if the rest of the request is the same, CloudFront doesn't
+        /// create a new invalidation request. Instead, CloudFront returns information about the invalidation
+        /// request that you previously created with the same <code>CallerReference</code>.</p>
+        /// <p>If <code>CallerReference</code> is a value you already sent in a previous invalidation
+        /// batch request but the content of any <code>Path</code> is different from the original request,
+        /// CloudFront returns an <code>InvalidationBatchAlreadyExists</code> error.</p>
         pub fn set_caller_reference(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15378,16 +17611,23 @@ pub mod paths {
             self.quantity = Some(input);
             self
         }
+        /// <p>The number of invalidation paths specified for the objects that you want to invalidate.</p>
         pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
             self.quantity = input;
             self
         }
+        /// Appends an item to `items`.
+        ///
+        /// To override the contents of this collection use [`set_items`](Self::set_items).
+        ///
+        /// <p>A complex type that contains a list of the paths that you want to invalidate.</p>
         pub fn items(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.items.unwrap_or_default();
             v.push(input.into());
             self.items = Some(v);
             self
         }
+        /// <p>A complex type that contains a list of the paths that you want to invalidate.</p>
         pub fn set_items(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -15452,6 +17692,7 @@ pub mod streaming_distribution_config_with_tags {
             self.streaming_distribution_config = Some(input);
             self
         }
+        /// <p>A streaming distribution Configuration.</p>
         pub fn set_streaming_distribution_config(
             mut self,
             input: std::option::Option<crate::model::StreamingDistributionConfig>,
@@ -15464,6 +17705,7 @@ pub mod streaming_distribution_config_with_tags {
             self.tags = Some(input);
             self
         }
+        /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
         pub fn set_tags(mut self, input: std::option::Option<crate::model::Tags>) -> Self {
             self.tags = input;
             self
@@ -15517,6 +17759,7 @@ pub mod distribution_config_with_tags {
             self.distribution_config = Some(input);
             self
         }
+        /// <p>A distribution configuration.</p>
         pub fn set_distribution_config(
             mut self,
             input: std::option::Option<crate::model::DistributionConfig>,
@@ -15529,6 +17772,7 @@ pub mod distribution_config_with_tags {
             self.tags = Some(input);
             self
         }
+        /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
         pub fn set_tags(mut self, input: std::option::Option<crate::model::Tags>) -> Self {
             self.tags = input;
             self

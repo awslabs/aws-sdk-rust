@@ -10,12 +10,18 @@ pub mod attach_instances_input {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `instance_ids`.
+        ///
+        /// To override the contents of this collection use [`set_instance_ids`](Self::set_instance_ids).
+        ///
+        /// <p>The IDs of the instances. You can specify up to 20 instances.</p>
         pub fn instance_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.instance_ids.unwrap_or_default();
             v.push(input.into());
             self.instance_ids = Some(v);
             self
         }
+        /// <p>The IDs of the instances. You can specify up to 20 instances.</p>
         pub fn set_instance_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -28,6 +34,7 @@ pub mod attach_instances_input {
             self.auto_scaling_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the Auto Scaling group.</p>
         pub fn set_auto_scaling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -40,7 +47,7 @@ pub mod attach_instances_input {
             self,
         ) -> std::result::Result<
             crate::input::AttachInstancesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::AttachInstancesInput {
                 instance_ids: self.instance_ids,
@@ -60,16 +67,16 @@ impl AttachInstancesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AttachInstances,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AttachInstancesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -77,7 +84,7 @@ impl AttachInstancesInput {
         fn update_http_builder(
             input: &crate::input::AttachInstancesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -86,27 +93,27 @@ impl AttachInstancesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AttachInstancesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_attach_instances(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -129,15 +136,15 @@ impl AttachInstancesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::AttachInstances::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "AttachInstances",
             "autoscaling",
         ));
@@ -146,10 +153,10 @@ impl AttachInstancesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -178,6 +185,7 @@ pub mod attach_load_balancers_input {
             self.auto_scaling_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the Auto Scaling group.</p>
         pub fn set_auto_scaling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -185,12 +193,18 @@ pub mod attach_load_balancers_input {
             self.auto_scaling_group_name = input;
             self
         }
+        /// Appends an item to `load_balancer_names`.
+        ///
+        /// To override the contents of this collection use [`set_load_balancer_names`](Self::set_load_balancer_names).
+        ///
+        /// <p>The names of the load balancers. You can specify up to 10 load balancers.</p>
         pub fn load_balancer_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.load_balancer_names.unwrap_or_default();
             v.push(input.into());
             self.load_balancer_names = Some(v);
             self
         }
+        /// <p>The names of the load balancers. You can specify up to 10 load balancers.</p>
         pub fn set_load_balancer_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -203,7 +217,7 @@ pub mod attach_load_balancers_input {
             self,
         ) -> std::result::Result<
             crate::input::AttachLoadBalancersInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::AttachLoadBalancersInput {
                 auto_scaling_group_name: self.auto_scaling_group_name,
@@ -223,16 +237,16 @@ impl AttachLoadBalancersInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AttachLoadBalancers,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AttachLoadBalancersInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -240,7 +254,7 @@ impl AttachLoadBalancersInput {
         fn update_http_builder(
             input: &crate::input::AttachLoadBalancersInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -249,27 +263,27 @@ impl AttachLoadBalancersInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AttachLoadBalancersInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_attach_load_balancers(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -292,15 +306,15 @@ impl AttachLoadBalancersInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::AttachLoadBalancers::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "AttachLoadBalancers",
             "autoscaling",
         ));
@@ -309,10 +323,10 @@ impl AttachLoadBalancersInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -341,6 +355,7 @@ pub mod attach_load_balancer_target_groups_input {
             self.auto_scaling_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the Auto Scaling group.</p>
         pub fn set_auto_scaling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -348,12 +363,20 @@ pub mod attach_load_balancer_target_groups_input {
             self.auto_scaling_group_name = input;
             self
         }
+        /// Appends an item to `target_group_ar_ns`.
+        ///
+        /// To override the contents of this collection use [`set_target_group_ar_ns`](Self::set_target_group_ar_ns).
+        ///
+        /// <p>The Amazon Resource Names (ARN) of the target groups. You can specify up to 10 target
+        /// groups. To get the ARN of a target group, use the Elastic Load Balancing <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>
         pub fn target_group_ar_ns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.target_group_ar_ns.unwrap_or_default();
             v.push(input.into());
             self.target_group_ar_ns = Some(v);
             self
         }
+        /// <p>The Amazon Resource Names (ARN) of the target groups. You can specify up to 10 target
+        /// groups. To get the ARN of a target group, use the Elastic Load Balancing <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>
         pub fn set_target_group_ar_ns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -366,7 +389,7 @@ pub mod attach_load_balancer_target_groups_input {
             self,
         ) -> std::result::Result<
             crate::input::AttachLoadBalancerTargetGroupsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::AttachLoadBalancerTargetGroupsInput {
                 auto_scaling_group_name: self.auto_scaling_group_name,
@@ -387,16 +410,16 @@ impl AttachLoadBalancerTargetGroupsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::AttachLoadBalancerTargetGroups,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::AttachLoadBalancerTargetGroupsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -404,7 +427,7 @@ impl AttachLoadBalancerTargetGroupsInput {
         fn update_http_builder(
             input: &crate::input::AttachLoadBalancerTargetGroupsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -413,25 +436,25 @@ impl AttachLoadBalancerTargetGroupsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::AttachLoadBalancerTargetGroupsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_attach_load_balancer_target_groups(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_attach_load_balancer_target_groups(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -454,15 +477,15 @@ impl AttachLoadBalancerTargetGroupsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::AttachLoadBalancerTargetGroups::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "AttachLoadBalancerTargetGroups",
             "autoscaling",
         ));
@@ -471,10 +494,10 @@ impl AttachLoadBalancerTargetGroupsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -503,6 +526,7 @@ pub mod batch_delete_scheduled_action_input {
             self.auto_scaling_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the Auto Scaling group.</p>
         pub fn set_auto_scaling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -510,12 +534,20 @@ pub mod batch_delete_scheduled_action_input {
             self.auto_scaling_group_name = input;
             self
         }
+        /// Appends an item to `scheduled_action_names`.
+        ///
+        /// To override the contents of this collection use [`set_scheduled_action_names`](Self::set_scheduled_action_names).
+        ///
+        /// <p>The names of the scheduled actions to delete. The maximum number allowed is 50.
+        /// </p>
         pub fn scheduled_action_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.scheduled_action_names.unwrap_or_default();
             v.push(input.into());
             self.scheduled_action_names = Some(v);
             self
         }
+        /// <p>The names of the scheduled actions to delete. The maximum number allowed is 50.
+        /// </p>
         pub fn set_scheduled_action_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -528,7 +560,7 @@ pub mod batch_delete_scheduled_action_input {
             self,
         ) -> std::result::Result<
             crate::input::BatchDeleteScheduledActionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::BatchDeleteScheduledActionInput {
                 auto_scaling_group_name: self.auto_scaling_group_name,
@@ -549,16 +581,16 @@ impl BatchDeleteScheduledActionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::BatchDeleteScheduledAction,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::BatchDeleteScheduledActionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -566,7 +598,7 @@ impl BatchDeleteScheduledActionInput {
         fn update_http_builder(
             input: &crate::input::BatchDeleteScheduledActionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -575,25 +607,25 @@ impl BatchDeleteScheduledActionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::BatchDeleteScheduledActionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_delete_scheduled_action(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_batch_delete_scheduled_action(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -616,15 +648,15 @@ impl BatchDeleteScheduledActionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::BatchDeleteScheduledAction::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "BatchDeleteScheduledAction",
             "autoscaling",
         ));
@@ -633,10 +665,10 @@ impl BatchDeleteScheduledActionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -666,6 +698,7 @@ pub mod batch_put_scheduled_update_group_action_input {
             self.auto_scaling_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the Auto Scaling group.</p>
         pub fn set_auto_scaling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -673,6 +706,11 @@ pub mod batch_put_scheduled_update_group_action_input {
             self.auto_scaling_group_name = input;
             self
         }
+        /// Appends an item to `scheduled_update_group_actions`.
+        ///
+        /// To override the contents of this collection use [`set_scheduled_update_group_actions`](Self::set_scheduled_update_group_actions).
+        ///
+        /// <p>One or more scheduled actions. The maximum number allowed is 50.</p>
         pub fn scheduled_update_group_actions(
             mut self,
             input: impl Into<crate::model::ScheduledUpdateGroupActionRequest>,
@@ -682,6 +720,7 @@ pub mod batch_put_scheduled_update_group_action_input {
             self.scheduled_update_group_actions = Some(v);
             self
         }
+        /// <p>One or more scheduled actions. The maximum number allowed is 50.</p>
         pub fn set_scheduled_update_group_actions(
             mut self,
             input: std::option::Option<
@@ -696,7 +735,7 @@ pub mod batch_put_scheduled_update_group_action_input {
             self,
         ) -> std::result::Result<
             crate::input::BatchPutScheduledUpdateGroupActionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::BatchPutScheduledUpdateGroupActionInput {
                 auto_scaling_group_name: self.auto_scaling_group_name,
@@ -717,16 +756,16 @@ impl BatchPutScheduledUpdateGroupActionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::BatchPutScheduledUpdateGroupAction,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::BatchPutScheduledUpdateGroupActionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -734,7 +773,7 @@ impl BatchPutScheduledUpdateGroupActionInput {
         fn update_http_builder(
             input: &crate::input::BatchPutScheduledUpdateGroupActionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -743,25 +782,25 @@ impl BatchPutScheduledUpdateGroupActionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::BatchPutScheduledUpdateGroupActionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_batch_put_scheduled_update_group_action(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_batch_put_scheduled_update_group_action(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -784,15 +823,15 @@ impl BatchPutScheduledUpdateGroupActionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::BatchPutScheduledUpdateGroupAction::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "BatchPutScheduledUpdateGroupAction",
             "autoscaling",
         ));
@@ -801,10 +840,10 @@ impl BatchPutScheduledUpdateGroupActionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -832,6 +871,7 @@ pub mod cancel_instance_refresh_input {
             self.auto_scaling_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the Auto Scaling group.</p>
         pub fn set_auto_scaling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -844,7 +884,7 @@ pub mod cancel_instance_refresh_input {
             self,
         ) -> std::result::Result<
             crate::input::CancelInstanceRefreshInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CancelInstanceRefreshInput {
                 auto_scaling_group_name: self.auto_scaling_group_name,
@@ -863,16 +903,16 @@ impl CancelInstanceRefreshInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CancelInstanceRefresh,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CancelInstanceRefreshInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -880,7 +920,7 @@ impl CancelInstanceRefreshInput {
         fn update_http_builder(
             input: &crate::input::CancelInstanceRefreshInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -889,27 +929,29 @@ impl CancelInstanceRefreshInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CancelInstanceRefreshInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_cancel_instance_refresh(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -932,15 +974,15 @@ impl CancelInstanceRefreshInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CancelInstanceRefresh::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CancelInstanceRefresh",
             "autoscaling",
         ));
@@ -949,10 +991,10 @@ impl CancelInstanceRefreshInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -984,6 +1026,7 @@ pub mod complete_lifecycle_action_input {
             self.lifecycle_hook_name = Some(input.into());
             self
         }
+        /// <p>The name of the lifecycle hook.</p>
         pub fn set_lifecycle_hook_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -996,6 +1039,7 @@ pub mod complete_lifecycle_action_input {
             self.auto_scaling_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the Auto Scaling group.</p>
         pub fn set_auto_scaling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1010,6 +1054,9 @@ pub mod complete_lifecycle_action_input {
             self.lifecycle_action_token = Some(input.into());
             self
         }
+        /// <p>A universally unique identifier (UUID) that identifies a specific lifecycle action
+        /// associated with an instance. Amazon EC2 Auto Scaling sends this token to the notification target you
+        /// specified when you created the lifecycle hook.</p>
         pub fn set_lifecycle_action_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1023,6 +1070,8 @@ pub mod complete_lifecycle_action_input {
             self.lifecycle_action_result = Some(input.into());
             self
         }
+        /// <p>The action for the group to take. This parameter can be either <code>CONTINUE</code>
+        /// or <code>ABANDON</code>.</p>
         pub fn set_lifecycle_action_result(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1035,6 +1084,7 @@ pub mod complete_lifecycle_action_input {
             self.instance_id = Some(input.into());
             self
         }
+        /// <p>The ID of the instance.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.instance_id = input;
             self
@@ -1044,7 +1094,7 @@ pub mod complete_lifecycle_action_input {
             self,
         ) -> std::result::Result<
             crate::input::CompleteLifecycleActionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CompleteLifecycleActionInput {
                 lifecycle_hook_name: self.lifecycle_hook_name,
@@ -1068,16 +1118,16 @@ impl CompleteLifecycleActionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CompleteLifecycleAction,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CompleteLifecycleActionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1085,7 +1135,7 @@ impl CompleteLifecycleActionInput {
         fn update_http_builder(
             input: &crate::input::CompleteLifecycleActionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1094,27 +1144,29 @@ impl CompleteLifecycleActionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CompleteLifecycleActionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_complete_lifecycle_action(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1137,15 +1189,15 @@ impl CompleteLifecycleActionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CompleteLifecycleAction::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CompleteLifecycleAction",
             "autoscaling",
         ));
@@ -1154,10 +1206,10 @@ impl CompleteLifecycleActionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1209,6 +1261,7 @@ pub mod create_auto_scaling_group_input {
             self.auto_scaling_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the Auto Scaling group. This name must be unique per Region per account.</p>
         pub fn set_auto_scaling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1224,6 +1277,10 @@ pub mod create_auto_scaling_group_input {
             self.launch_configuration_name = Some(input.into());
             self
         }
+        /// <p>The name of the launch configuration to use to launch instances. </p>
+        /// <p>Conditional: You must specify either a launch template (<code>LaunchTemplate</code> or
+        /// <code>MixedInstancesPolicy</code>) or a launch configuration
+        /// (<code>LaunchConfigurationName</code> or <code>InstanceId</code>).</p>
         pub fn set_launch_configuration_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1245,6 +1302,16 @@ pub mod create_auto_scaling_group_input {
             self.launch_template = Some(input);
             self
         }
+        /// <p>Parameters used to specify the launch template and version to use to launch instances. </p>
+        /// <p>Conditional: You must specify either a launch template (<code>LaunchTemplate</code> or
+        /// <code>MixedInstancesPolicy</code>) or a launch configuration
+        /// (<code>LaunchConfigurationName</code> or <code>InstanceId</code>).</p>
+        /// <note>
+        /// <p>The launch template that is specified must be configured for use with an Auto Scaling
+        /// group. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating a launch
+        /// template for an Auto Scaling group</a> in the
+        /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// </note>
         pub fn set_launch_template(
             mut self,
             input: std::option::Option<crate::model::LaunchTemplateSpecification>,
@@ -1268,6 +1335,18 @@ pub mod create_auto_scaling_group_input {
             self.mixed_instances_policy = Some(input);
             self
         }
+        /// <p>An embedded object that specifies a mixed instances policy. The required properties
+        /// must be specified. If optional properties are unspecified, their default values are
+        /// used.</p>
+        /// <p>The policy includes properties that not only define the distribution of On-Demand
+        /// Instances and Spot Instances, the maximum price to pay for Spot Instances, and how the
+        /// Auto Scaling group allocates instance types to fulfill On-Demand and Spot capacities, but also
+        /// the properties that specify the instance configuration information—the launch template
+        /// and instance types. The policy can also include a weight for each instance type and
+        /// different launch templates for individual instance types. For more information, see
+        /// <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto Scaling groups with multiple
+        /// instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling User
+        /// Guide</i>.</p>
         pub fn set_mixed_instances_policy(
             mut self,
             input: std::option::Option<crate::model::MixedInstancesPolicy>,
@@ -1283,6 +1362,10 @@ pub mod create_auto_scaling_group_input {
             self.instance_id = Some(input.into());
             self
         }
+        /// <p>The ID of the instance used to base the launch configuration on. If specified, Amazon
+        /// EC2 Auto Scaling uses the configuration values from the specified instance to create a
+        /// new launch configuration. To get the instance ID, use the Amazon EC2 <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> API operation. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-from-instance.html">Creating an Auto Scaling group using an EC2 instance</a> in the
+        /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.instance_id = input;
             self
@@ -1292,6 +1375,7 @@ pub mod create_auto_scaling_group_input {
             self.min_size = Some(input);
             self
         }
+        /// <p>The minimum size of the group.</p>
         pub fn set_min_size(mut self, input: std::option::Option<i32>) -> Self {
             self.min_size = input;
             self
@@ -1308,6 +1392,14 @@ pub mod create_auto_scaling_group_input {
             self.max_size = Some(input);
             self
         }
+        /// <p>The maximum size of the group.</p>
+        /// <note>
+        /// <p>With a mixed instances policy that uses instance weighting, Amazon EC2 Auto Scaling may need to
+        /// go above <code>MaxSize</code> to meet your capacity requirements. In this event,
+        /// Amazon EC2 Auto Scaling will never go above <code>MaxSize</code> by more than your largest instance
+        /// weight (weights that define how many units each instance contributes to the desired
+        /// capacity of the group).</p>
+        /// </note>
         pub fn set_max_size(mut self, input: std::option::Option<i32>) -> Self {
             self.max_size = input;
             self
@@ -1321,6 +1413,11 @@ pub mod create_auto_scaling_group_input {
             self.desired_capacity = Some(input);
             self
         }
+        /// <p>The desired capacity is the initial capacity of the Auto Scaling group at the time of its
+        /// creation and the capacity it attempts to maintain. It can scale beyond this capacity if
+        /// you configure auto scaling. This number must be greater than or equal to the minimum
+        /// size of the group and less than or equal to the maximum size of the group. If you do not
+        /// specify a desired capacity, the default is the minimum size of the group.</p>
         pub fn set_desired_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.desired_capacity = input;
             self
@@ -1334,16 +1431,35 @@ pub mod create_auto_scaling_group_input {
             self.default_cooldown = Some(input);
             self
         }
+        /// <p>The amount of time, in seconds, after a scaling activity completes before another
+        /// scaling activity can start. The default value is <code>300</code>. This setting applies
+        /// when using simple scaling policies, but not when using other scaling policies or
+        /// scheduled scaling. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling cooldowns for Amazon EC2 Auto Scaling</a>
+        /// in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn set_default_cooldown(mut self, input: std::option::Option<i32>) -> Self {
             self.default_cooldown = input;
             self
         }
+        /// Appends an item to `availability_zones`.
+        ///
+        /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
+        ///
+        /// <p>A list of Availability Zones where instances in the Auto Scaling group can be created. This
+        /// parameter is optional if you specify one or more subnets for
+        /// <code>VPCZoneIdentifier</code>.</p>
+        /// <p>Conditional: If your account supports EC2-Classic and VPC, this parameter is required
+        /// to launch instances into EC2-Classic.</p>
         pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.availability_zones.unwrap_or_default();
             v.push(input.into());
             self.availability_zones = Some(v);
             self
         }
+        /// <p>A list of Availability Zones where instances in the Auto Scaling group can be created. This
+        /// parameter is optional if you specify one or more subnets for
+        /// <code>VPCZoneIdentifier</code>.</p>
+        /// <p>Conditional: If your account supports EC2-Classic and VPC, this parameter is required
+        /// to launch instances into EC2-Classic.</p>
         pub fn set_availability_zones(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1351,12 +1467,22 @@ pub mod create_auto_scaling_group_input {
             self.availability_zones = input;
             self
         }
+        /// Appends an item to `load_balancer_names`.
+        ///
+        /// To override the contents of this collection use [`set_load_balancer_names`](Self::set_load_balancer_names).
+        ///
+        /// <p>A list of Classic Load Balancers associated with this Auto Scaling group. For
+        /// Application Load Balancers, Network Load Balancers, and Gateway Load Balancers, specify
+        /// the <code>TargetGroupARNs</code> property instead.</p>
         pub fn load_balancer_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.load_balancer_names.unwrap_or_default();
             v.push(input.into());
             self.load_balancer_names = Some(v);
             self
         }
+        /// <p>A list of Classic Load Balancers associated with this Auto Scaling group. For
+        /// Application Load Balancers, Network Load Balancers, and Gateway Load Balancers, specify
+        /// the <code>TargetGroupARNs</code> property instead.</p>
         pub fn set_load_balancer_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1364,12 +1490,24 @@ pub mod create_auto_scaling_group_input {
             self.load_balancer_names = input;
             self
         }
+        /// Appends an item to `target_group_ar_ns`.
+        ///
+        /// To override the contents of this collection use [`set_target_group_ar_ns`](Self::set_target_group_ar_ns).
+        ///
+        /// <p>The Amazon Resource Names (ARN) of the target groups to associate with the Auto Scaling group.
+        /// Instances are registered as targets in a target group, and traffic is routed to the
+        /// target group. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Elastic Load Balancing and
+        /// Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn target_group_ar_ns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.target_group_ar_ns.unwrap_or_default();
             v.push(input.into());
             self.target_group_ar_ns = Some(v);
             self
         }
+        /// <p>The Amazon Resource Names (ARN) of the target groups to associate with the Auto Scaling group.
+        /// Instances are registered as targets in a target group, and traffic is routed to the
+        /// target group. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Elastic Load Balancing and
+        /// Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn set_target_group_ar_ns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1386,6 +1524,11 @@ pub mod create_auto_scaling_group_input {
             self.health_check_type = Some(input.into());
             self
         }
+        /// <p>The service to use for the health checks. The valid values are <code>EC2</code>
+        /// (default) and <code>ELB</code>. If you configure an Auto Scaling group to use load balancer
+        /// (ELB) health checks, it considers the instance unhealthy if it fails either the EC2
+        /// status checks or the load balancer health checks. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health checks
+        /// for Auto Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn set_health_check_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1403,6 +1546,12 @@ pub mod create_auto_scaling_group_input {
             self.health_check_grace_period = Some(input);
             self
         }
+        /// <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking the health status
+        /// of an EC2 instance that has come into service. During this time, any health check
+        /// failures for the instance are ignored. The default value is <code>0</code>. For more
+        /// information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
+        /// check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>Conditional: Required if you are adding an <code>ELB</code> health check.</p>
         pub fn set_health_check_grace_period(mut self, input: std::option::Option<i32>) -> Self {
             self.health_check_grace_period = input;
             self
@@ -1416,6 +1565,11 @@ pub mod create_auto_scaling_group_input {
             self.placement_group = Some(input.into());
             self
         }
+        /// <p>The name of an existing placement group into which to launch your instances, if any. A
+        /// placement group is a logical grouping of instances within a single Availability Zone.
+        /// You cannot specify multiple Availability Zones and a placement group. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
+        /// <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
         pub fn set_placement_group(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1433,6 +1587,12 @@ pub mod create_auto_scaling_group_input {
             self.vpc_zone_identifier = Some(input.into());
             self
         }
+        /// <p>A comma-separated list of subnet IDs for a virtual private cloud (VPC) where instances
+        /// in the Auto Scaling group can be created. If you specify <code>VPCZoneIdentifier</code> with
+        /// <code>AvailabilityZones</code>, the subnets that you specify for this parameter must
+        /// reside in those Availability Zones.</p>
+        /// <p>Conditional: If your account supports EC2-Classic and VPC, this parameter is required
+        /// to launch instances into a VPC.</p>
         pub fn set_vpc_zone_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1440,12 +1600,26 @@ pub mod create_auto_scaling_group_input {
             self.vpc_zone_identifier = input;
             self
         }
+        /// Appends an item to `termination_policies`.
+        ///
+        /// To override the contents of this collection use [`set_termination_policies`](Self::set_termination_policies).
+        ///
+        /// <p>A policy or a list of policies that are used to select the instance to terminate.
+        /// These policies are executed in the order that you list them. For more information, see
+        /// <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling which Auto Scaling
+        /// instances terminate during scale in</a> in the
+        /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn termination_policies(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.termination_policies.unwrap_or_default();
             v.push(input.into());
             self.termination_policies = Some(v);
             self
         }
+        /// <p>A policy or a list of policies that are used to select the instance to terminate.
+        /// These policies are executed in the order that you list them. For more information, see
+        /// <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling which Auto Scaling
+        /// instances terminate during scale in</a> in the
+        /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn set_termination_policies(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1461,6 +1635,10 @@ pub mod create_auto_scaling_group_input {
             self.new_instances_protected_from_scale_in = Some(input);
             self
         }
+        /// <p>Indicates whether newly launched instances are protected from termination by Amazon EC2 Auto Scaling
+        /// when scaling in. For more information about preventing instances from terminating on
+        /// scale in, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance scale-in protection</a> in the
+        /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn set_new_instances_protected_from_scale_in(
             mut self,
             input: std::option::Option<bool>,
@@ -1478,10 +1656,22 @@ pub mod create_auto_scaling_group_input {
             self.capacity_rebalance = Some(input);
             self
         }
+        /// <p>Indicates whether Capacity Rebalancing is enabled. Otherwise, Capacity Rebalancing is
+        /// disabled. When you turn on Capacity Rebalancing, Amazon EC2 Auto Scaling attempts to launch a Spot
+        /// Instance whenever Amazon EC2 notifies that a Spot Instance is at an elevated risk of
+        /// interruption. After launching a new instance, it then terminates an old instance. For
+        /// more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/capacity-rebalance.html">Amazon EC2 Auto Scaling Capacity
+        /// Rebalancing</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn set_capacity_rebalance(mut self, input: std::option::Option<bool>) -> Self {
             self.capacity_rebalance = input;
             self
         }
+        /// Appends an item to `lifecycle_hook_specification_list`.
+        ///
+        /// To override the contents of this collection use [`set_lifecycle_hook_specification_list`](Self::set_lifecycle_hook_specification_list).
+        ///
+        /// <p>One or more lifecycle hooks for the group, which specify actions to perform when
+        /// Amazon EC2 Auto Scaling launches or terminates instances.</p>
         pub fn lifecycle_hook_specification_list(
             mut self,
             input: impl Into<crate::model::LifecycleHookSpecification>,
@@ -1491,6 +1681,8 @@ pub mod create_auto_scaling_group_input {
             self.lifecycle_hook_specification_list = Some(v);
             self
         }
+        /// <p>One or more lifecycle hooks for the group, which specify actions to perform when
+        /// Amazon EC2 Auto Scaling launches or terminates instances.</p>
         pub fn set_lifecycle_hook_specification_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::LifecycleHookSpecification>>,
@@ -1498,12 +1690,30 @@ pub mod create_auto_scaling_group_input {
             self.lifecycle_hook_specification_list = input;
             self
         }
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>One or more tags. You can tag your Auto Scaling group and propagate the tags to the Amazon EC2
+        /// instances it launches. Tags are not propagated to Amazon EBS volumes. To add tags to Amazon EBS
+        /// volumes, specify the tags in a launch template but use caution. If the launch template
+        /// specifies an instance tag with a key that is also specified for the Auto Scaling group, Amazon EC2 Auto Scaling
+        /// overrides the value of that instance tag with the value specified by the Auto Scaling group. For
+        /// more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-tagging.html">Tagging Auto Scaling groups and
+        /// instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>One or more tags. You can tag your Auto Scaling group and propagate the tags to the Amazon EC2
+        /// instances it launches. Tags are not propagated to Amazon EBS volumes. To add tags to Amazon EBS
+        /// volumes, specify the tags in a launch template but use caution. If the launch template
+        /// specifies an instance tag with a key that is also specified for the Auto Scaling group, Amazon EC2 Auto Scaling
+        /// overrides the value of that instance tag with the value specified by the Auto Scaling group. For
+        /// more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-tagging.html">Tagging Auto Scaling groups and
+        /// instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1520,6 +1730,11 @@ pub mod create_auto_scaling_group_input {
             self.service_linked_role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto Scaling group uses to
+        /// call other Amazon Web Services on your behalf. By default, Amazon EC2 Auto Scaling uses a service-linked role
+        /// named <code>AWSServiceRoleForAutoScaling</code>, which it creates if it does not exist.
+        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html">Service-linked
+        /// roles</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn set_service_linked_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1535,6 +1750,10 @@ pub mod create_auto_scaling_group_input {
             self.max_instance_lifetime = Some(input);
             self
         }
+        /// <p>The maximum amount of time, in seconds, that an instance can be in service. The
+        /// default is null. If specified, the value must be either 0 or a number equal to or
+        /// greater than 86,400 seconds (1 day). For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-max-instance-lifetime.html">Replacing Auto Scaling instances based on maximum instance lifetime</a> in the
+        /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn set_max_instance_lifetime(mut self, input: std::option::Option<i32>) -> Self {
             self.max_instance_lifetime = input;
             self
@@ -1544,6 +1763,7 @@ pub mod create_auto_scaling_group_input {
             self.context = Some(input.into());
             self
         }
+        /// <p>Reserved.</p>
         pub fn set_context(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.context = input;
             self
@@ -1553,7 +1773,7 @@ pub mod create_auto_scaling_group_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateAutoScalingGroupInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateAutoScalingGroupInput {
                 auto_scaling_group_name: self.auto_scaling_group_name,
@@ -1595,16 +1815,16 @@ impl CreateAutoScalingGroupInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateAutoScalingGroup,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateAutoScalingGroupInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -1612,7 +1832,7 @@ impl CreateAutoScalingGroupInput {
         fn update_http_builder(
             input: &crate::input::CreateAutoScalingGroupInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1621,27 +1841,29 @@ impl CreateAutoScalingGroupInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateAutoScalingGroupInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_auto_scaling_group(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1664,15 +1886,15 @@ impl CreateAutoScalingGroupInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateAutoScalingGroup::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateAutoScalingGroup",
             "autoscaling",
         ));
@@ -1681,10 +1903,10 @@ impl CreateAutoScalingGroupInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1733,6 +1955,8 @@ pub mod create_launch_configuration_input {
             self.launch_configuration_name = Some(input.into());
             self
         }
+        /// <p>The name of the launch configuration. This name must be unique per Region per
+        /// account.</p>
         pub fn set_launch_configuration_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1749,6 +1973,11 @@ pub mod create_launch_configuration_input {
             self.image_id = Some(input.into());
             self
         }
+        /// <p>The ID of the Amazon Machine Image (AMI) that was assigned during registration. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding an AMI</a> in the
+        /// <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+        /// <p>If you do not specify <code>InstanceId</code>, you must specify
+        /// <code>ImageId</code>.</p>
         pub fn set_image_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.image_id = input;
             self
@@ -1759,16 +1988,36 @@ pub mod create_launch_configuration_input {
             self.key_name = Some(input.into());
             self
         }
+        /// <p>The name of the key pair. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2 Key Pairs</a> in the
+        /// <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
         pub fn set_key_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_name = input;
             self
         }
+        /// Appends an item to `security_groups`.
+        ///
+        /// To override the contents of this collection use [`set_security_groups`](Self::set_security_groups).
+        ///
+        /// <p>A list that contains the security groups to assign to the instances in the Auto Scaling
+        /// group.</p>
+        /// <p>[EC2-VPC] Specify the security group IDs. For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud
+        /// User Guide</i>.</p>
+        /// <p>[EC2-Classic] Specify either the security group names or the security group IDs. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Amazon EC2 Security
+        /// Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
         pub fn security_groups(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_groups.unwrap_or_default();
             v.push(input.into());
             self.security_groups = Some(v);
             self
         }
+        /// <p>A list that contains the security groups to assign to the instances in the Auto Scaling
+        /// group.</p>
+        /// <p>[EC2-VPC] Specify the security group IDs. For more information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud
+        /// User Guide</i>.</p>
+        /// <p>[EC2-Classic] Specify either the security group names or the security group IDs. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Amazon EC2 Security
+        /// Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
         pub fn set_security_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1785,6 +2034,11 @@ pub mod create_launch_configuration_input {
             self.classic_link_vpc_id = Some(input.into());
             self
         }
+        /// <p>The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the
+        /// <i>Amazon EC2 User Guide for Linux Instances</i> and <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking EC2-Classic
+        /// instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>This parameter can only be used if you are launching EC2-Classic instances.</p>
         pub fn set_classic_link_vpc_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1792,6 +2046,16 @@ pub mod create_launch_configuration_input {
             self.classic_link_vpc_id = input;
             self
         }
+        /// Appends an item to `classic_link_vpc_security_groups`.
+        ///
+        /// To override the contents of this collection use [`set_classic_link_vpc_security_groups`](Self::set_classic_link_vpc_security_groups).
+        ///
+        /// <p>The IDs of one or more security groups for the specified ClassicLink-enabled VPC. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the
+        /// <i>Amazon EC2 User Guide for Linux Instances</i> and <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking EC2-Classic
+        /// instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>If you specify the <code>ClassicLinkVPCId</code> parameter, you must specify this
+        /// parameter.</p>
         pub fn classic_link_vpc_security_groups(
             mut self,
             input: impl Into<std::string::String>,
@@ -1801,6 +2065,12 @@ pub mod create_launch_configuration_input {
             self.classic_link_vpc_security_groups = Some(v);
             self
         }
+        /// <p>The IDs of one or more security groups for the specified ClassicLink-enabled VPC. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a> in the
+        /// <i>Amazon EC2 User Guide for Linux Instances</i> and <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking EC2-Classic
+        /// instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>If you specify the <code>ClassicLinkVPCId</code> parameter, you must specify this
+        /// parameter.</p>
         pub fn set_classic_link_vpc_security_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1817,6 +2087,11 @@ pub mod create_launch_configuration_input {
             self.user_data = Some(input.into());
             self
         }
+        /// <p>The user data to make available to the launched EC2 instances. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata and user data</a> (Linux) and <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-instance-metadata.html">Instance metadata and
+        /// user data</a> (Windows). If you are using a command line tool, base64-encoding
+        /// is performed for you, and you can load the text from a file. Otherwise, you must provide
+        /// base64-encoded text. User data is limited to 16 KB.</p>
         pub fn set_user_data(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_data = input;
             self
@@ -1835,6 +2110,16 @@ pub mod create_launch_configuration_input {
             self.instance_id = Some(input.into());
             self
         }
+        /// <p>The ID of the instance to use to create the launch configuration. The new launch
+        /// configuration derives attributes from the instance, except for the block device
+        /// mapping.</p>
+        /// <p>To create a launch configuration with a block device mapping or override any other
+        /// instance attributes, specify them as part of the same request.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-lc-with-instanceID.html">Creating a launch
+        /// configuration using an EC2 instance</a> in the
+        /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>If you do not specify <code>InstanceId</code>, you must specify both
+        /// <code>ImageId</code> and <code>InstanceType</code>.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.instance_id = input;
             self
@@ -1848,6 +2133,11 @@ pub mod create_launch_configuration_input {
             self.instance_type = Some(input.into());
             self
         }
+        /// <p>Specifies the instance type of the EC2 instance.</p>
+        /// <p>For information about available instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#AvailableInstanceTypes">Available
+        /// Instance Types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+        /// <p>If you do not specify <code>InstanceId</code>, you must specify
+        /// <code>InstanceType</code>.</p>
         pub fn set_instance_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1860,6 +2150,7 @@ pub mod create_launch_configuration_input {
             self.kernel_id = Some(input.into());
             self
         }
+        /// <p>The ID of the kernel associated with the AMI.</p>
         pub fn set_kernel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kernel_id = input;
             self
@@ -1869,10 +2160,18 @@ pub mod create_launch_configuration_input {
             self.ramdisk_id = Some(input.into());
             self
         }
+        /// <p>The ID of the RAM disk to select.</p>
         pub fn set_ramdisk_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.ramdisk_id = input;
             self
         }
+        /// Appends an item to `block_device_mappings`.
+        ///
+        /// To override the contents of this collection use [`set_block_device_mappings`](Self::set_block_device_mappings).
+        ///
+        /// <p>A block device mapping, which specifies the block devices for the instance. You can
+        /// specify virtual devices and EBS volumes. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device
+        /// Mapping</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
         pub fn block_device_mappings(
             mut self,
             input: impl Into<crate::model::BlockDeviceMapping>,
@@ -1882,6 +2181,9 @@ pub mod create_launch_configuration_input {
             self.block_device_mappings = Some(v);
             self
         }
+        /// <p>A block device mapping, which specifies the block devices for the instance. You can
+        /// specify virtual devices and EBS volumes. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block Device
+        /// Mapping</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
         pub fn set_block_device_mappings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BlockDeviceMapping>>,
@@ -1903,6 +2205,16 @@ pub mod create_launch_configuration_input {
             self.instance_monitoring = Some(input);
             self
         }
+        /// <p>Controls whether instances in this group are launched with detailed
+        /// (<code>true</code>) or basic (<code>false</code>) monitoring.</p>
+        /// <p>The default value is <code>true</code> (enabled).</p>
+        /// <important>
+        /// <p>When detailed monitoring is enabled, Amazon CloudWatch generates metrics every minute and
+        /// your account is charged a fee. When you disable detailed monitoring, CloudWatch generates
+        /// metrics every 5 minutes. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/latest/userguide/enable-as-instance-metrics.html">Configure
+        /// Monitoring for Auto Scaling Instances</a> in the
+        /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// </important>
         pub fn set_instance_monitoring(
             mut self,
             input: std::option::Option<crate::model::InstanceMonitoring>,
@@ -1923,6 +2235,15 @@ pub mod create_launch_configuration_input {
             self.spot_price = Some(input.into());
             self
         }
+        /// <p>The maximum hourly price to be paid for any Spot Instance launched to fulfill the
+        /// request. Spot Instances are launched when the price you specify exceeds the current Spot
+        /// price. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-spot-instances.html">Requesting Spot
+        /// Instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <note>
+        /// <p>When you change your maximum price by creating a new launch configuration, running
+        /// instances will continue to run as long as the maximum price for those running
+        /// instances is higher than the current Spot price.</p>
+        /// </note>
         pub fn set_spot_price(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.spot_price = input;
             self
@@ -1935,6 +2256,10 @@ pub mod create_launch_configuration_input {
             self.iam_instance_profile = Some(input.into());
             self
         }
+        /// <p>The name or the Amazon Resource Name (ARN) of the instance profile associated with the
+        /// IAM role for the instance. The instance profile contains the IAM role.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/us-iam-role.html">IAM role for applications that run
+        /// on Amazon EC2 instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn set_iam_instance_profile(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1954,6 +2279,14 @@ pub mod create_launch_configuration_input {
             self.ebs_optimized = Some(input);
             self
         }
+        /// <p>Specifies whether the launch configuration is optimized for EBS I/O
+        /// (<code>true</code>) or not (<code>false</code>). The optimization provides dedicated
+        /// throughput to Amazon EBS and an optimized configuration stack to provide optimal I/O
+        /// performance. This optimization is not available with all instance types. Additional fees
+        /// are incurred when you enable EBS optimization for an instance type that is not
+        /// EBS-optimized by default. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon EBS-optimized instances</a> in
+        /// the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+        /// <p>The default value is <code>false</code>.</p>
         pub fn set_ebs_optimized(mut self, input: std::option::Option<bool>) -> Self {
             self.ebs_optimized = input;
             self
@@ -1976,6 +2309,20 @@ pub mod create_launch_configuration_input {
             self.associate_public_ip_address = Some(input);
             self
         }
+        /// <p>For Auto Scaling groups that are running in a virtual private cloud (VPC), specifies whether
+        /// to assign a public IP address to the group's instances. If you specify
+        /// <code>true</code>, each instance in the Auto Scaling group receives a unique public IP address.
+        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching Auto Scaling instances in a
+        /// VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>If you specify this parameter, you must specify at least one subnet for
+        /// <code>VPCZoneIdentifier</code> when you create your group.</p>
+        /// <note>
+        /// <p>If the instance is launched into a default subnet, the default is to assign a
+        /// public IP address, unless you disabled the option to assign a public IP address on
+        /// the subnet. If the instance is launched into a nondefault subnet, the default is not
+        /// to assign a public IP address, unless you enabled the option to assign a public IP
+        /// address on the subnet.</p>
+        /// </note>
         pub fn set_associate_public_ip_address(mut self, input: std::option::Option<bool>) -> Self {
             self.associate_public_ip_address = input;
             self
@@ -1996,6 +2343,18 @@ pub mod create_launch_configuration_input {
             self.placement_tenancy = Some(input.into());
             self
         }
+        /// <p>The tenancy of the instance. An instance with <code>dedicated</code> tenancy runs on
+        /// isolated, single-tenant hardware and can only be launched into a VPC.</p>
+        /// <p>To launch dedicated instances into a shared tenancy VPC (a VPC with the instance
+        /// placement tenancy attribute set to <code>default</code>), you must set the value of this
+        /// parameter to <code>dedicated</code>.</p>
+        /// <p>If you specify <code>PlacementTenancy</code>, you must specify at least one subnet for
+        /// <code>VPCZoneIdentifier</code> when you create your group.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/auto-scaling-dedicated-instances.html">Configuring
+        /// instance tenancy with Amazon EC2 Auto Scaling</a> in the
+        /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>Valid Values: <code>default</code> | <code>dedicated</code>
+        /// </p>
         pub fn set_placement_tenancy(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2009,6 +2368,8 @@ pub mod create_launch_configuration_input {
             self.metadata_options = Some(input);
             self
         }
+        /// <p>The metadata options for the instances. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-config.html#launch-configurations-imds">Configuring the Instance Metadata Options</a> in the
+        /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn set_metadata_options(
             mut self,
             input: std::option::Option<crate::model::InstanceMetadataOptions>,
@@ -2021,7 +2382,7 @@ pub mod create_launch_configuration_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateLaunchConfigurationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateLaunchConfigurationInput {
                 launch_configuration_name: self.launch_configuration_name,
@@ -2059,16 +2420,16 @@ impl CreateLaunchConfigurationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateLaunchConfiguration,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateLaunchConfigurationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2076,7 +2437,7 @@ impl CreateLaunchConfigurationInput {
         fn update_http_builder(
             input: &crate::input::CreateLaunchConfigurationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2085,27 +2446,29 @@ impl CreateLaunchConfigurationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateLaunchConfigurationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_launch_configuration(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2128,15 +2491,15 @@ impl CreateLaunchConfigurationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateLaunchConfiguration::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateLaunchConfiguration",
             "autoscaling",
         ));
@@ -2145,10 +2508,10 @@ impl CreateLaunchConfigurationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2171,12 +2534,18 @@ pub mod create_or_update_tags_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>One or more tags.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>One or more tags.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -2189,7 +2558,7 @@ pub mod create_or_update_tags_input {
             self,
         ) -> std::result::Result<
             crate::input::CreateOrUpdateTagsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CreateOrUpdateTagsInput { tags: self.tags })
         }
@@ -2206,16 +2575,16 @@ impl CreateOrUpdateTagsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CreateOrUpdateTags,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CreateOrUpdateTagsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2223,7 +2592,7 @@ impl CreateOrUpdateTagsInput {
         fn update_http_builder(
             input: &crate::input::CreateOrUpdateTagsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2232,27 +2601,27 @@ impl CreateOrUpdateTagsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CreateOrUpdateTagsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_create_or_update_tags(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2275,15 +2644,15 @@ impl CreateOrUpdateTagsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CreateOrUpdateTags::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CreateOrUpdateTags",
             "autoscaling",
         ));
@@ -2292,10 +2661,10 @@ impl CreateOrUpdateTagsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2324,6 +2693,7 @@ pub mod delete_auto_scaling_group_input {
             self.auto_scaling_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the Auto Scaling group.</p>
         pub fn set_auto_scaling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2338,6 +2708,9 @@ pub mod delete_auto_scaling_group_input {
             self.force_delete = Some(input);
             self
         }
+        /// <p>Specifies that the group is to be deleted along with all instances associated with the
+        /// group, without waiting for all instances to be terminated. This parameter also deletes
+        /// any outstanding lifecycle actions associated with the group.</p>
         pub fn set_force_delete(mut self, input: std::option::Option<bool>) -> Self {
             self.force_delete = input;
             self
@@ -2347,7 +2720,7 @@ pub mod delete_auto_scaling_group_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteAutoScalingGroupInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteAutoScalingGroupInput {
                 auto_scaling_group_name: self.auto_scaling_group_name,
@@ -2367,16 +2740,16 @@ impl DeleteAutoScalingGroupInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteAutoScalingGroup,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteAutoScalingGroupInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2384,7 +2757,7 @@ impl DeleteAutoScalingGroupInput {
         fn update_http_builder(
             input: &crate::input::DeleteAutoScalingGroupInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2393,27 +2766,29 @@ impl DeleteAutoScalingGroupInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteAutoScalingGroupInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_auto_scaling_group(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2436,15 +2811,15 @@ impl DeleteAutoScalingGroupInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteAutoScalingGroup::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteAutoScalingGroup",
             "autoscaling",
         ));
@@ -2453,10 +2828,10 @@ impl DeleteAutoScalingGroupInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2484,6 +2859,7 @@ pub mod delete_launch_configuration_input {
             self.launch_configuration_name = Some(input.into());
             self
         }
+        /// <p>The name of the launch configuration.</p>
         pub fn set_launch_configuration_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2496,7 +2872,7 @@ pub mod delete_launch_configuration_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteLaunchConfigurationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteLaunchConfigurationInput {
                 launch_configuration_name: self.launch_configuration_name,
@@ -2516,16 +2892,16 @@ impl DeleteLaunchConfigurationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteLaunchConfiguration,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteLaunchConfigurationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2533,7 +2909,7 @@ impl DeleteLaunchConfigurationInput {
         fn update_http_builder(
             input: &crate::input::DeleteLaunchConfigurationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2542,27 +2918,29 @@ impl DeleteLaunchConfigurationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteLaunchConfigurationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_launch_configuration(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2585,15 +2963,15 @@ impl DeleteLaunchConfigurationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteLaunchConfiguration::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteLaunchConfiguration",
             "autoscaling",
         ));
@@ -2602,10 +2980,10 @@ impl DeleteLaunchConfigurationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2634,6 +3012,7 @@ pub mod delete_lifecycle_hook_input {
             self.lifecycle_hook_name = Some(input.into());
             self
         }
+        /// <p>The name of the lifecycle hook.</p>
         pub fn set_lifecycle_hook_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2646,6 +3025,7 @@ pub mod delete_lifecycle_hook_input {
             self.auto_scaling_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the Auto Scaling group.</p>
         pub fn set_auto_scaling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2658,7 +3038,7 @@ pub mod delete_lifecycle_hook_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteLifecycleHookInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteLifecycleHookInput {
                 lifecycle_hook_name: self.lifecycle_hook_name,
@@ -2678,16 +3058,16 @@ impl DeleteLifecycleHookInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteLifecycleHook,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteLifecycleHookInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2695,7 +3075,7 @@ impl DeleteLifecycleHookInput {
         fn update_http_builder(
             input: &crate::input::DeleteLifecycleHookInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2704,27 +3084,27 @@ impl DeleteLifecycleHookInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteLifecycleHookInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_lifecycle_hook(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2747,15 +3127,15 @@ impl DeleteLifecycleHookInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteLifecycleHook::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteLifecycleHook",
             "autoscaling",
         ));
@@ -2764,10 +3144,10 @@ impl DeleteLifecycleHookInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2796,6 +3176,7 @@ pub mod delete_notification_configuration_input {
             self.auto_scaling_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the Auto Scaling group.</p>
         pub fn set_auto_scaling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2809,6 +3190,8 @@ pub mod delete_notification_configuration_input {
             self.topic_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (Amazon SNS)
+        /// topic.</p>
         pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.topic_arn = input;
             self
@@ -2818,7 +3201,7 @@ pub mod delete_notification_configuration_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteNotificationConfigurationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteNotificationConfigurationInput {
                 auto_scaling_group_name: self.auto_scaling_group_name,
@@ -2839,16 +3222,16 @@ impl DeleteNotificationConfigurationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteNotificationConfiguration,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteNotificationConfigurationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -2856,7 +3239,7 @@ impl DeleteNotificationConfigurationInput {
         fn update_http_builder(
             input: &crate::input::DeleteNotificationConfigurationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -2865,25 +3248,25 @@ impl DeleteNotificationConfigurationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteNotificationConfigurationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_delete_notification_configuration(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_delete_notification_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -2906,15 +3289,15 @@ impl DeleteNotificationConfigurationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteNotificationConfiguration::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteNotificationConfiguration",
             "autoscaling",
         ));
@@ -2923,10 +3306,10 @@ impl DeleteNotificationConfigurationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -2955,6 +3338,7 @@ pub mod delete_policy_input {
             self.auto_scaling_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the Auto Scaling group.</p>
         pub fn set_auto_scaling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2967,6 +3351,7 @@ pub mod delete_policy_input {
             self.policy_name = Some(input.into());
             self
         }
+        /// <p>The name or Amazon Resource Name (ARN) of the policy.</p>
         pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_name = input;
             self
@@ -2974,8 +3359,10 @@ pub mod delete_policy_input {
         /// Consumes the builder and constructs a [`DeletePolicyInput`](crate::input::DeletePolicyInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeletePolicyInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeletePolicyInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeletePolicyInput {
                 auto_scaling_group_name: self.auto_scaling_group_name,
                 policy_name: self.policy_name,
@@ -2994,16 +3381,16 @@ impl DeletePolicyInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeletePolicy,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeletePolicyInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3011,7 +3398,7 @@ impl DeletePolicyInput {
         fn update_http_builder(
             input: &crate::input::DeletePolicyInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3020,26 +3407,26 @@ impl DeletePolicyInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeletePolicyInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_delete_policy(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3062,25 +3449,27 @@ impl DeletePolicyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeletePolicy::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DeletePolicy",
-                    "autoscaling",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeletePolicy::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeletePolicy",
+            "autoscaling",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3109,6 +3498,7 @@ pub mod delete_scheduled_action_input {
             self.auto_scaling_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the Auto Scaling group.</p>
         pub fn set_auto_scaling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3121,6 +3511,7 @@ pub mod delete_scheduled_action_input {
             self.scheduled_action_name = Some(input.into());
             self
         }
+        /// <p>The name of the action to delete.</p>
         pub fn set_scheduled_action_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3133,7 +3524,7 @@ pub mod delete_scheduled_action_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteScheduledActionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteScheduledActionInput {
                 auto_scaling_group_name: self.auto_scaling_group_name,
@@ -3153,16 +3544,16 @@ impl DeleteScheduledActionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteScheduledAction,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteScheduledActionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3170,7 +3561,7 @@ impl DeleteScheduledActionInput {
         fn update_http_builder(
             input: &crate::input::DeleteScheduledActionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3179,27 +3570,29 @@ impl DeleteScheduledActionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteScheduledActionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_scheduled_action(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3222,15 +3615,15 @@ impl DeleteScheduledActionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteScheduledAction::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteScheduledAction",
             "autoscaling",
         ));
@@ -3239,10 +3632,10 @@ impl DeleteScheduledActionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3265,12 +3658,18 @@ pub mod delete_tags_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
+        /// Appends an item to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>One or more tags.</p>
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
             let mut v = self.tags.unwrap_or_default();
             v.push(input.into());
             self.tags = Some(v);
             self
         }
+        /// <p>One or more tags.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -3281,8 +3680,10 @@ pub mod delete_tags_input {
         /// Consumes the builder and constructs a [`DeleteTagsInput`](crate::input::DeleteTagsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DeleteTagsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DeleteTagsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DeleteTagsInput { tags: self.tags })
         }
     }
@@ -3298,16 +3699,16 @@ impl DeleteTagsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteTags,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteTagsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3315,7 +3716,7 @@ impl DeleteTagsInput {
         fn update_http_builder(
             input: &crate::input::DeleteTagsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3324,24 +3725,26 @@ impl DeleteTagsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteTagsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_delete_tags(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3364,25 +3767,27 @@ impl DeleteTagsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DeleteTags::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DeleteTags",
-                    "autoscaling",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DeleteTags::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DeleteTags",
+            "autoscaling",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3411,6 +3816,7 @@ pub mod delete_warm_pool_input {
             self.auto_scaling_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the Auto Scaling group.</p>
         pub fn set_auto_scaling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3426,6 +3832,10 @@ pub mod delete_warm_pool_input {
             self.force_delete = Some(input);
             self
         }
+        /// <p>Specifies that the warm pool is to be deleted along with all of its associated
+        /// instances, without waiting for all instances to be terminated. This parameter also
+        /// deletes any outstanding lifecycle actions associated with the warm pool
+        /// instances.</p>
         pub fn set_force_delete(mut self, input: std::option::Option<bool>) -> Self {
             self.force_delete = input;
             self
@@ -3435,7 +3845,7 @@ pub mod delete_warm_pool_input {
             self,
         ) -> std::result::Result<
             crate::input::DeleteWarmPoolInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DeleteWarmPoolInput {
                 auto_scaling_group_name: self.auto_scaling_group_name,
@@ -3455,16 +3865,16 @@ impl DeleteWarmPoolInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DeleteWarmPool,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DeleteWarmPoolInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3472,7 +3882,7 @@ impl DeleteWarmPoolInput {
         fn update_http_builder(
             input: &crate::input::DeleteWarmPoolInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3481,27 +3891,27 @@ impl DeleteWarmPoolInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DeleteWarmPoolInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_delete_warm_pool(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3524,15 +3934,15 @@ impl DeleteWarmPoolInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DeleteWarmPool::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DeleteWarmPool",
             "autoscaling",
         ));
@@ -3541,10 +3951,10 @@ impl DeleteWarmPoolInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3570,7 +3980,7 @@ pub mod describe_account_limits_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeAccountLimitsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeAccountLimitsInput {})
         }
@@ -3587,16 +3997,16 @@ impl DescribeAccountLimitsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeAccountLimits,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeAccountLimitsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3604,7 +4014,7 @@ impl DescribeAccountLimitsInput {
         fn update_http_builder(
             input: &crate::input::DescribeAccountLimitsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3613,27 +4023,29 @@ impl DescribeAccountLimitsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeAccountLimitsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_account_limits(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3656,15 +4068,15 @@ impl DescribeAccountLimitsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeAccountLimits::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeAccountLimits",
             "autoscaling",
         ));
@@ -3673,10 +4085,10 @@ impl DescribeAccountLimitsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3702,7 +4114,7 @@ pub mod describe_adjustment_types_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeAdjustmentTypesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeAdjustmentTypesInput {})
         }
@@ -3720,16 +4132,16 @@ impl DescribeAdjustmentTypesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeAdjustmentTypes,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeAdjustmentTypesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3737,7 +4149,7 @@ impl DescribeAdjustmentTypesInput {
         fn update_http_builder(
             input: &crate::input::DescribeAdjustmentTypesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3746,27 +4158,29 @@ impl DescribeAdjustmentTypesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeAdjustmentTypesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_adjustment_types(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3789,15 +4203,15 @@ impl DescribeAdjustmentTypesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeAdjustmentTypes::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeAdjustmentTypes",
             "autoscaling",
         ));
@@ -3806,10 +4220,10 @@ impl DescribeAdjustmentTypesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -3836,12 +4250,22 @@ pub mod describe_auto_scaling_groups_input {
         pub(crate) filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     }
     impl Builder {
+        /// Appends an item to `auto_scaling_group_names`.
+        ///
+        /// To override the contents of this collection use [`set_auto_scaling_group_names`](Self::set_auto_scaling_group_names).
+        ///
+        /// <p>The names of the Auto Scaling groups. By default, you can only specify up to 50 names. You can
+        /// optionally increase this limit using the <code>MaxRecords</code> parameter.</p>
+        /// <p>If you omit this parameter, all Auto Scaling groups are described.</p>
         pub fn auto_scaling_group_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.auto_scaling_group_names.unwrap_or_default();
             v.push(input.into());
             self.auto_scaling_group_names = Some(v);
             self
         }
+        /// <p>The names of the Auto Scaling groups. By default, you can only specify up to 50 names. You can
+        /// optionally increase this limit using the <code>MaxRecords</code> parameter.</p>
+        /// <p>If you omit this parameter, all Auto Scaling groups are described.</p>
         pub fn set_auto_scaling_group_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3855,6 +4279,8 @@ pub mod describe_auto_scaling_groups_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token for the next set of items to return. (You received this token from a
+        /// previous call.)</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -3865,16 +4291,26 @@ pub mod describe_auto_scaling_groups_input {
             self.max_records = Some(input);
             self
         }
+        /// <p>The maximum number of items to return with this call. The default value is
+        /// <code>50</code> and the maximum value is <code>100</code>.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.max_records = input;
             self
         }
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>One or more filters to limit the results based on specific tags.
+        /// </p>
         pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input.into());
             self.filters = Some(v);
             self
         }
+        /// <p>One or more filters to limit the results based on specific tags.
+        /// </p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -3887,7 +4323,7 @@ pub mod describe_auto_scaling_groups_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeAutoScalingGroupsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeAutoScalingGroupsInput {
                 auto_scaling_group_names: self.auto_scaling_group_names,
@@ -3910,16 +4346,16 @@ impl DescribeAutoScalingGroupsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeAutoScalingGroups,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeAutoScalingGroupsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -3927,7 +4363,7 @@ impl DescribeAutoScalingGroupsInput {
         fn update_http_builder(
             input: &crate::input::DescribeAutoScalingGroupsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -3936,27 +4372,29 @@ impl DescribeAutoScalingGroupsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeAutoScalingGroupsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_auto_scaling_groups(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -3979,15 +4417,15 @@ impl DescribeAutoScalingGroupsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeAutoScalingGroups::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeAutoScalingGroups",
             "autoscaling",
         ));
@@ -3996,10 +4434,10 @@ impl DescribeAutoScalingGroupsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4024,12 +4462,22 @@ pub mod describe_auto_scaling_instances_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `instance_ids`.
+        ///
+        /// To override the contents of this collection use [`set_instance_ids`](Self::set_instance_ids).
+        ///
+        /// <p>The IDs of the instances. If you omit this parameter, all Auto Scaling instances are
+        /// described. If you specify an ID that does not exist, it is ignored with no error.</p>
+        /// <p>Array Members: Maximum number of 50 items.</p>
         pub fn instance_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.instance_ids.unwrap_or_default();
             v.push(input.into());
             self.instance_ids = Some(v);
             self
         }
+        /// <p>The IDs of the instances. If you omit this parameter, all Auto Scaling instances are
+        /// described. If you specify an ID that does not exist, it is ignored with no error.</p>
+        /// <p>Array Members: Maximum number of 50 items.</p>
         pub fn set_instance_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4043,6 +4491,8 @@ pub mod describe_auto_scaling_instances_input {
             self.max_records = Some(input);
             self
         }
+        /// <p>The maximum number of items to return with this call. The default value is
+        /// <code>50</code> and the maximum value is <code>50</code>.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.max_records = input;
             self
@@ -4053,6 +4503,8 @@ pub mod describe_auto_scaling_instances_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token for the next set of items to return. (You received this token from a
+        /// previous call.)</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4062,7 +4514,7 @@ pub mod describe_auto_scaling_instances_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeAutoScalingInstancesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeAutoScalingInstancesInput {
                 instance_ids: self.instance_ids,
@@ -4084,16 +4536,16 @@ impl DescribeAutoScalingInstancesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeAutoScalingInstances,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeAutoScalingInstancesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4101,7 +4553,7 @@ impl DescribeAutoScalingInstancesInput {
         fn update_http_builder(
             input: &crate::input::DescribeAutoScalingInstancesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4110,25 +4562,25 @@ impl DescribeAutoScalingInstancesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeAutoScalingInstancesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_auto_scaling_instances(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_auto_scaling_instances(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4151,15 +4603,15 @@ impl DescribeAutoScalingInstancesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeAutoScalingInstances::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeAutoScalingInstances",
             "autoscaling",
         ));
@@ -4168,10 +4620,10 @@ impl DescribeAutoScalingInstancesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4197,7 +4649,7 @@ pub mod describe_auto_scaling_notification_types_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeAutoScalingNotificationTypesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeAutoScalingNotificationTypesInput {})
         }
@@ -4216,16 +4668,16 @@ impl DescribeAutoScalingNotificationTypesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeAutoScalingNotificationTypes,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeAutoScalingNotificationTypesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4233,7 +4685,7 @@ impl DescribeAutoScalingNotificationTypesInput {
         fn update_http_builder(
             input: &crate::input::DescribeAutoScalingNotificationTypesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4242,25 +4694,25 @@ impl DescribeAutoScalingNotificationTypesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeAutoScalingNotificationTypesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_auto_scaling_notification_types(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_auto_scaling_notification_types(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4283,15 +4735,15 @@ impl DescribeAutoScalingNotificationTypesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeAutoScalingNotificationTypes::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeAutoScalingNotificationTypes",
             "autoscaling",
         ));
@@ -4300,10 +4752,10 @@ impl DescribeAutoScalingNotificationTypesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4334,6 +4786,7 @@ pub mod describe_instance_refreshes_input {
             self.auto_scaling_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the Auto Scaling group.</p>
         pub fn set_auto_scaling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4341,12 +4794,18 @@ pub mod describe_instance_refreshes_input {
             self.auto_scaling_group_name = input;
             self
         }
+        /// Appends an item to `instance_refresh_ids`.
+        ///
+        /// To override the contents of this collection use [`set_instance_refresh_ids`](Self::set_instance_refresh_ids).
+        ///
+        /// <p>One or more instance refresh IDs.</p>
         pub fn instance_refresh_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.instance_refresh_ids.unwrap_or_default();
             v.push(input.into());
             self.instance_refresh_ids = Some(v);
             self
         }
+        /// <p>One or more instance refresh IDs.</p>
         pub fn set_instance_refresh_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4360,6 +4819,8 @@ pub mod describe_instance_refreshes_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token for the next set of items to return. (You received this token from a
+        /// previous call.)</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4370,6 +4831,8 @@ pub mod describe_instance_refreshes_input {
             self.max_records = Some(input);
             self
         }
+        /// <p>The maximum number of items to return with this call. The default value is
+        /// <code>50</code> and the maximum value is <code>100</code>.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.max_records = input;
             self
@@ -4379,7 +4842,7 @@ pub mod describe_instance_refreshes_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeInstanceRefreshesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeInstanceRefreshesInput {
                 auto_scaling_group_name: self.auto_scaling_group_name,
@@ -4402,16 +4865,16 @@ impl DescribeInstanceRefreshesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeInstanceRefreshes,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeInstanceRefreshesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4419,7 +4882,7 @@ impl DescribeInstanceRefreshesInput {
         fn update_http_builder(
             input: &crate::input::DescribeInstanceRefreshesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4428,27 +4891,29 @@ impl DescribeInstanceRefreshesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeInstanceRefreshesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_instance_refreshes(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4471,15 +4936,15 @@ impl DescribeInstanceRefreshesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeInstanceRefreshes::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeInstanceRefreshes",
             "autoscaling",
         ));
@@ -4488,10 +4953,10 @@ impl DescribeInstanceRefreshesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4517,12 +4982,22 @@ pub mod describe_launch_configurations_input {
         pub(crate) max_records: std::option::Option<i32>,
     }
     impl Builder {
+        /// Appends an item to `launch_configuration_names`.
+        ///
+        /// To override the contents of this collection use [`set_launch_configuration_names`](Self::set_launch_configuration_names).
+        ///
+        /// <p>The launch configuration names. If you omit this parameter, all launch configurations
+        /// are described.</p>
+        /// <p>Array Members: Maximum number of 50 items.</p>
         pub fn launch_configuration_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.launch_configuration_names.unwrap_or_default();
             v.push(input.into());
             self.launch_configuration_names = Some(v);
             self
         }
+        /// <p>The launch configuration names. If you omit this parameter, all launch configurations
+        /// are described.</p>
+        /// <p>Array Members: Maximum number of 50 items.</p>
         pub fn set_launch_configuration_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4536,6 +5011,8 @@ pub mod describe_launch_configurations_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token for the next set of items to return. (You received this token from a
+        /// previous call.)</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -4546,6 +5023,8 @@ pub mod describe_launch_configurations_input {
             self.max_records = Some(input);
             self
         }
+        /// <p>The maximum number of items to return with this call. The default value is
+        /// <code>50</code> and the maximum value is <code>100</code>.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.max_records = input;
             self
@@ -4555,7 +5034,7 @@ pub mod describe_launch_configurations_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeLaunchConfigurationsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeLaunchConfigurationsInput {
                 launch_configuration_names: self.launch_configuration_names,
@@ -4577,16 +5056,16 @@ impl DescribeLaunchConfigurationsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeLaunchConfigurations,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeLaunchConfigurationsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4594,7 +5073,7 @@ impl DescribeLaunchConfigurationsInput {
         fn update_http_builder(
             input: &crate::input::DescribeLaunchConfigurationsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4603,25 +5082,25 @@ impl DescribeLaunchConfigurationsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeLaunchConfigurationsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_launch_configurations(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_launch_configurations(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4644,15 +5123,15 @@ impl DescribeLaunchConfigurationsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeLaunchConfigurations::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeLaunchConfigurations",
             "autoscaling",
         ));
@@ -4661,10 +5140,10 @@ impl DescribeLaunchConfigurationsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4693,6 +5172,7 @@ pub mod describe_lifecycle_hooks_input {
             self.auto_scaling_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the Auto Scaling group.</p>
         pub fn set_auto_scaling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4700,12 +5180,20 @@ pub mod describe_lifecycle_hooks_input {
             self.auto_scaling_group_name = input;
             self
         }
+        /// Appends an item to `lifecycle_hook_names`.
+        ///
+        /// To override the contents of this collection use [`set_lifecycle_hook_names`](Self::set_lifecycle_hook_names).
+        ///
+        /// <p>The names of one or more lifecycle hooks. If you omit this parameter, all lifecycle
+        /// hooks are described.</p>
         pub fn lifecycle_hook_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.lifecycle_hook_names.unwrap_or_default();
             v.push(input.into());
             self.lifecycle_hook_names = Some(v);
             self
         }
+        /// <p>The names of one or more lifecycle hooks. If you omit this parameter, all lifecycle
+        /// hooks are described.</p>
         pub fn set_lifecycle_hook_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4718,7 +5206,7 @@ pub mod describe_lifecycle_hooks_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeLifecycleHooksInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeLifecycleHooksInput {
                 auto_scaling_group_name: self.auto_scaling_group_name,
@@ -4738,16 +5226,16 @@ impl DescribeLifecycleHooksInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeLifecycleHooks,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeLifecycleHooksInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4755,7 +5243,7 @@ impl DescribeLifecycleHooksInput {
         fn update_http_builder(
             input: &crate::input::DescribeLifecycleHooksInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4764,27 +5252,29 @@ impl DescribeLifecycleHooksInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeLifecycleHooksInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_lifecycle_hooks(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4807,15 +5297,15 @@ impl DescribeLifecycleHooksInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeLifecycleHooks::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeLifecycleHooks",
             "autoscaling",
         ));
@@ -4824,10 +5314,10 @@ impl DescribeLifecycleHooksInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4853,7 +5343,7 @@ pub mod describe_lifecycle_hook_types_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeLifecycleHookTypesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeLifecycleHookTypesInput {})
         }
@@ -4871,16 +5361,16 @@ impl DescribeLifecycleHookTypesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeLifecycleHookTypes,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeLifecycleHookTypesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -4888,7 +5378,7 @@ impl DescribeLifecycleHookTypesInput {
         fn update_http_builder(
             input: &crate::input::DescribeLifecycleHookTypesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -4897,25 +5387,25 @@ impl DescribeLifecycleHookTypesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeLifecycleHookTypesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_lifecycle_hook_types(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_lifecycle_hook_types(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -4938,15 +5428,15 @@ impl DescribeLifecycleHookTypesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeLifecycleHookTypes::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeLifecycleHookTypes",
             "autoscaling",
         ));
@@ -4955,10 +5445,10 @@ impl DescribeLifecycleHookTypesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -4988,6 +5478,7 @@ pub mod describe_load_balancers_input {
             self.auto_scaling_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the Auto Scaling group.</p>
         pub fn set_auto_scaling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5001,6 +5492,8 @@ pub mod describe_load_balancers_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token for the next set of items to return. (You received this token from a
+        /// previous call.)</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5011,6 +5504,8 @@ pub mod describe_load_balancers_input {
             self.max_records = Some(input);
             self
         }
+        /// <p>The maximum number of items to return with this call. The default value is
+        /// <code>100</code> and the maximum value is <code>100</code>.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.max_records = input;
             self
@@ -5020,7 +5515,7 @@ pub mod describe_load_balancers_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeLoadBalancersInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeLoadBalancersInput {
                 auto_scaling_group_name: self.auto_scaling_group_name,
@@ -5041,16 +5536,16 @@ impl DescribeLoadBalancersInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeLoadBalancers,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeLoadBalancersInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5058,7 +5553,7 @@ impl DescribeLoadBalancersInput {
         fn update_http_builder(
             input: &crate::input::DescribeLoadBalancersInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5067,27 +5562,29 @@ impl DescribeLoadBalancersInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeLoadBalancersInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_load_balancers(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5110,15 +5607,15 @@ impl DescribeLoadBalancersInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeLoadBalancers::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeLoadBalancers",
             "autoscaling",
         ));
@@ -5127,10 +5624,10 @@ impl DescribeLoadBalancersInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5160,6 +5657,7 @@ pub mod describe_load_balancer_target_groups_input {
             self.auto_scaling_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the Auto Scaling group.</p>
         pub fn set_auto_scaling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5173,6 +5671,8 @@ pub mod describe_load_balancer_target_groups_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token for the next set of items to return. (You received this token from a
+        /// previous call.)</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5183,6 +5683,8 @@ pub mod describe_load_balancer_target_groups_input {
             self.max_records = Some(input);
             self
         }
+        /// <p>The maximum number of items to return with this call. The default value is
+        /// <code>100</code> and the maximum value is <code>100</code>.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.max_records = input;
             self
@@ -5192,7 +5694,7 @@ pub mod describe_load_balancer_target_groups_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeLoadBalancerTargetGroupsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeLoadBalancerTargetGroupsInput {
                 auto_scaling_group_name: self.auto_scaling_group_name,
@@ -5214,16 +5716,16 @@ impl DescribeLoadBalancerTargetGroupsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeLoadBalancerTargetGroups,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeLoadBalancerTargetGroupsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5231,7 +5733,7 @@ impl DescribeLoadBalancerTargetGroupsInput {
         fn update_http_builder(
             input: &crate::input::DescribeLoadBalancerTargetGroupsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5240,25 +5742,25 @@ impl DescribeLoadBalancerTargetGroupsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeLoadBalancerTargetGroupsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_load_balancer_target_groups(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_load_balancer_target_groups(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5281,15 +5783,15 @@ impl DescribeLoadBalancerTargetGroupsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeLoadBalancerTargetGroups::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeLoadBalancerTargetGroups",
             "autoscaling",
         ));
@@ -5298,10 +5800,10 @@ impl DescribeLoadBalancerTargetGroupsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5327,7 +5829,7 @@ pub mod describe_metric_collection_types_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeMetricCollectionTypesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeMetricCollectionTypesInput {})
         }
@@ -5345,16 +5847,16 @@ impl DescribeMetricCollectionTypesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeMetricCollectionTypes,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeMetricCollectionTypesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5362,7 +5864,7 @@ impl DescribeMetricCollectionTypesInput {
         fn update_http_builder(
             input: &crate::input::DescribeMetricCollectionTypesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5371,25 +5873,25 @@ impl DescribeMetricCollectionTypesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeMetricCollectionTypesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_metric_collection_types(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_metric_collection_types(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5412,15 +5914,15 @@ impl DescribeMetricCollectionTypesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeMetricCollectionTypes::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeMetricCollectionTypes",
             "autoscaling",
         ));
@@ -5429,10 +5931,10 @@ impl DescribeMetricCollectionTypesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5458,12 +5960,18 @@ pub mod describe_notification_configurations_input {
         pub(crate) max_records: std::option::Option<i32>,
     }
     impl Builder {
+        /// Appends an item to `auto_scaling_group_names`.
+        ///
+        /// To override the contents of this collection use [`set_auto_scaling_group_names`](Self::set_auto_scaling_group_names).
+        ///
+        /// <p>The name of the Auto Scaling group.</p>
         pub fn auto_scaling_group_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.auto_scaling_group_names.unwrap_or_default();
             v.push(input.into());
             self.auto_scaling_group_names = Some(v);
             self
         }
+        /// <p>The name of the Auto Scaling group.</p>
         pub fn set_auto_scaling_group_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5477,6 +5985,8 @@ pub mod describe_notification_configurations_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token for the next set of items to return. (You received this token from a
+        /// previous call.)</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5487,6 +5997,8 @@ pub mod describe_notification_configurations_input {
             self.max_records = Some(input);
             self
         }
+        /// <p>The maximum number of items to return with this call. The default value is
+        /// <code>50</code> and the maximum value is <code>100</code>.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.max_records = input;
             self
@@ -5496,7 +6008,7 @@ pub mod describe_notification_configurations_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeNotificationConfigurationsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeNotificationConfigurationsInput {
                 auto_scaling_group_names: self.auto_scaling_group_names,
@@ -5518,16 +6030,16 @@ impl DescribeNotificationConfigurationsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeNotificationConfigurations,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeNotificationConfigurationsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5535,7 +6047,7 @@ impl DescribeNotificationConfigurationsInput {
         fn update_http_builder(
             input: &crate::input::DescribeNotificationConfigurationsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5544,25 +6056,25 @@ impl DescribeNotificationConfigurationsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeNotificationConfigurationsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_notification_configurations(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_notification_configurations(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5585,15 +6097,15 @@ impl DescribeNotificationConfigurationsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeNotificationConfigurations::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeNotificationConfigurations",
             "autoscaling",
         ));
@@ -5602,10 +6114,10 @@ impl DescribeNotificationConfigurationsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5637,6 +6149,7 @@ pub mod describe_policies_input {
             self.auto_scaling_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the Auto Scaling group.</p>
         pub fn set_auto_scaling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5644,12 +6157,24 @@ pub mod describe_policies_input {
             self.auto_scaling_group_name = input;
             self
         }
+        /// Appends an item to `policy_names`.
+        ///
+        /// To override the contents of this collection use [`set_policy_names`](Self::set_policy_names).
+        ///
+        /// <p>The names of one or more policies. If you omit this parameter, all policies are
+        /// described. If a group name is provided, the results are limited to that group. If you
+        /// specify an unknown policy name, it is ignored with no error.</p>
+        /// <p>Array Members: Maximum number of 50 items.</p>
         pub fn policy_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.policy_names.unwrap_or_default();
             v.push(input.into());
             self.policy_names = Some(v);
             self
         }
+        /// <p>The names of one or more policies. If you omit this parameter, all policies are
+        /// described. If a group name is provided, the results are limited to that group. If you
+        /// specify an unknown policy name, it is ignored with no error.</p>
+        /// <p>Array Members: Maximum number of 50 items.</p>
         pub fn set_policy_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5657,12 +6182,22 @@ pub mod describe_policies_input {
             self.policy_names = input;
             self
         }
+        /// Appends an item to `policy_types`.
+        ///
+        /// To override the contents of this collection use [`set_policy_types`](Self::set_policy_types).
+        ///
+        /// <p>One or more policy types. The valid values are <code>SimpleScaling</code>,
+        /// <code>StepScaling</code>, <code>TargetTrackingScaling</code>, and
+        /// <code>PredictiveScaling</code>.</p>
         pub fn policy_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.policy_types.unwrap_or_default();
             v.push(input.into());
             self.policy_types = Some(v);
             self
         }
+        /// <p>One or more policy types. The valid values are <code>SimpleScaling</code>,
+        /// <code>StepScaling</code>, <code>TargetTrackingScaling</code>, and
+        /// <code>PredictiveScaling</code>.</p>
         pub fn set_policy_types(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5676,6 +6211,8 @@ pub mod describe_policies_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token for the next set of items to return. (You received this token from a
+        /// previous call.)</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5686,6 +6223,8 @@ pub mod describe_policies_input {
             self.max_records = Some(input);
             self
         }
+        /// <p>The maximum number of items to be returned with each call. The default value is
+        /// <code>50</code> and the maximum value is <code>100</code>.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.max_records = input;
             self
@@ -5695,7 +6234,7 @@ pub mod describe_policies_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribePoliciesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribePoliciesInput {
                 auto_scaling_group_name: self.auto_scaling_group_name,
@@ -5718,16 +6257,16 @@ impl DescribePoliciesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribePolicies,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribePoliciesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5735,7 +6274,7 @@ impl DescribePoliciesInput {
         fn update_http_builder(
             input: &crate::input::DescribePoliciesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5744,27 +6283,27 @@ impl DescribePoliciesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribePoliciesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_policies(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5787,15 +6326,15 @@ impl DescribePoliciesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribePolicies::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribePolicies",
             "autoscaling",
         ));
@@ -5804,10 +6343,10 @@ impl DescribePoliciesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -5834,12 +6373,26 @@ pub mod describe_scaling_activities_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `activity_ids`.
+        ///
+        /// To override the contents of this collection use [`set_activity_ids`](Self::set_activity_ids).
+        ///
+        /// <p>The activity IDs of the desired scaling activities. If you omit this parameter, all
+        /// activities for the past six weeks are described. If unknown activities are requested,
+        /// they are ignored with no error. If you specify an Auto Scaling group, the results are limited to
+        /// that group.</p>
+        /// <p>Array Members: Maximum number of 50 IDs.</p>
         pub fn activity_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.activity_ids.unwrap_or_default();
             v.push(input.into());
             self.activity_ids = Some(v);
             self
         }
+        /// <p>The activity IDs of the desired scaling activities. If you omit this parameter, all
+        /// activities for the past six weeks are described. If unknown activities are requested,
+        /// they are ignored with no error. If you specify an Auto Scaling group, the results are limited to
+        /// that group.</p>
+        /// <p>Array Members: Maximum number of 50 IDs.</p>
         pub fn set_activity_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5852,6 +6405,7 @@ pub mod describe_scaling_activities_input {
             self.auto_scaling_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the Auto Scaling group.</p>
         pub fn set_auto_scaling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5864,6 +6418,7 @@ pub mod describe_scaling_activities_input {
             self.include_deleted_groups = Some(input);
             self
         }
+        /// <p>Indicates whether to include scaling activity from deleted Auto Scaling groups.</p>
         pub fn set_include_deleted_groups(mut self, input: std::option::Option<bool>) -> Self {
             self.include_deleted_groups = input;
             self
@@ -5874,6 +6429,8 @@ pub mod describe_scaling_activities_input {
             self.max_records = Some(input);
             self
         }
+        /// <p>The maximum number of items to return with this call. The default value is
+        /// <code>100</code> and the maximum value is <code>100</code>.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.max_records = input;
             self
@@ -5884,6 +6441,8 @@ pub mod describe_scaling_activities_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token for the next set of items to return. (You received this token from a
+        /// previous call.)</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -5893,7 +6452,7 @@ pub mod describe_scaling_activities_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeScalingActivitiesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeScalingActivitiesInput {
                 activity_ids: self.activity_ids,
@@ -5917,16 +6476,16 @@ impl DescribeScalingActivitiesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeScalingActivities,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeScalingActivitiesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -5934,7 +6493,7 @@ impl DescribeScalingActivitiesInput {
         fn update_http_builder(
             input: &crate::input::DescribeScalingActivitiesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -5943,27 +6502,29 @@ impl DescribeScalingActivitiesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeScalingActivitiesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_scaling_activities(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -5986,15 +6547,15 @@ impl DescribeScalingActivitiesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeScalingActivities::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeScalingActivities",
             "autoscaling",
         ));
@@ -6003,10 +6564,10 @@ impl DescribeScalingActivitiesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6032,7 +6593,7 @@ pub mod describe_scaling_process_types_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeScalingProcessTypesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeScalingProcessTypesInput {})
         }
@@ -6050,16 +6611,16 @@ impl DescribeScalingProcessTypesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeScalingProcessTypes,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeScalingProcessTypesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6067,7 +6628,7 @@ impl DescribeScalingProcessTypesInput {
         fn update_http_builder(
             input: &crate::input::DescribeScalingProcessTypesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6076,25 +6637,25 @@ impl DescribeScalingProcessTypesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeScalingProcessTypesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_scaling_process_types(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_scaling_process_types(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6117,15 +6678,15 @@ impl DescribeScalingProcessTypesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeScalingProcessTypes::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeScalingProcessTypes",
             "autoscaling",
         ));
@@ -6134,10 +6695,10 @@ impl DescribeScalingProcessTypesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6159,8 +6720,8 @@ pub mod describe_scheduled_actions_input {
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
         pub(crate) scheduled_action_names: std::option::Option<std::vec::Vec<std::string::String>>,
-        pub(crate) start_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_records: std::option::Option<i32>,
     }
@@ -6170,6 +6731,7 @@ pub mod describe_scheduled_actions_input {
             self.auto_scaling_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the Auto Scaling group.</p>
         pub fn set_auto_scaling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6177,12 +6739,24 @@ pub mod describe_scheduled_actions_input {
             self.auto_scaling_group_name = input;
             self
         }
+        /// Appends an item to `scheduled_action_names`.
+        ///
+        /// To override the contents of this collection use [`set_scheduled_action_names`](Self::set_scheduled_action_names).
+        ///
+        /// <p>The names of one or more scheduled actions. If you omit this parameter, all scheduled
+        /// actions are described. If you specify an unknown scheduled action, it is ignored with no
+        /// error.</p>
+        /// <p>Array Members: Maximum number of 50 actions.</p>
         pub fn scheduled_action_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.scheduled_action_names.unwrap_or_default();
             v.push(input.into());
             self.scheduled_action_names = Some(v);
             self
         }
+        /// <p>The names of one or more scheduled actions. If you omit this parameter, all scheduled
+        /// actions are described. If you specify an unknown scheduled action, it is ignored with no
+        /// error.</p>
+        /// <p>Array Members: Maximum number of 50 actions.</p>
         pub fn set_scheduled_action_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6192,21 +6766,31 @@ pub mod describe_scheduled_actions_input {
         }
         /// <p>The earliest scheduled start time to return. If scheduled action names are provided,
         /// this parameter is ignored.</p>
-        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The earliest scheduled start time to return. If scheduled action names are provided,
+        /// this parameter is ignored.</p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The latest scheduled start time to return. If scheduled action names are provided,
         /// this parameter is ignored.</p>
-        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The latest scheduled start time to return. If scheduled action names are provided,
+        /// this parameter is ignored.</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.end_time = input;
             self
         }
@@ -6216,6 +6800,8 @@ pub mod describe_scheduled_actions_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token for the next set of items to return. (You received this token from a
+        /// previous call.)</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6226,6 +6812,8 @@ pub mod describe_scheduled_actions_input {
             self.max_records = Some(input);
             self
         }
+        /// <p>The maximum number of items to return with this call. The default value is
+        /// <code>50</code> and the maximum value is <code>100</code>.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.max_records = input;
             self
@@ -6235,7 +6823,7 @@ pub mod describe_scheduled_actions_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeScheduledActionsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeScheduledActionsInput {
                 auto_scaling_group_name: self.auto_scaling_group_name,
@@ -6260,16 +6848,16 @@ impl DescribeScheduledActionsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeScheduledActions,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeScheduledActionsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6277,7 +6865,7 @@ impl DescribeScheduledActionsInput {
         fn update_http_builder(
             input: &crate::input::DescribeScheduledActionsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6286,27 +6874,29 @@ impl DescribeScheduledActionsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeScheduledActionsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_scheduled_actions(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6329,15 +6919,15 @@ impl DescribeScheduledActionsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeScheduledActions::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeScheduledActions",
             "autoscaling",
         ));
@@ -6346,10 +6936,10 @@ impl DescribeScheduledActionsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6374,12 +6964,20 @@ pub mod describe_tags_input {
         pub(crate) max_records: std::option::Option<i32>,
     }
     impl Builder {
+        /// Appends an item to `filters`.
+        ///
+        /// To override the contents of this collection use [`set_filters`](Self::set_filters).
+        ///
+        /// <p>One or more filters to scope the tags to return. The maximum number of filters per
+        /// filter type (for example, <code>auto-scaling-group</code>) is 1000.</p>
         pub fn filters(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filters.unwrap_or_default();
             v.push(input.into());
             self.filters = Some(v);
             self
         }
+        /// <p>One or more filters to scope the tags to return. The maximum number of filters per
+        /// filter type (for example, <code>auto-scaling-group</code>) is 1000.</p>
         pub fn set_filters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -6393,6 +6991,8 @@ pub mod describe_tags_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token for the next set of items to return. (You received this token from a
+        /// previous call.)</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6403,6 +7003,8 @@ pub mod describe_tags_input {
             self.max_records = Some(input);
             self
         }
+        /// <p>The maximum number of items to return with this call. The default value is
+        /// <code>50</code> and the maximum value is <code>100</code>.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.max_records = input;
             self
@@ -6410,8 +7012,10 @@ pub mod describe_tags_input {
         /// Consumes the builder and constructs a [`DescribeTagsInput`](crate::input::DescribeTagsInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::DescribeTagsInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::DescribeTagsInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::DescribeTagsInput {
                 filters: self.filters,
                 next_token: self.next_token,
@@ -6431,16 +7035,16 @@ impl DescribeTagsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeTags,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeTagsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6448,7 +7052,7 @@ impl DescribeTagsInput {
         fn update_http_builder(
             input: &crate::input::DescribeTagsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6457,26 +7061,26 @@ impl DescribeTagsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeTagsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_describe_tags(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6499,25 +7103,27 @@ impl DescribeTagsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::DescribeTags::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "DescribeTags",
-                    "autoscaling",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::DescribeTags::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DescribeTags",
+            "autoscaling",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6543,7 +7149,7 @@ pub mod describe_termination_policy_types_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeTerminationPolicyTypesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeTerminationPolicyTypesInput {})
         }
@@ -6561,16 +7167,16 @@ impl DescribeTerminationPolicyTypesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeTerminationPolicyTypes,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeTerminationPolicyTypesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6578,7 +7184,7 @@ impl DescribeTerminationPolicyTypesInput {
         fn update_http_builder(
             input: &crate::input::DescribeTerminationPolicyTypesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6587,25 +7193,25 @@ impl DescribeTerminationPolicyTypesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeTerminationPolicyTypesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_describe_termination_policy_types(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_describe_termination_policy_types(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6628,15 +7234,15 @@ impl DescribeTerminationPolicyTypesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeTerminationPolicyTypes::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeTerminationPolicyTypes",
             "autoscaling",
         ));
@@ -6645,10 +7251,10 @@ impl DescribeTerminationPolicyTypesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6678,6 +7284,7 @@ pub mod describe_warm_pool_input {
             self.auto_scaling_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the Auto Scaling group.</p>
         pub fn set_auto_scaling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6691,6 +7298,8 @@ pub mod describe_warm_pool_input {
             self.max_records = Some(input);
             self
         }
+        /// <p>The maximum number of instances to return with this call. The maximum value is
+        /// <code>50</code>.</p>
         pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
             self.max_records = input;
             self
@@ -6701,6 +7310,8 @@ pub mod describe_warm_pool_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token for the next set of instances to return. (You received this token from a
+        /// previous call.)</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -6710,7 +7321,7 @@ pub mod describe_warm_pool_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeWarmPoolInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeWarmPoolInput {
                 auto_scaling_group_name: self.auto_scaling_group_name,
@@ -6731,16 +7342,16 @@ impl DescribeWarmPoolInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeWarmPool,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeWarmPoolInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6748,7 +7359,7 @@ impl DescribeWarmPoolInput {
         fn update_http_builder(
             input: &crate::input::DescribeWarmPoolInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6757,27 +7368,27 @@ impl DescribeWarmPoolInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeWarmPoolInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_describe_warm_pool(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6800,15 +7411,15 @@ impl DescribeWarmPoolInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeWarmPool::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeWarmPool",
             "autoscaling",
         ));
@@ -6817,10 +7428,10 @@ impl DescribeWarmPoolInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -6845,12 +7456,18 @@ pub mod detach_instances_input {
         pub(crate) should_decrement_desired_capacity: std::option::Option<bool>,
     }
     impl Builder {
+        /// Appends an item to `instance_ids`.
+        ///
+        /// To override the contents of this collection use [`set_instance_ids`](Self::set_instance_ids).
+        ///
+        /// <p>The IDs of the instances. You can specify up to 20 instances.</p>
         pub fn instance_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.instance_ids.unwrap_or_default();
             v.push(input.into());
             self.instance_ids = Some(v);
             self
         }
+        /// <p>The IDs of the instances. You can specify up to 20 instances.</p>
         pub fn set_instance_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -6863,6 +7480,7 @@ pub mod detach_instances_input {
             self.auto_scaling_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the Auto Scaling group.</p>
         pub fn set_auto_scaling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6876,6 +7494,8 @@ pub mod detach_instances_input {
             self.should_decrement_desired_capacity = Some(input);
             self
         }
+        /// <p>Indicates whether the Auto Scaling group decrements the desired capacity value by the number
+        /// of instances detached.</p>
         pub fn set_should_decrement_desired_capacity(
             mut self,
             input: std::option::Option<bool>,
@@ -6888,7 +7508,7 @@ pub mod detach_instances_input {
             self,
         ) -> std::result::Result<
             crate::input::DetachInstancesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DetachInstancesInput {
                 instance_ids: self.instance_ids,
@@ -6909,16 +7529,16 @@ impl DetachInstancesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DetachInstances,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DetachInstancesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -6926,7 +7546,7 @@ impl DetachInstancesInput {
         fn update_http_builder(
             input: &crate::input::DetachInstancesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -6935,27 +7555,27 @@ impl DetachInstancesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DetachInstancesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_detach_instances(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -6978,15 +7598,15 @@ impl DetachInstancesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DetachInstances::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DetachInstances",
             "autoscaling",
         ));
@@ -6995,10 +7615,10 @@ impl DetachInstancesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7027,6 +7647,7 @@ pub mod detach_load_balancers_input {
             self.auto_scaling_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the Auto Scaling group.</p>
         pub fn set_auto_scaling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7034,12 +7655,18 @@ pub mod detach_load_balancers_input {
             self.auto_scaling_group_name = input;
             self
         }
+        /// Appends an item to `load_balancer_names`.
+        ///
+        /// To override the contents of this collection use [`set_load_balancer_names`](Self::set_load_balancer_names).
+        ///
+        /// <p>The names of the load balancers. You can specify up to 10 load balancers.</p>
         pub fn load_balancer_names(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.load_balancer_names.unwrap_or_default();
             v.push(input.into());
             self.load_balancer_names = Some(v);
             self
         }
+        /// <p>The names of the load balancers. You can specify up to 10 load balancers.</p>
         pub fn set_load_balancer_names(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7052,7 +7679,7 @@ pub mod detach_load_balancers_input {
             self,
         ) -> std::result::Result<
             crate::input::DetachLoadBalancersInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DetachLoadBalancersInput {
                 auto_scaling_group_name: self.auto_scaling_group_name,
@@ -7072,16 +7699,16 @@ impl DetachLoadBalancersInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DetachLoadBalancers,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DetachLoadBalancersInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7089,7 +7716,7 @@ impl DetachLoadBalancersInput {
         fn update_http_builder(
             input: &crate::input::DetachLoadBalancersInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7098,27 +7725,27 @@ impl DetachLoadBalancersInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DetachLoadBalancersInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_detach_load_balancers(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7141,15 +7768,15 @@ impl DetachLoadBalancersInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DetachLoadBalancers::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DetachLoadBalancers",
             "autoscaling",
         ));
@@ -7158,10 +7785,10 @@ impl DetachLoadBalancersInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7190,6 +7817,7 @@ pub mod detach_load_balancer_target_groups_input {
             self.auto_scaling_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the Auto Scaling group.</p>
         pub fn set_auto_scaling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7197,12 +7825,20 @@ pub mod detach_load_balancer_target_groups_input {
             self.auto_scaling_group_name = input;
             self
         }
+        /// Appends an item to `target_group_ar_ns`.
+        ///
+        /// To override the contents of this collection use [`set_target_group_ar_ns`](Self::set_target_group_ar_ns).
+        ///
+        /// <p>The Amazon Resource Names (ARN) of the target groups. You can specify up to 10 target
+        /// groups.</p>
         pub fn target_group_ar_ns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.target_group_ar_ns.unwrap_or_default();
             v.push(input.into());
             self.target_group_ar_ns = Some(v);
             self
         }
+        /// <p>The Amazon Resource Names (ARN) of the target groups. You can specify up to 10 target
+        /// groups.</p>
         pub fn set_target_group_ar_ns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7215,7 +7851,7 @@ pub mod detach_load_balancer_target_groups_input {
             self,
         ) -> std::result::Result<
             crate::input::DetachLoadBalancerTargetGroupsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DetachLoadBalancerTargetGroupsInput {
                 auto_scaling_group_name: self.auto_scaling_group_name,
@@ -7236,16 +7872,16 @@ impl DetachLoadBalancerTargetGroupsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DetachLoadBalancerTargetGroups,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DetachLoadBalancerTargetGroupsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7253,7 +7889,7 @@ impl DetachLoadBalancerTargetGroupsInput {
         fn update_http_builder(
             input: &crate::input::DetachLoadBalancerTargetGroupsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7262,25 +7898,25 @@ impl DetachLoadBalancerTargetGroupsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DetachLoadBalancerTargetGroupsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_detach_load_balancer_target_groups(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_detach_load_balancer_target_groups(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7303,15 +7939,15 @@ impl DetachLoadBalancerTargetGroupsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DetachLoadBalancerTargetGroups::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DetachLoadBalancerTargetGroups",
             "autoscaling",
         ));
@@ -7320,10 +7956,10 @@ impl DetachLoadBalancerTargetGroupsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7352,6 +7988,7 @@ pub mod disable_metrics_collection_input {
             self.auto_scaling_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the Auto Scaling group.</p>
         pub fn set_auto_scaling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7359,12 +7996,224 @@ pub mod disable_metrics_collection_input {
             self.auto_scaling_group_name = input;
             self
         }
+        /// Appends an item to `metrics`.
+        ///
+        /// To override the contents of this collection use [`set_metrics`](Self::set_metrics).
+        ///
+        /// <p>Specifies one or more of the following metrics:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>GroupMinSize</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupMaxSize</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupDesiredCapacity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupInServiceInstances</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupPendingInstances</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupStandbyInstances</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupTerminatingInstances</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupTotalInstances</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupInServiceCapacity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupPendingCapacity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupStandbyCapacity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupTerminatingCapacity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupTotalCapacity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>WarmPoolDesiredCapacity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>WarmPoolWarmedCapacity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>WarmPoolPendingCapacity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>WarmPoolTerminatingCapacity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>WarmPoolTotalCapacity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupAndWarmPoolDesiredCapacity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupAndWarmPoolTotalCapacity</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>If you omit this parameter, all metrics are disabled. </p>
         pub fn metrics(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.metrics.unwrap_or_default();
             v.push(input.into());
             self.metrics = Some(v);
             self
         }
+        /// <p>Specifies one or more of the following metrics:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>GroupMinSize</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupMaxSize</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupDesiredCapacity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupInServiceInstances</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupPendingInstances</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupStandbyInstances</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupTerminatingInstances</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupTotalInstances</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupInServiceCapacity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupPendingCapacity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupStandbyCapacity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupTerminatingCapacity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupTotalCapacity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>WarmPoolDesiredCapacity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>WarmPoolWarmedCapacity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>WarmPoolPendingCapacity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>WarmPoolTerminatingCapacity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>WarmPoolTotalCapacity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupAndWarmPoolDesiredCapacity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupAndWarmPoolTotalCapacity</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>If you omit this parameter, all metrics are disabled. </p>
         pub fn set_metrics(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7377,7 +8226,7 @@ pub mod disable_metrics_collection_input {
             self,
         ) -> std::result::Result<
             crate::input::DisableMetricsCollectionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DisableMetricsCollectionInput {
                 auto_scaling_group_name: self.auto_scaling_group_name,
@@ -7398,16 +8247,16 @@ impl DisableMetricsCollectionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DisableMetricsCollection,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DisableMetricsCollectionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7415,7 +8264,7 @@ impl DisableMetricsCollectionInput {
         fn update_http_builder(
             input: &crate::input::DisableMetricsCollectionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7424,27 +8273,29 @@ impl DisableMetricsCollectionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DisableMetricsCollectionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_disable_metrics_collection(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7467,15 +8318,15 @@ impl DisableMetricsCollectionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DisableMetricsCollection::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DisableMetricsCollection",
             "autoscaling",
         ));
@@ -7484,10 +8335,10 @@ impl DisableMetricsCollectionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7517,6 +8368,7 @@ pub mod enable_metrics_collection_input {
             self.auto_scaling_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the Auto Scaling group.</p>
         pub fn set_auto_scaling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7524,12 +8376,238 @@ pub mod enable_metrics_collection_input {
             self.auto_scaling_group_name = input;
             self
         }
+        /// Appends an item to `metrics`.
+        ///
+        /// To override the contents of this collection use [`set_metrics`](Self::set_metrics).
+        ///
+        /// <p>Specifies which group-level metrics to start collecting. You can specify one or more
+        /// of the following metrics:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>GroupMinSize</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupMaxSize</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupDesiredCapacity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupInServiceInstances</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupPendingInstances</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupStandbyInstances</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupTerminatingInstances</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupTotalInstances</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>The instance weighting feature supports the following additional metrics: </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>GroupInServiceCapacity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupPendingCapacity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupStandbyCapacity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupTerminatingCapacity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupTotalCapacity</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>The warm pools feature supports the following additional metrics: </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>WarmPoolDesiredCapacity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>WarmPoolWarmedCapacity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>WarmPoolPendingCapacity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>WarmPoolTerminatingCapacity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>WarmPoolTotalCapacity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupAndWarmPoolDesiredCapacity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupAndWarmPoolTotalCapacity</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>If you omit this parameter, all metrics are enabled. </p>
         pub fn metrics(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.metrics.unwrap_or_default();
             v.push(input.into());
             self.metrics = Some(v);
             self
         }
+        /// <p>Specifies which group-level metrics to start collecting. You can specify one or more
+        /// of the following metrics:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>GroupMinSize</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupMaxSize</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupDesiredCapacity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupInServiceInstances</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupPendingInstances</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupStandbyInstances</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupTerminatingInstances</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupTotalInstances</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>The instance weighting feature supports the following additional metrics: </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>GroupInServiceCapacity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupPendingCapacity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupStandbyCapacity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupTerminatingCapacity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupTotalCapacity</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>The warm pools feature supports the following additional metrics: </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>WarmPoolDesiredCapacity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>WarmPoolWarmedCapacity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>WarmPoolPendingCapacity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>WarmPoolTerminatingCapacity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>WarmPoolTotalCapacity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupAndWarmPoolDesiredCapacity</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>GroupAndWarmPoolTotalCapacity</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>If you omit this parameter, all metrics are enabled. </p>
         pub fn set_metrics(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7543,6 +8621,8 @@ pub mod enable_metrics_collection_input {
             self.granularity = Some(input.into());
             self
         }
+        /// <p>The granularity to associate with the metrics to collect. The only valid value is
+        /// <code>1Minute</code>.</p>
         pub fn set_granularity(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.granularity = input;
             self
@@ -7552,7 +8632,7 @@ pub mod enable_metrics_collection_input {
             self,
         ) -> std::result::Result<
             crate::input::EnableMetricsCollectionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::EnableMetricsCollectionInput {
                 auto_scaling_group_name: self.auto_scaling_group_name,
@@ -7574,16 +8654,16 @@ impl EnableMetricsCollectionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::EnableMetricsCollection,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::EnableMetricsCollectionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7591,7 +8671,7 @@ impl EnableMetricsCollectionInput {
         fn update_http_builder(
             input: &crate::input::EnableMetricsCollectionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7600,27 +8680,29 @@ impl EnableMetricsCollectionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::EnableMetricsCollectionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_enable_metrics_collection(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7643,15 +8725,15 @@ impl EnableMetricsCollectionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::EnableMetricsCollection::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "EnableMetricsCollection",
             "autoscaling",
         ));
@@ -7660,10 +8742,10 @@ impl EnableMetricsCollectionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7688,12 +8770,18 @@ pub mod enter_standby_input {
         pub(crate) should_decrement_desired_capacity: std::option::Option<bool>,
     }
     impl Builder {
+        /// Appends an item to `instance_ids`.
+        ///
+        /// To override the contents of this collection use [`set_instance_ids`](Self::set_instance_ids).
+        ///
+        /// <p>The IDs of the instances. You can specify up to 20 instances.</p>
         pub fn instance_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.instance_ids.unwrap_or_default();
             v.push(input.into());
             self.instance_ids = Some(v);
             self
         }
+        /// <p>The IDs of the instances. You can specify up to 20 instances.</p>
         pub fn set_instance_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -7706,6 +8794,7 @@ pub mod enter_standby_input {
             self.auto_scaling_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the Auto Scaling group.</p>
         pub fn set_auto_scaling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7719,6 +8808,8 @@ pub mod enter_standby_input {
             self.should_decrement_desired_capacity = Some(input);
             self
         }
+        /// <p>Indicates whether to decrement the desired capacity of the Auto Scaling group by the number of
+        /// instances moved to <code>Standby</code> mode.</p>
         pub fn set_should_decrement_desired_capacity(
             mut self,
             input: std::option::Option<bool>,
@@ -7729,8 +8820,10 @@ pub mod enter_standby_input {
         /// Consumes the builder and constructs a [`EnterStandbyInput`](crate::input::EnterStandbyInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::EnterStandbyInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::EnterStandbyInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::EnterStandbyInput {
                 instance_ids: self.instance_ids,
                 auto_scaling_group_name: self.auto_scaling_group_name,
@@ -7750,16 +8843,16 @@ impl EnterStandbyInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::EnterStandby,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::EnterStandbyInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7767,7 +8860,7 @@ impl EnterStandbyInput {
         fn update_http_builder(
             input: &crate::input::EnterStandbyInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7776,26 +8869,26 @@ impl EnterStandbyInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::EnterStandbyInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_enter_standby(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -7818,25 +8911,27 @@ impl EnterStandbyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::EnterStandby::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "EnterStandby",
-                    "autoscaling",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::EnterStandby::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "EnterStandby",
+            "autoscaling",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -7868,6 +8963,7 @@ pub mod execute_policy_input {
             self.auto_scaling_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the Auto Scaling group.</p>
         pub fn set_auto_scaling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7880,6 +8976,7 @@ pub mod execute_policy_input {
             self.policy_name = Some(input.into());
             self
         }
+        /// <p>The name or ARN of the policy.</p>
         pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_name = input;
             self
@@ -7893,6 +8990,11 @@ pub mod execute_policy_input {
             self.honor_cooldown = Some(input);
             self
         }
+        /// <p>Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to complete before executing
+        /// the policy.</p>
+        /// <p>Valid only if the policy type is <code>SimpleScaling</code>. For more information, see
+        /// <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
+        /// cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn set_honor_cooldown(mut self, input: std::option::Option<bool>) -> Self {
             self.honor_cooldown = input;
             self
@@ -7910,6 +9012,15 @@ pub mod execute_policy_input {
             self.metric_value = Some(input);
             self
         }
+        /// <p>The metric value to compare to <code>BreachThreshold</code>. This enables you to
+        /// execute a policy of type <code>StepScaling</code> and determine which step adjustment to
+        /// use. For example, if the breach threshold is 50 and you want to use a step adjustment
+        /// with a lower bound of 0 and an upper bound of 10, you can set the metric value to
+        /// 59.</p>
+        /// <p>If you specify a metric value that doesn't correspond to a step adjustment for the
+        /// policy, the call returns an error.</p>
+        /// <p>Required if the policy type is <code>StepScaling</code> and not supported
+        /// otherwise.</p>
         pub fn set_metric_value(mut self, input: std::option::Option<f64>) -> Self {
             self.metric_value = input;
             self
@@ -7921,6 +9032,9 @@ pub mod execute_policy_input {
             self.breach_threshold = Some(input);
             self
         }
+        /// <p>The breach threshold for the alarm.</p>
+        /// <p>Required if the policy type is <code>StepScaling</code> and not supported
+        /// otherwise.</p>
         pub fn set_breach_threshold(mut self, input: std::option::Option<f64>) -> Self {
             self.breach_threshold = input;
             self
@@ -7928,8 +9042,10 @@ pub mod execute_policy_input {
         /// Consumes the builder and constructs a [`ExecutePolicyInput`](crate::input::ExecutePolicyInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ExecutePolicyInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ExecutePolicyInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ExecutePolicyInput {
                 auto_scaling_group_name: self.auto_scaling_group_name,
                 policy_name: self.policy_name,
@@ -7951,16 +9067,16 @@ impl ExecutePolicyInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ExecutePolicy,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ExecutePolicyInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -7968,7 +9084,7 @@ impl ExecutePolicyInput {
         fn update_http_builder(
             input: &crate::input::ExecutePolicyInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -7977,24 +9093,26 @@ impl ExecutePolicyInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ExecutePolicyInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_execute_policy(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8017,25 +9135,27 @@ impl ExecutePolicyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ExecutePolicy::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ExecutePolicy",
-                    "autoscaling",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ExecutePolicy::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ExecutePolicy",
+            "autoscaling",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8059,12 +9179,18 @@ pub mod exit_standby_input {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `instance_ids`.
+        ///
+        /// To override the contents of this collection use [`set_instance_ids`](Self::set_instance_ids).
+        ///
+        /// <p>The IDs of the instances. You can specify up to 20 instances.</p>
         pub fn instance_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.instance_ids.unwrap_or_default();
             v.push(input.into());
             self.instance_ids = Some(v);
             self
         }
+        /// <p>The IDs of the instances. You can specify up to 20 instances.</p>
         pub fn set_instance_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8077,6 +9203,7 @@ pub mod exit_standby_input {
             self.auto_scaling_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the Auto Scaling group.</p>
         pub fn set_auto_scaling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8087,8 +9214,10 @@ pub mod exit_standby_input {
         /// Consumes the builder and constructs a [`ExitStandbyInput`](crate::input::ExitStandbyInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ExitStandbyInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ExitStandbyInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ExitStandbyInput {
                 instance_ids: self.instance_ids,
                 auto_scaling_group_name: self.auto_scaling_group_name,
@@ -8107,16 +9236,16 @@ impl ExitStandbyInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ExitStandby,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ExitStandbyInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8124,7 +9253,7 @@ impl ExitStandbyInput {
         fn update_http_builder(
             input: &crate::input::ExitStandbyInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8133,24 +9262,26 @@ impl ExitStandbyInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ExitStandbyInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_exit_standby(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8173,25 +9304,27 @@ impl ExitStandbyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ExitStandby::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ExitStandby",
-                    "autoscaling",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ExitStandby::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ExitStandby",
+            "autoscaling",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8213,8 +9346,8 @@ pub mod get_predictive_scaling_forecast_input {
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
         pub(crate) policy_name: std::option::Option<std::string::String>,
-        pub(crate) start_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The name of the Auto Scaling group.</p>
@@ -8222,6 +9355,7 @@ pub mod get_predictive_scaling_forecast_input {
             self.auto_scaling_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the Auto Scaling group.</p>
         pub fn set_auto_scaling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8234,17 +9368,23 @@ pub mod get_predictive_scaling_forecast_input {
             self.policy_name = Some(input.into());
             self
         }
+        /// <p>The name of the policy.</p>
         pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_name = input;
             self
         }
         /// <p>The inclusive start time of the time range for the forecast data to get. At most, the
         /// date and time can be one year before the current date and time.</p>
-        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The inclusive start time of the time range for the forecast data to get. At most, the
+        /// date and time can be one year before the current date and time.</p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.start_time = input;
             self
         }
@@ -8253,11 +9393,19 @@ pub mod get_predictive_scaling_forecast_input {
         /// <p>Although this parameter can accept a date and time that is more than two days in the
         /// future, the availability of forecast data has limits. Amazon EC2 Auto Scaling only issues forecasts for
         /// periods of two days in advance.</p>
-        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The exclusive end time of the time range for the forecast data to get. The maximum
+        /// time duration between the start and end time is 30 days. </p>
+        /// <p>Although this parameter can accept a date and time that is more than two days in the
+        /// future, the availability of forecast data has limits. Amazon EC2 Auto Scaling only issues forecasts for
+        /// periods of two days in advance.</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.end_time = input;
             self
         }
@@ -8266,7 +9414,7 @@ pub mod get_predictive_scaling_forecast_input {
             self,
         ) -> std::result::Result<
             crate::input::GetPredictiveScalingForecastInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::GetPredictiveScalingForecastInput {
                 auto_scaling_group_name: self.auto_scaling_group_name,
@@ -8289,16 +9437,16 @@ impl GetPredictiveScalingForecastInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetPredictiveScalingForecast,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetPredictiveScalingForecastInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8306,7 +9454,7 @@ impl GetPredictiveScalingForecastInput {
         fn update_http_builder(
             input: &crate::input::GetPredictiveScalingForecastInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8315,25 +9463,25 @@ impl GetPredictiveScalingForecastInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetPredictiveScalingForecastInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_get_predictive_scaling_forecast(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_get_predictive_scaling_forecast(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8356,15 +9504,15 @@ impl GetPredictiveScalingForecastInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::GetPredictiveScalingForecast::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "GetPredictiveScalingForecast",
             "autoscaling",
         ));
@@ -8373,10 +9521,10 @@ impl GetPredictiveScalingForecastInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8411,6 +9559,7 @@ pub mod put_lifecycle_hook_input {
             self.lifecycle_hook_name = Some(input.into());
             self
         }
+        /// <p>The name of the lifecycle hook.</p>
         pub fn set_lifecycle_hook_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8423,6 +9572,7 @@ pub mod put_lifecycle_hook_input {
             self.auto_scaling_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the Auto Scaling group.</p>
         pub fn set_auto_scaling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8445,6 +9595,17 @@ pub mod put_lifecycle_hook_input {
             self.lifecycle_transition = Some(input.into());
             self
         }
+        /// <p>The instance state to which you want to attach the lifecycle hook. The valid values
+        /// are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>autoscaling:EC2_INSTANCE_LAUNCHING</p>
+        /// </li>
+        /// <li>
+        /// <p>autoscaling:EC2_INSTANCE_TERMINATING</p>
+        /// </li>
+        /// </ul>
+        /// <p>Required for new lifecycle hooks, but optional when updating existing hooks.</p>
         pub fn set_lifecycle_transition(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8459,6 +9620,9 @@ pub mod put_lifecycle_hook_input {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the specified
+        /// notification target, for example, an Amazon SNS topic or an Amazon SQS queue.</p>
+        /// <p>Required for new lifecycle hooks, but optional when updating existing hooks.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -8477,6 +9641,16 @@ pub mod put_lifecycle_hook_input {
             self.notification_target_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the notification target that Amazon EC2 Auto Scaling uses to notify you when an instance
+        /// is in the transition state for the lifecycle hook. This target can be either an SQS
+        /// queue or an SNS topic.</p>
+        /// <p>If you specify an empty string, this overrides the current ARN.</p>
+        /// <p>This operation uses the JSON format when sending notifications to an Amazon SQS queue,
+        /// and an email key-value pair format when sending notifications to an Amazon SNS
+        /// topic.</p>
+        /// <p>When you specify a notification target, Amazon EC2 Auto Scaling sends it a test message. Test
+        /// messages contain the following additional key-value pair: <code>"Event":
+        /// "autoscaling:TEST_NOTIFICATION"</code>.</p>
         pub fn set_notification_target_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8490,6 +9664,8 @@ pub mod put_lifecycle_hook_input {
             self.notification_metadata = Some(input.into());
             self
         }
+        /// <p>Additional information that you want to include any time Amazon EC2 Auto Scaling sends a message to
+        /// the notification target.</p>
         pub fn set_notification_metadata(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8507,6 +9683,12 @@ pub mod put_lifecycle_hook_input {
             self.heartbeat_timeout = Some(input);
             self
         }
+        /// <p>The maximum time, in seconds, that can elapse before the lifecycle hook times out. The
+        /// range is from <code>30</code> to <code>7200</code> seconds. The default value is
+        /// <code>3600</code> seconds (1 hour).</p>
+        /// <p>If the lifecycle hook times out, Amazon EC2 Auto Scaling performs the action that you specified in
+        /// the <code>DefaultResult</code> parameter. You can prevent the lifecycle hook from timing
+        /// out by calling the <a>RecordLifecycleActionHeartbeat</a> API.</p>
         pub fn set_heartbeat_timeout(mut self, input: std::option::Option<i32>) -> Self {
             self.heartbeat_timeout = input;
             self
@@ -8518,6 +9700,9 @@ pub mod put_lifecycle_hook_input {
             self.default_result = Some(input.into());
             self
         }
+        /// <p>Defines the action the Auto Scaling group should take when the lifecycle hook timeout elapses
+        /// or if an unexpected failure occurs. This parameter can be either <code>CONTINUE</code>
+        /// or <code>ABANDON</code>. The default value is <code>ABANDON</code>.</p>
         pub fn set_default_result(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8530,7 +9715,7 @@ pub mod put_lifecycle_hook_input {
             self,
         ) -> std::result::Result<
             crate::input::PutLifecycleHookInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutLifecycleHookInput {
                 lifecycle_hook_name: self.lifecycle_hook_name,
@@ -8556,16 +9741,16 @@ impl PutLifecycleHookInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::PutLifecycleHook,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::PutLifecycleHookInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8573,7 +9758,7 @@ impl PutLifecycleHookInput {
         fn update_http_builder(
             input: &crate::input::PutLifecycleHookInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8582,27 +9767,27 @@ impl PutLifecycleHookInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::PutLifecycleHookInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_put_lifecycle_hook(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8625,15 +9810,15 @@ impl PutLifecycleHookInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::PutLifecycleHook::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "PutLifecycleHook",
             "autoscaling",
         ));
@@ -8642,10 +9827,10 @@ impl PutLifecycleHookInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8675,6 +9860,7 @@ pub mod put_notification_configuration_input {
             self.auto_scaling_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the Auto Scaling group.</p>
         pub fn set_auto_scaling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8688,16 +9874,26 @@ pub mod put_notification_configuration_input {
             self.topic_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (Amazon SNS)
+        /// topic.</p>
         pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.topic_arn = input;
             self
         }
+        /// Appends an item to `notification_types`.
+        ///
+        /// To override the contents of this collection use [`set_notification_types`](Self::set_notification_types).
+        ///
+        /// <p>The type of event that causes the notification to be sent. To query the notification
+        /// types supported by Amazon EC2 Auto Scaling, call the <a>DescribeAutoScalingNotificationTypes</a> API.</p>
         pub fn notification_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.notification_types.unwrap_or_default();
             v.push(input.into());
             self.notification_types = Some(v);
             self
         }
+        /// <p>The type of event that causes the notification to be sent. To query the notification
+        /// types supported by Amazon EC2 Auto Scaling, call the <a>DescribeAutoScalingNotificationTypes</a> API.</p>
         pub fn set_notification_types(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -8710,7 +9906,7 @@ pub mod put_notification_configuration_input {
             self,
         ) -> std::result::Result<
             crate::input::PutNotificationConfigurationInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutNotificationConfigurationInput {
                 auto_scaling_group_name: self.auto_scaling_group_name,
@@ -8732,16 +9928,16 @@ impl PutNotificationConfigurationInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::PutNotificationConfiguration,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::PutNotificationConfigurationInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -8749,7 +9945,7 @@ impl PutNotificationConfigurationInput {
         fn update_http_builder(
             input: &crate::input::PutNotificationConfigurationInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -8758,25 +9954,25 @@ impl PutNotificationConfigurationInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::PutNotificationConfigurationInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_notification_configuration(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_put_notification_configuration(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -8799,15 +9995,15 @@ impl PutNotificationConfigurationInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::PutNotificationConfiguration::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "PutNotificationConfiguration",
             "autoscaling",
         ));
@@ -8816,10 +10012,10 @@ impl PutNotificationConfigurationInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -8863,6 +10059,7 @@ pub mod put_scaling_policy_input {
             self.auto_scaling_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the Auto Scaling group.</p>
         pub fn set_auto_scaling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8875,6 +10072,7 @@ pub mod put_scaling_policy_input {
             self.policy_name = Some(input.into());
             self
         }
+        /// <p>The name of the policy.</p>
         pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_name = input;
             self
@@ -8905,6 +10103,28 @@ pub mod put_scaling_policy_input {
             self.policy_type = Some(input.into());
             self
         }
+        /// <p>One of the following policy types: </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>TargetTrackingScaling</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>StepScaling</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SimpleScaling</code> (default)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PredictiveScaling</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_policy_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_type = input;
             self
@@ -8918,6 +10138,11 @@ pub mod put_scaling_policy_input {
             self.adjustment_type = Some(input.into());
             self
         }
+        /// <p>Specifies how the scaling adjustment is interpreted (for example, an absolute number
+        /// or a percentage). The valid values are <code>ChangeInCapacity</code>,
+        /// <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
+        /// <p>Required if the policy type is <code>StepScaling</code> or <code>SimpleScaling</code>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment">Scaling adjustment types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn set_adjustment_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8931,6 +10156,8 @@ pub mod put_scaling_policy_input {
             self.min_adjustment_step = Some(input);
             self
         }
+        /// <p>Available for backward compatibility. Use <code>MinAdjustmentMagnitude</code>
+        /// instead.</p>
         pub fn set_min_adjustment_step(mut self, input: std::option::Option<i32>) -> Self {
             self.min_adjustment_step = input;
             self
@@ -8954,6 +10181,21 @@ pub mod put_scaling_policy_input {
             self.min_adjustment_magnitude = Some(input);
             self
         }
+        /// <p>The minimum value to scale by when the adjustment type is
+        /// <code>PercentChangeInCapacity</code>. For example, suppose that you create a step
+        /// scaling policy to scale out an Auto Scaling group by 25 percent and you specify a
+        /// <code>MinAdjustmentMagnitude</code> of 2. If the group has 4 instances and the
+        /// scaling policy is performed, 25 percent of 4 is 1. However, because you specified a
+        /// <code>MinAdjustmentMagnitude</code> of 2, Amazon EC2 Auto Scaling scales out the group by 2
+        /// instances.</p>
+        /// <p>Valid only if the policy type is <code>StepScaling</code> or
+        /// <code>SimpleScaling</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment">Scaling adjustment types</a> in the <i>Amazon EC2 Auto Scaling User
+        /// Guide</i>.</p>
+        /// <note>
+        /// <p>Some Auto Scaling groups use instance weights. In this case, set the
+        /// <code>MinAdjustmentMagnitude</code> to a value that is at least as large as your
+        /// largest instance weight.</p>
+        /// </note>
         pub fn set_min_adjustment_magnitude(mut self, input: std::option::Option<i32>) -> Self {
             self.min_adjustment_magnitude = input;
             self
@@ -8967,6 +10209,11 @@ pub mod put_scaling_policy_input {
             self.scaling_adjustment = Some(input);
             self
         }
+        /// <p>The amount by which to scale, based on the specified adjustment type. A positive value
+        /// adds to the current capacity while a negative number removes from the current capacity.
+        /// For exact capacity, you must specify a positive value.</p>
+        /// <p>Required if the policy type is <code>SimpleScaling</code>. (Not used with any other
+        /// policy type.) </p>
         pub fn set_scaling_adjustment(mut self, input: std::option::Option<i32>) -> Self {
             self.scaling_adjustment = input;
             self
@@ -8981,6 +10228,12 @@ pub mod put_scaling_policy_input {
             self.cooldown = Some(input);
             self
         }
+        /// <p>The duration of the policy's cooldown period, in seconds. When a cooldown period is
+        /// specified here, it overrides the default cooldown period defined for the Auto Scaling
+        /// group.</p>
+        /// <p>Valid only if the policy type is <code>SimpleScaling</code>. For more information, see
+        /// <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
+        /// cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn set_cooldown(mut self, input: std::option::Option<i32>) -> Self {
             self.cooldown = input;
             self
@@ -8993,6 +10246,10 @@ pub mod put_scaling_policy_input {
             self.metric_aggregation_type = Some(input.into());
             self
         }
+        /// <p>The aggregation type for the CloudWatch metrics. The valid values are <code>Minimum</code>,
+        /// <code>Maximum</code>, and <code>Average</code>. If the aggregation type is null, the
+        /// value is treated as <code>Average</code>.</p>
+        /// <p>Valid only if the policy type is <code>StepScaling</code>.</p>
         pub fn set_metric_aggregation_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9000,12 +10257,24 @@ pub mod put_scaling_policy_input {
             self.metric_aggregation_type = input;
             self
         }
+        /// Appends an item to `step_adjustments`.
+        ///
+        /// To override the contents of this collection use [`set_step_adjustments`](Self::set_step_adjustments).
+        ///
+        /// <p>A set of adjustments that enable you to scale based on the size of the alarm
+        /// breach.</p>
+        /// <p>Required if the policy type is <code>StepScaling</code>. (Not used with any other
+        /// policy type.) </p>
         pub fn step_adjustments(mut self, input: impl Into<crate::model::StepAdjustment>) -> Self {
             let mut v = self.step_adjustments.unwrap_or_default();
             v.push(input.into());
             self.step_adjustments = Some(v);
             self
         }
+        /// <p>A set of adjustments that enable you to scale based on the size of the alarm
+        /// breach.</p>
+        /// <p>Required if the policy type is <code>StepScaling</code>. (Not used with any other
+        /// policy type.) </p>
         pub fn set_step_adjustments(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::StepAdjustment>>,
@@ -9022,6 +10291,11 @@ pub mod put_scaling_policy_input {
             self.estimated_instance_warmup = Some(input);
             self
         }
+        /// <p>The estimated time, in seconds, until a newly launched instance can contribute to the
+        /// CloudWatch metrics. If not provided, the default is to use the value from the default cooldown
+        /// period for the Auto Scaling group.</p>
+        /// <p>Valid only if the policy type is <code>TargetTrackingScaling</code> or
+        /// <code>StepScaling</code>.</p>
         pub fn set_estimated_instance_warmup(mut self, input: std::option::Option<i32>) -> Self {
             self.estimated_instance_warmup = input;
             self
@@ -9064,6 +10338,37 @@ pub mod put_scaling_policy_input {
             self.target_tracking_configuration = Some(input);
             self
         }
+        /// <p>A target tracking scaling policy. Provides support for predefined or customized
+        /// metrics.</p>
+        /// <p>The following predefined metrics are available:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ASGAverageCPUUtilization</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ASGAverageNetworkIn</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ASGAverageNetworkOut</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ALBRequestCountPerTarget</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>If you specify <code>ALBRequestCountPerTarget</code> for the metric, you must specify
+        /// the <code>ResourceLabel</code> parameter with the
+        /// <code>PredefinedMetricSpecification</code>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_TargetTrackingConfiguration.html">TargetTrackingConfiguration</a> in the <i>Amazon EC2 Auto Scaling API
+        /// Reference</i>.</p>
+        /// <p>Required if the policy type is <code>TargetTrackingScaling</code>.</p>
         pub fn set_target_tracking_configuration(
             mut self,
             input: std::option::Option<crate::model::TargetTrackingConfiguration>,
@@ -9079,6 +10384,10 @@ pub mod put_scaling_policy_input {
             self.enabled = Some(input);
             self
         }
+        /// <p>Indicates whether the scaling policy is enabled or disabled. The default is enabled.
+        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enable-disable-scaling-policy.html">Disabling a
+        /// scaling policy for an Auto Scaling group</a> in the
+        /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -9096,6 +10405,12 @@ pub mod put_scaling_policy_input {
             self.predictive_scaling_configuration = Some(input);
             self
         }
+        /// <p>A predictive scaling policy. Provides support for only predefined metrics.</p>
+        /// <p>Predictive scaling works with CPU utilization, network in/out, and the Application
+        /// Load Balancer request count.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_PredictiveScalingConfiguration.html">PredictiveScalingConfiguration</a> in the <i>Amazon EC2 Auto Scaling API
+        /// Reference</i>.</p>
+        /// <p>Required if the policy type is <code>PredictiveScaling</code>.</p>
         pub fn set_predictive_scaling_configuration(
             mut self,
             input: std::option::Option<crate::model::PredictiveScalingConfiguration>,
@@ -9108,7 +10423,7 @@ pub mod put_scaling_policy_input {
             self,
         ) -> std::result::Result<
             crate::input::PutScalingPolicyInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutScalingPolicyInput {
                 auto_scaling_group_name: self.auto_scaling_group_name,
@@ -9140,16 +10455,16 @@ impl PutScalingPolicyInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::PutScalingPolicy,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::PutScalingPolicyInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -9157,7 +10472,7 @@ impl PutScalingPolicyInput {
         fn update_http_builder(
             input: &crate::input::PutScalingPolicyInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9166,27 +10481,27 @@ impl PutScalingPolicyInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::PutScalingPolicyInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_put_scaling_policy(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9209,15 +10524,15 @@ impl PutScalingPolicyInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::PutScalingPolicy::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "PutScalingPolicy",
             "autoscaling",
         ));
@@ -9226,10 +10541,10 @@ impl PutScalingPolicyInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9251,9 +10566,9 @@ pub mod put_scheduled_update_group_action_input {
     pub struct Builder {
         pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
         pub(crate) scheduled_action_name: std::option::Option<std::string::String>,
-        pub(crate) time: std::option::Option<smithy_types::Instant>,
-        pub(crate) start_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) recurrence: std::option::Option<std::string::String>,
         pub(crate) min_size: std::option::Option<i32>,
         pub(crate) max_size: std::option::Option<i32>,
@@ -9266,6 +10581,7 @@ pub mod put_scheduled_update_group_action_input {
             self.auto_scaling_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the Auto Scaling group.</p>
         pub fn set_auto_scaling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9278,6 +10594,7 @@ pub mod put_scheduled_update_group_action_input {
             self.scheduled_action_name = Some(input.into());
             self
         }
+        /// <p>The name of this scaling action.</p>
         pub fn set_scheduled_action_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9286,11 +10603,12 @@ pub mod put_scheduled_update_group_action_input {
             self
         }
         /// <p>This parameter is no longer used.</p>
-        pub fn time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.time = Some(input);
             self
         }
-        pub fn set_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>This parameter is no longer used.</p>
+        pub fn set_time(mut self, input: std::option::Option<aws_smithy_types::Instant>) -> Self {
             self.time = input;
             self
         }
@@ -9301,20 +10619,34 @@ pub mod put_scheduled_update_group_action_input {
         /// recurrence.</p>
         /// <p>If you try to schedule your action in the past, Amazon EC2 Auto Scaling returns an error
         /// message.</p>
-        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date and time for this action to start, in YYYY-MM-DDThh:mm:ssZ format in UTC/GMT
+        /// only and in quotes (for example, <code>"2019-06-01T00:00:00Z"</code>).</p>
+        /// <p>If you specify <code>Recurrence</code> and <code>StartTime</code>, Amazon EC2 Auto Scaling performs
+        /// the action at this time, and then performs the action based on the specified
+        /// recurrence.</p>
+        /// <p>If you try to schedule your action in the past, Amazon EC2 Auto Scaling returns an error
+        /// message.</p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The date and time for the recurring schedule to end, in UTC.</p>
-        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date and time for the recurring schedule to end, in UTC.</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.end_time = input;
             self
         }
@@ -9330,6 +10662,14 @@ pub mod put_scheduled_update_group_action_input {
             self.recurrence = Some(input.into());
             self
         }
+        /// <p>The recurring schedule for this action. This format consists of five fields separated
+        /// by white spaces: [Minute] [Hour] [Day_of_Month] [Month_of_Year] [Day_of_Week]. The value
+        /// must be in quotes (for example, <code>"30 0 1 1,6,12 *"</code>). For more information
+        /// about this format, see <a href="http://crontab.org">Crontab</a>.</p>
+        /// <p>When <code>StartTime</code> and <code>EndTime</code> are specified with
+        /// <code>Recurrence</code>, they form the boundaries of when the recurring action
+        /// starts and stops.</p>
+        /// <p>Cron expressions use Universal Coordinated Time (UTC) by default.</p>
         pub fn set_recurrence(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.recurrence = input;
             self
@@ -9339,6 +10679,7 @@ pub mod put_scheduled_update_group_action_input {
             self.min_size = Some(input);
             self
         }
+        /// <p>The minimum size of the Auto Scaling group.</p>
         pub fn set_min_size(mut self, input: std::option::Option<i32>) -> Self {
             self.min_size = input;
             self
@@ -9348,6 +10689,7 @@ pub mod put_scheduled_update_group_action_input {
             self.max_size = Some(input);
             self
         }
+        /// <p>The maximum size of the Auto Scaling group.</p>
         pub fn set_max_size(mut self, input: std::option::Option<i32>) -> Self {
             self.max_size = input;
             self
@@ -9359,6 +10701,9 @@ pub mod put_scheduled_update_group_action_input {
             self.desired_capacity = Some(input);
             self
         }
+        /// <p>The desired capacity is the initial capacity of the Auto Scaling group after the scheduled
+        /// action runs and the capacity it attempts to maintain. It can scale beyond this capacity
+        /// if you add more scaling conditions. </p>
         pub fn set_desired_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.desired_capacity = input;
             self
@@ -9372,6 +10717,11 @@ pub mod put_scheduled_update_group_action_input {
             self.time_zone = Some(input.into());
             self
         }
+        /// <p>Specifies the time zone for a cron expression. If a time zone is not provided, UTC is
+        /// used by default. </p>
+        /// <p>Valid values are the canonical names of the IANA time zones, derived from the IANA
+        /// Time Zone Database (such as <code>Etc/GMT+9</code> or <code>Pacific/Tahiti</code>). For
+        /// more information, see <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">https://en.wikipedia.org/wiki/List_of_tz_database_time_zones</a>.</p>
         pub fn set_time_zone(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.time_zone = input;
             self
@@ -9381,7 +10731,7 @@ pub mod put_scheduled_update_group_action_input {
             self,
         ) -> std::result::Result<
             crate::input::PutScheduledUpdateGroupActionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::PutScheduledUpdateGroupActionInput {
                 auto_scaling_group_name: self.auto_scaling_group_name,
@@ -9410,16 +10760,16 @@ impl PutScheduledUpdateGroupActionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::PutScheduledUpdateGroupAction,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::PutScheduledUpdateGroupActionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -9427,7 +10777,7 @@ impl PutScheduledUpdateGroupActionInput {
         fn update_http_builder(
             input: &crate::input::PutScheduledUpdateGroupActionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9436,25 +10786,25 @@ impl PutScheduledUpdateGroupActionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::PutScheduledUpdateGroupActionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_put_scheduled_update_group_action(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_put_scheduled_update_group_action(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9477,15 +10827,15 @@ impl PutScheduledUpdateGroupActionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::PutScheduledUpdateGroupAction::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "PutScheduledUpdateGroupAction",
             "autoscaling",
         ));
@@ -9494,10 +10844,10 @@ impl PutScheduledUpdateGroupActionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9528,6 +10878,7 @@ pub mod put_warm_pool_input {
             self.auto_scaling_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the Auto Scaling group.</p>
         pub fn set_auto_scaling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9557,6 +10908,24 @@ pub mod put_warm_pool_input {
             self.max_group_prepared_capacity = Some(input);
             self
         }
+        /// <p>Specifies the maximum number of instances that are allowed to be in the warm pool or
+        /// in any state except <code>Terminated</code> for the Auto Scaling group. This is an optional
+        /// property. Specify it only if you do not want the warm pool size to be determined by the
+        /// difference between the group's maximum capacity and its desired capacity. </p>
+        /// <important>
+        /// <p>If a value for <code>MaxGroupPreparedCapacity</code> is not specified, Amazon EC2 Auto Scaling
+        /// launches and maintains the difference between the group's maximum capacity and its
+        /// desired capacity. If you specify a value for <code>MaxGroupPreparedCapacity</code>,
+        /// Amazon EC2 Auto Scaling uses the difference between the <code>MaxGroupPreparedCapacity</code> and
+        /// the desired capacity instead. </p>
+        /// <p>The size of the warm pool is dynamic. Only when
+        /// <code>MaxGroupPreparedCapacity</code> and <code>MinSize</code> are set to the
+        /// same value does the warm pool have an absolute size.</p>
+        /// </important>
+        /// <p>If the desired capacity of the Auto Scaling group is higher than the
+        /// <code>MaxGroupPreparedCapacity</code>, the capacity of the warm pool is 0, unless
+        /// you specify a value for <code>MinSize</code>. To remove a value that you previously set,
+        /// include the property but specify -1 for the value. </p>
         pub fn set_max_group_prepared_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.max_group_prepared_capacity = input;
             self
@@ -9568,6 +10937,9 @@ pub mod put_warm_pool_input {
             self.min_size = Some(input);
             self
         }
+        /// <p>Specifies the minimum number of instances to maintain in the warm pool. This helps you
+        /// to ensure that there is always a certain number of warmed instances available to handle
+        /// traffic spikes. Defaults to 0 if not specified.</p>
         pub fn set_min_size(mut self, input: std::option::Option<i32>) -> Self {
             self.min_size = input;
             self
@@ -9578,6 +10950,8 @@ pub mod put_warm_pool_input {
             self.pool_state = Some(input);
             self
         }
+        /// <p>Sets the instance state to transition to after the lifecycle actions are complete.
+        /// Default is <code>Stopped</code>.</p>
         pub fn set_pool_state(
             mut self,
             input: std::option::Option<crate::model::WarmPoolState>,
@@ -9588,8 +10962,10 @@ pub mod put_warm_pool_input {
         /// Consumes the builder and constructs a [`PutWarmPoolInput`](crate::input::PutWarmPoolInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::PutWarmPoolInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::PutWarmPoolInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::PutWarmPoolInput {
                 auto_scaling_group_name: self.auto_scaling_group_name,
                 max_group_prepared_capacity: self.max_group_prepared_capacity,
@@ -9610,16 +10986,16 @@ impl PutWarmPoolInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::PutWarmPool,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::PutWarmPoolInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -9627,7 +11003,7 @@ impl PutWarmPoolInput {
         fn update_http_builder(
             input: &crate::input::PutWarmPoolInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9636,26 +11012,26 @@ impl PutWarmPoolInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::PutWarmPoolInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_put_warm_pool(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9678,25 +11054,27 @@ impl PutWarmPoolInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::PutWarmPool::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "PutWarmPool",
-                    "autoscaling",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::PutWarmPool::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "PutWarmPool",
+            "autoscaling",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9727,6 +11105,7 @@ pub mod record_lifecycle_action_heartbeat_input {
             self.lifecycle_hook_name = Some(input.into());
             self
         }
+        /// <p>The name of the lifecycle hook.</p>
         pub fn set_lifecycle_hook_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9739,6 +11118,7 @@ pub mod record_lifecycle_action_heartbeat_input {
             self.auto_scaling_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the Auto Scaling group.</p>
         pub fn set_auto_scaling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9753,6 +11133,9 @@ pub mod record_lifecycle_action_heartbeat_input {
             self.lifecycle_action_token = Some(input.into());
             self
         }
+        /// <p>A token that uniquely identifies a specific lifecycle action associated with an
+        /// instance. Amazon EC2 Auto Scaling sends this token to the notification target that you specified when
+        /// you created the lifecycle hook.</p>
         pub fn set_lifecycle_action_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9765,6 +11148,7 @@ pub mod record_lifecycle_action_heartbeat_input {
             self.instance_id = Some(input.into());
             self
         }
+        /// <p>The ID of the instance.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.instance_id = input;
             self
@@ -9774,7 +11158,7 @@ pub mod record_lifecycle_action_heartbeat_input {
             self,
         ) -> std::result::Result<
             crate::input::RecordLifecycleActionHeartbeatInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::RecordLifecycleActionHeartbeatInput {
                 lifecycle_hook_name: self.lifecycle_hook_name,
@@ -9797,16 +11181,16 @@ impl RecordLifecycleActionHeartbeatInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::RecordLifecycleActionHeartbeat,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::RecordLifecycleActionHeartbeatInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -9814,7 +11198,7 @@ impl RecordLifecycleActionHeartbeatInput {
         fn update_http_builder(
             input: &crate::input::RecordLifecycleActionHeartbeatInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9823,25 +11207,25 @@ impl RecordLifecycleActionHeartbeatInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::RecordLifecycleActionHeartbeatInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_record_lifecycle_action_heartbeat(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_record_lifecycle_action_heartbeat(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -9864,15 +11248,15 @@ impl RecordLifecycleActionHeartbeatInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::RecordLifecycleActionHeartbeat::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "RecordLifecycleActionHeartbeat",
             "autoscaling",
         ));
@@ -9881,10 +11265,10 @@ impl RecordLifecycleActionHeartbeatInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -9913,6 +11297,7 @@ pub mod resume_processes_input {
             self.auto_scaling_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the Auto Scaling group.</p>
         pub fn set_auto_scaling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9920,12 +11305,114 @@ pub mod resume_processes_input {
             self.auto_scaling_group_name = input;
             self
         }
+        /// Appends an item to `scaling_processes`.
+        ///
+        /// To override the contents of this collection use [`set_scaling_processes`](Self::set_scaling_processes).
+        ///
+        /// <p>One or more of the following processes:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Launch</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Terminate</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AddToLoadBalancer</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AlarmNotification</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AZRebalance</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>HealthCheck</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>InstanceRefresh</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ReplaceUnhealthy</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ScheduledActions</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>If you omit this parameter, all processes are specified.</p>
         pub fn scaling_processes(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.scaling_processes.unwrap_or_default();
             v.push(input.into());
             self.scaling_processes = Some(v);
             self
         }
+        /// <p>One or more of the following processes:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Launch</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Terminate</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AddToLoadBalancer</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AlarmNotification</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AZRebalance</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>HealthCheck</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>InstanceRefresh</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ReplaceUnhealthy</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ScheduledActions</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>If you omit this parameter, all processes are specified.</p>
         pub fn set_scaling_processes(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9938,7 +11425,7 @@ pub mod resume_processes_input {
             self,
         ) -> std::result::Result<
             crate::input::ResumeProcessesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ResumeProcessesInput {
                 auto_scaling_group_name: self.auto_scaling_group_name,
@@ -9958,16 +11445,16 @@ impl ResumeProcessesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ResumeProcesses,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ResumeProcessesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -9975,7 +11462,7 @@ impl ResumeProcessesInput {
         fn update_http_builder(
             input: &crate::input::ResumeProcessesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -9984,27 +11471,27 @@ impl ResumeProcessesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ResumeProcessesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_resume_processes(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -10027,15 +11514,15 @@ impl ResumeProcessesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ResumeProcesses::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ResumeProcesses",
             "autoscaling",
         ));
@@ -10044,10 +11531,10 @@ impl ResumeProcessesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10077,6 +11564,7 @@ pub mod set_desired_capacity_input {
             self.auto_scaling_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the Auto Scaling group.</p>
         pub fn set_auto_scaling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10090,6 +11578,8 @@ pub mod set_desired_capacity_input {
             self.desired_capacity = Some(input);
             self
         }
+        /// <p>The desired capacity is the initial capacity of the Auto Scaling group after this operation
+        /// completes and the capacity it attempts to maintain.</p>
         pub fn set_desired_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.desired_capacity = input;
             self
@@ -10101,6 +11591,9 @@ pub mod set_desired_capacity_input {
             self.honor_cooldown = Some(input);
             self
         }
+        /// <p>Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to complete before initiating
+        /// a scaling activity to set your Auto Scaling group to its new capacity. By default, Amazon EC2 Auto Scaling does
+        /// not honor the cooldown period during manual scaling activities.</p>
         pub fn set_honor_cooldown(mut self, input: std::option::Option<bool>) -> Self {
             self.honor_cooldown = input;
             self
@@ -10110,7 +11603,7 @@ pub mod set_desired_capacity_input {
             self,
         ) -> std::result::Result<
             crate::input::SetDesiredCapacityInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::SetDesiredCapacityInput {
                 auto_scaling_group_name: self.auto_scaling_group_name,
@@ -10131,16 +11624,16 @@ impl SetDesiredCapacityInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::SetDesiredCapacity,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SetDesiredCapacityInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -10148,7 +11641,7 @@ impl SetDesiredCapacityInput {
         fn update_http_builder(
             input: &crate::input::SetDesiredCapacityInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10157,25 +11650,27 @@ impl SetDesiredCapacityInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SetDesiredCapacityInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_set_desired_capacity(&self)
-                .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+                .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -10198,15 +11693,15 @@ impl SetDesiredCapacityInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::SetDesiredCapacity::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "SetDesiredCapacity",
             "autoscaling",
         ));
@@ -10215,10 +11710,10 @@ impl SetDesiredCapacityInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10248,6 +11743,7 @@ pub mod set_instance_health_input {
             self.instance_id = Some(input.into());
             self
         }
+        /// <p>The ID of the instance.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.instance_id = input;
             self
@@ -10259,6 +11755,9 @@ pub mod set_instance_health_input {
             self.health_status = Some(input.into());
             self
         }
+        /// <p>The health status of the instance. Set to <code>Healthy</code> to have the instance
+        /// remain in service. Set to <code>Unhealthy</code> to have the instance be out of service.
+        /// Amazon EC2 Auto Scaling terminates and replaces the unhealthy instance.</p>
         pub fn set_health_status(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10270,6 +11769,7 @@ pub mod set_instance_health_input {
         /// specified for the group, by default, this call respects the grace period. Set this to
         /// <code>False</code>, to have the call not respect the grace period associated with
         /// the group.</p>
+        ///
         /// <p>For more information about the health check grace
         /// period, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_CreateAutoScalingGroup.html">CreateAutoScalingGroup</a> in the <i>Amazon EC2 Auto Scaling API
         /// Reference</i>.</p>
@@ -10277,6 +11777,14 @@ pub mod set_instance_health_input {
             self.should_respect_grace_period = Some(input);
             self
         }
+        /// <p>If the Auto Scaling group of the specified instance has a <code>HealthCheckGracePeriod</code>
+        /// specified for the group, by default, this call respects the grace period. Set this to
+        /// <code>False</code>, to have the call not respect the grace period associated with
+        /// the group.</p>
+        ///
+        /// <p>For more information about the health check grace
+        /// period, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_CreateAutoScalingGroup.html">CreateAutoScalingGroup</a> in the <i>Amazon EC2 Auto Scaling API
+        /// Reference</i>.</p>
         pub fn set_should_respect_grace_period(mut self, input: std::option::Option<bool>) -> Self {
             self.should_respect_grace_period = input;
             self
@@ -10286,7 +11794,7 @@ pub mod set_instance_health_input {
             self,
         ) -> std::result::Result<
             crate::input::SetInstanceHealthInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::SetInstanceHealthInput {
                 instance_id: self.instance_id,
@@ -10307,16 +11815,16 @@ impl SetInstanceHealthInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::SetInstanceHealth,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SetInstanceHealthInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -10324,7 +11832,7 @@ impl SetInstanceHealthInput {
         fn update_http_builder(
             input: &crate::input::SetInstanceHealthInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10333,27 +11841,27 @@ impl SetInstanceHealthInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SetInstanceHealthInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_set_instance_health(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -10376,15 +11884,15 @@ impl SetInstanceHealthInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::SetInstanceHealth::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "SetInstanceHealth",
             "autoscaling",
         ));
@@ -10393,10 +11901,10 @@ impl SetInstanceHealthInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10421,12 +11929,18 @@ pub mod set_instance_protection_input {
         pub(crate) protected_from_scale_in: std::option::Option<bool>,
     }
     impl Builder {
+        /// Appends an item to `instance_ids`.
+        ///
+        /// To override the contents of this collection use [`set_instance_ids`](Self::set_instance_ids).
+        ///
+        /// <p>One or more instance IDs. You can specify up to 50 instances.</p>
         pub fn instance_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.instance_ids.unwrap_or_default();
             v.push(input.into());
             self.instance_ids = Some(v);
             self
         }
+        /// <p>One or more instance IDs. You can specify up to 50 instances.</p>
         pub fn set_instance_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -10439,6 +11953,7 @@ pub mod set_instance_protection_input {
             self.auto_scaling_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the Auto Scaling group.</p>
         pub fn set_auto_scaling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10452,6 +11967,8 @@ pub mod set_instance_protection_input {
             self.protected_from_scale_in = Some(input);
             self
         }
+        /// <p>Indicates whether the instance is protected from termination by Amazon EC2 Auto Scaling when scaling
+        /// in.</p>
         pub fn set_protected_from_scale_in(mut self, input: std::option::Option<bool>) -> Self {
             self.protected_from_scale_in = input;
             self
@@ -10461,7 +11978,7 @@ pub mod set_instance_protection_input {
             self,
         ) -> std::result::Result<
             crate::input::SetInstanceProtectionInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::SetInstanceProtectionInput {
                 instance_ids: self.instance_ids,
@@ -10482,16 +11999,16 @@ impl SetInstanceProtectionInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::SetInstanceProtection,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SetInstanceProtectionInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -10499,7 +12016,7 @@ impl SetInstanceProtectionInput {
         fn update_http_builder(
             input: &crate::input::SetInstanceProtectionInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10508,27 +12025,29 @@ impl SetInstanceProtectionInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SetInstanceProtectionInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_set_instance_protection(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -10551,15 +12070,15 @@ impl SetInstanceProtectionInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::SetInstanceProtection::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "SetInstanceProtection",
             "autoscaling",
         ));
@@ -10568,10 +12087,10 @@ impl SetInstanceProtectionInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10602,6 +12121,7 @@ pub mod start_instance_refresh_input {
             self.auto_scaling_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the Auto Scaling group.</p>
         pub fn set_auto_scaling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10619,6 +12139,12 @@ pub mod start_instance_refresh_input {
             self.strategy = Some(input);
             self
         }
+        /// <p>The strategy to use for the instance refresh. The only valid value is
+        /// <code>Rolling</code>.</p>
+        /// <p>A rolling update helps you update your instances gradually. A rolling update can fail
+        /// due to failed health checks or if instances are on standby or are protected from scale
+        /// in. If the rolling update process fails, any instances that are replaced are not rolled
+        /// back to their previous configuration. </p>
         pub fn set_strategy(
             mut self,
             input: std::option::Option<crate::model::RefreshStrategy>,
@@ -10642,6 +12168,18 @@ pub mod start_instance_refresh_input {
             self.desired_configuration = Some(input);
             self
         }
+        /// <p>The desired configuration. For example, the desired configuration can specify a new
+        /// launch template or a new version of the current launch template.</p>
+        /// <p>Once the instance refresh succeeds, Amazon EC2 Auto Scaling updates the settings of the Auto Scaling group to
+        /// reflect the new desired configuration. </p>
+        /// <note>
+        /// <p>When you specify a new launch template or a new version of the current launch
+        /// template for your desired configuration, consider enabling the
+        /// <code>SkipMatching</code> property in preferences. If it's enabled, Amazon EC2 Auto Scaling
+        /// skips replacing instances that already use the specified launch template and
+        /// version. This can help you reduce the number of replacements that are required to
+        /// apply updates. </p>
+        /// </note>
         pub fn set_desired_configuration(
             mut self,
             input: std::option::Option<crate::model::DesiredConfiguration>,
@@ -10655,6 +12193,8 @@ pub mod start_instance_refresh_input {
             self.preferences = Some(input);
             self
         }
+        /// <p>Set of preferences associated with the instance refresh request. If not provided, the
+        /// default values are used.</p>
         pub fn set_preferences(
             mut self,
             input: std::option::Option<crate::model::RefreshPreferences>,
@@ -10667,7 +12207,7 @@ pub mod start_instance_refresh_input {
             self,
         ) -> std::result::Result<
             crate::input::StartInstanceRefreshInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::StartInstanceRefreshInput {
                 auto_scaling_group_name: self.auto_scaling_group_name,
@@ -10689,16 +12229,16 @@ impl StartInstanceRefreshInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::StartInstanceRefresh,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::StartInstanceRefreshInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -10706,7 +12246,7 @@ impl StartInstanceRefreshInput {
         fn update_http_builder(
             input: &crate::input::StartInstanceRefreshInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10715,27 +12255,27 @@ impl StartInstanceRefreshInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::StartInstanceRefreshInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_instance_refresh(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -10758,15 +12298,15 @@ impl StartInstanceRefreshInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::StartInstanceRefresh::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "StartInstanceRefresh",
             "autoscaling",
         ));
@@ -10775,10 +12315,10 @@ impl StartInstanceRefreshInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10807,6 +12347,7 @@ pub mod suspend_processes_input {
             self.auto_scaling_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the Auto Scaling group.</p>
         pub fn set_auto_scaling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10814,12 +12355,114 @@ pub mod suspend_processes_input {
             self.auto_scaling_group_name = input;
             self
         }
+        /// Appends an item to `scaling_processes`.
+        ///
+        /// To override the contents of this collection use [`set_scaling_processes`](Self::set_scaling_processes).
+        ///
+        /// <p>One or more of the following processes:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Launch</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Terminate</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AddToLoadBalancer</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AlarmNotification</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AZRebalance</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>HealthCheck</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>InstanceRefresh</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ReplaceUnhealthy</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ScheduledActions</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>If you omit this parameter, all processes are specified.</p>
         pub fn scaling_processes(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.scaling_processes.unwrap_or_default();
             v.push(input.into());
             self.scaling_processes = Some(v);
             self
         }
+        /// <p>One or more of the following processes:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Launch</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Terminate</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AddToLoadBalancer</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AlarmNotification</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>AZRebalance</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>HealthCheck</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>InstanceRefresh</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ReplaceUnhealthy</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ScheduledActions</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>If you omit this parameter, all processes are specified.</p>
         pub fn set_scaling_processes(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -10832,7 +12475,7 @@ pub mod suspend_processes_input {
             self,
         ) -> std::result::Result<
             crate::input::SuspendProcessesInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::SuspendProcessesInput {
                 auto_scaling_group_name: self.auto_scaling_group_name,
@@ -10852,16 +12495,16 @@ impl SuspendProcessesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::SuspendProcesses,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::SuspendProcessesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -10869,7 +12512,7 @@ impl SuspendProcessesInput {
         fn update_http_builder(
             input: &crate::input::SuspendProcessesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -10878,27 +12521,27 @@ impl SuspendProcessesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::SuspendProcessesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_suspend_processes(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -10921,15 +12564,15 @@ impl SuspendProcessesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::SuspendProcesses::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "SuspendProcesses",
             "autoscaling",
         ));
@@ -10938,10 +12581,10 @@ impl SuspendProcessesInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -10970,6 +12613,7 @@ pub mod terminate_instance_in_auto_scaling_group_input {
             self.instance_id = Some(input.into());
             self
         }
+        /// <p>The ID of the instance.</p>
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.instance_id = input;
             self
@@ -10980,6 +12624,8 @@ pub mod terminate_instance_in_auto_scaling_group_input {
             self.should_decrement_desired_capacity = Some(input);
             self
         }
+        /// <p>Indicates whether terminating the instance also decrements the size of the Auto Scaling
+        /// group.</p>
         pub fn set_should_decrement_desired_capacity(
             mut self,
             input: std::option::Option<bool>,
@@ -10992,7 +12638,7 @@ pub mod terminate_instance_in_auto_scaling_group_input {
             self,
         ) -> std::result::Result<
             crate::input::TerminateInstanceInAutoScalingGroupInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::TerminateInstanceInAutoScalingGroupInput {
                 instance_id: self.instance_id,
@@ -11014,16 +12660,16 @@ impl TerminateInstanceInAutoScalingGroupInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::TerminateInstanceInAutoScalingGroup,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::TerminateInstanceInAutoScalingGroupInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -11031,7 +12677,7 @@ impl TerminateInstanceInAutoScalingGroupInput {
         fn update_http_builder(
             input: &crate::input::TerminateInstanceInAutoScalingGroupInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -11040,25 +12686,25 @@ impl TerminateInstanceInAutoScalingGroupInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::TerminateInstanceInAutoScalingGroupInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
-            crate::operation_ser::serialize_operation_crate_operation_terminate_instance_in_auto_scaling_group(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            crate::operation_ser::serialize_operation_crate_operation_terminate_instance_in_auto_scaling_group(&self).map_err(|err|aws_smithy_http::operation::BuildError::SerializationError(err.into()))?
         ;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -11081,15 +12727,15 @@ impl TerminateInstanceInAutoScalingGroupInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::TerminateInstanceInAutoScalingGroup::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "TerminateInstanceInAutoScalingGroup",
             "autoscaling",
         ));
@@ -11098,10 +12744,10 @@ impl TerminateInstanceInAutoScalingGroupInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -11147,6 +12793,7 @@ pub mod update_auto_scaling_group_input {
             self.auto_scaling_group_name = Some(input.into());
             self
         }
+        /// <p>The name of the Auto Scaling group.</p>
         pub fn set_auto_scaling_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11161,6 +12808,9 @@ pub mod update_auto_scaling_group_input {
             self.launch_configuration_name = Some(input.into());
             self
         }
+        /// <p>The name of the launch configuration. If you specify
+        /// <code>LaunchConfigurationName</code> in your update request, you can't specify
+        /// <code>LaunchTemplate</code> or <code>MixedInstancesPolicy</code>.</p>
         pub fn set_launch_configuration_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11175,6 +12825,9 @@ pub mod update_auto_scaling_group_input {
             self.launch_template = Some(input);
             self
         }
+        /// <p>The launch template and version to use to specify the updates. If you specify
+        /// <code>LaunchTemplate</code> in your update request, you can't specify
+        /// <code>LaunchConfigurationName</code> or <code>MixedInstancesPolicy</code>.</p>
         pub fn set_launch_template(
             mut self,
             input: std::option::Option<crate::model::LaunchTemplateSpecification>,
@@ -11191,6 +12844,11 @@ pub mod update_auto_scaling_group_input {
             self.mixed_instances_policy = Some(input);
             self
         }
+        /// <p>An embedded object that specifies a mixed instances policy. When you make changes to
+        /// an existing policy, all optional properties are left unchanged if not specified. For
+        /// more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto Scaling groups with multiple
+        /// instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling User
+        /// Guide</i>.</p>
         pub fn set_mixed_instances_policy(
             mut self,
             input: std::option::Option<crate::model::MixedInstancesPolicy>,
@@ -11203,6 +12861,7 @@ pub mod update_auto_scaling_group_input {
             self.min_size = Some(input);
             self
         }
+        /// <p>The minimum size of the Auto Scaling group.</p>
         pub fn set_min_size(mut self, input: std::option::Option<i32>) -> Self {
             self.min_size = input;
             self
@@ -11219,6 +12878,14 @@ pub mod update_auto_scaling_group_input {
             self.max_size = Some(input);
             self
         }
+        /// <p>The maximum size of the Auto Scaling group.</p>
+        /// <note>
+        /// <p>With a mixed instances policy that uses instance weighting, Amazon EC2 Auto Scaling may need to
+        /// go above <code>MaxSize</code> to meet your capacity requirements. In this event,
+        /// Amazon EC2 Auto Scaling will never go above <code>MaxSize</code> by more than your largest instance
+        /// weight (weights that define how many units each instance contributes to the desired
+        /// capacity of the group).</p>
+        /// </note>
         pub fn set_max_size(mut self, input: std::option::Option<i32>) -> Self {
             self.max_size = input;
             self
@@ -11231,6 +12898,10 @@ pub mod update_auto_scaling_group_input {
             self.desired_capacity = Some(input);
             self
         }
+        /// <p>The desired capacity is the initial capacity of the Auto Scaling group after this operation
+        /// completes and the capacity it attempts to maintain. This number must be greater than or
+        /// equal to the minimum size of the group and less than or equal to the maximum size of the
+        /// group.</p>
         pub fn set_desired_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.desired_capacity = input;
             self
@@ -11244,16 +12915,27 @@ pub mod update_auto_scaling_group_input {
             self.default_cooldown = Some(input);
             self
         }
+        /// <p>The amount of time, in seconds, after a scaling activity completes before another
+        /// scaling activity can start. The default value is <code>300</code>. This setting applies
+        /// when using simple scaling policies, but not when using other scaling policies or
+        /// scheduled scaling. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling cooldowns for Amazon EC2 Auto Scaling</a>
+        /// in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn set_default_cooldown(mut self, input: std::option::Option<i32>) -> Self {
             self.default_cooldown = input;
             self
         }
+        /// Appends an item to `availability_zones`.
+        ///
+        /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
+        ///
+        /// <p>One or more Availability Zones for the group.</p>
         pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.availability_zones.unwrap_or_default();
             v.push(input.into());
             self.availability_zones = Some(v);
             self
         }
+        /// <p>One or more Availability Zones for the group.</p>
         pub fn set_availability_zones(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -11269,6 +12951,10 @@ pub mod update_auto_scaling_group_input {
             self.health_check_type = Some(input.into());
             self
         }
+        /// <p>The service to use for the health checks. The valid values are <code>EC2</code> and
+        /// <code>ELB</code>. If you configure an Auto Scaling group to use <code>ELB</code> health
+        /// checks, it considers the instance unhealthy if it fails either the EC2 status checks or
+        /// the load balancer health checks.</p>
         pub fn set_health_check_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11285,6 +12971,11 @@ pub mod update_auto_scaling_group_input {
             self.health_check_grace_period = Some(input);
             self
         }
+        /// <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking the health status
+        /// of an EC2 instance that has come into service. The default value is <code>0</code>. For
+        /// more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
+        /// check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+        /// <p>Conditional: Required if you are adding an <code>ELB</code> health check.</p>
         pub fn set_health_check_grace_period(mut self, input: std::option::Option<i32>) -> Self {
             self.health_check_grace_period = input;
             self
@@ -11298,6 +12989,11 @@ pub mod update_auto_scaling_group_input {
             self.placement_group = Some(input.into());
             self
         }
+        /// <p>The name of an existing placement group into which to launch your instances, if any. A
+        /// placement group is a logical grouping of instances within a single Availability Zone.
+        /// You cannot specify multiple Availability Zones and a placement group. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
+        /// <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
         pub fn set_placement_group(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11312,6 +13008,9 @@ pub mod update_auto_scaling_group_input {
             self.vpc_zone_identifier = Some(input.into());
             self
         }
+        /// <p>A comma-separated list of subnet IDs for a virtual private cloud (VPC). If you specify
+        /// <code>VPCZoneIdentifier</code> with <code>AvailabilityZones</code>, the subnets that
+        /// you specify for this parameter must reside in those Availability Zones.</p>
         pub fn set_vpc_zone_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11319,12 +13018,22 @@ pub mod update_auto_scaling_group_input {
             self.vpc_zone_identifier = input;
             self
         }
+        /// Appends an item to `termination_policies`.
+        ///
+        /// To override the contents of this collection use [`set_termination_policies`](Self::set_termination_policies).
+        ///
+        /// <p>A policy or a list of policies that are used to select the instances to terminate. The
+        /// policies are executed in the order that you list them. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling which Auto Scaling instances terminate during scale in</a> in the
+        /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn termination_policies(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.termination_policies.unwrap_or_default();
             v.push(input.into());
             self.termination_policies = Some(v);
             self
         }
+        /// <p>A policy or a list of policies that are used to select the instances to terminate. The
+        /// policies are executed in the order that you list them. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling which Auto Scaling instances terminate during scale in</a> in the
+        /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn set_termination_policies(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -11340,6 +13049,10 @@ pub mod update_auto_scaling_group_input {
             self.new_instances_protected_from_scale_in = Some(input);
             self
         }
+        /// <p>Indicates whether newly launched instances are protected from termination by Amazon EC2 Auto Scaling
+        /// when scaling in. For more information about preventing instances from terminating on
+        /// scale in, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance scale-in protection</a> in the
+        /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn set_new_instances_protected_from_scale_in(
             mut self,
             input: std::option::Option<bool>,
@@ -11354,6 +13067,9 @@ pub mod update_auto_scaling_group_input {
             self.service_linked_role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the service-linked role that the Auto Scaling group uses to
+        /// call other Amazon Web Services on your behalf. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html">Service-linked
+        /// roles</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn set_service_linked_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11371,6 +13087,12 @@ pub mod update_auto_scaling_group_input {
             self.max_instance_lifetime = Some(input);
             self
         }
+        /// <p>The maximum amount of time, in seconds, that an instance can be in service. The
+        /// default is null. If specified, the value must be either 0 or a number equal to or
+        /// greater than 86,400 seconds (1 day). To clear a previously set value, specify a new
+        /// value of 0. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-max-instance-lifetime.html">Replacing Auto Scaling
+        /// instances based on maximum instance lifetime</a> in the
+        /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn set_max_instance_lifetime(mut self, input: std::option::Option<i32>) -> Self {
             self.max_instance_lifetime = input;
             self
@@ -11381,6 +13103,8 @@ pub mod update_auto_scaling_group_input {
             self.capacity_rebalance = Some(input);
             self
         }
+        /// <p>Enables or disables Capacity Rebalancing. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/capacity-rebalance.html">Amazon EC2 Auto Scaling Capacity Rebalancing</a> in the
+        /// <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
         pub fn set_capacity_rebalance(mut self, input: std::option::Option<bool>) -> Self {
             self.capacity_rebalance = input;
             self
@@ -11390,6 +13114,7 @@ pub mod update_auto_scaling_group_input {
             self.context = Some(input.into());
             self
         }
+        /// <p>Reserved.</p>
         pub fn set_context(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.context = input;
             self
@@ -11399,7 +13124,7 @@ pub mod update_auto_scaling_group_input {
             self,
         ) -> std::result::Result<
             crate::input::UpdateAutoScalingGroupInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::UpdateAutoScalingGroupInput {
                 auto_scaling_group_name: self.auto_scaling_group_name,
@@ -11436,16 +13161,16 @@ impl UpdateAutoScalingGroupInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::UpdateAutoScalingGroup,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::UpdateAutoScalingGroupInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/").expect("formatting should succeed");
             Ok(())
         }
@@ -11453,7 +13178,7 @@ impl UpdateAutoScalingGroupInput {
         fn update_http_builder(
             input: &crate::input::UpdateAutoScalingGroupInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -11462,27 +13187,29 @@ impl UpdateAutoScalingGroupInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::UpdateAutoScalingGroupInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/x-www-form-urlencoded",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_update_auto_scaling_group(
                 &self,
             )
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -11505,15 +13232,15 @@ impl UpdateAutoScalingGroupInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::UpdateAutoScalingGroup::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "UpdateAutoScalingGroup",
             "autoscaling",
         ));
@@ -11522,10 +13249,10 @@ impl UpdateAutoScalingGroupInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -11539,6 +13266,7 @@ impl UpdateAutoScalingGroupInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAutoScalingGroupInput {
@@ -11658,6 +13386,7 @@ impl std::fmt::Debug for UpdateAutoScalingGroupInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TerminateInstanceInAutoScalingGroupInput {
@@ -11679,6 +13408,7 @@ impl std::fmt::Debug for TerminateInstanceInAutoScalingGroupInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SuspendProcessesInput {
@@ -11744,6 +13474,7 @@ impl std::fmt::Debug for SuspendProcessesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartInstanceRefreshInput {
@@ -11784,6 +13515,7 @@ impl std::fmt::Debug for StartInstanceRefreshInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetInstanceProtectionInput {
@@ -11805,6 +13537,7 @@ impl std::fmt::Debug for SetInstanceProtectionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetInstanceHealthInput {
@@ -11818,6 +13551,7 @@ pub struct SetInstanceHealthInput {
     /// specified for the group, by default, this call respects the grace period. Set this to
     /// <code>False</code>, to have the call not respect the grace period associated with
     /// the group.</p>
+    ///
     /// <p>For more information about the health check grace
     /// period, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_CreateAutoScalingGroup.html">CreateAutoScalingGroup</a> in the <i>Amazon EC2 Auto Scaling API
     /// Reference</i>.</p>
@@ -11836,6 +13570,7 @@ impl std::fmt::Debug for SetInstanceHealthInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetDesiredCapacityInput {
@@ -11859,6 +13594,7 @@ impl std::fmt::Debug for SetDesiredCapacityInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResumeProcessesInput {
@@ -11924,6 +13660,7 @@ impl std::fmt::Debug for ResumeProcessesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecordLifecycleActionHeartbeatInput {
@@ -11949,6 +13686,7 @@ impl std::fmt::Debug for RecordLifecycleActionHeartbeatInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutWarmPoolInput {
@@ -11995,6 +13733,7 @@ impl std::fmt::Debug for PutWarmPoolInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutScheduledUpdateGroupActionInput {
@@ -12003,7 +13742,7 @@ pub struct PutScheduledUpdateGroupActionInput {
     /// <p>The name of this scaling action.</p>
     pub scheduled_action_name: std::option::Option<std::string::String>,
     /// <p>This parameter is no longer used.</p>
-    pub time: std::option::Option<smithy_types::Instant>,
+    pub time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time for this action to start, in YYYY-MM-DDThh:mm:ssZ format in UTC/GMT
     /// only and in quotes (for example, <code>"2019-06-01T00:00:00Z"</code>).</p>
     /// <p>If you specify <code>Recurrence</code> and <code>StartTime</code>, Amazon EC2 Auto Scaling performs
@@ -12011,9 +13750,9 @@ pub struct PutScheduledUpdateGroupActionInput {
     /// recurrence.</p>
     /// <p>If you try to schedule your action in the past, Amazon EC2 Auto Scaling returns an error
     /// message.</p>
-    pub start_time: std::option::Option<smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time for the recurring schedule to end, in UTC.</p>
-    pub end_time: std::option::Option<smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The recurring schedule for this action. This format consists of five fields separated
     /// by white spaces: [Minute] [Hour] [Day_of_Month] [Month_of_Year] [Day_of_Week]. The value
     /// must be in quotes (for example, <code>"30 0 1 1,6,12 *"</code>). For more information
@@ -12055,6 +13794,7 @@ impl std::fmt::Debug for PutScheduledUpdateGroupActionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutScalingPolicyInput {
@@ -12213,6 +13953,7 @@ impl std::fmt::Debug for PutScalingPolicyInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutNotificationConfigurationInput {
@@ -12235,6 +13976,7 @@ impl std::fmt::Debug for PutNotificationConfigurationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutLifecycleHookInput {
@@ -12299,6 +14041,7 @@ impl std::fmt::Debug for PutLifecycleHookInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPredictiveScalingForecastInput {
@@ -12308,13 +14051,13 @@ pub struct GetPredictiveScalingForecastInput {
     pub policy_name: std::option::Option<std::string::String>,
     /// <p>The inclusive start time of the time range for the forecast data to get. At most, the
     /// date and time can be one year before the current date and time.</p>
-    pub start_time: std::option::Option<smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The exclusive end time of the time range for the forecast data to get. The maximum
     /// time duration between the start and end time is 30 days. </p>
     /// <p>Although this parameter can accept a date and time that is more than two days in the
     /// future, the availability of forecast data has limits. Amazon EC2 Auto Scaling only issues forecasts for
     /// periods of two days in advance.</p>
-    pub end_time: std::option::Option<smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for GetPredictiveScalingForecastInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12327,6 +14070,7 @@ impl std::fmt::Debug for GetPredictiveScalingForecastInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExitStandbyInput {
@@ -12344,6 +14088,7 @@ impl std::fmt::Debug for ExitStandbyInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ExecutePolicyInput {
@@ -12384,6 +14129,7 @@ impl std::fmt::Debug for ExecutePolicyInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnterStandbyInput {
@@ -12408,6 +14154,7 @@ impl std::fmt::Debug for EnterStandbyInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableMetricsCollectionInput {
@@ -12539,6 +14286,7 @@ impl std::fmt::Debug for EnableMetricsCollectionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableMetricsCollectionInput {
@@ -12659,6 +14407,7 @@ impl std::fmt::Debug for DisableMetricsCollectionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetachLoadBalancerTargetGroupsInput {
@@ -12677,6 +14426,7 @@ impl std::fmt::Debug for DetachLoadBalancerTargetGroupsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetachLoadBalancersInput {
@@ -12694,6 +14444,7 @@ impl std::fmt::Debug for DetachLoadBalancersInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DetachInstancesInput {
@@ -12718,6 +14469,7 @@ impl std::fmt::Debug for DetachInstancesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeWarmPoolInput {
@@ -12740,6 +14492,7 @@ impl std::fmt::Debug for DescribeWarmPoolInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTerminationPolicyTypesInput {}
@@ -12750,6 +14503,7 @@ impl std::fmt::Debug for DescribeTerminationPolicyTypesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTagsInput {
@@ -12773,6 +14527,7 @@ impl std::fmt::Debug for DescribeTagsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeScheduledActionsInput {
@@ -12785,10 +14540,10 @@ pub struct DescribeScheduledActionsInput {
     pub scheduled_action_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The earliest scheduled start time to return. If scheduled action names are provided,
     /// this parameter is ignored.</p>
-    pub start_time: std::option::Option<smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The latest scheduled start time to return. If scheduled action names are provided,
     /// this parameter is ignored.</p>
-    pub end_time: std::option::Option<smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The token for the next set of items to return. (You received this token from a
     /// previous call.)</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -12809,6 +14564,7 @@ impl std::fmt::Debug for DescribeScheduledActionsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeScalingProcessTypesInput {}
@@ -12819,6 +14575,7 @@ impl std::fmt::Debug for DescribeScalingProcessTypesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeScalingActivitiesInput {
@@ -12851,6 +14608,7 @@ impl std::fmt::Debug for DescribeScalingActivitiesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePoliciesInput {
@@ -12884,6 +14642,7 @@ impl std::fmt::Debug for DescribePoliciesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeNotificationConfigurationsInput {
@@ -12906,6 +14665,7 @@ impl std::fmt::Debug for DescribeNotificationConfigurationsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMetricCollectionTypesInput {}
@@ -12916,6 +14676,7 @@ impl std::fmt::Debug for DescribeMetricCollectionTypesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLoadBalancerTargetGroupsInput {
@@ -12938,6 +14699,7 @@ impl std::fmt::Debug for DescribeLoadBalancerTargetGroupsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLoadBalancersInput {
@@ -12960,6 +14722,7 @@ impl std::fmt::Debug for DescribeLoadBalancersInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLifecycleHookTypesInput {}
@@ -12970,6 +14733,7 @@ impl std::fmt::Debug for DescribeLifecycleHookTypesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLifecycleHooksInput {
@@ -12988,6 +14752,7 @@ impl std::fmt::Debug for DescribeLifecycleHooksInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLaunchConfigurationsInput {
@@ -13015,6 +14780,7 @@ impl std::fmt::Debug for DescribeLaunchConfigurationsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInstanceRefreshesInput {
@@ -13040,6 +14806,7 @@ impl std::fmt::Debug for DescribeInstanceRefreshesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAutoScalingNotificationTypesInput {}
@@ -13050,6 +14817,7 @@ impl std::fmt::Debug for DescribeAutoScalingNotificationTypesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAutoScalingInstancesInput {
@@ -13074,6 +14842,7 @@ impl std::fmt::Debug for DescribeAutoScalingInstancesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAutoScalingGroupsInput {
@@ -13102,6 +14871,7 @@ impl std::fmt::Debug for DescribeAutoScalingGroupsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAdjustmentTypesInput {}
@@ -13112,6 +14882,7 @@ impl std::fmt::Debug for DescribeAdjustmentTypesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccountLimitsInput {}
@@ -13122,6 +14893,7 @@ impl std::fmt::Debug for DescribeAccountLimitsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteWarmPoolInput {
@@ -13142,6 +14914,7 @@ impl std::fmt::Debug for DeleteWarmPoolInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteTagsInput {
@@ -13156,6 +14929,7 @@ impl std::fmt::Debug for DeleteTagsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteScheduledActionInput {
@@ -13173,6 +14947,7 @@ impl std::fmt::Debug for DeleteScheduledActionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePolicyInput {
@@ -13190,6 +14965,7 @@ impl std::fmt::Debug for DeletePolicyInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteNotificationConfigurationInput {
@@ -13208,6 +14984,7 @@ impl std::fmt::Debug for DeleteNotificationConfigurationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLifecycleHookInput {
@@ -13225,6 +15002,7 @@ impl std::fmt::Debug for DeleteLifecycleHookInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLaunchConfigurationInput {
@@ -13239,6 +15017,7 @@ impl std::fmt::Debug for DeleteLaunchConfigurationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAutoScalingGroupInput {
@@ -13258,6 +15037,7 @@ impl std::fmt::Debug for DeleteAutoScalingGroupInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateOrUpdateTagsInput {
@@ -13272,6 +15052,7 @@ impl std::fmt::Debug for CreateOrUpdateTagsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateLaunchConfigurationInput {
@@ -13438,6 +15219,7 @@ impl std::fmt::Debug for CreateLaunchConfigurationInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAutoScalingGroupInput {
@@ -13622,6 +15404,7 @@ impl std::fmt::Debug for CreateAutoScalingGroupInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CompleteLifecycleActionInput {
@@ -13651,6 +15434,7 @@ impl std::fmt::Debug for CompleteLifecycleActionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelInstanceRefreshInput {
@@ -13665,6 +15449,7 @@ impl std::fmt::Debug for CancelInstanceRefreshInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchPutScheduledUpdateGroupActionInput {
@@ -13686,6 +15471,7 @@ impl std::fmt::Debug for BatchPutScheduledUpdateGroupActionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchDeleteScheduledActionInput {
@@ -13704,6 +15490,7 @@ impl std::fmt::Debug for BatchDeleteScheduledActionInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttachLoadBalancerTargetGroupsInput {
@@ -13722,6 +15509,7 @@ impl std::fmt::Debug for AttachLoadBalancerTargetGroupsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttachLoadBalancersInput {
@@ -13739,6 +15527,7 @@ impl std::fmt::Debug for AttachLoadBalancersInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttachInstancesInput {

@@ -28,6 +28,7 @@ pub mod destination {
             self.s3 = Some(input);
             self
         }
+        /// <p>The <code>S3Destination</code> object.</p>
         pub fn set_s3(mut self, input: std::option::Option<crate::model::S3Destination>) -> Self {
             self.s3 = input;
             self
@@ -78,6 +79,7 @@ pub mod s3_destination {
             self.bucket_name = Some(input.into());
             self
         }
+        /// <p>Name of the S3 bucket.</p>
         pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket_name = input;
             self
@@ -88,6 +90,8 @@ pub mod s3_destination {
             self.prefix = Some(input.into());
             self
         }
+        /// <p>An Amazon S3 prefix that you can use to limit responses to those that begin with the
+        /// specified prefix.</p>
         pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.prefix = input;
             self
@@ -137,6 +141,7 @@ pub mod source {
             self.s3 = Some(input);
             self
         }
+        /// <p>The <code>S3Source</code> object.</p>
         pub fn set_s3(mut self, input: std::option::Option<crate::model::S3Source>) -> Self {
             self.s3 = input;
             self
@@ -190,6 +195,7 @@ pub mod s3_source {
             self.bucket_name = Some(input.into());
             self
         }
+        /// <p>Name of the S3 bucket.</p>
         pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket_name = input;
             self
@@ -199,6 +205,7 @@ pub mod s3_source {
             self.key = Some(input.into());
             self
         }
+        /// <p>Key name of the bucket object that contains your unsigned code.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -208,6 +215,7 @@ pub mod s3_source {
             self.version = Some(input.into());
             self
         }
+        /// <p>Version of your source image in your version enabled S3 bucket.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -273,6 +281,8 @@ pub mod signing_platform_overrides {
             self.signing_configuration = Some(input);
             self
         }
+        /// <p>A signing configuration that overrides the default encryption or hash algorithm of a
+        /// signing job.</p>
         pub fn set_signing_configuration(
             mut self,
             input: std::option::Option<crate::model::SigningConfigurationOverrides>,
@@ -290,6 +300,12 @@ pub mod signing_platform_overrides {
             self.signing_image_format = Some(input);
             self
         }
+        /// <p>A signed image is a JSON object. When overriding the default signing platform
+        /// configuration, a customer can select either of two signing formats,
+        /// <code>JSONEmbedded</code> or <code>JSONDetached</code>. (A third format value,
+        /// <code>JSON</code>, is reserved for future use.) With <code>JSONEmbedded</code>, the
+        /// signing image has the payload embedded in it. With <code>JSONDetached</code>, the
+        /// payload is not be embedded in the signing image.</p>
         pub fn set_signing_image_format(
             mut self,
             input: std::option::Option<crate::model::ImageFormat>,
@@ -313,6 +329,7 @@ impl SigningPlatformOverrides {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -324,8 +341,11 @@ impl SigningPlatformOverrides {
     std::hash::Hash,
 )]
 pub enum ImageFormat {
+    #[allow(missing_docs)] // documentation missing in model
     Json,
+    #[allow(missing_docs)] // documentation missing in model
     JsonDetached,
+    #[allow(missing_docs)] // documentation missing in model
     JsonEmbedded,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -348,6 +368,7 @@ impl std::str::FromStr for ImageFormat {
     }
 }
 impl ImageFormat {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ImageFormat::Json => "JSON",
@@ -356,6 +377,7 @@ impl ImageFormat {
             ImageFormat::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["JSON", "JSONDetached", "JSONEmbedded"]
     }
@@ -402,6 +424,8 @@ pub mod signing_configuration_overrides {
             self.encryption_algorithm = Some(input);
             self
         }
+        /// <p>A specified override of the default encryption algorithm that is used in a code signing
+        /// job.</p>
         pub fn set_encryption_algorithm(
             mut self,
             input: std::option::Option<crate::model::EncryptionAlgorithm>,
@@ -415,6 +439,8 @@ pub mod signing_configuration_overrides {
             self.hash_algorithm = Some(input);
             self
         }
+        /// <p>A specified override of the default hash algorithm that is used in a code signing
+        /// job.</p>
         pub fn set_hash_algorithm(
             mut self,
             input: std::option::Option<crate::model::HashAlgorithm>,
@@ -438,6 +464,7 @@ impl SigningConfigurationOverrides {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -449,7 +476,9 @@ impl SigningConfigurationOverrides {
     std::hash::Hash,
 )]
 pub enum HashAlgorithm {
+    #[allow(missing_docs)] // documentation missing in model
     Sha1,
+    #[allow(missing_docs)] // documentation missing in model
     Sha256,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -471,6 +500,7 @@ impl std::str::FromStr for HashAlgorithm {
     }
 }
 impl HashAlgorithm {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             HashAlgorithm::Sha1 => "SHA1",
@@ -478,6 +508,7 @@ impl HashAlgorithm {
             HashAlgorithm::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["SHA1", "SHA256"]
     }
@@ -488,6 +519,7 @@ impl AsRef<str> for HashAlgorithm {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -499,7 +531,9 @@ impl AsRef<str> for HashAlgorithm {
     std::hash::Hash,
 )]
 pub enum EncryptionAlgorithm {
+    #[allow(missing_docs)] // documentation missing in model
     Ecdsa,
+    #[allow(missing_docs)] // documentation missing in model
     Rsa,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -521,6 +555,7 @@ impl std::str::FromStr for EncryptionAlgorithm {
     }
 }
 impl EncryptionAlgorithm {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EncryptionAlgorithm::Ecdsa => "ECDSA",
@@ -528,6 +563,7 @@ impl EncryptionAlgorithm {
             EncryptionAlgorithm::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ECDSA", "RSA"]
     }
@@ -571,6 +607,7 @@ pub mod signature_validity_period {
             self.value = Some(input);
             self
         }
+        /// <p>The numerical value of the time unit for signature validity.</p>
         pub fn set_value(mut self, input: std::option::Option<i32>) -> Self {
             self.value = input;
             self
@@ -581,6 +618,8 @@ pub mod signature_validity_period {
             self.r#type = Some(input);
             self
         }
+        /// <p>The time unit for signature
+        /// validity.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ValidityType>) -> Self {
             self.r#type = input;
             self
@@ -601,6 +640,7 @@ impl SignatureValidityPeriod {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -612,8 +652,11 @@ impl SignatureValidityPeriod {
     std::hash::Hash,
 )]
 pub enum ValidityType {
+    #[allow(missing_docs)] // documentation missing in model
     Days,
+    #[allow(missing_docs)] // documentation missing in model
     Months,
+    #[allow(missing_docs)] // documentation missing in model
     Years,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -636,6 +679,7 @@ impl std::str::FromStr for ValidityType {
     }
 }
 impl ValidityType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ValidityType::Days => "DAYS",
@@ -644,6 +688,7 @@ impl ValidityType {
             ValidityType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DAYS", "MONTHS", "YEARS"]
     }
@@ -684,6 +729,8 @@ pub mod signing_material {
             self.certificate_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the certificates that is used to sign your
+        /// code.</p>
         pub fn set_certificate_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -782,6 +829,7 @@ pub mod signing_profile {
             self.profile_name = Some(input.into());
             self
         }
+        /// <p>The name of the signing profile.</p>
         pub fn set_profile_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.profile_name = input;
             self
@@ -791,6 +839,7 @@ pub mod signing_profile {
             self.profile_version = Some(input.into());
             self
         }
+        /// <p>The version of a signing profile.</p>
         pub fn set_profile_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -803,6 +852,7 @@ pub mod signing_profile {
             self.profile_version_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of a signing profile, including the profile version.</p>
         pub fn set_profile_version_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -815,6 +865,7 @@ pub mod signing_profile {
             self.signing_material = Some(input);
             self
         }
+        /// <p>The ACM certificate that is available for use by a signing profile.</p>
         pub fn set_signing_material(
             mut self,
             input: std::option::Option<crate::model::SigningMaterial>,
@@ -830,6 +881,7 @@ pub mod signing_profile {
             self.signature_validity_period = Some(input);
             self
         }
+        /// <p>The validity period for a signing job created using this signing profile.</p>
         pub fn set_signature_validity_period(
             mut self,
             input: std::option::Option<crate::model::SignatureValidityPeriod>,
@@ -842,6 +894,7 @@ pub mod signing_profile {
             self.platform_id = Some(input.into());
             self
         }
+        /// <p>The ID of a platform that is available for use by a signing profile.</p>
         pub fn set_platform_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.platform_id = input;
             self
@@ -851,6 +904,7 @@ pub mod signing_profile {
             self.platform_display_name = Some(input.into());
             self
         }
+        /// <p>The name of the signing platform.</p>
         pub fn set_platform_display_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -858,6 +912,11 @@ pub mod signing_profile {
             self.platform_display_name = input;
             self
         }
+        /// Adds a key-value pair to `signing_parameters`.
+        ///
+        /// To override the contents of this collection use [`set_signing_parameters`](Self::set_signing_parameters).
+        ///
+        /// <p>The parameters that are available for use by a code signing user.</p>
         pub fn signing_parameters(
             mut self,
             k: impl Into<std::string::String>,
@@ -868,6 +927,7 @@ pub mod signing_profile {
             self.signing_parameters = Some(hash_map);
             self
         }
+        /// <p>The parameters that are available for use by a code signing user.</p>
         pub fn set_signing_parameters(
             mut self,
             input: std::option::Option<
@@ -882,6 +942,7 @@ pub mod signing_profile {
             self.status = Some(input);
             self
         }
+        /// <p>The status of a code signing profile.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::SigningProfileStatus>,
@@ -894,10 +955,16 @@ pub mod signing_profile {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) for the signing profile.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A list of tags associated with the signing profile.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -908,6 +975,7 @@ pub mod signing_profile {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>A list of tags associated with the signing profile.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -942,6 +1010,7 @@ impl SigningProfile {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -953,8 +1022,11 @@ impl SigningProfile {
     std::hash::Hash,
 )]
 pub enum SigningProfileStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     Canceled,
+    #[allow(missing_docs)] // documentation missing in model
     Revoked,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -977,6 +1049,7 @@ impl std::str::FromStr for SigningProfileStatus {
     }
 }
 impl SigningProfileStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SigningProfileStatus::Active => "Active",
@@ -985,6 +1058,7 @@ impl SigningProfileStatus {
             SigningProfileStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Active", "Canceled", "Revoked"]
     }
@@ -1057,6 +1131,7 @@ pub mod signing_platform {
             self.platform_id = Some(input.into());
             self
         }
+        /// <p>The ID of a code signing; platform.</p>
         pub fn set_platform_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.platform_id = input;
             self
@@ -1066,6 +1141,7 @@ pub mod signing_platform {
             self.display_name = Some(input.into());
             self
         }
+        /// <p>The display name of a code signing platform.</p>
         pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.display_name = input;
             self
@@ -1075,6 +1151,7 @@ pub mod signing_platform {
             self.partner = Some(input.into());
             self
         }
+        /// <p>Any partner entities linked to a code signing platform.</p>
         pub fn set_partner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.partner = input;
             self
@@ -1084,6 +1161,7 @@ pub mod signing_platform {
             self.target = Some(input.into());
             self
         }
+        /// <p>The types of targets that can be signed by a code signing platform.</p>
         pub fn set_target(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.target = input;
             self
@@ -1093,6 +1171,7 @@ pub mod signing_platform {
             self.category = Some(input);
             self
         }
+        /// <p>The category of a code signing platform.</p>
         pub fn set_category(mut self, input: std::option::Option<crate::model::Category>) -> Self {
             self.category = input;
             self
@@ -1103,6 +1182,8 @@ pub mod signing_platform {
             self.signing_configuration = Some(input);
             self
         }
+        /// <p>The configuration of a code signing platform. This includes the designated hash algorithm
+        /// and encryption algorithm of a signing platform.</p>
         pub fn set_signing_configuration(
             mut self,
             input: std::option::Option<crate::model::SigningConfiguration>,
@@ -1115,6 +1196,7 @@ pub mod signing_platform {
             self.signing_image_format = Some(input);
             self
         }
+        /// <p>The image format of a code signing platform or profile.</p>
         pub fn set_signing_image_format(
             mut self,
             input: std::option::Option<crate::model::SigningImageFormat>,
@@ -1127,6 +1209,7 @@ pub mod signing_platform {
             self.max_size_in_mb = Some(input);
             self
         }
+        /// <p>The maximum size (in MB) of code that can be signed by a code signing platform.</p>
         pub fn set_max_size_in_mb(mut self, input: std::option::Option<i32>) -> Self {
             self.max_size_in_mb = input;
             self
@@ -1136,6 +1219,7 @@ pub mod signing_platform {
             self.revocation_supported = Some(input);
             self
         }
+        /// <p>Indicates whether revocation is supported for the platform.</p>
         pub fn set_revocation_supported(mut self, input: std::option::Option<bool>) -> Self {
             self.revocation_supported = input;
             self
@@ -1190,12 +1274,18 @@ pub mod signing_image_format {
         pub(crate) default_format: std::option::Option<crate::model::ImageFormat>,
     }
     impl Builder {
+        /// Appends an item to `supported_formats`.
+        ///
+        /// To override the contents of this collection use [`set_supported_formats`](Self::set_supported_formats).
+        ///
+        /// <p>The supported formats of a code signing image.</p>
         pub fn supported_formats(mut self, input: impl Into<crate::model::ImageFormat>) -> Self {
             let mut v = self.supported_formats.unwrap_or_default();
             v.push(input.into());
             self.supported_formats = Some(v);
             self
         }
+        /// <p>The supported formats of a code signing image.</p>
         pub fn set_supported_formats(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ImageFormat>>,
@@ -1208,6 +1298,7 @@ pub mod signing_image_format {
             self.default_format = Some(input);
             self
         }
+        /// <p>The default format of a code signing image.</p>
         pub fn set_default_format(
             mut self,
             input: std::option::Option<crate::model::ImageFormat>,
@@ -1270,6 +1361,7 @@ pub mod signing_configuration {
             self.encryption_algorithm_options = Some(input);
             self
         }
+        /// <p>The encryption algorithm options that are available for a code signing job.</p>
         pub fn set_encryption_algorithm_options(
             mut self,
             input: std::option::Option<crate::model::EncryptionAlgorithmOptions>,
@@ -1282,6 +1374,7 @@ pub mod signing_configuration {
             self.hash_algorithm_options = Some(input);
             self
         }
+        /// <p>The hash algorithm options that are available for a code signing job.</p>
         pub fn set_hash_algorithm_options(
             mut self,
             input: std::option::Option<crate::model::HashAlgorithmOptions>,
@@ -1332,12 +1425,18 @@ pub mod hash_algorithm_options {
         pub(crate) default_value: std::option::Option<crate::model::HashAlgorithm>,
     }
     impl Builder {
+        /// Appends an item to `allowed_values`.
+        ///
+        /// To override the contents of this collection use [`set_allowed_values`](Self::set_allowed_values).
+        ///
+        /// <p>The set of accepted hash algorithms allowed in a code signing job.</p>
         pub fn allowed_values(mut self, input: impl Into<crate::model::HashAlgorithm>) -> Self {
             let mut v = self.allowed_values.unwrap_or_default();
             v.push(input.into());
             self.allowed_values = Some(v);
             self
         }
+        /// <p>The set of accepted hash algorithms allowed in a code signing job.</p>
         pub fn set_allowed_values(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::HashAlgorithm>>,
@@ -1350,6 +1449,7 @@ pub mod hash_algorithm_options {
             self.default_value = Some(input);
             self
         }
+        /// <p>The default hash algorithm that is used in a code signing job.</p>
         pub fn set_default_value(
             mut self,
             input: std::option::Option<crate::model::HashAlgorithm>,
@@ -1401,6 +1501,11 @@ pub mod encryption_algorithm_options {
         pub(crate) default_value: std::option::Option<crate::model::EncryptionAlgorithm>,
     }
     impl Builder {
+        /// Appends an item to `allowed_values`.
+        ///
+        /// To override the contents of this collection use [`set_allowed_values`](Self::set_allowed_values).
+        ///
+        /// <p>The set of accepted encryption algorithms that are allowed in a code signing job.</p>
         pub fn allowed_values(
             mut self,
             input: impl Into<crate::model::EncryptionAlgorithm>,
@@ -1410,6 +1515,7 @@ pub mod encryption_algorithm_options {
             self.allowed_values = Some(v);
             self
         }
+        /// <p>The set of accepted encryption algorithms that are allowed in a code signing job.</p>
         pub fn set_allowed_values(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EncryptionAlgorithm>>,
@@ -1422,6 +1528,7 @@ pub mod encryption_algorithm_options {
             self.default_value = Some(input);
             self
         }
+        /// <p>The default encryption algorithm that is used by a code signing job.</p>
         pub fn set_default_value(
             mut self,
             input: std::option::Option<crate::model::EncryptionAlgorithm>,
@@ -1445,6 +1552,7 @@ impl EncryptionAlgorithmOptions {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1456,6 +1564,7 @@ impl EncryptionAlgorithmOptions {
     std::hash::Hash,
 )]
 pub enum Category {
+    #[allow(missing_docs)] // documentation missing in model
     AwsIoT,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1476,12 +1585,14 @@ impl std::str::FromStr for Category {
     }
 }
 impl Category {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Category::AwsIoT => "AWSIoT",
             Category::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AWSIoT"]
     }
@@ -1508,7 +1619,7 @@ pub struct SigningJob {
     /// the certificate used for the signing job.</p>
     pub signing_material: std::option::Option<crate::model::SigningMaterial>,
     /// <p>The date and time that the signing job was created.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The status of the signing job.</p>
     pub status: std::option::Option<crate::model::SigningStatus>,
     /// <p>Indicates whether the signing job is revoked.</p>
@@ -1522,7 +1633,7 @@ pub struct SigningJob {
     /// <p>The name of a signing platform.</p>
     pub platform_display_name: std::option::Option<std::string::String>,
     /// <p>The time when the signature of a signing job expires.</p>
-    pub signature_expires_at: std::option::Option<smithy_types::Instant>,
+    pub signature_expires_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The AWS account ID of the job owner.</p>
     pub job_owner: std::option::Option<std::string::String>,
     /// <p>The AWS account ID of the job invoker.</p>
@@ -1558,14 +1669,14 @@ pub mod signing_job {
         pub(crate) source: std::option::Option<crate::model::Source>,
         pub(crate) signed_object: std::option::Option<crate::model::SignedObject>,
         pub(crate) signing_material: std::option::Option<crate::model::SigningMaterial>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) status: std::option::Option<crate::model::SigningStatus>,
         pub(crate) is_revoked: std::option::Option<bool>,
         pub(crate) profile_name: std::option::Option<std::string::String>,
         pub(crate) profile_version: std::option::Option<std::string::String>,
         pub(crate) platform_id: std::option::Option<std::string::String>,
         pub(crate) platform_display_name: std::option::Option<std::string::String>,
-        pub(crate) signature_expires_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) signature_expires_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) job_owner: std::option::Option<std::string::String>,
         pub(crate) job_invoker: std::option::Option<std::string::String>,
     }
@@ -1575,6 +1686,7 @@ pub mod signing_job {
             self.job_id = Some(input.into());
             self
         }
+        /// <p>The ID of the signing job.</p>
         pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_id = input;
             self
@@ -1585,6 +1697,8 @@ pub mod signing_job {
             self.source = Some(input);
             self
         }
+        /// <p>A <code>Source</code> that contains information about a signing job's code image
+        /// source.</p>
         pub fn set_source(mut self, input: std::option::Option<crate::model::Source>) -> Self {
             self.source = input;
             self
@@ -1595,6 +1709,8 @@ pub mod signing_job {
             self.signed_object = Some(input);
             self
         }
+        /// <p>A <code>SignedObject</code> structure that contains information about a signing job's
+        /// signed code image.</p>
         pub fn set_signed_object(
             mut self,
             input: std::option::Option<crate::model::SignedObject>,
@@ -1608,6 +1724,8 @@ pub mod signing_job {
             self.signing_material = Some(input);
             self
         }
+        /// <p>A <code>SigningMaterial</code> object that contains the Amazon Resource Name (ARN) of
+        /// the certificate used for the signing job.</p>
         pub fn set_signing_material(
             mut self,
             input: std::option::Option<crate::model::SigningMaterial>,
@@ -1616,11 +1734,15 @@ pub mod signing_job {
             self
         }
         /// <p>The date and time that the signing job was created.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date and time that the signing job was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
@@ -1629,6 +1751,7 @@ pub mod signing_job {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the signing job.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::SigningStatus>,
@@ -1641,6 +1764,7 @@ pub mod signing_job {
             self.is_revoked = Some(input);
             self
         }
+        /// <p>Indicates whether the signing job is revoked.</p>
         pub fn set_is_revoked(mut self, input: std::option::Option<bool>) -> Self {
             self.is_revoked = input;
             self
@@ -1650,6 +1774,7 @@ pub mod signing_job {
             self.profile_name = Some(input.into());
             self
         }
+        /// <p>The name of the signing profile that created a signing job.</p>
         pub fn set_profile_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.profile_name = input;
             self
@@ -1659,6 +1784,7 @@ pub mod signing_job {
             self.profile_version = Some(input.into());
             self
         }
+        /// <p>The version of the signing profile that created a signing job.</p>
         pub fn set_profile_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1671,6 +1797,7 @@ pub mod signing_job {
             self.platform_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for a signing platform.</p>
         pub fn set_platform_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.platform_id = input;
             self
@@ -1680,6 +1807,7 @@ pub mod signing_job {
             self.platform_display_name = Some(input.into());
             self
         }
+        /// <p>The name of a signing platform.</p>
         pub fn set_platform_display_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1688,13 +1816,14 @@ pub mod signing_job {
             self
         }
         /// <p>The time when the signature of a signing job expires.</p>
-        pub fn signature_expires_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn signature_expires_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.signature_expires_at = Some(input);
             self
         }
+        /// <p>The time when the signature of a signing job expires.</p>
         pub fn set_signature_expires_at(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.signature_expires_at = input;
             self
@@ -1704,6 +1833,7 @@ pub mod signing_job {
             self.job_owner = Some(input.into());
             self
         }
+        /// <p>The AWS account ID of the job owner.</p>
         pub fn set_job_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_owner = input;
             self
@@ -1713,6 +1843,7 @@ pub mod signing_job {
             self.job_invoker = Some(input.into());
             self
         }
+        /// <p>The AWS account ID of the job invoker.</p>
         pub fn set_job_invoker(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_invoker = input;
             self
@@ -1745,6 +1876,7 @@ impl SigningJob {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1756,8 +1888,11 @@ impl SigningJob {
     std::hash::Hash,
 )]
 pub enum SigningStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     InProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Succeeded,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1780,6 +1915,7 @@ impl std::str::FromStr for SigningStatus {
     }
 }
 impl SigningStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SigningStatus::Failed => "Failed",
@@ -1788,6 +1924,7 @@ impl SigningStatus {
             SigningStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Failed", "InProgress", "Succeeded"]
     }
@@ -1827,6 +1964,7 @@ pub mod signed_object {
             self.s3 = Some(input);
             self
         }
+        /// <p>The <code>S3SignedObject</code>.</p>
         pub fn set_s3(mut self, input: std::option::Option<crate::model::S3SignedObject>) -> Self {
             self.s3 = input;
             self
@@ -1876,6 +2014,7 @@ pub mod s3_signed_object {
             self.bucket_name = Some(input.into());
             self
         }
+        /// <p>Name of the S3 bucket.</p>
         pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket_name = input;
             self
@@ -1885,6 +2024,7 @@ pub mod s3_signed_object {
             self.key = Some(input.into());
             self
         }
+        /// <p>Key name that uniquely identifies a signed code image in your bucket.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -1945,6 +2085,7 @@ pub mod permission {
             self.action = Some(input.into());
             self
         }
+        /// <p>An AWS Signer action permitted as part of cross-account permissions.</p>
         pub fn set_action(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.action = input;
             self
@@ -1954,6 +2095,7 @@ pub mod permission {
             self.principal = Some(input.into());
             self
         }
+        /// <p>The AWS principal that has been granted a cross-account permission.</p>
         pub fn set_principal(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.principal = input;
             self
@@ -1963,6 +2105,7 @@ pub mod permission {
             self.statement_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier for a cross-account permission statement.</p>
         pub fn set_statement_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.statement_id = input;
             self
@@ -1972,6 +2115,7 @@ pub mod permission {
             self.profile_version = Some(input.into());
             self
         }
+        /// <p>The signing profile version that a permission applies to.</p>
         pub fn set_profile_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2002,9 +2146,9 @@ impl Permission {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SigningProfileRevocationRecord {
     /// <p>The time when revocation becomes effective.</p>
-    pub revocation_effective_from: std::option::Option<smithy_types::Instant>,
+    pub revocation_effective_from: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The time when the signing profile was revoked.</p>
-    pub revoked_at: std::option::Option<smithy_types::Instant>,
+    pub revoked_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The identity of the revoker.</p>
     pub revoked_by: std::option::Option<std::string::String>,
 }
@@ -2023,29 +2167,34 @@ pub mod signing_profile_revocation_record {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) revocation_effective_from: std::option::Option<smithy_types::Instant>,
-        pub(crate) revoked_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) revocation_effective_from: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) revoked_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) revoked_by: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The time when revocation becomes effective.</p>
-        pub fn revocation_effective_from(mut self, input: smithy_types::Instant) -> Self {
+        pub fn revocation_effective_from(mut self, input: aws_smithy_types::Instant) -> Self {
             self.revocation_effective_from = Some(input);
             self
         }
+        /// <p>The time when revocation becomes effective.</p>
         pub fn set_revocation_effective_from(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.revocation_effective_from = input;
             self
         }
         /// <p>The time when the signing profile was revoked.</p>
-        pub fn revoked_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn revoked_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.revoked_at = Some(input);
             self
         }
-        pub fn set_revoked_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time when the signing profile was revoked.</p>
+        pub fn set_revoked_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.revoked_at = input;
             self
         }
@@ -2054,6 +2203,7 @@ pub mod signing_profile_revocation_record {
             self.revoked_by = Some(input.into());
             self
         }
+        /// <p>The identity of the revoker.</p>
         pub fn set_revoked_by(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.revoked_by = input;
             self
@@ -2082,7 +2232,7 @@ pub struct SigningJobRevocationRecord {
     /// <p>A caller-supplied reason for revocation.</p>
     pub reason: std::option::Option<std::string::String>,
     /// <p>The time of revocation.</p>
-    pub revoked_at: std::option::Option<smithy_types::Instant>,
+    pub revoked_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The identity of the revoker.</p>
     pub revoked_by: std::option::Option<std::string::String>,
 }
@@ -2102,7 +2252,7 @@ pub mod signing_job_revocation_record {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reason: std::option::Option<std::string::String>,
-        pub(crate) revoked_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) revoked_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) revoked_by: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2111,16 +2261,21 @@ pub mod signing_job_revocation_record {
             self.reason = Some(input.into());
             self
         }
+        /// <p>A caller-supplied reason for revocation.</p>
         pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.reason = input;
             self
         }
         /// <p>The time of revocation.</p>
-        pub fn revoked_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn revoked_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.revoked_at = Some(input);
             self
         }
-        pub fn set_revoked_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time of revocation.</p>
+        pub fn set_revoked_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.revoked_at = input;
             self
         }
@@ -2129,6 +2284,7 @@ pub mod signing_job_revocation_record {
             self.revoked_by = Some(input.into());
             self
         }
+        /// <p>The identity of the revoker.</p>
         pub fn set_revoked_by(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.revoked_by = input;
             self

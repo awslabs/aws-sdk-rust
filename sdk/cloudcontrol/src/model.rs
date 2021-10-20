@@ -50,7 +50,7 @@ pub struct ProgressEvent {
     /// </ul>
     pub operation_status: std::option::Option<crate::model::OperationStatus>,
     /// <p>When the resource operation request was initiated.</p>
-    pub event_time: std::option::Option<smithy_types::Instant>,
+    pub event_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A JSON string containing the resource model, consisting of each resource property and its
     /// current value.</p>
     pub resource_model: std::option::Option<std::string::String>,
@@ -61,7 +61,7 @@ pub struct ProgressEvent {
     /// Line Interface User Guide for Extension Development</i>.</p>
     pub error_code: std::option::Option<crate::model::HandlerErrorCode>,
     /// <p>When to next request the status of this resource operation request.</p>
-    pub retry_after: std::option::Option<smithy_types::Instant>,
+    pub retry_after: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for ProgressEvent {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -90,11 +90,11 @@ pub mod progress_event {
         pub(crate) request_token: std::option::Option<std::string::String>,
         pub(crate) operation: std::option::Option<crate::model::Operation>,
         pub(crate) operation_status: std::option::Option<crate::model::OperationStatus>,
-        pub(crate) event_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) event_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) resource_model: std::option::Option<std::string::String>,
         pub(crate) status_message: std::option::Option<std::string::String>,
         pub(crate) error_code: std::option::Option<crate::model::HandlerErrorCode>,
-        pub(crate) retry_after: std::option::Option<smithy_types::Instant>,
+        pub(crate) retry_after: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The name of the resource type used in the operation.</p>
@@ -102,6 +102,7 @@ pub mod progress_event {
             self.type_name = Some(input.into());
             self
         }
+        /// <p>The name of the resource type used in the operation.</p>
         pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.type_name = input;
             self
@@ -115,6 +116,11 @@ pub mod progress_event {
             self.identifier = Some(input.into());
             self
         }
+        /// <p>The primary identifier for the resource.</p>
+        /// <note>
+        /// <p>In some cases, the resource identifier may be available before the resource operation
+        /// has reached a status of <code>SUCCESS</code>.</p>
+        /// </note>
         pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identifier = input;
             self
@@ -126,6 +132,9 @@ pub mod progress_event {
             self.request_token = Some(input.into());
             self
         }
+        /// <p>The unique token representing this resource operation request.</p>
+        /// <p>Use the <code>RequestToken</code> with <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a> to return the current status of a resource operation
+        /// request.</p>
         pub fn set_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -138,6 +147,7 @@ pub mod progress_event {
             self.operation = Some(input);
             self
         }
+        /// <p>The resource operation type.</p>
         pub fn set_operation(
             mut self,
             input: std::option::Option<crate::model::Operation>,
@@ -178,6 +188,35 @@ pub mod progress_event {
             self.operation_status = Some(input);
             self
         }
+        /// <p>The current status of the resource operation request.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>PENDING</code>: The resource operation has not yet started.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>IN_PROGRESS</code>: The resource operation is currently in progress.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SUCCESS</code>: The resource operation has successfully completed.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FAILED</code>: The resource operation has failed. Refer to the error code and
+        /// status message for more information.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CANCEL_IN_PROGRESS</code>: The resource operation is in the process of being
+        /// canceled.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CANCEL_COMPLETE</code>: The resource operation has been canceled.</p>
+        /// </li>
+        /// </ul>
         pub fn set_operation_status(
             mut self,
             input: std::option::Option<crate::model::OperationStatus>,
@@ -186,11 +225,15 @@ pub mod progress_event {
             self
         }
         /// <p>When the resource operation request was initiated.</p>
-        pub fn event_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn event_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.event_time = Some(input);
             self
         }
-        pub fn set_event_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>When the resource operation request was initiated.</p>
+        pub fn set_event_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.event_time = input;
             self
         }
@@ -200,6 +243,8 @@ pub mod progress_event {
             self.resource_model = Some(input.into());
             self
         }
+        /// <p>A JSON string containing the resource model, consisting of each resource property and its
+        /// current value.</p>
         pub fn set_resource_model(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -212,6 +257,7 @@ pub mod progress_event {
             self.status_message = Some(input.into());
             self
         }
+        /// <p>Any message explaining the current status.</p>
         pub fn set_status_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -226,6 +272,9 @@ pub mod progress_event {
             self.error_code = Some(input);
             self
         }
+        /// <p>For requests with a status of <code>FAILED</code>, the associated error code.</p>
+        /// <p>For error code definitions, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-test-contract-errors.html">Handler error codes</a> in the <i>CloudFormation Command
+        /// Line Interface User Guide for Extension Development</i>.</p>
         pub fn set_error_code(
             mut self,
             input: std::option::Option<crate::model::HandlerErrorCode>,
@@ -234,13 +283,14 @@ pub mod progress_event {
             self
         }
         /// <p>When to next request the status of this resource operation request.</p>
-        pub fn retry_after(mut self, input: smithy_types::Instant) -> Self {
+        pub fn retry_after(mut self, input: aws_smithy_types::Instant) -> Self {
             self.retry_after = Some(input);
             self
         }
+        /// <p>When to next request the status of this resource operation request.</p>
         pub fn set_retry_after(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.retry_after = input;
             self
@@ -269,6 +319,7 @@ impl ProgressEvent {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -280,20 +331,35 @@ impl ProgressEvent {
     std::hash::Hash,
 )]
 pub enum HandlerErrorCode {
+    #[allow(missing_docs)] // documentation missing in model
     AccessDenied,
+    #[allow(missing_docs)] // documentation missing in model
     AlreadyExists,
+    #[allow(missing_docs)] // documentation missing in model
     GeneralServiceException,
+    #[allow(missing_docs)] // documentation missing in model
     InternalFailure,
+    #[allow(missing_docs)] // documentation missing in model
     InvalidCredentials,
+    #[allow(missing_docs)] // documentation missing in model
     InvalidRequest,
+    #[allow(missing_docs)] // documentation missing in model
     NetworkFailure,
+    #[allow(missing_docs)] // documentation missing in model
     NotFound,
+    #[allow(missing_docs)] // documentation missing in model
     NotStabilized,
+    #[allow(missing_docs)] // documentation missing in model
     NotUpdatable,
+    #[allow(missing_docs)] // documentation missing in model
     ResourceConflict,
+    #[allow(missing_docs)] // documentation missing in model
     ServiceInternalError,
+    #[allow(missing_docs)] // documentation missing in model
     ServiceLimitExceeded,
+    #[allow(missing_docs)] // documentation missing in model
     ServiceTimeout,
+    #[allow(missing_docs)] // documentation missing in model
     Throttling,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -328,6 +394,7 @@ impl std::str::FromStr for HandlerErrorCode {
     }
 }
 impl HandlerErrorCode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             HandlerErrorCode::AccessDenied => "AccessDenied",
@@ -348,6 +415,7 @@ impl HandlerErrorCode {
             HandlerErrorCode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "AccessDenied",
@@ -374,6 +442,7 @@ impl AsRef<str> for HandlerErrorCode {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -385,11 +454,17 @@ impl AsRef<str> for HandlerErrorCode {
     std::hash::Hash,
 )]
 pub enum OperationStatus {
+    #[allow(missing_docs)] // documentation missing in model
     CancelComplete,
+    #[allow(missing_docs)] // documentation missing in model
     CancelInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     InProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
+    #[allow(missing_docs)] // documentation missing in model
     Success,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -415,6 +490,7 @@ impl std::str::FromStr for OperationStatus {
     }
 }
 impl OperationStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             OperationStatus::CancelComplete => "CANCEL_COMPLETE",
@@ -426,6 +502,7 @@ impl OperationStatus {
             OperationStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CANCEL_COMPLETE",
@@ -443,6 +520,7 @@ impl AsRef<str> for OperationStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -454,8 +532,11 @@ impl AsRef<str> for OperationStatus {
     std::hash::Hash,
 )]
 pub enum Operation {
+    #[allow(missing_docs)] // documentation missing in model
     Create,
+    #[allow(missing_docs)] // documentation missing in model
     Delete,
+    #[allow(missing_docs)] // documentation missing in model
     Update,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -478,6 +559,7 @@ impl std::str::FromStr for Operation {
     }
 }
 impl Operation {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Operation::Create => "CREATE",
@@ -486,6 +568,7 @@ impl Operation {
             Operation::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CREATE", "DELETE", "UPDATE"]
     }
@@ -532,6 +615,9 @@ pub mod resource_description {
             self.identifier = Some(input.into());
             self
         }
+        /// <p>The primary identifier for the resource.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-identifier.html">Identifying
+        /// resources</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
         pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identifier = input;
             self
@@ -541,6 +627,7 @@ pub mod resource_description {
             self.properties = Some(input.into());
             self
         }
+        /// <p>A list of the resource properties and their current values.</p>
         pub fn set_properties(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.properties = input;
             self
@@ -616,12 +703,18 @@ pub mod resource_request_status_filter {
             std::option::Option<std::vec::Vec<crate::model::OperationStatus>>,
     }
     impl Builder {
+        /// Appends an item to `operations`.
+        ///
+        /// To override the contents of this collection use [`set_operations`](Self::set_operations).
+        ///
+        /// <p>The operation types to include in the filter.</p>
         pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
             let mut v = self.operations.unwrap_or_default();
             v.push(input.into());
             self.operations = Some(v);
             self
         }
+        /// <p>The operation types to include in the filter.</p>
         pub fn set_operations(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
@@ -629,6 +722,38 @@ pub mod resource_request_status_filter {
             self.operations = input;
             self
         }
+        /// Appends an item to `operation_statuses`.
+        ///
+        /// To override the contents of this collection use [`set_operation_statuses`](Self::set_operation_statuses).
+        ///
+        /// <p>The operation statuses to include in the filter.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>PENDING</code>: The operation has been requested, but not yet initiated.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>IN_PROGRESS</code>: The operation is currently in progress.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SUCCESS</code>: The operation has successfully completed.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FAILED</code>: The operation has failed.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CANCEL_IN_PROGRESS</code>: The operation is currently in the process of being
+        /// canceled.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CANCEL_COMPLETE</code>: The operation has been canceled.</p>
+        /// </li>
+        /// </ul>
         pub fn operation_statuses(
             mut self,
             input: impl Into<crate::model::OperationStatus>,
@@ -638,6 +763,34 @@ pub mod resource_request_status_filter {
             self.operation_statuses = Some(v);
             self
         }
+        /// <p>The operation statuses to include in the filter.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>PENDING</code>: The operation has been requested, but not yet initiated.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>IN_PROGRESS</code>: The operation is currently in progress.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SUCCESS</code>: The operation has successfully completed.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FAILED</code>: The operation has failed.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CANCEL_IN_PROGRESS</code>: The operation is currently in the process of being
+        /// canceled.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CANCEL_COMPLETE</code>: The operation has been canceled.</p>
+        /// </li>
+        /// </ul>
         pub fn set_operation_statuses(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::OperationStatus>>,

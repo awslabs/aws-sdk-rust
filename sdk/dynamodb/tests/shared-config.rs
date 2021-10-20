@@ -15,7 +15,7 @@ async fn shared_config_testbed() {
     let conf = aws_sdk_dynamodb::config::Builder::from(&shared_config)
         .credentials_provider(Credentials::from_keys("asdf", "asdf", None))
         .build();
-    let (conn, request) = smithy_client::test_connection::capture_request(None);
+    let (conn, request) = aws_smithy_client::test_connection::capture_request(None);
     let svc = aws_sdk_dynamodb::Client::from_conf_conn(conf, conn);
     let _ = svc.list_tables().send().await;
     assert_eq!(

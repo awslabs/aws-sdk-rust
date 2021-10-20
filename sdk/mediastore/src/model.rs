@@ -37,6 +37,8 @@ pub mod tag {
             self.key = Some(input.into());
             self
         }
+        /// <p>Part of the key:value pair that defines a tag. You can use a tag key to describe a category of information, such as "customer." Tag keys are
+        /// case-sensitive.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -47,6 +49,8 @@ pub mod tag {
             self.value = Some(input.into());
             self
         }
+        /// <p>Part of the key:value pair that defines a tag. You can use a tag value to describe a specific value within a category, such as "companyA" or
+        /// "companyB." Tag values are case-sensitive.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -105,6 +109,7 @@ pub mod metric_policy {
             self.container_level_metrics = Some(input);
             self
         }
+        /// <p>A setting to enable or disable metrics at the container level.</p>
         pub fn set_container_level_metrics(
             mut self,
             input: std::option::Option<crate::model::ContainerLevelMetrics>,
@@ -112,6 +117,11 @@ pub mod metric_policy {
             self.container_level_metrics = input;
             self
         }
+        /// Appends an item to `metric_policy_rules`.
+        ///
+        /// To override the contents of this collection use [`set_metric_policy_rules`](Self::set_metric_policy_rules).
+        ///
+        /// <p>A parameter that holds an array of rules that enable metrics at the object level. This parameter is optional, but if you choose to include it, you must also include at least one rule. By default, you can include up to five rules. You can also <a href="https://console.aws.amazon.com/servicequotas/home?region=us-east-1#!/services/mediastore/quotas">request a quota increase</a> to allow up to 300 rules per policy.</p>
         pub fn metric_policy_rules(
             mut self,
             input: impl Into<crate::model::MetricPolicyRule>,
@@ -121,6 +131,7 @@ pub mod metric_policy {
             self.metric_policy_rules = Some(v);
             self
         }
+        /// <p>A parameter that holds an array of rules that enable metrics at the object level. This parameter is optional, but if you choose to include it, you must also include at least one rule. By default, you can include up to five rules. You can also <a href="https://console.aws.amazon.com/servicequotas/home?region=us-east-1#!/services/mediastore/quotas">request a quota increase</a> to allow up to 300 rules per policy.</p>
         pub fn set_metric_policy_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MetricPolicyRule>>,
@@ -176,6 +187,7 @@ pub mod metric_policy_rule {
             self.object_group = Some(input.into());
             self
         }
+        /// <p>A path or file name that defines which objects to include in the group. Wildcards (*) are acceptable.</p>
         pub fn set_object_group(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.object_group = input;
             self
@@ -185,6 +197,7 @@ pub mod metric_policy_rule {
             self.object_group_name = Some(input.into());
             self
         }
+        /// <p>A name that allows you to refer to the object group.</p>
         pub fn set_object_group_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -208,6 +221,7 @@ impl MetricPolicyRule {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -219,7 +233,9 @@ impl MetricPolicyRule {
     std::hash::Hash,
 )]
 pub enum ContainerLevelMetrics {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -241,6 +257,7 @@ impl std::str::FromStr for ContainerLevelMetrics {
     }
 }
 impl ContainerLevelMetrics {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ContainerLevelMetrics::Disabled => "DISABLED",
@@ -248,6 +265,7 @@ impl ContainerLevelMetrics {
             ContainerLevelMetrics::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -315,12 +333,28 @@ pub mod cors_rule {
         pub(crate) expose_headers: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `allowed_origins`.
+        ///
+        /// To override the contents of this collection use [`set_allowed_origins`](Self::set_allowed_origins).
+        ///
+        /// <p>One or more response headers that you want users to be able to access from their
+        /// applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p>
+        /// <p>Each CORS rule must have at least one <code>AllowedOrigins</code> element. The string
+        /// value can include only one wildcard character (*), for example, http://*.example.com.
+        /// Additionally, you can specify only one wildcard character to allow cross-origin access for
+        /// all origins.</p>
         pub fn allowed_origins(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.allowed_origins.unwrap_or_default();
             v.push(input.into());
             self.allowed_origins = Some(v);
             self
         }
+        /// <p>One or more response headers that you want users to be able to access from their
+        /// applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).</p>
+        /// <p>Each CORS rule must have at least one <code>AllowedOrigins</code> element. The string
+        /// value can include only one wildcard character (*), for example, http://*.example.com.
+        /// Additionally, you can specify only one wildcard character to allow cross-origin access for
+        /// all origins.</p>
         pub fn set_allowed_origins(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -328,12 +362,24 @@ pub mod cors_rule {
             self.allowed_origins = input;
             self
         }
+        /// Appends an item to `allowed_methods`.
+        ///
+        /// To override the contents of this collection use [`set_allowed_methods`](Self::set_allowed_methods).
+        ///
+        /// <p>Identifies an HTTP method that the origin that is specified in the rule is allowed to
+        /// execute.</p>
+        /// <p>Each CORS rule must contain at least one <code>AllowedMethods</code> and one
+        /// <code>AllowedOrigins</code> element.</p>
         pub fn allowed_methods(mut self, input: impl Into<crate::model::MethodName>) -> Self {
             let mut v = self.allowed_methods.unwrap_or_default();
             v.push(input.into());
             self.allowed_methods = Some(v);
             self
         }
+        /// <p>Identifies an HTTP method that the origin that is specified in the rule is allowed to
+        /// execute.</p>
+        /// <p>Each CORS rule must contain at least one <code>AllowedMethods</code> and one
+        /// <code>AllowedOrigins</code> element.</p>
         pub fn set_allowed_methods(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MethodName>>,
@@ -341,12 +387,26 @@ pub mod cors_rule {
             self.allowed_methods = input;
             self
         }
+        /// Appends an item to `allowed_headers`.
+        ///
+        /// To override the contents of this collection use [`set_allowed_headers`](Self::set_allowed_headers).
+        ///
+        /// <p>Specifies which headers are allowed in a preflight <code>OPTIONS</code> request
+        /// through the <code>Access-Control-Request-Headers</code> header. Each header name that is
+        /// specified in <code>Access-Control-Request-Headers</code> must have a corresponding entry in
+        /// the rule. Only the headers that were requested are sent back. </p>
+        /// <p>This element can contain only one wildcard character (*).</p>
         pub fn allowed_headers(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.allowed_headers.unwrap_or_default();
             v.push(input.into());
             self.allowed_headers = Some(v);
             self
         }
+        /// <p>Specifies which headers are allowed in a preflight <code>OPTIONS</code> request
+        /// through the <code>Access-Control-Request-Headers</code> header. Each header name that is
+        /// specified in <code>Access-Control-Request-Headers</code> must have a corresponding entry in
+        /// the rule. Only the headers that were requested are sent back. </p>
+        /// <p>This element can contain only one wildcard character (*).</p>
         pub fn set_allowed_headers(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -361,16 +421,31 @@ pub mod cors_rule {
             self.max_age_seconds = Some(input);
             self
         }
+        /// <p>The time in seconds that your browser caches the preflight response for the specified
+        /// resource.</p>
+        /// <p>A CORS rule can have only one <code>MaxAgeSeconds</code> element.</p>
         pub fn set_max_age_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.max_age_seconds = input;
             self
         }
+        /// Appends an item to `expose_headers`.
+        ///
+        /// To override the contents of this collection use [`set_expose_headers`](Self::set_expose_headers).
+        ///
+        /// <p>One or more headers in the response that you want users to be able to access from
+        /// their applications (for example, from a JavaScript <code>XMLHttpRequest</code>
+        /// object).</p>
+        /// <p>This element is optional for each rule.</p>
         pub fn expose_headers(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.expose_headers.unwrap_or_default();
             v.push(input.into());
             self.expose_headers = Some(v);
             self
         }
+        /// <p>One or more headers in the response that you want users to be able to access from
+        /// their applications (for example, from a JavaScript <code>XMLHttpRequest</code>
+        /// object).</p>
+        /// <p>This element is optional for each rule.</p>
         pub fn set_expose_headers(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -397,6 +472,7 @@ impl CorsRule {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -408,9 +484,13 @@ impl CorsRule {
     std::hash::Hash,
 )]
 pub enum MethodName {
+    #[allow(missing_docs)] // documentation missing in model
     Delete,
+    #[allow(missing_docs)] // documentation missing in model
     Get,
+    #[allow(missing_docs)] // documentation missing in model
     Head,
+    #[allow(missing_docs)] // documentation missing in model
     Put,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -434,6 +514,7 @@ impl std::str::FromStr for MethodName {
     }
 }
 impl MethodName {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MethodName::Delete => "DELETE",
@@ -443,6 +524,7 @@ impl MethodName {
             MethodName::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DELETE", "GET", "HEAD", "PUT"]
     }
@@ -463,7 +545,7 @@ pub struct Container {
     /// container is created. Once the value has been assigned, it does not change.</p>
     pub endpoint: std::option::Option<std::string::String>,
     /// <p>Unix timestamp.</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The Amazon Resource Name (ARN) of the container. The ARN has the following
     /// format:</p>
     /// <p>arn:aws:<region>:<account that owns this container>:container/<name of
@@ -499,7 +581,7 @@ pub mod container {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::ContainerStatus>,
@@ -513,18 +595,22 @@ pub mod container {
             self.endpoint = Some(input.into());
             self
         }
+        /// <p>The DNS endpoint of the container. Use the endpoint to identify the specific
+        /// container when sending requests to the data plane. The service assigns this value when the
+        /// container is created. Once the value has been assigned, it does not change.</p>
         pub fn set_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.endpoint = input;
             self
         }
         /// <p>Unix timestamp.</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>Unix timestamp.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -538,6 +624,11 @@ pub mod container {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the container. The ARN has the following
+        /// format:</p>
+        /// <p>arn:aws:<region>:<account that owns this container>:container/<name of
+        /// container> </p>
+        /// <p>For example: arn:aws:mediastore:us-west-2:111122223333:container/movies </p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -547,6 +638,7 @@ pub mod container {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the container.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -559,6 +651,10 @@ pub mod container {
             self.status = Some(input);
             self
         }
+        /// <p>The status of container creation or deletion. The status is one of the following:
+        /// <code>CREATING</code>, <code>ACTIVE</code>, or <code>DELETING</code>. While the service
+        /// is creating the container, the status is <code>CREATING</code>. When the endpoint is
+        /// available, the status changes to <code>ACTIVE</code>.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ContainerStatus>,
@@ -571,6 +667,7 @@ pub mod container {
             self.access_logging_enabled = Some(input);
             self
         }
+        /// <p>The state of access logging on the container. This value is <code>false</code> by default, indicating that AWS Elemental MediaStore does not send access logs to Amazon CloudWatch Logs. When you enable access logging on the container, MediaStore changes this value to <code>true</code>, indicating that the service delivers access logs for objects stored in that container to CloudWatch Logs.</p>
         pub fn set_access_logging_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.access_logging_enabled = input;
             self
@@ -595,6 +692,7 @@ impl Container {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -606,8 +704,11 @@ impl Container {
     std::hash::Hash,
 )]
 pub enum ContainerStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     Creating,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -630,6 +731,7 @@ impl std::str::FromStr for ContainerStatus {
     }
 }
 impl ContainerStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ContainerStatus::Active => "ACTIVE",
@@ -638,6 +740,7 @@ impl ContainerStatus {
             ContainerStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ACTIVE", "CREATING", "DELETING"]
     }

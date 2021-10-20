@@ -35,6 +35,7 @@ pub mod update_streaming_distribution_output {
             self.streaming_distribution = Some(input);
             self
         }
+        /// <p>The streaming distribution's information.</p>
         pub fn set_streaming_distribution(
             mut self,
             input: std::option::Option<crate::model::StreamingDistribution>,
@@ -48,6 +49,8 @@ pub mod update_streaming_distribution_output {
             self.e_tag = Some(input.into());
             self
         }
+        /// <p>The current version of the configuration. For example:
+        /// <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.e_tag = input;
             self
@@ -68,6 +71,7 @@ impl UpdateStreamingDistributionOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateRealtimeLogConfigOutput {
@@ -95,6 +99,7 @@ pub mod update_realtime_log_config_output {
             self.realtime_log_config = Some(input);
             self
         }
+        /// <p>A real-time log configuration.</p>
         pub fn set_realtime_log_config(
             mut self,
             input: std::option::Option<crate::model::RealtimeLogConfig>,
@@ -117,6 +122,7 @@ impl UpdateRealtimeLogConfigOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePublicKeyOutput {
@@ -148,6 +154,7 @@ pub mod update_public_key_output {
             self.public_key = Some(input);
             self
         }
+        /// <p>The public key.</p>
         pub fn set_public_key(
             mut self,
             input: std::option::Option<crate::model::PublicKey>,
@@ -160,6 +167,7 @@ pub mod update_public_key_output {
             self.e_tag = Some(input.into());
             self
         }
+        /// <p>The identifier of the current version of the public key.</p>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.e_tag = input;
             self
@@ -180,6 +188,7 @@ impl UpdatePublicKeyOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateOriginRequestPolicyOutput {
@@ -211,6 +220,7 @@ pub mod update_origin_request_policy_output {
             self.origin_request_policy = Some(input);
             self
         }
+        /// <p>An origin request policy.</p>
         pub fn set_origin_request_policy(
             mut self,
             input: std::option::Option<crate::model::OriginRequestPolicy>,
@@ -223,6 +233,7 @@ pub mod update_origin_request_policy_output {
             self.e_tag = Some(input.into());
             self
         }
+        /// <p>The current version of the origin request policy.</p>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.e_tag = input;
             self
@@ -243,6 +254,7 @@ impl UpdateOriginRequestPolicyOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateKeyGroupOutput {
@@ -274,6 +286,7 @@ pub mod update_key_group_output {
             self.key_group = Some(input);
             self
         }
+        /// <p>The key group that was just updated.</p>
         pub fn set_key_group(mut self, input: std::option::Option<crate::model::KeyGroup>) -> Self {
             self.key_group = input;
             self
@@ -283,6 +296,7 @@ pub mod update_key_group_output {
             self.e_tag = Some(input.into());
             self
         }
+        /// <p>The identifier for this version of the key group.</p>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.e_tag = input;
             self
@@ -303,6 +317,7 @@ impl UpdateKeyGroupOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFunctionOutput {
@@ -334,6 +349,7 @@ pub mod update_function_output {
             self.function_summary = Some(input);
             self
         }
+        /// <p>Contains configuration information and metadata about a CloudFront function.</p>
         pub fn set_function_summary(
             mut self,
             input: std::option::Option<crate::model::FunctionSummary>,
@@ -346,6 +362,7 @@ pub mod update_function_output {
             self.e_tag = Some(input.into());
             self
         }
+        /// <p>The version identifier for the current version of the CloudFront function.</p>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.e_tag = input;
             self
@@ -366,6 +383,7 @@ impl UpdateFunctionOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFieldLevelEncryptionProfileOutput {
@@ -405,6 +423,7 @@ pub mod update_field_level_encryption_profile_output {
             self.field_level_encryption_profile = Some(input);
             self
         }
+        /// <p>Return the results of updating the profile.</p>
         pub fn set_field_level_encryption_profile(
             mut self,
             input: std::option::Option<crate::model::FieldLevelEncryptionProfile>,
@@ -417,6 +436,7 @@ pub mod update_field_level_encryption_profile_output {
             self.e_tag = Some(input.into());
             self
         }
+        /// <p>The result of the field-level encryption profile request. </p>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.e_tag = input;
             self
@@ -437,6 +457,7 @@ impl UpdateFieldLevelEncryptionProfileOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateFieldLevelEncryptionConfigOutput {
@@ -469,6 +490,7 @@ pub mod update_field_level_encryption_config_output {
             self.field_level_encryption = Some(input);
             self
         }
+        /// <p>Return the results of updating the configuration.</p>
         pub fn set_field_level_encryption(
             mut self,
             input: std::option::Option<crate::model::FieldLevelEncryption>,
@@ -482,6 +504,8 @@ pub mod update_field_level_encryption_config_output {
             self.e_tag = Some(input.into());
             self
         }
+        /// <p>The value of the <code>ETag</code> header that you received when updating the configuration.
+        /// For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.e_tag = input;
             self
@@ -535,6 +559,7 @@ pub mod update_distribution_output {
             self.distribution = Some(input);
             self
         }
+        /// <p>The distribution's information.</p>
         pub fn set_distribution(
             mut self,
             input: std::option::Option<crate::model::Distribution>,
@@ -548,6 +573,8 @@ pub mod update_distribution_output {
             self.e_tag = Some(input.into());
             self
         }
+        /// <p>The current version of the configuration. For example:
+        /// <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.e_tag = input;
             self
@@ -609,6 +636,7 @@ pub mod update_cloud_front_origin_access_identity_output {
             self.cloud_front_origin_access_identity = Some(input);
             self
         }
+        /// <p>The origin access identity's information.</p>
         pub fn set_cloud_front_origin_access_identity(
             mut self,
             input: std::option::Option<crate::model::CloudFrontOriginAccessIdentity>,
@@ -622,6 +650,8 @@ pub mod update_cloud_front_origin_access_identity_output {
             self.e_tag = Some(input.into());
             self
         }
+        /// <p>The current version of the configuration. For example:
+        /// <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.e_tag = input;
             self
@@ -642,6 +672,7 @@ impl UpdateCloudFrontOriginAccessIdentityOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateCachePolicyOutput {
@@ -673,6 +704,7 @@ pub mod update_cache_policy_output {
             self.cache_policy = Some(input);
             self
         }
+        /// <p>A cache policy.</p>
         pub fn set_cache_policy(
             mut self,
             input: std::option::Option<crate::model::CachePolicy>,
@@ -685,6 +717,7 @@ pub mod update_cache_policy_output {
             self.e_tag = Some(input.into());
             self
         }
+        /// <p>The current version of the cache policy.</p>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.e_tag = input;
             self
@@ -705,6 +738,7 @@ impl UpdateCachePolicyOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceOutput {}
@@ -734,6 +768,7 @@ impl UntagResourceOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestFunctionOutput {
@@ -763,6 +798,8 @@ pub mod test_function_output {
             self.test_result = Some(input);
             self
         }
+        /// <p>An object that represents the result of running the function with the provided event
+        /// object.</p>
         pub fn set_test_result(
             mut self,
             input: std::option::Option<crate::model::TestResult>,
@@ -785,6 +822,7 @@ impl TestFunctionOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceOutput {}
@@ -814,6 +852,7 @@ impl TagResourceOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PublishFunctionOutput {
@@ -841,6 +880,7 @@ pub mod publish_function_output {
             self.function_summary = Some(input);
             self
         }
+        /// <p>Contains configuration information and metadata about a CloudFront function.</p>
         pub fn set_function_summary(
             mut self,
             input: std::option::Option<crate::model::FunctionSummary>,
@@ -891,6 +931,7 @@ pub mod list_tags_for_resource_output {
             self.tags = Some(input);
             self
         }
+        /// <p> A complex type that contains zero or more <code>Tag</code> elements.</p>
         pub fn set_tags(mut self, input: std::option::Option<crate::model::Tags>) -> Self {
             self.tags = input;
             self
@@ -943,6 +984,7 @@ pub mod list_streaming_distributions_output {
             self.streaming_distribution_list = Some(input);
             self
         }
+        /// <p>The <code>StreamingDistributionList</code> type. </p>
         pub fn set_streaming_distribution_list(
             mut self,
             input: std::option::Option<crate::model::StreamingDistributionList>,
@@ -965,6 +1007,7 @@ impl ListStreamingDistributionsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRealtimeLogConfigsOutput {
@@ -992,6 +1035,7 @@ pub mod list_realtime_log_configs_output {
             self.realtime_log_configs = Some(input);
             self
         }
+        /// <p>A list of real-time log configurations.</p>
         pub fn set_realtime_log_configs(
             mut self,
             input: std::option::Option<crate::model::RealtimeLogConfigs>,
@@ -1014,6 +1058,7 @@ impl ListRealtimeLogConfigsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPublicKeysOutput {
@@ -1041,6 +1086,7 @@ pub mod list_public_keys_output {
             self.public_key_list = Some(input);
             self
         }
+        /// <p>Returns a list of all public keys that have been added to CloudFront for this account.</p>
         pub fn set_public_key_list(
             mut self,
             input: std::option::Option<crate::model::PublicKeyList>,
@@ -1063,6 +1109,7 @@ impl ListPublicKeysOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListOriginRequestPoliciesOutput {
@@ -1097,6 +1144,7 @@ pub mod list_origin_request_policies_output {
             self.origin_request_policy_list = Some(input);
             self
         }
+        /// <p>A list of origin request policies.</p>
         pub fn set_origin_request_policy_list(
             mut self,
             input: std::option::Option<crate::model::OriginRequestPolicyList>,
@@ -1119,6 +1167,7 @@ impl ListOriginRequestPoliciesOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListKeyGroupsOutput {
@@ -1146,6 +1195,7 @@ pub mod list_key_groups_output {
             self.key_group_list = Some(input);
             self
         }
+        /// <p>A list of key groups.</p>
         pub fn set_key_group_list(
             mut self,
             input: std::option::Option<crate::model::KeyGroupList>,
@@ -1196,6 +1246,7 @@ pub mod list_invalidations_output {
             self.invalidation_list = Some(input);
             self
         }
+        /// <p>Information about invalidation batches. </p>
         pub fn set_invalidation_list(
             mut self,
             input: std::option::Option<crate::model::InvalidationList>,
@@ -1218,6 +1269,7 @@ impl ListInvalidationsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFunctionsOutput {
@@ -1245,6 +1297,7 @@ pub mod list_functions_output {
             self.function_list = Some(input);
             self
         }
+        /// <p>A list of CloudFront functions.</p>
         pub fn set_function_list(
             mut self,
             input: std::option::Option<crate::model::FunctionList>,
@@ -1267,6 +1320,7 @@ impl ListFunctionsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFieldLevelEncryptionProfilesOutput {
@@ -1302,6 +1356,7 @@ pub mod list_field_level_encryption_profiles_output {
             self.field_level_encryption_profile_list = Some(input);
             self
         }
+        /// <p>Returns a list of the field-level encryption profiles that have been created in CloudFront for this account.</p>
         pub fn set_field_level_encryption_profile_list(
             mut self,
             input: std::option::Option<crate::model::FieldLevelEncryptionProfileList>,
@@ -1324,6 +1379,7 @@ impl ListFieldLevelEncryptionProfilesOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListFieldLevelEncryptionConfigsOutput {
@@ -1358,6 +1414,7 @@ pub mod list_field_level_encryption_configs_output {
             self.field_level_encryption_list = Some(input);
             self
         }
+        /// <p>Returns a list of all field-level encryption configurations that have been created in CloudFront for this account.</p>
         pub fn set_field_level_encryption_list(
             mut self,
             input: std::option::Option<crate::model::FieldLevelEncryptionList>,
@@ -1409,6 +1466,7 @@ pub mod list_distributions_by_web_acl_id_output {
             self.distribution_list = Some(input);
             self
         }
+        /// <p>The <code>DistributionList</code> type. </p>
         pub fn set_distribution_list(
             mut self,
             input: std::option::Option<crate::model::DistributionList>,
@@ -1431,6 +1489,7 @@ impl ListDistributionsByWebAclIdOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDistributionsByRealtimeLogConfigOutput {
@@ -1458,6 +1517,7 @@ pub mod list_distributions_by_realtime_log_config_output {
             self.distribution_list = Some(input);
             self
         }
+        /// <p>A distribution list.</p>
         pub fn set_distribution_list(
             mut self,
             input: std::option::Option<crate::model::DistributionList>,
@@ -1480,6 +1540,7 @@ impl ListDistributionsByRealtimeLogConfigOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDistributionsByOriginRequestPolicyIdOutput {
@@ -1507,6 +1568,7 @@ pub mod list_distributions_by_origin_request_policy_id_output {
             self.distribution_id_list = Some(input);
             self
         }
+        /// <p>A list of distribution IDs.</p>
         pub fn set_distribution_id_list(
             mut self,
             input: std::option::Option<crate::model::DistributionIdList>,
@@ -1530,6 +1592,7 @@ impl ListDistributionsByOriginRequestPolicyIdOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDistributionsByKeyGroupOutput {
@@ -1557,6 +1620,7 @@ pub mod list_distributions_by_key_group_output {
             self.distribution_id_list = Some(input);
             self
         }
+        /// <p>A list of distribution IDs.</p>
         pub fn set_distribution_id_list(
             mut self,
             input: std::option::Option<crate::model::DistributionIdList>,
@@ -1579,6 +1643,7 @@ impl ListDistributionsByKeyGroupOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDistributionsByCachePolicyIdOutput {
@@ -1606,6 +1671,7 @@ pub mod list_distributions_by_cache_policy_id_output {
             self.distribution_id_list = Some(input);
             self
         }
+        /// <p>A list of distribution IDs.</p>
         pub fn set_distribution_id_list(
             mut self,
             input: std::option::Option<crate::model::DistributionIdList>,
@@ -1656,6 +1722,7 @@ pub mod list_distributions_output {
             self.distribution_list = Some(input);
             self
         }
+        /// <p>The <code>DistributionList</code> type. </p>
         pub fn set_distribution_list(
             mut self,
             input: std::option::Option<crate::model::DistributionList>,
@@ -1678,6 +1745,7 @@ impl ListDistributionsOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListConflictingAliasesOutput {
@@ -1709,6 +1777,7 @@ pub mod list_conflicting_aliases_output {
             self.conflicting_aliases_list = Some(input);
             self
         }
+        /// <p>A list of conflicting aliases.</p>
         pub fn set_conflicting_aliases_list(
             mut self,
             input: std::option::Option<crate::model::ConflictingAliasesList>,
@@ -1767,6 +1836,7 @@ pub mod list_cloud_front_origin_access_identities_output {
             self.cloud_front_origin_access_identity_list = Some(input);
             self
         }
+        /// <p>The <code>CloudFrontOriginAccessIdentityList</code> type. </p>
         pub fn set_cloud_front_origin_access_identity_list(
             mut self,
             input: std::option::Option<crate::model::CloudFrontOriginAccessIdentityList>,
@@ -1790,6 +1860,7 @@ impl ListCloudFrontOriginAccessIdentitiesOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCachePoliciesOutput {
@@ -1817,6 +1888,7 @@ pub mod list_cache_policies_output {
             self.cache_policy_list = Some(input);
             self
         }
+        /// <p>A list of cache policies.</p>
         pub fn set_cache_policy_list(
             mut self,
             input: std::option::Option<crate::model::CachePolicyList>,
@@ -1880,6 +1952,7 @@ pub mod get_streaming_distribution_config_output {
             self.streaming_distribution_config = Some(input);
             self
         }
+        /// <p>The streaming distribution's configuration information.</p>
         pub fn set_streaming_distribution_config(
             mut self,
             input: std::option::Option<crate::model::StreamingDistributionConfig>,
@@ -1893,6 +1966,8 @@ pub mod get_streaming_distribution_config_output {
             self.e_tag = Some(input.into());
             self
         }
+        /// <p>The current version of the configuration. For example: <code>E2QWRUHAPOMQZL</code>.
+        /// </p>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.e_tag = input;
             self
@@ -1949,6 +2024,7 @@ pub mod get_streaming_distribution_output {
             self.streaming_distribution = Some(input);
             self
         }
+        /// <p>The streaming distribution's information.</p>
         pub fn set_streaming_distribution(
             mut self,
             input: std::option::Option<crate::model::StreamingDistribution>,
@@ -1962,6 +2038,8 @@ pub mod get_streaming_distribution_output {
             self.e_tag = Some(input.into());
             self
         }
+        /// <p>The current version of the streaming distribution's information. For example:
+        /// <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.e_tag = input;
             self
@@ -1982,6 +2060,7 @@ impl GetStreamingDistributionOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetRealtimeLogConfigOutput {
@@ -2009,6 +2088,7 @@ pub mod get_realtime_log_config_output {
             self.realtime_log_config = Some(input);
             self
         }
+        /// <p>A real-time log configuration.</p>
         pub fn set_realtime_log_config(
             mut self,
             input: std::option::Option<crate::model::RealtimeLogConfig>,
@@ -2031,6 +2111,7 @@ impl GetRealtimeLogConfigOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPublicKeyConfigOutput {
@@ -2062,6 +2143,7 @@ pub mod get_public_key_config_output {
             self.public_key_config = Some(input);
             self
         }
+        /// <p>A public key configuration.</p>
         pub fn set_public_key_config(
             mut self,
             input: std::option::Option<crate::model::PublicKeyConfig>,
@@ -2074,6 +2156,7 @@ pub mod get_public_key_config_output {
             self.e_tag = Some(input.into());
             self
         }
+        /// <p>The identifier for this version of the public key configuration.</p>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.e_tag = input;
             self
@@ -2094,6 +2177,7 @@ impl GetPublicKeyConfigOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPublicKeyOutput {
@@ -2125,6 +2209,7 @@ pub mod get_public_key_output {
             self.public_key = Some(input);
             self
         }
+        /// <p>The public key.</p>
         pub fn set_public_key(
             mut self,
             input: std::option::Option<crate::model::PublicKey>,
@@ -2137,6 +2222,7 @@ pub mod get_public_key_output {
             self.e_tag = Some(input.into());
             self
         }
+        /// <p>The identifier for this version of the public key.</p>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.e_tag = input;
             self
@@ -2157,6 +2243,7 @@ impl GetPublicKeyOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetOriginRequestPolicyConfigOutput {
@@ -2195,6 +2282,7 @@ pub mod get_origin_request_policy_config_output {
             self.origin_request_policy_config = Some(input);
             self
         }
+        /// <p>The origin request policy configuration.</p>
         pub fn set_origin_request_policy_config(
             mut self,
             input: std::option::Option<crate::model::OriginRequestPolicyConfig>,
@@ -2207,6 +2295,7 @@ pub mod get_origin_request_policy_config_output {
             self.e_tag = Some(input.into());
             self
         }
+        /// <p>The current version of the origin request policy.</p>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.e_tag = input;
             self
@@ -2227,6 +2316,7 @@ impl GetOriginRequestPolicyConfigOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetOriginRequestPolicyOutput {
@@ -2258,6 +2348,7 @@ pub mod get_origin_request_policy_output {
             self.origin_request_policy = Some(input);
             self
         }
+        /// <p>The origin request policy.</p>
         pub fn set_origin_request_policy(
             mut self,
             input: std::option::Option<crate::model::OriginRequestPolicy>,
@@ -2270,6 +2361,7 @@ pub mod get_origin_request_policy_output {
             self.e_tag = Some(input.into());
             self
         }
+        /// <p>The current version of the origin request policy.</p>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.e_tag = input;
             self
@@ -2290,6 +2382,7 @@ impl GetOriginRequestPolicyOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMonitoringSubscriptionOutput {
@@ -2323,6 +2416,8 @@ pub mod get_monitoring_subscription_output {
             self.monitoring_subscription = Some(input);
             self
         }
+        /// <p>A monitoring subscription. This structure contains information about whether additional
+        /// CloudWatch metrics are enabled for a given CloudFront distribution.</p>
         pub fn set_monitoring_subscription(
             mut self,
             input: std::option::Option<crate::model::MonitoringSubscription>,
@@ -2345,6 +2440,7 @@ impl GetMonitoringSubscriptionOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetKeyGroupConfigOutput {
@@ -2376,6 +2472,7 @@ pub mod get_key_group_config_output {
             self.key_group_config = Some(input);
             self
         }
+        /// <p>The key group configuration.</p>
         pub fn set_key_group_config(
             mut self,
             input: std::option::Option<crate::model::KeyGroupConfig>,
@@ -2388,6 +2485,7 @@ pub mod get_key_group_config_output {
             self.e_tag = Some(input.into());
             self
         }
+        /// <p>The identifier for this version of the key group.</p>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.e_tag = input;
             self
@@ -2408,6 +2506,7 @@ impl GetKeyGroupConfigOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetKeyGroupOutput {
@@ -2439,6 +2538,7 @@ pub mod get_key_group_output {
             self.key_group = Some(input);
             self
         }
+        /// <p>The key group.</p>
         pub fn set_key_group(mut self, input: std::option::Option<crate::model::KeyGroup>) -> Self {
             self.key_group = input;
             self
@@ -2448,6 +2548,7 @@ pub mod get_key_group_output {
             self.e_tag = Some(input.into());
             self
         }
+        /// <p>The identifier for this version of the key group.</p>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.e_tag = input;
             self
@@ -2496,6 +2597,7 @@ pub mod get_invalidation_output {
             self.invalidation = Some(input);
             self
         }
+        /// <p>The invalidation's information. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/InvalidationDatatype.html">Invalidation Complex Type</a>. </p>
         pub fn set_invalidation(
             mut self,
             input: std::option::Option<crate::model::Invalidation>,
@@ -2518,11 +2620,12 @@ impl GetInvalidationOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFunctionOutput {
     /// <p>The function code of a CloudFront function.</p>
-    pub function_code: std::option::Option<smithy_types::Blob>,
+    pub function_code: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The version identifier for the current version of the CloudFront function.</p>
     pub e_tag: std::option::Option<std::string::String>,
     /// <p>The content type (media type) of the response.</p>
@@ -2543,17 +2646,21 @@ pub mod get_function_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) function_code: std::option::Option<smithy_types::Blob>,
+        pub(crate) function_code: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) e_tag: std::option::Option<std::string::String>,
         pub(crate) content_type: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The function code of a CloudFront function.</p>
-        pub fn function_code(mut self, input: smithy_types::Blob) -> Self {
+        pub fn function_code(mut self, input: aws_smithy_types::Blob) -> Self {
             self.function_code = Some(input);
             self
         }
-        pub fn set_function_code(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+        /// <p>The function code of a CloudFront function.</p>
+        pub fn set_function_code(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Blob>,
+        ) -> Self {
             self.function_code = input;
             self
         }
@@ -2562,6 +2669,7 @@ pub mod get_function_output {
             self.e_tag = Some(input.into());
             self
         }
+        /// <p>The version identifier for the current version of the CloudFront function.</p>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.e_tag = input;
             self
@@ -2571,6 +2679,7 @@ pub mod get_function_output {
             self.content_type = Some(input.into());
             self
         }
+        /// <p>The content type (media type) of the response.</p>
         pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content_type = input;
             self
@@ -2592,6 +2701,7 @@ impl GetFunctionOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFieldLevelEncryptionProfileConfigOutput {
@@ -2631,6 +2741,7 @@ pub mod get_field_level_encryption_profile_config_output {
             self.field_level_encryption_profile_config = Some(input);
             self
         }
+        /// <p>Return the field-level encryption profile configuration information.</p>
         pub fn set_field_level_encryption_profile_config(
             mut self,
             input: std::option::Option<crate::model::FieldLevelEncryptionProfileConfig>,
@@ -2643,6 +2754,7 @@ pub mod get_field_level_encryption_profile_config_output {
             self.e_tag = Some(input.into());
             self
         }
+        /// <p>The current version of the field-level encryption profile configuration result. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.e_tag = input;
             self
@@ -2663,6 +2775,7 @@ impl GetFieldLevelEncryptionProfileConfigOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFieldLevelEncryptionProfileOutput {
@@ -2702,6 +2815,7 @@ pub mod get_field_level_encryption_profile_output {
             self.field_level_encryption_profile = Some(input);
             self
         }
+        /// <p>Return the field-level encryption profile information.</p>
         pub fn set_field_level_encryption_profile(
             mut self,
             input: std::option::Option<crate::model::FieldLevelEncryptionProfile>,
@@ -2714,6 +2828,7 @@ pub mod get_field_level_encryption_profile_output {
             self.e_tag = Some(input.into());
             self
         }
+        /// <p>The current version of the field level encryption profile. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.e_tag = input;
             self
@@ -2734,6 +2849,7 @@ impl GetFieldLevelEncryptionProfileOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFieldLevelEncryptionConfigOutput {
@@ -2773,6 +2889,7 @@ pub mod get_field_level_encryption_config_output {
             self.field_level_encryption_config = Some(input);
             self
         }
+        /// <p>Return the field-level encryption configuration information.</p>
         pub fn set_field_level_encryption_config(
             mut self,
             input: std::option::Option<crate::model::FieldLevelEncryptionConfig>,
@@ -2785,6 +2902,7 @@ pub mod get_field_level_encryption_config_output {
             self.e_tag = Some(input.into());
             self
         }
+        /// <p>The current version of the field level encryption configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.e_tag = input;
             self
@@ -2805,6 +2923,7 @@ impl GetFieldLevelEncryptionConfigOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFieldLevelEncryptionOutput {
@@ -2836,6 +2955,7 @@ pub mod get_field_level_encryption_output {
             self.field_level_encryption = Some(input);
             self
         }
+        /// <p>Return the field-level encryption configuration information.</p>
         pub fn set_field_level_encryption(
             mut self,
             input: std::option::Option<crate::model::FieldLevelEncryption>,
@@ -2848,6 +2968,7 @@ pub mod get_field_level_encryption_output {
             self.e_tag = Some(input.into());
             self
         }
+        /// <p>The current version of the field level encryption configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.e_tag = input;
             self
@@ -2901,6 +3022,7 @@ pub mod get_distribution_config_output {
             self.distribution_config = Some(input);
             self
         }
+        /// <p>The distribution's configuration information.</p>
         pub fn set_distribution_config(
             mut self,
             input: std::option::Option<crate::model::DistributionConfig>,
@@ -2914,6 +3036,8 @@ pub mod get_distribution_config_output {
             self.e_tag = Some(input.into());
             self
         }
+        /// <p>The current version of the configuration. For example:
+        /// <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.e_tag = input;
             self
@@ -2967,6 +3091,7 @@ pub mod get_distribution_output {
             self.distribution = Some(input);
             self
         }
+        /// <p>The distribution's information.</p>
         pub fn set_distribution(
             mut self,
             input: std::option::Option<crate::model::Distribution>,
@@ -2980,6 +3105,8 @@ pub mod get_distribution_output {
             self.e_tag = Some(input.into());
             self
         }
+        /// <p>The current version of the distribution's information. For example:
+        /// <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.e_tag = input;
             self
@@ -3041,6 +3168,7 @@ pub mod get_cloud_front_origin_access_identity_config_output {
             self.cloud_front_origin_access_identity_config = Some(input);
             self
         }
+        /// <p>The origin access identity's configuration information. </p>
         pub fn set_cloud_front_origin_access_identity_config(
             mut self,
             input: std::option::Option<crate::model::CloudFrontOriginAccessIdentityConfig>,
@@ -3054,6 +3182,8 @@ pub mod get_cloud_front_origin_access_identity_config_output {
             self.e_tag = Some(input.into());
             self
         }
+        /// <p>The current version of the configuration. For example:
+        /// <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.e_tag = input;
             self
@@ -3117,6 +3247,7 @@ pub mod get_cloud_front_origin_access_identity_output {
             self.cloud_front_origin_access_identity = Some(input);
             self
         }
+        /// <p>The origin access identity's information.</p>
         pub fn set_cloud_front_origin_access_identity(
             mut self,
             input: std::option::Option<crate::model::CloudFrontOriginAccessIdentity>,
@@ -3130,6 +3261,8 @@ pub mod get_cloud_front_origin_access_identity_output {
             self.e_tag = Some(input.into());
             self
         }
+        /// <p>The current version of the origin access identity's information. For example:
+        /// <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.e_tag = input;
             self
@@ -3150,6 +3283,7 @@ impl GetCloudFrontOriginAccessIdentityOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCachePolicyConfigOutput {
@@ -3181,6 +3315,7 @@ pub mod get_cache_policy_config_output {
             self.cache_policy_config = Some(input);
             self
         }
+        /// <p>The cache policy configuration.</p>
         pub fn set_cache_policy_config(
             mut self,
             input: std::option::Option<crate::model::CachePolicyConfig>,
@@ -3193,6 +3328,7 @@ pub mod get_cache_policy_config_output {
             self.e_tag = Some(input.into());
             self
         }
+        /// <p>The current version of the cache policy.</p>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.e_tag = input;
             self
@@ -3213,6 +3349,7 @@ impl GetCachePolicyConfigOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCachePolicyOutput {
@@ -3244,6 +3381,7 @@ pub mod get_cache_policy_output {
             self.cache_policy = Some(input);
             self
         }
+        /// <p>The cache policy.</p>
         pub fn set_cache_policy(
             mut self,
             input: std::option::Option<crate::model::CachePolicy>,
@@ -3256,6 +3394,7 @@ pub mod get_cache_policy_output {
             self.e_tag = Some(input.into());
             self
         }
+        /// <p>The current version of the cache policy.</p>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.e_tag = input;
             self
@@ -3276,6 +3415,7 @@ impl GetCachePolicyOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeFunctionOutput {
@@ -3307,6 +3447,7 @@ pub mod describe_function_output {
             self.function_summary = Some(input);
             self
         }
+        /// <p>Contains configuration information and metadata about a CloudFront function.</p>
         pub fn set_function_summary(
             mut self,
             input: std::option::Option<crate::model::FunctionSummary>,
@@ -3319,6 +3460,7 @@ pub mod describe_function_output {
             self.e_tag = Some(input.into());
             self
         }
+        /// <p>The version identifier for the current version of the CloudFront function.</p>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.e_tag = input;
             self
@@ -3339,6 +3481,7 @@ impl DescribeFunctionOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteStreamingDistributionOutput {}
@@ -3368,6 +3511,7 @@ impl DeleteStreamingDistributionOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteRealtimeLogConfigOutput {}
@@ -3397,6 +3541,7 @@ impl DeleteRealtimeLogConfigOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePublicKeyOutput {}
@@ -3426,6 +3571,7 @@ impl DeletePublicKeyOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteOriginRequestPolicyOutput {}
@@ -3455,6 +3601,7 @@ impl DeleteOriginRequestPolicyOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMonitoringSubscriptionOutput {}
@@ -3484,6 +3631,7 @@ impl DeleteMonitoringSubscriptionOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteKeyGroupOutput {}
@@ -3513,6 +3661,7 @@ impl DeleteKeyGroupOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFunctionOutput {}
@@ -3542,6 +3691,7 @@ impl DeleteFunctionOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFieldLevelEncryptionProfileOutput {}
@@ -3571,6 +3721,7 @@ impl DeleteFieldLevelEncryptionProfileOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteFieldLevelEncryptionConfigOutput {}
@@ -3600,6 +3751,7 @@ impl DeleteFieldLevelEncryptionConfigOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDistributionOutput {}
@@ -3629,6 +3781,7 @@ impl DeleteDistributionOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCloudFrontOriginAccessIdentityOutput {}
@@ -3658,6 +3811,7 @@ impl DeleteCloudFrontOriginAccessIdentityOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCachePolicyOutput {}
@@ -3726,6 +3880,7 @@ pub mod create_streaming_distribution_with_tags_output {
             self.streaming_distribution = Some(input);
             self
         }
+        /// <p>The streaming distribution's information. </p>
         pub fn set_streaming_distribution(
             mut self,
             input: std::option::Option<crate::model::StreamingDistribution>,
@@ -3738,6 +3893,7 @@ pub mod create_streaming_distribution_with_tags_output {
             self.location = Some(input.into());
             self
         }
+        /// <p>The fully qualified URI of the new streaming distribution resource just created.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -3747,6 +3903,7 @@ pub mod create_streaming_distribution_with_tags_output {
             self.e_tag = Some(input.into());
             self
         }
+        /// <p>The current version of the distribution created.</p>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.e_tag = input;
             self
@@ -3807,6 +3964,7 @@ pub mod create_streaming_distribution_output {
             self.streaming_distribution = Some(input);
             self
         }
+        /// <p>The streaming distribution's information.</p>
         pub fn set_streaming_distribution(
             mut self,
             input: std::option::Option<crate::model::StreamingDistribution>,
@@ -3819,6 +3977,7 @@ pub mod create_streaming_distribution_output {
             self.location = Some(input.into());
             self
         }
+        /// <p>The fully qualified URI of the new streaming distribution resource just created.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -3828,6 +3987,7 @@ pub mod create_streaming_distribution_output {
             self.e_tag = Some(input.into());
             self
         }
+        /// <p>The current version of the streaming distribution created.</p>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.e_tag = input;
             self
@@ -3849,6 +4009,7 @@ impl CreateStreamingDistributionOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateRealtimeLogConfigOutput {
@@ -3876,6 +4037,7 @@ pub mod create_realtime_log_config_output {
             self.realtime_log_config = Some(input);
             self
         }
+        /// <p>A real-time log configuration.</p>
         pub fn set_realtime_log_config(
             mut self,
             input: std::option::Option<crate::model::RealtimeLogConfig>,
@@ -3898,6 +4060,7 @@ impl CreateRealtimeLogConfigOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePublicKeyOutput {
@@ -3933,6 +4096,7 @@ pub mod create_public_key_output {
             self.public_key = Some(input);
             self
         }
+        /// <p>The public key.</p>
         pub fn set_public_key(
             mut self,
             input: std::option::Option<crate::model::PublicKey>,
@@ -3945,6 +4109,7 @@ pub mod create_public_key_output {
             self.location = Some(input.into());
             self
         }
+        /// <p>The URL of the public key.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -3954,6 +4119,7 @@ pub mod create_public_key_output {
             self.e_tag = Some(input.into());
             self
         }
+        /// <p>The identifier for this version of the public key.</p>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.e_tag = input;
             self
@@ -3975,6 +4141,7 @@ impl CreatePublicKeyOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateOriginRequestPolicyOutput {
@@ -4010,6 +4177,7 @@ pub mod create_origin_request_policy_output {
             self.origin_request_policy = Some(input);
             self
         }
+        /// <p>An origin request policy.</p>
         pub fn set_origin_request_policy(
             mut self,
             input: std::option::Option<crate::model::OriginRequestPolicy>,
@@ -4022,6 +4190,7 @@ pub mod create_origin_request_policy_output {
             self.location = Some(input.into());
             self
         }
+        /// <p>The fully qualified URI of the origin request policy just created.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -4031,6 +4200,7 @@ pub mod create_origin_request_policy_output {
             self.e_tag = Some(input.into());
             self
         }
+        /// <p>The current version of the origin request policy.</p>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.e_tag = input;
             self
@@ -4052,6 +4222,7 @@ impl CreateOriginRequestPolicyOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMonitoringSubscriptionOutput {
@@ -4085,6 +4256,8 @@ pub mod create_monitoring_subscription_output {
             self.monitoring_subscription = Some(input);
             self
         }
+        /// <p>A monitoring subscription. This structure contains information about whether additional
+        /// CloudWatch metrics are enabled for a given CloudFront distribution.</p>
         pub fn set_monitoring_subscription(
             mut self,
             input: std::option::Option<crate::model::MonitoringSubscription>,
@@ -4107,6 +4280,7 @@ impl CreateMonitoringSubscriptionOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateKeyGroupOutput {
@@ -4142,6 +4316,7 @@ pub mod create_key_group_output {
             self.key_group = Some(input);
             self
         }
+        /// <p>The key group that was just created.</p>
         pub fn set_key_group(mut self, input: std::option::Option<crate::model::KeyGroup>) -> Self {
             self.key_group = input;
             self
@@ -4151,6 +4326,7 @@ pub mod create_key_group_output {
             self.location = Some(input.into());
             self
         }
+        /// <p>The URL of the key group.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -4160,6 +4336,7 @@ pub mod create_key_group_output {
             self.e_tag = Some(input.into());
             self
         }
+        /// <p>The identifier for this version of the key group.</p>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.e_tag = input;
             self
@@ -4215,6 +4392,8 @@ pub mod create_invalidation_output {
             self.location = Some(input.into());
             self
         }
+        /// <p>The fully qualified URI of the distribution and invalidation batch request, including
+        /// the <code>Invalidation ID</code>.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -4224,6 +4403,7 @@ pub mod create_invalidation_output {
             self.invalidation = Some(input);
             self
         }
+        /// <p>The invalidation's information.</p>
         pub fn set_invalidation(
             mut self,
             input: std::option::Option<crate::model::Invalidation>,
@@ -4247,6 +4427,7 @@ impl CreateInvalidationOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFunctionOutput {
@@ -4283,6 +4464,7 @@ pub mod create_function_output {
             self.function_summary = Some(input);
             self
         }
+        /// <p>Contains configuration information and metadata about a CloudFront function.</p>
         pub fn set_function_summary(
             mut self,
             input: std::option::Option<crate::model::FunctionSummary>,
@@ -4296,6 +4478,8 @@ pub mod create_function_output {
             self.location = Some(input.into());
             self
         }
+        /// <p>The URL of the CloudFront function. Use the URL to manage the function with the CloudFront
+        /// API.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -4305,6 +4489,7 @@ pub mod create_function_output {
             self.e_tag = Some(input.into());
             self
         }
+        /// <p>The version identifier for the current version of the CloudFront function.</p>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.e_tag = input;
             self
@@ -4326,6 +4511,7 @@ impl CreateFunctionOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFieldLevelEncryptionProfileOutput {
@@ -4369,6 +4555,7 @@ pub mod create_field_level_encryption_profile_output {
             self.field_level_encryption_profile = Some(input);
             self
         }
+        /// <p>Returned when you create a new field-level encryption profile.</p>
         pub fn set_field_level_encryption_profile(
             mut self,
             input: std::option::Option<crate::model::FieldLevelEncryptionProfile>,
@@ -4381,6 +4568,7 @@ pub mod create_field_level_encryption_profile_output {
             self.location = Some(input.into());
             self
         }
+        /// <p>The fully qualified URI of the new profile resource just created.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -4390,6 +4578,7 @@ pub mod create_field_level_encryption_profile_output {
             self.e_tag = Some(input.into());
             self
         }
+        /// <p>The current version of the field level encryption profile. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.e_tag = input;
             self
@@ -4411,6 +4600,7 @@ impl CreateFieldLevelEncryptionProfileOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateFieldLevelEncryptionConfigOutput {
@@ -4446,6 +4636,7 @@ pub mod create_field_level_encryption_config_output {
             self.field_level_encryption = Some(input);
             self
         }
+        /// <p>Returned when you create a new field-level encryption configuration.</p>
         pub fn set_field_level_encryption(
             mut self,
             input: std::option::Option<crate::model::FieldLevelEncryption>,
@@ -4458,6 +4649,7 @@ pub mod create_field_level_encryption_config_output {
             self.location = Some(input.into());
             self
         }
+        /// <p>The fully qualified URI of the new configuration resource just created.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -4467,6 +4659,7 @@ pub mod create_field_level_encryption_config_output {
             self.e_tag = Some(input.into());
             self
         }
+        /// <p>The current version of the field level encryption configuration. For example: <code>E2QWRUHAPOMQZL</code>.</p>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.e_tag = input;
             self
@@ -4524,6 +4717,7 @@ pub mod create_distribution_with_tags_output {
             self.distribution = Some(input);
             self
         }
+        /// <p>The distribution's information. </p>
         pub fn set_distribution(
             mut self,
             input: std::option::Option<crate::model::Distribution>,
@@ -4536,6 +4730,7 @@ pub mod create_distribution_with_tags_output {
             self.location = Some(input.into());
             self
         }
+        /// <p>The fully qualified URI of the new distribution resource just created.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -4545,6 +4740,7 @@ pub mod create_distribution_with_tags_output {
             self.e_tag = Some(input.into());
             self
         }
+        /// <p>The current version of the distribution created.</p>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.e_tag = input;
             self
@@ -4602,6 +4798,7 @@ pub mod create_distribution_output {
             self.distribution = Some(input);
             self
         }
+        /// <p>The distribution's information.</p>
         pub fn set_distribution(
             mut self,
             input: std::option::Option<crate::model::Distribution>,
@@ -4614,6 +4811,7 @@ pub mod create_distribution_output {
             self.location = Some(input.into());
             self
         }
+        /// <p>The fully qualified URI of the new distribution resource just created.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -4623,6 +4821,7 @@ pub mod create_distribution_output {
             self.e_tag = Some(input.into());
             self
         }
+        /// <p>The current version of the distribution created.</p>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.e_tag = input;
             self
@@ -4688,6 +4887,7 @@ pub mod create_cloud_front_origin_access_identity_output {
             self.cloud_front_origin_access_identity = Some(input);
             self
         }
+        /// <p>The origin access identity's information.</p>
         pub fn set_cloud_front_origin_access_identity(
             mut self,
             input: std::option::Option<crate::model::CloudFrontOriginAccessIdentity>,
@@ -4700,6 +4900,7 @@ pub mod create_cloud_front_origin_access_identity_output {
             self.location = Some(input.into());
             self
         }
+        /// <p>The fully qualified URI of the new origin access identity just created.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -4709,6 +4910,7 @@ pub mod create_cloud_front_origin_access_identity_output {
             self.e_tag = Some(input.into());
             self
         }
+        /// <p>The current version of the origin access identity created.</p>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.e_tag = input;
             self
@@ -4730,6 +4932,7 @@ impl CreateCloudFrontOriginAccessIdentityOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCachePolicyOutput {
@@ -4765,6 +4968,7 @@ pub mod create_cache_policy_output {
             self.cache_policy = Some(input);
             self
         }
+        /// <p>A cache policy.</p>
         pub fn set_cache_policy(
             mut self,
             input: std::option::Option<crate::model::CachePolicy>,
@@ -4777,6 +4981,7 @@ pub mod create_cache_policy_output {
             self.location = Some(input.into());
             self
         }
+        /// <p>The fully qualified URI of the cache policy just created.</p>
         pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location = input;
             self
@@ -4786,6 +4991,7 @@ pub mod create_cache_policy_output {
             self.e_tag = Some(input.into());
             self
         }
+        /// <p>The current version of the cache policy.</p>
         pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.e_tag = input;
             self
@@ -4807,6 +5013,7 @@ impl CreateCachePolicyOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateAliasOutput {}

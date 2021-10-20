@@ -24,7 +24,7 @@ pub fn parse_associate_service_quota_template_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::AssociateServiceQuotaTemplateError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateServiceQuotaTemplateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -38,7 +38,7 @@ pub fn parse_associate_service_quota_template_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::aws_service_access_not_enabled_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_aws_service_access_not_enabled_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::AssociateServiceQuotaTemplateError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_aws_service_access_not_enabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateServiceQuotaTemplateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -52,7 +52,7 @@ pub fn parse_associate_service_quota_template_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::dependency_access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_dependency_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::AssociateServiceQuotaTemplateError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_dependency_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateServiceQuotaTemplateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -66,7 +66,7 @@ pub fn parse_associate_service_quota_template_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::no_available_organization_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_no_available_organization_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::AssociateServiceQuotaTemplateError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_no_available_organization_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateServiceQuotaTemplateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -80,7 +80,7 @@ pub fn parse_associate_service_quota_template_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::organization_not_in_all_features_mode_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_organization_not_in_all_features_mode_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::AssociateServiceQuotaTemplateError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_organization_not_in_all_features_mode_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateServiceQuotaTemplateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -94,7 +94,7 @@ pub fn parse_associate_service_quota_template_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::AssociateServiceQuotaTemplateError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateServiceQuotaTemplateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -108,7 +108,7 @@ pub fn parse_associate_service_quota_template_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::templates_not_available_in_region_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_templates_not_available_in_region_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::AssociateServiceQuotaTemplateError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_templates_not_available_in_region_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateServiceQuotaTemplateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -122,7 +122,7 @@ pub fn parse_associate_service_quota_template_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::AssociateServiceQuotaTemplateError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateServiceQuotaTemplateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -177,7 +177,7 @@ pub fn parse_delete_service_quota_increase_request_from_template_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteServiceQuotaIncreaseRequestFromTemplateError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteServiceQuotaIncreaseRequestFromTemplateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -191,7 +191,7 @@ pub fn parse_delete_service_quota_increase_request_from_template_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::aws_service_access_not_enabled_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_aws_service_access_not_enabled_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteServiceQuotaIncreaseRequestFromTemplateError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_aws_service_access_not_enabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteServiceQuotaIncreaseRequestFromTemplateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -205,7 +205,7 @@ pub fn parse_delete_service_quota_increase_request_from_template_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::dependency_access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_dependency_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteServiceQuotaIncreaseRequestFromTemplateError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_dependency_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteServiceQuotaIncreaseRequestFromTemplateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -219,7 +219,7 @@ pub fn parse_delete_service_quota_increase_request_from_template_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::illegal_argument_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_illegal_argument_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteServiceQuotaIncreaseRequestFromTemplateError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_illegal_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteServiceQuotaIncreaseRequestFromTemplateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -233,7 +233,7 @@ pub fn parse_delete_service_quota_increase_request_from_template_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::no_available_organization_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_no_available_organization_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteServiceQuotaIncreaseRequestFromTemplateError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_no_available_organization_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteServiceQuotaIncreaseRequestFromTemplateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -247,7 +247,7 @@ pub fn parse_delete_service_quota_increase_request_from_template_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::no_such_resource_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_no_such_resource_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteServiceQuotaIncreaseRequestFromTemplateError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_no_such_resource_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteServiceQuotaIncreaseRequestFromTemplateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -261,7 +261,7 @@ pub fn parse_delete_service_quota_increase_request_from_template_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteServiceQuotaIncreaseRequestFromTemplateError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteServiceQuotaIncreaseRequestFromTemplateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -275,7 +275,7 @@ pub fn parse_delete_service_quota_increase_request_from_template_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::templates_not_available_in_region_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_templates_not_available_in_region_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteServiceQuotaIncreaseRequestFromTemplateError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_templates_not_available_in_region_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteServiceQuotaIncreaseRequestFromTemplateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -289,7 +289,7 @@ pub fn parse_delete_service_quota_increase_request_from_template_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteServiceQuotaIncreaseRequestFromTemplateError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteServiceQuotaIncreaseRequestFromTemplateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -339,7 +339,7 @@ pub fn parse_disassociate_service_quota_template_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DisassociateServiceQuotaTemplateError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateServiceQuotaTemplateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -353,7 +353,7 @@ pub fn parse_disassociate_service_quota_template_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::aws_service_access_not_enabled_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_aws_service_access_not_enabled_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DisassociateServiceQuotaTemplateError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_aws_service_access_not_enabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateServiceQuotaTemplateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -367,7 +367,7 @@ pub fn parse_disassociate_service_quota_template_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::dependency_access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_dependency_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DisassociateServiceQuotaTemplateError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_dependency_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateServiceQuotaTemplateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -381,7 +381,7 @@ pub fn parse_disassociate_service_quota_template_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::no_available_organization_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_no_available_organization_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DisassociateServiceQuotaTemplateError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_no_available_organization_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateServiceQuotaTemplateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -395,7 +395,7 @@ pub fn parse_disassociate_service_quota_template_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DisassociateServiceQuotaTemplateError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateServiceQuotaTemplateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -409,7 +409,7 @@ pub fn parse_disassociate_service_quota_template_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::service_quota_template_not_in_use_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_quota_template_not_in_use_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DisassociateServiceQuotaTemplateError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_template_not_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateServiceQuotaTemplateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -423,7 +423,7 @@ pub fn parse_disassociate_service_quota_template_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::templates_not_available_in_region_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_templates_not_available_in_region_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DisassociateServiceQuotaTemplateError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_templates_not_available_in_region_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateServiceQuotaTemplateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -437,7 +437,7 @@ pub fn parse_disassociate_service_quota_template_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DisassociateServiceQuotaTemplateError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateServiceQuotaTemplateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -491,7 +491,7 @@ pub fn parse_get_association_for_service_quota_template_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetAssociationForServiceQuotaTemplateError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAssociationForServiceQuotaTemplateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -505,7 +505,7 @@ pub fn parse_get_association_for_service_quota_template_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::aws_service_access_not_enabled_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_aws_service_access_not_enabled_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetAssociationForServiceQuotaTemplateError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_aws_service_access_not_enabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAssociationForServiceQuotaTemplateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -519,7 +519,7 @@ pub fn parse_get_association_for_service_quota_template_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::dependency_access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_dependency_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetAssociationForServiceQuotaTemplateError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_dependency_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAssociationForServiceQuotaTemplateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -533,7 +533,7 @@ pub fn parse_get_association_for_service_quota_template_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::no_available_organization_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_no_available_organization_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetAssociationForServiceQuotaTemplateError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_no_available_organization_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAssociationForServiceQuotaTemplateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -547,7 +547,7 @@ pub fn parse_get_association_for_service_quota_template_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetAssociationForServiceQuotaTemplateError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAssociationForServiceQuotaTemplateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -561,7 +561,7 @@ pub fn parse_get_association_for_service_quota_template_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::service_quota_template_not_in_use_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_quota_template_not_in_use_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetAssociationForServiceQuotaTemplateError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_template_not_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAssociationForServiceQuotaTemplateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -575,7 +575,7 @@ pub fn parse_get_association_for_service_quota_template_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::templates_not_available_in_region_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_templates_not_available_in_region_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetAssociationForServiceQuotaTemplateError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_templates_not_available_in_region_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAssociationForServiceQuotaTemplateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -589,7 +589,7 @@ pub fn parse_get_association_for_service_quota_template_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetAssociationForServiceQuotaTemplateError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAssociationForServiceQuotaTemplateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -647,7 +647,7 @@ pub fn parse_get_aws_default_service_quota_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetAWSDefaultServiceQuotaError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAWSDefaultServiceQuotaError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -664,7 +664,7 @@ pub fn parse_get_aws_default_service_quota_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::illegal_argument_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_illegal_argument_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetAWSDefaultServiceQuotaError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_illegal_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAWSDefaultServiceQuotaError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -681,7 +681,7 @@ pub fn parse_get_aws_default_service_quota_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_resource_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_no_such_resource_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetAWSDefaultServiceQuotaError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_no_such_resource_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAWSDefaultServiceQuotaError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -699,7 +699,7 @@ pub fn parse_get_aws_default_service_quota_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::service_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetAWSDefaultServiceQuotaError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAWSDefaultServiceQuotaError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -717,7 +717,7 @@ pub fn parse_get_aws_default_service_quota_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetAWSDefaultServiceQuotaError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAWSDefaultServiceQuotaError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -774,7 +774,7 @@ pub fn parse_get_requested_service_quota_change_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetRequestedServiceQuotaChangeError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRequestedServiceQuotaChangeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -793,7 +793,7 @@ pub fn parse_get_requested_service_quota_change_error(
                         let mut output =
                             crate::error::illegal_argument_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_illegal_argument_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetRequestedServiceQuotaChangeError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_illegal_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRequestedServiceQuotaChangeError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -811,7 +811,7 @@ pub fn parse_get_requested_service_quota_change_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_resource_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_no_such_resource_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetRequestedServiceQuotaChangeError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_no_such_resource_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRequestedServiceQuotaChangeError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -829,7 +829,7 @@ pub fn parse_get_requested_service_quota_change_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::service_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetRequestedServiceQuotaChangeError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRequestedServiceQuotaChangeError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -849,7 +849,7 @@ pub fn parse_get_requested_service_quota_change_error(
                         let mut output =
                             crate::error::too_many_requests_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetRequestedServiceQuotaChangeError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRequestedServiceQuotaChangeError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -906,7 +906,7 @@ pub fn parse_get_service_quota_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetServiceQuotaError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetServiceQuotaError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -923,7 +923,7 @@ pub fn parse_get_service_quota_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::illegal_argument_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_illegal_argument_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetServiceQuotaError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_illegal_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetServiceQuotaError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -940,7 +940,7 @@ pub fn parse_get_service_quota_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_resource_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_no_such_resource_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetServiceQuotaError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_no_such_resource_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetServiceQuotaError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -958,7 +958,7 @@ pub fn parse_get_service_quota_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::service_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetServiceQuotaError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetServiceQuotaError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -976,7 +976,7 @@ pub fn parse_get_service_quota_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetServiceQuotaError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetServiceQuotaError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1031,7 +1031,7 @@ pub fn parse_get_service_quota_increase_request_from_template_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetServiceQuotaIncreaseRequestFromTemplateError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetServiceQuotaIncreaseRequestFromTemplateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1045,7 +1045,7 @@ pub fn parse_get_service_quota_increase_request_from_template_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::aws_service_access_not_enabled_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_aws_service_access_not_enabled_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetServiceQuotaIncreaseRequestFromTemplateError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_aws_service_access_not_enabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetServiceQuotaIncreaseRequestFromTemplateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1059,7 +1059,7 @@ pub fn parse_get_service_quota_increase_request_from_template_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::dependency_access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_dependency_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetServiceQuotaIncreaseRequestFromTemplateError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_dependency_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetServiceQuotaIncreaseRequestFromTemplateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1073,7 +1073,7 @@ pub fn parse_get_service_quota_increase_request_from_template_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::illegal_argument_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_illegal_argument_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetServiceQuotaIncreaseRequestFromTemplateError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_illegal_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetServiceQuotaIncreaseRequestFromTemplateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1087,7 +1087,7 @@ pub fn parse_get_service_quota_increase_request_from_template_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::no_available_organization_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_no_available_organization_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetServiceQuotaIncreaseRequestFromTemplateError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_no_available_organization_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetServiceQuotaIncreaseRequestFromTemplateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1101,7 +1101,7 @@ pub fn parse_get_service_quota_increase_request_from_template_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::no_such_resource_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_no_such_resource_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetServiceQuotaIncreaseRequestFromTemplateError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_no_such_resource_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetServiceQuotaIncreaseRequestFromTemplateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1115,7 +1115,7 @@ pub fn parse_get_service_quota_increase_request_from_template_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetServiceQuotaIncreaseRequestFromTemplateError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetServiceQuotaIncreaseRequestFromTemplateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1129,7 +1129,7 @@ pub fn parse_get_service_quota_increase_request_from_template_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::templates_not_available_in_region_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_templates_not_available_in_region_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetServiceQuotaIncreaseRequestFromTemplateError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_templates_not_available_in_region_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetServiceQuotaIncreaseRequestFromTemplateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1143,7 +1143,7 @@ pub fn parse_get_service_quota_increase_request_from_template_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetServiceQuotaIncreaseRequestFromTemplateError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetServiceQuotaIncreaseRequestFromTemplateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1199,7 +1199,7 @@ pub fn parse_list_aws_default_service_quotas_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListAWSDefaultServiceQuotasError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAWSDefaultServiceQuotasError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1216,7 +1216,7 @@ pub fn parse_list_aws_default_service_quotas_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::illegal_argument_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_illegal_argument_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListAWSDefaultServiceQuotasError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_illegal_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAWSDefaultServiceQuotasError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1237,7 +1237,7 @@ pub fn parse_list_aws_default_service_quotas_error(
                                 crate::error::invalid_pagination_token_exception::Builder::default(
                                 );
                             let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_invalid_pagination_token_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListAWSDefaultServiceQuotasError::unhandled)?;
+                            output = crate::json_deser::deser_structure_crate_error_invalid_pagination_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAWSDefaultServiceQuotasError::unhandled)?;
                             output.build()
                         };
                         if (&tmp.message).is_none() {
@@ -1255,7 +1255,7 @@ pub fn parse_list_aws_default_service_quotas_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_resource_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_no_such_resource_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListAWSDefaultServiceQuotasError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_no_such_resource_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAWSDefaultServiceQuotasError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1273,7 +1273,7 @@ pub fn parse_list_aws_default_service_quotas_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::service_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListAWSDefaultServiceQuotasError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAWSDefaultServiceQuotasError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -1291,7 +1291,7 @@ pub fn parse_list_aws_default_service_quotas_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListAWSDefaultServiceQuotasError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAWSDefaultServiceQuotasError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1350,7 +1350,7 @@ pub fn parse_list_requested_service_quota_change_history_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListRequestedServiceQuotaChangeHistoryError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRequestedServiceQuotaChangeHistoryError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1364,7 +1364,7 @@ pub fn parse_list_requested_service_quota_change_history_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::illegal_argument_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_illegal_argument_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListRequestedServiceQuotaChangeHistoryError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_illegal_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRequestedServiceQuotaChangeHistoryError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1378,7 +1378,7 @@ pub fn parse_list_requested_service_quota_change_history_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_pagination_token_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_pagination_token_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListRequestedServiceQuotaChangeHistoryError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_pagination_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRequestedServiceQuotaChangeHistoryError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1392,7 +1392,7 @@ pub fn parse_list_requested_service_quota_change_history_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::no_such_resource_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_no_such_resource_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListRequestedServiceQuotaChangeHistoryError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_no_such_resource_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRequestedServiceQuotaChangeHistoryError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1406,7 +1406,7 @@ pub fn parse_list_requested_service_quota_change_history_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListRequestedServiceQuotaChangeHistoryError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRequestedServiceQuotaChangeHistoryError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1420,7 +1420,7 @@ pub fn parse_list_requested_service_quota_change_history_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListRequestedServiceQuotaChangeHistoryError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRequestedServiceQuotaChangeHistoryError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1477,7 +1477,7 @@ pub fn parse_list_requested_service_quota_change_history_by_quota_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListRequestedServiceQuotaChangeHistoryByQuotaError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRequestedServiceQuotaChangeHistoryByQuotaError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1491,7 +1491,7 @@ pub fn parse_list_requested_service_quota_change_history_by_quota_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::illegal_argument_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_illegal_argument_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListRequestedServiceQuotaChangeHistoryByQuotaError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_illegal_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRequestedServiceQuotaChangeHistoryByQuotaError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1505,7 +1505,7 @@ pub fn parse_list_requested_service_quota_change_history_by_quota_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::invalid_pagination_token_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_pagination_token_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListRequestedServiceQuotaChangeHistoryByQuotaError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_pagination_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRequestedServiceQuotaChangeHistoryByQuotaError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1519,7 +1519,7 @@ pub fn parse_list_requested_service_quota_change_history_by_quota_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::no_such_resource_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_no_such_resource_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListRequestedServiceQuotaChangeHistoryByQuotaError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_no_such_resource_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRequestedServiceQuotaChangeHistoryByQuotaError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1533,7 +1533,7 @@ pub fn parse_list_requested_service_quota_change_history_by_quota_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListRequestedServiceQuotaChangeHistoryByQuotaError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRequestedServiceQuotaChangeHistoryByQuotaError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1547,7 +1547,7 @@ pub fn parse_list_requested_service_quota_change_history_by_quota_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListRequestedServiceQuotaChangeHistoryByQuotaError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRequestedServiceQuotaChangeHistoryByQuotaError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1600,7 +1600,7 @@ pub fn parse_list_service_quota_increase_requests_in_template_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListServiceQuotaIncreaseRequestsInTemplateError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListServiceQuotaIncreaseRequestsInTemplateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1614,7 +1614,7 @@ pub fn parse_list_service_quota_increase_requests_in_template_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::aws_service_access_not_enabled_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_aws_service_access_not_enabled_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListServiceQuotaIncreaseRequestsInTemplateError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_aws_service_access_not_enabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListServiceQuotaIncreaseRequestsInTemplateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1628,7 +1628,7 @@ pub fn parse_list_service_quota_increase_requests_in_template_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::dependency_access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_dependency_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListServiceQuotaIncreaseRequestsInTemplateError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_dependency_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListServiceQuotaIncreaseRequestsInTemplateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1642,7 +1642,7 @@ pub fn parse_list_service_quota_increase_requests_in_template_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::illegal_argument_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_illegal_argument_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListServiceQuotaIncreaseRequestsInTemplateError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_illegal_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListServiceQuotaIncreaseRequestsInTemplateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1656,7 +1656,7 @@ pub fn parse_list_service_quota_increase_requests_in_template_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::no_available_organization_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_no_available_organization_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListServiceQuotaIncreaseRequestsInTemplateError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_no_available_organization_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListServiceQuotaIncreaseRequestsInTemplateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1670,7 +1670,7 @@ pub fn parse_list_service_quota_increase_requests_in_template_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListServiceQuotaIncreaseRequestsInTemplateError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListServiceQuotaIncreaseRequestsInTemplateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1684,7 +1684,7 @@ pub fn parse_list_service_quota_increase_requests_in_template_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::templates_not_available_in_region_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_templates_not_available_in_region_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListServiceQuotaIncreaseRequestsInTemplateError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_templates_not_available_in_region_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListServiceQuotaIncreaseRequestsInTemplateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1698,7 +1698,7 @@ pub fn parse_list_service_quota_increase_requests_in_template_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListServiceQuotaIncreaseRequestsInTemplateError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListServiceQuotaIncreaseRequestsInTemplateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -1748,7 +1748,7 @@ pub fn parse_list_service_quotas_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListServiceQuotasError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListServiceQuotasError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1765,7 +1765,7 @@ pub fn parse_list_service_quotas_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::illegal_argument_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_illegal_argument_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListServiceQuotasError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_illegal_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListServiceQuotasError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1783,7 +1783,7 @@ pub fn parse_list_service_quotas_error(
                     let mut output =
                         crate::error::invalid_pagination_token_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_pagination_token_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListServiceQuotasError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_pagination_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListServiceQuotasError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1800,7 +1800,7 @@ pub fn parse_list_service_quotas_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_resource_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_no_such_resource_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListServiceQuotasError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_no_such_resource_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListServiceQuotasError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1818,7 +1818,7 @@ pub fn parse_list_service_quotas_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::service_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListServiceQuotasError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListServiceQuotasError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -1836,7 +1836,7 @@ pub fn parse_list_service_quotas_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListServiceQuotasError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListServiceQuotasError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1888,7 +1888,7 @@ pub fn parse_list_services_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListServicesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListServicesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1905,7 +1905,7 @@ pub fn parse_list_services_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::illegal_argument_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_illegal_argument_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListServicesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_illegal_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListServicesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1923,7 +1923,7 @@ pub fn parse_list_services_error(
                     let mut output =
                         crate::error::invalid_pagination_token_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_pagination_token_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListServicesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_pagination_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListServicesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -1941,7 +1941,7 @@ pub fn parse_list_services_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::service_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListServicesError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListServicesError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -1959,7 +1959,7 @@ pub fn parse_list_services_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListServicesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListServicesError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2013,7 +2013,7 @@ pub fn parse_list_tags_for_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2030,7 +2030,7 @@ pub fn parse_list_tags_for_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::illegal_argument_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_illegal_argument_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_illegal_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2047,7 +2047,7 @@ pub fn parse_list_tags_for_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_resource_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_no_such_resource_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_no_such_resource_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2065,7 +2065,7 @@ pub fn parse_list_tags_for_resource_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::service_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -2083,7 +2083,7 @@ pub fn parse_list_tags_for_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2141,7 +2141,7 @@ pub fn parse_put_service_quota_increase_request_into_template_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutServiceQuotaIncreaseRequestIntoTemplateError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutServiceQuotaIncreaseRequestIntoTemplateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -2155,7 +2155,7 @@ pub fn parse_put_service_quota_increase_request_into_template_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::aws_service_access_not_enabled_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_aws_service_access_not_enabled_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutServiceQuotaIncreaseRequestIntoTemplateError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_aws_service_access_not_enabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutServiceQuotaIncreaseRequestIntoTemplateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -2169,7 +2169,7 @@ pub fn parse_put_service_quota_increase_request_into_template_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::dependency_access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_dependency_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutServiceQuotaIncreaseRequestIntoTemplateError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_dependency_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutServiceQuotaIncreaseRequestIntoTemplateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -2183,7 +2183,7 @@ pub fn parse_put_service_quota_increase_request_into_template_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::illegal_argument_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_illegal_argument_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutServiceQuotaIncreaseRequestIntoTemplateError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_illegal_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutServiceQuotaIncreaseRequestIntoTemplateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -2197,7 +2197,7 @@ pub fn parse_put_service_quota_increase_request_into_template_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::no_available_organization_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_no_available_organization_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutServiceQuotaIncreaseRequestIntoTemplateError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_no_available_organization_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutServiceQuotaIncreaseRequestIntoTemplateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -2211,7 +2211,7 @@ pub fn parse_put_service_quota_increase_request_into_template_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::no_such_resource_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_no_such_resource_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutServiceQuotaIncreaseRequestIntoTemplateError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_no_such_resource_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutServiceQuotaIncreaseRequestIntoTemplateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -2225,7 +2225,7 @@ pub fn parse_put_service_quota_increase_request_into_template_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::quota_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutServiceQuotaIncreaseRequestIntoTemplateError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_quota_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutServiceQuotaIncreaseRequestIntoTemplateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -2239,7 +2239,7 @@ pub fn parse_put_service_quota_increase_request_into_template_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutServiceQuotaIncreaseRequestIntoTemplateError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutServiceQuotaIncreaseRequestIntoTemplateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -2253,7 +2253,7 @@ pub fn parse_put_service_quota_increase_request_into_template_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::templates_not_available_in_region_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_templates_not_available_in_region_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutServiceQuotaIncreaseRequestIntoTemplateError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_templates_not_available_in_region_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutServiceQuotaIncreaseRequestIntoTemplateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -2267,7 +2267,7 @@ pub fn parse_put_service_quota_increase_request_into_template_error(
                  {
                     #[allow(unused_mut)]let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutServiceQuotaIncreaseRequestIntoTemplateError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutServiceQuotaIncreaseRequestIntoTemplateError::unhandled)?;
                     output.build()
                 }
             ;
@@ -2323,7 +2323,7 @@ pub fn parse_request_service_quota_increase_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RequestServiceQuotaIncreaseError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RequestServiceQuotaIncreaseError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2344,7 +2344,7 @@ pub fn parse_request_service_quota_increase_error(
                                 crate::error::dependency_access_denied_exception::Builder::default(
                                 );
                             let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_dependency_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RequestServiceQuotaIncreaseError::unhandled)?;
+                            output = crate::json_deser::deser_structure_crate_error_dependency_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RequestServiceQuotaIncreaseError::unhandled)?;
                             output.build()
                         };
                         if (&tmp.message).is_none() {
@@ -2362,7 +2362,7 @@ pub fn parse_request_service_quota_increase_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::illegal_argument_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_illegal_argument_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RequestServiceQuotaIncreaseError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_illegal_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RequestServiceQuotaIncreaseError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2381,7 +2381,7 @@ pub fn parse_request_service_quota_increase_error(
                         let mut output =
                             crate::error::invalid_resource_state_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_invalid_resource_state_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RequestServiceQuotaIncreaseError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_invalid_resource_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RequestServiceQuotaIncreaseError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -2399,7 +2399,7 @@ pub fn parse_request_service_quota_increase_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_resource_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_no_such_resource_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RequestServiceQuotaIncreaseError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_no_such_resource_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RequestServiceQuotaIncreaseError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2416,7 +2416,7 @@ pub fn parse_request_service_quota_increase_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::quota_exceeded_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_quota_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RequestServiceQuotaIncreaseError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_quota_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RequestServiceQuotaIncreaseError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2436,7 +2436,7 @@ pub fn parse_request_service_quota_increase_error(
                             let mut output =
                                 crate::error::resource_already_exists_exception::Builder::default();
                             let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_resource_already_exists_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RequestServiceQuotaIncreaseError::unhandled)?;
+                            output = crate::json_deser::deser_structure_crate_error_resource_already_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RequestServiceQuotaIncreaseError::unhandled)?;
                             output.build()
                         };
                         if (&tmp.message).is_none() {
@@ -2455,7 +2455,7 @@ pub fn parse_request_service_quota_increase_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::service_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RequestServiceQuotaIncreaseError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RequestServiceQuotaIncreaseError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -2473,7 +2473,7 @@ pub fn parse_request_service_quota_increase_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::RequestServiceQuotaIncreaseError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RequestServiceQuotaIncreaseError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2527,7 +2527,7 @@ pub fn parse_tag_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2544,7 +2544,7 @@ pub fn parse_tag_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::illegal_argument_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_illegal_argument_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_illegal_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2561,7 +2561,7 @@ pub fn parse_tag_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_resource_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_no_such_resource_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_no_such_resource_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2579,7 +2579,7 @@ pub fn parse_tag_resource_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::service_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -2598,7 +2598,7 @@ pub fn parse_tag_resource_error(
                     let mut output =
                         crate::error::tag_policy_violation_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_tag_policy_violation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_tag_policy_violation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2615,7 +2615,7 @@ pub fn parse_tag_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2632,7 +2632,7 @@ pub fn parse_tag_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_tags_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_tags_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_tags_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2678,7 +2678,7 @@ pub fn parse_untag_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2695,7 +2695,7 @@ pub fn parse_untag_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::illegal_argument_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_illegal_argument_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_illegal_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2712,7 +2712,7 @@ pub fn parse_untag_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_resource_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_no_such_resource_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_no_such_resource_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {
@@ -2730,7 +2730,7 @@ pub fn parse_untag_resource_error(
                         #[allow(unused_mut)]
                         let mut output = crate::error::service_exception::Builder::default();
                         let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
+                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
                         output.build()
                     };
                     if (&tmp.message).is_none() {
@@ -2748,7 +2748,7 @@ pub fn parse_untag_resource_error(
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
                     output.build()
                 };
                 if (&tmp.message).is_none() {

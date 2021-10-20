@@ -31,6 +31,7 @@ pub mod message_body {
             self.message = Some(input.into());
             self
         }
+        /// <p>The message that's returned from the API.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -40,6 +41,7 @@ pub mod message_body {
             self.request_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the request or response.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.request_id = input;
             self
@@ -111,6 +113,7 @@ pub mod voice_template_request {
             self.body = Some(input.into());
             self
         }
+        /// <p>The text of the script to use in messages that are based on the message template, in plain text format.</p>
         pub fn set_body(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.body = input;
             self
@@ -120,6 +123,7 @@ pub mod voice_template_request {
             self.default_substitutions = Some(input.into());
             self
         }
+        /// <p>A JSON object that specifies the default values to use for message variables in the message template. This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding value defines the default value for that variable. When you create a message that's based on the template, you can override these defaults with message-specific and address-specific variables and values.</p>
         pub fn set_default_substitutions(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -132,6 +136,7 @@ pub mod voice_template_request {
             self.language_code = Some(input.into());
             self
         }
+        /// <p>The code for the language to use when synthesizing the text of the script in messages that are based on the message template. For a list of supported languages and the code for each one, see the <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon Polly Developer Guide</a>.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -139,6 +144,11 @@ pub mod voice_template_request {
             self.language_code = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A string-to-string map of key-value pairs that defines the tags to associate with the message template. Each tag consists of a required tag key and an associated tag value.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -149,6 +159,7 @@ pub mod voice_template_request {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>A string-to-string map of key-value pairs that defines the tags to associate with the message template. Each tag consists of a required tag key and an associated tag value.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -163,6 +174,7 @@ pub mod voice_template_request {
             self.template_description = Some(input.into());
             self
         }
+        /// <p>A custom description of the message template.</p>
         pub fn set_template_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -175,6 +187,7 @@ pub mod voice_template_request {
             self.voice_id = Some(input.into());
             self
         }
+        /// <p>The name of the voice to use when delivering messages that are based on the message template. For a list of supported voices, see the <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon Polly Developer Guide</a>.</p>
         pub fn set_voice_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.voice_id = input;
             self
@@ -263,6 +276,7 @@ pub mod voice_channel_response {
             self.application_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the application that the voice channel applies to.</p>
         pub fn set_application_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -275,6 +289,7 @@ pub mod voice_channel_response {
             self.creation_date = Some(input.into());
             self
         }
+        /// <p>The date and time, in ISO 8601 format, when the voice channel was enabled.</p>
         pub fn set_creation_date(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -287,6 +302,7 @@ pub mod voice_channel_response {
             self.enabled = Some(input);
             self
         }
+        /// <p>Specifies whether the voice channel is enabled for the application.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -296,6 +312,7 @@ pub mod voice_channel_response {
             self.has_credential = Some(input);
             self
         }
+        /// <p>(Not used) This property is retained only for backward compatibility.</p>
         pub fn set_has_credential(mut self, input: std::option::Option<bool>) -> Self {
             self.has_credential = input;
             self
@@ -305,6 +322,7 @@ pub mod voice_channel_response {
             self.id = Some(input.into());
             self
         }
+        /// <p>(Deprecated) An identifier for the voice channel. This property is retained only for backward compatibility.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -314,6 +332,7 @@ pub mod voice_channel_response {
             self.is_archived = Some(input);
             self
         }
+        /// <p>Specifies whether the voice channel is archived.</p>
         pub fn set_is_archived(mut self, input: std::option::Option<bool>) -> Self {
             self.is_archived = input;
             self
@@ -323,6 +342,7 @@ pub mod voice_channel_response {
             self.last_modified_by = Some(input.into());
             self
         }
+        /// <p>The user who last modified the voice channel.</p>
         pub fn set_last_modified_by(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -335,6 +355,7 @@ pub mod voice_channel_response {
             self.last_modified_date = Some(input.into());
             self
         }
+        /// <p>The date and time, in ISO 8601 format, when the voice channel was last modified.</p>
         pub fn set_last_modified_date(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -347,6 +368,7 @@ pub mod voice_channel_response {
             self.platform = Some(input.into());
             self
         }
+        /// <p>The type of messaging or notification platform for the channel. For the voice channel, this value is VOICE.</p>
         pub fn set_platform(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.platform = input;
             self
@@ -356,6 +378,7 @@ pub mod voice_channel_response {
             self.version = Some(input);
             self
         }
+        /// <p>The current version of the voice channel.</p>
         pub fn set_version(mut self, input: std::option::Option<i32>) -> Self {
             self.version = input;
             self
@@ -412,6 +435,7 @@ pub mod voice_channel_request {
             self.enabled = Some(input);
             self
         }
+        /// <p>Specifies whether to enable the voice channel for the application.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -459,6 +483,7 @@ pub mod template_active_version_request {
             self.version = Some(input.into());
             self
         }
+        /// <p>The version of the message template to use as the active version of the template. Valid values are: latest, for the most recent version of the template; or, the unique identifier for any existing version of the template. If you specify an identifier, the value must match the identifier for an existing template version. To retrieve a list of versions and version identifiers for a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -525,6 +550,7 @@ pub mod sms_template_request {
             self.body = Some(input.into());
             self
         }
+        /// <p>The message body to use in text messages that are based on the message template.</p>
         pub fn set_body(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.body = input;
             self
@@ -534,6 +560,7 @@ pub mod sms_template_request {
             self.default_substitutions = Some(input.into());
             self
         }
+        /// <p>A JSON object that specifies the default values to use for message variables in the message template. This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding value defines the default value for that variable. When you create a message that's based on the template, you can override these defaults with message-specific and address-specific variables and values.</p>
         pub fn set_default_substitutions(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -546,6 +573,7 @@ pub mod sms_template_request {
             self.recommender_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the recommender model to use for the message template. Amazon Pinpoint uses this value to determine how to retrieve and process data from a recommender model when it sends messages that use the template, if the template contains message variables for recommendation data.</p>
         pub fn set_recommender_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -553,6 +581,11 @@ pub mod sms_template_request {
             self.recommender_id = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A string-to-string map of key-value pairs that defines the tags to associate with the message template. Each tag consists of a required tag key and an associated tag value.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -563,6 +596,7 @@ pub mod sms_template_request {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>A string-to-string map of key-value pairs that defines the tags to associate with the message template. Each tag consists of a required tag key and an associated tag value.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -577,6 +611,7 @@ pub mod sms_template_request {
             self.template_description = Some(input.into());
             self
         }
+        /// <p>A custom description of the message template.</p>
         pub fn set_template_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -689,6 +724,7 @@ pub mod sms_channel_response {
             self.application_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the application that the SMS channel applies to.</p>
         pub fn set_application_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -701,6 +737,7 @@ pub mod sms_channel_response {
             self.creation_date = Some(input.into());
             self
         }
+        /// <p>The date and time, in ISO 8601 format, when the SMS channel was enabled.</p>
         pub fn set_creation_date(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -713,6 +750,7 @@ pub mod sms_channel_response {
             self.enabled = Some(input);
             self
         }
+        /// <p>Specifies whether the SMS channel is enabled for the application.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -722,6 +760,7 @@ pub mod sms_channel_response {
             self.has_credential = Some(input);
             self
         }
+        /// <p>(Not used) This property is retained only for backward compatibility.</p>
         pub fn set_has_credential(mut self, input: std::option::Option<bool>) -> Self {
             self.has_credential = input;
             self
@@ -731,6 +770,7 @@ pub mod sms_channel_response {
             self.id = Some(input.into());
             self
         }
+        /// <p>(Deprecated) An identifier for the SMS channel. This property is retained only for backward compatibility.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -740,6 +780,7 @@ pub mod sms_channel_response {
             self.is_archived = Some(input);
             self
         }
+        /// <p>Specifies whether the SMS channel is archived.</p>
         pub fn set_is_archived(mut self, input: std::option::Option<bool>) -> Self {
             self.is_archived = input;
             self
@@ -749,6 +790,7 @@ pub mod sms_channel_response {
             self.last_modified_by = Some(input.into());
             self
         }
+        /// <p>The user who last modified the SMS channel.</p>
         pub fn set_last_modified_by(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -761,6 +803,7 @@ pub mod sms_channel_response {
             self.last_modified_date = Some(input.into());
             self
         }
+        /// <p>The date and time, in ISO 8601 format, when the SMS channel was last modified.</p>
         pub fn set_last_modified_date(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -773,6 +816,7 @@ pub mod sms_channel_response {
             self.platform = Some(input.into());
             self
         }
+        /// <p>The type of messaging or notification platform for the channel. For the SMS channel, this value is SMS.</p>
         pub fn set_platform(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.platform = input;
             self
@@ -782,6 +826,7 @@ pub mod sms_channel_response {
             self.promotional_messages_per_second = Some(input);
             self
         }
+        /// <p>The maximum number of promotional messages that you can send through the SMS channel each second.</p>
         pub fn set_promotional_messages_per_second(
             mut self,
             input: std::option::Option<i32>,
@@ -794,6 +839,7 @@ pub mod sms_channel_response {
             self.sender_id = Some(input.into());
             self
         }
+        /// <p>The identity that displays on recipients' devices when they receive messages from the SMS channel.</p>
         pub fn set_sender_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.sender_id = input;
             self
@@ -803,6 +849,7 @@ pub mod sms_channel_response {
             self.short_code = Some(input.into());
             self
         }
+        /// <p>The registered short code to use when you send messages through the SMS channel.</p>
         pub fn set_short_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.short_code = input;
             self
@@ -812,6 +859,7 @@ pub mod sms_channel_response {
             self.transactional_messages_per_second = Some(input);
             self
         }
+        /// <p>The maximum number of transactional messages that you can send through the SMS channel each second.</p>
         pub fn set_transactional_messages_per_second(
             mut self,
             input: std::option::Option<i32>,
@@ -824,6 +872,7 @@ pub mod sms_channel_response {
             self.version = Some(input);
             self
         }
+        /// <p>The current version of the SMS channel.</p>
         pub fn set_version(mut self, input: std::option::Option<i32>) -> Self {
             self.version = input;
             self
@@ -896,6 +945,7 @@ pub mod sms_channel_request {
             self.enabled = Some(input);
             self
         }
+        /// <p>Specifies whether to enable the SMS channel for the application.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -905,6 +955,7 @@ pub mod sms_channel_request {
             self.sender_id = Some(input.into());
             self
         }
+        /// <p>The identity that you want to display on recipients' devices when they receive messages from the SMS channel.</p>
         pub fn set_sender_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.sender_id = input;
             self
@@ -914,6 +965,7 @@ pub mod sms_channel_request {
             self.short_code = Some(input.into());
             self
         }
+        /// <p>The registered short code that you want to use when you send messages through the SMS channel.</p>
         pub fn set_short_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.short_code = input;
             self
@@ -1010,6 +1062,7 @@ pub mod segment_response {
             self.application_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the application that the segment is associated with.</p>
         pub fn set_application_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1022,6 +1075,7 @@ pub mod segment_response {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the segment.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -1031,6 +1085,7 @@ pub mod segment_response {
             self.creation_date = Some(input.into());
             self
         }
+        /// <p>The date and time when the segment was created.</p>
         pub fn set_creation_date(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1043,6 +1098,7 @@ pub mod segment_response {
             self.dimensions = Some(input);
             self
         }
+        /// <p>The dimension settings for the segment.</p>
         pub fn set_dimensions(
             mut self,
             input: std::option::Option<crate::model::SegmentDimensions>,
@@ -1055,6 +1111,7 @@ pub mod segment_response {
             self.id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the segment.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -1064,6 +1121,7 @@ pub mod segment_response {
             self.import_definition = Some(input);
             self
         }
+        /// <p>The settings for the import job that's associated with the segment.</p>
         pub fn set_import_definition(
             mut self,
             input: std::option::Option<crate::model::SegmentImportResource>,
@@ -1076,6 +1134,7 @@ pub mod segment_response {
             self.last_modified_date = Some(input.into());
             self
         }
+        /// <p>The date and time when the segment was last modified.</p>
         pub fn set_last_modified_date(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1088,6 +1147,7 @@ pub mod segment_response {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the segment.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1097,6 +1157,7 @@ pub mod segment_response {
             self.segment_groups = Some(input);
             self
         }
+        /// <p>A list of one or more segment groups that apply to the segment. Each segment group consists of zero or more base segments and the dimensions that are applied to those base segments.</p>
         pub fn set_segment_groups(
             mut self,
             input: std::option::Option<crate::model::SegmentGroupList>,
@@ -1109,6 +1170,7 @@ pub mod segment_response {
             self.segment_type = Some(input);
             self
         }
+        /// <p>The segment type. Valid values are:</p> <ul><li><p>DIMENSIONAL - A dynamic segment, which is a segment that uses selection criteria that you specify and is based on endpoint data that's reported by your app. Dynamic segments can change over time.</p></li> <li><p>IMPORT - A static segment, which is a segment that uses selection criteria that you specify and is based on endpoint definitions that you import from a file. Imported segments are static; they don't change over time.</p></li></ul>
         pub fn set_segment_type(
             mut self,
             input: std::option::Option<crate::model::SegmentType>,
@@ -1116,6 +1178,11 @@ pub mod segment_response {
             self.segment_type = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A string-to-string map of key-value pairs that identifies the tags that are associated with the segment. Each tag consists of a required tag key and an associated tag value.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1126,6 +1193,7 @@ pub mod segment_response {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>A string-to-string map of key-value pairs that identifies the tags that are associated with the segment. Each tag consists of a required tag key and an associated tag value.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1140,6 +1208,7 @@ pub mod segment_response {
             self.version = Some(input);
             self
         }
+        /// <p>The version number of the segment.</p>
         pub fn set_version(mut self, input: std::option::Option<i32>) -> Self {
             self.version = input;
             self
@@ -1170,6 +1239,7 @@ impl SegmentResponse {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1181,7 +1251,9 @@ impl SegmentResponse {
     std::hash::Hash,
 )]
 pub enum SegmentType {
+    #[allow(missing_docs)] // documentation missing in model
     Dimensional,
+    #[allow(missing_docs)] // documentation missing in model
     Import,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1203,6 +1275,7 @@ impl std::str::FromStr for SegmentType {
     }
 }
 impl SegmentType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SegmentType::Dimensional => "DIMENSIONAL",
@@ -1210,6 +1283,7 @@ impl SegmentType {
             SegmentType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DIMENSIONAL", "IMPORT"]
     }
@@ -1247,12 +1321,18 @@ pub mod segment_group_list {
         pub(crate) include: std::option::Option<crate::model::Include>,
     }
     impl Builder {
+        /// Appends an item to `groups`.
+        ///
+        /// To override the contents of this collection use [`set_groups`](Self::set_groups).
+        ///
+        /// <p>An array that defines the set of segment criteria to evaluate when handling segment groups for the segment.</p>
         pub fn groups(mut self, input: impl Into<crate::model::SegmentGroup>) -> Self {
             let mut v = self.groups.unwrap_or_default();
             v.push(input.into());
             self.groups = Some(v);
             self
         }
+        /// <p>An array that defines the set of segment criteria to evaluate when handling segment groups for the segment.</p>
         pub fn set_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SegmentGroup>>,
@@ -1265,6 +1345,7 @@ pub mod segment_group_list {
             self.include = Some(input);
             self
         }
+        /// <p>Specifies how to handle multiple segment groups for the segment. For example, if the segment includes three segment groups, whether the resulting segment includes endpoints that match all, any, or none of the segment groups.</p>
         pub fn set_include(mut self, input: std::option::Option<crate::model::Include>) -> Self {
             self.include = input;
             self
@@ -1285,6 +1366,7 @@ impl SegmentGroupList {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1296,8 +1378,11 @@ impl SegmentGroupList {
     std::hash::Hash,
 )]
 pub enum Include {
+    #[allow(missing_docs)] // documentation missing in model
     All,
+    #[allow(missing_docs)] // documentation missing in model
     Any,
+    #[allow(missing_docs)] // documentation missing in model
     None,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1320,6 +1405,7 @@ impl std::str::FromStr for Include {
     }
 }
 impl Include {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Include::All => "ALL",
@@ -1328,6 +1414,7 @@ impl Include {
             Include::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ALL", "ANY", "NONE"]
     }
@@ -1374,12 +1461,18 @@ pub mod segment_group {
         pub(crate) r#type: std::option::Option<crate::model::Type>,
     }
     impl Builder {
+        /// Appends an item to `dimensions`.
+        ///
+        /// To override the contents of this collection use [`set_dimensions`](Self::set_dimensions).
+        ///
+        /// <p>An array that defines the dimensions for the segment.</p>
         pub fn dimensions(mut self, input: impl Into<crate::model::SegmentDimensions>) -> Self {
             let mut v = self.dimensions.unwrap_or_default();
             v.push(input.into());
             self.dimensions = Some(v);
             self
         }
+        /// <p>An array that defines the dimensions for the segment.</p>
         pub fn set_dimensions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SegmentDimensions>>,
@@ -1387,12 +1480,18 @@ pub mod segment_group {
             self.dimensions = input;
             self
         }
+        /// Appends an item to `source_segments`.
+        ///
+        /// To override the contents of this collection use [`set_source_segments`](Self::set_source_segments).
+        ///
+        /// <p>The base segment to build the segment on. A base segment, also referred to as a <i>source segment</i>, defines the initial population of endpoints for a segment. When you add dimensions to a segment, Amazon Pinpoint filters the base segment by using the dimensions that you specify.</p> <p>You can specify more than one dimensional segment or only one imported segment. If you specify an imported segment, the Amazon Pinpoint console displays a segment size estimate that indicates the size of the imported segment without any filters applied to it.</p>
         pub fn source_segments(mut self, input: impl Into<crate::model::SegmentReference>) -> Self {
             let mut v = self.source_segments.unwrap_or_default();
             v.push(input.into());
             self.source_segments = Some(v);
             self
         }
+        /// <p>The base segment to build the segment on. A base segment, also referred to as a <i>source segment</i>, defines the initial population of endpoints for a segment. When you add dimensions to a segment, Amazon Pinpoint filters the base segment by using the dimensions that you specify.</p> <p>You can specify more than one dimensional segment or only one imported segment. If you specify an imported segment, the Amazon Pinpoint console displays a segment size estimate that indicates the size of the imported segment without any filters applied to it.</p>
         pub fn set_source_segments(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SegmentReference>>,
@@ -1405,6 +1504,7 @@ pub mod segment_group {
             self.source_type = Some(input);
             self
         }
+        /// <p>Specifies how to handle multiple base segments for the segment. For example, if you specify three base segments for the segment, whether the resulting segment is based on all, any, or none of the base segments.</p>
         pub fn set_source_type(
             mut self,
             input: std::option::Option<crate::model::SourceType>,
@@ -1417,6 +1517,7 @@ pub mod segment_group {
             self.r#type = Some(input);
             self
         }
+        /// <p>Specifies how to handle multiple dimensions for the segment. For example, if you specify three dimensions for the segment, whether the resulting segment includes endpoints that match all, any, or none of the dimensions.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::Type>) -> Self {
             self.r#type = input;
             self
@@ -1439,6 +1540,7 @@ impl SegmentGroup {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1450,8 +1552,11 @@ impl SegmentGroup {
     std::hash::Hash,
 )]
 pub enum Type {
+    #[allow(missing_docs)] // documentation missing in model
     All,
+    #[allow(missing_docs)] // documentation missing in model
     Any,
+    #[allow(missing_docs)] // documentation missing in model
     None,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1474,6 +1579,7 @@ impl std::str::FromStr for Type {
     }
 }
 impl Type {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Type::All => "ALL",
@@ -1482,6 +1588,7 @@ impl Type {
             Type::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ALL", "ANY", "NONE"]
     }
@@ -1492,6 +1599,7 @@ impl AsRef<str> for Type {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1503,8 +1611,11 @@ impl AsRef<str> for Type {
     std::hash::Hash,
 )]
 pub enum SourceType {
+    #[allow(missing_docs)] // documentation missing in model
     All,
+    #[allow(missing_docs)] // documentation missing in model
     Any,
+    #[allow(missing_docs)] // documentation missing in model
     None,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1527,6 +1638,7 @@ impl std::str::FromStr for SourceType {
     }
 }
 impl SourceType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SourceType::All => "ALL",
@@ -1535,6 +1647,7 @@ impl SourceType {
             SourceType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ALL", "ANY", "NONE"]
     }
@@ -1577,6 +1690,7 @@ pub mod segment_reference {
             self.id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the segment.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -1586,6 +1700,7 @@ pub mod segment_reference {
             self.version = Some(input);
             self
         }
+        /// <p>The version number of the segment.</p>
         pub fn set_version(mut self, input: std::option::Option<i32>) -> Self {
             self.version = input;
             self
@@ -1661,6 +1776,11 @@ pub mod segment_dimensions {
         >,
     }
     impl Builder {
+        /// Adds a key-value pair to `attributes`.
+        ///
+        /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
+        ///
+        /// <p>One or more custom attributes to use as criteria for the segment.</p>
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -1671,6 +1791,7 @@ pub mod segment_dimensions {
             self.attributes = Some(hash_map);
             self
         }
+        /// <p>One or more custom attributes to use as criteria for the segment.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -1685,6 +1806,7 @@ pub mod segment_dimensions {
             self.behavior = Some(input);
             self
         }
+        /// <p>The behavior-based criteria, such as how recently users have used your app, for the segment.</p>
         pub fn set_behavior(
             mut self,
             input: std::option::Option<crate::model::SegmentBehaviors>,
@@ -1697,6 +1819,7 @@ pub mod segment_dimensions {
             self.demographic = Some(input);
             self
         }
+        /// <p>The demographic-based criteria, such as device platform, for the segment.</p>
         pub fn set_demographic(
             mut self,
             input: std::option::Option<crate::model::SegmentDemographics>,
@@ -1709,6 +1832,7 @@ pub mod segment_dimensions {
             self.location = Some(input);
             self
         }
+        /// <p>The location-based criteria, such as region or GPS coordinates, for the segment.</p>
         pub fn set_location(
             mut self,
             input: std::option::Option<crate::model::SegmentLocation>,
@@ -1716,6 +1840,11 @@ pub mod segment_dimensions {
             self.location = input;
             self
         }
+        /// Adds a key-value pair to `metrics`.
+        ///
+        /// To override the contents of this collection use [`set_metrics`](Self::set_metrics).
+        ///
+        /// <p>One or more custom metrics to use as criteria for the segment.</p>
         pub fn metrics(
             mut self,
             k: impl Into<std::string::String>,
@@ -1726,6 +1855,7 @@ pub mod segment_dimensions {
             self.metrics = Some(hash_map);
             self
         }
+        /// <p>One or more custom metrics to use as criteria for the segment.</p>
         pub fn set_metrics(
             mut self,
             input: std::option::Option<
@@ -1735,6 +1865,11 @@ pub mod segment_dimensions {
             self.metrics = input;
             self
         }
+        /// Adds a key-value pair to `user_attributes`.
+        ///
+        /// To override the contents of this collection use [`set_user_attributes`](Self::set_user_attributes).
+        ///
+        /// <p>One or more custom user attributes to use as criteria for the segment.</p>
         pub fn user_attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -1745,6 +1880,7 @@ pub mod segment_dimensions {
             self.user_attributes = Some(hash_map);
             self
         }
+        /// <p>One or more custom user attributes to use as criteria for the segment.</p>
         pub fn set_user_attributes(
             mut self,
             input: std::option::Option<
@@ -1806,6 +1942,7 @@ pub mod attribute_dimension {
             self.attribute_type = Some(input);
             self
         }
+        /// <p>The type of segment dimension to use. Valid values are: <ul><li>INCLUSIVE - endpoints that have attributes matching the values are included in the segment.</li><li>EXCLUSIVE - endpoints that have attributes matching the values are excluded in the segment.</li><li>CONTAINS - endpoints that have attributes' substrings match the values are included in the segment.</li><li>BEFORE - endpoints with attributes read as ISO_INSTANT datetimes before the value are included in the segment.</li><li>AFTER - endpoints with attributes read as ISO_INSTANT datetimes after the value are included in the segment.</li><li>ON - endpoints with attributes read as ISO_INSTANT dates on the value are included in the segment. Time is ignored in this comparison.</li><li>BETWEEN - endpoints with attributes read as ISO_INSTANT datetimes between the values are included in the segment.</li></p>
         pub fn set_attribute_type(
             mut self,
             input: std::option::Option<crate::model::AttributeType>,
@@ -1813,12 +1950,18 @@ pub mod attribute_dimension {
             self.attribute_type = input;
             self
         }
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>The criteria values to use for the segment dimension. Depending on the value of the AttributeType property, endpoints are included or excluded from the segment if their attribute values match the criteria values.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
+        /// <p>The criteria values to use for the segment dimension. Depending on the value of the AttributeType property, endpoints are included or excluded from the segment if their attribute values match the criteria values.</p>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1842,6 +1985,7 @@ impl AttributeDimension {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1853,12 +1997,19 @@ impl AttributeDimension {
     std::hash::Hash,
 )]
 pub enum AttributeType {
+    #[allow(missing_docs)] // documentation missing in model
     After,
+    #[allow(missing_docs)] // documentation missing in model
     Before,
+    #[allow(missing_docs)] // documentation missing in model
     Between,
+    #[allow(missing_docs)] // documentation missing in model
     Contains,
+    #[allow(missing_docs)] // documentation missing in model
     Exclusive,
+    #[allow(missing_docs)] // documentation missing in model
     Inclusive,
+    #[allow(missing_docs)] // documentation missing in model
     On,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1885,6 +2036,7 @@ impl std::str::FromStr for AttributeType {
     }
 }
 impl AttributeType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AttributeType::After => "AFTER",
@@ -1897,6 +2049,7 @@ impl AttributeType {
             AttributeType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "AFTER",
@@ -1947,6 +2100,7 @@ pub mod metric_dimension {
             self.comparison_operator = Some(input.into());
             self
         }
+        /// <p>The operator to use when comparing metric values. Valid values are: GREATER_THAN, LESS_THAN, GREATER_THAN_OR_EQUAL, LESS_THAN_OR_EQUAL, and EQUAL.</p>
         pub fn set_comparison_operator(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1959,6 +2113,7 @@ pub mod metric_dimension {
             self.value = Some(input);
             self
         }
+        /// <p>The value to compare.</p>
         pub fn set_value(mut self, input: std::option::Option<f64>) -> Self {
             self.value = input;
             self
@@ -2011,6 +2166,7 @@ pub mod segment_location {
             self.country = Some(input);
             self
         }
+        /// <p>The country or region code, in ISO 3166-1 alpha-2 format, for the segment.</p>
         pub fn set_country(
             mut self,
             input: std::option::Option<crate::model::SetDimension>,
@@ -2023,6 +2179,7 @@ pub mod segment_location {
             self.gps_point = Some(input);
             self
         }
+        /// <p>The GPS location and range for the segment.</p>
         pub fn set_gps_point(
             mut self,
             input: std::option::Option<crate::model::GpsPointDimension>,
@@ -2078,6 +2235,7 @@ pub mod gps_point_dimension {
             self.coordinates = Some(input);
             self
         }
+        /// <p>The GPS coordinates to measure distance from.</p>
         pub fn set_coordinates(
             mut self,
             input: std::option::Option<crate::model::GpsCoordinates>,
@@ -2090,6 +2248,7 @@ pub mod gps_point_dimension {
             self.range_in_kilometers = Some(input);
             self
         }
+        /// <p>The range, in kilometers, from the GPS coordinates.</p>
         pub fn set_range_in_kilometers(mut self, input: std::option::Option<f64>) -> Self {
             self.range_in_kilometers = input;
             self
@@ -2142,6 +2301,7 @@ pub mod gps_coordinates {
             self.latitude = Some(input);
             self
         }
+        /// <p>The latitude coordinate of the location.</p>
         pub fn set_latitude(mut self, input: std::option::Option<f64>) -> Self {
             self.latitude = input;
             self
@@ -2151,6 +2311,7 @@ pub mod gps_coordinates {
             self.longitude = Some(input);
             self
         }
+        /// <p>The longitude coordinate of the location.</p>
         pub fn set_longitude(mut self, input: std::option::Option<f64>) -> Self {
             self.longitude = input;
             self
@@ -2203,6 +2364,7 @@ pub mod set_dimension {
             self.dimension_type = Some(input);
             self
         }
+        /// <p>The type of segment dimension to use. Valid values are: INCLUSIVE, endpoints that match the criteria are included in the segment; and, EXCLUSIVE, endpoints that match the criteria are excluded from the segment.</p>
         pub fn set_dimension_type(
             mut self,
             input: std::option::Option<crate::model::DimensionType>,
@@ -2210,12 +2372,18 @@ pub mod set_dimension {
             self.dimension_type = input;
             self
         }
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>The criteria values to use for the segment dimension. Depending on the value of the DimensionType property, endpoints are included or excluded from the segment if their values match the criteria values.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
+        /// <p>The criteria values to use for the segment dimension. Depending on the value of the DimensionType property, endpoints are included or excluded from the segment if their values match the criteria values.</p>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2239,6 +2407,7 @@ impl SetDimension {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2250,7 +2419,9 @@ impl SetDimension {
     std::hash::Hash,
 )]
 pub enum DimensionType {
+    #[allow(missing_docs)] // documentation missing in model
     Exclusive,
+    #[allow(missing_docs)] // documentation missing in model
     Inclusive,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2272,6 +2443,7 @@ impl std::str::FromStr for DimensionType {
     }
 }
 impl DimensionType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DimensionType::Exclusive => "EXCLUSIVE",
@@ -2279,6 +2451,7 @@ impl DimensionType {
             DimensionType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["EXCLUSIVE", "INCLUSIVE"]
     }
@@ -2337,6 +2510,7 @@ pub mod segment_demographics {
             self.app_version = Some(input);
             self
         }
+        /// <p>The app version criteria for the segment.</p>
         pub fn set_app_version(
             mut self,
             input: std::option::Option<crate::model::SetDimension>,
@@ -2349,6 +2523,7 @@ pub mod segment_demographics {
             self.channel = Some(input);
             self
         }
+        /// <p>The channel criteria for the segment.</p>
         pub fn set_channel(
             mut self,
             input: std::option::Option<crate::model::SetDimension>,
@@ -2361,6 +2536,7 @@ pub mod segment_demographics {
             self.device_type = Some(input);
             self
         }
+        /// <p>The device type criteria for the segment.</p>
         pub fn set_device_type(
             mut self,
             input: std::option::Option<crate::model::SetDimension>,
@@ -2373,6 +2549,7 @@ pub mod segment_demographics {
             self.make = Some(input);
             self
         }
+        /// <p>The device make criteria for the segment.</p>
         pub fn set_make(mut self, input: std::option::Option<crate::model::SetDimension>) -> Self {
             self.make = input;
             self
@@ -2382,6 +2559,7 @@ pub mod segment_demographics {
             self.model = Some(input);
             self
         }
+        /// <p>The device model criteria for the segment.</p>
         pub fn set_model(mut self, input: std::option::Option<crate::model::SetDimension>) -> Self {
             self.model = input;
             self
@@ -2391,6 +2569,7 @@ pub mod segment_demographics {
             self.platform = Some(input);
             self
         }
+        /// <p>The device platform criteria for the segment.</p>
         pub fn set_platform(
             mut self,
             input: std::option::Option<crate::model::SetDimension>,
@@ -2446,6 +2625,7 @@ pub mod segment_behaviors {
             self.recency = Some(input);
             self
         }
+        /// <p>The dimension settings that are based on how recently an endpoint was active.</p>
         pub fn set_recency(
             mut self,
             input: std::option::Option<crate::model::RecencyDimension>,
@@ -2500,6 +2680,7 @@ pub mod recency_dimension {
             self.duration = Some(input);
             self
         }
+        /// <p>The duration to use when determining whether an endpoint is active or inactive.</p>
         pub fn set_duration(mut self, input: std::option::Option<crate::model::Duration>) -> Self {
             self.duration = input;
             self
@@ -2509,6 +2690,7 @@ pub mod recency_dimension {
             self.recency_type = Some(input);
             self
         }
+        /// <p>The type of recency dimension to use for the segment. Valid values are: ACTIVE, endpoints that were active within the specified duration are included in the segment; and, INACTIVE, endpoints that weren't active within the specified duration are included in the segment.</p>
         pub fn set_recency_type(
             mut self,
             input: std::option::Option<crate::model::RecencyType>,
@@ -2532,6 +2714,7 @@ impl RecencyDimension {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2543,7 +2726,9 @@ impl RecencyDimension {
     std::hash::Hash,
 )]
 pub enum RecencyType {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     Inactive,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2565,6 +2750,7 @@ impl std::str::FromStr for RecencyType {
     }
 }
 impl RecencyType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RecencyType::Active => "ACTIVE",
@@ -2572,6 +2758,7 @@ impl RecencyType {
             RecencyType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ACTIVE", "INACTIVE"]
     }
@@ -2582,6 +2769,7 @@ impl AsRef<str> for RecencyType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2593,9 +2781,13 @@ impl AsRef<str> for RecencyType {
     std::hash::Hash,
 )]
 pub enum Duration {
+    #[allow(missing_docs)] // documentation missing in model
     Day14,
+    #[allow(missing_docs)] // documentation missing in model
     Day30,
+    #[allow(missing_docs)] // documentation missing in model
     Day7,
+    #[allow(missing_docs)] // documentation missing in model
     Hr24,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2619,6 +2811,7 @@ impl std::str::FromStr for Duration {
     }
 }
 impl Duration {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Duration::Day14 => "DAY_14",
@@ -2628,6 +2821,7 @@ impl Duration {
             Duration::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DAY_14", "DAY_30", "DAY_7", "HR_24"]
     }
@@ -2682,6 +2876,11 @@ pub mod segment_import_resource {
         pub(crate) size: std::option::Option<i32>,
     }
     impl Builder {
+        /// Adds a key-value pair to `channel_counts`.
+        ///
+        /// To override the contents of this collection use [`set_channel_counts`](Self::set_channel_counts).
+        ///
+        /// <p>The number of channel types in the endpoint definitions that were imported to create the segment.</p>
         pub fn channel_counts(
             mut self,
             k: impl Into<std::string::String>,
@@ -2692,6 +2891,7 @@ pub mod segment_import_resource {
             self.channel_counts = Some(hash_map);
             self
         }
+        /// <p>The number of channel types in the endpoint definitions that were imported to create the segment.</p>
         pub fn set_channel_counts(
             mut self,
             input: std::option::Option<std::collections::HashMap<std::string::String, i32>>,
@@ -2704,6 +2904,7 @@ pub mod segment_import_resource {
             self.external_id = Some(input.into());
             self
         }
+        /// <p>(Deprecated) Your AWS account ID, which you assigned to an external ID key in an IAM trust policy. Amazon Pinpoint previously used this value to assume an IAM role when importing endpoint definitions, but we removed this requirement. We don't recommend use of external IDs for IAM roles that are assumed by Amazon Pinpoint.</p>
         pub fn set_external_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.external_id = input;
             self
@@ -2713,6 +2914,7 @@ pub mod segment_import_resource {
             self.format = Some(input);
             self
         }
+        /// <p>The format of the files that were imported to create the segment. Valid values are: CSV, for comma-separated values format; and, JSON, for newline-delimited JSON format.</p>
         pub fn set_format(mut self, input: std::option::Option<crate::model::Format>) -> Self {
             self.format = input;
             self
@@ -2722,6 +2924,7 @@ pub mod segment_import_resource {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that authorized Amazon Pinpoint to access the Amazon S3 location to import endpoint definitions from.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -2731,6 +2934,7 @@ pub mod segment_import_resource {
             self.s3_url = Some(input.into());
             self
         }
+        /// <p>The URL of the Amazon Simple Storage Service (Amazon S3) bucket that the endpoint definitions were imported from to create the segment.</p>
         pub fn set_s3_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.s3_url = input;
             self
@@ -2740,6 +2944,7 @@ pub mod segment_import_resource {
             self.size = Some(input);
             self
         }
+        /// <p>The number of endpoint definitions that were imported successfully to create the segment.</p>
         pub fn set_size(mut self, input: std::option::Option<i32>) -> Self {
             self.size = input;
             self
@@ -2764,6 +2969,7 @@ impl SegmentImportResource {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2775,7 +2981,9 @@ impl SegmentImportResource {
     std::hash::Hash,
 )]
 pub enum Format {
+    #[allow(missing_docs)] // documentation missing in model
     Csv,
+    #[allow(missing_docs)] // documentation missing in model
     Json,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2797,6 +3005,7 @@ impl std::str::FromStr for Format {
     }
 }
 impl Format {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Format::Csv => "CSV",
@@ -2804,6 +3013,7 @@ impl Format {
             Format::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CSV", "JSON"]
     }
@@ -2857,6 +3067,7 @@ pub mod write_segment_request {
             self.dimensions = Some(input);
             self
         }
+        /// <p>The criteria that define the dimensions for the segment.</p>
         pub fn set_dimensions(
             mut self,
             input: std::option::Option<crate::model::SegmentDimensions>,
@@ -2869,6 +3080,7 @@ pub mod write_segment_request {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the segment.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2878,6 +3090,7 @@ pub mod write_segment_request {
             self.segment_groups = Some(input);
             self
         }
+        /// <p>The segment group to use and the dimensions to apply to the group's base segments in order to build the segment. A segment group can consist of zero or more base segments. Your request can include only one segment group.</p>
         pub fn set_segment_groups(
             mut self,
             input: std::option::Option<crate::model::SegmentGroupList>,
@@ -2885,6 +3098,11 @@ pub mod write_segment_request {
             self.segment_groups = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A string-to-string map of key-value pairs that defines the tags to associate with the segment. Each tag consists of a required tag key and an associated tag value.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -2895,6 +3113,7 @@ pub mod write_segment_request {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>A string-to-string map of key-value pairs that defines the tags to associate with the segment. Each tag consists of a required tag key and an associated tag value.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -3010,6 +3229,11 @@ pub mod recommender_configuration_response {
         pub(crate) recommendations_per_message: std::option::Option<i32>,
     }
     impl Builder {
+        /// Adds a key-value pair to `attributes`.
+        ///
+        /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
+        ///
+        /// <p>A map that defines 1-10 custom endpoint or user attributes, depending on the value for the RecommendationProviderIdType property. Each of these attributes temporarily stores a recommended item that's retrieved from the recommender model and sent to an AWS Lambda function for additional processing. Each attribute can be used as a message variable in a message template.</p> <p>This value is null if the configuration doesn't invoke an AWS Lambda function (RecommendationTransformerUri) to perform additional processing of recommendation data.</p>
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -3020,6 +3244,7 @@ pub mod recommender_configuration_response {
             self.attributes = Some(hash_map);
             self
         }
+        /// <p>A map that defines 1-10 custom endpoint or user attributes, depending on the value for the RecommendationProviderIdType property. Each of these attributes temporarily stores a recommended item that's retrieved from the recommender model and sent to an AWS Lambda function for additional processing. Each attribute can be used as a message variable in a message template.</p> <p>This value is null if the configuration doesn't invoke an AWS Lambda function (RecommendationTransformerUri) to perform additional processing of recommendation data.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -3034,6 +3259,7 @@ pub mod recommender_configuration_response {
             self.creation_date = Some(input.into());
             self
         }
+        /// <p>The date, in extended ISO 8601 format, when the configuration was created for the recommender model.</p>
         pub fn set_creation_date(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3046,6 +3272,7 @@ pub mod recommender_configuration_response {
             self.description = Some(input.into());
             self
         }
+        /// <p>The custom description of the configuration for the recommender model.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -3055,6 +3282,7 @@ pub mod recommender_configuration_response {
             self.id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the recommender model configuration.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -3064,6 +3292,7 @@ pub mod recommender_configuration_response {
             self.last_modified_date = Some(input.into());
             self
         }
+        /// <p>The date, in extended ISO 8601 format, when the configuration for the recommender model was last modified.</p>
         pub fn set_last_modified_date(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3076,6 +3305,7 @@ pub mod recommender_configuration_response {
             self.name = Some(input.into());
             self
         }
+        /// <p>The custom name of the configuration for the recommender model.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -3088,6 +3318,7 @@ pub mod recommender_configuration_response {
             self.recommendation_provider_id_type = Some(input.into());
             self
         }
+        /// <p>The type of Amazon Pinpoint ID that's associated with unique user IDs in the recommender model. This value enables the model to use attribute and event data that’s specific to a particular endpoint or user in an Amazon Pinpoint application. Possible values are:</p> <ul><li><p>PINPOINT_ENDPOINT_ID - Each user in the model is associated with a particular endpoint in Amazon Pinpoint. The data is correlated based on endpoint IDs in Amazon Pinpoint. This is the default value.</p></li> <li><p>PINPOINT_USER_ID - Each user in the model is associated with a particular user and endpoint in Amazon Pinpoint. The data is correlated based on user IDs in Amazon Pinpoint. If this value is specified, an endpoint definition in Amazon Pinpoint has to specify both a user ID (UserId) and an endpoint ID. Otherwise, messages won’t be sent to the user's endpoint.</p></li></ul>
         pub fn set_recommendation_provider_id_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3103,6 +3334,7 @@ pub mod recommender_configuration_response {
             self.recommendation_provider_role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that authorizes Amazon Pinpoint to retrieve recommendation data from the recommender model.</p>
         pub fn set_recommendation_provider_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3118,6 +3350,7 @@ pub mod recommender_configuration_response {
             self.recommendation_provider_uri = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the recommender model that Amazon Pinpoint retrieves the recommendation data from. This value is the ARN of an Amazon Personalize campaign.</p>
         pub fn set_recommendation_provider_uri(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3133,6 +3366,7 @@ pub mod recommender_configuration_response {
             self.recommendation_transformer_uri = Some(input.into());
             self
         }
+        /// <p>The name or Amazon Resource Name (ARN) of the AWS Lambda function that Amazon Pinpoint invokes to perform additional processing of recommendation data that it retrieves from the recommender model.</p>
         pub fn set_recommendation_transformer_uri(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3148,6 +3382,7 @@ pub mod recommender_configuration_response {
             self.recommendations_display_name = Some(input.into());
             self
         }
+        /// <p>The custom display name for the standard endpoint or user attribute (RecommendationItems) that temporarily stores recommended items for each endpoint or user, depending on the value for the RecommendationProviderIdType property. This name appears in the <b>Attribute finder</b> of the template editor on the Amazon Pinpoint console.</p> <p>This value is null if the configuration doesn't invoke an AWS Lambda function (RecommendationTransformerUri) to perform additional processing of recommendation data.</p>
         pub fn set_recommendations_display_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3160,6 +3395,7 @@ pub mod recommender_configuration_response {
             self.recommendations_per_message = Some(input);
             self
         }
+        /// <p>The number of recommended items that are retrieved from the model for each endpoint or user, depending on the value for the RecommendationProviderIdType property. This number determines how many recommended items are available for use in message variables.</p>
         pub fn set_recommendations_per_message(mut self, input: std::option::Option<i32>) -> Self {
             self.recommendations_per_message = input;
             self
@@ -3266,6 +3502,11 @@ pub mod update_recommender_configuration_shape {
         pub(crate) recommendations_per_message: std::option::Option<i32>,
     }
     impl Builder {
+        /// Adds a key-value pair to `attributes`.
+        ///
+        /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
+        ///
+        /// <p>A map of key-value pairs that defines 1-10 custom endpoint or user attributes, depending on the value for the RecommendationProviderIdType property. Each of these attributes temporarily stores a recommended item that's retrieved from the recommender model and sent to an AWS Lambda function for additional processing. Each attribute can be used as a message variable in a message template.</p> <p>In the map, the key is the name of a custom attribute and the value is a custom display name for that attribute. The display name appears in the <b>Attribute finder</b> of the template editor on the Amazon Pinpoint console. The following restrictions apply to these names:</p> <ul><li><p>An attribute name must start with a letter or number and it can contain up to 50 characters. The characters can be letters, numbers, underscores (_), or hyphens (-). Attribute names are case sensitive and must be unique.</p></li> <li><p>An attribute display name must start with a letter or number and it can contain up to 25 characters. The characters can be letters, numbers, spaces, underscores (_), or hyphens (-).</p></li></ul> <p>This object is required if the configuration invokes an AWS Lambda function (RecommendationTransformerUri) to process recommendation data. Otherwise, don't include this object in your request.</p>
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -3276,6 +3517,7 @@ pub mod update_recommender_configuration_shape {
             self.attributes = Some(hash_map);
             self
         }
+        /// <p>A map of key-value pairs that defines 1-10 custom endpoint or user attributes, depending on the value for the RecommendationProviderIdType property. Each of these attributes temporarily stores a recommended item that's retrieved from the recommender model and sent to an AWS Lambda function for additional processing. Each attribute can be used as a message variable in a message template.</p> <p>In the map, the key is the name of a custom attribute and the value is a custom display name for that attribute. The display name appears in the <b>Attribute finder</b> of the template editor on the Amazon Pinpoint console. The following restrictions apply to these names:</p> <ul><li><p>An attribute name must start with a letter or number and it can contain up to 50 characters. The characters can be letters, numbers, underscores (_), or hyphens (-). Attribute names are case sensitive and must be unique.</p></li> <li><p>An attribute display name must start with a letter or number and it can contain up to 25 characters. The characters can be letters, numbers, spaces, underscores (_), or hyphens (-).</p></li></ul> <p>This object is required if the configuration invokes an AWS Lambda function (RecommendationTransformerUri) to process recommendation data. Otherwise, don't include this object in your request.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -3290,6 +3532,7 @@ pub mod update_recommender_configuration_shape {
             self.description = Some(input.into());
             self
         }
+        /// <p>A custom description of the configuration for the recommender model. The description can contain up to 128 characters. The characters can be letters, numbers, spaces, or the following symbols: _ ; () , ‐.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -3299,6 +3542,7 @@ pub mod update_recommender_configuration_shape {
             self.name = Some(input.into());
             self
         }
+        /// <p>A custom name of the configuration for the recommender model. The name must start with a letter or number and it can contain up to 128 characters. The characters can be letters, numbers, spaces, underscores (_), or hyphens (-).</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -3311,6 +3555,7 @@ pub mod update_recommender_configuration_shape {
             self.recommendation_provider_id_type = Some(input.into());
             self
         }
+        /// <p>The type of Amazon Pinpoint ID to associate with unique user IDs in the recommender model. This value enables the model to use attribute and event data that’s specific to a particular endpoint or user in an Amazon Pinpoint application. Valid values are:</p> <ul><li><p>PINPOINT_ENDPOINT_ID - Associate each user in the model with a particular endpoint in Amazon Pinpoint. The data is correlated based on endpoint IDs in Amazon Pinpoint. This is the default value.</p></li> <li><p>PINPOINT_USER_ID - Associate each user in the model with a particular user and endpoint in Amazon Pinpoint. The data is correlated based on user IDs in Amazon Pinpoint. If you specify this value, an endpoint definition in Amazon Pinpoint has to specify both a user ID (UserId) and an endpoint ID. Otherwise, messages won’t be sent to the user's endpoint.</p></li></ul>
         pub fn set_recommendation_provider_id_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3326,6 +3571,7 @@ pub mod update_recommender_configuration_shape {
             self.recommendation_provider_role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that authorizes Amazon Pinpoint to retrieve recommendation data from the recommender model.</p>
         pub fn set_recommendation_provider_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3341,6 +3587,7 @@ pub mod update_recommender_configuration_shape {
             self.recommendation_provider_uri = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the recommender model to retrieve recommendation data from. This value must match the ARN of an Amazon Personalize campaign.</p>
         pub fn set_recommendation_provider_uri(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3356,6 +3603,7 @@ pub mod update_recommender_configuration_shape {
             self.recommendation_transformer_uri = Some(input.into());
             self
         }
+        /// <p>The name or Amazon Resource Name (ARN) of the AWS Lambda function to invoke for additional processing of recommendation data that's retrieved from the recommender model.</p>
         pub fn set_recommendation_transformer_uri(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3371,6 +3619,7 @@ pub mod update_recommender_configuration_shape {
             self.recommendations_display_name = Some(input.into());
             self
         }
+        /// <p>A custom display name for the standard endpoint or user attribute (RecommendationItems) that temporarily stores recommended items for each endpoint or user, depending on the value for the RecommendationProviderIdType property. This value is required if the configuration doesn't invoke an AWS Lambda function (RecommendationTransformerUri) to perform additional processing of recommendation data.</p> <p>This name appears in the <b>Attribute finder</b> of the template editor on the Amazon Pinpoint console. The name can contain up to 25 characters. The characters can be letters, numbers, spaces, underscores (_), or hyphens (-). These restrictions don't apply to attribute values.</p>
         pub fn set_recommendations_display_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3383,6 +3632,7 @@ pub mod update_recommender_configuration_shape {
             self.recommendations_per_message = Some(input);
             self
         }
+        /// <p>The number of recommended items to retrieve from the model for each endpoint or user, depending on the value for the RecommendationProviderIdType property. This number determines how many recommended items are available for use in message variables. The minimum value is 1. The maximum value is 5. The default value is 5.</p> <p>To use multiple recommended items and custom attributes with message variables, you have to use an AWS Lambda function (RecommendationTransformerUri) to perform additional processing of recommendation data.</p>
         pub fn set_recommendations_per_message(mut self, input: std::option::Option<i32>) -> Self {
             self.recommendations_per_message = input;
             self
@@ -3474,6 +3724,7 @@ pub mod push_notification_template_request {
             self.adm = Some(input);
             self
         }
+        /// <p>The message template to use for the ADM (Amazon Device Messaging) channel. This message template overrides the default template for push notification channels (DefaultPushNotificationTemplate).</p>
         pub fn set_adm(
             mut self,
             input: std::option::Option<crate::model::AndroidPushNotificationTemplate>,
@@ -3486,6 +3737,7 @@ pub mod push_notification_template_request {
             self.apns = Some(input);
             self
         }
+        /// <p>The message template to use for the APNs (Apple Push Notification service) channel. This message template overrides the default template for push notification channels (DefaultPushNotificationTemplate).</p>
         pub fn set_apns(
             mut self,
             input: std::option::Option<crate::model::ApnsPushNotificationTemplate>,
@@ -3498,6 +3750,7 @@ pub mod push_notification_template_request {
             self.baidu = Some(input);
             self
         }
+        /// <p>The message template to use for the Baidu (Baidu Cloud Push) channel. This message template overrides the default template for push notification channels (DefaultPushNotificationTemplate).</p>
         pub fn set_baidu(
             mut self,
             input: std::option::Option<crate::model::AndroidPushNotificationTemplate>,
@@ -3513,6 +3766,7 @@ pub mod push_notification_template_request {
             self.default_value = Some(input);
             self
         }
+        /// <p>The default message template to use for push notification channels.</p>
         pub fn set_default(
             mut self,
             input: std::option::Option<crate::model::DefaultPushNotificationTemplate>,
@@ -3525,6 +3779,7 @@ pub mod push_notification_template_request {
             self.default_substitutions = Some(input.into());
             self
         }
+        /// <p>A JSON object that specifies the default values to use for message variables in the message template. This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding value defines the default value for that variable. When you create a message that's based on the template, you can override these defaults with message-specific and address-specific variables and values.</p>
         pub fn set_default_substitutions(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3537,6 +3792,7 @@ pub mod push_notification_template_request {
             self.gcm = Some(input);
             self
         }
+        /// <p>The message template to use for the GCM channel, which is used to send notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service. This message template overrides the default template for push notification channels (DefaultPushNotificationTemplate).</p>
         pub fn set_gcm(
             mut self,
             input: std::option::Option<crate::model::AndroidPushNotificationTemplate>,
@@ -3549,6 +3805,7 @@ pub mod push_notification_template_request {
             self.recommender_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the recommender model to use for the message template. Amazon Pinpoint uses this value to determine how to retrieve and process data from a recommender model when it sends messages that use the template, if the template contains message variables for recommendation data.</p>
         pub fn set_recommender_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3556,6 +3813,11 @@ pub mod push_notification_template_request {
             self.recommender_id = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A string-to-string map of key-value pairs that defines the tags to associate with the message template. Each tag consists of a required tag key and an associated tag value.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -3566,6 +3828,7 @@ pub mod push_notification_template_request {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>A string-to-string map of key-value pairs that defines the tags to associate with the message template. Each tag consists of a required tag key and an associated tag value.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -3580,6 +3843,7 @@ pub mod push_notification_template_request {
             self.template_description = Some(input.into());
             self
         }
+        /// <p>A custom description of the message template.</p>
         pub fn set_template_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3670,6 +3934,7 @@ pub mod android_push_notification_template {
             self.action = Some(input);
             self
         }
+        /// <p>The action to occur if a recipient taps a push notification that's based on the message template. Valid values are:</p> <ul><li><p>OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background. This is the default action.</p></li> <li><p>DEEP_LINK - Your app opens and displays a designated user interface in the app. This action uses the deep-linking features of the Android platform.</p></li> <li><p>URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you specify.</p></li></ul>
         pub fn set_action(mut self, input: std::option::Option<crate::model::Action>) -> Self {
             self.action = input;
             self
@@ -3679,6 +3944,7 @@ pub mod android_push_notification_template {
             self.body = Some(input.into());
             self
         }
+        /// <p>The message body to use in a push notification that's based on the message template.</p>
         pub fn set_body(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.body = input;
             self
@@ -3688,6 +3954,7 @@ pub mod android_push_notification_template {
             self.image_icon_url = Some(input.into());
             self
         }
+        /// <p>The URL of the large icon image to display in the content view of a push notification that's based on the message template.</p>
         pub fn set_image_icon_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3700,6 +3967,7 @@ pub mod android_push_notification_template {
             self.image_url = Some(input.into());
             self
         }
+        /// <p>The URL of an image to display in a push notification that's based on the message template.</p>
         pub fn set_image_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.image_url = input;
             self
@@ -3709,6 +3977,7 @@ pub mod android_push_notification_template {
             self.raw_content = Some(input.into());
             self
         }
+        /// <p>The raw, JSON-formatted string to use as the payload for a push notification that's based on the message template. If specified, this value overrides all other content for the message template.</p>
         pub fn set_raw_content(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.raw_content = input;
             self
@@ -3718,6 +3987,7 @@ pub mod android_push_notification_template {
             self.small_image_icon_url = Some(input.into());
             self
         }
+        /// <p>The URL of the small icon image to display in the status bar and the content view of a push notification that's based on the message template.</p>
         pub fn set_small_image_icon_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3730,6 +4000,7 @@ pub mod android_push_notification_template {
             self.sound = Some(input.into());
             self
         }
+        /// <p>The sound to play when a recipient receives a push notification that's based on the message template. You can use the default stream or specify the file name of a sound resource that's bundled in your app. On an Android platform, the sound file must reside in /res/raw/.</p>
         pub fn set_sound(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.sound = input;
             self
@@ -3739,6 +4010,7 @@ pub mod android_push_notification_template {
             self.title = Some(input.into());
             self
         }
+        /// <p>The title to use in a push notification that's based on the message template. This title appears above the notification message on a recipient's device.</p>
         pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.title = input;
             self
@@ -3748,6 +4020,7 @@ pub mod android_push_notification_template {
             self.url = Some(input.into());
             self
         }
+        /// <p>The URL to open in a recipient's default mobile browser, if a recipient taps a push notification that's based on the message template and the value of the Action property is URL.</p>
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.url = input;
             self
@@ -3775,6 +4048,7 @@ impl AndroidPushNotificationTemplate {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3786,8 +4060,11 @@ impl AndroidPushNotificationTemplate {
     std::hash::Hash,
 )]
 pub enum Action {
+    #[allow(missing_docs)] // documentation missing in model
     DeepLink,
+    #[allow(missing_docs)] // documentation missing in model
     OpenApp,
+    #[allow(missing_docs)] // documentation missing in model
     Url,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3810,6 +4087,7 @@ impl std::str::FromStr for Action {
     }
 }
 impl Action {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Action::DeepLink => "DEEP_LINK",
@@ -3818,6 +4096,7 @@ impl Action {
             Action::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DEEP_LINK", "OPEN_APP", "URL"]
     }
@@ -3872,6 +4151,7 @@ pub mod default_push_notification_template {
             self.action = Some(input);
             self
         }
+        /// <p>The action to occur if a recipient taps a push notification that's based on the message template. Valid values are:</p> <ul><li><p>OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background. This is the default action.</p></li> <li><p>DEEP_LINK - Your app opens and displays a designated user interface in the app. This setting uses the deep-linking features of the iOS and Android platforms.</p></li> <li><p>URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you specify.</p></li></ul>
         pub fn set_action(mut self, input: std::option::Option<crate::model::Action>) -> Self {
             self.action = input;
             self
@@ -3881,6 +4161,7 @@ pub mod default_push_notification_template {
             self.body = Some(input.into());
             self
         }
+        /// <p>The message body to use in push notifications that are based on the message template.</p>
         pub fn set_body(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.body = input;
             self
@@ -3890,6 +4171,7 @@ pub mod default_push_notification_template {
             self.sound = Some(input.into());
             self
         }
+        /// <p>The sound to play when a recipient receives a push notification that's based on the message template. You can use the default stream or specify the file name of a sound resource that's bundled in your app. On an Android platform, the sound file must reside in /res/raw/.</p> <p>For an iOS platform, this value is the key for the name of a sound file in your app's main bundle or the Library/Sounds folder in your app's data container. If the sound file can't be found or you specify default for the value, the system plays the default alert sound.</p>
         pub fn set_sound(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.sound = input;
             self
@@ -3899,6 +4181,7 @@ pub mod default_push_notification_template {
             self.title = Some(input.into());
             self
         }
+        /// <p>The title to use in push notifications that are based on the message template. This title appears above the notification message on a recipient's device.</p>
         pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.title = input;
             self
@@ -3908,6 +4191,7 @@ pub mod default_push_notification_template {
             self.url = Some(input.into());
             self
         }
+        /// <p>The URL to open in a recipient's default mobile browser, if a recipient taps a push notification that's based on the message template and the value of the Action property is URL.</p>
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.url = input;
             self
@@ -3983,6 +4267,7 @@ pub mod apns_push_notification_template {
             self.action = Some(input);
             self
         }
+        /// <p>The action to occur if a recipient taps a push notification that's based on the message template. Valid values are:</p> <ul><li><p>OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background. This is the default action.</p></li> <li><p>DEEP_LINK - Your app opens and displays a designated user interface in the app. This setting uses the deep-linking features of the iOS platform.</p></li> <li><p>URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you specify.</p></li></ul>
         pub fn set_action(mut self, input: std::option::Option<crate::model::Action>) -> Self {
             self.action = input;
             self
@@ -3992,6 +4277,7 @@ pub mod apns_push_notification_template {
             self.body = Some(input.into());
             self
         }
+        /// <p>The message body to use in push notifications that are based on the message template.</p>
         pub fn set_body(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.body = input;
             self
@@ -4001,6 +4287,7 @@ pub mod apns_push_notification_template {
             self.media_url = Some(input.into());
             self
         }
+        /// <p>The URL of an image or video to display in push notifications that are based on the message template.</p>
         pub fn set_media_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.media_url = input;
             self
@@ -4010,6 +4297,7 @@ pub mod apns_push_notification_template {
             self.raw_content = Some(input.into());
             self
         }
+        /// <p>The raw, JSON-formatted string to use as the payload for push notifications that are based on the message template. If specified, this value overrides all other content for the message template.</p>
         pub fn set_raw_content(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.raw_content = input;
             self
@@ -4019,6 +4307,7 @@ pub mod apns_push_notification_template {
             self.sound = Some(input.into());
             self
         }
+        /// <p>The key for the sound to play when the recipient receives a push notification that's based on the message template. The value for this key is the name of a sound file in your app's main bundle or the Library/Sounds folder in your app's data container. If the sound file can't be found or you specify default for the value, the system plays the default alert sound.</p>
         pub fn set_sound(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.sound = input;
             self
@@ -4028,6 +4317,7 @@ pub mod apns_push_notification_template {
             self.title = Some(input.into());
             self
         }
+        /// <p>The title to use in push notifications that are based on the message template. This title appears above the notification message on a recipient's device.</p>
         pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.title = input;
             self
@@ -4037,6 +4327,7 @@ pub mod apns_push_notification_template {
             self.url = Some(input.into());
             self
         }
+        /// <p>The URL to open in the recipient's default mobile browser, if a recipient taps a push notification that's based on the message template and the value of the Action property is URL.</p>
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.url = input;
             self
@@ -4160,6 +4451,11 @@ pub mod journey_response {
             std::option::Option<crate::model::JourneyChannelSettings>,
     }
     impl Builder {
+        /// Adds a key-value pair to `activities`.
+        ///
+        /// To override the contents of this collection use [`set_activities`](Self::set_activities).
+        ///
+        /// <p>A map that contains a set of Activity objects, one object for each activity in the journey. For each Activity object, the key is the unique identifier (string) for an activity and the value is the settings for the activity.</p>
         pub fn activities(
             mut self,
             k: impl Into<std::string::String>,
@@ -4170,6 +4466,7 @@ pub mod journey_response {
             self.activities = Some(hash_map);
             self
         }
+        /// <p>A map that contains a set of Activity objects, one object for each activity in the journey. For each Activity object, the key is the unique identifier (string) for an activity and the value is the settings for the activity.</p>
         pub fn set_activities(
             mut self,
             input: std::option::Option<
@@ -4184,6 +4481,7 @@ pub mod journey_response {
             self.application_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the application that the journey applies to.</p>
         pub fn set_application_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4196,6 +4494,7 @@ pub mod journey_response {
             self.creation_date = Some(input.into());
             self
         }
+        /// <p>The date, in ISO 8601 format, when the journey was created.</p>
         pub fn set_creation_date(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4208,6 +4507,7 @@ pub mod journey_response {
             self.id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the journey.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -4217,6 +4517,7 @@ pub mod journey_response {
             self.last_modified_date = Some(input.into());
             self
         }
+        /// <p>The date, in ISO 8601 format, when the journey was last modified.</p>
         pub fn set_last_modified_date(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4229,6 +4530,7 @@ pub mod journey_response {
             self.limits = Some(input);
             self
         }
+        /// <p>The messaging and entry limits for the journey.</p>
         pub fn set_limits(
             mut self,
             input: std::option::Option<crate::model::JourneyLimits>,
@@ -4241,6 +4543,7 @@ pub mod journey_response {
             self.local_time = Some(input);
             self
         }
+        /// <p>Specifies whether the journey's scheduled start and end times use each participant's local time. If this value is true, the schedule uses each participant's local time.</p>
         pub fn set_local_time(mut self, input: std::option::Option<bool>) -> Self {
             self.local_time = input;
             self
@@ -4250,6 +4553,7 @@ pub mod journey_response {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the journey.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -4259,6 +4563,7 @@ pub mod journey_response {
             self.quiet_time = Some(input);
             self
         }
+        /// <p>The quiet time settings for the journey. Quiet time is a specific time range when a journey doesn't send messages to participants, if all the following conditions are met:</p> <ul><li><p>The EndpointDemographic.Timezone property of the endpoint for the participant is set to a valid value.</p></li> <li><p>The current time in the participant's time zone is later than or equal to the time specified by the QuietTime.Start property for the journey.</p></li> <li><p>The current time in the participant's time zone is earlier than or equal to the time specified by the QuietTime.End property for the journey.</p></li></ul> <p>If any of the preceding conditions isn't met, the participant will receive messages from the journey, even if quiet time is enabled.</p>
         pub fn set_quiet_time(
             mut self,
             input: std::option::Option<crate::model::QuietTime>,
@@ -4271,6 +4576,7 @@ pub mod journey_response {
             self.refresh_frequency = Some(input.into());
             self
         }
+        /// <p>The frequency with which Amazon Pinpoint evaluates segment and event data for the journey, as a duration in ISO 8601 format.</p>
         pub fn set_refresh_frequency(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4283,6 +4589,7 @@ pub mod journey_response {
             self.schedule = Some(input);
             self
         }
+        /// <p>The schedule settings for the journey.</p>
         pub fn set_schedule(
             mut self,
             input: std::option::Option<crate::model::JourneySchedule>,
@@ -4295,6 +4602,7 @@ pub mod journey_response {
             self.start_activity = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the first activity in the journey.</p>
         pub fn set_start_activity(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4307,6 +4615,7 @@ pub mod journey_response {
             self.start_condition = Some(input);
             self
         }
+        /// <p>The segment that defines which users are participants in the journey.</p>
         pub fn set_start_condition(
             mut self,
             input: std::option::Option<crate::model::StartCondition>,
@@ -4319,10 +4628,16 @@ pub mod journey_response {
             self.state = Some(input);
             self
         }
+        /// <p>The current status of the journey. Possible values are:</p> <ul><li><p>DRAFT - The journey is being developed and hasn't been published yet.</p></li> <li><p>ACTIVE - The journey has been developed and published. Depending on the journey's schedule, the journey may currently be running or scheduled to start running at a later time. If a journey's status is ACTIVE, you can't add, change, or remove activities from it.</p></li> <li><p>COMPLETED - The journey has been published and has finished running. All participants have entered the journey and no participants are waiting to complete the journey or any activities in the journey.</p></li> <li><p>CANCELLED - The journey has been stopped. If a journey's status is CANCELLED, you can't add, change, or remove activities or segment settings from the journey.</p></li> <li><p>CLOSED - The journey has been published and has started running. It may have also passed its scheduled end time, or passed its scheduled start time and a refresh frequency hasn't been specified for it. If a journey's status is CLOSED, you can't add participants to it, and no existing participants can enter the journey for the first time. However, any existing participants who are currently waiting to start an activity may continue the journey.</p></li></ul>
         pub fn set_state(mut self, input: std::option::Option<crate::model::State>) -> Self {
             self.state = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>This object is not used or supported.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -4333,6 +4648,7 @@ pub mod journey_response {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>This object is not used or supported.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -4347,6 +4663,7 @@ pub mod journey_response {
             self.wait_for_quiet_time = Some(input);
             self
         }
+        /// <p>Specifies whether endpoints in quiet hours should enter a wait till the end of their quiet hours.</p>
         pub fn set_wait_for_quiet_time(mut self, input: std::option::Option<bool>) -> Self {
             self.wait_for_quiet_time = input;
             self
@@ -4356,6 +4673,7 @@ pub mod journey_response {
             self.refresh_on_segment_update = Some(input);
             self
         }
+        /// <p>Specifies whether a journey should be refreshed on segment update.</p>
         pub fn set_refresh_on_segment_update(mut self, input: std::option::Option<bool>) -> Self {
             self.refresh_on_segment_update = input;
             self
@@ -4368,6 +4686,7 @@ pub mod journey_response {
             self.journey_channel_settings = Some(input);
             self
         }
+        /// <p>The channel-specific configurations for the journey.</p>
         pub fn set_journey_channel_settings(
             mut self,
             input: std::option::Option<crate::model::JourneyChannelSettings>,
@@ -4442,6 +4761,7 @@ pub mod journey_channel_settings {
             self.connect_campaign_arn = Some(input.into());
             self
         }
+        /// <p>Amazon Resource Name (ARN) of the Connect Campaign.</p>
         pub fn set_connect_campaign_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4457,6 +4777,7 @@ pub mod journey_channel_settings {
             self.connect_campaign_execution_role_arn = Some(input.into());
             self
         }
+        /// <p>IAM role ARN to be assumed when invoking Connect campaign execution APIs for dialing.</p>
         pub fn set_connect_campaign_execution_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4480,6 +4801,7 @@ impl JourneyChannelSettings {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4491,11 +4813,17 @@ impl JourneyChannelSettings {
     std::hash::Hash,
 )]
 pub enum State {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     Cancelled,
+    #[allow(missing_docs)] // documentation missing in model
     Closed,
+    #[allow(missing_docs)] // documentation missing in model
     Completed,
+    #[allow(missing_docs)] // documentation missing in model
     Draft,
+    #[allow(missing_docs)] // documentation missing in model
     Paused,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4521,6 +4849,7 @@ impl std::str::FromStr for State {
     }
 }
 impl State {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             State::Active => "ACTIVE",
@@ -4532,6 +4861,7 @@ impl State {
             State::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
@@ -4585,6 +4915,7 @@ pub mod start_condition {
             self.description = Some(input.into());
             self
         }
+        /// <p>The custom description of the condition.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -4594,6 +4925,7 @@ pub mod start_condition {
             self.event_start_condition = Some(input);
             self
         }
+        /// <p>Specifies the settings for an event that causes a journey activity to start.</p>
         pub fn set_event_start_condition(
             mut self,
             input: std::option::Option<crate::model::EventStartCondition>,
@@ -4606,6 +4938,7 @@ pub mod start_condition {
             self.segment_start_condition = Some(input);
             self
         }
+        /// <p>The segment that's associated with the first activity in the journey. This segment determines which users are participants in the journey.</p>
         pub fn set_segment_start_condition(
             mut self,
             input: std::option::Option<crate::model::SegmentCondition>,
@@ -4658,6 +4991,7 @@ pub mod segment_condition {
             self.segment_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the segment to associate with the activity.</p>
         pub fn set_segment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.segment_id = input;
             self
@@ -4683,6 +5017,7 @@ impl SegmentCondition {
 pub struct EventStartCondition {
     /// <p>Specifies the settings for an event that causes a campaign to be sent or a journey activity to be performed.</p>
     pub event_filter: std::option::Option<crate::model::EventFilter>,
+    #[allow(missing_docs)] // documentation missing in model
     pub segment_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for EventStartCondition {
@@ -4708,6 +5043,7 @@ pub mod event_start_condition {
             self.event_filter = Some(input);
             self
         }
+        /// <p>Specifies the settings for an event that causes a campaign to be sent or a journey activity to be performed.</p>
         pub fn set_event_filter(
             mut self,
             input: std::option::Option<crate::model::EventFilter>,
@@ -4715,10 +5051,12 @@ pub mod event_start_condition {
             self.event_filter = input;
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
         pub fn segment_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.segment_id = Some(input.into());
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
         pub fn set_segment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.segment_id = input;
             self
@@ -4771,6 +5109,7 @@ pub mod event_filter {
             self.dimensions = Some(input);
             self
         }
+        /// <p>The dimensions for the event filter to use for the campaign or the journey activity.</p>
         pub fn set_dimensions(
             mut self,
             input: std::option::Option<crate::model::EventDimensions>,
@@ -4783,6 +5122,7 @@ pub mod event_filter {
             self.filter_type = Some(input);
             self
         }
+        /// <p>The type of event that causes the campaign to be sent or the journey activity to be performed. Valid values are: SYSTEM, sends the campaign or performs the activity when a system event occurs; and, ENDPOINT, sends the campaign or performs the activity when an endpoint event (<link  linkend="apps-application-id-events">Events resource</link>) occurs.</p>
         pub fn set_filter_type(
             mut self,
             input: std::option::Option<crate::model::FilterType>,
@@ -4806,6 +5146,7 @@ impl EventFilter {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4817,7 +5158,9 @@ impl EventFilter {
     std::hash::Hash,
 )]
 pub enum FilterType {
+    #[allow(missing_docs)] // documentation missing in model
     Endpoint,
+    #[allow(missing_docs)] // documentation missing in model
     System,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4839,6 +5182,7 @@ impl std::str::FromStr for FilterType {
     }
 }
 impl FilterType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FilterType::Endpoint => "ENDPOINT",
@@ -4846,6 +5190,7 @@ impl FilterType {
             FilterType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ENDPOINT", "SYSTEM"]
     }
@@ -4895,6 +5240,11 @@ pub mod event_dimensions {
         >,
     }
     impl Builder {
+        /// Adds a key-value pair to `attributes`.
+        ///
+        /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
+        ///
+        /// <p>One or more custom attributes that your application reports to Amazon Pinpoint. You can use these attributes as selection criteria when you create an event filter.</p>
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -4905,6 +5255,7 @@ pub mod event_dimensions {
             self.attributes = Some(hash_map);
             self
         }
+        /// <p>One or more custom attributes that your application reports to Amazon Pinpoint. You can use these attributes as selection criteria when you create an event filter.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -4919,6 +5270,7 @@ pub mod event_dimensions {
             self.event_type = Some(input);
             self
         }
+        /// <p>The name of the event that causes the campaign to be sent or the journey activity to be performed. This can be a standard event that Amazon Pinpoint generates, such as _email.delivered. For campaigns, this can also be a custom event that's specific to your application. For information about standard events, see <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/event-streams.html">Streaming Amazon Pinpoint Events</a> in the <i>Amazon Pinpoint Developer Guide</i>.</p>
         pub fn set_event_type(
             mut self,
             input: std::option::Option<crate::model::SetDimension>,
@@ -4926,6 +5278,11 @@ pub mod event_dimensions {
             self.event_type = input;
             self
         }
+        /// Adds a key-value pair to `metrics`.
+        ///
+        /// To override the contents of this collection use [`set_metrics`](Self::set_metrics).
+        ///
+        /// <p>One or more custom metrics that your application reports to Amazon Pinpoint. You can use these metrics as selection criteria when you create an event filter.</p>
         pub fn metrics(
             mut self,
             k: impl Into<std::string::String>,
@@ -4936,6 +5293,7 @@ pub mod event_dimensions {
             self.metrics = Some(hash_map);
             self
         }
+        /// <p>One or more custom metrics that your application reports to Amazon Pinpoint. You can use these metrics as selection criteria when you create an event filter.</p>
         pub fn set_metrics(
             mut self,
             input: std::option::Option<
@@ -4967,9 +5325,9 @@ impl EventDimensions {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JourneySchedule {
     /// <p>The scheduled time, in ISO 8601 format, when the journey ended or will end.</p>
-    pub end_time: std::option::Option<smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The scheduled time, in ISO 8601 format, when the journey began or will begin.</p>
-    pub start_time: std::option::Option<smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The starting UTC offset for the journey schedule, if the value of the journey's LocalTime property is true. Valid values are: UTC,
     /// UTC+01, UTC+02, UTC+03, UTC+03:30, UTC+04, UTC+04:30, UTC+05, UTC+05:30,
     /// UTC+05:45, UTC+06, UTC+06:30, UTC+07, UTC+08, UTC+08:45, UTC+09, UTC+09:30,
@@ -4993,26 +5351,34 @@ pub mod journey_schedule {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) start_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) timezone: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The scheduled time, in ISO 8601 format, when the journey ended or will end.</p>
-        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The scheduled time, in ISO 8601 format, when the journey ended or will end.</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.end_time = input;
             self
         }
         /// <p>The scheduled time, in ISO 8601 format, when the journey began or will begin.</p>
-        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The scheduled time, in ISO 8601 format, when the journey began or will begin.</p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.start_time = input;
             self
         }
@@ -5026,6 +5392,12 @@ pub mod journey_schedule {
             self.timezone = Some(input.into());
             self
         }
+        /// <p>The starting UTC offset for the journey schedule, if the value of the journey's LocalTime property is true. Valid values are: UTC,
+        /// UTC+01, UTC+02, UTC+03, UTC+03:30, UTC+04, UTC+04:30, UTC+05, UTC+05:30,
+        /// UTC+05:45, UTC+06, UTC+06:30, UTC+07, UTC+08, UTC+08:45, UTC+09, UTC+09:30,
+        /// UTC+10, UTC+10:30, UTC+11, UTC+12, UTC+12:45, UTC+13, UTC+13:45, UTC-02,
+        /// UTC-02:30, UTC-03, UTC-03:30, UTC-04, UTC-05, UTC-06, UTC-07, UTC-08, UTC-09,
+        /// UTC-09:30, UTC-10, and UTC-11.</p>
         pub fn set_timezone(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.timezone = input;
             self
@@ -5079,6 +5451,7 @@ pub mod quiet_time {
             self.end = Some(input.into());
             self
         }
+        /// <p>The specific time when quiet time ends. This value has to use 24-hour notation and be in HH:MM format, where HH is the hour (with a leading zero, if applicable) and MM is the minutes. For example, use 02:30 to represent 2:30 AM, or 14:30 to represent 2:30 PM.</p>
         pub fn set_end(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.end = input;
             self
@@ -5088,6 +5461,7 @@ pub mod quiet_time {
             self.start = Some(input.into());
             self
         }
+        /// <p>The specific time when quiet time begins. This value has to use 24-hour notation and be in HH:MM format, where HH is the hour (with a leading zero, if applicable) and MM is the minutes. For example, use 02:30 to represent 2:30 AM, or 14:30 to represent 2:30 PM.</p>
         pub fn set_start(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.start = input;
             self
@@ -5148,6 +5522,7 @@ pub mod journey_limits {
             self.daily_cap = Some(input);
             self
         }
+        /// <p>The maximum number of messages that the journey can send to a single participant during a 24-hour period. The maximum value is 100.</p>
         pub fn set_daily_cap(mut self, input: std::option::Option<i32>) -> Self {
             self.daily_cap = input;
             self
@@ -5157,6 +5532,7 @@ pub mod journey_limits {
             self.endpoint_reentry_cap = Some(input);
             self
         }
+        /// <p>The maximum number of times that a participant can enter the journey. The maximum value is 100. To allow participants to enter the journey an unlimited number of times, set this value to 0.</p>
         pub fn set_endpoint_reentry_cap(mut self, input: std::option::Option<i32>) -> Self {
             self.endpoint_reentry_cap = input;
             self
@@ -5166,6 +5542,7 @@ pub mod journey_limits {
             self.messages_per_second = Some(input);
             self
         }
+        /// <p>The maximum number of messages that the journey can send each second.</p>
         pub fn set_messages_per_second(mut self, input: std::option::Option<i32>) -> Self {
             self.messages_per_second = input;
             self
@@ -5175,6 +5552,7 @@ pub mod journey_limits {
             self.endpoint_reentry_interval = Some(input.into());
             self
         }
+        /// <p>Minimum time that must pass before an endpoint can re-enter a given journey. The duration should use an ISO 8601 format, such as PT1H. </p>
         pub fn set_endpoint_reentry_interval(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5269,6 +5647,7 @@ pub mod activity {
             self.custom = Some(input);
             self
         }
+        /// <p>The settings for a custom message activity. This type of activity calls an AWS Lambda function or web hook that sends messages to participants.</p>
         pub fn set_custom(
             mut self,
             input: std::option::Option<crate::model::CustomMessageActivity>,
@@ -5281,6 +5660,7 @@ pub mod activity {
             self.conditional_split = Some(input);
             self
         }
+        /// <p>The settings for a yes/no split activity. This type of activity sends participants down one of two paths in a journey, based on conditions that you specify.</p>
         pub fn set_conditional_split(
             mut self,
             input: std::option::Option<crate::model::ConditionalSplitActivity>,
@@ -5293,6 +5673,7 @@ pub mod activity {
             self.description = Some(input.into());
             self
         }
+        /// <p>The custom description of the activity.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -5302,6 +5683,7 @@ pub mod activity {
             self.email = Some(input);
             self
         }
+        /// <p>The settings for an email activity. This type of activity sends an email message to participants.</p>
         pub fn set_email(
             mut self,
             input: std::option::Option<crate::model::EmailMessageActivity>,
@@ -5314,6 +5696,7 @@ pub mod activity {
             self.holdout = Some(input);
             self
         }
+        /// <p>The settings for a holdout activity. This type of activity stops a journey for a specified percentage of participants.</p>
         pub fn set_holdout(
             mut self,
             input: std::option::Option<crate::model::HoldoutActivity>,
@@ -5329,6 +5712,7 @@ pub mod activity {
             self.multi_condition = Some(input);
             self
         }
+        /// <p>The settings for a multivariate split activity. This type of activity sends participants down one of as many as five paths (including a default <i>Else</i> path) in a journey, based on conditions that you specify.</p>
         pub fn set_multi_condition(
             mut self,
             input: std::option::Option<crate::model::MultiConditionalSplitActivity>,
@@ -5341,6 +5725,7 @@ pub mod activity {
             self.push = Some(input);
             self
         }
+        /// <p>The settings for a push notification activity. This type of activity sends a push notification to participants.</p>
         pub fn set_push(
             mut self,
             input: std::option::Option<crate::model::PushMessageActivity>,
@@ -5353,6 +5738,7 @@ pub mod activity {
             self.random_split = Some(input);
             self
         }
+        /// <p>The settings for a random split activity. This type of activity randomly sends specified percentages of participants down one of as many as five paths in a journey, based on conditions that you specify.</p>
         pub fn set_random_split(
             mut self,
             input: std::option::Option<crate::model::RandomSplitActivity>,
@@ -5365,6 +5751,7 @@ pub mod activity {
             self.sms = Some(input);
             self
         }
+        /// <p>The settings for an SMS activity. This type of activity sends a text message to participants.</p>
         pub fn set_sms(
             mut self,
             input: std::option::Option<crate::model::SmsMessageActivity>,
@@ -5377,6 +5764,7 @@ pub mod activity {
             self.wait = Some(input);
             self
         }
+        /// <p>The settings for a wait activity. This type of activity waits for a certain amount of time or until a specific date and time before moving participants to the next activity in a journey.</p>
         pub fn set_wait(mut self, input: std::option::Option<crate::model::WaitActivity>) -> Self {
             self.wait = input;
             self
@@ -5386,6 +5774,7 @@ pub mod activity {
             self.contact_center = Some(input);
             self
         }
+        /// <p>The settings for a connect activity. This type of activity initiates a contact center call to participants.</p>
         pub fn set_contact_center(
             mut self,
             input: std::option::Option<crate::model::ContactCenterActivity>,
@@ -5418,6 +5807,7 @@ impl Activity {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContactCenterActivity {
@@ -5445,6 +5835,7 @@ pub mod contact_center_activity {
             self.next_activity = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the next activity to perform after the this activity.</p>
         pub fn set_next_activity(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5499,6 +5890,7 @@ pub mod wait_activity {
             self.next_activity = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the next activity to perform, after performing the wait activity.</p>
         pub fn set_next_activity(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5511,6 +5903,7 @@ pub mod wait_activity {
             self.wait_time = Some(input);
             self
         }
+        /// <p>The amount of time to wait or the date and time when the activity moves participants to the next activity in the journey.</p>
         pub fn set_wait_time(mut self, input: std::option::Option<crate::model::WaitTime>) -> Self {
             self.wait_time = input;
             self
@@ -5563,6 +5956,7 @@ pub mod wait_time {
             self.wait_for = Some(input.into());
             self
         }
+        /// <p>The amount of time to wait, as a duration in ISO 8601 format, before determining whether the activity's conditions have been met or moving participants to the next activity in the journey.</p>
         pub fn set_wait_for(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.wait_for = input;
             self
@@ -5572,6 +5966,7 @@ pub mod wait_time {
             self.wait_until = Some(input.into());
             self
         }
+        /// <p>The date and time, in ISO 8601 format, when Amazon Pinpoint determines whether the activity's conditions have been met or the activity moves participants to the next activity in the journey.</p>
         pub fn set_wait_until(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.wait_until = input;
             self
@@ -5632,6 +6027,7 @@ pub mod sms_message_activity {
             self.message_config = Some(input);
             self
         }
+        /// <p>Specifies the sender ID and message type for an SMS message that's sent to participants in a journey.</p>
         pub fn set_message_config(
             mut self,
             input: std::option::Option<crate::model::JourneySmsMessage>,
@@ -5644,6 +6040,7 @@ pub mod sms_message_activity {
             self.next_activity = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the next activity to perform, after the message is sent.</p>
         pub fn set_next_activity(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5656,6 +6053,7 @@ pub mod sms_message_activity {
             self.template_name = Some(input.into());
             self
         }
+        /// <p>The name of the SMS message template to use for the message. If specified, this value must match the name of an existing message template.</p>
         pub fn set_template_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5668,6 +6066,7 @@ pub mod sms_message_activity {
             self.template_version = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the version of the SMS template to use for the message. If specified, this value must match the identifier for an existing template version. To retrieve a list of versions and version identifiers for a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If you don't specify a value for this property, Amazon Pinpoint uses the <i>active version</i> of the template. The <i>active version</i> is typically the version of a template that's been most recently reviewed and approved for use, depending on your workflow. It isn't necessarily the latest version of a template.</p>
         pub fn set_template_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5737,6 +6136,7 @@ pub mod journey_sms_message {
             self.message_type = Some(input);
             self
         }
+        /// <p>The SMS message type. Valid values are TRANSACTIONAL (for messages that are critical or time-sensitive, such as a one-time passwords) and PROMOTIONAL (for messsages that aren't critical or time-sensitive, such as marketing messages).</p>
         pub fn set_message_type(
             mut self,
             input: std::option::Option<crate::model::MessageType>,
@@ -5749,6 +6149,7 @@ pub mod journey_sms_message {
             self.origination_number = Some(input.into());
             self
         }
+        /// <p>The long code to send the SMS message from. This value should be one of the dedicated long codes that's assigned to your AWS account. Although it isn't required, we recommend that you specify the long code using an E.164 format to ensure prompt and accurate delivery of the message. For example, +12065550100.</p>
         pub fn set_origination_number(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5761,6 +6162,7 @@ pub mod journey_sms_message {
             self.sender_id = Some(input.into());
             self
         }
+        /// <p>The sender ID to display as the sender of the message on a recipient's device. Support for sender IDs varies by country or region. For more information, see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-sms-countries.html">Supported Countries and Regions</a> in the Amazon Pinpoint User Guide.</p>
         pub fn set_sender_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.sender_id = input;
             self
@@ -5770,6 +6172,7 @@ pub mod journey_sms_message {
             self.entity_id = Some(input.into());
             self
         }
+        /// <p>The entity ID or Principal Entity (PE) id received from the regulatory body for sending SMS in your country.</p>
         pub fn set_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.entity_id = input;
             self
@@ -5779,6 +6182,7 @@ pub mod journey_sms_message {
             self.template_id = Some(input.into());
             self
         }
+        /// <p>The template ID received from the regulatory body for sending SMS in your country.</p>
         pub fn set_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.template_id = input;
             self
@@ -5802,6 +6206,7 @@ impl JourneySmsMessage {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5813,7 +6218,9 @@ impl JourneySmsMessage {
     std::hash::Hash,
 )]
 pub enum MessageType {
+    #[allow(missing_docs)] // documentation missing in model
     Promotional,
+    #[allow(missing_docs)] // documentation missing in model
     Transactional,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5835,6 +6242,7 @@ impl std::str::FromStr for MessageType {
     }
 }
 impl MessageType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MessageType::Promotional => "PROMOTIONAL",
@@ -5842,6 +6250,7 @@ impl MessageType {
             MessageType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["PROMOTIONAL", "TRANSACTIONAL"]
     }
@@ -5875,12 +6284,18 @@ pub mod random_split_activity {
         pub(crate) branches: std::option::Option<std::vec::Vec<crate::model::RandomSplitEntry>>,
     }
     impl Builder {
+        /// Appends an item to `branches`.
+        ///
+        /// To override the contents of this collection use [`set_branches`](Self::set_branches).
+        ///
+        /// <p>The paths for the activity, including the percentage of participants to enter each path and the activity to perform for each path.</p>
         pub fn branches(mut self, input: impl Into<crate::model::RandomSplitEntry>) -> Self {
             let mut v = self.branches.unwrap_or_default();
             v.push(input.into());
             self.branches = Some(v);
             self
         }
+        /// <p>The paths for the activity, including the percentage of participants to enter each path and the activity to perform for each path.</p>
         pub fn set_branches(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RandomSplitEntry>>,
@@ -5935,6 +6350,7 @@ pub mod random_split_entry {
             self.next_activity = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the next activity to perform, after completing the activity for the path.</p>
         pub fn set_next_activity(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5947,6 +6363,7 @@ pub mod random_split_entry {
             self.percentage = Some(input);
             self
         }
+        /// <p>The percentage of participants to send down the activity path.</p> <p>To determine which participants are sent down each path, Amazon Pinpoint applies a probability-based algorithm to the percentages that you specify for the paths. Therefore, the actual percentage of participants who are sent down a path may not be equal to the percentage that you specify.</p>
         pub fn set_percentage(mut self, input: std::option::Option<i32>) -> Self {
             self.percentage = input;
             self
@@ -6007,6 +6424,7 @@ pub mod push_message_activity {
             self.message_config = Some(input);
             self
         }
+        /// <p>Specifies the time to live (TTL) value for push notifications that are sent to participants in a journey.</p>
         pub fn set_message_config(
             mut self,
             input: std::option::Option<crate::model::JourneyPushMessage>,
@@ -6019,6 +6437,7 @@ pub mod push_message_activity {
             self.next_activity = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the next activity to perform, after the message is sent.</p>
         pub fn set_next_activity(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6031,6 +6450,7 @@ pub mod push_message_activity {
             self.template_name = Some(input.into());
             self
         }
+        /// <p>The name of the push notification template to use for the message. If specified, this value must match the name of an existing message template.</p>
         pub fn set_template_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6043,6 +6463,7 @@ pub mod push_message_activity {
             self.template_version = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the version of the push notification template to use for the message. If specified, this value must match the identifier for an existing template version. To retrieve a list of versions and version identifiers for a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If you don't specify a value for this property, Amazon Pinpoint uses the <i>active version</i> of the template. The <i>active version</i> is typically the version of a template that's been most recently reviewed and approved for use, depending on your workflow. It isn't necessarily the latest version of a template.</p>
         pub fn set_template_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6096,6 +6517,7 @@ pub mod journey_push_message {
             self.time_to_live = Some(input.into());
             self
         }
+        /// <p>The number of seconds that the push notification service should keep the message, if the service is unable to deliver the notification the first time. This value is converted to an expiration value when it's sent to a push-notification service. If this value is 0, the service treats the notification as if it expires immediately and the service doesn't store or try to deliver the notification again.</p> <p>This value doesn't apply to messages that are sent through the Amazon Device Messaging (ADM) service.</p>
         pub fn set_time_to_live(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.time_to_live = input;
             self
@@ -6147,12 +6569,18 @@ pub mod multi_conditional_split_activity {
         pub(crate) evaluation_wait_time: std::option::Option<crate::model::WaitTime>,
     }
     impl Builder {
+        /// Appends an item to `branches`.
+        ///
+        /// To override the contents of this collection use [`set_branches`](Self::set_branches).
+        ///
+        /// <p>The paths for the activity, including the conditions for entering each path and the activity to perform for each path.</p>
         pub fn branches(mut self, input: impl Into<crate::model::MultiConditionalBranch>) -> Self {
             let mut v = self.branches.unwrap_or_default();
             v.push(input.into());
             self.branches = Some(v);
             self
         }
+        /// <p>The paths for the activity, including the conditions for entering each path and the activity to perform for each path.</p>
         pub fn set_branches(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MultiConditionalBranch>>,
@@ -6165,6 +6593,7 @@ pub mod multi_conditional_split_activity {
             self.default_activity = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the activity to perform for participants who don't meet any of the conditions specified for other paths in the activity.</p>
         pub fn set_default_activity(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6177,6 +6606,7 @@ pub mod multi_conditional_split_activity {
             self.evaluation_wait_time = Some(input);
             self
         }
+        /// <p>The amount of time to wait or the date and time when Amazon Pinpoint determines whether the conditions are met.</p>
         pub fn set_evaluation_wait_time(
             mut self,
             input: std::option::Option<crate::model::WaitTime>,
@@ -6233,6 +6663,7 @@ pub mod multi_conditional_branch {
             self.condition = Some(input);
             self
         }
+        /// <p>The condition to evaluate for the activity path.</p>
         pub fn set_condition(
             mut self,
             input: std::option::Option<crate::model::SimpleCondition>,
@@ -6245,6 +6676,7 @@ pub mod multi_conditional_branch {
             self.next_activity = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the next activity to perform, after completing the activity for the path.</p>
         pub fn set_next_activity(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6304,6 +6736,7 @@ pub mod simple_condition {
             self.event_condition = Some(input);
             self
         }
+        /// <p>The dimension settings for the event that's associated with the activity.</p>
         pub fn set_event_condition(
             mut self,
             input: std::option::Option<crate::model::EventCondition>,
@@ -6316,6 +6749,7 @@ pub mod simple_condition {
             self.segment_condition = Some(input);
             self
         }
+        /// <p>The segment that's associated with the activity.</p>
         pub fn set_segment_condition(
             mut self,
             input: std::option::Option<crate::model::SegmentCondition>,
@@ -6328,6 +6762,7 @@ pub mod simple_condition {
             self.segment_dimensions = Some(input);
             self
         }
+        /// <p>The dimension settings for the segment that's associated with the activity.</p>
         pub fn set_segment_dimensions(
             mut self,
             input: std::option::Option<crate::model::SegmentDimensions>,
@@ -6384,6 +6819,7 @@ pub mod event_condition {
             self.dimensions = Some(input);
             self
         }
+        /// <p>The dimensions for the event filter to use for the activity.</p>
         pub fn set_dimensions(
             mut self,
             input: std::option::Option<crate::model::EventDimensions>,
@@ -6396,6 +6832,7 @@ pub mod event_condition {
             self.message_activity = Some(input.into());
             self
         }
+        /// <p>The message identifier (message_id) for the message to use when determining whether message events meet the condition.</p>
         pub fn set_message_activity(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6451,6 +6888,7 @@ pub mod holdout_activity {
             self.next_activity = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the next activity to perform, after performing the holdout activity.</p>
         pub fn set_next_activity(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6463,6 +6901,7 @@ pub mod holdout_activity {
             self.percentage = Some(input);
             self
         }
+        /// <p>The percentage of participants who shouldn't continue the journey.</p> <p>To determine which participants are held out, Amazon Pinpoint applies a probability-based algorithm to the percentage that you specify. Therefore, the actual percentage of participants who are held out may not be equal to the percentage that you specify.</p>
         pub fn set_percentage(mut self, input: std::option::Option<i32>) -> Self {
             self.percentage = input;
             self
@@ -6523,6 +6962,7 @@ pub mod email_message_activity {
             self.message_config = Some(input);
             self
         }
+        /// <p>Specifies the sender address for an email message that's sent to participants in the journey.</p>
         pub fn set_message_config(
             mut self,
             input: std::option::Option<crate::model::JourneyEmailMessage>,
@@ -6535,6 +6975,7 @@ pub mod email_message_activity {
             self.next_activity = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the next activity to perform, after the message is sent.</p>
         pub fn set_next_activity(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6547,6 +6988,7 @@ pub mod email_message_activity {
             self.template_name = Some(input.into());
             self
         }
+        /// <p>The name of the email message template to use for the message. If specified, this value must match the name of an existing message template.</p>
         pub fn set_template_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6559,6 +7001,7 @@ pub mod email_message_activity {
             self.template_version = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the version of the email template to use for the message. If specified, this value must match the identifier for an existing template version. To retrieve a list of versions and version identifiers for a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If you don't specify a value for this property, Amazon Pinpoint uses the <i>active version</i> of the template. The <i>active version</i> is typically the version of a template that's been most recently reviewed and approved for use, depending on your workflow. It isn't necessarily the latest version of a template.</p>
         pub fn set_template_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6612,6 +7055,7 @@ pub mod journey_email_message {
             self.from_address = Some(input.into());
             self
         }
+        /// <p>The verified email address to send the email message from. The default address is the FromAddress specified for the email channel for the application.</p>
         pub fn set_from_address(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.from_address = input;
             self
@@ -6671,6 +7115,7 @@ pub mod conditional_split_activity {
             self.condition = Some(input);
             self
         }
+        /// <p>The conditions that define the paths for the activity, and the relationship between the conditions.</p>
         pub fn set_condition(
             mut self,
             input: std::option::Option<crate::model::Condition>,
@@ -6683,6 +7128,7 @@ pub mod conditional_split_activity {
             self.evaluation_wait_time = Some(input);
             self
         }
+        /// <p>The amount of time to wait before determining whether the conditions are met, or the date and time when Amazon Pinpoint determines whether the conditions are met.</p>
         pub fn set_evaluation_wait_time(
             mut self,
             input: std::option::Option<crate::model::WaitTime>,
@@ -6695,6 +7141,7 @@ pub mod conditional_split_activity {
             self.false_activity = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the activity to perform if the conditions aren't met.</p>
         pub fn set_false_activity(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6707,6 +7154,7 @@ pub mod conditional_split_activity {
             self.true_activity = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the activity to perform if the conditions are met.</p>
         pub fn set_true_activity(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6759,12 +7207,18 @@ pub mod condition {
         pub(crate) operator: std::option::Option<crate::model::Operator>,
     }
     impl Builder {
+        /// Appends an item to `conditions`.
+        ///
+        /// To override the contents of this collection use [`set_conditions`](Self::set_conditions).
+        ///
+        /// <p>The conditions to evaluate for the activity.</p>
         pub fn conditions(mut self, input: impl Into<crate::model::SimpleCondition>) -> Self {
             let mut v = self.conditions.unwrap_or_default();
             v.push(input.into());
             self.conditions = Some(v);
             self
         }
+        /// <p>The conditions to evaluate for the activity.</p>
         pub fn set_conditions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SimpleCondition>>,
@@ -6777,6 +7231,7 @@ pub mod condition {
             self.operator = Some(input);
             self
         }
+        /// <p>Specifies how to handle multiple conditions for the activity. For example, if you specify two conditions for an activity, whether both or only one of the conditions must be met for the activity to be performed.</p>
         pub fn set_operator(mut self, input: std::option::Option<crate::model::Operator>) -> Self {
             self.operator = input;
             self
@@ -6797,6 +7252,7 @@ impl Condition {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -6808,7 +7264,9 @@ impl Condition {
     std::hash::Hash,
 )]
 pub enum Operator {
+    #[allow(missing_docs)] // documentation missing in model
     All,
+    #[allow(missing_docs)] // documentation missing in model
     Any,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -6830,6 +7288,7 @@ impl std::str::FromStr for Operator {
     }
 }
 impl Operator {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Operator::All => "ALL",
@@ -6837,6 +7296,7 @@ impl Operator {
             Operator::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ALL", "ANY"]
     }
@@ -6896,10 +7356,16 @@ pub mod custom_message_activity {
             self.delivery_uri = Some(input.into());
             self
         }
+        /// <p>The destination to send the campaign or treatment to. This value can be one of the following:</p> <ul><li><p>The name or Amazon Resource Name (ARN) of an AWS Lambda function to invoke to handle delivery of the campaign or treatment.</p></li> <li><p>The URL for a web application or service that supports HTTPS and can receive the message. The URL has to be a full URL, including the HTTPS protocol.</p></li></ul>
         pub fn set_delivery_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.delivery_uri = input;
             self
         }
+        /// Appends an item to `endpoint_types`.
+        ///
+        /// To override the contents of this collection use [`set_endpoint_types`](Self::set_endpoint_types).
+        ///
+        /// <p>The types of endpoints to send the custom message to. Each valid value maps to a type of channel that you can associate with an endpoint by using the ChannelType property of an endpoint.</p>
         pub fn endpoint_types(
             mut self,
             input: impl Into<crate::model::EndpointTypesElement>,
@@ -6909,6 +7375,7 @@ pub mod custom_message_activity {
             self.endpoint_types = Some(v);
             self
         }
+        /// <p>The types of endpoints to send the custom message to. Each valid value maps to a type of channel that you can associate with an endpoint by using the ChannelType property of an endpoint.</p>
         pub fn set_endpoint_types(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EndpointTypesElement>>,
@@ -6921,6 +7388,7 @@ pub mod custom_message_activity {
             self.message_config = Some(input);
             self
         }
+        /// <p>Specifies the message data included in a custom channel message that's sent to participants in a journey.</p>
         pub fn set_message_config(
             mut self,
             input: std::option::Option<crate::model::JourneyCustomMessage>,
@@ -6933,6 +7401,7 @@ pub mod custom_message_activity {
             self.next_activity = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the next activity to perform, after Amazon Pinpoint calls the AWS Lambda function or web hook.</p>
         pub fn set_next_activity(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6945,6 +7414,7 @@ pub mod custom_message_activity {
             self.template_name = Some(input.into());
             self
         }
+        /// <p>The name of the custom message template to use for the message. If specified, this value must match the name of an existing message template.</p>
         pub fn set_template_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -6957,6 +7427,7 @@ pub mod custom_message_activity {
             self.template_version = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the version of the message template to use for the message. If specified, this value must match the identifier for an existing template version. To retrieve a list of versions and version identifiers for a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If you don't specify a value for this property, Amazon Pinpoint uses the <i>active version</i> of the template. The <i>active version</i> is typically the version of a template that's been most recently reviewed and approved for use, depending on your workflow. It isn't necessarily the latest version of a template.</p>
         pub fn set_template_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7012,6 +7483,7 @@ pub mod journey_custom_message {
             self.data = Some(input.into());
             self
         }
+        /// <p>The message content that's passed to an AWS Lambda function or to a web hook.</p>
         pub fn set_data(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.data = input;
             self
@@ -7029,6 +7501,7 @@ impl JourneyCustomMessage {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -7040,18 +7513,31 @@ impl JourneyCustomMessage {
     std::hash::Hash,
 )]
 pub enum EndpointTypesElement {
+    #[allow(missing_docs)] // documentation missing in model
     Adm,
+    #[allow(missing_docs)] // documentation missing in model
     Apns,
+    #[allow(missing_docs)] // documentation missing in model
     ApnsSandbox,
+    #[allow(missing_docs)] // documentation missing in model
     ApnsVoip,
+    #[allow(missing_docs)] // documentation missing in model
     ApnsVoipSandbox,
+    #[allow(missing_docs)] // documentation missing in model
     Baidu,
+    #[allow(missing_docs)] // documentation missing in model
     Custom,
+    #[allow(missing_docs)] // documentation missing in model
     Email,
+    #[allow(missing_docs)] // documentation missing in model
     Gcm,
+    #[allow(missing_docs)] // documentation missing in model
     InApp,
+    #[allow(missing_docs)] // documentation missing in model
     Push,
+    #[allow(missing_docs)] // documentation missing in model
     Sms,
+    #[allow(missing_docs)] // documentation missing in model
     Voice,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -7084,6 +7570,7 @@ impl std::str::FromStr for EndpointTypesElement {
     }
 }
 impl EndpointTypesElement {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EndpointTypesElement::Adm => "ADM",
@@ -7102,6 +7589,7 @@ impl EndpointTypesElement {
             EndpointTypesElement::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ADM",
@@ -7154,6 +7642,7 @@ pub mod journey_state_request {
             self.state = Some(input);
             self
         }
+        /// <p>The status of the journey. Currently, Supported values are ACTIVE, PAUSED, and CANCELLED</p> <p>If you cancel a journey, Amazon Pinpoint continues to perform activities that are currently in progress, until those activities are complete. Amazon Pinpoint also continues to collect and aggregate analytics data for those activities, until they are complete, and any activities that were complete when you cancelled the journey.</p> <p>After you cancel a journey, you can't add, change, or remove any activities from the journey. In addition, Amazon Pinpoint stops evaluating the journey and doesn't perform any activities that haven't started.</p> <p>When the journey is paused, Amazon Pinpoint continues to perform activities that are currently in progress, until those activities are complete. Endpoints will stop entering journeys when the journey is paused and will resume entering the journey after the journey is resumed. For wait activities, wait time is paused when the journey is paused. Currently, PAUSED only supports journeys with a segment refresh interval.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::State>) -> Self {
             self.state = input;
             self
@@ -7249,6 +7738,11 @@ pub mod write_journey_request {
         pub(crate) refresh_on_segment_update: std::option::Option<bool>,
     }
     impl Builder {
+        /// Adds a key-value pair to `activities`.
+        ///
+        /// To override the contents of this collection use [`set_activities`](Self::set_activities).
+        ///
+        /// <p>A map that contains a set of Activity objects, one object for each activity in the journey. For each Activity object, the key is the unique identifier (string) for an activity and the value is the settings for the activity. An activity identifier can contain a maximum of 100 characters. The characters must be alphanumeric characters.</p>
         pub fn activities(
             mut self,
             k: impl Into<std::string::String>,
@@ -7259,6 +7753,7 @@ pub mod write_journey_request {
             self.activities = Some(hash_map);
             self
         }
+        /// <p>A map that contains a set of Activity objects, one object for each activity in the journey. For each Activity object, the key is the unique identifier (string) for an activity and the value is the settings for the activity. An activity identifier can contain a maximum of 100 characters. The characters must be alphanumeric characters.</p>
         pub fn set_activities(
             mut self,
             input: std::option::Option<
@@ -7273,6 +7768,7 @@ pub mod write_journey_request {
             self.creation_date = Some(input.into());
             self
         }
+        /// <p>The date, in ISO 8601 format, when the journey was created.</p>
         pub fn set_creation_date(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7285,6 +7781,7 @@ pub mod write_journey_request {
             self.last_modified_date = Some(input.into());
             self
         }
+        /// <p>The date, in ISO 8601 format, when the journey was last modified.</p>
         pub fn set_last_modified_date(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7297,6 +7794,7 @@ pub mod write_journey_request {
             self.limits = Some(input);
             self
         }
+        /// <p>The messaging and entry limits for the journey.</p>
         pub fn set_limits(
             mut self,
             input: std::option::Option<crate::model::JourneyLimits>,
@@ -7309,6 +7807,7 @@ pub mod write_journey_request {
             self.local_time = Some(input);
             self
         }
+        /// <p>Specifies whether the journey's scheduled start and end times use each participant's local time. To base the schedule on each participant's local time, set this value to true.</p>
         pub fn set_local_time(mut self, input: std::option::Option<bool>) -> Self {
             self.local_time = input;
             self
@@ -7318,6 +7817,7 @@ pub mod write_journey_request {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the journey. A journey name can contain a maximum of 150 characters. The characters can be alphanumeric characters or symbols, such as underscores (_) or hyphens (-). A journey name can't contain any spaces.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -7327,6 +7827,7 @@ pub mod write_journey_request {
             self.quiet_time = Some(input);
             self
         }
+        /// <p>The quiet time settings for the journey. Quiet time is a specific time range when a journey doesn't send messages to participants, if all the following conditions are met:</p> <ul><li><p>The EndpointDemographic.Timezone property of the endpoint for the participant is set to a valid value.</p></li> <li><p>The current time in the participant's time zone is later than or equal to the time specified by the QuietTime.Start property for the journey.</p></li> <li><p>The current time in the participant's time zone is earlier than or equal to the time specified by the QuietTime.End property for the journey.</p></li></ul> <p>If any of the preceding conditions isn't met, the participant will receive messages from the journey, even if quiet time is enabled.</p>
         pub fn set_quiet_time(
             mut self,
             input: std::option::Option<crate::model::QuietTime>,
@@ -7339,6 +7840,7 @@ pub mod write_journey_request {
             self.refresh_frequency = Some(input.into());
             self
         }
+        /// <p>The frequency with which Amazon Pinpoint evaluates segment and event data for the journey, as a duration in ISO 8601 format.</p>
         pub fn set_refresh_frequency(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7351,6 +7853,7 @@ pub mod write_journey_request {
             self.schedule = Some(input);
             self
         }
+        /// <p>The schedule settings for the journey.</p>
         pub fn set_schedule(
             mut self,
             input: std::option::Option<crate::model::JourneySchedule>,
@@ -7363,6 +7866,7 @@ pub mod write_journey_request {
             self.start_activity = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the first activity in the journey. The identifier for this activity can contain a maximum of 128 characters. The characters must be alphanumeric characters.</p>
         pub fn set_start_activity(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7375,6 +7879,7 @@ pub mod write_journey_request {
             self.start_condition = Some(input);
             self
         }
+        /// <p>The segment that defines which users are participants in the journey.</p>
         pub fn set_start_condition(
             mut self,
             input: std::option::Option<crate::model::StartCondition>,
@@ -7387,6 +7892,7 @@ pub mod write_journey_request {
             self.state = Some(input);
             self
         }
+        /// <p>The status of the journey. Valid values are:</p> <ul><li><p>DRAFT - Saves the journey and doesn't publish it.</p></li> <li><p>ACTIVE - Saves and publishes the journey. Depending on the journey's schedule, the journey starts running immediately or at the scheduled start time. If a journey's status is ACTIVE, you can't add, change, or remove activities from it.</p></li></ul> <p>PAUSED, CANCELLED, COMPLETED, and CLOSED states are not supported in requests to create or update a journey. To cancel, pause, or resume a journey, use the <link  linkend="apps-application-id-journeys-journey-id-state">Journey State</link> resource.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::State>) -> Self {
             self.state = input;
             self
@@ -7396,6 +7902,7 @@ pub mod write_journey_request {
             self.wait_for_quiet_time = Some(input);
             self
         }
+        /// <p>Specifies whether endpoints in quiet hours should enter a wait till the end of their quiet hours.</p>
         pub fn set_wait_for_quiet_time(mut self, input: std::option::Option<bool>) -> Self {
             self.wait_for_quiet_time = input;
             self
@@ -7405,6 +7912,7 @@ pub mod write_journey_request {
             self.refresh_on_segment_update = Some(input);
             self
         }
+        /// <p>Specifies whether a journey should be refreshed on segment update.</p>
         pub fn set_refresh_on_segment_update(mut self, input: std::option::Option<bool>) -> Self {
             self.refresh_on_segment_update = input;
             self
@@ -7482,12 +7990,18 @@ pub mod in_app_template_request {
         pub(crate) template_description: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `content`.
+        ///
+        /// To override the contents of this collection use [`set_content`](Self::set_content).
+        ///
+        /// <p>The content of the message, can include up to 5 modals. Each modal must contain a message, a header, and background color. ImageUrl and buttons are optional.</p>
         pub fn content(mut self, input: impl Into<crate::model::InAppMessageContent>) -> Self {
             let mut v = self.content.unwrap_or_default();
             v.push(input.into());
             self.content = Some(v);
             self
         }
+        /// <p>The content of the message, can include up to 5 modals. Each modal must contain a message, a header, and background color. ImageUrl and buttons are optional.</p>
         pub fn set_content(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InAppMessageContent>>,
@@ -7495,6 +8009,11 @@ pub mod in_app_template_request {
             self.content = input;
             self
         }
+        /// Adds a key-value pair to `custom_config`.
+        ///
+        /// To override the contents of this collection use [`set_custom_config`](Self::set_custom_config).
+        ///
+        /// <p>Custom config to be sent to client.</p>
         pub fn custom_config(
             mut self,
             k: impl Into<std::string::String>,
@@ -7505,6 +8024,7 @@ pub mod in_app_template_request {
             self.custom_config = Some(hash_map);
             self
         }
+        /// <p>Custom config to be sent to client.</p>
         pub fn set_custom_config(
             mut self,
             input: std::option::Option<
@@ -7519,10 +8039,16 @@ pub mod in_app_template_request {
             self.layout = Some(input);
             self
         }
+        /// <p>The layout of the message.</p>
         pub fn set_layout(mut self, input: std::option::Option<crate::model::Layout>) -> Self {
             self.layout = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A string-to-string map of key-value pairs that defines the tags to associate with the message template. Each tag consists of a required tag key and an associated tag value.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -7533,6 +8059,7 @@ pub mod in_app_template_request {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>A string-to-string map of key-value pairs that defines the tags to associate with the message template. Each tag consists of a required tag key and an associated tag value.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -7547,6 +8074,7 @@ pub mod in_app_template_request {
             self.template_description = Some(input.into());
             self
         }
+        /// <p>The description of the template.</p>
         pub fn set_template_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7573,6 +8101,7 @@ impl InAppTemplateRequest {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -7584,11 +8113,17 @@ impl InAppTemplateRequest {
     std::hash::Hash,
 )]
 pub enum Layout {
+    #[allow(missing_docs)] // documentation missing in model
     BottomBanner,
+    #[allow(missing_docs)] // documentation missing in model
     Carousel,
+    #[allow(missing_docs)] // documentation missing in model
     MiddleBanner,
+    #[allow(missing_docs)] // documentation missing in model
     MobileFeed,
+    #[allow(missing_docs)] // documentation missing in model
     Overlays,
+    #[allow(missing_docs)] // documentation missing in model
     TopBanner,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -7614,6 +8149,7 @@ impl std::str::FromStr for Layout {
     }
 }
 impl Layout {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Layout::BottomBanner => "BOTTOM_BANNER",
@@ -7625,6 +8161,7 @@ impl Layout {
             Layout::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "BOTTOM_BANNER",
@@ -7690,6 +8227,7 @@ pub mod in_app_message_content {
             self.background_color = Some(input.into());
             self
         }
+        /// <p>The background color for the message.</p>
         pub fn set_background_color(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -7702,6 +8240,7 @@ pub mod in_app_message_content {
             self.body_config = Some(input);
             self
         }
+        /// <p>The configuration for the message body.</p>
         pub fn set_body_config(
             mut self,
             input: std::option::Option<crate::model::InAppMessageBodyConfig>,
@@ -7714,6 +8253,7 @@ pub mod in_app_message_content {
             self.header_config = Some(input);
             self
         }
+        /// <p>The configuration for the message header.</p>
         pub fn set_header_config(
             mut self,
             input: std::option::Option<crate::model::InAppMessageHeaderConfig>,
@@ -7726,6 +8266,7 @@ pub mod in_app_message_content {
             self.image_url = Some(input.into());
             self
         }
+        /// <p>The image url for the background of message.</p>
         pub fn set_image_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.image_url = input;
             self
@@ -7735,6 +8276,7 @@ pub mod in_app_message_content {
             self.primary_btn = Some(input);
             self
         }
+        /// <p>The first button inside the message.</p>
         pub fn set_primary_btn(
             mut self,
             input: std::option::Option<crate::model::InAppMessageButton>,
@@ -7747,6 +8289,7 @@ pub mod in_app_message_content {
             self.secondary_btn = Some(input);
             self
         }
+        /// <p>The second button inside message.</p>
         pub fn set_secondary_btn(
             mut self,
             input: std::option::Option<crate::model::InAppMessageButton>,
@@ -7814,6 +8357,7 @@ pub mod in_app_message_button {
             self.android = Some(input);
             self
         }
+        /// <p>Default button content.</p>
         pub fn set_android(
             mut self,
             input: std::option::Option<crate::model::OverrideButtonConfiguration>,
@@ -7826,6 +8370,7 @@ pub mod in_app_message_button {
             self.default_config = Some(input);
             self
         }
+        /// <p>Default button content.</p>
         pub fn set_default_config(
             mut self,
             input: std::option::Option<crate::model::DefaultButtonConfiguration>,
@@ -7838,6 +8383,7 @@ pub mod in_app_message_button {
             self.ios = Some(input);
             self
         }
+        /// <p>Default button content.</p>
         pub fn set_ios(
             mut self,
             input: std::option::Option<crate::model::OverrideButtonConfiguration>,
@@ -7850,6 +8396,7 @@ pub mod in_app_message_button {
             self.web = Some(input);
             self
         }
+        /// <p>Default button content.</p>
         pub fn set_web(
             mut self,
             input: std::option::Option<crate::model::OverrideButtonConfiguration>,
@@ -7907,6 +8454,7 @@ pub mod override_button_configuration {
             self.button_action = Some(input);
             self
         }
+        /// <p>Action triggered by the button.</p>
         pub fn set_button_action(
             mut self,
             input: std::option::Option<crate::model::ButtonAction>,
@@ -7919,6 +8467,7 @@ pub mod override_button_configuration {
             self.link = Some(input.into());
             self
         }
+        /// <p>Button destination.</p>
         pub fn set_link(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.link = input;
             self
@@ -7939,6 +8488,7 @@ impl OverrideButtonConfiguration {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -7950,8 +8500,11 @@ impl OverrideButtonConfiguration {
     std::hash::Hash,
 )]
 pub enum ButtonAction {
+    #[allow(missing_docs)] // documentation missing in model
     Close,
+    #[allow(missing_docs)] // documentation missing in model
     DeepLink,
+    #[allow(missing_docs)] // documentation missing in model
     Link,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -7974,6 +8527,7 @@ impl std::str::FromStr for ButtonAction {
     }
 }
 impl ButtonAction {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ButtonAction::Close => "CLOSE",
@@ -7982,6 +8536,7 @@ impl ButtonAction {
             ButtonAction::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CLOSE", "DEEP_LINK", "LINK"]
     }
@@ -8040,6 +8595,7 @@ pub mod default_button_configuration {
             self.background_color = Some(input.into());
             self
         }
+        /// <p>The background color of the button.</p>
         pub fn set_background_color(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8052,6 +8608,7 @@ pub mod default_button_configuration {
             self.border_radius = Some(input);
             self
         }
+        /// <p>The border radius of the button.</p>
         pub fn set_border_radius(mut self, input: std::option::Option<i32>) -> Self {
             self.border_radius = input;
             self
@@ -8061,6 +8618,7 @@ pub mod default_button_configuration {
             self.button_action = Some(input);
             self
         }
+        /// <p>Action triggered by the button.</p>
         pub fn set_button_action(
             mut self,
             input: std::option::Option<crate::model::ButtonAction>,
@@ -8073,6 +8631,7 @@ pub mod default_button_configuration {
             self.link = Some(input.into());
             self
         }
+        /// <p>Button destination.</p>
         pub fn set_link(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.link = input;
             self
@@ -8082,6 +8641,7 @@ pub mod default_button_configuration {
             self.text = Some(input.into());
             self
         }
+        /// <p>Button text.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.text = input;
             self
@@ -8091,6 +8651,7 @@ pub mod default_button_configuration {
             self.text_color = Some(input.into());
             self
         }
+        /// <p>The text color of the button.</p>
         pub fn set_text_color(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.text_color = input;
             self
@@ -8151,6 +8712,7 @@ pub mod in_app_message_header_config {
             self.alignment = Some(input);
             self
         }
+        /// <p>The alignment of the text. Valid values: LEFT, CENTER, RIGHT.</p>
         pub fn set_alignment(
             mut self,
             input: std::option::Option<crate::model::Alignment>,
@@ -8163,6 +8725,7 @@ pub mod in_app_message_header_config {
             self.header = Some(input.into());
             self
         }
+        /// <p>Message Header.</p>
         pub fn set_header(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.header = input;
             self
@@ -8172,6 +8735,7 @@ pub mod in_app_message_header_config {
             self.text_color = Some(input.into());
             self
         }
+        /// <p>The text color.</p>
         pub fn set_text_color(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.text_color = input;
             self
@@ -8193,6 +8757,7 @@ impl InAppMessageHeaderConfig {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -8204,8 +8769,11 @@ impl InAppMessageHeaderConfig {
     std::hash::Hash,
 )]
 pub enum Alignment {
+    #[allow(missing_docs)] // documentation missing in model
     Center,
+    #[allow(missing_docs)] // documentation missing in model
     Left,
+    #[allow(missing_docs)] // documentation missing in model
     Right,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -8228,6 +8796,7 @@ impl std::str::FromStr for Alignment {
     }
 }
 impl Alignment {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Alignment::Center => "CENTER",
@@ -8236,6 +8805,7 @@ impl Alignment {
             Alignment::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CENTER", "LEFT", "RIGHT"]
     }
@@ -8282,6 +8852,7 @@ pub mod in_app_message_body_config {
             self.alignment = Some(input);
             self
         }
+        /// <p>The alignment of the text. Valid values: LEFT, CENTER, RIGHT.</p>
         pub fn set_alignment(
             mut self,
             input: std::option::Option<crate::model::Alignment>,
@@ -8294,6 +8865,7 @@ pub mod in_app_message_body_config {
             self.body = Some(input.into());
             self
         }
+        /// <p>Message Body.</p>
         pub fn set_body(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.body = input;
             self
@@ -8303,6 +8875,7 @@ pub mod in_app_message_body_config {
             self.text_color = Some(input.into());
             self
         }
+        /// <p>The text color.</p>
         pub fn set_text_color(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.text_color = input;
             self
@@ -8392,6 +8965,7 @@ pub mod gcm_channel_response {
             self.application_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the application that the GCM channel applies to.</p>
         pub fn set_application_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8404,6 +8978,7 @@ pub mod gcm_channel_response {
             self.creation_date = Some(input.into());
             self
         }
+        /// <p>The date and time when the GCM channel was enabled.</p>
         pub fn set_creation_date(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8416,6 +8991,7 @@ pub mod gcm_channel_response {
             self.credential = Some(input.into());
             self
         }
+        /// <p>The Web API Key, also referred to as an <i>API_KEY</i> or <i>server key</i>, that you received from Google to communicate with Google services.</p>
         pub fn set_credential(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.credential = input;
             self
@@ -8425,6 +9001,7 @@ pub mod gcm_channel_response {
             self.enabled = Some(input);
             self
         }
+        /// <p>Specifies whether the GCM channel is enabled for the application.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -8434,6 +9011,7 @@ pub mod gcm_channel_response {
             self.has_credential = Some(input);
             self
         }
+        /// <p>(Not used) This property is retained only for backward compatibility.</p>
         pub fn set_has_credential(mut self, input: std::option::Option<bool>) -> Self {
             self.has_credential = input;
             self
@@ -8443,6 +9021,7 @@ pub mod gcm_channel_response {
             self.id = Some(input.into());
             self
         }
+        /// <p>(Deprecated) An identifier for the GCM channel. This property is retained only for backward compatibility.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -8452,6 +9031,7 @@ pub mod gcm_channel_response {
             self.is_archived = Some(input);
             self
         }
+        /// <p>Specifies whether the GCM channel is archived.</p>
         pub fn set_is_archived(mut self, input: std::option::Option<bool>) -> Self {
             self.is_archived = input;
             self
@@ -8461,6 +9041,7 @@ pub mod gcm_channel_response {
             self.last_modified_by = Some(input.into());
             self
         }
+        /// <p>The user who last modified the GCM channel.</p>
         pub fn set_last_modified_by(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8473,6 +9054,7 @@ pub mod gcm_channel_response {
             self.last_modified_date = Some(input.into());
             self
         }
+        /// <p>The date and time when the GCM channel was last modified.</p>
         pub fn set_last_modified_date(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8485,6 +9067,7 @@ pub mod gcm_channel_response {
             self.platform = Some(input.into());
             self
         }
+        /// <p>The type of messaging or notification platform for the channel. For the GCM channel, this value is GCM.</p>
         pub fn set_platform(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.platform = input;
             self
@@ -8494,6 +9077,7 @@ pub mod gcm_channel_response {
             self.version = Some(input);
             self
         }
+        /// <p>The current version of the GCM channel.</p>
         pub fn set_version(mut self, input: std::option::Option<i32>) -> Self {
             self.version = input;
             self
@@ -8555,6 +9139,7 @@ pub mod gcm_channel_request {
             self.api_key = Some(input.into());
             self
         }
+        /// <p>The Web API Key, also referred to as an <i>API_KEY</i> or <i>server key</i>, that you received from Google to communicate with Google services.</p>
         pub fn set_api_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.api_key = input;
             self
@@ -8564,6 +9149,7 @@ pub mod gcm_channel_request {
             self.enabled = Some(input);
             self
         }
+        /// <p>Specifies whether to enable the GCM channel for the application.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -8607,12 +9193,18 @@ pub mod endpoint_batch_request {
         pub(crate) item: std::option::Option<std::vec::Vec<crate::model::EndpointBatchItem>>,
     }
     impl Builder {
+        /// Appends an item to `item`.
+        ///
+        /// To override the contents of this collection use [`set_item`](Self::set_item).
+        ///
+        /// <p>An array that defines the endpoints to create or update and, for each endpoint, the property values to set or change. An array can contain a maximum of 100 items.</p>
         pub fn item(mut self, input: impl Into<crate::model::EndpointBatchItem>) -> Self {
             let mut v = self.item.unwrap_or_default();
             v.push(input.into());
             self.item = Some(v);
             self
         }
+        /// <p>An array that defines the endpoints to create or update and, for each endpoint, the property values to set or change. An array can contain a maximum of 100 items.</p>
         pub fn set_item(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EndpointBatchItem>>,
@@ -8710,10 +9302,16 @@ pub mod endpoint_batch_item {
             self.address = Some(input.into());
             self
         }
+        /// <p>The destination address for messages or push notifications that you send to the endpoint. The address varies by channel. For a push-notification channel, use the token provided by the push notification service, such as an Apple Push Notification service (APNs) device token or a Firebase Cloud Messaging (FCM) registration token. For the SMS channel, use a phone number in E.164 format, such as +12065550100. For the email channel, use an email address.</p>
         pub fn set_address(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.address = input;
             self
         }
+        /// Adds a key-value pair to `attributes`.
+        ///
+        /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
+        ///
+        /// <p>One or more custom attributes that describe the endpoint by associating a name with an array of values. For example, the value of a custom attribute named Interests might be: ["Science", "Music", "Travel"]. You can use these attributes as filter criteria when you create segments. Attribute names are case sensitive.</p> <p>An attribute name can contain up to 50 characters. An attribute value can contain up to 100 characters. When you define the name of a custom attribute, avoid using the following characters: number sign (#), colon (:), question mark (?), backslash (\), and slash (/). The Amazon Pinpoint console can't display attribute names that contain these characters. This restriction doesn't apply to attribute values.</p>
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -8724,6 +9322,7 @@ pub mod endpoint_batch_item {
             self.attributes = Some(hash_map);
             self
         }
+        /// <p>One or more custom attributes that describe the endpoint by associating a name with an array of values. For example, the value of a custom attribute named Interests might be: ["Science", "Music", "Travel"]. You can use these attributes as filter criteria when you create segments. Attribute names are case sensitive.</p> <p>An attribute name can contain up to 50 characters. An attribute value can contain up to 100 characters. When you define the name of a custom attribute, avoid using the following characters: number sign (#), colon (:), question mark (?), backslash (\), and slash (/). The Amazon Pinpoint console can't display attribute names that contain these characters. This restriction doesn't apply to attribute values.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -8738,6 +9337,7 @@ pub mod endpoint_batch_item {
             self.channel_type = Some(input);
             self
         }
+        /// <p>The channel to use when sending messages or push notifications to the endpoint.</p>
         pub fn set_channel_type(
             mut self,
             input: std::option::Option<crate::model::ChannelType>,
@@ -8750,6 +9350,7 @@ pub mod endpoint_batch_item {
             self.demographic = Some(input);
             self
         }
+        /// <p>The demographic information for the endpoint, such as the time zone and platform.</p>
         pub fn set_demographic(
             mut self,
             input: std::option::Option<crate::model::EndpointDemographic>,
@@ -8762,6 +9363,7 @@ pub mod endpoint_batch_item {
             self.effective_date = Some(input.into());
             self
         }
+        /// <p>The date and time, in ISO 8601 format, when the endpoint was created or updated.</p>
         pub fn set_effective_date(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8774,6 +9376,7 @@ pub mod endpoint_batch_item {
             self.endpoint_status = Some(input.into());
             self
         }
+        /// <p>Specifies whether to send messages or push notifications to the endpoint. Valid values are: ACTIVE, messages are sent to the endpoint; and, INACTIVE, messages aren’t sent to the endpoint.</p> <p>Amazon Pinpoint automatically sets this value to ACTIVE when you create an endpoint or update an existing endpoint. Amazon Pinpoint automatically sets this value to INACTIVE if you update another endpoint that has the same address specified by the Address property.</p>
         pub fn set_endpoint_status(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -8786,6 +9389,7 @@ pub mod endpoint_batch_item {
             self.id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the endpoint in the context of the batch.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -8795,6 +9399,7 @@ pub mod endpoint_batch_item {
             self.location = Some(input);
             self
         }
+        /// <p>The geographic information for the endpoint.</p>
         pub fn set_location(
             mut self,
             input: std::option::Option<crate::model::EndpointLocation>,
@@ -8802,12 +9407,18 @@ pub mod endpoint_batch_item {
             self.location = input;
             self
         }
+        /// Adds a key-value pair to `metrics`.
+        ///
+        /// To override the contents of this collection use [`set_metrics`](Self::set_metrics).
+        ///
+        /// <p>One or more custom metrics that your app reports to Amazon Pinpoint for the endpoint.</p>
         pub fn metrics(mut self, k: impl Into<std::string::String>, v: impl Into<f64>) -> Self {
             let mut hash_map = self.metrics.unwrap_or_default();
             hash_map.insert(k.into(), v.into());
             self.metrics = Some(hash_map);
             self
         }
+        /// <p>One or more custom metrics that your app reports to Amazon Pinpoint for the endpoint.</p>
         pub fn set_metrics(
             mut self,
             input: std::option::Option<std::collections::HashMap<std::string::String, f64>>,
@@ -8820,6 +9431,7 @@ pub mod endpoint_batch_item {
             self.opt_out = Some(input.into());
             self
         }
+        /// <p>Specifies whether the user who's associated with the endpoint has opted out of receiving messages and push notifications from you. Possible values are: ALL, the user has opted out and doesn't want to receive any messages or push notifications; and, NONE, the user hasn't opted out and wants to receive all messages and push notifications.</p>
         pub fn set_opt_out(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.opt_out = input;
             self
@@ -8829,6 +9441,7 @@ pub mod endpoint_batch_item {
             self.request_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the request to create or update the endpoint.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.request_id = input;
             self
@@ -8838,6 +9451,7 @@ pub mod endpoint_batch_item {
             self.user = Some(input);
             self
         }
+        /// <p>One or more custom attributes that describe the user who's associated with the endpoint.</p>
         pub fn set_user(mut self, input: std::option::Option<crate::model::EndpointUser>) -> Self {
             self.user = input;
             self
@@ -8899,6 +9513,11 @@ pub mod endpoint_user {
         pub(crate) user_id: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Adds a key-value pair to `user_attributes`.
+        ///
+        /// To override the contents of this collection use [`set_user_attributes`](Self::set_user_attributes).
+        ///
+        /// <p>One or more custom attributes that describe the user by associating a name with an array of values. For example, the value of an attribute named Interests might be: ["Science", "Music", "Travel"]. You can use these attributes as filter criteria when you create segments. Attribute names are case sensitive.</p> <p>An attribute name can contain up to 50 characters. An attribute value can contain up to 100 characters. When you define the name of a custom attribute, avoid using the following characters: number sign (#), colon (:), question mark (?), backslash (\), and slash (/). The Amazon Pinpoint console can't display attribute names that contain these characters. This restriction doesn't apply to attribute values.</p>
         pub fn user_attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -8909,6 +9528,7 @@ pub mod endpoint_user {
             self.user_attributes = Some(hash_map);
             self
         }
+        /// <p>One or more custom attributes that describe the user by associating a name with an array of values. For example, the value of an attribute named Interests might be: ["Science", "Music", "Travel"]. You can use these attributes as filter criteria when you create segments. Attribute names are case sensitive.</p> <p>An attribute name can contain up to 50 characters. An attribute value can contain up to 100 characters. When you define the name of a custom attribute, avoid using the following characters: number sign (#), colon (:), question mark (?), backslash (\), and slash (/). The Amazon Pinpoint console can't display attribute names that contain these characters. This restriction doesn't apply to attribute values.</p>
         pub fn set_user_attributes(
             mut self,
             input: std::option::Option<
@@ -8923,6 +9543,7 @@ pub mod endpoint_user {
             self.user_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the user.</p>
         pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_id = input;
             self
@@ -8991,6 +9612,7 @@ pub mod endpoint_location {
             self.city = Some(input.into());
             self
         }
+        /// <p>The name of the city where the endpoint is located.</p>
         pub fn set_city(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.city = input;
             self
@@ -9000,6 +9622,7 @@ pub mod endpoint_location {
             self.country = Some(input.into());
             self
         }
+        /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region where the endpoint is located. For example, US for the United States.</p>
         pub fn set_country(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.country = input;
             self
@@ -9009,6 +9632,7 @@ pub mod endpoint_location {
             self.latitude = Some(input);
             self
         }
+        /// <p>The latitude coordinate of the endpoint location, rounded to one decimal place.</p>
         pub fn set_latitude(mut self, input: std::option::Option<f64>) -> Self {
             self.latitude = input;
             self
@@ -9018,6 +9642,7 @@ pub mod endpoint_location {
             self.longitude = Some(input);
             self
         }
+        /// <p>The longitude coordinate of the endpoint location, rounded to one decimal place.</p>
         pub fn set_longitude(mut self, input: std::option::Option<f64>) -> Self {
             self.longitude = input;
             self
@@ -9027,6 +9652,7 @@ pub mod endpoint_location {
             self.postal_code = Some(input.into());
             self
         }
+        /// <p>The postal or ZIP code for the area where the endpoint is located.</p>
         pub fn set_postal_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.postal_code = input;
             self
@@ -9036,6 +9662,7 @@ pub mod endpoint_location {
             self.region = Some(input.into());
             self
         }
+        /// <p>The name of the region where the endpoint is located. For locations in the United States, this value is the name of a state.</p>
         pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.region = input;
             self
@@ -9116,6 +9743,7 @@ pub mod endpoint_demographic {
             self.app_version = Some(input.into());
             self
         }
+        /// <p>The version of the app that's associated with the endpoint.</p>
         pub fn set_app_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.app_version = input;
             self
@@ -9125,6 +9753,7 @@ pub mod endpoint_demographic {
             self.locale = Some(input.into());
             self
         }
+        /// <p>The locale of the endpoint, in the following format: the ISO 639-1 alpha-2 code, followed by an underscore (_), followed by an ISO 3166-1 alpha-2 value.</p>
         pub fn set_locale(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.locale = input;
             self
@@ -9134,6 +9763,7 @@ pub mod endpoint_demographic {
             self.make = Some(input.into());
             self
         }
+        /// <p>The manufacturer of the endpoint device, such as apple or samsung.</p>
         pub fn set_make(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.make = input;
             self
@@ -9143,6 +9773,7 @@ pub mod endpoint_demographic {
             self.model = Some(input.into());
             self
         }
+        /// <p>The model name or number of the endpoint device, such as iPhone or SM-G900F.</p>
         pub fn set_model(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.model = input;
             self
@@ -9152,6 +9783,7 @@ pub mod endpoint_demographic {
             self.model_version = Some(input.into());
             self
         }
+        /// <p>The model version of the endpoint device.</p>
         pub fn set_model_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9164,6 +9796,7 @@ pub mod endpoint_demographic {
             self.platform = Some(input.into());
             self
         }
+        /// <p>The platform of the endpoint device, such as ios.</p>
         pub fn set_platform(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.platform = input;
             self
@@ -9173,6 +9806,7 @@ pub mod endpoint_demographic {
             self.platform_version = Some(input.into());
             self
         }
+        /// <p>The platform version of the endpoint device.</p>
         pub fn set_platform_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9185,6 +9819,7 @@ pub mod endpoint_demographic {
             self.timezone = Some(input.into());
             self
         }
+        /// <p>The time zone of the endpoint, specified as a tz database name value, such as America/Los_Angeles.</p>
         pub fn set_timezone(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.timezone = input;
             self
@@ -9211,6 +9846,7 @@ impl EndpointDemographic {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -9222,18 +9858,31 @@ impl EndpointDemographic {
     std::hash::Hash,
 )]
 pub enum ChannelType {
+    #[allow(missing_docs)] // documentation missing in model
     Adm,
+    #[allow(missing_docs)] // documentation missing in model
     Apns,
+    #[allow(missing_docs)] // documentation missing in model
     ApnsSandbox,
+    #[allow(missing_docs)] // documentation missing in model
     ApnsVoip,
+    #[allow(missing_docs)] // documentation missing in model
     ApnsVoipSandbox,
+    #[allow(missing_docs)] // documentation missing in model
     Baidu,
+    #[allow(missing_docs)] // documentation missing in model
     Custom,
+    #[allow(missing_docs)] // documentation missing in model
     Email,
+    #[allow(missing_docs)] // documentation missing in model
     Gcm,
+    #[allow(missing_docs)] // documentation missing in model
     InApp,
+    #[allow(missing_docs)] // documentation missing in model
     Push,
+    #[allow(missing_docs)] // documentation missing in model
     Sms,
+    #[allow(missing_docs)] // documentation missing in model
     Voice,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -9266,6 +9915,7 @@ impl std::str::FromStr for ChannelType {
     }
 }
 impl ChannelType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ChannelType::Adm => "ADM",
@@ -9284,6 +9934,7 @@ impl ChannelType {
             ChannelType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ADM",
@@ -9381,10 +10032,16 @@ pub mod endpoint_request {
             self.address = Some(input.into());
             self
         }
+        /// <p>The destination address for messages or push notifications that you send to the endpoint. The address varies by channel. For a push-notification channel, use the token provided by the push notification service, such as an Apple Push Notification service (APNs) device token or a Firebase Cloud Messaging (FCM) registration token. For the SMS channel, use a phone number in E.164 format, such as +12065550100. For the email channel, use an email address.</p>
         pub fn set_address(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.address = input;
             self
         }
+        /// Adds a key-value pair to `attributes`.
+        ///
+        /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
+        ///
+        /// <p>One or more custom attributes that describe the endpoint by associating a name with an array of values. For example, the value of a custom attribute named Interests might be: ["Science", "Music", "Travel"]. You can use these attributes as filter criteria when you create segments. Attribute names are case sensitive.</p> <p>An attribute name can contain up to 50 characters. An attribute value can contain up to 100 characters. When you define the name of a custom attribute, avoid using the following characters: number sign (#), colon (:), question mark (?), backslash (\), and slash (/). The Amazon Pinpoint console can't display attribute names that contain these characters. This restriction doesn't apply to attribute values.</p>
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -9395,6 +10052,7 @@ pub mod endpoint_request {
             self.attributes = Some(hash_map);
             self
         }
+        /// <p>One or more custom attributes that describe the endpoint by associating a name with an array of values. For example, the value of a custom attribute named Interests might be: ["Science", "Music", "Travel"]. You can use these attributes as filter criteria when you create segments. Attribute names are case sensitive.</p> <p>An attribute name can contain up to 50 characters. An attribute value can contain up to 100 characters. When you define the name of a custom attribute, avoid using the following characters: number sign (#), colon (:), question mark (?), backslash (\), and slash (/). The Amazon Pinpoint console can't display attribute names that contain these characters. This restriction doesn't apply to attribute values.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -9409,6 +10067,7 @@ pub mod endpoint_request {
             self.channel_type = Some(input);
             self
         }
+        /// <p>The channel to use when sending messages or push notifications to the endpoint.</p>
         pub fn set_channel_type(
             mut self,
             input: std::option::Option<crate::model::ChannelType>,
@@ -9421,6 +10080,7 @@ pub mod endpoint_request {
             self.demographic = Some(input);
             self
         }
+        /// <p>The demographic information for the endpoint, such as the time zone and platform.</p>
         pub fn set_demographic(
             mut self,
             input: std::option::Option<crate::model::EndpointDemographic>,
@@ -9433,6 +10093,7 @@ pub mod endpoint_request {
             self.effective_date = Some(input.into());
             self
         }
+        /// <p>The date and time, in ISO 8601 format, when the endpoint is updated.</p>
         pub fn set_effective_date(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9445,6 +10106,7 @@ pub mod endpoint_request {
             self.endpoint_status = Some(input.into());
             self
         }
+        /// <p>Specifies whether to send messages or push notifications to the endpoint. Valid values are: ACTIVE, messages are sent to the endpoint; and, INACTIVE, messages aren’t sent to the endpoint.</p> <p>Amazon Pinpoint automatically sets this value to ACTIVE when you create an endpoint or update an existing endpoint. Amazon Pinpoint automatically sets this value to INACTIVE if you update another endpoint that has the same address specified by the Address property.</p>
         pub fn set_endpoint_status(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9457,6 +10119,7 @@ pub mod endpoint_request {
             self.location = Some(input);
             self
         }
+        /// <p>The geographic information for the endpoint.</p>
         pub fn set_location(
             mut self,
             input: std::option::Option<crate::model::EndpointLocation>,
@@ -9464,12 +10127,18 @@ pub mod endpoint_request {
             self.location = input;
             self
         }
+        /// Adds a key-value pair to `metrics`.
+        ///
+        /// To override the contents of this collection use [`set_metrics`](Self::set_metrics).
+        ///
+        /// <p>One or more custom metrics that your app reports to Amazon Pinpoint for the endpoint.</p>
         pub fn metrics(mut self, k: impl Into<std::string::String>, v: impl Into<f64>) -> Self {
             let mut hash_map = self.metrics.unwrap_or_default();
             hash_map.insert(k.into(), v.into());
             self.metrics = Some(hash_map);
             self
         }
+        /// <p>One or more custom metrics that your app reports to Amazon Pinpoint for the endpoint.</p>
         pub fn set_metrics(
             mut self,
             input: std::option::Option<std::collections::HashMap<std::string::String, f64>>,
@@ -9482,6 +10151,7 @@ pub mod endpoint_request {
             self.opt_out = Some(input.into());
             self
         }
+        /// <p>Specifies whether the user who's associated with the endpoint has opted out of receiving messages and push notifications from you. Possible values are: ALL, the user has opted out and doesn't want to receive any messages or push notifications; and, NONE, the user hasn't opted out and wants to receive all messages and push notifications.</p>
         pub fn set_opt_out(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.opt_out = input;
             self
@@ -9491,6 +10161,7 @@ pub mod endpoint_request {
             self.request_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the most recent request to update the endpoint.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.request_id = input;
             self
@@ -9500,6 +10171,7 @@ pub mod endpoint_request {
             self.user = Some(input);
             self
         }
+        /// <p>One or more custom attributes that describe the user who's associated with the endpoint.</p>
         pub fn set_user(mut self, input: std::option::Option<crate::model::EndpointUser>) -> Self {
             self.user = input;
             self
@@ -9584,6 +10256,7 @@ pub mod email_template_request {
             self.default_substitutions = Some(input.into());
             self
         }
+        /// <p>A JSON object that specifies the default values to use for message variables in the message template. This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding value defines the default value for that variable. When you create a message that's based on the template, you can override these defaults with message-specific and address-specific variables and values.</p>
         pub fn set_default_substitutions(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9596,6 +10269,7 @@ pub mod email_template_request {
             self.html_part = Some(input.into());
             self
         }
+        /// <p>The message body, in HTML format, to use in email messages that are based on the message template. We recommend using HTML format for email clients that render HTML content. You can include links, formatted text, and more in an HTML message.</p>
         pub fn set_html_part(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.html_part = input;
             self
@@ -9605,6 +10279,7 @@ pub mod email_template_request {
             self.recommender_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the recommender model to use for the message template. Amazon Pinpoint uses this value to determine how to retrieve and process data from a recommender model when it sends messages that use the template, if the template contains message variables for recommendation data.</p>
         pub fn set_recommender_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9617,10 +10292,16 @@ pub mod email_template_request {
             self.subject = Some(input.into());
             self
         }
+        /// <p>The subject line, or title, to use in email messages that are based on the message template.</p>
         pub fn set_subject(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.subject = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A string-to-string map of key-value pairs that defines the tags to associate with the message template. Each tag consists of a required tag key and an associated tag value.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -9631,6 +10312,7 @@ pub mod email_template_request {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>A string-to-string map of key-value pairs that defines the tags to associate with the message template. Each tag consists of a required tag key and an associated tag value.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -9645,6 +10327,7 @@ pub mod email_template_request {
             self.template_description = Some(input.into());
             self
         }
+        /// <p>A custom description of the message template.</p>
         pub fn set_template_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9657,6 +10340,7 @@ pub mod email_template_request {
             self.text_part = Some(input.into());
             self
         }
+        /// <p>The message body, in plain text format, to use in email messages that are based on the message template. We recommend using plain text format for email clients that don't render HTML content and clients that are connected to high-latency networks, such as mobile devices.</p>
         pub fn set_text_part(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.text_part = input;
             self
@@ -9766,6 +10450,7 @@ pub mod email_channel_response {
             self.application_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the application that the email channel applies to.</p>
         pub fn set_application_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9778,6 +10463,7 @@ pub mod email_channel_response {
             self.configuration_set = Some(input.into());
             self
         }
+        /// <p>The <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_ConfigurationSet.html">Amazon SES configuration set</a> that's applied to messages that are sent through the channel.</p>
         pub fn set_configuration_set(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9790,6 +10476,7 @@ pub mod email_channel_response {
             self.creation_date = Some(input.into());
             self
         }
+        /// <p>The date and time, in ISO 8601 format, when the email channel was enabled.</p>
         pub fn set_creation_date(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9802,6 +10489,7 @@ pub mod email_channel_response {
             self.enabled = Some(input);
             self
         }
+        /// <p>Specifies whether the email channel is enabled for the application.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -9811,6 +10499,7 @@ pub mod email_channel_response {
             self.from_address = Some(input.into());
             self
         }
+        /// <p>The verified email address that email is sent from when you send email through the channel.</p>
         pub fn set_from_address(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.from_address = input;
             self
@@ -9820,6 +10509,7 @@ pub mod email_channel_response {
             self.has_credential = Some(input);
             self
         }
+        /// <p>(Not used) This property is retained only for backward compatibility.</p>
         pub fn set_has_credential(mut self, input: std::option::Option<bool>) -> Self {
             self.has_credential = input;
             self
@@ -9829,6 +10519,7 @@ pub mod email_channel_response {
             self.id = Some(input.into());
             self
         }
+        /// <p>(Deprecated) An identifier for the email channel. This property is retained only for backward compatibility.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -9838,6 +10529,7 @@ pub mod email_channel_response {
             self.identity = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the identity, verified with Amazon Simple Email Service (Amazon SES), that's used when you send email through the channel.</p>
         pub fn set_identity(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identity = input;
             self
@@ -9847,6 +10539,7 @@ pub mod email_channel_response {
             self.is_archived = Some(input);
             self
         }
+        /// <p>Specifies whether the email channel is archived.</p>
         pub fn set_is_archived(mut self, input: std::option::Option<bool>) -> Self {
             self.is_archived = input;
             self
@@ -9856,6 +10549,7 @@ pub mod email_channel_response {
             self.last_modified_by = Some(input.into());
             self
         }
+        /// <p>The user who last modified the email channel.</p>
         pub fn set_last_modified_by(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9868,6 +10562,7 @@ pub mod email_channel_response {
             self.last_modified_date = Some(input.into());
             self
         }
+        /// <p>The date and time, in ISO 8601 format, when the email channel was last modified.</p>
         pub fn set_last_modified_date(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9880,6 +10575,7 @@ pub mod email_channel_response {
             self.messages_per_second = Some(input);
             self
         }
+        /// <p>The maximum number of emails that can be sent through the channel each second.</p>
         pub fn set_messages_per_second(mut self, input: std::option::Option<i32>) -> Self {
             self.messages_per_second = input;
             self
@@ -9889,6 +10585,7 @@ pub mod email_channel_response {
             self.platform = Some(input.into());
             self
         }
+        /// <p>The type of messaging or notification platform for the channel. For the email channel, this value is EMAIL.</p>
         pub fn set_platform(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.platform = input;
             self
@@ -9898,6 +10595,7 @@ pub mod email_channel_response {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the AWS Identity and Access Management (IAM) role that Amazon Pinpoint uses to submit email-related event data for the channel.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -9907,6 +10605,7 @@ pub mod email_channel_response {
             self.version = Some(input);
             self
         }
+        /// <p>The current version of the email channel.</p>
         pub fn set_version(mut self, input: std::option::Option<i32>) -> Self {
             self.version = input;
             self
@@ -9984,6 +10683,7 @@ pub mod email_channel_request {
             self.configuration_set = Some(input.into());
             self
         }
+        /// <p>The <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_ConfigurationSet.html">Amazon SES configuration set</a> that you want to apply to messages that you send through the channel.</p>
         pub fn set_configuration_set(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -9996,6 +10696,7 @@ pub mod email_channel_request {
             self.enabled = Some(input);
             self
         }
+        /// <p>Specifies whether to enable the email channel for the application.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -10005,6 +10706,7 @@ pub mod email_channel_request {
             self.from_address = Some(input.into());
             self
         }
+        /// <p>The verified email address that you want to send email from when you send email through the channel.</p>
         pub fn set_from_address(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.from_address = input;
             self
@@ -10014,6 +10716,7 @@ pub mod email_channel_request {
             self.identity = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the identity, verified with Amazon Simple Email Service (Amazon SES), that you want to use when you send email through the channel.</p>
         pub fn set_identity(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.identity = input;
             self
@@ -10023,6 +10726,7 @@ pub mod email_channel_request {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the AWS Identity and Access Management (IAM) role that you want Amazon Pinpoint to use when it submits email-related event data for the channel.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -10174,6 +10878,11 @@ pub mod campaign_response {
         pub(crate) priority: std::option::Option<i32>,
     }
     impl Builder {
+        /// Appends an item to `additional_treatments`.
+        ///
+        /// To override the contents of this collection use [`set_additional_treatments`](Self::set_additional_treatments).
+        ///
+        /// <p>An array of responses, one for each treatment that you defined for the campaign, in addition to the default treatment.</p>
         pub fn additional_treatments(
             mut self,
             input: impl Into<crate::model::TreatmentResource>,
@@ -10183,6 +10892,7 @@ pub mod campaign_response {
             self.additional_treatments = Some(v);
             self
         }
+        /// <p>An array of responses, one for each treatment that you defined for the campaign, in addition to the default treatment.</p>
         pub fn set_additional_treatments(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TreatmentResource>>,
@@ -10195,6 +10905,7 @@ pub mod campaign_response {
             self.application_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the application that the campaign applies to.</p>
         pub fn set_application_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10207,6 +10918,7 @@ pub mod campaign_response {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the campaign.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -10216,6 +10928,7 @@ pub mod campaign_response {
             self.creation_date = Some(input.into());
             self
         }
+        /// <p>The date, in ISO 8601 format, when the campaign was created.</p>
         pub fn set_creation_date(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10231,6 +10944,7 @@ pub mod campaign_response {
             self.custom_delivery_configuration = Some(input);
             self
         }
+        /// <p>The delivery configuration settings for sending the campaign through a custom channel.</p>
         pub fn set_custom_delivery_configuration(
             mut self,
             input: std::option::Option<crate::model::CustomDeliveryConfiguration>,
@@ -10243,6 +10957,7 @@ pub mod campaign_response {
             self.default_state = Some(input);
             self
         }
+        /// <p>The current status of the campaign's default treatment. This value exists only for campaigns that have more than one treatment.</p>
         pub fn set_default_state(
             mut self,
             input: std::option::Option<crate::model::CampaignState>,
@@ -10255,6 +10970,7 @@ pub mod campaign_response {
             self.description = Some(input.into());
             self
         }
+        /// <p>The custom description of the campaign.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -10264,6 +10980,7 @@ pub mod campaign_response {
             self.holdout_percent = Some(input);
             self
         }
+        /// <p>The allocated percentage of users (segment members) who shouldn't receive messages from the campaign.</p>
         pub fn set_holdout_percent(mut self, input: std::option::Option<i32>) -> Self {
             self.holdout_percent = input;
             self
@@ -10273,6 +10990,7 @@ pub mod campaign_response {
             self.hook = Some(input);
             self
         }
+        /// <p>The settings for the AWS Lambda function to use as a code hook for the campaign. You can use this hook to customize the segment that's used by the campaign.</p>
         pub fn set_hook(mut self, input: std::option::Option<crate::model::CampaignHook>) -> Self {
             self.hook = input;
             self
@@ -10282,6 +11000,7 @@ pub mod campaign_response {
             self.id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the campaign.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -10291,6 +11010,7 @@ pub mod campaign_response {
             self.is_paused = Some(input);
             self
         }
+        /// <p>Specifies whether the campaign is paused. A paused campaign doesn't run unless you resume it by changing this value to false.</p>
         pub fn set_is_paused(mut self, input: std::option::Option<bool>) -> Self {
             self.is_paused = input;
             self
@@ -10300,6 +11020,7 @@ pub mod campaign_response {
             self.last_modified_date = Some(input.into());
             self
         }
+        /// <p>The date, in ISO 8601 format, when the campaign was last modified.</p>
         pub fn set_last_modified_date(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10312,6 +11033,7 @@ pub mod campaign_response {
             self.limits = Some(input);
             self
         }
+        /// <p>The messaging limits for the campaign.</p>
         pub fn set_limits(
             mut self,
             input: std::option::Option<crate::model::CampaignLimits>,
@@ -10324,6 +11046,7 @@ pub mod campaign_response {
             self.message_configuration = Some(input);
             self
         }
+        /// <p>The message configuration settings for the campaign.</p>
         pub fn set_message_configuration(
             mut self,
             input: std::option::Option<crate::model::MessageConfiguration>,
@@ -10336,6 +11059,7 @@ pub mod campaign_response {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the campaign.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -10345,6 +11069,7 @@ pub mod campaign_response {
             self.schedule = Some(input);
             self
         }
+        /// <p>The schedule settings for the campaign.</p>
         pub fn set_schedule(mut self, input: std::option::Option<crate::model::Schedule>) -> Self {
             self.schedule = input;
             self
@@ -10354,6 +11079,7 @@ pub mod campaign_response {
             self.segment_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the segment that's associated with the campaign.</p>
         pub fn set_segment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.segment_id = input;
             self
@@ -10363,6 +11089,7 @@ pub mod campaign_response {
             self.segment_version = Some(input);
             self
         }
+        /// <p>The version number of the segment that's associated with the campaign.</p>
         pub fn set_segment_version(mut self, input: std::option::Option<i32>) -> Self {
             self.segment_version = input;
             self
@@ -10372,6 +11099,7 @@ pub mod campaign_response {
             self.state = Some(input);
             self
         }
+        /// <p>The current status of the campaign.</p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::CampaignState>,
@@ -10379,6 +11107,11 @@ pub mod campaign_response {
             self.state = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A string-to-string map of key-value pairs that identifies the tags that are associated with the campaign. Each tag consists of a required tag key and an associated tag value.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -10389,6 +11122,7 @@ pub mod campaign_response {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>A string-to-string map of key-value pairs that identifies the tags that are associated with the campaign. Each tag consists of a required tag key and an associated tag value.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -10406,6 +11140,7 @@ pub mod campaign_response {
             self.template_configuration = Some(input);
             self
         }
+        /// <p>The message template that’s used for the campaign.</p>
         pub fn set_template_configuration(
             mut self,
             input: std::option::Option<crate::model::TemplateConfiguration>,
@@ -10418,6 +11153,7 @@ pub mod campaign_response {
             self.treatment_description = Some(input.into());
             self
         }
+        /// <p>The custom description of the default treatment for the campaign.</p>
         pub fn set_treatment_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10430,6 +11166,7 @@ pub mod campaign_response {
             self.treatment_name = Some(input.into());
             self
         }
+        /// <p>The custom name of the default treatment for the campaign, if the campaign has multiple treatments. A <i>treatment</i> is a variation of a campaign that's used for A/B testing.</p>
         pub fn set_treatment_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -10442,6 +11179,7 @@ pub mod campaign_response {
             self.version = Some(input);
             self
         }
+        /// <p>The version number of the campaign.</p>
         pub fn set_version(mut self, input: std::option::Option<i32>) -> Self {
             self.version = input;
             self
@@ -10451,6 +11189,7 @@ pub mod campaign_response {
             self.priority = Some(input);
             self
         }
+        /// <p>Defines the priority of the campaign, used to decide the order of messages displayed to user if there are multiple messages scheduled to be displayed at the same moment.</p>
         pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
             self.priority = input;
             self
@@ -10534,6 +11273,7 @@ pub mod template_configuration {
             self.email_template = Some(input);
             self
         }
+        /// <p>The email template to use for the message.</p>
         pub fn set_email_template(
             mut self,
             input: std::option::Option<crate::model::Template>,
@@ -10546,6 +11286,7 @@ pub mod template_configuration {
             self.push_template = Some(input);
             self
         }
+        /// <p>The push notification template to use for the message.</p>
         pub fn set_push_template(
             mut self,
             input: std::option::Option<crate::model::Template>,
@@ -10558,6 +11299,7 @@ pub mod template_configuration {
             self.sms_template = Some(input);
             self
         }
+        /// <p>The SMS template to use for the message.</p>
         pub fn set_sms_template(
             mut self,
             input: std::option::Option<crate::model::Template>,
@@ -10570,6 +11312,7 @@ pub mod template_configuration {
             self.voice_template = Some(input);
             self
         }
+        /// <p>The voice template to use for the message. This object isn't supported for campaigns.</p>
         pub fn set_voice_template(
             mut self,
             input: std::option::Option<crate::model::Template>,
@@ -10627,6 +11370,7 @@ pub mod template {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the message template to use for the message. If specified, this value must match the name of an existing message template.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -10636,6 +11380,7 @@ pub mod template {
             self.version = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the version of the message template to use for the message. If specified, this value must match the identifier for an existing template version. To retrieve a list of versions and version identifiers for a template, use the <link  linkend="templates-template-name-template-type-versions">Template Versions</link> resource.</p> <p>If you don't specify a value for this property, Amazon Pinpoint uses the <i>active version</i> of the template. The <i>active version</i> is typically the version of a template that's been most recently reviewed and approved for use, depending on your workflow. It isn't necessarily the latest version of a template.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -10684,6 +11429,7 @@ pub mod campaign_state {
             self.campaign_status = Some(input);
             self
         }
+        /// <p>The current status of the campaign, or the current status of a treatment that belongs to an A/B test campaign.</p> <p>If a campaign uses A/B testing, the campaign has a status of COMPLETED only if all campaign treatments have a status of COMPLETED. If you delete the segment that's associated with a campaign, the campaign fails and has a status of DELETED.</p>
         pub fn set_campaign_status(
             mut self,
             input: std::option::Option<crate::model::CampaignStatus>,
@@ -10706,6 +11452,7 @@ impl CampaignState {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -10717,12 +11464,19 @@ impl CampaignState {
     std::hash::Hash,
 )]
 pub enum CampaignStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Completed,
+    #[allow(missing_docs)] // documentation missing in model
     Deleted,
+    #[allow(missing_docs)] // documentation missing in model
     Executing,
+    #[allow(missing_docs)] // documentation missing in model
     Invalid,
+    #[allow(missing_docs)] // documentation missing in model
     Paused,
+    #[allow(missing_docs)] // documentation missing in model
     PendingNextRun,
+    #[allow(missing_docs)] // documentation missing in model
     Scheduled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -10749,6 +11503,7 @@ impl std::str::FromStr for CampaignStatus {
     }
 }
 impl CampaignStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CampaignStatus::Completed => "COMPLETED",
@@ -10761,6 +11516,7 @@ impl CampaignStatus {
             CampaignStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "COMPLETED",
@@ -10834,6 +11590,7 @@ pub mod schedule {
             self.end_time = Some(input.into());
             self
         }
+        /// <p>The scheduled time, in ISO 8601 format, when the campaign ended or will end.</p>
         pub fn set_end_time(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.end_time = input;
             self
@@ -10843,6 +11600,7 @@ pub mod schedule {
             self.event_filter = Some(input);
             self
         }
+        /// <p>The type of event that causes the campaign to be sent, if the value of the Frequency property is EVENT.</p>
         pub fn set_event_filter(
             mut self,
             input: std::option::Option<crate::model::CampaignEventFilter>,
@@ -10855,6 +11613,7 @@ pub mod schedule {
             self.frequency = Some(input);
             self
         }
+        /// <p>Specifies how often the campaign is sent or whether the campaign is sent in response to a specific event.</p>
         pub fn set_frequency(
             mut self,
             input: std::option::Option<crate::model::Frequency>,
@@ -10867,6 +11626,7 @@ pub mod schedule {
             self.is_local_time = Some(input);
             self
         }
+        /// <p>Specifies whether the start and end times for the campaign schedule use each recipient's local time. To base the schedule on each recipient's local time, set this value to true.</p>
         pub fn set_is_local_time(mut self, input: std::option::Option<bool>) -> Self {
             self.is_local_time = input;
             self
@@ -10876,6 +11636,7 @@ pub mod schedule {
             self.quiet_time = Some(input);
             self
         }
+        /// <p>The default quiet time for the campaign. Quiet time is a specific time range when a campaign doesn't send messages to endpoints, if all the following conditions are met:</p> <ul><li><p>The EndpointDemographic.Timezone property of the endpoint is set to a valid value.</p></li> <li><p>The current time in the endpoint's time zone is later than or equal to the time specified by the QuietTime.Start property for the campaign.</p></li> <li><p>The current time in the endpoint's time zone is earlier than or equal to the time specified by the QuietTime.End property for the campaign.</p></li></ul> <p>If any of the preceding conditions isn't met, the endpoint will receive messages from the campaign, even if quiet time is enabled.</p>
         pub fn set_quiet_time(
             mut self,
             input: std::option::Option<crate::model::QuietTime>,
@@ -10888,6 +11649,7 @@ pub mod schedule {
             self.start_time = Some(input.into());
             self
         }
+        /// <p>The scheduled time when the campaign began or will begin. Valid values are: IMMEDIATE, to start the campaign immediately; or, a specific time in ISO 8601 format.</p>
         pub fn set_start_time(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.start_time = input;
             self
@@ -10900,6 +11662,10 @@ pub mod schedule {
             self.timezone = Some(input.into());
             self
         }
+        /// <p>The starting UTC offset for the campaign schedule, if the value of the IsLocalTime property is true. Valid values are: UTC, UTC+01, UTC+02, UTC+03, UTC+03:30, UTC+04, UTC+04:30, UTC+05,
+        /// UTC+05:30, UTC+05:45, UTC+06, UTC+06:30, UTC+07, UTC+08, UTC+09, UTC+09:30,
+        /// UTC+10, UTC+10:30, UTC+11, UTC+12, UTC+13, UTC-02, UTC-03, UTC-04, UTC-05, UTC-06,
+        /// UTC-07, UTC-08, UTC-09, UTC-10, and UTC-11.</p>
         pub fn set_timezone(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.timezone = input;
             self
@@ -10925,6 +11691,7 @@ impl Schedule {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -10936,12 +11703,19 @@ impl Schedule {
     std::hash::Hash,
 )]
 pub enum Frequency {
+    #[allow(missing_docs)] // documentation missing in model
     Daily,
+    #[allow(missing_docs)] // documentation missing in model
     Event,
+    #[allow(missing_docs)] // documentation missing in model
     Hourly,
+    #[allow(missing_docs)] // documentation missing in model
     InAppEvent,
+    #[allow(missing_docs)] // documentation missing in model
     Monthly,
+    #[allow(missing_docs)] // documentation missing in model
     Once,
+    #[allow(missing_docs)] // documentation missing in model
     Weekly,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -10968,6 +11742,7 @@ impl std::str::FromStr for Frequency {
     }
 }
 impl Frequency {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Frequency::Daily => "DAILY",
@@ -10980,6 +11755,7 @@ impl Frequency {
             Frequency::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "DAILY",
@@ -11030,6 +11806,7 @@ pub mod campaign_event_filter {
             self.dimensions = Some(input);
             self
         }
+        /// <p>The dimension settings of the event filter for the campaign.</p>
         pub fn set_dimensions(
             mut self,
             input: std::option::Option<crate::model::EventDimensions>,
@@ -11042,6 +11819,7 @@ pub mod campaign_event_filter {
             self.filter_type = Some(input);
             self
         }
+        /// <p>The type of event that causes the campaign to be sent. Valid values are: SYSTEM, sends the campaign when a system event occurs; and, ENDPOINT, sends the campaign when an endpoint event (<link  linkend="apps-application-id-events">Events</link> resource) occurs.</p>
         pub fn set_filter_type(
             mut self,
             input: std::option::Option<crate::model::FilterType>,
@@ -11125,6 +11903,7 @@ pub mod message_configuration {
             self.adm_message = Some(input);
             self
         }
+        /// <p>The message that the campaign sends through the ADM (Amazon Device Messaging) channel. If specified, this message overrides the default message.</p>
         pub fn set_adm_message(
             mut self,
             input: std::option::Option<crate::model::Message>,
@@ -11137,6 +11916,7 @@ pub mod message_configuration {
             self.apns_message = Some(input);
             self
         }
+        /// <p>The message that the campaign sends through the APNs (Apple Push Notification service) channel. If specified, this message overrides the default message.</p>
         pub fn set_apns_message(
             mut self,
             input: std::option::Option<crate::model::Message>,
@@ -11149,6 +11929,7 @@ pub mod message_configuration {
             self.baidu_message = Some(input);
             self
         }
+        /// <p>The message that the campaign sends through the Baidu (Baidu Cloud Push) channel. If specified, this message overrides the default message.</p>
         pub fn set_baidu_message(
             mut self,
             input: std::option::Option<crate::model::Message>,
@@ -11161,6 +11942,7 @@ pub mod message_configuration {
             self.custom_message = Some(input);
             self
         }
+        /// <p>The message that the campaign sends through a custom channel, as specified by the delivery configuration (CustomDeliveryConfiguration) settings for the campaign. If specified, this message overrides the default message.</p>
         pub fn set_custom_message(
             mut self,
             input: std::option::Option<crate::model::CampaignCustomMessage>,
@@ -11173,6 +11955,7 @@ pub mod message_configuration {
             self.default_message = Some(input);
             self
         }
+        /// <p>The default message that the campaign sends through all the channels that are configured for the campaign.</p>
         pub fn set_default_message(
             mut self,
             input: std::option::Option<crate::model::Message>,
@@ -11185,6 +11968,7 @@ pub mod message_configuration {
             self.email_message = Some(input);
             self
         }
+        /// <p>The message that the campaign sends through the email channel. If specified, this message overrides the default message.</p>
         pub fn set_email_message(
             mut self,
             input: std::option::Option<crate::model::CampaignEmailMessage>,
@@ -11197,6 +11981,7 @@ pub mod message_configuration {
             self.gcm_message = Some(input);
             self
         }
+        /// <p>The message that the campaign sends through the GCM channel, which enables Amazon Pinpoint to send push notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service. If specified, this message overrides the default message.</p>
         pub fn set_gcm_message(
             mut self,
             input: std::option::Option<crate::model::Message>,
@@ -11209,6 +11994,7 @@ pub mod message_configuration {
             self.sms_message = Some(input);
             self
         }
+        /// <p>The message that the campaign sends through the SMS channel. If specified, this message overrides the default message.</p>
         pub fn set_sms_message(
             mut self,
             input: std::option::Option<crate::model::CampaignSmsMessage>,
@@ -11221,6 +12007,7 @@ pub mod message_configuration {
             self.in_app_message = Some(input);
             self
         }
+        /// <p>The in-app message configuration.</p>
         pub fn set_in_app_message(
             mut self,
             input: std::option::Option<crate::model::CampaignInAppMessage>,
@@ -11294,16 +12081,23 @@ pub mod campaign_in_app_message {
             self.body = Some(input.into());
             self
         }
+        /// <p>The message body of the notification, the email body or the text message.</p>
         pub fn set_body(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.body = input;
             self
         }
+        /// Appends an item to `content`.
+        ///
+        /// To override the contents of this collection use [`set_content`](Self::set_content).
+        ///
+        /// <p>In-app message content.</p>
         pub fn content(mut self, input: impl Into<crate::model::InAppMessageContent>) -> Self {
             let mut v = self.content.unwrap_or_default();
             v.push(input.into());
             self.content = Some(v);
             self
         }
+        /// <p>In-app message content.</p>
         pub fn set_content(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InAppMessageContent>>,
@@ -11311,6 +12105,11 @@ pub mod campaign_in_app_message {
             self.content = input;
             self
         }
+        /// Adds a key-value pair to `custom_config`.
+        ///
+        /// To override the contents of this collection use [`set_custom_config`](Self::set_custom_config).
+        ///
+        /// <p>Custom config to be sent to client.</p>
         pub fn custom_config(
             mut self,
             k: impl Into<std::string::String>,
@@ -11321,6 +12120,7 @@ pub mod campaign_in_app_message {
             self.custom_config = Some(hash_map);
             self
         }
+        /// <p>Custom config to be sent to client.</p>
         pub fn set_custom_config(
             mut self,
             input: std::option::Option<
@@ -11335,6 +12135,7 @@ pub mod campaign_in_app_message {
             self.layout = Some(input);
             self
         }
+        /// <p>In-app message layout.</p>
         pub fn set_layout(mut self, input: std::option::Option<crate::model::Layout>) -> Self {
             self.layout = input;
             self
@@ -11405,6 +12206,7 @@ pub mod campaign_sms_message {
             self.body = Some(input.into());
             self
         }
+        /// <p>The body of the SMS message.</p>
         pub fn set_body(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.body = input;
             self
@@ -11414,6 +12216,7 @@ pub mod campaign_sms_message {
             self.message_type = Some(input);
             self
         }
+        /// <p>The SMS message type. Valid values are TRANSACTIONAL (for messages that are critical or time-sensitive, such as a one-time passwords) and PROMOTIONAL (for messsages that aren't critical or time-sensitive, such as marketing messages).</p>
         pub fn set_message_type(
             mut self,
             input: std::option::Option<crate::model::MessageType>,
@@ -11426,6 +12229,7 @@ pub mod campaign_sms_message {
             self.origination_number = Some(input.into());
             self
         }
+        /// <p>The long code to send the SMS message from. This value should be one of the dedicated long codes that's assigned to your AWS account. Although it isn't required, we recommend that you specify the long code using an E.164 format to ensure prompt and accurate delivery of the message. For example, +12065550100.</p>
         pub fn set_origination_number(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11438,6 +12242,7 @@ pub mod campaign_sms_message {
             self.sender_id = Some(input.into());
             self
         }
+        /// <p>The sender ID to display on recipients' devices when they receive the SMS message.</p>
         pub fn set_sender_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.sender_id = input;
             self
@@ -11447,6 +12252,7 @@ pub mod campaign_sms_message {
             self.entity_id = Some(input.into());
             self
         }
+        /// <p>The entity ID or Principal Entity (PE) id received from the regulatory body for sending SMS in your country.</p>
         pub fn set_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.entity_id = input;
             self
@@ -11456,6 +12262,7 @@ pub mod campaign_sms_message {
             self.template_id = Some(input.into());
             self
         }
+        /// <p>The template ID received from the regulatory body for sending SMS in your country.</p>
         pub fn set_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.template_id = input;
             self
@@ -11552,6 +12359,7 @@ pub mod message {
             self.action = Some(input);
             self
         }
+        /// <p>The action to occur if a recipient taps the push notification. Valid values are:</p> <ul><li><p>OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background. This is the default action.</p></li> <li><p>DEEP_LINK - Your app opens and displays a designated user interface in the app. This setting uses the deep-linking features of iOS and Android.</p></li> <li><p>URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you specify.</p></li></ul>
         pub fn set_action(mut self, input: std::option::Option<crate::model::Action>) -> Self {
             self.action = input;
             self
@@ -11561,6 +12369,7 @@ pub mod message {
             self.body = Some(input.into());
             self
         }
+        /// <p>The body of the notification message. The maximum number of characters is 200.</p>
         pub fn set_body(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.body = input;
             self
@@ -11570,6 +12379,7 @@ pub mod message {
             self.image_icon_url = Some(input.into());
             self
         }
+        /// <p>The URL of the image to display as the push-notification icon, such as the icon for the app.</p>
         pub fn set_image_icon_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11582,6 +12392,7 @@ pub mod message {
             self.image_small_icon_url = Some(input.into());
             self
         }
+        /// <p>The URL of the image to display as the small, push-notification icon, such as a small version of the icon for the app.</p>
         pub fn set_image_small_icon_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11594,6 +12405,7 @@ pub mod message {
             self.image_url = Some(input.into());
             self
         }
+        /// <p>The URL of an image to display in the push notification.</p>
         pub fn set_image_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.image_url = input;
             self
@@ -11603,6 +12415,7 @@ pub mod message {
             self.json_body = Some(input.into());
             self
         }
+        /// <p>The JSON payload to use for a silent push notification.</p>
         pub fn set_json_body(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.json_body = input;
             self
@@ -11612,6 +12425,7 @@ pub mod message {
             self.media_url = Some(input.into());
             self
         }
+        /// <p>The URL of the image or video to display in the push notification.</p>
         pub fn set_media_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.media_url = input;
             self
@@ -11621,6 +12435,7 @@ pub mod message {
             self.raw_content = Some(input.into());
             self
         }
+        /// <p>The raw, JSON-formatted string to use as the payload for the notification message. If specified, this value overrides all other content for the message.</p>
         pub fn set_raw_content(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.raw_content = input;
             self
@@ -11630,6 +12445,7 @@ pub mod message {
             self.silent_push = Some(input);
             self
         }
+        /// <p>Specifies whether the notification is a silent push notification, which is a push notification that doesn't display on a recipient's device. Silent push notifications can be used for cases such as updating an app's configuration, displaying messages in an in-app message center, or supporting phone home functionality.</p>
         pub fn set_silent_push(mut self, input: std::option::Option<bool>) -> Self {
             self.silent_push = input;
             self
@@ -11639,6 +12455,7 @@ pub mod message {
             self.time_to_live = Some(input);
             self
         }
+        /// <p>The number of seconds that the push-notification service should keep the message, if the service is unable to deliver the notification the first time. This value is converted to an expiration value when it's sent to a push-notification service. If this value is 0, the service treats the notification as if it expires immediately and the service doesn't store or try to deliver the notification again.</p> <p>This value doesn't apply to messages that are sent through the Amazon Device Messaging (ADM) service.</p>
         pub fn set_time_to_live(mut self, input: std::option::Option<i32>) -> Self {
             self.time_to_live = input;
             self
@@ -11648,6 +12465,7 @@ pub mod message {
             self.title = Some(input.into());
             self
         }
+        /// <p>The title to display above the notification message on a recipient's device.</p>
         pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.title = input;
             self
@@ -11657,6 +12475,7 @@ pub mod message {
             self.url = Some(input.into());
             self
         }
+        /// <p>The URL to open in a recipient's default mobile browser, if a recipient taps the push notification and the value of the Action property is URL.</p>
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.url = input;
             self
@@ -11727,6 +12546,7 @@ pub mod campaign_email_message {
             self.body = Some(input.into());
             self
         }
+        /// <p>The body of the email for recipients whose email clients don't render HTML content.</p>
         pub fn set_body(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.body = input;
             self
@@ -11736,6 +12556,7 @@ pub mod campaign_email_message {
             self.from_address = Some(input.into());
             self
         }
+        /// <p>The verified email address to send the email from. The default address is the FromAddress specified for the email channel for the application.</p>
         pub fn set_from_address(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.from_address = input;
             self
@@ -11745,6 +12566,7 @@ pub mod campaign_email_message {
             self.html_body = Some(input.into());
             self
         }
+        /// <p>The body of the email, in HTML format, for recipients whose email clients render HTML content.</p>
         pub fn set_html_body(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.html_body = input;
             self
@@ -11754,6 +12576,7 @@ pub mod campaign_email_message {
             self.title = Some(input.into());
             self
         }
+        /// <p>The subject line, or title, of the email.</p>
         pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.title = input;
             self
@@ -11804,6 +12627,7 @@ pub mod campaign_custom_message {
             self.data = Some(input.into());
             self
         }
+        /// <p>The raw, JSON-formatted string to use as the payload for the message. The maximum size is 5 KB.</p>
         pub fn set_data(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.data = input;
             self
@@ -11865,6 +12689,7 @@ pub mod campaign_limits {
             self.daily = Some(input);
             self
         }
+        /// <p>The maximum number of messages that a campaign can send to a single endpoint during a 24-hour period. For an application, this value specifies the default limit for the number of messages that campaigns and journeys can send to a single endpoint during a 24-hour period. The maximum value is 100.</p>
         pub fn set_daily(mut self, input: std::option::Option<i32>) -> Self {
             self.daily = input;
             self
@@ -11874,6 +12699,7 @@ pub mod campaign_limits {
             self.maximum_duration = Some(input);
             self
         }
+        /// <p>The maximum amount of time, in seconds, that a campaign can attempt to deliver a message after the scheduled start time for the campaign. The minimum value is 60 seconds.</p>
         pub fn set_maximum_duration(mut self, input: std::option::Option<i32>) -> Self {
             self.maximum_duration = input;
             self
@@ -11883,6 +12709,7 @@ pub mod campaign_limits {
             self.messages_per_second = Some(input);
             self
         }
+        /// <p>The maximum number of messages that a campaign can send each second. For an application, this value specifies the default limit for the number of messages that campaigns can send each second. The minimum value is 50. The maximum value is 20,000.</p>
         pub fn set_messages_per_second(mut self, input: std::option::Option<i32>) -> Self {
             self.messages_per_second = input;
             self
@@ -11892,6 +12719,7 @@ pub mod campaign_limits {
             self.total = Some(input);
             self
         }
+        /// <p>The maximum number of messages that a campaign can send to a single endpoint during the course of the campaign. If a campaign recurs, this setting applies to all runs of the campaign. The maximum value is 100.</p>
         pub fn set_total(mut self, input: std::option::Option<i32>) -> Self {
             self.total = input;
             self
@@ -11901,6 +12729,7 @@ pub mod campaign_limits {
             self.session = Some(input);
             self
         }
+        /// <p>The maximum total number of messages that the campaign can send per user session.</p>
         pub fn set_session(mut self, input: std::option::Option<i32>) -> Self {
             self.session = input;
             self
@@ -11960,6 +12789,7 @@ pub mod campaign_hook {
             self.lambda_function_name = Some(input.into());
             self
         }
+        /// <p>The name or Amazon Resource Name (ARN) of the AWS Lambda function that Amazon Pinpoint invokes to customize a segment for a campaign.</p>
         pub fn set_lambda_function_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -11972,6 +12802,7 @@ pub mod campaign_hook {
             self.mode = Some(input);
             self
         }
+        /// <p>The mode that Amazon Pinpoint uses to invoke the AWS Lambda function. Possible values are:</p> <ul><li><p>FILTER - Invoke the function to customize the segment that's used by a campaign.</p></li> <li><p>DELIVERY - (Deprecated) Previously, invoked the function to send a campaign through a custom channel. This functionality is not supported anymore. To send a campaign through a custom channel, use the CustomDeliveryConfiguration and CampaignCustomMessage objects of the campaign.</p></li></ul>
         pub fn set_mode(mut self, input: std::option::Option<crate::model::Mode>) -> Self {
             self.mode = input;
             self
@@ -11981,6 +12812,7 @@ pub mod campaign_hook {
             self.web_url = Some(input.into());
             self
         }
+        /// <p>The web URL that Amazon Pinpoint calls to invoke the AWS Lambda function over HTTPS.</p>
         pub fn set_web_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.web_url = input;
             self
@@ -12002,6 +12834,7 @@ impl CampaignHook {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -12013,7 +12846,9 @@ impl CampaignHook {
     std::hash::Hash,
 )]
 pub enum Mode {
+    #[allow(missing_docs)] // documentation missing in model
     Delivery,
+    #[allow(missing_docs)] // documentation missing in model
     Filter,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -12035,6 +12870,7 @@ impl std::str::FromStr for Mode {
     }
 }
 impl Mode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Mode::Delivery => "DELIVERY",
@@ -12042,6 +12878,7 @@ impl Mode {
             Mode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DELIVERY", "FILTER"]
     }
@@ -12085,10 +12922,16 @@ pub mod custom_delivery_configuration {
             self.delivery_uri = Some(input.into());
             self
         }
+        /// <p>The destination to send the campaign or treatment to. This value can be one of the following:</p> <ul><li><p>The name or Amazon Resource Name (ARN) of an AWS Lambda function to invoke to handle delivery of the campaign or treatment.</p></li> <li><p>The URL for a web application or service that supports HTTPS and can receive the message. The URL has to be a full URL, including the HTTPS protocol.</p></li></ul>
         pub fn set_delivery_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.delivery_uri = input;
             self
         }
+        /// Appends an item to `endpoint_types`.
+        ///
+        /// To override the contents of this collection use [`set_endpoint_types`](Self::set_endpoint_types).
+        ///
+        /// <p>The types of endpoints to send the campaign or treatment to. Each valid value maps to a type of channel that you can associate with an endpoint by using the ChannelType property of an endpoint.</p>
         pub fn endpoint_types(
             mut self,
             input: impl Into<crate::model::EndpointTypesElement>,
@@ -12098,6 +12941,7 @@ pub mod custom_delivery_configuration {
             self.endpoint_types = Some(v);
             self
         }
+        /// <p>The types of endpoints to send the campaign or treatment to. Each valid value maps to a type of channel that you can associate with an endpoint by using the ChannelType property of an endpoint.</p>
         pub fn set_endpoint_types(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EndpointTypesElement>>,
@@ -12189,6 +13033,7 @@ pub mod treatment_resource {
             self.custom_delivery_configuration = Some(input);
             self
         }
+        /// <p>The delivery configuration settings for sending the treatment through a custom channel. This object is required if the MessageConfiguration object for the treatment specifies a CustomMessage object.</p>
         pub fn set_custom_delivery_configuration(
             mut self,
             input: std::option::Option<crate::model::CustomDeliveryConfiguration>,
@@ -12201,6 +13046,7 @@ pub mod treatment_resource {
             self.id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the treatment.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -12210,6 +13056,7 @@ pub mod treatment_resource {
             self.message_configuration = Some(input);
             self
         }
+        /// <p>The message configuration settings for the treatment.</p>
         pub fn set_message_configuration(
             mut self,
             input: std::option::Option<crate::model::MessageConfiguration>,
@@ -12222,6 +13069,7 @@ pub mod treatment_resource {
             self.schedule = Some(input);
             self
         }
+        /// <p>The schedule settings for the treatment.</p>
         pub fn set_schedule(mut self, input: std::option::Option<crate::model::Schedule>) -> Self {
             self.schedule = input;
             self
@@ -12231,6 +13079,7 @@ pub mod treatment_resource {
             self.size_percent = Some(input);
             self
         }
+        /// <p>The allocated percentage of users (segment members) that the treatment is sent to.</p>
         pub fn set_size_percent(mut self, input: std::option::Option<i32>) -> Self {
             self.size_percent = input;
             self
@@ -12240,6 +13089,7 @@ pub mod treatment_resource {
             self.state = Some(input);
             self
         }
+        /// <p>The current status of the treatment.</p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::CampaignState>,
@@ -12255,6 +13105,7 @@ pub mod treatment_resource {
             self.template_configuration = Some(input);
             self
         }
+        /// <p>The message template to use for the treatment.</p>
         pub fn set_template_configuration(
             mut self,
             input: std::option::Option<crate::model::TemplateConfiguration>,
@@ -12267,6 +13118,7 @@ pub mod treatment_resource {
             self.treatment_description = Some(input.into());
             self
         }
+        /// <p>The custom description of the treatment.</p>
         pub fn set_treatment_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12279,6 +13131,7 @@ pub mod treatment_resource {
             self.treatment_name = Some(input.into());
             self
         }
+        /// <p>The custom name of the treatment.</p>
         pub fn set_treatment_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12406,6 +13259,11 @@ pub mod write_campaign_request {
         pub(crate) priority: std::option::Option<i32>,
     }
     impl Builder {
+        /// Appends an item to `additional_treatments`.
+        ///
+        /// To override the contents of this collection use [`set_additional_treatments`](Self::set_additional_treatments).
+        ///
+        /// <p>An array of requests that defines additional treatments for the campaign, in addition to the default treatment for the campaign.</p>
         pub fn additional_treatments(
             mut self,
             input: impl Into<crate::model::WriteTreatmentResource>,
@@ -12415,6 +13273,7 @@ pub mod write_campaign_request {
             self.additional_treatments = Some(v);
             self
         }
+        /// <p>An array of requests that defines additional treatments for the campaign, in addition to the default treatment for the campaign.</p>
         pub fn set_additional_treatments(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::WriteTreatmentResource>>,
@@ -12430,6 +13289,7 @@ pub mod write_campaign_request {
             self.custom_delivery_configuration = Some(input);
             self
         }
+        /// <p>The delivery configuration settings for sending the campaign through a custom channel. This object is required if the MessageConfiguration object for the campaign specifies a CustomMessage object.</p>
         pub fn set_custom_delivery_configuration(
             mut self,
             input: std::option::Option<crate::model::CustomDeliveryConfiguration>,
@@ -12442,6 +13302,7 @@ pub mod write_campaign_request {
             self.description = Some(input.into());
             self
         }
+        /// <p>A custom description of the campaign.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -12451,6 +13312,7 @@ pub mod write_campaign_request {
             self.holdout_percent = Some(input);
             self
         }
+        /// <p>The allocated percentage of users (segment members) who shouldn't receive messages from the campaign.</p>
         pub fn set_holdout_percent(mut self, input: std::option::Option<i32>) -> Self {
             self.holdout_percent = input;
             self
@@ -12460,6 +13322,7 @@ pub mod write_campaign_request {
             self.hook = Some(input);
             self
         }
+        /// <p>The settings for the AWS Lambda function to invoke as a code hook for the campaign. You can use this hook to customize the segment that's used by the campaign.</p>
         pub fn set_hook(mut self, input: std::option::Option<crate::model::CampaignHook>) -> Self {
             self.hook = input;
             self
@@ -12469,6 +13332,7 @@ pub mod write_campaign_request {
             self.is_paused = Some(input);
             self
         }
+        /// <p>Specifies whether to pause the campaign. A paused campaign doesn't run unless you resume it by changing this value to false.</p>
         pub fn set_is_paused(mut self, input: std::option::Option<bool>) -> Self {
             self.is_paused = input;
             self
@@ -12478,6 +13342,7 @@ pub mod write_campaign_request {
             self.limits = Some(input);
             self
         }
+        /// <p>The messaging limits for the campaign.</p>
         pub fn set_limits(
             mut self,
             input: std::option::Option<crate::model::CampaignLimits>,
@@ -12490,6 +13355,7 @@ pub mod write_campaign_request {
             self.message_configuration = Some(input);
             self
         }
+        /// <p>The message configuration settings for the campaign.</p>
         pub fn set_message_configuration(
             mut self,
             input: std::option::Option<crate::model::MessageConfiguration>,
@@ -12502,6 +13368,7 @@ pub mod write_campaign_request {
             self.name = Some(input.into());
             self
         }
+        /// <p>A custom name for the campaign.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -12511,6 +13378,7 @@ pub mod write_campaign_request {
             self.schedule = Some(input);
             self
         }
+        /// <p>The schedule settings for the campaign.</p>
         pub fn set_schedule(mut self, input: std::option::Option<crate::model::Schedule>) -> Self {
             self.schedule = input;
             self
@@ -12520,6 +13388,7 @@ pub mod write_campaign_request {
             self.segment_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the segment to associate with the campaign.</p>
         pub fn set_segment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.segment_id = input;
             self
@@ -12529,10 +13398,16 @@ pub mod write_campaign_request {
             self.segment_version = Some(input);
             self
         }
+        /// <p>The version of the segment to associate with the campaign.</p>
         pub fn set_segment_version(mut self, input: std::option::Option<i32>) -> Self {
             self.segment_version = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A string-to-string map of key-value pairs that defines the tags to associate with the campaign. Each tag consists of a required tag key and an associated tag value.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -12543,6 +13418,7 @@ pub mod write_campaign_request {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>A string-to-string map of key-value pairs that defines the tags to associate with the campaign. Each tag consists of a required tag key and an associated tag value.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -12560,6 +13436,7 @@ pub mod write_campaign_request {
             self.template_configuration = Some(input);
             self
         }
+        /// <p>The message template to use for the campaign.</p>
         pub fn set_template_configuration(
             mut self,
             input: std::option::Option<crate::model::TemplateConfiguration>,
@@ -12572,6 +13449,7 @@ pub mod write_campaign_request {
             self.treatment_description = Some(input.into());
             self
         }
+        /// <p>A custom description of the default treatment for the campaign.</p>
         pub fn set_treatment_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12584,6 +13462,7 @@ pub mod write_campaign_request {
             self.treatment_name = Some(input.into());
             self
         }
+        /// <p>A custom name of the default treatment for the campaign, if the campaign has multiple treatments. A <i>treatment</i> is a variation of a campaign that's used for A/B testing.</p>
         pub fn set_treatment_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12596,6 +13475,7 @@ pub mod write_campaign_request {
             self.priority = Some(input);
             self
         }
+        /// <p>Defines the priority of the campaign, used to decide the order of messages displayed to user if there are multiple messages scheduled to be displayed at the same moment.</p>
         pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
             self.priority = input;
             self
@@ -12691,6 +13571,7 @@ pub mod write_treatment_resource {
             self.custom_delivery_configuration = Some(input);
             self
         }
+        /// <p>The delivery configuration settings for sending the treatment through a custom channel. This object is required if the MessageConfiguration object for the treatment specifies a CustomMessage object.</p>
         pub fn set_custom_delivery_configuration(
             mut self,
             input: std::option::Option<crate::model::CustomDeliveryConfiguration>,
@@ -12703,6 +13584,7 @@ pub mod write_treatment_resource {
             self.message_configuration = Some(input);
             self
         }
+        /// <p>The message configuration settings for the treatment.</p>
         pub fn set_message_configuration(
             mut self,
             input: std::option::Option<crate::model::MessageConfiguration>,
@@ -12715,6 +13597,7 @@ pub mod write_treatment_resource {
             self.schedule = Some(input);
             self
         }
+        /// <p>The schedule settings for the treatment.</p>
         pub fn set_schedule(mut self, input: std::option::Option<crate::model::Schedule>) -> Self {
             self.schedule = input;
             self
@@ -12724,6 +13607,7 @@ pub mod write_treatment_resource {
             self.size_percent = Some(input);
             self
         }
+        /// <p>The allocated percentage of users (segment members) to send the treatment to.</p>
         pub fn set_size_percent(mut self, input: std::option::Option<i32>) -> Self {
             self.size_percent = input;
             self
@@ -12736,6 +13620,7 @@ pub mod write_treatment_resource {
             self.template_configuration = Some(input);
             self
         }
+        /// <p>The message template to use for the treatment.</p>
         pub fn set_template_configuration(
             mut self,
             input: std::option::Option<crate::model::TemplateConfiguration>,
@@ -12748,6 +13633,7 @@ pub mod write_treatment_resource {
             self.treatment_description = Some(input.into());
             self
         }
+        /// <p>A custom description of the treatment.</p>
         pub fn set_treatment_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12760,6 +13646,7 @@ pub mod write_treatment_resource {
             self.treatment_name = Some(input.into());
             self
         }
+        /// <p>A custom name for the treatment.</p>
         pub fn set_treatment_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12856,6 +13743,7 @@ pub mod baidu_channel_response {
             self.application_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the application that the Baidu channel applies to.</p>
         pub fn set_application_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12868,6 +13756,7 @@ pub mod baidu_channel_response {
             self.creation_date = Some(input.into());
             self
         }
+        /// <p>The date and time when the Baidu channel was enabled.</p>
         pub fn set_creation_date(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12880,6 +13769,7 @@ pub mod baidu_channel_response {
             self.credential = Some(input.into());
             self
         }
+        /// <p>The API key that you received from the Baidu Cloud Push service to communicate with the service.</p>
         pub fn set_credential(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.credential = input;
             self
@@ -12889,6 +13779,7 @@ pub mod baidu_channel_response {
             self.enabled = Some(input);
             self
         }
+        /// <p>Specifies whether the Baidu channel is enabled for the application.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -12898,6 +13789,7 @@ pub mod baidu_channel_response {
             self.has_credential = Some(input);
             self
         }
+        /// <p>(Not used) This property is retained only for backward compatibility.</p>
         pub fn set_has_credential(mut self, input: std::option::Option<bool>) -> Self {
             self.has_credential = input;
             self
@@ -12907,6 +13799,7 @@ pub mod baidu_channel_response {
             self.id = Some(input.into());
             self
         }
+        /// <p>(Deprecated) An identifier for the Baidu channel. This property is retained only for backward compatibility.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -12916,6 +13809,7 @@ pub mod baidu_channel_response {
             self.is_archived = Some(input);
             self
         }
+        /// <p>Specifies whether the Baidu channel is archived.</p>
         pub fn set_is_archived(mut self, input: std::option::Option<bool>) -> Self {
             self.is_archived = input;
             self
@@ -12925,6 +13819,7 @@ pub mod baidu_channel_response {
             self.last_modified_by = Some(input.into());
             self
         }
+        /// <p>The user who last modified the Baidu channel.</p>
         pub fn set_last_modified_by(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12937,6 +13832,7 @@ pub mod baidu_channel_response {
             self.last_modified_date = Some(input.into());
             self
         }
+        /// <p>The date and time when the Baidu channel was last modified.</p>
         pub fn set_last_modified_date(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -12949,6 +13845,7 @@ pub mod baidu_channel_response {
             self.platform = Some(input.into());
             self
         }
+        /// <p>The type of messaging or notification platform for the channel. For the Baidu channel, this value is BAIDU.</p>
         pub fn set_platform(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.platform = input;
             self
@@ -12958,6 +13855,7 @@ pub mod baidu_channel_response {
             self.version = Some(input);
             self
         }
+        /// <p>The current version of the Baidu channel.</p>
         pub fn set_version(mut self, input: std::option::Option<i32>) -> Self {
             self.version = input;
             self
@@ -13023,6 +13921,7 @@ pub mod baidu_channel_request {
             self.api_key = Some(input.into());
             self
         }
+        /// <p>The API key that you received from the Baidu Cloud Push service to communicate with the service.</p>
         pub fn set_api_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.api_key = input;
             self
@@ -13032,6 +13931,7 @@ pub mod baidu_channel_request {
             self.enabled = Some(input);
             self
         }
+        /// <p>Specifies whether to enable the Baidu channel for the application.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -13041,6 +13941,7 @@ pub mod baidu_channel_request {
             self.secret_key = Some(input.into());
             self
         }
+        /// <p>The secret key that you received from the Baidu Cloud Push service to communicate with the service.</p>
         pub fn set_secret_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.secret_key = input;
             self
@@ -13106,6 +14007,7 @@ pub mod application_settings_resource {
             self.application_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
         pub fn set_application_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13118,6 +14020,7 @@ pub mod application_settings_resource {
             self.campaign_hook = Some(input);
             self
         }
+        /// <p>The settings for the AWS Lambda function to invoke by default as a code hook for campaigns in the application. You can use this hook to customize segments that are used by campaigns in the application.</p>
         pub fn set_campaign_hook(
             mut self,
             input: std::option::Option<crate::model::CampaignHook>,
@@ -13130,6 +14033,7 @@ pub mod application_settings_resource {
             self.last_modified_date = Some(input.into());
             self
         }
+        /// <p>The date and time, in ISO 8601 format, when the application's settings were last modified.</p>
         pub fn set_last_modified_date(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13142,6 +14046,7 @@ pub mod application_settings_resource {
             self.limits = Some(input);
             self
         }
+        /// <p>The default sending limits for campaigns in the application.</p>
         pub fn set_limits(
             mut self,
             input: std::option::Option<crate::model::CampaignLimits>,
@@ -13154,6 +14059,7 @@ pub mod application_settings_resource {
             self.quiet_time = Some(input);
             self
         }
+        /// <p>The default quiet time for campaigns in the application. Quiet time is a specific time range when messages aren't sent to endpoints, if all the following conditions are met:</p> <ul><li><p>The EndpointDemographic.Timezone property of the endpoint is set to a valid value.</p></li> <li><p>The current time in the endpoint's time zone is later than or equal to the time specified by the QuietTime.Start property for the application (or a campaign or journey that has custom quiet time settings).</p></li> <li><p>The current time in the endpoint's time zone is earlier than or equal to the time specified by the QuietTime.End property for the application (or a campaign or journey that has custom quiet time settings).</p></li></ul> <p>If any of the preceding conditions isn't met, the endpoint will receive messages from a campaign or journey, even if quiet time is enabled.</p>
         pub fn set_quiet_time(
             mut self,
             input: std::option::Option<crate::model::QuietTime>,
@@ -13188,6 +14094,7 @@ pub struct WriteApplicationSettingsRequest {
     pub campaign_hook: std::option::Option<crate::model::CampaignHook>,
     /// <p>Specifies whether to enable application-related alarms in Amazon CloudWatch.</p>
     pub cloud_watch_metrics_enabled: bool,
+    #[allow(missing_docs)] // documentation missing in model
     pub event_tagging_enabled: bool,
     /// <p>The default sending limits for campaigns in the application. To override these limits and define custom limits for a specific campaign or journey, use the <link  linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource or the <link  linkend="apps-application-id-journeys-journey-id">Journey</link> resource, respectively.</p>
     pub limits: std::option::Option<crate::model::CampaignLimits>,
@@ -13226,6 +14133,7 @@ pub mod write_application_settings_request {
             self.campaign_hook = Some(input);
             self
         }
+        /// <p>The settings for the AWS Lambda function to invoke by default as a code hook for campaigns in the application. You can use this hook to customize segments that are used by campaigns in the application.</p> <p>To override these settings and define custom settings for a specific campaign, use the CampaignHook object of the <link  linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource.</p>
         pub fn set_campaign_hook(
             mut self,
             input: std::option::Option<crate::model::CampaignHook>,
@@ -13238,14 +14146,17 @@ pub mod write_application_settings_request {
             self.cloud_watch_metrics_enabled = Some(input);
             self
         }
+        /// <p>Specifies whether to enable application-related alarms in Amazon CloudWatch.</p>
         pub fn set_cloud_watch_metrics_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.cloud_watch_metrics_enabled = input;
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
         pub fn event_tagging_enabled(mut self, input: bool) -> Self {
             self.event_tagging_enabled = Some(input);
             self
         }
+        #[allow(missing_docs)] // documentation missing in model
         pub fn set_event_tagging_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.event_tagging_enabled = input;
             self
@@ -13255,6 +14166,7 @@ pub mod write_application_settings_request {
             self.limits = Some(input);
             self
         }
+        /// <p>The default sending limits for campaigns in the application. To override these limits and define custom limits for a specific campaign or journey, use the <link  linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource or the <link  linkend="apps-application-id-journeys-journey-id">Journey</link> resource, respectively.</p>
         pub fn set_limits(
             mut self,
             input: std::option::Option<crate::model::CampaignLimits>,
@@ -13267,6 +14179,7 @@ pub mod write_application_settings_request {
             self.quiet_time = Some(input);
             self
         }
+        /// <p>The default quiet time for campaigns in the application. Quiet time is a specific time range when messages aren't sent to endpoints, if all the following conditions are met:</p> <ul><li><p>The EndpointDemographic.Timezone property of the endpoint is set to a valid value.</p></li> <li><p>The current time in the endpoint's time zone is later than or equal to the time specified by the QuietTime.Start property for the application (or a campaign or journey that has custom quiet time settings).</p></li> <li><p>The current time in the endpoint's time zone is earlier than or equal to the time specified by the QuietTime.End property for the application (or a campaign or journey that has custom quiet time settings).</p></li></ul> <p>If any of the preceding conditions isn't met, the endpoint will receive messages from a campaign or journey, even if quiet time is enabled.</p> <p>To override the default quiet time settings for a specific campaign or journey, use the <link  linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource or the <link  linkend="apps-application-id-journeys-journey-id">Journey</link> resource to define a custom quiet time for the campaign or journey.</p>
         pub fn set_quiet_time(
             mut self,
             input: std::option::Option<crate::model::QuietTime>,
@@ -13368,6 +14281,7 @@ pub mod apns_voip_sandbox_channel_response {
             self.application_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the application that the APNs VoIP sandbox channel applies to.</p>
         pub fn set_application_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13380,6 +14294,7 @@ pub mod apns_voip_sandbox_channel_response {
             self.creation_date = Some(input.into());
             self
         }
+        /// <p>The date and time when the APNs VoIP sandbox channel was enabled.</p>
         pub fn set_creation_date(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13395,6 +14310,7 @@ pub mod apns_voip_sandbox_channel_response {
             self.default_authentication_method = Some(input.into());
             self
         }
+        /// <p>The default authentication method that Amazon Pinpoint uses to authenticate with the APNs sandbox environment for this channel, key or certificate.</p>
         pub fn set_default_authentication_method(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13407,6 +14323,7 @@ pub mod apns_voip_sandbox_channel_response {
             self.enabled = Some(input);
             self
         }
+        /// <p>Specifies whether the APNs VoIP sandbox channel is enabled for the application.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -13416,6 +14333,7 @@ pub mod apns_voip_sandbox_channel_response {
             self.has_credential = Some(input);
             self
         }
+        /// <p>(Not used) This property is retained only for backward compatibility.</p>
         pub fn set_has_credential(mut self, input: std::option::Option<bool>) -> Self {
             self.has_credential = input;
             self
@@ -13425,6 +14343,7 @@ pub mod apns_voip_sandbox_channel_response {
             self.has_token_key = Some(input);
             self
         }
+        /// <p>Specifies whether the APNs VoIP sandbox channel is configured to communicate with APNs by using APNs tokens. To provide an authentication key for APNs tokens, set the TokenKey property of the channel.</p>
         pub fn set_has_token_key(mut self, input: std::option::Option<bool>) -> Self {
             self.has_token_key = input;
             self
@@ -13434,6 +14353,7 @@ pub mod apns_voip_sandbox_channel_response {
             self.id = Some(input.into());
             self
         }
+        /// <p>(Deprecated) An identifier for the APNs VoIP sandbox channel. This property is retained only for backward compatibility.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -13443,6 +14363,7 @@ pub mod apns_voip_sandbox_channel_response {
             self.is_archived = Some(input);
             self
         }
+        /// <p>Specifies whether the APNs VoIP sandbox channel is archived.</p>
         pub fn set_is_archived(mut self, input: std::option::Option<bool>) -> Self {
             self.is_archived = input;
             self
@@ -13452,6 +14373,7 @@ pub mod apns_voip_sandbox_channel_response {
             self.last_modified_by = Some(input.into());
             self
         }
+        /// <p>The user who last modified the APNs VoIP sandbox channel.</p>
         pub fn set_last_modified_by(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13464,6 +14386,7 @@ pub mod apns_voip_sandbox_channel_response {
             self.last_modified_date = Some(input.into());
             self
         }
+        /// <p>The date and time when the APNs VoIP sandbox channel was last modified.</p>
         pub fn set_last_modified_date(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13476,6 +14399,7 @@ pub mod apns_voip_sandbox_channel_response {
             self.platform = Some(input.into());
             self
         }
+        /// <p>The type of messaging or notification platform for the channel. For the APNs VoIP sandbox channel, this value is APNS_VOIP_SANDBOX.</p>
         pub fn set_platform(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.platform = input;
             self
@@ -13485,6 +14409,7 @@ pub mod apns_voip_sandbox_channel_response {
             self.version = Some(input);
             self
         }
+        /// <p>The current version of the APNs VoIP sandbox channel.</p>
         pub fn set_version(mut self, input: std::option::Option<i32>) -> Self {
             self.version = input;
             self
@@ -13574,6 +14499,7 @@ pub mod apns_voip_sandbox_channel_request {
             self.bundle_id = Some(input.into());
             self
         }
+        /// <p>The bundle identifier that's assigned to your iOS app. This identifier is used for APNs tokens.</p>
         pub fn set_bundle_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bundle_id = input;
             self
@@ -13583,6 +14509,7 @@ pub mod apns_voip_sandbox_channel_request {
             self.certificate = Some(input.into());
             self
         }
+        /// <p>The APNs client certificate that you received from Apple, if you want Amazon Pinpoint to communicate with the APNs sandbox environment by using an APNs certificate.</p>
         pub fn set_certificate(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.certificate = input;
             self
@@ -13595,6 +14522,7 @@ pub mod apns_voip_sandbox_channel_request {
             self.default_authentication_method = Some(input.into());
             self
         }
+        /// <p>The default authentication method that you want Amazon Pinpoint to use when authenticating with the APNs sandbox environment for this channel, key or certificate.</p>
         pub fn set_default_authentication_method(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13607,6 +14535,7 @@ pub mod apns_voip_sandbox_channel_request {
             self.enabled = Some(input);
             self
         }
+        /// <p>Specifies whether the APNs VoIP sandbox channel is enabled for the application.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -13616,6 +14545,7 @@ pub mod apns_voip_sandbox_channel_request {
             self.private_key = Some(input.into());
             self
         }
+        /// <p>The private key for the APNs client certificate that you want Amazon Pinpoint to use to communicate with the APNs sandbox environment.</p>
         pub fn set_private_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.private_key = input;
             self
@@ -13625,6 +14555,7 @@ pub mod apns_voip_sandbox_channel_request {
             self.team_id = Some(input.into());
             self
         }
+        /// <p>The identifier that's assigned to your Apple developer account team. This identifier is used for APNs tokens.</p>
         pub fn set_team_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.team_id = input;
             self
@@ -13634,6 +14565,7 @@ pub mod apns_voip_sandbox_channel_request {
             self.token_key = Some(input.into());
             self
         }
+        /// <p>The authentication key to use for APNs tokens.</p>
         pub fn set_token_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.token_key = input;
             self
@@ -13643,6 +14575,7 @@ pub mod apns_voip_sandbox_channel_request {
             self.token_key_id = Some(input.into());
             self
         }
+        /// <p>The key identifier that's assigned to your APNs signing key, if you want Amazon Pinpoint to communicate with the APNs sandbox environment by using APNs tokens.</p>
         pub fn set_token_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.token_key_id = input;
             self
@@ -13744,6 +14677,7 @@ pub mod apns_voip_channel_response {
             self.application_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the application that the APNs VoIP channel applies to.</p>
         pub fn set_application_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13756,6 +14690,7 @@ pub mod apns_voip_channel_response {
             self.creation_date = Some(input.into());
             self
         }
+        /// <p>The date and time when the APNs VoIP channel was enabled.</p>
         pub fn set_creation_date(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13771,6 +14706,7 @@ pub mod apns_voip_channel_response {
             self.default_authentication_method = Some(input.into());
             self
         }
+        /// <p>The default authentication method that Amazon Pinpoint uses to authenticate with APNs for this channel, key or certificate.</p>
         pub fn set_default_authentication_method(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13783,6 +14719,7 @@ pub mod apns_voip_channel_response {
             self.enabled = Some(input);
             self
         }
+        /// <p>Specifies whether the APNs VoIP channel is enabled for the application.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -13792,6 +14729,7 @@ pub mod apns_voip_channel_response {
             self.has_credential = Some(input);
             self
         }
+        /// <p>(Not used) This property is retained only for backward compatibility.</p>
         pub fn set_has_credential(mut self, input: std::option::Option<bool>) -> Self {
             self.has_credential = input;
             self
@@ -13801,6 +14739,7 @@ pub mod apns_voip_channel_response {
             self.has_token_key = Some(input);
             self
         }
+        /// <p>Specifies whether the APNs VoIP channel is configured to communicate with APNs by using APNs tokens. To provide an authentication key for APNs tokens, set the TokenKey property of the channel.</p>
         pub fn set_has_token_key(mut self, input: std::option::Option<bool>) -> Self {
             self.has_token_key = input;
             self
@@ -13810,6 +14749,7 @@ pub mod apns_voip_channel_response {
             self.id = Some(input.into());
             self
         }
+        /// <p>(Deprecated) An identifier for the APNs VoIP channel. This property is retained only for backward compatibility.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -13819,6 +14759,7 @@ pub mod apns_voip_channel_response {
             self.is_archived = Some(input);
             self
         }
+        /// <p>Specifies whether the APNs VoIP channel is archived.</p>
         pub fn set_is_archived(mut self, input: std::option::Option<bool>) -> Self {
             self.is_archived = input;
             self
@@ -13828,6 +14769,7 @@ pub mod apns_voip_channel_response {
             self.last_modified_by = Some(input.into());
             self
         }
+        /// <p>The user who last modified the APNs VoIP channel.</p>
         pub fn set_last_modified_by(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13840,6 +14782,7 @@ pub mod apns_voip_channel_response {
             self.last_modified_date = Some(input.into());
             self
         }
+        /// <p>The date and time when the APNs VoIP channel was last modified.</p>
         pub fn set_last_modified_date(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13852,6 +14795,7 @@ pub mod apns_voip_channel_response {
             self.platform = Some(input.into());
             self
         }
+        /// <p>The type of messaging or notification platform for the channel. For the APNs VoIP channel, this value is APNS_VOIP.</p>
         pub fn set_platform(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.platform = input;
             self
@@ -13861,6 +14805,7 @@ pub mod apns_voip_channel_response {
             self.version = Some(input);
             self
         }
+        /// <p>The current version of the APNs VoIP channel.</p>
         pub fn set_version(mut self, input: std::option::Option<i32>) -> Self {
             self.version = input;
             self
@@ -13950,6 +14895,7 @@ pub mod apns_voip_channel_request {
             self.bundle_id = Some(input.into());
             self
         }
+        /// <p>The bundle identifier that's assigned to your iOS app. This identifier is used for APNs tokens.</p>
         pub fn set_bundle_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bundle_id = input;
             self
@@ -13959,6 +14905,7 @@ pub mod apns_voip_channel_request {
             self.certificate = Some(input.into());
             self
         }
+        /// <p>The APNs client certificate that you received from Apple, if you want Amazon Pinpoint to communicate with APNs by using an APNs certificate.</p>
         pub fn set_certificate(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.certificate = input;
             self
@@ -13971,6 +14918,7 @@ pub mod apns_voip_channel_request {
             self.default_authentication_method = Some(input.into());
             self
         }
+        /// <p>The default authentication method that you want Amazon Pinpoint to use when authenticating with APNs, key or certificate.</p>
         pub fn set_default_authentication_method(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -13983,6 +14931,7 @@ pub mod apns_voip_channel_request {
             self.enabled = Some(input);
             self
         }
+        /// <p>Specifies whether to enable the APNs VoIP channel for the application.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -13992,6 +14941,7 @@ pub mod apns_voip_channel_request {
             self.private_key = Some(input.into());
             self
         }
+        /// <p>The private key for the APNs client certificate that you want Amazon Pinpoint to use to communicate with APNs.</p>
         pub fn set_private_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.private_key = input;
             self
@@ -14001,6 +14951,7 @@ pub mod apns_voip_channel_request {
             self.team_id = Some(input.into());
             self
         }
+        /// <p>The identifier that's assigned to your Apple developer account team. This identifier is used for APNs tokens.</p>
         pub fn set_team_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.team_id = input;
             self
@@ -14010,6 +14961,7 @@ pub mod apns_voip_channel_request {
             self.token_key = Some(input.into());
             self
         }
+        /// <p>The authentication key to use for APNs tokens.</p>
         pub fn set_token_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.token_key = input;
             self
@@ -14019,6 +14971,7 @@ pub mod apns_voip_channel_request {
             self.token_key_id = Some(input.into());
             self
         }
+        /// <p>The key identifier that's assigned to your APNs signing key, if you want Amazon Pinpoint to communicate with APNs by using APNs tokens.</p>
         pub fn set_token_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.token_key_id = input;
             self
@@ -14120,6 +15073,7 @@ pub mod apns_sandbox_channel_response {
             self.application_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the application that the APNs sandbox channel applies to.</p>
         pub fn set_application_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14132,6 +15086,7 @@ pub mod apns_sandbox_channel_response {
             self.creation_date = Some(input.into());
             self
         }
+        /// <p>The date and time when the APNs sandbox channel was enabled.</p>
         pub fn set_creation_date(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14147,6 +15102,7 @@ pub mod apns_sandbox_channel_response {
             self.default_authentication_method = Some(input.into());
             self
         }
+        /// <p>The default authentication method that Amazon Pinpoint uses to authenticate with the APNs sandbox environment for this channel, key or certificate.</p>
         pub fn set_default_authentication_method(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14159,6 +15115,7 @@ pub mod apns_sandbox_channel_response {
             self.enabled = Some(input);
             self
         }
+        /// <p>Specifies whether the APNs sandbox channel is enabled for the application.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -14168,6 +15125,7 @@ pub mod apns_sandbox_channel_response {
             self.has_credential = Some(input);
             self
         }
+        /// <p>(Not used) This property is retained only for backward compatibility.</p>
         pub fn set_has_credential(mut self, input: std::option::Option<bool>) -> Self {
             self.has_credential = input;
             self
@@ -14177,6 +15135,7 @@ pub mod apns_sandbox_channel_response {
             self.has_token_key = Some(input);
             self
         }
+        /// <p>Specifies whether the APNs sandbox channel is configured to communicate with APNs by using APNs tokens. To provide an authentication key for APNs tokens, set the TokenKey property of the channel.</p>
         pub fn set_has_token_key(mut self, input: std::option::Option<bool>) -> Self {
             self.has_token_key = input;
             self
@@ -14186,6 +15145,7 @@ pub mod apns_sandbox_channel_response {
             self.id = Some(input.into());
             self
         }
+        /// <p>(Deprecated) An identifier for the APNs sandbox channel. This property is retained only for backward compatibility.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -14195,6 +15155,7 @@ pub mod apns_sandbox_channel_response {
             self.is_archived = Some(input);
             self
         }
+        /// <p>Specifies whether the APNs sandbox channel is archived.</p>
         pub fn set_is_archived(mut self, input: std::option::Option<bool>) -> Self {
             self.is_archived = input;
             self
@@ -14204,6 +15165,7 @@ pub mod apns_sandbox_channel_response {
             self.last_modified_by = Some(input.into());
             self
         }
+        /// <p>The user who last modified the APNs sandbox channel.</p>
         pub fn set_last_modified_by(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14216,6 +15178,7 @@ pub mod apns_sandbox_channel_response {
             self.last_modified_date = Some(input.into());
             self
         }
+        /// <p>The date and time when the APNs sandbox channel was last modified.</p>
         pub fn set_last_modified_date(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14228,6 +15191,7 @@ pub mod apns_sandbox_channel_response {
             self.platform = Some(input.into());
             self
         }
+        /// <p>The type of messaging or notification platform for the channel. For the APNs sandbox channel, this value is APNS_SANDBOX.</p>
         pub fn set_platform(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.platform = input;
             self
@@ -14237,6 +15201,7 @@ pub mod apns_sandbox_channel_response {
             self.version = Some(input);
             self
         }
+        /// <p>The current version of the APNs sandbox channel.</p>
         pub fn set_version(mut self, input: std::option::Option<i32>) -> Self {
             self.version = input;
             self
@@ -14326,6 +15291,7 @@ pub mod apns_sandbox_channel_request {
             self.bundle_id = Some(input.into());
             self
         }
+        /// <p>The bundle identifier that's assigned to your iOS app. This identifier is used for APNs tokens.</p>
         pub fn set_bundle_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bundle_id = input;
             self
@@ -14335,6 +15301,7 @@ pub mod apns_sandbox_channel_request {
             self.certificate = Some(input.into());
             self
         }
+        /// <p>The APNs client certificate that you received from Apple, if you want Amazon Pinpoint to communicate with the APNs sandbox environment by using an APNs certificate.</p>
         pub fn set_certificate(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.certificate = input;
             self
@@ -14347,6 +15314,7 @@ pub mod apns_sandbox_channel_request {
             self.default_authentication_method = Some(input.into());
             self
         }
+        /// <p>The default authentication method that you want Amazon Pinpoint to use when authenticating with the APNs sandbox environment, key or certificate.</p>
         pub fn set_default_authentication_method(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14359,6 +15327,7 @@ pub mod apns_sandbox_channel_request {
             self.enabled = Some(input);
             self
         }
+        /// <p>Specifies whether to enable the APNs sandbox channel for the application.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -14368,6 +15337,7 @@ pub mod apns_sandbox_channel_request {
             self.private_key = Some(input.into());
             self
         }
+        /// <p>The private key for the APNs client certificate that you want Amazon Pinpoint to use to communicate with the APNs sandbox environment.</p>
         pub fn set_private_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.private_key = input;
             self
@@ -14377,6 +15347,7 @@ pub mod apns_sandbox_channel_request {
             self.team_id = Some(input.into());
             self
         }
+        /// <p>The identifier that's assigned to your Apple developer account team. This identifier is used for APNs tokens.</p>
         pub fn set_team_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.team_id = input;
             self
@@ -14386,6 +15357,7 @@ pub mod apns_sandbox_channel_request {
             self.token_key = Some(input.into());
             self
         }
+        /// <p>The authentication key to use for APNs tokens.</p>
         pub fn set_token_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.token_key = input;
             self
@@ -14395,6 +15367,7 @@ pub mod apns_sandbox_channel_request {
             self.token_key_id = Some(input.into());
             self
         }
+        /// <p>The key identifier that's assigned to your APNs signing key, if you want Amazon Pinpoint to communicate with the APNs sandbox environment by using APNs tokens.</p>
         pub fn set_token_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.token_key_id = input;
             self
@@ -14496,6 +15469,7 @@ pub mod apns_channel_response {
             self.application_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the application that the APNs channel applies to.</p>
         pub fn set_application_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14508,6 +15482,7 @@ pub mod apns_channel_response {
             self.creation_date = Some(input.into());
             self
         }
+        /// <p>The date and time when the APNs channel was enabled.</p>
         pub fn set_creation_date(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14523,6 +15498,7 @@ pub mod apns_channel_response {
             self.default_authentication_method = Some(input.into());
             self
         }
+        /// <p>The default authentication method that Amazon Pinpoint uses to authenticate with APNs for this channel, key or certificate.</p>
         pub fn set_default_authentication_method(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14535,6 +15511,7 @@ pub mod apns_channel_response {
             self.enabled = Some(input);
             self
         }
+        /// <p>Specifies whether the APNs channel is enabled for the application.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -14544,6 +15521,7 @@ pub mod apns_channel_response {
             self.has_credential = Some(input);
             self
         }
+        /// <p>(Not used) This property is retained only for backward compatibility.</p>
         pub fn set_has_credential(mut self, input: std::option::Option<bool>) -> Self {
             self.has_credential = input;
             self
@@ -14553,6 +15531,7 @@ pub mod apns_channel_response {
             self.has_token_key = Some(input);
             self
         }
+        /// <p>Specifies whether the APNs channel is configured to communicate with APNs by using APNs tokens. To provide an authentication key for APNs tokens, set the TokenKey property of the channel.</p>
         pub fn set_has_token_key(mut self, input: std::option::Option<bool>) -> Self {
             self.has_token_key = input;
             self
@@ -14562,6 +15541,7 @@ pub mod apns_channel_response {
             self.id = Some(input.into());
             self
         }
+        /// <p>(Deprecated) An identifier for the APNs channel. This property is retained only for backward compatibility.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -14571,6 +15551,7 @@ pub mod apns_channel_response {
             self.is_archived = Some(input);
             self
         }
+        /// <p>Specifies whether the APNs channel is archived.</p>
         pub fn set_is_archived(mut self, input: std::option::Option<bool>) -> Self {
             self.is_archived = input;
             self
@@ -14580,6 +15561,7 @@ pub mod apns_channel_response {
             self.last_modified_by = Some(input.into());
             self
         }
+        /// <p>The user who last modified the APNs channel.</p>
         pub fn set_last_modified_by(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14592,6 +15574,7 @@ pub mod apns_channel_response {
             self.last_modified_date = Some(input.into());
             self
         }
+        /// <p>The date and time when the APNs channel was last modified.</p>
         pub fn set_last_modified_date(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14604,6 +15587,7 @@ pub mod apns_channel_response {
             self.platform = Some(input.into());
             self
         }
+        /// <p>The type of messaging or notification platform for the channel. For the APNs channel, this value is APNS.</p>
         pub fn set_platform(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.platform = input;
             self
@@ -14613,6 +15597,7 @@ pub mod apns_channel_response {
             self.version = Some(input);
             self
         }
+        /// <p>The current version of the APNs channel.</p>
         pub fn set_version(mut self, input: std::option::Option<i32>) -> Self {
             self.version = input;
             self
@@ -14702,6 +15687,7 @@ pub mod apns_channel_request {
             self.bundle_id = Some(input.into());
             self
         }
+        /// <p>The bundle identifier that's assigned to your iOS app. This identifier is used for APNs tokens.</p>
         pub fn set_bundle_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bundle_id = input;
             self
@@ -14711,6 +15697,7 @@ pub mod apns_channel_request {
             self.certificate = Some(input.into());
             self
         }
+        /// <p>The APNs client certificate that you received from Apple, if you want Amazon Pinpoint to communicate with APNs by using an APNs certificate.</p>
         pub fn set_certificate(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.certificate = input;
             self
@@ -14723,6 +15710,7 @@ pub mod apns_channel_request {
             self.default_authentication_method = Some(input.into());
             self
         }
+        /// <p>The default authentication method that you want Amazon Pinpoint to use when authenticating with APNs, key or certificate.</p>
         pub fn set_default_authentication_method(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14735,6 +15723,7 @@ pub mod apns_channel_request {
             self.enabled = Some(input);
             self
         }
+        /// <p>Specifies whether to enable the APNs channel for the application.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -14744,6 +15733,7 @@ pub mod apns_channel_request {
             self.private_key = Some(input.into());
             self
         }
+        /// <p>The private key for the APNs client certificate that you want Amazon Pinpoint to use to communicate with APNs.</p>
         pub fn set_private_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.private_key = input;
             self
@@ -14753,6 +15743,7 @@ pub mod apns_channel_request {
             self.team_id = Some(input.into());
             self
         }
+        /// <p>The identifier that's assigned to your Apple developer account team. This identifier is used for APNs tokens.</p>
         pub fn set_team_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.team_id = input;
             self
@@ -14762,6 +15753,7 @@ pub mod apns_channel_request {
             self.token_key = Some(input.into());
             self
         }
+        /// <p>The authentication key to use for APNs tokens.</p>
         pub fn set_token_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.token_key = input;
             self
@@ -14771,6 +15763,7 @@ pub mod apns_channel_request {
             self.token_key_id = Some(input.into());
             self
         }
+        /// <p>The key identifier that's assigned to your APNs signing key, if you want Amazon Pinpoint to communicate with APNs by using APNs tokens.</p>
         pub fn set_token_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.token_key_id = input;
             self
@@ -14861,6 +15854,7 @@ pub mod adm_channel_response {
             self.application_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the application that the ADM channel applies to.</p>
         pub fn set_application_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14873,6 +15867,7 @@ pub mod adm_channel_response {
             self.creation_date = Some(input.into());
             self
         }
+        /// <p>The date and time when the ADM channel was enabled.</p>
         pub fn set_creation_date(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14885,6 +15880,7 @@ pub mod adm_channel_response {
             self.enabled = Some(input);
             self
         }
+        /// <p>Specifies whether the ADM channel is enabled for the application.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -14894,6 +15890,7 @@ pub mod adm_channel_response {
             self.has_credential = Some(input);
             self
         }
+        /// <p>(Not used) This property is retained only for backward compatibility.</p>
         pub fn set_has_credential(mut self, input: std::option::Option<bool>) -> Self {
             self.has_credential = input;
             self
@@ -14903,6 +15900,7 @@ pub mod adm_channel_response {
             self.id = Some(input.into());
             self
         }
+        /// <p>(Deprecated) An identifier for the ADM channel. This property is retained only for backward compatibility.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -14912,6 +15910,7 @@ pub mod adm_channel_response {
             self.is_archived = Some(input);
             self
         }
+        /// <p>Specifies whether the ADM channel is archived.</p>
         pub fn set_is_archived(mut self, input: std::option::Option<bool>) -> Self {
             self.is_archived = input;
             self
@@ -14921,6 +15920,7 @@ pub mod adm_channel_response {
             self.last_modified_by = Some(input.into());
             self
         }
+        /// <p>The user who last modified the ADM channel.</p>
         pub fn set_last_modified_by(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14933,6 +15933,7 @@ pub mod adm_channel_response {
             self.last_modified_date = Some(input.into());
             self
         }
+        /// <p>The date and time when the ADM channel was last modified.</p>
         pub fn set_last_modified_date(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -14945,6 +15946,7 @@ pub mod adm_channel_response {
             self.platform = Some(input.into());
             self
         }
+        /// <p>The type of messaging or notification platform for the channel. For the ADM channel, this value is ADM.</p>
         pub fn set_platform(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.platform = input;
             self
@@ -14954,6 +15956,7 @@ pub mod adm_channel_response {
             self.version = Some(input);
             self
         }
+        /// <p>The current version of the ADM channel.</p>
         pub fn set_version(mut self, input: std::option::Option<i32>) -> Self {
             self.version = input;
             self
@@ -15018,6 +16021,7 @@ pub mod adm_channel_request {
             self.client_id = Some(input.into());
             self
         }
+        /// <p>The Client ID that you received from Amazon to send messages by using ADM.</p>
         pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_id = input;
             self
@@ -15027,6 +16031,7 @@ pub mod adm_channel_request {
             self.client_secret = Some(input.into());
             self
         }
+        /// <p>The Client Secret that you received from Amazon to send messages by using ADM.</p>
         pub fn set_client_secret(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15039,6 +16044,7 @@ pub mod adm_channel_request {
             self.enabled = Some(input);
             self
         }
+        /// <p>Specifies whether to enable the ADM channel for the application.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -15086,6 +16092,11 @@ pub mod tags_model {
         >,
     }
     impl Builder {
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A string-to-string map of key-value pairs that defines the tags for an application, campaign, message template, or segment. Each of these resources can have a maximum of 50 tags.</p> <p>Each tag consists of a required tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -15096,6 +16107,7 @@ pub mod tags_model {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>A string-to-string map of key-value pairs that defines the tags for an application, campaign, message template, or segment. Each of these resources can have a maximum of 50 tags.</p> <p>Each tag consists of a required tag key and an associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -15164,6 +16176,7 @@ pub mod send_users_message_response {
             self.application_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the application that was used to send the message.</p>
         pub fn set_application_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15176,10 +16189,16 @@ pub mod send_users_message_response {
             self.request_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier that was assigned to the message request.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.request_id = input;
             self
         }
+        /// Adds a key-value pair to `result`.
+        ///
+        /// To override the contents of this collection use [`set_result`](Self::set_result).
+        ///
+        /// <p>An object that indicates which endpoints the message was sent to, for each user. The object lists user IDs and, for each user ID, provides the endpoint IDs that the message was sent to. For each endpoint ID, it provides an EndpointMessageResult object.</p>
         pub fn result(
             mut self,
             k: impl Into<std::string::String>,
@@ -15192,6 +16211,7 @@ pub mod send_users_message_response {
             self.result = Some(hash_map);
             self
         }
+        /// <p>An object that indicates which endpoints the message was sent to, for each user. The object lists user IDs and, for each user ID, provides the endpoint IDs that the message was sent to. For each endpoint ID, it provides an EndpointMessageResult object.</p>
         pub fn set_result(
             mut self,
             input: std::option::Option<
@@ -15272,6 +16292,7 @@ pub mod endpoint_message_result {
             self.address = Some(input.into());
             self
         }
+        /// <p>The endpoint address that the message was delivered to.</p>
         pub fn set_address(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.address = input;
             self
@@ -15281,6 +16302,7 @@ pub mod endpoint_message_result {
             self.delivery_status = Some(input);
             self
         }
+        /// <p>The delivery status of the message. Possible values are:</p> <ul> <li><p>DUPLICATE - The endpoint address is a duplicate of another endpoint address. Amazon Pinpoint won't attempt to send the message again.</p></li> <li><p>OPT_OUT - The user who's associated with the endpoint has opted out of receiving messages from you. Amazon Pinpoint won't attempt to send the message again.</p></li> <li><p>PERMANENT_FAILURE - An error occurred when delivering the message to the endpoint. Amazon Pinpoint won't attempt to send the message again.</p></li>    <li><p>SUCCESSFUL - The message was successfully delivered to the endpoint.</p></li> <li><p>TEMPORARY_FAILURE - A temporary error occurred. Amazon Pinpoint won't attempt to send the message again.</p></li> <li><p>THROTTLED - Amazon Pinpoint throttled the operation to send the message to the endpoint.</p></li> <li><p>TIMEOUT - The message couldn't be sent within the timeout period.</p></li> <li><p>UNKNOWN_FAILURE - An unknown error occurred.</p></li></ul>
         pub fn set_delivery_status(
             mut self,
             input: std::option::Option<crate::model::DeliveryStatus>,
@@ -15293,6 +16315,7 @@ pub mod endpoint_message_result {
             self.message_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the message that was sent.</p>
         pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message_id = input;
             self
@@ -15302,6 +16325,7 @@ pub mod endpoint_message_result {
             self.status_code = Some(input);
             self
         }
+        /// <p>The downstream service status code for delivering the message.</p>
         pub fn set_status_code(mut self, input: std::option::Option<i32>) -> Self {
             self.status_code = input;
             self
@@ -15311,6 +16335,7 @@ pub mod endpoint_message_result {
             self.status_message = Some(input.into());
             self
         }
+        /// <p>The status message for delivering the message.</p>
         pub fn set_status_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15323,6 +16348,7 @@ pub mod endpoint_message_result {
             self.updated_token = Some(input.into());
             self
         }
+        /// <p>For push notifications that are sent through the GCM channel, specifies whether the endpoint's device registration token was updated as part of delivering the message.</p>
         pub fn set_updated_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15350,6 +16376,7 @@ impl EndpointMessageResult {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -15361,12 +16388,19 @@ impl EndpointMessageResult {
     std::hash::Hash,
 )]
 pub enum DeliveryStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Duplicate,
+    #[allow(missing_docs)] // documentation missing in model
     OptOut,
+    #[allow(missing_docs)] // documentation missing in model
     PermanentFailure,
+    #[allow(missing_docs)] // documentation missing in model
     Successful,
+    #[allow(missing_docs)] // documentation missing in model
     TemporaryFailure,
+    #[allow(missing_docs)] // documentation missing in model
     Throttled,
+    #[allow(missing_docs)] // documentation missing in model
     UnknownFailure,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -15393,6 +16427,7 @@ impl std::str::FromStr for DeliveryStatus {
     }
 }
 impl DeliveryStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DeliveryStatus::Duplicate => "DUPLICATE",
@@ -15405,6 +16440,7 @@ impl DeliveryStatus {
             DeliveryStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "DUPLICATE",
@@ -15470,6 +16506,11 @@ pub mod send_users_message_request {
         >,
     }
     impl Builder {
+        /// Adds a key-value pair to `context`.
+        ///
+        /// To override the contents of this collection use [`set_context`](Self::set_context).
+        ///
+        /// <p>A map of custom attribute-value pairs. For a push notification, Amazon Pinpoint adds these attributes to the data.pinpoint object in the body of the notification payload. Amazon Pinpoint also provides these attributes in the events that it generates for users-messages deliveries.</p>
         pub fn context(
             mut self,
             k: impl Into<std::string::String>,
@@ -15480,6 +16521,7 @@ pub mod send_users_message_request {
             self.context = Some(hash_map);
             self
         }
+        /// <p>A map of custom attribute-value pairs. For a push notification, Amazon Pinpoint adds these attributes to the data.pinpoint object in the body of the notification payload. Amazon Pinpoint also provides these attributes in the events that it generates for users-messages deliveries.</p>
         pub fn set_context(
             mut self,
             input: std::option::Option<
@@ -15497,6 +16539,7 @@ pub mod send_users_message_request {
             self.message_configuration = Some(input);
             self
         }
+        /// <p>The settings and content for the default message and any default messages that you defined for specific channels.</p>
         pub fn set_message_configuration(
             mut self,
             input: std::option::Option<crate::model::DirectMessageConfiguration>,
@@ -15512,6 +16555,7 @@ pub mod send_users_message_request {
             self.template_configuration = Some(input);
             self
         }
+        /// <p>The message template to use for the message.</p>
         pub fn set_template_configuration(
             mut self,
             input: std::option::Option<crate::model::TemplateConfiguration>,
@@ -15524,10 +16568,16 @@ pub mod send_users_message_request {
             self.trace_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for tracing the message. This identifier is visible to message recipients.</p>
         pub fn set_trace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.trace_id = input;
             self
         }
+        /// Adds a key-value pair to `users`.
+        ///
+        /// To override the contents of this collection use [`set_users`](Self::set_users).
+        ///
+        /// <p>A map that associates user IDs with <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a> objects. You can use an <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a> object to tailor the message for a user by specifying settings such as content overrides and message variables.</p>
         pub fn users(
             mut self,
             k: impl Into<std::string::String>,
@@ -15538,6 +16588,7 @@ pub mod send_users_message_request {
             self.users = Some(hash_map);
             self
         }
+        /// <p>A map that associates user IDs with <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a> objects. You can use an <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a> object to tailor the message for a user by specifying settings such as content overrides and message variables.</p>
         pub fn set_users(
             mut self,
             input: std::option::Option<
@@ -15620,6 +16671,7 @@ pub mod endpoint_send_configuration {
             self.body_override = Some(input.into());
             self
         }
+        /// <p>The body of the message. If specified, this value overrides the default message body.</p>
         pub fn set_body_override(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15627,6 +16679,11 @@ pub mod endpoint_send_configuration {
             self.body_override = input;
             self
         }
+        /// Adds a key-value pair to `context`.
+        ///
+        /// To override the contents of this collection use [`set_context`](Self::set_context).
+        ///
+        /// <p>A map of custom attributes to attach to the message for the address. Attribute names are case sensitive.</p> <p>For a push notification, this payload is added to the data.pinpoint object. For an email or text message, this payload is added to email/SMS delivery receipt event attributes.</p>
         pub fn context(
             mut self,
             k: impl Into<std::string::String>,
@@ -15637,6 +16694,7 @@ pub mod endpoint_send_configuration {
             self.context = Some(hash_map);
             self
         }
+        /// <p>A map of custom attributes to attach to the message for the address. Attribute names are case sensitive.</p> <p>For a push notification, this payload is added to the data.pinpoint object. For an email or text message, this payload is added to email/SMS delivery receipt event attributes.</p>
         pub fn set_context(
             mut self,
             input: std::option::Option<
@@ -15651,10 +16709,16 @@ pub mod endpoint_send_configuration {
             self.raw_content = Some(input.into());
             self
         }
+        /// <p>The raw, JSON-formatted string to use as the payload for the message. If specified, this value overrides all other values for the message.</p>
         pub fn set_raw_content(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.raw_content = input;
             self
         }
+        /// Adds a key-value pair to `substitutions`.
+        ///
+        /// To override the contents of this collection use [`set_substitutions`](Self::set_substitutions).
+        ///
+        /// <p>A map of the message variables to merge with the variables specified for the default message (DefaultMessage.Substitutions). The variables specified in this map take precedence over all other variables.</p>
         pub fn substitutions(
             mut self,
             k: impl Into<std::string::String>,
@@ -15665,6 +16729,7 @@ pub mod endpoint_send_configuration {
             self.substitutions = Some(hash_map);
             self
         }
+        /// <p>A map of the message variables to merge with the variables specified for the default message (DefaultMessage.Substitutions). The variables specified in this map take precedence over all other variables.</p>
         pub fn set_substitutions(
             mut self,
             input: std::option::Option<
@@ -15679,6 +16744,7 @@ pub mod endpoint_send_configuration {
             self.title_override = Some(input.into());
             self
         }
+        /// <p>The title or subject line of the message. If specified, this value overrides the default message title or subject line.</p>
         pub fn set_title_override(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15770,6 +16836,7 @@ pub mod direct_message_configuration {
             self.adm_message = Some(input);
             self
         }
+        /// <p>The default push notification message for the ADM (Amazon Device Messaging) channel. This message overrides the default push notification message (DefaultPushNotificationMessage).</p>
         pub fn set_adm_message(
             mut self,
             input: std::option::Option<crate::model::AdmMessage>,
@@ -15782,6 +16849,7 @@ pub mod direct_message_configuration {
             self.apns_message = Some(input);
             self
         }
+        /// <p>The default push notification message for the APNs (Apple Push Notification service) channel. This message overrides the default push notification message (DefaultPushNotificationMessage).</p>
         pub fn set_apns_message(
             mut self,
             input: std::option::Option<crate::model::ApnsMessage>,
@@ -15794,6 +16862,7 @@ pub mod direct_message_configuration {
             self.baidu_message = Some(input);
             self
         }
+        /// <p>The default push notification message for the Baidu (Baidu Cloud Push) channel. This message overrides the default push notification message (DefaultPushNotificationMessage).</p>
         pub fn set_baidu_message(
             mut self,
             input: std::option::Option<crate::model::BaiduMessage>,
@@ -15806,6 +16875,7 @@ pub mod direct_message_configuration {
             self.default_message = Some(input);
             self
         }
+        /// <p>The default message for all channels.</p>
         pub fn set_default_message(
             mut self,
             input: std::option::Option<crate::model::DefaultMessage>,
@@ -15821,6 +16891,7 @@ pub mod direct_message_configuration {
             self.default_push_notification_message = Some(input);
             self
         }
+        /// <p>The default push notification message for all push notification channels.</p>
         pub fn set_default_push_notification_message(
             mut self,
             input: std::option::Option<crate::model::DefaultPushNotificationMessage>,
@@ -15833,6 +16904,7 @@ pub mod direct_message_configuration {
             self.email_message = Some(input);
             self
         }
+        /// <p>The default message for the email channel. This message overrides the default message (DefaultMessage).</p>
         pub fn set_email_message(
             mut self,
             input: std::option::Option<crate::model::EmailMessage>,
@@ -15845,6 +16917,7 @@ pub mod direct_message_configuration {
             self.gcm_message = Some(input);
             self
         }
+        /// <p>The default push notification message for the GCM channel, which is used to send notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service. This message overrides the default push notification message (DefaultPushNotificationMessage).</p>
         pub fn set_gcm_message(
             mut self,
             input: std::option::Option<crate::model::GcmMessage>,
@@ -15857,6 +16930,7 @@ pub mod direct_message_configuration {
             self.sms_message = Some(input);
             self
         }
+        /// <p>The default message for the SMS channel. This message overrides the default message (DefaultMessage).</p>
         pub fn set_sms_message(
             mut self,
             input: std::option::Option<crate::model::SmsMessage>,
@@ -15869,6 +16943,7 @@ pub mod direct_message_configuration {
             self.voice_message = Some(input);
             self
         }
+        /// <p>The default message for the voice channel. This message overrides the default message (DefaultMessage).</p>
         pub fn set_voice_message(
             mut self,
             input: std::option::Option<crate::model::VoiceMessage>,
@@ -15947,6 +17022,7 @@ pub mod voice_message {
             self.body = Some(input.into());
             self
         }
+        /// <p>The text of the script to use for the voice message.</p>
         pub fn set_body(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.body = input;
             self
@@ -15956,6 +17032,7 @@ pub mod voice_message {
             self.language_code = Some(input.into());
             self
         }
+        /// <p>The code for the language to use when synthesizing the text of the message script. For a list of supported languages and the code for each one, see the <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon Polly Developer Guide</a>.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15968,6 +17045,7 @@ pub mod voice_message {
             self.origination_number = Some(input.into());
             self
         }
+        /// <p>The long code to send the voice message from. This value should be one of the dedicated long codes that's assigned to your AWS account. Although it isn't required, we recommend that you specify the long code in E.164 format, for example +12065550100, to ensure prompt and accurate delivery of the message.</p>
         pub fn set_origination_number(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -15975,6 +17053,11 @@ pub mod voice_message {
             self.origination_number = input;
             self
         }
+        /// Adds a key-value pair to `substitutions`.
+        ///
+        /// To override the contents of this collection use [`set_substitutions`](Self::set_substitutions).
+        ///
+        /// <p>The default message variables to use in the voice message. You can override the default variables with individual address variables.</p>
         pub fn substitutions(
             mut self,
             k: impl Into<std::string::String>,
@@ -15985,6 +17068,7 @@ pub mod voice_message {
             self.substitutions = Some(hash_map);
             self
         }
+        /// <p>The default message variables to use in the voice message. You can override the default variables with individual address variables.</p>
         pub fn set_substitutions(
             mut self,
             input: std::option::Option<
@@ -15999,6 +17083,7 @@ pub mod voice_message {
             self.voice_id = Some(input.into());
             self
         }
+        /// <p>The name of the voice to use when delivering the message. For a list of supported voices, see the <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon Polly Developer Guide</a>.</p>
         pub fn set_voice_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.voice_id = input;
             self
@@ -16086,6 +17171,7 @@ pub mod sms_message {
             self.body = Some(input.into());
             self
         }
+        /// <p>The body of the SMS message.</p>
         pub fn set_body(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.body = input;
             self
@@ -16095,6 +17181,7 @@ pub mod sms_message {
             self.keyword = Some(input.into());
             self
         }
+        /// <p>The SMS program name that you provided to AWS Support when you requested your dedicated number.</p>
         pub fn set_keyword(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.keyword = input;
             self
@@ -16104,6 +17191,7 @@ pub mod sms_message {
             self.media_url = Some(input.into());
             self
         }
+        /// <p>This field is reserved for future use.</p>
         pub fn set_media_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.media_url = input;
             self
@@ -16113,6 +17201,7 @@ pub mod sms_message {
             self.message_type = Some(input);
             self
         }
+        /// <p>The SMS message type. Valid values are TRANSACTIONAL (for messages that are critical or time-sensitive, such as a one-time passwords) and PROMOTIONAL (for messsages that aren't critical or time-sensitive, such as marketing messages).</p>
         pub fn set_message_type(
             mut self,
             input: std::option::Option<crate::model::MessageType>,
@@ -16125,6 +17214,7 @@ pub mod sms_message {
             self.origination_number = Some(input.into());
             self
         }
+        /// <p>The number to send the SMS message from. This value should be one of the dedicated long or short codes that's assigned to your AWS account. If you don't specify a long or short code, Amazon Pinpoint assigns a random long code to the SMS message and sends the message from that code.</p>
         pub fn set_origination_number(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16137,10 +17227,16 @@ pub mod sms_message {
             self.sender_id = Some(input.into());
             self
         }
+        /// <p>The sender ID to display as the sender of the message on a recipient's device. Support for sender IDs varies by country or region.</p>
         pub fn set_sender_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.sender_id = input;
             self
         }
+        /// Adds a key-value pair to `substitutions`.
+        ///
+        /// To override the contents of this collection use [`set_substitutions`](Self::set_substitutions).
+        ///
+        /// <p>The message variables to use in the SMS message. You can override the default variables with individual address variables.</p>
         pub fn substitutions(
             mut self,
             k: impl Into<std::string::String>,
@@ -16151,6 +17247,7 @@ pub mod sms_message {
             self.substitutions = Some(hash_map);
             self
         }
+        /// <p>The message variables to use in the SMS message. You can override the default variables with individual address variables.</p>
         pub fn set_substitutions(
             mut self,
             input: std::option::Option<
@@ -16165,6 +17262,7 @@ pub mod sms_message {
             self.entity_id = Some(input.into());
             self
         }
+        /// <p>The entity ID or Principal Entity (PE) id received from the regulatory body for sending SMS in your country.</p>
         pub fn set_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.entity_id = input;
             self
@@ -16174,6 +17272,7 @@ pub mod sms_message {
             self.template_id = Some(input.into());
             self
         }
+        /// <p>The template ID received from the regulatory body for sending SMS in your country.</p>
         pub fn set_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.template_id = input;
             self
@@ -16300,6 +17399,7 @@ pub mod gcm_message {
             self.action = Some(input);
             self
         }
+        /// <p>The action to occur if the recipient taps the push notification. Valid values are:</p> <ul><li><p>OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background. This is the default action.</p></li> <li><p>DEEP_LINK - Your app opens and displays a designated user interface in the app. This action uses the deep-linking features of the Android platform.</p></li> <li><p>URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you specify.</p></li></ul>
         pub fn set_action(mut self, input: std::option::Option<crate::model::Action>) -> Self {
             self.action = input;
             self
@@ -16309,6 +17409,7 @@ pub mod gcm_message {
             self.body = Some(input.into());
             self
         }
+        /// <p>The body of the notification message.</p>
         pub fn set_body(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.body = input;
             self
@@ -16318,10 +17419,16 @@ pub mod gcm_message {
             self.collapse_key = Some(input.into());
             self
         }
+        /// <p>An arbitrary string that identifies a group of messages that can be collapsed to ensure that only the last message is sent when delivery can resume. This helps avoid sending too many instances of the same messages when the recipient's device comes online again or becomes active.</p> <p>Amazon Pinpoint specifies this value in the Firebase Cloud Messaging (FCM) collapse_key parameter when it sends the notification message to FCM.</p>
         pub fn set_collapse_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.collapse_key = input;
             self
         }
+        /// Adds a key-value pair to `data`.
+        ///
+        /// To override the contents of this collection use [`set_data`](Self::set_data).
+        ///
+        /// <p>The JSON data payload to use for the push notification, if the notification is a silent push notification. This payload is added to the data.pinpoint.jsonBody object of the notification.</p>
         pub fn data(
             mut self,
             k: impl Into<std::string::String>,
@@ -16332,6 +17439,7 @@ pub mod gcm_message {
             self.data = Some(hash_map);
             self
         }
+        /// <p>The JSON data payload to use for the push notification, if the notification is a silent push notification. This payload is added to the data.pinpoint.jsonBody object of the notification.</p>
         pub fn set_data(
             mut self,
             input: std::option::Option<
@@ -16346,6 +17454,7 @@ pub mod gcm_message {
             self.icon_reference = Some(input.into());
             self
         }
+        /// <p>The icon image name of the asset saved in your app.</p>
         pub fn set_icon_reference(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16358,6 +17467,7 @@ pub mod gcm_message {
             self.image_icon_url = Some(input.into());
             self
         }
+        /// <p>The URL of the large icon image to display in the content view of the push notification.</p>
         pub fn set_image_icon_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16370,6 +17480,7 @@ pub mod gcm_message {
             self.image_url = Some(input.into());
             self
         }
+        /// <p>The URL of an image to display in the push notification.</p>
         pub fn set_image_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.image_url = input;
             self
@@ -16379,6 +17490,7 @@ pub mod gcm_message {
             self.priority = Some(input.into());
             self
         }
+        /// <p>para>normal - The notification might be delayed. Delivery is optimized for battery usage on the recipient's device. Use this value unless immediate delivery is required.</p>/listitem> <li><p>high - The notification is sent immediately and might wake a sleeping device.</p></li>/para> <p>Amazon Pinpoint specifies this value in the FCM priority parameter when it sends the notification message to FCM.</p> <p>The equivalent values for Apple Push Notification service (APNs) are 5, for normal, and 10, for high. If you specify an APNs value for this property, Amazon Pinpoint accepts and converts the value to the corresponding FCM value.</p>
         pub fn set_priority(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.priority = input;
             self
@@ -16388,6 +17500,7 @@ pub mod gcm_message {
             self.raw_content = Some(input.into());
             self
         }
+        /// <p>The raw, JSON-formatted string to use as the payload for the notification message. If specified, this value overrides all other content for the message.</p>
         pub fn set_raw_content(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.raw_content = input;
             self
@@ -16397,6 +17510,7 @@ pub mod gcm_message {
             self.restricted_package_name = Some(input.into());
             self
         }
+        /// <p>The package name of the application where registration tokens must match in order for the recipient to receive the message.</p>
         pub fn set_restricted_package_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16409,6 +17523,7 @@ pub mod gcm_message {
             self.silent_push = Some(input);
             self
         }
+        /// <p>Specifies whether the notification is a silent push notification, which is a push notification that doesn't display on a recipient's device. Silent push notifications can be used for cases such as updating an app's configuration or supporting phone home functionality.</p>
         pub fn set_silent_push(mut self, input: std::option::Option<bool>) -> Self {
             self.silent_push = input;
             self
@@ -16418,6 +17533,7 @@ pub mod gcm_message {
             self.small_image_icon_url = Some(input.into());
             self
         }
+        /// <p>The URL of the small icon image to display in the status bar and the content view of the push notification.</p>
         pub fn set_small_image_icon_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16430,10 +17546,16 @@ pub mod gcm_message {
             self.sound = Some(input.into());
             self
         }
+        /// <p>The sound to play when the recipient receives the push notification. You can use the default stream or specify the file name of a sound resource that's bundled in your app. On an Android platform, the sound file must reside in /res/raw/.</p>
         pub fn set_sound(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.sound = input;
             self
         }
+        /// Adds a key-value pair to `substitutions`.
+        ///
+        /// To override the contents of this collection use [`set_substitutions`](Self::set_substitutions).
+        ///
+        /// <p>The default message variables to use in the notification message. You can override the default variables with individual address variables.</p>
         pub fn substitutions(
             mut self,
             k: impl Into<std::string::String>,
@@ -16444,6 +17566,7 @@ pub mod gcm_message {
             self.substitutions = Some(hash_map);
             self
         }
+        /// <p>The default message variables to use in the notification message. You can override the default variables with individual address variables.</p>
         pub fn set_substitutions(
             mut self,
             input: std::option::Option<
@@ -16458,6 +17581,7 @@ pub mod gcm_message {
             self.time_to_live = Some(input);
             self
         }
+        /// <p>The amount of time, in seconds, that FCM should store and attempt to deliver the push notification, if the service is unable to deliver the notification the first time. If you don't specify this value, FCM defaults to the maximum value, which is 2,419,200 seconds (28 days).</p> <p>Amazon Pinpoint specifies this value in the FCM time_to_live parameter when it sends the notification message to FCM.</p>
         pub fn set_time_to_live(mut self, input: std::option::Option<i32>) -> Self {
             self.time_to_live = input;
             self
@@ -16467,6 +17591,7 @@ pub mod gcm_message {
             self.title = Some(input.into());
             self
         }
+        /// <p>The title to display above the notification message on the recipient's device.</p>
         pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.title = input;
             self
@@ -16476,6 +17601,7 @@ pub mod gcm_message {
             self.url = Some(input.into());
             self
         }
+        /// <p>The URL to open in the recipient's default mobile browser, if a recipient taps the push notification and the value of the Action property is URL.</p>
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.url = input;
             self
@@ -16570,6 +17696,7 @@ pub mod email_message {
             self.body = Some(input.into());
             self
         }
+        /// <p>The body of the email message.</p>
         pub fn set_body(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.body = input;
             self
@@ -16582,6 +17709,7 @@ pub mod email_message {
             self.feedback_forwarding_address = Some(input.into());
             self
         }
+        /// <p>The email address to forward bounces and complaints to, if feedback forwarding is enabled.</p>
         pub fn set_feedback_forwarding_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -16594,6 +17722,7 @@ pub mod email_message {
             self.from_address = Some(input.into());
             self
         }
+        /// <p>The verified email address to send the email message from. The default value is the FromAddress specified for the email channel.</p>
         pub fn set_from_address(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.from_address = input;
             self
@@ -16603,16 +17732,23 @@ pub mod email_message {
             self.raw_email = Some(input);
             self
         }
+        /// <p>The email message, represented as a raw MIME message.</p>
         pub fn set_raw_email(mut self, input: std::option::Option<crate::model::RawEmail>) -> Self {
             self.raw_email = input;
             self
         }
+        /// Appends an item to `reply_to_addresses`.
+        ///
+        /// To override the contents of this collection use [`set_reply_to_addresses`](Self::set_reply_to_addresses).
+        ///
+        /// <p>The reply-to email address(es) for the email message. If a recipient replies to the email, each reply-to address receives the reply.</p>
         pub fn reply_to_addresses(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.reply_to_addresses.unwrap_or_default();
             v.push(input.into());
             self.reply_to_addresses = Some(v);
             self
         }
+        /// <p>The reply-to email address(es) for the email message. If a recipient replies to the email, each reply-to address receives the reply.</p>
         pub fn set_reply_to_addresses(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -16625,6 +17761,7 @@ pub mod email_message {
             self.simple_email = Some(input);
             self
         }
+        /// <p>The email message, composed of a subject, a text part, and an HTML part.</p>
         pub fn set_simple_email(
             mut self,
             input: std::option::Option<crate::model::SimpleEmail>,
@@ -16632,6 +17769,11 @@ pub mod email_message {
             self.simple_email = input;
             self
         }
+        /// Adds a key-value pair to `substitutions`.
+        ///
+        /// To override the contents of this collection use [`set_substitutions`](Self::set_substitutions).
+        ///
+        /// <p>The default message variables to use in the email message. You can override the default variables with individual address variables.</p>
         pub fn substitutions(
             mut self,
             k: impl Into<std::string::String>,
@@ -16642,6 +17784,7 @@ pub mod email_message {
             self.substitutions = Some(hash_map);
             self
         }
+        /// <p>The default message variables to use in the email message. You can override the default variables with individual address variables.</p>
         pub fn set_substitutions(
             mut self,
             input: std::option::Option<
@@ -16708,6 +17851,7 @@ pub mod simple_email {
             self.html_part = Some(input);
             self
         }
+        /// <p>The body of the email message, in HTML format. We recommend using HTML format for email clients that render HTML content. You can include links, formatted text, and more in an HTML message.</p>
         pub fn set_html_part(
             mut self,
             input: std::option::Option<crate::model::SimpleEmailPart>,
@@ -16720,6 +17864,7 @@ pub mod simple_email {
             self.subject = Some(input);
             self
         }
+        /// <p>The subject line, or title, of the email.</p>
         pub fn set_subject(
             mut self,
             input: std::option::Option<crate::model::SimpleEmailPart>,
@@ -16732,6 +17877,7 @@ pub mod simple_email {
             self.text_part = Some(input);
             self
         }
+        /// <p>The body of the email message, in plain text format. We recommend using plain text format for email clients that don't render HTML content and clients that are connected to high-latency networks, such as mobile devices.</p>
         pub fn set_text_part(
             mut self,
             input: std::option::Option<crate::model::SimpleEmailPart>,
@@ -16788,6 +17934,7 @@ pub mod simple_email_part {
             self.charset = Some(input.into());
             self
         }
+        /// <p>The applicable character set for the message content.</p>
         pub fn set_charset(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.charset = input;
             self
@@ -16797,6 +17944,7 @@ pub mod simple_email_part {
             self.data = Some(input.into());
             self
         }
+        /// <p>The textual data of the message content.</p>
         pub fn set_data(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.data = input;
             self
@@ -16822,7 +17970,7 @@ impl SimpleEmailPart {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RawEmail {
     /// <p>The email message, represented as a raw MIME message. The entire message must be base64 encoded.</p>
-    pub data: std::option::Option<smithy_types::Blob>,
+    pub data: std::option::Option<aws_smithy_types::Blob>,
 }
 impl std::fmt::Debug for RawEmail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16837,15 +17985,16 @@ pub mod raw_email {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) data: std::option::Option<smithy_types::Blob>,
+        pub(crate) data: std::option::Option<aws_smithy_types::Blob>,
     }
     impl Builder {
         /// <p>The email message, represented as a raw MIME message. The entire message must be base64 encoded.</p>
-        pub fn data(mut self, input: smithy_types::Blob) -> Self {
+        pub fn data(mut self, input: aws_smithy_types::Blob) -> Self {
             self.data = Some(input);
             self
         }
-        pub fn set_data(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+        /// <p>The email message, represented as a raw MIME message. The entire message must be base64 encoded.</p>
+        pub fn set_data(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.data = input;
             self
         }
@@ -16921,6 +18070,7 @@ pub mod default_push_notification_message {
             self.action = Some(input);
             self
         }
+        /// <p>The default action to occur if a recipient taps the push notification. Valid values are:</p> <ul><li><p>OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background. This is the default action.</p></li> <li><p>DEEP_LINK - Your app opens and displays a designated user interface in the app. This setting uses the deep-linking features of the iOS and Android platforms.</p></li> <li><p>URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you specify.</p></li></ul>
         pub fn set_action(mut self, input: std::option::Option<crate::model::Action>) -> Self {
             self.action = input;
             self
@@ -16930,10 +18080,16 @@ pub mod default_push_notification_message {
             self.body = Some(input.into());
             self
         }
+        /// <p>The default body of the notification message.</p>
         pub fn set_body(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.body = input;
             self
         }
+        /// Adds a key-value pair to `data`.
+        ///
+        /// To override the contents of this collection use [`set_data`](Self::set_data).
+        ///
+        /// <p>The JSON data payload to use for the default push notification, if the notification is a silent push notification. This payload is added to the data.pinpoint.jsonBody object of the notification.</p>
         pub fn data(
             mut self,
             k: impl Into<std::string::String>,
@@ -16944,6 +18100,7 @@ pub mod default_push_notification_message {
             self.data = Some(hash_map);
             self
         }
+        /// <p>The JSON data payload to use for the default push notification, if the notification is a silent push notification. This payload is added to the data.pinpoint.jsonBody object of the notification.</p>
         pub fn set_data(
             mut self,
             input: std::option::Option<
@@ -16958,10 +18115,16 @@ pub mod default_push_notification_message {
             self.silent_push = Some(input);
             self
         }
+        /// <p>Specifies whether the default notification is a silent push notification, which is a push notification that doesn't display on a recipient's device. Silent push notifications can be used for cases such as updating an app's configuration or delivering messages to an in-app notification center.</p>
         pub fn set_silent_push(mut self, input: std::option::Option<bool>) -> Self {
             self.silent_push = input;
             self
         }
+        /// Adds a key-value pair to `substitutions`.
+        ///
+        /// To override the contents of this collection use [`set_substitutions`](Self::set_substitutions).
+        ///
+        /// <p>The default message variables to use in the notification message. You can override the default variables with individual address variables.</p>
         pub fn substitutions(
             mut self,
             k: impl Into<std::string::String>,
@@ -16972,6 +18135,7 @@ pub mod default_push_notification_message {
             self.substitutions = Some(hash_map);
             self
         }
+        /// <p>The default message variables to use in the notification message. You can override the default variables with individual address variables.</p>
         pub fn set_substitutions(
             mut self,
             input: std::option::Option<
@@ -16986,6 +18150,7 @@ pub mod default_push_notification_message {
             self.title = Some(input.into());
             self
         }
+        /// <p>The default title to display above the notification message on a recipient's device.</p>
         pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.title = input;
             self
@@ -16995,6 +18160,7 @@ pub mod default_push_notification_message {
             self.url = Some(input.into());
             self
         }
+        /// <p>The default URL to open in a recipient's default mobile browser, if a recipient taps the push notification and the value of the Action property is URL.</p>
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.url = input;
             self
@@ -17056,10 +18222,16 @@ pub mod default_message {
             self.body = Some(input.into());
             self
         }
+        /// <p>The default body of the message.</p>
         pub fn set_body(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.body = input;
             self
         }
+        /// Adds a key-value pair to `substitutions`.
+        ///
+        /// To override the contents of this collection use [`set_substitutions`](Self::set_substitutions).
+        ///
+        /// <p>The default message variables to use in the message. You can override these default variables with individual address variables.</p>
         pub fn substitutions(
             mut self,
             k: impl Into<std::string::String>,
@@ -17070,6 +18242,7 @@ pub mod default_message {
             self.substitutions = Some(hash_map);
             self
         }
+        /// <p>The default message variables to use in the message. You can override these default variables with individual address variables.</p>
         pub fn set_substitutions(
             mut self,
             input: std::option::Option<
@@ -17182,6 +18355,7 @@ pub mod baidu_message {
             self.action = Some(input);
             self
         }
+        /// <p>The action to occur if the recipient taps the push notification. Valid values are:</p> <ul><li><p>OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background. This is the default action.</p></li> <li><p>DEEP_LINK - Your app opens and displays a designated user interface in the app. This action uses the deep-linking features of the Android platform.</p></li> <li><p>URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you specify.</p></li></ul>
         pub fn set_action(mut self, input: std::option::Option<crate::model::Action>) -> Self {
             self.action = input;
             self
@@ -17191,10 +18365,16 @@ pub mod baidu_message {
             self.body = Some(input.into());
             self
         }
+        /// <p>The body of the notification message.</p>
         pub fn set_body(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.body = input;
             self
         }
+        /// Adds a key-value pair to `data`.
+        ///
+        /// To override the contents of this collection use [`set_data`](Self::set_data).
+        ///
+        /// <p>The JSON data payload to use for the push notification, if the notification is a silent push notification. This payload is added to the data.pinpoint.jsonBody object of the notification.</p>
         pub fn data(
             mut self,
             k: impl Into<std::string::String>,
@@ -17205,6 +18385,7 @@ pub mod baidu_message {
             self.data = Some(hash_map);
             self
         }
+        /// <p>The JSON data payload to use for the push notification, if the notification is a silent push notification. This payload is added to the data.pinpoint.jsonBody object of the notification.</p>
         pub fn set_data(
             mut self,
             input: std::option::Option<
@@ -17219,6 +18400,7 @@ pub mod baidu_message {
             self.icon_reference = Some(input.into());
             self
         }
+        /// <p>The icon image name of the asset saved in your app.</p>
         pub fn set_icon_reference(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -17231,6 +18413,7 @@ pub mod baidu_message {
             self.image_icon_url = Some(input.into());
             self
         }
+        /// <p>The URL of the large icon image to display in the content view of the push notification.</p>
         pub fn set_image_icon_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -17243,6 +18426,7 @@ pub mod baidu_message {
             self.image_url = Some(input.into());
             self
         }
+        /// <p>The URL of an image to display in the push notification.</p>
         pub fn set_image_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.image_url = input;
             self
@@ -17252,6 +18436,7 @@ pub mod baidu_message {
             self.raw_content = Some(input.into());
             self
         }
+        /// <p>The raw, JSON-formatted string to use as the payload for the notification message. If specified, this value overrides all other content for the message.</p>
         pub fn set_raw_content(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.raw_content = input;
             self
@@ -17261,6 +18446,7 @@ pub mod baidu_message {
             self.silent_push = Some(input);
             self
         }
+        /// <p>Specifies whether the notification is a silent push notification, which is a push notification that doesn't display on a recipient's device. Silent push notifications can be used for cases such as updating an app's configuration or supporting phone home functionality.</p>
         pub fn set_silent_push(mut self, input: std::option::Option<bool>) -> Self {
             self.silent_push = input;
             self
@@ -17270,6 +18456,7 @@ pub mod baidu_message {
             self.small_image_icon_url = Some(input.into());
             self
         }
+        /// <p>The URL of the small icon image to display in the status bar and the content view of the push notification.</p>
         pub fn set_small_image_icon_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -17282,10 +18469,16 @@ pub mod baidu_message {
             self.sound = Some(input.into());
             self
         }
+        /// <p>The sound to play when the recipient receives the push notification. You can use the default stream or specify the file name of a sound resource that's bundled in your app. On an Android platform, the sound file must reside in /res/raw/.</p>
         pub fn set_sound(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.sound = input;
             self
         }
+        /// Adds a key-value pair to `substitutions`.
+        ///
+        /// To override the contents of this collection use [`set_substitutions`](Self::set_substitutions).
+        ///
+        /// <p>The default message variables to use in the notification message. You can override the default variables with individual address variables.</p>
         pub fn substitutions(
             mut self,
             k: impl Into<std::string::String>,
@@ -17296,6 +18489,7 @@ pub mod baidu_message {
             self.substitutions = Some(hash_map);
             self
         }
+        /// <p>The default message variables to use in the notification message. You can override the default variables with individual address variables.</p>
         pub fn set_substitutions(
             mut self,
             input: std::option::Option<
@@ -17310,6 +18504,7 @@ pub mod baidu_message {
             self.time_to_live = Some(input);
             self
         }
+        /// <p>The amount of time, in seconds, that the Baidu Cloud Push service should store the message if the recipient's device is offline. The default value and maximum supported time is 604,800 seconds (7 days).</p>
         pub fn set_time_to_live(mut self, input: std::option::Option<i32>) -> Self {
             self.time_to_live = input;
             self
@@ -17319,6 +18514,7 @@ pub mod baidu_message {
             self.title = Some(input.into());
             self
         }
+        /// <p>The title to display above the notification message on the recipient's device.</p>
         pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.title = input;
             self
@@ -17328,6 +18524,7 @@ pub mod baidu_message {
             self.url = Some(input.into());
             self
         }
+        /// <p>The URL to open in the recipient's default mobile browser, if a recipient taps the push notification and the value of the Action property is URL.</p>
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.url = input;
             self
@@ -17466,6 +18663,7 @@ pub mod apns_message {
             self.apns_push_type = Some(input.into());
             self
         }
+        /// <p>The type of push notification to send. Valid values are:</p> <ul><li><p>alert - For a standard notification that's displayed on recipients' devices and prompts a recipient to interact with the notification.</p></li> <li><p>background - For a silent notification that delivers content in the background and isn't displayed on recipients' devices.</p></li> <li><p>complication - For a notification that contains update information for an app’s complication timeline.</p></li> <li><p>fileprovider - For a notification that signals changes to a File Provider extension.</p></li> <li><p>mdm - For a notification that tells managed devices to contact the MDM server.</p></li> <li><p>voip - For a notification that provides information about an incoming VoIP call.</p></li></ul> <p>Amazon Pinpoint specifies this value in the apns-push-type request header when it sends the notification message to APNs. If you don't specify a value for this property, Amazon Pinpoint sets the value to alert or background automatically, based on the value that you specify for the SilentPush or RawContent property of the message.</p> <p>For more information about the apns-push-type request header, see <a href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/sending_notification_requests_to_apns">Sending Notification Requests to APNs</a> on the Apple Developer website.</p>
         pub fn set_apns_push_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -17478,6 +18676,7 @@ pub mod apns_message {
             self.action = Some(input);
             self
         }
+        /// <p>The action to occur if the recipient taps the push notification. Valid values are:</p> <ul><li><p>OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background. This is the default action.</p></li> <li><p>DEEP_LINK - Your app opens and displays a designated user interface in the app. This setting uses the deep-linking features of the iOS platform.</p></li> <li><p>URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you specify.</p></li></ul>
         pub fn set_action(mut self, input: std::option::Option<crate::model::Action>) -> Self {
             self.action = input;
             self
@@ -17487,6 +18686,7 @@ pub mod apns_message {
             self.badge = Some(input);
             self
         }
+        /// <p>The key that indicates whether and how to modify the badge of your app's icon when the recipient receives the push notification. If this key isn't included in the dictionary, the badge doesn't change. To remove the badge, set this value to 0.</p>
         pub fn set_badge(mut self, input: std::option::Option<i32>) -> Self {
             self.badge = input;
             self
@@ -17496,6 +18696,7 @@ pub mod apns_message {
             self.body = Some(input.into());
             self
         }
+        /// <p>The body of the notification message.</p>
         pub fn set_body(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.body = input;
             self
@@ -17505,6 +18706,7 @@ pub mod apns_message {
             self.category = Some(input.into());
             self
         }
+        /// <p>The key that indicates the notification type for the push notification. This key is a value that's defined by the identifier property of one of your app's registered categories.</p>
         pub fn set_category(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.category = input;
             self
@@ -17514,10 +18716,16 @@ pub mod apns_message {
             self.collapse_id = Some(input.into());
             self
         }
+        /// <p>An arbitrary identifier that, if assigned to multiple messages, APNs uses to coalesce the messages into a single push notification instead of delivering each message individually. This value can't exceed 64 bytes.</p> <p>Amazon Pinpoint specifies this value in the apns-collapse-id request header when it sends the notification message to APNs.</p>
         pub fn set_collapse_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.collapse_id = input;
             self
         }
+        /// Adds a key-value pair to `data`.
+        ///
+        /// To override the contents of this collection use [`set_data`](Self::set_data).
+        ///
+        /// <p>The JSON payload to use for a silent push notification. This payload is added to the data.pinpoint.jsonBody object of the notification.</p>
         pub fn data(
             mut self,
             k: impl Into<std::string::String>,
@@ -17528,6 +18736,7 @@ pub mod apns_message {
             self.data = Some(hash_map);
             self
         }
+        /// <p>The JSON payload to use for a silent push notification. This payload is added to the data.pinpoint.jsonBody object of the notification.</p>
         pub fn set_data(
             mut self,
             input: std::option::Option<
@@ -17542,6 +18751,7 @@ pub mod apns_message {
             self.media_url = Some(input.into());
             self
         }
+        /// <p>The URL of an image or video to display in the push notification.</p>
         pub fn set_media_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.media_url = input;
             self
@@ -17554,6 +18764,7 @@ pub mod apns_message {
             self.preferred_authentication_method = Some(input.into());
             self
         }
+        /// <p>The authentication method that you want Amazon Pinpoint to use when authenticating with APNs, CERTIFICATE or TOKEN.</p>
         pub fn set_preferred_authentication_method(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -17566,6 +18777,7 @@ pub mod apns_message {
             self.priority = Some(input.into());
             self
         }
+        /// <p>para>5 - Low priority, the notification might be delayed, delivered as part of a group, or throttled.</p>/listitem> <li><p>10 - High priority, the notification is sent immediately. This is the default value. A high priority notification should trigger an alert, play a sound, or badge your app's icon on the recipient's device.</p></li>/para> <p>Amazon Pinpoint specifies this value in the apns-priority request header when it sends the notification message to APNs.</p> <p>The equivalent values for Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), are normal, for 5, and high, for 10. If you specify an FCM value for this property, Amazon Pinpoint accepts and converts the value to the corresponding APNs value.</p>
         pub fn set_priority(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.priority = input;
             self
@@ -17575,6 +18787,7 @@ pub mod apns_message {
             self.raw_content = Some(input.into());
             self
         }
+        /// <p>The raw, JSON-formatted string to use as the payload for the notification message. If specified, this value overrides all other content for the message.</p> <note><p>If you specify the raw content of an APNs push notification, the message payload has to include the content-available key. The value of the content-available key has to be an integer, and can only be 0 or 1. If you're sending a standard notification, set the value of content-available to 0. If you're sending a silent (background) notification, set the value of content-available to 1. Additionally, silent notification payloads can't include the alert, badge, or sound keys. For more information, see <a href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification">Generating a Remote Notification</a> and <a href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/pushing_background_updates_to_your_app">Pushing Background Updates to Your App</a> on the Apple Developer website.</p></note>
         pub fn set_raw_content(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.raw_content = input;
             self
@@ -17584,6 +18797,7 @@ pub mod apns_message {
             self.silent_push = Some(input);
             self
         }
+        /// <p>Specifies whether the notification is a silent push notification. A silent (or background) push notification isn't displayed on recipients' devices. You can use silent push notifications to make small updates to your app, or to display messages in an in-app message center.</p> <p>Amazon Pinpoint uses this property to determine the correct value for the apns-push-type request header when it sends the notification message to APNs. If you specify a value of true for this property, Amazon Pinpoint sets the value for the apns-push-type header field to background.</p> <note><p>If you specify the raw content of an APNs push notification, the message payload has to include the content-available key. For silent (background) notifications, set the value of content-available to 1. Additionally, the message payload for a silent notification can't include the alert, badge, or sound keys. For more information, see <a href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification">Generating a Remote Notification</a> and <a href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/pushing_background_updates_to_your_app">Pushing Background Updates to Your App</a> on the Apple Developer website.</p> <p>Apple has indicated that they will throttle "excessive" background notifications based on current traffic volumes. To prevent your notifications being throttled, Apple recommends that you send no more than 3 silent push notifications to each recipient per hour.</p></note>
         pub fn set_silent_push(mut self, input: std::option::Option<bool>) -> Self {
             self.silent_push = input;
             self
@@ -17593,10 +18807,16 @@ pub mod apns_message {
             self.sound = Some(input.into());
             self
         }
+        /// <p>The key for the sound to play when the recipient receives the push notification. The value for this key is the name of a sound file in your app's main bundle or the Library/Sounds folder in your app's data container. If the sound file can't be found or you specify default for the value, the system plays the default alert sound.</p>
         pub fn set_sound(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.sound = input;
             self
         }
+        /// Adds a key-value pair to `substitutions`.
+        ///
+        /// To override the contents of this collection use [`set_substitutions`](Self::set_substitutions).
+        ///
+        /// <p>The default message variables to use in the notification message. You can override these default variables with individual address variables.</p>
         pub fn substitutions(
             mut self,
             k: impl Into<std::string::String>,
@@ -17607,6 +18827,7 @@ pub mod apns_message {
             self.substitutions = Some(hash_map);
             self
         }
+        /// <p>The default message variables to use in the notification message. You can override these default variables with individual address variables.</p>
         pub fn set_substitutions(
             mut self,
             input: std::option::Option<
@@ -17621,6 +18842,7 @@ pub mod apns_message {
             self.thread_id = Some(input.into());
             self
         }
+        /// <p>The key that represents your app-specific identifier for grouping notifications. If you provide a Notification Content app extension, you can use this value to group your notifications together.</p>
         pub fn set_thread_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.thread_id = input;
             self
@@ -17630,6 +18852,7 @@ pub mod apns_message {
             self.time_to_live = Some(input);
             self
         }
+        /// <p>The amount of time, in seconds, that APNs should store and attempt to deliver the push notification, if the service is unable to deliver the notification the first time. If this value is 0, APNs treats the notification as if it expires immediately and the service doesn't store or try to deliver the notification again.</p> <p>Amazon Pinpoint specifies this value in the apns-expiration request header when it sends the notification message to APNs.</p>
         pub fn set_time_to_live(mut self, input: std::option::Option<i32>) -> Self {
             self.time_to_live = input;
             self
@@ -17639,6 +18862,7 @@ pub mod apns_message {
             self.title = Some(input.into());
             self
         }
+        /// <p>The title to display above the notification message on the recipient's device.</p>
         pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.title = input;
             self
@@ -17648,6 +18872,7 @@ pub mod apns_message {
             self.url = Some(input.into());
             self
         }
+        /// <p>The URL to open in the recipient's default mobile browser, if a recipient taps the push notification and the value of the Action property is URL.</p>
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.url = input;
             self
@@ -17779,6 +19004,7 @@ pub mod adm_message {
             self.action = Some(input);
             self
         }
+        /// <p>The action to occur if the recipient taps the push notification. Valid values are:</p> <ul><li><p>OPEN_APP - Your app opens or it becomes the foreground app if it was sent to the background. This is the default action.</p></li> <li><p>DEEP_LINK - Your app opens and displays a designated user interface in the app. This action uses the deep-linking features of the Android platform.</p></li> <li><p>URL - The default mobile browser on the recipient's device opens and loads the web page at a URL that you specify.</p></li></ul>
         pub fn set_action(mut self, input: std::option::Option<crate::model::Action>) -> Self {
             self.action = input;
             self
@@ -17788,6 +19014,7 @@ pub mod adm_message {
             self.body = Some(input.into());
             self
         }
+        /// <p>The body of the notification message.</p>
         pub fn set_body(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.body = input;
             self
@@ -17797,6 +19024,7 @@ pub mod adm_message {
             self.consolidation_key = Some(input.into());
             self
         }
+        /// <p>An arbitrary string that indicates that multiple messages are logically the same and that Amazon Device Messaging (ADM) can drop previously enqueued messages in favor of this message.</p>
         pub fn set_consolidation_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -17804,6 +19032,11 @@ pub mod adm_message {
             self.consolidation_key = input;
             self
         }
+        /// Adds a key-value pair to `data`.
+        ///
+        /// To override the contents of this collection use [`set_data`](Self::set_data).
+        ///
+        /// <p>The JSON data payload to use for the push notification, if the notification is a silent push notification. This payload is added to the data.pinpoint.jsonBody object of the notification.</p>
         pub fn data(
             mut self,
             k: impl Into<std::string::String>,
@@ -17814,6 +19047,7 @@ pub mod adm_message {
             self.data = Some(hash_map);
             self
         }
+        /// <p>The JSON data payload to use for the push notification, if the notification is a silent push notification. This payload is added to the data.pinpoint.jsonBody object of the notification.</p>
         pub fn set_data(
             mut self,
             input: std::option::Option<
@@ -17828,6 +19062,7 @@ pub mod adm_message {
             self.expires_after = Some(input.into());
             self
         }
+        /// <p>The amount of time, in seconds, that ADM should store the message if the recipient's device is offline. Amazon Pinpoint specifies this value in the expiresAfter parameter when it sends the notification message to ADM.</p>
         pub fn set_expires_after(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -17840,6 +19075,7 @@ pub mod adm_message {
             self.icon_reference = Some(input.into());
             self
         }
+        /// <p>The icon image name of the asset saved in your app.</p>
         pub fn set_icon_reference(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -17852,6 +19088,7 @@ pub mod adm_message {
             self.image_icon_url = Some(input.into());
             self
         }
+        /// <p>The URL of the large icon image to display in the content view of the push notification.</p>
         pub fn set_image_icon_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -17864,6 +19101,7 @@ pub mod adm_message {
             self.image_url = Some(input.into());
             self
         }
+        /// <p>The URL of an image to display in the push notification.</p>
         pub fn set_image_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.image_url = input;
             self
@@ -17873,6 +19111,7 @@ pub mod adm_message {
             self.md5 = Some(input.into());
             self
         }
+        /// <p>The base64-encoded, MD5 checksum of the value specified by the Data property. ADM uses the MD5 value to verify the integrity of the data.</p>
         pub fn set_md5(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.md5 = input;
             self
@@ -17882,6 +19121,7 @@ pub mod adm_message {
             self.raw_content = Some(input.into());
             self
         }
+        /// <p>The raw, JSON-formatted string to use as the payload for the notification message. If specified, this value overrides all other content for the message.</p>
         pub fn set_raw_content(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.raw_content = input;
             self
@@ -17891,6 +19131,7 @@ pub mod adm_message {
             self.silent_push = Some(input);
             self
         }
+        /// <p>Specifies whether the notification is a silent push notification, which is a push notification that doesn't display on a recipient's device. Silent push notifications can be used for cases such as updating an app's configuration or supporting phone home functionality.</p>
         pub fn set_silent_push(mut self, input: std::option::Option<bool>) -> Self {
             self.silent_push = input;
             self
@@ -17900,6 +19141,7 @@ pub mod adm_message {
             self.small_image_icon_url = Some(input.into());
             self
         }
+        /// <p>The URL of the small icon image to display in the status bar and the content view of the push notification.</p>
         pub fn set_small_image_icon_url(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -17912,10 +19154,16 @@ pub mod adm_message {
             self.sound = Some(input.into());
             self
         }
+        /// <p>The sound to play when the recipient receives the push notification. You can use the default stream or specify the file name of a sound resource that's bundled in your app. On an Android platform, the sound file must reside in /res/raw/.</p>
         pub fn set_sound(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.sound = input;
             self
         }
+        /// Adds a key-value pair to `substitutions`.
+        ///
+        /// To override the contents of this collection use [`set_substitutions`](Self::set_substitutions).
+        ///
+        /// <p>The default message variables to use in the notification message. You can override the default variables with individual address variables.</p>
         pub fn substitutions(
             mut self,
             k: impl Into<std::string::String>,
@@ -17926,6 +19174,7 @@ pub mod adm_message {
             self.substitutions = Some(hash_map);
             self
         }
+        /// <p>The default message variables to use in the notification message. You can override the default variables with individual address variables.</p>
         pub fn set_substitutions(
             mut self,
             input: std::option::Option<
@@ -17940,6 +19189,7 @@ pub mod adm_message {
             self.title = Some(input.into());
             self
         }
+        /// <p>The title to display above the notification message on the recipient's device.</p>
         pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.title = input;
             self
@@ -17949,6 +19199,7 @@ pub mod adm_message {
             self.url = Some(input.into());
             self
         }
+        /// <p>The URL to open in the recipient's default mobile browser, if a recipient taps the push notification and the value of the Action property is URL.</p>
         pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.url = input;
             self
@@ -18031,6 +19282,7 @@ pub mod message_response {
             self.application_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the application that was used to send the message.</p>
         pub fn set_application_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -18038,6 +19290,11 @@ pub mod message_response {
             self.application_id = input;
             self
         }
+        /// Adds a key-value pair to `endpoint_result`.
+        ///
+        /// To override the contents of this collection use [`set_endpoint_result`](Self::set_endpoint_result).
+        ///
+        /// <p>A map that contains a multipart response for each address that the message was sent to. In the map, the endpoint ID is the key and the result is the value.</p>
         pub fn endpoint_result(
             mut self,
             k: impl Into<std::string::String>,
@@ -18048,6 +19305,7 @@ pub mod message_response {
             self.endpoint_result = Some(hash_map);
             self
         }
+        /// <p>A map that contains a multipart response for each address that the message was sent to. In the map, the endpoint ID is the key and the result is the value.</p>
         pub fn set_endpoint_result(
             mut self,
             input: std::option::Option<
@@ -18062,10 +19320,16 @@ pub mod message_response {
             self.request_id = Some(input.into());
             self
         }
+        /// <p>The identifier for the original request that the message was delivered for.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.request_id = input;
             self
         }
+        /// Adds a key-value pair to `result`.
+        ///
+        /// To override the contents of this collection use [`set_result`](Self::set_result).
+        ///
+        /// <p>A map that contains a multipart response for each address (email address, phone number, or push notification token) that the message was sent to. In the map, the address is the key and the result is the value.</p>
         pub fn result(
             mut self,
             k: impl Into<std::string::String>,
@@ -18076,6 +19340,7 @@ pub mod message_response {
             self.result = Some(hash_map);
             self
         }
+        /// <p>A map that contains a multipart response for each address (email address, phone number, or push notification token) that the message was sent to. In the map, the address is the key and the result is the value.</p>
         pub fn set_result(
             mut self,
             input: std::option::Option<
@@ -18147,6 +19412,7 @@ pub mod message_result {
             self.delivery_status = Some(input);
             self
         }
+        /// <p>The delivery status of the message. Possible values are:</p> <ul> <li><p>DUPLICATE - The endpoint address is a duplicate of another endpoint address. Amazon Pinpoint won't attempt to send the message again.</p></li>   <li><p>OPT_OUT - The user who's associated with the endpoint address has opted out of receiving messages from you. Amazon Pinpoint won't attempt to send the message again.</p></li> <li><p>PERMANENT_FAILURE - An error occurred when delivering the message to the endpoint address. Amazon Pinpoint won't attempt to send the message again.</p></li>   <li><p>SUCCESSFUL - The message was successfully delivered to the endpoint address.</p></li> <li><p>TEMPORARY_FAILURE - A temporary error occurred. Amazon Pinpoint won't attempt to send the message again.</p></li> <li><p>THROTTLED - Amazon Pinpoint throttled the operation to send the message to the endpoint address.</p></li> <li><p>TIMEOUT - The message couldn't be sent within the timeout period.</p></li> <li><p>UNKNOWN_FAILURE - An unknown error occurred.</p></li></ul>
         pub fn set_delivery_status(
             mut self,
             input: std::option::Option<crate::model::DeliveryStatus>,
@@ -18159,6 +19425,7 @@ pub mod message_result {
             self.message_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the message that was sent.</p>
         pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message_id = input;
             self
@@ -18168,6 +19435,7 @@ pub mod message_result {
             self.status_code = Some(input);
             self
         }
+        /// <p>The downstream service status code for delivering the message.</p>
         pub fn set_status_code(mut self, input: std::option::Option<i32>) -> Self {
             self.status_code = input;
             self
@@ -18177,6 +19445,7 @@ pub mod message_result {
             self.status_message = Some(input.into());
             self
         }
+        /// <p>The status message for delivering the message.</p>
         pub fn set_status_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -18189,6 +19458,7 @@ pub mod message_result {
             self.updated_token = Some(input.into());
             self
         }
+        /// <p>For push notifications that are sent through the GCM channel, specifies whether the endpoint's device registration token was updated as part of delivering the message.</p>
         pub fn set_updated_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -18270,6 +19540,11 @@ pub mod message_request {
         pub(crate) trace_id: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Adds a key-value pair to `addresses`.
+        ///
+        /// To override the contents of this collection use [`set_addresses`](Self::set_addresses).
+        ///
+        /// <p>A map of key-value pairs, where each key is an address and each value is an <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-addressconfiguration">AddressConfiguration</a> object. An address can be a push notification token, a phone number, or an email address. You can use an <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-addressconfiguration">AddressConfiguration</a> object to tailor the message for an address by specifying settings such as content overrides and message variables.</p>
         pub fn addresses(
             mut self,
             k: impl Into<std::string::String>,
@@ -18280,6 +19555,7 @@ pub mod message_request {
             self.addresses = Some(hash_map);
             self
         }
+        /// <p>A map of key-value pairs, where each key is an address and each value is an <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-addressconfiguration">AddressConfiguration</a> object. An address can be a push notification token, a phone number, or an email address. You can use an <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-addressconfiguration">AddressConfiguration</a> object to tailor the message for an address by specifying settings such as content overrides and message variables.</p>
         pub fn set_addresses(
             mut self,
             input: std::option::Option<
@@ -18289,6 +19565,11 @@ pub mod message_request {
             self.addresses = input;
             self
         }
+        /// Adds a key-value pair to `context`.
+        ///
+        /// To override the contents of this collection use [`set_context`](Self::set_context).
+        ///
+        /// <p>A map of custom attributes to attach to the message. For a push notification, this payload is added to the data.pinpoint object. For an email or text message, this payload is added to email/SMS delivery receipt event attributes.</p>
         pub fn context(
             mut self,
             k: impl Into<std::string::String>,
@@ -18299,6 +19580,7 @@ pub mod message_request {
             self.context = Some(hash_map);
             self
         }
+        /// <p>A map of custom attributes to attach to the message. For a push notification, this payload is added to the data.pinpoint object. For an email or text message, this payload is added to email/SMS delivery receipt event attributes.</p>
         pub fn set_context(
             mut self,
             input: std::option::Option<
@@ -18308,6 +19590,11 @@ pub mod message_request {
             self.context = input;
             self
         }
+        /// Adds a key-value pair to `endpoints`.
+        ///
+        /// To override the contents of this collection use [`set_endpoints`](Self::set_endpoints).
+        ///
+        /// <p>A map of key-value pairs, where each key is an endpoint ID and each value is an <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a> object. You can use an <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a> object to tailor the message for an endpoint by specifying settings such as content overrides and message variables.</p>
         pub fn endpoints(
             mut self,
             k: impl Into<std::string::String>,
@@ -18318,6 +19605,7 @@ pub mod message_request {
             self.endpoints = Some(hash_map);
             self
         }
+        /// <p>A map of key-value pairs, where each key is an endpoint ID and each value is an <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a> object. You can use an <a href="https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration">EndpointSendConfiguration</a> object to tailor the message for an endpoint by specifying settings such as content overrides and message variables.</p>
         pub fn set_endpoints(
             mut self,
             input: std::option::Option<
@@ -18338,6 +19626,7 @@ pub mod message_request {
             self.message_configuration = Some(input);
             self
         }
+        /// <p>The settings and content for the default message and any default messages that you defined for specific channels.</p>
         pub fn set_message_configuration(
             mut self,
             input: std::option::Option<crate::model::DirectMessageConfiguration>,
@@ -18353,6 +19642,7 @@ pub mod message_request {
             self.template_configuration = Some(input);
             self
         }
+        /// <p>The message template to use for the message.</p>
         pub fn set_template_configuration(
             mut self,
             input: std::option::Option<crate::model::TemplateConfiguration>,
@@ -18365,6 +19655,7 @@ pub mod message_request {
             self.trace_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for tracing the message. This identifier is visible to message recipients.</p>
         pub fn set_trace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.trace_id = input;
             self
@@ -18444,6 +19735,7 @@ pub mod address_configuration {
             self.body_override = Some(input.into());
             self
         }
+        /// <p>The message body to use instead of the default message body. This value overrides the default message body.</p>
         pub fn set_body_override(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -18456,6 +19748,7 @@ pub mod address_configuration {
             self.channel_type = Some(input);
             self
         }
+        /// <p>The channel to use when sending the message.</p>
         pub fn set_channel_type(
             mut self,
             input: std::option::Option<crate::model::ChannelType>,
@@ -18463,6 +19756,11 @@ pub mod address_configuration {
             self.channel_type = input;
             self
         }
+        /// Adds a key-value pair to `context`.
+        ///
+        /// To override the contents of this collection use [`set_context`](Self::set_context).
+        ///
+        /// <p>An object that maps custom attributes to attributes for the address and is attached to the message. Attribute names are case sensitive.</p> <p>For a push notification, this payload is added to the data.pinpoint object. For an email or text message, this payload is added to email/SMS delivery receipt event attributes.</p>
         pub fn context(
             mut self,
             k: impl Into<std::string::String>,
@@ -18473,6 +19771,7 @@ pub mod address_configuration {
             self.context = Some(hash_map);
             self
         }
+        /// <p>An object that maps custom attributes to attributes for the address and is attached to the message. Attribute names are case sensitive.</p> <p>For a push notification, this payload is added to the data.pinpoint object. For an email or text message, this payload is added to email/SMS delivery receipt event attributes.</p>
         pub fn set_context(
             mut self,
             input: std::option::Option<
@@ -18487,10 +19786,16 @@ pub mod address_configuration {
             self.raw_content = Some(input.into());
             self
         }
+        /// <p>The raw, JSON-formatted string to use as the payload for the message. If specified, this value overrides all other values for the message.</p>
         pub fn set_raw_content(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.raw_content = input;
             self
         }
+        /// Adds a key-value pair to `substitutions`.
+        ///
+        /// To override the contents of this collection use [`set_substitutions`](Self::set_substitutions).
+        ///
+        /// <p>A map of the message variables to merge with the variables specified by properties of the DefaultMessage object. The variables specified in this map take precedence over all other variables.</p>
         pub fn substitutions(
             mut self,
             k: impl Into<std::string::String>,
@@ -18501,6 +19806,7 @@ pub mod address_configuration {
             self.substitutions = Some(hash_map);
             self
         }
+        /// <p>A map of the message variables to merge with the variables specified by properties of the DefaultMessage object. The variables specified in this map take precedence over all other variables.</p>
         pub fn set_substitutions(
             mut self,
             input: std::option::Option<
@@ -18515,6 +19821,7 @@ pub mod address_configuration {
             self.title_override = Some(input.into());
             self
         }
+        /// <p>The message title to use instead of the default message title. This value overrides the default message title.</p>
         pub fn set_title_override(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -18578,6 +19885,7 @@ pub mod attributes_resource {
             self.application_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the application.</p>
         pub fn set_application_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -18590,6 +19898,7 @@ pub mod attributes_resource {
             self.attribute_type = Some(input.into());
             self
         }
+        /// <p>The type of attribute or attributes that were removed from the endpoints. Valid values are:</p> <ul><li><p>endpoint-custom-attributes - Custom attributes that describe endpoints.</p></li> <li><p>endpoint-metric-attributes - Custom metrics that your app reports to Amazon Pinpoint for endpoints.</p></li> <li><p>endpoint-user-attributes - Custom attributes that describe users.</p></li></ul>
         pub fn set_attribute_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -18597,12 +19906,18 @@ pub mod attributes_resource {
             self.attribute_type = input;
             self
         }
+        /// Appends an item to `attributes`.
+        ///
+        /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
+        ///
+        /// <p>An array that specifies the names of the attributes that were removed from the endpoints.</p>
         pub fn attributes(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.attributes.unwrap_or_default();
             v.push(input.into());
             self.attributes = Some(v);
             self
         }
+        /// <p>An array that specifies the names of the attributes that were removed from the endpoints.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -18650,12 +19965,18 @@ pub mod update_attributes_request {
         pub(crate) blacklist: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `blacklist`.
+        ///
+        /// To override the contents of this collection use [`set_blacklist`](Self::set_blacklist).
+        ///
+        /// <p>An array of the attributes to remove from all the endpoints that are associated with the application. The array can specify the complete, exact name of each attribute to remove or it can specify a glob pattern that an attribute name must match in order for the attribute to be removed.</p>
         pub fn blacklist(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.blacklist.unwrap_or_default();
             v.push(input.into());
             self.blacklist = Some(v);
             self
         }
+        /// <p>An array of the attributes to remove from all the endpoints that are associated with the application. The array can specify the complete, exact name of each attribute to remove or it can specify a glob pattern that an attribute name must match in order for the attribute to be removed.</p>
         pub fn set_blacklist(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -18728,6 +20049,7 @@ pub mod event_stream {
             self.application_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the application to publish event data for.</p>
         pub fn set_application_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -18742,6 +20064,9 @@ pub mod event_stream {
             self.destination_stream_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the Amazon Kinesis data stream or Amazon Kinesis Data Firehose delivery stream to publish event data to.</p> <p>For a Kinesis data stream, the ARN format is: arn:aws:kinesis:<replaceable>region</replaceable>:<replaceable>account-id</replaceable>:stream/<replaceable>stream_name</replaceable>
+        /// </p> <p>For a Kinesis Data Firehose delivery stream, the ARN format is: arn:aws:firehose:<replaceable>region</replaceable>:<replaceable>account-id</replaceable>:deliverystream/<replaceable>stream_name</replaceable>
+        /// </p>
         pub fn set_destination_stream_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -18754,6 +20079,7 @@ pub mod event_stream {
             self.external_id = Some(input.into());
             self
         }
+        /// <p>(Deprecated) Your AWS account ID, which you assigned to an external ID key in an IAM trust policy. Amazon Pinpoint previously used this value to assume an IAM role when publishing event data, but we removed this requirement. We don't recommend use of external IDs for IAM roles that are assumed by Amazon Pinpoint.</p>
         pub fn set_external_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.external_id = input;
             self
@@ -18763,6 +20089,7 @@ pub mod event_stream {
             self.last_modified_date = Some(input.into());
             self
         }
+        /// <p>The date, in ISO 8601 format, when the event stream was last modified.</p>
         pub fn set_last_modified_date(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -18775,6 +20102,7 @@ pub mod event_stream {
             self.last_updated_by = Some(input.into());
             self
         }
+        /// <p>The IAM user who last modified the event stream.</p>
         pub fn set_last_updated_by(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -18787,6 +20115,7 @@ pub mod event_stream {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>The AWS Identity and Access Management (IAM) role that authorizes Amazon Pinpoint to publish event data to the stream in your AWS account.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -18847,6 +20176,9 @@ pub mod write_event_stream {
             self.destination_stream_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the Amazon Kinesis data stream or Amazon Kinesis Data Firehose delivery stream that you want to publish event data to.</p> <p>For a Kinesis data stream, the ARN format is: arn:aws:kinesis:<replaceable>region</replaceable>:<replaceable>account-id</replaceable>:stream/<replaceable>stream_name</replaceable>
+        /// </p> <p>For a Kinesis Data Firehose delivery stream, the ARN format is: arn:aws:firehose:<replaceable>region</replaceable>:<replaceable>account-id</replaceable>:deliverystream/<replaceable>stream_name</replaceable>
+        /// </p>
         pub fn set_destination_stream_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -18859,6 +20191,7 @@ pub mod write_event_stream {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>The AWS Identity and Access Management (IAM) role that authorizes Amazon Pinpoint to publish event data to the stream in your AWS account.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -18906,6 +20239,11 @@ pub mod events_response {
         >,
     }
     impl Builder {
+        /// Adds a key-value pair to `results`.
+        ///
+        /// To override the contents of this collection use [`set_results`](Self::set_results).
+        ///
+        /// <p>A map that contains a multipart response for each endpoint. For each item in this object, the endpoint ID is the key and the item response is the value. If no item response exists, the value can also be one of the following: 202, the request was processed successfully; or 400, the payload wasn't valid or required fields were missing.</p>
         pub fn results(
             mut self,
             k: impl Into<std::string::String>,
@@ -18916,6 +20254,7 @@ pub mod events_response {
             self.results = Some(hash_map);
             self
         }
+        /// <p>A map that contains a multipart response for each endpoint. For each item in this object, the endpoint ID is the key and the item response is the value. If no item response exists, the value can also be one of the following: 202, the request was processed successfully; or 400, the payload wasn't valid or required fields were missing.</p>
         pub fn set_results(
             mut self,
             input: std::option::Option<
@@ -18976,6 +20315,7 @@ pub mod item_response {
             self.endpoint_item_response = Some(input);
             self
         }
+        /// <p>The response that was received after the endpoint data was accepted.</p>
         pub fn set_endpoint_item_response(
             mut self,
             input: std::option::Option<crate::model::EndpointItemResponse>,
@@ -18983,6 +20323,11 @@ pub mod item_response {
             self.endpoint_item_response = input;
             self
         }
+        /// Adds a key-value pair to `events_item_response`.
+        ///
+        /// To override the contents of this collection use [`set_events_item_response`](Self::set_events_item_response).
+        ///
+        /// <p>A multipart response object that contains a key and a value for each event in the request. In each object, the event ID is the key and an EventItemResponse object is the value.</p>
         pub fn events_item_response(
             mut self,
             k: impl Into<std::string::String>,
@@ -18993,6 +20338,7 @@ pub mod item_response {
             self.events_item_response = Some(hash_map);
             self
         }
+        /// <p>A multipart response object that contains a key and a value for each event in the request. In each object, the event ID is the key and an EventItemResponse object is the value.</p>
         pub fn set_events_item_response(
             mut self,
             input: std::option::Option<
@@ -19050,6 +20396,7 @@ pub mod event_item_response {
             self.message = Some(input.into());
             self
         }
+        /// <p>A custom message that's returned in the response as a result of processing the event.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -19059,6 +20406,7 @@ pub mod event_item_response {
             self.status_code = Some(input);
             self
         }
+        /// <p>The status code that's returned in the response as a result of processing the event. Possible values are: 202, for events that were accepted; and, 400, for events that weren't valid.</p>
         pub fn set_status_code(mut self, input: std::option::Option<i32>) -> Self {
             self.status_code = input;
             self
@@ -19111,6 +20459,7 @@ pub mod endpoint_item_response {
             self.message = Some(input.into());
             self
         }
+        /// <p>The custom message that's returned in the response as a result of processing the endpoint data.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -19120,6 +20469,7 @@ pub mod endpoint_item_response {
             self.status_code = Some(input);
             self
         }
+        /// <p>The status code that's returned in the response as a result of processing the endpoint data.</p>
         pub fn set_status_code(mut self, input: std::option::Option<i32>) -> Self {
             self.status_code = input;
             self
@@ -19167,6 +20517,11 @@ pub mod events_request {
         >,
     }
     impl Builder {
+        /// Adds a key-value pair to `batch_item`.
+        ///
+        /// To override the contents of this collection use [`set_batch_item`](Self::set_batch_item).
+        ///
+        /// <p>The batch of events to process. For each item in a batch, the endpoint ID acts as a key that has an EventsBatch object as its value.</p>
         pub fn batch_item(
             mut self,
             k: impl Into<std::string::String>,
@@ -19177,6 +20532,7 @@ pub mod events_request {
             self.batch_item = Some(hash_map);
             self
         }
+        /// <p>The batch of events to process. For each item in a batch, the endpoint ID acts as a key that has an EventsBatch object as its value.</p>
         pub fn set_batch_item(
             mut self,
             input: std::option::Option<
@@ -19236,6 +20592,7 @@ pub mod events_batch {
             self.endpoint = Some(input);
             self
         }
+        /// <p>A set of properties and attributes that are associated with the endpoint.</p>
         pub fn set_endpoint(
             mut self,
             input: std::option::Option<crate::model::PublicEndpoint>,
@@ -19243,6 +20600,11 @@ pub mod events_batch {
             self.endpoint = input;
             self
         }
+        /// Adds a key-value pair to `events`.
+        ///
+        /// To override the contents of this collection use [`set_events`](Self::set_events).
+        ///
+        /// <p>A set of properties that are associated with the event.</p>
         pub fn events(
             mut self,
             k: impl Into<std::string::String>,
@@ -19253,6 +20615,7 @@ pub mod events_batch {
             self.events = Some(hash_map);
             self
         }
+        /// <p>A set of properties that are associated with the event.</p>
         pub fn set_events(
             mut self,
             input: std::option::Option<
@@ -19346,6 +20709,7 @@ pub mod event {
             self.app_package_name = Some(input.into());
             self
         }
+        /// <p>The package name of the app that's recording the event.</p>
         pub fn set_app_package_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19358,6 +20722,7 @@ pub mod event {
             self.app_title = Some(input.into());
             self
         }
+        /// <p>The title of the app that's recording the event.</p>
         pub fn set_app_title(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.app_title = input;
             self
@@ -19367,6 +20732,7 @@ pub mod event {
             self.app_version_code = Some(input.into());
             self
         }
+        /// <p>The version number of the app that's recording the event.</p>
         pub fn set_app_version_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19374,6 +20740,11 @@ pub mod event {
             self.app_version_code = input;
             self
         }
+        /// Adds a key-value pair to `attributes`.
+        ///
+        /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
+        ///
+        /// <p>One or more custom attributes that are associated with the event.</p>
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -19384,6 +20755,7 @@ pub mod event {
             self.attributes = Some(hash_map);
             self
         }
+        /// <p>One or more custom attributes that are associated with the event.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -19398,6 +20770,7 @@ pub mod event {
             self.client_sdk_version = Some(input.into());
             self
         }
+        /// <p>The version of the SDK that's running on the client device.</p>
         pub fn set_client_sdk_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19410,16 +20783,23 @@ pub mod event {
             self.event_type = Some(input.into());
             self
         }
+        /// <p>The name of the event.</p>
         pub fn set_event_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.event_type = input;
             self
         }
+        /// Adds a key-value pair to `metrics`.
+        ///
+        /// To override the contents of this collection use [`set_metrics`](Self::set_metrics).
+        ///
+        /// <p>One or more custom metrics that are associated with the event.</p>
         pub fn metrics(mut self, k: impl Into<std::string::String>, v: impl Into<f64>) -> Self {
             let mut hash_map = self.metrics.unwrap_or_default();
             hash_map.insert(k.into(), v.into());
             self.metrics = Some(hash_map);
             self
         }
+        /// <p>One or more custom metrics that are associated with the event.</p>
         pub fn set_metrics(
             mut self,
             input: std::option::Option<std::collections::HashMap<std::string::String, f64>>,
@@ -19432,6 +20812,7 @@ pub mod event {
             self.sdk_name = Some(input.into());
             self
         }
+        /// <p>The name of the SDK that's being used to record the event.</p>
         pub fn set_sdk_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.sdk_name = input;
             self
@@ -19441,6 +20822,7 @@ pub mod event {
             self.session = Some(input);
             self
         }
+        /// <p>Information about the session in which the event occurred.</p>
         pub fn set_session(mut self, input: std::option::Option<crate::model::Session>) -> Self {
             self.session = input;
             self
@@ -19450,6 +20832,7 @@ pub mod event {
             self.timestamp = Some(input.into());
             self
         }
+        /// <p>The date and time, in ISO 8601 format, when the event occurred.</p>
         pub fn set_timestamp(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.timestamp = input;
             self
@@ -19518,6 +20901,7 @@ pub mod session {
             self.duration = Some(input);
             self
         }
+        /// <p>The duration of the session, in milliseconds.</p>
         pub fn set_duration(mut self, input: std::option::Option<i32>) -> Self {
             self.duration = input;
             self
@@ -19527,6 +20911,7 @@ pub mod session {
             self.id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the session.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -19536,6 +20921,7 @@ pub mod session {
             self.start_timestamp = Some(input.into());
             self
         }
+        /// <p>The date and time when the session began.</p>
         pub fn set_start_timestamp(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19548,6 +20934,7 @@ pub mod session {
             self.stop_timestamp = Some(input.into());
             self
         }
+        /// <p>The date and time when the session ended.</p>
         pub fn set_stop_timestamp(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19646,10 +21033,16 @@ pub mod public_endpoint {
             self.address = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the recipient, such as a device token, email address, or mobile phone number.</p>
         pub fn set_address(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.address = input;
             self
         }
+        /// Adds a key-value pair to `attributes`.
+        ///
+        /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
+        ///
+        /// <p>One or more custom attributes that describe the endpoint by associating a name with an array of values. You can use these attributes as filter criteria when you create segments.</p>
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -19660,6 +21053,7 @@ pub mod public_endpoint {
             self.attributes = Some(hash_map);
             self
         }
+        /// <p>One or more custom attributes that describe the endpoint by associating a name with an array of values. You can use these attributes as filter criteria when you create segments.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -19674,6 +21068,7 @@ pub mod public_endpoint {
             self.channel_type = Some(input);
             self
         }
+        /// <p>The channel that's used when sending messages or push notifications to the endpoint.</p>
         pub fn set_channel_type(
             mut self,
             input: std::option::Option<crate::model::ChannelType>,
@@ -19686,6 +21081,7 @@ pub mod public_endpoint {
             self.demographic = Some(input);
             self
         }
+        /// <p>The demographic information for the endpoint, such as the time zone and platform.</p>
         pub fn set_demographic(
             mut self,
             input: std::option::Option<crate::model::EndpointDemographic>,
@@ -19698,6 +21094,7 @@ pub mod public_endpoint {
             self.effective_date = Some(input.into());
             self
         }
+        /// <p>The date and time, in ISO 8601 format, when the endpoint was last updated.</p>
         pub fn set_effective_date(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19710,6 +21107,7 @@ pub mod public_endpoint {
             self.endpoint_status = Some(input.into());
             self
         }
+        /// <p>Specifies whether to send messages or push notifications to the endpoint. Valid values are: ACTIVE, messages are sent to the endpoint; and, INACTIVE, messages aren’t sent to the endpoint.</p> <p>Amazon Pinpoint automatically sets this value to ACTIVE when you create an endpoint or update an existing endpoint. Amazon Pinpoint automatically sets this value to INACTIVE if you update another endpoint that has the same address specified by the Address property.</p>
         pub fn set_endpoint_status(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19722,6 +21120,7 @@ pub mod public_endpoint {
             self.location = Some(input);
             self
         }
+        /// <p>The geographic information for the endpoint.</p>
         pub fn set_location(
             mut self,
             input: std::option::Option<crate::model::EndpointLocation>,
@@ -19729,12 +21128,18 @@ pub mod public_endpoint {
             self.location = input;
             self
         }
+        /// Adds a key-value pair to `metrics`.
+        ///
+        /// To override the contents of this collection use [`set_metrics`](Self::set_metrics).
+        ///
+        /// <p>One or more custom metrics that your app reports to Amazon Pinpoint for the endpoint.</p>
         pub fn metrics(mut self, k: impl Into<std::string::String>, v: impl Into<f64>) -> Self {
             let mut hash_map = self.metrics.unwrap_or_default();
             hash_map.insert(k.into(), v.into());
             self.metrics = Some(hash_map);
             self
         }
+        /// <p>One or more custom metrics that your app reports to Amazon Pinpoint for the endpoint.</p>
         pub fn set_metrics(
             mut self,
             input: std::option::Option<std::collections::HashMap<std::string::String, f64>>,
@@ -19747,6 +21152,7 @@ pub mod public_endpoint {
             self.opt_out = Some(input.into());
             self
         }
+        /// <p>Specifies whether the user who's associated with the endpoint has opted out of receiving messages and push notifications from you. Possible values are: ALL, the user has opted out and doesn't want to receive any messages or push notifications; and, NONE, the user hasn't opted out and wants to receive all messages and push notifications.</p>
         pub fn set_opt_out(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.opt_out = input;
             self
@@ -19756,6 +21162,7 @@ pub mod public_endpoint {
             self.request_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier that's generated each time the endpoint is updated.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.request_id = input;
             self
@@ -19765,6 +21172,7 @@ pub mod public_endpoint {
             self.user = Some(input);
             self
         }
+        /// <p>One or more custom user attributes that your app reports to Amazon Pinpoint for the user who's associated with the endpoint.</p>
         pub fn set_user(mut self, input: std::option::Option<crate::model::EndpointUser>) -> Self {
             self.user = input;
             self
@@ -19884,6 +21292,7 @@ pub mod number_validate_response {
             self.carrier = Some(input.into());
             self
         }
+        /// <p>The carrier or service provider that the phone number is currently registered with. In some countries and regions, this value may be the carrier or service provider that the phone number was originally registered with.</p>
         pub fn set_carrier(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.carrier = input;
             self
@@ -19893,6 +21302,7 @@ pub mod number_validate_response {
             self.city = Some(input.into());
             self
         }
+        /// <p>The name of the city where the phone number was originally registered.</p>
         pub fn set_city(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.city = input;
             self
@@ -19902,6 +21312,7 @@ pub mod number_validate_response {
             self.cleansed_phone_number_e164 = Some(input.into());
             self
         }
+        /// <p>The cleansed phone number, in E.164 format, for the location where the phone number was originally registered.</p>
         pub fn set_cleansed_phone_number_e164(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19917,6 +21328,7 @@ pub mod number_validate_response {
             self.cleansed_phone_number_national = Some(input.into());
             self
         }
+        /// <p>The cleansed phone number, in the format for the location where the phone number was originally registered.</p>
         pub fn set_cleansed_phone_number_national(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19929,6 +21341,7 @@ pub mod number_validate_response {
             self.country = Some(input.into());
             self
         }
+        /// <p>The name of the country or region where the phone number was originally registered.</p>
         pub fn set_country(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.country = input;
             self
@@ -19938,6 +21351,7 @@ pub mod number_validate_response {
             self.country_code_iso2 = Some(input.into());
             self
         }
+        /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region where the phone number was originally registered.</p>
         pub fn set_country_code_iso2(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19950,6 +21364,7 @@ pub mod number_validate_response {
             self.country_code_numeric = Some(input.into());
             self
         }
+        /// <p>The numeric code for the country or region where the phone number was originally registered.</p>
         pub fn set_country_code_numeric(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19962,6 +21377,7 @@ pub mod number_validate_response {
             self.county = Some(input.into());
             self
         }
+        /// <p>The name of the county where the phone number was originally registered.</p>
         pub fn set_county(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.county = input;
             self
@@ -19971,6 +21387,7 @@ pub mod number_validate_response {
             self.original_country_code_iso2 = Some(input.into());
             self
         }
+        /// <p>The two-character code, in ISO 3166-1 alpha-2 format, that was sent in the request body.</p>
         pub fn set_original_country_code_iso2(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19983,6 +21400,7 @@ pub mod number_validate_response {
             self.original_phone_number = Some(input.into());
             self
         }
+        /// <p>The phone number that was sent in the request body.</p>
         pub fn set_original_phone_number(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -19996,6 +21414,8 @@ pub mod number_validate_response {
             self.phone_type = Some(input.into());
             self
         }
+        /// <p>The description of the phone type. Valid values are: MOBILE, LANDLINE, VOIP,
+        /// INVALID, PREPAID, and OTHER.</p>
         pub fn set_phone_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.phone_type = input;
             self
@@ -20005,6 +21425,7 @@ pub mod number_validate_response {
             self.phone_type_code = Some(input);
             self
         }
+        /// <p>The phone type, represented by an integer. Valid values are: 0 (mobile), 1 (landline), 2 (VoIP), 3 (invalid), 4 (other), and 5 (prepaid).</p>
         pub fn set_phone_type_code(mut self, input: std::option::Option<i32>) -> Self {
             self.phone_type_code = input;
             self
@@ -20014,6 +21435,7 @@ pub mod number_validate_response {
             self.timezone = Some(input.into());
             self
         }
+        /// <p>The time zone for the location where the phone number was originally registered.</p>
         pub fn set_timezone(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.timezone = input;
             self
@@ -20023,6 +21445,7 @@ pub mod number_validate_response {
             self.zip_code = Some(input.into());
             self
         }
+        /// <p>The postal or ZIP code for the location where the phone number was originally registered.</p>
         pub fn set_zip_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.zip_code = input;
             self
@@ -20087,6 +21510,7 @@ pub mod number_validate_request {
             self.iso_country_code = Some(input.into());
             self
         }
+        /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region where the phone number was originally registered.</p>
         pub fn set_iso_country_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -20099,6 +21523,7 @@ pub mod number_validate_request {
             self.phone_number = Some(input.into());
             self
         }
+        /// <p>The phone number to retrieve information about. The phone number that you provide should include a valid numeric country code. Otherwise, the operation might result in an error.</p>
         pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.phone_number = input;
             self
@@ -20154,12 +21579,18 @@ pub mod template_versions_response {
         pub(crate) request_id: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `item`.
+        ///
+        /// To override the contents of this collection use [`set_item`](Self::set_item).
+        ///
+        /// <p>An array of responses, one for each version of the message template.</p>
         pub fn item(mut self, input: impl Into<crate::model::TemplateVersionResponse>) -> Self {
             let mut v = self.item.unwrap_or_default();
             v.push(input.into());
             self.item = Some(v);
             self
         }
+        /// <p>An array of responses, one for each version of the message template.</p>
         pub fn set_item(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TemplateVersionResponse>>,
@@ -20172,6 +21603,7 @@ pub mod template_versions_response {
             self.message = Some(input.into());
             self
         }
+        /// <p>The message that's returned from the API for the request to retrieve information about all the versions of the message template.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -20181,6 +21613,7 @@ pub mod template_versions_response {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -20190,6 +21623,7 @@ pub mod template_versions_response {
             self.request_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the request to retrieve information about all the versions of the message template.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.request_id = input;
             self
@@ -20264,6 +21698,7 @@ pub mod template_version_response {
             self.creation_date = Some(input.into());
             self
         }
+        /// <p>The date, in ISO 8601 format, when the version of the message template was created.</p>
         pub fn set_creation_date(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -20276,6 +21711,7 @@ pub mod template_version_response {
             self.default_substitutions = Some(input.into());
             self
         }
+        /// <p>A JSON object that specifies the default values that are used for message variables in the version of the message template. This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding value defines the default value for that variable.</p>
         pub fn set_default_substitutions(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -20288,6 +21724,7 @@ pub mod template_version_response {
             self.last_modified_date = Some(input.into());
             self
         }
+        /// <p>The date, in ISO 8601 format, when the version of the message template was last modified.</p>
         pub fn set_last_modified_date(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -20300,6 +21737,7 @@ pub mod template_version_response {
             self.template_description = Some(input.into());
             self
         }
+        /// <p>The custom description of the version of the message template.</p>
         pub fn set_template_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -20312,6 +21750,7 @@ pub mod template_version_response {
             self.template_name = Some(input.into());
             self
         }
+        /// <p>The name of the message template.</p>
         pub fn set_template_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -20324,6 +21763,7 @@ pub mod template_version_response {
             self.template_type = Some(input.into());
             self
         }
+        /// <p>The type of channel that the message template is designed for. Possible values are: EMAIL, PUSH, SMS, and VOICE.</p>
         pub fn set_template_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -20336,6 +21776,7 @@ pub mod template_version_response {
             self.version = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the version of the message template. This value is an integer that Amazon Pinpoint automatically increments and assigns to each new version of a template.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -20388,12 +21829,18 @@ pub mod templates_response {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `item`.
+        ///
+        /// To override the contents of this collection use [`set_item`](Self::set_item).
+        ///
+        /// <p>An array of responses, one for each message template that's associated with your Amazon Pinpoint account and meets any filter criteria that you specified in the request.</p>
         pub fn item(mut self, input: impl Into<crate::model::TemplateResponse>) -> Self {
             let mut v = self.item.unwrap_or_default();
             v.push(input.into());
             self.item = Some(v);
             self
         }
+        /// <p>An array of responses, one for each message template that's associated with your Amazon Pinpoint account and meets any filter criteria that you specified in the request.</p>
         pub fn set_item(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TemplateResponse>>,
@@ -20406,6 +21853,7 @@ pub mod templates_response {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -20489,6 +21937,7 @@ pub mod template_response {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the message template. This value isn't included in a TemplateResponse object. To retrieve the ARN of a template, use the GetEmailTemplate, GetPushTemplate, GetSmsTemplate, or GetVoiceTemplate operation, depending on the type of template that you want to retrieve the ARN for.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -20498,6 +21947,7 @@ pub mod template_response {
             self.creation_date = Some(input.into());
             self
         }
+        /// <p>The date, in ISO 8601 format, when the message template was created.</p>
         pub fn set_creation_date(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -20510,6 +21960,7 @@ pub mod template_response {
             self.default_substitutions = Some(input.into());
             self
         }
+        /// <p>The JSON object that specifies the default values that are used for message variables in the message template. This object isn't included in a TemplateResponse object. To retrieve this object for a template, use the GetEmailTemplate, GetPushTemplate, GetSmsTemplate, or GetVoiceTemplate operation, depending on the type of template that you want to retrieve the object for.</p>
         pub fn set_default_substitutions(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -20522,6 +21973,7 @@ pub mod template_response {
             self.last_modified_date = Some(input.into());
             self
         }
+        /// <p>The date, in ISO 8601 format, when the message template was last modified.</p>
         pub fn set_last_modified_date(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -20529,6 +21981,11 @@ pub mod template_response {
             self.last_modified_date = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A map of key-value pairs that identifies the tags that are associated with the message template. This object isn't included in a TemplateResponse object. To retrieve this object for a template, use the GetEmailTemplate, GetPushTemplate, GetSmsTemplate, or GetVoiceTemplate operation, depending on the type of template that you want to retrieve the object for.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -20539,6 +21996,7 @@ pub mod template_response {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>A map of key-value pairs that identifies the tags that are associated with the message template. This object isn't included in a TemplateResponse object. To retrieve this object for a template, use the GetEmailTemplate, GetPushTemplate, GetSmsTemplate, or GetVoiceTemplate operation, depending on the type of template that you want to retrieve the object for.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -20553,6 +22011,7 @@ pub mod template_response {
             self.template_description = Some(input.into());
             self
         }
+        /// <p>The custom description of the message template. This value isn't included in a TemplateResponse object. To retrieve the description of a template, use the GetEmailTemplate, GetPushTemplate, GetSmsTemplate, or GetVoiceTemplate operation, depending on the type of template that you want to retrieve the description for.</p>
         pub fn set_template_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -20565,6 +22024,7 @@ pub mod template_response {
             self.template_name = Some(input.into());
             self
         }
+        /// <p>The name of the message template.</p>
         pub fn set_template_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -20577,6 +22037,7 @@ pub mod template_response {
             self.template_type = Some(input);
             self
         }
+        /// <p>The type of channel that the message template is designed for. Possible values are: EMAIL, PUSH, SMS, and VOICE.</p>
         pub fn set_template_type(
             mut self,
             input: std::option::Option<crate::model::TemplateType>,
@@ -20589,6 +22050,7 @@ pub mod template_response {
             self.version = Some(input.into());
             self
         }
+        /// <p>The unique identifier, as an integer, for the active version of the message template.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -20616,6 +22078,7 @@ impl TemplateResponse {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -20627,10 +22090,15 @@ impl TemplateResponse {
     std::hash::Hash,
 )]
 pub enum TemplateType {
+    #[allow(missing_docs)] // documentation missing in model
     Email,
+    #[allow(missing_docs)] // documentation missing in model
     Inapp,
+    #[allow(missing_docs)] // documentation missing in model
     Push,
+    #[allow(missing_docs)] // documentation missing in model
     Sms,
+    #[allow(missing_docs)] // documentation missing in model
     Voice,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -20655,6 +22123,7 @@ impl std::str::FromStr for TemplateType {
     }
 }
 impl TemplateType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TemplateType::Email => "EMAIL",
@@ -20665,6 +22134,7 @@ impl TemplateType {
             TemplateType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["EMAIL", "INAPP", "PUSH", "SMS", "VOICE"]
     }
@@ -20702,12 +22172,18 @@ pub mod journeys_response {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `item`.
+        ///
+        /// To override the contents of this collection use [`set_item`](Self::set_item).
+        ///
+        /// <p>An array of responses, one for each journey that's associated with the application.</p>
         pub fn item(mut self, input: impl Into<crate::model::JourneyResponse>) -> Self {
             let mut v = self.item.unwrap_or_default();
             v.push(input.into());
             self.item = Some(v);
             self
         }
+        /// <p>An array of responses, one for each journey that's associated with the application.</p>
         pub fn set_item(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::JourneyResponse>>,
@@ -20720,6 +22196,7 @@ pub mod journeys_response {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -20815,6 +22292,7 @@ pub mod voice_template_response {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the message template.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -20824,6 +22302,7 @@ pub mod voice_template_response {
             self.body = Some(input.into());
             self
         }
+        /// <p>The text of the script that's used in messages that are based on the message template, in plain text format.</p>
         pub fn set_body(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.body = input;
             self
@@ -20833,6 +22312,7 @@ pub mod voice_template_response {
             self.creation_date = Some(input.into());
             self
         }
+        /// <p>The date, in ISO 8601 format, when the message template was created.</p>
         pub fn set_creation_date(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -20845,6 +22325,7 @@ pub mod voice_template_response {
             self.default_substitutions = Some(input.into());
             self
         }
+        /// <p>The JSON object that specifies the default values that are used for message variables in the message template. This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding value defines the default value for that variable.</p>
         pub fn set_default_substitutions(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -20857,6 +22338,7 @@ pub mod voice_template_response {
             self.language_code = Some(input.into());
             self
         }
+        /// <p>The code for the language that's used when synthesizing the text of the script in messages that are based on the message template. For a list of supported languages and the code for each one, see the <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon Polly Developer Guide</a>.</p>
         pub fn set_language_code(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -20869,6 +22351,7 @@ pub mod voice_template_response {
             self.last_modified_date = Some(input.into());
             self
         }
+        /// <p>The date, in ISO 8601 format, when the message template was last modified.</p>
         pub fn set_last_modified_date(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -20876,6 +22359,11 @@ pub mod voice_template_response {
             self.last_modified_date = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A string-to-string map of key-value pairs that identifies the tags that are associated with the message template. Each tag consists of a required tag key and an associated tag value.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -20886,6 +22374,7 @@ pub mod voice_template_response {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>A string-to-string map of key-value pairs that identifies the tags that are associated with the message template. Each tag consists of a required tag key and an associated tag value.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -20900,6 +22389,7 @@ pub mod voice_template_response {
             self.template_description = Some(input.into());
             self
         }
+        /// <p>The custom description of the message template.</p>
         pub fn set_template_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -20912,6 +22402,7 @@ pub mod voice_template_response {
             self.template_name = Some(input.into());
             self
         }
+        /// <p>The name of the message template.</p>
         pub fn set_template_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -20924,6 +22415,7 @@ pub mod voice_template_response {
             self.template_type = Some(input);
             self
         }
+        /// <p>The type of channel that the message template is designed for. For a voice template, this value is VOICE.</p>
         pub fn set_template_type(
             mut self,
             input: std::option::Option<crate::model::TemplateType>,
@@ -20936,6 +22428,7 @@ pub mod voice_template_response {
             self.version = Some(input.into());
             self
         }
+        /// <p>The unique identifier, as an integer, for the active version of the message template, or the version of the template that you specified by using the version parameter in your request.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -20945,6 +22438,7 @@ pub mod voice_template_response {
             self.voice_id = Some(input.into());
             self
         }
+        /// <p>The name of the voice that's used when delivering messages that are based on the message template. For a list of supported voices, see the <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon Polly Developer Guide</a>.</p>
         pub fn set_voice_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.voice_id = input;
             self
@@ -20998,12 +22492,18 @@ pub mod endpoints_response {
         pub(crate) item: std::option::Option<std::vec::Vec<crate::model::EndpointResponse>>,
     }
     impl Builder {
+        /// Appends an item to `item`.
+        ///
+        /// To override the contents of this collection use [`set_item`](Self::set_item).
+        ///
+        /// <p>An array of responses, one for each endpoint that's associated with the user ID.</p>
         pub fn item(mut self, input: impl Into<crate::model::EndpointResponse>) -> Self {
             let mut v = self.item.unwrap_or_default();
             v.push(input.into());
             self.item = Some(v);
             self
         }
+        /// <p>An array of responses, one for each endpoint that's associated with the user ID.</p>
         pub fn set_item(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EndpointResponse>>,
@@ -21113,6 +22613,7 @@ pub mod endpoint_response {
             self.address = Some(input.into());
             self
         }
+        /// <p>The destination address for messages or push notifications that you send to the endpoint. The address varies by channel. For example, the address for a push-notification channel is typically the token provided by a push notification service, such as an Apple Push Notification service (APNs) device token or a Firebase Cloud Messaging (FCM) registration token. The address for the SMS channel is a phone number in E.164 format, such as +12065550100. The address for the email channel is an email address.</p>
         pub fn set_address(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.address = input;
             self
@@ -21122,6 +22623,7 @@ pub mod endpoint_response {
             self.application_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the application that's associated with the endpoint.</p>
         pub fn set_application_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -21129,6 +22631,11 @@ pub mod endpoint_response {
             self.application_id = input;
             self
         }
+        /// Adds a key-value pair to `attributes`.
+        ///
+        /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
+        ///
+        /// <p>One or more custom attributes that describe the endpoint by associating a name with an array of values. For example, the value of a custom attribute named Interests might be: ["Science", "Music", "Travel"]. You can use these attributes as filter criteria when you create segments.</p>
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -21139,6 +22646,7 @@ pub mod endpoint_response {
             self.attributes = Some(hash_map);
             self
         }
+        /// <p>One or more custom attributes that describe the endpoint by associating a name with an array of values. For example, the value of a custom attribute named Interests might be: ["Science", "Music", "Travel"]. You can use these attributes as filter criteria when you create segments.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -21153,6 +22661,7 @@ pub mod endpoint_response {
             self.channel_type = Some(input);
             self
         }
+        /// <p>The channel that's used when sending messages or push notifications to the endpoint.</p>
         pub fn set_channel_type(
             mut self,
             input: std::option::Option<crate::model::ChannelType>,
@@ -21165,6 +22674,7 @@ pub mod endpoint_response {
             self.cohort_id = Some(input.into());
             self
         }
+        /// <p>A number from 0-99 that represents the cohort that the endpoint is assigned to. Endpoints are grouped into cohorts randomly, and each cohort contains approximately 1 percent of the endpoints for an application. Amazon Pinpoint assigns cohorts to the holdout or treatment allocations for campaigns.</p>
         pub fn set_cohort_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cohort_id = input;
             self
@@ -21174,6 +22684,7 @@ pub mod endpoint_response {
             self.creation_date = Some(input.into());
             self
         }
+        /// <p>The date and time, in ISO 8601 format, when the endpoint was created.</p>
         pub fn set_creation_date(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -21186,6 +22697,7 @@ pub mod endpoint_response {
             self.demographic = Some(input);
             self
         }
+        /// <p>The demographic information for the endpoint, such as the time zone and platform.</p>
         pub fn set_demographic(
             mut self,
             input: std::option::Option<crate::model::EndpointDemographic>,
@@ -21198,6 +22710,7 @@ pub mod endpoint_response {
             self.effective_date = Some(input.into());
             self
         }
+        /// <p>The date and time, in ISO 8601 format, when the endpoint was last updated.</p>
         pub fn set_effective_date(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -21210,6 +22723,7 @@ pub mod endpoint_response {
             self.endpoint_status = Some(input.into());
             self
         }
+        /// <p>Specifies whether messages or push notifications are sent to the endpoint. Possible values are: ACTIVE, messages are sent to the endpoint; and, INACTIVE, messages aren’t sent to the endpoint.</p> <p>Amazon Pinpoint automatically sets this value to ACTIVE when you create an endpoint or update an existing endpoint. Amazon Pinpoint automatically sets this value to INACTIVE if you update another endpoint that has the same address specified by the Address property.</p>
         pub fn set_endpoint_status(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -21222,6 +22736,7 @@ pub mod endpoint_response {
             self.id = Some(input.into());
             self
         }
+        /// <p>The unique identifier that you assigned to the endpoint. The identifier should be a globally unique identifier (GUID) to ensure that it doesn't conflict with other endpoint identifiers that are associated with the application.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -21231,6 +22746,7 @@ pub mod endpoint_response {
             self.location = Some(input);
             self
         }
+        /// <p>The geographic information for the endpoint.</p>
         pub fn set_location(
             mut self,
             input: std::option::Option<crate::model::EndpointLocation>,
@@ -21238,12 +22754,18 @@ pub mod endpoint_response {
             self.location = input;
             self
         }
+        /// Adds a key-value pair to `metrics`.
+        ///
+        /// To override the contents of this collection use [`set_metrics`](Self::set_metrics).
+        ///
+        /// <p>One or more custom metrics that your app reports to Amazon Pinpoint for the endpoint.</p>
         pub fn metrics(mut self, k: impl Into<std::string::String>, v: impl Into<f64>) -> Self {
             let mut hash_map = self.metrics.unwrap_or_default();
             hash_map.insert(k.into(), v.into());
             self.metrics = Some(hash_map);
             self
         }
+        /// <p>One or more custom metrics that your app reports to Amazon Pinpoint for the endpoint.</p>
         pub fn set_metrics(
             mut self,
             input: std::option::Option<std::collections::HashMap<std::string::String, f64>>,
@@ -21256,6 +22778,7 @@ pub mod endpoint_response {
             self.opt_out = Some(input.into());
             self
         }
+        /// <p>Specifies whether the user who's associated with the endpoint has opted out of receiving messages and push notifications from you. Possible values are: ALL, the user has opted out and doesn't want to receive any messages or push notifications; and, NONE, the user hasn't opted out and wants to receive all messages and push notifications.</p>
         pub fn set_opt_out(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.opt_out = input;
             self
@@ -21265,6 +22788,7 @@ pub mod endpoint_response {
             self.request_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the most recent request to update the endpoint.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.request_id = input;
             self
@@ -21274,6 +22798,7 @@ pub mod endpoint_response {
             self.user = Some(input);
             self
         }
+        /// <p>One or more custom user attributes that your app reports to Amazon Pinpoint for the user who's associated with the endpoint.</p>
         pub fn set_user(mut self, input: std::option::Option<crate::model::EndpointUser>) -> Self {
             self.user = input;
             self
@@ -21378,6 +22903,7 @@ pub mod sms_template_response {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the message template.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -21387,6 +22913,7 @@ pub mod sms_template_response {
             self.body = Some(input.into());
             self
         }
+        /// <p>The message body that's used in text messages that are based on the message template.</p>
         pub fn set_body(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.body = input;
             self
@@ -21396,6 +22923,7 @@ pub mod sms_template_response {
             self.creation_date = Some(input.into());
             self
         }
+        /// <p>The date, in ISO 8601 format, when the message template was created.</p>
         pub fn set_creation_date(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -21408,6 +22936,7 @@ pub mod sms_template_response {
             self.default_substitutions = Some(input.into());
             self
         }
+        /// <p>The JSON object that specifies the default values that are used for message variables in the message template. This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding value defines the default value for that variable.</p>
         pub fn set_default_substitutions(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -21420,6 +22949,7 @@ pub mod sms_template_response {
             self.last_modified_date = Some(input.into());
             self
         }
+        /// <p>The date, in ISO 8601 format, when the message template was last modified.</p>
         pub fn set_last_modified_date(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -21432,6 +22962,7 @@ pub mod sms_template_response {
             self.recommender_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the recommender model that's used by the message template.</p>
         pub fn set_recommender_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -21439,6 +22970,11 @@ pub mod sms_template_response {
             self.recommender_id = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A string-to-string map of key-value pairs that identifies the tags that are associated with the message template. Each tag consists of a required tag key and an associated tag value.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -21449,6 +22985,7 @@ pub mod sms_template_response {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>A string-to-string map of key-value pairs that identifies the tags that are associated with the message template. Each tag consists of a required tag key and an associated tag value.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -21463,6 +23000,7 @@ pub mod sms_template_response {
             self.template_description = Some(input.into());
             self
         }
+        /// <p>The custom description of the message template.</p>
         pub fn set_template_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -21475,6 +23013,7 @@ pub mod sms_template_response {
             self.template_name = Some(input.into());
             self
         }
+        /// <p>The name of the message template.</p>
         pub fn set_template_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -21487,6 +23026,7 @@ pub mod sms_template_response {
             self.template_type = Some(input);
             self
         }
+        /// <p>The type of channel that the message template is designed for. For an SMS template, this value is SMS.</p>
         pub fn set_template_type(
             mut self,
             input: std::option::Option<crate::model::TemplateType>,
@@ -21499,6 +23039,7 @@ pub mod sms_template_response {
             self.version = Some(input.into());
             self
         }
+        /// <p>The unique identifier, as an integer, for the active version of the message template, or the version of the template that you specified by using the version parameter in your request.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -21555,12 +23096,18 @@ pub mod segments_response {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `item`.
+        ///
+        /// To override the contents of this collection use [`set_item`](Self::set_item).
+        ///
+        /// <p>An array of responses, one for each segment that's associated with the application (Segments resource) or each version of a segment that's associated with the application (Segment Versions resource).</p>
         pub fn item(mut self, input: impl Into<crate::model::SegmentResponse>) -> Self {
             let mut v = self.item.unwrap_or_default();
             v.push(input.into());
             self.item = Some(v);
             self
         }
+        /// <p>An array of responses, one for each segment that's associated with the application (Segments resource) or each version of a segment that's associated with the application (Segment Versions resource).</p>
         pub fn set_item(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::SegmentResponse>>,
@@ -21573,6 +23120,7 @@ pub mod segments_response {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -21620,12 +23168,18 @@ pub mod import_jobs_response {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `item`.
+        ///
+        /// To override the contents of this collection use [`set_item`](Self::set_item).
+        ///
+        /// <p>An array of responses, one for each import job that's associated with the application (Import Jobs resource) or segment (Segment Import Jobs resource).</p>
         pub fn item(mut self, input: impl Into<crate::model::ImportJobResponse>) -> Self {
             let mut v = self.item.unwrap_or_default();
             v.push(input.into());
             self.item = Some(v);
             self
         }
+        /// <p>An array of responses, one for each import job that's associated with the application (Import Jobs resource) or segment (Segment Import Jobs resource).</p>
         pub fn set_item(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ImportJobResponse>>,
@@ -21638,6 +23192,7 @@ pub mod import_jobs_response {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -21734,6 +23289,7 @@ pub mod import_job_response {
             self.application_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the application that's associated with the import job.</p>
         pub fn set_application_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -21746,6 +23302,7 @@ pub mod import_job_response {
             self.completed_pieces = Some(input);
             self
         }
+        /// <p>The number of pieces that were processed successfully (completed) by the import job, as of the time of the request.</p>
         pub fn set_completed_pieces(mut self, input: std::option::Option<i32>) -> Self {
             self.completed_pieces = input;
             self
@@ -21755,6 +23312,7 @@ pub mod import_job_response {
             self.completion_date = Some(input.into());
             self
         }
+        /// <p>The date, in ISO 8601 format, when the import job was completed.</p>
         pub fn set_completion_date(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -21767,6 +23325,7 @@ pub mod import_job_response {
             self.creation_date = Some(input.into());
             self
         }
+        /// <p>The date, in ISO 8601 format, when the import job was created.</p>
         pub fn set_creation_date(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -21779,6 +23338,7 @@ pub mod import_job_response {
             self.definition = Some(input);
             self
         }
+        /// <p>The resource settings that apply to the import job.</p>
         pub fn set_definition(
             mut self,
             input: std::option::Option<crate::model::ImportJobResource>,
@@ -21791,16 +23351,23 @@ pub mod import_job_response {
             self.failed_pieces = Some(input);
             self
         }
+        /// <p>The number of pieces that weren't processed successfully (failed) by the import job, as of the time of the request.</p>
         pub fn set_failed_pieces(mut self, input: std::option::Option<i32>) -> Self {
             self.failed_pieces = input;
             self
         }
+        /// Appends an item to `failures`.
+        ///
+        /// To override the contents of this collection use [`set_failures`](Self::set_failures).
+        ///
+        /// <p>An array of entries, one for each of the first 100 entries that weren't processed successfully (failed) by the import job, if any.</p>
         pub fn failures(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.failures.unwrap_or_default();
             v.push(input.into());
             self.failures = Some(v);
             self
         }
+        /// <p>An array of entries, one for each of the first 100 entries that weren't processed successfully (failed) by the import job, if any.</p>
         pub fn set_failures(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -21813,6 +23380,7 @@ pub mod import_job_response {
             self.id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the import job.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -21822,6 +23390,7 @@ pub mod import_job_response {
             self.job_status = Some(input);
             self
         }
+        /// <p>The status of the import job. The job status is FAILED if Amazon Pinpoint wasn't able to process one or more pieces in the job.</p>
         pub fn set_job_status(
             mut self,
             input: std::option::Option<crate::model::JobStatus>,
@@ -21834,6 +23403,7 @@ pub mod import_job_response {
             self.total_failures = Some(input);
             self
         }
+        /// <p>The total number of endpoint definitions that weren't processed successfully (failed) by the import job, typically because an error, such as a syntax error, occurred.</p>
         pub fn set_total_failures(mut self, input: std::option::Option<i32>) -> Self {
             self.total_failures = input;
             self
@@ -21843,6 +23413,7 @@ pub mod import_job_response {
             self.total_pieces = Some(input);
             self
         }
+        /// <p>The total number of pieces that must be processed to complete the import job. Each piece consists of an approximately equal portion of the endpoint definitions that are part of the import job.</p>
         pub fn set_total_pieces(mut self, input: std::option::Option<i32>) -> Self {
             self.total_pieces = input;
             self
@@ -21852,6 +23423,7 @@ pub mod import_job_response {
             self.total_processed = Some(input);
             self
         }
+        /// <p>The total number of endpoint definitions that were processed by the import job.</p>
         pub fn set_total_processed(mut self, input: std::option::Option<i32>) -> Self {
             self.total_processed = input;
             self
@@ -21861,6 +23433,7 @@ pub mod import_job_response {
             self.r#type = Some(input.into());
             self
         }
+        /// <p>The job type. This value is IMPORT for import jobs.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
@@ -21892,6 +23465,7 @@ impl ImportJobResponse {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -21903,14 +23477,23 @@ impl ImportJobResponse {
     std::hash::Hash,
 )]
 pub enum JobStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Completed,
+    #[allow(missing_docs)] // documentation missing in model
     Completing,
+    #[allow(missing_docs)] // documentation missing in model
     Created,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Failing,
+    #[allow(missing_docs)] // documentation missing in model
     Initializing,
+    #[allow(missing_docs)] // documentation missing in model
     PendingJob,
+    #[allow(missing_docs)] // documentation missing in model
     PreparingForInitialization,
+    #[allow(missing_docs)] // documentation missing in model
     Processing,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -21939,6 +23522,7 @@ impl std::str::FromStr for JobStatus {
     }
 }
 impl JobStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             JobStatus::Completed => "COMPLETED",
@@ -21953,6 +23537,7 @@ impl JobStatus {
             JobStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "COMPLETED",
@@ -22029,6 +23614,7 @@ pub mod import_job_resource {
             self.define_segment = Some(input);
             self
         }
+        /// <p>Specifies whether the import job creates a segment that contains the endpoints, when the endpoint definitions are imported.</p>
         pub fn set_define_segment(mut self, input: std::option::Option<bool>) -> Self {
             self.define_segment = input;
             self
@@ -22038,6 +23624,7 @@ pub mod import_job_resource {
             self.external_id = Some(input.into());
             self
         }
+        /// <p>(Deprecated) Your AWS account ID, which you assigned to an external ID key in an IAM trust policy. Amazon Pinpoint previously used this value to assume an IAM role when importing endpoint definitions, but we removed this requirement. We don't recommend use of external IDs for IAM roles that are assumed by Amazon Pinpoint.</p>
         pub fn set_external_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.external_id = input;
             self
@@ -22047,6 +23634,7 @@ pub mod import_job_resource {
             self.format = Some(input);
             self
         }
+        /// <p>The format of the files that contain the endpoint definitions to import. Valid values are: CSV, for comma-separated values format; and, JSON, for newline-delimited JSON format.</p> <p>If the files are stored in an Amazon S3 location and that location contains multiple files that use different formats, Amazon Pinpoint imports data only from the files that use the specified format.</p>
         pub fn set_format(mut self, input: std::option::Option<crate::model::Format>) -> Self {
             self.format = input;
             self
@@ -22056,6 +23644,7 @@ pub mod import_job_resource {
             self.register_endpoints = Some(input);
             self
         }
+        /// <p>Specifies whether the import job registers the endpoints with Amazon Pinpoint, when the endpoint definitions are imported.</p>
         pub fn set_register_endpoints(mut self, input: std::option::Option<bool>) -> Self {
             self.register_endpoints = input;
             self
@@ -22065,6 +23654,7 @@ pub mod import_job_resource {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that authorizes Amazon Pinpoint to access the Amazon S3 location to import endpoint definitions from.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -22074,6 +23664,7 @@ pub mod import_job_resource {
             self.s3_url = Some(input.into());
             self
         }
+        /// <p>The URL of the Amazon Simple Storage Service (Amazon S3) bucket that contains the endpoint definitions to import. This location can be a folder or a single file. If the location is a folder, Amazon Pinpoint imports endpoint definitions from the files in this location, including any subfolders that the folder contains.</p> <p>The URL should be in the following format: s3://<replaceable>bucket-name</replaceable>/<replaceable>folder-name</replaceable>/<replaceable>file-name</replaceable>. The location can end with the key for an individual object or a prefix that qualifies multiple objects.</p>
         pub fn set_s3_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.s3_url = input;
             self
@@ -22083,6 +23674,7 @@ pub mod import_job_resource {
             self.segment_id = Some(input.into());
             self
         }
+        /// <p>The identifier for the segment that the import job updates or adds endpoint definitions to, if the import job updates an existing segment.</p>
         pub fn set_segment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.segment_id = input;
             self
@@ -22092,6 +23684,7 @@ pub mod import_job_resource {
             self.segment_name = Some(input.into());
             self
         }
+        /// <p>The custom name for the segment that's created by the import job, if the value of the DefineSegment property is true.</p>
         pub fn set_segment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.segment_name = input;
             self
@@ -22145,12 +23738,18 @@ pub mod export_jobs_response {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `item`.
+        ///
+        /// To override the contents of this collection use [`set_item`](Self::set_item).
+        ///
+        /// <p>An array of responses, one for each export job that's associated with the application (Export Jobs resource) or segment (Segment Export Jobs resource).</p>
         pub fn item(mut self, input: impl Into<crate::model::ExportJobResponse>) -> Self {
             let mut v = self.item.unwrap_or_default();
             v.push(input.into());
             self.item = Some(v);
             self
         }
+        /// <p>An array of responses, one for each export job that's associated with the application (Export Jobs resource) or segment (Segment Export Jobs resource).</p>
         pub fn set_item(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ExportJobResponse>>,
@@ -22163,6 +23762,7 @@ pub mod export_jobs_response {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -22259,6 +23859,7 @@ pub mod export_job_response {
             self.application_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the application that's associated with the export job.</p>
         pub fn set_application_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -22271,6 +23872,7 @@ pub mod export_job_response {
             self.completed_pieces = Some(input);
             self
         }
+        /// <p>The number of pieces that were processed successfully (completed) by the export job, as of the time of the request.</p>
         pub fn set_completed_pieces(mut self, input: std::option::Option<i32>) -> Self {
             self.completed_pieces = input;
             self
@@ -22280,6 +23882,7 @@ pub mod export_job_response {
             self.completion_date = Some(input.into());
             self
         }
+        /// <p>The date, in ISO 8601 format, when the export job was completed.</p>
         pub fn set_completion_date(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -22292,6 +23895,7 @@ pub mod export_job_response {
             self.creation_date = Some(input.into());
             self
         }
+        /// <p>The date, in ISO 8601 format, when the export job was created.</p>
         pub fn set_creation_date(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -22304,6 +23908,7 @@ pub mod export_job_response {
             self.definition = Some(input);
             self
         }
+        /// <p>The resource settings that apply to the export job.</p>
         pub fn set_definition(
             mut self,
             input: std::option::Option<crate::model::ExportJobResource>,
@@ -22316,16 +23921,23 @@ pub mod export_job_response {
             self.failed_pieces = Some(input);
             self
         }
+        /// <p>The number of pieces that weren't processed successfully (failed) by the export job, as of the time of the request.</p>
         pub fn set_failed_pieces(mut self, input: std::option::Option<i32>) -> Self {
             self.failed_pieces = input;
             self
         }
+        /// Appends an item to `failures`.
+        ///
+        /// To override the contents of this collection use [`set_failures`](Self::set_failures).
+        ///
+        /// <p>An array of entries, one for each of the first 100 entries that weren't processed successfully (failed) by the export job, if any.</p>
         pub fn failures(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.failures.unwrap_or_default();
             v.push(input.into());
             self.failures = Some(v);
             self
         }
+        /// <p>An array of entries, one for each of the first 100 entries that weren't processed successfully (failed) by the export job, if any.</p>
         pub fn set_failures(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -22338,6 +23950,7 @@ pub mod export_job_response {
             self.id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the export job.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -22347,6 +23960,7 @@ pub mod export_job_response {
             self.job_status = Some(input);
             self
         }
+        /// <p>The status of the export job. The job status is FAILED if Amazon Pinpoint wasn't able to process one or more pieces in the job.</p>
         pub fn set_job_status(
             mut self,
             input: std::option::Option<crate::model::JobStatus>,
@@ -22359,6 +23973,7 @@ pub mod export_job_response {
             self.total_failures = Some(input);
             self
         }
+        /// <p>The total number of endpoint definitions that weren't processed successfully (failed) by the export job, typically because an error, such as a syntax error, occurred.</p>
         pub fn set_total_failures(mut self, input: std::option::Option<i32>) -> Self {
             self.total_failures = input;
             self
@@ -22368,6 +23983,7 @@ pub mod export_job_response {
             self.total_pieces = Some(input);
             self
         }
+        /// <p>The total number of pieces that must be processed to complete the export job. Each piece consists of an approximately equal portion of the endpoint definitions that are part of the export job.</p>
         pub fn set_total_pieces(mut self, input: std::option::Option<i32>) -> Self {
             self.total_pieces = input;
             self
@@ -22377,6 +23993,7 @@ pub mod export_job_response {
             self.total_processed = Some(input);
             self
         }
+        /// <p>The total number of endpoint definitions that were processed by the export job.</p>
         pub fn set_total_processed(mut self, input: std::option::Option<i32>) -> Self {
             self.total_processed = input;
             self
@@ -22386,6 +24003,7 @@ pub mod export_job_response {
             self.r#type = Some(input.into());
             self
         }
+        /// <p>The job type. This value is EXPORT for export jobs.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
@@ -22457,6 +24075,7 @@ pub mod export_job_resource {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that authorized Amazon Pinpoint to access the Amazon S3 location where the endpoint definitions were exported to.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -22466,6 +24085,7 @@ pub mod export_job_resource {
             self.s3_url_prefix = Some(input.into());
             self
         }
+        /// <p>The URL of the location in an Amazon Simple Storage Service (Amazon S3) bucket where the endpoint definitions were exported to. This location is typically a folder that contains multiple files. The URL should be in the following format: s3://<replaceable>bucket-name</replaceable>/<replaceable>folder-name</replaceable>/.</p>
         pub fn set_s3_url_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -22478,6 +24098,7 @@ pub mod export_job_resource {
             self.segment_id = Some(input.into());
             self
         }
+        /// <p>The identifier for the segment that the endpoint definitions were exported from. If this value isn't present, Amazon Pinpoint exported definitions for all the endpoints that are associated with the application.</p>
         pub fn set_segment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.segment_id = input;
             self
@@ -22487,6 +24108,7 @@ pub mod export_job_resource {
             self.segment_version = Some(input);
             self
         }
+        /// <p>The version of the segment that the endpoint definitions were exported from.</p>
         pub fn set_segment_version(mut self, input: std::option::Option<i32>) -> Self {
             self.segment_version = input;
             self
@@ -22537,6 +24159,11 @@ pub mod list_recommender_configurations_response {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `item`.
+        ///
+        /// To override the contents of this collection use [`set_item`](Self::set_item).
+        ///
+        /// <p>An array of responses, one for each recommender model configuration that's associated with your Amazon Pinpoint account.</p>
         pub fn item(
             mut self,
             input: impl Into<crate::model::RecommenderConfigurationResponse>,
@@ -22546,6 +24173,7 @@ pub mod list_recommender_configurations_response {
             self.item = Some(v);
             self
         }
+        /// <p>An array of responses, one for each recommender model configuration that's associated with your Amazon Pinpoint account.</p>
         pub fn set_item(
             mut self,
             input: std::option::Option<
@@ -22560,6 +24188,7 @@ pub mod list_recommender_configurations_response {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -22668,6 +24297,7 @@ pub mod push_notification_template_response {
             self.adm = Some(input);
             self
         }
+        /// <p>The message template that's used for the ADM (Amazon Device Messaging) channel. This message template overrides the default template for push notification channels (DefaultPushNotificationTemplate).</p>
         pub fn set_adm(
             mut self,
             input: std::option::Option<crate::model::AndroidPushNotificationTemplate>,
@@ -22680,6 +24310,7 @@ pub mod push_notification_template_response {
             self.apns = Some(input);
             self
         }
+        /// <p>The message template that's used for the APNs (Apple Push Notification service) channel. This message template overrides the default template for push notification channels (DefaultPushNotificationTemplate).</p>
         pub fn set_apns(
             mut self,
             input: std::option::Option<crate::model::ApnsPushNotificationTemplate>,
@@ -22692,6 +24323,7 @@ pub mod push_notification_template_response {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the message template.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -22701,6 +24333,7 @@ pub mod push_notification_template_response {
             self.baidu = Some(input);
             self
         }
+        /// <p>The message template that's used for the Baidu (Baidu Cloud Push) channel. This message template overrides the default template for push notification channels (DefaultPushNotificationTemplate).</p>
         pub fn set_baidu(
             mut self,
             input: std::option::Option<crate::model::AndroidPushNotificationTemplate>,
@@ -22713,6 +24346,7 @@ pub mod push_notification_template_response {
             self.creation_date = Some(input.into());
             self
         }
+        /// <p>The date, in ISO 8601 format, when the message template was created.</p>
         pub fn set_creation_date(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -22728,6 +24362,7 @@ pub mod push_notification_template_response {
             self.default_value = Some(input);
             self
         }
+        /// <p>The default message template that's used for push notification channels.</p>
         pub fn set_default(
             mut self,
             input: std::option::Option<crate::model::DefaultPushNotificationTemplate>,
@@ -22740,6 +24375,7 @@ pub mod push_notification_template_response {
             self.default_substitutions = Some(input.into());
             self
         }
+        /// <p>The JSON object that specifies the default values that are used for message variables in the message template. This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding value defines the default value for that variable.</p>
         pub fn set_default_substitutions(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -22752,6 +24388,7 @@ pub mod push_notification_template_response {
             self.gcm = Some(input);
             self
         }
+        /// <p>The message template that's used for the GCM channel, which is used to send notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud Messaging (GCM), service. This message template overrides the default template for push notification channels (DefaultPushNotificationTemplate).</p>
         pub fn set_gcm(
             mut self,
             input: std::option::Option<crate::model::AndroidPushNotificationTemplate>,
@@ -22764,6 +24401,7 @@ pub mod push_notification_template_response {
             self.last_modified_date = Some(input.into());
             self
         }
+        /// <p>The date, in ISO 8601 format, when the message template was last modified.</p>
         pub fn set_last_modified_date(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -22776,6 +24414,7 @@ pub mod push_notification_template_response {
             self.recommender_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the recommender model that's used by the message template.</p>
         pub fn set_recommender_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -22783,6 +24422,11 @@ pub mod push_notification_template_response {
             self.recommender_id = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A string-to-string map of key-value pairs that identifies the tags that are associated with the message template. Each tag consists of a required tag key and an associated tag value.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -22793,6 +24437,7 @@ pub mod push_notification_template_response {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>A string-to-string map of key-value pairs that identifies the tags that are associated with the message template. Each tag consists of a required tag key and an associated tag value.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -22807,6 +24452,7 @@ pub mod push_notification_template_response {
             self.template_description = Some(input.into());
             self
         }
+        /// <p>The custom description of the message template.</p>
         pub fn set_template_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -22819,6 +24465,7 @@ pub mod push_notification_template_response {
             self.template_name = Some(input.into());
             self
         }
+        /// <p>The name of the message template.</p>
         pub fn set_template_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -22831,6 +24478,7 @@ pub mod push_notification_template_response {
             self.template_type = Some(input);
             self
         }
+        /// <p>The type of channel that the message template is designed for. For a push notification template, this value is PUSH.</p>
         pub fn set_template_type(
             mut self,
             input: std::option::Option<crate::model::TemplateType>,
@@ -22843,6 +24491,7 @@ pub mod push_notification_template_response {
             self.version = Some(input.into());
             self
         }
+        /// <p>The unique identifier, as an integer, for the active version of the message template, or the version of the template that you specified by using the version parameter in your request.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -22919,6 +24568,7 @@ pub mod journey_execution_metrics_response {
             self.application_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the application that the metric applies to.</p>
         pub fn set_application_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -22931,6 +24581,7 @@ pub mod journey_execution_metrics_response {
             self.journey_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the journey that the metric applies to.</p>
         pub fn set_journey_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.journey_id = input;
             self
@@ -22940,6 +24591,7 @@ pub mod journey_execution_metrics_response {
             self.last_evaluated_time = Some(input.into());
             self
         }
+        /// <p>The date and time, in ISO 8601 format, when Amazon Pinpoint last evaluated the journey and updated the data for the metric.</p>
         pub fn set_last_evaluated_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -22947,6 +24599,11 @@ pub mod journey_execution_metrics_response {
             self.last_evaluated_time = input;
             self
         }
+        /// Adds a key-value pair to `metrics`.
+        ///
+        /// To override the contents of this collection use [`set_metrics`](Self::set_metrics).
+        ///
+        /// <p>A JSON object that contains the results of the query. For information about the structure and contents of the results, see the <a href="https://docs.aws.amazon.com//pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint Developer Guide</a>.</p>
         pub fn metrics(
             mut self,
             k: impl Into<std::string::String>,
@@ -22957,6 +24614,7 @@ pub mod journey_execution_metrics_response {
             self.metrics = Some(hash_map);
             self
         }
+        /// <p>A JSON object that contains the results of the query. For information about the structure and contents of the results, see the <a href="https://docs.aws.amazon.com//pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint Developer Guide</a>.</p>
         pub fn set_metrics(
             mut self,
             input: std::option::Option<
@@ -23035,6 +24693,7 @@ pub mod journey_execution_activity_metrics_response {
             self.activity_type = Some(input.into());
             self
         }
+        /// <p>The type of activity that the metric applies to. Possible values are:</p> <ul><li><p>CONDITIONAL_SPLIT - For a yes/no split activity, which is an activity that sends participants down one of two paths in a journey.</p></li> <li><p>HOLDOUT - For a holdout activity, which is an activity that stops a journey for a specified percentage of participants.</p></li> <li><p>MESSAGE - For an email activity, which is an activity that sends an email message to participants.</p></li> <li><p>MULTI_CONDITIONAL_SPLIT - For a multivariate split activity, which is an activity that sends participants down one of as many as five paths in a journey.</p></li> <li><p>RANDOM_SPLIT - For a random split activity, which is an activity that sends specified percentages of participants down one of as many as five paths in a journey.</p></li> <li><p>WAIT - For a wait activity, which is an activity that waits for a certain amount of time or until a specific date and time before moving participants to the next activity in a journey.</p></li></ul>
         pub fn set_activity_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -23047,6 +24706,7 @@ pub mod journey_execution_activity_metrics_response {
             self.application_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the application that the metric applies to.</p>
         pub fn set_application_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -23059,6 +24719,7 @@ pub mod journey_execution_activity_metrics_response {
             self.journey_activity_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the activity that the metric applies to.</p>
         pub fn set_journey_activity_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -23071,6 +24732,7 @@ pub mod journey_execution_activity_metrics_response {
             self.journey_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the journey that the metric applies to.</p>
         pub fn set_journey_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.journey_id = input;
             self
@@ -23080,6 +24742,7 @@ pub mod journey_execution_activity_metrics_response {
             self.last_evaluated_time = Some(input.into());
             self
         }
+        /// <p>The date and time, in ISO 8601 format, when Amazon Pinpoint last evaluated the execution status of the activity and updated the data for the metric.</p>
         pub fn set_last_evaluated_time(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -23087,6 +24750,11 @@ pub mod journey_execution_activity_metrics_response {
             self.last_evaluated_time = input;
             self
         }
+        /// Adds a key-value pair to `metrics`.
+        ///
+        /// To override the contents of this collection use [`set_metrics`](Self::set_metrics).
+        ///
+        /// <p>A JSON object that contains the results of the query. The results vary depending on the type of activity (ActivityType). For information about the structure and contents of the results, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint Developer Guide</a>.</p>
         pub fn metrics(
             mut self,
             k: impl Into<std::string::String>,
@@ -23097,6 +24765,7 @@ pub mod journey_execution_activity_metrics_response {
             self.metrics = Some(hash_map);
             self
         }
+        /// <p>A JSON object that contains the results of the query. The results vary depending on the type of activity (ActivityType). For information about the structure and contents of the results, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint Developer Guide</a>.</p>
         pub fn set_metrics(
             mut self,
             input: std::option::Option<
@@ -23133,7 +24802,7 @@ pub struct JourneyDateRangeKpiResponse {
     /// <p>The unique identifier for the application that the metric applies to.</p>
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The last date and time of the date range that was used to filter the query results, in extended ISO 8601 format. The date range is inclusive.</p>
-    pub end_time: std::option::Option<smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The unique identifier for the journey that the metric applies to.</p>
     pub journey_id: std::option::Option<std::string::String>,
     /// <p>The name of the metric, also referred to as a <i>key performance indicator (KPI)</i>, that the data was retrieved for. This value describes the associated metric and consists of two or more terms, which are comprised of lowercase alphanumeric characters, separated by a hyphen. For a list of possible values, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint Developer Guide</a>.</p>
@@ -23143,7 +24812,7 @@ pub struct JourneyDateRangeKpiResponse {
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null for the Journey Engagement Metrics resource because the resource returns all results in a single page.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The first date and time of the date range that was used to filter the query results, in extended ISO 8601 format. The date range is inclusive.</p>
-    pub start_time: std::option::Option<smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for JourneyDateRangeKpiResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -23165,12 +24834,12 @@ pub mod journey_date_range_kpi_response {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
-        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) journey_id: std::option::Option<std::string::String>,
         pub(crate) kpi_name: std::option::Option<std::string::String>,
         pub(crate) kpi_result: std::option::Option<crate::model::BaseKpiResult>,
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) start_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The unique identifier for the application that the metric applies to.</p>
@@ -23178,6 +24847,7 @@ pub mod journey_date_range_kpi_response {
             self.application_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the application that the metric applies to.</p>
         pub fn set_application_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -23186,11 +24856,15 @@ pub mod journey_date_range_kpi_response {
             self
         }
         /// <p>The last date and time of the date range that was used to filter the query results, in extended ISO 8601 format. The date range is inclusive.</p>
-        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The last date and time of the date range that was used to filter the query results, in extended ISO 8601 format. The date range is inclusive.</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.end_time = input;
             self
         }
@@ -23199,6 +24873,7 @@ pub mod journey_date_range_kpi_response {
             self.journey_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the journey that the metric applies to.</p>
         pub fn set_journey_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.journey_id = input;
             self
@@ -23208,6 +24883,7 @@ pub mod journey_date_range_kpi_response {
             self.kpi_name = Some(input.into());
             self
         }
+        /// <p>The name of the metric, also referred to as a <i>key performance indicator (KPI)</i>, that the data was retrieved for. This value describes the associated metric and consists of two or more terms, which are comprised of lowercase alphanumeric characters, separated by a hyphen. For a list of possible values, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint Developer Guide</a>.</p>
         pub fn set_kpi_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kpi_name = input;
             self
@@ -23217,6 +24893,7 @@ pub mod journey_date_range_kpi_response {
             self.kpi_result = Some(input);
             self
         }
+        /// <p>An array of objects that contains the results of the query. Each object contains the value for the metric and metadata about that value.</p>
         pub fn set_kpi_result(
             mut self,
             input: std::option::Option<crate::model::BaseKpiResult>,
@@ -23229,16 +24906,21 @@ pub mod journey_date_range_kpi_response {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null for the Journey Engagement Metrics resource because the resource returns all results in a single page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
         /// <p>The first date and time of the date range that was used to filter the query results, in extended ISO 8601 format. The date range is inclusive.</p>
-        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The first date and time of the date range that was used to filter the query results, in extended ISO 8601 format. The date range is inclusive.</p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.start_time = input;
             self
         }
@@ -23286,12 +24968,18 @@ pub mod base_kpi_result {
         pub(crate) rows: std::option::Option<std::vec::Vec<crate::model::ResultRow>>,
     }
     impl Builder {
+        /// Appends an item to `rows`.
+        ///
+        /// To override the contents of this collection use [`set_rows`](Self::set_rows).
+        ///
+        /// <p>An array of objects that provides the results of a query that retrieved the data for a standard metric that applies to an application, campaign, or journey.</p>
         pub fn rows(mut self, input: impl Into<crate::model::ResultRow>) -> Self {
             let mut v = self.rows.unwrap_or_default();
             v.push(input.into());
             self.rows = Some(v);
             self
         }
+        /// <p>An array of objects that provides the results of a query that retrieved the data for a standard metric that applies to an application, campaign, or journey.</p>
         pub fn set_rows(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResultRow>>,
@@ -23339,12 +25027,18 @@ pub mod result_row {
         pub(crate) values: std::option::Option<std::vec::Vec<crate::model::ResultRowValue>>,
     }
     impl Builder {
+        /// Appends an item to `grouped_bys`.
+        ///
+        /// To override the contents of this collection use [`set_grouped_bys`](Self::set_grouped_bys).
+        ///
+        /// <p>An array of objects that defines the field and field values that were used to group data in a result set that contains multiple results. This value is null if the data in a result set isn’t grouped.</p>
         pub fn grouped_bys(mut self, input: impl Into<crate::model::ResultRowValue>) -> Self {
             let mut v = self.grouped_bys.unwrap_or_default();
             v.push(input.into());
             self.grouped_bys = Some(v);
             self
         }
+        /// <p>An array of objects that defines the field and field values that were used to group data in a result set that contains multiple results. This value is null if the data in a result set isn’t grouped.</p>
         pub fn set_grouped_bys(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResultRowValue>>,
@@ -23352,12 +25046,18 @@ pub mod result_row {
             self.grouped_bys = input;
             self
         }
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>An array of objects that provides pre-aggregated values for a standard metric that applies to an application, campaign, or journey.</p>
         pub fn values(mut self, input: impl Into<crate::model::ResultRowValue>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
+        /// <p>An array of objects that provides pre-aggregated values for a standard metric that applies to an application, campaign, or journey.</p>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ResultRowValue>>,
@@ -23417,6 +25117,7 @@ pub mod result_row_value {
             self.key = Some(input.into());
             self
         }
+        /// <p>The friendly name of the metric whose value is specified by the Value property.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -23426,6 +25127,7 @@ pub mod result_row_value {
             self.r#type = Some(input.into());
             self
         }
+        /// <p>The data type of the value specified by the Value property.</p>
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
             self
@@ -23435,6 +25137,7 @@ pub mod result_row_value {
             self.value = Some(input.into());
             self
         }
+        /// <p>In a Values object, the value for the metric that the query retrieved data for. In a GroupedBys object, the value for the field that was used to group data in a result set that contains multiple results (Values objects).</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -23530,16 +25233,23 @@ pub mod in_app_template_response {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The resource arn of the template.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
+        /// Appends an item to `content`.
+        ///
+        /// To override the contents of this collection use [`set_content`](Self::set_content).
+        ///
+        /// <p>The content of the message, can include up to 5 modals. Each modal must contain a message, a header, and background color. ImageUrl and buttons are optional.</p>
         pub fn content(mut self, input: impl Into<crate::model::InAppMessageContent>) -> Self {
             let mut v = self.content.unwrap_or_default();
             v.push(input.into());
             self.content = Some(v);
             self
         }
+        /// <p>The content of the message, can include up to 5 modals. Each modal must contain a message, a header, and background color. ImageUrl and buttons are optional.</p>
         pub fn set_content(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InAppMessageContent>>,
@@ -23552,6 +25262,7 @@ pub mod in_app_template_response {
             self.creation_date = Some(input.into());
             self
         }
+        /// <p>The creation date of the template.</p>
         pub fn set_creation_date(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -23559,6 +25270,11 @@ pub mod in_app_template_response {
             self.creation_date = input;
             self
         }
+        /// Adds a key-value pair to `custom_config`.
+        ///
+        /// To override the contents of this collection use [`set_custom_config`](Self::set_custom_config).
+        ///
+        /// <p>Custom config to be sent to client.</p>
         pub fn custom_config(
             mut self,
             k: impl Into<std::string::String>,
@@ -23569,6 +25285,7 @@ pub mod in_app_template_response {
             self.custom_config = Some(hash_map);
             self
         }
+        /// <p>Custom config to be sent to client.</p>
         pub fn set_custom_config(
             mut self,
             input: std::option::Option<
@@ -23583,6 +25300,7 @@ pub mod in_app_template_response {
             self.last_modified_date = Some(input.into());
             self
         }
+        /// <p>The last modified date of the template.</p>
         pub fn set_last_modified_date(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -23595,10 +25313,16 @@ pub mod in_app_template_response {
             self.layout = Some(input);
             self
         }
+        /// <p>The layout of the message.</p>
         pub fn set_layout(mut self, input: std::option::Option<crate::model::Layout>) -> Self {
             self.layout = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A string-to-string map of key-value pairs that defines the tags to associate with the message template. Each tag consists of a required tag key and an associated tag value.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -23609,6 +25333,7 @@ pub mod in_app_template_response {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>A string-to-string map of key-value pairs that defines the tags to associate with the message template. Each tag consists of a required tag key and an associated tag value.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -23623,6 +25348,7 @@ pub mod in_app_template_response {
             self.template_description = Some(input.into());
             self
         }
+        /// <p>The description of the template.</p>
         pub fn set_template_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -23635,6 +25361,7 @@ pub mod in_app_template_response {
             self.template_name = Some(input.into());
             self
         }
+        /// <p>The name of the template.</p>
         pub fn set_template_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -23647,6 +25374,7 @@ pub mod in_app_template_response {
             self.template_type = Some(input);
             self
         }
+        /// <p>The type of the template.</p>
         pub fn set_template_type(
             mut self,
             input: std::option::Option<crate::model::TemplateType>,
@@ -23659,6 +25387,7 @@ pub mod in_app_template_response {
             self.version = Some(input.into());
             self
         }
+        /// <p>The version id of the template.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -23713,6 +25442,11 @@ pub mod in_app_messages_response {
             std::option::Option<std::vec::Vec<crate::model::InAppMessageCampaign>>,
     }
     impl Builder {
+        /// Appends an item to `in_app_message_campaigns`.
+        ///
+        /// To override the contents of this collection use [`set_in_app_message_campaigns`](Self::set_in_app_message_campaigns).
+        ///
+        /// <p>List of targeted in-app message campaigns.</p>
         pub fn in_app_message_campaigns(
             mut self,
             input: impl Into<crate::model::InAppMessageCampaign>,
@@ -23722,6 +25456,7 @@ pub mod in_app_messages_response {
             self.in_app_message_campaigns = Some(v);
             self
         }
+        /// <p>List of targeted in-app message campaigns.</p>
         pub fn set_in_app_message_campaigns(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InAppMessageCampaign>>,
@@ -23800,6 +25535,7 @@ pub mod in_app_message_campaign {
             self.campaign_id = Some(input.into());
             self
         }
+        /// <p>Campaign id of the corresponding campaign.</p>
         pub fn set_campaign_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.campaign_id = input;
             self
@@ -23809,6 +25545,7 @@ pub mod in_app_message_campaign {
             self.daily_cap = Some(input);
             self
         }
+        /// <p>Daily cap which controls the number of times any in-app messages can be shown to the endpoint during a day.</p>
         pub fn set_daily_cap(mut self, input: std::option::Option<i32>) -> Self {
             self.daily_cap = input;
             self
@@ -23818,6 +25555,7 @@ pub mod in_app_message_campaign {
             self.in_app_message = Some(input);
             self
         }
+        /// <p>In-app message content with all fields required for rendering an in-app message.</p>
         pub fn set_in_app_message(
             mut self,
             input: std::option::Option<crate::model::InAppMessage>,
@@ -23830,6 +25568,7 @@ pub mod in_app_message_campaign {
             self.priority = Some(input);
             self
         }
+        /// <p>Priority of the in-app message.</p>
         pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
             self.priority = input;
             self
@@ -23839,6 +25578,7 @@ pub mod in_app_message_campaign {
             self.schedule = Some(input);
             self
         }
+        /// <p>Schedule of the campaign.</p>
         pub fn set_schedule(
             mut self,
             input: std::option::Option<crate::model::InAppCampaignSchedule>,
@@ -23851,6 +25591,7 @@ pub mod in_app_message_campaign {
             self.session_cap = Some(input);
             self
         }
+        /// <p>Session cap which controls the number of times an in-app message can be shown to the endpoint during an application session.</p>
         pub fn set_session_cap(mut self, input: std::option::Option<i32>) -> Self {
             self.session_cap = input;
             self
@@ -23860,6 +25601,7 @@ pub mod in_app_message_campaign {
             self.total_cap = Some(input);
             self
         }
+        /// <p>Total cap which controls the number of times an in-app message can be shown to the endpoint.</p>
         pub fn set_total_cap(mut self, input: std::option::Option<i32>) -> Self {
             self.total_cap = input;
             self
@@ -23869,6 +25611,7 @@ pub mod in_app_message_campaign {
             self.treatment_id = Some(input.into());
             self
         }
+        /// <p>Treatment id of the campaign.</p>
         pub fn set_treatment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.treatment_id = input;
             self
@@ -23931,6 +25674,7 @@ pub mod in_app_campaign_schedule {
             self.end_date = Some(input.into());
             self
         }
+        /// <p>The scheduled time after which the in-app message should not be shown. Timestamp is in ISO 8601 format.</p>
         pub fn set_end_date(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.end_date = input;
             self
@@ -23940,6 +25684,7 @@ pub mod in_app_campaign_schedule {
             self.event_filter = Some(input);
             self
         }
+        /// <p>The event filter the SDK has to use to show the in-app message in the application.</p>
         pub fn set_event_filter(
             mut self,
             input: std::option::Option<crate::model::CampaignEventFilter>,
@@ -23952,6 +25697,7 @@ pub mod in_app_campaign_schedule {
             self.quiet_time = Some(input);
             self
         }
+        /// <p>Time during which the in-app message should not be shown to the user.</p>
         pub fn set_quiet_time(
             mut self,
             input: std::option::Option<crate::model::QuietTime>,
@@ -24010,12 +25756,18 @@ pub mod in_app_message {
         pub(crate) layout: std::option::Option<crate::model::Layout>,
     }
     impl Builder {
+        /// Appends an item to `content`.
+        ///
+        /// To override the contents of this collection use [`set_content`](Self::set_content).
+        ///
+        /// <p>In-app message content.</p>
         pub fn content(mut self, input: impl Into<crate::model::InAppMessageContent>) -> Self {
             let mut v = self.content.unwrap_or_default();
             v.push(input.into());
             self.content = Some(v);
             self
         }
+        /// <p>In-app message content.</p>
         pub fn set_content(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::InAppMessageContent>>,
@@ -24023,6 +25775,11 @@ pub mod in_app_message {
             self.content = input;
             self
         }
+        /// Adds a key-value pair to `custom_config`.
+        ///
+        /// To override the contents of this collection use [`set_custom_config`](Self::set_custom_config).
+        ///
+        /// <p>Custom config to be sent to SDK.</p>
         pub fn custom_config(
             mut self,
             k: impl Into<std::string::String>,
@@ -24033,6 +25790,7 @@ pub mod in_app_message {
             self.custom_config = Some(hash_map);
             self
         }
+        /// <p>Custom config to be sent to SDK.</p>
         pub fn set_custom_config(
             mut self,
             input: std::option::Option<
@@ -24047,6 +25805,7 @@ pub mod in_app_message {
             self.layout = Some(input);
             self
         }
+        /// <p>The layout of the message.</p>
         pub fn set_layout(mut self, input: std::option::Option<crate::model::Layout>) -> Self {
             self.layout = input;
             self
@@ -24147,6 +25906,7 @@ pub mod email_template_response {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the message template.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -24156,6 +25916,7 @@ pub mod email_template_response {
             self.creation_date = Some(input.into());
             self
         }
+        /// <p>The date, in ISO 8601 format, when the message template was created.</p>
         pub fn set_creation_date(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -24168,6 +25929,7 @@ pub mod email_template_response {
             self.default_substitutions = Some(input.into());
             self
         }
+        /// <p>The JSON object that specifies the default values that are used for message variables in the message template. This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding value defines the default value for that variable.</p>
         pub fn set_default_substitutions(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -24180,6 +25942,7 @@ pub mod email_template_response {
             self.html_part = Some(input.into());
             self
         }
+        /// <p>The message body, in HTML format, that's used in email messages that are based on the message template.</p>
         pub fn set_html_part(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.html_part = input;
             self
@@ -24189,6 +25952,7 @@ pub mod email_template_response {
             self.last_modified_date = Some(input.into());
             self
         }
+        /// <p>The date, in ISO 8601 format, when the message template was last modified.</p>
         pub fn set_last_modified_date(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -24201,6 +25965,7 @@ pub mod email_template_response {
             self.recommender_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the recommender model that's used by the message template.</p>
         pub fn set_recommender_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -24213,10 +25978,16 @@ pub mod email_template_response {
             self.subject = Some(input.into());
             self
         }
+        /// <p>The subject line, or title, that's used in email messages that are based on the message template.</p>
         pub fn set_subject(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.subject = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A string-to-string map of key-value pairs that identifies the tags that are associated with the message template. Each tag consists of a required tag key and an associated tag value.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -24227,6 +25998,7 @@ pub mod email_template_response {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>A string-to-string map of key-value pairs that identifies the tags that are associated with the message template. Each tag consists of a required tag key and an associated tag value.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -24241,6 +26013,7 @@ pub mod email_template_response {
             self.template_description = Some(input.into());
             self
         }
+        /// <p>The custom description of the message template.</p>
         pub fn set_template_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -24253,6 +26026,7 @@ pub mod email_template_response {
             self.template_name = Some(input.into());
             self
         }
+        /// <p>The name of the message template.</p>
         pub fn set_template_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -24265,6 +26039,7 @@ pub mod email_template_response {
             self.template_type = Some(input);
             self
         }
+        /// <p>The type of channel that the message template is designed for. For an email template, this value is EMAIL.</p>
         pub fn set_template_type(
             mut self,
             input: std::option::Option<crate::model::TemplateType>,
@@ -24277,6 +26052,7 @@ pub mod email_template_response {
             self.text_part = Some(input.into());
             self
         }
+        /// <p>The message body, in plain text format, that's used in email messages that are based on the message template.</p>
         pub fn set_text_part(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.text_part = input;
             self
@@ -24286,6 +26062,7 @@ pub mod email_template_response {
             self.version = Some(input.into());
             self
         }
+        /// <p>The unique identifier, as an integer, for the active version of the message template, or the version of the template that you specified by using the version parameter in your request.</p>
         pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version = input;
             self
@@ -24344,6 +26121,11 @@ pub mod channels_response {
         >,
     }
     impl Builder {
+        /// Adds a key-value pair to `channels`.
+        ///
+        /// To override the contents of this collection use [`set_channels`](Self::set_channels).
+        ///
+        /// <p>A map that contains a multipart response for each channel. For each item in this object, the ChannelType is the key and the Channel is the value.</p>
         pub fn channels(
             mut self,
             k: impl Into<std::string::String>,
@@ -24354,6 +26136,7 @@ pub mod channels_response {
             self.channels = Some(hash_map);
             self
         }
+        /// <p>A map that contains a multipart response for each channel. For each item in this object, the ChannelType is the key and the Channel is the value.</p>
         pub fn set_channels(
             mut self,
             input: std::option::Option<
@@ -24438,6 +26221,7 @@ pub mod channel_response {
             self.application_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the application.</p>
         pub fn set_application_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -24450,6 +26234,7 @@ pub mod channel_response {
             self.creation_date = Some(input.into());
             self
         }
+        /// <p>The date and time, in ISO 8601 format, when the channel was enabled.</p>
         pub fn set_creation_date(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -24462,6 +26247,7 @@ pub mod channel_response {
             self.enabled = Some(input);
             self
         }
+        /// <p>Specifies whether the channel is enabled for the application.</p>
         pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.enabled = input;
             self
@@ -24471,6 +26257,7 @@ pub mod channel_response {
             self.has_credential = Some(input);
             self
         }
+        /// <p>(Not used) This property is retained only for backward compatibility.</p>
         pub fn set_has_credential(mut self, input: std::option::Option<bool>) -> Self {
             self.has_credential = input;
             self
@@ -24480,6 +26267,7 @@ pub mod channel_response {
             self.id = Some(input.into());
             self
         }
+        /// <p>(Deprecated) An identifier for the channel. This property is retained only for backward compatibility.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -24489,6 +26277,7 @@ pub mod channel_response {
             self.is_archived = Some(input);
             self
         }
+        /// <p>Specifies whether the channel is archived.</p>
         pub fn set_is_archived(mut self, input: std::option::Option<bool>) -> Self {
             self.is_archived = input;
             self
@@ -24498,6 +26287,7 @@ pub mod channel_response {
             self.last_modified_by = Some(input.into());
             self
         }
+        /// <p>The user who last modified the channel.</p>
         pub fn set_last_modified_by(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -24510,6 +26300,7 @@ pub mod channel_response {
             self.last_modified_date = Some(input.into());
             self
         }
+        /// <p>The date and time, in ISO 8601 format, when the channel was last modified.</p>
         pub fn set_last_modified_date(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -24522,6 +26313,7 @@ pub mod channel_response {
             self.version = Some(input);
             self
         }
+        /// <p>The current version of the channel.</p>
         pub fn set_version(mut self, input: std::option::Option<i32>) -> Self {
             self.version = input;
             self
@@ -24576,12 +26368,18 @@ pub mod campaigns_response {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `item`.
+        ///
+        /// To override the contents of this collection use [`set_item`](Self::set_item).
+        ///
+        /// <p>An array of responses, one for each campaign that's associated with the application.</p>
         pub fn item(mut self, input: impl Into<crate::model::CampaignResponse>) -> Self {
             let mut v = self.item.unwrap_or_default();
             v.push(input.into());
             self.item = Some(v);
             self
         }
+        /// <p>An array of responses, one for each campaign that's associated with the application.</p>
         pub fn set_item(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CampaignResponse>>,
@@ -24594,6 +26392,7 @@ pub mod campaigns_response {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -24623,7 +26422,7 @@ pub struct CampaignDateRangeKpiResponse {
     /// <p>The unique identifier for the campaign that the metric applies to.</p>
     pub campaign_id: std::option::Option<std::string::String>,
     /// <p>The last date and time of the date range that was used to filter the query results, in extended ISO 8601 format. The date range is inclusive.</p>
-    pub end_time: std::option::Option<smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The name of the metric, also referred to as a <i>key performance indicator (KPI)</i>, that the data was retrieved for. This value describes the associated metric and consists of two or more terms, which are comprised of lowercase alphanumeric characters, separated by a hyphen. For a list of possible values, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint Developer Guide</a>.</p>
     pub kpi_name: std::option::Option<std::string::String>,
     /// <p>An array of objects that contains the results of the query. Each object contains the value for the metric and metadata about that value.</p>
@@ -24631,7 +26430,7 @@ pub struct CampaignDateRangeKpiResponse {
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null for the Campaign Metrics resource because the resource returns all results in a single page.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The first date and time of the date range that was used to filter the query results, in extended ISO 8601 format. The date range is inclusive.</p>
-    pub start_time: std::option::Option<smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for CampaignDateRangeKpiResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -24654,11 +26453,11 @@ pub mod campaign_date_range_kpi_response {
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
         pub(crate) campaign_id: std::option::Option<std::string::String>,
-        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) kpi_name: std::option::Option<std::string::String>,
         pub(crate) kpi_result: std::option::Option<crate::model::BaseKpiResult>,
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) start_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The unique identifier for the application that the metric applies to.</p>
@@ -24666,6 +26465,7 @@ pub mod campaign_date_range_kpi_response {
             self.application_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the application that the metric applies to.</p>
         pub fn set_application_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -24678,16 +26478,21 @@ pub mod campaign_date_range_kpi_response {
             self.campaign_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the campaign that the metric applies to.</p>
         pub fn set_campaign_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.campaign_id = input;
             self
         }
         /// <p>The last date and time of the date range that was used to filter the query results, in extended ISO 8601 format. The date range is inclusive.</p>
-        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The last date and time of the date range that was used to filter the query results, in extended ISO 8601 format. The date range is inclusive.</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.end_time = input;
             self
         }
@@ -24696,6 +26501,7 @@ pub mod campaign_date_range_kpi_response {
             self.kpi_name = Some(input.into());
             self
         }
+        /// <p>The name of the metric, also referred to as a <i>key performance indicator (KPI)</i>, that the data was retrieved for. This value describes the associated metric and consists of two or more terms, which are comprised of lowercase alphanumeric characters, separated by a hyphen. For a list of possible values, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint Developer Guide</a>.</p>
         pub fn set_kpi_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kpi_name = input;
             self
@@ -24705,6 +26511,7 @@ pub mod campaign_date_range_kpi_response {
             self.kpi_result = Some(input);
             self
         }
+        /// <p>An array of objects that contains the results of the query. Each object contains the value for the metric and metadata about that value.</p>
         pub fn set_kpi_result(
             mut self,
             input: std::option::Option<crate::model::BaseKpiResult>,
@@ -24717,16 +26524,21 @@ pub mod campaign_date_range_kpi_response {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null for the Campaign Metrics resource because the resource returns all results in a single page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
         /// <p>The first date and time of the date range that was used to filter the query results, in extended ISO 8601 format. The date range is inclusive.</p>
-        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The first date and time of the date range that was used to filter the query results, in extended ISO 8601 format. The date range is inclusive.</p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.start_time = input;
             self
         }
@@ -24778,12 +26590,18 @@ pub mod activities_response {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `item`.
+        ///
+        /// To override the contents of this collection use [`set_item`](Self::set_item).
+        ///
+        /// <p>An array of responses, one for each activity that was performed by the campaign.</p>
         pub fn item(mut self, input: impl Into<crate::model::ActivityResponse>) -> Self {
             let mut v = self.item.unwrap_or_default();
             v.push(input.into());
             self.item = Some(v);
             self
         }
+        /// <p>An array of responses, one for each activity that was performed by the campaign.</p>
         pub fn set_item(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ActivityResponse>>,
@@ -24796,6 +26614,7 @@ pub mod activities_response {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -24892,6 +26711,7 @@ pub mod activity_response {
             self.application_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the application that the campaign applies to.</p>
         pub fn set_application_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -24904,6 +26724,7 @@ pub mod activity_response {
             self.campaign_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the campaign that the activity applies to.</p>
         pub fn set_campaign_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.campaign_id = input;
             self
@@ -24913,6 +26734,7 @@ pub mod activity_response {
             self.end = Some(input.into());
             self
         }
+        /// <p>The actual time, in ISO 8601 format, when the activity was marked CANCELLED or COMPLETED.</p>
         pub fn set_end(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.end = input;
             self
@@ -24922,6 +26744,7 @@ pub mod activity_response {
             self.id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the activity.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -24931,6 +26754,7 @@ pub mod activity_response {
             self.result = Some(input.into());
             self
         }
+        /// <p>Specifies whether the activity succeeded. Possible values are SUCCESS and FAIL.</p>
         pub fn set_result(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.result = input;
             self
@@ -24940,6 +26764,7 @@ pub mod activity_response {
             self.scheduled_start = Some(input.into());
             self
         }
+        /// <p>The scheduled start time, in ISO 8601 format, for the activity.</p>
         pub fn set_scheduled_start(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -24952,6 +26777,7 @@ pub mod activity_response {
             self.start = Some(input.into());
             self
         }
+        /// <p>The actual start time, in ISO 8601 format, of the activity.</p>
         pub fn set_start(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.start = input;
             self
@@ -24961,6 +26787,7 @@ pub mod activity_response {
             self.state = Some(input.into());
             self
         }
+        /// <p>The current status of the activity. Possible values are: PENDING, INITIALIZING, RUNNING, PAUSED, CANCELLED, and COMPLETED.</p>
         pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.state = input;
             self
@@ -24970,6 +26797,7 @@ pub mod activity_response {
             self.successful_endpoint_count = Some(input);
             self
         }
+        /// <p>The total number of endpoints that the campaign successfully delivered messages to.</p>
         pub fn set_successful_endpoint_count(mut self, input: std::option::Option<i32>) -> Self {
             self.successful_endpoint_count = input;
             self
@@ -24979,6 +26807,7 @@ pub mod activity_response {
             self.timezones_completed_count = Some(input);
             self
         }
+        /// <p>The total number of time zones that were completed.</p>
         pub fn set_timezones_completed_count(mut self, input: std::option::Option<i32>) -> Self {
             self.timezones_completed_count = input;
             self
@@ -24988,6 +26817,7 @@ pub mod activity_response {
             self.timezones_total_count = Some(input);
             self
         }
+        /// <p>The total number of unique time zones that are in the segment for the campaign.</p>
         pub fn set_timezones_total_count(mut self, input: std::option::Option<i32>) -> Self {
             self.timezones_total_count = input;
             self
@@ -24997,6 +26827,7 @@ pub mod activity_response {
             self.total_endpoint_count = Some(input);
             self
         }
+        /// <p>The total number of endpoints that the campaign attempted to deliver messages to.</p>
         pub fn set_total_endpoint_count(mut self, input: std::option::Option<i32>) -> Self {
             self.total_endpoint_count = input;
             self
@@ -25006,6 +26837,7 @@ pub mod activity_response {
             self.treatment_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the campaign treatment that the activity applies to. A treatment is a variation of a campaign that's used for A/B testing of a campaign.</p>
         pub fn set_treatment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.treatment_id = input;
             self
@@ -25064,12 +26896,18 @@ pub mod applications_response {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `item`.
+        ///
+        /// To override the contents of this collection use [`set_item`](Self::set_item).
+        ///
+        /// <p>An array of responses, one for each application that was returned.</p>
         pub fn item(mut self, input: impl Into<crate::model::ApplicationResponse>) -> Self {
             let mut v = self.item.unwrap_or_default();
             v.push(input.into());
             self.item = Some(v);
             self
         }
+        /// <p>An array of responses, one for each application that was returned.</p>
         pub fn set_item(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ApplicationResponse>>,
@@ -25082,6 +26920,7 @@ pub mod applications_response {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -25145,6 +26984,7 @@ pub mod application_response {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the application.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -25154,6 +26994,7 @@ pub mod application_response {
             self.id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -25163,10 +27004,16 @@ pub mod application_response {
             self.name = Some(input.into());
             self
         }
+        /// <p>The display name of the application. This name is displayed as the <b>Project name</b> on the Amazon Pinpoint console.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A string-to-string map of key-value pairs that identifies the tags that are associated with the application. Each tag consists of a required tag key and an associated tag value.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -25177,6 +27024,7 @@ pub mod application_response {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>A string-to-string map of key-value pairs that identifies the tags that are associated with the application. Each tag consists of a required tag key and an associated tag value.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -25211,7 +27059,7 @@ pub struct ApplicationDateRangeKpiResponse {
     /// <p>The unique identifier for the application that the metric applies to.</p>
     pub application_id: std::option::Option<std::string::String>,
     /// <p>The last date and time of the date range that was used to filter the query results, in extended ISO 8601 format. The date range is inclusive.</p>
-    pub end_time: std::option::Option<smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The name of the metric, also referred to as a <i>key performance indicator (KPI)</i>, that the data was retrieved for. This value describes the associated metric and consists of two or more terms, which are comprised of lowercase alphanumeric characters, separated by a hyphen. For a list of possible values, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint Developer Guide</a>.</p>
     pub kpi_name: std::option::Option<std::string::String>,
     /// <p>An array of objects that contains the results of the query. Each object contains the value for the metric and metadata about that value.</p>
@@ -25219,7 +27067,7 @@ pub struct ApplicationDateRangeKpiResponse {
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null for the Application Metrics resource because the resource returns all results in a single page.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The first date and time of the date range that was used to filter the query results, in extended ISO 8601 format. The date range is inclusive.</p>
-    pub start_time: std::option::Option<smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for ApplicationDateRangeKpiResponse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -25240,11 +27088,11 @@ pub mod application_date_range_kpi_response {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) application_id: std::option::Option<std::string::String>,
-        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) kpi_name: std::option::Option<std::string::String>,
         pub(crate) kpi_result: std::option::Option<crate::model::BaseKpiResult>,
         pub(crate) next_token: std::option::Option<std::string::String>,
-        pub(crate) start_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The unique identifier for the application that the metric applies to.</p>
@@ -25252,6 +27100,7 @@ pub mod application_date_range_kpi_response {
             self.application_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the application that the metric applies to.</p>
         pub fn set_application_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -25260,11 +27109,15 @@ pub mod application_date_range_kpi_response {
             self
         }
         /// <p>The last date and time of the date range that was used to filter the query results, in extended ISO 8601 format. The date range is inclusive.</p>
-        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The last date and time of the date range that was used to filter the query results, in extended ISO 8601 format. The date range is inclusive.</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.end_time = input;
             self
         }
@@ -25273,6 +27126,7 @@ pub mod application_date_range_kpi_response {
             self.kpi_name = Some(input.into());
             self
         }
+        /// <p>The name of the metric, also referred to as a <i>key performance indicator (KPI)</i>, that the data was retrieved for. This value describes the associated metric and consists of two or more terms, which are comprised of lowercase alphanumeric characters, separated by a hyphen. For a list of possible values, see the <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint Developer Guide</a>.</p>
         pub fn set_kpi_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.kpi_name = input;
             self
@@ -25282,6 +27136,7 @@ pub mod application_date_range_kpi_response {
             self.kpi_result = Some(input);
             self
         }
+        /// <p>An array of objects that contains the results of the query. Each object contains the value for the metric and metadata about that value.</p>
         pub fn set_kpi_result(
             mut self,
             input: std::option::Option<crate::model::BaseKpiResult>,
@@ -25294,16 +27149,21 @@ pub mod application_date_range_kpi_response {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null for the Application Metrics resource because the resource returns all results in a single page.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
         }
         /// <p>The first date and time of the date range that was used to filter the query results, in extended ISO 8601 format. The date range is inclusive.</p>
-        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The first date and time of the date range that was used to filter the query results, in extended ISO 8601 format. The date range is inclusive.</p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.start_time = input;
             self
         }
@@ -25363,6 +27223,7 @@ pub mod create_template_message_body {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the message template that was created.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -25372,6 +27233,7 @@ pub mod create_template_message_body {
             self.message = Some(input.into());
             self
         }
+        /// <p>The message that's returned from the API for the request to create the message template.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -25381,6 +27243,7 @@ pub mod create_template_message_body {
             self.request_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the request to create the message template.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.request_id = input;
             self
@@ -25478,6 +27341,11 @@ pub mod create_recommender_configuration_shape {
         pub(crate) recommendations_per_message: std::option::Option<i32>,
     }
     impl Builder {
+        /// Adds a key-value pair to `attributes`.
+        ///
+        /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
+        ///
+        /// <p>A map of key-value pairs that defines 1-10 custom endpoint or user attributes, depending on the value for the RecommendationProviderIdType property. Each of these attributes temporarily stores a recommended item that's retrieved from the recommender model and sent to an AWS Lambda function for additional processing. Each attribute can be used as a message variable in a message template.</p> <p>In the map, the key is the name of a custom attribute and the value is a custom display name for that attribute. The display name appears in the <b>Attribute finder</b> of the template editor on the Amazon Pinpoint console. The following restrictions apply to these names:</p> <ul><li><p>An attribute name must start with a letter or number and it can contain up to 50 characters. The characters can be letters, numbers, underscores (_), or hyphens (-). Attribute names are case sensitive and must be unique.</p></li> <li><p>An attribute display name must start with a letter or number and it can contain up to 25 characters. The characters can be letters, numbers, spaces, underscores (_), or hyphens (-).</p></li></ul> <p>This object is required if the configuration invokes an AWS Lambda function (RecommendationTransformerUri) to process recommendation data. Otherwise, don't include this object in your request.</p>
         pub fn attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -25488,6 +27356,7 @@ pub mod create_recommender_configuration_shape {
             self.attributes = Some(hash_map);
             self
         }
+        /// <p>A map of key-value pairs that defines 1-10 custom endpoint or user attributes, depending on the value for the RecommendationProviderIdType property. Each of these attributes temporarily stores a recommended item that's retrieved from the recommender model and sent to an AWS Lambda function for additional processing. Each attribute can be used as a message variable in a message template.</p> <p>In the map, the key is the name of a custom attribute and the value is a custom display name for that attribute. The display name appears in the <b>Attribute finder</b> of the template editor on the Amazon Pinpoint console. The following restrictions apply to these names:</p> <ul><li><p>An attribute name must start with a letter or number and it can contain up to 50 characters. The characters can be letters, numbers, underscores (_), or hyphens (-). Attribute names are case sensitive and must be unique.</p></li> <li><p>An attribute display name must start with a letter or number and it can contain up to 25 characters. The characters can be letters, numbers, spaces, underscores (_), or hyphens (-).</p></li></ul> <p>This object is required if the configuration invokes an AWS Lambda function (RecommendationTransformerUri) to process recommendation data. Otherwise, don't include this object in your request.</p>
         pub fn set_attributes(
             mut self,
             input: std::option::Option<
@@ -25502,6 +27371,7 @@ pub mod create_recommender_configuration_shape {
             self.description = Some(input.into());
             self
         }
+        /// <p>A custom description of the configuration for the recommender model. The description can contain up to 128 characters. The characters can be letters, numbers, spaces, or the following symbols: _ ; () , ‐.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -25511,6 +27381,7 @@ pub mod create_recommender_configuration_shape {
             self.name = Some(input.into());
             self
         }
+        /// <p>A custom name of the configuration for the recommender model. The name must start with a letter or number and it can contain up to 128 characters. The characters can be letters, numbers, spaces, underscores (_), or hyphens (-).</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -25523,6 +27394,7 @@ pub mod create_recommender_configuration_shape {
             self.recommendation_provider_id_type = Some(input.into());
             self
         }
+        /// <p>The type of Amazon Pinpoint ID to associate with unique user IDs in the recommender model. This value enables the model to use attribute and event data that’s specific to a particular endpoint or user in an Amazon Pinpoint application. Valid values are:</p> <ul><li><p>PINPOINT_ENDPOINT_ID - Associate each user in the model with a particular endpoint in Amazon Pinpoint. The data is correlated based on endpoint IDs in Amazon Pinpoint. This is the default value.</p></li> <li><p>PINPOINT_USER_ID - Associate each user in the model with a particular user and endpoint in Amazon Pinpoint. The data is correlated based on user IDs in Amazon Pinpoint. If you specify this value, an endpoint definition in Amazon Pinpoint has to specify both a user ID (UserId) and an endpoint ID. Otherwise, messages won’t be sent to the user's endpoint.</p></li></ul>
         pub fn set_recommendation_provider_id_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -25538,6 +27410,7 @@ pub mod create_recommender_configuration_shape {
             self.recommendation_provider_role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that authorizes Amazon Pinpoint to retrieve recommendation data from the recommender model.</p>
         pub fn set_recommendation_provider_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -25553,6 +27426,7 @@ pub mod create_recommender_configuration_shape {
             self.recommendation_provider_uri = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the recommender model to retrieve recommendation data from. This value must match the ARN of an Amazon Personalize campaign.</p>
         pub fn set_recommendation_provider_uri(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -25568,6 +27442,7 @@ pub mod create_recommender_configuration_shape {
             self.recommendation_transformer_uri = Some(input.into());
             self
         }
+        /// <p>The name or Amazon Resource Name (ARN) of the AWS Lambda function to invoke for additional processing of recommendation data that's retrieved from the recommender model.</p>
         pub fn set_recommendation_transformer_uri(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -25583,6 +27458,7 @@ pub mod create_recommender_configuration_shape {
             self.recommendations_display_name = Some(input.into());
             self
         }
+        /// <p>A custom display name for the standard endpoint or user attribute (RecommendationItems) that temporarily stores recommended items for each endpoint or user, depending on the value for the RecommendationProviderIdType property. This value is required if the configuration doesn't invoke an AWS Lambda function (RecommendationTransformerUri) to perform additional processing of recommendation data.</p> <p>This name appears in the <b>Attribute finder</b> of the template editor on the Amazon Pinpoint console. The name can contain up to 25 characters. The characters can be letters, numbers, spaces, underscores (_), or hyphens (-). These restrictions don't apply to attribute values.</p>
         pub fn set_recommendations_display_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -25595,6 +27471,7 @@ pub mod create_recommender_configuration_shape {
             self.recommendations_per_message = Some(input);
             self
         }
+        /// <p>The number of recommended items to retrieve from the model for each endpoint or user, depending on the value for the RecommendationProviderIdType property. This number determines how many recommended items are available for use in message variables. The minimum value is 1. The maximum value is 5. The default value is 5.</p> <p>To use multiple recommended items and custom attributes with message variables, you have to use an AWS Lambda function (RecommendationTransformerUri) to perform additional processing of recommendation data.</p>
         pub fn set_recommendations_per_message(mut self, input: std::option::Option<i32>) -> Self {
             self.recommendations_per_message = input;
             self
@@ -25658,6 +27535,7 @@ pub mod template_create_message_body {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the message template that was created.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -25667,6 +27545,7 @@ pub mod template_create_message_body {
             self.message = Some(input.into());
             self
         }
+        /// <p>The message that's returned from the API for the request to create the message template.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -25676,6 +27555,7 @@ pub mod template_create_message_body {
             self.request_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier for the request to create the message template.</p>
         pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.request_id = input;
             self
@@ -25753,6 +27633,7 @@ pub mod import_job_request {
             self.define_segment = Some(input);
             self
         }
+        /// <p>Specifies whether to create a segment that contains the endpoints, when the endpoint definitions are imported.</p>
         pub fn set_define_segment(mut self, input: std::option::Option<bool>) -> Self {
             self.define_segment = input;
             self
@@ -25762,6 +27643,7 @@ pub mod import_job_request {
             self.external_id = Some(input.into());
             self
         }
+        /// <p>(Deprecated) Your AWS account ID, which you assigned to an external ID key in an IAM trust policy. Amazon Pinpoint previously used this value to assume an IAM role when importing endpoint definitions, but we removed this requirement. We don't recommend use of external IDs for IAM roles that are assumed by Amazon Pinpoint.</p>
         pub fn set_external_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.external_id = input;
             self
@@ -25771,6 +27653,7 @@ pub mod import_job_request {
             self.format = Some(input);
             self
         }
+        /// <p>The format of the files that contain the endpoint definitions to import. Valid values are: CSV, for comma-separated values format; and, JSON, for newline-delimited JSON format. If the Amazon S3 location stores multiple files that use different formats, Amazon Pinpoint imports data only from the files that use the specified format.</p>
         pub fn set_format(mut self, input: std::option::Option<crate::model::Format>) -> Self {
             self.format = input;
             self
@@ -25780,6 +27663,7 @@ pub mod import_job_request {
             self.register_endpoints = Some(input);
             self
         }
+        /// <p>Specifies whether to register the endpoints with Amazon Pinpoint, when the endpoint definitions are imported.</p>
         pub fn set_register_endpoints(mut self, input: std::option::Option<bool>) -> Self {
             self.register_endpoints = input;
             self
@@ -25789,6 +27673,7 @@ pub mod import_job_request {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that authorizes Amazon Pinpoint to access the Amazon S3 location to import endpoint definitions from.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -25798,6 +27683,7 @@ pub mod import_job_request {
             self.s3_url = Some(input.into());
             self
         }
+        /// <p>The URL of the Amazon Simple Storage Service (Amazon S3) bucket that contains the endpoint definitions to import. This location can be a folder or a single file. If the location is a folder, Amazon Pinpoint imports endpoint definitions from the files in this location, including any subfolders that the folder contains.</p> <p>The URL should be in the following format: s3://<replaceable>bucket-name</replaceable>/<replaceable>folder-name</replaceable>/<replaceable>file-name</replaceable>. The location can end with the key for an individual object or a prefix that qualifies multiple objects.</p>
         pub fn set_s3_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.s3_url = input;
             self
@@ -25807,6 +27693,7 @@ pub mod import_job_request {
             self.segment_id = Some(input.into());
             self
         }
+        /// <p>The identifier for the segment to update or add the imported endpoint definitions to, if the import job is meant to update an existing segment.</p>
         pub fn set_segment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.segment_id = input;
             self
@@ -25816,6 +27703,7 @@ pub mod import_job_request {
             self.segment_name = Some(input.into());
             self
         }
+        /// <p>A custom name for the segment that's created by the import job, if the value of the DefineSegment property is true.</p>
         pub fn set_segment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.segment_name = input;
             self
@@ -25882,6 +27770,7 @@ pub mod export_job_request {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that authorizes Amazon Pinpoint to access the Amazon S3 location where you want to export endpoint definitions to.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
@@ -25891,6 +27780,7 @@ pub mod export_job_request {
             self.s3_url_prefix = Some(input.into());
             self
         }
+        /// <p>The URL of the location in an Amazon Simple Storage Service (Amazon S3) bucket where you want to export endpoint definitions to. This location is typically a folder that contains multiple files. The URL should be in the following format: s3://<replaceable>bucket-name</replaceable>/<replaceable>folder-name</replaceable>/.</p>
         pub fn set_s3_url_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -25903,6 +27793,7 @@ pub mod export_job_request {
             self.segment_id = Some(input.into());
             self
         }
+        /// <p>The identifier for the segment to export endpoint definitions from. If you don't specify this value, Amazon Pinpoint exports definitions for all the endpoints that are associated with the application.</p>
         pub fn set_segment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.segment_id = input;
             self
@@ -25912,6 +27803,7 @@ pub mod export_job_request {
             self.segment_version = Some(input);
             self
         }
+        /// <p>The version of the segment to export endpoint definitions from, if specified.</p>
         pub fn set_segment_version(mut self, input: std::option::Option<i32>) -> Self {
             self.segment_version = input;
             self
@@ -25969,10 +27861,16 @@ pub mod create_application_request {
             self.name = Some(input.into());
             self
         }
+        /// <p>The display name of the application. This name is displayed as the <b>Project name</b> on the Amazon Pinpoint console.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>A string-to-string map of key-value pairs that defines the tags to associate with the application. Each tag consists of a required tag key and an associated tag value.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -25983,6 +27881,7 @@ pub mod create_application_request {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>A string-to-string map of key-value pairs that defines the tags to associate with the application. Each tag consists of a required tag key and an associated tag value.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<

@@ -50,6 +50,7 @@ pub mod event_integration {
             self.event_integration_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the event integration.</p>
         pub fn set_event_integration_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -62,6 +63,7 @@ pub mod event_integration {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the event integration.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -71,6 +73,7 @@ pub mod event_integration {
             self.description = Some(input.into());
             self
         }
+        /// <p>The event integration description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -80,6 +83,7 @@ pub mod event_integration {
             self.event_filter = Some(input);
             self
         }
+        /// <p>The event integration filter.</p>
         pub fn set_event_filter(
             mut self,
             input: std::option::Option<crate::model::EventFilter>,
@@ -92,6 +96,7 @@ pub mod event_integration {
             self.event_bridge_bus = Some(input.into());
             self
         }
+        /// <p>The Amazon EventBridge bus for the event integration.</p>
         pub fn set_event_bridge_bus(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -99,6 +104,11 @@ pub mod event_integration {
             self.event_bridge_bus = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -109,6 +119,7 @@ pub mod event_integration {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The tags.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -166,6 +177,7 @@ pub mod event_filter {
             self.source = Some(input.into());
             self
         }
+        /// <p>The source of the events.</p>
         pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source = input;
             self
@@ -248,6 +260,7 @@ pub mod event_integration_association {
             self.event_integration_association_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) for the event integration association.</p>
         pub fn set_event_integration_association_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -263,6 +276,7 @@ pub mod event_integration_association {
             self.event_integration_association_id = Some(input.into());
             self
         }
+        /// <p>The identifier for the event integration association.</p>
         pub fn set_event_integration_association_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -275,6 +289,7 @@ pub mod event_integration_association {
             self.event_integration_name = Some(input.into());
             self
         }
+        /// <p>The name of the event integration.</p>
         pub fn set_event_integration_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -287,6 +302,7 @@ pub mod event_integration_association {
             self.client_id = Some(input.into());
             self
         }
+        /// <p>The identifier for the client that is associated with the event integration.</p>
         pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_id = input;
             self
@@ -296,6 +312,7 @@ pub mod event_integration_association {
             self.event_bridge_rule_name = Some(input.into());
             self
         }
+        /// <p>The name of the EventBridge rule.</p>
         pub fn set_event_bridge_rule_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -303,6 +320,11 @@ pub mod event_integration_association {
             self.event_bridge_rule_name = input;
             self
         }
+        /// Adds a key-value pair to `client_association_metadata`.
+        ///
+        /// To override the contents of this collection use [`set_client_association_metadata`](Self::set_client_association_metadata).
+        ///
+        /// <p>The metadata associated with the client.</p>
         pub fn client_association_metadata(
             mut self,
             k: impl Into<std::string::String>,
@@ -313,6 +335,7 @@ pub mod event_integration_association {
             self.client_association_metadata = Some(hash_map);
             self
         }
+        /// <p>The metadata associated with the client.</p>
         pub fn set_client_association_metadata(
             mut self,
             input: std::option::Option<
@@ -378,6 +401,7 @@ pub mod data_integration_summary {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the DataIntegration.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -387,6 +411,7 @@ pub mod data_integration_summary {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the DataIntegration.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -396,6 +421,7 @@ pub mod data_integration_summary {
             self.source_uri = Some(input.into());
             self
         }
+        /// <p>The URI of the data source.</p>
         pub fn set_source_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.source_uri = input;
             self
@@ -460,6 +486,7 @@ pub mod data_integration_association_summary {
             self.data_integration_association_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the DataIntegration association.</p>
         pub fn set_data_integration_association_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -472,6 +499,7 @@ pub mod data_integration_association_summary {
             self.data_integration_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN)of the DataIntegration.</p>
         pub fn set_data_integration_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -485,6 +513,8 @@ pub mod data_integration_association_summary {
             self.client_id = Some(input.into());
             self
         }
+        /// <p>The identifier for teh client that is associated with the DataIntegration
+        /// association.</p>
         pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_id = input;
             self
@@ -542,6 +572,7 @@ pub mod schedule_configuration {
             self.first_execution_from = Some(input.into());
             self
         }
+        /// <p>The start date for objects to import in the first flow run.</p>
         pub fn set_first_execution_from(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -554,6 +585,7 @@ pub mod schedule_configuration {
             self.object = Some(input.into());
             self
         }
+        /// <p>The name of the object to pull from the data source.</p>
         pub fn set_object(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.object = input;
             self
@@ -563,6 +595,7 @@ pub mod schedule_configuration {
             self.schedule_expression = Some(input.into());
             self
         }
+        /// <p>How often the data should be pulled from data source.</p>
         pub fn set_schedule_expression(
             mut self,
             input: std::option::Option<std::string::String>,

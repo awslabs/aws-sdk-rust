@@ -17,6 +17,9 @@ impl ProvideCredentials for NoCredentials {
     where
         Self: 'a,
     {
-        future::ProvideCredentials::ready(Err(CredentialsError::CredentialsNotLoaded))
+        future::ProvideCredentials::ready(Err(CredentialsError::not_loaded(
+            "No credentials provider was enabled for the service. \
+        hint: use aws-config to provide a credentials chain.",
+        )))
     }
 }

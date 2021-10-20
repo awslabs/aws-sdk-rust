@@ -9,23 +9,23 @@
 //! Future work will stabilize this interface and enable it to be used directly.
 
 use aws_hyper::{DynConnector, SdkSuccess};
+use aws_smithy_http::body::SdkBody;
+use aws_smithy_http::operation::{Operation, Request};
+use aws_smithy_http::response::ParseStrictResponse;
+use aws_smithy_http::result::SdkError;
+use aws_smithy_http::retry::ClassifyResponse;
+use aws_smithy_types::retry::{ErrorKind, RetryKind};
 use aws_types::credentials::CredentialsError;
 use aws_types::{credentials, Credentials};
-use smithy_http::body::SdkBody;
-use smithy_http::operation::{Operation, Request};
-use smithy_http::response::ParseStrictResponse;
-use smithy_http::result::SdkError;
-use smithy_http::retry::ClassifyResponse;
-use smithy_types::retry::{ErrorKind, RetryKind};
 
 use crate::connector::expect_connector;
 use crate::json_credentials::{parse_json_credentials, JsonCredentials};
 use crate::provider_config::{HttpSettings, ProviderConfig};
 
+use aws_smithy_client::timeout;
 use bytes::Bytes;
 use http::header::{ACCEPT, AUTHORIZATION};
 use http::{HeaderValue, Response, Uri};
-use smithy_client::timeout;
 use std::time::Duration;
 use tower::layer::util::Identity;
 
@@ -35,7 +35,7 @@ const DEFAULT_CONNECT_TIMEOUT: Duration = Duration::from_secs(2);
 #[derive(Debug)]
 pub(crate) struct HttpCredentialProvider {
     uri: Uri,
-    client: smithy_client::Client<DynConnector, Identity>,
+    client: aws_smithy_client::Client<DynConnector, Identity>,
     provider_name: &'static str,
 }
 
@@ -49,7 +49,7 @@ impl HttpCredentialProvider {
         match credentials {
             Ok(creds) => Ok(creds),
             Err(SdkError::ServiceError { err, .. }) => Err(err),
-            Err(other) => Err(CredentialsError::Unhandled(other.into())),
+            Err(other) => Err(CredentialsError::unhandled(other)),
         }
     }
 
@@ -110,7 +110,9 @@ impl Builder {
             .with_connect_timeout(connect_timeout);
         let http_settings = HttpSettings { timeout_settings };
         let connector = expect_connector(provider_config.connector(&http_settings));
-        let client = smithy_client::Builder::new().connector(connector).build();
+        let client = aws_smithy_client::Builder::new()
+            .connector(connector)
+            .build();
         HttpCredentialProvider {
             uri,
             client,
@@ -127,10 +129,9 @@ impl ParseStrictResponse for CredentialsResponseParser {
     type Output = credentials::Result;
 
     fn parse(&self, response: &Response<Bytes>) -> Self::Output {
-        let str_resp = std::str::from_utf8(response.body().as_ref())
-            .map_err(|err| CredentialsError::Unhandled(err.into()))?;
-        let json_creds = parse_json_credentials(str_resp)
-            .map_err(|err| CredentialsError::Unhandled(err.into()))?;
+        let str_resp =
+            std::str::from_utf8(response.body().as_ref()).map_err(CredentialsError::unhandled)?;
+        let json_creds = parse_json_credentials(str_resp).map_err(CredentialsError::unhandled)?;
         match json_creds {
             JsonCredentials::RefreshableCredentials {
                 access_key_id,
@@ -144,8 +145,8 @@ impl ParseStrictResponse for CredentialsResponseParser {
                 Some(expiration),
                 self.provider_name,
             )),
-            JsonCredentials::Error { code, message } => Err(CredentialsError::ProviderError(
-                format!("failed to load credentials [{}]: {}", code, message).into(),
+            JsonCredentials::Error { code, message } => Err(CredentialsError::provider_error(
+                format!("failed to load credentials [{}]: {}", code, message),
             )),
         }
     }
@@ -177,7 +178,7 @@ impl ClassifyResponse<SdkSuccess<Credentials>, SdkError<CredentialsError>>
             }
             // non-parseable 200s
             Err(SdkError::ServiceError {
-                err: CredentialsError::Unhandled(_),
+                err: CredentialsError::Unhandled { .. },
                 raw,
             }) if raw.http().status().is_success() => RetryKind::Error(ErrorKind::ServerError),
             // 5xx errors
@@ -195,15 +196,15 @@ impl ClassifyResponse<SdkSuccess<Credentials>, SdkError<CredentialsError>>
 mod test {
     use crate::http_provider::{CredentialsResponseParser, HttpCredentialRetryPolicy};
     use aws_hyper::SdkSuccess;
+    use aws_smithy_http::body::SdkBody;
+    use aws_smithy_http::operation;
+    use aws_smithy_http::response::ParseStrictResponse;
+    use aws_smithy_http::result::SdkError;
+    use aws_smithy_http::retry::ClassifyResponse;
+    use aws_smithy_types::retry::{ErrorKind, RetryKind};
     use aws_types::credentials::CredentialsError;
     use aws_types::Credentials;
     use bytes::Bytes;
-    use smithy_http::body::SdkBody;
-    use smithy_http::operation;
-    use smithy_http::response::ParseStrictResponse;
-    use smithy_http::result::SdkError;
-    use smithy_http::retry::ClassifyResponse;
-    use smithy_types::retry::{ErrorKind, RetryKind};
 
     fn sdk_resp(
         resp: http::Response<&'static str>,
@@ -278,7 +279,7 @@ mod test {
             matches!(
                 sdk_error,
                 SdkError::ServiceError {
-                    err: CredentialsError::ProviderError(_),
+                    err: CredentialsError::ProviderError { .. },
                     ..
                 }
             ),

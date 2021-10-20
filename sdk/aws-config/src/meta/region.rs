@@ -93,7 +93,7 @@ pub mod future {
     use std::pin::Pin;
     use std::task::{Context, Poll};
 
-    use smithy_async::future::now_or_later::NowOrLater;
+    use aws_smithy_async::future::now_or_later::NowOrLater;
 
     use aws_types::region::Region;
 

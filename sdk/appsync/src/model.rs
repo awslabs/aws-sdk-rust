@@ -43,6 +43,7 @@ pub mod r#type {
             self.name = Some(input.into());
             self
         }
+        /// <p>The type name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -52,6 +53,7 @@ pub mod r#type {
             self.description = Some(input.into());
             self
         }
+        /// <p>The type description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -61,6 +63,7 @@ pub mod r#type {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The type ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
@@ -70,6 +73,7 @@ pub mod r#type {
             self.definition = Some(input.into());
             self
         }
+        /// <p>The type definition.</p>
         pub fn set_definition(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.definition = input;
             self
@@ -79,6 +83,7 @@ pub mod r#type {
             self.format = Some(input);
             self
         }
+        /// <p>The type format: SDL or JSON.</p>
         pub fn set_format(
             mut self,
             input: std::option::Option<crate::model::TypeDefinitionFormat>,
@@ -105,6 +110,7 @@ impl Type {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -116,7 +122,9 @@ impl Type {
     std::hash::Hash,
 )]
 pub enum TypeDefinitionFormat {
+    #[allow(missing_docs)] // documentation missing in model
     Json,
+    #[allow(missing_docs)] // documentation missing in model
     Sdl,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -138,6 +146,7 @@ impl std::str::FromStr for TypeDefinitionFormat {
     }
 }
 impl TypeDefinitionFormat {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TypeDefinitionFormat::Json => "JSON",
@@ -145,6 +154,7 @@ impl TypeDefinitionFormat {
             TypeDefinitionFormat::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["JSON", "SDL"]
     }
@@ -234,6 +244,7 @@ pub mod resolver {
             self.type_name = Some(input.into());
             self
         }
+        /// <p>The resolver type name.</p>
         pub fn set_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.type_name = input;
             self
@@ -243,6 +254,7 @@ pub mod resolver {
             self.field_name = Some(input.into());
             self
         }
+        /// <p>The resolver field name.</p>
         pub fn set_field_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.field_name = input;
             self
@@ -252,6 +264,7 @@ pub mod resolver {
             self.data_source_name = Some(input.into());
             self
         }
+        /// <p>The resolver data source name.</p>
         pub fn set_data_source_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -264,6 +277,7 @@ pub mod resolver {
             self.resolver_arn = Some(input.into());
             self
         }
+        /// <p>The resolver ARN.</p>
         pub fn set_resolver_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resolver_arn = input;
             self
@@ -273,6 +287,7 @@ pub mod resolver {
             self.request_mapping_template = Some(input.into());
             self
         }
+        /// <p>The request mapping template.</p>
         pub fn set_request_mapping_template(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -285,6 +300,7 @@ pub mod resolver {
             self.response_mapping_template = Some(input.into());
             self
         }
+        /// <p>The response mapping template.</p>
         pub fn set_response_mapping_template(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -312,6 +328,22 @@ pub mod resolver {
             self.kind = Some(input);
             self
         }
+        /// <p>The resolver type.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is
+        /// the default resolver type. A UNIT resolver enables you to execute a GraphQL query
+        /// against a single data source.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>PIPELINE</b>: A PIPELINE resolver type. A PIPELINE
+        /// resolver enables you to execute a series of <code>Function</code> in a serial manner.
+        /// You can use a pipeline resolver to execute a GraphQL query against multiple data
+        /// sources.</p>
+        /// </li>
+        /// </ul>
         pub fn set_kind(mut self, input: std::option::Option<crate::model::ResolverKind>) -> Self {
             self.kind = input;
             self
@@ -321,6 +353,7 @@ pub mod resolver {
             self.pipeline_config = Some(input);
             self
         }
+        /// <p>The <code>PipelineConfig</code>.</p>
         pub fn set_pipeline_config(
             mut self,
             input: std::option::Option<crate::model::PipelineConfig>,
@@ -333,6 +366,7 @@ pub mod resolver {
             self.sync_config = Some(input);
             self
         }
+        /// <p>The <code>SyncConfig</code> for a resolver attached to a versioned datasource.</p>
         pub fn set_sync_config(
             mut self,
             input: std::option::Option<crate::model::SyncConfig>,
@@ -345,6 +379,7 @@ pub mod resolver {
             self.caching_config = Some(input);
             self
         }
+        /// <p>The caching configuration for the resolver.</p>
         pub fn set_caching_config(
             mut self,
             input: std::option::Option<crate::model::CachingConfig>,
@@ -412,16 +447,28 @@ pub mod caching_config {
             self.ttl = Some(input);
             self
         }
+        /// <p>The TTL in seconds for a resolver that has caching enabled.</p>
+        /// <p>Valid values are between 1 and 3600 seconds.</p>
         pub fn set_ttl(mut self, input: std::option::Option<i64>) -> Self {
             self.ttl = input;
             self
         }
+        /// Appends an item to `caching_keys`.
+        ///
+        /// To override the contents of this collection use [`set_caching_keys`](Self::set_caching_keys).
+        ///
+        /// <p>The caching keys for a resolver that has caching enabled.</p>
+        /// <p>Valid values are entries from the <code>$context.arguments</code>,
+        /// <code>$context.source</code>, and <code>$context.identity</code> maps.</p>
         pub fn caching_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.caching_keys.unwrap_or_default();
             v.push(input.into());
             self.caching_keys = Some(v);
             self
         }
+        /// <p>The caching keys for a resolver that has caching enabled.</p>
+        /// <p>Valid values are entries from the <code>$context.arguments</code>,
+        /// <code>$context.source</code>, and <code>$context.identity</code> maps.</p>
         pub fn set_caching_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -537,6 +584,25 @@ pub mod sync_config {
             self.conflict_handler = Some(input);
             self
         }
+        /// <p>The Conflict Resolution strategy to perform in the event of a conflict.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>OPTIMISTIC_CONCURRENCY</b>: Resolve conflicts by
+        /// rejecting mutations when versions do not match the latest version at the
+        /// server.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>AUTOMERGE</b>: Resolve conflicts with the
+        /// Automerge conflict resolution strategy.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>LAMBDA</b>: Resolve conflicts with a Lambda
+        /// function supplied in the LambdaConflictHandlerConfig.</p>
+        /// </li>
+        /// </ul>
         pub fn set_conflict_handler(
             mut self,
             input: std::option::Option<crate::model::ConflictHandlerType>,
@@ -561,6 +627,19 @@ pub mod sync_config {
             self.conflict_detection = Some(input);
             self
         }
+        /// <p>The Conflict Detection strategy to use.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>VERSION</b>: Detect conflicts based on object
+        /// versions for this resolver.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>NONE</b>: Do not detect conflicts when executing
+        /// this resolver.</p>
+        /// </li>
+        /// </ul>
         pub fn set_conflict_detection(
             mut self,
             input: std::option::Option<crate::model::ConflictDetectionType>,
@@ -577,6 +656,8 @@ pub mod sync_config {
             self.lambda_conflict_handler_config = Some(input);
             self
         }
+        /// <p>The <code>LambdaConflictHandlerConfig</code> when configuring LAMBDA as the Conflict
+        /// Handler.</p>
         pub fn set_lambda_conflict_handler_config(
             mut self,
             input: std::option::Option<crate::model::LambdaConflictHandlerConfig>,
@@ -636,6 +717,7 @@ pub mod lambda_conflict_handler_config {
             self.lambda_conflict_handler_arn = Some(input.into());
             self
         }
+        /// <p>The Arn for the Lambda function to use as the Conflict Handler.</p>
         pub fn set_lambda_conflict_handler_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -658,6 +740,7 @@ impl LambdaConflictHandlerConfig {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -669,7 +752,9 @@ impl LambdaConflictHandlerConfig {
     std::hash::Hash,
 )]
 pub enum ConflictDetectionType {
+    #[allow(missing_docs)] // documentation missing in model
     None,
+    #[allow(missing_docs)] // documentation missing in model
     Version,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -691,6 +776,7 @@ impl std::str::FromStr for ConflictDetectionType {
     }
 }
 impl ConflictDetectionType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ConflictDetectionType::None => "NONE",
@@ -698,6 +784,7 @@ impl ConflictDetectionType {
             ConflictDetectionType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["NONE", "VERSION"]
     }
@@ -708,6 +795,7 @@ impl AsRef<str> for ConflictDetectionType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -719,9 +807,13 @@ impl AsRef<str> for ConflictDetectionType {
     std::hash::Hash,
 )]
 pub enum ConflictHandlerType {
+    #[allow(missing_docs)] // documentation missing in model
     Automerge,
+    #[allow(missing_docs)] // documentation missing in model
     Lambda,
+    #[allow(missing_docs)] // documentation missing in model
     None,
+    #[allow(missing_docs)] // documentation missing in model
     OptimisticConcurrency,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -745,6 +837,7 @@ impl std::str::FromStr for ConflictHandlerType {
     }
 }
 impl ConflictHandlerType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ConflictHandlerType::Automerge => "AUTOMERGE",
@@ -754,6 +847,7 @@ impl ConflictHandlerType {
             ConflictHandlerType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AUTOMERGE", "LAMBDA", "NONE", "OPTIMISTIC_CONCURRENCY"]
     }
@@ -787,12 +881,18 @@ pub mod pipeline_config {
         pub(crate) functions: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `functions`.
+        ///
+        /// To override the contents of this collection use [`set_functions`](Self::set_functions).
+        ///
+        /// <p>A list of <code>Function</code> objects.</p>
         pub fn functions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.functions.unwrap_or_default();
             v.push(input.into());
             self.functions = Some(v);
             self
         }
+        /// <p>A list of <code>Function</code> objects.</p>
         pub fn set_functions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -815,6 +915,7 @@ impl PipelineConfig {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -826,7 +927,9 @@ impl PipelineConfig {
     std::hash::Hash,
 )]
 pub enum ResolverKind {
+    #[allow(missing_docs)] // documentation missing in model
     Pipeline,
+    #[allow(missing_docs)] // documentation missing in model
     Unit,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -848,6 +951,7 @@ impl std::str::FromStr for ResolverKind {
     }
 }
 impl ResolverKind {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ResolverKind::Pipeline => "PIPELINE",
@@ -855,6 +959,7 @@ impl ResolverKind {
             ResolverKind::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["PIPELINE", "UNIT"]
     }
@@ -956,6 +1061,7 @@ pub mod graphql_api {
             self.name = Some(input.into());
             self
         }
+        /// <p>The API name.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -965,6 +1071,7 @@ pub mod graphql_api {
             self.api_id = Some(input.into());
             self
         }
+        /// <p>The API ID.</p>
         pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.api_id = input;
             self
@@ -974,6 +1081,7 @@ pub mod graphql_api {
             self.authentication_type = Some(input);
             self
         }
+        /// <p>The authentication type.</p>
         pub fn set_authentication_type(
             mut self,
             input: std::option::Option<crate::model::AuthenticationType>,
@@ -986,6 +1094,7 @@ pub mod graphql_api {
             self.log_config = Some(input);
             self
         }
+        /// <p>The Amazon CloudWatch Logs configuration.</p>
         pub fn set_log_config(
             mut self,
             input: std::option::Option<crate::model::LogConfig>,
@@ -998,6 +1107,7 @@ pub mod graphql_api {
             self.user_pool_config = Some(input);
             self
         }
+        /// <p>The Amazon Cognito user pool configuration.</p>
         pub fn set_user_pool_config(
             mut self,
             input: std::option::Option<crate::model::UserPoolConfig>,
@@ -1010,6 +1120,7 @@ pub mod graphql_api {
             self.open_id_connect_config = Some(input);
             self
         }
+        /// <p>The OpenID Connect configuration.</p>
         pub fn set_open_id_connect_config(
             mut self,
             input: std::option::Option<crate::model::OpenIdConnectConfig>,
@@ -1022,10 +1133,16 @@ pub mod graphql_api {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The ARN.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
+        /// Adds a key-value pair to `uris`.
+        ///
+        /// To override the contents of this collection use [`set_uris`](Self::set_uris).
+        ///
+        /// <p>The URIs.</p>
         pub fn uris(
             mut self,
             k: impl Into<std::string::String>,
@@ -1036,6 +1153,7 @@ pub mod graphql_api {
             self.uris = Some(hash_map);
             self
         }
+        /// <p>The URIs.</p>
         pub fn set_uris(
             mut self,
             input: std::option::Option<
@@ -1045,6 +1163,11 @@ pub mod graphql_api {
             self.uris = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>The tags.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -1055,6 +1178,7 @@ pub mod graphql_api {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>The tags.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -1064,6 +1188,12 @@ pub mod graphql_api {
             self.tags = input;
             self
         }
+        /// Appends an item to `additional_authentication_providers`.
+        ///
+        /// To override the contents of this collection use [`set_additional_authentication_providers`](Self::set_additional_authentication_providers).
+        ///
+        /// <p>A list of additional authentication providers for the <code>GraphqlApi</code>
+        /// API.</p>
         pub fn additional_authentication_providers(
             mut self,
             input: impl Into<crate::model::AdditionalAuthenticationProvider>,
@@ -1073,6 +1203,8 @@ pub mod graphql_api {
             self.additional_authentication_providers = Some(v);
             self
         }
+        /// <p>A list of additional authentication providers for the <code>GraphqlApi</code>
+        /// API.</p>
         pub fn set_additional_authentication_providers(
             mut self,
             input: std::option::Option<
@@ -1088,6 +1220,8 @@ pub mod graphql_api {
             self.xray_enabled = Some(input);
             self
         }
+        /// <p>A flag representing whether X-Ray tracing is enabled for this
+        /// <code>GraphqlApi</code>.</p>
         pub fn set_xray_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.xray_enabled = input;
             self
@@ -1098,6 +1232,8 @@ pub mod graphql_api {
             self.waf_web_acl_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the WAF ACL associated with this <code>GraphqlApi</code>,
+        /// if one exists.</p>
         pub fn set_waf_web_acl_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1113,6 +1249,7 @@ pub mod graphql_api {
             self.lambda_authorizer_config = Some(input);
             self
         }
+        /// <p>Configuration for Amazon Web Services Lambda function authorization.</p>
         pub fn set_lambda_authorizer_config(
             mut self,
             input: std::option::Option<crate::model::LambdaAuthorizerConfig>,
@@ -1206,6 +1343,9 @@ pub mod lambda_authorizer_config {
             self.authorizer_result_ttl_in_seconds = Some(input);
             self
         }
+        /// <p>The number of seconds a response should be cached for. The default is 5 minutes (300
+        /// seconds). The Lambda function can override this by returning a <code>ttlOverride</code> key
+        /// in its response. A value of 0 disables caching of responses.</p>
         pub fn set_authorizer_result_ttl_in_seconds(
             mut self,
             input: std::option::Option<i32>,
@@ -1228,6 +1368,17 @@ pub mod lambda_authorizer_config {
             self.authorizer_uri = Some(input.into());
             self
         }
+        /// <p>The ARN of the Lambda function to be called for authorization. This may be a standard
+        /// Lambda ARN, a version ARN (<code>.../v3</code>) or alias ARN. </p>
+        /// <p>
+        /// <i>Note</i>: This Lambda function must have the following resource-based
+        /// policy assigned to it. When configuring Lambda authorizers in the Console, this is done for
+        /// you. To do so with the Amazon Web Services CLI, run the following:</p>
+        /// <p>
+        /// <code>aws lambda add-permission --function-name
+        /// "arn:aws:lambda:us-east-2:111122223333:function:my-function" --statement-id "appsync"
+        /// --principal appsync.amazonaws.com --action lambda:InvokeFunction</code>
+        /// </p>
         pub fn set_authorizer_uri(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1244,6 +1395,8 @@ pub mod lambda_authorizer_config {
             self.identity_validation_expression = Some(input.into());
             self
         }
+        /// <p>A regular expression for validation of tokens before the Lambda function is
+        /// called.</p>
         pub fn set_identity_validation_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1313,6 +1466,8 @@ pub mod additional_authentication_provider {
             self.authentication_type = Some(input);
             self
         }
+        /// <p>The authentication type: API key, Identity and Access Management, OIDC, Amazon Cognito user
+        /// pools, or Amazon Web Services Lambda.</p>
         pub fn set_authentication_type(
             mut self,
             input: std::option::Option<crate::model::AuthenticationType>,
@@ -1325,6 +1480,7 @@ pub mod additional_authentication_provider {
             self.open_id_connect_config = Some(input);
             self
         }
+        /// <p>The OpenID Connect configuration.</p>
         pub fn set_open_id_connect_config(
             mut self,
             input: std::option::Option<crate::model::OpenIdConnectConfig>,
@@ -1337,6 +1493,7 @@ pub mod additional_authentication_provider {
             self.user_pool_config = Some(input);
             self
         }
+        /// <p>The Amazon Cognito user pool configuration.</p>
         pub fn set_user_pool_config(
             mut self,
             input: std::option::Option<crate::model::CognitoUserPoolConfig>,
@@ -1352,6 +1509,7 @@ pub mod additional_authentication_provider {
             self.lambda_authorizer_config = Some(input);
             self
         }
+        /// <p>Configuration for Amazon Web Services Lambda function authorization.</p>
         pub fn set_lambda_authorizer_config(
             mut self,
             input: std::option::Option<crate::model::LambdaAuthorizerConfig>,
@@ -1414,6 +1572,7 @@ pub mod cognito_user_pool_config {
             self.user_pool_id = Some(input.into());
             self
         }
+        /// <p>The user pool ID.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
@@ -1423,6 +1582,7 @@ pub mod cognito_user_pool_config {
             self.aws_region = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services Region in which the user pool was created.</p>
         pub fn set_aws_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.aws_region = input;
             self
@@ -1433,6 +1593,8 @@ pub mod cognito_user_pool_config {
             self.app_id_client_regex = Some(input.into());
             self
         }
+        /// <p>A regular expression for validating the incoming Amazon Cognito user pool app client
+        /// ID.</p>
         pub fn set_app_id_client_regex(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1502,6 +1664,8 @@ pub mod open_id_connect_config {
             self.issuer = Some(input.into());
             self
         }
+        /// <p>The issuer for the OpenID Connect configuration. The issuer returned by discovery must
+        /// exactly match the value of <code>iss</code> in the ID token.</p>
         pub fn set_issuer(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.issuer = input;
             self
@@ -1514,6 +1678,10 @@ pub mod open_id_connect_config {
             self.client_id = Some(input.into());
             self
         }
+        /// <p>The client identifier of the Relying party at the OpenID identity provider. This
+        /// identifier is typically obtained when the Relying party is registered with the OpenID
+        /// identity provider. You can specify a regular expression so the AppSync can
+        /// validate against multiple client identifiers at a time.</p>
         pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.client_id = input;
             self
@@ -1523,6 +1691,7 @@ pub mod open_id_connect_config {
             self.iat_ttl = Some(input);
             self
         }
+        /// <p>The number of milliseconds a token is valid after being issued to a user.</p>
         pub fn set_iat_ttl(mut self, input: std::option::Option<i64>) -> Self {
             self.iat_ttl = input;
             self
@@ -1532,6 +1701,7 @@ pub mod open_id_connect_config {
             self.auth_ttl = Some(input);
             self
         }
+        /// <p>The number of milliseconds a token is valid after being authenticated.</p>
         pub fn set_auth_ttl(mut self, input: std::option::Option<i64>) -> Self {
             self.auth_ttl = input;
             self
@@ -1554,6 +1724,7 @@ impl OpenIdConnectConfig {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1565,10 +1736,15 @@ impl OpenIdConnectConfig {
     std::hash::Hash,
 )]
 pub enum AuthenticationType {
+    #[allow(missing_docs)] // documentation missing in model
     AmazonCognitoUserPools,
+    #[allow(missing_docs)] // documentation missing in model
     ApiKey,
+    #[allow(missing_docs)] // documentation missing in model
     AwsIam,
+    #[allow(missing_docs)] // documentation missing in model
     AwsLambda,
+    #[allow(missing_docs)] // documentation missing in model
     OpenidConnect,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1593,6 +1769,7 @@ impl std::str::FromStr for AuthenticationType {
     }
 }
 impl AuthenticationType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AuthenticationType::AmazonCognitoUserPools => "AMAZON_COGNITO_USER_POOLS",
@@ -1603,6 +1780,7 @@ impl AuthenticationType {
             AuthenticationType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "AMAZON_COGNITO_USER_POOLS",
@@ -1662,6 +1840,7 @@ pub mod user_pool_config {
             self.user_pool_id = Some(input.into());
             self
         }
+        /// <p>The user pool ID.</p>
         pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_pool_id = input;
             self
@@ -1671,6 +1850,7 @@ pub mod user_pool_config {
             self.aws_region = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services Region in which the user pool was created.</p>
         pub fn set_aws_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.aws_region = input;
             self
@@ -1682,6 +1862,9 @@ pub mod user_pool_config {
             self.default_action = Some(input);
             self
         }
+        /// <p>The action that you want your GraphQL API to take when a request that uses Amazon
+        /// Cognito user pool authentication doesn't match the Amazon Cognito user pool
+        /// configuration.</p>
         pub fn set_default_action(
             mut self,
             input: std::option::Option<crate::model::DefaultAction>,
@@ -1695,6 +1878,8 @@ pub mod user_pool_config {
             self.app_id_client_regex = Some(input.into());
             self
         }
+        /// <p>A regular expression for validating the incoming Amazon Cognito user pool app client
+        /// ID.</p>
         pub fn set_app_id_client_regex(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1720,6 +1905,7 @@ impl UserPoolConfig {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1731,7 +1917,9 @@ impl UserPoolConfig {
     std::hash::Hash,
 )]
 pub enum DefaultAction {
+    #[allow(missing_docs)] // documentation missing in model
     Allow,
+    #[allow(missing_docs)] // documentation missing in model
     Deny,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1753,6 +1941,7 @@ impl std::str::FromStr for DefaultAction {
     }
 }
 impl DefaultAction {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DefaultAction::Allow => "ALLOW",
@@ -1760,6 +1949,7 @@ impl DefaultAction {
             DefaultAction::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ALLOW", "DENY"]
     }
@@ -1884,6 +2074,45 @@ pub mod log_config {
             self.field_log_level = Some(input);
             self
         }
+        /// <p>The field logging level. Values can be NONE, ERROR, or ALL. </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>NONE</b>: No field-level logs are
+        /// captured.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>ERROR</b>: Logs the following information only for
+        /// the fields that are in error:</p>
+        /// <ul>
+        /// <li>
+        /// <p>The error section in the server response.</p>
+        /// </li>
+        /// <li>
+        /// <p>Field-level errors.</p>
+        /// </li>
+        /// <li>
+        /// <p>The generated request/response functions that got resolved for error
+        /// fields.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>ALL</b>: The following information is logged for
+        /// all fields in the query:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Field-level tracing information.</p>
+        /// </li>
+        /// <li>
+        /// <p>The generated request/response functions that got resolved for each
+        /// field.</p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// </ul>
         pub fn set_field_log_level(
             mut self,
             input: std::option::Option<crate::model::FieldLogLevel>,
@@ -1897,6 +2126,8 @@ pub mod log_config {
             self.cloud_watch_logs_role_arn = Some(input.into());
             self
         }
+        /// <p>The service role that AppSync will assume to publish to Amazon
+        /// CloudWatch logs in your account. </p>
         pub fn set_cloud_watch_logs_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1910,6 +2141,8 @@ pub mod log_config {
             self.exclude_verbose_content = Some(input);
             self
         }
+        /// <p>Set to TRUE to exclude sections that contain information such as headers, context, and
+        /// evaluated mapping templates, regardless of logging level.</p>
         pub fn set_exclude_verbose_content(mut self, input: std::option::Option<bool>) -> Self {
             self.exclude_verbose_content = input;
             self
@@ -1931,6 +2164,7 @@ impl LogConfig {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1942,8 +2176,11 @@ impl LogConfig {
     std::hash::Hash,
 )]
 pub enum FieldLogLevel {
+    #[allow(missing_docs)] // documentation missing in model
     All,
+    #[allow(missing_docs)] // documentation missing in model
     Error,
+    #[allow(missing_docs)] // documentation missing in model
     None,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1966,6 +2203,7 @@ impl std::str::FromStr for FieldLogLevel {
     }
 }
 impl FieldLogLevel {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FieldLogLevel::All => "ALL",
@@ -1974,6 +2212,7 @@ impl FieldLogLevel {
             FieldLogLevel::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ALL", "ERROR", "NONE"]
     }
@@ -2049,6 +2288,7 @@ pub mod function_configuration {
             self.function_id = Some(input.into());
             self
         }
+        /// <p>A unique ID representing the <code>Function</code> object.</p>
         pub fn set_function_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.function_id = input;
             self
@@ -2058,6 +2298,7 @@ pub mod function_configuration {
             self.function_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the <code>Function</code> object.</p>
         pub fn set_function_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.function_arn = input;
             self
@@ -2067,6 +2308,7 @@ pub mod function_configuration {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the <code>Function</code> object.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2076,6 +2318,7 @@ pub mod function_configuration {
             self.description = Some(input.into());
             self
         }
+        /// <p>The <code>Function</code> description.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -2085,6 +2328,7 @@ pub mod function_configuration {
             self.data_source_name = Some(input.into());
             self
         }
+        /// <p>The name of the <code>DataSource</code>.</p>
         pub fn set_data_source_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2098,6 +2342,8 @@ pub mod function_configuration {
             self.request_mapping_template = Some(input.into());
             self
         }
+        /// <p>The <code>Function</code> request mapping template. Functions support only the
+        /// 2018-05-29 version of the request mapping template.</p>
         pub fn set_request_mapping_template(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2110,6 +2356,7 @@ pub mod function_configuration {
             self.response_mapping_template = Some(input.into());
             self
         }
+        /// <p>The <code>Function</code> response mapping template.</p>
         pub fn set_response_mapping_template(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2123,6 +2370,8 @@ pub mod function_configuration {
             self.function_version = Some(input.into());
             self
         }
+        /// <p>The version of the request mapping template. Currently only the 2018-05-29 version of
+        /// the template is supported.</p>
         pub fn set_function_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2137,6 +2386,9 @@ pub mod function_configuration {
             self.sync_config = Some(input);
             self
         }
+        /// <p>Describes a Sync configuration for a resolver.</p>
+        /// <p>Contains information on which Conflict Detection as well as Resolution strategy should
+        /// be performed when the resolver is invoked.</p>
         pub fn set_sync_config(
             mut self,
             input: std::option::Option<crate::model::SyncConfig>,
@@ -2285,6 +2537,7 @@ pub mod data_source {
             self.data_source_arn = Some(input.into());
             self
         }
+        /// <p>The data source ARN.</p>
         pub fn set_data_source_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2297,6 +2550,7 @@ pub mod data_source {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the data source.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2306,6 +2560,7 @@ pub mod data_source {
             self.description = Some(input.into());
             self
         }
+        /// <p>The description of the data source.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -2353,6 +2608,45 @@ pub mod data_source {
             self.r#type = Some(input);
             self
         }
+        /// <p>The type of the data source.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>AWS_LAMBDA</b>: The data source is an Amazon Web Services Lambda function.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>AMAZON_DYNAMODB</b>: The data source is an Amazon
+        /// DynamoDB table.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>AMAZON_ELASTICSEARCH</b>: The data source is an
+        /// Amazon OpenSearch Service domain.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>AMAZON_OPENSEARCH_SERVICE</b>: The data source is
+        /// an Amazon OpenSearch Service domain.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>NONE</b>: There is no data source. This type is
+        /// used when you wish to invoke a GraphQL operation without connecting to a data source,
+        /// such as performing data transformation with resolvers or triggering a subscription to
+        /// be invoked from a mutation.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>HTTP</b>: The data source is an HTTP
+        /// endpoint.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>RELATIONAL_DATABASE</b>: The data source is a
+        /// relational database.</p>
+        /// </li>
+        /// </ul>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::DataSourceType>,
@@ -2366,6 +2660,8 @@ pub mod data_source {
             self.service_role_arn = Some(input.into());
             self
         }
+        /// <p>The Identity and Access Management service role ARN for the data source. The system assumes this
+        /// role when accessing the data source.</p>
         pub fn set_service_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2378,6 +2674,7 @@ pub mod data_source {
             self.dynamodb_config = Some(input);
             self
         }
+        /// <p>Amazon DynamoDB settings.</p>
         pub fn set_dynamodb_config(
             mut self,
             input: std::option::Option<crate::model::DynamodbDataSourceConfig>,
@@ -2390,6 +2687,7 @@ pub mod data_source {
             self.lambda_config = Some(input);
             self
         }
+        /// <p>Amazon Web Services Lambda settings.</p>
         pub fn set_lambda_config(
             mut self,
             input: std::option::Option<crate::model::LambdaDataSourceConfig>,
@@ -2405,6 +2703,7 @@ pub mod data_source {
             self.elasticsearch_config = Some(input);
             self
         }
+        /// <p>Amazon OpenSearch Service settings.</p>
         pub fn set_elasticsearch_config(
             mut self,
             input: std::option::Option<crate::model::ElasticsearchDataSourceConfig>,
@@ -2420,6 +2719,7 @@ pub mod data_source {
             self.open_search_service_config = Some(input);
             self
         }
+        /// <p>Amazon OpenSearch Service settings.</p>
         pub fn set_open_search_service_config(
             mut self,
             input: std::option::Option<crate::model::OpenSearchServiceDataSourceConfig>,
@@ -2432,6 +2732,7 @@ pub mod data_source {
             self.http_config = Some(input);
             self
         }
+        /// <p>HTTP endpoint settings.</p>
         pub fn set_http_config(
             mut self,
             input: std::option::Option<crate::model::HttpDataSourceConfig>,
@@ -2447,6 +2748,7 @@ pub mod data_source {
             self.relational_database_config = Some(input);
             self
         }
+        /// <p>Relational database settings.</p>
         pub fn set_relational_database_config(
             mut self,
             input: std::option::Option<crate::model::RelationalDatabaseDataSourceConfig>,
@@ -2534,6 +2836,14 @@ pub mod relational_database_data_source_config {
             self.relational_database_source_type = Some(input);
             self
         }
+        /// <p>Source type for the relational database.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>RDS_HTTP_ENDPOINT</b>: The relational database
+        /// source type is an Amazon RDS HTTP endpoint.</p>
+        /// </li>
+        /// </ul>
         pub fn set_relational_database_source_type(
             mut self,
             input: std::option::Option<crate::model::RelationalDatabaseSourceType>,
@@ -2549,6 +2859,7 @@ pub mod relational_database_data_source_config {
             self.rds_http_endpoint_config = Some(input);
             self
         }
+        /// <p>Amazon RDS HTTP endpoint settings.</p>
         pub fn set_rds_http_endpoint_config(
             mut self,
             input: std::option::Option<crate::model::RdsHttpEndpointConfig>,
@@ -2616,6 +2927,7 @@ pub mod rds_http_endpoint_config {
             self.aws_region = Some(input.into());
             self
         }
+        /// <p>Amazon Web Services Region for RDS HTTP endpoint.</p>
         pub fn set_aws_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.aws_region = input;
             self
@@ -2625,6 +2937,7 @@ pub mod rds_http_endpoint_config {
             self.db_cluster_identifier = Some(input.into());
             self
         }
+        /// <p>Amazon RDS cluster ARN.</p>
         pub fn set_db_cluster_identifier(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2637,6 +2950,7 @@ pub mod rds_http_endpoint_config {
             self.database_name = Some(input.into());
             self
         }
+        /// <p>Logical database name.</p>
         pub fn set_database_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2649,6 +2963,7 @@ pub mod rds_http_endpoint_config {
             self.schema = Some(input.into());
             self
         }
+        /// <p>Logical schema name.</p>
         pub fn set_schema(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.schema = input;
             self
@@ -2658,6 +2973,7 @@ pub mod rds_http_endpoint_config {
             self.aws_secret_store_arn = Some(input.into());
             self
         }
+        /// <p>Amazon Web Services secret store ARN for database credentials.</p>
         pub fn set_aws_secret_store_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2684,6 +3000,7 @@ impl RdsHttpEndpointConfig {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2695,6 +3012,7 @@ impl RdsHttpEndpointConfig {
     std::hash::Hash,
 )]
 pub enum RelationalDatabaseSourceType {
+    #[allow(missing_docs)] // documentation missing in model
     RdsHttpEndpoint,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2715,12 +3033,14 @@ impl std::str::FromStr for RelationalDatabaseSourceType {
     }
 }
 impl RelationalDatabaseSourceType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RelationalDatabaseSourceType::RdsHttpEndpoint => "RDS_HTTP_ENDPOINT",
             RelationalDatabaseSourceType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["RDS_HTTP_ENDPOINT"]
     }
@@ -2769,6 +3089,10 @@ pub mod http_data_source_config {
             self.endpoint = Some(input.into());
             self
         }
+        /// <p>The HTTP URL endpoint. You can either specify the domain name or IP, and port
+        /// combination, and the URL scheme must be HTTP or HTTPS. If the port is not specified,
+        /// AppSync uses the default port 80 for the HTTP endpoint and port 443 for
+        /// HTTPS endpoints.</p>
         pub fn set_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.endpoint = input;
             self
@@ -2778,6 +3102,7 @@ pub mod http_data_source_config {
             self.authorization_config = Some(input);
             self
         }
+        /// <p>The authorization config in case the HTTP endpoint requires authorization.</p>
         pub fn set_authorization_config(
             mut self,
             input: std::option::Option<crate::model::AuthorizationConfig>,
@@ -2847,6 +3172,14 @@ pub mod authorization_config {
             self.authorization_type = Some(input);
             self
         }
+        /// <p>The authorization type required by the HTTP endpoint.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>AWS_IAM</b>: The authorization type is
+        /// Sigv4.</p>
+        /// </li>
+        /// </ul>
         pub fn set_authorization_type(
             mut self,
             input: std::option::Option<crate::model::AuthorizationType>,
@@ -2859,6 +3192,7 @@ pub mod authorization_config {
             self.aws_iam_config = Some(input);
             self
         }
+        /// <p>The Identity and Access Management settings.</p>
         pub fn set_aws_iam_config(
             mut self,
             input: std::option::Option<crate::model::AwsIamConfig>,
@@ -2914,6 +3248,7 @@ pub mod aws_iam_config {
             self.signing_region = Some(input.into());
             self
         }
+        /// <p>The signing region for Identity and Access Management authorization.</p>
         pub fn set_signing_region(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2926,6 +3261,7 @@ pub mod aws_iam_config {
             self.signing_service_name = Some(input.into());
             self
         }
+        /// <p>The signing service name for Identity and Access Management authorization.</p>
         pub fn set_signing_service_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2949,6 +3285,7 @@ impl AwsIamConfig {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2960,6 +3297,7 @@ impl AwsIamConfig {
     std::hash::Hash,
 )]
 pub enum AuthorizationType {
+    #[allow(missing_docs)] // documentation missing in model
     AwsIam,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2980,12 +3318,14 @@ impl std::str::FromStr for AuthorizationType {
     }
 }
 impl AuthorizationType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AuthorizationType::AwsIam => "AWS_IAM",
             AuthorizationType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AWS_IAM"]
     }
@@ -3028,6 +3368,7 @@ pub mod open_search_service_data_source_config {
             self.endpoint = Some(input.into());
             self
         }
+        /// <p>The endpoint.</p>
         pub fn set_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.endpoint = input;
             self
@@ -3037,6 +3378,7 @@ pub mod open_search_service_data_source_config {
             self.aws_region = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services Region.</p>
         pub fn set_aws_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.aws_region = input;
             self
@@ -3092,6 +3434,7 @@ pub mod elasticsearch_data_source_config {
             self.endpoint = Some(input.into());
             self
         }
+        /// <p>The endpoint.</p>
         pub fn set_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.endpoint = input;
             self
@@ -3101,6 +3444,7 @@ pub mod elasticsearch_data_source_config {
             self.aws_region = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services Region.</p>
         pub fn set_aws_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.aws_region = input;
             self
@@ -3149,6 +3493,7 @@ pub mod lambda_data_source_config {
             self.lambda_function_arn = Some(input.into());
             self
         }
+        /// <p>The ARN for the Lambda function.</p>
         pub fn set_lambda_function_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3215,6 +3560,7 @@ pub mod dynamodb_data_source_config {
             self.table_name = Some(input.into());
             self
         }
+        /// <p>The table name.</p>
         pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.table_name = input;
             self
@@ -3224,6 +3570,7 @@ pub mod dynamodb_data_source_config {
             self.aws_region = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services Region.</p>
         pub fn set_aws_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.aws_region = input;
             self
@@ -3233,6 +3580,7 @@ pub mod dynamodb_data_source_config {
             self.use_caller_credentials = Some(input);
             self
         }
+        /// <p>Set to TRUE to use Amazon Cognito credentials with this data source.</p>
         pub fn set_use_caller_credentials(mut self, input: std::option::Option<bool>) -> Self {
             self.use_caller_credentials = input;
             self
@@ -3242,6 +3590,7 @@ pub mod dynamodb_data_source_config {
             self.delta_sync_config = Some(input);
             self
         }
+        /// <p>The <code>DeltaSyncConfig</code> for a versioned datasource.</p>
         pub fn set_delta_sync_config(
             mut self,
             input: std::option::Option<crate::model::DeltaSyncConfig>,
@@ -3254,6 +3603,7 @@ pub mod dynamodb_data_source_config {
             self.versioned = Some(input);
             self
         }
+        /// <p>Set to TRUE to use Conflict Detection and Resolution with this data source.</p>
         pub fn set_versioned(mut self, input: std::option::Option<bool>) -> Self {
             self.versioned = input;
             self
@@ -3313,6 +3663,7 @@ pub mod delta_sync_config {
             self.base_table_ttl = Some(input);
             self
         }
+        /// <p>The number of minutes an Item is stored in the datasource.</p>
         pub fn set_base_table_ttl(mut self, input: std::option::Option<i64>) -> Self {
             self.base_table_ttl = input;
             self
@@ -3322,6 +3673,7 @@ pub mod delta_sync_config {
             self.delta_sync_table_name = Some(input.into());
             self
         }
+        /// <p>The Delta Sync table name.</p>
         pub fn set_delta_sync_table_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3334,6 +3686,7 @@ pub mod delta_sync_config {
             self.delta_sync_table_ttl = Some(input);
             self
         }
+        /// <p>The number of minutes a Delta Sync log entry is stored in the Delta Sync table.</p>
         pub fn set_delta_sync_table_ttl(mut self, input: std::option::Option<i64>) -> Self {
             self.delta_sync_table_ttl = input;
             self
@@ -3355,6 +3708,7 @@ impl DeltaSyncConfig {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3366,12 +3720,19 @@ impl DeltaSyncConfig {
     std::hash::Hash,
 )]
 pub enum DataSourceType {
+    #[allow(missing_docs)] // documentation missing in model
     AmazonDynamodb,
+    #[allow(missing_docs)] // documentation missing in model
     AmazonElasticsearch,
+    #[allow(missing_docs)] // documentation missing in model
     AmazonOpensearchService,
+    #[allow(missing_docs)] // documentation missing in model
     AwsLambda,
+    #[allow(missing_docs)] // documentation missing in model
     Http,
+    #[allow(missing_docs)] // documentation missing in model
     None,
+    #[allow(missing_docs)] // documentation missing in model
     RelationalDatabase,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3398,6 +3759,7 @@ impl std::str::FromStr for DataSourceType {
     }
 }
 impl DataSourceType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DataSourceType::AmazonDynamodb => "AMAZON_DYNAMODB",
@@ -3410,6 +3772,7 @@ impl DataSourceType {
             DataSourceType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "AMAZON_DYNAMODB",
@@ -3537,6 +3900,7 @@ pub mod api_key {
             self.id = Some(input.into());
             self
         }
+        /// <p>The API key ID.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -3546,6 +3910,7 @@ pub mod api_key {
             self.description = Some(input.into());
             self
         }
+        /// <p>A description of the purpose of the API key.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -3556,6 +3921,8 @@ pub mod api_key {
             self.expires = Some(input);
             self
         }
+        /// <p>The time after which the API key expires. The date is represented as seconds since the
+        /// epoch, rounded down to the nearest hour.</p>
         pub fn set_expires(mut self, input: std::option::Option<i64>) -> Self {
             self.expires = input;
             self
@@ -3566,6 +3933,8 @@ pub mod api_key {
             self.deletes = Some(input);
             self
         }
+        /// <p>The time after which the API key is deleted. The date is represented as seconds since
+        /// the epoch, rounded down to the nearest hour.</p>
         pub fn set_deletes(mut self, input: std::option::Option<i64>) -> Self {
             self.deletes = input;
             self
@@ -3757,6 +4126,8 @@ pub mod api_cache {
             self.ttl = Some(input);
             self
         }
+        /// <p>TTL in seconds for cache entries.</p>
+        /// <p>Valid values are between 1 and 3600 seconds.</p>
         pub fn set_ttl(mut self, input: std::option::Option<i64>) -> Self {
             self.ttl = input;
             self
@@ -3778,6 +4149,19 @@ pub mod api_cache {
             self.api_caching_behavior = Some(input);
             self
         }
+        /// <p>Caching behavior.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>FULL_REQUEST_CACHING</b>: All requests are fully
+        /// cached.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>PER_RESOLVER_CACHING</b>: Individual resolvers
+        /// that you specify are cached.</p>
+        /// </li>
+        /// </ul>
         pub fn set_api_caching_behavior(
             mut self,
             input: std::option::Option<crate::model::ApiCachingBehavior>,
@@ -3791,6 +4175,8 @@ pub mod api_cache {
             self.transit_encryption_enabled = Some(input);
             self
         }
+        /// <p>Transit encryption flag when connecting to cache. This setting cannot be updated after
+        /// creation.</p>
         pub fn set_transit_encryption_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.transit_encryption_enabled = input;
             self
@@ -3800,6 +4186,7 @@ pub mod api_cache {
             self.at_rest_encryption_enabled = Some(input);
             self
         }
+        /// <p>At rest encryption flag for cache. This setting cannot be updated after creation.</p>
         pub fn set_at_rest_encryption_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.at_rest_encryption_enabled = input;
             self
@@ -3882,6 +4269,80 @@ pub mod api_cache {
             self.r#type = Some(input);
             self
         }
+        /// <p>The cache instance type. Valid values are </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>SMALL</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MEDIUM</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>LARGE</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>XLARGE</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>LARGE_2X</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>LARGE_4X</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>LARGE_8X</code> (not available in all regions)</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>LARGE_12X</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>Historically, instance types were identified by an EC2-style value. As of July 2020, this is deprecated, and the generic identifiers above should be used.</p>
+        /// <p>The following legacy instance types are available, but their use is discouraged:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>T2_SMALL</b>: A t2.small instance type.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>T2_MEDIUM</b>: A t2.medium instance type.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>R4_LARGE</b>: A r4.large instance type.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>R4_XLARGE</b>: A r4.xlarge instance type.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p>
+        /// </li>
+        /// </ul>
         pub fn set_type(mut self, input: std::option::Option<crate::model::ApiCacheType>) -> Self {
             self.r#type = input;
             self
@@ -3918,6 +4379,34 @@ pub mod api_cache {
             self.status = Some(input);
             self
         }
+        /// <p>The cache instance status.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>AVAILABLE</b>: The instance is available for
+        /// use.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>CREATING</b>: The instance is currently
+        /// creating.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>DELETING</b>: The instance is currently
+        /// deleting.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>MODIFYING</b>: The instance is currently
+        /// modifying.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>FAILED</b>: The instance has failed
+        /// creation.</p>
+        /// </li>
+        /// </ul>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ApiCacheStatus>,
@@ -3945,6 +4434,7 @@ impl ApiCache {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3956,10 +4446,15 @@ impl ApiCache {
     std::hash::Hash,
 )]
 pub enum ApiCacheStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Available,
+    #[allow(missing_docs)] // documentation missing in model
     Creating,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Modifying,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3984,6 +4479,7 @@ impl std::str::FromStr for ApiCacheStatus {
     }
 }
 impl ApiCacheStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ApiCacheStatus::Available => "AVAILABLE",
@@ -3994,6 +4490,7 @@ impl ApiCacheStatus {
             ApiCacheStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AVAILABLE", "CREATING", "DELETING", "FAILED", "MODIFYING"]
     }
@@ -4004,6 +4501,7 @@ impl AsRef<str> for ApiCacheStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4015,20 +4513,35 @@ impl AsRef<str> for ApiCacheStatus {
     std::hash::Hash,
 )]
 pub enum ApiCacheType {
+    #[allow(missing_docs)] // documentation missing in model
     Large,
+    #[allow(missing_docs)] // documentation missing in model
     Large12X,
+    #[allow(missing_docs)] // documentation missing in model
     Large2X,
+    #[allow(missing_docs)] // documentation missing in model
     Large4X,
+    #[allow(missing_docs)] // documentation missing in model
     Large8X,
+    #[allow(missing_docs)] // documentation missing in model
     Medium,
+    #[allow(missing_docs)] // documentation missing in model
     R42Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
     R44Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
     R48Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
     R4Large,
+    #[allow(missing_docs)] // documentation missing in model
     R4Xlarge,
+    #[allow(missing_docs)] // documentation missing in model
     Small,
+    #[allow(missing_docs)] // documentation missing in model
     T2Medium,
+    #[allow(missing_docs)] // documentation missing in model
     T2Small,
+    #[allow(missing_docs)] // documentation missing in model
     Xlarge,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4063,6 +4576,7 @@ impl std::str::FromStr for ApiCacheType {
     }
 }
 impl ApiCacheType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ApiCacheType::Large => "LARGE",
@@ -4083,6 +4597,7 @@ impl ApiCacheType {
             ApiCacheType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "LARGE",
@@ -4109,6 +4624,7 @@ impl AsRef<str> for ApiCacheType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4120,7 +4636,9 @@ impl AsRef<str> for ApiCacheType {
     std::hash::Hash,
 )]
 pub enum ApiCachingBehavior {
+    #[allow(missing_docs)] // documentation missing in model
     FullRequestCaching,
+    #[allow(missing_docs)] // documentation missing in model
     PerResolverCaching,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4142,6 +4660,7 @@ impl std::str::FromStr for ApiCachingBehavior {
     }
 }
 impl ApiCachingBehavior {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ApiCachingBehavior::FullRequestCaching => "FULL_REQUEST_CACHING",
@@ -4149,6 +4668,7 @@ impl ApiCachingBehavior {
             ApiCachingBehavior::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FULL_REQUEST_CACHING", "PER_RESOLVER_CACHING"]
     }
@@ -4159,6 +4679,7 @@ impl AsRef<str> for ApiCachingBehavior {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4170,11 +4691,17 @@ impl AsRef<str> for ApiCachingBehavior {
     std::hash::Hash,
 )]
 pub enum SchemaStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Active,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     NotApplicable,
+    #[allow(missing_docs)] // documentation missing in model
     Processing,
+    #[allow(missing_docs)] // documentation missing in model
     Success,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4200,6 +4727,7 @@ impl std::str::FromStr for SchemaStatus {
     }
 }
 impl SchemaStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SchemaStatus::Active => "ACTIVE",
@@ -4211,6 +4739,7 @@ impl SchemaStatus {
             SchemaStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ACTIVE",
@@ -4228,6 +4757,7 @@ impl AsRef<str> for SchemaStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4239,7 +4769,9 @@ impl AsRef<str> for SchemaStatus {
     std::hash::Hash,
 )]
 pub enum OutputType {
+    #[allow(missing_docs)] // documentation missing in model
     Json,
+    #[allow(missing_docs)] // documentation missing in model
     Sdl,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4261,6 +4793,7 @@ impl std::str::FromStr for OutputType {
     }
 }
 impl OutputType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             OutputType::Json => "JSON",
@@ -4268,6 +4801,7 @@ impl OutputType {
             OutputType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["JSON", "SDL"]
     }

@@ -15,7 +15,7 @@ pub struct Server {
     pub server_name: std::option::Option<std::string::String>,
     /// <p>Time stamp of server creation. Example <code>2016-07-29T13:38:47.520Z</code>
     /// </p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The ARN of the CloudFormation stack that was used to create the server.
     /// </p>
     pub cloud_formation_stack_arn: std::option::Option<std::string::String>,
@@ -170,7 +170,7 @@ pub mod server {
         pub(crate) associate_public_ip_address: std::option::Option<bool>,
         pub(crate) backup_retention_count: std::option::Option<i32>,
         pub(crate) server_name: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) cloud_formation_stack_arn: std::option::Option<std::string::String>,
         pub(crate) custom_domain: std::option::Option<std::string::String>,
         pub(crate) disable_automated_backup: std::option::Option<bool>,
@@ -200,6 +200,8 @@ pub mod server {
             self.associate_public_ip_address = Some(input);
             self
         }
+        /// <p>Associate a public IP address with a server that you are launching.
+        /// </p>
         pub fn set_associate_public_ip_address(mut self, input: std::option::Option<bool>) -> Self {
             self.associate_public_ip_address = input;
             self
@@ -210,6 +212,8 @@ pub mod server {
             self.backup_retention_count = Some(input);
             self
         }
+        /// <p>The number of automated backups to keep.
+        /// </p>
         pub fn set_backup_retention_count(mut self, input: std::option::Option<i32>) -> Self {
             self.backup_retention_count = input;
             self
@@ -220,17 +224,24 @@ pub mod server {
             self.server_name = Some(input.into());
             self
         }
+        /// <p>The name of the server.
+        /// </p>
         pub fn set_server_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_name = input;
             self
         }
         /// <p>Time stamp of server creation. Example <code>2016-07-29T13:38:47.520Z</code>
         /// </p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>Time stamp of server creation. Example <code>2016-07-29T13:38:47.520Z</code>
+        /// </p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
@@ -240,6 +251,8 @@ pub mod server {
             self.cloud_formation_stack_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the CloudFormation stack that was used to create the server.
+        /// </p>
         pub fn set_cloud_formation_stack_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -253,6 +266,8 @@ pub mod server {
             self.custom_domain = Some(input.into());
             self
         }
+        /// <p>An optional public endpoint of a server, such as <code>https://aws.my-company.com</code>.
+        /// You cannot access the server by using the <code>Endpoint</code> value if the server has a <code>CustomDomain</code> specified.</p>
         pub fn set_custom_domain(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -266,6 +281,8 @@ pub mod server {
             self.disable_automated_backup = Some(input);
             self
         }
+        /// <p>Disables automated backups. The number of stored backups is dependent on the value of PreferredBackupCount.
+        /// </p>
         pub fn set_disable_automated_backup(mut self, input: std::option::Option<bool>) -> Self {
             self.disable_automated_backup = input;
             self
@@ -278,6 +295,10 @@ pub mod server {
             self.endpoint = Some(input.into());
             self
         }
+        /// <p>
+        /// A DNS name that can be used to access the engine. Example: <code>myserver-asdfghjkl.us-east-1.opsworks.io</code>.
+        /// You cannot access the server by using the <code>Endpoint</code> value if the server has a <code>CustomDomain</code> specified.
+        /// </p>
         pub fn set_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.endpoint = input;
             self
@@ -288,6 +309,8 @@ pub mod server {
             self.engine = Some(input.into());
             self
         }
+        /// <p>The engine type of the server. Valid values in this release include <code>ChefAutomate</code> and <code>Puppet</code>.
+        /// </p>
         pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.engine = input;
             self
@@ -298,10 +321,55 @@ pub mod server {
             self.engine_model = Some(input.into());
             self
         }
+        /// <p>The engine model of the server. Valid values in this release include <code>Monolithic</code> for Puppet and <code>Single</code> for Chef.
+        /// </p>
         pub fn set_engine_model(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.engine_model = input;
             self
         }
+        /// Appends an item to `engine_attributes`.
+        ///
+        /// To override the contents of this collection use [`set_engine_attributes`](Self::set_engine_attributes).
+        ///
+        /// <p>The response of a createServer() request returns the master
+        /// credential to access the server in EngineAttributes. These
+        /// credentials are not stored by AWS OpsWorks CM; they are returned only as part of the result of createServer().
+        /// </p>
+        /// <p class="title">
+        /// <b>Attributes returned in a createServer response for Chef</b>
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>CHEF_AUTOMATE_PIVOTAL_KEY</code>: A base64-encoded RSA private key that is
+        /// generated by AWS OpsWorks for Chef Automate. This private key is required to access
+        /// the Chef API.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CHEF_STARTER_KIT</code>: A base64-encoded ZIP file.
+        /// The ZIP file contains a Chef starter kit, which includes a README, a
+        /// configuration file, and the required RSA private key. Save this file, unzip it,
+        /// and then change to the directory where you've unzipped the file contents.
+        /// From this directory, you can run Knife commands.</p>
+        /// </li>
+        /// </ul>
+        /// <p class="title">
+        /// <b>Attributes returned in a createServer response for Puppet</b>
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>PUPPET_STARTER_KIT</code>: A base64-encoded ZIP file.
+        /// The ZIP file contains a Puppet starter kit, including a README and a
+        /// required private key. Save this file, unzip it,
+        /// and then change to the directory where you've unzipped the file contents.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PUPPET_ADMIN_PASSWORD</code>: An administrator password that you can use to sign in to the Puppet Enterprise console after the server is online.</p>
+        /// </li>
+        /// </ul>
         pub fn engine_attributes(
             mut self,
             input: impl Into<crate::model::EngineAttribute>,
@@ -311,6 +379,45 @@ pub mod server {
             self.engine_attributes = Some(v);
             self
         }
+        /// <p>The response of a createServer() request returns the master
+        /// credential to access the server in EngineAttributes. These
+        /// credentials are not stored by AWS OpsWorks CM; they are returned only as part of the result of createServer().
+        /// </p>
+        /// <p class="title">
+        /// <b>Attributes returned in a createServer response for Chef</b>
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>CHEF_AUTOMATE_PIVOTAL_KEY</code>: A base64-encoded RSA private key that is
+        /// generated by AWS OpsWorks for Chef Automate. This private key is required to access
+        /// the Chef API.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>CHEF_STARTER_KIT</code>: A base64-encoded ZIP file.
+        /// The ZIP file contains a Chef starter kit, which includes a README, a
+        /// configuration file, and the required RSA private key. Save this file, unzip it,
+        /// and then change to the directory where you've unzipped the file contents.
+        /// From this directory, you can run Knife commands.</p>
+        /// </li>
+        /// </ul>
+        /// <p class="title">
+        /// <b>Attributes returned in a createServer response for Puppet</b>
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>PUPPET_STARTER_KIT</code>: A base64-encoded ZIP file.
+        /// The ZIP file contains a Puppet starter kit, including a README and a
+        /// required private key. Save this file, unzip it,
+        /// and then change to the directory where you've unzipped the file contents.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>PUPPET_ADMIN_PASSWORD</code>: An administrator password that you can use to sign in to the Puppet Enterprise console after the server is online.</p>
+        /// </li>
+        /// </ul>
         pub fn set_engine_attributes(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::EngineAttribute>>,
@@ -325,6 +432,9 @@ pub mod server {
             self.engine_version = Some(input.into());
             self
         }
+        /// <p>The engine version of the server. For a Chef server, the valid value for EngineVersion is
+        /// currently <code>2</code>. For a Puppet server, specify either <code>2019</code> or <code>2017</code>.
+        /// </p>
         pub fn set_engine_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -338,6 +448,8 @@ pub mod server {
             self.instance_profile_arn = Some(input.into());
             self
         }
+        /// <p>The instance profile ARN of the server.
+        /// </p>
         pub fn set_instance_profile_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -352,6 +464,9 @@ pub mod server {
             self.instance_type = Some(input.into());
             self
         }
+        /// <p>
+        /// The instance type for the server, as specified in the CloudFormation stack. This might not be the same instance type that is shown in the EC2 console.
+        /// </p>
         pub fn set_instance_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -365,6 +480,8 @@ pub mod server {
             self.key_pair = Some(input.into());
             self
         }
+        /// <p>The key pair associated with the server.
+        /// </p>
         pub fn set_key_pair(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_pair = input;
             self
@@ -375,6 +492,8 @@ pub mod server {
             self.maintenance_status = Some(input);
             self
         }
+        /// <p>The status of the most recent server maintenance run. Shows <code>SUCCESS</code> or <code>FAILED</code>.
+        /// </p>
         pub fn set_maintenance_status(
             mut self,
             input: std::option::Option<crate::model::MaintenanceStatus>,
@@ -391,6 +510,8 @@ pub mod server {
             self.preferred_maintenance_window = Some(input.into());
             self
         }
+        /// <p>The preferred maintenance period specified for the server.
+        /// </p>
         pub fn set_preferred_maintenance_window(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -404,6 +525,8 @@ pub mod server {
             self.preferred_backup_window = Some(input.into());
             self
         }
+        /// <p>The preferred backup period specified for the server.
+        /// </p>
         pub fn set_preferred_backup_window(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -411,12 +534,24 @@ pub mod server {
             self.preferred_backup_window = input;
             self
         }
+        /// Appends an item to `security_group_ids`.
+        ///
+        /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
+        ///
+        /// <p>
+        /// The security group IDs for the server, as specified in the CloudFormation stack.
+        /// These might not be the same security groups that are shown in the EC2 console.
+        /// </p>
         pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_ids.unwrap_or_default();
             v.push(input.into());
             self.security_group_ids = Some(v);
             self
         }
+        /// <p>
+        /// The security group IDs for the server, as specified in the CloudFormation stack.
+        /// These might not be the same security groups that are shown in the EC2 console.
+        /// </p>
         pub fn set_security_group_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -430,6 +565,8 @@ pub mod server {
             self.service_role_arn = Some(input.into());
             self
         }
+        /// <p>The service role ARN used to create the server.
+        /// </p>
         pub fn set_service_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -445,6 +582,10 @@ pub mod server {
             self.status = Some(input);
             self
         }
+        /// <p>
+        /// The server's status. This field displays the states of actions in progress, such as creating, running, or backing up the server,
+        /// as well as the server's health state.
+        /// </p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::ServerStatus>,
@@ -460,6 +601,10 @@ pub mod server {
             self.status_reason = Some(input.into());
             self
         }
+        /// <p>
+        /// Depending on the server status, this field has either a human-readable
+        /// message (such as a create or backup error), or an escaped block of JSON (used for health check results).
+        /// </p>
         pub fn set_status_reason(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -467,12 +612,22 @@ pub mod server {
             self.status_reason = input;
             self
         }
+        /// Appends an item to `subnet_ids`.
+        ///
+        /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
+        ///
+        /// <p>
+        /// The subnet IDs specified in a CreateServer request.
+        /// </p>
         pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnet_ids.unwrap_or_default();
             v.push(input.into());
             self.subnet_ids = Some(v);
             self
         }
+        /// <p>
+        /// The subnet IDs specified in a CreateServer request.
+        /// </p>
         pub fn set_subnet_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -486,6 +641,8 @@ pub mod server {
             self.server_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the server.
+        /// </p>
         pub fn set_server_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_arn = input;
             self
@@ -528,6 +685,7 @@ impl Server {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -539,18 +697,31 @@ impl Server {
     std::hash::Hash,
 )]
 pub enum ServerStatus {
+    #[allow(missing_docs)] // documentation missing in model
     BackingUp,
+    #[allow(missing_docs)] // documentation missing in model
     ConnectionLost,
+    #[allow(missing_docs)] // documentation missing in model
     Creating,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Healthy,
+    #[allow(missing_docs)] // documentation missing in model
     Modifying,
+    #[allow(missing_docs)] // documentation missing in model
     Restoring,
+    #[allow(missing_docs)] // documentation missing in model
     Running,
+    #[allow(missing_docs)] // documentation missing in model
     Setup,
+    #[allow(missing_docs)] // documentation missing in model
     Terminated,
+    #[allow(missing_docs)] // documentation missing in model
     UnderMaintenance,
+    #[allow(missing_docs)] // documentation missing in model
     Unhealthy,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -583,6 +754,7 @@ impl std::str::FromStr for ServerStatus {
     }
 }
 impl ServerStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ServerStatus::BackingUp => "BACKING_UP",
@@ -601,6 +773,7 @@ impl ServerStatus {
             ServerStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "BACKING_UP",
@@ -625,6 +798,7 @@ impl AsRef<str> for ServerStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -636,7 +810,9 @@ impl AsRef<str> for ServerStatus {
     std::hash::Hash,
 )]
 pub enum MaintenanceStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Success,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -658,6 +834,7 @@ impl std::str::FromStr for MaintenanceStatus {
     }
 }
 impl MaintenanceStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MaintenanceStatus::Failed => "FAILED",
@@ -665,6 +842,7 @@ impl MaintenanceStatus {
             MaintenanceStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FAILED", "SUCCESS"]
     }
@@ -711,6 +889,8 @@ pub mod engine_attribute {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the engine attribute.
+        /// </p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -721,6 +901,8 @@ pub mod engine_attribute {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value of the engine attribute.
+        /// </p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -781,6 +963,9 @@ pub mod tag {
             self.key = Some(input.into());
             self
         }
+        /// <p>A tag key, such as <code>Stage</code> or <code>Name</code>. A tag key cannot be empty. The key can be a maximum of 127 characters,
+        /// and can contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code>
+        /// </p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -792,6 +977,9 @@ pub mod tag {
             self.value = Some(input.into());
             self
         }
+        /// <p>An optional tag value, such as <code>Production</code> or <code>test-owcm-server</code>. The value can be a maximum of 255 characters,
+        /// and contain only Unicode letters, numbers, or separators, or the following special characters: <code>+ - = . _ : /</code>
+        /// </p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -845,8 +1033,11 @@ impl Tag {
     std::hash::Hash,
 )]
 pub enum NodeAssociationStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     InProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Success,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -869,6 +1060,7 @@ impl std::str::FromStr for NodeAssociationStatus {
     }
 }
 impl NodeAssociationStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             NodeAssociationStatus::Failed => "FAILED",
@@ -877,6 +1069,7 @@ impl NodeAssociationStatus {
             NodeAssociationStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FAILED", "IN_PROGRESS", "SUCCESS"]
     }
@@ -894,7 +1087,7 @@ impl AsRef<str> for NodeAssociationStatus {
 pub struct ServerEvent {
     /// <p>The time when the event occurred.
     /// </p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The name of the server on or for which the event occurred.
     /// </p>
     pub server_name: std::option::Option<std::string::String>,
@@ -919,7 +1112,7 @@ pub mod server_event {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) server_name: std::option::Option<std::string::String>,
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) log_url: std::option::Option<std::string::String>,
@@ -927,11 +1120,16 @@ pub mod server_event {
     impl Builder {
         /// <p>The time when the event occurred.
         /// </p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time when the event occurred.
+        /// </p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
@@ -941,6 +1139,8 @@ pub mod server_event {
             self.server_name = Some(input.into());
             self
         }
+        /// <p>The name of the server on or for which the event occurred.
+        /// </p>
         pub fn set_server_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_name = input;
             self
@@ -950,6 +1150,7 @@ pub mod server_event {
             self.message = Some(input.into());
             self
         }
+        /// <p>A human-readable informational or status message.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -959,6 +1160,7 @@ pub mod server_event {
             self.log_url = Some(input.into());
             self
         }
+        /// <p>The Amazon S3 URL of the event's log file.</p>
         pub fn set_log_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.log_url = input;
             self
@@ -1000,7 +1202,7 @@ pub struct Backup {
     /// <p>
     /// The time stamp when the backup was created in the database. Example: <code>2016-07-29T13:38:47.520Z</code>
     /// </p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>
     /// A user-provided description for a manual backup. This field is empty for automated backups.
     /// </p>
@@ -1124,7 +1326,7 @@ pub mod backup {
         pub(crate) backup_arn: std::option::Option<std::string::String>,
         pub(crate) backup_id: std::option::Option<std::string::String>,
         pub(crate) backup_type: std::option::Option<crate::model::BackupType>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) engine: std::option::Option<std::string::String>,
         pub(crate) engine_model: std::option::Option<std::string::String>,
@@ -1153,6 +1355,8 @@ pub mod backup {
             self.backup_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the backup.
+        /// </p>
         pub fn set_backup_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.backup_arn = input;
             self
@@ -1164,6 +1368,9 @@ pub mod backup {
             self.backup_id = Some(input.into());
             self
         }
+        /// <p>
+        /// The generated ID of the backup. Example: <code>myServerName-yyyyMMddHHmmssSSS</code>
+        /// </p>
         pub fn set_backup_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.backup_id = input;
             self
@@ -1175,6 +1382,9 @@ pub mod backup {
             self.backup_type = Some(input);
             self
         }
+        /// <p>
+        /// The backup type. Valid values are <code>automated</code> or <code>manual</code>.
+        /// </p>
         pub fn set_backup_type(
             mut self,
             input: std::option::Option<crate::model::BackupType>,
@@ -1185,11 +1395,17 @@ pub mod backup {
         /// <p>
         /// The time stamp when the backup was created in the database. Example: <code>2016-07-29T13:38:47.520Z</code>
         /// </p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>
+        /// The time stamp when the backup was created in the database. Example: <code>2016-07-29T13:38:47.520Z</code>
+        /// </p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
@@ -1200,6 +1416,9 @@ pub mod backup {
             self.description = Some(input.into());
             self
         }
+        /// <p>
+        /// A user-provided description for a manual backup. This field is empty for automated backups.
+        /// </p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -1211,6 +1430,9 @@ pub mod backup {
             self.engine = Some(input.into());
             self
         }
+        /// <p>
+        /// The engine type that is obtained from the server when the backup is created.
+        /// </p>
         pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.engine = input;
             self
@@ -1222,6 +1444,9 @@ pub mod backup {
             self.engine_model = Some(input.into());
             self
         }
+        /// <p>
+        /// The engine model that is obtained from the server when the backup is created.
+        /// </p>
         pub fn set_engine_model(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.engine_model = input;
             self
@@ -1233,6 +1458,9 @@ pub mod backup {
             self.engine_version = Some(input.into());
             self
         }
+        /// <p>
+        /// The engine version that is obtained from the server when the backup is created.
+        /// </p>
         pub fn set_engine_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1248,6 +1476,10 @@ pub mod backup {
             self.instance_profile_arn = Some(input.into());
             self
         }
+        /// <p>
+        /// The EC2 instance profile ARN that is obtained from the server when the backup is created. Because this value is stored,
+        /// you are not required to provide the InstanceProfileArn again if you restore a backup.
+        /// </p>
         pub fn set_instance_profile_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1262,6 +1494,9 @@ pub mod backup {
             self.instance_type = Some(input.into());
             self
         }
+        /// <p>
+        /// The instance type that is obtained from the server when the backup is created.
+        /// </p>
         pub fn set_instance_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1276,6 +1511,9 @@ pub mod backup {
             self.key_pair = Some(input.into());
             self
         }
+        /// <p>
+        /// The key pair that is obtained from the server when the backup is created.
+        /// </p>
         pub fn set_key_pair(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_pair = input;
             self
@@ -1287,6 +1525,9 @@ pub mod backup {
             self.preferred_backup_window = Some(input.into());
             self
         }
+        /// <p>
+        /// The preferred backup period that is obtained from the server when the backup is created.
+        /// </p>
         pub fn set_preferred_backup_window(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1304,6 +1545,9 @@ pub mod backup {
             self.preferred_maintenance_window = Some(input.into());
             self
         }
+        /// <p>
+        /// The preferred maintenance period that is obtained from the server when the backup is created.
+        /// </p>
         pub fn set_preferred_maintenance_window(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1318,6 +1562,9 @@ pub mod backup {
             self.s3_data_size = Some(input);
             self
         }
+        /// <p>
+        /// This field is deprecated and is no longer used.
+        /// </p>
         pub fn set_s3_data_size(mut self, input: std::option::Option<i32>) -> Self {
             self.s3_data_size = input;
             self
@@ -1329,6 +1576,9 @@ pub mod backup {
             self.s3_data_url = Some(input.into());
             self
         }
+        /// <p>
+        /// This field is deprecated and is no longer used.
+        /// </p>
         pub fn set_s3_data_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.s3_data_url = input;
             self
@@ -1340,16 +1590,29 @@ pub mod backup {
             self.s3_log_url = Some(input.into());
             self
         }
+        /// <p>
+        /// The Amazon S3 URL of the backup's log file.
+        /// </p>
         pub fn set_s3_log_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.s3_log_url = input;
             self
         }
+        /// Appends an item to `security_group_ids`.
+        ///
+        /// To override the contents of this collection use [`set_security_group_ids`](Self::set_security_group_ids).
+        ///
+        /// <p>
+        /// The security group IDs that are obtained from the server when the backup is created.
+        /// </p>
         pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_ids.unwrap_or_default();
             v.push(input.into());
             self.security_group_ids = Some(v);
             self
         }
+        /// <p>
+        /// The security group IDs that are obtained from the server when the backup is created.
+        /// </p>
         pub fn set_security_group_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1364,6 +1627,9 @@ pub mod backup {
             self.server_name = Some(input.into());
             self
         }
+        /// <p>
+        /// The name of the server from which the backup was made.
+        /// </p>
         pub fn set_server_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.server_name = input;
             self
@@ -1375,6 +1641,9 @@ pub mod backup {
             self.service_role_arn = Some(input.into());
             self
         }
+        /// <p>
+        /// The service role ARN that is obtained from the server when the backup is created.
+        /// </p>
         pub fn set_service_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1388,6 +1657,8 @@ pub mod backup {
             self.status = Some(input);
             self
         }
+        /// <p>The status of a backup while in progress.
+        /// </p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::BackupStatus>,
@@ -1402,6 +1673,9 @@ pub mod backup {
             self.status_description = Some(input.into());
             self
         }
+        /// <p>
+        /// An informational message about backup status.
+        /// </p>
         pub fn set_status_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1409,12 +1683,22 @@ pub mod backup {
             self.status_description = input;
             self
         }
+        /// Appends an item to `subnet_ids`.
+        ///
+        /// To override the contents of this collection use [`set_subnet_ids`](Self::set_subnet_ids).
+        ///
+        /// <p>
+        /// The subnet IDs that are obtained from the server when the backup is created.
+        /// </p>
         pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnet_ids.unwrap_or_default();
             v.push(input.into());
             self.subnet_ids = Some(v);
             self
         }
+        /// <p>
+        /// The subnet IDs that are obtained from the server when the backup is created.
+        /// </p>
         pub fn set_subnet_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1429,6 +1713,9 @@ pub mod backup {
             self.tools_version = Some(input.into());
             self
         }
+        /// <p>
+        /// The version of AWS OpsWorks CM-specific tools that is obtained from the server when the backup is created.
+        /// </p>
         pub fn set_tools_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1443,6 +1730,9 @@ pub mod backup {
             self.user_arn = Some(input.into());
             self
         }
+        /// <p>
+        /// The IAM user ARN of the requester for manual backups. This field is empty for automated backups.
+        /// </p>
         pub fn set_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.user_arn = input;
             self
@@ -1485,6 +1775,7 @@ impl Backup {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1496,9 +1787,13 @@ impl Backup {
     std::hash::Hash,
 )]
 pub enum BackupStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     InProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Ok,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1522,6 +1817,7 @@ impl std::str::FromStr for BackupStatus {
     }
 }
 impl BackupStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             BackupStatus::Deleting => "DELETING",
@@ -1531,6 +1827,7 @@ impl BackupStatus {
             BackupStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DELETING", "FAILED", "IN_PROGRESS", "OK"]
     }
@@ -1541,6 +1838,7 @@ impl AsRef<str> for BackupStatus {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1552,7 +1850,9 @@ impl AsRef<str> for BackupStatus {
     std::hash::Hash,
 )]
 pub enum BackupType {
+    #[allow(missing_docs)] // documentation missing in model
     Automated,
+    #[allow(missing_docs)] // documentation missing in model
     Manual,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1574,6 +1874,7 @@ impl std::str::FromStr for BackupType {
     }
 }
 impl BackupType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             BackupType::Automated => "AUTOMATED",
@@ -1581,6 +1882,7 @@ impl BackupType {
             BackupType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AUTOMATED", "MANUAL"]
     }
@@ -1662,6 +1964,22 @@ pub mod account_attribute {
             self.name = Some(input.into());
             self
         }
+        /// <p>
+        /// The attribute name. The following are supported attribute names.
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <i>ServerLimit:</i> The number of current servers/maximum number of servers allowed. By default, you can have a maximum of 10 servers.
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <i>ManualBackupLimit:</i> The number of current manual backups/maximum number of backups allowed. By default, you can have a maximum
+        /// of 50 manual backups saved.
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1673,6 +1991,9 @@ pub mod account_attribute {
             self.maximum = Some(input);
             self
         }
+        /// <p>
+        /// The maximum allowed value.
+        /// </p>
         pub fn set_maximum(mut self, input: std::option::Option<i32>) -> Self {
             self.maximum = input;
             self
@@ -1684,6 +2005,9 @@ pub mod account_attribute {
             self.used = Some(input);
             self
         }
+        /// <p>
+        /// The current usage, such as the current number of servers that are associated with the account.
+        /// </p>
         pub fn set_used(mut self, input: std::option::Option<i32>) -> Self {
             self.used = input;
             self

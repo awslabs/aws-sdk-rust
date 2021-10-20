@@ -53,6 +53,9 @@ pub mod suspended_state {
             self.dynamic_scaling_in_suspended = Some(input);
             self
         }
+        /// <p>Whether scale in by a target tracking scaling policy or a step scaling policy is
+        /// suspended. Set the value to <code>true</code> if you don't want Application Auto Scaling to remove capacity
+        /// when a scaling policy is triggered. The default is <code>false</code>. </p>
         pub fn set_dynamic_scaling_in_suspended(
             mut self,
             input: std::option::Option<bool>,
@@ -67,6 +70,9 @@ pub mod suspended_state {
             self.dynamic_scaling_out_suspended = Some(input);
             self
         }
+        /// <p>Whether scale out by a target tracking scaling policy or a step scaling policy is
+        /// suspended. Set the value to <code>true</code> if you don't want Application Auto Scaling to add capacity
+        /// when a scaling policy is triggered. The default is <code>false</code>. </p>
         pub fn set_dynamic_scaling_out_suspended(
             mut self,
             input: std::option::Option<bool>,
@@ -81,6 +87,9 @@ pub mod suspended_state {
             self.scheduled_scaling_suspended = Some(input);
             self
         }
+        /// <p>Whether scheduled scaling is suspended. Set the value to <code>true</code> if you don't
+        /// want Application Auto Scaling to add or remove capacity by initiating scheduled actions. The default is
+        /// <code>false</code>. </p>
         pub fn set_scheduled_scaling_suspended(mut self, input: std::option::Option<bool>) -> Self {
             self.scheduled_scaling_suspended = input;
             self
@@ -102,6 +111,7 @@ impl SuspendedState {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -113,25 +123,45 @@ impl SuspendedState {
     std::hash::Hash,
 )]
 pub enum ScalableDimension {
+    #[allow(missing_docs)] // documentation missing in model
     AppstreamFleetDesiredCapacity,
+    #[allow(missing_docs)] // documentation missing in model
     CassandraTableReadCapacityUnits,
+    #[allow(missing_docs)] // documentation missing in model
     CassandraTableWriteCapacityUnits,
+    #[allow(missing_docs)] // documentation missing in model
     ComprehendDocClassifierEndpointInferenceUnits,
+    #[allow(missing_docs)] // documentation missing in model
     ComprehendEntityRecognizerEndpointInferenceUnits,
+    #[allow(missing_docs)] // documentation missing in model
     CustomResourceScalableDimension,
+    #[allow(missing_docs)] // documentation missing in model
     DynamoDbIndexReadCapacityUnits,
+    #[allow(missing_docs)] // documentation missing in model
     DynamoDbIndexWriteCapacityUnits,
+    #[allow(missing_docs)] // documentation missing in model
     DynamoDbTableReadCapacityUnits,
+    #[allow(missing_docs)] // documentation missing in model
     DynamoDbTableWriteCapacityUnits,
+    #[allow(missing_docs)] // documentation missing in model
     Ec2SpotFleetRequestTargetCapacity,
+    #[allow(missing_docs)] // documentation missing in model
     EcsServiceDesiredCount,
+    #[allow(missing_docs)] // documentation missing in model
     ElastiCacheReplicationGroupNodeGroups,
+    #[allow(missing_docs)] // documentation missing in model
     ElastiCacheReplicationGroupReplicas,
+    #[allow(missing_docs)] // documentation missing in model
     EmrInstanceGroupInstanceCount,
+    #[allow(missing_docs)] // documentation missing in model
     KafkaBrokerStorageVolumeSize,
+    #[allow(missing_docs)] // documentation missing in model
     LambdaFunctionProvisionedConcurrency,
+    #[allow(missing_docs)] // documentation missing in model
     NeptuneClusterReadReplicaCount,
+    #[allow(missing_docs)] // documentation missing in model
     RdsClusterReadReplicaCount,
+    #[allow(missing_docs)] // documentation missing in model
     SageMakerVariantDesiredInstanceCount,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -197,6 +227,7 @@ impl std::str::FromStr for ScalableDimension {
     }
 }
 impl ScalableDimension {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ScalableDimension::AppstreamFleetDesiredCapacity => "appstream:fleet:DesiredCapacity",
@@ -248,6 +279,7 @@ impl ScalableDimension {
             ScalableDimension::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "appstream:fleet:DesiredCapacity",
@@ -279,6 +311,7 @@ impl AsRef<str> for ScalableDimension {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -290,19 +323,33 @@ impl AsRef<str> for ScalableDimension {
     std::hash::Hash,
 )]
 pub enum ServiceNamespace {
+    #[allow(missing_docs)] // documentation missing in model
     Appstream,
+    #[allow(missing_docs)] // documentation missing in model
     Cassandra,
+    #[allow(missing_docs)] // documentation missing in model
     Comprehend,
+    #[allow(missing_docs)] // documentation missing in model
     CustomResource,
+    #[allow(missing_docs)] // documentation missing in model
     Dynamodb,
+    #[allow(missing_docs)] // documentation missing in model
     Ec2,
+    #[allow(missing_docs)] // documentation missing in model
     Ecs,
+    #[allow(missing_docs)] // documentation missing in model
     Elasticache,
+    #[allow(missing_docs)] // documentation missing in model
     Emr,
+    #[allow(missing_docs)] // documentation missing in model
     Kafka,
+    #[allow(missing_docs)] // documentation missing in model
     Lambda,
+    #[allow(missing_docs)] // documentation missing in model
     Neptune,
+    #[allow(missing_docs)] // documentation missing in model
     Rds,
+    #[allow(missing_docs)] // documentation missing in model
     Sagemaker,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -336,6 +383,7 @@ impl std::str::FromStr for ServiceNamespace {
     }
 }
 impl ServiceNamespace {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ServiceNamespace::Appstream => "appstream",
@@ -355,6 +403,7 @@ impl ServiceNamespace {
             ServiceNamespace::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "appstream",
@@ -424,6 +473,10 @@ pub mod scalable_target_action {
             self.min_capacity = Some(input);
             self
         }
+        /// <p>The minimum capacity.</p>
+        /// <p>For certain resources, the minimum value allowed is 0. This includes Lambda provisioned
+        /// concurrency, Spot Fleet, ECS services, Aurora DB clusters, EMR clusters, and custom resources.
+        /// For all other resources, the minimum value allowed is 1.</p>
         pub fn set_min_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.min_capacity = input;
             self
@@ -439,6 +492,13 @@ pub mod scalable_target_action {
             self.max_capacity = Some(input);
             self
         }
+        /// <p>The maximum capacity.</p>
+        /// <p>Although you can specify a large maximum capacity, note that service quotas may impose
+        /// lower limits. Each service has its own default quotas for the maximum capacity of the
+        /// resource. If you want to specify a higher limit, you can request an increase. For more
+        /// information, consult the documentation for that service. For information about the default
+        /// quotas for each service, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-service-information.html">Service Endpoints and
+        /// Quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn set_max_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.max_capacity = input;
             self
@@ -491,6 +551,7 @@ pub mod alarm {
             self.alarm_name = Some(input.into());
             self
         }
+        /// <p>The name of the alarm.</p>
         pub fn set_alarm_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.alarm_name = input;
             self
@@ -500,6 +561,7 @@ pub mod alarm {
             self.alarm_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the alarm.</p>
         pub fn set_alarm_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.alarm_arn = input;
             self
@@ -698,6 +760,11 @@ pub mod target_tracking_scaling_policy_configuration {
             self.target_value = Some(input);
             self
         }
+        /// <p>The target value for the metric. Although this property accepts numbers of type Double,
+        /// it won't accept values that are either too small or too large. Values must be in the range
+        /// of -2^360 to 2^360. The value must be a valid number based on the choice of metric. For
+        /// example, if the metric is CPU utilization, then the target value is a percent value that
+        /// represents how much of the CPU can be used before scaling out. </p>
         pub fn set_target_value(mut self, input: std::option::Option<f64>) -> Self {
             self.target_value = input;
             self
@@ -711,6 +778,8 @@ pub mod target_tracking_scaling_policy_configuration {
             self.predefined_metric_specification = Some(input);
             self
         }
+        /// <p>A predefined metric. You can specify either a predefined metric or a customized
+        /// metric.</p>
         pub fn set_predefined_metric_specification(
             mut self,
             input: std::option::Option<crate::model::PredefinedMetricSpecification>,
@@ -727,6 +796,8 @@ pub mod target_tracking_scaling_policy_configuration {
             self.customized_metric_specification = Some(input);
             self
         }
+        /// <p>A customized metric. You can specify either a predefined metric or a customized
+        /// metric.</p>
         pub fn set_customized_metric_specification(
             mut self,
             input: std::option::Option<crate::model::CustomizedMetricSpecification>,
@@ -793,6 +864,61 @@ pub mod target_tracking_scaling_policy_configuration {
             self.scale_out_cooldown = Some(input);
             self
         }
+        /// <p>The amount of time, in seconds, to wait for a previous scale-out activity to take
+        /// effect.</p>
+        /// <p>With the <i>scale-out cooldown period</i>, the intention is to continuously
+        /// (but not excessively) scale out. After Application Auto Scaling successfully scales out using a target
+        /// tracking scaling policy, it starts to calculate the cooldown time. The scaling policy won't
+        /// increase the desired capacity again unless either a larger scale out is triggered or the
+        /// cooldown period ends. While the cooldown period is in effect, the capacity added by the
+        /// initiating scale-out activity is calculated as part of the desired capacity for the next
+        /// scale-out activity.</p>
+        /// <p>Application Auto Scaling provides a default value of 600 for Amazon ElastiCache replication groups
+        /// and a default value of 300 for the following scalable targets:</p>
+        /// <ul>
+        /// <li>
+        /// <p>AppStream 2.0 fleets</p>
+        /// </li>
+        /// <li>
+        /// <p>Aurora DB clusters</p>
+        /// </li>
+        /// <li>
+        /// <p>ECS services</p>
+        /// </li>
+        /// <li>
+        /// <p>EMR clusters</p>
+        /// </li>
+        /// <li>
+        /// <p> Neptune clusters</p>
+        /// </li>
+        /// <li>
+        /// <p>SageMaker endpoint variants</p>
+        /// </li>
+        /// <li>
+        /// <p>Spot Fleets</p>
+        /// </li>
+        /// <li>
+        /// <p>Custom resources</p>
+        /// </li>
+        /// </ul>
+        /// <p>For all other scalable targets, the default value is 0:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Amazon Comprehend document classification and entity recognizer endpoints</p>
+        /// </li>
+        /// <li>
+        /// <p>DynamoDB tables and global secondary indexes</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Keyspaces tables</p>
+        /// </li>
+        /// <li>
+        /// <p>Lambda provisioned concurrency</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon MSK broker storage</p>
+        /// </li>
+        /// </ul>
         pub fn set_scale_out_cooldown(mut self, input: std::option::Option<i32>) -> Self {
             self.scale_out_cooldown = input;
             self
@@ -854,6 +980,59 @@ pub mod target_tracking_scaling_policy_configuration {
             self.scale_in_cooldown = Some(input);
             self
         }
+        /// <p>The amount of time, in seconds, after a scale-in activity completes before another
+        /// scale-in activity can start.</p>
+        /// <p>With the <i>scale-in cooldown period</i>, the intention is to scale in
+        /// conservatively to protect your application’s availability, so scale-in activities are blocked
+        /// until the cooldown period has expired. However, if another alarm triggers a scale-out activity
+        /// during the scale-in cooldown period, Application Auto Scaling scales out the target immediately. In this case,
+        /// the scale-in cooldown period stops and doesn't complete.</p>
+        /// <p>Application Auto Scaling provides a default value of 600 for Amazon ElastiCache replication groups
+        /// and a default value of 300 for the following scalable targets:</p>
+        /// <ul>
+        /// <li>
+        /// <p>AppStream 2.0 fleets</p>
+        /// </li>
+        /// <li>
+        /// <p>Aurora DB clusters</p>
+        /// </li>
+        /// <li>
+        /// <p>ECS services</p>
+        /// </li>
+        /// <li>
+        /// <p>EMR clusters</p>
+        /// </li>
+        /// <li>
+        /// <p> Neptune clusters</p>
+        /// </li>
+        /// <li>
+        /// <p>SageMaker endpoint variants</p>
+        /// </li>
+        /// <li>
+        /// <p>Spot Fleets</p>
+        /// </li>
+        /// <li>
+        /// <p>Custom resources</p>
+        /// </li>
+        /// </ul>
+        /// <p>For all other scalable targets, the default value is 0:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Amazon Comprehend document classification and entity recognizer endpoints</p>
+        /// </li>
+        /// <li>
+        /// <p>DynamoDB tables and global secondary indexes</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Keyspaces tables</p>
+        /// </li>
+        /// <li>
+        /// <p>Lambda provisioned concurrency</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon MSK broker storage</p>
+        /// </li>
+        /// </ul>
         pub fn set_scale_in_cooldown(mut self, input: std::option::Option<i32>) -> Self {
             self.scale_in_cooldown = input;
             self
@@ -867,6 +1046,11 @@ pub mod target_tracking_scaling_policy_configuration {
             self.disable_scale_in = Some(input);
             self
         }
+        /// <p>Indicates whether scale in by the target tracking scaling policy is disabled. If the
+        /// value is <code>true</code>, scale in is disabled and the target tracking scaling policy
+        /// won't remove capacity from the scalable target. Otherwise, scale in is enabled and the
+        /// target tracking scaling policy can remove capacity from the scalable target. The default
+        /// value is <code>false</code>.</p>
         pub fn set_disable_scale_in(mut self, input: std::option::Option<bool>) -> Self {
             self.disable_scale_in = input;
             self
@@ -958,6 +1142,7 @@ pub mod customized_metric_specification {
             self.metric_name = Some(input.into());
             self
         }
+        /// <p>The name of the metric. </p>
         pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.metric_name = input;
             self
@@ -967,16 +1152,27 @@ pub mod customized_metric_specification {
             self.namespace = Some(input.into());
             self
         }
+        /// <p>The namespace of the metric.</p>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.namespace = input;
             self
         }
+        /// Appends an item to `dimensions`.
+        ///
+        /// To override the contents of this collection use [`set_dimensions`](Self::set_dimensions).
+        ///
+        /// <p>The dimensions of the metric. </p>
+        /// <p>Conditional: If you published your metric with dimensions, you must specify the same
+        /// dimensions in your scaling policy.</p>
         pub fn dimensions(mut self, input: impl Into<crate::model::MetricDimension>) -> Self {
             let mut v = self.dimensions.unwrap_or_default();
             v.push(input.into());
             self.dimensions = Some(v);
             self
         }
+        /// <p>The dimensions of the metric. </p>
+        /// <p>Conditional: If you published your metric with dimensions, you must specify the same
+        /// dimensions in your scaling policy.</p>
         pub fn set_dimensions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MetricDimension>>,
@@ -989,6 +1185,7 @@ pub mod customized_metric_specification {
             self.statistic = Some(input);
             self
         }
+        /// <p>The statistic of the metric.</p>
         pub fn set_statistic(
             mut self,
             input: std::option::Option<crate::model::MetricStatistic>,
@@ -1001,6 +1198,7 @@ pub mod customized_metric_specification {
             self.unit = Some(input.into());
             self
         }
+        /// <p>The unit of the metric.</p>
         pub fn set_unit(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.unit = input;
             self
@@ -1024,6 +1222,7 @@ impl CustomizedMetricSpecification {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1035,10 +1234,15 @@ impl CustomizedMetricSpecification {
     std::hash::Hash,
 )]
 pub enum MetricStatistic {
+    #[allow(missing_docs)] // documentation missing in model
     Average,
+    #[allow(missing_docs)] // documentation missing in model
     Maximum,
+    #[allow(missing_docs)] // documentation missing in model
     Minimum,
+    #[allow(missing_docs)] // documentation missing in model
     SampleCount,
+    #[allow(missing_docs)] // documentation missing in model
     Sum,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1063,6 +1267,7 @@ impl std::str::FromStr for MetricStatistic {
     }
 }
 impl MetricStatistic {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MetricStatistic::Average => "Average",
@@ -1073,6 +1278,7 @@ impl MetricStatistic {
             MetricStatistic::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Average", "Maximum", "Minimum", "SampleCount", "Sum"]
     }
@@ -1115,6 +1321,7 @@ pub mod metric_dimension {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the dimension.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1124,6 +1331,7 @@ pub mod metric_dimension {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value of the dimension.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -1203,6 +1411,8 @@ pub mod predefined_metric_specification {
             self.predefined_metric_type = Some(input);
             self
         }
+        /// <p>The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only to
+        /// Spot Fleet requests and ECS services.</p>
         pub fn set_predefined_metric_type(
             mut self,
             input: std::option::Option<crate::model::MetricType>,
@@ -1235,6 +1445,27 @@ pub mod predefined_metric_specification {
             self.resource_label = Some(input.into());
             self
         }
+        /// <p>Identifies the resource associated with the metric type. You can't specify a resource
+        /// label unless the metric type is <code>ALBRequestCountPerTarget</code> and there is a target
+        /// group attached to the Spot Fleet request or ECS service.</p>
+        /// <p>You create the resource label by appending the final portion of the load balancer ARN
+        /// and the final portion of the target group ARN into a single value, separated by a forward
+        /// slash (/). The format of the resource label is:</p>
+        /// <p>
+        /// <code>app/my-alb/778d41231b141a0f/targetgroup/my-alb-target-group/943f017f100becff</code>.</p>
+        /// <p>Where:</p>
+        /// <ul>
+        /// <li>
+        /// <p>app/<load-balancer-name>/<load-balancer-id> is the final portion of
+        /// the load balancer ARN</p>
+        /// </li>
+        /// <li>
+        /// <p>targetgroup/<target-group-name>/<target-group-id> is the final portion
+        /// of the target group ARN.</p>
+        /// </li>
+        /// </ul>
+        /// <p>To find the ARN for an Application Load Balancer, use the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a> API operation. To find the ARN for the target group, use
+        /// the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html">DescribeTargetGroups</a> API operation.</p>
         pub fn set_resource_label(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1258,6 +1489,7 @@ impl PredefinedMetricSpecification {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1269,26 +1501,47 @@ impl PredefinedMetricSpecification {
     std::hash::Hash,
 )]
 pub enum MetricType {
+    #[allow(missing_docs)] // documentation missing in model
     AlbRequestCountPerTarget,
+    #[allow(missing_docs)] // documentation missing in model
     AppStreamAverageCapacityUtilization,
+    #[allow(missing_docs)] // documentation missing in model
     CassandraReadCapacityUtilization,
+    #[allow(missing_docs)] // documentation missing in model
     CassandraWriteCapacityUtilization,
+    #[allow(missing_docs)] // documentation missing in model
     ComprehendInferenceUtilization,
+    #[allow(missing_docs)] // documentation missing in model
     DynamoDbReadCapacityUtilization,
+    #[allow(missing_docs)] // documentation missing in model
     DynamoDbWriteCapacityUtilization,
+    #[allow(missing_docs)] // documentation missing in model
     Ec2SpotFleetRequestAverageCpuUtilization,
+    #[allow(missing_docs)] // documentation missing in model
     Ec2SpotFleetRequestAverageNetworkIn,
+    #[allow(missing_docs)] // documentation missing in model
     Ec2SpotFleetRequestAverageNetworkOut,
+    #[allow(missing_docs)] // documentation missing in model
     EcsServiceAverageCpuUtilization,
+    #[allow(missing_docs)] // documentation missing in model
     EcsServiceAverageMemoryUtilization,
+    #[allow(missing_docs)] // documentation missing in model
     ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage,
+    #[allow(missing_docs)] // documentation missing in model
     ElastiCachePrimaryEngineCpuUtilization,
+    #[allow(missing_docs)] // documentation missing in model
     ElastiCacheReplicaEngineCpuUtilization,
+    #[allow(missing_docs)] // documentation missing in model
     KafkaBrokerStorageUtilization,
+    #[allow(missing_docs)] // documentation missing in model
     LambdaProvisionedConcurrencyUtilization,
+    #[allow(missing_docs)] // documentation missing in model
     NeptuneReaderAverageCpuUtilization,
+    #[allow(missing_docs)] // documentation missing in model
     RdsReaderAverageCpuUtilization,
+    #[allow(missing_docs)] // documentation missing in model
     RdsReaderAverageDatabaseConnections,
+    #[allow(missing_docs)] // documentation missing in model
     SageMakerVariantInvocationsPerInstance,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1349,6 +1602,7 @@ impl std::str::FromStr for MetricType {
     }
 }
 impl MetricType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MetricType::AlbRequestCountPerTarget => "ALBRequestCountPerTarget",
@@ -1395,6 +1649,7 @@ impl MetricType {
             MetricType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ALBRequestCountPerTarget",
@@ -1555,6 +1810,12 @@ pub mod step_scaling_policy_configuration {
             self.adjustment_type = Some(input);
             self
         }
+        /// <p>Specifies how the <code>ScalingAdjustment</code> value in a <a href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_StepAdjustment.html">StepAdjustment</a> is interpreted (for example, an absolute number or a
+        /// percentage). The valid values are <code>ChangeInCapacity</code>,
+        /// <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>. </p>
+        /// <p>
+        /// <code>AdjustmentType</code> is required if you are adding a new step scaling policy
+        /// configuration.</p>
         pub fn set_adjustment_type(
             mut self,
             input: std::option::Option<crate::model::AdjustmentType>,
@@ -1562,12 +1823,24 @@ pub mod step_scaling_policy_configuration {
             self.adjustment_type = input;
             self
         }
+        /// Appends an item to `step_adjustments`.
+        ///
+        /// To override the contents of this collection use [`set_step_adjustments`](Self::set_step_adjustments).
+        ///
+        /// <p>A set of adjustments that enable you to scale based on the size of the alarm
+        /// breach.</p>
+        /// <p>At least one step adjustment is required if you are adding a new step scaling policy
+        /// configuration.</p>
         pub fn step_adjustments(mut self, input: impl Into<crate::model::StepAdjustment>) -> Self {
             let mut v = self.step_adjustments.unwrap_or_default();
             v.push(input.into());
             self.step_adjustments = Some(v);
             self
         }
+        /// <p>A set of adjustments that enable you to scale based on the size of the alarm
+        /// breach.</p>
+        /// <p>At least one step adjustment is required if you are adding a new step scaling policy
+        /// configuration.</p>
         pub fn set_step_adjustments(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::StepAdjustment>>,
@@ -1586,6 +1859,13 @@ pub mod step_scaling_policy_configuration {
             self.min_adjustment_magnitude = Some(input);
             self
         }
+        /// <p>The minimum value to scale by when the adjustment type is
+        /// <code>PercentChangeInCapacity</code>. For example, suppose that you create a step
+        /// scaling policy to scale out an Amazon ECS service by 25 percent and you specify a
+        /// <code>MinAdjustmentMagnitude</code> of 2. If the service has 4 tasks and the scaling
+        /// policy is performed, 25 percent of 4 is 1. However, because you specified a
+        /// <code>MinAdjustmentMagnitude</code> of 2, Application Auto Scaling scales out the service by 2
+        /// tasks.</p>
         pub fn set_min_adjustment_magnitude(mut self, input: std::option::Option<i32>) -> Self {
             self.min_adjustment_magnitude = input;
             self
@@ -1656,6 +1936,68 @@ pub mod step_scaling_policy_configuration {
             self.cooldown = Some(input);
             self
         }
+        /// <p>The amount of time, in seconds, to wait for a previous scaling activity to take effect. </p>
+        /// <p>With scale-out policies, the intention is to continuously (but not excessively) scale out.
+        /// After Application Auto Scaling successfully scales out using a step scaling policy, it starts to calculate the
+        /// cooldown time. The scaling policy won't increase the desired capacity again unless either a
+        /// larger scale out is triggered or the cooldown period ends. While the cooldown period is in
+        /// effect, capacity added by the initiating scale-out activity is calculated as part of the
+        /// desired capacity for the next scale-out activity. For example, when an alarm triggers a step
+        /// scaling policy to increase the capacity by 2, the scaling activity completes successfully, and
+        /// a cooldown period starts. If the alarm triggers again during the cooldown period but at a more
+        /// aggressive step adjustment of 3, the previous increase of 2 is considered part of the current
+        /// capacity. Therefore, only 1 is added to the capacity.</p>
+        /// <p>With scale-in policies, the intention is to scale in conservatively to protect your
+        /// application’s availability, so scale-in activities are blocked until the cooldown period has
+        /// expired. However, if another alarm triggers a scale-out activity during the cooldown period
+        /// after a scale-in activity, Application Auto Scaling scales out the target immediately. In this case, the
+        /// cooldown period for the scale-in activity stops and doesn't complete.</p>
+        /// <p>Application Auto Scaling provides a default value of 600 for Amazon ElastiCache replication groups
+        /// and a default value of 300 for the following scalable targets:</p>
+        /// <ul>
+        /// <li>
+        /// <p>AppStream 2.0 fleets</p>
+        /// </li>
+        /// <li>
+        /// <p>Aurora DB clusters</p>
+        /// </li>
+        /// <li>
+        /// <p>ECS services</p>
+        /// </li>
+        /// <li>
+        /// <p>EMR clusters</p>
+        /// </li>
+        /// <li>
+        /// <p> Neptune clusters</p>
+        /// </li>
+        /// <li>
+        /// <p>SageMaker endpoint variants</p>
+        /// </li>
+        /// <li>
+        /// <p>Spot Fleets</p>
+        /// </li>
+        /// <li>
+        /// <p>Custom resources</p>
+        /// </li>
+        /// </ul>
+        /// <p>For all other scalable targets, the default value is 0:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Amazon Comprehend document classification and entity recognizer endpoints</p>
+        /// </li>
+        /// <li>
+        /// <p>DynamoDB tables and global secondary indexes</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Keyspaces tables</p>
+        /// </li>
+        /// <li>
+        /// <p>Lambda provisioned concurrency</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon MSK broker storage</p>
+        /// </li>
+        /// </ul>
         pub fn set_cooldown(mut self, input: std::option::Option<i32>) -> Self {
             self.cooldown = input;
             self
@@ -1670,6 +2012,9 @@ pub mod step_scaling_policy_configuration {
             self.metric_aggregation_type = Some(input);
             self
         }
+        /// <p>The aggregation type for the CloudWatch metrics. Valid values are <code>Minimum</code>,
+        /// <code>Maximum</code>, and <code>Average</code>. If the aggregation type is null, the
+        /// value is treated as <code>Average</code>.</p>
         pub fn set_metric_aggregation_type(
             mut self,
             input: std::option::Option<crate::model::MetricAggregationType>,
@@ -1696,6 +2041,7 @@ impl StepScalingPolicyConfiguration {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1707,8 +2053,11 @@ impl StepScalingPolicyConfiguration {
     std::hash::Hash,
 )]
 pub enum MetricAggregationType {
+    #[allow(missing_docs)] // documentation missing in model
     Average,
+    #[allow(missing_docs)] // documentation missing in model
     Maximum,
+    #[allow(missing_docs)] // documentation missing in model
     Minimum,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1731,6 +2080,7 @@ impl std::str::FromStr for MetricAggregationType {
     }
 }
 impl MetricAggregationType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MetricAggregationType::Average => "Average",
@@ -1739,6 +2089,7 @@ impl MetricAggregationType {
             MetricAggregationType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Average", "Maximum", "Minimum"]
     }
@@ -1839,6 +2190,11 @@ pub mod step_adjustment {
             self.metric_interval_lower_bound = Some(input);
             self
         }
+        /// <p>The lower bound for the difference between the alarm threshold and the CloudWatch metric. If
+        /// the metric value is above the breach threshold, the lower bound is inclusive (the metric
+        /// must be greater than or equal to the threshold plus the lower bound). Otherwise, it is
+        /// exclusive (the metric must be greater than the threshold plus the lower bound). A null
+        /// value indicates negative infinity.</p>
         pub fn set_metric_interval_lower_bound(mut self, input: std::option::Option<f64>) -> Self {
             self.metric_interval_lower_bound = input;
             self
@@ -1853,6 +2209,12 @@ pub mod step_adjustment {
             self.metric_interval_upper_bound = Some(input);
             self
         }
+        /// <p>The upper bound for the difference between the alarm threshold and the CloudWatch metric. If
+        /// the metric value is above the breach threshold, the upper bound is exclusive (the metric
+        /// must be less than the threshold plus the upper bound). Otherwise, it is inclusive (the
+        /// metric must be less than or equal to the threshold plus the upper bound). A null value
+        /// indicates positive infinity.</p>
+        /// <p>The upper bound must be greater than the lower bound.</p>
         pub fn set_metric_interval_upper_bound(mut self, input: std::option::Option<f64>) -> Self {
             self.metric_interval_upper_bound = input;
             self
@@ -1864,6 +2226,9 @@ pub mod step_adjustment {
             self.scaling_adjustment = Some(input);
             self
         }
+        /// <p>The amount by which to scale, based on the specified adjustment type. A positive value
+        /// adds to the current capacity while a negative number removes from the current capacity. For
+        /// exact capacity, you must specify a positive value.</p>
         pub fn set_scaling_adjustment(mut self, input: std::option::Option<i32>) -> Self {
             self.scaling_adjustment = input;
             self
@@ -1885,6 +2250,7 @@ impl StepAdjustment {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1896,8 +2262,11 @@ impl StepAdjustment {
     std::hash::Hash,
 )]
 pub enum AdjustmentType {
+    #[allow(missing_docs)] // documentation missing in model
     ChangeInCapacity,
+    #[allow(missing_docs)] // documentation missing in model
     ExactCapacity,
+    #[allow(missing_docs)] // documentation missing in model
     PercentChangeInCapacity,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1920,6 +2289,7 @@ impl std::str::FromStr for AdjustmentType {
     }
 }
 impl AdjustmentType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AdjustmentType::ChangeInCapacity => "ChangeInCapacity",
@@ -1928,6 +2298,7 @@ impl AdjustmentType {
             AdjustmentType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ChangeInCapacity",
@@ -1942,6 +2313,7 @@ impl AsRef<str> for AdjustmentType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1953,7 +2325,9 @@ impl AsRef<str> for AdjustmentType {
     std::hash::Hash,
 )]
 pub enum PolicyType {
+    #[allow(missing_docs)] // documentation missing in model
     StepScaling,
+    #[allow(missing_docs)] // documentation missing in model
     TargetTrackingScaling,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1975,6 +2349,7 @@ impl std::str::FromStr for PolicyType {
     }
 }
 impl PolicyType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PolicyType::StepScaling => "StepScaling",
@@ -1982,6 +2357,7 @@ impl PolicyType {
             PolicyType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["StepScaling", "TargetTrackingScaling"]
     }
@@ -2181,16 +2557,16 @@ pub struct ScheduledAction {
     /// </ul>
     pub scalable_dimension: std::option::Option<crate::model::ScalableDimension>,
     /// <p>The date and time that the action is scheduled to begin, in UTC.</p>
-    pub start_time: std::option::Option<smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time that the action is scheduled to end, in UTC.</p>
-    pub end_time: std::option::Option<smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The new minimum and maximum capacity. You can set both values or just one. At the
     /// scheduled time, if the current capacity is below the minimum capacity, Application Auto Scaling scales out
     /// to the minimum capacity. If the current capacity is above the maximum capacity, Application Auto Scaling
     /// scales in to the maximum capacity.</p>
     pub scalable_target_action: std::option::Option<crate::model::ScalableTargetAction>,
     /// <p>The date and time that the scheduled action was created.</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for ScheduledAction {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2222,10 +2598,10 @@ pub mod scheduled_action {
         pub(crate) timezone: std::option::Option<std::string::String>,
         pub(crate) resource_id: std::option::Option<std::string::String>,
         pub(crate) scalable_dimension: std::option::Option<crate::model::ScalableDimension>,
-        pub(crate) start_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) scalable_target_action: std::option::Option<crate::model::ScalableTargetAction>,
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The name of the scheduled action.</p>
@@ -2233,6 +2609,7 @@ pub mod scheduled_action {
             self.scheduled_action_name = Some(input.into());
             self
         }
+        /// <p>The name of the scheduled action.</p>
         pub fn set_scheduled_action_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2245,6 +2622,7 @@ pub mod scheduled_action {
             self.scheduled_action_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the scheduled action.</p>
         pub fn set_scheduled_action_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2258,6 +2636,8 @@ pub mod scheduled_action {
             self.service_namespace = Some(input);
             self
         }
+        /// <p>The namespace of the Amazon Web Services service that provides the resource, or a
+        /// <code>custom-resource</code>.</p>
         pub fn set_service_namespace(
             mut self,
             input: std::option::Option<crate::model::ServiceNamespace>,
@@ -2291,6 +2671,28 @@ pub mod scheduled_action {
             self.schedule = Some(input.into());
             self
         }
+        /// <p>The schedule for this action. The following formats are supported:</p>
+        /// <ul>
+        /// <li>
+        /// <p>At expressions - "<code>at(<i>yyyy</i>-<i>mm</i>-<i>dd</i>T<i>hh</i>:<i>mm</i>:<i>ss</i>)</code>"</p>
+        /// </li>
+        /// <li>
+        /// <p>Rate expressions - "<code>rate(<i>value</i>
+        /// <i>unit</i>)</code>"</p>
+        /// </li>
+        /// <li>
+        /// <p>Cron expressions - "<code>cron(<i>fields</i>)</code>"</p>
+        /// </li>
+        /// </ul>
+        /// <p>At expressions are useful for one-time schedules. Cron expressions are useful for
+        /// scheduled actions that run periodically at a specified date and time, and rate expressions
+        /// are useful for scheduled actions that run at a regular interval.</p>
+        /// <p>At and cron expressions use Universal Coordinated Time (UTC) by
+        /// default.</p>
+        /// <p>The cron format consists of six fields separated by white spaces: [Minutes] [Hours] [Day_of_Month] [Month] [Day_of_Week] [Year].</p>
+        /// <p>For rate expressions, <i>value</i> is a positive integer and <i>unit</i> is
+        /// <code>minute</code> | <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code>.</p>
+        /// <p>For more information and examples, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/examples-scheduled-actions.html">Example scheduled actions for Application Auto Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
         pub fn set_schedule(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.schedule = input;
             self
@@ -2301,6 +2703,8 @@ pub mod scheduled_action {
             self.timezone = Some(input.into());
             self
         }
+        /// <p>The time zone used when referring to the date and time of a scheduled action, when the
+        /// scheduled action uses an at or cron expression.</p>
         pub fn set_timezone(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.timezone = input;
             self
@@ -2375,6 +2779,72 @@ pub mod scheduled_action {
             self.resource_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the resource associated with the scaling policy.
+        /// This string consists of the resource type and unique identifier.</p>
+        /// <ul>
+        /// <li>
+        /// <p>ECS service - The resource type is <code>service</code> and the unique identifier is the cluster name  
+        /// and service name. Example: <code>service/default/sample-webapp</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>Spot Fleet - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
+        /// Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>EMR cluster - The resource type is <code>instancegroup</code> and the unique identifier is the cluster ID and instance group ID.
+        /// Example: <code>instancegroup/j-2EEZNYKUA1NTV/ig-1791Y4E1L8YI0</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>AppStream 2.0 fleet - The resource type is <code>fleet</code> and the unique identifier is the fleet name.
+        /// Example: <code>fleet/sample-fleet</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>DynamoDB table - The resource type is <code>table</code> and the unique identifier is the table name.
+        /// Example: <code>table/my-table</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is the index name.
+        /// Example: <code>table/my-table/index/my-table-index</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>Aurora DB cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name.
+        /// Example: <code>cluster:my-db-cluster</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
+        /// Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>Custom resources are not supported with a resource type. This parameter must specify the <code>OutputValue</code> from the CloudFormation template stack used to access the resources. The unique identifier is defined by the service provider. More information
+        /// is available in our <a href="https://github.com/aws/aws-auto-scaling-custom-resource">GitHub
+        /// repository</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Comprehend document classification endpoint - The resource type and unique identifier are specified using the endpoint ARN. Example: <code>arn:aws:comprehend:us-west-2:123456789012:document-classifier-endpoint/EXAMPLE</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Comprehend entity recognizer endpoint - The resource type and unique identifier are specified using the endpoint ARN. Example: <code>arn:aws:comprehend:us-west-2:123456789012:entity-recognizer-endpoint/EXAMPLE</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>Lambda provisioned concurrency - The resource type is <code>function</code> and the unique identifier is the function name with a function version or alias name suffix that is not <code>$LATEST</code>.
+        /// Example: <code>function:my-function:prod</code> or <code>function:my-function:1</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Keyspaces table - The resource type is <code>table</code> and the unique identifier is the table name.
+        /// Example: <code>keyspace/mykeyspace/table/mytable</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon MSK cluster - The resource type and unique identifier are specified using the cluster ARN.
+        /// Example: <code>arn:aws:kafka:us-east-1:123456789012:cluster/demo-cluster-1/6357e0b2-0e6a-4b86-a0b4-70df934c2e31-5</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon ElastiCache replication group - The resource type is <code>replication-group</code> and the unique identifier is the replication group name.
+        /// Example: <code>replication-group/mycluster</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
@@ -2466,6 +2936,89 @@ pub mod scheduled_action {
             self.scalable_dimension = Some(input);
             self
         }
+        /// <p>The scalable dimension. This string consists of the service namespace, resource type, and scaling property.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ecs:service:DesiredCount</code> - The desired task count of an ECS service.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of an EMR Instance Group.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream 2.0 fleet.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB table.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB table.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>dynamodb:index:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB global secondary index.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB global secondary index.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora PostgreSQL-compatible edition.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint variant.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>custom-resource:ResourceType:Property</code> - The scalable dimension for a custom resource provided by your own application or service.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> - The number of inference units for an Amazon Comprehend document classification endpoint.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>comprehend:entity-recognizer-endpoint:DesiredInferenceUnits</code> - The number of inference units for an Amazon Comprehend entity recognizer endpoint.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>lambda:function:ProvisionedConcurrency</code> - The provisioned concurrency for a Lambda function.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>cassandra:table:ReadCapacityUnits</code> - The provisioned read capacity for an Amazon Keyspaces table.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity for an Amazon Keyspaces table.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>kafka:broker-storage:VolumeSize</code> - The provisioned volume size (in GiB) for brokers in an Amazon MSK cluster.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>elasticache:replication-group:NodeGroups</code> - The number of node groups for an Amazon ElastiCache replication group.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>elasticache:replication-group:Replicas</code> - The number of replicas per node group for an Amazon ElastiCache replication group.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p>
+        /// </li>
+        /// </ul>
         pub fn set_scalable_dimension(
             mut self,
             input: std::option::Option<crate::model::ScalableDimension>,
@@ -2474,20 +3027,28 @@ pub mod scheduled_action {
             self
         }
         /// <p>The date and time that the action is scheduled to begin, in UTC.</p>
-        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date and time that the action is scheduled to begin, in UTC.</p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The date and time that the action is scheduled to end, in UTC.</p>
-        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date and time that the action is scheduled to end, in UTC.</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.end_time = input;
             self
         }
@@ -2499,6 +3060,10 @@ pub mod scheduled_action {
             self.scalable_target_action = Some(input);
             self
         }
+        /// <p>The new minimum and maximum capacity. You can set both values or just one. At the
+        /// scheduled time, if the current capacity is below the minimum capacity, Application Auto Scaling scales out
+        /// to the minimum capacity. If the current capacity is above the maximum capacity, Application Auto Scaling
+        /// scales in to the maximum capacity.</p>
         pub fn set_scalable_target_action(
             mut self,
             input: std::option::Option<crate::model::ScalableTargetAction>,
@@ -2507,13 +3072,14 @@ pub mod scheduled_action {
             self
         }
         /// <p>The date and time that the scheduled action was created.</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>The date and time that the scheduled action was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -2719,7 +3285,7 @@ pub struct ScalingPolicy {
     /// <p>The CloudWatch alarms associated with the scaling policy.</p>
     pub alarms: std::option::Option<std::vec::Vec<crate::model::Alarm>>,
     /// <p>The Unix timestamp for when the scaling policy was created.</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for ScalingPolicy {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2760,7 +3326,7 @@ pub mod scaling_policy {
         pub(crate) target_tracking_scaling_policy_configuration:
             std::option::Option<crate::model::TargetTrackingScalingPolicyConfiguration>,
         pub(crate) alarms: std::option::Option<std::vec::Vec<crate::model::Alarm>>,
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the scaling policy.</p>
@@ -2768,6 +3334,7 @@ pub mod scaling_policy {
             self.policy_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the scaling policy.</p>
         pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_arn = input;
             self
@@ -2777,6 +3344,7 @@ pub mod scaling_policy {
             self.policy_name = Some(input.into());
             self
         }
+        /// <p>The name of the scaling policy.</p>
         pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.policy_name = input;
             self
@@ -2787,6 +3355,8 @@ pub mod scaling_policy {
             self.service_namespace = Some(input);
             self
         }
+        /// <p>The namespace of the Amazon Web Services service that provides the resource, or a
+        /// <code>custom-resource</code>.</p>
         pub fn set_service_namespace(
             mut self,
             input: std::option::Option<crate::model::ServiceNamespace>,
@@ -2864,6 +3434,72 @@ pub mod scaling_policy {
             self.resource_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the resource associated with the scaling policy.
+        /// This string consists of the resource type and unique identifier.</p>
+        /// <ul>
+        /// <li>
+        /// <p>ECS service - The resource type is <code>service</code> and the unique identifier is the cluster name  
+        /// and service name. Example: <code>service/default/sample-webapp</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>Spot Fleet - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
+        /// Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>EMR cluster - The resource type is <code>instancegroup</code> and the unique identifier is the cluster ID and instance group ID.
+        /// Example: <code>instancegroup/j-2EEZNYKUA1NTV/ig-1791Y4E1L8YI0</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>AppStream 2.0 fleet - The resource type is <code>fleet</code> and the unique identifier is the fleet name.
+        /// Example: <code>fleet/sample-fleet</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>DynamoDB table - The resource type is <code>table</code> and the unique identifier is the table name.
+        /// Example: <code>table/my-table</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is the index name.
+        /// Example: <code>table/my-table/index/my-table-index</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>Aurora DB cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name.
+        /// Example: <code>cluster:my-db-cluster</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
+        /// Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>Custom resources are not supported with a resource type. This parameter must specify the <code>OutputValue</code> from the CloudFormation template stack used to access the resources. The unique identifier is defined by the service provider. More information
+        /// is available in our <a href="https://github.com/aws/aws-auto-scaling-custom-resource">GitHub
+        /// repository</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Comprehend document classification endpoint - The resource type and unique identifier are specified using the endpoint ARN. Example: <code>arn:aws:comprehend:us-west-2:123456789012:document-classifier-endpoint/EXAMPLE</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Comprehend entity recognizer endpoint - The resource type and unique identifier are specified using the endpoint ARN. Example: <code>arn:aws:comprehend:us-west-2:123456789012:entity-recognizer-endpoint/EXAMPLE</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>Lambda provisioned concurrency - The resource type is <code>function</code> and the unique identifier is the function name with a function version or alias name suffix that is not <code>$LATEST</code>.
+        /// Example: <code>function:my-function:prod</code> or <code>function:my-function:1</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Keyspaces table - The resource type is <code>table</code> and the unique identifier is the table name.
+        /// Example: <code>keyspace/mykeyspace/table/mytable</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon MSK cluster - The resource type and unique identifier are specified using the cluster ARN.
+        /// Example: <code>arn:aws:kafka:us-east-1:123456789012:cluster/demo-cluster-1/6357e0b2-0e6a-4b86-a0b4-70df934c2e31-5</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon ElastiCache replication group - The resource type is <code>replication-group</code> and the unique identifier is the replication group name.
+        /// Example: <code>replication-group/mycluster</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
@@ -2955,6 +3591,89 @@ pub mod scaling_policy {
             self.scalable_dimension = Some(input);
             self
         }
+        /// <p>The scalable dimension. This string consists of the service namespace, resource type, and scaling property.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ecs:service:DesiredCount</code> - The desired task count of an ECS service.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of an EMR Instance Group.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream 2.0 fleet.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB table.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB table.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>dynamodb:index:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB global secondary index.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB global secondary index.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora PostgreSQL-compatible edition.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint variant.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>custom-resource:ResourceType:Property</code> - The scalable dimension for a custom resource provided by your own application or service.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> - The number of inference units for an Amazon Comprehend document classification endpoint.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>comprehend:entity-recognizer-endpoint:DesiredInferenceUnits</code> - The number of inference units for an Amazon Comprehend entity recognizer endpoint.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>lambda:function:ProvisionedConcurrency</code> - The provisioned concurrency for a Lambda function.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>cassandra:table:ReadCapacityUnits</code> - The provisioned read capacity for an Amazon Keyspaces table.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity for an Amazon Keyspaces table.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>kafka:broker-storage:VolumeSize</code> - The provisioned volume size (in GiB) for brokers in an Amazon MSK cluster.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>elasticache:replication-group:NodeGroups</code> - The number of node groups for an Amazon ElastiCache replication group.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>elasticache:replication-group:Replicas</code> - The number of replicas per node group for an Amazon ElastiCache replication group.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p>
+        /// </li>
+        /// </ul>
         pub fn set_scalable_dimension(
             mut self,
             input: std::option::Option<crate::model::ScalableDimension>,
@@ -2967,6 +3686,7 @@ pub mod scaling_policy {
             self.policy_type = Some(input);
             self
         }
+        /// <p>The scaling policy type.</p>
         pub fn set_policy_type(
             mut self,
             input: std::option::Option<crate::model::PolicyType>,
@@ -2982,6 +3702,7 @@ pub mod scaling_policy {
             self.step_scaling_policy_configuration = Some(input);
             self
         }
+        /// <p>A step scaling policy.</p>
         pub fn set_step_scaling_policy_configuration(
             mut self,
             input: std::option::Option<crate::model::StepScalingPolicyConfiguration>,
@@ -2997,6 +3718,7 @@ pub mod scaling_policy {
             self.target_tracking_scaling_policy_configuration = Some(input);
             self
         }
+        /// <p>A target tracking scaling policy.</p>
         pub fn set_target_tracking_scaling_policy_configuration(
             mut self,
             input: std::option::Option<crate::model::TargetTrackingScalingPolicyConfiguration>,
@@ -3004,12 +3726,18 @@ pub mod scaling_policy {
             self.target_tracking_scaling_policy_configuration = input;
             self
         }
+        /// Appends an item to `alarms`.
+        ///
+        /// To override the contents of this collection use [`set_alarms`](Self::set_alarms).
+        ///
+        /// <p>The CloudWatch alarms associated with the scaling policy.</p>
         pub fn alarms(mut self, input: impl Into<crate::model::Alarm>) -> Self {
             let mut v = self.alarms.unwrap_or_default();
             v.push(input.into());
             self.alarms = Some(v);
             self
         }
+        /// <p>The CloudWatch alarms associated with the scaling policy.</p>
         pub fn set_alarms(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Alarm>>,
@@ -3018,13 +3746,14 @@ pub mod scaling_policy {
             self
         }
         /// <p>The Unix timestamp for when the scaling policy was created.</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>The Unix timestamp for when the scaling policy was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -3219,9 +3948,9 @@ pub struct ScalingActivity {
     /// <p>A simple description of what caused the scaling activity to happen.</p>
     pub cause: std::option::Option<std::string::String>,
     /// <p>The Unix timestamp for when the scaling activity began.</p>
-    pub start_time: std::option::Option<smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The Unix timestamp for when the scaling activity ended.</p>
-    pub end_time: std::option::Option<smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Indicates the status of the scaling activity.</p>
     pub status_code: std::option::Option<crate::model::ScalingActivityStatusCode>,
     /// <p>A simple message about the current status of the scaling activity.</p>
@@ -3258,8 +3987,8 @@ pub mod scaling_activity {
         pub(crate) scalable_dimension: std::option::Option<crate::model::ScalableDimension>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) cause: std::option::Option<std::string::String>,
-        pub(crate) start_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) status_code: std::option::Option<crate::model::ScalingActivityStatusCode>,
         pub(crate) status_message: std::option::Option<std::string::String>,
         pub(crate) details: std::option::Option<std::string::String>,
@@ -3270,6 +3999,7 @@ pub mod scaling_activity {
             self.activity_id = Some(input.into());
             self
         }
+        /// <p>The unique identifier of the scaling activity.</p>
         pub fn set_activity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.activity_id = input;
             self
@@ -3280,6 +4010,8 @@ pub mod scaling_activity {
             self.service_namespace = Some(input);
             self
         }
+        /// <p>The namespace of the Amazon Web Services service that provides the resource, or a
+        /// <code>custom-resource</code>.</p>
         pub fn set_service_namespace(
             mut self,
             input: std::option::Option<crate::model::ServiceNamespace>,
@@ -3357,6 +4089,72 @@ pub mod scaling_activity {
             self.resource_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the resource associated with the scaling activity.
+        /// This string consists of the resource type and unique identifier.</p>
+        /// <ul>
+        /// <li>
+        /// <p>ECS service - The resource type is <code>service</code> and the unique identifier is the cluster name  
+        /// and service name. Example: <code>service/default/sample-webapp</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>Spot Fleet - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
+        /// Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>EMR cluster - The resource type is <code>instancegroup</code> and the unique identifier is the cluster ID and instance group ID.
+        /// Example: <code>instancegroup/j-2EEZNYKUA1NTV/ig-1791Y4E1L8YI0</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>AppStream 2.0 fleet - The resource type is <code>fleet</code> and the unique identifier is the fleet name.
+        /// Example: <code>fleet/sample-fleet</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>DynamoDB table - The resource type is <code>table</code> and the unique identifier is the table name.
+        /// Example: <code>table/my-table</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is the index name.
+        /// Example: <code>table/my-table/index/my-table-index</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>Aurora DB cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name.
+        /// Example: <code>cluster:my-db-cluster</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
+        /// Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>Custom resources are not supported with a resource type. This parameter must specify the <code>OutputValue</code> from the CloudFormation template stack used to access the resources. The unique identifier is defined by the service provider. More information
+        /// is available in our <a href="https://github.com/aws/aws-auto-scaling-custom-resource">GitHub
+        /// repository</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Comprehend document classification endpoint - The resource type and unique identifier are specified using the endpoint ARN. Example: <code>arn:aws:comprehend:us-west-2:123456789012:document-classifier-endpoint/EXAMPLE</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Comprehend entity recognizer endpoint - The resource type and unique identifier are specified using the endpoint ARN. Example: <code>arn:aws:comprehend:us-west-2:123456789012:entity-recognizer-endpoint/EXAMPLE</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>Lambda provisioned concurrency - The resource type is <code>function</code> and the unique identifier is the function name with a function version or alias name suffix that is not <code>$LATEST</code>.
+        /// Example: <code>function:my-function:prod</code> or <code>function:my-function:1</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Keyspaces table - The resource type is <code>table</code> and the unique identifier is the table name.
+        /// Example: <code>keyspace/mykeyspace/table/mytable</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon MSK cluster - The resource type and unique identifier are specified using the cluster ARN.
+        /// Example: <code>arn:aws:kafka:us-east-1:123456789012:cluster/demo-cluster-1/6357e0b2-0e6a-4b86-a0b4-70df934c2e31-5</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon ElastiCache replication group - The resource type is <code>replication-group</code> and the unique identifier is the replication group name.
+        /// Example: <code>replication-group/mycluster</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
@@ -3448,6 +4246,89 @@ pub mod scaling_activity {
             self.scalable_dimension = Some(input);
             self
         }
+        /// <p>The scalable dimension. This string consists of the service namespace, resource type, and scaling property.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ecs:service:DesiredCount</code> - The desired task count of an ECS service.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of an EMR Instance Group.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream 2.0 fleet.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB table.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB table.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>dynamodb:index:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB global secondary index.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB global secondary index.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora PostgreSQL-compatible edition.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint variant.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>custom-resource:ResourceType:Property</code> - The scalable dimension for a custom resource provided by your own application or service.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> - The number of inference units for an Amazon Comprehend document classification endpoint.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>comprehend:entity-recognizer-endpoint:DesiredInferenceUnits</code> - The number of inference units for an Amazon Comprehend entity recognizer endpoint.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>lambda:function:ProvisionedConcurrency</code> - The provisioned concurrency for a Lambda function.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>cassandra:table:ReadCapacityUnits</code> - The provisioned read capacity for an Amazon Keyspaces table.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity for an Amazon Keyspaces table.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>kafka:broker-storage:VolumeSize</code> - The provisioned volume size (in GiB) for brokers in an Amazon MSK cluster.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>elasticache:replication-group:NodeGroups</code> - The number of node groups for an Amazon ElastiCache replication group.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>elasticache:replication-group:Replicas</code> - The number of replicas per node group for an Amazon ElastiCache replication group.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p>
+        /// </li>
+        /// </ul>
         pub fn set_scalable_dimension(
             mut self,
             input: std::option::Option<crate::model::ScalableDimension>,
@@ -3460,6 +4341,7 @@ pub mod scaling_activity {
             self.description = Some(input.into());
             self
         }
+        /// <p>A simple description of what action the scaling activity intends to accomplish.</p>
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.description = input;
             self
@@ -3469,25 +4351,34 @@ pub mod scaling_activity {
             self.cause = Some(input.into());
             self
         }
+        /// <p>A simple description of what caused the scaling activity to happen.</p>
         pub fn set_cause(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.cause = input;
             self
         }
         /// <p>The Unix timestamp for when the scaling activity began.</p>
-        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The Unix timestamp for when the scaling activity began.</p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The Unix timestamp for when the scaling activity ended.</p>
-        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The Unix timestamp for when the scaling activity ended.</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.end_time = input;
             self
         }
@@ -3496,6 +4387,7 @@ pub mod scaling_activity {
             self.status_code = Some(input);
             self
         }
+        /// <p>Indicates the status of the scaling activity.</p>
         pub fn set_status_code(
             mut self,
             input: std::option::Option<crate::model::ScalingActivityStatusCode>,
@@ -3508,6 +4400,7 @@ pub mod scaling_activity {
             self.status_message = Some(input.into());
             self
         }
+        /// <p>A simple message about the current status of the scaling activity.</p>
         pub fn set_status_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3520,6 +4413,7 @@ pub mod scaling_activity {
             self.details = Some(input.into());
             self
         }
+        /// <p>The details about the scaling activity.</p>
         pub fn set_details(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.details = input;
             self
@@ -3549,6 +4443,7 @@ impl ScalingActivity {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3560,11 +4455,17 @@ impl ScalingActivity {
     std::hash::Hash,
 )]
 pub enum ScalingActivityStatusCode {
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     InProgress,
+    #[allow(missing_docs)] // documentation missing in model
     Overridden,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
+    #[allow(missing_docs)] // documentation missing in model
     Successful,
+    #[allow(missing_docs)] // documentation missing in model
     Unfulfilled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3590,6 +4491,7 @@ impl std::str::FromStr for ScalingActivityStatusCode {
     }
 }
 impl ScalingActivityStatusCode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ScalingActivityStatusCode::Failed => "Failed",
@@ -3601,6 +4503,7 @@ impl ScalingActivityStatusCode {
             ScalingActivityStatusCode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "Failed",
@@ -3785,7 +4688,7 @@ pub struct ScalableTarget {
     /// behalf.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The Unix timestamp for when the scalable target was created.</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Specifies whether the scaling activities for a scalable target are in a suspended state.
     /// </p>
     pub suspended_state: std::option::Option<crate::model::SuspendedState>,
@@ -3816,7 +4719,7 @@ pub mod scalable_target {
         pub(crate) min_capacity: std::option::Option<i32>,
         pub(crate) max_capacity: std::option::Option<i32>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) suspended_state: std::option::Option<crate::model::SuspendedState>,
     }
     impl Builder {
@@ -3826,6 +4729,8 @@ pub mod scalable_target {
             self.service_namespace = Some(input);
             self
         }
+        /// <p>The namespace of the Amazon Web Services service that provides the resource, or a
+        /// <code>custom-resource</code>.</p>
         pub fn set_service_namespace(
             mut self,
             input: std::option::Option<crate::model::ServiceNamespace>,
@@ -3903,6 +4808,72 @@ pub mod scalable_target {
             self.resource_id = Some(input.into());
             self
         }
+        /// <p>The identifier of the resource associated with the scalable target.
+        /// This string consists of the resource type and unique identifier.</p>
+        /// <ul>
+        /// <li>
+        /// <p>ECS service - The resource type is <code>service</code> and the unique identifier is the cluster name  
+        /// and service name. Example: <code>service/default/sample-webapp</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>Spot Fleet - The resource type is <code>spot-fleet-request</code> and the unique identifier is the
+        /// Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>EMR cluster - The resource type is <code>instancegroup</code> and the unique identifier is the cluster ID and instance group ID.
+        /// Example: <code>instancegroup/j-2EEZNYKUA1NTV/ig-1791Y4E1L8YI0</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>AppStream 2.0 fleet - The resource type is <code>fleet</code> and the unique identifier is the fleet name.
+        /// Example: <code>fleet/sample-fleet</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>DynamoDB table - The resource type is <code>table</code> and the unique identifier is the table name.
+        /// Example: <code>table/my-table</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>DynamoDB global secondary index - The resource type is <code>index</code> and the unique identifier is the index name.
+        /// Example: <code>table/my-table/index/my-table-index</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>Aurora DB cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name.
+        /// Example: <code>cluster:my-db-cluster</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>SageMaker endpoint variant - The resource type is <code>variant</code> and the unique identifier is the resource ID.
+        /// Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>Custom resources are not supported with a resource type. This parameter must specify the <code>OutputValue</code> from the CloudFormation template stack used to access the resources. The unique identifier is defined by the service provider. More information
+        /// is available in our <a href="https://github.com/aws/aws-auto-scaling-custom-resource">GitHub
+        /// repository</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Comprehend document classification endpoint - The resource type and unique identifier are specified using the endpoint ARN. Example: <code>arn:aws:comprehend:us-west-2:123456789012:document-classifier-endpoint/EXAMPLE</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Comprehend entity recognizer endpoint - The resource type and unique identifier are specified using the endpoint ARN. Example: <code>arn:aws:comprehend:us-west-2:123456789012:entity-recognizer-endpoint/EXAMPLE</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>Lambda provisioned concurrency - The resource type is <code>function</code> and the unique identifier is the function name with a function version or alias name suffix that is not <code>$LATEST</code>.
+        /// Example: <code>function:my-function:prod</code> or <code>function:my-function:1</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon Keyspaces table - The resource type is <code>table</code> and the unique identifier is the table name.
+        /// Example: <code>keyspace/mykeyspace/table/mytable</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon MSK cluster - The resource type and unique identifier are specified using the cluster ARN.
+        /// Example: <code>arn:aws:kafka:us-east-1:123456789012:cluster/demo-cluster-1/6357e0b2-0e6a-4b86-a0b4-70df934c2e31-5</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>Amazon ElastiCache replication group - The resource type is <code>replication-group</code> and the unique identifier is the replication group name.
+        /// Example: <code>replication-group/mycluster</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>Neptune cluster - The resource type is <code>cluster</code> and the unique identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p>
+        /// </li>
+        /// </ul>
         pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_id = input;
             self
@@ -3995,6 +4966,90 @@ pub mod scalable_target {
             self.scalable_dimension = Some(input);
             self
         }
+        /// <p>The scalable dimension associated with the scalable target.
+        /// This string consists of the service namespace, resource type, and scaling property.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ecs:service:DesiredCount</code> - The desired task count of an ECS service.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count of an EMR Instance Group.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot Fleet.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an AppStream 2.0 fleet.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB table.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB table.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>dynamodb:index:ReadCapacityUnits</code> - The provisioned read capacity for a DynamoDB global secondary index.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for a DynamoDB global secondary index.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora PostgreSQL-compatible edition.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint variant.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>custom-resource:ResourceType:Property</code> - The scalable dimension for a custom resource provided by your own application or service.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> - The number of inference units for an Amazon Comprehend document classification endpoint.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>comprehend:entity-recognizer-endpoint:DesiredInferenceUnits</code> - The number of inference units for an Amazon Comprehend entity recognizer endpoint.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>lambda:function:ProvisionedConcurrency</code> - The provisioned concurrency for a Lambda function.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>cassandra:table:ReadCapacityUnits</code> - The provisioned read capacity for an Amazon Keyspaces table.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity for an Amazon Keyspaces table.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>kafka:broker-storage:VolumeSize</code> - The provisioned volume size (in GiB) for brokers in an Amazon MSK cluster.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>elasticache:replication-group:NodeGroups</code> - The number of node groups for an Amazon ElastiCache replication group.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>elasticache:replication-group:Replicas</code> - The number of replicas per node group for an Amazon ElastiCache replication group.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an Amazon Neptune DB cluster.</p>
+        /// </li>
+        /// </ul>
         pub fn set_scalable_dimension(
             mut self,
             input: std::option::Option<crate::model::ScalableDimension>,
@@ -4007,6 +5062,7 @@ pub mod scalable_target {
             self.min_capacity = Some(input);
             self
         }
+        /// <p>The minimum value to scale to in response to a scale-in activity.</p>
         pub fn set_min_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.min_capacity = input;
             self
@@ -4016,6 +5072,7 @@ pub mod scalable_target {
             self.max_capacity = Some(input);
             self
         }
+        /// <p>The maximum value to scale to in response to a scale-out activity.</p>
         pub fn set_max_capacity(mut self, input: std::option::Option<i32>) -> Self {
             self.max_capacity = input;
             self
@@ -4026,18 +5083,21 @@ pub mod scalable_target {
             self.role_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of an IAM role that allows Application Auto Scaling to modify the scalable target on your
+        /// behalf.</p>
         pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.role_arn = input;
             self
         }
         /// <p>The Unix timestamp for when the scalable target was created.</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>The Unix timestamp for when the scalable target was created.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -4048,6 +5108,8 @@ pub mod scalable_target {
             self.suspended_state = Some(input);
             self
         }
+        /// <p>Specifies whether the scaling activities for a scalable target are in a suspended state.
+        /// </p>
         pub fn set_suspended_state(
             mut self,
             input: std::option::Option<crate::model::SuspendedState>,

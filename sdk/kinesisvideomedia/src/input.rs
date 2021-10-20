@@ -18,6 +18,9 @@ pub mod get_media_input {
             self.stream_name = Some(input.into());
             self
         }
+        /// <p>The Kinesis video stream name from where you want to get the media content. If you
+        /// don't specify the <code>streamName</code>, you must specify the
+        /// <code>streamARN</code>.</p>
         pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_name = input;
             self
@@ -28,6 +31,8 @@ pub mod get_media_input {
             self.stream_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the stream from where you want to get the media content. If you don't
+        /// specify the <code>streamARN</code>, you must specify the <code>streamName</code>.</p>
         pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stream_arn = input;
             self
@@ -37,6 +42,7 @@ pub mod get_media_input {
             self.start_selector = Some(input);
             self
         }
+        /// <p>Identifies the starting chunk to get from the specified stream. </p>
         pub fn set_start_selector(
             mut self,
             input: std::option::Option<crate::model::StartSelector>,
@@ -47,7 +53,7 @@ pub mod get_media_input {
         /// Consumes the builder and constructs a [`GetMediaInput`](crate::input::GetMediaInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::GetMediaInput, smithy_http::operation::BuildError>
+        ) -> std::result::Result<crate::input::GetMediaInput, aws_smithy_http::operation::BuildError>
         {
             Ok(crate::input::GetMediaInput {
                 stream_name: self.stream_name,
@@ -68,16 +74,16 @@ impl GetMediaInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::GetMedia,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::GetMediaInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/getMedia").expect("formatting should succeed");
             Ok(())
         }
@@ -85,7 +91,7 @@ impl GetMediaInput {
         fn update_http_builder(
             input: &crate::input::GetMediaInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -94,24 +100,26 @@ impl GetMediaInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::GetMediaInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_get_media(&self)
-            .map_err(|err| smithy_http::operation::BuildError::SerializationError(err.into()))?;
+            .map_err(|err| {
+                aws_smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -134,24 +142,25 @@ impl GetMediaInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(request, crate::operation::GetMedia::new())
-            .with_metadata(smithy_http::operation::Metadata::new(
-                "GetMedia",
-                "kinesisvideomedia",
-            ));
+        let op =
+            aws_smithy_http::operation::Operation::new(request, crate::operation::GetMedia::new())
+                .with_metadata(aws_smithy_http::operation::Metadata::new(
+                    "GetMedia",
+                    "kinesisvideomedia",
+                ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -165,6 +174,7 @@ impl GetMediaInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMediaInput {

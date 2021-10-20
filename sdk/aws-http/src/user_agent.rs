@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+use aws_smithy_http::middleware::MapRequest;
+use aws_smithy_http::operation::Request;
 use aws_types::build_metadata::{OsFamily, BUILD_METADATA};
 use http::header::{HeaderName, InvalidHeaderValue, USER_AGENT};
 use http::HeaderValue;
-use smithy_http::middleware::MapRequest;
-use smithy_http::operation::Request;
 use std::borrow::Cow;
 use std::convert::TryFrom;
 use std::fmt;
@@ -16,7 +16,7 @@ use thiserror::Error;
 
 /// AWS User Agent
 ///
-/// Ths struct should be inserted into the [`PropertyBag`](smithy_http::operation::Request::properties)
+/// Ths struct should be inserted into the [`PropertyBag`](aws_smithy_http::operation::Request::properties)
 /// during operation construction. [`UserAgentStage`](UserAgentStage) reads `AwsUserAgent`
 /// from the property bag and sets the `User-Agent` and `x-amz-user-agent` headers.
 #[derive(Clone)]
@@ -292,11 +292,11 @@ impl MapRequest for UserAgentStage {
 mod test {
     use crate::user_agent::X_AMZ_USER_AGENT;
     use crate::user_agent::{AdditionalMetadata, ApiMetadata, AwsUserAgent, UserAgentStage};
+    use aws_smithy_http::body::SdkBody;
+    use aws_smithy_http::middleware::MapRequest;
+    use aws_smithy_http::operation;
     use aws_types::build_metadata::OsFamily;
     use http::header::USER_AGENT;
-    use smithy_http::body::SdkBody;
-    use smithy_http::middleware::MapRequest;
-    use smithy_http::operation;
 
     #[test]
     fn generate_a_valid_ua() {

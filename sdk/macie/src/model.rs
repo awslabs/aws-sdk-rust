@@ -35,6 +35,7 @@ pub mod failed_s3_resource {
             self.failed_item = Some(input);
             self
         }
+        /// <p>The failed S3 resources.</p>
         pub fn set_failed_item(
             mut self,
             input: std::option::Option<crate::model::S3Resource>,
@@ -47,6 +48,7 @@ pub mod failed_s3_resource {
             self.error_code = Some(input.into());
             self
         }
+        /// <p>The status code of a failed item.</p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_code = input;
             self
@@ -56,6 +58,7 @@ pub mod failed_s3_resource {
             self.error_message = Some(input.into());
             self
         }
+        /// <p>The error message of a failed item.</p>
         pub fn set_error_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -114,6 +117,7 @@ pub mod s3_resource {
             self.bucket_name = Some(input.into());
             self
         }
+        /// <p>The name of the S3 bucket.</p>
         pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket_name = input;
             self
@@ -123,6 +127,7 @@ pub mod s3_resource {
             self.prefix = Some(input.into());
             self
         }
+        /// <p>The prefix of the S3 bucket. </p>
         pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.prefix = input;
             self
@@ -185,6 +190,7 @@ pub mod s3_resource_classification_update {
             self.bucket_name = Some(input.into());
             self
         }
+        /// <p>The name of the S3 bucket whose classification types you want to update.</p>
         pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket_name = input;
             self
@@ -194,6 +200,7 @@ pub mod s3_resource_classification_update {
             self.prefix = Some(input.into());
             self
         }
+        /// <p>The prefix of the S3 bucket whose classification types you want to update.</p>
         pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.prefix = input;
             self
@@ -207,6 +214,8 @@ pub mod s3_resource_classification_update {
             self.classification_type_update = Some(input);
             self
         }
+        /// <p>The classification type that you want to update for the resource associated with Amazon
+        /// Macie Classic. </p>
         pub fn set_classification_type_update(
             mut self,
             input: std::option::Option<crate::model::ClassificationTypeUpdate>,
@@ -269,6 +278,8 @@ pub mod classification_type_update {
             self.one_time = Some(input);
             self
         }
+        /// <p>A one-time classification of all of the existing objects in a specified S3 bucket.
+        /// </p>
         pub fn set_one_time(
             mut self,
             input: std::option::Option<crate::model::S3OneTimeClassificationType>,
@@ -283,6 +294,9 @@ pub mod classification_type_update {
             self.continuous = Some(input);
             self
         }
+        /// <p>A continuous classification of the objects that are added to a specified S3 bucket.
+        /// Amazon Macie Classic begins performing continuous classification after a bucket is
+        /// successfully associated with Macie Classic. </p>
         pub fn set_continuous(
             mut self,
             input: std::option::Option<crate::model::S3ContinuousClassificationType>,
@@ -306,6 +320,7 @@ impl ClassificationTypeUpdate {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -317,6 +332,7 @@ impl ClassificationTypeUpdate {
     std::hash::Hash,
 )]
 pub enum S3ContinuousClassificationType {
+    #[allow(missing_docs)] // documentation missing in model
     Full,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -337,12 +353,14 @@ impl std::str::FromStr for S3ContinuousClassificationType {
     }
 }
 impl S3ContinuousClassificationType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             S3ContinuousClassificationType::Full => "FULL",
             S3ContinuousClassificationType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FULL"]
     }
@@ -353,6 +371,7 @@ impl AsRef<str> for S3ContinuousClassificationType {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -364,7 +383,9 @@ impl AsRef<str> for S3ContinuousClassificationType {
     std::hash::Hash,
 )]
 pub enum S3OneTimeClassificationType {
+    #[allow(missing_docs)] // documentation missing in model
     Full,
+    #[allow(missing_docs)] // documentation missing in model
     None,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -386,6 +407,7 @@ impl std::str::FromStr for S3OneTimeClassificationType {
     }
 }
 impl S3OneTimeClassificationType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             S3OneTimeClassificationType::Full => "FULL",
@@ -393,6 +415,7 @@ impl S3OneTimeClassificationType {
             S3OneTimeClassificationType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FULL", "NONE"]
     }
@@ -445,6 +468,8 @@ pub mod s3_resource_classification {
             self.bucket_name = Some(input.into());
             self
         }
+        /// <p>The name of the S3 bucket that you want to associate with Amazon Macie
+        /// Classic.</p>
         pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.bucket_name = input;
             self
@@ -455,6 +480,8 @@ pub mod s3_resource_classification {
             self.prefix = Some(input.into());
             self
         }
+        /// <p>The prefix of the S3 bucket that you want to associate with Amazon Macie
+        /// Classic.</p>
         pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.prefix = input;
             self
@@ -465,6 +492,8 @@ pub mod s3_resource_classification {
             self.classification_type = Some(input);
             self
         }
+        /// <p>The classification type that you want to specify for the resource associated with
+        /// Amazon Macie Classic. </p>
         pub fn set_classification_type(
             mut self,
             input: std::option::Option<crate::model::ClassificationType>,
@@ -526,6 +555,8 @@ pub mod classification_type {
             self.one_time = Some(input);
             self
         }
+        /// <p>A one-time classification of all of the existing objects in a specified S3 bucket.
+        /// </p>
         pub fn set_one_time(
             mut self,
             input: std::option::Option<crate::model::S3OneTimeClassificationType>,
@@ -540,6 +571,9 @@ pub mod classification_type {
             self.continuous = Some(input);
             self
         }
+        /// <p>A continuous classification of the objects that are added to a specified S3 bucket.
+        /// Amazon Macie Classic begins performing continuous classification after a bucket is
+        /// successfully associated with Macie Classic. </p>
         pub fn set_continuous(
             mut self,
             input: std::option::Option<crate::model::S3ContinuousClassificationType>,
@@ -591,6 +625,7 @@ pub mod member_account {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The AWS account ID of the Amazon Macie Classic member account.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self

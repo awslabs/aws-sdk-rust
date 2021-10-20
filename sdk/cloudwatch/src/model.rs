@@ -33,6 +33,8 @@ pub mod tag {
             self.key = Some(input.into());
             self
         }
+        /// <p>A string that you can use to assign a value. The combination of tag keys and values can help you organize and categorize your
+        /// resources.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -42,6 +44,7 @@ pub mod tag {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value for the specified tag key.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -62,6 +65,7 @@ impl Tag {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -73,8 +77,11 @@ impl Tag {
     std::hash::Hash,
 )]
 pub enum StateValue {
+    #[allow(missing_docs)] // documentation missing in model
     Alarm,
+    #[allow(missing_docs)] // documentation missing in model
     InsufficientData,
+    #[allow(missing_docs)] // documentation missing in model
     Ok,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -97,6 +104,7 @@ impl std::str::FromStr for StateValue {
     }
 }
 impl StateValue {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StateValue::Alarm => "ALARM",
@@ -105,6 +113,7 @@ impl StateValue {
             StateValue::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ALARM", "INSUFFICIENT_DATA", "OK"]
     }
@@ -115,6 +124,7 @@ impl AsRef<str> for StateValue {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -126,7 +136,9 @@ impl AsRef<str> for StateValue {
     std::hash::Hash,
 )]
 pub enum MetricStreamOutputFormat {
+    #[allow(missing_docs)] // documentation missing in model
     Json,
+    #[allow(missing_docs)] // documentation missing in model
     OpenTelemetry07,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -148,6 +160,7 @@ impl std::str::FromStr for MetricStreamOutputFormat {
     }
 }
 impl MetricStreamOutputFormat {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MetricStreamOutputFormat::Json => "json",
@@ -155,6 +168,7 @@ impl MetricStreamOutputFormat {
             MetricStreamOutputFormat::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["json", "opentelemetry0.7"]
     }
@@ -194,6 +208,7 @@ pub mod metric_stream_filter {
             self.namespace = Some(input.into());
             self
         }
+        /// <p>The name of the metric namespace in the filter.</p>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.namespace = input;
             self
@@ -223,7 +238,7 @@ pub struct MetricDatum {
     /// <p>The dimensions associated with the metric.</p>
     pub dimensions: std::option::Option<std::vec::Vec<crate::model::Dimension>>,
     /// <p>The time the metric data was received, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
-    pub timestamp: std::option::Option<smithy_types::Instant>,
+    pub timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The value for the metric.</p>
     /// <p>Although the parameter accepts numbers of type Double, CloudWatch rejects values that are either too small or
     /// too large. Values must be in the range of -2^360 to 2^360. In addition, special values (for example, NaN, +Infinity, -Infinity)
@@ -281,7 +296,7 @@ pub mod metric_datum {
     pub struct Builder {
         pub(crate) metric_name: std::option::Option<std::string::String>,
         pub(crate) dimensions: std::option::Option<std::vec::Vec<crate::model::Dimension>>,
-        pub(crate) timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) timestamp: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) value: std::option::Option<f64>,
         pub(crate) statistic_values: std::option::Option<crate::model::StatisticSet>,
         pub(crate) values: std::option::Option<std::vec::Vec<f64>>,
@@ -295,16 +310,23 @@ pub mod metric_datum {
             self.metric_name = Some(input.into());
             self
         }
+        /// <p>The name of the metric.</p>
         pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.metric_name = input;
             self
         }
+        /// Appends an item to `dimensions`.
+        ///
+        /// To override the contents of this collection use [`set_dimensions`](Self::set_dimensions).
+        ///
+        /// <p>The dimensions associated with the metric.</p>
         pub fn dimensions(mut self, input: impl Into<crate::model::Dimension>) -> Self {
             let mut v = self.dimensions.unwrap_or_default();
             v.push(input.into());
             self.dimensions = Some(v);
             self
         }
+        /// <p>The dimensions associated with the metric.</p>
         pub fn set_dimensions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Dimension>>,
@@ -313,11 +335,15 @@ pub mod metric_datum {
             self
         }
         /// <p>The time the metric data was received, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
-        pub fn timestamp(mut self, input: smithy_types::Instant) -> Self {
+        pub fn timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
             self.timestamp = Some(input);
             self
         }
-        pub fn set_timestamp(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time the metric data was received, expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
+        pub fn set_timestamp(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.timestamp = input;
             self
         }
@@ -329,6 +355,10 @@ pub mod metric_datum {
             self.value = Some(input);
             self
         }
+        /// <p>The value for the metric.</p>
+        /// <p>Although the parameter accepts numbers of type Double, CloudWatch rejects values that are either too small or
+        /// too large. Values must be in the range of -2^360 to 2^360. In addition, special values (for example, NaN, +Infinity, -Infinity)
+        /// are not supported.</p>
         pub fn set_value(mut self, input: std::option::Option<f64>) -> Self {
             self.value = input;
             self
@@ -338,6 +368,7 @@ pub mod metric_datum {
             self.statistic_values = Some(input);
             self
         }
+        /// <p>The statistical values for the metric.</p>
         pub fn set_statistic_values(
             mut self,
             input: std::option::Option<crate::model::StatisticSet>,
@@ -345,22 +376,52 @@ pub mod metric_datum {
             self.statistic_values = input;
             self
         }
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>Array of numbers representing the values for the metric during the period. Each unique value is listed just once
+        /// in this array, and the corresponding number in the <code>Counts</code> array specifies the number of times that value occurred during the period.
+        /// You can include up to 150 unique values in each <code>PutMetricData</code> action that specifies a <code>Values</code> array.</p>
+        /// <p>Although the <code>Values</code> array accepts numbers of type
+        /// <code>Double</code>, CloudWatch rejects values that are either too small
+        /// or too large. Values must be in the range of -2^360 to 2^360. In addition, special values (for example, NaN, +Infinity,
+        /// -Infinity) are not supported.</p>
         pub fn values(mut self, input: impl Into<f64>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
+        /// <p>Array of numbers representing the values for the metric during the period. Each unique value is listed just once
+        /// in this array, and the corresponding number in the <code>Counts</code> array specifies the number of times that value occurred during the period.
+        /// You can include up to 150 unique values in each <code>PutMetricData</code> action that specifies a <code>Values</code> array.</p>
+        /// <p>Although the <code>Values</code> array accepts numbers of type
+        /// <code>Double</code>, CloudWatch rejects values that are either too small
+        /// or too large. Values must be in the range of -2^360 to 2^360. In addition, special values (for example, NaN, +Infinity,
+        /// -Infinity) are not supported.</p>
         pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
             self.values = input;
             self
         }
+        /// Appends an item to `counts`.
+        ///
+        /// To override the contents of this collection use [`set_counts`](Self::set_counts).
+        ///
+        /// <p>Array of numbers that is used along with the <code>Values</code> array. Each number in the <code>Count</code> array
+        /// is the number of times the corresponding value in the <code>Values</code> array occurred during the period. </p>
+        /// <p>If you omit the <code>Counts</code> array, the default of 1 is used as the value for each count. If you
+        /// include a <code>Counts</code> array, it must include the same amount of values as the <code>Values</code> array.</p>
         pub fn counts(mut self, input: impl Into<f64>) -> Self {
             let mut v = self.counts.unwrap_or_default();
             v.push(input.into());
             self.counts = Some(v);
             self
         }
+        /// <p>Array of numbers that is used along with the <code>Values</code> array. Each number in the <code>Count</code> array
+        /// is the number of times the corresponding value in the <code>Values</code> array occurred during the period. </p>
+        /// <p>If you omit the <code>Counts</code> array, the default of 1 is used as the value for each count. If you
+        /// include a <code>Counts</code> array, it must include the same amount of values as the <code>Values</code> array.</p>
         pub fn set_counts(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
             self.counts = input;
             self
@@ -372,6 +433,9 @@ pub mod metric_datum {
             self.unit = Some(input);
             self
         }
+        /// <p>When you are using a <code>Put</code> operation, this defines what unit you want to use when storing the metric.</p>
+        /// <p>In
+        /// a <code>Get</code> operation, this displays the unit that is used for the metric.</p>
         pub fn set_unit(mut self, input: std::option::Option<crate::model::StandardUnit>) -> Self {
             self.unit = input;
             self
@@ -388,6 +452,14 @@ pub mod metric_datum {
             self.storage_resolution = Some(input);
             self
         }
+        /// <p>Valid values are 1 and 60. Setting this to 1 specifies this metric as a high-resolution metric, so that CloudWatch stores the metric with
+        /// sub-minute resolution down to one second.
+        /// Setting this to 60 specifies this metric as a regular-resolution metric, which CloudWatch stores at 1-minute resolution. Currently, high resolution is available
+        /// only for custom metrics. For more information about high-resolution metrics,
+        /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html#high-resolution-metrics">High-Resolution Metrics</a> in the
+        /// <i>Amazon CloudWatch User Guide</i>.
+        /// </p>
+        /// <p>This field is optional, if you do not specify it the default of 60 is used.</p>
         pub fn set_storage_resolution(mut self, input: std::option::Option<i32>) -> Self {
             self.storage_resolution = input;
             self
@@ -415,6 +487,7 @@ impl MetricDatum {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -426,32 +499,59 @@ impl MetricDatum {
     std::hash::Hash,
 )]
 pub enum StandardUnit {
+    #[allow(missing_docs)] // documentation missing in model
     Bits,
+    #[allow(missing_docs)] // documentation missing in model
     BitsSecond,
+    #[allow(missing_docs)] // documentation missing in model
     Bytes,
+    #[allow(missing_docs)] // documentation missing in model
     BytesSecond,
+    #[allow(missing_docs)] // documentation missing in model
     Count,
+    #[allow(missing_docs)] // documentation missing in model
     CountSecond,
+    #[allow(missing_docs)] // documentation missing in model
     Gigabits,
+    #[allow(missing_docs)] // documentation missing in model
     GigabitsSecond,
+    #[allow(missing_docs)] // documentation missing in model
     Gigabytes,
+    #[allow(missing_docs)] // documentation missing in model
     GigabytesSecond,
+    #[allow(missing_docs)] // documentation missing in model
     Kilobits,
+    #[allow(missing_docs)] // documentation missing in model
     KilobitsSecond,
+    #[allow(missing_docs)] // documentation missing in model
     Kilobytes,
+    #[allow(missing_docs)] // documentation missing in model
     KilobytesSecond,
+    #[allow(missing_docs)] // documentation missing in model
     Megabits,
+    #[allow(missing_docs)] // documentation missing in model
     MegabitsSecond,
+    #[allow(missing_docs)] // documentation missing in model
     Megabytes,
+    #[allow(missing_docs)] // documentation missing in model
     MegabytesSecond,
+    #[allow(missing_docs)] // documentation missing in model
     Microseconds,
+    #[allow(missing_docs)] // documentation missing in model
     Milliseconds,
+    #[allow(missing_docs)] // documentation missing in model
     None,
+    #[allow(missing_docs)] // documentation missing in model
     Percent,
+    #[allow(missing_docs)] // documentation missing in model
     Seconds,
+    #[allow(missing_docs)] // documentation missing in model
     Terabits,
+    #[allow(missing_docs)] // documentation missing in model
     TerabitsSecond,
+    #[allow(missing_docs)] // documentation missing in model
     Terabytes,
+    #[allow(missing_docs)] // documentation missing in model
     TerabytesSecond,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -498,6 +598,7 @@ impl std::str::FromStr for StandardUnit {
     }
 }
 impl StandardUnit {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StandardUnit::Bits => "Bits",
@@ -530,6 +631,7 @@ impl StandardUnit {
             StandardUnit::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "Bits",
@@ -608,6 +710,7 @@ pub mod statistic_set {
             self.sample_count = Some(input);
             self
         }
+        /// <p>The number of samples used for the statistic set.</p>
         pub fn set_sample_count(mut self, input: std::option::Option<f64>) -> Self {
             self.sample_count = input;
             self
@@ -617,6 +720,7 @@ pub mod statistic_set {
             self.sum = Some(input);
             self
         }
+        /// <p>The sum of values for the sample set.</p>
         pub fn set_sum(mut self, input: std::option::Option<f64>) -> Self {
             self.sum = input;
             self
@@ -626,6 +730,7 @@ pub mod statistic_set {
             self.minimum = Some(input);
             self
         }
+        /// <p>The minimum value of the sample set.</p>
         pub fn set_minimum(mut self, input: std::option::Option<f64>) -> Self {
             self.minimum = input;
             self
@@ -635,6 +740,7 @@ pub mod statistic_set {
             self.maximum = Some(input);
             self
         }
+        /// <p>The maximum value of the sample set.</p>
         pub fn set_maximum(mut self, input: std::option::Option<f64>) -> Self {
             self.maximum = input;
             self
@@ -695,6 +801,8 @@ pub mod dimension {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the dimension. Dimension names must contain only ASCII characters and must include
+        /// at least one non-whitespace character.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -705,6 +813,8 @@ pub mod dimension {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value of the dimension. Dimension values must contain only ASCII characters and must include
+        /// at least one non-whitespace character.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -740,9 +850,11 @@ impl Dimension {
 /// metric, and as many as 10 structures that contain the <code>Expression</code> parameter
 /// to perform a math expression. Of those <code>Expression</code> structures, one must have <code>True</code>
 /// as the value for <code>ReturnData</code>. The result of this expression is the value the alarm watches.</p>
+///
 /// <p>Any expression used in a <code>PutMetricAlarm</code>
 /// operation must return a single time series. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric Math Syntax and Functions</a> in the <i>Amazon CloudWatch User
 /// Guide</i>.</p>
+///
 /// <p>Some of the parameters of this structure also have different uses whether you are using this structure in a <code>GetMetricData</code>
 /// operation or a <code>PutMetricAlarm</code> operation. These differences are explained in the following parameter list.</p>
 #[non_exhaustive]
@@ -831,6 +943,11 @@ pub mod metric_data_query {
             self.id = Some(input.into());
             self
         }
+        /// <p>A short name used to tie this object to the results in the response. This name must be
+        /// unique within a single call to <code>GetMetricData</code>. If you are performing math
+        /// expressions on this set of data, this name represents that data and can serve as a
+        /// variable in the mathematical expression. The valid characters are letters, numbers, and
+        /// underscore. The first character must be a lowercase letter.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -843,6 +960,10 @@ pub mod metric_data_query {
             self.metric_stat = Some(input);
             self
         }
+        /// <p>The metric to be returned, along with statistics, period, and units. Use this parameter only if this object is retrieving a metric
+        /// and not performing a math expression on returned data.</p>
+        /// <p>Within one MetricDataQuery object, you must specify either
+        /// <code>Expression</code> or <code>MetricStat</code> but not both.</p>
         pub fn set_metric_stat(
             mut self,
             input: std::option::Option<crate::model::MetricStat>,
@@ -861,6 +982,13 @@ pub mod metric_data_query {
             self.expression = Some(input.into());
             self
         }
+        /// <p>The math expression to be performed on the returned data, if this object is performing a math expression. This expression
+        /// can use the <code>Id</code> of the other metrics to refer to those metrics, and can also use the <code>Id</code> of other
+        /// expressions to use the result of those expressions. For more information about metric math expressions, see
+        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric Math Syntax and Functions</a> in the
+        /// <i>Amazon CloudWatch User Guide</i>.</p>
+        /// <p>Within each MetricDataQuery object, you must specify either
+        /// <code>Expression</code> or <code>MetricStat</code> but not both.</p>
         pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.expression = input;
             self
@@ -876,6 +1004,13 @@ pub mod metric_data_query {
             self.label = Some(input.into());
             self
         }
+        /// <p>A human-readable label for this metric or expression. This is especially useful
+        /// if this is an expression, so that you know
+        /// what the value represents. If the metric or expression is shown in a
+        /// CloudWatch dashboard widget, the label is shown. If Label is omitted, CloudWatch
+        /// generates a default.</p>
+        /// <p>You can put dynamic expressions into a label, so that it is more descriptive.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/graph-dynamic-labels.html">Using Dynamic Labels</a>.</p>
         pub fn set_label(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.label = input;
             self
@@ -891,6 +1026,13 @@ pub mod metric_data_query {
             self.return_data = Some(input);
             self
         }
+        /// <p>When used in <code>GetMetricData</code>, this option indicates whether to return the
+        /// timestamps and raw data values of this metric. If you are performing this call just to
+        /// do math expressions and do not also need the raw data returned, you can specify
+        /// <code>False</code>. If you omit this, the default of <code>True</code> is
+        /// used.</p>
+        /// <p>When used in <code>PutMetricAlarm</code>, specify <code>True</code> for the one expression result to use as the alarm. For all
+        /// other metrics and expressions in the same <code>PutMetricAlarm</code> operation, specify <code>ReturnData</code> as False.</p>
         pub fn set_return_data(mut self, input: std::option::Option<bool>) -> Self {
             self.return_data = input;
             self
@@ -904,6 +1046,11 @@ pub mod metric_data_query {
             self.period = Some(input);
             self
         }
+        /// <p>The granularity, in seconds, of the returned data points. For metrics with regular resolution, a
+        /// period can be as short as one minute (60 seconds) and must be a multiple of 60.
+        /// For high-resolution metrics that are collected at intervals of less than one minute,
+        /// the period can be 1, 5, 10, 30, 60, or any multiple of 60. High-resolution metrics are those metrics
+        /// stored by a <code>PutMetricData</code> operation that includes a <code>StorageResolution of 1 second</code>.</p>
         pub fn set_period(mut self, input: std::option::Option<i32>) -> Self {
             self.period = input;
             self
@@ -915,6 +1062,9 @@ pub mod metric_data_query {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The ID of the account where the metrics are located, if this is a cross-account alarm.</p>
+        /// <p>Use this field only for <code>PutMetricAlarm</code> operations. It is not used in
+        /// <code>GetMetricData</code> operations.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -999,6 +1149,7 @@ pub mod metric_stat {
             self.metric = Some(input);
             self
         }
+        /// <p>The metric to return, including the metric name, namespace, and dimensions.</p>
         pub fn set_metric(mut self, input: std::option::Option<crate::model::Metric>) -> Self {
             self.metric = input;
             self
@@ -1024,6 +1175,23 @@ pub mod metric_stat {
             self.period = Some(input);
             self
         }
+        /// <p>The granularity, in seconds, of the returned data points. For metrics with regular resolution, a period can
+        /// be as short as one minute (60 seconds) and must be a multiple of 60. For high-resolution metrics that are collected
+        /// at intervals of less than one minute, the period can be 1, 5, 10, 30, 60, or any multiple of 60. High-resolution metrics
+        /// are those metrics stored by a <code>PutMetricData</code> call that includes a <code>StorageResolution</code> of 1 second.</p>
+        /// <p>If the <code>StartTime</code> parameter specifies a time stamp that is greater than
+        /// 3 hours ago, you must specify the period as follows or no data points in that time range is returned:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Start time between 3 hours and 15 days ago - Use a multiple of 60 seconds (1 minute).</p>
+        /// </li>
+        /// <li>
+        /// <p>Start time between 15 and 63 days ago - Use a multiple of 300 seconds (5 minutes).</p>
+        /// </li>
+        /// <li>
+        /// <p>Start time greater than 63 days ago - Use a multiple of 3600 seconds (1 hour).</p>
+        /// </li>
+        /// </ul>
         pub fn set_period(mut self, input: std::option::Option<i32>) -> Self {
             self.period = input;
             self
@@ -1033,6 +1201,7 @@ pub mod metric_stat {
             self.stat = Some(input.into());
             self
         }
+        /// <p>The statistic to return. It can include any CloudWatch statistic or extended statistic.</p>
         pub fn set_stat(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stat = input;
             self
@@ -1045,6 +1214,10 @@ pub mod metric_stat {
             self.unit = Some(input);
             self
         }
+        /// <p>When you are using a <code>Put</code> operation, this defines what unit you want to use when storing the metric.</p>
+        /// <p>In a <code>Get</code> operation, if you omit <code>Unit</code> then all data that was collected with any unit is returned, along with the corresponding units that were specified
+        /// when the data was reported to CloudWatch. If you specify a unit, the operation returns only data that was collected with that unit specified.
+        /// If you specify a unit that does not match the data collected, the results of the operation are null. CloudWatch does not perform unit conversions.</p>
         pub fn set_unit(mut self, input: std::option::Option<crate::model::StandardUnit>) -> Self {
             self.unit = input;
             self
@@ -1103,6 +1276,7 @@ pub mod metric {
             self.namespace = Some(input.into());
             self
         }
+        /// <p>The namespace of the metric.</p>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.namespace = input;
             self
@@ -1112,16 +1286,23 @@ pub mod metric {
             self.metric_name = Some(input.into());
             self
         }
+        /// <p>The name of the metric. This is a required field.</p>
         pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.metric_name = input;
             self
         }
+        /// Appends an item to `dimensions`.
+        ///
+        /// To override the contents of this collection use [`set_dimensions`](Self::set_dimensions).
+        ///
+        /// <p>The dimensions for the metric.</p>
         pub fn dimensions(mut self, input: impl Into<crate::model::Dimension>) -> Self {
             let mut v = self.dimensions.unwrap_or_default();
             v.push(input.into());
             self.dimensions = Some(v);
             self
         }
+        /// <p>The dimensions for the metric.</p>
         pub fn set_dimensions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Dimension>>,
@@ -1146,6 +1327,7 @@ impl Metric {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1157,12 +1339,19 @@ impl Metric {
     std::hash::Hash,
 )]
 pub enum ComparisonOperator {
+    #[allow(missing_docs)] // documentation missing in model
     GreaterThanOrEqualToThreshold,
+    #[allow(missing_docs)] // documentation missing in model
     GreaterThanThreshold,
+    #[allow(missing_docs)] // documentation missing in model
     GreaterThanUpperThreshold,
+    #[allow(missing_docs)] // documentation missing in model
     LessThanLowerOrGreaterThanUpperThreshold,
+    #[allow(missing_docs)] // documentation missing in model
     LessThanLowerThreshold,
+    #[allow(missing_docs)] // documentation missing in model
     LessThanOrEqualToThreshold,
+    #[allow(missing_docs)] // documentation missing in model
     LessThanThreshold,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1191,6 +1380,7 @@ impl std::str::FromStr for ComparisonOperator {
     }
 }
 impl ComparisonOperator {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ComparisonOperator::GreaterThanOrEqualToThreshold => "GreaterThanOrEqualToThreshold",
@@ -1205,6 +1395,7 @@ impl ComparisonOperator {
             ComparisonOperator::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "GreaterThanOrEqualToThreshold",
@@ -1223,6 +1414,7 @@ impl AsRef<str> for ComparisonOperator {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1234,10 +1426,15 @@ impl AsRef<str> for ComparisonOperator {
     std::hash::Hash,
 )]
 pub enum Statistic {
+    #[allow(missing_docs)] // documentation missing in model
     Average,
+    #[allow(missing_docs)] // documentation missing in model
     Maximum,
+    #[allow(missing_docs)] // documentation missing in model
     Minimum,
+    #[allow(missing_docs)] // documentation missing in model
     SampleCount,
+    #[allow(missing_docs)] // documentation missing in model
     Sum,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1262,6 +1459,7 @@ impl std::str::FromStr for Statistic {
     }
 }
 impl Statistic {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Statistic::Average => "Average",
@@ -1272,6 +1470,7 @@ impl Statistic {
             Statistic::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Average", "Maximum", "Minimum", "SampleCount", "Sum"]
     }
@@ -1314,6 +1513,7 @@ pub mod dashboard_validation_message {
             self.data_path = Some(input.into());
             self
         }
+        /// <p>The data path related to the message.</p>
         pub fn set_data_path(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.data_path = input;
             self
@@ -1323,6 +1523,7 @@ pub mod dashboard_validation_message {
             self.message = Some(input.into());
             self
         }
+        /// <p>A message describing the error or warning.</p>
         pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.message = input;
             self
@@ -1378,12 +1579,22 @@ pub mod anomaly_detector_configuration {
         pub(crate) metric_timezone: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `excluded_time_ranges`.
+        ///
+        /// To override the contents of this collection use [`set_excluded_time_ranges`](Self::set_excluded_time_ranges).
+        ///
+        /// <p>An array of time ranges to exclude from use when the anomaly detection model is trained. Use
+        /// this to make sure that events that could cause unusual values for the metric, such as
+        /// deployments, aren't used when CloudWatch creates the model.</p>
         pub fn excluded_time_ranges(mut self, input: impl Into<crate::model::Range>) -> Self {
             let mut v = self.excluded_time_ranges.unwrap_or_default();
             v.push(input.into());
             self.excluded_time_ranges = Some(v);
             self
         }
+        /// <p>An array of time ranges to exclude from use when the anomaly detection model is trained. Use
+        /// this to make sure that events that could cause unusual values for the metric, such as
+        /// deployments, aren't used when CloudWatch creates the model.</p>
         pub fn set_excluded_time_ranges(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Range>>,
@@ -1400,6 +1611,11 @@ pub mod anomaly_detector_configuration {
             self.metric_timezone = Some(input.into());
             self
         }
+        /// <p>The time zone to use for the metric. This is useful to enable the model to automatically
+        /// account for daylight savings time changes if the metric is sensitive to such time
+        /// changes.</p>
+        /// <p>To specify a time zone, use the name of the time zone as specified in the standard tz database. For more information,
+        /// see <a href="https://en.wikipedia.org/wiki/Tz_database">tz database</a>.</p>
         pub fn set_metric_timezone(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1430,10 +1646,10 @@ impl AnomalyDetectorConfiguration {
 pub struct Range {
     /// <p>The start time of the range to exclude. The format is <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example,
     /// <code>2019-07-01T23:59:59</code>.</p>
-    pub start_time: std::option::Option<smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The end time of the range to exclude. The format is <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example,
     /// <code>2019-07-01T23:59:59</code>.</p>
-    pub end_time: std::option::Option<smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for Range {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1449,27 +1665,37 @@ pub mod range {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) start_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The start time of the range to exclude. The format is <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example,
         /// <code>2019-07-01T23:59:59</code>.</p>
-        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The start time of the range to exclude. The format is <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example,
+        /// <code>2019-07-01T23:59:59</code>.</p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>The end time of the range to exclude. The format is <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example,
         /// <code>2019-07-01T23:59:59</code>.</p>
-        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The end time of the range to exclude. The format is <code>yyyy-MM-dd'T'HH:mm:ss</code>. For example,
+        /// <code>2019-07-01T23:59:59</code>.</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.end_time = input;
             self
         }
@@ -1496,9 +1722,9 @@ pub struct MetricStreamEntry {
     /// <p>The ARN of the metric stream.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date that the metric stream was originally created.</p>
-    pub creation_date: std::option::Option<smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date that the configuration of this metric stream was most recently updated.</p>
-    pub last_update_date: std::option::Option<smithy_types::Instant>,
+    pub last_update_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The name of the metric stream.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The ARN of the Kinesis Firehose devlivery stream that is used for this metric stream.</p>
@@ -1530,8 +1756,8 @@ pub mod metric_stream_entry {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) creation_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_update_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_update_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) firehose_arn: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<std::string::String>,
@@ -1543,30 +1769,33 @@ pub mod metric_stream_entry {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the metric stream.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
         /// <p>The date that the metric stream was originally created.</p>
-        pub fn creation_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_date = Some(input);
             self
         }
+        /// <p>The date that the metric stream was originally created.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_date = input;
             self
         }
         /// <p>The date that the configuration of this metric stream was most recently updated.</p>
-        pub fn last_update_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_update_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_update_date = Some(input);
             self
         }
+        /// <p>The date that the configuration of this metric stream was most recently updated.</p>
         pub fn set_last_update_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_update_date = input;
             self
@@ -1576,6 +1805,7 @@ pub mod metric_stream_entry {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the metric stream.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1585,6 +1815,7 @@ pub mod metric_stream_entry {
             self.firehose_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the Kinesis Firehose devlivery stream that is used for this metric stream.</p>
         pub fn set_firehose_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.firehose_arn = input;
             self
@@ -1594,6 +1825,7 @@ pub mod metric_stream_entry {
             self.state = Some(input.into());
             self
         }
+        /// <p>The current state of this stream. Valid values are <code>running</code> and <code>stopped</code>.</p>
         pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.state = input;
             self
@@ -1605,6 +1837,9 @@ pub mod metric_stream_entry {
             self.output_format = Some(input);
             self
         }
+        /// <p>The output format of this metric stream. Valid values are
+        /// <code>json</code>
+        /// and <code>opentelemetry0.7</code>.</p>
         pub fn set_output_format(
             mut self,
             input: std::option::Option<crate::model::MetricStreamOutputFormat>,
@@ -1633,6 +1868,7 @@ impl MetricStreamEntry {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1644,6 +1880,7 @@ impl MetricStreamEntry {
     std::hash::Hash,
 )]
 pub enum RecentlyActive {
+    #[allow(missing_docs)] // documentation missing in model
     Pt3H,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1664,12 +1901,14 @@ impl std::str::FromStr for RecentlyActive {
     }
 }
 impl RecentlyActive {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RecentlyActive::Pt3H => "PT3H",
             RecentlyActive::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["PT3H"]
     }
@@ -1712,6 +1951,7 @@ pub mod dimension_filter {
             self.name = Some(input.into());
             self
         }
+        /// <p>The dimension name to be matched.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1721,6 +1961,7 @@ pub mod dimension_filter {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value of the dimension to be matched.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -1751,7 +1992,7 @@ pub struct DashboardEntry {
     pub dashboard_arn: std::option::Option<std::string::String>,
     /// <p>The time stamp of when the dashboard was last modified, either by an API call or
     /// through the console. This number is expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
-    pub last_modified: std::option::Option<smithy_types::Instant>,
+    pub last_modified: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The size of the dashboard, in bytes.</p>
     pub size: i64,
 }
@@ -1773,7 +2014,7 @@ pub mod dashboard_entry {
     pub struct Builder {
         pub(crate) dashboard_name: std::option::Option<std::string::String>,
         pub(crate) dashboard_arn: std::option::Option<std::string::String>,
-        pub(crate) last_modified: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_modified: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) size: std::option::Option<i64>,
     }
     impl Builder {
@@ -1782,6 +2023,7 @@ pub mod dashboard_entry {
             self.dashboard_name = Some(input.into());
             self
         }
+        /// <p>The name of the dashboard.</p>
         pub fn set_dashboard_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1794,6 +2036,7 @@ pub mod dashboard_entry {
             self.dashboard_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the dashboard.</p>
         pub fn set_dashboard_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1803,13 +2046,15 @@ pub mod dashboard_entry {
         }
         /// <p>The time stamp of when the dashboard was last modified, either by an API call or
         /// through the console. This number is expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
-        pub fn last_modified(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_modified(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_modified = Some(input);
             self
         }
+        /// <p>The time stamp of when the dashboard was last modified, either by an API call or
+        /// through the console. This number is expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
         pub fn set_last_modified(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_modified = input;
             self
@@ -1819,6 +2064,7 @@ pub mod dashboard_entry {
             self.size = Some(input);
             self
         }
+        /// <p>The size of the dashboard, in bytes.</p>
         pub fn set_size(mut self, input: std::option::Option<i64>) -> Self {
             self.size = input;
             self
@@ -1846,7 +2092,7 @@ impl DashboardEntry {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Datapoint {
     /// <p>The time stamp used for the data point.</p>
-    pub timestamp: std::option::Option<smithy_types::Instant>,
+    pub timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The number of metric values that contributed to the aggregate value of this
     /// data point.</p>
     pub sample_count: std::option::Option<f64>,
@@ -1884,7 +2130,7 @@ pub mod datapoint {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) timestamp: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) sample_count: std::option::Option<f64>,
         pub(crate) average: std::option::Option<f64>,
         pub(crate) sum: std::option::Option<f64>,
@@ -1896,11 +2142,15 @@ pub mod datapoint {
     }
     impl Builder {
         /// <p>The time stamp used for the data point.</p>
-        pub fn timestamp(mut self, input: smithy_types::Instant) -> Self {
+        pub fn timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
             self.timestamp = Some(input);
             self
         }
-        pub fn set_timestamp(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time stamp used for the data point.</p>
+        pub fn set_timestamp(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.timestamp = input;
             self
         }
@@ -1910,6 +2160,8 @@ pub mod datapoint {
             self.sample_count = Some(input);
             self
         }
+        /// <p>The number of metric values that contributed to the aggregate value of this
+        /// data point.</p>
         pub fn set_sample_count(mut self, input: std::option::Option<f64>) -> Self {
             self.sample_count = input;
             self
@@ -1919,6 +2171,7 @@ pub mod datapoint {
             self.average = Some(input);
             self
         }
+        /// <p>The average of the metric values that correspond to the data point.</p>
         pub fn set_average(mut self, input: std::option::Option<f64>) -> Self {
             self.average = input;
             self
@@ -1928,6 +2181,7 @@ pub mod datapoint {
             self.sum = Some(input);
             self
         }
+        /// <p>The sum of the metric values for the data point.</p>
         pub fn set_sum(mut self, input: std::option::Option<f64>) -> Self {
             self.sum = input;
             self
@@ -1937,6 +2191,7 @@ pub mod datapoint {
             self.minimum = Some(input);
             self
         }
+        /// <p>The minimum metric value for the data point.</p>
         pub fn set_minimum(mut self, input: std::option::Option<f64>) -> Self {
             self.minimum = input;
             self
@@ -1946,6 +2201,7 @@ pub mod datapoint {
             self.maximum = Some(input);
             self
         }
+        /// <p>The maximum metric value for the data point.</p>
         pub fn set_maximum(mut self, input: std::option::Option<f64>) -> Self {
             self.maximum = input;
             self
@@ -1955,10 +2211,16 @@ pub mod datapoint {
             self.unit = Some(input);
             self
         }
+        /// <p>The standard unit for the data point.</p>
         pub fn set_unit(mut self, input: std::option::Option<crate::model::StandardUnit>) -> Self {
             self.unit = input;
             self
         }
+        /// Adds a key-value pair to `extended_statistics`.
+        ///
+        /// To override the contents of this collection use [`set_extended_statistics`](Self::set_extended_statistics).
+        ///
+        /// <p>The percentile statistic for the data point.</p>
         pub fn extended_statistics(
             mut self,
             k: impl Into<std::string::String>,
@@ -1969,6 +2231,7 @@ pub mod datapoint {
             self.extended_statistics = Some(hash_map);
             self
         }
+        /// <p>The percentile statistic for the data point.</p>
         pub fn set_extended_statistics(
             mut self,
             input: std::option::Option<std::collections::HashMap<std::string::String, f64>>,
@@ -2034,6 +2297,7 @@ pub mod message_data {
             self.code = Some(input.into());
             self
         }
+        /// <p>The error code or status code associated with the message.</p>
         pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.code = input;
             self
@@ -2043,6 +2307,7 @@ pub mod message_data {
             self.value = Some(input.into());
             self
         }
+        /// <p>The message text.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -2076,7 +2341,7 @@ pub struct MetricDataResult {
     /// <p>The timestamps for the data points, formatted in Unix timestamp format. The number of
     /// timestamps always matches the number of values and the value for Timestamps[x] is
     /// Values[x].</p>
-    pub timestamps: std::option::Option<std::vec::Vec<smithy_types::Instant>>,
+    pub timestamps: std::option::Option<std::vec::Vec<aws_smithy_types::Instant>>,
     /// <p>The data points for the metric corresponding to <code>Timestamps</code>. The number of
     /// values always matches the number of timestamps and the timestamp for Values[x] is
     /// Timestamps[x].</p>
@@ -2110,7 +2375,7 @@ pub mod metric_data_result {
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) label: std::option::Option<std::string::String>,
-        pub(crate) timestamps: std::option::Option<std::vec::Vec<smithy_types::Instant>>,
+        pub(crate) timestamps: std::option::Option<std::vec::Vec<aws_smithy_types::Instant>>,
         pub(crate) values: std::option::Option<std::vec::Vec<f64>>,
         pub(crate) status_code: std::option::Option<crate::model::StatusCode>,
         pub(crate) messages: std::option::Option<std::vec::Vec<crate::model::MessageData>>,
@@ -2121,6 +2386,7 @@ pub mod metric_data_result {
             self.id = Some(input.into());
             self
         }
+        /// <p>The short name you specified to represent this metric.</p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -2130,29 +2396,50 @@ pub mod metric_data_result {
             self.label = Some(input.into());
             self
         }
+        /// <p>The human-readable label associated with the data.</p>
         pub fn set_label(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.label = input;
             self
         }
-        pub fn timestamps(mut self, input: impl Into<smithy_types::Instant>) -> Self {
+        /// Appends an item to `timestamps`.
+        ///
+        /// To override the contents of this collection use [`set_timestamps`](Self::set_timestamps).
+        ///
+        /// <p>The timestamps for the data points, formatted in Unix timestamp format. The number of
+        /// timestamps always matches the number of values and the value for Timestamps[x] is
+        /// Values[x].</p>
+        pub fn timestamps(mut self, input: impl Into<aws_smithy_types::Instant>) -> Self {
             let mut v = self.timestamps.unwrap_or_default();
             v.push(input.into());
             self.timestamps = Some(v);
             self
         }
+        /// <p>The timestamps for the data points, formatted in Unix timestamp format. The number of
+        /// timestamps always matches the number of values and the value for Timestamps[x] is
+        /// Values[x].</p>
         pub fn set_timestamps(
             mut self,
-            input: std::option::Option<std::vec::Vec<smithy_types::Instant>>,
+            input: std::option::Option<std::vec::Vec<aws_smithy_types::Instant>>,
         ) -> Self {
             self.timestamps = input;
             self
         }
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>The data points for the metric corresponding to <code>Timestamps</code>. The number of
+        /// values always matches the number of timestamps and the timestamp for Values[x] is
+        /// Timestamps[x].</p>
         pub fn values(mut self, input: impl Into<f64>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
+        /// <p>The data points for the metric corresponding to <code>Timestamps</code>. The number of
+        /// values always matches the number of timestamps and the timestamp for Values[x] is
+        /// Timestamps[x].</p>
         pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
             self.values = input;
             self
@@ -2166,6 +2453,11 @@ pub mod metric_data_result {
             self.status_code = Some(input);
             self
         }
+        /// <p>The status of the returned data. <code>Complete</code> indicates that all data points in the requested time range were returned.
+        /// <code>PartialData</code> means that an incomplete set of data points were returned.
+        /// You can use the <code>NextToken</code> value that was returned and repeat your request to get more data points.
+        /// <code>NextToken</code> is not returned if you are performing a math expression. <code>InternalError</code>  
+        /// indicates that an error occurred. Retry your request using <code>NextToken</code>, if present.</p>
         pub fn set_status_code(
             mut self,
             input: std::option::Option<crate::model::StatusCode>,
@@ -2173,12 +2465,18 @@ pub mod metric_data_result {
             self.status_code = input;
             self
         }
+        /// Appends an item to `messages`.
+        ///
+        /// To override the contents of this collection use [`set_messages`](Self::set_messages).
+        ///
+        /// <p>A list of messages with additional information about the data returned.</p>
         pub fn messages(mut self, input: impl Into<crate::model::MessageData>) -> Self {
             let mut v = self.messages.unwrap_or_default();
             v.push(input.into());
             self.messages = Some(v);
             self
         }
+        /// <p>A list of messages with additional information about the data returned.</p>
         pub fn set_messages(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MessageData>>,
@@ -2206,6 +2504,7 @@ impl MetricDataResult {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2217,8 +2516,11 @@ impl MetricDataResult {
     std::hash::Hash,
 )]
 pub enum StatusCode {
+    #[allow(missing_docs)] // documentation missing in model
     Complete,
+    #[allow(missing_docs)] // documentation missing in model
     InternalError,
+    #[allow(missing_docs)] // documentation missing in model
     PartialData,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2241,6 +2543,7 @@ impl std::str::FromStr for StatusCode {
     }
 }
 impl StatusCode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StatusCode::Complete => "Complete",
@@ -2249,6 +2552,7 @@ impl StatusCode {
             StatusCode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Complete", "InternalError", "PartialData"]
     }
@@ -2301,6 +2605,11 @@ pub mod label_options {
             self.timezone = Some(input.into());
             self
         }
+        /// <p>The time zone to use for metric data return in this operation.
+        /// The format is <code>+</code> or <code>-</code> followed by four digits.
+        /// The first two digits indicate the number of hours ahead or behind of UTC, and
+        /// the final two digits are the number of minutes. For example, +0130 indicates a time zone that is 1 hour
+        /// and 30 minutes ahead of UTC. The default is +0000. </p>
         pub fn set_timezone(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.timezone = input;
             self
@@ -2320,6 +2629,7 @@ impl LabelOptions {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2331,7 +2641,9 @@ impl LabelOptions {
     std::hash::Hash,
 )]
 pub enum ScanBy {
+    #[allow(missing_docs)] // documentation missing in model
     TimestampAscending,
+    #[allow(missing_docs)] // documentation missing in model
     TimestampDescending,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2353,6 +2665,7 @@ impl std::str::FromStr for ScanBy {
     }
 }
 impl ScanBy {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ScanBy::TimestampAscending => "TimestampAscending",
@@ -2360,6 +2673,7 @@ impl ScanBy {
             ScanBy::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["TimestampAscending", "TimestampDescending"]
     }
@@ -2376,7 +2690,7 @@ impl AsRef<str> for ScanBy {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InsightRuleMetricDatapoint {
     /// <p>The timestamp of the data point.</p>
-    pub timestamp: std::option::Option<smithy_types::Instant>,
+    pub timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The number of unique contributors who published data during this timestamp.</p>
     /// <p>This statistic is returned only if you included it in the <code>Metrics</code> array in your request.</p>
     pub unique_contributors: std::option::Option<f64>,
@@ -2421,7 +2735,7 @@ pub mod insight_rule_metric_datapoint {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) timestamp: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) unique_contributors: std::option::Option<f64>,
         pub(crate) max_contributor_value: std::option::Option<f64>,
         pub(crate) sample_count: std::option::Option<f64>,
@@ -2432,11 +2746,15 @@ pub mod insight_rule_metric_datapoint {
     }
     impl Builder {
         /// <p>The timestamp of the data point.</p>
-        pub fn timestamp(mut self, input: smithy_types::Instant) -> Self {
+        pub fn timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
             self.timestamp = Some(input);
             self
         }
-        pub fn set_timestamp(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The timestamp of the data point.</p>
+        pub fn set_timestamp(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.timestamp = input;
             self
         }
@@ -2446,6 +2764,8 @@ pub mod insight_rule_metric_datapoint {
             self.unique_contributors = Some(input);
             self
         }
+        /// <p>The number of unique contributors who published data during this timestamp.</p>
+        /// <p>This statistic is returned only if you included it in the <code>Metrics</code> array in your request.</p>
         pub fn set_unique_contributors(mut self, input: std::option::Option<f64>) -> Self {
             self.unique_contributors = input;
             self
@@ -2458,6 +2778,10 @@ pub mod insight_rule_metric_datapoint {
             self.max_contributor_value = Some(input);
             self
         }
+        /// <p>The maximum value provided by one contributor during this timestamp. Each timestamp is evaluated separately,
+        /// so the identity of the max contributor
+        /// could be different for each timestamp.</p>
+        /// <p>This statistic is returned only if you included it in the <code>Metrics</code> array in your request.</p>
         pub fn set_max_contributor_value(mut self, input: std::option::Option<f64>) -> Self {
             self.max_contributor_value = input;
             self
@@ -2468,6 +2792,8 @@ pub mod insight_rule_metric_datapoint {
             self.sample_count = Some(input);
             self
         }
+        /// <p>The number of occurrences that matched the rule during this data point.</p>
+        /// <p>This statistic is returned only if you included it in the <code>Metrics</code> array in your request.</p>
         pub fn set_sample_count(mut self, input: std::option::Option<f64>) -> Self {
             self.sample_count = input;
             self
@@ -2478,6 +2804,8 @@ pub mod insight_rule_metric_datapoint {
             self.average = Some(input);
             self
         }
+        /// <p>The average value from all contributors during the time period represented by that data point.</p>
+        /// <p>This statistic is returned only if you included it in the <code>Metrics</code> array in your request.</p>
         pub fn set_average(mut self, input: std::option::Option<f64>) -> Self {
             self.average = input;
             self
@@ -2488,6 +2816,8 @@ pub mod insight_rule_metric_datapoint {
             self.sum = Some(input);
             self
         }
+        /// <p>The sum of the values from all contributors during the time period represented by that data point.</p>
+        /// <p>This statistic is returned only if you included it in the <code>Metrics</code> array in your request.</p>
         pub fn set_sum(mut self, input: std::option::Option<f64>) -> Self {
             self.sum = input;
             self
@@ -2498,6 +2828,8 @@ pub mod insight_rule_metric_datapoint {
             self.minimum = Some(input);
             self
         }
+        /// <p>The minimum value from a single contributor during the time period represented by that data point.</p>
+        /// <p>This statistic is returned only if you included it in the <code>Metrics</code> array in your request.</p>
         pub fn set_minimum(mut self, input: std::option::Option<f64>) -> Self {
             self.minimum = input;
             self
@@ -2508,6 +2840,8 @@ pub mod insight_rule_metric_datapoint {
             self.maximum = Some(input);
             self
         }
+        /// <p>The maximum value from a single occurence from a single contributor during the time period represented by that data point.</p>
+        /// <p>This statistic is returned only if you included it in the <code>Metrics</code> array in your request.</p>
         pub fn set_maximum(mut self, input: std::option::Option<f64>) -> Self {
             self.maximum = input;
             self
@@ -2573,12 +2907,18 @@ pub mod insight_rule_contributor {
             std::option::Option<std::vec::Vec<crate::model::InsightRuleContributorDatapoint>>,
     }
     impl Builder {
+        /// Appends an item to `keys`.
+        ///
+        /// To override the contents of this collection use [`set_keys`](Self::set_keys).
+        ///
+        /// <p>One of the log entry field keywords that is used to define contributors for this rule.</p>
         pub fn keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.keys.unwrap_or_default();
             v.push(input.into());
             self.keys = Some(v);
             self
         }
+        /// <p>One of the log entry field keywords that is used to define contributors for this rule.</p>
         pub fn set_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2591,10 +2931,16 @@ pub mod insight_rule_contributor {
             self.approximate_aggregate_value = Some(input);
             self
         }
+        /// <p>An approximation of the aggregate value that comes from this contributor.</p>
         pub fn set_approximate_aggregate_value(mut self, input: std::option::Option<f64>) -> Self {
             self.approximate_aggregate_value = input;
             self
         }
+        /// Appends an item to `datapoints`.
+        ///
+        /// To override the contents of this collection use [`set_datapoints`](Self::set_datapoints).
+        ///
+        /// <p>An array of the data points where this contributor is present. Only the data points when this contributor appeared are included in the array.</p>
         pub fn datapoints(
             mut self,
             input: impl Into<crate::model::InsightRuleContributorDatapoint>,
@@ -2604,6 +2950,7 @@ pub mod insight_rule_contributor {
             self.datapoints = Some(v);
             self
         }
+        /// <p>An array of the data points where this contributor is present. Only the data points when this contributor appeared are included in the array.</p>
         pub fn set_datapoints(
             mut self,
             input: std::option::Option<
@@ -2637,7 +2984,7 @@ impl InsightRuleContributor {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InsightRuleContributorDatapoint {
     /// <p>The timestamp of the data point.</p>
-    pub timestamp: std::option::Option<smithy_types::Instant>,
+    pub timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The approximate value that this contributor added during this timestamp.</p>
     pub approximate_value: std::option::Option<f64>,
 }
@@ -2655,16 +3002,20 @@ pub mod insight_rule_contributor_datapoint {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) timestamp: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) approximate_value: std::option::Option<f64>,
     }
     impl Builder {
         /// <p>The timestamp of the data point.</p>
-        pub fn timestamp(mut self, input: smithy_types::Instant) -> Self {
+        pub fn timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
             self.timestamp = Some(input);
             self
         }
-        pub fn set_timestamp(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The timestamp of the data point.</p>
+        pub fn set_timestamp(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.timestamp = input;
             self
         }
@@ -2673,6 +3024,7 @@ pub mod insight_rule_contributor_datapoint {
             self.approximate_value = Some(input);
             self
         }
+        /// <p>The approximate value that this contributor added during this timestamp.</p>
         pub fn set_approximate_value(mut self, input: std::option::Option<f64>) -> Self {
             self.approximate_value = input;
             self
@@ -2734,6 +3086,7 @@ pub mod partial_failure {
             self.failure_resource = Some(input.into());
             self
         }
+        /// <p>The specified rule that could not be deleted.</p>
         pub fn set_failure_resource(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2746,6 +3099,7 @@ pub mod partial_failure {
             self.exception_type = Some(input.into());
             self
         }
+        /// <p>The type of error.</p>
         pub fn set_exception_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2758,6 +3112,7 @@ pub mod partial_failure {
             self.failure_code = Some(input.into());
             self
         }
+        /// <p>The code of the error.</p>
         pub fn set_failure_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.failure_code = input;
             self
@@ -2767,6 +3122,7 @@ pub mod partial_failure {
             self.failure_description = Some(input.into());
             self
         }
+        /// <p>A description of the error.</p>
         pub fn set_failure_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2837,6 +3193,7 @@ pub mod insight_rule {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the rule.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2846,6 +3203,7 @@ pub mod insight_rule {
             self.state = Some(input.into());
             self
         }
+        /// <p>Indicates whether the rule is enabled or disabled.</p>
         pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.state = input;
             self
@@ -2857,6 +3215,9 @@ pub mod insight_rule {
             self.schema = Some(input.into());
             self
         }
+        /// <p>For rules that you create, this is always <code>{"Name": "CloudWatchLogRule", "Version": 1}</code>. For built-in rules,
+        /// this is <code>{"Name": "ServiceLogRule", "Version": 1}</code>
+        /// </p>
         pub fn set_schema(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.schema = input;
             self
@@ -2869,6 +3230,10 @@ pub mod insight_rule {
             self.definition = Some(input.into());
             self
         }
+        /// <p>The definition of the rule, as a JSON object. The definition contains the keywords used to define contributors,
+        /// the value to aggregate on if this rule returns a sum instead of a count, and the filters. For details on the valid syntax, see
+        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights-RuleSyntax.html">Contributor Insights
+        /// Rule Syntax</a>.</p>
         pub fn set_definition(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.definition = input;
             self
@@ -2945,6 +3310,7 @@ pub mod anomaly_detector {
             self.namespace = Some(input.into());
             self
         }
+        /// <p>The namespace of the metric associated with the anomaly detection model.</p>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.namespace = input;
             self
@@ -2954,16 +3320,23 @@ pub mod anomaly_detector {
             self.metric_name = Some(input.into());
             self
         }
+        /// <p>The name of the metric associated with the anomaly detection model.</p>
         pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.metric_name = input;
             self
         }
+        /// Appends an item to `dimensions`.
+        ///
+        /// To override the contents of this collection use [`set_dimensions`](Self::set_dimensions).
+        ///
+        /// <p>The metric dimensions associated with the anomaly detection model.</p>
         pub fn dimensions(mut self, input: impl Into<crate::model::Dimension>) -> Self {
             let mut v = self.dimensions.unwrap_or_default();
             v.push(input.into());
             self.dimensions = Some(v);
             self
         }
+        /// <p>The metric dimensions associated with the anomaly detection model.</p>
         pub fn set_dimensions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Dimension>>,
@@ -2976,6 +3349,7 @@ pub mod anomaly_detector {
             self.stat = Some(input.into());
             self
         }
+        /// <p>The statistic associated with the anomaly detection model.</p>
         pub fn set_stat(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.stat = input;
             self
@@ -2988,6 +3362,10 @@ pub mod anomaly_detector {
             self.configuration = Some(input);
             self
         }
+        /// <p>The configuration specifies details about how the
+        /// anomaly detection model is to be trained, including time ranges to
+        /// exclude from use for training the model, and the time zone to use for
+        /// the metric.</p>
         pub fn set_configuration(
             mut self,
             input: std::option::Option<crate::model::AnomalyDetectorConfiguration>,
@@ -3001,6 +3379,8 @@ pub mod anomaly_detector {
             self.state_value = Some(input);
             self
         }
+        /// <p>The current status of the anomaly detector's training. The possible values are <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code>
+        /// </p>
         pub fn set_state_value(
             mut self,
             input: std::option::Option<crate::model::AnomalyDetectorStateValue>,
@@ -3028,6 +3408,7 @@ impl AnomalyDetector {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3039,8 +3420,11 @@ impl AnomalyDetector {
     std::hash::Hash,
 )]
 pub enum AnomalyDetectorStateValue {
+    #[allow(missing_docs)] // documentation missing in model
     PendingTraining,
+    #[allow(missing_docs)] // documentation missing in model
     Trained,
+    #[allow(missing_docs)] // documentation missing in model
     TrainedInsufficientData,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3063,6 +3447,7 @@ impl std::str::FromStr for AnomalyDetectorStateValue {
     }
 }
 impl AnomalyDetectorStateValue {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AnomalyDetectorStateValue::PendingTraining => "PENDING_TRAINING",
@@ -3071,6 +3456,7 @@ impl AnomalyDetectorStateValue {
             AnomalyDetectorStateValue::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["PENDING_TRAINING", "TRAINED", "TRAINED_INSUFFICIENT_DATA"]
     }
@@ -3092,7 +3478,7 @@ pub struct MetricAlarm {
     /// <p>The description of the alarm.</p>
     pub alarm_description: std::option::Option<std::string::String>,
     /// <p>The time stamp of the last update to the alarm configuration.</p>
-    pub alarm_configuration_updated_timestamp: std::option::Option<smithy_types::Instant>,
+    pub alarm_configuration_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Indicates whether actions should be executed during any changes to the alarm state.</p>
     pub actions_enabled: std::option::Option<bool>,
     /// <p>The actions to execute when this alarm transitions to the <code>OK</code> state
@@ -3111,7 +3497,7 @@ pub struct MetricAlarm {
     /// <p>An explanation for the alarm state, in JSON format.</p>
     pub state_reason_data: std::option::Option<std::string::String>,
     /// <p>The time stamp of the last update to the alarm state.</p>
-    pub state_updated_timestamp: std::option::Option<smithy_types::Instant>,
+    pub state_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The name of the metric associated with the alarm, if this is an alarm
     /// based on a single metric.</p>
     pub metric_name: std::option::Option<std::string::String>,
@@ -3148,6 +3534,7 @@ pub struct MetricAlarm {
     /// <p>An array of MetricDataQuery structures, used in an alarm based on a
     /// metric math expression. Each structure either retrieves a
     /// metric or performs a math expression.
+    ///
     /// One item in the Metrics array is the math expression that the alarm watches.
     /// This expression by designated by having <code>ReturnData</code> set to
     /// true.</p>
@@ -3206,7 +3593,7 @@ pub mod metric_alarm {
         pub(crate) alarm_arn: std::option::Option<std::string::String>,
         pub(crate) alarm_description: std::option::Option<std::string::String>,
         pub(crate) alarm_configuration_updated_timestamp:
-            std::option::Option<smithy_types::Instant>,
+            std::option::Option<aws_smithy_types::Instant>,
         pub(crate) actions_enabled: std::option::Option<bool>,
         pub(crate) ok_actions: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) alarm_actions: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3215,7 +3602,7 @@ pub mod metric_alarm {
         pub(crate) state_value: std::option::Option<crate::model::StateValue>,
         pub(crate) state_reason: std::option::Option<std::string::String>,
         pub(crate) state_reason_data: std::option::Option<std::string::String>,
-        pub(crate) state_updated_timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) state_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) metric_name: std::option::Option<std::string::String>,
         pub(crate) namespace: std::option::Option<std::string::String>,
         pub(crate) statistic: std::option::Option<crate::model::Statistic>,
@@ -3238,6 +3625,7 @@ pub mod metric_alarm {
             self.alarm_name = Some(input.into());
             self
         }
+        /// <p>The name of the alarm.</p>
         pub fn set_alarm_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.alarm_name = input;
             self
@@ -3247,6 +3635,7 @@ pub mod metric_alarm {
             self.alarm_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the alarm.</p>
         pub fn set_alarm_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.alarm_arn = input;
             self
@@ -3256,6 +3645,7 @@ pub mod metric_alarm {
             self.alarm_description = Some(input.into());
             self
         }
+        /// <p>The description of the alarm.</p>
         pub fn set_alarm_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3266,14 +3656,15 @@ pub mod metric_alarm {
         /// <p>The time stamp of the last update to the alarm configuration.</p>
         pub fn alarm_configuration_updated_timestamp(
             mut self,
-            input: smithy_types::Instant,
+            input: aws_smithy_types::Instant,
         ) -> Self {
             self.alarm_configuration_updated_timestamp = Some(input);
             self
         }
+        /// <p>The time stamp of the last update to the alarm configuration.</p>
         pub fn set_alarm_configuration_updated_timestamp(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.alarm_configuration_updated_timestamp = input;
             self
@@ -3283,16 +3674,25 @@ pub mod metric_alarm {
             self.actions_enabled = Some(input);
             self
         }
+        /// <p>Indicates whether actions should be executed during any changes to the alarm state.</p>
         pub fn set_actions_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.actions_enabled = input;
             self
         }
+        /// Appends an item to `ok_actions`.
+        ///
+        /// To override the contents of this collection use [`set_ok_actions`](Self::set_ok_actions).
+        ///
+        /// <p>The actions to execute when this alarm transitions to the <code>OK</code> state
+        /// from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
         pub fn ok_actions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.ok_actions.unwrap_or_default();
             v.push(input.into());
             self.ok_actions = Some(v);
             self
         }
+        /// <p>The actions to execute when this alarm transitions to the <code>OK</code> state
+        /// from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
         pub fn set_ok_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3300,12 +3700,20 @@ pub mod metric_alarm {
             self.ok_actions = input;
             self
         }
+        /// Appends an item to `alarm_actions`.
+        ///
+        /// To override the contents of this collection use [`set_alarm_actions`](Self::set_alarm_actions).
+        ///
+        /// <p>The actions to execute when this alarm transitions to the <code>ALARM</code> state
+        /// from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
         pub fn alarm_actions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.alarm_actions.unwrap_or_default();
             v.push(input.into());
             self.alarm_actions = Some(v);
             self
         }
+        /// <p>The actions to execute when this alarm transitions to the <code>ALARM</code> state
+        /// from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
         pub fn set_alarm_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3313,12 +3721,20 @@ pub mod metric_alarm {
             self.alarm_actions = input;
             self
         }
+        /// Appends an item to `insufficient_data_actions`.
+        ///
+        /// To override the contents of this collection use [`set_insufficient_data_actions`](Self::set_insufficient_data_actions).
+        ///
+        /// <p>The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state
+        /// from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
         pub fn insufficient_data_actions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.insufficient_data_actions.unwrap_or_default();
             v.push(input.into());
             self.insufficient_data_actions = Some(v);
             self
         }
+        /// <p>The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code> state
+        /// from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
         pub fn set_insufficient_data_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3331,6 +3747,7 @@ pub mod metric_alarm {
             self.state_value = Some(input);
             self
         }
+        /// <p>The state value for the alarm.</p>
         pub fn set_state_value(
             mut self,
             input: std::option::Option<crate::model::StateValue>,
@@ -3343,6 +3760,7 @@ pub mod metric_alarm {
             self.state_reason = Some(input.into());
             self
         }
+        /// <p>An explanation for the alarm state, in text format.</p>
         pub fn set_state_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.state_reason = input;
             self
@@ -3352,6 +3770,7 @@ pub mod metric_alarm {
             self.state_reason_data = Some(input.into());
             self
         }
+        /// <p>An explanation for the alarm state, in JSON format.</p>
         pub fn set_state_reason_data(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3360,13 +3779,14 @@ pub mod metric_alarm {
             self
         }
         /// <p>The time stamp of the last update to the alarm state.</p>
-        pub fn state_updated_timestamp(mut self, input: smithy_types::Instant) -> Self {
+        pub fn state_updated_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
             self.state_updated_timestamp = Some(input);
             self
         }
+        /// <p>The time stamp of the last update to the alarm state.</p>
         pub fn set_state_updated_timestamp(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.state_updated_timestamp = input;
             self
@@ -3377,6 +3797,8 @@ pub mod metric_alarm {
             self.metric_name = Some(input.into());
             self
         }
+        /// <p>The name of the metric associated with the alarm, if this is an alarm
+        /// based on a single metric.</p>
         pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.metric_name = input;
             self
@@ -3386,6 +3808,7 @@ pub mod metric_alarm {
             self.namespace = Some(input.into());
             self
         }
+        /// <p>The namespace of the metric associated with the alarm.</p>
         pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.namespace = input;
             self
@@ -3396,6 +3819,8 @@ pub mod metric_alarm {
             self.statistic = Some(input);
             self
         }
+        /// <p>The statistic for the metric associated with the alarm, other than percentile.
+        /// For percentile statistics, use <code>ExtendedStatistic</code>.</p>
         pub fn set_statistic(
             mut self,
             input: std::option::Option<crate::model::Statistic>,
@@ -3409,6 +3834,8 @@ pub mod metric_alarm {
             self.extended_statistic = Some(input.into());
             self
         }
+        /// <p>The percentile statistic for the metric associated with the alarm. Specify a value between
+        /// p0.0 and p100.</p>
         pub fn set_extended_statistic(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3416,12 +3843,18 @@ pub mod metric_alarm {
             self.extended_statistic = input;
             self
         }
+        /// Appends an item to `dimensions`.
+        ///
+        /// To override the contents of this collection use [`set_dimensions`](Self::set_dimensions).
+        ///
+        /// <p>The dimensions for the metric associated with the alarm.</p>
         pub fn dimensions(mut self, input: impl Into<crate::model::Dimension>) -> Self {
             let mut v = self.dimensions.unwrap_or_default();
             v.push(input.into());
             self.dimensions = Some(v);
             self
         }
+        /// <p>The dimensions for the metric associated with the alarm.</p>
         pub fn set_dimensions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Dimension>>,
@@ -3434,6 +3867,7 @@ pub mod metric_alarm {
             self.period = Some(input);
             self
         }
+        /// <p>The period, in seconds, over which the statistic is applied.</p>
         pub fn set_period(mut self, input: std::option::Option<i32>) -> Self {
             self.period = input;
             self
@@ -3443,6 +3877,7 @@ pub mod metric_alarm {
             self.unit = Some(input);
             self
         }
+        /// <p>The unit of the metric associated with the alarm.</p>
         pub fn set_unit(mut self, input: std::option::Option<crate::model::StandardUnit>) -> Self {
             self.unit = input;
             self
@@ -3452,6 +3887,7 @@ pub mod metric_alarm {
             self.evaluation_periods = Some(input);
             self
         }
+        /// <p>The number of periods over which data is compared to the specified threshold.</p>
         pub fn set_evaluation_periods(mut self, input: std::option::Option<i32>) -> Self {
             self.evaluation_periods = input;
             self
@@ -3461,6 +3897,7 @@ pub mod metric_alarm {
             self.datapoints_to_alarm = Some(input);
             self
         }
+        /// <p>The number of data points that must be breaching to trigger the alarm.</p>
         pub fn set_datapoints_to_alarm(mut self, input: std::option::Option<i32>) -> Self {
             self.datapoints_to_alarm = input;
             self
@@ -3470,6 +3907,7 @@ pub mod metric_alarm {
             self.threshold = Some(input);
             self
         }
+        /// <p>The value to compare with the specified statistic.</p>
         pub fn set_threshold(mut self, input: std::option::Option<f64>) -> Self {
             self.threshold = input;
             self
@@ -3480,6 +3918,8 @@ pub mod metric_alarm {
             self.comparison_operator = Some(input);
             self
         }
+        /// <p>The arithmetic operation to use when comparing the specified
+        /// statistic and threshold. The specified statistic value is used as the first operand.</p>
         pub fn set_comparison_operator(
             mut self,
             input: std::option::Option<crate::model::ComparisonOperator>,
@@ -3492,6 +3932,7 @@ pub mod metric_alarm {
             self.treat_missing_data = Some(input.into());
             self
         }
+        /// <p>Sets how this alarm is to handle missing data points. If this parameter is omitted, the default behavior of <code>missing</code> is used.</p>
         pub fn set_treat_missing_data(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3510,6 +3951,10 @@ pub mod metric_alarm {
             self.evaluate_low_sample_count_percentile = Some(input.into());
             self
         }
+        /// <p>Used only for alarms based on percentiles. If <code>ignore</code>, the alarm state does not change
+        /// during periods with too few data points to be statistically significant. If <code>evaluate</code> or this
+        /// parameter is not used, the alarm is always evaluated and possibly changes state no matter
+        /// how many data points are available.</p>
         pub fn set_evaluate_low_sample_count_percentile(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3517,12 +3962,30 @@ pub mod metric_alarm {
             self.evaluate_low_sample_count_percentile = input;
             self
         }
+        /// Appends an item to `metrics`.
+        ///
+        /// To override the contents of this collection use [`set_metrics`](Self::set_metrics).
+        ///
+        /// <p>An array of MetricDataQuery structures, used in an alarm based on a
+        /// metric math expression. Each structure either retrieves a
+        /// metric or performs a math expression.
+        ///
+        /// One item in the Metrics array is the math expression that the alarm watches.
+        /// This expression by designated by having <code>ReturnData</code> set to
+        /// true.</p>
         pub fn metrics(mut self, input: impl Into<crate::model::MetricDataQuery>) -> Self {
             let mut v = self.metrics.unwrap_or_default();
             v.push(input.into());
             self.metrics = Some(v);
             self
         }
+        /// <p>An array of MetricDataQuery structures, used in an alarm based on a
+        /// metric math expression. Each structure either retrieves a
+        /// metric or performs a math expression.
+        ///
+        /// One item in the Metrics array is the math expression that the alarm watches.
+        /// This expression by designated by having <code>ReturnData</code> set to
+        /// true.</p>
         pub fn set_metrics(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::MetricDataQuery>>,
@@ -3537,6 +4000,9 @@ pub mod metric_alarm {
             self.threshold_metric_id = Some(input.into());
             self
         }
+        /// <p>In an alarm based on an anomaly detection model, this is the ID of the
+        /// <code>ANOMALY_DETECTION_BAND</code> function
+        /// used as the threshold for the alarm.</p>
         pub fn set_threshold_metric_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3596,7 +4062,7 @@ pub struct CompositeAlarm {
     /// <p>The Amazon Resource Name (ARN) of the alarm.</p>
     pub alarm_arn: std::option::Option<std::string::String>,
     /// <p>The time stamp of the last update to the alarm configuration.</p>
-    pub alarm_configuration_updated_timestamp: std::option::Option<smithy_types::Instant>,
+    pub alarm_configuration_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The description of the alarm.</p>
     pub alarm_description: std::option::Option<std::string::String>,
     /// <p>The name of the alarm.</p>
@@ -3612,7 +4078,7 @@ pub struct CompositeAlarm {
     /// <p>An explanation for the alarm state, in JSON format.</p>
     pub state_reason_data: std::option::Option<std::string::String>,
     /// <p>The time stamp of the last update to the alarm state.</p>
-    pub state_updated_timestamp: std::option::Option<smithy_types::Instant>,
+    pub state_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The state value for the alarm.</p>
     pub state_value: std::option::Option<crate::model::StateValue>,
 }
@@ -3648,7 +4114,7 @@ pub mod composite_alarm {
         pub(crate) alarm_actions: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) alarm_arn: std::option::Option<std::string::String>,
         pub(crate) alarm_configuration_updated_timestamp:
-            std::option::Option<smithy_types::Instant>,
+            std::option::Option<aws_smithy_types::Instant>,
         pub(crate) alarm_description: std::option::Option<std::string::String>,
         pub(crate) alarm_name: std::option::Option<std::string::String>,
         pub(crate) alarm_rule: std::option::Option<std::string::String>,
@@ -3657,7 +4123,7 @@ pub mod composite_alarm {
         pub(crate) ok_actions: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) state_reason: std::option::Option<std::string::String>,
         pub(crate) state_reason_data: std::option::Option<std::string::String>,
-        pub(crate) state_updated_timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) state_updated_timestamp: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) state_value: std::option::Option<crate::model::StateValue>,
     }
     impl Builder {
@@ -3666,16 +4132,23 @@ pub mod composite_alarm {
             self.actions_enabled = Some(input);
             self
         }
+        /// <p>Indicates whether actions should be executed during any changes to the alarm state.</p>
         pub fn set_actions_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.actions_enabled = input;
             self
         }
+        /// Appends an item to `alarm_actions`.
+        ///
+        /// To override the contents of this collection use [`set_alarm_actions`](Self::set_alarm_actions).
+        ///
+        /// <p>The actions to execute when this alarm transitions to the ALARM state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
         pub fn alarm_actions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.alarm_actions.unwrap_or_default();
             v.push(input.into());
             self.alarm_actions = Some(v);
             self
         }
+        /// <p>The actions to execute when this alarm transitions to the ALARM state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
         pub fn set_alarm_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3688,6 +4161,7 @@ pub mod composite_alarm {
             self.alarm_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the alarm.</p>
         pub fn set_alarm_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.alarm_arn = input;
             self
@@ -3695,14 +4169,15 @@ pub mod composite_alarm {
         /// <p>The time stamp of the last update to the alarm configuration.</p>
         pub fn alarm_configuration_updated_timestamp(
             mut self,
-            input: smithy_types::Instant,
+            input: aws_smithy_types::Instant,
         ) -> Self {
             self.alarm_configuration_updated_timestamp = Some(input);
             self
         }
+        /// <p>The time stamp of the last update to the alarm configuration.</p>
         pub fn set_alarm_configuration_updated_timestamp(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.alarm_configuration_updated_timestamp = input;
             self
@@ -3712,6 +4187,7 @@ pub mod composite_alarm {
             self.alarm_description = Some(input.into());
             self
         }
+        /// <p>The description of the alarm.</p>
         pub fn set_alarm_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3724,6 +4200,7 @@ pub mod composite_alarm {
             self.alarm_name = Some(input.into());
             self
         }
+        /// <p>The name of the alarm.</p>
         pub fn set_alarm_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.alarm_name = input;
             self
@@ -3733,16 +4210,23 @@ pub mod composite_alarm {
             self.alarm_rule = Some(input.into());
             self
         }
+        /// <p>The rule that this alarm uses to evaluate its alarm state.</p>
         pub fn set_alarm_rule(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.alarm_rule = input;
             self
         }
+        /// Appends an item to `insufficient_data_actions`.
+        ///
+        /// To override the contents of this collection use [`set_insufficient_data_actions`](Self::set_insufficient_data_actions).
+        ///
+        /// <p>The actions to execute when this alarm transitions to the INSUFFICIENT_DATA state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
         pub fn insufficient_data_actions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.insufficient_data_actions.unwrap_or_default();
             v.push(input.into());
             self.insufficient_data_actions = Some(v);
             self
         }
+        /// <p>The actions to execute when this alarm transitions to the INSUFFICIENT_DATA state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
         pub fn set_insufficient_data_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3750,12 +4234,18 @@ pub mod composite_alarm {
             self.insufficient_data_actions = input;
             self
         }
+        /// Appends an item to `ok_actions`.
+        ///
+        /// To override the contents of this collection use [`set_ok_actions`](Self::set_ok_actions).
+        ///
+        /// <p>The actions to execute when this alarm transitions to the OK state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
         pub fn ok_actions(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.ok_actions.unwrap_or_default();
             v.push(input.into());
             self.ok_actions = Some(v);
             self
         }
+        /// <p>The actions to execute when this alarm transitions to the OK state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
         pub fn set_ok_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3768,6 +4258,7 @@ pub mod composite_alarm {
             self.state_reason = Some(input.into());
             self
         }
+        /// <p>An explanation for the alarm state, in text format.</p>
         pub fn set_state_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.state_reason = input;
             self
@@ -3777,6 +4268,7 @@ pub mod composite_alarm {
             self.state_reason_data = Some(input.into());
             self
         }
+        /// <p>An explanation for the alarm state, in JSON format.</p>
         pub fn set_state_reason_data(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3785,13 +4277,14 @@ pub mod composite_alarm {
             self
         }
         /// <p>The time stamp of the last update to the alarm state.</p>
-        pub fn state_updated_timestamp(mut self, input: smithy_types::Instant) -> Self {
+        pub fn state_updated_timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
             self.state_updated_timestamp = Some(input);
             self
         }
+        /// <p>The time stamp of the last update to the alarm state.</p>
         pub fn set_state_updated_timestamp(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.state_updated_timestamp = input;
             self
@@ -3801,6 +4294,7 @@ pub mod composite_alarm {
             self.state_value = Some(input);
             self
         }
+        /// <p>The state value for the alarm.</p>
         pub fn set_state_value(
             mut self,
             input: std::option::Option<crate::model::StateValue>,
@@ -3835,6 +4329,7 @@ impl CompositeAlarm {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3846,7 +4341,9 @@ impl CompositeAlarm {
     std::hash::Hash,
 )]
 pub enum AlarmType {
+    #[allow(missing_docs)] // documentation missing in model
     CompositeAlarm,
+    #[allow(missing_docs)] // documentation missing in model
     MetricAlarm,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3868,6 +4365,7 @@ impl std::str::FromStr for AlarmType {
     }
 }
 impl AlarmType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AlarmType::CompositeAlarm => "CompositeAlarm",
@@ -3875,6 +4373,7 @@ impl AlarmType {
             AlarmType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CompositeAlarm", "MetricAlarm"]
     }
@@ -3894,7 +4393,7 @@ pub struct AlarmHistoryItem {
     /// <p>The type of alarm, either metric alarm or composite alarm.</p>
     pub alarm_type: std::option::Option<crate::model::AlarmType>,
     /// <p>The time stamp for the alarm history item.</p>
-    pub timestamp: std::option::Option<smithy_types::Instant>,
+    pub timestamp: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The type of alarm history item.</p>
     pub history_item_type: std::option::Option<crate::model::HistoryItemType>,
     /// <p>A summary of the alarm history, in text format.</p>
@@ -3922,7 +4421,7 @@ pub mod alarm_history_item {
     pub struct Builder {
         pub(crate) alarm_name: std::option::Option<std::string::String>,
         pub(crate) alarm_type: std::option::Option<crate::model::AlarmType>,
-        pub(crate) timestamp: std::option::Option<smithy_types::Instant>,
+        pub(crate) timestamp: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) history_item_type: std::option::Option<crate::model::HistoryItemType>,
         pub(crate) history_summary: std::option::Option<std::string::String>,
         pub(crate) history_data: std::option::Option<std::string::String>,
@@ -3933,6 +4432,7 @@ pub mod alarm_history_item {
             self.alarm_name = Some(input.into());
             self
         }
+        /// <p>The descriptive name for the alarm.</p>
         pub fn set_alarm_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.alarm_name = input;
             self
@@ -3942,6 +4442,7 @@ pub mod alarm_history_item {
             self.alarm_type = Some(input);
             self
         }
+        /// <p>The type of alarm, either metric alarm or composite alarm.</p>
         pub fn set_alarm_type(
             mut self,
             input: std::option::Option<crate::model::AlarmType>,
@@ -3950,11 +4451,15 @@ pub mod alarm_history_item {
             self
         }
         /// <p>The time stamp for the alarm history item.</p>
-        pub fn timestamp(mut self, input: smithy_types::Instant) -> Self {
+        pub fn timestamp(mut self, input: aws_smithy_types::Instant) -> Self {
             self.timestamp = Some(input);
             self
         }
-        pub fn set_timestamp(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The time stamp for the alarm history item.</p>
+        pub fn set_timestamp(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.timestamp = input;
             self
         }
@@ -3963,6 +4468,7 @@ pub mod alarm_history_item {
             self.history_item_type = Some(input);
             self
         }
+        /// <p>The type of alarm history item.</p>
         pub fn set_history_item_type(
             mut self,
             input: std::option::Option<crate::model::HistoryItemType>,
@@ -3975,6 +4481,7 @@ pub mod alarm_history_item {
             self.history_summary = Some(input.into());
             self
         }
+        /// <p>A summary of the alarm history, in text format.</p>
         pub fn set_history_summary(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3987,6 +4494,7 @@ pub mod alarm_history_item {
             self.history_data = Some(input.into());
             self
         }
+        /// <p>Data about the alarm, in JSON format.</p>
         pub fn set_history_data(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.history_data = input;
             self
@@ -4011,6 +4519,7 @@ impl AlarmHistoryItem {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4022,8 +4531,11 @@ impl AlarmHistoryItem {
     std::hash::Hash,
 )]
 pub enum HistoryItemType {
+    #[allow(missing_docs)] // documentation missing in model
     Action,
+    #[allow(missing_docs)] // documentation missing in model
     ConfigurationUpdate,
+    #[allow(missing_docs)] // documentation missing in model
     StateUpdate,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4046,6 +4558,7 @@ impl std::str::FromStr for HistoryItemType {
     }
 }
 impl HistoryItemType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             HistoryItemType::Action => "Action",
@@ -4054,6 +4567,7 @@ impl HistoryItemType {
             HistoryItemType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Action", "ConfigurationUpdate", "StateUpdate"]
     }

@@ -16,6 +16,8 @@ pub mod cancel_change_set_input {
             self.catalog = Some(input.into());
             self
         }
+        /// <p>Required. The catalog related to the request. Fixed value:
+        /// <code>AWSMarketplace</code>.</p>
         pub fn set_catalog(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog = input;
             self
@@ -26,6 +28,8 @@ pub mod cancel_change_set_input {
             self.change_set_id = Some(input.into());
             self
         }
+        /// <p>Required. The unique identifier of the <code>StartChangeSet</code> request that you
+        /// want to cancel.</p>
         pub fn set_change_set_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -38,7 +42,7 @@ pub mod cancel_change_set_input {
             self,
         ) -> std::result::Result<
             crate::input::CancelChangeSetInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::CancelChangeSetInput {
                 catalog: self.catalog,
@@ -58,33 +62,33 @@ impl CancelChangeSetInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::CancelChangeSet,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::CancelChangeSetInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/CancelChangeSet").expect("formatting should succeed");
             Ok(())
         }
         fn uri_query(_input: &crate::input::CancelChangeSetInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_1) = &_input.catalog {
-                query.push_kv("catalog", &smithy_http::query::fmt_string(&inner_1));
+                query.push_kv("catalog", &aws_smithy_http::query::fmt_string(&inner_1));
             }
             if let Some(inner_2) = &_input.change_set_id {
-                query.push_kv("changeSetId", &smithy_http::query::fmt_string(&inner_2));
+                query.push_kv("changeSetId", &aws_smithy_http::query::fmt_string(&inner_2));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::CancelChangeSetInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -94,23 +98,23 @@ impl CancelChangeSetInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::CancelChangeSetInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -133,15 +137,15 @@ impl CancelChangeSetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::CancelChangeSet::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "CancelChangeSet",
             "marketplacecatalog",
         ));
@@ -150,10 +154,10 @@ impl CancelChangeSetInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -184,6 +188,9 @@ pub mod describe_change_set_input {
             self.catalog = Some(input.into());
             self
         }
+        /// <p>Required. The catalog related to the request. Fixed value:
+        /// <code>AWSMarketplace</code>
+        /// </p>
         pub fn set_catalog(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog = input;
             self
@@ -194,6 +201,8 @@ pub mod describe_change_set_input {
             self.change_set_id = Some(input.into());
             self
         }
+        /// <p>Required. The unique identifier for the <code>StartChangeSet</code> request that you
+        /// want to describe the details for.</p>
         pub fn set_change_set_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -206,7 +215,7 @@ pub mod describe_change_set_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeChangeSetInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeChangeSetInput {
                 catalog: self.catalog,
@@ -226,33 +235,33 @@ impl DescribeChangeSetInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeChangeSet,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeChangeSetInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/DescribeChangeSet").expect("formatting should succeed");
             Ok(())
         }
         fn uri_query(_input: &crate::input::DescribeChangeSetInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_3) = &_input.catalog {
-                query.push_kv("catalog", &smithy_http::query::fmt_string(&inner_3));
+                query.push_kv("catalog", &aws_smithy_http::query::fmt_string(&inner_3));
             }
             if let Some(inner_4) = &_input.change_set_id {
-                query.push_kv("changeSetId", &smithy_http::query::fmt_string(&inner_4));
+                query.push_kv("changeSetId", &aws_smithy_http::query::fmt_string(&inner_4));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::DescribeChangeSetInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -262,23 +271,23 @@ impl DescribeChangeSetInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeChangeSetInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -301,15 +310,15 @@ impl DescribeChangeSetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeChangeSet::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeChangeSet",
             "marketplacecatalog",
         ));
@@ -318,10 +327,10 @@ impl DescribeChangeSetInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -352,6 +361,9 @@ pub mod describe_entity_input {
             self.catalog = Some(input.into());
             self
         }
+        /// <p>Required. The catalog related to the request. Fixed value:
+        /// <code>AWSMarketplace</code>
+        /// </p>
         pub fn set_catalog(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog = input;
             self
@@ -361,6 +373,7 @@ pub mod describe_entity_input {
             self.entity_id = Some(input.into());
             self
         }
+        /// <p>Required. The unique ID of the entity to describe.</p>
         pub fn set_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.entity_id = input;
             self
@@ -370,7 +383,7 @@ pub mod describe_entity_input {
             self,
         ) -> std::result::Result<
             crate::input::DescribeEntityInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::DescribeEntityInput {
                 catalog: self.catalog,
@@ -390,33 +403,33 @@ impl DescribeEntityInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::DescribeEntity,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::DescribeEntityInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/DescribeEntity").expect("formatting should succeed");
             Ok(())
         }
         fn uri_query(_input: &crate::input::DescribeEntityInput, mut output: &mut String) {
-            let mut query = smithy_http::query::Writer::new(&mut output);
+            let mut query = aws_smithy_http::query::Writer::new(&mut output);
             if let Some(inner_5) = &_input.catalog {
-                query.push_kv("catalog", &smithy_http::query::fmt_string(&inner_5));
+                query.push_kv("catalog", &aws_smithy_http::query::fmt_string(&inner_5));
             }
             if let Some(inner_6) = &_input.entity_id {
-                query.push_kv("entityId", &smithy_http::query::fmt_string(&inner_6));
+                query.push_kv("entityId", &aws_smithy_http::query::fmt_string(&inner_6));
             }
         }
         #[allow(clippy::unnecessary_wraps)]
         fn update_http_builder(
             input: &crate::input::DescribeEntityInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -426,23 +439,23 @@ impl DescribeEntityInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::DescribeEntityInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
-        let body = smithy_http::body::SdkBody::from("");
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -465,15 +478,15 @@ impl DescribeEntityInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::DescribeEntity::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "DescribeEntity",
             "marketplacecatalog",
         ));
@@ -482,10 +495,10 @@ impl DescribeEntityInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -518,16 +531,24 @@ pub mod list_change_sets_input {
             self.catalog = Some(input.into());
             self
         }
+        /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code>
+        /// </p>
         pub fn set_catalog(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog = input;
             self
         }
+        /// Appends an item to `filter_list`.
+        ///
+        /// To override the contents of this collection use [`set_filter_list`](Self::set_filter_list).
+        ///
+        /// <p>An array of filter objects.</p>
         pub fn filter_list(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filter_list.unwrap_or_default();
             v.push(input.into());
             self.filter_list = Some(v);
             self
         }
+        /// <p>An array of filter objects.</p>
         pub fn set_filter_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -541,6 +562,8 @@ pub mod list_change_sets_input {
             self.sort = Some(input);
             self
         }
+        /// <p>An object that contains two attributes, <code>SortBy</code> and
+        /// <code>SortOrder</code>.</p>
         pub fn set_sort(mut self, input: std::option::Option<crate::model::Sort>) -> Self {
             self.sort = input;
             self
@@ -552,6 +575,9 @@ pub mod list_change_sets_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>The maximum number of results returned by a single call. This value must be provided
+        /// in the next call to retrieve the next set of results. By default, this value is
+        /// 20.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -562,6 +588,8 @@ pub mod list_change_sets_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token value retrieved from a previous call to access the next page of
+        /// results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -571,7 +599,7 @@ pub mod list_change_sets_input {
             self,
         ) -> std::result::Result<
             crate::input::ListChangeSetsInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::ListChangeSetsInput {
                 catalog: self.catalog,
@@ -594,16 +622,16 @@ impl ListChangeSetsInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListChangeSets,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListChangeSetsInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/ListChangeSets").expect("formatting should succeed");
             Ok(())
         }
@@ -611,7 +639,7 @@ impl ListChangeSetsInput {
         fn update_http_builder(
             input: &crate::input::ListChangeSetsInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -620,27 +648,27 @@ impl ListChangeSetsInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListChangeSetsInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_list_change_sets(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -663,15 +691,15 @@ impl ListChangeSetsInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::ListChangeSets::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "ListChangeSets",
             "marketplacecatalog",
         ));
@@ -680,10 +708,10 @@ impl ListChangeSetsInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -717,6 +745,8 @@ pub mod list_entities_input {
             self.catalog = Some(input.into());
             self
         }
+        /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code>
+        /// </p>
         pub fn set_catalog(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog = input;
             self
@@ -726,16 +756,25 @@ pub mod list_entities_input {
             self.entity_type = Some(input.into());
             self
         }
+        /// <p>The type of entities to retrieve.</p>
         pub fn set_entity_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.entity_type = input;
             self
         }
+        /// Appends an item to `filter_list`.
+        ///
+        /// To override the contents of this collection use [`set_filter_list`](Self::set_filter_list).
+        ///
+        /// <p>An array of filter objects. Each filter object contains two attributes,
+        /// <code>filterName</code> and <code>filterValues</code>.</p>
         pub fn filter_list(mut self, input: impl Into<crate::model::Filter>) -> Self {
             let mut v = self.filter_list.unwrap_or_default();
             v.push(input.into());
             self.filter_list = Some(v);
             self
         }
+        /// <p>An array of filter objects. Each filter object contains two attributes,
+        /// <code>filterName</code> and <code>filterValues</code>.</p>
         pub fn set_filter_list(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Filter>>,
@@ -749,6 +788,8 @@ pub mod list_entities_input {
             self.sort = Some(input);
             self
         }
+        /// <p>An object that contains two attributes, <code>SortBy</code> and
+        /// <code>SortOrder</code>.</p>
         pub fn set_sort(mut self, input: std::option::Option<crate::model::Sort>) -> Self {
             self.sort = input;
             self
@@ -758,6 +799,7 @@ pub mod list_entities_input {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The value of the next token, if it exists. Null if there are no more results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -768,6 +810,8 @@ pub mod list_entities_input {
             self.max_results = Some(input);
             self
         }
+        /// <p>Specifies the upper limit of the elements on a single page. If a value isn't provided,
+        /// the default value is 20.</p>
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.max_results = input;
             self
@@ -775,8 +819,10 @@ pub mod list_entities_input {
         /// Consumes the builder and constructs a [`ListEntitiesInput`](crate::input::ListEntitiesInput)
         pub fn build(
             self,
-        ) -> std::result::Result<crate::input::ListEntitiesInput, smithy_http::operation::BuildError>
-        {
+        ) -> std::result::Result<
+            crate::input::ListEntitiesInput,
+            aws_smithy_http::operation::BuildError,
+        > {
             Ok(crate::input::ListEntitiesInput {
                 catalog: self.catalog,
                 entity_type: self.entity_type,
@@ -799,16 +845,16 @@ impl ListEntitiesInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::ListEntities,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::ListEntitiesInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/ListEntities").expect("formatting should succeed");
             Ok(())
         }
@@ -816,7 +862,7 @@ impl ListEntitiesInput {
         fn update_http_builder(
             input: &crate::input::ListEntitiesInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -825,26 +871,26 @@ impl ListEntitiesInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::ListEntitiesInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body = crate::operation_ser::serialize_operation_crate_operation_list_entities(&self)
             .map_err(|err| {
-            smithy_http::operation::BuildError::SerializationError(err.into())
+            aws_smithy_http::operation::BuildError::SerializationError(err.into())
         })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -867,25 +913,27 @@ impl ListEntitiesInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op =
-            smithy_http::operation::Operation::new(request, crate::operation::ListEntities::new())
-                .with_metadata(smithy_http::operation::Metadata::new(
-                    "ListEntities",
-                    "marketplacecatalog",
-                ));
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::ListEntities::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ListEntities",
+            "marketplacecatalog",
+        ));
         let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
         Ok(op)
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -917,16 +965,24 @@ pub mod start_change_set_input {
             self.catalog = Some(input.into());
             self
         }
+        /// <p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code>
+        /// </p>
         pub fn set_catalog(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.catalog = input;
             self
         }
+        /// Appends an item to `change_set`.
+        ///
+        /// To override the contents of this collection use [`set_change_set`](Self::set_change_set).
+        ///
+        /// <p>Array of <code>change</code> object.</p>
         pub fn change_set(mut self, input: impl Into<crate::model::Change>) -> Self {
             let mut v = self.change_set.unwrap_or_default();
             v.push(input.into());
             self.change_set = Some(v);
             self
         }
+        /// <p>Array of <code>change</code> object.</p>
         pub fn set_change_set(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Change>>,
@@ -940,6 +996,8 @@ pub mod start_change_set_input {
             self.change_set_name = Some(input.into());
             self
         }
+        /// <p>Optional case sensitive string of up to 100 ASCII characters. The change set name can
+        /// be used to filter the list of change sets. </p>
         pub fn set_change_set_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -952,6 +1010,7 @@ pub mod start_change_set_input {
             self.client_request_token = Some(input.into());
             self
         }
+        /// <p>A unique token to identify the request to ensure idempotency.</p>
         pub fn set_client_request_token(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -964,7 +1023,7 @@ pub mod start_change_set_input {
             self,
         ) -> std::result::Result<
             crate::input::StartChangeSetInput,
-            smithy_http::operation::BuildError,
+            aws_smithy_http::operation::BuildError,
         > {
             Ok(crate::input::StartChangeSetInput {
                 catalog: self.catalog,
@@ -986,16 +1045,16 @@ impl StartChangeSetInput {
         &self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
-        smithy_http::operation::Operation<
+        aws_smithy_http::operation::Operation<
             crate::operation::StartChangeSet,
             aws_http::AwsErrorRetryPolicy,
         >,
-        smithy_http::operation::BuildError,
+        aws_smithy_http::operation::BuildError,
     > {
         fn uri_base(
             _input: &crate::input::StartChangeSetInput,
             output: &mut String,
-        ) -> Result<(), smithy_http::operation::BuildError> {
+        ) -> Result<(), aws_smithy_http::operation::BuildError> {
             write!(output, "/StartChangeSet").expect("formatting should succeed");
             Ok(())
         }
@@ -1003,7 +1062,7 @@ impl StartChangeSetInput {
         fn update_http_builder(
             input: &crate::input::StartChangeSetInput,
             builder: http::request::Builder,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut uri = String::new();
             uri_base(input, &mut uri)?;
@@ -1012,27 +1071,27 @@ impl StartChangeSetInput {
         #[allow(clippy::unnecessary_wraps)]
         fn request_builder_base(
             input: &crate::input::StartChangeSetInput,
-        ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError>
+        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::BuildError>
         {
             let mut builder = update_http_builder(input, http::request::Builder::new())?;
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::HeaderName::from_static("content-type"),
                 "application/json",
             );
             Ok(builder)
         }
-        let properties = smithy_http::property_bag::SharedPropertyBag::new();
+        let properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         let request = request_builder_base(&self)?;
         let body =
             crate::operation_ser::serialize_operation_crate_operation_start_change_set(&self)
                 .map_err(|err| {
-                    smithy_http::operation::BuildError::SerializationError(err.into())
+                    aws_smithy_http::operation::BuildError::SerializationError(err.into())
                 })?;
         let request = Self::assemble(request, body);
         #[allow(unused_mut)]
-        let mut request = smithy_http::operation::Request::from_parts(
-            request.map(smithy_http::body::SdkBody::from),
+        let mut request = aws_smithy_http::operation::Request::from_parts(
+            request.map(aws_smithy_http::body::SdkBody::from),
             properties,
         );
         request
@@ -1055,15 +1114,15 @@ impl StartChangeSetInput {
         if let Some(region) = &_config.region {
             request.properties_mut().insert(region.clone());
         }
-        aws_auth::set_provider(
+        aws_http::auth::set_provider(
             &mut request.properties_mut(),
             _config.credentials_provider.clone(),
         );
-        let op = smithy_http::operation::Operation::new(
+        let op = aws_smithy_http::operation::Operation::new(
             request,
             crate::operation::StartChangeSet::new(),
         )
-        .with_metadata(smithy_http::operation::Metadata::new(
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
             "StartChangeSet",
             "marketplacecatalog",
         ));
@@ -1072,10 +1131,10 @@ impl StartChangeSetInput {
     }
     fn assemble(
         mut builder: http::request::Builder,
-        body: smithy_http::body::SdkBody,
-    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        body: aws_smithy_http::body::SdkBody,
+    ) -> http::request::Request<aws_smithy_http::body::SdkBody> {
         if let Some(content_length) = body.content_length() {
-            builder = smithy_http::header::set_header_if_absent(
+            builder = aws_smithy_http::header::set_header_if_absent(
                 builder,
                 http::header::CONTENT_LENGTH,
                 content_length,
@@ -1089,6 +1148,7 @@ impl StartChangeSetInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartChangeSetInput {
@@ -1114,6 +1174,7 @@ impl std::fmt::Debug for StartChangeSetInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEntitiesInput {
@@ -1147,6 +1208,7 @@ impl std::fmt::Debug for ListEntitiesInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListChangeSetsInput {
@@ -1178,6 +1240,7 @@ impl std::fmt::Debug for ListChangeSetsInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEntityInput {
@@ -1197,6 +1260,7 @@ impl std::fmt::Debug for DescribeEntityInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeChangeSetInput {
@@ -1217,6 +1281,7 @@ impl std::fmt::Debug for DescribeChangeSetInput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelChangeSetInput {

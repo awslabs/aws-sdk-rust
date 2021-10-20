@@ -17,7 +17,7 @@ pub struct HomeRegionControl {
     pub target: std::option::Option<crate::model::Target>,
     /// <p>A timestamp representing the time when the customer called
     /// <code>CreateHomeregionControl</code> and set the home region for the account.</p>
-    pub requested_time: std::option::Option<smithy_types::Instant>,
+    pub requested_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for HomeRegionControl {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -38,7 +38,7 @@ pub mod home_region_control {
         pub(crate) control_id: std::option::Option<std::string::String>,
         pub(crate) home_region: std::option::Option<std::string::String>,
         pub(crate) target: std::option::Option<crate::model::Target>,
-        pub(crate) requested_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) requested_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>A unique identifier that's generated for each home region control. It's always a string
@@ -47,6 +47,8 @@ pub mod home_region_control {
             self.control_id = Some(input.into());
             self
         }
+        /// <p>A unique identifier that's generated for each home region control. It's always a string
+        /// that begins with "hrc-" followed by 12 lowercase letters and numbers.</p>
         pub fn set_control_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.control_id = input;
             self
@@ -57,6 +59,8 @@ pub mod home_region_control {
             self.home_region = Some(input.into());
             self
         }
+        /// <p>The AWS Region that's been set as home region. For example, "us-west-2" or "eu-central-1"
+        /// are valid home regions.</p>
         pub fn set_home_region(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.home_region = input;
             self
@@ -68,19 +72,24 @@ pub mod home_region_control {
             self.target = Some(input);
             self
         }
+        /// <p>The target parameter specifies the identifier to which the home region is applied, which
+        /// is always an <code>ACCOUNT</code>. It applies the home region to the current
+        /// <code>ACCOUNT</code>.</p>
         pub fn set_target(mut self, input: std::option::Option<crate::model::Target>) -> Self {
             self.target = input;
             self
         }
         /// <p>A timestamp representing the time when the customer called
         /// <code>CreateHomeregionControl</code> and set the home region for the account.</p>
-        pub fn requested_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn requested_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.requested_time = Some(input);
             self
         }
+        /// <p>A timestamp representing the time when the customer called
+        /// <code>CreateHomeregionControl</code> and set the home region for the account.</p>
         pub fn set_requested_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.requested_time = input;
             self
@@ -138,6 +147,7 @@ pub mod target {
             self.r#type = Some(input);
             self
         }
+        /// <p>The target type is always an <code>ACCOUNT</code>.</p>
         pub fn set_type(mut self, input: std::option::Option<crate::model::TargetType>) -> Self {
             self.r#type = input;
             self
@@ -148,6 +158,8 @@ pub mod target {
             self.id = Some(input.into());
             self
         }
+        /// <p>The <code>TargetID</code> is a 12-character identifier of the <code>ACCOUNT</code> for
+        /// which the control was created. (This must be the current account.) </p>
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.id = input;
             self
@@ -168,6 +180,7 @@ impl Target {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -179,6 +192,7 @@ impl Target {
     std::hash::Hash,
 )]
 pub enum TargetType {
+    #[allow(missing_docs)] // documentation missing in model
     Account,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -199,12 +213,14 @@ impl std::str::FromStr for TargetType {
     }
 }
 impl TargetType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TargetType::Account => "ACCOUNT",
             TargetType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ACCOUNT"]
     }

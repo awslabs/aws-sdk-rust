@@ -20,6 +20,7 @@ pub struct Options {
     /// <p>Default value: POINT_IN_TIME_CONSISTENT.</p>
     /// <p>ONLY_FILES_TRANSFERRED (recommended): Perform verification only on files that were transferred.
     /// </p>
+    ///
     /// <p>POINT_IN_TIME_CONSISTENT: Scan the entire source and entire destination
     /// at the end of the transfer
     /// to verify that source and destination are fully
@@ -147,6 +148,7 @@ pub struct Options {
     /// <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html">How DataSync Handles Metadata and Special Files</a>.
     /// </p>
     /// <p>Default value: OWNER_DACL.</p>
+    ///
     /// <p>
     /// <b>OWNER_DACL</b>: For each copied object, DataSync copies the following metadata:</p>
     /// <ul>
@@ -160,6 +162,7 @@ pub struct Options {
     /// </ul>
     /// <p>When choosing this option, DataSync does NOT copy the NTFS system access control lists
     /// (SACLs), which are used by administrators to log attempts to access a secured object.</p>
+    ///
     /// <p>
     /// <b>OWNER_DACL_SACL</b>: For each copied object, DataSync copies the following metadata:</p>
     /// <ul>
@@ -178,6 +181,7 @@ pub struct Options {
     /// <p>Copying SACLs requires granting additional permissions to the Windows user that DataSync
     /// uses to access your SMB location. For information about choosing a user that ensures
     /// sufficient permissions to files, folders, and metadata, see <a href="create-smb-location.html#SMBuser">user</a>.</p>
+    ///
     /// <p>
     /// <b>NONE</b>: None of the SMB security descriptor components
     /// are copied. Destination objects are owned by the user that was provided for accessing the
@@ -240,6 +244,7 @@ pub mod options {
         /// <p>Default value: POINT_IN_TIME_CONSISTENT.</p>
         /// <p>ONLY_FILES_TRANSFERRED (recommended): Perform verification only on files that were transferred.
         /// </p>
+        ///
         /// <p>POINT_IN_TIME_CONSISTENT: Scan the entire source and entire destination
         /// at the end of the transfer
         /// to verify that source and destination are fully
@@ -252,6 +257,23 @@ pub mod options {
             self.verify_mode = Some(input);
             self
         }
+        /// <p>A value that determines whether a data integrity verification should be performed at
+        /// the end of a task execution after all data and metadata have been transferred.
+        /// For more information, see
+        /// <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-task.html">Configure task settings</a>.
+        /// </p>
+        /// <p>Default value: POINT_IN_TIME_CONSISTENT.</p>
+        /// <p>ONLY_FILES_TRANSFERRED (recommended): Perform verification only on files that were transferred.
+        /// </p>
+        ///
+        /// <p>POINT_IN_TIME_CONSISTENT: Scan the entire source and entire destination
+        /// at the end of the transfer
+        /// to verify that source and destination are fully
+        /// synchronized. This option isn't supported when transferring to S3 Glacier or S3 Glacier
+        /// Deep Archive storage classes.</p>
+        /// <p>NONE: No additional verification is done at the end of the
+        /// transfer, but all data transmissions are integrity-checked with
+        /// checksum verification during the transfer.</p>
         pub fn set_verify_mode(
             mut self,
             input: std::option::Option<crate::model::VerifyMode>,
@@ -271,6 +293,14 @@ pub mod options {
             self.overwrite_mode = Some(input);
             self
         }
+        /// <p>A value that determines whether files at the destination should be overwritten or
+        /// preserved when copying files. If set to <code>NEVER</code> a destination file will not be
+        /// replaced by a source file, even if the destination file differs from the source file. If you modify files in the destination and you sync the files, you can use this value to
+        /// protect against overwriting those changes. </p>
+        /// <p>Some storage classes have specific behaviors that can affect your S3 storage cost. For detailed information, see
+        /// <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations when working with Amazon S3 storage classes in DataSync </a>
+        /// in the <i>DataSync
+        /// User Guide</i>.</p>
         pub fn set_overwrite_mode(
             mut self,
             input: std::option::Option<crate::model::OverwriteMode>,
@@ -295,6 +325,19 @@ pub mod options {
             self.atime = Some(input);
             self
         }
+        /// <p>A file metadata value that shows the last time a file was accessed (that is, when the
+        /// file was read or written to). If you set <code>Atime</code> to BEST_EFFORT, DataSync
+        /// attempts to preserve the original <code>Atime</code> attribute on all source files (that is,
+        /// the version before the PREPARING phase). However, <code>Atime</code>'s behavior is not
+        /// fully standard across platforms, so DataSync can only do this on a best-effort basis. </p>
+        /// <p>Default value: BEST_EFFORT.</p>
+        /// <p>BEST_EFFORT: Attempt to preserve the per-file <code>Atime</code> value
+        /// (recommended).</p>
+        /// <p>NONE: Ignore <code>Atime</code>.</p>
+        /// <note>
+        /// <p>If <code>Atime</code> is set to BEST_EFFORT, <code>Mtime</code> must be set to PRESERVE. </p>
+        /// <p>If <code>Atime</code> is set to NONE, <code>Mtime</code> must also be NONE. </p>
+        /// </note>
         pub fn set_atime(mut self, input: std::option::Option<crate::model::Atime>) -> Self {
             self.atime = input;
             self
@@ -315,6 +358,18 @@ pub mod options {
             self.mtime = Some(input);
             self
         }
+        /// <p>A value that indicates the last time that a file was modified (that is, a file was
+        /// written to) before the PREPARING phase. This option is required for cases when you need to run
+        /// the same task more than one time. </p>
+        /// <p>Default value: PRESERVE. </p>
+        /// <p>PRESERVE: Preserve original <code>Mtime</code> (recommended)</p>
+        /// <p> NONE: Ignore <code>Mtime</code>. </p>
+        /// <note>
+        /// <p>If <code>Mtime</code> is set to PRESERVE, <code>Atime</code> must be set to
+        /// BEST_EFFORT.</p>
+        /// <p>If <code>Mtime</code> is set to NONE, <code>Atime</code> must also be set to NONE.
+        /// </p>
+        /// </note>
         pub fn set_mtime(mut self, input: std::option::Option<crate::model::Mtime>) -> Self {
             self.mtime = input;
             self
@@ -329,6 +384,12 @@ pub mod options {
             self.uid = Some(input);
             self
         }
+        /// <p>The POSIX user ID (UID) of the file's owner. This option should only be set for NFS,
+        /// EFS, and S3 locations. To learn more about what metadata is copied by DataSync, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata Copied by DataSync</a>.</p>
+        /// <p>Default value: INT_VALUE. This preserves the integer value of the ID.</p>
+        /// <p>INT_VALUE: Preserve the integer value of UID and group ID (GID)
+        /// (recommended).</p>
+        /// <p>NONE: Ignore UID and GID. </p>
         pub fn set_uid(mut self, input: std::option::Option<crate::model::Uid>) -> Self {
             self.uid = input;
             self
@@ -343,6 +404,12 @@ pub mod options {
             self.gid = Some(input);
             self
         }
+        /// <p>The POSIX group ID (GID) of the file's owners. This option should only be set for
+        /// NFS, EFS, and S3 locations. For more information about what metadata is copied by DataSync,
+        /// see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata Copied by DataSync</a>. </p>
+        /// <p>Default value: INT_VALUE. This preserves the integer value of the ID.</p>
+        /// <p>INT_VALUE: Preserve the integer value of user ID (UID) and GID (recommended).</p>
+        /// <p>NONE: Ignore UID and GID. </p>
         pub fn set_gid(mut self, input: std::option::Option<crate::model::Gid>) -> Self {
             self.gid = input;
             self
@@ -359,6 +426,14 @@ pub mod options {
             self.preserve_deleted_files = Some(input);
             self
         }
+        /// <p>A value that specifies whether files in the destination that don't exist in the source
+        /// file system should be preserved. This option can affect your storage cost.
+        /// If your task deletes objects, you might incur minimum storage duration charges for certain storage classes. For detailed
+        /// information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations when working with Amazon S3 storage classes in DataSync </a> in the <i>DataSync User
+        /// Guide</i>.</p>
+        /// <p>Default value: PRESERVE.</p>
+        /// <p>PRESERVE: Ignore such destination files (recommended). </p>
+        /// <p>REMOVE: Delete destination files that aren’t present in the source.</p>
         pub fn set_preserve_deleted_files(
             mut self,
             input: std::option::Option<crate::model::PreserveDeletedFiles>,
@@ -382,6 +457,18 @@ pub mod options {
             self.preserve_devices = Some(input);
             self
         }
+        /// <p>A value that determines whether DataSync should preserve the metadata of block
+        /// and character devices in the source file system, and re-create the files with that device name
+        /// and metadata on the destination. DataSync does not copy the contents of such devices, only the
+        /// name and metadata. </p>
+        /// <note>
+        /// <p>DataSync can't sync the actual contents of such devices, because they are
+        /// nonterminal and don't return an end-of-file (EOF) marker.</p>
+        /// </note>
+        /// <p>Default value: NONE.</p>
+        /// <p>NONE: Ignore special devices (recommended). </p>
+        /// <p>PRESERVE: Preserve character and block device metadata. This option isn't currently
+        /// supported for Amazon EFS. </p>
         pub fn set_preserve_devices(
             mut self,
             input: std::option::Option<crate::model::PreserveDevices>,
@@ -403,6 +490,16 @@ pub mod options {
             self.posix_permissions = Some(input);
             self
         }
+        /// <p>A value that determines which users or groups can access a file for a specific purpose
+        /// such as reading, writing, or execution of the file. This option should only be set for NFS,
+        /// EFS, and S3 locations. For more information about what metadata is copied by DataSync, see
+        /// <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html#metadata-copied">Metadata Copied by DataSync</a>. </p>
+        /// <p>Default value: PRESERVE.</p>
+        /// <p>PRESERVE: Preserve POSIX-style permissions (recommended).</p>
+        /// <p>NONE: Ignore permissions. </p>
+        /// <note>
+        /// <p>DataSync can preserve extant permissions of a source location.</p>
+        /// </note>
         pub fn set_posix_permissions(
             mut self,
             input: std::option::Option<crate::model::PosixPermissions>,
@@ -417,6 +514,9 @@ pub mod options {
             self.bytes_per_second = Some(input);
             self
         }
+        /// <p>A value that limits the bandwidth used by DataSync. For example, if you want
+        /// DataSync to use a maximum of 1 MB, set this value to <code>1048576</code>
+        /// (<code>=1024*1024</code>).</p>
         pub fn set_bytes_per_second(mut self, input: std::option::Option<i64>) -> Self {
             self.bytes_per_second = input;
             self
@@ -430,6 +530,11 @@ pub mod options {
             self.task_queueing = Some(input);
             self
         }
+        /// <p>A value that determines whether tasks should be queued before executing the tasks. If set
+        /// to <code>ENABLED</code>, the tasks will be queued. The default is <code>ENABLED</code>.</p>
+        /// <p>If you use the same agent to run multiple tasks, you can enable the tasks to run in
+        /// series. For more information, see
+        /// <a href="https://docs.aws.amazon.com/datasync/latest/userguide/run-task.html#queue-task-execution">Queueing task executions</a>.</p>
         pub fn set_task_queueing(
             mut self,
             input: std::option::Option<crate::model::TaskQueueing>,
@@ -447,6 +552,12 @@ pub mod options {
             self.log_level = Some(input);
             self
         }
+        /// <p>A value that determines the type of logs that DataSync publishes to a log stream in the
+        /// Amazon CloudWatch log group that you provide. For more information about providing a log group
+        /// for DataSync, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateTask.html#DataSync-CreateTask-request-CloudWatchLogGroupArn">CloudWatchLogGroupArn</a>. If set to <code>OFF</code>, no logs are published.
+        /// <code>BASIC</code> publishes logs on errors for individual files transferred, and
+        /// <code>TRANSFER</code> publishes logs for every file or object that is transferred and
+        /// integrity checked.</p>
         pub fn set_log_level(mut self, input: std::option::Option<crate::model::LogLevel>) -> Self {
             self.log_level = input;
             self
@@ -462,6 +573,13 @@ pub mod options {
             self.transfer_mode = Some(input);
             self
         }
+        /// <p>A value that determines whether DataSync transfers only the data and metadata that differ between the source
+        /// and the destination location, or whether DataSync transfers all the content from the source, without comparing to
+        /// the destination location. </p>
+        /// <p>CHANGED: DataSync copies only data or metadata that is new or different content from the source location to the
+        /// destination location.</p>
+        /// <p>ALL: DataSync copies all source location content to the destination, without comparing to existing content on
+        /// the destination.</p>
         pub fn set_transfer_mode(
             mut self,
             input: std::option::Option<crate::model::TransferMode>,
@@ -479,6 +597,7 @@ pub mod options {
         /// <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html">How DataSync Handles Metadata and Special Files</a>.
         /// </p>
         /// <p>Default value: OWNER_DACL.</p>
+        ///
         /// <p>
         /// <b>OWNER_DACL</b>: For each copied object, DataSync copies the following metadata:</p>
         /// <ul>
@@ -492,6 +611,7 @@ pub mod options {
         /// </ul>
         /// <p>When choosing this option, DataSync does NOT copy the NTFS system access control lists
         /// (SACLs), which are used by administrators to log attempts to access a secured object.</p>
+        ///
         /// <p>
         /// <b>OWNER_DACL_SACL</b>: For each copied object, DataSync copies the following metadata:</p>
         /// <ul>
@@ -510,6 +630,7 @@ pub mod options {
         /// <p>Copying SACLs requires granting additional permissions to the Windows user that DataSync
         /// uses to access your SMB location. For information about choosing a user that ensures
         /// sufficient permissions to files, folders, and metadata, see <a href="create-smb-location.html#SMBuser">user</a>.</p>
+        ///
         /// <p>
         /// <b>NONE</b>: None of the SMB security descriptor components
         /// are copied. Destination objects are owned by the user that was provided for accessing the
@@ -522,6 +643,55 @@ pub mod options {
             self.security_descriptor_copy_flags = Some(input);
             self
         }
+        /// <p>A value that determines which components of the SMB security descriptor are copied from source
+        /// to destination objects.
+        /// </p>
+        /// <p>This value is only used for transfers
+        /// between SMB and Amazon FSx for Windows File Server locations, or between two Amazon FSx for Windows File
+        /// Server locations. For more information about how
+        /// DataSync handles metadata, see
+        /// <a href="https://docs.aws.amazon.com/datasync/latest/userguide/special-files.html">How DataSync Handles Metadata and Special Files</a>.
+        /// </p>
+        /// <p>Default value: OWNER_DACL.</p>
+        ///
+        /// <p>
+        /// <b>OWNER_DACL</b>: For each copied object, DataSync copies the following metadata:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Object owner.</p>
+        /// </li>
+        /// <li>
+        /// <p>NTFS discretionary access control lists (DACLs), which determine whether to
+        /// grant access to an object.</p>
+        /// </li>
+        /// </ul>
+        /// <p>When choosing this option, DataSync does NOT copy the NTFS system access control lists
+        /// (SACLs), which are used by administrators to log attempts to access a secured object.</p>
+        ///
+        /// <p>
+        /// <b>OWNER_DACL_SACL</b>: For each copied object, DataSync copies the following metadata:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Object owner.</p>
+        /// </li>
+        /// <li>
+        /// <p>NTFS discretionary access control lists (DACLs), which determine whether to
+        /// grant access to an object.</p>
+        /// </li>
+        /// <li>
+        /// <p>NTFS system access control lists (SACLs), which are used by administrators
+        /// to log attempts to access a secured object.</p>
+        /// </li>
+        /// </ul>
+        /// <p>Copying SACLs requires granting additional permissions to the Windows user that DataSync
+        /// uses to access your SMB location. For information about choosing a user that ensures
+        /// sufficient permissions to files, folders, and metadata, see <a href="create-smb-location.html#SMBuser">user</a>.</p>
+        ///
+        /// <p>
+        /// <b>NONE</b>: None of the SMB security descriptor components
+        /// are copied. Destination objects are owned by the user that was provided for accessing the
+        /// destination location. DACLs and SACLs are set based on the destination server’s configuration.
+        /// </p>
         pub fn set_security_descriptor_copy_flags(
             mut self,
             input: std::option::Option<crate::model::SmbSecurityDescriptorCopyFlags>,
@@ -557,6 +727,7 @@ impl Options {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -568,8 +739,11 @@ impl Options {
     std::hash::Hash,
 )]
 pub enum SmbSecurityDescriptorCopyFlags {
+    #[allow(missing_docs)] // documentation missing in model
     None,
+    #[allow(missing_docs)] // documentation missing in model
     OwnerDacl,
+    #[allow(missing_docs)] // documentation missing in model
     OwnerDaclSacl,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -592,6 +766,7 @@ impl std::str::FromStr for SmbSecurityDescriptorCopyFlags {
     }
 }
 impl SmbSecurityDescriptorCopyFlags {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SmbSecurityDescriptorCopyFlags::None => "NONE",
@@ -600,6 +775,7 @@ impl SmbSecurityDescriptorCopyFlags {
             SmbSecurityDescriptorCopyFlags::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["NONE", "OWNER_DACL", "OWNER_DACL_SACL"]
     }
@@ -610,6 +786,7 @@ impl AsRef<str> for SmbSecurityDescriptorCopyFlags {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -621,7 +798,9 @@ impl AsRef<str> for SmbSecurityDescriptorCopyFlags {
     std::hash::Hash,
 )]
 pub enum TransferMode {
+    #[allow(missing_docs)] // documentation missing in model
     All,
+    #[allow(missing_docs)] // documentation missing in model
     Changed,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -643,6 +822,7 @@ impl std::str::FromStr for TransferMode {
     }
 }
 impl TransferMode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TransferMode::All => "ALL",
@@ -650,6 +830,7 @@ impl TransferMode {
             TransferMode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ALL", "CHANGED"]
     }
@@ -660,6 +841,7 @@ impl AsRef<str> for TransferMode {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -671,8 +853,11 @@ impl AsRef<str> for TransferMode {
     std::hash::Hash,
 )]
 pub enum LogLevel {
+    #[allow(missing_docs)] // documentation missing in model
     Basic,
+    #[allow(missing_docs)] // documentation missing in model
     Off,
+    #[allow(missing_docs)] // documentation missing in model
     Transfer,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -695,6 +880,7 @@ impl std::str::FromStr for LogLevel {
     }
 }
 impl LogLevel {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LogLevel::Basic => "BASIC",
@@ -703,6 +889,7 @@ impl LogLevel {
             LogLevel::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["BASIC", "OFF", "TRANSFER"]
     }
@@ -713,6 +900,7 @@ impl AsRef<str> for LogLevel {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -724,7 +912,9 @@ impl AsRef<str> for LogLevel {
     std::hash::Hash,
 )]
 pub enum TaskQueueing {
+    #[allow(missing_docs)] // documentation missing in model
     Disabled,
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -746,6 +936,7 @@ impl std::str::FromStr for TaskQueueing {
     }
 }
 impl TaskQueueing {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TaskQueueing::Disabled => "DISABLED",
@@ -753,6 +944,7 @@ impl TaskQueueing {
             TaskQueueing::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["DISABLED", "ENABLED"]
     }
@@ -763,6 +955,7 @@ impl AsRef<str> for TaskQueueing {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -774,7 +967,9 @@ impl AsRef<str> for TaskQueueing {
     std::hash::Hash,
 )]
 pub enum PosixPermissions {
+    #[allow(missing_docs)] // documentation missing in model
     None,
+    #[allow(missing_docs)] // documentation missing in model
     Preserve,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -796,6 +991,7 @@ impl std::str::FromStr for PosixPermissions {
     }
 }
 impl PosixPermissions {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PosixPermissions::None => "NONE",
@@ -803,6 +999,7 @@ impl PosixPermissions {
             PosixPermissions::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["NONE", "PRESERVE"]
     }
@@ -813,6 +1010,7 @@ impl AsRef<str> for PosixPermissions {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -824,7 +1022,9 @@ impl AsRef<str> for PosixPermissions {
     std::hash::Hash,
 )]
 pub enum PreserveDevices {
+    #[allow(missing_docs)] // documentation missing in model
     None,
+    #[allow(missing_docs)] // documentation missing in model
     Preserve,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -846,6 +1046,7 @@ impl std::str::FromStr for PreserveDevices {
     }
 }
 impl PreserveDevices {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PreserveDevices::None => "NONE",
@@ -853,6 +1054,7 @@ impl PreserveDevices {
             PreserveDevices::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["NONE", "PRESERVE"]
     }
@@ -863,6 +1065,7 @@ impl AsRef<str> for PreserveDevices {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -874,7 +1077,9 @@ impl AsRef<str> for PreserveDevices {
     std::hash::Hash,
 )]
 pub enum PreserveDeletedFiles {
+    #[allow(missing_docs)] // documentation missing in model
     Preserve,
+    #[allow(missing_docs)] // documentation missing in model
     Remove,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -896,6 +1101,7 @@ impl std::str::FromStr for PreserveDeletedFiles {
     }
 }
 impl PreserveDeletedFiles {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PreserveDeletedFiles::Preserve => "PRESERVE",
@@ -903,6 +1109,7 @@ impl PreserveDeletedFiles {
             PreserveDeletedFiles::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["PRESERVE", "REMOVE"]
     }
@@ -913,6 +1120,7 @@ impl AsRef<str> for PreserveDeletedFiles {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -924,9 +1132,13 @@ impl AsRef<str> for PreserveDeletedFiles {
     std::hash::Hash,
 )]
 pub enum Gid {
+    #[allow(missing_docs)] // documentation missing in model
     Both,
+    #[allow(missing_docs)] // documentation missing in model
     IntValue,
+    #[allow(missing_docs)] // documentation missing in model
     Name,
+    #[allow(missing_docs)] // documentation missing in model
     None,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -950,6 +1162,7 @@ impl std::str::FromStr for Gid {
     }
 }
 impl Gid {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Gid::Both => "BOTH",
@@ -959,6 +1172,7 @@ impl Gid {
             Gid::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["BOTH", "INT_VALUE", "NAME", "NONE"]
     }
@@ -969,6 +1183,7 @@ impl AsRef<str> for Gid {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -980,9 +1195,13 @@ impl AsRef<str> for Gid {
     std::hash::Hash,
 )]
 pub enum Uid {
+    #[allow(missing_docs)] // documentation missing in model
     Both,
+    #[allow(missing_docs)] // documentation missing in model
     IntValue,
+    #[allow(missing_docs)] // documentation missing in model
     Name,
+    #[allow(missing_docs)] // documentation missing in model
     None,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1006,6 +1225,7 @@ impl std::str::FromStr for Uid {
     }
 }
 impl Uid {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Uid::Both => "BOTH",
@@ -1015,6 +1235,7 @@ impl Uid {
             Uid::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["BOTH", "INT_VALUE", "NAME", "NONE"]
     }
@@ -1025,6 +1246,7 @@ impl AsRef<str> for Uid {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1036,7 +1258,9 @@ impl AsRef<str> for Uid {
     std::hash::Hash,
 )]
 pub enum Mtime {
+    #[allow(missing_docs)] // documentation missing in model
     None,
+    #[allow(missing_docs)] // documentation missing in model
     Preserve,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1058,6 +1282,7 @@ impl std::str::FromStr for Mtime {
     }
 }
 impl Mtime {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Mtime::None => "NONE",
@@ -1065,6 +1290,7 @@ impl Mtime {
             Mtime::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["NONE", "PRESERVE"]
     }
@@ -1075,6 +1301,7 @@ impl AsRef<str> for Mtime {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1086,7 +1313,9 @@ impl AsRef<str> for Mtime {
     std::hash::Hash,
 )]
 pub enum Atime {
+    #[allow(missing_docs)] // documentation missing in model
     BestEffort,
+    #[allow(missing_docs)] // documentation missing in model
     None,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1108,6 +1337,7 @@ impl std::str::FromStr for Atime {
     }
 }
 impl Atime {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Atime::BestEffort => "BEST_EFFORT",
@@ -1115,6 +1345,7 @@ impl Atime {
             Atime::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["BEST_EFFORT", "NONE"]
     }
@@ -1125,6 +1356,7 @@ impl AsRef<str> for Atime {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1136,7 +1368,9 @@ impl AsRef<str> for Atime {
     std::hash::Hash,
 )]
 pub enum OverwriteMode {
+    #[allow(missing_docs)] // documentation missing in model
     Always,
+    #[allow(missing_docs)] // documentation missing in model
     Never,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1158,6 +1392,7 @@ impl std::str::FromStr for OverwriteMode {
     }
 }
 impl OverwriteMode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             OverwriteMode::Always => "ALWAYS",
@@ -1165,6 +1400,7 @@ impl OverwriteMode {
             OverwriteMode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ALWAYS", "NEVER"]
     }
@@ -1175,6 +1411,7 @@ impl AsRef<str> for OverwriteMode {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1186,8 +1423,11 @@ impl AsRef<str> for OverwriteMode {
     std::hash::Hash,
 )]
 pub enum VerifyMode {
+    #[allow(missing_docs)] // documentation missing in model
     None,
+    #[allow(missing_docs)] // documentation missing in model
     OnlyFilesTransferred,
+    #[allow(missing_docs)] // documentation missing in model
     PointInTimeConsistent,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1210,6 +1450,7 @@ impl std::str::FromStr for VerifyMode {
     }
 }
 impl VerifyMode {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             VerifyMode::None => "NONE",
@@ -1218,6 +1459,7 @@ impl VerifyMode {
             VerifyMode::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["NONE", "ONLY_FILES_TRANSFERRED", "POINT_IN_TIME_CONSISTENT"]
     }
@@ -1267,6 +1509,8 @@ pub mod filter_rule {
             self.filter_type = Some(input);
             self
         }
+        /// <p>The type of filter rule to apply. DataSync only supports the SIMPLE_PATTERN rule
+        /// type.</p>
         pub fn set_filter_type(
             mut self,
             input: std::option::Option<crate::model::FilterType>,
@@ -1283,6 +1527,11 @@ pub mod filter_rule {
             self.value = Some(input.into());
             self
         }
+        /// <p>A single filter string that consists of the patterns to include or exclude. The patterns
+        /// are delimited by "|" (that is, a pipe), for example: <code>/folder1|/folder2</code>
+        /// </p>
+        /// <p>
+        /// </p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -1303,6 +1552,7 @@ impl FilterRule {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1314,6 +1564,7 @@ impl FilterRule {
     std::hash::Hash,
 )]
 pub enum FilterType {
+    #[allow(missing_docs)] // documentation missing in model
     SimplePattern,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1334,12 +1585,14 @@ impl std::str::FromStr for FilterType {
     }
 }
 impl FilterType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             FilterType::SimplePattern => "SIMPLE_PATTERN",
             FilterType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["SIMPLE_PATTERN"]
     }
@@ -1381,6 +1634,8 @@ pub mod task_schedule {
             self.schedule_expression = Some(input.into());
             self
         }
+        /// <p>A cron expression that specifies when DataSync initiates a scheduled transfer from a
+        /// source to a destination location. </p>
         pub fn set_schedule_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1436,6 +1691,9 @@ pub mod smb_mount_options {
             self.version = Some(input);
             self
         }
+        /// <p>The specific SMB version that you want DataSync to use to mount your SMB share. If you
+        /// don't specify a version, DataSync defaults to <code>AUTOMATIC</code>. That is, DataSync
+        /// automatically selects a version based on negotiation with the SMB server.</p>
         pub fn set_version(mut self, input: std::option::Option<crate::model::SmbVersion>) -> Self {
             self.version = input;
             self
@@ -1455,6 +1713,7 @@ impl SmbMountOptions {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1466,8 +1725,11 @@ impl SmbMountOptions {
     std::hash::Hash,
 )]
 pub enum SmbVersion {
+    #[allow(missing_docs)] // documentation missing in model
     Automatic,
+    #[allow(missing_docs)] // documentation missing in model
     Smb2,
+    #[allow(missing_docs)] // documentation missing in model
     Smb3,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1490,6 +1752,7 @@ impl std::str::FromStr for SmbVersion {
     }
 }
 impl SmbVersion {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SmbVersion::Automatic => "AUTOMATIC",
@@ -1498,6 +1761,7 @@ impl SmbVersion {
             SmbVersion::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AUTOMATIC", "SMB2", "SMB3"]
     }
@@ -1508,6 +1772,7 @@ impl AsRef<str> for SmbVersion {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1519,7 +1784,9 @@ impl AsRef<str> for SmbVersion {
     std::hash::Hash,
 )]
 pub enum ObjectStorageServerProtocol {
+    #[allow(missing_docs)] // documentation missing in model
     Http,
+    #[allow(missing_docs)] // documentation missing in model
     Https,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1541,6 +1808,7 @@ impl std::str::FromStr for ObjectStorageServerProtocol {
     }
 }
 impl ObjectStorageServerProtocol {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ObjectStorageServerProtocol::Http => "HTTP",
@@ -1548,6 +1816,7 @@ impl ObjectStorageServerProtocol {
             ObjectStorageServerProtocol::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["HTTP", "HTTPS"]
     }
@@ -1567,6 +1836,7 @@ pub struct NfsMountOptions {
     /// server refuses to use the version specified, the sync will fail. If you don't specify a
     /// version, DataSync defaults to <code>AUTOMATIC</code>. That is, DataSync automatically
     /// selects a version based on negotiation with the NFS server.</p>
+    ///
     /// <p>You can specify the following NFS versions:</p>
     /// <ul>
     /// <li>
@@ -1614,6 +1884,7 @@ pub mod nfs_mount_options {
         /// server refuses to use the version specified, the sync will fail. If you don't specify a
         /// version, DataSync defaults to <code>AUTOMATIC</code>. That is, DataSync automatically
         /// selects a version based on negotiation with the NFS server.</p>
+        ///
         /// <p>You can specify the following NFS versions:</p>
         /// <ul>
         /// <li>
@@ -1643,6 +1914,36 @@ pub mod nfs_mount_options {
             self.version = Some(input);
             self
         }
+        /// <p>The specific NFS version that you want DataSync to use to mount your NFS share. If the
+        /// server refuses to use the version specified, the sync will fail. If you don't specify a
+        /// version, DataSync defaults to <code>AUTOMATIC</code>. That is, DataSync automatically
+        /// selects a version based on negotiation with the NFS server.</p>
+        ///
+        /// <p>You can specify the following NFS versions:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>
+        /// <a href="https://tools.ietf.org/html/rfc1813">NFSv3</a>
+        /// </b> - stateless protocol version that allows for asynchronous
+        /// writes on the server.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>
+        /// <a href="https://tools.ietf.org/html/rfc3530">NFSv4.0</a>
+        /// </b> - stateful, firewall-friendly protocol version that supports
+        /// delegations and pseudo filesystems.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>
+        /// <a href="https://tools.ietf.org/html/rfc5661">NFSv4.1</a>
+        /// </b> - stateful protocol version that supports sessions,
+        /// directory delegations, and parallel data processing. Version 4.1 also includes all
+        /// features available in version 4.0.</p>
+        /// </li>
+        /// </ul>
         pub fn set_version(mut self, input: std::option::Option<crate::model::NfsVersion>) -> Self {
             self.version = input;
             self
@@ -1662,6 +1963,7 @@ impl NfsMountOptions {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1673,9 +1975,13 @@ impl NfsMountOptions {
     std::hash::Hash,
 )]
 pub enum NfsVersion {
+    #[allow(missing_docs)] // documentation missing in model
     Automatic,
+    #[allow(missing_docs)] // documentation missing in model
     Nfs3,
+    #[allow(missing_docs)] // documentation missing in model
     Nfs40,
+    #[allow(missing_docs)] // documentation missing in model
     Nfs41,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1699,6 +2005,7 @@ impl std::str::FromStr for NfsVersion {
     }
 }
 impl NfsVersion {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             NfsVersion::Automatic => "AUTOMATIC",
@@ -1708,6 +2015,7 @@ impl NfsVersion {
             NfsVersion::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AUTOMATIC", "NFS3", "NFS4_0", "NFS4_1"]
     }
@@ -1742,12 +2050,18 @@ pub mod on_prem_config {
         pub(crate) agent_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
+        /// Appends an item to `agent_arns`.
+        ///
+        /// To override the contents of this collection use [`set_agent_arns`](Self::set_agent_arns).
+        ///
+        /// <p>ARNs of the agents to use for an NFS location.</p>
         pub fn agent_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.agent_arns.unwrap_or_default();
             v.push(input.into());
             self.agent_arns = Some(v);
             self
         }
+        /// <p>ARNs of the agents to use for an NFS location.</p>
         pub fn set_agent_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1805,6 +2119,7 @@ pub mod tag_list_entry {
             self.key = Some(input.into());
             self
         }
+        /// <p>The key for an Amazon Web Services resource tag.</p>
         pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key = input;
             self
@@ -1814,6 +2129,7 @@ pub mod tag_list_entry {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value for an Amazon Web Services resource tag.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -1873,6 +2189,7 @@ pub mod task_list_entry {
             self.task_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the task.</p>
         pub fn set_task_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.task_arn = input;
             self
@@ -1882,6 +2199,7 @@ pub mod task_list_entry {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the task.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::TaskStatus>) -> Self {
             self.status = input;
             self
@@ -1891,6 +2209,7 @@ pub mod task_list_entry {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the task.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1912,6 +2231,7 @@ impl TaskListEntry {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1923,10 +2243,15 @@ impl TaskListEntry {
     std::hash::Hash,
 )]
 pub enum TaskStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Available,
+    #[allow(missing_docs)] // documentation missing in model
     Creating,
+    #[allow(missing_docs)] // documentation missing in model
     Queued,
+    #[allow(missing_docs)] // documentation missing in model
     Running,
+    #[allow(missing_docs)] // documentation missing in model
     Unavailable,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1951,6 +2276,7 @@ impl std::str::FromStr for TaskStatus {
     }
 }
 impl TaskStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TaskStatus::Available => "AVAILABLE",
@@ -1961,6 +2287,7 @@ impl TaskStatus {
             TaskStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["AVAILABLE", "CREATING", "QUEUED", "RUNNING", "UNAVAILABLE"]
     }
@@ -2015,6 +2342,8 @@ pub mod task_filter {
             self.name = Some(input);
             self
         }
+        /// <p>The name of the filter being used. Each API call supports a list of filters that are available
+        /// for it. For example, <code>LocationId</code> for <code>ListTasks</code>.</p>
         pub fn set_name(
             mut self,
             input: std::option::Option<crate::model::TaskFilterName>,
@@ -2022,12 +2351,20 @@ pub mod task_filter {
             self.name = input;
             self
         }
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>The values that you want to filter for. For example, you might want to display only tasks
+        /// for a specific destination location.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
+        /// <p>The values that you want to filter for. For example, you might want to display only tasks
+        /// for a specific destination location.</p>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2042,6 +2379,9 @@ pub mod task_filter {
             self.operator = Some(input);
             self
         }
+        /// <p>The operator that is used to compare filter values (for example, <code>Equals</code> or
+        /// <code>Contains</code>). For more about API filtering operators, see
+        /// <a href="https://docs.aws.amazon.com/datasync/latest/userguide/query-resources.html">API filters for ListTasks and ListLocations</a>.</p>
         pub fn set_operator(mut self, input: std::option::Option<crate::model::Operator>) -> Self {
             self.operator = input;
             self
@@ -2063,6 +2403,7 @@ impl TaskFilter {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2074,15 +2415,25 @@ impl TaskFilter {
     std::hash::Hash,
 )]
 pub enum Operator {
+    #[allow(missing_docs)] // documentation missing in model
     BeginsWith,
+    #[allow(missing_docs)] // documentation missing in model
     Contains,
+    #[allow(missing_docs)] // documentation missing in model
     Eq,
+    #[allow(missing_docs)] // documentation missing in model
     Gt,
+    #[allow(missing_docs)] // documentation missing in model
     Ge,
+    #[allow(missing_docs)] // documentation missing in model
     In,
+    #[allow(missing_docs)] // documentation missing in model
     Lt,
+    #[allow(missing_docs)] // documentation missing in model
     Le,
+    #[allow(missing_docs)] // documentation missing in model
     NotContains,
+    #[allow(missing_docs)] // documentation missing in model
     Ne,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2112,6 +2463,7 @@ impl std::str::FromStr for Operator {
     }
 }
 impl Operator {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Operator::BeginsWith => "BeginsWith",
@@ -2127,6 +2479,7 @@ impl Operator {
             Operator::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "BeginsWith",
@@ -2148,6 +2501,7 @@ impl AsRef<str> for Operator {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2159,7 +2513,9 @@ impl AsRef<str> for Operator {
     std::hash::Hash,
 )]
 pub enum TaskFilterName {
+    #[allow(missing_docs)] // documentation missing in model
     CreationTime,
+    #[allow(missing_docs)] // documentation missing in model
     LocationId,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2181,6 +2537,7 @@ impl std::str::FromStr for TaskFilterName {
     }
 }
 impl TaskFilterName {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TaskFilterName::CreationTime => "CreationTime",
@@ -2188,6 +2545,7 @@ impl TaskFilterName {
             TaskFilterName::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CreationTime", "LocationId"]
     }
@@ -2234,6 +2592,7 @@ pub mod task_execution_list_entry {
             self.task_execution_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the task that was executed.</p>
         pub fn set_task_execution_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2246,6 +2605,7 @@ pub mod task_execution_list_entry {
             self.status = Some(input);
             self
         }
+        /// <p>The status of a task execution.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::TaskExecutionStatus>,
@@ -2269,6 +2629,7 @@ impl TaskExecutionListEntry {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2280,12 +2641,19 @@ impl TaskExecutionListEntry {
     std::hash::Hash,
 )]
 pub enum TaskExecutionStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Error,
+    #[allow(missing_docs)] // documentation missing in model
     Launching,
+    #[allow(missing_docs)] // documentation missing in model
     Preparing,
+    #[allow(missing_docs)] // documentation missing in model
     Queued,
+    #[allow(missing_docs)] // documentation missing in model
     Success,
+    #[allow(missing_docs)] // documentation missing in model
     Transferring,
+    #[allow(missing_docs)] // documentation missing in model
     Verifying,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2312,6 +2680,7 @@ impl std::str::FromStr for TaskExecutionStatus {
     }
 }
 impl TaskExecutionStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             TaskExecutionStatus::Error => "ERROR",
@@ -2324,6 +2693,7 @@ impl TaskExecutionStatus {
             TaskExecutionStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ERROR",
@@ -2394,6 +2764,9 @@ pub mod location_list_entry {
             self.location_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the location. For Network File System (NFS) or Amazon
+        /// EFS, the location is the export path. For Amazon S3, the location is the prefix path that you
+        /// want to mount and use as the root of the location.</p>
         pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location_arn = input;
             self
@@ -2416,6 +2789,20 @@ pub mod location_list_entry {
             self.location_uri = Some(input.into());
             self
         }
+        /// <p>Represents a list of URLs of a location. <code>LocationUri</code> returns an array that
+        /// contains a list of locations when the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_ListLocations.html">ListLocations</a> operation is
+        /// called.</p>
+        /// <p>Format: <code>TYPE://GLOBAL_ID/SUBDIR</code>.</p>
+        /// <p>TYPE designates the type of location. Valid values: NFS | EFS | S3.</p>
+        /// <p>GLOBAL_ID is the globally unique identifier of the resource that backs the location. An
+        /// example for EFS is <code>us-east-2.fs-abcd1234</code>. An example for Amazon S3 is the bucket
+        /// name, such as <code>myBucket</code>. An example for NFS is a valid IPv4 address or a host name
+        /// compliant with Domain Name Service (DNS).</p>
+        /// <p>SUBDIR is a valid file system path, delimited by forward slashes as is the *nix
+        /// convention. For NFS and Amazon EFS, it's the export path to mount the location. For
+        /// Amazon S3, it's the prefix path that you mount to and treat as the root of the
+        /// location.</p>
+        /// <p></p>
         pub fn set_location_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.location_uri = input;
             self
@@ -2479,6 +2866,8 @@ pub mod location_filter {
             self.name = Some(input);
             self
         }
+        /// <p>The name of the filter being used. Each API call supports a list of filters that are available
+        /// for it (for example, <code>LocationType</code> for <code>ListLocations</code>).</p>
         pub fn set_name(
             mut self,
             input: std::option::Option<crate::model::LocationFilterName>,
@@ -2486,12 +2875,20 @@ pub mod location_filter {
             self.name = input;
             self
         }
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>The values that you want to filter for. For example, you might want to display only Amazon S3
+        /// locations.</p>
         pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
+        /// <p>The values that you want to filter for. For example, you might want to display only Amazon S3
+        /// locations.</p>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2506,6 +2903,9 @@ pub mod location_filter {
             self.operator = Some(input);
             self
         }
+        /// <p>The operator that is used to compare filter values (for example, <code>Equals</code> or
+        /// <code>Contains</code>). For more about API filtering operators, see
+        /// <a href="https://docs.aws.amazon.com/datasync/latest/userguide/query-resources.html">API filters for ListTasks and ListLocations</a>.</p>
         pub fn set_operator(mut self, input: std::option::Option<crate::model::Operator>) -> Self {
             self.operator = input;
             self
@@ -2527,6 +2927,7 @@ impl LocationFilter {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2538,8 +2939,11 @@ impl LocationFilter {
     std::hash::Hash,
 )]
 pub enum LocationFilterName {
+    #[allow(missing_docs)] // documentation missing in model
     CreationTime,
+    #[allow(missing_docs)] // documentation missing in model
     LocationType,
+    #[allow(missing_docs)] // documentation missing in model
     LocationUri,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2562,6 +2966,7 @@ impl std::str::FromStr for LocationFilterName {
     }
 }
 impl LocationFilterName {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             LocationFilterName::CreationTime => "CreationTime",
@@ -2570,6 +2975,7 @@ impl LocationFilterName {
             LocationFilterName::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CreationTime", "LocationType", "LocationUri"]
     }
@@ -2619,6 +3025,7 @@ pub mod agent_list_entry {
             self.agent_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Resource Name (ARN) of the agent.</p>
         pub fn set_agent_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.agent_arn = input;
             self
@@ -2628,6 +3035,7 @@ pub mod agent_list_entry {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the agent.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -2637,6 +3045,7 @@ pub mod agent_list_entry {
             self.status = Some(input);
             self
         }
+        /// <p>The status of the agent.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::AgentStatus>) -> Self {
             self.status = input;
             self
@@ -2658,6 +3067,7 @@ impl AgentListEntry {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2669,7 +3079,9 @@ impl AgentListEntry {
     std::hash::Hash,
 )]
 pub enum AgentStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Offline,
+    #[allow(missing_docs)] // documentation missing in model
     Online,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2691,6 +3103,7 @@ impl std::str::FromStr for AgentStatus {
     }
 }
 impl AgentStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             AgentStatus::Offline => "OFFLINE",
@@ -2698,6 +3111,7 @@ impl AgentStatus {
             AgentStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["OFFLINE", "ONLINE"]
     }
@@ -2776,6 +3190,8 @@ pub mod task_execution_result_detail {
             self.prepare_duration = Some(input);
             self
         }
+        /// <p>The total time in milliseconds that DataSync spent in the PREPARING phase.
+        /// </p>
         pub fn set_prepare_duration(mut self, input: std::option::Option<i64>) -> Self {
             self.prepare_duration = input;
             self
@@ -2785,6 +3201,7 @@ pub mod task_execution_result_detail {
             self.prepare_status = Some(input);
             self
         }
+        /// <p>The status of the PREPARING phase.</p>
         pub fn set_prepare_status(
             mut self,
             input: std::option::Option<crate::model::PhaseStatus>,
@@ -2797,6 +3214,7 @@ pub mod task_execution_result_detail {
             self.total_duration = Some(input);
             self
         }
+        /// <p>The total time in milliseconds that DataSync took to transfer the file from the source to the destination location.</p>
         pub fn set_total_duration(mut self, input: std::option::Option<i64>) -> Self {
             self.total_duration = input;
             self
@@ -2807,6 +3225,8 @@ pub mod task_execution_result_detail {
             self.transfer_duration = Some(input);
             self
         }
+        /// <p>The total time in milliseconds that DataSync spent in the TRANSFERRING
+        /// phase.</p>
         pub fn set_transfer_duration(mut self, input: std::option::Option<i64>) -> Self {
             self.transfer_duration = input;
             self
@@ -2816,6 +3236,7 @@ pub mod task_execution_result_detail {
             self.transfer_status = Some(input);
             self
         }
+        /// <p>The status of the TRANSFERRING phase.</p>
         pub fn set_transfer_status(
             mut self,
             input: std::option::Option<crate::model::PhaseStatus>,
@@ -2829,6 +3250,8 @@ pub mod task_execution_result_detail {
             self.verify_duration = Some(input);
             self
         }
+        /// <p>The total time in milliseconds that DataSync spent in the VERIFYING
+        /// phase.</p>
         pub fn set_verify_duration(mut self, input: std::option::Option<i64>) -> Self {
             self.verify_duration = input;
             self
@@ -2838,6 +3261,7 @@ pub mod task_execution_result_detail {
             self.verify_status = Some(input);
             self
         }
+        /// <p>The status of the VERIFYING phase.</p>
         pub fn set_verify_status(
             mut self,
             input: std::option::Option<crate::model::PhaseStatus>,
@@ -2851,6 +3275,8 @@ pub mod task_execution_result_detail {
             self.error_code = Some(input.into());
             self
         }
+        /// <p>Errors that DataSync encountered during execution of the task. You can use this
+        /// error code to help troubleshoot issues.</p>
         pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_code = input;
             self
@@ -2861,6 +3287,8 @@ pub mod task_execution_result_detail {
             self.error_detail = Some(input.into());
             self
         }
+        /// <p>Detailed description of an error that was encountered during the task execution. You
+        /// can use this information to help troubleshoot issues. </p>
         pub fn set_error_detail(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.error_detail = input;
             self
@@ -2888,6 +3316,7 @@ impl TaskExecutionResultDetail {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2899,8 +3328,11 @@ impl TaskExecutionResultDetail {
     std::hash::Hash,
 )]
 pub enum PhaseStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Error,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
+    #[allow(missing_docs)] // documentation missing in model
     Success,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2923,6 +3355,7 @@ impl std::str::FromStr for PhaseStatus {
     }
 }
 impl PhaseStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             PhaseStatus::Error => "ERROR",
@@ -2931,6 +3364,7 @@ impl PhaseStatus {
             PhaseStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ERROR", "PENDING", "SUCCESS"]
     }
@@ -2943,6 +3377,7 @@ impl AsRef<str> for PhaseStatus {
 
 /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role
 /// that is used to access an Amazon S3 bucket.</p>
+///
 /// <p>For detailed information about using such a role, see Creating a Location for
 /// Amazon S3 in the <i>DataSync User Guide</i>.</p>
 #[non_exhaustive]
@@ -2976,6 +3411,9 @@ pub mod s3_config {
             self.bucket_access_role_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon S3 bucket to access. This bucket is used as a parameter in the
+        /// <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationS3.html">CreateLocationS3</a>
+        /// operation. </p>
         pub fn set_bucket_access_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2998,6 +3436,7 @@ impl S3Config {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3009,12 +3448,19 @@ impl S3Config {
     std::hash::Hash,
 )]
 pub enum S3StorageClass {
+    #[allow(missing_docs)] // documentation missing in model
     DeepArchive,
+    #[allow(missing_docs)] // documentation missing in model
     Glacier,
+    #[allow(missing_docs)] // documentation missing in model
     IntelligentTiering,
+    #[allow(missing_docs)] // documentation missing in model
     OnezoneIa,
+    #[allow(missing_docs)] // documentation missing in model
     Outposts,
+    #[allow(missing_docs)] // documentation missing in model
     Standard,
+    #[allow(missing_docs)] // documentation missing in model
     StandardIa,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3041,6 +3487,7 @@ impl std::str::FromStr for S3StorageClass {
     }
 }
 impl S3StorageClass {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             S3StorageClass::DeepArchive => "DEEP_ARCHIVE",
@@ -3053,6 +3500,7 @@ impl S3StorageClass {
             S3StorageClass::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "DEEP_ARCHIVE",
@@ -3109,16 +3557,26 @@ pub mod ec2_config {
             self.subnet_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the subnet and the security group that DataSync uses to access the target
+        /// EFS file system.</p>
         pub fn set_subnet_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.subnet_arn = input;
             self
         }
+        /// Appends an item to `security_group_arns`.
+        ///
+        /// To override the contents of this collection use [`set_security_group_arns`](Self::set_security_group_arns).
+        ///
+        /// <p>The Amazon Resource Names (ARNs) of the security groups that are configured for the
+        /// Amazon EC2 resource.</p>
         pub fn security_group_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_arns.unwrap_or_default();
             v.push(input.into());
             self.security_group_arns = Some(v);
             self
         }
+        /// <p>The Amazon Resource Names (ARNs) of the security groups that are configured for the
+        /// Amazon EC2 resource.</p>
         pub fn set_security_group_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3190,6 +3648,8 @@ pub mod private_link_config {
             self.vpc_endpoint_id = Some(input.into());
             self
         }
+        /// <p>The ID of the VPC endpoint that is configured for an agent. An agent that is configured
+        /// with a VPC endpoint will not be accessible over the public internet.</p>
         pub fn set_vpc_endpoint_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3204,6 +3664,9 @@ pub mod private_link_config {
             self.private_link_endpoint = Some(input.into());
             self
         }
+        /// <p>The private endpoint that is configured for an agent that has access to IP addresses in a
+        /// <a href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">PrivateLink</a>. An agent that is configured with this endpoint will not be accessible
+        /// over the public internet.</p>
         pub fn set_private_link_endpoint(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3211,12 +3674,20 @@ pub mod private_link_config {
             self.private_link_endpoint = input;
             self
         }
+        /// Appends an item to `subnet_arns`.
+        ///
+        /// To override the contents of this collection use [`set_subnet_arns`](Self::set_subnet_arns).
+        ///
+        /// <p>The Amazon Resource Names (ARNs) of the subnets that are configured for an agent activated
+        /// in a VPC or an agent that has access to a VPC endpoint.</p>
         pub fn subnet_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.subnet_arns.unwrap_or_default();
             v.push(input.into());
             self.subnet_arns = Some(v);
             self
         }
+        /// <p>The Amazon Resource Names (ARNs) of the subnets that are configured for an agent activated
+        /// in a VPC or an agent that has access to a VPC endpoint.</p>
         pub fn set_subnet_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3224,12 +3695,22 @@ pub mod private_link_config {
             self.subnet_arns = input;
             self
         }
+        /// Appends an item to `security_group_arns`.
+        ///
+        /// To override the contents of this collection use [`set_security_group_arns`](Self::set_security_group_arns).
+        ///
+        /// <p>The Amazon Resource Names (ARNs) of the security groups that are configured for the EC2
+        /// resource that hosts an agent activated in a VPC or an agent that has access to a VPC
+        /// endpoint.</p>
         pub fn security_group_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.security_group_arns.unwrap_or_default();
             v.push(input.into());
             self.security_group_arns = Some(v);
             self
         }
+        /// <p>The Amazon Resource Names (ARNs) of the security groups that are configured for the EC2
+        /// resource that hosts an agent activated in a VPC or an agent that has access to a VPC
+        /// endpoint.</p>
         pub fn set_security_group_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3255,6 +3736,7 @@ impl PrivateLinkConfig {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3266,8 +3748,11 @@ impl PrivateLinkConfig {
     std::hash::Hash,
 )]
 pub enum EndpointType {
+    #[allow(missing_docs)] // documentation missing in model
     Fips,
+    #[allow(missing_docs)] // documentation missing in model
     PrivateLink,
+    #[allow(missing_docs)] // documentation missing in model
     Public,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3290,6 +3775,7 @@ impl std::str::FromStr for EndpointType {
     }
 }
 impl EndpointType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             EndpointType::Fips => "FIPS",
@@ -3298,6 +3784,7 @@ impl EndpointType {
             EndpointType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["FIPS", "PRIVATE_LINK", "PUBLIC"]
     }

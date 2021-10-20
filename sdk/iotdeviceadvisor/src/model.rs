@@ -49,6 +49,7 @@ pub mod suite_definition_configuration {
             self.suite_definition_name = Some(input.into());
             self
         }
+        /// <p>Gets Suite Definition Configuration name.</p>
         pub fn set_suite_definition_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -56,12 +57,18 @@ pub mod suite_definition_configuration {
             self.suite_definition_name = input;
             self
         }
+        /// Appends an item to `devices`.
+        ///
+        /// To override the contents of this collection use [`set_devices`](Self::set_devices).
+        ///
+        /// <p>Gets the devices configured.</p>
         pub fn devices(mut self, input: impl Into<crate::model::DeviceUnderTest>) -> Self {
             let mut v = self.devices.unwrap_or_default();
             v.push(input.into());
             self.devices = Some(v);
             self
         }
+        /// <p>Gets the devices configured.</p>
         pub fn set_devices(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DeviceUnderTest>>,
@@ -74,6 +81,7 @@ pub mod suite_definition_configuration {
             self.intended_for_qualification = Some(input);
             self
         }
+        /// <p>Gets the tests intended for qualification in a suite.</p>
         pub fn set_intended_for_qualification(mut self, input: std::option::Option<bool>) -> Self {
             self.intended_for_qualification = input;
             self
@@ -83,6 +91,7 @@ pub mod suite_definition_configuration {
             self.root_group = Some(input.into());
             self
         }
+        /// <p>Gets test suite root group.</p>
         pub fn set_root_group(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.root_group = input;
             self
@@ -92,6 +101,7 @@ pub mod suite_definition_configuration {
             self.device_permission_role_arn = Some(input.into());
             self
         }
+        /// <p>Gets device permission arn.</p>
         pub fn set_device_permission_role_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -150,6 +160,7 @@ pub mod device_under_test {
             self.thing_arn = Some(input.into());
             self
         }
+        /// <p>Lists devices thing arn</p>
         pub fn set_thing_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.thing_arn = input;
             self
@@ -159,6 +170,7 @@ pub mod device_under_test {
             self.certificate_arn = Some(input.into());
             self
         }
+        /// <p>Lists devices certificate arn</p>
         pub fn set_certificate_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -214,6 +226,7 @@ pub mod suite_run_configuration {
             self.primary_device = Some(input);
             self
         }
+        /// <p>Gets the primary device for suite run.</p>
         pub fn set_primary_device(
             mut self,
             input: std::option::Option<crate::model::DeviceUnderTest>,
@@ -221,12 +234,18 @@ pub mod suite_run_configuration {
             self.primary_device = input;
             self
         }
+        /// Appends an item to `selected_test_list`.
+        ///
+        /// To override the contents of this collection use [`set_selected_test_list`](Self::set_selected_test_list).
+        ///
+        /// <p>Gets test case list.</p>
         pub fn selected_test_list(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.selected_test_list.unwrap_or_default();
             v.push(input.into());
             self.selected_test_list = Some(v);
             self
         }
+        /// <p>Gets test case list.</p>
         pub fn set_selected_test_list(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -263,11 +282,11 @@ pub struct SuiteRunInformation {
     /// <p>Suite run Id of the suite run.</p>
     pub suite_run_id: std::option::Option<std::string::String>,
     /// <p>Date (in Unix epoch time) when the suite run was created.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Date (in Unix epoch time) when the suite run was started.</p>
-    pub started_at: std::option::Option<smithy_types::Instant>,
+    pub started_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Date (in Unix epoch time) when the suite run ended.</p>
-    pub end_at: std::option::Option<smithy_types::Instant>,
+    pub end_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Status of the suite run.</p>
     pub status: std::option::Option<crate::model::SuiteRunStatus>,
     /// <p>Number of test cases that passed in the suite run.</p>
@@ -301,9 +320,9 @@ pub mod suite_run_information {
         pub(crate) suite_definition_version: std::option::Option<std::string::String>,
         pub(crate) suite_definition_name: std::option::Option<std::string::String>,
         pub(crate) suite_run_id: std::option::Option<std::string::String>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
-        pub(crate) started_at: std::option::Option<smithy_types::Instant>,
-        pub(crate) end_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) started_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) end_at: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) status: std::option::Option<crate::model::SuiteRunStatus>,
         pub(crate) passed: std::option::Option<i32>,
         pub(crate) failed: std::option::Option<i32>,
@@ -314,6 +333,7 @@ pub mod suite_run_information {
             self.suite_definition_id = Some(input.into());
             self
         }
+        /// <p>Suite definition Id of the suite run.</p>
         pub fn set_suite_definition_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -326,6 +346,7 @@ pub mod suite_run_information {
             self.suite_definition_version = Some(input.into());
             self
         }
+        /// <p>Suite definition version of the suite run.</p>
         pub fn set_suite_definition_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -338,6 +359,7 @@ pub mod suite_run_information {
             self.suite_definition_name = Some(input.into());
             self
         }
+        /// <p>Suite definition name of the suite run.</p>
         pub fn set_suite_definition_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -350,34 +372,44 @@ pub mod suite_run_information {
             self.suite_run_id = Some(input.into());
             self
         }
+        /// <p>Suite run Id of the suite run.</p>
         pub fn set_suite_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.suite_run_id = input;
             self
         }
         /// <p>Date (in Unix epoch time) when the suite run was created.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>Date (in Unix epoch time) when the suite run was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
         /// <p>Date (in Unix epoch time) when the suite run was started.</p>
-        pub fn started_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn started_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.started_at = Some(input);
             self
         }
-        pub fn set_started_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>Date (in Unix epoch time) when the suite run was started.</p>
+        pub fn set_started_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.started_at = input;
             self
         }
         /// <p>Date (in Unix epoch time) when the suite run ended.</p>
-        pub fn end_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_at = Some(input);
             self
         }
-        pub fn set_end_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>Date (in Unix epoch time) when the suite run ended.</p>
+        pub fn set_end_at(mut self, input: std::option::Option<aws_smithy_types::Instant>) -> Self {
             self.end_at = input;
             self
         }
@@ -386,6 +418,7 @@ pub mod suite_run_information {
             self.status = Some(input);
             self
         }
+        /// <p>Status of the suite run.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::SuiteRunStatus>,
@@ -398,6 +431,7 @@ pub mod suite_run_information {
             self.passed = Some(input);
             self
         }
+        /// <p>Number of test cases that passed in the suite run.</p>
         pub fn set_passed(mut self, input: std::option::Option<i32>) -> Self {
             self.passed = input;
             self
@@ -407,6 +441,7 @@ pub mod suite_run_information {
             self.failed = Some(input);
             self
         }
+        /// <p>Number of test cases that failed in the suite run.</p>
         pub fn set_failed(mut self, input: std::option::Option<i32>) -> Self {
             self.failed = input;
             self
@@ -435,6 +470,7 @@ impl SuiteRunInformation {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -446,14 +482,23 @@ impl SuiteRunInformation {
     std::hash::Hash,
 )]
 pub enum SuiteRunStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Canceled,
+    #[allow(missing_docs)] // documentation missing in model
     Error,
+    #[allow(missing_docs)] // documentation missing in model
     Fail,
+    #[allow(missing_docs)] // documentation missing in model
     Pass,
+    #[allow(missing_docs)] // documentation missing in model
     PassWithWarnings,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
+    #[allow(missing_docs)] // documentation missing in model
     Running,
+    #[allow(missing_docs)] // documentation missing in model
     Stopped,
+    #[allow(missing_docs)] // documentation missing in model
     Stopping,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -482,6 +527,7 @@ impl std::str::FromStr for SuiteRunStatus {
     }
 }
 impl SuiteRunStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SuiteRunStatus::Canceled => "CANCELED",
@@ -496,6 +542,7 @@ impl SuiteRunStatus {
             SuiteRunStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CANCELED",
@@ -529,7 +576,7 @@ pub struct SuiteDefinitionInformation {
     /// <p>Specifies if the test suite is intended for qualification.</p>
     pub intended_for_qualification: bool,
     /// <p>Date (in Unix epoch time) when the test suite was created.</p>
-    pub created_at: std::option::Option<smithy_types::Instant>,
+    pub created_at: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for SuiteDefinitionInformation {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -556,7 +603,7 @@ pub mod suite_definition_information {
         pub(crate) default_devices:
             std::option::Option<std::vec::Vec<crate::model::DeviceUnderTest>>,
         pub(crate) intended_for_qualification: std::option::Option<bool>,
-        pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_at: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>Suite definition Id of the test suite.</p>
@@ -564,6 +611,7 @@ pub mod suite_definition_information {
             self.suite_definition_id = Some(input.into());
             self
         }
+        /// <p>Suite definition Id of the test suite.</p>
         pub fn set_suite_definition_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -576,6 +624,7 @@ pub mod suite_definition_information {
             self.suite_definition_name = Some(input.into());
             self
         }
+        /// <p>Suite name of the test suite.</p>
         pub fn set_suite_definition_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -583,12 +632,18 @@ pub mod suite_definition_information {
             self.suite_definition_name = input;
             self
         }
+        /// Appends an item to `default_devices`.
+        ///
+        /// To override the contents of this collection use [`set_default_devices`](Self::set_default_devices).
+        ///
+        /// <p>Specifies the devices under test for the test suite.</p>
         pub fn default_devices(mut self, input: impl Into<crate::model::DeviceUnderTest>) -> Self {
             let mut v = self.default_devices.unwrap_or_default();
             v.push(input.into());
             self.default_devices = Some(v);
             self
         }
+        /// <p>Specifies the devices under test for the test suite.</p>
         pub fn set_default_devices(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::DeviceUnderTest>>,
@@ -601,16 +656,21 @@ pub mod suite_definition_information {
             self.intended_for_qualification = Some(input);
             self
         }
+        /// <p>Specifies if the test suite is intended for qualification.</p>
         pub fn set_intended_for_qualification(mut self, input: std::option::Option<bool>) -> Self {
             self.intended_for_qualification = input;
             self
         }
         /// <p>Date (in Unix epoch time) when the test suite was created.</p>
-        pub fn created_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_at = Some(input);
             self
         }
-        pub fn set_created_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>Date (in Unix epoch time) when the test suite was created.</p>
+        pub fn set_created_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.created_at = input;
             self
         }
@@ -656,12 +716,18 @@ pub mod test_result {
         pub(crate) groups: std::option::Option<std::vec::Vec<crate::model::GroupResult>>,
     }
     impl Builder {
+        /// Appends an item to `groups`.
+        ///
+        /// To override the contents of this collection use [`set_groups`](Self::set_groups).
+        ///
+        /// <p>Show each group of test results.</p>
         pub fn groups(mut self, input: impl Into<crate::model::GroupResult>) -> Self {
             let mut v = self.groups.unwrap_or_default();
             v.push(input.into());
             self.groups = Some(v);
             self
         }
+        /// <p>Show each group of test results.</p>
         pub fn set_groups(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::GroupResult>>,
@@ -720,6 +786,7 @@ pub mod group_result {
             self.group_id = Some(input.into());
             self
         }
+        /// <p>Group result Id.</p>
         pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.group_id = input;
             self
@@ -729,16 +796,23 @@ pub mod group_result {
             self.group_name = Some(input.into());
             self
         }
+        /// <p>Group Result Name.</p>
         pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.group_name = input;
             self
         }
+        /// Appends an item to `tests`.
+        ///
+        /// To override the contents of this collection use [`set_tests`](Self::set_tests).
+        ///
+        /// <p>Tests under Group Result.</p>
         pub fn tests(mut self, input: impl Into<crate::model::TestCaseRun>) -> Self {
             let mut v = self.tests.unwrap_or_default();
             v.push(input.into());
             self.tests = Some(v);
             self
         }
+        /// <p>Tests under Group Result.</p>
         pub fn set_tests(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::TestCaseRun>>,
@@ -776,9 +850,9 @@ pub struct TestCaseRun {
     /// <p>Provides test case run status.</p>
     pub status: std::option::Option<crate::model::Status>,
     /// <p>Provides test case run start time.</p>
-    pub start_time: std::option::Option<smithy_types::Instant>,
+    pub start_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Provides test case run end time.</p>
-    pub end_time: std::option::Option<smithy_types::Instant>,
+    pub end_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Provides test case run log Url.</p>
     pub log_url: std::option::Option<std::string::String>,
     /// <p>Provides test case run warnings.</p>
@@ -811,8 +885,8 @@ pub mod test_case_run {
         pub(crate) test_case_definition_id: std::option::Option<std::string::String>,
         pub(crate) test_case_definition_name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::Status>,
-        pub(crate) start_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) end_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) end_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) log_url: std::option::Option<std::string::String>,
         pub(crate) warnings: std::option::Option<std::string::String>,
         pub(crate) failure: std::option::Option<std::string::String>,
@@ -823,6 +897,7 @@ pub mod test_case_run {
             self.test_case_run_id = Some(input.into());
             self
         }
+        /// <p>Provides test case run Id.</p>
         pub fn set_test_case_run_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -835,6 +910,7 @@ pub mod test_case_run {
             self.test_case_definition_id = Some(input.into());
             self
         }
+        /// <p>Provides test case run definition Id.</p>
         pub fn set_test_case_definition_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -847,6 +923,7 @@ pub mod test_case_run {
             self.test_case_definition_name = Some(input.into());
             self
         }
+        /// <p>Provides test case run definition Name.</p>
         pub fn set_test_case_definition_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -859,25 +936,34 @@ pub mod test_case_run {
             self.status = Some(input);
             self
         }
+        /// <p>Provides test case run status.</p>
         pub fn set_status(mut self, input: std::option::Option<crate::model::Status>) -> Self {
             self.status = input;
             self
         }
         /// <p>Provides test case run start time.</p>
-        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_time = Some(input);
             self
         }
-        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>Provides test case run start time.</p>
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.start_time = input;
             self
         }
         /// <p>Provides test case run end time.</p>
-        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn end_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.end_time = Some(input);
             self
         }
-        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>Provides test case run end time.</p>
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.end_time = input;
             self
         }
@@ -886,6 +972,7 @@ pub mod test_case_run {
             self.log_url = Some(input.into());
             self
         }
+        /// <p>Provides test case run log Url.</p>
         pub fn set_log_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.log_url = input;
             self
@@ -895,6 +982,7 @@ pub mod test_case_run {
             self.warnings = Some(input.into());
             self
         }
+        /// <p>Provides test case run warnings.</p>
         pub fn set_warnings(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.warnings = input;
             self
@@ -904,6 +992,7 @@ pub mod test_case_run {
             self.failure = Some(input.into());
             self
         }
+        /// <p>Provides test case run failure result.</p>
         pub fn set_failure(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.failure = input;
             self
@@ -931,6 +1020,7 @@ impl TestCaseRun {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -942,14 +1032,23 @@ impl TestCaseRun {
     std::hash::Hash,
 )]
 pub enum Status {
+    #[allow(missing_docs)] // documentation missing in model
     Canceled,
+    #[allow(missing_docs)] // documentation missing in model
     Error,
+    #[allow(missing_docs)] // documentation missing in model
     Fail,
+    #[allow(missing_docs)] // documentation missing in model
     Pass,
+    #[allow(missing_docs)] // documentation missing in model
     PassWithWarnings,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
+    #[allow(missing_docs)] // documentation missing in model
     Running,
+    #[allow(missing_docs)] // documentation missing in model
     Stopped,
+    #[allow(missing_docs)] // documentation missing in model
     Stopping,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -978,6 +1077,7 @@ impl std::str::FromStr for Status {
     }
 }
 impl Status {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Status::Canceled => "CANCELED",
@@ -992,6 +1092,7 @@ impl Status {
             Status::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "CANCELED",

@@ -45,6 +45,12 @@ pub mod report_setting {
             self.report_template = Some(input.into());
             self
         }
+        /// <p>Identifies the report template for the report. Reports are built using a report
+        /// template. The report templates are:</p>
+        /// <p>
+        /// <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT |
+        /// COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
+        /// </p>
         pub fn set_report_template(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -52,12 +58,18 @@ pub mod report_setting {
             self.report_template = input;
             self
         }
+        /// Appends an item to `framework_arns`.
+        ///
+        /// To override the contents of this collection use [`set_framework_arns`](Self::set_framework_arns).
+        ///
+        /// <p>The Amazon Resource Names (ARNs) of the frameworks a report covers.</p>
         pub fn framework_arns(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.framework_arns.unwrap_or_default();
             v.push(input.into());
             self.framework_arns = Some(v);
             self
         }
+        /// <p>The Amazon Resource Names (ARNs) of the frameworks a report covers.</p>
         pub fn set_framework_arns(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -70,6 +82,7 @@ pub mod report_setting {
             self.number_of_frameworks = Some(input);
             self
         }
+        /// <p>The number of frameworks a report covers.</p>
         pub fn set_number_of_frameworks(mut self, input: std::option::Option<i32>) -> Self {
             self.number_of_frameworks = input;
             self
@@ -132,6 +145,7 @@ pub mod report_delivery_channel {
             self.s3_bucket_name = Some(input.into());
             self
         }
+        /// <p>The unique name of the S3 bucket that receives your reports.</p>
         pub fn set_s3_bucket_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -146,6 +160,9 @@ pub mod report_delivery_channel {
             self.s3_key_prefix = Some(input.into());
             self
         }
+        /// <p>The prefix for where Backup Audit Manager delivers your reports to Amazon S3. The prefix is this part of the following path:
+        /// s3://your-bucket-name/<code>prefix</code>/Backup/us-west-2/year/month/day/report-name.
+        /// If not specified, there is no prefix.</p>
         pub fn set_s3_key_prefix(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -153,12 +170,20 @@ pub mod report_delivery_channel {
             self.s3_key_prefix = input;
             self
         }
+        /// Appends an item to `formats`.
+        ///
+        /// To override the contents of this collection use [`set_formats`](Self::set_formats).
+        ///
+        /// <p>A list of the format of your reports: <code>CSV</code>, <code>JSON</code>, or both. If
+        /// not specified, the default format is <code>CSV</code>.</p>
         pub fn formats(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.formats.unwrap_or_default();
             v.push(input.into());
             self.formats = Some(v);
             self
         }
+        /// <p>A list of the format of your reports: <code>CSV</code>, <code>JSON</code>, or both. If
+        /// not specified, the default format is <code>CSV</code>.</p>
         pub fn set_formats(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -197,9 +222,9 @@ impl ReportDeliveryChannel {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CalculatedLifecycle {
     /// <p>A timestamp that specifies when to transition a recovery point to cold storage.</p>
-    pub move_to_cold_storage_at: std::option::Option<smithy_types::Instant>,
+    pub move_to_cold_storage_at: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A timestamp that specifies when to delete a recovery point.</p>
-    pub delete_at: std::option::Option<smithy_types::Instant>,
+    pub delete_at: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for CalculatedLifecycle {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -215,28 +240,33 @@ pub mod calculated_lifecycle {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) move_to_cold_storage_at: std::option::Option<smithy_types::Instant>,
-        pub(crate) delete_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) move_to_cold_storage_at: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) delete_at: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>A timestamp that specifies when to transition a recovery point to cold storage.</p>
-        pub fn move_to_cold_storage_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn move_to_cold_storage_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.move_to_cold_storage_at = Some(input);
             self
         }
+        /// <p>A timestamp that specifies when to transition a recovery point to cold storage.</p>
         pub fn set_move_to_cold_storage_at(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.move_to_cold_storage_at = input;
             self
         }
         /// <p>A timestamp that specifies when to delete a recovery point.</p>
-        pub fn delete_at(mut self, input: smithy_types::Instant) -> Self {
+        pub fn delete_at(mut self, input: aws_smithy_types::Instant) -> Self {
             self.delete_at = Some(input);
             self
         }
-        pub fn set_delete_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>A timestamp that specifies when to delete a recovery point.</p>
+        pub fn set_delete_at(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.delete_at = input;
             self
         }
@@ -300,6 +330,8 @@ pub mod lifecycle {
             self.move_to_cold_storage_after_days = Some(input);
             self
         }
+        /// <p>Specifies the number of days after creation that a recovery point is moved to cold
+        /// storage.</p>
         pub fn set_move_to_cold_storage_after_days(
             mut self,
             input: std::option::Option<i64>,
@@ -313,6 +345,8 @@ pub mod lifecycle {
             self.delete_after_days = Some(input);
             self
         }
+        /// <p>Specifies the number of days after creation that a recovery point is deleted. Must be
+        /// greater than 90 days plus <code>MoveToColdStorageAfterDays</code>.</p>
         pub fn set_delete_after_days(mut self, input: std::option::Option<i64>) -> Self {
             self.delete_after_days = input;
             self
@@ -374,10 +408,16 @@ pub mod framework_control {
             self.control_name = Some(input.into());
             self
         }
+        /// <p>The name of a control. This name is between 1 and 256 characters.</p>
         pub fn set_control_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.control_name = input;
             self
         }
+        /// Appends an item to `control_input_parameters`.
+        ///
+        /// To override the contents of this collection use [`set_control_input_parameters`](Self::set_control_input_parameters).
+        ///
+        /// <p>A list of <code>ParameterName</code> and <code>ParameterValue</code> pairs.</p>
         pub fn control_input_parameters(
             mut self,
             input: impl Into<crate::model::ControlInputParameter>,
@@ -387,6 +427,7 @@ pub mod framework_control {
             self.control_input_parameters = Some(v);
             self
         }
+        /// <p>A list of <code>ParameterName</code> and <code>ParameterValue</code> pairs.</p>
         pub fn set_control_input_parameters(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ControlInputParameter>>,
@@ -401,6 +442,9 @@ pub mod framework_control {
             self.control_scope = Some(input);
             self
         }
+        /// <p>The scope of a control. The control scope defines what the control will evaluate. Three
+        /// examples of control scopes are: a specific backup plan, all backup plans with a specific
+        /// tag, or all backup plans. For more information, see <code>ControlScope</code>.</p>
         pub fn set_control_scope(
             mut self,
             input: std::option::Option<crate::model::ControlScope>,
@@ -471,12 +515,20 @@ pub mod control_scope {
         >,
     }
     impl Builder {
+        /// Appends an item to `compliance_resource_ids`.
+        ///
+        /// To override the contents of this collection use [`set_compliance_resource_ids`](Self::set_compliance_resource_ids).
+        ///
+        /// <p>The ID of the only Amazon Web Services resource that you want your control scope to
+        /// contain.</p>
         pub fn compliance_resource_ids(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.compliance_resource_ids.unwrap_or_default();
             v.push(input.into());
             self.compliance_resource_ids = Some(v);
             self
         }
+        /// <p>The ID of the only Amazon Web Services resource that you want your control scope to
+        /// contain.</p>
         pub fn set_compliance_resource_ids(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -484,12 +536,20 @@ pub mod control_scope {
             self.compliance_resource_ids = input;
             self
         }
+        /// Appends an item to `compliance_resource_types`.
+        ///
+        /// To override the contents of this collection use [`set_compliance_resource_types`](Self::set_compliance_resource_types).
+        ///
+        /// <p>Describes whether the control scope includes one or more types of resources, such as
+        /// <code>EFS</code> or <code>RDS</code>.</p>
         pub fn compliance_resource_types(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.compliance_resource_types.unwrap_or_default();
             v.push(input.into());
             self.compliance_resource_types = Some(v);
             self
         }
+        /// <p>Describes whether the control scope includes one or more types of resources, such as
+        /// <code>EFS</code> or <code>RDS</code>.</p>
         pub fn set_compliance_resource_types(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -497,6 +557,12 @@ pub mod control_scope {
             self.compliance_resource_types = input;
             self
         }
+        /// Adds a key-value pair to `tags`.
+        ///
+        /// To override the contents of this collection use [`set_tags`](Self::set_tags).
+        ///
+        /// <p>Describes whether the control scope includes resources with one or more tags. Each tag
+        /// is a key-value pair.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -507,6 +573,8 @@ pub mod control_scope {
             self.tags = Some(hash_map);
             self
         }
+        /// <p>Describes whether the control scope includes resources with one or more tags. Each tag
+        /// is a key-value pair.</p>
         pub fn set_tags(
             mut self,
             input: std::option::Option<
@@ -568,6 +636,7 @@ pub mod control_input_parameter {
             self.parameter_name = Some(input.into());
             self
         }
+        /// <p>The name of a parameter, for example, <code>BackupPlanFrequency</code>.</p>
         pub fn set_parameter_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -580,6 +649,7 @@ pub mod control_input_parameter {
             self.parameter_value = Some(input.into());
             self
         }
+        /// <p>The value of parameter, for example, <code>hourly</code>.</p>
         pub fn set_parameter_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -656,6 +726,11 @@ pub mod advanced_backup_setting {
             self.resource_type = Some(input.into());
             self
         }
+        /// <p>Specifies an object containing resource type and backup options. The only supported
+        /// resource type is Amazon EC2 instances with Windows Volume Shadow Copy Service
+        /// (VSS). For a CloudFormation example, see the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/integrate-cloudformation-with-aws-backup.html">sample
+        /// CloudFormation template to enable Windows VSS</a> in the <i>Backup User Guide</i>.</p>
+        /// <p>Valid values: <code>EC2</code>.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -663,6 +738,21 @@ pub mod advanced_backup_setting {
             self.resource_type = input;
             self
         }
+        /// Adds a key-value pair to `backup_options`.
+        ///
+        /// To override the contents of this collection use [`set_backup_options`](Self::set_backup_options).
+        ///
+        /// <p>Specifies the backup option for a selected resource. This option is only available for
+        /// Windows VSS backup jobs.</p>
+        /// <p>Valid values: </p>
+        /// <p>Set to <code>"WindowsVSS":"enabled"</code> to enable the <code>WindowsVSS</code> backup
+        /// option and create a Windows VSS backup. </p>
+        /// <p>Set to <code>"WindowsVSS":"disabled"</code> to create a regular backup. The
+        /// <code>WindowsVSS</code> option is not enabled by default.</p>
+        /// <p>If you specify an invalid option, you get an <code>InvalidParameterValueException</code>
+        /// exception.</p>
+        /// <p>For more information about Windows VSS backups, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/windows-backups.html">Creating a VSS-Enabled Windows
+        /// Backup</a>.</p>
         pub fn backup_options(
             mut self,
             k: impl Into<std::string::String>,
@@ -673,6 +763,17 @@ pub mod advanced_backup_setting {
             self.backup_options = Some(hash_map);
             self
         }
+        /// <p>Specifies the backup option for a selected resource. This option is only available for
+        /// Windows VSS backup jobs.</p>
+        /// <p>Valid values: </p>
+        /// <p>Set to <code>"WindowsVSS":"enabled"</code> to enable the <code>WindowsVSS</code> backup
+        /// option and create a Windows VSS backup. </p>
+        /// <p>Set to <code>"WindowsVSS":"disabled"</code> to create a regular backup. The
+        /// <code>WindowsVSS</code> option is not enabled by default.</p>
+        /// <p>If you specify an invalid option, you get an <code>InvalidParameterValueException</code>
+        /// exception.</p>
+        /// <p>For more information about Windows VSS backups, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/windows-backups.html">Creating a VSS-Enabled Windows
+        /// Backup</a>.</p>
         pub fn set_backup_options(
             mut self,
             input: std::option::Option<
@@ -740,6 +841,7 @@ pub mod backup_plan_input {
             self.backup_plan_name = Some(input.into());
             self
         }
+        /// <p>The optional display name of a backup plan.</p>
         pub fn set_backup_plan_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -747,12 +849,20 @@ pub mod backup_plan_input {
             self.backup_plan_name = input;
             self
         }
+        /// Appends an item to `rules`.
+        ///
+        /// To override the contents of this collection use [`set_rules`](Self::set_rules).
+        ///
+        /// <p>An array of <code>BackupRule</code> objects, each of which specifies a scheduled task
+        /// that is used to back up a selection of resources.</p>
         pub fn rules(mut self, input: impl Into<crate::model::BackupRuleInput>) -> Self {
             let mut v = self.rules.unwrap_or_default();
             v.push(input.into());
             self.rules = Some(v);
             self
         }
+        /// <p>An array of <code>BackupRule</code> objects, each of which specifies a scheduled task
+        /// that is used to back up a selection of resources.</p>
         pub fn set_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BackupRuleInput>>,
@@ -760,6 +870,12 @@ pub mod backup_plan_input {
             self.rules = input;
             self
         }
+        /// Appends an item to `advanced_backup_settings`.
+        ///
+        /// To override the contents of this collection use [`set_advanced_backup_settings`](Self::set_advanced_backup_settings).
+        ///
+        /// <p>Specifies a list of <code>BackupOptions</code> for each resource type. These settings
+        /// are only available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p>
         pub fn advanced_backup_settings(
             mut self,
             input: impl Into<crate::model::AdvancedBackupSetting>,
@@ -769,6 +885,8 @@ pub mod backup_plan_input {
             self.advanced_backup_settings = Some(v);
             self
         }
+        /// <p>Specifies a list of <code>BackupOptions</code> for each resource type. These settings
+        /// are only available for Windows Volume Shadow Copy Service (VSS) backup jobs.</p>
         pub fn set_advanced_backup_settings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AdvancedBackupSetting>>,
@@ -872,6 +990,7 @@ pub mod backup_rule_input {
             self.rule_name = Some(input.into());
             self
         }
+        /// <p>An optional display name for a backup rule.</p>
         pub fn set_rule_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rule_name = input;
             self
@@ -884,6 +1003,10 @@ pub mod backup_rule_input {
             self.target_backup_vault_name = Some(input.into());
             self
         }
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
+        /// by names that are unique to the account used to create them and the Amazon Web Services
+        /// Region where they are created. They consist of lowercase letters, numbers, and
+        /// hyphens.</p>
         pub fn set_target_backup_vault_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -897,6 +1020,8 @@ pub mod backup_rule_input {
             self.schedule_expression = Some(input.into());
             self
         }
+        /// <p>A CRON expression in UTC specifying when Backup initiates a backup
+        /// job.</p>
         pub fn set_schedule_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -910,6 +1035,8 @@ pub mod backup_rule_input {
             self.start_window_minutes = Some(input);
             self
         }
+        /// <p>A value in minutes after a backup is scheduled before a job will be canceled if it
+        /// doesn't start successfully. This value is optional.</p>
         pub fn set_start_window_minutes(mut self, input: std::option::Option<i64>) -> Self {
             self.start_window_minutes = input;
             self
@@ -920,6 +1047,8 @@ pub mod backup_rule_input {
             self.completion_window_minutes = Some(input);
             self
         }
+        /// <p>A value in minutes after a backup job is successfully started before it must be
+        /// completed or it will be canceled by Backup. This value is optional.</p>
         pub fn set_completion_window_minutes(mut self, input: std::option::Option<i64>) -> Self {
             self.completion_window_minutes = input;
             self
@@ -936,6 +1065,14 @@ pub mod backup_rule_input {
             self.lifecycle = Some(input);
             self
         }
+        /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when
+        /// it expires. Backup will transition and expire backups automatically according
+        /// to the lifecycle that you define. </p>
+        /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90
+        /// days. Therefore, the “expire after days” setting must be 90 days greater than the
+        /// “transition to cold after days” setting. The “transition to cold after days” setting cannot
+        /// be changed after a backup has been transitioned to cold. </p>
+        /// <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
         pub fn set_lifecycle(
             mut self,
             input: std::option::Option<crate::model::Lifecycle>,
@@ -943,6 +1080,12 @@ pub mod backup_rule_input {
             self.lifecycle = input;
             self
         }
+        /// Adds a key-value pair to `recovery_point_tags`.
+        ///
+        /// To override the contents of this collection use [`set_recovery_point_tags`](Self::set_recovery_point_tags).
+        ///
+        /// <p>To help organize your resources, you can assign your own metadata to the resources that
+        /// you create. Each tag is a key-value pair.</p>
         pub fn recovery_point_tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -953,6 +1096,8 @@ pub mod backup_rule_input {
             self.recovery_point_tags = Some(hash_map);
             self
         }
+        /// <p>To help organize your resources, you can assign your own metadata to the resources that
+        /// you create. Each tag is a key-value pair.</p>
         pub fn set_recovery_point_tags(
             mut self,
             input: std::option::Option<
@@ -962,12 +1107,20 @@ pub mod backup_rule_input {
             self.recovery_point_tags = input;
             self
         }
+        /// Appends an item to `copy_actions`.
+        ///
+        /// To override the contents of this collection use [`set_copy_actions`](Self::set_copy_actions).
+        ///
+        /// <p>An array of <code>CopyAction</code> objects, which contains the details of the copy
+        /// operation.</p>
         pub fn copy_actions(mut self, input: impl Into<crate::model::CopyAction>) -> Self {
             let mut v = self.copy_actions.unwrap_or_default();
             v.push(input.into());
             self.copy_actions = Some(v);
             self
         }
+        /// <p>An array of <code>CopyAction</code> objects, which contains the details of the copy
+        /// operation.</p>
         pub fn set_copy_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CopyAction>>,
@@ -981,6 +1134,8 @@ pub mod backup_rule_input {
             self.enable_continuous_backup = Some(input);
             self
         }
+        /// <p>Specifies whether Backup creates continuous backups. True causes Backup to create continuous backups capable of point-in-time restore (PITR). False
+        /// (or not specified) causes Backup to create snapshot backups.</p>
         pub fn set_enable_continuous_backup(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_continuous_backup = input;
             self
@@ -1057,6 +1212,13 @@ pub mod copy_action {
             self.lifecycle = Some(input);
             self
         }
+        /// <p>Contains an array of <code>Transition</code> objects specifying how long in days before
+        /// a recovery point transitions to cold storage or is deleted.</p>
+        /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90
+        /// days. Therefore, on the console, the “expire after days” setting must be 90 days greater
+        /// than the “transition to cold after days” setting. The “transition to cold after days”
+        /// setting cannot be changed after a backup has been transitioned to cold.</p>
+        /// <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
         pub fn set_lifecycle(
             mut self,
             input: std::option::Option<crate::model::Lifecycle>,
@@ -1074,6 +1236,9 @@ pub mod copy_action {
             self.destination_backup_vault_arn = Some(input.into());
             self
         }
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies the destination backup vault for
+        /// the copied backup. For example,
+        /// <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
         pub fn set_destination_backup_vault_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1097,6 +1262,7 @@ impl CopyAction {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1108,20 +1274,35 @@ impl CopyAction {
     std::hash::Hash,
 )]
 pub enum BackupVaultEvent {
+    #[allow(missing_docs)] // documentation missing in model
     BackupJobCompleted,
+    #[allow(missing_docs)] // documentation missing in model
     BackupJobExpired,
+    #[allow(missing_docs)] // documentation missing in model
     BackupJobFailed,
+    #[allow(missing_docs)] // documentation missing in model
     BackupJobStarted,
+    #[allow(missing_docs)] // documentation missing in model
     BackupJobSuccessful,
+    #[allow(missing_docs)] // documentation missing in model
     BackupPlanCreated,
+    #[allow(missing_docs)] // documentation missing in model
     BackupPlanModified,
+    #[allow(missing_docs)] // documentation missing in model
     CopyJobFailed,
+    #[allow(missing_docs)] // documentation missing in model
     CopyJobStarted,
+    #[allow(missing_docs)] // documentation missing in model
     CopyJobSuccessful,
+    #[allow(missing_docs)] // documentation missing in model
     RecoveryPointModified,
+    #[allow(missing_docs)] // documentation missing in model
     RestoreJobCompleted,
+    #[allow(missing_docs)] // documentation missing in model
     RestoreJobFailed,
+    #[allow(missing_docs)] // documentation missing in model
     RestoreJobStarted,
+    #[allow(missing_docs)] // documentation missing in model
     RestoreJobSuccessful,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1156,6 +1337,7 @@ impl std::str::FromStr for BackupVaultEvent {
     }
 }
 impl BackupVaultEvent {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             BackupVaultEvent::BackupJobCompleted => "BACKUP_JOB_COMPLETED",
@@ -1176,6 +1358,7 @@ impl BackupVaultEvent {
             BackupVaultEvent::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "BACKUP_JOB_COMPLETED",
@@ -1217,12 +1400,12 @@ pub struct RestoreJobsListMember {
     /// Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For
     /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub creation_date: std::option::Option<smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time a job to restore a recovery point is completed, in Unix format and
     /// Coordinated Universal Time (UTC). The value of <code>CompletionDate</code> is accurate to
     /// milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018
     /// 12:11:30.087 AM.</p>
-    pub completion_date: std::option::Option<smithy_types::Instant>,
+    pub completion_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A status code specifying the state of the job initiated by Backup to restore
     /// a recovery point.</p>
     pub status: std::option::Option<crate::model::RestoreJobStatus>,
@@ -1279,8 +1462,8 @@ pub mod restore_jobs_list_member {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) restore_job_id: std::option::Option<std::string::String>,
         pub(crate) recovery_point_arn: std::option::Option<std::string::String>,
-        pub(crate) creation_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) completion_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) completion_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) status: std::option::Option<crate::model::RestoreJobStatus>,
         pub(crate) status_message: std::option::Option<std::string::String>,
         pub(crate) percent_done: std::option::Option<std::string::String>,
@@ -1296,6 +1479,7 @@ pub mod restore_jobs_list_member {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The account ID that owns the restore job.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -1305,6 +1489,7 @@ pub mod restore_jobs_list_member {
             self.restore_job_id = Some(input.into());
             self
         }
+        /// <p>Uniquely identifies the job that restores a recovery point.</p>
         pub fn set_restore_job_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1318,6 +1503,8 @@ pub mod restore_jobs_list_member {
             self.recovery_point_arn = Some(input.into());
             self
         }
+        /// <p>An ARN that uniquely identifies a recovery point; for example,
+        /// <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
         pub fn set_recovery_point_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1329,13 +1516,17 @@ pub mod restore_jobs_list_member {
         /// Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For
         /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
         /// AM.</p>
-        pub fn creation_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_date = Some(input);
             self
         }
+        /// <p>The date and time a restore job is created, in Unix format and Coordinated Universal
+        /// Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For
+        /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
+        /// AM.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_date = input;
             self
@@ -1344,13 +1535,17 @@ pub mod restore_jobs_list_member {
         /// Coordinated Universal Time (UTC). The value of <code>CompletionDate</code> is accurate to
         /// milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018
         /// 12:11:30.087 AM.</p>
-        pub fn completion_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn completion_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.completion_date = Some(input);
             self
         }
+        /// <p>The date and time a job to restore a recovery point is completed, in Unix format and
+        /// Coordinated Universal Time (UTC). The value of <code>CompletionDate</code> is accurate to
+        /// milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018
+        /// 12:11:30.087 AM.</p>
         pub fn set_completion_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.completion_date = input;
             self
@@ -1361,6 +1556,8 @@ pub mod restore_jobs_list_member {
             self.status = Some(input);
             self
         }
+        /// <p>A status code specifying the state of the job initiated by Backup to restore
+        /// a recovery point.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::RestoreJobStatus>,
@@ -1373,6 +1570,7 @@ pub mod restore_jobs_list_member {
             self.status_message = Some(input.into());
             self
         }
+        /// <p>A detailed message explaining the status of the job to restore a recovery point.</p>
         pub fn set_status_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1386,6 +1584,8 @@ pub mod restore_jobs_list_member {
             self.percent_done = Some(input.into());
             self
         }
+        /// <p>Contains an estimated percentage complete of a job at the time the job status was
+        /// queried.</p>
         pub fn set_percent_done(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.percent_done = input;
             self
@@ -1395,6 +1595,7 @@ pub mod restore_jobs_list_member {
             self.backup_size_in_bytes = Some(input);
             self
         }
+        /// <p>The size, in bytes, of the restored resource.</p>
         pub fn set_backup_size_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
             self.backup_size_in_bytes = input;
             self
@@ -1405,6 +1606,8 @@ pub mod restore_jobs_list_member {
             self.iam_role_arn = Some(input.into());
             self
         }
+        /// <p>Specifies the IAM role ARN used to create the target recovery point; for example,
+        /// <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
         pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.iam_role_arn = input;
             self
@@ -1415,6 +1618,8 @@ pub mod restore_jobs_list_member {
             self.expected_completion_time_minutes = Some(input);
             self
         }
+        /// <p>The amount of time in minutes that a job restoring a recovery point is expected to
+        /// take.</p>
         pub fn set_expected_completion_time_minutes(
             mut self,
             input: std::option::Option<i64>,
@@ -1428,6 +1633,8 @@ pub mod restore_jobs_list_member {
             self.created_resource_arn = Some(input.into());
             self
         }
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN
+        /// depends on the resource type.</p>
         pub fn set_created_resource_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1443,6 +1650,10 @@ pub mod restore_jobs_list_member {
             self.resource_type = Some(input.into());
             self
         }
+        /// <p>The resource type of the listed restore jobs; for example, an Amazon Elastic Block Store
+        /// (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS) database.
+        /// For Windows Volume Shadow Copy Service (VSS) backups, the only supported resource type is
+        /// Amazon EC2.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1477,6 +1688,7 @@ impl RestoreJobsListMember {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1488,10 +1700,15 @@ impl RestoreJobsListMember {
     std::hash::Hash,
 )]
 pub enum RestoreJobStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Aborted,
+    #[allow(missing_docs)] // documentation missing in model
     Completed,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
+    #[allow(missing_docs)] // documentation missing in model
     Running,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1516,6 +1733,7 @@ impl std::str::FromStr for RestoreJobStatus {
     }
 }
 impl RestoreJobStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RestoreJobStatus::Aborted => "ABORTED",
@@ -1526,6 +1744,7 @@ impl RestoreJobStatus {
             RestoreJobStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["ABORTED", "COMPLETED", "FAILED", "PENDING", "RUNNING"]
     }
@@ -1572,17 +1791,17 @@ pub struct ReportPlan {
     /// Universal Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds.
     /// For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time that a report job associated with this report plan last attempted to
     /// run, in Unix format and Coordinated Universal Time (UTC). The value of
     /// <code>LastAttemptedExecutionTime</code> is accurate to milliseconds. For example, the
     /// value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub last_attempted_execution_time: std::option::Option<smithy_types::Instant>,
+    pub last_attempted_execution_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time that a report job associated with this report plan last successfully
     /// ran, in Unix format and Coordinated Universal Time (UTC). The value of
     /// <code>LastSuccessfulExecutionTime</code> is accurate to milliseconds. For example, the
     /// value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub last_successful_execution_time: std::option::Option<smithy_types::Instant>,
+    pub last_successful_execution_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for ReportPlan {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1618,9 +1837,9 @@ pub mod report_plan {
         pub(crate) report_delivery_channel:
             std::option::Option<crate::model::ReportDeliveryChannel>,
         pub(crate) deployment_status: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_attempted_execution_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) last_successful_execution_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_attempted_execution_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) last_successful_execution_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN
@@ -1629,6 +1848,8 @@ pub mod report_plan {
             self.report_plan_arn = Some(input.into());
             self
         }
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN
+        /// depends on the resource type.</p>
         pub fn set_report_plan_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1643,6 +1864,9 @@ pub mod report_plan {
             self.report_plan_name = Some(input.into());
             self
         }
+        /// <p>The unique name of the report plan. This name is between 1 and 256 characters starting
+        /// with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores
+        /// (_).</p>
         pub fn set_report_plan_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1655,6 +1879,7 @@ pub mod report_plan {
             self.report_plan_description = Some(input.into());
             self
         }
+        /// <p>An optional description of the report plan with a maximum 1,024 characters.</p>
         pub fn set_report_plan_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1675,6 +1900,15 @@ pub mod report_plan {
             self.report_setting = Some(input);
             self
         }
+        /// <p>Identifies the report template for the report. Reports are built using a report
+        /// template. The report templates are:</p>
+        /// <p>
+        /// <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT |
+        /// COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
+        /// </p>
+        /// <p>If the report template is <code>RESOURCE_COMPLIANCE_REPORT</code> or
+        /// <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the report
+        /// coverage by Amazon Web Services Regions and frameworks.</p>
         pub fn set_report_setting(
             mut self,
             input: std::option::Option<crate::model::ReportSetting>,
@@ -1691,6 +1925,8 @@ pub mod report_plan {
             self.report_delivery_channel = Some(input);
             self
         }
+        /// <p>Contains information about where and how to deliver your reports, specifically your
+        /// Amazon S3 bucket name, S3 key prefix, and the formats of your reports.</p>
         pub fn set_report_delivery_channel(
             mut self,
             input: std::option::Option<crate::model::ReportDeliveryChannel>,
@@ -1707,6 +1943,11 @@ pub mod report_plan {
             self.deployment_status = Some(input.into());
             self
         }
+        /// <p>The deployment status of a report plan. The statuses are:</p>
+        /// <p>
+        /// <code>CREATE_IN_PROGRESS | UPDATE_IN_PROGRESS | DELETE_IN_PROGRESS |
+        /// COMPLETED</code>
+        /// </p>
         pub fn set_deployment_status(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1718,13 +1959,17 @@ pub mod report_plan {
         /// Universal Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds.
         /// For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
         /// AM.</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>The date and time that a report plan is created, in Unix format and Coordinated
+        /// Universal Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds.
+        /// For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
+        /// AM.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -1733,13 +1978,17 @@ pub mod report_plan {
         /// run, in Unix format and Coordinated Universal Time (UTC). The value of
         /// <code>LastAttemptedExecutionTime</code> is accurate to milliseconds. For example, the
         /// value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-        pub fn last_attempted_execution_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_attempted_execution_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_attempted_execution_time = Some(input);
             self
         }
+        /// <p>The date and time that a report job associated with this report plan last attempted to
+        /// run, in Unix format and Coordinated Universal Time (UTC). The value of
+        /// <code>LastAttemptedExecutionTime</code> is accurate to milliseconds. For example, the
+        /// value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
         pub fn set_last_attempted_execution_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_attempted_execution_time = input;
             self
@@ -1748,13 +1997,17 @@ pub mod report_plan {
         /// ran, in Unix format and Coordinated Universal Time (UTC). The value of
         /// <code>LastSuccessfulExecutionTime</code> is accurate to milliseconds. For example, the
         /// value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-        pub fn last_successful_execution_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_successful_execution_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_successful_execution_time = Some(input);
             self
         }
+        /// <p>The date and time that a report job associated with this report plan last successfully
+        /// ran, in Unix format and Coordinated Universal Time (UTC). The value of
+        /// <code>LastSuccessfulExecutionTime</code> is accurate to milliseconds. For example, the
+        /// value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
         pub fn set_last_successful_execution_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_successful_execution_time = input;
             self
@@ -1804,12 +2057,12 @@ pub struct ReportJob {
     /// Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For
     /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time that a report job is completed, in Unix format and Coordinated
     /// Universal Time (UTC). The value of <code>CompletionTime</code> is accurate to milliseconds.
     /// For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub completion_time: std::option::Option<smithy_types::Instant>,
+    pub completion_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The status of a report job. The statuses are:</p>
     /// <p>
     /// <code>CREATED | RUNNING | COMPLETED | FAILED</code>
@@ -1848,8 +2101,8 @@ pub mod report_job {
         pub(crate) report_job_id: std::option::Option<std::string::String>,
         pub(crate) report_plan_arn: std::option::Option<std::string::String>,
         pub(crate) report_template: std::option::Option<std::string::String>,
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) completion_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) completion_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) status: std::option::Option<std::string::String>,
         pub(crate) status_message: std::option::Option<std::string::String>,
         pub(crate) report_destination: std::option::Option<crate::model::ReportDestination>,
@@ -1861,6 +2114,8 @@ pub mod report_job {
             self.report_job_id = Some(input.into());
             self
         }
+        /// <p>The identifier for a report job. A unique, randomly generated, Unicode, UTF-8 encoded
+        /// string that is at most 1,024 bytes long. Report job IDs cannot be edited.</p>
         pub fn set_report_job_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1874,6 +2129,8 @@ pub mod report_job {
             self.report_plan_arn = Some(input.into());
             self
         }
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN
+        /// depends on the resource type.</p>
         pub fn set_report_plan_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1891,6 +2148,12 @@ pub mod report_job {
             self.report_template = Some(input.into());
             self
         }
+        /// <p>Identifies the report template for the report. Reports are built using a report
+        /// template. The report templates are: </p>
+        /// <p>
+        /// <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT |
+        /// COPY_JOB_REPORT | RESTORE_JOB_REPORT</code>
+        /// </p>
         pub fn set_report_template(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1902,13 +2165,17 @@ pub mod report_job {
         /// Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For
         /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
         /// AM.</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>The date and time that a report job is created, in Unix format and Coordinated Universal
+        /// Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For
+        /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
+        /// AM.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -1917,13 +2184,17 @@ pub mod report_job {
         /// Universal Time (UTC). The value of <code>CompletionTime</code> is accurate to milliseconds.
         /// For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
         /// AM.</p>
-        pub fn completion_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn completion_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.completion_time = Some(input);
             self
         }
+        /// <p>The date and time that a report job is completed, in Unix format and Coordinated
+        /// Universal Time (UTC). The value of <code>CompletionTime</code> is accurate to milliseconds.
+        /// For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
+        /// AM.</p>
         pub fn set_completion_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.completion_time = input;
             self
@@ -1940,6 +2211,14 @@ pub mod report_job {
             self.status = Some(input.into());
             self
         }
+        /// <p>The status of a report job. The statuses are:</p>
+        /// <p>
+        /// <code>CREATED | RUNNING | COMPLETED | FAILED</code>
+        /// </p>
+        /// <p>
+        /// <code>COMPLETED</code> means that the report is available for your review at your
+        /// designated destination. If the status is <code>FAILED</code>, review the
+        /// <code>StatusMessage</code> for the reason.</p>
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
             self
@@ -1949,6 +2228,7 @@ pub mod report_job {
             self.status_message = Some(input.into());
             self
         }
+        /// <p>A message explaining the status of the report job.</p>
         pub fn set_status_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1962,6 +2242,8 @@ pub mod report_job {
             self.report_destination = Some(input);
             self
         }
+        /// <p>The S3 bucket name and S3 keys for the destination where the report job publishes the
+        /// report.</p>
         pub fn set_report_destination(
             mut self,
             input: std::option::Option<crate::model::ReportDestination>,
@@ -2023,6 +2305,7 @@ pub mod report_destination {
             self.s3_bucket_name = Some(input.into());
             self
         }
+        /// <p>The unique name of the Amazon S3 bucket that receives your reports.</p>
         pub fn set_s3_bucket_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2030,12 +2313,18 @@ pub mod report_destination {
             self.s3_bucket_name = input;
             self
         }
+        /// Appends an item to `s3_keys`.
+        ///
+        /// To override the contents of this collection use [`set_s3_keys`](Self::set_s3_keys).
+        ///
+        /// <p>The object key that uniquely identifies your reports in your S3 bucket.</p>
         pub fn s3_keys(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.s3_keys.unwrap_or_default();
             v.push(input.into());
             self.s3_keys = Some(v);
             self
         }
+        /// <p>The object key that uniquely identifies your reports in your S3 bucket.</p>
         pub fn set_s3_keys(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2070,7 +2359,7 @@ pub struct RecoveryPointByResource {
     /// Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For
     /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub creation_date: std::option::Option<smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A status code specifying the state of the recovery point.</p>
     pub status: std::option::Option<crate::model::RecoveryPointStatus>,
     /// <p>A message explaining the reason of the recovery point deletion failure.</p>
@@ -2106,7 +2395,7 @@ pub mod recovery_point_by_resource {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) recovery_point_arn: std::option::Option<std::string::String>,
-        pub(crate) creation_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) status: std::option::Option<crate::model::RecoveryPointStatus>,
         pub(crate) status_message: std::option::Option<std::string::String>,
         pub(crate) encryption_key_arn: std::option::Option<std::string::String>,
@@ -2120,6 +2409,8 @@ pub mod recovery_point_by_resource {
             self.recovery_point_arn = Some(input.into());
             self
         }
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example,
+        /// <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
         pub fn set_recovery_point_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2131,13 +2422,17 @@ pub mod recovery_point_by_resource {
         /// Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For
         /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
         /// AM.</p>
-        pub fn creation_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_date = Some(input);
             self
         }
+        /// <p>The date and time a recovery point is created, in Unix format and Coordinated Universal
+        /// Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For
+        /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
+        /// AM.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_date = input;
             self
@@ -2147,6 +2442,7 @@ pub mod recovery_point_by_resource {
             self.status = Some(input);
             self
         }
+        /// <p>A status code specifying the state of the recovery point.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::RecoveryPointStatus>,
@@ -2159,6 +2455,7 @@ pub mod recovery_point_by_resource {
             self.status_message = Some(input.into());
             self
         }
+        /// <p>A message explaining the reason of the recovery point deletion failure.</p>
         pub fn set_status_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2172,6 +2469,8 @@ pub mod recovery_point_by_resource {
             self.encryption_key_arn = Some(input.into());
             self
         }
+        /// <p>The server-side encryption key that is used to protect your backups; for example,
+        /// <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
         pub fn set_encryption_key_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2184,6 +2483,7 @@ pub mod recovery_point_by_resource {
             self.backup_size_bytes = Some(input);
             self
         }
+        /// <p>The size, in bytes, of a backup.</p>
         pub fn set_backup_size_bytes(mut self, input: std::option::Option<i64>) -> Self {
             self.backup_size_bytes = input;
             self
@@ -2196,6 +2496,10 @@ pub mod recovery_point_by_resource {
             self.backup_vault_name = Some(input.into());
             self
         }
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
+        /// by names that are unique to the account used to create them and the Amazon Web Services
+        /// Region where they are created. They consist of lowercase letters, numbers, and
+        /// hyphens.</p>
         pub fn set_backup_vault_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2224,6 +2528,7 @@ impl RecoveryPointByResource {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2235,9 +2540,13 @@ impl RecoveryPointByResource {
     std::hash::Hash,
 )]
 pub enum RecoveryPointStatus {
+    #[allow(missing_docs)] // documentation missing in model
     Completed,
+    #[allow(missing_docs)] // documentation missing in model
     Deleting,
+    #[allow(missing_docs)] // documentation missing in model
     Expired,
+    #[allow(missing_docs)] // documentation missing in model
     Partial,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -2261,6 +2570,7 @@ impl std::str::FromStr for RecoveryPointStatus {
     }
 }
 impl RecoveryPointStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             RecoveryPointStatus::Completed => "COMPLETED",
@@ -2270,6 +2580,7 @@ impl RecoveryPointStatus {
             RecoveryPointStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["COMPLETED", "DELETING", "EXPIRED", "PARTIAL"]
     }
@@ -2320,12 +2631,12 @@ pub struct RecoveryPointByBackupVault {
     /// Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For
     /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub creation_date: std::option::Option<smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time a job to restore a recovery point is completed, in Unix format and
     /// Coordinated Universal Time (UTC). The value of <code>CompletionDate</code> is accurate to
     /// milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018
     /// 12:11:30.087 AM.</p>
-    pub completion_date: std::option::Option<smithy_types::Instant>,
+    pub completion_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The size, in bytes, of a backup.</p>
     pub backup_size_in_bytes: std::option::Option<i64>,
     /// <p>A <code>CalculatedLifecycle</code> object containing <code>DeleteAt</code> and
@@ -2350,7 +2661,7 @@ pub struct RecoveryPointByBackupVault {
     /// Universal Time (UTC). The value of <code>LastRestoreTime</code> is accurate to
     /// milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018
     /// 12:11:30.087 AM.</p>
-    pub last_restore_time: std::option::Option<smithy_types::Instant>,
+    pub last_restore_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for RecoveryPointByBackupVault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2392,14 +2703,14 @@ pub mod recovery_point_by_backup_vault {
         pub(crate) iam_role_arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::RecoveryPointStatus>,
         pub(crate) status_message: std::option::Option<std::string::String>,
-        pub(crate) creation_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) completion_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) completion_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) backup_size_in_bytes: std::option::Option<i64>,
         pub(crate) calculated_lifecycle: std::option::Option<crate::model::CalculatedLifecycle>,
         pub(crate) lifecycle: std::option::Option<crate::model::Lifecycle>,
         pub(crate) encryption_key_arn: std::option::Option<std::string::String>,
         pub(crate) is_encrypted: std::option::Option<bool>,
-        pub(crate) last_restore_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_restore_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example,
@@ -2408,6 +2719,8 @@ pub mod recovery_point_by_backup_vault {
             self.recovery_point_arn = Some(input.into());
             self
         }
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example,
+        /// <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
         pub fn set_recovery_point_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2423,6 +2736,10 @@ pub mod recovery_point_by_backup_vault {
             self.backup_vault_name = Some(input.into());
             self
         }
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
+        /// by names that are unique to the account used to create them and the Amazon Web Services
+        /// Region where they are created. They consist of lowercase letters, numbers, and
+        /// hyphens.</p>
         pub fn set_backup_vault_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2436,6 +2753,8 @@ pub mod recovery_point_by_backup_vault {
             self.backup_vault_arn = Some(input.into());
             self
         }
+        /// <p>An ARN that uniquely identifies a backup vault; for example,
+        /// <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
         pub fn set_backup_vault_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2449,6 +2768,8 @@ pub mod recovery_point_by_backup_vault {
             self.source_backup_vault_arn = Some(input.into());
             self
         }
+        /// <p>The backup vault where the recovery point was originally copied from. If the recovery
+        /// point is restored to the same account this value will be <code>null</code>.</p>
         pub fn set_source_backup_vault_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2462,6 +2783,8 @@ pub mod recovery_point_by_backup_vault {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the
+        /// resource type.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -2473,6 +2796,9 @@ pub mod recovery_point_by_backup_vault {
             self.resource_type = Some(input.into());
             self
         }
+        /// <p>The type of Amazon Web Services resource saved as a recovery point; for example, an
+        /// Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS) database. For Windows Volume Shadow Copy Service (VSS) backups, the only
+        /// supported resource type is Amazon EC2.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2487,6 +2813,9 @@ pub mod recovery_point_by_backup_vault {
             self.created_by = Some(input);
             self
         }
+        /// <p>Contains identifying information about the creation of a recovery point, including the
+        /// <code>BackupPlanArn</code>, <code>BackupPlanId</code>, <code>BackupPlanVersion</code>,
+        /// and <code>BackupRuleId</code> of the backup plan that is used to create it.</p>
         pub fn set_created_by(
             mut self,
             input: std::option::Option<crate::model::RecoveryPointCreator>,
@@ -2500,6 +2829,8 @@ pub mod recovery_point_by_backup_vault {
             self.iam_role_arn = Some(input.into());
             self
         }
+        /// <p>Specifies the IAM role ARN used to create the target recovery point; for example,
+        /// <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
         pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.iam_role_arn = input;
             self
@@ -2509,6 +2840,7 @@ pub mod recovery_point_by_backup_vault {
             self.status = Some(input);
             self
         }
+        /// <p>A status code specifying the state of the recovery point.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::RecoveryPointStatus>,
@@ -2521,6 +2853,7 @@ pub mod recovery_point_by_backup_vault {
             self.status_message = Some(input.into());
             self
         }
+        /// <p>A message explaining the reason of the recovery point deletion failure.</p>
         pub fn set_status_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2532,13 +2865,17 @@ pub mod recovery_point_by_backup_vault {
         /// Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For
         /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
         /// AM.</p>
-        pub fn creation_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_date = Some(input);
             self
         }
+        /// <p>The date and time a recovery point is created, in Unix format and Coordinated Universal
+        /// Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For
+        /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
+        /// AM.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_date = input;
             self
@@ -2547,13 +2884,17 @@ pub mod recovery_point_by_backup_vault {
         /// Coordinated Universal Time (UTC). The value of <code>CompletionDate</code> is accurate to
         /// milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018
         /// 12:11:30.087 AM.</p>
-        pub fn completion_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn completion_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.completion_date = Some(input);
             self
         }
+        /// <p>The date and time a job to restore a recovery point is completed, in Unix format and
+        /// Coordinated Universal Time (UTC). The value of <code>CompletionDate</code> is accurate to
+        /// milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018
+        /// 12:11:30.087 AM.</p>
         pub fn set_completion_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.completion_date = input;
             self
@@ -2563,6 +2904,7 @@ pub mod recovery_point_by_backup_vault {
             self.backup_size_in_bytes = Some(input);
             self
         }
+        /// <p>The size, in bytes, of a backup.</p>
         pub fn set_backup_size_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
             self.backup_size_in_bytes = input;
             self
@@ -2573,6 +2915,8 @@ pub mod recovery_point_by_backup_vault {
             self.calculated_lifecycle = Some(input);
             self
         }
+        /// <p>A <code>CalculatedLifecycle</code> object containing <code>DeleteAt</code> and
+        /// <code>MoveToColdStorageAt</code> timestamps.</p>
         pub fn set_calculated_lifecycle(
             mut self,
             input: std::option::Option<crate::model::CalculatedLifecycle>,
@@ -2592,6 +2936,14 @@ pub mod recovery_point_by_backup_vault {
             self.lifecycle = Some(input);
             self
         }
+        /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when
+        /// it expires. Backup transitions and expires backups automatically according to
+        /// the lifecycle that you define. </p>
+        /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90
+        /// days. Therefore, the “expire after days” setting must be 90 days greater than the
+        /// “transition to cold after days” setting. The “transition to cold after days” setting cannot
+        /// be changed after a backup has been transitioned to cold. </p>
+        /// <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
         pub fn set_lifecycle(
             mut self,
             input: std::option::Option<crate::model::Lifecycle>,
@@ -2605,6 +2957,8 @@ pub mod recovery_point_by_backup_vault {
             self.encryption_key_arn = Some(input.into());
             self
         }
+        /// <p>The server-side encryption key that is used to protect your backups; for example,
+        /// <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
         pub fn set_encryption_key_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2618,6 +2972,8 @@ pub mod recovery_point_by_backup_vault {
             self.is_encrypted = Some(input);
             self
         }
+        /// <p>A Boolean value that is returned as <code>TRUE</code> if the specified recovery point is
+        /// encrypted, or <code>FALSE</code> if the recovery point is not encrypted.</p>
         pub fn set_is_encrypted(mut self, input: std::option::Option<bool>) -> Self {
             self.is_encrypted = input;
             self
@@ -2626,13 +2982,17 @@ pub mod recovery_point_by_backup_vault {
         /// Universal Time (UTC). The value of <code>LastRestoreTime</code> is accurate to
         /// milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018
         /// 12:11:30.087 AM.</p>
-        pub fn last_restore_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_restore_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_restore_time = Some(input);
             self
         }
+        /// <p>The date and time a recovery point was last restored, in Unix format and Coordinated
+        /// Universal Time (UTC). The value of <code>LastRestoreTime</code> is accurate to
+        /// milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018
+        /// 12:11:30.087 AM.</p>
         pub fn set_last_restore_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_restore_time = input;
             self
@@ -2713,6 +3073,7 @@ pub mod recovery_point_creator {
             self.backup_plan_id = Some(input.into());
             self
         }
+        /// <p>Uniquely identifies a backup plan.</p>
         pub fn set_backup_plan_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2726,6 +3087,8 @@ pub mod recovery_point_creator {
             self.backup_plan_arn = Some(input.into());
             self
         }
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup plan; for example,
+        /// <code>arn:aws:backup:us-east-1:123456789012:plan:8F81F553-3A74-4A3F-B93D-B3360DC80C50</code>.</p>
         pub fn set_backup_plan_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2739,6 +3102,8 @@ pub mod recovery_point_creator {
             self.backup_plan_version = Some(input.into());
             self
         }
+        /// <p>Version IDs are unique, randomly generated, Unicode, UTF-8 encoded strings that are at
+        /// most 1,024 bytes long. They cannot be edited.</p>
         pub fn set_backup_plan_version(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2752,6 +3117,8 @@ pub mod recovery_point_creator {
             self.backup_rule_id = Some(input.into());
             self
         }
+        /// <p>Uniquely identifies a rule used to schedule the backup of a selection of
+        /// resources.</p>
         pub fn set_backup_rule_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2792,7 +3159,7 @@ pub struct ProtectedResource {
     /// Universal Time (UTC). The value of <code>LastBackupTime</code> is accurate to milliseconds.
     /// For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub last_backup_time: std::option::Option<smithy_types::Instant>,
+    pub last_backup_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for ProtectedResource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2811,7 +3178,7 @@ pub mod protected_resource {
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) resource_type: std::option::Option<std::string::String>,
-        pub(crate) last_backup_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_backup_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN
@@ -2820,6 +3187,8 @@ pub mod protected_resource {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN
+        /// depends on the resource type.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -2831,6 +3200,9 @@ pub mod protected_resource {
             self.resource_type = Some(input.into());
             self
         }
+        /// <p>The type of Amazon Web Services resource; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS) database. For
+        /// Windows Volume Shadow Copy Service (VSS) backups, the only supported resource type is
+        /// Amazon EC2.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2842,13 +3214,17 @@ pub mod protected_resource {
         /// Universal Time (UTC). The value of <code>LastBackupTime</code> is accurate to milliseconds.
         /// For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
         /// AM.</p>
-        pub fn last_backup_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_backup_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_backup_time = Some(input);
             self
         }
+        /// <p>The date and time a resource was last backed up, in Unix format and Coordinated
+        /// Universal Time (UTC). The value of <code>LastBackupTime</code> is accurate to milliseconds.
+        /// For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
+        /// AM.</p>
         pub fn set_last_backup_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_backup_time = input;
             self
@@ -2890,7 +3266,7 @@ pub struct Framework {
     /// Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For
     /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub creation_time: std::option::Option<smithy_types::Instant>,
+    pub creation_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The deployment status of a framework. The statuses are:</p>
     /// <p>
     /// <code>CREATE_IN_PROGRESS | UPDATE_IN_PROGRESS | DELETE_IN_PROGRESS | COMPLETED |
@@ -2920,7 +3296,7 @@ pub mod framework {
         pub(crate) framework_arn: std::option::Option<std::string::String>,
         pub(crate) framework_description: std::option::Option<std::string::String>,
         pub(crate) number_of_controls: std::option::Option<i32>,
-        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) deployment_status: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -2930,6 +3306,8 @@ pub mod framework {
             self.framework_name = Some(input.into());
             self
         }
+        /// <p>The unique name of a framework. This name is between 1 and 256 characters, starting with
+        /// a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and underscores (_).</p>
         pub fn set_framework_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2943,6 +3321,8 @@ pub mod framework {
             self.framework_arn = Some(input.into());
             self
         }
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN
+        /// depends on the resource type.</p>
         pub fn set_framework_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2955,6 +3335,7 @@ pub mod framework {
             self.framework_description = Some(input.into());
             self
         }
+        /// <p>An optional description of the framework with a maximum 1,024 characters.</p>
         pub fn set_framework_description(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -2967,6 +3348,7 @@ pub mod framework {
             self.number_of_controls = Some(input);
             self
         }
+        /// <p>The number of controls contained by the framework.</p>
         pub fn set_number_of_controls(mut self, input: std::option::Option<i32>) -> Self {
             self.number_of_controls = input;
             self
@@ -2975,13 +3357,17 @@ pub mod framework {
         /// Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For
         /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
         /// AM.</p>
-        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
         }
+        /// <p>The date and time that a framework is created, in Unix format and Coordinated Universal
+        /// Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For
+        /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
+        /// AM.</p>
         pub fn set_creation_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_time = input;
             self
@@ -2995,6 +3381,11 @@ pub mod framework {
             self.deployment_status = Some(input.into());
             self
         }
+        /// <p>The deployment status of a framework. The statuses are:</p>
+        /// <p>
+        /// <code>CREATE_IN_PROGRESS | UPDATE_IN_PROGRESS | DELETE_IN_PROGRESS | COMPLETED |
+        /// FAILED</code>
+        /// </p>
         pub fn set_deployment_status(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3049,11 +3440,11 @@ pub struct CopyJob {
     /// <p>The date and time a copy job is created, in Unix format and Coordinated Universal Time
     /// (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the
     /// value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub creation_date: std::option::Option<smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time a copy job is completed, in Unix format and Coordinated Universal Time
     /// (UTC). The value of <code>CompletionDate</code> is accurate to milliseconds. For example,
     /// the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub completion_date: std::option::Option<smithy_types::Instant>,
+    pub completion_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The current state of a copy job.</p>
     pub state: std::option::Option<crate::model::CopyJobState>,
     /// <p>A detailed message explaining the status of the job to copy a resource.</p>
@@ -3109,8 +3500,8 @@ pub mod copy_job {
         pub(crate) destination_backup_vault_arn: std::option::Option<std::string::String>,
         pub(crate) destination_recovery_point_arn: std::option::Option<std::string::String>,
         pub(crate) resource_arn: std::option::Option<std::string::String>,
-        pub(crate) creation_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) completion_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) completion_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) state: std::option::Option<crate::model::CopyJobState>,
         pub(crate) status_message: std::option::Option<std::string::String>,
         pub(crate) backup_size_in_bytes: std::option::Option<i64>,
@@ -3124,6 +3515,7 @@ pub mod copy_job {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The account ID that owns the copy job.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -3133,6 +3525,7 @@ pub mod copy_job {
             self.copy_job_id = Some(input.into());
             self
         }
+        /// <p>Uniquely identifies a copy job.</p>
         pub fn set_copy_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.copy_job_id = input;
             self
@@ -3143,6 +3536,8 @@ pub mod copy_job {
             self.source_backup_vault_arn = Some(input.into());
             self
         }
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a source copy vault; for example,
+        /// <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>. </p>
         pub fn set_source_backup_vault_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3156,6 +3551,8 @@ pub mod copy_job {
             self.source_recovery_point_arn = Some(input.into());
             self
         }
+        /// <p>An ARN that uniquely identifies a source recovery point; for example,
+        /// <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
         pub fn set_source_recovery_point_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3172,6 +3569,8 @@ pub mod copy_job {
             self.destination_backup_vault_arn = Some(input.into());
             self
         }
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a destination copy vault; for
+        /// example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
         pub fn set_destination_backup_vault_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3188,6 +3587,8 @@ pub mod copy_job {
             self.destination_recovery_point_arn = Some(input.into());
             self
         }
+        /// <p>An ARN that uniquely identifies a destination recovery point; for example,
+        /// <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
         pub fn set_destination_recovery_point_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3202,6 +3603,9 @@ pub mod copy_job {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>The Amazon Web Services resource to be copied; for example, an Amazon Elastic Block Store
+        /// (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS)
+        /// database.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -3209,13 +3613,16 @@ pub mod copy_job {
         /// <p>The date and time a copy job is created, in Unix format and Coordinated Universal Time
         /// (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the
         /// value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-        pub fn creation_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_date = Some(input);
             self
         }
+        /// <p>The date and time a copy job is created, in Unix format and Coordinated Universal Time
+        /// (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the
+        /// value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_date = input;
             self
@@ -3223,13 +3630,16 @@ pub mod copy_job {
         /// <p>The date and time a copy job is completed, in Unix format and Coordinated Universal Time
         /// (UTC). The value of <code>CompletionDate</code> is accurate to milliseconds. For example,
         /// the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-        pub fn completion_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn completion_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.completion_date = Some(input);
             self
         }
+        /// <p>The date and time a copy job is completed, in Unix format and Coordinated Universal Time
+        /// (UTC). The value of <code>CompletionDate</code> is accurate to milliseconds. For example,
+        /// the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
         pub fn set_completion_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.completion_date = input;
             self
@@ -3239,6 +3649,7 @@ pub mod copy_job {
             self.state = Some(input);
             self
         }
+        /// <p>The current state of a copy job.</p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::CopyJobState>) -> Self {
             self.state = input;
             self
@@ -3248,6 +3659,7 @@ pub mod copy_job {
             self.status_message = Some(input.into());
             self
         }
+        /// <p>A detailed message explaining the status of the job to copy a resource.</p>
         pub fn set_status_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3260,6 +3672,7 @@ pub mod copy_job {
             self.backup_size_in_bytes = Some(input);
             self
         }
+        /// <p>The size, in bytes, of a copy job.</p>
         pub fn set_backup_size_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
             self.backup_size_in_bytes = input;
             self
@@ -3270,6 +3683,8 @@ pub mod copy_job {
             self.iam_role_arn = Some(input.into());
             self
         }
+        /// <p>Specifies the IAM role ARN used to copy the target recovery point; for example,
+        /// <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
         pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.iam_role_arn = input;
             self
@@ -3280,6 +3695,8 @@ pub mod copy_job {
             self.created_by = Some(input);
             self
         }
+        /// <p>Contains information about the backup plan and rule that Backup used to
+        /// initiate the recovery point backup.</p>
         pub fn set_created_by(
             mut self,
             input: std::option::Option<crate::model::RecoveryPointCreator>,
@@ -3292,6 +3709,7 @@ pub mod copy_job {
             self.resource_type = Some(input.into());
             self
         }
+        /// <p>The type of Amazon Web Services resource to be copied; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS) database.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3328,6 +3746,7 @@ impl CopyJob {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3339,9 +3758,13 @@ impl CopyJob {
     std::hash::Hash,
 )]
 pub enum CopyJobState {
+    #[allow(missing_docs)] // documentation missing in model
     Completed,
+    #[allow(missing_docs)] // documentation missing in model
     Created,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Running,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -3365,6 +3788,7 @@ impl std::str::FromStr for CopyJobState {
     }
 }
 impl CopyJobState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             CopyJobState::Completed => "COMPLETED",
@@ -3374,6 +3798,7 @@ impl CopyJobState {
             CopyJobState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["COMPLETED", "CREATED", "FAILED", "RUNNING"]
     }
@@ -3400,7 +3825,7 @@ pub struct BackupVaultListMember {
     /// Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For
     /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub creation_date: std::option::Option<smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The server-side encryption key that is used to protect your backups; for example,
     /// <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
     pub encryption_key_arn: std::option::Option<std::string::String>,
@@ -3441,7 +3866,7 @@ pub struct BackupVaultListMember {
     /// <p>This value is in Unix format, Coordinated Universal Time (UTC), and accurate to
     /// milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018
     /// 12:11:30.087 AM.</p>
-    pub lock_date: std::option::Option<smithy_types::Instant>,
+    pub lock_date: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for BackupVaultListMember {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3467,14 +3892,14 @@ pub mod backup_vault_list_member {
     pub struct Builder {
         pub(crate) backup_vault_name: std::option::Option<std::string::String>,
         pub(crate) backup_vault_arn: std::option::Option<std::string::String>,
-        pub(crate) creation_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) encryption_key_arn: std::option::Option<std::string::String>,
         pub(crate) creator_request_id: std::option::Option<std::string::String>,
         pub(crate) number_of_recovery_points: std::option::Option<i64>,
         pub(crate) locked: std::option::Option<bool>,
         pub(crate) min_retention_days: std::option::Option<i64>,
         pub(crate) max_retention_days: std::option::Option<i64>,
-        pub(crate) lock_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) lock_date: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The name of a logical container where backups are stored. Backup vaults are identified
@@ -3485,6 +3910,10 @@ pub mod backup_vault_list_member {
             self.backup_vault_name = Some(input.into());
             self
         }
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
+        /// by names that are unique to the account used to create them and the Amazon Web Services
+        /// Region where they are created. They consist of lowercase letters, numbers, and
+        /// hyphens.</p>
         pub fn set_backup_vault_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3498,6 +3927,8 @@ pub mod backup_vault_list_member {
             self.backup_vault_arn = Some(input.into());
             self
         }
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault; for example,
+        /// <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
         pub fn set_backup_vault_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3509,13 +3940,17 @@ pub mod backup_vault_list_member {
         /// Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For
         /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
         /// AM.</p>
-        pub fn creation_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_date = Some(input);
             self
         }
+        /// <p>The date and time a resource backup is created, in Unix format and Coordinated Universal
+        /// Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For
+        /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
+        /// AM.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_date = input;
             self
@@ -3526,6 +3961,8 @@ pub mod backup_vault_list_member {
             self.encryption_key_arn = Some(input.into());
             self
         }
+        /// <p>The server-side encryption key that is used to protect your backups; for example,
+        /// <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.</p>
         pub fn set_encryption_key_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3539,6 +3976,8 @@ pub mod backup_vault_list_member {
             self.creator_request_id = Some(input.into());
             self
         }
+        /// <p>A unique string that identifies the request and allows failed requests to be retried
+        /// without the risk of running the operation twice.</p>
         pub fn set_creator_request_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3551,6 +3990,7 @@ pub mod backup_vault_list_member {
             self.number_of_recovery_points = Some(input);
             self
         }
+        /// <p>The number of recovery points that are stored in a backup vault.</p>
         pub fn set_number_of_recovery_points(mut self, input: std::option::Option<i64>) -> Self {
             self.number_of_recovery_points = input;
             self
@@ -3562,6 +4002,9 @@ pub mod backup_vault_list_member {
             self.locked = Some(input);
             self
         }
+        /// <p>A Boolean value that indicates whether Backup Vault Lock applies to the
+        /// selected backup vault. If <code>true</code>, Vault Lock prevents delete and update
+        /// operations on the recovery points in the selected vault.</p>
         pub fn set_locked(mut self, input: std::option::Option<bool>) -> Self {
             self.locked = input;
             self
@@ -3579,6 +4022,15 @@ pub mod backup_vault_list_member {
             self.min_retention_days = Some(input);
             self
         }
+        /// <p>The Backup Vault Lock setting that specifies the minimum retention period
+        /// that the vault retains its recovery points. If this parameter is not specified, Vault Lock
+        /// does not enforce a minimum retention period.</p>
+        /// <p>If specified, any backup or copy job to the vault must have a lifecycle policy with a
+        /// retention period equal to or longer than the minimum retention period. If the job's
+        /// retention period is shorter than that minimum retention period, then the vault fails the
+        /// backup or copy job, and you should either modify your lifecycle settings or use a different
+        /// vault. Recovery points already stored in the vault prior to Vault Lock are not
+        /// affected.</p>
         pub fn set_min_retention_days(mut self, input: std::option::Option<i64>) -> Self {
             self.min_retention_days = input;
             self
@@ -3597,6 +4049,16 @@ pub mod backup_vault_list_member {
             self.max_retention_days = Some(input);
             self
         }
+        /// <p>The Backup Vault Lock setting that specifies the maximum retention period
+        /// that the vault retains its recovery points. If this parameter is not specified, Vault Lock
+        /// does not enforce a maximum retention period on the recovery points in the vault (allowing
+        /// indefinite storage).</p>
+        /// <p>If specified, any backup or copy job to the vault must have a lifecycle policy with a
+        /// retention period equal to or shorter than the maximum retention period. If the job's
+        /// retention period is longer than that maximum retention period, then the vault fails the
+        /// backup or copy job, and you should either modify your lifecycle settings or use a different
+        /// vault. Recovery points already stored in the vault prior to Vault Lock are not
+        /// affected.</p>
         pub fn set_max_retention_days(mut self, input: std::option::Option<i64>) -> Self {
             self.max_retention_days = input;
             self
@@ -3608,11 +4070,21 @@ pub mod backup_vault_list_member {
         /// <p>This value is in Unix format, Coordinated Universal Time (UTC), and accurate to
         /// milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018
         /// 12:11:30.087 AM.</p>
-        pub fn lock_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn lock_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.lock_date = Some(input);
             self
         }
-        pub fn set_lock_date(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>The date and time when Backup Vault Lock configuration becomes immutable,
+        /// meaning it cannot be changed or deleted.</p>
+        /// <p>If you applied Vault Lock to your vault without specifying a lock date, you can change
+        /// your Vault Lock settings, or delete Vault Lock from the vault entirely, at any time.</p>
+        /// <p>This value is in Unix format, Coordinated Universal Time (UTC), and accurate to
+        /// milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018
+        /// 12:11:30.087 AM.</p>
+        pub fn set_lock_date(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.lock_date = input;
             self
         }
@@ -3654,7 +4126,7 @@ pub struct BackupSelectionsListMember {
     /// Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For
     /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub creation_date: std::option::Option<smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>A unique string that identifies the request and allows failed requests to be retried
     /// without the risk of running the operation twice.</p>
     pub creator_request_id: std::option::Option<std::string::String>,
@@ -3683,7 +4155,7 @@ pub mod backup_selections_list_member {
         pub(crate) selection_id: std::option::Option<std::string::String>,
         pub(crate) selection_name: std::option::Option<std::string::String>,
         pub(crate) backup_plan_id: std::option::Option<std::string::String>,
-        pub(crate) creation_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) creator_request_id: std::option::Option<std::string::String>,
         pub(crate) iam_role_arn: std::option::Option<std::string::String>,
     }
@@ -3693,6 +4165,7 @@ pub mod backup_selections_list_member {
             self.selection_id = Some(input.into());
             self
         }
+        /// <p>Uniquely identifies a request to assign a set of resources to a backup plan.</p>
         pub fn set_selection_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.selection_id = input;
             self
@@ -3702,6 +4175,7 @@ pub mod backup_selections_list_member {
             self.selection_name = Some(input.into());
             self
         }
+        /// <p>The display name of a resource selection document.</p>
         pub fn set_selection_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3714,6 +4188,7 @@ pub mod backup_selections_list_member {
             self.backup_plan_id = Some(input.into());
             self
         }
+        /// <p>Uniquely identifies a backup plan.</p>
         pub fn set_backup_plan_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3725,13 +4200,17 @@ pub mod backup_selections_list_member {
         /// Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For
         /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
         /// AM.</p>
-        pub fn creation_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_date = Some(input);
             self
         }
+        /// <p>The date and time a backup plan is created, in Unix format and Coordinated Universal
+        /// Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For
+        /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
+        /// AM.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_date = input;
             self
@@ -3742,6 +4221,8 @@ pub mod backup_selections_list_member {
             self.creator_request_id = Some(input.into());
             self
         }
+        /// <p>A unique string that identifies the request and allows failed requests to be retried
+        /// without the risk of running the operation twice.</p>
         pub fn set_creator_request_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3755,6 +4236,8 @@ pub mod backup_selections_list_member {
             self.iam_role_arn = Some(input.into());
             self
         }
+        /// <p>Specifies the IAM role Amazon Resource Name (ARN) to create the target recovery point;
+        /// for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
         pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.iam_role_arn = input;
             self
@@ -3792,12 +4275,12 @@ pub struct BackupPlansListMember {
     /// Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds.
     /// For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub creation_date: std::option::Option<smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time a backup plan is deleted, in Unix format and Coordinated Universal
     /// Time (UTC). The value of <code>DeletionDate</code> is accurate to milliseconds. For
     /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
     /// AM.</p>
-    pub deletion_date: std::option::Option<smithy_types::Instant>,
+    pub deletion_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes
     /// long. Version IDs cannot be edited.</p>
     pub version_id: std::option::Option<std::string::String>,
@@ -3810,7 +4293,7 @@ pub struct BackupPlansListMember {
     /// Unix format and Coordinated Universal Time (UTC). The value of
     /// <code>LastExecutionDate</code> is accurate to milliseconds. For example, the value
     /// 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub last_execution_date: std::option::Option<smithy_types::Instant>,
+    pub last_execution_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Contains a list of <code>BackupOptions</code> for a resource type.</p>
     pub advanced_backup_settings:
         std::option::Option<std::vec::Vec<crate::model::AdvancedBackupSetting>>,
@@ -3838,12 +4321,12 @@ pub mod backup_plans_list_member {
     pub struct Builder {
         pub(crate) backup_plan_arn: std::option::Option<std::string::String>,
         pub(crate) backup_plan_id: std::option::Option<std::string::String>,
-        pub(crate) creation_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) deletion_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) deletion_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) version_id: std::option::Option<std::string::String>,
         pub(crate) backup_plan_name: std::option::Option<std::string::String>,
         pub(crate) creator_request_id: std::option::Option<std::string::String>,
-        pub(crate) last_execution_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_execution_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) advanced_backup_settings:
             std::option::Option<std::vec::Vec<crate::model::AdvancedBackupSetting>>,
     }
@@ -3854,6 +4337,8 @@ pub mod backup_plans_list_member {
             self.backup_plan_arn = Some(input.into());
             self
         }
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup plan; for example,
+        /// <code>arn:aws:backup:us-east-1:123456789012:plan:8F81F553-3A74-4A3F-B93D-B3360DC80C50</code>.</p>
         pub fn set_backup_plan_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3866,6 +4351,7 @@ pub mod backup_plans_list_member {
             self.backup_plan_id = Some(input.into());
             self
         }
+        /// <p>Uniquely identifies a backup plan.</p>
         pub fn set_backup_plan_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3877,13 +4363,17 @@ pub mod backup_plans_list_member {
         /// Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds.
         /// For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
         /// AM.</p>
-        pub fn creation_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_date = Some(input);
             self
         }
+        /// <p>The date and time a resource backup plan is created, in Unix format and Coordinated
+        /// Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds.
+        /// For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
+        /// AM.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_date = input;
             self
@@ -3892,13 +4382,17 @@ pub mod backup_plans_list_member {
         /// Time (UTC). The value of <code>DeletionDate</code> is accurate to milliseconds. For
         /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
         /// AM.</p>
-        pub fn deletion_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn deletion_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.deletion_date = Some(input);
             self
         }
+        /// <p>The date and time a backup plan is deleted, in Unix format and Coordinated Universal
+        /// Time (UTC). The value of <code>DeletionDate</code> is accurate to milliseconds. For
+        /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
+        /// AM.</p>
         pub fn set_deletion_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.deletion_date = input;
             self
@@ -3909,6 +4403,8 @@ pub mod backup_plans_list_member {
             self.version_id = Some(input.into());
             self
         }
+        /// <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes
+        /// long. Version IDs cannot be edited.</p>
         pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.version_id = input;
             self
@@ -3918,6 +4414,7 @@ pub mod backup_plans_list_member {
             self.backup_plan_name = Some(input.into());
             self
         }
+        /// <p>The display name of a saved backup plan.</p>
         pub fn set_backup_plan_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3931,6 +4428,8 @@ pub mod backup_plans_list_member {
             self.creator_request_id = Some(input.into());
             self
         }
+        /// <p>A unique string that identifies the request and allows failed requests to be retried
+        /// without the risk of running the operation twice.</p>
         pub fn set_creator_request_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -3942,17 +4441,26 @@ pub mod backup_plans_list_member {
         /// Unix format and Coordinated Universal Time (UTC). The value of
         /// <code>LastExecutionDate</code> is accurate to milliseconds. For example, the value
         /// 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-        pub fn last_execution_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn last_execution_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.last_execution_date = Some(input);
             self
         }
+        /// <p>The last time a job to back up resources was run with this rule. A date and time, in
+        /// Unix format and Coordinated Universal Time (UTC). The value of
+        /// <code>LastExecutionDate</code> is accurate to milliseconds. For example, the value
+        /// 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
         pub fn set_last_execution_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.last_execution_date = input;
             self
         }
+        /// Appends an item to `advanced_backup_settings`.
+        ///
+        /// To override the contents of this collection use [`set_advanced_backup_settings`](Self::set_advanced_backup_settings).
+        ///
+        /// <p>Contains a list of <code>BackupOptions</code> for a resource type.</p>
         pub fn advanced_backup_settings(
             mut self,
             input: impl Into<crate::model::AdvancedBackupSetting>,
@@ -3962,6 +4470,7 @@ pub mod backup_plans_list_member {
             self.advanced_backup_settings = Some(v);
             self
         }
+        /// <p>Contains a list of <code>BackupOptions</code> for a resource type.</p>
         pub fn set_advanced_backup_settings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AdvancedBackupSetting>>,
@@ -4024,6 +4533,7 @@ pub mod backup_plan_templates_list_member {
             self.backup_plan_template_id = Some(input.into());
             self
         }
+        /// <p>Uniquely identifies a stored backup plan template.</p>
         pub fn set_backup_plan_template_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4036,6 +4546,7 @@ pub mod backup_plan_templates_list_member {
             self.backup_plan_template_name = Some(input.into());
             self
         }
+        /// <p>The optional display name of a backup plan template.</p>
         pub fn set_backup_plan_template_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4084,12 +4595,12 @@ pub struct BackupJob {
     /// <p>The date and time a backup job is created, in Unix format and Coordinated Universal Time
     /// (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the
     /// value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub creation_date: std::option::Option<smithy_types::Instant>,
+    pub creation_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time a job to create a backup job is completed, in Unix format and
     /// Coordinated Universal Time (UTC). The value of <code>CompletionDate</code> is accurate to
     /// milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018
     /// 12:11:30.087 AM.</p>
-    pub completion_date: std::option::Option<smithy_types::Instant>,
+    pub completion_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The current state of a resource recovery point.</p>
     pub state: std::option::Option<crate::model::BackupJobState>,
     /// <p>A detailed message explaining the status of the job to back up a resource.</p>
@@ -4113,14 +4624,14 @@ pub struct BackupJob {
     /// and Coordinated Universal Time (UTC). The value of <code>ExpectedCompletionDate</code> is
     /// accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January
     /// 26, 2018 12:11:30.087 AM.</p>
-    pub expected_completion_date: std::option::Option<smithy_types::Instant>,
+    pub expected_completion_date: std::option::Option<aws_smithy_types::Instant>,
     /// <p>Specifies the time in Unix format and Coordinated Universal Time (UTC) when a backup job
     /// must be started before it is canceled. The value is calculated by adding the start window
     /// to the scheduled time. So if the scheduled time were 6:00 PM and the start window is 2
     /// hours, the <code>StartBy</code> time would be 8:00 PM on the date specified. The value of
     /// <code>StartBy</code> is accurate to milliseconds. For example, the value 1516925490.087
     /// represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-    pub start_by: std::option::Option<smithy_types::Instant>,
+    pub start_by: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The type of Amazon Web Services resource to be backed up; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS) database. For Windows Volume Shadow Copy Service (VSS) backups, the only
     /// supported resource type is Amazon EC2.</p>
     pub resource_type: std::option::Option<std::string::String>,
@@ -4176,16 +4687,16 @@ pub mod backup_job {
         pub(crate) backup_vault_arn: std::option::Option<std::string::String>,
         pub(crate) recovery_point_arn: std::option::Option<std::string::String>,
         pub(crate) resource_arn: std::option::Option<std::string::String>,
-        pub(crate) creation_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) completion_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) completion_date: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) state: std::option::Option<crate::model::BackupJobState>,
         pub(crate) status_message: std::option::Option<std::string::String>,
         pub(crate) percent_done: std::option::Option<std::string::String>,
         pub(crate) backup_size_in_bytes: std::option::Option<i64>,
         pub(crate) iam_role_arn: std::option::Option<std::string::String>,
         pub(crate) created_by: std::option::Option<crate::model::RecoveryPointCreator>,
-        pub(crate) expected_completion_date: std::option::Option<smithy_types::Instant>,
-        pub(crate) start_by: std::option::Option<smithy_types::Instant>,
+        pub(crate) expected_completion_date: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) start_by: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) resource_type: std::option::Option<std::string::String>,
         pub(crate) bytes_transferred: std::option::Option<i64>,
         pub(crate) backup_options: std::option::Option<
@@ -4199,6 +4710,7 @@ pub mod backup_job {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The account ID that owns the backup job.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -4208,6 +4720,7 @@ pub mod backup_job {
             self.backup_job_id = Some(input.into());
             self
         }
+        /// <p>Uniquely identifies a request to Backup to back up a resource.</p>
         pub fn set_backup_job_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4223,6 +4736,10 @@ pub mod backup_job {
             self.backup_vault_name = Some(input.into());
             self
         }
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
+        /// by names that are unique to the account used to create them and the Amazon Web Services
+        /// Region where they are created. They consist of lowercase letters, numbers, and
+        /// hyphens.</p>
         pub fn set_backup_vault_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4236,6 +4753,8 @@ pub mod backup_job {
             self.backup_vault_arn = Some(input.into());
             self
         }
+        /// <p>An Amazon Resource Name (ARN) that uniquely identifies a backup vault; for example,
+        /// <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
         pub fn set_backup_vault_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4249,6 +4768,8 @@ pub mod backup_job {
             self.recovery_point_arn = Some(input.into());
             self
         }
+        /// <p>An ARN that uniquely identifies a recovery point; for example,
+        /// <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
         pub fn set_recovery_point_arn(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4262,6 +4783,8 @@ pub mod backup_job {
             self.resource_arn = Some(input.into());
             self
         }
+        /// <p>An ARN that uniquely identifies a resource. The format of the ARN depends on the
+        /// resource type.</p>
         pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.resource_arn = input;
             self
@@ -4269,13 +4792,16 @@ pub mod backup_job {
         /// <p>The date and time a backup job is created, in Unix format and Coordinated Universal Time
         /// (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the
         /// value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-        pub fn creation_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn creation_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.creation_date = Some(input);
             self
         }
+        /// <p>The date and time a backup job is created, in Unix format and Coordinated Universal Time
+        /// (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For example, the
+        /// value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.</p>
         pub fn set_creation_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.creation_date = input;
             self
@@ -4284,13 +4810,17 @@ pub mod backup_job {
         /// Coordinated Universal Time (UTC). The value of <code>CompletionDate</code> is accurate to
         /// milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018
         /// 12:11:30.087 AM.</p>
-        pub fn completion_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn completion_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.completion_date = Some(input);
             self
         }
+        /// <p>The date and time a job to create a backup job is completed, in Unix format and
+        /// Coordinated Universal Time (UTC). The value of <code>CompletionDate</code> is accurate to
+        /// milliseconds. For example, the value 1516925490.087 represents Friday, January 26, 2018
+        /// 12:11:30.087 AM.</p>
         pub fn set_completion_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.completion_date = input;
             self
@@ -4300,6 +4830,7 @@ pub mod backup_job {
             self.state = Some(input);
             self
         }
+        /// <p>The current state of a resource recovery point.</p>
         pub fn set_state(
             mut self,
             input: std::option::Option<crate::model::BackupJobState>,
@@ -4312,6 +4843,7 @@ pub mod backup_job {
             self.status_message = Some(input.into());
             self
         }
+        /// <p>A detailed message explaining the status of the job to back up a resource.</p>
         pub fn set_status_message(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4325,6 +4857,8 @@ pub mod backup_job {
             self.percent_done = Some(input.into());
             self
         }
+        /// <p>Contains an estimated percentage complete of a job at the time the job status was
+        /// queried.</p>
         pub fn set_percent_done(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.percent_done = input;
             self
@@ -4334,6 +4868,7 @@ pub mod backup_job {
             self.backup_size_in_bytes = Some(input);
             self
         }
+        /// <p>The size, in bytes, of a backup.</p>
         pub fn set_backup_size_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
             self.backup_size_in_bytes = input;
             self
@@ -4347,6 +4882,11 @@ pub mod backup_job {
             self.iam_role_arn = Some(input.into());
             self
         }
+        /// <p>Specifies the IAM role ARN used to create the target recovery point. IAM roles other
+        /// than the default role must include either <code>AWSBackup</code> or <code>AwsBackup</code>
+        /// in the role name. For example,
+        /// <code>arn:aws:iam::123456789012:role/AWSBackupRDSAccess</code>. Role names without those
+        /// strings lack permissions to perform backup jobs.</p>
         pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.iam_role_arn = input;
             self
@@ -4358,6 +4898,9 @@ pub mod backup_job {
             self.created_by = Some(input);
             self
         }
+        /// <p>Contains identifying information about the creation of a backup job, including the
+        /// <code>BackupPlanArn</code>, <code>BackupPlanId</code>, <code>BackupPlanVersion</code>,
+        /// and <code>BackupRuleId</code> of the backup plan used to create it.</p>
         pub fn set_created_by(
             mut self,
             input: std::option::Option<crate::model::RecoveryPointCreator>,
@@ -4369,13 +4912,17 @@ pub mod backup_job {
         /// and Coordinated Universal Time (UTC). The value of <code>ExpectedCompletionDate</code> is
         /// accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January
         /// 26, 2018 12:11:30.087 AM.</p>
-        pub fn expected_completion_date(mut self, input: smithy_types::Instant) -> Self {
+        pub fn expected_completion_date(mut self, input: aws_smithy_types::Instant) -> Self {
             self.expected_completion_date = Some(input);
             self
         }
+        /// <p>The date and time a job to back up resources is expected to be completed, in Unix format
+        /// and Coordinated Universal Time (UTC). The value of <code>ExpectedCompletionDate</code> is
+        /// accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January
+        /// 26, 2018 12:11:30.087 AM.</p>
         pub fn set_expected_completion_date(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.expected_completion_date = input;
             self
@@ -4386,11 +4933,20 @@ pub mod backup_job {
         /// hours, the <code>StartBy</code> time would be 8:00 PM on the date specified. The value of
         /// <code>StartBy</code> is accurate to milliseconds. For example, the value 1516925490.087
         /// represents Friday, January 26, 2018 12:11:30.087 AM.</p>
-        pub fn start_by(mut self, input: smithy_types::Instant) -> Self {
+        pub fn start_by(mut self, input: aws_smithy_types::Instant) -> Self {
             self.start_by = Some(input);
             self
         }
-        pub fn set_start_by(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+        /// <p>Specifies the time in Unix format and Coordinated Universal Time (UTC) when a backup job
+        /// must be started before it is canceled. The value is calculated by adding the start window
+        /// to the scheduled time. So if the scheduled time were 6:00 PM and the start window is 2
+        /// hours, the <code>StartBy</code> time would be 8:00 PM on the date specified. The value of
+        /// <code>StartBy</code> is accurate to milliseconds. For example, the value 1516925490.087
+        /// represents Friday, January 26, 2018 12:11:30.087 AM.</p>
+        pub fn set_start_by(
+            mut self,
+            input: std::option::Option<aws_smithy_types::Instant>,
+        ) -> Self {
             self.start_by = input;
             self
         }
@@ -4400,6 +4956,8 @@ pub mod backup_job {
             self.resource_type = Some(input.into());
             self
         }
+        /// <p>The type of Amazon Web Services resource to be backed up; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational Database Service (Amazon RDS) database. For Windows Volume Shadow Copy Service (VSS) backups, the only
+        /// supported resource type is Amazon EC2.</p>
         pub fn set_resource_type(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4413,10 +4971,22 @@ pub mod backup_job {
             self.bytes_transferred = Some(input);
             self
         }
+        /// <p>The size in bytes transferred to a backup vault at the time that the job status was
+        /// queried.</p>
         pub fn set_bytes_transferred(mut self, input: std::option::Option<i64>) -> Self {
             self.bytes_transferred = input;
             self
         }
+        /// Adds a key-value pair to `backup_options`.
+        ///
+        /// To override the contents of this collection use [`set_backup_options`](Self::set_backup_options).
+        ///
+        /// <p>Specifies the backup option for a selected resource. This option is only available for
+        /// Windows Volume Shadow Copy Service (VSS) backup jobs.</p>
+        /// <p>Valid values: Set to <code>"WindowsVSS":"enabled"</code> to enable the
+        /// <code>WindowsVSS</code> backup option and create a Windows VSS backup. Set to
+        /// <code>"WindowsVSS":"disabled"</code> to create a regular backup. If you specify an
+        /// invalid option, you get an <code>InvalidParameterValueException</code> exception.</p>
         pub fn backup_options(
             mut self,
             k: impl Into<std::string::String>,
@@ -4427,6 +4997,12 @@ pub mod backup_job {
             self.backup_options = Some(hash_map);
             self
         }
+        /// <p>Specifies the backup option for a selected resource. This option is only available for
+        /// Windows Volume Shadow Copy Service (VSS) backup jobs.</p>
+        /// <p>Valid values: Set to <code>"WindowsVSS":"enabled"</code> to enable the
+        /// <code>WindowsVSS</code> backup option and create a Windows VSS backup. Set to
+        /// <code>"WindowsVSS":"disabled"</code> to create a regular backup. If you specify an
+        /// invalid option, you get an <code>InvalidParameterValueException</code> exception.</p>
         pub fn set_backup_options(
             mut self,
             input: std::option::Option<
@@ -4441,6 +5017,7 @@ pub mod backup_job {
             self.backup_type = Some(input.into());
             self
         }
+        /// <p>Represents the type of backup for a backup job.</p>
         pub fn set_backup_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.backup_type = input;
             self
@@ -4479,6 +5056,7 @@ impl BackupJob {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4490,13 +5068,21 @@ impl BackupJob {
     std::hash::Hash,
 )]
 pub enum BackupJobState {
+    #[allow(missing_docs)] // documentation missing in model
     Aborted,
+    #[allow(missing_docs)] // documentation missing in model
     Aborting,
+    #[allow(missing_docs)] // documentation missing in model
     Completed,
+    #[allow(missing_docs)] // documentation missing in model
     Created,
+    #[allow(missing_docs)] // documentation missing in model
     Expired,
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Pending,
+    #[allow(missing_docs)] // documentation missing in model
     Running,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4524,6 +5110,7 @@ impl std::str::FromStr for BackupJobState {
     }
 }
 impl BackupJobState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             BackupJobState::Aborted => "ABORTED",
@@ -4537,6 +5124,7 @@ impl BackupJobState {
             BackupJobState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ABORTED",
@@ -4566,6 +5154,7 @@ pub struct BackupSelection {
     /// target resource; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
     pub iam_role_arn: std::option::Option<std::string::String>,
     /// <p>An array of strings that contain Amazon Resource Names (ARNs)
+    ///
     /// of resources to assign to a backup plan.</p>
     pub resources: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array of conditions used to specify a set of resources to assign to a backup plan;
@@ -4600,6 +5189,7 @@ pub mod backup_selection {
             self.selection_name = Some(input.into());
             self
         }
+        /// <p>The display name of a resource selection document.</p>
         pub fn set_selection_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4613,16 +5203,28 @@ pub mod backup_selection {
             self.iam_role_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the IAM role that Backup uses to authenticate when backing up the
+        /// target resource; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.</p>
         pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.iam_role_arn = input;
             self
         }
+        /// Appends an item to `resources`.
+        ///
+        /// To override the contents of this collection use [`set_resources`](Self::set_resources).
+        ///
+        /// <p>An array of strings that contain Amazon Resource Names (ARNs)
+        ///
+        /// of resources to assign to a backup plan.</p>
         pub fn resources(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resources.unwrap_or_default();
             v.push(input.into());
             self.resources = Some(v);
             self
         }
+        /// <p>An array of strings that contain Amazon Resource Names (ARNs)
+        ///
+        /// of resources to assign to a backup plan.</p>
         pub fn set_resources(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4630,12 +5232,22 @@ pub mod backup_selection {
             self.resources = input;
             self
         }
+        /// Appends an item to `list_of_tags`.
+        ///
+        /// To override the contents of this collection use [`set_list_of_tags`](Self::set_list_of_tags).
+        ///
+        /// <p>An array of conditions used to specify a set of resources to assign to a backup plan;
+        /// for example, <code>"StringEquals": {"ec2:ResourceTag/Department": "accounting"</code>.
+        /// Assigns the backup plan to every resource with at least one matching tag.</p>
         pub fn list_of_tags(mut self, input: impl Into<crate::model::Condition>) -> Self {
             let mut v = self.list_of_tags.unwrap_or_default();
             v.push(input.into());
             self.list_of_tags = Some(v);
             self
         }
+        /// <p>An array of conditions used to specify a set of resources to assign to a backup plan;
+        /// for example, <code>"StringEquals": {"ec2:ResourceTag/Department": "accounting"</code>.
+        /// Assigns the backup plan to every resource with at least one matching tag.</p>
         pub fn set_list_of_tags(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Condition>>,
@@ -4703,6 +5315,8 @@ pub mod condition {
             self.condition_type = Some(input);
             self
         }
+        /// <p>An operation, such as <code>StringEquals</code>, that is applied to a key-value pair
+        /// used to filter resources in a selection.</p>
         pub fn set_condition_type(
             mut self,
             input: std::option::Option<crate::model::ConditionType>,
@@ -4716,6 +5330,8 @@ pub mod condition {
             self.condition_key = Some(input.into());
             self
         }
+        /// <p>The key in a key-value pair. For example, in <code>"ec2:ResourceTag/Department":
+        /// "accounting"</code>, <code>"ec2:ResourceTag/Department"</code> is the key.</p>
         pub fn set_condition_key(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4729,6 +5345,8 @@ pub mod condition {
             self.condition_value = Some(input.into());
             self
         }
+        /// <p>The value in a key-value pair. For example, in <code>"ec2:ResourceTag/Department":
+        /// "accounting"</code>, <code>"accounting"</code> is the value.</p>
         pub fn set_condition_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4753,6 +5371,7 @@ impl Condition {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -4764,6 +5383,7 @@ impl Condition {
     std::hash::Hash,
 )]
 pub enum ConditionType {
+    #[allow(missing_docs)] // documentation missing in model
     Stringequals,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4784,12 +5404,14 @@ impl std::str::FromStr for ConditionType {
     }
 }
 impl ConditionType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ConditionType::Stringequals => "STRINGEQUALS",
             ConditionType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["STRINGEQUALS"]
     }
@@ -4842,6 +5464,7 @@ pub mod backup_plan {
             self.backup_plan_name = Some(input.into());
             self
         }
+        /// <p>The display name of a backup plan.</p>
         pub fn set_backup_plan_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -4849,12 +5472,20 @@ pub mod backup_plan {
             self.backup_plan_name = input;
             self
         }
+        /// Appends an item to `rules`.
+        ///
+        /// To override the contents of this collection use [`set_rules`](Self::set_rules).
+        ///
+        /// <p>An array of <code>BackupRule</code> objects, each of which specifies a scheduled task
+        /// that is used to back up a selection of resources. </p>
         pub fn rules(mut self, input: impl Into<crate::model::BackupRule>) -> Self {
             let mut v = self.rules.unwrap_or_default();
             v.push(input.into());
             self.rules = Some(v);
             self
         }
+        /// <p>An array of <code>BackupRule</code> objects, each of which specifies a scheduled task
+        /// that is used to back up a selection of resources. </p>
         pub fn set_rules(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::BackupRule>>,
@@ -4862,6 +5493,11 @@ pub mod backup_plan {
             self.rules = input;
             self
         }
+        /// Appends an item to `advanced_backup_settings`.
+        ///
+        /// To override the contents of this collection use [`set_advanced_backup_settings`](Self::set_advanced_backup_settings).
+        ///
+        /// <p>Contains a list of <code>BackupOptions</code> for each resource type.</p>
         pub fn advanced_backup_settings(
             mut self,
             input: impl Into<crate::model::AdvancedBackupSetting>,
@@ -4871,6 +5507,7 @@ pub mod backup_plan {
             self.advanced_backup_settings = Some(v);
             self
         }
+        /// <p>Contains a list of <code>BackupOptions</code> for each resource type.</p>
         pub fn set_advanced_backup_settings(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::AdvancedBackupSetting>>,
@@ -4982,6 +5619,7 @@ pub mod backup_rule {
             self.rule_name = Some(input.into());
             self
         }
+        /// <p>An optional display name for a backup rule.</p>
         pub fn set_rule_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rule_name = input;
             self
@@ -4994,6 +5632,10 @@ pub mod backup_rule {
             self.target_backup_vault_name = Some(input.into());
             self
         }
+        /// <p>The name of a logical container where backups are stored. Backup vaults are identified
+        /// by names that are unique to the account used to create them and the Amazon Web Services
+        /// Region where they are created. They consist of lowercase letters, numbers, and
+        /// hyphens.</p>
         pub fn set_target_backup_vault_name(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5010,6 +5652,11 @@ pub mod backup_rule {
             self.schedule_expression = Some(input.into());
             self
         }
+        /// <p>A cron expression in UTC specifying when Backup initiates a backup job. For
+        /// more information about cron expressions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule Expressions for Rules</a> in the <i>Amazon CloudWatch Events User
+        /// Guide.</i>. Prior to specifying a value for this parameter, we recommend testing
+        /// your cron expression using one of the many available cron generator and testing
+        /// tools.</p>
         pub fn set_schedule_expression(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -5023,6 +5670,8 @@ pub mod backup_rule {
             self.start_window_minutes = Some(input);
             self
         }
+        /// <p>A value in minutes after a backup is scheduled before a job will be canceled if it
+        /// doesn't start successfully. This value is optional.</p>
         pub fn set_start_window_minutes(mut self, input: std::option::Option<i64>) -> Self {
             self.start_window_minutes = input;
             self
@@ -5033,6 +5682,8 @@ pub mod backup_rule {
             self.completion_window_minutes = Some(input);
             self
         }
+        /// <p>A value in minutes after a backup job is successfully started before it must be
+        /// completed or it will be canceled by Backup. This value is optional.</p>
         pub fn set_completion_window_minutes(mut self, input: std::option::Option<i64>) -> Self {
             self.completion_window_minutes = input;
             self
@@ -5049,6 +5700,14 @@ pub mod backup_rule {
             self.lifecycle = Some(input);
             self
         }
+        /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when
+        /// it expires. Backup transitions and expires backups automatically according to
+        /// the lifecycle that you define. </p>
+        /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90
+        /// days. Therefore, the “expire after days” setting must be 90 days greater than the
+        /// “transition to cold after days” setting. The “transition to cold after days” setting cannot
+        /// be changed after a backup has been transitioned to cold. </p>
+        /// <p>Only Amazon EFS file system backups can be transitioned to cold storage.</p>
         pub fn set_lifecycle(
             mut self,
             input: std::option::Option<crate::model::Lifecycle>,
@@ -5056,6 +5715,12 @@ pub mod backup_rule {
             self.lifecycle = input;
             self
         }
+        /// Adds a key-value pair to `recovery_point_tags`.
+        ///
+        /// To override the contents of this collection use [`set_recovery_point_tags`](Self::set_recovery_point_tags).
+        ///
+        /// <p>An array of key-value pair strings that are assigned to resources that are associated
+        /// with this rule when restored from backup.</p>
         pub fn recovery_point_tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -5066,6 +5731,8 @@ pub mod backup_rule {
             self.recovery_point_tags = Some(hash_map);
             self
         }
+        /// <p>An array of key-value pair strings that are assigned to resources that are associated
+        /// with this rule when restored from backup.</p>
         pub fn set_recovery_point_tags(
             mut self,
             input: std::option::Option<
@@ -5081,16 +5748,26 @@ pub mod backup_rule {
             self.rule_id = Some(input.into());
             self
         }
+        /// <p>Uniquely identifies a rule that is used to schedule the backup of a selection of
+        /// resources.</p>
         pub fn set_rule_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.rule_id = input;
             self
         }
+        /// Appends an item to `copy_actions`.
+        ///
+        /// To override the contents of this collection use [`set_copy_actions`](Self::set_copy_actions).
+        ///
+        /// <p>An array of <code>CopyAction</code> objects, which contains the details of the copy
+        /// operation.</p>
         pub fn copy_actions(mut self, input: impl Into<crate::model::CopyAction>) -> Self {
             let mut v = self.copy_actions.unwrap_or_default();
             v.push(input.into());
             self.copy_actions = Some(v);
             self
         }
+        /// <p>An array of <code>CopyAction</code> objects, which contains the details of the copy
+        /// operation.</p>
         pub fn set_copy_actions(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::CopyAction>>,
@@ -5104,6 +5781,8 @@ pub mod backup_rule {
             self.enable_continuous_backup = Some(input);
             self
         }
+        /// <p>Specifies whether Backup creates continuous backups. True causes Backup to create continuous backups capable of point-in-time restore (PITR). False
+        /// (or not specified) causes Backup to create snapshot backups.</p>
         pub fn set_enable_continuous_backup(mut self, input: std::option::Option<bool>) -> Self {
             self.enable_continuous_backup = input;
             self
@@ -5132,6 +5811,7 @@ impl BackupRule {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -5143,8 +5823,11 @@ impl BackupRule {
     std::hash::Hash,
 )]
 pub enum StorageClass {
+    #[allow(missing_docs)] // documentation missing in model
     Cold,
+    #[allow(missing_docs)] // documentation missing in model
     Deleted,
+    #[allow(missing_docs)] // documentation missing in model
     Warm,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -5167,6 +5850,7 @@ impl std::str::FromStr for StorageClass {
     }
 }
 impl StorageClass {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             StorageClass::Cold => "COLD",
@@ -5175,6 +5859,7 @@ impl StorageClass {
             StorageClass::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["COLD", "DELETED", "WARM"]
     }

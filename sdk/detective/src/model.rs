@@ -70,14 +70,14 @@ pub struct MemberDetail {
     pub disabled_reason: std::option::Option<crate::model::MemberDisabledReason>,
     /// <p>The date and time that Detective sent the invitation to the member account. The value is in
     /// milliseconds since the epoch.</p>
-    pub invited_time: std::option::Option<smithy_types::Instant>,
+    pub invited_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The date and time that the member account was last updated. The value is in milliseconds
     /// since the epoch.</p>
-    pub updated_time: std::option::Option<smithy_types::Instant>,
+    pub updated_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The data volume in bytes per day for the member account.</p>
     pub volume_usage_in_bytes: std::option::Option<i64>,
     /// <p>The data and time when the member account data volume was last updated.</p>
-    pub volume_usage_updated_time: std::option::Option<smithy_types::Instant>,
+    pub volume_usage_updated_time: std::option::Option<aws_smithy_types::Instant>,
     /// <p>The member account data volume as a percentage of the maximum allowed data volume. 0
     /// indicates 0 percent, and 100 indicates 100 percent.</p>
     /// <p>Note that this is not the percentage of the behavior graph data volume.</p>
@@ -87,7 +87,7 @@ pub struct MemberDetail {
     /// data volume. </p>
     pub percent_of_graph_utilization: std::option::Option<f64>,
     /// <p>The date and time when the graph utilization percentage was last updated.</p>
-    pub percent_of_graph_utilization_updated_time: std::option::Option<smithy_types::Instant>,
+    pub percent_of_graph_utilization_updated_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for MemberDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -127,13 +127,13 @@ pub mod member_detail {
         pub(crate) administrator_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::MemberStatus>,
         pub(crate) disabled_reason: std::option::Option<crate::model::MemberDisabledReason>,
-        pub(crate) invited_time: std::option::Option<smithy_types::Instant>,
-        pub(crate) updated_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) invited_time: std::option::Option<aws_smithy_types::Instant>,
+        pub(crate) updated_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) volume_usage_in_bytes: std::option::Option<i64>,
-        pub(crate) volume_usage_updated_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) volume_usage_updated_time: std::option::Option<aws_smithy_types::Instant>,
         pub(crate) percent_of_graph_utilization: std::option::Option<f64>,
         pub(crate) percent_of_graph_utilization_updated_time:
-            std::option::Option<smithy_types::Instant>,
+            std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The AWS account identifier for the member account.</p>
@@ -141,6 +141,7 @@ pub mod member_detail {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The AWS account identifier for the member account.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -150,6 +151,7 @@ pub mod member_detail {
             self.email_address = Some(input.into());
             self
         }
+        /// <p>The AWS account root user email address for the member account.</p>
         pub fn set_email_address(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -162,6 +164,7 @@ pub mod member_detail {
             self.graph_arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the behavior graph that the member account was invited to.</p>
         pub fn set_graph_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.graph_arn = input;
             self
@@ -171,6 +174,7 @@ pub mod member_detail {
             self.master_id = Some(input.into());
             self
         }
+        /// <p>The AWS account identifier of the administrator account for the behavior graph.</p>
         pub fn set_master_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.master_id = input;
             self
@@ -180,6 +184,7 @@ pub mod member_detail {
             self.administrator_id = Some(input.into());
             self
         }
+        /// <p>The AWS account identifier of the administrator account for the behavior graph.</p>
         pub fn set_administrator_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -227,6 +232,42 @@ pub mod member_detail {
             self.status = Some(input);
             self
         }
+        /// <p>The current membership status of the member account. The status can have one of the
+        /// following values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>INVITED</code> - Indicates that the member was sent an invitation but has
+        /// not yet responded.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>VERIFICATION_IN_PROGRESS</code> - Indicates that Detective is verifying that the
+        /// account identifier and email address provided for the member account match. If they
+        /// do match, then Detective sends the invitation. If the email address and account
+        /// identifier don't match, then the member cannot be added to the behavior graph.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>VERIFICATION_FAILED</code> - Indicates that the account and email address
+        /// provided for the member account do not match, and Detective did not send an invitation to
+        /// the account.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ENABLED</code> - Indicates that the member account accepted the invitation
+        /// to contribute to the behavior graph.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ACCEPTED_BUT_DISABLED</code> - Indicates that the member account accepted
+        /// the invitation but is prevented from contributing data to the behavior graph.
+        /// <code>DisabledReason</code> provides the reason why the member account is not
+        /// enabled.</p>
+        /// </li>
+        /// </ul>
+        /// <p>Member accounts that declined an invitation or that were removed from the behavior graph
+        /// are not included.</p>
         pub fn set_status(
             mut self,
             input: std::option::Option<crate::model::MemberStatus>,
@@ -254,6 +295,22 @@ pub mod member_detail {
             self.disabled_reason = Some(input);
             self
         }
+        /// <p>For member accounts with a status of <code>ACCEPTED_BUT_DISABLED</code>, the reason that
+        /// the member account is not enabled.</p>
+        /// <p>The reason can have one of the following values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>VOLUME_TOO_HIGH</code> - Indicates that adding the member account would
+        /// cause the data volume for the behavior graph to be too high.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>VOLUME_UNKNOWN</code> - Indicates that Detective is unable to verify the data
+        /// volume for the member account. This is usually because the member account is not
+        /// enrolled in Amazon GuardDuty. </p>
+        /// </li>
+        /// </ul>
         pub fn set_disabled_reason(
             mut self,
             input: std::option::Option<crate::model::MemberDisabledReason>,
@@ -263,26 +320,30 @@ pub mod member_detail {
         }
         /// <p>The date and time that Detective sent the invitation to the member account. The value is in
         /// milliseconds since the epoch.</p>
-        pub fn invited_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn invited_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.invited_time = Some(input);
             self
         }
+        /// <p>The date and time that Detective sent the invitation to the member account. The value is in
+        /// milliseconds since the epoch.</p>
         pub fn set_invited_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.invited_time = input;
             self
         }
         /// <p>The date and time that the member account was last updated. The value is in milliseconds
         /// since the epoch.</p>
-        pub fn updated_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn updated_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.updated_time = Some(input);
             self
         }
+        /// <p>The date and time that the member account was last updated. The value is in milliseconds
+        /// since the epoch.</p>
         pub fn set_updated_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.updated_time = input;
             self
@@ -292,18 +353,20 @@ pub mod member_detail {
             self.volume_usage_in_bytes = Some(input);
             self
         }
+        /// <p>The data volume in bytes per day for the member account.</p>
         pub fn set_volume_usage_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
             self.volume_usage_in_bytes = input;
             self
         }
         /// <p>The data and time when the member account data volume was last updated.</p>
-        pub fn volume_usage_updated_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn volume_usage_updated_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.volume_usage_updated_time = Some(input);
             self
         }
+        /// <p>The data and time when the member account data volume was last updated.</p>
         pub fn set_volume_usage_updated_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.volume_usage_updated_time = input;
             self
@@ -319,6 +382,13 @@ pub mod member_detail {
             self.percent_of_graph_utilization = Some(input);
             self
         }
+        /// <p>The member account data volume as a percentage of the maximum allowed data volume. 0
+        /// indicates 0 percent, and 100 indicates 100 percent.</p>
+        /// <p>Note that this is not the percentage of the behavior graph data volume.</p>
+        /// <p>For example, the data volume for the behavior graph is 80 GB per day. The maximum data
+        /// volume is 160 GB per day. If the data volume for the member account is 40 GB per day, then
+        /// <code>PercentOfGraphUtilization</code> is 25. It represents 25% of the maximum allowed
+        /// data volume. </p>
         pub fn set_percent_of_graph_utilization(mut self, input: std::option::Option<f64>) -> Self {
             self.percent_of_graph_utilization = input;
             self
@@ -326,14 +396,15 @@ pub mod member_detail {
         /// <p>The date and time when the graph utilization percentage was last updated.</p>
         pub fn percent_of_graph_utilization_updated_time(
             mut self,
-            input: smithy_types::Instant,
+            input: aws_smithy_types::Instant,
         ) -> Self {
             self.percent_of_graph_utilization_updated_time = Some(input);
             self
         }
+        /// <p>The date and time when the graph utilization percentage was last updated.</p>
         pub fn set_percent_of_graph_utilization_updated_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.percent_of_graph_utilization_updated_time = input;
             self
@@ -366,6 +437,7 @@ impl MemberDetail {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -377,7 +449,9 @@ impl MemberDetail {
     std::hash::Hash,
 )]
 pub enum MemberDisabledReason {
+    #[allow(missing_docs)] // documentation missing in model
     VolumeTooHigh,
+    #[allow(missing_docs)] // documentation missing in model
     VolumeUnknown,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -399,6 +473,7 @@ impl std::str::FromStr for MemberDisabledReason {
     }
 }
 impl MemberDisabledReason {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MemberDisabledReason::VolumeTooHigh => "VOLUME_TOO_HIGH",
@@ -406,6 +481,7 @@ impl MemberDisabledReason {
             MemberDisabledReason::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["VOLUME_TOO_HIGH", "VOLUME_UNKNOWN"]
     }
@@ -416,6 +492,7 @@ impl AsRef<str> for MemberDisabledReason {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -427,10 +504,15 @@ impl AsRef<str> for MemberDisabledReason {
     std::hash::Hash,
 )]
 pub enum MemberStatus {
+    #[allow(missing_docs)] // documentation missing in model
     AcceptedButDisabled,
+    #[allow(missing_docs)] // documentation missing in model
     Enabled,
+    #[allow(missing_docs)] // documentation missing in model
     Invited,
+    #[allow(missing_docs)] // documentation missing in model
     VerificationFailed,
+    #[allow(missing_docs)] // documentation missing in model
     VerificationInProgress,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -455,6 +537,7 @@ impl std::str::FromStr for MemberStatus {
     }
 }
 impl MemberStatus {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MemberStatus::AcceptedButDisabled => "ACCEPTED_BUT_DISABLED",
@@ -465,6 +548,7 @@ impl MemberStatus {
             MemberStatus::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "ACCEPTED_BUT_DISABLED",
@@ -489,7 +573,7 @@ pub struct Graph {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date and time that the behavior graph was created. The value is in milliseconds
     /// since the epoch.</p>
-    pub created_time: std::option::Option<smithy_types::Instant>,
+    pub created_time: std::option::Option<aws_smithy_types::Instant>,
 }
 impl std::fmt::Debug for Graph {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -506,7 +590,7 @@ pub mod graph {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
-        pub(crate) created_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) created_time: std::option::Option<aws_smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The ARN of the behavior graph.</p>
@@ -514,19 +598,22 @@ pub mod graph {
             self.arn = Some(input.into());
             self
         }
+        /// <p>The ARN of the behavior graph.</p>
         pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.arn = input;
             self
         }
         /// <p>The date and time that the behavior graph was created. The value is in milliseconds
         /// since the epoch.</p>
-        pub fn created_time(mut self, input: smithy_types::Instant) -> Self {
+        pub fn created_time(mut self, input: aws_smithy_types::Instant) -> Self {
             self.created_time = Some(input);
             self
         }
+        /// <p>The date and time that the behavior graph was created. The value is in milliseconds
+        /// since the epoch.</p>
         pub fn set_created_time(
             mut self,
-            input: std::option::Option<smithy_types::Instant>,
+            input: std::option::Option<aws_smithy_types::Instant>,
         ) -> Self {
             self.created_time = input;
             self
@@ -580,6 +667,7 @@ pub mod unprocessed_account {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The AWS account identifier of the member account that was not processed.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -589,6 +677,7 @@ pub mod unprocessed_account {
             self.reason = Some(input.into());
             self
         }
+        /// <p>The reason that the member account request could not be processed.</p>
         pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.reason = input;
             self
@@ -642,6 +731,7 @@ pub mod account {
             self.account_id = Some(input.into());
             self
         }
+        /// <p>The account identifier of the AWS account.</p>
         pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.account_id = input;
             self
@@ -651,6 +741,7 @@ pub mod account {
             self.email_address = Some(input.into());
             self
         }
+        /// <p>The AWS account root user email address for the AWS account.</p>
         pub fn set_email_address(
             mut self,
             input: std::option::Option<std::string::String>,

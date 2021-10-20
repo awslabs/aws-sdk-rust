@@ -50,6 +50,12 @@ pub mod interpretation {
             self.nlu_confidence = Some(input);
             self
         }
+        /// <p>Determines the threshold where Amazon Lex V2 will insert the
+        /// <code>AMAZON.FallbackIntent</code>,
+        /// <code>AMAZON.KendraSearchIntent</code>, or both when returning
+        /// alternative intents in a response. <code>AMAZON.FallbackIntent</code>
+        /// and <code>AMAZON.KendraSearchIntent</code> are only inserted if they
+        /// are configured for the bot.</p>
         pub fn set_nlu_confidence(
             mut self,
             input: std::option::Option<crate::model::ConfidenceScore>,
@@ -65,6 +71,10 @@ pub mod interpretation {
             self.sentiment_response = Some(input);
             self
         }
+        /// <p>The sentiment expressed in an utterance. </p>
+        /// <p>When the bot is configured to send utterances to Amazon Comprehend
+        /// for sentiment analysis, this field contains the result of the
+        /// analysis.</p>
         pub fn set_sentiment_response(
             mut self,
             input: std::option::Option<crate::model::SentimentResponse>,
@@ -78,6 +88,8 @@ pub mod interpretation {
             self.intent = Some(input);
             self
         }
+        /// <p>A list of intents that might satisfy the user's utterance. The
+        /// intents are ordered by the confidence score.</p>
         pub fn set_intent(mut self, input: std::option::Option<crate::model::Intent>) -> Self {
             self.intent = input;
             self
@@ -144,10 +156,18 @@ pub mod intent {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the intent.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
         }
+        /// Adds a key-value pair to `slots`.
+        ///
+        /// To override the contents of this collection use [`set_slots`](Self::set_slots).
+        ///
+        /// <p>A map of all of the slots for the intent. The name of the slot maps
+        /// to the value of the slot. If a slot has not been filled, the value is
+        /// null.</p>
         pub fn slots(
             mut self,
             k: impl Into<std::string::String>,
@@ -158,6 +178,9 @@ pub mod intent {
             self.slots = Some(hash_map);
             self
         }
+        /// <p>A map of all of the slots for the intent. The name of the slot maps
+        /// to the value of the slot. If a slot has not been filled, the value is
+        /// null.</p>
         pub fn set_slots(
             mut self,
             input: std::option::Option<
@@ -172,6 +195,7 @@ pub mod intent {
             self.state = Some(input);
             self
         }
+        /// <p>Contains fulfillment information for the intent. </p>
         pub fn set_state(mut self, input: std::option::Option<crate::model::IntentState>) -> Self {
             self.state = input;
             self
@@ -182,6 +206,8 @@ pub mod intent {
             self.confirmation_state = Some(input);
             self
         }
+        /// <p>Contains information about whether fulfillment of the intent has
+        /// been confirmed.</p>
         pub fn set_confirmation_state(
             mut self,
             input: std::option::Option<crate::model::ConfirmationState>,
@@ -207,6 +233,7 @@ impl Intent {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -218,8 +245,11 @@ impl Intent {
     std::hash::Hash,
 )]
 pub enum ConfirmationState {
+    #[allow(missing_docs)] // documentation missing in model
     Confirmed,
+    #[allow(missing_docs)] // documentation missing in model
     Denied,
+    #[allow(missing_docs)] // documentation missing in model
     None,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -242,6 +272,7 @@ impl std::str::FromStr for ConfirmationState {
     }
 }
 impl ConfirmationState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             ConfirmationState::Confirmed => "Confirmed",
@@ -250,6 +281,7 @@ impl ConfirmationState {
             ConfirmationState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["Confirmed", "Denied", "None"]
     }
@@ -260,6 +292,7 @@ impl AsRef<str> for ConfirmationState {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -271,11 +304,17 @@ impl AsRef<str> for ConfirmationState {
     std::hash::Hash,
 )]
 pub enum IntentState {
+    #[allow(missing_docs)] // documentation missing in model
     Failed,
+    #[allow(missing_docs)] // documentation missing in model
     Fulfilled,
+    #[allow(missing_docs)] // documentation missing in model
     FulfillmentInProgress,
+    #[allow(missing_docs)] // documentation missing in model
     InProgress,
+    #[allow(missing_docs)] // documentation missing in model
     ReadyForFulfillment,
+    #[allow(missing_docs)] // documentation missing in model
     Waiting,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -301,6 +340,7 @@ impl std::str::FromStr for IntentState {
     }
 }
 impl IntentState {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             IntentState::Failed => "Failed",
@@ -312,6 +352,7 @@ impl IntentState {
             IntentState::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "Failed",
@@ -370,6 +411,7 @@ pub mod slot {
             self.value = Some(input);
             self
         }
+        /// <p>The current value of the slot.</p>
         pub fn set_value(mut self, input: std::option::Option<crate::model::Value>) -> Self {
             self.value = input;
             self
@@ -382,16 +424,30 @@ pub mod slot {
             self.shape = Some(input);
             self
         }
+        /// <p>When the <code>shape</code> value is <code>List</code>, it indicates
+        /// that the <code>values</code> field contains a list of slot values. When
+        /// the value is <code>Scalar</code>, it indicates that the
+        /// <code>value</code> field contains a single value.</p>
         pub fn set_shape(mut self, input: std::option::Option<crate::model::Shape>) -> Self {
             self.shape = input;
             self
         }
+        /// Appends an item to `values`.
+        ///
+        /// To override the contents of this collection use [`set_values`](Self::set_values).
+        ///
+        /// <p>A list of one or more values that the user provided for the slot.
+        /// For example, if a for a slot that elicits pizza toppings, the values
+        /// might be "pepperoni" and "pineapple." </p>
         pub fn values(mut self, input: impl Into<crate::model::Slot>) -> Self {
             let mut v = self.values.unwrap_or_default();
             v.push(input.into());
             self.values = Some(v);
             self
         }
+        /// <p>A list of one or more values that the user provided for the slot.
+        /// For example, if a for a slot that elicits pizza toppings, the values
+        /// might be "pepperoni" and "pineapple." </p>
         pub fn set_values(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Slot>>,
@@ -416,6 +472,7 @@ impl Slot {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -427,7 +484,9 @@ impl Slot {
     std::hash::Hash,
 )]
 pub enum Shape {
+    #[allow(missing_docs)] // documentation missing in model
     List,
+    #[allow(missing_docs)] // documentation missing in model
     Scalar,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -449,6 +508,7 @@ impl std::str::FromStr for Shape {
     }
 }
 impl Shape {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             Shape::List => "List",
@@ -456,6 +516,7 @@ impl Shape {
             Shape::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["List", "Scalar"]
     }
@@ -508,6 +569,8 @@ pub mod value {
             self.original_value = Some(input.into());
             self
         }
+        /// <p>The text of the utterance from the user that was entered for the
+        /// slot.</p>
         pub fn set_original_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -523,6 +586,10 @@ pub mod value {
             self.interpreted_value = Some(input.into());
             self
         }
+        /// <p>The value that Amazon Lex V2 determines for the slot. The actual value
+        /// depends on the setting of the value selection strategy for the bot. You
+        /// can choose to use the value entered by the user, or you can have Amazon Lex V2
+        /// choose the first value in the <code>resolvedValues</code> list.</p>
         pub fn set_interpreted_value(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -530,12 +597,20 @@ pub mod value {
             self.interpreted_value = input;
             self
         }
+        /// Appends an item to `resolved_values`.
+        ///
+        /// To override the contents of this collection use [`set_resolved_values`](Self::set_resolved_values).
+        ///
+        /// <p>A list of additional values that have been recognized for the
+        /// slot.</p>
         pub fn resolved_values(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.resolved_values.unwrap_or_default();
             v.push(input.into());
             self.resolved_values = Some(v);
             self
         }
+        /// <p>A list of additional values that have been recognized for the
+        /// slot.</p>
         pub fn set_resolved_values(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -602,6 +677,9 @@ pub mod sentiment_response {
             self.sentiment = Some(input);
             self
         }
+        /// <p>The overall sentiment expressed in the user's response. This is the
+        /// sentiment most likely expressed by the user based on the analysis by
+        /// Amazon Comprehend.</p>
         pub fn set_sentiment(
             mut self,
             input: std::option::Option<crate::model::SentimentType>,
@@ -614,6 +692,7 @@ pub mod sentiment_response {
             self.sentiment_score = Some(input);
             self
         }
+        /// <p>The individual sentiment responses for the utterance.</p>
         pub fn set_sentiment_score(
             mut self,
             input: std::option::Option<crate::model::SentimentScore>,
@@ -682,6 +761,8 @@ pub mod sentiment_score {
             self.positive = Some(input);
             self
         }
+        /// <p>The level of confidence that Amazon Comprehend has in the accuracy
+        /// of its detection of the <code>POSITIVE</code> sentiment.</p>
         pub fn set_positive(mut self, input: std::option::Option<f64>) -> Self {
             self.positive = input;
             self
@@ -692,6 +773,8 @@ pub mod sentiment_score {
             self.negative = Some(input);
             self
         }
+        /// <p>The level of confidence that Amazon Comprehend has in the accuracy
+        /// of its detection of the <code>NEGATIVE</code> sentiment.</p>
         pub fn set_negative(mut self, input: std::option::Option<f64>) -> Self {
             self.negative = input;
             self
@@ -702,6 +785,8 @@ pub mod sentiment_score {
             self.neutral = Some(input);
             self
         }
+        /// <p>The level of confidence that Amazon Comprehend has in the accuracy
+        /// of its detection of the <code>NEUTRAL</code> sentiment.</p>
         pub fn set_neutral(mut self, input: std::option::Option<f64>) -> Self {
             self.neutral = input;
             self
@@ -712,6 +797,8 @@ pub mod sentiment_score {
             self.mixed = Some(input);
             self
         }
+        /// <p>The level of confidence that Amazon Comprehend has in the accuracy
+        /// of its detection of the <code>MIXED</code> sentiment.</p>
         pub fn set_mixed(mut self, input: std::option::Option<f64>) -> Self {
             self.mixed = input;
             self
@@ -734,6 +821,7 @@ impl SentimentScore {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -745,9 +833,13 @@ impl SentimentScore {
     std::hash::Hash,
 )]
 pub enum SentimentType {
+    #[allow(missing_docs)] // documentation missing in model
     Mixed,
+    #[allow(missing_docs)] // documentation missing in model
     Negative,
+    #[allow(missing_docs)] // documentation missing in model
     Neutral,
+    #[allow(missing_docs)] // documentation missing in model
     Positive,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -771,6 +863,7 @@ impl std::str::FromStr for SentimentType {
     }
 }
 impl SentimentType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             SentimentType::Mixed => "MIXED",
@@ -780,6 +873,7 @@ impl SentimentType {
             SentimentType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["MIXED", "NEGATIVE", "NEUTRAL", "POSITIVE"]
     }
@@ -823,6 +917,9 @@ pub mod confidence_score {
             self.score = Some(input);
             self
         }
+        /// <p>A score that indicates how confident Amazon Lex V2 is that an intent
+        /// satisfies the user's intent. Ranges between 0.00 and 1.00. Higher
+        /// scores indicate higher confidence.</p>
         pub fn set_score(mut self, input: std::option::Option<f64>) -> Self {
             self.score = input;
             self
@@ -895,6 +992,8 @@ pub mod session_state {
             self.dialog_action = Some(input);
             self
         }
+        /// <p>The next step that Amazon Lex V2 should take in the conversation with a
+        /// user.</p>
         pub fn set_dialog_action(
             mut self,
             input: std::option::Option<crate::model::DialogAction>,
@@ -907,16 +1006,27 @@ pub mod session_state {
             self.intent = Some(input);
             self
         }
+        /// <p>The active intent that Amazon Lex V2 is processing.</p>
         pub fn set_intent(mut self, input: std::option::Option<crate::model::Intent>) -> Self {
             self.intent = input;
             self
         }
+        /// Appends an item to `active_contexts`.
+        ///
+        /// To override the contents of this collection use [`set_active_contexts`](Self::set_active_contexts).
+        ///
+        /// <p>One or more contexts that indicate to Amazon Lex V2 the context of a
+        /// request. When a context is active, Amazon Lex V2 considers intents with the
+        /// matching context as a trigger as the next intent in a session.</p>
         pub fn active_contexts(mut self, input: impl Into<crate::model::ActiveContext>) -> Self {
             let mut v = self.active_contexts.unwrap_or_default();
             v.push(input.into());
             self.active_contexts = Some(v);
             self
         }
+        /// <p>One or more contexts that indicate to Amazon Lex V2 the context of a
+        /// request. When a context is active, Amazon Lex V2 considers intents with the
+        /// matching context as a trigger as the next intent in a session.</p>
         pub fn set_active_contexts(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::ActiveContext>>,
@@ -924,6 +1034,13 @@ pub mod session_state {
             self.active_contexts = input;
             self
         }
+        /// Adds a key-value pair to `session_attributes`.
+        ///
+        /// To override the contents of this collection use [`set_session_attributes`](Self::set_session_attributes).
+        ///
+        /// <p>Map of key/value pairs representing session-specific context
+        /// information. It contains application information passed between Amazon Lex V2
+        /// and a client application.</p>
         pub fn session_attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -934,6 +1051,9 @@ pub mod session_state {
             self.session_attributes = Some(hash_map);
             self
         }
+        /// <p>Map of key/value pairs representing session-specific context
+        /// information. It contains application information passed between Amazon Lex V2
+        /// and a client application.</p>
         pub fn set_session_attributes(
             mut self,
             input: std::option::Option<
@@ -948,6 +1068,7 @@ pub mod session_state {
             self.originating_request_id = Some(input.into());
             self
         }
+        /// <p></p>
         pub fn set_originating_request_id(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1027,6 +1148,7 @@ pub mod active_context {
             self.name = Some(input.into());
             self
         }
+        /// <p>The name of the context.</p>
         pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.name = input;
             self
@@ -1038,6 +1160,9 @@ pub mod active_context {
             self.time_to_live = Some(input);
             self
         }
+        /// <p>Indicates the number of turns or seconds that the context is active.
+        /// Once the time to live expires, the context is no longer returned in a
+        /// response.</p>
         pub fn set_time_to_live(
             mut self,
             input: std::option::Option<crate::model::ActiveContextTimeToLive>,
@@ -1045,6 +1170,16 @@ pub mod active_context {
             self.time_to_live = input;
             self
         }
+        /// Adds a key-value pair to `context_attributes`.
+        ///
+        /// To override the contents of this collection use [`set_context_attributes`](Self::set_context_attributes).
+        ///
+        /// <p>A list of contexts active for the request. A context can be
+        /// activated when a previous intent is fulfilled, or by including the
+        /// context in the request.</p>
+        /// <p>If you don't specify a list of contexts, Amazon Lex V2 will use the current
+        /// list of contexts for the session. If you specify an empty list, all
+        /// contexts for the session are cleared. </p>
         pub fn context_attributes(
             mut self,
             k: impl Into<std::string::String>,
@@ -1055,6 +1190,12 @@ pub mod active_context {
             self.context_attributes = Some(hash_map);
             self
         }
+        /// <p>A list of contexts active for the request. A context can be
+        /// activated when a previous intent is fulfilled, or by including the
+        /// context in the request.</p>
+        /// <p>If you don't specify a list of contexts, Amazon Lex V2 will use the current
+        /// list of contexts for the session. If you specify an empty list, all
+        /// contexts for the session are cleared. </p>
         pub fn set_context_attributes(
             mut self,
             input: std::option::Option<
@@ -1117,6 +1258,8 @@ pub mod active_context_time_to_live {
             self.time_to_live_in_seconds = Some(input);
             self
         }
+        /// <p>The number of seconds that the context is active. You can specify
+        /// between 5 and 86400 seconds (24 hours).</p>
         pub fn set_time_to_live_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
             self.time_to_live_in_seconds = input;
             self
@@ -1127,6 +1270,8 @@ pub mod active_context_time_to_live {
             self.turns_to_live = Some(input);
             self
         }
+        /// <p>The number of turns that the context is active. You can specify up
+        /// to 20 turns. Each request and response from the bot is a turn.</p>
         pub fn set_turns_to_live(mut self, input: std::option::Option<i32>) -> Self {
             self.turns_to_live = input;
             self
@@ -1229,6 +1374,32 @@ pub mod dialog_action {
             self.r#type = Some(input);
             self
         }
+        /// <p>The next action that the bot should take in its interaction with the
+        /// user. The possible values are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Close</code> - Indicates that there will not be a
+        /// response from the user. For example, the statement "Your order
+        /// has been placed" does not require a response.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ConfirmIntent</code> - The next action is asking the
+        /// user if the intent is complete and ready to be fulfilled. This is
+        /// a yes/no question such as "Place the order?"</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Delegate</code> - The next action is determined by
+        /// Amazon Lex V2.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ElicitSlot</code> - The next action is to elicit a slot
+        /// value from the user.</p>
+        /// </li>
+        /// </ul>
         pub fn set_type(
             mut self,
             input: std::option::Option<crate::model::DialogActionType>,
@@ -1241,6 +1412,7 @@ pub mod dialog_action {
             self.slot_to_elicit = Some(input.into());
             self
         }
+        /// <p>The name of the slot that should be elicited from the user.</p>
         pub fn set_slot_to_elicit(
             mut self,
             input: std::option::Option<std::string::String>,
@@ -1264,6 +1436,7 @@ impl DialogAction {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1275,11 +1448,17 @@ impl DialogAction {
     std::hash::Hash,
 )]
 pub enum DialogActionType {
+    #[allow(missing_docs)] // documentation missing in model
     Close,
+    #[allow(missing_docs)] // documentation missing in model
     ConfirmIntent,
+    #[allow(missing_docs)] // documentation missing in model
     Delegate,
+    #[allow(missing_docs)] // documentation missing in model
     ElicitIntent,
+    #[allow(missing_docs)] // documentation missing in model
     ElicitSlot,
+    #[allow(missing_docs)] // documentation missing in model
     None,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1305,6 +1484,7 @@ impl std::str::FromStr for DialogActionType {
     }
 }
 impl DialogActionType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             DialogActionType::Close => "Close",
@@ -1316,6 +1496,7 @@ impl DialogActionType {
             DialogActionType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &[
             "Close",
@@ -1372,6 +1553,7 @@ pub mod message {
             self.content = Some(input.into());
             self
         }
+        /// <p>The text of the message.</p>
         pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.content = input;
             self
@@ -1381,6 +1563,7 @@ pub mod message {
             self.content_type = Some(input);
             self
         }
+        /// <p>Indicates the type of response.</p>
         pub fn set_content_type(
             mut self,
             input: std::option::Option<crate::model::MessageContentType>,
@@ -1396,6 +1579,10 @@ pub mod message {
             self.image_response_card = Some(input);
             self
         }
+        /// <p>A card that is shown to the user by a messaging platform. You define
+        /// the contents of the card, the card is displayed by the platform. </p>
+        /// <p>When you use a response card, the response from the user is
+        /// constrained to the text associated with a button on the card.</p>
         pub fn set_image_response_card(
             mut self,
             input: std::option::Option<crate::model::ImageResponseCard>,
@@ -1471,6 +1658,8 @@ pub mod image_response_card {
             self.title = Some(input.into());
             self
         }
+        /// <p>The title to display on the response card. The format of the title
+        /// is determined by the platform displaying the response card.</p>
         pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.title = input;
             self
@@ -1482,6 +1671,9 @@ pub mod image_response_card {
             self.subtitle = Some(input.into());
             self
         }
+        /// <p>The subtitle to display on the response card. The format of the
+        /// subtitle is determined by the platform displaying the response
+        /// card.</p>
         pub fn set_subtitle(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.subtitle = input;
             self
@@ -1493,16 +1685,29 @@ pub mod image_response_card {
             self.image_url = Some(input.into());
             self
         }
+        /// <p>The URL of an image to display on the response card. The image URL
+        /// must be publicly available so that the platform displaying the response
+        /// card has access to the image.</p>
         pub fn set_image_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.image_url = input;
             self
         }
+        /// Appends an item to `buttons`.
+        ///
+        /// To override the contents of this collection use [`set_buttons`](Self::set_buttons).
+        ///
+        /// <p>A list of buttons that should be displayed on the response card. The
+        /// arrangement of the buttons is determined by the platform that displays
+        /// the button.</p>
         pub fn buttons(mut self, input: impl Into<crate::model::Button>) -> Self {
             let mut v = self.buttons.unwrap_or_default();
             v.push(input.into());
             self.buttons = Some(v);
             self
         }
+        /// <p>A list of buttons that should be displayed on the response card. The
+        /// arrangement of the buttons is determined by the platform that displays
+        /// the button.</p>
         pub fn set_buttons(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::Button>>,
@@ -1560,6 +1765,7 @@ pub mod button {
             self.text = Some(input.into());
             self
         }
+        /// <p>The text that is displayed on the button.</p>
         pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.text = input;
             self
@@ -1569,6 +1775,7 @@ pub mod button {
             self.value = Some(input.into());
             self
         }
+        /// <p>The value returned to Amazon Lex V2 when a user chooses the button.</p>
         pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.value = input;
             self
@@ -1589,6 +1796,7 @@ impl Button {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1600,9 +1808,13 @@ impl Button {
     std::hash::Hash,
 )]
 pub enum MessageContentType {
+    #[allow(missing_docs)] // documentation missing in model
     CustomPayload,
+    #[allow(missing_docs)] // documentation missing in model
     ImageResponseCard,
+    #[allow(missing_docs)] // documentation missing in model
     PlainText,
+    #[allow(missing_docs)] // documentation missing in model
     Ssml,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1626,6 +1838,7 @@ impl std::str::FromStr for MessageContentType {
     }
 }
 impl MessageContentType {
+    /// Returns the `&str` value of the enum member.
     pub fn as_str(&self) -> &str {
         match self {
             MessageContentType::CustomPayload => "CustomPayload",
@@ -1635,6 +1848,7 @@ impl MessageContentType {
             MessageContentType::Unknown(s) => s.as_ref(),
         }
     }
+    /// Returns all the `&str` values of the enum members.
     pub fn values() -> &'static [&'static str] {
         &["CustomPayload", "ImageResponseCard", "PlainText", "SSML"]
     }

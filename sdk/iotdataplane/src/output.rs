@@ -4,7 +4,7 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateThingShadowOutput {
     /// <p>The state information, in JSON format.</p>
-    pub payload: std::option::Option<smithy_types::Blob>,
+    pub payload: std::option::Option<aws_smithy_types::Blob>,
 }
 impl std::fmt::Debug for UpdateThingShadowOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -19,15 +19,16 @@ pub mod update_thing_shadow_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) payload: std::option::Option<smithy_types::Blob>,
+        pub(crate) payload: std::option::Option<aws_smithy_types::Blob>,
     }
     impl Builder {
         /// <p>The state information, in JSON format.</p>
-        pub fn payload(mut self, input: smithy_types::Blob) -> Self {
+        pub fn payload(mut self, input: aws_smithy_types::Blob) -> Self {
             self.payload = Some(input);
             self
         }
-        pub fn set_payload(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+        /// <p>The state information, in JSON format.</p>
+        pub fn set_payload(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.payload = input;
             self
         }
@@ -46,6 +47,7 @@ impl UpdateThingShadowOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PublishOutput {}
@@ -75,6 +77,7 @@ impl PublishOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRetainedMessagesOutput {
@@ -103,6 +106,12 @@ pub mod list_retained_messages_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// Appends an item to `retained_topics`.
+        ///
+        /// To override the contents of this collection use [`set_retained_topics`](Self::set_retained_topics).
+        ///
+        /// <p>A summary list the account's retained messages. The information returned doesn't include
+        /// the message payloads of the retained messages.</p>
         pub fn retained_topics(
             mut self,
             input: impl Into<crate::model::RetainedMessageSummary>,
@@ -112,6 +121,8 @@ pub mod list_retained_messages_output {
             self.retained_topics = Some(v);
             self
         }
+        /// <p>A summary list the account's retained messages. The information returned doesn't include
+        /// the message payloads of the retained messages.</p>
         pub fn set_retained_topics(
             mut self,
             input: std::option::Option<std::vec::Vec<crate::model::RetainedMessageSummary>>,
@@ -124,6 +135,7 @@ pub mod list_retained_messages_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token for the next set of results, or null if there are no additional results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -144,6 +156,7 @@ impl ListRetainedMessagesOutput {
     }
 }
 
+#[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListNamedShadowsForThingOutput {
@@ -174,12 +187,18 @@ pub mod list_named_shadows_for_thing_output {
         pub(crate) timestamp: std::option::Option<i64>,
     }
     impl Builder {
+        /// Appends an item to `results`.
+        ///
+        /// To override the contents of this collection use [`set_results`](Self::set_results).
+        ///
+        /// <p>The list of shadows for the specified thing.</p>
         pub fn results(mut self, input: impl Into<std::string::String>) -> Self {
             let mut v = self.results.unwrap_or_default();
             v.push(input.into());
             self.results = Some(v);
             self
         }
+        /// <p>The list of shadows for the specified thing.</p>
         pub fn set_results(
             mut self,
             input: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -192,6 +211,7 @@ pub mod list_named_shadows_for_thing_output {
             self.next_token = Some(input.into());
             self
         }
+        /// <p>The token to use to get the next set of results, or <b>null</b> if there are no additional results.</p>
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.next_token = input;
             self
@@ -201,6 +221,7 @@ pub mod list_named_shadows_for_thing_output {
             self.timestamp = Some(input);
             self
         }
+        /// <p>The Epoch date and time the response was generated by IoT.</p>
         pub fn set_timestamp(mut self, input: std::option::Option<i64>) -> Self {
             self.timestamp = input;
             self
@@ -227,7 +248,7 @@ impl ListNamedShadowsForThingOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetThingShadowOutput {
     /// <p>The state information, in JSON format.</p>
-    pub payload: std::option::Option<smithy_types::Blob>,
+    pub payload: std::option::Option<aws_smithy_types::Blob>,
 }
 impl std::fmt::Debug for GetThingShadowOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -242,15 +263,16 @@ pub mod get_thing_shadow_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) payload: std::option::Option<smithy_types::Blob>,
+        pub(crate) payload: std::option::Option<aws_smithy_types::Blob>,
     }
     impl Builder {
         /// <p>The state information, in JSON format.</p>
-        pub fn payload(mut self, input: smithy_types::Blob) -> Self {
+        pub fn payload(mut self, input: aws_smithy_types::Blob) -> Self {
             self.payload = Some(input);
             self
         }
-        pub fn set_payload(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+        /// <p>The state information, in JSON format.</p>
+        pub fn set_payload(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.payload = input;
             self
         }
@@ -276,7 +298,7 @@ pub struct GetRetainedMessageOutput {
     /// <p>The topic name to which the retained message was published.</p>
     pub topic: std::option::Option<std::string::String>,
     /// <p>The Base64-encoded message payload of the retained message body.</p>
-    pub payload: std::option::Option<smithy_types::Blob>,
+    pub payload: std::option::Option<aws_smithy_types::Blob>,
     /// <p>The quality of service (QoS) level used to publish the retained message.</p>
     pub qos: i32,
     /// <p>The Epoch date and time, in milliseconds, when the retained message was stored by IoT.</p>
@@ -299,7 +321,7 @@ pub mod get_retained_message_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) topic: std::option::Option<std::string::String>,
-        pub(crate) payload: std::option::Option<smithy_types::Blob>,
+        pub(crate) payload: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) qos: std::option::Option<i32>,
         pub(crate) last_modified_time: std::option::Option<i64>,
     }
@@ -309,16 +331,18 @@ pub mod get_retained_message_output {
             self.topic = Some(input.into());
             self
         }
+        /// <p>The topic name to which the retained message was published.</p>
         pub fn set_topic(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.topic = input;
             self
         }
         /// <p>The Base64-encoded message payload of the retained message body.</p>
-        pub fn payload(mut self, input: smithy_types::Blob) -> Self {
+        pub fn payload(mut self, input: aws_smithy_types::Blob) -> Self {
             self.payload = Some(input);
             self
         }
-        pub fn set_payload(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+        /// <p>The Base64-encoded message payload of the retained message body.</p>
+        pub fn set_payload(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.payload = input;
             self
         }
@@ -327,6 +351,7 @@ pub mod get_retained_message_output {
             self.qos = Some(input);
             self
         }
+        /// <p>The quality of service (QoS) level used to publish the retained message.</p>
         pub fn set_qos(mut self, input: std::option::Option<i32>) -> Self {
             self.qos = input;
             self
@@ -336,6 +361,7 @@ pub mod get_retained_message_output {
             self.last_modified_time = Some(input);
             self
         }
+        /// <p>The Epoch date and time, in milliseconds, when the retained message was stored by IoT.</p>
         pub fn set_last_modified_time(mut self, input: std::option::Option<i64>) -> Self {
             self.last_modified_time = input;
             self
@@ -363,7 +389,7 @@ impl GetRetainedMessageOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteThingShadowOutput {
     /// <p>The state information, in JSON format.</p>
-    pub payload: std::option::Option<smithy_types::Blob>,
+    pub payload: std::option::Option<aws_smithy_types::Blob>,
 }
 impl std::fmt::Debug for DeleteThingShadowOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -378,15 +404,16 @@ pub mod delete_thing_shadow_output {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
-        pub(crate) payload: std::option::Option<smithy_types::Blob>,
+        pub(crate) payload: std::option::Option<aws_smithy_types::Blob>,
     }
     impl Builder {
         /// <p>The state information, in JSON format.</p>
-        pub fn payload(mut self, input: smithy_types::Blob) -> Self {
+        pub fn payload(mut self, input: aws_smithy_types::Blob) -> Self {
             self.payload = Some(input);
             self
         }
-        pub fn set_payload(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+        /// <p>The state information, in JSON format.</p>
+        pub fn set_payload(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
             self.payload = input;
             self
         }
